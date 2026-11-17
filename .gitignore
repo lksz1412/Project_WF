@@ -1,0 +1,14 @@
+# 세션마다 달라지는 로컬 산출물
+.claude/settings.local.json
+.claude/*.local.json
+.claude/shell-snapshots/
+.claude/sessions/
+.claude/projects/
+.claude/backups/
+.claude/todos/
+.claude/statsig/
+
+__pycache__/
+*.pyc
+Thumbs.db
+.DS_Store

@@ -1,0 +1,45 @@
+---
+version: "1.2.7"
+updated: "2026-08-30"
+name: skill_LKS_custom_caveman-korean-review
+description: >
+  Ultra-compressed code review comments. Cuts noise from PR feedback
+  while preserving the actionable signal. Each comment is one line:
+  location, problem, fix. Use when user says "review this PR", "code review",
+  "review the diff", or invokes /caveman-review.
+---
+
+<!-- 베이스: blacknabis/cavemankorean(JuliusBrussee/caveman의 한국어 로컬라이즈 포크) — skills/caveman-review/SKILL.md. 수정: 본인 — 이름만 skill_LKS_custom_ 컨벤션에 맞춰 변경, 본문 내용은 무수정. -->
+
+Write code review comments terse and actionable. One line per finding. Location, problem, fix. No throat-clearing.
+
+## Rules
+
+**Format:** `L<line>: <problem>. <fix>.` or `<file>:L<line>: ...` when reviewing multi-file diffs.
+
+**Severity prefix (optional, when mixed):** (아래 4종은 기능적 severity 마커 — 압축 규범의 「장식용 emoji 금지」의 예외다)
+- 🔴 `bug:` — broken behavior, will cause incident
+- 🟡 `risk:` — works but fragile (race, missing null check, swallowed error)
+- 🔵 `nit:` — style, naming, micro-optim. Author can ignore
+- ❓ `q:` — genuine question, not a suggestion
+
+**Drop:**
+- "I noticed that...", "It seems like...", "You might want to consider..."
+- "This is just a suggestion but..." — use `nit:` instead
+- "Great work!", "Looks good overall but..." — say it once at the top, not per comment
+- Restating what the line does — the reviewer can read the diff
+- Hedging ("perhaps", "maybe", "I think") — if unsure use `q:`
+
+**Keep:**
+- Exact line numbers
+- Exact symbol/function/variable names in backticks
+- Concrete fix, not "consider refactoring this"
+- The why if the fix isn't obvious from the problem statement
+
+## Auto-Clarity
+
+Drop terse mode for: security findings (CVE-class bugs need full explanation + reference), architectural disagreements (need rationale, not just a one-liner), and onboarding contexts where the author is new and needs the "why". In those cases write a normal paragraph, then resume terse for the rest.
+
+## Boundaries
+
+Reviews only — does not write the code fix, does not approve/request-changes, does not run linters. Output the comment(s) ready to paste into the PR. "stop caveman-review" or "normal mode": revert to verbose review style.

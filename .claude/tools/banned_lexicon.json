@@ -1,0 +1,75 @@
+{
+  "schema": "bada-banned-lexicon/1",
+  "version": "1.3.9",
+  "updated": "2026-09-21",
+  "purpose": "작업 산출물과 사용자 대화 양쪽에서 배제할 단어·어체의 단일 등재부. 사용자가 새로 지적한 단어·어체는 즉시 이 파일에 추가한다(관리·확장은 이 JSON 한 곳).",
+  "apply_to": ["사용자 응답·대화", "문서·계획서·Result·핸드오버", "코드 주석·독스트링", "덱·발표자료", "커밋 메시지"],
+  "exceptions": [
+    "직접 인용·역사 기록(과거 버전 CHANGELOG·기존 결과 문건)은 원문 보존 — 배제 대상 아님",
+    "이 파일 자체처럼 '무엇을 배제하는지' 설명하려 그 단어를 명시하는 경우",
+    "진짜 법률 문서 작업 맥락에서의 법률용어(uncommon_legal_jargon 한정)"
+  ],
+  "criteria": "난이도가 아니라 '지금 사람들이 실제로 대화·글에서 쓰는 말이냐'. 고급 어휘인 양 죽은 말·번역투를 쓰지 않는다.",
+  "status_meaning": {
+    "confirmed": "사용자가 직접 지적했거나 확정된 등재어 — 활성 산출물·대화에서 그 낱말을 배제하고 use_instead 로 치환한다(집행 대상). 기계·수동 스크럽의 표적.",
+    "example": "그 범주(category.rule)를 보여주는 대표 예시일 뿐 완전 목록이 아니다 — 판정은 낱말 일치가 아니라 category.rule 로 하고(그 결에 맞는 어체면 새로 만나도 배제), 나열된 예시 낱말을 기계적으로 일괄 치환하도록 강제하지 않는다(문맥 판단). 예시가 확정 배제어로 굳으면 status 를 confirmed 로 올린다."
+  },
+  "entry_shape": "각 엔트리는 term(단일 낱말) 또는 terms(같은 뜻 이형 배열) 중 하나 + use_instead(대체 낱말 배열 · 지시문·금지어 자신을 넣지 않는다) + status(confirmed|example) + 선택 hanja·note·since.",
+  "categories": {
+    "non_korean_sino_neologism": {
+      "label": "한자 조합·일본식 음독 신조어",
+      "rule": "한자를 조합·직역한 신조어나 한국어에 등재되지 않은 일본식 음독 용어를 새로 지어 쓰지 않는다. 뜻이 통할 것 같아도 마찬가지다(과학·기술 용어도 고착어 외 신규는 금지). 3원칙 = ① 고착 예외: 지금 한국에서 실제로 통용되는 표준어(가중치·검수·설치 등)는 한자·일본식 음독 기원이어도 유지한다 · ② 신규 금지: 없던 낱말을 한자·일본식 음독으로 새로 짓지 않는다 · ③ 신규는 영어 원어 알파벳: 없던 용어가 필요하면 일본식 음독·한자 조어 대신 영어 원어를 알파벳 그대로 쓴다. 집행 테스트 = '이 용어, 지금 한국에서 실제로 통용되는 표준어냐?' → 예: 유지 / 아니오(내가 지어내는 것): 영어 원어 알파벳.",
+      "entries": [
+        {"term": "수권", "hanja": "授權", "use_instead": ["권한 부여", "사용자 명시 허용"], "status": "confirmed", "since": "2026-09-11"},
+        {"term": "사소차", "hanja": "些少差", "use_instead": ["사소한 차이", "노이즈성 차이", "의미 무변 차이"], "status": "confirmed", "since": "2026-09-11"}
+      ]
+    },
+    "dead_stiff_words": {
+      "label": "죽은말·딱딱한말 → 지금 쓰는 보편어",
+      "rule": "지금 안 쓰는 옛말·딱딱한 말 대신 지금 실제로 쓰는 말을 쓴다(아래 entries 가 확정 목록 · 계속 늘린다).",
+      "entries": [
+        {"term": "정본", "use_instead": ["원본"], "status": "confirmed"},
+        {"term": "거울", "use_instead": ["사본"], "note": "mirror image 차용어 — 원본↔사본이 자연스럽다", "status": "confirmed"},
+        {"term": "문면", "use_instead": ["문구", "내용"], "status": "confirmed"},
+        {"term": "문안", "use_instead": ["문구", "쓸 내용"], "status": "confirmed"},
+        {"term": "전량", "use_instead": ["전부"], "status": "confirmed"},
+        {"term": "얕은 병합", "use_instead": ["병합"], "note": "shallow merge 직역", "status": "confirmed"},
+        {"term": "발동", "use_instead": ["작동", "실행"], "note": "게임 느낌 — 프로그램 구동은 작동, 커맨드 실행 맥락은 실행", "status": "confirmed"}
+      ]
+    },
+    "archaic": {
+      "label": "고어(현대에 안 쓰는 옛말)",
+      "rule": "지금 대화에서 쓰지 않는 옛 낱말·종결. 예스러움을 격식으로 착각하지 않는다.",
+      "entries": [
+        {"terms": ["~하옵니다", "~하나이다"], "use_instead": ["~합니다"], "note": "예스러운 극존칭 종결", "status": "example"},
+        {"terms": ["~하였더라", "~하더라"], "use_instead": ["~했다"], "note": "옛 서술 종결", "status": "example"},
+        {"term": "짐짓", "use_instead": ["일부러"], "note": "맥락 따라 생략하거나 '일부러'로", "status": "example"},
+        {"term": "무릇", "use_instead": ["대개", "본디"], "note": "설교조로 남용 시", "status": "example"}
+      ]
+    },
+    "uncommon_legal_jargon": {
+      "label": "상시 쓰이지 않는 법률용어",
+      "rule": "법률 문서 밖 일상에서 안 쓰는 법률 전문어. 일반 대화·산출물엔 쓰지 않는다(진짜 법률 작업은 exceptions).",
+      "entries": [
+        {"term": "당해", "hanja": "當該", "use_instead": ["해당", "그"], "status": "example"},
+        {"term": "~에 갈음하다", "use_instead": ["~을 대신하다"], "status": "example"},
+        {"term": "~을 요한다", "hanja": "要", "use_instead": ["~이 필요하다"], "status": "example"},
+        {"term": "동(同)", "use_instead": ["같은", "위의"], "note": "'동 파일' 류", "status": "example"}
+      ]
+    },
+    "archaic_bible_register": {
+      "label": "옛 성경 번역체",
+      "rule": "옛 성경 번역투 어체(예스러운 종결·설교조·낡은 접속). 쓰지 않는다.",
+      "entries": [
+        {"terms": ["~하시니라", "~하니라"], "use_instead": ["~한다", "~했다"], "status": "example"},
+        {"terms": ["~할지어다", "~할지니라"], "use_instead": ["~하라", "~해야 한다"], "status": "example"},
+        {"term": "가라사대", "use_instead": ["말하기를", "~가 말하길"], "status": "example"},
+        {"terms": ["이에", "이러므로"], "use_instead": ["그래서", "따라서"], "note": "설교조 접속", "status": "example"}
+      ]
+    }
+  },
+  "allowed_despite_formal": {
+    "note": "형식적으로 보여도 지금 흔히 쓰는 말 — 굳이 안 바꾼다(과잉 교정 방지).",
+    "terms": ["정합", "격하", "산출물", "위임"]
+  }
+}
