@@ -5,5 +5,7 @@
 | Step | Work | Owner | Gate | Review | Est. | Status |
 |---|---|---|---|---|---|---|
 | 18 | support table + branch verdict (see Step 18 history) | A1 | done | master check | 90–150 | ✅ |
-| 19 | Hekili display defaults (D2 가: alerts+CD+recommendation, recommendation separately off-able); if branch 2/3: `DevilForever_Combat` display-only module (static per-spec lists from Hekili data or D7 Codex data; no recommendation/judgment/rotation logic; center icon/sound/highlight each off-able; one feature with Hekili) | A2 | luacheck, tests, tocdeps, build | 3 rounds (new structure module) if module built, else master check | 60–120 (+60–180 if module) | ⏳ |
-| 20 | Per-class check (shaman first, R7) + Codex appearance/real-use briefs | A2 | briefs ≤10 items each | master check | 45–75 (+20–40/class) | ⏳ |
+| 19 | Hekili display defaults (D2 가: recommendation on and separately off-able; R104: no status-alert/CD module), Cooldown Manager handover notes (which viewers, what Codex checks), registry | A2 | luacheck, tests, genregistry, build | master check (defaults table) | 45–90 | ⏳ |
+| 20 | Class check (shaman first, R7) against hekili-support.md; Codex briefs appearance-8.md + phase8.md (Cooldown Manager on/overlap, center emphasis/sound, Hekili display, healer specs); Phase 2 addendum `appearance-2-layouts.md` (FHD/QHD/UHD from the start, R107 ⑥) | A2 | briefs ≤10 items | master check | 60–105 (+20–40/class) | ⏳ |
+
+[Replanned after R104/R107 — supplement module removed; see master plan rows 6-rev, 8, Correction History.]

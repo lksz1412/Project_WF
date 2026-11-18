@@ -44,3 +44,71 @@ Scratch (volatile, not a record): `/tmp/claude-0/-home-user-Project-WF/eb60f530-
 - Line gate: 290 cited key lines checked against module text by Python; 5 non-matches are labels (echoes, poisons, header, talent), lines correct.
 - Banned-word scan on md: 0 hits.
 - Corrections during self-review: C11 wording (Priest 384 says «registered for the displays and custom priorities» — rewrote so it does not claim the opposite); `Hekili.Client` claim limited to what `Hekili.lua:151–154` says.
+
+---
+
+# plan update R104/R107 — work A1 (same Phase 8)
+
+## Read (basis)
+- `Claude/results/REQUEST_LEDGER_phase8.md` 1–20 (whole; R101, R103–R107 verbatim user words).
+- Master plan `Claude/plans/2026-11-18-devil-forever-addon-collection-plan.md` 1–533 (whole, two reads 1–261, 262–533).
+- Facts checked for new cells: `Collection/upstream/Details-Details.20261109.15410.172/Details_TinyThreat/Details_TinyThreat_Camelot.toc` (Interface 16001, RequiredDeps Details) = `Collection/manifest.md:96–104`; `Collection/upstream/pitbull-unit-frames-4-0-v4.2.50/PitBull4/*.toc` (Cata 40402, Mainline 110207, Mists 50504, TBC 20505 — no 16001); V42 `work/old-reference-r36-3ed3y_p1/extracted-forever-v42/Interface/AddOns/PitBull4/PitBull4.toc:1–2,19` (Interface 16001, «Confirmed Forever 1.60.1 build 70291», Version 4.2.49-Forever-v42); `!DevilUI/Profile/PitBull4.lua` exists; `References/addon-sources/pitbull-unit-frames-4-0/` (PitBull4-v4.2.50.zip, SOURCE.txt, ANALYSIS.md); `Collection/manifest.md:24` (PitBull4 comparison row).
+- Totals: python over the outline estimates (before: all 2,090–3,790 = line 85 text; minus R100 steps = 1,910–3,460 — line 85 had not been updated after R100).
+
+## Impact map (★ = must change)
+
+| # | Place (plan line, before edit) | Same meaning / cause | Verdict | Why |
+|---|---|---|---|---|
+| 1 | 33–36 outline Phase 8 | R104 | ★ change | Hekili recommendation only, CDM for alerts/CD; Step 19 new content, supplement time gone |
+| 2 | outline after Phase 8 | R107 ① | ★ add Phase 6-rev, Steps 42–43 | next free step after 41; runs after Phase 8 (A1 default, DQ) |
+| 3 | 39–42 outline Phase 10–11 | R107 ② | ★ change | TinyThreat into Phase 10, Phase 11 merged |
+| 4 | 48–53 outline Phase 14–16 | R107 ③④⑤ | ★ change | 14 no addon/brief only, 15 Codex decides, 16 light strip 28a/28b (new development → sub-steps rule line 81/326) |
+| 5 | 62–67 outline Phase 20–21 | R107 ⑥ | ★ change | preset restore; Phase 21 dropped |
+| 6 | 71–73 outline Phase 23 | R107 ① | ★ change | FUF vs PitBull4 default decision recorded in Phase 23 |
+| 7 | 20 outline Phase 2 | R107 ⑥ | ★ change (label) | three layouts by Codex |
+| 8 | 81 paragraph (multi-step Phases, Phase 21) | R104/R107 | ★ change | Phase 8 no code, Phase 21 dropped, 6-rev and 16 sub-steps |
+| 9 | 85 totals | all | ★ change (python) | new fixed 1,850–3,400; per class 55–105 |
+| 10 | 89 Summary (전투보조, UI 편집 필수) | R104/R107 ⑥ | ★ change | |
+| 11 | 91 Summary 시각 기준 (4K) | R107 ⑥ | ★ change | three layouts; 4K design = UHD layout |
+| 12 | 139 constraint 전투보조 | R104 | ★ change | |
+| 13 | 140 constraint UI 편집 필수 | R107 ⑥ | ★ change | |
+| 14 | 143 constraint 4K rule | R107 ⑥ | ★ change | rule applies per layout |
+| 15 | 147 constraint fewer addons (R101) | R107 ⑤ | check only | used as reason for strip data part placement |
+| 16 | 210 feature row 2 | R107 ⑥ | ★ change | |
+| 17 | 214 feature row 6 | R107 ① | ★ change | pointer to 6-rev |
+| 18 | new feature row 6-rev | R107 ① | ★ add | |
+| 19 | 216 feature row 8 | R104 | ★ rewrite | |
+| 20 | 218–219 rows 10–11 | R107 ② | ★ change | |
+| 21 | 222–224 rows 14–16 | R107 ③④⑤ | ★ change | |
+| 22 | 228–229 rows 20–21 | R107 ⑥ | ★ change | |
+| 23 | 230 row 22 | — | no impact | theme token swap unchanged |
+| 24 | 243–245 exclusion rows (버프·디버프, CD 관리자, 위협 상태) | R104/R107 ②③ | ★ change | sources of alerts/CD/threat changed |
+| 25 | 247 exclusion row (화폐·가방…) | R107 ⑤ | check only | Phase 16 still holds gold; 13 dropped earlier (R100) — not this change |
+| 26 | 261, 264, 266, 270 V42 classification | R107 ①⑤⑥ | ★ change | PitBull4 → 6-rev source; ChocolateBar → reference only; Devilconfig/minimap handles → not used |
+| 27 | 277–284 「바꾼 곳」 1–8 | — | no impact (record) | design history of the plan; add item 9 instead |
+| 28 | 200 범위 경위 | — | no impact (record) | |
+| 29 | 293–295 Non-goals | R104 | ★ change | supplement wording gone |
+| 30 | 307 모음집 구성 (필수 묶음 Phase 21) | R107 ⑥ | ★ change | |
+| 31 | 333 Phase 24 mockup | R107 ⑥ | ★ change | three layouts in mockup (A1 default, DQ) |
+| 32 | 342–347 Codex 외관 발주문 표·몫 목록 | R104/R107 | ★ change | |
+| 33 | 359–388 Phase N table and intro | R104/R107 | ★ change | rows 6-rev, 11, 14, 15, 16, 21; statuses of other rows stale (not this change — DQ) |
+| 34 | 398–403 Interfaces (등록 규약, 테마 토큰, 저장·복원, 편집, 직업 목록) | R104/R107 ⑥ | ★ change | Core edit values stay the read contract; writer = layout presets + AI edits |
+| 35 | 421–423 Test Plan rows | R104/R107 | ★ change | supplement row gone; PitBull4 fork + strip data part added; Phase 21 gone |
+| 36 | 422 Test Plan Phase 20 | R107 ⑥ | ★ change | preset return |
+| 37 | 436–442 verification split | R104/R107 | ★ change | |
+| 38 | 457–458 Assumptions (Hekili alerts) | R104 + Step 18 | ★ change | resolved; new assumptions CDM, PitBull4, TinyThreat |
+| 39 | 471–473 Correction History | R104/R107 | ★ add 2 rows | |
+| 40 | 484 D2, 501 D6, 505 D7 ①⑤ | R104/R107 | ★ add «바뀜» notes (decision records kept) | user decision records are not rewritten; a pointer line is added |
+| 41 | 512 예외 (Hekili 보완 모듈 3라운드) | R104 | ★ change | |
+| 42 | Phase 8 detail plan, hekili-support.md | R104 | out of scope (master) | not the master plan; DQ |
+| 43 | code (`Collection/`) | — | not touched | order |
+
+## Change applied (one change, one script: 50 exact replacements, each asserted to occur once)
+- Script: scratchpad `s18/planedit.py` (volatile). Plan diff hunks (new line numbers): 20, 33–40 (Phase 8 + 6-rev), 42–45, 51–57, 66, 69–70, 74–75, 84, 88, 92, 94, 142–143, 146, 213, 217–218, 220, 222–223, 226–228, 232–233, 247–249, 265, 268, 270, 274, 289, 298–300, 312–313, 338, 347–348, 352, 364, 376–377, 379–380, 383–385, 390, 405, 407–409, 427–429, 442–449, 451, 453, 466–470, 486–487, 499, 517, 521, 528.
+- No code touched. Phase 8 detail plan and `hekili-support.md` not touched (master scope).
+
+## Re-check against the map (self-review 1 round)
+- Leftover grep (보완 모듈 · Phase 21 · Platynator · Titan · ForeverThreat · 편집 창 · 갈래 · Phase 11 · UI 편집 · 9–11 · DevilForever_Combat): remaining hits are new «빠짐/합침/안 씀» wording, Ground Truth facts (112–121), the constraint-table column name «갈래», Test Plan «갈래» (review type), Step 18 title (done step), «바꾼 곳» 2/8 (record), Correction History and Decisions «바뀜» notes — all intended.
+- Table column check (python, backticks ignored): 0 rows with a wrong column count.
+- Totals re-derived from the edited outline by python: 1,850–3,400 (= line 88 text). Rows counted: 6–22, 26–28b, 31–33, 36–43 (dropped 23–25, 29–30b, 34–35 excluded).
+- Banned-word scan on added lines: 0.

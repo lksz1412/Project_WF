@@ -17,7 +17,7 @@
     Step 9   모음집 작업 자리·정적 검사 도구·묶음 빌드 스크립트 30–60분
     Step 10  Forever 직업·특성·자원 목록                    45–90분
 2장 필수 기능 (한 기능 = 한 Phase · 그대로 쓸 수 있으면 그대로)
-  Phase 2  공통 외관 [구현 1] — 코드 기반은 Claude, 외관 구현은 Codex
+  Phase 2  공통 외관 [구현 1] — 코드 기반은 Claude, 외관 구현은 Codex (R107: FHD·QHD·UHD 세 겉보기를 처음부터 Codex 가 만든다)
     Step 11  Core(등록 표·기본값 주입·테마 토큰·편집값 읽기·프레임 이름 목록) 구현 150–240분
     Step 12  정적 검사·논리 검수 반영·Codex 공통 외관 발주문 45–90분
   Phase 3  행동단축바 — Dominos (그대로 사용 추정)
@@ -30,27 +30,31 @@
     Step 16  설정 기본값·manifest 등록·Codex 발주문·직업 자원 대조 45–90분 (+직업 하나당 15–30분)
   Phase 7  시전바 — Quartz (그대로 사용 추정)
     Step 17  설정 기본값·manifest 등록·Codex 발주문·중복 시전바 끄기 30–60분
-  Phase 8  직업 전투보조 — Hekili
+  Phase 8  직업 전투보조 — Hekili(다음 행동 추천) + 게임 기본 Cooldown Manager(상태 알림·CD) (R104)
     Step 18  원천 정독(감시 데이터·알림 꼴 확인)·지원표·갈래 판정 90–150분
-    Step 19  표시 설정·(갈래 2·3 이면 보완 모듈)·정적 검사  60–120분 (+갈래 2·3 이면 60–180분, 갈래 3 의 특성별 목록 작성은 이 Step 에서 직업 하나당 15–30분)
-    Step 20  직업별 점검·Codex 발주문                       45–75분 (+직업 하나당 20–40분)
+    Step 19  Hekili 표시 기본값·Cooldown Manager 인계 메모·정적 대조 45–90분
+    Step 20  직업별 점검·Codex 발주문(Cooldown Manager 게임 안 확인 포함)·Phase 2 외관 발주문 덧붙임(세 겉보기) 60–105분 (+직업 하나당 20–40분)
+  Phase 6-rev 기본 unit·직업 자원 두 번째 판 — PitBull4 (끝난 Phase 6 에 더함 · Phase 8 다음에 한다 · R107)
+    Step 42  PitBull4 v4.2.50·V42 4.2.49-Forever-v42 차이 정독·Forever 고침 목록·Devil profile 대조·고침 설계 60–120분
+    Step 43  Forever TOC·고침 옮김·Devil profile 기본값·정적 검사·논리 검수 반영·Codex 발주문(FUF 와 비교 포함) 120–210분 (+직업 하나당 10–20분)
   Phase 9  공격대 프레임 — Grid2 (그대로 사용 추정)
     Step 21  설정 기본값·manifest 등록·Codex 발주문         30–60분
-  Phase 10 데미지 미터 — Details! (그대로 사용 추정)
-    Step 22  설정 기본값·manifest 등록·Codex 발주문         30–60분
-  Phase 11 어그로 미터 — ForeverThreat (그대로 사용 추정)
-    Step 23  설정 기본값·manifest 등록·Codex 발주문         30–60분
+  Phase 10 데미지 미터·어그로 미터 — Details! + 동봉 TinyThreat 플러그인 (그대로 사용 추정 · R107)
+    Step 22  설정 기본값(TinyThreat 포함)·manifest 등록·Codex 발주문 45–90분
+  Phase 11 어그로 미터 — [Phase 10 에 합침 — R107: Details! 의 TinyThreat 를 쓴다]
+    Step 23  (비움)
 3장 선택 기능 (R77 · D6 결정 R83 · Step 8 판정: Phase 18 은 고침, 나머지는 그대로 사용·설정)
   Phase 12 툴팁 — TipTac Reborn [빠짐 — R100: 게임 기본 기능 사용, Codex 가 기본 기능 확인]
     Step 24  설정 기본값·manifest 등록·Codex 발주문         30–45분
   Phase 13 가방 — Bagnon [빠짐 — R100: 게임 기본 기능 사용, Codex 가 기본 기능 확인]
     Step 25  설정 기본값·manifest 등록·Codex 발주문         30–45분
-  Phase 14 이름표 — Platynator
-    Step 26  설정 기본값·manifest 등록·Codex 발주문         30–60분
-  Phase 15 기본 창 스킨 — Aurora (외관 기능이라 Claude 몫은 등록과 발주문뿐)
-    Step 27  manifest 등록·Codex 외관 발주문                20–40분
-  Phase 16 정보 바 — Titan Panel
-    Step 28  설정 기본값·manifest 등록·Codex 발주문(LDB 정보 구성) 30–60분
+  Phase 14 이름표 — 게임 기본 이름표 + 외관은 Codex (애드온 없음 · Platynator 뺌 · R107)
+    Step 26  Codex 외관·확인 발주문만                        15–30분
+  Phase 15 기본 창 스킨 — Aurora (쓸지 말지를 Codex 가 정한다 · R107)
+    Step 27  Codex 외관 발주문(Aurora 사용 판정 포함)·쓰면 manifest 등록 20–40분
+  Phase 16 상태띠 — 가벼운 정보만 (Titan Panel 안 씀 · R107)
+    Step 28a 정보 항목(시계·FPS/지연·골드·내구도·가방 빈칸)·자리(Core 또는 작은 애드온) 설계 30–60분
+    Step 28b 정보 부분 구현·정적 검사·논리 검수 반영·Codex 발주문(외관은 Codex) 60–120분
   Phase 17 퀘스트·목표 추적기 — Kaliel's Tracker [빠짐 — R100: 게임 기본 기능 사용, Codex 가 기본 기능 확인]
     Step 29  설정 기본값·manifest 등록·Codex 발주문         30–45분
   Phase 18 세계지도 — Mapster (고침: V42 FogClear 오류 막기 옮김) [빠짐 — R100: 게임 기본 기능 사용, Codex 가 기본 기능 확인]
@@ -59,17 +63,16 @@
   Phase 19 경험치·평판 바 — Experience Forever (비교: Dominos_Progress)
     Step 31  설정 기본값·manifest 등록·Codex 발주문         30–45분
 4장 관리 기능·테마
-  Phase 20 설정 저장·복원 (필수 묶음) — ProfileManager
+  Phase 20 설정 저장·복원 (필수 묶음) — ProfileManager (세 겉보기 preset 으로 되돌리기 포함 · R107)
     Step 32  지원 범위 확인·범위 복원 설계                  60–90분
     Step 33  범위 복원 구현·정적 검사·Codex 발주문          120–210분
-  Phase 21 사용자 UI 편집 (필수 묶음) — 새 개발 (참고: V42 Devilconfig 실행 단추·!DevilUI 이동 손잡이)
-    Step 34  Edit Mode Expanded·BlizzMove·!DevilUI minimap.lua 정독·편집 항목·저장 설계 90–150분
-    Step 35  편집 창·저장·미리보기·취소·기본값 구현·정적 검사·Codex 발주문 180–300분
+  Phase 21 사용자 UI 편집 — [빠짐 — R107: 통합 편집기를 만들지 않고 사용자가 AI 로 고친다]
+    Step 34–35 (비움)
   Phase 22 대안 테마 1–2개 — 외관 구현은 Codex
     Step 36  토큰 세트 전환 인터페이스 확인·Codex 대안 테마 발주문 30–60분
 5장 묶기·보여 주기·고정
-  Phase 23 모음집 연계 검사·정정
-    Step 37  전체 묶음 연계 정적 검사 (조합·저장·편집 등록) 90–150분
+  Phase 23 모음집 연계 검사·정정 (unit 프레임 FUF·PitBull4 중 기본 동봉 결정 기록 · R107)
+    Step 37  전체 묶음 연계 정적 검사 (조합·저장·편집값 등록)·unit 프레임 비교 결과 정리 90–150분
     Step 38  발견 결함 정정·해당 연계 재검사                60–120분
   Phase 24 최종 목업 (R55: 가능한 작업을 다 한 뒤) — 목업 제작은 Codex
     Step 39  Codex 목업 발주문·받은 목업 대조·채팅 제시     45–90분
@@ -78,17 +81,17 @@
     Step 41  최종 묶음 고정·복원 방법·인계                  30–60분
 ```
 
-「그대로 사용」 으로 판정된 기능 Phase 는 Step 하나(설정 기본값 파일 + manifest 등록 + Codex 발주문)다. Step 8 에서 「고침」·「새 개발」 로 판정된 기능은 그 Phase 에 하위 Step(예: Step 13a 읽기·설계, 13b 수정·정적 검사)을 붙이고 60–150분을 더한다. Phase 2·8·20·21·23·25 는 처음부터 코드 작업이 있어 Step 이 둘 이상이다. Step 8 판정으로 Phase 18 이 「고침」 이 되어 Step 30a·30b 를 두었고, Phase 21 은 「새 개발」 로 Step 34–35 를 다시 잡았다(Correction History). 외관 작업(Phase 2 외관 구현·각 기능 스킨·Phase 22 테마·Phase 24 목업)은 Codex 몫이라 시간에 넣지 않았다(Implementation Changes 「Codex 몫 목록」). 세부 Step 은 Phase 착수 때 세부 계획서에 쓴다.
+「그대로 사용」 으로 판정된 기능 Phase 는 Step 하나(설정 기본값 파일 + manifest 등록 + Codex 발주문)다. Step 8 에서 「고침」·「새 개발」 로 판정된 기능은 그 Phase 에 하위 Step(예: Step 13a 읽기·설계, 13b 수정·정적 검사)을 붙이고 60–150분을 더한다. Phase 2·8·20·23·25 는 처음부터 Step 이 둘 이상이다(Phase 8 은 R104 로 코드 작업 없이 원천 확인·표시 기본값·직업 점검이다). Step 8 판정으로 Phase 18 이 「고침」 이 되어 Step 30a·30b 를 두었다(그 뒤 R100 으로 빠짐). Phase 21 은 「새 개발」 로 Step 34–35 를 잡았다가 R107 로 빠졌다. R107 로 Phase 16 은 정보 부분을 새로 만들어 Step 28a·28b 가 되었고, 끝난 Phase 6 에 PitBull4 판을 더하는 Phase 6-rev 는 마지막 번호 다음인 Step 42–43 을 쓴다(Correction History). 외관 작업(Phase 2 외관 구현·각 기능 스킨·Phase 22 테마·Phase 24 목업)은 Codex 몫이라 시간에 넣지 않았다(Implementation Changes 「Codex 몫 목록」). 세부 Step 은 Phase 착수 때 세부 계획서에 쓴다.
 
 **실행 중 새 사용자 지시가 들어오면**: 요청 대장에 다음 R 번호로 적고, 그 지시가 다루는 기능의 Phase 에 넣는다 — 아직 시작하지 않은 Phase 면 그 Phase 의 세부 계획서에, 이미 끝난 Phase 면 Phase 23 의 정정 목록에, 특정 기능이 아닌 일하는 방식에 관한 지시면 「늘 지킬 제약」 표에 넣는다. 범위나 순서가 바뀌면 다음 Phase 를 시작하기 전에 이 문서의 Correction History 에 한 줄 남긴다.
 
-**예상 시간 합계 (Claude 몫)**: Step 6–41 의 고정 부분은 2,090–3,790분(약 35–63시간)이다 — Step 8 판정 반영: Phase 18 고침의 하위 Step 30a·30b 로 +60–150분, Phase 21 을 새 개발로 다시 잡아 Step 34–35 가 180–300분에서 270–450분으로 +90–150분. 그중 선택 기능 Phase 12–19 가 290–535분이다. 여기에 Forever 직업 하나당 45–85분(행동단축바 10–15 + unit·자원 15–30 + Hekili 20–40)이 더해지고, 받은 Hekili 묶음에 직업 모듈이 9개 들어 있으므로 직업이 9개라면 405–765분이 늘어난다(직업 수는 Step 10 에서 확인한다). 조건부로 더해지는 것: Phase 8 이 Step 18 판정에서 갈래 2·3 으로 가면 보완 모듈 60–180분(갈래 3 이면 Step 19 에서 직업 하나당 15–30분 더), Step 8 판정(Phase 18 고침·Phase 21 새 개발)은 위 고정 부분에 넣었고, 그 뒤 기능 Phase 정독에서 다른 기능이 「고침」·「새 개발」 로 바뀌면 그 Phase 하나당 60–150분. Codex 몫(외관 구현·질감 판정과 개선·각 기능 외관 연결·대안 테마·최종 목업·실사용 검증·새 자료 조사)과 그 결과를 기다리는 시간은 넣지 않았다(R86·R87 — Implementation Changes 「Codex 몫 목록」).
+**예상 시간 합계 (Claude 몫)**: Step 6–43 의 고정 부분은 1,850–3,400분(약 31–57시간)이다(위 목차의 Step 별 시간을 python 으로 더함 · 빠진 Step 23·24·25·29·30a·30b·34·35 는 넣지 않음). R100·R104·R107 반영: 빠진 Phase 12·13·17·18·21 과 Phase 10 에 합친 Phase 11 의 Step 을 빼고, Phase 8 의 보완 모듈 시간을 없애고 Step 19 를 45–90분으로, Step 20 에 Phase 2 외관 발주문 덧붙임 15–30분을 더하고, Phase 10 을 TinyThreat 설정까지 45–90분으로, Phase 14 를 Codex 발주문만 15–30분으로, Phase 16 을 Step 28a·28b(90–180분)로 하고, Phase 6-rev(Step 42–43, 180–330분)를 더했다. 그중 선택 기능 Phase 14–16·19 가 155–295분이다. 여기에 Forever 직업 하나당 55–105분(행동단축바 10–15 + FUF unit·자원 15–30 + Hekili 20–40 + PitBull4 unit·자원 10–20)이 더해지고, 직업이 9개(Step 10 표)라 495–945분이 늘어난다. 조건부로 더해지는 것: 기능 Phase 정독에서 다른 기능이 「고침」·「새 개발」 로 바뀌면 그 Phase 하나당 60–150분. Codex 몫(외관 구현·질감 판정과 개선·각 기능 외관 연결·대안 테마·최종 목업·실사용 검증·새 자료 조사)과 그 결과를 기다리는 시간은 넣지 않았다(R86·R87 — Implementation Changes 「Codex 몫 목록」).
 
 ## Summary
 
-**목표**: WoW Forever(클라이언트 폴더 `_forever_`, Codex 가 관찰한 판 1.60.1.70938, koKR) 에서 쓰는 **애드온 모음집**을 만든다. 하나의 큰 애드온이 아니다(R60). 외관에 필요한 것은 하나의 필수 묶음으로 둘 수 있지만, 기능은 각각 따로 켜고 끌 수 있는 별도 AddOn 이다(R44). 모든 직업이 같이 쓰는 공용 모음집이며(R61), 직업별 기능은 Hekili 를 기반으로 한다(R62). 상태 알림과 재사용 대기시간(cooldown, CD)은 한 기능 — Hekili 와, 필요하면 그 표시 보완 모듈을 함께 켜고 끄는 「전투보조」 묶음 — 이 맡는다(R44). 설정 저장·복원과 사용자의 UI 편집은 필수다(R44). 어떤 기능을 넣을지는 통합 UI 애드온들이 갖춘 기능을 조사해 다시 짰다(R77 — Phase Range 의 기능 표).
+**목표**: WoW Forever(클라이언트 폴더 `_forever_`, Codex 가 관찰한 판 1.60.1.70938, koKR) 에서 쓰는 **애드온 모음집**을 만든다. 하나의 큰 애드온이 아니다(R60). 외관에 필요한 것은 하나의 필수 묶음으로 둘 수 있지만, 기능은 각각 따로 켜고 끌 수 있는 별도 AddOn 이다(R44). 모든 직업이 같이 쓰는 공용 모음집이며(R61), 직업별 기능은 Hekili 를 기반으로 한다(R62). Hekili 는 다음 행동 추천만 맡고, 상태 알림과 재사용 대기시간(cooldown, CD)은 게임에 들어 있는 Cooldown Manager 가 맡는다(R104 — Hekili 에 EventAlert 식 알림이 없다는 Step 18 확인 뒤의 사용자 결정, 보완 모듈은 만들지 않는다). 설정 저장·복원은 필수다(R44). 사용자의 UI 수정은 통합 편집기 없이 사용자가 AI 로 고치는 방식이고, 대신 FHD·QHD·UHD 세 겉보기를 처음부터 Codex 가 만든다(R107 ⑥). 어떤 기능을 넣을지는 통합 UI 애드온들이 갖춘 기능을 조사해 다시 짰다(R77 — Phase Range 의 기능 표).
 
-**시각 기준**: 인벤 자료실 idx45 의 네 번째 샘플 그림(R34)이 기준이고, idx11218 은 오른쪽 미터기 자리를 세 번째 대화창으로 바꾼 모습으로 참고한다(R32·R33). 반투명 배경의 대화창 3개(R23), 제목바·왼쪽 버튼·튀어나온 입력창 없는 깔끔한 채팅(R24), 4K 화면에서 버튼 크기 → 줄과 간격 → 아래부터 쌓은 높이 순서로 정하고 화면 비율로 환산하지 않는다(R21·R22). 2022 FanFix 기준은 철회됐다(R25).
+**시각 기준**: 인벤 자료실 idx45 의 네 번째 샘플 그림(R34)이 기준이고, idx11218 은 오른쪽 미터기 자리를 세 번째 대화창으로 바꾼 모습으로 참고한다(R32·R33). 반투명 배경의 대화창 3개(R23), 제목바·왼쪽 버튼·튀어나온 입력창 없는 깔끔한 채팅(R24), 4K 화면에서 버튼 크기 → 줄과 간격 → 아래부터 쌓은 높이 순서로 정하고 화면 비율로 환산하지 않는다(R21·R22). 이 4K 설계가 UHD 겉보기이고, FHD·QHD 겉보기도 같은 순서로 각 해상도에서 따로 정한다(R107 ⑥ · 만드는 것은 Codex). 2022 FanFix 기준은 철회됐다(R25).
 
 **일하는 순서**(R63·R64·R55·R87): 공통 외관을 첫 구현 Phase 로 연다(코드 기반은 Claude, 외관 구현은 Codex) → 기능마다 시작 애드온 하나를 배정하고, 완성도가 높아 고칠 필요가 없으면 그대로 쓴다 → 모자란 것만 설정·고침으로 맞추고, 그래도 안 되는 부분만 새로 개발한다 → 모음집 전체를 함께 검사한다 → 마지막에 Codex 가 만든 완성 목업을 이 채팅에 보여 준다(R46).
 
@@ -136,11 +139,11 @@
 | 사용자 명령 | 갈래 | 근거 · 적용 |
 |---|---|---|
 | 단일 애드온이 아닌 모음집, 기능은 각각 따로 선택 | 작업 한정 | R44·R60. 선택은 「표시 끄기」 가 아니라 AddOn 자체를 켜고 끄는 것 |
-| 전 직업 공용, 직업별 기능은 Hekili 기반, 상태+CD 는 한 애드온 | 작업 한정 | R61·R62·R44. 「한 애드온」 은 Hekili 와 그 표시 보완 모듈을 함께 켜고 끄는 「전투보조」 한 기능으로 지킨다. 무엇을 언제 쓰라고 정하는 추천·판단·회전 로직은 새로 만들지 않는다(특성별로 보여 줄 오라·proc·CD 의 정적 목록은 표시 설정 데이터로 허용 — Phase 8 기능 표). 주술사는 먼저 확인할 직업(R7)이지 전용 대상이 아니다 |
-| 설정 저장·복원, 사용자 UI 편집 필수 | 작업 한정 | R44 |
+| 전 직업 공용, 직업별 기능은 Hekili 기반, 상태+CD 는 게임 기본 Cooldown Manager | 작업 한정 | R61·R62·R104. Hekili 는 다음 행동 추천만 맡고 상태 알림·CD 는 게임 기본 Cooldown Manager 가 맡는다(R104 — R44 의 「한 애드온」 요구를 사용자가 이 방식으로 바꿨다). 보완 모듈은 만들지 않는다. 무엇을 언제 쓰라고 정하는 추천·판단·회전 로직은 새로 만들지 않는다. 주술사는 먼저 확인할 직업(R7)이지 전용 대상이 아니다 |
+| 설정 저장·복원 필수, 사용자 UI 수정은 AI 로 · 세 겉보기 | 작업 한정 | R44·R107 ⑥. 통합 편집기는 만들지 않는다. Codex 가 FHD·QHD·UHD 세 겉보기를 처음부터 만들고, 사용자는 AI 로 값을 고친다. Core 의 프레임별 편집값은 외관 코드가 읽는 약속으로 남는다(Implementation Interfaces) |
 | 시각 기준 idx45 네 번째 샘플, 11218 미터기 자리는 세 번째 대화창 | 작업 한정 | R32–R34. 2022 FanFix 철회(R25), idx2958 은 역사 비교(R27·R28) |
 | 반투명 대화창 3개, 깔끔한 채팅 | 작업 한정 | R23·R24 |
-| 4K, 버튼 크기 → 줄·간격 → 아래부터 쌓은 높이, 화면 비율 환산 금지 | 작업 한정 | R21·R22 |
+| 4K, 버튼 크기 → 줄·간격 → 아래부터 쌓은 높이, 화면 비율 환산 금지 | 작업 한정 | R21·R22. R107 ⑥ 의 FHD·QHD 겉보기도 같은 순서로 그 해상도에서 따로 정한다 |
 | 기존 제품 활용 가능, 단 외관을 고칠 각오 | 작업 한정 | R45·R50 |
 | 기존 패키지에서 쓸 것은 가져옴, 우리 것이 나으면 유지, 통째/기능만 구분 | 작업 한정 | R47·R48·R49. 아직 없는 자체 구현을 더 낫다고 하지 않는다 |
 | 공통 외관 = 구현 1페이즈, 시작 애드온 수정·최신화 먼저, 안 되는 것만 개발, 기능마다 Phase 하나 | 작업 한정 | R63·R64. Phase 2 는 코드 기반(Claude)과 외관 구현(Codex)으로 나눈다(R87) |
@@ -207,26 +210,27 @@ R1 의 첫 요청은 단축키·체력/마나·미니맵이었고 「부가 기�
 
 | Phase | 기능 (판정) | 시작 애드온 · 원천 | 쓰는 방식 | 이 Phase 가 하는 일 (Claude 몫 · 외관은 Codex) | 근거 |
 |---|---|---|---|---|---|
-| 2 | 공통 외관 (a) | V42 !DevilUI 1.1-Forever-v42 의 패널·배치 저장 기전, V42 kgPanels 1.30.0, Masque 12.1.8 + Masque Onyx 12.1.6(`References/forever-addons/`), 옛 원형 자산 | 기능만 가져옴. 설치기 전체·채팅 필터 초기화(core 1174–1184, minimap.lua 815–838)·uiScale 변경(core 1643–1644)은 빼고 | Claude: `!DevilForever_Core`(등록 표·테마 토큰 인터페이스·외관 프레임 이름 목록)를 V42 기전을 참고해 만든다. Codex 공통 외관 발주문: Step 5 설계(3840×2160, 버튼 80px, 하단 구획 304px, 상태띠 28px, 대화창 3개·미니맵·중앙 8×3·긴 윗줄·양끝 장식)로 패널·구분선·장식·글꼴을 만들고, 장식이 마우스 입력을 막지 않게 하며, 질감을 실제 게임 배율에서 판정해 필요하면 개선한다(R52) | R63·R34·R21·R22·R52·R87 · Codex 기록 `a1-r36-source-evidence.md:24–38` |
+| 2 | 공통 외관 (a) | V42 !DevilUI 1.1-Forever-v42 의 패널·배치 저장 기전, V42 kgPanels 1.30.0, Masque 12.1.8 + Masque Onyx 12.1.6(`References/forever-addons/`), 옛 원형 자산 | 기능만 가져옴. 설치기 전체·채팅 필터 초기화(core 1174–1184, minimap.lua 815–838)·uiScale 변경(core 1643–1644)은 빼고 | Claude: `!DevilForever_Core`(등록 표·테마 토큰 인터페이스·외관 프레임 이름 목록)를 V42 기전을 참고해 만든다. Codex 공통 외관 발주문: Step 5 설계(3840×2160, 버튼 80px, 하단 구획 304px, 상태띠 28px, 대화창 3개·미니맵·중앙 8×3·긴 윗줄·양끝 장식)로 패널·구분선·장식·글꼴을 만들고, 장식이 마우스 입력을 막지 않게 하며, 질감을 실제 게임 배율에서 판정해 필요하면 개선한다(R52). 겉보기는 FHD·QHD·UHD 세 가지를 처음부터 만든다(R107 ⑥ · UHD = Step 5 설계, FHD·QHD 는 같은 순서로 따로 정함) — 이미 끝난 Phase 2 의 외관 발주문에는 Step 20 에서 덧붙임을 쓴다 | R63·R34·R21·R22·R52·R87·R107 · Codex 기록 `a1-r36-source-evidence.md:24–38` |
 | 3 | 행동단축바 (a) | Dominos 12.0.4 (Dominos·Cast·Config·Masque_Dominos 동봉). 비교: Bartender4 4.19.0 | 그대로 사용 + 설정 (추정) | 바 개수·페이지 전환·직업 특수 바(stance·form 등)·단축키 표시 같은 기능 설정 기본값. 키 자동 배정은 하지 않는다. 배치·크기·스킨은 Codex. Dominos 를 고른 이유: 옛 Alpha 원형과 V42 가 모두 Dominos 를 썼고 V42 에 Dominos profile 이 있다(R47) | R1·R22·R47 · Codex 기록 `old-devil-reference-comparison.md:91` |
 | 4 | 대화창 3개 (a) | Prat-3.0 3.9.117. 비교: Glass Forever 1.1.6·Chattynator 237 (기록 방식 참고만) | 그대로 사용 + 설정 (추정) | 기본 대화창과 기본 입력은 그대로 둔다. 켤 Prat 모듈과 core 의 메시지·입력 hook·History·ChatLog 부수 동작을 판정하고, 세 창 분담(D3)을 기본값으로 넣는다. 미터기를 세 번째 창 자리에 두지 않는다. 버튼·탭·입력 테두리·글꼴 외관은 Codex. Prat 을 고른 이유: Glass 는 instance 안 표시 한계, Chattynator 는 대화창 자체를 바꾼다(Codex 기록) | R23·R24·R33 · Codex 기록 `forever-clean-chat-research.md:59,74–78,88–99` |
 | 5 | 미니맵 (a) | SexyMap v12.1.7. 비교: BasicMinimap v12.1.6, V42 minimap.lua 의 사각 지도 기전 | 그대로 사용 + 설정 (추정) | 클릭·확대·핑·추적 아이콘·버튼 정리 같은 기능 설정. 사각 모양·위치·테두리는 Codex | R1·R34 |
-| 6 | 기본 unit·직업 자원 (a) | Forever Unit Frames 0.65.2. 비교: V42 PitBull4 4.2.49-Forever-v42, NugComboBar 12.1.3(연계 점수) | 그대로 사용 + 설정 (추정) | 모든 직업 공통의 체력과 직업마다 다른 주·보조 자원을 Step 10 직업 표와 대조해 맞게 보이는지 설정한다. 프레임 위 버프·디버프·치유 예측·거리 흐림도 FUF 설정 범위다. 모든 직업에 마나·토템을 강제하지 않는다. Phase 9 가 켜지면 파티·공격대 표시는 끈다 | R1·R61 · features.md:52–53,180–181 |
+| 6 | 기본 unit·직업 자원 (a) | Forever Unit Frames 0.65.2. 비교: V42 PitBull4 4.2.49-Forever-v42, NugComboBar 12.1.3(연계 점수) | 그대로 사용 + 설정 (추정) | 모든 직업 공통의 체력과 직업마다 다른 주·보조 자원을 Step 10 직업 표와 대조해 맞게 보이는지 설정한다. 프레임 위 버프·디버프·치유 예측·거리 흐림도 FUF 설정 범위다. 모든 직업에 마나·토템을 강제하지 않는다. Phase 9 가 켜지면 파티·공격대 표시는 끈다. R107 ① 로 PitBull4 판을 Phase 6-rev 에서 따로 만들어 비교한다 — FUF 판은 그대로 둔다 | R1·R61·R107 · features.md:52–53,180–181 |
+| 6-rev | 기본 unit·직업 자원 두 번째 판 (a) | PitBull4 v4.2.50 (`References/addon-sources/pitbull-unit-frames-4-0/` — 받은 판의 TOC 는 Cata·Mainline·Mists·TBC 뿐이고 16001 이 없다, 실측). 고침 원천: V42 PitBull4 4.2.49-Forever-v42 (`work/old-reference-r36-3ed3y_p1/extracted-forever-v42/Interface/AddOns/PitBull4` — TOC Interface 16001, 「Confirmed Forever 1.60.1 build 70291」, 실측). 기본값 원천: V42 `!DevilUI/Profile/PitBull4.lua` | 고침: 최신판에 Forever TOC(Interface 16001)를 더하고 V42 의 Forever 고침을 옮긴다. Devil profile 을 기본값으로 넣는다 | FUF 판(Phase 6)과 같은 요구(체력·직업 자원을 Step 10 표와 대조, 마나·토템 강제 없음, Phase 9 가 켜지면 파티·공격대 끔)를 PitBull4 로 맞춘다. 두 판을 함께 켜지 않는다(같은 기능 두 애드온 금지). 어느 쪽을 기본으로 묶을지는 Codex 비교 결과로 Phase 23 에서 정해 기록한다. 고친 판이라 Codex 발주문에 자동 업데이트 끄기를 넣는다. 외관은 Codex | R107 ①·R47·R61 · `Collection/manifest.md:24` |
 | 7 | 시전바 (a) | Quartz 3.8.0. 비교: V42 Castbars Forever-2 | 그대로 사용 + 설정 (추정) | 내/대상 시전바, 시전·취소·차단 표시. 기본 시전바·Dominos_Cast·FUF 시전바와 겹치지 않게 한쪽만 남긴다 | Codex 기록 `Codex/plans/2026-11-17-devil-ui-forever-plan.md:137` |
-| 8 | 직업 전투보조 (a) | Hekili v0.8.6-forever (직업 모듈 9개 동봉). 비교: TellMeWhen 12.1.5 (알림 방식 참고만) | 그대로 사용 + 표시 설정. Step 18 의 갈래 판정에 따라 표시 전용 보완 모듈 `DevilForever_Combat` 을 새로 개발(Step 19) | **확인(Step 18)**: Step 10 직업·특성 표의 특성마다 ㉠ Hekili 직업 모듈에 오라·proc·CD 감시 데이터가 있는지 ㉡ Hekili 가 상태 알림을 어떤 꼴로 보이는지(R6 의 EventAlert 식 — 화면 중앙 아이콘·소리·강조 — 이 있는지)를 원천에서 확인하고, 「직업 × 특성 × (상태 알림 / proc / CD / 다음 행동 추천)」 지원표를 만든다. **갈림길**: 갈래 1 = ㉠·㉡ 이 모두 있으면 Hekili 설정만으로 맞춘다. 갈래 2 = ㉡ 이 없으면 보완 모듈이 전 특성의 알림 꼴(각각 끌 수 있게)을 맡는다. 갈래 3 = 어떤 특성에 ㉠ 이 없으면 보완 모듈이 그 특성의 정적 표시 목록을 갖는다. **갈래 3 의 원천**: ① Hekili 직업 모듈 데이터 → ② 없으면 D7 로 Forever 주문·오라 자료(예: 공개 DB 페이지)를 받아 Step 19 에서 목록 작성 → ③ 그것도 없으면 Retail 로 지어내지 않고 그 특성을 「원천 없음」 으로 표시해 사용자가 고르는 칸만 열어 두고, 최종 보고에 그 특성 목록을 싣는다. 사용자가 추가·삭제한 항목은 어느 갈래에서나 우선한다. **경계**: R62 로 금지되는 것은 「무엇을 언제 쓰라고 정하는 추천·판단·회전 로직」 뿐이고 정적 표시 목록은 표시 설정 데이터다. 다른 알림 제품은 붙이지 않는다. Hekili 와 보완 모듈은 「전투보조」 한 기능으로 함께 켜고 끄는 한 묶음이다(R44). 직업별 점검은 주술사부터 한다(R7). 표시 범위는 D2. 표시 위치·크기·스킨은 Codex | R5·R6·R44·R61·R62 |
+| 8 | 직업 전투보조 (a) | Hekili v0.8.6-forever (직업 모듈 9개 동봉) — 다음 행동 추천. 게임 기본 Cooldown Manager — 상태 알림·CD. 비교: TellMeWhen 12.1.5 (알림 방식 참고만) | Hekili 는 그대로 사용 + 표시 설정. Cooldown Manager 는 게임 기능이라 애드온이 아니다. 보완 모듈은 만들지 않는다(R104) | **확인(Step 18, 끝남)**: 특성 28개 지원표 `Collection/data/hekili-support.md` — Hekili 추천 지원 24·지원 안 함 4(치유 특성), 오라·CD 감시 자료는 28개 모두 있으나 EventAlert 식 알림(화면 중앙 아이콘·소리·강조)은 없다. **R104 결정**: Hekili 는 다음 행동 추천만 보이고(추천은 따로 끌 수 있게 — D2), 상태 알림·CD 는 게임 기본 Cooldown Manager 가 보인다. 지원 안 함 치유 특성 4개는 Cooldown Manager 표시만 받는다. **Step 19**: Hekili 표시 기본값(표시창·추천 끄기·단축바 강조)과 Cooldown Manager 인계 메모(특성별로 무엇이 보이는지 Codex 가 볼 항목 — 지원표의 자료를 쓴다). **Step 20**: 직업별 점검(주술사부터, R7)과 Codex 발주문 — Cooldown Manager 에 화면 중앙 강조·소리가 있는지를 Codex 가 게임 안에서 확인하고, 없으면 결과를 최종 보고에 싣는다(새 알림 제품은 붙이지 않는다). **경계**: 무엇을 언제 쓰라고 정하는 추천·판단·회전 로직은 새로 만들지 않는다(R62). 표시 위치·크기·스킨(Hekili·Cooldown Manager 모두)은 Codex | R5·R6·R61·R62·R104 |
 | 9 | 공격대 프레임 (a) | Grid2 4.1.13-forever (Grid2·Grid2Options·Grid2LDB). 비교: VuhDo v3.221 | 그대로 사용 + 설정 (추정) | 역할·해제 가능 디버프·마우스오버·클릭 시전·지속 치유 표시자 같은 기능 의미는 바꾸지 않고 기본값만 넣는다. 외관은 Codex | R45·R50 · Codex 기록 `root-starting-addon-facts-and-r67.md:6,11` |
-| 10 | 데미지 미터 (a) | Details 20261109 (`Details_Camelot.toc` 16001). 비교: Skada v2.6.7 | 그대로 사용 + 설정 (추정) | 값·정렬 의미 보존, 기본 표시 항목. 세 번째 대화창 자리를 차지하지 않는 위치와 스킨은 Codex | R45·R50·R33 |
-| 11 | 어그로 미터 (a) | ForeverThreat 1.12.3. 비교: ThreatClassic2 2.77-forever | 그대로 사용 + 설정 (추정) | 위험도 표시 의미 보존, profile 기본값. 이름표의 위협 색(Phase 14)과 같은 정보를 두 번 크게 보이지 않게 나눈다. 위치·스킨은 Codex | R45·R50 |
+| 10 | 데미지 미터·어그로 미터 (a) | Details 20261109 (`Details_Camelot.toc` 16001) + 같은 묶음의 플러그인 Details_TinyThreat (`Details_TinyThreat_Camelot.toc` 16001, RequiredDeps Details — `Collection/manifest.md:99`). 비교: Skada v2.6.7, ForeverThreat 1.12.3 | 그대로 사용 + 설정 (추정) | 값·정렬 의미 보존, 기본 표시 항목. 위협은 TinyThreat 플러그인 창으로 보이고 위험도 표시 의미를 바꾸지 않는다(R107 ②). 게임 기본 이름표의 위협 색(Phase 14)과 같은 정보를 두 번 크게 보이지 않게 나눈다. 세 번째 대화창 자리를 차지하지 않는 위치와 스킨은 Codex | R45·R50·R33·R107 |
+| 11 | 어그로 미터 (a) — **Phase 10 에 합침(R107 ②)** | 원래 안: ForeverThreat 1.12.3. 비교: ThreatClassic2 2.77-forever | 빠짐 — Details! 의 TinyThreat 를 쓴다 | 없음 (Phase 10 이 맡는다) | R107 |
 | 12 | 툴팁 (b) | TipTac Reborn v26.11.11 (`TipTac_Forever.toc`). 참고: V42 TipTac 26.09.03 과 `!DevilUI/Profile/TipTac.lua` | **빠짐(R100)** — 게임 기본 기능을 쓴다. 원래 안: + 설정 (추정) | 표시 위치(마우스 옆/고정), 아이템 비교 툴팁 같은 기능 설정. 배경·테두리·글꼴은 Codex | features.md:54,135,203 · R47·R50 |
 | 13 | 가방 (b) | Bagnon 12.1.11 (BagBrother·Bagnon_Bank·Bagnon_Config). 비교: Baganator 862 (한 창·분류 보기) | **빠짐(R100)** — 게임 기본 기능을 쓴다. 원래 안: + 설정 (추정) | 한 창 가방·은행 보기와 메뉴줄 가방 버튼 연결. 외관은 Codex | features.md:55–56,136–137 |
-| 14 | 이름표 (b) | Platynator 547. 참고: `!DevilUI/Profile/Plater.lua`(Plater 자체는 V42 에 없음) | 그대로 사용 + 설정 (추정) | 체력·시전·위협 색 표시 기능. 위협 상태 표시(features F37)를 여기서 받는다. 데빌 토큰 적용은 Codex | features.md:57,80,138 |
-| 15 | 기본 창 스킨 (b) | Aurora 12.1.5.4 | 그대로 사용 (추정) | 기능이 곧 외관이라 Claude 몫은 manifest 등록과 Codex 외관 발주문뿐이다. 기본 버프 창이 범위에 드는지, 다른 애드온 창에 스킨이 두 번 걸리지 않는지는 Codex 가 본다 | features.md:68,149,216 · R50·R87 |
-| 16 | 정보 바 (b) | Titan Panel 9.3.7. 참고: V42 ChocolateBar v3.3.5·Broker 플러그인과 `!DevilUI/Profile/ChocolateBar.lua` | 그대로 사용 + 설정 (추정) | 시간·지연·골드·화폐 같은 정보와 Devilconfig·BugSack 같은 LDB(LibDataBroker, 정보 표시 공용 규약) 버튼 구성. Step 5 하단 상태띠(28px)에 앉히는 외관은 Codex. Titan 을 고른 이유: Forever 판이 확인됐고 ChocolateBar 는 V42 판만 있다(R48 비교는 Step 8) | features.md:58,139,204,239 · R47·R48 |
+| 14 | 이름표 (b) | 게임 기본 이름표 (애드온 없음 · Platynator 547 은 뺌 — R107 ③). 참고: `!DevilUI/Profile/Plater.lua`(Plater 자체는 V42 에 없음) | 애드온 없음 — 옛날식(게임 기본 + 외관) | Claude 몫은 Codex 발주문뿐(없으면 그것도 없음): 기본 이름표의 체력·위협 색 표시를 확인하고 외관을 맞춘다. 시전은 Phase 7, 위협 수치는 Phase 10 이 따로 맡는다 | features.md:57,80,138 · R107 |
+| 15 | 기본 창 스킨 (b) | Aurora 12.1.5.4 | 쓸지 말지를 Codex 가 정한다(R107 ④) | Claude 몫은 Codex 외관 발주문(사용 판정 포함)과, 쓰기로 하면 manifest 등록뿐이다. 기본 버프 창이 범위에 드는지, 다른 애드온 창에 스킨이 두 번 걸리지 않는지는 Codex 가 본다 | features.md:68,149,216 · R50·R87·R107 |
+| 16 | 상태띠 (b) — 가벼운 정보만 | Titan Panel 9.3.7 은 쓰지 않는다(R107 ⑤ — 무거운 것은 뺌). 참고만: V42 ChocolateBar v3.3.5·Broker 플러그인과 `!DevilUI/Profile/ChocolateBar.lua` | 새 개발 (작은 정보 부분) | 가벼운 정보만: 시계, FPS·지연, 골드, 내구도, 가방 빈칸. 이 정보 부분을 Core 에 둘지 작은 애드온 하나로 둘지는 Step 28a 에서 정한다 — 애드온 수를 늘리지 않는 쪽이 먼저다(R101). 무거운 것(화폐 목록·LDB 플러그인 묶음·길드/친구 목록 등)은 넣지 않는다. Step 5 하단 상태띠(28px)에 앉히는 외관은 Codex | features.md:58,139,204,239 · R101·R107 |
 | 17 | 퀘스트·목표 추적기 (b) | Kaliel's Tracker 8.11.1-forever. 참고: Questie v12.10.0(퀘스트 도우미, V42 profile 있음) | **빠짐(R100)** — 게임 기본 기능을 쓴다. 원래 안: + 설정 (추정) | 추적 항목 기능 설정. 위치·외관(중앙 시야를 가리지 않게)은 Codex | features.md:81,162,230 |
 | 18 | 세계지도 (b) — **빠짐(R100)** | Mapster 1.14.0. 참고: V42 Mapster 1.14.0-Forever-v2(FogClear 오류 막기의 원천)와 `!DevilUI/Profile/Mapster.lua` | 고침 (Step 8 판정): V42 의 FogClear 오류 막기를 받은 판에 옮긴다. TOC 머리말 `AllowLoadGameType: mainline` 은 Codex 가 게임 애드온 목록에서 로드 불가를 확인할 때만 고친다 | 좌표·미탐색 영역 같은 기능 설정. 미니맵(Phase 5)과 담당을 나눈다. 고친 판이라 Codex 발주문에 자동 업데이트 끄기를 넣는다. 크기·투명도는 Codex | features.md:63,144,209 · R47 · `Collection/judgment.md` 4-1 · master 결정 `Claude/results/handoffs/phase1/TRIAGE_phase1.md:24` |
 | 19 | 경험치·평판 바 (b) | Experience Forever 2.0.4. 비교: Dominos_Progress (Dominos 12.0.4 묶음 안 별도 AddOn — 소환수 경험치 없음), V42 Broker_XPBar | 그대로 사용 + 설정 (Step 8 판정) | 경험치·평판·사냥꾼 소환수 경험치(`showPetBar`) 표시 기능 설정. 같은 기능을 두 애드온이 맡지 않게 Dominos_Progress 는 끈다. Step 5 설계의 긴 윗줄·검은 띠 범위 안 배치는 Codex | features.md:59–60,140–141,190,219 · R47 · `Collection/judgment.md` Phase 19 · master 결정 `TRIAGE_phase1.md:27` |
-| 20 | 설정 저장·복원 (a, 필수 묶음) | ProfileManager v4.0. 비교: V42 Reflux 1.17-Forever-v1 | 설정 + 모자란 범위 복원만 새 개발 | 등록 표의 저장 변수만 다루는 범위 복원. 공통 배치·외관 설정과 직업·특성별 설정을 나눠 저장하고 특성이 바뀌면 그 profile 로 전환한다(features F68). 설치되지 않은 애드온 항목은 지우지 않고, 알 수 없는 판의 데이터는 조용히 초기화하지 않는다. 키 설정과 게임 설정(ProfileManager 의 `Keybinds.lua`·`GameSettings.lua`)도 R44 의 「설정 저장 복원」 범위에 넣는다 — 사용자가 직접 정한 값을 저장했다가 사용자가 고를 때만 되돌리며, 키 자동 배정·매크로 이식과는 다르다. 매크로는 다루지 않는다(R14–R17). Reflux 에서 바꾼 이유는 Phase Range 「바꾼 곳」 6 | R44 · survey.md:89–93 |
-| 21 | 사용자 UI 편집 (a, 필수 묶음) | 새 개발. 참고: V42 Devilconfig 1.0-Forever-v42 (LDB 실행 단추·전투 중 거절 패턴), V42 `!DevilUI/minimap.lua` 의 이동 손잡이·잠금·전투 중 숨김. 비교: Edit Mode Expanded 12.1-026, BlizzMove v3.8.8 (Step 34 에서 정독) | 새 개발 (Step 8 판정: Devilconfig 에는 편집·저장 기전이 없다) — 편집 창과 저장 | 위치·크기·글꼴·색·줄 수·간격을 편집하고 저장하는 기능. 저장한 값은 Core 가 「토큰 위에 덮어쓰는 프레임별 값」 으로 내주고 외관 코드(Codex)가 그 값을 읽어 화면에 건다. 각 애드온이 실제로 지원하는 항목만 보여 준다. 적용 전 미리보기, 취소, 기본값으로 되돌리기. 보호된 프레임 편집은 전투 밖에서만. 편집 창의 외관은 Codex | R44·R47 · survey.md:99–103 · `Collection/judgment.md` 4-3 · master 결정 `TRIAGE_phase1.md:25` |
+| 20 | 설정 저장·복원 (a, 필수 묶음) | ProfileManager v4.0. 비교: V42 Reflux 1.17-Forever-v1 | 설정 + 모자란 범위 복원만 새 개발 | 등록 표의 저장 변수만 다루는 범위 복원. 세 겉보기(FHD·QHD·UHD) preset 으로 되돌리기도 복원 범위다 — 사용자가 AI 로 고친 편집값을 지우고 고른 preset 값으로 돌아간다(R107 ⑥). 공통 배치·외관 설정과 직업·특성별 설정을 나눠 저장하고 특성이 바뀌면 그 profile 로 전환한다(features F68). 설치되지 않은 애드온 항목은 지우지 않고, 알 수 없는 판의 데이터는 조용히 초기화하지 않는다. 키 설정과 게임 설정(ProfileManager 의 `Keybinds.lua`·`GameSettings.lua`)도 R44 의 「설정 저장 복원」 범위에 넣는다 — 사용자가 직접 정한 값을 저장했다가 사용자가 고를 때만 되돌리며, 키 자동 배정·매크로 이식과는 다르다. 매크로는 다루지 않는다(R14–R17). Reflux 에서 바꾼 이유는 Phase Range 「바꾼 곳」 6 | R44 · survey.md:89–93 |
+| 21 | 사용자 UI 편집 (a) — **빠짐(R107 ⑥)** | 원래 안: 새 개발(참고 V42 Devilconfig·`!DevilUI/minimap.lua`, 비교 Edit Mode Expanded·BlizzMove) | 빠짐 — 통합 편집기를 만들지 않는다 | 없음. 사용자는 AI 로 값을 고치고, Codex 가 FHD·QHD·UHD 세 겉보기를 처음부터 만든다(Phase 2). Core 의 프레임별 편집값 읽기 약속은 그대로 남고(Implementation Interfaces), preset 으로 되돌리기는 Phase 20 이 맡는다 | R44·R107 · `Collection/judgment.md` 4-3 |
 | 22 | 대안 테마 1–2개 (a) | Phase 2 Core 의 테마 토큰 인터페이스 | 외관 구현은 Codex | Claude: 테마 토큰 세트를 바꿔 끼우는 인터페이스가 다른 애드온 스킨에도 같이 걸리는지 확인하고 Codex 대안 테마 발주문을 쓴다. Codex: 단순 색 바꾸기가 아니라 질감·글꼴·막대·장식이 한 컨셉으로 맞는 테마 1–2개 | R51·R53·R87 |
 
 **만들지 않는 기능 — D6 결정(R83) · 나중에 사용자가 고르면 Phase 19 뒤에 붙인다**
@@ -240,9 +244,9 @@ R1 의 첫 요청은 단축키·체력/마나·미니맵이었고 「부가 기�
 
 | 기능 | 처리 | 이유 |
 |---|---|---|
-| 버프·디버프 표시 | 별도 Phase 없음 (규칙 예외) | 규칙 ①(7/8·6/8)에 걸리지만 예외로 둔다. 프레임 위 오라는 Phase 6, 상태 알림은 Phase 8(R44 「두가지가 하나의 애드온」), 기본 버프 창 외관은 Phase 15 의 Codex 외관 발주문에서 확인. 전용 시작 후보 중 Forever 확정은 알림 도구 TellMeWhen 뿐이라 R44 와 겹친다 |
-| 재사용 대기시간 관리자·버튼 위 CD 숫자 | 별도 Phase 없음 | R44 가 CD 를 Hekili 쪽 한 애드온에 두었다. 숫자 표시 대표 OmniCC 는 Forever 미확인(features.md:142) → 필요하면 D7 |
-| 위협 상태 표시 | Phase 11·14 가 맡음 | 같은 정보를 두 애드온이 맡지 않는다 |
+| 버프·디버프 표시 | 별도 Phase 없음 (규칙 예외) | 규칙 ①(7/8·6/8)에 걸리지만 예외로 둔다. 프레임 위 오라는 Phase 6(·6-rev), 상태 알림은 게임 기본 Cooldown Manager(Phase 8 이 기본값과 Codex 확인을 맡음 — R104), 기본 버프 창 외관은 Phase 15 의 Codex 외관 발주문에서 확인. 전용 시작 후보 중 Forever 확정은 알림 도구 TellMeWhen 뿐이고 새 알림 제품은 붙이지 않는다 |
+| 재사용 대기시간 관리자·버튼 위 CD 숫자 | 별도 Phase 없음 | R104 로 CD 는 게임 기본 Cooldown Manager 가 보인다. 숫자 표시 대표 OmniCC 는 Forever 미확인(features.md:142) → 필요하면 D7 |
+| 위협 상태 표시 | Phase 10(TinyThreat)·Phase 14(게임 기본 이름표의 위협 색)가 맡음 | 같은 정보를 두 애드온이 맡지 않는다(R107 ②③) |
 | 지속 치유 추적·치유 예측·거리 흐림 | Phase 6·9 의 설정 범위 | FUF·Grid2 가 프레임 안 표시자로 갖고 있다(features.md:163,180–181) |
 | 한 창 가방·화폐 정보·소환수 경험치 | Phase 13·16·19 의 범위 | 같은 기능의 세부 항목이다 |
 | 글꼴 교체·말풍선 글꼴 | Phase 2·4 의 범위 | 공통 외관 토큰과 Prat 의 말풍선 글꼴(features.md:191)로 처리 |
@@ -258,16 +262,16 @@ R1 의 첫 요청은 단축키·체력/마나·미니맵이었고 「부가 기�
 
 | V42 폴더 | 가는 곳 |
 |---|---|
-| !DevilUI · kgPanels · kgPanelsConfig · Masque · Masque_Onyx | Phase 2 (공통 외관 — !DevilUI 의 기전은 Claude 가 Core 를 만들 때 참고하고(그 `minimap.lua` 이동 손잡이는 Phase 21 편집 창도 참고), kgPanels·kgPanelsConfig 패널과 Masque·Onyx 스킨(받은 최신판)은 Codex 외관 구현이 쓴다 · R87) |
+| !DevilUI · kgPanels · kgPanelsConfig · Masque · Masque_Onyx | Phase 2 (공통 외관 — !DevilUI 의 기전은 Claude 가 Core 를 만들 때 참고하고, kgPanels·kgPanelsConfig 패널과 Masque·Onyx 스킨(받은 최신판)은 Codex 외관 구현이 쓴다 · R87). `!DevilUI/Profile/PitBull4.lua` 는 Phase 6-rev 의 기본값 원천 |
 | Dominos · Dominos_Config · Masque_Dominos | Phase 3 (받은 Dominos 12.0.4 로 최신화) |
 | Dominos_Cast · Castbars | Phase 7 의 비교·중복 정리 대상 |
-| PitBull4 | Phase 6 의 비교 대상 |
+| PitBull4 | Phase 6-rev 의 고침 원천 (Forever 고침을 받은 v4.2.50 에 옮긴다 · R107 ①) |
 | TipTac · TipTacItemRef · TipTacOptions · TipTacTalents | Phase 12 (TipTac Reborn 으로 최신화, 설정 참고) |
-| ChocolateBar · Broker_Money · Broker_Guild_Friends · shPerformance | Phase 16 (정보 바와 그 위에 올리는 LDB 정보 — 골드·길드/친구·FPS·지연·메모리) |
+| ChocolateBar · Broker_Money · Broker_Guild_Friends · shPerformance | Phase 16 의 참고만 (가벼운 상태띠의 정보 항목 비교 — 애드온은 넣지 않는다 · R107 ⑤) |
 | Broker_XPBar · Dominos_Progress | Phase 19 의 비교 대상 (시작은 받은 Experience Forever 2.0.4 — Step 8 판정) |
 | Mapster | Phase 18 (FogClear 오류 막기를 받은 Mapster 1.14.0 에 옮기는 원천) |
 | Reflux | Phase 20 의 비교 대상 |
-| Devilconfig | Phase 21 (실행 단추 패턴만 참고 · 편집·저장은 새 개발) |
+| Devilconfig | 쓰지 않음 (Phase 21 이 R107 ⑥ 으로 빠짐) |
 | Dominos_Roll · Leatrix_Plus | 만들지 않는 기능 (D6 결정 · 위 표) |
 | !BugGrabber · BugSack | Codex 실사용 검증용 도구 (D1) |
 | RangeDisplay · RangeDisplay_Options (대상 거리 숫자) · SkillUpForever (전문기술 숙련 정보) · AdvancedInterfaceOptions (숨은 게임 옵션 창) | 제외 — 규칙 ① 에는 걸리지만 CurseForge Forever 판이 확인되지 않아 ② 미충족. 나중에 원하면 사용자가 고르고 D7 경로로 Forever 판 조사 |
@@ -282,6 +286,7 @@ R1 의 첫 요청은 단축키·체력/마나·미니맵이었고 「부가 기�
 6. **저장·복원 시작 애드온을 Reflux 에서 ProfileManager 로 바꿨다.** ProfileManager 는 Forever 판이 확인됐고(survey.md:91) 지원 애드온별로 골라서 적용하는 흐름이 범위 복원 요구와 가장 가깝다. Reflux 정식판은 Forever 판이 확인되지 않았고(TOC 60000) V42 판은 전역 전환 문제가 있다(Codex 기록). ProfileManager 가 우리 애드온들을 얼마나 지원하는지는 아직 모른다 — Step 32 에서 `Providers.lua`·`Addons.lua` 를 읽고 모자라면 Reflux 의 기전을 참고해 그 부분만 만든다.
 7. **원천 확보 단계를 「수령 완료 → 해제·manifest·정적 분석」 으로 바꿨다(R81).** 원천 대기 때 쓰던 대체 시작점 열과 긴 미루기 규칙은 아래 짧은 예외 규칙으로 줄였다.
 8. **Step 8 판정으로 세 기능의 쓰는 방식을 바꿨다(A1 판단 · master 결정 `TRIAGE_phase1.md:21–27`).** 세계지도(Phase 18)는 V42 가 고친 FogClear 오류 막기를 받은 Mapster 에 옮기는 「고침」 이다. 경험치·평판 바(Phase 19)는 Dominos_Progress 에 소환수 경험치가 없어 Experience Forever 로 시작한다. 사용자 UI 편집(Phase 21)은 V42 Devilconfig 에 편집·저장 기전이 없어 「새 개발」 이다. 근거는 `Collection/judgment.md` 4-1·4-3·Phase 19.
+9. **R104·R107 로 기능 근간을 다시 정했다(사용자 결정).** Phase 8 은 Hekili 추천 + 게임 기본 Cooldown Manager(보완 모듈 없음), unit 프레임은 FUF(Phase 6)와 PitBull4(Phase 6-rev) 두 판을 만들어 비교, 어그로 미터는 Details! 의 TinyThreat(Phase 11 은 Phase 10 에 합침), 이름표는 게임 기본(Phase 14 애드온 없음), Aurora 사용 여부는 Codex, 상태띠는 가벼운 정보만(Titan 없음), 통합 편집기 없음(Phase 21 빠짐) — 대신 Codex 가 FHD·QHD·UHD 세 겉보기를 처음부터 만든다.
 
 ### 원천이 모자랄 때 (남은 예외)
 
@@ -290,9 +295,9 @@ R1 의 첫 요청은 단축키·체력/마나·미니맵이었고 「부가 기�
 ## Non-goals
 
 - 사용자 검수·명시 GO 전 구현·설치·렌더 (R65).
-- 단일 거대 애드온, 표시 토글만으로 흉내 낸 「선택」, 같은 기능을 두 애드온이 동시에 맡는 구성(Hekili 와 그 표시 보완 모듈은 역할을 나눠 함께 켜고 끄는 한 묶음이라 여기에 들지 않는다).
-- 무엇을 언제 쓰라고 정하는 자체 추천·판단·회전 로직(rotation 엔진)과 직업마다 별도 UI 를 만드는 것 (R62). 특성별로 보여 줄 오라·proc·CD 를 적은 정적 표시 목록은 표시 설정 데이터라 여기에 들지 않는다.
-- Forever 에 없는 직업·특성·자원·주문·오라를 Retail 목록으로 지어내는 것, 확인하지 않은 직업을 지원 완료로 적는 것 (R61). 원천이 없으면 「원천 없음」 으로 표시한다(Phase 8 갈래 3).
+- 단일 거대 애드온, 표시 토글만으로 흉내 낸 「선택」, 같은 기능을 두 애드온이 동시에 맡는 구성(Phase 6 FUF 와 Phase 6-rev PitBull4 는 비교용 두 판이라 함께 켜지 않는다).
+- 무엇을 언제 쓰라고 정하는 자체 추천·판단·회전 로직(rotation 엔진)과 직업마다 별도 UI 를 만드는 것 (R62). 상태 알림·CD 표시 보완 모듈 (R104 — 게임 기본 Cooldown Manager 를 쓴다). 통합 UI 편집기 (R107 ⑥).
+- Forever 에 없는 직업·특성·자원·주문·오라를 Retail 목록으로 지어내는 것, 확인하지 않은 직업을 지원 완료로 적는 것 (R61). 원천이 없으면 「원천 없음」 으로 표시한다.
 - 2022 배치·V42 설치기 통째 이식, 사용자 채팅 필터·uiScale·전체 WTF 초기화.
 - 이 세션이 UI 외관(패널·장식·질감·글꼴·배치·각 기능 스킨·대안 테마·목업)을 구현하는 것 (R87 — Codex 몫, Claude 는 외관이 기댈 코드 인터페이스와 발주문만).
 - 완성도가 높아 고칠 필요가 없는 기존 애드온을 고치는 것 (R87).
@@ -304,8 +309,8 @@ R1 의 첫 요청은 단축키·체력/마나·미니맵이었고 「부가 기�
 
 ### 모음집 구성 (A1 제안)
 
-- **필수 묶음**: 공통 외관(`!DevilForever_Core` — 등록 표, 처음 로드 때 기본 설정을 한 번 넣고 사용자 값은 덮어쓰지 않는 기본값 주입, 테마 토큰과 프레임별 편집값을 내주는 읽기 함수, 외관 프레임 이름 목록, 그리고 Codex 가 만드는 패널·구분선·장식·글꼴), Masque 와 Onyx 스킨, 설정 저장·복원(Phase 20), 사용자 UI 편집(Phase 21). R44 의 「외관을 위한 애드온들 가져다쓴것들 필수 적인건 하나로 묶더라도」 와 「설정 저장 복원도 당연히 필요」 를 묶음 단위로 옮긴 것이다. 폴더는 각자 따로 두고 manifest 에서 필수로 표시한다.
-- **개별 기능 애드온**: Phase 3–19 의 기능. 각자 자기 폴더·TOC·저장 변수를 갖고 따로 켜고 끈다. 외관 연결 폴더 `DevilForever_Skin_<애드온>`(그 애드온을 의존으로 둠)은 Codex 가 만들며, 그 애드온이 꺼져 있으면 로드되지 않는다.
+- **필수 묶음**: 공통 외관(`!DevilForever_Core` — 등록 표, 처음 로드 때 기본 설정을 한 번 넣고 사용자 값은 덮어쓰지 않는 기본값 주입, 테마 토큰과 프레임별 편집값을 내주는 읽기 함수, 외관 프레임 이름 목록, 그리고 Codex 가 만드는 패널·구분선·장식·글꼴), Masque 와 Onyx 스킨, 설정 저장·복원(Phase 20). R44 의 「외관을 위한 애드온들 가져다쓴것들 필수 적인건 하나로 묶더라도」 와 「설정 저장 복원도 당연히 필요」 를 묶음 단위로 옮긴 것이다. 사용자 UI 편집은 R107 ⑥ 으로 묶음에서 빠졌다(사용자가 AI 로 고침). 폴더는 각자 따로 두고 manifest 에서 필수로 표시한다.
+- **개별 기능 애드온**: Phase 3–19 와 Phase 6-rev 의 기능(unit 프레임은 FUF 판과 PitBull4 판 가운데 하나만 켠다). 각자 자기 폴더·TOC·저장 변수를 갖고 따로 켜고 끈다. 외관 연결 폴더 `DevilForever_Skin_<애드온>`(그 애드온을 의존으로 둠)은 Codex 가 만들며, 그 애드온이 꺼져 있으면 로드되지 않는다.
 - **이름**: 우리가 새로 만드는 폴더는 `DevilForever_` 로 시작한다. 고친 시작 애드온은 원래 폴더 이름을 유지하고 manifest 에 「고침」 으로 표시한다(원래 이름이어야 다른 애드온의 의존이 깨지지 않는다). 사용자 관례가 따로 있으면 그것을 따른다.
 
 ### 시작 애드온을 쓰는 방식 (R63·R87)
@@ -330,7 +335,7 @@ R1 의 첫 요청은 단축키·체력/마나·미니맵이었고 「부가 기�
 - **Phase 1 준비**: Step 8 은 `References/` 의 ZIP 을 읽기 전용으로 두고, 시작 애드온과 비교 대상 ZIP 을 스크립트로 `Collection/upstream/` 에 푼다(경로 검사·링크 차단·SHA256 대조). 풀면서 TOC·의존·저장 변수·라이브러리 판·라이선스 파일을 기계로 뽑아 manifest 초안을 만들고, 위 「판정」 을 한다. Step 9 는 `Collection/` 자리와 `.gitignore` 한 줄(해제본 제외), `lupa` 설치(Lua 5.1 문법 검사용), TOC/의존 대조와 묶음 빌드 스크립트. Step 10 은 Hekili 직업 모듈·FUF 원천으로 직업·특성·자원 표를 만든다.
 - **Phase 2 공통 외관**: Claude 는 Step 11 에서 Core(등록 표·기본값 주입·테마 토큰과 프레임별 편집값 읽기 함수·외관 프레임 이름 목록)를 V42 !DevilUI 기전을 참고해 만들고, Step 12 에서 검수 B 반영 뒤 Codex 공통 외관 발주문을 쓴다. 외관 구현은 Codex 몫이다(R87). R63 의 「공통 외관 = 구현 1페이즈」 순서는 지킨다 — 외관이 기댈 인터페이스를 먼저 만든다.
 - **Phase 23 연계**: 필수 묶음만 켠 상태, 전부 켠 상태, 개별 기능을 하나씩 뺀 상태를 TOC·의존·등록 표·저장 변수 이름으로 정적 대조하고, 같은 조합의 실제 로드는 Codex 발주문으로 넘긴다. 발견한 결함을 고친다.
-- **Phase 24 최종 목업**: 모든 가능한 작업을 닫은 뒤(R55) Claude 가 Codex 목업 발주문을 쓴다: 4K 전체 화면, 하단 원배율 잘라 보기, 단축키 글자 확대, 직업별 자원 표시 예시, 데빌 기본 테마와 대안 테마 비교, 모든 그림에 「목업 — 실제 게임 화면 아님」. Codex 가 올린 목업을 Claude 가 Step 5 구획·표시 문구와 대조한 뒤 이 채팅에 제시한다(R46).
+- **Phase 24 최종 목업**: 모든 가능한 작업을 닫은 뒤(R55) Claude 가 Codex 목업 발주문을 쓴다: 세 겉보기(FHD·QHD·UHD) 각각의 전체 화면, 하단 원배율 잘라 보기, 단축키 글자 확대, 직업별 자원 표시 예시, 데빌 기본 테마와 대안 테마 비교, 모든 그림에 「목업 — 실제 게임 화면 아님」. Codex 가 올린 목업을 Claude 가 Step 5 구획·표시 문구와 대조한 뒤 이 채팅에 제시한다(R46).
 - **Phase 25 고정**: Codex 실사용 검증 결과에서 나온 코드 결함을 고치고, 최종 묶음 ZIP·manifest·복원 방법·남은 미검증 목록을 고정한다.
 
 ### Codex 외관 발주문 (R87)
@@ -339,12 +344,12 @@ R1 의 첫 요청은 단축키·체력/마나·미니맵이었고 「부가 기�
 
 | 때 | 발주문 내용 | Claude 가 먼저 줄 것 |
 |---|---|---|
-| Phase 2 끝 (Step 12) | 공통 외관: 패널·구분선·장식·글꼴·배치(Step 5 설계), 장식 입력 통과, 질감 판정·개선(R52) | 테마 토큰 목록, 프레임별 편집값 읽기 규약(외관 코드는 토큰 위에 이 값을 덮어 적용), 외관 프레임 이름 목록, 등록 규약, Step 5 설계·자산 manifest 위치, 빼야 할 V42 초기화 코드 목록 |
-| 각 기능 Phase 끝 (Step 13–31) | 그 애드온의 외관 연결 폴더 `DevilForever_Skin_<애드온>`: 배치·크기·스킨·글꼴 | 그 애드온의 프레임 이름·스킨 API·설정 키 목록, 그 프레임의 편집 항목(편집값 읽기 규약대로 적용) |
+| Phase 2 끝 (Step 12) · 덧붙임 Step 20 | 공통 외관: 패널·구분선·장식·글꼴·배치(Step 5 설계), 장식 입력 통과, 질감 판정·개선(R52). 덧붙임(R107 ⑥): FHD·QHD·UHD 세 겉보기를 처음부터 만들고, 겉보기마다 프레임별 편집값 preset 을 낸다 | 테마 토큰 목록, 프레임별 편집값 읽기 규약(외관 코드는 토큰 위에 이 값을 덮어 적용), 외관 프레임 이름 목록, 등록 규약, Step 5 설계·자산 manifest 위치, 빼야 할 V42 초기화 코드 목록 |
+| 각 기능 Phase 끝 (Step 13–31, 43) | 그 애드온의 외관 연결 폴더 `DevilForever_Skin_<애드온>`: 세 겉보기마다 배치·크기·스킨·글꼴. Phase 8 은 Hekili 와 게임 Cooldown Manager, Phase 14 는 게임 기본 이름표, Phase 15 는 Aurora 사용 판정 | 그 애드온의 프레임 이름·스킨 API·설정 키 목록, 그 프레임의 편집 항목(편집값 읽기 규약대로 적용) |
 | Phase 22 (Step 36) | 대안 테마 1–2개 | 토큰 세트를 바꿔 끼우는 인터페이스 |
 | Phase 24 (Step 39) | 최종 목업 | 모든 기능의 manifest·토큰·테마 목록, 직업 자원 표 |
 
-**Codex 몫 목록 (Claude 시간 합계에 넣지 않음)**: Phase 2 외관 구현과 질감 판정·개선, 각 기능의 외관 연결 폴더, Phase 15 기본 창 스킨의 외관 판정, Phase 22 대안 테마, Phase 24 최종 목업, 모든 Phase 의 실사용 검증(R86), 새 자료 조사(D7).
+**Codex 몫 목록 (Claude 시간 합계에 넣지 않음)**: Phase 2 외관 구현과 질감 판정·개선, FHD·QHD·UHD 세 겉보기(R107 ⑥), 각 기능의 외관 연결 폴더, Phase 8 Cooldown Manager 의 게임 안 확인(화면 중앙 강조·소리), Phase 14 게임 기본 이름표 외관, Phase 15 Aurora 사용 판정과 외관, Phase 16 상태띠 외관, FUF·PitBull4 실사용 비교, Phase 22 대안 테마, Phase 24 최종 목업, 모든 Phase 의 실사용 검증(R86), 새 자료 조사(D7).
 
 ### Codex 실사용 검증 발주문 (R86)
 
@@ -356,7 +361,7 @@ R1 의 첫 요청은 단축키·체력/마나·미니맵이었고 「부가 기�
 
 ## Phase N — Phase 목록
 
-세부 스텝 목록은 Phase 를 시작할 때 별도 파일 `Claude/plans/2026-11-18-devil-forever-addon-collection-phase<ID>-세부계획.md` 에 쓴다. 아래 경로는 아직 없는 파일이다. 선택 기능 Phase(12–19)는 D6 결정(R83)으로 확정돼 번호는 이 표 그대로다. Step 8 판정으로 「고침」 이 된 Phase 는 하위 Step(예: 13a·13b)을 붙이고 뒤 번호는 밀지 않는다.
+세부 스텝 목록은 Phase 를 시작할 때 별도 파일 `Claude/plans/2026-11-18-devil-forever-addon-collection-phase<ID>-세부계획.md` 에 쓴다. 아래 경로는 아직 없는 파일이다. 선택 기능 Phase(12–19)는 D6 결정(R83)으로 확정돼 번호는 이 표 그대로다. Step 8 판정으로 「고침」 이 된 Phase 는 하위 Step(예: 13a·13b)을 붙이고 뒤 번호는 밀지 않는다. 빠진 Phase 의 Step 번호는 비워 둔다. 끝난 Phase 에 더하는 Phase 6-rev(R107 ①)는 마지막 번호 다음(Step 42–43)을 쓰고 Phase 8 다음에 한다.
 
 | Phase | 세부 계획서 | Step | 상태 |
 |---|---|---|---|
@@ -368,20 +373,21 @@ R1 의 첫 요청은 단축키·체력/마나·미니맵이었고 「부가 기�
 | 5 미니맵 | `…-phase5-세부계획.md` | 15 | 대기 |
 | 6 unit·직업 자원 | `…-phase6-세부계획.md` | 16 | 대기 |
 | 7 시전바 | `…-phase7-세부계획.md` | 17 | 대기 |
-| 8 직업 전투보조 | `…-phase8-세부계획.md` | 18–20 | 대기 |
+| 8 직업 전투보조 (Hekili 추천 + 게임 Cooldown Manager · R104) | `…-phase8-세부계획.md` | 18–20 | 대기 |
+| 6-rev unit·직업 자원 PitBull4 판 (Phase 8 다음 · R107) | `…-phase6-rev-세부계획.md` | 42–43 | 대기 |
 | 9 공격대 | `…-phase9-세부계획.md` | 21 | 대기 |
-| 10 데미지 미터 | `…-phase10-세부계획.md` | 22 | 대기 |
-| 11 어그로 미터 | `…-phase11-세부계획.md` | 23 | 대기 |
+| 10 데미지 미터·어그로 미터 (TinyThreat) | `…-phase10-세부계획.md` | 22 | 대기 |
+| 11 어그로 미터 | — | 23 | Phase 10 에 합침(R107) |
 | 12 툴팁 | `…-phase12-세부계획.md` | 24 | 빠짐(R100) |
 | 13 가방 | `…-phase13-세부계획.md` | 25 | 빠짐(R100) |
-| 14 이름표 | `…-phase14-세부계획.md` | 26 | 대기 |
-| 15 기본 창 스킨 | `…-phase15-세부계획.md` | 27 | 대기 |
-| 16 정보 바 | `…-phase16-세부계획.md` | 28 | 대기 |
+| 14 이름표 (게임 기본 · Codex 발주문만) | `…-phase14-세부계획.md` | 26 | 대기 |
+| 15 기본 창 스킨 (Aurora 여부 Codex 판정) | `…-phase15-세부계획.md` | 27 | 대기 |
+| 16 상태띠 (가벼운 정보) | `…-phase16-세부계획.md` | 28a·28b | 대기 |
 | 17 퀘스트·목표 추적기 | `…-phase17-세부계획.md` | 29 | 빠짐(R100) |
 | 18 세계지도 | `…-phase18-세부계획.md` | 30a·30b | 빠짐(R100) |
 | 19 경험치·평판 바 | `…-phase19-세부계획.md` | 31 | 대기 |
 | 20 저장·복원 | `…-phase20-세부계획.md` | 32–33 | 대기 |
-| 21 사용자 편집 | `…-phase21-세부계획.md` | 34–35 | 대기 |
+| 21 사용자 편집 | — | 34–35 | 빠짐(R107) |
 | 22 대안 테마 (외관은 Codex) | `…-phase22-세부계획.md` | 36 | 대기 |
 | 23 연계 검사·정정 | `…-phase23-세부계획.md` | 37–38 | 대기 |
 | 24 최종 목업 (제작은 Codex) | `…-phase24-세부계획.md` | 39 | 대기 |
@@ -396,11 +402,11 @@ R1 의 첫 요청은 단축키·체력/마나·미니맵이었고 「부가 기�
 | 원천 해제 | `References/**/*.zip` → Step 8 스크립트 → `Collection/upstream/` | ZIP 은 읽기만 한다. `SOURCE.txt` 의 SHA256 과 맞는지 먼저 보고, 경로 검사·링크 차단 뒤 푼다. 같은 ZIP 이면 같은 해제본이 나온다 |
 | manifest | Step 8·각 Phase → `Collection/manifest.json` | 애드온마다 폴더·역할(필수/개별)·시작 애드온·원본 판·file ID·SHA256·라이선스 파일·고침 여부(설정/스킨/fork/새 개발)·의존·저장 변수 이름 |
 | 등록 규약 (A1 제안) | 각 기능 Phase → `!DevilForever_Core` 의 등록 표 | 애드온마다 ① 외관을 받을 프레임 이름 ② 편집 가능한 항목(종류·범위·기본값) ③ 저장·복원 대상 저장 변수 이름과 공통/직업별 구분 ④ 설정 기본값 파일 위치를 Core 의 등록 표(정적 데이터 · manifest 에서 만든다)에 적는다. Core 는 ④ 를 처음 로드 때 한 번 넣고 사용자가 바꾼 값은 덮어쓰지 않는다. 등록하려고 원본을 고치지 않고, 외관 연결 폴더(Codex)에도 기대지 않는다. Core 가 없으면 각 애드온은 자기 기본 동작·외관으로 동작한다 |
-| 테마 토큰 | Phase 2 Core(Claude) → Codex 외관 코드 | 색·질감 경로·글꼴·테두리 두께를 이름 있는 토큰으로 주는 인터페이스, 토큰 위에 덮어쓰는 프레임별 편집값(Phase 21 이 저장한 위치·크기·글꼴·색·줄 수·간격)을 주는 읽기 함수, 토큰 세트를 바꿔 끼우는 함수(Phase 22). 외관 코드는 토큰과 편집값을 읽어 적용하고 값을 직접 박지 않는다 |
+| 테마 토큰 | Phase 2 Core(Claude) → Codex 외관 코드 | 색·질감 경로·글꼴·테두리 두께를 이름 있는 토큰으로 주는 인터페이스, 토큰 위에 덮어쓰는 프레임별 편집값(위치·크기·글꼴·색·줄 수·간격 — 값은 Codex 가 만든 겉보기 preset FHD·QHD·UHD 와 사용자가 AI 로 고친 값에서 온다, R107 ⑥)을 주는 읽기 함수, 토큰 세트를 바꿔 끼우는 함수(Phase 22). 외관 코드는 토큰과 편집값을 읽어 적용하고 값을 직접 박지 않는다 |
 | Codex 외관 발주문 | 각 Phase → 사용자 → Codex → `References/codex-appearance/<ID>/` → Claude 정적 대조 → `Collection/` | Implementation Changes 「Codex 외관 발주문」 표의 때·내용 |
-| 저장·복원 | 등록된 저장 변수 → Phase 20 | 등록된 변수만 사본·복원한다. 없는 애드온 항목은 남겨 둔다. 판이 다른 데이터는 사용자에게 알리고 건드리지 않는다 |
-| 편집 | 등록된 편집 항목 → Phase 21 → Core 편집값 → Codex 외관 코드 | 미리보기 → 적용 → 취소/기본값. 저장한 값은 Core 가 프레임별 편집값으로 내준다. 전투 중에는 보호된 프레임을 바꾸지 않고 전투가 끝나면 적용한다 |
-| 직업 목록 | Step 10 → Phase 3·6·8 | 직업·특성·주/보조 자원·특수 바를 원천 위치와 함께 적은 표. 근거 없는 칸은 미확인으로 둔다. Phase 8 은 이 표의 특성마다 감시 데이터·알림 꼴을 확인한다 |
+| 저장·복원 | 등록된 저장 변수 → Phase 20 | 등록된 변수만 사본·복원한다. 없는 애드온 항목은 남겨 둔다. 판이 다른 데이터는 사용자에게 알리고 건드리지 않는다. 세 겉보기 preset 으로 되돌리기를 고를 수 있다(R107 ⑥) |
+| 편집값 (읽기 약속) | 겉보기 preset(Codex) · 사용자가 AI 로 고친 값 → Core 편집값 → Codex 외관 코드 | 통합 편집기는 없다(R107 ⑥). Core 는 등록된 편집 항목의 값을 프레임별 편집값으로 내주고 외관 코드는 그 값을 토큰 위에 적용한다. 값을 고치는 쪽(AI)은 등록 표의 항목·범위만 쓴다. 전투 중에는 보호된 프레임을 바꾸지 않고 전투가 끝나면 적용한다 |
+| 직업 목록 | Step 10 → Phase 3·6·6-rev·8 | 직업·특성·주/보조 자원·특수 바를 원천 위치와 함께 적은 표. 근거 없는 칸은 미확인으로 둔다. Phase 8 은 이 표의 특성마다 Hekili 지원과 감시 자료를 확인했다(`Collection/data/hekili-support.md`) |
 | Codex 실사용 검증 | 각 Phase 발주문 → 사용자 → Codex → `References/codex-verify/phase<ID>/` → master | 항목 번호·결과(통과/실패/못 함)·실패 때 오류 문구 한 줄 |
 | 설치용 ZIP | `Collection/tools/` 빌드 → `outputs/collection/DevilForever-<판>.zip` | `Interface/AddOns/` 아래 폴더 구조 그대로. manifest 와 SHA256 목록을 함께 넣는다. 고친 판은 라이선스와 관계없이 넣고(D4 결정 (나)), 고치지 않은 제3자 원본까지 함께 넣을지는 Phase 23 에서 정리한다 |
 | 목업 입력 | Step 5 설계 + 실제 구현 토큰·자산 → Codex 목업 발주문(Phase 24) | 설계 좌표·실제 자산만 쓴다. 게임 캡처처럼 꾸미지 않는다 |
@@ -418,9 +424,9 @@ R1 의 첫 요청은 단축키·체력/마나·미니맵이었고 「부가 기�
 | 정적 검사·빌드 도구 (Step 9) | 새 코드 — 코드 논리 검수 1회 | P3 | 연결 | 호출·데이터 흐름·입출력·nil 처리 + 적대: 정적 검사 통과를 게임 통과처럼 적는지 |
 | 직업 목록 (Step 10) | 다음 단계가 쓰는 분석 표 — 기계 게이트 + 자체검수 1회 | P6 | 연결 | 원천 위치 표기, Retail 목록 섞임 (적대), 자원·특수 바 누락, 미확인 칸 |
 | 새 구조 모듈: Core·등록 표·테마 토큰 인터페이스 (Phase 2) | 3라운드 (연계·뜻·적대) | P1 | 연결 | 등록 표가 manifest·TOC 와 맞는지, 토큰·프레임 이름 목록이 Codex 외관이 쓸 만큼 정해졌는지, Core 가 없을 때 각 애드온이 자기 기본으로 도는지, 기본값 주입이 사용자 값을 덮어쓰지 않는지, 편집값이 토큰 위에 맞게 덮이는지, 등록하려고 원본을 고치지 않았는지 (적대), V42 에서 빼기로 한 초기화 코드가 섞였는지 |
-| 새 구조 모듈: Hekili 보완 모듈 (Phase 8, 갈래 2·3 일 때) | 3라운드 (연계·뜻·적대) | P1 | 연결 | Step 18 갈래 판정이 원천과 맞는지, EventAlert 식 알림 꼴과 끄기, 빈 칸은 「원천 없음」 표시 + D7 요청 기록이면 통과·지어낸 목록이면 실패, 추천·판단 로직이 없는지 (적대 · R62), Hekili 를 끄면 함께 꺼지는지 |
-| 새 구조 모듈: 저장·복원 (Phase 20) | 3라운드 (연계·뜻·적대) | P1 | 연계 | 등록 표의 변수만 다루는지, 없는 애드온 항목 보존, 판이 다른 데이터를 지우는지 (적대), 공통/직업·특성별 나눔과 전환, 사용자가 고르지 않은 범위의 키·게임 설정·필터 불변·매크로 미접촉 |
-| 새 코드·원본을 고친 곳: 편집 창·저장 (Phase 21, 새 개발), Mapster FogClear 고침 (Phase 18), 그 밖에 Step 8 뒤 「고침」·「새 개발」 로 판정된 기능 | 코드 논리 검수 1회 | P1 | 연결(새 코드) · 연계(고친 곳) | 호출·데이터 흐름·저장 변수·이벤트·nil 처리 + 적대 하나(편집은 전투 중 보호 프레임 변경) |
+| Phase 8 지원표·Hekili 표시 기본값·Cooldown Manager 인계 메모 | 지원표 = 다음 단계가 쓰는 분석 표(기계 게이트 + 자체검수 1회), 기본값 = 검수 없음(정적 대조) | P6 | 연결 | 지원표 칸이 원천 줄과 맞는지, Retail 로 채운 칸 (적대), 추천·판단 로직을 새로 만들지 않았는지 (R62) |
+| 새 구조 모듈: 저장·복원 (Phase 20) | 3라운드 (연계·뜻·적대) | P1 | 연계 | 등록 표의 변수만 다루는지, 없는 애드온 항목 보존, 판이 다른 데이터를 지우는지 (적대), 공통/직업·특성별 나눔과 전환, 세 겉보기 preset 으로 되돌리기, 사용자가 고르지 않은 범위의 키·게임 설정·필터 불변·매크로 미접촉 |
+| 새 코드·원본을 고친 곳: PitBull4 Forever 고침 (Phase 6-rev), 상태띠 정보 부분 (Phase 16, 새 개발), Mapster FogClear 고침 (Phase 18 — 빠짐), 그 밖에 Step 8 뒤 「고침」·「새 개발」 로 판정된 기능 | 코드 논리 검수 1회 | P1 | 연결(새 코드) · 연계(고친 곳) | 호출·데이터 흐름·저장 변수·이벤트·nil 처리 + 적대 하나(PitBull4 는 V42 고침이 받은 v4.2.50 에 빠짐 없이 옮겨졌는지, 상태띠는 무거운 정보가 섞였는지) |
 | 그대로 쓰는 기능의 설정 기본값 파일 (Phase 3–19) | 검수 없음 — manifest·TOC 정적 대조만 | P6 | 연계 | 기본값 키 이름이 원본 저장 변수와 맞는지, manifest·등록 표의 기본값 파일 위치(덮어쓰지 않는 주입은 Core 검수 몫) |
 | 모음집 연계 (Phase 23) | 연계 정적 대조 + 정정분은 코드 논리 검수 1회 | P1 | 연계 | 조합별 TOC·의존 해석, 등록 누락, 의존 순서, 한 기능 두 애드온 중복 (적대), 설치용 ZIP 내용과 manifest 일치 |
 | Codex 발주문 (실사용 검증·외관, 각 Phase) | ② 국소 — 같은 B 한 번 + 적대 하나 | P5 | 연결 | 백업이 맨 앞인지, 항목마다 기대 결과·결과 양식·올릴 자리, Codex 가 추가 판단 없이 실행할 수 있는지, 외관 발주문에 토큰·프레임 목록·Step 5 설계가 함께 가는지, 위험한 조작 요구 (적대) |
@@ -433,15 +439,18 @@ R1 의 첫 요청은 단축키·체력/마나·미니맵이었고 「부가 기�
 | Phase | Claude 검증 (작성·정적 검사·코드 논리 검수) | Codex 실사용 검증 발주문의 핵심 | Codex 외관 발주문 |
 |---|---|---|---|
 | 1 | ZIP 해시·안전 해제, 판정 표, 도구 설치 확인, V42 애드온으로 문법 검사·TOC 대조 도구 시험 | 현재 애드온 상태, 클라이언트 판, 실제 해상도·UI scale, 직업 목록, R13 참고, BugSack 설치(D1) | 없음 |
-| 2 | Core 문법·TOC/의존 대조, 등록 표·기본값 주입·토큰·편집값 읽기 3라운드 | Core 로드, 등록 표 반영, 기본값이 처음 한 번만 들어가는지, 재접속 뒤 유지 | 공통 외관 구현·질감(R52) |
-| 3–7, 9–11 | 설정 기본값 파일·manifest·TOC 정적 대조(그대로 사용) | 각 기능 동작(키 글자·페이지·특수 바 / 입력·한글·세 창 분담 / 지도 클릭·핑 / 체력·자원·오라 / 시전·차단 / 클릭 시전·값 / 미터 값), 끄기, 재접속 | 각 기능 외관 연결 |
-| 8 | 지원표·갈래 판정과 원천 대조, 보완 모듈이 있으면 3라운드 | 직업별 알림·추천 표시, 전투 중 taint 오류 | 표시 위치·크기·스킨 |
-| 12–17, 19 | 설정 기본값 파일·manifest·TOC 정적 대조 | 그 기능의 표시·조작, 끄기, 재접속 | 각 기능 외관 연결 |
+| 2 | Core 문법·TOC/의존 대조, 등록 표·기본값 주입·토큰·편집값 읽기 3라운드 | Core 로드, 등록 표 반영, 기본값이 처음 한 번만 들어가는지, 재접속 뒤 유지 | 공통 외관 구현·질감(R52), FHD·QHD·UHD 세 겉보기(R107 ⑥ — 덧붙임 Step 20) |
+| 3–7, 9–10 | 설정 기본값 파일·manifest·TOC 정적 대조(그대로 사용) | 각 기능 동작(키 글자·페이지·특수 바 / 입력·한글·세 창 분담 / 지도 클릭·핑 / 체력·자원·오라 / 시전·차단 / 클릭 시전·값 / 미터 값·TinyThreat 위협), 끄기, 재접속 | 각 기능 외관 연결 |
+| 6-rev | PitBull4 Forever 고침 코드 논리 검수 1회, Forever TOC·의존·Devil profile 기본값 정적 대조 | 애드온 목록에서 로드, 체력·자원·오라를 FUF 판과 같은 항목으로 비교, FUF 와 함께 켜지 않음, 끄기, 재접속, 자동 업데이트 끔 | 세 겉보기 외관 연결 |
+| 8 | 지원표와 원천 대조(Step 18 끝), Hekili 표시 기본값 정적 대조 | 직업별 Hekili 추천 표시와 추천 끄기, Cooldown Manager 의 상태 알림·CD 표시와 화면 중앙 강조·소리 유무, 전투 중 taint 오류 | Hekili·Cooldown Manager 표시 위치·크기·스킨 |
+| 14 | 없음 (Codex 발주문만) | 게임 기본 이름표의 체력·위협 색 표시 | 기본 이름표 외관 |
+| 15 | 없음 (Codex 발주문만, 쓰면 manifest·TOC 정적 대조) | Aurora 를 쓸지 판정, 쓰면 스킨이 두 번 걸리지 않는지 | 기본 창 외관 |
+| 16 | 정보 부분 코드 논리 검수 1회, TOC·등록 표 정적 대조 | 시계·FPS/지연·골드·내구도·가방 빈칸 값, 끄기, 재접속 | 상태띠 외관 |
+| 12–13, 17, 19 | 설정 기본값 파일·manifest·TOC 정적 대조 (12·13·17 은 R100 으로 빠짐) | 그 기능의 표시·조작, 끄기, 재접속 | 각 기능 외관 연결 |
 | 18 | FogClear 고침 코드 논리 검수 1회, 설정 기본값·TOC 정적 대조 | 애드온 목록에서 사용 가능 여부, 지도를 처음 열기 전 프로필을 바꿔도 오류 없음, 미탐색 영역·좌표, 끄기, 재접속, 자동 업데이트 끔 | 지도 외관 연결 |
-| 20 | 3라운드 (가짜 데이터로 저장 변수 다루는 코드 논리) | 실제 저장·복원·재접속, 특성 전환 | 없음 |
-| 21 | 코드 논리 검수 1회 | 편집·취소·되돌림, 전투 중 편집 | 편집 창 외관 |
+| 20 | 3라운드 (가짜 데이터로 저장 변수 다루는 코드 논리) | 실제 저장·복원·재접속, 특성 전환, 세 겉보기 preset 으로 되돌리기 | 없음 |
 | 22 | 토큰 세트 전환 인터페이스 정적 대조 | 테마 전환 뒤 화면 | 대안 테마 1–2개 |
-| 23 | 조합별 TOC·의존·등록 표 정적 대조, ZIP·manifest 대조 | 전체 묶음 설치와 조합별 실제 로드 | 없음 |
+| 23 | 조합별 TOC·의존·등록 표 정적 대조, ZIP·manifest 대조, unit 프레임 기본 동봉 결정 기록(FUF·PitBull4) | 전체 묶음 설치와 조합별 실제 로드 | 없음 |
 | 24 | 받은 목업의 구획·표시 문구 대조 | 없음 (목업은 게임 검증이 아니다) | 최종 목업 |
 | 25 | 정정분 정적 검사·논리 검수 | 고친 항목 재확인 | 필요하면 외관 정정 |
 
@@ -454,8 +463,11 @@ R1 의 첫 요청은 단축키·체력/마나·미니맵이었고 「부가 기�
 | 받은 ZIP 이 공식 배포 파일 그대로다 | 해시·`unzip -t` 는 실측 통과(R81), 받은 URL 의 실재는 미검증(Codex 기록) |
 | PyPI 에서 `lupa` 를 설치해 Lua 5.1 문법 검사를 돌릴 수 있다 | 미검증 → Step 9 |
 | Forever 직업은 Hekili 모듈과 같은 9개다 | 추정(ZIP 모듈 폴더 수만 실측) → Step 10 과 Phase 1 Codex 발주문 |
-| Hekili 가 R44 의 상태 알림·CD 를 맡을 수 있다 | 제작자 선언(focus·proc·CD 관련 옵션 — Codex 기록 `root-starting-addon-facts-and-r67.md:9`)만 있고 미검증. `features.md:158` 은 오라 감시·알림을 Hekili 유형으로 확정하지 않았다 → Step 18 의 두 확인(감시 데이터·알림 꼴) 뒤 Phase 8 기능 표의 갈래 1–3 중 하나로 간다 |
-| Hekili Forever 가 모든 Forever 직업을 지원한다 | 근거 미발견. 제작자는 지원 특성만 ActionPack 을 둔다고 표기(Codex 기록 `root-starting-addon-facts-and-r67.md:9`) → Step 18 지원표. 감시 데이터가 없는 특성은 Phase 8 갈래 3 의 출구(D7 자료 또는 「원천 없음」)로 |
+| Hekili 가 R44 의 상태 알림·CD 를 맡을 수 있다 | Step 18 확인으로 끝남: 감시 자료는 있으나 EventAlert 식 알림이 없다(`Collection/data/hekili-support.md` 3장). R104 로 상태 알림·CD 는 게임 기본 Cooldown Manager 가 맡는다 |
+| Hekili Forever 가 모든 Forever 직업을 지원한다 | Step 18 지원표: 9직업 28특성 중 추천 지원 24, 지원 안 함 4(치유 특성) — 원천 확정, 게임 안 미검증. 지원 안 함 4개는 Cooldown Manager 표시만 받는다(R104) |
+| 게임 기본 Cooldown Manager 가 상태 알림·CD 를 보이고, 화면 중앙 강조·소리가 있다 | 창 넷이 클라이언트에 있다는 것은 Hekili 원천에서 추정(`Collection/data/hekili-support.md` 3장), 강조·소리는 근거 미발견 → Step 20 Codex 발주문 |
+| PitBull4 v4.2.50 에 Forever TOC 와 V42 고침을 옮기면 Forever 에서 돈다 | 받은 v4.2.50 TOC 에 16001 없음(실측), V42 판은 16001 「Confirmed Forever」 표기(실측) · 동작은 미검증 → Step 42–43, Codex 발주문 |
+| Details! 의 TinyThreat 가 Forever 에서 위협을 보인다 | `Details_TinyThreat_Camelot.toc` 16001 표기(실측, `Collection/manifest.md:99`) · 동작은 미검증 → Phase 10 Codex 발주문 |
 | ProfileManager 가 모음집 애드온들의 저장을 다룰 수 있다 | 미검증 → Step 32. 모자라면 그 부분만 새 개발 |
 | 선택 기능 시작 애드온이 Masque·스킨 API 로 외관을 바꿀 수 있다 | 미검증 → Codex 외관 발주문 결과 |
 | 「그대로 사용」 으로 추정한 기능이 실제로 고칠 필요가 없다 | 추정(R87) → Step 8 판정. 「고침」 이 되면 그 Phase 에 하위 Step 과 60–150분이 붙는다 |
@@ -471,6 +483,8 @@ Phase 0–1 의 고침 기록은 `Claude/plans/2026-11-18-devil-forever-addon-co
 | 날짜 | 반영 | 근거 |
 |---|---|---|
 | 2026-11-18 | 선택 기능 Phase 12(툴팁)·13(가방)·17(퀘스트 추적기)·18(세계지도)을 뺀다 — 게임 기본 기능을 쓰고, 기본 기능 확인은 Codex 발주문에 넣는다. Step 번호는 그대로 두고 비워 둔다. Claude 합계에서 그 Step 들(24·25·29·30a·30b)을 뺀다 | R100 사용자 원문 · R99 |
+| 2026-11-18 | Phase 8 을 Hekili(다음 행동 추천) + 게임 기본 Cooldown Manager(상태 알림·CD)로 바꾼다. 보완 모듈 `DevilForever_Combat` 과 그 시간을 없앤다. Step 19 = Hekili 표시 기본값·Cooldown Manager 인계 메모, Step 20 = 직업별 점검·Codex 발주문(Cooldown Manager 의 화면 중앙 강조·소리 게임 안 확인). 지원 안 함 치유 특성 4개는 Cooldown Manager 표시만 | R104 사용자 원문 · Step 18 지원표 |
+| 2026-11-18 | 근간 재논의 반영: ① Phase 6-rev(PitBull4 v4.2.50 + Forever TOC + V42 고침 + Devil profile, Step 42–43) 를 더해 FUF 와 비교하고 기본 동봉은 Phase 23 에서 정해 기록 ② 어그로 미터는 Details! 의 TinyThreat — Phase 11 은 Phase 10 에 합침 ③ Phase 14 는 게임 기본 이름표(Platynator 뺌, Codex 발주문만) ④ Phase 15 Aurora 사용 여부는 Codex 가 정함 ⑤ Phase 16 은 가벼운 상태띠(Titan 안 씀, 정보 부분 Step 28a·28b) ⑥ Phase 21 빠짐 — 사용자가 AI 로 고치고 Codex 가 FHD·QHD·UHD 세 겉보기를 처음부터 만든다, Core 편집값은 읽기 약속으로 남고 Phase 20 이 preset 되돌리기를 맡는다. 합계를 다시 더했다(R100 뒤 갱신되지 않았던 합계도 함께) | R107 사용자 원문 · R101 |
 
 ## Decisions Required
 
@@ -482,6 +496,7 @@ Phase 0–1 의 고침 기록은 `Claude/plans/2026-11-18-devil-forever-addon-co
 
 **D2 — Hekili 표시 범위**
 - 결정: (가) — 상태 알림·CD 와 다음 행동 추천을 모두 표시하고 추천은 따로 끌 수 있게 한다(R83). 상태 알림·CD 는 R44 에 따라 직업 전투보조(Phase 8)가 맡고, EventAlert 식(화면 중앙 아이콘·소리·강조, 각각 끌 수 있게)으로 보인다 — Hekili 에 그 꼴이 없으면 Phase 8 갈래 2 의 보완 모듈이 맡는다. Hekili 가 상태 알림을 어디까지 하는지는 미검증이다(Assumptions, Step 18).
+- **R104 로 바뀜**: Step 18 에서 Hekili 에 EventAlert 식 알림이 없다고 확인한 뒤, 사용자가 상태 알림·CD 는 게임 기본 Cooldown Manager, Hekili 는 다음 행동 추천만으로 정했다. 보완 모듈은 만들지 않는다. 추천을 따로 끌 수 있게 하는 것은 그대로다.
 - 근거: R6(「이벤트 얼럿을 품은 애드온」), R44(「두가지가 하나의 애드온으로 봐야지」), `root-starting-addon-facts-and-r67.md:9`(Codex 기록), `features.md:158`.
 
 **D3 — 대화창 3개의 역할(채널 분담)**
@@ -499,17 +514,18 @@ Phase 0–1 의 고침 기록은 `Claude/plans/2026-11-18-devil-forever-addon-co
 
 **D6 — 기능 얼개: 선택 기능을 무엇까지 만들지**
 - 결정: (가) — 선택 기능 Phase 12–19(툴팁·가방·이름표·기본 창 스킨·정보 바·퀘스트·목표 추적기·세계지도·경험치·평판 바)를 만들고, 편의 자동화·전리품 창과 제외 표·V42 분류 표의 제외 항목은 만들지 않는다(R83). Phase·Step 번호와 합계는 이 문서 그대로 확정이다.
+- **R100·R107 로 바뀜**: Phase 12·13·17·18 은 R100 으로 빠졌고, R107 로 Phase 14 는 게임 기본 이름표(애드온 없음), Phase 15 는 Codex 판정, Phase 16 은 가벼운 상태띠가 되었다(Correction History).
 - 근거: R77 원문, `References/addon-survey/features.md:241–286`, 기본값 규칙(「바꾼 곳과 이유」 5).
 
 **D7 — Codex 조사 요청**
-- 결정: (가) — 지금은 요청하지 않는다. Phase 가 실제로 막히면 그때 최종 보고에 복사해 쓸 수 있는 지시문으로 적는다(R83). 후보: ① V42 ChocolateBar 의 현재 Forever 판(정보 바 비교용) ② 버튼 위 CD 숫자(OmniCC 등)와 전투 문자 애드온의 Forever 판 ③ Forever 의 직업·특성 공식 목록 ④ 받은 71개 URL 의 실재 확인 ⑤ Phase 8 갈래 3 이 되면, 감시 데이터가 없는 특성의 Forever 주문·오라 자료(예: 공개 DB 페이지). 원천이 없어서 막힌 Phase 는 「원천이 모자랄 때」 규칙대로 순서만 미룬다.
+- 결정: (가) — 지금은 요청하지 않는다. Phase 가 실제로 막히면 그때 최종 보고에 복사해 쓸 수 있는 지시문으로 적는다(R83). 후보: ① V42 ChocolateBar 의 현재 Forever 판(정보 바 비교용) ② 버튼 위 CD 숫자(OmniCC 등)와 전투 문자 애드온의 Forever 판 ③ Forever 의 직업·특성 공식 목록 ④ 받은 71개 URL 의 실재 확인 ⑤ Phase 8 갈래 3 이 되면, 감시 데이터가 없는 특성의 Forever 주문·오라 자료(예: 공개 DB 페이지). (①·⑤ 는 R107 ⑤·R104 로 쓸 일이 없어졌다 — 정보 바 애드온을 쓰지 않고, Phase 8 보완 모듈도 만들지 않는다.) 원천이 없어서 막힌 Phase 는 「원천이 모자랄 때」 규칙대로 순서만 미룬다.
 - 근거: R80(새 자료는 Codex 에), 이 컨테이너는 외부 사이트를 열 수 없고 사용자 PC 연결도 없어 R31 의 Computer Use 다운로드도 지금은 쓸 수 없다.
 
 ### 예외 (R87 · 이번 세션 한정)
 
 사용자 원문: 「검수 라운드지침은 이번 세션에 한해 니가 필요한만큼으로 수정해서 진행해 검수 방법은 너한테 일임한다. 대신 10라운드보다 무거워지면 안된다」(R87). 이번 세션에 한해 검수 강도는 master 가 대상마다 정하고, 상한은 10라운드다. master 기본 방식:
 - 원본 코드를 고친 곳·새 코드 = 같은 검수 B 가 코드 논리 검수 1회(호출·데이터 흐름·저장 변수·이벤트·nil 처리 + 적대 항목 하나).
-- 새 구조 모듈(Core 등록 규약·저장/복원·Hekili 보완 모듈)만 3라운드(연계·뜻·적대).
+- 새 구조 모듈(Core 등록 규약·저장/복원)만 3라운드(연계·뜻·적대). Hekili 보완 모듈은 R104 로 만들지 않는다.
 - 그대로 쓰는 애드온 = 검수 없음(manifest·TOC 정적 대조만).
 Test Plan 「검증 관점」 표가 이 방식이다.
 
