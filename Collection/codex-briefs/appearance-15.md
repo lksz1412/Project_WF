@@ -1,0 +1,24 @@
+# Codex 외관 발주문 — Phase 15 (기본 창 스킨 · Aurora 12.1.5.4)
+
+받는 쪽: Codex. 보내는 쪽: Claude 세션. Aurora 를 쓸지 말지는 Codex 가 정한다(R107 ④) — 판정은 실사용 검증 `Collection/codex-briefs/phase15.md` 8번(`References/codex-verify/phase15/decision.md`)에서 먼저 내고, 이 발주문은 그 판정에 따라 둘 중 한 갈래만 한다. 지켜야 할 약속(토큰으로만 값 읽기·`Edit:Get`·전투 중 보호 프레임 금지·등록으로 프레임 알리기·다른 애드온 수정 금지·V42 초기화 코드 금지)은 `Collection/codex-briefs/appearance-2.md` 2절 그대로이고, 세 겉보기 값의 꼴은 `Collection/codex-briefs/appearance-2-layouts.md` 그대로다. 게임 입력을 자동으로 보내는 도구는 쓰지 않는다.
+
+- 결과를 올릴 자리: `References/codex-appearance/15/`. `Collection/` 은 고치지 않는다 — Claude 가 정적 대조 뒤 합친다.
+- 기반: 설치 ZIP `outputs/collection/DevilForever-collection.zip`(sha256 `d02105320a0d82abe3a7f680dd7a4eef27357d6938383bd1e40cd8206060b820` — `!DevilForever_Core`), Aurora 원본 `References/addon-sources/aurora/Aurora-12.1.5.4.zip`(sha256 `bd8b36a06ba2b5d2e6621aafa607c4c7ec856c9e001cd678e33035f61acacf3c`). Phase 2 토큰 세트(`References/codex-appearance/2/`)와 세 겉보기(`References/codex-appearance/2-layouts/`) 위에 얹는다.
+
+## 갈래 A — Aurora 사용
+
+- 새 폴더 `DevilForever_Skin_Aurora/`: TOC `## Interface: 16001`, `## Dependencies: !DevilForever_Core, Aurora`, `## SavedVariables: <이름은 Codex 가 정해 보고서에>`. Aurora 폴더는 원본 그대로 두고 고치지 않는다.
+- 값은 Core 약속으로만 읽는다: `DevilForever_Core.Theme:Get(token)`(예: `color.panel.background`·`color.accent`·`font.normal`), 겉보기마다 다른 값은 `DevilForever_Core.Edit:Get(frameKey)`, 바뀜은 `Theme:RegisterCallback`·`Edit:RegisterCallback`(Core 는 전투 중 콜백을 보내지 않는다 — `API.lua` 머리 주석 「Callbacks」).
+- Aurora 쪽에 거는 길(Claude 가 코드에서 찾은 후보 — 무엇을 쓸지는 Codex 판단): 전역 표 `Aurora`(`Aurora/Skin/init.lua:154`). `Aurora.Color.SetTokenOverride("frame"|"button", color)` 는 바탕·버튼 색 RGB 를 고정하고 `nil` 로 풀린다(`Aurora/Skin/color.lua:351–370`). `Aurora.Theme.SetGlobalAlpha(0–1)` 은 바탕 불투명도(`Aurora/Skin/theme.lua:402`). 강조색은 `AuroraConfig.customHighlight`(`Aurora/config.lua:39–44`)와 `Aurora.Color.RefreshHighlightColor`(`Aurora/Skin/color.lua:679`). 글꼴 옵션 `fonts` 를 켜 두면 koKR 에서 게임 글꼴을 `Fonts/2002.ttf` 로 바꾼다(`Aurora/Skin/init.lua:94–95`) — 우리 `font.*` 토큰과 어느 쪽을 쓸지 정한다. 외부 애드온 스킨 등록 함수 `Aurora.Base.AddSkin`(`Aurora/Skin/api.lua:42–50`)은 부를 때마다 대화창에 한 줄을 찍는다.
+- **Aurora 옵션 값 (appearance-14 의 CVar 규칙과 같다)**: 바꾸는 Aurora 옵션마다 이름·원래 값·새 값·이유를 보고서 표에 적는다. 옵션은 Aurora 저장값 `AuroraConfig`(계정 공통 — `Aurora/Aurora.toc:11`)에 남으므로 우리 애드온을 끄기만 해서는 되돌아가지 않는다. 그래서 코드는 ① 처음 바꾸기 전에 원래 값을 **우리 SavedVariables** 에 적고(`AuroraConfig` 에 우리 키를 넣으면 Aurora 가 다음 로드 때 지운다 — `Aurora/config.lua:251–266`) ② 우리 값은 한 번만 넣고(사용자가 나중에 바꾼 값은 그대로 둔다) ③ 원래 값을 모두 되돌리는 슬래시 명령(이름은 Codex 가 정해 보고서에)을 둔다 — 되돌릴 때 `SetTokenOverride(token, nil)` 로 고정도 푼다. **Aurora 자체의 CVar 변경은 우리 애드온이 맡지 않는다**: Aurora 는 로드(접속·`/reload`)마다 `questTextContrast` 를 4 로 바꾸고(`Aurora/Skin/init.lua:330–345`), 이 값은 게임 설정에 남는다 — **Aurora 를 빼거나 꺼도 4 로 남는다**. 우리 애드온은 이 CVar 를 적어 두지도, 되돌린다고 약속하지도 않는다(우리 폴더는 Aurora 에 기대므로 Aurora 를 끄면 함께 못 돈다). 되돌리는 길은 애드온 없이 치는 한 줄이다. Aurora 를 넣기 전 값을 알면 그 값을 넣는 `/run SetCVar("questTextContrast", <1번 (가) 의 값>)` 을 쓰고(`phase15.md` 1번 (가) 의 값 — 이 사용자의 원래 값), 모르는 설치에서는 게임 기본값을 넣는 `/run SetCVar("questTextContrast", GetCVarDefault("questTextContrast"))` 을 쓴다. Codex 는 쓴 줄을 보고서에 적는다 — Claude 가 Phase 23 설치 안내에 옮긴다. 대부분의 옵션은 `/reload` 뒤에 걸린다(`Aurora/gui.lua:423`). 바꾸기·되돌리기는 전투 밖에서만, 전투 중이면 `PLAYER_REGEN_ENABLED` 뒤로 미룬다. 끌 옵션은 `phase15.md` 4번 결과를 따른다(다른 모음집 애드온 창 — Prat·Details·Grid2·Dominos·SexyMap·Quartz·FUF/PitBull4·Hekili — 에 두 번 걸리면 그 옵션을 끈다). 이름표 스킨은 같은 결과 5번에서 고른 하나만 남긴다(Aurora 이름표 스킨은 옵션으로 못 끈다 — 다른 쪽을 고르면 보고서 「남은 문제」 에 적는다).
+- 세 겉보기(R107 ⑥ — FHD·QHD·UHD): `layouts/fhd.lua`·`qhd.lua`·`uhd.lua` 에 이 폴더의 frame key 값(기본 제안 `aurora.windows` — 바탕 색·불투명도 등 등록할 편집 항목은 `registry_extra.fragment.json` 으로 제안)을 낸다. Aurora 에 해상도마다 다른 값이 없으면 세 파일에 같은 값을 두고 그 사실을 보고서에 적는다. 크기를 정할 일이 생기면 `appearance-2-layouts.md` 2절 순서대로 그 해상도에서 따로 정하고 비율을 곱하지 않는다.
+
+## 갈래 B — Aurora 안 씀
+
+- 게임 기본 창(캐릭터·주문책·가방·퀘스트·지도·설정·버프)은 게임 기본 꼴 그대로 둔다. Skin 폴더를 만들지 않고, Phase 2 공통 외관도 기본 창에 손대지 않는다. 기본 창을 따로 맞출 까닭이 보이면 만들지 말고 보고서에 한 줄로 적는다(R101 — 애드온을 늘리지 않는 쪽이 먼저).
+
+## 올릴 것 · 받아들이는 기준 (`References/codex-appearance/15/`)
+
+- 두 갈래 모두 `decision.md`(Claude 에게 주는 판정 메모): 첫 줄 `Aurora 사용` / `Aurora 안 씀`. 사용이면 등록할 폴더 이름(`Aurora`, `DevilForever_Skin_Aurora`)과 SavedVariables(`AuroraConfig` — 계정 공통, 우리 폴더의 이름과 계정/캐릭터 구분), 켜 둘·끌 Aurora 옵션 목록, 남길 이름표 스킨. 안 씀이면 「등록할 것 없음」.
+- 갈래 A 만: `AddOns/DevilForever_Skin_Aurora/`(TOC·Lua), `layouts/fhd.lua`·`qhd.lua`·`uhd.lua`, `registry_extra.fragment.json`, `report.md`(고른 토큰·값, Aurora 옵션 표·SavedVariables 이름·되돌리기 명령, 두 번 걸림 판단, 세 겉보기 게임 갈무리 — `phase15.md` 2번의 일곱 창, 남은 문제).
+- 기준(갈래 A): `appearance-2.md` 4절 + `appearance-2-layouts.md` 4절 + 전투 중 차단·Lua 오류 0 + Aurora 파일 수정 0 + 바꾸기 전 원래 값이 우리 SavedVariables 에 있고 우리 값은 한 번만 넣음 + 되돌리기 명령을 친 뒤 바꾼 옵션이 모두 원래 값(Codex 가 게임에서 `AuroraConfig` 를 찍어 보고서에) + 우리 코드에 `questTextContrast` 를 읽거나 바꾸는 줄 0 + 보고서에 `questTextContrast` 되돌림 줄(기본값 줄 또는 1번 (가) 값 줄)과, Aurora 를 뺀 뒤 그 줄을 치고 `/run print(GetCVar("questTextContrast"))` 로 본 값 + 모음집 애드온 창에 두 번 걸림 0 + 이름표 스킨 하나.

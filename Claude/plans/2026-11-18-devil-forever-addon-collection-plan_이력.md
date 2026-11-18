@@ -73,3 +73,7 @@ Phase 10 끝: 데미지·어그로 미터는 Details + Details_TinyThreat 를 �
 ## Phase 14 끝 정리 (2026-11-18 18:09:02 +0900)
 
 Phase 14 끝: 이름표는 게임 기본을 쓰고 애드온을 넣지 않는다(R107 ③). Codex 확인·외관 발주문을 썼고, 검수에서 나온 복원 경로 문제를 고치면서 앞 Phase 발주문 10개의 되돌리기 문장도 백업 통째 복원으로 맞췄다. Result = `Claude/results/PHASE_14_nameplates_RESULT.md`.
+
+## Phase 15 끝 정리 (2026-11-18 18:27:38 +0900)
+
+Phase 15 끝: Aurora 를 쓸지는 Codex 가 정한다(R107 ④). Codex 확인·외관 발주문을 썼다. Aurora 가 접속마다 게임 설정 하나(questTextContrast)를 4 로 바꾸고 이름표·Cooldown Manager 스킨은 끌 수 없다는 점을 원천에서 확인해 발주문에 넣었고, 되돌리는 길을 애드온 없이 치는 한 줄로 바꿨다. Result = `Claude/results/PHASE_15_aurora_RESULT.md`.
