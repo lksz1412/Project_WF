@@ -41,9 +41,9 @@
   Phase 11 어그로 미터 — ForeverThreat (그대로 사용 추정)
     Step 23  설정 기본값·manifest 등록·Codex 발주문         30–60분
 3장 선택 기능 (R77 · D6 결정 R83 · Step 8 판정: Phase 18 은 고침, 나머지는 그대로 사용·설정)
-  Phase 12 툴팁 — TipTac Reborn
+  Phase 12 툴팁 — TipTac Reborn [빠짐 — R100: 게임 기본 기능 사용, Codex 가 기본 기능 확인]
     Step 24  설정 기본값·manifest 등록·Codex 발주문         30–45분
-  Phase 13 가방 — Bagnon
+  Phase 13 가방 — Bagnon [빠짐 — R100: 게임 기본 기능 사용, Codex 가 기본 기능 확인]
     Step 25  설정 기본값·manifest 등록·Codex 발주문         30–45분
   Phase 14 이름표 — Platynator
     Step 26  설정 기본값·manifest 등록·Codex 발주문         30–60분
@@ -51,9 +51,9 @@
     Step 27  manifest 등록·Codex 외관 발주문                20–40분
   Phase 16 정보 바 — Titan Panel
     Step 28  설정 기본값·manifest 등록·Codex 발주문(LDB 정보 구성) 30–60분
-  Phase 17 퀘스트·목표 추적기 — Kaliel's Tracker
+  Phase 17 퀘스트·목표 추적기 — Kaliel's Tracker [빠짐 — R100: 게임 기본 기능 사용, Codex 가 기본 기능 확인]
     Step 29  설정 기본값·manifest 등록·Codex 발주문         30–45분
-  Phase 18 세계지도 — Mapster (고침: V42 FogClear 오류 막기 옮김)
+  Phase 18 세계지도 — Mapster (고침: V42 FogClear 오류 막기 옮김) [빠짐 — R100: 게임 기본 기능 사용, Codex 가 기본 기능 확인]
     Step 30a FogClear 차이·로드 조건 정독·고침 설계·설정 기본값 30–60분
     Step 30b FogClear 고침·정적 검사·논리 검수 반영·Codex 발주문(자동 업데이트 끄기 포함) 60–135분
   Phase 19 경험치·평판 바 — Experience Forever (비교: Dominos_Progress)
@@ -216,13 +216,13 @@ R1 의 첫 요청은 단축키·체력/마나·미니맵이었고 「부가 기�
 | 9 | 공격대 프레임 (a) | Grid2 4.1.13-forever (Grid2·Grid2Options·Grid2LDB). 비교: VuhDo v3.221 | 그대로 사용 + 설정 (추정) | 역할·해제 가능 디버프·마우스오버·클릭 시전·지속 치유 표시자 같은 기능 의미는 바꾸지 않고 기본값만 넣는다. 외관은 Codex | R45·R50 · Codex 기록 `root-starting-addon-facts-and-r67.md:6,11` |
 | 10 | 데미지 미터 (a) | Details 20261109 (`Details_Camelot.toc` 16001). 비교: Skada v2.6.7 | 그대로 사용 + 설정 (추정) | 값·정렬 의미 보존, 기본 표시 항목. 세 번째 대화창 자리를 차지하지 않는 위치와 스킨은 Codex | R45·R50·R33 |
 | 11 | 어그로 미터 (a) | ForeverThreat 1.12.3. 비교: ThreatClassic2 2.77-forever | 그대로 사용 + 설정 (추정) | 위험도 표시 의미 보존, profile 기본값. 이름표의 위협 색(Phase 14)과 같은 정보를 두 번 크게 보이지 않게 나눈다. 위치·스킨은 Codex | R45·R50 |
-| 12 | 툴팁 (b) | TipTac Reborn v26.11.11 (`TipTac_Forever.toc`). 참고: V42 TipTac 26.09.03 과 `!DevilUI/Profile/TipTac.lua` | 그대로 사용 + 설정 (추정) | 표시 위치(마우스 옆/고정), 아이템 비교 툴팁 같은 기능 설정. 배경·테두리·글꼴은 Codex | features.md:54,135,203 · R47·R50 |
-| 13 | 가방 (b) | Bagnon 12.1.11 (BagBrother·Bagnon_Bank·Bagnon_Config). 비교: Baganator 862 (한 창·분류 보기) | 그대로 사용 + 설정 (추정) | 한 창 가방·은행 보기와 메뉴줄 가방 버튼 연결. 외관은 Codex | features.md:55–56,136–137 |
+| 12 | 툴팁 (b) | TipTac Reborn v26.11.11 (`TipTac_Forever.toc`). 참고: V42 TipTac 26.09.03 과 `!DevilUI/Profile/TipTac.lua` | **빠짐(R100)** — 게임 기본 기능을 쓴다. 원래 안: + 설정 (추정) | 표시 위치(마우스 옆/고정), 아이템 비교 툴팁 같은 기능 설정. 배경·테두리·글꼴은 Codex | features.md:54,135,203 · R47·R50 |
+| 13 | 가방 (b) | Bagnon 12.1.11 (BagBrother·Bagnon_Bank·Bagnon_Config). 비교: Baganator 862 (한 창·분류 보기) | **빠짐(R100)** — 게임 기본 기능을 쓴다. 원래 안: + 설정 (추정) | 한 창 가방·은행 보기와 메뉴줄 가방 버튼 연결. 외관은 Codex | features.md:55–56,136–137 |
 | 14 | 이름표 (b) | Platynator 547. 참고: `!DevilUI/Profile/Plater.lua`(Plater 자체는 V42 에 없음) | 그대로 사용 + 설정 (추정) | 체력·시전·위협 색 표시 기능. 위협 상태 표시(features F37)를 여기서 받는다. 데빌 토큰 적용은 Codex | features.md:57,80,138 |
 | 15 | 기본 창 스킨 (b) | Aurora 12.1.5.4 | 그대로 사용 (추정) | 기능이 곧 외관이라 Claude 몫은 manifest 등록과 Codex 외관 발주문뿐이다. 기본 버프 창이 범위에 드는지, 다른 애드온 창에 스킨이 두 번 걸리지 않는지는 Codex 가 본다 | features.md:68,149,216 · R50·R87 |
 | 16 | 정보 바 (b) | Titan Panel 9.3.7. 참고: V42 ChocolateBar v3.3.5·Broker 플러그인과 `!DevilUI/Profile/ChocolateBar.lua` | 그대로 사용 + 설정 (추정) | 시간·지연·골드·화폐 같은 정보와 Devilconfig·BugSack 같은 LDB(LibDataBroker, 정보 표시 공용 규약) 버튼 구성. Step 5 하단 상태띠(28px)에 앉히는 외관은 Codex. Titan 을 고른 이유: Forever 판이 확인됐고 ChocolateBar 는 V42 판만 있다(R48 비교는 Step 8) | features.md:58,139,204,239 · R47·R48 |
-| 17 | 퀘스트·목표 추적기 (b) | Kaliel's Tracker 8.11.1-forever. 참고: Questie v12.10.0(퀘스트 도우미, V42 profile 있음) | 그대로 사용 + 설정 (추정) | 추적 항목 기능 설정. 위치·외관(중앙 시야를 가리지 않게)은 Codex | features.md:81,162,230 |
-| 18 | 세계지도 (b) | Mapster 1.14.0. 참고: V42 Mapster 1.14.0-Forever-v2(FogClear 오류 막기의 원천)와 `!DevilUI/Profile/Mapster.lua` | 고침 (Step 8 판정): V42 의 FogClear 오류 막기를 받은 판에 옮긴다. TOC 머리말 `AllowLoadGameType: mainline` 은 Codex 가 게임 애드온 목록에서 로드 불가를 확인할 때만 고친다 | 좌표·미탐색 영역 같은 기능 설정. 미니맵(Phase 5)과 담당을 나눈다. 고친 판이라 Codex 발주문에 자동 업데이트 끄기를 넣는다. 크기·투명도는 Codex | features.md:63,144,209 · R47 · `Collection/judgment.md` 4-1 · master 결정 `Claude/results/handoffs/phase1/TRIAGE_phase1.md:24` |
+| 17 | 퀘스트·목표 추적기 (b) | Kaliel's Tracker 8.11.1-forever. 참고: Questie v12.10.0(퀘스트 도우미, V42 profile 있음) | **빠짐(R100)** — 게임 기본 기능을 쓴다. 원래 안: + 설정 (추정) | 추적 항목 기능 설정. 위치·외관(중앙 시야를 가리지 않게)은 Codex | features.md:81,162,230 |
+| 18 | 세계지도 (b) — **빠짐(R100)** | Mapster 1.14.0. 참고: V42 Mapster 1.14.0-Forever-v2(FogClear 오류 막기의 원천)와 `!DevilUI/Profile/Mapster.lua` | 고침 (Step 8 판정): V42 의 FogClear 오류 막기를 받은 판에 옮긴다. TOC 머리말 `AllowLoadGameType: mainline` 은 Codex 가 게임 애드온 목록에서 로드 불가를 확인할 때만 고친다 | 좌표·미탐색 영역 같은 기능 설정. 미니맵(Phase 5)과 담당을 나눈다. 고친 판이라 Codex 발주문에 자동 업데이트 끄기를 넣는다. 크기·투명도는 Codex | features.md:63,144,209 · R47 · `Collection/judgment.md` 4-1 · master 결정 `Claude/results/handoffs/phase1/TRIAGE_phase1.md:24` |
 | 19 | 경험치·평판 바 (b) | Experience Forever 2.0.4. 비교: Dominos_Progress (Dominos 12.0.4 묶음 안 별도 AddOn — 소환수 경험치 없음), V42 Broker_XPBar | 그대로 사용 + 설정 (Step 8 판정) | 경험치·평판·사냥꾼 소환수 경험치(`showPetBar`) 표시 기능 설정. 같은 기능을 두 애드온이 맡지 않게 Dominos_Progress 는 끈다. Step 5 설계의 긴 윗줄·검은 띠 범위 안 배치는 Codex | features.md:59–60,140–141,190,219 · R47 · `Collection/judgment.md` Phase 19 · master 결정 `TRIAGE_phase1.md:27` |
 | 20 | 설정 저장·복원 (a, 필수 묶음) | ProfileManager v4.0. 비교: V42 Reflux 1.17-Forever-v1 | 설정 + 모자란 범위 복원만 새 개발 | 등록 표의 저장 변수만 다루는 범위 복원. 공통 배치·외관 설정과 직업·특성별 설정을 나눠 저장하고 특성이 바뀌면 그 profile 로 전환한다(features F68). 설치되지 않은 애드온 항목은 지우지 않고, 알 수 없는 판의 데이터는 조용히 초기화하지 않는다. 키 설정과 게임 설정(ProfileManager 의 `Keybinds.lua`·`GameSettings.lua`)도 R44 의 「설정 저장 복원」 범위에 넣는다 — 사용자가 직접 정한 값을 저장했다가 사용자가 고를 때만 되돌리며, 키 자동 배정·매크로 이식과는 다르다. 매크로는 다루지 않는다(R14–R17). Reflux 에서 바꾼 이유는 Phase Range 「바꾼 곳」 6 | R44 · survey.md:89–93 |
 | 21 | 사용자 UI 편집 (a, 필수 묶음) | 새 개발. 참고: V42 Devilconfig 1.0-Forever-v42 (LDB 실행 단추·전투 중 거절 패턴), V42 `!DevilUI/minimap.lua` 의 이동 손잡이·잠금·전투 중 숨김. 비교: Edit Mode Expanded 12.1-026, BlizzMove v3.8.8 (Step 34 에서 정독) | 새 개발 (Step 8 판정: Devilconfig 에는 편집·저장 기전이 없다) — 편집 창과 저장 | 위치·크기·글꼴·색·줄 수·간격을 편집하고 저장하는 기능. 저장한 값은 Core 가 「토큰 위에 덮어쓰는 프레임별 값」 으로 내주고 외관 코드(Codex)가 그 값을 읽어 화면에 건다. 각 애드온이 실제로 지원하는 항목만 보여 준다. 적용 전 미리보기, 취소, 기본값으로 되돌리기. 보호된 프레임 편집은 전투 밖에서만. 편집 창의 외관은 Codex | R44·R47 · survey.md:99–103 · `Collection/judgment.md` 4-3 · master 결정 `TRIAGE_phase1.md:25` |
@@ -371,13 +371,13 @@ R1 의 첫 요청은 단축키·체력/마나·미니맵이었고 「부가 기�
 | 9 공격대 | `…-phase9-세부계획.md` | 21 | 대기 |
 | 10 데미지 미터 | `…-phase10-세부계획.md` | 22 | 대기 |
 | 11 어그로 미터 | `…-phase11-세부계획.md` | 23 | 대기 |
-| 12 툴팁 | `…-phase12-세부계획.md` | 24 | 대기 |
-| 13 가방 | `…-phase13-세부계획.md` | 25 | 대기 |
+| 12 툴팁 | `…-phase12-세부계획.md` | 24 | 빠짐(R100) |
+| 13 가방 | `…-phase13-세부계획.md` | 25 | 빠짐(R100) |
 | 14 이름표 | `…-phase14-세부계획.md` | 26 | 대기 |
 | 15 기본 창 스킨 | `…-phase15-세부계획.md` | 27 | 대기 |
 | 16 정보 바 | `…-phase16-세부계획.md` | 28 | 대기 |
-| 17 퀘스트·목표 추적기 | `…-phase17-세부계획.md` | 29 | 대기 |
-| 18 세계지도 | `…-phase18-세부계획.md` | 30a·30b | 대기 |
+| 17 퀘스트·목표 추적기 | `…-phase17-세부계획.md` | 29 | 빠짐(R100) |
+| 18 세계지도 | `…-phase18-세부계획.md` | 30a·30b | 빠짐(R100) |
 | 19 경험치·평판 바 | `…-phase19-세부계획.md` | 31 | 대기 |
 | 20 저장·복원 | `…-phase20-세부계획.md` | 32–33 | 대기 |
 | 21 사용자 편집 | `…-phase21-세부계획.md` | 34–35 | 대기 |
@@ -469,6 +469,7 @@ Phase 0–1 의 고침 기록은 `Claude/plans/2026-11-18-devil-forever-addon-co
 
 | 날짜 | 반영 | 근거 |
 |---|---|---|
+| 2026-11-18 | 선택 기능 Phase 12(툴팁)·13(가방)·17(퀘스트 추적기)·18(세계지도)을 뺀다 — 게임 기본 기능을 쓰고, 기본 기능 확인은 Codex 발주문에 넣는다. Step 번호는 그대로 두고 비워 둔다. Claude 합계에서 그 Step 들(24·25·29·30a·30b)을 뺀다 | R100 사용자 원문 · R99 |
 
 ## Decisions Required
 
