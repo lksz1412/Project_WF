@@ -1,0 +1,13 @@
+## Interface: 16001
+## Title: DevilForever Core
+## Notes: Registry, defaults injection, theme tokens and per-frame edit values for the Devil Forever collection.
+## Version: 0.1.0
+## SavedVariables: DevilForever_CoreDB
+
+Core.lua
+Registry.lua
+Theme.lua
+Edit.lua
+Defaults.lua
+# Defaults files (Defaults/<Folder>.lua) go below this line; each is named in registry_extra.json.
+API.lua

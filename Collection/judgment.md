@@ -24,7 +24,7 @@
 | 기능 Phase 2–22 | 1 (15) | 14 (3·4·5·6·7·9·10·11·12·13·14·16·17·19) | 1 (18) | 5 (2·8·20·21·22) | 21 |
 | manifest 시작 패키지 (`how_to_use` 를 적은 것) | 3 (Masque·Masque Onyx·Aurora) | 15 | 1 (Mapster) | 0 | 19 |
 
-시작 패키지에 `new` 가 없는 까닭: 새 코드는 시작 애드온 안이 아니라 우리 새 폴더(`DevilForever_Core`, `DevilForever_Combat` 등)에 들어간다. Phase 2·8·20·21·22 의 `new` 는 그 새 폴더 몫이다.
+시작 패키지에 `new` 가 없는 까닭: 새 코드는 시작 애드온 안이 아니라 우리 새 폴더(`!DevilForever_Core`, `DevilForever_Combat` 등)에 들어간다. Phase 2·8·20·21·22 의 `new` 는 그 새 폴더 몫이다.
 
 ## 2. 요약 표
 
@@ -58,7 +58,7 @@
 
 ### Phase 2 — 공통 외관 · new
 
-- (i) `DevilForever_Core`: 등록 표, 처음 로드 때 한 번 넣는 기본값 주입, 테마 토큰·프레임별 편집값 읽기 함수, 외관 프레임 이름 목록(R63·R87).
+- (i) `!DevilForever_Core`: 등록 표, 처음 로드 때 한 번 넣는 기본값 주입, 테마 토큰·프레임별 편집값 읽기 함수, 외관 프레임 이름 목록(R63·R87).
 - (ii) Masque 는 버튼 스킨 엔진이고(`M:135`, SV `MasqueDB`, `U/Masque-12.1.8/Masque/Masque.lua:182`), Onyx 는 Masque 의존 스킨이다(`M:136`). 둘 다 16001 TOC(확정). Dominos·Hekili 가 Masque 를 OptionalDeps 로 둔다(`M:111,124`, 확정).
 - (iii) Core 자체가 없다(확정 — `Collection/AddOns/` 는 `.gitkeep` 뿐). V42 !DevilUI 의 배치 저장은 대화창·미니맵 두 가지만 다룬다(`V42/!DevilUI/minimap.lua:930–949`, SV `DevilUILayout` per character `V42/!DevilUI/!DevilUI.toc:8`, 확정). 마스터 플랜이 빼라고 한 설치기·채팅 필터 초기화·uiScale 변경은 그대로 뺀다.
 - (iv) Masque: 그룹별 스킨 이름 정도만(키 이름은 Phase 2 정독 때 — 지금 읽지 않음).
