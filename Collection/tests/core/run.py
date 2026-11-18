@@ -443,8 +443,20 @@ def generated_registry_lookup():
               + list(to_py(c.GetFrameNames(c, "Hekili")).values())
               + list(to_py(c.GetFrameNames(c, "PitBull4")).values())
               + list(to_py(c.GetFrameNames(c, "Grid2")).values())
-              + list(to_py(c.GetFrameNames(c, "Details")).values())),
-       "appearance frames are Dominos', Prat's, SexyMap's, FUF's, Quartz's, Hekili's, PitBull4's, Grid2's and Details' only")
+              + list(to_py(c.GetFrameNames(c, "Details")).values())
+              + list(to_py(c.GetFrameNames(c, "DevilForever_StatusStrip")).values())),
+       "appearance frames are Dominos', Prat's, SexyMap's, FUF's, Quartz's, Hekili's, PitBull4's, Grid2's, Details'"
+       " and the status strip's only")
+    strip = to_py(c.GetAddonInfo(c, "DevilForever_StatusStrip"))
+    eq(list(to_py(c.GetFrameKeys(c, "DevilForever_StatusStrip")).values()),
+       ["statusstrip.bags", "statusstrip.bar", "statusstrip.clock", "statusstrip.durability", "statusstrip.fps",
+        "statusstrip.gold", "statusstrip.latency"], "status strip frame keys: the bar and its six texts")
+    eq(sorted((e["field"], e.get("min"), e.get("max")) for e in strip["editable"].values()),
+       [("color", None, None), ("font", 6, 64), ("position", None, None), ("size", 8, 8192), ("spacing", 0, 128)],
+       "status strip editable items sit on the bar only")
+    eq((strip["bundle"], strip["use"], strip.get("defaults"), list(strip["savedVariables"].values())),
+       ("individual", "new", None, [{"name": "DevilForever_StatusStripDB", "scope": "account", "split": "common"}]),
+       "status strip: own individual addon, no Core defaults file, account SV")
     details = to_py(c.GetAddonInfo(c, "details"))
     eq(list(to_py(c.GetFrameNames(c, "Details")).values()), ["DetailsBaseFrame1", "DetailsBaseFrame2"],
        "Details frames: damage window 1, threat window 2")

@@ -77,3 +77,7 @@ Phase 14 끝: 이름표는 게임 기본을 쓰고 애드온을 넣지 않는다
 ## Phase 15 끝 정리 (2026-11-18 18:27:38 +0900)
 
 Phase 15 끝: Aurora 를 쓸지는 Codex 가 정한다(R107 ④). Codex 확인·외관 발주문을 썼다. Aurora 가 접속마다 게임 설정 하나(questTextContrast)를 4 로 바꾸고 이름표·Cooldown Manager 스킨은 끌 수 없다는 점을 원천에서 확인해 발주문에 넣었고, 되돌리는 길을 애드온 없이 치는 한 줄로 바꿨다. Result = `Claude/results/PHASE_15_aurora_RESULT.md`.
+
+## Phase 16 끝 정리 (2026-11-18 19:02:11 +0900)
+
+새 작은 애드온 DevilForever_StatusStrip(골드·가방 빈칸·내구도·시계·지연·FPS). Result = `Claude/results/PHASE_16_statusstrip_RESULT.md`.

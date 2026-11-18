@@ -803,6 +803,76 @@
           "split": "common"
         }
       }
+    },
+    "DevilForever_StatusStrip": {
+      "frames": [
+        {
+          "key": "statusstrip.bar",
+          "frame": "DevilForever_StatusStripFrame",
+          "tokens": {
+            "font": "font.number",
+            "color": "color.text.normal",
+            "spacing": "spacing.default"
+          }
+        },
+        {
+          "key": "statusstrip.gold",
+          "frame": "DevilForever_StatusStripGold"
+        },
+        {
+          "key": "statusstrip.bags",
+          "frame": "DevilForever_StatusStripBags"
+        },
+        {
+          "key": "statusstrip.durability",
+          "frame": "DevilForever_StatusStripDurability"
+        },
+        {
+          "key": "statusstrip.clock",
+          "frame": "DevilForever_StatusStripClock"
+        },
+        {
+          "key": "statusstrip.latency",
+          "frame": "DevilForever_StatusStripLatency"
+        },
+        {
+          "key": "statusstrip.fps",
+          "frame": "DevilForever_StatusStripFPS"
+        }
+      ],
+      "editable": [
+        {
+          "frame": "statusstrip.bar",
+          "field": "position"
+        },
+        {
+          "frame": "statusstrip.bar",
+          "field": "size",
+          "min": 8,
+          "max": 8192
+        },
+        {
+          "frame": "statusstrip.bar",
+          "field": "font",
+          "min": 6,
+          "max": 64
+        },
+        {
+          "frame": "statusstrip.bar",
+          "field": "color"
+        },
+        {
+          "frame": "statusstrip.bar",
+          "field": "spacing",
+          "min": 0,
+          "max": 128
+        }
+      ],
+      "saved_variables": {
+        "DevilForever_StatusStripDB": {
+          "split": "common"
+        }
+      }
     }
   }
 }

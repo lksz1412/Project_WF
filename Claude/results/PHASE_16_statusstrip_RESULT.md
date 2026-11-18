@@ -1,0 +1,49 @@
+# PHASE 16 — 가벼운 상태띠 RESULT
+
+## Summary
+
+새 작은 애드온 `DevilForever_StatusStrip` 을 만들었다(R107 ⑤ 가벼운 정보만 · R44 따로 켜고 끔 · R101 다른 애드온이 같은 값을 보이지 않아 하나 더함). 골드·일반 가방 빈칸·가장 낮은 내구도·내 컴퓨터 시각(24시)·지연(집/월드)·FPS 를 보인다. 외관은 Codex(발주문 appearance-16).
+
+## Step Range
+
+Step 28a(설계)·28b(구현)
+
+## Inputs
+
+마스터 플랜 기능 표 16행·Test Plan 429·448행, Core API, V42·upstream 참고 원천(설계서의 파일:줄)
+
+## Files Created
+
+Collection/AddOns/DevilForever_StatusStrip/(TOC·StatusStrip.lua), Collection/tests/statusstrip/run.py, Collection/codex-briefs/phase16.md·appearance-16.md, handoffs/phase16/design-28a.md·DECISIONS_28a.md·TRIAGE_phase16.md
+
+## Files Updated
+
+registry_extra.json·Registry.lua·tests/core/run.py·설치 ZIP·앞 발주문 24개(해시·목록)
+
+## Read Coverage
+
+Step 28a·28b 이력의 Basis, A1·A2 work_log, master 삼각검증 줄
+
+## Execution Evidence
+
+Step 28a·28b 이력, work_log-a2.md 판정 줄
+
+## Validation·Gate·Confirmed
+
+코드 논리 검수 1회 + 적대(중간 3) → 같은 A 고침 → 같은 B 재확인 0/0/2. 테스트 20/20·Core 61/61. 게임 안 동작은 미검증(Codex 발주문 phase16).
+
+## Non-Changes
+
+Core Lua·도구·시작 애드온 원본 무변경
+
+## Open Issues
+
+미니맵 시계와 띠 시계가 겹침(둘 중 하나를 끌지 최종 보고). 경미: 배치 표시 뒤 고정 오류 시 플래그가 남을 수 있음(이론상), appearance-16 단위 색 문구. 확인 필요: PLAYER_EQUIPMENT_CHANGED·BAG_CONTAINER_UPDATE 이벤트, 등록 실패가 조용히 지나가는지.
+
+## Decision Queue
+
+동전 색 없음(R87 — 결정함), 저장값이 쓸 수 없을 때 켜고 끔은 그 접속에만(A2-2, 기본값 유지), Core 시험 기대값 갱신(A2-3)
+
+## Next
+
+Phase 19 경험치·평판 바

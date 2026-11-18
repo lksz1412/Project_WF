@@ -4,7 +4,7 @@
 
 - 결과를 올릴 자리: `References/codex-verify/phase10/` (저장소). 결과 표 `result.md` 에 항목마다 「결과 한 줄 양식」 을 한 줄씩 적는다. 두 번째 칸은 `통과` / `실패` / `못 함` 중 하나, 실패면 마지막 칸에 오류 문구 한 줄.
 - 설치 ZIP 둘:
-  - 모음집 `outputs/collection/DevilForever-collection.zip`, sha256 `d02105320a0d82abe3a7f680dd7a4eef27357d6938383bd1e40cd8206060b820` (지금 판 안에는 `!DevilForever_Core/`, `DevilForever_Castbars/`, `DevilForever_ChatSetup/`, `DevilForever_FUFDefaults/`, `PitBull4/` — 이 발주문은 `!DevilForever_Core` 하나만 넣는다).
+  - 모음집 `outputs/collection/DevilForever-collection.zip`, sha256 `2460bd1de6dd86f71dc15f7a990144fe2a45b7da2561eb88dd0a7fcbe5ef9df4` (지금 판 안에는 `!DevilForever_Core/`, `DevilForever_Castbars/`, `DevilForever_ChatSetup/`, `DevilForever_FUFDefaults/`, `DevilForever_StatusStrip/`, `PitBull4/` — 이 발주문은 `!DevilForever_Core` 하나만 넣는다).
   - Details 원본 `References/forever-addons/Details/Details-Details.20261109.15410.172.zip`, sha256 `5002bdd5c3e92dd59bffa3ebdfc867f980b09ed629c51dab056fb5442f92ad41`. 안의 8폴더 가운데 `Details`·`Details_TinyThreat` 둘만 넣는다(나머지 여섯 — `Details_Compare2`·`Details_DataStorage`·`Details_EncounterDetails`·`Details_RaidCheck`·`Details_Streamer`·`Details_Vanguard` — 은 넣지 않는다. 모음집 묶음에는 Details·Tiny Threat 둘만 넣을 계획이다).
 - 폴더 이름이 `!` 로 시작한다. bash 로 다룰 때는 작은따옴표로 감싼다(예: `ls '_forever_/Interface/AddOns/!DevilForever_Core'`).
 - 이 Phase 의 구성: **창 1 = 데미지(Details 기본 그대로 — 준 피해, 큰 값이 위), 창 2 = 위협(Tiny Threat 플러그인)**. ForeverThreat 는 쓰지 않는다(R107 ②). Details 의 설정 파일은 Details 가 로그아웃 때 자기 메모리 값으로 다시 쓰므로 모음집은 Details 기본값을 넣지 않는다. 창 2 는 캐릭터마다 한 번 손으로 만든다(2번) — 그 뒤로는 Details 가 저장·복원한다. Details 를 대화창 탭 안에 넣는 기능은 Details 기본(꺼짐) 그대로다 — 미터가 세 번째 대화창 자리를 차지하지 않는다(R33).

@@ -448,6 +448,99 @@ Core.Registry = {
       use = "new",
       version = "0.1.0",
     },
+    DevilForever_StatusStrip = {
+      bundle = "individual",
+      editable = {
+        {
+          field = "position",
+          frame = "statusstrip.bar",
+          kind = "position",
+        },
+        {
+          field = "size",
+          frame = "statusstrip.bar",
+          kind = "size",
+          max = 8192,
+          min = 8,
+        },
+        {
+          field = "font",
+          frame = "statusstrip.bar",
+          kind = "font",
+          max = 64,
+          min = 6,
+        },
+        {
+          field = "color",
+          frame = "statusstrip.bar",
+          kind = "color",
+        },
+        {
+          field = "spacing",
+          frame = "statusstrip.bar",
+          kind = "spacing",
+          max = 128,
+          min = 0,
+        },
+      },
+      foreverLoad = "yes",
+      frames = {
+        {
+          frame = "DevilForever_StatusStripFrame",
+          key = "statusstrip.bar",
+          tokens = {
+            color = "color.text.normal",
+            font = "font.number",
+            spacing = "spacing.default",
+          },
+        },
+        {
+          frame = "DevilForever_StatusStripGold",
+          key = "statusstrip.gold",
+          tokens = {},
+        },
+        {
+          frame = "DevilForever_StatusStripBags",
+          key = "statusstrip.bags",
+          tokens = {},
+        },
+        {
+          frame = "DevilForever_StatusStripDurability",
+          key = "statusstrip.durability",
+          tokens = {},
+        },
+        {
+          frame = "DevilForever_StatusStripClock",
+          key = "statusstrip.clock",
+          tokens = {},
+        },
+        {
+          frame = "DevilForever_StatusStripLatency",
+          key = "statusstrip.latency",
+          tokens = {},
+        },
+        {
+          frame = "DevilForever_StatusStripFPS",
+          key = "statusstrip.fps",
+          tokens = {},
+        },
+      },
+      package = "DevilForever",
+      phases = {},
+      savedVariables = {
+        {
+          name = "DevilForever_StatusStripDB",
+          scope = "account",
+          split = "common",
+        },
+      },
+      tocStatus = "matched",
+      tocs = {
+        "DevilForever_StatusStrip.toc",
+      },
+      use = "new",
+      version = "0.1.0",
+    },
     Dominos = {
       bundle = "individual",
       defaults = "Defaults/Dominos.lua",
@@ -2313,6 +2406,7 @@ Core.Registry = {
     "DevilForever_Castbars",
     "DevilForever_ChatSetup",
     "DevilForever_FUFDefaults",
+    "DevilForever_StatusStrip",
     "Dominos",
     "Dominos_Cast",
     "Dominos_Config",

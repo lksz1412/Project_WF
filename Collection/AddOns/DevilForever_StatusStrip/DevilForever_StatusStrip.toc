@@ -1,0 +1,7 @@
+## Interface: 16001
+## Title: DevilForever Status Strip
+## Notes: One text strip at the bottom of the screen: gold, free bag slots, durability, clock, latency and FPS.
+## Version: 0.1.0
+## SavedVariables: DevilForever_StatusStripDB
+
+StatusStrip.lua

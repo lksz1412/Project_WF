@@ -4,7 +4,7 @@
 
 - 결과를 올릴 자리: `References/codex-verify/phase14/` (저장소). 결과 표 `result.md` 에 항목마다 「결과 한 줄 양식」 을 한 줄씩 적는다. 두 번째 칸은 `통과` / `실패` / `못 함` 중 하나, 실패면 마지막 칸에 오류 문구 한 줄. 5번의 설정 목록은 `settings.md`, CVar 출력은 `cvars.txt` 에 따로 둔다.
 - 이 Phase 는 애드온을 내지 않는다. 이름표는 게임 기본 이름표를 그대로 쓴다(R107 ③). Platynator 는 쓰지 않는다. 시전바는 Quartz(Phase 7), 위협 수치는 Details 의 Tiny Threat(Phase 10)가 따로 맡는다 — 이 검증은 기본 이름표가 무엇을 보이는지 적는 것이다.
-- 설치 ZIP 하나: 모음집 `outputs/collection/DevilForever-collection.zip`, sha256 `d02105320a0d82abe3a7f680dd7a4eef27357d6938383bd1e40cd8206060b820` (지금 판 안에는 `!DevilForever_Core/`, `DevilForever_Castbars/`, `DevilForever_ChatSetup/`, `DevilForever_FUFDefaults/`, `PitBull4/` — 이 발주문은 `!DevilForever_Core` 하나만 넣는다).
+- 설치 ZIP 하나: 모음집 `outputs/collection/DevilForever-collection.zip`, sha256 `2460bd1de6dd86f71dc15f7a990144fe2a45b7da2561eb88dd0a7fcbe5ef9df4` (지금 판 안에는 `!DevilForever_Core/`, `DevilForever_Castbars/`, `DevilForever_ChatSetup/`, `DevilForever_FUFDefaults/`, `DevilForever_StatusStrip/`, `PitBull4/` — 이 발주문은 `!DevilForever_Core` 하나만 넣는다).
 - 폴더 이름이 `!` 로 시작한다. bash 로 다룰 때는 작은따옴표로 감싼다(예: `ls '_forever_/Interface/AddOns/!DevilForever_Core'`).
 - 이 클라이언트(WoW Forever 1.60.1, Interface 16001)에 어떤 이름표 설정·CVar 가 있는지는 Claude 쪽에서 확인하지 못했다. 아래에 적은 CVar 이름은 다른 클라이언트에서 쓰는 이름을 후보로 든 것이다 — 출력이 `nil` 이면 「없음」 으로 적는다. 설정 이름은 koKR 메뉴에 보인 그대로 적는다.
 - 위협(3번)과 시전(4번)은 몹과 싸우면 되고, 소환수가 있는 직업이나 파티가 있으면 더 좋다. 할 수 없는 칸은 `못 봄` 으로 적는다.
