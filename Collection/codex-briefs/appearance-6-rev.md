@@ -3,7 +3,7 @@
 받는 쪽: Codex. 보내는 쪽: Claude 세션. 외관 설계·판단은 Codex 에 맡긴다(R50·R53). 지켜야 할 약속(토큰으로만 값 읽기·`Edit:Get`·전투 중 보호 프레임 금지·등록으로 프레임 알리기·다른 애드온 수정 금지·V42 초기화 코드 금지)은 `Collection/codex-briefs/appearance-2.md` 2절 그대로이고, 겉보기는 FHD·QHD·UHD 셋을 처음부터 만든다(`appearance-2-layouts.md`, R107 ⑥). 게임 입력을 자동으로 보내는 도구는 쓰지 않는다. FUF 판 외관(`appearance-6.md`)과 따로 만든다 — 어느 판을 기본으로 묶을지는 Phase 23 에서 정한다.
 
 - 결과를 올릴 자리: `References/codex-appearance/6-rev/`. `Collection/` 은 고치지 않는다 — Claude 가 정적 대조 뒤 합친다.
-- 기반: 설치 ZIP `outputs/collection/DevilForever-collection.zip`(sha256 `12845c356942b655ef9a56e86aa7a00e088e8a7a8a61a6a10078a7e77de8b06d`, 안의 `PitBull4/` 가 우리가 고친 PitBull4). Phase 2 외관 결과(`References/codex-appearance/2/`)의 토큰 세트 위에 얹는다. 볼 때는 FUF 묶음(`ForeverUnitFrames`·`DevilForever_FUFDefaults`·`DevilForever_Castbars`)을 끈다.
+- 기반: 설치 ZIP `outputs/collection/DevilForever-collection.zip`(sha256 `d726a254197affceb9c8f3da892c97efb12ed76127d14ae988f000759a8e4846`, 안의 `PitBull4/` 가 우리가 고친 PitBull4). Phase 2 외관 결과(`References/codex-appearance/2/`)의 토큰 세트 위에 얹는다. 볼 때는 FUF 묶음(`ForeverUnitFrames`·`DevilForever_FUFDefaults`·`DevilForever_Castbars`)을 끈다.
 - 출발점: V42 Devil profile 「Wide」 의 외관 값 — `work/old-reference-r36-3ed3y_p1/extracted-forever-v42/Interface/AddOns/!DevilUI/Profile/PitBull4.lua` 의 `profiles.Wide` 와 `namespaces.<모듈>.profiles.Wide`. 기능 값은 이미 `Collection/AddOns/!DevilForever_Core/Defaults/PitBull4.lua` 에 들어갔고, 나머지(아래 1절의 종류, 164곳)가 외관 몫이다. 그 값은 옛 화면용이라 그대로 쓰지 않고 세 겉보기 크기 순서(R21·R22)로 다시 정한다.
 
 ## 1. 만들 것

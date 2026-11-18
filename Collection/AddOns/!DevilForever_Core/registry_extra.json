@@ -761,6 +761,55 @@
         }
       },
       "defaults": "Defaults/Grid2.lua"
+    },
+    "Details": {
+      "frames": [
+        {
+          "key": "details.damage",
+          "frame": "DetailsBaseFrame1"
+        },
+        {
+          "key": "details.threat",
+          "frame": "DetailsBaseFrame2"
+        }
+      ],
+      "editable": [
+        {
+          "frame": "details.damage",
+          "field": "position"
+        },
+        {
+          "frame": "details.damage",
+          "field": "size",
+          "min": 7,
+          "max": 480
+        },
+        {
+          "frame": "details.threat",
+          "field": "position"
+        },
+        {
+          "frame": "details.threat",
+          "field": "size",
+          "min": 7,
+          "max": 480
+        }
+      ],
+      "saved_variables": {
+        "_detalhes_global": {
+          "split": "common"
+        },
+        "_detalhes_database": {
+          "split": "common"
+        }
+      }
+    },
+    "DevilForever_DetailsSetup": {
+      "saved_variables": {
+        "DevilForever_DetailsSetupDB": {
+          "split": "common"
+        }
+      }
     }
   }
 }

@@ -176,9 +176,45 @@ Core.Registry = {
     },
     Details = {
       bundle = "individual",
-      editable = {},
+      editable = {
+        {
+          field = "position",
+          frame = "details.damage",
+          kind = "position",
+        },
+        {
+          field = "size",
+          frame = "details.damage",
+          kind = "size",
+          max = 480,
+          min = 7,
+        },
+        {
+          field = "position",
+          frame = "details.threat",
+          kind = "position",
+        },
+        {
+          field = "size",
+          frame = "details.threat",
+          kind = "size",
+          max = 480,
+          min = 7,
+        },
+      },
       foreverLoad = "yes",
-      frames = {},
+      frames = {
+        {
+          frame = "DetailsBaseFrame1",
+          key = "details.damage",
+          tokens = {},
+        },
+        {
+          frame = "DetailsBaseFrame2",
+          key = "details.threat",
+          tokens = {},
+        },
+      },
       package = "Details",
       phases = {
         10,
@@ -387,6 +423,27 @@ Core.Registry = {
       tocStatus = "matched",
       tocs = {
         "DevilForever_ChatSetup.toc",
+      },
+      use = "new",
+      version = "0.1.0",
+    },
+    DevilForever_DetailsSetup = {
+      bundle = "individual",
+      editable = {},
+      foreverLoad = "yes",
+      frames = {},
+      package = "DevilForever",
+      phases = {},
+      savedVariables = {
+        {
+          name = "DevilForever_DetailsSetupDB",
+          scope = "character",
+          split = "common",
+        },
+      },
+      tocStatus = "matched",
+      tocs = {
+        "DevilForever_DetailsSetup.toc",
       },
       use = "new",
       version = "0.1.0",
@@ -2276,6 +2333,7 @@ Core.Registry = {
     "Details_Vanguard",
     "DevilForever_Castbars",
     "DevilForever_ChatSetup",
+    "DevilForever_DetailsSetup",
     "DevilForever_FUFDefaults",
     "Dominos",
     "Dominos_Cast",

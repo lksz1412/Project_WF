@@ -1,0 +1,9 @@
+## Interface: 16001
+## Title: DevilForever Details Setup
+## Notes: Opens a second Details! window showing the Tiny Threat plugin, once per character, in the session Details! makes that character's settings.
+## Version: 0.1.0
+## Dependencies: !DevilForever_Core, Details
+## OptionalDeps: Details_TinyThreat
+## SavedVariablesPerCharacter: DevilForever_DetailsSetupDB
+
+DetailsSetup.lua

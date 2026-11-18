@@ -442,8 +442,22 @@ def generated_registry_lookup():
               + list(to_py(c.GetFrameNames(c, "Quartz")).values())
               + list(to_py(c.GetFrameNames(c, "Hekili")).values())
               + list(to_py(c.GetFrameNames(c, "PitBull4")).values())
-              + list(to_py(c.GetFrameNames(c, "Grid2")).values())),
-       "appearance frames are Dominos', Prat's, SexyMap's, FUF's, Quartz's, Hekili's, PitBull4's and Grid2's only")
+              + list(to_py(c.GetFrameNames(c, "Grid2")).values())
+              + list(to_py(c.GetFrameNames(c, "Details")).values())),
+       "appearance frames are Dominos', Prat's, SexyMap's, FUF's, Quartz's, Hekili's, PitBull4's, Grid2's and Details' only")
+    details = to_py(c.GetAddonInfo(c, "details"))
+    eq(list(to_py(c.GetFrameNames(c, "Details")).values()), ["DetailsBaseFrame1", "DetailsBaseFrame2"],
+       "Details frames: damage window 1, threat window 2")
+    eq(sorted((sv["name"], sv["scope"], sv["split"]) for sv in details["savedVariables"].values()),
+       [("__details_backup", "account", "common"), ("__details_debug", "account", "common"),
+        ("_detalhes_database", "character", "common"), ("_detalhes_global", "account", "common")], "Details SV")
+    eq((details.get("defaults"), len(details["editable"])), (None, 4),
+       "Details has no Core defaults file (its saved variables are rewritten by Details at logout); 2 positions, 2 sizes")
+    eq(list(to_py(c.GetFrameNames(c, "Details_TinyThreat")).values()), [], "Tiny Threat draws inside window 2")
+    dsetup = to_py(c.GetAddonInfo(c, "DevilForever_DetailsSetup"))
+    eq((dsetup["use"], list(dsetup["savedVariables"].values())),
+       ("new", [{"name": "DevilForever_DetailsSetupDB", "scope": "character", "split": "common"}]),
+       "DetailsSetup bridge: own addon, per-character SV")
     grid2 = to_py(c.GetAddonInfo(c, "grid2"))
     eq(list(to_py(c.GetFrameNames(c, "Grid2")).values()), ["Grid2LayoutFrame"], "Grid2 frames: the layout window")
     eq(list(grid2["savedVariables"].values()), [{"name": "Grid2DB", "scope": "account", "split": "common"}],

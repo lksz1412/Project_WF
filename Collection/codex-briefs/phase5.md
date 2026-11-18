@@ -4,7 +4,7 @@
 
 - 결과를 올릴 자리: `References/codex-verify/phase5/` (저장소). 결과 표 `result.md` 에 항목마다 「결과 한 줄 양식」 을 한 줄씩 적는다. 두 번째 칸은 `통과` / `실패` / `못 함` 중 하나, 실패면 마지막 칸에 오류 문구 한 줄.
 - 설치 ZIP 둘:
-  - 모음집 `outputs/collection/DevilForever-collection.zip`, sha256 `12845c356942b655ef9a56e86aa7a00e088e8a7a8a61a6a10078a7e77de8b06d` (지금 판 안에는 `!DevilForever_Core/`, `DevilForever_Castbars/`, `DevilForever_ChatSetup/`, `DevilForever_FUFDefaults/`, `PitBull4/` — 이 발주문이 넣으라는 폴더만 넣는다(PitBull4 는 Phase 6-rev 몫이라 다른 Phase 검증에서는 넣지 않는다)).
+  - 모음집 `outputs/collection/DevilForever-collection.zip`, sha256 `d726a254197affceb9c8f3da892c97efb12ed76127d14ae988f000759a8e4846` (지금 판 안에는 `!DevilForever_Core/`, `DevilForever_Castbars/`, `DevilForever_ChatSetup/`, `DevilForever_DetailsSetup/`, `DevilForever_FUFDefaults/`, `PitBull4/` — 이 발주문이 넣으라는 폴더만 넣는다(PitBull4 는 Phase 6-rev 몫이라 다른 Phase 검증에서는 넣지 않는다)).
   - SexyMap 원본 `References/forever-addons/SexyMap/SexyMap-v12.1.7.zip`, sha256 `1868eb714b8c9ea4efaa615109bfd457a0c3bb625f0b2a1f1befdadfc9143321`. 안의 `SexyMap` 폴더 하나를 넣는다.
 - 폴더 이름이 `!` 로 시작한다. bash 로 다룰 때는 작은따옴표로 감싼다(예: `ls '_forever_/Interface/AddOns/!DevilForever_Core'`).
 - SexyMap 은 캐릭터마다 `<캐릭터 이름>-<서버 이름>` 이름의 프로필을 쓴다. 아래 `/run` 줄은 그 이름을 스스로 만든다.
