@@ -1,0 +1,23 @@
+{
+  "label": "idx-3461",
+  "source": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\downloads\\BlackEdition2_6.1Alpha.zip",
+  "bytes": 7626408,
+  "SHA256": "7EAC7EC1345582736A5EF57249FBFAAB1C55EF83C8E9631715CB7D3A6F171CBC",
+  "expectedSHA256": null,
+  "hashMatch": null,
+  "CRCtestRuns": 1,
+  "unsafe": [],
+  "extractionState": "passed",
+  "CRCbadMember": null,
+  "CRCstate": "passed",
+  "fileCount": 1,
+  "directoryCount": 0,
+  "totalCompressedBytes": 7626254,
+  "totalUncompressedBytes": 7889127,
+  "extractionRoot": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\extracted-idx-3461",
+  "extractedFileCount": 1,
+  "extractedBytes": 7889127,
+  "postExtractionReparse": [],
+  "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\idx-3461-members.json",
+  "nameOnlyCandidates": []
+}

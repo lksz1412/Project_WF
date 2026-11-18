@@ -1,0 +1,16 @@
+## Interface: 60100
+## Title: CAN_Chat
+## Author: CAN
+## Version: 11.01.07
+## Notes: 채팅 애드온    
+## SavedVariablesPerCharacter:CANChatDB
+## SavedVariables:CANChat
+
+
+CAN_Chat.lua
+buttons.lua
+channelshort.lua
+mouseover.lua
+config.lua
+urlcopy.lua
+chattab.lua

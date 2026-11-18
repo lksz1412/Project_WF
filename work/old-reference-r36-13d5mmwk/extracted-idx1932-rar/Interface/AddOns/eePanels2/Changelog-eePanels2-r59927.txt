@@ -1,0 +1,19 @@
+------------------------------------------------------------------------
+r59927 | 7destiny | 2008-02-01 05:06:34 -0500 (Fri, 01 Feb 2008) | 1 line
+Changed paths:
+   M /trunk/eePanels2/localization/localization.koKR.lua
+
+eePanels2: koKR Update
+------------------------------------------------------------------------
+r59908 | evilelvis | 2008-01-31 23:50:01 -0500 (Thu, 31 Jan 2008) | 4 lines
+Changed paths:
+   M /trunk/eePanels2/core.lua
+   M /trunk/eePanels2/embeds.xml
+   M /trunk/eePanels2/libs
+   M /trunk/eePanels2/localization/localization.enUS.lua
+
+eePanels2: 
+-added a toggle to turn on/off a potential work around for parenting/anchoring to dynamically created frames
+- added acehook library
+- updated inline documentation
+------------------------------------------------------------------------

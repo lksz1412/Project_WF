@@ -1,0 +1,35 @@
+[
+  {
+    "postID": 2958,
+    "section": "screenshot",
+    "DOMordinal": 1,
+    "thumbURL": "https://upload.inven.co.kr/upload/2009/12/10/bbs/thumb/n27419179.jpg",
+    "viewerLiteral": "viewImage('2009/12/10/bbs/i27419179.jpg');",
+    "fullURL": "https://upload.inven.co.kr/upload/2009/12/10/bbs/i27419179.jpg",
+    "alt": "",
+    "title": null,
+    "sourceLocation": {
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\images-2958.html",
+      "selector": "screenshot img",
+      "line": 33
+    },
+    "error": null,
+    "decodeStatus": "verified-full-load",
+    "mappingEvidence": {
+      "observedThumbOrigin": "https://upload.inven.co.kr",
+      "observedPathPrefix": "/upload/",
+      "literalViewerPath": "2009/12/10/bbs/i27419179.jpg"
+    },
+    "initialMappingState": "unresolved-preserved-in-images.json",
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\sample-2958-original.jpg",
+    "HTTP": 200,
+    "time": "2026-11-17T22:40:21.7702943+09:00",
+    "bytes": 265024,
+    "SHA256": "3863A54D3453AF351026F147178F3192BF4040312ACCEFA391D5CCAD12A36F98",
+    "state": "reused",
+    "contentType": "image/jpeg",
+    "width": 1920,
+    "height": 1024,
+    "imageFormat": "JPEG"
+  }
+]

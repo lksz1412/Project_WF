@@ -1,0 +1,253 @@
+{
+  "postID": 8906,
+  "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=8906",
+  "row": {
+    "postID": 8906,
+    "page": 1,
+    "rowOrdinal": 13,
+    "title": "Devil BlackEdition 6.0.2 Fanfix [통합] 108",
+    "rowText": "22 Devil BlackEdition 6.0.2 Fanfix [통합] 108 소드군용 데빌블랙 발리엔스 19870 10 10-17",
+    "sourceAnchor": "javascript:addonMove('detail.php', 'idx->8906', 'leave->idx,listtype,ext', 'rurl');",
+    "sourceLocation": {
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\list-first.html",
+      "selector": "table.list tr a[href]",
+      "line": 1334
+    }
+  },
+  "detailProvenance": {
+    "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=8906",
+    "time": "2026-11-17T14:02:18.9886516Z",
+    "contentType": "text/html; charset=UTF-8",
+    "HTTP": 200,
+    "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=8906",
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-8906.html",
+    "state": "acquired",
+    "attempts": 1,
+    "commandExitCode": 0,
+    "encoding": "IWR decoded to UTF-8",
+    "bytes": 230239,
+    "SHA256": "C50102D769DDDD82FB883C71876F95C1A9C73CD7A0E7C92475B7C8BFD4C6FF72"
+  },
+  "acquisitionState": "parsed",
+  "A1read": false,
+  "imageObserved": false,
+  "sections": {
+    "addonAddon": {
+      "state": "parsed",
+      "text": "외국 홈페이지에서 최대한 업데이트 버전 찾아서 지금까진 충돌은 없구요\n\n제 개인적으로 쓰는 펫용이라던가 pvp용 애드온이 몇가지 추가되있는데\n\n그런건 개인적으로 삭제 해주시거나 그냥 사용하셔도 무방합니다.\n\n지금까진 충돌없이 사용하고 있으며 데빌에있는 애드온으로 업데이트한거라\n\n기존 폴더를 삭제하시고 그대로 사용하시면 설정이 어느정도는 저장 되어있을겁니다.\n\n데빌 UI 업뎃 직전까지만 사용하시면되요 ^^\n\n\n\n\n\n※필독\n\n\n\nDBM이라던가 그런 애드온이 삭제하고 설치해야되는게 있어서 쓰시던 블랙에디션을 지우지마시고 \n\nAddOns 폴더만 지우신뒤에 압축푸시면됩니다.\n\n\n\n추가적으로 게임하며 충돌나는애드온이라거나 필요없는애드온은 지우고 있고 제개인적으로 추가할 애드온은\n\n추가하는중이며 충돌애드온 지우면 계속 수정업뎃 해드리겠습니다.\n\n\n\n※추가 설치법\n\n아직 잘 모르는분들이 계셔서 정말 상세히 설명드릴께요.\n\n기존 데빌을 지우지마시고 그냥 와우설치된 폴더의 Interface 폴더안에 \n\nAddOns 폴더를 지우신후에 파일 다운받으셔서 Interface 폴더 안에 넣으시고 압축풀고 실행하시면됩니다.\n\n\n\n실수로 지우신분들은 와우폴더 내에 Old 란 폴더가있으면 그안에 WTF 파일만 밖으로 빼내시면되고\n\n아예 아무것도 없는분들은 5.4버전 데빌블랙을 설치한후에 애드온폴더만 삭제후 설치하시면됩니다.\n\n\n\n※Battle Res Monitor 관련문제\n\n\n\n오라3 옵션설정에 보시면 Battle Res 탭이있습니다. 확인하셔서 체크해제 해주시면됩니다.\n\n\n\n※ 한번 더 설치시에 필독\n\n\n\n기존에 설치하신 AddOns 폴더를 지우고 압축 푸셔야됩니다. 삭제된 파일이나 폴더가 있으므로\n\n덮어씌우기하시면 파일이나 폴더가 남아서 제대로 변경이 안됩니다. (몹잡을시 소리나는 애드온 관련)\n\n\n\n※ 설치했을때 애드온 정리가 스샷과 같이 되지않는분들은 한번 참고해주세요.\n\n\n\n1. 데빌블랙에디션 5.4 THETA 공식버전을 다운받아서 설치한다.\n\n\n\n2. AddOns 폴더만 삭제후 Fanfix 버전을 설치한다.\n\n\n\n※ 일단 지금까지 나온 문제점은 개인 설정 문제인거같습니다. \n\n방금 아는지인이 최초설치 한다고하여 설치했으나 캐스트바 문제나 미니맵 문제등이 생기지않았습니다.\n\n\n\n※개인애드온 pvp 및 펫 관련 애드온은 대부분 삭제하였고 거의 데빌기본 애드온정도로 남겨놨습니다.\n\n (한번 더 검열해서 삭제 했습니다)\n\n\n\n추가수정사항 - 인벤닉 '돌돔' 님이 추가해주신 데빌 재실행 구문 추가했으니 문제있으신분들은\n\n                     아래쪽 중간에 데빌로고를 컨트롤+클릭 하셔서 데빌 재실행을 해보시기바랍니다.\n\n                       (그외 자잘한 애드온 업데이트)\n\n\n\n압축관련 사항 - 분할압축안해도 이제 올라갈정도의 용량을 확보해서 그냥 압축파일 한개로 올립니다. \n\n                       방금 3개짜리랑 똑같은내용이니 방금받으신분들은 안받으셔도되요\n\n\n\n※아랫쪽바 Devil UI THETA 라고 나오는부분 블랙에디션으로 교체했습니다.\n\n   Castbars 제대로 안되는분들 스크린샷의 프로필부분 WideX 로 되어있는지 확인해주세요\n\n   SSItemLevel 이 업데이트가 늦어서 KibsItemLevel로 임시교체 해뒀습니다. \n\n   업뎃되거나 데빌 제작자분이 오시면 원래대로 돌아가겠지요. \n\n   임시버전이라 계속 업뎃되고 있으니 자주 확인해주시면 감사하겠습니다.",
+      "fragmentPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\idx-8906-addonAddon.html",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-8906.html",
+        "selector": "#addonAddon",
+        "line": 1244
+      },
+      "links": []
+    },
+    "addonVersion": {
+      "state": "empty",
+      "text": "",
+      "fragmentPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\idx-8906-addonVersion.html",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-8906.html",
+        "selector": "#addonVersion",
+        "line": 1301
+      },
+      "links": []
+    }
+  },
+  "iframes": {
+    "screenshot": {
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=8906&tempridx=&count=2",
+      "iframeLiteral": "<iframe frameborder=\"0\" framespacing=\"0\" id=\"screenshot\" scrolling=\"no\" src=\"imagelist.iframe.php?ridx=8906&amp;tempridx=&amp;count=2\"></iframe>",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-8906.html",
+        "selector": "iframe#screenshot",
+        "line": 1238
+      },
+      "provenance": {
+        "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=8906&tempridx=&count=2",
+        "time": "2026-11-17T14:02:19.5874857Z",
+        "contentType": "text/html; charset=UTF-8",
+        "HTTP": 200,
+        "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=8906&tempridx=&count=2",
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-8906.html",
+        "state": "acquired",
+        "attempts": 1,
+        "commandExitCode": 0,
+        "encoding": "IWR decoded to UTF-8",
+        "bytes": 2711,
+        "SHA256": "AD6BE3269FE7A084E4C2F72F5ADAACDA6D372B5E48DD081D926285C67109A67F"
+      },
+      "state": "parsed",
+      "text": "\n\n\n\n\n\n스크린샷\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "links": [
+        {
+          "href": "javascript:void(0);",
+          "onclick": null,
+          "text": "",
+          "line": 28
+        },
+        {
+          "href": "javascript:void(0);",
+          "onclick": "viewImage('2014/10/16/bbs/i0621236398.jpg');",
+          "text": "",
+          "line": 33
+        },
+        {
+          "href": "javascript:void(0);",
+          "onclick": "viewImage('2014/10/17/bbs/i0021882965.png');",
+          "text": "",
+          "line": 40
+        },
+        {
+          "href": "javascript:void(0);",
+          "onclick": null,
+          "text": "",
+          "line": 47
+        }
+      ],
+      "literalPublicDownloadURLs": [],
+      "imageCount": 2
+    },
+    "fileInfo": {
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=8906&tempridx=&count=0",
+      "iframeLiteral": "<iframe frameborder=\"0\" id=\"fileInfo\" src=\"filelist.iframe.php?mode=view&amp;ridx=8906&amp;tempridx=&amp;count=0\"></iframe>",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-8906.html",
+        "selector": "iframe#fileInfo",
+        "line": 1307
+      },
+      "provenance": {
+        "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=8906&tempridx=&count=0",
+        "time": "2026-11-17T14:02:20.2897853Z",
+        "contentType": "text/html; charset=UTF-8",
+        "HTTP": 200,
+        "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=8906&tempridx=&count=0",
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-8906.html",
+        "state": "acquired",
+        "attempts": 1,
+        "commandExitCode": 0,
+        "encoding": "IWR decoded to UTF-8",
+        "bytes": 1802,
+        "SHA256": "EBC72090BC133D43A3BE43FE37B7638A5FC597B8D40458988A4C63126C307090"
+      },
+      "state": "parsed",
+      "text": "\n\n\n\n\n\n파일 정보\n\n\n\n\n\n\n\n\n\n\n\n\n파일\n\n\n클라이언트 버전\n\n\n다운로드\n\n\n등록일\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n",
+      "links": [],
+      "literalPublicDownloadURLs": [],
+      "fileRows": [],
+      "scriptPublicDownloadURLLiterals": []
+    }
+  },
+  "images": [
+    {
+      "postID": 8906,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload.inven.co.kr/upload/2014/10/16/bbs/thumb/n0621236398.jpg",
+      "viewerLiteral": "viewImage('2014/10/16/bbs/i0621236398.jpg');",
+      "fullURL": "https://upload.inven.co.kr/upload/2014/10/16/bbs/i0621236398.jpg",
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-8906.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": "[Errno 2] No such file or directory: 'D:\\\\Projects\\\\Project_WF\\\\work\\\\old-reference-collection-0qlzzyxg\\\\image-c31473f2dde5695c190f.jpg'",
+      "decodeStatus": "failed",
+      "mappingEvidence": {
+        "observedThumbOrigin": "https://upload.inven.co.kr",
+        "observedPathPrefix": "/upload/",
+        "literalViewerPath": "2014/10/16/bbs/i0621236398.jpg"
+      },
+      "initialMappingState": "unresolved-preserved-in-images.json",
+      "time": "2026-11-17T14:05:29.1926317Z",
+      "HTTP": 404,
+      "sourceURL": "https://upload.inven.co.kr/upload/2014/10/16/bbs/i0621236398.jpg",
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-c31473f2dde5695c190f.jpg",
+      "state": "failed",
+      "attempts": 1,
+      "commandExitCode": 0
+    },
+    {
+      "postID": 8906,
+      "section": "screenshot",
+      "DOMordinal": 2,
+      "thumbURL": "https://upload.inven.co.kr/upload/2014/10/17/bbs/thumb/n0021882965.png",
+      "viewerLiteral": "viewImage('2014/10/17/bbs/i0021882965.png');",
+      "fullURL": "https://upload.inven.co.kr/upload/2014/10/17/bbs/i0021882965.png",
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-8906.html",
+        "selector": "screenshot img",
+        "line": 40
+      },
+      "error": "[Errno 2] No such file or directory: 'D:\\\\Projects\\\\Project_WF\\\\work\\\\old-reference-collection-0qlzzyxg\\\\image-834452f87c351ca40e88.png'",
+      "decodeStatus": "failed",
+      "mappingEvidence": {
+        "observedThumbOrigin": "https://upload.inven.co.kr",
+        "observedPathPrefix": "/upload/",
+        "literalViewerPath": "2014/10/17/bbs/i0021882965.png"
+      },
+      "initialMappingState": "unresolved-preserved-in-images.json",
+      "time": "2026-11-17T14:05:29.7597210Z",
+      "HTTP": 404,
+      "sourceURL": "https://upload.inven.co.kr/upload/2014/10/17/bbs/i0021882965.png",
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-834452f87c351ca40e88.png",
+      "state": "failed",
+      "attempts": 1,
+      "commandExitCode": 0
+    }
+  ],
+  "title": "Devil BlackEdition 6.0.2 Fanfix",
+  "metadataLiteral": "Devil BlackEdition 6.0.2 Fanfix\n소드군용 데빌블랙\n애드온 등록자\n발리엔스\n최종 업데이트\n2014.10.17\n카테고리\n통합\n클라이언트 버전\n알수없음\n애드온 버전\n알수없음\n조회수\n47852\n추천수\n10\n다운로드 수\n19870\n관심등록 수\n92\n다운로드\n관심 애드온 등록",
+  "metadataRows": [
+    {
+      "label": "애드온 등록자",
+      "value": "발리엔스",
+      "line": 1181
+    },
+    {
+      "label": "최종 업데이트",
+      "value": "2014.10.17",
+      "line": 1185
+    },
+    {
+      "label": "카테고리",
+      "value": "통합",
+      "line": 1189
+    },
+    {
+      "label": "클라이언트 버전",
+      "value": "알수없음",
+      "line": 1196
+    },
+    {
+      "label": "애드온 버전",
+      "value": "알수없음",
+      "line": 1200
+    },
+    {
+      "label": "조회수",
+      "value": "47852",
+      "line": 1207
+    },
+    {
+      "label": "추천수",
+      "value": "10",
+      "line": 1211
+    },
+    {
+      "label": "다운로드 수",
+      "value": "19870",
+      "line": 1215
+    },
+    {
+      "label": "관심등록 수",
+      "value": "92",
+      "line": 1219
+    }
+  ]
+}

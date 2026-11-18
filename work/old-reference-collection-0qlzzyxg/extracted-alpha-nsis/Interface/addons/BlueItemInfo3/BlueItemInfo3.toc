@@ -1,0 +1,3979 @@
+## Interface: 60100
+## Title: Blue Item Info 3 (fan fix)
+## Author: Inven - InTheBlue
+## Notes: 블루의 아이템 획득 브라우저 애드온
+## Version: 6.1
+## SavedVariables: BlueItemInfo3DB, BlueItemInfo3ItemNameDB
+## SavedVariablesPerCharacter: BlueItemInfo3CharDB
+## OptionalDeps: LibItemTooltip-3.0, LibMapButton-1.1, LibRaidComm-1.0
+## X-Category: Item
+## X-Website: http://wow.inven.co.kr
+
+libs\LibStub\LibStub.lua
+libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
+libs\LibBlueDB-1.0\LibBlueDB-1.0.lua
+libs\LibItemTooltip-3.0\LibItemTooltip-3.0.lua
+libs\LibBlueItem-1.0\LibBlueItem-1.0.lua
+libs\LibDataBroker-1.1\LibDataBroker-1.1.lua
+libs\LibMapButton-1.1\LibMapButton-1.1.lua
+
+Core.lua
+
+db\pve.lua
+db\pvp.lua
+db\faction.lua
+db\scenario.lua
+db\event.lua
+db\gem.lua
+db\archaeology.lua
+db\quest.lua
+db\world.lua
+db\other.lua
+
+Favorite.lua
+Memo.lua
+Tooltip.lua
+SaveItemCache.lua
+
+## X-DB-Category-!A00: 즐겨찾기_양손 무기_전체
+## X-DB-Category-!A01: 도검
+## X-DB-Category-!A02: 둔기
+## X-DB-Category-!A03: 도끼
+## X-DB-Category-!A04: 장창
+## X-DB-Category-!A05: 지팡이
+## X-DB-Category-!A06: 활
+## X-DB-Category-!A07: 총
+## X-DB-Category-!A08: 석궁
+
+## X-DB-Category-!A10: 즐겨찾기_한손 무기_전체
+## X-DB-Category-!A11: 도검
+## X-DB-Category-!A12: 둔기
+## X-DB-Category-!A13: 도끼
+## X-DB-Category-!A14: 단검류
+## X-DB-Category-!A15: 장착 무기
+## X-DB-Category-!A16: 마법봉
+
+## X-DB-Category-!A20: 즐겨찾기_보조 장비_전체
+## X-DB-Category-!A21: 도검
+## X-DB-Category-!A22: 둔기
+## X-DB-Category-!A23: 도끼
+## X-DB-Category-!A24: 단검류
+## X-DB-Category-!A25: 장착 무기
+## X-DB-Category-!A26: 방패
+## X-DB-Category-!A27: 마법서
+
+## X-DB-Category-!A30: 즐겨찾기_천_전체
+## X-DB-Category-!A31: 머리
+## X-DB-Category-!A32: 어깨
+## X-DB-Category-!A33: 가슴
+## X-DB-Category-!A34: 장갑
+## X-DB-Category-!A35: 다리
+## X-DB-Category-!A36: 허리
+## X-DB-Category-!A37: 손목
+## X-DB-Category-!A38: 장화
+
+## X-DB-Category-!A40: 즐겨찾기_가죽_전체
+## X-DB-Category-!A41: 머리
+## X-DB-Category-!A42: 어깨
+## X-DB-Category-!A43: 가슴
+## X-DB-Category-!A44: 장갑
+## X-DB-Category-!A45: 다리
+## X-DB-Category-!A46: 허리
+## X-DB-Category-!A47: 손목
+## X-DB-Category-!A48: 장화
+
+## X-DB-Category-!A50: 즐겨찾기_사슬_전체
+## X-DB-Category-!A51: 머리
+## X-DB-Category-!A52: 어깨
+## X-DB-Category-!A53: 가슴
+## X-DB-Category-!A54: 장갑
+## X-DB-Category-!A55: 다리
+## X-DB-Category-!A56: 허리
+## X-DB-Category-!A57: 손목
+## X-DB-Category-!A58: 장화
+
+## X-DB-Category-!A60: 즐겨찾기_판금_전체
+## X-DB-Category-!A61: 머리
+## X-DB-Category-!A62: 어깨
+## X-DB-Category-!A63: 가슴
+## X-DB-Category-!A64: 장갑
+## X-DB-Category-!A65: 다리
+## X-DB-Category-!A66: 허리
+## X-DB-Category-!A67: 손목
+## X-DB-Category-!A68: 장화
+
+## X-DB-Category-!A70: 즐겨찾기_망토
+
+## X-DB-Category-!A80: 즐겨찾기_목걸이
+
+## X-DB-Category-!A90: 즐겨찾기_반지
+
+## X-DB-Category-!Aa0: 즐겨찾기_장신구
+
+## X-DB-Category-!Ab0: 즐겨찾기_보석
+
+## X-DB-Category-!Ac0: 즐겨찾기_제조법
+
+## X-DB-Category-!Ad0: 즐겨찾기_주문
+
+## X-DB-Category-!Ae0: 즐겨찾기_기타
+
+## X-DB-Category-!B00: 추천 아이템_전사(방어)_양손 무기
+## X-DB-Category-!B01: 한손 무기
+## X-DB-Category-!B02: 보조 장비
+## X-DB-Category-!B03: 방패
+## X-DB-Category-!B04: 머리
+## X-DB-Category-!B05: 어깨
+## X-DB-Category-!B06: 가슴
+## X-DB-Category-!B07: 장갑
+## X-DB-Category-!B08: 다리
+## X-DB-Category-!B09: 허리
+## X-DB-Category-!B0a: 손목
+## X-DB-Category-!B0b: 장화
+## X-DB-Category-!B0c: 망토
+## X-DB-Category-!B0d: 목걸이
+## X-DB-Category-!B0e: 반지
+## X-DB-Category-!B0f: 장신구
+
+## X-DB-Category-!B10: 추천 아이템_전사(무기/분노)_양손 무기
+## X-DB-Category-!B11: 한손 무기
+## X-DB-Category-!B12: 보조 장비
+## X-DB-Category-!B13: 방패
+## X-DB-Category-!B14: 머리
+## X-DB-Category-!B15: 어깨
+## X-DB-Category-!B16: 가슴
+## X-DB-Category-!B17: 장갑
+## X-DB-Category-!B18: 다리
+## X-DB-Category-!B19: 허리
+## X-DB-Category-!B1a: 손목
+## X-DB-Category-!B1b: 장화
+## X-DB-Category-!B1c: 망토
+## X-DB-Category-!B1d: 목걸이
+## X-DB-Category-!B1e: 반지
+## X-DB-Category-!B1f: 장신구
+
+## X-DB-Category-!B20: 추천 아이템_도적_양손 무기
+## X-DB-Category-!B21: 한손 무기
+## X-DB-Category-!B22: 보조 장비
+## X-DB-Category-!B23: 방패
+## X-DB-Category-!B24: 머리
+## X-DB-Category-!B25: 어깨
+## X-DB-Category-!B26: 가슴
+## X-DB-Category-!B27: 장갑
+## X-DB-Category-!B28: 다리
+## X-DB-Category-!B29: 허리
+## X-DB-Category-!B2a: 손목
+## X-DB-Category-!B2b: 장화
+## X-DB-Category-!B2c: 망토
+## X-DB-Category-!B2d: 목걸이
+## X-DB-Category-!B2e: 반지
+## X-DB-Category-!B2f: 장신구
+
+## X-DB-Category-!B30: 추천 아이템_사제(신성/수양)_양손 무기
+## X-DB-Category-!B31: 한손 무기
+## X-DB-Category-!B32: 보조 장비
+## X-DB-Category-!B33: 방패
+## X-DB-Category-!B34: 머리
+## X-DB-Category-!B35: 어깨
+## X-DB-Category-!B36: 가슴
+## X-DB-Category-!B37: 장갑
+## X-DB-Category-!B38: 다리
+## X-DB-Category-!B39: 허리
+## X-DB-Category-!B3a: 손목
+## X-DB-Category-!B3b: 장화
+## X-DB-Category-!B3c: 망토
+## X-DB-Category-!B3d: 목걸이
+## X-DB-Category-!B3e: 반지
+## X-DB-Category-!B3f: 장신구
+
+## X-DB-Category-!B40: 추천 아이템_사제(암흑)_양손 무기
+## X-DB-Category-!B41: 한손 무기
+## X-DB-Category-!B42: 보조 장비
+## X-DB-Category-!B43: 방패
+## X-DB-Category-!B44: 머리
+## X-DB-Category-!B45: 어깨
+## X-DB-Category-!B46: 가슴
+## X-DB-Category-!B47: 장갑
+## X-DB-Category-!B48: 다리
+## X-DB-Category-!B49: 허리
+## X-DB-Category-!B4a: 손목
+## X-DB-Category-!B4b: 장화
+## X-DB-Category-!B4c: 망토
+## X-DB-Category-!B4d: 목걸이
+## X-DB-Category-!B4e: 반지
+## X-DB-Category-!B4f: 장신구
+
+## X-DB-Category-!B50: 추천 아이템_마법사_양손 무기
+## X-DB-Category-!B51: 한손 무기
+## X-DB-Category-!B52: 보조 장비
+## X-DB-Category-!B53: 방패
+## X-DB-Category-!B54: 머리
+## X-DB-Category-!B55: 어깨
+## X-DB-Category-!B56: 가슴
+## X-DB-Category-!B57: 장갑
+## X-DB-Category-!B58: 다리
+## X-DB-Category-!B59: 허리
+## X-DB-Category-!B5a: 손목
+## X-DB-Category-!B5b: 장화
+## X-DB-Category-!B5c: 망토
+## X-DB-Category-!B5d: 목걸이
+## X-DB-Category-!B5e: 반지
+## X-DB-Category-!B5f: 장신구
+
+## X-DB-Category-!B60: 추천 아이템_흑마법사_양손 무기
+## X-DB-Category-!B61: 한손 무기
+## X-DB-Category-!B62: 보조 장비
+## X-DB-Category-!B63: 방패
+## X-DB-Category-!B64: 머리
+## X-DB-Category-!B65: 어깨
+## X-DB-Category-!B66: 가슴
+## X-DB-Category-!B67: 장갑
+## X-DB-Category-!B68: 다리
+## X-DB-Category-!B69: 허리
+## X-DB-Category-!B6a: 손목
+## X-DB-Category-!B6b: 장화
+## X-DB-Category-!B6c: 망토
+## X-DB-Category-!B6d: 목걸이
+## X-DB-Category-!B6e: 반지
+## X-DB-Category-!B6f: 장신구
+
+## X-DB-Category-!B70: 추천 아이템_사냥꾼_양손 무기
+## X-DB-Category-!B71: 한손 무기
+## X-DB-Category-!B72: 보조 장비
+## X-DB-Category-!B73: 방패
+## X-DB-Category-!B74: 머리
+## X-DB-Category-!B75: 어깨
+## X-DB-Category-!B76: 가슴
+## X-DB-Category-!B77: 장갑
+## X-DB-Category-!B78: 다리
+## X-DB-Category-!B79: 허리
+## X-DB-Category-!B7a: 손목
+## X-DB-Category-!B7b: 장화
+## X-DB-Category-!B7c: 망토
+## X-DB-Category-!B7d: 목걸이
+## X-DB-Category-!B7e: 반지
+## X-DB-Category-!B7f: 장신구
+
+## X-DB-Category-!B80: 추천 아이템_드루이드(수호)_양손 무기
+## X-DB-Category-!B81: 한손 무기
+## X-DB-Category-!B82: 보조 장비
+## X-DB-Category-!B83: 방패
+## X-DB-Category-!B84: 머리
+## X-DB-Category-!B85: 어깨
+## X-DB-Category-!B86: 가슴
+## X-DB-Category-!B87: 장갑
+## X-DB-Category-!B88: 다리
+## X-DB-Category-!B89: 허리
+## X-DB-Category-!B8a: 손목
+## X-DB-Category-!B8b: 장화
+## X-DB-Category-!B8c: 망토
+## X-DB-Category-!B8d: 목걸이
+## X-DB-Category-!B8e: 반지
+## X-DB-Category-!B8f: 장신구
+
+## X-DB-Category-!B90: 추천 아이템_드루이드(야성)_양손 무기
+## X-DB-Category-!B91: 한손 무기
+## X-DB-Category-!B92: 보조 장비
+## X-DB-Category-!B93: 방패
+## X-DB-Category-!B94: 머리
+## X-DB-Category-!B95: 어깨
+## X-DB-Category-!B96: 가슴
+## X-DB-Category-!B97: 장갑
+## X-DB-Category-!B98: 다리
+## X-DB-Category-!B99: 허리
+## X-DB-Category-!B9a: 손목
+## X-DB-Category-!B9b: 장화
+## X-DB-Category-!B9c: 망토
+## X-DB-Category-!B9d: 목걸이
+## X-DB-Category-!B9e: 반지
+## X-DB-Category-!B9f: 장신구
+
+## X-DB-Category-!Ba0: 추천 아이템_드루이드(조화)_양손 무기
+## X-DB-Category-!Ba1: 한손 무기
+## X-DB-Category-!Ba2: 보조 장비
+## X-DB-Category-!Ba3: 방패
+## X-DB-Category-!Ba4: 머리
+## X-DB-Category-!Ba5: 어깨
+## X-DB-Category-!Ba6: 가슴
+## X-DB-Category-!Ba7: 장갑
+## X-DB-Category-!Ba8: 다리
+## X-DB-Category-!Ba9: 허리
+## X-DB-Category-!Baa: 손목
+## X-DB-Category-!Bab: 장화
+## X-DB-Category-!Bac: 망토
+## X-DB-Category-!Bad: 목걸이
+## X-DB-Category-!Bae: 반지
+## X-DB-Category-!Baf: 장신구
+
+## X-DB-Category-!Bb0: 추천 아이템_드루이드(회복)_양손 무기
+## X-DB-Category-!Bb1: 한손 무기
+## X-DB-Category-!Bb2: 보조 장비
+## X-DB-Category-!Bb3: 방패
+## X-DB-Category-!Bb4: 머리
+## X-DB-Category-!Bb5: 어깨
+## X-DB-Category-!Bb6: 가슴
+## X-DB-Category-!Bb7: 장갑
+## X-DB-Category-!Bb8: 다리
+## X-DB-Category-!Bb9: 허리
+## X-DB-Category-!Bba: 손목
+## X-DB-Category-!Bbb: 장화
+## X-DB-Category-!Bbc: 망토
+## X-DB-Category-!Bbd: 목걸이
+## X-DB-Category-!Bbe: 반지
+## X-DB-Category-!Bbf: 장신구
+
+## X-DB-Category-!Bc0: 추천 아이템_주술사(고양)_양손 무기
+## X-DB-Category-!Bc1: 한손 무기
+## X-DB-Category-!Bc2: 보조 장비
+## X-DB-Category-!Bc3: 방패
+## X-DB-Category-!Bc4: 머리
+## X-DB-Category-!Bc5: 어깨
+## X-DB-Category-!Bc6: 가슴
+## X-DB-Category-!Bc7: 장갑
+## X-DB-Category-!Bc8: 다리
+## X-DB-Category-!Bc9: 허리
+## X-DB-Category-!Bca: 손목
+## X-DB-Category-!Bcb: 장화
+## X-DB-Category-!Bcc: 망토
+## X-DB-Category-!Bcd: 목걸이
+## X-DB-Category-!Bce: 반지
+## X-DB-Category-!Bcf: 장신구
+
+## X-DB-Category-!Bd0: 추천 아이템_주술사(정기)_양손 무기
+## X-DB-Category-!Bd1: 한손 무기
+## X-DB-Category-!Bd2: 보조 장비
+## X-DB-Category-!Bd3: 방패
+## X-DB-Category-!Bd4: 머리
+## X-DB-Category-!Bd5: 어깨
+## X-DB-Category-!Bd6: 가슴
+## X-DB-Category-!Bd7: 장갑
+## X-DB-Category-!Bd8: 다리
+## X-DB-Category-!Bd9: 허리
+## X-DB-Category-!Bda: 손목
+## X-DB-Category-!Bdb: 장화
+## X-DB-Category-!Bdc: 망토
+## X-DB-Category-!Bdd: 목걸이
+## X-DB-Category-!Bde: 반지
+## X-DB-Category-!Bdf: 장신구
+
+## X-DB-Category-!Be0: 추천 아이템_주술사(복원)_양손 무기
+## X-DB-Category-!Be1: 한손 무기
+## X-DB-Category-!Be2: 보조 장비
+## X-DB-Category-!Be3: 방패
+## X-DB-Category-!Be4: 머리
+## X-DB-Category-!Be5: 어깨
+## X-DB-Category-!Be6: 가슴
+## X-DB-Category-!Be7: 장갑
+## X-DB-Category-!Be8: 다리
+## X-DB-Category-!Be9: 허리
+## X-DB-Category-!Bea: 손목
+## X-DB-Category-!Beb: 장화
+## X-DB-Category-!Bec: 망토
+## X-DB-Category-!Bed: 목걸이
+## X-DB-Category-!Bee: 반지
+## X-DB-Category-!Bef: 장신구
+
+## X-DB-Category-!Bf0: 추천 아이템_성기사(징벌)_양손 무기
+## X-DB-Category-!Bf1: 한손 무기
+## X-DB-Category-!Bf2: 보조 장비
+## X-DB-Category-!Bf3: 방패
+## X-DB-Category-!Bf4: 머리
+## X-DB-Category-!Bf5: 어깨
+## X-DB-Category-!Bf6: 가슴
+## X-DB-Category-!Bf7: 장갑
+## X-DB-Category-!Bf8: 다리
+## X-DB-Category-!Bf9: 허리
+## X-DB-Category-!Bfa: 손목
+## X-DB-Category-!Bfb: 장화
+## X-DB-Category-!Bfc: 망토
+## X-DB-Category-!Bfd: 목걸이
+## X-DB-Category-!Bfe: 반지
+## X-DB-Category-!Bff: 장신구
+
+## X-DB-Category-!Bg0: 추천 아이템_성기사(보호)_양손 무기
+## X-DB-Category-!Bg1: 한손 무기
+## X-DB-Category-!Bg2: 보조 장비
+## X-DB-Category-!Bg3: 방패
+## X-DB-Category-!Bg4: 머리
+## X-DB-Category-!Bg5: 어깨
+## X-DB-Category-!Bg6: 가슴
+## X-DB-Category-!Bg7: 장갑
+## X-DB-Category-!Bg8: 다리
+## X-DB-Category-!Bg9: 허리
+## X-DB-Category-!Bga: 손목
+## X-DB-Category-!Bgb: 장화
+## X-DB-Category-!Bgc: 망토
+## X-DB-Category-!Bgd: 목걸이
+## X-DB-Category-!Bge: 반지
+## X-DB-Category-!Bgf: 장신구
+
+## X-DB-Category-!Bh0: 추천 아이템_성기사(신성)_양손 무기
+## X-DB-Category-!Bh1: 한손 무기
+## X-DB-Category-!Bh2: 보조 장비
+## X-DB-Category-!Bh3: 방패
+## X-DB-Category-!Bh4: 머리
+## X-DB-Category-!Bh5: 어깨
+## X-DB-Category-!Bh6: 가슴
+## X-DB-Category-!Bh7: 장갑
+## X-DB-Category-!Bh8: 다리
+## X-DB-Category-!Bh9: 허리
+## X-DB-Category-!Bha: 손목
+## X-DB-Category-!Bhb: 장화
+## X-DB-Category-!Bhc: 망토
+## X-DB-Category-!Bhd: 목걸이
+## X-DB-Category-!Bhe: 반지
+## X-DB-Category-!Bhf: 장신구
+
+## X-DB-Category-!Bi0: 추천 아이템_죽음의 기사(혈기)_양손 무기
+## X-DB-Category-!Bi1: 한손 무기
+## X-DB-Category-!Bi2: 보조 장비
+## X-DB-Category-!Bi3: 방패
+## X-DB-Category-!Bi4: 머리
+## X-DB-Category-!Bi5: 어깨
+## X-DB-Category-!Bi6: 가슴
+## X-DB-Category-!Bi7: 장갑
+## X-DB-Category-!Bi8: 다리
+## X-DB-Category-!Bi9: 허리
+## X-DB-Category-!Bia: 손목
+## X-DB-Category-!Bib: 장화
+## X-DB-Category-!Bic: 망토
+## X-DB-Category-!Bid: 목걸이
+## X-DB-Category-!Bie: 반지
+## X-DB-Category-!Bif: 장신구
+
+## X-DB-Category-!Bj0: 추천 아이템_죽음의 기사(냉기/부정)_양손 무기
+## X-DB-Category-!Bj1: 한손 무기
+## X-DB-Category-!Bj2: 보조 장비
+## X-DB-Category-!Bj3: 방패
+## X-DB-Category-!Bj4: 머리
+## X-DB-Category-!Bj5: 어깨
+## X-DB-Category-!Bj6: 가슴
+## X-DB-Category-!Bj7: 장갑
+## X-DB-Category-!Bj8: 다리
+## X-DB-Category-!Bj9: 허리
+## X-DB-Category-!Bja: 손목
+## X-DB-Category-!Bjb: 장화
+## X-DB-Category-!Bjc: 망토
+## X-DB-Category-!Bjd: 목걸이
+## X-DB-Category-!Bje: 반지
+## X-DB-Category-!Bjf: 장신구
+
+## X-DB-Category-!Bk0: 추천 아이템_수도사(양조)_양손 무기
+## X-DB-Category-!Bk1: 한손 무기
+## X-DB-Category-!Bk2: 보조 장비
+## X-DB-Category-!Bk3: 방패
+## X-DB-Category-!Bk4: 머리
+## X-DB-Category-!Bk5: 어깨
+## X-DB-Category-!Bk6: 가슴
+## X-DB-Category-!Bk7: 장갑
+## X-DB-Category-!Bk8: 다리
+## X-DB-Category-!Bk9: 허리
+## X-DB-Category-!Bka: 손목
+## X-DB-Category-!Bkb: 장화
+## X-DB-Category-!Bkc: 망토
+## X-DB-Category-!Bkd: 목걸이
+## X-DB-Category-!Bke: 반지
+## X-DB-Category-!Bkf: 장신구
+
+## X-DB-Category-!Bl0: 추천 아이템_수도사(운무)_양손 무기
+## X-DB-Category-!Bl1: 한손 무기
+## X-DB-Category-!Bl2: 보조 장비
+## X-DB-Category-!Bl3: 방패
+## X-DB-Category-!Bl4: 머리
+## X-DB-Category-!Bl5: 어깨
+## X-DB-Category-!Bl6: 가슴
+## X-DB-Category-!Bl7: 장갑
+## X-DB-Category-!Bl8: 다리
+## X-DB-Category-!Bl9: 허리
+## X-DB-Category-!Bla: 손목
+## X-DB-Category-!Blb: 장화
+## X-DB-Category-!Blc: 망토
+## X-DB-Category-!Bld: 목걸이
+## X-DB-Category-!Ble: 반지
+## X-DB-Category-!Blf: 장신구
+
+## X-DB-Category-!Bm0: 추천 아이템_수도사(풍운)_양손 무기
+## X-DB-Category-!Bm1: 한손 무기
+## X-DB-Category-!Bm2: 보조 장비
+## X-DB-Category-!Bm3: 방패
+## X-DB-Category-!Bm4: 머리
+## X-DB-Category-!Bm5: 어깨
+## X-DB-Category-!Bm6: 가슴
+## X-DB-Category-!Bm7: 장갑
+## X-DB-Category-!Bm8: 다리
+## X-DB-Category-!Bm9: 허리
+## X-DB-Category-!Bma: 손목
+## X-DB-Category-!Bmb: 장화
+## X-DB-Category-!Bmc: 망토
+## X-DB-Category-!Bmd: 목걸이
+## X-DB-Category-!Bme: 반지
+## X-DB-Category-!Bmf: 장신구
+
+## X-DB-Category-!E00: 드레노어의 전쟁군주 공격대 던전_|cffff7db4높은망치|r_카르가스 블레이드피스트
+## X-DB-Category-!E01: 도살자
+## X-DB-Category-!E02: 텍터스
+## X-DB-Category-!E03: 담쟁이포자
+## X-DB-Category-!E04: 쌍둥이 오그론
+## X-DB-Category-!E05: 코라그
+## X-DB-Category-!E06: 높은군주 마르고크
+## X-DB-Category-!E0t: 일반몹
+## X-DB-Category-!E0q: 퀘스트 보상
+
+## X-DB-Category-!E10: 드레노어의 전쟁군주 공격대 던전_|cffff7db4검은바위 용광로|r_그룰
+## X-DB-Category-!E11: 광물먹보
+## X-DB-Category-!E12: 야수군주 다르마크
+## X-DB-Category-!E13: 화염칼날 카그라즈
+## X-DB-Category-!E14: 한스가르와 프란조크
+## X-DB-Category-!E15: 기관사 토가르
+## X-DB-Category-!E16: 격노의 가열로
+## X-DB-Category-!E17: 크로모크
+## X-DB-Category-!E18: 강철의 여전사들
+## X-DB-Category-!E19: 블랙핸드
+## X-DB-Category-!E1t: 일반몹
+## X-DB-Category-!E1q: 퀘스트 보상
+
+## X-DB-Category-!Ey0: 드레노어의 전쟁군주 공격대 던전_|cffff7db410주년 화산심장부|r_라그나로스
+
+## X-DB-Category-!Ez0: 드레노어의 전쟁군주 공격대 던전_|cffff7db4필드 레이드 보스|r_파괴의 현신 드로브
+## X-DB-Category-!Ez1: 영생의 탈르나
+## X-DB-Category-!Ez2: 루크마르
+## X-DB-Category-!Ezq: 퀘스트 보상
+
+## X-DB-Category-!F00: 드레노어의 전쟁군주 5인 던전_|cff7df4b2피망치 잿가루 광산|r_용암주먹
+## X-DB-Category-!F01: 노예감시자 크러쉬토
+## X-DB-Category-!F02: 롤탈
+## X-DB-Category-!F03: 구그로크
+## X-DB-Category-!F0t: 일반몹
+## X-DB-Category-!F0q: 퀘스트 보상
+
+## X-DB-Category-!F10: 드레노어의 전쟁군주 5인 던전_|cff7df4b2강철 선착장|r_살점분리자 녹가르
+## X-DB-Category-!F11: 파멸철로 집행자
+## X-DB-Category-!F12: 오시르
+## X-DB-Category-!F13: 스컬록
+## X-DB-Category-!F1t: 일반몹
+## X-DB-Category-!F1q: 퀘스트 보상
+
+## X-DB-Category-!F20: 드레노어의 전쟁군주 5인 던전_|cff7df4b2아킨둔|r_수호자 카타르
+## X-DB-Category-!F21: 영혼술사 니아미
+## X-DB-Category-!F22: 아자켈
+## X-DB-Category-!F23: 테론고르
+## X-DB-Category-!F2t: 일반몹
+## X-DB-Category-!F2q: 퀘스트 보상
+
+## X-DB-Category-!F30: 드레노어의 전쟁군주 5인 던전_|cff7df4b2하늘탑|r_란지트
+## X-DB-Category-!F31: 아라크나스
+## X-DB-Category-!F32: 루크란
+## X-DB-Category-!F33: 대현자 비릭스
+## X-DB-Category-!F3t: 일반몹
+## X-DB-Category-!F2q: 퀘스트 보상
+
+## X-DB-Category-!F40: 드레노어의 전쟁군주 5인 던전_|cff7df4b2검은바위 첨탑 상층|r_금속술사 고라샨
+## X-DB-Category-!F41: 카이락
+## X-DB-Category-!F42: 사령관 탈베크
+## X-DB-Category-!F43: 폭군 격노날개
+## X-DB-Category-!F44: 전쟁군주 잴라
+## X-DB-Category-!F4t: 일반몹
+## X-DB-Category-!F4q: 퀘스트 보상
+
+## X-DB-Category-!F50: 드레노어의 전쟁군주 5인 던전_|cff7df4b2상록숲|r_마른껍질
+## X-DB-Category-!F51: 고대 수호자
+## X-DB-Category-!F52: 대마법사 솔
+## X-DB-Category-!F53: 제리타크
+## X-DB-Category-!F54: 얄누
+## X-DB-Category-!F5t: 일반몹
+## X-DB-Category-!F5q: 퀘스트 보상
+
+## X-DB-Category-!F60: 드레노어의 전쟁군주 5인 던전_|cff7df4b2어둠달 지하묘지|r_새다나 블러드퓨리
+## X-DB-Category-!F61: 날리쉬
+## X-DB-Category-!F62: 해골아귀
+## X-DB-Category-!F63: 넬쥴
+## X-DB-Category-!F6t: 일반몹
+## X-DB-Category-!F6q: 퀘스트 보상
+
+## X-DB-Category-!F70: 드레노어의 전쟁군주 5인 던전_|cff7df4b2파멸철로 정비소|r_로켓스파크와 보르카
+## X-DB-Category-!F71: 니트로그 썬더타워
+## X-DB-Category-!F72: 하늘군주 토브라
+## X-DB-Category-!F7t: 일반몹
+## X-DB-Category-!F7q: 퀘스트 보상
+
+## X-DB-Category-!F80: 드레노어의 전쟁군주 5인 던전_도전모드 일일퀘스트_보상
+## X-DB-Category-!F8y: 6.1 보상
+## X-DB-Category-!F8z: 6.0 보상 
+
+## X-DB-Category-!O00: 드레노어의 전쟁군주 주둔지_추종자 임무_630 추종자 임무
+## X-DB-Category-!O01: 615 추종자 임무
+## X-DB-Category-!O02: 600 추종자 임무
+## X-DB-Category-!O03: 99 추종자 임무
+## X-DB-Category-!O04: 98 추종자 임무
+## X-DB-Category-!O10: 드레노어의 전쟁군주 주둔지_주둔지 방어
+
+## X-DB-Category-!G00: 드레노어의 전쟁군주 세트 아이템_티어 x 세트_x
+## X-DB-Category-!Gw0: 드레노어의 전쟁군주 세트 아이템_티어 17(신화) 세트_전사
+## X-DB-Category-!Gw1: 도적
+## X-DB-Category-!Gw2: 사제
+## X-DB-Category-!Gw3: 마법사
+## X-DB-Category-!Gw4: 흑마법사
+## X-DB-Category-!Gw5: 사냥꾼
+## X-DB-Category-!Gw6: 드루이드
+## X-DB-Category-!Gw7: 주술사
+## X-DB-Category-!Gw8: 성기사
+## X-DB-Category-!Gw9: 죽음의 기사
+## X-DB-Category-!Gwa: 수도사
+## X-DB-Category-!Gx0: 드레노어의 전쟁군주 세트 아이템_티어 17(영웅) 세트_전사
+## X-DB-Category-!Gx1: 도적
+## X-DB-Category-!Gx2: 사제
+## X-DB-Category-!Gx3: 마법사
+## X-DB-Category-!Gx4: 흑마법사
+## X-DB-Category-!Gx5: 사냥꾼
+## X-DB-Category-!Gx6: 드루이드
+## X-DB-Category-!Gx7: 주술사
+## X-DB-Category-!Gx8: 성기사
+## X-DB-Category-!Gx9: 죽음의 기사
+## X-DB-Category-!Gxa: 수도사
+## X-DB-Category-!Gy0: 드레노어의 전쟁군주 세트 아이템_티어 17(일반) 세트_전사
+## X-DB-Category-!Gy1: 도적
+## X-DB-Category-!Gy2: 사제
+## X-DB-Category-!Gy3: 마법사
+## X-DB-Category-!Gy4: 흑마법사
+## X-DB-Category-!Gy5: 사냥꾼
+## X-DB-Category-!Gy6: 드루이드
+## X-DB-Category-!Gy7: 주술사
+## X-DB-Category-!Gy8: 성기사
+## X-DB-Category-!Gy9: 죽음의 기사
+## X-DB-Category-!Gya: 수도사
+## X-DB-Category-!Gz0: 드레노어의 전쟁군주 세트 아이템_티어 17(공격대 찾기) 세트_판금
+## X-DB-Category-!Gz1: 사슬
+## X-DB-Category-!Gz2: 가죽
+## X-DB-Category-!Gz3: 천
+
+## X-DB-Category-!H00: 드레노어의 전쟁군주 월드 및 희귀 몬스터 드랍_양손 무기
+## X-DB-Category-!H10: 드레노어의 전쟁군주 월드 및 희귀 몬스터 드랍_한손 무기
+## X-DB-Category-!H20: 드레노어의 전쟁군주 월드 및 희귀 몬스터 드랍_보조 장비
+## X-DB-Category-!H30: 드레노어의 전쟁군주 월드 및 희귀 몬스터 드랍_천
+## X-DB-Category-!H40: 드레노어의 전쟁군주 월드 및 희귀 몬스터 드랍_가죽
+## X-DB-Category-!H50: 드레노어의 전쟁군주 월드 및 희귀 몬스터 드랍_사슬
+## X-DB-Category-!H60: 드레노어의 전쟁군주 월드 및 희귀 몬스터 드랍_판금
+## X-DB-Category-!H70: 드레노어의 전쟁군주 월드 및 희귀 몬스터 드랍_망토
+## X-DB-Category-!H80: 드레노어의 전쟁군주 월드 및 희귀 몬스터 드랍_목걸이
+## X-DB-Category-!H90: 드레노어의 전쟁군주 월드 및 희귀 몬스터 드랍_반지
+## X-DB-Category-!Ha0: 드레노어의 전쟁군주 월드 및 희귀 몬스터 드랍_장신구
+## X-DB-Category-!Hz0: 드레노어의 전쟁군주 월드 및 희귀 몬스터 드랍_기타
+
+## X-DB-Category-!M00: 드레노어의 전쟁군주 전문 기술_연금술_주요 조제법
+## X-DB-Category-!M01: 영약
+## X-DB-Category-!M02: 전투 비약
+## X-DB-Category-!M03: 강화 비약
+## X-DB-Category-!M04: 물약
+## X-DB-Category-!M0a: 평판
+## X-DB-Category-!M0b: 드랍
+## X-DB-Category-!M0c: 판매
+## X-DB-Category-!M0d: 제작 아이템
+
+## X-DB-Category-!M10: 드레노어의 전쟁군주 전문 기술_재봉술_주요 조제법
+## X-DB-Category-!M1a: 평판
+## X-DB-Category-!M1b: 드랍
+## X-DB-Category-!M1c: 판매
+## X-DB-Category-!M1d: 제작 아이템
+## X-DB-Category-!M1w: 4단계 제작 아이템
+## X-DB-Category-!M1x: 3단계 제작 아이템
+## X-DB-Category-!M1y: 2단계 제작 아이템
+## X-DB-Category-!M1z: 1단계 제작 아이템
+
+## X-DB-Category-!M20: 드레노어의 전쟁군주 전문 기술_가죽세공_주요 조제법
+## X-DB-Category-!M2a: 평판
+## X-DB-Category-!M2b: 드랍
+## X-DB-Category-!M2c: 판매
+## X-DB-Category-!M2d: 제작 아이템
+## X-DB-Category-!M2w: 4단계 제작 아이템
+## X-DB-Category-!M2x: 3단계 제작 아이템
+## X-DB-Category-!M2y: 2단계 제작 아이템
+## X-DB-Category-!M2z: 1단계 제작 아이템
+
+## X-DB-Category-!M30: 드레노어의 전쟁군주 전문 기술_대장기술_주요 조제법
+## X-DB-Category-!M3a: 평판
+## X-DB-Category-!M3b: 드랍
+## X-DB-Category-!M3c: 판매
+## X-DB-Category-!M3d: 제작 아이템
+## X-DB-Category-!M3w: 4단계 제작 아이템
+## X-DB-Category-!M3x: 3단계 제작 아이템
+## X-DB-Category-!M3y: 2단계 제작 아이템
+## X-DB-Category-!M3z: 1단계 제작 아이템
+
+## X-DB-Category-!M40: 드레노어의 전쟁군주 전문 기술_기계공학_주요 조제법
+## X-DB-Category-!M4a: 평판
+## X-DB-Category-!M4b: 드랍
+## X-DB-Category-!M4c: 판매
+## X-DB-Category-!M4d: 제작 아이템
+## X-DB-Category-!M4e: 형상 변환용 아이템
+## X-DB-Category-!M4w: 4단계 제작 아이템
+## X-DB-Category-!M4x: 3단계 제작 아이템
+## X-DB-Category-!M4y: 2단계 제작 아이템
+## X-DB-Category-!M4z: 1단계 제작 아이템
+
+## X-DB-Category-!M50: 드레노어의 전쟁군주 전문 기술_마법부여_주요 조제법
+## X-DB-Category-!M5a: 평판
+## X-DB-Category-!M5b: 드랍
+## X-DB-Category-!M5c: 판매
+## X-DB-Category-!M5d: 제작 아이템
+
+## X-DB-Category-!M60: 드레노어의 전쟁군주 전문 기술_보석세공_주요 조제법
+## X-DB-Category-!M6a: 평판
+## X-DB-Category-!M6b: 드랍
+## X-DB-Category-!M6c: 판매
+## X-DB-Category-!M6d: 제작 아이템
+## X-DB-Category-!M6w: 4단계 제작 아이템
+## X-DB-Category-!M6x: 3단계 제작 아이템
+## X-DB-Category-!M6y: 2단계 제작 아이템
+## X-DB-Category-!M6z: 1단계 제작 아이템
+
+## X-DB-Category-!M70: 드레노어의 전쟁군주 전문 기술_주문각인_주요 조제법
+## X-DB-Category-!M7a: 평판
+## X-DB-Category-!M7b: 드랍
+## X-DB-Category-!M7c: 판매
+## X-DB-Category-!M7d: 제작 아이템
+## X-DB-Category-!M7w: 4단계 제작 아이템
+## X-DB-Category-!M7x: 3단계 제작 아이템
+## X-DB-Category-!M7y: 2단계 제작 아이템
+## X-DB-Category-!M7z: 1단계 제작 아이템
+
+## X-DB-Category-!k00: 드레노어의 전쟁군주 평판 아이템_Temp
+
+## X-DB-Category-!N00: 드레노어의 전쟁군주 PvP 아이템_Temp
+
+## X-DB-Category-!Nx0: 드레노어의 전쟁군주 PvP 아이템_전쟁군주 1 시즌 상급_무기
+## X-DB-Category-!Nx1: 전사
+## X-DB-Category-!Nx2: 도적
+## X-DB-Category-!Nx3: 사제
+## X-DB-Category-!Nx4: 마법사
+## X-DB-Category-!Nx5: 흑마법사
+## X-DB-Category-!Nx6: 사냥꾼
+## X-DB-Category-!Nx7: 드루이드
+## X-DB-Category-!Nx8: 주술사
+## X-DB-Category-!Nx9: 성기사
+## X-DB-Category-!Nxa: 죽음의 기사
+## X-DB-Category-!Nxb: 수도사
+## X-DB-Category-!Nxc: 망토
+## X-DB-Category-!Nxd: 허리
+## X-DB-Category-!Nxe: 장화
+## X-DB-Category-!Nxf: 손목
+## X-DB-Category-!Nxg: 목걸이
+## X-DB-Category-!Nxh: 반지
+## X-DB-Category-!Nxi: 장신구
+## X-DB-Category-!Nxj: 천
+## X-DB-Category-!Nxk: 가죽
+## X-DB-Category-!Nxl: 사슬
+## X-DB-Category-!Nxm: 판금
+## X-DB-Category-!Nxn: 기타
+
+## X-DB-Category-!Ny0: 드레노어의 전쟁군주 PvP 아이템_전쟁군주 1 시즌 중급_무기
+## X-DB-Category-!Ny1: 전사
+## X-DB-Category-!Ny2: 도적
+## X-DB-Category-!Ny3: 사제
+## X-DB-Category-!Ny4: 마법사
+## X-DB-Category-!Ny5: 흑마법사
+## X-DB-Category-!Ny6: 사냥꾼
+## X-DB-Category-!Ny7: 드루이드
+## X-DB-Category-!Ny8: 주술사
+## X-DB-Category-!Ny9: 성기사
+## X-DB-Category-!Nya: 죽음의 기사
+## X-DB-Category-!Nyb: 수도사
+## X-DB-Category-!Nyc: 망토
+## X-DB-Category-!Nyd: 허리
+## X-DB-Category-!Nye: 장화
+## X-DB-Category-!Nyf: 손목
+## X-DB-Category-!Nyg: 목걸이
+## X-DB-Category-!Nyh: 반지
+## X-DB-Category-!Nyi: 장신구
+## X-DB-Category-!Nyj: 천
+## X-DB-Category-!Nyk: 가죽
+## X-DB-Category-!Nyl: 사슬
+## X-DB-Category-!Nym: 판금
+## X-DB-Category-!Nyn: 기타
+
+## X-DB-Category-!Nz0: 드레노어의 전쟁군주 PvP 아이템_전쟁군주 1 시즌 하급_무기
+## X-DB-Category-!Nz1: 전사
+## X-DB-Category-!Nz2: 도적
+## X-DB-Category-!Nz3: 사제
+## X-DB-Category-!Nz4: 마법사
+## X-DB-Category-!Nz5: 흑마법사
+## X-DB-Category-!Nz6: 사냥꾼
+## X-DB-Category-!Nz7: 드루이드
+## X-DB-Category-!Nz8: 주술사
+## X-DB-Category-!Nz9: 성기사
+## X-DB-Category-!Nza: 죽음의 기사
+## X-DB-Category-!Nzb: 수도사
+## X-DB-Category-!Nzc: 망토
+## X-DB-Category-!Nzd: 허리
+## X-DB-Category-!Nze: 장화
+## X-DB-Category-!Nzf: 손목
+## X-DB-Category-!Nzg: 목걸이
+## X-DB-Category-!Nzh: 반지
+## X-DB-Category-!Nzi: 장신구
+## X-DB-Category-!Nzj: 기타
+
+## X-DB-Category-100: 판다리아의 안개 공격대 던전_|cffff7db4모구샨 금고|r_바위 수호자
+## X-DB-Category-101: 저주받은 펑
+## X-DB-Category-102: 영혼결속자 가라잘
+## X-DB-Category-103: 유령 왕
+## X-DB-Category-104: 엘레곤
+## X-DB-Category-105: 황제의 의지
+## X-DB-Category-10t: 일반몹
+## X-DB-Category-10q: 퀘스트 보상
+
+## X-DB-Category-110: 판다리아의 안개 공격대 던전_|cffff7db4공포의 심장|r_황실 장로 조르로크
+## X-DB-Category-111: 칼날군주 타야크
+## X-DB-Category-112: 가랄론
+## X-DB-Category-113: 바람군주 멜자라크
+## X-DB-Category-114: 호박석구체자 운속
+## X-DB-Category-115: 위대한 여제 세크지르
+## X-DB-Category-11t: 일반몹
+## X-DB-Category-11q: 퀘스트 보상
+
+## X-DB-Category-120: 판다리아의 안개 공격대 던전_|cffff7db4영원한 봄의 정원|r_영원의 수호병
+## X-DB-Category-121: 출롱
+## X-DB-Category-122: 레이 스
+## X-DB-Category-123: 공포의 샤
+## X-DB-Category-12t: 일반몹
+## X-DB-Category-12q: 퀘스트 보상
+
+## X-DB-Category-130: 판다리아의 안개 공격대 던전_|cffff7db4천둥의 왕좌|r_파괴자 진로크
+## X-DB-Category-131: 호리돈
+## X-DB-Category-132: 장로회
+## X-DB-Category-133: 토르토스
+## X-DB-Category-134: 메가이라
+## X-DB-Category-135: 지쿤
+## X-DB-Category-136: 잊혀진 두루무
+## X-DB-Category-137: 프리모디우스
+## X-DB-Category-138: 암흑 원령
+## X-DB-Category-139: 강철의 퀀
+## X-DB-Category-13a: 쌍둥이 왕비
+## X-DB-Category-13b: 레이 션
+## X-DB-Category-13c: 라덴
+## X-DB-Category-13s: 네임드 공통
+## X-DB-Category-13t: 일반몹
+## X-DB-Category-13u: 천둥왕의 보물
+## X-DB-Category-13q: 퀘스트 보상
+
+## X-DB-Category-140: 판다리아의 안개 공격대 던전_|cffff7db4오그리마 공성전|r_잿빛너울
+## X-DB-Category-141: 쓰러진 수호자들
+## X-DB-Category-142: 노루셴
+## X-DB-Category-143: 교만의 샤
+## X-DB-Category-144: 갈라크라스
+## X-DB-Category-145: 강철의 거대괴수
+## X-DB-Category-146: 코르크론 암흑주술사
+## X-DB-Category-147: 장군 나즈그림
+## X-DB-Category-148: 말코록
+## X-DB-Category-149: 판다리아의 전리품
+## X-DB-Category-14a: 피에 굶주린 토크
+## X-DB-Category-14b: 공성기술자 블랙퓨즈
+## X-DB-Category-14c: 클락시 용장들
+## X-DB-Category-14d: 가로쉬 헬스크림
+## X-DB-Category-14s: 네임드 공통
+## X-DB-Category-14t: 일반몹
+## X-DB-Category-14u: 전쟁의 메아리 업그레이드
+## X-DB-Category-14q: 퀘스트 보상
+
+## X-DB-Category-1z0: 판다리아의 안개 공격대 던전_|cffff7db4필드 레이드 보스|r_분노의 샤
+## X-DB-Category-1z1: 살리스의 전투부대
+## X-DB-Category-1z2: 폭풍 군주 나락크
+## X-DB-Category-1z3: 운다스타
+## X-DB-Category-1z4: 네 천신
+## X-DB-Category-1z5: 오르도스 - 야운골의 화염신
+
+## X-DB-Category-200: 판다리아의 안개 5인 던전_|cff7df4b2스톰스타우트 양조장|r_우끼우끼
+## X-DB-Category-201: 홉탈루스
+## X-DB-Category-202: 담기지 않는 옌주
+## X-DB-Category-20t: 일반몹
+## X-DB-Category-20q: 퀘스트 보상
+
+## X-DB-Category-210: 판다리아의 안개 5인 던전_|cff7df4b2옥룡사|r_현명한 마리
+## X-DB-Category-211: 전승지기 스톤스텝
+## X-DB-Category-212: 리우 플레임하트
+## X-DB-Category-213: 의심의 샤
+## X-DB-Category-21t: 일반몹
+## X-DB-Category-21q: 퀘스트 보상
+
+## X-DB-Category-220: 판다리아의 안개 5인 던전_|cff7df4b2음영파 수도원|r_구우 클라우드스트라이크
+## X-DB-Category-221: 사부 스노우드리프트
+## X-DB-Category-222: 폭력의 샤
+## X-DB-Category-223: 타란 주
+## X-DB-Category-22t: 일반몹
+## X-DB-Category-22q: 퀘스트 보상
+
+## X-DB-Category-230: 판다리아의 안개 5인 던전_|cff7df4b2모구샨 궁전|r_왕의 시험
+## X-DB-Category-231: 게칸
+## X-DB-Category-232: 무기달인 신
+## X-DB-Category-23t: 일반몹
+## X-DB-Category-23q: 퀘스트 보상
+
+## X-DB-Category-240: 판다리아의 안개 5인 던전_|cff7df4b2붉은십자군 수도원|r_영혼분리자 탈노스
+## X-DB-Category-241: 수사 콜로프
+## X-DB-Category-242: 종교재판관 화이트메인
+## X-DB-Category-24t: 일반몹
+## X-DB-Category-24q: 퀘스트 보상
+
+## X-DB-Category-250: 판다리아의 안개 5인 던전_|cff7df4b2붉은십자군 전당|r_사냥개조련사 브라운
+## X-DB-Category-251: 무기전문가 할란
+## X-DB-Category-252: 화염술사 쾨글러
+## X-DB-Category-25t: 일반몹
+## X-DB-Category-25q: 퀘스트 보상
+
+## X-DB-Category-260: 판다리아의 안개 5인 던전_|cff7df4b2스칼로맨스|r_조교 칠하트
+## X-DB-Category-261: 잔다이스 바로브
+## X-DB-Category-262: 들창엄니
+## X-DB-Category-263: 릴리안 보스
+## X-DB-Category-264: 암흑스승 간들링
+## X-DB-Category-26t: 일반몹
+## X-DB-Category-26q: 퀘스트 보상
+
+## X-DB-Category-270: 판다리아의 안개 5인 던전_|cff7df4b2니우짜오 사원 공성전투|r_장로 진바크
+## X-DB-Category-271: 사령관 보자크
+## X-DB-Category-272: 장군 파빌락
+## X-DB-Category-273: 편대사령관 네르오노크
+## X-DB-Category-27t: 일반몹
+## X-DB-Category-27q: 퀘스트 보상
+
+## X-DB-Category-280: 판다리아의 안개 5인 던전_|cff7df4b2석양문|r_파괴자 키프틸락
+## X-DB-Category-281: 공습병 가도크
+## X-DB-Category-282: 사령관 리모크
+## X-DB-Category-283: 라이곤
+## X-DB-Category-28t: 일반몹
+## X-DB-Category-28q: 퀘스트 보상
+
+## X-DB-Category-2z0: 판다리아의 안개 5인 던전_도전 모드_전사
+## X-DB-Category-2z1: 도적
+## X-DB-Category-2z2: 사제
+## X-DB-Category-2z3: 마법사
+## X-DB-Category-2z4: 흑마법사
+## X-DB-Category-2z5: 사냥꾼
+## X-DB-Category-2z6: 드루이드
+## X-DB-Category-2z7: 주술사
+## X-DB-Category-2z8: 성기사
+## X-DB-Category-2z9: 죽음의 기사
+## X-DB-Category-2za: 수도사
+## X-DB-Category-2zb: 탈것
+
+## X-DB-Category-300: 판다리아의 안개 세트 아이템_티어 x 세트_x
+
+## X-DB-Category-3q0: 판다리아의 안개 세트 아이템_티어 16(영웅) 세트_전사(방어)
+## X-DB-Category-3q1: 전사(무기/분노)
+## X-DB-Category-3q2: 도적
+## X-DB-Category-3q3: 사제(신성/수양)
+## X-DB-Category-3q4: 사제(암흑)
+## X-DB-Category-3q5: 마법사
+## X-DB-Category-3q6: 흑마법사
+## X-DB-Category-3q7: 사냥꾼
+## X-DB-Category-3q8: 드루이드(수호)
+## X-DB-Category-3q9: 드루이드(야성)
+## X-DB-Category-3qa: 드루이드(조화)
+## X-DB-Category-3qb: 드루이드(회복)
+## X-DB-Category-3qc: 주술사(고양)
+## X-DB-Category-3qd: 주술사(정기)
+## X-DB-Category-3qe: 주술사(복원)
+## X-DB-Category-3qf: 성기사(징벌)
+## X-DB-Category-3qg: 성기사(보호)
+## X-DB-Category-3qh: 성기사(신성)
+## X-DB-Category-3qi: 죽음의 기사(혈기)
+## X-DB-Category-3qj: 죽음의 기사(냉기/부정)
+## X-DB-Category-3qk: 수도사(양조)
+## X-DB-Category-3ql: 수도사(운무)
+## X-DB-Category-3qm: 수도사(풍운)
+
+## X-DB-Category-3r0: 판다리아의 안개 세트 아이템_티어 16(일반) 세트_전사(방어)
+## X-DB-Category-3r1: 전사(무기/분노)
+## X-DB-Category-3r2: 도적
+## X-DB-Category-3r3: 사제(신성/수양)
+## X-DB-Category-3r4: 사제(암흑)
+## X-DB-Category-3r5: 마법사
+## X-DB-Category-3r6: 흑마법사
+## X-DB-Category-3r7: 사냥꾼
+## X-DB-Category-3r8: 드루이드(수호)
+## X-DB-Category-3r9: 드루이드(야성)
+## X-DB-Category-3ra: 드루이드(조화)
+## X-DB-Category-3rb: 드루이드(회복)
+## X-DB-Category-3rc: 주술사(고양)
+## X-DB-Category-3rd: 주술사(정기)
+## X-DB-Category-3re: 주술사(복원)
+## X-DB-Category-3rf: 성기사(징벌)
+## X-DB-Category-3rg: 성기사(보호)
+## X-DB-Category-3rh: 성기사(신성)
+## X-DB-Category-3ri: 죽음의 기사(혈기)
+## X-DB-Category-3rj: 죽음의 기사(냉기/부정)
+## X-DB-Category-3rk: 수도사(양조)
+## X-DB-Category-3rl: 수도사(운무)
+## X-DB-Category-3rm: 수도사(풍운)
+
+## X-DB-Category-3s0: 판다리아의 안개 세트 아이템_티어 16(탄력적 공격대) 세트_전사(방어)
+## X-DB-Category-3s1: 전사(무기/분노)
+## X-DB-Category-3s2: 도적
+## X-DB-Category-3s3: 사제(신성/수양)
+## X-DB-Category-3s4: 사제(암흑)
+## X-DB-Category-3s5: 마법사
+## X-DB-Category-3s6: 흑마법사
+## X-DB-Category-3s7: 사냥꾼
+## X-DB-Category-3s8: 드루이드(수호)
+## X-DB-Category-3s9: 드루이드(야성)
+## X-DB-Category-3sa: 드루이드(조화)
+## X-DB-Category-3sb: 드루이드(회복)
+## X-DB-Category-3sc: 주술사(고양)
+## X-DB-Category-3sd: 주술사(정기)
+## X-DB-Category-3se: 주술사(복원)
+## X-DB-Category-3sf: 성기사(징벌)
+## X-DB-Category-3sg: 성기사(보호)
+## X-DB-Category-3sh: 성기사(신성)
+## X-DB-Category-3si: 죽음의 기사(혈기)
+## X-DB-Category-3sj: 죽음의 기사(냉기/부정)
+## X-DB-Category-3sk: 수도사(양조)
+## X-DB-Category-3sl: 수도사(운무)
+## X-DB-Category-3sm: 수도사(풍운)
+
+## X-DB-Category-3t0: 판다리아의 안개 세트 아이템_티어 16(공격대 찾기) 세트_전사(방어)
+## X-DB-Category-3t1: 전사(무기/분노)
+## X-DB-Category-3t2: 도적
+## X-DB-Category-3t3: 사제(신성/수양)
+## X-DB-Category-3t4: 사제(암흑)
+## X-DB-Category-3t5: 마법사
+## X-DB-Category-3t6: 흑마법사
+## X-DB-Category-3t7: 사냥꾼
+## X-DB-Category-3t8: 드루이드(수호)
+## X-DB-Category-3t9: 드루이드(야성)
+## X-DB-Category-3ta: 드루이드(조화)
+## X-DB-Category-3tb: 드루이드(회복)
+## X-DB-Category-3tc: 주술사(고양)
+## X-DB-Category-3td: 주술사(정기)
+## X-DB-Category-3te: 주술사(복원)
+## X-DB-Category-3tf: 성기사(징벌)
+## X-DB-Category-3tg: 성기사(보호)
+## X-DB-Category-3th: 성기사(신성)
+## X-DB-Category-3ti: 죽음의 기사(혈기)
+## X-DB-Category-3tj: 죽음의 기사(냉기/부정)
+## X-DB-Category-3tk: 수도사(양조)
+## X-DB-Category-3tl: 수도사(운무)
+## X-DB-Category-3tm: 수도사(풍운)
+
+## X-DB-Category-3u0: 판다리아의 안개 세트 아이템_티어 15(영웅) 세트_전사(방어)
+## X-DB-Category-3u1: 전사(무기/분노)
+## X-DB-Category-3u2: 도적
+## X-DB-Category-3u3: 사제(신성/수양)
+## X-DB-Category-3u4: 사제(암흑)
+## X-DB-Category-3u5: 마법사
+## X-DB-Category-3u6: 흑마법사
+## X-DB-Category-3u7: 사냥꾼
+## X-DB-Category-3u8: 드루이드(수호)
+## X-DB-Category-3u9: 드루이드(야성)
+## X-DB-Category-3ua: 드루이드(조화)
+## X-DB-Category-3ub: 드루이드(회복)
+## X-DB-Category-3uc: 주술사(고양)
+## X-DB-Category-3ud: 주술사(정기)
+## X-DB-Category-3ue: 주술사(복원)
+## X-DB-Category-3uf: 성기사(징벌)
+## X-DB-Category-3ug: 성기사(보호)
+## X-DB-Category-3uh: 성기사(신성)
+## X-DB-Category-3ui: 죽음의 기사(혈기)
+## X-DB-Category-3uj: 죽음의 기사(냉기/부정)
+## X-DB-Category-3uk: 수도사(양조)
+## X-DB-Category-3ul: 수도사(운무)
+## X-DB-Category-3um: 수도사(풍운)
+
+## X-DB-Category-3v0: 판다리아의 안개 세트 아이템_티어 15(일반) 세트_전사(방어)
+## X-DB-Category-3v1: 전사(무기/분노)
+## X-DB-Category-3v2: 도적
+## X-DB-Category-3v3: 사제(신성/수양)
+## X-DB-Category-3v4: 사제(암흑)
+## X-DB-Category-3v5: 마법사
+## X-DB-Category-3v6: 흑마법사
+## X-DB-Category-3v7: 사냥꾼
+## X-DB-Category-3v8: 드루이드(수호)
+## X-DB-Category-3v9: 드루이드(야성)
+## X-DB-Category-3va: 드루이드(조화)
+## X-DB-Category-3vb: 드루이드(회복)
+## X-DB-Category-3vc: 주술사(고양)
+## X-DB-Category-3vd: 주술사(정기)
+## X-DB-Category-3ve: 주술사(복원)
+## X-DB-Category-3vf: 성기사(징벌)
+## X-DB-Category-3vg: 성기사(보호)
+## X-DB-Category-3vh: 성기사(신성)
+## X-DB-Category-3vi: 죽음의 기사(혈기)
+## X-DB-Category-3vj: 죽음의 기사(냉기/부정)
+## X-DB-Category-3vk: 수도사(양조)
+## X-DB-Category-3vl: 수도사(운무)
+## X-DB-Category-3vm: 수도사(풍운)
+
+## X-DB-Category-3w0: 판다리아의 안개 세트 아이템_티어 15(공격대 찾기) 세트_전사(방어)
+## X-DB-Category-3w1: 전사(무기/분노)
+## X-DB-Category-3w2: 도적
+## X-DB-Category-3w3: 사제(신성/수양)
+## X-DB-Category-3w4: 사제(암흑)
+## X-DB-Category-3w5: 마법사
+## X-DB-Category-3w6: 흑마법사
+## X-DB-Category-3w7: 사냥꾼
+## X-DB-Category-3w8: 드루이드(수호)
+## X-DB-Category-3w9: 드루이드(야성)
+## X-DB-Category-3wa: 드루이드(조화)
+## X-DB-Category-3wb: 드루이드(회복)
+## X-DB-Category-3wc: 주술사(고양)
+## X-DB-Category-3wd: 주술사(정기)
+## X-DB-Category-3we: 주술사(복원)
+## X-DB-Category-3wf: 성기사(징벌)
+## X-DB-Category-3wg: 성기사(보호)
+## X-DB-Category-3wh: 성기사(신성)
+## X-DB-Category-3wi: 죽음의 기사(혈기)
+## X-DB-Category-3wj: 죽음의 기사(냉기/부정)
+## X-DB-Category-3wk: 수도사(양조)
+## X-DB-Category-3wl: 수도사(운무)
+## X-DB-Category-3wm: 수도사(풍운)
+
+## X-DB-Category-3x0: 판다리아의 안개 세트 아이템_티어 14(영웅) 세트_전사(방어)
+## X-DB-Category-3x1: 전사(무기/분노)
+## X-DB-Category-3x2: 도적
+## X-DB-Category-3x3: 사제(신성/수양)
+## X-DB-Category-3x4: 사제(암흑)
+## X-DB-Category-3x5: 마법사
+## X-DB-Category-3x6: 흑마법사
+## X-DB-Category-3x7: 사냥꾼
+## X-DB-Category-3x8: 드루이드(수호)
+## X-DB-Category-3x9: 드루이드(야성)
+## X-DB-Category-3xa: 드루이드(조화)
+## X-DB-Category-3xb: 드루이드(회복)
+## X-DB-Category-3xc: 주술사(고양)
+## X-DB-Category-3xd: 주술사(정기)
+## X-DB-Category-3xe: 주술사(복원)
+## X-DB-Category-3xf: 성기사(징벌)
+## X-DB-Category-3xg: 성기사(보호)
+## X-DB-Category-3xh: 성기사(신성)
+## X-DB-Category-3xi: 죽음의 기사(혈기)
+## X-DB-Category-3xj: 죽음의 기사(냉기/부정)
+## X-DB-Category-3xk: 수도사(양조)
+## X-DB-Category-3xl: 수도사(운무)
+## X-DB-Category-3xm: 수도사(풍운)
+
+## X-DB-Category-3y0: 판다리아의 안개 세트 아이템_티어 14(일반) 세트_전사(방어)
+## X-DB-Category-3y1: 전사(무기/분노)
+## X-DB-Category-3y2: 도적
+## X-DB-Category-3y3: 사제(신성/수양)
+## X-DB-Category-3y4: 사제(암흑)
+## X-DB-Category-3y5: 마법사
+## X-DB-Category-3y6: 흑마법사
+## X-DB-Category-3y7: 사냥꾼
+## X-DB-Category-3y8: 드루이드(수호)
+## X-DB-Category-3y9: 드루이드(야성)
+## X-DB-Category-3ya: 드루이드(조화)
+## X-DB-Category-3yb: 드루이드(회복)
+## X-DB-Category-3yc: 주술사(고양)
+## X-DB-Category-3yd: 주술사(정기)
+## X-DB-Category-3ye: 주술사(복원)
+## X-DB-Category-3yf: 성기사(징벌)
+## X-DB-Category-3yg: 성기사(보호)
+## X-DB-Category-3yh: 성기사(신성)
+## X-DB-Category-3yi: 죽음의 기사(혈기)
+## X-DB-Category-3yj: 죽음의 기사(냉기/부정)
+## X-DB-Category-3yk: 수도사(양조)
+## X-DB-Category-3yl: 수도사(운무)
+## X-DB-Category-3ym: 수도사(풍운)
+
+## X-DB-Category-3z0: 판다리아의 안개 세트 아이템_티어 14(공격대 찾기) 세트_전사(방어)
+## X-DB-Category-3z1: 전사(무기/분노)
+## X-DB-Category-3z2: 도적
+## X-DB-Category-3z3: 사제(신성/수양)
+## X-DB-Category-3z4: 사제(암흑)
+## X-DB-Category-3z5: 마법사
+## X-DB-Category-3z6: 흑마법사
+## X-DB-Category-3z7: 사냥꾼
+## X-DB-Category-3z8: 드루이드(수호)
+## X-DB-Category-3z9: 드루이드(야성)
+## X-DB-Category-3za: 드루이드(조화)
+## X-DB-Category-3zb: 드루이드(회복)
+## X-DB-Category-3zc: 주술사(고양)
+## X-DB-Category-3zd: 주술사(정기)
+## X-DB-Category-3ze: 주술사(복원)
+## X-DB-Category-3zf: 성기사(징벌)
+## X-DB-Category-3zg: 성기사(보호)
+## X-DB-Category-3zh: 성기사(신성)
+## X-DB-Category-3zi: 죽음의 기사(혈기)
+## X-DB-Category-3zj: 죽음의 기사(냉기/부정)
+## X-DB-Category-3zk: 수도사(양조)
+## X-DB-Category-3zl: 수도사(운무)
+## X-DB-Category-3zm: 수도사(풍운)
+
+## X-DB-Category-500: 대격변 공격대 던전_|cffff7db4검은날개 강림지|r_용암아귀
+## X-DB-Category-501: 만능골렘 방어 시스템
+## X-DB-Category-502: 말로리악
+## X-DB-Category-503: 아트라메데스
+## X-DB-Category-504: 키마이론
+## X-DB-Category-505: 네파리안
+## X-DB-Category-506: 일반몹
+## X-DB-Category-507: 퀘스트 보상
+
+## X-DB-Category-510: 대격변 공격대 던전_|cffff7db4황혼의 요새|r_할푸스 웜브레이커
+## X-DB-Category-511: 발리오나와 테랄리온
+## X-DB-Category-512: 승천 의회
+## X-DB-Category-513: 초갈
+## X-DB-Category-514: 시네스트라
+## X-DB-Category-515: 일반몹
+## X-DB-Category-516: 퀘스트 보상
+
+## X-DB-Category-520: 대격변 공격대 던전_|cffff7db4네 바람의 왕좌|r_바람의 비밀의회
+## X-DB-Category-521: 알아키르
+## X-DB-Category-522: 일반몹
+## X-DB-Category-523: 퀘스트 보상
+
+## X-DB-Category-530: 대격변 공격대 던전_|cffff7db4바라딘 요새|r_아르갈로스
+## X-DB-Category-531: 오쿠타르
+## X-DB-Category-532: 증오의 여군주 알리자발
+
+## X-DB-Category-540: 대격변 공격대 던전_|cffff7db4불의 땅|r_베스틸락
+## X-DB-Category-541: 군주 라이올리스
+## X-DB-Category-542: 알리스라조르
+## X-DB-Category-543: 샤녹스
+## X-DB-Category-544: 문지기 발레록
+## X-DB-Category-545: 청지기 스태그헬름
+## X-DB-Category-546: 라그나로스
+## X-DB-Category-547: 일반몹
+## X-DB-Category-548: 전설 지팡이
+
+## X-DB-Category-550: 대격변 공격대 던전_|cffff7db4용의 영혼|r_모르초크
+## X-DB-Category-551: 장군 존오즈
+## X-DB-Category-552: 잠들지 않는 요르사지
+## X-DB-Category-553: 폭풍술사 하가라
+## X-DB-Category-554: 울트락시온
+## X-DB-Category-555: 전투대장 블랙혼
+## X-DB-Category-556: 데스윙의 등
+## X-DB-Category-557: 데스윙의 광기
+## X-DB-Category-558: 일반몹
+## X-DB-Category-559: 전설 단검
+## X-DB-Category-55a: 획득처 미확인
+
+## X-DB-Category-600: 대격변 5인 던전_|cff7df4b2검은바위 동굴|r_해골분쇄자 롬오그
+## X-DB-Category-601: 황혼의 전령 코를라
+## X-DB-Category-602: 카쉬 스틸벤더
+## X-DB-Category-603: 아름이
+## X-DB-Category-604: 승천 군주 옵시디우스
+## X-DB-Category-605: 일반몹
+## X-DB-Category-606: 퀘스트 보상
+
+## X-DB-Category-610: 대격변 5인 던전_|cff7df4b2파도의 왕좌|r_여군주 나즈자르
+## X-DB-Category-611: 사령관 울톡
+## X-DB-Category-612: 환각술사 구르샤
+## X-DB-Category-613: 오주마트
+## X-DB-Category-614: 일반몹
+## X-DB-Category-615: 퀘스트 보상
+
+## X-DB-Category-620: 대격변 5인 던전_|cff7df4b2바위심장부|r_코보루스
+## X-DB-Category-621: 돌거죽
+## X-DB-Category-622: 오즈룩
+## X-DB-Category-623: 대여사제 아질
+## X-DB-Category-624: 일반몹
+## X-DB-Category-625: 퀘스트 보상
+
+## X-DB-Category-630: 대격변 5인 던전_|cff7df4b2소용돌이 누각|r_대장로 에르탄
+## X-DB-Category-631: 알타리우스
+## X-DB-Category-632: 아사드
+## X-DB-Category-633: 일반몹
+## X-DB-Category-634: 퀘스트 보상
+
+## X-DB-Category-640: 대격변 5인 던전_|cff7df4b2그림 바톨|r_장군 움브리스
+## X-DB-Category-641: 제련장인 트롱구스
+## X-DB-Category-642: 드라가 섀도버너
+## X-DB-Category-643: 에루닥스
+## X-DB-Category-644: 일반몹
+## X-DB-Category-645: 퀘스트 보상
+
+## X-DB-Category-650: 대격변 5인 던전_|cff7df4b2시초의 전당|r_사원 수호자 안후르
+## X-DB-Category-651: 대지전복자 프타
+## X-DB-Category-652: 안라펫
+## X-DB-Category-653: 이시세트
+## X-DB-Category-654: 아뮤내
+## X-DB-Category-655: 세테쉬
+## X-DB-Category-656: 라지
+## X-DB-Category-657: 일반몹
+## X-DB-Category-658: 퀘스트 보상
+
+## X-DB-Category-660: 대격변 5인 던전_|cff7df4b2톨비르의 잃어버린 도시|r_장군 후삼
+## X-DB-Category-661: 고위 사제 바림
+## X-DB-Category-662: 톱니아귀
+## X-DB-Category-663: 시아마트
+## X-DB-Category-664: 일반몹
+## X-DB-Category-665: 퀘스트 보상
+
+## X-DB-Category-670: 대격변 5인 던전_|cff7df4b2죽음의 폐광|r_글럽톡
+## X-DB-Category-671: 헬릭스 기어브레이커
+## X-DB-Category-672: 전투 절단기 5000
+## X-DB-Category-673: 제독 으르렁니
+## X-DB-Category-674: "선장" 쿠키
+## X-DB-Category-675: 바네사 밴클리프
+## X-DB-Category-676: 일반몹
+## X-DB-Category-677: 퀘스트 보상
+
+## X-DB-Category-680: 대격변 5인 던전_|cff7df4b2그림자송곳니 성채|r_남작 애쉬버리
+## X-DB-Category-681: 남작 실버레인
+## X-DB-Category-682: 사령관 스프링베일
+## X-DB-Category-683: 월든 경
+## X-DB-Category-684: 고드프리 경
+## X-DB-Category-685: 일반몹
+## X-DB-Category-686: 퀘스트 보상
+
+## X-DB-Category-690: 대격변 5인 던전_|cff7df4b2줄구룹|r_대사제 베녹시스
+## X-DB-Category-691: 혈군주 만도키르
+## X-DB-Category-692: 하자라(고고학 히든)
+## X-DB-Category-693: 레나타키(고고학 히든)
+## X-DB-Category-694: 우슐레이(고고학 히든)
+## X-DB-Category-695: 그리렉(고고학 히든)
+## X-DB-Category-696: 대여사제 킬나라
+## X-DB-Category-697: 잔질
+## X-DB-Category-698: 신파괴자 진도
+## X-DB-Category-699: 일반몹
+## X-DB-Category-69a: 퀘스트 보상
+
+## X-DB-Category-6a0: 대격변 5인 던전_|cff7df4b2줄아만|r_아킬존
+## X-DB-Category-6a1: 날로라크
+## X-DB-Category-6a2: 진알라이
+## X-DB-Category-6a3: 할라지
+## X-DB-Category-6a4: 사술 군주 말라크라스
+## X-DB-Category-6a5: 다카라
+## X-DB-Category-6a6: 타임 어택
+## X-DB-Category-6a7: 일반몹
+## X-DB-Category-6a8: 퀘스트 보상
+
+## X-DB-Category-6b0: 대격변 5인 던전_|cff7df4b2시간의 끝|r_바인의 환영
+## X-DB-Category-6b1: 제이나의 환영
+## X-DB-Category-6b2: 실바나스의 환영
+## X-DB-Category-6b3: 티란데의 환영
+## X-DB-Category-6b4: 무르도즈노
+## X-DB-Category-6b5: 일반몹
+## X-DB-Category-6b6: 퀘스트 보상
+
+## X-DB-Category-6c0: 대격변 5인 던전_|cff7df4b2영원의 샘|r_페로스안
+## X-DB-Category-6c1: 여왕 아즈샤라
+## X-DB-Category-6c2: 만노로스와 바로덴
+## X-DB-Category-6c3: 일반몹
+## X-DB-Category-6c4: 퀘스트 보상
+
+## X-DB-Category-6d0: 대격변 5인 던전_|cff7df4b2황혼의 시간|r_아큐리온
+## X-DB-Category-6d1: 아시라 돈슬레이어
+## X-DB-Category-6d2: 대주교 베네딕투스
+## X-DB-Category-6d3: 일반몹
+## X-DB-Category-6d4: 퀘스트 보상
+
+## X-DB-Category-700: 리치 왕의 분노 공격대 던전_|cffff7db4낙스라마스|r(25인)_패치워크
+## X-DB-Category-701: 그라불루스
+## X-DB-Category-702: 글루스
+## X-DB-Category-703: 타디우스
+## X-DB-Category-704: 아눕레칸
+## X-DB-Category-705: 귀부인 팰리나
+## X-DB-Category-706: 맥스나
+## X-DB-Category-707: 훈련교관 라주비어스
+## X-DB-Category-708: 영혼의 착취자 고딕
+## X-DB-Category-709: 4인의 기사단
+## X-DB-Category-70a: 역병술사 노스
+## X-DB-Category-70b: 부정의 헤이건
+## X-DB-Category-70c: 로데브
+## X-DB-Category-70d: 사피론
+## X-DB-Category-70e: 켈투자드
+## X-DB-Category-70f: 일반몹
+## X-DB-Category-70g: 집중의 눈동자 보상
+
+## X-DB-Category-710: 리치 왕의 분노 공격대 던전_|cffff7db4낙스라마스|r(10인)_패치워크
+## X-DB-Category-711: 그라불루스
+## X-DB-Category-712: 글루스
+## X-DB-Category-713: 타디우스
+## X-DB-Category-714: 아눕레칸
+## X-DB-Category-715: 귀부인 팰리나
+## X-DB-Category-716: 맥스나
+## X-DB-Category-717: 훈련교관 라주비어스
+## X-DB-Category-718: 영혼의 착취자 고딕
+## X-DB-Category-719: 4인의 기사단
+## X-DB-Category-71a: 역병술사 노스
+## X-DB-Category-71b: 부정의 헤이건
+## X-DB-Category-71c: 로데브
+## X-DB-Category-71d: 사피론
+## X-DB-Category-71e: 켈투자드
+## X-DB-Category-71f: 일반몹
+## X-DB-Category-71g: 집중의 눈동자 보상
+
+## X-DB-Category-720: 리치 왕의 분노 공격대 던전_|cffff7db4흑요석 성소|r(25인)_칠흑의 수호자 살타리온
+## X-DB-Category-721: 1 비용 생존 추가 보상
+## X-DB-Category-722: 2 비용 생존 추가 보상
+## X-DB-Category-723: 3 비용 생존 추가 보상
+
+## X-DB-Category-730: 리치 왕의 분노 공격대 던전_|cffff7db4흑요석 성소|r(10인)_칠흑의 수호자 살타리온
+## X-DB-Category-731: 1 비용 생존 추가 보상
+## X-DB-Category-732: 2 비용 생존 추가 보상
+## X-DB-Category-733: 3 비용 생존 추가 보상
+
+## X-DB-Category-740: 리치 왕의 분노 공격대 던전_|cffff7db4영원의 눈|r(25인)_말리고스
+## X-DB-Category-741: 마법의 심장 보상
+
+## X-DB-Category-750: 리치 왕의 분노 공격대 던전_|cffff7db4영원의 눈|r(10인)_말리고스
+## X-DB-Category-751: 마법의 심장 보상
+
+## X-DB-Category-760: 리치 왕의 분노 공격대 던전_|cffff7db4아카본 석실|r(25인)_바위감시자 아카본
+## X-DB-Category-761: 폭풍감시자 에말론
+## X-DB-Category-762: 화염감시자 코랄론
+## X-DB-Category-763: 얼음감시자 토라본
+
+## X-DB-Category-770: 리치 왕의 분노 공격대 던전_|cffff7db4아카본 석실|r(10인)_바위감시자 아카본
+## X-DB-Category-771: 폭풍감시자 에말론
+## X-DB-Category-772: 화염감시자 코랄론
+## X-DB-Category-773: 얼음감시자 토라본
+
+## X-DB-Category-780: 리치 왕의 분노 공격대 던전_|cffff7db4울두아르|r(25인)_거대 화염전차
+## X-DB-Category-781: 용광로 군주 이그니스
+## X-DB-Category-782: 칼날 비늘
+## X-DB-Category-783: XT-002 해체자
+## X-DB-Category-784: 무쇠 평의회
+## X-DB-Category-785: 콜로간
+## X-DB-Category-786: 아우리아야
+## X-DB-Category-787: 호디르
+## X-DB-Category-788: 프레이야
+## X-DB-Category-789: 토림
+## X-DB-Category-78a: 미미론
+## X-DB-Category-78b: 장군 베작스
+## X-DB-Category-78c: 요그사론
+## X-DB-Category-78d: 관찰자 알갈론
+## X-DB-Category-78e: 도안
+## X-DB-Category-78f: 일반몹
+## X-DB-Category-78g: 퀘스트 보상
+
+## X-DB-Category-790: 리치 왕의 분노 공격대 던전_|cffff7db4울두아르|r(10인)_거대 화염전차
+## X-DB-Category-791: 용광로 군주 이그니스
+## X-DB-Category-792: 칼날 비늘
+## X-DB-Category-793: XT-002 해체자
+## X-DB-Category-794: 무쇠 평의회
+## X-DB-Category-795: 콜로간
+## X-DB-Category-796: 아우리아야
+## X-DB-Category-797: 호디르
+## X-DB-Category-798: 프레이야
+## X-DB-Category-799: 토림
+## X-DB-Category-79a: 미미론
+## X-DB-Category-79b: 장군 베작스
+## X-DB-Category-79c: 요그사론
+## X-DB-Category-79d: 관찰자 알갈론
+## X-DB-Category-79e: 도안
+## X-DB-Category-79f: 일반몹
+## X-DB-Category-79g: 퀘스트 보상
+
+## X-DB-Category-7a0: 리치 왕의 분노 공격대 던전_|cffff7db4십자군의 시험장|r(25인)_노스렌드의 야수
+## X-DB-Category-7a1: 군주 자락서스
+## X-DB-Category-7a2: 종족 대표 용사
+## X-DB-Category-7a3: 발키르 쌍둥이
+## X-DB-Category-7a4: 아눕아락
+## X-DB-Category-7a5: 도안
+## X-DB-Category-7a6: 은빛십자군 공물함
+## X-DB-Category-7a7: 은빛십자군 공물함(50트)
+
+## X-DB-Category-7b0: 리치 왕의 분노 공격대 던전_|cffff7db4십자군의 시험장|r(10인)_노스렌드의 야수
+## X-DB-Category-7b1: 군주 자락서스
+## X-DB-Category-7b2: 종족 대표 용사
+## X-DB-Category-7b3: 발키르 쌍둥이
+## X-DB-Category-7b4: 아눕아락
+## X-DB-Category-7b5: 도안
+## X-DB-Category-7b6: 은빛십자군 공물함
+## X-DB-Category-7b7: 은빛십자군 공물함(50트)
+
+## X-DB-Category-7e0: 리치 왕의 분노 공격대 던전_|cffff7db4오닉시아의 둥지|r(25인)_오닉시아
+## X-DB-Category-7e1: 오닉시아의 머리 보상
+
+## X-DB-Category-7f0: 리치 왕의 분노 공격대 던전_|cffff7db4오닉시아의 둥지|r(10인)_오닉시아
+## X-DB-Category-7f1: 오닉시아의 머리 보상
+
+## X-DB-Category-7g0: 리치 왕의 분노 공격대 던전_|cffff7db4얼음왕관 성채|r(25인)_군주 매로우가르
+## X-DB-Category-7g1: 여교주 데스위스퍼
+## X-DB-Category-7g2: 비행포격선 전투
+## X-DB-Category-7g3: 죽음의 인도자 사울팽
+## X-DB-Category-7g4: 구린속
+## X-DB-Category-7g5: 썩은얼굴
+## X-DB-Category-7g6: 교수 퓨트리사이드
+## X-DB-Category-7g7: 피의 의회
+## X-DB-Category-7g8: 피의 여왕 라나텔
+## X-DB-Category-7g9: 발리스리아 드림워커
+## X-DB-Category-7ga: 신드라고사
+## X-DB-Category-7gb: 리치 왕
+## X-DB-Category-7gc: 일반몹
+## X-DB-Category-7gd: 평판 반지
+## X-DB-Category-7ge: 퀘스트
+
+## X-DB-Category-7h0: 리치 왕의 분노 공격대 던전_|cffff7db4얼음왕관 성채|r(10인)_군주 매로우가르
+## X-DB-Category-7h1: 여교주 데스위스퍼
+## X-DB-Category-7h2: 비행포격선 전투
+## X-DB-Category-7h3: 죽음의 인도자 사울팽
+## X-DB-Category-7h4: 구린속
+## X-DB-Category-7h5: 썩은얼굴
+## X-DB-Category-7h6: 교수 퓨트리사이드
+## X-DB-Category-7h7: 피의 의회
+## X-DB-Category-7h8: 피의 여왕 라나텔
+## X-DB-Category-7h9: 발리스리아 드림워커
+## X-DB-Category-7ha: 신드라고사
+## X-DB-Category-7hb: 리치 왕
+## X-DB-Category-7hc: 일반몹
+## X-DB-Category-7hd: 평판 반지
+## X-DB-Category-7he: 퀘스트
+
+## X-DB-Category-7i0: 리치 왕의 분노 공격대 던전_|cffff7db4루비 성소|r(25인)_황혼의 파괴자 할리온
+
+## X-DB-Category-7j0: 리치 왕의 분노 공격대 던전_|cffff7db4루비 성소|r(10인)_황혼의 파괴자 할리온
+
+## X-DB-Category-800: 리치 왕의 분노 5인 던전_|cff7df4b2우트가드 성채|r_공작 켈레세스
+## X-DB-Category-801: 감시자 달론과 건축가 스카발드
+## X-DB-Category-802: 약탈자 잉그바르
+## X-DB-Category-803: 일반몹
+## X-DB-Category-804: 퀘스트 보상
+
+## X-DB-Category-810: 리치 왕의 분노 5인 던전_|cff7df4b2우트가드 첨탑|r_스발라 소로우그레이브
+## X-DB-Category-811: 고르톡 페일후프
+## X-DB-Category-812: 학살자 스카디
+## X-DB-Category-813: 왕 이미론
+## X-DB-Category-814: 일반몹
+## X-DB-Category-815: 퀘스트 보상
+
+## X-DB-Category-820: 리치 왕의 분노 5인 던전_|cff7df4b2마력의 탑|r_아노말루스
+## X-DB-Category-821: 대학자 텔레스트라
+## X-DB-Category-822: 정원사 오르모르크
+## X-DB-Category-823: 사령관 $f{스타우트비어드/콜루르그}
+## X-DB-Category-824: 케리스트라자
+## X-DB-Category-825: 일반몹
+## X-DB-Category-826: 퀘스트 보상
+
+## X-DB-Category-830: 리치 왕의 분노 5인 던전_|cff7df4b2마력의 눈|r_심문관 드라코스
+## X-DB-Category-831: 마법사 군주 우롬
+## X-DB-Category-832: 바로스 클라우드스트라이더
+## X-DB-Category-833: 지맥 수호자 에레고스
+## X-DB-Category-834: 일반몹
+## X-DB-Category-835: 퀘스트 보상
+
+## X-DB-Category-840: 리치 왕의 분노 5인 던전_|cff7df4b2아졸네룹|r_문지기 크릭시르
+## X-DB-Category-841: 하드로녹스
+## X-DB-Category-842: 아눕아락
+## X-DB-Category-843: 일반몹
+## X-DB-Category-844: 퀘스트 보상
+
+## X-DB-Category-850: 리치 왕의 분노 5인 던전_|cff7df4b2안카헤트|r_공작 탈다람
+## X-DB-Category-851: 장로 나독스
+## X-DB-Category-852: 어둠추적자 제도가
+## X-DB-Category-853: 아마니타르
+## X-DB-Category-854: 사자 볼라즈
+## X-DB-Category-855: 일반몹
+## X-DB-Category-856: 퀘스트 보상
+
+## X-DB-Category-860: 리치 왕의 분노 5인 던전_|cff7df4b2드락타론 성채|r_송곳아귀
+## X-DB-Category-861: 소환사 노보스
+## X-DB-Category-862: 랩터왕 서슬발톱
+## X-DB-Category-863: 예언자 타론자
+## X-DB-Category-864: 일반몹
+## X-DB-Category-865: 퀘스트 보상
+
+## X-DB-Category-870: 리치 왕의 분노 5인 던전_|cff7df4b2군드락|r_슬라드란
+## X-DB-Category-871: 드라카리 거대골램
+## X-DB-Category-872: 무라비
+## X-DB-Category-873: 사나운 엑크
+## X-DB-Category-874: 갈다라
+## X-DB-Category-875: 일반몹
+## X-DB-Category-876: 퀘스트 보상
+
+## X-DB-Category-880: 리치 왕의 분노 5인 던전_|cff7df4b2보랏빛 요새|r_제보즈
+## X-DB-Category-881: 파멸자 주라마트
+## X-DB-Category-882: 에레켐
+## X-DB-Category-883: 모라그
+## X-DB-Category-884: 이코론
+## X-DB-Category-885: 리반토르
+## X-DB-Category-886: 시아니고사
+## X-DB-Category-887: 일반몹
+## X-DB-Category-888: 퀘스트 보상
+
+## X-DB-Category-890: 리치 왕의 분노 5인 던전_|cff7df4b2돌의 전당|r_시대의 심판장
+## X-DB-Category-891: 크리스탈루스
+## X-DB-Category-892: 고뇌의 마녀
+## X-DB-Category-893: 무쇠구체자 쇼니르
+## X-DB-Category-894: 일반몹
+## X-DB-Category-895: 퀘스트 보상
+
+## X-DB-Category-8a0: 리치 왕의 분노 5인 던전_|cff7df4b2번개의 전당|r_장군 뱌른그림
+## X-DB-Category-8a1: 불칸
+## X-DB-Category-8a2: 아이오나
+## X-DB-Category-8a3: 로켄
+## X-DB-Category-8a4: 일반몹
+## X-DB-Category-8a5: 퀘스트 보상
+
+## X-DB-Category-8b0: 리치 왕의 분노 5인 던전_|cff7df4b2옛 스트라솔름|r_살덩이고리
+## X-DB-Category-8b1: 살덩이 창조자 살람
+## X-DB-Category-8b2: 시간의 군주 에포크
+## X-DB-Category-8b3: 말가니스
+## X-DB-Category-8b4: 무한의 타락자 (타임 어택)
+## X-DB-Category-8b5: 일반몹
+## X-DB-Category-8b6: 퀘스트 보상
+
+## X-DB-Category-8c0: 리치 왕의 분노 5인 던전_|cff7df4b2용사의 시험장|r_도시 최고 용사
+## X-DB-Category-8c1: 성기사 에드릭
+## X-DB-Category-8c2: 은빛 고해사제 페일트리스
+## X-DB-Category-8c3: 흑기사
+
+## X-DB-Category-8d0: 리치 왕의 분노 5인 던전_|cff7df4b2영혼의 제련소|r_브론잠
+## X-DB-Category-8d1: 영혼의 포식자
+## X-DB-Category-8d2: 일반몹
+## X-DB-Category-8d3: 퀘스트 보상
+
+## X-DB-Category-8e0: 리치 왕의 분노 5인 던전_|cff7df4b2사론의 구덩이|r_제련장인 가프로스트
+## X-DB-Category-8e1: 이크
+## X-DB-Category-8e2: 스컬지군주 티라누스
+## X-DB-Category-8e3: 일반몹
+## X-DB-Category-8e4: 퀘스트 보상
+
+## X-DB-Category-8f0: 리치 왕의 분노 5인 던전_|cff7df4b2투영의 전당|r_팔릭
+## X-DB-Category-8f1: 마윈
+## X-DB-Category-8f2: 리치 왕
+## X-DB-Category-8f3: 일반몹
+## X-DB-Category-8f4: 퀘스트 보상
+
+## X-DB-Category-900: 불타는 성전 공격대 던전_|cffff7db4카라잔|r_사냥꾼 어튜멘
+## X-DB-Category-901: 모로스
+## X-DB-Category-902: 고결의 여신
+## X-DB-Category-903: 로밀로와 줄리엔
+## X-DB-Category-904: 오즈의 마법사
+## X-DB-Category-905: 커다란 나쁜 늑대
+## X-DB-Category-906: 파멸의 어둠
+## X-DB-Category-907: 전시 관리인
+## X-DB-Category-908: 테레스티안 일후프
+## X-DB-Category-909: 아란의 망령
+## X-DB-Category-90a: 체스 이벤트
+## X-DB-Category-90b: 황천의 원령
+## X-DB-Category-90c: 공작 말체자르
+## X-DB-Category-90d: 히든 네임드
+## X-DB-Category-90e: 일반몹
+## X-DB-Category-90f: 보랏빛 눈의 감시자 평판 보상
+## X-DB-Category-90g: 퀘스트 보상
+
+## X-DB-Category-910: 불타는 성전 공격대 던전_|cffff7db4불타는 성전 줄아만|r_날로라크
+## X-DB-Category-911: 아킬존
+## X-DB-Category-912: 할라지
+## X-DB-Category-913: 잔알라이
+## X-DB-Category-914: 주술 군주 말라크라스
+## X-DB-Category-915: 줄진
+## X-DB-Category-916: 공물함
+## X-DB-Category-917: 공통 드랍 도안
+## X-DB-Category-918: 퀘스트 보상
+
+## X-DB-Category-920: 불타는 성전 공격대 던전_|cffff7db4그룰의 둥지|r_왕중왕 마울가르
+## X-DB-Category-921: 용 학살자 그룰
+
+## X-DB-Category-930: 불타는 성전 공격대 던전_|cffff7db4마그테리돈의 둥지|r_마그테리돈
+## X-DB-Category-931: 마그테리돈의 머리 보상
+
+## X-DB-Category-940: 불타는 성전 공격대 던전_|cffff7db4불뱀 제단|r_불안정한 히드로스
+## X-DB-Category-941: 심연의 잠복꾼
+## X-DB-Category-942: 눈먼 레오테라스
+## X-DB-Category-943: 심연의 군주 카라드레스
+## X-DB-Category-944: 겅둥파도 모로그림
+## X-DB-Category-945: 여군주 바쉬
+## X-DB-Category-946: 일반몹
+## X-DB-Category-947: 공통 드랍 도안
+## X-DB-Category-948: 제작 아이템
+
+## X-DB-Category-950: 불타는 성전 공격대 던전_|cffff7db4폭풍우 요새|r_알라르
+## X-DB-Category-951: 공허의 절단기
+## X-DB-Category-952: 고위 점성술사 솔라리안
+## X-DB-Category-953: 캘타스 선스트라이더
+## X-DB-Category-954: 캘타스의 무기들
+## X-DB-Category-955: 신록의 구슬 보상
+## X-DB-Category-956: 일반몹
+## X-DB-Category-957: 공통 드랍 도안
+## X-DB-Category-958: 제작 아이템
+
+## X-DB-Category-960: 불타는 성전 공격대 던전_|cffff7db4하이잘 정상|r_격노한 윈터칠
+## X-DB-Category-961: 아네테론
+## X-DB-Category-962: 카즈로갈
+## X-DB-Category-963: 아즈갈로
+## X-DB-Category-964: 아키몬드
+## X-DB-Category-965: 일반몹
+## X-DB-Category-966: 시간의 중재자 평판 보상
+## X-DB-Category-967: 보스 공통 드랍 도안
+## X-DB-Category-968: 공통 드랍 도안
+## X-DB-Category-969: 제작 아이템
+
+## X-DB-Category-970: 불타는 성전 공격대 던전_|cffff7db4검은 사원|r_대장군 나젠투스
+## X-DB-Category-971: 궁극의 심연
+## X-DB-Category-972: 아카마의 망령
+## X-DB-Category-973: 테론 고어핀드
+## X-DB-Category-974: 구르토그 블러드보일
+## X-DB-Category-975: 영혼의 성물함
+## X-DB-Category-976: 대모 샤라즈
+## X-DB-Category-977: 일리다리 의회
+## X-DB-Category-978: 일리단 스톰레이지
+## X-DB-Category-979: 일반몹
+## X-DB-Category-97a: 잿빛혓바닥 결사단 평판 보상
+## X-DB-Category-97b: 공통 드랍 도안
+## X-DB-Category-97c: 제작 아이템
+
+## X-DB-Category-980: 불타는 성전 공격대 던전_|cffff7db4태양샘 고원|r_칼렉고스
+## X-DB-Category-981: 브루탈루스
+## X-DB-Category-982: 지옥안개
+## X-DB-Category-983: 에레다르 쌍둥이 자매
+## X-DB-Category-984: 므우르
+## X-DB-Category-985: 킬제덴
+## X-DB-Category-986: 일반몹
+## X-DB-Category-987: 공통 드랍 도안
+## X-DB-Category-988: 제작 아이템
+
+## X-DB-Category-990: 불타는 성전 공격대 던전_|cffff7db4필드 레이드 보스|r_파멸의 절단기
+## X-DB-Category-991: 파멸의 군주 카자크
+
+## X-DB-Category-a00: 불타는 성전 5인 던전_|cff7df4b2지옥불 성루|r_감시자 가르골마르
+## X-DB-Category-a01: 무적의 오모르
+## X-DB-Category-a02: 바즈루덴과 나잔
+## X-DB-Category-a03: 일반몹
+## X-DB-Category-a04: 보석
+## X-DB-Category-a05: 퀘스트 보상
+
+## X-DB-Category-a10: 불타는 성전 5인 던전_|cff7df4b2피의 용광로|r_재앙의 창조자
+## X-DB-Category-a11: 브로고크
+## X-DB-Category-a12: 파괴자 켈리단
+## X-DB-Category-a13: 보석
+## X-DB-Category-a14: 퀘스트 보상
+
+## X-DB-Category-a20: 불타는 성전 5인 던전_|cff7df4b2으스러진 손의 전당|r_흑마법사 네더쿠르스
+## X-DB-Category-a21: 돌격대장 오므로그
+## X-DB-Category-a22: 대족장 카르가스 블레이드피스트
+## X-DB-Category-a23: 혈투사 포롱
+## X-DB-Category-a24: 일반몹
+## X-DB-Category-a25: 보석
+## X-DB-Category-a26: 퀘스트 보상
+
+## X-DB-Category-a30: 불타는 성전 5인 던전_|cff7df4b2강제 노역소|r_배반자 멘누
+## X-DB-Category-a31: 딱딱이 로크마르
+## X-DB-Category-a32: 쿠아그미란
+## X-DB-Category-a33: 보석
+
+## X-DB-Category-a40: 불타는 성전 드랍_지하수렁_헝가르펜
+## X-DB-Category-a41: 가즈안
+## X-DB-Category-a42: 늪군주 뮤즐레크
+## X-DB-Category-a43: 검은 추적자
+## X-DB-Category-a44: 보석
+## X-DB-Category-a45: 퀘스트 보상
+
+## X-DB-Category-a50: 불타는 성전 5인 던전_|cff7df4b2증기 저장고|r_풍수사 세스피아
+## X-DB-Category-a51: 기계공학자 스팀리거
+## X-DB-Category-a52: 장군 칼리스레쉬
+## X-DB-Category-a53: 일반몹
+## X-DB-Category-a54: 보석
+## X-DB-Category-a55: 퀘스트 보상
+
+## X-DB-Category-a60: 불타는 성전 5인 던전_|cff7df4b2마나 무덤|r_팬더모니우스
+## X-DB-Category-a61: 타바로크
+## X-DB-Category-a62: 연합왕자 샤파르
+## X-DB-Category-a63: 요르
+## X-DB-Category-a64: 일반몹
+## X-DB-Category-a65: 보석
+## X-DB-Category-a66: 퀘스트 보상
+
+## X-DB-Category-a70: 불타는 성전 5인 던전_|cff7df4b2아키나이 납골당|r_죽음의 감시인 쉴라크
+## X-DB-Category-a71: 총독 말라다르
+## X-DB-Category-a72: 순교자의 화신
+## X-DB-Category-a73: 일반몹
+## X-DB-Category-a74: 보석
+## X-DB-Category-a75: 퀘스트 보상
+
+## X-DB-Category-a80: 불타는 성전 5인 던전_|cff7df4b2세데크 전당|r_흑마술사 시스
+## X-DB-Category-a81: 갈퀴대왕 이키스
+## X-DB-Category-a82: 안주
+## X-DB-Category-a83: 일반몹
+## X-DB-Category-a84: 보석
+## X-DB-Category-a85: 퀘스트 보상
+
+## X-DB-Category-a90: 불타는 성전 5인 던전_|cff7df4b2어둠의 미궁|r_사자 지옥아귀
+## X-DB-Category-a91: 선동자 검은심장
+## X-DB-Category-a92: 단장 보르필
+## X-DB-Category-a93: 울림
+## X-DB-Category-a94: 일반몹
+## X-DB-Category-a95: 보석
+## X-DB-Category-a96: 퀘스트 보상
+
+## X-DB-Category-aa0: 불타는 성전 5인 던전_|cff7df4b2옛 힐스브래드 구릉지|r_부관 드레이크
+## X-DB-Category-aa1: 경비대장 스칼록
+## X-DB-Category-aa2: 시대의 사냥꾼
+## X-DB-Category-aa3: 일반몹
+## X-DB-Category-aa4: 보석
+## X-DB-Category-aa5: 퀘스트 보상
+
+## X-DB-Category-ab0: 불타는 성전 5인 던전_|cff7df4b2검은늪|r_시간의 군주 데자
+## X-DB-Category-ab1: 템퍼루스
+## X-DB-Category-ab2: 아에누스
+## X-DB-Category-ab3: 일반몹
+## X-DB-Category-ab4: 보석
+## X-DB-Category-ab5: 퀘스트 보상
+
+## X-DB-Category-ac0: 불타는 성전 5인 던전_|cff7df4b2메카나르|r_기계군주 캐퍼시투스
+## X-DB-Category-ac1: 군단 저장고
+## X-DB-Category-ac2: 황천술사 세페스레아
+## X-DB-Category-ac3: 철두철미한 파탈리온
+## X-DB-Category-ac4: 일반몹
+## X-DB-Category-ac5: 보석
+
+## X-DB-Category-ad0: 불타는 성전 5인 던전_|cff7df4b2신록의 정원|r_지휘관 새랜니스
+## X-DB-Category-ad1: 고위 식물학자 프레이윈느
+## X-DB-Category-ad2: 감시인 쏜그린
+## X-DB-Category-ad3: 라즈
+## X-DB-Category-ad4: 차원의 분리자
+## X-DB-Category-ad5: 일반몹
+## X-DB-Category-ad6: 보석
+
+## X-DB-Category-ae0: 불타는 성전 5인 던전_|cff7df4b2알카트라즈|r_속박이 풀린 제레케스
+## X-DB-Category-ae1: 격노의 점술사 소코드라테스
+## X-DB-Category-ae2: 파멸의 예언자 달리아
+## X-DB-Category-ae3: 선구자 스키리스
+## X-DB-Category-ae4: 일반몹
+## X-DB-Category-ae5: 보석
+
+## X-DB-Category-af0: 불타는 성전 5인 던전_|cff7df4b2마법학자의 정원|r_셀린 파이어하트
+## X-DB-Category-af1: 벡샬루스
+## X-DB-Category-af2: 여사제 델리사
+## X-DB-Category-af3: 캘타스 선스트라이더
+## X-DB-Category-af4: 일반몹
+## X-DB-Category-af5: 보석
+
+## X-DB-Category-b00: 오리지널 공격대 던전_|cffff7db4화산심장부|r_루시프론
+## X-DB-Category-b01: 마그마다르
+## X-DB-Category-b02: 게헨나스
+## X-DB-Category-b03: 가르
+## X-DB-Category-b04: 남작 게돈
+## X-DB-Category-b05: 샤즈라
+## X-DB-Category-b06: 설퍼론 사자
+## X-DB-Category-b07: 초열의 골레마그
+## X-DB-Category-b08: 청지기 이그젝큐투스
+## X-DB-Category-b09: 라그나로스
+## X-DB-Category-b0a: 네임드 공통
+## X-DB-Category-b0b: 일반몹
+## X-DB-Category-b0c: 퀘스트 보상
+
+## X-DB-Category-b10: 오리지널 공격대 던전_|cffff7db4오리지널 오닉시아의 둥지|r_오닉시아
+## X-DB-Category-b11: 오닉시아의 머리 보상
+
+## X-DB-Category-b20: 오리지널 공격대 던전_|cffff7db4검은날개 둥지|r_폭군 서슬송곳니
+## X-DB-Category-b21: 타락의 벨라스트라즈
+## X-DB-Category-b22: 용기대장 레쉬레이어
+## X-DB-Category-b23: 화염아귀
+## X-DB-Category-b24: 에본로크
+## X-DB-Category-b25: 플레임고르
+## X-DB-Category-b26: 크로마구스
+## X-DB-Category-b27: 네파리안
+## X-DB-Category-b28: 일반몹
+## X-DB-Category-b29: 네파리안의 머리 보상
+
+## X-DB-Category-b40: 오리지널 공격대 던전_|cffff7db4안퀴라즈 폐허|r_쿠린낙스
+## X-DB-Category-b41: 장군 라작스
+## X-DB-Category-b42: 라작스의 부대장들
+## X-DB-Category-b43: 먹보 부루
+## X-DB-Category-b44: 모암
+## X-DB-Category-b45: 사냥꾼 아야미스
+## X-DB-Category-b46: 무적의 오시리안
+## X-DB-Category-b47: 일반몹
+## X-DB-Category-b48: 오시리안의 머리 보상
+
+## X-DB-Category-b50: 오리지널 공격대 던전_|cffff7db4안퀴라즈 사원|r_예언자 스케람
+## X-DB-Category-b51: 군주 크리
+## X-DB-Category-b52: 공주 야우즈
+## X-DB-Category-b53: 벰
+## X-DB-Category-b54: 전투감시병 살투라
+## X-DB-Category-b55: 불굴의 판크리스
+## X-DB-Category-b56: 비시디우스
+## X-DB-Category-b57: 공주 후후란
+## X-DB-Category-b58: 제왕 베크닐라쉬
+## X-DB-Category-b59: 제왕 베클로어
+## X-DB-Category-b5a: 아우로
+## X-DB-Category-b5b: 쑨
+## X-DB-Category-b5c: 일반몹
+## X-DB-Category-b5d: 마법부여 도안
+## X-DB-Category-b5e: 쑨의 눈 보상
+## X-DB-Category-b5f: 퀘스트 보상
+
+## X-DB-Category-b60: 오리지널 공격대 던전_|cffff7db4오리지널 낙스라마스|r_패치워크
+## X-DB-Category-b61: 그라불루스
+## X-DB-Category-b62: 글루스
+## X-DB-Category-b63: 타디우스
+## X-DB-Category-b64: 아눕레칸
+## X-DB-Category-b65: 펠리나
+## X-DB-Category-b66: 맥스나
+## X-DB-Category-b67: 훈련교관 라주비어스
+## X-DB-Category-b68: 영혼의 착취자 고딕
+## X-DB-Category-b69: 4인의 기사단
+## X-DB-Category-b6a: 역병술사 노스
+## X-DB-Category-b6b: 부정의 헤이건
+## X-DB-Category-b6c: 로데브
+## X-DB-Category-b6d: 사피론
+## X-DB-Category-b6e: 켈투자드
+## X-DB-Category-b6f: 일반몹
+## X-DB-Category-b6g: 켈투자드의 성물함 보상
+## X-DB-Category-b6h: 퀘스트 보상
+
+## X-DB-Category-c00: 오리지널 5인 던전_|cff7df4b2성난불길 협곡|r_아다로그
+## X-DB-Category-c01: 암흑주술사 코란살
+## X-DB-Category-c02: 화산아귀
+## X-DB-Category-c03: 용암경비병 고르도스
+## X-DB-Category-c04: 퀘스트 보상
+
+## X-DB-Category-c10: 오리지널 5인 던전_|cff7df4b2통곡의 동굴|r_여군주 아나콘드라
+## X-DB-Category-c11: 군주 코브란
+## X-DB-Category-c12: 크레쉬
+## X-DB-Category-c13: 군주 피타스
+## X-DB-Category-c14: 스컴
+## X-DB-Category-c15: 군주 서펜티스
+## X-DB-Category-c16: 영생의 베르단
+## X-DB-Category-c17: 걸신들린 무타누스
+## X-DB-Category-c18: 퀘스트 보상
+
+## X-DB-Category-c20: 오리지널 5인 던전_|cff7df4b2죽음의 폐광|r_글럽톡
+## X-DB-Category-c21: 헬릭스 기어브레이커
+## X-DB-Category-c22: 전투 절단기 5000
+## X-DB-Category-c23: 제독 으르렁니
+## X-DB-Category-c24: "선장" 쿠키
+## X-DB-Category-c25: 바네사 밴클리프
+## X-DB-Category-c26: 일반몹
+## X-DB-Category-c27: 퀘스트 보상
+
+## X-DB-Category-c30: 오리지널 5인 던전_|cff7df4b2그림자송곳니 성채|r_남작 애쉬버리
+## X-DB-Category-c31: 남작 실버레인
+## X-DB-Category-c32: 사령관 스프링베일
+## X-DB-Category-c33: 월든 경
+## X-DB-Category-c34: 고드프리 경
+## X-DB-Category-c35: 일반몹
+## X-DB-Category-c36: 퀘스트 보상
+
+## X-DB-Category-c40: 오리지널 5인 던전_|cff7df4b2검은심연의 나락|r_가무라
+## X-DB-Category-c41: 여왕 사레베스
+## X-DB-Category-c42: 갤리하스트
+## X-DB-Category-c43: 로구스 제트
+## X-DB-Category-c44: 군주 아쿠아니스
+## X-DB-Category-c45: 황혼의 군주 켈리스
+## X-DB-Category-c46: 늙은 세라키스
+## X-DB-Category-c47: 아쿠마이
+## X-DB-Category-c48: 퀘스트 보상
+
+## X-DB-Category-c50: 오리지널 5인 던전_|cff7df4b2스톰윈드 지하감옥|r_란돌프 몰로크
+## X-DB-Category-c51: 군주 열지옥
+## X-DB-Category-c52: 들창코
+## X-DB-Category-c53: 일반몹
+## X-DB-Category-c54: 퀘스트 보상
+
+## X-DB-Category-c60: 오리지널 5인 던전_|cff7df4b2가시덩굴 우리|r_루구그
+## X-DB-Category-c61: 저주의가시 아겜
+## X-DB-Category-c62: 죽음의예언자 잘그바
+## X-DB-Category-c63: 대군주 램터스크
+## X-DB-Category-c64: 흉포한 아가테로스
+## X-DB-Category-c65: 서슬깃 차를가
+## X-DB-Category-c66: 일반몹
+## X-DB-Category-c67: 퀘스트 보상
+
+## X-DB-Category-c70: 오리지널 5인 던전_|cff7df4b2놈리건|r_방사성 폐기물
+## X-DB-Category-c71: 그루비스
+## X-DB-Category-c72: 기계화 문지기 6000
+## X-DB-Category-c73: 고철 압축기 9-60
+## X-DB-Category-c74: 기계박사 텔마플러그
+## X-DB-Category-c75: 일반몹
+## X-DB-Category-c76: 퀘스트 보상
+
+## X-DB-Category-c80: 오리지널 5인 던전_|cff7df4b2붉은십자군 수도원|r_심문관 비샤스
+## X-DB-Category-c81: 혈법사 탈노스
+## X-DB-Category-c82: 사냥개조련사 록시
+## X-DB-Category-c83: 신비술사 도안
+## X-DB-Category-c84: 헤로드
+## X-DB-Category-c85: 종교재판관 페어뱅크스
+## X-DB-Category-c86: 종교재판관 화이트메인
+## X-DB-Category-c87: 붉은십자군 사령관 모그레인
+## X-DB-Category-c88: 일반몹
+## X-DB-Category-c89: 퀘스트 보상
+
+## X-DB-Category-c80: 판다리아의 안개 5인 던전_|cff7df4b2붉은십자군 수도원|r_영혼분리자 탈노스
+## X-DB-Category-c81: 수사 콜로프
+## X-DB-Category-c82: 종교재판관 화이트메인
+## X-DB-Category-c8t: 일반몹
+## X-DB-Category-c8q: 퀘스트 보상
+
+## X-DB-Category-c90: 판다리아의 안개 5인 던전_|cff7df4b2붉은십자군 전당|r_사냥개조련사 브라운
+## X-DB-Category-c91: 무기전문가 할란
+## X-DB-Category-c92: 화염술사 쾨글러
+## X-DB-Category-c9t: 일반몹
+## X-DB-Category-c9q: 퀘스트 보상
+
+## X-DB-Category-cc0: 오리지널 5인 던전_|cff7df4b2가시덩굴 구릉|r_투텐카쉬
+## X-DB-Category-cc1: 불꽃눈 모드레쉬
+## X-DB-Category-cc2: 게걸먹보
+## X-DB-Category-cc3: 혹한의 암네나르
+## X-DB-Category-cc4: 일반몹
+## X-DB-Category-cc5: 퀘스트 보상
+
+## X-DB-Category-cd0: 오리지널 5인 던전_|cff7df4b2울다만|r_레벨로쉬
+## X-DB-Category-cd1: 길 잃은 드워프
+## X-DB-Category-cd2: 아이로나야
+## X-DB-Category-cd3: 고대 바위 문지기
+## X-DB-Category-cd4: 갈간 파이어해머
+## X-DB-Category-cd5: 그림로크
+## X-DB-Category-cd6: 아카에다스
+## X-DB-Category-cd7: 일반몹
+## X-DB-Category-cd8: 퀘스트 보상
+
+## X-DB-Category-ce0: 오리지널 5인 던전_|cff7df4b2줄파락|r_안투술
+## X-DB-Category-ce1: 순교자 데카
+## X-DB-Category-ce2: 의술사 줌라
+## X-DB-Category-ce3: 네크룸 거트츄어
+## X-DB-Category-ce4: 유체술사 벨라타
+## X-DB-Category-ce5: 가즈릴라
+## X-DB-Category-ce6: 암흑사제 세즈지즈
+## X-DB-Category-ce7: 루줄루
+## X-DB-Category-ce8: 족장 우코르즈 샌드스칼프
+## X-DB-Category-ce9: 일반몹
+## X-DB-Category-cea: 퀘스트 보상
+
+## X-DB-Category-cf0: 오리지널 5인 던전_|cff7df4b2마라우돈|r_녹시온
+## X-DB-Category-cf1: 칼날채찍
+## X-DB-Category-cf2: 군주 바일텅
+## X-DB-Category-cf3: 저주받은 셀레브라스
+## X-DB-Category-cf4: 산사태
+## X-DB-Category-cf5: 땜장이 기즐록
+## X-DB-Category-cf6: 썩은아귀
+## X-DB-Category-cf7: 공주 테라드라스
+## X-DB-Category-cf8: 퀘스트 보상
+
+## X-DB-Category-cg0: 오리지널 5인 던전_|cff7df4b2아탈학카르 신전|r_학카르의 피조물
+## X-DB-Category-cg1: 아탈알라리온
+## X-DB-Category-cg2: 6트롤
+## X-DB-Category-cg3: 4용
+## X-DB-Category-cg4: 예언자 잠말란
+## X-DB-Category-cg5: 비운의 오그옴
+## X-DB-Category-cg6: 학카르의 화신
+## X-DB-Category-cg7: 에라니쿠스의 사령
+## X-DB-Category-cg8: 일반몹
+## X-DB-Category-cg9: 퀘스트 보상
+
+## X-DB-Category-ch0: 오리지널 5인 던전_|cff7df4b2검은바위 나락|r_멸망의 파이론
+## X-DB-Category-ch1: 벨가르
+## X-DB-Category-ch2: 대심문관 게르스탄
+## X-DB-Category-ch3: 텔드렌과 검투사들
+## X-DB-Category-ch4: 적출자
+## X-DB-Category-ch5: 그리즐
+## X-DB-Category-ch6: 파괴자 오크토르
+## X-DB-Category-ch7: 헤드럼
+## X-DB-Category-ch8: 아눕쉬아
+## X-DB-Category-ch9: 고로쉬
+## X-DB-Category-cha: 사냥개조련사 그렙마르
+## X-DB-Category-chb: 불의군주 록코르
+## X-DB-Category-chc: 화염술사 로어그레인
+## X-DB-Category-chd: 베레크
+## X-DB-Category-che: 문지기 스틸기스
+## X-DB-Category-chf: 보초 둠그립
+## X-DB-Category-chg: 파이너스 다크바이어
+## X-DB-Category-chh: 불의군주 인센디우스
+## X-DB-Category-chi: 사령관 앵거포지
+## X-DB-Category-chj: 골렘군주 아젤마크
+## X-DB-Category-chk: 헐레이 블랙브레스
+## X-DB-Category-chl: 리블리 스크류스피곳
+## X-DB-Category-chm: 플러거 스파즈링
+## X-DB-Category-chn: 팔란스
+## X-DB-Category-cho: 사자 화염채찍
+## X-DB-Category-chp: 무적의 판저
+## X-DB-Category-chq: 7명의 문지기
+## X-DB-Category-chr: 마그무스
+## X-DB-Category-chs: 공주 모이라 브론즈비어드
+## X-DB-Category-cht: 제왕 다그란 타우릿산
+## X-DB-Category-chu: 일반몹
+## X-DB-Category-chv: 퀘스트 보상
+
+## X-DB-Category-ci0: 오리지널 5인 던전_|cff7df4b2혈투의 전장|r_제브림 쏜후프
+## X-DB-Category-ci1: 히드로스폰
+## X-DB-Category-ci2: 레스텐드리스
+## X-DB-Category-ci3: 핌기브
+## X-DB-Category-ci4: 푸실린
+## X-DB-Category-ci5: 칼날바람 알진
+## X-DB-Category-ci6: 이살리엔
+## X-DB-Category-ci7: 경비병 몰다르와 슬립킥
+## X-DB-Category-ci8: 3경비병 공통
+## X-DB-Category-ci9: 천둥발 크리그
+## X-DB-Category-cia: 대장 크롬크로쉬
+## X-DB-Category-cib: 정찰병 초르쉬
+## X-DB-Category-cic: 왕 고르독
+## X-DB-Category-cid: 노트팀블잭의 상자
+## X-DB-Category-cie: 공물함
+## X-DB-Category-cif: 굽이나무 텐드리스
+## X-DB-Category-cig: 마술사 칼렌드리스
+## X-DB-Category-cih: 일샨나 레이븐오크
+## X-DB-Category-cii: 츄지(희귀)
+## X-DB-Category-cij: 이몰타르
+## X-DB-Category-cik: 군주 헬누라스
+## X-DB-Category-cil: 레반치온
+## X-DB-Category-cim: 왕자 토르텔드린
+## X-DB-Category-cin: 일반몹
+## X-DB-Category-cio: 퀘스트 보상
+
+## X-DB-Category-cj0: 오리지널 5인 던전_|cff7df4b2스트라솔름|r_스컬(희귀)
+## X-DB-Category-cj1: 뾰족바위(희귀)
+## X-DB-Category-cj2: 하스싱어 포레스턴(희귀)
+## X-DB-Category-cj3: 용서받지 못한 자
+## X-DB-Category-cj4: 남작부인 아나스타리
+## X-DB-Category-cj5: 집정관 발실라스
+## X-DB-Category-cj6: 냉혈한 말레키
+## X-DB-Category-cj7: 네룹엔칸
+## X-DB-Category-cj8: 우체국장 말로운
+## X-DB-Category-cj9: 발자폰
+## X-DB-Category-cja: 먹보 람스타인
+## X-DB-Category-cjb: 잔혹한 티미
+## X-DB-Category-cjc: 포병대장 윌리
+## X-DB-Category-cjd: 기록관 갈포드
+## X-DB-Category-cje: 발나자르
+## X-DB-Category-cjf: 자리엔과 소도스
+## X-DB-Category-cjg: 군주 아우리우스 리븐데어
+## X-DB-Category-cjh: 일반몹
+## X-DB-Category-cji: 퀘스트 보상
+
+## X-DB-Category-ck0: 판다리아의 안개 5인 던전_|cff7df4b2스칼로맨스|r_조교 칠하트
+## X-DB-Category-ck1: 잔다이스 바로브
+## X-DB-Category-ck2: 들창엄니
+## X-DB-Category-ck3: 릴리안 보스
+## X-DB-Category-ck4: 암흑스승 간들링
+## X-DB-Category-ckt: 일반몹
+## X-DB-Category-ckq: 퀘스트 보상
+
+## X-DB-Category-cl0: 오리지널 5인 던전_|cff7df4b2검은바위 첨탑|r_반노크 그림액스(희귀)
+## X-DB-Category-cl1: 불타는 지옥수호병(희귀)
+## X-DB-Category-cl2: 어둠사냥꾼 보쉬가진
+## X-DB-Category-cl3: 뾰족바위일족 전투대장(희귀)
+## X-DB-Category-cl4: 뾰족바위일족 학살자(희귀)
+## X-DB-Category-cl5: 뾰족바위의 군주 마구스
+## X-DB-Category-cl6: 대군주 오모크
+## X-DB-Category-cl7: 대장군 부네
+## X-DB-Category-cl8: 모르 그레이후프
+## X-DB-Category-cl9: 수정 맹독거미(희귀)
+## X-DB-Category-cla: 여왕 불그물거미
+## X-DB-Category-clb: 우르크 둠하울
+## X-DB-Category-clc: 할리콘
+## X-DB-Category-cld: 고크 배시구드(희귀)
+## X-DB-Category-cle: 흉악한 기즈룰
+## X-DB-Category-clf: 병참장교 지그리스
+## X-DB-Category-clg: 대군주 웜타라크
+## X-DB-Category-clh: 제드 룬와쳐(희귀)
+## X-DB-Category-cli: 불의 수호자 엠버시어
+## X-DB-Category-clj: 화염고리 솔라카르
+## X-DB-Category-clk: 고랄루크 앤빌크랙
+## X-DB-Category-cll: 대족장 렌드 블랙핸드
+## X-DB-Category-clm: 기스
+## X-DB-Category-cln: 괴수
+## X-DB-Category-clo: 군주 발타라크
+## X-DB-Category-clp: 사령관 드라키사스
+## X-DB-Category-clq: 일반몹
+## X-DB-Category-clr: 퀘스트 보상
+
+## X-DB-Category-d00: 판다리아의 안개 월드 및 희귀 몬스터 드랍_양손 무기
+## X-DB-Category-d10: 판다리아의 안개 월드 및 희귀 몬스터 드랍_한손 무기
+## X-DB-Category-d20: 판다리아의 안개 월드 및 희귀 몬스터 드랍_보조 장비
+## X-DB-Category-d30: 판다리아의 안개 월드 및 희귀 몬스터 드랍_천
+## X-DB-Category-d40: 판다리아의 안개 월드 및 희귀 몬스터 드랍_가죽
+## X-DB-Category-d50: 판다리아의 안개 월드 및 희귀 몬스터 드랍_사슬
+## X-DB-Category-d60: 판다리아의 안개 월드 및 희귀 몬스터 드랍_판금
+## X-DB-Category-d70: 판다리아의 안개 월드 및 희귀 몬스터 드랍_망토
+## X-DB-Category-d80: 판다리아의 안개 월드 및 희귀 몬스터 드랍_목걸이
+## X-DB-Category-d90: 판다리아의 안개 월드 및 희귀 몬스터 드랍_반지
+## X-DB-Category-da0: 판다리아의 안개 월드 및 희귀 몬스터 드랍_장신구
+## X-DB-Category-dz0: 판다리아의 안개 월드 및 희귀 몬스터 드랍_기타
+
+## X-DB-Category-e00: 시나리오_테라모어의 몰락
+## X-DB-Category-e10: 시나리오_판다리아의 안개_무작위 시나리오 보상
+## X-DB-Category-e11: 무작위 영웅 시나리오 보상
+
+## X-DB-Category-f00: 대격변 세트 아이템_티어 13(상급) 세트_전사(방어)
+## X-DB-Category-f01: 전사(무기/분노)
+## X-DB-Category-f02: 도적
+## X-DB-Category-f03: 사제(신성/수양)
+## X-DB-Category-f04: 사제(암흑)
+## X-DB-Category-f05: 마법사
+## X-DB-Category-f06: 흑마법사
+## X-DB-Category-f07: 사냥꾼
+## X-DB-Category-f08: 드루이드(수호/야성)
+## X-DB-Category-f09: 드루이드(조화)
+## X-DB-Category-f0a: 드루이드(회복)
+## X-DB-Category-f0b: 주술사(고양)
+## X-DB-Category-f0c: 주술사(정기)
+## X-DB-Category-f0d: 주술사(복원)
+## X-DB-Category-f0e: 성기사(징벌)
+## X-DB-Category-f0f: 성기사(보호)
+## X-DB-Category-f0g: 성기사(신성)
+## X-DB-Category-f0h: 죽음의 기사(혈기)
+## X-DB-Category-f0i: 죽음의 기사(냉기/부정)
+
+## X-DB-Category-fu0: 대격변 세트 아이템_티어 13(일반) 세트_전사(방어)
+## X-DB-Category-fu1: 전사(무기/분노)
+## X-DB-Category-fu2: 도적
+## X-DB-Category-fu3: 사제(신성/수양)
+## X-DB-Category-fu4: 사제(암흑)
+## X-DB-Category-fu5: 마법사
+## X-DB-Category-fu6: 흑마법사
+## X-DB-Category-fu7: 사냥꾼
+## X-DB-Category-fu8: 드루이드(수호/야성)
+## X-DB-Category-fu9: 드루이드(조화)
+## X-DB-Category-fua: 드루이드(회복)
+## X-DB-Category-fub: 주술사(고양)
+## X-DB-Category-fuc: 주술사(정기)
+## X-DB-Category-fud: 주술사(복원)
+## X-DB-Category-fue: 성기사(징벌)
+## X-DB-Category-fuf: 성기사(보호)
+## X-DB-Category-fug: 성기사(신성)
+## X-DB-Category-fuh: 죽음의 기사(혈기)
+## X-DB-Category-fui: 죽음의 기사(냉기/부정)
+
+## X-DB-Category-fv0: 대격변 세트 아이템_티어 13(공격대 찾기) 세트_전사(방어)
+## X-DB-Category-fv1: 전사(무기/분노)
+## X-DB-Category-fv2: 도적
+## X-DB-Category-fv3: 사제(신성/수양)
+## X-DB-Category-fv4: 사제(암흑)
+## X-DB-Category-fv5: 마법사
+## X-DB-Category-fv6: 흑마법사
+## X-DB-Category-fv7: 사냥꾼
+## X-DB-Category-fv8: 드루이드(수호/야성)
+## X-DB-Category-fv9: 드루이드(조화)
+## X-DB-Category-fva: 드루이드(회복)
+## X-DB-Category-fvb: 주술사(고양)
+## X-DB-Category-fvc: 주술사(정기)
+## X-DB-Category-fvd: 주술사(복원)
+## X-DB-Category-fve: 성기사(징벌)
+## X-DB-Category-fvf: 성기사(보호)
+## X-DB-Category-fvg: 성기사(신성)
+## X-DB-Category-fvh: 죽음의 기사(혈기)
+## X-DB-Category-fvi: 죽음의 기사(냉기/부정)
+
+## X-DB-Category-fw0: 대격변 세트 아이템_티어 12(상급) 세트_전사(방어)
+## X-DB-Category-fw1: 전사(무기/분노)
+## X-DB-Category-fw2: 도적
+## X-DB-Category-fw3: 사제(신성/수양)
+## X-DB-Category-fw4: 사제(암흑)
+## X-DB-Category-fw5: 마법사
+## X-DB-Category-fw6: 흑마법사
+## X-DB-Category-fw7: 사냥꾼
+## X-DB-Category-fw8: 드루이드(수호/야성)
+## X-DB-Category-fw9: 드루이드(조화)
+## X-DB-Category-fwa: 드루이드(회복)
+## X-DB-Category-fwb: 주술사(고양)
+## X-DB-Category-fwc: 주술사(정기)
+## X-DB-Category-fwd: 주술사(복원)
+## X-DB-Category-fwe: 성기사(징벌)
+## X-DB-Category-fwf: 성기사(보호)
+## X-DB-Category-fwg: 성기사(신성)
+## X-DB-Category-fwh: 죽음의 기사(혈기)
+## X-DB-Category-fwi: 죽음의 기사(냉기/부정)
+
+## X-DB-Category-fx0: 대격변 세트 아이템_티어 12(일반) 세트_전사(방어)
+## X-DB-Category-fx1: 전사(무기/분노)
+## X-DB-Category-fx2: 도적
+## X-DB-Category-fx3: 사제(신성/수양)
+## X-DB-Category-fx4: 사제(암흑)
+## X-DB-Category-fx5: 마법사
+## X-DB-Category-fx6: 흑마법사
+## X-DB-Category-fx7: 사냥꾼
+## X-DB-Category-fx8: 드루이드(수호/야성)
+## X-DB-Category-fx9: 드루이드(조화)
+## X-DB-Category-fxa: 드루이드(회복)
+## X-DB-Category-fxb: 주술사(고양)
+## X-DB-Category-fxc: 주술사(정기)
+## X-DB-Category-fxd: 주술사(복원)
+## X-DB-Category-fxe: 성기사(징벌)
+## X-DB-Category-fxf: 성기사(보호)
+## X-DB-Category-fxg: 성기사(신성)
+## X-DB-Category-fxh: 죽음의 기사(혈기)
+## X-DB-Category-fxi: 죽음의 기사(냉기/부정)
+
+## X-DB-Category-fy0: 대격변 세트 아이템_티어 11(상급) 세트_전사(방어)
+## X-DB-Category-fy1: 전사(무기/분노)
+## X-DB-Category-fy2: 도적
+## X-DB-Category-fy3: 사제(신성/수양)
+## X-DB-Category-fy4: 사제(암흑)
+## X-DB-Category-fy5: 마법사
+## X-DB-Category-fy6: 흑마법사
+## X-DB-Category-fy7: 사냥꾼
+## X-DB-Category-fy8: 드루이드(수호/야성)
+## X-DB-Category-fy9: 드루이드(조화)
+## X-DB-Category-fya: 드루이드(회복)
+## X-DB-Category-fyb: 주술사(고양)
+## X-DB-Category-fyc: 주술사(정기)
+## X-DB-Category-fyd: 주술사(복원)
+## X-DB-Category-fye: 성기사(징벌)
+## X-DB-Category-fyf: 성기사(보호)
+## X-DB-Category-fyg: 성기사(신성)
+## X-DB-Category-fyh: 죽음의 기사(혈기)
+## X-DB-Category-fyi: 죽음의 기사(냉기/부정)
+
+## X-DB-Category-fz0: 대격변 세트 아이템_티어 11(일반) 세트_전사(방어)
+## X-DB-Category-fz1: 전사(무기/분노)
+## X-DB-Category-fz2: 도적
+## X-DB-Category-fz3: 사제(신성/수양)
+## X-DB-Category-fz4: 사제(암흑)
+## X-DB-Category-fz5: 마법사
+## X-DB-Category-fz6: 흑마법사
+## X-DB-Category-fz7: 사냥꾼
+## X-DB-Category-fz8: 드루이드(수호/야성)
+## X-DB-Category-fz9: 드루이드(조화)
+## X-DB-Category-fza: 드루이드(회복)
+## X-DB-Category-fzb: 주술사(고양)
+## X-DB-Category-fzc: 주술사(정기)
+## X-DB-Category-fzd: 주술사(복원)
+## X-DB-Category-fze: 성기사(징벌)
+## X-DB-Category-fzf: 성기사(보호)
+## X-DB-Category-fzg: 성기사(신성)
+## X-DB-Category-fzh: 죽음의 기사(혈기)
+## X-DB-Category-fzi: 죽음의 기사(냉기/부정)
+
+## X-DB-Category-g00: 리치 왕의 분노 세트 아이템_티어 10(3 단계) 세트_전사(방어)
+## X-DB-Category-g01: 전사(무기/분노)
+## X-DB-Category-g02: 도적
+## X-DB-Category-g03: 사제(신성/수양)
+## X-DB-Category-g04: 사제(암흑)
+## X-DB-Category-g05: 마법사
+## X-DB-Category-g06: 흑마법사
+## X-DB-Category-g07: 사냥꾼
+## X-DB-Category-g08: 드루이드(수호/야성)
+## X-DB-Category-g09: 드루이드(조화)
+## X-DB-Category-g0a: 드루이드(회복)
+## X-DB-Category-g0b: 주술사(고양)
+## X-DB-Category-g0c: 주술사(정기)
+## X-DB-Category-g0d: 주술사(복원)
+## X-DB-Category-g0e: 성기사(징벌)
+## X-DB-Category-g0f: 성기사(보호)
+## X-DB-Category-g0g: 성기사(신성)
+## X-DB-Category-g0h: 죽음의 기사(혈기)
+## X-DB-Category-g0i: 죽음의 기사(냉기/부정)
+
+## X-DB-Category-g10: 리치 왕의 분노 세트 아이템_티어 10(2 단계) 세트_전사(방어)
+## X-DB-Category-g11: 전사(무기/분노)
+## X-DB-Category-g12: 도적
+## X-DB-Category-g13: 사제(신성/수양)
+## X-DB-Category-g14: 사제(암흑)
+## X-DB-Category-g15: 마법사
+## X-DB-Category-g16: 흑마법사
+## X-DB-Category-g17: 사냥꾼
+## X-DB-Category-g18: 드루이드(수호/야성)
+## X-DB-Category-g19: 드루이드(조화)
+## X-DB-Category-g1a: 드루이드(회복)
+## X-DB-Category-g1b: 주술사(고양)
+## X-DB-Category-g1c: 주술사(정기)
+## X-DB-Category-g1d: 주술사(복원)
+## X-DB-Category-g1e: 성기사(징벌)
+## X-DB-Category-g1f: 성기사(보호)
+## X-DB-Category-g1g: 성기사(신성)
+## X-DB-Category-g1h: 죽음의 기사(혈기)
+## X-DB-Category-g1i: 죽음의 기사(냉기/부정)
+
+## X-DB-Category-g20: 리치 왕의 분노 세트 아이템_티어 10(1 단계) 세트_전사(방어)
+## X-DB-Category-g21: 전사(무기/분노)
+## X-DB-Category-g22: 도적
+## X-DB-Category-g23: 사제(신성/수양)
+## X-DB-Category-g24: 사제(암흑)
+## X-DB-Category-g25: 마법사
+## X-DB-Category-g26: 흑마법사
+## X-DB-Category-g27: 사냥꾼
+## X-DB-Category-g28: 드루이드(수호/야성)
+## X-DB-Category-g29: 드루이드(조화)
+## X-DB-Category-g2a: 드루이드(회복)
+## X-DB-Category-g2b: 주술사(고양)
+## X-DB-Category-g2c: 주술사(정기)
+## X-DB-Category-g2d: 주술사(복원)
+## X-DB-Category-g2e: 성기사(징벌)
+## X-DB-Category-g2f: 성기사(보호)
+## X-DB-Category-g2g: 성기사(신성)
+## X-DB-Category-g2h: 죽음의 기사(혈기)
+## X-DB-Category-g2i: 죽음의 기사(냉기/부정)
+
+## X-DB-Category-gg0: 리치 왕의 분노 세트 아이템_티어 9(3 단계) 세트_전사(방어)
+## X-DB-Category-gg1: 전사(무기/분노)
+## X-DB-Category-gg2: 도적
+## X-DB-Category-gg3: 사제(신성/수양)
+## X-DB-Category-gg4: 사제(암흑)
+## X-DB-Category-gg5: 마법사
+## X-DB-Category-gg6: 흑마법사
+## X-DB-Category-gg7: 사냥꾼
+## X-DB-Category-gg8: 드루이드(수호/야성)
+## X-DB-Category-gg9: 드루이드(조화)
+## X-DB-Category-gga: 드루이드(회복)
+## X-DB-Category-ggb: 주술사(고양)
+## X-DB-Category-ggc: 주술사(정기)
+## X-DB-Category-ggd: 주술사(복원)
+## X-DB-Category-gge: 성기사(징벌)
+## X-DB-Category-ggf: 성기사(보호)
+## X-DB-Category-ggg: 성기사(신성)
+## X-DB-Category-ggh: 죽음의 기사(혈기)
+## X-DB-Category-ggi: 죽음의 기사(냉기/부정)
+
+## X-DB-Category-gh0: 리치 왕의 분노 세트 아이템_티어 9(2 단계) 세트_전사(방어)
+## X-DB-Category-gh1: 전사(무기/분노)
+## X-DB-Category-gh2: 도적
+## X-DB-Category-gh3: 사제(신성/수양)
+## X-DB-Category-gh4: 사제(암흑)
+## X-DB-Category-gh5: 마법사
+## X-DB-Category-gh6: 흑마법사
+## X-DB-Category-gh7: 사냥꾼
+## X-DB-Category-gh8: 드루이드(수호/야성)
+## X-DB-Category-gh9: 드루이드(조화)
+## X-DB-Category-gha: 드루이드(회복)
+## X-DB-Category-ghb: 주술사(고양)
+## X-DB-Category-ghc: 주술사(정기)
+## X-DB-Category-ghd: 주술사(복원)
+## X-DB-Category-ghe: 성기사(징벌)
+## X-DB-Category-ghf: 성기사(보호)
+## X-DB-Category-ghg: 성기사(신성)
+## X-DB-Category-ghh: 죽음의 기사(혈기)
+## X-DB-Category-ghi: 죽음의 기사(냉기/부정)
+
+## X-DB-Category-gi0: 리치 왕의 분노 세트 아이템_티어 9(1 단계) 세트_전사(방어)
+## X-DB-Category-gi1: 전사(무기/분노)
+## X-DB-Category-gi2: 도적
+## X-DB-Category-gi3: 사제(신성/수양)
+## X-DB-Category-gi4: 사제(암흑)
+## X-DB-Category-gi5: 마법사
+## X-DB-Category-gi6: 흑마법사
+## X-DB-Category-gi7: 사냥꾼
+## X-DB-Category-gi8: 드루이드(수호/야성)
+## X-DB-Category-gi9: 드루이드(조화)
+## X-DB-Category-gia: 드루이드(회복)
+## X-DB-Category-gib: 주술사(고양)
+## X-DB-Category-gic: 주술사(정기)
+## X-DB-Category-gid: 주술사(복원)
+## X-DB-Category-gie: 성기사(징벌)
+## X-DB-Category-gif: 성기사(보호)
+## X-DB-Category-gig: 성기사(신성)
+## X-DB-Category-gih: 죽음의 기사(혈기)
+## X-DB-Category-gii: 죽음의 기사(냉기/부정)
+
+## X-DB-Category-gj0: 리치 왕의 분노 세트 아이템_티어 8(25) 세트_전사(방어)
+## X-DB-Category-gj1: 전사(무기/분노)
+## X-DB-Category-gj2: 도적
+## X-DB-Category-gj3: 사제(신성/수양)
+## X-DB-Category-gj4: 사제(암흑)
+## X-DB-Category-gj5: 마법사
+## X-DB-Category-gj6: 흑마법사
+## X-DB-Category-gj7: 사냥꾼
+## X-DB-Category-gj8: 드루이드(수호/야성)
+## X-DB-Category-gj9: 드루이드(조화)
+## X-DB-Category-gja: 드루이드(회복)
+## X-DB-Category-gjb: 주술사(고양)
+## X-DB-Category-gjc: 주술사(정기)
+## X-DB-Category-gjd: 주술사(복원)
+## X-DB-Category-gje: 성기사(징벌)
+## X-DB-Category-gjf: 성기사(보호)
+## X-DB-Category-gjg: 성기사(신성)
+## X-DB-Category-gjh: 죽음의 기사(혈기)
+## X-DB-Category-gji: 죽음의 기사(냉기/부정)
+
+## X-DB-Category-gk0: 리치 왕의 분노 세트 아이템_티어 8(10) 세트_전사(방어)
+## X-DB-Category-gk1: 전사(무기/분노)
+## X-DB-Category-gk2: 도적
+## X-DB-Category-gk3: 사제(신성/수양)
+## X-DB-Category-gk4: 사제(암흑)
+## X-DB-Category-gk5: 마법사
+## X-DB-Category-gk6: 흑마법사
+## X-DB-Category-gk7: 사냥꾼
+## X-DB-Category-gk8: 드루이드(수호/야성)
+## X-DB-Category-gk9: 드루이드(조화)
+## X-DB-Category-gka: 드루이드(회복)
+## X-DB-Category-gkb: 주술사(고양)
+## X-DB-Category-gkc: 주술사(정기)
+## X-DB-Category-gkd: 주술사(복원)
+## X-DB-Category-gke: 성기사(징벌)
+## X-DB-Category-gkf: 성기사(보호)
+## X-DB-Category-gkg: 성기사(신성)
+## X-DB-Category-gkh: 죽음의 기사(혈기)
+## X-DB-Category-gki: 죽음의 기사(냉기/부정)
+
+## X-DB-Category-gl0: 리치 왕의 분노 세트 아이템_티어 7(25) 세트_전사(방어)
+## X-DB-Category-gl1: 전사(무기/분노)
+## X-DB-Category-gl2: 도적
+## X-DB-Category-gl3: 사제(신성/수양)
+## X-DB-Category-gl4: 사제(암흑)
+## X-DB-Category-gl5: 마법사
+## X-DB-Category-gl6: 흑마법사
+## X-DB-Category-gl7: 사냥꾼
+## X-DB-Category-gl8: 드루이드(수호/야성)
+## X-DB-Category-gl9: 드루이드(조화)
+## X-DB-Category-gla: 드루이드(회복)
+## X-DB-Category-glb: 주술사(고양)
+## X-DB-Category-glc: 주술사(정기)
+## X-DB-Category-gld: 주술사(복원)
+## X-DB-Category-gle: 성기사(징벌)
+## X-DB-Category-glf: 성기사(보호)
+## X-DB-Category-glg: 성기사(신성)
+## X-DB-Category-glh: 죽음의 기사(혈기)
+## X-DB-Category-gli: 죽음의 기사(냉기/부정)
+
+## X-DB-Category-gm0: 리치 왕의 분노 세트 아이템_티어 7(10) 세트_전사(방어)
+## X-DB-Category-gm1: 전사(무기/분노)
+## X-DB-Category-gm2: 도적
+## X-DB-Category-gm3: 사제(신성/수양)
+## X-DB-Category-gm4: 사제(암흑)
+## X-DB-Category-gm5: 마법사
+## X-DB-Category-gm6: 흑마법사
+## X-DB-Category-gm7: 사냥꾼
+## X-DB-Category-gm8: 드루이드(수호/야성)
+## X-DB-Category-gm9: 드루이드(조화)
+## X-DB-Category-gma: 드루이드(회복)
+## X-DB-Category-gmb: 주술사(고양)
+## X-DB-Category-gmc: 주술사(정기)
+## X-DB-Category-gmd: 주술사(복원)
+## X-DB-Category-gme: 성기사(징벌)
+## X-DB-Category-gmf: 성기사(보호)
+## X-DB-Category-gmg: 성기사(신성)
+## X-DB-Category-gmh: 죽음의 기사(혈기)
+## X-DB-Category-gmi: 죽음의 기사(냉기/부정)
+
+## X-DB-Category-h00: 불타는 성전 세트 아이템_태양샘 세트_사제(신성/수양)
+## X-DB-Category-h01: 마법사, 흑마법사, 사제(암흑)
+## X-DB-Category-h02: 도적
+## X-DB-Category-h03: 드루이드(수호/야성)
+## X-DB-Category-h04: 드루이드(조화)
+## X-DB-Category-h05: 드루이드(회복)
+## X-DB-Category-h06: 사냥꾼, 주술사(고양)
+## X-DB-Category-h07: 주술사(정기)
+## X-DB-Category-h08: 주술사(복원)
+## X-DB-Category-h09: 전사(방어)
+## X-DB-Category-h0a: 전사(무기/분노), 성기사(징벌)
+## X-DB-Category-h0b: 성기사(보호)
+## X-DB-Category-h0c: 성기사(신성)
+
+## X-DB-Category-h10: 불타는 성전 세트 아이템_티어 6 세트_전사(방어)
+## X-DB-Category-h11: 전사(무기/분노)
+## X-DB-Category-h12: 도적
+## X-DB-Category-h13: 사제(신성/수양)
+## X-DB-Category-h14: 사제(암흑)
+## X-DB-Category-h15: 마법사
+## X-DB-Category-h16: 흑마법사
+## X-DB-Category-h17: 사냥꾼
+## X-DB-Category-h18: 드루이드(수호/야성)
+## X-DB-Category-h19: 드루이드(조화)
+## X-DB-Category-h1a: 드루이드(회복)
+## X-DB-Category-h1b: 주술사(고양)
+## X-DB-Category-h1c: 주술사(정기)
+## X-DB-Category-h1d: 주술사(복원)
+## X-DB-Category-h1e: 성기사(징벌)
+## X-DB-Category-h1f: 성기사(보호)
+## X-DB-Category-h1g: 성기사(신성)
+
+## X-DB-Category-h20: 불타는 성전 세트 아이템_티어 5 세트_전사(방어)
+## X-DB-Category-h21: 전사(무기/분노)
+## X-DB-Category-h22: 도적
+## X-DB-Category-h23: 사제(신성/수양)
+## X-DB-Category-h24: 사제(암흑)
+## X-DB-Category-h25: 마법사
+## X-DB-Category-h26: 흑마법사
+## X-DB-Category-h27: 사냥꾼
+## X-DB-Category-h28: 드루이드(수호/야성)
+## X-DB-Category-h29: 드루이드(조화)
+## X-DB-Category-h2a: 드루이드(회복)
+## X-DB-Category-h2b: 주술사(고양)
+## X-DB-Category-h2c: 주술사(정기)
+## X-DB-Category-h2d: 주술사(복원)
+## X-DB-Category-h2e: 성기사(징벌)
+## X-DB-Category-h2f: 성기사(보호)
+## X-DB-Category-h2g: 성기사(신성)
+
+## X-DB-Category-h30: 불타는 성전 세트 아이템_티어 4 세트_전사(방어)
+## X-DB-Category-h31: 전사(무기/분노)
+## X-DB-Category-h32: 도적
+## X-DB-Category-h33: 사제(신성/수양)
+## X-DB-Category-h34: 사제(암흑)
+## X-DB-Category-h35: 마법사
+## X-DB-Category-h36: 흑마법사
+## X-DB-Category-h37: 사냥꾼
+## X-DB-Category-h38: 드루이드(수호/야성)
+## X-DB-Category-h39: 드루이드(조화)
+## X-DB-Category-h3a: 드루이드(회복)
+## X-DB-Category-h3b: 주술사(고양)
+## X-DB-Category-h3c: 주술사(정기)
+## X-DB-Category-h3d: 주술사(복원)
+## X-DB-Category-h3e: 성기사(징벌)
+## X-DB-Category-h3f: 성기사(보호)
+## X-DB-Category-h3g: 성기사(신성)
+
+## X-DB-Category-h40: 불타는 성전 세트 아이템_아웃랜드 던전 세트_전사
+## X-DB-Category-h41: 도적
+## X-DB-Category-h42: 사제
+## X-DB-Category-h43: 마법사
+## X-DB-Category-h44: 흑마법사
+## X-DB-Category-h45: 사냥꾼
+## X-DB-Category-h46: 드루이드
+## X-DB-Category-h47: 주술사
+## X-DB-Category-h48: 성기사
+## X-DB-Category-h49: 천(공용)
+## X-DB-Category-h4a: 가죽(공용)
+## X-DB-Category-h4b: 사슬(공용)
+## X-DB-Category-h4c: 판금(공용)
+
+## X-DB-Category-i00: 오리지널 세트 아이템_티어 3 세트_전사
+## X-DB-Category-i01: 도적
+## X-DB-Category-i02: 사제
+## X-DB-Category-i03: 마법사
+## X-DB-Category-i04: 흑마법사
+## X-DB-Category-i05: 사냥꾼
+## X-DB-Category-i06: 드루이드
+## X-DB-Category-i07: 주술사
+## X-DB-Category-i08: 성기사
+
+## X-DB-Category-i10: 오리지널 세트 아이템_안퀴라즈 사원 세트_전사
+## X-DB-Category-i11: 도적
+## X-DB-Category-i12: 사제
+## X-DB-Category-i13: 마법사
+## X-DB-Category-i14: 흑마법사
+## X-DB-Category-i15: 사냥꾼
+## X-DB-Category-i16: 드루이드
+## X-DB-Category-i17: 주술사
+## X-DB-Category-i18: 성기사
+
+## X-DB-Category-i20: 오리지널 세트 아이템_안퀴라즈 폐허 세트_전사
+## X-DB-Category-i21: 도적
+## X-DB-Category-i22: 사제
+## X-DB-Category-i23: 마법사
+## X-DB-Category-i24: 흑마법사
+## X-DB-Category-i25: 사냥꾼
+## X-DB-Category-i26: 드루이드
+## X-DB-Category-i27: 주술사
+## X-DB-Category-i28: 성기사
+
+## X-DB-Category-i40: 오리지널 세트 아이템_티어 2 세트_전사
+## X-DB-Category-i41: 도적
+## X-DB-Category-i42: 사제
+## X-DB-Category-i43: 마법사
+## X-DB-Category-i44: 흑마법사
+## X-DB-Category-i45: 사냥꾼
+## X-DB-Category-i46: 드루이드
+## X-DB-Category-i47: 주술사
+## X-DB-Category-i48: 성기사
+
+## X-DB-Category-i50: 오리지널 세트 아이템_티어 1 세트_전사
+## X-DB-Category-i51: 도적
+## X-DB-Category-i52: 사제
+## X-DB-Category-i53: 마법사
+## X-DB-Category-i54: 흑마법사
+## X-DB-Category-i55: 사냥꾼
+## X-DB-Category-i56: 드루이드
+## X-DB-Category-i57: 주술사
+## X-DB-Category-i58: 성기사
+
+## X-DB-Category-i60: 오리지널 세트 아이템_아제로스 던전 업그레이드 세트_전사
+## X-DB-Category-i61: 도적
+## X-DB-Category-i62: 사제
+## X-DB-Category-i63: 마법사
+## X-DB-Category-i64: 흑마법사
+## X-DB-Category-i65: 사냥꾼
+## X-DB-Category-i66: 드루이드
+## X-DB-Category-i67: 주술사
+## X-DB-Category-i68: 성기사
+
+## X-DB-Category-i70: 오리지널 세트 아이템_아제로스 던전 세트_전사
+## X-DB-Category-i71: 도적
+## X-DB-Category-i72: 사제
+## X-DB-Category-i73: 마법사
+## X-DB-Category-i74: 흑마법사
+## X-DB-Category-i75: 사냥꾼
+## X-DB-Category-i76: 드루이드
+## X-DB-Category-i77: 주술사
+## X-DB-Category-i78: 성기사
+
+## X-DB-Category-j00: 화폐 교환_|cffccff99용맹 점수|r_무기
+## X-DB-Category-j01: 판금
+## X-DB-Category-j02: 사슬
+## X-DB-Category-j03: 가죽
+## X-DB-Category-j04: 천
+## X-DB-Category-j05: 망토
+## X-DB-Category-j06: 목걸이
+## X-DB-Category-j07: 반지
+## X-DB-Category-j08: 장신구
+## X-DB-Category-j09: 기타
+
+## X-DB-Category-j10: 화폐 교환_|cffffcc00정의 점수|r_무기
+## X-DB-Category-j11: 판금
+## X-DB-Category-j12: 사슬
+## X-DB-Category-j13: 가죽
+## X-DB-Category-j14: 천
+## X-DB-Category-j15: 망토
+## X-DB-Category-j16: 목걸이
+## X-DB-Category-j17: 반지
+## X-DB-Category-j18: 장신구
+## X-DB-Category-j19: 기타
+
+## X-DB-Category-j20: 화폐 교환_|cff46aa46정복 점수|r
+## X-DB-Category-j30: 화폐 교환_|cff00ccff명예 점수|r
+
+## X-DB-Category-j40: 화폐 교환_에펙시스 수정_장비
+## X-DB-Category-j4w: 670 장비
+## X-DB-Category-j4x: 655 장비
+## X-DB-Category-j4y: 645 장비
+## X-DB-Category-j4z: 630 장비
+
+## X-DB-Category-jv0: 화폐 교환_다크문 카드
+## X-DB-Category-jz0: 화폐 교환_구 시대 화폐_x
+## X-DB-Category-jz6: 용맹 및 정의 점수(90레벨)
+## X-DB-Category-jz7: 정의 점수(85레벨)
+## X-DB-Category-jz8: 정의 점수(80레벨)
+## X-DB-Category-jz9: 정의 점수(70레벨)
+## X-DB-Category-jza: 천신의 주화
+## X-DB-Category-jzb: 영원의 주화
+## X-DB-Category-jzc: 아이언포우 징표
+## X-DB-Category-jzu: 미식가의 상
+## X-DB-Category-jzv: 결정화된 화염석
+## X-DB-Category-jzw: 세계수 징표
+## X-DB-Category-jzx: 용사의 인장
+## X-DB-Category-jzy: 저명한 보석 세공사의 징표
+## X-DB-Category-jzz: 달라란 보석세공사의 징표
+
+## X-DB-Category-l00: 업적, 길드 보상 및 스토어_업적 보상_아이템
+## X-DB-Category-l01: 계승 아이템
+## X-DB-Category-l02: 탈것
+## X-DB-Category-l03: 애완동물
+## X-DB-Category-l04: 도안
+## X-DB-Category-l05: 기타
+
+## X-DB-Category-l10: 업적, 길드 보상 및 스토어_길드 보상_아이템
+## X-DB-Category-l11: 계승 아이템
+## X-DB-Category-l12: 탈것
+## X-DB-Category-l13: 애완동물
+## X-DB-Category-l14: 도안
+## X-DB-Category-l15: 기타
+
+## X-DB-Category-l20: 업적, 길드 보상 및 스토어_블리자드 스토어_형상 변환 아이템
+## X-DB-Category-l21: 탈것
+## X-DB-Category-l22: 애완동물
+## X-DB-Category-l23: 기타
+
+## X-DB-Category-m00: 판다리아의 안개 평판_전승지기
+## X-DB-Category-m10: 판다리아의 안개 평판_농사꾼 연합
+## X-DB-Category-m20: 판다리아의 안개 평판_음영파
+## X-DB-Category-m30: 판다리아의 안개 평판_위대한 천신회
+## X-DB-Category-m40: 판다리아의 안개 평판_황금 연꽃
+## X-DB-Category-m50: 판다리아의 안개 평판_클락시
+## X-DB-Category-m60: 판다리아의 안개 평판_운룡단
+## X-DB-Category-m70: 판다리아의 안개 평판_강태공 연합
+## X-DB-Category-m80: 판다리아의 안개 평판_네트 페이글
+## X-DB-Category-m90: 판다리아의 안개 평판_$f{지배령 선봉대/철병방패 작전대}
+## X-DB-Category-ma0: 판다리아의 안개 평판_$f{싸울가르 투기장/비즈모의 싸움굴}
+## X-DB-Category-mb0: 판다리아의 안개 평판_$f{선리버 돌격대/키린 토 선봉대}
+## X-DB-Category-mc0: 판다리아의 안개 평판_음영파 강습단
+## X-DB-Category-md0: 판다리아의 안개 평판_샤오하오
+
+## X-DB-Category-n00: 대격변 평판_하이잘의 수호자
+## X-DB-Category-n10: 대격변 평판_테라제인
+## X-DB-Category-n20: 대격변 평판_와일드해머 드워프
+## X-DB-Category-n30: 대격변 평판_바라딘 집행단
+## X-DB-Category-n40: 대격변 평판_용아귀 부족
+## X-DB-Category-n50: 대격변 평판_헬스크림 세력단
+## X-DB-Category-n60: 대격변 평판_대지 고리회
+## X-DB-Category-n70: 대격변 평판_람카헨
+## X-DB-Category-n80: 대격변 평판_하이잘의 복수자
+
+## X-DB-Category-o00: 리치 왕의 분노 평판_점쟁이 조합
+## X-DB-Category-o10: 리치 왕의 분노 평판_광란의심장일족
+## X-DB-Category-o20: 리치 왕의 분노 평판_칼루아크
+## X-DB-Category-o30: 리치 왕의 분노 평판_은빛 십자군
+## X-DB-Category-o40: 리치 왕의 분노 평판_호디르의 후예
+## X-DB-Category-o50: 리치 왕의 분노 평판_칠흑의 기사단
+## X-DB-Category-o60: 리치 왕의 분노 평판_키린 토
+## X-DB-Category-o70: 리치 왕의 분노 평판_고룡쉼터 사원 용군단
+## X-DB-Category-o80: 리치 왕의 분노 평판_$f{호드 원정대/얼라이언스 선봉대}
+## X-DB-Category-o90: 리치 왕의 분노 평판_잿빛 선고단_도안
+## X-DB-Category-o91: 반지
+
+## X-DB-Category-p00: 불타는 성전 평판_$f{스랄마/명예의 요새}
+## X-DB-Category-p10: 불타는 성전 평판_세나리온 원정대
+## X-DB-Category-p20: 불타는 성전 평판_스포어가르
+## X-DB-Category-p30: 불타는 성전 평판_$f{마그하르/쿠레나이}
+## X-DB-Category-p40: 불타는 성전 평판_무역연합_아이템
+## X-DB-Category-p41: 에테리움 감옥
+## X-DB-Category-p42: 알파 에테리움 감옥
+## X-DB-Category-p50: 불타는 성전 평판_샤타르
+## X-DB-Category-p60: 불타는 성전 평판_고난의 거리
+## X-DB-Category-p70: 불타는 성전 평판_시간의 수호자
+## X-DB-Category-p80: 불타는 성전 평판_알도르 사제회_아이템
+## X-DB-Category-p81: 문양
+## X-DB-Category-p90: 불타는 성전 평판_점술가 길드_아이템
+## X-DB-Category-p91: 문양
+## X-DB-Category-pa0: 불타는 성전 평판_보랏빛 눈의 감시자_아이템
+## X-DB-Category-pa1: 반지
+## X-DB-Category-pb0: 불타는 성전 평판_오그릴라_아이템
+## X-DB-Category-pb1: 칼날 고원 드랍
+## X-DB-Category-pb2: 샤툴
+## X-DB-Category-pc0: 불타는 성전 평판_샤타리 하늘경비대_아이템
+## X-DB-Category-pc1: 테로크의 후손
+## X-DB-Category-pc2: 테로크
+## X-DB-Category-pd0: 불타는 성전 평판_황천의 용군단
+## X-DB-Category-pe0: 불타는 성전 평판_시간의 중재자_아이템
+## X-DB-Category-pe1: 반지
+## X-DB-Category-pf0: 불타는 성전 평판_잿빛혓바닥 결사단
+## X-DB-Category-pg0: 불타는 성전 평판_무너진 태양 공격대
+## X-DB-Category-ph0: 불타는 성전 평판_평판 반납 아이템
+
+## X-DB-Category-q00: 오리지널 평판_트랜퀼리엔
+## X-DB-Category-q10: 오리지널 평판_나무구렁 요새
+## X-DB-Category-q20: 오리지널 평판_은빛 여명회
+## X-DB-Category-q30: 오리지널 평판_토륨 대장조합
+## X-DB-Category-q50: 오리지널 평판_잔달라 부족
+## X-DB-Category-q60: 오리지널 평판_세나리온 의회
+## X-DB-Category-q70: 오리지널 평판_노즈도르무 혈족
+## X-DB-Category-q80: 오리지널 평판_평판 반납 아이템
+
+## X-DB-Category-r00: 계승 아이템_1-60 레벨
+## X-DB-Category-r10: 계승 아이템_1-90 레벨
+## X-DB-Category-r20: 계승 아이템_1-100 레벨
+## X-DB-Category-r50: 계승 아이템_90-100 레벨
+
+## X-DB-Category-s00: 보석_전체_모두
+## X-DB-Category-s01: 힘
+## X-DB-Category-s02: 민첩성
+## X-DB-Category-s03: 체력
+## X-DB-Category-s04: 지능
+## X-DB-Category-s05: 정신력
+## X-DB-Category-s06: 전투력
+## X-DB-Category-s07: 주문력
+## X-DB-Category-s08: 치명타 및 극대화
+## X-DB-Category-s09: 적중
+## X-DB-Category-s0a: 가속
+## X-DB-Category-s0b: 특화
+## X-DB-Category-s0c: 숙련
+## X-DB-Category-s0d: 회피
+## X-DB-Category-s0e: 무기 막기
+## X-DB-Category-s0f: PvP 탄력
+## X-DB-Category-s0g: PvP 위력
+
+## X-DB-Category-s10: 보석_얼개_모두
+## X-DB-Category-s11: 힘
+## X-DB-Category-s12: 민첩성
+## X-DB-Category-s13: 체력
+## X-DB-Category-s14: 지능
+## X-DB-Category-s15: 정신력
+## X-DB-Category-s16: 전투력
+## X-DB-Category-s17: 주문력
+## X-DB-Category-s18: 치명타 및 극대화
+## X-DB-Category-s19: 적중
+## X-DB-Category-s1a: 가속
+## X-DB-Category-s1b: 특화
+## X-DB-Category-s1c: 숙련
+## X-DB-Category-s1d: 회피
+## X-DB-Category-s1e: 무기 막기
+## X-DB-Category-s1f: PvP 탄력
+## X-DB-Category-s1g: PvP 위력
+
+## X-DB-Category-s20: 보석_붉은색_모두
+## X-DB-Category-s21: 힘
+## X-DB-Category-s22: 민첩성
+## X-DB-Category-s23: 체력
+## X-DB-Category-s24: 지능
+## X-DB-Category-s25: 정신력
+## X-DB-Category-s26: 전투력
+## X-DB-Category-s27: 주문력
+## X-DB-Category-s28: 치명타 및 극대화
+## X-DB-Category-s29: 적중
+## X-DB-Category-s2a: 가속
+## X-DB-Category-s2b: 특화
+## X-DB-Category-s2c: 숙련
+## X-DB-Category-s2d: 회피
+## X-DB-Category-s2e: 무기 막기
+## X-DB-Category-s2f: PvP 탄력
+## X-DB-Category-s2g: PvP 위력
+
+## X-DB-Category-s30: 보석_노란색_모두
+## X-DB-Category-s31: 힘
+## X-DB-Category-s32: 민첩성
+## X-DB-Category-s33: 체력
+## X-DB-Category-s34: 지능
+## X-DB-Category-s35: 정신력
+## X-DB-Category-s36: 전투력
+## X-DB-Category-s37: 주문력
+## X-DB-Category-s38: 치명타 및 극대화
+## X-DB-Category-s39: 적중
+## X-DB-Category-s3a: 가속
+## X-DB-Category-s3b: 특화
+## X-DB-Category-s3c: 숙련
+## X-DB-Category-s3d: 회피
+## X-DB-Category-s3e: 무기 막기
+## X-DB-Category-s3f: PvP 탄력
+## X-DB-Category-s3g: PvP 위력
+
+## X-DB-Category-s40: 보석_푸른색_모두
+## X-DB-Category-s41: 힘
+## X-DB-Category-s42: 민첩성
+## X-DB-Category-s43: 체력
+## X-DB-Category-s44: 지능
+## X-DB-Category-s45: 정신력
+## X-DB-Category-s46: 전투력
+## X-DB-Category-s47: 주문력
+## X-DB-Category-s48: 치명타 및 극대화
+## X-DB-Category-s49: 적중
+## X-DB-Category-s4a: 가속
+## X-DB-Category-s4b: 특화
+## X-DB-Category-s4c: 숙련
+## X-DB-Category-s4d: 회피
+## X-DB-Category-s4e: 무기 막기
+## X-DB-Category-s4f: PvP 탄력
+## X-DB-Category-s4g: PvP 위력
+
+## X-DB-Category-s50: 보석_주황색 (노란+붉은)_모두
+## X-DB-Category-s51: 힘
+## X-DB-Category-s52: 민첩성
+## X-DB-Category-s53: 체력
+## X-DB-Category-s54: 지능
+## X-DB-Category-s55: 정신력
+## X-DB-Category-s56: 전투력
+## X-DB-Category-s57: 주문력
+## X-DB-Category-s58: 치명타 및 극대화
+## X-DB-Category-s59: 적중
+## X-DB-Category-s5a: 가속
+## X-DB-Category-s5b: 특화
+## X-DB-Category-s5c: 숙련
+## X-DB-Category-s5d: 회피
+## X-DB-Category-s5e: 무기 막기
+## X-DB-Category-s5f: PvP 탄력
+## X-DB-Category-s5g: PvP 위력
+
+## X-DB-Category-s60: 보석_보라색 (붉은+푸른)_모두
+## X-DB-Category-s61: 힘
+## X-DB-Category-s62: 민첩성
+## X-DB-Category-s63: 체력
+## X-DB-Category-s64: 지능
+## X-DB-Category-s65: 정신력
+## X-DB-Category-s66: 전투력
+## X-DB-Category-s67: 주문력
+## X-DB-Category-s68: 치명타 및 극대화
+## X-DB-Category-s69: 적중
+## X-DB-Category-s6a: 가속
+## X-DB-Category-s6b: 특화
+## X-DB-Category-s6c: 숙련
+## X-DB-Category-s6d: 회피
+## X-DB-Category-s6e: 무기 막기
+## X-DB-Category-s6f: PvP 탄력
+## X-DB-Category-s6g: PvP 위력
+
+## X-DB-Category-s70: 보석_녹색 (노란+푸른)_모두
+## X-DB-Category-s71: 힘
+## X-DB-Category-s72: 민첩성
+## X-DB-Category-s73: 체력
+## X-DB-Category-s74: 지능
+## X-DB-Category-s75: 정신력
+## X-DB-Category-s76: 전투력
+## X-DB-Category-s77: 주문력
+## X-DB-Category-s78: 치명타 및 극대화
+## X-DB-Category-s79: 적중
+## X-DB-Category-s7a: 가속
+## X-DB-Category-s7b: 특화
+## X-DB-Category-s7c: 숙련
+## X-DB-Category-s7d: 회피
+## X-DB-Category-s7e: 무기 막기
+## X-DB-Category-s7f: PvP 탄력
+## X-DB-Category-s7g: PvP 위력
+
+## X-DB-Category-s80: 보석_맞물림톱니(기계공학 전용)_모두
+## X-DB-Category-s81: 힘
+## X-DB-Category-s82: 민첩성
+## X-DB-Category-s83: 체력
+## X-DB-Category-s84: 지능
+## X-DB-Category-s85: 정신력
+## X-DB-Category-s86: 전투력
+## X-DB-Category-s87: 주문력
+## X-DB-Category-s88: 치명타 및 극대화
+## X-DB-Category-s89: 적중
+## X-DB-Category-s8a: 가속
+## X-DB-Category-s8b: 특화
+## X-DB-Category-s8c: 숙련
+## X-DB-Category-s8d: 회피
+## X-DB-Category-s8e: 무기 막기
+## X-DB-Category-s8f: PvP 탄력
+## X-DB-Category-s8g: PvP 위력
+
+## X-DB-Category-s90: 보석_공포의 결정_모두
+## X-DB-Category-s91: 힘
+## X-DB-Category-s92: 민첩성
+## X-DB-Category-s93: 체력
+## X-DB-Category-s94: 지능
+## X-DB-Category-s95: 정신력
+## X-DB-Category-s96: 전투력
+## X-DB-Category-s97: 주문력
+## X-DB-Category-s98: 치명타 및 극대화
+## X-DB-Category-s99: 적중
+## X-DB-Category-s9a: 가속
+## X-DB-Category-s9b: 특화
+## X-DB-Category-s9c: 숙련
+## X-DB-Category-s9d: 회피
+## X-DB-Category-s9e: 무기 막기
+## X-DB-Category-s9f: PvP 탄력
+## X-DB-Category-s9g: PvP 위력
+
+## X-DB-Category-t00: 전문 기술_연금술_주요 조제법
+## X-DB-Category-t01: 영약
+## X-DB-Category-t02: 전투 비약
+## X-DB-Category-t03: 강화 비약
+## X-DB-Category-t04: 물약
+## X-DB-Category-t0a: 평판
+## X-DB-Category-t0b: 드랍
+## X-DB-Category-t0c: 판매
+## X-DB-Category-t0d: 제작 아이템
+
+## X-DB-Category-t10: 전문 기술_재봉술_주요 조제법
+## X-DB-Category-t1a: 평판
+## X-DB-Category-t1b: 드랍
+## X-DB-Category-t1c: 판매
+## X-DB-Category-t1d: 제작 아이템
+
+## X-DB-Category-t20: 전문 기술_가죽세공_주요 조제법
+## X-DB-Category-t2a: 평판
+## X-DB-Category-t2b: 드랍
+## X-DB-Category-t2c: 판매
+## X-DB-Category-t2d: 제작 아이템
+
+## X-DB-Category-t30: 전문 기술_대장기술_주요 조제법
+## X-DB-Category-t3a: 평판
+## X-DB-Category-t3b: 드랍
+## X-DB-Category-t3c: 판매
+## X-DB-Category-t3d: 제작 아이템
+
+## X-DB-Category-t40: 전문 기술_기계공학_주요 조제법
+## X-DB-Category-t4a: 평판
+## X-DB-Category-t4b: 드랍
+## X-DB-Category-t4c: 판매
+## X-DB-Category-t4d: 제작 아이템
+## X-DB-Category-t4e: 형상 변환용 아이템
+
+## X-DB-Category-t50: 전문 기술_마법부여_주요 조제법
+## X-DB-Category-t5a: 평판
+## X-DB-Category-t5b: 드랍
+## X-DB-Category-t5c: 판매
+## X-DB-Category-t5d: 제작 아이템
+
+## X-DB-Category-t60: 전문 기술_보석세공_주요 조제법
+## X-DB-Category-t6a: 평판
+## X-DB-Category-t6b: 드랍
+## X-DB-Category-t6c: 판매
+## X-DB-Category-t6d: 제작 아이템
+
+## X-DB-Category-t70: 전문 기술_주문각인_주요 조제법
+## X-DB-Category-t7a: 평판
+## X-DB-Category-t7b: 드랍
+## X-DB-Category-t7c: 판매
+## X-DB-Category-t7d: 제작 아이템
+
+## X-DB-Category-ta0: 전문 기술_요리_주요 조제법
+## X-DB-Category-taa: 평판
+## X-DB-Category-tab: 드랍
+## X-DB-Category-tac: 판매
+## X-DB-Category-tad: 제작 아이템
+
+## X-DB-Category-tb0: 전문 기술_고고학_드워프
+## X-DB-Category-tb1: 드레나이
+## X-DB-Category-tb2: 화석
+## X-DB-Category-tb3: 나이트 엘프
+## X-DB-Category-tb4: 네루비안
+## X-DB-Category-tb5: 오크
+## X-DB-Category-tb6: 톨비르
+## X-DB-Category-tb7: 트롤
+## X-DB-Category-tb8: 브리쿨
+## X-DB-Category-tb9: 판다렌
+## X-DB-Category-tba: 모구
+## X-DB-Category-tbb: 아라코아
+## X-DB-Category-tbc: 드레노어 부족들
+## X-DB-Category-tbd: 오우거
+## X-DB-Category-tbz: 기타
+
+## X-DB-Category-v00: 아이템 강화_양손 무기
+## X-DB-Category-v10: 아이템 강화_원거리 무기
+## X-DB-Category-v20: 아이템 강화_무기
+## X-DB-Category-v30: 아이템 강화_어깨
+## X-DB-Category-v40: 아이템 강화_어깨(주문각인 전용)
+## X-DB-Category-v50: 아이템 강화_망토
+## X-DB-Category-v60: 아이템 강화_망토(재봉술 전용)
+## X-DB-Category-v70: 아이템 강화_망토(기계공학 전용)
+## X-DB-Category-v80: 아이템 강화_가슴
+## X-DB-Category-v90: 아이템 강화_손목
+## X-DB-Category-va0: 아이템 강화_손목(가죽세공 전용)
+## X-DB-Category-vb0: 아이템 강화_손목(대장기술 전용)
+## X-DB-Category-vc0: 아이템 강화_장갑
+## X-DB-Category-vd0: 아이템 강화_장갑(대장기술 전용)
+## X-DB-Category-ve0: 아이템 강화_장갑(기계공학 전용)
+## X-DB-Category-vf0: 아이템 강화_허리
+## X-DB-Category-vg0: 아이템 강화_허리(기계공학 전용)
+## X-DB-Category-vh0: 아이템 강화_바지
+## X-DB-Category-vi0: 아이템 강화_바지(가죽세공 전용)
+## X-DB-Category-vj0: 아이템 강화_바지(재봉술 전용)
+## X-DB-Category-vk0: 아이템 강화_장화
+## X-DB-Category-vl0: 아이템 강화_장화(기계공학 전용)
+## X-DB-Category-vm0: 아이템 강화_방패
+## X-DB-Category-vn0: 아이템 강화_보조장비
+## X-DB-Category-vo0: 아이템 강화_반지(마법부여 전용)
+
+## X-DB-Category-w00: 축제 및 이벤트_달의 축제
+## X-DB-Category-w10: 축제 및 이벤트_온누리에 사랑을
+## X-DB-Category-w20: 축제 및 이벤트_귀족의 정원
+## X-DB-Category-w30: 축제 및 이벤트_어린이 주간
+## X-DB-Category-w40: 축제 및 이벤트_한여름 불꽃축제
+## X-DB-Category-w50: 축제 및 이벤트_가을 축제
+
+## X-DB-Category-w60: 축제 및 이벤트_할로윈 축제_저주받은 기사
+## X-DB-Category-w61: 사탕 및 장난감
+## X-DB-Category-w62: 마법봉
+## X-DB-Category-w63: 가면
+
+## X-DB-Category-w70: 축제 및 이벤트_순례자의 감사절
+## X-DB-Category-w80: 축제 및 이벤트_겨울맞이 축제
+
+## X-DB-Category-w90: 축제 및 이벤트_다크문 축제_카드 교환
+## X-DB-Category-w91: 탈것 및 애완동물
+## X-DB-Category-w92: 형상 변환용 복제 천 아이템
+## X-DB-Category-w93: 형상 변환용 복제 가죽 아이템
+## X-DB-Category-w94: 형상 변환용 복제 사슬 아이템
+## X-DB-Category-w95: 형상 변환용 복제 판금 아이템
+
+## X-DB-Category-x00: 탈것 및 애완동물_지상 탈것
+## X-DB-Category-x10: 탈것 및 애완동물_공중 탈것
+## X-DB-Category-x20: 탈것 및 애완동물_수중 탈것
+## X-DB-Category-x30: 탈것 및 애완동물_애완동물
+
+## X-DB-Category-z00: 퀘스트 보상_Temp
+
+## X-DB-Category-zt0: 퀘스트 보상_드레노어_전설 퀘스트
+
+## X-DB-Category-zu0: 퀘스트 보상_판다리아_공포의 황무지
+## X-DB-Category-zu1: 네 바람의 계곡
+## X-DB-Category-zu2: 두 달의 제단
+## X-DB-Category-zu3: 비취 숲
+## X-DB-Category-zu4: 영원꽃 골짜기
+## X-DB-Category-zu5: 일곱 별의 제단
+## X-DB-Category-zu6: 장막의 계단
+## X-DB-Category-zu7: 쿤라이 봉우리
+## X-DB-Category-zu8: 크라사랑 밀림
+## X-DB-Category-zu9: 탕랑 평원
+## X-DB-Category-zua: 천둥의 섬
+
+## X-DB-Category-zv0: 퀘스트 보상_혼돈의 소용돌이_심원의 영지
+## X-DB-Category-zv1: 잃어버린 섬
+## X-DB-Category-zv2: 케잔
+## X-DB-Category-zv3: 혼돈의 소용돌이
+
+## X-DB-Category-zw0: 퀘스트 보상_노스렌드_북풍의 땅
+## X-DB-Category-zw1: 울부짖는 협만
+## X-DB-Category-zw2: 용의 안식처
+## X-DB-Category-zw3: 회색 구릉지
+## X-DB-Category-zw4: 줄드락
+## X-DB-Category-zw5: 숄라자르 분지
+## X-DB-Category-zw6: 폭풍우 봉우리
+## X-DB-Category-zw7: 얼음왕관
+## X-DB-Category-zw8: 달라란
+## X-DB-Category-zw9: 호스가르 상륙지
+## X-DB-Category-zwa: 수정노래 숲
+
+## X-DB-Category-zx0: 퀘스트 보상_아웃랜드_나그란드
+## X-DB-Category-zx1: 샤트라스
+## X-DB-Category-zx2: 어둠달 골짜기
+## X-DB-Category-zx3: 장가르 습지대
+## X-DB-Category-zx4: 지옥불 반도
+## X-DB-Category-zx5: 칼날 산맥
+## X-DB-Category-zx6: 테로카르 숲
+## X-DB-Category-zx7: 황천의 폭풍
+
+## X-DB-Category-zy0: 퀘스트 보상_칼림도어_남부 불모의 땅
+## X-DB-Category-zy1: 다르나서스
+## X-DB-Category-zy2: 달숲
+## X-DB-Category-zy3: 돌발톱 산맥
+## X-DB-Category-zy4: 듀로타
+## X-DB-Category-zy5: 먼지진흙 습지대
+## X-DB-Category-zy6: 멀고어
+## X-DB-Category-zy7: 버섯구름 봉우리
+## X-DB-Category-zy8: 북부 불모의 땅
+## X-DB-Category-zy9: 실리더스
+## X-DB-Category-zya: 썬더 블러프
+## X-DB-Category-zyb: 아즈샤라
+## X-DB-Category-zyc: 악령숲
+## X-DB-Category-zyd: 안퀴라즈: 무너진 왕국
+## X-DB-Category-zye: 어둠의 해안
+## X-DB-Category-zyf: 엑소다르
+## X-DB-Category-zyg: 여명의 설원
+## X-DB-Category-zyh: 오그리마
+## X-DB-Category-zyi: 운고로 분화구
+## X-DB-Category-zyj: 울둠
+## X-DB-Category-zyk: 잊여진 땅
+## X-DB-Category-zyl: 잿빛 골짜기
+## X-DB-Category-zym: 타나리스
+## X-DB-Category-zyn: 텔드랏실
+## X-DB-Category-zyo: 페랄라스
+## X-DB-Category-zyp: 핏빛안개 섬
+## X-DB-Category-zyq: 하늘안개 섬
+## X-DB-Category-zyr: 하이잘 산
+
+## X-DB-Category-zz0: 퀘스트 보상_동부 왕국_가시덤불 골짜기
+## X-DB-Category-zz1: 기시덤불 곶
+## X-DB-Category-zz2: 그늘숲
+## X-DB-Category-zz3: 길니아스 시 폐허
+## X-DB-Category-zz4: 길니아스 폐허
+## X-DB-Category-zz5: 던 모로
+## X-DB-Category-zz6: 동부 내륙지
+## X-DB-Category-zz7: 동부 역병지대
+## X-DB-Category-zz8: 모단 호수
+## X-DB-Category-zz9: 바쉬르
+## X-DB-Category-zza: 북부 가시덤불
+## X-DB-Category-zzb: 불타는 평원
+## X-DB-Category-zzc: 붉은마루 산맥
+## X-DB-Category-zzd: 서부 몰락지대
+## X-DB-Category-zze: 서부 역병지대
+## X-DB-Category-zzf: 스톰윈드
+## X-DB-Category-zzg: 슬픔의 늪
+## X-DB-Category-zzh: 실버문
+## X-DB-Category-zzi: 심연의 나락
+## X-DB-Category-zzj: 아라시 고원
+## X-DB-Category-zzk: 아이언포지
+## X-DB-Category-zzl: 언더시티
+## X-DB-Category-zzm: 언덕마루 구릉지
+## X-DB-Category-zzn: 엘윈 숲
+## X-DB-Category-zzo: 영원노래 숲
+## X-DB-Category-zzp: 유령의 땅
+## X-DB-Category-zzq: 은빛소나무 숲
+## X-DB-Category-zzr: 이글거리는 협곡
+## X-DB-Category-zzs: 저습지
+## X-DB-Category-zzt: 저승바람 고개
+## X-DB-Category-zzu: 저주받은 땅
+## X-DB-Category-zzv: 켈프타르 숲
+## X-DB-Category-zzw: 티리스팔 숲
+## X-DB-Category-zzx: 황야의 땅
+## X-DB-Category-zzy: 황혼의 고원
+## X-DB-Category-zzz: 흐린빛 벌판
+
+## X-DB-Category-!I00: 불타는 성전 PvP 아이템_투기장 시즌 4_무기
+## X-DB-Category-!I01: 전사
+## X-DB-Category-!I02: 도적
+## X-DB-Category-!I03: 사제(신성/수양)
+## X-DB-Category-!I04: 사제(암흑)
+## X-DB-Category-!I05: 마법사
+## X-DB-Category-!I06: 흑마법사(고통)
+## X-DB-Category-!I07: 흑마법사(파괴)
+## X-DB-Category-!I08: 사냥꾼
+## X-DB-Category-!I09: 드루이드(수호/야성)
+## X-DB-Category-!I0a: 드루이드(조화)
+## X-DB-Category-!I0b: 드루이드(회복)
+## X-DB-Category-!I0c: 주술사(고양)
+## X-DB-Category-!I0d: 주술사(정기)
+## X-DB-Category-!I0e: 주술사(복원)
+## X-DB-Category-!I0f: 성기사(치명)
+## X-DB-Category-!I0g: 성기사(극대)
+## X-DB-Category-!I0h: 성기사(신성)
+## X-DB-Category-!I0i: 망토
+## X-DB-Category-!I0j: 허리
+## X-DB-Category-!I0k: 장화
+## X-DB-Category-!I0l: 손목
+## X-DB-Category-!I0m: 목걸이
+## X-DB-Category-!I0n: 반지
+## X-DB-Category-!I0o: 기타
+
+## X-DB-Category-!I10: 불타는 성전 PvP 아이템_투기장 시즌 3_무기
+## X-DB-Category-!I11: 전사
+## X-DB-Category-!I12: 도적
+## X-DB-Category-!I13: 사제(신성/수양)
+## X-DB-Category-!I14: 사제(암흑)
+## X-DB-Category-!I15: 마법사
+## X-DB-Category-!I16: 흑마법사(고통)
+## X-DB-Category-!I17: 흑마법사(파괴)
+## X-DB-Category-!I18: 사냥꾼
+## X-DB-Category-!I19: 드루이드(수호/야성)
+## X-DB-Category-!I1a: 드루이드(조화)
+## X-DB-Category-!I1b: 드루이드(회복)
+## X-DB-Category-!I1c: 주술사(고양)
+## X-DB-Category-!I1d: 주술사(정기)
+## X-DB-Category-!I1e: 주술사(복원)
+## X-DB-Category-!I1f: 성기사(치명)
+## X-DB-Category-!I1g: 성기사(극대)
+## X-DB-Category-!I1h: 성기사(신성)
+## X-DB-Category-!I1i: 허리
+## X-DB-Category-!I1j: 장화
+## X-DB-Category-!I1k: 기타
+
+## X-DB-Category-!I20: 불타는 성전 PvP 아이템_투기장 시즌 2_무기
+## X-DB-Category-!I21: 전사
+## X-DB-Category-!I22: 도적
+## X-DB-Category-!I23: 사제(신성/수양)
+## X-DB-Category-!I24: 사제(암흑)
+## X-DB-Category-!I25: 마법사
+## X-DB-Category-!I26: 흑마법사(고통)
+## X-DB-Category-!I27: 흑마법사(파괴)
+## X-DB-Category-!I28: 사냥꾼
+## X-DB-Category-!I29: 드루이드(수호/야성)
+## X-DB-Category-!I2a: 드루이드(조화)
+## X-DB-Category-!I2b: 드루이드(회복)
+## X-DB-Category-!I2c: 주술사(고양)
+## X-DB-Category-!I2d: 주술사(정기)
+## X-DB-Category-!I2e: 주술사(복원)
+## X-DB-Category-!I2f: 성기사(치명)
+## X-DB-Category-!I2g: 성기사(극대)
+## X-DB-Category-!I2h: 성기사(신성)
+## X-DB-Category-!I2i: 망토
+## X-DB-Category-!I2j: 허리
+## X-DB-Category-!I2k: 장화
+## X-DB-Category-!I2l: 기타
+
+## X-DB-Category-!I30: 불타는 성전 PvP 아이템_투기장 시즌 1_무기
+## X-DB-Category-!I31: 전사
+## X-DB-Category-!I32: 도적
+## X-DB-Category-!I33: 사제(신성/수양)
+## X-DB-Category-!I34: 사제(암흑)
+## X-DB-Category-!I35: 마법사
+## X-DB-Category-!I36: 흑마법사(고통)
+## X-DB-Category-!I37: 흑마법사(파괴)
+## X-DB-Category-!I38: 사냥꾼
+## X-DB-Category-!I39: 드루이드(수호/야성)
+## X-DB-Category-!I3a: 드루이드(조화)
+## X-DB-Category-!I3b: 드루이드(회복)
+## X-DB-Category-!I3c: 주술사(고양)
+## X-DB-Category-!I3d: 주술사(정기)
+## X-DB-Category-!I3e: 주술사(복원)
+## X-DB-Category-!I3f: 성기사(치명)
+## X-DB-Category-!I3g: 성기사(극대)
+## X-DB-Category-!I3h: 성기사(신성)
+## X-DB-Category-!I3i: 망토
+## X-DB-Category-!I3j: 허리
+## X-DB-Category-!I3k: 장화
+## X-DB-Category-!I3l: 기타
+
+## X-DB-Category-!J00: 리치 왕의 분노 PvP 아이템_투기장 시즌 8_무기
+## X-DB-Category-!J01: 전사
+## X-DB-Category-!J02: 도적
+## X-DB-Category-!J03: 사제(신성/수양)
+## X-DB-Category-!J04: 사제(암흑)
+## X-DB-Category-!J05: 마법사
+## X-DB-Category-!J06: 흑마법사
+## X-DB-Category-!J07: 사냥꾼
+## X-DB-Category-!J08: 드루이드(수호/야성)
+## X-DB-Category-!J09: 드루이드(조화)
+## X-DB-Category-!J0a: 드루이드(회복)
+## X-DB-Category-!J0b: 주술사(고양)
+## X-DB-Category-!J0c: 주술사(정기)
+## X-DB-Category-!J0d: 주술사(복원)
+## X-DB-Category-!J0e: 성기사(징벌)
+## X-DB-Category-!J0f: 성기사(신성)
+## X-DB-Category-!J0g: 죽음의 기사
+## X-DB-Category-!J0h: 망토
+## X-DB-Category-!J0i: 허리
+## X-DB-Category-!J0j: 장화
+## X-DB-Category-!J0k: 손목
+## X-DB-Category-!J0l: 목걸이
+## X-DB-Category-!J0m: 반지
+## X-DB-Category-!J0n: 기타
+
+## X-DB-Category-!J10: 리치 왕의 분노 PvP 아이템_투기장 시즌 7_무기
+## X-DB-Category-!J11: 전사
+## X-DB-Category-!J12: 도적
+## X-DB-Category-!J13: 사제(신성/수양)
+## X-DB-Category-!J14: 사제(암흑)
+## X-DB-Category-!J15: 마법사
+## X-DB-Category-!J16: 흑마법사
+## X-DB-Category-!J17: 사냥꾼
+## X-DB-Category-!J18: 드루이드(수호/야성)
+## X-DB-Category-!J19: 드루이드(조화)
+## X-DB-Category-!J1a: 드루이드(회복)
+## X-DB-Category-!J1b: 주술사(고양)
+## X-DB-Category-!J1c: 주술사(정기)
+## X-DB-Category-!J1d: 주술사(복원)
+## X-DB-Category-!J1e: 성기사(징벌)
+## X-DB-Category-!J1f: 성기사(신성)
+## X-DB-Category-!J1g: 죽음의 기사
+## X-DB-Category-!J1h: 망토
+## X-DB-Category-!J1i: 허리
+## X-DB-Category-!J1j: 장화
+## X-DB-Category-!J1k: 손목
+## X-DB-Category-!J1l: 목걸이
+## X-DB-Category-!J1m: 반지
+## X-DB-Category-!J1n: 기타
+
+## X-DB-Category-!J20: 리치 왕의 분노 PvP 아이템_투기장 시즌 6_무기
+## X-DB-Category-!J22: 전사
+## X-DB-Category-!J23: 도적
+## X-DB-Category-!J24: 사제(신성/수양)
+## X-DB-Category-!J25: 사제(암흑)
+## X-DB-Category-!J26: 마법사
+## X-DB-Category-!J27: 흑마법사
+## X-DB-Category-!J28: 사냥꾼
+## X-DB-Category-!J29: 드루이드(수호/야성)
+## X-DB-Category-!J2a: 드루이드(조화)
+## X-DB-Category-!J2b: 드루이드(회복)
+## X-DB-Category-!J2c: 주술사(고양)
+## X-DB-Category-!J2d: 주술사(정기)
+## X-DB-Category-!J2e: 주술사(복원)
+## X-DB-Category-!J2f: 성기사(징벌)
+## X-DB-Category-!J2g: 성기사(신성)
+## X-DB-Category-!J2h: 죽음의 기사
+## X-DB-Category-!J2i: 망토
+## X-DB-Category-!J2j: 허리
+## X-DB-Category-!J2k: 장화
+## X-DB-Category-!J2l: 손목
+## X-DB-Category-!J2m: 목걸이
+## X-DB-Category-!J2n: 반지
+## X-DB-Category-!J2o: 기타
+
+## X-DB-Category-!J30: 리치 왕의 분노 PvP 아이템_투기장 시즌 5_무기
+## X-DB-Category-!J31: 전사
+## X-DB-Category-!J32: 도적
+## X-DB-Category-!J33: 사제(신성/수양)
+## X-DB-Category-!J34: 사제(암흑)
+## X-DB-Category-!J35: 마법사
+## X-DB-Category-!J36: 흑마법사
+## X-DB-Category-!J37: 사냥꾼
+## X-DB-Category-!J38: 드루이드(수호/야성)
+## X-DB-Category-!J39: 드루이드(조화)
+## X-DB-Category-!J3a: 드루이드(회복)
+## X-DB-Category-!J3b: 주술사(고양)
+## X-DB-Category-!J3c: 주술사(정기)
+## X-DB-Category-!J3d: 주술사(복원)
+## X-DB-Category-!J3e: 성기사(징벌)
+## X-DB-Category-!J3f: 성기사(신성)
+## X-DB-Category-!J3g: 죽음의 기사
+## X-DB-Category-!J3h: 망토
+## X-DB-Category-!J3i: 허리
+## X-DB-Category-!J3j: 장화
+## X-DB-Category-!J3k: 손목
+## X-DB-Category-!J3l: 목걸이
+## X-DB-Category-!J3m: 반지
+## X-DB-Category-!J3n: 기타
+
+## X-DB-Category-!J40: 리치 왕의 분노 PvP 아이템_원한에 찬 검투사_전사
+## X-DB-Category-!J41: 도적
+## X-DB-Category-!J42: 사제(신성/수양)
+## X-DB-Category-!J43: 사제(암흑)
+## X-DB-Category-!J44: 마법사
+## X-DB-Category-!J45: 흑마법사
+## X-DB-Category-!J46: 사냥꾼
+## X-DB-Category-!J47: 드루이드(수호/야성)
+## X-DB-Category-!J48: 드루이드(조화)
+## X-DB-Category-!J49: 드루이드(회복)
+## X-DB-Category-!J4a: 주술사(고양)
+## X-DB-Category-!J4b: 주술사(정기)
+## X-DB-Category-!J4c: 주술사(복원)
+## X-DB-Category-!J4d: 성기사(징벌)
+## X-DB-Category-!J4e: 성기사(신성)
+## X-DB-Category-!J4f: 죽음의 기사
+## X-DB-Category-!J4g: 망토
+## X-DB-Category-!J4h: 허리
+## X-DB-Category-!J4i: 장화
+## X-DB-Category-!J4j: 손목
+## X-DB-Category-!J4k: 목걸이
+## X-DB-Category-!J4l: 반지
+## X-DB-Category-!J4m: 기타
+
+## X-DB-Category-!J50: 리치 왕의 분노 PvP 아이템_잔인한 검투사_전사
+## X-DB-Category-!J51: 도적
+## X-DB-Category-!J52: 사제(신성/수양)
+## X-DB-Category-!J53: 사제(암흑)
+## X-DB-Category-!J54: 마법사
+## X-DB-Category-!J55: 흑마법사
+## X-DB-Category-!J56: 사냥꾼
+## X-DB-Category-!J57: 드루이드(수호/야성)
+## X-DB-Category-!J58: 드루이드(조화)
+## X-DB-Category-!J59: 드루이드(회복)
+## X-DB-Category-!J5a: 주술사(고양)
+## X-DB-Category-!J5b: 주술사(정기)
+## X-DB-Category-!J5c: 주술사(복원)
+## X-DB-Category-!J5d: 성기사(징벌)
+## X-DB-Category-!J5e: 성기사(신성)
+## X-DB-Category-!J5f: 죽음의 기사
+
+## X-DB-Category-!K00: 대격변 PvP 아이템_투기장 시즌 11 정예_무기
+## X-DB-Category-!K01: 전사
+## X-DB-Category-!K02: 도적
+## X-DB-Category-!K03: 사제(신성/수양)
+## X-DB-Category-!K04: 사제(암흑)
+## X-DB-Category-!K05: 마법사
+## X-DB-Category-!K06: 흑마법사
+## X-DB-Category-!K07: 사냥꾼
+## X-DB-Category-!K08: 드루이드(수호/야성)
+## X-DB-Category-!K09: 드루이드(조화)
+## X-DB-Category-!K0a: 드루이드(회복)
+## X-DB-Category-!K0b: 주술사(고양)
+## X-DB-Category-!K0c: 주술사(정기)
+## X-DB-Category-!K0d: 주술사(복원)
+## X-DB-Category-!K0e: 성기사(징벌)
+## X-DB-Category-!K0f: 성기사(신성)
+## X-DB-Category-!K0g: 죽음의 기사
+## X-DB-Category-!K0h: 망토
+## X-DB-Category-!K0i: 허리
+## X-DB-Category-!K0j: 장화
+## X-DB-Category-!K0k: 손목
+## X-DB-Category-!K0l: 목걸이
+## X-DB-Category-!K0m: 반지
+## X-DB-Category-!K0n: 기타
+
+## X-DB-Category-!K10: 대격변 PvP 아이템_투기장 시즌 11 중급_무기
+## X-DB-Category-!K11: 전사
+## X-DB-Category-!K12: 도적
+## X-DB-Category-!K13: 사제(신성/수양)
+## X-DB-Category-!K14: 사제(암흑)
+## X-DB-Category-!K15: 마법사
+## X-DB-Category-!K16: 흑마법사
+## X-DB-Category-!K17: 사냥꾼
+## X-DB-Category-!K18: 드루이드(수호/야성)
+## X-DB-Category-!K19: 드루이드(조화)
+## X-DB-Category-!K1a: 드루이드(회복)
+## X-DB-Category-!K1b: 주술사(고양)
+## X-DB-Category-!K1c: 주술사(정기)
+## X-DB-Category-!K1d: 주술사(복원)
+## X-DB-Category-!K1e: 성기사(징벌)
+## X-DB-Category-!K1f: 성기사(신성)
+## X-DB-Category-!K1g: 죽음의 기사
+## X-DB-Category-!K1h: 망토
+## X-DB-Category-!K1i: 허리
+## X-DB-Category-!K1j: 장화
+## X-DB-Category-!K1k: 손목
+## X-DB-Category-!K1l: 목걸이
+## X-DB-Category-!K1m: 반지
+## X-DB-Category-!K1n: 기타
+
+## X-DB-Category-!K20: 대격변 PvP 아이템_투기장 시즌 11 하급_무기
+## X-DB-Category-!K21: 전사
+## X-DB-Category-!K22: 도적
+## X-DB-Category-!K23: 사제(신성/수양)
+## X-DB-Category-!K24: 사제(암흑)
+## X-DB-Category-!K25: 마법사
+## X-DB-Category-!K26: 흑마법사
+## X-DB-Category-!K27: 사냥꾼
+## X-DB-Category-!K28: 드루이드(수호/야성)
+## X-DB-Category-!K29: 드루이드(조화)
+## X-DB-Category-!K2a: 드루이드(회복)
+## X-DB-Category-!K2b: 주술사(고양)
+## X-DB-Category-!K2c: 주술사(정기)
+## X-DB-Category-!K2d: 주술사(복원)
+## X-DB-Category-!K2e: 성기사(징벌)
+## X-DB-Category-!K2f: 성기사(신성)
+## X-DB-Category-!K2g: 죽음의 기사
+## X-DB-Category-!K2h: 망토
+## X-DB-Category-!K2i: 허리
+## X-DB-Category-!K2j: 장화
+## X-DB-Category-!K2k: 손목
+## X-DB-Category-!K2l: 목걸이
+## X-DB-Category-!K2m: 반지
+## X-DB-Category-!K2n: 기타
+
+## X-DB-Category-!K30: 대격변 PvP 아이템_투기장 시즌 10 정예_무기
+## X-DB-Category-!K31: 전사
+## X-DB-Category-!K32: 도적
+## X-DB-Category-!K33: 사제(신성/수양)
+## X-DB-Category-!K34: 사제(암흑)
+## X-DB-Category-!K35: 마법사
+## X-DB-Category-!K36: 흑마법사
+## X-DB-Category-!K37: 사냥꾼
+## X-DB-Category-!K38: 드루이드(수호/야성)
+## X-DB-Category-!K39: 드루이드(조화)
+## X-DB-Category-!K3a: 드루이드(회복)
+## X-DB-Category-!K3b: 주술사(고양)
+## X-DB-Category-!K3c: 주술사(정기)
+## X-DB-Category-!K3d: 주술사(복원)
+## X-DB-Category-!K3e: 성기사(징벌)
+## X-DB-Category-!K3f: 성기사(신성)
+## X-DB-Category-!K3g: 죽음의 기사
+## X-DB-Category-!K3h: 망토
+## X-DB-Category-!K3i: 허리
+## X-DB-Category-!K3j: 장화
+## X-DB-Category-!K3k: 손목
+## X-DB-Category-!K3l: 목걸이
+## X-DB-Category-!K3m: 반지
+## X-DB-Category-!K3n: 기타
+
+## X-DB-Category-!K40: 대격변 PvP 아이템_투기장 시즌 10 중급_무기
+## X-DB-Category-!K41: 전사
+## X-DB-Category-!K42: 도적
+## X-DB-Category-!K43: 사제(신성/수양)
+## X-DB-Category-!K44: 사제(암흑)
+## X-DB-Category-!K45: 마법사
+## X-DB-Category-!K46: 흑마법사
+## X-DB-Category-!K47: 사냥꾼
+## X-DB-Category-!K48: 드루이드(수호/야성)
+## X-DB-Category-!K49: 드루이드(조화)
+## X-DB-Category-!K4a: 드루이드(회복)
+## X-DB-Category-!K4b: 주술사(고양)
+## X-DB-Category-!K4c: 주술사(정기)
+## X-DB-Category-!K4d: 주술사(복원)
+## X-DB-Category-!K4e: 성기사(징벌)
+## X-DB-Category-!K4f: 성기사(신성)
+## X-DB-Category-!K4g: 죽음의 기사
+## X-DB-Category-!K4h: 망토
+## X-DB-Category-!K4i: 허리
+## X-DB-Category-!K4j: 장화
+## X-DB-Category-!K4k: 손목
+## X-DB-Category-!K4l: 목걸이
+## X-DB-Category-!K4m: 반지
+## X-DB-Category-!K4n: 기타
+
+## X-DB-Category-!K50: 대격변 PvP 아이템_투기장 시즌 10 하급_무기
+## X-DB-Category-!K51: 전사
+## X-DB-Category-!K52: 도적
+## X-DB-Category-!K53: 사제(신성/수양)
+## X-DB-Category-!K54: 사제(암흑)
+## X-DB-Category-!K55: 마법사
+## X-DB-Category-!K56: 흑마법사
+## X-DB-Category-!K57: 사냥꾼
+## X-DB-Category-!K58: 드루이드(수호/야성)
+## X-DB-Category-!K59: 드루이드(조화)
+## X-DB-Category-!K5a: 드루이드(회복)
+## X-DB-Category-!K5b: 주술사(고양)
+## X-DB-Category-!K5c: 주술사(정기)
+## X-DB-Category-!K5d: 주술사(복원)
+## X-DB-Category-!K5e: 성기사(징벌)
+## X-DB-Category-!K5f: 성기사(신성)
+## X-DB-Category-!K5g: 죽음의 기사
+## X-DB-Category-!K5h: 망토
+## X-DB-Category-!K5i: 허리
+## X-DB-Category-!K5j: 장화
+## X-DB-Category-!K5k: 손목
+## X-DB-Category-!K5l: 목걸이
+## X-DB-Category-!K5m: 반지
+## X-DB-Category-!K5n: 기타
+
+## X-DB-Category-!K60: 대격변 PvP 아이템_투기장 시즌 9 정예_무기
+## X-DB-Category-!K61: 전사
+## X-DB-Category-!K62: 도적
+## X-DB-Category-!K63: 사제(신성/수양)
+## X-DB-Category-!K64: 사제(암흑)
+## X-DB-Category-!K65: 마법사
+## X-DB-Category-!K66: 흑마법사
+## X-DB-Category-!K67: 사냥꾼
+## X-DB-Category-!K68: 드루이드(수호/야성)
+## X-DB-Category-!K69: 드루이드(조화)
+## X-DB-Category-!K6a: 드루이드(회복)
+## X-DB-Category-!K6b: 주술사(고양)
+## X-DB-Category-!K6c: 주술사(정기)
+## X-DB-Category-!K6d: 주술사(복원)
+## X-DB-Category-!K6e: 성기사(징벌)
+## X-DB-Category-!K6f: 성기사(신성)
+## X-DB-Category-!K6g: 죽음의 기사
+## X-DB-Category-!K6h: 망토
+## X-DB-Category-!K6i: 허리
+## X-DB-Category-!K6j: 장화
+## X-DB-Category-!K6k: 손목
+## X-DB-Category-!K6l: 목걸이
+## X-DB-Category-!K6m: 반지
+## X-DB-Category-!K6n: 기타
+
+## X-DB-Category-!K70: 대격변 PvP 아이템_투기장 시즌 9_무기
+## X-DB-Category-!K71: 전사
+## X-DB-Category-!K72: 도적
+## X-DB-Category-!K73: 사제(신성/수양)
+## X-DB-Category-!K74: 사제(암흑)
+## X-DB-Category-!K75: 마법사
+## X-DB-Category-!K76: 흑마법사
+## X-DB-Category-!K77: 사냥꾼
+## X-DB-Category-!K78: 드루이드(수호/야성)
+## X-DB-Category-!K79: 드루이드(조화)
+## X-DB-Category-!K7a: 드루이드(회복)
+## X-DB-Category-!K7b: 주술사(고양)
+## X-DB-Category-!K7c: 주술사(정기)
+## X-DB-Category-!K7d: 주술사(복원)
+## X-DB-Category-!K7e: 성기사(징벌)
+## X-DB-Category-!K7f: 성기사(신성)
+## X-DB-Category-!K7g: 죽음의 기사
+## X-DB-Category-!K7h: 망토
+## X-DB-Category-!K7i: 허리
+## X-DB-Category-!K7j: 장화
+## X-DB-Category-!K7k: 손목
+## X-DB-Category-!K7l: 목걸이
+## X-DB-Category-!K7m: 반지
+## X-DB-Category-!K7n: 기타
+
+## X-DB-Category-!K80: 대격변 PvP 아이템_피에 굶주린 검투사_무기
+## X-DB-Category-!K81: 전사
+## X-DB-Category-!K82: 도적
+## X-DB-Category-!K83: 사제(신성/수양)
+## X-DB-Category-!K84: 사제(암흑)
+## X-DB-Category-!K85: 마법사
+## X-DB-Category-!K86: 흑마법사
+## X-DB-Category-!K87: 사냥꾼
+## X-DB-Category-!K88: 드루이드(수호/야성)
+## X-DB-Category-!K89: 드루이드(조화)
+## X-DB-Category-!K8a: 드루이드(회복)
+## X-DB-Category-!K8b: 주술사(고양)
+## X-DB-Category-!K8c: 주술사(정기)
+## X-DB-Category-!K8d: 주술사(복원)
+## X-DB-Category-!K8e: 성기사(징벌)
+## X-DB-Category-!K8f: 성기사(신성)
+## X-DB-Category-!K8g: 죽음의 기사
+## X-DB-Category-!K8h: 망토
+## X-DB-Category-!K8i: 허리
+## X-DB-Category-!K8j: 장화
+## X-DB-Category-!K8k: 손목
+## X-DB-Category-!K8l: 목걸이
+## X-DB-Category-!K8m: 반지
+## X-DB-Category-!K8n: 기타
+
+## X-DB-Category-!L00: 판다리아의 안개 PvP 아이템_투기장 시즌 x_무기
+## X-DB-Category-!L01: 전사
+## X-DB-Category-!L02: 도적
+## X-DB-Category-!L03: 사제(신성/수양)
+## X-DB-Category-!L04: 사제(암흑)
+## X-DB-Category-!L05: 마법사
+## X-DB-Category-!L06: 흑마법사
+## X-DB-Category-!L07: 사냥꾼
+## X-DB-Category-!L08: 드루이드(수호/야성)
+## X-DB-Category-!L09: 드루이드(조화)
+## X-DB-Category-!L0a: 드루이드(회복)
+## X-DB-Category-!L0b: 주술사(고양)
+## X-DB-Category-!L0c: 주술사(정기)
+## X-DB-Category-!L0d: 주술사(복원)
+## X-DB-Category-!L0e: 성기사(징벌)
+## X-DB-Category-!L0f: 성기사(신성)
+## X-DB-Category-!L0g: 죽음의 기사
+## X-DB-Category-!L0h: 수도사(양조/풍운)
+## X-DB-Category-!L0i: 수도사(운무)
+## X-DB-Category-!L0j: 망토
+## X-DB-Category-!L0k: 허리
+## X-DB-Category-!L0l: 장화
+## X-DB-Category-!L0m: 손목
+## X-DB-Category-!L0n: 목걸이
+## X-DB-Category-!L0o: 반지
+## X-DB-Category-!L0p: 기타
+
+## X-DB-Category-!L10: 판다리아의 안개 PvP 아이템_투기장 시즌 15 중급_무기
+## X-DB-Category-!L11: 전사
+## X-DB-Category-!L12: 도적
+## X-DB-Category-!L13: 사제(신성/수양)
+## X-DB-Category-!L14: 사제(암흑)
+## X-DB-Category-!L15: 마법사
+## X-DB-Category-!L16: 흑마법사
+## X-DB-Category-!L17: 사냥꾼
+## X-DB-Category-!L18: 드루이드(수호/야성)
+## X-DB-Category-!L19: 드루이드(조화)
+## X-DB-Category-!L1a: 드루이드(회복)
+## X-DB-Category-!L1b: 주술사(고양)
+## X-DB-Category-!L1c: 주술사(정기)
+## X-DB-Category-!L1d: 주술사(복원)
+## X-DB-Category-!L1e: 성기사(징벌)
+## X-DB-Category-!L1f: 성기사(신성)
+## X-DB-Category-!L1g: 죽음의 기사
+## X-DB-Category-!L1h: 수도사(양조/풍운)
+## X-DB-Category-!L1i: 수도사(운무)
+## X-DB-Category-!L1j: 망토
+## X-DB-Category-!L1k: 허리
+## X-DB-Category-!L1l: 장화
+## X-DB-Category-!L1m: 손목
+## X-DB-Category-!L1n: 목걸이
+## X-DB-Category-!L1o: 반지
+## X-DB-Category-!L1p: 기타
+
+## X-DB-Category-!L20: 판다리아의 안개 PvP 아이템_투기장 시즌 15 하급_무기
+## X-DB-Category-!L21: 전사
+## X-DB-Category-!L22: 도적
+## X-DB-Category-!L23: 사제(신성/수양)
+## X-DB-Category-!L24: 사제(암흑)
+## X-DB-Category-!L25: 마법사
+## X-DB-Category-!L26: 흑마법사
+## X-DB-Category-!L27: 사냥꾼
+## X-DB-Category-!L28: 드루이드(수호/야성)
+## X-DB-Category-!L29: 드루이드(조화)
+## X-DB-Category-!L2a: 드루이드(회복)
+## X-DB-Category-!L2b: 주술사(고양)
+## X-DB-Category-!L2c: 주술사(정기)
+## X-DB-Category-!L2d: 주술사(복원)
+## X-DB-Category-!L2e: 성기사(징벌)
+## X-DB-Category-!L2f: 성기사(신성)
+## X-DB-Category-!L2g: 죽음의 기사
+## X-DB-Category-!L2h: 수도사(양조/풍운)
+## X-DB-Category-!L2i: 수도사(운무)
+## X-DB-Category-!L2j: 망토
+## X-DB-Category-!L2k: 허리
+## X-DB-Category-!L2l: 장화
+## X-DB-Category-!L2m: 손목
+## X-DB-Category-!L2n: 목걸이
+## X-DB-Category-!L2o: 반지
+## X-DB-Category-!L2p: 기타
+
+## X-DB-Category-!L40: 판다리아의 안개 PvP 아이템_투기장 시즌 14 중급_무기
+## X-DB-Category-!L41: 전사
+## X-DB-Category-!L42: 도적
+## X-DB-Category-!L43: 사제(신성/수양)
+## X-DB-Category-!L44: 사제(암흑)
+## X-DB-Category-!L45: 마법사
+## X-DB-Category-!L46: 흑마법사
+## X-DB-Category-!L47: 사냥꾼
+## X-DB-Category-!L48: 드루이드(수호/야성)
+## X-DB-Category-!L49: 드루이드(조화)
+## X-DB-Category-!L4a: 드루이드(회복)
+## X-DB-Category-!L4b: 주술사(고양)
+## X-DB-Category-!L4c: 주술사(정기)
+## X-DB-Category-!L4d: 주술사(복원)
+## X-DB-Category-!L4e: 성기사(징벌)
+## X-DB-Category-!L4f: 성기사(신성)
+## X-DB-Category-!L4g: 죽음의 기사
+## X-DB-Category-!L4h: 수도사(양조/풍운)
+## X-DB-Category-!L4i: 수도사(운무)
+## X-DB-Category-!L4j: 망토
+## X-DB-Category-!L4k: 허리
+## X-DB-Category-!L4l: 장화
+## X-DB-Category-!L4m: 손목
+## X-DB-Category-!L4n: 목걸이
+## X-DB-Category-!L4o: 반지
+## X-DB-Category-!L4p: 기타
+
+## X-DB-Category-!L50: 판다리아의 안개 PvP 아이템_투기장 시즌 14 하급_무기
+## X-DB-Category-!L51: 전사
+## X-DB-Category-!L52: 도적
+## X-DB-Category-!L53: 사제(신성/수양)
+## X-DB-Category-!L54: 사제(암흑)
+## X-DB-Category-!L55: 마법사
+## X-DB-Category-!L56: 흑마법사
+## X-DB-Category-!L57: 사냥꾼
+## X-DB-Category-!L58: 드루이드(수호/야성)
+## X-DB-Category-!L59: 드루이드(조화)
+## X-DB-Category-!L5a: 드루이드(회복)
+## X-DB-Category-!L5b: 주술사(고양)
+## X-DB-Category-!L5c: 주술사(정기)
+## X-DB-Category-!L5d: 주술사(복원)
+## X-DB-Category-!L5e: 성기사(징벌)
+## X-DB-Category-!L5f: 성기사(신성)
+## X-DB-Category-!L5g: 죽음의 기사
+## X-DB-Category-!L5h: 수도사(양조/풍운)
+## X-DB-Category-!L5i: 수도사(운무)
+## X-DB-Category-!L5j: 망토
+## X-DB-Category-!L5k: 허리
+## X-DB-Category-!L5l: 장화
+## X-DB-Category-!L5m: 손목
+## X-DB-Category-!L5n: 목걸이
+## X-DB-Category-!L5o: 반지
+## X-DB-Category-!L5p: 기타
+
+## X-DB-Category-!Lu0: 판다리아의 안개 PvP 아이템_투기장 시즌 13 정예_무기
+## X-DB-Category-!Lu1: 전사
+## X-DB-Category-!Lu2: 도적
+## X-DB-Category-!Lu3: 사제(신성/수양)
+## X-DB-Category-!Lu4: 사제(암흑)
+## X-DB-Category-!Lu5: 마법사
+## X-DB-Category-!Lu6: 흑마법사
+## X-DB-Category-!Lu7: 사냥꾼
+## X-DB-Category-!Lu8: 드루이드(수호/야성)
+## X-DB-Category-!Lu9: 드루이드(조화)
+## X-DB-Category-!Lua: 드루이드(회복)
+## X-DB-Category-!Lub: 주술사(고양)
+## X-DB-Category-!Luc: 주술사(정기)
+## X-DB-Category-!Lud: 주술사(복원)
+## X-DB-Category-!Lue: 성기사(징벌)
+## X-DB-Category-!Luf: 성기사(신성)
+## X-DB-Category-!Lug: 죽음의 기사
+## X-DB-Category-!Luh: 수도사(양조/풍운)
+## X-DB-Category-!Lui: 수도사(운무)
+
+## X-DB-Category-!Lv0: 판다리아의 안개 PvP 아이템_투기장 시즌 13 중급_무기
+## X-DB-Category-!Lv1: 전사
+## X-DB-Category-!Lv2: 도적
+## X-DB-Category-!Lv3: 사제(신성/수양)
+## X-DB-Category-!Lv4: 사제(암흑)
+## X-DB-Category-!Lv5: 마법사
+## X-DB-Category-!Lv6: 흑마법사
+## X-DB-Category-!Lv7: 사냥꾼
+## X-DB-Category-!Lv8: 드루이드(수호/야성)
+## X-DB-Category-!Lv9: 드루이드(조화)
+## X-DB-Category-!Lva: 드루이드(회복)
+## X-DB-Category-!Lvb: 주술사(고양)
+## X-DB-Category-!Lvc: 주술사(정기)
+## X-DB-Category-!Lvd: 주술사(복원)
+## X-DB-Category-!Lve: 성기사(징벌)
+## X-DB-Category-!Lvf: 성기사(신성)
+## X-DB-Category-!Lvg: 죽음의 기사
+## X-DB-Category-!Lvh: 수도사(양조/풍운)
+## X-DB-Category-!Lvi: 수도사(운무)
+## X-DB-Category-!Lvj: 망토
+## X-DB-Category-!Lvk: 허리
+## X-DB-Category-!Lvl: 장화
+## X-DB-Category-!Lvm: 손목
+## X-DB-Category-!Lvn: 목걸이
+## X-DB-Category-!Lvo: 반지
+## X-DB-Category-!Lvp: 기타
+
+## X-DB-Category-!Lw0: 판다리아의 안개 PvP 아이템_투기장 시즌 13 하급_무기
+## X-DB-Category-!Lw1: 전사
+## X-DB-Category-!Lw2: 도적
+## X-DB-Category-!Lw3: 사제(신성/수양)
+## X-DB-Category-!Lw4: 사제(암흑)
+## X-DB-Category-!Lw5: 마법사
+## X-DB-Category-!Lw6: 흑마법사
+## X-DB-Category-!Lw7: 사냥꾼
+## X-DB-Category-!Lw8: 드루이드(수호/야성)
+## X-DB-Category-!Lw9: 드루이드(조화)
+## X-DB-Category-!Lwa: 드루이드(회복)
+## X-DB-Category-!Lwb: 주술사(고양)
+## X-DB-Category-!Lwc: 주술사(정기)
+## X-DB-Category-!Lwd: 주술사(복원)
+## X-DB-Category-!Lwe: 성기사(징벌)
+## X-DB-Category-!Lwf: 성기사(신성)
+## X-DB-Category-!Lwg: 죽음의 기사
+## X-DB-Category-!Lwh: 수도사(양조/풍운)
+## X-DB-Category-!Lwi: 수도사(운무)
+## X-DB-Category-!Lwj: 망토
+## X-DB-Category-!Lwk: 허리
+## X-DB-Category-!Lwl: 장화
+## X-DB-Category-!Lwm: 손목
+## X-DB-Category-!Lwn: 목걸이
+## X-DB-Category-!Lwo: 반지
+## X-DB-Category-!Lwp: 기타
+
+## X-DB-Category-!Lx0: 판다리아의 안개 PvP 아이템_투기장 시즌 12 정예_무기
+## X-DB-Category-!Lx1: 전사
+## X-DB-Category-!Lx2: 도적
+## X-DB-Category-!Lx3: 사제(신성/수양)
+## X-DB-Category-!Lx4: 사제(암흑)
+## X-DB-Category-!Lx5: 마법사
+## X-DB-Category-!Lx6: 흑마법사
+## X-DB-Category-!Lx7: 사냥꾼
+## X-DB-Category-!Lx8: 드루이드(수호/야성)
+## X-DB-Category-!Lx9: 드루이드(조화)
+## X-DB-Category-!Lxa: 드루이드(회복)
+## X-DB-Category-!Lxb: 주술사(고양)
+## X-DB-Category-!Lxc: 주술사(정기)
+## X-DB-Category-!Lxd: 주술사(복원)
+## X-DB-Category-!Lxe: 성기사(징벌)
+## X-DB-Category-!Lxf: 성기사(신성)
+## X-DB-Category-!Lxg: 죽음의 기사
+## X-DB-Category-!Lxh: 수도사(양조/풍운)
+## X-DB-Category-!Lxi: 수도사(운무)
+## X-DB-Category-!Lxj: 망토
+## X-DB-Category-!Lxk: 허리
+## X-DB-Category-!Lxl: 장화
+## X-DB-Category-!Lxm: 손목
+## X-DB-Category-!Lxn: 목걸이
+## X-DB-Category-!Lxo: 반지
+## X-DB-Category-!Lxp: 기타
+
+## X-DB-Category-!Ly0: 판다리아의 안개 PvP 아이템_투기장 시즌 12 중급_무기
+## X-DB-Category-!Ly1: 전사
+## X-DB-Category-!Ly2: 도적
+## X-DB-Category-!Ly3: 사제(신성/수양)
+## X-DB-Category-!Ly4: 사제(암흑)
+## X-DB-Category-!Ly5: 마법사
+## X-DB-Category-!Ly6: 흑마법사
+## X-DB-Category-!Ly7: 사냥꾼
+## X-DB-Category-!Ly8: 드루이드(수호/야성)
+## X-DB-Category-!Ly9: 드루이드(조화)
+## X-DB-Category-!Lya: 드루이드(회복)
+## X-DB-Category-!Lyb: 주술사(고양)
+## X-DB-Category-!Lyc: 주술사(정기)
+## X-DB-Category-!Lyd: 주술사(복원)
+## X-DB-Category-!Lye: 성기사(징벌)
+## X-DB-Category-!Lyf: 성기사(신성)
+## X-DB-Category-!Lyg: 죽음의 기사
+## X-DB-Category-!Lyh: 수도사(양조/풍운)
+## X-DB-Category-!Lyi: 수도사(운무)
+## X-DB-Category-!Lyj: 망토
+## X-DB-Category-!Lyk: 허리
+## X-DB-Category-!Lyl: 장화
+## X-DB-Category-!Lym: 손목
+## X-DB-Category-!Lyn: 목걸이
+## X-DB-Category-!Lyo: 반지
+## X-DB-Category-!Lyp: 기타
+
+## X-DB-Category-!Lz0: 판다리아의 안개 PvP 아이템_투기장 시즌 12 하급_무기
+## X-DB-Category-!Lz1: 전사
+## X-DB-Category-!Lz2: 도적
+## X-DB-Category-!Lz3: 사제(신성/수양)
+## X-DB-Category-!Lz4: 사제(암흑)
+## X-DB-Category-!Lz5: 마법사
+## X-DB-Category-!Lz6: 흑마법사
+## X-DB-Category-!Lz7: 사냥꾼
+## X-DB-Category-!Lz8: 드루이드(수호/야성)
+## X-DB-Category-!Lz9: 드루이드(조화)
+## X-DB-Category-!Lza: 드루이드(회복)
+## X-DB-Category-!Lzb: 주술사(고양)
+## X-DB-Category-!Lzc: 주술사(정기)
+## X-DB-Category-!Lzd: 주술사(복원)
+## X-DB-Category-!Lze: 성기사(징벌)
+## X-DB-Category-!Lzf: 성기사(신성)
+## X-DB-Category-!Lzg: 죽음의 기사
+## X-DB-Category-!Lzh: 수도사(양조/풍운)
+## X-DB-Category-!Lzi: 수도사(운무)
+## X-DB-Category-!Lzj: 망토
+## X-DB-Category-!Lzk: 허리
+## X-DB-Category-!Lzl: 장화
+## X-DB-Category-!Lzm: 손목
+## X-DB-Category-!Lzn: 목걸이
+## X-DB-Category-!Lzo: 반지
+## X-DB-Category-!Lzp: 기타

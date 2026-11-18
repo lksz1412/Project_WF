@@ -1,0 +1,126 @@
+{
+  "recorded": "2026-11-18T00:11:38.916960+09:00",
+  "scope": "Expanded Phase1.3 Step3 evidence/provenance/selfcheck only; B acceptance pending",
+  "state": "READY_FOR_INDEPENDENT_REVIEW_WITH_BOUNDED_LIMITS",
+  "inheritedPreR36Gate": {
+    "path": "Codex\\results\\old-reference\\a1-step3-gate.json",
+    "bytes": 1248,
+    "SHA256": "018BA5157F10DA4394BA759F00B239530027D2E449F9B90F56C5B7A62BA6C7D4"
+  },
+  "upstreamTestsRerun": false,
+  "frozenA4ArtifactCount": 46,
+  "frozenA4ActualHashSizeMatches": 46,
+  "publicAdditionalPackages": 4,
+  "publicAdditionalOriginalFiles": 5,
+  "postsRead": 34,
+  "imageReferences": 58,
+  "decodedReferences": 56,
+  "uniqueObservedHashes": 50,
+  "unavailableImageReferences": 2,
+  "sourceFullReadR36Files": 37,
+  "fullyParsedLiteralGroups": {
+    "original": 9,
+    "otherAdditional": 8,
+    "X2SelectedOnly": 20
+  },
+  "V42WholeSourceParserBoundaries": 3,
+  "additionalExtractions": [
+    {
+      "source": "V42",
+      "files": 1831,
+      "bytes": 52281213,
+      "wholeExtraction": "passed"
+    },
+    {
+      "source": "1932multipart",
+      "files": 2407,
+      "bytes": 38791956,
+      "wholeExtraction": "passed",
+      "listedByteEquality": true
+    },
+    {
+      "source": "3461NSIS",
+      "files": 2936,
+      "bytes": 40624475,
+      "wholeExtraction": "passed",
+      "listedByteEquality": null
+    },
+    {
+      "source": "X2NSIS",
+      "listedFiles": 4217,
+      "toolListedUnsafeNames": 288,
+      "wholeExtraction": "BLOCKED",
+      "selectedOnlyFiles": 46,
+      "selectedOnlyBytes": 940901,
+      "selectedExtraction": "passed",
+      "listedByteEquality": null
+    }
+  ],
+  "sourceOrInstallerExecution": false,
+  "newCRCOrExtractionRunsByA1": 0,
+  "independentB": "pending; parent dispatches samePhase ten perspectives once",
+  "Step4": "not started; held for parent followup",
+  "Step5GameImplementation": "not authorized/not performed",
+  "limits": [
+    "idx8906 two samples unavailable and unobserved despite original/thumb/Wayback bounded attempts",
+    "X2 whole extraction remains blocked; only exact safe46 recovered; unsafe-name origin unverified",
+    "V42 three profile data files partially parsed; no final values or wholeprofile totals consumed",
+    "same-build/profile/render identity as idx45 sample4 unverified",
+    "currentPC native input/filter/combat/runtime and asset redistribution rights unverified",
+    "preserve three window roles, not historical numericIDs or channel choices"
+  ],
+  "pinnedInputs": [
+    {
+      "path": "Codex\\docs\\old-devil-reference-comparison.md",
+      "bytes": 33939,
+      "SHA256": "8AD0BF93607BA51127773F474DC4D15279218E67CF5432EB8413B384B83B84B4"
+    },
+    {
+      "path": "Codex\\results\\old-reference\\a1-r36-source-evidence.md",
+      "bytes": 23138,
+      "SHA256": "AE86B3AB1E5FF86F8001D91DBA839C265E46451242A476B86169EF8679A980BA"
+    },
+    {
+      "path": "Codex\\plans\\2026-11-17-devil-ui-forever-phase1.3-세부계획.md",
+      "bytes": 36868,
+      "SHA256": "2D7CA7302C3A35F9905194E02790D799A853B6DF93D1B6FC6A2B245F9B8134CF"
+    },
+    {
+      "path": "Codex\\results\\old-reference\\a1-static-source-evidence.md",
+      "bytes": 8891,
+      "SHA256": "BAEE9D0925540F79CD78DBA60A2E89EF83355CB527A5D1B3A72E918B8B4EA276"
+    },
+    {
+      "path": "Codex\\results\\old-reference\\a1-r36-code-read-coverage.json",
+      "bytes": 12991,
+      "SHA256": "BF51F5A506798E87309F5A387BD7E5BF41718F5DBEDFFE7B4608EC727549B2CE"
+    },
+    {
+      "path": "Codex\\results\\old-reference\\a1-article-read-coverage.json",
+      "bytes": 28696,
+      "SHA256": "8A9655CD2B8135288CFA768F3B1E66B96140DA7256C73C9ED1378EA125C7661E"
+    },
+    {
+      "path": "Codex\\results\\old-reference\\image-observations\\findings.md",
+      "bytes": 71628,
+      "SHA256": "330C9B229F454650C7643E5D5B7579C8E8050E00081B2EB6121BCF2A34BC1DD6"
+    },
+    {
+      "path": "Codex\\results\\old-reference\\image-observations\\coverage.json",
+      "bytes": 130772,
+      "SHA256": "4FDE8B197427084D8E5F2407B3E48B3814EA1D7F3B7BC672BEA142232201F8D5"
+    },
+    {
+      "path": "Codex\\results\\old-reference\\acquisition\\r36\\FILES_FROZEN.json",
+      "bytes": 17221,
+      "SHA256": "65556ABF27652A9B2C034A9713327E11BC04137E9610FBB5EE1019538AC07361"
+    },
+    {
+      "path": "Codex\\results\\old-reference\\acquisition\\r36\\R36_FINAL_MECHANICAL_RECEIPT.json",
+      "bytes": 6754,
+      "SHA256": "C3E1C896F3975B3DC71F07838F6F9359D5F6DBE3782F9A07D0CB5FB293AF7C58"
+    }
+  ],
+  "actualCommand": "python -X utf8 D:\\Projects\\Project_WF\\work\\old-reference-final-gate-_vrxjoqf\\final_evidence_gate.py",
+  "selfCheck": "actual frozen receipt/hash/size identity + current report/plan required clauses + saved parser-proof consistency; no upstream acquisition/image/CRC/parser/source runtime replay"
+}

@@ -1,0 +1,37 @@
+
+Examiner_Config = {
+	["ActAsUIFrame"] = true,
+	["combineAdditiveStats"] = true,
+	["inspectGlyphs"] = true,
+	["scale"] = 1,
+	["featsFilter"] = "",
+	["inspectFeats"] = true,
+	["CombineAdditiveStats"] = true,
+	["cacheSort"] = "class",
+	["statsViewType"] = 1,
+	[2] = true,
+	["featsStub"] = -1,
+	["clearInspectOnHide"] = false,
+	["autoInspect"] = true,
+	["EnableCache"] = false,
+	["activePage"] = 3,
+	["AcceptAddonMsg"] = false,
+	["featsCat"] = -1,
+	["caching"] = {
+	},
+	["alwaysShowItemLevel"] = false,
+	["cacheFilter"] = "",
+	["QueryFeats"] = false,
+	["QueryBadges"] = true,
+	["percentRatings"] = false,
+	["RatingsInPercent"] = false,
+	["AutoInspect"] = true,
+	["CachePvP"] = false,
+	["featsSort"] = "none",
+	["badgeSort"] = "name",
+	["showBackground"] = true,
+	["ScanUnknownItems"] = true,
+	["makeMovable"] = false,
+}
+Examiner_Cache = {
+}

@@ -1,0 +1,198 @@
+[
+  {
+    "selection": {
+      "role": "primary",
+      "metadataState": "consistent",
+      "row": {
+        "postID": 45,
+        "ordinal1": 159,
+        "filenameLiteral": "DevilUI-X2 R3.4.zip",
+        "clientVersionLiteral": "2.4.3",
+        "downloadCountLiteral": "222403",
+        "dateLiteral": "2008-09-27",
+        "dateKind": "file table registration date",
+        "fileID": null,
+        "fileIDState": "not-exposed-in-anonymous-row",
+        "literalPublicURLs": [],
+        "mappingState": "no-row-URL-literal; public recovery not exhausted",
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "DevilUI-X2 R3.4.zip",
+            "attributes": {
+              "href": "javascript:top.login();",
+              "onfocus": "this.blur();"
+            },
+            "line": 1620
+          }
+        ],
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-45.html",
+          "line": 1617,
+          "selector": "#addonFileInfo table tr"
+        },
+        "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">DevilUI-X2 R3.4.zip</a></span>\n</span>\n</td>\n<td class=\"version\">2.4.3</td>\n<td class=\"download\">222403</td>\n<td class=\"postdate\">2008-09-27</td>\n</tr>"
+      }
+    },
+    "URLbasis": "PREDICTED based observed latest pds /upload/YYYY/MM/DD/addon/filename pattern + exact selected row date/name; not observed older literal",
+    "state": "candidate-unavailable-or-notZIP",
+    "provenance": {
+      "time": "2026-11-17T14:33:12.0579495Z",
+      "error": "원격 서버에서 (404) 찾을 수 없음 오류를 반환했습니다.",
+      "HTTP": 404,
+      "requestedURL": "https://pds.inven.co.kr/upload/2008/09/27/addon/DevilUI-X2%20R3.4.zip",
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\downloads\\DevilUI-X2 R3.4.zip",
+      "attempts": 1,
+      "commandExitCode": 0
+    },
+    "ZIPverified": false
+  },
+  {
+    "selection": {
+      "role": "earlier-comparison",
+      "metadataState": "consistent",
+      "row": {
+        "postID": 45,
+        "ordinal1": 169,
+        "filenameLiteral": "DevilUI-X2_R1.zip",
+        "clientVersionLiteral": "2.4.1",
+        "downloadCountLiteral": "118548",
+        "dateLiteral": "2008-04-26",
+        "dateKind": "file table registration date",
+        "fileID": null,
+        "fileIDState": "not-exposed-in-anonymous-row",
+        "literalPublicURLs": [],
+        "mappingState": "no-row-URL-literal; public recovery not exhausted",
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "DevilUI-X2_R1.zip",
+            "attributes": {
+              "href": "javascript:top.login();",
+              "onfocus": "this.blur();"
+            },
+            "line": 1720
+          }
+        ],
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-45.html",
+          "line": 1717,
+          "selector": "#addonFileInfo table tr"
+        },
+        "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">DevilUI-X2_R1.zip</a></span>\n</span>\n</td>\n<td class=\"version\">2.4.1</td>\n<td class=\"download\">118548</td>\n<td class=\"postdate\">2008-04-26</td>\n</tr>"
+      }
+    },
+    "URLbasis": "PREDICTED based observed latest pds /upload/YYYY/MM/DD/addon/filename pattern + exact selected row date/name; not observed older literal",
+    "state": "candidate-unavailable-or-notZIP",
+    "provenance": {
+      "time": "2026-11-17T14:33:12.7330096Z",
+      "error": "원격 서버에서 (404) 찾을 수 없음 오류를 반환했습니다.",
+      "HTTP": 404,
+      "requestedURL": "https://pds.inven.co.kr/upload/2008/04/26/addon/DevilUI-X2_R1.zip",
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\downloads\\DevilUI-X2_R1.zip",
+      "attempts": 1,
+      "commandExitCode": 0
+    },
+    "ZIPverified": false
+  },
+  {
+    "selection": {
+      "role": "boundary",
+      "metadataState": "consistent",
+      "row": {
+        "postID": 45,
+        "ordinal1": 154,
+        "filenameLiteral": "DevilUI 3.05.zip",
+        "clientVersionLiteral": "3.0.2",
+        "downloadCountLiteral": "84076",
+        "dateLiteral": "2008-11-05",
+        "dateKind": "file table registration date",
+        "fileID": null,
+        "fileIDState": "not-exposed-in-anonymous-row",
+        "literalPublicURLs": [],
+        "mappingState": "no-row-URL-literal; public recovery not exhausted",
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "DevilUI 3.05.zip",
+            "attributes": {
+              "href": "javascript:top.login();",
+              "onfocus": "this.blur();"
+            },
+            "line": 1570
+          }
+        ],
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-45.html",
+          "line": 1567,
+          "selector": "#addonFileInfo table tr"
+        },
+        "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">DevilUI 3.05.zip</a></span>\n</span>\n</td>\n<td class=\"version\">3.0.2</td>\n<td class=\"download\">84076</td>\n<td class=\"postdate\">2008-11-05</td>\n</tr>"
+      }
+    },
+    "URLbasis": "PREDICTED based observed latest pds /upload/YYYY/MM/DD/addon/filename pattern + exact selected row date/name; not observed older literal",
+    "state": "candidate-unavailable-or-notZIP",
+    "provenance": {
+      "time": "2026-11-17T14:33:13.4102582Z",
+      "error": "원격 서버에서 (404) 찾을 수 없음 오류를 반환했습니다.",
+      "HTTP": 404,
+      "requestedURL": "https://pds.inven.co.kr/upload/2008/11/05/addon/DevilUI%203.05.zip",
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\downloads\\DevilUI 3.05.zip",
+      "attempts": 1,
+      "commandExitCode": 0
+    },
+    "ZIPverified": false
+  },
+  {
+    "selection": {
+      "role": "fallback-only-if-olderX2-unavailable",
+      "metadataState": "consistent",
+      "row": {
+        "postID": 45,
+        "ordinal1": 172,
+        "filenameLiteral": "DevilUI-X2_2.4R04041.zip",
+        "clientVersionLiteral": "2.4.0",
+        "downloadCountLiteral": "39365",
+        "dateLiteral": "2008-04-04",
+        "dateKind": "file table registration date",
+        "fileID": null,
+        "fileIDState": "not-exposed-in-anonymous-row",
+        "literalPublicURLs": [],
+        "mappingState": "no-row-URL-literal; public recovery not exhausted",
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "DevilUI-X2_2.4R04041.zip",
+            "attributes": {
+              "href": "javascript:top.login();",
+              "onfocus": "this.blur();"
+            },
+            "line": 1750
+          }
+        ],
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-45.html",
+          "line": 1747,
+          "selector": "#addonFileInfo table tr"
+        },
+        "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">DevilUI-X2_2.4R04041.zip</a></span>\n</span>\n</td>\n<td class=\"version\">2.4.0</td>\n<td class=\"download\">39365</td>\n<td class=\"postdate\">2008-04-04</td>\n</tr>"
+      }
+    },
+    "URLbasis": "PREDICTED based observed latest pds /upload/YYYY/MM/DD/addon/filename pattern + exact selected row date/name; not observed older literal",
+    "state": "candidate-unavailable-or-notZIP",
+    "provenance": {
+      "time": "2026-11-17T14:33:14.1095153Z",
+      "error": "원격 서버에서 (404) 찾을 수 없음 오류를 반환했습니다.",
+      "HTTP": 404,
+      "requestedURL": "https://pds.inven.co.kr/upload/2008/04/04/addon/DevilUI-X2_2.4R04041.zip",
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\downloads\\DevilUI-X2_2.4R04041.zip",
+      "attempts": 1,
+      "commandExitCode": 0
+    },
+    "ZIPverified": false
+  }
+]

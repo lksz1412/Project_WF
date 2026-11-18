@@ -1,0 +1,140 @@
+{
+  "state": "FILES_FROZEN",
+  "scope": "Step4 mechanical accessory collection, source unavailable explicitly bounded",
+  "selfCheck": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-acquisition\\SELF_CHECK.json",
+  "current": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-acquisition\\CURRENT_ACQUISITION.json",
+  "files": [
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-acquisition\\basic-chat-mods-page-ready.json",
+      "bytes": 565,
+      "SHA256": "5F878A51E503FD9CD1DB076D98792260F411EF369CC95389B66B81C8795DE5EC"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-acquisition\\bcm-pinned-readme-receipt.json",
+      "bytes": 1095,
+      "SHA256": "ED00EE713787D72B9785082F494803D225FE350F88C918FD96FB22189F840AFD"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-acquisition\\bcm-v12.1.2-release-archive-checks.json",
+      "bytes": 747,
+      "SHA256": "D5948ECB8452F54A91A0565BB6213CA21688799606DA58FABCACA56F5B4E5109"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-acquisition\\bcm-v12.1.2-release-source-catalog.json",
+      "bytes": 20922,
+      "SHA256": "89423F16C7D6AB04CF46FBB1AFAE42EB2775DC64D15DDFAE3836AEB1F0CDEE24"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-acquisition\\BCM_READY.json",
+      "bytes": 5850,
+      "SHA256": "392445C28FD34B43327DA312DCAB6724EE9F9C8E596564E3D8B5F07ABC5E1A6D"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-acquisition\\chatty-api-receipts.json",
+      "bytes": 1504,
+      "SHA256": "1EBFF17E8599AD36DBF1E876D4360080FA219719A1EAE8094A1299D4CB96DA2C"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-acquisition\\chatty-download-receipt.json",
+      "bytes": 472,
+      "SHA256": "A8B05104365525EEFC8176905CC040CAD7D094493DB4540BB48302291BEA1159"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-acquisition\\chatty-PAGE_READY.json",
+      "bytes": 911,
+      "SHA256": "EAC056E47CE5574286B8ACD930B0526E4BB20993BFAA9CB2AEE53B2C7F77F645"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-acquisition\\chattynator-page-ready.json",
+      "bytes": 553,
+      "SHA256": "F941467DBD50C8B2BEC00FE883A486A0F711B2CD54183C0D37B970DA36211701"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-acquisition\\CURRENT_ACQUISITION.json",
+      "bytes": 10009,
+      "SHA256": "18F8C8E17FBC09A6223E8FBDB82D49DEACAC8AE2B621B089EA6CC5FA4CB92DC4"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-acquisition\\exact-CF-download-receipts.json",
+      "bytes": 1588,
+      "SHA256": "8B774B443EE5E6ED0DB04BB89FD1B934518D40CED3F7DC122323828B7B9C3EF5"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-acquisition\\glass-api-receipts.json",
+      "bytes": 2065,
+      "SHA256": "5651955B7FCCDB68AE85654B8284953234F28AE5D6AD15D9DBF90AE2D9531962"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-acquisition\\glass-forever-page-ready.json",
+      "bytes": 559,
+      "SHA256": "3F7F30A1903AF9671976D2160420A2FD8FD4F000C142E63173D53150E72AA9F1"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-acquisition\\glass-PAGE_READY.json",
+      "bytes": 935,
+      "SHA256": "6EC13AF12A25FBF1A1C6744519228FBC0967CF15E543B60E9E200886FAF2235B"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-acquisition\\glass-v1.1.6-source-archive-checks.json",
+      "bytes": 756,
+      "SHA256": "2EDF0734204DD759009A2FD58FF8F6DD089A46B676B983DE712505EB0D456D43"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-acquisition\\glass-v1.1.6-source-source-catalog.json",
+      "bytes": 71967,
+      "SHA256": "3293379660D59990A0064840B848EF17A076A0D00FFE944FDF77F7EE86F5CFF6"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-acquisition\\GLASS_READY.json",
+      "bytes": 2583,
+      "SHA256": "FAB5348D87FE581657CB3D4701D456BA3ED64319A08ECC8EF5BF457EC9BA11C5"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-acquisition\\prat-3-0-page-ready.json",
+      "bytes": 544,
+      "SHA256": "60A7E388F165A808B2FF4EB279E40038FDD75EB42E1B9F1E53F8AB6FC4674CE3"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-acquisition\\prat-3.9.117-release-archive-checks.json",
+      "bytes": 755,
+      "SHA256": "1F4D502BFCEC906769F884A5511473B1B574CA8F361E07E83F942AD072D809C8"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-acquisition\\prat-3.9.117-release-source-catalog.json",
+      "bytes": 145152,
+      "SHA256": "B0A2CF6E6F23AFDB23C68009BB85D3E8F0B4EEA3B2C59536C7263DC4AC23B2F9"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-acquisition\\prat-api-receipts.json",
+      "bytes": 2062,
+      "SHA256": "C871F009B2C55D3AD9B6FA55F8788EC8F3B9D5426699837F8090C818D4BBC14E"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-acquisition\\prat-PAGE_READY.json",
+      "bytes": 912,
+      "SHA256": "BE52DF4850799D3B274D21B71B007DA40CE5BB9EB414B59872BCC03451681F11"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-acquisition\\PRAT_READY.json",
+      "bytes": 4956,
+      "SHA256": "3EE3155D293C8561029D52D9AEA4190CE89BA111CC495348D56ADFC3885CB793"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-acquisition\\provenance-initial.json",
+      "bytes": 3862,
+      "SHA256": "F0B9C2E8B6843214CF5527AD89F05F27217B924F47F648EA90705D752011D456"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-acquisition\\SELF_CHECK.json",
+      "bytes": 1641,
+      "SHA256": "E3D7F9AC0314CC00B04AF9BC84D80463F8F930DE481EF6D974BC885EC265C704"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\handoffs\\old-reference\\acquisition-step4\\work_log.md",
+      "bytes": 25047,
+      "SHA256": "5B2C8074B3BCAFA1DB36F726DDE0C5F9996E0E92CD24AFE5DDB9C9314BC6FDA1"
+    }
+  ],
+  "cacheRoot": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu",
+  "noFurtherWritesPlanned": true
+}

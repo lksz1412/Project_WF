@@ -1,0 +1,130 @@
+{
+  "scope": "Exactly4 supplied missingimageURLs, one public Waybackavailability request each; no retries. Static identity-image replay only if exact reported capture target. Other successful50hashes not fetched.",
+  "lookupCount": 4,
+  "results": [
+    {
+      "reference": {
+        "postID": 8906,
+        "DOMordinal": 1,
+        "kind": "original",
+        "url": "https://upload.inven.co.kr/upload/2014/10/16/bbs/i0621236398.jpg",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-8906.html",
+          "selector": "screenshot img",
+          "line": 33
+        }
+      },
+      "availability": {
+        "finalURL": "https://archive.org/wayback/available?url=https%3A%2F%2Fupload.inven.co.kr%2Fupload%2F2014%2F10%2F16%2Fbbs%2Fi0621236398.jpg",
+        "time": "2026-11-17T14:12:30.3760931Z",
+        "contentType": "application/json",
+        "HTTP": 200,
+        "requestedURL": "https://archive.org/wayback/available?url=https%3A%2F%2Fupload.inven.co.kr%2Fupload%2F2014%2F10%2F16%2Fbbs%2Fi0621236398.jpg",
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-460dhml5\\wayback-availability-1.json",
+        "commandExitCode": 0,
+        "attempts": 1,
+        "bytes": 101,
+        "SHA256": "A25DAFCBFDE4E25B51DBBE9B88167B1EE5922752DAE4DDB9088EA1E0782F8C34"
+      },
+      "state": "no-capture-returned",
+      "imageAcquired": false,
+      "response": {
+        "url": "https://upload.inven.co.kr/upload/2014/10/16/bbs/i0621236398.jpg",
+        "archived_snapshots": {}
+      }
+    },
+    {
+      "reference": {
+        "postID": 8906,
+        "DOMordinal": 1,
+        "kind": "thumbnail",
+        "url": "https://upload.inven.co.kr/upload/2014/10/16/bbs/thumb/n0621236398.jpg",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-8906.html",
+          "selector": "screenshot img",
+          "line": 33
+        }
+      },
+      "availability": {
+        "finalURL": "https://archive.org/wayback/available?url=https%3A%2F%2Fupload.inven.co.kr%2Fupload%2F2014%2F10%2F16%2Fbbs%2Fthumb%2Fn0621236398.jpg",
+        "time": "2026-11-17T14:12:31.6640568Z",
+        "contentType": "application/json",
+        "HTTP": 200,
+        "requestedURL": "https://archive.org/wayback/available?url=https%3A%2F%2Fupload.inven.co.kr%2Fupload%2F2014%2F10%2F16%2Fbbs%2Fthumb%2Fn0621236398.jpg",
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-460dhml5\\wayback-availability-2.json",
+        "commandExitCode": 0,
+        "attempts": 1,
+        "bytes": 107,
+        "SHA256": "5B3202A98023DB2C612CADB3954AA78E1C32E7AAA51545B92CCFCDC3401415B6"
+      },
+      "state": "no-capture-returned",
+      "imageAcquired": false,
+      "response": {
+        "url": "https://upload.inven.co.kr/upload/2014/10/16/bbs/thumb/n0621236398.jpg",
+        "archived_snapshots": {}
+      }
+    },
+    {
+      "reference": {
+        "postID": 8906,
+        "DOMordinal": 2,
+        "kind": "original",
+        "url": "https://upload.inven.co.kr/upload/2014/10/17/bbs/i0021882965.png",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-8906.html",
+          "selector": "screenshot img",
+          "line": 40
+        }
+      },
+      "availability": {
+        "finalURL": "https://archive.org/wayback/available?url=https%3A%2F%2Fupload.inven.co.kr%2Fupload%2F2014%2F10%2F17%2Fbbs%2Fi0021882965.png",
+        "time": "2026-11-17T14:12:32.6614617Z",
+        "contentType": "application/json",
+        "HTTP": 200,
+        "requestedURL": "https://archive.org/wayback/available?url=https%3A%2F%2Fupload.inven.co.kr%2Fupload%2F2014%2F10%2F17%2Fbbs%2Fi0021882965.png",
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-460dhml5\\wayback-availability-3.json",
+        "commandExitCode": 0,
+        "attempts": 1,
+        "bytes": 101,
+        "SHA256": "51C4D94525123361C90D6A3308198045B376A28B8D2EC3FC0A74F3D488FE02CF"
+      },
+      "state": "no-capture-returned",
+      "imageAcquired": false,
+      "response": {
+        "url": "https://upload.inven.co.kr/upload/2014/10/17/bbs/i0021882965.png",
+        "archived_snapshots": {}
+      }
+    },
+    {
+      "reference": {
+        "postID": 8906,
+        "DOMordinal": 2,
+        "kind": "thumbnail",
+        "url": "https://upload.inven.co.kr/upload/2014/10/17/bbs/thumb/n0021882965.png",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-8906.html",
+          "selector": "screenshot img",
+          "line": 40
+        }
+      },
+      "availability": {
+        "finalURL": "https://archive.org/wayback/available?url=https%3A%2F%2Fupload.inven.co.kr%2Fupload%2F2014%2F10%2F17%2Fbbs%2Fthumb%2Fn0021882965.png",
+        "time": "2026-11-17T14:12:33.6708604Z",
+        "contentType": "application/json",
+        "HTTP": 200,
+        "requestedURL": "https://archive.org/wayback/available?url=https%3A%2F%2Fupload.inven.co.kr%2Fupload%2F2014%2F10%2F17%2Fbbs%2Fthumb%2Fn0021882965.png",
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-460dhml5\\wayback-availability-4.json",
+        "commandExitCode": 0,
+        "attempts": 1,
+        "bytes": 107,
+        "SHA256": "E10E160A99992FAF7CF86C1CD14135E71F6C920582A7F84593FEF050F84EBEAF"
+      },
+      "state": "no-capture-returned",
+      "imageAcquired": false,
+      "response": {
+        "url": "https://upload.inven.co.kr/upload/2014/10/17/bbs/thumb/n0021882965.png",
+        "archived_snapshots": {}
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+## Interface: 60100
+## Title: |cffDAFF8Az|cff8ABAFFBroker|rDurability
+## Notes: LDB Durability plugin
+## Author: Zergreth, Jzar
+## X-Credits: Funkydude
+## Version: 1.5
+## SavedVariables: zBD
+
+LibStub.lua
+CallbackHandler-1.0.lua
+LibDataBroker-1.1.lua
+
+core.lua

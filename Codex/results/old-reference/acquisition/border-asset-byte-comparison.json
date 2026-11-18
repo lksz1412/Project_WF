@@ -1,0 +1,645 @@
+{
+  "method": "SHA256 exactbytes and18byte TGAheader only. No image content, settings identity, publisher identity, or visual equivalence conclusion. Includes all55 unorderedpairs of11assignedassets.",
+  "assets": [
+    {
+      "family": "2009",
+      "filename": "Devil.tga",
+      "sourceSuffix": "Interface/AddOns/mySharedMedia/border/Devil.tga",
+      "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\archive-2009-members.json",
+      "inventoryIndex0": 1966,
+      "bytes": 8236,
+      "SHA256": "9DE505F668137A32B3ADD4CD56ADB6B84883B798B0E3398C37B6CBCCED914504",
+      "TGAheader": {
+        "imageType": 2,
+        "colorMapType": 0,
+        "width": 128,
+        "height": 16,
+        "pixelDepth": 32,
+        "descriptor": 8
+      },
+      "observedImageContent": false
+    },
+    {
+      "family": "2009",
+      "filename": "Devil2.tga",
+      "sourceSuffix": "Interface/AddOns/mySharedMedia/border/Devil2.tga",
+      "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\archive-2009-members.json",
+      "inventoryIndex0": 1967,
+      "bytes": 8236,
+      "SHA256": "F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD",
+      "TGAheader": {
+        "imageType": 2,
+        "colorMapType": 0,
+        "width": 128,
+        "height": 16,
+        "pixelDepth": 32,
+        "descriptor": 8
+      },
+      "observedImageContent": false
+    },
+    {
+      "family": "2009",
+      "filename": "roth.tga",
+      "sourceSuffix": "Interface/AddOns/mySharedMedia/border/roth.tga",
+      "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\archive-2009-members.json",
+      "inventoryIndex0": 1968,
+      "bytes": 8236,
+      "SHA256": "49CA0BC8E0CBDD6ABED71748E3B686032F588C5E2829E6B844C9EC1F8B1A3AA9",
+      "TGAheader": {
+        "imageType": 2,
+        "colorMapType": 0,
+        "width": 128,
+        "height": 16,
+        "pixelDepth": 32,
+        "descriptor": 8
+      },
+      "observedImageContent": false
+    },
+    {
+      "family": "alpha",
+      "filename": "Devil.tga",
+      "sourceSuffix": "Interface\\addons\\!DevilUI\\media\\border\\Devil.tga",
+      "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\alpha-nsis-members.json",
+      "inventoryIndex0": 22,
+      "bytes": 8236,
+      "SHA256": "9DE505F668137A32B3ADD4CD56ADB6B84883B798B0E3398C37B6CBCCED914504",
+      "TGAheader": {
+        "imageType": 2,
+        "colorMapType": 0,
+        "width": 128,
+        "height": 16,
+        "pixelDepth": 32,
+        "descriptor": 8
+      },
+      "observedImageContent": false
+    },
+    {
+      "family": "alpha",
+      "filename": "Devil2.tga",
+      "sourceSuffix": "Interface\\addons\\!DevilUI\\media\\border\\Devil2.tga",
+      "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\alpha-nsis-members.json",
+      "inventoryIndex0": 23,
+      "bytes": 8236,
+      "SHA256": "F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD",
+      "TGAheader": {
+        "imageType": 2,
+        "colorMapType": 0,
+        "width": 128,
+        "height": 16,
+        "pixelDepth": 32,
+        "descriptor": 8
+      },
+      "observedImageContent": false
+    },
+    {
+      "family": "alpha",
+      "filename": "roth.tga",
+      "sourceSuffix": "Interface\\addons\\!DevilUI\\media\\border\\roth.tga",
+      "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\alpha-nsis-members.json",
+      "inventoryIndex0": 26,
+      "bytes": 8236,
+      "SHA256": "49CA0BC8E0CBDD6ABED71748E3B686032F588C5E2829E6B844C9EC1F8B1A3AA9",
+      "TGAheader": {
+        "imageType": 2,
+        "colorMapType": 0,
+        "width": 128,
+        "height": 16,
+        "pixelDepth": 32,
+        "descriptor": 8
+      },
+      "observedImageContent": false
+    },
+    {
+      "family": "alpha",
+      "filename": "Devil3.tga",
+      "sourceSuffix": "Interface\\addons\\!DevilUI\\media\\border\\Devil3.tga",
+      "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\alpha-nsis-members.json",
+      "inventoryIndex0": 24,
+      "bytes": 2200,
+      "SHA256": "150DEC18668CCCB2EF33B37D1C8A9468FDE7478F42747CEFFC037037C215D86B",
+      "TGAheader": {
+        "imageType": 10,
+        "colorMapType": 0,
+        "width": 128,
+        "height": 16,
+        "pixelDepth": 32,
+        "descriptor": 8
+      },
+      "observedImageContent": false
+    },
+    {
+      "family": "2022",
+      "filename": "Devil.tga",
+      "sourceSuffix": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\media\\border\\Devil.tga",
+      "inventoryPath": null,
+      "inventoryIndex0": null,
+      "bytes": 8236,
+      "SHA256": "9DE505F668137A32B3ADD4CD56ADB6B84883B798B0E3398C37B6CBCCED914504",
+      "TGAheader": {
+        "imageType": 2,
+        "colorMapType": 0,
+        "width": 128,
+        "height": 16,
+        "pixelDepth": 32,
+        "descriptor": 8
+      },
+      "observedImageContent": false
+    },
+    {
+      "family": "2022",
+      "filename": "Devil2.tga",
+      "sourceSuffix": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\media\\border\\Devil2.tga",
+      "inventoryPath": null,
+      "inventoryIndex0": null,
+      "bytes": 8236,
+      "SHA256": "F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD",
+      "TGAheader": {
+        "imageType": 2,
+        "colorMapType": 0,
+        "width": 128,
+        "height": 16,
+        "pixelDepth": 32,
+        "descriptor": 8
+      },
+      "observedImageContent": false
+    },
+    {
+      "family": "2022",
+      "filename": "roth.tga",
+      "sourceSuffix": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\media\\border\\roth.tga",
+      "inventoryPath": null,
+      "inventoryIndex0": null,
+      "bytes": 8236,
+      "SHA256": "49CA0BC8E0CBDD6ABED71748E3B686032F588C5E2829E6B844C9EC1F8B1A3AA9",
+      "TGAheader": {
+        "imageType": 2,
+        "colorMapType": 0,
+        "width": 128,
+        "height": 16,
+        "pixelDepth": 32,
+        "descriptor": 8
+      },
+      "observedImageContent": false
+    },
+    {
+      "family": "2022",
+      "filename": "Devil3.tga",
+      "sourceSuffix": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\media\\border\\Devil3.tga",
+      "inventoryPath": null,
+      "inventoryIndex0": null,
+      "bytes": 2200,
+      "SHA256": "150DEC18668CCCB2EF33B37D1C8A9468FDE7478F42747CEFFC037037C215D86B",
+      "TGAheader": {
+        "imageType": 10,
+        "colorMapType": 0,
+        "width": 128,
+        "height": 16,
+        "pixelDepth": 32,
+        "descriptor": 8
+      },
+      "observedImageContent": false
+    }
+  ],
+  "comparisons": [
+    {
+      "leftFamily": "2009",
+      "leftFilename": "Devil.tga",
+      "rightFamily": "2009",
+      "rightFilename": "Devil2.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "2009",
+      "leftFilename": "Devil.tga",
+      "rightFamily": "2009",
+      "rightFilename": "roth.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "2009",
+      "leftFilename": "Devil.tga",
+      "rightFamily": "alpha",
+      "rightFilename": "Devil.tga",
+      "byteIdentical": true,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "2009",
+      "leftFilename": "Devil.tga",
+      "rightFamily": "alpha",
+      "rightFilename": "Devil2.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "2009",
+      "leftFilename": "Devil.tga",
+      "rightFamily": "alpha",
+      "rightFilename": "roth.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "2009",
+      "leftFilename": "Devil.tga",
+      "rightFamily": "alpha",
+      "rightFilename": "Devil3.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "2009",
+      "leftFilename": "Devil.tga",
+      "rightFamily": "2022",
+      "rightFilename": "Devil.tga",
+      "byteIdentical": true,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "2009",
+      "leftFilename": "Devil.tga",
+      "rightFamily": "2022",
+      "rightFilename": "Devil2.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "2009",
+      "leftFilename": "Devil.tga",
+      "rightFamily": "2022",
+      "rightFilename": "roth.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "2009",
+      "leftFilename": "Devil.tga",
+      "rightFamily": "2022",
+      "rightFilename": "Devil3.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "2009",
+      "leftFilename": "Devil2.tga",
+      "rightFamily": "2009",
+      "rightFilename": "roth.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "2009",
+      "leftFilename": "Devil2.tga",
+      "rightFamily": "alpha",
+      "rightFilename": "Devil.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "2009",
+      "leftFilename": "Devil2.tga",
+      "rightFamily": "alpha",
+      "rightFilename": "Devil2.tga",
+      "byteIdentical": true,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "2009",
+      "leftFilename": "Devil2.tga",
+      "rightFamily": "alpha",
+      "rightFilename": "roth.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "2009",
+      "leftFilename": "Devil2.tga",
+      "rightFamily": "alpha",
+      "rightFilename": "Devil3.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "2009",
+      "leftFilename": "Devil2.tga",
+      "rightFamily": "2022",
+      "rightFilename": "Devil.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "2009",
+      "leftFilename": "Devil2.tga",
+      "rightFamily": "2022",
+      "rightFilename": "Devil2.tga",
+      "byteIdentical": true,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "2009",
+      "leftFilename": "Devil2.tga",
+      "rightFamily": "2022",
+      "rightFilename": "roth.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "2009",
+      "leftFilename": "Devil2.tga",
+      "rightFamily": "2022",
+      "rightFilename": "Devil3.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "2009",
+      "leftFilename": "roth.tga",
+      "rightFamily": "alpha",
+      "rightFilename": "Devil.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "2009",
+      "leftFilename": "roth.tga",
+      "rightFamily": "alpha",
+      "rightFilename": "Devil2.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "2009",
+      "leftFilename": "roth.tga",
+      "rightFamily": "alpha",
+      "rightFilename": "roth.tga",
+      "byteIdentical": true,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "2009",
+      "leftFilename": "roth.tga",
+      "rightFamily": "alpha",
+      "rightFilename": "Devil3.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "2009",
+      "leftFilename": "roth.tga",
+      "rightFamily": "2022",
+      "rightFilename": "Devil.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "2009",
+      "leftFilename": "roth.tga",
+      "rightFamily": "2022",
+      "rightFilename": "Devil2.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "2009",
+      "leftFilename": "roth.tga",
+      "rightFamily": "2022",
+      "rightFilename": "roth.tga",
+      "byteIdentical": true,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "2009",
+      "leftFilename": "roth.tga",
+      "rightFamily": "2022",
+      "rightFilename": "Devil3.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "alpha",
+      "leftFilename": "Devil.tga",
+      "rightFamily": "alpha",
+      "rightFilename": "Devil2.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "alpha",
+      "leftFilename": "Devil.tga",
+      "rightFamily": "alpha",
+      "rightFilename": "roth.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "alpha",
+      "leftFilename": "Devil.tga",
+      "rightFamily": "alpha",
+      "rightFilename": "Devil3.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "alpha",
+      "leftFilename": "Devil.tga",
+      "rightFamily": "2022",
+      "rightFilename": "Devil.tga",
+      "byteIdentical": true,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "alpha",
+      "leftFilename": "Devil.tga",
+      "rightFamily": "2022",
+      "rightFilename": "Devil2.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "alpha",
+      "leftFilename": "Devil.tga",
+      "rightFamily": "2022",
+      "rightFilename": "roth.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "alpha",
+      "leftFilename": "Devil.tga",
+      "rightFamily": "2022",
+      "rightFilename": "Devil3.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "alpha",
+      "leftFilename": "Devil2.tga",
+      "rightFamily": "alpha",
+      "rightFilename": "roth.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "alpha",
+      "leftFilename": "Devil2.tga",
+      "rightFamily": "alpha",
+      "rightFilename": "Devil3.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "alpha",
+      "leftFilename": "Devil2.tga",
+      "rightFamily": "2022",
+      "rightFilename": "Devil.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "alpha",
+      "leftFilename": "Devil2.tga",
+      "rightFamily": "2022",
+      "rightFilename": "Devil2.tga",
+      "byteIdentical": true,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "alpha",
+      "leftFilename": "Devil2.tga",
+      "rightFamily": "2022",
+      "rightFilename": "roth.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "alpha",
+      "leftFilename": "Devil2.tga",
+      "rightFamily": "2022",
+      "rightFilename": "Devil3.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "alpha",
+      "leftFilename": "roth.tga",
+      "rightFamily": "alpha",
+      "rightFilename": "Devil3.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "alpha",
+      "leftFilename": "roth.tga",
+      "rightFamily": "2022",
+      "rightFilename": "Devil.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "alpha",
+      "leftFilename": "roth.tga",
+      "rightFamily": "2022",
+      "rightFilename": "Devil2.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "alpha",
+      "leftFilename": "roth.tga",
+      "rightFamily": "2022",
+      "rightFilename": "roth.tga",
+      "byteIdentical": true,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "alpha",
+      "leftFilename": "roth.tga",
+      "rightFamily": "2022",
+      "rightFilename": "Devil3.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "alpha",
+      "leftFilename": "Devil3.tga",
+      "rightFamily": "2022",
+      "rightFilename": "Devil.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "alpha",
+      "leftFilename": "Devil3.tga",
+      "rightFamily": "2022",
+      "rightFilename": "Devil2.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "alpha",
+      "leftFilename": "Devil3.tga",
+      "rightFamily": "2022",
+      "rightFilename": "roth.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "alpha",
+      "leftFilename": "Devil3.tga",
+      "rightFamily": "2022",
+      "rightFilename": "Devil3.tga",
+      "byteIdentical": true,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "2022",
+      "leftFilename": "Devil.tga",
+      "rightFamily": "2022",
+      "rightFilename": "Devil2.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "2022",
+      "leftFilename": "Devil.tga",
+      "rightFamily": "2022",
+      "rightFilename": "roth.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "2022",
+      "leftFilename": "Devil.tga",
+      "rightFamily": "2022",
+      "rightFilename": "Devil3.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "2022",
+      "leftFilename": "Devil2.tga",
+      "rightFamily": "2022",
+      "rightFilename": "roth.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "2022",
+      "leftFilename": "Devil2.tga",
+      "rightFamily": "2022",
+      "rightFilename": "Devil3.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    },
+    {
+      "leftFamily": "2022",
+      "leftFilename": "roth.tga",
+      "rightFamily": "2022",
+      "rightFilename": "Devil3.tga",
+      "byteIdentical": false,
+      "headerDimensionsEqual": true
+    }
+  ]
+}

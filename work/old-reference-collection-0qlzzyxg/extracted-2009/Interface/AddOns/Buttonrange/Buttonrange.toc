@@ -1,0 +1,5 @@
+## Interface: 30200
+## Title: Buttonrange
+## Author: thek
+## Notes: lightweight rangecheck
+core.lua

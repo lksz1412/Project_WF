@@ -1,0 +1,9 @@
+## Interface: 30200
+## Title: |cffffff9a블링크|r 무기 스왑 v2.02
+## Notes: 다른 두종류의 무기(원거리무기포함)를 설정하였다가 단축키 한번에 무기를 바꾸는 기능입니다. 또한 태세,변신폼,은신,상,오라에 따라서 다른 무기를 셋팅할수 있습니다.
+## SavedVariables:
+## SavedVariablesPerCharacter: BlinkWeaponSwap
+## OptionalDeps: BlinkMod
+localization.lua
+BlinkSwap.lua
+BlinkSwap.xml

@@ -1,0 +1,2133 @@
+﻿<Ui xmlns="http://www.blizzard.com/wow/ui" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Frame name="HotkeyTextFrame"  parent="UIParent" hidden="true" toplevel="true" movable="true" enableMouse="true" enableKeyboard="true">
+    <Size>
+      <AbsDimension x="421" y="550" />
+    </Size>
+    <Anchors>
+      <Anchor point="CENTER" relativeTo="UIParent">
+        <Offset>
+          <AbsDimension x="0" y="0" />
+        </Offset>
+      </Anchor>
+    </Anchors>
+    <TitleRegion setAllPoints="true" />
+    <Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+      <BackgroundInsets>
+        <AbsInset left="11" right="12" top="12" bottom="11" />
+      </BackgroundInsets>
+      <TileSize>
+        <AbsValue val="32" />
+      </TileSize>
+      <EdgeSize>
+        <AbsValue val="32" />
+      </EdgeSize>
+    </Backdrop>
+    <Layers>
+      <Layer>
+        <Texture name="$parentTitleBorder" file="Interface\DialogFrame\UI-DialogBox-Header">
+          <Size>
+            <AbsDimension x="160" y="32" />
+          </Size>
+          <Anchors>
+            <Anchor point="TOP">
+              <Offset>
+                <AbsDimension x="0" y="5" />
+              </Offset>
+            </Anchor>
+          </Anchors>
+          <TexCoords left="0.2" right="0.8" top="0" bottom="0.6" />
+        </Texture>
+        <FontString name="$parentTitleString" font="Fonts\2002.ttf" text="단축키 표시 설정 화면">
+          <Size>
+            <AbsDimension x="140" y="0" />
+          </Size>
+          <Anchors>
+            <Anchor point="TOP">
+              <Offset>
+                <AbsDimension x="0" y="-4" />
+              </Offset>
+            </Anchor>
+          </Anchors>
+          <FontHeight>
+            <AbsValue val="12" />
+          </FontHeight>
+          <Color r="1" g="0.8196079" b="0" />
+          <Shadow>
+            <Color r="0" g="0" b="0" />
+            <Offset>
+              <AbsDimension x="1" y="-1" />
+            </Offset>
+          </Shadow>
+        </FontString>
+      </Layer>
+    </Layers>
+    <Frames>
+      <Button name="ResetButton" text="초기화">
+        <Size>
+          <AbsDimension x="100" y="32" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="26" y="-505" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>
+            HotkeyText_Reset();
+          </OnClick>
+        </Scripts>
+        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </NormalTexture>
+        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </PushedTexture>
+        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </DisabledTexture>
+        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </HighlightTexture>
+        <ButtonText name="$parentText">
+          <FontHeight>
+            <AbsValue val="10" />
+          </FontHeight>
+        </ButtonText>
+        <NormalFont style="GameFontNormal" font="Fonts\2002.ttf">
+          <FontHeight>
+            <AbsValue val="12" />
+          </FontHeight>
+          <Color r="1" g="0.8196079" b="0" />
+          <Shadow>
+            <Color r="0" g="0" b="0" />
+            <Offset>
+              <AbsDimension x="1" y="-1" />
+            </Offset>
+          </Shadow>
+        </NormalFont>
+        <HighlightFont style="GameFontHighlight" font="Fonts\2002.ttf">
+          <FontHeight>
+            <AbsValue val="12" />
+          </FontHeight>
+          <Color r="1" g="1" b="1" />
+          <Shadow>
+            <Color r="0" g="0" b="0" />
+            <Offset>
+              <AbsDimension x="1" y="-1" />
+            </Offset>
+          </Shadow>
+        </HighlightFont>
+        <DisabledFont style="GameFontDisable" font="Fonts\2002.ttf">
+          <FontHeight>
+            <AbsValue val="12" />
+          </FontHeight>
+          <Color r="0.4980392" g="0.4980392" b="0.4980392" />
+          <Shadow>
+            <Color r="0" g="0" b="0" />
+            <Offset>
+              <AbsDimension x="1" y="-1" />
+            </Offset>
+          </Shadow>
+        </DisabledFont>
+      </Button>
+      <Button name="CloseButton" text="닫기">
+        <Size>
+          <AbsDimension x="100" y="32" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="302" y="-505" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Scripts>
+          <OnClick>
+            User_ActionButton_UpdateHotkeys(VehicleMenuBarActionButton6,"COMMAND");
+            HotkeyTextFrame:Hide();
+          </OnClick>
+        </Scripts>
+        <NormalTexture file="Interface\Buttons\UI-Panel-Button-Up">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </NormalTexture>
+        <PushedTexture file="Interface\Buttons\UI-Panel-Button-Down">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </PushedTexture>
+        <DisabledTexture file="Interface\Buttons\UI-Panel-Button-Disabled">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </DisabledTexture>
+        <HighlightTexture file="Interface\Buttons\UI-Panel-Button-Highlight" alphaMode="ADD">
+          <TexCoords left="0" right="0.625" top="0" bottom="0.6875" />
+        </HighlightTexture>
+        <ButtonText name="$parentText">
+          <FontHeight>
+            <AbsValue val="10" />
+          </FontHeight>
+        </ButtonText>
+        <NormalFont style="GameFontNormal" font="Fonts\2002.ttf">
+          <FontHeight>
+            <AbsValue val="12" />
+          </FontHeight>
+          <Color r="1" g="0.8196079" b="0" />
+          <Shadow>
+            <Color r="0" g="0" b="0" />
+            <Offset>
+              <AbsDimension x="1" y="-1" />
+            </Offset>
+          </Shadow>
+        </NormalFont>
+        <HighlightFont style="GameFontHighlight" font="Fonts\2002.ttf">
+          <FontHeight>
+            <AbsValue val="12" />
+          </FontHeight>
+          <Color r="1" g="1" b="1" />
+          <Shadow>
+            <Color r="0" g="0" b="0" />
+            <Offset>
+              <AbsDimension x="1" y="-1" />
+            </Offset>
+          </Shadow>
+        </HighlightFont>
+        <DisabledFont style="GameFontDisable" font="Fonts\2002.ttf">
+          <FontHeight>
+            <AbsValue val="12" />
+          </FontHeight>
+          <Color r="0.4980392" g="0.4980392" b="0.4980392" />
+          <Shadow>
+            <Color r="0" g="0" b="0" />
+            <Offset>
+              <AbsDimension x="1" y="-1" />
+            </Offset>
+          </Shadow>
+        </DisabledFont>
+      </Button>
+      <Frame name="$parentPanel3">
+        <Size>
+          <AbsDimension x="376" y="210" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="26" y="-290" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Backdrop bgFile="Interface\Tooltips\UI-Tooltip-Background" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+          <BackgroundInsets>
+            <AbsInset left="5" right="5" top="5" bottom="5" />
+          </BackgroundInsets>
+          <TileSize>
+            <AbsValue val="16" />
+          </TileSize>
+          <EdgeSize>
+            <AbsValue val="16" />
+          </EdgeSize>
+        </Backdrop>
+        <Frames>
+          <CheckButton name="ExtraActionBar">
+            <Size>
+              <AbsDimension x="32" y="32" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="21" y="-163" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer>
+                <FontString name="$parentText" font="Fonts\2002.ttf" text="확장바(ExtraBar)">
+                  <Anchors>
+                    <Anchor point="LEFT" relativePoint="RIGHT">
+                      <Offset>
+                        <AbsDimension x="-2" y="0" />
+                      </Offset>
+                    </Anchor>
+                  </Anchors>
+                  <FontHeight>
+                    <AbsValue val="12" />
+                  </FontHeight>
+                  <Color r="1" g="0.8196079" b="0" />
+                  <Shadow>
+                    <Color r="0" g="0" b="0" />
+                    <Offset>
+                      <AbsDimension x="1" y="-1" />
+                    </Offset>
+                  </Shadow>
+                </FontString>
+              </Layer>
+            </Layers>
+            <Scripts>
+              <OnShow>
+                if ActionButtonName[9].apply then
+                  this:SetChecked(1);
+                else
+                  this:SetChecked(0);
+                end
+              </OnShow>
+              <OnClick>
+                if this:GetChecked() then
+                  ActionButtonName[9].apply = 1;
+                else
+                  ActionButtonName[9].apply = nil;
+                end
+                User_ActionButton_UpdateHotkeys(VehicleMenuBarActionButton6,"COMMAND");
+              </OnClick>
+            </Scripts>
+            <NormalTexture file="Interface\Buttons\UI-CheckBox-Up" />
+            <PushedTexture file="Interface\Buttons\UI-CheckBox-Down" />
+            <HighlightTexture file="Interface\Buttons\UI-CheckBox-Highlight" alphaMode="ADD" />
+            <CheckedTexture file="Interface\Buttons\UI-CheckBox-Check" />
+            <DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled" />
+          </CheckButton>
+          <CheckButton name="PetActionBar">
+            <Size>
+              <AbsDimension x="32" y="32" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="188" y="-11" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer>
+                <FontString name="$parentText" font="Fonts\2002.ttf" text="소환수기술바">
+                  <Anchors>
+                    <Anchor point="LEFT" relativePoint="RIGHT">
+                      <Offset>
+                        <AbsDimension x="-2" y="0" />
+                      </Offset>
+                    </Anchor>
+                  </Anchors>
+                  <FontHeight>
+                    <AbsValue val="12" />
+                  </FontHeight>
+                  <Color r="1" g="0.8196079" b="0" />
+                  <Shadow>
+                    <Color r="0" g="0" b="0" />
+                    <Offset>
+                      <AbsDimension x="1" y="-1" />
+                    </Offset>
+                  </Shadow>
+                </FontString>
+              </Layer>
+            </Layers>
+            <Scripts>
+              <OnShow>
+                if ActionButtonName[8].apply then
+                  this:SetChecked(1);
+                else
+                  this:SetChecked(0);
+                end
+              </OnShow>
+              <OnClick>
+                if this:GetChecked() then
+                  ActionButtonName[8].apply = 1;
+                else
+                  ActionButtonName[8].apply = nil;
+                end
+                User_ActionButton_UpdateHotkeys(VehicleMenuBarActionButton6,"COMMAND");
+              </OnClick>
+            </Scripts>
+            <NormalTexture file="Interface\Buttons\UI-CheckBox-Up" />
+            <PushedTexture file="Interface\Buttons\UI-CheckBox-Down" />
+            <HighlightTexture file="Interface\Buttons\UI-CheckBox-Highlight" alphaMode="ADD" />
+            <CheckedTexture file="Interface\Buttons\UI-CheckBox-Check" />
+            <DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled" />
+          </CheckButton>
+          <CheckButton name="ShapeBar">
+            <Size>
+              <AbsDimension x="32" y="32" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="188" y="-125" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer>
+                <FontString name="$parentText" font="Fonts\2002.ttf" text="태세바">
+                  <Anchors>
+                    <Anchor point="LEFT" relativePoint="RIGHT">
+                      <Offset>
+                        <AbsDimension x="-2" y="0" />
+                      </Offset>
+                    </Anchor>
+                  </Anchors>
+                  <FontHeight>
+                    <AbsValue val="12" />
+                  </FontHeight>
+                  <Color r="1" g="0.8196079" b="0" />
+                  <Shadow>
+                    <Color r="0" g="0" b="0" />
+                    <Offset>
+                      <AbsDimension x="1" y="-1" />
+                    </Offset>
+                  </Shadow>
+                </FontString>
+              </Layer>
+            </Layers>
+            <Scripts>
+              <OnShow>
+                if ActionButtonName[7].apply then
+                  this:SetChecked(1);
+                else
+                  this:SetChecked(0);
+                end
+              </OnShow>
+              <OnClick>
+                if this:GetChecked() then
+                  ActionButtonName[7].apply = 1;
+                else
+                  ActionButtonName[7].apply = nil;
+                end
+                User_ActionButton_UpdateHotkeys(VehicleMenuBarActionButton6,"COMMAND");
+              </OnClick>
+            </Scripts>
+            <NormalTexture file="Interface\Buttons\UI-CheckBox-Up" />
+            <PushedTexture file="Interface\Buttons\UI-CheckBox-Down" />
+            <HighlightTexture file="Interface\Buttons\UI-CheckBox-Highlight" alphaMode="ADD" />
+            <CheckedTexture file="Interface\Buttons\UI-CheckBox-Check" />
+            <DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled" />
+          </CheckButton>
+          <CheckButton name="BonusBar">
+            <Size>
+              <AbsDimension x="32" y="32" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="21" y="-125" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer>
+                <FontString name="$parentText" font="Fonts\2002.ttf" text="보너스바">
+                  <Anchors>
+                    <Anchor point="LEFT" relativePoint="RIGHT">
+                      <Offset>
+                        <AbsDimension x="-2" y="0" />
+                      </Offset>
+                    </Anchor>
+                  </Anchors>
+                  <FontHeight>
+                    <AbsValue val="12" />
+                  </FontHeight>
+                  <Color r="1" g="0.8196079" b="0" />
+                  <Shadow>
+                    <Color r="0" g="0" b="0" />
+                    <Offset>
+                      <AbsDimension x="1" y="-1" />
+                    </Offset>
+                  </Shadow>
+                </FontString>
+              </Layer>
+            </Layers>
+            <Scripts>
+              <OnShow>
+                if ActionButtonName[6].apply then
+                  this:SetChecked(1);
+                else
+                  this:SetChecked(0);
+                end
+              </OnShow>
+              <OnClick>
+                if this:GetChecked() then
+                  ActionButtonName[6].apply = 1;
+                else
+                  ActionButtonName[6].apply = nil;
+                end
+                User_ActionButton_UpdateHotkeys(VehicleMenuBarActionButton6,"COMMAND");
+              </OnClick>
+            </Scripts>
+            <NormalTexture file="Interface\Buttons\UI-CheckBox-Up" />
+            <PushedTexture file="Interface\Buttons\UI-CheckBox-Down" />
+            <HighlightTexture file="Interface\Buttons\UI-CheckBox-Highlight" alphaMode="ADD" />
+            <CheckedTexture file="Interface\Buttons\UI-CheckBox-Check" />
+            <DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled" />
+          </CheckButton>
+          <CheckButton name="LeftBar">
+            <Size>
+              <AbsDimension x="32" y="32" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="188" y="-87" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer>
+                <FontString name="$parentText" font="Fonts\2002.ttf" text="두번째 우측바">
+                  <Anchors>
+                    <Anchor point="LEFT" relativePoint="RIGHT">
+                      <Offset>
+                        <AbsDimension x="-2" y="0" />
+                      </Offset>
+                    </Anchor>
+                  </Anchors>
+                  <FontHeight>
+                    <AbsValue val="12" />
+                  </FontHeight>
+                  <Color r="1" g="0.8196079" b="0" />
+                  <Shadow>
+                    <Color r="0" g="0" b="0" />
+                    <Offset>
+                      <AbsDimension x="1" y="-1" />
+                    </Offset>
+                  </Shadow>
+                </FontString>
+              </Layer>
+            </Layers>
+            <Scripts>
+              <OnShow>
+                if ActionButtonName[5].apply then
+                  this:SetChecked(1);
+                else
+                  this:SetChecked(0);
+                end
+              </OnShow>
+              <OnClick>
+                if this:GetChecked() then
+                  ActionButtonName[5].apply = 1;
+                else
+                  ActionButtonName[5].apply = nil;
+                end
+                User_ActionButton_UpdateHotkeys(VehicleMenuBarActionButton6,"COMMAND");
+              </OnClick>
+            </Scripts>
+            <NormalTexture file="Interface\Buttons\UI-CheckBox-Up" />
+            <PushedTexture file="Interface\Buttons\UI-CheckBox-Down" />
+            <HighlightTexture file="Interface\Buttons\UI-CheckBox-Highlight" alphaMode="ADD" />
+            <CheckedTexture file="Interface\Buttons\UI-CheckBox-Check" />
+            <DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled" />
+          </CheckButton>
+          <CheckButton name="RightBar">
+            <Size>
+              <AbsDimension x="32" y="32" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="21" y="-87" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer>
+                <FontString name="$parentText" font="Fonts\2002.ttf" text="첫번째 우측바">
+                  <Anchors>
+                    <Anchor point="LEFT" relativePoint="RIGHT">
+                      <Offset>
+                        <AbsDimension x="-2" y="0" />
+                      </Offset>
+                    </Anchor>
+                  </Anchors>
+                  <FontHeight>
+                    <AbsValue val="12" />
+                  </FontHeight>
+                  <Color r="1" g="0.8196079" b="0" />
+                  <Shadow>
+                    <Color r="0" g="0" b="0" />
+                    <Offset>
+                      <AbsDimension x="1" y="-1" />
+                    </Offset>
+                  </Shadow>
+                </FontString>
+              </Layer>
+            </Layers>
+            <Scripts>
+              <OnShow>
+                if ActionButtonName[4].apply then
+                  this:SetChecked(1);
+                else
+                  this:SetChecked(0);
+                end
+              </OnShow>
+              <OnClick>
+                if this:GetChecked() then
+                  ActionButtonName[4].apply = 1;
+                else
+                  ActionButtonName[4].apply = nil;
+                end
+                User_ActionButton_UpdateHotkeys(VehicleMenuBarActionButton6,"COMMAND");
+              </OnClick>
+            </Scripts>
+            <NormalTexture file="Interface\Buttons\UI-CheckBox-Up" />
+            <PushedTexture file="Interface\Buttons\UI-CheckBox-Down" />
+            <HighlightTexture file="Interface\Buttons\UI-CheckBox-Highlight" alphaMode="ADD" />
+            <CheckedTexture file="Interface\Buttons\UI-CheckBox-Check" />
+            <DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled" />
+          </CheckButton>
+          <CheckButton name="BottomRightBar">
+            <Size>
+              <AbsDimension x="32" y="32" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="188" y="-49" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer>
+                <FontString name="$parentText" font="Fonts\2002.ttf" text="우측하단바">
+                  <Anchors>
+                    <Anchor point="LEFT" relativePoint="RIGHT">
+                      <Offset>
+                        <AbsDimension x="-2" y="0" />
+                      </Offset>
+                    </Anchor>
+                  </Anchors>
+                  <FontHeight>
+                    <AbsValue val="12" />
+                  </FontHeight>
+                  <Color r="1" g="0.8196079" b="0" />
+                  <Shadow>
+                    <Color r="0" g="0" b="0" />
+                    <Offset>
+                      <AbsDimension x="1" y="-1" />
+                    </Offset>
+                  </Shadow>
+                </FontString>
+              </Layer>
+            </Layers>
+            <Scripts>
+              <OnShow>
+                if ActionButtonName[3].apply then
+                  this:SetChecked(1);
+                else
+                  this:SetChecked(0);
+                end
+              </OnShow>
+              <OnClick>
+                if this:GetChecked() then
+                  ActionButtonName[3].apply = 1;
+                else
+                  ActionButtonName[3].apply = nil;
+                end
+                User_ActionButton_UpdateHotkeys(VehicleMenuBarActionButton6,"COMMAND");
+              </OnClick>
+            </Scripts>
+            <NormalTexture file="Interface\Buttons\UI-CheckBox-Up" />
+            <PushedTexture file="Interface\Buttons\UI-CheckBox-Down" />
+            <HighlightTexture file="Interface\Buttons\UI-CheckBox-Highlight" alphaMode="ADD" />
+            <CheckedTexture file="Interface\Buttons\UI-CheckBox-Check" />
+            <DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled" />
+          </CheckButton>
+          <CheckButton name="BottomLeftBar">
+            <Size>
+              <AbsDimension x="32" y="32" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="21" y="-49" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer>
+                <FontString name="$parentText" font="Fonts\2002.ttf" text="좌측하단바">
+                  <Anchors>
+                    <Anchor point="LEFT" relativePoint="RIGHT">
+                      <Offset>
+                        <AbsDimension x="-2" y="0" />
+                      </Offset>
+                    </Anchor>
+                  </Anchors>
+                  <FontHeight>
+                    <AbsValue val="12" />
+                  </FontHeight>
+                  <Color r="1" g="0.8196079" b="0" />
+                  <Shadow>
+                    <Color r="0" g="0" b="0" />
+                    <Offset>
+                      <AbsDimension x="1" y="-1" />
+                    </Offset>
+                  </Shadow>
+                </FontString>
+              </Layer>
+            </Layers>
+            <Scripts>
+              <OnShow>
+                if ActionButtonName[2].apply then
+                  this:SetChecked(1);
+                else
+                  this:SetChecked(0);
+                end
+              </OnShow>
+              <OnClick>
+                if this:GetChecked() then
+                  ActionButtonName[2].apply = 1;
+                else
+                  ActionButtonName[2].apply = nil;
+                end
+                User_ActionButton_UpdateHotkeys(VehicleMenuBarActionButton6,"COMMAND");
+              </OnClick>
+            </Scripts>
+            <NormalTexture file="Interface\Buttons\UI-CheckBox-Up" />
+            <PushedTexture file="Interface\Buttons\UI-CheckBox-Down" />
+            <HighlightTexture file="Interface\Buttons\UI-CheckBox-Highlight" alphaMode="ADD" />
+            <CheckedTexture file="Interface\Buttons\UI-CheckBox-Check" />
+            <DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled" />
+          </CheckButton>
+          <CheckButton name="BasicBar">
+            <Size>
+              <AbsDimension x="32" y="32" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="21" y="-11" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer>
+                <FontString name="$parentText" font="Fonts\2002.ttf" text="기본바">
+                  <Anchors>
+                    <Anchor point="LEFT" relativePoint="RIGHT">
+                      <Offset>
+                        <AbsDimension x="-2" y="0" />
+                      </Offset>
+                    </Anchor>
+                  </Anchors>
+                  <FontHeight>
+                    <AbsValue val="12" />
+                  </FontHeight>
+                  <Color r="1" g="0.8196079" b="0" />
+                  <Shadow>
+                    <Color r="0" g="0" b="0" />
+                    <Offset>
+                      <AbsDimension x="1" y="-1" />
+                    </Offset>
+                  </Shadow>
+                </FontString>
+              </Layer>
+            </Layers>
+            <Scripts>
+              <OnShow>
+                if ActionButtonName[1].apply then
+                  this:SetChecked(1);
+                else
+                  this:SetChecked(0);
+                end
+              </OnShow>
+              <OnClick>
+                if this:GetChecked() then
+                  ActionButtonName[1].apply = 1;
+                else
+                  ActionButtonName[1].apply = nil;
+                end
+                User_ActionButton_UpdateHotkeys(VehicleMenuBarActionButton6,"COMMAND");
+              </OnClick>
+            </Scripts>
+            <NormalTexture file="Interface\Buttons\UI-CheckBox-Up" />
+            <PushedTexture file="Interface\Buttons\UI-CheckBox-Down" />
+            <HighlightTexture file="Interface\Buttons\UI-CheckBox-Highlight" alphaMode="ADD" />
+            <CheckedTexture file="Interface\Buttons\UI-CheckBox-Check" />
+            <DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled" />
+          </CheckButton>
+        </Frames>
+      </Frame>
+      <Frame name="$parentPanel1">
+        <Size>
+          <AbsDimension x="376" y="250" />
+        </Size>
+        <Anchors>
+          <Anchor point="TOPLEFT">
+            <Offset>
+              <AbsDimension x="26" y="-30" />
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <Backdrop bgFile="Interface\Tooltips\UI-Tooltip-Background" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+          <BackgroundInsets>
+            <AbsInset left="5" right="5" top="5" bottom="5" />
+          </BackgroundInsets>
+          <TileSize>
+            <AbsValue val="16" />
+          </TileSize>
+          <EdgeSize>
+            <AbsValue val="16" />
+          </EdgeSize>
+        </Backdrop>
+        <Frames>
+          <CheckButton name="SetHideMode">
+            <Size>
+              <AbsDimension x="32" y="32" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="26" y="-190" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer>
+                <FontString name="$parentText" font="Fonts\2002.ttf" text="숨김 모드">
+                  <Anchors>
+                    <Anchor point="LEFT" relativePoint="RIGHT">
+                      <Offset>
+                        <AbsDimension x="-2" y="0" />
+                      </Offset>
+                    </Anchor>
+                  </Anchors>
+                  <FontHeight>
+                    <AbsValue val="12" />
+                  </FontHeight>
+                  <Color r="1" g="0.8196079" b="0" />
+                  <Shadow>
+                    <Color r="0" g="0" b="0" />
+                    <Offset>
+                      <AbsDimension x="1" y="-1" />
+                    </Offset>
+                  </Shadow>
+                </FontString>
+              </Layer>
+            </Layers>
+            <Scripts>
+              <OnClick>
+                if this:GetChecked() then
+                  HotkeySettings.hide = 1;
+                else
+                  HotkeySettings.hide = nil;
+                end
+                User_ActionButton_UpdateHotkeys(VehicleMenuBarActionButton6,"COMMAND");
+              </OnClick>
+              <OnShow>
+                if HotkeySettings.hide then
+                  this:SetChecked(1);
+                else
+                  this:SetChecked(0);
+                end
+              </OnShow>
+            </Scripts>
+            <NormalTexture file="Interface\Buttons\UI-CheckBox-Up" />
+            <PushedTexture file="Interface\Buttons\UI-CheckBox-Down" />
+            <HighlightTexture file="Interface\Buttons\UI-CheckBox-Highlight" alphaMode="ADD" />
+            <CheckedTexture file="Interface\Buttons\UI-CheckBox-Check" />
+            <DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled" />
+          </CheckButton>
+          <CheckButton name="SetColorMode">
+            <Size>
+              <AbsDimension x="32" y="32" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="188" y="-160" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer>
+                <FontString name="$parentText" font="Fonts\2002.ttf" text="텍스트 색상 표현">
+                  <Anchors>
+                    <Anchor point="LEFT" relativePoint="RIGHT">
+                      <Offset>
+                        <AbsDimension x="-2" y="0" />
+                      </Offset>
+                    </Anchor>
+                  </Anchors>
+                  <FontHeight>
+                    <AbsValue val="12" />
+                  </FontHeight>
+                  <Color r="1" g="0.8196079" b="0" />
+                  <Shadow>
+                    <Color r="0" g="0" b="0" />
+                    <Offset>
+                      <AbsDimension x="1" y="-1" />
+                    </Offset>
+                  </Shadow>
+                </FontString>
+              </Layer>
+            </Layers>
+            <Scripts>
+              <OnClick>
+                if this:GetChecked() then
+                  HotkeySettings.ColorMode = 1;
+                else
+                  HotkeySettings.ColorMode = nil;
+                end
+                HotkeyText_SetColorMode();
+              </OnClick>
+              <OnShow>
+                if HotkeySettings.ColorMode then
+                  this:SetChecked(1);
+                else
+                  this:SetChecked(0);
+                end
+              </OnShow>
+            </Scripts>
+            <NormalTexture file="Interface\Buttons\UI-CheckBox-Up" />
+            <PushedTexture file="Interface\Buttons\UI-CheckBox-Down" />
+            <HighlightTexture file="Interface\Buttons\UI-CheckBox-Highlight" alphaMode="ADD" />
+            <CheckedTexture file="Interface\Buttons\UI-CheckBox-Check" />
+            <DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled" />
+          </CheckButton>
+          <CheckButton name="HideMacroName">
+            <Size>
+              <AbsDimension x="32" y="32" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="26" y="-160" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer>
+                <FontString name="$parentText" font="Fonts\2002.ttf" text="매크로이름 숨기기">
+                  <Anchors>
+                    <Anchor point="LEFT" relativePoint="RIGHT">
+                      <Offset>
+                        <AbsDimension x="-2" y="0" />
+                      </Offset>
+                    </Anchor>
+                  </Anchors>
+                  <FontHeight>
+                    <AbsValue val="12" />
+                  </FontHeight>
+                  <Color r="1" g="0.8196079" b="0" />
+                  <Shadow>
+                    <Color r="0" g="0" b="0" />
+                    <Offset>
+                      <AbsDimension x="1" y="-1" />
+                    </Offset>
+                  </Shadow>
+                </FontString>
+              </Layer>
+            </Layers>
+            <Scripts>
+              <OnClick>
+                if this:GetChecked() then
+                  HotkeySettings.hideMacroName = 1;
+                else
+                  HotkeySettings.hideMacroName = nil;
+                end
+                User_ActionButton_UpdateHotkeys(VehicleMenuBarActionButton6,"COMMAND");
+              </OnClick>
+              <OnShow>
+                if HotkeySettings.hideMacroName then
+                  this:SetChecked(1);
+                else
+                  this:SetChecked(0);
+                end
+              </OnShow>
+            </Scripts>
+            <NormalTexture file="Interface\Buttons\UI-CheckBox-Up" />
+            <PushedTexture file="Interface\Buttons\UI-CheckBox-Down" />
+            <HighlightTexture file="Interface\Buttons\UI-CheckBox-Highlight" alphaMode="ADD" />
+            <CheckedTexture file="Interface\Buttons\UI-CheckBox-Check" />
+            <DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled" />
+          </CheckButton>
+          <CheckButton name="FontFlagsThickoutline">
+            <Size>
+              <AbsDimension x="32" y="32" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="75" y="-99" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer>
+                <FontString name="$parentText" font="Fonts\2002.ttf" text="THICKOUTLINE">
+                  <Anchors>
+                    <Anchor point="LEFT" relativePoint="RIGHT">
+                      <Offset>
+                        <AbsDimension x="-2" y="0" />
+                      </Offset>
+                    </Anchor>
+                  </Anchors>
+                  <FontHeight>
+                    <AbsValue val="12" />
+                  </FontHeight>
+                  <Color r="1" g="0.8196079" b="0" />
+                  <Shadow>
+                    <Color r="0" g="0" b="0" />
+                    <Offset>
+                      <AbsDimension x="1" y="-1" />
+                    </Offset>
+                  </Shadow>
+                </FontString>
+              </Layer>
+            </Layers>
+            <Scripts>
+              <OnClick>
+                if this:GetChecked() then
+                  FontFlagsOutline:SetChecked(0);
+                  if FontFlagsMonochrome:GetChecked() then
+                    HotkeySettings.font.flags = "THICKOUTLINE,Monochrome";
+                  else
+                    HotkeySettings.font.flags = "THICKOUTLINE";
+                  end
+                else
+                  if FontFlagsMonochrome:GetChecked() then
+                    HotkeySettings.font.flags = "Monochrome";
+                  else
+                    HotkeySettings.font.flags = nil;
+                  end
+                end
+                User_ActionButton_UpdateHotkeys(VehicleMenuBarActionButton6,"COMMAND");  
+              </OnClick>
+              <OnShow>
+                if HotkeySettings.font.flags and string.match(HotkeySettings.font.flags,"THICKOUTLINE") then
+                  this:SetChecked(1);
+                else
+                  this:SetChecked(0);
+                end
+              </OnShow>
+            </Scripts>
+            <NormalTexture file="Interface\Buttons\UI-CheckBox-Up" />
+            <PushedTexture file="Interface\Buttons\UI-CheckBox-Down" />
+            <HighlightTexture file="Interface\Buttons\UI-CheckBox-Highlight" alphaMode="ADD" />
+            <CheckedTexture file="Interface\Buttons\UI-CheckBox-Check" />
+            <DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled" />
+          </CheckButton>
+          <CheckButton name="FontFlagsOutline">
+            <Size>
+              <AbsDimension x="32" y="32" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="75" y="-73" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer>
+                <FontString name="$parentText" font="Fonts\2002.ttf" text="OUTLINE">
+                  <Anchors>
+                    <Anchor point="LEFT" relativePoint="RIGHT">
+                      <Offset>
+                        <AbsDimension x="-2" y="0" />
+                      </Offset>
+                    </Anchor>
+                  </Anchors>
+                  <FontHeight>
+                    <AbsValue val="12" />
+                  </FontHeight>
+                  <Color r="1" g="0.8196079" b="0" />
+                  <Shadow>
+                    <Color r="0" g="0" b="0" />
+                    <Offset>
+                      <AbsDimension x="1" y="-1" />
+                    </Offset>
+                  </Shadow>
+                </FontString>
+              </Layer>
+            </Layers>
+            <Scripts>
+              <OnClick>
+                if this:GetChecked() then
+                  FontFlagsThickoutline:SetChecked(0);
+                  if FontFlagsMonochrome:GetChecked() then
+                    HotkeySettings.font.flags = "OUTLINE,Monochrome";
+                  else
+                    HotkeySettings.font.flags = "OUTLINE";
+                  end
+                else
+                  if FontFlagsMonochrome:GetChecked() then
+                    HotkeySettings.font.flags = "Monochrome";
+                  else
+                    HotkeySettings.font.flags = nil;
+                  end
+                end
+                User_ActionButton_UpdateHotkeys(VehicleMenuBarActionButton6,"COMMAND");  
+              </OnClick>
+              <OnShow>
+                if HotkeySettings.font.flags and string.match(HotkeySettings.font.flags,"^OUTLINE") then
+                  this:SetChecked(1);
+                else
+                  this:SetChecked(0);
+                end
+              </OnShow>
+            </Scripts>
+            <NormalTexture file="Interface\Buttons\UI-CheckBox-Up" />
+            <PushedTexture file="Interface\Buttons\UI-CheckBox-Down" />
+            <HighlightTexture file="Interface\Buttons\UI-CheckBox-Highlight" alphaMode="ADD" />
+            <CheckedTexture file="Interface\Buttons\UI-CheckBox-Check" />
+            <DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled" />
+          </CheckButton>
+          <Frame name="$parentLabel3">
+            <Size>
+              <AbsDimension x="44" y="18" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="26" y="-49" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer>
+                <FontString name="$parentLabel" font="Fonts\2002.ttf" text="크기" justifyH="RIGHT">
+                  <Anchors>
+                    <Anchor point="TOPLEFT" />
+                    <Anchor point="BOTTOMRIGHT" />
+                  </Anchors>
+                  <FontHeight>
+                    <AbsValue val="12" />
+                  </FontHeight>
+                  <Color r="1" g="0.8196079" b="0" />
+                  <Shadow>
+                    <Color r="0" g="0" b="0" />
+                    <Offset>
+                      <AbsDimension x="1" y="-1" />
+                    </Offset>
+                  </Shadow>
+                </FontString>
+              </Layer>
+            </Layers>
+          </Frame>
+          <Frame name="$parentLabel7">
+            <Size>
+              <AbsDimension x="11" y="18" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="281" y="-49" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer>
+                <FontString name="$parentLabel" font="Fonts\2002.ttf" text="y">
+                  <Anchors>
+                    <Anchor point="TOPLEFT" />
+                    <Anchor point="BOTTOMRIGHT" />
+                  </Anchors>
+                  <FontHeight>
+                    <AbsValue val="12" />
+                  </FontHeight>
+                  <Color r="1" g="0.8196079" b="0" />
+                  <Shadow>
+                    <Color r="0" g="0" b="0" />
+                    <Offset>
+                      <AbsDimension x="1" y="-1" />
+                    </Offset>
+                  </Shadow>
+                </FontString>
+              </Layer>
+            </Layers>
+          </Frame>
+          <Frame name="$parentLabel6">
+            <Size>
+              <AbsDimension x="19" y="18" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="205" y="-49" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer>
+                <FontString name="$parentLabel" font="Fonts\2002.ttf" text="x">
+                  <Anchors>
+                    <Anchor point="TOPLEFT" />
+                    <Anchor point="BOTTOMRIGHT" />
+                  </Anchors>
+                  <FontHeight>
+                    <AbsValue val="12" />
+                  </FontHeight>
+                  <Color r="1" g="0.8196079" b="0" />
+                  <Shadow>
+                    <Color r="0" g="0" b="0" />
+                    <Offset>
+                      <AbsDimension x="1" y="-1" />
+                    </Offset>
+                  </Shadow>
+                </FontString>
+              </Layer>
+            </Layers>
+          </Frame>
+          <EditBox name="HotkeyOffsetY" enableMouse="true">
+            <Size>
+              <AbsDimension x="40" y="22" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="298" y="-46" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer level="BACKGROUND">
+                <Texture name="$parentLeft" file="Interface\Common\Common-Input-Border">
+                  <Size>
+                    <AbsDimension x="8" y="20" />
+                  </Size>
+                  <Anchors>
+                    <Anchor point="LEFT" />
+                  </Anchors>
+                  <TexCoords left="0" right="0.0625" top="0" bottom="0.625" />
+                </Texture>
+                <Texture name="$parentRight" file="Interface\Common\Common-Input-Border">
+                  <Size>
+                    <AbsDimension x="8" y="20" />
+                  </Size>
+                  <Anchors>
+                    <Anchor point="RIGHT" />
+                  </Anchors>
+                  <TexCoords left="0.9375" right="1" top="0" bottom="0.625" />
+                </Texture>
+                <Texture name="$parentMiddle" file="Interface\Common\Common-Input-Border">
+                  <Size>
+                    <AbsDimension x="10" y="20" />
+                  </Size>
+                  <Anchors>
+                    <Anchor point="LEFT" relativeTo="$parentLeft" relativePoint="RIGHT" />
+                    <Anchor point="RIGHT" relativeTo="$parentRight" relativePoint="LEFT" />
+                  </Anchors>
+                  <TexCoords left="0.0625" right="0.9375" top="0" bottom="0.625" />
+                </Texture>
+              </Layer>
+            </Layers>
+            <Scripts>
+              <OnLoad>
+                this:SetAutoFocus(false);
+              </OnLoad>
+              <OnShow>
+                this:SetText(HotkeySettings.offset.y);
+              </OnShow>
+              <OnEnterPressed>
+                HotkeySettings.offset.y = HotkeyOffsetY:GetNumber();
+                User_ActionButton_UpdateHotkeys(VehicleMenuBarActionButton6,"COMMAND");
+              </OnEnterPressed>
+              <OnEscapePressed>
+                  this:ClearFocus();
+              </OnEscapePressed>
+            </Scripts>
+            <FontString font="Fonts\2002.ttf" spacing="3">
+              <FontHeight>
+                <AbsValue val="13" />
+              </FontHeight>
+              <Color r="1" g="1" b="1" />
+              <Shadow>
+                <Color r="0" g="0" b="0" />
+                <Offset>
+                  <AbsDimension x="1" y="-1" />
+                </Offset>
+              </Shadow>
+            </FontString>
+          </EditBox>
+          <EditBox name="HotkeyOffsetX" enableMouse="true">
+            <Size>
+              <AbsDimension x="34" y="22" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="230" y="-46" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer level="BACKGROUND">
+                <Texture name="$parentLeft" file="Interface\Common\Common-Input-Border">
+                  <Size>
+                    <AbsDimension x="8" y="20" />
+                  </Size>
+                  <Anchors>
+                    <Anchor point="LEFT" />
+                  </Anchors>
+                  <TexCoords left="0" right="0.0625" top="0" bottom="0.625" />
+                </Texture>
+                <Texture name="$parentRight" file="Interface\Common\Common-Input-Border">
+                  <Size>
+                    <AbsDimension x="8" y="20" />
+                  </Size>
+                  <Anchors>
+                    <Anchor point="RIGHT" />
+                  </Anchors>
+                  <TexCoords left="0.9375" right="1" top="0" bottom="0.625" />
+                </Texture>
+                <Texture name="$parentMiddle" file="Interface\Common\Common-Input-Border">
+                  <Size>
+                    <AbsDimension x="10" y="20" />
+                  </Size>
+                  <Anchors>
+                    <Anchor point="LEFT" relativeTo="$parentLeft" relativePoint="RIGHT" />
+                    <Anchor point="RIGHT" relativeTo="$parentRight" relativePoint="LEFT" />
+                  </Anchors>
+                  <TexCoords left="0.0625" right="0.9375" top="0" bottom="0.625" />
+                </Texture>
+              </Layer>
+            </Layers>
+            <Scripts>
+              <OnLoad>
+                this:SetAutoFocus(false);
+              </OnLoad>
+              <OnShow>
+                this:SetText(HotkeySettings.offset.x);
+              </OnShow>
+              <OnEnterPressed>
+                HotkeySettings.offset.x = HotkeyOffsetX:GetNumber();
+                User_ActionButton_UpdateHotkeys(VehicleMenuBarActionButton6,"COMMAND");
+              </OnEnterPressed>
+              <OnEscapePressed>
+                  this:ClearFocus();
+              </OnEscapePressed>
+            </Scripts>
+            <FontString font="Fonts\2002.ttf" spacing="3">
+              <FontHeight>
+                <AbsValue val="13" />
+              </FontHeight>
+              <Color r="1" g="1" b="1" />
+              <Shadow>
+                <Color r="0" g="0" b="0" />
+                <Offset>
+                  <AbsDimension x="1" y="-1" />
+                </Offset>
+              </Shadow>
+            </FontString>
+          </EditBox>
+          <Frame name="$parentLabel5">
+            <Size>
+              <AbsDimension x="61" y="21" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="148" y="-47" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer>
+                <FontString name="$parentLabel" font="Fonts\2002.ttf" text="위치">
+                  <Anchors>
+                    <Anchor point="TOPLEFT" />
+                    <Anchor point="BOTTOMRIGHT" />
+                  </Anchors>
+                  <FontHeight>
+                    <AbsValue val="12" />
+                  </FontHeight>
+                  <Color r="1" g="0.8196079" b="0" />
+                  <Shadow>
+                    <Color r="0" g="0" b="0" />
+                    <Offset>
+                      <AbsDimension x="1" y="-1" />
+                    </Offset>
+                  </Shadow>
+                </FontString>
+              </Layer>
+            </Layers>
+          </Frame>
+          <Frame name="$parentLabel4">
+            <Size>
+              <AbsDimension x="58" y="38" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="12" y="-75" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer>
+                <FontString name="$parentLabel" font="Fonts\2002.ttf" text="외곽선" justifyH="RIGHT">
+                  <Anchors>
+                    <Anchor point="TOPLEFT" />
+                    <Anchor point="BOTTOMRIGHT" />
+                  </Anchors>
+                  <FontHeight>
+                    <AbsValue val="12" />
+                  </FontHeight>
+                  <Color r="1" g="0.8196079" b="0" />
+                  <Shadow>
+                    <Color r="0" g="0" b="0" />
+                    <Offset>
+                      <AbsDimension x="1" y="-1" />
+                    </Offset>
+                  </Shadow>
+                </FontString>
+              </Layer>
+            </Layers>
+          </Frame>
+          <Frame name="$parentLabel2">
+            <Size>
+              <AbsDimension x="59" y="24" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="12" y="-17" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer>
+                <FontString name="$parentLabel" font="Fonts\2002.ttf" text="글꼴" justifyH="RIGHT">
+                  <Anchors>
+                    <Anchor point="TOPLEFT" />
+                    <Anchor point="BOTTOMRIGHT" />
+                  </Anchors>
+                  <FontHeight>
+                    <AbsValue val="12" />
+                  </FontHeight>
+                  <Color r="1" g="0.8196079" b="0" />
+                  <Shadow>
+                    <Color r="0" g="0" b="0" />
+                    <Offset>
+                      <AbsDimension x="1" y="-1" />
+                    </Offset>
+                  </Shadow>
+                </FontString>
+              </Layer>
+            </Layers>
+          </Frame>
+          <CheckButton name="FontFlagsMonochrome">
+            <Size>
+              <AbsDimension x="32" y="32" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="217" y="-75" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer>
+                <FontString name="$parentText" font="Fonts\2002.ttf" text="MONOCHROME">
+                  <Anchors>
+                    <Anchor point="LEFT" relativePoint="RIGHT">
+                      <Offset>
+                        <AbsDimension x="-2" y="0" />
+                      </Offset>
+                    </Anchor>
+                  </Anchors>
+                  <FontHeight>
+                    <AbsValue val="12" />
+                  </FontHeight>
+                  <Color r="1" g="0.8196079" b="0" />
+                  <Shadow>
+                    <Color r="0" g="0" b="0" />
+                    <Offset>
+                      <AbsDimension x="1" y="-1" />
+                    </Offset>
+                  </Shadow>
+                </FontString>
+              </Layer>
+            </Layers>
+            <Scripts>
+              <OnShow>
+                if HotkeySettings.font.flags and string.match(HotkeySettings.font.flags,"MONOCHROME") then
+                  this:SetChecked(1);
+                else
+                  this:SetChecked(0);
+                end
+              </OnShow>
+              <OnClick>
+                if this:GetChecked() then
+                  if FontFlagsThickoutline:GetChecked() then
+                    HotkeySettings.font.flags = "THICKOUTLINE,Monochrome";
+                  elseif FontFlagsOutline:GetChecked() then
+                    HotkeySettings.font.flags = "OUTLINE,Monochrome";
+                  else
+                    HotkeySettings.font.flags = "Monochrome";
+                  end
+                else
+                  if FontFlagsThickoutline:GetChecked() then
+                    HotkeySettings.font.flags = "THICKOUTLINE";
+                  elseif FontFlagsOutline:GetChecked() then
+                    HotkeySettings.font.flags = "OUTLINE";
+                  else
+                    HotkeySettings.font.flags = nil;
+                  end
+                end
+                User_ActionButton_UpdateHotkeys(VehicleMenuBarActionButton6,"COMMAND");
+              </OnClick>
+            </Scripts>
+            <NormalTexture file="Interface\Buttons\UI-CheckBox-Up" />
+            <PushedTexture file="Interface\Buttons\UI-CheckBox-Down" />
+            <HighlightTexture file="Interface\Buttons\UI-CheckBox-Highlight" alphaMode="ADD" />
+            <CheckedTexture file="Interface\Buttons\UI-CheckBox-Check" />
+            <DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled" />
+          </CheckButton>
+          <CheckButton name="FontUpper">
+            <Size>
+              <AbsDimension x="32" y="32" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="217" y="-99" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer>
+                <FontString name="$parentText" font="Fonts\2002.ttf" text="대문자표시">
+                  <Anchors>
+                    <Anchor point="LEFT" relativePoint="RIGHT">
+                      <Offset>
+                        <AbsDimension x="-2" y="0" />
+                      </Offset>
+                    </Anchor>
+                  </Anchors>
+                  <FontHeight>
+                    <AbsValue val="12" />
+                  </FontHeight>
+                  <Color r="1" g="0.8196079" b="0" />
+                  <Shadow>
+                    <Color r="0" g="0" b="0" />
+                    <Offset>
+                      <AbsDimension x="1" y="-1" />
+                    </Offset>
+                  </Shadow>
+                </FontString>
+              </Layer>
+            </Layers>
+            <Scripts>
+              <OnShow>
+                if HotkeySettings.upper then
+                  this:SetChecked(1);
+                else
+                  this:SetChecked(0);
+                end
+              </OnShow>
+              <OnClick>
+                if this:GetChecked() then
+                  HotkeySettings.upper = 1;
+                else
+                  HotkeySettings.upper = nil;
+                end
+                User_ActionButton_UpdateHotkeys(VehicleMenuBarActionButton6,"COMMAND");
+              </OnClick>
+            </Scripts>
+            <NormalTexture file="Interface\Buttons\UI-CheckBox-Up" />
+            <PushedTexture file="Interface\Buttons\UI-CheckBox-Down" />
+            <HighlightTexture file="Interface\Buttons\UI-CheckBox-Highlight" alphaMode="ADD" />
+            <CheckedTexture file="Interface\Buttons\UI-CheckBox-Check" />
+            <DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled" />
+          </CheckButton>
+          <EditBox name="FontSize" enableMouse="true" numeric="true">
+            <Size>
+              <AbsDimension x="51" y="22" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="77" y="-45" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer level="BACKGROUND">
+                <Texture name="$parentLeft" file="Interface\Common\Common-Input-Border">
+                  <Size>
+                    <AbsDimension x="8" y="20" />
+                  </Size>
+                  <Anchors>
+                    <Anchor point="LEFT" />
+                  </Anchors>
+                  <TexCoords left="0" right="0.0625" top="0" bottom="0.625" />
+                </Texture>
+                <Texture name="$parentRight" file="Interface\Common\Common-Input-Border">
+                  <Size>
+                    <AbsDimension x="8" y="20" />
+                  </Size>
+                  <Anchors>
+                    <Anchor point="RIGHT" />
+                  </Anchors>
+                  <TexCoords left="0.9375" right="1" top="0" bottom="0.625" />
+                </Texture>
+                <Texture name="$parentMiddle" file="Interface\Common\Common-Input-Border">
+                  <Size>
+                    <AbsDimension x="10" y="20" />
+                  </Size>
+                  <Anchors>
+                    <Anchor point="LEFT" relativeTo="$parentLeft" relativePoint="RIGHT" />
+                    <Anchor point="RIGHT" relativeTo="$parentRight" relativePoint="LEFT" />
+                  </Anchors>
+                  <TexCoords left="0.0625" right="0.9375" top="0" bottom="0.625" />
+                </Texture>
+              </Layer>
+            </Layers>
+            <Scripts>
+              <OnLoad>
+                this:SetAutoFocus(false);
+              </OnLoad>
+              <OnShow>
+                this:SetText(HotkeySettings.font.size);
+              </OnShow>
+              <OnEnterPressed>
+                HotkeySettings.font.size = FontSize:GetNumber();
+                User_ActionButton_UpdateHotkeys(VehicleMenuBarActionButton6,"COMMAND");
+              </OnEnterPressed>
+              <OnEscapePressed>
+                  this:ClearFocus();
+              </OnEscapePressed>
+            </Scripts>
+            <FontString font="Fonts\2002.ttf" spacing="3">
+              <FontHeight>
+                <AbsValue val="13" />
+              </FontHeight>
+              <Color r="1" g="1" b="1" />
+              <Shadow>
+                <Color r="0" g="0" b="0" />
+                <Offset>
+                  <AbsDimension x="1" y="-1" />
+                </Offset>
+              </Shadow>
+            </FontString>
+          </EditBox>
+          <EditBox name="HotkeyTextFontName" enableMouse="true">
+            <Size>
+              <AbsDimension x="263" y="22" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="77" y="-17" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer level="BACKGROUND">
+                <Texture name="$parentLeft" file="Interface\Common\Common-Input-Border">
+                  <Size>
+                    <AbsDimension x="8" y="20" />
+                  </Size>
+                  <Anchors>
+                    <Anchor point="LEFT" />
+                  </Anchors>
+                  <TexCoords left="0" right="0.0625" top="0" bottom="0.625" />
+                </Texture>
+                <Texture name="$parentRight" file="Interface\Common\Common-Input-Border">
+                  <Size>
+                    <AbsDimension x="8" y="20" />
+                  </Size>
+                  <Anchors>
+                    <Anchor point="RIGHT" />
+                  </Anchors>
+                  <TexCoords left="0.9375" right="1" top="0" bottom="0.625" />
+                </Texture>
+                <Texture name="$parentMiddle" file="Interface\Common\Common-Input-Border">
+                  <Size>
+                    <AbsDimension x="10" y="20" />
+                  </Size>
+                  <Anchors>
+                    <Anchor point="LEFT" relativeTo="$parentLeft" relativePoint="RIGHT" />
+                    <Anchor point="RIGHT" relativeTo="$parentRight" relativePoint="LEFT" />
+                  </Anchors>
+                  <TexCoords left="0.0625" right="0.9375" top="0" bottom="0.625" />
+                </Texture>
+              </Layer>
+            </Layers>
+            <Scripts>
+              <OnLoad>
+                this:SetAutoFocus(false);
+              </OnLoad>
+              <OnShow>
+                this:SetText(HotkeySettings.font.name);
+              </OnShow>
+              <OnEnterPressed>
+                HotkeySettings.font.name = HotkeyTextFontName:GetText();
+                User_ActionButton_UpdateHotkeys(VehicleMenuBarActionButton6,"COMMAND");
+              </OnEnterPressed>
+              <OnEscapePressed>
+                  this:ClearFocus();
+              </OnEscapePressed>
+            </Scripts>
+            <FontString font="Fonts\2002.ttf" spacing="3">
+              <FontHeight>
+                <AbsValue val="13" />
+              </FontHeight>
+              <Color r="1" g="1" b="1" />
+              <Shadow>
+                <Color r="0" g="0" b="0" />
+                <Offset>
+                  <AbsDimension x="1" y="-1" />
+                </Offset>
+              </Shadow>
+            </FontString>
+          </EditBox>
+          <Frame name="SetColorLable">
+            <Size>
+              <AbsDimension x="44" y="18" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="26" y="-130" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer>
+                <FontString name="$parentLabel" font="Fonts\2002.ttf" text="색상" justifyH="RIGHT">
+                  <Anchors>
+                    <Anchor point="TOPLEFT" />
+                    <Anchor point="BOTTOMRIGHT" />
+                  </Anchors>
+                  <FontHeight>
+                    <AbsValue val="12" />
+                  </FontHeight>
+                  <Color r="1" g="0.8196079" b="0" />
+                  <Shadow>
+                    <Color r="0" g="0" b="0" />
+                    <Offset>
+                      <AbsDimension x="1" y="-1" />
+                    </Offset>
+                  </Shadow>
+                </FontString>
+              </Layer>
+            </Layers>
+          </Frame>
+          <Frame name="SetColorRLable">
+            <Size>
+              <AbsDimension x="10" y="18" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="80" y="-130" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer>
+                <FontString name="$parentLabel" font="Fonts\2002.ttf" text="R" justifyH="RIGHT">
+                  <Anchors>
+                    <Anchor point="TOPLEFT" />
+                    <Anchor point="BOTTOMRIGHT" />
+                  </Anchors>
+                  <FontHeight>
+                    <AbsValue val="12" />
+                  </FontHeight>
+                  <Color r="1" g="0.8196079" b="0" />
+                  <Shadow>
+                    <Color r="0" g="0" b="0" />
+                    <Offset>
+                      <AbsDimension x="1" y="-1" />
+                    </Offset>
+                  </Shadow>
+                </FontString>
+              </Layer>
+            </Layers>
+          </Frame>
+          <EditBox name="HotkeyColorR" enableMouse="true">
+            <Size>
+              <AbsDimension x="40" y="22" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="100" y="-130" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer level="BACKGROUND">
+                <Texture name="$parentLeft" file="Interface\Common\Common-Input-Border">
+                  <Size>
+                    <AbsDimension x="8" y="20" />
+                  </Size>
+                  <Anchors>
+                    <Anchor point="LEFT" />
+                  </Anchors>
+                  <TexCoords left="0" right="0.0625" top="0" bottom="0.625" />
+                </Texture>
+                <Texture name="$parentRight" file="Interface\Common\Common-Input-Border">
+                  <Size>
+                    <AbsDimension x="8" y="20" />
+                  </Size>
+                  <Anchors>
+                    <Anchor point="RIGHT" />
+                  </Anchors>
+                  <TexCoords left="0.9375" right="1" top="0" bottom="0.625" />
+                </Texture>
+                <Texture name="$parentMiddle" file="Interface\Common\Common-Input-Border">
+                  <Size>
+                    <AbsDimension x="10" y="20" />
+                  </Size>
+                  <Anchors>
+                    <Anchor point="LEFT" relativeTo="$parentLeft" relativePoint="RIGHT" />
+                    <Anchor point="RIGHT" relativeTo="$parentRight" relativePoint="LEFT" />
+                  </Anchors>
+                  <TexCoords left="0.0625" right="0.9375" top="0" bottom="0.625" />
+                </Texture>
+              </Layer>
+            </Layers>
+            <Scripts>
+              <OnLoad>
+                this:SetAutoFocus(false);
+              </OnLoad>
+              <OnShow>
+                this:SetText(HotkeySettings.color.r);
+                this:SetCursorPosition(1);
+              </OnShow>
+              <OnEnterPressed>
+                HotkeySettings.color.r = HotkeyText_CheckRGBValue(HotkeyColorR:GetNumber(),HotkeySettings.color.r);
+                User_ActionButton_UpdateHotkeys();
+              </OnEnterPressed>
+              <OnEscapePressed>
+                  this:ClearFocus();
+              </OnEscapePressed>
+            </Scripts>
+            <FontString font="Fonts\2002.ttf" spacing="3">
+              <FontHeight>
+                <AbsValue val="13" />
+              </FontHeight>
+              <Color r="1" g="1" b="1" />
+              <Shadow>
+                <Color r="0" g="0" b="0" />
+                <Offset>
+                  <AbsDimension x="1" y="-1" />
+                </Offset>
+              </Shadow>
+            </FontString>
+          </EditBox>
+          <Frame name="SetColorGLable">
+            <Size>
+              <AbsDimension x="10" y="18" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="140" y="-130" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer>
+                <FontString name="$parentLabel" font="Fonts\2002.ttf" text="G" justifyH="RIGHT">
+                  <Anchors>
+                    <Anchor point="TOPLEFT" />
+                    <Anchor point="BOTTOMRIGHT" />
+                  </Anchors>
+                  <FontHeight>
+                    <AbsValue val="12" />
+                  </FontHeight>
+                  <Color r="1" g="0.8196079" b="0" />
+                  <Shadow>
+                    <Color r="0" g="0" b="0" />
+                    <Offset>
+                      <AbsDimension x="1" y="-1" />
+                    </Offset>
+                  </Shadow>
+                </FontString>
+              </Layer>
+            </Layers>
+          </Frame>
+          <EditBox name="HotkeyColorG" enableMouse="true">
+            <Size>
+              <AbsDimension x="40" y="22" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="160" y="-130" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer level="BACKGROUND">
+                <Texture name="$parentLeft" file="Interface\Common\Common-Input-Border">
+                  <Size>
+                    <AbsDimension x="8" y="20" />
+                  </Size>
+                  <Anchors>
+                    <Anchor point="LEFT" />
+                  </Anchors>
+                  <TexCoords left="0" right="0.0625" top="0" bottom="0.625" />
+                </Texture>
+                <Texture name="$parentRight" file="Interface\Common\Common-Input-Border">
+                  <Size>
+                    <AbsDimension x="8" y="20" />
+                  </Size>
+                  <Anchors>
+                    <Anchor point="RIGHT" />
+                  </Anchors>
+                  <TexCoords left="0.9375" right="1" top="0" bottom="0.625" />
+                </Texture>
+                <Texture name="$parentMiddle" file="Interface\Common\Common-Input-Border">
+                  <Size>
+                    <AbsDimension x="10" y="20" />
+                  </Size>
+                  <Anchors>
+                    <Anchor point="LEFT" relativeTo="$parentLeft" relativePoint="RIGHT" />
+                    <Anchor point="RIGHT" relativeTo="$parentRight" relativePoint="LEFT" />
+                  </Anchors>
+                  <TexCoords left="0.0625" right="0.9375" top="0" bottom="0.625" />
+                </Texture>
+              </Layer>
+            </Layers>
+            <Scripts>
+              <OnLoad>
+                this:SetAutoFocus(false);
+              </OnLoad>
+              <OnShow>
+                this:SetText(HotkeySettings.color.g);
+                this:SetCursorPosition(1);
+              </OnShow>
+              <OnEnterPressed>
+                HotkeySettings.color.g = HotkeyText_CheckRGBValue(HotkeyColorG:GetNumber(),HotkeySettings.color.g);
+                User_ActionButton_UpdateHotkeys();
+              </OnEnterPressed>
+              <OnEscapePressed>
+                  this:ClearFocus();
+              </OnEscapePressed>
+            </Scripts>
+            <FontString font="Fonts\2002.ttf" spacing="3">
+              <FontHeight>
+                <AbsValue val="13" />
+              </FontHeight>
+              <Color r="1" g="1" b="1" />
+              <Shadow>
+                <Color r="0" g="0" b="0" />
+                <Offset>
+                  <AbsDimension x="1" y="-1" />
+                </Offset>
+              </Shadow>
+            </FontString>
+          </EditBox>
+          <Frame name="SetColorBLable">
+            <Size>
+              <AbsDimension x="10" y="18" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="200" y="-130" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer>
+                <FontString name="$parentLabel" font="Fonts\2002.ttf" text="B" justifyH="RIGHT">
+                  <Anchors>
+                    <Anchor point="TOPLEFT" />
+                    <Anchor point="BOTTOMRIGHT" />
+                  </Anchors>
+                  <FontHeight>
+                    <AbsValue val="12" />
+                  </FontHeight>
+                  <Color r="1" g="0.8196079" b="0" />
+                  <Shadow>
+                    <Color r="0" g="0" b="0" />
+                    <Offset>
+                      <AbsDimension x="1" y="-1" />
+                    </Offset>
+                  </Shadow>
+                </FontString>
+              </Layer>
+            </Layers>
+          </Frame>
+          <EditBox name="HotkeyColorB" enableMouse="true">
+            <Size>
+              <AbsDimension x="40" y="22" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="220" y="-130" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer level="BACKGROUND">
+                <Texture name="$parentLeft" file="Interface\Common\Common-Input-Border">
+                  <Size>
+                    <AbsDimension x="8" y="20" />
+                  </Size>
+                  <Anchors>
+                    <Anchor point="LEFT" />
+                  </Anchors>
+                  <TexCoords left="0" right="0.0625" top="0" bottom="0.625" />
+                </Texture>
+                <Texture name="$parentRight" file="Interface\Common\Common-Input-Border">
+                  <Size>
+                    <AbsDimension x="8" y="20" />
+                  </Size>
+                  <Anchors>
+                    <Anchor point="RIGHT" />
+                  </Anchors>
+                  <TexCoords left="0.9375" right="1" top="0" bottom="0.625" />
+                </Texture>
+                <Texture name="$parentMiddle" file="Interface\Common\Common-Input-Border">
+                  <Size>
+                    <AbsDimension x="10" y="20" />
+                  </Size>
+                  <Anchors>
+                    <Anchor point="LEFT" relativeTo="$parentLeft" relativePoint="RIGHT" />
+                    <Anchor point="RIGHT" relativeTo="$parentRight" relativePoint="LEFT" />
+                  </Anchors>
+                  <TexCoords left="0.0625" right="0.9375" top="0" bottom="0.625" />
+                </Texture>
+              </Layer>
+            </Layers>
+            <Scripts>
+              <OnLoad>
+                this:SetAutoFocus(false);
+              </OnLoad>
+              <OnShow>
+                this:SetText(HotkeySettings.color.b);
+                this:SetCursorPosition(1);
+              </OnShow>
+              <OnEnterPressed>
+                HotkeySettings.color.b = HotkeyText_CheckRGBValue(HotkeyColorB:GetNumber(),HotkeySettings.color.b);
+                User_ActionButton_UpdateHotkeys();
+              </OnEnterPressed>
+              <OnEscapePressed>
+                  this:ClearFocus();
+              </OnEscapePressed>
+            </Scripts>
+            <FontString font="Fonts\2002.ttf" spacing="3">
+              <FontHeight>
+                <AbsValue val="13" />
+              </FontHeight>
+              <Color r="1" g="1" b="1" />
+              <Shadow>
+                <Color r="0" g="0" b="0" />
+                <Offset>
+                  <AbsDimension x="1" y="-1" />
+                </Offset>
+              </Shadow>
+            </FontString>
+          </EditBox>
+          <Frame name="SetColorALable">
+            <Size>
+              <AbsDimension x="50" y="18" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="260" y="-130" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer>
+                <FontString name="$parentLabel" font="Fonts\2002.ttf" text="ALPHA" justifyH="RIGHT">
+                  <Anchors>
+                    <Anchor point="TOPLEFT" />
+                    <Anchor point="BOTTOMRIGHT" />
+                  </Anchors>
+                  <FontHeight>
+                    <AbsValue val="12" />
+                  </FontHeight>
+                  <Color r="1" g="0.8196079" b="0" />
+                  <Shadow>
+                    <Color r="0" g="0" b="0" />
+                    <Offset>
+                      <AbsDimension x="1" y="-1" />
+                    </Offset>
+                  </Shadow>
+                </FontString>
+              </Layer>
+            </Layers>
+          </Frame>
+          <EditBox name="HotkeyColorA" enableMouse="true">
+            <Size>
+              <AbsDimension x="40" y="22" />
+            </Size>
+            <Anchors>
+              <Anchor point="TOPLEFT">
+                <Offset>
+                  <AbsDimension x="320" y="-130" />
+                </Offset>
+              </Anchor>
+            </Anchors>
+            <Layers>
+              <Layer level="BACKGROUND">
+                <Texture name="$parentLeft" file="Interface\Common\Common-Input-Border">
+                  <Size>
+                    <AbsDimension x="8" y="20" />
+                  </Size>
+                  <Anchors>
+                    <Anchor point="LEFT" />
+                  </Anchors>
+                  <TexCoords left="0" right="0.0625" top="0" bottom="0.625" />
+                </Texture>
+                <Texture name="$parentRight" file="Interface\Common\Common-Input-Border">
+                  <Size>
+                    <AbsDimension x="8" y="20" />
+                  </Size>
+                  <Anchors>
+                    <Anchor point="RIGHT" />
+                  </Anchors>
+                  <TexCoords left="0.9375" right="1" top="0" bottom="0.625" />
+                </Texture>
+                <Texture name="$parentMiddle" file="Interface\Common\Common-Input-Border">
+                  <Size>
+                    <AbsDimension x="10" y="20" />
+                  </Size>
+                  <Anchors>
+                    <Anchor point="LEFT" relativeTo="$parentLeft" relativePoint="RIGHT" />
+                    <Anchor point="RIGHT" relativeTo="$parentRight" relativePoint="LEFT" />
+                  </Anchors>
+                  <TexCoords left="0.0625" right="0.9375" top="0" bottom="0.625" />
+                </Texture>
+              </Layer>
+            </Layers>
+            <Scripts>
+              <OnLoad>
+                this:SetAutoFocus(false);
+              </OnLoad>
+              <OnShow>
+                this:SetText(HotkeySettings.color.a);
+                this:SetCursorPosition(1);
+              </OnShow>
+              <OnEnterPressed>
+                HotkeySettings.color.a = HotkeyText_CheckRGBValue(HotkeyColorA:GetNumber(),HotkeySettings.color.a);
+                User_ActionButton_UpdateHotkeys();
+              </OnEnterPressed>
+              <OnEscapePressed>
+                  this:ClearFocus();
+              </OnEscapePressed>
+            </Scripts>
+            <FontString font="Fonts\2002.ttf" spacing="3">
+              <FontHeight>
+                <AbsValue val="13" />
+              </FontHeight>
+              <Color r="1" g="1" b="1" />
+              <Shadow>
+                <Color r="0" g="0" b="0" />
+                <Offset>
+                  <AbsDimension x="1" y="-1" />
+                </Offset>
+              </Shadow>
+            </FontString>
+          </EditBox>
+        </Frames>
+      </Frame>
+    </Frames>
+    <Scripts>
+      <OnLoad>
+        HotkeyText_OnLoad(self);
+        tinsert(UISpecialFrames,"HotkeyTextFrame");
+      </OnLoad>
+      <OnEvent>
+        HotkeyText_OnEvent(self,event)
+      </OnEvent>
+    </Scripts>
+  </Frame>
+</Ui>

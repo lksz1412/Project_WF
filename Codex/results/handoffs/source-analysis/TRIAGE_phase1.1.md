@@ -1,0 +1,15 @@
+# Phase1.1 source-analysis review triage
+
+Already decided: R19 original ZIP staticanalysis only; first screenshot fixed; old15referenceonly; private44macro originals untouched; no gameplay/installation/newUIcode. loaf chain primary evidence, Shapa still TOC-referenced and not asserted inactive. Quartz no loaf, oldgeometry not currentpixelgeometry, Masque/Onyx originalskin not approvedcurrentdependency. Current FUF unit-frame remains conditional, no compulsorynewengine. Historical source gates PENDING label describes Areturn, not finalreviewstate.
+
+| # | Review | Master confirmation | Decision | Evidence |
+|---|---|---|---|---|
+| 1 | ten perspectives, major0/moderate0/minor0 | Full report83/source-map30/readcoverage99 and actual original loader/menu/media/selected profilevalues directly read; full2generator scripts read; raw Bquotes checked against originalfiles anddata | accept static report; no A correction/recheck necessary | iter_1/audit_log.md; readcoverage and acquisition-notes |
+
+Master impact map for completion metadata: current masterplan groundtruth/archiveprofile/sourcepointer/Phase1.1state update together; detailplan Step1completion only, Step2pending; requestledger R19statusonly; INDEX actualartifactmap; report append factual Bcompletion and rawreportpointer, no analyticalcontent change. EarlierPlanningResult/Step0/researchrecords/source ZIP/data/code/gates are immutable or readonly. Newreview-result.json resolves source gate historical PENDING without rewriting actualexecutionrecord. Deliverytwins NEWnames regenerate from canonicalfiles; oldsnapshots left intact. No codecaller/callee/lockedtests changed; source file/script/codecompatibility tests not repeated.
+
+Review trend0/0/0, no fixes; runtime model/effort/usage/cache/compute-time telemetry unobserved. Bactualfullcoverage table and refutations preserved verbatim. Unit1A /root/source_analysis and B /root/source_review samephase, sequential. Source1.1 fullphase notcomplete: Step1done, Step2notstarted. No gameruntime PASS.
+
+Finalmetadata gate 2026-11-17 21:36:22 +09:00: Resultmd/json12fields, executionledger12columns, request19rows/R19complete, Step1fivefields, Step1done/Step2unstarted, review10round0/0/0. Fixed two master-authored headingword typos and currentINDEX planned→savedstate afterbackup; originalusercells unchanged. Deliverynewcopies6/6checked earlier; no sourcegates repeated. This is substantialA1 originalarchivepreservation/parsing/analysis-production (not lookup-only/simpleinvestigation); topic-end localcommit will include relatedanalysisrecords/currentplans/map only, rawSourceArchive/work/privateMacro excluded. Priorunrelatedplanningedits leftunstaged.
+
+Commit dependency closure: current masterplan/INDEX refer to PROJECT_LOCATION currentD:/R17 addendum and prior planning gate/Step0/Result/review records. Those earlier same-project control records are included as dependencies with the completed sourceanalysis topic, not as a planning-only standalonecommit. Public deliverysnapshots are included; ignored SourceArchive/work/MacroLibrary/_local_only are excluded. No unrelated worker/user edits are discarded or reset.

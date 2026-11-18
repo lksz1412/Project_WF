@@ -1,0 +1,128 @@
+[
+  {
+    "postID": 3461,
+    "filename": "BlackEdition2_6.1Alpha.zip",
+    "URL": "https://pds.inven.co.kr/upload/2015/03/04/addon/BlackEdition2_6.1Alpha.zip",
+    "URLbasis": "actual literal setDownloadInfo; not predicted",
+    "source": {
+      "fileID": 52262,
+      "URL": "https://pds.inven.co.kr/upload/2015/03/04/addon/BlackEdition2_6.1Alpha.zip",
+      "line": 37,
+      "executed": false
+    },
+    "metadataPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\idx-3461-attachment-metadata.json",
+    "provenance": {
+      "finalURL": "https://pds.inven.co.kr/upload/2015/03/04/addon/BlackEdition2_6.1Alpha.zip",
+      "time": "2026-11-17T14:42:54.9842149Z",
+      "contentType": "application/x-zip-compressed",
+      "HTTP": 200,
+      "requestedURL": "https://pds.inven.co.kr/upload/2015/03/04/addon/BlackEdition2_6.1Alpha.zip",
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\downloads\\BlackEdition2_6.1Alpha.zip",
+      "attempts": 1,
+      "commandExitCode": 0,
+      "bytes": 7626408,
+      "SHA256": "7EAC7EC1345582736A5EF57249FBFAAB1C55EF83C8E9631715CB7D3A6F171CBC",
+      "first16Hex": "504b03040a00000008007bbc6446771c",
+      "isZIP": true
+    },
+    "state": "acquired-magic-verified",
+    "magicHex": "504b03040a00000008007bbc6446771c",
+    "isZIP": true,
+    "isRAR": false,
+    "archiveChecks": {
+      "label": "idx-3461",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\downloads\\BlackEdition2_6.1Alpha.zip",
+      "bytes": 7626408,
+      "SHA256": "7EAC7EC1345582736A5EF57249FBFAAB1C55EF83C8E9631715CB7D3A6F171CBC",
+      "expectedSHA256": null,
+      "hashMatch": null,
+      "CRCtestRuns": 1,
+      "unsafe": [],
+      "extractionState": "passed",
+      "CRCbadMember": null,
+      "CRCstate": "passed",
+      "fileCount": 1,
+      "directoryCount": 0,
+      "totalCompressedBytes": 7626254,
+      "totalUncompressedBytes": 7889127,
+      "extractionRoot": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\extracted-idx-3461",
+      "extractedFileCount": 1,
+      "extractedBytes": 7889127,
+      "postExtractionReparse": [],
+      "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\idx-3461-members.json",
+      "nameOnlyCandidates": []
+    }
+  },
+  {
+    "postID": 1932,
+    "filename": "devilbecustom91.part2.rar",
+    "URL": "https://pds.inven.co.kr/upload/wow/addonpds/file/devilbecustom91.part2.rar",
+    "URLbasis": "actual literal setDownloadInfo; not predicted",
+    "source": {
+      "fileID": 9953,
+      "URL": "https://pds.inven.co.kr/upload/wow/addonpds/file/devilbecustom91.part2.rar",
+      "line": 37,
+      "executed": false
+    },
+    "metadataPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\idx-1932-attachment-metadata.json",
+    "provenance": {
+      "finalURL": "https://pds.inven.co.kr/upload/wow/addonpds/file/devilbecustom91.part2.rar",
+      "time": "2026-11-17T14:43:01.7810040Z",
+      "contentType": "application/octet-stream",
+      "HTTP": 200,
+      "requestedURL": "https://pds.inven.co.kr/upload/wow/addonpds/file/devilbecustom91.part2.rar",
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\downloads\\devilbecustom91.part2.rar",
+      "attempts": 1,
+      "commandExitCode": 0,
+      "bytes": 3202564,
+      "SHA256": "EFBC3C0C2FBF5F743DD5AC3D2768F547EEF8F2AB2103FB2C27E7EEB108F98CCE",
+      "first16Hex": "526172211a0700197a7311000d000000",
+      "isZIP": false
+    },
+    "state": "acquired-magic-verified",
+    "magicHex": "526172211a0700197a7311000d000000",
+    "isZIP": false,
+    "isRAR": true
+  },
+  {
+    "postID": 1932,
+    "filename": "devilbecustom91.part1.rar",
+    "URL": "https://pds.inven.co.kr/upload/wow/addonpds/file/devilbecustom91.part1.rar",
+    "URLbasis": "PREDICTED counterpart ONCE: actualpart1 rowfilename + observedliteralpart2 prefix. Not an exposedpart1URLliteral.",
+    "sourceRow": {
+      "ordinal1": 2,
+      "filename": "devilbecustom91.part1.rar",
+      "clientLiteral": "3.0.2",
+      "downloadsLiteral": "788",
+      "dateLiteral": "2008-11-02",
+      "sourceLine": 47,
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "devilbecustom91.part1.rar"
+        }
+      ],
+      "actualLiteralMapping": []
+    },
+    "metadataPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\idx-1932-attachment-metadata.json",
+    "provenance": {
+      "finalURL": "https://pds.inven.co.kr/upload/wow/addonpds/file/devilbecustom91.part1.rar",
+      "time": "2026-11-17T14:43:09.9133754Z",
+      "contentType": "application/octet-stream",
+      "HTTP": 200,
+      "requestedURL": "https://pds.inven.co.kr/upload/wow/addonpds/file/devilbecustom91.part1.rar",
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\downloads\\devilbecustom91.part1.rar",
+      "attempts": 1,
+      "commandExitCode": 0,
+      "bytes": 5242880,
+      "SHA256": "0869DB436FEEE2E70D4B8A5A82ECC1281DDE0769EA6F52DB0CD9497339CD4FE3",
+      "first16Hex": "526172211a07005a6e7311010d000000",
+      "isZIP": false
+    },
+    "state": "acquired-magic-verified",
+    "magicHex": "526172211a07005a6e7311010d000000",
+    "isZIP": false,
+    "isRAR": true
+  }
+]

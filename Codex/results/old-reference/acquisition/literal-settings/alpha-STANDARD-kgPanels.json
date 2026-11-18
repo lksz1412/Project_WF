@@ -1,0 +1,4217 @@
+{
+  "source": {
+    "id": "alpha-STANDARD-kgPanels",
+    "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\alpha-nsis-members.json",
+    "inventoryIndex0": 2051,
+    "sourceSuffix": "var/STANDARD/Interface/AddOns/!DevilUI/Profile/kgPanels.lua",
+    "SHA256": "7E3D6F73C2A40FE093331EADEEBD2B82646DBE3E1397404B17591E19F7A8EEBD",
+    "sourceBytes": 17754,
+    "encoding": "utf-8-sig",
+    "decodeAttempts": [],
+    "sourceLines": 780,
+    "state": "parsed-fully",
+    "literalTokens": 4171,
+    "consumedTokens": 4171,
+    "duplicates": [],
+    "schemas": [
+      {
+        "rootAssignment": "kgPanelsDB",
+        "type": "dict",
+        "rootSpan": [
+          2,
+          780
+        ],
+        "topKeys": [
+          "namespaces",
+          "profileKeys",
+          "global",
+          "profiles"
+        ],
+        "topKeyCount": 4,
+        "profilesCount": 3,
+        "profilesKeys": [
+          "Normal",
+          "Wide",
+          "Default"
+        ],
+        "globalCount": 2,
+        "globalKeys": [
+          "version",
+          "layouts"
+        ],
+        "profileKeysCount": 0,
+        "profileKeysKeys": []
+      }
+    ]
+  },
+  "selection": "Entire profiles subtree plus entire global/layouts,global/artwork,global/version if present. profileKeys mappings excluded; no profile/frame/layout subset chosen.",
+  "typedSettings": {
+    "kgPanelsDB": {
+      "luaTableEntries": [
+        {
+          "keyType": "str",
+          "key": "profiles",
+          "value": {
+            "luaTableEntries": [
+              {
+                "keyType": "str",
+                "key": "Normal",
+                "value": {
+                  "luaTableEntries": [
+                    {
+                      "keyType": "str",
+                      "key": "layout",
+                      "value": "Normal"
+                    }
+                  ]
+                }
+              },
+              {
+                "keyType": "str",
+                "key": "Wide",
+                "value": {
+                  "luaTableEntries": [
+                    {
+                      "keyType": "str",
+                      "key": "layout",
+                      "value": "Wide"
+                    }
+                  ]
+                }
+              },
+              {
+                "keyType": "str",
+                "key": "Default",
+                "value": {
+                  "luaTableEntries": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "keyType": "str",
+          "key": "global",
+          "value": {
+            "luaTableEntries": [
+              {
+                "keyType": "str",
+                "key": "layouts",
+                "value": {
+                  "luaTableEntries": [
+                    {
+                      "keyType": "str",
+                      "key": "Normal",
+                      "value": {
+                        "luaTableEntries": [
+                          {
+                            "keyType": "str",
+                            "key": "좌측하단이미지",
+                            "value": {
+                              "luaTableEntries": [
+                                {
+                                  "keyType": "str",
+                                  "key": "border_advanced",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "enable",
+                                        "value": false
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "show",
+                                        "value": {
+                                          "luaTableEntries": [
+                                            {
+                                              "keyType": "str",
+                                              "key": "BOT",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "TOPRIGHTCORNER",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "LEFT",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "TOPLEFTCORNER",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "RIGHT",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "BOTLEFTCORNER",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "TOP",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "BOTRIGHTCORNER",
+                                              "value": true
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "parent",
+                                  "value": "UIParent"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_orientation",
+                                  "value": "HORIZONTAL"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "anchorFrom",
+                                  "value": "BOTTOM"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "hflip",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "vflip",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "tileSize",
+                                  "value": 0
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_texture",
+                                  "value": "demon"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "anchor",
+                                  "value": "UIParent"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "level",
+                                  "value": 0
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "vert_tile",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "use_absolute_bg",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_blend",
+                                  "value": "BLEND"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "text",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "y",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "font",
+                                        "value": "Blizzard"
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "justifyH",
+                                        "value": "CENTER"
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "x",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "color",
+                                        "value": {
+                                          "luaTableEntries": [
+                                            {
+                                              "keyType": "str",
+                                              "key": "a",
+                                              "value": 1
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "b",
+                                              "value": 1
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "g",
+                                              "value": 1
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "r",
+                                              "value": 1
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "text",
+                                        "value": ""
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "justifyV",
+                                        "value": "MIDDLE"
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "size",
+                                        "value": 12
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "rotation",
+                                  "value": 0
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "x",
+                                  "value": "-540"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_alpha",
+                                  "value": 1
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "border_edgeSize",
+                                  "value": 6
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "height",
+                                  "value": "175"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "tiling",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "strata",
+                                  "value": "BACKGROUND"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "horz_tile",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "anchorTo",
+                                  "value": "BOTTOM"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "scale",
+                                  "value": 1
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "absolute_bg",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "LRy",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "LRx",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "ULx",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "ULy",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "URx",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "URy",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "LLx",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "LLy",
+                                        "value": 1
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_insets",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "r",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "t",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "l",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "b",
+                                        "value": 0
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "scripts",
+                                  "value": {
+                                    "luaTableEntries": []
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_style",
+                                  "value": "NONE"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "gradient_color",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "a",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "r",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "g",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "b",
+                                        "value": 1
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "border_color",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "a",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "r",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "g",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "b",
+                                        "value": 1
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "border_texture",
+                                  "value": "None"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "width",
+                                  "value": "170"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_color",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "a",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "b",
+                                        "value": 0.3019607843137255
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "g",
+                                        "value": 0.3019607843137255
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "r",
+                                        "value": 0.3019607843137255
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "mouse",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "y",
+                                  "value": "20"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "sub_level",
+                                  "value": 0
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "미니맵이미지",
+                            "value": {
+                              "luaTableEntries": [
+                                {
+                                  "keyType": "str",
+                                  "key": "border_advanced",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "enable",
+                                        "value": false
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "show",
+                                        "value": {
+                                          "luaTableEntries": [
+                                            {
+                                              "keyType": "str",
+                                              "key": "BOT",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "TOPRIGHTCORNER",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "LEFT",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "TOPLEFTCORNER",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "RIGHT",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "BOTLEFTCORNER",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "TOP",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "BOTRIGHTCORNER",
+                                              "value": true
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "parent",
+                                  "value": "Minimap"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_orientation",
+                                  "value": "HORIZONTAL"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "anchorFrom",
+                                  "value": "CENTER"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "hflip",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "vflip",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "tileSize",
+                                  "value": 0
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_texture",
+                                  "value": "Minimap"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "anchor",
+                                  "value": "Minimap"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "level",
+                                  "value": 3
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "vert_tile",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "use_absolute_bg",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_blend",
+                                  "value": "BLEND"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "text",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "y",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "font",
+                                        "value": "Blizzard"
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "justifyH",
+                                        "value": "CENTER"
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "x",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "color",
+                                        "value": {
+                                          "luaTableEntries": [
+                                            {
+                                              "keyType": "str",
+                                              "key": "a",
+                                              "value": 1
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "b",
+                                              "value": 1
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "g",
+                                              "value": 1
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "r",
+                                              "value": 1
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "text",
+                                        "value": ""
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "justifyV",
+                                        "value": "MIDDLE"
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "size",
+                                        "value": 12
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "rotation",
+                                  "value": 0
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "x",
+                                  "value": 0
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_alpha",
+                                  "value": 0.9500000000000001
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "border_edgeSize",
+                                  "value": 6
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "height",
+                                  "value": "110%"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "tiling",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "strata",
+                                  "value": "LOW"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "horz_tile",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "anchorTo",
+                                  "value": "CENTER"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "scale",
+                                  "value": 1
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "absolute_bg",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "LRy",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "LRx",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "ULx",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "ULy",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "URx",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "URy",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "LLx",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "LLy",
+                                        "value": 1
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_insets",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "b",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "t",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "l",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "r",
+                                        "value": 0
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "scripts",
+                                  "value": {
+                                    "luaTableEntries": []
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_style",
+                                  "value": "NONE"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "gradient_color",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "a",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "r",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "g",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "b",
+                                        "value": 1
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "border_color",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "a",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "r",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "g",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "b",
+                                        "value": 1
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "border_texture",
+                                  "value": "None"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "width",
+                                  "value": "110%"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_color",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "a",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "r",
+                                        "value": 0.3019607843137255
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "g",
+                                        "value": 0.3019607843137255
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "b",
+                                        "value": 0.3019607843137255
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "mouse",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "y",
+                                  "value": 0
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "sub_level",
+                                  "value": 0
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "우측하단이미지",
+                            "value": {
+                              "luaTableEntries": [
+                                {
+                                  "keyType": "str",
+                                  "key": "border_advanced",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "enable",
+                                        "value": false
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "show",
+                                        "value": {
+                                          "luaTableEntries": [
+                                            {
+                                              "keyType": "str",
+                                              "key": "BOT",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "TOPRIGHTCORNER",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "LEFT",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "TOPLEFTCORNER",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "RIGHT",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "BOTLEFTCORNER",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "TOP",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "BOTRIGHTCORNER",
+                                              "value": true
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "parent",
+                                  "value": "UIParent"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_orientation",
+                                  "value": "HORIZONTAL"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "anchorFrom",
+                                  "value": "BOTTOM"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "hflip",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "vflip",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "tileSize",
+                                  "value": 0
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_texture",
+                                  "value": "angel"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "anchor",
+                                  "value": "UIParent"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "level",
+                                  "value": 0
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "vert_tile",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "use_absolute_bg",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_blend",
+                                  "value": "BLEND"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "text",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "y",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "font",
+                                        "value": "Blizzard"
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "justifyH",
+                                        "value": "CENTER"
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "x",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "color",
+                                        "value": {
+                                          "luaTableEntries": [
+                                            {
+                                              "keyType": "str",
+                                              "key": "a",
+                                              "value": 1
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "b",
+                                              "value": 1
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "g",
+                                              "value": 1
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "r",
+                                              "value": 1
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "text",
+                                        "value": ""
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "justifyV",
+                                        "value": "MIDDLE"
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "size",
+                                        "value": 12
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "rotation",
+                                  "value": 0
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "x",
+                                  "value": "530"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_alpha",
+                                  "value": 1
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "border_edgeSize",
+                                  "value": 6
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "height",
+                                  "value": "180"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "tiling",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "strata",
+                                  "value": "BACKGROUND"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "horz_tile",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "anchorTo",
+                                  "value": "BOTTOM"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "scale",
+                                  "value": 1
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "absolute_bg",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "LRy",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "LRx",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "ULx",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "ULy",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "URx",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "URy",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "LLx",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "LLy",
+                                        "value": 1
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_insets",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "b",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "t",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "l",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "r",
+                                        "value": 0
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "scripts",
+                                  "value": {
+                                    "luaTableEntries": []
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_style",
+                                  "value": "NONE"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "gradient_color",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "a",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "r",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "g",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "b",
+                                        "value": 1
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "border_color",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "a",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "r",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "g",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "b",
+                                        "value": 1
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "border_texture",
+                                  "value": "None"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "width",
+                                  "value": "180"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_color",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "a",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "r",
+                                        "value": 0.3019607843137255
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "g",
+                                        "value": 0.3019607843137255
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "b",
+                                        "value": 0.3019607843137255
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "mouse",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "y",
+                                  "value": "20"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "sub_level",
+                                  "value": 0
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "하단이미지",
+                            "value": {
+                              "luaTableEntries": [
+                                {
+                                  "keyType": "str",
+                                  "key": "border_advanced",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "enable",
+                                        "value": false
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "show",
+                                        "value": {
+                                          "luaTableEntries": [
+                                            {
+                                              "keyType": "str",
+                                              "key": "BOT",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "TOPRIGHTCORNER",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "LEFT",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "TOPLEFTCORNER",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "RIGHT",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "BOTLEFTCORNER",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "TOP",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "BOTRIGHTCORNER",
+                                              "value": true
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "parent",
+                                  "value": "UIParent"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_orientation",
+                                  "value": "VERTICAL"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "anchorFrom",
+                                  "value": "BOTTOM"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "hflip",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "vflip",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "tileSize",
+                                  "value": 0
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_texture",
+                                  "value": "Solid"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "anchor",
+                                  "value": "UIParent"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "level",
+                                  "value": 1
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "vert_tile",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "use_absolute_bg",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_blend",
+                                  "value": "DISABLE"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "text",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "y",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "font",
+                                        "value": "Blizzard"
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "justifyH",
+                                        "value": "CENTER"
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "x",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "color",
+                                        "value": {
+                                          "luaTableEntries": [
+                                            {
+                                              "keyType": "str",
+                                              "key": "a",
+                                              "value": 1
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "b",
+                                              "value": 1
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "g",
+                                              "value": 1
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "r",
+                                              "value": 1
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "text",
+                                        "value": ""
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "justifyV",
+                                        "value": "MIDDLE"
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "size",
+                                        "value": 12
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "rotation",
+                                  "value": 0
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "x",
+                                  "value": 0
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_alpha",
+                                  "value": 1
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "border_edgeSize",
+                                  "value": 16
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "height",
+                                  "value": "24"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "tiling",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "strata",
+                                  "value": "BACKGROUND"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "horz_tile",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "anchorTo",
+                                  "value": "BOTTOM"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "scale",
+                                  "value": 1
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "absolute_bg",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "LRy",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "LRx",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "ULx",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "ULy",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "URx",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "URy",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "LLx",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "LLy",
+                                        "value": 1
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_insets",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "b",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "t",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "l",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "r",
+                                        "value": 0
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "scripts",
+                                  "value": {
+                                    "luaTableEntries": []
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_style",
+                                  "value": "SOLID"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "gradient_color",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "a",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "r",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "g",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "b",
+                                        "value": 1
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "border_color",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "a",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "b",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "g",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "r",
+                                        "value": 1
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "border_texture",
+                                  "value": "Blizzard Dialog"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "width",
+                                  "value": "100%"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_color",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "a",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "b",
+                                        "value": 0.09803921568627451
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "g",
+                                        "value": 0.09803921568627451
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "r",
+                                        "value": 0.09803921568627451
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "mouse",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "y",
+                                  "value": "-1"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "sub_level",
+                                  "value": 0
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "keyType": "str",
+                      "key": "Wide",
+                      "value": {
+                        "luaTableEntries": [
+                          {
+                            "keyType": "str",
+                            "key": "좌측하단이미지",
+                            "value": {
+                              "luaTableEntries": [
+                                {
+                                  "keyType": "str",
+                                  "key": "border_advanced",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "enable",
+                                        "value": false
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "show",
+                                        "value": {
+                                          "luaTableEntries": [
+                                            {
+                                              "keyType": "str",
+                                              "key": "BOT",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "TOPRIGHTCORNER",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "LEFT",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "TOPLEFTCORNER",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "RIGHT",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "BOTLEFTCORNER",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "TOP",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "BOTRIGHTCORNER",
+                                              "value": true
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "parent",
+                                  "value": "UIParent"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_orientation",
+                                  "value": "HORIZONTAL"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "anchorFrom",
+                                  "value": "BOTTOM"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "hflip",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "vflip",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "tileSize",
+                                  "value": 0
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_texture",
+                                  "value": "demon"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "anchor",
+                                  "value": "UIParent"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "level",
+                                  "value": 0
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "vert_tile",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "use_absolute_bg",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_blend",
+                                  "value": "BLEND"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "text",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "y",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "font",
+                                        "value": "Blizzard"
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "justifyH",
+                                        "value": "CENTER"
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "x",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "color",
+                                        "value": {
+                                          "luaTableEntries": [
+                                            {
+                                              "keyType": "str",
+                                              "key": "a",
+                                              "value": 1
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "b",
+                                              "value": 1
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "g",
+                                              "value": 1
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "r",
+                                              "value": 1
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "text",
+                                        "value": ""
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "justifyV",
+                                        "value": "MIDDLE"
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "size",
+                                        "value": 12
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "rotation",
+                                  "value": 0
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "x",
+                                  "value": "-730"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_alpha",
+                                  "value": 1
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "border_edgeSize",
+                                  "value": 6
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "height",
+                                  "value": "155"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "tiling",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "strata",
+                                  "value": "BACKGROUND"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "horz_tile",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "anchorTo",
+                                  "value": "BOTTOM"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "scale",
+                                  "value": 1
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "absolute_bg",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "LLy",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "LLx",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "LRy",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "LRx",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "URx",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "URy",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "ULy",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "ULx",
+                                        "value": 0
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_insets",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "r",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "t",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "l",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "b",
+                                        "value": 0
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "scripts",
+                                  "value": {
+                                    "luaTableEntries": []
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_style",
+                                  "value": "NONE"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "gradient_color",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "a",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "r",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "g",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "b",
+                                        "value": 1
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "border_color",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "a",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "r",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "g",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "b",
+                                        "value": 1
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "border_texture",
+                                  "value": "None"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "width",
+                                  "value": "155"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_color",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "a",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "b",
+                                        "value": 0.3019607843137255
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "g",
+                                        "value": 0.3019607843137255
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "r",
+                                        "value": 0.3019607843137255
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "mouse",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "y",
+                                  "value": "18"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "sub_level",
+                                  "value": 0
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "미니맵이미지",
+                            "value": {
+                              "luaTableEntries": [
+                                {
+                                  "keyType": "str",
+                                  "key": "border_advanced",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "enable",
+                                        "value": false
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "show",
+                                        "value": {
+                                          "luaTableEntries": [
+                                            {
+                                              "keyType": "str",
+                                              "key": "BOT",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "TOPRIGHTCORNER",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "LEFT",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "TOPLEFTCORNER",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "RIGHT",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "BOTLEFTCORNER",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "TOP",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "BOTRIGHTCORNER",
+                                              "value": true
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "parent",
+                                  "value": "Minimap"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_orientation",
+                                  "value": "HORIZONTAL"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "anchorFrom",
+                                  "value": "CENTER"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "hflip",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "vflip",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "tileSize",
+                                  "value": 0
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_texture",
+                                  "value": "Minimap"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "anchor",
+                                  "value": "Minimap"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "level",
+                                  "value": 3
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "vert_tile",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "use_absolute_bg",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_blend",
+                                  "value": "BLEND"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "text",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "y",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "font",
+                                        "value": "Blizzard"
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "justifyH",
+                                        "value": "CENTER"
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "x",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "color",
+                                        "value": {
+                                          "luaTableEntries": [
+                                            {
+                                              "keyType": "str",
+                                              "key": "a",
+                                              "value": 1
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "b",
+                                              "value": 1
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "g",
+                                              "value": 1
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "r",
+                                              "value": 1
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "text",
+                                        "value": ""
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "justifyV",
+                                        "value": "MIDDLE"
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "size",
+                                        "value": 12
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "rotation",
+                                  "value": 0
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "x",
+                                  "value": 0
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_alpha",
+                                  "value": 0.9500000000000001
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "border_edgeSize",
+                                  "value": 6
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "height",
+                                  "value": "110%"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "tiling",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "strata",
+                                  "value": "LOW"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "horz_tile",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "anchorTo",
+                                  "value": "CENTER"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "scale",
+                                  "value": 1
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "absolute_bg",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "LLy",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "LLx",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "LRy",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "LRx",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "URx",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "URy",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "ULy",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "ULx",
+                                        "value": 0
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_insets",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "b",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "t",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "l",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "r",
+                                        "value": 0
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "scripts",
+                                  "value": {
+                                    "luaTableEntries": []
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_style",
+                                  "value": "NONE"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "gradient_color",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "a",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "r",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "g",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "b",
+                                        "value": 1
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "border_color",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "a",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "r",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "g",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "b",
+                                        "value": 1
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "border_texture",
+                                  "value": "None"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "width",
+                                  "value": "110%"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_color",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "a",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "r",
+                                        "value": 0.3019607843137255
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "g",
+                                        "value": 0.3019607843137255
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "b",
+                                        "value": 0.3019607843137255
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "mouse",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "y",
+                                  "value": 0
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "sub_level",
+                                  "value": 0
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "우측하단이미지",
+                            "value": {
+                              "luaTableEntries": [
+                                {
+                                  "keyType": "str",
+                                  "key": "border_advanced",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "enable",
+                                        "value": false
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "show",
+                                        "value": {
+                                          "luaTableEntries": [
+                                            {
+                                              "keyType": "str",
+                                              "key": "BOT",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "TOPRIGHTCORNER",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "LEFT",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "TOPLEFTCORNER",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "RIGHT",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "BOTLEFTCORNER",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "TOP",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "BOTRIGHTCORNER",
+                                              "value": true
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "parent",
+                                  "value": "UIParent"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_orientation",
+                                  "value": "HORIZONTAL"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "anchorFrom",
+                                  "value": "BOTTOM"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "hflip",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "vflip",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "tileSize",
+                                  "value": 0
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_texture",
+                                  "value": "angel"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "anchor",
+                                  "value": "UIParent"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "level",
+                                  "value": 0
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "vert_tile",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "use_absolute_bg",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_blend",
+                                  "value": "BLEND"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "text",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "y",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "font",
+                                        "value": "Blizzard"
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "justifyH",
+                                        "value": "CENTER"
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "x",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "color",
+                                        "value": {
+                                          "luaTableEntries": [
+                                            {
+                                              "keyType": "str",
+                                              "key": "a",
+                                              "value": 1
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "b",
+                                              "value": 1
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "g",
+                                              "value": 1
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "r",
+                                              "value": 1
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "text",
+                                        "value": ""
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "justifyV",
+                                        "value": "MIDDLE"
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "size",
+                                        "value": 12
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "rotation",
+                                  "value": 0
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "x",
+                                  "value": "720"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_alpha",
+                                  "value": 1
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "border_edgeSize",
+                                  "value": 6
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "height",
+                                  "value": "160"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "tiling",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "strata",
+                                  "value": "BACKGROUND"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "horz_tile",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "anchorTo",
+                                  "value": "BOTTOM"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "scale",
+                                  "value": 1
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "absolute_bg",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "LLy",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "LLx",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "LRy",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "LRx",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "URx",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "URy",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "ULy",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "ULx",
+                                        "value": 0
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_insets",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "b",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "t",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "l",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "r",
+                                        "value": 0
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "scripts",
+                                  "value": {
+                                    "luaTableEntries": []
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_style",
+                                  "value": "NONE"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "gradient_color",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "a",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "r",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "g",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "b",
+                                        "value": 1
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "border_color",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "a",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "r",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "g",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "b",
+                                        "value": 1
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "border_texture",
+                                  "value": "None"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "width",
+                                  "value": "160"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_color",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "a",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "r",
+                                        "value": 0.3019607843137255
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "g",
+                                        "value": 0.3019607843137255
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "b",
+                                        "value": 0.3019607843137255
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "mouse",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "y",
+                                  "value": "18"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "sub_level",
+                                  "value": 0
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "하단이미지",
+                            "value": {
+                              "luaTableEntries": [
+                                {
+                                  "keyType": "str",
+                                  "key": "border_advanced",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "enable",
+                                        "value": false
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "show",
+                                        "value": {
+                                          "luaTableEntries": [
+                                            {
+                                              "keyType": "str",
+                                              "key": "BOT",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "TOPRIGHTCORNER",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "LEFT",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "TOPLEFTCORNER",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "RIGHT",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "BOTLEFTCORNER",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "TOP",
+                                              "value": true
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "BOTRIGHTCORNER",
+                                              "value": true
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "parent",
+                                  "value": "UIParent"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_orientation",
+                                  "value": "VERTICAL"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "anchorFrom",
+                                  "value": "BOTTOM"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "hflip",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "vflip",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "tileSize",
+                                  "value": 0
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_texture",
+                                  "value": "Solid"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "anchor",
+                                  "value": "UIParent"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "level",
+                                  "value": 1
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "vert_tile",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "use_absolute_bg",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_blend",
+                                  "value": "DISABLE"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "text",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "y",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "font",
+                                        "value": "Blizzard"
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "justifyH",
+                                        "value": "CENTER"
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "x",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "color",
+                                        "value": {
+                                          "luaTableEntries": [
+                                            {
+                                              "keyType": "str",
+                                              "key": "a",
+                                              "value": 1
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "b",
+                                              "value": 1
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "g",
+                                              "value": 1
+                                            },
+                                            {
+                                              "keyType": "str",
+                                              "key": "r",
+                                              "value": 1
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "text",
+                                        "value": ""
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "justifyV",
+                                        "value": "MIDDLE"
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "size",
+                                        "value": 12
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "rotation",
+                                  "value": 0
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "x",
+                                  "value": 0
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_alpha",
+                                  "value": 1
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "border_edgeSize",
+                                  "value": 16
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "height",
+                                  "value": "24"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "tiling",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "strata",
+                                  "value": "BACKGROUND"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "horz_tile",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "anchorTo",
+                                  "value": "BOTTOM"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "scale",
+                                  "value": 1
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "absolute_bg",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "LLy",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "LLx",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "LRy",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "LRx",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "URx",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "URy",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "ULy",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "ULx",
+                                        "value": 0
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_insets",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "b",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "t",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "l",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "r",
+                                        "value": 0
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "scripts",
+                                  "value": {
+                                    "luaTableEntries": []
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_style",
+                                  "value": "SOLID"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "gradient_color",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "a",
+                                        "value": 0
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "r",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "g",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "b",
+                                        "value": 1
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "border_color",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "a",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "b",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "g",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "r",
+                                        "value": 1
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "border_texture",
+                                  "value": "Blizzard Dialog"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "width",
+                                  "value": "100%"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "bg_color",
+                                  "value": {
+                                    "luaTableEntries": [
+                                      {
+                                        "keyType": "str",
+                                        "key": "a",
+                                        "value": 1
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "b",
+                                        "value": 0.1058823529411765
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "g",
+                                        "value": 0.1058823529411765
+                                      },
+                                      {
+                                        "keyType": "str",
+                                        "key": "r",
+                                        "value": 0.1058823529411765
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "mouse",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "y",
+                                  "value": "-1"
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "sub_level",
+                                  "value": 0
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "keyType": "str",
+                "key": "version",
+                "value": 6
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "profileFrameIndex": [
+    {
+      "profileName": "Normal",
+      "sourcePath": [
+        "kgPanelsDB",
+        "profiles",
+        "Normal"
+      ],
+      "span": [
+        771,
+        773
+      ],
+      "profileKeySet": [
+        "layout"
+      ]
+    },
+    {
+      "profileName": "Wide",
+      "sourcePath": [
+        "kgPanelsDB",
+        "profiles",
+        "Wide"
+      ],
+      "span": [
+        774,
+        776
+      ],
+      "profileKeySet": [
+        "layout"
+      ]
+    },
+    {
+      "profileName": "Default",
+      "sourcePath": [
+        "kgPanelsDB",
+        "profiles",
+        "Default"
+      ],
+      "span": [
+        777,
+        778
+      ],
+      "profileKeySet": []
+    }
+  ],
+  "layoutIndex": [
+    {
+      "layoutName": "Normal",
+      "span": [
+        12,
+        389
+      ],
+      "panelNames": [
+        "좌측하단이미지",
+        "미니맵이미지",
+        "우측하단이미지",
+        "하단이미지"
+      ],
+      "panelSpans": {
+        "좌측하단이미지": [
+          13,
+          106
+        ],
+        "미니맵이미지": [
+          107,
+          200
+        ],
+        "우측하단이미지": [
+          201,
+          294
+        ],
+        "하단이미지": [
+          295,
+          388
+        ]
+      }
+    },
+    {
+      "layoutName": "Wide",
+      "span": [
+        390,
+        767
+      ],
+      "panelNames": [
+        "좌측하단이미지",
+        "미니맵이미지",
+        "우측하단이미지",
+        "하단이미지"
+      ],
+      "panelSpans": {
+        "좌측하단이미지": [
+          391,
+          484
+        ],
+        "미니맵이미지": [
+          485,
+          578
+        ],
+        "우측하단이미지": [
+          579,
+          672
+        ],
+        "하단이미지": [
+          673,
+          766
+        ]
+      }
+    }
+  ],
+  "activeLayoutLiterals": [
+    {
+      "path": [
+        "kgPanelsDB",
+        "profiles",
+        "Normal",
+        "layout"
+      ],
+      "value": "Normal",
+      "span": [
+        772,
+        772
+      ]
+    },
+    {
+      "path": [
+        "kgPanelsDB",
+        "profiles",
+        "Wide",
+        "layout"
+      ],
+      "value": "Wide",
+      "span": [
+        775,
+        775
+      ]
+    }
+  ],
+  "mediaLiterals": [
+    {
+      "path": [
+        "kgPanelsDB",
+        "global",
+        "layouts",
+        "Normal",
+        "좌측하단이미지",
+        "bg_texture"
+      ],
+      "literal": "demon",
+      "span": [
+        33,
+        33
+      ]
+    },
+    {
+      "path": [
+        "kgPanelsDB",
+        "global",
+        "layouts",
+        "Normal",
+        "좌측하단이미지",
+        "text",
+        "font"
+      ],
+      "literal": "Blizzard",
+      "span": [
+        41,
+        41
+      ]
+    },
+    {
+      "path": [
+        "kgPanelsDB",
+        "global",
+        "layouts",
+        "Normal",
+        "좌측하단이미지",
+        "border_texture"
+      ],
+      "literal": "None",
+      "span": [
+        95,
+        95
+      ]
+    },
+    {
+      "path": [
+        "kgPanelsDB",
+        "global",
+        "layouts",
+        "Normal",
+        "미니맵이미지",
+        "bg_texture"
+      ],
+      "literal": "Minimap",
+      "span": [
+        127,
+        127
+      ]
+    },
+    {
+      "path": [
+        "kgPanelsDB",
+        "global",
+        "layouts",
+        "Normal",
+        "미니맵이미지",
+        "text",
+        "font"
+      ],
+      "literal": "Blizzard",
+      "span": [
+        135,
+        135
+      ]
+    },
+    {
+      "path": [
+        "kgPanelsDB",
+        "global",
+        "layouts",
+        "Normal",
+        "미니맵이미지",
+        "border_texture"
+      ],
+      "literal": "None",
+      "span": [
+        189,
+        189
+      ]
+    },
+    {
+      "path": [
+        "kgPanelsDB",
+        "global",
+        "layouts",
+        "Normal",
+        "우측하단이미지",
+        "bg_texture"
+      ],
+      "literal": "angel",
+      "span": [
+        221,
+        221
+      ]
+    },
+    {
+      "path": [
+        "kgPanelsDB",
+        "global",
+        "layouts",
+        "Normal",
+        "우측하단이미지",
+        "text",
+        "font"
+      ],
+      "literal": "Blizzard",
+      "span": [
+        229,
+        229
+      ]
+    },
+    {
+      "path": [
+        "kgPanelsDB",
+        "global",
+        "layouts",
+        "Normal",
+        "우측하단이미지",
+        "border_texture"
+      ],
+      "literal": "None",
+      "span": [
+        283,
+        283
+      ]
+    },
+    {
+      "path": [
+        "kgPanelsDB",
+        "global",
+        "layouts",
+        "Normal",
+        "하단이미지",
+        "bg_texture"
+      ],
+      "literal": "Solid",
+      "span": [
+        315,
+        315
+      ]
+    },
+    {
+      "path": [
+        "kgPanelsDB",
+        "global",
+        "layouts",
+        "Normal",
+        "하단이미지",
+        "text",
+        "font"
+      ],
+      "literal": "Blizzard",
+      "span": [
+        323,
+        323
+      ]
+    },
+    {
+      "path": [
+        "kgPanelsDB",
+        "global",
+        "layouts",
+        "Normal",
+        "하단이미지",
+        "border_texture"
+      ],
+      "literal": "Blizzard Dialog",
+      "span": [
+        377,
+        377
+      ]
+    },
+    {
+      "path": [
+        "kgPanelsDB",
+        "global",
+        "layouts",
+        "Wide",
+        "좌측하단이미지",
+        "bg_texture"
+      ],
+      "literal": "demon",
+      "span": [
+        411,
+        411
+      ]
+    },
+    {
+      "path": [
+        "kgPanelsDB",
+        "global",
+        "layouts",
+        "Wide",
+        "좌측하단이미지",
+        "text",
+        "font"
+      ],
+      "literal": "Blizzard",
+      "span": [
+        419,
+        419
+      ]
+    },
+    {
+      "path": [
+        "kgPanelsDB",
+        "global",
+        "layouts",
+        "Wide",
+        "좌측하단이미지",
+        "border_texture"
+      ],
+      "literal": "None",
+      "span": [
+        473,
+        473
+      ]
+    },
+    {
+      "path": [
+        "kgPanelsDB",
+        "global",
+        "layouts",
+        "Wide",
+        "미니맵이미지",
+        "bg_texture"
+      ],
+      "literal": "Minimap",
+      "span": [
+        505,
+        505
+      ]
+    },
+    {
+      "path": [
+        "kgPanelsDB",
+        "global",
+        "layouts",
+        "Wide",
+        "미니맵이미지",
+        "text",
+        "font"
+      ],
+      "literal": "Blizzard",
+      "span": [
+        513,
+        513
+      ]
+    },
+    {
+      "path": [
+        "kgPanelsDB",
+        "global",
+        "layouts",
+        "Wide",
+        "미니맵이미지",
+        "border_texture"
+      ],
+      "literal": "None",
+      "span": [
+        567,
+        567
+      ]
+    },
+    {
+      "path": [
+        "kgPanelsDB",
+        "global",
+        "layouts",
+        "Wide",
+        "우측하단이미지",
+        "bg_texture"
+      ],
+      "literal": "angel",
+      "span": [
+        599,
+        599
+      ]
+    },
+    {
+      "path": [
+        "kgPanelsDB",
+        "global",
+        "layouts",
+        "Wide",
+        "우측하단이미지",
+        "text",
+        "font"
+      ],
+      "literal": "Blizzard",
+      "span": [
+        607,
+        607
+      ]
+    },
+    {
+      "path": [
+        "kgPanelsDB",
+        "global",
+        "layouts",
+        "Wide",
+        "우측하단이미지",
+        "border_texture"
+      ],
+      "literal": "None",
+      "span": [
+        661,
+        661
+      ]
+    },
+    {
+      "path": [
+        "kgPanelsDB",
+        "global",
+        "layouts",
+        "Wide",
+        "하단이미지",
+        "bg_texture"
+      ],
+      "literal": "Solid",
+      "span": [
+        693,
+        693
+      ]
+    },
+    {
+      "path": [
+        "kgPanelsDB",
+        "global",
+        "layouts",
+        "Wide",
+        "하단이미지",
+        "text",
+        "font"
+      ],
+      "literal": "Blizzard",
+      "span": [
+        701,
+        701
+      ]
+    },
+    {
+      "path": [
+        "kgPanelsDB",
+        "global",
+        "layouts",
+        "Wide",
+        "하단이미지",
+        "border_texture"
+      ],
+      "literal": "Blizzard Dialog",
+      "span": [
+        755,
+        755
+      ]
+    }
+  ],
+  "fullTypedSourceCache": "D:\\Projects\\Project_WF\\work\\old-reference-collection-6jz2o93e\\literal-tables-full-typed.json",
+  "keyEncoding": "luaTableEntries preserves keyType/key/value, including integer/string distinction."
+}

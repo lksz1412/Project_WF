@@ -1,0 +1,67 @@
+{
+  "scope": "Futureapprovedgameverification design only; no currentgameactions",
+  "state": "NOT_RUN",
+  "recorded": "2026-11-18T00:59:30.659218+09:00",
+  "gates": [
+    {
+      "id": "R1",
+      "area": "actual4K/render/UIscale",
+      "requiredEvidence": "Measure actualrender/UIscale and bottomup panelheight; no globalratio transplant",
+      "actualResult": "NOT_RUN"
+    },
+    {
+      "id": "R2",
+      "area": "threeindependentroles",
+      "requiredEvidence": "Three requested messagewindows remainindependent; docking/combat2 andtemporarywhispers do notoverwrite anassignedrole",
+      "actualResult": "NOT_RUN"
+    },
+    {
+      "id": "R3",
+      "area": "perwindowfilters",
+      "requiredEvidence": "Record before/after messagegroups/channels and route representativeallowed/excluded messages; no unintendedreset/reclassification",
+      "actualResult": "NOT_RUN"
+    },
+    {
+      "id": "R4",
+      "area": "nativeinput",
+      "requiredEvidence": "Enter/slash/channelchange/escape/history/IMEkoKR focus works andmessages go toconfiguredwindows; no automaticchat send",
+      "actualResult": "NOT_RUN"
+    },
+    {
+      "id": "R5",
+      "area": "visibilitystates",
+      "requiredEvidence": "Idle/hover/typing/alert/scrollawaybottom showintentionaltabs/editbox/returncontrols andstillallowcontextconfiguration",
+      "actualResult": "NOT_RUN"
+    },
+    {
+      "id": "R6",
+      "area": "fontandresize",
+      "requiredEvidence": "Readablefontface/size/outline; resize/reposition/lock transitions with no protectedframe errors",
+      "actualResult": "NOT_RUN"
+    },
+    {
+      "id": "R7",
+      "area": "saveandrelogin",
+      "requiredEvidence": "Reload/relogin retains only intendedvisualchanges andoriginalfilters; no globaluiScale orunrelatedprofile reset",
+      "actualResult": "NOT_RUN"
+    },
+    {
+      "id": "R8",
+      "area": "linksandmouse",
+      "requiredEvidence": "Hyperlinks/itemlinks/copy ifenabled work; decorativebackground doesnotcaptureinput; threepanels do notblockadjacentactions",
+      "actualResult": "NOT_RUN"
+    },
+    {
+      "id": "R9",
+      "area": "combatanderrors",
+      "requiredEvidence": "Combatenter/exit andtemporarychatwindowcreation cause noLuaerror/taint/forbiddenaction; no securitybypass",
+      "actualResult": "NOT_RUN"
+    },
+    {
+      "id": "R10",
+      "area": "singleownerandrollback",
+      "requiredEvidence": "Onevisualowner perbuttons/tabs/editbox/font/background/position; optionalnonvisualmodules off; restoreapprovedbackup iftestfails",
+      "actualResult": "NOT_RUN"
+    }
+  ]
+}

@@ -1,0 +1,406 @@
+nfollow
+L314: 
+L315: ### Members
+L316: 
+L317: 【78†MysticalOS Author】【79†lucifercatnip Author】【80†MrFIXlT Former Author】【81†sylvanaar Former Author】【82†humfras Former Author】【83†pompachomp Former Author】【84†SunnySunflow Translator】
+L318: ## More from QTartemis【85†View all】
+L319: 
+L320:   * 【86†Image: DBM - Deadly Boss Mods (DBM-Core) project image†media.forgecdn.net】
+L321: ### 【87†DBM - Deadly Boss Mods (DBM-Core)】
+L322: 
+L323: By MysticalOS
+L324: 
+L325:     * 643.5M
+L326:     * 【43†Addons】
+L327: 
+L328: A Swiss Army knife that gives you fight info & tools for dungeons & raids. Supporting Midnight, Forever, Mists of Pandaria, Wrath Titan, Burning Crusade, Vanilla.
+L329: 
+L330:     * 643.5M
+L331:     * November 17, 2026
+L332:     * 【43†Addons】
+L333:     *     * +2
+L334: 
+L335: 【87†View】
+L336: 
+L337: 【88†Install】
+L338: 
+--------------------------------------------------------------------------------
+Glass Forever - World of Warcraft Addons - CurseForge (https://www.curseforge.com/wow/addons/glass-forever)
+citeturn66view1 [wordlim: 200] Crawled: today; Content type: text/html; Source: open({"ref_id":"https://www.curseforge.com/wow/addons/glass-forever","lineno":161}); Total lines: 321
+L24: MOD AUTHORS
+L25:     * 【20†Become an Author†authors.curseforge.com】
+L26:     * 【21†Start a Project†authors.curseforge.com】
+L27:     * 【22†Project Submission Guide†support.curseforge.com】
+L28: 
+L29: MODDING TOOL DEVELOPERS
+L30:     * 【23†Apply for an API Key†support.curseforge.com】
+L31:     * 【24†Documentation†docs.curseforge.com】
+L32:     * 【25†Terms & Conditions†support.curseforge.com】
+L33: 
+L34: SOCIAL
+L35:     * 【26†Join Our Discord!†www.discord.com】
+L36:     * 【27†Authors Discord†discord.gg】
+L37: 
+L38: Become An Author
+L39: 
+L40:   * 【28†Studios†studios.curseforge.com】
+L41: GAME DEVELOPERS
+L42:     * 【28†Unlock Modding for Your Game†studios.curseforge.com】
+L43:     * 【29†Documentation†docs.curseforge.com】
+L44: 
+L45: Unlock Modding for Your Game
+L46: 
+L47:   *   * 【30†Help Center†support.curseforge.com】
+L48:   * 【31†Our Blog†blog.curseforge.com】
+L49:   *   * Light mode Dark mode
+L50:   *   * 【32†Surprise Me】
+L51:   *   * 【33†Legacy†legacy.curseforge.com】
+L52: 
+L53:   * 【34†Go Premium】
+L54:   * 【35†Get CurseForge App】
+L55: # Glass Forever
+L56: 
+L57:   * By
+L58: 
+L59: 【36†Rethz】
+L60: 
+L61: Minimal chat that slides in and fades away. Glass, updated for WoW: Forever.
+L62: 
+L63: Total Downloads
+L64:     4.7K
+L65: 
+L66: Last Update
+L67:     Nov 16, 2026
+L68: 
+L69: More Details
+L70: 
+L71: * * *
+L72: 
+L73: Glass Forever
+L74: 
+L75: Download
+L76: 
+L77: 16
+L78: 
+L79: * * *
+L80: 
+L81: ### Details
+L82: 
+L83: Downloads
+L84:     4,778
+L85: Created
+L86: 
+L87: 
+L88: 1 month ago
+L89: 
+L90: Updated
+L91: 
+L92: 
+L93: 11 hours ago
+L94: 
+L95: Project ID
+L96: 
+L97: 
+L98: 1734401
+L99: 
+L100: License
+L101:     【37†MIT License】
+L102: 
+L103: * * *
+L104: 
+L105: ### Flavors
+L106: 
+L107:   * 【38†Forever】
+L108: 
+L109: * * *
+L110: ### Class & Categories
+L111: 
+L112:   * 【39†Addons】
+L113:   *   * 【40†Chat & Communication】
+L114: 
+L115: * * *
+L116: 
+L117: 【41†Image: informative placeholder†static-beta.curseforge.com】
+L118: 
+L119: * * *
+L120: 
+L121: ### Game Versions
+L122: 
+L123: 【42†1.60.1】
+L124: 
+L125: * * *
+L126: 
+L127: ### Links
+L128: 
+L129: 【43†Source†github.com】
+L130: 
+L131: * * *
+L132: 
+L133: ### Main File
+L134: 
+L135: #### 1.60.1
+L136: 
+L137: 【44†Glass Forever 1.1.6 Latest release R Forever Nov 16, 2026】
+L138: 
+L139: * * *
+L140: 
+L141: ### Recent Files【45†View all】
+L142: #### Wo * 【58†Image: Questmark project image†media.forgecdn.net】
+L244: 
+L245: ### 【59†Questmark】
+L246: 
+L247: By Rethz
+L248: 
+L249:     * 70
+L250:     * 【39†Addons】
+L251: 
+L252: An objective tracker, a dungeon card and a quest book in place of the quest log. For WoW: Forever.
+L253: 
+L254:     * 70
+L255:     * November 16, 2026
+L256:     * 【39†Addons】
+L257:     * 【59†View】
+L258: 
+L259: 【60†Install】
+L260: 
+L261:   * 【58†Image: Questmark project image†media.forgecdn.net】
+L262: ### 【59†Questmark】
+L263: 
+L264: By Rethz
+L265: 
+L266:     * 70
+L267:     * 【39†Addons】
+L268: 
+L269: An objective tracker, a dungeon card and a quest book in place of the quest log. For WoW: Forever.
+L270: 
+L271:     * 70
+L272:     * November 16, 2026
+L273:     * 【39†Addons】
+L274:     * 【59†View】
+L275: 
+L276: 【60†Install】
+L277: 
+L278: CurseForge - a world of endless gaming possibilities for modders and gamers alike.
+L279: Download the best mods and addons!
+L280: 
+L281:   * Games
+L282:     * 【1†All games】
+L283:     * 【2†Minecraft】
+L284:     * 【4†World of Warcraft】
+L285:     * 【3†The Sims 4】
+L286:     * 【9†Starcraft II】
+L287:     * 【10†Kerbal Space Program】
+L288:     * 【61†Minecraft Dungeons】
+L289:     * 【17†World of Tanks】
+L290:   * Create
+L291: 
+L292:     * 【21†Start a project†authors.curseforge.com】
+L293:     * 【22†Project submission guide†support.curseforge.com】
+L294:     * 【62†Author Rewards Program†support.curseforge.com】
+L295:     * 【23†Apply for an API Key†support.curseforge.com】
+L296:     * 【25†3rd Party API T&C†support.curseforge.com】
+L297:   * Community
+--------------------------------------------------------------------------------
+Chattynator (Chat) - World of Warcraft Addons - CurseForge (https://www.curseforge.com/wow/addons/chattynator)
+citeturn66view2 [wordlim: 200] Crawled: today; Content type: text/html; Source: open({"ref_id":"https://www.curseforge.com/wow/addons/chattynator","lineno":190}); Total lines: 452
+L41: GAME DEVELOPERS
+L42:     * 【28†Unlock Modding for Your Game†studios.curseforge.com】
+L43:     * 【29†Documentation†docs.curseforge.com】
+L44: 
+L45: Unlock Modding for Your Game
+L46: 
+L47:   *   * 【30†Help Center†support.curseforge.com】
+L48:   * 【31†Our Blog†blog.curseforge.com】
+L49:   *   * Light mode Dark mode
+L50:   *   * 【32†Surprise Me】
+L51:   *   * 【33†Legacy†legacy.curseforge.com】
+L52: 
+L53:   * 【34†Go Premium】
+L54:   * 【35†Get CurseForge App】
+L55: # Chattynator (Chat)
+L56: 
+L57:   * By
+L58: 
+L59: 【36†plusmouse】
+L60: 
+L61: A stylish smooth chat frame revamp (includes Forever support)
+L62: 
+L63: Total Downloads
+L64:     2.8M
+L65: 
+L66: Last Update
+L67:     Nov 17, 2026
+L68: 
+L69: More Details
+L70: 
+L71: * * *
+L72: 
+L73: Chattynator (Chat)
+L74: 
+L75: Download
+L76: 
+L77: 874
+L78: 
+L79: * * *
+L80: 
+L81: ### Details
+L82: 
+L83: Downloads
+L84:     2,896,367
+L85: Created
+L86: 
+L87: 
+L88: 1 year ago
+L89: 
+L90: Updated
+L91: 
+L92: 
+L93: 14 hours ago
+L94: 
+L95: Project ID
+L96: 
+L97: 
+L98: 1273281
+L99: 
+L100: License
+L101:     【37†All Rights Reserved】
+L102: 
+L103: * * *
+L104: ### Flavors
+L105: 
+L106:   * 【38†Retail】
+L107:   * 【39†Forever】
+L108:   * 【40†MoP Classic】
+L109:   * 【41†Titan Reforged Classic】
+L110:   * 【42†Classic】
+L111: 
+L112: * * *
+L113: 
+L114: ### Class & Categories
+L115: 
+L116:   * 【43†Addons】
+L117:   *   * 【44†Chat & Communication】
+L118: 
+L119: * * *
+L120: 
+L121: 【45†Image: informative placeholder†static-beta.curseforge.com】
+L122: 
+L123: * * *
+L124: 
+L125: ### Game Versions
+L126: 
+L127: 【46†12.1.5】【47†12.1.0】【48†12.0.7】【49†12.0.5】【50†12.0.1】【51†+ 20 Versions】
+L128: 
+L129: * * *
+L130: 
+L131: ### Links
+L132: 
+L133: 【52†Localization†legacy.curseforge.com】
+L134: 
+L135: * * *
+L136: 
+L137: ### Main File
+L138: #### 12.1.5
+L139: 
+L140: 【53†237 Latest release R Titan Reforged Classic + 5 Nov 16, 2026】
+L141: 
+L142: * * *
+L143: 
+L144: ### Recent Files【54†View all】
+L145: 
+L146: #### WoW Retail
+L147: 
+L148: 【53†237 Latest release R Retail + 5 Nov 16, 2026】
+L149: 
+L150: #### WoW Forever
+L151: 
+L152: 【53†237 Latest release R Forever + 5 Nov 16, 2026】
+L153: 
+L154: #### WoW Mists of Pandaria Classic
+L155: 
+L156: 【53†237 Latest release R MoP Classic + 5 Nov 16, 2026】
+L157: 
+L158: #### WoW Wrath Titan Reforged
+L159: 
+L160: 【53†237 Latest release R Titan Reforged Classic + 5 Nov 16, 2026】
+L161: #### WoW Classic
+L162: 
+L163: 【53†237 Latest release R Classic + 5 Nov 16, 2026】
+L164: 
+L165: * * *
+L166: 
+L167: 【55†Report】
+L168: 
+L169: Download
+L170: 
+L171: 874
+L172: 
+L173:   * 【56†Description】
+L174:   * 【51†Files】
+L175:   * 【57†Gallery (5)】
+L176:   * 【58†Relations】
+L177: 
+L178: 【59†Image: Chat frame (Default Skin)†media.forgecdn.net】
+L179: 
+L180: Chat frame (Default Skin)
+L181: 
+L182: 【60†Image: Chat Frame (Blizzard Skin)†media.forgecdn.net】
+L183: 
+L184: Chat Frame (Blizzard Skin)
+L185: 
+L186: 【61†Image: Chat frame (ElvUI Skin)†media.forgecdn.net】
+L187: 
+L188: Chat frame (ElvUI Skin)
+L189: 
+L190: 【62†Image: Chat frame (GW2 Skin)†media.forgecdn.net】
+L191: 
+L192: Chat frame (GW2 Skin)
+L193:   * 【59†Image: Thumbnail Chat frame (Default Skin)†media.forgecdn.net】
+L194:   * 【60†Image: Thumbnail Chat Frame (Blizzard Skin)†media.forgecdn.net】
+L195:   * 【61†Image: Thumbnail Chat frame (ElvUI Skin)†media.forgecdn.net】
+L196:   * 【62†Image: Thumbnail Chat frame (GW2 Skin)†media.forgecdn.net】
+L197: ## Description
+L198: 
+L199: 【63†Image: AI Not Used†img.shields.io】
+L200: 
+L201: Fully supports Retail, Forever and all the classics
+L202: 
+L203: This addon will completely replace your chat frame with a new one, with modern features:
+L204:   * Even with the fancy features, it is fast.
+L205:   * Stylish themes (Dark, Blizzard, ElvUI and GW2)
+L206:   * Edit-mode free chat box resizing/moving
+L207:   * Configurable timestamps
+L208:   * Space out messages, not lines.
+L209:   * Persistent command/typed chat history and navigatable with arrow keys
+L210:   * 2,500+ message history, persisting across sessions
+L211:   * All chat settings are global, across your account.
+L212:   * Shorten frequently seen message components
+L213:   * Change the fonts and sizes
+L214: # Shared Imports
+L215: 
+L216: Find them 【64†here】.
+L217: 
+L218: # Why write a new chat addon?
+L219: 
+L220: Initially it was just about getting the timestamps aligned properly. However after starting I realised that I needed to replace the chat frames to get the right effect.
+L221: 
+L222: As I was replacing the frame I could probably improve the default UI significantly if I invested the time. This addon is what has been created so far.
+L223: # Upcoming Features
+L224: 
+L225: Feature requests are welcome, and quite a few features are planned for the future releases already.
+L226: 
+L227: # Inspiration
+L228: 
+L229: These addons helped shape what Chattynator became:
+L230: 
+L231:   * 【65†LS: Glass】 - the smooth scrolling and excellent performance
+L232:   * 【66†Prat】 - the quintessential chat addon
+L233: ## Chattynator (Chat) Team
+L234: 
+L235: 【67†Image: profile avatar†static-cdn.jtvnw.net】
+L236: 
+L237: 【36†plusmouse】
+L238: 
+L239: Owner
+L240: 
+L241: 【68†Image: Master Ma

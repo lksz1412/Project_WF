@@ -1,0 +1,7 @@
+## Interface: 30000
+## Version: 08.10.20
+## Title: Examiner
+## Author: Ryn/Nadi (Earthen Ring EU)
+## Notes: Advanced Inspection Mod of Gear, Talents, Honor and Arena Details.
+## SavedVariables: Examiner_Config, Examiner_Cache
+Examiner.xml

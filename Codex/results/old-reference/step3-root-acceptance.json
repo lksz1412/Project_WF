@@ -1,0 +1,42 @@
+{
+  "recorded": "2026-11-18T00:48:15.6336798+09:00",
+  "scope": "Step3 bounded static reference research only; Phase1.3 continues",
+  "state": "ACCEPTED_WITH_LIMITS",
+  "reviewedReportLines": 192,
+  "reviewedReportSHA256": "8AD0BF93607BA51127773F474DC4D15279218E67CF5432EB8413B384B83B84B4",
+  "currentReportSHA256": "5862C2A5A3837509086F6E8CFEDCC2CD9CE6953ED91703F524EEEE3A688B4EA7",
+  "postReviewReportChange": "acceptance status only",
+  "outsideStatusBytesUnchanged": true,
+  "sameB": "/root/old_reference_audit",
+  "reviewRounds": 10,
+  "reviewContinuation": "recorded first9 and firstcoverage beforeactualcompaction; remaining native/filter10 fullyread currentlens inputset; not full oldinput recovery claim",
+  "rawReturns": [
+    "handoffs/old-reference/iter_1/audit_rounds1-9_partial.md",
+    "handoffs/old-reference/iter_1/audit_round10.md"
+  ],
+  "confirmedFindings": {
+    "major": 0,
+    "moderate": 0,
+    "minor": 1
+  },
+  "minorPolicy": "L1 list only, no body edit",
+  "rootLiteralSourceCitationChecks": 12,
+  "rootLiteralSourceCitationMatches": 12,
+  "postsRead": 34,
+  "imageReferences": 58,
+  "decodedReferences": 56,
+  "uniqueObservedImages": 50,
+  "unobservedImageReferences": 2,
+  "addedPublicPackages": 4,
+  "addedPublicArchiveFiles": 5,
+  "X2WholeExtraction": "BLOCKED",
+  "X2SelectedExtractedFiles": 46,
+  "V42PartialDataSources": 3,
+  "currentRuntime": "NOT_RUN",
+  "sameBuildIdentity": "UNVERIFIED",
+  "redistributionRights": "UNVERIFIED",
+  "upstreamTestsReplayed": 0,
+  "newGameCodeOrInstall": false,
+  "privateGameOrMacroRead": false,
+  "R20ScopeCorrection": "prior offline layout request continues asStep5 afterStep4; no new approval needed for that objective"
+}

@@ -1,0 +1,212 @@
+{
+  "postID": 12610,
+  "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=12610",
+  "row": {
+    "postID": 12610,
+    "page": 1,
+    "rowOrdinal": 5,
+    "title": "Devil UI 하단집중형 (불성클래식) [클래식] 13",
+    "rowText": "30 Devil UI 하단집중형 (불성클래식) [클래식] 13 데빌 UI 통합 애드온 이것이팩트 608 1 07-30",
+    "sourceAnchor": "javascript:addonMove('detail.php', 'idx->12610', 'leave->idx,listtype,ext', 'rurl');",
+    "sourceLocation": {
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\list-first.html",
+      "selector": "table.list tr a[href]",
+      "line": 1238
+    }
+  },
+  "detailProvenance": {
+    "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=12610",
+    "time": "2026-11-17T14:02:03.4267907Z",
+    "contentType": "text/html; charset=UTF-8",
+    "HTTP": 200,
+    "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=12610",
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-12610.html",
+    "state": "acquired",
+    "attempts": 1,
+    "commandExitCode": 0,
+    "encoding": "IWR decoded to UTF-8",
+    "bytes": 227708,
+    "SHA256": "4FEB1EE865806E3F2DFE0784755209A96427B448A62D45C85A950C763CE702E1"
+  },
+  "acquisitionState": "parsed",
+  "A1read": false,
+  "imageObserved": false,
+  "sections": {
+    "addonAddon": {
+      "state": "parsed",
+      "text": "안녕하세요.\n\n\n\n예전에 클래식에서 쓰던 Devil UI 하단집중형이 마음에 들어서 잘 사용했었는데,\n\n\n\n복귀했더니 애드온이 정상 작동을 안하길래 수정해서 사용중이던 것을 올립니다.\n\n\n\n-------------------------------------------------------------------------------\n\n\n\n와우를 설치한 폴더가 C:\\Program Files (x86)\\World of Warcraft\\_classic_ 라면\n\n\n\n_classic_\\WTF\\Account\\계정번호\\서버명\\캐릭터명 (계정번호, 서버명, 캐릭터명 기록)\n\n\n\n\n\n폴더안의 Cache, interface, WTF 폴더를 완전 삭제하시거나 다른 곳으로 옮겨두고,\n\n\n\n업로드한 파일을 클릭하시면 위에 적어둔 와우클래식 기본설치 폴더에 설치됩니다.\n\n\n\n\n\n이후에 기록해놨던 계정번호, 서버명, 캐릭터명으로 폴더명을 바꿔주면 작동됩니다.\n\n\n\n\n\n다른 폴더에 설치한 분은 위 폴더로 찾아가서 설치폴더에 맞춰서 복사하시면 됩니다.\n\n\n\n\n\n\n\n애드온 파일 용량이 커서 업로드가 안되서 구글 드라이브 업로드 후 링크 첨부합니다.\n\n\n\n\n\nhttps://drive.google.com/file/d/1MgoRdKpOdD7y7ExjfWQ0HSDXX05SyNmX/view?usp=sharing",
+      "fragmentPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\idx-12610-addonAddon.html",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-12610.html",
+        "selector": "#addonAddon",
+        "line": 1244
+      },
+      "links": []
+    },
+    "addonVersion": {
+      "state": "empty",
+      "text": "",
+      "fragmentPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\idx-12610-addonVersion.html",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-12610.html",
+        "selector": "#addonVersion",
+        "line": 1273
+      },
+      "links": []
+    }
+  },
+  "iframes": {
+    "screenshot": {
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=12610&tempridx=&count=0",
+      "iframeLiteral": "<iframe frameborder=\"0\" framespacing=\"0\" id=\"screenshot\" scrolling=\"no\" src=\"imagelist.iframe.php?ridx=12610&amp;tempridx=&amp;count=0\"></iframe>",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-12610.html",
+        "selector": "iframe#screenshot",
+        "line": 1238
+      },
+      "provenance": {
+        "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=12610&tempridx=&count=0",
+        "time": "2026-11-17T14:02:04.2292375Z",
+        "contentType": "text/html; charset=UTF-8",
+        "HTTP": 200,
+        "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=12610&tempridx=&count=0",
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-12610.html",
+        "state": "acquired",
+        "attempts": 1,
+        "commandExitCode": 0,
+        "encoding": "IWR decoded to UTF-8",
+        "bytes": 1985,
+        "SHA256": "302B3715E950336CD9A64A236C5B5018AD272B0A3AABAD1CBA6542E0392DF46D"
+      },
+      "state": "parsed",
+      "text": "\n\n\n\n\n\n스크린샷\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "links": [
+        {
+          "href": "javascript:void(0);",
+          "onclick": null,
+          "text": "",
+          "line": 28
+        },
+        {
+          "href": "javascript:void(0);",
+          "onclick": null,
+          "text": "",
+          "line": 31
+        }
+      ],
+      "literalPublicDownloadURLs": [],
+      "imageCount": 0
+    },
+    "fileInfo": {
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=12610&tempridx=&count=1",
+      "iframeLiteral": "<iframe frameborder=\"0\" id=\"fileInfo\" src=\"filelist.iframe.php?mode=view&amp;ridx=12610&amp;tempridx=&amp;count=1\"></iframe>",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-12610.html",
+        "selector": "iframe#fileInfo",
+        "line": 1279
+      },
+      "provenance": {
+        "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=12610&tempridx=&count=1",
+        "time": "2026-11-17T14:02:04.7920134Z",
+        "contentType": "text/html; charset=UTF-8",
+        "HTTP": 200,
+        "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=12610&tempridx=&count=1",
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-12610.html",
+        "state": "acquired",
+        "attempts": 1,
+        "commandExitCode": 0,
+        "encoding": "IWR decoded to UTF-8",
+        "bytes": 2322,
+        "SHA256": "EA5B79FF8DF3F469FE9B077D0A981854C7ADF5E6032BFCD94A9A447E639F794A"
+      },
+      "state": "parsed",
+      "text": "\n\n\n\n\n\n파일 정보\n\n\n\n\n\n\n\n\n\n\n\n\n파일\n\n\n클라이언트 버전\n\n\n다운로드\n\n\n등록일\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\nc15156500472.zip\n\n\n\n\n\n\n2.5.5\n\n\n608\n\n\n2022-07-30\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "links": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "c15156500472.zip",
+          "line": 40
+        }
+      ],
+      "literalPublicDownloadURLs": [
+        "https://pds.inven.co.kr/upload/2022/07/30/addon/c15156500472.zip"
+      ],
+      "fileRows": [
+        {
+          "text": "c15156500472.zip 2.5.5 608 2022-07-30",
+          "cells": [
+            "c15156500472.zip",
+            "2.5.5",
+            "608",
+            "2022-07-30"
+          ],
+          "line": 37
+        }
+      ],
+      "scriptPublicDownloadURLLiterals": [
+        {
+          "url": "https://pds.inven.co.kr/upload/2022/07/30/addon/c15156500472.zip",
+          "literal": "https://pds.inven.co.kr/upload/2022/07/30/addon/c15156500472.zip",
+          "scriptText": "parent.setDownloadInfo(74116,\"https://pds.inven.co.kr/upload/2022/07/30/addon/c15156500472.zip\");",
+          "sourceLocation": {
+            "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-12610.html",
+            "line": 37,
+            "selector": "script"
+          },
+          "executed": false
+        }
+      ]
+    }
+  },
+  "images": [],
+  "title": "Devil UI 하단집중형 (불성클래식)",
+  "metadataLiteral": "Devil UI 하단집중형 (불성클래식)\n데빌 UI 통합 애드온\n애드온 등록자\n이것이팩트\n최종 업데이트\n2022.07.30\n카테고리\n클래식\n클라이언트 버전\n2.5.5\n애드온 버전\n1.0\n조회수\n11106\n추천수\n1\n다운로드 수\n608\n관심등록 수\n7\n다운로드\n관심 애드온 등록",
+  "metadataRows": [
+    {
+      "label": "애드온 등록자",
+      "value": "이것이팩트",
+      "line": 1181
+    },
+    {
+      "label": "최종 업데이트",
+      "value": "2022.07.30",
+      "line": 1185
+    },
+    {
+      "label": "카테고리",
+      "value": "클래식",
+      "line": 1189
+    },
+    {
+      "label": "클라이언트 버전",
+      "value": "2.5.5",
+      "line": 1196
+    },
+    {
+      "label": "애드온 버전",
+      "value": "1.0",
+      "line": 1200
+    },
+    {
+      "label": "조회수",
+      "value": "11106",
+      "line": 1207
+    },
+    {
+      "label": "추천수",
+      "value": "1",
+      "line": 1211
+    },
+    {
+      "label": "다운로드 수",
+      "value": "608",
+      "line": 1215
+    },
+    {
+      "label": "관심등록 수",
+      "value": "7",
+      "line": 1219
+    }
+  ]
+}

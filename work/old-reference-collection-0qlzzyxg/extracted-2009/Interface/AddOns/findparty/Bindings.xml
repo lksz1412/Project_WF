@@ -1,0 +1,5 @@
+﻿<Bindings>
+	<Binding name="파티 도우미 열기" header="FINDPARTY">
+		if (FP_Frame:IsShown()) then FP_Frame:Hide(); else FP_Frame:Show(); end
+	</Binding>
+</Bindings>

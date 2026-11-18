@@ -1,0 +1,1308 @@
+{
+  "label": "glass-v1.1.6-source",
+  "root": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source",
+  "inventoryPath": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\glass-v1.1.6-source-members.json",
+  "files": [
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/.github/ISSUE_TEMPLATE/bug_report.md",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\.github\\ISSUE_TEMPLATE\\bug_report.md",
+      "bytes": 885,
+      "SHA256": "5F0CAB091B92A178E682EB7130D5D0F63D7D385FD201B53D821FB93B8A641F8D",
+      "encoding": "utf-8-sig",
+      "lines": 32
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/.github/ISSUE_TEMPLATE/feature_request.md",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\.github\\ISSUE_TEMPLATE\\feature_request.md",
+      "bytes": 623,
+      "SHA256": "2C79906607513B1C99A43C6CE7F66D464D5993B327EC44975AC9E903AE88A70F",
+      "encoding": "utf-8-sig",
+      "lines": 20
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/.github/pull_request_template.md",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\.github\\pull_request_template.md",
+      "bytes": 507,
+      "SHA256": "B7345ADEE1B4F4BA319E5E11669AF6E6433D090D7F36FBEF34E5320C25D7D208",
+      "encoding": "utf-8-sig",
+      "lines": 16
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/.github/workflows/lint.yml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\.github\\workflows\\lint.yml",
+      "bytes": 444,
+      "SHA256": "CF95D13EEE8B088B63B11C6346B418BFA6C4EC8DE9F41EFE5CD15F6CDF6F2BFF"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/.github/workflows/release.yml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\.github\\workflows\\release.yml",
+      "bytes": 521,
+      "SHA256": "85E75872507ADF831C69012677E3C189671A0BACC961B110B9DDC20D405F17A3"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/.gitignore",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\.gitignore",
+      "bytes": 335,
+      "SHA256": "B1C8C7B070962F1A50ED44D2A9EE002C98DF927AFF0F25CA7F51370A31D878D8"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/.luacheckrc",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\.luacheckrc",
+      "bytes": 163,
+      "SHA256": "3491AECB5C5AFF62F1AFB121D3679590AAF380E566A3349302B5A63B96FB8C47"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/.pkgmeta",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\.pkgmeta",
+      "bytes": 1277,
+      "SHA256": "E2D42579554EE3EEC97412D944B7F6C6FBE904DC5A3AD1AA054F3F79900611D4",
+      "encoding": "utf-8-sig",
+      "lines": 24
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/CHANGELOG.md",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\CHANGELOG.md",
+      "bytes": 32865,
+      "SHA256": "563A1BAD28B46F235E89A7F82C6C182208E983C12AA0374AE8E67CDAEC7D7E5A",
+      "encoding": "utf-8-sig",
+      "lines": 324
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass.toc",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass.toc",
+      "bytes": 1777,
+      "SHA256": "C4BB837C1DFB1D94101BF6772D77CF6B6D02A93E6A555B93F5BA301FEF8BAEF6",
+      "encoding": "utf-8-sig",
+      "lines": 64
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/buttonChannels.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\buttonChannels.tga",
+      "bytes": 4114,
+      "SHA256": "C66459B3FF89EBB41E758495B66FDF2D592CD39BB6A44D492CC61839A65BFDF6"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/buttonChannelsOutline.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\buttonChannelsOutline.tga",
+      "bytes": 4114,
+      "SHA256": "F3DC446835EE29FEE270436153AB9D49B87D40DE239BE1A5B1DF6A8D3463ED8A"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/buttonDeafen.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\buttonDeafen.tga",
+      "bytes": 4114,
+      "SHA256": "62CCB818B6B831299EAD352E1C7DB26B87C9D026BC6AAB4A24467ABC8AD9CB3B"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/buttonDeafenOutline.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\buttonDeafenOutline.tga",
+      "bytes": 4114,
+      "SHA256": "A20ABCC4A1FF09405B888F2D4FE8DF4D48E047CE1A771816C31130DF19B5DF9B"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/buttonMaximize.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\buttonMaximize.tga",
+      "bytes": 4114,
+      "SHA256": "9E2A9BD7CD4A0BB15CBD82F4D7487EFCB0B6FF41D25268277BC8335998F0062B"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/buttonMaximizeOutline.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\buttonMaximizeOutline.tga",
+      "bytes": 4114,
+      "SHA256": "5C9319087ECF98F096426085CCD37DDE5F269CE12FC04F92CB77AA790D6D55EB"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/buttonMenu.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\buttonMenu.tga",
+      "bytes": 4114,
+      "SHA256": "F92D98BB7DD4B2B6521A7E5BBDA6A4E757D0A8ACE04CE30495EEE889341A00C5"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/buttonMenuOutline.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\buttonMenuOutline.tga",
+      "bytes": 4114,
+      "SHA256": "1D77DAC17C317B428DE88B001A4D344074C43C324BDA67F88E88C32072765A10"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/buttonMinimize.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\buttonMinimize.tga",
+      "bytes": 4114,
+      "SHA256": "D4C24C91C3EA2883E5224181B6DDE74BD46F27A9496AF709454848E7A053C063"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/buttonMinimizeOutline.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\buttonMinimizeOutline.tga",
+      "bytes": 4114,
+      "SHA256": "255880214FA2F70DB62A240E5F1B56621AF9BAFF4A1E86FC8F0D38D7BFACDDD5"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/buttonMute.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\buttonMute.tga",
+      "bytes": 4114,
+      "SHA256": "9A2CD6FDF6AFDCF41954CA66324A0433BFF9728E968D74B290AB83F19F0E50C2"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/buttonMuteOutline.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\buttonMuteOutline.tga",
+      "bytes": 4114,
+      "SHA256": "A3E219B8D6717DCE48536C3BDB255414193D1A0264F0CD8F2D4138CA7EB990FC"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/buttonResize.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\buttonResize.tga",
+      "bytes": 4114,
+      "SHA256": "3BBC77A869A835F89E000556970DC45CAFCB9A9E14A2D68021031B58C5C58167"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/buttonResizeOutline.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\buttonResizeOutline.tga",
+      "bytes": 4114,
+      "SHA256": "C201E3BAD09100C3B117481BD8492D117509E51588C1098BE5973F42A977874D"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/buttonScrollBottom.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\buttonScrollBottom.tga",
+      "bytes": 4114,
+      "SHA256": "B739A68198463B81F1D6CC5BBCF1775BC6FF8650271E0BDBB7D412C47A129C02"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/buttonScrollBottomOutline.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\buttonScrollBottomOutline.tga",
+      "bytes": 4114,
+      "SHA256": "0D358492EE2E21F61D8C959782F5E6F1D0C1C4A815F455E2A522A135F9110FAD"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/buttonScrollDown.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\buttonScrollDown.tga",
+      "bytes": 4114,
+      "SHA256": "A5A1CB06CA0814A30A99608B7092D17286F176C485B56D966269875534752C5F"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/buttonScrollDownOutline.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\buttonScrollDownOutline.tga",
+      "bytes": 4114,
+      "SHA256": "42D189FC453EA86BF2092729D5E0CE5E40B86903F6B73C5E8C54CB5D55899C78"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/buttonScrollUp.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\buttonScrollUp.tga",
+      "bytes": 4114,
+      "SHA256": "ACEB819411FA101F6AD3536352DE0E2DE7B90263B03866A3E5B8105781D9E74D"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/buttonScrollUpOutline.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\buttonScrollUpOutline.tga",
+      "bytes": 4114,
+      "SHA256": "0F28D510591019EA3776E93BEDFEB0A73C1D3377DBC2D79391046432B29067F4"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/buttonSocial.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\buttonSocial.tga",
+      "bytes": 4114,
+      "SHA256": "9F2062B5523CFE60DF776D10E24370554E6AF6A9D42061D636C594E0A5A90687"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/buttonSocialOutline.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\buttonSocialOutline.tga",
+      "bytes": 4114,
+      "SHA256": "44A656C1BD750973366A4E4A6D8742258095CBDC8E0B3012E3054131BE6BBB52"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/buttonWhisper.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\buttonWhisper.tga",
+      "bytes": 4114,
+      "SHA256": "D51E425635563B407E858126F86C8C7CD790F2C2756543F38842B68AA52E8CA5"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/buttonWhisperBubble.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\buttonWhisperBubble.tga",
+      "bytes": 4114,
+      "SHA256": "2A25B760CB38C7A7FB2005CC384C6FCD06DB705C7C20C7A2AB60F8C75EB28256"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/buttonWhisperBubbleOutline.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\buttonWhisperBubbleOutline.tga",
+      "bytes": 4114,
+      "SHA256": "31A2EFB08878246FFFAA8805625F92959EC2978B9ADB8F7CC75EF6336675AE12"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/buttonWhisperBubbles.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\buttonWhisperBubbles.tga",
+      "bytes": 4114,
+      "SHA256": "A397469E9D94C8C957F5FA769659E5EDD46C636FC0A4B5617104031D6D41D20C"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/buttonWhisperBubblesOutline.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\buttonWhisperBubblesOutline.tga",
+      "bytes": 4114,
+      "SHA256": "091EEC0D6304DBAEAF18F1E36AA6E05788FCC5C9619B3F052E03C447D3A54EAF"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/buttonWhisperOutline.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\buttonWhisperOutline.tga",
+      "bytes": 4114,
+      "SHA256": "045526AD535C6E06304154A2003E7BE1B740594311A58DC6C53A77FE6EBF2F0C"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/close.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\close.tga",
+      "bytes": 4114,
+      "SHA256": "876A4A53DD0DBB572B44041DD94A37F6915523119A597AFDEFB8BE9B8D6558CC"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/closeOutline.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\closeOutline.tga",
+      "bytes": 4114,
+      "SHA256": "E927380C2F2C3E73170B9867855F6AC5630ACAF0BB8CC0AA74F3F2C688A60C1E"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/whisperBubble.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\whisperBubble.tga",
+      "bytes": 4114,
+      "SHA256": "57F7974059BAA3CEB24D5472FF07E6E449F785893E5DC93DE95F8C1FD4A4986D"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/whisperGlow.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\whisperGlow.tga",
+      "bytes": 16402,
+      "SHA256": "CEFC3E6F8CAD567CF0519501D4BFC0CFEE3238BBDDDBDF02104900F9DF7E85A2"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Buttons/whisperSoft.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Buttons\\whisperSoft.tga",
+      "bytes": 16402,
+      "SHA256": "95FB213B0CD8FFD29C0DAD90C7BD3512271C9855D96BEF85EB22D0AB1FD945C9"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/classic_angry.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\classic_angry.tga",
+      "bytes": 4114,
+      "SHA256": "D67141FCB1EC6BD123587D4D5128597EEBB604C7DF137EA1D53FE99C3749F0B2"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/classic_blush.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\classic_blush.tga",
+      "bytes": 4114,
+      "SHA256": "DCE257CC942BAEB6715CACC2D6B02F7A6BFF0B3E22BD74E14D3D995111CB1A63"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/classic_brokenheart.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\classic_brokenheart.tga",
+      "bytes": 4114,
+      "SHA256": "4079DBA7C65FB71E96688F9C6BC4AF4112DB2FEBF46EE184E11CD3B423D2CDAC"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/classic_cat.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\classic_cat.tga",
+      "bytes": 4114,
+      "SHA256": "46D39E5856B02754B2F697C74FA55435679D59B5FE0ABE0586741CBBB098A8A7"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/classic_confused.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\classic_confused.tga",
+      "bytes": 4114,
+      "SHA256": "BEBDB77763CEEFD88165BA444A73EE9DD88BBDD60D41B5A196E181C4CFE7CD10"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/classic_cool.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\classic_cool.tga",
+      "bytes": 4114,
+      "SHA256": "4077EEA7D1C59CAB16B50B16E4D93AE72BFCD6E9AD90BC44C99E6810C72C93FC"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/classic_cry.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\classic_cry.tga",
+      "bytes": 4114,
+      "SHA256": "D67D70A63D15F91188476AED92C563F70AD745A1C46E88CFCAB358C1C8DAB743"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/classic_grin.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\classic_grin.tga",
+      "bytes": 4114,
+      "SHA256": "2DB65471A6F2C5DB5CA2415008DBDFC18ADFA3EAA57AA370C677FDC8F6E660CF"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/classic_heart.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\classic_heart.tga",
+      "bytes": 4114,
+      "SHA256": "2F561AF0EB48AEBCDDB5D8CA79605698BEEEEA977167ABA46E7329FD78781A2E"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/classic_horror.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\classic_horror.tga",
+      "bytes": 4114,
+      "SHA256": "7C8FD95ADBBDF59FD6FA5BA19A4BA5ED55ABCE2C75BB371082C0FE31068E5406"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/classic_joy.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\classic_joy.tga",
+      "bytes": 4114,
+      "SHA256": "E6E32FF0D4BBF4CB605AC8B90BABD5870AB43E1386644095758525D6CA983A26"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/classic_kiss.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\classic_kiss.tga",
+      "bytes": 4114,
+      "SHA256": "17D0F434B5BF460B6424D4723DB278F8A9C694E60F0AABEB22149B81C7C2F890"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/classic_laugh.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\classic_laugh.tga",
+      "bytes": 4114,
+      "SHA256": "E631E269AAE52F90856D61165910CB09D084AC71AEAE2E069936ACE8524D723F"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/classic_meh.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\classic_meh.tga",
+      "bytes": 4114,
+      "SHA256": "34CB3040B5A93067DC9A35CD703FECC2A7A8133957D812EE6954BED56F46CD58"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/classic_neutral.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\classic_neutral.tga",
+      "bytes": 4114,
+      "SHA256": "8B213E5E98C4CF47385FC7B55105DD381F45012FCEF882287CADCC0516800A2C"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/classic_sad.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\classic_sad.tga",
+      "bytes": 4114,
+      "SHA256": "F3B11C1CDE2ED33283250C7823FE7C3C419A19AF6D59011D0924FDF0B8766B8C"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/classic_smile.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\classic_smile.tga",
+      "bytes": 4114,
+      "SHA256": "28A600A8CB6934900FE7FD4CE09FDC0FC5764E54FC3011DA43F9503B251FB897"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/classic_sob.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\classic_sob.tga",
+      "bytes": 4114,
+      "SHA256": "B8A896EE8E1E156D45C1816BC4053D84E25B3713421621612CDA63A8A94B9B5B"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/classic_tongue.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\classic_tongue.tga",
+      "bytes": 4114,
+      "SHA256": "7164594A5CE0BBB90A780AE1DE19B805C663B0E6AE2CDF5A4F1A3F4EA7EDD4C8"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/classic_unamused.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\classic_unamused.tga",
+      "bytes": 4114,
+      "SHA256": "EA2497C003F372C9A4D10FD12AD6B30604AC0CF26A22633DD9A9B0527C508126"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/classic_wink.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\classic_wink.tga",
+      "bytes": 4114,
+      "SHA256": "458987ED5652EC53E5B4C2B18B0965014AFB04F3A41D1B2896F305E80521923A"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/classic_wow.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\classic_wow.tga",
+      "bytes": 4114,
+      "SHA256": "2F542428AB0BF054BFCA0576E21E390AF86FA9FE0FD9FB44B5D045ECA740DF27"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/classic_wtf.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\classic_wtf.tga",
+      "bytes": 4114,
+      "SHA256": "95B22868CCAA78D8CB204508FCCD144D77DB6913A41C0101489CCB76B0F646AA"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/glass_angry.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\glass_angry.tga",
+      "bytes": 4114,
+      "SHA256": "E1A38A6E9D27856D39B83E593B50111A6A1D1E3EAF402D52AD0681214318252C"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/glass_blush.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\glass_blush.tga",
+      "bytes": 4114,
+      "SHA256": "F7D72D5BD3CD1BBC258FCBB1192CD27EBF6EF8640E8E509790E07810985925D3"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/glass_brokenheart.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\glass_brokenheart.tga",
+      "bytes": 4114,
+      "SHA256": "0B51F9036626DD5676F34D02D8F5BBD8CFFFE2D363D49933C05AE755031C52ED"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/glass_cat.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\glass_cat.tga",
+      "bytes": 4114,
+      "SHA256": "925EF4E000A2A5F83257CC0A6BBCD22B7ADE775BA0590276D03EF3431D919C44"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/glass_confused.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\glass_confused.tga",
+      "bytes": 4114,
+      "SHA256": "C68448A13BF180BF8EB7E62916F725FB4B1C322AC8CD11567050A275DC15A840"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/glass_cool.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\glass_cool.tga",
+      "bytes": 4114,
+      "SHA256": "4023CF362E28DD4554C5398E883FF5EB0E730A2C2AD6E7895AE58BD243D741C7"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/glass_cry.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\glass_cry.tga",
+      "bytes": 4114,
+      "SHA256": "8F828D0AF5AEC3ED905D4292827CC558788BD76C2ED3A71AA8A9C7D963D35586"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/glass_grin.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\glass_grin.tga",
+      "bytes": 4114,
+      "SHA256": "BAF958CB829D4F1E12160D26194E433B2DC0F41E86B2EBCC100872EEDE24A36F"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/glass_heart.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\glass_heart.tga",
+      "bytes": 4114,
+      "SHA256": "E25D4E39AA3CE2E000A7FC0314CA641CD61ADB584E9FA498E77A92DA0013E2C9"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/glass_horror.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\glass_horror.tga",
+      "bytes": 4114,
+      "SHA256": "1109A99BD2A6AF138ABC8BAEFE25D094FFE9BADF688FAD647E07D96A229D8DDA"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/glass_joy.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\glass_joy.tga",
+      "bytes": 4114,
+      "SHA256": "D42472F06A9E54B86BA2B00CF06238B7CDDE61F4D4DB0F8D7B012A2078FBD9D3"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/glass_kiss.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\glass_kiss.tga",
+      "bytes": 4114,
+      "SHA256": "DEF67E2E6A8C457C94B8F3BE776DC4CB984B41BFF7712ABF387C77CD2F719B10"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/glass_laugh.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\glass_laugh.tga",
+      "bytes": 4114,
+      "SHA256": "44EA4522F559EC107F46690BFE024D019389A520DCAE4241BE416954BBB8FD5B"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/glass_meh.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\glass_meh.tga",
+      "bytes": 4114,
+      "SHA256": "03E7780DEAF6DDEAC7F4CF449375ED9A30AE3BFC0C7026FF141DE0B3FE07D409"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/glass_neutral.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\glass_neutral.tga",
+      "bytes": 4114,
+      "SHA256": "2C432E040128D634453EB408997CE6E84417FE8A793C6B6B39BB453E6E132F84"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/glass_sad.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\glass_sad.tga",
+      "bytes": 4114,
+      "SHA256": "A291048519201721382FB7C39B03D5F0C3D5BB1454C69112E4CA95A2F49177E7"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/glass_smile.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\glass_smile.tga",
+      "bytes": 4114,
+      "SHA256": "F158BBC28620D6E4667D980682BD4B54AA4601327B5CE68E6968852AF80B3F6A"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/glass_sob.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\glass_sob.tga",
+      "bytes": 4114,
+      "SHA256": "A2A0F22D6C11445F92ACC376B05B8476BFBEB2BDD05D92C59E669074B47E9555"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/glass_tongue.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\glass_tongue.tga",
+      "bytes": 4114,
+      "SHA256": "8030D6953277F2BE28185FF7F8E382EA6491AF96E4EDFDE072B4898C68E62516"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/glass_unamused.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\glass_unamused.tga",
+      "bytes": 4114,
+      "SHA256": "FDC84115476BC3566E79BFDB17461C0236011EA8D2C716664DE4C1C64A8CCB90"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/glass_wink.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\glass_wink.tga",
+      "bytes": 4114,
+      "SHA256": "D81CF44F600ECC392BF50507C69FF94C2CC5579D625E13EE125AEEC01B381007"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/glass_wow.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\glass_wow.tga",
+      "bytes": 4114,
+      "SHA256": "4D5CFB77BEA856F7A67FAFFC531327A2BCF8A8CB2466B5A824B03CF30D2DF0A1"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Emotes/glass_wtf.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Emotes\\glass_wtf.tga",
+      "bytes": 4114,
+      "SHA256": "E9A02E9F00A52E9AFDC2419A3892D66A176C243B2FB0927D26C6315F55D78111"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Tabs/alertGlow.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Tabs\\alertGlow.tga",
+      "bytes": 65554,
+      "SHA256": "8A4F4C659DDBE7155D1B38EB9FD411FD8A6914CFE2E19F93E75D495AB24567DD"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Tabs/alertLine.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Tabs\\alertLine.tga",
+      "bytes": 4114,
+      "SHA256": "94799AE7DC7AD64B60DC90C355D51EE2E6D2A25BD62B7BB31CABB4DC7A7AFCE3"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Tabs/tabBackground.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Tabs\\tabBackground.tga",
+      "bytes": 4114,
+      "SHA256": "BA4D9A1DFA9DF052658562761A7F8369384DC987E562A06A01894E67CB82E928"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Tabs/tabBevel.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Tabs\\tabBevel.tga",
+      "bytes": 4114,
+      "SHA256": "BF3F803B0C5350874269706007CE87D5DEC096B0A23E4DB9F017FEB8CC5DED57"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Tabs/tabBorder.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Tabs\\tabBorder.tga",
+      "bytes": 4114,
+      "SHA256": "CE061B59654CA383C8A924AEEF163C8164D26E6858D102AE95772801D918D044"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Tabs/tabGlow.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Tabs\\tabGlow.tga",
+      "bytes": 65554,
+      "SHA256": "B92E1B9F86D86A03776F40B2989D7BE5252210B8245894C003E4E8F68BFB1E37"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Tabs/tabPill.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Tabs\\tabPill.tga",
+      "bytes": 4114,
+      "SHA256": "2848828A69B2BEC845CACE24795F351C2282B7C89B3F2772A9CCD7C810D7C2D6"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Tabs/tabPillBorder.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Tabs\\tabPillBorder.tga",
+      "bytes": 4114,
+      "SHA256": "A0E71A3558AFAA5572ECE0DDF3B14E7754C0F3601CDE592EDD72EC854C8B4113"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/Tabs/tabShine.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\Tabs\\tabShine.tga",
+      "bytes": 4114,
+      "SHA256": "C237A14533AFE71FAF7435C19F128D8736DF8C29D04D31786A44BDFD60AF08C9"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/achievementShield.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\achievementShield.tga",
+      "bytes": 65554,
+      "SHA256": "D9CBEA684486462350BF0AA57AAE88467D1A1B8AE0E4224DED279C5FD5879117"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/allyIcon.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\allyIcon.tga",
+      "bytes": 16402,
+      "SHA256": "A849CDCDB16A0CD59537C5831187BD6201FF6D7B7BCF5B01BB9230609F5F97B3"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/logo.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\logo.tga",
+      "bytes": 16402,
+      "SHA256": "AE53D1C8F71068BA76F171DA47D543158CC839C198F2334DE5644135D8F33F13"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/overlayMask.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\overlayMask.tga",
+      "bytes": 2151,
+      "SHA256": "6DCA2CCE6831A2C66E29CF6014DA3EEE1DCCEC3582BD6BAEF43EB4124E046E26"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Assets/snapToBottomIcon.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Assets\\snapToBottomIcon.tga",
+      "bytes": 262,
+      "SHA256": "E9410A73547EFF0659B8704238B53169CF89DAEA262E81B4DE2AAE0498B69955"
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Components/Button.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Components\\Button.lua",
+      "bytes": 1777,
+      "SHA256": "E2D8FA85A9D26D19170969D9BC8465CBC4C3407FB83FE3DECD7DE680A0394F37",
+      "encoding": "utf-8-sig",
+      "lines": 59
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Components/ChatButtons.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Components\\ChatButtons.lua",
+      "bytes": 13266,
+      "SHA256": "0C87899049D1C2A4EBF1E638461107A4AFC47BF7177357296D27234FEC2FA776",
+      "encoding": "utf-8-sig",
+      "lines": 381
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Components/ChatDock.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Components\\ChatDock.lua",
+      "bytes": 15545,
+      "SHA256": "3F58CBC7DC6C9EAFDA45B72112F46182CA662BB8ACE428BDE8994EFD3BF745A3",
+      "encoding": "utf-8-sig",
+      "lines": 441
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Components/ChatTab.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Components\\ChatTab.lua",
+      "bytes": 67471,
+      "SHA256": "7BCF096E7EA75789DBFCDC165419FF671DAE5F7D218070F562121C13728F7FD0",
+      "encoding": "utf-8-sig",
+      "lines": 1711
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Components/EditBox.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Components\\EditBox.lua",
+      "bytes": 16398,
+      "SHA256": "98825BE3B5EEC2B1C5130C1D269F02A5B2F816416FE817C91F5035F8A1A20EE7",
+      "encoding": "utf-8-sig",
+      "lines": 439
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Components/FadingFrame.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Components\\FadingFrame.lua",
+      "bytes": 2568,
+      "SHA256": "6BEA5767DCFAFF09DD1480956B33C7E425BDD64B4D1C728C9AB7C8A5F48F502F",
+      "encoding": "utf-8-sig",
+      "lines": 110
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Components/GradientBackground.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Components\\GradientBackground.lua",
+      "bytes": 1456,
+      "SHA256": "6F436F1CFFFA609060D6254978DC54484A038A6FEF69BC13B7E7A4B3E0CD1036",
+      "encoding": "utf-8-sig",
+      "lines": 45
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Components/MainContainerFrame.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Components\\MainContainerFrame.lua",
+      "bytes": 1989,
+      "SHA256": "635AD8D6D64C5AC8EC313430229AFB809B06FF1F3554B0E610E7F73B34E5D043",
+      "encoding": "utf-8-sig",
+      "lines": 68
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Components/MessageLine.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Components\\MessageLine.lua",
+      "bytes": 16806,
+      "SHA256": "C46E74846729224A66B5329649490530442EA1E39AB8DF103A8B11A1C3F2C1DF",
+      "encoding": "utf-8-sig",
+      "lines": 445
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Components/MoverDialog.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Components\\MoverDialog.lua",
+      "bytes": 2105,
+      "SHA256": "13D4E6FE66D44FDD9B92251BE21C20D6AF8AFA0B7979DA86B75ED239371C6CCA",
+      "encoding": "utf-8-sig",
+      "lines": 70
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Components/MoverFrame.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Components\\MoverFrame.lua",
+      "bytes": 3787,
+      "SHA256": "C33C22BF1A3617E8CEBAD222386D6D4F0D55D9B7970D1FE204206D314F8B4FE2",
+      "encoding": "utf-8-sig",
+      "lines": 123
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Components/NewMessageAlertFrame.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Components\\NewMessageAlertFrame.lua",
+      "bytes": 1744,
+      "SHA256": "0B6EE1B0F51AEC7A30FFD34F886EBA4CC7AB92C4D50775C2DC1949C33E28BF87",
+      "encoding": "utf-8-sig",
+      "lines": 53
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Components/ScrollOverlayFrame.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Components\\ScrollOverlayFrame.lua",
+      "bytes": 5293,
+      "SHA256": "37459FB669445B485DC13D4F07D7E35DFB9E31F6A202F39B3E0F09DE3E148556",
+      "encoding": "utf-8-sig",
+      "lines": 161
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Components/SlidingMessageFrame.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Components\\SlidingMessageFrame.lua",
+      "bytes": 54025,
+      "SHA256": "1027875223CF771C70371B5B0BA5669FF2BA50B4D9804D21E3DA9C013A8F8724",
+      "encoding": "utf-8-sig",
+      "lines": 1449
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Modules/Config.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Modules\\Config.lua",
+      "bytes": 24145,
+      "SHA256": "04748974BF8C4A2496AF9A993F4199AF597A83E0F1A965A6BA5CE3999162F97E",
+      "encoding": "utf-8-sig",
+      "lines": 639
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Modules/Copy.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Modules\\Copy.lua",
+      "bytes": 8186,
+      "SHA256": "766C4A7C143B46337CBF6C3854C6FF1FA6BDACDEA278C45601BD1FD02CCC48CA",
+      "encoding": "utf-8-sig",
+      "lines": 237
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Modules/DefaultTabs.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Modules\\DefaultTabs.lua",
+      "bytes": 6298,
+      "SHA256": "B52C05FAE89F5D0A63B885F6F311B3F3F76FA46DCA483559ACF3C3438F9D8164",
+      "encoding": "utf-8-sig",
+      "lines": 189
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Modules/EditMode.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Modules\\EditMode.lua",
+      "bytes": 12990,
+      "SHA256": "3D0D5A8FC91C71A980EF83DAD8E79B0CCEA8B97F2683DD02DAB0670F06A2BD35",
+      "encoding": "utf-8-sig",
+      "lines": 366
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Modules/Fonts.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Modules\\Fonts.lua",
+      "bytes": 4478,
+      "SHA256": "6381346C1E99EDC72882EDC31D9CA6C5BBDB8CB07912EB34AB243CF063329AB7",
+      "encoding": "utf-8-sig",
+      "lines": 131
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Modules/History.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Modules\\History.lua",
+      "bytes": 9869,
+      "SHA256": "FCB1D581F6E7C8BB3E7C2E9EEB2F56A128BA4403AF8BCE739A25C95DB371BAD1",
+      "encoding": "utf-8-sig",
+      "lines": 276
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Modules/Hyperlinks.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Modules\\Hyperlinks.lua",
+      "bytes": 12808,
+      "SHA256": "44D4FDEBE0A1E47F819591B642898527320F7957C832CE5C4EA8A4233B058698",
+      "encoding": "utf-8-sig",
+      "lines": 299
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Modules/News.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Modules\\News.lua",
+      "bytes": 14120,
+      "SHA256": "8CF7E2711017F72589F627FB6B04AEE9C8EE66D0E321913E51C3EA2075C07EBA",
+      "encoding": "utf-8-sig",
+      "lines": 462
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Modules/OptionsPanel.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Modules\\OptionsPanel.lua",
+      "bytes": 42629,
+      "SHA256": "183D378626A987DEE87B2BFBCD005C61F2E30D252DDF830194AFE2D0307C18D6",
+      "encoding": "utf-8-sig",
+      "lines": 960
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Modules/SpamFilter.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Modules\\SpamFilter.lua",
+      "bytes": 5124,
+      "SHA256": "8FAA99219DC789DECEB39273AD85F64E15D40FD24D9D4B2F4B81A1A04260C37F",
+      "encoding": "utf-8-sig",
+      "lines": 155
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Modules/TextProcessing.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Modules\\TextProcessing.lua",
+      "bytes": 18562,
+      "SHA256": "D44B063A65C5FAFCBD0AE12662EB7B1602B6F895DEBD12F1512899EB97B81EB3",
+      "encoding": "utf-8-sig",
+      "lines": 495
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Modules/UIManager.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Modules\\UIManager.lua",
+      "bytes": 49237,
+      "SHA256": "D1107DC340A3862B99900F09E07BF317B2E7A9B1B022EB22D1CDBBE126AAE77B",
+      "encoding": "utf-8-sig",
+      "lines": 1185
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Modules/VersionCheck.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Modules\\VersionCheck.lua",
+      "bytes": 3451,
+      "SHA256": "EF5767A0F89D701873365A71BA52A7F3CA4E12ECEE62872761015782F77345ED",
+      "encoding": "utf-8-sig",
+      "lines": 105
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Modules/Whispers.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Modules\\Whispers.lua",
+      "bytes": 80921,
+      "SHA256": "65D2023D1998B736054EF00931681C2233A6ED8906B4A7A0B38DE2BBF6A7F11E",
+      "encoding": "utf-8-sig",
+      "lines": 2121
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/constants.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\constants.lua",
+      "bytes": 2362,
+      "SHA256": "B49B6C62D0E144ABC9893185B788DDB4E165BE048C22FE61A365BAEA245FBEB8",
+      "encoding": "utf-8-sig",
+      "lines": 87
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/init.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\init.lua",
+      "bytes": 8067,
+      "SHA256": "9A57DEB95F7EBC4C54E0CA3D7C5F3EFB55A766EC157A19724BC26EAC49C4450C",
+      "encoding": "utf-8-sig",
+      "lines": 198
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/utils.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\utils.lua",
+      "bytes": 2441,
+      "SHA256": "606E637AA80304960C857AC110E7930F0C90FFA879F646F627A7C6723E249859",
+      "encoding": "utf-8-sig",
+      "lines": 99
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/LATEST.md",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\LATEST.md",
+      "bytes": 92,
+      "SHA256": "7150180DE72C5C93893F5CA200C28E1C109DA8F0C5BC6CA1C3D20038CB0A1461",
+      "encoding": "utf-8-sig",
+      "lines": 5
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/LICENSE",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\LICENSE",
+      "bytes": 1140,
+      "SHA256": "985BCA0D2792FA8B87F93F83F5EDFDE8F7A9D1F2AD2D7913087C94A1310DD564",
+      "encoding": "utf-8-sig",
+      "lines": 22
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/README.md",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\README.md",
+      "bytes": 2484,
+      "SHA256": "F83AD2B93DA7B4B9F5546779BCCC6A744F9826F685659AB794D767B30E5F88F3",
+      "encoding": "utf-8-sig",
+      "lines": 49
+    }
+  ],
+  "TOCs": [
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass.toc",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass.toc",
+      "bytes": 1777,
+      "SHA256": "C4BB837C1DFB1D94101BF6772D77CF6B6D02A93E6A555B93F5BA301FEF8BAEF6",
+      "encoding": "utf-8-sig",
+      "lines": 64,
+      "metadata": [
+        {
+          "line": 1,
+          "literal": "## Interface: 120100, 16001"
+        },
+        {
+          "line": 2,
+          "literal": "## Plain Title: Glass Forever"
+        },
+        {
+          "line": 3,
+          "literal": "## Author: mixxorz (original), Rethz (fork)"
+        },
+        {
+          "line": 4,
+          "literal": "## Version: 1.1.6-forever"
+        },
+        {
+          "line": 6,
+          "literal": "## Title: |c00DFBA69Glass Forever|r"
+        },
+        {
+          "line": 7,
+          "literal": "## Notes: Immersive and minimalistic chat UI. Fork of Glass for WoW: Forever."
+        },
+        {
+          "line": 8,
+          "literal": "## IconTexture: Interface\\AddOns\\Glass\\Glass\\Assets\\logo"
+        },
+        {
+          "line": 10,
+          "literal": "## SavedVariables: GlassDB"
+        }
+      ],
+      "loadOrder": [
+        {
+          "line": 13,
+          "literal": "libs\\LibStub\\LibStub.lua",
+          "exists": false
+        },
+        {
+          "line": 14,
+          "literal": "libs\\CallbackHandler-1.0\\CallbackHandler-1.0.xml",
+          "exists": false
+        },
+        {
+          "line": 15,
+          "literal": "libs\\LibSharedMedia-3.0\\lib.xml",
+          "exists": false
+        },
+        {
+          "line": 16,
+          "literal": "libs\\AceGUI-3.0\\AceGUI-3.0.xml",
+          "exists": false
+        },
+        {
+          "line": 18,
+          "literal": "libs\\AceAddon-3.0\\AceAddon-3.0.xml",
+          "exists": false
+        },
+        {
+          "line": 19,
+          "literal": "libs\\AceConfig-3.0\\AceConfig-3.0.xml",
+          "exists": false
+        },
+        {
+          "line": 20,
+          "literal": "libs\\AceConsole-3.0\\AceConsole-3.0.xml",
+          "exists": false
+        },
+        {
+          "line": 21,
+          "literal": "libs\\AceDB-3.0\\AceDB-3.0.xml",
+          "exists": false
+        },
+        {
+          "line": 22,
+          "literal": "libs\\AceDBOptions-3.0\\AceDBOptions-3.0.xml",
+          "exists": false
+        },
+        {
+          "line": 23,
+          "literal": "libs\\AceGUI-3.0-SharedMediaWidgets\\widget.xml",
+          "exists": false
+        },
+        {
+          "line": 24,
+          "literal": "libs\\AceHook-3.0\\AceHook-3.0.xml",
+          "exists": false
+        },
+        {
+          "line": 25,
+          "literal": "libs\\lodash.wow\\lodash.wow.xml",
+          "exists": false
+        },
+        {
+          "line": 26,
+          "literal": "libs\\LibEasing\\LibEasing.lua",
+          "exists": false
+        },
+        {
+          "line": 27,
+          "literal": "libs\\LibEditMode\\embed.xml",
+          "exists": false
+        },
+        {
+          "line": 30,
+          "literal": "Glass\\init.lua",
+          "exists": true
+        },
+        {
+          "line": 31,
+          "literal": "Glass\\constants.lua",
+          "exists": true
+        },
+        {
+          "line": 32,
+          "literal": "Glass\\utils.lua",
+          "exists": true
+        },
+        {
+          "line": 35,
+          "literal": "Glass\\Components\\Button.lua",
+          "exists": true
+        },
+        {
+          "line": 36,
+          "literal": "Glass\\Components\\ChatButtons.lua",
+          "exists": true
+        },
+        {
+          "line": 37,
+          "literal": "Glass\\Components\\ChatDock.lua",
+          "exists": true
+        },
+        {
+          "line": 38,
+          "literal": "Glass\\Components\\ChatTab.lua",
+          "exists": true
+        },
+        {
+          "line": 39,
+          "literal": "Glass\\Components\\EditBox.lua",
+          "exists": true
+        },
+        {
+          "line": 40,
+          "literal": "Glass\\Components\\FadingFrame.lua",
+          "exists": true
+        },
+        {
+          "line": 41,
+          "literal": "Glass\\Components\\GradientBackground.lua",
+          "exists": true
+        },
+        {
+          "line": 42,
+          "literal": "Glass\\Components\\MainContainerFrame.lua",
+          "exists": true
+        },
+        {
+          "line": 43,
+          "literal": "Glass\\Components\\MessageLine.lua",
+          "exists": true
+        },
+        {
+          "line": 44,
+          "literal": "Glass\\Components\\MoverDialog.lua",
+          "exists": true
+        },
+        {
+          "line": 45,
+          "literal": "Glass\\Components\\MoverFrame.lua",
+          "exists": true
+        },
+        {
+          "line": 46,
+          "literal": "Glass\\Components\\NewMessageAlertFrame.lua",
+          "exists": true
+        },
+        {
+          "line": 47,
+          "literal": "Glass\\Components\\ScrollOverlayFrame.lua",
+          "exists": true
+        },
+        {
+          "line": 48,
+          "literal": "Glass\\Components\\SlidingMessageFrame.lua",
+          "exists": true
+        },
+        {
+          "line": 51,
+          "literal": "Glass\\Modules\\Config.lua",
+          "exists": true
+        },
+        {
+          "line": 52,
+          "literal": "Glass\\Modules\\Copy.lua",
+          "exists": true
+        },
+        {
+          "line": 53,
+          "literal": "Glass\\Modules\\DefaultTabs.lua",
+          "exists": true
+        },
+        {
+          "line": 54,
+          "literal": "Glass\\Modules\\Fonts.lua",
+          "exists": true
+        },
+        {
+          "line": 55,
+          "literal": "Glass\\Modules\\History.lua",
+          "exists": true
+        },
+        {
+          "line": 56,
+          "literal": "Glass\\Modules\\Whispers.lua",
+          "exists": true
+        },
+        {
+          "line": 57,
+          "literal": "Glass\\Modules\\Hyperlinks.lua",
+          "exists": true
+        },
+        {
+          "line": 58,
+          "literal": "Glass\\Modules\\News.lua",
+          "exists": true
+        },
+        {
+          "line": 59,
+          "literal": "Glass\\Modules\\OptionsPanel.lua",
+          "exists": true
+        },
+        {
+          "line": 60,
+          "literal": "Glass\\Modules\\SpamFilter.lua",
+          "exists": true
+        },
+        {
+          "line": 61,
+          "literal": "Glass\\Modules\\TextProcessing.lua",
+          "exists": true
+        },
+        {
+          "line": 62,
+          "literal": "Glass\\Modules\\UIManager.lua",
+          "exists": true
+        },
+        {
+          "line": 63,
+          "literal": "Glass\\Modules\\VersionCheck.lua",
+          "exists": true
+        },
+        {
+          "line": 64,
+          "literal": "Glass\\Modules\\EditMode.lua",
+          "exists": true
+        }
+      ]
+    }
+  ],
+  "XMLloadReferences": [],
+  "READMEfullText": [
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/README.md",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\README.md",
+      "bytes": 2484,
+      "SHA256": "F83AD2B93DA7B4B9F5546779BCCC6A744F9826F685659AB794D767B30E5F88F3",
+      "encoding": "utf-8-sig",
+      "lines": 49,
+      "fullText": "# Glass Forever\n\nMinimal chat that slides in and fades away. A fork of [Glass](https://github.com/mixxorz/Glass) by Mitchel Cabuloy, updated for **WoW: Forever**.\n\nMade and tested for WoW: Forever. Bug reports are welcome in [Issues](https://github.com/NelsonAbrantes/Glass-Forever/issues).\n\n## Features\n\n**Chat**\n- Messages slide in and fade out when you're not using the chat; they come back on mouse over.\n- Emotes: `:)` `:D` `<3` and 20 more show as small faces, in the Glass gold or classic yellow.\n- Timestamps, class and race icons, and first names only, each one an option.\n- Chat history: the last messages of each tab come back after logging out or `/reload`.\n- Search a tab's messages, and copy chat text, from the tab's menu.\n- Arrow keys history: Up and Down in the chat box go through what you typed.\n- Spam filter with an editable list of blocked words.\n- Clickable web links; right click a linked recipe to track it.\n- Short channel names (`[1]`, `[P]`...), optional.\n- Chinese, Korean and Russian letters shown with the game's fonts.\n\n**Tabs**\n- Seven styles: Minimal, Framed, Solid, Underline, Pill, Glossy and Classic.\n- Accent color (including your class color) and tab name color.\n- Animated selected tab: slides or grows from tab to tab.\n- New message alert in the color of the chat type, and an unread count.\n- Guild and Party tabs offered the first time you log in; whispers in their own tabs.\n- Tab bar position, alignment, size, spacing and fade options.\n\n**Windows and edit box**\n- Separate chat windows with the Glass look: \"Open in Separate Window\" when you right click a channel.\n- Edit box styles: Minimal, Solid and Framed, with an optional emote button.\n- Chat buttons (friends, channels, voice, emotes) with icons in the Glass style.\n\n**Everything else**\n- Options in the game's Options window (Options > AddOns > Glass Forever) or `/glass`.\n- Profiles, with export and import as text to share your settings.\n- Edit Mode support: position, size, fonts and more.\n- Update notice when someone in your guild or group has a newer version.\n\n## Installation\n\nGet it on [CurseForge](https://www.curseforge.com/wow/addons/glass-forever) (the files here don't include the libraries the addon needs). Restart the game after installing or updating.\n\n## Credits and license\n\nOriginal addon: **Glass** by Mitchel Cabuloy, MIT license.\nFork changes: Nelson Abrantes, 2026.\n\nReleased under the MIT license. See `LICENSE`. Bundled libraries keep their own licenses.\n"
+    }
+  ],
+  "configDefaultNameCandidates": [
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Modules/Config.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Modules\\Config.lua",
+      "bytes": 24145,
+      "SHA256": "04748974BF8C4A2496AF9A993F4199AF597A83E0F1A965A6BA5CE3999162F97E",
+      "encoding": "utf-8-sig",
+      "lines": 639
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Modules/Copy.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Modules\\Copy.lua",
+      "bytes": 8186,
+      "SHA256": "766C4A7C143B46337CBF6C3854C6FF1FA6BDACDEA278C45601BD1FD02CCC48CA",
+      "encoding": "utf-8-sig",
+      "lines": 237
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Modules/DefaultTabs.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Modules\\DefaultTabs.lua",
+      "bytes": 6298,
+      "SHA256": "B52C05FAE89F5D0A63B885F6F311B3F3F76FA46DCA483559ACF3C3438F9D8164",
+      "encoding": "utf-8-sig",
+      "lines": 189
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Modules/EditMode.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Modules\\EditMode.lua",
+      "bytes": 12990,
+      "SHA256": "3D0D5A8FC91C71A980EF83DAD8E79B0CCEA8B97F2683DD02DAB0670F06A2BD35",
+      "encoding": "utf-8-sig",
+      "lines": 366
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Modules/Fonts.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Modules\\Fonts.lua",
+      "bytes": 4478,
+      "SHA256": "6381346C1E99EDC72882EDC31D9CA6C5BBDB8CB07912EB34AB243CF063329AB7",
+      "encoding": "utf-8-sig",
+      "lines": 131
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Modules/History.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Modules\\History.lua",
+      "bytes": 9869,
+      "SHA256": "FCB1D581F6E7C8BB3E7C2E9EEB2F56A128BA4403AF8BCE739A25C95DB371BAD1",
+      "encoding": "utf-8-sig",
+      "lines": 276
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Modules/Hyperlinks.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Modules\\Hyperlinks.lua",
+      "bytes": 12808,
+      "SHA256": "44D4FDEBE0A1E47F819591B642898527320F7957C832CE5C4EA8A4233B058698",
+      "encoding": "utf-8-sig",
+      "lines": 299
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Modules/News.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Modules\\News.lua",
+      "bytes": 14120,
+      "SHA256": "8CF7E2711017F72589F627FB6B04AEE9C8EE66D0E321913E51C3EA2075C07EBA",
+      "encoding": "utf-8-sig",
+      "lines": 462
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Modules/OptionsPanel.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Modules\\OptionsPanel.lua",
+      "bytes": 42629,
+      "SHA256": "183D378626A987DEE87B2BFBCD005C61F2E30D252DDF830194AFE2D0307C18D6",
+      "encoding": "utf-8-sig",
+      "lines": 960
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Modules/SpamFilter.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Modules\\SpamFilter.lua",
+      "bytes": 5124,
+      "SHA256": "8FAA99219DC789DECEB39273AD85F64E15D40FD24D9D4B2F4B81A1A04260C37F",
+      "encoding": "utf-8-sig",
+      "lines": 155
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Modules/TextProcessing.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Modules\\TextProcessing.lua",
+      "bytes": 18562,
+      "SHA256": "D44B063A65C5FAFCBD0AE12662EB7B1602B6F895DEBD12F1512899EB97B81EB3",
+      "encoding": "utf-8-sig",
+      "lines": 495
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Modules/UIManager.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Modules\\UIManager.lua",
+      "bytes": 49237,
+      "SHA256": "D1107DC340A3862B99900F09E07BF317B2E7A9B1B022EB22D1CDBBE126AAE77B",
+      "encoding": "utf-8-sig",
+      "lines": 1185
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Modules/VersionCheck.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Modules\\VersionCheck.lua",
+      "bytes": 3451,
+      "SHA256": "EF5767A0F89D701873365A71BA52A7F3CA4E12ECEE62872761015782F77345ED",
+      "encoding": "utf-8-sig",
+      "lines": 105
+    },
+    {
+      "filename": "NelsonAbrantes-Glass-Forever-b1c9309/Glass/Modules/Whispers.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Modules\\Whispers.lua",
+      "bytes": 80921,
+      "SHA256": "65D2023D1998B736054EF00931681C2233A6ED8906B4A7A0B38DE2BBF6A7F11E",
+      "encoding": "utf-8-sig",
+      "lines": 2121
+    }
+  ],
+  "noCodeExecuted": true,
+  "noWholeCodeAuditClaim": true
+}

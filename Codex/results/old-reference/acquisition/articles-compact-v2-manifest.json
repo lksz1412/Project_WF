@@ -1,0 +1,1434 @@
+{
+  "count": 34,
+  "method": "BeautifulSoup UTF8-string html.parser; metadata get_text(newline,strip=True), body/version get_text(newline,strip=False). No summary/omission; exact raw-parser/catalog/fragment text and sidecarUTF8-byte comparisons. HTML markup preserved in rawsource; attachment/link/image metadata remains separate existingJSON.",
+  "posts": [
+    {
+      "postID": 45,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=45",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-45.html",
+      "rawHTMLSHA256": "737A80CCB2CED8ED50AD623324047B90A06DEAC54A358B705D8C7BD64588B770",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-45-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-45-addonAddon.txt",
+          "utf8Bytes": 132,
+          "textSHA256": "F680B24F7AD10511FFDBBB2D4EAC0D31DBEAB74784BF8903552CA95238AB9D0D",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1251,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-45-addonVersion.txt",
+          "utf8Bytes": 86,
+          "textSHA256": "768ABB1354F0E5400CE3E287BA33B514640FDA183D45A37DA29FADB5F31940F5",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-45.md",
+      "articleLines": 61,
+      "articleBytes": 1565
+    },
+    {
+      "postID": 11218,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=11218",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-priority-root-63f909c7c02c47729d89dba705cb4367\\detail-11218.html",
+      "rawHTMLSHA256": "74579E66D2091C8DEE3A1C2320E6F3A215F61D1BEB6C0A5F47842174BBD89ADC",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-11218-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-11218-addonAddon.txt",
+          "utf8Bytes": 2556,
+          "textSHA256": "42E51CF22B4FD664BB0D742078D257BF7D8102C00318FB430D8F7E3D8C149CF9",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1316,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-11218-addonVersion.txt",
+          "utf8Bytes": 1523,
+          "textSHA256": "FC635D5C4A6F4A06EA695E24B28B2C122A09F497B55FBA91157044222DF1FF57",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-11218.md",
+      "articleLines": 292,
+      "articleBytes": 5749
+    },
+    {
+      "postID": 2958,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=2958",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\detail-2958.html",
+      "rawHTMLSHA256": "89C7FB54FAB68AD4222D82906404E59E639180B9D30E5FEB0668FD7F1AD6D7C9",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-2958-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-2958-addonAddon.txt",
+          "utf8Bytes": 479,
+          "textSHA256": "E4EFB301A6229A3C9007953E7B4183A816AE37F6BCD8EB9FBA0B1E37EE84B8AB",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1259,
+          "state": "empty",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-2958-addonVersion.txt",
+          "utf8Bytes": 0,
+          "textSHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-2958.md",
+      "articleLines": 71,
+      "articleBytes": 1954
+    },
+    {
+      "postID": 13140,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=13140",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-priority-root-63f909c7c02c47729d89dba705cb4367\\detail-13140.html",
+      "rawHTMLSHA256": "24BD16A64FDC64EE79FFBC78BF769B1A843F3422CA01D66F8B529B9BA0B9B90F",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-13140-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-13140-addonAddon.txt",
+          "utf8Bytes": 10000,
+          "textSHA256": "B0BF52BBCD043EE917D4341ACC0A61CABCFBC54DE324176F7188D7CDB6650766",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1476,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-13140-addonVersion.txt",
+          "utf8Bytes": 2116,
+          "textSHA256": "EE8D15B8BC8B520FB71BA7F42332009CDAB2B59867F1F223021122D062B9F201",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-13140.md",
+      "articleLines": 601,
+      "articleBytes": 14137
+    },
+    {
+      "postID": 12993,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=12993",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-12993.html",
+      "rawHTMLSHA256": "EA87BA009AA7D6D627197777CD5885F36F2CF79AFCB774AB9AE57782240C9AEB",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-12993-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-12993-addonAddon.txt",
+          "utf8Bytes": 140,
+          "textSHA256": "35E971F2B21081F02A92FE0823E11ADE9809A6BC7536EFAD91F6F37A821FE268",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1245,
+          "state": "empty",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-12993-addonVersion.txt",
+          "utf8Bytes": 0,
+          "textSHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-12993.md",
+      "articleLines": 42,
+      "articleBytes": 1453
+    },
+    {
+      "postID": 11361,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=11361",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-11361.html",
+      "rawHTMLSHA256": "FE4B0E6DDCB7AEF655F61AE4985CD16C1C0FC12171915B6F001DABBB9E1AE352",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-11361-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-11361-addonAddon.txt",
+          "utf8Bytes": 4456,
+          "textSHA256": "EBDF5FFFCB984EBDEE53083A0ADAD621BFD72C5529DA2FB0396FBAF1E7A6C84D",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1359,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-11361-addonVersion.txt",
+          "utf8Bytes": 9686,
+          "textSHA256": "B56C0FD43F9BA6F4599D2808D5804CAA57D059C9F4BE6D15D31CDE7C3021EFBA",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-11361.md",
+      "articleLines": 754,
+      "articleBytes": 16270
+    },
+    {
+      "postID": 12610,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=12610",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-12610.html",
+      "rawHTMLSHA256": "4FEB1EE865806E3F2DFE0784755209A96427B448A62D45C85A950C763CE702E1",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-12610-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-12610-addonAddon.txt",
+          "utf8Bytes": 1187,
+          "textSHA256": "83EAA5B782DC3304C98EC3F5261A7744E3A8E78A332658C2AB491C7B88CFA3B5",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1273,
+          "state": "empty",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-12610-addonVersion.txt",
+          "utf8Bytes": 0,
+          "textSHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-12610.md",
+      "articleLines": 99,
+      "articleBytes": 2631
+    },
+    {
+      "postID": 12124,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=12124",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-12124.html",
+      "rawHTMLSHA256": "5FD32E6FDC7C95254A492074EC16B08ED2B0DDC75964F5EC9C0DE120DB0D985C",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-12124-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-12124-addonAddon.txt",
+          "utf8Bytes": 2592,
+          "textSHA256": "14FE6C7F1808ABF8166C6B5BDC313593AC8EFD5B63DC65165075B42DB645DFD8",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1302,
+          "state": "empty",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-12124-addonVersion.txt",
+          "utf8Bytes": 0,
+          "textSHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-12124.md",
+      "articleLines": 157,
+      "articleBytes": 4121
+    },
+    {
+      "postID": 12174,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=12174",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-12174.html",
+      "rawHTMLSHA256": "7BA41F75067445FAD0856B84F5AB18264709182BFD2F7DBA4B49BAD495A87CF0",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-12174-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-12174-addonAddon.txt",
+          "utf8Bytes": 2612,
+          "textSHA256": "F3AAD657CB9A94D3B85C659457C6A5B61A38845A07E354963B33FBAC3ED5B93C",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1336,
+          "state": "empty",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-12174-addonVersion.txt",
+          "utf8Bytes": 0,
+          "textSHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-12174.md",
+      "articleLines": 225,
+      "articleBytes": 4170
+    },
+    {
+      "postID": 10341,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=10341",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-10341.html",
+      "rawHTMLSHA256": "70D160ADDDD9358DF1D3B53FB2273256E59B22129D837B2DE5A30116B3738015",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-10341-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-10341-addonAddon.txt",
+          "utf8Bytes": 9,
+          "textSHA256": "306C19AF2BB1B8204F80A3C97D20093333FB5E32630E46DC62D922A981064C24",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1245,
+          "state": "empty",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-10341-addonVersion.txt",
+          "utf8Bytes": 0,
+          "textSHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-10341.md",
+      "articleLines": 43,
+      "articleBytes": 1349
+    },
+    {
+      "postID": 9880,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=9880",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-9880.html",
+      "rawHTMLSHA256": "A15D2C38D235C44D29DD0CBB594D6394665519DB602C983600CA1B72F4D15377",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-9880-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-9880-addonAddon.txt",
+          "utf8Bytes": 938,
+          "textSHA256": "36034B5896D85E27933316E6FABCDBA43F421F2318D2A9AD78F6F59874D18CA1",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1263,
+          "state": "empty",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-9880-addonVersion.txt",
+          "utf8Bytes": 0,
+          "textSHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-9880.md",
+      "articleLines": 79,
+      "articleBytes": 2308
+    },
+    {
+      "postID": 9789,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=9789",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-9789.html",
+      "rawHTMLSHA256": "B164036E20DA923955B6B5EB0D749C38E8CB954E27B87DFF5D905759ABC117A1",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-9789-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-9789-addonAddon.txt",
+          "utf8Bytes": 938,
+          "textSHA256": "36034B5896D85E27933316E6FABCDBA43F421F2318D2A9AD78F6F59874D18CA1",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1263,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-9789-addonVersion.txt",
+          "utf8Bytes": 14,
+          "textSHA256": "47913B51ECAAADC2FFC2B5CBC85D3387B974594A86305044B651F797CC3745C1",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-9789.md",
+      "articleLines": 80,
+      "articleBytes": 2322
+    },
+    {
+      "postID": 3461,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=3461",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-3461.html",
+      "rawHTMLSHA256": "731B5DA0C512B40CF4BCE0DFDE19949180B41096D64DA1133782E82A3CDD84B4",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-3461-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-3461-addonAddon.txt",
+          "utf8Bytes": 1154,
+          "textSHA256": "5D47CA96DC54786D538356FB991A00ABA67FE41903C9EA83FE0D141900F0E698",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1277,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-3461-addonVersion.txt",
+          "utf8Bytes": 270,
+          "textSHA256": "4AD3358F10D6B09CE45B608EDF8A07EA86D293601A3FBA427917391515727EC8",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-3461.md",
+      "articleLines": 121,
+      "articleBytes": 2840
+    },
+    {
+      "postID": 8906,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=8906",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-8906.html",
+      "rawHTMLSHA256": "C50102D769DDDD82FB883C71876F95C1A9C73CD7A0E7C92475B7C8BFD4C6FF72",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-8906-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-8906-addonAddon.txt",
+          "utf8Bytes": 3824,
+          "textSHA256": "6074F4EF90C47DEB8537E5C8A7747CB7668FCF9193800D8ED76B6312A7E848DF",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1301,
+          "state": "empty",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-8906-addonVersion.txt",
+          "utf8Bytes": 0,
+          "textSHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-8906.md",
+      "articleLines": 155,
+      "articleBytes": 5309
+    },
+    {
+      "postID": 8920,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=8920",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-8920.html",
+      "rawHTMLSHA256": "B6234DCD01F858EB1E7A8D19CB105FFB99ACD54DDF0701DFD314EBBE91F9CAED",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-8920-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-8920-addonAddon.txt",
+          "utf8Bytes": 824,
+          "textSHA256": "2BB387C26491F423C94513154D1A0D4418057E54397B3ABA7C927663ACDA6F11",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1280,
+          "state": "empty",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-8920-addonVersion.txt",
+          "utf8Bytes": 0,
+          "textSHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-8920.md",
+      "articleLines": 112,
+      "articleBytes": 2204
+    },
+    {
+      "postID": 7618,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=7618",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-7618.html",
+      "rawHTMLSHA256": "39103EC8E23A6389AB45AA06B36C32D673C27975AA5BB6613E4515131039F34B",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-7618-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-7618-addonAddon.txt",
+          "utf8Bytes": 4176,
+          "textSHA256": "2AFBBE2286F6F59332F89CE458EC6CE4859CE0D39B13B7507BF20D1A838CCA80",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1326,
+          "state": "empty",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-7618-addonVersion.txt",
+          "utf8Bytes": 0,
+          "textSHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-7618.md",
+      "articleLines": 205,
+      "articleBytes": 5760
+    },
+    {
+      "postID": 7546,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=7546",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-7546.html",
+      "rawHTMLSHA256": "4AA6357CCC2D11372B99FD948322A469B822F48A7B1EC36AEA7575ABEB73FFCC",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-7546-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-7546-addonAddon.txt",
+          "utf8Bytes": 723,
+          "textSHA256": "6F5E29F71DEA51B23084DA73229536F8304CB240B7F57D95DFEF81484437030D",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1258,
+          "state": "empty",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-7546-addonVersion.txt",
+          "utf8Bytes": 0,
+          "textSHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-7546.md",
+      "articleLines": 68,
+      "articleBytes": 2101
+    },
+    {
+      "postID": 6405,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=6405",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-6405.html",
+      "rawHTMLSHA256": "0757D35D89FA3E944C3542BAE0DEB65A7097D5F4B1BA4BF3BC9227EE9DA13C40",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-6405-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-6405-addonAddon.txt",
+          "utf8Bytes": 371,
+          "textSHA256": "97F9BA09B98238D2451695D9AFA9DB85924FA307AF39F6FA4C9755FEEA373C83",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1253,
+          "state": "empty",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-6405-addonVersion.txt",
+          "utf8Bytes": 0,
+          "textSHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-6405.md",
+      "articleLines": 59,
+      "articleBytes": 1755
+    },
+    {
+      "postID": 4238,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=4238",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-4238.html",
+      "rawHTMLSHA256": "99F176661F110ECA92103451D9DE07B80D3FF0F308B6094D22CC1923FC419830",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-4238-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-4238-addonAddon.txt",
+          "utf8Bytes": 912,
+          "textSHA256": "06D10C870C86514E55D1D1CED592F9E0B7AC5DA3453BB6672F23902D2721D261",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1265,
+          "state": "empty",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-4238-addonVersion.txt",
+          "utf8Bytes": 0,
+          "textSHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-4238.md",
+      "articleLines": 83,
+      "articleBytes": 2352
+    },
+    {
+      "postID": 4019,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=4019",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-4019.html",
+      "rawHTMLSHA256": "961003FC67B9B0884F0915BDEEF0279DFA4EA5FCA280B18B78544084EEB07A56",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-4019-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-4019-addonAddon.txt",
+          "utf8Bytes": 4,
+          "textSHA256": "61BE55A8E2F6B4E172338BDDF184D6DBEE29C98853E0A0485ECEE7F27B9AF0B4",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1245,
+          "state": "empty",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-4019-addonVersion.txt",
+          "utf8Bytes": 0,
+          "textSHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-4019.md",
+      "articleLines": 43,
+      "articleBytes": 1321
+    },
+    {
+      "postID": 4018,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=4018",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-4018.html",
+      "rawHTMLSHA256": "E3FB1E76B992877184F6F56073C6E53EC566A7820C5F9646C4CD03BF48AD4792",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-4018-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-4018-addonAddon.txt",
+          "utf8Bytes": 967,
+          "textSHA256": "D531122ECE6323361740CD0A6540364090898EB873783C124BA88BB046FA5BF7",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1285,
+          "state": "empty",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-4018-addonVersion.txt",
+          "utf8Bytes": 0,
+          "textSHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-4018.md",
+      "articleLines": 122,
+      "articleBytes": 2535
+    },
+    {
+      "postID": 4012,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=4012",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-4012.html",
+      "rawHTMLSHA256": "F2888106BC8628ECD8D4F75DAE5BB5FC43FB01585162D5C5D66956AB58C4B61D",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-4012-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-4012-addonAddon.txt",
+          "utf8Bytes": 962,
+          "textSHA256": "5E16EE459B3920ED05770ABA05FC65CC2D9DC88273E4C068801991A1CBA316AA",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1282,
+          "state": "empty",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-4012-addonVersion.txt",
+          "utf8Bytes": 0,
+          "textSHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-4012.md",
+      "articleLines": 117,
+      "articleBytes": 2511
+    },
+    {
+      "postID": 2582,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=2582",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-2582.html",
+      "rawHTMLSHA256": "A8ABA5519510AD8851711DD81B27A20421106B2E0CEA3E6771005B81BD30D193",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-2582-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-2582-addonAddon.txt",
+          "utf8Bytes": 1599,
+          "textSHA256": "1857BF752FF8DEE94EAC472D2994B9713D1D9E95C420147A3E13999FDBBD2AD1",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1290,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-2582-addonVersion.txt",
+          "utf8Bytes": 13,
+          "textSHA256": "15E99BC4F9334B4E5A884665FC3E58F896CCD7AB6328665528DFAD6978948734",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-2582.md",
+      "articleLines": 134,
+      "articleBytes": 3102
+    },
+    {
+      "postID": 2312,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=2312",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-2312.html",
+      "rawHTMLSHA256": "2081E5A13FF11E10818EE23B08171BB703CA9BF136040686D4EEAB2339E374E8",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-2312-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-2312-addonAddon.txt",
+          "utf8Bytes": 16,
+          "textSHA256": "DC388BA783E3726E719080B9B70EFC4156A2583FA384C8E484F2A79A9176D6B7",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1245,
+          "state": "empty",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-2312-addonVersion.txt",
+          "utf8Bytes": 0,
+          "textSHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-2312.md",
+      "articleLines": 42,
+      "articleBytes": 1313
+    },
+    {
+      "postID": 1932,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=1932",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-1932.html",
+      "rawHTMLSHA256": "EEAB6B513B121C9C36626181259D4AF7843F9A723C60D55ABE7F00FE8BA02513",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-1932-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-1932-addonAddon.txt",
+          "utf8Bytes": 2817,
+          "textSHA256": "550FEB9A2A6AD975400A759B1AAE0C4A4C6988356A09AC35D7198B5BD8599CE9",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1277,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-1932-addonVersion.txt",
+          "utf8Bytes": 88,
+          "textSHA256": "C4D812D414F5E398545FE6E9A69AB0DF06CD8E77AE7F0C064D304BEA463B92A7",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-1932.md",
+      "articleLines": 115,
+      "articleBytes": 4413
+    },
+    {
+      "postID": 1877,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=1877",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-1877.html",
+      "rawHTMLSHA256": "483DCA61874840FC4DAA3EC80B00D050685D285A40DE59C1BDC939AD7E0F0182",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-1877-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-1877-addonAddon.txt",
+          "utf8Bytes": 5802,
+          "textSHA256": "D4D6294CB13656ADCED3D2A733952AD6AEFBDE1780E124FBD730D5490437D802",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1387,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-1877-addonVersion.txt",
+          "utf8Bytes": 939,
+          "textSHA256": "C9C4CC7659E84D02D80681B679346D093DA8C7A831377B67CBACADB1875EA52D",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-1877.md",
+      "articleLines": 368,
+      "articleBytes": 8472
+    },
+    {
+      "postID": 1865,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=1865",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-1865.html",
+      "rawHTMLSHA256": "813D4E02591449BC8AE703E499EA4FF30D2E264726DAD70CDECA295E18E66D26",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-1865-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-1865-addonAddon.txt",
+          "utf8Bytes": 5642,
+          "textSHA256": "7C7476A87C859BB0751A4962382F34327189AFE1093204510429313DA7AA982C",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1383,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-1865-addonVersion.txt",
+          "utf8Bytes": 344,
+          "textSHA256": "1D5518D11B9A58A6A53CAB524AFD168E59B09521139A9128317298832D4A66C6",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-1865.md",
+      "articleLines": 354,
+      "articleBytes": 7670
+    },
+    {
+      "postID": 1853,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=1853",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-1853.html",
+      "rawHTMLSHA256": "CD282D8A344A3F90CB3798B3F18E892B0975945BCBD1EAFDB4B38904D69EB657",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-1853-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-1853-addonAddon.txt",
+          "utf8Bytes": 993,
+          "textSHA256": "5FCF0D90A2B7CE46FEA646E5BAC8023FAD955E46686346F44E9B2C9F35032875",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1266,
+          "state": "empty",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-1853-addonVersion.txt",
+          "utf8Bytes": 0,
+          "textSHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-1853.md",
+      "articleLines": 85,
+      "articleBytes": 2387
+    },
+    {
+      "postID": 1403,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=1403",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-1403.html",
+      "rawHTMLSHA256": "025DD39B86BFA6DBF2553F78D5649B497D3463A15F71EC791FA6ACA01DBD9610",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-1403-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-1403-addonAddon.txt",
+          "utf8Bytes": 581,
+          "textSHA256": "4608A85E2280E23758F08B180F4DEAFD70DAFCD797070B840D57A05B1CB88978",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1257,
+          "state": "empty",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-1403-addonVersion.txt",
+          "utf8Bytes": 0,
+          "textSHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-1403.md",
+      "articleLines": 67,
+      "articleBytes": 2001
+    },
+    {
+      "postID": 1361,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=1361",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-1361.html",
+      "rawHTMLSHA256": "0535426C4516D93C69A82B869F2E973182F6BAA924A4453FB50B8CB41ECC261B",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-1361-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-1361-addonAddon.txt",
+          "utf8Bytes": 2601,
+          "textSHA256": "C86F0E6E8E6E97D1F4253200F44A09BAB0DA4814913D63EC2EC0D6DC7EEA4D1A",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1301,
+          "state": "empty",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-1361-addonVersion.txt",
+          "utf8Bytes": 0,
+          "textSHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-1361.md",
+      "articleLines": 155,
+      "articleBytes": 4122
+    },
+    {
+      "postID": 1121,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=1121",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-1121.html",
+      "rawHTMLSHA256": "F94E91EDA0CA17B5DC0CCEB9EEA7B1362C9E02A325EBC4D4AAEC513216A5B292",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-1121-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-1121-addonAddon.txt",
+          "utf8Bytes": 1244,
+          "textSHA256": "3F794322945DAE67C67008A97C1142C7C807005F0C70FA97AD79608B264D4C6A",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1272,
+          "state": "empty",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-1121-addonVersion.txt",
+          "utf8Bytes": 0,
+          "textSHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-1121.md",
+      "articleLines": 96,
+      "articleBytes": 2705
+    },
+    {
+      "postID": 1086,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=1086",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-1086.html",
+      "rawHTMLSHA256": "3474AA89E06879CD7B39682AB92B5E457BD80799CF3CB90315F25605A4EDABDC",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-1086-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-1086-addonAddon.txt",
+          "utf8Bytes": 2298,
+          "textSHA256": "53C28C47CC140939FA59E8BE6FC6FED374DB2750062E43D103EC1F29E9ED9DE2",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1314,
+          "state": "empty",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-1086-addonVersion.txt",
+          "utf8Bytes": 0,
+          "textSHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-1086.md",
+      "articleLines": 180,
+      "articleBytes": 3869
+    },
+    {
+      "postID": 1008,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=1008",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-1008.html",
+      "rawHTMLSHA256": "C37775DF7B5B7FCF5854A4188592DD9346FC2E039743FFCE7AAD2912CA8EAE76",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-1008-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-1008-addonAddon.txt",
+          "utf8Bytes": 508,
+          "textSHA256": "B314C328C4070B43BE3E7A4A93BD5D336956D64D288D6F3425428121402AEC2C",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1255,
+          "state": "empty",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-1008-addonVersion.txt",
+          "utf8Bytes": 0,
+          "textSHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-1008.md",
+      "articleLines": 63,
+      "articleBytes": 1885
+    },
+    {
+      "postID": 546,
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=546",
+      "rawHTML": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-546.html",
+      "rawHTMLSHA256": "3633EE12C61F473D893FE710E4557EA84057C3ACF92B788055315D94030CABEE",
+      "metadata": {
+        "selector": "#addonDetail .info",
+        "line": 1173
+      },
+      "databaseRecord": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-546-v2.json",
+      "imageManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+      "fileURLLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+      "sections": {
+        "addonAddon": {
+          "selector": "#addonAddon",
+          "rawLine": 1244,
+          "state": "parsed",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-546-addonAddon.txt",
+          "utf8Bytes": 55,
+          "textSHA256": "11DA33E89C1D78AE81F3FA1322AD88843F34FBE554C85290ECF5294623EB0313",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        },
+        "addonVersion": {
+          "selector": "#addonVersion",
+          "rawLine": 1245,
+          "state": "empty",
+          "plainTextPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-546-addonVersion.txt",
+          "utf8Bytes": 0,
+          "textSHA256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "catalogTextExact": true,
+          "rawHTMLParsedTextExact": true,
+          "savedFragmentParsedTextExact": true,
+          "sidecarUTF8BytesExact": true
+        }
+      },
+      "articlePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\articles-compact-v2\\idx-546.md",
+      "articleLines": 43,
+      "articleBytes": 1470
+    }
+  ]
+}

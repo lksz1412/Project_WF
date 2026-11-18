@@ -1,0 +1,19 @@
+# Step5 SAME source-asset image-reader dispatch
+1. SAME Phase1.3 /root/old_reference/image_reader, bada-image-reader configuredgpt-6.1-sol/high; appearance/geometry observation only, NOT A1layoutdesign or finalB. Actual identityreuse succeeded viafollowup; runtime/effort/usageunobserved, no substitution.
+2. Own NEW Codex/results/old-devil-layout/asset-observations/{findings.md,coverage.json,work_log.md} only. Sourceassets/old426findings/coverage immutable; preserveotherschanges, youarenotalone. No commit/push(rootonly). A1ownsdesign/spec/report; A2rendererfuture.
+3. No outsidework/game/private/WTF/macros/install/network/archiveextraction/sourcecodeexecution/cleanupdeletion/newagent. No imageediting/generativehistoricalredraw, no glyph/key/spell/chat transcription. NewmechanicalcropsonlyifyouneedassetdetailinnewWindows tempfile dir, originalbytesunchanged.
+4. No falseattribution. Assetappearanceobserved versusfilename/byteidentity/profiledeclaredusage versus photograph exactassetidentity remain distinct. No currentsupport/runtime/licenseclaim.
+5. Beforework fullreadactualglobalAGENTS+D:/Projects/AGENTS, image-extractionSKILL, file-readingSKILL/fullfilepolicy, orchestration/sessiondivision/model-effort forroleboundaries, flow/confirmed, thisbrief; aftercompaction rules→thisbrief/currentassignedinputs/currentownlog fully. Notmaster6check. Dwritesexec_commandrequire_escalatedapprovedprojectscope; no popup/PlanMode/Workflow.
+
+Current target actualpost45DOMordinal4: D:/Projects/Project_WF/work/old-reference-collection-0qlzzyxg/image-d9ab10878c7e954fd5e4.jpg,800x500,SHA304A6B36ACD94B065142B8E8ADBA1EC99787BB649885D136D5CE707C1B2D5151. SourceURL https://upload.inven.co.kr/upload/wow/addonpds/image/1103_7276.jpg. Originaliframe54viewImage literal mapping alreadyaccepted; do notrefetch. View wholeoriginalandfour edges/corners; lowercropoptional. Existing canonicalfindings5–27 relevantgeometry input, noall50reassignment. User:threechatrectangles twoleft/oneright,11218rightmeterexcluded,lowerSQUAREmap,thinvisiblejoints/blackrail/endornaments; 4Kbutton-first no globalscreenshotratio. No newpixelproposalrequestedfromreader.
+
+Mechanical derivatives actualinventory: D:/Projects/Project_WF/Codex/results/old-devil-layout/asset-preparation/asset-inventory.json SHA5BE22AA9BF51754904C67103E8B922B7E5AEFA8DECC48A08D057DEA9B70FD1A4 and READY.json. ReadfullactualJSONschema/counts/sourceRows↔derivatives mappings asdata. 30imagepaths share23distinctsourcehash PNGs, originalpixels+alpha preserved; fontinventory4notimageobservations. InspectALL23wholePNGderivatives. Transparentareas mayneedchecker/light/darkview; documentactualbackground/viewercapabilities, noguessedhiddenpixels. SourcePNGwholefirst, thenexactnontransparentbboxcrop/enlargementifneeded; anyderivativeviewmethodexplicit.
+
+Questions:
+- Actualangel/demon: shape/orientation/alpha/contentbounds, whether curleddarkendcapvisualfamily resembles45sample4withoutclaimexactassetidentity. Sourcewidth/height/pixelsonly, not4Ktarget.
+- Devil/Devil2/Devil3/roth andX2border/tooltip: actualstraight/beveled/soft/ornament/tilesappearance, margins/edgepieces; distinguish128x16atlasfromwholepaneltexture. No automaticstitchclaim.
+- AlphaMasque_Onyximages: normal/backdrop/gloss/highlight actualappearance/transparentcenter/edges and suitabilityfacts (notdesignchoice). Distinguishfilenamefromobservation.
+- Statusbar/Minimap/solid/mail incidentalassets: wholeview simplegeometry/appearanceandlimits, notcandidatefunctionality.
+- Photographrow/count remainapproximate; neverinferexactspells/binds/alphaauto-hide/build.
+
+Rawfindingsperuniquehash withallsourcemappedpaths/sourcePNGhash,size/viewmethod/observedfeatures/uncertainty. Actualcoverage23/23assetunique +1targetreobservation separate fromhistorical50. Worklogreadranges,toolactualresult/partialdecode; no fakeallPASS. Stopwritingandreturnactualstablepaths/counts/hashes whencomplete. No outputrenderofnewlayout.

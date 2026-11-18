@@ -1,0 +1,73 @@
+{
+  "state": "mechanical-bundle-return-with-X2-path-gate-and-V42-parser-boundaries",
+  "packageReceipts": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\package-acquisition.json",
+  "durableOriginalCopies": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\preserved-original-copies.json",
+  "namesOnlyCoreChatProfilePaths": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\core-chat-profile-name-paths.json",
+  "staticExtractionSummary": [
+    {
+      "label": "idx1932-rar",
+      "state": "passed",
+      "extractionRoot": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\extracted-idx1932-rar",
+      "extractedFiles": 2407,
+      "extractedBytes": 38791956,
+      "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\idx1932-rar-members.json",
+      "integrityTestRuns": 1,
+      "unsafe": [],
+      "byteTotalsEqual": true
+    },
+    {
+      "label": "idx3461-sfx",
+      "state": "passed",
+      "extractionRoot": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\extracted-idx3461-sfx",
+      "extractedFiles": 2936,
+      "extractedBytes": 40624475,
+      "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\idx3461-sfx-members.json",
+      "integrityTestRuns": 1,
+      "unsafe": [],
+      "byteTotalsEqual": null
+    }
+  ],
+  "RARHeaderCountProof": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\rar-header-count-reconciliation.json",
+  "selectedLiteralData": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\selected-new-literal-settings-compact.json",
+  "literalFullTypedCache": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\new-selected-literal-full-typed.json",
+  "literalCounts": {
+    "requested": 12,
+    "present": 11,
+    "fullyParsed": 8,
+    "parserBoundaries": 3,
+    "missingName": "idx1932 SavedVariables/kgPanels.lua"
+  },
+  "V42BorderBytes": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\v42-border-exact-byte-comparison.json",
+  "idx11218Availability": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\idx-11218-attachment-metadata.json",
+  "legacyX2Receipt": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\legacy-prefix-fallback\\legacy-prefix-results.json",
+  "legacyX2PathGate": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\legacy-prefix-fallback\\idx45-X2-sfx-static-extraction-checks.json",
+  "legacyX2Status": {
+    "downloadedZIP": true,
+    "ZIPCRCtestRuns": 1,
+    "outerZIPSafeExtracted": true,
+    "innerFormat": "NSIS (actual bz listing)",
+    "innerListAndIntegrityExitCodes": [
+      0,
+      0
+    ],
+    "listedFiles": 4217,
+    "unsafeListedPaths": 288,
+    "sourceEXEExecuted": false,
+    "innerExtractionPerformed": false
+  },
+  "successfulNewOriginalCopies": 4,
+  "noFurtherX2R1or305RequestsAfterPrimarySuccess": true,
+  "cache": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk",
+  "workLog": "D:\\Projects\\Project_WF\\Codex\\results\\handoffs\\old-reference\\acquisition\\work_log.md",
+  "limitations": [
+    "X2innerpathFAILgate means no innercore/profile reading/extraction claim; no rename/skip/safety weakening.",
+    "V42kgPanels/Dominos/Masque contain dotted/indexed follow-on assignments outside existingwhole-source literalgrammar. Exactsource errorlines in selectedLiteralData; no inferred values.",
+    "1932 sourcelegacy SavedVariables pathnames preserved in ignoredinventory only; publicdata uses suffix/index/hash.",
+    "NSISlistedmember sizes unknown(-1), no listing-byte-total equality claim; actual extractedbytes/hash inventories recorded for successfullyextracted3461.",
+    "New-source original/source-copy hash equality is not publisher checksum/identity or sample4 fidelity proof.",
+    "No sourceLua/EXE/README commands, imageview, CUA/auth/bypass/install/delete/Git, successfuloldpage/image/CRC repeat."
+  ],
+  "selectedLiteralDataCoverage": "filtered-settings-subset;8 whole-sourceparse successes recorded separately;3V42boundaries and1missing unchanged",
+  "selectedLiteralExclusions": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\selected-new-literal-exclusions.json",
+  "ignoredFullTypedSource": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\new-selected-literal-full-typed.json"
+}

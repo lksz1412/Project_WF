@@ -1,0 +1,7 @@
+## Interface: 30200
+## Title: |cffffff9a블링크|r 탱커 어시스트
+## Notes: 특정 플레이어를 탱커로 지정하여 어시스트 및 즉시 탱커 지정 기능을 제공합니다.
+## OptionalDeps: BlinkMod
+## Dependencies: 
+localization.lua
+BlinkAssistTanker.lua

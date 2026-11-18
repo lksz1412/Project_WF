@@ -1,0 +1,50 @@
+
+MapsterDB = {
+	["namespaces"] = {
+		["FogClear"] = {
+			["global"] = {
+			},
+			["profileKeys"] = {
+				["엔카이얀 - 우서"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+				},
+			},
+		},
+		["Coords"] = {
+			["profileKeys"] = {
+				["엔카이얀 - 우서"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+				},
+			},
+		},
+		["InstanceMaps"] = {
+			["profileKeys"] = {
+				["엔카이얀 - 우서"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+				},
+			},
+		},
+		["BattleMap"] = {
+			["profileKeys"] = {
+				["엔카이얀 - 우서"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+				},
+			},
+		},
+	},
+	["profileKeys"] = {
+		["엔카이얀 - 우서"] = "Default",
+	},
+	["profiles"] = {
+		["Default"] = {
+		},
+	},
+}

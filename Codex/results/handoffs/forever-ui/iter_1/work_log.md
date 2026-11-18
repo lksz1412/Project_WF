@@ -1,0 +1,285 @@
+# A1 work log — Forever UI plan, iteration 1
+
+## Ownership and boundaries
+
+- Owned outputs: `Codex/plans/2026-11-17-devil-ui-forever-plan.md`, `Codex/docs/shaman-source-evidence.md`, this work log. New files only at initial authoring; no code, game/app input, installs, settings, account data, commits, deletion or extra agents.
+- Current stage: planning only; implementation needs user feedback, plan update and explicit GO. Master owns request ledger, observations, commits and independent reviewer dispatch.
+- Read-only inventory is historical. Master's later messages say user may remove old AddOns; completion not confirmed. User says Forever is a fresh environment without old macros; no old keybind/profile/macro migration is assumed.
+
+## Read coverage
+
+All line numbers below are inclusive. Initial combined tool output was truncated; covered files were re-read in smaller calls before use. A failed `references/core_principles.md` / `references/accessibility.md` lookup was corrected to the skill root; no missing file content was inferred.
+
+| File (absolute skill root = `C:/Users/USER/.agents/skills/`) | Read range |
+|---|---|
+| `Codex/results/handoffs/forever-ui/brief.md` | 1–32, full |
+| `Codex/docs/observed-environment.md` | 1–29, full |
+| `Codex/docs/addon-reference-inventory.md` | 1–31, full |
+| `Codex/results/REQUEST_LEDGER.md` | initial 1–22; latest R1–R10 revision 1–25, full |
+| `Codex/docs/INDEX.md` | 1–10, full |
+| `skill_LKS_original_plan-execution/SKILL.md` | 1–98, 99–291, full |
+| `skill_LKS_original_source-research/SKILL.md` | 1–155, full; mode B |
+| `skill_LKS_original_file-reading/references/policies/feedback_full_file_read_required.md` | 1–57, full |
+| `skill_LKS_original_communication-decisions/references/policies/feedback_confirmed_items_policy.md` | 1–62, full |
+| `skill_LKS_original_communication-decisions/references/policies/feedback_communication_style.md` | 1–39, 40–87, full |
+| `skill_LKS_original_visual-design/SKILL.md` | 1–97, full |
+| `skill_LKS_original_visual-design/core_principles.md` | 1–143, full |
+| `skill_LKS_original_visual-design/accessibility.md` | 1–115, full; only principles for future UI layout, no mockup |
+| `skill_LKS_original_review-chunking/SKILL.md` | 1–67, 68–138, full |
+| `skill_LKS_original_review-chunking/references/policies/feedback_chunked_review.md` | 1–66, 67–80, 81–139, full |
+| `skill_LKS_original_plan-execution/references/policies/feedback_planning_vs_execution.md` | 1–40, full |
+| `skill_LKS_original_plan-execution/references/record-formats.md` | only designated format subsection 59–70, ‘늘 지킬 제약’; other master record formats not used |
+
+The active AGENTS instruction text was supplied in the task context and read in full. No local instruction file or unrelated master logs were opened. Master supplied the confirmed banned-word/replacement list in a message; no independent lexicon changes were made.
+
+## Unit A — Candidate declarations and firsthand reports
+
+### Method and decisions
+
+2026-11-17 research window: support/reviews 2026-09-01 through 2026-11-17; original appearance source 2022 only. Discovery in Korean/English followed by focused publisher and firsthand threads. No guide/roundup was classified as a review. Official declarations, public user experiences, local observations and own design judgments remain distinct.
+
+- Dominos 12.0.4, SexyMap v12.1.7 and original Quartz 3.8.0 declare Forever; that does not test them in game. PitBull has no visible Forever flavor; no abandonment inference.
+- Forever Unit Frames 0.65.0 is a candidate with explicit conditional selection, not an approved installation. It supplies a supported target for health/mana and totem evaluation before custom unit-frame code is proposed.
+- Hekili Forever v0.8.5 declares Enhancement/Elemental and focus/proc+recommendation capabilities. Independent firsthand Shaman usage evidence is insufficient; Restoration recommendation support not established.
+- Korean user's actual two-spec experience and English Shaman totem/healing reports were found. Contradictory Riptide visibility and Enhancement experiences remain visible. No class balance advice derived from them.
+- Original reference exact geometry and archive contents were not analyzed. Future extraction gate owns them. The confirmed first screenshot is not an open question.
+
+### Queries executed
+
+Common explicit suffix: `after:2026-09-01 before:2026-11-18`.
+
+1. `"포에버" "주술사" "헤키리"`; `"Forever" "shaman" "Hekili"`; `"WoW Forever" "shaman" UI totem restoration`.
+2. `site:inven.co.kr "포에버" "주술사" "애드온"`; `site:inven.co.kr "포에버" "헤키리"`; `site:reddit.com "hekili" "forever" "shaman"`.
+3. `"Hekili Forever" shaman review comment enhancement elemental`; `"포에버" "정술" "애드온"`; `"포에버" "복술" "토템"`.
+4. `site:inven.co.kr/board/wow/6567/23257`; `site:inven.co.kr "포에버" "주술사" "토템" "저는"`; `site:reddit.com "Hekili Forever" "shaman"`; `site:reddit.com "Forever" "Elemental" "Hekili"`.
+5. `"주술사 40넘으니까 재미 확없어짐"`; `"포에버" "토템" "애드온" "술사"`; `"포에버" "고술" "헤키리"`; `"Forever" "resto shaman" "UI" "I" site:reddit.com`.
+
+Master subsequently instructed that existing evidence was sufficient and further searches should stop. Followed: remaining web opens only completed coverage of already chosen sources.
+
+### Source reading coverage and access results
+
+Web line ranges refer to the tool's extracted text, not original HTML line numbers. Source IDs S/U are defined with real URLs in the evidence file.
+
+| Source | Coverage/result |
+|---|---|
+| S1 original Inven | extracted 0–222, 201–284, 172–512, full 0–512 combined; article 103–114 used; image pixels not inspected; comments not returned |
+| S2 Dominos | 0–363 + 254–444, full 0–444 |
+| S3 SexyMap | full 0–426 |
+| S4 Quartz | full 0–428 |
+| S5 PitBull | full 0–419 |
+| S6 Forever Unit Frames | 0–499 + 415–531, full 0–531 |
+| S7 Hekili original | 0–257 + 224–369, full 0–369 |
+| S8 Hekili Forever | full 0–324 |
+| S9 Hekili v0.8.5 | full 0–303 via followup open; Shaman release notes 228–232 |
+| S10 EventAlert | full 0–407 |
+| U1 Inven 23257 | direct desktop 502; mobile cache miss; query variants still inaccessible. Search cache exposes author/date/title and all six short body lines. No claim of full original/comment read |
+| U2 Totem setup | 0–422 + 308–439, full 0–439 |
+| U3 Healer thread | full 0–673 on single followup open; used GreatValueUser 330–337, response basis distinguished from other-class anecdotes |
+| U4–U6 Riptide thread | 0–398 + 366–537 + 426–1126 + 780–1502, full 0–1502 combined. Native UI contradiction 95/102 and opposing Enhancement experiences 620/805 retained |
+| Hekili Forever `/comments` | tool reported URL inaccessible; not treated as zero comments or zero users |
+| Inven 23263 | desktop 502; mobile cache miss; not used as evidence |
+
+Long search discovery results also included guides, publisher release history and controller beta material. These were not fully adopted as sources; no claims based only on their titles/snippets. Older Hekili v0.2/0.3/0.5/0.6 release snippets were not used to describe the current v0.8.5 runtime.
+
+### Unit gate
+
+Self-check: each selected evidence row has URL, period/date, source type, short exact quote, observation and limitation; U1 cache limitation visible; same-source Riptide quotations <=25 words total; no local account identifiers. Output: `Codex/docs/shaman-source-evidence.md`. Independent final-plan review is still pending.
+
+## Unit B — 11-section plan
+
+Initial authoring follows the confirmed layout and new-environment assumption. Detailed phase files are future paths, not existing artifacts. Master plan may recommend installations or later code but grants neither itself. Concrete gates distinguish installation selection from actual runtime acceptance.
+
+### Mechanical execution output
+
+Read-only preflight command: `git status --short; git rev-parse --show-toplevel; Test-Path` for the three owned paths; `Get-Date`.
+
+Decisive output, 2026-11-17 19:22:43 +09:00:
+
+```text
+C:/Users/USER/Documents/Codex/2026-11-17/new-chat-2
+Codex/plans/2026-11-17-devil-ui-forever-plan.md: False
+Codex/docs/shaman-source-evidence.md: False
+Codex/results/handoffs/forever-ui/iter_1/work_log.md: False
+```
+
+Master's ledger modification and session register were present; no edits made to either. No implementation tests exist or were run.
+
+## Decision Queue
+
+- PQ-FOREVER-1: user's intended Shaman spec and main content; no assumed answer.
+- PQ-FOREVER-2: desired amount of effects/procs and recommendations; evaluate together, no lineage argument.
+- Master review: candidate unit-frame selection conditions and custom fallback cost; exact fidelity cannot be guaranteed before original archive and runtime gates.
+- Actual model/effort usage statistics are not exposed to this subagent; unobserved, not zero. Role configuration is A1 as assigned.
+
+## Root transitions and final draft checkpoint — 2026-11-17
+
+Master serialized two root transitions by interrupt/resume of this same A session. No compaction or context loss occurred. Existing reads/research remained available. Final canonical root is `D:/Projects/Project_WF`; no subsequent writes were made to either C: checkpoint. Current project rules prohibit planning-only commits, and push/merge need separate explicit user permission. No commit was made by A.
+
+Recovery reads after the C: transition: PROJECT_LOCATION 1–22, INDEX 1–15, REQUEST_LEDGER 1–25, brief 1–32, observed-environment 1–29, addon inventory 1–31, own work_log 1–112 and evidence 1–42. Combined output truncation was corrected by separately reading addon inventory and own work_log fully. After the D: transition: `D:/Projects/AGENTS.md` full 1–80; PROJECT_LOCATION full 1–30; INDEX full 1–16; REQUEST_LEDGER full 1–28, then latest R1–R14 revision full 1–33. User AGENTS text remains in context. No project-local AGENTS was reported by master.
+
+Additional specified policy reads: `feedback_change_impact_analysis.md` 1–65; `feedback_workspace_git_safety.md` 1–81 (tail recovered separately); `feedback_flow_interruption.md` 1–66 (front recovered separately); `skill_LKS_original_multi-session-orchestration/SKILL.md` 1–140 and 141–292; `references/policies/feedback_session_division.md` 1–56 and 57–102; `references/model_effort_sample.md` 1–157. All are full reads under the installed skill root recorded above.
+
+### Change list and impact map before this append
+
+Change: append recovery coverage, natural-unit decisions, actual output and pending macro update to this existing log. Preserve the old C: output as historical evidence, not a current path. New plan uses D: root. Do not edit master-owned records.
+
+| Place | Type | Method | Impact | Reason |
+|---|---|---|---|---|
+| This work_log | historical record plus new checkpoint | full 1–112 read | append only | preserve prior facts, add new path/gates |
+| New master plan | consumer of evidence and current instructions | full 1–150 + 151–303 read | confirm only | draft complete, no edit needed for log append |
+| INDEX / PROJECT_LOCATION / REQUEST_LEDGER | same path/scope facts, source records | full reads plus mechanical search | confirm only | master owned, outside A writing scope |
+| Earlier C: copies | checkpoint twin | master clone records, own prior reads | no edit | historical recovery copies, not live twins to update |
+| Evidence | plan input | full 1–42 read | confirm only | web facts unchanged; no raw macro material |
+| Input-producing code / callers / callees | code interfaces | no code implementation | none | this is a log append, not code |
+| Locked tests / parser | machine consumers | specified files and mechanical script | none found | no existing persisted tests/automated log parser given |
+
+Mechanical supplementary search: rg for old/new roots, work_log, macro/매크로 and R12–R14 across the five known related records and plan; matches reviewed in the already-read contexts. Historical records retain their original paths. No generated plan snapshot exists in A's scope.
+
+### Natural-unit decisions and self-checks
+
+- B1 scope/ground truth: user-confirmed first screenshot fixed; current addon inventory historical, native resolution/scale unconfirmed; new environment does not imply old macro/profile/keybind migration. Evidence distinctions retained. Explicit D: project and planning-only commit restriction included.
+- B2 architecture/old projects: Dominos/Quartz original roles and SexyMap restored as conditional candidates; FUF selection gate makes health/mana provider concrete without pretending it works. Native safe state and bounded custom alternative remain explicit. Fifteen rows use observed versions, not assumed installed files; optional features excluded from core.
+- B3 sequence/interfaces: original source/profile recovery precedes prototype, then actual game gates and rollback; one owner per scope, no automatic binds. Three chapters each have two phases, cumulative steps 1–12, future phase paths labelled uncreated.
+- B4 Shaman: Elemental/Enhancement/Restoration kept separate, totems/mana/procs/casts/healing checks derive from identified reports with limitations. Hekili integrated alerts+recommendations evaluated together, independent Shaman runtime reviews insufficient. Riptide and Enhancement contradictory reports preserved.
+- B5 validation/decisions: non-code structural P5 fixed five plus five brief-defined risks, ten independent rounds still pending. Future Lua runtime first then code-structural three rounds. All ten preflight categories and actual game backup/scale/reload/relogin/lockdown/resource/target/page/map/profile/error/rollback gates included. Final open preferences are spec/content and alert amount; candidate/custom cost remains conditional.
+- B6 macro followup: latest user explicitly authorized byte-preserved originals, not compatibility rewriting. Draft records master-provided 9+8 counts as a prior report, not A's raw observation. Source/target/profiles not opened by A. No macro, keybind or game setting changed by A.
+
+### Actual write and mechanical gate output
+
+First D: write, despite approved escalation, failed because the cloned repo had no empty `Codex/plans` directory. Error: `Could not find a part of the path ... Codex/plans/...plan.md`. No existing file was overwritten. Corrected by creating the missing directory and new file, with ErrorActionPreference Stop and an explicit existing-plan guard. Second require_escalated command returned rc0:
+
+```text
+D:\Projects\Project_WF\Codex\plans\2026-11-17-devil-ui-forever-plan.md  29790
+303
+```
+
+Full generated plan was then read 1–150 and 151–303. Mechanical validation (PowerShell regex/arrays against the actual file; not a runtime addon test):
+
+```powershell
+$heads=@($c | Where-Object {$_ -match '^## '})
+$expected=@('## Summary','## Current Ground Truth','## Phase Range','## Non-goals','## Implementation Changes','## Phase N — 복원·구성·검증','## Implementation Interfaces','## Test Plan','## Assumptions','## Correction History','## Decisions Required')
+if(($heads -join "`n") -ne ($expected -join "`n")){throw 'section order mismatch'}
+$rows=[regex]::Matches($planText,'(?m)^\| [0-9]{1,2} \|').Count
+if($rows -ne 15){throw 'addon row count mismatch'}
+$stepMatches=[regex]::Matches($planText,'(?m)^     Step ([0-9]+) .+?([0-9]+)~([0-9]+)분')
+if($stepMatches.Count -ne 12){throw 'step count mismatch'}
+$minMinutes=0; $maxMinutes=0
+foreach($m in $stepMatches){$minMinutes += [int]$m.Groups[2].Value; $maxMinutes += [int]$m.Groups[3].Value}
+$q=0
+foreach($m in [regex]::Matches($e,'(?m)^\| U[456] \|.+$')){foreach($s in [regex]::Matches($m.Value,'“([^”]+)”')){$q += [regex]::Matches($s.Groups[1].Value,'\S+').Count}}
+if($q -gt 25){throw 'same-source quote limit exceeded'}
+rg -n '정본|수권|사소차|문면|문안|전량|발동' $p 'Codex/docs/shaman-source-evidence.md'
+```
+
+Actual decisive result, 2026-11-17 19:41:27 +09:00, rc0:
+
+```text
+PASS sections=11 ordered; addon_rows=15; steps=12; estimate_minutes=630..1110; same_source_quote_words=23
+PASS banned_confirmed_terms=0
+```
+
+No addon runtime/install or independent ten-round review was performed. No output snapshot or extra phase plan was generated by A. Global model/effort usage remains unobserved.
+
+### Latest macro steering — helper held before spawn
+
+Master first authorized one nested bada-a3-helper for mechanically exact macro backup/copy/hash checking. Before any spawn, new user input stated that three characters were logged in to collect information. Master explicitly withdrew the stale source-two-files/one-character assumption and instructed A to hold the macro dispatch until new input. Followed: no helper was spawned and no macro active write occurred. New three-character mapping/inventory is pending master confirmation. The draft's earlier 9+8/0-byte row is a timestamped master report, not a current uniqueness guarantee; update it with new authoritative evidence in the next increment. Master instructed that this should not block returning the saved UI draft for independent review.
+
+## Final macro-library scope update — before plan edit
+
+Change list: replace earlier migration/apply wording throughout the current plan with final private-library-only scope; update source inventory from prior 9+8 to master-confirmed 44/4 files/6487bytes; retain UI planning boundary. Sources: latest user's exact instruction relayed by master, current plan fully read 1–303 and current request ledger through R14. No raw macro input read by A.
+
+| Place | Type | Method | Impact | Reason |
+|---|---|---|---|---|
+| Plan 5/33/54/62/79/90/105/188/190/217/251/260/274/280/294 | same scope terms and downstream decisions/interfaces | full read 1–303, rg macro/path/request terms | together | all old migration assumptions changed in one edit |
+| This work log | immutable prior record plus current append | full initial/read state, append review | append only | preserve earlier observations; add new final choice |
+| REQUEST_LEDGER / INDEX | source and structure consumer | full previous revisions; root owns latest request | confirm only | master updates R17 and MacroLibrary location; A does not edit |
+| Evidence | existing technical sources | full 1–42 | no change | addon/player facts independent of macro scope |
+| MacroLibrary and helper | new private data producer | exact master brief, disjoint ownership | confirm only | helper alone writes raw+manifest/index; no overlap with plan |
+| C: checkpoint twins | historical copy | master location record | no edit | preservation copies, not current output |
+| Existing parser/tests/code callers | code/locked tests | no implementation authored | none | only Markdown scope update; macro gate is helper responsibility |
+
+Before edit, old plan and work log copied into a new ignored work/ scratch folder. No deletions or commits. Helper /root/ui_plan/macro_archive (configured bada-a3-helper, gpt-6.1-sol low) was spawned only after plan save. Latest scope superseded its initial archive location before writes; helper reported writes=0 and was redirected to MacroLibrary originals/private manifest/INDEX. Root master later confirmed ignore ready and directly released its pause. Actual runtime model/effort/usage fields remain unobserved.
+
+### Helper completion propagation map
+
+Master relayed the completed archive result and requested consistent final status. Change only plan ground-truth row 54, scope paragraph 190, interface row 217 and assumption row 260. Earlier full plan read 1–303 plus all scope-change lines reviewed; same input/consumer/twin/test impact map above applies. Evidence is unchanged, private originals are not read by A, and no game/file application is introduced. Backup: work/plan-macro-library-7oka8sbv/plan-before-completion.md. Helper identity /root/ui_plan/macro_archive, actual return received; root independently owns raw result confirmation.
+
+### Final scoped gate and return state
+
+Plan scope-update self-check: changed line contexts 5/33/54/62/79/90/105/188/190/217/251/260/274/280/294 read after writing. The four completion-propagation lines were included. Mechanical command: `[regex]::Matches($final,'macro 원문 이동|macro 이동은|macro 원문→대상|계정범위 9개·캐릭터범위 8개').Count` and throw unless 0. Actual output:
+
+```text
+PASS scoped_update: stale_macro_migration_claims=0; plan_lines=303; no_raw_macro_read_by_A; no_game_write_by_A
+```
+
+Earlier section-order/15-row/12-step gates remain valid; this update changed no headings, table count or estimated step times. Terms are min 45+45+30+45+60+120+45+60+45+60+45+30=630 and max 90+90+45+60+120+180+90+90+90+120+90+45=1110 minutes; root confirmed its arithmetic concern resolved. Independent B ten rounds remain pending. Return plan/evidence/log paths, no UI implementation or installation. Macro helper completed; parent owns raw archive verification and final library report. Continue only on same master's followup.
+
+Final attribution clarity: plan line217 is in the existing four-line completion impact map. Changed its phrase from master-confirmed to helper-reported values with master responsible for original comparison, so receipt of a helper result is not presented as an independently completed raw check. Backup plan-before-attribution-clarity.md in the same scratch folder. The changed row was read after write; headings/counts/times unchanged. Final plan remains303 lines. Helper also reported a private MacroLibrary/INDEX.md root navigation index with3/3 link existence and ignore exit0; root receives that directly, no A raw inspection.
+
+## Same-A audit correction — preparation and impact map
+
+Assigned fix-brief full1–15; audit_log full1–69; TRIAGE_phasePlanning full1–26; PROJECT_LOCATION full1–37; INDEX full1–16; REQUEST_LEDGER full1–38; own work_log full1–217; plan full1–170 and171–303. Required installed rules were already fully read in this same retained context (coverage above: plan-execution1–291, full-file1–57, confirmed-items1–62, communication1–87, change-impact1–65, git-safety1–81, flow1–66 and review policy1–139). No source research, macro/raw/library hashes, or unchanged whole-plan gates rerun. Runtime model/effort/usage/context/compaction telemetry remains unobserved. B idle; no agents spawned. A ownership for this correction is plan, PROJECT_LOCATION append, INDEX update and this log append only.
+
+Accepted findings are both moderate, major0/minor0 per master-confirmed triage. Finding1 quote: PROJECT_LOCATION35 permits a 'later tooltip-specific applied variant' as future UI work while plan66 treats its last addendum as current input. R17 library-only cancels that. Finding2 quote: request R13 retains nonmacro Retail settings reference, but plan preparation and interfaces contain no consumer. The correction keeps R13 read-only and unverified readiness, without importing profiles, binding keys or reviving the disliked15-addon combination.
+
+| Place | Type | Method | Impact | Reason |
+|---|---|---|---|---|
+| Plan Step3/GroundTruth/source pointer/constraint/Phase1.2/interface/G1-R13/Assumption/history | same input, terms and downstream consumer | full303-line read; rg R13/R17/Retail/WTF/macro/variant/applied | together | connect nonmacro read-only reference and final macro boundary throughout |
+| PROJECT_LOCATION | current-premise producer, historical record | full1–37; quoted35/37 against R17 | append only | retain old history, append authoritative current R17 scope |
+| INDEX | reader/structure map | full1–16, draft and MacroLibrary pointer search | together | saved draft and private navigation pointer, no private content |
+| REQUEST_LEDGER | upstream source | full1–38, R13/R17 exact rows | confirm only | master owned; no A edit |
+| Audit/triage | review-state producer | full69/26, findings and procedure | confirm only | plan points to actual10-round record; correction recheck still pending |
+| Evidence/observations/inventory | unchanged inputs | earlier full reads retained, findings not about source facts | no change | no dependency on new Retail-reference paragraph |
+| Private macro library/source | raw data | no A access; only root INDEX path existence to be checked | no edits | original-library-only, no game import/variants |
+| Reviewed plan/evidence snapshots | generated twins | master states not yet generated | future mechanical copies | no manual snapshot edits; separate delivery-location pointer is master owned |
+| Earlier C: checkpoints | historical twins | location history and master preserved-clone reports | no edits | provenance only |
+| Locked tests/parser/callers/callees | none, noncode | no implementation authored; related document search | none | one changed-relationship mechanical gate below, no runtime test |
+
+Originals backed up in a fresh ignored work/ scratch folder before edits (actual path returned by the write command). Earlier records are preserved, and current status is appended rather than rewriting old history. Macro library navigation path only will be checked; its contents are not opened.
+
+## Audit correction execution output — same-B recheck input
+
+Recorded 
+2026-11-17 20:03:41 +09:00
+. Gate executed once, successful completion. Exact PowerShell script:
+
+```
+powershell
+
+$rootPath='D:/Projects/Project_WF'
+$backupPath='D:/Projects/Project_WF/work/plan-audit-fix-v0rqjvcm'
+$plan=Get-Content -LiteralPath (Join-Path $rootPath 'Codex/plans/2026-11-17-devil-ui-forever-plan.md') -Encoding utf8 -Raw
+$location=Get-Content -LiteralPath (Join-Path $rootPath 'Codex/docs/PROJECT_LOCATION.md') -Encoding utf8 -Raw
+$index=Get-Content -LiteralPath (Join-Path $rootPath 'Codex/docs/INDEX.md') -Encoding utf8 -Raw
+$heading='## Current R17 scope — original library only'
+if([regex]::Matches($location,[regex]::Escape($heading)).Count -ne 1){throw 'Current R17 addendum missing or duplicated'}
+$current=$location.Substring($location.IndexOf($heading))
+if(-not $plan.Contains('`Current R17 scope — original library only`')){throw 'Plan does not point to current R17 addendum'}
+if(-not $current.Contains('is superseded for current scope') -or -not $current.Contains('An ordinary future UI GO does not authorize macro game import, applied variants')){throw 'R17 supersession boundary incomplete'}
+$chain=@('Step 3 새 환경·Retail 설정 참고','비매크로 Retail 설정 참고(R13)','- 비매크로 참고 입력(R13):','| 비매크로 Retail 설정 참고 |','Step 3에서 R13','| Retail 참고→구성 설계(R13) |','| G1-R13 참고 준비 |','| 비매크로 Retail 참고(R13) |')
+foreach($marker in $chain){if(-not $plan.Contains($marker)){throw ('Missing R13 consumer '+$marker)}}
+if(-not $current.Contains('R13') -or -not $current.Contains('Readiness is currently unverified') -or -not $plan.Contains('准备')){ }
+if(-not $current.Contains('Readiness is currently unverified') -or -not $plan.Contains('준비 상태 미검증')){throw 'Readiness limitation missing'}
+if($plan.Contains('현재 미수행이다.') -or -not $plan.Contains('실제 1차 기록은') -or -not $plan.Contains('수정 범위 재검증은 대기 상태')){throw 'Review state stale or prematurely accepted'}
+foreach($relative in @('Codex/results/handoffs/forever-ui/iter_1/audit_log.md','Codex/results/handoffs/forever-ui/TRIAGE_phasePlanning.md')){if(-not $plan.Contains($relative) -or -not (Test-Path -LiteralPath (Join-Path $rootPath $relative))){throw 'Review pointer missing'}}
+if($index.Contains('currently being drafted') -or -not $index.Contains('saved canonical master-plan draft')){throw 'INDEX draft state stale'}
+if(-not $index.Contains('MacroLibrary/INDEX.md') -or -not (Test-Path -LiteralPath (Join-Path $rootPath 'MacroLibrary/INDEX.md'))){throw 'Private navigation pointer missing'}
+$beforeLocation=Get-Content -LiteralPath (Join-Path $backupPath 'PROJECT_LOCATION-before.md') -Encoding utf8 -Raw
+if(-not $location.StartsWith($beforeLocation)){throw 'Historical PROJECT_LOCATION prefix changed'}
+$beforeIndex=Get-Content -LiteralPath (Join-Path $backupPath 'INDEX-before.md') -Encoding utf8
+if(-not $index.Contains($beforeIndex[11])){throw 'General outputs mapping changed'}
+'PASS changed_relationships: R13_chain=8/8; current_R17=1; history_prefix_preserved=true; review_pointers=2/2; recheck=pending; private_navigation_exists=true; outputs_map_preserved=true'
+'NOT_RUN unchanged_source_research; macro_or_library_hashes; whole_plan_regression; game_runtime'
+
+```
+
+Decisive output:
+
+```
+PASS changed_relationships: R13_chain=8/8; current_R17=1; history_prefix_preserved=true; review_pointers=2/2; recheck=pending; private_navigation_exists=true; outputs_map_preserved=true
+NOT_RUN unchanged_source_research; macro_or_library_hashes; whole_plan_regression; game_runtime
+```
+
+Changed contexts read after write: plan14–16,53–55,66–69,81–83,101–103,214–216,233–235,242–244,264–266,280–282; PROJECT_LOCATION38–47; INDEX1–17. Initial correction reads are recorded in the preceding preparation section. Existing required rule text was retained; no new source/private inspection.
+Modified locations now: plan15,54,67–68,82,102,215,234,243,265,281; PROJECT_LOCATION39–47 append; INDEX5/14; work_log append.
+Backup: work/plan-audit-fix-v0rqjvcm/{plan-before.md,PROJECT_LOCATION-before.md,INDEX-before.md,work_log-before.md}. No deletion/commit/extra agents/app or game input. No raw macro contents opened. Accepted defects corrected by A; same-B recheck and master acceptance remain pending.

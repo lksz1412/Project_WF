@@ -1,0 +1,1941 @@
+------------------------------------------------------------------------
+r276 | ominous | 2008-10-19 12:40:42 +0000 (Sun, 19 Oct 2008) | 1 line
+Changed paths:
+   A /tags/v2.1.275-beta (from /trunk:275)
+
+Tagging as v2.1.275-beta.
+------------------------------------------------------------------------
+r275 | ominous | 2008-10-19 12:39:35 +0000 (Sun, 19 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/Bars/Druid.lua
+   M /trunk/Bars/Rogue.lua
+
+Added a few abilities
+------------------------------------------------------------------------
+r274 | ominous | 2008-10-16 17:44:22 +0000 (Thu, 16 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/Bars/Deathknight.lua
+   M /trunk/ClassTimer.lua
+
+Added in some dk spells, thanks waallen
+------------------------------------------------------------------------
+r273 | ominous | 2008-10-16 13:27:13 +0000 (Thu, 16 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/ClassTimer.lua
+
+now only your debuffs show
+------------------------------------------------------------------------
+r272 | EthanCentaurai | 2008-10-15 17:22:48 +0000 (Wed, 15 Oct 2008) | 2 lines
+Changed paths:
+   M /trunk/libs
+
+
+Fix SharedMedia-3.0 path in svn:externals
+------------------------------------------------------------------------
+r271 | stanzilla | 2008-10-15 09:37:45 +0000 (Wed, 15 Oct 2008) | 1 line
+Changed paths:
+   M /trunk
+   M /trunk/Bars/Priest.lua
+
+alter priest spells for 3.0
+------------------------------------------------------------------------
+r269 | ominous | 2008-10-14 16:45:16 +0000 (Tue, 14 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/ClassTimer.toc
+
+Err would help if i actually changed the toc number
+------------------------------------------------------------------------
+r268 | ominous | 2008-10-14 16:44:40 +0000 (Tue, 14 Oct 2008) | 1 line
+Changed paths:
+   A /trunk/Bars/Deathknight.lua
+   M /trunk/Bars/Druid.lua
+   M /trunk/Bars/Paladin.lua
+   M /trunk/Bars/Rogue.lua
+   M /trunk/ClassTimer.lua
+   M /trunk/ClassTimer.toc
+
+Merged wotlk clone into mainline repo
+------------------------------------------------------------------------
+r265 | nevcairiel | 2008-10-02 08:59:43 +0000 (Thu, 02 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/.pkgmeta
+
+Fix .pkgmeta
+------------------------------------------------------------------------
+r263 | ominous | 2008-10-02 08:17:58 +0000 (Thu, 02 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/ClassTimer.toc
+
+ClassTimer: updated toc
+------------------------------------------------------------------------
+r260 | alastairbegley | 2008-09-30 15:45:58 +0000 (Tue, 30 Sep 2008) | 1 line
+Changed paths:
+   M /trunk/.pkgmeta
+
+Hopefully fix .pkgmeta
+------------------------------------------------------------------------
+r257 | alastairbegley | 2008-09-30 11:50:52 +0000 (Tue, 30 Sep 2008) | 1 line
+Changed paths:
+   M /trunk/libs
+
+messed up an external
+------------------------------------------------------------------------
+r256 | alastairbegley | 2008-09-30 11:45:26 +0000 (Tue, 30 Sep 2008) | 1 line
+Changed paths:
+   M /trunk/.pkgmeta
+
+v2.0.1-beta changed externals and .pkgmeta
+------------------------------------------------------------------------
+r255 | root | 2008-09-29 22:18:47 +0000 (Mon, 29 Sep 2008) | 1 line
+Changed paths:
+   A /trunk/.pkgmeta
+   M /trunk/libs
+
+Facilitate WowAce-on-CurseForge transition
+------------------------------------------------------------------------
+r253 | root | 2008-09-29 20:57:44 +0000 (Mon, 29 Sep 2008) | 1 line
+Changed paths:
+   D /tmp/trunk/ClassTimer
+   A /trunk (from /tmp/trunk/ClassTimer:252)
+
+Importing old repo data under /trunk
+------------------------------------------------------------------------
+r252 | ominous | 2008-09-24 17:00:51 +0000 (Wed, 24 Sep 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Locales/zhTW.lua
+
+ClassTimer: zhTW update
+------------------------------------------------------------------------
+r251 | ominous | 2008-09-24 16:54:01 +0000 (Wed, 24 Sep 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/options.lua
+
+ClassTimer: Added iconSide back in
+------------------------------------------------------------------------
+r250 | digmouse | 2008-09-12 17:53:06 +0000 (Fri, 12 Sep 2008) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/Locales/zhCN.lua
+
+ClassTimer: 
+-zhCN update
+------------------------------------------------------------------------
+r249 | gnarfoz | 2008-09-08 03:24:30 +0000 (Mon, 08 Sep 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Paladin.lua
+
+ClassTimer: add Turn Evil to Paladin spells
+------------------------------------------------------------------------
+r248 | ominous | 2008-09-07 22:56:59 +0000 (Sun, 07 Sep 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Rogue.lua
+
+ClassTimer: Added Hemorrhage
+------------------------------------------------------------------------
+r247 | ominous | 2008-08-31 13:56:07 +0000 (Sun, 31 Aug 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+   M /tmp/trunk/ClassTimer/options.lua
+
+ClassTimer: Added option to change bars alpha
+------------------------------------------------------------------------
+r246 | ominous | 2008-08-21 23:26:11 +0000 (Thu, 21 Aug 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Locales/zhTW.lua
+
+ClassTimer: Add zhTW patch - thanks NightOwl
+------------------------------------------------------------------------
+r245 | ominous | 2008-08-16 22:22:55 +0000 (Sat, 16 Aug 2008) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/embeds.xml
+   M /tmp/trunk/ClassTimer/options.lua
+
+ClassTimer: Set svn:mime-type and svn:eol-style properties
+
+------------------------------------------------------------------------
+r242 | ominous | 2008-08-10 11:03:42 +0000 (Sun, 10 Aug 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Paladin.lua
+   M /tmp/trunk/ClassTimer/Bars/Warlock.lua
+
+ClassTimer: Added Seed of corruption for warlocks and Vengeance for pallys as per Nirek's request
+------------------------------------------------------------------------
+r241 | ominous | 2008-08-06 23:56:31 +0000 (Wed, 06 Aug 2008) | 3 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+   M /tmp/trunk/ClassTimer/Locales/koKR.lua
+   M /tmp/trunk/ClassTimer/Locales/zhCN.lua
+   M /tmp/trunk/ClassTimer/Locales/zhTW.lua
+   M /tmp/trunk/ClassTimer/options.lua
+
+ClassTimer; Added AshB's patch to reverse the sorting
+
+
+------------------------------------------------------------------------
+r240 | hshh | 2008-07-15 01:29:42 +0000 (Tue, 15 Jul 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Locales/zhCN.lua
+
+ClassTimer: update zhCN localization
+------------------------------------------------------------------------
+r239 | ominous | 2008-07-14 19:40:54 +0000 (Mon, 14 Jul 2008) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: clear saved variables to fix errors
+
+------------------------------------------------------------------------
+r238 | ominous | 2008-07-11 17:38:59 +0000 (Fri, 11 Jul 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: Fix timetext issue
+------------------------------------------------------------------------
+r237 | ominous | 2008-07-11 15:40:04 +0000 (Fri, 11 Jul 2008) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+   M /tmp/trunk/ClassTimer/options.lua
+
+ClassTimer: Now sticky dosen't show up in AllInOne options
+
+------------------------------------------------------------------------
+r236 | stan | 2008-07-10 13:50:21 +0000 (Thu, 10 Jul 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Locales/koKR.lua
+
+ClassTimer: koKR fail.
+------------------------------------------------------------------------
+r235 | sayclub | 2008-07-10 07:12:34 +0000 (Thu, 10 Jul 2008) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/Locales/koKR.lua
+
+ClassTimer: 
+- koKR Update
+------------------------------------------------------------------------
+r234 | ominous | 2008-07-08 20:43:27 +0000 (Tue, 08 Jul 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: oops, copy paste error
+------------------------------------------------------------------------
+r233 | ominous | 2008-07-08 20:23:18 +0000 (Tue, 08 Jul 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: Removed a debugging line
+------------------------------------------------------------------------
+r232 | ominous | 2008-07-08 11:35:57 +0000 (Tue, 08 Jul 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+   M /tmp/trunk/ClassTimer/options.lua
+
+ClassTimer: Added sticky again
+------------------------------------------------------------------------
+r231 | ominous | 2008-07-02 11:16:44 +0000 (Wed, 02 Jul 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: now uses BlizzOptions
+------------------------------------------------------------------------
+r230 | cwdg | 2008-07-02 02:51:20 +0000 (Wed, 02 Jul 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Locales/koKR.lua
+   M /tmp/trunk/ClassTimer/Locales/zhCN.lua
+   M /tmp/trunk/ClassTimer/Locales/zhTW.lua
+
+ClassTimer: fix other locales' bug.
+------------------------------------------------------------------------
+r229 | ominous | 2008-07-01 21:16:08 +0000 (Tue, 01 Jul 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: Fixed AllInOne 
+------------------------------------------------------------------------
+r228 | ominous | 2008-07-01 09:48:16 +0000 (Tue, 01 Jul 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Locales/zhTW.lua
+   M /tmp/trunk/ClassTimer/options.lua
+
+ClassTimer: sorted sharedmedia and locale error
+------------------------------------------------------------------------
+r227 | scorpio0920 | 2008-07-01 08:58:05 +0000 (Tue, 01 Jul 2008) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/Locales/zhCN.lua
+
+ClassTimer:
+- Fixed zhCN localization string error.
+------------------------------------------------------------------------
+r226 | scorpio0920 | 2008-07-01 06:06:14 +0000 (Tue, 01 Jul 2008) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/Locales/zhCN.lua
+   M /tmp/trunk/ClassTimer/Locales/zhTW.lua
+
+ClassTimer:
+- Update zhTW & zhCN localization.
+------------------------------------------------------------------------
+r225 | ominous | 2008-06-30 22:52:49 +0000 (Mon, 30 Jun 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+   M /tmp/trunk/ClassTimer/options.lua
+
+ClassTimer: added lock and enable option at the top of the ui
+------------------------------------------------------------------------
+r224 | ominous | 2008-06-30 22:00:41 +0000 (Mon, 30 Jun 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/libs
+
+ClassTimer: oops helps if i remember to set the property
+------------------------------------------------------------------------
+r223 | ominous | 2008-06-30 21:57:00 +0000 (Mon, 30 Jun 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/embeds.xml
+   M /tmp/trunk/ClassTimer/options.lua
+
+ClassTimer: Sorted externals
+------------------------------------------------------------------------
+r222 | ominous | 2008-06-30 21:39:15 +0000 (Mon, 30 Jun 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+   M /tmp/trunk/ClassTimer/Locales/koKR.lua
+   M /tmp/trunk/ClassTimer/Locales/zhCN.lua
+   M /tmp/trunk/ClassTimer/Locales/zhTW.lua
+   M /tmp/trunk/ClassTimer/embeds.xml
+   M /tmp/trunk/ClassTimer/libs
+   A /tmp/trunk/ClassTimer/options.lua
+
+ClassTimer: Upgraded to use Ace3
+------------------------------------------------------------------------
+r220 | scorpio0920 | 2008-04-28 16:54:54 +0000 (Mon, 28 Apr 2008) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+   M /tmp/trunk/ClassTimer/Locales/zhTW.lua
+
+ClassTimer:
+- Update zhTW localization.
+------------------------------------------------------------------------
+r219 | stan | 2008-04-21 09:57:22 +0000 (Mon, 21 Apr 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Hunter.lua
+
+ClassTimer: added Aimed Shot
+------------------------------------------------------------------------
+r218 | stan | 2008-04-21 09:53:09 +0000 (Mon, 21 Apr 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Warrior.lua
+
+ClassTimer: fix Thunder Clap
+------------------------------------------------------------------------
+r217 | nemes | 2008-04-13 04:33:26 +0000 (Sun, 13 Apr 2008) | 3 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+
+ClassTimer:
+- Remove weird characters from .toc file, as this is causing errors, as seen in FrameXML.log
+
+------------------------------------------------------------------------
+r216 | stan | 2008-04-10 22:35:55 +0000 (Thu, 10 Apr 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Druid.lua
+   M /tmp/trunk/ClassTimer/Bars/General.lua
+   M /tmp/trunk/ClassTimer/Bars/Hunter.lua
+   M /tmp/trunk/ClassTimer/Bars/Mage.lua
+   M /tmp/trunk/ClassTimer/Bars/Paladin.lua
+   M /tmp/trunk/ClassTimer/Bars/Priest.lua
+   M /tmp/trunk/ClassTimer/Bars/Rogue.lua
+   M /tmp/trunk/ClassTimer/Bars/Shaman.lua
+   M /tmp/trunk/ClassTimer/Bars/Warlock.lua
+   M /tmp/trunk/ClassTimer/Bars/Warrior.lua
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+   M /tmp/trunk/ClassTimer/Locales/koKR.lua
+   M /tmp/trunk/ClassTimer/Locales/zhCN.lua
+   M /tmp/trunk/ClassTimer/Locales/zhTW.lua
+
+ClassTimer: comments and cleanup
+------------------------------------------------------------------------
+r215 | stan | 2008-04-10 22:20:25 +0000 (Thu, 10 Apr 2008) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Druid.lua
+   M /tmp/trunk/ClassTimer/Bars/General.lua
+   M /tmp/trunk/ClassTimer/Bars/Hunter.lua
+   M /tmp/trunk/ClassTimer/Bars/Mage.lua
+   M /tmp/trunk/ClassTimer/Bars/Paladin.lua
+   M /tmp/trunk/ClassTimer/Bars/Priest.lua
+   M /tmp/trunk/ClassTimer/Bars/Rogue.lua
+   M /tmp/trunk/ClassTimer/Bars/Shaman.lua
+   M /tmp/trunk/ClassTimer/Bars/Warlock.lua
+   M /tmp/trunk/ClassTimer/Bars/Warrior.lua
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+   M /tmp/trunk/ClassTimer/embeds.xml
+   M /tmp/trunk/ClassTimer/libs
+
+ClassTimer: no more BabbleSpell. I feel like a chinese robot now after copypasting all those IDs :(
+~hug Xinhuan
+------------------------------------------------------------------------
+r214 | scorpion | 2008-04-07 05:30:48 +0000 (Mon, 07 Apr 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Locales/zhCN.lua
+
+ClassTimer: fix zhCN localization
+------------------------------------------------------------------------
+r213 | stan | 2008-03-25 17:36:47 +0000 (Tue, 25 Mar 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+
+ClassTimer: TOC update
+------------------------------------------------------------------------
+r211 | stan | 2008-03-04 22:22:14 +0000 (Tue, 04 Mar 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/embeds.xml
+
+ClassTimer: add LibStub and CallbackHandler to embeds
+------------------------------------------------------------------------
+r210 | stan | 2008-03-04 22:21:27 +0000 (Tue, 04 Mar 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+   M /tmp/trunk/ClassTimer/libs
+
+ClassTimer: add LibStub and CallbackHandler to embeds
+------------------------------------------------------------------------
+r209 | stan | 2008-03-04 12:26:32 +0000 (Tue, 04 Mar 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+   M /tmp/trunk/ClassTimer/embeds.xml
+   M /tmp/trunk/ClassTimer/libs
+
+ClassTimer: now using LibSharedMedia-3.0
+------------------------------------------------------------------------
+r208 | stan | 2008-03-02 03:01:11 +0000 (Sun, 02 Mar 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+
+ClassTimer: small fix for Locale files.
+------------------------------------------------------------------------
+r207 | stan | 2008-02-17 14:44:39 +0000 (Sun, 17 Feb 2008) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+
+ClassTimer: 
+- small tweak
+------------------------------------------------------------------------
+r206 | stan | 2008-02-17 14:38:12 +0000 (Sun, 17 Feb 2008) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+   M /tmp/trunk/ClassTimer/embeds.xml
+   M /tmp/trunk/ClassTimer/libs
+
+ClassTimer: 
+- upgrade to LibSharedMedia-2.0 and LibBabble-Spell-3.0
+------------------------------------------------------------------------
+r205 | avai | 2007-11-24 07:35:53 +0000 (Sat, 24 Nov 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/Locales/zhTW.lua
+
+ClassTimer: 
+- add zhTW localization string.
+------------------------------------------------------------------------
+r204 | hshh | 2007-10-17 10:44:40 +0000 (Wed, 17 Oct 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Locales/zhCN.lua
+
+ClassTimer: fix zhCN localization
+------------------------------------------------------------------------
+r203 | chuanhsing | 2007-10-08 12:46:20 +0000 (Mon, 08 Oct 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Locales/zhTW.lua
+
+ClassTimer: update zhTW (by forfan)
+------------------------------------------------------------------------
+r202 | ominous | 2007-09-26 18:15:58 +0000 (Wed, 26 Sep 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+
+ClassTimer: toc bump and now warlocks pets now are scanned
+------------------------------------------------------------------------
+r201 | adelea | 2007-09-08 10:06:07 +0000 (Sat, 08 Sep 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: Fixed 0-length desc error
+------------------------------------------------------------------------
+r200 | ominous | 2007-09-08 09:36:18 +0000 (Sat, 08 Sep 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: oops fixed errors, i think, drycoded
+
+------------------------------------------------------------------------
+r199 | ominous | 2007-09-07 21:56:07 +0000 (Fri, 07 Sep 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+
+ClassTimer: Added a warning message about sticky
+------------------------------------------------------------------------
+r198 | ominous | 2007-08-30 16:40:19 +0000 (Thu, 30 Aug 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer
+   A /tmp/trunk/ClassTimer/libs
+
+ClassTimer: fix externals for linux
+------------------------------------------------------------------------
+r197 | ominous | 2007-08-14 14:24:50 +0000 (Tue, 14 Aug 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: fixed Pkekyo's error
+------------------------------------------------------------------------
+r196 | ominous | 2007-08-12 13:59:28 +0000 (Sun, 12 Aug 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Warrior.lua
+
+ClassTimer: Added a few warrior fixes
+------------------------------------------------------------------------
+r195 | hshh | 2007-07-27 20:09:54 +0000 (Fri, 27 Jul 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+   M /tmp/trunk/ClassTimer/Locales/zhCN.lua
+
+ClassTimer: fix unit class localization display on bar, fix zhCN localization
+------------------------------------------------------------------------
+r194 | ryuji | 2007-07-26 23:03:29 +0000 (Thu, 26 Jul 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+   A /tmp/trunk/ClassTimer/Locales/zhTW.lua
+
+ClassTimer: add support zhTW localization
+------------------------------------------------------------------------
+r193 | kergoth | 2007-07-24 22:40:06 +0000 (Tue, 24 Jul 2007) | 5 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Hunter.lua
+
+ClassTimer: (Hunter.lua)
+* The buff on the pet is "Frenzy Effect", not "Frenzy".  Fix it so we actually see a bar for  it again.
+* Add Feed Pet Effect to misc.
+
+
+------------------------------------------------------------------------
+r192 | samuelcup | 2007-07-17 01:20:15 +0000 (Tue, 17 Jul 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Locales/zhCN.lua
+
+ClassTimer: zhCN translation updated
+------------------------------------------------------------------------
+r191 | durcyn | 2007-07-09 20:02:52 +0000 (Mon, 09 Jul 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Warlock.lua
+
+ClassTimer/Bars/Warlock.lua: Add Amplify Curse and Ritual of Souls.  caveat emptor.
+------------------------------------------------------------------------
+r190 | ominous | 2007-07-08 17:32:49 +0000 (Sun, 08 Jul 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: Saving now works properly!
+------------------------------------------------------------------------
+r189 | ominous | 2007-07-08 13:43:57 +0000 (Sun, 08 Jul 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: oops, now it will enable them all again for people who still have them disabled
+------------------------------------------------------------------------
+r188 | ominous | 2007-07-08 13:42:47 +0000 (Sun, 08 Jul 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: oops now timers are on by default
+------------------------------------------------------------------------
+r187 | ominous | 2007-07-06 21:53:47 +0000 (Fri, 06 Jul 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: fix for grouping bars and locking
+------------------------------------------------------------------------
+r186 | ominous | 2007-07-06 21:02:33 +0000 (Fri, 06 Jul 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: Resets abilites db the make a fix for old abilities which cant be removed showing up
+
+------------------------------------------------------------------------
+r185 | punkie | 2007-06-30 07:51:10 +0000 (Sat, 30 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Locales/zhCN.lua
+
+ClassTimer: Fixed znCN locale
+------------------------------------------------------------------------
+r184 | samuelcup | 2007-06-29 05:14:16 +0000 (Fri, 29 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+   A /tmp/trunk/ClassTimer/Locales/zhCN.lua
+
+ClassTimer: zhCN tranlation added by lostcup
+------------------------------------------------------------------------
+r183 | ominous | 2007-06-28 20:31:47 +0000 (Thu, 28 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+
+ClassTimer: Changed Babble-Spell-2.2 to Babble-2.2 in X-Embeds
+------------------------------------------------------------------------
+r182 | ominous | 2007-06-28 19:09:39 +0000 (Thu, 28 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+
+ClassTimer: a few touchups, added FuBarPlugin-2.0
+------------------------------------------------------------------------
+r181 | ominous | 2007-06-28 19:00:26 +0000 (Thu, 28 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+   M /tmp/trunk/ClassTimer/embeds.xml
+
+ClassTimer, minor fix
+------------------------------------------------------------------------
+r180 | ominous | 2007-06-28 18:26:33 +0000 (Thu, 28 Jun 2007) | 5 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+   M /tmp/trunk/ClassTimer/Locales/koKR.lua
+
+ClassTimer: 
+-Added onClick to groups to either enable the group/disable it or if its the spell types to enable/disable everything that is in the group
+-Added more local functions at start
+-Update koKR
+
+------------------------------------------------------------------------
+r179 | ominous | 2007-06-27 21:03:35 +0000 (Wed, 27 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: oops fixed usage bug
+------------------------------------------------------------------------
+r178 | ominous | 2007-06-27 16:51:52 +0000 (Wed, 27 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+
+ClassTimer: Added fubar plugin support
+------------------------------------------------------------------------
+r177 | punkie | 2007-06-26 10:29:29 +0000 (Tue, 26 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Hunter.lua
+
+ClassTimer: Frenzy, not Frenzy Effect for Hunter Talents
+------------------------------------------------------------------------
+r176 | ominous | 2007-06-24 20:42:01 +0000 (Sun, 24 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer
+   A /tmp/trunk/ClassTimer/Bars (from /tmp/trunk/ClassTimer/Bars:170)
+   R /tmp/trunk/ClassTimer/Bars/Druid.lua (from /tmp/trunk/ClassTimer/Bars/Druid.lua:170)
+   R /tmp/trunk/ClassTimer/Bars/General.lua (from /tmp/trunk/ClassTimer/Bars/General.lua:170)
+   R /tmp/trunk/ClassTimer/Bars/Hunter.lua (from /tmp/trunk/ClassTimer/Bars/Hunter.lua:170)
+   R /tmp/trunk/ClassTimer/Bars/Mage.lua (from /tmp/trunk/ClassTimer/Bars/Mage.lua:170)
+   R /tmp/trunk/ClassTimer/Bars/Paladin.lua (from /tmp/trunk/ClassTimer/Bars/Paladin.lua:170)
+   R /tmp/trunk/ClassTimer/Bars/Priest.lua (from /tmp/trunk/ClassTimer/Bars/Priest.lua:170)
+   R /tmp/trunk/ClassTimer/Bars/Rogue.lua (from /tmp/trunk/ClassTimer/Bars/Rogue.lua:170)
+   R /tmp/trunk/ClassTimer/Bars/Shaman.lua (from /tmp/trunk/ClassTimer/Bars/Shaman.lua:170)
+   R /tmp/trunk/ClassTimer/Bars/Warlock.lua (from /tmp/trunk/ClassTimer/Bars/Warlock.lua:170)
+   R /tmp/trunk/ClassTimer/Bars/Warrior.lua (from /tmp/trunk/ClassTimer/Bars/Warrior.lua:170)
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+   M /tmp/trunk/ClassTimer/Locales/koKR.lua
+   M /tmp/trunk/ClassTimer/embeds.xml
+
+ClassTimer: Reverted to old style again, i will not change it again as it jsut dosent work properly
+------------------------------------------------------------------------
+r175 | ominous | 2007-06-23 21:12:26 +0000 (Sat, 23 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: now the ace console part works
+------------------------------------------------------------------------
+r174 | ominous | 2007-06-23 20:51:55 +0000 (Sat, 23 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: Now resets db on first login with this rev, fixed menu and general settings
+------------------------------------------------------------------------
+r173 | ominous | 2007-06-23 01:06:16 +0000 (Sat, 23 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: foxed some menus but the validated text options dont work due to library problems
+------------------------------------------------------------------------
+r172 | ominous | 2007-06-22 23:42:27 +0000 (Fri, 22 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: ops some things didnt show
+------------------------------------------------------------------------
+r171 | ominous | 2007-06-22 19:47:06 +0000 (Fri, 22 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer
+   D /tmp/trunk/ClassTimer/Bars
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+   M /tmp/trunk/ClassTimer/Locales/koKR.lua
+   M /tmp/trunk/ClassTimer/embeds.xml
+
+ClassTimer: Back to new system, but options for max time to track for and a opt in and opt out option.
+------------------------------------------------------------------------
+r170 | ominous | 2007-06-20 21:30:12 +0000 (Wed, 20 Jun 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer
+   M /tmp/trunk/ClassTimer/Bars/Priest.lua
+   M /tmp/trunk/ClassTimer/Bars/Warrior.lua
+   M /tmp/trunk/ClassTimer/Locales/koKR.lua
+   M /tmp/trunk/ClassTimer/embeds.xml
+
+ClassTimer: readd babble-spell, update skills, update koKR
+
+------------------------------------------------------------------------
+r169 | ominous | 2007-06-20 17:27:24 +0000 (Wed, 20 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+
+ClassTimer: ops check merges before commit
+------------------------------------------------------------------------
+r168 | ominous | 2007-06-20 17:14:02 +0000 (Wed, 20 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer
+   A /tmp/trunk/ClassTimer/Bars (from /tmp/trunk/ClassTimer/Bars:164)
+   R /tmp/trunk/ClassTimer/Bars/Druid.lua (from /tmp/trunk/ClassTimer/Bars/Druid.lua:164)
+   R /tmp/trunk/ClassTimer/Bars/General.lua (from /tmp/trunk/ClassTimer/Bars/General.lua:164)
+   R /tmp/trunk/ClassTimer/Bars/Hunter.lua (from /tmp/trunk/ClassTimer/Bars/Hunter.lua:164)
+   R /tmp/trunk/ClassTimer/Bars/Mage.lua (from /tmp/trunk/ClassTimer/Bars/Mage.lua:164)
+   R /tmp/trunk/ClassTimer/Bars/Paladin.lua (from /tmp/trunk/ClassTimer/Bars/Paladin.lua:164)
+   R /tmp/trunk/ClassTimer/Bars/Priest.lua (from /tmp/trunk/ClassTimer/Bars/Priest.lua:164)
+   R /tmp/trunk/ClassTimer/Bars/Rogue.lua (from /tmp/trunk/ClassTimer/Bars/Rogue.lua:164)
+   R /tmp/trunk/ClassTimer/Bars/Shaman.lua (from /tmp/trunk/ClassTimer/Bars/Shaman.lua:164)
+   R /tmp/trunk/ClassTimer/Bars/Warlock.lua (from /tmp/trunk/ClassTimer/Bars/Warlock.lua:164)
+   R /tmp/trunk/ClassTimer/Bars/Warrior.lua (from /tmp/trunk/ClassTimer/Bars/Warrior.lua:164)
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+   M /tmp/trunk/ClassTimer/Locales/koKR.lua
+   M /tmp/trunk/ClassTimer/embeds.xml
+
+ClassTimer: Back to opt in as i agree with the arguments against it as i forgot about food/pots would be counted
+------------------------------------------------------------------------
+r167 | sayclub | 2007-06-20 03:29:50 +0000 (Wed, 20 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Locales/koKR.lua
+
+ClassTimer: - Updated localization koKR(by gygabyte)
+------------------------------------------------------------------------
+r166 | ominous | 2007-06-19 20:30:32 +0000 (Tue, 19 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: ops dont want to be able to remove mounts etc...
+------------------------------------------------------------------------
+r165 | ominous | 2007-06-19 20:15:51 +0000 (Tue, 19 Jun 2007) | 1 line
+Changed paths:
+   D /tmp/trunk/ClassTimer/Bars
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+
+ClassTimer: now all buffs appear unless you specify them not to
+------------------------------------------------------------------------
+r164 | ominous | 2007-06-19 17:42:33 +0000 (Tue, 19 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer
+   D /tmp/trunk/ClassTimer/Libs
+
+ClassTimer: removed libs dir and moved externals into . now that embeds.xml is in . too
+------------------------------------------------------------------------
+r163 | gandharva | 2007-06-19 12:05:21 +0000 (Tue, 19 Jun 2007) | 3 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+   D /tmp/trunk/ClassTimer/Libs/embeds.xml
+   A /tmp/trunk/ClassTimer/embeds.xml
+
+ClassTimer:
+
+- move embeds.xml to allow WAU to delete it and to remove FrameXML.log errors
+------------------------------------------------------------------------
+r162 | ominous | 2007-06-16 22:23:29 +0000 (Sat, 16 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: menu improvements
+------------------------------------------------------------------------
+r161 | sayclub | 2007-06-16 10:33:44 +0000 (Sat, 16 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Locales/koKR.lua
+
+ClassTimer: koKR typo fix
+------------------------------------------------------------------------
+r160 | sayclub | 2007-06-16 10:17:46 +0000 (Sat, 16 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Locales/koKR.lua
+
+ClassTimer: koKR Update
+------------------------------------------------------------------------
+r159 | ominous | 2007-06-16 09:25:19 +0000 (Sat, 16 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: not UNIT_AURA bucket happens every .25 not .5 of a second
+------------------------------------------------------------------------
+r158 | ominous | 2007-06-16 09:10:08 +0000 (Sat, 16 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+
+ClassTimer: %s is now not needed in  bar txt
+------------------------------------------------------------------------
+r157 | ominous | 2007-06-15 19:44:55 +0000 (Fri, 15 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+
+ClassTimer: now only some units can be grouped
+------------------------------------------------------------------------
+r156 | ominous | 2007-06-15 18:57:35 +0000 (Fri, 15 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+
+ClassTimer: now bars can scale with duration
+------------------------------------------------------------------------
+r155 | ominous | 2007-06-15 13:33:37 +0000 (Fri, 15 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: bug fixes
+------------------------------------------------------------------------
+r154 | sayclub | 2007-06-15 12:23:59 +0000 (Fri, 15 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Locales/koKR.lua
+
+ClassTimer: koKR Update
+------------------------------------------------------------------------
+r153 | gandharva | 2007-06-15 08:38:22 +0000 (Fri, 15 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Warrior.lua
+
+ClassTimer: fixed BS error by changing 'Mace Spec' to 'Mace Specialization'
+------------------------------------------------------------------------
+r152 | ominous | 2007-06-15 03:23:44 +0000 (Fri, 15 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: Now menu appears on cursor
+------------------------------------------------------------------------
+r151 | ominous | 2007-06-15 03:17:28 +0000 (Fri, 15 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+
+ClassTimer: Added different colors per debuff type
+------------------------------------------------------------------------
+r150 | ominous | 2007-06-14 21:38:14 +0000 (Thu, 14 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/General.lua
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+
+ClassTimer: Removed Trinkets, added a custom option, please tell me if there are missing spell though
+------------------------------------------------------------------------
+r149 | ominous | 2007-06-13 20:18:58 +0000 (Wed, 13 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: oops missed a copy paste in sticky
+------------------------------------------------------------------------
+r148 | ominous | 2007-06-12 17:41:27 +0000 (Tue, 12 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: fixed sticky so it works without bugging, not 100% perfect but it works
+------------------------------------------------------------------------
+r147 | ominous | 2007-06-11 02:10:18 +0000 (Mon, 11 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/General.lua
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: Added 2 global buffs
+------------------------------------------------------------------------
+r146 | ominous | 2007-06-07 19:51:06 +0000 (Thu, 07 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: sticky sort of works now, dosent error i dont THINK
+------------------------------------------------------------------------
+r145 | sayclub | 2007-06-06 23:24:25 +0000 (Wed, 06 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Locales/koKR.lua
+
+ClassTimer: Updated localization koKR
+------------------------------------------------------------------------
+r144 | ominous | 2007-06-06 22:31:29 +0000 (Wed, 06 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: fixed sticky
+------------------------------------------------------------------------
+r143 | ominous | 2007-06-06 18:39:28 +0000 (Wed, 06 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: locks really works now
+------------------------------------------------------------------------
+r142 | ominous | 2007-06-06 17:52:52 +0000 (Wed, 06 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: fixed lock
+------------------------------------------------------------------------
+r141 | ominous | 2007-06-06 17:37:23 +0000 (Wed, 06 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: bug fix and removed old unneeded variables
+------------------------------------------------------------------------
+r140 | ominous | 2007-06-05 21:20:09 +0000 (Tue, 05 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: uncomented a line
+------------------------------------------------------------------------
+r139 | ominous | 2007-06-05 21:17:31 +0000 (Tue, 05 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+
+ClassTimer: added a general option, which when changing an option in will change every catigory, hence all moves are now per catigory, also hence db reset, sorry
+------------------------------------------------------------------------
+r138 | ominous | 2007-06-05 17:53:18 +0000 (Tue, 05 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer; now all menus are in correct locale
+------------------------------------------------------------------------
+r137 | ominous | 2007-06-05 17:23:54 +0000 (Tue, 05 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer; fixed stucky
+------------------------------------------------------------------------
+r136 | ominous | 2007-06-04 15:11:29 +0000 (Mon, 04 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: Added rt click + modifier when unlocked to show menu for that unit
+------------------------------------------------------------------------
+r135 | ominous | 2007-06-04 14:57:03 +0000 (Mon, 04 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/General.lua
+   M /tmp/trunk/ClassTimer/Bars/Paladin.lua
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+
+ClassTimer: Added reversed option
+------------------------------------------------------------------------
+r134 | ominous | 2007-06-03 10:41:14 +0000 (Sun, 03 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+
+ClassTimer: toc touch
+------------------------------------------------------------------------
+r133 | ominous | 2007-06-03 10:17:53 +0000 (Sun, 03 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+
+ClassTimer: Added  curse gaming to toc
+------------------------------------------------------------------------
+r132 | ominous | 2007-06-02 16:26:14 +0000 (Sat, 02 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: fic for if CT_BuffMod is enabled
+------------------------------------------------------------------------
+r131 | ominous | 2007-06-02 16:20:27 +0000 (Sat, 02 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: fixed move enabling(really have this time)
+------------------------------------------------------------------------
+r130 | ominous | 2007-06-02 16:00:46 +0000 (Sat, 02 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: fixed move enabling
+------------------------------------------------------------------------
+r129 | ominous | 2007-06-02 11:50:04 +0000 (Sat, 02 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/General.lua
+   M /tmp/trunk/ClassTimer/Bars/Warlock.lua
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: now /ct wont work if CT_BuffMod is enabled, fixed syntax error
+------------------------------------------------------------------------
+r128 | ominous | 2007-06-02 10:22:35 +0000 (Sat, 02 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Rogue.lua
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: oops a => was a <=
+------------------------------------------------------------------------
+r127 | sayclub | 2007-06-01 23:11:30 +0000 (Fri, 01 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Locales/koKR.lua
+
+ClassTimer: koKR update
+------------------------------------------------------------------------
+r126 | ominous | 2007-06-01 08:58:52 +0000 (Fri, 01 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Rogue.lua
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+   M /tmp/trunk/ClassTimer/Locales/koKR.lua
+
+ClassTimer: Added riposte
+------------------------------------------------------------------------
+r125 | ominous | 2007-06-01 03:29:20 +0000 (Fri, 01 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: another defaults fix
+------------------------------------------------------------------------
+r124 | ominous | 2007-06-01 03:00:30 +0000 (Fri, 01 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: now rt click disables if you arnt in a party
+------------------------------------------------------------------------
+r123 | ominous | 2007-06-01 02:43:22 +0000 (Fri, 01 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: another defaults fix
+------------------------------------------------------------------------
+r122 | ominous | 2007-06-01 00:51:19 +0000 (Fri, 01 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: erm make default be on not off /slap
+------------------------------------------------------------------------
+r121 | ominous | 2007-06-01 00:12:37 +0000 (Fri, 01 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: fix for last commit and some conflicting settigns
+------------------------------------------------------------------------
+r120 | ominous | 2007-05-31 19:44:04 +0000 (Thu, 31 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/General.lua
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+   M /tmp/trunk/ClassTimer/Locales/koKR.lua
+
+ClassTimer: now has a "sticky" option!
+
+------------------------------------------------------------------------
+r119 | ominous | 2007-05-30 17:04:39 +0000 (Wed, 30 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Rogue.lua
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: fix
+------------------------------------------------------------------------
+r118 | ominous | 2007-05-30 16:24:34 +0000 (Wed, 30 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+
+ClassTimer: oops fix all in one
+------------------------------------------------------------------------
+r117 | ominous | 2007-05-30 15:12:18 +0000 (Wed, 30 May 2007) | 4 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+   M /tmp/trunk/ClassTimer/Locales/koKR.lua
+
+ClassTimer:
+-Right Click on bars now sends time left and move name to party/raid
+-Added Spark
+
+------------------------------------------------------------------------
+r116 | ominous | 2007-05-30 13:40:09 +0000 (Wed, 30 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Mage.lua
+   M /tmp/trunk/ClassTimer/Bars/Rogue.lua
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: possible fix for AllInOne and flashing bars, removed a few non buff abilities
+
+------------------------------------------------------------------------
+r115 | ominous | 2007-05-29 12:31:19 +0000 (Tue, 29 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Paladin.lua
+   M /tmp/trunk/ClassTimer/Bars/Warlock.lua
+
+ClassTimer: added stuff
+
+------------------------------------------------------------------------
+r114 | ominous | 2007-05-29 11:59:51 +0000 (Tue, 29 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Hunter.lua
+
+ClassTimer: hunter "Frost Trap Effect" --> "Aura"
+
+------------------------------------------------------------------------
+r113 | ominous | 2007-05-28 09:57:40 +0000 (Mon, 28 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Warlock.lua
+
+ClassTimer: Warlock: Added seducition 
+------------------------------------------------------------------------
+r112 | ominous | 2007-05-27 15:47:31 +0000 (Sun, 27 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Druid.lua
+   M /tmp/trunk/ClassTimer/Bars/Mage.lua
+   M /tmp/trunk/ClassTimer/Bars/Paladin.lua
+   M /tmp/trunk/ClassTimer/Bars/Priest.lua
+   M /tmp/trunk/ClassTimer/Bars/Rogue.lua
+   M /tmp/trunk/ClassTimer/Bars/Warrior.lua
+
+ClassTimer: syntax carelessness
+------------------------------------------------------------------------
+r111 | ominous | 2007-05-27 15:27:22 +0000 (Sun, 27 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Druid.lua
+   M /tmp/trunk/ClassTimer/Bars/General.lua
+   M /tmp/trunk/ClassTimer/Bars/Hunter.lua
+   M /tmp/trunk/ClassTimer/Bars/Mage.lua
+   M /tmp/trunk/ClassTimer/Bars/Paladin.lua
+   M /tmp/trunk/ClassTimer/Bars/Priest.lua
+   M /tmp/trunk/ClassTimer/Bars/Rogue.lua
+   M /tmp/trunk/ClassTimer/Bars/Shaman.lua
+   M /tmp/trunk/ClassTimer/Bars/Warlock.lua
+   M /tmp/trunk/ClassTimer/Bars/Warrior.lua
+
+ClassTimer: added some spells, sorted spells into alphabetical order
+------------------------------------------------------------------------
+r110 | ominous | 2007-05-27 10:44:48 +0000 (Sun, 27 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/General.lua
+   M /tmp/trunk/ClassTimer/Bars/Warlock.lua
+   M /tmp/trunk/ClassTimer/ClassTimer.lua
+
+ClassTimer: fix a locale problem (maybe) and corrected trinket buffs
+
+------------------------------------------------------------------------
+r109 | ominous | 2007-05-26 21:34:45 +0000 (Sat, 26 May 2007) | 1 line
+Changed paths:
+   A /tmp/trunk/ClassTimer/ClassTimer.lua (from /tmp/trunk/ClassTimer/Core.lua:108)
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+   D /tmp/trunk/ClassTimer/Core.lua
+
+ClassTimer: rename core.lua ClassTimer.lua and change toc
+------------------------------------------------------------------------
+r108 | ominous | 2007-05-26 21:33:07 +0000 (Sat, 26 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/Core.lua
+   D /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: i got annoyed with loading order and local variables so its now core and ruleset are 1 file
+
+------------------------------------------------------------------------
+r107 | ominous | 2007-05-26 20:33:42 +0000 (Sat, 26 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/General.lua
+   M /tmp/trunk/ClassTimer/Bars/Hunter.lua
+   M /tmp/trunk/ClassTimer/Bars/Mage.lua
+   M /tmp/trunk/ClassTimer/Bars/Warlock.lua
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: now added spells, fixed position of time
+------------------------------------------------------------------------
+r106 | ominous | 2007-05-26 20:20:30 +0000 (Sat, 26 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: added some spells, now menu uses text type and multitoggle
+------------------------------------------------------------------------
+r105 | ominous | 2007-05-25 13:27:47 +0000 (Fri, 25 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Core.lua
+   M /tmp/trunk/ClassTimer/Locales/koKR.lua
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: only icons is now easer to setup
+------------------------------------------------------------------------
+r104 | ominous | 2007-05-25 12:45:08 +0000 (Fri, 25 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/General.lua
+   M /tmp/trunk/ClassTimer/Locales/koKR.lua
+
+ClassTimer: trinkets and locales
+------------------------------------------------------------------------
+r103 | ominous | 2007-05-25 12:23:12 +0000 (Fri, 25 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: fic syntax
+------------------------------------------------------------------------
+r102 | kergoth | 2007-05-25 07:14:36 +0000 (Fri, 25 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Hunter.lua
+
+ClassTimer: Hunter Bars: add 'Boar Charge', a boar pet ability.
+------------------------------------------------------------------------
+r101 | kergoth | 2007-05-25 06:52:43 +0000 (Fri, 25 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Hunter.lua
+
+ClassTimer: Hunter Bars: add Mend Pet, since it's a Heal Over Time spell now.
+------------------------------------------------------------------------
+r100 | kergoth | 2007-05-25 06:29:57 +0000 (Fri, 25 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Core.lua
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+   M /tmp/trunk/ClassTimer/Locales/koKR.lua
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: add the 'pet' unit, so things like Bestial Wrath and Frenzy Effect in the hunter bars definition are actually useful.  Ominous: feel free to revert and lart me if you don't like this commit.
+------------------------------------------------------------------------
+r99 | kergoth | 2007-05-25 06:28:33 +0000 (Fri, 25 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Hunter.lua
+
+ClassTimer: Hunter Bars: the buff for the Frenzy talent is 'Frenzy Effect', not 'Frenzy'.
+------------------------------------------------------------------------
+r98 | kergoth | 2007-05-25 06:27:53 +0000 (Fri, 25 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Hunter.lua
+
+ClassTimer: Hunter Bars: add Rapid Fire and Quick Shots.
+------------------------------------------------------------------------
+r97 | ominous | 2007-05-24 20:03:10 +0000 (Thu, 24 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Rogue.lua
+
+ClassTimer: changed a catigory to misc
+------------------------------------------------------------------------
+r96 | ominous | 2007-05-24 19:49:07 +0000 (Thu, 24 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Rogue.lua
+   M /tmp/trunk/ClassTimer/Core.lua
+
+ClassTimer: added some rogue stuff
+------------------------------------------------------------------------
+r95 | ominous | 2007-05-24 19:30:12 +0000 (Thu, 24 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: fix for buff colors
+------------------------------------------------------------------------
+r94 | ominous | 2007-05-24 18:44:34 +0000 (Thu, 24 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: growup is even more purdy now
+------------------------------------------------------------------------
+r93 | ominous | 2007-05-24 18:33:02 +0000 (Thu, 24 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: growup is more purdey now
+------------------------------------------------------------------------
+r92 | ominous | 2007-05-24 17:54:16 +0000 (Thu, 24 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: fix for BS errors
+------------------------------------------------------------------------
+r91 | ominous | 2007-05-24 16:52:49 +0000 (Thu, 24 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Druid.lua
+   M /tmp/trunk/ClassTimer/Core.lua
+
+ClassTimer- fix pounce for druids
+------------------------------------------------------------------------
+r90 | ominous | 2007-05-24 14:15:33 +0000 (Thu, 24 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: fix for AllInOne
+
+------------------------------------------------------------------------
+r89 | ominous | 2007-05-24 14:03:47 +0000 (Thu, 24 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+   M /tmp/trunk/ClassTimer/Core.lua
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: fxed something for AllInOne
+------------------------------------------------------------------------
+r88 | ominous | 2007-05-24 08:21:28 +0000 (Thu, 24 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/Core.lua
+
+ClassTimer: update core revision
+
+------------------------------------------------------------------------
+r87 | ominous | 2007-05-24 08:17:56 +0000 (Thu, 24 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Druid.lua
+   M /tmp/trunk/ClassTimer/Bars/Mage.lua
+   M /tmp/trunk/ClassTimer/Bars/Paladin.lua
+   M /tmp/trunk/ClassTimer/Locales/koKR.lua
+
+ClassTimer: Added new koKR, some move changes
+
+------------------------------------------------------------------------
+r86 | ominous | 2007-05-23 22:36:49 +0000 (Wed, 23 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: fied shared media (hopefully)
+------------------------------------------------------------------------
+r85 | ominous | 2007-05-23 21:57:14 +0000 (Wed, 23 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Rogue.lua
+
+ClassTimer: Removed Master of sublerty as its not a buff you gain
+
+------------------------------------------------------------------------
+r84 | ominous | 2007-05-23 21:51:08 +0000 (Wed, 23 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: hopefully now in all in one bars should not repeat, unteasted
+
+------------------------------------------------------------------------
+r83 | ominous | 2007-05-23 21:34:43 +0000 (Wed, 23 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Paladin.lua
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+
+ClassTimer: added pally stuff
+
+------------------------------------------------------------------------
+r82 | ominous | 2007-05-23 13:52:12 +0000 (Wed, 23 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Paladin.lua
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: Removed debug print
+------------------------------------------------------------------------
+r81 | ominous | 2007-05-23 10:33:09 +0000 (Wed, 23 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Locales/koKR.lua
+
+ClassTimer: added new koKR
+------------------------------------------------------------------------
+r80 | ominous | 2007-05-23 10:30:56 +0000 (Wed, 23 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+   M /tmp/trunk/ClassTimer/Core.lua
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: now growup works
+------------------------------------------------------------------------
+r79 | punkie | 2007-05-23 08:53:02 +0000 (Wed, 23 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+
+ClassTimer: toc 21000 -> 20100
+------------------------------------------------------------------------
+r78 | ominous | 2007-05-22 21:27:53 +0000 (Tue, 22 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/Core.lua
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: Added alfa to bar colors and added background color
+
+------------------------------------------------------------------------
+r77 | ominous | 2007-05-17 18:25:26 +0000 (Thu, 17 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: fix some bugs and made only icon showing better
+
+------------------------------------------------------------------------
+r76 | ominous | 2007-05-16 17:26:35 +0000 (Wed, 16 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+
+ClassTimer: toc edit
+
+------------------------------------------------------------------------
+r75 | ominous | 2007-05-16 17:16:43 +0000 (Wed, 16 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/General.lua
+   M /tmp/trunk/ClassTimer/Bars/Mage.lua
+   M /tmp/trunk/ClassTimer/Locales/koKR.lua
+
+ClassTimer: bug fix
+
+------------------------------------------------------------------------
+r74 | skyboat | 2007-05-16 03:33:17 +0000 (Wed, 16 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer
+   M /tmp/trunk/ClassTimer/Libs
+
+ClassTimer: Fixed externals.
+------------------------------------------------------------------------
+r73 | ominous | 2007-05-15 21:29:35 +0000 (Tue, 15 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/General.lua
+
+ClassTimer: bug fix
+------------------------------------------------------------------------
+r72 | ominous | 2007-05-15 21:24:46 +0000 (Tue, 15 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Core.lua
+
+ClassTimer: made menu declare itsself in one table
+------------------------------------------------------------------------
+r71 | ominous | 2007-05-15 21:14:32 +0000 (Tue, 15 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/Core.lua
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: moved menu into core.lua
+
+------------------------------------------------------------------------
+r70 | ominous | 2007-05-15 20:53:03 +0000 (Tue, 15 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Mage.lua
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: oops locale problem
+
+------------------------------------------------------------------------
+r69 | ominous | 2007-05-15 19:57:11 +0000 (Tue, 15 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/Core.lua
+   M /tmp/trunk/ClassTimer/Libs
+   M /tmp/trunk/ClassTimer/Libs/embeds.xml
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: removed fubar plugin
+
+------------------------------------------------------------------------
+r68 | ominous | 2007-05-15 18:35:13 +0000 (Tue, 15 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: added menu locales
+------------------------------------------------------------------------
+r67 | ominous | 2007-05-15 18:13:13 +0000 (Tue, 15 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/General.lua
+
+ClassTimer: fix a bug on non rogues
+------------------------------------------------------------------------
+r66 | ominous | 2007-05-15 17:08:55 +0000 (Tue, 15 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+   A /tmp/trunk/ClassTimer/Locales/koKR.lua
+
+ClassTimer: Added koKR locales thanks kissnsay
+------------------------------------------------------------------------
+r65 | ominous | 2007-05-15 00:26:56 +0000 (Tue, 15 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: added new options to usage and locale
+
+------------------------------------------------------------------------
+r64 | ominous | 2007-05-15 00:11:35 +0000 (Tue, 15 May 2007) | 2 lines
+Changed paths:
+   A /tmp/trunk/ClassTimer/Bars/General.lua
+
+ClassTimer: apparently i hadent added general.lua
+
+------------------------------------------------------------------------
+r63 | ominous | 2007-05-15 00:10:08 +0000 (Tue, 15 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Rogue.lua
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: fix all in on bars, more get name options %n - says which name and %u - says whicn unit
+
+------------------------------------------------------------------------
+r62 | ominous | 2007-05-14 20:58:04 +0000 (Mon, 14 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Rogue.lua
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: added All in one grp, unteasted
+
+------------------------------------------------------------------------
+r61 | ominous | 2007-05-13 23:14:22 +0000 (Sun, 13 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+
+ClassTimer: added forum link
+
+------------------------------------------------------------------------
+r60 | ominous | 2007-05-13 23:06:56 +0000 (Sun, 13 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+
+ClassTimer: edited version field, removed old file from toc, added website
+
+------------------------------------------------------------------------
+r59 | ominous | 2007-05-13 22:43:39 +0000 (Sun, 13 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: oops debuffs appeard no matter what settings you had
+
+------------------------------------------------------------------------
+r58 | ominous | 2007-05-13 22:25:41 +0000 (Sun, 13 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Rogue.lua
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: Added general which includes trinkets ( needs more adding ) and racials
+
+------------------------------------------------------------------------
+r57 | ominous | 2007-05-13 10:02:02 +0000 (Sun, 13 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: sort by remaining time
+
+------------------------------------------------------------------------
+r56 | ominous | 2007-05-13 01:43:50 +0000 (Sun, 13 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: it works now.
+
+------------------------------------------------------------------------
+r55 | ominous | 2007-05-13 00:06:09 +0000 (Sun, 13 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+   M /tmp/trunk/ClassTimer/Libs
+   M /tmp/trunk/ClassTimer/Libs/embeds.xml
+
+ClassTimer: added SharedMediaLib to externals and embeds.xml and removed old embeds
+
+------------------------------------------------------------------------
+r54 | ominous | 2007-05-12 23:03:45 +0000 (Sat, 12 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: use bigStep
+
+------------------------------------------------------------------------
+r53 | ominous | 2007-05-12 22:45:32 +0000 (Sat, 12 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: menu improvements
+
+------------------------------------------------------------------------
+r52 | ominous | 2007-05-12 19:36:41 +0000 (Sat, 12 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/Core.lua
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: menu stuff
+
+------------------------------------------------------------------------
+r51 | ominous | 2007-05-12 19:01:31 +0000 (Sat, 12 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: added custom text
+
+------------------------------------------------------------------------
+r50 | ominous | 2007-05-12 18:57:25 +0000 (Sat, 12 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: translation
+
+------------------------------------------------------------------------
+r49 | ominous | 2007-05-12 18:25:49 +0000 (Sat, 12 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Paladin.lua
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+   M /tmp/trunk/ClassTimer/Core.lua
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+   D /tmp/trunk/ClassTimer/ReadMe.txt
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: Add judgements and converted quotes to '
+
+------------------------------------------------------------------------
+r48 | ominous | 2007-05-12 18:15:06 +0000 (Sat, 12 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: syntax
+
+------------------------------------------------------------------------
+r47 | ominous | 2007-05-12 18:14:03 +0000 (Sat, 12 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/Core.lua
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: bugs
+
+------------------------------------------------------------------------
+r46 | ominous | 2007-05-12 18:04:57 +0000 (Sat, 12 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Druid.lua
+   M /tmp/trunk/ClassTimer/Bars/Hunter.lua
+   M /tmp/trunk/ClassTimer/Bars/Mage.lua
+   M /tmp/trunk/ClassTimer/Bars/Paladin.lua
+   M /tmp/trunk/ClassTimer/Bars/Priest.lua
+   M /tmp/trunk/ClassTimer/Bars/Rogue.lua
+   M /tmp/trunk/ClassTimer/Bars/Shaman.lua
+   M /tmp/trunk/ClassTimer/Bars/Warlock.lua
+   M /tmp/trunk/ClassTimer/Bars/Warrior.lua
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+   M /tmp/trunk/ClassTimer/Core.lua
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+   D /tmp/trunk/ClassTimer/Locales/koKR.lua
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+
+ClassTimer: some more optimisation
+
+------------------------------------------------------------------------
+r45 | ominous | 2007-05-12 14:13:17 +0000 (Sat, 12 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/ClassTimer/Bars/Druid.lua
+   M /tmp/trunk/ClassTimer/Bars/Hunter.lua
+   M /tmp/trunk/ClassTimer/Bars/Mage.lua
+   M /tmp/trunk/ClassTimer/Bars/Paladin.lua
+   M /tmp/trunk/ClassTimer/Bars/Priest.lua
+   M /tmp/trunk/ClassTimer/Bars/Rogue.lua
+   M /tmp/trunk/ClassTimer/Bars/Shaman.lua
+   M /tmp/trunk/ClassTimer/Bars/Warlock.lua
+   M /tmp/trunk/ClassTimer/Bars/Warrior.lua
+   D /tmp/trunk/ClassTimer/Bars.lua
+   M /tmp/trunk/ClassTimer/ClassTimer.toc
+   M /tmp/trunk/ClassTimer/Core.lua
+   M /tmp/trunk/ClassTimer/Libs
+   M /tmp/trunk/ClassTimer/Locales/enUS.lua
+   M /tmp/trunk/ClassTimer/RuleSet.lua
+   D /tmp/trunk/ClassTimer/Textures
+
+ClassTimer: preformance improvements thanks to nymbia, thanks :), more to come
+
+------------------------------------------------------------------------
+r44 | ominous | 2007-05-08 20:23:10 +0000 (Tue, 08 May 2007) | 2 lines
+Changed paths:
+   A /tmp/trunk/ClassTimer (from /tmp/trunk/FuBar_ClassTimerFu:43)
+   D /tmp/trunk/FuBar_ClassTimerFu
+
+ClassTimer: Rename folder
+
+------------------------------------------------------------------------
+r43 | ominous | 2007-05-08 20:22:05 +0000 (Tue, 08 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars/Druid.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars/Hunter.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars/Mage.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars/Paladin.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars/Priest.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars/Rogue.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars/Shaman.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars/Warlock.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars/Warrior.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars.lua
+   A /tmp/trunk/FuBar_ClassTimerFu/ClassTimer.toc (from /tmp/trunk/FuBar_ClassTimerFu/FuBar_ClassTimerFu.toc:42)
+   M /tmp/trunk/FuBar_ClassTimerFu/Core.lua
+   D /tmp/trunk/FuBar_ClassTimerFu/FuBar_ClassTimerFu.toc
+   M /tmp/trunk/FuBar_ClassTimerFu/Locales/enUS.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Locales/koKR.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/ReadMe.txt
+   M /tmp/trunk/FuBar_ClassTimerFu/RuleSet.lua
+
+FuBar_ClassTimerFu: rename files and variables for rename incomming
+------------------------------------------------------------------------
+r42 | ominous | 2007-05-05 07:44:14 +0000 (Sat, 05 May 2007) | 2 lines
+Changed paths:
+   A /tmp/trunk/FuBar_ClassTimerFu/Libs/embeds.xml
+
+FuBar_ClassTimerFu: added embeds.xml
+
+------------------------------------------------------------------------
+r41 | ominous | 2007-05-04 21:45:25 +0000 (Fri, 04 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/FuBar_ClassTimerFu/Libs
+
+FuBar_ClassTimerFu: oops externals were Libs\Libs
+
+------------------------------------------------------------------------
+r40 | ominous | 2007-05-04 21:43:42 +0000 (Fri, 04 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/FuBar_ClassTimerFu
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars/Druid.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars/Hunter.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars/Mage.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars/Paladin.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars/Priest.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars/Rogue.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars/Shaman.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars/Warlock.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars/Warrior.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/FuBar_ClassTimerFu.toc
+   A /tmp/trunk/FuBar_ClassTimerFu/Libs
+   M /tmp/trunk/FuBar_ClassTimerFu/Locales/enUS.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Locales/koKR.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/RuleSet.lua
+
+FuBar_ClassTimerFu: cleanups
+
+------------------------------------------------------------------------
+r39 | ominous | 2007-05-01 22:51:12 +0000 (Tue, 01 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars.lua
+
+FuBar_ClassTimerFu: oops helps if i dont use self:OnClick for candybar onclick when using fubar
+
+------------------------------------------------------------------------
+r38 | fenlis | 2007-04-30 01:38:42 +0000 (Mon, 30 Apr 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/FuBar_ClassTimerFu/Locales/koKR.lua
+
+FuBar_ClassTimerFu : - Updated localization koKR
+------------------------------------------------------------------------
+r37 | ominous | 2007-04-29 20:35:34 +0000 (Sun, 29 Apr 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Core.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Locales/enUS.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/RuleSet.lua
+
+FuBar_ClassTimerFu: now can rt click on bars to disable, left click to broadcast time left to party.
+
+------------------------------------------------------------------------
+r36 | ominous | 2007-04-29 00:02:12 +0000 (Sun, 29 Apr 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/RuleSet.lua
+
+FuBar_ClassTimerFu: fix bars showing
+
+------------------------------------------------------------------------
+r35 | ominous | 2007-04-28 22:38:47 +0000 (Sat, 28 Apr 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars/Rogue.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Locales/koKR.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/RuleSet.lua
+
+FuBar_ClassTimerFu: the bars only bug when targeting yourself now, (i think) fixed koKR locals
+
+------------------------------------------------------------------------
+r34 | ominous | 2007-04-28 19:13:03 +0000 (Sat, 28 Apr 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/FuBar_ClassTimerFu/RuleSet.lua
+
+FuBar_ClassTimerFu: removed a debug table i made when running a metatable
+
+------------------------------------------------------------------------
+r33 | ominous | 2007-04-28 19:08:09 +0000 (Sat, 28 Apr 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/FuBar_ClassTimerFu/RuleSet.lua
+
+FuBar_ClassTimerFu: another try
+
+------------------------------------------------------------------------
+r32 | ominous | 2007-04-28 19:05:29 +0000 (Sat, 28 Apr 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/FuBar_ClassTimerFu/RuleSet.lua
+
+FuBar_ClassTimerFu: another try
+
+------------------------------------------------------------------------
+r31 | ominous | 2007-04-28 19:01:51 +0000 (Sat, 28 Apr 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/FuBar_ClassTimerFu/RuleSet.lua
+
+FuBar_ClassTimerFu: maybe fix
+
+------------------------------------------------------------------------
+r30 | ominous | 2007-04-28 18:57:48 +0000 (Sat, 28 Apr 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/FuBar_ClassTimerFu/RuleSet.lua
+
+FuBar_ClassTimerFu: hopefully fixed double showing
+
+------------------------------------------------------------------------
+r29 | ominous | 2007-04-28 17:52:00 +0000 (Sat, 28 Apr 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/FuBar_ClassTimerFu/RuleSet.lua
+
+FuBar_ClassTimerFu: dammit only updated the buff part
+
+------------------------------------------------------------------------
+r28 | ominous | 2007-04-28 17:42:17 +0000 (Sat, 28 Apr 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/FuBar_ClassTimerFu/RuleSet.lua
+
+FuBar_ClassTimerFu: bug fixes *2
+
+------------------------------------------------------------------------
+r27 | ominous | 2007-04-28 16:34:06 +0000 (Sat, 28 Apr 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/FuBar_ClassTimerFu/Core.lua
+
+FuBar_ClassTimerFu: re-added revision stuff
+
+------------------------------------------------------------------------
+r26 | ominous | 2007-04-28 16:26:02 +0000 (Sat, 28 Apr 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/FuBar_ClassTimerFu/Core.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/FuBar_ClassTimerFu.toc
+
+FuBar_ClassTimerFu: removed revision in version as it was erroring
+
+------------------------------------------------------------------------
+r25 | fenlis | 2007-04-28 16:25:00 +0000 (Sat, 28 Apr 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/FuBar_ClassTimerFu/Locales/koKR.lua
+
+FuBar_ClassTimerFu
+ - Updated localization koKR
+------------------------------------------------------------------------
+r24 | ominous | 2007-04-28 16:01:33 +0000 (Sat, 28 Apr 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars/Druid.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars/Hunter.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars/Mage.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars/Paladin.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars/Priest.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars/Rogue.lua
+   A /tmp/trunk/FuBar_ClassTimerFu/Bars/Shaman.lua (from /tmp/trunk/FuBar_ClassTimerFu/Bars/Shamen.lua:23)
+   D /tmp/trunk/FuBar_ClassTimerFu/Bars/Shamen.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars/Warlock.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars/Warrior.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/FuBar_ClassTimerFu.toc
+   M /tmp/trunk/FuBar_ClassTimerFu/Locales/enUS.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/RuleSet.lua
+
+FuBar_ClassTimerFu: renamed shamen shaman, added other rogue poisons
+
+------------------------------------------------------------------------
+r23 | ominous | 2007-04-28 14:43:29 +0000 (Sat, 28 Apr 2007) | 2 lines
+Changed paths:
+   A /tmp/trunk/FuBar_ClassTimerFu/Bars/Hunter.lua
+   A /tmp/trunk/FuBar_ClassTimerFu/Bars/Mage.lua
+   A /tmp/trunk/FuBar_ClassTimerFu/Bars/Priest.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars/Rogue.lua
+   A /tmp/trunk/FuBar_ClassTimerFu/Bars/Shamen.lua
+   A /tmp/trunk/FuBar_ClassTimerFu/Bars/Warrior.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Core.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/FuBar_ClassTimerFu.toc
+   M /tmp/trunk/FuBar_ClassTimerFu/ReadMe.txt
+   M /tmp/trunk/FuBar_ClassTimerFu/RuleSet.lua
+
+FuBar_ClassTimerFu: Added other classes
+
+------------------------------------------------------------------------
+r22 | ominous | 2007-04-28 09:30:13 +0000 (Sat, 28 Apr 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Core.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Locales/enUS.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/RuleSet.lua
+
+FuBar_ClassTimerFu: added custom bar text option (%s for spell, %t for target, %a for applicaiton number > 1)
+
+------------------------------------------------------------------------
+r21 | ominous | 2007-04-27 23:16:26 +0000 (Fri, 27 Apr 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars/Druid.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars/Paladin.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/FuBar_ClassTimerFu.toc
+   M /tmp/trunk/FuBar_ClassTimerFu/RuleSet.lua
+
+FuBar_ClassTimerFu: yet again unteasted... removed un-neaded functions
+
+------------------------------------------------------------------------
+r20 | ominous | 2007-04-27 23:04:18 +0000 (Fri, 27 Apr 2007) | 2 lines
+Changed paths:
+   D /tmp/trunk/FuBar_ClassTimerFu/Bars/Buffs.lua
+   A /tmp/trunk/FuBar_ClassTimerFu/Bars/Druid.lua
+   A /tmp/trunk/FuBar_ClassTimerFu/Bars/Paladin.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars/Rogue.lua
+   A /tmp/trunk/FuBar_ClassTimerFu/Bars/Warlock.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Core.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/FuBar_ClassTimerFu.toc
+   M /tmp/trunk/FuBar_ClassTimerFu/RuleSet.lua
+
+FuBar_ClassTimerFu: Added Druid, Warlock, Paladin (unteasted), added party and raid for druid and paladins (untested) as i dont have them on test realm
+
+------------------------------------------------------------------------
+r19 | ominous | 2007-04-27 18:58:03 +0000 (Fri, 27 Apr 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/FuBar_ClassTimerFu/Bars.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/Core.lua
+   M /tmp/trunk/FuBar_ClassTimerFu/FuBar_ClassTimerFu.toc
+   M /tmp/trunk/FuBar_ClassTimerFu/RuleSet.lua
+
+FuBar_ClassTimerFu: now works with rogues abilities just need to add other classes, now errors on non 0.1 wow
+
+------------------------------------------------------------------------
+r18 | ominous | 2007-04-26 22:16:07 +0000 (Thu, 26 Apr 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/FuBar_ClassTimerFu
+   M /tmp/trunk/FuBar_ClassTimerFu/Core.lua
+
+FuBar_ClassTimerFu: keywords and externals
+
+------------------------------------------------------------------------
+r17 | ominous | 2007-04-26 22:12:17 +0000 (Thu, 26 Apr 2007) | 6 lines
+Changed paths:
+   A /tmp/trunk/FuBar_ClassTimerFu
+   A /tmp/trunk/FuBar_ClassTimerFu/Bars
+   A /tmp/trunk/FuBar_ClassTimerFu/Bars/Buffs.lua
+   A /tmp/trunk/FuBar_ClassTimerFu/Bars/Rogue.lua
+   A /tmp/trunk/FuBar_ClassTimerFu/Bars.lua
+   A /tmp/trunk/FuBar_ClassTimerFu/Core.lua
+   A /tmp/trunk/FuBar_ClassTimerFu/FuBar_ClassTimerFu.toc
+   A /tmp/trunk/FuBar_ClassTimerFu/Locales
+   A /tmp/trunk/FuBar_ClassTimerFu/Locales/enUS.lua
+   A /tmp/trunk/FuBar_ClassTimerFu/Locales/koKR.lua
+   A /tmp/trunk/FuBar_ClassTimerFu/ReadMe.txt
+   A /tmp/trunk/FuBar_ClassTimerFu/RuleSet.lua
+   A /tmp/trunk/FuBar_ClassTimerFu/Textures
+   A /tmp/trunk/FuBar_ClassTimerFu/Textures/Charcoal.tga
+   A /tmp/trunk/FuBar_ClassTimerFu/Textures/default.tga
+   A /tmp/trunk/FuBar_ClassTimerFu/Textures/glaze.tga
+   A /tmp/trunk/FuBar_ClassTimerFu/Textures/otravi.tga
+   A /tmp/trunk/FuBar_ClassTimerFu/Textures/smooth.tga
+
+FuBar_ClassTimerFu:
+	-initial import
+	-timer in future for all classes when it is fully working
+	-only works in 2.1
+	-may not work atm as i cant get onto test realm to test it but no load errors on normal wow atm
+
+------------------------------------------------------------------------

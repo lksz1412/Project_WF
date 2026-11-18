@@ -1,0 +1,11 @@
+## Interface: 30200
+## LoadOnDemand:
+## Title: LibCombatParser-1.0
+## Notes: CombatParser
+## SavedVariables:
+## X-Category: Library
+## OptionalDeps: LibStub
+## X-License: LGPL v2.1
+
+LibStub\LibStub.lua
+lib.xml

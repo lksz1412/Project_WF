@@ -1,0 +1,256 @@
+{
+  "postID": 1086,
+  "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=1086",
+  "row": {
+    "postID": 1086,
+    "page": 2,
+    "rowOrdinal": 12,
+    "title": "■devil-x■변형 짜집기의 결정판 [통합UI] 21",
+    "rowText": "3 ■devil-x■변형 짜집기의 결정판 [통합UI] 21 도적만을 위해 만들었답니다. 오베때부터 오직 도적.. 달의기도 1164 5 03-13",
+    "sourceAnchor": "javascript:addonMove('detail.php', 'idx->1086', 'leave->idx,listtype,ext', 'rurl');",
+    "sourceLocation": {
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\list-page2.html",
+      "selector": "table.list tr a[href]",
+      "line": 1322
+    }
+  },
+  "detailProvenance": {
+    "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=1086",
+    "time": "2026-11-17T14:03:00.7771673Z",
+    "contentType": "text/html; charset=UTF-8",
+    "HTTP": 200,
+    "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=1086",
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-1086.html",
+    "state": "acquired",
+    "attempts": 1,
+    "commandExitCode": 0,
+    "encoding": "IWR decoded to UTF-8",
+    "bytes": 228911,
+    "SHA256": "3474AA89E06879CD7B39682AB92B5E457BD80799CF3CB90315F25605A4EDABDC"
+  },
+  "acquisitionState": "parsed",
+  "A1read": false,
+  "imageObserved": false,
+  "sections": {
+    "addonAddon": {
+      "state": "parsed",
+      "text": "\n\n\n\n\n좌측 화면에 마우스를 이동시켜서 움직이시면 액션바가 짜잔 하구 나와요\n\n\n\n그럼 그쪽에 보시면 메크로 애드온이라구 있답니다\n\n\n\n자주 쓰는 애드온 명령어 모아놨으니까 참고하시구요...\n\n\n\n제가 창작해서 만든건 한개두 없습니다\n\n\n\n데빌하구 이것저것 조합 조합 옹리 조합한거구요\n\n\n\n제 입맛에 맞게 한거라...\n\n\n\n프로그램 수정 전혀모릅니다...캬하하하;;; 짜집기만 경력2년...\n\n\n\n아 그리구 WTF폴더에 보시면 여러가지 아이디가 있는데;;ㄷㄷ \n\n\n\n달의기도 케릭 이름변경해주세요 나머진 한개두 조합안된겁니다...\n\n\n\n-구성요소-\n\nALTCLICKTOADDITEM              \n\nAZCASTBAR                      \n\nAZCASTBAROPTIONS                \n\nBARTENDER3                      \n\nBIGWIGS                         \n\nBLINKCALLME                     \n\nBLINKCHATHEAD                   \n\nBLUEITEMLINK                    \n\nCLASSTIMER                     \n\nCML                             \n\nCOLORCOMBOPOINTS                \n\nCOWTIP                          \n\nCYCIRCLED                       \n\nCYCIRCLED_VOLM                  \n\nDEUCECOMMANDER                  \n\nEEPANELS2                       \n\nELKBUFFBARS                     \n\nEXAMINER                       \n\nFUBAR                           \n\nFUBAR_BAGFU                     \n\nFUBAR_DURATEK                   \n\nFUBAR_FACTIONSFU                \n\nFUBAR_FUXPFU                    \n\nFUBAR_GUILDFU                   \n\nFUBAR_MICROMENUFU               \n\nFUBAR_MONEYFU                   \n\nHS_WALLPAPER                    \n\nIMPROVEDCAMERA                  \n\nJEWELTIPS                      \n\nMAPSTER                         \n\nNEONCHAT                      \n\nNUGUDROP                        \n\nOGLOW                           \n\nOMNICC                          \n\nOPENALLBAGS                     \n\nPITBULL                        \n\nPROXIMO2                      \n\nRANGEDISPLAY                    \n\nSHAREDMEDIA-2.0                 \n\nSIMPLEMINIMAP                 \n\nSISTERCHATMODS                  \n\nSKINNER                       \n\nSLIPLIFECHAT                    \n\nTDCOOLDOWNCOUNT                 \n\nTDCOOLDOWNOPTION                \n\nTOOLSCENTERBAR2                 \n\nTOOLSOPTION                     \n\nTOOLSOPTIONCMD",
+      "fragmentPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\idx-1086-addonAddon.html",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-1086.html",
+        "selector": "#addonAddon",
+        "line": 1244
+      },
+      "links": []
+    },
+    "addonVersion": {
+      "state": "empty",
+      "text": "",
+      "fragmentPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\idx-1086-addonVersion.html",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-1086.html",
+        "selector": "#addonVersion",
+        "line": 1314
+      },
+      "links": []
+    }
+  },
+  "iframes": {
+    "screenshot": {
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=1086&tempridx=&count=1",
+      "iframeLiteral": "<iframe frameborder=\"0\" framespacing=\"0\" id=\"screenshot\" scrolling=\"no\" src=\"imagelist.iframe.php?ridx=1086&amp;tempridx=&amp;count=1\"></iframe>",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-1086.html",
+        "selector": "iframe#screenshot",
+        "line": 1238
+      },
+      "provenance": {
+        "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=1086&tempridx=&count=1",
+        "time": "2026-11-17T14:03:01.3835115Z",
+        "contentType": "text/html; charset=UTF-8",
+        "HTTP": 200,
+        "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=1086&tempridx=&count=1",
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-1086.html",
+        "state": "acquired",
+        "attempts": 1,
+        "commandExitCode": 0,
+        "encoding": "IWR decoded to UTF-8",
+        "bytes": 2355,
+        "SHA256": "B898A1BB2400A92D0D172FCAFB7AC088B95075FEE4152FDD321D22307ADDF662"
+      },
+      "state": "parsed",
+      "text": "\n\n\n\n\n\n스크린샷\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "links": [
+        {
+          "href": "javascript:void(0);",
+          "onclick": null,
+          "text": "",
+          "line": 28
+        },
+        {
+          "href": "javascript:void(0);",
+          "onclick": "viewImage('wow/addonpds/image/0313_4478.jpg');",
+          "text": "",
+          "line": 33
+        },
+        {
+          "href": "javascript:void(0);",
+          "onclick": null,
+          "text": "",
+          "line": 40
+        }
+      ],
+      "literalPublicDownloadURLs": [],
+      "imageCount": 1
+    },
+    "fileInfo": {
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=1086&tempridx=&count=1",
+      "iframeLiteral": "<iframe frameborder=\"0\" id=\"fileInfo\" src=\"filelist.iframe.php?mode=view&amp;ridx=1086&amp;tempridx=&amp;count=1\"></iframe>",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-1086.html",
+        "selector": "iframe#fileInfo",
+        "line": 1320
+      },
+      "provenance": {
+        "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=1086&tempridx=&count=1",
+        "time": "2026-11-17T14:03:01.9765947Z",
+        "contentType": "text/html; charset=UTF-8",
+        "HTTP": 200,
+        "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=1086&tempridx=&count=1",
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-1086.html",
+        "state": "acquired",
+        "attempts": 1,
+        "commandExitCode": 0,
+        "encoding": "IWR decoded to UTF-8",
+        "bytes": 2306,
+        "SHA256": "D35039C389ABAD8C5E9704698465D2A416EE08321F0D8E496FD4D2E0BBD3DC4B"
+      },
+      "state": "parsed",
+      "text": "\n\n\n\n\n\n파일 정보\n\n\n\n\n\n\n\n\n\n\n\n\n파일\n\n\n클라이언트 버전\n\n\n다운로드\n\n\n등록일\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\nmoon.zip\n\n\n\n\n\n\n2.3.0\n\n\n597\n\n\n2008-03-21\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "links": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "moon.zip",
+          "line": 40
+        }
+      ],
+      "literalPublicDownloadURLs": [
+        "https://pds.inven.co.kr/upload/wow/addonpds/file/moon.zip"
+      ],
+      "fileRows": [
+        {
+          "text": "moon.zip 2.3.0 597 2008-03-21",
+          "cells": [
+            "moon.zip",
+            "2.3.0",
+            "597",
+            "2008-03-21"
+          ],
+          "line": 37
+        }
+      ],
+      "scriptPublicDownloadURLLiterals": [
+        {
+          "url": "https://pds.inven.co.kr/upload/wow/addonpds/file/moon.zip",
+          "literal": "https://pds.inven.co.kr/upload/wow/addonpds/file/moon.zip",
+          "scriptText": "parent.setDownloadInfo(5172,\"https://pds.inven.co.kr/upload/wow/addonpds/file/moon.zip\");",
+          "sourceLocation": {
+            "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-1086.html",
+            "line": 37,
+            "selector": "script"
+          },
+          "executed": false
+        }
+      ]
+    }
+  },
+  "images": [
+    {
+      "postID": 1086,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/s_0313_4478.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/0313_4478.jpg');",
+      "fullURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/0313_4478.jpg",
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-1086.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": null,
+      "decodeStatus": "verified-full-load",
+      "mappingEvidence": {
+        "observedThumbOrigin": "https://upload.inven.co.kr",
+        "observedPathPrefix": "/upload/",
+        "literalViewerPath": "wow/addonpds/image/0313_4478.jpg"
+      },
+      "initialMappingState": "unresolved-preserved-in-images.json",
+      "finalURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/0313_4478.jpg",
+      "time": "2026-11-17T14:05:51.5751984Z",
+      "contentType": "image/jpeg",
+      "HTTP": 200,
+      "sourceURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/0313_4478.jpg",
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-4fd35f48190642bbb46c.jpg",
+      "state": "acquired",
+      "attempts": 1,
+      "commandExitCode": 0,
+      "bytes": 194886,
+      "SHA256": "D11A83BB5505FF6EE8E7F42BFDA490B48606541D5EFE94443779727BDF01ED1A",
+      "width": 1280,
+      "height": 1024,
+      "imageFormat": "JPEG"
+    }
+  ],
+  "title": "■devil-x■변형 짜집기의 결정판",
+  "metadataLiteral": "■devil-x■변형 짜집기의 결정판\n도적만을 위해 만들었답니다. 오베때부터 오직 도적...\n애드온 등록자\n달의기도\n최종 업데이트\n2008.03.13\n카테고리\n통합UI\n클라이언트 버전\n2.3.0\n애드온 버전\n도적옹리\n조회수\n9176\n추천수\n5\n다운로드 수\n1164\n관심등록 수\n12\n다운로드\n관심 애드온 등록",
+  "metadataRows": [
+    {
+      "label": "애드온 등록자",
+      "value": "달의기도",
+      "line": 1181
+    },
+    {
+      "label": "최종 업데이트",
+      "value": "2008.03.13",
+      "line": 1185
+    },
+    {
+      "label": "카테고리",
+      "value": "통합UI",
+      "line": 1189
+    },
+    {
+      "label": "클라이언트 버전",
+      "value": "2.3.0",
+      "line": 1196
+    },
+    {
+      "label": "애드온 버전",
+      "value": "도적옹리",
+      "line": 1200
+    },
+    {
+      "label": "조회수",
+      "value": "9176",
+      "line": 1207
+    },
+    {
+      "label": "추천수",
+      "value": "5",
+      "line": 1211
+    },
+    {
+      "label": "다운로드 수",
+      "value": "1164",
+      "line": 1215
+    },
+    {
+      "label": "관심등록 수",
+      "value": "12",
+      "line": 1219
+    }
+  ]
+}

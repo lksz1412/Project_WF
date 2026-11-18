@@ -1,0 +1,19 @@
+
+InvenCraftInfoDB = {
+	["selecter"] = "요리",
+	["showDrop"] = true,
+	["scale"] = 1,
+	["alpha"] = 1,
+	["minimapButton"] = {
+		["show"] = true,
+		["angle"] = 120,
+		["dragable"] = true,
+	},
+	["hideRarityBorder"] = false,
+	["clamp"] = true,
+	["showReagent"] = true,
+	["showUse"] = true,
+	["mapbuttonShow"] = true,
+	["mapbuttonLock"] = false,
+	["showMake"] = true,
+}

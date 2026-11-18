@@ -1,0 +1,17 @@
+commit 87e2eadff984276875fb71437d35dcaf659ea99c
+Author: phyber <phyber@wowace>
+Date:   Wed Oct 15 15:28:16 2008 +0100
+
+    TOC bump for 3.0.2
+
+commit f1013c6f264a1db6b510654d68f2e4da8271ac4a
+Author: phyber <phyber@wowace>
+Date:   Tue Oct 14 16:28:40 2008 +0100
+
+    Fix paths for externals.
+
+commit f2bb578cf31b3b977a6c062d52e8385ea805529d
+Author: phyber <phyber@wowace>
+Date:   Tue Oct 7 10:52:52 2008 +0100
+
+    Initial git commit.

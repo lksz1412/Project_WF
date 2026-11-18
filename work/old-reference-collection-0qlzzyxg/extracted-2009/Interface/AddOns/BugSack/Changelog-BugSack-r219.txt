@@ -1,0 +1,309 @@
+------------------------------------------------------------------------
+r219 | rabbit | 2009-11-22 00:57:00 +0000 (Sun, 22 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/BugSack.lua
+
+Reset sack session on login.
+------------------------------------------------------------------------
+r218 | rabbit | 2009-11-21 21:07:41 +0000 (Sat, 21 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/BugSack.lua
+
+Make the tabs work, they're still a bit funky.
+------------------------------------------------------------------------
+r217 | rabbit | 2009-11-21 16:26:53 +0000 (Sat, 21 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/BugSack.lua
+   M /trunk/BugSackLDB.lua
+
+Oops, accidental global.
+------------------------------------------------------------------------
+r216 | mojosdojo | 2009-11-21 15:20:05 +0000 (Sat, 21 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Locales/deDE.lua
+
+deDE update.
+------------------------------------------------------------------------
+r215 | rabbit | 2009-11-21 12:03:23 +0000 (Sat, 21 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/BugSack.lua
+
+Get rid of the hidden option button, don't need it any more with these tabs.
+------------------------------------------------------------------------
+r214 | rabbit | 2009-11-21 11:48:50 +0000 (Sat, 21 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/BugSack.lua
+   M /trunk/config.lua
+
+Add some tabs to the bottom of the sack for selecting All/Current/Last session bugs, not hooked up to anything yet since I'm not sure I'm happy with them. Feedback welcome.
+------------------------------------------------------------------------
+r213 | rabbit | 2009-11-21 09:36:53 +0000 (Sat, 21 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/BugSack.lua
+   M /trunk/BugSackLDB.lua
+
+Make /bugsack open the interface options.
+------------------------------------------------------------------------
+r212 | rabbit | 2009-11-21 09:34:20 +0000 (Sat, 21 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/.pkgmeta
+   M /trunk/BugSack.lua
+   M /trunk/BugSack.toc
+   M /trunk/BugSackLDB.lua
+   M /trunk/Locales/enUS.lua
+   M /trunk/config.lua
+
+Remove AceDB and add back the option to disable the minimap icon.
+------------------------------------------------------------------------
+r211 | rabbit | 2009-11-21 09:07:22 +0000 (Sat, 21 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Locales/enUS.lua
+   M /trunk/config.lua
+
+Make sure there's a mute option available if LSM isn't.
+------------------------------------------------------------------------
+r210 | rabbit | 2009-11-21 00:44:05 +0000 (Sat, 21 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/BugSack.lua
+
+Bugfix.
+------------------------------------------------------------------------
+r209 | rabbit | 2009-11-21 00:04:02 +0000 (Sat, 21 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/BugSack.lua
+
+Bump up the text size a bit.
+------------------------------------------------------------------------
+r208 | rabbit | 2009-11-20 23:36:21 +0000 (Fri, 20 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/BugSack.lua
+
+Hide the flyout button until we actually have something to open with it.
+------------------------------------------------------------------------
+r207 | rabbit | 2009-11-20 23:04:53 +0000 (Fri, 20 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/BugSack.lua
+   M /trunk/BugSackLDB.lua
+
+Spice up the sack a bit.
+------------------------------------------------------------------------
+r206 | rabbit | 2009-11-20 20:18:10 +0000 (Fri, 20 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/BugSack.lua
+   M /trunk/BugSack.toc
+   M /trunk/config.lua
+
+Don't ReqDep on BugGrabber any more but simply print a huge warning when you log in if it can't be found. Users don't look at the addon window at the character selection screen anyway, so the dependency listing there is useless.
+------------------------------------------------------------------------
+r205 | mojosdojo | 2009-11-20 17:34:41 +0000 (Fri, 20 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Locales/deDE.lua
+
+deDE update.
+------------------------------------------------------------------------
+r204 | ananhaid | 2009-11-20 10:58:30 +0000 (Fri, 20 Nov 2009) | 2 lines
+Changed paths:
+   M /trunk/Locales/zhCN.lua
+   M /trunk/Locales/zhTW.lua
+
+BugSack:
+- zhCN/zhTW update.
+------------------------------------------------------------------------
+r203 | ananhaid | 2009-11-20 10:54:46 +0000 (Fri, 20 Nov 2009) | 2 lines
+Changed paths:
+   M /trunk/Locales/zhCN.lua
+
+BugSack:
+- zhCN update.
+------------------------------------------------------------------------
+r202 | rabbit | 2009-11-19 17:09:00 +0000 (Thu, 19 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/BugSack.lua
+
+More unused code nuked.
+------------------------------------------------------------------------
+r201 | rabbit | 2009-11-19 15:01:15 +0000 (Thu, 19 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/BugSack.lua
+
+Remove some unused code.
+------------------------------------------------------------------------
+r200 | rabbit | 2009-11-19 14:40:38 +0000 (Thu, 19 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/.pkgmeta
+   M /trunk/BugSack.lua
+   M /trunk/BugSack.toc
+
+Make AceComm/Serializer optional and remove AceAddon.
+------------------------------------------------------------------------
+r199 | rabbit | 2009-11-19 14:22:33 +0000 (Thu, 19 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/BugSack.lua
+
+Delay frame creation until needed.
+------------------------------------------------------------------------
+r198 | rabbit | 2009-11-19 14:11:03 +0000 (Thu, 19 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/BugSack.toc
+   A /trunk/Locales/frFR.lua
+
+Added frFR locale from Balreign. Thanks\!
+------------------------------------------------------------------------
+r197 | rabbit | 2009-11-19 13:44:26 +0000 (Thu, 19 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/BugSack.lua
+   M /trunk/BugSackLDB.lua
+
+Make the sack a UI panel so that we can easily close it with the Esc key. Not sure if this is a good idea or not, we'll see.
+------------------------------------------------------------------------
+r196 | rabbit | 2009-11-19 12:07:07 +0000 (Thu, 19 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Locales/enUS.lua
+
+Remove a unused locale entry.
+------------------------------------------------------------------------
+r195 | rabbit | 2009-11-19 12:06:40 +0000 (Thu, 19 Nov 2009) | 4 lines
+Changed paths:
+   M /trunk/.pkgmeta
+   M /trunk/BugSack.lua
+   M /trunk/BugSackLDB.lua
+   M /trunk/Locales/enUS.lua
+   M /trunk/config.lua
+
+* Make sure the LDB only displays session bugs.
+* Update the english locale file, translations are welcome now.
+* Don't stop the BugGrabber chat messages when bug grabbing is throttled, since the LDB no longer displays information about this.
+
+------------------------------------------------------------------------
+r194 | rabbit | 2009-11-19 11:28:56 +0000 (Thu, 19 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/BugSack.lua
+   M /trunk/BugSackLDB.lua
+   M /trunk/config.lua
+
+Right-clicking the LDB opens options and clicking it hides the sack if it's already open.
+------------------------------------------------------------------------
+r193 | rabbit | 2009-11-19 11:26:01 +0000 (Thu, 19 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/config.lua
+
+Starting to look decent.
+------------------------------------------------------------------------
+r192 | rabbit | 2009-11-19 11:15:11 +0000 (Thu, 19 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/config.lua
+
+Expose the widget descriptions with tooltips.
+------------------------------------------------------------------------
+r191 | rabbit | 2009-11-19 01:31:29 +0000 (Thu, 19 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/.pkgmeta
+   M /trunk/BugSack.lua
+   M /trunk/BugSackLDB.lua
+   M /trunk/config.lua
+
+Get rid of dewdrop - the new options look like crap at the moment, but they should work.
+------------------------------------------------------------------------
+r190 | rabbit | 2009-11-18 10:25:40 +0000 (Wed, 18 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/BugSack.toc
+   A /trunk/config.lua
+
+Started option panel work, not even half-finished, but time for work.
+------------------------------------------------------------------------
+r189 | rabbit | 2009-11-18 09:28:57 +0000 (Wed, 18 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/BugSack.lua
+
+Add a 'Send errors' button to the sack and remove it from the dropdown.
+------------------------------------------------------------------------
+r188 | rabbit | 2009-11-18 09:03:06 +0000 (Wed, 18 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/BugSack.lua
+
+Fix time display.
+------------------------------------------------------------------------
+r187 | rabbit | 2009-11-17 19:30:03 +0000 (Tue, 17 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/BugSack.lua
+   M /trunk/BugSackLDB.lua
+
+New look for the sack.
+------------------------------------------------------------------------
+r186 | rabbit | 2009-11-17 14:16:04 +0000 (Tue, 17 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/BugSack.lua
+
+Add in some xxx comments so I don't forget things later.
+------------------------------------------------------------------------
+r185 | StingerSoft | 2009-11-17 13:19:13 +0000 (Tue, 17 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Locales/ruRU.lua
+
+-- ruRU update (fix typos,rectification translation)
+------------------------------------------------------------------------
+r184 | sunmark | 2009-11-17 12:40:48 +0000 (Tue, 17 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Locales/zhTW.lua
+
+- zhTW update
+------------------------------------------------------------------------
+r183 | rabbit | 2009-11-17 10:45:24 +0000 (Tue, 17 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/BugSack.lua
+
+Add a heading stating the current errors session ID and which number the error is in the set.
+------------------------------------------------------------------------
+r182 | rabbit | 2009-11-17 10:30:19 +0000 (Tue, 17 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/BugSack.lua
+   M /trunk/BugSackLDB.lua
+
+There's just one action to open the sack now, I\'ll let the user navigate the sessions from the sack instead.
+------------------------------------------------------------------------
+r181 | rabbit | 2009-11-17 10:04:31 +0000 (Tue, 17 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/BugSack.lua
+
+Received errors no longer exists, they are put into your current session with a .source set to the senders player name.
+------------------------------------------------------------------------
+r180 | rabbit | 2009-11-17 09:01:39 +0000 (Tue, 17 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/BugSack.lua
+
+Some more minor cleanups.
+------------------------------------------------------------------------
+r179 | rabbit | 2009-11-17 05:42:44 +0000 (Tue, 17 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/BugSack.lua
+   M /trunk/BugSackLDB.lua
+
+Add in a note about a new frame design and some ascii art.
+------------------------------------------------------------------------
+r178 | 7destiny | 2009-11-17 05:37:13 +0000 (Tue, 17 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Locales/koKR.lua
+
+koKR Update
+------------------------------------------------------------------------
+r177 | rabbit | 2009-11-17 05:32:45 +0000 (Tue, 17 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/BugSack.lua
+   M /trunk/BugSack.toc
+   M /trunk/BugSackLDB.lua
+
+Fix the LDB.
+------------------------------------------------------------------------
+r176 | rabbit | 2009-11-17 05:21:54 +0000 (Tue, 17 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/BugSack.lua
+   D /trunk/BugSack.xml
+
+Get rid of the old school XML UI. Hopefully I can clean up this mess soon.
+------------------------------------------------------------------------
+r175 | Zeksie | 2009-09-23 12:53:36 +0000 (Wed, 23 Sep 2009) | 1 line
+Changed paths:
+   M /trunk/BugSack.lua
+
+Now scrolls to top of errors instead of to bottom.
+------------------------------------------------------------------------

@@ -1,0 +1,14 @@
+## Interface: 30200
+## Title: FairComboPoints
+## Notes: Display ComboPoints
+## Author: Fairlady Mediv
+## X-Category: Combat
+## Version: 3.2
+## SavedVariables: FairComboPointsDB
+## OptionalDeps: Ace3
+## X-Embeds: Ace3
+
+embeds.xml
+Locales\enUS.lua
+Locales\koKR.lua
+FairComboPoints.lua

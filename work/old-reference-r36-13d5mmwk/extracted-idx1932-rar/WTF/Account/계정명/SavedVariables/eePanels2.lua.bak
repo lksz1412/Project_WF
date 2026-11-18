@@ -1,0 +1,494 @@
+
+eePanels2DB = {
+	["profiles"] = {
+		["Default"] = {
+			["advancedMode"] = true,
+			["global"] = {
+				["border"] = {
+					["media"] = "None",
+					["texture"] = "Interface\\None",
+				},
+				["background"] = {
+					["color"] = {
+						["a"] = 0.7900000065565109,
+						["b"] = 0.1725490196078431,
+						["g"] = 0.1058823529411765,
+						["r"] = 0.05882352941176471,
+					},
+					["insetSize"] = {
+						["b"] = 0,
+						["t"] = 0,
+						["r"] = 0,
+						["l"] = 0,
+					},
+					["insetSizeAll"] = 0,
+				},
+				["locked"] = true,
+			},
+			["detachedTooltip"] = {
+			},
+			["panels"] = {
+				{
+					["visible"] = true,
+					["strata"] = "BACKGROUND",
+					["anchorTo"] = "BOTTOMRIGHT",
+					["parent"] = "UIParent",
+					["border"] = {
+						["edgeSize"] = 1,
+						["media"] = "None",
+						["color"] = {
+							["a"] = 1,
+							["b"] = 0.1176470588235294,
+							["g"] = 0.1176470588235294,
+							["r"] = 0.1176470588235294,
+						},
+						["texture"] = "Interface\\None",
+					},
+					["scripts"] = {
+					},
+					["anchor"] = "UIParent",
+					["level"] = 0,
+					["scale"] = 1,
+					["text"] = {
+						["font"] = "",
+						["text"] = "",
+						["size"] = 0,
+					},
+					["background"] = {
+						["color"] = {
+							["a"] = 0.7900000065565109,
+							["b"] = 0.1725490196078431,
+							["g"] = 0.1058823529411765,
+							["r"] = 0.05882352941176471,
+						},
+						["insetSizeAll"] = 0,
+						["blend"] = "BLEND",
+						["insetSize"] = {
+							["b"] = 0,
+							["t"] = 0,
+							["r"] = 0,
+							["l"] = 0,
+						},
+						["tileSize"] = 0,
+						["tiling"] = false,
+						["frame"] = {
+							[0] = nil --[[ skipped userdata ]],
+						},
+						["gradient"] = {
+							["color"] = {
+								["a"] = 0,
+								["r"] = 1,
+								["g"] = 1,
+								["b"] = 1,
+							},
+							["orientation"] = "HORIZONTAL",
+							["offset"] = 0,
+						},
+						["style"] = "Solid",
+						["texture"] = {
+							["media"] = "Tap3",
+							["alpha"] = 0.1,
+							["texture"] = "Interface\\Addons\\SharedMedia\\background\\Tap3.tga",
+						},
+					},
+					["width"] = "214",
+					["y"] = "26",
+					["x"] = "-6",
+					["name"] = "Recount",
+					["mouse"] = false,
+					["height"] = "160",
+					["frame"] = {
+						[0] = nil --[[ skipped userdata ]],
+					},
+					["anchorFrom"] = "BOTTOMRIGHT",
+					["locked"] = true,
+				}, -- [1]
+				{
+					["visible"] = true,
+					["strata"] = "LOW",
+					["anchorTo"] = "BOTTOMRIGHT",
+					["parent"] = "UIParent",
+					["border"] = {
+						["edgeSize"] = 12,
+						["media"] = "None",
+						["color"] = {
+							["a"] = 0,
+							["b"] = 0,
+							["g"] = 0,
+							["r"] = 0,
+						},
+						["texture"] = "Interface\\None",
+					},
+					["scripts"] = {
+					},
+					["anchor"] = "UIParent",
+					["level"] = 0,
+					["background"] = {
+						["color"] = {
+							["a"] = 0.7900000065565109,
+							["b"] = 0.1725490196078431,
+							["g"] = 0.1058823529411765,
+							["r"] = 0.05882352941176471,
+						},
+						["insetSizeAll"] = 0,
+						["blend"] = "DISABLE",
+						["insetSize"] = {
+							["b"] = 0,
+							["t"] = 0,
+							["r"] = 0,
+							["l"] = 0,
+						},
+						["tileSize"] = 0,
+						["tiling"] = false,
+						["frame"] = {
+							[0] = nil --[[ skipped userdata ]],
+						},
+						["gradient"] = {
+							["color"] = {
+								["a"] = 0,
+								["r"] = 1,
+								["g"] = 1,
+								["b"] = 1,
+							},
+							["orientation"] = "HORIZONTAL",
+							["offset"] = 0,
+						},
+						["style"] = "Solid",
+						["texture"] = {
+							["media"] = "None",
+							["alpha"] = 0.75,
+							["texture"] = "Interface\\None",
+						},
+					},
+					["text"] = {
+						["font"] = "",
+						["text"] = "",
+						["size"] = 0,
+					},
+					["anchorFrom"] = "BOTTOMRIGHT",
+					["width"] = "159",
+					["y"] = "26",
+					["x"] = "-445",
+					["name"] = "Minimap",
+					["mouse"] = false,
+					["height"] = "160",
+					["frame"] = {
+						[0] = nil --[[ skipped userdata ]],
+					},
+					["scale"] = 1,
+					["locked"] = true,
+				}, -- [2]
+				{
+					["visible"] = true,
+					["strata"] = "BACKGROUND",
+					["anchorTo"] = "BOTTOMLEFT",
+					["parent"] = "UIParent",
+					["anchorFrom"] = "BOTTOMLEFT",
+					["scripts"] = {
+					},
+					["anchor"] = "UIParent",
+					["level"] = 0,
+					["background"] = {
+						["color"] = {
+							["a"] = 0.7900000065565109,
+							["b"] = 0.1725490196078431,
+							["g"] = 0.1058823529411765,
+							["r"] = 0.05882352941176471,
+						},
+						["texture"] = {
+							["texture"] = "Interface\\Addons\\SharedMedia\\background\\Tap4.tga",
+							["alpha"] = 0.1,
+							["media"] = "Tap4",
+						},
+						["blend"] = "DISABLE",
+						["insetSize"] = {
+							["b"] = 0,
+							["t"] = 0,
+							["r"] = 0,
+							["l"] = 0,
+						},
+						["style"] = "Solid",
+						["tiling"] = false,
+						["frame"] = {
+							[0] = nil --[[ skipped userdata ]],
+						},
+						["gradient"] = {
+							["color"] = {
+								["a"] = 0,
+								["b"] = 0.2588235294117647,
+								["g"] = 0.2156862745098039,
+								["r"] = 0.2117647058823529,
+							},
+							["offset"] = 0,
+							["orientation"] = "HORIZONTAL",
+						},
+						["tileSize"] = 0,
+						["insetSizeAll"] = 0,
+					},
+					["text"] = {
+						["text"] = "",
+						["font"] = "",
+						["size"] = 0,
+					},
+					["border"] = {
+						["edgeSize"] = 1,
+						["media"] = "None",
+						["color"] = {
+							["a"] = 1,
+							["b"] = 0.1176470588235294,
+							["g"] = 0.1176470588235294,
+							["r"] = 0.1176470588235294,
+						},
+						["texture"] = "Interface\\None",
+					},
+					["width"] = "432",
+					["y"] = "26",
+					["x"] = "5",
+					["name"] = "Chat1",
+					["frame"] = {
+						[0] = nil --[[ skipped userdata ]],
+					},
+					["height"] = "160",
+					["mouse"] = false,
+					["scale"] = 1,
+					["locked"] = true,
+				}, -- [3]
+				{
+					["visible"] = true,
+					["strata"] = "BACKGROUND",
+					["anchorTo"] = "BOTTOMRIGHT",
+					["parent"] = "UIParent",
+					["border"] = {
+						["edgeSize"] = 1,
+						["media"] = "Blizzard Tooltip",
+						["color"] = {
+							["a"] = 1,
+							["b"] = 0.1176470588235294,
+							["g"] = 0.1176470588235294,
+							["r"] = 0.1176470588235294,
+						},
+						["texture"] = "Interface\\None",
+					},
+					["scripts"] = {
+					},
+					["locked"] = true,
+					["background"] = {
+						["color"] = {
+							["a"] = 0.7900000065565109,
+							["b"] = 0.1725490196078431,
+							["g"] = 0.1058823529411765,
+							["r"] = 0.05882352941176471,
+						},
+						["tiling"] = false,
+						["blend"] = "BLEND",
+						["insetSize"] = {
+							["b"] = 0,
+							["t"] = 0,
+							["r"] = 0,
+							["l"] = 0,
+						},
+						["style"] = "Solid",
+						["insetSizeAll"] = 0,
+						["frame"] = {
+							[0] = nil --[[ skipped userdata ]],
+						},
+						["gradient"] = {
+							["orientation"] = "HORIZONTAL",
+							["color"] = {
+								["a"] = 0,
+								["b"] = 1,
+								["g"] = 1,
+								["r"] = 1,
+							},
+							["offset"] = 0,
+						},
+						["tileSize"] = 0,
+						["texture"] = {
+							["texture"] = "Interface\\Addons\\SharedMedia\\background\\Tap3.tga",
+							["alpha"] = 0.1,
+							["media"] = "없음",
+						},
+					},
+					["anchorFrom"] = "BOTTOMRIGHT",
+					["text"] = {
+						["font"] = "",
+						["text"] = "",
+						["size"] = 0,
+					},
+					["scale"] = 1,
+					["width"] = "447",
+					["y"] = "26",
+					["x"] = "-610",
+					["name"] = "BarBG",
+					["frame"] = {
+						[0] = nil --[[ skipped userdata ]],
+					},
+					["height"] = "160",
+					["mouse"] = false,
+					["anchor"] = "UIParent",
+					["level"] = 0,
+				}, -- [4]
+				{
+					["visible"] = true,
+					["strata"] = "BACKGROUND",
+					["anchorTo"] = "BOTTOM",
+					["scale"] = 1,
+					["anchorFrom"] = "BOTTOM",
+					["scripts"] = {
+					},
+					["anchor"] = "UIParent",
+					["level"] = 0,
+					["border"] = {
+						["edgeSize"] = 16,
+						["media"] = "None",
+						["color"] = {
+							["a"] = 0.760000005364418,
+							["b"] = 0.1803921568627451,
+							["g"] = 0.1490196078431373,
+							["r"] = 0.1294117647058823,
+						},
+						["texture"] = "Interface\\None",
+					},
+					["text"] = {
+						["font"] = "",
+						["text"] = "",
+						["size"] = 0,
+					},
+					["locked"] = true,
+					["width"] = "1960",
+					["y"] = "0",
+					["x"] = 0,
+					["name"] = "Bottom",
+					["frame"] = {
+						[0] = nil --[[ skipped userdata ]],
+					},
+					["height"] = "22",
+					["mouse"] = false,
+					["parent"] = "UIParent",
+					["background"] = {
+						["color"] = {
+							["a"] = 0.7900000065565109,
+							["b"] = 0.1725490196078431,
+							["g"] = 0.1058823529411765,
+							["r"] = 0.05882352941176471,
+						},
+						["tiling"] = false,
+						["blend"] = "DISABLE",
+						["insetSize"] = {
+							["b"] = 0,
+							["t"] = 0,
+							["r"] = 0,
+							["l"] = 0,
+						},
+						["tileSize"] = 0,
+						["insetSizeAll"] = 0,
+						["frame"] = {
+							[0] = nil --[[ skipped userdata ]],
+						},
+						["gradient"] = {
+							["offset"] = 0,
+							["orientation"] = "HORIZONTAL",
+							["color"] = {
+								["a"] = 0.760000005364418,
+								["b"] = 0.1803921568627451,
+								["g"] = 0.1490196078431373,
+								["r"] = 0.1294117647058823,
+							},
+						},
+						["style"] = "Solid",
+						["texture"] = {
+							["texture"] = "Interface\\None",
+							["alpha"] = 1,
+							["media"] = "",
+						},
+					},
+				}, -- [5]
+				{
+					["visible"] = true,
+					["strata"] = "BACKGROUND",
+					["anchorTo"] = "BOTTOMRIGHT",
+					["scale"] = 1,
+					["anchorFrom"] = "BOTTOMRIGHT",
+					["scripts"] = {
+					},
+					["anchor"] = "UIParent",
+					["level"] = 0,
+					["locked"] = true,
+					["text"] = {
+						["text"] = "",
+						["font"] = "",
+						["size"] = 0,
+					},
+					["parent"] = "UIParent",
+					["width"] = "214",
+					["y"] = "26",
+					["x"] = "-225",
+					["name"] = "Omen",
+					["mouse"] = false,
+					["height"] = "160",
+					["frame"] = {
+						[0] = nil --[[ skipped userdata ]],
+					},
+					["background"] = {
+						["color"] = {
+							["a"] = 0.7900000065565109,
+							["r"] = 0.05882352941176471,
+							["g"] = 0.1058823529411765,
+							["b"] = 0.1725490196078431,
+						},
+						["tiling"] = false,
+						["blend"] = "DISABLE",
+						["insetSize"] = {
+							["r"] = 0,
+							["t"] = 0,
+							["b"] = 0,
+							["l"] = 0,
+						},
+						["tileSize"] = 0,
+						["texture"] = {
+							["media"] = "",
+							["alpha"] = 1,
+							["texture"] = "Interface\\None",
+						},
+						["gradient"] = {
+							["color"] = {
+								["a"] = 0,
+								["b"] = 1,
+								["g"] = 1,
+								["r"] = 1,
+							},
+							["orientation"] = "HORIZONTAL",
+							["offset"] = 0,
+						},
+						["frame"] = {
+							[0] = nil --[[ skipped userdata ]],
+						},
+						["style"] = "Solid",
+						["insetSizeAll"] = 0,
+					},
+					["border"] = {
+						["edgeSize"] = 16,
+						["media"] = "None",
+						["color"] = {
+							["a"] = 1,
+							["b"] = 1,
+							["g"] = 1,
+							["r"] = 1,
+						},
+						["texture"] = "Interface\\None",
+					},
+				}, -- [6]
+			},
+			["showText"] = false,
+			["filter"] = {
+				false, -- [1]
+				false, -- [2]
+				false, -- [3]
+				false, -- [4]
+				false, -- [5]
+				false, -- [6]
+			},
+			["showWarnings"] = false,
+		},
+	},
+}

@@ -1,0 +1,1314 @@
+------------------------------------------------------------------------
+r218 | xinhuan | 2008-10-14 18:23:02 +0000 (Tue, 14 Oct 2008) | 1 line
+Changed paths:
+   A /tags/v3.0.1 (from /trunk:217)
+
+Tag v3.0.1 while I'm at it.
+------------------------------------------------------------------------
+r217 | xinhuan | 2008-10-14 18:21:52 +0000 (Tue, 14 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/Modules/Express.lua
+   M /trunk/Postal.toc
+
+Fix alt-click-to-add-item code in Postal which I missed earlier. Update to v3.0.1.
+------------------------------------------------------------------------
+r215 | xinhuan | 2008-10-14 17:54:41 +0000 (Tue, 14 Oct 2008) | 1 line
+Changed paths:
+   M /trunk
+   M /trunk/Modules/DejaVu.lua
+   M /trunk/Modules/Express.lua
+   M /trunk/Modules/Rake.lua
+   M /trunk/Modules/Wire.lua
+   M /trunk/Postal.lua
+   M /trunk/Postal.toc
+   D /trunk/embeds.xml
+
+Update TOC. Update Version. Remove embeds.xml and use the TOC. Remove tsvn:logtemplate. Remove 2.4.2 compat code. Remove Shift-Click express mail retrieval feature (its now in the default UI). Update code changes necessary to use in 3.0.2.
+------------------------------------------------------------------------
+r214 | root | 2008-09-30 16:07:12 +0000 (Tue, 30 Sep 2008) | 1 line
+Changed paths:
+   M /trunk/.pkgmeta
+
+Hopefully fix .pkgmeta
+------------------------------------------------------------------------
+r213 | root | 2008-09-30 15:00:41 +0000 (Tue, 30 Sep 2008) | 1 line
+Changed paths:
+   M /trunk/.pkgmeta
+
+Hopefully fix .pkgmeta
+------------------------------------------------------------------------
+r212 | root | 2008-09-29 22:01:24 +0000 (Mon, 29 Sep 2008) | 1 line
+Changed paths:
+   M /trunk
+   A /trunk/.pkgmeta
+   M /trunk/Libs
+
+Facilitate WowAce-on-CurseForge transition
+------------------------------------------------------------------------
+r210 | root | 2008-09-29 20:58:30 +0000 (Mon, 29 Sep 2008) | 1 line
+Changed paths:
+   D /tmp/trunk/Postal
+   A /trunk (from /tmp/trunk/Postal:209)
+
+Importing old repo data under /trunk
+------------------------------------------------------------------------
+r209 | xinhuan | 2008-09-28 05:12:56 +0000 (Sun, 28 Sep 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Postal.toc
+
+Postal: -Add X-Email to TOC.
+------------------------------------------------------------------------
+r206 | xinhuan | 2008-08-04 03:59:53 +0000 (Mon, 04 Aug 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/BlackBook.lua
+
+Postal: - Fix Blackbook Friends/Guild dropdown list from not working. Thanks Schultz.
+------------------------------------------------------------------------
+r205 | doktorjet | 2008-07-30 16:16:21 +0000 (Wed, 30 Jul 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Locales/ruRU.lua
+
+Postal: - major fix of russian localization file. Lots of typos removed and unreadable machine translation changed to look more like human language. =)
+------------------------------------------------------------------------
+r204 | xinhuan | 2008-07-25 16:09:32 +0000 (Fri, 25 Jul 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Select.lua
+
+Postal: - When you Ctrl-click a checkbox in Select module, it now selects all mail from the same player (credits to poull).
+------------------------------------------------------------------------
+r203 | StingerSoft | 2008-07-24 12:52:00 +0000 (Thu, 24 Jul 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Locales/ruRU.lua
+
+Postal: - Update locale ruRU
+------------------------------------------------------------------------
+r202 | StingerSoft | 2008-07-24 11:20:32 +0000 (Thu, 24 Jul 2008) | 1 line
+Changed paths:
+   A /tmp/trunk/Postal/Locales/ruRU.lua
+   M /tmp/trunk/Postal/Postal.toc
+
+Postal: - added ruRU translation (thx to Dr. Jet Cheshirsky)
+------------------------------------------------------------------------
+r201 | xinhuan | 2008-07-23 01:41:18 +0000 (Wed, 23 Jul 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/BlackBook.lua
+
+Postal: - The Friends and Guild dropdown lists of BlackBook module is now sorted alphabetically. koKR, zhCN and zhTW locales are not affected by this change.
+------------------------------------------------------------------------
+r200 | xinhuan | 2008-05-24 02:43:15 +0000 (Sat, 24 May 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Express.lua
+
+Postal: - Fix possible hooking error for mouse wheel scroll on the mailbox if it is already hooked/unhooked.
+------------------------------------------------------------------------
+r199 | xinhuan | 2008-05-13 19:50:37 +0000 (Tue, 13 May 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Wire.lua
+
+Postal: - Fix last fix for pre-2.4.2 users.
+------------------------------------------------------------------------
+r198 | xinhuan | 2008-05-13 18:17:16 +0000 (Tue, 13 May 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Rake.lua
+   M /tmp/trunk/Postal/Modules/Wire.lua
+   M /tmp/trunk/Postal/Postal.lua
+
+Postal: - Fix errors that resulted from changes in wow patch 2.4.2. Currently compatible with regions that aren't running on 2.4.2 yet.
+------------------------------------------------------------------------
+r196 | xinhuan | 2008-04-18 07:19:11 +0000 (Fri, 18 Apr 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Express.lua
+
+Postal: - Fix a hooking issue that shouldn't be possible, probably caused by an unknown interfering addon.
+------------------------------------------------------------------------
+r195 | xinhuan | 2008-04-08 08:44:58 +0000 (Tue, 08 Apr 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Express.lua
+
+Postal: - Revert last commit for embedding textures in the fontstrings as it seems to cause word wrapping issues in the tooltip text.
+------------------------------------------------------------------------
+r194 | xinhuan | 2008-04-03 16:35:25 +0000 (Thu, 03 Apr 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Express.lua
+
+Postal: - Convert to using embedded textures in fontstrings, instead of tooltip:AddTexture() so that we can have 12 icons instead of a tooltip's maximum of 10.
+------------------------------------------------------------------------
+r193 | ananhaid | 2008-04-02 14:44:23 +0000 (Wed, 02 Apr 2008) | 2 lines
+Changed paths:
+   M /tmp/trunk/Postal/Locales/zhCN.lua
+
+Postal: 
+- zhCN update.
+------------------------------------------------------------------------
+r192 | next96 | 2008-04-02 02:53:27 +0000 (Wed, 02 Apr 2008) | 2 lines
+Changed paths:
+   M /tmp/trunk/Postal/Locales/koKR.lua
+
+Postal: 
+- Update locale koKR
+------------------------------------------------------------------------
+r191 | whyv | 2008-04-02 02:44:28 +0000 (Wed, 02 Apr 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Locales/zhTW.lua
+
+Postal: -update zhTW
+------------------------------------------------------------------------
+r190 | xinhuan | 2008-04-02 01:57:16 +0000 (Wed, 02 Apr 2008) | 2 lines
+Changed paths:
+   M /tmp/trunk/Postal/Locales/deDE.lua
+   M /tmp/trunk/Postal/Locales/enUS.lua
+   M /tmp/trunk/Postal/Locales/esES.lua
+   M /tmp/trunk/Postal/Locales/frFR.lua
+   M /tmp/trunk/Postal/Locales/koKR.lua
+   M /tmp/trunk/Postal/Locales/zhCN.lua
+   M /tmp/trunk/Postal/Locales/zhTW.lua
+   M /tmp/trunk/Postal/Modules/Express.lua
+
+Postal: - Add Mousewheel scrolling to Inbox frame to Express module. You can turn this off.
+- Return from localization files early instead of creating and registering unnecessary locale tables.
+------------------------------------------------------------------------
+r189 | xinhuan | 2008-03-25 19:33:12 +0000 (Tue, 25 Mar 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Postal.toc
+
+Postal: - Update TOC to 20400, nothing is broken.
+------------------------------------------------------------------------
+r187 | whyv | 2008-02-26 10:09:35 +0000 (Tue, 26 Feb 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Locales/zhTW.lua
+
+Postal: -zhTW fixed! sorry!
+------------------------------------------------------------------------
+r186 | whyv | 2008-02-26 09:54:08 +0000 (Tue, 26 Feb 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Locales/zhTW.lua
+
+Postal: -update zhTW
+------------------------------------------------------------------------
+r185 | xinhuan | 2008-02-12 05:07:47 +0000 (Tue, 12 Feb 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+   M /tmp/trunk/Postal/Modules/Select.lua
+
+Postal: - Fix issue where it sometimes opens mail with just gold in it even though its not selected.
+------------------------------------------------------------------------
+r184 | xinhuan | 2008-02-11 16:35:58 +0000 (Mon, 11 Feb 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Select.lua
+
+Postal: - Fix infinite loop which hangs wow (tailcalls ftw) when trying to return "unreturnable mail" such as AV tokens.
+------------------------------------------------------------------------
+r183 | next96 | 2008-01-12 14:29:33 +0000 (Sat, 12 Jan 2008) | 2 lines
+Changed paths:
+   M /tmp/trunk/Postal/Postal.lua
+
+Postal: 
+- Update locale koKR
+------------------------------------------------------------------------
+r182 | xinhuan | 2008-01-12 06:38:56 +0000 (Sat, 12 Jan 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Select.lua
+
+Postal: - Add a sneaky feature to shift-click a checkbox to select every mail between the clicked one and the previous click (Select Module)
+------------------------------------------------------------------------
+r181 | xinhuan | 2008-01-12 06:09:34 +0000 (Sat, 12 Jan 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+   M /tmp/trunk/Postal/Modules/Select.lua
+   M /tmp/trunk/Postal/Modules/Wire.lua
+   M /tmp/trunk/Postal/Postal.lua
+
+Postal: - Verbose mode now shows the amount of gold collected per mail.
+------------------------------------------------------------------------
+r180 | xinhuan | 2008-01-11 08:10:03 +0000 (Fri, 11 Jan 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+   M /tmp/trunk/Postal/Modules/Select.lua
+
+Postal: - Really fix it this time!
+------------------------------------------------------------------------
+r179 | xinhuan | 2008-01-11 07:52:07 +0000 (Fri, 11 Jan 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+   M /tmp/trunk/Postal/Modules/Select.lua
+
+Postal: - Overlooked nil-ing a variable that caused AH-pending mails to get skipped.
+------------------------------------------------------------------------
+r178 | xinhuan | 2008-01-10 03:12:57 +0000 (Thu, 10 Jan 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+   M /tmp/trunk/Postal/Modules/Select.lua
+
+Postal: - Fix bug where selected mails for opening get skipped.
+------------------------------------------------------------------------
+r177 | hshh | 2008-01-09 01:39:41 +0000 (Wed, 09 Jan 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Locales/zhCN.lua
+
+Postal: update zhCN localization
+------------------------------------------------------------------------
+r176 | xinhuan | 2008-01-05 07:02:06 +0000 (Sat, 05 Jan 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Express.lua
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+   M /tmp/trunk/Postal/Modules/Select.lua
+
+Postal: - Add additional checks to ensure it would not attempt to delete mail if it has any attachments.
+------------------------------------------------------------------------
+r175 | xinhuan | 2008-01-01 07:25:23 +0000 (Tue, 01 Jan 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+
+Postal: - Fix nil error in OpenAll. Silly cut and paste error...
+------------------------------------------------------------------------
+r174 | xinhuan | 2008-01-01 04:55:57 +0000 (Tue, 01 Jan 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+   M /tmp/trunk/Postal/Modules/Select.lua
+
+Postal: - Fix an obscure bug where it sometimes opens unselected mail on a slow opening speed.
+------------------------------------------------------------------------
+r173 | xinhuan | 2008-01-01 03:41:50 +0000 (Tue, 01 Jan 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Select.lua
+
+Postal: - Remove the "Delete Mail" debug message.
+------------------------------------------------------------------------
+r172 | xinhuan | 2008-01-01 03:21:49 +0000 (Tue, 01 Jan 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/BlackBook.lua
+
+Postal: - Fix contact removing to work in BlackBook.
+------------------------------------------------------------------------
+r171 | xinhuan | 2007-12-30 10:10:15 +0000 (Sun, 30 Dec 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+   M /tmp/trunk/Postal/Modules/Select.lua
+
+Postal: - Fixed bug that could cause looting money to get stuck "in progress" on a high ping.
+------------------------------------------------------------------------
+r170 | gamefaq | 2007-12-29 14:53:44 +0000 (Sat, 29 Dec 2007) | 3 lines
+Changed paths:
+   M /tmp/trunk/Postal/Locales/deDE.lua
+
+Postal: - Redone deDE Local
+- Postal is now complety translated into deDE
+- deDE.lua format changed to UTF-8
+------------------------------------------------------------------------
+r169 | xinhuan | 2007-12-28 06:48:26 +0000 (Fri, 28 Dec 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/BlackBook.lua
+
+Postal: - Move the BlackBook menu that popups on mouseover of the "To:" field to a button beside it.
+------------------------------------------------------------------------
+r168 | xinhuan | 2007-12-24 15:50:11 +0000 (Mon, 24 Dec 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+   M /tmp/trunk/Postal/Modules/Select.lua
+
+Postal: - Simplify open next mail check
+------------------------------------------------------------------------
+r167 | next96 | 2007-12-24 15:46:12 +0000 (Mon, 24 Dec 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/Postal/Locales/koKR.lua
+
+Postal: 
+- Update locale koKR
+------------------------------------------------------------------------
+r166 | ananhaid | 2007-12-24 11:30:20 +0000 (Mon, 24 Dec 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/Postal/Locales/zhCN.lua
+
+Postal:
+- zhCN update.
+------------------------------------------------------------------------
+r165 | xinhuan | 2007-12-23 18:47:04 +0000 (Sun, 23 Dec 2007) | 3 lines
+Changed paths:
+   M /tmp/trunk/Postal/Locales/enUS.lua
+   M /tmp/trunk/Postal/Modules/Express.lua
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+   M /tmp/trunk/Postal/Modules/Select.lua
+   M /tmp/trunk/Postal/Postal.lua
+
+Postal:
+- Made a change so that you may now set the amount of time between opening each mail/item/money (default 1.0s). This was previously 0.3s and appeared to disconnect people occasionally when opening mail too quickly.
+- Nailed the bug that caused Select to get "stuck" while opening mail.
+------------------------------------------------------------------------
+r164 | xinhuan | 2007-12-23 16:51:53 +0000 (Sun, 23 Dec 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Select.lua
+
+Postal: - Fix returning mail not working with Select.
+------------------------------------------------------------------------
+r163 | ananhaid | 2007-12-23 10:17:15 +0000 (Sun, 23 Dec 2007) | 3 lines
+Changed paths:
+   M /tmp/trunk/Postal/Locales/zhCN.lua
+
+Postal: 
+- zhCN update.(probably out-of-date?Sorry...Iam late,just typo)  
+
+------------------------------------------------------------------------
+r162 | samuelcup | 2007-12-23 09:35:58 +0000 (Sun, 23 Dec 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Locales/zhCN.lua
+
+Postal: -zhCN updated
+------------------------------------------------------------------------
+r161 | xinhuan | 2007-12-23 07:23:22 +0000 (Sun, 23 Dec 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Express.lua
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+   M /tmp/trunk/Postal/Modules/Select.lua
+   M /tmp/trunk/Postal/Postal.lua
+
+Postal: - Minor fixes and updates
+------------------------------------------------------------------------
+r160 | next96 | 2007-12-23 07:03:10 +0000 (Sun, 23 Dec 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/Postal/Postal.toc
+
+Postal: 
+- toc fix
+------------------------------------------------------------------------
+r159 | xinhuan | 2007-12-22 22:54:37 +0000 (Sat, 22 Dec 2007) | 4 lines
+Changed paths:
+   M /tmp/trunk/Postal/Modules/BlackBook.lua
+   M /tmp/trunk/Postal/Modules/Express.lua
+   D /tmp/trunk/Postal/Modules/Forward.lua
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+   M /tmp/trunk/Postal/Modules/Select.lua
+   M /tmp/trunk/Postal/Postal.lua
+
+Postal:
+- Removed Forward module (which is broken)
+- Rewrote Express module to work like OpenAll/Select
+- Factored out some common code, and removed a ton of unused code.
+------------------------------------------------------------------------
+r158 | xinhuan | 2007-12-22 21:35:41 +0000 (Sat, 22 Dec 2007) | 4 lines
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Express.lua
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+   M /tmp/trunk/Postal/Modules/Select.lua
+   M /tmp/trunk/Postal/Postal.lua
+
+Postal:
+- Rewrote the OpenAll and Select module algorithms. It should open faster and not disconnect people
+- Removed "Alt-click" message from tooltips if the option to send immediately is turned off
+- Removed "Shift-click" message from CoD mail
+------------------------------------------------------------------------
+r157 | xinhuan | 2007-12-21 18:25:18 +0000 (Fri, 21 Dec 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+   M /tmp/trunk/Postal/Modules/Select.lua
+
+Postal: - Fix occasional "Cannot unregister event MAIL_INBOX_UPDATE" error in Select and OpenAll modules resulting from yesterday's code change.
+------------------------------------------------------------------------
+r156 | xinhuan | 2007-12-21 08:56:02 +0000 (Fri, 21 Dec 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+
+Postal: - Move the OpenAll button slightly in the frFR client so it doesn't overlap the word "Suivant".
+------------------------------------------------------------------------
+r155 | next96 | 2007-12-20 08:57:50 +0000 (Thu, 20 Dec 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/Postal/Locales/koKR.lua
+
+Postal: 
+- Update locale koKR
+------------------------------------------------------------------------
+r154 | xinhuan | 2007-12-20 08:20:34 +0000 (Thu, 20 Dec 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Select.lua
+
+Postal: - Modify Select logic slightly so that it will no longer jam on items that a player cannot hold too many of (such as battleground marks).
+------------------------------------------------------------------------
+r153 | xinhuan | 2007-12-20 07:53:39 +0000 (Thu, 20 Dec 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+
+Postal: - Rework OpenAll logic slightly so that it will no longer jam on items that a player cannot hold too many of (such as battleground marks).
+------------------------------------------------------------------------
+r152 | xinhuan | 2007-12-19 17:14:55 +0000 (Wed, 19 Dec 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Locales/enUS.lua
+   M /tmp/trunk/Postal/Modules/Express.lua
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+   M /tmp/trunk/Postal/Postal.lua
+
+Postal: - Fix small non-critical stuff with bigzero's commit. :)
+------------------------------------------------------------------------
+r151 | bigzero | 2007-12-19 16:40:11 +0000 (Wed, 19 Dec 2007) | 4 lines
+Changed paths:
+   M /tmp/trunk/Postal/Locales/enUS.lua
+   M /tmp/trunk/Postal/Modules/Express.lua
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+   M /tmp/trunk/Postal/Postal.lua
+
+Postal:
+- Added option to not auto-send when attaching items to mail
+- dropdown menus now close when the mail frame is closed
+- Localization change to one of the Express module's options
+------------------------------------------------------------------------
+r150 | xinhuan | 2007-12-16 09:07:39 +0000 (Sun, 16 Dec 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Select.lua
+
+Postal: - Fix long standing msgSubject nil possible error.
+------------------------------------------------------------------------
+r149 | next96 | 2007-12-16 03:10:36 +0000 (Sun, 16 Dec 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/Postal/Locales/koKR.lua
+
+Postal: 
+- Update locale koKR
+------------------------------------------------------------------------
+r148 | xinhuan | 2007-12-15 17:32:21 +0000 (Sat, 15 Dec 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Locales/enUS.lua
+   M /tmp/trunk/Postal/Modules/Select.lua
+
+Postal: - Add option to turn off chat spam in Select module when opening mail.
+------------------------------------------------------------------------
+r147 | next96 | 2007-12-14 05:11:38 +0000 (Fri, 14 Dec 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/Postal/Locales/koKR.lua
+
+Postal: 
+- Update locale koKR
+------------------------------------------------------------------------
+r146 | xinhuan | 2007-12-13 18:45:51 +0000 (Thu, 13 Dec 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Locales/enUS.lua
+   M /tmp/trunk/Postal/Modules/Express.lua
+
+Postal: - Add Express module option to disable Alt-Clicking to send items. AltClickToSendItem (if present) will not override this setting.
+------------------------------------------------------------------------
+r145 | next96 | 2007-12-13 18:20:18 +0000 (Thu, 13 Dec 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/Postal/Locales/koKR.lua
+
+Postal: 
+- Update locale koKR
+------------------------------------------------------------------------
+r144 | xinhuan | 2007-12-13 17:54:56 +0000 (Thu, 13 Dec 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/Postal/Locales/enUS.lua
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+   M /tmp/trunk/Postal/Postal.lua
+
+Postal: - OpenAll module has been improved significantly to allow skipping certain types of mail, such as "all Auction expired mail" or "mail with attachments"
+- OpenAll will now also skip mail sent from GMs in addition to skipping mail with CoD
+------------------------------------------------------------------------
+r143 | helium | 2007-12-13 13:50:36 +0000 (Thu, 13 Dec 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Locales/enUS.lua
+   M /tmp/trunk/Postal/Locales/zhTW.lua
+   M /tmp/trunk/Postal/Modules/BlackBook.lua
+
+Postal: - updated zhTW localization
+------------------------------------------------------------------------
+r142 | next96 | 2007-12-12 18:07:05 +0000 (Wed, 12 Dec 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/Postal/Locales/koKR.lua
+
+Postal: 
+- Update locale koKR
+------------------------------------------------------------------------
+r141 | next96 | 2007-12-12 17:47:16 +0000 (Wed, 12 Dec 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/Postal/Locales/koKR.lua
+
+Postal:
+- Update locale koKR
+------------------------------------------------------------------------
+r140 | samuelcup | 2007-12-12 16:19:45 +0000 (Wed, 12 Dec 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Locales/zhCN.lua
+
+Postal: -zhCN updated
+------------------------------------------------------------------------
+r139 | xinhuan | 2007-12-12 13:54:04 +0000 (Wed, 12 Dec 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/Postal/Locales/enUS.lua
+   M /tmp/trunk/Postal/Modules/BlackBook.lua
+   M /tmp/trunk/Postal/Modules/DejaVu.lua
+   M /tmp/trunk/Postal/Modules/Express.lua
+   M /tmp/trunk/Postal/Modules/Forward.lua
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+   M /tmp/trunk/Postal/Modules/Rake.lua
+   M /tmp/trunk/Postal/Modules/Select.lua
+   M /tmp/trunk/Postal/Modules/TradeBlock.lua
+   M /tmp/trunk/Postal/Modules/Wire.lua
+   M /tmp/trunk/Postal/Postal.lua
+
+Postal: - Each module can now be enabled/disabled ingame without needing to delete the individual module files! Use /postal or the options dropdown menu when you visit the mailbox.
+- Lots of code cleanups/optimizations all over.
+------------------------------------------------------------------------
+r138 | grennon | 2007-11-27 07:09:48 +0000 (Tue, 27 Nov 2007) | 1 line
+Changed paths:
+   D /tmp/trunk/Postal/Internals
+   M /tmp/trunk/Postal/Modules/Express.lua
+   M /tmp/trunk/Postal/Modules/Forward.lua
+   M /tmp/trunk/Postal/Postal.lua
+   M /tmp/trunk/Postal/Postal.toc
+
+Postal: -v2.1, Internal Lib experiment removed
+------------------------------------------------------------------------
+r137 | xinhuan | 2007-11-20 07:50:19 +0000 (Tue, 20 Nov 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Internals/PostalLib-1.0.lua
+
+Postal: - Fixed the case where shift-clicking stops taking items out of a multiple attachment mail when the retrieved item stacks on top of an existing stack rather than create a new stack. This is done by listening for BAG_UPDATE on top of UNIT_INVENTORY_CHANGED.
+------------------------------------------------------------------------
+r136 | xinhuan | 2007-11-20 05:36:17 +0000 (Tue, 20 Nov 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Forward.lua
+
+Postal: - Comment out the whole Forward.lua file instead of adding a "do return end" block at the start of the file.
+------------------------------------------------------------------------
+r135 | xinhuan | 2007-11-20 05:31:37 +0000 (Tue, 20 Nov 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/BlackBook.lua
+
+Postal: - Fix potential error that can occur on BlackBook.lua:133. Well, line 133 of the file before this commit that is.
+------------------------------------------------------------------------
+r134 | xinhuan | 2007-11-19 01:49:14 +0000 (Mon, 19 Nov 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Express.lua
+
+Postal: - Add the itemTexture to the tooltips in multiple attachment mails. :)
+------------------------------------------------------------------------
+r133 | xinhuan | 2007-11-19 01:34:54 +0000 (Mon, 19 Nov 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Express.lua
+
+Postal: - Fix alt-click to automatically send the mail, rather than only having it work on the first attached item.
+------------------------------------------------------------------------
+r132 | xinhuan | 2007-11-19 01:28:00 +0000 (Mon, 19 Nov 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Forward.lua
+
+Postal: - Disable Postal_Forward module temporarily as it is currently not working and requires major changes.
+------------------------------------------------------------------------
+r131 | xinhuan | 2007-11-18 22:02:55 +0000 (Sun, 18 Nov 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Internals/PostalLib-1.0.lua
+
+Postal: - Small bugfix for a bug that might happen if you close the mailbox early while shift-clicking on a multiple attachment mail.
+------------------------------------------------------------------------
+r130 | xinhuan | 2007-11-18 05:14:58 +0000 (Sun, 18 Nov 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Internals/PostalLib-1.0.lua
+
+Postal: - Bugfix for retrieving mail with shift-click, occurs when you have an inventory bag change from some other source while retrieving multiple attachments.
+------------------------------------------------------------------------
+r129 | xinhuan | 2007-11-17 19:21:10 +0000 (Sat, 17 Nov 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Express.lua
+
+Postal: - Undo commit 55168 as it breaks RecipeBook. Will have a different fix soon.
+------------------------------------------------------------------------
+r128 | xinhuan | 2007-11-17 17:45:57 +0000 (Sat, 17 Nov 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Libs
+
+Postal: - Remove AbacusLib from externals
+------------------------------------------------------------------------
+r127 | xinhuan | 2007-11-17 17:38:06 +0000 (Sat, 17 Nov 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Wire.lua
+
+Postal: - Small fix.
+------------------------------------------------------------------------
+r126 | xinhuan | 2007-11-17 17:34:22 +0000 (Sat, 17 Nov 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Postal.toc
+   M /tmp/trunk/Postal/embeds.xml
+
+Postal: - Remove all AbacusLib references.
+------------------------------------------------------------------------
+r125 | xinhuan | 2007-11-17 17:18:42 +0000 (Sat, 17 Nov 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Rake.lua
+   M /tmp/trunk/Postal/Modules/Wire.lua
+
+Postal: - Replace the single AbacusLib call with our own small function.
+------------------------------------------------------------------------
+r124 | xinhuan | 2007-11-17 17:01:12 +0000 (Sat, 17 Nov 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Rake.lua
+
+Postal: - Replace the single AbacusLib call with our own small function.
+------------------------------------------------------------------------
+r123 | xinhuan | 2007-11-17 15:27:22 +0000 (Sat, 17 Nov 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Express.lua
+
+Postal: - Throttle Blizzard's code so that InboxFrameItem_OnEnter() doesn't get called every frame in an OnUpdate, where it calls GameTooltip:SetInboxItem() every frame, which calls the 1000 addons that hook it like RatingBuster and EnhTooltip.
+------------------------------------------------------------------------
+r122 | xinhuan | 2007-11-17 14:43:40 +0000 (Sat, 17 Nov 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Express.lua
+
+Postal: - Update the tooltip so that it lists all items in a multiple attachment mail. Also fixed it so that it now properly shows the shift/ctrl-click message properly on all mail instead of just mail with items in it.
+------------------------------------------------------------------------
+r121 | xinhuan | 2007-11-16 21:29:54 +0000 (Fri, 16 Nov 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Internals/PostalLib-1.0.lua
+
+Postal: - Update shift-clicking the Inbox icon to take all attachments in the mail rather than just 1 attachment.
+------------------------------------------------------------------------
+r120 | xinhuan | 2007-11-16 16:46:44 +0000 (Fri, 16 Nov 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Express.lua
+   M /tmp/trunk/Postal/Modules/Forward.lua
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+   M /tmp/trunk/Postal/Modules/Select.lua
+
+Postal: - Fix event unregistrations errors that occur on zoning.
+------------------------------------------------------------------------
+r119 | xinhuan | 2007-11-16 10:38:37 +0000 (Fri, 16 Nov 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/BlackBook.lua
+
+Postal: - Convert 2 more functions to be created *once*, instead of on every Dewdrop.
+------------------------------------------------------------------------
+r118 | xinhuan | 2007-11-16 10:31:22 +0000 (Fri, 16 Nov 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/BlackBook.lua
+
+Postal: - Instead of creating 1000000 copies of the same function in every dewdrop, make *one* local copy instead and reference it.
+------------------------------------------------------------------------
+r117 | xinhuan | 2007-11-16 10:19:25 +0000 (Fri, 16 Nov 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/BlackBook.lua
+
+Postal: - Split the Friends and Guild member listing in the menu (in the Send Mail "To:" section) to sub menus of 25 members each instead of a having a HUGE dewdrop of 280 members where 80% of it is off the bottom of the screen.
+------------------------------------------------------------------------
+r116 | xinhuan | 2007-11-16 08:59:10 +0000 (Fri, 16 Nov 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Forward.lua
+
+Postal: - Small optimization
+------------------------------------------------------------------------
+r115 | xinhuan | 2007-11-16 02:06:52 +0000 (Fri, 16 Nov 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Forward.lua
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+   M /tmp/trunk/Postal/Modules/Select.lua
+
+Postal: - Only unregister MAIL_CLOSED if the event is MAIL_CLOSED or PLAYER_LEAVING_WORLD in :Reset()
+
+------------------------------------------------------------------------
+r114 | xinhuan | 2007-11-16 01:23:48 +0000 (Fri, 16 Nov 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Postal.toc
+
+Postal: - Update TOC to 20300.
+------------------------------------------------------------------------
+r113 | xinhuan | 2007-11-16 01:22:29 +0000 (Fri, 16 Nov 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/Postal/Modules/BlackBook.lua
+   M /tmp/trunk/Postal/Modules/Express.lua
+   M /tmp/trunk/Postal/Modules/Forward.lua
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+   M /tmp/trunk/Postal/Modules/Select.lua
+
+Postal: - Unregister MAIL_CLOSED during MAIL_CLOSED to prevent itself from being run twice unnecessarily (event fires twice if you close the mailbox manually, but only fires once if you walk away).
+- Reregister MAIL_CLOSED during MAIL_SHOW.
+------------------------------------------------------------------------
+r112 | xinhuan | 2007-11-16 01:02:30 +0000 (Fri, 16 Nov 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Select.lua
+
+Postal: - Fix event name registration from MAIL_CLOSE to MAIL_CLOSED. How did this get missed for a year?
+------------------------------------------------------------------------
+r111 | xinhuan | 2007-11-16 00:46:01 +0000 (Fri, 16 Nov 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Express.lua
+
+Postal: - Add code to unhook 2 hooks on PLAYER_LEAVING_WORLD else they may get hooked multiple times. (May happen if a player gets summoned away while viewing mail.)
+------------------------------------------------------------------------
+r110 | xinhuan | 2007-11-16 00:05:15 +0000 (Fri, 16 Nov 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Internals/PostalLib-1.0.lua
+
+Postal: - Add "Sale Pending" mails to be auto-deleted as well where applicable.
+------------------------------------------------------------------------
+r109 | xinhuan | 2007-11-15 23:56:33 +0000 (Thu, 15 Nov 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+
+Postal: - Change the time from 1.5 sec to 0.5 sec between opening each mail/item/attachment.
+------------------------------------------------------------------------
+r108 | xinhuan | 2007-11-15 23:54:51 +0000 (Thu, 15 Nov 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+   M /tmp/trunk/Postal/Modules/Select.lua
+
+Postal: - Updated "Open" selected mail(s) and "Open All" to take all attachments instead of just 1 attachment. Server still requires 0.5 sec between taking each attached item.
+------------------------------------------------------------------------
+r107 | xinhuan | 2007-11-15 21:53:24 +0000 (Thu, 15 Nov 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Forward.lua
+
+Postal: - Don't call MailFrameTab_OnClick(1) on MAIL_CLOSED or PLAYER_LEAVING_WORLD events to stop the annoying sound from playing on zoning. It isn't necessary at all since its always called on opening the mailbox.
+------------------------------------------------------------------------
+r106 | tsigo | 2007-11-14 23:37:48 +0000 (Wed, 14 Nov 2007) | 3 lines
+Changed paths:
+   M /tmp/trunk/Postal/Internals/PostalLib-1.0.lua
+   M /tmp/trunk/Postal/Modules/Forward.lua
+
+Postal:
+- Fixed the IsHooked errors
+- Fixed (I think?) a nil object error that cropped up when trying to call OpenMailPackageButtonIconTexture:SetDesaturated(nil) when no package was present in the mail
+------------------------------------------------------------------------
+r105 | helium | 2007-10-31 09:50:15 +0000 (Wed, 31 Oct 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Locales/zhTW.lua
+   M /tmp/trunk/Postal/Postal.toc
+
+Postal: - update zhTW localization
+------------------------------------------------------------------------
+r104 | boydon | 2007-09-26 18:45:18 +0000 (Wed, 26 Sep 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/Postal/Postal.toc
+
+Postal:
+- Added X-Category to the .toc so the addon is correctly handled by  WowAce's Packagemancer
+------------------------------------------------------------------------
+r103 | boydon | 2007-09-26 18:24:50 +0000 (Wed, 26 Sep 2007) | 5 lines
+Changed paths:
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+   M /tmp/trunk/Postal/Postal.toc
+
+Postal:
+- Updated TOC for patch 2.2
+- OpenAll now is a bit slower, but should skip less messages
+
+
+------------------------------------------------------------------------
+r102 | hshh | 2007-09-07 05:56:17 +0000 (Fri, 07 Sep 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+   M /tmp/trunk/Postal/Modules/Select.lua
+
+Postal: remove not worked codes, I am too stupid!
+------------------------------------------------------------------------
+r101 | xionglingfeng | 2007-08-08 14:45:14 +0000 (Wed, 08 Aug 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Locales/zhCN.lua
+
+Postal: -There is something wrong with Postal's Chinese Simplify language, I have fixed it.
+------------------------------------------------------------------------
+r100 | darkimakuni | 2007-08-07 19:09:40 +0000 (Tue, 07 Aug 2007) | 3 lines
+Changed paths:
+   M /tmp/trunk/Postal/Internals/BagLib-1.0.lua
+   M /tmp/trunk/Postal/Internals/PostalLib-1.0.lua
+   M /tmp/trunk/Postal/Locales/frFR.lua
+   M /tmp/trunk/Postal/Modules/BlackBook.lua
+   M /tmp/trunk/Postal/Modules/DejaVu.lua
+   M /tmp/trunk/Postal/Modules/Rake.lua
+
+Postal:
+- Trim trailing whitespace
+- BlackBook: Prevent duplicate Contact entries
+------------------------------------------------------------------------
+r99 | darkimakuni | 2007-07-28 18:06:06 +0000 (Sat, 28 Jul 2007) | 3 lines
+Changed paths:
+   M /tmp/trunk/Postal/Modules/BlackBook.lua
+
+Postal_BlackBook:
+- dewdrop:AddLine("text", "") -> dewdrop:AddLine()
+
+------------------------------------------------------------------------
+r98 | hshh | 2007-07-10 17:15:59 +0000 (Tue, 10 Jul 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+   M /tmp/trunk/Postal/Modules/Select.lua
+
+Postal: - hide MiniMapMailFrame if no new mail, check every mail inbox update event.
+------------------------------------------------------------------------
+r97 | mikk | 2007-07-03 11:57:09 +0000 (Tue, 03 Jul 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Express.lua
+   M /tmp/trunk/Postal/Postal.lua
+
+Postal: Make it behave the first time the mailbox is opened when LoD.
+------------------------------------------------------------------------
+r96 | hshh | 2007-06-29 10:49:12 +0000 (Fri, 29 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Locales/zhCN.lua
+
+Postal: fix zhCN localization
+------------------------------------------------------------------------
+r95 | hshh | 2007-06-28 03:23:32 +0000 (Thu, 28 Jun 2007) | 1 line
+Changed paths:
+   A /tmp/trunk/Postal/Locales/zhCN.lua
+   M /tmp/trunk/Postal/Postal.toc
+
+Postal: Added zhCN localization
+------------------------------------------------------------------------
+r94 | durcyn | 2007-06-25 21:44:05 +0000 (Mon, 25 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Postal.toc
+   A /tmp/trunk/Postal/embeds.xml
+
+Postal: use embeds.xml, for great justice.
+------------------------------------------------------------------------
+r93 | miyu | 2007-06-23 06:35:10 +0000 (Sat, 23 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Locales/zhTW.lua
+
+Postal: - Update zhTW locale file
+------------------------------------------------------------------------
+r92 | sayclub | 2007-06-20 01:30:06 +0000 (Wed, 20 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Locales/koKR.lua
+
+Postal: - Updated localization koKR
+------------------------------------------------------------------------
+r91 | grennon | 2007-06-18 15:45:20 +0000 (Mon, 18 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Postal.lua
+
+Postal: -fix tremovebyval for Select, etc
+------------------------------------------------------------------------
+r90 | mikk | 2007-06-16 17:14:39 +0000 (Sat, 16 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Postal.toc
+
+Postal: Use AddonLoader as LoadManager (onmailbox, onslash)
+------------------------------------------------------------------------
+r88 | gamefaq | 2007-06-12 22:15:21 +0000 (Tue, 12 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Locales/deDE.lua
+
+Postal: - Updated deDE Local
+------------------------------------------------------------------------
+r87 | grennon | 2007-06-12 15:34:56 +0000 (Tue, 12 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Postal.toc
+
+Postal: -fix duplicate entry for AceEvent in .toc
+------------------------------------------------------------------------
+r86 | grennon | 2007-06-12 15:32:23 +0000 (Tue, 12 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Select.lua
+
+Postal: -fix COD locale hook in Select module
+------------------------------------------------------------------------
+r85 | grennon | 2007-06-12 15:26:19 +0000 (Tue, 12 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+
+Postal: -fix out of bagspace error on OpenAll
+------------------------------------------------------------------------
+r84 | sayclub | 2007-06-12 05:02:24 +0000 (Tue, 12 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Locales/koKR.lua
+
+Postal: - koKR typo fix
+------------------------------------------------------------------------
+r83 | sayclub | 2007-06-11 22:54:34 +0000 (Mon, 11 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Locales/koKR.lua
+
+Postal: - Updated localization koKR
+------------------------------------------------------------------------
+r82 | grennon | 2007-06-11 22:34:47 +0000 (Mon, 11 Jun 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/Postal/Locales/enUS.lua
+   M /tmp/trunk/Postal/Modules/BlackBook.lua
+   M /tmp/trunk/Postal/Modules/Forward.lua
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+   M /tmp/trunk/Postal/Modules/Select.lua
+   M /tmp/trunk/Postal/Modules/TradeBlock.lua
+   M /tmp/trunk/Postal/Postal.lua
+
+Postal: 
+- Use Reverse Index for Select, Cleanups on Select, Rewrite of TradeBlock, Moved more from PostalLib to Postal core, support for MrPlow in OpenAll
+------------------------------------------------------------------------
+r81 | grennon | 2007-06-09 05:13:25 +0000 (Sat, 09 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Locales/enUS.lua
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+
+Postal: -new locale hooks for OpenAll
+------------------------------------------------------------------------
+r80 | grennon | 2007-06-09 00:21:44 +0000 (Sat, 09 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+   M /tmp/trunk/Postal/Postal.lua
+
+Postal: -transitioned functions from internal lib to the core module, further fine tuning and fixes to OpenAll
+------------------------------------------------------------------------
+r79 | grennon | 2007-06-08 20:41:53 +0000 (Fri, 08 Jun 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+
+Postal:
+-OpenAll rewritten, one gazillion percent faster, more reliable than a Camry, and almost finished
+------------------------------------------------------------------------
+r73 | helium | 2007-05-28 09:48:24 +0000 (Mon, 28 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Locales/enUS.lua
+   M /tmp/trunk/Postal/Locales/zhTW.lua
+   M /tmp/trunk/Postal/Modules/Wire.lua
+
+Postal: - updated zhTW locale
+------------------------------------------------------------------------
+r72 | sayclub | 2007-05-22 23:50:33 +0000 (Tue, 22 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Locales/koKR.lua
+
+Postal: - Typo Fix
+------------------------------------------------------------------------
+r71 | ammo | 2007-05-22 09:02:26 +0000 (Tue, 22 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/Postal/Postal.toc
+
+Postal: toc => 20100
+
+------------------------------------------------------------------------
+r70 | darkimakuni | 2007-04-04 20:11:08 +0000 (Wed, 04 Apr 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/Postal/Postal.toc
+
+Postal
+- PostalDBPerChar is now saved per character, rather than for all characters (probably not backwards compatiable).
+------------------------------------------------------------------------
+r69 | renchap | 2007-03-29 20:10:21 +0000 (Thu, 29 Mar 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/Postal/Modules/TradeBlock.lua
+
+Postal:
+- Adding a way to fix the bug where postal keeps blocking trades when you have no mailbox window open
+------------------------------------------------------------------------
+r68 | kayin | 2007-03-28 01:31:25 +0000 (Wed, 28 Mar 2007) | 1 line
+Changed paths:
+   A /tmp/trunk/Postal/Locales/zhTW.lua
+   M /tmp/trunk/Postal/Postal.toc
+
+Postal: Added localization zhTW.
+------------------------------------------------------------------------
+r67 | rabbit | 2007-01-29 13:47:32 +0000 (Mon, 29 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Locales/deDE.lua
+
+Postal: deDE update by to.be.
+------------------------------------------------------------------------
+r66 | renchap | 2007-01-28 19:49:28 +0000 (Sun, 28 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Locales/frFR.lua
+
+Postal: frFR update
+------------------------------------------------------------------------
+r65 | sayclub | 2007-01-28 15:30:56 +0000 (Sun, 28 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Locales/koKR.lua
+
+Postal: - Update locals koKR
+------------------------------------------------------------------------
+r64 | rabbit | 2007-01-28 13:04:41 +0000 (Sun, 28 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/TradeBlock.lua
+
+Postal: TradeBlock: Make sure to reset the block trade cvar when the user logs out with his mailbox open.
+------------------------------------------------------------------------
+r63 | rabbit | 2007-01-28 12:48:52 +0000 (Sun, 28 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+
+Postal: OpenAll: Bugfix.
+------------------------------------------------------------------------
+r62 | rabbit | 2007-01-28 12:35:24 +0000 (Sun, 28 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Select.lua
+
+Postal: Select: Bugfix.
+------------------------------------------------------------------------
+r61 | shiftos | 2007-01-28 12:24:22 +0000 (Sun, 28 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Locales/esES.lua
+
+Postal: updated esES
+------------------------------------------------------------------------
+r60 | rabbit | 2007-01-28 04:04:10 +0000 (Sun, 28 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/Express.lua
+
+Postal: Express: Bugfix.
+------------------------------------------------------------------------
+r59 | rabbit | 2007-01-28 04:01:32 +0000 (Sun, 28 Jan 2007) | 5 lines
+Changed paths:
+   M /tmp/trunk/Postal/Locales/enUS.lua
+   M /tmp/trunk/Postal/Modules/BlackBook.lua
+   M /tmp/trunk/Postal/Modules/DejaVu.lua
+   M /tmp/trunk/Postal/Modules/Express.lua
+   M /tmp/trunk/Postal/Modules/Forward.lua
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+   M /tmp/trunk/Postal/Modules/Rake.lua
+   M /tmp/trunk/Postal/Modules/Select.lua
+   M /tmp/trunk/Postal/Modules/Wire.lua
+
+Postal:
+ * Some cleanup
+ * Items now get a "Alt-Click to send this item to <recipient>." with recipient properly replaced by the name in the send mail to textbox when appropriate.
+ * The contacts dewdrop now closes when you click a name.
+ * Stop creating frames every OnEnable, only create them once.
+------------------------------------------------------------------------
+r58 | rabbit | 2007-01-24 18:56:22 +0000 (Wed, 24 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Modules/BlackBook.lua
+
+Postal: BlackBook: Fix the guild menu.
+------------------------------------------------------------------------
+r57 | kergoth | 2007-01-23 23:43:23 +0000 (Tue, 23 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Internals/BagLib-1.0.lua
+   M /tmp/trunk/Postal/Internals/PostalLib-1.0.lua
+   M /tmp/trunk/Postal/Locales/deDE.lua
+   M /tmp/trunk/Postal/Locales/enUS.lua
+   M /tmp/trunk/Postal/Locales/esES.lua
+   M /tmp/trunk/Postal/Locales/frFR.lua
+   M /tmp/trunk/Postal/Locales/koKR.lua
+
+.Line ending fixups part 2: trunk/ (script ended prematurely).
+------------------------------------------------------------------------
+r56 | shiftos | 2007-01-23 16:15:58 +0000 (Tue, 23 Jan 2007) | 1 line
+Changed paths:
+   A /tmp/trunk/Postal/Locales/esES.lua
+   M /tmp/trunk/Postal/Postal.toc
+
+Postal: - added spanish (esES) translation
+------------------------------------------------------------------------
+r55 | ammo | 2007-01-22 15:26:04 +0000 (Mon, 22 Jan 2007) | 2 lines
+Changed paths:
+   A /tmp/trunk/Postal/Locales/deDE.lua
+   M /tmp/trunk/Postal/Postal.toc
+
+Postal: added deDE locale by Takorou
+
+------------------------------------------------------------------------
+r54 | rabbit | 2007-01-20 19:36:24 +0000 (Sat, 20 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Locales/koKR.lua
+
+Postal: Fix koKR.
+------------------------------------------------------------------------
+r53 | sayclub | 2007-01-20 16:33:59 +0000 (Sat, 20 Jan 2007) | 3 lines
+Changed paths:
+   M /tmp/trunk/Postal/Locales/enUS.lua
+   M /tmp/trunk/Postal/Locales/frFR.lua
+   M /tmp/trunk/Postal/Locales/koKR.lua
+   M /tmp/trunk/Postal/Modules/BlackBook.lua
+
+Postal: -
+- more Localization (Menu list locals)
+- Update locals koKR
+------------------------------------------------------------------------
+r52 | rabbit | 2007-01-20 04:50:52 +0000 (Sat, 20 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Internals/BagLib-1.0.lua
+   M /tmp/trunk/Postal/Internals/PostalLib-1.0.lua
+   M /tmp/trunk/Postal/Libs
+   M /tmp/trunk/Postal/Modules/BlackBook.lua
+   M /tmp/trunk/Postal/Modules/DejaVu.lua
+   M /tmp/trunk/Postal/Modules/Express.lua
+   M /tmp/trunk/Postal/Modules/Forward.lua
+   M /tmp/trunk/Postal/Modules/OpenAll.lua
+   M /tmp/trunk/Postal/Modules/Rake.lua
+   M /tmp/trunk/Postal/Modules/Select.lua
+   M /tmp/trunk/Postal/Modules/TradeBlock.lua
+   M /tmp/trunk/Postal/Modules/Wire.lua
+   M /tmp/trunk/Postal/Postal.lua
+   M /tmp/trunk/Postal/Postal.toc
+
+Postal: Random, insignificant changes, except making blackbook actually work.
+------------------------------------------------------------------------
+r51 | ammo | 2007-01-19 12:41:07 +0000 (Fri, 19 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal
+   D /tmp/trunk/Postal/BagLib
+   A /tmp/trunk/Postal/Internals (from /tmp/branches/Postal/Ammo/Postal/Internals:50)
+   R /tmp/trunk/Postal/Internals/BagLib-1.0.lua (from /tmp/branches/Postal/Ammo/Postal/Internals/BagLib-1.0.lua:50)
+   R /tmp/trunk/Postal/Internals/PostalLib-1.0.lua (from /tmp/branches/Postal/Ammo/Postal/Internals/PostalLib-1.0.lua:50)
+   A /tmp/trunk/Postal/Libs (from /tmp/branches/Postal/Ammo/Postal/Libs:50)
+   A /tmp/trunk/Postal/Locales (from /tmp/branches/Postal/Ammo/Postal/Locales:50)
+   R /tmp/trunk/Postal/Locales/enUS.lua (from /tmp/branches/Postal/Ammo/Postal/Locales/enUS.lua:50)
+   R /tmp/trunk/Postal/Locales/frFR.lua (from /tmp/branches/Postal/Ammo/Postal/Locales/frFR.lua:50)
+   R /tmp/trunk/Postal/Locales/koKR.lua (from /tmp/branches/Postal/Ammo/Postal/Locales/koKR.lua:50)
+   A /tmp/trunk/Postal/Modules (from /tmp/branches/Postal/Ammo/Postal/Modules:50)
+   R /tmp/trunk/Postal/Modules/BlackBook.lua (from /tmp/branches/Postal/Ammo/Postal/Modules/BlackBook.lua:50)
+   R /tmp/trunk/Postal/Modules/DejaVu.lua (from /tmp/branches/Postal/Ammo/Postal/Modules/DejaVu.lua:50)
+   R /tmp/trunk/Postal/Modules/Express.lua (from /tmp/branches/Postal/Ammo/Postal/Modules/Express.lua:50)
+   R /tmp/trunk/Postal/Modules/Forward.lua (from /tmp/branches/Postal/Ammo/Postal/Modules/Forward.lua:50)
+   R /tmp/trunk/Postal/Modules/OpenAll.lua (from /tmp/branches/Postal/Ammo/Postal/Modules/OpenAll.lua:50)
+   R /tmp/trunk/Postal/Modules/Rake.lua (from /tmp/branches/Postal/Ammo/Postal/Modules/Rake.lua:50)
+   R /tmp/trunk/Postal/Modules/Select.lua (from /tmp/branches/Postal/Ammo/Postal/Modules/Select.lua:50)
+   R /tmp/trunk/Postal/Modules/TradeBlock.lua (from /tmp/branches/Postal/Ammo/Postal/Modules/TradeBlock.lua:50)
+   R /tmp/trunk/Postal/Modules/Wire.lua (from /tmp/branches/Postal/Ammo/Postal/Modules/Wire.lua:50)
+   A /tmp/trunk/Postal/Postal.lua (from /tmp/branches/Postal/Ammo/Postal/Postal.lua:50)
+   M /tmp/trunk/Postal/Postal.toc
+   D /tmp/trunk/Postal/PostalLib
+   D /tmp/trunk/Postal/Postal_BlackBook
+   D /tmp/trunk/Postal/Postal_DejaVu
+   D /tmp/trunk/Postal/Postal_Express
+   D /tmp/trunk/Postal/Postal_Forward
+   D /tmp/trunk/Postal/Postal_OpenAll
+   D /tmp/trunk/Postal/Postal_Rake
+   D /tmp/trunk/Postal/Postal_Select
+   D /tmp/trunk/Postal/Postal_TradeBlock
+   D /tmp/trunk/Postal/Postal_Wire
+
+Postal: Merging modular branch to trunk
+------------------------------------------------------------------------
+r34 | grennon | 2007-01-15 16:35:31 +0000 (Mon, 15 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/PostalLib/PostalLib-1.0.lua
+
+Postal: -one char fix for unique items
+------------------------------------------------------------------------
+r33 | grennon | 2007-01-15 16:01:36 +0000 (Mon, 15 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/PostalLib/PostalLib-1.0.lua
+
+Postal: -misc postallib hardening and race fix
+------------------------------------------------------------------------
+r32 | grennon | 2007-01-15 15:28:45 +0000 (Mon, 15 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/PostalLib/PostalLib-1.0.lua
+
+Postal: -Added extra item/money check before deletion, Added possible fix for unique items
+------------------------------------------------------------------------
+r31 | sayclub | 2007-01-15 00:20:39 +0000 (Mon, 15 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Postal_BlackBook/Postal_BlackBook.lua
+   M /tmp/trunk/Postal/Postal_Forward/Postal_Forward.lua
+
+Postal: -Updated localization koKR
+------------------------------------------------------------------------
+r30 | sayclub | 2007-01-14 23:47:20 +0000 (Sun, 14 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Postal_BlackBook/Postal_BlackBook.lua
+   M /tmp/trunk/Postal/Postal_Express/Postal_Express.lua
+   M /tmp/trunk/Postal/Postal_Forward/Postal_Forward.lua
+
+Postal: - Update locals koKR
+------------------------------------------------------------------------
+r29 | sayclub | 2007-01-14 14:59:10 +0000 (Sun, 14 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Postal_BlackBook/Postal_BlackBook.lua
+   M /tmp/trunk/Postal/Postal_Forward/Postal_Forward.lua
+   M /tmp/trunk/Postal/Postal_OpenAll/Postal_OpenAll.lua
+   M /tmp/trunk/Postal/Postal_Rake/Postal_Rake.lua
+   M /tmp/trunk/Postal/Postal_Select/Postal_Select.lua
+
+Postal: - koKR translation
+------------------------------------------------------------------------
+r28 | renchap | 2007-01-14 13:54:05 +0000 (Sun, 14 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Postal.toc
+   M /tmp/trunk/Postal/Postal_BlackBook/Postal_BlackBook.lua
+   M /tmp/trunk/Postal/Postal_Forward/Postal_Forward.lua
+   M /tmp/trunk/Postal/Postal_OpenAll/Postal_OpenAll.lua
+   M /tmp/trunk/Postal/Postal_Rake/Postal_Rake.lua
+   M /tmp/trunk/Postal/Postal_Select/Postal_Select.lua
+
+Postal: frFR translation
+------------------------------------------------------------------------
+r27 | grennon | 2007-01-14 01:22:38 +0000 (Sun, 14 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Postal_Rake/Postal_Rake.lua
+
+Postal: -one line fix for negative cash flows
+------------------------------------------------------------------------
+r26 | grennon | 2007-01-13 04:56:49 +0000 (Sat, 13 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Postal_BlackBook/Postal_BlackBook.lua
+   M /tmp/trunk/Postal/Postal_Rake/Postal_Rake.lua
+
+Postal: -Cannot add Blank Contacts in BlackBook, Added Localalization to Rake
+------------------------------------------------------------------------
+r25 | grennon | 2007-01-13 04:06:56 +0000 (Sat, 13 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal
+   M /tmp/trunk/Postal/Postal.toc
+   A /tmp/trunk/Postal/Postal_BlackBook
+   A /tmp/trunk/Postal/Postal_BlackBook/Postal_BlackBook.lua
+
+Postal: -Postal_BlackBook: Adds a popup contact list when you mouseover the To: field. The MailTo killer.
+------------------------------------------------------------------------
+r24 | grennon | 2007-01-12 09:00:45 +0000 (Fri, 12 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal
+   M /tmp/trunk/Postal/Postal.toc
+   M /tmp/trunk/Postal/PostalLib/PostalLib-1.0.lua
+   A /tmp/trunk/Postal/Postal_Rake
+   A /tmp/trunk/Postal/Postal_Rake/Postal_Rake.lua
+   M /tmp/trunk/Postal/Postal_Wire/Postal_Wire.lua
+
+Postal: -fix for Wire, Added delays to PostalLib, New Module: Postal_Rake, displays money gains on closing the mailframe
+------------------------------------------------------------------------
+r23 | grennon | 2007-01-12 05:36:46 +0000 (Fri, 12 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Postal_DejaVu/Postal_DejaVu.lua
+
+Postal: -One line fix for the new DejuVu history shizz
+------------------------------------------------------------------------
+r22 | grennon | 2007-01-12 04:52:21 +0000 (Fri, 12 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Postal_DejaVu/Postal_DejaVu.lua
+
+Postal: -Added 15 Sendee memory to Posta_DejaVu, use Up/Down Arrow to navigate history
+------------------------------------------------------------------------
+r21 | grennon | 2007-01-10 16:10:01 +0000 (Wed, 10 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Postal_OpenAll/Postal_OpenAll.lua
+
+Postal: -make sure we have mail before trying to process any, thanks Azurewrath
+------------------------------------------------------------------------
+r20 | grennon | 2007-01-10 16:04:02 +0000 (Wed, 10 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Postal_Select/Postal_Select.lua
+
+Postal: -perform check in postal_select to make sure there is something checked before trying to process the checked table
+------------------------------------------------------------------------
+r19 | grennon | 2007-01-10 08:38:28 +0000 (Wed, 10 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal/Postal_Forward/Postal_Forward.lua
+
+Postal: -Postal_Forward.lua check events before trying to unregister them
+------------------------------------------------------------------------
+r18 | grennon | 2007-01-10 08:31:08 +0000 (Wed, 10 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/Postal
+
+Postal: -add externals since im a nub who didnt branch to trunk
+------------------------------------------------------------------------
+r17 | grennon | 2007-01-10 08:29:13 +0000 (Wed, 10 Jan 2007) | 1 line
+Changed paths:
+   A /tmp/trunk/Postal
+   A /tmp/trunk/Postal/BagLib
+   A /tmp/trunk/Postal/BagLib/BagLib-1.0.lua
+   A /tmp/trunk/Postal/Postal.toc
+   A /tmp/trunk/Postal/PostalLib
+   A /tmp/trunk/Postal/PostalLib/PostalLib-1.0.lua
+   A /tmp/trunk/Postal/Postal_DejaVu
+   A /tmp/trunk/Postal/Postal_DejaVu/Postal_DejaVu.lua
+   A /tmp/trunk/Postal/Postal_Express
+   A /tmp/trunk/Postal/Postal_Express/Postal_Express.lua
+   A /tmp/trunk/Postal/Postal_Forward
+   A /tmp/trunk/Postal/Postal_Forward/Postal_Forward.lua
+   A /tmp/trunk/Postal/Postal_OpenAll
+   A /tmp/trunk/Postal/Postal_OpenAll/Postal_OpenAll.lua
+   A /tmp/trunk/Postal/Postal_Select
+   A /tmp/trunk/Postal/Postal_Select/Postal_Select.lua
+   A /tmp/trunk/Postal/Postal_TradeBlock
+   A /tmp/trunk/Postal/Postal_TradeBlock/Postal_TradeBlock.lua
+   A /tmp/trunk/Postal/Postal_Wire
+   A /tmp/trunk/Postal/Postal_Wire/Postal_Wire.lua
+
+Postal: initial commit
+------------------------------------------------------------------------

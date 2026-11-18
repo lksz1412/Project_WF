@@ -1,0 +1,29 @@
+## Interface: 30200
+## X-Curse-Packaged-Version: r84-release
+## X-Curse-Project-Name: SmoothQuest
+## X-Curse-Project-ID: smooth-quest
+## X-Curse-Repository-ID: wow/smooth-quest/mainline
+
+## Title: Smooth Quest
+## Notes: Gives a Smoother Quest Experience
+## Author: Ammo
+## X-Credits: Que'Level by Tekkub and Quixote by Kemayo
+
+## OptionalDeps: Ace3, LibSink-2.0
+
+## SavedVariables: SmoothQuestDB
+
+## LoadManagers: AddonLoader
+## X-LoadOn-Always: delayed
+
+#@no-lib-strip@
+libs.xml
+#@end-no-lib-strip@
+
+locale\enUS.lua
+locale\frFR.lua
+locale\deDE.lua
+locale\zhTW.lua
+
+SmoothQuest.lua
+

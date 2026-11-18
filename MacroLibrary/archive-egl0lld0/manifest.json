@@ -1,0 +1,530 @@
+[
+  {
+    "scope": "character-01",
+    "source": "C:\\Program Files (x86)\\World of Warcraft\\_retail_\\WTF\\Account\\ACCOUNT_01\\REALM_01\\character-01\\macros-cache.txt",
+    "archive": "originals/character-01/macros-cache.txt",
+    "bytes": 1670,
+    "sha256": "DCBAB2658DC26A8449D3DCAD53EC7C9BEBBEE1D4092D98B8E0602743FC4B9335",
+    "count": 11,
+    "entries": [
+      {
+        "reference": "character-01-01",
+        "name": "고정",
+        "startLine": 1,
+        "endLine": 6,
+        "literal": [
+          "#showtooltip",
+          "/cast [nochannaeling][nomod] 고정 사격",
+          "/cast [nochannaeling][mod:alt] 고정 사격",
+          "/cast [nochannaeling][mod:shift] 고정 사격"
+        ]
+      },
+      {
+        "reference": "character-01-02",
+        "name": "구속",
+        "startLine": 7,
+        "endLine": 11,
+        "literal": [
+          "#showtooltip",
+          "/cast 구속의 사격",
+          "/changeactionbar [actionbar:2] 1"
+        ]
+      },
+      {
+        "reference": "character-01-03",
+        "name": "날철",
+        "startLine": 12,
+        "endLine": 13,
+        "literal": []
+      },
+      {
+        "reference": "character-01-04",
+        "name": "눈속",
+        "startLine": 14,
+        "endLine": 19,
+        "literal": [
+          "#showtooltip",
+          "/cast [group:party, @party1] 눈속임",
+          "/cast [group:raid, @mouseover, nodead][@focus, raid] 눈속임",
+          "/cast [nogroup, @pet] 눈속임"
+        ]
+      },
+      {
+        "reference": "character-01-05",
+        "name": "섬광",
+        "startLine": 20,
+        "endLine": 24,
+        "literal": [
+          "#showtooltip",
+          "/cast 섬광",
+          "/changeactionbar [actionbar:2] 1"
+        ]
+      },
+      {
+        "reference": "character-01-06",
+        "name": "신.일",
+        "startLine": 25,
+        "endLine": 29,
+        "literal": [
+          "#showtooltip [mod:alt]일제 사격;신비한 사격",
+          "/cast [nochannaeling][mod:alt] 일제 사격",
+          "/cast [nochannaeling][nomod] 신비한 사격"
+        ]
+      },
+      {
+        "reference": "character-01-07",
+        "name": "얼덫",
+        "startLine": 30,
+        "endLine": 34,
+        "literal": [
+          "#showtooltip",
+          "/cast 빙결 덫",
+          "/changeactionbar [actionbar:2] 1"
+        ]
+      },
+      {
+        "reference": "character-01-08",
+        "name": "연발",
+        "startLine": 35,
+        "endLine": 38,
+        "literal": [
+          "#showtooltip",
+          "/cast [@CURSOR] 연발 공격"
+        ]
+      },
+      {
+        "reference": "character-01-09",
+        "name": "조준",
+        "startLine": 39,
+        "endLine": 44,
+        "literal": [
+          "#showtooltip",
+          "/cast [nochannaeling][nomod] 조준 사격",
+          "/cast [nochannaeling][mod:alt] 조준 사격",
+          "/cast [nochannaeling][mod:shift] 조준 사격"
+        ]
+      },
+      {
+        "reference": "character-01-10",
+        "name": "죽척",
+        "startLine": 45,
+        "endLine": 52,
+        "literal": [
+          "#showtooltip",
+          "/stopcasting",
+          "/stopcasting",
+          "/stop attack",
+          "/cast 죽은 척하기",
+          "/cast 죽은 체하기"
+        ]
+      },
+      {
+        "reference": "character-01-11",
+        "name": "타르",
+        "startLine": 53,
+        "endLine": 57,
+        "literal": [
+          "#showtooltip",
+          "/cast 타르 덫",
+          "/changeactionbar [actionbar:2] 1"
+        ]
+      }
+    ]
+  },
+  {
+    "scope": "character-02",
+    "source": "C:\\Program Files (x86)\\World of Warcraft\\_retail_\\WTF\\Account\\ACCOUNT_01\\REALM_01\\character-02\\macros-cache.txt",
+    "archive": "originals/character-02/macros-cache.txt",
+    "bytes": 2403,
+    "sha256": "2F99022ACAF4409A48C16F40600A7CA2E8CA97C1B80F6FFDDEDEE56585EEAC4F",
+    "count": 16,
+    "entries": [
+      {
+        "reference": "character-02-01",
+        "name": "가막",
+        "startLine": 1,
+        "endLine": 6,
+        "literal": [
+          "#showtooltip [mod:alt]돌진;가로막기",
+          "/run UIErrorsFrame:UnregisterEvent(\"UI_ERROR_MESSAGE\")",
+          "/시전 [target=mouseover,help][help]가로막기",
+          "/시전 [target=mouseover,harm][harm]돌진"
+        ]
+      },
+      {
+        "reference": "character-02-02",
+        "name": "고감",
+        "startLine": 7,
+        "endLine": 11,
+        "literal": [
+          "#showtooltip",
+          "/startattack",
+          "/cast [mod:alt]투신;고통 감내"
+        ]
+      },
+      {
+        "reference": "character-02-03",
+        "name": "도발",
+        "startLine": 12,
+        "endLine": 15,
+        "literal": [
+          "#showtooltip",
+          "/시전 [@mouseovertarget,harm][@mouseover,harm][harm]도발;도발"
+        ]
+      },
+      {
+        "reference": "character-02-04",
+        "name": "돌마격",
+        "startLine": 16,
+        "endLine": 22,
+        "literal": [
+          "#showtooltip [mod:alt]돌진;마무리 일격",
+          "/run UIErrorsFrame:UnregisterEvent(\"UI_ERROR_MESSAGE\")",
+          "/cast 마무리 일격",
+          "/stopcasting",
+          "/cast 돌진"
+        ]
+      },
+      {
+        "reference": "character-02-05",
+        "name": "무기변환",
+        "startLine": 23,
+        "endLine": 30,
+        "literal": [
+          "#showtooltip",
+          "/stopcasting",
+          "/equipslot [equipped:방패] 16 명예결속단 글라디우스",
+          "/equipslot [equipped:방패] 17 하수인 절단기",
+          "/equipslot [noequipped:방패] 16 명예결속단 글라디우스",
+          "/equipslot [noequipped:방패] 17 태양섬광 방패"
+        ]
+      },
+      {
+        "reference": "character-02-06",
+        "name": "방밀",
+        "startLine": 31,
+        "endLine": 35,
+        "literal": [
+          "#showtooltip",
+          "/startattack",
+          "/cast 방패 밀쳐내기"
+        ]
+      },
+      {
+        "reference": "character-02-07",
+        "name": "방벽",
+        "startLine": 36,
+        "endLine": 40,
+        "literal": [
+          "#showtooltip",
+          "/cast 방패의 벽",
+          "/use 생명석"
+        ]
+      },
+      {
+        "reference": "character-02-08",
+        "name": "복수",
+        "startLine": 41,
+        "endLine": 45,
+        "literal": [
+          "#showtooltip",
+          "/startattack",
+          "/cast 복수"
+        ]
+      },
+      {
+        "reference": "character-02-09",
+        "name": "봉쇄",
+        "startLine": 46,
+        "endLine": 50,
+        "literal": [
+          "#showtooltip 봉쇄",
+          "/cast [@mouseover,harm][harm]봉쇄",
+          "/cast [@mouseover,help][help]봉쇄"
+        ]
+      },
+      {
+        "reference": "character-02-10",
+        "name": "분강",
+        "startLine": 51,
+        "endLine": 55,
+        "literal": [
+          "#showtooltip 분노의 강타",
+          "/startattack",
+          "/시전 분노의 강타 "
+        ]
+      },
+      {
+        "reference": "character-02-11",
+        "name": "분쇄",
+        "startLine": 56,
+        "endLine": 60,
+        "literal": [
+          "#showtooltip",
+          "/startattack",
+          "/시전 분쇄"
+        ]
+      },
+      {
+        "reference": "character-02-12",
+        "name": "쇠날",
+        "startLine": 61,
+        "endLine": 64,
+        "literal": [
+          "#showtooltip",
+          "/시전 [@player] 쇠날발톱"
+        ]
+      },
+      {
+        "reference": "character-02-13",
+        "name": "압도",
+        "startLine": 65,
+        "endLine": 69,
+        "literal": [
+          "#showtooltip",
+          "/startattack",
+          "/cast 압도"
+        ]
+      },
+      {
+        "reference": "character-02-14",
+        "name": "포딘",
+        "startLine": 70,
+        "endLine": 73,
+        "literal": [
+          "#showtooltip",
+          "/연속시전 reset=3 천둥의 포효, 오딘의 격노"
+        ]
+      },
+      {
+        "reference": "character-02-15",
+        "name": "피갈",
+        "startLine": 74,
+        "endLine": 78,
+        "literal": [
+          "#showtooltip 피의 갈증",
+          "/startattack",
+          "/시전 피의 갈증"
+        ]
+      },
+      {
+        "reference": "character-02-16",
+        "name": "필격",
+        "startLine": 79,
+        "endLine": 84,
+        "literal": [
+          "#showtooltip 필사의 일격",
+          "/startattack",
+          "/시전 집중된 분노",
+          "/시전 필사의 일격"
+        ]
+      }
+    ]
+  },
+  {
+    "scope": "character-03",
+    "source": "C:\\Program Files (x86)\\World of Warcraft\\_retail_\\WTF\\Account\\ACCOUNT_01\\REALM_01\\character-03\\macros-cache.txt",
+    "archive": "originals/character-03/macros-cache.txt",
+    "bytes": 1205,
+    "sha256": "DA80820C172F62B96FC7AED2F6EE17E11293FA4DB073606C388E32FE079DCD23",
+    "count": 8,
+    "entries": [
+      {
+        "reference": "character-03-01",
+        "name": "test",
+        "startLine": 1,
+        "endLine": 4,
+        "literal": [
+          "#showtooltip",
+          "/cancelaura 혼합물: 죽음의 입맞춤"
+        ]
+      },
+      {
+        "reference": "character-03-02",
+        "name": "독정화",
+        "startLine": 5,
+        "endLine": 8,
+        "literal": [
+          "#showtooltip",
+          "/연속시전 reset=5 독 정화 토템, 토템의 귀환"
+        ]
+      },
+      {
+        "reference": "character-03-03",
+        "name": "무기",
+        "startLine": 9,
+        "endLine": 14,
+        "literal": [
+          "#showtooltip",
+          "/castsequence [spec:1] reset=3 천둥의 일격 수호물,불꽃혓바닥 무기,하늘의 격노",
+          "/castsequence [spec:2] reset=3 질풍의 무기,불꽃혓바닥 무기,하늘의 격노",
+          "/castsequence [spec:3] reset=3 파도소환사의 수호,대지생명의 무기,하늘의 격노"
+        ]
+      },
+      {
+        "reference": "character-03-04",
+        "name": "번화",
+        "startLine": 15,
+        "endLine": 18,
+        "literal": [
+          "#showtooltip",
+          "/cast [mod:alt]연쇄 번개;번개 화살"
+        ]
+      },
+      {
+        "reference": "character-03-05",
+        "name": "승천",
+        "startLine": 19,
+        "endLine": 25,
+        "literal": [
+          "#showtooltip 승천",
+          "/start attack",
+          "/use 13",
+          "/use 14",
+          "/cast 승천"
+        ]
+      },
+      {
+        "reference": "character-03-06",
+        "name": "용채",
+        "startLine": 26,
+        "endLine": 30,
+        "literal": [
+          "#showtooltip ",
+          "/start attack",
+          "/cast 용암 채찍"
+        ]
+      },
+      {
+        "reference": "character-03-07",
+        "name": "정화",
+        "startLine": 31,
+        "endLine": 35,
+        "literal": [
+          "#showtooltip",
+          "/시전 [target=mouseover,harm][harm]정화",
+          "/시전 [target=mouseover,help][help][target=player]영혼 정화"
+        ]
+      },
+      {
+        "reference": "character-03-08",
+        "name": "폭격",
+        "startLine": 36,
+        "endLine": 41,
+        "literal": [
+          "#showtooltip 폭풍의 일격",
+          "/start attack",
+          "/cast 고대의 인도",
+          "/cast 폭풍의 일격"
+        ]
+      }
+    ]
+  },
+  {
+    "scope": "account-common",
+    "source": "C:\\Program Files (x86)\\World of Warcraft\\_retail_\\WTF\\Account\\ACCOUNT_01\\macros-cache.txt",
+    "archive": "originals/account-common/macros-cache.txt",
+    "bytes": 1209,
+    "sha256": "D604A82E17D115B873AE3F1A38004C21FFA9CE28F13E2C94EB7D0843F69B80A6",
+    "count": 9,
+    "entries": [
+      {
+        "reference": "account-common-01",
+        "name": "낚시",
+        "startLine": 1,
+        "endLine": 5,
+        "literal": [
+          "#showtooltip",
+          "/click StaticPopup1Button1",
+          "/cast [nochanneling]낚시"
+        ]
+      },
+      {
+        "reference": "account-common-02",
+        "name": "대상전환",
+        "startLine": 6,
+        "endLine": 8,
+        "literal": [
+          "/target focus"
+        ]
+      },
+      {
+        "reference": "account-common-03",
+        "name": "던지기",
+        "startLine": 9,
+        "endLine": 16,
+        "literal": [
+          "#showtooltip",
+          "/Stopcasting",
+          "/target [@mouseover]",
+          "/click ExtraActionButton1",
+          "/s <%T>에게 눈 패스!",
+          "/targetlasttarget"
+        ]
+      },
+      {
+        "reference": "account-common-04",
+        "name": "바진입",
+        "startLine": 17,
+        "endLine": 19,
+        "literal": [
+          "/changeactionbar [actionbar:1] 2"
+        ]
+      },
+      {
+        "reference": "account-common-05",
+        "name": "바탈출",
+        "startLine": 20,
+        "endLine": 23,
+        "literal": [
+          "#showtooltip",
+          "/changeactionbar [actionbar:2] 1"
+        ]
+      },
+      {
+        "reference": "account-common-06",
+        "name": "샘플",
+        "startLine": 24,
+        "endLine": 28,
+        "literal": [
+          "#showtooltip",
+          "/시전 [target=mouseover,help][help][target=player]영혼 정화",
+          "/시전 [target=mouseover,harm][harm]정화"
+        ]
+      },
+      {
+        "reference": "account-common-07",
+        "name": "액션바 변경",
+        "startLine": 29,
+        "endLine": 33,
+        "literal": [
+          "#showtooltip",
+          "/cast 야생 영혼",
+          "/changeactionbar [actionbar:2] 1"
+        ]
+      },
+      {
+        "reference": "account-common-08",
+        "name": "주시",
+        "startLine": 34,
+        "endLine": 37,
+        "literal": [
+          "#showtooltip",
+          "/focus"
+        ]
+      },
+      {
+        "reference": "account-common-09",
+        "name": "탈것",
+        "startLine": 38,
+        "endLine": 43,
+        "literal": [
+          "#showtooltip",
+          "/script UIErrorsFrame:Hide()",
+          "/cast [flyable] 흑요석 밤날개표범; 회색 구룽지 무리지도자",
+          "/내리기 "
+        ]
+      }
+    ]
+  }
+]

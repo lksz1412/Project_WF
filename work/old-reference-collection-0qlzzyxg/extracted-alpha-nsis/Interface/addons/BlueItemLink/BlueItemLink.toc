@@ -1,0 +1,10 @@
+## Interface: 60100
+## Title: Blue Item Link
+## Notes: 다수의 아이템 링크를 표시합니다
+## Version: 4.0
+## Author: InTheBlue
+## SavedVariables: BlueItemLinkDB
+## OptionalDeps: Skinner
+
+Core.lua
+Options.lua

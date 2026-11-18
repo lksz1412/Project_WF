@@ -1,0 +1,1533 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/">
+	<Script file="NuguDrop_Favorites.lua"/>
+
+<!-- 타이틀바 -->
+	<Frame name="NDFavoritesTitleFrame" toplevel="true" frameStrata="DIALOG" enableMouse="true" movable="true" parent="UIParent" hidden="true">
+		<Size>
+			<AbsDimension x="449" y="29" />
+		</Size>
+		<Anchors>
+			<Anchor point="CENTER">
+				<Offset>
+					<AbsDimension x="0" y="300" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="ARTWORK">
+				<FontString name="$parentTitle" inherits="GameFontHighlightLarge" justifyH="LEFT" text="|cff00ffff누구드랍|r 즐겨찾기">
+	 				<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset>
+								<AbsDimension x="16" y="-8" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentClass" inherits="GameFontHighlightLarge" justifyH="LEFT" text="">
+	 				<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parentTitle" relativePoint="TOPRIGHT">
+							<Offset>
+								<AbsDimension x="5" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="NDFavoritesTitle" file="Interface\AddOns\NuguDrop\images\NuguDropTitle_Background">
+					<Size>
+						<AbsDimension x="150" y="23" />
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset>
+								<AbsDimension x="3" y="-3" />
+							</Offset>
+						</Anchor>
+						<Anchor point="TOPRIGHT">
+							<Offset>
+								<AbsDimension x="-3" y="-3" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="NDFavorites_Close">
+				<Size>
+					<AbsDimension x="16" y="16" />
+				</Size>
+				<Anchors>
+					<Anchor point="TOPRIGHT">
+						<Offset>
+							<AbsDimension x="-6" y="-8" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>this:GetParent():Hide();</OnClick>
+				</Scripts>
+				<NormalTexture file="Interface\AddOns\NuguDrop\images\CloseButton-Up" />
+				<PushedTexture file="Interface\AddOns\NuguDrop\images\CloseButton-Down" />
+				<HighlightTexture file="Interface\AddOns\NuguDrop\images\Status-Idle" alphaMode="ADD" />
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				this:SetClampedToScreen(true);
+			</OnLoad>
+			<OnMouseDown>this:StartMoving();</OnMouseDown>
+			<OnMouseUp>this:StopMovingOrSizing();</OnMouseUp>
+		</Scripts>
+	</Frame>
+
+<!-- 직업별 버튼 템플릿 -->
+	<Frame name="NDFavBorder" movable="true" virtual="true">
+		<Backdrop bgFile="Interface\Tooltips\UI-Tooltip-Background" edgeFile="" tile="true">
+			<EdgeSize>
+				<AbsValue val="0"/>
+			</EdgeSize>
+			<TileSize>
+				<AbsValue val="16"/>
+			</TileSize>
+			<BackgroundInsets>
+				<AbsInset left="4" right="4" top="4" bottom="4"/>
+			</BackgroundInsets>
+		</Backdrop>
+	</Frame>
+
+	<Button name="NDFav_Button" inherits="NDFavBorder" virtual="true">
+		<Layers>
+			<Layer>
+				<FontString name="$ParentText" inherits="GameFontHighlightLarge" wraponspaces="true" justifyH="CENTER">
+					<Anchors>
+						<Anchor point="CENTER"/>
+					</Anchors>
+					<Color r="1.0" g="1.0" b="1.0"/>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnEnter>
+				this:RegisterForClicks("LeftButtonUp","RightButtonUp","MiddleButtonUp");
+				this:GetParent():SetBackdropColor(1, 1, 0, 1);
+			</OnEnter>
+			<OnLeave>
+			</OnLeave>
+		</Scripts>
+	</Button>
+
+<!-- 직업별 버튼 -->
+	<!-- inherits="UIPanelButtonTemplate" -->
+	<Frame name="ND_Class10" inherits="NDFavBorder" parent="NDFavoritesTitleFrame">
+		<Size>
+			<AbsDimension x="110" y="31"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPRIGHT" relativeTo="NDFavoritesTitleFrame" relativePoint="BOTTOMLEFT">
+				<Offset>
+					<AbsDimension x="6" y="5"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<Button name="NDClass1" inherits="NDFav_Button" text="전사(방어)">
+				<Size>
+					<AbsDimension x="104" y="25"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="ND_Class10" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="3" y="-3"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						local color = RAID_CLASS_COLORS["WARRIOR"];
+						this:SetBackdropColor(color.r, color.g, color.b, 1);
+					</OnLoad>
+					<OnLeave>
+						if NuguDropOption["lastseen"] == 1 then
+							this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						else
+							this:GetParent():SetBackdropColor(0, 0, 0, 1);
+						end
+					</OnLeave>
+					<OnClick>
+						local lastframe = "ND_Class"..NuguDropOption.lastseen.."0"
+						getglobal(lastframe):SetBackdropColor(0, 0, 0, 1);
+						this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						NuguDropOption["lastseen"] = 1;
+						ND_FavList_Flush();
+						ND_FavList_Generator();
+					</OnClick>
+				</Scripts>
+				<NormalFont style="GameFontHighlightLarge"/>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				this:SetBackdropColor(0, 0, 0, 1);
+			</OnLoad>
+		</Scripts>
+		<NormalFont style="GameFontHighlightLarge"/>
+		<!-- <HighlightFont style="GameFontHighlightLarge"/> -->
+		<!-- <HighlightTexture file="Interface\QuestFrame\UI-QuestTitleHighlight" alphaMode="ADD"/> -->
+	</Frame>
+	<Frame name="ND_Class20" inherits="NDFavBorder" parent="NDFavoritesTitleFrame">
+		<Size>
+			<AbsDimension x="110" y="31"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT" relativeTo="ND_Class10" relativePoint="BOTTOMLEFT">
+				<Offset>
+					<AbsDimension x="0" y="7"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<Button name="NDClass2" inherits="NDFav_Button" text="전사(무분)">
+				<Size>
+					<AbsDimension x="104" y="25"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="ND_Class20" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="3" y="-3"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						local color = RAID_CLASS_COLORS["WARRIOR"];
+						this:SetBackdropColor(color.r, color.g, color.b, 1);
+					</OnLoad>
+					<OnLeave>
+						if NuguDropOption["lastseen"] == 2 then
+							this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						else
+							this:GetParent():SetBackdropColor(0, 0, 0, 1);
+						end
+					</OnLeave>
+					<OnClick>
+						local lastframe = "ND_Class"..NuguDropOption.lastseen.."0"
+						getglobal(lastframe):SetBackdropColor(0, 0, 0, 1);
+						this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						NuguDropOption["lastseen"] = 2;
+						ND_FavList_Flush();
+						ND_FavList_Generator()
+					</OnClick>
+				</Scripts>
+				<NormalFont style="GameFontHighlightLarge"/>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				this:SetBackdropColor(0, 0, 0, 1);
+			</OnLoad>
+		</Scripts>
+		<NormalFont style="GameFontHighlightLarge"/>
+	</Frame>
+	<Frame name="ND_Class30" inherits="NDFavBorder" parent="NDFavoritesTitleFrame">
+		<Size>
+			<AbsDimension x="110" y="31"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT" relativeTo="ND_Class20" relativePoint="BOTTOMLEFT">
+				<Offset>
+					<AbsDimension x="0" y="7"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<Button name="NDClass3" inherits="NDFav_Button" text="성기사(신성)">
+				<Size>
+					<AbsDimension x="104" y="25"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="ND_Class30" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="3" y="-3"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						local color = RAID_CLASS_COLORS["PALADIN"];
+						this:SetBackdropColor(color.r, color.g, color.b, 1);
+					</OnLoad>
+					<OnLeave>
+						if NuguDropOption["lastseen"] == 3 then
+							this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						else
+							this:GetParent():SetBackdropColor(0, 0, 0, 1);
+						end
+					</OnLeave>
+					<OnClick>
+						local lastframe = "ND_Class"..NuguDropOption.lastseen.."0"
+						getglobal(lastframe):SetBackdropColor(0, 0, 0, 1);
+						this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						NuguDropOption["lastseen"] = 3;
+						ND_FavList_Flush();
+						ND_FavList_Generator();
+					</OnClick>
+				</Scripts>
+				<NormalFont style="GameFontHighlightLarge"/>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				this:SetBackdropColor(0, 0, 0, 1);
+			</OnLoad>
+		</Scripts>
+		<NormalFont style="GameFontHighlightLarge"/>
+	</Frame>
+	<Frame name="ND_Class40" inherits="NDFavBorder" parent="NDFavoritesTitleFrame">
+		<Size>
+			<AbsDimension x="110" y="31"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT" relativeTo="ND_Class30" relativePoint="BOTTOMLEFT">
+				<Offset>
+					<AbsDimension x="0" y="7"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<Button name="NDClass4" inherits="NDFav_Button" text="성기사(보호)">
+				<Size>
+					<AbsDimension x="104" y="25"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="ND_Class40" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="3" y="-3"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						local color = RAID_CLASS_COLORS["PALADIN"];
+						this:SetBackdropColor(color.r, color.g, color.b, 1);
+					</OnLoad>
+					<OnLeave>
+						if NuguDropOption["lastseen"] == 4 then
+							this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						else
+							this:GetParent():SetBackdropColor(0, 0, 0, 1);
+						end
+					</OnLeave>
+					<OnClick>
+						local lastframe = "ND_Class"..NuguDropOption.lastseen.."0"
+						getglobal(lastframe):SetBackdropColor(0, 0, 0, 1);
+						this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						NuguDropOption["lastseen"] = 4;
+						ND_FavList_Flush();
+						ND_FavList_Generator()
+					</OnClick>
+				</Scripts>
+				<NormalFont style="GameFontHighlightLarge"/>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				this:SetBackdropColor(0, 0, 0, 1);
+			</OnLoad>
+		</Scripts>
+		<NormalFont style="GameFontHighlightLarge"/>
+	</Frame>
+	<Frame name="ND_Class50" inherits="NDFavBorder" parent="NDFavoritesTitleFrame">
+		<Size>
+			<AbsDimension x="110" y="31"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT" relativeTo="ND_Class40" relativePoint="BOTTOMLEFT">
+				<Offset>
+					<AbsDimension x="0" y="7"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<Button name="NDClass5" inherits="NDFav_Button" text="성기사(징별)">
+				<Size>
+					<AbsDimension x="104" y="25"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="ND_Class50" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="3" y="-3"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						local color = RAID_CLASS_COLORS["PALADIN"];
+						this:SetBackdropColor(color.r, color.g, color.b, 1);
+					</OnLoad>
+					<OnLeave>
+						if NuguDropOption["lastseen"] == 5 then
+							this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						else
+							this:GetParent():SetBackdropColor(0, 0, 0, 1);
+						end
+					</OnLeave>
+					<OnClick>
+						local lastframe = "ND_Class"..NuguDropOption.lastseen.."0"
+						getglobal(lastframe):SetBackdropColor(0, 0, 0, 1);
+						this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						NuguDropOption["lastseen"] = 5;
+						ND_FavList_Flush();
+						ND_FavList_Generator()
+					</OnClick>
+				</Scripts>
+				<NormalFont style="GameFontHighlightLarge"/>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				this:SetBackdropColor(0, 0, 0, 1);
+			</OnLoad>
+		</Scripts>
+		<NormalFont style="GameFontHighlightLarge"/>
+	</Frame>
+	<Frame name="ND_Class60" inherits="NDFavBorder" parent="NDFavoritesTitleFrame">
+		<Size>
+			<AbsDimension x="110" y="31"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT" relativeTo="ND_Class50" relativePoint="BOTTOMLEFT">
+				<Offset>
+					<AbsDimension x="0" y="7"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<Button name="NDClass6" inherits="NDFav_Button" text="주술사(고양)">
+				<Size>
+					<AbsDimension x="104" y="25"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="ND_Class60" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="3" y="-3"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+
+				<Scripts>
+					<OnLoad>
+						local color = RAID_CLASS_COLORS["SHAMAN"];
+						this:SetBackdropColor(color.r, color.g, color.b, 1);
+					</OnLoad>
+					<OnLeave>
+						if NuguDropOption["lastseen"] == 6 then
+							this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						else
+							this:GetParent():SetBackdropColor(0, 0, 0, 1);
+						end
+					</OnLeave>
+					<OnClick>
+						local lastframe = "ND_Class"..NuguDropOption.lastseen.."0"
+						getglobal(lastframe):SetBackdropColor(0, 0, 0, 1);
+						this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						NuguDropOption["lastseen"] = 6;
+						ND_FavList_Flush();
+						ND_FavList_Generator()
+					</OnClick>
+				</Scripts>
+				<NormalFont style="GameFontHighlightLarge"/>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				this:SetBackdropColor(0, 0, 0, 1);
+			</OnLoad>
+		</Scripts>
+		<NormalFont style="GameFontHighlightLarge"/>
+	</Frame>
+	<Frame name="ND_Class70" inherits="NDFavBorder" parent="NDFavoritesTitleFrame">
+		<Size>
+			<AbsDimension x="110" y="31"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT" relativeTo="ND_Class60" relativePoint="BOTTOMLEFT">
+				<Offset>
+					<AbsDimension x="0" y="7"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<Button name="NDClass7" inherits="NDFav_Button" text="주술사(정기)">
+				<Size>
+					<AbsDimension x="104" y="25"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="ND_Class70" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="3" y="-3"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						local color = RAID_CLASS_COLORS["SHAMAN"];
+						this:SetBackdropColor(color.r, color.g, color.b, 1);
+					</OnLoad>
+					<OnLeave>
+						if NuguDropOption["lastseen"] == 7 then
+							this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						else
+							this:GetParent():SetBackdropColor(0, 0, 0, 1);
+						end
+					</OnLeave>
+					<OnClick>
+						local lastframe = "ND_Class"..NuguDropOption.lastseen.."0"
+						getglobal(lastframe):SetBackdropColor(0, 0, 0, 1);
+						this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						NuguDropOption["lastseen"] = 7;
+						ND_FavList_Flush();
+						ND_FavList_Generator()
+					</OnClick>
+				</Scripts>
+				<NormalFont style="GameFontHighlightLarge"/>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				this:SetBackdropColor(0, 0, 0, 1);
+			</OnLoad>
+		</Scripts>
+		<NormalFont style="GameFontHighlightLarge"/>
+	</Frame>
+	<Frame name="ND_Class80" inherits="NDFavBorder" parent="NDFavoritesTitleFrame">
+		<Size>
+			<AbsDimension x="110" y="31"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT" relativeTo="ND_Class70" relativePoint="BOTTOMLEFT">
+				<Offset>
+					<AbsDimension x="0" y="7"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<Button name="NDClass8" inherits="NDFav_Button" text="주술사(복원)">
+				<Size>
+					<AbsDimension x="104" y="25"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="ND_Class80" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="3" y="-3"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						local color = RAID_CLASS_COLORS["SHAMAN"];
+						this:SetBackdropColor(color.r, color.g, color.b, 1);
+					</OnLoad>
+					<OnLeave>
+						if NuguDropOption["lastseen"] == 8 then
+							this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						else
+							this:GetParent():SetBackdropColor(0, 0, 0, 1);
+						end
+					</OnLeave>
+					<OnClick>
+						local lastframe = "ND_Class"..NuguDropOption.lastseen.."0"
+						getglobal(lastframe):SetBackdropColor(0, 0, 0, 1);
+						this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						NuguDropOption["lastseen"] = 8;
+						ND_FavList_Flush();
+						ND_FavList_Generator()
+					</OnClick>
+				</Scripts>
+				<NormalFont style="GameFontHighlightLarge"/>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				this:SetBackdropColor(0, 0, 0, 1);
+			</OnLoad>
+		</Scripts>
+		<NormalFont style="GameFontHighlightLarge"/>
+	</Frame>
+	<Frame name="ND_Class90" inherits="NDFavBorder" parent="NDFavoritesTitleFrame">
+		<Size>
+			<AbsDimension x="110" y="31"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT" relativeTo="ND_Class80" relativePoint="BOTTOMLEFT">
+				<Offset>
+					<AbsDimension x="0" y="7"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<Button name="NDClass9" inherits="NDFav_Button" text="사냥꾼">
+				<Size>
+					<AbsDimension x="104" y="25"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="ND_Class90" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="3" y="-3"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						local color = RAID_CLASS_COLORS["HUNTER"];
+						this:SetBackdropColor(color.r, color.g, color.b, 1);
+					</OnLoad>
+					<OnLeave>
+						if NuguDropOption["lastseen"] == 9 then
+							this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						else
+							this:GetParent():SetBackdropColor(0, 0, 0, 1);
+						end
+					</OnLeave>
+					<OnClick>
+						local lastframe = "ND_Class"..NuguDropOption.lastseen.."0"
+						getglobal(lastframe):SetBackdropColor(0, 0, 0, 1);
+						this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						NuguDropOption["lastseen"] = 9;
+						ND_FavList_Flush();
+						ND_FavList_Generator()
+					</OnClick>
+				</Scripts>
+				<NormalFont style="GameFontHighlightLarge"/>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				this:SetBackdropColor(0, 0, 0, 1);
+			</OnLoad>
+		</Scripts>
+		<NormalFont style="GameFontHighlightLarge"/>
+	</Frame>
+	<Frame name="ND_Class100" inherits="NDFavBorder" parent="NDFavoritesTitleFrame">
+		<Size>
+			<AbsDimension x="110" y="31"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT" relativeTo="ND_Class90" relativePoint="BOTTOMLEFT">
+				<Offset>
+					<AbsDimension x="0" y="7"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<Button name="NDClass10" inherits="NDFav_Button" text="도  적">
+				<Size>
+					<AbsDimension x="104" y="25"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="ND_Class100" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="3" y="-3"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						local color = RAID_CLASS_COLORS["ROGUE"];
+						this:SetBackdropColor(color.r, color.g, color.b, 1);
+					</OnLoad>
+					<OnLeave>
+						if NuguDropOption["lastseen"] == 10 then
+							this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						else
+							this:GetParent():SetBackdropColor(0, 0, 0, 1);
+						end
+					</OnLeave>
+					<OnClick>
+						local lastframe = "ND_Class"..NuguDropOption.lastseen.."0"
+						getglobal(lastframe):SetBackdropColor(0, 0, 0, 1);
+						this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						NuguDropOption["lastseen"] = 10;
+						ND_FavList_Flush();
+						ND_FavList_Generator()
+					</OnClick>
+				</Scripts>
+				<NormalFont style="GameFontHighlightLarge"/>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				this:SetBackdropColor(0, 0, 0, 1);
+			</OnLoad>
+		</Scripts>
+		<NormalFont style="GameFontHighlightLarge"/>
+	</Frame>
+	<Frame name="ND_Class110" inherits="NDFavBorder" parent="NDFavoritesTitleFrame">
+		<Size>
+			<AbsDimension x="110" y="31"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT" relativeTo="ND_Class100" relativePoint="BOTTOMLEFT">
+				<Offset>
+					<AbsDimension x="0" y="7"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<Button name="NDClass11" inherits="NDFav_Button" text="드루이드(야성)">
+				<Size>
+					<AbsDimension x="104" y="25"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="ND_Class110" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="3" y="-3"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						local color = RAID_CLASS_COLORS["DRUID"];
+						this:SetBackdropColor(color.r, color.g, color.b, 1);
+					</OnLoad>
+					<OnLeave>
+						if NuguDropOption["lastseen"] == 11 then
+							this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						else
+							this:GetParent():SetBackdropColor(0, 0, 0, 1);
+						end
+					</OnLeave>
+					<OnClick>
+						local lastframe = "ND_Class"..NuguDropOption.lastseen.."0"
+						getglobal(lastframe):SetBackdropColor(0, 0, 0, 1);
+						this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						NuguDropOption["lastseen"] = 11;
+						ND_FavList_Flush();
+						ND_FavList_Generator()
+					</OnClick>
+				</Scripts>
+				<NormalFont style="GameFontHighlightLarge"/>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				this:SetBackdropColor(0, 0, 0, 1);
+			</OnLoad>
+		</Scripts>
+		<NormalFont style="GameFontHighlightLarge"/>
+	</Frame>
+	<Frame name="ND_Class120" inherits="NDFavBorder" parent="NDFavoritesTitleFrame">
+		<Size>
+			<AbsDimension x="110" y="31"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT" relativeTo="ND_Class110" relativePoint="BOTTOMLEFT">
+				<Offset>
+					<AbsDimension x="0" y="7"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<Button name="NDClass12" inherits="NDFav_Button" text="드루이드(조화)">
+				<Size>
+					<AbsDimension x="104" y="25"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="ND_Class120" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="3" y="-3"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						local color = RAID_CLASS_COLORS["DRUID"];
+						this:SetBackdropColor(color.r, color.g, color.b, 1);
+					</OnLoad>
+					<OnLeave>
+						if NuguDropOption["lastseen"] == 12 then
+							this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						else
+							this:GetParent():SetBackdropColor(0, 0, 0, 1);
+						end
+					</OnLeave>
+					<OnClick>
+						local lastframe = "ND_Class"..NuguDropOption.lastseen.."0"
+						getglobal(lastframe):SetBackdropColor(0, 0, 0, 1);
+						this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						NuguDropOption["lastseen"] = 12;
+						ND_FavList_Flush();
+						ND_FavList_Generator()
+					</OnClick>
+				</Scripts>
+				<NormalFont style="GameFontHighlightLarge"/>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				this:SetBackdropColor(0, 0, 0, 1);
+			</OnLoad>
+		</Scripts>
+		<NormalFont style="GameFontHighlightLarge"/>
+	</Frame>
+	<Frame name="ND_Class130" inherits="NDFavBorder" parent="NDFavoritesTitleFrame">
+		<Size>
+			<AbsDimension x="110" y="31"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT" relativeTo="ND_Class120" relativePoint="BOTTOMLEFT">
+				<Offset>
+					<AbsDimension x="0" y="7"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<Button name="NDClass13" inherits="NDFav_Button" text="드루이드(회복)">
+				<Size>
+					<AbsDimension x="104" y="25"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="ND_Class130" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="3" y="-3"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						local color = RAID_CLASS_COLORS["DRUID"];
+						this:SetBackdropColor(color.r, color.g, color.b, 1);
+					</OnLoad>
+					<OnLeave>
+						if NuguDropOption["lastseen"] == 13 then
+							this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						else
+							this:GetParent():SetBackdropColor(0, 0, 0, 1);
+						end
+					</OnLeave>
+					<OnClick>
+						local lastframe = "ND_Class"..NuguDropOption.lastseen.."0"
+						getglobal(lastframe):SetBackdropColor(0, 0, 0, 1);
+						this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						NuguDropOption["lastseen"] = 13;
+						ND_FavList_Flush();
+						ND_FavList_Generator()
+					</OnClick>
+				</Scripts>
+				<NormalFont style="GameFontHighlightLarge"/>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				this:SetBackdropColor(0, 0, 0, 1);
+			</OnLoad>
+		</Scripts>
+		<NormalFont style="GameFontHighlightLarge"/>
+	</Frame>
+	<Frame name="ND_Class140" inherits="NDFavBorder" parent="NDFavoritesTitleFrame">
+		<Size>
+			<AbsDimension x="110" y="31"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT" relativeTo="ND_Class130" relativePoint="BOTTOMLEFT">
+				<Offset>
+					<AbsDimension x="0" y="7"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<Button name="NDClass14" inherits="NDFav_Button" text="흑마법사">
+				<Size>
+					<AbsDimension x="104" y="25"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="ND_Class140" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="3" y="-3"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						local color = RAID_CLASS_COLORS["WARLOCK"];
+						this:SetBackdropColor(color.r, color.g, color.b, 1);
+					</OnLoad>
+					<OnLeave>
+						if NuguDropOption["lastseen"] == 14 then
+							this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						else
+							this:GetParent():SetBackdropColor(0, 0, 0, 1);
+						end
+					</OnLeave>
+					<OnClick>
+						local lastframe = "ND_Class"..NuguDropOption.lastseen.."0"
+						getglobal(lastframe):SetBackdropColor(0, 0, 0, 1);
+						this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						NuguDropOption["lastseen"] = 14;
+						ND_FavList_Flush();
+						ND_FavList_Generator()
+					</OnClick>
+				</Scripts>
+				<NormalFont style="GameFontHighlightLarge"/>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				this:SetBackdropColor(0, 0, 0, 1);
+			</OnLoad>
+		</Scripts>
+		<NormalFont style="GameFontHighlightLarge"/>
+	</Frame>
+	<Frame name="ND_Class150" inherits="NDFavBorder" parent="NDFavoritesTitleFrame">
+		<Size>
+			<AbsDimension x="110" y="31"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT" relativeTo="ND_Class140" relativePoint="BOTTOMLEFT">
+				<Offset>
+					<AbsDimension x="0" y="7"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<Button name="NDClass15" inherits="NDFav_Button" text="마법사">
+				<Size>
+					<AbsDimension x="104" y="25"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="ND_Class150" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="3" y="-3"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						local color = RAID_CLASS_COLORS["MAGE"];
+						this:SetBackdropColor(color.r, color.g, color.b, 1);
+					</OnLoad>
+					<OnLeave>
+						if NuguDropOption["lastseen"] == 15 then
+							this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						else
+							this:GetParent():SetBackdropColor(0, 0, 0, 1);
+						end
+					</OnLeave>
+					<OnClick>
+						local lastframe = "ND_Class"..NuguDropOption.lastseen.."0"
+						getglobal(lastframe):SetBackdropColor(0, 0, 0, 1);
+						this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						NuguDropOption["lastseen"] = 15;
+						ND_FavList_Flush();
+						ND_FavList_Generator()
+					</OnClick>
+				</Scripts>
+				<NormalFont style="GameFontHighlightLarge"/>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				this:SetBackdropColor(0, 0, 0, 1);
+			</OnLoad>
+		</Scripts>
+		<NormalFont style="GameFontHighlightLarge"/>
+	</Frame>
+	<Frame name="ND_Class160" inherits="NDFavBorder" parent="NDFavoritesTitleFrame">
+		<Size>
+			<AbsDimension x="110" y="31"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT" relativeTo="ND_Class150" relativePoint="BOTTOMLEFT">
+				<Offset>
+					<AbsDimension x="0" y="7"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<Button name="NDClass16" inherits="NDFav_Button" text="사제(신수)">
+				<Size>
+					<AbsDimension x="104" y="25"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="ND_Class160" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="3" y="-3"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						local color = RAID_CLASS_COLORS["PRIEST"];
+						this:SetBackdropColor(color.r, color.g, color.b, 1);
+					</OnLoad>
+					<OnLeave>
+						if NuguDropOption["lastseen"] == 16 then
+							this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						else
+							this:GetParent():SetBackdropColor(0, 0, 0, 1);
+						end
+					</OnLeave>
+					<OnClick>
+						local lastframe = "ND_Class"..NuguDropOption.lastseen.."0"
+						getglobal(lastframe):SetBackdropColor(0, 0, 0, 1);
+						this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						NuguDropOption["lastseen"] = 16;
+						ND_FavList_Flush();
+						ND_FavList_Generator()
+					</OnClick>
+				</Scripts>
+				<NormalFont style="GameFontHighlightLarge"/>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				this:SetBackdropColor(0, 0, 0, 1);
+			</OnLoad>
+		</Scripts>
+		<NormalFont style="GameFontHighlightLarge"/>
+	</Frame>
+	<Frame name="ND_Class170" inherits="NDFavBorder" parent="NDFavoritesTitleFrame">
+		<Size>
+			<AbsDimension x="110" y="31"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT" relativeTo="ND_Class160" relativePoint="BOTTOMLEFT">
+				<Offset>
+					<AbsDimension x="0" y="7"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<Button name="NDClass17" inherits="NDFav_Button" text="사제(암흑)">
+				<Size>
+					<AbsDimension x="104" y="25"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="ND_Class170" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="3" y="-3"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						local color = RAID_CLASS_COLORS["PRIEST"];
+						this:SetBackdropColor(color.r, color.g, color.b, 1);
+					</OnLoad>
+					<OnLeave>
+						if NuguDropOption["lastseen"] == 17 then
+							this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						else
+							this:GetParent():SetBackdropColor(0, 0, 0, 1);
+						end
+					</OnLeave>
+					<OnClick>
+						local lastframe = "ND_Class"..NuguDropOption.lastseen.."0"
+						getglobal(lastframe):SetBackdropColor(0, 0, 0, 1);
+						this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						NuguDropOption["lastseen"] = 17;
+						ND_FavList_Flush();
+						ND_FavList_Generator()
+					</OnClick>
+				</Scripts>
+				<NormalFont style="GameFontHighlightLarge"/>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				this:SetBackdropColor(0, 0, 0, 1);
+			</OnLoad>
+		</Scripts>
+		<NormalFont style="GameFontHighlightLarge"/>
+	</Frame>
+	<Frame name="ND_Class180" inherits="NDFavBorder" parent="NDFavoritesTitleFrame">
+		<Size>
+			<AbsDimension x="110" y="31"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT" relativeTo="ND_Class170" relativePoint="BOTTOMLEFT">
+				<Offset>
+					<AbsDimension x="0" y="7"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<Button name="NDClass18" inherits="NDFav_Button" text="기  타">
+				<Size>
+					<AbsDimension x="104" y="25"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="ND_Class180" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="3" y="-3"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						this:SetBackdropColor(0.7, 0.7, 0.7, 1);
+					</OnLoad>
+					<OnLeave>
+						if NuguDropOption["lastseen"] == 18 then
+							this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						else
+							this:GetParent():SetBackdropColor(0, 0, 0, 1);
+						end
+					</OnLeave>
+					<OnClick>
+						local lastframe = "ND_Class"..NuguDropOption.lastseen.."0"
+						getglobal(lastframe):SetBackdropColor(0, 0, 0, 1);
+						this:GetParent():SetBackdropColor(1, 0, 0, 1);
+						NuguDropOption["lastseen"] = 18;
+						ND_FavList_Flush();
+						ND_FavList_Generator()
+					</OnClick>
+				</Scripts>
+				<NormalFont style="GameFontHighlightLarge"/>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				this:SetBackdropColor(0, 0, 0, 1);
+			</OnLoad>
+		</Scripts>
+		<NormalFont style="GameFontHighlightLarge"/>
+	</Frame>
+
+
+<!-- 직업별 분류탭(Category) 템틀릿 -->
+	<Button name="NDFav_CategoryButton_Template" virtual="true">
+		<Size>
+			<AbsDimension x="100" y="18"/>
+		</Size>
+		<Layers>
+			<Layer level="HIGH">
+				<FontString name="$parentText" inherits="GameFontHighlightLarge" justifyH="LEFT">
+					<Size>
+						<AbsDimension x="80" y="8"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT">
+							<Offset>
+								<AbsDimension x="20" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentSum" inherits="GameFontHighlightLarge" justifyH="RIGHT">
+					<Size>
+						<AbsDimension x="20" y="32"/>
+					</Size>
+					<Anchors>
+						<Anchor point="RIGHT">
+							<Offset>
+								<AbsDimension x="-5" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>
+				ND_Fav_Category_OnClick(this:GetName());
+			</OnClick>
+			<OnReceiveDrag>
+--				ND_Fav_Category_ReceiveDrag(this:GetName());
+			</OnReceiveDrag>
+		</Scripts>
+		<NormalTexture name="$parentNormalTexture" file="Interface\AddOns\NuguDrop\images\NDFav_Normal.tga">
+			<TexCoords left="0" right="0.53125" top="0" bottom="0.625"/>
+		</NormalTexture>
+		<HighlightTexture file="Interface\AddOns\NuguDrop\images\NDFav_Highlight.tga" alphaMode="ADD"/>
+		<NormalFont style="GameFontHighlightLarge" justifyH="LEFT"/>
+		<HighlightFont style="GameFontHighlightLarge" justifyH="LEFT"/>
+	</Button>
+
+<!-- 분류 추가 버튼 템플릿 -->
+
+
+<!-- 분류 삭제 버튼 템플릿 -->
+	<Button name="NDFav_CategoryButton_Delete_Template" virtual="true">
+		<Size>
+			<AbsDimension x="12" y="12"/>
+		</Size>
+		<Scripts>
+			<OnClick>
+				ND_Fav_Category_Delete_OnClick(this:GetName());
+			</OnClick>
+		</Scripts>
+		<NormalTexture file="Interface\AddOns\NuguDrop\images\CloseButton-Up" />
+		<HighlightTexture file="Interface\AddOns\NuguDrop\images\Status-Idle" alphaMode="ADD"/>
+	</Button>
+<!-- 분류 수정 버튼 템플릿 -->
+	<Button name="NDFav_CategoryButton_Modify_Template" virtual="true">
+		<Size>
+			<AbsDimension x="12" y="12"/>
+		</Size>
+		<Scripts>
+			<OnClick>
+				ND_Fav_Category_Modify_OnClick(this:GetName());
+			</OnClick>
+		</Scripts>
+		<NormalTexture file="Interface\AddOns\NuguDrop\images\NDF_modify" />
+		<HighlightTexture file="Interface\AddOns\NuguDrop\images\Status-Idle" alphaMode="ADD"/>
+	</Button>
+
+<!-- 아이템 리스트 템플릿 -->
+	<Button name="NDFav_ItemButton_Template" hidden="false" movable="true" enableMouse="true" virtual="true">
+		<Size>
+			<AbsDimension x="290" y="30"/>
+		</Size>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<FontString name="$parentName" inherits="GameFontHighlightLarge" justifyH="LEFT">
+					<Size>
+						<AbsDimension x="235" y="30"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset>
+								<AbsDimension x="43" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentLevel" inherits="GameFontHighlightSmall">
+					<Size>
+						<AbsDimension x="55" y="30"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset>
+								<AbsDimension x="235" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentLeft" file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
+					<Size>
+						<AbsDimension x="10" y="30"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT">
+							<Offset>
+								<AbsDimension x="34" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+					<TexCoords left="0" right="0.078125" top="0" bottom="1.0"/>
+				</Texture>
+				<Texture name="$parentRight" file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
+					<Size>
+						<AbsDimension x="10" y="30"/>
+					</Size>
+					<Anchors>
+						<Anchor point="RIGHT">
+							<Offset>
+								<AbsDimension x="0" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+					<TexCoords left="0.75" right="0.828125" top="0" bottom="1.0"/>
+				</Texture>
+				<Texture file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
+					<Size>
+						<AbsDimension x="10" y="30"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT" relativeTo="$parentLeft" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+						<Anchor point="RIGHT" relativeTo="$parentRight" relativePoint="LEFT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+					<TexCoords left="0.078125" right="0.75" top="0" bottom="1.0"/>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentItem">
+				<Size>
+					<AbsDimension x="30" y="30"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BORDER">
+						<Texture name="$parentIconTexture"/>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnEnter>
+						NDFav_ItemButton_OnEnter(this:GetParent():GetID(), this:GetParent():GetName());
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();
+						ResetCursor();
+					</OnLeave>
+					<OnClick>
+						NDFav_ItemButton_OnClick(this:GetParent():GetID(), this:GetParent():GetName());
+					</OnClick>
+				</Scripts>
+				<NormalTexture name="$parentNormalTexture" file="Interface\Buttons\UI-Quickslot2">
+					<Size>
+						<AbsDimension x="60" y="60"/>
+					</Size>
+					<Anchors>
+						<Anchor point="CENTER">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</NormalTexture>
+				<PushedTexture file="Interface\Buttons\UI-Quickslot-Depress"/>
+				<HighlightTexture file="Interface\Buttons\ButtonHilight-Square" alphaMode="ADD"/>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+--				this:RegisterForDrag("LeftButton");
+			</OnLoad>
+			<OnEnter>
+				NDFav_ItemButton_OnEnter(this:GetID(), this:GetName());
+			</OnEnter>
+			<OnLeave>
+				GameTooltip:Hide();
+				ResetCursor();
+			</OnLeave>
+			<OnClick>
+				NDFav_ItemButton_OnClick(this:GetID(), this:GetName());
+			</OnClick>
+			<OnDragStart>
+--				NDFav_ItemButton_OnClick(this:GetID(), this:GetName(), "LeftButton");
+			</OnDragStart>
+		</Scripts>
+		<HighlightTexture name="$parentHighlight" file="Interface\HelpFrame\HelpFrameButton-Highlight" alphaMode="ADD">
+			<Size>
+				<AbsDimension x="256" y="30"/>
+			</Size>
+			<Anchors>
+				<Anchor point="TOPLEFT">
+					<Offset>
+						<AbsDimension x="33" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<TexCoords left="0" right="1" top="0" bottom="0.578125"/>
+		</HighlightTexture>
+	</Button>
+
+<!-- 몸통 -->
+	<Frame name="NDFavoritesFrame" toplevel="true" parent="NDFavoritesTitleFrame" enableMouse="true" hidden="true">
+		<Size>
+			<AbsDimension x="444" y="516"/>
+		</Size>
+		<Anchors>
+ 			<Anchor point="TOPLEFT" relativeTo="NDFavoritesTitleFrame" relativePoint="BOTTOMLEFT">
+ 				<Offset>
+ 					<AbsDimension x="3" y="3"/>
+ 				</Offset>
+ 			</Anchor>
+ 		</Anchors>
+		<Backdrop bgFile="Interface\ChatFrame\ChatFrameBackground" edgeFile="Interface\ChatFrame\ChatFrameBackground" tile="false">
+			<BackgroundInsets>
+				<AbsInset left="0" right="0" top="0" bottom="0" />
+			</BackgroundInsets>
+			<TileSize>
+				<AbsValue val="32"/>
+			</TileSize>
+			<EdgeSize>
+				<AbsValue val="2" />
+			</EdgeSize>
+		</Backdrop>
+
+		<Frames>
+			<Frame name="NDFav_Category_ItemList" hidden="false">
+				<Size>
+					<AbsDimension x="434" y="506"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NDFavoritesFrame" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="5" y="-8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="ARTWORK">
+						<FontString name="NDFav_ItemList_SelectClassText" inherits="GameFontHighlightLarge" text="◈분류를 선택해 주세요◈" hidden="true">
+							<Anchors>
+								<Anchor point="TOP">
+									<Offset>
+										<AbsDimension x="55" y="-80"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+							<Color r="1" g="1" b="0"/>
+						</FontString>
+						<FontString name="NDFav_ItemList_NoItemsText" inherits="GameFontHighlightLarge" text="아직 등록된 아이템이 없습니다." hidden="true">
+							<Anchors>
+								<Anchor point="TOP">
+									<Offset>
+										<AbsDimension x="55" y="-80"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+							<Color r="1" g="0" b="0"/>
+						</FontString>
+						<FontString name="NDFav_ItemList_AddItemsText" inherits="GameFontHighlightLarge" text="▶ 아이템 추가방법" hidden="true" justifyH="LEFT">
+							<Size>
+								<AbsDimension x="250" y="20"/>
+							</Size>
+							<Anchors>
+ 								<Anchor point="TOP">
+									<Offset>
+										<AbsDimension x="40" y="-100"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+							<Color r="0" g="1" b="1"/>
+						</FontString>
+						<FontString name="NDFav_ItemList_AddMethodText" inherits="GameFontHighlightsmall" text="NDFAV_ADDMETHOD_HELPTEXT" hidden="true" justifyH="LEFT">
+							<Size>
+								<AbsDimension x="270" y="110"/>
+							</Size>
+							<Anchors>
+								<Anchor point="TOP">
+									<Offset>
+										<AbsDimension x="50" y="-115"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="NDFav_ItemList_DeleteItemsText" inherits="GameFontHighlightLarge" text="▶ 아이템 삭제방법" hidden="true" justifyH="LEFT">
+							<Size>
+								<AbsDimension x="250" y="20"/>
+							</Size>
+							<Anchors>
+								<Anchor point="TOP">
+									<Offset>
+										<AbsDimension x="40" y="-230"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+							<Color r="0" g="1" b="1"/>
+						</FontString>
+						<FontString name="NDFav_ItemList_DeleteMethodText" inherits="GameFontHighlightsmall" text="ALT + Click" hidden="true" justifyH="LEFT">
+							<Size>
+								<AbsDimension x="250" y="35"/>
+							</Size>
+							<Anchors>
+								<Anchor point="TOP">
+									<Offset>
+										<AbsDimension x="35" y="-250"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+							<Color r="1" g="0" b="0"/>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+<!--
+					<ScrollFrame name="NDFav_ListScrollFrame" inherits="FauxScrollFrameTemplate">
+						<Size>
+							<AbsDimension x="285" y="365"/>
+						</Size>
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset>
+									<AbsDimension x="110" y="-0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="ARTWORK">
+								<Texture name="$parentTop" file="Interface\PaperDollInfoFrame\UI-Character-ScrollBar">
+									<Size>
+										<AbsDimension x="31" y="256"/>
+									</Size>
+									<Anchors>
+										<Anchor point="TOPLEFT" relativePoint="TOPRIGHT">
+											<Offset>
+												<AbsDimension x="-2" y="5"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+									<TexCoords left="0" right="0.484375" top="0" bottom="1.0"/>
+								</Texture>
+								<Texture file="Interface\PaperDollInfoFrame\UI-Character-ScrollBar">
+									<Size>
+										<AbsDimension x="31" y="106"/>
+									</Size>
+									<Anchors>
+										<Anchor point="BOTTOMLEFT" relativePoint="BOTTOMRIGHT">
+											<Offset>
+												<AbsDimension x="-2" y="-2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+									<TexCoords left="0.515625" right="1.0" top="0" bottom="0.4140625"/>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnVerticalScroll>
+								FauxScrollFrame_OnVerticalScroll(NDFAV_ITEM_BUTTON_HEIGHT, ND_Fav_ItemList_Update);
+							</OnVerticalScroll>
+						</Scripts>
+					</ScrollFrame>
+-->
+				</Frames>
+				<!-- Scripts>
+					<OnLoad>
+						NDFav_ItemList_OnLoad();
+					</OnLoad>
+					<OnShow>
+						NDFav_ItemList_OnShow();
+					</OnShow>
+					<OnEvent>
+						NDFav_ItemList_OnEvent();
+					</OnEvent>
+				</Scripts -->
+			</Frame>
+
+
+		</Frames>
+
+		<Scripts>
+			<OnLoad>
+				this:SetBackdropColor(.05,.05,.05,.8);
+				this:SetBackdropBorderColor(.4,.4,.4,1);
+			</OnLoad>
+			<OnMouseDown>
+				if( arg1 == "LeftButton" ) then
+					GameTooltip:Hide();
+					getglobal(this:GetParent():GetName()):StartMoving();
+				end
+			</OnMouseDown>
+			<OnMouseUp>
+				getglobal(this:GetParent():GetName()):StopMovingOrSizing();
+			</OnMouseUp>
+		</Scripts>
+	</Frame>
+
+	<Frame name="ND_DropDownMenu" inherits="UIDropDownMenuTemplate" id="1">
+		<Scripts>
+			<OnLoad></OnLoad>
+		</Scripts>
+	</Frame>
+
+</Ui>

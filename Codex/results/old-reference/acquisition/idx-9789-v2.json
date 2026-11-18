@@ -1,0 +1,256 @@
+{
+  "postID": 9789,
+  "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=9789",
+  "row": {
+    "postID": 9789,
+    "page": 1,
+    "rowOrdinal": 10,
+    "title": "DevilUI 수정 [통합] 23",
+    "rowText": "25 DevilUI 수정 [통합] 23 데빌통합애드온 수정 c0nstantine 8123 6 09-21",
+    "sourceAnchor": "javascript:addonMove('detail.php', 'idx->9789', 'leave->idx,listtype,ext', 'rurl');",
+    "sourceLocation": {
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\list-first.html",
+      "selector": "table.list tr a[href]",
+      "line": 1298
+    }
+  },
+  "detailProvenance": {
+    "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=9789",
+    "time": "2026-11-17T14:02:13.4809337Z",
+    "contentType": "text/html; charset=UTF-8",
+    "HTTP": 200,
+    "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=9789",
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-9789.html",
+    "state": "acquired",
+    "attempts": 1,
+    "commandExitCode": 0,
+    "encoding": "IWR decoded to UTF-8",
+    "bytes": 227282,
+    "SHA256": "B164036E20DA923955B6B5EB0D749C38E8CB954E27B87DFF5D905759ABC117A1"
+  },
+  "acquisitionState": "parsed",
+  "A1read": false,
+  "imageObserved": false,
+  "sections": {
+    "addonAddon": {
+      "state": "parsed",
+      "text": "데빌통합애드온내 각각의 애드온 업데이트 버전입니다.\n\n\n\n금일 날짜에서 다운이 가능한 최신버전으로 교체하였습니다.\n\n\n\n폰트는 별도로 첨부하지 않았습니다. 기존 데빌의 폰트를 그대로 사용하시면 됩니다.\n\n\n\n단축키는 개인의 취향대로 설정하시기 바랍니다.\n\n\n\n채팅창의 위치 및 크기는 잠금을 해제 후 편하실대로 설정하시면 됩니다.\n\n\n\n유닛프레임 설정은 게임내 PitBull4의 잠금을 해제하시고 기존대로 설정하시면 됩니다.\n\n\n\n위치가 깨지시는 분은 기존의 데빌을 설치후 각각의 로케이션 파일을 덮어쓰시기 바랍니다.\n\n\n\n저는 업데이트가 누락된 구버전 인터페이스도 모두 사용하고 있으나 지금까진 별다른 문제가 없습니다.\n\n\n\n하루빨리 데빌애드온이 부활했으면 좋겠네요...\n\n\n\n문제될 시 삭제하겠습니다.",
+      "fragmentPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\idx-9789-addonAddon.html",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-9789.html",
+        "selector": "#addonAddon",
+        "line": 1244
+      },
+      "links": []
+    },
+    "addonVersion": {
+      "state": "parsed",
+      "text": " 해당없음.",
+      "fragmentPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\idx-9789-addonVersion.html",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-9789.html",
+        "selector": "#addonVersion",
+        "line": 1263
+      },
+      "links": []
+    }
+  },
+  "iframes": {
+    "screenshot": {
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=9789&tempridx=&count=1",
+      "iframeLiteral": "<iframe frameborder=\"0\" framespacing=\"0\" id=\"screenshot\" scrolling=\"no\" src=\"imagelist.iframe.php?ridx=9789&amp;tempridx=&amp;count=1\"></iframe>",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-9789.html",
+        "selector": "iframe#screenshot",
+        "line": 1238
+      },
+      "provenance": {
+        "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=9789&tempridx=&count=1",
+        "time": "2026-11-17T14:02:14.2584685Z",
+        "contentType": "text/html; charset=UTF-8",
+        "HTTP": 200,
+        "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=9789&tempridx=&count=1",
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-9789.html",
+        "state": "acquired",
+        "attempts": 1,
+        "commandExitCode": 0,
+        "encoding": "IWR decoded to UTF-8",
+        "bytes": 2364,
+        "SHA256": "081834F2DDCC70AEC691928DD521BC34B9D40742B97C7205DBA102ECB268C5FD"
+      },
+      "state": "parsed",
+      "text": "\n\n\n\n\n\n스크린샷\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "links": [
+        {
+          "href": "javascript:void(0);",
+          "onclick": null,
+          "text": "",
+          "line": 28
+        },
+        {
+          "href": "javascript:void(0);",
+          "onclick": "viewImage('2015/09/21/bbs/i12983843248.jpg');",
+          "text": "",
+          "line": 33
+        },
+        {
+          "href": "javascript:void(0);",
+          "onclick": null,
+          "text": "",
+          "line": 40
+        }
+      ],
+      "literalPublicDownloadURLs": [],
+      "imageCount": 1
+    },
+    "fileInfo": {
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=9789&tempridx=&count=1",
+      "iframeLiteral": "<iframe frameborder=\"0\" id=\"fileInfo\" src=\"filelist.iframe.php?mode=view&amp;ridx=9789&amp;tempridx=&amp;count=1\"></iframe>",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-9789.html",
+        "selector": "iframe#fileInfo",
+        "line": 1269
+      },
+      "provenance": {
+        "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=9789&tempridx=&count=1",
+        "time": "2026-11-17T14:02:14.8966813Z",
+        "contentType": "text/html; charset=UTF-8",
+        "HTTP": 200,
+        "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=9789&tempridx=&count=1",
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-9789.html",
+        "state": "acquired",
+        "attempts": 1,
+        "commandExitCode": 0,
+        "encoding": "IWR decoded to UTF-8",
+        "bytes": 2327,
+        "SHA256": "26467E8753E609A2337CB891D7FF0D29A1E8B0539F3EE5B77E5B9FFAFBC60525"
+      },
+      "state": "parsed",
+      "text": "\n\n\n\n\n\n파일 정보\n\n\n\n\n\n\n\n\n\n\n\n\n파일\n\n\n클라이언트 버전\n\n\n다운로드\n\n\n등록일\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\nDevilUI_addons.zip\n\n\n\n\n\n\n6.2.2\n\n\n8123\n\n\n2015-09-21\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "links": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "DevilUI_addons.zip",
+          "line": 40
+        }
+      ],
+      "literalPublicDownloadURLs": [
+        "https://pds.inven.co.kr/upload/2015/09/21/addon/DevilUI_addons.zip"
+      ],
+      "fileRows": [
+        {
+          "text": "DevilUI_addons.zip 6.2.2 8123 2015-09-21",
+          "cells": [
+            "DevilUI_addons.zip",
+            "6.2.2",
+            "8123",
+            "2015-09-21"
+          ],
+          "line": 37
+        }
+      ],
+      "scriptPublicDownloadURLLiterals": [
+        {
+          "url": "https://pds.inven.co.kr/upload/2015/09/21/addon/DevilUI_addons.zip",
+          "literal": "https://pds.inven.co.kr/upload/2015/09/21/addon/DevilUI_addons.zip",
+          "scriptText": "parent.setDownloadInfo(54091,\"https://pds.inven.co.kr/upload/2015/09/21/addon/DevilUI_addons.zip\");",
+          "sourceLocation": {
+            "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-9789.html",
+            "line": 37,
+            "selector": "script"
+          },
+          "executed": false
+        }
+      ]
+    }
+  },
+  "images": [
+    {
+      "postID": 9789,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload2.inven.co.kr/upload/2015/09/21/bbs/thumb/n12983843248.jpg",
+      "viewerLiteral": "viewImage('2015/09/21/bbs/i12983843248.jpg');",
+      "fullURL": "https://upload2.inven.co.kr/upload/2015/09/21/bbs/i12983843248.jpg",
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-9789.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": null,
+      "decodeStatus": "verified-full-load",
+      "mappingEvidence": {
+        "observedThumbOrigin": "https://upload2.inven.co.kr",
+        "observedPathPrefix": "/upload/",
+        "literalViewerPath": "2015/09/21/bbs/i12983843248.jpg"
+      },
+      "initialMappingState": "unresolved-preserved-in-images.json",
+      "finalURL": "https://upload2.inven.co.kr/upload/2015/09/21/bbs/i12983843248.jpg",
+      "time": "2026-11-17T14:05:26.7154035Z",
+      "contentType": "image/jpeg",
+      "HTTP": 200,
+      "sourceURL": "https://upload2.inven.co.kr/upload/2015/09/21/bbs/i12983843248.jpg",
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-ab607ec94545e43bbf04.jpg",
+      "state": "acquired",
+      "attempts": 1,
+      "commandExitCode": 0,
+      "bytes": 53600,
+      "SHA256": "908E60CA3C485D6FC99E89A44D13C72C00F8C779277DB86C8C0D044F0EB5FF13",
+      "width": 576,
+      "height": 324,
+      "imageFormat": "JPEG"
+    }
+  ],
+  "title": "DevilUI 수정",
+  "metadataLiteral": "DevilUI 수정\n데빌통합애드온 수정\n애드온 등록자\nc0nstantine\n최종 업데이트\n2015.09.21\n카테고리\n통합\n클라이언트 버전\n6.2.2\n애드온 버전\n해당없음\n조회수\n31774\n추천수\n6\n다운로드 수\n8123\n관심등록 수\n111\n다운로드\n관심 애드온 등록",
+  "metadataRows": [
+    {
+      "label": "애드온 등록자",
+      "value": "c0nstantine",
+      "line": 1181
+    },
+    {
+      "label": "최종 업데이트",
+      "value": "2015.09.21",
+      "line": 1185
+    },
+    {
+      "label": "카테고리",
+      "value": "통합",
+      "line": 1189
+    },
+    {
+      "label": "클라이언트 버전",
+      "value": "6.2.2",
+      "line": 1196
+    },
+    {
+      "label": "애드온 버전",
+      "value": "해당없음",
+      "line": 1200
+    },
+    {
+      "label": "조회수",
+      "value": "31774",
+      "line": 1207
+    },
+    {
+      "label": "추천수",
+      "value": "6",
+      "line": 1211
+    },
+    {
+      "label": "다운로드 수",
+      "value": "8123",
+      "line": 1215
+    },
+    {
+      "label": "관심등록 수",
+      "value": "111",
+      "line": 1219
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+
+BigWigsDB = {
+	["disabledModules"] = {
+		["Default"] = {
+			["요그사론"] = true,
+			["부정의 헤이건"] = true,
+			["로데브"] = true,
+			["XT-002 해체자"] = true,
+			["관찰자 알갈론"] = true,
+			["4인의 기병대"] = true,
+			["무쇠 평의회"] = true,
+			["살타리온"] = true,
+			["영혼 착취자 고딕"] = true,
+			["사피론"] = true,
+			["요그사론 체력"] = true,
+			["맥스나"] = true,
+			["그라불루스"] = true,
+			["아우리아야"] = true,
+			["타디우스"] = true,
+			["토림"] = true,
+			["콜로간 체력"] = true,
+			["거대 화염전차"] = true,
+			["프레이야"] = true,
+			["칼날비늘"] = true,
+			["아눕레칸"] = true,
+			["훈련교관 라주비어스"] = true,
+			["폭풍의 감시자 에말론"] = true,
+			["글루스"] = true,
+			["바위 감시자 아카본"] = true,
+			["말리고스"] = true,
+			["호디르"] = true,
+			["역병술사 노스"] = true,
+			["귀부인 팰리나"] = true,
+			["콜로간"] = true,
+			["미미론"] = true,
+			["켈투자드"] = true,
+			["장군 베작스"] = true,
+			["미미론 체력"] = true,
+			["패치워크"] = true,
+			["용광로 군주 이그니스"] = true,
+			["무쇠평의회 체력"] = true,
+			["프레이야 체력"] = true,
+		},
+	},
+	["namespaces"] = {
+		["Bars 2"] = {
+			["profiles"] = {
+				["Default"] = {
+					["BigWigsEmphasizeAnchor_y"] = 449.4834076985615,
+					["BigWigsAnchor_width"] = 193.1701373988544,
+					["BigWigsAnchor_y"] = 335.6161861097807,
+					["emphasizeGrowup"] = false,
+					["BigWigsAnchor_x"] = 416.8046662371867,
+					["growup"] = false,
+					["BigWigsEmphasizeAnchor_width"] = 276.297962928782,
+					["BigWigsEmphasizeAnchor_x"] = 592.6074293511394,
+					["emphasizeScale"] = 1.3,
+				},
+			},
+		},
+		["콜로간 체력"] = {
+			["profiles"] = {
+				["Default"] = {
+					["posx"] = 444.5444354188678,
+					["posy"] = 476.7377503034606,
+				},
+			},
+		},
+		["Proximity"] = {
+			["profiles"] = {
+				["Default"] = {
+					["posx"] = 279.3359567113029,
+					["posy"] = 507.9033946076423,
+					["lock"] = false,
+					["height"] = 80.00008862986235,
+					["sound"] = false,
+					["width"] = 100.0000276284447,
+				},
+			},
+		},
+		["Colors"] = {
+			["profiles"] = {
+				["Default"] = {
+					["upgraded"] = 1,
+				},
+			},
+		},
+		["Messages"] = {
+			["profiles"] = {
+				["Default"] = {
+					["threeone"] = true,
+				},
+			},
+		},
+		["Bars"] = {
+			["profiles"] = {
+				["Default"] = {
+					["posx"] = 435.0000098467231,
+					["posy"] = 749.2499925004609,
+					["emphasizePosX"] = 435.813453600752,
+					["scale"] = 0.9000000000000001,
+					["emphasizeScale"] = 1.2,
+					["emphasizePosY"] = 520.5763328284025,
+					["texture"] = "FairLady",
+				},
+			},
+		},
+		["무쇠평의회 체력"] = {
+			["profiles"] = {
+				["Default"] = {
+					["posx"] = 233.900014540178,
+					["posy"] = 475.9099857452477,
+				},
+			},
+		},
+		["프레이야 체력"] = {
+			["profiles"] = {
+				["Default"] = {
+					["posx"] = 232.4000577450976,
+					["posy"] = 557.6600197425081,
+				},
+			},
+		},
+	},
+	["minimap"] = {
+		["minimapPos"] = 4.700254069470262,
+		["radius"] = 80,
+		["hide"] = true,
+	},
+}

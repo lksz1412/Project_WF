@@ -1,0 +1,223 @@
+{
+  "schema": "old-devil-Step5-A1-DESIGN_READY/1",
+  "recorded": "2026-11-18T02:35:00.264459+09:00",
+  "return": "DESIGN_READY",
+  "state": "DESIGN_READY_WITH_LIMITS",
+  "owner": "SAME Phase1.3 A1 /root/old_reference;designonly",
+  "filesFrozenForLaterRenderer": [
+    {
+      "path": "Codex/docs/devil-ui-old-4k-layout.md",
+      "bytes": 14075,
+      "lines": 105,
+      "SHA256": "7A54318D6AAD7EE251706E3D71D62785CC50A0E3653D5C8BA703EEF46B026187"
+    },
+    {
+      "path": "Codex/results/old-devil-layout/layout-spec.json",
+      "bytes": 52035,
+      "lines": 2614,
+      "SHA256": "B1131A291D7C302B1CA086419009E181F3326C691E04BD3D7D56551A4630DFB3"
+    },
+    {
+      "path": "Codex/results/old-devil-layout/source-role-map.json",
+      "bytes": 7628,
+      "lines": 243,
+      "SHA256": "BCA6ED1FA683721B6F370766E4D3AFAC58F1B680FF5262DEF5D7C97392289A35"
+    },
+    {
+      "path": "Codex/results/old-devil-layout/source-settings-evidence.json",
+      "bytes": 37778,
+      "lines": 1796,
+      "SHA256": "58E63F467A424292AD951B8BBE42395325A5C1E731149F23647AAC0BFC8D2B7C"
+    },
+    {
+      "path": "Codex/results/old-devil-layout/proposed-geometry.json",
+      "bytes": 6501,
+      "lines": 305,
+      "SHA256": "3B4710C958E7729C7B614544083B64C975AB2AF022079E2D56E5B611569CA03D"
+    },
+    {
+      "path": "Codex/results/old-devil-layout/asset-manifest.json",
+      "bytes": 12270,
+      "lines": 261,
+      "SHA256": "389BA3453F606C3904F0219476A934D9E12111A85BF1E9DA77CD19F808D07E53"
+    },
+    {
+      "path": "Codex/results/old-devil-layout/text-metrics.json",
+      "bytes": 14988,
+      "lines": 738,
+      "SHA256": "4FEDA35A932ABE0A8257091EB218ECC4AC06424512F4B96DE4D7C52CE1EAABD1"
+    },
+    {
+      "path": "Codex/results/old-devil-layout/design-gates.json",
+      "bytes": 11227,
+      "lines": 434,
+      "SHA256": "B8748160B6AAFFC0A524935DAAC6CC4E51C9EB88C4584F442D4F2F4A0115AE9C"
+    },
+    {
+      "path": "Codex/results/old-devil-layout/read-coverage.json",
+      "bytes": 31323,
+      "lines": 752,
+      "SHA256": "B29FFF67DB5DB4B71302FDFE9BCE9C01F746709868F7519203FA714086B43131"
+    },
+    {
+      "path": "Codex/results/handoffs/old-reference/iter_3/work_log.md",
+      "bytes": 15353,
+      "lines": 79,
+      "SHA256": "0EF2F4D514264B43FF3C7E3FEBA8C1DFF88D041EC9E0933CF4579939C5C6B2EE"
+    },
+    {
+      "path": "Codex/plans/2026-11-17-devil-ui-forever-phase1.3-세부계획.md",
+      "bytes": 42885,
+      "lines": 279,
+      "SHA256": "DD11E621123EFBE1C162FBB18634AC4A9A2186C79E0AA5130AFCA1CBA4FA56EF"
+    },
+    {
+      "path": "Codex/results/old-devil-layout/asset-preparation/asset-inventory.json",
+      "bytes": 104099,
+      "lines": 3268,
+      "SHA256": "5BE22AA9BF51754904C67103E8B922B7E5AEFA8DECC48A08D057DEA9B70FD1A4"
+    },
+    {
+      "path": "Codex/results/old-devil-layout/asset-preparation/READY.json",
+      "bytes": 755,
+      "lines": 18,
+      "SHA256": "7866D8C711DC72A2B564066D8A5D65AA0046BD9F76FBBDC98BC18999EEA1DDE6"
+    },
+    {
+      "path": "Codex/results/old-devil-layout/asset-preparation/FILES_FROZEN.json",
+      "bytes": 9641,
+      "lines": 173,
+      "SHA256": "AEB03426DC2E7F74EC5AEEBE90952938449B746535A4A345BD47B45BD1DC5CCB"
+    },
+    {
+      "path": "Codex/results/old-devil-layout/asset-observations/findings.md",
+      "bytes": 39859,
+      "lines": 328,
+      "SHA256": "C4B3513CF6E08E93C1CEE500DF0B452EFCD39B20B03C7351FAEF8EF4BF533D6B"
+    },
+    {
+      "path": "Codex/results/old-devil-layout/asset-observations/coverage.json",
+      "bytes": 97205,
+      "lines": 2707,
+      "SHA256": "B4303CAFF1E87ECB824E87CBBFE95FF2054B4BA67ABE8685BB33A5B713D6422A"
+    },
+    {
+      "path": "Codex/results/old-devil-layout/asset-observations/work_log.md",
+      "bytes": 6765,
+      "lines": 43,
+      "SHA256": "29C8EF6E6ECEF36C5BCB47BEBB600A2D5B2A5ED42EE6F293252B8CD7B40582F4"
+    },
+    {
+      "path": "Codex/results/handoffs/old-reference/acquisition-step5/brief.md",
+      "bytes": 3350,
+      "lines": 18,
+      "SHA256": "72F86523B0C6A7F97E9A2CD9680250B1761197B1AB781C6DD35F3682A74755A0"
+    },
+    {
+      "path": "Codex/results/handoffs/old-reference/acquisition-step5/work_log.md",
+      "bytes": 7515,
+      "lines": 26,
+      "SHA256": "908E78F35357E675AD38DB34558F8BD46DF6CE1DEE1FA028AB98802ADDD979E7"
+    },
+    {
+      "path": "Codex/results/handoffs/old-reference/iter_3/image-reader-brief.md",
+      "bytes": 3965,
+      "lines": 19,
+      "SHA256": "878AE32D3E5A23AA84AB0785AC5842F50445A3E7A12CAD958F6F8780E0ECC1AE"
+    }
+  ],
+  "fileCount": 20,
+  "readCoverage": {
+    "fullTextFiles": 55,
+    "dataQueryGroups": 6,
+    "manifest": "Codex/results/old-devil-layout/read-coverage.json",
+    "ownLogLines": 79,
+    "newSourceCode": "Onyx.lua139/Masque_Onyx.toc16",
+    "newSourceDocuments": "License15/About17",
+    "A1ImageViews": 0
+  },
+  "designGate": {
+    "path": "Codex/results/old-devil-layout/design-gates.json",
+    "checks": 30,
+    "passed": 30,
+    "failed": 0,
+    "execution": "prioractualrc0;notreplayed",
+    "inputHashMismatch": []
+  },
+  "designCounts": {
+    "roles": 14,
+    "sourceSettingsRecords": 24,
+    "elements": 24,
+    "actionCells": 68,
+    "menuControlSpaces": 12,
+    "selectedAssets": 7,
+    "selectedImages": 6,
+    "selectedFont": 1,
+    "textMeasurements": 23,
+    "distinctKeyLabels": 16,
+    "contrastPairs": 4
+  },
+  "geometryProposal": {
+    "canvas": [
+      3840,
+      2160
+    ],
+    "outerButtonPx": 80,
+    "iconPx": 64,
+    "gapPx": 2,
+    "lowestPanelHeightPx": 304,
+    "throughHelperStackPx": 524,
+    "includingUpperUnitEnvelopePx": 720,
+    "threeNativeChatRoles": true,
+    "lowerSquareMap": true,
+    "sharedVerticalSeamPx": 2,
+    "bottomUpNotGlobalRatio": true
+  },
+  "sourceAssetObservation": {
+    "sameReader": "/root/old_reference/image_reader",
+    "uniqueWholeAssets": 23,
+    "sourceImagePaths": 30,
+    "targetPhotoReobserved": 1,
+    "actuallyViewedSupplementalComposites": 16,
+    "historical50Unmodified": true
+  },
+  "mechanicalAssetScope": {
+    "sourceFiles": 41,
+    "sourceImagePaths": 30,
+    "uniquePNG": 23,
+    "fontRows": 4,
+    "failures": 0,
+    "sourceBeforeAfterEqual": "frozenA4evidence;notretested",
+    "helperWriting": "Step5stopped;laterrootR39unrelatedtasknotlayoutinput"
+  },
+  "actualStatuses": {
+    "layoutRender": "NOT_RUN",
+    "actualPixels": "NOT_RUN",
+    "newLayoutVisualObservation": "NOT_RUN",
+    "independentP4": "NOT_RUN",
+    "gameResolutionUIscale": "NOT_RUN",
+    "gameInputFiltersCombat": "NOT_RUN"
+  },
+  "scopeException": {
+    "path": "C:/Users/USER/Documents/Codex/2026-11-17/new-chat-2/step5-asset-mechanics.py",
+    "writer": "A4initialoutsideassignedDscope",
+    "currentDcopy": "work/old-devil-step5-assets-labr_iq8/prepare-assets.py",
+    "currentBytes": 9773,
+    "SHA256": "4C04C2E7B966B70C1CF947D024ED4024E1B6A77552F20ADF0ED30D6859615759",
+    "priorAbsenceOrOverwrite": "UNVERIFIED;no prewriteexistencecheck",
+    "additionalA1Cmutations": 0,
+    "restorationClaim": false,
+    "closureOwner": "root;separatefrom41source/assetgates"
+  },
+  "limits": [
+    "allpixelsA1proposedoffline3840x2160,notactualcurrentgame",
+    "exactphoto/build/profile/assetidentityandlongrowcountunverified",
+    "3nativewindowrolespreserved,notoldIDs/channelfilterimport",
+    "runtimeAPI/input/history/IME/filters/combatunverified",
+    "privateofflineassetpreviewonly;rightsnotfullyverified",
+    "rejected2022layout/sourceoutputsremainfrozen",
+    "no renderer/gameLua/install/private/commit/push byA1"
+  ],
+  "next": "A1STOP;rootreadsactualfrozeninputs then dispatchesA2render→actualpixelchecks→prescribedreader→samePhaseB10P4",
+  "receiptSelfHash": "externalfinaltooloutputonly;excludedtoavoidselfreference"
+}

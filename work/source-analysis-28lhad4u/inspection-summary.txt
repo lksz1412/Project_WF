@@ -1,0 +1,1 @@
+archive inventory created with full CRC, safe paths and per-file extracted hash checks

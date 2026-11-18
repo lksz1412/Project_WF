@@ -1,0 +1,19 @@
+## Interface: 30200
+
+## Title: CML
+## Notes: Text clock, memory, latency, and framerate.
+## OptionalDeps: Ace2, LibSharedMedia-2.0, SharedMedia-2.0
+## SavedVariables: cmldb
+## Version: 1.1
+## Author: Phanx
+## X-Credits: rdji
+## X-Category: Interface Enhancements
+
+## X-Embeds: Ace2
+embeds.xml
+
+Locale-deDE.lua
+Locale-koKR.lua
+
+cml.lua
+cmlOptions.lua

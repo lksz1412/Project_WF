@@ -1,0 +1,17 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+<Script file="Profile\Broker_Guild_Friends.lua"/>
+<Script file="Profile\Broker_XPBar.lua"/>
+<Script file="Profile\BugSack.lua"/>
+<Script file="Profile\Castbars.lua"/>
+<Script file="Profile\ChocolateBar.lua"/>
+<Script file="Profile\Dominos.lua"/>
+<Script file="Profile\kgPanels.lua"/>
+<Script file="Profile\Leatrix_Plus.lua"/>
+<Script file="Profile\Mapster.lua"/>
+<Script file="Profile\Masque.lua"/>
+<Script file="Profile\PitBull4.lua"/>
+<Script file="Profile\Plater.lua"/>
+<Script file="Profile\Questie.lua"/>
+<Script file="Profile\RangeDisplay.lua"/>
+<Script file="Profile\TipTac.lua"/>
+</Ui>

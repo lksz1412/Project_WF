@@ -1,0 +1,60 @@
+[
+  {
+    "label": "idx1932-rar",
+    "operation": "list",
+    "command": [
+      "C:/Program Files/Bandizip/bz.exe",
+      "l",
+      "-list:v",
+      "-consolemode:utf8",
+      "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\downloads\\devilbecustom91.part1.rar"
+    ],
+    "sourceExecuted": false,
+    "exitCode": 0,
+    "stdoutPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\idx1932-rar-list-stdout.txt",
+    "stderrPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\idx1932-rar-list-stderr.txt"
+  },
+  {
+    "label": "idx1932-rar",
+    "operation": "integrity",
+    "command": [
+      "C:/Program Files/Bandizip/bz.exe",
+      "t",
+      "-consolemode:utf8",
+      "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\downloads\\devilbecustom91.part1.rar"
+    ],
+    "sourceExecuted": false,
+    "exitCode": 0,
+    "stdoutPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\idx1932-rar-integrity-stdout.txt",
+    "stderrPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\idx1932-rar-integrity-stderr.txt"
+  },
+  {
+    "label": "idx3461-sfx",
+    "operation": "list",
+    "command": [
+      "C:/Program Files/Bandizip/bz.exe",
+      "l",
+      "-list:v",
+      "-consolemode:utf8",
+      "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\extracted-idx-3461\\Black Edition2_6.1 Alpha.exe"
+    ],
+    "sourceExecuted": false,
+    "exitCode": 0,
+    "stdoutPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\idx3461-sfx-list-stdout.txt",
+    "stderrPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\idx3461-sfx-list-stderr.txt"
+  },
+  {
+    "label": "idx3461-sfx",
+    "operation": "integrity",
+    "command": [
+      "C:/Program Files/Bandizip/bz.exe",
+      "t",
+      "-consolemode:utf8",
+      "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\extracted-idx-3461\\Black Edition2_6.1 Alpha.exe"
+    ],
+    "sourceExecuted": false,
+    "exitCode": 0,
+    "stdoutPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\idx3461-sfx-integrity-stdout.txt",
+    "stderrPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\idx3461-sfx-integrity-stderr.txt"
+  }
+]

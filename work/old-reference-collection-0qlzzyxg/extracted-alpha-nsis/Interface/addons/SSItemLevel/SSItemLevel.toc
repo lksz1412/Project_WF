@@ -1,0 +1,17 @@
+## Interface: 60100
+## Title: |cffffffffSS|rItemLevel
+## Notes: 아이템 레벨 표기
+## Author: Saseum
+## Version: 20150226
+## SavedVariables: SSItemLevelDurability, SSItemLevelMore, SSItemLevelOpt
+
+#@no-lib-strip@
+embeds.xml
+#@end-no-lib-strip@
+
+libs\LibBlueItem-1.0\LibBlueItem-1.0.lua
+ItemLevel.lua
+InspectItemLevel.lua
+Durability.lua
+More.lua
+MouseOver.lua

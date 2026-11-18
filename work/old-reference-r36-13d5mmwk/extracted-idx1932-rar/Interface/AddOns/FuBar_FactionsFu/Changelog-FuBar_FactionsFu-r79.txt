@@ -1,0 +1,54 @@
+------------------------------------------------------------------------
+r79 | elkano | 2008-10-15 10:16:37 +0000 (Wed, 15 Oct 2008) | 1 line
+Changed paths:
+   M /trunk
+   M /trunk/FuBar_FactionsFu.lua
+
+added indentation for children
+------------------------------------------------------------------------
+r78 | elkano | 2008-10-15 09:23:45 +0000 (Wed, 15 Oct 2008) | 1 line
+Changed paths:
+   D /trunk/Locales
+   A /trunk/locales (from /trunk/Locales:77)
+
+renaming a folder
+------------------------------------------------------------------------
+r77 | elkano | 2008-10-15 09:08:27 +0000 (Wed, 15 Oct 2008) | 3 lines
+Changed paths:
+   M /trunk/.pkgmeta
+   M /trunk/FuBar_FactionsFu.lua
+   M /trunk/FuBar_FactionsFu.toc
+   D /trunk/Libs
+   D /trunk/embeds.xml
+
+FuBar_FactionsFu
+- changes for new WoWAce
+- updated for WoW 3.x
+------------------------------------------------------------------------
+r76 | swix | 2008-10-11 12:00:33 +0000 (Sat, 11 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/FuBar_FactionsFu.toc
+   A /trunk/Locales/FuBar_FactionsFu.ruRU.lua
+
+Added ruRU locale
+------------------------------------------------------------------------
+r75 | root | 2008-09-30 15:52:22 +0000 (Tue, 30 Sep 2008) | 1 line
+Changed paths:
+   M /trunk/.pkgmeta
+
+Hopefully fix .pkgmeta
+------------------------------------------------------------------------
+r74 | root | 2008-09-29 21:58:10 +0000 (Mon, 29 Sep 2008) | 1 line
+Changed paths:
+   A /trunk/.pkgmeta
+   M /trunk/Libs
+
+Facilitate WowAce-on-CurseForge transition
+------------------------------------------------------------------------
+r72 | root | 2008-09-29 20:57:57 +0000 (Mon, 29 Sep 2008) | 1 line
+Changed paths:
+   D /tmp/trunk/FuBar_FactionsFu
+   A /trunk (from /tmp/trunk/FuBar_FactionsFu:71)
+
+Importing old repo data under /trunk
+------------------------------------------------------------------------

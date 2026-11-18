@@ -1,0 +1,68 @@
+------------------------------------------------------------------------
+r61 | yleaf | 2009-07-13 01:49:24 +0000 (Mon, 13 Jul 2009) | 1 line
+Changed paths:
+   A /tags/0.7.4 (from /trunk:60)
+
+tagging 0.7.4
+------------------------------------------------------------------------
+r60 | yleaf | 2009-07-13 01:43:36 +0000 (Mon, 13 Jul 2009) | 2 lines
+Changed paths:
+   D /trunk/ConfigPanel.lua
+   M /trunk/JPack.lua
+   M /trunk/JPack.toc
+   M /trunk/ex/JPack_Ex.lua
+
+remove bagnon support
+to bagnon2 users: Enable bagnon2's databroker frame to JPack_Broker
+------------------------------------------------------------------------
+r59 | yleaf | 2009-07-11 01:45:12 +0000 (Sat, 11 Jul 2009) | 1 line
+Changed paths:
+   M /trunk/JPack.lua
+   M /trunk/broker/JPack_Broker.toc
+   M /trunk/ex/JPack_Ex.toc
+
+toc version update
+------------------------------------------------------------------------
+r58 | yleaf | 2009-07-11 01:41:21 +0000 (Sat, 11 Jul 2009) | 1 line
+Changed paths:
+   M /trunk/JPack.lua
+
+table.getn => #
+------------------------------------------------------------------------
+r56 | yleaf | 2009-06-17 05:42:14 +0000 (Wed, 17 Jun 2009) | 3 lines
+Changed paths:
+   M /trunk/JPack.lua
+   M /trunk/JPack.toc
+   M /trunk/ex/JPack_Ex.lua
+
+rewrite event handler
+fix jpack ex for combuctor
+version => 0.7.3
+------------------------------------------------------------------------
+r54 | yleaf | 2009-06-16 09:22:24 +0000 (Tue, 16 Jun 2009) | 1 line
+Changed paths:
+   M /trunk/JPack.toc
+   M /trunk/ex/JPack_Ex.lua
+
+quick fix for bagnon2
+------------------------------------------------------------------------
+r53 | yleaf | 2009-06-13 13:12:04 +0000 (Sat, 13 Jun 2009) | 2 lines
+Changed paths:
+   A /trunk/ConfigPanel.lua
+   M /trunk/JPack.lua
+   M /trunk/JPack.toc
+   M /trunk/JPackConfig.lua
+   M /trunk/broker/JPack_Broker.toc
+   M /trunk/broker/core.lua
+   M /trunk/ex/JPack_Ex.lua
+   M /trunk/ex/JPack_Ex.toc
+   A /trunk/localization/README.txt
+   M /trunk/localization/localization.cn.lua
+   M /trunk/localization/localization.de.lua
+   M /trunk/localization/localization.en.lua
+   M /trunk/localization/localization.kr.lua
+   M /trunk/localization/localization.tw.lua
+
+merge codes
+packup button for bagnon2 support
+------------------------------------------------------------------------

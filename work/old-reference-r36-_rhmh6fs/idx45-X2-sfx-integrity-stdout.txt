@@ -1,0 +1,4 @@
+bz 7.47(Beta,x64) - Bandizip console tool. Copyright (C) 2026 Bandisoft
+Testing archive: D:\Projects\Project_WF\work\old-reference-r36-_rhmh6fs\extracted-legacy-idx45-159\DevilUI-X2 R3.4.exe
+$PLUGINSDIR\AccountInf.ini  100.0% / 0.0% DevilUI-X2_uninst.exe  23.9% / 99.9% DevilUI-X2_uninst.exe  47.8% / 99.9% DevilUI-X2_uninst.exe  71.8% / 100.0% DevilUI-X2_uninst.exe  77.3% / 100.0% 
+All OK

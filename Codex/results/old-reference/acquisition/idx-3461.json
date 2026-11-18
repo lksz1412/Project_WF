@@ -1,0 +1,1653 @@
+{
+  "postID": 3461,
+  "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=3461",
+  "row": {
+    "postID": 3461,
+    "page": 1,
+    "rowOrdinal": 11,
+    "title": "DevilUI-Black Edition2 6.1 Alpha [통합] 2424",
+    "rowText": "24 DevilUI-Black Edition2 6.1 Alpha [통합] 2424 nicecurry 1433625 796 03-04",
+    "sourceAnchor": "javascript:addonMove('detail.php', 'idx->3461', 'leave->idx,listtype,ext', 'rurl');",
+    "sourceLocation": {
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\list-first.html",
+      "selector": "table.list tr a[href]",
+      "line": 1310
+    }
+  },
+  "detailProvenance": {
+    "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=3461",
+    "time": "2026-11-17T14:02:15.7120195Z",
+    "contentType": "text/html; charset=UTF-8",
+    "HTTP": 200,
+    "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=3461",
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-3461.html",
+    "state": "acquired",
+    "attempts": 1,
+    "commandExitCode": 0,
+    "encoding": "IWR decoded to UTF-8",
+    "bytes": 229048,
+    "SHA256": "731B5DA0C512B40CF4BCE0DFDE19949180B41096D64DA1133782E82A3CDD84B4"
+  },
+  "acquisitionState": "parsed",
+  "A1read": false,
+  "imageObserved": false,
+  "sections": {
+    "addonAddon": {
+      "state": "parsed",
+      "text": "\n\nBlack Edition2 는 배포되어 있는 수많은 애드온을 가지고 구성하게 되므로,\n\n각 애드온에 관한 모든 저작권은 해당 제작자가 가집니다.\n\n이 자리를 빌어 애드온 개발자 여러분에게 감사의 말을 올립니다.\n\n7년이상 애드온 모음집을 연재 하다보니 세심하게 많은 부분을 도와 드릴수 없습니다.(댓글, 게임상의 귓말등등)\n\n또한 모음집을 좀더 가볍게 만들고자...상당수 애드온들은 Lua수정 없이는 변경이 불가능합니다.\n\n기본적인 취지는 게임방등과 같은 곳에서 비교적 간단하게 애드온 설치를 가능하게 하는것과\n\n잦은 업뎃을 대신 해드리는 취지로 공유를 하는것이니,\n\n자신의 취향에 맞는 애드온을 구성 하실분은 개인이 해결을 해주십사 부탁드립니다.\n\n\n\n\n\n\n\n\n\n\nDevilUI-Black Edition 화면!\n\n\n\n\n일반적인 와이드 해상도의 구성 입니다.\n\n\n\n\n\n5:4 전용 해상도의 배치 입니다.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDevilUI 포럼\n \n<- 클릭 하세요.\n\n\n\n\n\n\n다운이 힘든분은 제 블로그에서 받아보세요.\n \n<- 클릭 하세요.\n\n",
+      "fragmentPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\idx-3461-addonAddon.html",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-3461.html",
+        "selector": "#addonAddon",
+        "line": 1244
+      },
+      "links": [
+        {
+          "href": "https://www.inven.co.kr/board/powerbbs.php?come_idx=1636",
+          "text": "DevilUI 포럼",
+          "title": null
+        },
+        {
+          "href": "http://blog.naver.com/nicecurry",
+          "text": "다운이 힘든분은 제 블로그에서 받아보세요.",
+          "title": null
+        }
+      ]
+    },
+    "addonVersion": {
+      "state": "parsed",
+      "text": "개인적으로 사용하는 애드온을 지인들에게 배포할 용도로 만들어 졌기에...\n\n변경사항을 적어드리지 못하는점 죄송스럽게 생각합니다.\n\n\n\nWTF폴더는 거의 매번 변경이 있으니 덮어 씌우시지 말길 바랍니다.",
+      "fragmentPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\idx-3461-addonVersion.html",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-3461.html",
+        "selector": "#addonVersion",
+        "line": 1277
+      },
+      "links": []
+    }
+  },
+  "iframes": {
+    "screenshot": {
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=3461&tempridx=&count=2",
+      "iframeLiteral": "<iframe frameborder=\"0\" framespacing=\"0\" id=\"screenshot\" scrolling=\"no\" src=\"imagelist.iframe.php?ridx=3461&amp;tempridx=&amp;count=2\"></iframe>",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-3461.html",
+        "selector": "iframe#screenshot",
+        "line": 1238
+      },
+      "provenance": {
+        "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=3461&tempridx=&count=2",
+        "time": "2026-11-17T14:02:17.6181825Z",
+        "contentType": "text/html; charset=UTF-8",
+        "HTTP": 200,
+        "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=3461&tempridx=&count=2",
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-3461.html",
+        "state": "acquired",
+        "attempts": 1,
+        "commandExitCode": 0,
+        "encoding": "IWR decoded to UTF-8",
+        "bytes": 2707,
+        "SHA256": "CC5A47B3A3DCBCEA0102693D32548DBA6F011BDBEBFA4C152A74B48774263CCC"
+      },
+      "state": "parsed",
+      "text": "\n\n\n\n\n\n스크린샷\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "links": [
+        {
+          "href": "javascript:void(0);",
+          "onclick": null,
+          "text": "",
+          "line": 28
+        },
+        {
+          "href": "javascript:void(0);",
+          "onclick": "viewImage('2010/03/18/bbs/i74109714.jpg');",
+          "text": "",
+          "line": 33
+        },
+        {
+          "href": "javascript:void(0);",
+          "onclick": "viewImage('2012/09/23/bbs/i1785063732.jpg');",
+          "text": "",
+          "line": 40
+        },
+        {
+          "href": "javascript:void(0);",
+          "onclick": null,
+          "text": "",
+          "line": 47
+        }
+      ],
+      "literalPublicDownloadURLs": [],
+      "imageCount": 2
+    },
+    "fileInfo": {
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=3461&tempridx=&count=85",
+      "iframeLiteral": "<iframe frameborder=\"0\" id=\"fileInfo\" src=\"filelist.iframe.php?mode=view&amp;ridx=3461&amp;tempridx=&amp;count=85\"></iframe>",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-3461.html",
+        "selector": "iframe#fileInfo",
+        "line": 1286
+      },
+      "provenance": {
+        "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=3461&tempridx=&count=85",
+        "time": "2026-11-17T14:02:18.1653774Z",
+        "contentType": "text/html; charset=UTF-8",
+        "HTTP": 200,
+        "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=3461&tempridx=&count=85",
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-3461.html",
+        "state": "acquired",
+        "attempts": 1,
+        "commandExitCode": 0,
+        "encoding": "IWR decoded to UTF-8",
+        "bytes": 40801,
+        "SHA256": "ED4099FBD4524B411DE1E24D478806DD06BAA0E6A9B28E980EA3C2A79FDB6B80"
+      },
+      "state": "parsed",
+      "text": "\n\n\n\n\n\n파일 정보\n\n\n\n\n\n\n\n\n\n\n\n\n파일\n\n\n클라이언트 버전\n\n\n다운로드\n\n\n등록일\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\nBlackEdition2_6.1Alpha.zip\n\n\n\n\n\n\n6.1.0\n\n\n72340\n\n\n2015-03-04\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_6.0.3Beta.zip\n\n\n\n\n\n\n6.0.2\n\n\n73720\n\n\n2014-12-20\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_6.0.3Alpha.zip\n\n\n\n\n\n\n6.0.2\n\n\n45196\n\n\n2014-11-22\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_6.0.2Beta.zip\n\n\n\n\n\n\n6.0.2\n\n\n22387\n\n\n2014-10-29\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_6.0.2Alpha3.zip\n\n\n\n\n\n\n6.0.2\n\n\n4788\n\n\n2014-10-24\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_6.0.2Alpha2.zip\n\n\n\n\n\n\n6.0.2\n\n\n7735\n\n\n2014-10-18\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_6.0.2Alpha.zip\n\n\n\n\n\n\n6.0.2\n\n\n3202\n\n\n2014-10-17\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_5.4THETA.zip\n\n\n\n\n\n\n5.4.0\n\n\n72364\n\n\n2014-03-24\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_5.4ETA.zip\n\n\n\n\n\n\n5.4.0\n\n\n38065\n\n\n2014-01-20\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_5.4ZETA.zip\n\n\n\n\n\n\n5.4.0\n\n\n28880\n\n\n2013-12-08\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_5.4Epsilon.zip\n\n\n\n\n\n\n5.4.0\n\n\n21763\n\n\n2013-11-02\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_5.4Delta.zip\n\n\n\n\n\n\n5.4.0\n\n\n2224\n\n\n2013-10-31\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_5.4Gamma.zip\n\n\n\n\n\n\n5.4.0\n\n\n22172\n\n\n2013-09-17\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_5.4Beta.zip\n\n\n\n\n\n\n5.4.0\n\n\n2209\n\n\n2013-09-15\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_5.4Alpha.zip\n\n\n\n\n\n\n5.4.0\n\n\n3483\n\n\n2013-09-13\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_5.3beta.zip\n\n\n\n\n\n\n5.3.0\n\n\n41908\n\n\n2013-05-29\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_5.3alpha2.zip\n\n\n\n\n\n\n5.3.0\n\n\n3232\n\n\n2013-05-25\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_5.3alpha.zip\n\n\n\n\n\n\n5.3.0\n\n\n77\n\n\n2013-05-25\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_5.2C.zip\n\n\n\n\n\n\n5.2.0\n\n\n8738\n\n\n2013-04-29\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_5.2Beta.zip\n\n\n\n\n\n\n5.2.0\n\n\n20747\n\n\n2013-03-08\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_5.2alpha.zip\n\n\n\n\n\n\n5.2.0\n\n\n2251\n\n\n2013-03-07\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_5.1b.zip\n\n\n\n\n\n\n5.1.0\n\n\n29431\n\n\n2012-12-25\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_5.1a.zip\n\n\n\n\n\n\n5.1.0\n\n\n16278\n\n\n2012-11-29\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_5.01d.zip\n\n\n\n\n\n\n5.0.5\n\n\n11590\n\n\n2012-11-10\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_5.01c.zip\n\n\n\n\n\n\n5.0.5\n\n\n8440\n\n\n2012-10-30\n\n\n\n\n\n\n\n\n\n\nc1195410179.zip\n\n\n\n\n\n\n5.0.5\n\n\n6961\n\n\n2012-10-20\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_5.01Alpha.zip\n\n\n\n\n\n\n5.0.5\n\n\n4250\n\n\n2012-10-17\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v5.0.5f.zip\n\n\n\n\n\n\n5.0.5\n\n\n23475\n\n\n2012-09-27\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v5.0.5e.zip\n\n\n\n\n\n\n5.0.5\n\n\n517\n\n\n2012-09-27\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v5.0.5d.zip\n\n\n\n\n\n\n5.0.5\n\n\n3624\n\n\n2012-09-23\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v5.0.5c.zip\n\n\n\n\n\n\n5.0.5\n\n\n774\n\n\n2012-09-22\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v5.0.5b.zip\n\n\n\n\n\n\n5.0.5\n\n\n2442\n\n\n2012-09-16\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v5.0.5a.zip\n\n\n\n\n\n\n5.0.5\n\n\n729\n\n\n2012-09-15\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v5.0.4c.zip\n\n\n\n\n\n\n5.0.4\n\n\n1547\n\n\n2012-09-12\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v5.0.4b.zip\n\n\n\n\n\n\n5.0.4\n\n\n981\n\n\n2012-09-10\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v5.0.4a.zip\n\n\n\n\n\n\n5.0.4\n\n\n1931\n\n\n2012-09-07\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v5.0.3a.zip\n\n\n\n\n\n\n5.0.4\n\n\n737\n\n\n2012-09-06\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v5.0.2a.zip\n\n\n\n\n\n\n5.0.4\n\n\n1599\n\n\n2012-09-04\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v5.0.1a.zip\n\n\n\n\n\n\n5.0.4\n\n\n900\n\n\n2012-09-03\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v4.3.0f.zip\n\n\n\n\n\n\n4.3.0\n\n\n82989\n\n\n2012-02-02\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v4.3.0e.zip\n\n\n\n\n\n\n4.3.0\n\n\n40228\n\n\n2011-12-20\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v4.3.0d.zip\n\n\n\n\n\n\n4.3.0\n\n\n1121\n\n\n2011-12-19\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v4.3.0c.zip\n\n\n\n\n\n\n4.3.0\n\n\n16782\n\n\n2011-12-05\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v4.3.0b.zip\n\n\n\n\n\n\n4.3.0\n\n\n11249\n\n\n2011-12-01\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v4.3.0a.zip\n\n\n\n\n\n\n4.3.0\n\n\n3430\n\n\n2011-11-30\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v4.2.0h.zip\n\n\n\n\n\n\n4.2.0\n\n\n16423\n\n\n2011-11-12\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v4.2.0g.exe.zip\n\n\n\n\n\n\n4.2.0\n\n\n27144\n\n\n2011-10-11\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v4.2.0f.exe.zip\n\n\n\n\n\n\n4.2.0\n\n\n52790\n\n\n2011-08-10\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v4.2.0e.exe.zip\n\n\n\n\n\n\n4.2.0\n\n\n303\n\n\n2011-08-10\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v4.2.0d.zip\n\n\n\n\n\n\n4.2.0\n\n\n8862\n\n\n2011-08-02\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v4.2.0c.zip\n\n\n\n\n\n\n4.2.0\n\n\n31937\n\n\n2011-07-07\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v4.2.0b.zip\n\n\n\n\n\n\n4.2.0\n\n\n18192\n\n\n2011-07-01\n\n\n\n\n\n\n\n\n\n\nc25087392.zip\n\n\n\n\n\n\n4.2.0\n\n\n10839\n\n\n2011-06-30\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v4.1.0d.zip\n\n\n\n\n\n\n4.1.0\n\n\n43220\n\n\n2011-05-11\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v4.1.0c.zip\n\n\n\n\n\n\n4.1.0\n\n\n18126\n\n\n2011-04-29\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v4.1.0b.zip\n\n\n\n\n\n\n4.1.0\n\n\n5714\n\n\n2011-04-28\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v4.1.0a.zip\n\n\n\n\n\n\n4.1.0\n\n\n3746\n\n\n2011-04-27\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v4.0.6b.zip\n\n\n\n\n\n\n4.0.6\n\n\n37859\n\n\n2011-03-16\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v4.0.6a.zip\n\n\n\n\n\n\n4.0.6\n\n\n44078\n\n\n2011-02-10\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v4.0.3g.zip\n\n\n\n\n\n\n4.0.3\n\n\n11417\n\n\n2011-02-02\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v4.0.3f.zip\n\n\n\n\n\n\n4.0.3\n\n\n28433\n\n\n2011-01-07\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v4.0.3e.zip\n\n\n\n\n\n\n4.0.3\n\n\n19826\n\n\n2010-12-22\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v4.0.3d.zip\n\n\n\n\n\n\n4.0.3\n\n\n20962\n\n\n2010-12-09\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v4.0.3c.zip\n\n\n\n\n\n\n4.0.3\n\n\n1487\n\n\n2010-12-08\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v4.0.3b.zip\n\n\n\n\n\n\n4.0.3\n\n\n11110\n\n\n2010-11-25\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v4.0.3a.zip\n\n\n\n\n\n\n4.0.3\n\n\n2011\n\n\n2010-11-23\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v4.01f.zip\n\n\n\n\n\n\n4.0.1\n\n\n29798\n\n\n2010-10-19\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v4.01e.zip\n\n\n\n\n\n\n4.0.1\n\n\n2709\n\n\n2010-10-18\n\n\n\n\n\n\n\n\n\n\nc32747338.zip\n\n\n\n\n\n\n4.0.1\n\n\n2872\n\n\n2010-10-17\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v4.01c.zip\n\n\n\n\n\n\n4.0.1\n\n\n1309\n\n\n2010-10-17\n\n\n\n\n\n\n\n\n\n\nc39215568.zip\n\n\n\n\n\n\n4.0.1\n\n\n6555\n\n\n2010-10-15\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v4.01a.zip\n\n\n\n\n\n\n4.0.1\n\n\n6120\n\n\n2010-10-15\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v1.12.zip\n\n\n\n\n\n\n3.3.5\n\n\n24314\n\n\n2010-09-15\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v1.11.zip\n\n\n\n\n\n\n3.3.5\n\n\n55403\n\n\n2010-07-11\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v1.10.zip\n\n\n\n\n\n\n3.3.5\n\n\n3522\n\n\n2010-07-09\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v1.09.zip\n\n\n\n\n\n\n3.3.5\n\n\n8485\n\n\n2010-07-03\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v1.08.zip\n\n\n\n\n\n\n3.3.5\n\n\n5745\n\n\n2010-07-02\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v1.07.zip\n\n\n\n\n\n\n3.3.3\n\n\n33209\n\n\n2010-05-20\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v1.06.zip\n\n\n\n\n\n\n3.3.3\n\n\n34754\n\n\n2010-04-10\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v1.05.zip\n\n\n\n\n\n\n3.3.3\n\n\n10565\n\n\n2010-04-02\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v1.04.zip\n\n\n\n\n\n\n3.3.3\n\n\n14521\n\n\n2010-03-25\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v1.03.zip\n\n\n\n\n\n\n3.3.3\n\n\n2743\n\n\n2010-03-25\n\n\n\n\n\n\n\n\n\n\nBlackEdition2_v1.02.zip\n\n\n\n\n\n\n3.3.2\n\n\n2211\n\n\n2010-03-24\n\n\n\n\n\n\n\n\n\n\nBlackEdition2v1.01.zip\n\n\n\n\n\n\n3.3.2\n\n\n2216\n\n\n2010-03-21\n\n\n\n\n\n\n\n\n\n\nBlackEdition2betav1.0.zip\n\n\n\n\n\n\n3.3.2\n\n\n2430\n\n\n2010-03-18\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "links": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_6.1Alpha.zip",
+          "line": 40
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_6.0.3Beta.zip",
+          "line": 50
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_6.0.3Alpha.zip",
+          "line": 60
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_6.0.2Beta.zip",
+          "line": 70
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_6.0.2Alpha3.zip",
+          "line": 80
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_6.0.2Alpha2.zip",
+          "line": 90
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_6.0.2Alpha.zip",
+          "line": 100
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_5.4THETA.zip",
+          "line": 110
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_5.4ETA.zip",
+          "line": 120
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_5.4ZETA.zip",
+          "line": 130
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_5.4Epsilon.zip",
+          "line": 140
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_5.4Delta.zip",
+          "line": 150
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_5.4Gamma.zip",
+          "line": 160
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_5.4Beta.zip",
+          "line": 170
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_5.4Alpha.zip",
+          "line": 180
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_5.3beta.zip",
+          "line": 190
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_5.3alpha2.zip",
+          "line": 200
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_5.3alpha.zip",
+          "line": 210
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_5.2C.zip",
+          "line": 220
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_5.2Beta.zip",
+          "line": 230
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_5.2alpha.zip",
+          "line": 240
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_5.1b.zip",
+          "line": 250
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_5.1a.zip",
+          "line": 260
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_5.01d.zip",
+          "line": 270
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_5.01c.zip",
+          "line": 280
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "c1195410179.zip",
+          "line": 290
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_5.01Alpha.zip",
+          "line": 300
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v5.0.5f.zip",
+          "line": 310
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v5.0.5e.zip",
+          "line": 320
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v5.0.5d.zip",
+          "line": 330
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v5.0.5c.zip",
+          "line": 340
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v5.0.5b.zip",
+          "line": 350
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v5.0.5a.zip",
+          "line": 360
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v5.0.4c.zip",
+          "line": 370
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v5.0.4b.zip",
+          "line": 380
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v5.0.4a.zip",
+          "line": 390
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v5.0.3a.zip",
+          "line": 400
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v5.0.2a.zip",
+          "line": 410
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v5.0.1a.zip",
+          "line": 420
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v4.3.0f.zip",
+          "line": 430
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v4.3.0e.zip",
+          "line": 440
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v4.3.0d.zip",
+          "line": 450
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v4.3.0c.zip",
+          "line": 460
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v4.3.0b.zip",
+          "line": 470
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v4.3.0a.zip",
+          "line": 480
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v4.2.0h.zip",
+          "line": 490
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v4.2.0g.exe.zip",
+          "line": 500
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v4.2.0f.exe.zip",
+          "line": 510
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v4.2.0e.exe.zip",
+          "line": 520
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v4.2.0d.zip",
+          "line": 530
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v4.2.0c.zip",
+          "line": 540
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v4.2.0b.zip",
+          "line": 550
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "c25087392.zip",
+          "line": 560
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v4.1.0d.zip",
+          "line": 570
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v4.1.0c.zip",
+          "line": 580
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v4.1.0b.zip",
+          "line": 590
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v4.1.0a.zip",
+          "line": 600
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v4.0.6b.zip",
+          "line": 610
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v4.0.6a.zip",
+          "line": 620
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v4.0.3g.zip",
+          "line": 630
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v4.0.3f.zip",
+          "line": 640
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v4.0.3e.zip",
+          "line": 650
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v4.0.3d.zip",
+          "line": 660
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v4.0.3c.zip",
+          "line": 670
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v4.0.3b.zip",
+          "line": 680
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v4.0.3a.zip",
+          "line": 690
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v4.01f.zip",
+          "line": 700
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v4.01e.zip",
+          "line": 710
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "c32747338.zip",
+          "line": 720
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v4.01c.zip",
+          "line": 730
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "c39215568.zip",
+          "line": 740
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v4.01a.zip",
+          "line": 750
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v1.12.zip",
+          "line": 760
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v1.11.zip",
+          "line": 770
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v1.10.zip",
+          "line": 780
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v1.09.zip",
+          "line": 790
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v1.08.zip",
+          "line": 800
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v1.07.zip",
+          "line": 810
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v1.06.zip",
+          "line": 820
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v1.05.zip",
+          "line": 830
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v1.04.zip",
+          "line": 840
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v1.03.zip",
+          "line": 850
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2_v1.02.zip",
+          "line": 860
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2v1.01.zip",
+          "line": 870
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "BlackEdition2betav1.0.zip",
+          "line": 880
+        }
+      ],
+      "literalPublicDownloadURLs": [],
+      "fileRows": [
+        {
+          "text": "BlackEdition2_6.1Alpha.zip 6.1.0 72340 2015-03-04",
+          "cells": [
+            "BlackEdition2_6.1Alpha.zip",
+            "6.1.0",
+            "72340",
+            "2015-03-04"
+          ],
+          "line": 37
+        },
+        {
+          "text": "BlackEdition2_6.0.3Beta.zip 6.0.2 73720 2014-12-20",
+          "cells": [
+            "BlackEdition2_6.0.3Beta.zip",
+            "6.0.2",
+            "73720",
+            "2014-12-20"
+          ],
+          "line": 47
+        },
+        {
+          "text": "BlackEdition2_6.0.3Alpha.zip 6.0.2 45196 2014-11-22",
+          "cells": [
+            "BlackEdition2_6.0.3Alpha.zip",
+            "6.0.2",
+            "45196",
+            "2014-11-22"
+          ],
+          "line": 57
+        },
+        {
+          "text": "BlackEdition2_6.0.2Beta.zip 6.0.2 22387 2014-10-29",
+          "cells": [
+            "BlackEdition2_6.0.2Beta.zip",
+            "6.0.2",
+            "22387",
+            "2014-10-29"
+          ],
+          "line": 67
+        },
+        {
+          "text": "BlackEdition2_6.0.2Alpha3.zip 6.0.2 4788 2014-10-24",
+          "cells": [
+            "BlackEdition2_6.0.2Alpha3.zip",
+            "6.0.2",
+            "4788",
+            "2014-10-24"
+          ],
+          "line": 77
+        },
+        {
+          "text": "BlackEdition2_6.0.2Alpha2.zip 6.0.2 7735 2014-10-18",
+          "cells": [
+            "BlackEdition2_6.0.2Alpha2.zip",
+            "6.0.2",
+            "7735",
+            "2014-10-18"
+          ],
+          "line": 87
+        },
+        {
+          "text": "BlackEdition2_6.0.2Alpha.zip 6.0.2 3202 2014-10-17",
+          "cells": [
+            "BlackEdition2_6.0.2Alpha.zip",
+            "6.0.2",
+            "3202",
+            "2014-10-17"
+          ],
+          "line": 97
+        },
+        {
+          "text": "BlackEdition2_5.4THETA.zip 5.4.0 72364 2014-03-24",
+          "cells": [
+            "BlackEdition2_5.4THETA.zip",
+            "5.4.0",
+            "72364",
+            "2014-03-24"
+          ],
+          "line": 107
+        },
+        {
+          "text": "BlackEdition2_5.4ETA.zip 5.4.0 38065 2014-01-20",
+          "cells": [
+            "BlackEdition2_5.4ETA.zip",
+            "5.4.0",
+            "38065",
+            "2014-01-20"
+          ],
+          "line": 117
+        },
+        {
+          "text": "BlackEdition2_5.4ZETA.zip 5.4.0 28880 2013-12-08",
+          "cells": [
+            "BlackEdition2_5.4ZETA.zip",
+            "5.4.0",
+            "28880",
+            "2013-12-08"
+          ],
+          "line": 127
+        },
+        {
+          "text": "BlackEdition2_5.4Epsilon.zip 5.4.0 21763 2013-11-02",
+          "cells": [
+            "BlackEdition2_5.4Epsilon.zip",
+            "5.4.0",
+            "21763",
+            "2013-11-02"
+          ],
+          "line": 137
+        },
+        {
+          "text": "BlackEdition2_5.4Delta.zip 5.4.0 2224 2013-10-31",
+          "cells": [
+            "BlackEdition2_5.4Delta.zip",
+            "5.4.0",
+            "2224",
+            "2013-10-31"
+          ],
+          "line": 147
+        },
+        {
+          "text": "BlackEdition2_5.4Gamma.zip 5.4.0 22172 2013-09-17",
+          "cells": [
+            "BlackEdition2_5.4Gamma.zip",
+            "5.4.0",
+            "22172",
+            "2013-09-17"
+          ],
+          "line": 157
+        },
+        {
+          "text": "BlackEdition2_5.4Beta.zip 5.4.0 2209 2013-09-15",
+          "cells": [
+            "BlackEdition2_5.4Beta.zip",
+            "5.4.0",
+            "2209",
+            "2013-09-15"
+          ],
+          "line": 167
+        },
+        {
+          "text": "BlackEdition2_5.4Alpha.zip 5.4.0 3483 2013-09-13",
+          "cells": [
+            "BlackEdition2_5.4Alpha.zip",
+            "5.4.0",
+            "3483",
+            "2013-09-13"
+          ],
+          "line": 177
+        },
+        {
+          "text": "BlackEdition2_5.3beta.zip 5.3.0 41908 2013-05-29",
+          "cells": [
+            "BlackEdition2_5.3beta.zip",
+            "5.3.0",
+            "41908",
+            "2013-05-29"
+          ],
+          "line": 187
+        },
+        {
+          "text": "BlackEdition2_5.3alpha2.zip 5.3.0 3232 2013-05-25",
+          "cells": [
+            "BlackEdition2_5.3alpha2.zip",
+            "5.3.0",
+            "3232",
+            "2013-05-25"
+          ],
+          "line": 197
+        },
+        {
+          "text": "BlackEdition2_5.3alpha.zip 5.3.0 77 2013-05-25",
+          "cells": [
+            "BlackEdition2_5.3alpha.zip",
+            "5.3.0",
+            "77",
+            "2013-05-25"
+          ],
+          "line": 207
+        },
+        {
+          "text": "BlackEdition2_5.2C.zip 5.2.0 8738 2013-04-29",
+          "cells": [
+            "BlackEdition2_5.2C.zip",
+            "5.2.0",
+            "8738",
+            "2013-04-29"
+          ],
+          "line": 217
+        },
+        {
+          "text": "BlackEdition2_5.2Beta.zip 5.2.0 20747 2013-03-08",
+          "cells": [
+            "BlackEdition2_5.2Beta.zip",
+            "5.2.0",
+            "20747",
+            "2013-03-08"
+          ],
+          "line": 227
+        },
+        {
+          "text": "BlackEdition2_5.2alpha.zip 5.2.0 2251 2013-03-07",
+          "cells": [
+            "BlackEdition2_5.2alpha.zip",
+            "5.2.0",
+            "2251",
+            "2013-03-07"
+          ],
+          "line": 237
+        },
+        {
+          "text": "BlackEdition2_5.1b.zip 5.1.0 29431 2012-12-25",
+          "cells": [
+            "BlackEdition2_5.1b.zip",
+            "5.1.0",
+            "29431",
+            "2012-12-25"
+          ],
+          "line": 247
+        },
+        {
+          "text": "BlackEdition2_5.1a.zip 5.1.0 16278 2012-11-29",
+          "cells": [
+            "BlackEdition2_5.1a.zip",
+            "5.1.0",
+            "16278",
+            "2012-11-29"
+          ],
+          "line": 257
+        },
+        {
+          "text": "BlackEdition2_5.01d.zip 5.0.5 11590 2012-11-10",
+          "cells": [
+            "BlackEdition2_5.01d.zip",
+            "5.0.5",
+            "11590",
+            "2012-11-10"
+          ],
+          "line": 267
+        },
+        {
+          "text": "BlackEdition2_5.01c.zip 5.0.5 8440 2012-10-30",
+          "cells": [
+            "BlackEdition2_5.01c.zip",
+            "5.0.5",
+            "8440",
+            "2012-10-30"
+          ],
+          "line": 277
+        },
+        {
+          "text": "c1195410179.zip 5.0.5 6961 2012-10-20",
+          "cells": [
+            "c1195410179.zip",
+            "5.0.5",
+            "6961",
+            "2012-10-20"
+          ],
+          "line": 287
+        },
+        {
+          "text": "BlackEdition2_5.01Alpha.zip 5.0.5 4250 2012-10-17",
+          "cells": [
+            "BlackEdition2_5.01Alpha.zip",
+            "5.0.5",
+            "4250",
+            "2012-10-17"
+          ],
+          "line": 297
+        },
+        {
+          "text": "BlackEdition2_v5.0.5f.zip 5.0.5 23475 2012-09-27",
+          "cells": [
+            "BlackEdition2_v5.0.5f.zip",
+            "5.0.5",
+            "23475",
+            "2012-09-27"
+          ],
+          "line": 307
+        },
+        {
+          "text": "BlackEdition2_v5.0.5e.zip 5.0.5 517 2012-09-27",
+          "cells": [
+            "BlackEdition2_v5.0.5e.zip",
+            "5.0.5",
+            "517",
+            "2012-09-27"
+          ],
+          "line": 317
+        },
+        {
+          "text": "BlackEdition2_v5.0.5d.zip 5.0.5 3624 2012-09-23",
+          "cells": [
+            "BlackEdition2_v5.0.5d.zip",
+            "5.0.5",
+            "3624",
+            "2012-09-23"
+          ],
+          "line": 327
+        },
+        {
+          "text": "BlackEdition2_v5.0.5c.zip 5.0.5 774 2012-09-22",
+          "cells": [
+            "BlackEdition2_v5.0.5c.zip",
+            "5.0.5",
+            "774",
+            "2012-09-22"
+          ],
+          "line": 337
+        },
+        {
+          "text": "BlackEdition2_v5.0.5b.zip 5.0.5 2442 2012-09-16",
+          "cells": [
+            "BlackEdition2_v5.0.5b.zip",
+            "5.0.5",
+            "2442",
+            "2012-09-16"
+          ],
+          "line": 347
+        },
+        {
+          "text": "BlackEdition2_v5.0.5a.zip 5.0.5 729 2012-09-15",
+          "cells": [
+            "BlackEdition2_v5.0.5a.zip",
+            "5.0.5",
+            "729",
+            "2012-09-15"
+          ],
+          "line": 357
+        },
+        {
+          "text": "BlackEdition2_v5.0.4c.zip 5.0.4 1547 2012-09-12",
+          "cells": [
+            "BlackEdition2_v5.0.4c.zip",
+            "5.0.4",
+            "1547",
+            "2012-09-12"
+          ],
+          "line": 367
+        },
+        {
+          "text": "BlackEdition2_v5.0.4b.zip 5.0.4 981 2012-09-10",
+          "cells": [
+            "BlackEdition2_v5.0.4b.zip",
+            "5.0.4",
+            "981",
+            "2012-09-10"
+          ],
+          "line": 377
+        },
+        {
+          "text": "BlackEdition2_v5.0.4a.zip 5.0.4 1931 2012-09-07",
+          "cells": [
+            "BlackEdition2_v5.0.4a.zip",
+            "5.0.4",
+            "1931",
+            "2012-09-07"
+          ],
+          "line": 387
+        },
+        {
+          "text": "BlackEdition2_v5.0.3a.zip 5.0.4 737 2012-09-06",
+          "cells": [
+            "BlackEdition2_v5.0.3a.zip",
+            "5.0.4",
+            "737",
+            "2012-09-06"
+          ],
+          "line": 397
+        },
+        {
+          "text": "BlackEdition2_v5.0.2a.zip 5.0.4 1599 2012-09-04",
+          "cells": [
+            "BlackEdition2_v5.0.2a.zip",
+            "5.0.4",
+            "1599",
+            "2012-09-04"
+          ],
+          "line": 407
+        },
+        {
+          "text": "BlackEdition2_v5.0.1a.zip 5.0.4 900 2012-09-03",
+          "cells": [
+            "BlackEdition2_v5.0.1a.zip",
+            "5.0.4",
+            "900",
+            "2012-09-03"
+          ],
+          "line": 417
+        },
+        {
+          "text": "BlackEdition2_v4.3.0f.zip 4.3.0 82989 2012-02-02",
+          "cells": [
+            "BlackEdition2_v4.3.0f.zip",
+            "4.3.0",
+            "82989",
+            "2012-02-02"
+          ],
+          "line": 427
+        },
+        {
+          "text": "BlackEdition2_v4.3.0e.zip 4.3.0 40228 2011-12-20",
+          "cells": [
+            "BlackEdition2_v4.3.0e.zip",
+            "4.3.0",
+            "40228",
+            "2011-12-20"
+          ],
+          "line": 437
+        },
+        {
+          "text": "BlackEdition2_v4.3.0d.zip 4.3.0 1121 2011-12-19",
+          "cells": [
+            "BlackEdition2_v4.3.0d.zip",
+            "4.3.0",
+            "1121",
+            "2011-12-19"
+          ],
+          "line": 447
+        },
+        {
+          "text": "BlackEdition2_v4.3.0c.zip 4.3.0 16782 2011-12-05",
+          "cells": [
+            "BlackEdition2_v4.3.0c.zip",
+            "4.3.0",
+            "16782",
+            "2011-12-05"
+          ],
+          "line": 457
+        },
+        {
+          "text": "BlackEdition2_v4.3.0b.zip 4.3.0 11249 2011-12-01",
+          "cells": [
+            "BlackEdition2_v4.3.0b.zip",
+            "4.3.0",
+            "11249",
+            "2011-12-01"
+          ],
+          "line": 467
+        },
+        {
+          "text": "BlackEdition2_v4.3.0a.zip 4.3.0 3430 2011-11-30",
+          "cells": [
+            "BlackEdition2_v4.3.0a.zip",
+            "4.3.0",
+            "3430",
+            "2011-11-30"
+          ],
+          "line": 477
+        },
+        {
+          "text": "BlackEdition2_v4.2.0h.zip 4.2.0 16423 2011-11-12",
+          "cells": [
+            "BlackEdition2_v4.2.0h.zip",
+            "4.2.0",
+            "16423",
+            "2011-11-12"
+          ],
+          "line": 487
+        },
+        {
+          "text": "BlackEdition2_v4.2.0g.exe.zip 4.2.0 27144 2011-10-11",
+          "cells": [
+            "BlackEdition2_v4.2.0g.exe.zip",
+            "4.2.0",
+            "27144",
+            "2011-10-11"
+          ],
+          "line": 497
+        },
+        {
+          "text": "BlackEdition2_v4.2.0f.exe.zip 4.2.0 52790 2011-08-10",
+          "cells": [
+            "BlackEdition2_v4.2.0f.exe.zip",
+            "4.2.0",
+            "52790",
+            "2011-08-10"
+          ],
+          "line": 507
+        },
+        {
+          "text": "BlackEdition2_v4.2.0e.exe.zip 4.2.0 303 2011-08-10",
+          "cells": [
+            "BlackEdition2_v4.2.0e.exe.zip",
+            "4.2.0",
+            "303",
+            "2011-08-10"
+          ],
+          "line": 517
+        },
+        {
+          "text": "BlackEdition2_v4.2.0d.zip 4.2.0 8862 2011-08-02",
+          "cells": [
+            "BlackEdition2_v4.2.0d.zip",
+            "4.2.0",
+            "8862",
+            "2011-08-02"
+          ],
+          "line": 527
+        },
+        {
+          "text": "BlackEdition2_v4.2.0c.zip 4.2.0 31937 2011-07-07",
+          "cells": [
+            "BlackEdition2_v4.2.0c.zip",
+            "4.2.0",
+            "31937",
+            "2011-07-07"
+          ],
+          "line": 537
+        },
+        {
+          "text": "BlackEdition2_v4.2.0b.zip 4.2.0 18192 2011-07-01",
+          "cells": [
+            "BlackEdition2_v4.2.0b.zip",
+            "4.2.0",
+            "18192",
+            "2011-07-01"
+          ],
+          "line": 547
+        },
+        {
+          "text": "c25087392.zip 4.2.0 10839 2011-06-30",
+          "cells": [
+            "c25087392.zip",
+            "4.2.0",
+            "10839",
+            "2011-06-30"
+          ],
+          "line": 557
+        },
+        {
+          "text": "BlackEdition2_v4.1.0d.zip 4.1.0 43220 2011-05-11",
+          "cells": [
+            "BlackEdition2_v4.1.0d.zip",
+            "4.1.0",
+            "43220",
+            "2011-05-11"
+          ],
+          "line": 567
+        },
+        {
+          "text": "BlackEdition2_v4.1.0c.zip 4.1.0 18126 2011-04-29",
+          "cells": [
+            "BlackEdition2_v4.1.0c.zip",
+            "4.1.0",
+            "18126",
+            "2011-04-29"
+          ],
+          "line": 577
+        },
+        {
+          "text": "BlackEdition2_v4.1.0b.zip 4.1.0 5714 2011-04-28",
+          "cells": [
+            "BlackEdition2_v4.1.0b.zip",
+            "4.1.0",
+            "5714",
+            "2011-04-28"
+          ],
+          "line": 587
+        },
+        {
+          "text": "BlackEdition2_v4.1.0a.zip 4.1.0 3746 2011-04-27",
+          "cells": [
+            "BlackEdition2_v4.1.0a.zip",
+            "4.1.0",
+            "3746",
+            "2011-04-27"
+          ],
+          "line": 597
+        },
+        {
+          "text": "BlackEdition2_v4.0.6b.zip 4.0.6 37859 2011-03-16",
+          "cells": [
+            "BlackEdition2_v4.0.6b.zip",
+            "4.0.6",
+            "37859",
+            "2011-03-16"
+          ],
+          "line": 607
+        },
+        {
+          "text": "BlackEdition2_v4.0.6a.zip 4.0.6 44078 2011-02-10",
+          "cells": [
+            "BlackEdition2_v4.0.6a.zip",
+            "4.0.6",
+            "44078",
+            "2011-02-10"
+          ],
+          "line": 617
+        },
+        {
+          "text": "BlackEdition2_v4.0.3g.zip 4.0.3 11417 2011-02-02",
+          "cells": [
+            "BlackEdition2_v4.0.3g.zip",
+            "4.0.3",
+            "11417",
+            "2011-02-02"
+          ],
+          "line": 627
+        },
+        {
+          "text": "BlackEdition2_v4.0.3f.zip 4.0.3 28433 2011-01-07",
+          "cells": [
+            "BlackEdition2_v4.0.3f.zip",
+            "4.0.3",
+            "28433",
+            "2011-01-07"
+          ],
+          "line": 637
+        },
+        {
+          "text": "BlackEdition2_v4.0.3e.zip 4.0.3 19826 2010-12-22",
+          "cells": [
+            "BlackEdition2_v4.0.3e.zip",
+            "4.0.3",
+            "19826",
+            "2010-12-22"
+          ],
+          "line": 647
+        },
+        {
+          "text": "BlackEdition2_v4.0.3d.zip 4.0.3 20962 2010-12-09",
+          "cells": [
+            "BlackEdition2_v4.0.3d.zip",
+            "4.0.3",
+            "20962",
+            "2010-12-09"
+          ],
+          "line": 657
+        },
+        {
+          "text": "BlackEdition2_v4.0.3c.zip 4.0.3 1487 2010-12-08",
+          "cells": [
+            "BlackEdition2_v4.0.3c.zip",
+            "4.0.3",
+            "1487",
+            "2010-12-08"
+          ],
+          "line": 667
+        },
+        {
+          "text": "BlackEdition2_v4.0.3b.zip 4.0.3 11110 2010-11-25",
+          "cells": [
+            "BlackEdition2_v4.0.3b.zip",
+            "4.0.3",
+            "11110",
+            "2010-11-25"
+          ],
+          "line": 677
+        },
+        {
+          "text": "BlackEdition2_v4.0.3a.zip 4.0.3 2011 2010-11-23",
+          "cells": [
+            "BlackEdition2_v4.0.3a.zip",
+            "4.0.3",
+            "2011",
+            "2010-11-23"
+          ],
+          "line": 687
+        },
+        {
+          "text": "BlackEdition2_v4.01f.zip 4.0.1 29798 2010-10-19",
+          "cells": [
+            "BlackEdition2_v4.01f.zip",
+            "4.0.1",
+            "29798",
+            "2010-10-19"
+          ],
+          "line": 697
+        },
+        {
+          "text": "BlackEdition2_v4.01e.zip 4.0.1 2709 2010-10-18",
+          "cells": [
+            "BlackEdition2_v4.01e.zip",
+            "4.0.1",
+            "2709",
+            "2010-10-18"
+          ],
+          "line": 707
+        },
+        {
+          "text": "c32747338.zip 4.0.1 2872 2010-10-17",
+          "cells": [
+            "c32747338.zip",
+            "4.0.1",
+            "2872",
+            "2010-10-17"
+          ],
+          "line": 717
+        },
+        {
+          "text": "BlackEdition2_v4.01c.zip 4.0.1 1309 2010-10-17",
+          "cells": [
+            "BlackEdition2_v4.01c.zip",
+            "4.0.1",
+            "1309",
+            "2010-10-17"
+          ],
+          "line": 727
+        },
+        {
+          "text": "c39215568.zip 4.0.1 6555 2010-10-15",
+          "cells": [
+            "c39215568.zip",
+            "4.0.1",
+            "6555",
+            "2010-10-15"
+          ],
+          "line": 737
+        },
+        {
+          "text": "BlackEdition2_v4.01a.zip 4.0.1 6120 2010-10-15",
+          "cells": [
+            "BlackEdition2_v4.01a.zip",
+            "4.0.1",
+            "6120",
+            "2010-10-15"
+          ],
+          "line": 747
+        },
+        {
+          "text": "BlackEdition2_v1.12.zip 3.3.5 24314 2010-09-15",
+          "cells": [
+            "BlackEdition2_v1.12.zip",
+            "3.3.5",
+            "24314",
+            "2010-09-15"
+          ],
+          "line": 757
+        },
+        {
+          "text": "BlackEdition2_v1.11.zip 3.3.5 55403 2010-07-11",
+          "cells": [
+            "BlackEdition2_v1.11.zip",
+            "3.3.5",
+            "55403",
+            "2010-07-11"
+          ],
+          "line": 767
+        },
+        {
+          "text": "BlackEdition2_v1.10.zip 3.3.5 3522 2010-07-09",
+          "cells": [
+            "BlackEdition2_v1.10.zip",
+            "3.3.5",
+            "3522",
+            "2010-07-09"
+          ],
+          "line": 777
+        },
+        {
+          "text": "BlackEdition2_v1.09.zip 3.3.5 8485 2010-07-03",
+          "cells": [
+            "BlackEdition2_v1.09.zip",
+            "3.3.5",
+            "8485",
+            "2010-07-03"
+          ],
+          "line": 787
+        },
+        {
+          "text": "BlackEdition2_v1.08.zip 3.3.5 5745 2010-07-02",
+          "cells": [
+            "BlackEdition2_v1.08.zip",
+            "3.3.5",
+            "5745",
+            "2010-07-02"
+          ],
+          "line": 797
+        },
+        {
+          "text": "BlackEdition2_v1.07.zip 3.3.3 33209 2010-05-20",
+          "cells": [
+            "BlackEdition2_v1.07.zip",
+            "3.3.3",
+            "33209",
+            "2010-05-20"
+          ],
+          "line": 807
+        },
+        {
+          "text": "BlackEdition2_v1.06.zip 3.3.3 34754 2010-04-10",
+          "cells": [
+            "BlackEdition2_v1.06.zip",
+            "3.3.3",
+            "34754",
+            "2010-04-10"
+          ],
+          "line": 817
+        },
+        {
+          "text": "BlackEdition2_v1.05.zip 3.3.3 10565 2010-04-02",
+          "cells": [
+            "BlackEdition2_v1.05.zip",
+            "3.3.3",
+            "10565",
+            "2010-04-02"
+          ],
+          "line": 827
+        },
+        {
+          "text": "BlackEdition2_v1.04.zip 3.3.3 14521 2010-03-25",
+          "cells": [
+            "BlackEdition2_v1.04.zip",
+            "3.3.3",
+            "14521",
+            "2010-03-25"
+          ],
+          "line": 837
+        },
+        {
+          "text": "BlackEdition2_v1.03.zip 3.3.3 2743 2010-03-25",
+          "cells": [
+            "BlackEdition2_v1.03.zip",
+            "3.3.3",
+            "2743",
+            "2010-03-25"
+          ],
+          "line": 847
+        },
+        {
+          "text": "BlackEdition2_v1.02.zip 3.3.2 2211 2010-03-24",
+          "cells": [
+            "BlackEdition2_v1.02.zip",
+            "3.3.2",
+            "2211",
+            "2010-03-24"
+          ],
+          "line": 857
+        },
+        {
+          "text": "BlackEdition2v1.01.zip 3.3.2 2216 2010-03-21",
+          "cells": [
+            "BlackEdition2v1.01.zip",
+            "3.3.2",
+            "2216",
+            "2010-03-21"
+          ],
+          "line": 867
+        },
+        {
+          "text": "BlackEdition2betav1.0.zip 3.3.2 2430 2010-03-18",
+          "cells": [
+            "BlackEdition2betav1.0.zip",
+            "3.3.2",
+            "2430",
+            "2010-03-18"
+          ],
+          "line": 877
+        }
+      ]
+    }
+  },
+  "images": [
+    {
+      "postID": 3461,
+      "section": "addonAddon",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload.inven.co.kr/upload/2010/03/19/bbs/i21702517.jpg",
+      "viewerLiteral": "",
+      "fullURL": "https://upload.inven.co.kr/upload/2010/03/19/bbs/i21702517.jpg",
+      "alt": "원본 크기로 보시려면 그림을 클릭하세요.",
+      "title": "원본 크기로 보시려면 그림을 클릭하세요.",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-3461.html",
+        "selector": "addonAddon img",
+        "line": 1260
+      },
+      "error": null,
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-2133b8a9de834271fb59.jpg",
+      "HTTP": 200,
+      "time": "2026-11-17T14:02:16.4581984Z",
+      "bytes": 132049,
+      "SHA256": "01C6576116E4C90A865D7C0BD49644370FE6C5DF1D12DBD8F4863A11D129AFB9",
+      "contentType": "image/jpeg",
+      "finalURL": "https://upload.inven.co.kr/upload/2010/03/19/bbs/i21702517.jpg",
+      "width": 800,
+      "height": 500,
+      "imageFormat": "JPEG",
+      "decodeStatus": "verified"
+    },
+    {
+      "postID": 3461,
+      "section": "addonAddon",
+      "DOMordinal": 2,
+      "thumbURL": "https://upload.inven.co.kr/upload/2010/03/19/bbs/i33352474.jpg",
+      "viewerLiteral": "",
+      "fullURL": "https://upload.inven.co.kr/upload/2010/03/19/bbs/i33352474.jpg",
+      "alt": null,
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-3461.html",
+        "selector": "addonAddon img",
+        "line": 1263
+      },
+      "error": null,
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-0190a3f9ff60eb64a8ab.jpg",
+      "HTTP": 200,
+      "time": "2026-11-17T14:02:17.0427326Z",
+      "bytes": 51997,
+      "SHA256": "A1786EAF8D9E1391A3D5265230BB36627A5AAC1AAE222F1B0FB09F6C4220AA5F",
+      "contentType": "image/jpeg",
+      "finalURL": "https://upload.inven.co.kr/upload/2010/03/19/bbs/i33352474.jpg",
+      "width": 600,
+      "height": 480,
+      "imageFormat": "JPEG",
+      "decodeStatus": "verified"
+    },
+    {
+      "postID": 3461,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload.inven.co.kr/upload/2010/03/18/bbs/thumb/n74109714.jpg",
+      "viewerLiteral": "viewImage('2010/03/18/bbs/i74109714.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-3461.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 3461,
+      "section": "screenshot",
+      "DOMordinal": 2,
+      "thumbURL": "https://upload.inven.co.kr/upload/2012/09/23/bbs/thumb/n1785063732.jpg",
+      "viewerLiteral": "viewImage('2012/09/23/bbs/i1785063732.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-3461.html",
+        "selector": "screenshot img",
+        "line": 40
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    }
+  ],
+  "title": "DevilUI-Black Edition2 6.1 Alpha",
+  "metadataLiteral": "DevilUI-Black Edition2 6.1 Alpha\n애드온 등록자\nnicecurry\n최종 업데이트\n2015.03.04\n카테고리\n통합\n클라이언트 버전\n5.1.0\n애드온 버전\n5.1b\n조회수\n2442930\n추천수\n796\n다운로드 수\n1433625\n관심등록 수\n5165\n다운로드\n관심 애드온 등록",
+  "metadataRows": [
+    {
+      "label": "애드온 등록자",
+      "value": "nicecurry",
+      "line": 1181
+    },
+    {
+      "label": "최종 업데이트",
+      "value": "2015.03.04",
+      "line": 1185
+    },
+    {
+      "label": "카테고리",
+      "value": "통합",
+      "line": 1189
+    },
+    {
+      "label": "클라이언트 버전",
+      "value": "5.1.0",
+      "line": 1196
+    },
+    {
+      "label": "애드온 버전",
+      "value": "5.1b",
+      "line": 1200
+    },
+    {
+      "label": "조회수",
+      "value": "2442930",
+      "line": 1207
+    },
+    {
+      "label": "추천수",
+      "value": "796",
+      "line": 1211
+    },
+    {
+      "label": "다운로드 수",
+      "value": "1433625",
+      "line": 1215
+    },
+    {
+      "label": "관심등록 수",
+      "value": "5165",
+      "line": 1219
+    }
+  ]
+}

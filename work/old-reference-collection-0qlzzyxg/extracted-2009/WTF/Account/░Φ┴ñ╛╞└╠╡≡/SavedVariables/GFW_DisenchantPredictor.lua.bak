@@ -1,0 +1,12 @@
+
+GFW_DisenchantPredictor_DB = {
+	["profileKeys"] = {
+		["엔카이얀 - 우서"] = "엔카이얀 - 우서",
+	},
+	["profiles"] = {
+		["엔카이얀 - 우서"] = {
+		},
+	},
+}
+FDP_Exceptions = {
+}

@@ -1,0 +1,13 @@
+
+beqlDBPC = {
+	["global"] = {
+		["saved"] = {
+			["minimized"] = false,
+			["qtrackerposx"] = 26.26603507995606,
+			["qtrackerposy"] = 1041.047607421875,
+			["qtrackercorner"] = "TOPLEFT",
+			["tooltipset"] = false,
+			["CurrentHoveredQuest"] = 24,
+		},
+	},
+}

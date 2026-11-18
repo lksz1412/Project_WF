@@ -1,0 +1,22 @@
+------------------------------------------------------------------------
+r272 | whitetooth | 2009-12-09 00:10:51 +0000 (Wed, 09 Dec 2009) | 1 line
+Changed paths:
+   A /tags/1.4.8 (from /trunk:271)
+
+Tagging as 1.4.8
+------------------------------------------------------------------------
+r271 | Whitetooth | 2009-12-08 20:56:07 +0000 (Tue, 08 Dec 2009) | 2 lines
+Changed paths:
+   M /trunk/About RatingBuster.txt
+   M /trunk/RatingBuster.lua
+   M /trunk/RatingBuster.toc
+
+- Update toc to 30300
+- Prepare for 1.4.8 release
+------------------------------------------------------------------------
+r270 | Whitetooth | 2009-11-07 17:59:20 +0000 (Sat, 07 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/RatingBuster.lua
+
+- Fixed Warlock: Demonic Knowledge
+------------------------------------------------------------------------

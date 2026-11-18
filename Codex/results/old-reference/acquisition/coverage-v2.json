@@ -1,0 +1,655 @@
+{
+  "expectedPosts": 34,
+  "listCounts": [
+    20,
+    14
+  ],
+  "listedIDs": [
+    13140,
+    12993,
+    11218,
+    11361,
+    12610,
+    12124,
+    12174,
+    10341,
+    9880,
+    9789,
+    3461,
+    45,
+    8906,
+    8920,
+    7618,
+    7546,
+    6405,
+    4238,
+    4019,
+    4018,
+    4012,
+    2958,
+    2582,
+    2312,
+    1932,
+    1877,
+    1865,
+    1853,
+    1403,
+    1361,
+    1121,
+    1086,
+    1008,
+    546
+  ],
+  "detailParsed": 34,
+  "posts": [
+    {
+      "postID": 45,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "parsed"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 4,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 11218,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "parsed"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 2,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 2958,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 1,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 13140,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "parsed"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 8,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 12993,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 0,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 11361,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "parsed"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 4,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 12610,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 0,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 12124,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 3,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 12174,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 1,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 10341,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 0,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 9880,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 1,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 9789,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "parsed"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 1,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 3461,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "parsed"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 4,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 8906,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 2,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 8920,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 0,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 7618,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 0,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 7546,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 0,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 6405,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 1,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 4238,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 2,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 4019,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 0,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 4018,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 0,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 4012,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 0,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 2582,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "parsed"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 1,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 2312,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 0,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 1932,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "parsed"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 2,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 1877,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "parsed"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 3,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 1865,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "parsed"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 1,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 1853,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 2,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 1403,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 1,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 1361,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 5,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 1121,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 5,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 1086,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 1,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 1008,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 2,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 546,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 1,
+      "A1read": false,
+      "imageObserved": false
+    }
+  ],
+  "imageRefs": 58,
+  "imageDecodedRefs": 56,
+  "imageUniqueHashes": 50,
+  "imageFailures": [
+    {
+      "postID": 8906,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload.inven.co.kr/upload/2014/10/16/bbs/thumb/n0621236398.jpg",
+      "viewerLiteral": "viewImage('2014/10/16/bbs/i0621236398.jpg');",
+      "fullURL": "https://upload.inven.co.kr/upload/2014/10/16/bbs/i0621236398.jpg",
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-8906.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": "[Errno 2] No such file or directory: 'D:\\\\Projects\\\\Project_WF\\\\work\\\\old-reference-collection-0qlzzyxg\\\\image-c31473f2dde5695c190f.jpg'",
+      "decodeStatus": "failed",
+      "mappingEvidence": {
+        "observedThumbOrigin": "https://upload.inven.co.kr",
+        "observedPathPrefix": "/upload/",
+        "literalViewerPath": "2014/10/16/bbs/i0621236398.jpg"
+      },
+      "initialMappingState": "unresolved-preserved-in-images.json",
+      "time": "2026-11-17T14:05:29.1926317Z",
+      "HTTP": 404,
+      "sourceURL": "https://upload.inven.co.kr/upload/2014/10/16/bbs/i0621236398.jpg",
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-c31473f2dde5695c190f.jpg",
+      "state": "failed",
+      "attempts": 1,
+      "commandExitCode": 0
+    },
+    {
+      "postID": 8906,
+      "section": "screenshot",
+      "DOMordinal": 2,
+      "thumbURL": "https://upload.inven.co.kr/upload/2014/10/17/bbs/thumb/n0021882965.png",
+      "viewerLiteral": "viewImage('2014/10/17/bbs/i0021882965.png');",
+      "fullURL": "https://upload.inven.co.kr/upload/2014/10/17/bbs/i0021882965.png",
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-8906.html",
+        "selector": "screenshot img",
+        "line": 40
+      },
+      "error": "[Errno 2] No such file or directory: 'D:\\\\Projects\\\\Project_WF\\\\work\\\\old-reference-collection-0qlzzyxg\\\\image-834452f87c351ca40e88.png'",
+      "decodeStatus": "failed",
+      "mappingEvidence": {
+        "observedThumbOrigin": "https://upload.inven.co.kr",
+        "observedPathPrefix": "/upload/",
+        "literalViewerPath": "2014/10/17/bbs/i0021882965.png"
+      },
+      "initialMappingState": "unresolved-preserved-in-images.json",
+      "time": "2026-11-17T14:05:29.7597210Z",
+      "HTTP": 404,
+      "sourceURL": "https://upload.inven.co.kr/upload/2014/10/17/bbs/i0021882965.png",
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-834452f87c351ca40e88.png",
+      "state": "failed",
+      "attempts": 1,
+      "commandExitCode": 0
+    }
+  ],
+  "fetchFailures": [
+    {
+      "time": "2026-11-17T14:05:29.1926317Z",
+      "error": "원격 서버에서 (404) 찾을 수 없음 오류를 반환했습니다.",
+      "HTTP": 404,
+      "sourceURL": "https://upload.inven.co.kr/upload/2014/10/16/bbs/i0621236398.jpg",
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-c31473f2dde5695c190f.jpg",
+      "state": "failed",
+      "attempts": 1,
+      "commandExitCode": 0
+    },
+    {
+      "time": "2026-11-17T14:05:29.7597210Z",
+      "error": "원격 서버에서 (404) 찾을 수 없음 오류를 반환했습니다.",
+      "HTTP": 404,
+      "sourceURL": "https://upload.inven.co.kr/upload/2014/10/17/bbs/i0021882965.png",
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-834452f87c351ca40e88.png",
+      "state": "failed",
+      "attempts": 1,
+      "commandExitCode": 0
+    }
+  ],
+  "A1readCount": null,
+  "imageObservedCount": null,
+  "cache": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg",
+  "runtime": {
+    "python": "3.12.10",
+    "bs4": "4.14.3",
+    "Pillow": "12.3.0"
+  },
+  "authoritativeManifest": "images-v2.json",
+  "authoritativeCatalog": "catalog-v2.json",
+  "authoritativePosts": "posts-v2/",
+  "correction": "Observed thumbnail upload prefix + literal full viewer path. Original stage records retained."
+}

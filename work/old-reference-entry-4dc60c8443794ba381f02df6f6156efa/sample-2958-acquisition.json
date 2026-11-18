@@ -1,0 +1,12 @@
+{
+  "post": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=2958",
+  "image": "https://upload.inven.co.kr/upload/2009/12/10/bbs/i27419179.jpg",
+  "source": "observed screenshotiframe viewImage literal + observed upload domain",
+  "status": 200,
+  "bytes": 265024,
+  "width": 1920,
+  "height": 1024,
+  "sha256": "3863A54D3453AF351026F147178F3192BF4040312ACCEFA391D5CCAD12A36F98",
+  "acquired": "2026-11-17T22:40:21.7702943+09:00",
+  "interpretation": "image-reader pending; closest userreference, notfinalexactmatch"
+}

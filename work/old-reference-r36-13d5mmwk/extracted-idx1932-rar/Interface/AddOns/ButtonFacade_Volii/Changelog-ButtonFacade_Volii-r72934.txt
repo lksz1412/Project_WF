@@ -1,0 +1,68 @@
+------------------------------------------------------------------------
+r72934 | stormfx | 2008-05-07 01:32:30 -0400 (Wed, 07 May 2008) | 3 lines
+Changed paths:
+   M /trunk/ButtonFacade_Volii/ButtonFacade_Volii.toc
+   M /trunk/ButtonFacade_Volii/Skins.lua
+   D /trunk/ButtonFacade_Volii/Textures/Classic
+   M /trunk/ButtonFacade_Volii/Textures/Normal.tga
+
+ButtonFacade_Volii:
+ - Prep for color selection (Phase 1).
+ - Remove Vol Classic (May separate it, we'll see).
+------------------------------------------------------------------------
+r72896 | stormfx | 2008-05-06 17:12:45 -0400 (Tue, 06 May 2008) | 4 lines
+Changed paths:
+   M /trunk/ButtonFacade_Volii/ButtonFacade_Volii.toc
+   M /trunk/ButtonFacade_Volii/Skins.lua
+
+ButtonFacade_Volii:
+ - Version bump.
+ - Add WoWI ID.
+ - Tweak text positions.
+------------------------------------------------------------------------
+r72797 | stormfx | 2008-05-05 15:34:55 -0400 (Mon, 05 May 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade_Volii/Skins.lua
+
+ButtonFacade_Volii:
+ - Autocast!
+------------------------------------------------------------------------
+r72691 | jjsheets | 2008-05-04 18:13:38 -0400 (Sun, 04 May 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade_Volii/Skins.lua
+
+ButtonFacade_Volii:
+ - True does not equal true
+------------------------------------------------------------------------
+r71304 | stormfx | 2008-04-24 15:11:04 -0400 (Thu, 24 Apr 2008) | 2 lines
+Changed paths:
+   A /trunk/ButtonFacade_Volii/ButtonFacade_Volii.toc
+   A /trunk/ButtonFacade_Volii/ReadMe.txt
+   A /trunk/ButtonFacade_Volii/Skins.lua
+
+ButtonFacade_Volii:
+ - Files update.
+------------------------------------------------------------------------
+r71300 | stormfx | 2008-04-24 15:08:41 -0400 (Thu, 24 Apr 2008) | 2 lines
+Changed paths:
+   A /trunk/ButtonFacade_Volii
+   A /trunk/ButtonFacade_Volii/Textures
+   A /trunk/ButtonFacade_Volii/Textures/Backdrop.tga
+   A /trunk/ButtonFacade_Volii/Textures/Checked.tga
+   A /trunk/ButtonFacade_Volii/Textures/Classic
+   A /trunk/ButtonFacade_Volii/Textures/Classic/Checked.tga
+   A /trunk/ButtonFacade_Volii/Textures/Classic/Equip.tga
+   A /trunk/ButtonFacade_Volii/Textures/Classic/Flash.tga
+   A /trunk/ButtonFacade_Volii/Textures/Classic/Highlight.tga
+   A /trunk/ButtonFacade_Volii/Textures/Classic/Overlay.tga
+   A /trunk/ButtonFacade_Volii/Textures/Classic/Pushed.tga
+   A /trunk/ButtonFacade_Volii/Textures/Equip.tga
+   A /trunk/ButtonFacade_Volii/Textures/Flash.tga
+   A /trunk/ButtonFacade_Volii/Textures/Gloss.tga
+   A /trunk/ButtonFacade_Volii/Textures/Highlight.tga
+   A /trunk/ButtonFacade_Volii/Textures/Normal.tga
+   A /trunk/ButtonFacade_Volii/Textures/Pushed.tga
+
+ButtonFacade_Volii:
+- Initial commit.
+------------------------------------------------------------------------

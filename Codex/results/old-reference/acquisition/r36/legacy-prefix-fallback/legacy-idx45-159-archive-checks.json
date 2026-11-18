@@ -1,0 +1,25 @@
+{
+  "label": "legacy-idx45-159",
+  "source": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\downloads\\DevilUI-X2 R3.4.zip",
+  "bytes": 7245308,
+  "SHA256": "541F98566586F82FF88E464255EB0476F952CAF9E689C53AEB240D5AE54FF4EA",
+  "expectedSHA256": null,
+  "hashMatch": null,
+  "CRCtestRuns": 1,
+  "unsafe": [],
+  "extractionState": "passed",
+  "CRCbadMember": null,
+  "CRCstate": "passed",
+  "fileCount": 1,
+  "directoryCount": 0,
+  "totalCompressedBytes": 7245172,
+  "totalUncompressedBytes": 7349977,
+  "extractionRoot": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-legacy-idx45-159",
+  "extractedFileCount": 1,
+  "extractedBytes": 7349977,
+  "postExtractionReparse": [],
+  "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\legacy-idx45-159-members.json",
+  "nameOnlyCandidates": [
+    "DevilUI-X2 R3.4.exe"
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "scope": "closed priority-images batch1 only; full34-post manifest pending",
+  "manifest": "Codex/results/old-reference/acquisition/priority-images.json",
+  "manifestReferenceCount": 7,
+  "manifestPostIDs": [
+    45,
+    11218,
+    2958
+  ],
+  "successfullyDecodedUniqueHashTotal": 4,
+  "observedHashes": [
+    "1E0C95557E8525EF2533F49CDBB6A46BEFAC55EC4BDF4A912E351939BE87CFC0",
+    "0845002AEFE13C2F1FCF2FB975525C671D66A64A9EFEE140F407D5FA1BE56A9E",
+    "F86E2FDCFCC97E791FDFA5A310CF23DDCDA26796FBAC32ABBED4E561055ADD63",
+    "304A6B36ACD94B065142B8E8ADBA1EC99787BB649885D136D5CE707C1B2D5151"
+  ],
+  "observedUniqueHashCount": 4,
+  "exactDuplicateAssociations": [],
+  "failedLocalDecodeCount": 0,
+  "deadReferenceCount": 0,
+  "partialImageCount": 0,
+  "geometryUnclearImageCount": 4,
+  "unresolvedAcquisitionReferenceCount": 3,
+  "unobservedReferenceCount": 3,
+  "sourceAssociations": [
+    {
+      "postID": 45,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "sourceURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_5258.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/1103_5258.jpg');",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-45.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-63c91ffc5fd0fa976a33.jpg",
+      "SHA256": "1E0C95557E8525EF2533F49CDBB6A46BEFAC55EC4BDF4A912E351939BE87CFC0",
+      "decodeStatus": "verified",
+      "observationState": "fullframe_observed_with_explicit_geometry_limits",
+      "error": null
+    },
+    {
+      "postID": 45,
+      "section": "screenshot",
+      "DOMordinal": 2,
+      "sourceURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_7511.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/1103_7511.jpg');",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-45.html",
+        "selector": "screenshot img",
+        "line": 40
+      },
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-872294b062c9ecefcc9a.jpg",
+      "SHA256": "0845002AEFE13C2F1FCF2FB975525C671D66A64A9EFEE140F407D5FA1BE56A9E",
+      "decodeStatus": "verified",
+      "observationState": "fullframe_observed_with_explicit_geometry_limits",
+      "error": null
+    },
+    {
+      "postID": 45,
+      "section": "screenshot",
+      "DOMordinal": 3,
+      "sourceURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_6784.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/1103_6784.jpg');",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-45.html",
+        "selector": "screenshot img",
+        "line": 47
+      },
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-cdd079d7e1f8c81286f2.jpg",
+      "SHA256": "F86E2FDCFCC97E791FDFA5A310CF23DDCDA26796FBAC32ABBED4E561055ADD63",
+      "decodeStatus": "verified",
+      "observationState": "fullframe_observed_with_explicit_geometry_limits",
+      "error": null
+    },
+    {
+      "postID": 45,
+      "section": "screenshot",
+      "DOMordinal": 4,
+      "sourceURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_7276.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/1103_7276.jpg');",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-45.html",
+        "selector": "screenshot img",
+        "line": 54
+      },
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-d9ab10878c7e954fd5e4.jpg",
+      "SHA256": "304A6B36ACD94B065142B8E8ADBA1EC99787BB649885D136D5CE707C1B2D5151",
+      "decodeStatus": "verified",
+      "observationState": "fullframe_observed_with_explicit_geometry_limits",
+      "error": null
+    },
+    {
+      "postID": 11218,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "sourceURL": null,
+      "viewerLiteral": "viewImage('2019/03/17/bbs/i13715800082.png');",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-11218.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "localpath": null,
+      "SHA256": null,
+      "decodeStatus": "unresolved",
+      "observationState": "unobserved_unresolved_acquisition",
+      "error": "viewer path not present in observed thumbnail URL; unresolved"
+    },
+    {
+      "postID": 11218,
+      "section": "screenshot",
+      "DOMordinal": 2,
+      "sourceURL": null,
+      "viewerLiteral": "viewImage('2019/03/17/bbs/i13441659684.png');",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-11218.html",
+        "selector": "screenshot img",
+        "line": 40
+      },
+      "localpath": null,
+      "SHA256": null,
+      "decodeStatus": "unresolved",
+      "observationState": "unobserved_unresolved_acquisition",
+      "error": "viewer path not present in observed thumbnail URL; unresolved"
+    },
+    {
+      "postID": 2958,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "sourceURL": null,
+      "viewerLiteral": "viewImage('2009/12/10/bbs/i27419179.jpg');",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\images-2958.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "localpath": null,
+      "SHA256": null,
+      "decodeStatus": "unresolved",
+      "observationState": "unobserved_unresolved_acquisition",
+      "error": "viewer path not present in observed thumbnail URL; unresolved"
+    }
+  ],
+  "findings": "Codex/results/old-reference/image-observations/findings.md",
+  "runtime": {
+    "configuredModel": "gpt-6.1-sol",
+    "configuredEffort": "high",
+    "observedModel": "unobserved",
+    "observedEffort": "unobserved",
+    "usage": "unobserved"
+  },
+  "completionClaim": "No fullcatalog reading, all-image completion, runtime validation, pack identity, or final acceptance claim"
+}

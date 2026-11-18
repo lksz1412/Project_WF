@@ -1,0 +1,39 @@
+------------------------------------------------------------------------
+r98 | elkano | 2008-10-15 10:51:05 +0000 (Wed, 15 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/FuBar_GuildFu.toc
+
+minor reordering in TOC
+------------------------------------------------------------------------
+r97 | elkano | 2008-10-15 10:33:20 +0000 (Wed, 15 Oct 2008) | 2 lines
+Changed paths:
+   M /trunk
+   M /trunk/.pkgmeta
+   M /trunk/FuBar_GuildFu.lua
+   M /trunk/FuBar_GuildFu.toc
+   D /trunk/Libs
+   D /trunk/embeds.xml
+
+- changes for new WoWAce
+- updated for WoW 3.x
+------------------------------------------------------------------------
+r96 | root | 2008-09-30 15:52:53 +0000 (Tue, 30 Sep 2008) | 1 line
+Changed paths:
+   M /trunk/.pkgmeta
+
+Hopefully fix .pkgmeta
+------------------------------------------------------------------------
+r95 | root | 2008-09-29 22:19:57 +0000 (Mon, 29 Sep 2008) | 1 line
+Changed paths:
+   A /trunk/.pkgmeta
+   M /trunk/Libs
+
+Facilitate WowAce-on-CurseForge transition
+------------------------------------------------------------------------
+r93 | root | 2008-09-29 20:57:57 +0000 (Mon, 29 Sep 2008) | 1 line
+Changed paths:
+   D /tmp/trunk/FuBar_GuildFu
+   A /trunk (from /tmp/trunk/FuBar_GuildFu:92)
+
+Importing old repo data under /trunk
+------------------------------------------------------------------------

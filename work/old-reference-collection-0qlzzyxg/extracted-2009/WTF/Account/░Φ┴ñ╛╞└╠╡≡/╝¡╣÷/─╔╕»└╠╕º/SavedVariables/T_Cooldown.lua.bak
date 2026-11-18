@@ -1,0 +1,11 @@
+
+T_CooldownSave = {
+	["timeTable"] = {
+	},
+	["Spell"] = {
+	},
+	["Item"] = {
+	},
+	["PetAction"] = {
+	},
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "filename": "Black Edition2_6.1 Alpha.exe",
+    "rawCentralFilenameHex": "426c61636b2045646974696f6e325f362e3120416c7068612e657865",
+    "flagBits": 0,
+    "filenameDecode": "cp437 default, no rename",
+    "isDirectory": false,
+    "compressedBytes": 7626254,
+    "uncompressedBytes": 7889127,
+    "CRC32": "8E331C77",
+    "externalAttributes": 32,
+    "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\extracted-idx-3461\\Black Edition2_6.1 Alpha.exe",
+    "unsafeReasons": [],
+    "memberSHA256": "31155F7302D5817876CF859600F630DCD879147D0AF3B20304B9627B9027436D",
+    "extractedSHA256": "31155F7302D5817876CF859600F630DCD879147D0AF3B20304B9627B9027436D"
+  }
+]

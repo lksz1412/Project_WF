@@ -1,0 +1,20 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+
+<Script file="Lib_Ring.lua"/>
+<Script file="Lib_Flash.lua"/>
+
+<Script file="Combo.lua"/>
+<Script file="Maelstrom.lua"/>
+<Script file="HolyPower.lua"/>
+<Script file="LightningShield.lua"/>
+<Script file="ShadowOrb.lua"/>
+<Script file="Evangelism.lua"/>
+<Script file="SoulShard.lua"/>
+<Script file="Chi.lua"/>
+<Script file="Custom.lua"/>
+<Script file="OTHERS.lua"/>
+
+<Script file="ShadowInfusion.lua"/>
+
+</Ui>

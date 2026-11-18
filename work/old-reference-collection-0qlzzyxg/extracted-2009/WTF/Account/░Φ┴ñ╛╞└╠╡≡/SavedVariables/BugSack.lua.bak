@@ -1,0 +1,15 @@
+
+BugSackDB = {
+	["profileKeys"] = {
+	},
+	["profiles"] = {
+		["Default"] = {
+			["soundMedia"] = "None",
+			["minimap"] = {
+				["minimapPos"] = 286.8577183704434,
+				["radius"] = 80,
+				["hide"] = true,
+			},
+		},
+	},
+}

@@ -1,0 +1,21 @@
+﻿## Interface: 30200
+## Title: GridStatusRaidDebuff(Burning Crusade)
+## Notes: Debuff List for Burning Crusade
+## Author: Azelkeeber(KR-Tirion)
+## Version: 1.0
+## Grid Author: Pastamancer & Maia
+## Dependencies: GridStatusRaidDebuff
+## OptionalDeps: Ace2, LibBabble-Zone-3.0, LibBabble-Boss-3.0
+## X-Curse-Packaged-Version: r143
+## X-Curse-Project-Name: GridStatusRaidDebuff
+## X-Curse-Project-ID: grid-status-raid-debuff
+## X-Curse-Repository-ID: wow/grid-status-raid-debuff/mainline
+
+Karazhan.lua
+Zulaman.lua
+Serpent.lua
+Tempest.lua
+Hyjal.lua
+BlackTemple.lua
+Sunwell.lua
+

@@ -1,0 +1,84 @@
+VER 3 010000000000001C "가막" "134400"
+#showtooltip [mod:alt]돌진;가로막기
+/run UIErrorsFrame:UnregisterEvent("UI_ERROR_MESSAGE")
+/시전 [target=mouseover,help][help]가로막기
+/시전 [target=mouseover,harm][harm]돌진
+END
+VER 3 0100000000000019 "고감" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/startattack
+/cast [mod:alt]투신;고통 감내
+END
+VER 3 0100000000000013 "도발" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/시전 [@mouseovertarget,harm][@mouseover,harm][harm]도발;도발
+END
+VER 3 010000000000000A "돌마격" "INV_MISC_QUESTIONMARK"
+#showtooltip [mod:alt]돌진;마무리 일격
+/run UIErrorsFrame:UnregisterEvent("UI_ERROR_MESSAGE")
+/cast 마무리 일격
+/stopcasting
+/cast 돌진
+END
+VER 3 010000000000001B "무기변환" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/stopcasting
+/equipslot [equipped:방패] 16 명예결속단 글라디우스
+/equipslot [equipped:방패] 17 하수인 절단기
+/equipslot [noequipped:방패] 16 명예결속단 글라디우스
+/equipslot [noequipped:방패] 17 태양섬광 방패
+END
+VER 3 0100000000000009 "방밀" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/startattack
+/cast 방패 밀쳐내기
+END
+VER 3 0100000000000015 "방벽" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast 방패의 벽
+/use 생명석
+END
+VER 3 0100000000000007 "복수" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/startattack
+/cast 복수
+END
+VER 3 0100000000000012 "봉쇄" "INV_MISC_QUESTIONMARK"
+#showtooltip 봉쇄
+/cast [@mouseover,harm][harm]봉쇄
+/cast [@mouseover,help][help]봉쇄
+END
+VER 3 0100000000000001 "분강" "INV_MISC_QUESTIONMARK"
+#showtooltip 분노의 강타
+/startattack
+/시전 분노의 강타 
+END
+VER 3 010000000000000C "분쇄" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/startattack
+/시전 분쇄
+END
+VER 3 010000000000001E "쇠날" "134400"
+#showtooltip
+/시전 [@player] 쇠날발톱
+END
+VER 3 0100000000000008 "압도" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/startattack
+/cast 압도
+END
+VER 3 010000000000001D "포딘" "134400"
+#showtooltip
+/연속시전 reset=3 천둥의 포효, 오딘의 격노
+END
+VER 3 0100000000000002 "피갈" "INV_MISC_QUESTIONMARK"
+#showtooltip 피의 갈증
+/startattack
+/시전 피의 갈증
+END
+VER 3 0100000000000010 "필격" "INV_MISC_QUESTIONMARK"
+#showtooltip 필사의 일격
+/startattack
+/시전 집중된 분노
+/시전 필사의 일격
+END

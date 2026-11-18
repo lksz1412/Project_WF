@@ -1,0 +1,15 @@
+
+MQTC = {
+	["Enabled"] = 1,
+	["OnHold"] = 0,
+	["QList"] = {
+	},
+	["AutoAdd"] = 1,
+	["LineMax"] = 30,
+	["RemoveComplete"] = 0,
+	["ColorTitle"] = 1,
+	["Communicate"] = 1,
+	["ColorStatus"] = 0,
+	["ShowLevel"] = 1,
+}
+MQTdb = nil

@@ -1,0 +1,289 @@
+------------------------------------------------------------------------
+r74664 | jjsheets | 2008-05-21 11:19:32 -0400 (Wed, 21 May 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade/ButtonFacade.lua
+
+ButtonFacade:
+ - Added /buttonfacade slash command, identical to /bf.
+------------------------------------------------------------------------
+r74436 | StiviS | 2008-05-19 12:21:36 -0400 (Mon, 19 May 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade/Localization/esES.lua
+
+ButtonFacade:
+ - esES updated
+------------------------------------------------------------------------
+r74422 | jjsheets | 2008-05-19 10:27:27 -0400 (Mon, 19 May 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade/ButtonFacade.lua
+   M /trunk/ButtonFacade/LibButtonFacade/LibButtonFacade.lua
+
+ButtonFacade:
+ - Fixed Backdrop never being able to be turned off.
+------------------------------------------------------------------------
+r74292 | jjsheets | 2008-05-18 10:59:17 -0400 (Sun, 18 May 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade/LibButtonFacade/LibButtonFacade.lua
+
+ButtonFacade:
+ - Actually having a method to supply saved colors would've been nice last night.  :p
+------------------------------------------------------------------------
+r74248 | jjsheets | 2008-05-18 01:10:36 -0400 (Sun, 18 May 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade/ButtonFacade.lua
+   M /trunk/ButtonFacade/LibButtonFacade/LibButtonFacade.lua
+   M /trunk/ButtonFacade/Localization/enUS.lua
+
+ButtonFacade:
+ - Dang users always requesting features... User customizable skin colors are now available.  No presets yet.  Color Reset button should work intuitively enough.  Bring on the bug reports tomorrow morning, I desperately need sleep.  :p
+------------------------------------------------------------------------
+r73896 | stormfx | 2008-05-14 18:16:23 -0400 (Wed, 14 May 2008) | 4 lines
+Changed paths:
+   M /trunk/ButtonFacade/Skins/Skins.lua
+
+ButtonFacade:
+ - Tweak Autocast.
+ - Add color selection support.
+ - Minor tweaks.
+------------------------------------------------------------------------
+r73516 | jjsheets | 2008-05-11 20:00:11 -0400 (Sun, 11 May 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade/LibButtonFacade/LibButtonFacade.lua
+
+ButtonFacade:
+ - Improved :RegisterSkinCallback Function.
+------------------------------------------------------------------------
+r73515 | jjsheets | 2008-05-11 19:55:52 -0400 (Sun, 11 May 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade/LibButtonFacade/LibButtonFacade.lua
+
+ButtonFacade:
+ - Added lib:GetSkins() function requested by Maul.
+------------------------------------------------------------------------
+r73189 | StiviS | 2008-05-09 05:49:36 -0400 (Fri, 09 May 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade/ButtonFacade.toc
+   A /trunk/ButtonFacade/Localization/esES.lua
+   M /trunk/ButtonFacade/Modules/ButtonTest.lua
+
+ButtonFacade:
+ - esES added
+------------------------------------------------------------------------
+r73174 | jjsheets | 2008-05-09 01:08:01 -0400 (Fri, 09 May 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade/LibButtonFacade/LibButtonFacade.lua
+
+ButtonFacade:
+ - Fixed Gloss layer Alpha setting incorrectly.
+------------------------------------------------------------------------
+r73170 | jjsheets | 2008-05-08 23:44:25 -0400 (Thu, 08 May 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade/LibButtonFacade/LibButtonFacade.lua
+
+ButtonFacade:
+ - Hopefully fixed bug when ButtonFacade is loaded without addons that use it.
+------------------------------------------------------------------------
+r73167 | jjsheets | 2008-05-08 23:37:41 -0400 (Thu, 08 May 2008) | 4 lines
+Changed paths:
+   M /trunk/ButtonFacade/LibButtonFacade/LibButtonFacade.lua
+
+ButtonFacade:
+ - All layers except Cooldown, AutoCast, and Icon now have skin settable colors.
+ - Calling SetVertexColor or SetTextColor on such layers will modulate the given color with the skin layer's color.  GetVertexColor and GetTextColor will likewise factor out the skin layer color before returning.
+ - The attribute Color = {r, g, b, a} can now be used instead of separate Red, Green, Blue, and Alpha attributes.
+------------------------------------------------------------------------
+r73016 | Sorata | 2008-05-07 16:03:41 -0400 (Wed, 07 May 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade/ButtonFacade.lua
+
+ButtonFacade:
+- Revert commit, was throwing an error when a group wasn't added before OnEnable was called.
+------------------------------------------------------------------------
+r73013 | Sorata | 2008-05-07 15:42:36 -0400 (Wed, 07 May 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade/ButtonFacade.lua
+
+ButtonFacade:
+ - Add fix for groups and buttons not showing up in ButtonFacade's UI when added before ButtonFacade's OnEnable is called.
+------------------------------------------------------------------------
+r72984 | jjsheets | 2008-05-07 12:27:40 -0400 (Wed, 07 May 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade/LibButtonFacade/LibButtonFacade.lua
+
+ButtonFacade:
+ - Changed the Border layer to Overlay on the 4th FrameLevel.
+------------------------------------------------------------------------
+r72888 | kergoth | 2008-05-06 16:37:14 -0400 (Tue, 06 May 2008) | 1 line
+Changed paths:
+   M /trunk/ButtonFacade/ButtonFacade.lua
+
+ButtonFacade: Fix the errors seen with addon/group having spaces.
+------------------------------------------------------------------------
+r72857 | scorpio0920 | 2008-05-06 10:00:15 -0400 (Tue, 06 May 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade/ButtonFacade.toc
+   A /trunk/ButtonFacade/Localization/zhTW.lua
+
+ButtonFacade:
+- Added zhTW localization.
+------------------------------------------------------------------------
+r72824 | jjsheets | 2008-05-06 01:42:52 -0400 (Tue, 06 May 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade/LibButtonFacade/LibButtonFacade.lua
+
+ButtonFacade:
+ - Fixed issue with blizzard borders showing up with certain skins.
+------------------------------------------------------------------------
+r72819 | jjsheets | 2008-05-06 00:51:09 -0400 (Tue, 06 May 2008) | 3 lines
+Changed paths:
+   M /trunk/ButtonFacade/Modules/ButtonTest.lua
+   D /trunk/ButtonFacade/Textures
+
+ButtonFacade:
+ - Removed empty and unused Textures folder.
+ - added a sixth button to the ButtonTest module.
+------------------------------------------------------------------------
+r72772 | jjsheets | 2008-05-05 13:19:51 -0400 (Mon, 05 May 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade/LibButtonFacade/LibButtonFacade.lua
+
+ButtonFacade:
+ - Fixed Pushed Texture issue.
+------------------------------------------------------------------------
+r72768 | jjsheets | 2008-05-05 13:06:23 -0400 (Mon, 05 May 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade/Skins/Skins.lua
+
+ButtonFacade:
+ - Added Pushed back to DreamLayout and Zoomed skins.
+------------------------------------------------------------------------
+r72755 | jjsheets | 2008-05-05 11:52:36 -0400 (Mon, 05 May 2008) | 4 lines
+Changed paths:
+   M /trunk/ButtonFacade/LibButtonFacade/LibButtonFacade.lua
+
+ButtonFacade:
+ - Fixed Typo with ModelScale option.
+ - Added AboveNormal option for AutoCast layer, which will place the layer above the Normal layer group.
+ - Put the AutoCastable texture in the Normal Layer group, where it will actually show up appropriately...
+------------------------------------------------------------------------
+r72698 | jjsheets | 2008-05-04 22:23:16 -0400 (Sun, 04 May 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade/LibButtonFacade/LibButtonFacade.lua
+
+ButtonFacade:
+ - Fixed a bug when hiding text layers in a skin definition.
+------------------------------------------------------------------------
+r72687 | jjsheets | 2008-05-04 17:55:44 -0400 (Sun, 04 May 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade/ButtonFacade.lua
+
+ButtonFacade:
+ - fixed buggy handling of new groups constantly deleting work previous done on the GUI.
+------------------------------------------------------------------------
+r72657 | jjsheets | 2008-05-04 14:08:38 -0400 (Sun, 04 May 2008) | 3 lines
+Changed paths:
+   M /trunk/ButtonFacade/ButtonFacade.toc
+   M /trunk/ButtonFacade/LibButtonFacade/LibButtonFacade.lua
+   D /trunk/ButtonFacade/Skins/DreamLayout.lua
+   A /trunk/ButtonFacade/Skins/Skins.lua (from /trunk/ButtonFacade/Skins/DreamLayout.lua:72527)
+   D /trunk/ButtonFacade/Skins/Zoomed.lua
+   D /trunk/ButtonFacade/Skins.xml
+
+ButtonFacade:
+ - Added ModelX, ModelY, and ModelScale options for Model layers.
+ - updated the DreamLayout and Zoomed skins, and moved them into one file.
+------------------------------------------------------------------------
+r72587 | damjau | 2008-05-04 00:42:01 -0400 (Sun, 04 May 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade/ButtonFacade.toc
+   A /trunk/ButtonFacade/Localization/koKR.lua
+
+ButtonFacade:
+ - add koKR locals
+------------------------------------------------------------------------
+r72524 | jjsheets | 2008-05-03 10:10:05 -0400 (Sat, 03 May 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade/LibButtonFacade/LibButtonFacade.lua
+
+ButtonFacade:
+ - Added LBF:GetGlossLayer() and LBF:GetBackdropLayer().  Use with care.  :)
+------------------------------------------------------------------------
+r72495 | jjsheets | 2008-05-03 00:03:45 -0400 (Sat, 03 May 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade/Libs
+
+ButtonFacade:
+ - Updated externals.
+------------------------------------------------------------------------
+r72256 | jjsheets | 2008-04-30 19:05:53 -0400 (Wed, 30 Apr 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade/LibButtonFacade/LibButtonFacade.lua
+
+ButtonFacade:
+ - Drycoding is such a horrible thing to do.  :p
+------------------------------------------------------------------------
+r72253 | jjsheets | 2008-04-30 18:55:29 -0400 (Wed, 30 Apr 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade/LibButtonFacade/LibButtonFacade.lua
+
+ButtonFacade:
+ - added lib:GetNormalVertexColor(button) and lib:SetNormalVertexColor(button,r,g,b,a)
+------------------------------------------------------------------------
+r72149 | jjsheets | 2008-04-29 21:27:14 -0400 (Tue, 29 Apr 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade/LibButtonFacade/LibButtonFacade.lua
+
+ButtonFacade:
+ - Added lib:GetNormalTexture() to allow an addon to get whatever texture buttonfacade has skinned as the normal texture.
+------------------------------------------------------------------------
+r72033 | jjsheets | 2008-04-29 01:38:01 -0400 (Tue, 29 Apr 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade/LibButtonFacade/LibButtonFacade.lua
+
+ButtonFacade:
+ - Normal Layers can have Color assigned when they have the Static attribute set to true.
+------------------------------------------------------------------------
+r72016 | jjsheets | 2008-04-28 21:15:52 -0400 (Mon, 28 Apr 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade/ButtonFacade.lua
+   M /trunk/ButtonFacade/ButtonFacade.toc
+
+ButtonFacade:
+ - Added support for my pre-alpha addon Harbor.
+------------------------------------------------------------------------
+r71647 | jjsheets | 2008-04-26 11:59:05 -0400 (Sat, 26 Apr 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade/ButtonFacade.lua
+
+ButtonFacade:
+ - Made the Locale object a local as it should have been. >.<
+------------------------------------------------------------------------
+r71637 | jjsheets | 2008-04-26 10:27:51 -0400 (Sat, 26 Apr 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade/LibButtonFacade/LibButtonFacade.lua
+
+ButtonFacade:
+ - LBFGroup:RemoveButton() now checks for btndata before trying to reskin.
+------------------------------------------------------------------------
+r71388 | jjsheets | 2008-04-24 22:26:21 -0400 (Thu, 24 Apr 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade/LibButtonFacade/LibButtonFacade.lua
+
+ButtonFacade:
+ - Fixed Blizzard skin backdrop not showing up right when used after the DreamLayout skin.
+------------------------------------------------------------------------
+r71384 | jjsheets | 2008-04-24 21:44:51 -0400 (Thu, 24 Apr 2008) | 2 lines
+Changed paths:
+   M /trunk/ButtonFacade/LibButtonFacade/LibButtonFacade.lua
+
+ButtonFacade:
+ - Added a backdrop to the Blizzard skin, on the offhand chance somebody wanted it.  :p
+------------------------------------------------------------------------
+r70601 | jjsheets | 2008-04-20 11:53:19 -0400 (Sun, 20 Apr 2008) | 3 lines
+Changed paths:
+   M /trunk/ButtonFacade/LibButtonFacade/LibButtonFacade.lua
+
+ButtonFacade:
+ - Fixed bug causing Gloss to not always be a number in the ApplySkin function.
+ - Streamlined some stuff to eliminate need for the local data table.
+------------------------------------------------------------------------

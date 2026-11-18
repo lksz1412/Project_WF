@@ -1,0 +1,156 @@
+------------------------------------------------------------------------
+r1082 | elsia | 2009-08-26 01:29:57 +0000 (Wed, 26 Aug 2009) | 2 lines
+Changed paths:
+   M /trunk/zonefilters.lua
+
+- Wintergrasp and future combat open area pvp zones now are treated as battlegrounds for filter purposes.
+
+------------------------------------------------------------------------
+r1081 | elsia | 2009-08-23 03:17:07 +0000 (Sun, 23 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/Recount.lua
+   M /trunk/Tracker.lua
+
+- Changed pet handling so that two controllable pets with the same name can be active at the same time (such as spirit wolfs).
+------------------------------------------------------------------------
+r1079 | elsia | 2009-08-13 22:33:09 +0000 (Thu, 13 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/Recount_Modes.lua
+   M /trunk/TrackerModules/TrackerModule_CCBreakers.lua
+   M /trunk/TrackerModules/TrackerModule_Dispels.lua
+   M /trunk/TrackerModules/TrackerModule_Interrupts.lua
+   M /trunk/TrackerModules/TrackerModule_PowerGains.lua
+   M /trunk/TrackerModules/TrackerModule_Resurrection.lua
+
+- Fixed so that separated tracker modules now own their detail titles.
+------------------------------------------------------------------------
+r1077 | elsia | 2009-08-12 14:01:34 +0000 (Wed, 12 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/Tracker.lua
+
+- Drycoding is bad mkay.
+------------------------------------------------------------------------
+r1075 | elsia | 2009-08-12 13:24:41 +0000 (Wed, 12 Aug 2009) | 2 lines
+Changed paths:
+   M /trunk/Tracker.lua
+
+- Fixed that leech events weren't correctly quickexited if the gains module is missing.
+
+------------------------------------------------------------------------
+r1073 | elsia | 2009-08-12 13:09:56 +0000 (Wed, 12 Aug 2009) | 2 lines
+Changed paths:
+   M /trunk/Tracker.lua
+
+- Removed pure overheals from activetime recording. This restores pre 3.1-like combat time calculation behavior, since before pure overheals of HoTs at least were not reported in the CL. This addresses an effect locks observed of their DPS dropping at the tail end of combat, which was caused by their fel armor ticking heals.
+
+------------------------------------------------------------------------
+r1072 | elsia | 2009-08-09 02:50:32 +0000 (Sun, 09 Aug 2009) | 4 lines
+Changed paths:
+   D /trunk/Fonts
+   M /trunk/Fonts.lua
+   M /trunk/Recount.lua
+
+- Removed DejaVuSansCondensed.ttf as it crashes the wow client if resized too big. Also tried Bitstream Vera with the same effect.
+- Removed Fonts folder as Recount no longer ships with an extra default font.
+- Using Arial Narrow as default font now.
+
+------------------------------------------------------------------------
+r1071 | elsia | 2009-08-09 02:29:28 +0000 (Sun, 09 Aug 2009) | 1 line
+Changed paths:
+   D /trunk/ResizeGripLeft.tga
+   D /trunk/ResizeGripRight.tga
+   A /trunk/textures/ResizeGripLeft.tga
+   A /trunk/textures/ResizeGripRight.tga
+
+- TortoiseSVN sucks at moving files, mkay?
+------------------------------------------------------------------------
+r1070 | elsia | 2009-08-09 02:16:13 +0000 (Sun, 09 Aug 2009) | 3 lines
+Changed paths:
+   D /trunk/Fonts/ABF.ttf
+   A /trunk/Fonts/DejaVuSansCondensed.ttf
+   A /trunk/Fonts/DejaVuSansCondensedLicense.txt
+   M /trunk/Fonts.lua
+   M /trunk/Recount.lua
+
+- Removed the ABF font per request from Curse (via Arrowmaster)
+- Added DejaVuSansCondensed.ttf plus license text as replacement.
+
+------------------------------------------------------------------------
+r1069 | elsia | 2009-08-09 01:44:54 +0000 (Sun, 09 Aug 2009) | 3 lines
+Changed paths:
+   M /trunk/GUI_Main.lua
+   M /trunk/GUI_Realtime.lua
+   M /trunk/embeds.xml
+
+- Removed LibBabble-Class-3.0 from embeds.xml.
+- Moved the grip images into the textures folder.
+
+------------------------------------------------------------------------
+r1068 | elsia | 2009-08-08 23:51:43 +0000 (Sat, 08 Aug 2009) | 3 lines
+Changed paths:
+   M /trunk/Bindings.xml
+   M /trunk/Recount.lua
+   M /trunk/Recount.toc
+   M /trunk/Recount_Modes.lua
+   M /trunk/Tracker.lua
+   A /trunk/TrackerModules
+   A /trunk/TrackerModules/TrackerModule_CCBreakers.lua
+   A /trunk/TrackerModules/TrackerModule_Dispels.lua
+   A /trunk/TrackerModules/TrackerModule_Interrupts.lua
+   A /trunk/TrackerModules/TrackerModule_PowerGains.lua
+   A /trunk/TrackerModules/TrackerModule_Resurrection.lua
+
+- Made non-core tracking (dispels, power gains, CCBreaking, Interrupts, Ressurects) into separate modules that can be renamed/deleted to deactivate them along with the associated CombatLog handling. To deactivate a module, delete or rename the matching lua file in the TrackerModules subdirectory. Disabling unneeded modules will slightly improve performance and somewhat lower memory usage. The core modes (all damage, healing and death-related modes) cannot be disabled.
+- Improved keybinding handling. External modules will now more easily be able to add consistent keybinding to their mode.
+
+------------------------------------------------------------------------
+r1067 | elsia | 2009-08-08 17:41:59 +0000 (Sat, 08 Aug 2009) | 4 lines
+Changed paths:
+   M /trunk/GUI_Report.lua
+   M /trunk/Recount.lua
+
+- First iteration of improving command line reporting. Warning: Syntax is not backward compatible so old report macros will break. New syntax is:
+/recount report [main|detail] [say|party|raid|guild|officer|gui] where gui brings up the old report gui. One can change the number of reported lines via /recount report lines [number].
+Number of lines reported is now stored between sessions. This syntax allows to report to say, party, raid, guild or officer without going through the report gui.
+
+------------------------------------------------------------------------
+r1066 | elsia | 2009-08-08 15:42:03 +0000 (Sat, 08 Aug 2009) | 2 lines
+Changed paths:
+   M /trunk/GUI_Config.lua
+   M /trunk/GUI_Main.lua
+   M /trunk/Recount.lua
+
+- Added option to hide close icon of the main window.
+
+------------------------------------------------------------------------
+r1065 | elsia | 2009-08-07 20:16:29 +0000 (Fri, 07 Aug 2009) | 2 lines
+Changed paths:
+   M /trunk
+   M /trunk/.pkgmeta
+   M /trunk/GUI_Config.lua
+   M /trunk/Recount.toc
+
+- Using blizz's FillLocalizedClassList to get localized class names. Removed LibBabble-Class-3.0. Thanks tons and R.I.P.
+
+------------------------------------------------------------------------
+r1063 | elsia | 2009-08-05 04:09:51 +0000 (Wed, 05 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/Recount.toc
+
+- Bumpity toc.
+------------------------------------------------------------------------
+r1062 | elsia | 2009-08-03 00:53:57 +0000 (Mon, 03 Aug 2009) | 2 lines
+Changed paths:
+   M /trunk/Recount.lua
+
+- Resize grips will now properly update when a profile change happens.
+
+------------------------------------------------------------------------
+r1061 | elsia | 2009-07-05 13:07:54 +0000 (Sun, 05 Jul 2009) | 3 lines
+Changed paths:
+   M /trunk/Tracker.lua
+
+- 3.1->3.2 compatibility. Now should handle crits correctly on both build types. Absorb field is implemented but not yet fully handled. Also implements the UNIT_DISSIPATES event.
+- Removed some idle commented stuff.
+
+------------------------------------------------------------------------

@@ -1,0 +1,210 @@
+﻿<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\..\FrameXML\UI.xsd">
+	<Script file="ReagentHeavenOptions.lua" />
+	<Frame name="ReagentHeavenOptionsFrame" toplevel="true" frameStrata="DIALOG" movable="true" enableMouse="true" hidden="true" parent="UIParent">
+		<Size>
+			<AbsDimension x="400" y="260"/>
+		</Size>
+		<Anchors>
+			<Anchor point="CENTER"/>
+		</Anchors>
+		<Scripts>
+			<OnShow>
+				ReagentHeavenOptionsFrame_Load();
+			</OnShow>
+		</Scripts>
+		<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+			<BackgroundInsets>
+				<AbsInset left="11" right="12" top="12" bottom="11"/>
+			</BackgroundInsets>
+			<TileSize>
+				<AbsValue val="32"/>
+			</TileSize>
+			<EdgeSize>
+				<AbsValue val="32"/>
+			</EdgeSize>
+		</Backdrop>
+		<Layers>
+			<Layer level="ARTWORK">
+				<Texture name="ReagentHeavenOptionsFrameHeader" file="Interface\DialogFrame\UI-DialogBox-Header">
+					<Size>
+						<AbsDimension x="256" y="64"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOP">
+							<Offset>
+								<AbsDimension x="0" y="12"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString inherits="GameFontNormal" text="REAGENTHEAVEN_NAME">
+					<Anchors>
+						<Anchor point="TOP" relativeTo="ReagentHeavenOptionsFrameHeader">
+							<Offset>
+								<AbsDimension x="0" y="-14"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="ReagentHeavenOptionsFrameMain" inherits="OptionFrameBoxTemplate">
+				<Size>
+					<AbsDimension x="375" y="180"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset>
+							<AbsDimension x="12" y="-35"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<CheckButton name="ReagentHeavenOptionsFrameCheckButton1" inherits="OptionsCheckButtonTemplate">
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset>
+									<AbsDimension x="10" y="-5"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								if ( this:GetChecked() ) then
+									PlaySound("igMainMenuOptionCheckBoxOff");
+								else
+									PlaySound("igMainMenuOptionCheckBoxOn");
+								end
+								ReagentHeavenOptionsFrame_UpdateEnable(this:GetChecked());
+							</OnClick>
+						</Scripts>
+					</CheckButton>
+					<CheckButton name="ReagentHeavenOptionsFrameCheckButton2" inherits="OptionsCheckButtonTemplate">
+						<Anchors>
+							<Anchor point="TOP" relativeTo="ReagentHeavenOptionsFrameCheckButton1" relativePoint="BOTTOM">
+								<Offset>
+									<AbsDimension x="16" y="4"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								if ( this:GetChecked() ) then
+									PlaySound("igMainMenuOptionCheckBoxOff");
+								else
+									PlaySound("igMainMenuOptionCheckBoxOn");
+								end
+								ReagentHeavenOptionsFrame_UpdateShowDetail(this:GetChecked());
+							</OnClick>
+						</Scripts>
+					</CheckButton>
+					<CheckButton name="ReagentHeavenOptionsFrameCheckButton3" inherits="OptionsCheckButtonTemplate">
+						<Anchors>
+							<Anchor point="TOP" relativeTo="ReagentHeavenOptionsFrameCheckButton2" relativePoint="BOTTOM">
+								<Offset>
+									<AbsDimension x="16" y="4"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</CheckButton>
+					<CheckButton name="ReagentHeavenOptionsFrameCheckButton4" inherits="OptionsCheckButtonTemplate">
+						<Anchors>
+							<Anchor point="TOP" relativeTo="ReagentHeavenOptionsFrameCheckButton3" relativePoint="BOTTOM">
+								<Offset>
+									<AbsDimension x="0" y="4"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</CheckButton>
+					<CheckButton name="ReagentHeavenOptionsFrameCheckButton5" inherits="OptionsCheckButtonTemplate">
+						<Anchors>
+							<Anchor point="TOP" relativeTo="ReagentHeavenOptionsFrameCheckButton4" relativePoint="BOTTOM">
+								<Offset>
+									<AbsDimension x="0" y="4"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</CheckButton>
+					<CheckButton name="ReagentHeavenOptionsFrameCheckButton6" inherits="OptionsCheckButtonTemplate">
+						<Anchors>
+							<Anchor point="TOP" relativeTo="ReagentHeavenOptionsFrameCheckButton5" relativePoint="BOTTOM">
+								<Offset>
+									<AbsDimension x="0" y="4"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</CheckButton>
+				</Frames>
+				<Scripts>
+					<OnShow>
+						self:SetBackdropBorderColor(0.4, 0.4, 0.4);
+						self:SetBackdropColor(0.15, 0.15, 0.15);
+--						getglobal(self:GetName().."Title"):SetText( RH_STR_BASIC_CONFIGRATION );
+					</OnShow>
+				</Scripts>
+			</Frame>
+			<Button name="ReagentHeavenOptionsFrameCancel" inherits="OptionsButtonTemplate" text="CANCEL">
+				<Anchors>
+					<Anchor point="BOTTOMRIGHT">
+						<Offset>
+							<AbsDimension x="-12" y="16"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						PlaySound("gsTitleOptionExit");
+						HideUIPanel(ReagentHeavenOptionsFrame);
+					</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="ReagentHeavenOptionsFrameOkay" inherits="OptionsButtonTemplate" text="OKAY">
+				<Anchors>
+					<Anchor point="RIGHT" relativeTo="ReagentHeavenOptionsFrameCancel" relativePoint="LEFT">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						PlaySound("gsTitleOptionOK");
+						ReagentHeavenOptionsFrame_Save();
+						HideUIPanel(ReagentHeavenOptionsFrame);
+					</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="ReagentHeavenOptionsFrameRefresh" inherits="OptionsButtonTemplate" text="RH_STR_REFRESH">
+				<Anchors>
+					<Anchor point="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="12" y="16"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						PlaySound("gsTitleOptionOK");
+						ReagentHeaven_CreateReagentData();
+					</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="ReagentHeavenOptionsFrameReset" inherits="OptionsButtonTemplate" text="RH_STR_RESET">
+				<Anchors>
+					<Anchor point="LEFT" relativeTo="ReagentHeavenOptionsFrameRefresh" relativePoint="RIGHT">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						PlaySound("gsTitleOptionOK");
+						ReagentHeaven_ResetMissedData();
+					</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+</Ui>

@@ -1,0 +1,14 @@
+{
+  "recorded_at": "2026-11-17 21:32:48 +09:00",
+  "target": "Codex/docs/original-source-analysis.md",
+  "rounds": 10,
+  "major": 0,
+  "moderate": 0,
+  "minor": 0,
+  "fixes_required": false,
+  "review_report": "Codex/results/handoffs/source-analysis/iter_1/audit_log.md",
+  "static_analysis_only": true,
+  "runtime_game": "NOT_TESTED",
+  "pixel_fidelity": "NOT_MEASURED",
+  "runtime_model_effort_usage": "UNOBSERVED"
+}

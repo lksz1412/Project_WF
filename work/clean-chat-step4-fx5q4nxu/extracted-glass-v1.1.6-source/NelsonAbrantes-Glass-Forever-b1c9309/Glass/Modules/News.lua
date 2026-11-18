@@ -1,0 +1,462 @@
+local Core, Constants = unpack(select(2, ...))
+local News = Core:GetModule("News")
+
+-- luacheck: push ignore 113
+local CreateFrame = CreateFrame
+local UIParent = UIParent
+-- luacheck: pop
+
+local OPEN_NEWS = Constants.EVENTS.OPEN_NEWS
+
+-- Version history shown in the "What's new" window. Newest first.
+-- luacheck: push ignore 631
+local CHANGELOG = {
+  {
+    name = "1.1.6-forever",
+    items = {[[
+Bug fixes
+
+- The Combat Log can be undocked and docked again.
+]]},
+  },
+  {
+    name = "1.1.5-forever",
+    items = {[[
+What's new
+
+- "Whisper" in a player's menu, or a click on a name in the chat, opens their whisper window.
+- Links in whisper windows show in their colors.
+- Shift-click links into a whisper window's reply box.
+
+Bug fixes
+
+- The chat no longer disappears when Glass Forever is turned off.
+- The selected tab line stays centered on Battle.net whisper tabs.
+- Hovering a profession link no longer opens its window.
+]]},
+  },
+  {
+    name = "1.1.4-forever",
+    items = {[[
+What's new
+
+- The whisper reply box only takes your typing when you click it.
+
+Bug fixes
+
+- No more error when whispering in combat in a dungeon: the message goes to the chat box, ready to send.
+- Options that follow another setting are now named "Default".
+]]},
+  },
+  {
+    name = "1.1.3-forever",
+    items = {[[
+What's new
+
+- Right click a whisper window's title or a name in the whisper list for the player's menu.
+- Whisper list names in class color.
+- The whisper list keeps the last 20 conversations.
+- Separate windows' tabs fade like the main chat's.
+- Edit Mode movers for voice chat and chat alerts.
+- Community invite links open the Communities window.
+]]},
+  },
+  {
+    name = "1.1.2-forever",
+    items = {[[
+What's new
+
+- Whisper windows (phone look): a soft animation for new messages.
+- Sliders to move the chat buttons a little.
+
+Bug fixes
+
+- Messages no longer fade out under the mouse when "Show on mouse over" is off.
+- The whisper icon above the chat no longer covers the tabs.
+- Smoother corners on whisper windows.
+- No more thin lines from cut-off messages at the edges of whisper windows.
+    ]]}
+  },
+  {
+    name = "1.1.1-forever",
+    items = {[[
+Bug fixes
+
+- Fixed errors with other addons that hook the chat.
+- Fixed possible errors from whispers inside dungeons and raids.
+    ]]}
+  },
+  {
+    name = "1.1.0-forever",
+    items = {[[
+What's new
+
+- Whisper windows: each conversation in its own window.
+- Separate windows: option for a background on each message.
+- A minimized window's bar glows on new messages.
+- A smoother Battle.net alert, closed with a click.
+
+Bug fixes
+
+- "Previous session" lines in separate windows now fade with the text.
+- The new message glow on separate window tabs no longer shows as bright blobs.
+    ]]}
+  },
+  {
+    name = "1.0.11-forever",
+    items = {[[
+What's new
+
+- The chat buttons on the right sit below the tab bar.
+- Dark text on game alerts is now gold, easier to read.
+- A sharper achievement shield on alerts.
+
+Bug fixes
+
+- Party chat in dungeons no longer stops showing messages.
+- Long messages in dungeons no longer overlap.
+- No more errors with Battle.net whispers.
+- Whisper tabs are no longer cut at the end of the bar.
+    ]]}
+  },
+  {
+    name = "1.0.10-forever",
+    items = {[[
+What's new
+
+- Background on the whole line, for messages and the tab bar (options).
+
+Bug fixes
+
+- The new message line is centered on the tab name.
+- The chat buttons on the right no longer cover the last tab.
+    ]]}
+  },
+  {
+    name = "1.0.9-forever",
+    items = {[[
+Bug fixes
+
+- Long messages no longer overlap the next one.
+- Battle.net whisper tabs show the name.
+- Shift clicking a map pin no longer shows an error.
+- No more white lines around the new recipe alert icon.
+- Softer fade on the game alerts background.
+    ]]}
+  },
+  {
+    name = "1.0.7-forever",
+    items = {[[
+Bug fixes
+
+- New recipe alerts no longer show an error or a dark icon.
+    ]]}
+  },
+  {
+    name = "1.0.6-forever",
+    items = {[[
+What's new
+
+- Battle.net alerts with the Glass look.
+- Game alerts (loot, achievements...) with the Glass look (option).
+
+Bug fixes
+
+- Whisper windows no longer show through the chat.
+- Recent Allies whisper tabs show the Glass icon again.
+    ]]}
+  },
+  {
+    name = "1.0.5-forever",
+    items = {[[
+What's new
+
+- Whisper tabs stay open after a reload, until you close them.
+- Move the Battle.net alerts in Edit Mode.
+
+Changes
+
+- New look for the new message alert on tabs.
+- Separate windows show earlier messages too.
+
+Bug fixes
+
+- Tabs dragged out of the chat keep the chat's font size.
+    ]]}
+  },
+  {
+    name = "1.0.0-forever",
+    items = {[[
+What's new
+
+- Emotes: smileys like :) show as small faces.
+- Timestamps, class and race icons, first names only (options).
+- Unread count on tabs (option).
+- Search a tab's messages (right click the tab).
+- Guild and Party tabs offered on first login.
+- Track a linked recipe (right click it).
+- Export and import profiles.
+
+Changes
+
+- Whispers open in their own tab.
+- Separate windows look like the main chat.
+- Glass icon for Recent Allies.
+- Short channel names on by default.
+
+Bug fixes
+
+- Links in separate windows open on the first click.
+- Busy chats no longer vanish all at once.
+- No more orange glow on tabs.
+    ]]}
+  },
+  {
+    name = "0.15.1-forever (beta)",
+    items = {[[
+What's new
+
+- "Open in Separate Window" when you right click a channel.
+
+Bug fixes
+
+- "Move to New Window" works again (now "Move to New Tab").
+- Separate windows: Glass scroll bar, and messages come back on mouse over.
+- "Copy Character Name" no longer shows an error.
+- Say, yell and emotes no longer light up tabs.
+- The new message line no longer covers the tab name.
+    ]]}
+  },
+  {
+    name = "0.15.0-forever (beta)",
+    items = {[[
+What's new
+
+- Tab animations now work on every tab style.
+- "Class color" accent for the selected tab.
+- New message alert under the tab name.
+
+Bug fixes
+
+- Tab names now stay solid with the mouse over the chat.
+- Fixed very high memory use in some situations.
+- Tab names no longer flicker.
+    ]]}
+  },
+  {
+    name = "0.14.1-forever (beta)",
+    items = {[[
+Bug fixes
+
+- New whisper tabs no longer show an error and incorrect placing of the window.
+    ]]}
+  },
+  {
+    name = "0.14.0-forever (beta)",
+    items = {[[
+What's new
+
+- New look and animation for the selected tab.
+- Thin outline on the chat button icons.
+- New look for the "Previous session" line.
+
+Bug fixes
+
+- Right-aligned tabs no longer shake.
+- Changing the chat height no longer freezes the game.
+- Lighter on memory and performance in busy chats.
+    ]]}
+  },
+  {
+    name = "0.13.0-forever (beta)",
+    items = {[[
+What's new
+
+- Tab styles: Minimal, Framed, Solid, Underline, Pill, Glossy and Classic.
+- Accent color for the selected tab, and a color for tab names.
+- Separate windows with the Glass look.
+- Spam filter with an editable list of blocked words.
+- Arrow keys history in the chat box.
+- Update notice in the chat.
+
+Bug fixes
+
+- Chinese and Korean letters no longer show as squares.
+- "Unread messages" is now under the chat.
+- Party tab glow is blue again.
+- Separate windows no longer disappear after a reload.
+- Docking a window no longer shows another tab's messages.
+    ]]}
+  },
+  {
+    name = "0.12.0-forever (beta)",
+    items = {[[
+What's new
+
+- Edit box styles (Options > Edit Box > Style, also in Edit Mode). Minimal, the new default, fades out at the ends like the messages, with a thin line in the color of the chat you're typing in (say, party, whisper...). Solid is the previous plain dark box. Framed has rounded corners and a border in the chat's color.
+- Glass Forever now shows its logo in the game's AddOns list.
+
+Bug fixes
+
+- The game's own edit box border no longer shows behind the Glass edit box.
+- Tabs with no new messages no longer pile up "Previous session" lines. Old history is tidied up automatically.
+- The chat buttons no longer end up in the wrong place after a while.
+    ]]}
+  },
+  {
+    name = "0.11.0-forever (beta)",
+    items = {[[
+What's new
+
+- Tabs options (Options > AddOns > Glass Forever > Tabs): tab font and size, tab bar height, spacing between tabs, tab bar opacity, and an option to turn off the tab alerts.
+- Tab bar position: above or below the messages, with fine adjustment left/right and up/down.
+- Tab alignment: left, center or right.
+- "Fade out" options: keep the tab bar or the messages always visible.
+- Chat buttons (Options > General): show the game's chat buttons (friends, channels and voice chat, emotes and languages) next to the chat, with icons in the Glass style. Left, right, top left, top right, bottom left or bottom right.
+- Tab bar position, alignment and the "Fade out" options are also in Edit Mode.
+
+Bug fixes
+
+- Long tab names are no longer cut ("Combat L...").
+- Whisper tabs no longer get cut off at the end of the tab bar. When the tabs don't fit, names get shorter instead, whispers first.
+- Chat history from earlier sessions is now separated from the current one by a line with the date and time.
+- The Combat Log no longer covers the tabs when the tab bar is taller.
+- The "jump to the newest messages" button now follows the chat height.
+    ]]}
+  },
+  {
+    name = "0.10.1-forever (beta)",
+    items = {[[
+Bug fixes
+
+- Fixed an error when changing the font, font size, width or height, in the options or in Edit Mode.
+    ]]}
+  },
+  {
+    name = "0.10.0-forever (beta)",
+    items = {[[
+What's new
+
+- Edit Mode: move Glass and change its size, fonts, opacity, animations and edit box position from Blizzard's Edit Mode.
+- Options are now in the game's Options window (Options > AddOns > Glass Forever), with the game's own look. /glass opens them.
+- Web links in chat are clickable and open a window to copy them.
+- Right-click a tab and choose "Copy chat text" to copy its messages.
+- Short channel names (optional): [1] instead of [1. General], [P] instead of [Party], and so on.
+- Chat history: the last 50 messages of each tab come back when you log in again (per character, can be turned off).
+- Drag a tab (including whispers) out of the chat to make it a separate window, and drag it back to join Glass again.
+- Glass windows and buttons use the current game style.
+
+Bug fixes
+
+- Messages no longer appear twice after creating a new tab.
+- Long messages no longer overlap the next message.
+- Whispers now light up their tab in the whisper color and show the tab bar.
+- Fixed errors with protected ("secret") chat messages, for example in combat or instances.
+- Better performance: fixed frame rate spikes, especially when moving the mouse over the chat and in busy chats.
+- Channel notices ("Changed Channel: ...") show the full channel name with short channel names on.
+    ]]}
+  },
+  {
+    name = "1.9.0-forever1 (beta)",
+    items = {[[
+First release of Glass Forever, a fork of Glass by Mitchel Cabuloy (mixxorz), updated to work on WoW: Forever.
+
+Bug fixes
+
+- Fixed "secret number" errors when sizing messages and scrolling.
+- Fixed blank chat after logging in.
+- Fixed tabs going blank or overlapping after switching between them.
+- Fixed whisper tabs failing or staying empty after being closed and re-opened.
+- Fixed Combat Log text cut off at the left edge.
+
+What's new
+
+- Colored tab glow: a tab glows in the color of the chat type (guild green, party blue, and so on) when a message arrives and you're not looking at it.
+- The tab bar appears for a few seconds when such a message arrives.
+- A thin line above the selected tab.
+    ]]}
+  },
+}
+-- luacheck: pop
+
+-- Text of the whole version history, one release after the other
+local function HistoryText()
+  local parts = {}
+  for _, release in ipairs(CHANGELOG) do
+    table.insert(parts, "|c00DFBA69"..release.name.."|r\n")
+    for _, item in ipairs(release.items) do
+      table.insert(parts, item)
+    end
+    table.insert(parts, "\n")
+  end
+  return table.concat(parts, "\n")
+end
+
+-- Window built with the game's own panel template (bronze border), like the
+-- other Glass windows
+local function CreateWindow()
+  local frame = CreateFrame("Frame", "GlassNewsFrame", UIParent, "DefaultPanelFlatTemplate")
+  frame:SetSize(600, 400)
+  frame:SetPoint("CENTER")
+  frame:SetFrameStrata("DIALOG")
+  frame:SetToplevel(true)
+  frame:SetClampedToScreen(true)
+  frame:EnableMouse(true)
+  frame:SetMovable(true)
+  frame:RegisterForDrag("LeftButton")
+  frame:SetScript("OnDragStart", frame.StartMoving)
+  frame:SetScript("OnDragStop", frame.StopMovingOrSizing)
+  frame:SetTitle("Glass Forever: Version history")
+  frame:Hide()
+
+  -- Close with the Escape key, like other game windows
+  table.insert(_G.UISpecialFrames, "GlassNewsFrame")
+
+  frame.bg = frame:CreateTexture(nil, "BACKGROUND")
+  frame.bg:SetPoint("TOPLEFT", 7, -3)
+  frame.bg:SetPoint("BOTTOMRIGHT", -3, 3)
+  frame.bg:SetColorTexture(0.08, 0.08, 0.08, 1)
+
+  local close = CreateFrame("Button", nil, frame, "UIPanelCloseButton")
+  close:SetFrameLevel((frame.TitleContainer or frame):GetFrameLevel() + 10)
+  close:SetPoint("TOPRIGHT")
+
+  local version = frame:CreateFontString(nil, "ARTWORK", "GameFontDisableSmall")
+  version:SetPoint("BOTTOMLEFT", 16, 10)
+  version:SetText("Version: "..Core.Version)
+
+  local scroll = CreateFrame("ScrollFrame", nil, frame, "UIPanelScrollFrameTemplate")
+  scroll:SetPoint("TOPLEFT", 16, -32)
+  scroll:SetPoint("BOTTOMRIGHT", -34, 28)
+
+  local content = CreateFrame("Frame", nil, scroll)
+  scroll:SetScrollChild(content)
+
+  local text = content:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
+  text:SetPoint("TOPLEFT")
+  text:SetJustifyH("LEFT")
+  text:SetJustifyV("TOP")
+  text:SetSpacing(3)
+  text:SetText(HistoryText())
+
+  -- Fit the text to the window width and let the scroll frame know its height
+  local function Layout(width)
+    content:SetWidth(width)
+    text:SetWidth(width)
+    content:SetHeight(text:GetStringHeight() + 10)
+  end
+  scroll:SetScript("OnSizeChanged", function (_, width) Layout(width) end)
+  Layout(scroll:GetWidth())
+
+  return frame
+end
+
+-- Module
+function News:OnEnable()
+  local window
+
+  Core:Subscribe(OPEN_NEWS, function ()
+    window = window or CreateWindow()
+    window:Show()
+  end)
+end

@@ -1,0 +1,261 @@
+{
+  "schema": "old-devil-assets/1",
+  "recorded": "2026-11-18T02:15:56.609718+09:00",
+  "selectionOwner": "A1afterdirectfullreaderfindings328andOnyxsource139read",
+  "scope": "selected7assetsfortheNEWA1offlineproposal;notall23observedassetsdrawn",
+  "selectedAssets": [
+    {
+      "assetID": "ornament-demon",
+      "kind": "image",
+      "path": "Codex/results/old-devil-layout/asset-preparation/png/045CE188243A618161EB6351ECA50F2F0B7562A944C16D59EB68E0A2DFE248CA.png",
+      "SHA256": "1ED250C74D5957659C06F41EB4E8D2F0CD66A9D5C0BA5D1F2F9F9A3AD91E57D1",
+      "sourceSHA256": "045CE188243A618161EB6351ECA50F2F0B7562A944C16D59EB68E0A2DFE248CA",
+      "sourcePaths": [
+        "work/old-reference-r36-z41s_asv/selected-extracted/$HWNDPARENT/Interface/addons/Devil/demon.tga",
+        "work/old-reference-collection-0qlzzyxg/extracted-alpha-nsis/Interface/addons/!DevilUI/media/background/demon.tga"
+      ],
+      "dimensions": [
+        256,
+        256
+      ],
+      "usage": "leftend",
+      "selectionRationale": "right-facingdarkwingedcreature;unchangedorientation;Alpha/X2savedleftdemon",
+      "appearanceEvidence": {
+        "path": "Codex/results/old-devil-layout/asset-observations/findings.md",
+        "lines": [
+          45,
+          58
+        ]
+      },
+      "sourceUnmodified": true,
+      "exactPhotoAssetIdentity": "UNVERIFIED",
+      "rights": "privateofflinepreviewonly;no redistributionpermissioninferred",
+      "operation": "unchangedRGBAalphacomposite;buttoncomponentsresize64to80asdeclared;statusresize/tintonly"
+    },
+    {
+      "assetID": "ornament-angel",
+      "kind": "image",
+      "path": "Codex/results/old-devil-layout/asset-preparation/png/073284129E9F8D2AD16998140A1AC6DB1A475636025AEFF476FC3DA359CA8744.png",
+      "SHA256": "6C5E47DB83789B6006A74EFA5F06FF981D7650A188D150BD9CE7415E936F0E18",
+      "sourceSHA256": "073284129E9F8D2AD16998140A1AC6DB1A475636025AEFF476FC3DA359CA8744",
+      "sourcePaths": [
+        "work/old-reference-r36-z41s_asv/selected-extracted/$HWNDPARENT/Interface/addons/Devil/angel.tga",
+        "work/old-reference-collection-0qlzzyxg/extracted-alpha-nsis/Interface/addons/!DevilUI/media/background/angel.tga"
+      ],
+      "dimensions": [
+        256,
+        256
+      ],
+      "usage": "rightend",
+      "selectionRationale": "left-facinghoodedwingedfigure;unchangedorientation;Alpha/X2savedrightangel",
+      "appearanceEvidence": {
+        "path": "Codex/results/old-devil-layout/asset-observations/findings.md",
+        "lines": [
+          18,
+          31
+        ]
+      },
+      "sourceUnmodified": true,
+      "exactPhotoAssetIdentity": "UNVERIFIED",
+      "rights": "privateofflinepreviewonly;no redistributionpermissioninferred",
+      "operation": "unchangedRGBAalphacomposite;buttoncomponentsresize64to80asdeclared;statusresize/tintonly"
+    },
+    {
+      "assetID": "button-backdrop",
+      "kind": "image",
+      "path": "Codex/results/old-devil-layout/asset-preparation/png/CE0732935E0C6578A3F913201900661A8B15073CE0BD2685921119F62914F182.png",
+      "SHA256": "2F9751D533BB256EF2AF805466D69E75AD59CBB8EBE0D8F64051EFF08D193742",
+      "sourceSHA256": "CE0732935E0C6578A3F913201900661A8B15073CE0BD2685921119F62914F182",
+      "sourcePaths": [
+        "work/old-reference-collection-0qlzzyxg/extracted-alpha-nsis/Interface/addons/Masque_Onyx/Textures/Backdrop.tga"
+      ],
+      "dimensions": [
+        64,
+        64
+      ],
+      "usage": "buttonbacking",
+      "selectionRationale": "darktexturedopaquecenter;belowicon",
+      "appearanceEvidence": {
+        "path": "Codex/results/old-devil-layout/asset-observations/findings.md",
+        "lines": [
+          233,
+          245
+        ]
+      },
+      "sourceUnmodified": true,
+      "exactPhotoAssetIdentity": "UNVERIFIED",
+      "rights": "privateofflinepreviewonly;no redistributionpermissioninferred",
+      "operation": "unchangedRGBAalphacomposite;buttoncomponentsresize64to80asdeclared;statusresize/tintonly"
+    },
+    {
+      "assetID": "button-onyx-normal",
+      "kind": "image",
+      "path": "Codex/results/old-devil-layout/asset-preparation/png/0CE612BDB39399D2676B14FDD61CCADE9FA8A1904339D88F0969259C6E88F2FE.png",
+      "SHA256": "F93420F73DEF8E632E2DC7FAC04590BA7DE5D2527123F328B6190507BC860BD2",
+      "sourceSHA256": "0CE612BDB39399D2676B14FDD61CCADE9FA8A1904339D88F0969259C6E88F2FE",
+      "sourcePaths": [
+        "work/old-reference-collection-0qlzzyxg/extracted-alpha-nsis/Interface/addons/Masque_Onyx/Textures/Classic.tga"
+      ],
+      "dimensions": [
+        64,
+        64
+      ],
+      "usage": "buttonnormal",
+      "selectionRationale": "darkbeveledframe/transparentcenter/toptinytriangle;AlphaOnyx.lua45-49Normal=Classic",
+      "appearanceEvidence": {
+        "path": "Codex/results/old-devil-layout/asset-observations/findings.md",
+        "lines": [
+          259,
+          271
+        ]
+      },
+      "sourceUnmodified": true,
+      "exactPhotoAssetIdentity": "UNVERIFIED",
+      "rights": "privateofflinepreviewonly;no redistributionpermissioninferred",
+      "operation": "unchangedRGBAalphacomposite;buttoncomponentsresize64to80asdeclared;statusresize/tintonly"
+    },
+    {
+      "assetID": "button-gloss",
+      "kind": "image",
+      "path": "Codex/results/old-devil-layout/asset-preparation/png/B797A5014DBC3D57F9CD4F44FFFF5B424E1953B357FEAF408A07FAA26509C50B.png",
+      "SHA256": "C5D1EDC6094DCB2991E8B9D12CAA19E74743D940F5C47015810173A699D52930",
+      "sourceSHA256": "B797A5014DBC3D57F9CD4F44FFFF5B424E1953B357FEAF408A07FAA26509C50B",
+      "sourcePaths": [
+        "work/old-reference-collection-0qlzzyxg/extracted-alpha-nsis/Interface/addons/Masque_Onyx/Textures/Gloss.tga"
+      ],
+      "dimensions": [
+        64,
+        64
+      ],
+      "usage": "buttonupperglare",
+      "selectionRationale": "uppersemitransparentwhitesheen;sourcealpha0..111;noopaqueoverlay",
+      "appearanceEvidence": {
+        "path": "Codex/results/old-devil-layout/asset-observations/findings.md",
+        "lines": [
+          272,
+          284
+        ]
+      },
+      "sourceUnmodified": true,
+      "exactPhotoAssetIdentity": "UNVERIFIED",
+      "rights": "privateofflinepreviewonly;no redistributionpermissioninferred",
+      "operation": "unchangedRGBAalphacomposite;buttoncomponentsresize64to80asdeclared;statusresize/tintonly"
+    },
+    {
+      "assetID": "status-smooth",
+      "kind": "image",
+      "path": "Codex/results/old-devil-layout/asset-preparation/png/00E8084E83BF25B941464E2619B59E993B6AC7AE0BD8A6F37B12872E686DED6D.png",
+      "SHA256": "E1E72864C3AD1B49621BBBFE0EE0FA39FDC716EAA0999872FBE3F60DCEAE26F3",
+      "sourceSHA256": "00E8084E83BF25B941464E2619B59E993B6AC7AE0BD8A6F37B12872E686DED6D",
+      "sourcePaths": [
+        "work/old-reference-collection-0qlzzyxg/extracted-alpha-nsis/Interface/addons/!DevilUI/media/statusbar/Smooth.tga"
+      ],
+      "dimensions": [
+        256,
+        32
+      ],
+      "usage": "health-resourcefills",
+      "selectionRationale": "straightgrayscaletopbrighttobottomdark;A1sampletint,notphotoexacttexture",
+      "appearanceEvidence": {
+        "path": "Codex/results/old-devil-layout/asset-observations/findings.md",
+        "lines": [
+          194,
+          206
+        ]
+      },
+      "sourceUnmodified": true,
+      "exactPhotoAssetIdentity": "UNVERIFIED",
+      "rights": "privateofflinepreviewonly;no redistributionpermissioninferred",
+      "operation": "unchangedRGBAalphacomposite;buttoncomponentsresize64to80asdeclared;statusresize/tintonly"
+    },
+    {
+      "assetID": "font-body",
+      "kind": "font",
+      "path": "Codex/results/old-devil-layout/asset-preparation/original-fonts/root5-2002.ttf",
+      "SHA256": "49DF5AB286B7090AF765626115578F4630FCFC240784E45344D9367A0697DBB5",
+      "sourceSHA256": "49DF5AB286B7090AF765626115578F4630FCFC240784E45344D9367A0697DBB5",
+      "sourcePaths": [
+        "work/old-reference-collection-0qlzzyxg/extracted-alpha-nsis/Fonts/2002.ttf"
+      ],
+      "familyStyle": [
+        "MD_EuteumM",
+        "Regular"
+      ],
+      "usage": "allproposaltext,explicitfixedsizes",
+      "metricsEvidence": "text-metrics.json",
+      "rights": "fontlicense/redistributionunverified;localofflinepreviewonly;noinstall",
+      "operation": "Pillowloadfromprojectcopy;noOSfontinstall/autoFit"
+    }
+  ],
+  "selectedImageCount": 6,
+  "selectedFontCount": 1,
+  "consideredImageCount": 23,
+  "observedSourceImagePaths": 30,
+  "observedImageUniqueCount": 23,
+  "fontCandidateRows": 4,
+  "sourceInventory": {
+    "path": "Codex/results/old-devil-layout/asset-preparation/asset-inventory.json",
+    "SHA256": "5BE22AA9BF51754904C67103E8B922B7E5AEFA8DECC48A08D057DEA9B70FD1A4"
+  },
+  "reader": {
+    "path": "Codex/results/old-devil-layout/asset-observations/findings.md",
+    "SHA256": "C4B3513CF6E08E93C1CEE500DF0B452EFCD39B20B03C7351FAEF8EF4BF533D6B",
+    "coveragePath": "Codex/results/old-devil-layout/asset-observations/coverage.json",
+    "coverageSHA256": "B4303CAFF1E87ECB824E87CBBFE95FF2054B4BA67ABE8685BB33A5B713D6422A",
+    "targetReobservation": 1,
+    "assetObservations": 23,
+    "layoutRenderObserved": false
+  },
+  "sourceCodePins": [
+    {
+      "path": "work/old-reference-collection-0qlzzyxg/extracted-alpha-nsis/Interface/addons/Masque_Onyx/Masque_Onyx.toc",
+      "SHA256": "29498B541923395143DD3D2C338AEA1BED05A83BAF2419AE989B42715A5E032F",
+      "fullReadLines": 16
+    },
+    {
+      "path": "work/old-reference-collection-0qlzzyxg/extracted-alpha-nsis/Interface/addons/Masque_Onyx/Onyx.lua",
+      "SHA256": "C0E9EC78F726F158D621BE1D53FCF535E2BE5AADBC15E561046A80FCB71F2BEB",
+      "fullReadLines": 139
+    },
+    {
+      "path": "work/old-reference-collection-0qlzzyxg/extracted-alpha-nsis/Interface/addons/Masque_Onyx/Docs/License.txt",
+      "SHA256": "304233596776407795386928FA14AC896E5A2924F00630CE52B7BF70D251BBA2",
+      "fullReadLines": 15
+    },
+    {
+      "path": "work/old-reference-collection-0qlzzyxg/extracted-alpha-nsis/Interface/addons/Masque_Onyx/Docs/About.txt",
+      "SHA256": "5E24A613A256484733A46F0076F1B782F6EF5ABB9D1CDB8FFECC5A31D69741EB",
+      "fullReadLines": 17
+    }
+  ],
+  "sourceComponentMapping": {
+    "skinID": "Onyx",
+    "Normal": "Textures/Classic.tga",
+    "Backdrop": "Textures/Backdrop.tga",
+    "Gloss": "Textures/Gloss.tga",
+    "sourceOuter40Icon32": "historicalcomponentunits,not4Kcoordinates",
+    "ClassicFilenameNot2022SkinName": "Do not reinterpretClassic.tga asrejected2022SkinIDOnyxClassic"
+  },
+  "notSelected": {
+    "borderAtlases": "Devil/Devil2/Devil3/rothappearanceobservedbutexacttileorder/edgeusageunverified; new2pxstraightseamsderivedfromphoto,neverstretchwholeatlasasbackground",
+    "circularMinimapTexture": "actualcircularringasset;excludedbecause45sample4lowerSQUAREmap",
+    "OnyxReduxBorderArrowHighlightOverlay": "differentstates/alternateframing;notreststateNormalmapping;opaqueOverlaynotusedasframe",
+    "otherStatusbarsMailSolid": "observedbutnotneededinselectedproposal",
+    "KDamageAndDuplicateFonts": "notbodyfont;2002and2002bbyteidentical;noautofallback"
+  },
+  "proceduralElements": {
+    "seams": "NEW2pxstraightgraydivider/1pxhorizontalrule,notpurportedoldtexture",
+    "neutralIcons": "NEW6muteddiagonalplaceholderpatterns,notrealspells",
+    "neutralMap": "NEWemptyneutralgrid,notrealgeography",
+    "neutralWorld": "NEWquietgradient,notgamecapture",
+    "sampleTextsAndFills": "NEWillustrativesamples,norealuserchat/stats/binds/channels"
+  },
+  "licenseBoundary": {
+    "OnyxObservedLicense": "Docs/License.txt1-15 statespersonalusepermissionandredistributionrestrictionswithspecificunmodifiedcompilationexception;doesnotlicenseallotherDevilassets/fonts",
+    "author": "StormFXforMasque_Onyxsourceonly",
+    "otherAssetsFonts": "rightsnotverified,privateofflinepreviewonly",
+    "noPublicationOrPackage": "Noexternalupload/publicrelease/installbundleauthorization"
+  },
+  "integrityContract": "A2readrelativepathsunderproject,verifyexactSHA;missing/mismatchabort,nosilentfallback",
+  "actualRuntime": "NOT_RUN"
+}

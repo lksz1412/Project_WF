@@ -1,0 +1,8 @@
+﻿## Interface: 20400
+## Title: NeonChat v1.2
+## Title-koKR: |cff00ff7f[필수]|r 네온 채팅
+## Notes: Colors the border of chatinput depending where you are planning to write. Never write nasty secrets to wrong chat again!
+## Notes-koKR: 채널속성에 맞게 입력창 색상 변경
+## Author: Mikma
+## SavedVariables: NeonChatDB
+NeonChat.lua

@@ -1,0 +1,221 @@
+{
+  "postID": 12174,
+  "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=12174",
+  "row": {
+    "postID": 12174,
+    "page": 1,
+    "rowOrdinal": 7,
+    "title": "데빌 일반노멀버전 (소둠땅용) [통합] 25",
+    "rowText": "28 데빌 일반노멀버전 (소둠땅용) [통합] 25 DevilUI Normal 마법을써요 1175 4 11-06",
+    "sourceAnchor": "javascript:addonMove('detail.php', 'idx->12174', 'leave->idx,listtype,ext', 'rurl');",
+    "sourceLocation": {
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\list-first.html",
+      "selector": "table.list tr a[href]",
+      "line": 1262
+    }
+  },
+  "detailProvenance": {
+    "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=12174",
+    "time": "2026-11-17T14:02:07.3845936Z",
+    "contentType": "text/html; charset=UTF-8",
+    "HTTP": 200,
+    "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=12174",
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-12174.html",
+    "state": "acquired",
+    "attempts": 1,
+    "commandExitCode": 0,
+    "encoding": "IWR decoded to UTF-8",
+    "bytes": 229327,
+    "SHA256": "7BA41F75067445FAD0856B84F5AB18264709182BFD2F7DBA4B49BAD495A87CF0"
+  },
+  "acquisitionState": "parsed",
+  "A1read": false,
+  "imageObserved": false,
+  "sections": {
+    "addonAddon": {
+      "state": "parsed",
+      "text": "데빌 일반 입니당\n\n\n\n블랙에디션 아니구요 일반 입니당\n\n\n\n사실 하단집중만 할려고 했는데....\n\n\n\n결국 손 대고 말았어요...\n\n\n\n일반을 써본지가 10년이 넘어서....\n\n\n\n이게 일반하고 같은건지도 잘 모르겠어요..\n\n\n\n암튼 뭐... 살짝 흉내는 내봤습니당\n\n\n\n요청하시는분이 너무 많으셔서.....\n\n\n\n\n\n\n\n분명히 말씀드립니당. \n\n\n\n데빌 일반과 완전히 똑같지는 않습니다. 왜냐면... 일반이 기억이 안나서말이죠...\n\n\n\n\n\n그리고 업데이트는 많이 하진않을꺼 같습니당\n\n\n\n저는 하단집중을 쓰기때문이죠...\n\n\n\n될수있으면 하단집중을 추천드려요 \n\n\n\n그게..완성도가 높거든요...\n\n\n\n\n\n그럼 아래에 설명 잘 보시고 따라하세용\n\n\n\n\n\n\n\n\n\n #####필독사항#####\n\n\n\n반드시 자신의 계정번호 , 서버명 , 닉네임을 저장 및 기록 하시고 아래를 따라하세요.\n\n\n\n\n\nDevilUI .zip 파일을 다운받으세요. (최신날짜)\n\n\n\n1. world of warcraft /_retail_ 폴더안 \n\nCache , Interface , WTF 폴더 를 삭제한다 (3개폴더)\n\n\n\n2. 압축파일 1개를 다운로드한다.\n\n\n\n 압축파일을 압축해제 한다. (Devil.zip )\n\n\n\n (알집은 비추천입니다. 반디집을 추천합니다)\n\n\n\n\n\n3.설치 파일을 설치한다\n\n\n\n## 설치 경로를 확인하시고 제대로 설정한뒤 설치하세요 ##\n\n\n\n경로를 지정하실땐 World of Warcraft 폴더까지만 지정해주시면 됩니다.\n\n보통 피시방에서 하실땐 피방에 와우가 깔린곳이 c드라이브가 아니기때문에\n\n와우가 어디에 설치가 된건지 확인하시고 경로를 지정해주셔야 합니다.\n\n_retail_ 폴더가 두번 설정되기때문에 확인하시고 지워주세요\n\n\n\n\n\n4. 설치된 와우폴더 내 - retail - WTF폴더 - Account 폴더안에 계정번호폴더를 자신의 계정번호로 바꾼다\n\n\n\n5. 계정번호 폴더내 서버명을 자신의 서버로 바꾼다 (중요합니다)\n\n\n\n\n\n6. 서버폴더내 케릭명을 자신의 케릭명으로 바꾼다 (중요합니다)\n\n\n\n7. 접속한다\n\n\n\n8.접속후 애드온 적용버튼을 누른다 \n\n\n\n9.적용버튼이 안나올시 채팅창에 /reflux switch Wide 를 입력한다 (대,소문자 반드시 지킬것)\n\n\n\n10.끝\n\n\n\n즐기세용\n\n\n\n\n\n\n\n\n\n\n\n**데빌 하단집중용**\n\n\n\nhttps://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=11218&amp;rurl=%2Fdataninfo%2Faddonpds%2Flist.php%3FsearchField%3Dsubj_subt%26searchString%3D%25EB%258D%25B0%25EB%25B9%258C\n\n\n\n**클래식버전**\n\n\n\nhttps://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=11361",
+      "fragmentPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\idx-12174-addonAddon.html",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-12174.html",
+        "selector": "#addonAddon",
+        "line": 1244
+      },
+      "links": []
+    },
+    "addonVersion": {
+      "state": "empty",
+      "text": "",
+      "fragmentPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\idx-12174-addonVersion.html",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-12174.html",
+        "selector": "#addonVersion",
+        "line": 1336
+      },
+      "links": []
+    }
+  },
+  "iframes": {
+    "screenshot": {
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=12174&tempridx=&count=1",
+      "iframeLiteral": "<iframe frameborder=\"0\" framespacing=\"0\" id=\"screenshot\" scrolling=\"no\" src=\"imagelist.iframe.php?ridx=12174&amp;tempridx=&amp;count=1\"></iframe>",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-12174.html",
+        "selector": "iframe#screenshot",
+        "line": 1238
+      },
+      "provenance": {
+        "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=12174&tempridx=&count=1",
+        "time": "2026-11-17T14:02:07.9874416Z",
+        "contentType": "text/html; charset=UTF-8",
+        "HTTP": 200,
+        "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=12174&tempridx=&count=1",
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-12174.html",
+        "state": "acquired",
+        "attempts": 1,
+        "commandExitCode": 0,
+        "encoding": "IWR decoded to UTF-8",
+        "bytes": 2364,
+        "SHA256": "81C0ED0373B3E8CED9EF3A329D190C91669156555DB2FCE1884DA6FC0804E5BB"
+      },
+      "state": "parsed",
+      "text": "\n\n\n\n\n\n스크린샷\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "links": [
+        {
+          "href": "javascript:void(0);",
+          "onclick": null,
+          "text": "",
+          "line": 28
+        },
+        {
+          "href": "javascript:void(0);",
+          "onclick": "viewImage('2020/11/06/bbs/i15004589504.jpg');",
+          "text": "",
+          "line": 33
+        },
+        {
+          "href": "javascript:void(0);",
+          "onclick": null,
+          "text": "",
+          "line": 40
+        }
+      ],
+      "literalPublicDownloadURLs": [],
+      "imageCount": 1
+    },
+    "fileInfo": {
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=12174&tempridx=&count=1",
+      "iframeLiteral": "<iframe frameborder=\"0\" id=\"fileInfo\" src=\"filelist.iframe.php?mode=view&amp;ridx=12174&amp;tempridx=&amp;count=1\"></iframe>",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-12174.html",
+        "selector": "iframe#fileInfo",
+        "line": 1342
+      },
+      "provenance": {
+        "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=12174&tempridx=&count=1",
+        "time": "2026-11-17T14:02:08.6302409Z",
+        "contentType": "text/html; charset=UTF-8",
+        "HTTP": 200,
+        "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=12174&tempridx=&count=1",
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-12174.html",
+        "state": "acquired",
+        "attempts": 1,
+        "commandExitCode": 0,
+        "encoding": "IWR decoded to UTF-8",
+        "bytes": 2325,
+        "SHA256": "8446873D3E43FC0505F0C3ECB7EEF99B224C9E471D676DB5DA4B9ECA5C512AD0"
+      },
+      "state": "parsed",
+      "text": "\n\n\n\n\n\n파일 정보\n\n\n\n\n\n\n\n\n\n\n\n\n파일\n\n\n클라이언트 버전\n\n\n다운로드\n\n\n등록일\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\nDevil20.11.05.zip\n\n\n\n\n\n\n9.0.1\n\n\n1175\n\n\n2020-11-06\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "links": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil20.11.05.zip",
+          "line": 40
+        }
+      ],
+      "literalPublicDownloadURLs": [],
+      "fileRows": [
+        {
+          "text": "Devil20.11.05.zip 9.0.1 1175 2020-11-06",
+          "cells": [
+            "Devil20.11.05.zip",
+            "9.0.1",
+            "1175",
+            "2020-11-06"
+          ],
+          "line": 37
+        }
+      ]
+    }
+  },
+  "images": [
+    {
+      "postID": 12174,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload3.inven.co.kr/upload/2020/11/06/bbs/thumb/n15004589504.jpg",
+      "viewerLiteral": "viewImage('2020/11/06/bbs/i15004589504.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-12174.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    }
+  ],
+  "title": "데빌 일반노멀버전 (소둠땅용)",
+  "metadataLiteral": "데빌 일반노멀버전 (소둠땅용)\nDevilUI Normal\n애드온 등록자\n마법을써요\n최종 업데이트\n2020.11.06\n카테고리\n통합\n클라이언트 버전\n9.0.1\n애드온 버전\n20.11.05\n조회수\n16247\n추천수\n4\n다운로드 수\n1175\n관심등록 수\n59\n다운로드\n관심 애드온 등록",
+  "metadataRows": [
+    {
+      "label": "애드온 등록자",
+      "value": "마법을써요",
+      "line": 1181
+    },
+    {
+      "label": "최종 업데이트",
+      "value": "2020.11.06",
+      "line": 1185
+    },
+    {
+      "label": "카테고리",
+      "value": "통합",
+      "line": 1189
+    },
+    {
+      "label": "클라이언트 버전",
+      "value": "9.0.1",
+      "line": 1196
+    },
+    {
+      "label": "애드온 버전",
+      "value": "20.11.05",
+      "line": 1200
+    },
+    {
+      "label": "조회수",
+      "value": "16247",
+      "line": 1207
+    },
+    {
+      "label": "추천수",
+      "value": "4",
+      "line": 1211
+    },
+    {
+      "label": "다운로드 수",
+      "value": "1175",
+      "line": 1215
+    },
+    {
+      "label": "관심등록 수",
+      "value": "59",
+      "line": 1219
+    }
+  ]
+}

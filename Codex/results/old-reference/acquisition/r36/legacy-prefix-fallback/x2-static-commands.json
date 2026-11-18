@@ -1,0 +1,31 @@
+[
+  {
+    "label": "idx45-X2-sfx",
+    "operation": "list",
+    "command": [
+      "C:/Program Files/Bandizip/bz.exe",
+      "l",
+      "-list:v",
+      "-consolemode:utf8",
+      "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-legacy-idx45-159\\DevilUI-X2 R3.4.exe"
+    ],
+    "exitCode": 0,
+    "stdoutPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\idx45-X2-sfx-list-stdout.txt",
+    "stderrPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\idx45-X2-sfx-list-stderr.txt",
+    "sourceExecuted": false
+  },
+  {
+    "label": "idx45-X2-sfx",
+    "operation": "integrity",
+    "command": [
+      "C:/Program Files/Bandizip/bz.exe",
+      "t",
+      "-consolemode:utf8",
+      "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-legacy-idx45-159\\DevilUI-X2 R3.4.exe"
+    ],
+    "exitCode": 0,
+    "stdoutPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\idx45-X2-sfx-integrity-stdout.txt",
+    "stderrPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\idx45-X2-sfx-integrity-stderr.txt",
+    "sourceExecuted": false
+  }
+]

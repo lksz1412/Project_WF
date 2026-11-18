@@ -1,0 +1,30 @@
+------------------------------------------------------------------------
+r70051 | xan | 2008-04-16 09:17:51 -0400 (Wed, 16 Apr 2008) | 3 lines
+Changed paths:
+   M /trunk/FuBar_DuraTek
+   M /trunk/FuBar_DuraTek/FuBar_DuraTek.toc
+   D /trunk/FuBar_DuraTek/Libs
+
+FuBar_DuraTek
+- bump toc to 2.4
+- fixed externals
+------------------------------------------------------------------------
+r69988 | nemes | 2008-04-15 22:41:57 -0400 (Tue, 15 Apr 2008) | 3 lines
+Changed paths:
+   M /trunk/FuBar_DuraTek/FuBar_DuraTek.toc
+   M /trunk/FuBar_DuraTek/embeds.xml
+
+FuBar_DuraTek:
+- clean up the externals, embeds and optdeps
+
+------------------------------------------------------------------------
+r69987 | nemes | 2008-04-15 22:36:46 -0400 (Tue, 15 Apr 2008) | 3 lines
+Changed paths:
+   M /trunk/FuBar_DuraTek/Core.lua
+   M /trunk/FuBar_DuraTek/Libs
+   M /trunk/FuBar_DuraTek/embeds.xml
+
+FuBar_DuraTek:
+- Crayon-2.0 -> LibCrayon-3.0
+
+------------------------------------------------------------------------

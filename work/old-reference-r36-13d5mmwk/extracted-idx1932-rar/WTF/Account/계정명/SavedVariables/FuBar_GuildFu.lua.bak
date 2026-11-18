@@ -1,0 +1,17 @@
+
+FuBar_GuildFuDB = {
+	["profiles"] = {
+		["Default"] = {
+			["text"] = {
+				["show_displayed"] = false,
+				["show_guildname"] = true,
+				["show_total"] = false,
+			},
+			["tooltip"] = {
+				["sort"] = "LEVEL",
+			},
+			["detachedTooltip"] = {
+			},
+		},
+	},
+}

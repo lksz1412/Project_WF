@@ -1,0 +1,384 @@
+{
+  "schema": "old-devil-text-design-measurements/1",
+  "recorded": "2026-11-18T02:12:57.918380+09:00",
+  "fontPath": "Codex/results/old-devil-layout/asset-preparation/original-fonts/root5-2002.ttf",
+  "fontSHA256": "49DF5AB286B7090AF765626115578F4630FCFC240784E45344D9367A0697DBB5",
+  "method": "Pillow exactfixedsize bbox/advance andfontTools Unicodecmap; noUIrender",
+  "checks": [
+    {
+      "role": "longest-sample-key",
+      "text": "C-S-1",
+      "sizePx": 24,
+      "strokePx": 2,
+      "bbox": [
+        -2,
+        2,
+        61,
+        23
+      ],
+      "inkWidth": 63,
+      "inkHeight": 21,
+      "available": [
+        72,
+        28
+      ],
+      "fits": true,
+      "placementContract": "subtractfontbboxleft/topwhenplacinginkwithinreservedbox;neverautoFit"
+    },
+    {
+      "role": "short-sample-key",
+      "text": "1",
+      "sizePx": 24,
+      "strokePx": 2,
+      "bbox": [
+        -2,
+        2,
+        9,
+        23
+      ],
+      "inkWidth": 11,
+      "inkHeight": 21,
+      "available": [
+        72,
+        28
+      ],
+      "fits": true,
+      "placementContract": "subtractfontbboxleft/topwhenplacinginkwithinreservedbox;neverautoFit"
+    },
+    {
+      "role": "chat-line-1",
+      "text": "대화 내용 미리보기",
+      "sizePx": 28,
+      "strokePx": 0,
+      "bbox": [
+        0,
+        2,
+        198,
+        29
+      ],
+      "inkWidth": 198,
+      "inkHeight": 27,
+      "available": [
+        914,
+        32
+      ],
+      "fits": true,
+      "placementContract": "subtractfontbboxleft/topwhenplacinginkwithinreservedbox;neverautoFit"
+    },
+    {
+      "role": "chat-line-2",
+      "text": "대화창의 글자 크기 확인",
+      "sizePx": 28,
+      "strokePx": 0,
+      "bbox": [
+        0,
+        2,
+        253,
+        28
+      ],
+      "inkWidth": 253,
+      "inkHeight": 26,
+      "available": [
+        914,
+        32
+      ],
+      "fits": true,
+      "placementContract": "subtractfontbboxleft/topwhenplacinginkwithinreservedbox;neverautoFit"
+    },
+    {
+      "role": "unit-upper",
+      "text": "캐릭터",
+      "sizePx": 24,
+      "strokePx": 0,
+      "bbox": [
+        0,
+        2,
+        57,
+        23
+      ],
+      "inkWidth": 57,
+      "inkHeight": 21,
+      "available": [
+        382,
+        28
+      ],
+      "fits": true,
+      "placementContract": "subtractfontbboxleft/topwhenplacinginkwithinreservedbox;neverautoFit"
+    },
+    {
+      "role": "unit-lower",
+      "text": "대상",
+      "sizePx": 24,
+      "strokePx": 0,
+      "bbox": [
+        0,
+        2,
+        38,
+        24
+      ],
+      "inkWidth": 38,
+      "inkHeight": 22,
+      "available": [
+        546,
+        28
+      ],
+      "fits": true,
+      "placementContract": "subtractfontbboxleft/topwhenplacinginkwithinreservedbox;neverautoFit"
+    },
+    {
+      "role": "map-label",
+      "text": "미니맵",
+      "sizePx": 24,
+      "strokePx": 0,
+      "bbox": [
+        0,
+        2,
+        57,
+        23
+      ],
+      "inkWidth": 57,
+      "inkHeight": 21,
+      "available": [
+        296,
+        28
+      ],
+      "fits": true,
+      "placementContract": "subtractfontbboxleft/topwhenplacinginkwithinreservedbox;neverautoFit"
+    },
+    {
+      "role": "status",
+      "text": "캐릭터       설정",
+      "sizePx": 22,
+      "strokePx": 0,
+      "bbox": [
+        0,
+        1,
+        153,
+        22
+      ],
+      "inkWidth": 153,
+      "inkHeight": 21,
+      "available": [
+        3808,
+        26
+      ],
+      "fits": true,
+      "placementContract": "subtractfontbboxleft/topwhenplacinginkwithinreservedbox;neverautoFit"
+    },
+    {
+      "role": "context-identification",
+      "text": "배치 미리보기",
+      "sizePx": 28,
+      "strokePx": 0,
+      "bbox": [
+        0,
+        2,
+        143,
+        28
+      ],
+      "inkWidth": 143,
+      "inkHeight": 26,
+      "available": [
+        500,
+        40
+      ],
+      "fits": true,
+      "placementContract": "subtractfontbboxleft/topwhenplacinginkwithinreservedbox;neverautoFit"
+    }
+  ],
+  "sampleGlyphs": [
+    {
+      "character": "C",
+      "Uplus": "U+0043",
+      "present": true
+    },
+    {
+      "character": "-",
+      "Uplus": "U+002D",
+      "present": true
+    },
+    {
+      "character": "S",
+      "Uplus": "U+0053",
+      "present": true
+    },
+    {
+      "character": "1",
+      "Uplus": "U+0031",
+      "present": true
+    },
+    {
+      "character": "대",
+      "Uplus": "U+B300",
+      "present": true
+    },
+    {
+      "character": "화",
+      "Uplus": "U+D654",
+      "present": true
+    },
+    {
+      "character": " ",
+      "Uplus": "U+0020",
+      "present": true
+    },
+    {
+      "character": "내",
+      "Uplus": "U+B0B4",
+      "present": true
+    },
+    {
+      "character": "용",
+      "Uplus": "U+C6A9",
+      "present": true
+    },
+    {
+      "character": "미",
+      "Uplus": "U+BBF8",
+      "present": true
+    },
+    {
+      "character": "리",
+      "Uplus": "U+B9AC",
+      "present": true
+    },
+    {
+      "character": "보",
+      "Uplus": "U+BCF4",
+      "present": true
+    },
+    {
+      "character": "기",
+      "Uplus": "U+AE30",
+      "present": true
+    },
+    {
+      "character": "창",
+      "Uplus": "U+CC3D",
+      "present": true
+    },
+    {
+      "character": "의",
+      "Uplus": "U+C758",
+      "present": true
+    },
+    {
+      "character": "글",
+      "Uplus": "U+AE00",
+      "present": true
+    },
+    {
+      "character": "자",
+      "Uplus": "U+C790",
+      "present": true
+    },
+    {
+      "character": "크",
+      "Uplus": "U+D06C",
+      "present": true
+    },
+    {
+      "character": "확",
+      "Uplus": "U+D655",
+      "present": true
+    },
+    {
+      "character": "인",
+      "Uplus": "U+C778",
+      "present": true
+    },
+    {
+      "character": "캐",
+      "Uplus": "U+CE90",
+      "present": true
+    },
+    {
+      "character": "릭",
+      "Uplus": "U+B9AD",
+      "present": true
+    },
+    {
+      "character": "터",
+      "Uplus": "U+D130",
+      "present": true
+    },
+    {
+      "character": "상",
+      "Uplus": "U+C0C1",
+      "present": true
+    },
+    {
+      "character": "니",
+      "Uplus": "U+B2C8",
+      "present": true
+    },
+    {
+      "character": "맵",
+      "Uplus": "U+B9F5",
+      "present": true
+    },
+    {
+      "character": "설",
+      "Uplus": "U+C124",
+      "present": true
+    },
+    {
+      "character": "정",
+      "Uplus": "U+C815",
+      "present": true
+    },
+    {
+      "character": "배",
+      "Uplus": "U+BC30",
+      "present": true
+    },
+    {
+      "character": "치",
+      "Uplus": "U+CE58",
+      "present": true
+    }
+  ],
+  "contrastPairs": [
+    {
+      "meaning": "body-against-brightest-context",
+      "foreground": "#D8D8D8",
+      "background": "#384047",
+      "ratio": 7.394599916855844,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "meaning": "key-against-explicit-stroke",
+      "foreground": "#F0F0F0",
+      "background": "#000000",
+      "ratio": 18.427342383975944,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "meaning": "seam-against-context",
+      "foreground": "#808284",
+      "background": "#384047",
+      "ratio": 2.7322924831100783,
+      "minimum": 3,
+      "passes": false
+    },
+    {
+      "meaning": "seam-against-dark-panel",
+      "foreground": "#808284",
+      "background": "#121518",
+      "ratio": 4.749779401705031,
+      "minimum": 3,
+      "passes": true
+    }
+  ],
+  "allTextFits": true,
+  "allSampleGlyphsPresent": true,
+  "allDesignContrastsPass": false,
+  "limits": [
+    "exactsamplestextonly,notallkoKRglyphs",
+    "keycontrastagainstspecifiedblackstroke;A2actualrenderstrokepixelsmustverify",
+    "actualgamerender/readabilityNOT_RUN",
+    "asset/captionrenderNOT_RUN"
+  ]
+}

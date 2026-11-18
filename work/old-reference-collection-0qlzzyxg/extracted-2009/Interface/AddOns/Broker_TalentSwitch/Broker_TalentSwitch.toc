@@ -1,0 +1,18 @@
+## Interface: 30200
+## Title: Broker: Talent Switcher
+## Notes: Broker plugin to Switch Talents
+## Author: Stabler
+## X-Category: Miscellaneous
+## Version: 1.9.6
+## SavedVariables: talentswitchDB
+
+
+embeds.xml
+
+# Localizations...
+Locales\enUS.lua
+Locales\esES.lua
+Locales\koKR.lua
+Locales\zhTW.lua
+
+core.lua

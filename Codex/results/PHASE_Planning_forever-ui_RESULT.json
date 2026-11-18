@@ -1,0 +1,14 @@
+{
+  "Summary": "조사·계획과 별도 승인된 매크로 원본 보관 완료. UI 구현은 미착수이며 사용자 피드백 대기.",
+  "Step Range": "계획준비 Step0 완료; UI 실행 Step1–12 미착수.",
+  "Inputs": "사용자 요청R1–R17, 관찰 환경·과거15개 목록, 공개 원본 배포글/Drive metadata, 공식 배포 및 주술사 후기 근거표, 실제 A/B 반환.",
+  "Files Created": "마스터플랜, private MacroLibrary 원본4파일·명세·색인, Step0 기록, audit/recheck 원문·처리표·복구기록·발주서, outputs 전달본, 이 Result md/json.",
+  "Files Updated": "INDEX, PROJECT_LOCATION 현재범위 addendum, REQUEST_LEDGER 상태·계획반영칸, .gitignore, SESSIONS, A work_log append.",
+  "Read Coverage": "Step0 근거·판단의 실제 파일/행 범위와 recovery-checkpoint.md, A work_log, B audit/recheck의 각 지정 범위. raw macro 전문/색인은 컴팩션 전 실제 읽기와 보존 결과 기록; 이후 원문 재검증 주장은 하지 않음.",
+  "Execution Evidence": "Step0 게이트 및 handoffs/forever-ui/iter_1/work_log.md 실행 출력. 전달본 plan/evidence D:·chat 복사 SHA256 4/4 일치. 기록 시각 2026-11-17 20:08:07 +09:00. 실제 UI 게임실행 없음.",
+  "Validation·Gate·Confirmed": "문서 구조/정량 게이트 통과, 10라운드0/2/0 뒤 같은 A 수정·같은 B 재검증0/0/0. macro 원본 동일성4/4,44개 보존. 세부 판단은 Step0와 원문 audit/recheck. 사용량·검수 소요시간·실제 모델/effort 미관측.",
+  "Non-Changes": "게임·CurseForge 설치/업데이트/설정/키/매크로 적용·삭제·주문치환 없음. 원본/앞선C:체크포인트 보존. D: 계획-only commit/push/merge 없음. raw 개인자료 공개 없음.",
+  "Open Issues": "원본 ZIP 로컬분석·정밀 좌표/폰트·실제 UI scale/resolution·후보 전투작동·Retail 비매크로 설정 준비는 미검증. PitBull Forever 명시지원과 충분한 Hekili Forever 주술사 독립후기는 근거 미발견. 향후 시간630–1110분은 추정.",
+  "Decision Queue": "주술사 특성/주 콘텐츠, 효과알림만 또는 다음행동추천 포함 여부. FUF 실패시 custom추가4–8시간 범위는 별도 구체화 후 결정. 이미 정한 외형·D:경로·원본44개 보관은 재질의하지 않음.",
+  "Next": "§11 피드백→계획갱신→명시GO 뒤 UI Step1. 별도 macro retrieval은 사용자 요청 시 원문만 꺼내기. 비매크로 Retail 참고는 Step3 준비gate."
+}

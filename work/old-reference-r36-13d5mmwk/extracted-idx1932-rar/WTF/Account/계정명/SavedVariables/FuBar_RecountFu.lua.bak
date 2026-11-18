@@ -1,0 +1,9 @@
+
+RecountFuDB = {
+	["profiles"] = {
+		["Default"] = {
+			["detachedTooltip"] = {
+			},
+		},
+	},
+}

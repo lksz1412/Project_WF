@@ -1,0 +1,47 @@
+## Interface: 30000
+
+## Title: FuBar - |cffffffffFactions|cff00ff00Fu|r
+## Notes: Shows your standings with the factions.
+## Notes-deDE: Zeigt Rufrang und -fortschritt der Fraktionen.
+## Notes-esES: Muestra tu prestigio entre las diferentes facciones.
+## Notes-zhCN: 持续追踪声望获取情况。
+## Notes-zhTW: 持續追蹤聲望獲得情形。
+## Notes-ruRU: Показывает вашу репутацию с фракциями.
+## Author: Elkano
+## Version: 2.2.1-79
+## X-Website: http://www.wowace.com/projects/fubar_factionsfu/
+## X-Category: Interface Enhancements
+
+## X-Revision: 79
+## X-Date: 2008-10-15T10:16:37Z
+
+## OptionalDeps: Ace2, FuBarPlugin-2.0, DewdropLib, TabletLib
+
+## SavedVariables: FuBar_FactionsFuDB
+
+#@no-lib-strip@
+libs\AceLibrary\AceLibrary.lua
+libs\AceOO-2.0\AceOO-2.0.lua
+libs\AceEvent-2.0\AceEvent-2.0.lua
+libs\AceAddon-2.0\AceAddon-2.0.lua
+libs\AceConsole-2.0\AceConsole-2.0.lua
+libs\AceDB-2.0\AceDB-2.0.lua
+libs\AceHook-2.1\AceHook-2.1.lua
+libs\AceLocale-2.2\AceLocale-2.2.lua
+libs\Dewdrop-2.0\Dewdrop-2.0.lua
+libs\Tablet-2.0\Tablet-2.0.lua
+libs\FuBarPlugin-2.0\FuBarPlugin-2.0.lua
+#libs\Deformat-2.0\Deformat-2.0.lua
+#@end-no-lib-strip@
+
+locales\FuBar_FactionsFu.enUS.lua
+locales\FuBar_FactionsFu.deDE.lua
+locales\FuBar_FactionsFu.esES.lua
+locales\FuBar_FactionsFu.frFR.lua
+locales\FuBar_FactionsFu.koKR.lua
+locales\FuBar_FactionsFu.ruRU.lua
+locales\FuBar_FactionsFu.zhCN.lua
+locales\FuBar_FactionsFu.zhTW.lua
+
+FuBar_FactionsFu.lua
+FuBar_FactionsFu.options.lua

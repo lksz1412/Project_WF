@@ -1,0 +1,522 @@
+[
+  {
+    "postID": 45,
+    "literals": [
+      {
+        "url": "https://pds.inven.co.kr/upload/2015/03/04/addon/DevilUI6.1Alpha.zip",
+        "literal": "https://pds.inven.co.kr/upload/2015/03/04/addon/DevilUI6.1Alpha.zip",
+        "scriptText": "parent.setDownloadInfo(52261,\"https://pds.inven.co.kr/upload/2015/03/04/addon/DevilUI6.1Alpha.zip\");",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-45.html",
+          "line": 37,
+          "selector": "script"
+        },
+        "executed": false
+      }
+    ]
+  },
+  {
+    "postID": 11218,
+    "literals": [
+      {
+        "url": "https://pds.inven.co.kr/upload/2023/05/15/addon/DevilUI23.5.15.zip",
+        "literal": "https://pds.inven.co.kr/upload/2023/05/15/addon/DevilUI23.5.15.zip",
+        "scriptText": "parent.setDownloadInfo(76228,\"https://pds.inven.co.kr/upload/2023/05/15/addon/DevilUI23.5.15.zip\");",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-11218.html",
+          "line": 37,
+          "selector": "script"
+        },
+        "executed": false
+      }
+    ]
+  },
+  {
+    "postID": 2958,
+    "literals": [
+      {
+        "url": "https://pds.inven.co.kr/upload/2009/12/10/addon/Devil_Blackt.zip",
+        "literal": "https://pds.inven.co.kr/upload/2009/12/10/addon/Devil_Blackt.zip",
+        "scriptText": "parent.setDownloadInfo(16980,\"https://pds.inven.co.kr/upload/2009/12/10/addon/Devil_Blackt.zip\");",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\files-2958.html",
+          "line": 37,
+          "selector": "script"
+        },
+        "executed": false
+      }
+    ]
+  },
+  {
+    "postID": 13140,
+    "literals": [
+      {
+        "url": "https://pds.inven.co.kr/upload/2026/11/17/addon/_forever_V42.zip",
+        "literal": "https://pds.inven.co.kr/upload/2026/11/17/addon/_forever_V42.zip",
+        "scriptText": "parent.setDownloadInfo(80544,\"https://pds.inven.co.kr/upload/2026/11/17/addon/_forever_V42.zip\");",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-13140.html",
+          "line": 37,
+          "selector": "script"
+        },
+        "executed": false
+      }
+    ]
+  },
+  {
+    "postID": 12993,
+    "literals": [
+      {
+        "url": "https://pds.inven.co.kr/upload/2026/02/11/addon/c2940628761.zip",
+        "literal": "https://pds.inven.co.kr/upload/2026/02/11/addon/c2940628761.zip",
+        "scriptText": "parent.setDownloadInfo(79601,\"https://pds.inven.co.kr/upload/2026/02/11/addon/c2940628761.zip\");",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-12993.html",
+          "line": 37,
+          "selector": "script"
+        },
+        "executed": false
+      }
+    ]
+  },
+  {
+    "postID": 11361,
+    "literals": [
+      {
+        "url": "https://pds.inven.co.kr/upload/2023/05/15/addon/Devil23.5.15.zip",
+        "literal": "https://pds.inven.co.kr/upload/2023/05/15/addon/Devil23.5.15.zip",
+        "scriptText": "parent.setDownloadInfo(76224,\"https://pds.inven.co.kr/upload/2023/05/15/addon/Devil23.5.15.zip\");",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-11361.html",
+          "line": 37,
+          "selector": "script"
+        },
+        "executed": false
+      }
+    ]
+  },
+  {
+    "postID": 12610,
+    "literals": [
+      {
+        "url": "https://pds.inven.co.kr/upload/2022/07/30/addon/c15156500472.zip",
+        "literal": "https://pds.inven.co.kr/upload/2022/07/30/addon/c15156500472.zip",
+        "scriptText": "parent.setDownloadInfo(74116,\"https://pds.inven.co.kr/upload/2022/07/30/addon/c15156500472.zip\");",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-12610.html",
+          "line": 37,
+          "selector": "script"
+        },
+        "executed": false
+      }
+    ]
+  },
+  {
+    "postID": 12124,
+    "literals": [
+      {
+        "url": "https://pds.inven.co.kr/upload/2021/02/15/addon/[9.0.2]DevilUIBlackEdition[02-15].zip",
+        "literal": "https://pds.inven.co.kr/upload/2021/02/15/addon/[9.0.2]DevilUIBlackEdition[02-15].zip",
+        "scriptText": "parent.setDownloadInfo(71187,\"https://pds.inven.co.kr/upload/2021/02/15/addon/[9.0.2]DevilUIBlackEdition[02-15].zip\");",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-12124.html",
+          "line": 37,
+          "selector": "script"
+        },
+        "executed": false
+      }
+    ]
+  },
+  {
+    "postID": 12174,
+    "literals": [
+      {
+        "url": "https://pds.inven.co.kr/upload/2020/11/06/addon/Devil20.11.05.zip",
+        "literal": "https://pds.inven.co.kr/upload/2020/11/06/addon/Devil20.11.05.zip",
+        "scriptText": "parent.setDownloadInfo(70380,\"https://pds.inven.co.kr/upload/2020/11/06/addon/Devil20.11.05.zip\");",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-12174.html",
+          "line": 37,
+          "selector": "script"
+        },
+        "executed": false
+      }
+    ]
+  },
+  {
+    "postID": 10341,
+    "literals": [
+      {
+        "url": "https://pds.inven.co.kr/upload/2016/11/04/addon/DevilUI_N_Fix_Shapa_7.0.3A04.zip",
+        "literal": "https://pds.inven.co.kr/upload/2016/11/04/addon/DevilUI_N_Fix_Shapa_7.0.3A04.zip",
+        "scriptText": "parent.setDownloadInfo(58696,\"https://pds.inven.co.kr/upload/2016/11/04/addon/DevilUI_N_Fix_Shapa_7.0.3A04.zip\");",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-10341.html",
+          "line": 37,
+          "selector": "script"
+        },
+        "executed": false
+      }
+    ]
+  },
+  {
+    "postID": 9880,
+    "literals": [
+      {
+        "url": "https://pds.inven.co.kr/upload/2016/01/22/addon/DevilUI_addons_160122.zip",
+        "literal": "https://pds.inven.co.kr/upload/2016/01/22/addon/DevilUI_addons_160122.zip",
+        "scriptText": "parent.setDownloadInfo(54622,\"https://pds.inven.co.kr/upload/2016/01/22/addon/DevilUI_addons_160122.zip\");",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-9880.html",
+          "line": 37,
+          "selector": "script"
+        },
+        "executed": false
+      }
+    ]
+  },
+  {
+    "postID": 9789,
+    "literals": [
+      {
+        "url": "https://pds.inven.co.kr/upload/2015/09/21/addon/DevilUI_addons.zip",
+        "literal": "https://pds.inven.co.kr/upload/2015/09/21/addon/DevilUI_addons.zip",
+        "scriptText": "parent.setDownloadInfo(54091,\"https://pds.inven.co.kr/upload/2015/09/21/addon/DevilUI_addons.zip\");",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-9789.html",
+          "line": 37,
+          "selector": "script"
+        },
+        "executed": false
+      }
+    ]
+  },
+  {
+    "postID": 3461,
+    "literals": [
+      {
+        "url": "https://pds.inven.co.kr/upload/2015/03/04/addon/BlackEdition2_6.1Alpha.zip",
+        "literal": "https://pds.inven.co.kr/upload/2015/03/04/addon/BlackEdition2_6.1Alpha.zip",
+        "scriptText": "parent.setDownloadInfo(52262,\"https://pds.inven.co.kr/upload/2015/03/04/addon/BlackEdition2_6.1Alpha.zip\");",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-3461.html",
+          "line": 37,
+          "selector": "script"
+        },
+        "executed": false
+      }
+    ]
+  },
+  {
+    "postID": 8906,
+    "literals": []
+  },
+  {
+    "postID": 8920,
+    "literals": [
+      {
+        "url": "https://pds.inven.co.kr/upload/2014/10/16/addon/Devil.zip",
+        "literal": "https://pds.inven.co.kr/upload/2014/10/16/addon/Devil.zip",
+        "scriptText": "parent.setDownloadInfo(48916,\"https://pds.inven.co.kr/upload/2014/10/16/addon/Devil.zip\");",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-8920.html",
+          "line": 37,
+          "selector": "script"
+        },
+        "executed": false
+      }
+    ]
+  },
+  {
+    "postID": 7618,
+    "literals": [
+      {
+        "url": "https://pds.inven.co.kr/upload/2012/09/03/addon/Interface.zip",
+        "literal": "https://pds.inven.co.kr/upload/2012/09/03/addon/Interface.zip",
+        "scriptText": "parent.setDownloadInfo(39749,\"https://pds.inven.co.kr/upload/2012/09/03/addon/Interface.zip\");",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-7618.html",
+          "line": 37,
+          "selector": "script"
+        },
+        "executed": false
+      }
+    ]
+  },
+  {
+    "postID": 7546,
+    "literals": [
+      {
+        "url": "https://pds.inven.co.kr/upload/2012/08/31/addon/Interface.zip",
+        "literal": "https://pds.inven.co.kr/upload/2012/08/31/addon/Interface.zip",
+        "scriptText": "parent.setDownloadInfo(39422,\"https://pds.inven.co.kr/upload/2012/08/31/addon/Interface.zip\");",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-7546.html",
+          "line": 37,
+          "selector": "script"
+        },
+        "executed": false
+      }
+    ]
+  },
+  {
+    "postID": 6405,
+    "literals": [
+      {
+        "url": "https://pds.inven.co.kr/upload/2011/07/06/addon/c26206078.zip",
+        "literal": "https://pds.inven.co.kr/upload/2011/07/06/addon/c26206078.zip",
+        "scriptText": "parent.setDownloadInfo(33201,\"https://pds.inven.co.kr/upload/2011/07/06/addon/c26206078.zip\");",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-6405.html",
+          "line": 37,
+          "selector": "script"
+        },
+        "executed": false
+      }
+    ]
+  },
+  {
+    "postID": 4238,
+    "literals": [
+      {
+        "url": "https://pds.inven.co.kr/upload/2010/10/06/addon/Devil.zip",
+        "literal": "https://pds.inven.co.kr/upload/2010/10/06/addon/Devil.zip",
+        "scriptText": "parent.setDownloadInfo(23043,\"https://pds.inven.co.kr/upload/2010/10/06/addon/Devil.zip\");",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-4238.html",
+          "line": 37,
+          "selector": "script"
+        },
+        "executed": false
+      }
+    ]
+  },
+  {
+    "postID": 4019,
+    "literals": [
+      {
+        "url": "https://pds.inven.co.kr/upload/2010/07/02/addon/DevilUI3.46.zip",
+        "literal": "https://pds.inven.co.kr/upload/2010/07/02/addon/DevilUI3.46.zip",
+        "scriptText": "parent.setDownloadInfo(21297,\"https://pds.inven.co.kr/upload/2010/07/02/addon/DevilUI3.46.zip\");",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-4019.html",
+          "line": 37,
+          "selector": "script"
+        },
+        "executed": false
+      }
+    ]
+  },
+  {
+    "postID": 4018,
+    "literals": [
+      {
+        "url": "https://pds.inven.co.kr/upload/2010/07/02/addon/c38129062.zip",
+        "literal": "https://pds.inven.co.kr/upload/2010/07/02/addon/c38129062.zip",
+        "scriptText": "parent.setDownloadInfo(21296,\"https://pds.inven.co.kr/upload/2010/07/02/addon/c38129062.zip\");",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-4018.html",
+          "line": 37,
+          "selector": "script"
+        },
+        "executed": false
+      }
+    ]
+  },
+  {
+    "postID": 4012,
+    "literals": [
+      {
+        "url": "https://pds.inven.co.kr/upload/2010/07/01/addon/Addon.zip",
+        "literal": "https://pds.inven.co.kr/upload/2010/07/01/addon/Addon.zip",
+        "scriptText": "parent.setDownloadInfo(21270,\"https://pds.inven.co.kr/upload/2010/07/01/addon/Addon.zip\");",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-4012.html",
+          "line": 37,
+          "selector": "script"
+        },
+        "executed": false
+      }
+    ]
+  },
+  {
+    "postID": 2582,
+    "literals": []
+  },
+  {
+    "postID": 2312,
+    "literals": [
+      {
+        "url": "https://pds.inven.co.kr/upload/wow/addonpds/file/(94)DevilUI",
+        "literal": "https://pds.inven.co.kr/upload/wow/addonpds/file/(94)DevilUI",
+        "scriptText": "parent.setDownloadInfo(12912,\"https://pds.inven.co.kr/upload/wow/addonpds/file/(94)DevilUI 3.29.zip\");",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-2312.html",
+          "line": 37,
+          "selector": "script"
+        },
+        "executed": false
+      }
+    ]
+  },
+  {
+    "postID": 1932,
+    "literals": [
+      {
+        "url": "https://pds.inven.co.kr/upload/wow/addonpds/file/devilbecustom91.part2.rar",
+        "literal": "https://pds.inven.co.kr/upload/wow/addonpds/file/devilbecustom91.part2.rar",
+        "scriptText": "parent.setDownloadInfo(9953,\"https://pds.inven.co.kr/upload/wow/addonpds/file/devilbecustom91.part2.rar\");",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-1932.html",
+          "line": 37,
+          "selector": "script"
+        },
+        "executed": false
+      }
+    ]
+  },
+  {
+    "postID": 1877,
+    "literals": [
+      {
+        "url": "https://pds.inven.co.kr/upload/wow/addonpds/file/WCK.part03.rar",
+        "literal": "https://pds.inven.co.kr/upload/wow/addonpds/file/WCK.part03.rar",
+        "scriptText": "parent.setDownloadInfo(9793,\"https://pds.inven.co.kr/upload/wow/addonpds/file/WCK.part03.rar\");",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-1877.html",
+          "line": 37,
+          "selector": "script"
+        },
+        "executed": false
+      }
+    ]
+  },
+  {
+    "postID": 1865,
+    "literals": [
+      {
+        "url": "https://pds.inven.co.kr/upload/wow/addonpds/file/Wkwlq.part2.rar",
+        "literal": "https://pds.inven.co.kr/upload/wow/addonpds/file/Wkwlq.part2.rar",
+        "scriptText": "parent.setDownloadInfo(9790,\"https://pds.inven.co.kr/upload/wow/addonpds/file/Wkwlq.part2.rar\");",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-1865.html",
+          "line": 37,
+          "selector": "script"
+        },
+        "executed": false
+      }
+    ]
+  },
+  {
+    "postID": 1853,
+    "literals": [
+      {
+        "url": "https://pds.inven.co.kr/upload/wow/addonpds/file/Interface.a04",
+        "literal": "https://pds.inven.co.kr/upload/wow/addonpds/file/Interface.a04",
+        "scriptText": "parent.setDownloadInfo(9241,\"https://pds.inven.co.kr/upload/wow/addonpds/file/Interface.a04\");",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-1853.html",
+          "line": 37,
+          "selector": "script"
+        },
+        "executed": false
+      }
+    ]
+  },
+  {
+    "postID": 1403,
+    "literals": [
+      {
+        "url": "https://pds.inven.co.kr/upload/wow/addonpds/file/DevilSkin.zip",
+        "literal": "https://pds.inven.co.kr/upload/wow/addonpds/file/DevilSkin.zip",
+        "scriptText": "parent.setDownloadInfo(6641,\"https://pds.inven.co.kr/upload/wow/addonpds/file/DevilSkin.zip\");",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-1403.html",
+          "line": 37,
+          "selector": "script"
+        },
+        "executed": false
+      }
+    ]
+  },
+  {
+    "postID": 1361,
+    "literals": [
+      {
+        "url": "https://pds.inven.co.kr/upload/wow/addonpds/file/moonbepo.zip",
+        "literal": "https://pds.inven.co.kr/upload/wow/addonpds/file/moonbepo.zip",
+        "scriptText": "parent.setDownloadInfo(6427,\"https://pds.inven.co.kr/upload/wow/addonpds/file/moonbepo.zip\");",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-1361.html",
+          "line": 37,
+          "selector": "script"
+        },
+        "executed": false
+      }
+    ]
+  },
+  {
+    "postID": 1121,
+    "literals": [
+      {
+        "url": "https://pds.inven.co.kr/upload/wow/addonpds/file/WTF&FONT.zip",
+        "literal": "https://pds.inven.co.kr/upload/wow/addonpds/file/WTF&FONT.zip",
+        "scriptText": "parent.setDownloadInfo(5209,\"https://pds.inven.co.kr/upload/wow/addonpds/file/WTF&FONT.zip\");",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-1121.html",
+          "line": 37,
+          "selector": "script"
+        },
+        "executed": false
+      }
+    ]
+  },
+  {
+    "postID": 1086,
+    "literals": [
+      {
+        "url": "https://pds.inven.co.kr/upload/wow/addonpds/file/moon.zip",
+        "literal": "https://pds.inven.co.kr/upload/wow/addonpds/file/moon.zip",
+        "scriptText": "parent.setDownloadInfo(5172,\"https://pds.inven.co.kr/upload/wow/addonpds/file/moon.zip\");",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-1086.html",
+          "line": 37,
+          "selector": "script"
+        },
+        "executed": false
+      }
+    ]
+  },
+  {
+    "postID": 1008,
+    "literals": [
+      {
+        "url": "https://pds.inven.co.kr/upload/wow/addonpds/file/Forever.a01",
+        "literal": "https://pds.inven.co.kr/upload/wow/addonpds/file/Forever.a01",
+        "scriptText": "parent.setDownloadInfo(4807,\"https://pds.inven.co.kr/upload/wow/addonpds/file/Forever.a01\");",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-1008.html",
+          "line": 37,
+          "selector": "script"
+        },
+        "executed": false
+      }
+    ]
+  },
+  {
+    "postID": 546,
+    "literals": [
+      {
+        "url": "https://pds.inven.co.kr/upload/wow/addonpds/file/UI.zip",
+        "literal": "https://pds.inven.co.kr/upload/wow/addonpds/file/UI.zip",
+        "scriptText": "parent.setDownloadInfo(2516,\"https://pds.inven.co.kr/upload/wow/addonpds/file/UI.zip\");",
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-546.html",
+          "line": 37,
+          "selector": "script"
+        },
+        "executed": false
+      }
+    ]
+  }
+]

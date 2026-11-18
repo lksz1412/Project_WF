@@ -1,0 +1,506 @@
+------------------------------------------------------------------------
+r6841 | funkydude | 2009-12-09 02:03:17 +0000 (Wed, 09 Dec 2009) | 1 line
+Changed paths:
+   A /tags/r6841-release (from /trunk:6840)
+
+Tagging as r6841-release
+------------------------------------------------------------------------
+r6840 | funkydude | 2009-12-09 01:58:49 +0000 (Wed, 09 Dec 2009) | 1 line
+Changed paths:
+   M /trunk/Coliseum/Jaraxxus.lua
+   M /trunk/Core/BossPrototype.lua
+   M /trunk/Core/Core.lua
+   M /trunk/Naxxramas/Anubrekhan.lua
+   M /trunk/Naxxramas/Faerlina.lua
+   M /trunk/Northrend/Malygos.lua
+   M /trunk/Ulduar/IronCouncil.lua
+   M /trunk/Ulduar/Leviathan.lua
+
+revert guid checks back to 3.2 checks
+------------------------------------------------------------------------
+r6838 | funkydude | 2009-12-09 01:31:40 +0000 (Wed, 09 Dec 2009) | 1 line
+Changed paths:
+   M /trunk/BigWigs.toc
+
+rewind version to v3.15
+------------------------------------------------------------------------
+r6837 | funkydude | 2009-12-09 01:14:33 +0000 (Wed, 09 Dec 2009) | 1 line
+Changed paths:
+   M /trunk/Plugins/Bars.lua
+
+fixes last commit
+------------------------------------------------------------------------
+r6836 | funkydude | 2009-12-09 00:57:27 +0000 (Wed, 09 Dec 2009) | 1 line
+Changed paths:
+   M /trunk/Plugins/Bars.lua
+   M /trunk/Plugins/modules.xml
+
+disable super emphasize, clickable bars & tips temporarily
+------------------------------------------------------------------------
+r6835 | funkydude | 2009-12-08 23:45:51 +0000 (Tue, 08 Dec 2009) | 1 line
+Changed paths:
+   M /trunk/BigWigs.toc
+   M /trunk/Coliseum/BigWigs_Coliseum.toc
+   M /trunk/Core/BigWigs_Core.toc
+   M /trunk/Foreign/BigWigs_Foreign.toc
+   M /trunk/Naxxramas/BigWigs_Naxxramas.toc
+   M /trunk/Northrend/BigWigs_Northrend.toc
+   M /trunk/OnyxiasLair/BigWigs_OnyxiasLair.toc
+   M /trunk/Options/BigWigs_Options.toc
+   M /trunk/Plugins/BigWigs_Plugins.toc
+   M /trunk/Ulduar/BigWigs_Ulduar.toc
+
+toc bumps
+------------------------------------------------------------------------
+r6834 | 7destiny | 2009-12-08 10:31:15 +0000 (Tue, 08 Dec 2009) | 1 line
+Changed paths:
+   M /trunk/Citadel/Locales/koKR.lua
+   M /trunk/Ulduar/Locales/koKR.lua
+
+koKR Update
+------------------------------------------------------------------------
+r6833 | 7destiny | 2009-12-08 05:55:09 +0000 (Tue, 08 Dec 2009) | 1 line
+Changed paths:
+   M /trunk/Citadel/Locales/koKR.lua
+
+koKR Update
+------------------------------------------------------------------------
+r6832 | pettigrow | 2009-12-07 21:47:46 +0000 (Mon, 07 Dec 2009) | 1 line
+Changed paths:
+   M /trunk/Locales/frFR.lua
+   M /trunk/Plugins/Locales/frFR.lua
+
+frFR Update
+------------------------------------------------------------------------
+r6831 | 7destiny | 2009-12-07 16:26:14 +0000 (Mon, 07 Dec 2009) | 1 line
+Changed paths:
+   M /trunk/Coliseum/Locales/koKR.lua
+   M /trunk/Locales/koKR.lua
+
+koKR Update
+------------------------------------------------------------------------
+r6830 | mojosdojo | 2009-12-06 17:02:03 +0000 (Sun, 06 Dec 2009) | 1 line
+Changed paths:
+   M /trunk/Locales/deDE.lua
+   M /trunk/Plugins/Locales/deDE.lua
+
+deDE update
+------------------------------------------------------------------------
+r6829 | rabbit | 2009-12-06 15:28:13 +0000 (Sun, 06 Dec 2009) | 1 line
+Changed paths:
+   M /trunk/Options/Options.lua
+
+Disable resizing of the configure window.
+------------------------------------------------------------------------
+r6828 | rabbit | 2009-12-06 15:24:20 +0000 (Sun, 06 Dec 2009) | 1 line
+Changed paths:
+   M /trunk/Locales/deDE.lua
+   M /trunk/Locales/enUS.lua
+   M /trunk/Locales/frFR.lua
+   M /trunk/Locales/koKR.lua
+   M /trunk/Locales/ruRU.lua
+   M /trunk/Locales/zhCN.lua
+   M /trunk/Locales/zhTW.lua
+   M /trunk/Options/Options.lua
+
+Select Boss -» Select encounter.
+------------------------------------------------------------------------
+r6827 | nevcairiel | 2009-12-06 15:17:32 +0000 (Sun, 06 Dec 2009) | 1 line
+Changed paths:
+   M /trunk/Locales/deDE.lua
+   M /trunk/Locales/enUS.lua
+   M /trunk/Locales/frFR.lua
+   M /trunk/Locales/koKR.lua
+   M /trunk/Locales/ruRU.lua
+   M /trunk/Locales/zhCN.lua
+   M /trunk/Locales/zhTW.lua
+   M /trunk/Options/Options.lua
+
+Use the new and improved DropDownGroup:SetTitle
+------------------------------------------------------------------------
+r6826 | pettigrow | 2009-12-02 18:44:46 +0000 (Wed, 02 Dec 2009) | 1 line
+Changed paths:
+   M /trunk/Citadel/Locales/frFR.lua
+
+frFR Update
+------------------------------------------------------------------------
+r6825 | s8095324 | 2009-11-29 11:47:19 +0000 (Sun, 29 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Coliseum/Locales/zhTW.lua
+
+zhTW update
+------------------------------------------------------------------------
+r6824 | s8095324 | 2009-11-29 11:42:20 +0000 (Sun, 29 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Locales/zhTW.lua
+
+zhTW update
+------------------------------------------------------------------------
+r6823 | 7destiny | 2009-11-27 11:42:33 +0000 (Fri, 27 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Coliseum/Locales/koKR.lua
+
+koKR Update
+------------------------------------------------------------------------
+r6822 | rabbit | 2009-11-26 21:58:48 +0000 (Thu, 26 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Coliseum/Anubarak.lua
+
+Make the burrow warning 15 seconds before and stop next freeze timer on burrow.
+------------------------------------------------------------------------
+r6821 | pettigrow | 2009-11-25 12:36:30 +0000 (Wed, 25 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Ulduar/Algalon.lua
+   M /trunk/Ulduar/Locales/frFR.lua
+
+frFR Update
+------------------------------------------------------------------------
+r6820 | mojosdojo | 2009-11-23 16:08:23 +0000 (Mon, 23 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Citadel/BigWigs_Citadel.toc
+   M /trunk/Coliseum/BigWigs_Coliseum.toc
+   M /trunk/Core/BigWigs_Core.toc
+   M /trunk/Foreign/BigWigs_Foreign.toc
+   M /trunk/Naxxramas/BigWigs_Naxxramas.toc
+   M /trunk/Northrend/BigWigs_Northrend.toc
+   M /trunk/OnyxiasLair/BigWigs_OnyxiasLair.toc
+   M /trunk/Options/BigWigs_Options.toc
+   M /trunk/Plugins/BigWigs_Plugins.toc
+   M /trunk/Ulduar/BigWigs_Ulduar.toc
+
+deDE update
+------------------------------------------------------------------------
+r6819 | mojosdojo | 2009-11-23 15:34:15 +0000 (Mon, 23 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Ulduar/Locales/deDE.lua
+
+Algalon deDE end trigger.
+------------------------------------------------------------------------
+r6818 | 7destiny | 2009-11-23 15:34:05 +0000 (Mon, 23 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Citadel/Locales/koKR.lua
+   M /trunk/Locales/koKR.lua
+
+koKR Update
+------------------------------------------------------------------------
+r6817 | 7destiny | 2009-11-23 14:52:44 +0000 (Mon, 23 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Ulduar/Algalon.lua
+   M /trunk/Ulduar/Locales/koKR.lua
+
+Fix Win. add end_trigger.
+------------------------------------------------------------------------
+r6816 | mojosdojo | 2009-11-22 18:21:34 +0000 (Sun, 22 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Northrend/Koralon.lua
+
+There is no hard enrage for Koralon.
+------------------------------------------------------------------------
+r6815 | yoshimo | 2009-11-20 22:40:33 +0000 (Fri, 20 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Citadel/Precious.lua
+
+Fixed typo in the NPC-ID
+------------------------------------------------------------------------
+r6814 | yoshimo | 2009-11-20 20:12:31 +0000 (Fri, 20 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Citadel/DW_Trash.lua
+
+fix global
+------------------------------------------------------------------------
+r6813 | mojosdojo | 2009-11-20 17:36:26 +0000 (Fri, 20 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/OnyxiasLair/Locales/deDE.lua
+
+Onyxia deDE update.
+------------------------------------------------------------------------
+r6812 | pettigrow | 2009-11-20 15:44:57 +0000 (Fri, 20 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Citadel/Locales/frFR.lua
+   M /trunk/Citadel/Putricide.lua
+
+frFR Update
+------------------------------------------------------------------------
+r6811 | yoshimo | 2009-11-20 00:15:24 +0000 (Fri, 20 Nov 2009) | 1 line
+Changed paths:
+   A /trunk/Citadel/Blood_Princes.lua
+   A /trunk/Citadel/Saurfang.lua
+   M /trunk/Citadel/modules.xml
+
+Basic modules for Deathbringer Saurfang & Blood Council
+------------------------------------------------------------------------
+r6810 | yoshimo | 2009-11-19 23:31:51 +0000 (Thu, 19 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Citadel/Marrowgar.lua
+
+reduce whirlwind cooldown
+------------------------------------------------------------------------
+r6809 | yoshimo | 2009-11-19 22:30:51 +0000 (Thu, 19 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Citadel/Marrowgar.lua
+
+Added more Impale ids
+------------------------------------------------------------------------
+r6808 | rabbit | 2009-11-19 18:24:46 +0000 (Thu, 19 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Plugins/Bars.lua
+
+Safeguard custom bars.
+------------------------------------------------------------------------
+r6807 | yoshimo | 2009-11-16 22:45:02 +0000 (Mon, 16 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Ulduar/Algalon.lua
+
+Fix timers on first pull
+------------------------------------------------------------------------
+r6806 | rabbit | 2009-11-16 21:40:39 +0000 (Mon, 16 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Coliseum/ValkyrTwins.lua
+
+Fix berserk timer and shield remaining message.
+------------------------------------------------------------------------
+r6805 | yoshimo | 2009-11-14 07:51:09 +0000 (Sat, 14 Nov 2009) | 2 lines
+Changed paths:
+   M /trunk/Citadel/Lanathel.lua
+
+- 6m berserktimer
+- Pact of the Darkfallen
+------------------------------------------------------------------------
+r6804 | s8095324 | 2009-11-13 18:28:03 +0000 (Fri, 13 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/OnyxiasLair/Locales/zhTW.lua
+
+zhTW update
+------------------------------------------------------------------------
+r6803 | s8095324 | 2009-11-13 18:10:58 +0000 (Fri, 13 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Citadel/Locales/zhTW.lua
+
+zhTW update
+------------------------------------------------------------------------
+r6802 | rabbit | 2009-11-13 15:26:56 +0000 (Fri, 13 Nov 2009) | 3 lines
+Changed paths:
+   M /trunk/Citadel/DW_Trash.lua
+   M /trunk/Citadel/Putricide.lua
+   M /trunk/Plugins/Bars.lua
+   M /trunk/Plugins/Emphasize.lua
+   M /trunk/Plugins/RaidIcon.lua
+
+* Fix test bars and custom bars to not error with the new super emphasize.
+* Clean up Putricide and make sure we only load it in 3.3.
+
+------------------------------------------------------------------------
+r6801 | yoshimo | 2009-11-13 14:28:31 +0000 (Fri, 13 Nov 2009) | 5 lines
+Changed paths:
+   A /trunk/Citadel/DW_Trash.lua
+   A /trunk/Citadel/Lanathel.lua
+   A /trunk/Citadel/Putricide.lua
+   M /trunk/Citadel/modules.xml
+
+- Added modules for:
+Lady Deathwhisper's Trash
+Putricide.lua
+Lanathel
+
+------------------------------------------------------------------------
+r6800 | yoshimo | 2009-11-13 14:24:11 +0000 (Fri, 13 Nov 2009) | 2 lines
+Changed paths:
+   M /trunk/Citadel/Valithria.lua
+
+-removed Acid Burst
+-added 7m Timer for soft Enrage
+------------------------------------------------------------------------
+r6799 | ammo | 2009-11-12 09:06:43 +0000 (Thu, 12 Nov 2009) | 2 lines
+Changed paths:
+   M /trunk/Plugins/Bars.lua
+   A /trunk/Sounds/1.mp3
+   A /trunk/Sounds/2.mp3
+   A /trunk/Sounds/3.mp3
+   A /trunk/Sounds/4.mp3
+   A /trunk/Sounds/5.mp3
+
+first working version of voice countdown superemp option
+voices by Ann Lindsay from freesound.org
+------------------------------------------------------------------------
+r6798 | rabbit | 2009-11-12 00:52:26 +0000 (Thu, 12 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/OnyxiasLair/Onyxia.lua
+
+Cleanup.
+------------------------------------------------------------------------
+r6797 | rabbit | 2009-11-11 00:42:24 +0000 (Wed, 11 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Coliseum/Jaraxxus.lua
+
+Fix global pollution from last commit.
+------------------------------------------------------------------------
+r6796 | mojosdojo | 2009-11-11 00:27:20 +0000 (Wed, 11 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Coliseum/Jaraxxus.lua
+
+Add 10 minutes berserk (see http://www.tankspot.com/forums/f206/53984-coliseum-lord-jaraxxus-2.html#post270854)
+------------------------------------------------------------------------
+r6795 | rabbit | 2009-11-11 00:01:26 +0000 (Wed, 11 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Coliseum/ValkyrTwins.lua
+
+Removed something by mistake last commit, working again now.
+------------------------------------------------------------------------
+r6794 | rabbit | 2009-11-10 01:42:28 +0000 (Tue, 10 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Coliseum/ValkyrTwins.lua
+   M /trunk/Core/BossPrototype.lua
+
+Catch SWING_MISSED first in the handler since it probably happens more often than the others.
+------------------------------------------------------------------------
+r6793 | mojosdojo | 2009-11-09 23:33:52 +0000 (Mon, 09 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Coliseum/Jaraxxus.lua
+   M /trunk/Ulduar/Locales/deDE.lua
+
+Load Algalon properly for deDE.
+------------------------------------------------------------------------
+r6792 | ananhaid | 2009-11-09 13:32:59 +0000 (Mon, 09 Nov 2009) | 2 lines
+Changed paths:
+   M /trunk/Citadel/BigWigs_Citadel.toc
+   M /trunk/Coliseum/BigWigs_Coliseum.toc
+
+BigWigs:
+- zhCN/zhTW update.
+------------------------------------------------------------------------
+r6791 | ananhaid | 2009-11-09 13:21:42 +0000 (Mon, 09 Nov 2009) | 2 lines
+Changed paths:
+   M /trunk/Citadel/Locales/zhCN.lua
+   M /trunk/Citadel/Locales/zhTW.lua
+   M /trunk/Coliseum/Locales/frFR.lua
+   M /trunk/Ulduar/Locales/zhCN.lua
+   M /trunk/Ulduar/Locales/zhTW.lua
+
+BigWigs:
+- zhCN/zhTW update.
+------------------------------------------------------------------------
+r6790 | 7destiny | 2009-11-09 10:13:27 +0000 (Mon, 09 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Citadel/Locales/koKR.lua
+   M /trunk/Coliseum/Locales/koKR.lua
+   M /trunk/Ulduar/Locales/koKR.lua
+
+koKR Update
+------------------------------------------------------------------------
+r6789 | pettigrow | 2009-11-09 06:39:41 +0000 (Mon, 09 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Coliseum/Locales/frFR.lua
+   M /trunk/Naxxramas/Locales/frFR.lua
+   M /trunk/Northrend/Locales/frFR.lua
+   M /trunk/Ulduar/Locales/frFR.lua
+
+frFR Update
+------------------------------------------------------------------------
+r6788 | mojosdojo | 2009-11-09 01:13:33 +0000 (Mon, 09 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Coliseum/Locales/deDE.lua
+   M /trunk/Naxxramas/Locales/deDE.lua
+   M /trunk/Northrend/Locales/deDE.lua
+   M /trunk/Ulduar/Locales/deDE.lua
+
+Mostly fixes for deDE NewBossLocale APIs.
+------------------------------------------------------------------------
+r6787 | rabbit | 2009-11-09 00:46:18 +0000 (Mon, 09 Nov 2009) | 3 lines
+Changed paths:
+   M /trunk/Core/BossPrototype.lua
+   M /trunk/Plugins/Bars.lua
+
+* Bars: Remove the help text between the Enable checkbox and the tabs, it is pretty self evident anyway, I'd say. Hopefully prevents the need to scroll using the default fonts.
+* Prototype: Clean up :DelayedMessage a bit.
+
+------------------------------------------------------------------------
+r6786 | ammo | 2009-11-08 18:51:15 +0000 (Sun, 08 Nov 2009) | 1 line
+Changed paths:
+   A /trunk/Citadel/Locales
+   A /trunk/Citadel/Locales/deDE.lua
+   A /trunk/Citadel/Locales/frFR.lua
+   A /trunk/Citadel/Locales/koKR.lua
+   A /trunk/Citadel/Locales/ruRU.lua
+   A /trunk/Citadel/Locales/zhCN.lua
+   A /trunk/Citadel/Locales/zhTW.lua
+
+add empty locale files
+------------------------------------------------------------------------
+r6785 | ammo | 2009-11-08 18:47:51 +0000 (Sun, 08 Nov 2009) | 1 line
+Changed paths:
+   D /trunk/Icons
+   M /trunk/Loader.lua
+   A /trunk/Textures/icons/core-disabled.tga
+   A /trunk/Textures/icons/core-enabled.tga
+
+move icons into textures\icons folder
+------------------------------------------------------------------------
+r6784 | ammo | 2009-11-08 18:44:57 +0000 (Sun, 08 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Naxxramas/Anubrekhan.lua
+   M /trunk/Naxxramas/Faerlina.lua
+   M /trunk/Naxxramas/Gluth.lua
+   M /trunk/Naxxramas/Gothik.lua
+   M /trunk/Naxxramas/Grobbulus.lua
+   M /trunk/Naxxramas/Heigan.lua
+   M /trunk/Naxxramas/Horsemen.lua
+   M /trunk/Naxxramas/Kelthuzad.lua
+   M /trunk/Naxxramas/Loatheb.lua
+   M /trunk/Naxxramas/Maexxna.lua
+   M /trunk/Naxxramas/Noth.lua
+   M /trunk/Naxxramas/Patchwerk.lua
+   M /trunk/Naxxramas/Razuvious.lua
+   M /trunk/Naxxramas/Sapphiron.lua
+   M /trunk/Naxxramas/Thaddius.lua
+   M /trunk/Northrend/Archavon.lua
+   M /trunk/Northrend/Emalon.lua
+   M /trunk/Northrend/Koralon.lua
+   M /trunk/Northrend/Malygos.lua
+   M /trunk/Northrend/Sartharion.lua
+   M /trunk/OnyxiasLair/Onyxia.lua
+   M /trunk/Ulduar/Algalon.lua
+   M /trunk/Ulduar/Auriaya.lua
+   M /trunk/Ulduar/Freya.lua
+   M /trunk/Ulduar/Ignis.lua
+   M /trunk/Ulduar/IronCouncil.lua
+   M /trunk/Ulduar/Kologarn.lua
+   M /trunk/Ulduar/Leviathan.lua
+   M /trunk/Ulduar/Mimiron.lua
+   M /trunk/Ulduar/Razorscale.lua
+   M /trunk/Ulduar/Vezax.lua
+   M /trunk/Ulduar/XT-002.lua
+   M /trunk/Ulduar/YoggSaron.lua
+
+more comment styling
+------------------------------------------------------------------------
+r6783 | rabbit | 2009-11-08 04:05:18 +0000 (Sun, 08 Nov 2009) | 4 lines
+Changed paths:
+   M /trunk/Plugins/Bars.lua
+
+* Add a 'Menu' action to the clickable bars.
+* Redo some wordings in the descriptions.
+* Set up some sensible defaults if the user enables it; left->emphasize, middle->remove, right->menu.
+
+------------------------------------------------------------------------
+r6782 | ananhaid | 2009-11-08 03:09:41 +0000 (Sun, 08 Nov 2009) | 2 lines
+Changed paths:
+   M /trunk/Coliseum/Locales/koKR.lua
+   M /trunk/Coliseum/Locales/zhCN.lua
+   M /trunk/Coliseum/Locales/zhTW.lua
+   M /trunk/Naxxramas/Locales/zhCN.lua
+   M /trunk/Naxxramas/Locales/zhTW.lua
+   M /trunk/Northrend/Locales/zhCN.lua
+   M /trunk/Northrend/Locales/zhTW.lua
+   M /trunk/Ulduar/Locales/zhCN.lua
+   M /trunk/Ulduar/Locales/zhTW.lua
+
+BigWigs:
+- zhCN/zhTW update.
+------------------------------------------------------------------------
+r6781 | rabbit | 2009-11-07 23:22:08 +0000 (Sat, 07 Nov 2009) | 1 line
+Changed paths:
+   M /trunk/Plugins/Bars.lua
+   M /trunk/Plugins/Locales/enUS.lua
+
+Add options for clickable bars, not finalized or implemented, just for UI review so far.
+------------------------------------------------------------------------

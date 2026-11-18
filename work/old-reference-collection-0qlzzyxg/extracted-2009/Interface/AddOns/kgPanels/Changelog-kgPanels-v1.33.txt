@@ -1,0 +1,22 @@
+------------------------------------------------------------------------
+r337 | kagaro | 2009-08-07 11:47:24 +0000 (Fri, 07 Aug 2009) | 1 line
+Changed paths:
+   A /tags/v1.33 (from /trunk:336)
+
+Tagging as v1.33
+------------------------------------------------------------------------
+r336 | kagaro | 2009-08-07 11:43:27 +0000 (Fri, 07 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/kgPanels.toc
+   M /trunk/kgPanelsConfig/kgPanelsConfig.toc
+
+TOC bump
+------------------------------------------------------------------------
+r334 | kagaro | 2009-07-25 12:24:42 +0000 (Sat, 25 Jul 2009) | 3 lines
+Changed paths:
+   M /trunk/kgPanels.lua
+
+Fix for assetName length check requiring a length or > 2, it should be > 0
+
+
+------------------------------------------------------------------------

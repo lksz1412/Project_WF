@@ -1,0 +1,14 @@
+{
+  "source_user_path": "C:\\Users\\USER\\Downloads\\Devil_Blackt.zip",
+  "source_file": "Devil_Blackt.zip",
+  "bytes": 10112558,
+  "sha256": "10FD89E6A27D63DC48217DE48B66E693885E2A46C49253688A13DCCE6E18A3DA",
+  "preserved_copy": "D:\\Projects\\Project_WF\\SourceArchive\\2009-12-10\\originals\\Devil_Blackt.zip",
+  "copy_sha256": "10FD89E6A27D63DC48217DE48B66E693885E2A46C49253688A13DCCE6E18A3DA",
+  "copy_identical": true,
+  "recorded": "2026-11-17T22:45:48.0108361+09:00",
+  "claimed_source_post": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=2958",
+  "publisher_checksum": "not available; source/copy equality only",
+  "scope": "preservation and static inspection; no gameinstallation/Lua/EXE execution",
+  "crc_and_safe_extraction": "pending"
+}

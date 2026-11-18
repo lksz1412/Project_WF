@@ -1,0 +1,9 @@
+﻿## Interface: 30000
+## Title: Butsu
+## Author: Haste
+## Version: 1.9
+## X-eMail: troeks@gmail.com
+## Notes: Loot frame replacement
+## SavedVariables: ButsuDB
+
+loot.lua

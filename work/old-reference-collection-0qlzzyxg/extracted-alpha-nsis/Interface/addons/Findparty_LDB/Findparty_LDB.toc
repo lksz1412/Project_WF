@@ -1,0 +1,13 @@
+﻿## Interface: 60100
+## Title: FindParty [Data Broker]
+## Notes: Provides a Button in your LDB-Display to Show/Hide FindParty Frame.
+## Notis-koKR: LDB 표시기에 파티찾기 도우미 버튼을 표시하는 애드온
+## Author: 법사세린@아즈샤라
+## Version: 1.1
+## RequiredDeps: Findparty
+
+Lib\LibStub.lua
+Lib\CallbackHandler-1.0.lua
+Lib\LibDataBroker-1.1.lua
+
+core.lua

@@ -1,0 +1,23 @@
+<Bindings>
+	<Binding name="REAGENTHEAVEN" header="REAGENTHEAVENHEADER">
+		if( ReagentHeavenOptionsFrame:IsVisible() ) then
+			HideUIPanel( ReagentHeavenOptionsFrame );
+		else
+			ShowUIPanel( ReagentHeavenOptionsFrame );
+		end
+	</Binding>
+	<Binding name="REAGENTHEAVENFRAME">
+		if( ReagentHeavenFrame:IsVisible() ) then
+			HideUIPanel( ReagentHeavenFrame );
+		else
+			ShowUIPanel( ReagentHeavenFrame );
+		end
+	</Binding>
+	<Binding name="REAGENTHEAVENTOGGLE">
+		if( ReagentHeavenOptionGet( "Enabled" ) == "1" ) then
+			ReagentHeavenOptionSet( "Enabled", "0" );
+		else
+			ReagentHeavenOptionSet( "Enabled", "1" );
+		end
+	</Binding>
+</Bindings>

@@ -1,0 +1,434 @@
+{
+  "schema": "old-devil-A1-design-gate/1",
+  "recorded": "2026-11-18T02:22:02.399081+09:00",
+  "state": "DESIGN_READY_WITH_LIMITS",
+  "checks": [
+    {
+      "id": "canvas-assumption",
+      "passed": true,
+      "evidence": {
+        "width": 3840,
+        "height": 2160,
+        "units": "physicalrasterpixels",
+        "origin": "top-left",
+        "boundsConvention": "XYWH,rightbottomexclusive",
+        "assumption": "offline4Kproposal,notobservedcurrentclient",
+        "actualGameResolution": null,
+        "actualGameUIscale": null
+      }
+    },
+    {
+      "id": "source-ordinal-hash",
+      "passed": true,
+      "evidence": "45actualDOM4/source800x500"
+    },
+    {
+      "id": "role-closure",
+      "passed": true,
+      "evidence": {
+        "source14": 14,
+        "used14": 14,
+        "unmapped": []
+      }
+    },
+    {
+      "id": "three-native-roles",
+      "passed": true,
+      "evidence": [
+        "chat-left-one",
+        "chat-left-two",
+        "chat-right-three"
+      ]
+    },
+    {
+      "id": "excluded-meter-rejected2022",
+      "passed": true,
+      "evidence": "no meterrole/no old2022renderer"
+    },
+    {
+      "id": "source-units-spans",
+      "passed": true,
+      "evidence": "24records/actualfieldspans;no targetratio"
+    },
+    {
+      "id": "bottom-up-equations",
+      "passed": true,
+      "evidence": {
+        "gridWidth": "8*80+7*2=654",
+        "gridHeight": "3*80+2*2=244",
+        "panelWidth": "8+654+8=670",
+        "panelHeight": "8+244+8+36+8=304",
+        "lowerBandBottom": "2160-8-28=2124",
+        "lowerBandTop": "2124-304=1820",
+        "blackRailTop": "1820-16=1804",
+        "longRowTop": "1804-80=1724",
+        "helperRowTop": "1724-8-80=1636",
+        "targetTop": "1636-16-84=1536",
+        "playerTop": "1536-24-72=1440",
+        "longRowWidth": "36*80+35*2=2950",
+        "longRowX": "(3840-2950)/2=445",
+        "moduleWidthClosure": "960+2+960+2+670+2+304+2+938=3840"
+      }
+    },
+    {
+      "id": "width-height-accounting",
+      "passed": true,
+      "evidence": {
+        "lowerBandAndStatusMarginPx": 340,
+        "throughHelperRowPx": 524,
+        "helperTopY": 1636,
+        "helperStackCanvasFraction": 0.24259259259259258,
+        "includingUpperUnitEnvelopePx": 720,
+        "upperUnitTopY": 1440,
+        "unitEnvelopeCanvasFraction": 0.3333333333333333,
+        "topFullWidthBelowContextLabelToUnitTop": "y56..1440 height1384",
+        "centralClearWorldRect": [
+          1472,
+          96,
+          1800,
+          1312
+        ],
+        "fractionsPurpose": "derivedreporting afterbutton-firstdesign, neverinputratio"
+      }
+    },
+    {
+      "id": "primary-and-element-bounds",
+      "passed": true,
+      "evidence": {
+        "primary": 13,
+        "elements": 24
+      }
+    },
+    {
+      "id": "primary-nonoverlap",
+      "passed": true,
+      "evidence": {
+        "pairs": 78,
+        "unexpected": [],
+        "transparentCanvasIntentional": [
+          [
+            "actions-long-upper",
+            "ornament-left"
+          ],
+          [
+            "actions-long-upper",
+            "ornament-right"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "world-unit-helper-clear",
+      "passed": true,
+      "evidence": {
+        "world": [
+          1472,
+          96,
+          1800,
+          1312
+        ],
+        "unitTargetGap": 24,
+        "targetHelperGap": 16
+      }
+    },
+    {
+      "id": "68-actioncells-12menu",
+      "passed": true,
+      "evidence": "24center+36long+8helper;12separatemenu"
+    },
+    {
+      "id": "group-center",
+      "passed": true,
+      "evidence": {
+        "id": "center",
+        "roleID": "actions-center-grid",
+        "origin": [
+          1932,
+          1828
+        ],
+        "columns": 8,
+        "rows": 3,
+        "cellSize": [
+          80,
+          80
+        ],
+        "gap": [
+          2,
+          2
+        ],
+        "count": 24,
+        "countStatus": "NEWproposal matchingapprox8x3observation andAlpha two4x3structure"
+      }
+    },
+    {
+      "id": "group-long",
+      "passed": true,
+      "evidence": {
+        "id": "long",
+        "roleID": "actions-long-upper",
+        "origin": [
+          445,
+          1724
+        ],
+        "columns": 36,
+        "rows": 1,
+        "cellSize": [
+          80,
+          80
+        ],
+        "gap": [
+          2,
+          2
+        ],
+        "count": 36,
+        "countStatus": "NEWproposal;AlphaWide1/5/6each12;exactphoto countunknown"
+      }
+    },
+    {
+      "id": "group-helper",
+      "passed": true,
+      "evidence": {
+        "id": "helper",
+        "roleID": "actions-short-helper",
+        "origin": [
+          760,
+          1636
+        ],
+        "columns": 8,
+        "rows": 1,
+        "cellSize": [
+          80,
+          80
+        ],
+        "gap": [
+          2,
+          2
+        ],
+        "count": 8,
+        "countStatus": "NEWshortrowproposal;actualspell/classmembershipunknown"
+      }
+    },
+    {
+      "id": "cellcontents-contained",
+      "passed": true,
+      "evidence": "68icons64x64andkeys72x28"
+    },
+    {
+      "id": "placeholder-bindings-actions",
+      "passed": true,
+      "evidence": "all68null"
+    },
+    {
+      "id": "chat-input-viewports",
+      "passed": true,
+      "evidence": "3viewport224high/3input36high"
+    },
+    {
+      "id": "square-lower-map",
+      "passed": true,
+      "evidence": {
+        "map": [
+          2596,
+          1820,
+          304,
+          304
+        ],
+        "protrudingControl": [
+          2584,
+          1810,
+          24,
+          24
+        ]
+      }
+    },
+    {
+      "id": "menu-and-thinseams",
+      "passed": true,
+      "evidence": "12compactcells/four2pxdividers/two1pxhorizontalrules"
+    },
+    {
+      "id": "alpha-docking",
+      "passed": true,
+      "evidence": {
+        "leftAlphaRight": 449,
+        "firstIconLeft": 453,
+        "rightAlphaLeft": 3391,
+        "lastIconRight": 3387,
+        "rimOverlap4": true,
+        "actualpixelcheck": "NOT_RUN"
+      }
+    },
+    {
+      "id": "23-text-and-all-key-labels",
+      "passed": true,
+      "evidence": {
+        "checks23": 23,
+        "keyLabels16": 16,
+        "C-S-1": [
+          63,
+          21
+        ],
+        "keyBox": [
+          72,
+          28
+        ]
+      }
+    },
+    {
+      "id": "sample-glyphs",
+      "passed": true,
+      "evidence": {
+        "exactSampleGlyphCount": 42,
+        "wholeKoKRClaim": false
+      }
+    },
+    {
+      "id": "design-contrast",
+      "passed": true,
+      "evidence": [
+        {
+          "meaning": "body-against-brightest-context",
+          "foreground": "#D8D8D8",
+          "background": "#384047",
+          "ratio": 7.394599916855844,
+          "minimum": 4.5,
+          "passes": true
+        },
+        {
+          "meaning": "key-against-explicit-stroke",
+          "foreground": "#F0F0F0",
+          "background": "#000000",
+          "ratio": 18.427342383975944,
+          "minimum": 4.5,
+          "passes": true
+        },
+        {
+          "meaning": "seam-against-context",
+          "foreground": "#909294",
+          "background": "#384047",
+          "ratio": 3.3751826209219664,
+          "minimum": 3,
+          "passes": true,
+          "changedTokenOnlyRemeasured": true
+        },
+        {
+          "meaning": "seam-against-dark-panel",
+          "foreground": "#909294",
+          "background": "#121518",
+          "ratio": 5.867370711205842,
+          "minimum": 3,
+          "passes": true,
+          "changedTokenOnlyRemeasured": true
+        }
+      ]
+    },
+    {
+      "id": "sourceasset-observations",
+      "passed": true,
+      "evidence": {
+        "assets23": 23,
+        "sourcePaths30": 30,
+        "target1": 1,
+        "supplementalActuallyViewed": 16
+      }
+    },
+    {
+      "id": "asset-reference-closure",
+      "passed": true,
+      "evidence": {
+        "selected": [
+          "button-backdrop",
+          "button-gloss",
+          "button-onyx-normal",
+          "font-body",
+          "ornament-angel",
+          "ornament-demon",
+          "status-smooth"
+        ],
+        "missing": [],
+        "orphan": []
+      }
+    },
+    {
+      "id": "selected-asset-sha",
+      "passed": true,
+      "evidence": {
+        "assetsConsumed7": 7,
+        "mismatch": [],
+        "archiveChecksReplayed": 0
+      }
+    },
+    {
+      "id": "Onyx-source-mapping",
+      "passed": true,
+      "evidence": "source139fullread;Onyxnot2022OnyxClassic"
+    },
+    {
+      "id": "runtime-render-boundary",
+      "passed": true,
+      "evidence": "render/pixel/gameNOT_RUN;sourcecodeexecution0"
+    },
+    {
+      "id": "renderer-and-rights-contract",
+      "passed": true,
+      "evidence": [
+        "offline4k-layout.png",
+        "bottom-band-native.png",
+        "keylabels-native.png",
+        "pixel-checks.json",
+        "render-receipt.json"
+      ]
+    }
+  ],
+  "checkCount": 30,
+  "passedCount": 30,
+  "failures": [],
+  "render": "NOT_RUN",
+  "actualPixels": "NOT_RUN",
+  "newLayoutVisualObservation": "NOT_RUN",
+  "independentP4": "NOT_RUN",
+  "game": "NOT_RUN",
+  "firstAttempt": "PythonSyntaxErrorbeforeexecution,no gatewritten/no checksran",
+  "scopeException": "A4outsideaccessoryscript;priorabsence/overwriteunverified;Cadditionalmodification0;rootcontrolsseparate",
+  "sourceA4Step5Writing": "stoppedatFILES_FROZEN;rootmayreuseseparateinquiry",
+  "readerWriting": "stoppedafter23assets+1target",
+  "inputs": [
+    {
+      "path": "source-role-map.json",
+      "SHA256": "BCA6ED1FA683721B6F370766E4D3AFAC58F1B680FF5262DEF5D7C97392289A35"
+    },
+    {
+      "path": "source-settings-evidence.json",
+      "SHA256": "58E63F467A424292AD951B8BBE42395325A5C1E731149F23647AAC0BFC8D2B7C"
+    },
+    {
+      "path": "proposed-geometry.json",
+      "SHA256": "3B4710C958E7729C7B614544083B64C975AB2AF022079E2D56E5B611569CA03D"
+    },
+    {
+      "path": "layout-spec.json",
+      "SHA256": "B1131A291D7C302B1CA086419009E181F3326C691E04BD3D7D56551A4630DFB3"
+    },
+    {
+      "path": "asset-manifest.json",
+      "SHA256": "389BA3453F606C3904F0219476A934D9E12111A85BF1E9DA77CD19F808D07E53"
+    },
+    {
+      "path": "text-metrics.json",
+      "SHA256": "4FEDA35A932ABE0A8257091EB218ECC4AC06424512F4B96DE4D7C52CE1EAABD1"
+    },
+    {
+      "path": "asset-observations/findings.md",
+      "SHA256": "C4B3513CF6E08E93C1CEE500DF0B452EFCD39B20B03C7351FAEF8EF4BF533D6B"
+    },
+    {
+      "path": "asset-observations/coverage.json",
+      "SHA256": "B4303CAFF1E87ECB824E87CBBFE95FF2054B4BA67ABE8685BB33A5B713D6422A"
+    }
+  ],
+  "metadataOnlyCloseUpdate": {
+    "recorded": "2026-11-18T02:23:30.896298+09:00",
+    "change": "source-settings/proposedgeometry pendinglabels replacedbyactualcompletedreader/metricslinks; no geometry/equations/constraints changed",
+    "passedChecksReplayed": 0
+  }
+}

@@ -1,0 +1,7 @@
+## Interface: 60100
+## Title: Roll Window Fix
+## Author: Faucette - Dalaran (US)
+## Version: 1.1
+## Notes: Fixes the 3.3.2 "bug" of small loot roll windows.
+## Date: February 4, 2010
+RollWindowFix.lua

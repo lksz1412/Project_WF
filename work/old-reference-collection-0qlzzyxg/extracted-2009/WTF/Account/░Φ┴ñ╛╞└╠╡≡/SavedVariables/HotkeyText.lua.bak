@@ -1,0 +1,71 @@
+
+HotkeySettings = {
+	["font"] = {
+		["flags"] = "OUTLINE",
+		["name"] = "Fonts\\K_Damage.TTF",
+		["size"] = 12,
+	},
+	["color"] = {
+		["a"] = 1,
+		["r"] = 1,
+		["g"] = 1,
+		["b"] = 1,
+	},
+	["ColorMode"] = 1,
+	["offset"] = {
+		["y"] = 0,
+		["x"] = -4,
+	},
+	["hide"] = 1,
+}
+ActionButtonName = {
+	{
+		["type"] = "ACTIONBUTTON",
+		["name"] = "ActionButton",
+		["apply"] = 1,
+	}, -- [1]
+	{
+		["type"] = "MULTIACTIONBAR1BUTTON",
+		["name"] = "MultiBarBottomLeftButton",
+		["apply"] = 1,
+	}, -- [2]
+	{
+		["type"] = "MULTIACTIONBAR2BUTTON",
+		["name"] = "MultiBarBottomRightButton",
+		["apply"] = 1,
+	}, -- [3]
+	{
+		["type"] = "MULTIACTIONBAR3BUTTON",
+		["name"] = "MultiBarRightButton",
+		["apply"] = 1,
+	}, -- [4]
+	{
+		["type"] = "MULTIACTIONBAR4BUTTON",
+		["name"] = "MultiBarLeftButton",
+		["apply"] = 1,
+	}, -- [5]
+	{
+		["type"] = "ACTIONBUTTON",
+		["name"] = "BonusActionButton",
+		["apply"] = 1,
+	}, -- [6]
+	{
+		["type"] = "SHAPESHIFTBUTTON",
+		["name"] = "ShapeshiftButton",
+		["apply"] = 1,
+	}, -- [7]
+	{
+		["name"] = "PetActionButton",
+		["type"] = "BONUSACTIONBUTTON",
+	}, -- [8]
+	{
+		["type"] = "EXTRABARBUTTON",
+		["name"] = "ExtraBarButton",
+		["apply"] = 1,
+	}, -- [9]
+	{
+		["type"] = "ASPECTBAR_BUTTON",
+		["name"] = "AspectBarButton",
+		["apply"] = 1,
+	}, -- [10]
+}

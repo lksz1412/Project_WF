@@ -1,0 +1,283 @@
+{
+  "recorded": "2026-11-17T23:49:35.449910+09:00",
+  "files": [
+    {
+      "source": "B08",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\extracted-idx1932-rar\\Interface\\AddOns\\NeonChat\\NeonChat.toc",
+      "lines": 8,
+      "sha256": "c1a960ad184b6078884bc200d0ce6d18ed78eccbdb292b4faf2c5d57b0f33ffc",
+      "readFull": true
+    },
+    {
+      "source": "B08",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\extracted-idx1932-rar\\Interface\\AddOns\\NeonChat\\NeonChat.lua",
+      "lines": 57,
+      "sha256": "0f032689dd1d0db3fa32888487c2064c87258f4ce02fe4adb87948b3df139ca8",
+      "readFull": true
+    },
+    {
+      "source": "B08",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\extracted-idx1932-rar\\Interface\\AddOns\\SisterChatMods\\SisterChatMods.toc",
+      "lines": 23,
+      "sha256": "59e363bffbbb64a3f119fb6c5caf3da08988fb24ca0c75361f7c312f9d8c3a31",
+      "readFull": true
+    },
+    {
+      "source": "B08",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\extracted-idx1932-rar\\Interface\\AddOns\\SisterChatMods\\SisterChatMods.xml",
+      "lines": 39,
+      "sha256": "7ee6ca451a3aeef085d3b4a5898b0ee32b7f7284d845d575ace1843f8b6d1f43",
+      "readFull": true
+    },
+    {
+      "source": "B08",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\extracted-idx1932-rar\\Interface\\AddOns\\SisterChatMods\\SisterChatMods.lua",
+      "lines": 483,
+      "sha256": "805fbda2f65949a14bc6c31b4d4529278913bda7dfc7046e718c8d5ff33e6108",
+      "readFull": true
+    },
+    {
+      "source": "B08",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\extracted-idx1932-rar\\WTF\\Account\\계정명\\서버명\\캐릭명\\chat-cache.txt",
+      "lines": 292,
+      "sha256": "138bf88680d8a4ea4880f291d68d8f4219cb9552390e894bca471cae4e5b7a37",
+      "readFull": true
+    },
+    {
+      "source": "B08",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\extracted-idx1932-rar\\WTF\\Account\\계정명\\서버명\\캐릭명\\AddOns.txt",
+      "lines": 123,
+      "sha256": "d179344f921d73f47f4231e5f55e1218af02e87043e50198310a631eb12cd164",
+      "readFull": true
+    },
+    {
+      "source": "BE2",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\extracted-idx3461-sfx\\Interface\\AddOns\\!DevilUI\\!DevilUI.toc",
+      "lines": 13,
+      "sha256": "525fa8c7da38118759871f32f2606699cd2cbf159e14d05af9dbefc58fe0d39d",
+      "readFull": true
+    },
+    {
+      "source": "BE2",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\extracted-idx3461-sfx\\Interface\\AddOns\\!DevilUI\\load_Profile.xml",
+      "lines": 28,
+      "sha256": "c6241091c2e7c7bac1eb44b9b9e4e8e01d4d8864ecb6ac631a1c49a6502ec39c",
+      "readFull": true
+    },
+    {
+      "source": "BE2",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\extracted-idx3461-sfx\\Interface\\AddOns\\!DevilUI\\!DevilUI.lua",
+      "lines": 295,
+      "sha256": "a26a7d835479f1a24a5e5577dddfea6be039763a51e818288e4dd7b10af4e1be",
+      "readFull": true
+    },
+    {
+      "source": "BE2",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\extracted-idx3461-sfx\\Interface\\AddOns\\!DevilUI\\minimap.lua",
+      "lines": 135,
+      "sha256": "6d9dc68ff7a7a622fe124aa4d77794b710f32eb83893e8d0ec28060de61c8868",
+      "readFull": true
+    },
+    {
+      "source": "X2-safe-subset",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\Bartender3\\Bartender3.toc",
+      "lines": 50,
+      "encoding": "utf-8-sig",
+      "sha256": "d0ba742c78c86956c3fcb08ee7d16f1a6885d7527d91dfefdcf4dcdf1d734829",
+      "readFull": true
+    },
+    {
+      "source": "X2-safe-subset",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\Bartender3\\Defaults.lua",
+      "lines": 312,
+      "encoding": "utf-8-sig",
+      "sha256": "de6a4303c6ed2139f43a41687628c4f8a50c165b71087694a77aed3d42a4c13b",
+      "readFull": true
+    },
+    {
+      "source": "X2-safe-subset",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\DFontChatSizes\\DFontChatSizes.lua",
+      "lines": 40,
+      "encoding": "utf-8-sig",
+      "sha256": "f4eb3a445d4f73a1d320ff8bddc323c4ba5a3dde4d7d4d1cbeecb34a558e3ac2",
+      "readFull": true
+    },
+    {
+      "source": "X2-safe-subset",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\DFontChatSizes\\DFontChatSizes.toc",
+      "lines": 9,
+      "encoding": "utf-8-sig",
+      "sha256": "0bc0a22f925a35925b2e680ad38b6db79ae86f4b4c970b63d6a3078d097352dc",
+      "readFull": true
+    },
+    {
+      "source": "X2-safe-subset",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\DFontChatSizes\\DFontChatSizes.xml",
+      "lines": 39,
+      "encoding": "utf-8-sig",
+      "sha256": "232a7a11ef293ba4f918acef2f0ddeedb451619d5873a61a01d117a419673355",
+      "readFull": true
+    },
+    {
+      "source": "X2-safe-subset",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\eePanels2\\eePanels2.toc",
+      "lines": 30,
+      "encoding": "utf-8-sig",
+      "sha256": "771f59bddd6987580422d4254579851bd1b1a03fda0db7cb5b038f60ab36d38d",
+      "readFull": true
+    },
+    {
+      "source": "X2-safe-subset",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\NeonChat\\NeonChat.lua",
+      "lines": 57,
+      "encoding": "utf-8-sig",
+      "sha256": "0f032689dd1d0db3fa32888487c2064c87258f4ce02fe4adb87948b3df139ca8",
+      "readFull": true
+    },
+    {
+      "source": "X2-safe-subset",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\NeonChat\\NeonChat.toc",
+      "lines": 8,
+      "encoding": "utf-8-sig",
+      "sha256": "c1a960ad184b6078884bc200d0ce6d18ed78eccbdb292b4faf2c5d57b0f33ffc",
+      "readFull": true
+    },
+    {
+      "source": "X2-safe-subset",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\SharedMedia\\Core.lua",
+      "lines": 73,
+      "encoding": "utf-8-sig",
+      "sha256": "68299909793b15577dcbf074de7509b409c9d3e66a816326b6337dd533b3e07f",
+      "readFull": true
+    },
+    {
+      "source": "X2-safe-subset",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\SharedMedia\\SharedMedia.lua",
+      "lines": 34,
+      "encoding": "cp949",
+      "sha256": "0a374c1b39065eb04785695cc042588d5d0626f443158824edb1ecab7c40c712",
+      "readFull": true
+    },
+    {
+      "source": "X2-safe-subset",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\SharedMedia\\SharedMedia.toc",
+      "lines": 15,
+      "encoding": "utf-8-sig",
+      "sha256": "05d07e714c12a81151e751bcd88cdf285fd43ef0cbd4e381afb1e4c7972ba505",
+      "readFull": true
+    },
+    {
+      "source": "X2-safe-subset",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\SisterChatMods\\SisterChatMods.lua",
+      "lines": 517,
+      "encoding": "utf-8-sig",
+      "sha256": "5ee1f54db6169c33feaff5a6a5f30822a18bf712d1c175852be566dd69da7459",
+      "readFull": true
+    },
+    {
+      "source": "X2-safe-subset",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\SisterChatMods\\SisterChatMods.toc",
+      "lines": 23,
+      "encoding": "utf-8-sig",
+      "sha256": "59e363bffbbb64a3f119fb6c5caf3da08988fb24ca0c75361f7c312f9d8c3a31",
+      "readFull": true
+    },
+    {
+      "source": "X2-safe-subset",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\SisterChatMods\\SisterChatMods.xml",
+      "lines": 39,
+      "encoding": "utf-8-sig",
+      "sha256": "7ee6ca451a3aeef085d3b4a5898b0ee32b7f7284d845d575ace1843f8b6d1f43",
+      "readFull": true
+    },
+    {
+      "source": "X2-safe-subset",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\var\\SPECIAL\\WTF\\Account\\계정명\\서버명\\케릭명\\chat-cache.txt",
+      "lines": 282,
+      "encoding": "utf-8-sig",
+      "sha256": "03c0ab63a16660af92616d49d9652a0ce3abc762b8d7120bd1cb0a041467c195",
+      "readFull": true
+    },
+    {
+      "source": "X2-safe-subset",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\var\\SPECIALW\\WTF\\Account\\계정명\\서버명\\케릭명\\chat-cache.txt",
+      "lines": 284,
+      "encoding": "utf-8-sig",
+      "sha256": "65c852c6b10effc72030aafc91f3f0e69fe60bf45f95e8e4d116d19760115753",
+      "readFull": true
+    },
+    {
+      "source": "X2-safe-subset",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\var\\STANDARD\\WTF\\Account\\계정명\\서버명\\케릭명\\chat-cache.txt",
+      "lines": 282,
+      "encoding": "utf-8-sig",
+      "sha256": "50da6b8be1d74be0452bf0a6445cb0cfb0975b905bf7b19a4c6aaa53b83ab7b6",
+      "readFull": true
+    },
+    {
+      "source": "X2-safe-subset",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\var\\STANDARDW\\WTF\\Account\\계정명\\서버명\\케릭명\\chat-cache.txt",
+      "lines": 282,
+      "encoding": "utf-8-sig",
+      "sha256": "50da6b8be1d74be0452bf0a6445cb0cfb0975b905bf7b19a4c6aaa53b83ab7b6",
+      "readFull": true
+    },
+    {
+      "source": "V42",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\!DevilUI\\!DevilUI.lua",
+      "lines": 1905,
+      "sha256": "8abf8a330a8171c76340e0c4f387757e8166f64f815d949525efa27b5d6c4ebb",
+      "readFull": true
+    },
+    {
+      "source": "V42",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\!DevilUI\\minimap.lua",
+      "lines": 1203,
+      "sha256": "4c3026579bb80fab7eb24d7fc3122668f82662b5b1f815f588f624c603594917",
+      "readFull": true
+    },
+    {
+      "source": "V42",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\!DevilUI\\!DevilUI.toc",
+      "lines": 14,
+      "sha256": "5559f382156e5919d14e7b2b6a71a33c76ac4f69d455a75dfd3820739302621d",
+      "readFull": true
+    },
+    {
+      "source": "V42",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\!DevilUI\\load_Profile.xml",
+      "lines": 17,
+      "sha256": "d513e31653a2cca627cdd2da4abe34a0a52af8ecbee8a68733a370ac5c65c749",
+      "readFull": true
+    },
+    {
+      "source": "V42",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\Devilconfig\\ForeverCompat.lua",
+      "lines": 37,
+      "sha256": "0a96bdca8cde59bab90193bc0a649f20a354a394784c8a3bd6b036957bebce20",
+      "readFull": true
+    },
+    {
+      "source": "V42",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\PitBull4\\PitBull4.toc",
+      "lines": 29,
+      "sha256": "d37e38d99708c6661ea0b7515523733c8644957a77ad0ecfa305dec731bfaff6",
+      "readFull": true
+    },
+    {
+      "source": "V42",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\!DevilUI\\media\\sharedmedia.lua",
+      "lines": 21,
+      "sha256": "1f982d7f226ec2833a321dd3e657d84bd6c611aa93b7faa85821c30d9ae7e81e",
+      "readFull": true
+    },
+    {
+      "source": "BE2",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\extracted-idx3461-sfx\\Interface\\AddOns\\!DevilUI\\media\\sharedmedia.lua",
+      "lines": 21,
+      "sha256": "1f982d7f226ec2833a321dd3e657d84bd6c611aa93b7faa85821c30d9ae7e81e",
+      "readFull": true
+    }
+  ],
+  "scope": "Selected historical code and distribution chat template only; no sourceexecution/currentuserdata"
+}

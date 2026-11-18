@@ -1,0 +1,752 @@
+{
+  "schema": "old-devil-step5-A1-read-coverage/1",
+  "recorded": "2026-11-18T02:35:00.264459+09:00",
+  "fullTextFiles": [
+    {
+      "path": "C:/Users/USER/.codex/AGENTS.md",
+      "lineCountAtReceipt": 153,
+      "readRanges": [
+        [
+          1,
+          153
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "EE26908029BD1ED79797EF5CBD0607DE8A6F3791A33CECCDF74D44F955375EA8"
+    },
+    {
+      "path": "D:/Projects/AGENTS.md",
+      "lineCountAtReceipt": 80,
+      "readRanges": [
+        [
+          1,
+          80
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "3DE241B17279ED824E529C0D37EACC7AFCEEBFCBD7936FACE12215EE245F474C"
+    },
+    {
+      "path": "C:/Users/USER/.agents/skills/skill_LKS_original_plan-execution/SKILL.md",
+      "lineCountAtReceipt": 291,
+      "readRanges": [
+        [
+          1,
+          291
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "95C930A1A0F945395D8C955246BE1DB1416F60CD67F5F7A4E08BEEFA9FC3D94D"
+    },
+    {
+      "path": "C:/Users/USER/.agents/skills/skill_LKS_original_plan-execution/references/policies/feedback_unit_loop.md",
+      "lineCountAtReceipt": 73,
+      "readRanges": [
+        [
+          1,
+          73
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "088CE3E44062071BDBFE925F56B2C174A53D8AB024774EC6B35512B2A426A6DA"
+    },
+    {
+      "path": "C:/Users/USER/.agents/skills/skill_LKS_original_plan-execution/references/record-formats.md",
+      "lineCountAtReceipt": 91,
+      "readRanges": [
+        [
+          1,
+          91
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "A791DFBECF1905410C7EAC3BCAC175017E6030B615B886AEBAD2BFE8980A749A"
+    },
+    {
+      "path": "C:/Users/USER/.agents/skills/skill_LKS_original_multi-session-orchestration/SKILL.md",
+      "lineCountAtReceipt": 292,
+      "readRanges": [
+        [
+          1,
+          292
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "C7234220C74DC7D12EF52F233ABFB0A487B0871C9C56CF10C5F1427E3DE0B32F"
+    },
+    {
+      "path": "C:/Users/USER/.agents/skills/skill_LKS_original_multi-session-orchestration/references/policies/feedback_session_division.md",
+      "lineCountAtReceipt": 102,
+      "readRanges": [
+        [
+          1,
+          102
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "134880AD2A1AF7BA37FD5036A4691A4D321AFD6CBDF82145FE2F827F4ADCB3FD"
+    },
+    {
+      "path": "C:/Users/USER/.agents/skills/skill_LKS_original_multi-session-orchestration/references/model_effort_sample.md",
+      "lineCountAtReceipt": 157,
+      "readRanges": [
+        [
+          1,
+          157
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "E20CAC29760F4220C6F1742382B540FA093441DCC735EB7549B439979EAA64B3"
+    },
+    {
+      "path": "C:/Users/USER/.agents/skills/skill_LKS_original_file-reading/SKILL.md",
+      "lineCountAtReceipt": 20,
+      "readRanges": [
+        [
+          1,
+          20
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "2B066897255FD707F280E10FD93C1A0698C95540BE495BFB03EFBA7088A06597"
+    },
+    {
+      "path": "C:/Users/USER/.agents/skills/skill_LKS_original_file-reading/references/policies/feedback_full_file_read_required.md",
+      "lineCountAtReceipt": 57,
+      "readRanges": [
+        [
+          1,
+          57
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "CA26D047C10A38E63CDB321AEB57180129D3A23458C4B00CDF4E0025AEE1D97C"
+    },
+    {
+      "path": "C:/Users/USER/.agents/skills/skill_LKS_original_session-recovery/SKILL.md",
+      "lineCountAtReceipt": 21,
+      "readRanges": [
+        [
+          1,
+          21
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "3ECFD2EAF6AC85AF46BE71AD4B2AC80DF6D70514F481A73C43E16E0CFDECB7EB"
+    },
+    {
+      "path": "C:/Users/USER/.agents/skills/skill_LKS_original_session-recovery/references/policies/feedback_compaction_recovery.md",
+      "lineCountAtReceipt": 98,
+      "readRanges": [
+        [
+          1,
+          98
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "ED69191279F45D985C6275B416728D484CD69CB1D34ABE2B830C56F24270B7DA"
+    },
+    {
+      "path": "C:/Users/USER/.agents/skills/skill_LKS_original_session-recovery/references/policies/feedback_session_entry_reading.md",
+      "lineCountAtReceipt": 40,
+      "readRanges": [
+        [
+          1,
+          40
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "CACE9B278AFF10B2A35B9430DFDCB687573DB25C42513C37B5F04A1610885E46"
+    },
+    {
+      "path": "C:/Users/USER/.agents/skills/skill_LKS_original_change-control/SKILL.md",
+      "lineCountAtReceipt": 23,
+      "readRanges": [
+        [
+          1,
+          23
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "7E78D5A635815342BABFD0BEFCCB731C040BBA208FDE51CA25B07B7516B9D813"
+    },
+    {
+      "path": "C:/Users/USER/.agents/skills/skill_LKS_original_change-control/references/policies/feedback_change_impact_analysis.md",
+      "lineCountAtReceipt": 65,
+      "readRanges": [
+        [
+          1,
+          65
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "A362C2029790061A7BCA2A52BF52C2D28CD7008375BF61A2A1188A7B944AE1E3"
+    },
+    {
+      "path": "C:/Users/USER/.agents/skills/skill_LKS_original_change-control/references/policies/feedback_code_ownership_scope.md",
+      "lineCountAtReceipt": 83,
+      "readRanges": [
+        [
+          1,
+          83
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "9FDDC52C82121196F7F38877F64DDAAF603DEF4B96F196E2E2E77144865CBA61"
+    },
+    {
+      "path": "C:/Users/USER/.agents/skills/skill_LKS_original_project-scaffold/SKILL.md",
+      "lineCountAtReceipt": 81,
+      "readRanges": [
+        [
+          1,
+          81
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "7920C3E2AB6A16AFA8053F6BF78179F61EB2CC724921BEDE77AA746E33EBDF6D"
+    },
+    {
+      "path": "C:/Users/USER/.agents/skills/skill_LKS_original_project-scaffold/references/policies/feedback_workspace_git_safety.md",
+      "lineCountAtReceipt": 81,
+      "readRanges": [
+        [
+          1,
+          81
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "5D6EF589E835D68E9328F60BED169B4F5CE9A09347507BEA8E4BCA91DE915E66"
+    },
+    {
+      "path": "C:/Users/USER/.agents/skills/skill_LKS_original_communication-decisions/SKILL.md",
+      "lineCountAtReceipt": 21,
+      "readRanges": [
+        [
+          1,
+          21
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "CB4CAD051A7D6A13930C471523ABD2A242BCFB84D6E132CFC569421E5CF921B7"
+    },
+    {
+      "path": "C:/Users/USER/.agents/skills/skill_LKS_original_communication-decisions/references/policies/feedback_communication_style.md",
+      "lineCountAtReceipt": 87,
+      "readRanges": [
+        [
+          1,
+          87
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "CF2973F4215D666D6C72DC7789AA148C84340C0A85C7679009D4F7010E2D2E4D"
+    },
+    {
+      "path": "C:/Users/USER/.agents/skills/skill_LKS_original_communication-decisions/references/policies/feedback_flow_interruption.md",
+      "lineCountAtReceipt": 66,
+      "readRanges": [
+        [
+          1,
+          66
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "DF9B6D1A4DB958DE3D95D9DCE375E2F296A8248366DF3A25CD2C87CBE9F576C7"
+    },
+    {
+      "path": "C:/Users/USER/.agents/skills/skill_LKS_original_communication-decisions/references/policies/feedback_confirmed_items_policy.md",
+      "lineCountAtReceipt": 62,
+      "readRanges": [
+        [
+          1,
+          62
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "8565E80772B6441EC08AEC10FBD2EC2DE734C090CA6C5CC35D73876AAE4CB9A1"
+    },
+    {
+      "path": "C:/Users/USER/.agents/skills/skill_LKS_original_communication-decisions/references/policies/feedback_user_decision_no_requery.md",
+      "lineCountAtReceipt": 46,
+      "readRanges": [
+        [
+          1,
+          46
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "F57AAA8AC8D38E2D39FAA95DD71CD481D9B39693B927F39ED1BF7430AF0E1CDF"
+    },
+    {
+      "path": "C:/Users/USER/.agents/skills/skill_LKS_original_review-chunking/SKILL.md",
+      "lineCountAtReceipt": 138,
+      "readRanges": [
+        [
+          1,
+          138
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "8CE73EC82CC7662A55E5C2386700A5EA1A455EF7F55C3224DD6DEDF37B7778E9"
+    },
+    {
+      "path": "C:/Users/USER/.agents/skills/skill_LKS_original_review-chunking/references/policies/feedback_chunked_review.md",
+      "lineCountAtReceipt": 139,
+      "readRanges": [
+        [
+          1,
+          139
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "FF8807A5304E94F737A4A21FB176BBE51BC16352BE1AF033612C29D3BB074684"
+    },
+    {
+      "path": "C:/Users/USER/.agents/skills/skill_LKS_original_review-chunking/references/policies/feedback_review_chunk_discipline.md",
+      "lineCountAtReceipt": 39,
+      "readRanges": [
+        [
+          1,
+          39
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "0CF3EC9A911B0160B94E4041432BD3916B8105E151D9C26FBABAC2DF9293F9A0"
+    },
+    {
+      "path": "C:/Users/USER/.agents/skills/skill_LKS_original_visual-design/SKILL.md",
+      "lineCountAtReceipt": 97,
+      "readRanges": [
+        [
+          1,
+          97
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "6863CB492D601E87CF6EE5C488EF1B75327D74C740BAA39113A0FBD4422C2047"
+    },
+    {
+      "path": "C:/Users/USER/.agents/skills/skill_LKS_original_visual-design/core_principles.md",
+      "lineCountAtReceipt": 143,
+      "readRanges": [
+        [
+          1,
+          143
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "1EE6B81654D6BF61CF512C6F381E1CDF7D46289055ABD73EE76BE62925FA16AA"
+    },
+    {
+      "path": "C:/Users/USER/.agents/skills/skill_LKS_original_visual-design/accessibility.md",
+      "lineCountAtReceipt": 115,
+      "readRanges": [
+        [
+          1,
+          115
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "97FA4DB93F5EEBD60F3F01EC30A8E7C7CD979BC05D0FE2B5995F025EEB9092D4"
+    },
+    {
+      "path": "C:/Users/USER/.agents/skills/skill_LKS_original_visual-design/verification.md",
+      "lineCountAtReceipt": 50,
+      "readRanges": [
+        [
+          1,
+          50
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "C7C6BBFC8B488C1B6D6FB5353C202ED825C535B3C4EF5AC803BF97D41A738228"
+    },
+    {
+      "path": "C:/Users/USER/.agents/skills/skill_LKS_original_ocr-image-extraction/SKILL.md",
+      "lineCountAtReceipt": 149,
+      "readRanges": [
+        [
+          1,
+          149
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "7A78D30CD79C5BC9A4E5378460EBA32FFAF8BEF3E0BCA8C901172A166F2CDC33"
+    },
+    {
+      "path": "D:/Projects/Project_WF/Codex/results/handoffs/old-reference/step5-prepared-brief.md",
+      "lineCountAtReceipt": 30,
+      "readRanges": [
+        [
+          1,
+          30
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "6CC6C0AFA2C17BC5F03979E3C02471AC50D1A8948747A0A4812873149B8F9A62"
+    },
+    {
+      "path": "D:/Projects/Project_WF/Codex/results/handoffs/old-reference/root-step5-controls.md",
+      "lineCountAtReceipt": 39,
+      "readRanges": [
+        [
+          1,
+          39
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "D91076111D87AB7E1751173C2D5535667E11430D59F50F1536C11E63B48644AC"
+    },
+    {
+      "path": "D:/Projects/Project_WF/Codex/results/handoffs/old-reference/R37-user-message.md",
+      "lineCountAtReceipt": 2,
+      "readRanges": [
+        [
+          1,
+          2
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "AAAAED0FC806A20AF58EE41E474739D75114171FF083C4128CED05CD3B02ECDD"
+    },
+    {
+      "path": "D:/Projects/Project_WF/Codex/plans/2026-11-17-devil-ui-forever-plan.md",
+      "lineCountAtReceipt": 370,
+      "readRanges": [
+        [
+          1,
+          370
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "703AFF3F268D678193ACDB074AAFE8EC6191477AF7A5AAE43D5583DFA6E24D79"
+    },
+    {
+      "path": "D:/Projects/Project_WF/Codex/plans/2026-11-17-devil-ui-forever-phase1.3-세부계획.md",
+      "lineCountAtReceipt": 279,
+      "readRanges": [
+        [
+          1,
+          279
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "DD11E621123EFBE1C162FBB18634AC4A9A2186C79E0AA5130AFCA1CBA4FA56EF"
+    },
+    {
+      "path": "D:/Projects/Project_WF/Codex/results/REQUEST_LEDGER_phase1.3.md",
+      "lineCountAtReceipt": 31,
+      "readRanges": [
+        [
+          1,
+          31
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "C61BB9605B6D0FAA6949191657355AFD68C4A999A540E8AE9FB4704A9625146E"
+    },
+    {
+      "path": "D:/Projects/Project_WF/Codex/docs/old-devil-reference-comparison.md",
+      "lineCountAtReceipt": 192,
+      "readRanges": [
+        [
+          1,
+          192
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "5862C2A5A3837509086F6E8CFEDCC2CD9CE6953ED91703F524EEEE3A688B4EA7"
+    },
+    {
+      "path": "D:/Projects/Project_WF/Codex/results/old-reference/a1-static-source-evidence.md",
+      "lineCountAtReceipt": 60,
+      "readRanges": [
+        [
+          1,
+          60
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "BAEE9D0925540F79CD78DBA60A2E89EF83355CB527A5D1B3A72E918B8B4EA276"
+    },
+    {
+      "path": "D:/Projects/Project_WF/Codex/results/old-reference/a1-r36-source-evidence.md",
+      "lineCountAtReceipt": 118,
+      "readRanges": [
+        [
+          1,
+          118
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "AE86B3AB1E5FF86F8001D91DBA839C265E46451242A476B86169EF8679A980BA"
+    },
+    {
+      "path": "D:/Projects/Project_WF/Codex/docs/forever-clean-chat-research.md",
+      "lineCountAtReceipt": 116,
+      "readRanges": [
+        [
+          1,
+          116
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "AEBE1D00F010A8B9B97893539D1BA92B11042EB49424D49EE029BAC50993ADEB"
+    },
+    {
+      "path": "D:/Projects/Project_WF/Codex/results/old-reference/clean-chat-source-evidence.md",
+      "lineCountAtReceipt": 98,
+      "readRanges": [
+        [
+          1,
+          98
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "3210558838B8F422039941C31D1CAAA31DDA35C64EF4AF8C2E41714A6210FE25"
+    },
+    {
+      "path": "D:/Projects/Project_WF/Codex/results/old-reference/image-observations/findings.md",
+      "lineCountAtReceipt": 426,
+      "readRanges": [
+        [
+          1,
+          426
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "330C9B229F454650C7643E5D5B7579C8E8050E00081B2EB6121BCF2A34BC1DD6"
+    },
+    {
+      "path": "D:/Projects/Project_WF/Codex/results/handoffs/old-reference/acquisition-step5/brief.md",
+      "lineCountAtReceipt": 18,
+      "readRanges": [
+        [
+          1,
+          18
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "72F86523B0C6A7F97E9A2CD9680250B1761197B1AB781C6DD35F3682A74755A0"
+    },
+    {
+      "path": "D:/Projects/Project_WF/Codex/results/handoffs/old-reference/acquisition-step5/work_log.md",
+      "lineCountAtReceipt": 26,
+      "readRanges": [
+        [
+          1,
+          26
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "908E78F35357E675AD38DB34558F8BD46DF6CE1DEE1FA028AB98802ADDD979E7"
+    },
+    {
+      "path": "D:/Projects/Project_WF/Codex/results/handoffs/old-reference/iter_3/image-reader-brief.md",
+      "lineCountAtReceipt": 19,
+      "readRanges": [
+        [
+          1,
+          19
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "878AE32D3E5A23AA84AB0785AC5842F50445A3E7A12CAD958F6F8780E0ECC1AE"
+    },
+    {
+      "path": "D:/Projects/Project_WF/Codex/results/old-devil-layout/asset-observations/findings.md",
+      "lineCountAtReceipt": 328,
+      "readRanges": [
+        [
+          1,
+          328
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "C4B3513CF6E08E93C1CEE500DF0B452EFCD39B20B03C7351FAEF8EF4BF533D6B"
+    },
+    {
+      "path": "D:/Projects/Project_WF/Codex/results/old-devil-layout/asset-observations/work_log.md",
+      "lineCountAtReceipt": 43,
+      "readRanges": [
+        [
+          1,
+          43
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "29C8EF6E6ECEF36C5BCB47BEBB600A2D5B2A5ED42EE6F293252B8CD7B40582F4"
+    },
+    {
+      "path": "D:/Projects/Project_WF/work/old-devil-step5-assets-labr_iq8/prepare-assets.py",
+      "lineCountAtReceipt": 59,
+      "readRanges": [
+        [
+          1,
+          59
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "4C04C2E7B966B70C1CF947D024ED4024E1B6A77552F20ADF0ED30D6859615759"
+    },
+    {
+      "path": "D:/Projects/Project_WF/work/old-reference-collection-0qlzzyxg/extracted-alpha-nsis/Interface/addons/Masque_Onyx/Onyx.lua",
+      "lineCountAtReceipt": 139,
+      "readRanges": [
+        [
+          1,
+          139
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "C0E9EC78F726F158D621BE1D53FCF535E2BE5AADBC15E561046A80FCB71F2BEB"
+    },
+    {
+      "path": "D:/Projects/Project_WF/work/old-reference-collection-0qlzzyxg/extracted-alpha-nsis/Interface/addons/Masque_Onyx/Masque_Onyx.toc",
+      "lineCountAtReceipt": 16,
+      "readRanges": [
+        [
+          1,
+          16
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "29498B541923395143DD3D2C338AEA1BED05A83BAF2419AE989B42715A5E032F"
+    },
+    {
+      "path": "D:/Projects/Project_WF/work/old-reference-collection-0qlzzyxg/extracted-alpha-nsis/Interface/addons/Masque_Onyx/Docs/License.txt",
+      "lineCountAtReceipt": 15,
+      "readRanges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "304233596776407795386928FA14AC896E5A2924F00630CE52B7BF70D251BBA2"
+    },
+    {
+      "path": "D:/Projects/Project_WF/work/old-reference-collection-0qlzzyxg/extracted-alpha-nsis/Interface/addons/Masque_Onyx/Docs/About.txt",
+      "lineCountAtReceipt": 17,
+      "readRanges": [
+        [
+          1,
+          17
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "5E24A613A256484733A46F0076F1B782F6EF5ABB9D1CDB8FFECC5A31D69741EB"
+    },
+    {
+      "path": "D:/Projects/Project_WF/Codex/docs/devil-ui-old-4k-layout.md",
+      "lineCountAtReceipt": 105,
+      "readRanges": [
+        [
+          1,
+          105
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "7A54318D6AAD7EE251706E3D71D62785CC50A0E3653D5C8BA703EEF46B026187"
+    },
+    {
+      "path": "D:/Projects/Project_WF/Codex/results/handoffs/old-reference/iter_3/work_log.md",
+      "lineCountAtReceipt": 79,
+      "readRanges": [
+        [
+          1,
+          79
+        ]
+      ],
+      "method": "directhead-tail fullread restored after final compaction; boundedwindows and actual truncated-middle restoration; ownlog1-67 plus68-79 actualreadback",
+      "SHA256AtReceipt": "0EF2F4D514264B43FF3C7E3FEBA8C1DFF88D041EC9E0933CF4579939C5C6B2EE"
+    }
+  ],
+  "fullTextFileCount": 55,
+  "dataQueries": [
+    {
+      "path": "Codex/results/old-reference/acquisition/literal-settings-compact.json",
+      "domain": "9literalsettings sources;AlphaSPECIALWide8panels/7frames consumed withkeytypes/sourcehash/spans",
+      "wholeProseReadClaim": false,
+      "SHA256AtReceipt": "86F6510DB100B0D1BB21085B86D9DF948AC68F2AC5DD4D369556B342F2848BD3"
+    },
+    {
+      "path": "Codex/results/old-reference/acquisition/r36/x2-selected-subset/x2-four-variant-settings-compact.json",
+      "domain": "20literalsettings4variants;SPECIALW9panels consumed,rawtypedspans queried,rostersnotconsumed",
+      "wholeProseReadClaim": false,
+      "SHA256AtReceipt": "CCC98CBFD9C51C24D7D1F8D4857495619692B6A9F035FF4FED9C38D0C4CDC2A1"
+    },
+    {
+      "path": "Codex/results/old-reference/acquisition/PRIORITY_READY.json",
+      "domain": "schema+actualfourthEntry DOM54/url/hash/dimensions",
+      "wholeProseReadClaim": false,
+      "SHA256AtReceipt": "AF900D8D24920720B7A73ECBF47A4619AEB846332D4F39761D00BC13EFA1FDAC"
+    },
+    {
+      "path": "Codex/results/old-reference/image-observations/coverage.json",
+      "domain": "58refs/56success50hash/2missing;canonicalfindings426readseparately",
+      "wholeProseReadClaim": false,
+      "SHA256AtReceipt": "4FDE8B197427084D8E5F2407B3E48B3814EA1D7F3B7BC672BEA142232201F8D5"
+    },
+    {
+      "path": "Codex/results/old-devil-layout/asset-preparation/asset-inventory.json",
+      "domain": "schema/41sources/23derivatives/4fonts+actualselected7/sourcebefore-after/frozen30checks",
+      "wholeProseReadClaim": false,
+      "SHA256AtReceipt": "5BE22AA9BF51754904C67103E8B922B7E5AEFA8DECC48A08D057DEA9B70FD1A4"
+    },
+    {
+      "path": "Codex/results/old-devil-layout/asset-observations/coverage.json",
+      "domain": "23assetrecords/30mappings/target1/16supplementalactualviews",
+      "wholeProseReadClaim": false,
+      "SHA256AtReceipt": "B4303CAFF1E87ECB824E87CBBFE95FF2054B4BA67ABE8685BB33A5B713D6422A"
+    }
+  ],
+  "authoredJSONValidation": "allcurrentrecords/24elements/68cells/3groups/14roles/24source-settings/7assets/23textchecks consumedby30designgates",
+  "newDirectSourceCodeFiles": [
+    "Onyx.lua139",
+    "Masque_Onyx.toc16"
+  ],
+  "newDirectSourceDocumentFiles": [
+    "License15",
+    "About17"
+  ],
+  "A1ImageViews": 0,
+  "prescribedReader": {
+    "sameIdentity": "/root/old_reference/image_reader",
+    "assetUniqueObserved": 23,
+    "sourcePaths": 30,
+    "targetReobserved": 1,
+    "findingsFullRead": [
+      1,
+      328
+    ]
+  },
+  "recovery": {
+    "event": "actualfinalhandoffcompaction",
+    "rulesAndAssignedFullTextRestored": true,
+    "textFileCount": 55,
+    "ownLogRecoveryLines": [
+      69,
+      79
+    ],
+    "currentRequestRead": [
+      1,
+      31
+    ],
+    "rootControlsRead": [
+      1,
+      39
+    ],
+    "noMaster6Check": true,
+    "noPriorGateReplay": true,
+    "dataQueries": "existing provenance/data queries retained; current contracts/records and saved30G5 consumption restored, not new source execution"
+  },
+  "runtimeModelEffortUsage": "unobserved;configuredroleonly",
+  "limits": [
+    "notall34rawposts/37oldcode re-read",
+    "notnewlayoutvisualacceptance",
+    "currentmain/rootownedrecords canchangeafterreceipt; hashesaremetadataAtReceipt notclaimofexclusiveownership",
+    "Caccessoryscriptpriorstateunverified,Dcopyfull59read/bytecompareonly"
+  ]
+}

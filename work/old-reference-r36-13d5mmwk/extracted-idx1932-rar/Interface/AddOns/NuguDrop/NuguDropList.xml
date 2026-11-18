@@ -1,0 +1,1717 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+	<Script file="NuguDropList_info.lua"/>
+	<Script file="NuguDropList.lua"/>
+
+
+<!-- 타이틀바 -->
+	<Frame name="NuguDropListFrame" toplevel="false" frameStrata="DIALOG" enableMouse="true" movable="true" parent="UIParent" hidden="true">
+		<Size>
+			<AbsDimension x="165" y="30" />
+		</Size>
+		<Anchors>
+			<Anchor point="CENTER">
+				<Offset>
+					<AbsDimension x="0" y="300" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Backdrop name="NuguDropListbackdrop" bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\Tooltips\UI-Tooltip-Border"  tile="true">
+			<BackgroundInsets>
+				<AbsInset left="4" right="4" top="4" bottom="4" />
+			</BackgroundInsets>
+			<TileSize>
+				<AbsValue val="16" />
+			</TileSize>
+			<EdgeSize>
+				<AbsValue val="16" />
+			</EdgeSize>
+		</Backdrop>
+		<Layers>
+			<Layer level="ARTWORK">
+				<Texture name="$parentTopBar" file="Interface\TradeSkillFrame\UI-TradeSkill-SkillBorder">
+					<Size>
+						<AbsDimension x="128" y="8" />
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset>
+								<AbsDimension x="4" y="-24" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+					<TexCoords left="0.1" right="1.0" top="0" bottom="0.25" />
+				</Texture>
+				<FontString name="$parentTitle" inherits="GameFontHighlightLarge" justifyH="LEFT" text="누구드랍 v">
+	 				<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset>
+								<AbsDimension x="10" y="-8" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString inherits="GameFontHighlightLarge" justifyH="LEFT" text="ND_Version">
+	 				<Anchors>
+						<Anchor point="LEFT" relativeTo="NuguDropListFrameTitle" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="1" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="NuguDropTitle" file="Interface\AddOns\NuguDrop\images\NuguDropTitle_Background">
+					<Size>
+						<AbsDimension x="150" y="20" />
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset>
+								<AbsDimension x="5" y="-5" />
+							</Offset>
+						</Anchor>
+						<Anchor point="TOPRIGHT">
+							<Offset>
+								<AbsDimension x="-5" y="-5" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="NuguDropListFrameCloseButton">
+				<Size>
+					<AbsDimension x="16" y="16" />
+				</Size>
+				<Anchors>
+					<Anchor point="TOPRIGHT">
+						<Offset>
+							<AbsDimension x="-6" y="-8" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropListFrameCloseButton_OnClick();</OnClick>
+				</Scripts>
+				<NormalTexture file="Interface\AddOns\NuguDrop\images\CloseButton-Up" />
+				<PushedTexture file="Interface\AddOns\NuguDrop\images\CloseButton-Down" />
+				<HighlightTexture file="Interface\AddOns\NuguDrop\images\Status-Idle" alphaMode="ADD" />
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				this:RegisterEvent("PLAYER_ENTERING_WORLD");
+			</OnLoad>
+			<OnEvent>
+				if (event == "PLAYER_ENTERING_WORLD") then
+					NuguDropListFrame_OnLoad();
+				end
+			</OnEvent>
+			<OnShow>NuguDropListFrame_OnShow();</OnShow>
+			<OnHide>NuguDropListFrame_OnHide();</OnHide>
+			<OnMouseDown>NuguDropListFrame_OnMouseDown(arg1);</OnMouseDown>
+			<OnMouseUp>NuguDropListFrame_OnMouseUp(arg1);</OnMouseUp>
+		</Scripts>
+	</Frame>
+
+<!-- ItemID 조회 버튼 -->
+	<Frame name="ND_ItemID_ButtonFrame" parent="NuguDropListFrame" enableMouse="true" hidden="true" frameStrata="HIGH">
+		<Size>
+			<AbsDimension x="32" y="32"/>
+		</Size>
+		<Anchors>
+			<Anchor point="BOTTOMRIGHT" relativeTo="NuguDropListFrame" relativePoint="BOTTOMLEFT">
+				<Offset>
+					<AbsDimension x="2" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<Button name="ND_ItemID_Button">
+				<Size>
+					<AbsDimension x="32" y="32"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPRIGHT">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture file="Interface\AddOns\NuguDrop\images\ND_ID"/>
+				<PushedTexture file="Interface\AddOns\NuguDrop\images\ND_ID"/>
+				<HighlightTexture alphaMode="ADD" file="Interface\Minimap\UI-Minimap-ZoomButton-Highlight"/>
+				<Scripts>
+					<OnLoad>
+						this:RegisterForClicks("AnyUp");
+						this.tooltip = NUGUDROP_ITEMID_BUTTON_TOOLTIP;
+					</OnLoad>
+					<OnEnter>
+						GameTooltip:SetOwner(this, "ANCHOR_LEFT");
+						GameTooltip:SetText(this.tooltip);
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide();
+					</OnLeave>
+					<OnClick>
+						ND_ItemID_Button_OnClick();
+					</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+
+<!-- 선택 Tab -->
+	<Frame name="NuguDropBorder" movable="true" virtual="true">
+		<Backdrop bgFile="Interface\Tooltips\UI-Tooltip-Background" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+			<EdgeSize>
+				<AbsValue val="16"/>
+			</EdgeSize>
+			<TileSize>
+				<AbsValue val="16"/>
+			</TileSize>
+			<BackgroundInsets>
+				<AbsInset left="5" right="5" top="2" bottom="5"/>
+			</BackgroundInsets>
+		</Backdrop>
+	</Frame>
+
+	<!-- 버튼 모양 색깔 교체 -->
+	<!-- inherits="UIPanelButtonTemplate" -->
+	<Button name="ND_Select1" inherits="NuguDropBorder" parent="NuguDropListFrame">
+		<Size>
+			<AbsDimension x="105" y="30"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPRIGHT" relativeTo="NuguDropListFrame" relativePoint="BOTTOMLEFT">
+				<Offset>
+					<AbsDimension x="4" y="3"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer>
+				<FontString inherits="GameFontHighlightLarge" justifyH="CENTER" text="아제로스">
+					<Anchors>
+						<Anchor point="CENTER"/>
+					</Anchors>
+					<Color r="1" g="1" b="1"/>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnLoad>
+				this:SetBackdropColor(1, 0, 0, 0.8);
+			</OnLoad>
+			<OnEnter>
+				this:SetBackdropColor(0, 0, 1, 0.8);
+				this:RegisterForClicks("LeftButtonUp","RightButtonUp","MiddleButtonUp");
+			</OnEnter>
+			<OnLeave>
+				this:SetBackdropColor(1, 0, 0, 0.8);
+			</OnLeave>
+			<OnClick>
+				ND_OldCheck = NuguDropOption["SelectedTab"]
+				NuguDropOption["SelectedTab"] = 1;
+				ND_FlushZoneList(1);
+				ND_CheckTab();
+				HideUIPanel(NuguDropListFrameZoneList);
+				NuguDropListFrame_OnShow();
+			</OnClick>
+		</Scripts>
+		<!-- <NormalFont inherits="GameFontHighlightLarge"/> -->
+		<!-- <HighlightFont inherits="GameFontGreenLarge"/> -->
+		<!-- <HighlightTexture file="Interface\QuestFrame\UI-QuestTitleHighlight" alphaMode="ADD"/> -->
+	</Button>
+	<Button name="ND_Select2" inherits="NuguDropBorder" parent="NuguDropListFrame">
+		<Size>
+			<AbsDimension x="105" y="30"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT" relativeTo="ND_Select1" relativePoint="BOTTOMLEFT">
+				<Offset>
+					<AbsDimension x="0" y="2"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer>
+				<FontString inherits="GameFontHighlightLarge" justifyH="CENTER" text="아웃랜드">
+					<Anchors>
+						<Anchor point="CENTER"/>
+					</Anchors>
+					<Color r="1" g="1" b="1"/>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnLoad>
+				this:SetBackdropColor(1, 0, 0, 0.8);
+			</OnLoad>
+			<OnEnter>
+				this:SetBackdropColor(0, 0, 1, 0.8);
+				this:RegisterForClicks("LeftButtonUp","RightButtonUp","MiddleButtonUp");
+			</OnEnter>
+			<OnLeave>
+				this:SetBackdropColor(1, 0, 0, 0.8);
+			</OnLeave>
+			<OnClick>
+				ND_OldCheck = NuguDropOption["SelectedTab"]
+				NuguDropOption["SelectedTab"] = 2;
+				ND_FlushZoneList(0);
+				ND_CheckTab();
+				HideUIPanel(NuguDropListFrameZoneList);
+				NuguDropListFrame_OnShow();
+			</OnClick>
+		</Scripts>
+	</Button>
+	<Button name="ND_Select3" inherits="NuguDropBorder" parent="NuguDropListFrame">
+		<Size>
+			<AbsDimension x="105" y="30"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT" relativeTo="ND_Select2" relativePoint="BOTTOMLEFT">
+				<Offset>
+					<AbsDimension x="0" y="2"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer>
+				<FontString inherits="GameFontHighlightLarge" justifyH="CENTER" text="노스렌드">
+					<Anchors>
+						<Anchor point="CENTER"/>
+					</Anchors>
+					<Color r="1" g="1" b="1"/>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnLoad>
+				this:SetBackdropColor(1, 0, 0, 0.8);
+			</OnLoad>
+			<OnEnter>
+				this:SetBackdropColor(0, 0, 1, 0.8);
+				this:RegisterForClicks("LeftButtonUp","RightButtonUp","MiddleButtonUp");
+			</OnEnter>
+			<OnLeave>
+				this:SetBackdropColor(1, 0, 0, 0.8);
+			</OnLeave>
+			<OnClick>
+				ND_OldCheck = NuguDropOption["SelectedTab"]
+				NuguDropOption["SelectedTab"] = 3;
+				ND_FlushZoneList(1);
+				ND_CheckTab();
+				HideUIPanel(NuguDropListFrameZoneList);
+				NuguDropListFrame_OnShow();
+			</OnClick>
+		</Scripts>
+	</Button>
+	<Button name="ND_Select4" inherits="NuguDropBorder" parent="NuguDropListFrame">
+		<Size>
+			<AbsDimension x="105" y="30"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT" relativeTo="ND_Select3" relativePoint="BOTTOMLEFT">
+				<Offset>
+					<AbsDimension x="0" y="-5"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer>
+				<FontString inherits="GameFontHighlightLarge" justifyH="CENTER" text="명예/기타">
+					<Anchors>
+						<Anchor point="CENTER"/>
+					</Anchors>
+					<Color r="1" g="1" b="1"/>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnLoad>
+				this:SetBackdropColor(1, 0.7, 0, 0.8);
+			</OnLoad>
+			<OnEnter>
+				this:SetBackdropColor(0, 0, 1, 0.8);
+				this:RegisterForClicks("LeftButtonUp","RightButtonUp","MiddleButtonUp");
+			</OnEnter>
+			<OnLeave>
+				this:SetBackdropColor(1, 0.7, 0, 0.8);
+			</OnLeave>
+			<OnClick>
+				ND_OldCheck = NuguDropOption["SelectedTab"]
+				NuguDropOption["SelectedTab"] = 4;
+				ND_FlushZoneList(1);
+				ND_CheckTab();
+				HideUIPanel(NuguDropListFrameZoneList);
+				NuguDropListFrame_OnShow();
+			</OnClick>
+		</Scripts>
+	</Button>
+	<Button name="ND_Select5" inherits="NuguDropBorder" parent="NuguDropListFrame">
+		<Size>
+			<AbsDimension x="105" y="30"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT" relativeTo="ND_Select4" relativePoint="BOTTOMLEFT">
+				<Offset>
+					<AbsDimension x="0" y="2"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer>
+				<FontString inherits="GameFontHighlightLarge" justifyH="CENTER" text="평판(아제로스)">
+					<Anchors>
+						<Anchor point="CENTER"/>
+					</Anchors>
+					<Color r="1" g="1" b="1"/>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnLoad>
+				this:SetBackdropColor(0, 0.7, 0.7, 0.8);
+			</OnLoad>
+			<OnEnter>
+				this:SetBackdropColor(0, 0, 1, 0.8);
+				this:RegisterForClicks("LeftButtonUp","RightButtonUp","MiddleButtonUp");
+			</OnEnter>
+			<OnLeave>
+				this:SetBackdropColor(0, 0.7, 0.7, 0.8);
+			</OnLeave>
+			<OnClick>
+				ND_OldCheck = NuguDropOption["SelectedTab"]
+				NuguDropOption["SelectedTab"] = 5;
+				ND_FlushZoneList(1);
+				ND_CheckTab();
+				HideUIPanel(NuguDropListFrameZoneList);
+				NuguDropListFrame_OnShow();
+			</OnClick>
+		</Scripts>
+	</Button>
+	<Button name="ND_Select6" inherits="NuguDropBorder" parent="NuguDropListFrame">
+		<Size>
+			<AbsDimension x="105" y="30"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT" relativeTo="ND_Select5" relativePoint="BOTTOMLEFT">
+				<Offset>
+					<AbsDimension x="0" y="2"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer>
+				<FontString inherits="GameFontHighlightLarge" justifyH="CENTER" text="평판(아웃랜드)">
+					<Anchors>
+						<Anchor point="CENTER"/>
+					</Anchors>
+					<Color r="1" g="1" b="1"/>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnLoad>
+				this:SetBackdropColor(0, 0.7, 0.7, 0.8);
+			</OnLoad>
+			<OnEnter>
+				this:SetBackdropColor(0, 0, 1, 0.8);
+				this:RegisterForClicks("LeftButtonUp","RightButtonUp","MiddleButtonUp");
+			</OnEnter>
+			<OnLeave>
+				this:SetBackdropColor(0, 0.7, 0.7, 0.8);
+			</OnLeave>
+			<OnClick>
+				ND_OldCheck = NuguDropOption["SelectedTab"]
+				NuguDropOption["SelectedTab"] = 6;
+				ND_FlushZoneList(1);
+				ND_CheckTab();
+				HideUIPanel(NuguDropListFrameZoneList);
+				NuguDropListFrame_OnShow();
+			</OnClick>
+		</Scripts>
+	</Button>
+	<Button name="ND_Select7" inherits="NuguDropBorder" parent="NuguDropListFrame">
+		<Size>
+			<AbsDimension x="105" y="30"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT" relativeTo="ND_Select6" relativePoint="BOTTOMLEFT">
+				<Offset>
+					<AbsDimension x="0" y="2"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer>
+				<FontString inherits="GameFontHighlightLarge" justifyH="CENTER" text="평판(노스렌드)">
+					<Anchors>
+						<Anchor point="CENTER"/>
+					</Anchors>
+					<Color r="1" g="1" b="1"/>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnLoad>
+				this:SetBackdropColor(0, 0.7, 0.7, 0.8);
+			</OnLoad>
+			<OnEnter>
+				this:SetBackdropColor(0, 0, 1, 0.8);
+				this:RegisterForClicks("LeftButtonUp","RightButtonUp","MiddleButtonUp");
+			</OnEnter>
+			<OnLeave>
+				this:SetBackdropColor(0, 0.7, 0.7, 0.8);
+			</OnLeave>
+			<OnClick>
+				ND_OldCheck = NuguDropOption["SelectedTab"]
+				NuguDropOption["SelectedTab"] = 7;
+				ND_FlushZoneList(1);
+				ND_CheckTab();
+				HideUIPanel(NuguDropListFrameZoneList);
+				NuguDropListFrame_OnShow();
+			</OnClick>
+		</Scripts>
+	</Button>
+	<Button name="ND_Select8" inherits="NuguDropBorder" parent="NuguDropListFrame">
+		<Size>
+			<AbsDimension x="105" y="30"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT" relativeTo="ND_Select7" relativePoint="BOTTOMLEFT">
+				<Offset>
+					<AbsDimension x="0" y="2"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer>
+				<FontString inherits="GameFontHighlightLarge" justifyH="CENTER" text="보석/전문기술">
+					<Anchors>
+						<Anchor point="CENTER"/>
+					</Anchors>
+					<Color r="1" g="1" b="1"/>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnLoad>
+				this:SetBackdropColor(0, 0.2, 1, 0.8);
+			</OnLoad>
+			<OnEnter>
+				this:SetBackdropColor(0, 0, 1, 0.8);
+				this:RegisterForClicks("LeftButtonUp","RightButtonUp","MiddleButtonUp");
+			</OnEnter>
+			<OnLeave>
+				this:SetBackdropColor(0, 0.2, 1, 0.8);
+			</OnLeave>
+			<OnClick>
+				ND_OldCheck = NuguDropOption["SelectedTab"]
+				NuguDropOption["SelectedTab"] = 8;
+				ND_FlushZoneList(1);
+				ND_CheckTab();
+				HideUIPanel(NuguDropListFrameZoneList);
+				NuguDropListFrame_OnShow();
+			</OnClick>
+		</Scripts>
+	</Button>
+	<Button name="ND_Select9" inherits="NuguDropBorder" parent="NuguDropListFrame">
+		<Size>
+			<AbsDimension x="105" y="30"/>
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT" relativeTo="ND_Select8" relativePoint="BOTTOMLEFT">
+				<Offset>
+					<AbsDimension x="0" y="2"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer>
+				<FontString inherits="GameFontHighlightLarge" justifyH="CENTER" text="즐겨찾기">
+					<Anchors>
+						<Anchor point="CENTER"/>
+					</Anchors>
+					<Color r="1" g="1" b="1"/>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnLoad>
+				this:SetBackdropColor(0, 1, 0, 0.8);
+			</OnLoad>
+			<OnEnter>
+				this:SetBackdropColor(0, 0, 1, 0.8);
+				this:RegisterForClicks("LeftButtonUp","RightButtonUp","MiddleButtonUp");
+			</OnEnter>
+			<OnLeave>
+				this:SetBackdropColor(0, 1, 0, 0.8);
+			</OnLeave>
+			<OnClick>
+				ND_Favorites();
+			</OnClick>
+		</Scripts>
+	</Button>
+
+<!-- 각 리스트 Title 버튼 템플릿 (존) -->
+	<Button name = "NuguDropListTemplateTitle" virtual="true">
+		<Size>
+			<AbsDimension x="155" y="18" />
+		</Size>
+		<Layers>
+			<Layer level="ARTWORK">
+				<Texture name="NuguDropTitle" file="Interface\AddOns\NuguDrop\images\ND_Smooth">
+					<Size>
+						<AbsDimension x="155" y="18" />
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+						<Anchor point="TOPRIGHT">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parent_Text" inherits="GameFontHighlightLarge" wraponspaces="false" justifyH="LEFT">
+					<Size>
+						<AbsDimension x="155" y="18"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT">
+							<Offset>
+								<AbsDimension x="5" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+					<Color r="0.9" g="0.9" b="0.9"/>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnMouseDown>NuguDropListFrame_OnMouseDown(arg1);</OnMouseDown>
+			<OnMouseUp>NuguDropListFrame_OnMouseUp(arg1);</OnMouseUp>
+		</Scripts>
+<!-- 	alphaModes and their meaning:
+		"DISABLE" - opaque texture
+		"BLEND" - normal painting on top of the background, obeying alpha channels if set (?)
+		"ALPHAKEY" - 1-bit alpha
+		"ADD" - additive blend
+		"MOD" - modulating blend
+-->
+		<!-- 파일명 일부러 오타냄(녹색빛) -->
+ 		<HighlightTexture file="Interface\AddOns\NuguDrop\images\ND_" alphaMode="MOD"/>
+	</Button>
+
+<!-- 각 리스트 내용을 버튼처럼 동작하게끔 만든 템플릿 (존) -->
+	<Button name = "NuguDropListTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="155" y="18" />
+		</Size>
+		<Layers>
+			<Layer level = "BACKGROUND">
+				<FontString name="$parent_Text" inherits="GameFontHighlightLarge" wraponspaces="false" justifyH="LEFT">
+					<Size>
+						<AbsDimension x="160" y="18"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT">
+							<Offset>
+								<AbsDimension x="5" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+					<Color r="0.9" g="0.9" b="0.9"/>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnMouseDown>NuguDropListFrame_OnMouseDown(arg1);</OnMouseDown>
+			<OnMouseUp>NuguDropListFrame_OnMouseUp(arg1);</OnMouseUp>
+		</Scripts>
+		<HighlightTexture file="Interface\QuestFrame\UI-QuestTitleHighlight" alphaMode="ADD"/>
+	</Button>
+
+<!-- 각 리스트 내용을 버튼처럼 동작하게끔 만든 템플릿 (몹) -->
+	<Button name = "NuguDropListTemplate1" virtual="true">
+ 		<Size>
+			<AbsDimension x="300" y="18" />
+		</Size>
+		<Layers>
+			<Layer level = "BACKGROUND">
+				<FontString name="$parent_Text" inherits="GameFontHighlightLarge" wraponspaces="false" justifyH="LEFT">
+					<Size>
+						<AbsDimension x="300" y="18"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT">
+							<Offset>
+								<AbsDimension x="5" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+					<Color r="0.9" g="0.9" b="0.9"/>
+				</FontString>
+			</Layer>
+		</Layers>
+		<HighlightTexture file="Interface\QuestFrame\UI-QuestTitleHighlight" alphaMode="ADD"/>
+	</Button>
+
+<!-- 각 리스트 내용을 버튼처럼 동작하게끔 만든 템플릿 (아이템) -->
+	<Button name = "NuguDropListTemplate2" virtual="true">
+		<Size>
+			<AbsDimension x="370" y="18" />
+		</Size>
+		<Layers>
+			<Layer level = "BACKGROUND">
+				<FontString name="$parent_Text" inherits="GameFontHighlightLarge" wraponspaces="false" justifyH="LEFT">
+					<Size>
+						<AbsDimension x="365" y="18"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT">
+							<Offset>
+								<AbsDimension x="5" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+					<Color r="0.9" g="0.9" b="0.9"/>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnLoad>
+				this:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+			</OnLoad>
+		</Scripts>
+	</Button>
+
+<!-- 링크아이템의 아이콘 -->
+	<Frame name="NuguDropTooltipIcon" toplevel="true" frameStrata="DIALOG" parent="UIParent" hidden="true">
+		<Size>
+			<AbsDimension x="36" y="36"/>
+		</Size>
+		<Anchors>
+ 			<Anchor point="TOPLEFT">
+ 				<Offset>
+ 					<AbsDimension x="0" y="0"/>
+ 				</Offset>
+ 			</Anchor>
+ 		</Anchors>
+		<Layers>
+			<Layer level="ARTWORK">
+				<Texture name="$parentTexture" file="Interface\Icons\INV_Misc_QuestionMark">
+					<Size>
+						<AbsDimension x="36" y="36"/>
+					</Size>
+					<Anchors>
+						<Anchor point="BOTTOMLEFT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+	</Frame>
+
+
+<!-- 1. 인던 리스트 -->
+ 	<Frame name="NuguDropListFrameZoneList" toplevel="false" parent="NuguDropListFrame" hidden="true">
+		<Size>
+			<AbsDimension x="165" y="374"/>
+		</Size>
+		<Anchors>
+ 			<Anchor point="TOPLEFT" relativeTo="NuguDropListFrame" relativePoint="BOTTOMLEFT">
+ 				<Offset>
+ 					<AbsDimension x="0" y="3"/>
+ 				</Offset>
+ 			</Anchor>
+ 		</Anchors>
+		<Backdrop name="NuguDropListFrameZoneList" bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+			<BackgroundInsets>
+				<AbsInset left="4" right="4" top="4" bottom="4"/>
+			</BackgroundInsets>
+			<TileSize>
+				<AbsValue val="16"/>
+			</TileSize>
+			<EdgeSize>
+				<AbsValue val="16"/>
+			</EdgeSize>
+		</Backdrop>
+		<Frames>
+			<Button name="NuguDropZoneTitle1" inherits="NuguDropListTemplateTitle" hidden="true"></Button>
+			<Button name="NuguDropZoneTitle2" inherits="NuguDropListTemplateTitle" hidden="true"></Button>
+			<Button name="NuguDropZoneTitle3" inherits="NuguDropListTemplateTitle" hidden="true"></Button>
+			<Button name="NuguDropZoneTitle4" inherits="NuguDropListTemplateTitle" hidden="true"></Button>
+			<Button name="NuguDropZoneTitle5" inherits="NuguDropListTemplateTitle" hidden="true"></Button>
+			<Button name="NuguDropZoneTitle6" inherits="NuguDropListTemplateTitle" hidden="true"></Button>
+			<Button name="NuguDropZoneTitle7" inherits="NuguDropListTemplateTitle" hidden="true"></Button>
+			<Button name="NuguDropZone1" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone2" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone3" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone4" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone5" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone6" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone7" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone8" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone9" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone10" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone11" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone12" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone13" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone14" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone15" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone16" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone17" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone18" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone19" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone20" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone21" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone22" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone23" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone24" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone25" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone26" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone27" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone28" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone29" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone30" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone31" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone32" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone33" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone34" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone35" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone36" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone37" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone38" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone39" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone40" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone41" inherits="NuguDropListTemplate" hidden="true"></Button>
+			<Button name="NuguDropZone42" inherits="NuguDropListTemplate" hidden="true"></Button>
+		</Frames>
+	</Frame>
+
+
+<!-- 2. 드랍몹 리스트 -->
+	<Frame name="NuguDropListFrameMobList" toplevel="false" parent="NuguDropListFrameZoneList" hidden="true">
+		<Size>
+			<AbsDimension x="305" y="150"/>
+		</Size>
+		<Anchors>
+ 			<Anchor point="TOPLEFT" relativeTo="NuguDropListFrameZoneList" relativePoint="TOPRIGHT">
+ 				<Offset>
+ 					<AbsDimension x="-3" y="0"/>
+ 				</Offset>
+ 			</Anchor>
+ 		</Anchors>
+		<Backdrop name="NuguDropListFrameMobList" bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+			<BackgroundInsets>
+				<AbsInset left="4" right="4" top="4" bottom="4"/>
+			</BackgroundInsets>
+			<TileSize>
+				<AbsValue val="16"/>
+			</TileSize>
+			<EdgeSize>
+				<AbsValue val="16"/>
+			</EdgeSize>
+		</Backdrop>
+		<Frames>
+			<Button name="NuguDropMob1" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropListFrameMobList" relativePoint="TOPLEFT">
+						<Offset><AbsDimension x="5" y="-10"/></Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(1);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob2" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob1" relativePoint="BOTTOMLEFT"/>
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(2);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob3" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob2" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(3);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob4" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob3" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(4);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob5" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob4" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(5);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob6" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob5" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(6);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob7" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob6" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(7);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob8" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob7" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(8);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob9" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob8" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(9);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob10" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob9" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(10);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob11" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob10" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(11);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob12" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob11" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(12);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob13" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob12" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(13);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob14" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob13" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(14);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob15" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob14" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(15);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob16" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob15" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(16);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob17" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob16" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(17);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob18" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob17" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(18);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob19" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob18" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(19);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob20" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob19" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(20);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob21" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob20" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(21);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob22" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob21" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(22);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob23" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob22" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(23);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob24" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob23" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(24);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob25" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob24" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(25);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob26" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob25" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(26);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob27" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob26" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(27);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob28" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob27" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(28);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob29" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob28" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(29);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob30" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob29" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(30);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob31" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob30" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(31);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob32" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob31" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(32);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob33" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob32" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(33);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob34" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob33" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(34);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob35" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob34" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(35);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob36" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob35" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(36);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob37" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob36" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(37);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob38" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob37" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(38);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob39" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob38" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(39);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob40" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob39" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(40);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob41" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob40" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(41);</OnClick></Scripts>
+			</Button>
+			<Button name="NuguDropMob42" inherits="NuguDropListTemplate1" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropMob41" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts><OnClick>NuguDropMobButton_OnClick(42);</OnClick></Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+
+
+<!-- 3. 아이템 리스트 -->
+	<Frame name="NuguDropListFrameItemList" toplevel="false" parent="NuguDropListFrameMobList" hidden="true">
+		<Size>
+			<AbsDimension x="375" y="150"/>
+		</Size>
+		<Anchors>
+ 			<Anchor point="TOPLEFT" relativeTo="NuguDropListFrameMobList" relativePoint="TOPRIGHT">
+ 				<Offset>
+ 					<AbsDimension x="-3" y="0"/>
+ 				</Offset>
+ 			</Anchor>
+ 		</Anchors>
+		<Backdrop name="NuguDropListFrameItemList" bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+			<BackgroundInsets>
+				<AbsInset left="4" right="4" top="4" bottom="4"/>
+			</BackgroundInsets>
+			<TileSize>
+				<AbsValue val="16"/>
+			</TileSize>
+			<EdgeSize>
+				<AbsValue val="16"/>
+			</EdgeSize>
+		</Backdrop>
+		<Frames>
+			<Button name="NuguDropItem1" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropListFrameItemList" relativePoint="TOPLEFT">
+						<Offset><AbsDimension x="3" y="-10" /> </Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 1);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(1);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem2" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem1" relativePoint="BOTTOMLEFT"/>
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 2);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(2);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem3" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem2" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 3);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(3);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem4" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem3" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 4);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(4);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem5" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem4" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 5);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(5);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem6" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem5" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 6);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(6);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem7" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem6" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 7);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(7);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem8" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem7" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 8);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(8);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem9" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem8" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 9);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(9);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem10" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem9" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 10);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(10);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem11" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem10" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 11);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(11);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem12" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem11" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 12);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(12);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem13" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem12" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 13);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(13);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem14" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem13" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 14);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(14);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem15" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem14" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 15);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(15);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem16" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem15" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 16);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(16);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem17" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem16" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 17);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(17);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem18" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem17" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 18);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(18);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem19" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem18" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 19);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(19);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem20" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem19" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 20);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(20);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem21" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem20" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 21);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(21);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem22" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem21" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 22);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(22);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem23" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem22" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 23);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(23);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem24" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem23" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 24);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(24);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem25" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem24" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 25);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(25);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem26" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem25" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 26);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(26);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem27" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem26" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 27);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(27);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem28" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem27" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 28);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(28);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem29" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem28" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 29);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(29);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem30" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem29" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 30);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(30);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem31" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem30" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 31);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(31);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem32" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem31" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 32);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(32);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem33" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem32" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 33);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(33);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem34" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem33" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 34);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(34);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem35" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem34" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 35);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(35);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem36" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem35" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 36);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(36);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem37" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem36" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 37);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(37);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+
+
+			<Button name="NuguDropItem38" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem37" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 38);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(38);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem39" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem38" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 39);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(39);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem40" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem39" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 40);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(40);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem41" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem40" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 41);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(41);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem42" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem41" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 42);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(42);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem43" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem42" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 43);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(43);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem44" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem43" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 44);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(44);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem45" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem44" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 45);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(45);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem46" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem45" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 46);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(46);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem47" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem46" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 47);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(47);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem48" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem47" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 48);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(48);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem49" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem48" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 49);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(49);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+			<Button name="NuguDropItem50" inherits="NuguDropListTemplate2" hidden="true">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="NuguDropItem49" relativePoint="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>NuguDropItemButton_OnClick(arg1, 50);</OnClick>
+					<OnEnter>NuguDropItemButton_OnEnter(50);</OnEnter>
+					<OnLeave>NuguDropItemButton_OnLeave();</OnLeave>
+				</Scripts>
+			</Button>
+
+		</Frames>
+	</Frame>
+
+<!-- 랜덤 접두어 아이템 여러개 표시하기 위해여 -->
+	<GameTooltip name="NuguDropGameTooltip2" inherits="GameTooltipTemplate" parent="UIParent" toplevel="true" frameStrata="TOOLTIP" hidden="true">
+		<Anchors>
+			<Anchor point="TOPLEFT" relativeTo="GameTooltip" relativePoint="BOTTOMLEFT">
+				<Offset>
+					<AbsDimension x="0" y="3"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+	</GameTooltip>
+	<GameTooltip name="NuguDropGameTooltip3" inherits="GameTooltipTemplate" parent="UIParent" toplevel="true" frameStrata="TOOLTIP" hidden="true">
+		<Anchors>
+			<Anchor point="TOPLEFT" relativeTo="NuguDropGameTooltip2" relativePoint="BOTTOMLEFT">
+				<Offset>
+					<AbsDimension x="0" y="3"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+	</GameTooltip>
+	<GameTooltip name="NuguDropGameTooltip4" inherits="GameTooltipTemplate" parent="UIParent" toplevel="true" frameStrata="TOOLTIP" hidden="true">
+		<Anchors>
+			<Anchor point="TOPLEFT" relativeTo="NuguDropGameTooltip3" relativePoint="BOTTOMLEFT">
+				<Offset>
+					<AbsDimension x="0" y="3"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+	</GameTooltip>
+<!--
+	<Frame name="NDDressFrame" enableMouse="true" movable="true" resizable="true" parent="UIParent" hidden="true" frameStrata="HIGH">
+		<Size>
+			<AbsDimension x="384" y="440"/>
+		</Size>
+		<Anchors>
+			<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT">
+				<Offset>
+					<AbsDimension x="-10" y="10"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+
+		<Backdrop bgFile="Interface\ChatFrame\ChatFrameBackground" edgeFile="Interface\ChatFrame\ChatFrameBackground" tile="false">
+			<BackgroundInsets>
+				<AbsInset left="0" right="0" top="0" bottom="0" />
+			</BackgroundInsets>
+			<EdgeSize>
+				<AbsValue val="2" />
+			</EdgeSize>
+		</Backdrop>
+
+		<Frames>
+			<Button name="$parentCloseButton" inherits="UIPanelCloseButton">
+				<Anchors>
+					<Anchor point="CENTER" relativePoint="TOPRIGHT">
+						<Offset x="-46" y="-25"/>
+					</Anchor>
+				</Anchors>
+			</Button>
+
+			<PlayerModel name="NuguDropModel" scale="2.0">
+				<Size x="320" y="354"/>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parent">
+						<Offset><AbsDimension x="11" y="-10"/></Offset>
+					</Anchor>
+					<Anchor point="BOTTOMRIGHT" relativeTo="$parent">
+						<Offset><AbsDimension x="-10" y="11"/></Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnUpdate>
+						NDDress_OnUpdate(self,elapsed);
+					</OnUpdate>
+					<OnMouseDown>
+						NDDress_OnMouseDown(self);
+					</OnMouseDown>
+					<OnMouseUp>
+						NDDress_OnMouseUp(self);
+					</OnMouseUp>
+					<OnMouseWheel>
+						NDDress_OnMouseWheel(self);
+					</OnMouseWheel>
+				</Scripts>
+			</PlayerModel>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				this:SetBackdropBorderColor(0.15, 0.15, 0.15, 1);
+				this:SetBackdropColor(0, 0, 0, 1);
+			</OnLoad>
+			<OnUpdate>NDDress_OnUpdate();</OnUpdate>
+			<OnEvent>NDDress_OnEvent();</OnEvent>
+			<OnMouseUp>NDDress_OnMouseUp();</OnMouseUp>
+			<OnMouseDown>NDDress_OnMouseDown();</OnMouseDown>
+			<OnDragStart>NDDress_OnDragStart();</OnDragStart>
+			<OnDragStop>NDDress_OnDragStop();</OnDragStop>
+		</Scripts>
+	</Frame>
+-->
+</Ui>

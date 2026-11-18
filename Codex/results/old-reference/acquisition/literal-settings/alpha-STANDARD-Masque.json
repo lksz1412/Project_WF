@@ -1,0 +1,543 @@
+{
+  "source": {
+    "id": "alpha-STANDARD-Masque",
+    "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\alpha-nsis-members.json",
+    "inventoryIndex0": 2044,
+    "sourceSuffix": "var/STANDARD/Interface/AddOns/!DevilUI/Profile/Masque.lua",
+    "SHA256": "98E1DA4FAE28A2FF5EDE3A5E14857D76DAFDF93DD0970D788704EA638D45E734",
+    "sourceBytes": 1464,
+    "encoding": "utf-8-sig",
+    "decodeAttempts": [],
+    "sourceLines": 74,
+    "state": "parsed-fully",
+    "literalTokens": 335,
+    "consumedTokens": 335,
+    "duplicates": [],
+    "schemas": [
+      {
+        "rootAssignment": "MasqueDB",
+        "type": "dict",
+        "rootSpan": [
+          2,
+          74
+        ],
+        "topKeys": [
+          "namespaces",
+          "profileKeys",
+          "profiles"
+        ],
+        "topKeyCount": 3,
+        "profilesCount": 2,
+        "profilesKeys": [
+          "Normal",
+          "Wide"
+        ],
+        "profileKeysCount": 0,
+        "profileKeysKeys": []
+      }
+    ]
+  },
+  "selection": "Entire profiles subtree plus entire global/layouts,global/artwork,global/version if present. profileKeys mappings excluded; no profile/frame/layout subset chosen.",
+  "typedSettings": {
+    "MasqueDB": {
+      "luaTableEntries": [
+        {
+          "keyType": "str",
+          "key": "profiles",
+          "value": {
+            "luaTableEntries": [
+              {
+                "keyType": "str",
+                "key": "Normal",
+                "value": {
+                  "luaTableEntries": [
+                    {
+                      "keyType": "str",
+                      "key": "Groups",
+                      "value": {
+                        "luaTableEntries": [
+                          {
+                            "keyType": "str",
+                            "key": "Dominos_Bag Bar",
+                            "value": {
+                              "luaTableEntries": [
+                                {
+                                  "keyType": "str",
+                                  "key": "Gloss",
+                                  "value": 1
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "Inherit",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "SkinID",
+                                  "value": "Onyx"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "Dominos_Action Bar",
+                            "value": {
+                              "luaTableEntries": [
+                                {
+                                  "keyType": "str",
+                                  "key": "Gloss",
+                                  "value": 1
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "Inherit",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "SkinID",
+                                  "value": "Onyx"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "Dominos_Pet Bar",
+                            "value": {
+                              "luaTableEntries": [
+                                {
+                                  "keyType": "str",
+                                  "key": "Gloss",
+                                  "value": 1
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "Inherit",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "SkinID",
+                                  "value": "Onyx"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "Dominos",
+                            "value": {
+                              "luaTableEntries": [
+                                {
+                                  "keyType": "str",
+                                  "key": "Gloss",
+                                  "value": 1
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "Inherit",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "SkinID",
+                                  "value": "Onyx"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "Dominos_Class Bar",
+                            "value": {
+                              "luaTableEntries": [
+                                {
+                                  "keyType": "str",
+                                  "key": "Gloss",
+                                  "value": 1
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "Inherit",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "SkinID",
+                                  "value": "Onyx"
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "keyType": "str",
+                "key": "Wide",
+                "value": {
+                  "luaTableEntries": [
+                    {
+                      "keyType": "str",
+                      "key": "Groups",
+                      "value": {
+                        "luaTableEntries": [
+                          {
+                            "keyType": "str",
+                            "key": "Dominos_Bag Bar",
+                            "value": {
+                              "luaTableEntries": [
+                                {
+                                  "keyType": "str",
+                                  "key": "Inherit",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "Gloss",
+                                  "value": 1
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "SkinID",
+                                  "value": "Onyx"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "Dominos_Action Bar",
+                            "value": {
+                              "luaTableEntries": [
+                                {
+                                  "keyType": "str",
+                                  "key": "Inherit",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "Gloss",
+                                  "value": 1
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "SkinID",
+                                  "value": "Onyx"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "Dominos_Pet Bar",
+                            "value": {
+                              "luaTableEntries": [
+                                {
+                                  "keyType": "str",
+                                  "key": "Inherit",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "Gloss",
+                                  "value": 1
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "SkinID",
+                                  "value": "Onyx"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "Dominos_Pet Battle Buttons",
+                            "value": {
+                              "luaTableEntries": [
+                                {
+                                  "keyType": "str",
+                                  "key": "Inherit",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "Gloss",
+                                  "value": 1
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "SkinID",
+                                  "value": "Onyx"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "Dominos",
+                            "value": {
+                              "luaTableEntries": [
+                                {
+                                  "keyType": "str",
+                                  "key": "Inherit",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "Gloss",
+                                  "value": 1
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "SkinID",
+                                  "value": "Onyx"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "Dominos_Class Bar",
+                            "value": {
+                              "luaTableEntries": [
+                                {
+                                  "keyType": "str",
+                                  "key": "Inherit",
+                                  "value": false
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "Gloss",
+                                  "value": 1
+                                },
+                                {
+                                  "keyType": "str",
+                                  "key": "SkinID",
+                                  "value": "Onyx"
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "profileFrameIndex": [
+    {
+      "profileName": "Normal",
+      "sourcePath": [
+        "MasqueDB",
+        "profiles",
+        "Normal"
+      ],
+      "span": [
+        10,
+        38
+      ],
+      "profileKeySet": [
+        "Groups"
+      ]
+    },
+    {
+      "profileName": "Wide",
+      "sourcePath": [
+        "MasqueDB",
+        "profiles",
+        "Wide"
+      ],
+      "span": [
+        39,
+        72
+      ],
+      "profileKeySet": [
+        "Groups"
+      ]
+    }
+  ],
+  "layoutIndex": [],
+  "activeLayoutLiterals": [],
+  "mediaLiterals": [
+    {
+      "path": [
+        "MasqueDB",
+        "profiles",
+        "Normal",
+        "Groups",
+        "Dominos_Bag Bar",
+        "SkinID"
+      ],
+      "literal": "Onyx",
+      "span": [
+        15,
+        15
+      ]
+    },
+    {
+      "path": [
+        "MasqueDB",
+        "profiles",
+        "Normal",
+        "Groups",
+        "Dominos_Action Bar",
+        "SkinID"
+      ],
+      "literal": "Onyx",
+      "span": [
+        20,
+        20
+      ]
+    },
+    {
+      "path": [
+        "MasqueDB",
+        "profiles",
+        "Normal",
+        "Groups",
+        "Dominos_Pet Bar",
+        "SkinID"
+      ],
+      "literal": "Onyx",
+      "span": [
+        25,
+        25
+      ]
+    },
+    {
+      "path": [
+        "MasqueDB",
+        "profiles",
+        "Normal",
+        "Groups",
+        "Dominos",
+        "SkinID"
+      ],
+      "literal": "Onyx",
+      "span": [
+        30,
+        30
+      ]
+    },
+    {
+      "path": [
+        "MasqueDB",
+        "profiles",
+        "Normal",
+        "Groups",
+        "Dominos_Class Bar",
+        "SkinID"
+      ],
+      "literal": "Onyx",
+      "span": [
+        35,
+        35
+      ]
+    },
+    {
+      "path": [
+        "MasqueDB",
+        "profiles",
+        "Wide",
+        "Groups",
+        "Dominos_Bag Bar",
+        "SkinID"
+      ],
+      "literal": "Onyx",
+      "span": [
+        44,
+        44
+      ]
+    },
+    {
+      "path": [
+        "MasqueDB",
+        "profiles",
+        "Wide",
+        "Groups",
+        "Dominos_Action Bar",
+        "SkinID"
+      ],
+      "literal": "Onyx",
+      "span": [
+        49,
+        49
+      ]
+    },
+    {
+      "path": [
+        "MasqueDB",
+        "profiles",
+        "Wide",
+        "Groups",
+        "Dominos_Pet Bar",
+        "SkinID"
+      ],
+      "literal": "Onyx",
+      "span": [
+        54,
+        54
+      ]
+    },
+    {
+      "path": [
+        "MasqueDB",
+        "profiles",
+        "Wide",
+        "Groups",
+        "Dominos_Pet Battle Buttons",
+        "SkinID"
+      ],
+      "literal": "Onyx",
+      "span": [
+        59,
+        59
+      ]
+    },
+    {
+      "path": [
+        "MasqueDB",
+        "profiles",
+        "Wide",
+        "Groups",
+        "Dominos",
+        "SkinID"
+      ],
+      "literal": "Onyx",
+      "span": [
+        64,
+        64
+      ]
+    },
+    {
+      "path": [
+        "MasqueDB",
+        "profiles",
+        "Wide",
+        "Groups",
+        "Dominos_Class Bar",
+        "SkinID"
+      ],
+      "literal": "Onyx",
+      "span": [
+        69,
+        69
+      ]
+    }
+  ],
+  "fullTypedSourceCache": "D:\\Projects\\Project_WF\\work\\old-reference-collection-6jz2o93e\\literal-tables-full-typed.json",
+  "keyEncoding": "luaTableEntries preserves keyType/key/value, including integer/string distinction."
+}

@@ -1,0 +1,406 @@
+------------------------------------------------------------------------
+r176 | azelkeeber | 2009-08-22 11:25:43 +0000 (Sat, 22 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/WotLK/Coliseum.lua
+
+-Add Debuff(Faction Champions): Fear
+------------------------------------------------------------------------
+r175 | azelkeeber | 2009-08-22 11:19:21 +0000 (Sat, 22 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/WotLK/Ulduar.lua
+
+-Remove(Ulduar) unstable flames
+------------------------------------------------------------------------
+r174 | azelkeeber | 2009-08-22 11:13:18 +0000 (Sat, 22 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/WotLK/Naxxramas.lua
+   M /trunk/WotLK/Ulduar.lua
+
+-change some debuffs
+------------------------------------------------------------------------
+r173 | azelkeeber | 2009-08-22 11:03:03 +0000 (Sat, 22 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/BC/BlackTemple.lua
+   M /trunk/BC/Karazhan.lua
+   M /trunk/BC/Serpent.lua
+   M /trunk/BC/Sunwell.lua
+   M /trunk/BC/Zulaman.lua
+   M /trunk/WotLK/Coliseum.lua
+   M /trunk/WotLK/Naxxramas.lua
+   M /trunk/WotLK/Sartharion.lua
+   M /trunk/WotLK/Ulduar.lua
+
+-change debuff's color
+------------------------------------------------------------------------
+r172 | azelkeeber | 2009-08-22 10:22:06 +0000 (Sat, 22 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/Core.lua
+
+-fix critical bug
+------------------------------------------------------------------------
+r171 | azelkeeber | 2009-08-22 10:11:50 +0000 (Sat, 22 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/WotLK/Coliseum.lua
+
+-Fix bugs
+------------------------------------------------------------------------
+r170 | azelkeeber | 2009-08-22 10:09:42 +0000 (Sat, 22 Aug 2009) | 2 lines
+Changed paths:
+   M /trunk/Core.lua
+   M /trunk/WotLK/Coliseum.lua
+
+--modify function
+
+------------------------------------------------------------------------
+r169 | azelkeeber | 2009-08-22 09:57:03 +0000 (Sat, 22 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/Core.lua
+   M /trunk/WotLK/Coliseum.lua
+
+-Add function
+------------------------------------------------------------------------
+r168 | azelkeeber | 2009-08-22 09:44:19 +0000 (Sat, 22 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/Core.lua
+
+-fix missed menu
+------------------------------------------------------------------------
+r167 | azelkeeber | 2009-08-22 09:39:48 +0000 (Sat, 22 Aug 2009) | 2 lines
+Changed paths:
+   M /trunk/Core.lua
+   M /trunk/WotLK/Coliseum.lua
+
+-Update Debuffs(Faction Champions)
+-add colored menu
+------------------------------------------------------------------------
+r166 | azelkeeber | 2009-08-22 08:49:47 +0000 (Sat, 22 Aug 2009) | 2 lines
+Changed paths:
+   M /trunk/WotLK/Coliseum.lua
+
+-Add New Boss : Faction Champions
+-Add Debuff(Faction Champions) : Unstable Affliction 
+------------------------------------------------------------------------
+r165 | azelkeeber | 2009-08-22 08:15:02 +0000 (Sat, 22 Aug 2009) | 2 lines
+Changed paths:
+   M /trunk/WotLK/Coliseum.lua
+   D /trunk/WotLK/Coliseum_Heroic.lua
+   M /trunk/WotLK/GridStatusRD_WotLK.toc
+
+-remove Coliseum_Heroic.lua
+-add some hard mode debuffs
+------------------------------------------------------------------------
+r164 | Azethoth | 2009-08-18 04:18:04 +0000 (Tue, 18 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/WotLK/Ulduar.lua
+
+-- flase -> false
+------------------------------------------------------------------------
+r163 | azelkeeber | 2009-08-14 20:07:58 +0000 (Fri, 14 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/WotLK/Coliseum.lua
+
+-Locale problem was solved. So I removed the code.
+------------------------------------------------------------------------
+r162 | azelkeeber | 2009-08-14 12:44:14 +0000 (Fri, 14 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/WotLK/Coliseum.lua
+
+-update Jaraxxus for Raid25
+------------------------------------------------------------------------
+r161 | azelkeeber | 2009-08-14 10:24:28 +0000 (Fri, 14 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/WotLK/Coliseum.lua
+
+- Add Spinning Pain Spike(Lord Jaraxxus 10/25)
+------------------------------------------------------------------------
+r160 | azelkeeber | 2009-08-14 09:17:29 +0000 (Fri, 14 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/Core.lua
+
+-fix disalbed bug.
+------------------------------------------------------------------------
+r159 | azelkeeber | 2009-08-14 08:59:40 +0000 (Fri, 14 Aug 2009) | 3 lines
+Changed paths:
+   M /trunk/WotLK/Coliseum.lua
+   M /trunk/WotLK/Coliseum_Heroic.lua
+
+-fix Jaraxxus for Raid25
+
+
+------------------------------------------------------------------------
+r158 | azelkeeber | 2009-08-13 15:26:34 +0000 (Thu, 13 Aug 2009) | 3 lines
+Changed paths:
+   M /trunk/WotLK/Coliseum.lua
+   M /trunk/WotLK/Coliseum_Heroic.lua
+   M /trunk/WotLK/Ulduar.lua
+
+-fix Lightning Brand
+-fix Jaraxxus for Raid10
+
+------------------------------------------------------------------------
+r157 | azelkeeber | 2009-08-11 16:21:31 +0000 (Tue, 11 Aug 2009) | 3 lines
+Changed paths:
+   M /trunk/WotLK/Coliseum.lua
+   A /trunk/WotLK/Coliseum_Heroic.lua
+   M /trunk/WotLK/GridStatusRD_WotLK.toc
+
+-Fix the menu.
+-import Jaraxxus skills
+-add dummy file for Coliseum_Heroic(Trial of the Grand Crusader)
+------------------------------------------------------------------------
+r156 | azelkeeber | 2009-08-10 19:45:19 +0000 (Mon, 10 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/Core.lua
+
+-fix feign death bugs
+------------------------------------------------------------------------
+r155 | azelkeeber | 2009-08-10 16:03:27 +0000 (Mon, 10 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/WotLK/Coliseum.lua
+
+-GetLocale => GetLocale()
+------------------------------------------------------------------------
+r154 | azelkeeber | 2009-08-10 14:48:40 +0000 (Mon, 10 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/WotLK/Ulduar.lua
+
+-fix type error, I'm sorry.
+------------------------------------------------------------------------
+r153 | azelkeeber | 2009-08-10 14:43:12 +0000 (Mon, 10 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/WotLK/Coliseum.lua
+
+- For korean locale bug fix(This will remove when the bug is fixed)
+------------------------------------------------------------------------
+r152 | azelkeeber | 2009-08-10 14:34:26 +0000 (Mon, 10 Aug 2009) | 2 lines
+Changed paths:
+   M /trunk/WotLK/Coliseum.lua
+   M /trunk/WotLK/Ulduar.lua
+
+- some bug fix. plz work.
+- add : snowbolled!
+------------------------------------------------------------------------
+r151 | azelkeeber | 2009-08-10 13:35:34 +0000 (Mon, 10 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/Core.lua
+
+- Feign death bug fixed.
+------------------------------------------------------------------------
+r150 | azelkeeber | 2009-08-10 12:17:07 +0000 (Mon, 10 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/Core.lua
+
+Remove Feign death
+------------------------------------------------------------------------
+r149 | azelkeeber | 2009-08-10 11:55:34 +0000 (Mon, 10 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/Core.lua
+
+-fix Feign Death bug
+------------------------------------------------------------------------
+r148 | azelkeeber | 2009-08-10 08:43:52 +0000 (Mon, 10 Aug 2009) | 4 lines
+Changed paths:
+   M /trunk/WotLK/Coliseum.lua
+
+Update Coliseum
++Boss: Val'kyr
++Boss: Jaraxxus
++Boss: Anub'arak 
+------------------------------------------------------------------------
+r147 | azelkeeber | 2009-08-10 05:13:11 +0000 (Mon, 10 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/WotLK/Ulduar.lua
+
+-fix Rune of Death (Heroic)
+------------------------------------------------------------------------
+r146 | azelkeeber | 2009-08-09 14:42:08 +0000 (Sun, 09 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/Core.lua
+
+-Fix the feign death bug
+------------------------------------------------------------------------
+r145 | azelkeeber | 2009-08-09 14:17:20 +0000 (Sun, 09 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/WotLK/Naxxramas.lua
+
+-- Disabled default value 'Heigan : Spell Disruption' to false. If you want to show it, toggle it.
+------------------------------------------------------------------------
+r144 | azelkeeber | 2009-08-09 14:05:50 +0000 (Sun, 09 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/WotLK/Ulduar.lua
+
+-Add Assembly of Iron : Static Disruption
+------------------------------------------------------------------------
+r143 | azelkeeber | 2009-08-08 05:05:50 +0000 (Sat, 08 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/embeds.xml
+
+- Fix embeds.xml (I forgot including Libbabble-boss-3.0)
+------------------------------------------------------------------------
+r142 | azelkeeber | 2009-08-07 18:33:39 +0000 (Fri, 07 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/WotLK/Coliseum.lua
+
+-fix error
+------------------------------------------------------------------------
+r141 | azelkeeber | 2009-08-07 18:17:21 +0000 (Fri, 07 Aug 2009) | 2 lines
+Changed paths:
+   M /trunk/WotLK/Coliseum.lua
+
+-Remove : Acid spew, Molten spew 
+-Fix Arctic Breathe(Heroic)'s ID
+------------------------------------------------------------------------
+r140 | azelkeeber | 2009-08-07 17:02:28 +0000 (Fri, 07 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/WotLK/Coliseum.lua
+
+- Fix Arctic breathe 
+------------------------------------------------------------------------
+r139 | azelkeeber | 2009-08-07 16:58:27 +0000 (Fri, 07 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/WotLK/Coliseum.lua
+
+- Add. Icehowl - Arctic Breathe
+------------------------------------------------------------------------
+r138 | azelkeeber | 2009-08-07 10:31:59 +0000 (Fri, 07 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/.pkgmeta
+   M /trunk/BC/BlackTemple.lua
+   M /trunk/BC/GridStatusRD_BC.toc
+   M /trunk/BC/Hyjal.lua
+   M /trunk/BC/Karazhan.lua
+   M /trunk/BC/Serpent.lua
+   M /trunk/BC/Sunwell.lua
+   M /trunk/BC/Tempest.lua
+   M /trunk/BC/Zulaman.lua
+   M /trunk/Core.lua
+   M /trunk/GridStatusRaidDebuff.toc
+   M /trunk/WotLK/Coliseum.lua
+   M /trunk/WotLK/GridStatusRD_WotLK.toc
+   M /trunk/WotLK/Malygos.lua
+   M /trunk/WotLK/Naxxramas.lua
+   M /trunk/WotLK/Sartharion.lua
+   M /trunk/WotLK/Ulduar.lua
+
+-fix menu
+------------------------------------------------------------------------
+r137 | azelkeeber | 2009-08-06 19:53:58 +0000 (Thu, 06 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/Core.lua
+
+-fix critical bug
+------------------------------------------------------------------------
+r136 | azelkeeber | 2009-08-06 19:09:05 +0000 (Thu, 06 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/WotLK/Ulduar.lua
+
+- Overwhelming Power(Heroic) duraion 30 -> 35
+------------------------------------------------------------------------
+r135 | azelkeeber | 2009-08-06 18:41:33 +0000 (Thu, 06 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/Core.lua
+
+-change Babble-Zone library's local name
+------------------------------------------------------------------------
+r134 | azelkeeber | 2009-08-06 18:29:04 +0000 (Thu, 06 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/Core.lua
+
+-fix Library Loader (Thx! suthiro.)
+------------------------------------------------------------------------
+r133 | azelkeeber | 2009-08-06 18:15:50 +0000 (Thu, 06 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/BC/BlackTemple.lua
+   M /trunk/BC/Hyjal.lua
+   M /trunk/BC/Karazhan.lua
+   M /trunk/BC/Serpent.lua
+   M /trunk/BC/Sunwell.lua
+   M /trunk/BC/Tempest.lua
+   M /trunk/BC/Zulaman.lua
+   M /trunk/Core.lua
+   M /trunk/WotLK/Coliseum.lua
+   M /trunk/WotLK/Malygos.lua
+   M /trunk/WotLK/Naxxramas.lua
+   M /trunk/WotLK/Sartharion.lua
+   M /trunk/WotLK/Ulduar.lua
+
+- fix dummy menu 
+------------------------------------------------------------------------
+r132 | azelkeeber | 2009-08-06 16:59:26 +0000 (Thu, 06 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/Core.lua
+
+- Remove trash variables
+------------------------------------------------------------------------
+r131 | azelkeeber | 2009-08-06 14:18:44 +0000 (Thu, 06 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/GridStatusRaidDebuff.toc
+   M /trunk/WotLK/GridStatusRD_WotLK.toc
+
+- TOC recovery
+------------------------------------------------------------------------
+r130 | azelkeeber | 2009-08-06 14:14:27 +0000 (Thu, 06 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/GridStatusRaidDebuff.toc
+
+-TOC. Remove some trash lines
+------------------------------------------------------------------------
+r129 | azelkeeber | 2009-08-06 11:45:31 +0000 (Thu, 06 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/WotLK/Coliseum.lua
+
+-Coliseum Update
+------------------------------------------------------------------------
+r128 | azelkeeber | 2009-08-05 17:48:44 +0000 (Wed, 05 Aug 2009) | 2 lines
+Changed paths:
+   M /trunk/BC/BlackTemple.lua
+   M /trunk/BC/Hyjal.lua
+   M /trunk/BC/Karazhan.lua
+   M /trunk/BC/Serpent.lua
+   M /trunk/BC/Sunwell.lua
+   M /trunk/BC/Tempest.lua
+   M /trunk/BC/Zulaman.lua
+   M /trunk/Core.lua
+   M /trunk/GridStatusRaidDebuff.toc
+   M /trunk/WotLK/Coliseum.lua
+   M /trunk/WotLK/Malygos.lua
+   M /trunk/WotLK/Naxxramas.lua
+   M /trunk/WotLK/Sartharion.lua
+   M /trunk/WotLK/Ulduar.lua
+
+-Add Phase Punch
+-Some fix
+------------------------------------------------------------------------
+r127 | azelkeeber | 2009-08-05 08:53:16 +0000 (Wed, 05 Aug 2009) | 3 lines
+Changed paths:
+   M /trunk/.pkgmeta
+   A /trunk/BC
+   A /trunk/BC/BlackTemple.lua
+   A /trunk/BC/GridStatusRD_BC.toc
+   A /trunk/BC/Hyjal.lua
+   A /trunk/BC/Karazhan.lua
+   A /trunk/BC/Serpent.lua
+   A /trunk/BC/Sunwell.lua
+   A /trunk/BC/Tempest.lua
+   A /trunk/BC/Zulaman.lua
+   A /trunk/Core.lua
+   D /trunk/GridStatusRaidDebuff.lua
+   M /trunk/GridStatusRaidDebuff.toc
+   A /trunk/WotLK
+   A /trunk/WotLK/Coliseum.lua
+   A /trunk/WotLK/GridStatusRD_WotLK.toc
+   A /trunk/WotLK/Malygos.lua
+   A /trunk/WotLK/Naxxramas.lua
+   A /trunk/WotLK/Sartharion.lua
+   A /trunk/WotLK/Ulduar.lua
+
+- Fix some bugs
+- Update TOC
+- Seperate BC & WotLK debuff
+------------------------------------------------------------------------
+r126 | 7destiny | 2009-05-18 18:24:26 +0000 (Mon, 18 May 2009) | 1 line
+Changed paths:
+   M /trunk/GridStatusRaidDebuff.lua
+
+Add Static Disruption
+------------------------------------------------------------------------

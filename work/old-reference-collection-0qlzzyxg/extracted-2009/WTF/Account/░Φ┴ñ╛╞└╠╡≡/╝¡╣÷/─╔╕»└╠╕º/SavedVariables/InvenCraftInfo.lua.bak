@@ -1,0 +1,11 @@
+
+InvenCraftInfoCharDB = {
+	["openSkill"] = "요리",
+	["prevIndexName"] = {
+	},
+	["pos"] = {
+		"LEFT", -- [1]
+		329.04765585298, -- [2]
+		-1.190485064534644, -- [3]
+	},
+}

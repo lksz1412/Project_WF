@@ -1,0 +1,21 @@
+# Source acquisition evidence
+
+Master observed Drive listing on2026-11-17 at source folder https://drive.google.com/drive/folders/1QMZiceFpizZ5dHxTkG2UemZAYKaQFdg7. Exactly2direct children returned: Interface.zip31392260bytes andFonts.zip35611779bytes, modified2022-11-19. Canonical file IDs and acquired_at/SHA256 are in acquisition.json. Both connector raw fetches returned authenticated file references; master materialized them with PowerShell Invoke-WebRequest into NEW original paths, rejecting existing targets and size mismatch. Signed download URLs were not stored in project records. Actual command exit0: local originalZIPs2, expected metadata sizes2/2, provenance saved. ZIP CRC/content validation belongs to A analysis, not this download check.
+
+Interface SHA2563B9883A2A336A38AE31BAA744A2A287DCC752093B1003D923D2B767F43496F2A, Fonts SHA2569D7E364DA38407813A7D76C2F92DA9BA3A4B832AC8DDE565D19308EB7FBE4F91. These hashes pin acquired bytes, not a comparison against publisher-provided hashes. Publisher checksum not provided by folderlisting.
+
+Master reopened https://www.inven.co.kr/board/wow/1636/31588. Extracted article103–114 read in full; site navigation/advertising513-line page not reported as fully read. Article identifies Black FanFix10.0.2, first-run alignment prompt, SexyMap profile loaf, Dominos action/centerbar, Quartz castbar, PitBull target settings; Nov19 update removes Dominos Cast. Deletion instructions in the historical article are not approved procedures. Source-author/profile attribution remains distinct from user's private macro library.
+
+Read coverage for entry: canonical masterplan1–312 retained from explanation1–110/111–221/222–end, current INDEX full19lines plus appendedsource-map entry, Planning Result full12sections, REQUEST_LEDGER fullR1–R18, SESSIONS prior phase full, acquisition.json all2objects(data), Phase1.1 detail authored/read in full; applicable source-research/data-pipeline/Drive/secured-Windows skills full. Other methodology/communication/file-reading/change-impact/review/git-safety rules fully read and retained in current context. User scope R19 is original ZIP staticanalysis only. Setup tools do not expose actual model/effort/usage/context/compaction telemetry.
+
+Entry influence map and natural-unit gates are in Phase1.1 detailplan and source-analysis brief. .gitignore gained SourceArchive/ before materialization; no existing original/game files overwritten, no deletion or UI/game input. Master records/source only; A owns report and safeextraction, B follows afterA returns. Publication/push/merge not authorized.
+
+Coverage-count correction: the earlier INDEX19 count was not measured and is superseded by actual current 22 lines. Full entry INDEX body was read at phase entry; the source map pointer appended afterward is master-authored. No source/plan conclusion depends on that old count. Elevated git check-ignore for both originals returned matching paths2/2 and exit0.
+
+Master source readback — 2026-11-17 21:11:28 +09:00: !DevilUI/!DevilUI.toc, !DevilUI/!DevilUI.lua, !DevilUI/load_Profile.xml, nibProfileLoader/nibProfileLoader.toc, nibProfileLoader/nibProfileLoader.lua, Devilconfig/Devilconfig.lua read in full directly (absolute prefix SourceArchive/2022-11-19/extracted/Interface/addons/). Exact row counts below from actualfiles. XML missing targets Profile/InvenRaidFrames3.lua and Profile/Omen.lua each Test-Path=False; static packaged references only, not a runtime result. Current loader explicitly names10.0.2lowerconcentrated and loaf, menu selects reflux switch loaf; old Shapa startup remains referenced and is not declared inactive without runtimeproof. Profile-extract.json DB read covers parser label, all7overview rows and selectedtopkeyschema; raw huge literal tables are not claimed manually read. Archive-inventory.json DB read covers2record scalars inclentry/filecounts, CRCbadnull, unsafe0 and extractedhashmatchcounts; master did not rerun A's successful CRC/extraction.
+!DevilUI\!DevilUI.toc full1–13
+!DevilUI\!DevilUI.lua full1–207
+!DevilUI\load_Profile.xml full1–21
+nibProfileLoader\nibProfileLoader.toc full1–6
+nibProfileLoader\nibProfileLoader.lua full1–94
+Devilconfig\Devilconfig.lua full1–144

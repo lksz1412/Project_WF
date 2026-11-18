@@ -1,0 +1,1821 @@
+[
+  {
+    "postID": 1932,
+    "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-1932.html",
+    "sourceSHA256": "A2561441BFF94834F71D991E0B6365F190FF5F61DD81DD6CC367F095C89308CA",
+    "rowCount": 2,
+    "rows": [
+      {
+        "ordinal1": 1,
+        "filename": "devilbecustom91.part2.rar",
+        "clientLiteral": "3.0.2",
+        "downloadsLiteral": "2379",
+        "dateLiteral": "2008-11-02",
+        "sourceLine": 37,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "devilbecustom91.part2.rar"
+          }
+        ],
+        "actualLiteralMapping": [
+          {
+            "fileID": 9953,
+            "URL": "https://pds.inven.co.kr/upload/wow/addonpds/file/devilbecustom91.part2.rar",
+            "line": 37,
+            "executed": false
+          }
+        ]
+      },
+      {
+        "ordinal1": 2,
+        "filename": "devilbecustom91.part1.rar",
+        "clientLiteral": "3.0.2",
+        "downloadsLiteral": "788",
+        "dateLiteral": "2008-11-02",
+        "sourceLine": 47,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "devilbecustom91.part1.rar"
+          }
+        ],
+        "actualLiteralMapping": []
+      }
+    ],
+    "setDownloadInfoLiterals": [
+      {
+        "fileID": 9953,
+        "URL": "https://pds.inven.co.kr/upload/wow/addonpds/file/devilbecustom91.part2.rar",
+        "line": 37,
+        "executed": false
+      }
+    ],
+    "selection": "parent-selected-package",
+    "JavaScriptExecuted": false
+  },
+  {
+    "postID": 3461,
+    "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-3461.html",
+    "sourceSHA256": "ED4099FBD4524B411DE1E24D478806DD06BAA0E6A9B28E980EA3C2A79FDB6B80",
+    "rowCount": 85,
+    "rows": [
+      {
+        "ordinal1": 1,
+        "filename": "BlackEdition2_6.1Alpha.zip",
+        "clientLiteral": "6.1.0",
+        "downloadsLiteral": "72340",
+        "dateLiteral": "2015-03-04",
+        "sourceLine": 37,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_6.1Alpha.zip"
+          }
+        ],
+        "actualLiteralMapping": [
+          {
+            "fileID": 52262,
+            "URL": "https://pds.inven.co.kr/upload/2015/03/04/addon/BlackEdition2_6.1Alpha.zip",
+            "line": 37,
+            "executed": false
+          }
+        ]
+      },
+      {
+        "ordinal1": 2,
+        "filename": "BlackEdition2_6.0.3Beta.zip",
+        "clientLiteral": "6.0.2",
+        "downloadsLiteral": "73720",
+        "dateLiteral": "2014-12-20",
+        "sourceLine": 47,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_6.0.3Beta.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 3,
+        "filename": "BlackEdition2_6.0.3Alpha.zip",
+        "clientLiteral": "6.0.2",
+        "downloadsLiteral": "45196",
+        "dateLiteral": "2014-11-22",
+        "sourceLine": 57,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_6.0.3Alpha.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 4,
+        "filename": "BlackEdition2_6.0.2Beta.zip",
+        "clientLiteral": "6.0.2",
+        "downloadsLiteral": "22387",
+        "dateLiteral": "2014-10-29",
+        "sourceLine": 67,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_6.0.2Beta.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 5,
+        "filename": "BlackEdition2_6.0.2Alpha3.zip",
+        "clientLiteral": "6.0.2",
+        "downloadsLiteral": "4788",
+        "dateLiteral": "2014-10-24",
+        "sourceLine": 77,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_6.0.2Alpha3.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 6,
+        "filename": "BlackEdition2_6.0.2Alpha2.zip",
+        "clientLiteral": "6.0.2",
+        "downloadsLiteral": "7735",
+        "dateLiteral": "2014-10-18",
+        "sourceLine": 87,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_6.0.2Alpha2.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 7,
+        "filename": "BlackEdition2_6.0.2Alpha.zip",
+        "clientLiteral": "6.0.2",
+        "downloadsLiteral": "3202",
+        "dateLiteral": "2014-10-17",
+        "sourceLine": 97,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_6.0.2Alpha.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 8,
+        "filename": "BlackEdition2_5.4THETA.zip",
+        "clientLiteral": "5.4.0",
+        "downloadsLiteral": "72364",
+        "dateLiteral": "2014-03-24",
+        "sourceLine": 107,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_5.4THETA.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 9,
+        "filename": "BlackEdition2_5.4ETA.zip",
+        "clientLiteral": "5.4.0",
+        "downloadsLiteral": "38065",
+        "dateLiteral": "2014-01-20",
+        "sourceLine": 117,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_5.4ETA.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 10,
+        "filename": "BlackEdition2_5.4ZETA.zip",
+        "clientLiteral": "5.4.0",
+        "downloadsLiteral": "28880",
+        "dateLiteral": "2013-12-08",
+        "sourceLine": 127,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_5.4ZETA.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 11,
+        "filename": "BlackEdition2_5.4Epsilon.zip",
+        "clientLiteral": "5.4.0",
+        "downloadsLiteral": "21763",
+        "dateLiteral": "2013-11-02",
+        "sourceLine": 137,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_5.4Epsilon.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 12,
+        "filename": "BlackEdition2_5.4Delta.zip",
+        "clientLiteral": "5.4.0",
+        "downloadsLiteral": "2224",
+        "dateLiteral": "2013-10-31",
+        "sourceLine": 147,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_5.4Delta.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 13,
+        "filename": "BlackEdition2_5.4Gamma.zip",
+        "clientLiteral": "5.4.0",
+        "downloadsLiteral": "22172",
+        "dateLiteral": "2013-09-17",
+        "sourceLine": 157,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_5.4Gamma.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 14,
+        "filename": "BlackEdition2_5.4Beta.zip",
+        "clientLiteral": "5.4.0",
+        "downloadsLiteral": "2209",
+        "dateLiteral": "2013-09-15",
+        "sourceLine": 167,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_5.4Beta.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 15,
+        "filename": "BlackEdition2_5.4Alpha.zip",
+        "clientLiteral": "5.4.0",
+        "downloadsLiteral": "3483",
+        "dateLiteral": "2013-09-13",
+        "sourceLine": 177,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_5.4Alpha.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 16,
+        "filename": "BlackEdition2_5.3beta.zip",
+        "clientLiteral": "5.3.0",
+        "downloadsLiteral": "41908",
+        "dateLiteral": "2013-05-29",
+        "sourceLine": 187,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_5.3beta.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 17,
+        "filename": "BlackEdition2_5.3alpha2.zip",
+        "clientLiteral": "5.3.0",
+        "downloadsLiteral": "3232",
+        "dateLiteral": "2013-05-25",
+        "sourceLine": 197,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_5.3alpha2.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 18,
+        "filename": "BlackEdition2_5.3alpha.zip",
+        "clientLiteral": "5.3.0",
+        "downloadsLiteral": "77",
+        "dateLiteral": "2013-05-25",
+        "sourceLine": 207,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_5.3alpha.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 19,
+        "filename": "BlackEdition2_5.2C.zip",
+        "clientLiteral": "5.2.0",
+        "downloadsLiteral": "8738",
+        "dateLiteral": "2013-04-29",
+        "sourceLine": 217,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_5.2C.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 20,
+        "filename": "BlackEdition2_5.2Beta.zip",
+        "clientLiteral": "5.2.0",
+        "downloadsLiteral": "20747",
+        "dateLiteral": "2013-03-08",
+        "sourceLine": 227,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_5.2Beta.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 21,
+        "filename": "BlackEdition2_5.2alpha.zip",
+        "clientLiteral": "5.2.0",
+        "downloadsLiteral": "2251",
+        "dateLiteral": "2013-03-07",
+        "sourceLine": 237,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_5.2alpha.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 22,
+        "filename": "BlackEdition2_5.1b.zip",
+        "clientLiteral": "5.1.0",
+        "downloadsLiteral": "29431",
+        "dateLiteral": "2012-12-25",
+        "sourceLine": 247,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_5.1b.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 23,
+        "filename": "BlackEdition2_5.1a.zip",
+        "clientLiteral": "5.1.0",
+        "downloadsLiteral": "16278",
+        "dateLiteral": "2012-11-29",
+        "sourceLine": 257,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_5.1a.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 24,
+        "filename": "BlackEdition2_5.01d.zip",
+        "clientLiteral": "5.0.5",
+        "downloadsLiteral": "11590",
+        "dateLiteral": "2012-11-10",
+        "sourceLine": 267,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_5.01d.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 25,
+        "filename": "BlackEdition2_5.01c.zip",
+        "clientLiteral": "5.0.5",
+        "downloadsLiteral": "8440",
+        "dateLiteral": "2012-10-30",
+        "sourceLine": 277,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_5.01c.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 26,
+        "filename": "c1195410179.zip",
+        "clientLiteral": "5.0.5",
+        "downloadsLiteral": "6961",
+        "dateLiteral": "2012-10-20",
+        "sourceLine": 287,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "c1195410179.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 27,
+        "filename": "BlackEdition2_5.01Alpha.zip",
+        "clientLiteral": "5.0.5",
+        "downloadsLiteral": "4250",
+        "dateLiteral": "2012-10-17",
+        "sourceLine": 297,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_5.01Alpha.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 28,
+        "filename": "BlackEdition2_v5.0.5f.zip",
+        "clientLiteral": "5.0.5",
+        "downloadsLiteral": "23475",
+        "dateLiteral": "2012-09-27",
+        "sourceLine": 307,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v5.0.5f.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 29,
+        "filename": "BlackEdition2_v5.0.5e.zip",
+        "clientLiteral": "5.0.5",
+        "downloadsLiteral": "517",
+        "dateLiteral": "2012-09-27",
+        "sourceLine": 317,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v5.0.5e.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 30,
+        "filename": "BlackEdition2_v5.0.5d.zip",
+        "clientLiteral": "5.0.5",
+        "downloadsLiteral": "3624",
+        "dateLiteral": "2012-09-23",
+        "sourceLine": 327,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v5.0.5d.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 31,
+        "filename": "BlackEdition2_v5.0.5c.zip",
+        "clientLiteral": "5.0.5",
+        "downloadsLiteral": "774",
+        "dateLiteral": "2012-09-22",
+        "sourceLine": 337,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v5.0.5c.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 32,
+        "filename": "BlackEdition2_v5.0.5b.zip",
+        "clientLiteral": "5.0.5",
+        "downloadsLiteral": "2442",
+        "dateLiteral": "2012-09-16",
+        "sourceLine": 347,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v5.0.5b.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 33,
+        "filename": "BlackEdition2_v5.0.5a.zip",
+        "clientLiteral": "5.0.5",
+        "downloadsLiteral": "729",
+        "dateLiteral": "2012-09-15",
+        "sourceLine": 357,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v5.0.5a.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 34,
+        "filename": "BlackEdition2_v5.0.4c.zip",
+        "clientLiteral": "5.0.4",
+        "downloadsLiteral": "1547",
+        "dateLiteral": "2012-09-12",
+        "sourceLine": 367,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v5.0.4c.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 35,
+        "filename": "BlackEdition2_v5.0.4b.zip",
+        "clientLiteral": "5.0.4",
+        "downloadsLiteral": "981",
+        "dateLiteral": "2012-09-10",
+        "sourceLine": 377,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v5.0.4b.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 36,
+        "filename": "BlackEdition2_v5.0.4a.zip",
+        "clientLiteral": "5.0.4",
+        "downloadsLiteral": "1931",
+        "dateLiteral": "2012-09-07",
+        "sourceLine": 387,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v5.0.4a.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 37,
+        "filename": "BlackEdition2_v5.0.3a.zip",
+        "clientLiteral": "5.0.4",
+        "downloadsLiteral": "737",
+        "dateLiteral": "2012-09-06",
+        "sourceLine": 397,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v5.0.3a.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 38,
+        "filename": "BlackEdition2_v5.0.2a.zip",
+        "clientLiteral": "5.0.4",
+        "downloadsLiteral": "1599",
+        "dateLiteral": "2012-09-04",
+        "sourceLine": 407,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v5.0.2a.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 39,
+        "filename": "BlackEdition2_v5.0.1a.zip",
+        "clientLiteral": "5.0.4",
+        "downloadsLiteral": "900",
+        "dateLiteral": "2012-09-03",
+        "sourceLine": 417,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v5.0.1a.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 40,
+        "filename": "BlackEdition2_v4.3.0f.zip",
+        "clientLiteral": "4.3.0",
+        "downloadsLiteral": "82989",
+        "dateLiteral": "2012-02-02",
+        "sourceLine": 427,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v4.3.0f.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 41,
+        "filename": "BlackEdition2_v4.3.0e.zip",
+        "clientLiteral": "4.3.0",
+        "downloadsLiteral": "40228",
+        "dateLiteral": "2011-12-20",
+        "sourceLine": 437,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v4.3.0e.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 42,
+        "filename": "BlackEdition2_v4.3.0d.zip",
+        "clientLiteral": "4.3.0",
+        "downloadsLiteral": "1121",
+        "dateLiteral": "2011-12-19",
+        "sourceLine": 447,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v4.3.0d.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 43,
+        "filename": "BlackEdition2_v4.3.0c.zip",
+        "clientLiteral": "4.3.0",
+        "downloadsLiteral": "16782",
+        "dateLiteral": "2011-12-05",
+        "sourceLine": 457,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v4.3.0c.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 44,
+        "filename": "BlackEdition2_v4.3.0b.zip",
+        "clientLiteral": "4.3.0",
+        "downloadsLiteral": "11249",
+        "dateLiteral": "2011-12-01",
+        "sourceLine": 467,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v4.3.0b.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 45,
+        "filename": "BlackEdition2_v4.3.0a.zip",
+        "clientLiteral": "4.3.0",
+        "downloadsLiteral": "3430",
+        "dateLiteral": "2011-11-30",
+        "sourceLine": 477,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v4.3.0a.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 46,
+        "filename": "BlackEdition2_v4.2.0h.zip",
+        "clientLiteral": "4.2.0",
+        "downloadsLiteral": "16423",
+        "dateLiteral": "2011-11-12",
+        "sourceLine": 487,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v4.2.0h.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 47,
+        "filename": "BlackEdition2_v4.2.0g.exe.zip",
+        "clientLiteral": "4.2.0",
+        "downloadsLiteral": "27144",
+        "dateLiteral": "2011-10-11",
+        "sourceLine": 497,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v4.2.0g.exe.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 48,
+        "filename": "BlackEdition2_v4.2.0f.exe.zip",
+        "clientLiteral": "4.2.0",
+        "downloadsLiteral": "52790",
+        "dateLiteral": "2011-08-10",
+        "sourceLine": 507,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v4.2.0f.exe.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 49,
+        "filename": "BlackEdition2_v4.2.0e.exe.zip",
+        "clientLiteral": "4.2.0",
+        "downloadsLiteral": "303",
+        "dateLiteral": "2011-08-10",
+        "sourceLine": 517,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v4.2.0e.exe.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 50,
+        "filename": "BlackEdition2_v4.2.0d.zip",
+        "clientLiteral": "4.2.0",
+        "downloadsLiteral": "8862",
+        "dateLiteral": "2011-08-02",
+        "sourceLine": 527,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v4.2.0d.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 51,
+        "filename": "BlackEdition2_v4.2.0c.zip",
+        "clientLiteral": "4.2.0",
+        "downloadsLiteral": "31937",
+        "dateLiteral": "2011-07-07",
+        "sourceLine": 537,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v4.2.0c.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 52,
+        "filename": "BlackEdition2_v4.2.0b.zip",
+        "clientLiteral": "4.2.0",
+        "downloadsLiteral": "18192",
+        "dateLiteral": "2011-07-01",
+        "sourceLine": 547,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v4.2.0b.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 53,
+        "filename": "c25087392.zip",
+        "clientLiteral": "4.2.0",
+        "downloadsLiteral": "10839",
+        "dateLiteral": "2011-06-30",
+        "sourceLine": 557,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "c25087392.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 54,
+        "filename": "BlackEdition2_v4.1.0d.zip",
+        "clientLiteral": "4.1.0",
+        "downloadsLiteral": "43220",
+        "dateLiteral": "2011-05-11",
+        "sourceLine": 567,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v4.1.0d.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 55,
+        "filename": "BlackEdition2_v4.1.0c.zip",
+        "clientLiteral": "4.1.0",
+        "downloadsLiteral": "18126",
+        "dateLiteral": "2011-04-29",
+        "sourceLine": 577,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v4.1.0c.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 56,
+        "filename": "BlackEdition2_v4.1.0b.zip",
+        "clientLiteral": "4.1.0",
+        "downloadsLiteral": "5714",
+        "dateLiteral": "2011-04-28",
+        "sourceLine": 587,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v4.1.0b.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 57,
+        "filename": "BlackEdition2_v4.1.0a.zip",
+        "clientLiteral": "4.1.0",
+        "downloadsLiteral": "3746",
+        "dateLiteral": "2011-04-27",
+        "sourceLine": 597,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v4.1.0a.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 58,
+        "filename": "BlackEdition2_v4.0.6b.zip",
+        "clientLiteral": "4.0.6",
+        "downloadsLiteral": "37859",
+        "dateLiteral": "2011-03-16",
+        "sourceLine": 607,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v4.0.6b.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 59,
+        "filename": "BlackEdition2_v4.0.6a.zip",
+        "clientLiteral": "4.0.6",
+        "downloadsLiteral": "44078",
+        "dateLiteral": "2011-02-10",
+        "sourceLine": 617,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v4.0.6a.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 60,
+        "filename": "BlackEdition2_v4.0.3g.zip",
+        "clientLiteral": "4.0.3",
+        "downloadsLiteral": "11417",
+        "dateLiteral": "2011-02-02",
+        "sourceLine": 627,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v4.0.3g.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 61,
+        "filename": "BlackEdition2_v4.0.3f.zip",
+        "clientLiteral": "4.0.3",
+        "downloadsLiteral": "28433",
+        "dateLiteral": "2011-01-07",
+        "sourceLine": 637,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v4.0.3f.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 62,
+        "filename": "BlackEdition2_v4.0.3e.zip",
+        "clientLiteral": "4.0.3",
+        "downloadsLiteral": "19826",
+        "dateLiteral": "2010-12-22",
+        "sourceLine": 647,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v4.0.3e.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 63,
+        "filename": "BlackEdition2_v4.0.3d.zip",
+        "clientLiteral": "4.0.3",
+        "downloadsLiteral": "20962",
+        "dateLiteral": "2010-12-09",
+        "sourceLine": 657,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v4.0.3d.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 64,
+        "filename": "BlackEdition2_v4.0.3c.zip",
+        "clientLiteral": "4.0.3",
+        "downloadsLiteral": "1487",
+        "dateLiteral": "2010-12-08",
+        "sourceLine": 667,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v4.0.3c.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 65,
+        "filename": "BlackEdition2_v4.0.3b.zip",
+        "clientLiteral": "4.0.3",
+        "downloadsLiteral": "11110",
+        "dateLiteral": "2010-11-25",
+        "sourceLine": 677,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v4.0.3b.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 66,
+        "filename": "BlackEdition2_v4.0.3a.zip",
+        "clientLiteral": "4.0.3",
+        "downloadsLiteral": "2011",
+        "dateLiteral": "2010-11-23",
+        "sourceLine": 687,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v4.0.3a.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 67,
+        "filename": "BlackEdition2_v4.01f.zip",
+        "clientLiteral": "4.0.1",
+        "downloadsLiteral": "29798",
+        "dateLiteral": "2010-10-19",
+        "sourceLine": 697,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v4.01f.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 68,
+        "filename": "BlackEdition2_v4.01e.zip",
+        "clientLiteral": "4.0.1",
+        "downloadsLiteral": "2709",
+        "dateLiteral": "2010-10-18",
+        "sourceLine": 707,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v4.01e.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 69,
+        "filename": "c32747338.zip",
+        "clientLiteral": "4.0.1",
+        "downloadsLiteral": "2872",
+        "dateLiteral": "2010-10-17",
+        "sourceLine": 717,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "c32747338.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 70,
+        "filename": "BlackEdition2_v4.01c.zip",
+        "clientLiteral": "4.0.1",
+        "downloadsLiteral": "1309",
+        "dateLiteral": "2010-10-17",
+        "sourceLine": 727,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v4.01c.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 71,
+        "filename": "c39215568.zip",
+        "clientLiteral": "4.0.1",
+        "downloadsLiteral": "6555",
+        "dateLiteral": "2010-10-15",
+        "sourceLine": 737,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "c39215568.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 72,
+        "filename": "BlackEdition2_v4.01a.zip",
+        "clientLiteral": "4.0.1",
+        "downloadsLiteral": "6120",
+        "dateLiteral": "2010-10-15",
+        "sourceLine": 747,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v4.01a.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 73,
+        "filename": "BlackEdition2_v1.12.zip",
+        "clientLiteral": "3.3.5",
+        "downloadsLiteral": "24314",
+        "dateLiteral": "2010-09-15",
+        "sourceLine": 757,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v1.12.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 74,
+        "filename": "BlackEdition2_v1.11.zip",
+        "clientLiteral": "3.3.5",
+        "downloadsLiteral": "55403",
+        "dateLiteral": "2010-07-11",
+        "sourceLine": 767,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v1.11.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 75,
+        "filename": "BlackEdition2_v1.10.zip",
+        "clientLiteral": "3.3.5",
+        "downloadsLiteral": "3522",
+        "dateLiteral": "2010-07-09",
+        "sourceLine": 777,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v1.10.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 76,
+        "filename": "BlackEdition2_v1.09.zip",
+        "clientLiteral": "3.3.5",
+        "downloadsLiteral": "8485",
+        "dateLiteral": "2010-07-03",
+        "sourceLine": 787,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v1.09.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 77,
+        "filename": "BlackEdition2_v1.08.zip",
+        "clientLiteral": "3.3.5",
+        "downloadsLiteral": "5745",
+        "dateLiteral": "2010-07-02",
+        "sourceLine": 797,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v1.08.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 78,
+        "filename": "BlackEdition2_v1.07.zip",
+        "clientLiteral": "3.3.3",
+        "downloadsLiteral": "33209",
+        "dateLiteral": "2010-05-20",
+        "sourceLine": 807,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v1.07.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 79,
+        "filename": "BlackEdition2_v1.06.zip",
+        "clientLiteral": "3.3.3",
+        "downloadsLiteral": "34754",
+        "dateLiteral": "2010-04-10",
+        "sourceLine": 817,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v1.06.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 80,
+        "filename": "BlackEdition2_v1.05.zip",
+        "clientLiteral": "3.3.3",
+        "downloadsLiteral": "10565",
+        "dateLiteral": "2010-04-02",
+        "sourceLine": 827,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v1.05.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 81,
+        "filename": "BlackEdition2_v1.04.zip",
+        "clientLiteral": "3.3.3",
+        "downloadsLiteral": "14521",
+        "dateLiteral": "2010-03-25",
+        "sourceLine": 837,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v1.04.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 82,
+        "filename": "BlackEdition2_v1.03.zip",
+        "clientLiteral": "3.3.3",
+        "downloadsLiteral": "2743",
+        "dateLiteral": "2010-03-25",
+        "sourceLine": 847,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v1.03.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 83,
+        "filename": "BlackEdition2_v1.02.zip",
+        "clientLiteral": "3.3.2",
+        "downloadsLiteral": "2211",
+        "dateLiteral": "2010-03-24",
+        "sourceLine": 857,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2_v1.02.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 84,
+        "filename": "BlackEdition2v1.01.zip",
+        "clientLiteral": "3.3.2",
+        "downloadsLiteral": "2216",
+        "dateLiteral": "2010-03-21",
+        "sourceLine": 867,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2v1.01.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 85,
+        "filename": "BlackEdition2betav1.0.zip",
+        "clientLiteral": "3.3.2",
+        "downloadsLiteral": "2430",
+        "dateLiteral": "2010-03-18",
+        "sourceLine": 877,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "BlackEdition2betav1.0.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      }
+    ],
+    "setDownloadInfoLiterals": [
+      {
+        "fileID": 52262,
+        "URL": "https://pds.inven.co.kr/upload/2015/03/04/addon/BlackEdition2_6.1Alpha.zip",
+        "line": 37,
+        "executed": false
+      }
+    ],
+    "selection": "parent-selected-package",
+    "JavaScriptExecuted": false
+  },
+  {
+    "postID": 11218,
+    "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-11218.html",
+    "sourceSHA256": "61AAFBA4DEF148DA418D6E30609C95BCD37248BC394C9D3A611F5521E7F75BAD",
+    "rowCount": 22,
+    "rows": [
+      {
+        "ordinal1": 1,
+        "filename": "DevilUI23.5.15.zip",
+        "clientLiteral": "10.1",
+        "downloadsLiteral": "535",
+        "dateLiteral": "2023-05-15",
+        "sourceLine": 37,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "DevilUI23.5.15.zip"
+          }
+        ],
+        "actualLiteralMapping": [
+          {
+            "fileID": 76228,
+            "URL": "https://pds.inven.co.kr/upload/2023/05/15/addon/DevilUI23.5.15.zip",
+            "line": 37,
+            "executed": false
+          }
+        ]
+      },
+      {
+        "ordinal1": 2,
+        "filename": "Devil21.01.04.zip",
+        "clientLiteral": "9.0.2",
+        "downloadsLiteral": "1875",
+        "dateLiteral": "2021-01-04",
+        "sourceLine": 47,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "Devil21.01.04.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 3,
+        "filename": "Devil20.11.26.zip",
+        "clientLiteral": "9.0.2",
+        "downloadsLiteral": "988",
+        "dateLiteral": "2020-11-26",
+        "sourceLine": 57,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "Devil20.11.26.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 4,
+        "filename": "Devil20.11.22.zip",
+        "clientLiteral": "9.0.2",
+        "downloadsLiteral": "659",
+        "dateLiteral": "2020-11-22",
+        "sourceLine": 67,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "Devil20.11.22.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 5,
+        "filename": "Devil20.11.03.zip",
+        "clientLiteral": "9.0.1",
+        "downloadsLiteral": "543",
+        "dateLiteral": "2020-11-03",
+        "sourceLine": 77,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "Devil20.11.03.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 6,
+        "filename": "disk20.10.28.zip",
+        "clientLiteral": "9.0.1",
+        "downloadsLiteral": "1938",
+        "dateLiteral": "2020-10-28",
+        "sourceLine": 87,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "disk20.10.28.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 7,
+        "filename": "Devil20.10.28.zip",
+        "clientLiteral": "9.0.1",
+        "downloadsLiteral": "719",
+        "dateLiteral": "2020-10-28",
+        "sourceLine": 97,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "Devil20.10.28.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 8,
+        "filename": "disk20.10.20.zip",
+        "clientLiteral": "9.0.1",
+        "downloadsLiteral": "755",
+        "dateLiteral": "2020-10-20",
+        "sourceLine": 107,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "disk20.10.20.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 9,
+        "filename": "Devil20.10.20.zip",
+        "clientLiteral": "9.0.1",
+        "downloadsLiteral": "882",
+        "dateLiteral": "2020-10-20",
+        "sourceLine": 117,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "Devil20.10.20.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 10,
+        "filename": "disk20.10.19.zip",
+        "clientLiteral": "9.0.1",
+        "downloadsLiteral": "367",
+        "dateLiteral": "2020-10-19",
+        "sourceLine": 127,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "disk20.10.19.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 11,
+        "filename": "Devil20.10.19.zip",
+        "clientLiteral": "9.0.1",
+        "downloadsLiteral": "392",
+        "dateLiteral": "2020-10-19",
+        "sourceLine": 137,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "Devil20.10.19.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 12,
+        "filename": "disk2020.10.18.zip",
+        "clientLiteral": "9.0.1",
+        "downloadsLiteral": "137",
+        "dateLiteral": "2020-10-18",
+        "sourceLine": 147,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "disk2020.10.18.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 13,
+        "filename": "Devil2020.10.18.zip",
+        "clientLiteral": "9.0.1",
+        "downloadsLiteral": "185",
+        "dateLiteral": "2020-10-18",
+        "sourceLine": 157,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "Devil2020.10.18.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 14,
+        "filename": "disk3.zip",
+        "clientLiteral": "8.3.0",
+        "downloadsLiteral": "1140",
+        "dateLiteral": "2020-09-05",
+        "sourceLine": 167,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "disk3.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 15,
+        "filename": "disk2.zip",
+        "clientLiteral": "8.3.0",
+        "downloadsLiteral": "1500",
+        "dateLiteral": "2020-09-05",
+        "sourceLine": 177,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "disk2.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 16,
+        "filename": "Devil20.9.5.zip",
+        "clientLiteral": "8.3.0",
+        "downloadsLiteral": "1331",
+        "dateLiteral": "2020-09-05",
+        "sourceLine": 187,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "Devil20.9.5.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 17,
+        "filename": "disk21.18.zip",
+        "clientLiteral": "8.0",
+        "downloadsLiteral": "3036",
+        "dateLiteral": "2020-01-18",
+        "sourceLine": 197,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "disk21.18.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 18,
+        "filename": "Devil1.18.zip",
+        "clientLiteral": "8.0",
+        "downloadsLiteral": "3745",
+        "dateLiteral": "2020-01-18",
+        "sourceLine": 207,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "Devil1.18.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 19,
+        "filename": "Devil12.15.zip",
+        "clientLiteral": "8.0",
+        "downloadsLiteral": "566",
+        "dateLiteral": "2019-12-15",
+        "sourceLine": 217,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "Devil12.15.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 20,
+        "filename": "Devil11.3.zip",
+        "clientLiteral": "8.0",
+        "downloadsLiteral": "661",
+        "dateLiteral": "2019-11-03",
+        "sourceLine": 227,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "Devil11.3.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 21,
+        "filename": "Interface.zip",
+        "clientLiteral": "8.0",
+        "downloadsLiteral": "2669",
+        "dateLiteral": "2019-03-16",
+        "sourceLine": 237,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "Interface.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      },
+      {
+        "ordinal1": 22,
+        "filename": "WTF.zip",
+        "clientLiteral": "8.0",
+        "downloadsLiteral": "3026",
+        "dateLiteral": "2019-03-16",
+        "sourceLine": 247,
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "WTF.zip"
+          }
+        ],
+        "actualLiteralMapping": []
+      }
+    ],
+    "setDownloadInfoLiterals": [
+      {
+        "fileID": 76228,
+        "URL": "https://pds.inven.co.kr/upload/2023/05/15/addon/DevilUI23.5.15.zip",
+        "line": 37,
+        "executed": false
+      }
+    ],
+    "selection": "metadata-only-noGET",
+    "JavaScriptExecuted": false
+  }
+]

@@ -1,0 +1,1359 @@
+------------------------------------------------------------------------
+r186 | funkydude | 2008-10-15 00:59:34 +0000 (Wed, 15 Oct 2008) | 1 line
+Changed paths:
+   A /tags/r186-release (from /trunk:185)
+
+Tagging as r186-release.
+------------------------------------------------------------------------
+r185 | funkydude | 2008-10-15 00:58:45 +0000 (Wed, 15 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/BigWigs_Azeroth.toc
+
+BigWigs_Azeroth: toc update
+------------------------------------------------------------------------
+r184 | root | 2008-09-29 22:01:00 +0000 (Mon, 29 Sep 2008) | 1 line
+Changed paths:
+   A /trunk/.pkgmeta
+
+Facilitate WowAce-on-CurseForge transition
+------------------------------------------------------------------------
+r182 | root | 2008-09-29 20:57:37 +0000 (Mon, 29 Sep 2008) | 1 line
+Changed paths:
+   D /tmp/trunk/BigWigs_Azeroth
+   A /trunk (from /tmp/trunk/BigWigs_Azeroth:181)
+
+Importing old repo data under /trunk
+------------------------------------------------------------------------
+r179 | funkydude | 2008-05-17 13:15:30 +0000 (Sat, 17 May 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs_Azeroth/Emeriss.lua
+
+BigWigs_Azeroth: bugfix deDE
+------------------------------------------------------------------------
+r177 | pettigrow | 2008-03-31 23:53:18 +0000 (Mon, 31 Mar 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs_Azeroth/Azuregos.lua
+   M /tmp/trunk/BigWigs_Azeroth/BigWigs_Azeroth.toc
+   M /tmp/trunk/BigWigs_Azeroth/Emeriss.lua
+   M /tmp/trunk/BigWigs_Azeroth/Lethon.lua
+   M /tmp/trunk/BigWigs_Azeroth/Onyxia.lua
+   M /tmp/trunk/BigWigs_Azeroth/Taerar.lua
+   M /tmp/trunk/BigWigs_Azeroth/Ysondre.lua
+
+BigWigs_Azeroth: frFR update
+------------------------------------------------------------------------
+r176 | funkydude | 2008-03-25 12:11:01 +0000 (Tue, 25 Mar 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs_Azeroth/Azuregos.lua
+   M /tmp/trunk/BigWigs_Azeroth/BigWigs_Azeroth.toc
+   M /tmp/trunk/BigWigs_Azeroth/Emeriss.lua
+   M /tmp/trunk/BigWigs_Azeroth/Lethon.lua
+   M /tmp/trunk/BigWigs_Azeroth/Onyxia.lua
+   M /tmp/trunk/BigWigs_Azeroth/Taerar.lua
+   M /tmp/trunk/BigWigs_Azeroth/Ysondre.lua
+
+BigWigs_Azeroth: 2.4 only
+------------------------------------------------------------------------
+r174 | funkydude | 2008-03-06 03:55:27 +0000 (Thu, 06 Mar 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs_Azeroth/Azuregos.lua
+   M /tmp/trunk/BigWigs_Azeroth/Emeriss.lua
+   M /tmp/trunk/BigWigs_Azeroth/Lethon.lua
+   M /tmp/trunk/BigWigs_Azeroth/Onyxia.lua
+   M /tmp/trunk/BigWigs_Azeroth/Taerar.lua
+   M /tmp/trunk/BigWigs_Azeroth/Ysondre.lua
+
+BigWigs_Azeroth: 2.4 compat and some cleanup
+------------------------------------------------------------------------
+r173 | rabbit | 2008-02-17 13:17:50 +0000 (Sun, 17 Feb 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs_Azeroth/Azuregos.lua
+   M /tmp/trunk/BigWigs_Azeroth/Emeriss.lua
+   M /tmp/trunk/BigWigs_Azeroth/Lethon.lua
+   M /tmp/trunk/BigWigs_Azeroth/Onyxia.lua
+   M /tmp/trunk/BigWigs_Azeroth/Taerar.lua
+   M /tmp/trunk/BigWigs_Azeroth/Ysondre.lua
+
+.BigWigs 3rd party modules: Update to use Babble 3.0 lib globals from BigWigs core.
+------------------------------------------------------------------------
+r172 | rabbit | 2007-12-02 08:42:05 +0000 (Sun, 02 Dec 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs_Azeroth/Azuregos.lua
+   M /tmp/trunk/BigWigs_Azeroth/BigWigs_Azeroth.toc
+   M /tmp/trunk/BigWigs_Azeroth/Emeriss.lua
+   M /tmp/trunk/BigWigs_Azeroth/Lethon.lua
+   M /tmp/trunk/BigWigs_Azeroth/Onyxia.lua
+   M /tmp/trunk/BigWigs_Azeroth/Taerar.lua
+   M /tmp/trunk/BigWigs_Azeroth/Ysondre.lua
+
+BigWigs: Revert the LoD changes.
+------------------------------------------------------------------------
+r171 | funkydude | 2007-12-02 02:25:28 +0000 (Sun, 02 Dec 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs_Azeroth/Azuregos.lua
+   M /tmp/trunk/BigWigs_Azeroth/BigWigs_Azeroth.toc
+   M /tmp/trunk/BigWigs_Azeroth/Emeriss.lua
+   M /tmp/trunk/BigWigs_Azeroth/Lethon.lua
+   M /tmp/trunk/BigWigs_Azeroth/Onyxia.lua
+   M /tmp/trunk/BigWigs_Azeroth/Taerar.lua
+   M /tmp/trunk/BigWigs_Azeroth/Ysondre.lua
+
+.trunk: BigWigs_Externals: Latest BigWigs compatibility
+------------------------------------------------------------------------
+r170 | funkydude | 2007-11-13 17:19:46 +0000 (Tue, 13 Nov 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs_Azeroth/BigWigs_Azeroth.toc
+
+.trunk: Bump toc for various addons and libraries working on the PTR
+------------------------------------------------------------------------
+r169 | sayclub | 2007-10-09 21:35:36 +0000 (Tue, 09 Oct 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/BigWigs_Azeroth/Azuregos.lua
+   M /tmp/trunk/BigWigs_Azeroth/Emeriss.lua
+   M /tmp/trunk/BigWigs_Azeroth/Lethon.lua
+   M /tmp/trunk/BigWigs_Azeroth/Onyxia.lua
+   M /tmp/trunk/BigWigs_Azeroth/Taerar.lua
+   M /tmp/trunk/BigWigs_Azeroth/Ysondre.lua
+
+BigWigs_Azeroth: 
+- Updated localization koKR
+------------------------------------------------------------------------
+r168 | funkydude | 2007-09-25 16:20:41 +0000 (Tue, 25 Sep 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs_Azeroth/BigWigs_Azeroth.toc
+
+.trunk: various toc updates of ptr working addons
+------------------------------------------------------------------------
+r167 | fenlis | 2007-07-03 09:04:26 +0000 (Tue, 03 Jul 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs_Azeroth/Emeriss.lua
+   M /tmp/trunk/BigWigs_Azeroth/Lethon.lua
+   M /tmp/trunk/BigWigs_Azeroth/Taerar.lua
+   M /tmp/trunk/BigWigs_Azeroth/Ysondre.lua
+
+BigWigs_Azeroth: Fixed trigger for koKR translation
+------------------------------------------------------------------------
+r166 | cwdg | 2007-07-03 08:18:30 +0000 (Tue, 03 Jul 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs_Azeroth/Emeriss.lua
+   M /tmp/trunk/BigWigs_Azeroth/Lethon.lua
+   M /tmp/trunk/BigWigs_Azeroth/Taerar.lua
+   M /tmp/trunk/BigWigs_Azeroth/Ysondre.lua
+
+BigWigs_Azeroth: Fix %s's noxious breath wrong and update zhCN local
+------------------------------------------------------------------------
+r165 | fenlis | 2007-07-03 05:10:57 +0000 (Tue, 03 Jul 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/BigWigs_Azeroth/Emeriss.lua
+   M /tmp/trunk/BigWigs_Azeroth/Lethon.lua
+   M /tmp/trunk/BigWigs_Azeroth/Taerar.lua
+   M /tmp/trunk/BigWigs_Azeroth/Ysondre.lua
+
+BigWigs_Azeroth: 
+ - Updated localization koKR
+------------------------------------------------------------------------
+r164 | funkydude | 2007-07-03 03:41:48 +0000 (Tue, 03 Jul 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs_Azeroth/Emeriss.lua
+   M /tmp/trunk/BigWigs_Azeroth/Ysondre.lua
+
+BigWigs_Azeroth: cleanup some merging
+------------------------------------------------------------------------
+r163 | funkydude | 2007-07-03 03:36:59 +0000 (Tue, 03 Jul 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs_Azeroth/Emeriss.lua
+   M /tmp/trunk/BigWigs_Azeroth/Lethon.lua
+   M /tmp/trunk/BigWigs_Azeroth/Taerar.lua
+   M /tmp/trunk/BigWigs_Azeroth/Ysondre.lua
+
+BigWigs_Azeroth: revert noxious breath detection method
+------------------------------------------------------------------------
+r162 | cwdg | 2007-07-01 07:23:31 +0000 (Sun, 01 Jul 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs_Azeroth/Emeriss.lua
+   M /tmp/trunk/BigWigs_Azeroth/Ysondre.lua
+
+BigWigs_Azeroth: fix zhCN locale
+------------------------------------------------------------------------
+r161 | funkydude | 2007-06-29 01:28:28 +0000 (Fri, 29 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs_Azeroth/Emeriss.lua
+   M /tmp/trunk/BigWigs_Azeroth/Ysondre.lua
+
+BigWigs_Azeroth: tweaks and fixes
+------------------------------------------------------------------------
+r160 | cwdg | 2007-06-16 06:52:57 +0000 (Sat, 16 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs_Azeroth/Azuregos.lua
+   M /tmp/trunk/BigWigs_Azeroth/Emeriss.lua
+   M /tmp/trunk/BigWigs_Azeroth/Lethon.lua
+   M /tmp/trunk/BigWigs_Azeroth/Taerar.lua
+   M /tmp/trunk/BigWigs_Azeroth/Ysondre.lua
+
+BigWigs_Azeroth: fix and update zhCN locale
+------------------------------------------------------------------------
+r159 | funkydude | 2007-06-15 18:56:28 +0000 (Fri, 15 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs_Azeroth/Emeriss.lua
+   M /tmp/trunk/BigWigs_Azeroth/Lethon.lua
+   M /tmp/trunk/BigWigs_Azeroth/Taerar.lua
+   M /tmp/trunk/BigWigs_Azeroth/Ysondre.lua
+
+BigWigs_Azeroth: tweaks to noxious breath
+------------------------------------------------------------------------
+r158 | cwdg | 2007-06-14 12:52:46 +0000 (Thu, 14 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs_Azeroth/Azuregos.lua
+   M /tmp/trunk/BigWigs_Azeroth/BigWigs_Azeroth.toc
+   M /tmp/trunk/BigWigs_Azeroth/Emeriss.lua
+   M /tmp/trunk/BigWigs_Azeroth/Lethon.lua
+   M /tmp/trunk/BigWigs_Azeroth/Onyxia.lua
+   M /tmp/trunk/BigWigs_Azeroth/Taerar.lua
+   M /tmp/trunk/BigWigs_Azeroth/Ysondre.lua
+
+BigWigs_Azeroth: update Chinese language translation
+------------------------------------------------------------------------
+r157 | funkydude | 2007-05-22 05:13:00 +0000 (Tue, 22 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs_Azeroth
+   M /tmp/trunk/BigWigs_Azeroth/BigWigs_Azeroth.toc
+
+BigWigs_Azeroth: toc > 20100
+------------------------------------------------------------------------
+r156 | rabbit | 2007-05-02 14:47:19 +0000 (Wed, 02 May 2007) | 1 line
+Changed paths:
+   D /tmp/trunk/BigWigs/Azeroth
+   A /tmp/trunk/BigWigs_Azeroth (from /tmp/trunk/BigWigs/Azeroth:155)
+
+BigWigs: Moving out of the BigWigs directory.
+------------------------------------------------------------------------
+r155 | funkydude | 2007-05-01 00:36:44 +0000 (Tue, 01 May 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Azeroth/Onyxia.lua
+
+BigWigs: Azeroth/Onyxia: hopefully fix french deep breath
+------------------------------------------------------------------------
+r154 | fenlis | 2007-04-30 01:48:11 +0000 (Mon, 30 Apr 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Azeroth/Azuregos.lua
+   M /tmp/trunk/BigWigs/Azeroth/Emeriss.lua
+   M /tmp/trunk/BigWigs/Azeroth/Onyxia.lua
+
+BigWigs: 
+ - Updated localization koKR
+------------------------------------------------------------------------
+r153 | pettigrow | 2007-04-13 16:18:10 +0000 (Fri, 13 Apr 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Azeroth/Azuregos.lua
+   M /tmp/trunk/BigWigs/Azeroth/Emeriss.lua
+   M /tmp/trunk/BigWigs/Azeroth/Lethon.lua
+   M /tmp/trunk/BigWigs/Azeroth/Taerar.lua
+   M /tmp/trunk/BigWigs/Azeroth/Ysondre.lua
+
+BigWigs: Azeroth: frFR Update
+------------------------------------------------------------------------
+r152 | funkydude | 2007-04-06 17:40:55 +0000 (Fri, 06 Apr 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Azeroth/Emeriss.lua
+
+BigWigs: Azeroth/Emeriss: add 10 second corruption duration bar
+------------------------------------------------------------------------
+r151 | funkydude | 2007-04-06 03:29:00 +0000 (Fri, 06 Apr 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Azeroth/Emeriss.lua
+
+BigWigs: Azeroth/Emeriss:
+- warn for Corruption of the Earth
+------------------------------------------------------------------------
+r150 | funkydude | 2007-04-06 03:14:58 +0000 (Fri, 06 Apr 2007) | 5 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Azeroth/Azuregos.lua
+
+BigWigs: Azeroth/Azuregos:
+- engage alert
+- cleanup
+- schedule fade instead of registering aura_gone
+- sync
+------------------------------------------------------------------------
+r149 | funkydude | 2007-04-05 23:31:22 +0000 (Thu, 05 Apr 2007) | 4 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Azeroth/Lethon.lua
+   M /tmp/trunk/BigWigs/Azeroth/Taerar.lua
+
+BigWigs: Azeroth: Lethon & Taerar:
+- cleanup
+- scan for resists
+- sync
+------------------------------------------------------------------------
+r148 | funkydude | 2007-04-05 22:25:32 +0000 (Thu, 05 Apr 2007) | 7 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Azeroth/Emeriss.lua
+   M /tmp/trunk/BigWigs/Azeroth/Ysondre.lua
+
+BigWigs: Azeroth:
+- Emeriss
+- massive cleanup
+- sync disease & infection
+- catch resists
+- Ysondre
+- babble boss names
+------------------------------------------------------------------------
+r147 | funkydude | 2007-04-05 21:45:02 +0000 (Thu, 05 Apr 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Azeroth/Ysondre.lua
+
+BigWigs: Azeroth/Ysondre: some fixes
+------------------------------------------------------------------------
+r146 | funkydude | 2007-04-05 16:19:03 +0000 (Thu, 05 Apr 2007) | 4 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Azeroth/Ysondre.lua
+
+BigWigs: Azeroth/Ysondre:
+- warn for druids
+- scan for resists of noxious breath
+- sync
+------------------------------------------------------------------------
+r145 | funkydude | 2007-04-05 04:46:33 +0000 (Thu, 05 Apr 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Azeroth/Onyxia.lua
+
+BigWigs: Azeroth/Onyxia: tweaks & p1 message
+------------------------------------------------------------------------
+r144 | kayin | 2007-03-28 05:30:47 +0000 (Wed, 28 Mar 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Azeroth/Lethon.lua
+   M /tmp/trunk/BigWigs/Azeroth/Onyxia.lua
+   M /tmp/trunk/BigWigs/Azeroth/Taerar.lua
+   M /tmp/trunk/BigWigs/Azeroth/Ysondre.lua
+
+BigWigs: Updated changed zhTW trigger, thanks to scorpio0920. 
+------------------------------------------------------------------------
+r143 | fenlis | 2007-03-15 14:06:49 +0000 (Thu, 15 Mar 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Azeroth/Emeriss.lua
+
+BigWigs: Updated localization koKR
+------------------------------------------------------------------------
+r142 | rabbit | 2007-03-14 23:37:07 +0000 (Wed, 14 Mar 2007) | 3 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Azeroth/Azuregos.lua
+   M /tmp/trunk/BigWigs/Azeroth/Emeriss.lua
+   M /tmp/trunk/BigWigs/Azeroth/Lethon.lua
+   M /tmp/trunk/BigWigs/Azeroth/Onyxia.lua
+   M /tmp/trunk/BigWigs/Azeroth/Taerar.lua
+   M /tmp/trunk/BigWigs/Azeroth/Ysondre.lua
+
+BigWigs:
+ * Modules no longer mixin CandyBar, instead we handle everything in the Bars module.
+ * All bossmod toggle options are now mapped directly to a key in the translation table instead of option_name, to avoid extra string concatenation on load. Note that some external modules might need to be updated.
+------------------------------------------------------------------------
+r141 | saroz | 2007-03-12 19:55:53 +0000 (Mon, 12 Mar 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Azeroth/Emeriss.lua
+
+BigWigs: Emeriss: make that :Icon()
+------------------------------------------------------------------------
+r140 | rabbit | 2007-03-12 06:21:28 +0000 (Mon, 12 Mar 2007) | 3 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Azeroth/Azuregos.lua
+   M /tmp/trunk/BigWigs/Azeroth/Emeriss.lua
+   M /tmp/trunk/BigWigs/Azeroth/Lethon.lua
+   M /tmp/trunk/BigWigs/Azeroth/Onyxia.lua
+   M /tmp/trunk/BigWigs/Azeroth/Taerar.lua
+   M /tmp/trunk/BigWigs/Azeroth/Ysondre.lua
+
+BigWigs:
+ * Remove the _cmd translation for bossmod options, just use the database key instead.
+ * rx through the modules removing it, probably didn't catch them all.
+------------------------------------------------------------------------
+r139 | saroz | 2007-03-10 00:25:22 +0000 (Sat, 10 Mar 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Azeroth/Emeriss.lua
+
+BigWigs: Emeriss: use SetIcon()
+------------------------------------------------------------------------
+r138 | rabbit | 2007-02-22 07:37:44 +0000 (Thu, 22 Feb 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Azeroth/Azuregos.lua
+   M /tmp/trunk/BigWigs/Azeroth/Emeriss.lua
+   M /tmp/trunk/BigWigs/Azeroth/Lethon.lua
+   M /tmp/trunk/BigWigs/Azeroth/Onyxia.lua
+   M /tmp/trunk/BigWigs/Azeroth/Taerar.lua
+   M /tmp/trunk/BigWigs/Azeroth/Ysondre.lua
+
+BigWigs: Stop bloating the global scope with our modules. This will most likely break some things, but the Test module works, so here it is.
+------------------------------------------------------------------------
+r137 | ammo | 2007-02-13 12:34:16 +0000 (Tue, 13 Feb 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Azeroth/Azuregos.lua
+
+BigWigs (azuregos): typo fix
+
+------------------------------------------------------------------------
+r136 | ammo | 2007-02-13 11:15:13 +0000 (Tue, 13 Feb 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Azeroth/Azuregos.lua
+   M /tmp/trunk/BigWigs/Azeroth/Emeriss.lua
+   M /tmp/trunk/BigWigs/Azeroth/Lethon.lua
+   M /tmp/trunk/BigWigs/Azeroth/Onyxia.lua
+   M /tmp/trunk/BigWigs/Azeroth/Taerar.lua
+   M /tmp/trunk/BigWigs/Azeroth/Ysondre.lua
+
+BigWigs: clean up a major mess 
+
+------------------------------------------------------------------------
+r135 | ammo | 2007-02-07 10:37:38 +0000 (Wed, 07 Feb 2007) | 2 lines
+Changed paths:
+   D /tmp/trunk/BigWigs/Azeroth/Azeroth.toc
+   A /tmp/trunk/BigWigs/Azeroth/BigWigs_Azeroth.toc (from /tmp/trunk/BigWigs/Azeroth/Azeroth.toc:134)
+
+BigWigs: rename .tocs for filelist.wau
+
+------------------------------------------------------------------------
+r134 | funkydude | 2007-02-06 14:39:11 +0000 (Tue, 06 Feb 2007) | 1 line
+Changed paths:
+   A /tmp/trunk/BigWigs/Azeroth/Azeroth.toc (from /tmp/trunk/BigWigs/Azeroth/Other.toc:133)
+   D /tmp/trunk/BigWigs/Azeroth/Other.toc
+
+BigWigs: Other.toc --> Azeroth.toc
+------------------------------------------------------------------------
+r133 | funkydude | 2007-02-06 14:37:26 +0000 (Tue, 06 Feb 2007) | 1 line
+Changed paths:
+   A /tmp/trunk/BigWigs/Azeroth (from /tmp/trunk/BigWigs/Other:132)
+   D /tmp/trunk/BigWigs/Other
+
+BigWigs: Other --> Azeroth
+------------------------------------------------------------------------
+r132 | rabbit | 2007-02-06 00:54:48 +0000 (Tue, 06 Feb 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Azuregos.lua
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+   M /tmp/trunk/BigWigs/Other/Lethon.lua
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+   M /tmp/trunk/BigWigs/Other/Other.toc
+   M /tmp/trunk/BigWigs/Other/Taerar.lua
+   M /tmp/trunk/BigWigs/Other/Ysondre.lua
+
+BigWigs: Restructure the menu from Other -> Azeroth + Outland.
+------------------------------------------------------------------------
+r131 | funkydude | 2007-02-06 00:32:50 +0000 (Tue, 06 Feb 2007) | 1 line
+Changed paths:
+   D /tmp/trunk/BigWigs/Other/Gruul.lua
+   D /tmp/trunk/BigWigs/Other/Kazzak.lua
+   D /tmp/trunk/BigWigs/Other/Magtheridon.lua
+   D /tmp/trunk/BigWigs/Other/Maulgar.lua
+
+BigWigs: Moved outland bosses to outland folder
+------------------------------------------------------------------------
+r130 | funkydude | 2007-02-05 23:45:09 +0000 (Mon, 05 Feb 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Magtheridon.lua
+
+BigWigs: Other/Magtheridon: oops
+------------------------------------------------------------------------
+r129 | funkydude | 2007-02-05 23:43:18 +0000 (Mon, 05 Feb 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Magtheridon.lua
+
+BigWigs: Other/Magtheridon:
+- .otherMenu = true
+------------------------------------------------------------------------
+r128 | funkydude | 2007-02-05 23:04:03 +0000 (Mon, 05 Feb 2007) | 2 lines
+Changed paths:
+   A /tmp/trunk/BigWigs/Other/Magtheridon.lua
+   M /tmp/trunk/BigWigs/Other/Other.toc
+
+BigWigs: Other:
+- added Magtheridon Mod
+------------------------------------------------------------------------
+r127 | funkydude | 2007-02-04 01:16:03 +0000 (Sun, 04 Feb 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Maulgar.lua
+
+BigWigs: Other/Maulgar:
+- drycoded full syncing
+------------------------------------------------------------------------
+r126 | funkydude | 2007-02-03 23:50:34 +0000 (Sat, 03 Feb 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Maulgar.lua
+
+BigWigs: Other/Maulgar:
+- proper formatting smirks at you
+------------------------------------------------------------------------
+r125 | funkydude | 2007-02-03 23:47:17 +0000 (Sat, 03 Feb 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Maulgar.lua
+
+BigWigs: Other:
+- updated Maulgar mod
+------------------------------------------------------------------------
+r124 | rabbit | 2007-02-03 15:59:01 +0000 (Sat, 03 Feb 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Azuregos.lua
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+   M /tmp/trunk/BigWigs/Other/Gruul.lua
+   M /tmp/trunk/BigWigs/Other/Kazzak.lua
+   M /tmp/trunk/BigWigs/Other/Lethon.lua
+   M /tmp/trunk/BigWigs/Other/Maulgar.lua
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+   M /tmp/trunk/BigWigs/Other/Taerar.lua
+   M /tmp/trunk/BigWigs/Other/Ysondre.lua
+
+BigWigs: Core: Add a new module property; otherMenu, which, if set, will put that module in the Other menu instead of its own zone menu. This stops us from creating a reverse Babble-Zone lookup table OnInit, thus reducing initial memory load slightly.
+------------------------------------------------------------------------
+r123 | funkydude | 2007-02-01 02:54:31 +0000 (Thu, 01 Feb 2007) | 3 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Gruul.lua
+   M /tmp/trunk/BigWigs/Other/Maulgar.lua
+
+BigWigs: Karazhan:
+- add Maiden mod
+- minor changes
+------------------------------------------------------------------------
+r122 | fenlis | 2007-02-01 00:53:12 +0000 (Thu, 01 Feb 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+
+BigWigs : Updated localization koKR
+------------------------------------------------------------------------
+r121 | funkydude | 2007-01-30 05:25:47 +0000 (Tue, 30 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Gruul.lua
+
+BigWigs: Other: updated Gruul mod
+------------------------------------------------------------------------
+r120 | funkydude | 2007-01-30 03:58:06 +0000 (Tue, 30 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Gruul.lua
+
+BigWigs: Other: Gruul > Gruul the Dragonkiller
+------------------------------------------------------------------------
+r119 | funkydude | 2007-01-29 08:10:29 +0000 (Mon, 29 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Kazzak.lua
+
+BigWigs: Other: updated Kazzak mod a little
+------------------------------------------------------------------------
+r118 | funkydude | 2007-01-25 21:31:55 +0000 (Thu, 25 Jan 2007) | 1 line
+Changed paths:
+   A /tmp/trunk/BigWigs/Other/Maulgar.lua
+   M /tmp/trunk/BigWigs/Other/Other.toc
+
+BigWigs: Other: added High King Maulgar (in beta)
+------------------------------------------------------------------------
+r117 | funkydude | 2007-01-25 19:46:22 +0000 (Thu, 25 Jan 2007) | 1 line
+Changed paths:
+   A /tmp/trunk/BigWigs/Other/Gruul.lua
+   M /tmp/trunk/BigWigs/Other/Other.toc
+
+BigWigs: Other: prepin' Gruul's Lair
+------------------------------------------------------------------------
+r116 | funkydude | 2007-01-17 08:54:50 +0000 (Wed, 17 Jan 2007) | 1 line
+Changed paths:
+   A /tmp/trunk/BigWigs/Other/Kazzak.lua
+   M /tmp/trunk/BigWigs/Other/Other.toc
+
+BigWigs: Other: Ready the new Kazzak mod
+------------------------------------------------------------------------
+r115 | funkydude | 2007-01-15 22:42:01 +0000 (Mon, 15 Jan 2007) | 1 line
+Changed paths:
+   D /tmp/trunk/BigWigs/Other/Kazzak.lua
+
+BigWigs: Other/Kazzak: lets just remove it completely for just now, save zip space \o/
+------------------------------------------------------------------------
+r114 | funkydude | 2007-01-15 22:27:04 +0000 (Mon, 15 Jan 2007) | 4 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Kazzak.lua
+   M /tmp/trunk/BigWigs/Other/Other.toc
+
+BigWigs: Other:
+ * No longer loads in Blasted Lands
+ * No Longer loads Kazzak mod
+ * Kazzak is now in Outlands, bigger, better, badder, and needs a transcript :p
+------------------------------------------------------------------------
+r113 | rabbit | 2007-01-13 21:51:46 +0000 (Sat, 13 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+
+BigWigs: Onyxia: Hopefully fixed frFR.
+------------------------------------------------------------------------
+r112 | rabbit | 2007-01-13 21:49:11 +0000 (Sat, 13 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+
+BigWigs: Onyxia: Fix deep breath.
+------------------------------------------------------------------------
+r111 | rabbit | 2007-01-11 03:50:21 +0000 (Thu, 11 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Azuregos.lua
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+   M /tmp/trunk/BigWigs/Other/Lethon.lua
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+   M /tmp/trunk/BigWigs/Other/Taerar.lua
+   M /tmp/trunk/BigWigs/Other/Ysondre.lua
+
+BigWigs: Here's hoping perl is like cycling.
+------------------------------------------------------------------------
+r110 | funkydude | 2007-01-09 15:28:05 +0000 (Tue, 09 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+   M /tmp/trunk/BigWigs/Other/Lethon.lua
+   M /tmp/trunk/BigWigs/Other/Taerar.lua
+   M /tmp/trunk/BigWigs/Other/Ysondre.lua
+
+BigWigs: Other: various code cleanups
+------------------------------------------------------------------------
+r109 | funkydude | 2007-01-09 14:45:13 +0000 (Tue, 09 Jan 2007) | 4 lines
+Changed paths:
+   A /tmp/trunk/BigWigs/Other/Lethon.lua
+   M /tmp/trunk/BigWigs/Other/Other.toc
+   A /tmp/trunk/BigWigs/Other/Taerar.lua
+   A /tmp/trunk/BigWigs/Other/Ysondre.lua
+
+BigWigs: toc 20003
+ * Other: added Ysondre, Taerar, Lethon mods
+ * mostly drycoded and lots of c&p
+ * inc:code cleanup, and more features will be added
+------------------------------------------------------------------------
+r108 | funkydude | 2007-01-08 11:28:08 +0000 (Mon, 08 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Other.toc
+
+BigWigs: various toc updates
+------------------------------------------------------------------------
+r107 | funkydude | 2007-01-07 15:32:55 +0000 (Sun, 07 Jan 2007) | 5 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Other.toc
+
+BigWigs: MC: +3 Bosses
+ * Sulfuron: heal + inspire
+ * Garr: pulse
+ * Golemagg: for the 'you owned it!' we love to see
+ * toc updates
+------------------------------------------------------------------------
+r106 | funkydude | 2007-01-07 13:12:02 +0000 (Sun, 07 Jan 2007) | 4 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+
+BigWigs: Other/Emeriss:
+ * added icon placement option for afflicted players
+ * added engage message
+ * added approx first breath bar
+------------------------------------------------------------------------
+r105 | funkydude | 2007-01-07 11:14:29 +0000 (Sun, 07 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+   M /tmp/trunk/BigWigs/Other/Other.toc
+
+BigWigs: Other/Emeriss: fixed not enabling when emeriss was in ashenvale
+------------------------------------------------------------------------
+r104 | rabbit | 2007-01-03 18:26:26 +0000 (Wed, 03 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+
+BigWigs: Onyxia: Attempt to fix deep breath trigger, thanks Ekate.
+------------------------------------------------------------------------
+r102 | funkydude | 2006-12-23 23:14:34 +0000 (Sat, 23 Dec 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+   M /tmp/trunk/BigWigs/Other/Other.toc
+
+BigWigs: all fun and games until someone gets hurt, encode with a signature, i wonder if anything breaks
+------------------------------------------------------------------------
+r101 | rabbit | 2006-12-21 09:40:54 +0000 (Thu, 21 Dec 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+
+BigWigs: Onyxia: Attempt to fix the DB trigger for frFR.
+------------------------------------------------------------------------
+r99 | rabbit | 2006-12-10 22:04:09 +0000 (Sun, 10 Dec 2006) | 4 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Azuregos.lua
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+   M /tmp/trunk/BigWigs/Other/Kazzak.lua
+   M /tmp/trunk/BigWigs/Other/Other.toc
+
+BigWigs:
+ * Zones are now displayed on the top level menu, reduces the distance you have to travel to toggle boss options.
+ * Bosses in zones that don't have a direct translation in BigWigs' internal AceLocale table will be put in to the Other "zone". Onyxia's Lair was removed from the table, so she will be under the Other zone as well now, along with Emeriss, etc.
+ * Some cleanup of the BigWigs AL table and rearrange some SurfaceLib code.
+------------------------------------------------------------------------
+r98 | funkydude | 2006-12-03 20:15:37 +0000 (Sun, 03 Dec 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Azuregos.lua
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+   M /tmp/trunk/BigWigs/Other/Kazzak.lua
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+
+BigWigs: Other:
+ * Formatting update, nothing important
+------------------------------------------------------------------------
+r97 | ammo | 2006-11-29 14:02:23 +0000 (Wed, 29 Nov 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Other.toc
+
+BigWigs: toc bumpage to 20000 it all works in TBC anyway.
+
+------------------------------------------------------------------------
+r96 | xinsonic | 2006-11-27 05:03:23 +0000 (Mon, 27 Nov 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Other.toc
+
+BigWigs: add Title-zhTW and Notes-zhTW in .toc files.
+------------------------------------------------------------------------
+r95 | rabbit | 2006-11-17 16:07:36 +0000 (Fri, 17 Nov 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Other.toc
+
+BigWigs: (Re)set svn:eol-style for files that are missing it.
+------------------------------------------------------------------------
+r94 | rabbit | 2006-11-17 15:58:56 +0000 (Fri, 17 Nov 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Other.toc
+
+BigWigs: Remove "-Ace2-" from LoD TOCs.
+------------------------------------------------------------------------
+r93 | jerry | 2006-11-16 17:19:06 +0000 (Thu, 16 Nov 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Azuregos.lua
+
+BigWigs : french warn messages for Azuregos were inverted.
+------------------------------------------------------------------------
+r92 | ammo | 2006-11-15 18:17:04 +0000 (Wed, 15 Nov 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Other.toc
+
+BigWigs: Removed Test.lua from the other.toc. It might cause problems with people not deleting old files because they use WAU.
+
+------------------------------------------------------------------------
+r91 | jerry | 2006-11-14 06:56:13 +0000 (Tue, 14 Nov 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Azuregos.lua
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+   M /tmp/trunk/BigWigs/Other/Kazzak.lua
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+
+BigWigs : Updated french translations
+------------------------------------------------------------------------
+r90 | ammo | 2006-11-12 17:29:21 +0000 (Sun, 12 Nov 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Other.toc
+
+BigWigs:
+* Attempt 6 at committing this junk
+------------------------------------------------------------------------
+r89 | ammo | 2006-11-12 16:44:36 +0000 (Sun, 12 Nov 2006) | 4 lines
+Changed paths:
+   D /tmp/trunk/BigWigs/Other/Test.lua
+
+BigWigs:
+* First step to proper LoadOnDemand.
+* X-BigWigs-LoadWithCore: 1
+* Moved test module from Other to plugins where it belongs.
+------------------------------------------------------------------------
+r88 | ammo | 2006-11-12 14:44:35 +0000 (Sun, 12 Nov 2006) | 3 lines
+Changed paths:
+   A /tmp/trunk/BigWigs/Other/Other.toc
+
+BigWigs:
+* Added .toc files to all zones. Basic plumbing for LoD.
+
+------------------------------------------------------------------------
+r87 | jerry | 2006-11-11 17:14:04 +0000 (Sat, 11 Nov 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+
+BigWigs : updates to french translation
+------------------------------------------------------------------------
+r86 | xinsonic | 2006-11-08 08:09:44 +0000 (Wed, 08 Nov 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+
+BigWigs: - fix zhTW, thanks and enix256 matini.
+------------------------------------------------------------------------
+r85 | xinsonic | 2006-11-01 22:01:52 +0000 (Wed, 01 Nov 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+
+BigWigs: fix zhTW. thanks to matini, enix256 and aaronmvp.
+
+------------------------------------------------------------------------
+r84 | ammo | 2006-10-28 19:36:29 +0000 (Sat, 28 Oct 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+
+BigWigs (Onyxia): frFR update
+
+------------------------------------------------------------------------
+r83 | xinsonic | 2006-10-24 12:24:01 +0000 (Tue, 24 Oct 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Kazzak.lua
+
+BigWigs: update zhTW, thanks to hmj and enix256.
+------------------------------------------------------------------------
+r82 | xinsonic | 2006-10-23 11:20:03 +0000 (Mon, 23 Oct 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Azuregos.lua
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+   M /tmp/trunk/BigWigs/Other/Kazzak.lua
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+   M /tmp/trunk/BigWigs/Other/Test.lua
+
+BigWigs: Added zhTW to BigWigs
+------------------------------------------------------------------------
+r81 | flyflame | 2006-10-22 22:19:55 +0000 (Sun, 22 Oct 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+
+BigWigs: update zhCN locales (Nefarian, BaronGeddon, Majordomo, Kelthuzad, Onyxia)
+------------------------------------------------------------------------
+r80 | rabbit | 2006-10-22 05:21:13 +0000 (Sun, 22 Oct 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+
+BigWigs: Onyxia: Adjusted warning strings slightly.
+------------------------------------------------------------------------
+r79 | rabbit | 2006-10-21 02:35:34 +0000 (Sat, 21 Oct 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+   M /tmp/trunk/BigWigs/Other/Kazzak.lua
+   M /tmp/trunk/BigWigs/Other/Test.lua
+
+BigWigs: Indenting and misc. cleanup from the frFR commits.
+------------------------------------------------------------------------
+r78 | pettigrow | 2006-10-20 22:43:01 +0000 (Fri, 20 Oct 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Azuregos.lua
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+   M /tmp/trunk/BigWigs/Other/Kazzak.lua
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+   M /tmp/trunk/BigWigs/Other/Test.lua
+
+BigWigs: Various frFR updates
+------------------------------------------------------------------------
+r77 | rabbit | 2006-10-19 04:10:47 +0000 (Thu, 19 Oct 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+
+BigWigs: Emeriss: Babble-Zone-2.2, not 2.0.
+------------------------------------------------------------------------
+r76 | rabbit | 2006-10-19 00:59:33 +0000 (Thu, 19 Oct 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Azuregos.lua
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+   M /tmp/trunk/BigWigs/Other/Kazzak.lua
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+   M /tmp/trunk/BigWigs/Other/Test.lua
+
+BigWigs: AceLocale and Babble 2.2 update. This update most likely breaks some bossmods.
+------------------------------------------------------------------------
+r75 | gamefaq | 2006-10-17 18:44:37 +0000 (Tue, 17 Oct 2006) | 3 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Test.lua
+
+BigWigs: german (deDE) translation updates from filion (thx to him) and some from me
+- added missing translations for Plugins/Extras/Core/Options
+- reworked some translations to sound more polished 
+------------------------------------------------------------------------
+r74 | rabbit | 2006-10-11 22:49:51 +0000 (Wed, 11 Oct 2006) | 6 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Test.lua
+
+BigWigs:
+ * Added different icons for enabled/disabled state which you can toggle with /bw standby, thanks to Mikk for the icons.
+ * Test module does not need Babble-Boss
+ * All BigWigs modules will disable when BW Core disables, and all non-boss modules will be enabled when it enables. BigWigs_CoreEnabled and BigWigs_CoreDisabled events are sent in these cases.
+ * The config groups Bosses, Plugins and Extras are no longer available when BW is disabled.
+ * Tooltip can now be detached since it is actually useful for something.
+------------------------------------------------------------------------
+r73 | rabbit | 2006-10-10 00:09:12 +0000 (Tue, 10 Oct 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Kazzak.lua
+
+BigWigs: Huge deDE update, thanks filion!
+------------------------------------------------------------------------
+r72 | rabbit | 2006-10-09 23:57:48 +0000 (Mon, 09 Oct 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Azuregos.lua
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+   M /tmp/trunk/BigWigs/Other/Kazzak.lua
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+   M /tmp/trunk/BigWigs/Other/Test.lua
+
+BigWigs: Setting svn:eol-style: native.
+------------------------------------------------------------------------
+r71 | hshh | 2006-10-05 18:31:24 +0000 (Thu, 05 Oct 2006) | 3 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+
+BigWigs:
+- fix Onyxia Deep Breath Simplified Chinese locale.
+- add some Core.lua Simplified Chinese locales.
+------------------------------------------------------------------------
+r70 | ammo | 2006-10-05 17:45:06 +0000 (Thu, 05 Oct 2006) | 3 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Azuregos.lua
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+   M /tmp/trunk/BigWigs/Other/Kazzak.lua
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+
+BigWigs:
+* Other/ modules now have the correct message types set instead of the corresponding colors
+
+------------------------------------------------------------------------
+r69 | hshh | 2006-09-27 16:24:07 +0000 (Wed, 27 Sep 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+   M /tmp/trunk/BigWigs/Other/Test.lua
+
+BigWigs: fix Simplified Chinese locales
+------------------------------------------------------------------------
+r68 | rabbit | 2006-09-25 12:02:02 +0000 (Mon, 25 Sep 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Azuregos.lua
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+
+BigWigs: frFR updates for Emeriss and Azuregos.
+------------------------------------------------------------------------
+r67 | ammo | 2006-09-22 08:14:16 +0000 (Fri, 22 Sep 2006) | 3 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Test.lua
+
+BigWigs:
+* Sync test only for Raid leaders and officers
+
+------------------------------------------------------------------------
+r66 | nevcairiel | 2006-09-22 08:07:35 +0000 (Fri, 22 Sep 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Test.lua
+
+BigWigs: merged lost changes from 11615-11650
+------------------------------------------------------------------------
+r65 | ammo | 2006-09-19 14:04:42 +0000 (Tue, 19 Sep 2006) | 4 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Azuregos.lua
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+   M /tmp/trunk/BigWigs/Other/Kazzak.lua
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+
+BigWigs:
+* deDE update for ZG
+* deDE update for other modules
+
+------------------------------------------------------------------------
+r64 | fenlis | 2006-09-18 02:28:49 +0000 (Mon, 18 Sep 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Azuregos.lua
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+   M /tmp/trunk/BigWigs/Other/Kazzak.lua
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+   M /tmp/trunk/BigWigs/Other/Test.lua
+
+BigWigs: Other : Support Korean localize
+------------------------------------------------------------------------
+r63 | ammo | 2006-09-11 15:38:02 +0000 (Mon, 11 Sep 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+
+BigWigs (Onyxia): Fear timer typo fixed
+
+------------------------------------------------------------------------
+r62 | ammo | 2006-08-28 10:24:15 +0000 (Mon, 28 Aug 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Azuregos.lua
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+   M /tmp/trunk/BigWigs/Other/Kazzak.lua
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+   M /tmp/trunk/BigWigs/Other/Test.lua
+
+BigWigs: Modules in the Other/ folder updated for L["blah"]
+
+------------------------------------------------------------------------
+r61 | tekkub | 2006-08-25 22:26:21 +0000 (Fri, 25 Aug 2006) | 4 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+
+BigWigs
+- Applied diff from filion to fix deDE strings
+- Closes: #234 --- http://www.wowace.com/flyspray/?do=details&id=234
+
+------------------------------------------------------------------------
+r60 | ammo | 2006-08-25 08:50:23 +0000 (Fri, 25 Aug 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+
+BigWigs (Onyxia): should work again with the new emote format
+
+------------------------------------------------------------------------
+r58 | tekkub | 2006-08-22 02:43:50 +0000 (Tue, 22 Aug 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+
+BigWigs
+- Typo in the ony thing I commited earlier
+------------------------------------------------------------------------
+r57 | tekkub | 2006-08-22 00:58:26 +0000 (Tue, 22 Aug 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+
+BigWigs
+- Applied diff from tigg that, like, fixed something with ony, I guess....
+------------------------------------------------------------------------
+r56 | rabbit | 2006-08-16 12:44:52 +0000 (Wed, 16 Aug 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Test.lua
+
+BigWigs: Test: Bugfix.
+------------------------------------------------------------------------
+r55 | ammo | 2006-08-16 12:21:48 +0000 (Wed, 16 Aug 2006) | 4 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Test.lua
+
+BigWigs:
+* Added consoleOptions to the test module.
+* Closes: FS#107 . Test module never got converted 
+
+------------------------------------------------------------------------
+r54 | ammo | 2006-08-16 08:28:51 +0000 (Wed, 16 Aug 2006) | 4 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Test.lua
+
+BigWigs:
+* Message types should not be localized.
+* Messages can now be sent to SCT or MSBT optionally as well as the RaidWarning frame or BigWigs own messageframe
+
+------------------------------------------------------------------------
+r53 | hk2717 | 2006-08-15 21:27:19 +0000 (Tue, 15 Aug 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Test.lua
+
+BigWigs: zhCN locale update to Faerlina, Maexxna and the new color and version modules.
+------------------------------------------------------------------------
+r52 | shyva | 2006-08-15 14:46:19 +0000 (Tue, 15 Aug 2006) | 3 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Test.lua
+
+BigWigs:
+Added a color module, old boss modules still work, but we should update them all to use a new format :) (check Test.lua, Colors.lua, Bars.lua and Messages.lua for the new format + message types)
+
+------------------------------------------------------------------------
+r49 | tekkub | 2006-08-14 21:22:05 +0000 (Mon, 14 Aug 2006) | 4 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Azuregos.lua
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+   M /tmp/trunk/BigWigs/Other/Kazzak.lua
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+
+BigWigs
+- deDE translations from filion
+- Closes: #165 --- http://www.wowace.com/flyspray/?do=details&id=165
+
+------------------------------------------------------------------------
+r48 | hk2717 | 2006-08-14 17:26:56 +0000 (Mon, 14 Aug 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Azuregos.lua
+
+BigWigs: updated zhCN localization to BossBlock and Azuregos modules.
+------------------------------------------------------------------------
+r47 | ammo | 2006-08-14 13:23:57 +0000 (Mon, 14 Aug 2006) | 3 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Azuregos.lua
+
+BigWigs (Azuregos):
+* Timerbar for Magic Shield added
+
+------------------------------------------------------------------------
+r46 | hk2717 | 2006-08-12 18:22:41 +0000 (Sat, 12 Aug 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Test.lua
+
+BigWigs: Updated zhCN locale in Thaddius module to catch up with the recent change. Test.lua localized too.
+------------------------------------------------------------------------
+r45 | tekkub | 2006-08-12 04:02:10 +0000 (Sat, 12 Aug 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Test.lua
+
+BigWigs
+- Removed the debug module completely, it's not needed anyway.
+------------------------------------------------------------------------
+r44 | tekkub | 2006-08-11 16:16:08 +0000 (Fri, 11 Aug 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Azuregos.lua
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+   M /tmp/trunk/BigWigs/Other/Kazzak.lua
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+   M /tmp/trunk/BigWigs/Other/Test.lua
+
+BigWigs
+- Setting/fixing svn:keywords across all files
+------------------------------------------------------------------------
+r43 | ammo | 2006-08-10 22:34:49 +0000 (Thu, 10 Aug 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Test.lua
+
+BigWigs: Removed some double localization
+
+------------------------------------------------------------------------
+r42 | oxman | 2006-08-10 20:26:07 +0000 (Thu, 10 Aug 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+
+BigWigs: french localization for Onyxia
+------------------------------------------------------------------------
+r41 | ammo | 2006-08-10 13:16:06 +0000 (Thu, 10 Aug 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Kazzak.lua
+
+BigWigs (Kazzak): warnings fixed
+
+------------------------------------------------------------------------
+r40 | rabbit | 2006-08-09 13:23:46 +0000 (Wed, 09 Aug 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+   M /tmp/trunk/BigWigs/Other/Kazzak.lua
+   M /tmp/trunk/BigWigs/Other/Test.lua
+
+BigWigs: Remove the bar ID argument from BigWigs_StartBar, it's no longer needed now that we have candybar grouping.
+------------------------------------------------------------------------
+r39 | hk2717 | 2006-08-09 08:48:16 +0000 (Wed, 09 Aug 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Azuregos.lua
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+   M /tmp/trunk/BigWigs/Other/Kazzak.lua
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+
+BigWigs: Updated zhCN localization to ZG, Other and core modules.
+------------------------------------------------------------------------
+r38 | delsphynx | 2006-08-06 02:00:17 +0000 (Sun, 06 Aug 2006) | 3 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+
+BigWigs:
+
+Yeah, too many commas = bad
+------------------------------------------------------------------------
+r37 | delsphynx | 2006-08-06 01:57:39 +0000 (Sun, 06 Aug 2006) | 3 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+
+BigWigs:
+
+Added Feralas as a zone to Emeriss so it enables properly when spawned there
+------------------------------------------------------------------------
+r36 | shyva | 2006-08-05 14:04:25 +0000 (Sat, 05 Aug 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Test.lua
+
+BigWigs: You won't see any debug bars when you mouse over Aurel Goldleaf anymore.
+------------------------------------------------------------------------
+r35 | kergoth | 2006-08-03 08:13:10 +0000 (Thu, 03 Aug 2006) | 5 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Azuregos.lua
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+   M /tmp/trunk/BigWigs/Other/Kazzak.lua
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+
+BigWigs: Fixing 54 files with invalid svn:keywords.  'rev' and 'date' are
+-not- valid.  'Rev' and 'Date' are.  Per http://svnbook.red-bean.com/en/1.1/ch07s02.html,
+svn keywords are case sensitive.
+~lart Tekkub
+
+------------------------------------------------------------------------
+r34 | tekkub | 2006-08-02 15:33:31 +0000 (Wed, 02 Aug 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Azuregos.lua
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+   M /tmp/trunk/BigWigs/Other/Kazzak.lua
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+   M /tmp/trunk/BigWigs/Other/Test.lua
+
+BigWigs - Merging Ace2 branch to trunk
+------------------------------------------------------------------------
+r32 | ammo | 2006-07-15 08:56:24 +0000 (Sat, 15 Jul 2006) | 3 lines
+Changed paths:
+   A /tmp/trunk/BigWigs/Other/Kazzak.lua
+
+BigWigs:
+* Added Kazzak module by Sirian
+
+------------------------------------------------------------------------
+r30 | handdol | 2006-07-04 22:33:10 +0000 (Tue, 04 Jul 2006) | 4 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Azuregos.lua
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+   M /tmp/trunk/BigWigs/Other/Test.lua
+
+BigWigs
+ - Korean localization support for Naxx
+ - Korean localization consistency support
+ - BabbleLib-Boss is modified
+------------------------------------------------------------------------
+r29 | ammo | 2006-06-29 10:25:22 +0000 (Thu, 29 Jun 2006) | 4 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Azuregos.lua
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+
+BigWigs:
+* Azuregos and Emeriss are now in an Outdoor Raid Bosses section in the menu.
+* Fixed the menu when the module.zonename is a table
+
+------------------------------------------------------------------------
+r28 | ammo | 2006-06-29 09:40:42 +0000 (Thu, 29 Jun 2006) | 3 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+
+BigWigs (emeriss):
+* temporarily disabled the multiple zones for Emeriss, until I can fix the fumenu
+
+------------------------------------------------------------------------
+r27 | ammo | 2006-06-29 09:37:46 +0000 (Thu, 29 Jun 2006) | 3 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+
+BigWigs (Onyxia):
+* Added missing ,
+
+------------------------------------------------------------------------
+r26 | ammo | 2006-06-29 09:28:45 +0000 (Thu, 29 Jun 2006) | 4 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Azuregos.lua
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+
+BigWigs:
+* Added babblezone and babbleboss for Azuregos, Emeriss and Onyxia
+* Added toggleoptions for these bosses as well
+
+------------------------------------------------------------------------
+r23 | shyva | 2006-06-23 21:10:13 +0000 (Fri, 23 Jun 2006) | 3 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Azuregos.lua
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+   M /tmp/trunk/BigWigs/Other/Test.lua
+
+BigWigs:
+* Using new register event.
+* Fixed the Arlokk module.
+------------------------------------------------------------------------
+r22 | tekkub | 2006-06-18 15:41:31 +0000 (Sun, 18 Jun 2006) | 3 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Azuregos.lua
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+   M /tmp/trunk/BigWigs/Other/Test.lua
+
+BigWigs
+- Added more sounds, see Other/Test.lua for examples of use.  If you want no sound pass 0 for the sound arg.  If no arg is passed the "Msg" sound will be played
+- Added "Victory" sounds to all modules that have a boss kill detection.  Some AQ40 modules don't have bosskill detection *glares at Ammo*
+------------------------------------------------------------------------
+r21 | tekkub | 2006-06-12 04:38:45 +0000 (Mon, 12 Jun 2006) | 3 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Test.lua
+
+BigWigs
+- Integrated FryGuy's "send to self" logic on message sending (so you'll always get a local trigging the moment you send a message, no waiting for the server to echo it back)
+- Confirmed that the recv throttling does in fact work
+------------------------------------------------------------------------
+r20 | tekkub | 2006-06-10 21:24:16 +0000 (Sat, 10 Jun 2006) | 8 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Test.lua
+
+BigWigs
+- Moved Savedvar to a SavedvarPerChar, so no need for profiling logic (wewt!)
+- Added proper module slash command handing, so now modules can add slosh commands, see message/sound/bars modules for examples.
+- Added Savedvariable management.  Every module will receive GetOpt, SetOpt, TogOpt methods when they register with the core.  ***BIG NOTE READ ME*** This is _NOT_ AceDB style Opt methods, they will return back values from the modules' own subtable of the savedvar table.  Also they do not take tables as arg paths, but rather up to 9 strings.  You shouldn't need more than one level deep tho...
+- Seperated scale and anchor commands into the msg/bar modules, they are now independant of each other
+- Added option to have bars grow upwards from the bar anchor
+- Added option to disable the sound module.
+- Remove code no longer used, note that all the new command tables are going to need localized
+------------------------------------------------------------------------
+r19 | tekkub | 2006-06-10 17:09:27 +0000 (Sat, 10 Jun 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Test.lua
+
+BigWigs - DelayedEvents module now uses Metrognome for timings (Timex is still used for bars, of course.
+------------------------------------------------------------------------
+r18 | tekkub | 2006-06-10 03:04:06 +0000 (Sat, 10 Jun 2006) | 5 lines
+Changed paths:
+   A /tmp/trunk/BigWigs/Other/Test.lua
+
+BigWigs
+- Tweaked how anchors work, sorry handdol but I didn't like how you did it.  Slash command is now /bigwigs anchor
+- Added a little local to the Messages.lua file, if you set it to true messages will go to the default error frame (where "Action in progress" text goes)
+- Moved test stuff into it's own module
+- Moved the delay logic into it's own module, just to make it easier to upkeep.
+------------------------------------------------------------------------
+r17 | hk2717 | 2006-06-09 04:02:03 +0000 (Fri, 09 Jun 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Azuregos.lua
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+
+BigWigs: Added Simplified Chinese localization.
+------------------------------------------------------------------------
+r16 | handdol | 2006-05-21 13:30:48 +0000 (Sun, 21 May 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+
+BigWigs
+ - Korean localization follow-up
+------------------------------------------------------------------------
+r15 | shyva | 2006-05-20 14:50:32 +0000 (Sat, 20 May 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+
+BigWigs: Alot of minor changes =)
+------------------------------------------------------------------------
+r14 | handdol | 2006-05-11 11:04:10 +0000 (Thu, 11 May 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Azuregos.lua
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+
+BigWigs
+ - Add korean localization Azuregos and Emeriss. 
+------------------------------------------------------------------------
+r13 | neriak | 2006-05-08 21:58:08 +0000 (Mon, 08 May 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+
+BigWigs: updated MC and BWL for german localizations, still some missing
+------------------------------------------------------------------------
+r12 | handdol | 2006-05-04 17:56:12 +0000 (Thu, 04 May 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+
+BigWigs
+ - Add korean localization
+------------------------------------------------------------------------
+r11 | tekkub | 2006-04-26 04:23:40 +0000 (Wed, 26 Apr 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+
+BigWigs - Changes to core from Lucen to make multizone bosses (the green dragons) work.
+------------------------------------------------------------------------
+r10 | shyva | 2006-04-22 23:32:20 +0000 (Sat, 22 Apr 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Azuregos.lua
+   M /tmp/trunk/BigWigs/Other/Emeriss.lua
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+
+BigWigs: Tweaked MC, BWL and "Other" bosses (small tweaks) and cleaned the code up.
+------------------------------------------------------------------------
+r9 | shyva | 2006-04-20 17:14:34 +0000 (Thu, 20 Apr 2006) | 1 line
+Changed paths:
+   M /tmp/trunk/BigWigs/Other/Azuregos.lua
+   M /tmp/trunk/BigWigs/Other/Onyxia.lua
+
+BigWigs: Fixed 2 typos, Onyxia and Azuregos should work fine now.
+------------------------------------------------------------------------
+r6 | tekkub | 2006-04-16 04:29:34 +0000 (Sun, 16 Apr 2006) | 1 line
+Changed paths:
+   A /tmp/trunk/BigWigs/Other
+   A /tmp/trunk/BigWigs/Other/Azuregos.lua
+   A /tmp/trunk/BigWigs/Other/Emeriss.lua
+   A /tmp/trunk/BigWigs/Other/Onyxia.lua
+
+BigWigs - "Other" bosses from Shyva (I didn't get to these last night after a long-ass MC run.... at least I got 3 items and more negative DKP goodness out of it :) )
+------------------------------------------------------------------------

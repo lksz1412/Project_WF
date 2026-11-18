@@ -1,0 +1,12 @@
+
+QBar_Config = {
+	["enabled"] = true,
+	["bottom"] = 229.5235596433496,
+	["scale"] = 1,
+	["mirrored"] = false,
+	["left"] = 1837.85613663661,
+	["btnSize"] = 36,
+	["padding"] = 1,
+	["showTips"] = true,
+	["vertical"] = false,
+}

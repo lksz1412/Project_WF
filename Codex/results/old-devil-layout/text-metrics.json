@@ -1,0 +1,738 @@
+{
+  "schema": "old-devil-text-design-measurements/1",
+  "recorded": "2026-11-18T02:12:57.918380+09:00",
+  "fontPath": "Codex/results/old-devil-layout/asset-preparation/original-fonts/root5-2002.ttf",
+  "fontSHA256": "49DF5AB286B7090AF765626115578F4630FCFC240784E45344D9367A0697DBB5",
+  "method": "Pillow exactfixedsize bbox/advance andfontTools Unicodecmap; noUIrender",
+  "checks": [
+    {
+      "role": "longest-sample-key",
+      "text": "C-S-1",
+      "sizePx": 24,
+      "strokePx": 2,
+      "bbox": [
+        -2,
+        2,
+        61,
+        23
+      ],
+      "inkWidth": 63,
+      "inkHeight": 21,
+      "available": [
+        72,
+        28
+      ],
+      "fits": true,
+      "placementContract": "subtractfontbboxleft/topwhenplacinginkwithinreservedbox;neverautoFit"
+    },
+    {
+      "role": "short-sample-key",
+      "text": "1",
+      "sizePx": 24,
+      "strokePx": 2,
+      "bbox": [
+        -2,
+        2,
+        9,
+        23
+      ],
+      "inkWidth": 11,
+      "inkHeight": 21,
+      "available": [
+        72,
+        28
+      ],
+      "fits": true,
+      "placementContract": "subtractfontbboxleft/topwhenplacinginkwithinreservedbox;neverautoFit"
+    },
+    {
+      "role": "chat-line-1",
+      "text": "대화 내용 미리보기",
+      "sizePx": 28,
+      "strokePx": 0,
+      "bbox": [
+        0,
+        2,
+        198,
+        29
+      ],
+      "inkWidth": 198,
+      "inkHeight": 27,
+      "available": [
+        914,
+        32
+      ],
+      "fits": true,
+      "placementContract": "subtractfontbboxleft/topwhenplacinginkwithinreservedbox;neverautoFit"
+    },
+    {
+      "role": "chat-line-2",
+      "text": "대화창의 글자 크기 확인",
+      "sizePx": 28,
+      "strokePx": 0,
+      "bbox": [
+        0,
+        2,
+        253,
+        28
+      ],
+      "inkWidth": 253,
+      "inkHeight": 26,
+      "available": [
+        914,
+        32
+      ],
+      "fits": true,
+      "placementContract": "subtractfontbboxleft/topwhenplacinginkwithinreservedbox;neverautoFit"
+    },
+    {
+      "role": "unit-upper",
+      "text": "캐릭터",
+      "sizePx": 24,
+      "strokePx": 0,
+      "bbox": [
+        0,
+        2,
+        57,
+        23
+      ],
+      "inkWidth": 57,
+      "inkHeight": 21,
+      "available": [
+        382,
+        28
+      ],
+      "fits": true,
+      "placementContract": "subtractfontbboxleft/topwhenplacinginkwithinreservedbox;neverautoFit"
+    },
+    {
+      "role": "unit-lower",
+      "text": "대상",
+      "sizePx": 24,
+      "strokePx": 0,
+      "bbox": [
+        0,
+        2,
+        38,
+        24
+      ],
+      "inkWidth": 38,
+      "inkHeight": 22,
+      "available": [
+        546,
+        28
+      ],
+      "fits": true,
+      "placementContract": "subtractfontbboxleft/topwhenplacinginkwithinreservedbox;neverautoFit"
+    },
+    {
+      "role": "map-label",
+      "text": "미니맵",
+      "sizePx": 24,
+      "strokePx": 0,
+      "bbox": [
+        0,
+        2,
+        57,
+        23
+      ],
+      "inkWidth": 57,
+      "inkHeight": 21,
+      "available": [
+        296,
+        28
+      ],
+      "fits": true,
+      "placementContract": "subtractfontbboxleft/topwhenplacinginkwithinreservedbox;neverautoFit"
+    },
+    {
+      "role": "status",
+      "text": "캐릭터       설정",
+      "sizePx": 22,
+      "strokePx": 0,
+      "bbox": [
+        0,
+        1,
+        153,
+        22
+      ],
+      "inkWidth": 153,
+      "inkHeight": 21,
+      "available": [
+        3808,
+        26
+      ],
+      "fits": true,
+      "placementContract": "subtractfontbboxleft/topwhenplacinginkwithinreservedbox;neverautoFit"
+    },
+    {
+      "role": "context-identification",
+      "text": "배치 미리보기",
+      "sizePx": 28,
+      "strokePx": 0,
+      "bbox": [
+        0,
+        2,
+        143,
+        28
+      ],
+      "inkWidth": 143,
+      "inkHeight": 26,
+      "available": [
+        500,
+        40
+      ],
+      "fits": true,
+      "placementContract": "subtractfontbboxleft/topwhenplacinginkwithinreservedbox;neverautoFit"
+    },
+    {
+      "role": "sample-key-2",
+      "text": "2",
+      "sizePx": 24,
+      "strokePx": 2,
+      "bbox": [
+        -2,
+        2,
+        17,
+        23
+      ],
+      "inkWidth": 19,
+      "inkHeight": 21,
+      "available": [
+        72,
+        28
+      ],
+      "fits": true,
+      "placementContract": "subtractfontbboxleft/top;noautoFit"
+    },
+    {
+      "role": "sample-key-3",
+      "text": "3",
+      "sizePx": 24,
+      "strokePx": 2,
+      "bbox": [
+        -2,
+        2,
+        17,
+        23
+      ],
+      "inkWidth": 19,
+      "inkHeight": 21,
+      "available": [
+        72,
+        28
+      ],
+      "fits": true,
+      "placementContract": "subtractfontbboxleft/top;noautoFit"
+    },
+    {
+      "role": "sample-key-4",
+      "text": "4",
+      "sizePx": 24,
+      "strokePx": 2,
+      "bbox": [
+        -2,
+        2,
+        19,
+        23
+      ],
+      "inkWidth": 21,
+      "inkHeight": 21,
+      "available": [
+        72,
+        28
+      ],
+      "fits": true,
+      "placementContract": "subtractfontbboxleft/top;noautoFit"
+    },
+    {
+      "role": "sample-key-5",
+      "text": "5",
+      "sizePx": 24,
+      "strokePx": 2,
+      "bbox": [
+        -2,
+        2,
+        17,
+        23
+      ],
+      "inkWidth": 19,
+      "inkHeight": 21,
+      "available": [
+        72,
+        28
+      ],
+      "fits": true,
+      "placementContract": "subtractfontbboxleft/top;noautoFit"
+    },
+    {
+      "role": "sample-key-6",
+      "text": "6",
+      "sizePx": 24,
+      "strokePx": 2,
+      "bbox": [
+        -2,
+        2,
+        17,
+        23
+      ],
+      "inkWidth": 19,
+      "inkHeight": 21,
+      "available": [
+        72,
+        28
+      ],
+      "fits": true,
+      "placementContract": "subtractfontbboxleft/top;noautoFit"
+    },
+    {
+      "role": "sample-key-7",
+      "text": "7",
+      "sizePx": 24,
+      "strokePx": 2,
+      "bbox": [
+        -3,
+        2,
+        16,
+        23
+      ],
+      "inkWidth": 19,
+      "inkHeight": 21,
+      "available": [
+        72,
+        28
+      ],
+      "fits": true,
+      "placementContract": "subtractfontbboxleft/top;noautoFit"
+    },
+    {
+      "role": "sample-key-8",
+      "text": "8",
+      "sizePx": 24,
+      "strokePx": 2,
+      "bbox": [
+        -2,
+        2,
+        17,
+        23
+      ],
+      "inkWidth": 19,
+      "inkHeight": 21,
+      "available": [
+        72,
+        28
+      ],
+      "fits": true,
+      "placementContract": "subtractfontbboxleft/top;noautoFit"
+    },
+    {
+      "role": "sample-key-A-1",
+      "text": "A-1",
+      "sizePx": 24,
+      "strokePx": 2,
+      "bbox": [
+        -3,
+        2,
+        36,
+        23
+      ],
+      "inkWidth": 39,
+      "inkHeight": 21,
+      "available": [
+        72,
+        28
+      ],
+      "fits": true,
+      "placementContract": "subtractfontbboxleft/top;noautoFit"
+    },
+    {
+      "role": "sample-key-C-1",
+      "text": "C-1",
+      "sizePx": 24,
+      "strokePx": 2,
+      "bbox": [
+        -2,
+        2,
+        35,
+        23
+      ],
+      "inkWidth": 37,
+      "inkHeight": 21,
+      "available": [
+        72,
+        28
+      ],
+      "fits": true,
+      "placementContract": "subtractfontbboxleft/top;noautoFit"
+    },
+    {
+      "role": "sample-key-E",
+      "text": "E",
+      "sizePx": 24,
+      "strokePx": 2,
+      "bbox": [
+        -2,
+        2,
+        18,
+        23
+      ],
+      "inkWidth": 20,
+      "inkHeight": 21,
+      "available": [
+        72,
+        28
+      ],
+      "fits": true,
+      "placementContract": "subtractfontbboxleft/top;noautoFit"
+    },
+    {
+      "role": "sample-key-F",
+      "text": "F",
+      "sizePx": 24,
+      "strokePx": 2,
+      "bbox": [
+        -2,
+        2,
+        17,
+        23
+      ],
+      "inkWidth": 19,
+      "inkHeight": 21,
+      "available": [
+        72,
+        28
+      ],
+      "fits": true,
+      "placementContract": "subtractfontbboxleft/top;noautoFit"
+    },
+    {
+      "role": "sample-key-Q",
+      "text": "Q",
+      "sizePx": 24,
+      "strokePx": 2,
+      "bbox": [
+        -2,
+        2,
+        21,
+        23
+      ],
+      "inkWidth": 23,
+      "inkHeight": 21,
+      "available": [
+        72,
+        28
+      ],
+      "fits": true,
+      "placementContract": "subtractfontbboxleft/top;noautoFit"
+    },
+    {
+      "role": "sample-key-R",
+      "text": "R",
+      "sizePx": 24,
+      "strokePx": 2,
+      "bbox": [
+        -2,
+        2,
+        20,
+        23
+      ],
+      "inkWidth": 22,
+      "inkHeight": 21,
+      "available": [
+        72,
+        28
+      ],
+      "fits": true,
+      "placementContract": "subtractfontbboxleft/top;noautoFit"
+    },
+    {
+      "role": "sample-key-S-1",
+      "text": "S-1",
+      "sizePx": 24,
+      "strokePx": 2,
+      "bbox": [
+        -2,
+        2,
+        35,
+        23
+      ],
+      "inkWidth": 37,
+      "inkHeight": 21,
+      "available": [
+        72,
+        28
+      ],
+      "fits": true,
+      "placementContract": "subtractfontbboxleft/top;noautoFit"
+    }
+  ],
+  "sampleGlyphs": [
+    {
+      "character": "C",
+      "Uplus": "U+0043",
+      "present": true
+    },
+    {
+      "character": "-",
+      "Uplus": "U+002D",
+      "present": true
+    },
+    {
+      "character": "S",
+      "Uplus": "U+0053",
+      "present": true
+    },
+    {
+      "character": "1",
+      "Uplus": "U+0031",
+      "present": true
+    },
+    {
+      "character": "대",
+      "Uplus": "U+B300",
+      "present": true
+    },
+    {
+      "character": "화",
+      "Uplus": "U+D654",
+      "present": true
+    },
+    {
+      "character": " ",
+      "Uplus": "U+0020",
+      "present": true
+    },
+    {
+      "character": "내",
+      "Uplus": "U+B0B4",
+      "present": true
+    },
+    {
+      "character": "용",
+      "Uplus": "U+C6A9",
+      "present": true
+    },
+    {
+      "character": "미",
+      "Uplus": "U+BBF8",
+      "present": true
+    },
+    {
+      "character": "리",
+      "Uplus": "U+B9AC",
+      "present": true
+    },
+    {
+      "character": "보",
+      "Uplus": "U+BCF4",
+      "present": true
+    },
+    {
+      "character": "기",
+      "Uplus": "U+AE30",
+      "present": true
+    },
+    {
+      "character": "창",
+      "Uplus": "U+CC3D",
+      "present": true
+    },
+    {
+      "character": "의",
+      "Uplus": "U+C758",
+      "present": true
+    },
+    {
+      "character": "글",
+      "Uplus": "U+AE00",
+      "present": true
+    },
+    {
+      "character": "자",
+      "Uplus": "U+C790",
+      "present": true
+    },
+    {
+      "character": "크",
+      "Uplus": "U+D06C",
+      "present": true
+    },
+    {
+      "character": "확",
+      "Uplus": "U+D655",
+      "present": true
+    },
+    {
+      "character": "인",
+      "Uplus": "U+C778",
+      "present": true
+    },
+    {
+      "character": "캐",
+      "Uplus": "U+CE90",
+      "present": true
+    },
+    {
+      "character": "릭",
+      "Uplus": "U+B9AD",
+      "present": true
+    },
+    {
+      "character": "터",
+      "Uplus": "U+D130",
+      "present": true
+    },
+    {
+      "character": "상",
+      "Uplus": "U+C0C1",
+      "present": true
+    },
+    {
+      "character": "니",
+      "Uplus": "U+B2C8",
+      "present": true
+    },
+    {
+      "character": "맵",
+      "Uplus": "U+B9F5",
+      "present": true
+    },
+    {
+      "character": "설",
+      "Uplus": "U+C124",
+      "present": true
+    },
+    {
+      "character": "정",
+      "Uplus": "U+C815",
+      "present": true
+    },
+    {
+      "character": "배",
+      "Uplus": "U+BC30",
+      "present": true
+    },
+    {
+      "character": "치",
+      "Uplus": "U+CE58",
+      "present": true
+    },
+    {
+      "character": "2",
+      "Uplus": "U+0032",
+      "present": true
+    },
+    {
+      "character": "3",
+      "Uplus": "U+0033",
+      "present": true
+    },
+    {
+      "character": "4",
+      "Uplus": "U+0034",
+      "present": true
+    },
+    {
+      "character": "5",
+      "Uplus": "U+0035",
+      "present": true
+    },
+    {
+      "character": "6",
+      "Uplus": "U+0036",
+      "present": true
+    },
+    {
+      "character": "7",
+      "Uplus": "U+0037",
+      "present": true
+    },
+    {
+      "character": "8",
+      "Uplus": "U+0038",
+      "present": true
+    },
+    {
+      "character": "A",
+      "Uplus": "U+0041",
+      "present": true
+    },
+    {
+      "character": "E",
+      "Uplus": "U+0045",
+      "present": true
+    },
+    {
+      "character": "F",
+      "Uplus": "U+0046",
+      "present": true
+    },
+    {
+      "character": "Q",
+      "Uplus": "U+0051",
+      "present": true
+    },
+    {
+      "character": "R",
+      "Uplus": "U+0052",
+      "present": true
+    }
+  ],
+  "contrastPairs": [
+    {
+      "meaning": "body-against-brightest-context",
+      "foreground": "#D8D8D8",
+      "background": "#384047",
+      "ratio": 7.394599916855844,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "meaning": "key-against-explicit-stroke",
+      "foreground": "#F0F0F0",
+      "background": "#000000",
+      "ratio": 18.427342383975944,
+      "minimum": 4.5,
+      "passes": true
+    },
+    {
+      "meaning": "seam-against-context",
+      "foreground": "#909294",
+      "background": "#384047",
+      "ratio": 3.3751826209219664,
+      "minimum": 3,
+      "passes": true,
+      "changedTokenOnlyRemeasured": true
+    },
+    {
+      "meaning": "seam-against-dark-panel",
+      "foreground": "#909294",
+      "background": "#121518",
+      "ratio": 5.867370711205842,
+      "minimum": 3,
+      "passes": true,
+      "changedTokenOnlyRemeasured": true
+    }
+  ],
+  "allTextFits": true,
+  "allSampleGlyphsPresent": true,
+  "allDesignContrastsPass": true,
+  "limits": [
+    "exactsamplestextonly,notallkoKRglyphs",
+    "keycontrastagainstspecifiedblackstroke;A2actualrenderstrokepixelsmustverify",
+    "actualgamerender/readabilityNOT_RUN",
+    "asset/captionrenderNOT_RUN"
+  ],
+  "initialFailureHistory": [
+    {
+      "pair": "seam-against-context",
+      "foreground": "#808284",
+      "ratio": 2.7322924831100783,
+      "minimum": 3,
+      "result": "FAIL",
+      "action": "changedactualseamtoken,notminimum"
+    }
+  ],
+  "revised": "2026-11-18T02:13:40.783661+09:00",
+  "coverage": "all16nonemptyuniqueproposedkeylabels+7otherdistincttextroles=23checks;everyrendertextcovered"
+}

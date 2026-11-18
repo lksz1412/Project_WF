@@ -1,0 +1,46 @@
+﻿## Interface: 30000
+## Title: FuBar 3.5
+## Notes: A panel that modules can plug into.
+## Notes-deDE: Eine Leiste in der sich Module einbinden können.
+## Notes-frFR: Un panneau entièrement modulable.
+## Notes-zhCN: 插件式信息面板。
+## Notes-zhTW: 插件式訊息面板。
+## Notes-esES: Un panel donde puedes colocar plugins
+## Author: ckknight
+## X-eMail: ckknight AT gmail DOT com
+## X-Website: http://www.wowace.com/
+## X-Category: Interface Enhancements
+## SavedVariables: FuBar2DB
+## OptionalDeps: LibRock-1.0
+## X-WoWIPortal: ckknight
+## X-License: GPL v2 or later
+## X-Donate: PayPal:ckknight AT gmail DOT com
+
+libs\LibStub\LibStub.lua
+libs\CallbackHandler-1.0\CallbackHandler-1.0.xml
+
+#@no-lib-strip@
+libs\AceLibrary\AceLibrary.lua
+libs\LibRock-1.0\lib.xml
+libs\LibRockConfig-1.0\lib.xml
+libs\LibRockEvent-1.0\lib.xml
+libs\LibRockLocale-1.0\lib.xml
+libs\LibRockHook-1.0\lib.xml
+libs\LibRockDB-1.0\lib.xml
+libs\LibRockTimer-1.0\lib.xml
+libs\LibJostle-3.0\lib.xml
+libs\LibFuBarPlugin-3.0\lib.xml
+libs\Dewdrop-2.0\Dewdrop-2.0.lua
+libs\Tablet-2.0\Tablet-2.0.lua
+#@end-no-lib-strip@
+
+FuBar-Locale-enUS.lua
+FuBar-Locale-deDE.lua
+FuBar-Locale-frFR.lua
+FuBar-Locale-koKR.lua
+FuBar-Locale-zhCN.lua
+FuBar-Locale-zhTW.lua
+FuBar-Locale-esES.lua
+
+FuBar_Panel.lua
+FuBar.lua

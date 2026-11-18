@@ -1,0 +1,35 @@
+[
+  {
+    "time": "2026-11-17T16:09:37.4367386Z",
+    "error": "원격 서버에서 (403) 사용할 수 없음 오류를 반환했습니다.",
+    "HTTP": 403,
+    "sourceURL": "https://www.curseforge.com/wow/addons/basic-chat-mods/download/9632459",
+    "URLbasis": "literal official exact-file Download href",
+    "localpath": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\bcm-exact-CF-download.response",
+    "attempts": 1,
+    "commandExitCode": 0,
+    "state": "failed"
+  },
+  {
+    "time": "2026-11-17T16:09:37.9489887Z",
+    "error": "원격 서버에서 (403) 사용할 수 없음 오류를 반환했습니다.",
+    "HTTP": 403,
+    "sourceURL": "https://www.curseforge.com/wow/addons/prat-3-0/download/9509040",
+    "URLbasis": "literal official exact-file Download href",
+    "localpath": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\prat-exact-CF-download.response",
+    "attempts": 1,
+    "commandExitCode": 0,
+    "state": "failed"
+  },
+  {
+    "time": "2026-11-17T16:09:38.4644140Z",
+    "error": "원격 서버에서 (403) 사용할 수 없음 오류를 반환했습니다.",
+    "HTTP": 403,
+    "sourceURL": "https://www.curseforge.com/wow/addons/glass-forever/download/9653501",
+    "URLbasis": "literal official exact-file Download href",
+    "localpath": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\glass-exact-CF-download.response",
+    "attempts": 1,
+    "commandExitCode": 0,
+    "state": "failed"
+  }
+]

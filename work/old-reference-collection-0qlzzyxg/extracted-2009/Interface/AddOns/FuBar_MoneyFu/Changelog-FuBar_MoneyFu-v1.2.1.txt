@@ -1,0 +1,13 @@
+tag v1.2.1
+bb75d33569313087ce2bcc8848a293bbeb72a7e2
+phyber <phyber@wowace>
+2009-04-15 18:39:45 +0100
+
+Tagging as v1.2.1
+
+
+--------------------
+
+phyber:
+	TOC bump for 3.1
+	Use no-lib-strip in TOC

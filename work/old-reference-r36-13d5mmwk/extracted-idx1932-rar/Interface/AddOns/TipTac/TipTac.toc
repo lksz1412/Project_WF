@@ -1,0 +1,7 @@
+## Interface: 30000
+## Version: 08.10.23
+## Title: TipTac
+## Author: Ryn/Nadi (Earthen Ring EU)
+## Notes: Highly Customizable Tooltip Enhancement Addon
+## SavedVariables: TipTac_Config
+TipTac.lua

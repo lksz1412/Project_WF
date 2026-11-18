@@ -1,0 +1,6 @@
+MACRO 1 "곰변탱킹" Ability_Druid_Swipe
+/castsequence [stance:1] reset=6 짓이기기 (곰)(3 레벨), 가르기, 가르기, 가르기 
+/시전중지 
+/시전 [stance:1] 후려치기 
+/공격시작 [stealth:0] 
+END

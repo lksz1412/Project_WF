@@ -1,0 +1,6 @@
+## Interface: 30000
+## Title: |cffffff9a블링크|r WhoLink
+## Notes: Alt키로 대상 초대, Shift키로 귓말
+## OptionalDeps: Blink, BlinkMailer
+## SavedVariables: BlinkWhoLinkDB
+BlinkWhoLink.lua

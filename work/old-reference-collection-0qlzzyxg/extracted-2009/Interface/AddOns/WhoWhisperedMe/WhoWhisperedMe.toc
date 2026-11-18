@@ -1,0 +1,9 @@
+## Interface: 30200
+## Title: WhoWhisperedMe
+## Notes: Who The Hell Whispered Me?!
+## Author: Nedlinin
+## Version: 1.4.3
+## SavedVariables: friendsWhisp, guildWhisp, totallastplayers, entries
+
+WhoWhisperedMe.xml
+WhoWhisperedMe.lua

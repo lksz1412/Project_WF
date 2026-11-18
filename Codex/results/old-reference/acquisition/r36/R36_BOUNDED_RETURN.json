@@ -1,0 +1,25 @@
+{
+  "state": "bounded-mechanical-return-oldpackages-unrecovered",
+  "firstMetadata": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\FIRST_172_METADATA_READY.json",
+  "all172Rows": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\idx-45-attachment-inventory.json",
+  "predictedGETResults": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\historical-predicted-acquisition.json",
+  "authorFallbackEvidence": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\author-public-fallback-evidence.json",
+  "V42Checks": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\forever-v42-archive-checks.json",
+  "V42PathsTOCOrder": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\v42-core-paths-toc-order.json",
+  "V42ExtractionRoot": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42",
+  "V42Inventory": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\forever-v42-members.json",
+  "counts": {
+    "idx45Rows": 172,
+    "idx2582Rows": 0,
+    "idx13140Rows": 9,
+    "idx11218Rows": 22,
+    "predictedHistoricalGETs": 4,
+    "predictedHistoricalHTTP404": 4,
+    "additionalHistoricalBinariesAcquired": 0,
+    "V42Files": 1831,
+    "V42UncompressedBytes": 52281213
+  },
+  "remaining": "Root may examine normal authorized browser oldattachment UI; helper did not use CUA/login/cookies/JS evaluation. No universal unavailability claim. A1 substantive source/fidelity work remains outside helper scope.",
+  "cache": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1",
+  "log": "D:\\Projects\\Project_WF\\Codex\\results\\handoffs\\old-reference\\acquisition\\work_log.md"
+}

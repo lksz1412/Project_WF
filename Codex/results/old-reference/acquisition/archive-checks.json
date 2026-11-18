@@ -1,0 +1,42 @@
+[
+  {
+    "label": "2009",
+    "source": "D:\\Projects\\Project_WF\\SourceArchive\\2009-12-10\\originals\\Devil_Blackt.zip",
+    "sourceBytes": 10112558,
+    "SHA256": "10FD89E6A27D63DC48217DE48B66E693885E2A46C49253688A13DCCE6E18A3DA",
+    "expectedSHA256": "10FD89E6A27D63DC48217DE48B66E693885E2A46C49253688A13DCCE6E18A3DA",
+    "hashMatch": true,
+    "CRCtestRuns": 1,
+    "unsafe": [],
+    "extractionState": "passed",
+    "fileCount": 3495,
+    "directoryCount": 0,
+    "totalCompressedBytes": 9439132,
+    "totalUncompressedBytes": 37823930,
+    "CRCbadMember": null,
+    "CRCstate": "passed",
+    "extractionRoot": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-2009",
+    "extractedFileCount": 3495,
+    "extractedBytes": 37823930
+  },
+  {
+    "label": "alpha",
+    "source": "D:\\Projects\\Project_WF\\SourceArchive\\user-provided-alpha\\originals\\DevilUI6.1Alpha.zip",
+    "sourceBytes": 7517334,
+    "SHA256": "1982B7B99F4F9CD58EED8ED505D2041FD526472D8F738A6671B90D6C5ABC473E",
+    "expectedSHA256": "1982B7B99F4F9CD58EED8ED505D2041FD526472D8F738A6671B90D6C5ABC473E",
+    "hashMatch": true,
+    "CRCtestRuns": 1,
+    "unsafe": [],
+    "extractionState": "passed",
+    "fileCount": 1,
+    "directoryCount": 0,
+    "totalCompressedBytes": 7517194,
+    "totalUncompressedBytes": 7733851,
+    "CRCbadMember": null,
+    "CRCstate": "passed",
+    "extractionRoot": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha",
+    "extractedFileCount": 1,
+    "extractedBytes": 7733851
+  }
+]

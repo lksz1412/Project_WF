@@ -1,0 +1,9 @@
+## Interface: 30200
+## Title: aTotemBar
+## Notes: Move and Hide the Default Totem Bar
+## Author: Arimis - Bonechewer US
+## SavedVariables: aTotemBarDB
+
+
+embeds.xml
+aTotemBar.lua

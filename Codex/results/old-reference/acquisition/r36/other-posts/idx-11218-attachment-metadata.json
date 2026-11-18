@@ -1,0 +1,377 @@
+{
+  "postID": 11218,
+  "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-11218.html",
+  "sourceSHA256": "61AAFBA4DEF148DA418D6E30609C95BCD37248BC394C9D3A611F5521E7F75BAD",
+  "rowCount": 22,
+  "rows": [
+    {
+      "ordinal1": 1,
+      "filename": "DevilUI23.5.15.zip",
+      "clientLiteral": "10.1",
+      "downloadsLiteral": "535",
+      "dateLiteral": "2023-05-15",
+      "sourceLine": 37,
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "DevilUI23.5.15.zip"
+        }
+      ],
+      "actualLiteralMapping": [
+        {
+          "fileID": 76228,
+          "URL": "https://pds.inven.co.kr/upload/2023/05/15/addon/DevilUI23.5.15.zip",
+          "line": 37,
+          "executed": false
+        }
+      ]
+    },
+    {
+      "ordinal1": 2,
+      "filename": "Devil21.01.04.zip",
+      "clientLiteral": "9.0.2",
+      "downloadsLiteral": "1875",
+      "dateLiteral": "2021-01-04",
+      "sourceLine": 47,
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil21.01.04.zip"
+        }
+      ],
+      "actualLiteralMapping": []
+    },
+    {
+      "ordinal1": 3,
+      "filename": "Devil20.11.26.zip",
+      "clientLiteral": "9.0.2",
+      "downloadsLiteral": "988",
+      "dateLiteral": "2020-11-26",
+      "sourceLine": 57,
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil20.11.26.zip"
+        }
+      ],
+      "actualLiteralMapping": []
+    },
+    {
+      "ordinal1": 4,
+      "filename": "Devil20.11.22.zip",
+      "clientLiteral": "9.0.2",
+      "downloadsLiteral": "659",
+      "dateLiteral": "2020-11-22",
+      "sourceLine": 67,
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil20.11.22.zip"
+        }
+      ],
+      "actualLiteralMapping": []
+    },
+    {
+      "ordinal1": 5,
+      "filename": "Devil20.11.03.zip",
+      "clientLiteral": "9.0.1",
+      "downloadsLiteral": "543",
+      "dateLiteral": "2020-11-03",
+      "sourceLine": 77,
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil20.11.03.zip"
+        }
+      ],
+      "actualLiteralMapping": []
+    },
+    {
+      "ordinal1": 6,
+      "filename": "disk20.10.28.zip",
+      "clientLiteral": "9.0.1",
+      "downloadsLiteral": "1938",
+      "dateLiteral": "2020-10-28",
+      "sourceLine": 87,
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk20.10.28.zip"
+        }
+      ],
+      "actualLiteralMapping": []
+    },
+    {
+      "ordinal1": 7,
+      "filename": "Devil20.10.28.zip",
+      "clientLiteral": "9.0.1",
+      "downloadsLiteral": "719",
+      "dateLiteral": "2020-10-28",
+      "sourceLine": 97,
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil20.10.28.zip"
+        }
+      ],
+      "actualLiteralMapping": []
+    },
+    {
+      "ordinal1": 8,
+      "filename": "disk20.10.20.zip",
+      "clientLiteral": "9.0.1",
+      "downloadsLiteral": "755",
+      "dateLiteral": "2020-10-20",
+      "sourceLine": 107,
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk20.10.20.zip"
+        }
+      ],
+      "actualLiteralMapping": []
+    },
+    {
+      "ordinal1": 9,
+      "filename": "Devil20.10.20.zip",
+      "clientLiteral": "9.0.1",
+      "downloadsLiteral": "882",
+      "dateLiteral": "2020-10-20",
+      "sourceLine": 117,
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil20.10.20.zip"
+        }
+      ],
+      "actualLiteralMapping": []
+    },
+    {
+      "ordinal1": 10,
+      "filename": "disk20.10.19.zip",
+      "clientLiteral": "9.0.1",
+      "downloadsLiteral": "367",
+      "dateLiteral": "2020-10-19",
+      "sourceLine": 127,
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk20.10.19.zip"
+        }
+      ],
+      "actualLiteralMapping": []
+    },
+    {
+      "ordinal1": 11,
+      "filename": "Devil20.10.19.zip",
+      "clientLiteral": "9.0.1",
+      "downloadsLiteral": "392",
+      "dateLiteral": "2020-10-19",
+      "sourceLine": 137,
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil20.10.19.zip"
+        }
+      ],
+      "actualLiteralMapping": []
+    },
+    {
+      "ordinal1": 12,
+      "filename": "disk2020.10.18.zip",
+      "clientLiteral": "9.0.1",
+      "downloadsLiteral": "137",
+      "dateLiteral": "2020-10-18",
+      "sourceLine": 147,
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk2020.10.18.zip"
+        }
+      ],
+      "actualLiteralMapping": []
+    },
+    {
+      "ordinal1": 13,
+      "filename": "Devil2020.10.18.zip",
+      "clientLiteral": "9.0.1",
+      "downloadsLiteral": "185",
+      "dateLiteral": "2020-10-18",
+      "sourceLine": 157,
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil2020.10.18.zip"
+        }
+      ],
+      "actualLiteralMapping": []
+    },
+    {
+      "ordinal1": 14,
+      "filename": "disk3.zip",
+      "clientLiteral": "8.3.0",
+      "downloadsLiteral": "1140",
+      "dateLiteral": "2020-09-05",
+      "sourceLine": 167,
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk3.zip"
+        }
+      ],
+      "actualLiteralMapping": []
+    },
+    {
+      "ordinal1": 15,
+      "filename": "disk2.zip",
+      "clientLiteral": "8.3.0",
+      "downloadsLiteral": "1500",
+      "dateLiteral": "2020-09-05",
+      "sourceLine": 177,
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk2.zip"
+        }
+      ],
+      "actualLiteralMapping": []
+    },
+    {
+      "ordinal1": 16,
+      "filename": "Devil20.9.5.zip",
+      "clientLiteral": "8.3.0",
+      "downloadsLiteral": "1331",
+      "dateLiteral": "2020-09-05",
+      "sourceLine": 187,
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil20.9.5.zip"
+        }
+      ],
+      "actualLiteralMapping": []
+    },
+    {
+      "ordinal1": 17,
+      "filename": "disk21.18.zip",
+      "clientLiteral": "8.0",
+      "downloadsLiteral": "3036",
+      "dateLiteral": "2020-01-18",
+      "sourceLine": 197,
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk21.18.zip"
+        }
+      ],
+      "actualLiteralMapping": []
+    },
+    {
+      "ordinal1": 18,
+      "filename": "Devil1.18.zip",
+      "clientLiteral": "8.0",
+      "downloadsLiteral": "3745",
+      "dateLiteral": "2020-01-18",
+      "sourceLine": 207,
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil1.18.zip"
+        }
+      ],
+      "actualLiteralMapping": []
+    },
+    {
+      "ordinal1": 19,
+      "filename": "Devil12.15.zip",
+      "clientLiteral": "8.0",
+      "downloadsLiteral": "566",
+      "dateLiteral": "2019-12-15",
+      "sourceLine": 217,
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil12.15.zip"
+        }
+      ],
+      "actualLiteralMapping": []
+    },
+    {
+      "ordinal1": 20,
+      "filename": "Devil11.3.zip",
+      "clientLiteral": "8.0",
+      "downloadsLiteral": "661",
+      "dateLiteral": "2019-11-03",
+      "sourceLine": 227,
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil11.3.zip"
+        }
+      ],
+      "actualLiteralMapping": []
+    },
+    {
+      "ordinal1": 21,
+      "filename": "Interface.zip",
+      "clientLiteral": "8.0",
+      "downloadsLiteral": "2669",
+      "dateLiteral": "2019-03-16",
+      "sourceLine": 237,
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Interface.zip"
+        }
+      ],
+      "actualLiteralMapping": []
+    },
+    {
+      "ordinal1": 22,
+      "filename": "WTF.zip",
+      "clientLiteral": "8.0",
+      "downloadsLiteral": "3026",
+      "dateLiteral": "2019-03-16",
+      "sourceLine": 247,
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "WTF.zip"
+        }
+      ],
+      "actualLiteralMapping": []
+    }
+  ],
+  "setDownloadInfoLiterals": [
+    {
+      "fileID": 76228,
+      "URL": "https://pds.inven.co.kr/upload/2023/05/15/addon/DevilUI23.5.15.zip",
+      "line": 37,
+      "executed": false
+    }
+  ],
+  "selection": "metadata-only-noGET",
+  "JavaScriptExecuted": false
+}

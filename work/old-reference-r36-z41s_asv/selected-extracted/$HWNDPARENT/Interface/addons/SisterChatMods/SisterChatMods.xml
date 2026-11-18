@@ -1,0 +1,39 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
+
+  <Frame name="SisterChatModsFrame" hidden="true">
+    <Scripts>
+      <OnLoad>
+        SCM_OnLoad();
+      </OnLoad>
+      <OnEvent>
+        SCM_OnEvent(event);
+      </OnEvent>        
+    </Scripts>
+  </Frame>
+  
+  <Frame name="ChatFrameScrollBoxTemplate" movable="true" setAllPoints="true" virtual="true">
+    <Scripts>
+      <OnShow>
+        if (this:GetParent():GetFrameLevel() > 1) then
+          this:SetFrameLevel(this:GetParent():GetFrameLevel()-1);
+        end;
+      </OnShow>
+      <OnMouseWheel>
+        SCM_OnMouseWheel(this:GetParent(), arg1);
+      </OnMouseWheel>
+      <OnUpdate>
+        SCM_OnUpdate(arg1);
+      </OnUpdate>
+    </Scripts>
+  </Frame>
+
+  <Frame name="$parentScrollBox" inherits="ChatFrameScrollBoxTemplate" parent="ChatFrame1"/>
+  <Frame name="$parentScrollBox" inherits="ChatFrameScrollBoxTemplate" parent="ChatFrame2"/>
+  <Frame name="$parentScrollBox" inherits="ChatFrameScrollBoxTemplate" parent="ChatFrame3"/>
+  <Frame name="$parentScrollBox" inherits="ChatFrameScrollBoxTemplate" parent="ChatFrame4"/>
+  <Frame name="$parentScrollBox" inherits="ChatFrameScrollBoxTemplate" parent="ChatFrame5"/>
+  <Frame name="$parentScrollBox" inherits="ChatFrameScrollBoxTemplate" parent="ChatFrame6"/>
+  <Frame name="$parentScrollBox" inherits="ChatFrameScrollBoxTemplate" parent="ChatFrame7"/>
+
+</Ui>

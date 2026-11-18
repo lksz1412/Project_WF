@@ -1,0 +1,3220 @@
+{
+  "status": "PASS",
+  "failures": [],
+  "rectangles_consumed": 122,
+  "painted_rectangles": 117,
+  "grids": {
+    "strip_36": {
+      "slots": 36,
+      "occupied_placeholders": 21,
+      "rows": 1,
+      "columns": 36,
+      "slot_px": 80,
+      "gap_px": 3
+    },
+    "bank_8x3": {
+      "slots": 24,
+      "occupied_placeholders": 3,
+      "rows": 3,
+      "columns": 8,
+      "slot_px": 80,
+      "gap_px": 4
+    },
+    "floating_left": {
+      "slots": 12,
+      "occupied_placeholders": 2,
+      "rows": 3,
+      "columns": 4,
+      "slot_px": 68,
+      "gap_px": 4
+    },
+    "floating_right": {
+      "slots": 12,
+      "occupied_placeholders": 0,
+      "rows": 3,
+      "columns": 4,
+      "slot_px": 68,
+      "gap_px": 4
+    }
+  },
+  "bottom_up": {
+    "bank_bottom": 104,
+    "bank_height": 248,
+    "dock_height": 392
+  },
+  "interactive_rectangles": 103,
+  "input_collisions": [],
+  "declared_decor_input_overlaps": [
+    [
+      "decor_right",
+      "strip_36_slot_36"
+    ]
+  ],
+  "layer_collisions": [],
+  "allowed_layer_overlap_counts": {
+    "background_underlay": 165,
+    "ancestor_child": 5,
+    "declared_art_overlap": 3
+  },
+  "annotation_collisions": [],
+  "render_manifest": [
+    {
+      "id": "world",
+      "spec_xywh_bottom_left": [
+        0,
+        0,
+        3840,
+        2160
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        0,
+        0,
+        3840,
+        2160
+      ],
+      "local_alpha_bbox": [
+        0,
+        0,
+        3840,
+        2160
+      ]
+    },
+    {
+      "id": "dock",
+      "spec_xywh_bottom_left": [
+        0,
+        0,
+        3840,
+        392
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        0,
+        1768,
+        3840,
+        392
+      ],
+      "local_alpha_bbox": [
+        0,
+        0,
+        3840,
+        392
+      ]
+    },
+    {
+      "id": "rail",
+      "spec_xywh_bottom_left": [
+        0,
+        360,
+        3840,
+        32
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        0,
+        1768,
+        3840,
+        32
+      ],
+      "local_alpha_bbox": [
+        0,
+        0,
+        3840,
+        32
+      ]
+    },
+    {
+      "id": "left_panel",
+      "spec_xywh_bottom_left": [
+        8,
+        32,
+        920,
+        328
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        8,
+        1800,
+        920,
+        328
+      ],
+      "local_alpha_bbox": [
+        0,
+        0,
+        920,
+        328
+      ]
+    },
+    {
+      "id": "middle_panel",
+      "spec_xywh_bottom_left": [
+        928,
+        32,
+        912,
+        328
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        928,
+        1800,
+        912,
+        328
+      ],
+      "local_alpha_bbox": [
+        0,
+        0,
+        912,
+        328
+      ]
+    },
+    {
+      "id": "right_chat",
+      "spec_xywh_bottom_left": [
+        2852,
+        32,
+        980,
+        328
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2852,
+        1800,
+        980,
+        328
+      ],
+      "local_alpha_bbox": [
+        0,
+        0,
+        980,
+        328
+      ]
+    },
+    {
+      "id": "status",
+      "spec_xywh_bottom_left": [
+        8,
+        0,
+        3824,
+        32
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        8,
+        2128,
+        3824,
+        32
+      ],
+      "local_alpha_bbox": [
+        0,
+        0,
+        3824,
+        32
+      ]
+    },
+    {
+      "id": "minimap_title",
+      "spec_xywh_bottom_left": [
+        2520,
+        364,
+        328,
+        24
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2520,
+        1772,
+        328,
+        24
+      ],
+      "local_alpha_bbox": [
+        122,
+        1,
+        205,
+        23
+      ]
+    },
+    {
+      "id": "utility_row",
+      "spec_xywh_bottom_left": [
+        1852,
+        40,
+        660,
+        56
+      ],
+      "painted": false
+    },
+    {
+      "id": "minimap",
+      "spec_xywh_bottom_left": [
+        2520,
+        32,
+        328,
+        328
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2520,
+        1800,
+        328,
+        328
+      ],
+      "local_alpha_bbox": [
+        0,
+        0,
+        328,
+        328
+      ]
+    },
+    {
+      "id": "strip_36",
+      "spec_xywh_bottom_left": [
+        428,
+        392,
+        2985,
+        80
+      ],
+      "painted": false
+    },
+    {
+      "id": "bank_8x3",
+      "spec_xywh_bottom_left": [
+        1848,
+        104,
+        668,
+        248
+      ],
+      "painted": false
+    },
+    {
+      "id": "floating_left",
+      "spec_xywh_bottom_left": [
+        1144,
+        1152,
+        284,
+        212
+      ],
+      "painted": false
+    },
+    {
+      "id": "floating_right",
+      "spec_xywh_bottom_left": [
+        2404,
+        1152,
+        284,
+        212
+      ],
+      "painted": false
+    },
+    {
+      "id": "player",
+      "spec_xywh_bottom_left": [
+        1056,
+        648,
+        512,
+        116
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1056,
+        1396,
+        512,
+        116
+      ],
+      "local_alpha_bbox": [
+        0,
+        0,
+        512,
+        116
+      ]
+    },
+    {
+      "id": "target",
+      "spec_xywh_bottom_left": [
+        2272,
+        648,
+        512,
+        116
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2272,
+        1396,
+        512,
+        116
+      ],
+      "local_alpha_bbox": [
+        0,
+        0,
+        512,
+        116
+      ]
+    },
+    {
+      "id": "utility_1",
+      "spec_xywh_bottom_left": [
+        1852,
+        40,
+        34,
+        56
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1852,
+        2064,
+        34,
+        56
+      ],
+      "local_alpha_bbox": [
+        6,
+        17,
+        28,
+        39
+      ]
+    },
+    {
+      "id": "utility_2",
+      "spec_xywh_bottom_left": [
+        1888,
+        40,
+        34,
+        56
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1888,
+        2064,
+        34,
+        56
+      ],
+      "local_alpha_bbox": [
+        6,
+        17,
+        28,
+        39
+      ]
+    },
+    {
+      "id": "utility_3",
+      "spec_xywh_bottom_left": [
+        1924,
+        40,
+        34,
+        56
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1924,
+        2064,
+        34,
+        56
+      ],
+      "local_alpha_bbox": [
+        6,
+        17,
+        28,
+        39
+      ]
+    },
+    {
+      "id": "utility_4",
+      "spec_xywh_bottom_left": [
+        1960,
+        40,
+        34,
+        56
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1960,
+        2064,
+        34,
+        56
+      ],
+      "local_alpha_bbox": [
+        6,
+        17,
+        28,
+        39
+      ]
+    },
+    {
+      "id": "utility_5",
+      "spec_xywh_bottom_left": [
+        1996,
+        40,
+        34,
+        56
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1996,
+        2064,
+        34,
+        56
+      ],
+      "local_alpha_bbox": [
+        6,
+        17,
+        28,
+        39
+      ]
+    },
+    {
+      "id": "utility_6",
+      "spec_xywh_bottom_left": [
+        2032,
+        40,
+        34,
+        56
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2032,
+        2064,
+        34,
+        56
+      ],
+      "local_alpha_bbox": [
+        6,
+        17,
+        28,
+        39
+      ]
+    },
+    {
+      "id": "utility_7",
+      "spec_xywh_bottom_left": [
+        2068,
+        40,
+        34,
+        56
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2068,
+        2064,
+        34,
+        56
+      ],
+      "local_alpha_bbox": [
+        6,
+        17,
+        28,
+        39
+      ]
+    },
+    {
+      "id": "utility_8",
+      "spec_xywh_bottom_left": [
+        2104,
+        40,
+        34,
+        56
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2104,
+        2064,
+        34,
+        56
+      ],
+      "local_alpha_bbox": [
+        6,
+        17,
+        28,
+        39
+      ]
+    },
+    {
+      "id": "utility_9",
+      "spec_xywh_bottom_left": [
+        2140,
+        40,
+        34,
+        56
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2140,
+        2064,
+        34,
+        56
+      ],
+      "local_alpha_bbox": [
+        6,
+        17,
+        28,
+        39
+      ]
+    },
+    {
+      "id": "utility_10",
+      "spec_xywh_bottom_left": [
+        2176,
+        40,
+        34,
+        56
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2176,
+        2064,
+        34,
+        56
+      ],
+      "local_alpha_bbox": [
+        6,
+        17,
+        28,
+        39
+      ]
+    },
+    {
+      "id": "utility_11",
+      "spec_xywh_bottom_left": [
+        2212,
+        40,
+        34,
+        56
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2212,
+        2064,
+        34,
+        56
+      ],
+      "local_alpha_bbox": [
+        6,
+        17,
+        28,
+        39
+      ]
+    },
+    {
+      "id": "bag_1",
+      "spec_xywh_bottom_left": [
+        2254,
+        44,
+        50,
+        50
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2254,
+        2066,
+        50,
+        50
+      ],
+      "local_alpha_bbox": [
+        3,
+        3,
+        47,
+        47
+      ]
+    },
+    {
+      "id": "bag_2",
+      "spec_xywh_bottom_left": [
+        2306,
+        44,
+        50,
+        50
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2306,
+        2066,
+        50,
+        50
+      ],
+      "local_alpha_bbox": [
+        3,
+        3,
+        47,
+        47
+      ]
+    },
+    {
+      "id": "bag_3",
+      "spec_xywh_bottom_left": [
+        2358,
+        44,
+        50,
+        50
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2358,
+        2066,
+        50,
+        50
+      ],
+      "local_alpha_bbox": [
+        3,
+        3,
+        47,
+        47
+      ]
+    },
+    {
+      "id": "bag_4",
+      "spec_xywh_bottom_left": [
+        2410,
+        44,
+        50,
+        50
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2410,
+        2066,
+        50,
+        50
+      ],
+      "local_alpha_bbox": [
+        3,
+        3,
+        47,
+        47
+      ]
+    },
+    {
+      "id": "bag_5",
+      "spec_xywh_bottom_left": [
+        2462,
+        44,
+        50,
+        50
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2462,
+        2066,
+        50,
+        50
+      ],
+      "local_alpha_bbox": [
+        3,
+        3,
+        47,
+        47
+      ]
+    },
+    {
+      "id": "player_health",
+      "spec_xywh_bottom_left": [
+        1060,
+        684,
+        504,
+        76
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1060,
+        1400,
+        504,
+        76
+      ],
+      "local_alpha_bbox": [
+        0,
+        0,
+        504,
+        76
+      ]
+    },
+    {
+      "id": "player_mana",
+      "spec_xywh_bottom_left": [
+        1060,
+        652,
+        504,
+        28
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1060,
+        1480,
+        504,
+        28
+      ],
+      "local_alpha_bbox": [
+        0,
+        0,
+        504,
+        28
+      ]
+    },
+    {
+      "id": "target_health",
+      "spec_xywh_bottom_left": [
+        2276,
+        684,
+        504,
+        76
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2276,
+        1400,
+        504,
+        76
+      ],
+      "local_alpha_bbox": [
+        0,
+        0,
+        504,
+        76
+      ]
+    },
+    {
+      "id": "target_mana",
+      "spec_xywh_bottom_left": [
+        2276,
+        652,
+        504,
+        28
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2276,
+        1480,
+        504,
+        28
+      ],
+      "local_alpha_bbox": [
+        0,
+        0,
+        504,
+        28
+      ]
+    },
+    {
+      "id": "strip_36_slot_01",
+      "spec_xywh_bottom_left": [
+        428,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        428,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_02",
+      "spec_xywh_bottom_left": [
+        511,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        511,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_03",
+      "spec_xywh_bottom_left": [
+        594,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        594,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_04",
+      "spec_xywh_bottom_left": [
+        677,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        677,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_05",
+      "spec_xywh_bottom_left": [
+        760,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        760,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_06",
+      "spec_xywh_bottom_left": [
+        843,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        843,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_07",
+      "spec_xywh_bottom_left": [
+        926,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        926,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_08",
+      "spec_xywh_bottom_left": [
+        1009,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1009,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_09",
+      "spec_xywh_bottom_left": [
+        1092,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1092,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_10",
+      "spec_xywh_bottom_left": [
+        1175,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1175,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_11",
+      "spec_xywh_bottom_left": [
+        1258,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1258,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_12",
+      "spec_xywh_bottom_left": [
+        1341,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1341,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_13",
+      "spec_xywh_bottom_left": [
+        1424,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1424,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_14",
+      "spec_xywh_bottom_left": [
+        1507,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1507,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_15",
+      "spec_xywh_bottom_left": [
+        1590,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1590,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_16",
+      "spec_xywh_bottom_left": [
+        1673,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1673,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_17",
+      "spec_xywh_bottom_left": [
+        1756,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1756,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_18",
+      "spec_xywh_bottom_left": [
+        1839,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1839,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_19",
+      "spec_xywh_bottom_left": [
+        1922,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1922,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_20",
+      "spec_xywh_bottom_left": [
+        2005,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2005,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_21",
+      "spec_xywh_bottom_left": [
+        2088,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2088,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_22",
+      "spec_xywh_bottom_left": [
+        2171,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2171,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_23",
+      "spec_xywh_bottom_left": [
+        2254,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2254,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_24",
+      "spec_xywh_bottom_left": [
+        2337,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2337,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_25",
+      "spec_xywh_bottom_left": [
+        2420,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2420,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_26",
+      "spec_xywh_bottom_left": [
+        2503,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2503,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_27",
+      "spec_xywh_bottom_left": [
+        2586,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2586,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_28",
+      "spec_xywh_bottom_left": [
+        2669,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2669,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_29",
+      "spec_xywh_bottom_left": [
+        2752,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2752,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_30",
+      "spec_xywh_bottom_left": [
+        2835,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2835,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_31",
+      "spec_xywh_bottom_left": [
+        2918,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2918,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_32",
+      "spec_xywh_bottom_left": [
+        3001,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        3001,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_33",
+      "spec_xywh_bottom_left": [
+        3084,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        3084,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_34",
+      "spec_xywh_bottom_left": [
+        3167,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        3167,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_35",
+      "spec_xywh_bottom_left": [
+        3250,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        3250,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "strip_36_slot_36",
+      "spec_xywh_bottom_left": [
+        3333,
+        392,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        3333,
+        1688,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "bank_8x3_slot_01",
+      "spec_xywh_bottom_left": [
+        1848,
+        272,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1848,
+        1808,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "bank_8x3_slot_02",
+      "spec_xywh_bottom_left": [
+        1932,
+        272,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1932,
+        1808,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "bank_8x3_slot_03",
+      "spec_xywh_bottom_left": [
+        2016,
+        272,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2016,
+        1808,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "bank_8x3_slot_04",
+      "spec_xywh_bottom_left": [
+        2100,
+        272,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2100,
+        1808,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "bank_8x3_slot_05",
+      "spec_xywh_bottom_left": [
+        2184,
+        272,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2184,
+        1808,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "bank_8x3_slot_06",
+      "spec_xywh_bottom_left": [
+        2268,
+        272,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2268,
+        1808,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "bank_8x3_slot_07",
+      "spec_xywh_bottom_left": [
+        2352,
+        272,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2352,
+        1808,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "bank_8x3_slot_08",
+      "spec_xywh_bottom_left": [
+        2436,
+        272,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2436,
+        1808,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "bank_8x3_slot_09",
+      "spec_xywh_bottom_left": [
+        1848,
+        188,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1848,
+        1892,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "bank_8x3_slot_10",
+      "spec_xywh_bottom_left": [
+        1932,
+        188,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1932,
+        1892,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "bank_8x3_slot_11",
+      "spec_xywh_bottom_left": [
+        2016,
+        188,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2016,
+        1892,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "bank_8x3_slot_12",
+      "spec_xywh_bottom_left": [
+        2100,
+        188,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2100,
+        1892,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "bank_8x3_slot_13",
+      "spec_xywh_bottom_left": [
+        2184,
+        188,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2184,
+        1892,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "bank_8x3_slot_14",
+      "spec_xywh_bottom_left": [
+        2268,
+        188,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2268,
+        1892,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "bank_8x3_slot_15",
+      "spec_xywh_bottom_left": [
+        2352,
+        188,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2352,
+        1892,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "bank_8x3_slot_16",
+      "spec_xywh_bottom_left": [
+        2436,
+        188,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2436,
+        1892,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "bank_8x3_slot_17",
+      "spec_xywh_bottom_left": [
+        1848,
+        104,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1848,
+        1976,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "bank_8x3_slot_18",
+      "spec_xywh_bottom_left": [
+        1932,
+        104,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1932,
+        1976,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "bank_8x3_slot_19",
+      "spec_xywh_bottom_left": [
+        2016,
+        104,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2016,
+        1976,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "bank_8x3_slot_20",
+      "spec_xywh_bottom_left": [
+        2100,
+        104,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2100,
+        1976,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "bank_8x3_slot_21",
+      "spec_xywh_bottom_left": [
+        2184,
+        104,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2184,
+        1976,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "bank_8x3_slot_22",
+      "spec_xywh_bottom_left": [
+        2268,
+        104,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2268,
+        1976,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "bank_8x3_slot_23",
+      "spec_xywh_bottom_left": [
+        2352,
+        104,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2352,
+        1976,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "bank_8x3_slot_24",
+      "spec_xywh_bottom_left": [
+        2436,
+        104,
+        80,
+        80
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2436,
+        1976,
+        80,
+        80
+      ],
+      "local_alpha_bbox": [
+        2,
+        0,
+        78,
+        80
+      ]
+    },
+    {
+      "id": "floating_left_slot_01",
+      "spec_xywh_bottom_left": [
+        1144,
+        1296,
+        68,
+        68
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1144,
+        796,
+        68,
+        68
+      ],
+      "local_alpha_bbox": [
+        1,
+        0,
+        66,
+        68
+      ]
+    },
+    {
+      "id": "floating_left_slot_02",
+      "spec_xywh_bottom_left": [
+        1216,
+        1296,
+        68,
+        68
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1216,
+        796,
+        68,
+        68
+      ],
+      "local_alpha_bbox": [
+        1,
+        0,
+        66,
+        68
+      ]
+    },
+    {
+      "id": "floating_left_slot_03",
+      "spec_xywh_bottom_left": [
+        1288,
+        1296,
+        68,
+        68
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1288,
+        796,
+        68,
+        68
+      ],
+      "local_alpha_bbox": [
+        1,
+        0,
+        66,
+        68
+      ]
+    },
+    {
+      "id": "floating_left_slot_04",
+      "spec_xywh_bottom_left": [
+        1360,
+        1296,
+        68,
+        68
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1360,
+        796,
+        68,
+        68
+      ],
+      "local_alpha_bbox": [
+        1,
+        0,
+        66,
+        68
+      ]
+    },
+    {
+      "id": "floating_left_slot_05",
+      "spec_xywh_bottom_left": [
+        1144,
+        1224,
+        68,
+        68
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1144,
+        868,
+        68,
+        68
+      ],
+      "local_alpha_bbox": [
+        1,
+        0,
+        66,
+        68
+      ]
+    },
+    {
+      "id": "floating_left_slot_06",
+      "spec_xywh_bottom_left": [
+        1216,
+        1224,
+        68,
+        68
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1216,
+        868,
+        68,
+        68
+      ],
+      "local_alpha_bbox": [
+        1,
+        0,
+        66,
+        68
+      ]
+    },
+    {
+      "id": "floating_left_slot_07",
+      "spec_xywh_bottom_left": [
+        1288,
+        1224,
+        68,
+        68
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1288,
+        868,
+        68,
+        68
+      ],
+      "local_alpha_bbox": [
+        1,
+        0,
+        66,
+        68
+      ]
+    },
+    {
+      "id": "floating_left_slot_08",
+      "spec_xywh_bottom_left": [
+        1360,
+        1224,
+        68,
+        68
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1360,
+        868,
+        68,
+        68
+      ],
+      "local_alpha_bbox": [
+        1,
+        0,
+        66,
+        68
+      ]
+    },
+    {
+      "id": "floating_left_slot_09",
+      "spec_xywh_bottom_left": [
+        1144,
+        1152,
+        68,
+        68
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1144,
+        940,
+        68,
+        68
+      ],
+      "local_alpha_bbox": [
+        1,
+        0,
+        66,
+        68
+      ]
+    },
+    {
+      "id": "floating_left_slot_10",
+      "spec_xywh_bottom_left": [
+        1216,
+        1152,
+        68,
+        68
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1216,
+        940,
+        68,
+        68
+      ],
+      "local_alpha_bbox": [
+        1,
+        0,
+        66,
+        68
+      ]
+    },
+    {
+      "id": "floating_left_slot_11",
+      "spec_xywh_bottom_left": [
+        1288,
+        1152,
+        68,
+        68
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1288,
+        940,
+        68,
+        68
+      ],
+      "local_alpha_bbox": [
+        1,
+        0,
+        66,
+        68
+      ]
+    },
+    {
+      "id": "floating_left_slot_12",
+      "spec_xywh_bottom_left": [
+        1360,
+        1152,
+        68,
+        68
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        1360,
+        940,
+        68,
+        68
+      ],
+      "local_alpha_bbox": [
+        1,
+        0,
+        66,
+        68
+      ]
+    },
+    {
+      "id": "floating_right_slot_01",
+      "spec_xywh_bottom_left": [
+        2404,
+        1296,
+        68,
+        68
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2404,
+        796,
+        68,
+        68
+      ],
+      "local_alpha_bbox": [
+        1,
+        0,
+        66,
+        68
+      ]
+    },
+    {
+      "id": "floating_right_slot_02",
+      "spec_xywh_bottom_left": [
+        2476,
+        1296,
+        68,
+        68
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2476,
+        796,
+        68,
+        68
+      ],
+      "local_alpha_bbox": [
+        1,
+        0,
+        66,
+        68
+      ]
+    },
+    {
+      "id": "floating_right_slot_03",
+      "spec_xywh_bottom_left": [
+        2548,
+        1296,
+        68,
+        68
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2548,
+        796,
+        68,
+        68
+      ],
+      "local_alpha_bbox": [
+        1,
+        0,
+        66,
+        68
+      ]
+    },
+    {
+      "id": "floating_right_slot_04",
+      "spec_xywh_bottom_left": [
+        2620,
+        1296,
+        68,
+        68
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2620,
+        796,
+        68,
+        68
+      ],
+      "local_alpha_bbox": [
+        1,
+        0,
+        66,
+        68
+      ]
+    },
+    {
+      "id": "floating_right_slot_05",
+      "spec_xywh_bottom_left": [
+        2404,
+        1224,
+        68,
+        68
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2404,
+        868,
+        68,
+        68
+      ],
+      "local_alpha_bbox": [
+        1,
+        0,
+        66,
+        68
+      ]
+    },
+    {
+      "id": "floating_right_slot_06",
+      "spec_xywh_bottom_left": [
+        2476,
+        1224,
+        68,
+        68
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2476,
+        868,
+        68,
+        68
+      ],
+      "local_alpha_bbox": [
+        1,
+        0,
+        66,
+        68
+      ]
+    },
+    {
+      "id": "floating_right_slot_07",
+      "spec_xywh_bottom_left": [
+        2548,
+        1224,
+        68,
+        68
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2548,
+        868,
+        68,
+        68
+      ],
+      "local_alpha_bbox": [
+        1,
+        0,
+        66,
+        68
+      ]
+    },
+    {
+      "id": "floating_right_slot_08",
+      "spec_xywh_bottom_left": [
+        2620,
+        1224,
+        68,
+        68
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2620,
+        868,
+        68,
+        68
+      ],
+      "local_alpha_bbox": [
+        1,
+        0,
+        66,
+        68
+      ]
+    },
+    {
+      "id": "floating_right_slot_09",
+      "spec_xywh_bottom_left": [
+        2404,
+        1152,
+        68,
+        68
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2404,
+        940,
+        68,
+        68
+      ],
+      "local_alpha_bbox": [
+        1,
+        0,
+        66,
+        68
+      ]
+    },
+    {
+      "id": "floating_right_slot_10",
+      "spec_xywh_bottom_left": [
+        2476,
+        1152,
+        68,
+        68
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2476,
+        940,
+        68,
+        68
+      ],
+      "local_alpha_bbox": [
+        1,
+        0,
+        66,
+        68
+      ]
+    },
+    {
+      "id": "floating_right_slot_11",
+      "spec_xywh_bottom_left": [
+        2548,
+        1152,
+        68,
+        68
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2548,
+        940,
+        68,
+        68
+      ],
+      "local_alpha_bbox": [
+        1,
+        0,
+        66,
+        68
+      ]
+    },
+    {
+      "id": "floating_right_slot_12",
+      "spec_xywh_bottom_left": [
+        2620,
+        1152,
+        68,
+        68
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        2620,
+        940,
+        68,
+        68
+      ],
+      "local_alpha_bbox": [
+        1,
+        0,
+        66,
+        68
+      ]
+    },
+    {
+      "id": "decor_left",
+      "spec_xywh_bottom_left": [
+        250,
+        380,
+        176,
+        160
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        250,
+        1620,
+        176,
+        160
+      ],
+      "local_alpha_bbox": [
+        0,
+        29,
+        176,
+        160
+      ]
+    },
+    {
+      "id": "decor_right",
+      "spec_xywh_bottom_left": [
+        3405,
+        380,
+        208,
+        160
+      ],
+      "painted": true,
+      "actual_paste_xywh_top_left": [
+        3405,
+        1620,
+        208,
+        160
+      ],
+      "local_alpha_bbox": [
+        0,
+        13,
+        208,
+        160
+      ]
+    }
+  ],
+  "full_png": {
+    "path": "preview-full-4k.png",
+    "size": [
+      3840,
+      2160
+    ],
+    "sha256": "031e714c018085367ced7a9dcd14b55f9742573153b8c164ddee74e39fba86ac"
+  },
+  "bottom_png": {
+    "path": "preview-bottom-native.png",
+    "size": [
+      3840,
+      800
+    ],
+    "sha256": "48fe85d2a9f22623d1e1aa6dc05a18c5974c3e18c075cf1186af14ec11bc5675",
+    "crop_top_left": [
+      0,
+      1360,
+      3840,
+      2160
+    ],
+    "identical_native_pixels": true
+  },
+  "dimensions_verified": true,
+  "spec_sha256": "ff476a089c46df1bcd9c61a5344cad3d924c9ba0bdc7e03612bf7617291aaa04",
+  "font": {
+    "path": "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Fonts\\2002.TTF",
+    "sha256": "8d89de751406d79c0c1e9c9d0eb69a24cae3a39ed2eb33131ef9669d680d9f14",
+    "loaded_px": [
+      22,
+      24
+    ]
+  },
+  "labels": [
+    {
+      "owner": "status",
+      "text": "정보",
+      "font_px": 22,
+      "glyph_bounds": [
+        0,
+        6,
+        37,
+        28
+      ],
+      "plate_local": [
+        8,
+        3,
+        41,
+        26
+      ],
+      "layer_size": [
+        3824,
+        32
+      ],
+      "fits": true
+    },
+    {
+      "owner": "minimap_title",
+      "text": "지역 표시",
+      "font_px": 22,
+      "glyph_bounds": [
+        0,
+        6,
+        83,
+        28
+      ],
+      "plate_local": [
+        122,
+        1,
+        83,
+        22
+      ],
+      "layer_size": [
+        328,
+        24
+      ],
+      "fits": true
+    },
+    {
+      "owner": "minimap",
+      "text": "미니맵",
+      "font_px": 24,
+      "glyph_bounds": [
+        0,
+        7,
+        65,
+        30
+      ],
+      "plate_local": [
+        129,
+        150,
+        69,
+        27
+      ],
+      "layer_size": [
+        328,
+        328
+      ],
+      "fits": true
+    },
+    {
+      "owner": "player_health",
+      "text": "체력",
+      "font_px": 24,
+      "glyph_bounds": [
+        0,
+        6,
+        44,
+        30
+      ],
+      "plate_local": [
+        452,
+        26,
+        44,
+        24
+      ],
+      "layer_size": [
+        504,
+        76
+      ],
+      "fits": true
+    },
+    {
+      "owner": "player_mana",
+      "text": "마나",
+      "font_px": 24,
+      "glyph_bounds": [
+        0,
+        7,
+        44,
+        26
+      ],
+      "plate_local": [
+        452,
+        4,
+        44,
+        19
+      ],
+      "layer_size": [
+        504,
+        28
+      ],
+      "fits": true
+    },
+    {
+      "owner": "target_health",
+      "text": "체력",
+      "font_px": 24,
+      "glyph_bounds": [
+        0,
+        6,
+        44,
+        30
+      ],
+      "plate_local": [
+        452,
+        26,
+        44,
+        24
+      ],
+      "layer_size": [
+        504,
+        76
+      ],
+      "fits": true
+    },
+    {
+      "owner": "target_mana",
+      "text": "마나",
+      "font_px": 24,
+      "glyph_bounds": [
+        0,
+        7,
+        44,
+        26
+      ],
+      "plate_local": [
+        452,
+        4,
+        44,
+        19
+      ],
+      "layer_size": [
+        504,
+        28
+      ],
+      "fits": true
+    },
+    {
+      "owner": "strip_36_slot_01",
+      "text": "키",
+      "font_px": 22,
+      "glyph_bounds": [
+        0,
+        6,
+        19,
+        24
+      ],
+      "plate_local": [
+        53,
+        9,
+        23,
+        22
+      ],
+      "layer_size": [
+        80,
+        80
+      ],
+      "fits": true
+    },
+    {
+      "owner": "bank_8x3_slot_01",
+      "text": "키",
+      "font_px": 22,
+      "glyph_bounds": [
+        0,
+        6,
+        19,
+        24
+      ],
+      "plate_local": [
+        53,
+        9,
+        23,
+        22
+      ],
+      "layer_size": [
+        80,
+        80
+      ],
+      "fits": true
+    },
+    {
+      "owner": "floating_left_slot_01",
+      "text": "키",
+      "font_px": 22,
+      "glyph_bounds": [
+        0,
+        6,
+        19,
+        24
+      ],
+      "plate_local": [
+        41,
+        9,
+        23,
+        22
+      ],
+      "layer_size": [
+        68,
+        68
+      ],
+      "fits": true
+    },
+    {
+      "owner": "floating_right_slot_01",
+      "text": "키",
+      "font_px": 22,
+      "glyph_bounds": [
+        0,
+        6,
+        19,
+        24
+      ],
+      "plate_local": [
+        41,
+        9,
+        23,
+        22
+      ],
+      "layer_size": [
+        68,
+        68
+      ],
+      "fits": true
+    },
+    {
+      "owner": "player",
+      "text": "플레이어",
+      "font_px": 24,
+      "glyph_bounds": [
+        0,
+        7,
+        88,
+        30
+      ],
+      "plate_local": [
+        12,
+        14,
+        92,
+        27
+      ],
+      "layer_size": [
+        512,
+        116
+      ],
+      "fits": true
+    },
+    {
+      "owner": "target",
+      "text": "대상",
+      "font_px": 24,
+      "glyph_bounds": [
+        0,
+        7,
+        45,
+        31
+      ],
+      "plate_local": [
+        12,
+        14,
+        49,
+        28
+      ],
+      "layer_size": [
+        512,
+        116
+      ],
+      "fits": true
+    },
+    {
+      "owner": "proposal_legend",
+      "text": "제안 배치 · 모든 아이콘·값은 자리표시",
+      "font_px": 24,
+      "glyph_bounds": [
+        0,
+        6,
+        368,
+        30
+      ],
+      "plate_local": [
+        0,
+        6,
+        372,
+        28
+      ],
+      "layer_size": [
+        980,
+        40
+      ],
+      "fits": true
+    },
+    {
+      "owner": "proposal_legend",
+      "text": "3840×2160 작업판 · 게임 적용 전",
+      "font_px": 24,
+      "glyph_bounds": [
+        0,
+        6,
+        346,
+        31
+      ],
+      "plate_local": [
+        0,
+        5,
+        350,
+        29
+      ],
+      "layer_size": [
+        980,
+        40
+      ],
+      "fits": true
+    },
+    {
+      "owner": "proposal_legend",
+      "text": "제안 배치 · 체력·마나·지도는 자리표시",
+      "font_px": 24,
+      "glyph_bounds": [
+        0,
+        6,
+        370,
+        30
+      ],
+      "plate_local": [
+        0,
+        6,
+        374,
+        28
+      ],
+      "layer_size": [
+        900,
+        40
+      ],
+      "fits": true
+    },
+    {
+      "owner": "proposal_legend",
+      "text": "점선 대상창 = 추가 제안 · 키 = 글자 예시",
+      "font_px": 24,
+      "glyph_bounds": [
+        0,
+        5,
+        405,
+        31
+      ],
+      "plate_local": [
+        0,
+        5,
+        409,
+        30
+      ],
+      "layer_size": [
+        900,
+        40
+      ],
+      "fits": true
+    }
+  ],
+  "assets": {
+    "button_frame": {
+      "path": "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\Masque_Onyx\\Textures\\Frame-Classic.tga",
+      "sha256": "0285c9994c42830c15abab0bb7f24995f3ea16c89daa44fb34e762fedc0666a6",
+      "original_size": [
+        128,
+        128
+      ],
+      "alpha_bbox": [
+        8,
+        2,
+        120,
+        120
+      ]
+    },
+    "statusbar": {
+      "path": "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\media\\statusbar\\Glamour7.tga",
+      "sha256": "eae335c45840dabaf4412fa285b759da7982172335a987cbea689a291366c0ab",
+      "original_size": [
+        256,
+        64
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        256,
+        64
+      ]
+    },
+    "decor_left": {
+      "path": "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\media\\background\\demon.tga",
+      "sha256": "045ce188243a618161eb6351eca50f2f0b7562a944c16d59eb68e0a2dfe248ca",
+      "original_size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        0,
+        92,
+        220,
+        256
+      ]
+    },
+    "decor_right": {
+      "path": "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\media\\background\\angel.tga",
+      "sha256": "073284129e9f8d2ad16998140a1ac6db1a475636025aeff476fc3da359ca8744",
+      "original_size": [
+        256,
+        256
+      ],
+      "alpha_bbox": [
+        43,
+        105,
+        256,
+        256
+      ]
+    },
+    "border": {
+      "path": "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\media\\border\\Devil2.tga",
+      "sha256": "f4fad956f5769c5a7c543d9a4541510898355cac54091daa00fa430c1e0255dd",
+      "original_size": [
+        128,
+        16
+      ],
+      "alpha_bbox": [
+        1,
+        0,
+        127,
+        16
+      ]
+    }
+  },
+  "annotation_rects_top_left": [
+    [
+      80,
+      72,
+      980,
+      40
+    ],
+    [
+      80,
+      120,
+      980,
+      40
+    ],
+    [
+      80,
+      1372,
+      900,
+      40
+    ],
+    [
+      80,
+      1420,
+      900,
+      40
+    ]
+  ],
+  "contrast": {
+    "text_vs_solid_plate": 17.4533,
+    "method": "sRGB relative luminance; opaque glyph foreground and plate; antialias edge excluded",
+    "render_plate_sample_rgb": [
+      16,
+      16,
+      16
+    ],
+    "render_foreground_sample_rgb": [
+      245,
+      245,
+      245
+    ],
+    "sample_xy": [
+      80,
+      1378
+    ],
+    "sampled_render_contrast": 17.4533
+  },
+  "visual_inspection": "pending independent image-reader and B review",
+  "game_runtime": "NOT_RUN",
+  "limitations": [
+    "Devil2 edge texture read but neutral4px border drawn; no exact WoW eight-segment edge simulation",
+    "Glamour7 tint/stretch is offline composition, not runtime shader verification",
+    "Recovered art is proposed reference; hidden screenshot shape not reconstructed",
+    "Native crop includes lower800pixels; floating banks remain in full image only"
+  ]
+}

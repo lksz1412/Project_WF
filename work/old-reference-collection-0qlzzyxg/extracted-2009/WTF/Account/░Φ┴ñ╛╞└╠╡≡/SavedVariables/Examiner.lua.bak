@@ -1,0 +1,26 @@
+
+Examiner_Config = {
+	["scale"] = 1,
+	["featsFilter"] = "",
+	["ActAsUIFrame"] = true,
+	["cacheSort"] = "class",
+	["featsStub"] = -1,
+	["EnableCache"] = false,
+	["badgeSort"] = "name",
+	["AcceptAddonMsg"] = false,
+	[2] = true,
+	["cacheFilter"] = "",
+	["QueryFeats"] = false,
+	["QueryBadges"] = true,
+	["featsCat"] = -1,
+	["ScanUnknownItems"] = true,
+	["AutoInspect"] = true,
+	["CachePvP"] = false,
+	["featsSort"] = "none",
+	["activePage"] = 3,
+	["showBackground"] = true,
+	["RatingsInPercent"] = false,
+	["CombineAdditiveStats"] = true,
+}
+Examiner_Cache = {
+}

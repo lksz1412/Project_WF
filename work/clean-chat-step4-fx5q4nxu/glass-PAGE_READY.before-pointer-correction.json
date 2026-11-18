@@ -1,0 +1,18 @@
+{
+  "exactCFfileURL": "https://www.curseforge.com/wow/addons/glass-forever/files/9653501",
+  "fileID": 9653501,
+  "versionLiteral": "Glass Forever 1.1.6",
+  "filenameLiteral": "Glass-Forever-1.1.6.zip",
+  "dateLiteral": "Nov 16, 2026",
+  "flavorLiteral": "Forever",
+  "gameVersionLiteral": "1.60.1",
+  "metadataBasis": "official web exactfile rendered page turn65view1/2/0 respectively",
+  "publisherDescriptionSnapshot": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\remaining-main.web.txt",
+  "descriptionSourceLines": [
+    161,
+    222
+  ],
+  "repo": "https://github.com/NelsonAbrantes/Glass-Forever",
+  "CFIWRmain": "403 retained",
+  "sourceAPIReceipts": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-acquisition\\glass-api-receipts.json"
+}

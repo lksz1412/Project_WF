@@ -1,0 +1,29 @@
+﻿## Interface: 30000
+
+## Title: Big Wigs [|cffeda55fAzeroth|r]
+## Notes: Big Wigs Azeroth Modules
+## Title-zhCN: Big Wigs [|cffeda55f艾泽拉斯|r]
+## Notes-zhCN: Big Wigs 艾泽拉斯模块
+## Title-zhTW: Big Wigs [|cffeda55f艾澤拉斯|r]
+## Notes-zhTW: Big Wigs 艾澤拉斯模組
+## Notes-frFR: Modules Big Wigs concernant Azeroth.
+## Author: Ammo, Rabbit, Funkydude
+## X-Credits: Tekkub Stoutwrithe(founding author), Shyva & Others
+## Version: 2.0
+## LoadOnDemand: 1
+
+## X-Website: http://www.wowwiki.com/BigWigs
+## X-Category: Raid
+
+## X-BigWigs-Menu: Azeroth
+## X-BigWigs-LoadInZone: Onyxia's Lair, Azshara, Duskwood, The Hinterlands, Feralas, Ashenvale
+
+## Dependencies: BigWigs
+
+Azuregos.lua
+Emeriss.lua
+Onyxia.lua
+Ysondre.lua
+Taerar.lua
+Lethon.lua
+

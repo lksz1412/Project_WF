@@ -1,0 +1,24 @@
+[
+  {
+    "label": "idx1932-rar",
+    "state": "passed",
+    "extractionRoot": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\extracted-idx1932-rar",
+    "extractedFiles": 2407,
+    "extractedBytes": 38791956,
+    "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\idx1932-rar-members.json",
+    "integrityTestRuns": 1,
+    "unsafe": [],
+    "byteTotalsEqual": true
+  },
+  {
+    "label": "idx3461-sfx",
+    "state": "passed",
+    "extractionRoot": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\extracted-idx3461-sfx",
+    "extractedFiles": 2936,
+    "extractedBytes": 40624475,
+    "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\idx3461-sfx-members.json",
+    "integrityTestRuns": 1,
+    "unsafe": [],
+    "byteTotalsEqual": null
+  }
+]

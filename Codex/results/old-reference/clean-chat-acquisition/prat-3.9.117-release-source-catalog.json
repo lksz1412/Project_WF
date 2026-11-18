@@ -1,0 +1,3380 @@
+{
+  "label": "prat-3.9.117-release",
+  "root": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release",
+  "inventoryPath": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\prat-3.9.117-release-members.json",
+  "files": [
+    {
+      "filename": "Prat-3.0/CHANGELOG.md",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\CHANGELOG.md",
+      "bytes": 344,
+      "SHA256": "750FB59373D33107830612CB1342666C900D551B816B9D5D7314B5580131A3B4",
+      "encoding": "utf-8-sig",
+      "lines": 7
+    },
+    {
+      "filename": "Prat-3.0/services/includes.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\services\\includes.xml",
+      "bytes": 510,
+      "SHA256": "63E7BF0DE5405D4BB945CD220B4A6308CA71FA8D409E405E7FB64DEC2EEC0A01",
+      "encoding": "utf-8-sig",
+      "lines": 13
+    },
+    {
+      "filename": "Prat-3.0/services/helpers.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\services\\helpers.lua",
+      "bytes": 5719,
+      "SHA256": "6881263F6EF687C18DBA1876700F2B8389BB627590297988EA8224EC9B6A2D9F",
+      "encoding": "utf-8-sig",
+      "lines": 147
+    },
+    {
+      "filename": "Prat-3.0/services/events.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\services\\events.lua",
+      "bytes": 1822,
+      "SHA256": "2BEB4E89599794E9CACE14444ED1AC1545BEFCA4FF727476B71ED7451E881761",
+      "encoding": "utf-8-sig",
+      "lines": 50
+    },
+    {
+      "filename": "Prat-3.0/services/patterns.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\services\\patterns.lua",
+      "bytes": 3745,
+      "SHA256": "E2BCCF3A32350B7214BFDF94720AA307847A4CA1CD8236D7282E4D9B0E65F869",
+      "encoding": "utf-8-sig",
+      "lines": 166
+    },
+    {
+      "filename": "Prat-3.0/services/bayesclassifier.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\services\\bayesclassifier.lua",
+      "bytes": 9493,
+      "SHA256": "A009884603737A3B3268766C0522CCD0BAF87A933BE6200D69634A32E73E84DE",
+      "encoding": "utf-8-sig",
+      "lines": 296
+    },
+    {
+      "filename": "Prat-3.0/services/print.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\services\\print.lua",
+      "bytes": 1531,
+      "SHA256": "CA6B3EFBCFED308BE59DEAD219927822A354D965E2B88C04EA2F4A1B37F10D60",
+      "encoding": "utf-8-sig",
+      "lines": 69
+    },
+    {
+      "filename": "Prat-3.0/services/channelapi.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\services\\channelapi.lua",
+      "bytes": 1568,
+      "SHA256": "98BD88F68AA94EC6B2BC9D59F7224DC347AD17F8AE46404B931F99F3A51F3FBA",
+      "encoding": "utf-8-sig",
+      "lines": 56
+    },
+    {
+      "filename": "Prat-3.0/services/classcolor.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\services\\classcolor.lua",
+      "bytes": 931,
+      "SHA256": "69330E5B88BF10D80E091036D6D554FB001FE299564BD69CE88BD1AD499F2AB1",
+      "encoding": "utf-8-sig",
+      "lines": 40
+    },
+    {
+      "filename": "Prat-3.0/services/textcolor.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\services\\textcolor.lua",
+      "bytes": 2489,
+      "SHA256": "333DCE352E220B249C2662014354CDA622423AD84235A1C4994AEEF4BCF0072C",
+      "encoding": "utf-8-sig",
+      "lines": 111
+    },
+    {
+      "filename": "Prat-3.0/services/chatsections.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\services\\chatsections.lua",
+      "bytes": 20771,
+      "SHA256": "6BC26FA38FE39909288016B98973301F0429CB2F75F3537723B0300D1A18C7C2",
+      "encoding": "utf-8-sig",
+      "lines": 643
+    },
+    {
+      "filename": "Prat-3.0/services/links.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\services\\links.lua",
+      "bytes": 1743,
+      "SHA256": "F88FAFF462C21C44CE95FF1FE796323AB20D76A1C63DECF292EC8CBDBE82B414",
+      "encoding": "utf-8-sig",
+      "lines": 62
+    },
+    {
+      "filename": "Prat-3.0/addon/addon.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\addon\\addon.lua",
+      "bytes": 25254,
+      "SHA256": "EC37EC12AEB87FBEE92C925C4B4CD58E77476DC2A039E4572362E8E705CB7A35",
+      "encoding": "utf-8-sig",
+      "lines": 853
+    },
+    {
+      "filename": "Prat-3.0/addon/includes.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\addon\\includes.xml",
+      "bytes": 351,
+      "SHA256": "5521A746684AB4707D1177F493291012B16D8B7AC4EBF9FFC9F5AC7EA8E96437",
+      "encoding": "utf-8-sig",
+      "lines": 8
+    },
+    {
+      "filename": "Prat-3.0/addon/profileAPI.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\addon\\profileAPI.lua",
+      "bytes": 1259,
+      "SHA256": "2D61691887F5BB0D3D8BC77A4ED5B362A09560D458E8F16A757F2D5DB9C0DEBD",
+      "encoding": "utf-8-sig",
+      "lines": 39
+    },
+    {
+      "filename": "Prat-3.0/addon/MessageEventHandler.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\addon\\MessageEventHandler.lua",
+      "bytes": 10190,
+      "SHA256": "1FB2A9852BAC4C20E1D4EF320C172CAA731FA9EFE5858D8FE780127B646515E9",
+      "encoding": "utf-8-sig",
+      "lines": 246
+    },
+    {
+      "filename": "Prat-3.0/addon/options.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\addon\\options.lua",
+      "bytes": 4786,
+      "SHA256": "17FF4C2E5D24B886AAF10D83AE80D95D9AEDDDC4A2D4DB9307DB3932328ED1E2",
+      "encoding": "utf-8-sig",
+      "lines": 178
+    },
+    {
+      "filename": "Prat-3.0/addon/modules.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\addon\\modules.lua",
+      "bytes": 7818,
+      "SHA256": "E0C50157B41FC3147FB81A614C7B8950E0EFF8AE57C283E4BE7F3CB72F1456A9",
+      "encoding": "utf-8-sig",
+      "lines": 316
+    },
+    {
+      "filename": "Prat-3.0/fonts/MONOFONT.TTF",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\fonts\\MONOFONT.TTF",
+      "bytes": 41036,
+      "SHA256": "936F657A7356E60494F7F6DA97D8CCF214239345E557550B3AB094D7A701DDD7"
+    },
+    {
+      "filename": "Prat-3.0/fonts/WHITRABT.TTF",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\fonts\\WHITRABT.TTF",
+      "bytes": 15024,
+      "SHA256": "CF05F8FE99870067A8EBFE4FF83072929C2CEFA9D87F63B69A6294752AD1DCC8"
+    },
+    {
+      "filename": "Prat-3.0/fonts/includes.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\fonts\\includes.xml",
+      "bytes": 212,
+      "SHA256": "077BED06AAC89CEA3EFECD98ACAD13EE48BFACE862C9CE64724086BDB9EA51BB",
+      "encoding": "utf-8-sig",
+      "lines": 4
+    },
+    {
+      "filename": "Prat-3.0/fonts/Enigma__2.TTF",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\fonts\\Enigma__2.TTF",
+      "bytes": 79556,
+      "SHA256": "D96A87665AFE34F952FB8590B370F3EE8E10D591A15DB78142140FFF8BF7D44E"
+    },
+    {
+      "filename": "Prat-3.0/fonts/FSEX300.ttf",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\fonts\\FSEX300.ttf",
+      "bytes": 575668,
+      "SHA256": "6EE0F3573BC5E33E93B616EF6282F49BC0E227A31AA753AC76ED2E3F3D02056D"
+    },
+    {
+      "filename": "Prat-3.0/fonts/AnonymousPro-Bold.ttf",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\fonts\\AnonymousPro-Bold.ttf",
+      "bytes": 153708,
+      "SHA256": "9D6C14C77ACC27B5E0F741A8C35E5E747DA1FEA7E67D48CF0F7769337C247480"
+    },
+    {
+      "filename": "Prat-3.0/fonts/fonts.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\fonts\\fonts.lua",
+      "bytes": 1269,
+      "SHA256": "D816B450C5710761235714C67781FE92EA29B449B825C482D4BD5799E0503D71",
+      "encoding": "utf-8-sig",
+      "lines": 26
+    },
+    {
+      "filename": "Prat-3.0/fonts/CRYSRG__.TTF",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\fonts\\CRYSRG__.TTF",
+      "bytes": 42952,
+      "SHA256": "76E601D8C49D1F4D3EE6EE1A2FB97DDC3A29D4C48247D5E4A6FCD19BEAFCC7EB"
+    },
+    {
+      "filename": "Prat-3.0/fonts/DejaVuSansMono.ttf",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\fonts\\DejaVuSansMono.ttf",
+      "bytes": 323288,
+      "SHA256": "19EC8400C40E7886BDD643A8D25FA05358CF37687C7A8077EF4CE2212B83ECFB"
+    },
+    {
+      "filename": "Prat-3.0/fonts/DORISPP.TTF",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\fonts\\DORISPP.TTF",
+      "bytes": 33980,
+      "SHA256": "6B1EBF2F4A879C5236D566B97B0B807C78C7588FC2E3043DB6AB7F8C3D8F019C"
+    },
+    {
+      "filename": "Prat-3.0/fonts/LiberationSans-Regular.ttf",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\fonts\\LiberationSans-Regular.ttf",
+      "bytes": 133088,
+      "SHA256": "9EB67A1517ADE1DC25BC0EF139179808FD90C3219E6E4D2254969215BB693A13"
+    },
+    {
+      "filename": "Prat-3.0/fonts/font info and licenses/Liberation - License.txt",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\fonts\\font info and licenses\\Liberation - License.txt",
+      "bytes": 4028,
+      "SHA256": "19E27B16B6EF92AC3C6D309323E6F2394D65FDE86094732F3CF1643CABB3D03F",
+      "encoding": "utf-8-sig",
+      "lines": 19
+    },
+    {
+      "filename": "Prat-3.0/fonts/font info and licenses/Chica Mono Read Me",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\fonts\\font info and licenses\\Chica Mono Read Me",
+      "bytes": 249,
+      "SHA256": "100720C819110ED7113A3DABC047EFF0147A647A17071CE7B0610720A3747BFB"
+    },
+    {
+      "filename": "Prat-3.0/fonts/font info and licenses/Fira License.txt",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\fonts\\font info and licenses\\Fira License.txt",
+      "bytes": 4515,
+      "SHA256": "3D70884EEDC6B82C9563E1848BC2A8189AACF1743E39D8FC4AFB860C6DA031A5",
+      "encoding": "utf-8-sig",
+      "lines": 94
+    },
+    {
+      "filename": "Prat-3.0/fonts/font info and licenses/ShyFoundry Freeware EULA (for SF... fonts).pdf",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\fonts\\font info and licenses\\ShyFoundry Freeware EULA (for SF... fonts).pdf",
+      "bytes": 90944,
+      "SHA256": "95B92BB398934DC6C9071D672C2631A5D9004A5598E6B370A3E4CAE4B01D08B0"
+    },
+    {
+      "filename": "Prat-3.0/fonts/font info and licenses/Liberation - COPYING.txt",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\fonts\\font info and licenses\\Liberation - COPYING.txt",
+      "bytes": 18332,
+      "SHA256": "DA0ECA0FB517AC939D167924C9D4B3F8750A6B7191932EF2CB145ACFA624AC7E",
+      "encoding": "utf-8-sig",
+      "lines": 345
+    },
+    {
+      "filename": "Prat-3.0/fonts/font info and licenses/Enigmatic - legal_en.txt",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\fonts\\font info and licenses\\Enigmatic - legal_en.txt",
+      "bytes": 9047,
+      "SHA256": "A4ECC4D2B2CE150B56221BA91694FC520E459F35B8BCD6C73A3B998DC6254390",
+      "encoding": "not-UTF8-no-interpretation"
+    },
+    {
+      "filename": "Prat-3.0/fonts/font info and licenses/crystal-readme.txt",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\fonts\\font info and licenses\\crystal-readme.txt",
+      "bytes": 3980,
+      "SHA256": "66C46FC060465A368A58E218D11815303723AA984328A58B69408BA675AE7135",
+      "encoding": "utf-8-sig",
+      "lines": 98
+    },
+    {
+      "filename": "Prat-3.0/fonts/font info and licenses/Monofonto-READ_ME.TXT",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\fonts\\font info and licenses\\Monofonto-READ_ME.TXT",
+      "bytes": 5370,
+      "SHA256": "7A8DE234B96F3E3A3437B45882D3711AB4AB70AC5E1310377DEA531A8B200CFB",
+      "encoding": "utf-8-sig",
+      "lines": 107
+    },
+    {
+      "filename": "Prat-3.0/fonts/font info and licenses/WHITRABT.TXT",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\fonts\\font info and licenses\\WHITRABT.TXT",
+      "bytes": 1456,
+      "SHA256": "A273F14521BFAE6B74BAB168EED81E1DABDB5236712B41201C47BAB6FC062992",
+      "encoding": "utf-8-sig",
+      "lines": 42
+    },
+    {
+      "filename": "Prat-3.0/fonts/Bazooka.ttf",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\fonts\\Bazooka.ttf",
+      "bytes": 46064,
+      "SHA256": "40B937264D2325EAFD8DD97B18D93D449C92AA065BA4001D87F411BB7E45C6FA"
+    },
+    {
+      "filename": "Prat-3.0/fonts/FiraMono-Regular.ttf",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\fonts\\FiraMono-Regular.ttf",
+      "bytes": 174008,
+      "SHA256": "2DA4005240CE79743D3A457911339B31FD88F8759BFBB56529CD3AF5CA39F054"
+    },
+    {
+      "filename": "Prat-3.0/Libs.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs.xml",
+      "bytes": 1241,
+      "SHA256": "0055D2F8B2061583CB2636962095F3031D26C92C985EA567FFA4480B84AAA985",
+      "encoding": "utf-8-sig",
+      "lines": 22
+    },
+    {
+      "filename": "Prat-3.0/README.md",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\README.md",
+      "bytes": 2797,
+      "SHA256": "EFA096B6D9EC990FA735D4670A195BA4660A71226165EC676025D6A48A8C1495",
+      "encoding": "utf-8-sig",
+      "lines": 49
+    },
+    {
+      "filename": "Prat-3.0/Bindings.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Bindings.xml",
+      "bytes": 3537,
+      "SHA256": "1F5EB8A42391C2A46DBEEA3C33A547D8A478D73347B1CD46A0C6DFF2EB9F029B",
+      "encoding": "utf-8-sig",
+      "lines": 105
+    },
+    {
+      "filename": "Prat-3.0/Prat-3.0.toc",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Prat-3.0.toc",
+      "bytes": 1627,
+      "SHA256": "4E0AAC2E8DBA1EC32415E627295E6086D064E5728A877C2E11611BFC9ADCEFFC",
+      "encoding": "utf-8-sig",
+      "lines": 47
+    },
+    {
+      "filename": "Prat-3.0/textures/prat-chatcopy.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\textures\\prat-chatcopy.tga",
+      "bytes": 5157,
+      "SHA256": "C0EA55F0E7A9755D8BE88AB9EEA29C6169C15C23E99C78EB0D8886E849F610EA"
+    },
+    {
+      "filename": "Prat-3.0/textures/old.prat.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\textures\\old.prat.tga",
+      "bytes": 4140,
+      "SHA256": "3EDA5D180FC384F24964F887A34F2CA516AFB9199F5C73864CE4E8CB9D52EB9C"
+    },
+    {
+      "filename": "Prat-3.0/textures/prat-chatcopy2.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\textures\\prat-chatcopy2.tga",
+      "bytes": 5157,
+      "SHA256": "711CD4BA5D5B0D5A62F7DB0BD220F6A18EC59863DB895C5AA3207AB39DA40DBC"
+    },
+    {
+      "filename": "Prat-3.0/textures/button-flash.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\textures\\button-flash.tga",
+      "bytes": 22546,
+      "SHA256": "6A23E15E0CECCD4A657D89C119339CBB8860161BD95EB779B2455E314A951CF6"
+    },
+    {
+      "filename": "Prat-3.0/textures/chat-bubble.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\textures\\chat-bubble.tga",
+      "bytes": 2554,
+      "SHA256": "5BC52285CA0B272A30B01A03180F07A453DEB502F10E59654DD2215AA654DB6A"
+    },
+    {
+      "filename": "Prat-3.0/textures/prat-editnotexture.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\textures\\prat-editnotexture.tga",
+      "bytes": 684,
+      "SHA256": "AA0706BCF14462AD324323D7D5A98DF8FB97E4059C7E78D58644DFCCB27462CE"
+    },
+    {
+      "filename": "Prat-3.0/textures/prat.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\textures\\prat.tga",
+      "bytes": 2713,
+      "SHA256": "870CEE94FC9DCCDEDC213B0620D3FF2B0EA4BBA91C3729C9E7896D20E6092469"
+    },
+    {
+      "filename": "Prat-3.0/textures/prat-logo-dark-small.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\textures\\prat-logo-dark-small.tga",
+      "bytes": 5923,
+      "SHA256": "148A8A5E79A6A4B483760343A2F7120FAD3C5A2597CA1801BA7D48E125418F06"
+    },
+    {
+      "filename": "Prat-3.0/Bindings_Mainline.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Bindings_Mainline.xml",
+      "bytes": 3955,
+      "SHA256": "D9A1EB792AE121BB139D337C4BD33B67A61F07851609D06C61F4D6EC688479D2",
+      "encoding": "utf-8-sig",
+      "lines": 105
+    },
+    {
+      "filename": "Prat-3.0/locales/includes.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\locales\\includes.xml",
+      "bytes": 491,
+      "SHA256": "A227B85D7B0E40F930A112438E498B5B853CF81A51771D525A29047FFB9D1F79",
+      "encoding": "utf-8-sig",
+      "lines": 14
+    },
+    {
+      "filename": "Prat-3.0/locales/esES.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\locales\\esES.lua",
+      "bytes": 57511,
+      "SHA256": "18DFB5343D6061D67A2FB7C7F7A05B019ED00FDD1E0E4AC6867BA5B03D66355E",
+      "encoding": "utf-8-sig",
+      "lines": 706
+    },
+    {
+      "filename": "Prat-3.0/locales/enUS.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\locales\\enUS.lua",
+      "bytes": 72594,
+      "SHA256": "A3C3180E4E3AC3EEB17D802CD9922FDEDA786D62BE13F75F9B29CD6DFE7ECC81",
+      "encoding": "utf-8-sig",
+      "lines": 998
+    },
+    {
+      "filename": "Prat-3.0/locales/frFR.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\locales\\frFR.lua",
+      "bytes": 56058,
+      "SHA256": "C7501A84ADA973A10226FB3B7E6EC979F284A1B8F3161949F125DC7926A5CFD9",
+      "encoding": "utf-8-sig",
+      "lines": 674
+    },
+    {
+      "filename": "Prat-3.0/locales/esMX.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\locales\\esMX.lua",
+      "bytes": 66,
+      "SHA256": "701A2ACBD02CD4BE653F2ACB001302DFEA8A41F341769797EECF18A24AE25E92",
+      "encoding": "utf-8-sig",
+      "lines": 5
+    },
+    {
+      "filename": "Prat-3.0/locales/zhCN.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\locales\\zhCN.lua",
+      "bytes": 61991,
+      "SHA256": "921CE063893C27B077A659F45AC736B7AF0247C5B9D9D62C824A5C4BBC05CC94",
+      "encoding": "utf-8-sig",
+      "lines": 885
+    },
+    {
+      "filename": "Prat-3.0/locales/koKR.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\locales\\koKR.lua",
+      "bytes": 74691,
+      "SHA256": "C78352117F871008860F7C84118C2E5B84248F318888FF648E1A4C1D4102D9A3",
+      "encoding": "utf-8-sig",
+      "lines": 917
+    },
+    {
+      "filename": "Prat-3.0/locales/ruRU.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\locales\\ruRU.lua",
+      "bytes": 92832,
+      "SHA256": "A5E1703B8354A4267D036DEC30CFB6E5E513655BD4DBF874833FA975A80EE86F",
+      "encoding": "utf-8-sig",
+      "lines": 920
+    },
+    {
+      "filename": "Prat-3.0/locales/ptBR.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\locales\\ptBR.lua",
+      "bytes": 4595,
+      "SHA256": "E22E87F2C2C5350073FAA3D463B52DC501FA7E1A1FED551A907D7033E988D584",
+      "encoding": "utf-8-sig",
+      "lines": 67
+    },
+    {
+      "filename": "Prat-3.0/locales/itIT.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\locales\\itIT.lua",
+      "bytes": 130,
+      "SHA256": "ED95172C5A753134774D014EA069480F4DFB33EEE17176D9E51D483236BBE3B7",
+      "encoding": "utf-8-sig",
+      "lines": 7
+    },
+    {
+      "filename": "Prat-3.0/locales/zhTW.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\locales\\zhTW.lua",
+      "bytes": 46768,
+      "SHA256": "CF8323A9309801383B794A81D729D35E9676C291FEE4BA3E75162BAE043C6E48",
+      "encoding": "utf-8-sig",
+      "lines": 722
+    },
+    {
+      "filename": "Prat-3.0/locales/deDE.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\locales\\deDE.lua",
+      "bytes": 81722,
+      "SHA256": "96E86DB97D5057B11746D913C8CFEB9A6CEDF114750C423E7C8D90D7F558FC1F",
+      "encoding": "utf-8-sig",
+      "lines": 1003
+    },
+    {
+      "filename": "Prat-3.0/modules/OriginalButtons.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\OriginalButtons.lua",
+      "bytes": 14956,
+      "SHA256": "9F19BD135D97A17ED5AFE46BB42C3B5CB56309651A2887BF9D74EF0CA6B50025",
+      "encoding": "utf-8-sig",
+      "lines": 507
+    },
+    {
+      "filename": "Prat-3.0/modules/ChatFrames.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\ChatFrames.lua",
+      "bytes": 9327,
+      "SHA256": "B26224C2A98FC5D8E04B9409874E38962F34DD547AD60627F5E67AD2440A82D0",
+      "encoding": "utf-8-sig",
+      "lines": 335
+    },
+    {
+      "filename": "Prat-3.0/modules/includes.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\includes.xml",
+      "bytes": 1740,
+      "SHA256": "F31364E47C4EC6FDB648CA7A78EAE7B88E6FB8FD96D1F93A50D1E57B071507C5",
+      "encoding": "utf-8-sig",
+      "lines": 51
+    },
+    {
+      "filename": "Prat-3.0/modules/Clear.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Clear.lua",
+      "bytes": 2447,
+      "SHA256": "7331F322E4FE54C56FAF9A2B72C8C70831913742B3E2F65E248F33B38033FAFF",
+      "encoding": "utf-8-sig",
+      "lines": 81
+    },
+    {
+      "filename": "Prat-3.0/modules/Bubbles.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Bubbles.lua",
+      "bytes": 6204,
+      "SHA256": "2CB25893362B1B666BF1092D15F10C4003A6BB1B71DE2B13400726F4B0C09C89",
+      "encoding": "utf-8-sig",
+      "lines": 226
+    },
+    {
+      "filename": "Prat-3.0/modules/Mentions.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Mentions.lua",
+      "bytes": 3503,
+      "SHA256": "3A7886118E5BE0F749D911A08C1E2B8651F5D33686C778D5CCE09D9D1409687C",
+      "encoding": "utf-8-sig",
+      "lines": 118
+    },
+    {
+      "filename": "Prat-3.0/modules/PopupMessage.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\PopupMessage.lua",
+      "bytes": 7966,
+      "SHA256": "D992F2C2CADD8547A9A7F70DC787768AEDFF87BE24DE1B8D1B1DCAF2C5207D82",
+      "encoding": "utf-8-sig",
+      "lines": 274
+    },
+    {
+      "filename": "Prat-3.0/modules/Timestamps.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Timestamps.lua",
+      "bytes": 6766,
+      "SHA256": "7FC1D49436BD0848690E564AD9166764421BA438A68EAB68FFED1B93F27B9CAB",
+      "encoding": "utf-8-sig",
+      "lines": 254
+    },
+    {
+      "filename": "Prat-3.0/modules/UrlCopy.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\UrlCopy.lua",
+      "bytes": 12873,
+      "SHA256": "527CC198EADA61E04A5BFB4702BEDDD9031B0D5B15F4571AC2A524BC6F176786",
+      "encoding": "utf-8-sig",
+      "lines": 571
+    },
+    {
+      "filename": "Prat-3.0/modules/History.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\History.lua",
+      "bytes": 7685,
+      "SHA256": "2697632E605BFF6D153170CA06CC1906602BA54220ECDF35509BF1968A718F33",
+      "encoding": "utf-8-sig",
+      "lines": 283
+    },
+    {
+      "filename": "Prat-3.0/modules/PlayerNames.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\PlayerNames.lua",
+      "bytes": 26461,
+      "SHA256": "15FC81EA495162A16DDA4B165ACC0E68F12B16E4B83236347C58E3A2566DB9FB",
+      "encoding": "utf-8-sig",
+      "lines": 937
+    },
+    {
+      "filename": "Prat-3.0/modules/Sounds.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Sounds.lua",
+      "bytes": 7971,
+      "SHA256": "9DA3F0AE20D86008258CD59D93177EB38E1D86A54573A0A60D31378D80F0E85B",
+      "encoding": "utf-8-sig",
+      "lines": 282
+    },
+    {
+      "filename": "Prat-3.0/modules/ChannelNames.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\ChannelNames.lua",
+      "bytes": 14894,
+      "SHA256": "D27C94594B29E73D28037F1266E820CE9E8F9891AA7AED2E2C1C436FC9EDFDE9",
+      "encoding": "utf-8-sig",
+      "lines": 545
+    },
+    {
+      "filename": "Prat-3.0/modules/LinkInfoIcons.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\LinkInfoIcons.lua",
+      "bytes": 7571,
+      "SHA256": "D99AAD9585520C1F6255DD7BF4116B3ACE792750C1EDF82CAE57AB63717D0405",
+      "encoding": "utf-8-sig",
+      "lines": 309
+    },
+    {
+      "filename": "Prat-3.0/modules/Achievements.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Achievements.lua",
+      "bytes": 6720,
+      "SHA256": "358C826CD9287CD67C8246B5468C2ECD5A603268FCB58EBD0AE9EBD2F474C38E",
+      "encoding": "utf-8-sig",
+      "lines": 228
+    },
+    {
+      "filename": "Prat-3.0/modules/Search.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Search.lua",
+      "bytes": 5200,
+      "SHA256": "D527E89C78466CEAA0F67A95B5603D5A394102C5F7650643E2EEFE94CCDCAD39",
+      "encoding": "utf-8-sig",
+      "lines": 226
+    },
+    {
+      "filename": "Prat-3.0/modules/ServerNames.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\ServerNames.lua",
+      "bytes": 6083,
+      "SHA256": "83C1AF0D21104C0F9CFF285420C5D13D3AE6C0B1A1021E63F712891C75499EA7",
+      "encoding": "utf-8-sig",
+      "lines": 238
+    },
+    {
+      "filename": "Prat-3.0/modules/ChatLog.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\ChatLog.lua",
+      "bytes": 3004,
+      "SHA256": "DBA6785A7BA0EF57E8F2DEE2E593C42E29BAFF9A36AE05D3FFEC4090F17CC62C",
+      "encoding": "utf-8-sig",
+      "lines": 105
+    },
+    {
+      "filename": "Prat-3.0/modules/Buttons.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Buttons.lua",
+      "bytes": 11215,
+      "SHA256": "C1E35A73E2D177717E96D157A57BC523B196521C16CC5EEA8025894A56BF4BB4",
+      "encoding": "utf-8-sig",
+      "lines": 445
+    },
+    {
+      "filename": "Prat-3.0/modules/NewcomersChat.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\NewcomersChat.lua",
+      "bytes": 5093,
+      "SHA256": "2B8D44C3F8038AD27DEBAE700F6BD1C60A924CDF6410C6679E59A976BBA3285B",
+      "encoding": "utf-8-sig",
+      "lines": 188
+    },
+    {
+      "filename": "Prat-3.0/modules/Highlight.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Highlight.lua",
+      "bytes": 2365,
+      "SHA256": "5FC4115AFD248292B7F4F87BE76BD147501DB47A47EBA5E5243F3C2833A41A34",
+      "encoding": "utf-8-sig",
+      "lines": 84
+    },
+    {
+      "filename": "Prat-3.0/modules/PlayerNameGlobalPatterns.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\PlayerNameGlobalPatterns.lua",
+      "bytes": 3098,
+      "SHA256": "BA8F200EE7B5FA37E95133C031E271352CCE372C79344FDD76A06C845C6E0C49",
+      "encoding": "utf-8-sig",
+      "lines": 117
+    },
+    {
+      "filename": "Prat-3.0/modules/ChannelSticky.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\ChannelSticky.lua",
+      "bytes": 7185,
+      "SHA256": "2EC348E8F0049D1BAE14746E3FE281DBEB52116C7847F908B28351FC7F0BB01D",
+      "encoding": "utf-8-sig",
+      "lines": 280
+    },
+    {
+      "filename": "Prat-3.0/modules/EventNames.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\EventNames.lua",
+      "bytes": 3459,
+      "SHA256": "34459DED5A3E73E247B2B58DF0B36E21CB351A7339B7B6820BDFE914D4C2EDBD",
+      "encoding": "utf-8-sig",
+      "lines": 120
+    },
+    {
+      "filename": "Prat-3.0/modules/CustomFilters.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\CustomFilters.lua",
+      "bytes": 20940,
+      "SHA256": "88199E832CFC12123DE7CCE76F3892751218D1276442AD9C08BE85C9F9247D7D",
+      "encoding": "utf-8-sig",
+      "lines": 849
+    },
+    {
+      "filename": "Prat-3.0/modules/ChatTabs.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\ChatTabs.lua",
+      "bytes": 17080,
+      "SHA256": "FB6C89AB50E49BD9BA63C1259D9129690682F1CA5FDE2F1AC91A3FAC33707C7C",
+      "encoding": "utf-8-sig",
+      "lines": 598
+    },
+    {
+      "filename": "Prat-3.0/modules/Filtering.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Filtering.lua",
+      "bytes": 8702,
+      "SHA256": "A9CFC7CBDAF364A105DDAABEEF66F70D667ADE3A8FD5D8C342951FC657518C09",
+      "encoding": "utf-8-sig",
+      "lines": 295
+    },
+    {
+      "filename": "Prat-3.0/modules/Substitutions.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Substitutions.lua",
+      "bytes": 14187,
+      "SHA256": "3AA75B8DA8A3B4C9F28EE20317FD8844F04D46AB2168CA2B46C3099FFCF016B8",
+      "encoding": "utf-8-sig",
+      "lines": 492
+    },
+    {
+      "filename": "Prat-3.0/modules/Editbox.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Editbox.lua",
+      "bytes": 18622,
+      "SHA256": "5E2C39DE4139FF1AD77842520594C9425D485144D21664963050C1369BB8E6F3",
+      "encoding": "utf-8-sig",
+      "lines": 646
+    },
+    {
+      "filename": "Prat-3.0/modules/AltNames.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\AltNames.lua",
+      "bytes": 25691,
+      "SHA256": "63D371813826560F22BE960F655F656FF2ACF085A17D54243118A112064C46A2",
+      "encoding": "utf-8-sig",
+      "lines": 946
+    },
+    {
+      "filename": "Prat-3.0/modules/WIM.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\WIM.lua",
+      "bytes": 265,
+      "SHA256": "39C22EB8A08B06288FC815C892E70631EE39E1637B7BCD8FA5633AB7C9ADCF10",
+      "encoding": "utf-8-sig",
+      "lines": 8
+    },
+    {
+      "filename": "Prat-3.0/modules/Font.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Font.lua",
+      "bytes": 8430,
+      "SHA256": "72E0B4D91227D646156E9F1FC6C099346BE1AB61532CD2E1DFCA2C025B533DB7",
+      "encoding": "utf-8-sig",
+      "lines": 330
+    },
+    {
+      "filename": "Prat-3.0/modules/CopyChat.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\CopyChat.lua",
+      "bytes": 11508,
+      "SHA256": "D7135C040271FC5049CFE1F80AEB030E4195FDDDFE555613B6A3B00A50294C7E",
+      "encoding": "utf-8-sig",
+      "lines": 383
+    },
+    {
+      "filename": "Prat-3.0/modules/TellTarget.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\TellTarget.lua",
+      "bytes": 3186,
+      "SHA256": "56BF771B9EA88BF890AFF83D027260F04CEDF4822C7D31DAA01726049FCE5168",
+      "encoding": "utf-8-sig",
+      "lines": 111
+    },
+    {
+      "filename": "Prat-3.0/modules/SideTabs.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\SideTabs.lua",
+      "bytes": 25288,
+      "SHA256": "D15D2585582D41ED840F6A38CCD795707440F1A38394E6A900FCFC052BB17718",
+      "encoding": "utf-8-sig",
+      "lines": 968
+    },
+    {
+      "filename": "Prat-3.0/modules/Keybindings.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Keybindings.lua",
+      "bytes": 2949,
+      "SHA256": "01C542425D73EA661D5709CB984F840057E5AAB020F9ED807BF1FE4114875AE0",
+      "encoding": "utf-8-sig",
+      "lines": 84
+    },
+    {
+      "filename": "Prat-3.0/modules/Alias.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Alias.lua",
+      "bytes": 13886,
+      "SHA256": "6FABCEB11C466BB8AAB39DAF71461886410CB27C2FB3B5BB1CF5C6232BCECC70",
+      "encoding": "utf-8-sig",
+      "lines": 502
+    },
+    {
+      "filename": "Prat-3.0/modules/Memory.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Memory.lua",
+      "bytes": 12906,
+      "SHA256": "F00BA58BBE4D54D669C819FDF92B7F073CC5D2A69943B2C2AED1774D3D158AEB",
+      "encoding": "utf-8-sig",
+      "lines": 447
+    },
+    {
+      "filename": "Prat-3.0/modules/Paragraph.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Paragraph.lua",
+      "bytes": 3874,
+      "SHA256": "11A204AA6C12ACCFF4FDB1936B89924D7A2D3BA5BB680E21C8FEF881806E4612",
+      "encoding": "utf-8-sig",
+      "lines": 134
+    },
+    {
+      "filename": "Prat-3.0/modules/Scroll.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Scroll.lua",
+      "bytes": 6495,
+      "SHA256": "5CD2AEA6E3E32B7DC92C41443D41714038229A45C6F8F085CFEEBB9249DE84AA",
+      "encoding": "utf-8-sig",
+      "lines": 258
+    },
+    {
+      "filename": "Prat-3.0/modules/ChannelColorMemory.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\ChannelColorMemory.lua",
+      "bytes": 5474,
+      "SHA256": "84031784CE4B78FC40674160262951E1BAD0BE3A9198EA99A2BED6095ED61961",
+      "encoding": "utf-8-sig",
+      "lines": 186
+    },
+    {
+      "filename": "Prat-3.0/modules/HoverTips.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\HoverTips.lua",
+      "bytes": 2654,
+      "SHA256": "78DC380FC2206C602371D233E2814971378F321DED03B668D0FED13D7BFEF00E",
+      "encoding": "utf-8-sig",
+      "lines": 88
+    },
+    {
+      "filename": "Prat-3.0/modules/Fading.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Fading.lua",
+      "bytes": 2662,
+      "SHA256": "51B66307587BC1EC9AFF0A3A3917D633565CBFA1AA8056BB9BE4F5430DD7A040",
+      "encoding": "utf-8-sig",
+      "lines": 99
+    },
+    {
+      "filename": "Prat-3.0/modules/Invites.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Invites.lua",
+      "bytes": 5728,
+      "SHA256": "1C2F96FB8EB28229C547054E052240BD3D88D2E4A1ABEAA93297DB41A1EDE87C",
+      "encoding": "utf-8-sig",
+      "lines": 208
+    },
+    {
+      "filename": "Prat-3.0/modules/AddonMessages.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\AddonMessages.lua",
+      "bytes": 2806,
+      "SHA256": "12C77546F6B9161868347E4AEA390937B3AB23B39EB445B2D5F0D998A9E9E06A",
+      "encoding": "utf-8-sig",
+      "lines": 103
+    },
+    {
+      "filename": "Prat-3.0/modules/Scrollback.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Scrollback.lua",
+      "bytes": 7512,
+      "SHA256": "9ED93282458DF7925081816486853034BC299B74BA409496FC237501118E7962",
+      "encoding": "utf-8-sig",
+      "lines": 240
+    },
+    {
+      "filename": "Prat-3.0/CODE_OF_CONDUCT.md",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\CODE_OF_CONDUCT.md",
+      "bytes": 3432,
+      "SHA256": "45A9B90E0AAC3AED9C563C5389F3500BA72300CFA3F215F5FEDBBEA1CCE2E65C",
+      "encoding": "utf-8-sig",
+      "lines": 76
+    },
+    {
+      "filename": "Prat-3.0/sounds/Kachink.ogg",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\sounds\\Kachink.ogg",
+      "bytes": 7895,
+      "SHA256": "67CC61EEFC98B283C83B33ED7E7B28A557DE49182DFB4F41FD1318D1807E91D5"
+    },
+    {
+      "filename": "Prat-3.0/sounds/Text1.ogg",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\sounds\\Text1.ogg",
+      "bytes": 7438,
+      "SHA256": "F5247A764ED45D2A375346A343E74331D1F1C50193F806304D50BB0A3D47B345"
+    },
+    {
+      "filename": "Prat-3.0/sounds/Heart.ogg",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\sounds\\Heart.ogg",
+      "bytes": 7286,
+      "SHA256": "73270F5657859AAAA44148F955B13ABAC65C0258FA530C116FD5E1D9B03D43DE"
+    },
+    {
+      "filename": "Prat-3.0/sounds/Text2.ogg",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\sounds\\Text2.ogg",
+      "bytes": 7699,
+      "SHA256": "B33E1E236EBF3CA8EB382541F94C368F07023059D1BECD54779CBE43D5BF6D54"
+    },
+    {
+      "filename": "Prat-3.0/sounds/Xylo.ogg",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\sounds\\Xylo.ogg",
+      "bytes": 11594,
+      "SHA256": "3EF94B15B77969C46139100145691E195C51445F46AFFA6CA4531D9212333D17"
+    },
+    {
+      "filename": "Prat-3.0/sounds/Link.ogg",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\sounds\\Link.ogg",
+      "bytes": 11668,
+      "SHA256": "FBF74C68D892A8EFE2371447A64388562331BF082822D675644C65A19D076CF8"
+    },
+    {
+      "filename": "Prat-3.0/sounds/Info.ogg",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\sounds\\Info.ogg",
+      "bytes": 19404,
+      "SHA256": "0085CF3AEE4C1931625C25379FA25B388AE8C09A8D45C7A3D8AF68C6F1E06D1A"
+    },
+    {
+      "filename": "Prat-3.0/sounds/Chime.ogg",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\sounds\\Chime.ogg",
+      "bytes": 25653,
+      "SHA256": "E6BFD80BC6429D1D77E5D5FB8B20672707AC6D9BA74117156D9FA01992DB350A"
+    },
+    {
+      "filename": "Prat-3.0/sounds/IM.ogg",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\sounds\\IM.ogg",
+      "bytes": 49962,
+      "SHA256": "17E40AF6C794491521519AB0009A8910FA17811127B3D5C6994E6D8061F28099"
+    },
+    {
+      "filename": "Prat-3.0/sounds/Bell.ogg",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\sounds\\Bell.ogg",
+      "bytes": 60040,
+      "SHA256": "9A04A63ECB00BECDF5992A7C2D46074B66C39120E48D970EC221F9C115275E3C"
+    },
+    {
+      "filename": "Prat-3.0/LICENSE.txt",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\LICENSE.txt",
+      "bytes": 35824,
+      "SHA256": "8F0EE3CCFBC14F67B28559E6138EE024E7B01A8EAFE15AB0BFF8CAFA00FAD53F",
+      "encoding": "utf-8-sig",
+      "lines": 675
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceConfig-3.0/AceConfig-3.0.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceConfig-3.0\\AceConfig-3.0.lua",
+      "bytes": 2237,
+      "SHA256": "93E2BC223F107A2A00A1653F15E65CC34BF7DD4E37C2C420945EC4D0472CA7B5",
+      "encoding": "utf-8-sig",
+      "lines": 58
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceConfig-3.0/AceConfigRegistry-3.0/AceConfigRegistry-3.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceConfig-3.0\\AceConfigRegistry-3.0\\AceConfigRegistry-3.0.xml",
+      "bytes": 223,
+      "SHA256": "3A49ACF5F0158FD769A2F461F6176A5CD126DA6FED33E38F0A10A2AD12D9CD2D",
+      "encoding": "utf-8-sig",
+      "lines": 4
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceConfig-3.0/AceConfigRegistry-3.0/AceConfigRegistry-3.0.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceConfig-3.0\\AceConfigRegistry-3.0\\AceConfigRegistry-3.0.lua",
+      "bytes": 13149,
+      "SHA256": "DFA92A305863CD8AC74A426CCFF7F7B40FEDEE9ABD5D8515947FB1E9F52B6CEB",
+      "encoding": "utf-8-sig",
+      "lines": 373
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceConfig-3.0/AceConfigDialog-3.0/AceConfigDialog-3.0.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceConfig-3.0\\AceConfigDialog-3.0\\AceConfigDialog-3.0.lua",
+      "bytes": 62796,
+      "SHA256": "045A7D0B7A289BA103124EA3343D70CB2CD530AA0A856C8E39F5F0C32B05C48E",
+      "encoding": "utf-8-sig",
+      "lines": 2041
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceConfig-3.0/AceConfigDialog-3.0/AceConfigDialog-3.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceConfig-3.0\\AceConfigDialog-3.0\\AceConfigDialog-3.0.xml",
+      "bytes": 221,
+      "SHA256": "C2AF74760E12602C51534D43F8BC741F5BE981C7DA66CDFFB5282AEF2E2F0812",
+      "encoding": "utf-8-sig",
+      "lines": 4
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceConfig-3.0/AceConfig-3.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceConfig-3.0\\AceConfig-3.0.xml",
+      "bytes": 480,
+      "SHA256": "EDBD83772E15D26A318137BC9BCD3E027A109897A3ACA60182FD192AE2E7312D",
+      "encoding": "utf-8-sig",
+      "lines": 8
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceConfig-3.0/AceConfigCmd-3.0/AceConfigCmd-3.0.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceConfig-3.0\\AceConfigCmd-3.0\\AceConfigCmd-3.0.lua",
+      "bytes": 24016,
+      "SHA256": "29CC1C733032BD7A723949EA63A408F33DC87CE27AD51FE90C64A5863C31A1A7",
+      "encoding": "utf-8-sig",
+      "lines": 787
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceConfig-3.0/AceConfigCmd-3.0/AceConfigCmd-3.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceConfig-3.0\\AceConfigCmd-3.0\\AceConfigCmd-3.0.xml",
+      "bytes": 218,
+      "SHA256": "356CB017A78284E76FF62B6F677A2F380B9CAD4D5FB2034A7EEAAC8316D20A13",
+      "encoding": "utf-8-sig",
+      "lines": 4
+    },
+    {
+      "filename": "Prat-3.0/Libs/LibSink-2.0/LibSink-2.0.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\LibSink-2.0\\LibSink-2.0.lua",
+      "bytes": 31349,
+      "SHA256": "052628D123BC0A1F5FADD0F99A1558BF35F03B6FA9F0811B5E16D5B4A3756A59",
+      "encoding": "utf-8-sig",
+      "lines": 867
+    },
+    {
+      "filename": "Prat-3.0/Libs/LibSink-2.0/lib.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\LibSink-2.0\\lib.xml",
+      "bytes": 220,
+      "SHA256": "3F6E85501969F908A469005E9FAF5B0E282F9D4646AD435C05D3004AA33603E7",
+      "encoding": "utf-8-sig",
+      "lines": 7
+    },
+    {
+      "filename": "Prat-3.0/Libs/LibDBIcon-1.0/LibDBIcon-1.0.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\LibDBIcon-1.0\\LibDBIcon-1.0.lua",
+      "bytes": 21249,
+      "SHA256": "34B691E715853858E5C3F3F6363F1CF58B5CF1C2C0281D689E349B73B800CAB8",
+      "encoding": "utf-8-sig",
+      "lines": 717
+    },
+    {
+      "filename": "Prat-3.0/Libs/LibDBIcon-1.0/lib.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\LibDBIcon-1.0\\lib.xml",
+      "bytes": 222,
+      "SHA256": "3C959D5954F2680F063BAA3A7903CD347E8F4F9755CD9BE639FA45A50238F85A",
+      "encoding": "utf-8-sig",
+      "lines": 7
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceConsole-3.0/AceConsole-3.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceConsole-3.0\\AceConsole-3.0.xml",
+      "bytes": 216,
+      "SHA256": "00F05946FCBB73FB31AD17EFFB9AA2FB2B42E0D4B1EEBCB546C8104F0E2BB68F",
+      "encoding": "utf-8-sig",
+      "lines": 4
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceConsole-3.0/AceConsole-3.0.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceConsole-3.0\\AceConsole-3.0.lua",
+      "bytes": 8349,
+      "SHA256": "7D207D6B843407A142CB7CBFCB99D19AC02706801D093164B54E08E740BA37C2",
+      "encoding": "utf-8-sig",
+      "lines": 246
+    },
+    {
+      "filename": "Prat-3.0/Libs/LibDataBroker-1.1/LibDataBroker-1.1.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\LibDataBroker-1.1\\LibDataBroker-1.1.lua",
+      "bytes": 3229,
+      "SHA256": "D79B3EADA649684543BBBC3C511C2515E16D644F198FA991A201EE64D045B0F2",
+      "encoding": "utf-8-sig",
+      "lines": 90
+    },
+    {
+      "filename": "Prat-3.0/Libs/LibDataBroker-1.1/README.textile",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\LibDataBroker-1.1\\README.textile",
+      "bytes": 1037,
+      "SHA256": "1824B7091F7535E822D3FC0138013E0370EB894EFCF7CC2EF1BABB81F7997FCF"
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceAddon-3.0/AceAddon-3.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceAddon-3.0\\AceAddon-3.0.xml",
+      "bytes": 214,
+      "SHA256": "39D218F94F9ABE9A3F9A474E3AC6AAB119F4BBF5C9A45EB7E33E380E5E5606F3",
+      "encoding": "utf-8-sig",
+      "lines": 4
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceAddon-3.0/AceAddon-3.0.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceAddon-3.0\\AceAddon-3.0.lua",
+      "bytes": 25739,
+      "SHA256": "A05667DB0280A4B1E45A5323C7E14F224F88D8D593F05D3E8A37547E9157AA9B",
+      "encoding": "utf-8-sig",
+      "lines": 649
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceDB-3.0/AceDB-3.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceDB-3.0\\AceDB-3.0.xml",
+      "bytes": 211,
+      "SHA256": "474DA5BAA67888D6440DE73F27705ED2E75C8DCE240D9BA2848CFA9583F16E49",
+      "encoding": "utf-8-sig",
+      "lines": 4
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceDB-3.0/AceDB-3.0.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceDB-3.0\\AceDB-3.0.lua",
+      "bytes": 29335,
+      "SHA256": "EAB429EED829B2CE7E7327A2DADF3C06B28C9119AB81A3E759662F8F17863CB7",
+      "encoding": "utf-8-sig",
+      "lines": 848
+    },
+    {
+      "filename": "Prat-3.0/Libs/CallbackHandler-1.0/CallbackHandler-1.0.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\CallbackHandler-1.0\\CallbackHandler-1.0.lua",
+      "bytes": 7961,
+      "SHA256": "D8A175F5823A999D8A188EE5E8E1133C393FD8C25B71931AB929D4691EFF750B",
+      "encoding": "utf-8-sig",
+      "lines": 202
+    },
+    {
+      "filename": "Prat-3.0/Libs/CallbackHandler-1.0/CallbackHandler-1.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\CallbackHandler-1.0\\CallbackHandler-1.0.xml",
+      "bytes": 221,
+      "SHA256": "5FC06440452A82BE9554FC9650FA7DE0B6DF786C6D188D05D7D0EC4AA3E002FD",
+      "encoding": "utf-8-sig",
+      "lines": 4
+    },
+    {
+      "filename": "Prat-3.0/Libs/LibStub/LibStub.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\LibStub\\LibStub.lua",
+      "bytes": 2251,
+      "SHA256": "D34235C85F869505FDD9EF321D2420F69DB7D2EB873D2B3BBF57584A314060FA",
+      "encoding": "utf-8-sig",
+      "lines": 51
+    },
+    {
+      "filename": "Prat-3.0/Libs/LibStub/LibStub.toc",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\LibStub\\LibStub.toc",
+      "bytes": 266,
+      "SHA256": "D6EF350C07EDF6BE550C586E32473776E310D212BF39962CAFEE04A8D415405F",
+      "encoding": "utf-8-sig",
+      "lines": 9
+    },
+    {
+      "filename": "Prat-3.0/Libs/LibStub/tests/test.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\LibStub\\tests\\test.lua",
+      "bytes": 2053,
+      "SHA256": "5B473314C45BBA15C57AA57B1C8AAB35821FA732B03E4A44B9651D9B8E3020FA",
+      "encoding": "utf-8-sig",
+      "lines": 41
+    },
+    {
+      "filename": "Prat-3.0/Libs/LibStub/tests/test2.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\LibStub\\tests\\test2.lua",
+      "bytes": 1139,
+      "SHA256": "7C3CAA8A85CC4048EA355A06F5C74918A85C1920D444547A26479783CADDE3E7",
+      "encoding": "utf-8-sig",
+      "lines": 27
+    },
+    {
+      "filename": "Prat-3.0/Libs/LibStub/tests/test3.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\LibStub\\tests\\test3.lua",
+      "bytes": 654,
+      "SHA256": "97D3DC9DC74B5E763F384D5E1A8B7BC66EDD66BAC36F43954AE9AD10F7658F9D",
+      "encoding": "utf-8-sig",
+      "lines": 14
+    },
+    {
+      "filename": "Prat-3.0/Libs/LibStub/tests/test4.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\LibStub\\tests\\test4.lua",
+      "bytes": 926,
+      "SHA256": "78F9C01DE14790BED483522CD7094C3F77C78BDC3E29C5CA098E00D23D264E5B",
+      "encoding": "utf-8-sig",
+      "lines": 41
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceTab-3.0/AceTab-3.0.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceTab-3.0\\AceTab-3.0.lua",
+      "bytes": 19631,
+      "SHA256": "EC01B8EC536B3F02D6855221282F701DCF1C9EB1AE76426931D1620A93FC55FA",
+      "encoding": "utf-8-sig",
+      "lines": 445
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceTab-3.0/AceTab-3.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceTab-3.0\\AceTab-3.0.xml",
+      "bytes": 214,
+      "SHA256": "005E2B9FFF88FD547317961F4318BE21A1A283F8E72143EF10FF3FCEF2C80075",
+      "encoding": "utf-8-sig",
+      "lines": 4
+    },
+    {
+      "filename": "Prat-3.0/Libs/LibSharedMedia-3.0/LibSharedMedia-3.0.toc",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\LibSharedMedia-3.0\\LibSharedMedia-3.0.toc",
+      "bytes": 539,
+      "SHA256": "C6123F96C887845BD6BA4A8BACCD36C54A5BB7EF7A3013EA2C1BE96751147922",
+      "encoding": "utf-8-sig",
+      "lines": 17
+    },
+    {
+      "filename": "Prat-3.0/Libs/LibSharedMedia-3.0/CallbackHandler-1.0/CallbackHandler-1.0.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\LibSharedMedia-3.0\\CallbackHandler-1.0\\CallbackHandler-1.0.lua",
+      "bytes": 7961,
+      "SHA256": "D8A175F5823A999D8A188EE5E8E1133C393FD8C25B71931AB929D4691EFF750B",
+      "encoding": "utf-8-sig",
+      "lines": 202
+    },
+    {
+      "filename": "Prat-3.0/Libs/LibSharedMedia-3.0/LibStub/LibStub.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\LibSharedMedia-3.0\\LibStub\\LibStub.lua",
+      "bytes": 2247,
+      "SHA256": "1CE4B08CCF3C23D81A787885DAF37BF3717366C1F1E2EF38CC8D47C79AF4DA39",
+      "encoding": "utf-8-sig",
+      "lines": 51
+    },
+    {
+      "filename": "Prat-3.0/Libs/LibSharedMedia-3.0/LibSharedMedia-3.0/LibSharedMedia-3.0.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\LibSharedMedia-3.0\\LibSharedMedia-3.0\\LibSharedMedia-3.0.lua",
+      "bytes": 16539,
+      "SHA256": "C9CC19632D2F6A72EDD0331FE18B3CE7C4D01E30D998569FD59577CC6108FA3F",
+      "encoding": "utf-8-sig",
+      "lines": 344
+    },
+    {
+      "filename": "Prat-3.0/Libs/LibSharedMedia-3.0/LibSharedMedia-3.0/lib.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\LibSharedMedia-3.0\\LibSharedMedia-3.0\\lib.xml",
+      "bytes": 221,
+      "SHA256": "B4DE98E3097DB71406927FE7DCCA508911BFD6E871B1BB744049FB4201F983CF",
+      "encoding": "utf-8-sig",
+      "lines": 4
+    },
+    {
+      "filename": "Prat-3.0/Libs/LibSharedMedia-3.0/lib.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\LibSharedMedia-3.0\\lib.xml",
+      "bytes": 229,
+      "SHA256": "A0FEC691E38BC1BCCF0E802B5DA0F1028F5FEFE8B02893585117EE8325E6448F",
+      "encoding": "utf-8-sig",
+      "lines": 5
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0/widgets/AceGUIWidget-ColorPicker.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-ColorPicker.lua",
+      "bytes": 6810,
+      "SHA256": "1B115CB24ECAB43725CD75FF7A31E367CF29B981A875A7538522A8E1BE11A7AF",
+      "encoding": "utf-8-sig",
+      "lines": 230
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0/widgets/AceGUIWidget-EditBox.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-EditBox.lua",
+      "bytes": 7503,
+      "SHA256": "CDD8C2A6470B60B16E3B99DCF21EB3CA312C08E39D311BDCE3113F48EA9B77BB",
+      "encoding": "utf-8-sig",
+      "lines": 267
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0/widgets/AceGUIContainer-SimpleGroup.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0\\widgets\\AceGUIContainer-SimpleGroup.lua",
+      "bytes": 1959,
+      "SHA256": "4694E8B2047DA47EE34F395D6D7CA0C2124C9835576DF6A07F8FD93166388C14",
+      "encoding": "utf-8-sig",
+      "lines": 69
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0/widgets/AceGUIWidget-InteractiveLabel.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-InteractiveLabel.lua",
+      "bytes": 2671,
+      "SHA256": "00432AB79B4B9E38A605E0C6A8E5EB9B2B590B7B9294A38B81C63E6265F1BF31",
+      "encoding": "utf-8-sig",
+      "lines": 94
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0/widgets/AceGUIWidget-MultiLineEditBox.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-MultiLineEditBox.lua",
+      "bytes": 11439,
+      "SHA256": "ABF4DAC5765418F45BBE940A01802C55F934E83663DD611A77F64B813CE5EA89",
+      "encoding": "utf-8-sig",
+      "lines": 377
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0/widgets/AceGUIWidget-DropDown-Items.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-DropDown-Items.lua",
+      "bytes": 11057,
+      "SHA256": "7D9D5AA835A6CC46D44AE62AC361B4E6EC8EBDF442491E660DE8CA7347E5A222",
+      "encoding": "utf-8-sig",
+      "lines": 471
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0/widgets/AceGUIWidget-Label.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-Label.lua",
+      "bytes": 5119,
+      "SHA256": "FF4DAC6F5EB23C952FE97FE6AD1E7A68820FFCEC315D612EB778F107EB5DB6D5",
+      "encoding": "utf-8-sig",
+      "lines": 186
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0/widgets/AceGUIContainer-TabGroup.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0\\widgets\\AceGUIContainer-TabGroup.lua",
+      "bytes": 17010,
+      "SHA256": "8B52C7D1F4392F858B057B339C2D459BDC12ED179FCBA04A58C0FA7DA61058CD",
+      "encoding": "utf-8-sig",
+      "lines": 535
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0/widgets/AceGUIContainer-TreeGroup.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0\\widgets\\AceGUIContainer-TreeGroup.lua",
+      "bytes": 21054,
+      "SHA256": "311B097199D201B93BC56E7D26788A1205A87CD500CC4B80A369E466A1A4D0EC",
+      "encoding": "utf-8-sig",
+      "lines": 719
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0/widgets/AceGUIContainer-BlizOptionsGroup.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0\\widgets\\AceGUIContainer-BlizOptionsGroup.lua",
+      "bytes": 3897,
+      "SHA256": "187A6A67C8AFA0355559EED1C8DA875A1CB2572DABB95FA73CCA1162F1A0E9A2",
+      "encoding": "utf-8-sig",
+      "lines": 143
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0/widgets/AceGUIWidget-CheckBox.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-CheckBox.lua",
+      "bytes": 8165,
+      "SHA256": "32F032A6DAF6D5B1EDF6E09E47082ECEBD9078B6EA429DEAA8B970CDE0049D0C",
+      "encoding": "utf-8-sig",
+      "lines": 292
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0/widgets/AceGUIContainer-DropDownGroup.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0\\widgets\\AceGUIContainer-DropDownGroup.lua",
+      "bytes": 4691,
+      "SHA256": "85C6C45D25DE859344542642BEDD37D1084151E38CFA722976E76CBBCC1405C1",
+      "encoding": "utf-8-sig",
+      "lines": 157
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0/widgets/AceGUIWidget-DropDown.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-DropDown.lua",
+      "bytes": 19253,
+      "SHA256": "1B0F1A6F5D2E94C71EC8047DCB36EE4EB62A91005CC5A841FB61B77AA2A1E490",
+      "encoding": "utf-8-sig",
+      "lines": 732
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0/widgets/AceGUIWidget-Keybinding.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-Keybinding.lua",
+      "bytes": 7163,
+      "SHA256": "0B3AF083DE786E93EB554A867D1ECDBB3CE84E79516174DF69F158AD35F12DE8",
+      "encoding": "utf-8-sig",
+      "lines": 251
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0/widgets/AceGUIContainer-ScrollFrame.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0\\widgets\\AceGUIContainer-ScrollFrame.lua",
+      "bytes": 7126,
+      "SHA256": "299CE375F5F575720CD71505E4370352F8310398D2233A9434277737C49CBFBD",
+      "encoding": "utf-8-sig",
+      "lines": 215
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0/widgets/AceGUIContainer-Window.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0\\widgets\\AceGUIContainer-Window.lua",
+      "bytes": 10142,
+      "SHA256": "BE92732904321E7CD1FDDD43162A8C1BC788460D65B363C166917F0F6B957CDE",
+      "encoding": "utf-8-sig",
+      "lines": 336
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0/widgets/AceGUIContainer-Frame.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0\\widgets\\AceGUIContainer-Frame.lua",
+      "bytes": 9792,
+      "SHA256": "FAF59B0A44FE489E9D789A5E5FA810DD7A47EA32FC9E3BF1453408A9FC133181",
+      "encoding": "utf-8-sig",
+      "lines": 318
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0/widgets/AceGUIWidget-Button.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-Button.lua",
+      "bytes": 2849,
+      "SHA256": "CC3E92AAD496AB6D7EBD33B9B9C9993635401E68EBD1B7E8F7EF7D23723AEFEE",
+      "encoding": "utf-8-sig",
+      "lines": 103
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0/widgets/AceGUIWidget-Slider.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-Slider.lua",
+      "bytes": 8518,
+      "SHA256": "FFD9A3C912FC0AB7D31CC64499C6DCB842484C31E426996E90BD0DFFBDE59787",
+      "encoding": "utf-8-sig",
+      "lines": 281
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0/widgets/AceGUIWidget-Icon.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-Icon.lua",
+      "bytes": 4065,
+      "SHA256": "1FA891E9EC59FB019801CA638EA0971E07346111DFB5C99E04A1533257950F95",
+      "encoding": "utf-8-sig",
+      "lines": 145
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0/widgets/AceGUIContainer-InlineGroup.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0\\widgets\\AceGUIContainer-InlineGroup.lua",
+      "bytes": 3089,
+      "SHA256": "8D00EF9089F0585C042797D655F7D89C670340989FEFAD8B7F670BC4E565D1F1",
+      "encoding": "utf-8-sig",
+      "lines": 103
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0/widgets/AceGUIWidget-Heading.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-Heading.lua",
+      "bytes": 2499,
+      "SHA256": "66F6BEEA82F52498A1E509A0C85B77EE20FE9C4DA988AC505A095E1307BD91B4",
+      "encoding": "utf-8-sig",
+      "lines": 83
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0/AceGUI-3.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0\\AceGUI-3.0.xml",
+      "bytes": 1479,
+      "SHA256": "96D56AB2C6BC60C718246B80FDDCFCC59820728D85DCA3654413279214932E9F",
+      "encoding": "utf-8-sig",
+      "lines": 28
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0/AceGUI-3.0.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0\\AceGUI-3.0.lua",
+      "bytes": 31986,
+      "SHA256": "DB24D1193EC97955BC7C1C47F22009042FDC4C680EECC2A28852BD95A6BB741A",
+      "encoding": "utf-8-sig",
+      "lines": 1020
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceHook-3.0/AceHook-3.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceHook-3.0\\AceHook-3.0.xml",
+      "bytes": 213,
+      "SHA256": "7F61B277580C753DBA119F9DE6E7C930D8C62658C115A07580FEEA792330CDE2",
+      "encoding": "utf-8-sig",
+      "lines": 4
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceHook-3.0/AceHook-3.0.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceHook-3.0\\AceHook-3.0.lua",
+      "bytes": 19346,
+      "SHA256": "180402CB1F1875FED386BEA8A3E83C2932630CF97437C7E8CAA6DD014C58E45A",
+      "encoding": "utf-8-sig",
+      "lines": 510
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceEvent-3.0/AceEvent-3.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceEvent-3.0\\AceEvent-3.0.xml",
+      "bytes": 214,
+      "SHA256": "BE26F49FF449EF5CF5071C8B278C0627662DAEF3E73CB278BDD07F1236026E9C",
+      "encoding": "utf-8-sig",
+      "lines": 4
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceEvent-3.0/AceEvent-3.0.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceEvent-3.0\\AceEvent-3.0.lua",
+      "bytes": 4883,
+      "SHA256": "E5C703244A0D9BF9A3A3A248FE4058AC26B8DA8F887886FD8657B20AB72677F8",
+      "encoding": "utf-8-sig",
+      "lines": 126
+    },
+    {
+      "filename": "Prat-3.0/Libs/LibChatAnims/LibChatAnims.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\LibChatAnims\\LibChatAnims.xml",
+      "bytes": 221,
+      "SHA256": "0EE89B941D4D9F740AB189D639E82393A9AC87F4F3E82315FA8AF74BE224118F",
+      "encoding": "utf-8-sig",
+      "lines": 7
+    },
+    {
+      "filename": "Prat-3.0/Libs/LibChatAnims/LibChatAnims.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\LibChatAnims\\LibChatAnims.lua",
+      "bytes": 9433,
+      "SHA256": "5379D27ED707A4D1A565B992F69C0A1BD67389B997D4BD58129E5935C4014DEB",
+      "encoding": "utf-8-sig",
+      "lines": 309
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceTimer-3.0/AceTimer-3.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceTimer-3.0\\AceTimer-3.0.xml",
+      "bytes": 214,
+      "SHA256": "0D7DB07CAE9DCAE62CB79D2071DD31460B561B3915C0187989EC6D2F40C2B60A",
+      "encoding": "utf-8-sig",
+      "lines": 4
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceTimer-3.0/AceTimer-3.0.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceTimer-3.0\\AceTimer-3.0.lua",
+      "bytes": 10046,
+      "SHA256": "FC5DFB583ED585CAEF1D73E7D1FAA47E53C8808215E45C0AF7645B60B3407C5F",
+      "encoding": "utf-8-sig",
+      "lines": 278
+    },
+    {
+      "filename": "Prat-3.0/Libs/LibAlts-1.0/LibAlts-1.0.toc",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\LibAlts-1.0\\LibAlts-1.0.toc",
+      "bytes": 405,
+      "SHA256": "C1A7C5FE67FC676007BE6C42B2A8A371E69EFC091B9697EE33A8655C9D479DC6",
+      "encoding": "utf-8-sig",
+      "lines": 19
+    },
+    {
+      "filename": "Prat-3.0/Libs/LibAlts-1.0/LibAlts-1.0.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\LibAlts-1.0\\LibAlts-1.0.lua",
+      "bytes": 13214,
+      "SHA256": "676E8B2EE70BE59524CAEEDDAB4EE4D9BCEA2D20AD663EF3BFA461FC7E6EF365",
+      "encoding": "utf-8-sig",
+      "lines": 467
+    },
+    {
+      "filename": "Prat-3.0/Libs/LibAlts-1.0/lib.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\LibAlts-1.0\\lib.xml",
+      "bytes": 214,
+      "SHA256": "FC521ADE0534A2442F390CF138AF017C82F44ECB885443789E8E011BB0D0D943",
+      "encoding": "utf-8-sig",
+      "lines": 4
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceDBOptions-3.0/AceDBOptions-3.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceDBOptions-3.0\\AceDBOptions-3.0.xml",
+      "bytes": 218,
+      "SHA256": "3B761587CC17F1C1E8C5265C9AC49E88A91C002C5C1E5FE79F8BA6CD7DB30532",
+      "encoding": "utf-8-sig",
+      "lines": 4
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceDBOptions-3.0/AceDBOptions-3.0.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceDBOptions-3.0\\AceDBOptions-3.0.lua",
+      "bytes": 22189,
+      "SHA256": "BCF3E6B40439485CF8F234A14A3AD3146D6FF40033BBAB39B5B719DE292196D7",
+      "encoding": "utf-8-sig",
+      "lines": 479
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0-SharedMediaWidgets/widget.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0-SharedMediaWidgets\\widget.xml",
+      "bytes": 240,
+      "SHA256": "DB2F419406A16AC58F257CAAEAD197C72AB4B3C382A79D82D456E64CC114D988",
+      "encoding": "utf-8-sig",
+      "lines": 4
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0-SharedMediaWidgets/AceGUI-3.0-SharedMediaWidgets.toc",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0-SharedMediaWidgets\\AceGUI-3.0-SharedMediaWidgets.toc",
+      "bytes": 517,
+      "SHA256": "BF3A06B7F1E0FB7AEDA6B0E7B931E33232603C164F8BAC007C351C3E5E85FC24",
+      "encoding": "utf-8-sig",
+      "lines": 16
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0-SharedMediaWidgets/AceGUI-3.0-SharedMediaWidgets/prototypes.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0-SharedMediaWidgets\\AceGUI-3.0-SharedMediaWidgets\\prototypes.lua",
+      "bytes": 8928,
+      "SHA256": "41BBEE3D65510E0ECEBDDD4516671495292A4BF3AB06EC653584411DAC05455A",
+      "encoding": "utf-8-sig",
+      "lines": 266
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0-SharedMediaWidgets/AceGUI-3.0-SharedMediaWidgets/FontWidget.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0-SharedMediaWidgets\\AceGUI-3.0-SharedMediaWidgets\\FontWidget.lua",
+      "bytes": 6242,
+      "SHA256": "C882CEAE03CC585A8391294CA256FCAB0486A1CD713120F49A5D778C8DD43071",
+      "encoding": "utf-8-sig",
+      "lines": 216
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0-SharedMediaWidgets/AceGUI-3.0-SharedMediaWidgets/BackgroundWidget.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0-SharedMediaWidgets\\AceGUI-3.0-SharedMediaWidgets\\BackgroundWidget.lua",
+      "bytes": 6816,
+      "SHA256": "A52A0BAE674916CE8FB2CBA9D32F3D19B9639AF44876726F21331A1E2A513C3A",
+      "encoding": "utf-8-sig",
+      "lines": 235
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0-SharedMediaWidgets/AceGUI-3.0-SharedMediaWidgets/SoundWidget.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0-SharedMediaWidgets\\AceGUI-3.0-SharedMediaWidgets\\SoundWidget.lua",
+      "bytes": 7957,
+      "SHA256": "51A3B3C8B1B8520CFC7BDA25FBA29412DA21101449B2458E0C68CBC8CD65C513",
+      "encoding": "utf-8-sig",
+      "lines": 264
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0-SharedMediaWidgets/AceGUI-3.0-SharedMediaWidgets/widget.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0-SharedMediaWidgets\\AceGUI-3.0-SharedMediaWidgets\\widget.xml",
+      "bytes": 402,
+      "SHA256": "257659C4462E5427BB7D86CD2395C0CC35CC883A0488E98BEDA9D57A5C326629",
+      "encoding": "utf-8-sig",
+      "lines": 9
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0-SharedMediaWidgets/AceGUI-3.0-SharedMediaWidgets/StatusbarWidget.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0-SharedMediaWidgets\\AceGUI-3.0-SharedMediaWidgets\\StatusbarWidget.lua",
+      "bytes": 6674,
+      "SHA256": "0D867850EE571CCFCF4D13FA569B93865ED482C53AD3E36A675FE1207DE737B1",
+      "encoding": "utf-8-sig",
+      "lines": 233
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0-SharedMediaWidgets/AceGUI-3.0-SharedMediaWidgets/BorderWidget.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0-SharedMediaWidgets\\AceGUI-3.0-SharedMediaWidgets\\BorderWidget.lua",
+      "bytes": 6762,
+      "SHA256": "576F7815875E8217BBC4CF2B81BBD1872695A6747FB6698208E11DCB87C75586",
+      "encoding": "utf-8-sig",
+      "lines": 230
+    },
+    {
+      "filename": "Prat-3.0/icon.tga",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\icon.tga",
+      "bytes": 2713,
+      "SHA256": "870CEE94FC9DCCDEDC213B0620D3FF2B0EA4BBA91C3729C9E7896D20E6092469"
+    },
+    {
+      "filename": "Prat-3.0/CONTRIBUTING.md",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\CONTRIBUTING.md",
+      "bytes": 2510,
+      "SHA256": "510217623A94FD433181D5194B612291FBF0EA2F02A8291B6F4501BD7E1BF211",
+      "encoding": "utf-8-sig",
+      "lines": 47
+    },
+    {
+      "filename": "Prat-3.0/frames/popup.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\frames\\popup.xml",
+      "bytes": 1225,
+      "SHA256": "5C7FC4B235E45DD2D03C78EEEAE389F21BB70617F889FDEC3D00D318129BC008",
+      "encoding": "utf-8-sig",
+      "lines": 44
+    }
+  ],
+  "TOCs": [
+    {
+      "filename": "Prat-3.0/Prat-3.0.toc",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Prat-3.0.toc",
+      "bytes": 1627,
+      "SHA256": "4E0AAC2E8DBA1EC32415E627295E6086D064E5728A877C2E11611BFC9ADCEFFC",
+      "encoding": "utf-8-sig",
+      "lines": 47,
+      "metadata": [
+        {
+          "line": 1,
+          "literal": "## Interface: 11509, 16001, 20506, 30405, 38002, 40402, 50504, 120105, 120107"
+        },
+        {
+          "line": 3,
+          "literal": "## Title: Prat |cff8080ff3.0|r"
+        },
+        {
+          "line": 4,
+          "literal": "## Title-zhCN: Prat |cff8080ff3.0|r"
+        },
+        {
+          "line": 6,
+          "literal": "## Notes: A framework for chat ehancement modules."
+        },
+        {
+          "line": 7,
+          "literal": "## Notes-zhCN: 整合的聊天增强助手"
+        },
+        {
+          "line": 8,
+          "literal": "## Notes-zhTW: 整合的聊天視窗模組。"
+        },
+        {
+          "line": 9,
+          "literal": "## Notes-frFR: Framework pour des modules concernant les fen\\195\\170tres de discussion"
+        },
+        {
+          "line": 10,
+          "literal": "## Notes-esES: Un entorno para modulos de chat."
+        },
+        {
+          "line": 11,
+          "literal": "## Notes-deDE: Ein Grundaddon für Chatfenstermodule."
+        },
+        {
+          "line": 12,
+          "literal": "## Notes-koKR: 대화창에 대한 다양한 기능을 제공하는 애드온입니다."
+        },
+        {
+          "line": 13,
+          "literal": "## Notes-ruRU: Фреймворк для чата. Это БЕТА-версия, а значит возможны баги и глюки."
+        },
+        {
+          "line": 15,
+          "literal": "## Category-enUS: Chat"
+        },
+        {
+          "line": 16,
+          "literal": "## Category-deDE: Chat"
+        },
+        {
+          "line": 17,
+          "literal": "## Category-esES: Chat"
+        },
+        {
+          "line": 18,
+          "literal": "## Category-esMX: Chat"
+        },
+        {
+          "line": 19,
+          "literal": "## Category-frFR: Discussion"
+        },
+        {
+          "line": 20,
+          "literal": "## Category-itIT: Chat"
+        },
+        {
+          "line": 21,
+          "literal": "## Category-koKR: 대화"
+        },
+        {
+          "line": 22,
+          "literal": "## Category-ptBR: Bate-papo"
+        },
+        {
+          "line": 23,
+          "literal": "## Category-ruRU: Чат"
+        },
+        {
+          "line": 24,
+          "literal": "## Category-zhCN: 聊天"
+        },
+        {
+          "line": 25,
+          "literal": "## Category-zhTW: 對話"
+        },
+        {
+          "line": 27,
+          "literal": "## OptionalDeps: LibSink-2.0, LibSharedMedia-3.0, AceGUI-3.0-SharedMediaWidgets, LibDataBroker-1.1, LibDBIcon-1.0, LibAlts-1.0, LibChatAnims"
+        },
+        {
+          "line": 29,
+          "literal": "## SavedVariables: Prat3DB"
+        },
+        {
+          "line": 30,
+          "literal": "## SavedVariablesPerCharacter: Prat3CharDB, Prat3HighCPUPerCharDB"
+        },
+        {
+          "line": 32,
+          "literal": "## IconTexture: Interface\\AddOns\\Prat-3.0\\textures\\prat-logo-dark-small"
+        },
+        {
+          "line": 33,
+          "literal": "## AddonCompartmentFunc: Prat_ToggleOptionsWindow"
+        },
+        {
+          "line": 35,
+          "literal": "## Author: QartemisT, formerly Sylvanaar"
+        },
+        {
+          "line": 36,
+          "literal": "## Version: 3.9.117"
+        },
+        {
+          "line": 37,
+          "literal": "## X-Curse-Project-ID: 7473"
+        },
+        {
+          "line": 38,
+          "literal": "## X-WoWI-ID: 10783"
+        },
+        {
+          "line": 39,
+          "literal": "## X-Wago-ID: RNL9ae6o"
+        }
+      ],
+      "loadOrder": [
+        {
+          "line": 41,
+          "literal": "Libs.xml",
+          "exists": true
+        },
+        {
+          "line": 43,
+          "literal": "locales\\includes.xml",
+          "exists": true
+        },
+        {
+          "line": 44,
+          "literal": "fonts\\includes.xml",
+          "exists": true
+        },
+        {
+          "line": 45,
+          "literal": "addon\\includes.xml",
+          "exists": true
+        },
+        {
+          "line": 46,
+          "literal": "services\\includes.xml",
+          "exists": true
+        },
+        {
+          "line": 47,
+          "literal": "modules\\includes.xml",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "filename": "Prat-3.0/Libs/LibStub/LibStub.toc",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\LibStub\\LibStub.toc",
+      "bytes": 266,
+      "SHA256": "D6EF350C07EDF6BE550C586E32473776E310D212BF39962CAFEE04A8D415405F",
+      "encoding": "utf-8-sig",
+      "lines": 9,
+      "metadata": [
+        {
+          "line": 1,
+          "literal": "## Interface: 90005"
+        },
+        {
+          "line": 2,
+          "literal": "## Title: Lib: LibStub"
+        },
+        {
+          "line": 3,
+          "literal": "## Notes: Universal Library Stub"
+        },
+        {
+          "line": 4,
+          "literal": "## Credits: Kaelten, Cladhaire, ckknight, Mikk, Ammo, Nevcairiel"
+        },
+        {
+          "line": 5,
+          "literal": "## X-Website: http://www.wowace.com/addons/libstub/"
+        },
+        {
+          "line": 6,
+          "literal": "## X-Category: Library"
+        },
+        {
+          "line": 7,
+          "literal": "## X-License: Public Domain"
+        }
+      ],
+      "loadOrder": [
+        {
+          "line": 9,
+          "literal": "LibStub.lua",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "filename": "Prat-3.0/Libs/LibSharedMedia-3.0/LibSharedMedia-3.0.toc",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\LibSharedMedia-3.0\\LibSharedMedia-3.0.toc",
+      "bytes": 539,
+      "SHA256": "C6123F96C887845BD6BA4A8BACCD36C54A5BB7EF7A3013EA2C1BE96751147922",
+      "encoding": "utf-8-sig",
+      "lines": 17,
+      "metadata": [
+        {
+          "line": 1,
+          "literal": "## Interface: 11508, 11509, 16001, 20505, 20506, 30405, 38002, 40402, 50503, 50504, 120100, 120105, 120107"
+        },
+        {
+          "line": 2,
+          "literal": "## LoadOnDemand: 1"
+        },
+        {
+          "line": 4,
+          "literal": "## Title: Lib: SharedMedia-3.0"
+        },
+        {
+          "line": 5,
+          "literal": "## Notes: Shared handling of media data (fonts, sounds, textures, ...) between addons."
+        },
+        {
+          "line": 6,
+          "literal": "## Author: Elkano"
+        },
+        {
+          "line": 7,
+          "literal": "## Version: 3.0-185"
+        },
+        {
+          "line": 8,
+          "literal": "## X-Website: https://www.curseforge.com/wow/addons/libsharedmedia-3-0"
+        },
+        {
+          "line": 9,
+          "literal": "## X-Category: Library"
+        },
+        {
+          "line": 11,
+          "literal": "## X-Revision: 185"
+        },
+        {
+          "line": 12,
+          "literal": "## X-Date: 2026-10-21T15:01:23Z"
+        }
+      ],
+      "loadOrder": [
+        {
+          "line": 14,
+          "literal": "LibStub\\LibStub.lua",
+          "exists": true
+        },
+        {
+          "line": 15,
+          "literal": "CallbackHandler-1.0\\CallbackHandler-1.0.lua",
+          "exists": true
+        },
+        {
+          "line": 17,
+          "literal": "LibSharedMedia-3.0\\lib.xml",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "filename": "Prat-3.0/Libs/LibAlts-1.0/LibAlts-1.0.toc",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\LibAlts-1.0\\LibAlts-1.0.toc",
+      "bytes": 405,
+      "SHA256": "C1A7C5FE67FC676007BE6C42B2A8A371E69EFC091B9697EE33A8655C9D479DC6",
+      "encoding": "utf-8-sig",
+      "lines": 19,
+      "metadata": [
+        {
+          "line": 1,
+          "literal": "## Interface: 70100"
+        },
+        {
+          "line": 2,
+          "literal": "## X-Since-Interface: 30300"
+        },
+        {
+          "line": 4,
+          "literal": "## Title: Lib: LibAlts-1.0"
+        },
+        {
+          "line": 5,
+          "literal": "## Notes: Shared handling of alternate identity data between addons."
+        },
+        {
+          "line": 6,
+          "literal": "## Version: 2.0.1 "
+        },
+        {
+          "line": 7,
+          "literal": "## Author: Sylvanaar"
+        },
+        {
+          "line": 8,
+          "literal": "## X-Category: Library"
+        },
+        {
+          "line": 10,
+          "literal": "## OptDeps: LibStub, CallbackHandler-1.0, Ace3"
+        },
+        {
+          "line": 12,
+          "literal": "## LoadOnDemand: 1"
+        }
+      ],
+      "loadOrder": [
+        {
+          "line": 15,
+          "literal": "LibStub\\LibStub.lua",
+          "exists": false
+        },
+        {
+          "line": 16,
+          "literal": "CallbackHandler-1.0\\CallbackHandler-1.0.xml",
+          "exists": false
+        },
+        {
+          "line": 19,
+          "literal": "lib.xml",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0-SharedMediaWidgets/AceGUI-3.0-SharedMediaWidgets.toc",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0-SharedMediaWidgets\\AceGUI-3.0-SharedMediaWidgets.toc",
+      "bytes": 517,
+      "SHA256": "BF3A06B7F1E0FB7AEDA6B0E7B931E33232603C164F8BAC007C351C3E5E85FC24",
+      "encoding": "utf-8-sig",
+      "lines": 16,
+      "metadata": [
+        {
+          "line": 1,
+          "literal": "## Interface: 11508, 11509, 16001, 20505, 20506, 30405, 38002, 40402, 50503, 50504, 120100, 120105, 120007"
+        },
+        {
+          "line": 3,
+          "literal": "## Title: Lib: AceGUI-3.0-SharedMediaWidgets"
+        },
+        {
+          "line": 4,
+          "literal": "## Notes: Enables AceGUI-3.0 widgets for the 5 basic SharedMedia-3.0 types"
+        },
+        {
+          "line": 5,
+          "literal": "## Author: Yssaril"
+        },
+        {
+          "line": 6,
+          "literal": "## OptionalDeps: Ace3, LibSharedMedia-3.0"
+        },
+        {
+          "line": 7,
+          "literal": "## X-Category: Library"
+        }
+      ],
+      "loadOrder": [
+        {
+          "line": 10,
+          "literal": "Libs\\Libstub\\Libstub.lua",
+          "exists": false
+        },
+        {
+          "line": 11,
+          "literal": "Libs\\CallbackHandler-1.0\\CallbackHandler-1.0.xml",
+          "exists": false
+        },
+        {
+          "line": 12,
+          "literal": "Libs\\AceGUI-3.0\\AceGUI-3.0.xml",
+          "exists": false
+        },
+        {
+          "line": 13,
+          "literal": "Libs\\LibSharedMedia-3.0\\lib.xml",
+          "exists": false
+        },
+        {
+          "line": 16,
+          "literal": "widget.xml",
+          "exists": true
+        }
+      ]
+    }
+  ],
+  "XMLloadReferences": [
+    {
+      "filename": "Prat-3.0/services/includes.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\services\\includes.xml",
+      "bytes": 510,
+      "SHA256": "63E7BF0DE5405D4BB945CD220B4A6308CA71FA8D409E405E7FB64DEC2EEC0A01",
+      "encoding": "utf-8-sig",
+      "lines": 13,
+      "references": [
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "helpers.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "events.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "links.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "patterns.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "chatsections.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "print.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "classcolor.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "textcolor.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "channelapi.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "bayesclassifier.lua"
+        }
+      ]
+    },
+    {
+      "filename": "Prat-3.0/addon/includes.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\addon\\includes.xml",
+      "bytes": 351,
+      "SHA256": "5521A746684AB4707D1177F493291012B16D8B7AC4EBF9FFC9F5AC7EA8E96437",
+      "encoding": "utf-8-sig",
+      "lines": 8,
+      "references": [
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "addon.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "MessageEventHandler.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "modules.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "options.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "profileAPI.lua"
+        }
+      ]
+    },
+    {
+      "filename": "Prat-3.0/fonts/includes.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\fonts\\includes.xml",
+      "bytes": 212,
+      "SHA256": "077BED06AAC89CEA3EFECD98ACAD13EE48BFACE862C9CE64724086BDB9EA51BB",
+      "encoding": "utf-8-sig",
+      "lines": 4,
+      "references": [
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "fonts.lua"
+        }
+      ]
+    },
+    {
+      "filename": "Prat-3.0/Libs.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs.xml",
+      "bytes": 1241,
+      "SHA256": "0055D2F8B2061583CB2636962095F3031D26C92C985EA567FFA4480B84AAA985",
+      "encoding": "utf-8-sig",
+      "lines": 22,
+      "references": [
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Include",
+          "file": "Libs\\LibStub\\LibStub.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Include",
+          "file": "Libs\\LibChatAnims\\LibChatAnims.xml"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Include",
+          "file": "Libs\\CallbackHandler-1.0\\CallbackHandler-1.0.xml"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Include",
+          "file": "Libs\\AceAddon-3.0\\AceAddon-3.0.xml"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Include",
+          "file": "Libs\\AceDB-3.0\\AceDB-3.0.xml"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Include",
+          "file": "Libs\\AceDBOptions-3.0\\AceDBOptions-3.0.xml"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Include",
+          "file": "Libs\\AceConsole-3.0\\AceConsole-3.0.xml"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Include",
+          "file": "Libs\\AceEvent-3.0\\AceEvent-3.0.xml"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Include",
+          "file": "Libs\\AceTimer-3.0\\AceTimer-3.0.xml"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Include",
+          "file": "Libs\\AceGUI-3.0\\AceGUI-3.0.xml"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Include",
+          "file": "Libs\\AceConfig-3.0\\AceConfig-3.0.xml"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Include",
+          "file": "Libs\\AceHook-3.0\\AceHook-3.0.xml"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Include",
+          "file": "Libs\\AceTab-3.0\\AceTab-3.0.xml"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Include",
+          "file": "Libs\\LibSharedMedia-3.0\\lib.xml"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Include",
+          "file": "Libs\\LibSink-2.0\\lib.xml"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Include",
+          "file": "Libs\\AceGUI-3.0-SharedMediaWidgets\\widget.xml"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Include",
+          "file": "Libs\\LibDataBroker-1.1\\LibDataBroker-1.1.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Include",
+          "file": "Libs\\LibDBIcon-1.0\\LibDBIcon-1.0.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Include",
+          "file": "Libs\\LibAlts-1.0\\lib.xml"
+        }
+      ]
+    },
+    {
+      "filename": "Prat-3.0/Bindings.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Bindings.xml",
+      "bytes": 3537,
+      "SHA256": "1F5EB8A42391C2A46DBEEA3C33A547D8A478D73347B1CD46A0C6DFF2EB9F029B",
+      "encoding": "utf-8-sig",
+      "lines": 105,
+      "references": []
+    },
+    {
+      "filename": "Prat-3.0/Bindings_Mainline.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Bindings_Mainline.xml",
+      "bytes": 3955,
+      "SHA256": "D9A1EB792AE121BB139D337C4BD33B67A61F07851609D06C61F4D6EC688479D2",
+      "encoding": "utf-8-sig",
+      "lines": 105,
+      "references": []
+    },
+    {
+      "filename": "Prat-3.0/locales/includes.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\locales\\includes.xml",
+      "bytes": 491,
+      "SHA256": "A227B85D7B0E40F930A112438E498B5B853CF81A51771D525A29047FFB9D1F79",
+      "encoding": "utf-8-sig",
+      "lines": 14,
+      "references": [
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "enUS.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "deDE.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "esES.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "esMX.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "frFR.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "itIT.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "koKR.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "ptBR.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "ruRU.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "zhCN.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "zhTW.lua"
+        }
+      ]
+    },
+    {
+      "filename": "Prat-3.0/modules/includes.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\includes.xml",
+      "bytes": 1740,
+      "SHA256": "F31364E47C4EC6FDB648CA7A78EAE7B88E6FB8FD96D1F93A50D1E57B071507C5",
+      "encoding": "utf-8-sig",
+      "lines": 51,
+      "references": [
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Include",
+          "file": "..\\frames\\popup.xml"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "Achievements.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "Alias.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "AltNames.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "Buttons.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "EventNames.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "ChannelNames.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "ChannelColorMemory.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "ChannelSticky.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "ChatFrames.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "ChatLog.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "ChatTabs.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "Clear.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "CopyChat.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "CustomFilters.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "Editbox.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "Fading.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "Font.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "Filtering.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "Highlight.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "History.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "HoverTips.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "Invites.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "LinkInfoIcons.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "Keybindings.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "Mentions.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "Memory.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "NewcomersChat.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "Paragraph.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "PlayerNames.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "PopupMessage.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "ServerNames.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "Scroll.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "Search.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "SideTabs.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "Sounds.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "Substitutions.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "TellTarget.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "Timestamps.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "UrlCopy.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "PlayerNameGlobalPatterns.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "OriginalButtons.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "Bubbles.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "Scrollback.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "WIM.lua"
+        }
+      ]
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceConfig-3.0/AceConfigRegistry-3.0/AceConfigRegistry-3.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceConfig-3.0\\AceConfigRegistry-3.0\\AceConfigRegistry-3.0.xml",
+      "bytes": 223,
+      "SHA256": "3A49ACF5F0158FD769A2F461F6176A5CD126DA6FED33E38F0A10A2AD12D9CD2D",
+      "encoding": "utf-8-sig",
+      "lines": 4,
+      "references": [
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "AceConfigRegistry-3.0.lua"
+        }
+      ]
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceConfig-3.0/AceConfigDialog-3.0/AceConfigDialog-3.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceConfig-3.0\\AceConfigDialog-3.0\\AceConfigDialog-3.0.xml",
+      "bytes": 221,
+      "SHA256": "C2AF74760E12602C51534D43F8BC741F5BE981C7DA66CDFFB5282AEF2E2F0812",
+      "encoding": "utf-8-sig",
+      "lines": 4,
+      "references": [
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "AceConfigDialog-3.0.lua"
+        }
+      ]
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceConfig-3.0/AceConfig-3.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceConfig-3.0\\AceConfig-3.0.xml",
+      "bytes": 480,
+      "SHA256": "EDBD83772E15D26A318137BC9BCD3E027A109897A3ACA60182FD192AE2E7312D",
+      "encoding": "utf-8-sig",
+      "lines": 8,
+      "references": [
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Include",
+          "file": "AceConfigRegistry-3.0\\AceConfigRegistry-3.0.xml"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Include",
+          "file": "AceConfigCmd-3.0\\AceConfigCmd-3.0.xml"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Include",
+          "file": "AceConfigDialog-3.0\\AceConfigDialog-3.0.xml"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "AceConfig-3.0.lua"
+        }
+      ]
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceConfig-3.0/AceConfigCmd-3.0/AceConfigCmd-3.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceConfig-3.0\\AceConfigCmd-3.0\\AceConfigCmd-3.0.xml",
+      "bytes": 218,
+      "SHA256": "356CB017A78284E76FF62B6F677A2F380B9CAD4D5FB2034A7EEAAC8316D20A13",
+      "encoding": "utf-8-sig",
+      "lines": 4,
+      "references": [
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "AceConfigCmd-3.0.lua"
+        }
+      ]
+    },
+    {
+      "filename": "Prat-3.0/Libs/LibSink-2.0/lib.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\LibSink-2.0\\lib.xml",
+      "bytes": 220,
+      "SHA256": "3F6E85501969F908A469005E9FAF5B0E282F9D4646AD435C05D3004AA33603E7",
+      "encoding": "utf-8-sig",
+      "lines": 7,
+      "references": [
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "LibSink-2.0.lua"
+        }
+      ]
+    },
+    {
+      "filename": "Prat-3.0/Libs/LibDBIcon-1.0/lib.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\LibDBIcon-1.0\\lib.xml",
+      "bytes": 222,
+      "SHA256": "3C959D5954F2680F063BAA3A7903CD347E8F4F9755CD9BE639FA45A50238F85A",
+      "encoding": "utf-8-sig",
+      "lines": 7,
+      "references": [
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "LibDBIcon-1.0.lua"
+        }
+      ]
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceConsole-3.0/AceConsole-3.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceConsole-3.0\\AceConsole-3.0.xml",
+      "bytes": 216,
+      "SHA256": "00F05946FCBB73FB31AD17EFFB9AA2FB2B42E0D4B1EEBCB546C8104F0E2BB68F",
+      "encoding": "utf-8-sig",
+      "lines": 4,
+      "references": [
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "AceConsole-3.0.lua"
+        }
+      ]
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceAddon-3.0/AceAddon-3.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceAddon-3.0\\AceAddon-3.0.xml",
+      "bytes": 214,
+      "SHA256": "39D218F94F9ABE9A3F9A474E3AC6AAB119F4BBF5C9A45EB7E33E380E5E5606F3",
+      "encoding": "utf-8-sig",
+      "lines": 4,
+      "references": [
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "AceAddon-3.0.lua"
+        }
+      ]
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceDB-3.0/AceDB-3.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceDB-3.0\\AceDB-3.0.xml",
+      "bytes": 211,
+      "SHA256": "474DA5BAA67888D6440DE73F27705ED2E75C8DCE240D9BA2848CFA9583F16E49",
+      "encoding": "utf-8-sig",
+      "lines": 4,
+      "references": [
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "AceDB-3.0.lua"
+        }
+      ]
+    },
+    {
+      "filename": "Prat-3.0/Libs/CallbackHandler-1.0/CallbackHandler-1.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\CallbackHandler-1.0\\CallbackHandler-1.0.xml",
+      "bytes": 221,
+      "SHA256": "5FC06440452A82BE9554FC9650FA7DE0B6DF786C6D188D05D7D0EC4AA3E002FD",
+      "encoding": "utf-8-sig",
+      "lines": 4,
+      "references": [
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "CallbackHandler-1.0.lua"
+        }
+      ]
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceTab-3.0/AceTab-3.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceTab-3.0\\AceTab-3.0.xml",
+      "bytes": 214,
+      "SHA256": "005E2B9FFF88FD547317961F4318BE21A1A283F8E72143EF10FF3FCEF2C80075",
+      "encoding": "utf-8-sig",
+      "lines": 4,
+      "references": [
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "AceTab-3.0.lua"
+        }
+      ]
+    },
+    {
+      "filename": "Prat-3.0/Libs/LibSharedMedia-3.0/LibSharedMedia-3.0/lib.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\LibSharedMedia-3.0\\LibSharedMedia-3.0\\lib.xml",
+      "bytes": 221,
+      "SHA256": "B4DE98E3097DB71406927FE7DCCA508911BFD6E871B1BB744049FB4201F983CF",
+      "encoding": "utf-8-sig",
+      "lines": 4,
+      "references": [
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "LibSharedMedia-3.0.lua"
+        }
+      ]
+    },
+    {
+      "filename": "Prat-3.0/Libs/LibSharedMedia-3.0/lib.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\LibSharedMedia-3.0\\lib.xml",
+      "bytes": 229,
+      "SHA256": "A0FEC691E38BC1BCCF0E802B5DA0F1028F5FEFE8B02893585117EE8325E6448F",
+      "encoding": "utf-8-sig",
+      "lines": 5,
+      "references": [
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Include",
+          "file": "LibSharedMedia-3.0\\lib.xml"
+        }
+      ]
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0/AceGUI-3.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0\\AceGUI-3.0.xml",
+      "bytes": 1479,
+      "SHA256": "96D56AB2C6BC60C718246B80FDDCFCC59820728D85DCA3654413279214932E9F",
+      "encoding": "utf-8-sig",
+      "lines": 28,
+      "references": [
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "AceGUI-3.0.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "widgets\\AceGUIContainer-BlizOptionsGroup.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "widgets\\AceGUIContainer-DropDownGroup.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "widgets\\AceGUIContainer-Frame.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "widgets\\AceGUIContainer-InlineGroup.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "widgets\\AceGUIContainer-ScrollFrame.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "widgets\\AceGUIContainer-SimpleGroup.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "widgets\\AceGUIContainer-TabGroup.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "widgets\\AceGUIContainer-TreeGroup.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "widgets\\AceGUIContainer-Window.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "widgets\\AceGUIWidget-Button.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "widgets\\AceGUIWidget-CheckBox.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "widgets\\AceGUIWidget-ColorPicker.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "widgets\\AceGUIWidget-DropDown.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "widgets\\AceGUIWidget-DropDown-Items.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "widgets\\AceGUIWidget-EditBox.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "widgets\\AceGUIWidget-Heading.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "widgets\\AceGUIWidget-Icon.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "widgets\\AceGUIWidget-InteractiveLabel.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "widgets\\AceGUIWidget-Keybinding.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "widgets\\AceGUIWidget-Label.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "widgets\\AceGUIWidget-MultiLineEditBox.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "widgets\\AceGUIWidget-Slider.lua"
+        }
+      ]
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceHook-3.0/AceHook-3.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceHook-3.0\\AceHook-3.0.xml",
+      "bytes": 213,
+      "SHA256": "7F61B277580C753DBA119F9DE6E7C930D8C62658C115A07580FEEA792330CDE2",
+      "encoding": "utf-8-sig",
+      "lines": 4,
+      "references": [
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "AceHook-3.0.lua"
+        }
+      ]
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceEvent-3.0/AceEvent-3.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceEvent-3.0\\AceEvent-3.0.xml",
+      "bytes": 214,
+      "SHA256": "BE26F49FF449EF5CF5071C8B278C0627662DAEF3E73CB278BDD07F1236026E9C",
+      "encoding": "utf-8-sig",
+      "lines": 4,
+      "references": [
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "AceEvent-3.0.lua"
+        }
+      ]
+    },
+    {
+      "filename": "Prat-3.0/Libs/LibChatAnims/LibChatAnims.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\LibChatAnims\\LibChatAnims.xml",
+      "bytes": 221,
+      "SHA256": "0EE89B941D4D9F740AB189D639E82393A9AC87F4F3E82315FA8AF74BE224118F",
+      "encoding": "utf-8-sig",
+      "lines": 7,
+      "references": [
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}script",
+          "file": "LibChatAnims.lua"
+        }
+      ]
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceTimer-3.0/AceTimer-3.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceTimer-3.0\\AceTimer-3.0.xml",
+      "bytes": 214,
+      "SHA256": "0D7DB07CAE9DCAE62CB79D2071DD31460B561B3915C0187989EC6D2F40C2B60A",
+      "encoding": "utf-8-sig",
+      "lines": 4,
+      "references": [
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "AceTimer-3.0.lua"
+        }
+      ]
+    },
+    {
+      "filename": "Prat-3.0/Libs/LibAlts-1.0/lib.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\LibAlts-1.0\\lib.xml",
+      "bytes": 214,
+      "SHA256": "FC521ADE0534A2442F390CF138AF017C82F44ECB885443789E8E011BB0D0D943",
+      "encoding": "utf-8-sig",
+      "lines": 4,
+      "references": [
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "LibAlts-1.0.lua"
+        }
+      ]
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceDBOptions-3.0/AceDBOptions-3.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceDBOptions-3.0\\AceDBOptions-3.0.xml",
+      "bytes": 218,
+      "SHA256": "3B761587CC17F1C1E8C5265C9AC49E88A91C002C5C1E5FE79F8BA6CD7DB30532",
+      "encoding": "utf-8-sig",
+      "lines": 4,
+      "references": [
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "AceDBOptions-3.0.lua"
+        }
+      ]
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0-SharedMediaWidgets/widget.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0-SharedMediaWidgets\\widget.xml",
+      "bytes": 240,
+      "SHA256": "DB2F419406A16AC58F257CAAEAD197C72AB4B3C382A79D82D456E64CC114D988",
+      "encoding": "utf-8-sig",
+      "lines": 4,
+      "references": [
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Include",
+          "file": "AceGUI-3.0-SharedMediaWidgets\\widget.xml"
+        }
+      ]
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0-SharedMediaWidgets/AceGUI-3.0-SharedMediaWidgets/widget.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0-SharedMediaWidgets\\AceGUI-3.0-SharedMediaWidgets\\widget.xml",
+      "bytes": 402,
+      "SHA256": "257659C4462E5427BB7D86CD2395C0CC35CC883A0488E98BEDA9D57A5C326629",
+      "encoding": "utf-8-sig",
+      "lines": 9,
+      "references": [
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "prototypes.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "FontWidget.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "SoundWidget.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "StatusbarWidget.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "BorderWidget.lua"
+        },
+        {
+          "tag": "{http://www.blizzard.com/wow/ui/}Script",
+          "file": "BackgroundWidget.lua"
+        }
+      ]
+    },
+    {
+      "filename": "Prat-3.0/frames/popup.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\frames\\popup.xml",
+      "bytes": 1225,
+      "SHA256": "5C7FC4B235E45DD2D03C78EEEAE389F21BB70617F889FDEC3D00D318129BC008",
+      "encoding": "utf-8-sig",
+      "lines": 44,
+      "references": []
+    }
+  ],
+  "READMEfullText": [
+    {
+      "filename": "Prat-3.0/README.md",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\README.md",
+      "bytes": 2797,
+      "SHA256": "EFA096B6D9EC990FA735D4670A195BA4660A71226165EC676025D6A48A8C1495",
+      "encoding": "utf-8-sig",
+      "lines": 49,
+      "fullText": "# Prat-3.0\n\nPrat-3.0 is a chat enhancement addon for world of warcraft.\n\nIt is made up of 30+ smaller \"modules\" which each provide additional functionality, and can be enabled or disabled individually.\n\nIn game, type /prat for a menu.\n\n**Bug reports: [https://github.com/Legacy-of-Sylvanaar/prat-3-0/issues](https://github.com/Legacy-of-Sylvanaar/prat-3-0/issues)**\n\nPrat has just about every feature you can think of, and then some. Really. When I get some more time, I'll try and put together a full list (Even I have lost count)\n\n(Thanks to Dreamsight for this partial list)\n\n*   Change arrows, buttons, mouse scroll for chat scroll, scroll speed\n*   you can add color per channel, color per lvl, color per class\n*   timestamps\n*   timestamp color\n*   whether to show timestamp (what format the timestamp should be in)\n*   whether to show players lvl\n*   you can select the option for channel \"stickys\" (last channel you used you auto use when hitting enter, that sort of thing – or last thing someone said)\n*   change the looks of the chat's editbox - as well as where it appears (you can even undock it and move it to where you'd like it to be)\n*   chat fading, fading delay\n*   You can change the font to a list of fonts, add an outline to it, monochrome it (if you don’t mind messing with files a bit you could prolly even add other fonts to that list)\n*   change the chat frame/chat box appearance\n*   set Chat history\n*   set channel abbreviations\n*   set brackets and color(or something instead of brackets)round player/lvl\n*   alt invite option (press keyboard “alt” button and click on the player’s name to auto inv them)\n*   raid icon\n*   invite links\n*   info keeping\n*   url copying\n*   full chat copying + copy button\n*   allows pop-up msgs\n*   enables tell target /tt\n*   Alias options\n*   altnames options\n*   you can enable/disable all prat modules - dont have to have the ones you dont use running\n*   change chat sounds (incoming and outgoing as well as per channel)\n*   achievement info and grats\n*   full chat search\n*   fully customizable filers for advanced users/li>\n\nIts predecessor, Prat-2.0 has been around since the TBC release in 2006. This new version seeks to improve upon some aspects such as memory use, but still do so without creating 30+ small folders in your addon directory that you have to manage.\n\nWhile trying to reduce resource utilization, it is also important to note that some people prefer the features, and don't care that an addon uses 500k more. I have been trying to isolate the most resource intensive functionality into the Prat\\_HighCPUUSageModules folder. You can enable or disable it per your preference.\n\n![](https://media.forgecdn.net/attachments/293/722/2020-05-24_1-56-57.jpg)\n"
+    }
+  ],
+  "configDefaultNameCandidates": [
+    {
+      "filename": "Prat-3.0/addon/options.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\addon\\options.lua",
+      "bytes": 4786,
+      "SHA256": "17FF4C2E5D24B886AAF10D83AE80D95D9AEDDDC4A2D4DB9307DB3932328ED1E2",
+      "encoding": "utf-8-sig",
+      "lines": 178
+    },
+    {
+      "filename": "Prat-3.0/addon/modules.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\addon\\modules.lua",
+      "bytes": 7818,
+      "SHA256": "E0C50157B41FC3147FB81A614C7B8950E0EFF8AE57C283E4BE7F3CB72F1456A9",
+      "encoding": "utf-8-sig",
+      "lines": 316
+    },
+    {
+      "filename": "Prat-3.0/modules/OriginalButtons.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\OriginalButtons.lua",
+      "bytes": 14956,
+      "SHA256": "9F19BD135D97A17ED5AFE46BB42C3B5CB56309651A2887BF9D74EF0CA6B50025",
+      "encoding": "utf-8-sig",
+      "lines": 507
+    },
+    {
+      "filename": "Prat-3.0/modules/ChatFrames.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\ChatFrames.lua",
+      "bytes": 9327,
+      "SHA256": "B26224C2A98FC5D8E04B9409874E38962F34DD547AD60627F5E67AD2440A82D0",
+      "encoding": "utf-8-sig",
+      "lines": 335
+    },
+    {
+      "filename": "Prat-3.0/modules/includes.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\includes.xml",
+      "bytes": 1740,
+      "SHA256": "F31364E47C4EC6FDB648CA7A78EAE7B88E6FB8FD96D1F93A50D1E57B071507C5",
+      "encoding": "utf-8-sig",
+      "lines": 51
+    },
+    {
+      "filename": "Prat-3.0/modules/Clear.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Clear.lua",
+      "bytes": 2447,
+      "SHA256": "7331F322E4FE54C56FAF9A2B72C8C70831913742B3E2F65E248F33B38033FAFF",
+      "encoding": "utf-8-sig",
+      "lines": 81
+    },
+    {
+      "filename": "Prat-3.0/modules/Bubbles.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Bubbles.lua",
+      "bytes": 6204,
+      "SHA256": "2CB25893362B1B666BF1092D15F10C4003A6BB1B71DE2B13400726F4B0C09C89",
+      "encoding": "utf-8-sig",
+      "lines": 226
+    },
+    {
+      "filename": "Prat-3.0/modules/Mentions.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Mentions.lua",
+      "bytes": 3503,
+      "SHA256": "3A7886118E5BE0F749D911A08C1E2B8651F5D33686C778D5CCE09D9D1409687C",
+      "encoding": "utf-8-sig",
+      "lines": 118
+    },
+    {
+      "filename": "Prat-3.0/modules/PopupMessage.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\PopupMessage.lua",
+      "bytes": 7966,
+      "SHA256": "D992F2C2CADD8547A9A7F70DC787768AEDFF87BE24DE1B8D1B1DCAF2C5207D82",
+      "encoding": "utf-8-sig",
+      "lines": 274
+    },
+    {
+      "filename": "Prat-3.0/modules/Timestamps.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Timestamps.lua",
+      "bytes": 6766,
+      "SHA256": "7FC1D49436BD0848690E564AD9166764421BA438A68EAB68FFED1B93F27B9CAB",
+      "encoding": "utf-8-sig",
+      "lines": 254
+    },
+    {
+      "filename": "Prat-3.0/modules/UrlCopy.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\UrlCopy.lua",
+      "bytes": 12873,
+      "SHA256": "527CC198EADA61E04A5BFB4702BEDDD9031B0D5B15F4571AC2A524BC6F176786",
+      "encoding": "utf-8-sig",
+      "lines": 571
+    },
+    {
+      "filename": "Prat-3.0/modules/History.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\History.lua",
+      "bytes": 7685,
+      "SHA256": "2697632E605BFF6D153170CA06CC1906602BA54220ECDF35509BF1968A718F33",
+      "encoding": "utf-8-sig",
+      "lines": 283
+    },
+    {
+      "filename": "Prat-3.0/modules/PlayerNames.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\PlayerNames.lua",
+      "bytes": 26461,
+      "SHA256": "15FC81EA495162A16DDA4B165ACC0E68F12B16E4B83236347C58E3A2566DB9FB",
+      "encoding": "utf-8-sig",
+      "lines": 937
+    },
+    {
+      "filename": "Prat-3.0/modules/Sounds.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Sounds.lua",
+      "bytes": 7971,
+      "SHA256": "9DA3F0AE20D86008258CD59D93177EB38E1D86A54573A0A60D31378D80F0E85B",
+      "encoding": "utf-8-sig",
+      "lines": 282
+    },
+    {
+      "filename": "Prat-3.0/modules/ChannelNames.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\ChannelNames.lua",
+      "bytes": 14894,
+      "SHA256": "D27C94594B29E73D28037F1266E820CE9E8F9891AA7AED2E2C1C436FC9EDFDE9",
+      "encoding": "utf-8-sig",
+      "lines": 545
+    },
+    {
+      "filename": "Prat-3.0/modules/LinkInfoIcons.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\LinkInfoIcons.lua",
+      "bytes": 7571,
+      "SHA256": "D99AAD9585520C1F6255DD7BF4116B3ACE792750C1EDF82CAE57AB63717D0405",
+      "encoding": "utf-8-sig",
+      "lines": 309
+    },
+    {
+      "filename": "Prat-3.0/modules/Achievements.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Achievements.lua",
+      "bytes": 6720,
+      "SHA256": "358C826CD9287CD67C8246B5468C2ECD5A603268FCB58EBD0AE9EBD2F474C38E",
+      "encoding": "utf-8-sig",
+      "lines": 228
+    },
+    {
+      "filename": "Prat-3.0/modules/Search.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Search.lua",
+      "bytes": 5200,
+      "SHA256": "D527E89C78466CEAA0F67A95B5603D5A394102C5F7650643E2EEFE94CCDCAD39",
+      "encoding": "utf-8-sig",
+      "lines": 226
+    },
+    {
+      "filename": "Prat-3.0/modules/ServerNames.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\ServerNames.lua",
+      "bytes": 6083,
+      "SHA256": "83C1AF0D21104C0F9CFF285420C5D13D3AE6C0B1A1021E63F712891C75499EA7",
+      "encoding": "utf-8-sig",
+      "lines": 238
+    },
+    {
+      "filename": "Prat-3.0/modules/ChatLog.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\ChatLog.lua",
+      "bytes": 3004,
+      "SHA256": "DBA6785A7BA0EF57E8F2DEE2E593C42E29BAFF9A36AE05D3FFEC4090F17CC62C",
+      "encoding": "utf-8-sig",
+      "lines": 105
+    },
+    {
+      "filename": "Prat-3.0/modules/Buttons.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Buttons.lua",
+      "bytes": 11215,
+      "SHA256": "C1E35A73E2D177717E96D157A57BC523B196521C16CC5EEA8025894A56BF4BB4",
+      "encoding": "utf-8-sig",
+      "lines": 445
+    },
+    {
+      "filename": "Prat-3.0/modules/NewcomersChat.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\NewcomersChat.lua",
+      "bytes": 5093,
+      "SHA256": "2B8D44C3F8038AD27DEBAE700F6BD1C60A924CDF6410C6679E59A976BBA3285B",
+      "encoding": "utf-8-sig",
+      "lines": 188
+    },
+    {
+      "filename": "Prat-3.0/modules/Highlight.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Highlight.lua",
+      "bytes": 2365,
+      "SHA256": "5FC4115AFD248292B7F4F87BE76BD147501DB47A47EBA5E5243F3C2833A41A34",
+      "encoding": "utf-8-sig",
+      "lines": 84
+    },
+    {
+      "filename": "Prat-3.0/modules/PlayerNameGlobalPatterns.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\PlayerNameGlobalPatterns.lua",
+      "bytes": 3098,
+      "SHA256": "BA8F200EE7B5FA37E95133C031E271352CCE372C79344FDD76A06C845C6E0C49",
+      "encoding": "utf-8-sig",
+      "lines": 117
+    },
+    {
+      "filename": "Prat-3.0/modules/ChannelSticky.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\ChannelSticky.lua",
+      "bytes": 7185,
+      "SHA256": "2EC348E8F0049D1BAE14746E3FE281DBEB52116C7847F908B28351FC7F0BB01D",
+      "encoding": "utf-8-sig",
+      "lines": 280
+    },
+    {
+      "filename": "Prat-3.0/modules/EventNames.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\EventNames.lua",
+      "bytes": 3459,
+      "SHA256": "34459DED5A3E73E247B2B58DF0B36E21CB351A7339B7B6820BDFE914D4C2EDBD",
+      "encoding": "utf-8-sig",
+      "lines": 120
+    },
+    {
+      "filename": "Prat-3.0/modules/CustomFilters.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\CustomFilters.lua",
+      "bytes": 20940,
+      "SHA256": "88199E832CFC12123DE7CCE76F3892751218D1276442AD9C08BE85C9F9247D7D",
+      "encoding": "utf-8-sig",
+      "lines": 849
+    },
+    {
+      "filename": "Prat-3.0/modules/ChatTabs.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\ChatTabs.lua",
+      "bytes": 17080,
+      "SHA256": "FB6C89AB50E49BD9BA63C1259D9129690682F1CA5FDE2F1AC91A3FAC33707C7C",
+      "encoding": "utf-8-sig",
+      "lines": 598
+    },
+    {
+      "filename": "Prat-3.0/modules/Filtering.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Filtering.lua",
+      "bytes": 8702,
+      "SHA256": "A9CFC7CBDAF364A105DDAABEEF66F70D667ADE3A8FD5D8C342951FC657518C09",
+      "encoding": "utf-8-sig",
+      "lines": 295
+    },
+    {
+      "filename": "Prat-3.0/modules/Substitutions.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Substitutions.lua",
+      "bytes": 14187,
+      "SHA256": "3AA75B8DA8A3B4C9F28EE20317FD8844F04D46AB2168CA2B46C3099FFCF016B8",
+      "encoding": "utf-8-sig",
+      "lines": 492
+    },
+    {
+      "filename": "Prat-3.0/modules/Editbox.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Editbox.lua",
+      "bytes": 18622,
+      "SHA256": "5E2C39DE4139FF1AD77842520594C9425D485144D21664963050C1369BB8E6F3",
+      "encoding": "utf-8-sig",
+      "lines": 646
+    },
+    {
+      "filename": "Prat-3.0/modules/AltNames.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\AltNames.lua",
+      "bytes": 25691,
+      "SHA256": "63D371813826560F22BE960F655F656FF2ACF085A17D54243118A112064C46A2",
+      "encoding": "utf-8-sig",
+      "lines": 946
+    },
+    {
+      "filename": "Prat-3.0/modules/WIM.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\WIM.lua",
+      "bytes": 265,
+      "SHA256": "39C22EB8A08B06288FC815C892E70631EE39E1637B7BCD8FA5633AB7C9ADCF10",
+      "encoding": "utf-8-sig",
+      "lines": 8
+    },
+    {
+      "filename": "Prat-3.0/modules/Font.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Font.lua",
+      "bytes": 8430,
+      "SHA256": "72E0B4D91227D646156E9F1FC6C099346BE1AB61532CD2E1DFCA2C025B533DB7",
+      "encoding": "utf-8-sig",
+      "lines": 330
+    },
+    {
+      "filename": "Prat-3.0/modules/CopyChat.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\CopyChat.lua",
+      "bytes": 11508,
+      "SHA256": "D7135C040271FC5049CFE1F80AEB030E4195FDDDFE555613B6A3B00A50294C7E",
+      "encoding": "utf-8-sig",
+      "lines": 383
+    },
+    {
+      "filename": "Prat-3.0/modules/TellTarget.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\TellTarget.lua",
+      "bytes": 3186,
+      "SHA256": "56BF771B9EA88BF890AFF83D027260F04CEDF4822C7D31DAA01726049FCE5168",
+      "encoding": "utf-8-sig",
+      "lines": 111
+    },
+    {
+      "filename": "Prat-3.0/modules/SideTabs.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\SideTabs.lua",
+      "bytes": 25288,
+      "SHA256": "D15D2585582D41ED840F6A38CCD795707440F1A38394E6A900FCFC052BB17718",
+      "encoding": "utf-8-sig",
+      "lines": 968
+    },
+    {
+      "filename": "Prat-3.0/modules/Keybindings.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Keybindings.lua",
+      "bytes": 2949,
+      "SHA256": "01C542425D73EA661D5709CB984F840057E5AAB020F9ED807BF1FE4114875AE0",
+      "encoding": "utf-8-sig",
+      "lines": 84
+    },
+    {
+      "filename": "Prat-3.0/modules/Alias.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Alias.lua",
+      "bytes": 13886,
+      "SHA256": "6FABCEB11C466BB8AAB39DAF71461886410CB27C2FB3B5BB1CF5C6232BCECC70",
+      "encoding": "utf-8-sig",
+      "lines": 502
+    },
+    {
+      "filename": "Prat-3.0/modules/Memory.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Memory.lua",
+      "bytes": 12906,
+      "SHA256": "F00BA58BBE4D54D669C819FDF92B7F073CC5D2A69943B2C2AED1774D3D158AEB",
+      "encoding": "utf-8-sig",
+      "lines": 447
+    },
+    {
+      "filename": "Prat-3.0/modules/Paragraph.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Paragraph.lua",
+      "bytes": 3874,
+      "SHA256": "11A204AA6C12ACCFF4FDB1936B89924D7A2D3BA5BB680E21C8FEF881806E4612",
+      "encoding": "utf-8-sig",
+      "lines": 134
+    },
+    {
+      "filename": "Prat-3.0/modules/Scroll.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Scroll.lua",
+      "bytes": 6495,
+      "SHA256": "5CD2AEA6E3E32B7DC92C41443D41714038229A45C6F8F085CFEEBB9249DE84AA",
+      "encoding": "utf-8-sig",
+      "lines": 258
+    },
+    {
+      "filename": "Prat-3.0/modules/ChannelColorMemory.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\ChannelColorMemory.lua",
+      "bytes": 5474,
+      "SHA256": "84031784CE4B78FC40674160262951E1BAD0BE3A9198EA99A2BED6095ED61961",
+      "encoding": "utf-8-sig",
+      "lines": 186
+    },
+    {
+      "filename": "Prat-3.0/modules/HoverTips.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\HoverTips.lua",
+      "bytes": 2654,
+      "SHA256": "78DC380FC2206C602371D233E2814971378F321DED03B668D0FED13D7BFEF00E",
+      "encoding": "utf-8-sig",
+      "lines": 88
+    },
+    {
+      "filename": "Prat-3.0/modules/Fading.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Fading.lua",
+      "bytes": 2662,
+      "SHA256": "51B66307587BC1EC9AFF0A3A3917D633565CBFA1AA8056BB9BE4F5430DD7A040",
+      "encoding": "utf-8-sig",
+      "lines": 99
+    },
+    {
+      "filename": "Prat-3.0/modules/Invites.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Invites.lua",
+      "bytes": 5728,
+      "SHA256": "1C2F96FB8EB28229C547054E052240BD3D88D2E4A1ABEAA93297DB41A1EDE87C",
+      "encoding": "utf-8-sig",
+      "lines": 208
+    },
+    {
+      "filename": "Prat-3.0/modules/AddonMessages.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\AddonMessages.lua",
+      "bytes": 2806,
+      "SHA256": "12C77546F6B9161868347E4AEA390937B3AB23B39EB445B2D5F0D998A9E9E06A",
+      "encoding": "utf-8-sig",
+      "lines": 103
+    },
+    {
+      "filename": "Prat-3.0/modules/Scrollback.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Scrollback.lua",
+      "bytes": 7512,
+      "SHA256": "9ED93282458DF7925081816486853034BC299B74BA409496FC237501118E7962",
+      "encoding": "utf-8-sig",
+      "lines": 240
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceConfig-3.0/AceConfig-3.0.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceConfig-3.0\\AceConfig-3.0.lua",
+      "bytes": 2237,
+      "SHA256": "93E2BC223F107A2A00A1653F15E65CC34BF7DD4E37C2C420945EC4D0472CA7B5",
+      "encoding": "utf-8-sig",
+      "lines": 58
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceConfig-3.0/AceConfigRegistry-3.0/AceConfigRegistry-3.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceConfig-3.0\\AceConfigRegistry-3.0\\AceConfigRegistry-3.0.xml",
+      "bytes": 223,
+      "SHA256": "3A49ACF5F0158FD769A2F461F6176A5CD126DA6FED33E38F0A10A2AD12D9CD2D",
+      "encoding": "utf-8-sig",
+      "lines": 4
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceConfig-3.0/AceConfigRegistry-3.0/AceConfigRegistry-3.0.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceConfig-3.0\\AceConfigRegistry-3.0\\AceConfigRegistry-3.0.lua",
+      "bytes": 13149,
+      "SHA256": "DFA92A305863CD8AC74A426CCFF7F7B40FEDEE9ABD5D8515947FB1E9F52B6CEB",
+      "encoding": "utf-8-sig",
+      "lines": 373
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceConfig-3.0/AceConfigDialog-3.0/AceConfigDialog-3.0.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceConfig-3.0\\AceConfigDialog-3.0\\AceConfigDialog-3.0.lua",
+      "bytes": 62796,
+      "SHA256": "045A7D0B7A289BA103124EA3343D70CB2CD530AA0A856C8E39F5F0C32B05C48E",
+      "encoding": "utf-8-sig",
+      "lines": 2041
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceConfig-3.0/AceConfigDialog-3.0/AceConfigDialog-3.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceConfig-3.0\\AceConfigDialog-3.0\\AceConfigDialog-3.0.xml",
+      "bytes": 221,
+      "SHA256": "C2AF74760E12602C51534D43F8BC741F5BE981C7DA66CDFFB5282AEF2E2F0812",
+      "encoding": "utf-8-sig",
+      "lines": 4
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceConfig-3.0/AceConfig-3.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceConfig-3.0\\AceConfig-3.0.xml",
+      "bytes": 480,
+      "SHA256": "EDBD83772E15D26A318137BC9BCD3E027A109897A3ACA60182FD192AE2E7312D",
+      "encoding": "utf-8-sig",
+      "lines": 8
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceConfig-3.0/AceConfigCmd-3.0/AceConfigCmd-3.0.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceConfig-3.0\\AceConfigCmd-3.0\\AceConfigCmd-3.0.lua",
+      "bytes": 24016,
+      "SHA256": "29CC1C733032BD7A723949EA63A408F33DC87CE27AD51FE90C64A5863C31A1A7",
+      "encoding": "utf-8-sig",
+      "lines": 787
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceConfig-3.0/AceConfigCmd-3.0/AceConfigCmd-3.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceConfig-3.0\\AceConfigCmd-3.0\\AceConfigCmd-3.0.xml",
+      "bytes": 218,
+      "SHA256": "356CB017A78284E76FF62B6F677A2F380B9CAD4D5FB2034A7EEAAC8316D20A13",
+      "encoding": "utf-8-sig",
+      "lines": 4
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceGUI-3.0/widgets/AceGUIContainer-BlizOptionsGroup.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceGUI-3.0\\widgets\\AceGUIContainer-BlizOptionsGroup.lua",
+      "bytes": 3897,
+      "SHA256": "187A6A67C8AFA0355559EED1C8DA875A1CB2572DABB95FA73CCA1162F1A0E9A2",
+      "encoding": "utf-8-sig",
+      "lines": 143
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceDBOptions-3.0/AceDBOptions-3.0.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceDBOptions-3.0\\AceDBOptions-3.0.xml",
+      "bytes": 218,
+      "SHA256": "3B761587CC17F1C1E8C5265C9AC49E88A91C002C5C1E5FE79F8BA6CD7DB30532",
+      "encoding": "utf-8-sig",
+      "lines": 4
+    },
+    {
+      "filename": "Prat-3.0/Libs/AceDBOptions-3.0/AceDBOptions-3.0.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs\\AceDBOptions-3.0\\AceDBOptions-3.0.lua",
+      "bytes": 22189,
+      "SHA256": "BCF3E6B40439485CF8F234A14A3AD3146D6FF40033BBAB39B5B719DE292196D7",
+      "encoding": "utf-8-sig",
+      "lines": 479
+    }
+  ],
+  "noCodeExecuted": true,
+  "noWholeCodeAuditClaim": true
+}

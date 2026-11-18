@@ -1,0 +1,376 @@
+{
+  "scope": "12 requirements x4 products; states classify evidence, not fulfillment or runtime PASS",
+  "allowedCellStates": [
+    "source-supported-static",
+    "publisher-declared",
+    "proposed",
+    "unverified",
+    "unavailable"
+  ],
+  "runtime": "NOT_RUN",
+  "rows": [
+    {
+      "id": "N1",
+      "meaning": "Use existing native message frames and native typing; no forced transcriptreplacement",
+      "cells": {
+        "bcm": {
+          "state": "source-supported-static",
+          "evidence": "BCM BasicCore125-185 + editbox11-27",
+          "findingAndLimit": "Existing frames/input retained; arrow/history hooks still change behavior.",
+          "runtime": "NOT_RUN"
+        },
+        "prat": {
+          "state": "source-supported-static",
+          "evidence": "PRAT addon78-89/323-388/411-448 + Editbox244-278",
+          "findingAndLimit": "Native visible frames and existing input retained; proxy/event/typing processing changes behavior.",
+          "runtime": "NOT_RUN"
+        },
+        "glass": {
+          "state": "source-supported-static",
+          "evidence": "GLASS UIManager560-568/750-763/802-803/1042-1051",
+          "findingAndLimit": "Hybrid docked custom transcript + detached native windows; native-input component unread, not native-only theme.",
+          "runtime": "NOT_RUN"
+        },
+        "chatty": {
+          "state": "publisher-declared",
+          "evidence": "chatty-description L203/220",
+          "findingAndLimit": "Author says full chatframe replacement; implementation unavailable.",
+          "runtime": "NOT_RUN"
+        }
+      }
+    },
+    {
+      "id": "N2",
+      "meaning": "Preserve three independent window roles; combat2/docked/tempwindows identified, oldIDsnotcopied",
+      "cells": {
+        "bcm": {
+          "state": "unverified",
+          "evidence": "BCM BasicCore125-185",
+          "findingAndLimit": "Existing10 and temporary windows processed; user exact3 independent roles/runtime not verified.",
+          "runtime": "NOT_RUN"
+        },
+        "prat": {
+          "state": "unverified",
+          "evidence": "PRAT addon78-89/181-185/323-388",
+          "findingAndLimit": "Native frames/combat exclusion/temp lifecycle exist; exact3-role persistence not verified.",
+          "runtime": "NOT_RUN"
+        },
+        "glass": {
+          "state": "unverified",
+          "evidence": "GLASS UIManager601-624/669-696/786-800/876-887",
+          "findingAndLimit": "Separate/combat/temp lifecycle exists; exact3-role implementation components and runtime not fully verified.",
+          "runtime": "NOT_RUN"
+        },
+        "chatty": {
+          "state": "unavailable",
+          "evidence": "Chatty source acquisition failures",
+          "findingAndLimit": "Three independent windows/docking/combat/temp source not acquired.",
+          "runtime": "NOT_RUN"
+        }
+      }
+    },
+    {
+      "id": "N3",
+      "meaning": "Preserve perwindow messagegroups/channels; no installer reset/reclassification",
+      "cells": {
+        "bcm": {
+          "state": "unverified",
+          "evidence": "BCM selected13files",
+          "findingAndLimit": "No group/channel reset found in selected appearance paths only; unread extras/runtime not certified.",
+          "runtime": "NOT_RUN"
+        },
+        "prat": {
+          "state": "unverified",
+          "evidence": "PRAT addon610/651-660 + MessageEventHandler41-46",
+          "findingAndLimit": "Proxy and event filters present; unread chatsections/Memory/extras and runtime prevent equivalence claim.",
+          "runtime": "NOT_RUN"
+        },
+        "glass": {
+          "state": "source-supported-static",
+          "evidence": "GLASS DefaultTabs61-81/129-134/172-188",
+          "findingAndLimit": "Clicking offered Guild/Party setup reclassifies groups; not unconditional and not user defaults. Whole filter preservation unverified.",
+          "runtime": "NOT_RUN"
+        },
+        "chatty": {
+          "state": "unavailable",
+          "evidence": "Chatty unavailable source; publisherL211",
+          "findingAndLimit": "Account-global settings declared; exact group/channel migration unverified.",
+          "runtime": "NOT_RUN"
+        }
+      }
+    },
+    {
+      "id": "A1",
+      "meaning": "Leftmenu/social/navigation/scrollreturn controls and state-specific behavior",
+      "cells": {
+        "bcm": {
+          "state": "source-supported-static",
+          "evidence": "BCM buttons9-27/buttons_Classic9-30/fade38-60",
+          "findingAndLimit": "Menu/navigation hiding with branch-specific targets; return/alerts state-dependent.",
+          "runtime": "NOT_RUN"
+        },
+        "prat": {
+          "state": "source-supported-static",
+          "evidence": "PRAT Buttons174-271/353-441",
+          "findingAndLimit": "Individual menu/social/voice/channel/minimize plus reminder, ModernAPI arrow difference.",
+          "runtime": "NOT_RUN"
+        },
+        "glass": {
+          "state": "publisher-declared",
+          "evidence": "Glass publisherL175/196 + UIManager846-849/init67",
+          "findingAndLimit": "ChatButtons wiring/defaultfalse observed; detailed component unread.",
+          "runtime": "NOT_RUN"
+        },
+        "chatty": {
+          "state": "unavailable",
+          "evidence": "Chatty full description lacks exact button policy; source unavailable",
+          "findingAndLimit": "No supported exact hide/return policy.",
+          "runtime": "NOT_RUN"
+        }
+      }
+    },
+    {
+      "id": "A2",
+      "meaning": "Tab/title visibility, hover/typing/alerting states",
+      "cells": {
+        "bcm": {
+          "state": "source-supported-static",
+          "evidence": "BCM fade50-60/163-195 and classic counterpart",
+          "findingAndLimit": "Hover/alert state; not permanent hiding.",
+          "runtime": "NOT_RUN"
+        },
+        "prat": {
+          "state": "source-supported-static",
+          "evidence": "PRAT ChatTabs350-441/586-594",
+          "findingAndLimit": "Perwindow hide/always-show/alpha/texture/font; defaultsOFF, alert exceptions.",
+          "runtime": "NOT_RUN"
+        },
+        "glass": {
+          "state": "publisher-declared",
+          "evidence": "Glass publisherL181-184;UIManager928-936;init87",
+          "findingAndLimit": "Custom tabs/styles/fade and alert reveal; exactcomponent behavior unread.",
+          "runtime": "NOT_RUN"
+        },
+        "chatty": {
+          "state": "unavailable",
+          "evidence": "Chatty source unavailable",
+          "findingAndLimit": "No exact title/tab/hover source or declared policy found.",
+          "runtime": "NOT_RUN"
+        }
+      }
+    },
+    {
+      "id": "A3",
+      "meaning": "Native editbox border/background/placement whiletyping, retain usableinput",
+      "cells": {
+        "bcm": {
+          "state": "source-supported-static",
+          "evidence": "BCM editbox10-27/Config352-435",
+          "findingAndLimit": "Existinginput, border removal/top-bottom/scale; global chatStyle and arrow mode changed.",
+          "runtime": "NOT_RUN"
+        },
+        "prat": {
+          "state": "source-supported-static",
+          "evidence": "PRAT Editbox334-440/486-516/571-635",
+          "findingAndLimit": "Existing input styled with backdrop/top-bottom/free/lock, activation hooks/Alt/history effects; actualIME unverified.",
+          "runtime": "NOT_RUN"
+        },
+        "glass": {
+          "state": "publisher-declared",
+          "evidence": "Glass publisherL173-202;README29-32;UIManager802-803/861-868",
+          "findingAndLimit": "Edit styles declaration/defaults, forceschatStyle; exactnativeinputcomponent unread.",
+          "runtime": "NOT_RUN"
+        },
+        "chatty": {
+          "state": "unavailable",
+          "evidence": "Chatty source unavailable",
+          "findingAndLimit": "Native editbox preservation/ornament policy unverified.",
+          "runtime": "NOT_RUN"
+        }
+      }
+    },
+    {
+      "id": "A4",
+      "meaning": "Fontface/size/outline independently adjustable; no forcedlargefixedfont",
+      "cells": {
+        "bcm": {
+          "state": "source-supported-static",
+          "evidence": "BCM font19-20/Config443-543",
+          "findingAndLimit": "Face/size6-20/outline bothbody/input; koKR paths; actualglyphs unverified.",
+          "runtime": "NOT_RUN"
+        },
+        "prat": {
+          "state": "source-supported-static",
+          "evidence": "PRAT Font50-60/235-281/Editbox181-199",
+          "findingAndLimit": "Body size4-100 perwindow/face/outline, inputface separate; glyphs/runtime unverified.",
+          "runtime": "NOT_RUN"
+        },
+        "glass": {
+          "state": "publisher-declared",
+          "evidence": "Glass publisherdescription/init52-109",
+          "findingAndLimit": "Fontsize/style defaults exist; Fonts implementation not consumed.",
+          "runtime": "NOT_RUN"
+        },
+        "chatty": {
+          "state": "publisher-declared",
+          "evidence": "Chatty publisherL213",
+          "findingAndLimit": "Fonts/sizes declared, exact implementation unavailable.",
+          "runtime": "NOT_RUN"
+        }
+      }
+    },
+    {
+      "id": "A5",
+      "meaning": "Resize/reposition/lock andsavedplacement",
+      "cells": {
+        "bcm": {
+          "state": "source-supported-static",
+          "evidence": "BCM core199-204/resize10-15",
+          "findingAndLimit": "Edge/minsize control; lock/save/relogin not proved.",
+          "runtime": "NOT_RUN"
+        },
+        "prat": {
+          "state": "source-supported-static",
+          "evidence": "PRAT ChatFrames286-327/Editbox540-635",
+          "findingAndLimit": "Resizebounds/edge/native EditMode and free input lock/storage; nativewindow save/relogin not proved.",
+          "runtime": "NOT_RUN"
+        },
+        "glass": {
+          "state": "publisher-declared",
+          "evidence": "Glass publisherL196/201 and UIManager701-710",
+          "findingAndLimit": "Separateposition savehook observed; EditMode resize/lock component unread/runtime unverified.",
+          "runtime": "NOT_RUN"
+        },
+        "chatty": {
+          "state": "publisher-declared",
+          "evidence": "Chatty publisherL206",
+          "findingAndLimit": "Free resizing/moving declared; save/lock behavior unavailable.",
+          "runtime": "NOT_RUN"
+        }
+      }
+    },
+    {
+      "id": "A6",
+      "meaning": "Translucentpanel/background andclick-through behavior",
+      "cells": {
+        "bcm": {
+          "state": "unverified",
+          "evidence": "BCM fade16-29",
+          "findingAndLimit": "Existing backgroundalpha seen; Devil decorative panel clickthrough proposed.",
+          "runtime": "NOT_RUN"
+        },
+        "prat": {
+          "state": "unverified",
+          "evidence": "PRAT ChatFrames195-246/277-327",
+          "findingAndLimit": "Backgroundcolor/alpha seen; ornamental panel mouse transparency not certified.",
+          "runtime": "NOT_RUN"
+        },
+        "glass": {
+          "state": "publisher-declared",
+          "evidence": "Glass publisherL197/init102",
+          "findingAndLimit": "Per-message/nativewindow background declared/defaultdata; clickthrough not verified.",
+          "runtime": "NOT_RUN"
+        },
+        "chatty": {
+          "state": "unavailable",
+          "evidence": "Chatty source unavailable",
+          "findingAndLimit": "Themes declared but translucentpanels/clickthrough exact policy unavailable.",
+          "runtime": "NOT_RUN"
+        }
+      }
+    },
+    {
+      "id": "L1",
+      "meaning": "Relevantlinks/copy/history behavior andoptionalnonvisualchanges",
+      "cells": {
+        "bcm": {
+          "state": "source-supported-static",
+          "evidence": "BCM history6/61-107/core76-90/129-149",
+          "findingAndLimit": "Reloadcapture upto5lines despiteHistoryOFF plus keyediting/formatterhooks; URL/copy modules unread.",
+          "runtime": "NOT_RUN"
+        },
+        "prat": {
+          "state": "source-supported-static",
+          "evidence": "PRAT addon411-448/467-523/History125-189/225-279",
+          "findingAndLimit": "Coreinput/message/linkhooks and optionalcommandhistory; otherlog/copy modules unread, no no-storageclaim.",
+          "runtime": "NOT_RUN"
+        },
+        "glass": {
+          "state": "publisher-declared",
+          "evidence": "Glass publisherL178-180/188-191/init122-150",
+          "findingAndLimit": "History/whisper/spam/arrow defaults observed; actualunreadmodules notbehaviorcertified.",
+          "runtime": "NOT_RUN"
+        },
+        "chatty": {
+          "state": "publisher-declared",
+          "evidence": "Chatty publisherL209-211",
+          "findingAndLimit": "Persistent typedhistory/2500+messages/account-global declared, implementation unavailable.",
+          "runtime": "NOT_RUN"
+        }
+      }
+    },
+    {
+      "id": "S1",
+      "meaning": "Oneownerpervisualarea, no reset/globaluiScale/nickname/filter sideeffects assumed",
+      "cells": {
+        "bcm": {
+          "state": "proposed",
+          "evidence": "A1 single-owner design; BCM core/history limitations",
+          "findingAndLimit": "Do not treat fullBCM as puretheme; smallest nativeappearance owner preferred.",
+          "runtime": "NOT_RUN"
+        },
+        "prat": {
+          "state": "proposed",
+          "evidence": "A1 design; PRAT modules/options and corehooks",
+          "findingAndLimit": "Existing-addon alternative onlywithboundedmoduleconfiguration/runtime; no sourcefork or defaultbundle guarantee.",
+          "runtime": "NOT_RUN"
+        },
+        "glass": {
+          "state": "proposed",
+          "evidence": "A1 design; GLASS hybrid/instance limit",
+          "findingAndLimit": "Alternative changesrenderer/extrafeatures; not firstnative-only path.",
+          "runtime": "NOT_RUN"
+        },
+        "chatty": {
+          "state": "proposed",
+          "evidence": "A1 design; Chatty publisherreplacement/sourcegap",
+          "findingAndLimit": "Do not force replacement or assume compatibility; defer source-dependent preference.",
+          "runtime": "NOT_RUN"
+        }
+      }
+    },
+    {
+      "id": "V1",
+      "meaning": "ExactForeverfile/version/date/fileID/sourcecommit anddeclarationvsactualcodevsruntime separation",
+      "cells": {
+        "bcm": {
+          "state": "source-supported-static",
+          "evidence": "CURRENT_ACQUISITION bcm/BCM_READY",
+          "findingAndLimit": "CF9632459/Nov15/v12.1.2/Forever1.60.1 + officialreleasecommit; CFbytes unverified.",
+          "runtime": "NOT_RUN"
+        },
+        "prat": {
+          "state": "source-supported-static",
+          "evidence": "CURRENT_ACQUISITION prat/PRAT_READY",
+          "findingAndLimit": "CF9509040/Nov8/3.9.117/Forever1.60.1 + officialreleasecommit; CFbytes unverified.",
+          "runtime": "NOT_RUN"
+        },
+        "glass": {
+          "state": "source-supported-static",
+          "evidence": "CURRENT_ACQUISITION glass/GLASS_READY",
+          "findingAndLimit": "CF9653501/Nov16/1.1.6/Forever1.60.1 + tagcommit; source lacks requiredlibs, CFbytes unverified.",
+          "runtime": "NOT_RUN"
+        },
+        "chatty": {
+          "state": "publisher-declared",
+          "evidence": "CURRENT_ACQUISITION chatty + CDNfollowup",
+          "findingAndLimit": "CF9648836/Nov16/237/Forever1.60.1 known; sourcecommit/payload unavailable, not nonexistent.",
+          "runtime": "NOT_RUN"
+        }
+      }
+    }
+  ],
+  "V42Boundary": "6 loader/profile identity files fully reread; Library previousfullread not behavior judgment; monolithic core excluded/unverified",
+  "recommendation": "proposed minimal native visual theme; Prat conditional existing-addon alternative; no forced installation",
+  "allRequirementsRuntimeSatisfied": false
+}

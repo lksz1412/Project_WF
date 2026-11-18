@@ -1,0 +1,29 @@
+
+WitchHunt3DB = {
+	["profileKeys"] = {
+	},
+	["profiles"] = {
+		["Default"] = {
+			["filtered"] = {
+				[40120] = true,
+			},
+			["learn"] = false,
+			["targetonly"] = true,
+			["mfiltered"] = {
+				["format_dispel"] = true,
+				["format_fade"] = true,
+			},
+			["width"] = 355.9999813751903,
+			["font"] = "huge",
+			["fadeduration"] = 2,
+			["height"] = 129.9999992366881,
+			["timevisible"] = 3,
+			["pos"] = {
+				["y"] = 159.0000858725857,
+				["x"] = 0.7499264358182569,
+				["point"] = "CENTER",
+				["relPoint"] = "CENTER",
+			},
+		},
+	},
+}

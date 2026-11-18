@@ -1,0 +1,192 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/FrameXML\UI.xsd">
+
+ <Script file="NuguDrop_ItemID.lua"/>
+
+	<Frame name="ND_ItemID_Frame" toplevel="true" frameStrata="DIALOG" movable="true" enableMouse="true" hidden="true" parent="UIParent">
+		<Size>
+			<AbsDimension x="300" y="100"/>
+		</Size>
+
+		<Anchors>
+			<Anchor point="BOTTOM" relativeTo="NuguDropListFrame" relativePoint="TOP">
+				<Offset>
+					<AbsDimension x="0" y="5"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+
+		<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+			<BackgroundInsets>
+				<AbsInset left="5" right="5" top="0" bottom="5"/>
+			</BackgroundInsets>
+			<TileSize>
+				<AbsValue val="32"/>
+			</TileSize>
+			<EdgeSize>
+				<AbsValue val="16"/>
+			</EdgeSize>
+		</Backdrop>
+
+		<Layers>
+		<Layer level="BACKGROUND">
+			<Texture file="Interface\AddOns\NuguDrop\images\BackDrop_ItemID">
+				<Size>
+					<AbsDimension x="290" y="95"></AbsDimension>
+				</Size>
+				<Anchors>
+					<Anchor point="LEFT">
+						<Offset>
+							<AbsDimension x="5" y="0"></AbsDimension>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Texture>
+		</Layer>
+		<Layer level="ARTWORK">
+			<FontString name="ND_ItemIDFrameFormatLabel" inherits="GameFontNormal">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="20" y="-13"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</FontString>
+			<FontString name="ND_ItemIDFrameLabel" inherits="GameFontNormal">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="20" y="-35"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</FontString>
+			<FontString name="ND_ItemIDFrameWarnLabel" inherits="GameFontNormal">
+				<Anchors>
+					<Anchor point="TOP">
+						<Offset>
+							<AbsDimension x="0" y="-58"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</FontString>
+		</Layer>
+		</Layers>
+
+		<Frames>
+		<Frame name="ND_ItemID_FrameHeader_Box" inherits="OptionFrameBoxTemplate" enableMouse="true" >
+			<Size>
+				<AbsDimension x="280" y="30"/>
+			</Size>
+			<Anchors>
+				<Anchor point="LEFT" relativeTo="ND_ItemID_Frame" relativePoint="LEFT">
+					<Offset>
+						<AbsDimension x="0" y="60"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Layers>
+				<Layer level="BACKGROUND">
+					<FontString name="ND_ItemID_FrameText" inherits="GameFontHighlightLarge">
+						<Anchors>
+							<Anchor point="CENTER">
+								<Offset>
+									<AbsDimension x="9" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</FontString>
+				</Layer>
+			</Layers>
+			<Scripts>
+				<OnLoad>
+					this:SetBackdropBorderColor(153/255, 102/255, 1, 0.7);
+					this:SetBackdropColor(153/255, 102/255, 1, 0.7);
+					this:SetClampedToScreen(true);
+				</OnLoad>
+				<OnMouseDown>
+					if( arg1 == "LeftButton" ) then
+						GameTooltip:Hide();
+						getglobal(this:GetParent():GetName()):StartMoving();
+					end
+				</OnMouseDown>
+				<OnMouseUp>
+					getglobal(this:GetParent():GetName()):StopMovingOrSizing();
+				</OnMouseUp>
+			</Scripts>
+		</Frame>
+
+		<Button name="ND_ItemID_Frame_CloseButton" inherits="UIPanelCloseButton" toplevel="true">
+			<Anchors>
+				<Anchor point="CENTER" relativeTo="ND_ItemID_FrameHeader_Box" relativePoint="RIGHT">
+					<Offset>
+						<AbsDimension x="9" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+		</Button>
+
+		<EditBox name="ND_ItemID_FrameEdit" inherits="InputBoxTemplate" letters="5" historyLines="10" multiLine="false" autoFocus="false">
+			<Size>
+				<AbsDimension x="140" y="30"/>
+			</Size>
+			<Anchors>
+				<Anchor point="TOPLEFT" relativePoint="TOPRIGHT" relativeTo="ND_ItemIDFrameLabel">
+					<Offset>
+						<AbsDimension x="10" y="8"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+				<OnEnterPressed>
+					if (NuguDrop) then
+						ND_ItemID_Search();
+					end
+				</OnEnterPressed>
+			</Scripts>
+		</EditBox>
+
+		<Button name="ND_ItemID_FrameSearchButton" inherits="OptionsButtonTemplate">
+			<Size>
+				<AbsDimension x="70" y="21"/>
+			</Size>
+			<Anchors>
+				<Anchor point="TOPLEFT" relativePoint="TOPRIGHT" relativeTo="ND_ItemID_FrameEdit">
+					<Offset>
+						<AbsDimension x="0" y="-6"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+				<OnLoad>
+				</OnLoad>
+				<OnClick>
+					if (NuguDrop) then ND_ItemID_Search(); end
+				</OnClick>
+			</Scripts>
+		</Button>
+		</Frames>
+
+		<Scripts>
+			<OnLoad>
+				this:SetClampedToScreen(true);
+			</OnLoad>
+			<OnShow>
+				ND_ItemID_FrameText:SetText("누구드랍 아이템 ID 조회");
+				ND_ItemIDFrameLabel:SetText("아이템 ID");
+				ND_ItemIDFrameWarnLabel:SetText("|cffff0000경고!| 서버내에 존재하지 않는 아이템을\n여러번 연속 조회할 경우 강제종료가\n발생될 수 있습니다.(3회까지 권장)|r");
+				ND_ItemIDFrameFormatLabel:SetText("|cffA2D96F입력방식: 12345|r");
+				ND_ItemID_FrameSearchButton:SetText("검색");
+				ND_ItemID_FrameEdit:SetFocus();
+				PlaySound("igMainMenuOptionCheckBoxOn");
+			</OnShow>
+			<OnHide>
+				PlaySound("igMainMenuOptionCheckBoxOff");
+			</OnHide>
+			<OnEscapePressed> ND_ItemID_FrameEdit:ClearFocus(); </OnEscapePressed>
+			<OnMouseDown> this:StartMoving(); </OnMouseDown>
+			<OnMouseUp> this:StopMovingOrSizing(); </OnMouseUp>
+			<OnDragStop> this:StopMovingOrSizing(); </OnDragStop>
+		</Scripts>
+	</Frame>
+</Ui>

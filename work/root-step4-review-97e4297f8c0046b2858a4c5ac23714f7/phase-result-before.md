@@ -1,0 +1,53 @@
+# Phase1.3 — 옛 원형·채팅 조사 진행 기록
+
+## Summary
+
+제공 자료실의 34개 글·확보된 고유 이미지50개와 제공ZIP·추가 공개4배포본의 비교 보고서를 저장했다. 현재 Step3 독립 검수 중이며 최종 수용·Phase 완료는 아니다. Step4 현재 채팅 해결법 조사는 아직 미착수다.
+
+## Step Range
+
+Phase1.3 누적 Step3 진행 중; Step4는 Step3 검수·기록 뒤 수행. Step5 새 배치와 이후 게임 구현은 이번 발주 밖이다. Step2의 2022 기준 철회·미해결 기록은 보존한다.
+
+## Inputs
+
+현재 요청 대장 R21–36, idx45 실제 네 번째 샘플 우선·11218 미터기 제외·13140 참고만. 사용자 제공2009/6.1Alpha와 기존2022, 추가 X2 R3.4·2008 CUSTOM·BlackEdition2 Alpha·Forever V42. 4K 아래부터 적층·세 채팅창 유지, 사용자 창별 필터 미정.
+
+## Files Created
+
+Codex/docs/old-devil-reference-comparison.md(192행); old-reference/의 정적 근거·34글 읽기·그림관찰·취득/설정/선택추출 기록; handoffs/old-reference/의 작업 기록·Step3 인계·독립 검수 발주. 이 Result md/json과 PHASE_1.3_EXECUTION_LEDGER.md.
+
+## Files Updated
+
+현재 masterplan과 Phase1.3 세부계획의 R32–36 범위·원천·검증·한계, 요청 대장 반영 칸, INDEX·세션 대장. 원본 ZIP/옛 코드/개인 설정은 수정하지 않았다.
+
+## Read Coverage
+
+이번 root 복구: 실제 global AGENTS1–153와 D:/Projects/AGENTS1–80, 관련 복구·계획·분업·정독·검수·영향·보호 규칙 전문. mainplan1–363, detailplan1–251, currentrequest1–26, 이전 Step2/Result/BASELINE_STATUS 전문, 현재 보고서1–192(1–100/101–150/151–192), 정적 근거1–60와 R36 근거1–118, step3_return 전문·expanded gate 모든 필드, INDEX/SESSIONS/직전 master 복구기록 전문. 원본 코드·그림의 앞선 root 직접 확인 범위는 master-recovery-reference-controls.md, A1 실제34글/37관련파일과 원본 정적 범위는 ownlog·명세, 지정 판독50개 범위는 findings1–426. root가 모든34글·모든코드를 이 복구에서 읽었다고 주장하지 않는다. 실제 transcript 경로 미제공으로 숨은 대기열 완전성은 미검증.
+
+## Execution Evidence
+
+A1 expanded gate 실제 exit0(2026-11-18T00:11:38.916960+09:00), 보존46입력의 해시/크기 일치46. 취득·CRC·안전추출·파싱·그림관찰은 각 기록의 실제 범위만 사용, 통과한 상류시험 재실행 없음. 근거: a1-step3-expanded-gate.json과 handoffs/old-reference/iter_1/step3_return.md. 원본 Lua/EXE 실행 없음.
+
+## Validation·Gate·Confirmed
+
+Step3 자체·기계 확인 저장, 독립B /root/old_reference_audit(bada-b-auditor 설정 sol/high) 신규 발주·진행 중. 비코드③/P5 고정5+가변5 총10관점, 적대1 포함. 실제 runtime model/effort/usage/context 미관측. X2 전체 추출은 BLOCKED, 정확46개 선택 추출만 통과. 파일 취득과 최종 연구 수용·현재 게임 작동은 다르다.
+
+## Non-Changes
+
+게임 설치/코드/설정/입력/전투/reload·사용자 WTF/MacroLibrary 접근·매크로 수정·키 재배정·원본EXE/Lua 실행·원본/이전 결과 삭제·외부 게시/push/merge 없음. 기존2022 미리보기는 동결·미전달이다.
+
+## Open Issues
+
+독립 검수 미완. idx8906 이미지2개 회수 불가·미관찰. X2 목록4217 중 Windows 부적합288로 전체 추출 차단; 46개만 회수. V42 설정3개 부분 파싱으로 최종 값·총계 사용 안 함. 샘플4와 정확build/profile/render 동일성, 현재입력/필터/전투, 자산 재배포 권한 미검증.
+
+## Decision Queue
+
+이 연구를 계속하는 데 필요한 새 사용자 결정 없음. 세 채팅 역할과 4K 하단 적층·2022 기준 철회·기존15개 참고·매크로 보관 선택을 재질의하지 않는다. 옛 배포자 채널/숫자ID·화면비율은 자동 이식하지 않는다.
+
+## Next
+
+같은B의10관점 결과를 root가 실제 인용 원문과 대조→확정 중대/중간은 영향 지도 후 같은A1 수정·같은B 재확인→Step3 이력·ledger 기록→승인된 Step4 현재 Forever 채팅 지원·source 조사. 이 기록은 Step3/Phase 완료 선언이 아니다.
+
+
+### Step3 closure — 2026-11-18T00:46:21.4180796+09:00
+Step3 독립 검수 수용: 같은B의 기록된1–9관점과 현재입력전문복구 뒤10관점 완료, master확정 중대0/중간0/경미1. 원형보고서 상태문구만 수용완료로 바꾸고, 본문80의 경미L1은 triage목록에 남겼다. 원본보고서192행/SHA8AD0BF...검수연결·원문12인용일치12/12. 34글/확보50고유그림·미관찰2·X2전체BLOCKED/46subset·V42부분3·runtime/build/권한미검증 유지. R20원배치목표는 새원형Step5로이어짐을현재main에정정했고 원래요청행을이번Phase로이어받았다. Step3 이력과 raw감사2파일/triage 참조. Phase1.3은진행중이며 다음Step4, 설치/게임코드승인아님.

@@ -1,0 +1,9 @@
+------------------------------------------------------------------------
+r60674 | phanx | 2008-02-09 07:12:23 -0500 (Sat, 09 Feb 2008) | 2 lines
+Changed paths:
+   M /trunk/CML/CML.toc
+   A /trunk/CML/Locale-deDE.lua
+
+CML:
+- Added deDE translations. Thanks to whoever sent this to me, and sorry it's taken so long to add it!
+------------------------------------------------------------------------

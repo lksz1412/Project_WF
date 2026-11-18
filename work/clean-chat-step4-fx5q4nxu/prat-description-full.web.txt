@@ -1,0 +1,55 @@
+Prat 3.0 - World of Warcraft Addons - CurseForge (https://www.curseforge.com/wow/addons/prat-3-0)
+Rendered web snapshot, source positions retained; no commands executed.
+L238: ## Description
+L239: ## In loving memory of Jon Akthar (Sylvanaar)
+L240: Hello WoW community, I'm LuciferCatnip, Sylvanaar was my coworker and my mentor. It goes without saying that Jon was an amazingly talented individual. He always seemed to know everything… but he once said to me "It's not about knowing the answers, it's about asking the right questions", he always challenged me to ask me the right questions until I would arrive at the answer on my own terms.
+L241: Jon was also a champion of the open source movement, and so with special thanks to Gil from Curseforge as well as Sylvanaar's family, there's no better way to honor Sylvanaar's legacy than to keep his project going strong in the community.
+L242: If you'd like to help maintain Prat, please reach out to MysticalOS or LuciferCatnip directly.  Thank you so much.
+L243: ## About
+L244: 
+L245: Prat-3.0 is a chat enhancement addon for World of Warcraft.
+L246: 
+L247: It is made up of 30+ smaller "modules" which each provide additional functionality, and can be enabled or disabled individually.
+L248: 
+L249: In game, type /prat for a menu. Or use the icon on one of the many data broker hosts.
+L250: 
+L251: Prat has just about every feature you can think of, and then some. Really. When I get some more time, I'll try and put together a full list (Even I have lost count)
+L252: 
+L253: (Thanks to Dreamsight for this partial list)
+L254:   * Sync your chat settings across your account (Beta)
+L255:   * Machine learning powered spam filter (Beta)
+L256:   * Change arrows, buttons, mouse scroll for chat scroll, scroll speed
+L257:   * you can add player color per channel, color per level, color per class
+L258:   * timestamps (styled)
+L259:   * Whether to show timestamp (what format the timestamp should be in)
+L260:   * Whether to show players level
+L261:   * You can select the option for channel "stickys" (last channel you used you auto use when hitting enter, that sort of thing – or last thing someone said)
+L262:   * Change the looks of the chat's editbox - as well as where it appears (you can even undock it and move it to where you'd like it to be)
+L263:   * Chat fading, fading delay
+L264:   * You can change the font to a list of fonts, add an outline to it, monochrome it (if you don’t mind messing with files a bit you could probably even add other fonts to that list)
+L265:   * Change the chat frame/chat box appearance
+L266:   * Keep chat history between game sessions
+L267:   * Set channel abbreviations
+L268:   * Set brackets and color(or something instead of brackets)round player/lvl
+L269:   * Alt invite option (press keyboard “alt” button and click on the player’s name to auto inv them)
+L270:   * Raid icon
+L271:   * Invite links - click them to invite the person
+L272:   * URL copying
+L273:   * Full chat copying + copy button
+L274:   * Click timestamp to copy line
+L275:   * Configurable alerts when your name or other word is mentioned
+L276:   * Enables tell target /tt which whispers your target
+L277:   * Alias options - make macros into short commands
+L278:   * See names of players Alt characters
+L279:   * Change chat sounds (incoming and outgoing as well as per channel)
+L280:   * Achievements info and grats
+L281:   * Full chat search and search box
+L282:   * Customizable filters for advanced users
+L283:   * Show item icon next to item links and player class icon next to player names
+L284:   * Icon-only options for newcomers chat
+L285:   * Optional flashing or font color change for chat tabs when a new message comes in.
+L286: You can enable/disable all Prat modules - don't have to have the ones you don't use running
+L287: 
+L288: While trying to reduce resource utilization, it is also important to note that some people prefer the features, and don't care that an addon uses 500k more.
+L289: 
+L290: 【73†Image†media.forgecdn.net】

@@ -1,0 +1,41 @@
+------------------------------------------------------------------------
+r176 | angelike | 2008-10-29 09:35:45 +0000 (Wed, 29 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/.pkgmeta
+
+beql: - Libraries fixed (I hope)
+------------------------------------------------------------------------
+r175 | angelike | 2008-10-29 07:57:16 +0000 (Wed, 29 Oct 2008) | 7 lines
+Changed paths:
+   M /trunk/beql.toc
+   M /trunk/extra/beqlfu.lua
+   M /trunk/questlog.lua
+
+beql: - Toc Update to 3.0.2
+      - Fix Error on Load
+      - Fix Error toggle all Quests
+      - Fix Fubar-Plugin
+
+      Known issue:
+      - Jumping Miniacievment-Frame
+------------------------------------------------------------------------
+r174 | merla | 2008-10-18 02:08:14 +0000 (Sat, 18 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/questlog.lua
+
+beql: - fixed quest tracker
+------------------------------------------------------------------------
+r173 | root | 2008-09-29 21:26:28 +0000 (Mon, 29 Sep 2008) | 1 line
+Changed paths:
+   M /trunk
+   A /trunk/.pkgmeta
+
+Facilitate WowAce-on-CurseForge transition
+------------------------------------------------------------------------
+r171 | root | 2008-09-29 20:58:58 +0000 (Mon, 29 Sep 2008) | 1 line
+Changed paths:
+   D /tmp/trunk/beql
+   A /trunk (from /tmp/trunk/beql:170)
+
+Importing old repo data under /trunk
+------------------------------------------------------------------------

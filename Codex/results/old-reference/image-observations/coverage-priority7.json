@@ -1,0 +1,166 @@
+{
+  "scope": "priority batch2 corrected; full34-post manifest pending",
+  "manifests": [
+    "acquisition/priority-images.json:post45only",
+    "acquisition/priority-11218-images-v2.json",
+    "acquisition/priority-2958-images-v2.json"
+  ],
+  "manifestReferenceCount": 7,
+  "successfullyDecodedUniqueHashTotal": 7,
+  "observedHashes": [
+    "1E0C95557E8525EF2533F49CDBB6A46BEFAC55EC4BDF4A912E351939BE87CFC0",
+    "0845002AEFE13C2F1FCF2FB975525C671D66A64A9EFEE140F407D5FA1BE56A9E",
+    "F86E2FDCFCC97E791FDFA5A310CF23DDCDA26796FBAC32ABBED4E561055ADD63",
+    "304A6B36ACD94B065142B8E8ADBA1EC99787BB649885D136D5CE707C1B2D5151",
+    "9B1EAF4B274AD78213E8AF8424ACAC019CB02EB240A4E2D1FA2F376223160958",
+    "349D27A3853901A8B43195DE7715A31AD9EE9BA494CDD3BCB573B866DD86D3E8",
+    "3863A54D3453AF351026F147178F3192BF4040312ACCEFA391D5CCAD12A36F98"
+  ],
+  "observedUniqueHashCount": 7,
+  "exactDuplicateAssociations": [],
+  "failedLocalDecodeCount": 0,
+  "deadReferenceCount": 0,
+  "partialAcquisitionCount": 0,
+  "framedCloseupImageCount": 1,
+  "geometryUnclearImageCount": 7,
+  "unresolvedAcquisitionReferenceCount": 0,
+  "unobservedReferenceCount": 0,
+  "resolvedInitialMappingFailureCount": 3,
+  "sourceAssociations": [
+    {
+      "postID": 45,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "sourceURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_5258.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/1103_5258.jpg');",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-45.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-63c91ffc5fd0fa976a33.jpg",
+      "SHA256": "1E0C95557E8525EF2533F49CDBB6A46BEFAC55EC4BDF4A912E351939BE87CFC0",
+      "decodeStatus": "verified",
+      "observationState": "full_supplied_frame_observed_with_explicit_geometry_limits",
+      "wholeLayoutVisible": true,
+      "error": null
+    },
+    {
+      "postID": 45,
+      "section": "screenshot",
+      "DOMordinal": 2,
+      "sourceURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_7511.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/1103_7511.jpg');",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-45.html",
+        "selector": "screenshot img",
+        "line": 40
+      },
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-872294b062c9ecefcc9a.jpg",
+      "SHA256": "0845002AEFE13C2F1FCF2FB975525C671D66A64A9EFEE140F407D5FA1BE56A9E",
+      "decodeStatus": "verified",
+      "observationState": "full_supplied_frame_observed_with_explicit_geometry_limits",
+      "wholeLayoutVisible": true,
+      "error": null
+    },
+    {
+      "postID": 45,
+      "section": "screenshot",
+      "DOMordinal": 3,
+      "sourceURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_6784.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/1103_6784.jpg');",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-45.html",
+        "selector": "screenshot img",
+        "line": 47
+      },
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-cdd079d7e1f8c81286f2.jpg",
+      "SHA256": "F86E2FDCFCC97E791FDFA5A310CF23DDCDA26796FBAC32ABBED4E561055ADD63",
+      "decodeStatus": "verified",
+      "observationState": "full_supplied_frame_observed_with_explicit_geometry_limits",
+      "wholeLayoutVisible": true,
+      "error": null
+    },
+    {
+      "postID": 45,
+      "section": "screenshot",
+      "DOMordinal": 4,
+      "sourceURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_7276.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/1103_7276.jpg');",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-45.html",
+        "selector": "screenshot img",
+        "line": 54
+      },
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-d9ab10878c7e954fd5e4.jpg",
+      "SHA256": "304A6B36ACD94B065142B8E8ADBA1EC99787BB649885D136D5CE707C1B2D5151",
+      "decodeStatus": "verified",
+      "observationState": "full_supplied_frame_observed_with_explicit_geometry_limits",
+      "wholeLayoutVisible": true,
+      "error": null
+    },
+    {
+      "postID": 11218,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "sourceURL": "https://upload2.inven.co.kr/upload/2019/03/17/bbs/i13715800082.png",
+      "viewerLiteral": "viewImage('2019/03/17/bbs/i13715800082.png');",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-11218.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-d1220e0e4b507ab36692.png",
+      "SHA256": "9B1EAF4B274AD78213E8AF8424ACAC019CB02EB240A4E2D1FA2F376223160958",
+      "decodeStatus": "verified-full-load",
+      "observationState": "full_supplied_frame_observed_with_explicit_geometry_limits",
+      "wholeLayoutVisible": true,
+      "error": null
+    },
+    {
+      "postID": 11218,
+      "section": "screenshot",
+      "DOMordinal": 2,
+      "sourceURL": "https://upload2.inven.co.kr/upload/2019/03/17/bbs/i13441659684.png",
+      "viewerLiteral": "viewImage('2019/03/17/bbs/i13441659684.png');",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-11218.html",
+        "selector": "screenshot img",
+        "line": 40
+      },
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-089ff199ca4ee7b684af.png",
+      "SHA256": "349D27A3853901A8B43195DE7715A31AD9EE9BA494CDD3BCB573B866DD86D3E8",
+      "decodeStatus": "verified-full-load",
+      "observationState": "full_supplied_frame_observed_with_explicit_geometry_limits",
+      "wholeLayoutVisible": false,
+      "error": null
+    },
+    {
+      "postID": 2958,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "sourceURL": "https://upload.inven.co.kr/upload/2009/12/10/bbs/i27419179.jpg",
+      "viewerLiteral": "viewImage('2009/12/10/bbs/i27419179.jpg');",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\images-2958.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\sample-2958-original.jpg",
+      "SHA256": "3863A54D3453AF351026F147178F3192BF4040312ACCEFA391D5CCAD12A36F98",
+      "decodeStatus": "verified-full-load",
+      "observationState": "full_supplied_frame_observed_with_explicit_geometry_limits",
+      "wholeLayoutVisible": true,
+      "error": null
+    }
+  ],
+  "findings": "Codex/results/old-reference/image-observations/findings.md",
+  "runtime": {
+    "configuredModel": "gpt-6.1-sol",
+    "configuredEffort": "high",
+    "observedModel": "unobserved",
+    "observedEffort": "unobserved",
+    "usage": "unobserved"
+  },
+  "completionClaim": "Priority images only; no fullcatalog/all-images/runtime/pack identity/final acceptance claim"
+}

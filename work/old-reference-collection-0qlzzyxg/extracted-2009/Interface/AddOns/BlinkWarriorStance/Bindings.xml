@@ -1,0 +1,11 @@
+﻿<Bindings>
+	<Binding name="TOGGLESTANCE1" header="BLIMKWARRIORSTANCE">
+		-- do nothing
+	</Binding>
+	<Binding name="TOGGLESTANCE2">
+		-- do nothing
+	</Binding>
+	<Binding name="TOGGLESTANCE3">
+		-- do nothing
+	</Binding>
+</Bindings>

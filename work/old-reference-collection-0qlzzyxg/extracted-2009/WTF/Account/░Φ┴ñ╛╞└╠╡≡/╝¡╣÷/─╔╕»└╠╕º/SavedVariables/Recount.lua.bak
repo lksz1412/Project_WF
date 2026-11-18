@@ -1,0 +1,115 @@
+
+RecountPerCharDB = {
+	["version"] = "1.3",
+	["combatants"] = {
+		["엔카이얀"] = {
+			["GUID"] = "0x0100000002023DEE",
+			["type"] = "Self",
+			["TimeLast"] = {
+				["OVERALL"] = 1249795602,
+				["RageGain"] = 1249795602,
+			},
+			["Owner"] = false,
+			["enClass"] = "WARRIOR",
+			["TimeNeedZero"] = {
+				["RageGain"] = false,
+			},
+			["TimeData"] = {
+				["RageGain"] = {
+					{
+						1249795586, -- [1]
+						1249795614, -- [2]
+						1249795615, -- [3]
+					}, -- [1]
+					{
+						0, -- [1]
+						0.007407407407407408, -- [2]
+						0, -- [3]
+					}, -- [2]
+				},
+			},
+			["TimeWindows"] = {
+				["RageGain"] = {
+					0, -- [1]
+					0, -- [2]
+					0, -- [3]
+					0, -- [4]
+					0, -- [5]
+					0, -- [6]
+					0, -- [7]
+					0, -- [8]
+					0, -- [9]
+					0, -- [10]
+					0, -- [11]
+					0, -- [12]
+					0, -- [13]
+					0, -- [14]
+					0, -- [15]
+					0, -- [16]
+					0, -- [17]
+					0, -- [18]
+					0, -- [19]
+					0, -- [20]
+				},
+			},
+			["Name"] = "엔카이얀",
+			["LastActive"] = 1249795602,
+			["Fights"] = {
+				["CurrentFightData"] = {
+					["RageGain"] = 30,
+					["RageGained"] = {
+						["피의 분노"] = {
+							["Details"] = {
+								["엔카이얀"] = {
+									["count"] = 30,
+								},
+							},
+							["amount"] = 30,
+						},
+					},
+					["RageGainedFrom"] = {
+						["엔카이얀"] = {
+							["Details"] = {
+								["피의 분노"] = {
+									["count"] = 30,
+								},
+							},
+							["amount"] = 30,
+						},
+					},
+				},
+				["OverallData"] = {
+					["RageGain"] = 30,
+					["RageGained"] = {
+						["피의 분노"] = {
+							["Details"] = {
+								["엔카이얀"] = {
+									["count"] = 30,
+								},
+							},
+							["amount"] = 30,
+						},
+					},
+					["RageGainedFrom"] = {
+						["엔카이얀"] = {
+							["Details"] = {
+								["피의 분노"] = {
+									["count"] = 30,
+								},
+							},
+							["amount"] = 30,
+						},
+					},
+				},
+			},
+			["level"] = 80,
+			["UnitLockout"] = 1249795593,
+			["LastFightIn"] = 0,
+		},
+	},
+	["FightNum"] = 0,
+	["CombatTimes"] = {
+	},
+	["FoughtWho"] = {
+	},
+}

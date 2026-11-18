@@ -1,0 +1,20 @@
+﻿## Interface: 30000
+## Title: FuBar - |cffffffffMoney|r|cff00ff00Fu|r
+## Title-koKR: FuBar - |cffffffffMoney|r|cff00ff00Fu|r
+## Notes: Keeps track of current money and all your characters on one realm.
+## Notes-koKR: 서버내의 모든 캐릭터의 금전 이동 사항을 확인합니다.
+## Notes-zhTW: 持續追縱目前角色的金錢狀況，同時也可以顯示此伺服器上其他角色的金錢狀況。
+## Notes-esES: Informa de tu dinero actual y del resto de tus personajes en un reino.
+## Notes-ruRU: Отслеживает количество денег у всех ваших персонажей на сервере.
+## Author: phyber
+## OptionalDeps: Ace2, FuBar, LibAbacus-3.0
+## X-Embeds: Ace2, DewdropLib, FuBarPlugin-2.0, TabletLib, LibAbacus-3.0
+## SavedVariables: MoneyFuDB
+## SavedVariablesPerCharacter: MoneyFuCharDB
+## Version: v1.2
+## X-Category: Interface Enhancements
+
+embeds.xml
+Locales\locales.xml
+
+MoneyFu.lua

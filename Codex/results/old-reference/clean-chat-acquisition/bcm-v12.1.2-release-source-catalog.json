@@ -1,0 +1,607 @@
+{
+  "label": "bcm-v12.1.2-release",
+  "root": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release",
+  "inventoryPath": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\bcm-v12.1.2-release-members.json",
+  "files": [
+    {
+      "filename": "BasicChatMods/fade_Classic.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\fade_Classic.lua",
+      "bytes": 6286,
+      "SHA256": "1725F492052ADF4664EC032662F44C7C84A62B0573B83C7108B570AAB5C00368",
+      "encoding": "utf-8-sig",
+      "lines": 197
+    },
+    {
+      "filename": "BasicChatMods/BasicChatMods.toc",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\BasicChatMods.toc",
+      "bytes": 1583,
+      "SHA256": "8EBA03E73D6567D2350B8626FE963AD9F26E16FC1E1819A5A66A092B69DC60E3",
+      "encoding": "utf-8-sig",
+      "lines": 64
+    },
+    {
+      "filename": "BasicChatMods/CHANGELOG.md",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\CHANGELOG.md",
+      "bytes": 367,
+      "SHA256": "928687E5011D0CD28A55545AF6AC4E3E76A74AEE47D6C4580F75CF342F1F8632",
+      "encoding": "utf-8-sig",
+      "lines": 6
+    },
+    {
+      "filename": "BasicChatMods/justify.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\justify.lua",
+      "bytes": 359,
+      "SHA256": "66836178EAFA2A85B6293B1D8C7BD08070FDB22BA292BC2A3AC7A088DCED31A2",
+      "encoding": "utf-8-sig",
+      "lines": 17
+    },
+    {
+      "filename": "BasicChatMods/fade.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\fade.lua",
+      "bytes": 6286,
+      "SHA256": "08C5F065401B5F7197DC2B9C91754056F1B9CF5DB3FA465CCACF071F9377D674",
+      "encoding": "utf-8-sig",
+      "lines": 197
+    },
+    {
+      "filename": "BasicChatMods/editbox.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\editbox.lua",
+      "bytes": 933,
+      "SHA256": "294E9A33C06402E9194F8319593CDD7DE6E293D022A26BBE135BA6CEBEA44A2F",
+      "encoding": "utf-8-sig",
+      "lines": 30
+    },
+    {
+      "filename": "BasicChatMods/timestamp.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\timestamp.lua",
+      "bytes": 2156,
+      "SHA256": "52D2938648650C0713A64B81629E52F5BB7FC0EDE7ACB014C54A88BDB2920805",
+      "encoding": "utf-8-sig",
+      "lines": 54
+    },
+    {
+      "filename": "BasicChatMods/playernames_Wrath.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\playernames_Wrath.lua",
+      "bytes": 6368,
+      "SHA256": "B4B5C7F9AFC1BFFC5F2D1DE2053E33FB2EDF1E68970BE02375301DB2AD1BF2EE",
+      "encoding": "utf-8-sig",
+      "lines": 183
+    },
+    {
+      "filename": "BasicChatMods/history.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\history.lua",
+      "bytes": 3395,
+      "SHA256": "1DCAC5C42D91B324FFC73CD1E2290672463DADD1C8997F7157B12D4B3CBD7656",
+      "encoding": "utf-8-sig",
+      "lines": 108
+    },
+    {
+      "filename": "BasicChatMods/buttons_Classic.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\buttons_Classic.lua",
+      "bytes": 1397,
+      "SHA256": "7E09E13B6BE4320650E36FAE23F1C165625C7BE4EF39CE119F2E0F91539E1047",
+      "encoding": "utf-8-sig",
+      "lines": 32
+    },
+    {
+      "filename": "BasicChatMods/urlcopy.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\urlcopy.lua",
+      "bytes": 7082,
+      "SHA256": "8AAA4C07601266767D311791BA1DA0C6093665E82F14BA45028CD2159D2522B4",
+      "encoding": "utf-8-sig",
+      "lines": 142
+    },
+    {
+      "filename": "BasicChatMods/scrolldown.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\scrolldown.lua",
+      "bytes": 768,
+      "SHA256": "B256B07631A09FC0A75999369A85BA461BCD555B095D377C7A8BF96820254AA1",
+      "encoding": "utf-8-sig",
+      "lines": 32
+    },
+    {
+      "filename": "BasicChatMods/bnet.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\bnet.lua",
+      "bytes": 1724,
+      "SHA256": "93738F1F7AF785A2202102BA78E74478385CE73EF8D124163E8CD78CF7661BDF",
+      "encoding": "utf-8-sig",
+      "lines": 44
+    },
+    {
+      "filename": "BasicChatMods/smartgroup.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\smartgroup.lua",
+      "bytes": 461,
+      "SHA256": "56E7DBBC83BB9E783876C16B713A10A0B2C36DD96D5BAFA1E29EE5278A62F4CC",
+      "encoding": "utf-8-sig",
+      "lines": 16
+    },
+    {
+      "filename": "BasicChatMods/telltarget.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\telltarget.lua",
+      "bytes": 537,
+      "SHA256": "40D5166A09B7CE2EBDCC2E503654F83ACC173B0183AD52592995750515E8CD83",
+      "encoding": "utf-8-sig",
+      "lines": 20
+    },
+    {
+      "filename": "BasicChatMods/font.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\font.lua",
+      "bytes": 929,
+      "SHA256": "2F7722774ABA2F209AFCEABE436A8ED74CA1DDA793181D64BEF2A0235CB4FAC5",
+      "encoding": "utf-8-sig",
+      "lines": 23
+    },
+    {
+      "filename": "BasicChatMods/gmotd.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\gmotd.lua",
+      "bytes": 1025,
+      "SHA256": "15FFBCAAB10DB1A43BADB5C43E614E8F33ADD05304B8CEEC4C10FF51EC95DEC9",
+      "encoding": "utf-8-sig",
+      "lines": 29
+    },
+    {
+      "filename": "BasicChatMods/autolog.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\autolog.lua",
+      "bytes": 905,
+      "SHA256": "C9521B13A8B647475019AC269F8D4CEA55EB6AF8A34D748C01C9DA8BAB7B3EC7",
+      "encoding": "utf-8-sig",
+      "lines": 35
+    },
+    {
+      "filename": "BasicChatMods/BasicCore.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\BasicCore.lua",
+      "bytes": 6913,
+      "SHA256": "29E40DB3FA741830C2C3558934D2381182830A2D4F5698BB68BF88278FA489B0",
+      "encoding": "utf-8-sig",
+      "lines": 208
+    },
+    {
+      "filename": "BasicChatMods/chatcopy.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\chatcopy.lua",
+      "bytes": 3452,
+      "SHA256": "98745FA2878BF7B19B703C25FF677B985A69821A41C926065D3EE8C10FE61612",
+      "encoding": "utf-8-sig",
+      "lines": 91
+    },
+    {
+      "filename": "BasicChatMods/playernames.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\playernames.lua",
+      "bytes": 6559,
+      "SHA256": "5AB2898062A9DF75821E86358B2D0BA75FB346BFECECF01B78D22B5418C503A2",
+      "encoding": "utf-8-sig",
+      "lines": 184
+    },
+    {
+      "filename": "BasicChatMods/Locales/esES.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\Locales\\esES.lua",
+      "bytes": 4588,
+      "SHA256": "0E890A935626B0271D24AE906DD8507B05952BEE2F277D70245BA053ECAB470C",
+      "encoding": "utf-8-sig",
+      "lines": 53
+    },
+    {
+      "filename": "BasicChatMods/Locales/enUS.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\Locales\\enUS.lua",
+      "bytes": 3952,
+      "SHA256": "5BAC29D17EA26DF78EDF242DE4091D6E251249A3B84C0D9B2EE96B4A60DE8EAA",
+      "encoding": "utf-8-sig",
+      "lines": 61
+    },
+    {
+      "filename": "BasicChatMods/Locales/frFR.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\Locales\\frFR.lua",
+      "bytes": 3335,
+      "SHA256": "6EC65333C49746CFE57960D0961E090610D5BCBCC287CE259DAC3F01C80A92C6",
+      "encoding": "utf-8-sig",
+      "lines": 53
+    },
+    {
+      "filename": "BasicChatMods/Locales/zhCN.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\Locales\\zhCN.lua",
+      "bytes": 3869,
+      "SHA256": "764F8AD3D13C4211122648C049A891B2460C0DFBEB63B057726665D689F65B69",
+      "encoding": "utf-8-sig",
+      "lines": 53
+    },
+    {
+      "filename": "BasicChatMods/Locales/koKR.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\Locales\\koKR.lua",
+      "bytes": 4880,
+      "SHA256": "7E9F3200003A0AF5024119724A13756388F4A109934185B0435A48807B7B04C9",
+      "encoding": "utf-8-sig",
+      "lines": 62
+    },
+    {
+      "filename": "BasicChatMods/Locales/ruRU.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\Locales\\ruRU.lua",
+      "bytes": 7246,
+      "SHA256": "4B16CB63D371AEFCC8C2C5D7EA446ED59940BEB63932D5FFE6968BBF074FD15A",
+      "encoding": "utf-8-sig",
+      "lines": 53
+    },
+    {
+      "filename": "BasicChatMods/Locales/ptBR.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\Locales\\ptBR.lua",
+      "bytes": 1304,
+      "SHA256": "4EB690EADEF9F14C8BB100E1575E16E16E51A6C2922C8AA5CB7FF77DCA323C6F",
+      "encoding": "utf-8-sig",
+      "lines": 53
+    },
+    {
+      "filename": "BasicChatMods/Locales/itIT.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\Locales\\itIT.lua",
+      "bytes": 1304,
+      "SHA256": "5B0063B822B79901E03804CD94251417DA24F05084B56E11D5B8237F54E1E56D",
+      "encoding": "utf-8-sig",
+      "lines": 53
+    },
+    {
+      "filename": "BasicChatMods/Locales/zhTW.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\Locales\\zhTW.lua",
+      "bytes": 3675,
+      "SHA256": "8308F4440EACFFBF774FA2ACE612292489592EC3208EA6C037F95B1845332820",
+      "encoding": "utf-8-sig",
+      "lines": 53
+    },
+    {
+      "filename": "BasicChatMods/Locales/deDE.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\Locales\\deDE.lua",
+      "bytes": 4631,
+      "SHA256": "93C36F108F7A57D8117E05C81520B9879B1C00557C45042FE85282A85F57BE26",
+      "encoding": "utf-8-sig",
+      "lines": 57
+    },
+    {
+      "filename": "BasicChatMods/sticky.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\sticky.lua",
+      "bytes": 509,
+      "SHA256": "0A7EAC28A2D3F7A5BC8725D6D8C6C70FE45E914C9BAA16E52A5D51C4AF3432D2",
+      "encoding": "utf-8-sig",
+      "lines": 23
+    },
+    {
+      "filename": "BasicChatMods/resize.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\resize.lua",
+      "bytes": 438,
+      "SHA256": "11DD73213676EE5649CAA6FB583EC5C26A2E0F58494E622C056FF0025AB4C1D4",
+      "encoding": "utf-8-sig",
+      "lines": 18
+    },
+    {
+      "filename": "BasicChatMods/AltInvite.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\AltInvite.lua",
+      "bytes": 1574,
+      "SHA256": "3786091FE62CEDF8D6F64B3AC74CE59FEF5BCE8D43135A9F960CE7B81B70F02C",
+      "encoding": "utf-8-sig",
+      "lines": 42
+    },
+    {
+      "filename": "BasicChatMods/BasicConfig.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\BasicConfig.lua",
+      "bytes": 36112,
+      "SHA256": "5C9CAC96969F46CB4602263C7683D1CE99BEF814A4DB143C741F6FBC5B6201BA",
+      "encoding": "utf-8-sig",
+      "lines": 852
+    },
+    {
+      "filename": "BasicChatMods/highlight.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\highlight.lua",
+      "bytes": 3511,
+      "SHA256": "50464B638D55AC689C2E437C09FF477B3613BFC6F9F22557652B50901AF95F49",
+      "encoding": "utf-8-sig",
+      "lines": 89
+    },
+    {
+      "filename": "BasicChatMods/buttons.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\buttons.lua",
+      "bytes": 1287,
+      "SHA256": "56A5C8157C648967AE26299B9B1376771D61DDC9936DD3457CC003EE240F2E7D",
+      "encoding": "utf-8-sig",
+      "lines": 29
+    },
+    {
+      "filename": "BasicChatMods/channelnames.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\channelnames.lua",
+      "bytes": 3698,
+      "SHA256": "99ADCE522D78798548F3C75007969FCB02BB18B8B6A03C9B023B1ADE966D0C8A",
+      "encoding": "utf-8-sig",
+      "lines": 106
+    }
+  ],
+  "TOCs": [
+    {
+      "filename": "BasicChatMods/BasicChatMods.toc",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\BasicChatMods.toc",
+      "bytes": 1583,
+      "SHA256": "8EBA03E73D6567D2350B8626FE963AD9F26E16FC1E1819A5A66A092B69DC60E3",
+      "encoding": "utf-8-sig",
+      "lines": 64,
+      "metadata": [
+        {
+          "line": 1,
+          "literal": "## Interface: 11508, 11509, 16001, 20505, 20506, 30405, 38002, 40402, 50503, 50504, 120100, 120105, 120107"
+        },
+        {
+          "line": 2,
+          "literal": "## Title: BasicChatMods"
+        },
+        {
+          "line": 3,
+          "literal": "## Author: Funkeh"
+        },
+        {
+          "line": 4,
+          "literal": "## Version: v12.1.2"
+        },
+        {
+          "line": 5,
+          "literal": "## Notes: Basic Chat Mods"
+        },
+        {
+          "line": 6,
+          "literal": "## Notes-zhCN: Basic Chat Mods"
+        },
+        {
+          "line": 7,
+          "literal": "## Notes-zhTW: Basic Chat Mods"
+        },
+        {
+          "line": 8,
+          "literal": "## Notes-deDE: Basic Chat Mods"
+        },
+        {
+          "line": 9,
+          "literal": "## Notes-frFR: Basic Chat Mods"
+        },
+        {
+          "line": 10,
+          "literal": "## Notes-itIT: Basic Chat Mods"
+        },
+        {
+          "line": 11,
+          "literal": "## Notes-koKR: Basic Chat Mods"
+        },
+        {
+          "line": 12,
+          "literal": "## Notes-ruRU: Basic Chat Mods"
+        },
+        {
+          "line": 13,
+          "literal": "## Notes-ptBR: Basic Chat Mods"
+        },
+        {
+          "line": 14,
+          "literal": "## Notes-esES: Basic Chat Mods"
+        },
+        {
+          "line": 15,
+          "literal": "## Notes-esMX: Basic Chat Mods"
+        },
+        {
+          "line": 16,
+          "literal": "## SavedVariables: bcmDB"
+        },
+        {
+          "line": 18,
+          "literal": "## X-Credits: Rabbit & Ammo (SimpleChatMods)"
+        },
+        {
+          "line": 19,
+          "literal": "## X-Category: Chat/Communication"
+        },
+        {
+          "line": 20,
+          "literal": "## X-License: All Rights Reserved: You are free to fork and modify on GitHub, please ask us about anything else."
+        },
+        {
+          "line": 21,
+          "literal": "## X-Curse-Project-ID: 13504"
+        },
+        {
+          "line": 22,
+          "literal": "## X-WoWI-ID: 11290"
+        },
+        {
+          "line": 23,
+          "literal": "## X-Wago-ID: 9rN4PrND"
+        }
+      ],
+      "loadOrder": [
+        {
+          "line": 25,
+          "literal": "Locales\\enUS.lua",
+          "exists": true
+        },
+        {
+          "line": 26,
+          "literal": "Locales\\deDE.lua",
+          "exists": true
+        },
+        {
+          "line": 27,
+          "literal": "Locales\\koKR.lua",
+          "exists": true
+        },
+        {
+          "line": 28,
+          "literal": "Locales\\frFR.lua",
+          "exists": true
+        },
+        {
+          "line": 29,
+          "literal": "Locales\\ruRU.lua",
+          "exists": true
+        },
+        {
+          "line": 30,
+          "literal": "Locales\\zhCN.lua",
+          "exists": true
+        },
+        {
+          "line": 31,
+          "literal": "Locales\\esES.lua",
+          "exists": true
+        },
+        {
+          "line": 32,
+          "literal": "Locales\\zhTW.lua",
+          "exists": true
+        },
+        {
+          "line": 33,
+          "literal": "Locales\\itIT.lua",
+          "exists": true
+        },
+        {
+          "line": 34,
+          "literal": "Locales\\ptBR.lua",
+          "exists": true
+        },
+        {
+          "line": 36,
+          "literal": "BasicCore.lua",
+          "exists": true
+        },
+        {
+          "line": 37,
+          "literal": "BasicConfig.lua",
+          "exists": true
+        },
+        {
+          "line": 39,
+          "literal": "history.lua",
+          "exists": true
+        },
+        {
+          "line": 41,
+          "literal": "AltInvite.lua",
+          "exists": true
+        },
+        {
+          "line": 42,
+          "literal": "autolog.lua",
+          "exists": true
+        },
+        {
+          "line": 43,
+          "literal": "bnet.lua",
+          "exists": true
+        },
+        {
+          "line": 44,
+          "literal": "buttons.lua [AllowLoadGameType mainline]",
+          "exists": false
+        },
+        {
+          "line": 45,
+          "literal": "buttons_Classic.lua [AllowLoadGameType classic]",
+          "exists": false
+        },
+        {
+          "line": 46,
+          "literal": "channelnames.lua",
+          "exists": true
+        },
+        {
+          "line": 47,
+          "literal": "chatcopy.lua",
+          "exists": true
+        },
+        {
+          "line": 48,
+          "literal": "editbox.lua",
+          "exists": true
+        },
+        {
+          "line": 49,
+          "literal": "fade.lua [AllowLoadGameType mainline]",
+          "exists": false
+        },
+        {
+          "line": 50,
+          "literal": "fade_Classic.lua [AllowLoadGameType classic]",
+          "exists": false
+        },
+        {
+          "line": 51,
+          "literal": "font.lua",
+          "exists": true
+        },
+        {
+          "line": 52,
+          "literal": "gmotd.lua",
+          "exists": true
+        },
+        {
+          "line": 53,
+          "literal": "highlight.lua",
+          "exists": true
+        },
+        {
+          "line": 54,
+          "literal": "justify.lua",
+          "exists": true
+        },
+        {
+          "line": 55,
+          "literal": "playernames.lua [AllowLoadGameType mainline, vanilla, tbc]",
+          "exists": false
+        },
+        {
+          "line": 56,
+          "literal": "playernames_Wrath.lua [AllowLoadGameType wrath, cata, mists]",
+          "exists": false
+        },
+        {
+          "line": 57,
+          "literal": "resize.lua",
+          "exists": true
+        },
+        {
+          "line": 58,
+          "literal": "scrolldown.lua",
+          "exists": true
+        },
+        {
+          "line": 59,
+          "literal": "smartgroup.lua",
+          "exists": true
+        },
+        {
+          "line": 60,
+          "literal": "sticky.lua",
+          "exists": true
+        },
+        {
+          "line": 61,
+          "literal": "telltarget.lua",
+          "exists": true
+        },
+        {
+          "line": 62,
+          "literal": "timestamp.lua",
+          "exists": true
+        },
+        {
+          "line": 63,
+          "literal": "urlcopy.lua",
+          "exists": true
+        }
+      ]
+    }
+  ],
+  "XMLloadReferences": [],
+  "READMEfullText": [],
+  "configDefaultNameCandidates": [
+    {
+      "filename": "BasicChatMods/BasicConfig.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\BasicConfig.lua",
+      "bytes": 36112,
+      "SHA256": "5C9CAC96969F46CB4602263C7683D1CE99BEF814A4DB143C741F6FBC5B6201BA",
+      "encoding": "utf-8-sig",
+      "lines": 852
+    }
+  ],
+  "noCodeExecuted": true,
+  "noWholeCodeAuditClaim": true
+}

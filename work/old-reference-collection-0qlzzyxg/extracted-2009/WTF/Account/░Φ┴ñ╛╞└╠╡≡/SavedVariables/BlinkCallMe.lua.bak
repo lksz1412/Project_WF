@@ -1,0 +1,17 @@
+
+bcmDB = {
+	["callme"] = {
+		["display"] = "default",
+		["enable"] = true,
+		["exceptChannels"] = {
+		},
+		["names"] = {
+		},
+	},
+	["whosaid"] = {
+		["display"] = "default",
+		["enable"] = true,
+		["who"] = {
+		},
+	},
+}

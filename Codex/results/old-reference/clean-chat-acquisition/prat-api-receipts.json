@@ -1,0 +1,47 @@
+[
+  {
+    "finalURL": "https://api.github.com/repos/Legacy-of-Sylvanaar/prat-3-0",
+    "time": "2026-11-17T16:05:25.1499702Z",
+    "contentType": "application/json; charset=utf-8",
+    "rateRemaining": "55",
+    "HTTP": 200,
+    "sourceURL": "https://api.github.com/repos/Legacy-of-Sylvanaar/prat-3-0",
+    "URLbasis": "API endpoint derived from literal official CF linked GitHub repository",
+    "localpath": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\prat-repo.json",
+    "attempts": 1,
+    "commandExitCode": 0,
+    "state": "acquired",
+    "bytes": 17710,
+    "SHA256": "EB28824B18FC16C363A184A346A732AC504DB030B317E4DA3F5B7CDD9706210B"
+  },
+  {
+    "finalURL": "https://api.github.com/repos/Legacy-of-Sylvanaar/prat-3-0/releases?per_page=5",
+    "time": "2026-11-17T16:05:26.2238785Z",
+    "contentType": "application/json; charset=utf-8",
+    "rateRemaining": "54",
+    "HTTP": 200,
+    "sourceURL": "https://api.github.com/repos/Legacy-of-Sylvanaar/prat-3-0/releases?per_page=5",
+    "URLbasis": "API endpoint derived from literal official CF linked GitHub repository",
+    "localpath": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\prat-releases.json",
+    "attempts": 1,
+    "commandExitCode": 0,
+    "state": "acquired",
+    "bytes": 27669,
+    "SHA256": "1DFC2799E85193F697D42695D97FA57871850597AB8C73E8BBE2AA73BDD363CA"
+  },
+  {
+    "finalURL": "https://api.github.com/repos/Legacy-of-Sylvanaar/prat-3-0/tags?per_page=12",
+    "time": "2026-11-17T16:05:27.0974731Z",
+    "contentType": "application/json; charset=utf-8",
+    "rateRemaining": "53",
+    "HTTP": 200,
+    "sourceURL": "https://api.github.com/repos/Legacy-of-Sylvanaar/prat-3-0/tags?per_page=12",
+    "URLbasis": "API endpoint derived from literal official CF linked GitHub repository",
+    "localpath": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\prat-tags.json",
+    "attempts": 1,
+    "commandExitCode": 0,
+    "state": "acquired",
+    "bytes": 5400,
+    "SHA256": "F72917347D91F2F4173E5850C78EB521C5FB3C4A8F8A99F3A65FF1E108303520"
+  }
+]

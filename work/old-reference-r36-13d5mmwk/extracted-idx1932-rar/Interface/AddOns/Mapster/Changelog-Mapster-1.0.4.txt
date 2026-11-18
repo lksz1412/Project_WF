@@ -1,0 +1,846 @@
+commit bf6cd0c7be7e7cfcb636f8c8b472c42ebbcf17a4
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Tue Oct 14 23:36:50 2008 +0200
+
+    Adjust .toc for release
+
+commit 5c4a4a6a83dd57f547130e6165f0ebcf6f99c5bf
+Merge: dbcc705... 93b6f75...
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sat Oct 11 23:41:12 2008 +0200
+
+    Merge branch 'master' into wrath
+
+commit 93b6f7570180b27bd36054399a504b8bc984c220
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sat Oct 11 23:37:34 2008 +0200
+
+    Add Alpha configuration to the overlay color configuration
+
+commit dbcc70575b453b74306612c4d79ab4873f7d7a71
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Tue Sep 30 09:06:30 2008 +0200
+
+    Fixed .pkgmeta syntax
+
+commit f7dac73d1c3ac3dda5f8de1aa1198d7a837770af
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Tue Sep 30 09:05:57 2008 +0200
+
+    Added .pkgmeta file
+
+commit 6e7e0e681dd5955b1fb1fcae88bd2fe2185db788
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Tue Sep 30 09:06:30 2008 +0200
+
+    Fixed .pkgmeta syntax
+
+commit e271f386181f6bccdf75e72aeaac4a58ac055b55
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Tue Sep 30 09:05:57 2008 +0200
+
+    Added .pkgmeta file
+
+commit 25b9132263eb8b6acf65f55a38667c3e95f22863
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Mon Sep 29 15:25:42 2008 +0200
+
+    Updated FogClear data for Eastern Plaguelands
+
+commit deae8dedf21959f84cdf1fd223aadabcefc0f801
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sat Sep 20 15:30:56 2008 +0200
+
+    Added Debug mode to FogClear module
+    The debug mode will output all undiscovered subzones in the Database to the chatframes. Mostly usefull to detect inconsistent data thats no longer used by the game itself
+
+commit 25238dd4791bf08b365fc00afb0e2da1f7232a18
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sat Sep 20 14:56:21 2008 +0200
+
+    Updated Blizzard API calls for latest patch in Blizzard Options Integration
+    Build 8962 changed InterfaceOptions_OpenToFrame to InterfaceOptions_OpenToCategory. [1]
+    
+    [1]: http://forums.worldofwarcraft.com/thread.html?topicId=8202271194&sid=1&pageNo=11#202
+
+commit f3e2702a19be98babb8242e926631cacc3f3fa40
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sun Sep 14 13:39:31 2008 +0200
+
+    Added Icecrown FogClear Data
+
+commit 1191535a710d8245b2e17977360504de6a421dd9
+Author: next96 <next96@48e1f902-e210-0410-a839-a0138e9d5bd5>
+Date:   Mon Sep 8 10:38:24 2008 +0000
+
+    - Update locale koKR
+
+commit 4be85e59cd968bb85ffd82b7167b35e3614fc463
+Author: pettigrow <pettigrow@48e1f902-e210-0410-a839-a0138e9d5bd5>
+Date:   Mon Sep 8 09:07:17 2008 +0000
+
+    - frFR Update
+    - Updated externals
+
+commit c7179380fb52ef72b1ac829caae4145f25b66fe6
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Mon Sep 8 06:28:08 2008 +0000
+
+    add a reset-own-data button to fogclear module
+
+commit 7ea03ed125dc24d20f3be8897b5fea332e1330e3
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Mon Sep 8 06:13:42 2008 +0000
+
+    re-parse of full FogClear Data for latest build
+
+commit c2f933315e53d3ae1523deaab60a4a09d050526c
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sun Aug 31 21:53:02 2008 +0000
+
+    Map Data for Crystal Song Forest and fixed Storm Peaks data
+
+commit d870928f65e4340c5758565753c3723fb8f38f2c
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Thu Aug 28 11:38:47 2008 +0000
+
+    Sholazar and Storm Peaks Data for FogClear
+    - Note: There seems to be a glitch in the Storm Peaks textures that seems to be a error on Blizzards ends in the current beta revision
+
+commit 2c53740d73310e8891430e69a51afd04f719dae0
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Thu Aug 14 07:18:34 2008 +0000
+
+    update FogClear of Borean Tundra for latest patch
+
+commit 852e6e1074fb81c9dbc1f0b500f6a5729e62560c
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Wed Aug 13 19:33:18 2008 +0000
+
+    FogClear update for EPL to add the new DK starting zone
+
+commit efb5b8ad70578b3576726b528316eb962a28fe55
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Wed Aug 13 11:06:23 2008 +0000
+
+    bump version in .toc
+
+commit a94dd525bb82d69187a04b098cb567c5e8f685cb
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Wed Aug 13 10:48:53 2008 +0000
+
+    small tweaks
+
+commit 51faa4fdb535758c04617f0de85619e41c45a333
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Wed Aug 13 10:34:17 2008 +0000
+
+    FogClear data for Zul'Drak and Grizzly Hills
+
+commit af50297f60cf6ba275c7cb686258d4cb19ccbe5d
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sun Aug 10 01:30:36 2008 +0000
+
+    FogClear data for Dragonblight
+
+commit 68978611ce7b2332243886e9c5e3d8825be9af4b
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sun Aug 10 01:19:08 2008 +0000
+
+    FogClear data for Borean Tundra
+
+commit dafa899d07797bf3ae2204c096548baacaccd47e
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sun Aug 10 00:53:51 2008 +0000
+
+    WotLK FogClear update
+    - howling fjord complete
+    - updates to EPL
+
+commit 9623f4032c0466565219c0e15987667a119305cd
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Wed Aug 6 15:39:19 2008 +0000
+
+    fix interface version and addonloader tags in .toc
+
+commit 202d2d6d1d577456181a74d64fc8da7323a48c1d
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Wed Aug 13 10:57:42 2008 +0000
+
+    bump version in .toc
+
+commit f73a7a5ec895aeef46ad4b75f17cd3131d23564c
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Wed Aug 13 10:51:07 2008 +0000
+
+    apply tweaks here too
+
+commit 363d918cfb8a126f11cc7488e03a16dba53ceb7d
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sat Aug 9 12:38:27 2008 +0000
+
+    update fogclear coordinates
+
+commit ecfe882d9c84ced359f38e18056d65e5c27f8b7c
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Tue Aug 5 10:31:41 2008 +0000
+
+    fix dropdowns for 3.0
+
+commit 479d89dff91da8c2268b395c9bf01bd82b747053
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Tue Aug 5 09:13:23 2008 +0000
+
+    eliminate icon update lag when group icons is enabled
+
+commit cae4823c9ddf64579a2cb549f8a6d504bf35c3de
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Thu Jul 24 22:07:24 2008 +0000
+
+    fix some logic in GroupIcons
+
+commit 9ab356f7f47196f6aee21622a3a2ff2122d6b805
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Tue Jul 22 14:39:23 2008 +0000
+
+    add throttling to the GroupIcons module to prevent excessive cpu usage
+
+commit dd441698538482286762bfaa97ccc61ee09ec49d
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Wed Jul 16 18:16:42 2008 +0000
+
+    revert some change
+
+commit 753a062fcb6f0601aa82eae355207d9336cc5d6a
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Wed Jul 16 11:46:46 2008 +0000
+
+    dont nil out the UIPanelWindows reference of the WorldMapFrame, seems to not be needed anymore and avoids some rare taint
+
+commit f61a52d8b7aeace55a0f49fa616d54c8efc8ce11
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sat Jun 14 13:47:33 2008 +0000
+
+    house keeping
+
+commit cdca0c3d072a585ef7706d51e29855c49763cccc
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Mon Jun 9 09:43:19 2008 +0000
+
+    update fog clear db
+
+commit ebc9a551bed730a07a4939a7b1449dc3266a0454
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Mon Jun 9 09:30:39 2008 +0000
+
+    use new ACD features
+
+commit 9db01b655488f00f742822a7a1f452453e8c64fa
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sat May 3 21:10:37 2008 +0000
+
+    set the map frame to toplevel so clicking it raises it above all other frames
+
+commit 0da26a93ace7b6c4a46cd24c6c504fcd120f0af6
+Author: cwdg <cwdg@48e1f902-e210-0410-a839-a0138e9d5bd5>
+Date:   Sat Mar 29 12:37:45 2008 +0000
+
+    -Update zhCN locale
+
+commit e91769f8cc4576bb04f83756d8c12fa29f6c1854
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Fri Mar 28 15:35:09 2008 +0000
+
+    add missing externals
+
+commit f941e9d290894deaee29d7616579e2ed891fa2c1
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Wed Mar 26 11:11:19 2008 +0000
+
+    always set config strata
+
+commit 23885aa5e5bd9ddefe053b2d8d89811af4dbb0e5
+Merge: e71863f... 8cb48ce...
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Wed Mar 26 09:03:22 2008 +0000
+
+    merge 2.4 branch
+
+commit 8cb48ceac3d0fc0b98bb33ecc9244cd55cc79784
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Fri Mar 21 11:15:34 2008 +0000
+
+    change Mapster button on the WorldMapFrame to open the 2.4 options dialog
+
+commit e71863fb125f580be37640b41591597fd0daf268
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Thu Mar 20 12:30:38 2008 +0000
+
+    bail out of :Refresh if the module is disabled
+
+commit f702c8a044c60ca51b9c14c910df5a4c6c5b7c1d
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Mon Mar 17 15:01:08 2008 +0000
+
+    use functions for config generation
+
+commit 1338682a9a3b2f339488af4d340be0d4fce26f75
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Tue Mar 11 11:57:55 2008 +0000
+
+    2.4 options panel
+
+commit c4a9c261938628c7aeeb9aa6cdbe49df9ccfd3b5
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Tue Mar 11 11:43:35 2008 +0000
+
+    2.4 branch
+
+commit 7b8f7ae86b65d9175a939d03744d6a6176fa0e0e
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Wed Mar 5 09:24:55 2008 +0000
+
+    zhTW locale from NightOwl on the forums
+
+commit 20faae8c369f96f65515f7835d90a4d32fbf44c0
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Tue Mar 4 08:43:10 2008 +0000
+
+    small tweak to Coordinates module
+
+commit 7d40f5888b3c4c34c01e92c6b5934e29d052418e
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sat Mar 1 14:23:39 2008 +0000
+
+    remove zhCN locale again and add a notice to all locale files about UTF8 (plus one "control char" in UTF8 so anyone knows when its broken)
+
+commit c1aabfdeb271019af13ae59a6603299f890e2dbf
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sat Mar 1 13:48:45 2008 +0000
+
+    dont use the UTF8 BOM Header
+
+commit 85952065ce7201cf868f5ab2e8eded7f5f1c12bb
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sat Mar 1 13:46:31 2008 +0000
+
+    change all locale files to UTF8, zhCN needs to re-do translations i guess, was submited as ASCII
+
+commit de0521878eccd13a7de161584282a1fb7dad4696
+Author: cwdg <cwdg@48e1f902-e210-0410-a839-a0138e9d5bd5>
+Date:   Wed Feb 27 13:59:47 2008 +0000
+
+    update zhCN local
+
+commit 0d381ed5e0d09954adf0aed5a4c0f3264cf81750
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Wed Feb 27 13:27:09 2008 +0000
+
+    tweak zone traversal code
+
+commit 2545f6482822c3026921f86730d576696c635170
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Thu Feb 21 12:09:31 2008 +0000
+
+    switch to "Default" profile as default profile!
+
+commit 273fd7b26402b91d50e6aa537b4939253db082d4
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Thu Feb 21 11:03:09 2008 +0000
+
+    add 2 newlines to the local so the line numbers on the localizations match up
+
+commit 507f9be3153bd32399412c8d02adc1bdd68e3af4
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sun Feb 17 14:43:53 2008 +0000
+
+    add sunwell island to the FogClear module
+
+commit 81238e17a37525b3ee41a7ef8ae0425d9089b6cb
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sat Feb 16 13:48:08 2008 +0000
+
+    core doesnt need AceHook anymore, FogClear does, however, so still in externals
+
+commit b4800a7b5308645f579186ad087f507c3024953c
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sat Feb 16 13:46:07 2008 +0000
+
+    remove hook of CloseSpecialWindows and let blizzy code handle that on its own
+
+commit 199c4008671ef6d85cec1b120214fa67e6768429
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Mon Feb 11 07:21:29 2008 +0000
+
+    deDE locale by Farook
+
+commit 36aa314e3cca76354c31d76523e3a2f8632b672e
+Author: next96 <next96@48e1f902-e210-0410-a839-a0138e9d5bd5>
+Date:   Sun Feb 10 06:12:59 2008 +0000
+
+    - Add locale koKR
+
+commit d8984f161189afc4510e2828368cab6003bd7793
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sat Feb 9 16:34:29 2008 +0000
+
+    add X-Embeds until a decision is reached how to embed/disembed Ace3
+
+commit f5e4b2cfb851b23ced5390f50525b27a264f231c
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Tue Feb 5 18:10:34 2008 +0000
+
+    small tweak
+
+commit c6196c08c43b5f21aec668a4239942055fdfb5b5
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Tue Feb 5 18:06:04 2008 +0000
+
+    update the worldmaps when changing zone
+
+commit 0263771a9c523fc3592e1e3129bb1ed0ad7e399b
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Mon Feb 4 15:31:53 2008 +0000
+
+    add AceLocale-3.0 to externals
+
+commit c179cbbf4f39bab2dddc4ad67f4b4dd92f8fd94d
+Author: next96 <next96@48e1f902-e210-0410-a839-a0138e9d5bd5>
+Date:   Mon Feb 4 15:21:21 2008 +0000
+
+    - Missing Library added (AceLocale-3.0)
+
+commit 56fa81ef84483aebe796c348f0359a68cdea2d92
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Mon Feb 4 12:44:21 2008 +0000
+
+    add AddonLoader tags
+
+commit 2c60e75a0f9e067f62ca761f11971109ba8b7036
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Mon Feb 4 12:08:37 2008 +0000
+
+    improve Refresh handling in Mapster config
+
+commit 6ca7e7b63c5f3b29ce42d3849da96a81bd0fd123
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Mon Feb 4 11:58:59 2008 +0000
+
+    fix error with setting overlay color, thanks Killmore
+
+commit 9fe5f6331f0ccb33be4816b82e8c06840cb278fb
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Mon Feb 4 11:55:23 2008 +0000
+
+    completly reset all textures when disabling FogClear
+
+commit 45286acb16f1c081f63e87073279ea649bab6f55
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Mon Feb 4 11:44:29 2008 +0000
+
+    fix typo
+
+commit dda9df0ba76f429146121aa09557bce3ae979d39
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Mon Feb 4 11:42:55 2008 +0000
+
+    make sure to update all maps on load
+
+commit 22151c26892e5dbf3362bf4677d60d1f3a6195d5
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Mon Feb 4 11:41:22 2008 +0000
+
+    Ace3 handles unregister/unhook on disabling my modules, my bad :)
+
+commit afa9b913f05bc898ed10e8a5f5b3d9175c8b8e01
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Mon Feb 4 11:35:19 2008 +0000
+
+    unregister events in OnDisable
+
+commit ce3bf473cf16205363a44e89125be6c3597a5446
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Mon Feb 4 11:32:24 2008 +0000
+
+    add AceEvent-3.0 to FogClear module
+
+commit 10543047ffd4be3738fd8f65e87e159ff958404e
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Mon Feb 4 11:03:33 2008 +0000
+
+    move to trunk
+
+commit 3d81acec6a1d7ff998448e1c9f46dfd05b4f7973
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Mon Feb 4 11:00:34 2008 +0000
+
+    - fix FogClear module on BattlefieldMinimap frame
+    - remove embeds.xml
+
+commit e8661be375c6b960785c741a4282a7de038dff7d
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sun Feb 3 19:26:37 2008 +0000
+
+    update externals to Ace3 trunk
+
+commit 3c1b4f3b59b296722a5e0c6a0ad0d5da6b8e71e5
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sun Feb 3 16:30:26 2008 +0000
+
+    update externals
+
+commit a7f444ddc733ae83df008106b91af57dbf9d50f5
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Thu Jan 24 23:19:02 2008 +0000
+
+    fix typo, doh
+
+commit 4120ccf0cf6f8a8d64c960d29be054a7a5360cb9
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Thu Jan 24 23:18:02 2008 +0000
+
+    make sure we have a tree childgroup if some addon inherits our config table ( like /ace3 )
+
+commit 5be35572258105b59accc706e441d58c6bb821f1
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Thu Jan 24 18:53:49 2008 +0000
+
+    add AceGUI and AceConfig externals
+
+commit 0e460e781f722d9ad2501dfb5355b54e1036b196
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Thu Jan 24 12:13:31 2008 +0000
+
+    add all locale files to the .toc
+
+commit 98d2104101f866dcda5fd2d5641a82266cb1ba0f
+Author: pettigrow <pettigrow@48e1f902-e210-0410-a839-a0138e9d5bd5>
+Date:   Thu Jan 24 12:11:06 2008 +0000
+
+    frFR Update
+
+commit c35ab09bd9ecebf9f4ebbcd8dc8f043523394b46
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Thu Jan 24 11:34:57 2008 +0000
+
+    add empty locale files, translators can work on those now :)
+
+commit 4559af77050c1be521bf41ff2e2514dc5d9b0839
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Thu Jan 24 11:20:47 2008 +0000
+
+    move all strings into AceLocale for translations
+
+commit 851449a2ec3ffce6e89daa84daea5db7d316a072
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Wed Jan 23 16:06:59 2008 +0000
+
+    move :Refresh to OnInit, that should be early enough and apply soem safety measures
+
+commit 9a48f4dba0256c0bd2dccbc3f4fbf30102505d93
+Author: funkydude <funkydude@48e1f902-e210-0410-a839-a0138e9d5bd5>
+Date:   Wed Jan 23 16:04:50 2008 +0000
+
+    Coords: we need that, doh
+
+commit 9f8428475c54ac3ef2c28bacecbd99cb6b314113
+Author: funkydude <funkydude@48e1f902-e210-0410-a839-a0138e9d5bd5>
+Date:   Wed Jan 23 16:01:11 2008 +0000
+
+    Coords: tweaks
+
+commit aa53e8f7c1f2acc54f11ac45c2aacef615fcaaf8
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Wed Jan 23 15:47:15 2008 +0000
+
+    Coords: add a check to avoid a error in the OnUpdate (which really should not have happend in the first place, but who knows)
+
+commit 210eeb268a21ce84dd836da431caf42fc269f2ca
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Wed Jan 23 07:24:40 2008 +0000
+
+    and remove that space again
+
+commit 313eb2fc1e6e363a72381c1bd473dc8f80f880e4
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Wed Jan 23 07:24:06 2008 +0000
+
+    empty test commit
+
+commit 55eb5d4c1c64e854c75c212a8db27473baefe31b
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Tue Jan 22 23:58:11 2008 +0000
+
+    change config button to toggle rather than open only
+
+commit b1a1272ede1cdd2bcc77bf73a5a9ef1d7a940587
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Mon Jan 21 15:35:19 2008 +0000
+
+    small tweak
+
+commit 6f1f43157dd70811ac9215c336782c64e4574144
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Mon Jan 21 11:19:44 2008 +0000
+
+    override the zone dropdown scale with some evil hax
+
+commit 7581c612314f5f3e568e3949909c43394ee496ad
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Mon Jan 21 10:37:09 2008 +0000
+
+    move and rename options button
+
+commit 83495a1ebcdb464edd47eebc70ecf399246c9011
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sun Jan 20 22:22:35 2008 +0000
+
+    add options to FogClear module
+
+commit 4cb122d81f120009f7c6be42131cd0873b0f0e13
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sun Jan 20 21:42:53 2008 +0000
+
+    add FogClear module, no options yet
+
+commit a50bd53dd11923c3f672c6c62f604e992d0adab2
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sun Jan 20 16:30:29 2008 +0000
+
+    update .toc and svn props
+
+commit 563e0c516a2f7c8e1be87d6c7230b0e31ad86896
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sun Jan 20 15:22:13 2008 +0000
+
+    add toggle option to group icons module
+
+commit a19ca683553136dc529d6da0ba430901bd387db3
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sun Jan 20 15:13:17 2008 +0000
+
+    GroupIcons: make groupicons work on the mini zone map if not in raids
+
+commit 6b8f55c9f79ef1e6188407b88cc8754489128583
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sun Jan 20 13:00:09 2008 +0000
+
+    added options to coordinate module
+
+commit 89beaf1c872fd568046b095ff8764c0c16d5ed9b
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sun Jan 20 11:35:09 2008 +0000
+
+    first draft of an options table
+
+commit 051b4147f762c34c28657bf83c89e7e1b0121a70
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Fri Jan 18 19:10:54 2008 +0000
+
+    call SetMapToCurrentZone() if the worldmap closes
+
+commit a8b4a203fe2356010dcfca3376c2d4a95886cd3e
+Author: ammo <ammo@48e1f902-e210-0410-a839-a0138e9d5bd5>
+Date:   Fri Dec 28 10:12:11 2007 +0000
+
+    1 digit more keeps Ammo happy
+
+commit cb45e45adc87de9073118efc90b6608b8607d818
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Fri Dec 28 01:40:39 2007 +0000
+
+    Coords: small tweak
+
+commit 08b1707b72ef85a115a18cf4d4865b68ebedac37
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Fri Dec 28 01:32:55 2007 +0000
+
+    Coords: do some cleanup and make the code more solid so it doesnt break if two map mods run
+
+commit e6b68a639ef9a38e41677e73e30459f753d1dacf
+Author: funkydude <funkydude@48e1f902-e210-0410-a839-a0138e9d5bd5>
+Date:   Thu Dec 20 19:01:37 2007 +0000
+
+    GroupIcons: Move back inactive check, don't color inactive units at all.
+
+commit 401f1e6162ea2ee20273fc917c517308c7df9bf6
+Author: funkydude <funkydude@48e1f902-e210-0410-a839-a0138e9d5bd5>
+Date:   Thu Dec 20 05:20:14 2007 +0000
+
+    Coords: Remove the IsInInstance() check completely
+
+commit a2336afc728ffad6cd420628abc17b334aa5e81a
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Tue Dec 18 08:36:06 2007 +0000
+
+    GroupIcons: move the flash check
+
+commit 9de0ee23f0b38d7e7ac73fdf3573db5a18ac790e
+Author: funkydude <funkydude@48e1f902-e210-0410-a839-a0138e9d5bd5>
+Date:   Tue Dec 18 05:02:52 2007 +0000
+
+    setup embeds
+
+commit cab9216bb52be884edd8f80137a6b2aa8d1ec4d6
+Author: funkydude <funkydude@48e1f902-e210-0410-a839-a0138e9d5bd5>
+Date:   Tue Dec 18 04:44:08 2007 +0000
+
+    Coords: Less IsInInstance() calling
+
+commit 1c364dc045085735f3981cc33a298e2a0becc52b
+Author: funkydude <funkydude@48e1f902-e210-0410-a839-a0138e9d5bd5>
+Date:   Tue Dec 18 03:51:15 2007 +0000
+
+    Don't flash inactive units
+
+commit cb59e729e43bbbf8f3bcd7328660b66c0359b372
+Author: funkydude <funkydude@48e1f902-e210-0410-a839-a0138e9d5bd5>
+Date:   Sat Dec 15 17:40:28 2007 +0000
+
+    more tweaks
+
+commit 4c82ce469e15509f5af1dca349d3d9dcc53569dd
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sat Dec 15 17:22:46 2007 +0000
+
+    GroupIcons: more tweaks and some comments
+
+commit f280b7091616b30f4d92b1c111f6c72bb2ab847e
+Author: funkydude <funkydude@48e1f902-e210-0410-a839-a0138e9d5bd5>
+Date:   Sat Dec 15 16:54:23 2007 +0000
+
+    GroupIcons: Don't need ace timer
+
+commit e4d4d1c7a440204eae42d7e6ba70fa88fc53dfd4
+Author: funkydude <funkydude@48e1f902-e210-0410-a839-a0138e9d5bd5>
+Date:   Sat Dec 15 16:42:10 2007 +0000
+
+    GroupIcons: some upvalues
+
+commit 4d078f98d57234e2931fed773a8ee66fb9414f11
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sat Dec 15 16:32:54 2007 +0000
+
+    GroupIcons: more tweaks
+
+commit 6afa7dfd140c727598e3769310f9da3e4c9d49b0
+Author: funkydude <funkydude@48e1f902-e210-0410-a839-a0138e9d5bd5>
+Date:   Sat Dec 15 16:27:19 2007 +0000
+
+    GroupIcons: bugfix
+
+commit 4be77272a9da7ec1921f200a292fbbc9a0b5ada7
+Author: funkydude <funkydude@48e1f902-e210-0410-a839-a0138e9d5bd5>
+Date:   Sat Dec 15 16:26:24 2007 +0000
+
+    GroupIcons: tweaks
+
+commit d9b1927f427bccd72e07ab928d3a3619a9ccbe07
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sat Dec 15 16:22:11 2007 +0000
+
+    GroupIcons: use an OnUpdate schedule for updating the units
+
+commit 2465c46dfd462eed6fc9ff861feba82ddddebca2
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sat Dec 15 15:34:26 2007 +0000
+
+    fix some bugs and apply some tweaks
+
+commit 3646e9777fa29bd0534c533622dd8170d5d5ceb1
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sat Dec 15 15:07:52 2007 +0000
+
+    add GroupIcons module
+
+commit a0898fb2b528eeaa0aa1a34c259b434b5f6bd6aa
+Author: funkydude <funkydude@48e1f902-e210-0410-a839-a0138e9d5bd5>
+Date:   Tue Dec 11 22:38:23 2007 +0000
+
+    remove useless local
+
+commit 7830ade08b7891c82e4111e2e5b6d0a49a448b20
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Tue Dec 11 21:26:26 2007 +0000
+
+    use SetFormattedText because its C-accelerated
+
+commit 602f5aca87233b7c2857cd5e7514d2b90686ffb9
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Tue Dec 11 21:18:02 2007 +0000
+
+    coords on one line, two-lines looks weird with default font size
+
+commit da610731f980dca14dcd49613c1831f0783d9533
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Mon Nov 19 07:59:00 2007 +0000
+
+    allow disabling of the coords module
+
+commit e96bd18ccb6437e27ff67a1bec118c565b780973
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Mon Nov 19 07:27:04 2007 +0000
+
+    more tweaks to avoid the callback
+
+commit 62eea9643909d2ef65e7973f89f709a2bddf8bd5
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sun Nov 18 21:01:56 2007 +0000
+
+    add a callback system, and a callback when the map moves to refresh the position in the coord module
+
+commit 878867c96c2d2d2d21acdb76d2989608ca7610f7
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sun Nov 18 18:53:52 2007 +0000
+
+    Coords
+    - show coords in a higher precision by default (will have option to change later)
+    - some tweaks
+
+commit 46a14933b49435bb63de9f66fc9e754e373304a2
+Author: funkydude <funkydude@48e1f902-e210-0410-a839-a0138e9d5bd5>
+Date:   Sun Nov 18 15:50:09 2007 +0000
+
+    Coords: tweak
+
+commit fe13b7814aaf8780828d394149a61c7db8ef8d60
+Author: funkydude <funkydude@48e1f902-e210-0410-a839-a0138e9d5bd5>
+Date:   Sun Nov 18 15:23:42 2007 +0000
+
+    remove tabs
+
+commit fe86f63958d780e02895d072c40f0bb6131941bc
+Author: funkydude <funkydude@48e1f902-e210-0410-a839-a0138e9d5bd5>
+Date:   Sun Nov 18 15:22:28 2007 +0000
+
+    show within map
+
+commit f47a3a47fe4d3c3502782390d03c0305b2dceaf0
+Author: funkydude <funkydude@48e1f902-e210-0410-a839-a0138e9d5bd5>
+Date:   Sun Nov 18 15:12:34 2007 +0000
+
+    add coords module
+
+commit 56e8482ed71d68db9a798ea766f0da0771eb3413
+Author: funkydude <funkydude@48e1f902-e210-0410-a839-a0138e9d5bd5>
+Date:   Sun Nov 18 14:16:10 2007 +0000
+
+    allow modules
+
+commit 33573ff1f9ec2aa76026fac42a92888eb92f7536
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sun Nov 18 12:05:44 2007 +0000
+
+    pressing esc will now close the map
+
+commit c6ea85b876671519c5c9e7dfc496d1c877c52481
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sun Nov 18 11:44:02 2007 +0000
+
+    fix a bug with storing the position
+
+commit e5587ab23072bb43b76e3c5b6ef0a36cf44aaf40
+Author: Hendrik Leppkes <h.leppkes@gmail.com>
+Date:   Sun Nov 18 11:38:46 2007 +0000
+
+    initial alpha commit - very simple map mod

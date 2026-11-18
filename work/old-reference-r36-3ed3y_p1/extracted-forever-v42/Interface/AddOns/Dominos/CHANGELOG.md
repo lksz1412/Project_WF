@@ -1,0 +1,352 @@
+# Dominos Changelog
+
+> **Dominos 12 is a one way settings upgrade.**
+>
+> While I've tested the settings migration, you may still want to back up your
+> settings before upgrading just in case. You also need to restart WoW, 
+> otherwise you'll see a Bindings_Mainline.xml not found error.
+
+## 12.0.3
+
+* Fixed some minor consistency issues with empty button displays on action bars
+  where we're reusing Blizzard action slots.
+
+## 12.0.2
+
+### Progress Bars
+
+* Fixed issues with settings not persisting, and fixed a typo in the migration code that would have applied the wrong texture.
+* Dropped the progress bar border option from non Forever clients (it only renders well in Forever).
+* Added more text format options
+* Adjusted divider rendering to snap to pixels
+
+### Other
+
+* Fixed a typo in the totem bar that would have prevented Show Totemic Recall from appearing
+* Resolved some bugs when swapping between bar counts with sticky bars enabled.
+
+## 12.0.1
+
+* Reverted the Progress Bar design to use a multi status bar approach, instead 
+  of one big bar.
+
+## 12.0.0
+
+### Action Bars
+
+* **Action bar numbering now follows Blizzard's**. Your action bar numbers will change to reflect this. Standard 12 button per bar layouts should retain overall positions.
+* New profiles now default to 8 bars of 12 buttons each to be a bit more consistent with the standard interface. Existing profiles retain the 14 bar count.
+* Decoupled action bar counts from sizes. You can now have 8 bars of 14 instead of only being able to have 8 bars of 21 buttons each.
+* Added a new Action Bar Size dropdown to the main options menu to let you pick different action bar counts and sizes.
+* Replaced the `/dom numbuttons` and `/dom numbars` commands `/dom abs <bars>x<buttons>`. Ex, `/dom abs 10x12` will give you 10 bars with 12 buttons each.
+* The totem bar is now a fully custom implementation (again)
+* Added Press and Hold Casting support to Action Bars 1-8. If action buttons 
+  stop working in combat please report and use use `/run Dominos.db.global.useBlizzardKeybindHandlers = false` 
+  to disable the setting.
+
+### Action Bar Paging
+
+* Rewrote how paging works to use a new address-based system. Instead of 
+  the old action bar dropdown interface, you'll now use a new  dialog to pick a 
+  range of action slots.
+* In Forever and the 12.1.7 PTR, you can set bars to page into the gamepad UI 
+  range. This gives you a total of 360 action slots to work with (effectively 30 
+  action bars worth)
+
+### Action Book
+
+* Added a new Action Book interface (`/dom actions`). This is a single window 
+  that  lets you drag and drop actions across all possible action slots (not 
+  just the ones on your action bars). For example, you can drag and drop spells 
+  onto the gamepad slots, even when in keyboard mode.
+* The action book will automatically open with your spellbook by default. You 
+  can turn this off.
+
+### Progress Bars
+
+* Rewrote the Progress Bar's codebase a good bit. By default, the bar should 
+  look much closer to the Blizzard one, and I've reorganized the context menu.
+* Added Font Size, Font Outline, Border, and Tooltip options.
+* Replaced Hide at Max Level with an Auto Hide option to better represent what
+  the toggle actually does
+
+### Misc
+
+* Settings migrations are now transactional (that is, a failed migration 
+  shouldn't break your old settings). 
+* To prevent data loss, Dominos will disable itself in the event your saved 
+  settings aren't able to be migrated.
+
+---
+
+## 11.5.3
+
+* Fixed an issue causing input boxes on sliders to not automatically break soft limits
+* Reverted fade sliders back to displaying values in seconds, and increased soft limit to 5s
+
+## 11.5.2
+
+* Fixed totem bar positioning in Forever
+* Disabled Dominos when Gamepad UI is active.
+* Updated references for the multi action bars so that they're properly reused by Dominos
+
+## 11.5.1
+
+* Fixed positioning issues with various bars.
+* Explicitly disabled Dominos for Plunderstorm and Talebound.
+
+## 11.5.0
+
+* Rebuilt and reorganized all bar context menus.
+* Show States now have a presets dropdown.
+* Progress Bar and Cast Bar width/height sliders are now in pixels.
+* Updated TOCs for 12.1.7
+
+## 11.4.5
+
+* Fix a typo causing an error on mouseover of fully transparent action bars
+* Improved handling of action button changes outside of combat
+
+## 11.4.4
+
+* Improved action button display performance
+* (Forever) Fixed a display error action bars that are transparent
+
+## 11.4.3
+
+* Fix an issue with the menu bar not appearing after leaving a pet battle
+
+## 11.4.2
+
+* Rewrote the menu bar's positioning logic to be a bit more consistent and 
+  resolve some combat related errors
+
+## 11.4.1
+
+* (Forever) Add support for 1.60.1 (Forever-ever)
+* (Forever) Enabled toggles for cast animations on action buttons
+* (Forever) Better render the keyring when vertical
+
+## 11.4.0
+
+* Add support for 1.16.1 (Forever)
+
+## 11.3.5
+
+* Adjust Menu Bar setup to better handle GetEdgeButton errors in Mists
+
+## 11.3.4
+
+* Fix Override UI in TBC (Thanks [Martin Falke](https://github.com/martinfalke))
+
+## 11.3.3
+
+* Add support for 1.15.9
+
+## 11.3.2
+
+* Update TOCs for 2.5.6
+
+## 11.3.1
+
+* (Mists) Fixed errors when opening flyouts from keybindings
+* Update TOCs for 12.1.0
+
+## 11.3.0
+
+* Tagged as release
+
+## 11.3.0-beta1
+
+* Note: This version won't work on 5.5.3 (hence the beta designation)
+* Update TOCs for the 12.0.7 and 5.5.4 PTRs
+
+## 11.2.21
+
+* Update TOCs for 12.0.5
+
+## 11.2.20
+
+* (Retail) Fixed an issue causing the cast bar to not disappear when canceling a channeled spell.
+
+## 11.2.19
+
+* (Retail) Fixed the reputation bar for major factions (Thanks [fediazgon](https://github.com/fediazgon))
+
+## 11.2.18
+
+* (Retail) Fix more secret errors with the cast bar by using castBarID when available.
+
+## 11.2.17
+
+* Keyboard nudging now checks your Strafe Left/Right keybindings in addition to Turn Left/Right. (Handles the Modern/Legacy control options in 12.x)
+* (TBC) Added latency information to the minimap icon, like in Vanilla (Thanks [PortalPi ](https://github.com/PortalPi))
+
+## 11.2.16
+
+* (Retail) Better handle secret icons on the cast bar.
+
+## 11.2.15
+
+* (TBC) Fixed the talent button not appearing on the menu bar
+
+## 11.2.14
+
+* (Retail) Fixed an menu bar error when entering/exiting pet battles
+
+## 11.2.13
+
+* Fixed an issue with unregistering the Blizzard stance bar that was causing errors
+
+## 11.2.12
+
+* Added support for Burning Crusade Classic Anniversary Edition
+* Added in missing menu bar button names
+
+## 11.2.11
+
+* Refactored the progress bar to use a data provider interface instead of metatable manipulation (which broke with the last Midnight fix)
+
+## 11.2.10
+
+* Added a workaround Dominos frame class inheritance to fix the Invalid 'self' frame handle errors in the latest Midnight build (Thanks, [Tyler Fleckenstein](https://github.com/tpfleck))
+
+## 11.2.9
+
+* (Midnight) Added a workaround for GetUnitEmpowerHoldAtMaxTime returning
+  secret values to prevent error messages when casting empowered spells.
+  Hopefully Blizzard will drop this restriction.
+
+## 11.2.8
+
+* (Classic) Fixed the missing Monk class bar
+
+## 11.2.7
+
+* (Retail, Midnight) Reuse the existing pet bar action buttons and logic. This should make the bar usable in Midnight
+* (Classic) Use a custom impelemntation for the class bar. This shold resolve issues with positioning of the bar when playing certain classes
+* (Midnight) Partially reimplemented the logic for hiding action button cooldowns on transparent bars.
+
+## 11.2.6
+
+* (Midnight) Enabled the cast bar after resolving some secret value comparison errors
+
+## 11.2.5
+
+* Fixed an issue that would prevent bindings from working when in Edit House mode
+
+## 11.2.4
+
+* Updated TOC files for game versions 5.5.3 and 1.15.8
+* Dropped the specific TOC file for Vanilla as 1.15.8 supports conditional directives
+* The artifactBar and azeriteBar lua files should now not load at all on Classic
+
+## 11.2.3
+
+* Updated TOC files for 12.0.0 (Midnight) and 11.2.7
+* Fixed an error caused byt the progress bar trying to call a missing API when attempting to show azerite information.
+* (Midnight) Disabled the cast bar and pet bar
+* (Midnight) Disabled the ability to open flyouts via keypress
+
+## 11.2.2
+
+* Changed the default paging settings for Warriors in Mists to use Action Bar 1 for battle stance, instead of Action Bar 7
+* Fixed an issue with the progress bars that could cause an Addon Action Blocked message to occur when leveling up in combat
+* Reintroduced a workaround for a Blizzard error that could occur when hiding the achievement button in classic version
+* Updated TOCs for 11.2.5 and 5.5.1
+
+## 11.2.1
+
+* Fixed the addon compartment menu icon not showing the options menu when clicked
+
+## 11.2.0
+
+* Excluded the new combat assistant highlights from spell animation filtering
+
+## 11.1.9
+
+* Fixed menu bar errors
+* Corrected pkgmeta file so that you'll actually see the right changelog and not just my commit messages
+
+## 11.1.8
+
+* Added support for 11.2.0
+* Updated TOCs to use conditional file loading directives
+* Rewrote the bar states configuration formats to handle multiple game versions a bit better
+* Updated the menu bar button ordering to hopefully prevent issues when switching to vehicle/pet battle UIs
+
+## 11.1.7
+
+* Added support for Monk stances in MoP Classic
+
+## 11.1.6
+
+* Fixed multiple paging issues with Mists of Pandaria Classic
+
+## 11.1.5
+
+* Updated TOCs for 11.1.7 and 5.5.0 (Mists of Pandaria Classic)
+* Refreshed libraries to fix a lua error in MoP Classic
+
+## 11.1.4
+
+* Updated TOCs for 11.1.5
+
+## 11.1.3
+
+* Updated TOCs for 1.15.7
+
+## 11.1.2
+
+* Context menu dropdowns now use the standard dropdown menu templates
+
+## 11.1.1
+
+* Fixed renown level text showing %d
+
+## 11.1.0
+
+* Adjusted KeyRingButton test to hopefully avoid some errors
+
+## 11.0.9
+
+* Updated TOCs for 11.1.0, 4.4.2 and 1.15.6
+* (Classic) Added experimental support for the extra ability bar
+
+## 11.0.8
+
+* Updated TOCs for 1.15.5
+
+## 11.0.7
+
+* (Classic) Fixed tooltip issues when enabling all Blizzard action bars
+
+## 11.0.6
+
+* Updated TOCs for 11.0.7 and 11.0.5
+
+## 11.0.5
+
+* (Vanilla) Fixed tooltip issues when enabling all Blizzard action bars
+
+## 11.0.4
+
+* Added a new slider for row spacing (contributed by [Xiaoyang-Huang](https://github.com/Xiaoyang-Huang))
+* Added a Hide at Max Level option to the display menu of progress bars
+
+## 11.0.3
+
+* Added support for classic versions 4.4.1 and 1.15.4
+
+## 11.0.2
+
+* Updated Override UI detection
+
+## 11.0.1
+
+* Fixed an issue that would let spell overlay glows still display, even if disabled
+
+## 11.0.0
+
+* (Classic) Ensured the Encounter Bar always is given a size to prevent issues with repositioning frames
+* Dropped WoW 10.x from TOC files

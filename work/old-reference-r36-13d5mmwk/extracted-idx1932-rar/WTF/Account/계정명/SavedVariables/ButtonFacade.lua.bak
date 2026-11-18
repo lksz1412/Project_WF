@@ -1,0 +1,42 @@
+
+ButtonFacadeDB = {
+	["namespaces"] = {
+		["ButtonTest"] = {
+			["profileKeys"] = {
+				["Eznel - Crystalsong"] = "Eznel - Crystalsong",
+				["Resrec - Crystalsong"] = "Resrec - Crystalsong",
+				["Hayate - Crystalsong"] = "Hayate - Crystalsong",
+				["에이논 - Crystalsong"] = "에이논 - Crystalsong",
+				["Lagneziad - Crystalsong"] = "Lagneziad - Crystalsong",
+				["Kratia - Crystalsong"] = "Default",
+			},
+			["profiles"] = {
+				["Resrec - Crystalsong"] = {
+				},
+				["Hayate - Crystalsong"] = {
+				},
+				["Eznel - Crystalsong"] = {
+				},
+				["Default"] = {
+					["Unlocked"] = false,
+				},
+				["에이논 - Crystalsong"] = {
+				},
+				["Lagneziad - Crystalsong"] = {
+				},
+			},
+		},
+	},
+	["profileKeys"] = {
+		["Eznel - Crystalsong"] = "Eznel - Crystalsong",
+		["Resrec - Crystalsong"] = "Resrec - Crystalsong",
+		["Hayate - Crystalsong"] = "Hayate - Crystalsong",
+		["에이논 - Crystalsong"] = "에이논 - Crystalsong",
+		["Lagneziad - Crystalsong"] = "Lagneziad - Crystalsong",
+		["Kratia - Crystalsong"] = "Default",
+	},
+	["profiles"] = {
+		["Default"] = {
+		},
+	},
+}

@@ -1,0 +1,240 @@
+{
+  "recorded": "2026-11-17T23:53:31.945114+09:00",
+  "sourceInventory": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\idx45-X2-sfx-members.json",
+  "inventorySHA256": "c547ab5ed29ac7353931e51fb7b44351b2fc0164cda8083286bb35227f9772cd",
+  "wholeArchiveState": "BLOCKED unsafe names288/4217; unchanged",
+  "subsetScope": "Exact prevalidated names only; not full archive recovery. No shell expansion/rename/wildcard/source execution. Helper must validate independently and reconcile only this allowlist.",
+  "selectedCount": 46,
+  "members": [
+    {
+      "filename": "$HWNDPARENT\\Interface\\addons\\Bartender3\\Bartender3.toc",
+      "listLine": 19,
+      "reason": "bar provider declaration/default shape input"
+    },
+    {
+      "filename": "$HWNDPARENT\\Interface\\addons\\Bartender3\\Defaults.lua",
+      "listLine": 25,
+      "reason": "bar provider declaration/default shape input"
+    },
+    {
+      "filename": "$HWNDPARENT\\Interface\\addons\\DFontChatSizes\\DFontChatSizes.lua",
+      "listLine": 882,
+      "reason": "native font-size module/load declaration"
+    },
+    {
+      "filename": "$HWNDPARENT\\Interface\\addons\\DFontChatSizes\\DFontChatSizes.toc",
+      "listLine": 883,
+      "reason": "native font-size module/load declaration"
+    },
+    {
+      "filename": "$HWNDPARENT\\Interface\\addons\\DFontChatSizes\\DFontChatSizes.xml",
+      "listLine": 884,
+      "reason": "native font-size module/load declaration"
+    },
+    {
+      "filename": "$HWNDPARENT\\Interface\\addons\\Devil\\Minimap.TGA",
+      "listLine": 913,
+      "reason": "original decoration assets bytes only"
+    },
+    {
+      "filename": "$HWNDPARENT\\Interface\\addons\\Devil\\angel.tga",
+      "listLine": 914,
+      "reason": "original decoration assets bytes only"
+    },
+    {
+      "filename": "$HWNDPARENT\\Interface\\addons\\Devil\\border.tga",
+      "listLine": 915,
+      "reason": "original decoration assets bytes only"
+    },
+    {
+      "filename": "$HWNDPARENT\\Interface\\addons\\Devil\\demon.tga",
+      "listLine": 916,
+      "reason": "original decoration assets bytes only"
+    },
+    {
+      "filename": "$HWNDPARENT\\Interface\\addons\\Devil\\tooltip.tga",
+      "listLine": 917,
+      "reason": "original decoration assets bytes only"
+    },
+    {
+      "filename": "$HWNDPARENT\\Interface\\addons\\SharedMedia\\border\\Devil2.tga",
+      "listLine": 922,
+      "reason": "actual border registration/data bytes"
+    },
+    {
+      "filename": "$HWNDPARENT\\Interface\\addons\\NeonChat\\NeonChat.lua",
+      "listLine": 1652,
+      "reason": "native input ornament module and load declaration"
+    },
+    {
+      "filename": "$HWNDPARENT\\Interface\\addons\\NeonChat\\NeonChat.toc",
+      "listLine": 1653,
+      "reason": "native input ornament module and load declaration"
+    },
+    {
+      "filename": "$HWNDPARENT\\Interface\\addons\\SharedMedia\\Core.lua",
+      "listLine": 2048,
+      "reason": "actual border registration/data bytes"
+    },
+    {
+      "filename": "$HWNDPARENT\\Interface\\addons\\SharedMedia\\SharedMedia.lua",
+      "listLine": 2050,
+      "reason": "actual border registration/data bytes"
+    },
+    {
+      "filename": "$HWNDPARENT\\Interface\\addons\\SharedMedia\\SharedMedia.toc",
+      "listLine": 2051,
+      "reason": "actual border registration/data bytes"
+    },
+    {
+      "filename": "$HWNDPARENT\\Interface\\addons\\SharedMedia\\border\\Devil.tga",
+      "listLine": 2053,
+      "reason": "actual border registration/data bytes"
+    },
+    {
+      "filename": "$HWNDPARENT\\Interface\\addons\\SharedMedia\\border\\roth.tga",
+      "listLine": 2054,
+      "reason": "actual border registration/data bytes"
+    },
+    {
+      "filename": "$HWNDPARENT\\Interface\\addons\\SisterChatMods\\SisterChatMods.lua",
+      "listLine": 2068,
+      "reason": "native chat controls and XML lifecycle"
+    },
+    {
+      "filename": "$HWNDPARENT\\Interface\\addons\\SisterChatMods\\SisterChatMods.toc",
+      "listLine": 2069,
+      "reason": "native chat controls and XML lifecycle"
+    },
+    {
+      "filename": "$HWNDPARENT\\Interface\\addons\\SisterChatMods\\SisterChatMods.xml",
+      "listLine": 2070,
+      "reason": "native chat controls and XML lifecycle"
+    },
+    {
+      "filename": "$HWNDPARENT\\Interface\\addons\\eePanels2\\eePanels2.toc",
+      "listLine": 2207,
+      "reason": "panel provider saved-variable/load declaration"
+    },
+    {
+      "filename": "$HWNDPARENT\\var\\SPECIAL\\WTF\\Account\\계정명\\SavedVariables\\Bartender3.lua",
+      "listLine": 2283,
+      "reason": "four separate distribution variants; bar/panel/skin/chat defaults, no merge"
+    },
+    {
+      "filename": "$HWNDPARENT\\var\\SPECIAL\\WTF\\Account\\계정명\\SavedVariables\\SisterChatMods.lua",
+      "listLine": 2342,
+      "reason": "four separate distribution variants; bar/panel/skin/chat defaults, no merge"
+    },
+    {
+      "filename": "$HWNDPARENT\\var\\SPECIAL\\WTF\\Account\\계정명\\SavedVariables\\cyCircled.lua",
+      "listLine": 2348,
+      "reason": "four separate distribution variants; bar/panel/skin/chat defaults, no merge"
+    },
+    {
+      "filename": "$HWNDPARENT\\var\\STANDARD\\WTF\\Account\\계정명\\SavedVariables\\cyCircled.lua",
+      "listLine": 2349,
+      "reason": "four separate distribution variants; bar/panel/skin/chat defaults, no merge"
+    },
+    {
+      "filename": "$HWNDPARENT\\var\\STANDARDW\\WTF\\Account\\계정명\\SavedVariables\\cyCircled.lua",
+      "listLine": 2350,
+      "reason": "four separate distribution variants; bar/panel/skin/chat defaults, no merge"
+    },
+    {
+      "filename": "$HWNDPARENT\\var\\SPECIALW\\WTF\\Account\\계정명\\SavedVariables\\cyCircled.lua",
+      "listLine": 2351,
+      "reason": "four separate distribution variants; bar/panel/skin/chat defaults, no merge"
+    },
+    {
+      "filename": "$HWNDPARENT\\var\\SPECIAL\\WTF\\Account\\계정명\\SavedVariables\\eePanels2.lua",
+      "listLine": 2352,
+      "reason": "four separate distribution variants; bar/panel/skin/chat defaults, no merge"
+    },
+    {
+      "filename": "$HWNDPARENT\\var\\SPECIAL\\WTF\\Account\\계정명\\SavedVariables\\simpleMinimap.lua",
+      "listLine": 2353,
+      "reason": "four separate distribution variants; bar/panel/skin/chat defaults, no merge"
+    },
+    {
+      "filename": "$HWNDPARENT\\var\\SPECIAL\\WTF\\Account\\계정명\\서버명\\케릭명\\chat-cache.txt",
+      "listLine": 2358,
+      "reason": "four separate native chat-window templates"
+    },
+    {
+      "filename": "$HWNDPARENT\\var\\SPECIALW\\WTF\\Account\\계정명\\SavedVariables\\Bartender3.lua",
+      "listLine": 2363,
+      "reason": "four separate distribution variants; bar/panel/skin/chat defaults, no merge"
+    },
+    {
+      "filename": "$HWNDPARENT\\var\\SPECIALW\\WTF\\Account\\계정명\\SavedVariables\\SisterChatMods.lua",
+      "listLine": 2376,
+      "reason": "four separate distribution variants; bar/panel/skin/chat defaults, no merge"
+    },
+    {
+      "filename": "$HWNDPARENT\\var\\SPECIALW\\WTF\\Account\\계정명\\SavedVariables\\eePanels2.lua",
+      "listLine": 2378,
+      "reason": "four separate distribution variants; bar/panel/skin/chat defaults, no merge"
+    },
+    {
+      "filename": "$HWNDPARENT\\var\\SPECIALW\\WTF\\Account\\계정명\\SavedVariables\\simpleMinimap.lua",
+      "listLine": 2379,
+      "reason": "four separate distribution variants; bar/panel/skin/chat defaults, no merge"
+    },
+    {
+      "filename": "$HWNDPARENT\\var\\SPECIALW\\WTF\\Account\\계정명\\서버명\\케릭명\\chat-cache.txt",
+      "listLine": 2380,
+      "reason": "four separate native chat-window templates"
+    },
+    {
+      "filename": "$HWNDPARENT\\var\\STANDARD\\WTF\\Account\\계정명\\SavedVariables\\Bartender3.lua",
+      "listLine": 2389,
+      "reason": "four separate distribution variants; bar/panel/skin/chat defaults, no merge"
+    },
+    {
+      "filename": "$HWNDPARENT\\var\\STANDARD\\WTF\\Account\\계정명\\SavedVariables\\SisterChatMods.lua",
+      "listLine": 2402,
+      "reason": "four separate distribution variants; bar/panel/skin/chat defaults, no merge"
+    },
+    {
+      "filename": "$HWNDPARENT\\var\\STANDARD\\WTF\\Account\\계정명\\SavedVariables\\eePanels2.lua",
+      "listLine": 2406,
+      "reason": "four separate distribution variants; bar/panel/skin/chat defaults, no merge"
+    },
+    {
+      "filename": "$HWNDPARENT\\var\\STANDARD\\WTF\\Account\\계정명\\SavedVariables\\simpleMinimap.lua",
+      "listLine": 2407,
+      "reason": "four separate distribution variants; bar/panel/skin/chat defaults, no merge"
+    },
+    {
+      "filename": "$HWNDPARENT\\var\\STANDARDW\\WTF\\Account\\계정명\\서버명\\케릭명\\chat-cache.txt",
+      "listLine": 2409,
+      "reason": "four separate native chat-window templates"
+    },
+    {
+      "filename": "$HWNDPARENT\\var\\STANDARD\\WTF\\Account\\계정명\\서버명\\케릭명\\chat-cache.txt",
+      "listLine": 2410,
+      "reason": "four separate native chat-window templates"
+    },
+    {
+      "filename": "$HWNDPARENT\\var\\STANDARDW\\WTF\\Account\\계정명\\SavedVariables\\Bartender3.lua",
+      "listLine": 2413,
+      "reason": "four separate distribution variants; bar/panel/skin/chat defaults, no merge"
+    },
+    {
+      "filename": "$HWNDPARENT\\var\\STANDARDW\\WTF\\Account\\계정명\\SavedVariables\\SisterChatMods.lua",
+      "listLine": 2427,
+      "reason": "four separate distribution variants; bar/panel/skin/chat defaults, no merge"
+    },
+    {
+      "filename": "$HWNDPARENT\\var\\STANDARDW\\WTF\\Account\\계정명\\SavedVariables\\eePanels2.lua",
+      "listLine": 2431,
+      "reason": "four separate distribution variants; bar/panel/skin/chat defaults, no merge"
+    },
+    {
+      "filename": "$HWNDPARENT\\var\\STANDARDW\\WTF\\Account\\계정명\\SavedVariables\\simpleMinimap.lua",
+      "listLine": 2432,
+      "reason": "four separate distribution variants; bar/panel/skin/chat defaults, no merge"
+    }
+  ]
+}

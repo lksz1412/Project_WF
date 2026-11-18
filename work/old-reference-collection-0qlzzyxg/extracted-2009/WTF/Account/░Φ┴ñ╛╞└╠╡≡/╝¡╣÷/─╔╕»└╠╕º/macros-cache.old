@@ -1,0 +1,9 @@
+MACRO 16777218 "발차기" INV_Misc_QuestionMark
+/시전 [target=focus] 발차기
+END
+MACRO 16777217 "속거" Ability_Rogue_TricksOftheTrade
+/길드 탱커:아도(전사),미야(보기)
+/길드 딜러:초코칸(도적),둥이형님(흑마)민뿡(냥),
+/길드 딜러:엑스//형(법사),꼼신(정술)
+/길드 힐러:전설(회드),당이(신기),하자미(사제)
+END

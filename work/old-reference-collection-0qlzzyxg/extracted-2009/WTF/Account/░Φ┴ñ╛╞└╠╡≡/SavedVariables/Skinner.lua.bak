@@ -1,0 +1,83 @@
+
+SkinnerDB = {
+	["profileKeys"] = {
+		["챈트마스터 - 에이그윈"] = "Default",
+		["오그창고 - 에이그윈"] = "Default",
+		["악마추적자 - 에이그윈"] = "Default",
+		["블엘교주 - 에이그윈"] = "Default",
+	},
+	["profiles"] = {
+		["Default"] = {
+			["hidden"] = true,
+			["Warnings"] = false,
+			["CastingBar"] = {
+				["glaze"] = false,
+				["skin"] = false,
+			},
+			["showIcon"] = true,
+			["Backdrop"] = {
+				["a"] = 0.6899999976158142,
+			},
+			["GradientMax"] = {
+				["r"] = 0.007843137254901961,
+				["g"] = 0.007843137254901961,
+				["b"] = 0.007843137254901961,
+			},
+			["GradientMin"] = {
+				["r"] = 0,
+				["g"] = 0,
+				["b"] = 0,
+			},
+			["Errors"] = false,
+			["Gradient"] = {
+				["npc"] = false,
+				["ui"] = false,
+				["skinner"] = false,
+			},
+			["MainMenuBar"] = {
+				["glazesb"] = false,
+				["skin"] = false,
+			},
+			["detachedTooltip"] = {
+			},
+			["ChatTabs"] = true,
+			["showText"] = false,
+			["AchieveAlert"] = false,
+			["Tooltips"] = {
+				["glazesb"] = false,
+				["skin"] = false,
+			},
+			["ChatEditBox"] = {
+				["skin"] = false,
+			},
+			["StatusBar"] = {
+				["a"] = 0.4900000095367432,
+				["b"] = 0.2666666666666667,
+				["r"] = 0.1607843137254902,
+				["g"] = 0.2274509803921569,
+				["texture"] = "Minimalist",
+			},
+			["MinimapIcon"] = {
+				["hide"] = true,
+			},
+			["QuestLog"] = {
+				["skin"] = false,
+			},
+			["BottomFrame"] = {
+				["alpha"] = 0.5,
+				["fheight"] = 0,
+				["height"] = 31,
+			},
+			["minimap"] = {
+				["minimapPos"] = 162,
+				["radius"] = 80,
+				["hide"] = true,
+			},
+			["BackdropBorder"] = {
+				["r"] = 0.5019607843137255,
+				["g"] = 0.5019607843137255,
+				["b"] = 0.5019607843137255,
+			},
+		},
+	},
+}

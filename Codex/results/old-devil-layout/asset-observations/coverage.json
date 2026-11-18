@@ -1,0 +1,2707 @@
+{
+  "schema": "step5-asset-observation-v1",
+  "inventoryPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\asset-inventory.json",
+  "inventorySHA256": "5BE22AA9BF51754904C67103E8B922B7E5AEFA8DECC48A08D057DEA9B70FD1A4",
+  "sourceImagePathCount": 30,
+  "availableUniqueSourceImageHashes": 23,
+  "observedUniqueSourceImageHashes": 23,
+  "observedSourceImagePaths": 30,
+  "exactDuplicateExtraPathAssociations": 7,
+  "exactDuplicateGroupCount": 6,
+  "unobservedAvailableAssets": 0,
+  "decodeFailureCount": 0,
+  "partialDecodeCount": 0,
+  "wholeNativePNGViews": 23,
+  "supplementalCompositeGeneratedCount": 23,
+  "supplementalCompositeActuallyViewedCount": 16,
+  "sourcePhotographReobservation": {
+    "count": 1,
+    "postID": 45,
+    "DOMordinal": 4,
+    "dimensions": [
+      800,
+      500
+    ],
+    "SHA256": "304A6B36ACD94B065142B8E8ADBA1EC99787BB649885D136D5CE707C1B2D5151",
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-d9ab10878c7e954fd5e4.jpg",
+    "sourceURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_7276.jpg"
+  },
+  "separateFromHistoricalImageObservations": true,
+  "historicalFindingsBaselineSHA256": "330C9B229F454650C7643E5D5B7579C8E8050E00081B2EB6121BCF2A34BC1DD6",
+  "fontRowsExcluded": 4,
+  "otherNonImageRowsExcluded": 7,
+  "assets": [
+    {
+      "n": 0,
+      "features": "A dark stone/metal hooded winged figure faces left. Hands hold a rounded staff-like object near the lower edge; layered feathers/wing rise behind the shoulder on the right. Most upper and left canvas is transparent; the visible artwork meets the bottom and right canvas edges. Gray-brown highlights and black recesses form an asymmetric silhouette.",
+      "comparison": "Its dark upright winged end-ornament appearance resembles the broad visual vocabulary of the photograph's right endcap. This is a visual resemblance, not proof this exact asset or source build produced the photograph.",
+      "limits": "Filename angel is inventory metadata, not a visual identity certification. No mirroring, scaling, crop, or anchor usage is inferred.",
+      "derivative": {
+        "sourceSHA256": "073284129E9F8D2AD16998140A1AC6DB1A475636025AEFF476FC3DA359CA8744",
+        "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\073284129E9F8D2AD16998140A1AC6DB1A475636025AEFF476FC3DA359CA8744.png",
+        "SHA256": "6C5E47DB83789B6006A74EFA5F06FF981D7650A188D150BD9CE7415E936F0E18",
+        "bytes": 38566,
+        "dimensions": [
+          256,
+          256
+        ],
+        "RGBApixelsSHA256": "77AB871DBDA3FC49B68353F98C417AACA9E9E3E32C70E13071B607E424AE9D04",
+        "sourcePaths": [
+          "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\Devil\\angel.tga",
+          "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\background\\angel.tga"
+        ],
+        "conversion": "Pillow decoded pixels��RGBA PNG; no resize/crop/repaint"
+      },
+      "alphaView": {
+        "n": 0,
+        "sourceSHA256": "073284129E9F8D2AD16998140A1AC6DB1A475636025AEFF476FC3DA359CA8744",
+        "viewPath": "C:\\Users\\USER\\Documents\\Codex\\2026-11-17\\new-chat-2\\wf-step5-alpha-1f_k9w7g\\00-light-dark-check.png",
+        "method": "whole source alpha composite on light224, dark24, checker112/192 left-to-right; 8px native gaps; nearest integer scale 2",
+        "scale": 2,
+        "dimensions": [
+          256,
+          256
+        ],
+        "alphaBBox": [
+          43,
+          105,
+          256,
+          256
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "centerRGBA": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "wholePNGhashEqual": true
+      },
+      "alphaCompositeActuallyViewed": true
+    },
+    {
+      "n": 1,
+      "features": "A small square frame with straight axis-aligned edges and square corners. Gray and black concentric bands surround a transparent central opening; no wing, curl, stitch or repeated decorative marking is visible.",
+      "comparison": "Thin straight framing can be compared with the photograph's narrow panel joints, but this file alone does not establish which border was used.",
+      "limits": "This 32x32 image is a whole small frame, unlike the128x16 strips. Stretching/slicing and exact in-game thickness are unverified.",
+      "derivative": {
+        "sourceSHA256": "7E0E0E9C7831BBBCFFD75F5F71DF51BDD48366AD4C7E3DF0ADC30750F429B1D3",
+        "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\7E0E0E9C7831BBBCFFD75F5F71DF51BDD48366AD4C7E3DF0ADC30750F429B1D3.png",
+        "SHA256": "AFBE007C5B551A6617810D083FA79CB971F894A5EEC94B9123B104A6B604F80F",
+        "bytes": 157,
+        "dimensions": [
+          32,
+          32
+        ],
+        "RGBApixelsSHA256": "319E3EAAFF8B8CA067EB044BF7F9372760D95A5D5312C417B1FF02AF504CD7B1",
+        "sourcePaths": [
+          "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\Devil\\border.tga"
+        ],
+        "conversion": "Pillow decoded pixels��RGBA PNG; no resize/crop/repaint"
+      },
+      "alphaView": {
+        "n": 1,
+        "sourceSHA256": "7E0E0E9C7831BBBCFFD75F5F71DF51BDD48366AD4C7E3DF0ADC30750F429B1D3",
+        "viewPath": "C:\\Users\\USER\\Documents\\Codex\\2026-11-17\\new-chat-2\\wf-step5-alpha-1f_k9w7g\\01-light-dark-check.png",
+        "method": "whole source alpha composite on light224, dark24, checker112/192 left-to-right; 8px native gaps; nearest integer scale 8",
+        "scale": 8,
+        "dimensions": [
+          32,
+          32
+        ],
+        "alphaBBox": [
+          0,
+          0,
+          32,
+          32
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "centerRGBA": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "wholePNGhashEqual": true
+      },
+      "alphaCompositeActuallyViewed": true
+    },
+    {
+      "n": 2,
+      "features": "A crouched dark winged gargoyle/dragon-like creature faces right, with an open mouth, pointed snout, small bright eye, folded limbs and a large backward-curving wing on the left. The artwork occupies the lower canvas, touches its left and bottom edges, and leaves broad transparent top/right margins. Gray-brown stone highlights define the silhouette.",
+      "comparison": "The upward-curving dark wing and right-facing creature resemble the photograph's left endcap at a broad visual level. Exact asset/build identity is unverified.",
+      "limits": "Filename demon is supplied metadata. The observed artwork is asymmetric; no mirror transform or intended target dimensions are inferred.",
+      "derivative": {
+        "sourceSHA256": "045CE188243A618161EB6351ECA50F2F0B7562A944C16D59EB68E0A2DFE248CA",
+        "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\045CE188243A618161EB6351ECA50F2F0B7562A944C16D59EB68E0A2DFE248CA.png",
+        "SHA256": "1ED250C74D5957659C06F41EB4E8D2F0CD66A9D5C0BA5D1F2F9F9A3AD91E57D1",
+        "bytes": 41878,
+        "dimensions": [
+          256,
+          256
+        ],
+        "RGBApixelsSHA256": "A04E9C59684C6013AD069160F6373E2F37C94EE7AC26F288E91B060C137AF251",
+        "sourcePaths": [
+          "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\Devil\\demon.tga",
+          "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\background\\demon.tga"
+        ],
+        "conversion": "Pillow decoded pixels��RGBA PNG; no resize/crop/repaint"
+      },
+      "alphaView": {
+        "n": 2,
+        "sourceSHA256": "045CE188243A618161EB6351ECA50F2F0B7562A944C16D59EB68E0A2DFE248CA",
+        "viewPath": "C:\\Users\\USER\\Documents\\Codex\\2026-11-17\\new-chat-2\\wf-step5-alpha-1f_k9w7g\\02-light-dark-check.png",
+        "method": "whole source alpha composite on light224, dark24, checker112/192 left-to-right; 8px native gaps; nearest integer scale 2",
+        "scale": 2,
+        "dimensions": [
+          256,
+          256
+        ],
+        "alphaBBox": [
+          0,
+          92,
+          220,
+          256
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "centerRGBA": [
+          95,
+          89,
+          75,
+          255
+        ],
+        "wholePNGhashEqual": true
+      },
+      "alphaCompositeActuallyViewed": true
+    },
+    {
+      "n": 3,
+      "features": "A circular dark metallic rim with a broad glossy crescent across its upper interior. The middle is transparent, as is the outer canvas beyond the soft rim; a narrow bright highlight follows the upper-left arc. It is a ring, not a rectangular map tile or map contents.",
+      "comparison": "The source photograph's lower map is square. This circular asset's appearance cannot establish that a circular map belongs in that reference layout.",
+      "limits": "Minimap filename is not evidence of actual active usage, clipping behavior or runtime map shape.",
+      "derivative": {
+        "sourceSHA256": "549B0D63829FA160BB9B7CFDDE619107FC39C9A877AD28F173576F55C907AC79",
+        "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\549B0D63829FA160BB9B7CFDDE619107FC39C9A877AD28F173576F55C907AC79.png",
+        "SHA256": "EF9803EC0A1DEF5B477992C4962F8C471695724E08FC7D4D5E4992E71C5E8BC7",
+        "bytes": 27039,
+        "dimensions": [
+          256,
+          256
+        ],
+        "RGBApixelsSHA256": "732807832AB74888CD6E4D73D8EC680A42E8E7B4B7247C140DF91B47ADB9BF9B",
+        "sourcePaths": [
+          "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\Devil\\Minimap.TGA",
+          "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\background\\Minimap.TGA"
+        ],
+        "conversion": "Pillow decoded pixels��RGBA PNG; no resize/crop/repaint"
+      },
+      "alphaView": {
+        "n": 3,
+        "sourceSHA256": "549B0D63829FA160BB9B7CFDDE619107FC39C9A877AD28F173576F55C907AC79",
+        "viewPath": "C:\\Users\\USER\\Documents\\Codex\\2026-11-17\\new-chat-2\\wf-step5-alpha-1f_k9w7g\\03-light-dark-check.png",
+        "method": "whole source alpha composite on light224, dark24, checker112/192 left-to-right; 8px native gaps; nearest integer scale 2",
+        "scale": 2,
+        "dimensions": [
+          256,
+          256
+        ],
+        "alphaBBox": [
+          4,
+          0,
+          252,
+          248
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "centerRGBA": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "wholePNGhashEqual": true
+      },
+      "alphaCompositeActuallyViewed": true
+    },
+    {
+      "n": 4,
+      "features": "A128x16 horizontal edge/corner strip: separated straight vertical bars and right-angle corner shapes, with dark gray/black layered strokes and transparent gaps. Gray is subdued rather than bright; no stitched, dotted or curled ornament is visible.",
+      "comparison": "Thin straight dark joints are visually compatible with the broad kind of panel seams in the photograph, without proving this was the selected border.",
+      "limits": "Not a completed128x16 panel or whole chat background. Exact tile ordering, edge size, tiling and slicing must come from source usage. Three paths share exact source bytes: tooltip and two Devil2 paths.",
+      "derivative": {
+        "sourceSHA256": "F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD",
+        "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD.png",
+        "SHA256": "93883B7CCA129F9F64F2EB201F819A9ACAC50867C77EE5047E95E3F0D2CE6B2C",
+        "bytes": 195,
+        "dimensions": [
+          128,
+          16
+        ],
+        "RGBApixelsSHA256": "B095E3C2891EE0E66B5DFB08DB1F84C5A600E6CAF92A93D816F1B5DC173FE63B",
+        "sourcePaths": [
+          "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\Devil\\tooltip.tga",
+          "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\SharedMedia\\border\\Devil2.tga",
+          "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\border\\Devil2.tga"
+        ],
+        "conversion": "Pillow decoded pixels��RGBA PNG; no resize/crop/repaint"
+      },
+      "alphaView": {
+        "n": 4,
+        "sourceSHA256": "F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD",
+        "viewPath": "C:\\Users\\USER\\Documents\\Codex\\2026-11-17\\new-chat-2\\wf-step5-alpha-1f_k9w7g\\04-light-dark-check.png",
+        "method": "whole source alpha composite on light224, dark24, checker112/192 left-to-right; 8px native gaps; nearest integer scale 4",
+        "scale": 4,
+        "dimensions": [
+          128,
+          16
+        ],
+        "alphaBBox": [
+          1,
+          0,
+          127,
+          16
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "centerRGBA": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "wholePNGhashEqual": true
+      },
+      "alphaCompositeActuallyViewed": true
+    },
+    {
+      "n": 5,
+      "features": "A128x16 horizontal edge/corner strip. Straight gray/black vertical strokes and right-angle pieces have stronger gray highlights/stepped shading than the darker Devil2 strip; transparent gaps separate the pieces. No stitch or figurative ornament is visible.",
+      "comparison": "Appearance supplies a straight beveled-border vocabulary, not an exact match to a photographed joint.",
+      "limits": "Whole strip observed. It is not a whole panel texture; exact rendering contract and selected profile are unverified.",
+      "derivative": {
+        "sourceSHA256": "9DE505F668137A32B3ADD4CD56ADB6B84883B798B0E3398C37B6CBCCED914504",
+        "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\9DE505F668137A32B3ADD4CD56ADB6B84883B798B0E3398C37B6CBCCED914504.png",
+        "SHA256": "A156DC9B865674915F5DF0E4F4332536D8B22A9CB5CE224F26215533C5E274B1",
+        "bytes": 237,
+        "dimensions": [
+          128,
+          16
+        ],
+        "RGBApixelsSHA256": "4261616025D363DDBDB909859F14047BF855187B81BF2AC3F99D7D2E61018357",
+        "sourcePaths": [
+          "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\SharedMedia\\border\\Devil.tga",
+          "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\border\\Devil.tga"
+        ],
+        "conversion": "Pillow decoded pixels��RGBA PNG; no resize/crop/repaint"
+      },
+      "alphaView": {
+        "n": 5,
+        "sourceSHA256": "9DE505F668137A32B3ADD4CD56ADB6B84883B798B0E3398C37B6CBCCED914504",
+        "viewPath": "C:\\Users\\USER\\Documents\\Codex\\2026-11-17\\new-chat-2\\wf-step5-alpha-1f_k9w7g\\05-light-dark-check.png",
+        "method": "whole source alpha composite on light224, dark24, checker112/192 left-to-right; 8px native gaps; nearest integer scale 4",
+        "scale": 4,
+        "dimensions": [
+          128,
+          16
+        ],
+        "alphaBBox": [
+          0,
+          0,
+          128,
+          16
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "centerRGBA": [
+          0,
+          0,
+          0,
+          229
+        ],
+        "wholePNGhashEqual": true
+      },
+      "alphaCompositeActuallyViewed": true
+    },
+    {
+      "n": 6,
+      "features": "A128x16 edge/corner strip with straight bars and right-angle pieces. On light/dark composites its strokes are faint, soft gray and translucent. Transparency remains between pieces; mechanical alpha maximum is102/255.",
+      "comparison": "It is visibly lower-opacity than the opaque dark/bright border strips, a material appearance difference only.",
+      "limits": "No whole panel, stitching or tiling usage inferred. Low contrast does not mean missing pixels; alpha was explicitly measured.",
+      "derivative": {
+        "sourceSHA256": "49CA0BC8E0CBDD6ABED71748E3B686032F588C5E2829E6B844C9EC1F8B1A3AA9",
+        "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\49CA0BC8E0CBDD6ABED71748E3B686032F588C5E2829E6B844C9EC1F8B1A3AA9.png",
+        "SHA256": "31646D6E2CBB44C51F625BFE5DB7FFB10D39DBD5126169F9F7139A5191EBF8C0",
+        "bytes": 210,
+        "dimensions": [
+          128,
+          16
+        ],
+        "RGBApixelsSHA256": "A64019462062563B4CC96D19250DE4845249E876A39A9F7F43309C7F26E67064",
+        "sourcePaths": [
+          "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\SharedMedia\\border\\roth.tga",
+          "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\border\\roth.tga"
+        ],
+        "conversion": "Pillow decoded pixels��RGBA PNG; no resize/crop/repaint"
+      },
+      "alphaView": {
+        "n": 6,
+        "sourceSHA256": "49CA0BC8E0CBDD6ABED71748E3B686032F588C5E2829E6B844C9EC1F8B1A3AA9",
+        "viewPath": "C:\\Users\\USER\\Documents\\Codex\\2026-11-17\\new-chat-2\\wf-step5-alpha-1f_k9w7g\\06-light-dark-check.png",
+        "method": "whole source alpha composite on light224, dark24, checker112/192 left-to-right; 8px native gaps; nearest integer scale 4",
+        "scale": 4,
+        "dimensions": [
+          128,
+          16
+        ],
+        "alphaBBox": [
+          1,
+          0,
+          127,
+          16
+        ],
+        "alphaExtrema": [
+          0,
+          102
+        ],
+        "centerRGBA": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "wholePNGhashEqual": true
+      },
+      "alphaCompositeActuallyViewed": true
+    },
+    {
+      "n": 7,
+      "features": "A128x16 edge/corner strip with thin high-contrast white strokes beside black lines, right-angle corners and transparent gaps. The white outline is clearly brighter than Devil/Devil2/roth in the same background method.",
+      "comparison": "It provides a brighter thin-outline appearance, without identifying the photograph's selected edge asset.",
+      "limits": "Not a rendered whole panel. No source profile, slice order, target thickness or automatic stitching claim.",
+      "derivative": {
+        "sourceSHA256": "150DEC18668CCCB2EF33B37D1C8A9468FDE7478F42747CEFFC037037C215D86B",
+        "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\150DEC18668CCCB2EF33B37D1C8A9468FDE7478F42747CEFFC037037C215D86B.png",
+        "SHA256": "7DE27178D3ACB5492372FB953A8E31B9CBA329ED48CD75AF581EE0F0A2D95E8F",
+        "bytes": 197,
+        "dimensions": [
+          128,
+          16
+        ],
+        "RGBApixelsSHA256": "8B2A1BDDF78617737730BB3C900770B6FBE4BDA47AA19B8CC5BBEA0D32832220",
+        "sourcePaths": [
+          "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\border\\Devil3.tga"
+        ],
+        "conversion": "Pillow decoded pixels��RGBA PNG; no resize/crop/repaint"
+      },
+      "alphaView": {
+        "n": 7,
+        "sourceSHA256": "150DEC18668CCCB2EF33B37D1C8A9468FDE7478F42747CEFFC037037C215D86B",
+        "viewPath": "C:\\Users\\USER\\Documents\\Codex\\2026-11-17\\new-chat-2\\wf-step5-alpha-1f_k9w7g\\07-light-dark-check.png",
+        "method": "whole source alpha composite on light224, dark24, checker112/192 left-to-right; 8px native gaps; nearest integer scale 4",
+        "scale": 4,
+        "dimensions": [
+          128,
+          16
+        ],
+        "alphaBBox": [
+          2,
+          0,
+          126,
+          16
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "centerRGBA": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "wholePNGhashEqual": true
+      },
+      "alphaCompositeActuallyViewed": true
+    },
+    {
+      "n": 8,
+      "features": "A tiny beige/gold envelope-like icon with a dark rectangular outline and diagonal flap marks. Visible pixels are centered in a16x16 canvas with transparent margins; the alpha bounding box is only14x10 pixels.",
+      "comparison": "Incidental icon appearance only; no design placement is proposed.",
+      "limits": "No mail functionality, notification state or source-image exact-use inference.",
+      "derivative": {
+        "sourceSHA256": "FD2A7BF3E1395AFBE92DB0EA607E8F24D8D0D1E508010A6B4EC684011DCCABE3",
+        "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\FD2A7BF3E1395AFBE92DB0EA607E8F24D8D0D1E508010A6B4EC684011DCCABE3.png",
+        "SHA256": "DC470445C4CED2C9B5D17C7A9D540F7D4D8087A4B2D36BB63761273B74825B87",
+        "bytes": 423,
+        "dimensions": [
+          16,
+          16
+        ],
+        "RGBApixelsSHA256": "94AB1B552F56EAA12A8B565B0330E04F79F4152924A6E9F7B7C7F5D12B775BB1",
+        "sourcePaths": [
+          "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\mail.tga"
+        ],
+        "conversion": "Pillow decoded pixels��RGBA PNG; no resize/crop/repaint"
+      },
+      "alphaView": {
+        "n": 8,
+        "sourceSHA256": "FD2A7BF3E1395AFBE92DB0EA607E8F24D8D0D1E508010A6B4EC684011DCCABE3",
+        "viewPath": "C:\\Users\\USER\\Documents\\Codex\\2026-11-17\\new-chat-2\\wf-step5-alpha-1f_k9w7g\\08-light-dark-check.png",
+        "method": "whole source alpha composite on light224, dark24, checker112/192 left-to-right; 8px native gaps; nearest integer scale 8",
+        "scale": 8,
+        "dimensions": [
+          16,
+          16
+        ],
+        "alphaBBox": [
+          1,
+          3,
+          15,
+          13
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "centerRGBA": [
+          177,
+          160,
+          121,
+          255
+        ],
+        "wholePNGhashEqual": true
+      },
+      "alphaCompositeActuallyViewed": false
+    },
+    {
+      "n": 9,
+      "features": "A wide grayscale horizontal rounded-end bar. Bright thin top/bottom edge highlights and a darker central horizontal band give a glossy beveled appearance. Interior is mostly opaque; alpha variation is concentrated at the rounded edge pixels.",
+      "comparison": "Texture appearance only, not health/mana color or target bar selection.",
+      "limits": "No runtime fill direction, stretching, tint, masking or active use inferred from statusbar filename.",
+      "derivative": {
+        "sourceSHA256": "DB16C4CB98D66C6A117293BC9C6BD881ABCAC8480946C70DD34E4CC2C43B1A5F",
+        "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\DB16C4CB98D66C6A117293BC9C6BD881ABCAC8480946C70DD34E4CC2C43B1A5F.png",
+        "SHA256": "933444814BEDAD802551C00EBD7ACA049FBD1617AD430784C16D9ABACEAF7048",
+        "bytes": 789,
+        "dimensions": [
+          256,
+          32
+        ],
+        "RGBApixelsSHA256": "80F52D93DC41DE9183C237248820478549FBEFFDA0327D3FB4916F1AD0603C83",
+        "sourcePaths": [
+          "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\statusbar\\FairAqua.tga"
+        ],
+        "conversion": "Pillow decoded pixels��RGBA PNG; no resize/crop/repaint"
+      },
+      "alphaView": {
+        "n": 9,
+        "sourceSHA256": "DB16C4CB98D66C6A117293BC9C6BD881ABCAC8480946C70DD34E4CC2C43B1A5F",
+        "viewPath": "C:\\Users\\USER\\Documents\\Codex\\2026-11-17\\new-chat-2\\wf-step5-alpha-1f_k9w7g\\09-light-dark-check.png",
+        "method": "whole source alpha composite on light224, dark24, checker112/192 left-to-right; 8px native gaps; nearest integer scale 4",
+        "scale": 4,
+        "dimensions": [
+          256,
+          32
+        ],
+        "alphaBBox": [
+          0,
+          0,
+          256,
+          32
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "centerRGBA": [
+          131,
+          131,
+          131,
+          255
+        ],
+        "wholePNGhashEqual": true
+      },
+      "alphaCompositeActuallyViewed": false
+    },
+    {
+      "n": 10,
+      "features": "A wide medium-gray horizontal bar with mild vertical shading, a thin dark lower/edge outline and softly rounded corners. Its surface is flatter and less strongly banded than FairAqua.",
+      "comparison": "Texture appearance only.",
+      "limits": "No tint, fill behavior, current support or photograph exact-use claim.",
+      "derivative": {
+        "sourceSHA256": "54FD36E381A8A59C08313A7A61663F07E8E324CE4CBEA3E2AA6C572D3D6A0C20",
+        "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\54FD36E381A8A59C08313A7A61663F07E8E324CE4CBEA3E2AA6C572D3D6A0C20.png",
+        "SHA256": "ABEF299EEA927EF1E4A501336C9CDCC2E24CA1FFAA1FAD7CB81394F41E387E60",
+        "bytes": 761,
+        "dimensions": [
+          256,
+          32
+        ],
+        "RGBApixelsSHA256": "7C2FE4F0D055E9E11884FE7411945B012C111483E49686303B98B0896667BF93",
+        "sourcePaths": [
+          "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\statusbar\\FairLady.tga"
+        ],
+        "conversion": "Pillow decoded pixels��RGBA PNG; no resize/crop/repaint"
+      },
+      "alphaView": {
+        "n": 10,
+        "sourceSHA256": "54FD36E381A8A59C08313A7A61663F07E8E324CE4CBEA3E2AA6C572D3D6A0C20",
+        "viewPath": "C:\\Users\\USER\\Documents\\Codex\\2026-11-17\\new-chat-2\\wf-step5-alpha-1f_k9w7g\\10-light-dark-check.png",
+        "method": "whole source alpha composite on light224, dark24, checker112/192 left-to-right; 8px native gaps; nearest integer scale 4",
+        "scale": 4,
+        "dimensions": [
+          256,
+          32
+        ],
+        "alphaBBox": [
+          0,
+          0,
+          256,
+          32
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "centerRGBA": [
+          162,
+          160,
+          161,
+          255
+        ],
+        "wholePNGhashEqual": true
+      },
+      "alphaCompositeActuallyViewed": false
+    },
+    {
+      "n": 11,
+      "features": "A fully opaque256x64 grayscale rectangular texture. A light top and bottom fade toward a darker middle; pale floral/scroll-like swirls appear mainly along the left and lower areas.",
+      "comparison": "It is a decorated whole strip rather than a thin edge atlas.",
+      "limits": "No scale, tint or selected statusbar function inferred. No stitching pattern is established.",
+      "derivative": {
+        "sourceSHA256": "EAE335C45840DABAF4412FA285B759DA7982172335A987CBEA689A291366C0AB",
+        "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\EAE335C45840DABAF4412FA285B759DA7982172335A987CBEA689A291366C0AB.png",
+        "SHA256": "9257F9A9373BB66B2EE6D25009B92D1BC69132B4595F912EC12DBC5F806F2D9B",
+        "bytes": 9346,
+        "dimensions": [
+          256,
+          64
+        ],
+        "RGBApixelsSHA256": "180D0B70FBF942831F5725EAF855EB0AED255C5E5320BB8F4271D01F4B34974A",
+        "sourcePaths": [
+          "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\statusbar\\Glamour7.tga"
+        ],
+        "conversion": "Pillow decoded pixels��RGBA PNG; no resize/crop/repaint"
+      },
+      "alphaView": {
+        "n": 11,
+        "sourceSHA256": "EAE335C45840DABAF4412FA285B759DA7982172335A987CBEA689A291366C0AB",
+        "viewPath": "C:\\Users\\USER\\Documents\\Codex\\2026-11-17\\new-chat-2\\wf-step5-alpha-1f_k9w7g\\11-light-dark-check.png",
+        "method": "whole source alpha composite on light224, dark24, checker112/192 left-to-right; 8px native gaps; nearest integer scale 4",
+        "scale": 4,
+        "dimensions": [
+          256,
+          64
+        ],
+        "alphaBBox": [
+          0,
+          0,
+          256,
+          64
+        ],
+        "alphaExtrema": [
+          255,
+          255
+        ],
+        "centerRGBA": [
+          97,
+          97,
+          97,
+          255
+        ],
+        "wholePNGhashEqual": true
+      },
+      "alphaCompositeActuallyViewed": false
+    },
+    {
+      "n": 12,
+      "features": "A fully opaque256x32 medium-gray rectangular strip with a very subtle lighter top and darker bottom edge. Straight square ends; no floral, icon or stitched ornament.",
+      "comparison": "Plain surface appearance only.",
+      "limits": "Filename Minimalist does not establish an active profile or in-game dimensions.",
+      "derivative": {
+        "sourceSHA256": "97976977031766D707A34121AC13C5AB6B7E9D204BE2EFAA395C717AEB1DC7AB",
+        "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\97976977031766D707A34121AC13C5AB6B7E9D204BE2EFAA395C717AEB1DC7AB.png",
+        "SHA256": "0A072757D1BCDB4B5F433AF9C887B97E0140D3CE4A23BFDFC9A08DFB4D35EC95",
+        "bytes": 458,
+        "dimensions": [
+          256,
+          32
+        ],
+        "RGBApixelsSHA256": "FB20BFE344F3FB95CA67288987A1FAF9BC5C899F4D7E75E884BE015BEE8E3FC1",
+        "sourcePaths": [
+          "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\statusbar\\Minimalist.tga"
+        ],
+        "conversion": "Pillow decoded pixels��RGBA PNG; no resize/crop/repaint"
+      },
+      "alphaView": {
+        "n": 12,
+        "sourceSHA256": "97976977031766D707A34121AC13C5AB6B7E9D204BE2EFAA395C717AEB1DC7AB",
+        "viewPath": "C:\\Users\\USER\\Documents\\Codex\\2026-11-17\\new-chat-2\\wf-step5-alpha-1f_k9w7g\\12-light-dark-check.png",
+        "method": "whole source alpha composite on light224, dark24, checker112/192 left-to-right; 8px native gaps; nearest integer scale 4",
+        "scale": 4,
+        "dimensions": [
+          256,
+          32
+        ],
+        "alphaBBox": [
+          0,
+          0,
+          256,
+          32
+        ],
+        "alphaExtrema": [
+          255,
+          255
+        ],
+        "centerRGBA": [
+          152,
+          152,
+          152,
+          255
+        ],
+        "wholePNGhashEqual": true
+      },
+      "alphaCompositeActuallyViewed": false
+    },
+    {
+      "n": 13,
+      "features": "A fully opaque256x32 rectangular grayscale strip with a smooth bright upper edge fading to a much darker bottom. Straight square ends and no figurative ornament.",
+      "comparison": "Smooth shaded surface appearance only.",
+      "limits": "No runtime color, fill or target selection inferred.",
+      "derivative": {
+        "sourceSHA256": "00E8084E83BF25B941464E2619B59E993B6AC7AE0BD8A6F37B12872E686DED6D",
+        "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\00E8084E83BF25B941464E2619B59E993B6AC7AE0BD8A6F37B12872E686DED6D.png",
+        "SHA256": "E1E72864C3AD1B49621BBBFE0EE0FA39FDC716EAA0999872FBE3F60DCEAE26F3",
+        "bytes": 2119,
+        "dimensions": [
+          256,
+          32
+        ],
+        "RGBApixelsSHA256": "1E18C38F4AFC4B5E77974C85FE2BB42C9AF1966A62E2909132FBC416156A8207",
+        "sourcePaths": [
+          "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\statusbar\\Smooth.tga"
+        ],
+        "conversion": "Pillow decoded pixels��RGBA PNG; no resize/crop/repaint"
+      },
+      "alphaView": {
+        "n": 13,
+        "sourceSHA256": "00E8084E83BF25B941464E2619B59E993B6AC7AE0BD8A6F37B12872E686DED6D",
+        "viewPath": "C:\\Users\\USER\\Documents\\Codex\\2026-11-17\\new-chat-2\\wf-step5-alpha-1f_k9w7g\\13-light-dark-check.png",
+        "method": "whole source alpha composite on light224, dark24, checker112/192 left-to-right; 8px native gaps; nearest integer scale 4",
+        "scale": 4,
+        "dimensions": [
+          256,
+          32
+        ],
+        "alphaBBox": [
+          0,
+          0,
+          256,
+          32
+        ],
+        "alphaExtrema": [
+          255,
+          255
+        ],
+        "centerRGBA": [
+          168,
+          168,
+          168,
+          255
+        ],
+        "wholePNGhashEqual": true
+      },
+      "alphaCompositeActuallyViewed": false
+    },
+    {
+      "n": 14,
+      "features": "A uniform fully opaque64x64 white square, including its center and all edges. No border, gradient, transparent hole or ornament is visible.",
+      "comparison": "Solid texture appearance only.",
+      "limits": "No assumption about tinting, panel opacity or active runtime usage.",
+      "derivative": {
+        "sourceSHA256": "50E76AB77BAE7DEB79272C749BBCF538719D46C0B3501D78FAB259566D2AE22F",
+        "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\50E76AB77BAE7DEB79272C749BBCF538719D46C0B3501D78FAB259566D2AE22F.png",
+        "SHA256": "10AC492948521F143EF60E8EE58190A4EA80FF9E973345B4236226C24AF6813D",
+        "bytes": 181,
+        "dimensions": [
+          64,
+          64
+        ],
+        "RGBApixelsSHA256": "0FBBA07A833D4DCFC7024EAF313661A0BA8F80A05C6D29B8801C612E10E60DEE",
+        "sourcePaths": [
+          "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\WHITE64X64.tga"
+        ],
+        "conversion": "Pillow decoded pixels��RGBA PNG; no resize/crop/repaint"
+      },
+      "alphaView": {
+        "n": 14,
+        "sourceSHA256": "50E76AB77BAE7DEB79272C749BBCF538719D46C0B3501D78FAB259566D2AE22F",
+        "viewPath": "C:\\Users\\USER\\Documents\\Codex\\2026-11-17\\new-chat-2\\wf-step5-alpha-1f_k9w7g\\14-light-dark-check.png",
+        "method": "whole source alpha composite on light224, dark24, checker112/192 left-to-right; 8px native gaps; nearest integer scale 8",
+        "scale": 8,
+        "dimensions": [
+          64,
+          64
+        ],
+        "alphaBBox": [
+          0,
+          0,
+          64,
+          64
+        ],
+        "alphaExtrema": [
+          255,
+          255
+        ],
+        "centerRGBA": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "wholePNGhashEqual": true
+      },
+      "alphaCompositeActuallyViewed": false
+    },
+    {
+      "n": 15,
+      "features": "A very small pale upward-pointing triangle near the top-center of a64x64 transparent canvas. Its visible bounds are x26-35,y2-8; the rest of the canvas is transparent, including its center.",
+      "comparison": "A separate small indicator shape, not a whole button face.",
+      "limits": "No interaction, rotation or selected normal-state assignment inferred from its filename.",
+      "derivative": {
+        "sourceSHA256": "530258343A9F43156C649D43B8D4D04159CC179919B505187E7B53EB97F893CF",
+        "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\530258343A9F43156C649D43B8D4D04159CC179919B505187E7B53EB97F893CF.png",
+        "SHA256": "EEAB1B27F5A9B76EA5B68931C75792B8EB00B5CD2C858F43597486CAD98C7927",
+        "bytes": 350,
+        "dimensions": [
+          64,
+          64
+        ],
+        "RGBApixelsSHA256": "7EB70E3237973B4C90FBAB96590E2F75103A98121142677F1829DAAE09EE328D",
+        "sourcePaths": [
+          "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Textures\\Arrow.tga"
+        ],
+        "conversion": "Pillow decoded pixels��RGBA PNG; no resize/crop/repaint"
+      },
+      "alphaView": {
+        "n": 15,
+        "sourceSHA256": "530258343A9F43156C649D43B8D4D04159CC179919B505187E7B53EB97F893CF",
+        "viewPath": "C:\\Users\\USER\\Documents\\Codex\\2026-11-17\\new-chat-2\\wf-step5-alpha-1f_k9w7g\\15-light-dark-check.png",
+        "method": "whole source alpha composite on light224, dark24, checker112/192 left-to-right; 8px native gaps; nearest integer scale 8",
+        "scale": 8,
+        "dimensions": [
+          64,
+          64
+        ],
+        "alphaBBox": [
+          26,
+          2,
+          36,
+          9
+        ],
+        "alphaExtrema": [
+          0,
+          230
+        ],
+        "centerRGBA": [
+          255,
+          255,
+          255,
+          0
+        ],
+        "wholePNGhashEqual": true
+      },
+      "alphaCompositeActuallyViewed": true
+    },
+    {
+      "n": 16,
+      "features": "A dark charcoal textured square patch inset about6px from each canvas side. Faint irregular relief/swirl-like shading covers an opaque center; outer margins are transparent. No transparent central hole.",
+      "comparison": "Can visually supply a dark backing surface; that is a pixel fact, not a design choice.",
+      "limits": "No exact sculptural identity or selected button/profile usage established.",
+      "derivative": {
+        "sourceSHA256": "CE0732935E0C6578A3F913201900661A8B15073CE0BD2685921119F62914F182",
+        "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\CE0732935E0C6578A3F913201900661A8B15073CE0BD2685921119F62914F182.png",
+        "SHA256": "2F9751D533BB256EF2AF805466D69E75AD59CBB8EBE0D8F64051EFF08D193742",
+        "bytes": 4508,
+        "dimensions": [
+          64,
+          64
+        ],
+        "RGBApixelsSHA256": "BF6BDA8EE7127261379B837A57F3B51CF783753DC536AA7E5DE34E16F9CD5056",
+        "sourcePaths": [
+          "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Textures\\Backdrop.tga"
+        ],
+        "conversion": "Pillow decoded pixels��RGBA PNG; no resize/crop/repaint"
+      },
+      "alphaView": {
+        "n": 16,
+        "sourceSHA256": "CE0732935E0C6578A3F913201900661A8B15073CE0BD2685921119F62914F182",
+        "viewPath": "C:\\Users\\USER\\Documents\\Codex\\2026-11-17\\new-chat-2\\wf-step5-alpha-1f_k9w7g\\16-light-dark-check.png",
+        "method": "whole source alpha composite on light224, dark24, checker112/192 left-to-right; 8px native gaps; nearest integer scale 8",
+        "scale": 8,
+        "dimensions": [
+          64,
+          64
+        ],
+        "alphaBBox": [
+          6,
+          6,
+          58,
+          58
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "centerRGBA": [
+          49,
+          49,
+          44,
+          255
+        ],
+        "wholePNGhashEqual": true
+      },
+      "alphaCompositeActuallyViewed": true
+    },
+    {
+      "n": 17,
+      "features": "A white/gray square rim inset about10px in a64x64 canvas. It has softly shaded/beveled edge bands and an open transparent center, with transparent outer margins. The native preview's white-looking block was not treated as an opaque face; light/dark composites and alpha confirm the opening.",
+      "comparison": "An edge layer that leaves the central icon area visible when composited; a geometry fact only.",
+      "limits": "No tint, blend mode, selected button skin or photograph exact-match inference.",
+      "derivative": {
+        "sourceSHA256": "6205864AB3317B4D18DAC301C3BF1272E8B451F6F94C0D305058638ED1D57B97",
+        "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\6205864AB3317B4D18DAC301C3BF1272E8B451F6F94C0D305058638ED1D57B97.png",
+        "SHA256": "EE84F312F1FB355382B06B5D1F7AE63DCF8D5A4C183F851CA7676309F1DD9BF4",
+        "bytes": 418,
+        "dimensions": [
+          64,
+          64
+        ],
+        "RGBApixelsSHA256": "F0FF37BC685586AD2DDEEA90E0CD52B80D5EEF1C67FCAAC976F4E2E0F186845D",
+        "sourcePaths": [
+          "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Textures\\Border.tga"
+        ],
+        "conversion": "Pillow decoded pixels��RGBA PNG; no resize/crop/repaint"
+      },
+      "alphaView": {
+        "n": 17,
+        "sourceSHA256": "6205864AB3317B4D18DAC301C3BF1272E8B451F6F94C0D305058638ED1D57B97",
+        "viewPath": "C:\\Users\\USER\\Documents\\Codex\\2026-11-17\\new-chat-2\\wf-step5-alpha-1f_k9w7g\\17-light-dark-check.png",
+        "method": "whole source alpha composite on light224, dark24, checker112/192 left-to-right; 8px native gaps; nearest integer scale 8",
+        "scale": 8,
+        "dimensions": [
+          64,
+          64
+        ],
+        "alphaBBox": [
+          10,
+          10,
+          54,
+          54
+        ],
+        "alphaExtrema": [
+          0,
+          253
+        ],
+        "centerRGBA": [
+          255,
+          255,
+          255,
+          0
+        ],
+        "wholePNGhashEqual": true
+      },
+      "alphaCompositeActuallyViewed": true
+    },
+    {
+      "n": 18,
+      "features": "A thick dark charcoal square frame with beveled bands, softened outer corners/shadow and a transparent central opening. A small upward-pointing triangular bump sits at the top-center. Content nearly fills the64x64 canvas with about1px outer bound margin.",
+      "comparison": "Dark raised-button framing appearance, visually distinct from the plain32x32 border and thin128x16 strips.",
+      "limits": "Classic is a filename. Which texture is assigned to Normal or which skin is selected is unverified; source code was not read or executed here.",
+      "derivative": {
+        "sourceSHA256": "0CE612BDB39399D2676B14FDD61CCADE9FA8A1904339D88F0969259C6E88F2FE",
+        "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\0CE612BDB39399D2676B14FDD61CCADE9FA8A1904339D88F0969259C6E88F2FE.png",
+        "SHA256": "F93420F73DEF8E632E2DC7FAC04590BA7DE5D2527123F328B6190507BC860BD2",
+        "bytes": 1445,
+        "dimensions": [
+          64,
+          64
+        ],
+        "RGBApixelsSHA256": "8BB7166E4C5DE5971987161F5E4EC436D67A6D9AFCE6213D010B9F17987371ED",
+        "sourcePaths": [
+          "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Textures\\Classic.tga"
+        ],
+        "conversion": "Pillow decoded pixels��RGBA PNG; no resize/crop/repaint"
+      },
+      "alphaView": {
+        "n": 18,
+        "sourceSHA256": "0CE612BDB39399D2676B14FDD61CCADE9FA8A1904339D88F0969259C6E88F2FE",
+        "viewPath": "C:\\Users\\USER\\Documents\\Codex\\2026-11-17\\new-chat-2\\wf-step5-alpha-1f_k9w7g\\18-light-dark-check.png",
+        "method": "whole source alpha composite on light224, dark24, checker112/192 left-to-right; 8px native gaps; nearest integer scale 8",
+        "scale": 8,
+        "dimensions": [
+          64,
+          64
+        ],
+        "alphaBBox": [
+          1,
+          1,
+          63,
+          63
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "centerRGBA": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "wholePNGhashEqual": true
+      },
+      "alphaCompositeActuallyViewed": true
+    },
+    {
+      "n": 19,
+      "features": "A soft semitransparent white sheen across the upper part of the64x64 canvas, inset from the edges. Its lower boundary curves/fades away; lower half and center below it are transparent. Alpha ranges only0-111/255.",
+      "comparison": "An upper glare layer rather than a full opaque button or frame.",
+      "limits": "No blending/tint/active-state contract inferred; native display alone was ambiguous and was superseded by explicit alpha composites.",
+      "derivative": {
+        "sourceSHA256": "B797A5014DBC3D57F9CD4F44FFFF5B424E1953B357FEAF408A07FAA26509C50B",
+        "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\B797A5014DBC3D57F9CD4F44FFFF5B424E1953B357FEAF408A07FAA26509C50B.png",
+        "SHA256": "C5D1EDC6094DCB2991E8B9D12CAA19E74743D940F5C47015810173A699D52930",
+        "bytes": 748,
+        "dimensions": [
+          64,
+          64
+        ],
+        "RGBApixelsSHA256": "2B993E6C94C3F14C527EC28BBC78648EBE45C20EEECA7E0829B31ED26F5AB55A",
+        "sourcePaths": [
+          "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Textures\\Gloss.tga"
+        ],
+        "conversion": "Pillow decoded pixels��RGBA PNG; no resize/crop/repaint"
+      },
+      "alphaView": {
+        "n": 19,
+        "sourceSHA256": "B797A5014DBC3D57F9CD4F44FFFF5B424E1953B357FEAF408A07FAA26509C50B",
+        "viewPath": "C:\\Users\\USER\\Documents\\Codex\\2026-11-17\\new-chat-2\\wf-step5-alpha-1f_k9w7g\\19-light-dark-check.png",
+        "method": "whole source alpha composite on light224, dark24, checker112/192 left-to-right; 8px native gaps; nearest integer scale 8",
+        "scale": 8,
+        "dimensions": [
+          64,
+          64
+        ],
+        "alphaBBox": [
+          9,
+          9,
+          55,
+          31
+        ],
+        "alphaExtrema": [
+          0,
+          111
+        ],
+        "centerRGBA": [
+          255,
+          255,
+          255,
+          0
+        ],
+        "wholePNGhashEqual": true
+      },
+      "alphaCompositeActuallyViewed": true
+    },
+    {
+      "n": 20,
+      "features": "A faint soft white sheen in the upper portion, inset about10px horizontally and vertically. It resembles the broad upper glare of Gloss but is lower-opacity and slightly narrower; alpha maximum62/255. Lower canvas/center is transparent.",
+      "comparison": "Subtle overlay appearance only; no state/selection recommendation.",
+      "limits": "Highlight filename does not prove mouse-over behavior, blending or runtime support.",
+      "derivative": {
+        "sourceSHA256": "F9766B998A36A093393C444839DA9364EDF3AEA3899A5EE69AA0D0261D4C1B83",
+        "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\F9766B998A36A093393C444839DA9364EDF3AEA3899A5EE69AA0D0261D4C1B83.png",
+        "SHA256": "F3AC6E5EE4CB38D5C25A2803C9EF4A116597A36ABBA8109BFA3B80B71836D596",
+        "bytes": 662,
+        "dimensions": [
+          64,
+          64
+        ],
+        "RGBApixelsSHA256": "3B653CC9AF7A2ADA4C022DEF281BE902EEB9F6FBC960D1CA8B3F5FF4A8E71919",
+        "sourcePaths": [
+          "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Textures\\Highlight.tga"
+        ],
+        "conversion": "Pillow decoded pixels��RGBA PNG; no resize/crop/repaint"
+      },
+      "alphaView": {
+        "n": 20,
+        "sourceSHA256": "F9766B998A36A093393C444839DA9364EDF3AEA3899A5EE69AA0D0261D4C1B83",
+        "viewPath": "C:\\Users\\USER\\Documents\\Codex\\2026-11-17\\new-chat-2\\wf-step5-alpha-1f_k9w7g\\20-light-dark-check.png",
+        "method": "whole source alpha composite on light224, dark24, checker112/192 left-to-right; 8px native gaps; nearest integer scale 8",
+        "scale": 8,
+        "dimensions": [
+          64,
+          64
+        ],
+        "alphaBBox": [
+          10,
+          10,
+          54,
+          31
+        ],
+        "alphaExtrema": [
+          0,
+          62
+        ],
+        "centerRGBA": [
+          255,
+          255,
+          255,
+          0
+        ],
+        "wholePNGhashEqual": true
+      },
+      "alphaCompositeActuallyViewed": true
+    },
+    {
+      "n": 21,
+      "features": "A white filled square with softly feathered/beveled boundary, inset about10px in64x64 canvas. Unlike Border/Classic/Redux, its center is fully opaque white; outer margins are transparent.",
+      "comparison": "A filled mask/overlay-like surface by appearance, not an open border.",
+      "limits": "No function or blend mode is certified from the filename; it cannot be assumed to leave an underlying icon visible without knowing composition.",
+      "derivative": {
+        "sourceSHA256": "FD870CDE3E44463D77232C19FA9597BEECA897BF760FDC873AA302BA0120C81F",
+        "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\FD870CDE3E44463D77232C19FA9597BEECA897BF760FDC873AA302BA0120C81F.png",
+        "SHA256": "CEE48C71B143CC234E98785CD6538AE1BF268BAEB1DFF3CA35D91736F2AA3DB9",
+        "bytes": 370,
+        "dimensions": [
+          64,
+          64
+        ],
+        "RGBApixelsSHA256": "D53246B0EC3AB4ED4BE1FD4B47DC7AFD0A10073FD5C121E9502A5936A355FF65",
+        "sourcePaths": [
+          "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Textures\\Overlay.tga"
+        ],
+        "conversion": "Pillow decoded pixels��RGBA PNG; no resize/crop/repaint"
+      },
+      "alphaView": {
+        "n": 21,
+        "sourceSHA256": "FD870CDE3E44463D77232C19FA9597BEECA897BF760FDC873AA302BA0120C81F",
+        "viewPath": "C:\\Users\\USER\\Documents\\Codex\\2026-11-17\\new-chat-2\\wf-step5-alpha-1f_k9w7g\\21-light-dark-check.png",
+        "method": "whole source alpha composite on light224, dark24, checker112/192 left-to-right; 8px native gaps; nearest integer scale 8",
+        "scale": 8,
+        "dimensions": [
+          64,
+          64
+        ],
+        "alphaBBox": [
+          10,
+          10,
+          54,
+          54
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "centerRGBA": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "wholePNGhashEqual": true
+      },
+      "alphaCompositeActuallyViewed": true
+    },
+    {
+      "n": 22,
+      "features": "A thick dark square rim with stepped/beveled shading, softened corners and a transparent center. It nearly fills64x64 with about1px outer bound margin. No obvious top-center triangular bump as on Classic.",
+      "comparison": "Dark raised-frame appearance; the distinction from Classic is directly visible.",
+      "limits": "Redux is a filename, not proof of Normal-state assignment or skin selection; no source-use or photograph exact identity claim.",
+      "derivative": {
+        "sourceSHA256": "E77A8FE0A4DE108FAE156E45B1458EB1C04E594082D7B11816E1567BC435DDF9",
+        "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\E77A8FE0A4DE108FAE156E45B1458EB1C04E594082D7B11816E1567BC435DDF9.png",
+        "SHA256": "2714E335196C9983B4D008F0AF53ED390C6A1D3165C1BD164E66FFB2AF75F93D",
+        "bytes": 1318,
+        "dimensions": [
+          64,
+          64
+        ],
+        "RGBApixelsSHA256": "3D41D044BD3D34C21DEF0E55FF8A6C3F5AF52D2FA28C20A03D17BAF83ED8709C",
+        "sourcePaths": [
+          "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Textures\\Redux.tga"
+        ],
+        "conversion": "Pillow decoded pixels��RGBA PNG; no resize/crop/repaint"
+      },
+      "alphaView": {
+        "n": 22,
+        "sourceSHA256": "E77A8FE0A4DE108FAE156E45B1458EB1C04E594082D7B11816E1567BC435DDF9",
+        "viewPath": "C:\\Users\\USER\\Documents\\Codex\\2026-11-17\\new-chat-2\\wf-step5-alpha-1f_k9w7g\\22-light-dark-check.png",
+        "method": "whole source alpha composite on light224, dark24, checker112/192 left-to-right; 8px native gaps; nearest integer scale 8",
+        "scale": 8,
+        "dimensions": [
+          64,
+          64
+        ],
+        "alphaBBox": [
+          1,
+          1,
+          63,
+          63
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "centerRGBA": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "wholePNGhashEqual": true
+      },
+      "alphaCompositeActuallyViewed": true
+    }
+  ],
+  "sourceRowsImageMappings": [
+    {
+      "rootID": 1,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\Devil\\angel.tga",
+      "relativePath": "angel.tga",
+      "bytes": 262188,
+      "SHA256before": "073284129E9F8D2AD16998140A1AC6DB1A475636025AEFF476FC3DA359CA8744",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          256,
+          256
+        ],
+        "extrema": [
+          [
+            0,
+            207
+          ],
+          [
+            0,
+            198
+          ],
+          [
+            0,
+            183
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          43,
+          105,
+          256,
+          256
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "77AB871DBDA3FC49B68353F98C417AACA9E9E3E32C70E13071B607E424AE9D04"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\073284129E9F8D2AD16998140A1AC6DB1A475636025AEFF476FC3DA359CA8744.png",
+      "SHA256after": "073284129E9F8D2AD16998140A1AC6DB1A475636025AEFF476FC3DA359CA8744",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 1,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\Devil\\border.tga",
+      "relativePath": "border.tga",
+      "bytes": 4140,
+      "SHA256before": "7E0E0E9C7831BBBCFFD75F5F71DF51BDD48366AD4C7E3DF0ADC30750F429B1D3",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          32,
+          32
+        ],
+        "extrema": [
+          [
+            0,
+            68
+          ],
+          [
+            0,
+            68
+          ],
+          [
+            0,
+            68
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          0,
+          0,
+          32,
+          32
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "319E3EAAFF8B8CA067EB044BF7F9372760D95A5D5312C417B1FF02AF504CD7B1"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\7E0E0E9C7831BBBCFFD75F5F71DF51BDD48366AD4C7E3DF0ADC30750F429B1D3.png",
+      "SHA256after": "7E0E0E9C7831BBBCFFD75F5F71DF51BDD48366AD4C7E3DF0ADC30750F429B1D3",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 1,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\Devil\\demon.tga",
+      "relativePath": "demon.tga",
+      "bytes": 262188,
+      "SHA256before": "045CE188243A618161EB6351ECA50F2F0B7562A944C16D59EB68E0A2DFE248CA",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          256,
+          256
+        ],
+        "extrema": [
+          [
+            0,
+            240
+          ],
+          [
+            0,
+            204
+          ],
+          [
+            0,
+            180
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          0,
+          92,
+          220,
+          256
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "A04E9C59684C6013AD069160F6373E2F37C94EE7AC26F288E91B060C137AF251"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\045CE188243A618161EB6351ECA50F2F0B7562A944C16D59EB68E0A2DFE248CA.png",
+      "SHA256after": "045CE188243A618161EB6351ECA50F2F0B7562A944C16D59EB68E0A2DFE248CA",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 1,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\Devil\\Minimap.TGA",
+      "relativePath": "Minimap.TGA",
+      "bytes": 262188,
+      "SHA256before": "549B0D63829FA160BB9B7CFDDE619107FC39C9A877AD28F173576F55C907AC79",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          256,
+          256
+        ],
+        "extrema": [
+          [
+            0,
+            206
+          ],
+          [
+            0,
+            206
+          ],
+          [
+            0,
+            206
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          4,
+          0,
+          252,
+          248
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "732807832AB74888CD6E4D73D8EC680A42E8E7B4B7247C140DF91B47ADB9BF9B"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\549B0D63829FA160BB9B7CFDDE619107FC39C9A877AD28F173576F55C907AC79.png",
+      "SHA256after": "549B0D63829FA160BB9B7CFDDE619107FC39C9A877AD28F173576F55C907AC79",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 1,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\Devil\\tooltip.tga",
+      "relativePath": "tooltip.tga",
+      "bytes": 8236,
+      "SHA256before": "F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          128,
+          16
+        ],
+        "extrema": [
+          [
+            0,
+            59
+          ],
+          [
+            0,
+            59
+          ],
+          [
+            0,
+            59
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          1,
+          0,
+          127,
+          16
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "B095E3C2891EE0E66B5DFB08DB1F84C5A600E6CAF92A93D816F1B5DC173FE63B"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD.png",
+      "SHA256after": "F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 2,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\SharedMedia\\border\\Devil.tga",
+      "relativePath": "Devil.tga",
+      "bytes": 8236,
+      "SHA256before": "9DE505F668137A32B3ADD4CD56ADB6B84883B798B0E3398C37B6CBCCED914504",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          128,
+          16
+        ],
+        "extrema": [
+          [
+            0,
+            181
+          ],
+          [
+            0,
+            181
+          ],
+          [
+            0,
+            181
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          0,
+          0,
+          128,
+          16
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "4261616025D363DDBDB909859F14047BF855187B81BF2AC3F99D7D2E61018357"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\9DE505F668137A32B3ADD4CD56ADB6B84883B798B0E3398C37B6CBCCED914504.png",
+      "SHA256after": "9DE505F668137A32B3ADD4CD56ADB6B84883B798B0E3398C37B6CBCCED914504",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 2,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\SharedMedia\\border\\Devil2.tga",
+      "relativePath": "Devil2.tga",
+      "bytes": 8236,
+      "SHA256before": "F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          128,
+          16
+        ],
+        "extrema": [
+          [
+            0,
+            59
+          ],
+          [
+            0,
+            59
+          ],
+          [
+            0,
+            59
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          1,
+          0,
+          127,
+          16
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "B095E3C2891EE0E66B5DFB08DB1F84C5A600E6CAF92A93D816F1B5DC173FE63B"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD.png",
+      "SHA256after": "F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 2,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\SharedMedia\\border\\roth.tga",
+      "relativePath": "roth.tga",
+      "bytes": 8236,
+      "SHA256before": "49CA0BC8E0CBDD6ABED71748E3B686032F588C5E2829E6B844C9EC1F8B1A3AA9",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          128,
+          16
+        ],
+        "extrema": [
+          [
+            0,
+            75
+          ],
+          [
+            0,
+            75
+          ],
+          [
+            0,
+            75
+          ],
+          [
+            0,
+            102
+          ]
+        ],
+        "alphaBBox": [
+          1,
+          0,
+          127,
+          16
+        ],
+        "alphaExtrema": [
+          0,
+          102
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "A64019462062563B4CC96D19250DE4845249E876A39A9F7F43309C7F26E67064"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\49CA0BC8E0CBDD6ABED71748E3B686032F588C5E2829E6B844C9EC1F8B1A3AA9.png",
+      "SHA256after": "49CA0BC8E0CBDD6ABED71748E3B686032F588C5E2829E6B844C9EC1F8B1A3AA9",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 3,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\background\\angel.tga",
+      "relativePath": "background/angel.tga",
+      "bytes": 262188,
+      "SHA256before": "073284129E9F8D2AD16998140A1AC6DB1A475636025AEFF476FC3DA359CA8744",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          256,
+          256
+        ],
+        "extrema": [
+          [
+            0,
+            207
+          ],
+          [
+            0,
+            198
+          ],
+          [
+            0,
+            183
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          43,
+          105,
+          256,
+          256
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "77AB871DBDA3FC49B68353F98C417AACA9E9E3E32C70E13071B607E424AE9D04"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\073284129E9F8D2AD16998140A1AC6DB1A475636025AEFF476FC3DA359CA8744.png",
+      "SHA256after": "073284129E9F8D2AD16998140A1AC6DB1A475636025AEFF476FC3DA359CA8744",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 3,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\background\\demon.tga",
+      "relativePath": "background/demon.tga",
+      "bytes": 262188,
+      "SHA256before": "045CE188243A618161EB6351ECA50F2F0B7562A944C16D59EB68E0A2DFE248CA",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          256,
+          256
+        ],
+        "extrema": [
+          [
+            0,
+            240
+          ],
+          [
+            0,
+            204
+          ],
+          [
+            0,
+            180
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          0,
+          92,
+          220,
+          256
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "A04E9C59684C6013AD069160F6373E2F37C94EE7AC26F288E91B060C137AF251"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\045CE188243A618161EB6351ECA50F2F0B7562A944C16D59EB68E0A2DFE248CA.png",
+      "SHA256after": "045CE188243A618161EB6351ECA50F2F0B7562A944C16D59EB68E0A2DFE248CA",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 3,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\background\\Minimap.TGA",
+      "relativePath": "background/Minimap.TGA",
+      "bytes": 262188,
+      "SHA256before": "549B0D63829FA160BB9B7CFDDE619107FC39C9A877AD28F173576F55C907AC79",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          256,
+          256
+        ],
+        "extrema": [
+          [
+            0,
+            206
+          ],
+          [
+            0,
+            206
+          ],
+          [
+            0,
+            206
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          4,
+          0,
+          252,
+          248
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "732807832AB74888CD6E4D73D8EC680A42E8E7B4B7247C140DF91B47ADB9BF9B"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\549B0D63829FA160BB9B7CFDDE619107FC39C9A877AD28F173576F55C907AC79.png",
+      "SHA256after": "549B0D63829FA160BB9B7CFDDE619107FC39C9A877AD28F173576F55C907AC79",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 3,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\border\\Devil.tga",
+      "relativePath": "border/Devil.tga",
+      "bytes": 8236,
+      "SHA256before": "9DE505F668137A32B3ADD4CD56ADB6B84883B798B0E3398C37B6CBCCED914504",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          128,
+          16
+        ],
+        "extrema": [
+          [
+            0,
+            181
+          ],
+          [
+            0,
+            181
+          ],
+          [
+            0,
+            181
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          0,
+          0,
+          128,
+          16
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "4261616025D363DDBDB909859F14047BF855187B81BF2AC3F99D7D2E61018357"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\9DE505F668137A32B3ADD4CD56ADB6B84883B798B0E3398C37B6CBCCED914504.png",
+      "SHA256after": "9DE505F668137A32B3ADD4CD56ADB6B84883B798B0E3398C37B6CBCCED914504",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 3,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\border\\Devil2.tga",
+      "relativePath": "border/Devil2.tga",
+      "bytes": 8236,
+      "SHA256before": "F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          128,
+          16
+        ],
+        "extrema": [
+          [
+            0,
+            59
+          ],
+          [
+            0,
+            59
+          ],
+          [
+            0,
+            59
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          1,
+          0,
+          127,
+          16
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "B095E3C2891EE0E66B5DFB08DB1F84C5A600E6CAF92A93D816F1B5DC173FE63B"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD.png",
+      "SHA256after": "F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 3,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\border\\Devil3.tga",
+      "relativePath": "border/Devil3.tga",
+      "bytes": 2200,
+      "SHA256before": "150DEC18668CCCB2EF33B37D1C8A9468FDE7478F42747CEFFC037037C215D86B",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          128,
+          16
+        ],
+        "extrema": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          2,
+          0,
+          126,
+          16
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "8B2A1BDDF78617737730BB3C900770B6FBE4BDA47AA19B8CC5BBEA0D32832220"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\150DEC18668CCCB2EF33B37D1C8A9468FDE7478F42747CEFFC037037C215D86B.png",
+      "SHA256after": "150DEC18668CCCB2EF33B37D1C8A9468FDE7478F42747CEFFC037037C215D86B",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 3,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\border\\roth.tga",
+      "relativePath": "border/roth.tga",
+      "bytes": 8236,
+      "SHA256before": "49CA0BC8E0CBDD6ABED71748E3B686032F588C5E2829E6B844C9EC1F8B1A3AA9",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          128,
+          16
+        ],
+        "extrema": [
+          [
+            0,
+            75
+          ],
+          [
+            0,
+            75
+          ],
+          [
+            0,
+            75
+          ],
+          [
+            0,
+            102
+          ]
+        ],
+        "alphaBBox": [
+          1,
+          0,
+          127,
+          16
+        ],
+        "alphaExtrema": [
+          0,
+          102
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "A64019462062563B4CC96D19250DE4845249E876A39A9F7F43309C7F26E67064"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\49CA0BC8E0CBDD6ABED71748E3B686032F588C5E2829E6B844C9EC1F8B1A3AA9.png",
+      "SHA256after": "49CA0BC8E0CBDD6ABED71748E3B686032F588C5E2829E6B844C9EC1F8B1A3AA9",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 3,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\mail.tga",
+      "relativePath": "mail.tga",
+      "bytes": 584,
+      "SHA256before": "FD2A7BF3E1395AFBE92DB0EA607E8F24D8D0D1E508010A6B4EC684011DCCABE3",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          16,
+          16
+        ],
+        "extrema": [
+          [
+            0,
+            252
+          ],
+          [
+            0,
+            251
+          ],
+          [
+            0,
+            250
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          1,
+          3,
+          15,
+          13
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "94AB1B552F56EAA12A8B565B0330E04F79F4152924A6E9F7B7C7F5D12B775BB1"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\FD2A7BF3E1395AFBE92DB0EA607E8F24D8D0D1E508010A6B4EC684011DCCABE3.png",
+      "SHA256after": "FD2A7BF3E1395AFBE92DB0EA607E8F24D8D0D1E508010A6B4EC684011DCCABE3",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 3,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\statusbar\\FairAqua.tga",
+      "relativePath": "statusbar/FairAqua.tga",
+      "bytes": 32812,
+      "SHA256before": "DB16C4CB98D66C6A117293BC9C6BD881ABCAC8480946C70DD34E4CC2C43B1A5F",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          256,
+          32
+        ],
+        "extrema": [
+          [
+            120,
+            255
+          ],
+          [
+            120,
+            255
+          ],
+          [
+            119,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          0,
+          0,
+          256,
+          32
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "80F52D93DC41DE9183C237248820478549FBEFFDA0327D3FB4916F1AD0603C83"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\DB16C4CB98D66C6A117293BC9C6BD881ABCAC8480946C70DD34E4CC2C43B1A5F.png",
+      "SHA256after": "DB16C4CB98D66C6A117293BC9C6BD881ABCAC8480946C70DD34E4CC2C43B1A5F",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 3,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\statusbar\\FairLady.tga",
+      "relativePath": "statusbar/FairLady.tga",
+      "bytes": 32812,
+      "SHA256before": "54FD36E381A8A59C08313A7A61663F07E8E324CE4CBEA3E2AA6C572D3D6A0C20",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          256,
+          32
+        ],
+        "extrema": [
+          [
+            58,
+            255
+          ],
+          [
+            57,
+            255
+          ],
+          [
+            58,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          0,
+          0,
+          256,
+          32
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "7C2FE4F0D055E9E11884FE7411945B012C111483E49686303B98B0896667BF93"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\54FD36E381A8A59C08313A7A61663F07E8E324CE4CBEA3E2AA6C572D3D6A0C20.png",
+      "SHA256after": "54FD36E381A8A59C08313A7A61663F07E8E324CE4CBEA3E2AA6C572D3D6A0C20",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 3,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\statusbar\\Glamour7.tga",
+      "relativePath": "statusbar/Glamour7.tga",
+      "bytes": 65580,
+      "SHA256before": "EAE335C45840DABAF4412FA285B759DA7982172335A987CBEA689A291366C0AB",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          256,
+          64
+        ],
+        "extrema": [
+          [
+            92,
+            245
+          ],
+          [
+            92,
+            245
+          ],
+          [
+            92,
+            245
+          ],
+          [
+            255,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          0,
+          0,
+          256,
+          64
+        ],
+        "alphaExtrema": [
+          255,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "180D0B70FBF942831F5725EAF855EB0AED255C5E5320BB8F4271D01F4B34974A"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\EAE335C45840DABAF4412FA285B759DA7982172335A987CBEA689A291366C0AB.png",
+      "SHA256after": "EAE335C45840DABAF4412FA285B759DA7982172335A987CBEA689A291366C0AB",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 3,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\statusbar\\Minimalist.tga",
+      "relativePath": "statusbar/Minimalist.tga",
+      "bytes": 1304,
+      "SHA256before": "97976977031766D707A34121AC13C5AB6B7E9D204BE2EFAA395C717AEB1DC7AB",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          256,
+          32
+        ],
+        "extrema": [
+          [
+            102,
+            204
+          ],
+          [
+            102,
+            204
+          ],
+          [
+            102,
+            204
+          ],
+          [
+            255,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          0,
+          0,
+          256,
+          32
+        ],
+        "alphaExtrema": [
+          255,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "FB20BFE344F3FB95CA67288987A1FAF9BC5C899F4D7E75E884BE015BEE8E3FC1"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\97976977031766D707A34121AC13C5AB6B7E9D204BE2EFAA395C717AEB1DC7AB.png",
+      "SHA256after": "97976977031766D707A34121AC13C5AB6B7E9D204BE2EFAA395C717AEB1DC7AB",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 3,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\statusbar\\Smooth.tga",
+      "relativePath": "statusbar/Smooth.tga",
+      "bytes": 32812,
+      "SHA256before": "00E8084E83BF25B941464E2619B59E993B6AC7AE0BD8A6F37B12872E686DED6D",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          256,
+          32
+        ],
+        "extrema": [
+          [
+            88,
+            220
+          ],
+          [
+            88,
+            220
+          ],
+          [
+            88,
+            220
+          ],
+          [
+            255,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          0,
+          0,
+          256,
+          32
+        ],
+        "alphaExtrema": [
+          255,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "1E18C38F4AFC4B5E77974C85FE2BB42C9AF1966A62E2909132FBC416156A8207"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\00E8084E83BF25B941464E2619B59E993B6AC7AE0BD8A6F37B12872E686DED6D.png",
+      "SHA256after": "00E8084E83BF25B941464E2619B59E993B6AC7AE0BD8A6F37B12872E686DED6D",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 3,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\WHITE64X64.tga",
+      "relativePath": "WHITE64X64.tga",
+      "bytes": 12332,
+      "SHA256before": "50E76AB77BAE7DEB79272C749BBCF538719D46C0B3501D78FAB259566D2AE22F",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGB",
+        "dimensions": [
+          64,
+          64
+        ],
+        "extrema": [
+          [
+            255,
+            255
+          ],
+          [
+            255,
+            255
+          ],
+          [
+            255,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          0,
+          0,
+          64,
+          64
+        ],
+        "alphaExtrema": [
+          255,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "0FBBA07A833D4DCFC7024EAF313661A0BA8F80A05C6D29B8801C612E10E60DEE"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\50E76AB77BAE7DEB79272C749BBCF538719D46C0B3501D78FAB259566D2AE22F.png",
+      "SHA256after": "50E76AB77BAE7DEB79272C749BBCF538719D46C0B3501D78FAB259566D2AE22F",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 4,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Textures\\Arrow.tga",
+      "relativePath": "Textures/Arrow.tga",
+      "bytes": 16428,
+      "SHA256before": "530258343A9F43156C649D43B8D4D04159CC179919B505187E7B53EB97F893CF",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          64,
+          64
+        ],
+        "extrema": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            230
+          ]
+        ],
+        "alphaBBox": [
+          26,
+          2,
+          36,
+          9
+        ],
+        "alphaExtrema": [
+          0,
+          230
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "7EB70E3237973B4C90FBAB96590E2F75103A98121142677F1829DAAE09EE328D"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\530258343A9F43156C649D43B8D4D04159CC179919B505187E7B53EB97F893CF.png",
+      "SHA256after": "530258343A9F43156C649D43B8D4D04159CC179919B505187E7B53EB97F893CF",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 4,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Textures\\Backdrop.tga",
+      "relativePath": "Textures/Backdrop.tga",
+      "bytes": 16428,
+      "SHA256before": "CE0732935E0C6578A3F913201900661A8B15073CE0BD2685921119F62914F182",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          64,
+          64
+        ],
+        "extrema": [
+          [
+            0,
+            71
+          ],
+          [
+            0,
+            70
+          ],
+          [
+            0,
+            71
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          6,
+          6,
+          58,
+          58
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "BF6BDA8EE7127261379B837A57F3B51CF783753DC536AA7E5DE34E16F9CD5056"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\CE0732935E0C6578A3F913201900661A8B15073CE0BD2685921119F62914F182.png",
+      "SHA256after": "CE0732935E0C6578A3F913201900661A8B15073CE0BD2685921119F62914F182",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 4,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Textures\\Border.tga",
+      "relativePath": "Textures/Border.tga",
+      "bytes": 16428,
+      "SHA256before": "6205864AB3317B4D18DAC301C3BF1272E8B451F6F94C0D305058638ED1D57B97",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          64,
+          64
+        ],
+        "extrema": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            253
+          ]
+        ],
+        "alphaBBox": [
+          10,
+          10,
+          54,
+          54
+        ],
+        "alphaExtrema": [
+          0,
+          253
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "F0FF37BC685586AD2DDEEA90E0CD52B80D5EEF1C67FCAAC976F4E2E0F186845D"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\6205864AB3317B4D18DAC301C3BF1272E8B451F6F94C0D305058638ED1D57B97.png",
+      "SHA256after": "6205864AB3317B4D18DAC301C3BF1272E8B451F6F94C0D305058638ED1D57B97",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 4,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Textures\\Classic.tga",
+      "relativePath": "Textures/Classic.tga",
+      "bytes": 16428,
+      "SHA256before": "0CE612BDB39399D2676B14FDD61CCADE9FA8A1904339D88F0969259C6E88F2FE",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          64,
+          64
+        ],
+        "extrema": [
+          [
+            0,
+            121
+          ],
+          [
+            0,
+            121
+          ],
+          [
+            0,
+            121
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          1,
+          1,
+          63,
+          63
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "8BB7166E4C5DE5971987161F5E4EC436D67A6D9AFCE6213D010B9F17987371ED"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\0CE612BDB39399D2676B14FDD61CCADE9FA8A1904339D88F0969259C6E88F2FE.png",
+      "SHA256after": "0CE612BDB39399D2676B14FDD61CCADE9FA8A1904339D88F0969259C6E88F2FE",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 4,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Textures\\Gloss.tga",
+      "relativePath": "Textures/Gloss.tga",
+      "bytes": 16428,
+      "SHA256before": "B797A5014DBC3D57F9CD4F44FFFF5B424E1953B357FEAF408A07FAA26509C50B",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          64,
+          64
+        ],
+        "extrema": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            111
+          ]
+        ],
+        "alphaBBox": [
+          9,
+          9,
+          55,
+          31
+        ],
+        "alphaExtrema": [
+          0,
+          111
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "2B993E6C94C3F14C527EC28BBC78648EBE45C20EEECA7E0829B31ED26F5AB55A"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\B797A5014DBC3D57F9CD4F44FFFF5B424E1953B357FEAF408A07FAA26509C50B.png",
+      "SHA256after": "B797A5014DBC3D57F9CD4F44FFFF5B424E1953B357FEAF408A07FAA26509C50B",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 4,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Textures\\Highlight.tga",
+      "relativePath": "Textures/Highlight.tga",
+      "bytes": 16428,
+      "SHA256before": "F9766B998A36A093393C444839DA9364EDF3AEA3899A5EE69AA0D0261D4C1B83",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          64,
+          64
+        ],
+        "extrema": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            62
+          ]
+        ],
+        "alphaBBox": [
+          10,
+          10,
+          54,
+          31
+        ],
+        "alphaExtrema": [
+          0,
+          62
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "3B653CC9AF7A2ADA4C022DEF281BE902EEB9F6FBC960D1CA8B3F5FF4A8E71919"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\F9766B998A36A093393C444839DA9364EDF3AEA3899A5EE69AA0D0261D4C1B83.png",
+      "SHA256after": "F9766B998A36A093393C444839DA9364EDF3AEA3899A5EE69AA0D0261D4C1B83",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 4,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Textures\\Overlay.tga",
+      "relativePath": "Textures/Overlay.tga",
+      "bytes": 16428,
+      "SHA256before": "FD870CDE3E44463D77232C19FA9597BEECA897BF760FDC873AA302BA0120C81F",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          64,
+          64
+        ],
+        "extrema": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          10,
+          10,
+          54,
+          54
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "D53246B0EC3AB4ED4BE1FD4B47DC7AFD0A10073FD5C121E9502A5936A355FF65"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\FD870CDE3E44463D77232C19FA9597BEECA897BF760FDC873AA302BA0120C81F.png",
+      "SHA256after": "FD870CDE3E44463D77232C19FA9597BEECA897BF760FDC873AA302BA0120C81F",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 4,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Textures\\Redux.tga",
+      "relativePath": "Textures/Redux.tga",
+      "bytes": 16428,
+      "SHA256before": "E77A8FE0A4DE108FAE156E45B1458EB1C04E594082D7B11816E1567BC435DDF9",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          64,
+          64
+        ],
+        "extrema": [
+          [
+            0,
+            77
+          ],
+          [
+            0,
+            77
+          ],
+          [
+            0,
+            77
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          1,
+          1,
+          63,
+          63
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "3D41D044BD3D34C21DEF0E55FF8A6C3F5AF52D2FA28C20A03D17BAF83ED8709C"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\E77A8FE0A4DE108FAE156E45B1458EB1C04E594082D7B11816E1567BC435DDF9.png",
+      "SHA256after": "E77A8FE0A4DE108FAE156E45B1458EB1C04E594082D7B11816E1567BC435DDF9",
+      "sourceUnchanged": true
+    }
+  ],
+  "scratchRoot": "C:\\Users\\USER\\Documents\\Codex\\2026-11-17\\new-chat-2\\wf-step5-alpha-1f_k9w7g",
+  "evidenceLimits": [
+    "source/header/hash is metadata; appearance is direct observation",
+    "No exact photograph asset/build identity, selected profile or Normal texture assignment certified",
+    "No runtime/support/license or final B acceptance claim",
+    "No new layout/4K proposal;16 diagnostic composites actually viewed, not23",
+    "Fine appearance/features explicit; no hidden pixels/text reconstructed"
+  ],
+  "runtime": {
+    "configuredRole": "bada-image-reader",
+    "configuredModel": "gpt-6.1-sol",
+    "configuredEffort": "high",
+    "actualModel": "unobserved",
+    "actualEffort": "unobserved",
+    "actualUsage": "unobserved",
+    "compactionStatus": "unobserved"
+  }
+}

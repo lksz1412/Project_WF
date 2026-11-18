@@ -1,0 +1,76 @@
+{
+  "sourceScope": "20 selectedSavedVariablesLua from EXACT46safe-subset of original4217. Wholearchive unsafe288 gate remainsBLOCKED.",
+  "variantNamesAreLiteralNotMerged": [
+    "SPECIAL",
+    "SPECIALW",
+    "STANDARD",
+    "STANDARDW"
+  ],
+  "excludedContainers": 4,
+  "excludedEntries": 90,
+  "excludedKeyPaths": [
+    {
+      "sourceID": "X2-SPECIAL-SisterChatMods",
+      "path": [
+        "SCMDataBase"
+      ],
+      "entryCount": 1,
+      "scalarLeafCount": 1,
+      "reason": "identityselector-or-distribution-roster",
+      "sourceSHA256": "ABDE2E00CB9B821187318EFAEF6A77E74DF7A9587EEBAD3CF14940EEA1947112",
+      "sourceSpan": [
+        12,
+        14
+      ],
+      "rawIgnoredTypedCache": "D:\\Projects\\Project_WF\\work\\old-reference-r36-0p_dvcvk\\X2-20-selected-full-typed.json"
+    },
+    {
+      "sourceID": "X2-SPECIALW-SisterChatMods",
+      "path": [
+        "SCMDataBase"
+      ],
+      "entryCount": 87,
+      "scalarLeafCount": 87,
+      "reason": "identityselector-or-distribution-roster",
+      "sourceSHA256": "DB46D2C222A199FBFF9BFDE0629980B1CFEA65804249E00BEC072DF53A46117A",
+      "sourceSpan": [
+        12,
+        100
+      ],
+      "rawIgnoredTypedCache": "D:\\Projects\\Project_WF\\work\\old-reference-r36-0p_dvcvk\\X2-20-selected-full-typed.json"
+    },
+    {
+      "sourceID": "X2-STANDARD-SisterChatMods",
+      "path": [
+        "SCMDataBase"
+      ],
+      "entryCount": 1,
+      "scalarLeafCount": 1,
+      "reason": "identityselector-or-distribution-roster",
+      "sourceSHA256": "99659625D573E96B55CA3F07FDB151D371731BFDB5007D158FE9A6E57FBA5CFA",
+      "sourceSpan": [
+        12,
+        14
+      ],
+      "rawIgnoredTypedCache": "D:\\Projects\\Project_WF\\work\\old-reference-r36-0p_dvcvk\\X2-20-selected-full-typed.json"
+    },
+    {
+      "sourceID": "X2-STANDARDW-SisterChatMods",
+      "path": [
+        "SCMDataBase"
+      ],
+      "entryCount": 1,
+      "scalarLeafCount": 1,
+      "reason": "identityselector-or-distribution-roster",
+      "sourceSHA256": "8FE09950DC008829089C8BC5D5AF0D88BE6B57DD30D32EAD261DD38598DCAA5D",
+      "sourceSpan": [
+        12,
+        14
+      ],
+      "rawIgnoredTypedCache": "D:\\Projects\\Project_WF\\work\\old-reference-r36-0p_dvcvk\\X2-20-selected-full-typed.json"
+    }
+  ],
+  "rawIgnoredTypedCache": "D:\\Projects\\Project_WF\\work\\old-reference-r36-0p_dvcvk\\X2-20-selected-full-typed.json",
+  "rawIgnoredTypedCacheSHA256": "62F472C62DABE42FE67917429E73D745707DEBB2C74020569D808E9F29E8B63D",
+  "sourceProof": "All20 whole-token literal parsing passed; publicsettings intentionallyfiltered; retainedsubset typedrestore equals source values. No V42 grammar extension/no wholearchivecoverage/runtimeprofile claim."
+}

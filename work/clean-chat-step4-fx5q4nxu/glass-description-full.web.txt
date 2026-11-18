@@ -1,0 +1,64 @@
+
+Rendered web snapshot, source positions retained; no commands executed.
+L161: 【53†Image: Glass Forever in action†media.forgecdn.net】
+L162: 
+L163: Glass Forever: minimal chat that slides in and fades away. A fork of 【54†Glass】 by Mitchel Cabuloy (mixxorz), rebuilt for WoW: Forever.
+L164: 
+L165: * * *
+L166: ## ★ Track recipes straight from the chat
+L167: 
+L168: Someone links a recipe in Trade? Right click it and choose Track Recipe: its reagents show in your objective tracker. Right click it again to stop tracking.
+L169: 
+L170: 【55†Image: Track Recipe from the chat†media.forgecdn.net】
+L171: 
+L172: * * *
+L173: ## Chat
+L174: 
+L175:   * Clean, fading chat: new messages slide in and fade out; hover the chat to see them again.
+L176:   * Emotes in the Glass gold or classic yellow. Optional emote button to pick them.
+L177:   * Timestamps, class and race icons, and first names only, each one an option.
+L178:   * Chat history: the last messages of each tab come back when you log in.
+L179:   * Search a tab's messages, copy chat text, clickable web links.
+L180:   * Spam filter, arrow keys history, short channel names ([1], [G], [P]).
+L181: ## Tabs
+L182: 
+L183:   * Seven tab styles with animations, and an accent color.
+L184:   * New message alert in the chat type's color, and an optional unread count.
+L185: 
+L186: ## Whispers
+L187: 
+L188:   * Each whisper conversation in its own window.
+L189:   * Two looks: Phone chat, with message bubbles (colors, opacity, corners), or the Glass chat look.
+L190:   * Item and web links work inside the windows.
+L191:   * Prefer whispers in the chat? Turn whisper windows off in the options.
+L192: 
+L193: 【56†Image: Whisper windows†media.forgecdn.net】
+L194: ## Windows
+L195: 
+L196:   * Right click a channel and choose Open in Separate Window, or drag a tab out of the chat. Separate windows keep the Glass look.
+L197:   * Optional background on each message, like the main chat.
+L198: 
+L199: ## Everything else
+L200: 
+L201:   * Options in Options > AddOns > Glass Forever, or /glass. Edit Mode support.
+L202:   * Profiles, with export and import as text to share your settings.
+L203: 
+L204: * * *
+L205: ## Install
+L206: 
+L207: Use the CurseForge app, or download the file and extract it into `Interface\AddOns`, then /reload. Don't install it together with the original Glass.
+L208: 
+L209: ## Known limitations
+L210: 
+L211: Inside instances the game can hide the text of some messages from addons: those can't get emotes, timestamps or icons, and a long one may overlap the next. Made and tested for WoW: Forever only.
+L212: ## Bugs and feedback
+L213: 
+L214: Report problems in 【52†GitHub Issues†github.com】 (include the full error text; BugSack helps). Source code: 【43†GitHub†github.com】.
+L215: 
+L216: * * *
+L217: 
+L218: ## Credits
+L219: 
+L220: Original addon: Glass by Mitchel Cabuloy (mixxorz), MIT license.
+L221: Fork for WoW: Forever: Rethz.
+L222: Bundled libraries keep their own licenses.

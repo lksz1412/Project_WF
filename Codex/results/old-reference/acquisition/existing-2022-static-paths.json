@@ -1,0 +1,45 @@
+{
+  "method": "Actual path existence/name-only lookup; no source execution or oldCRC rerun.",
+  "coreAndLoaders": [
+    "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\!!minimap.lua",
+    "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\!DevilUI.lua",
+    "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\!DevilUI.toc",
+    "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\load_Profile.xml",
+    "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\minimap.lua",
+    "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\_minimap.lua"
+  ],
+  "profileDirectory": "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile",
+  "profileFiles": [
+    "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\Ara_Broker_Guild_Friends.lua",
+    "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\Broker_XPBar.lua",
+    "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\CAN_Chat.lua",
+    "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\Castbars.lua",
+    "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\ChocolateBar.lua",
+    "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\Dominos.lua",
+    "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\GTFO.lua",
+    "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\kgPanels.lua",
+    "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\Mapster.lua",
+    "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\Masque.lua",
+    "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\MoveAnything.lua",
+    "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\PitBull4.lua",
+    "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\Quartz.lua",
+    "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\RangeDisplay.lua",
+    "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\SavedInstances.lua",
+    "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\SexyMap.lua",
+    "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\TipTac.lua"
+  ],
+  "chatNameMatches": [
+    "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\CAN_Chat.lua"
+  ],
+  "configurationFiles": [
+    "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\Devilconfig\\CallbackHandler-1.0.lua",
+    "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\Devilconfig\\Devilconfig.lua",
+    "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\Devilconfig\\Devilconfig.toc",
+    "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\Devilconfig\\LibStub.lua",
+    "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\Devilconfig\\_Devilconfig.lua"
+  ],
+  "existingParser": "D:\\Projects\\Project_WF\\work\\source-analysis-data-vbibwfzc\\parse-profile-literals.py",
+  "priorFullTypedOrPlainData": "D:\\Projects\\Project_WF\\work\\source-analysis-data-vbibwfzc\\all-literal-profile-data.json",
+  "priorSelectedRecord": "D:\\Projects\\Project_WF\\Codex\\results\\source-analysis\\profile-extract.json",
+  "priorExecutionLog": "D:\\Projects\\Project_WF\\Codex\\results\\handoffs\\source-analysis\\iter_1\\work_log.md"
+}

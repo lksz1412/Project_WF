@@ -1,0 +1,446 @@
+{
+  "source": {
+    "id": "2009-Skinner",
+    "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\archive-2009-members.json",
+    "inventoryIndex0": 111,
+    "sourceSuffix": "SavedVariables/Skinner.lua",
+    "SHA256": "691C98F8019AC0D93A5B61DA9D3944021D0230CBE01BD49361658EE3F39AB92B",
+    "sourceBytes": 2001,
+    "encoding": "utf-8-sig",
+    "decodeAttempts": [],
+    "sourceLines": 87,
+    "state": "parsed-fully",
+    "literalTokens": 423,
+    "consumedTokens": 423,
+    "duplicates": [],
+    "schemas": [
+      {
+        "rootAssignment": "SkinnerDB",
+        "type": "dict",
+        "rootSpan": [
+          2,
+          87
+        ],
+        "topKeys": [
+          "profileKeys",
+          "profiles"
+        ],
+        "topKeyCount": 2,
+        "profilesCount": 1,
+        "profilesKeys": [
+          "Default"
+        ],
+        "profileKeysCount": 9,
+        "profileKeysKeys": [
+          "엔카마치 - 우서",
+          "챈트마스터 - 에이그윈",
+          "돌쇠와마님 - 우서",
+          "Enkai - 우서",
+          "초코칸 - 우서",
+          "오그창고 - 에이그윈",
+          "악마추적자 - 에이그윈",
+          "블엘교주 - 에이그윈",
+          "엔카이얀 - 우서"
+        ]
+      }
+    ]
+  },
+  "selection": "Entire profiles subtree plus entire global/layouts,global/artwork,global/version if present. profileKeys mappings excluded; no profile/frame/layout subset chosen.",
+  "typedSettings": {
+    "SkinnerDB": {
+      "luaTableEntries": [
+        {
+          "keyType": "str",
+          "key": "profiles",
+          "value": {
+            "luaTableEntries": [
+              {
+                "keyType": "str",
+                "key": "Default",
+                "value": {
+                  "luaTableEntries": [
+                    {
+                      "keyType": "str",
+                      "key": "hidden",
+                      "value": true
+                    },
+                    {
+                      "keyType": "str",
+                      "key": "Warnings",
+                      "value": false
+                    },
+                    {
+                      "keyType": "str",
+                      "key": "CastingBar",
+                      "value": {
+                        "luaTableEntries": [
+                          {
+                            "keyType": "str",
+                            "key": "skin",
+                            "value": false
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "glaze",
+                            "value": false
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "keyType": "str",
+                      "key": "showIcon",
+                      "value": true
+                    },
+                    {
+                      "keyType": "str",
+                      "key": "minimap",
+                      "value": {
+                        "luaTableEntries": [
+                          {
+                            "keyType": "str",
+                            "key": "minimapPos",
+                            "value": 162
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "radius",
+                            "value": 80
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "hide",
+                            "value": true
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "keyType": "str",
+                      "key": "Backdrop",
+                      "value": {
+                        "luaTableEntries": [
+                          {
+                            "keyType": "str",
+                            "key": "a",
+                            "value": 0.6899999976158142
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "keyType": "str",
+                      "key": "GradientMax",
+                      "value": {
+                        "luaTableEntries": [
+                          {
+                            "keyType": "str",
+                            "key": "b",
+                            "value": 0.00784313725490196
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "g",
+                            "value": 0.00784313725490196
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "r",
+                            "value": 0.00784313725490196
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "keyType": "str",
+                      "key": "GradientMin",
+                      "value": {
+                        "luaTableEntries": [
+                          {
+                            "keyType": "str",
+                            "key": "b",
+                            "value": 0
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "g",
+                            "value": 0
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "r",
+                            "value": 0
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "keyType": "str",
+                      "key": "Gradient",
+                      "value": {
+                        "luaTableEntries": [
+                          {
+                            "keyType": "str",
+                            "key": "npc",
+                            "value": false
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "ui",
+                            "value": false
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "skinner",
+                            "value": false
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "keyType": "str",
+                      "key": "WatchFrame",
+                      "value": false
+                    },
+                    {
+                      "keyType": "str",
+                      "key": "MainMenuBar",
+                      "value": {
+                        "luaTableEntries": [
+                          {
+                            "keyType": "str",
+                            "key": "glazesb",
+                            "value": false
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "skin",
+                            "value": false
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "keyType": "str",
+                      "key": "detachedTooltip",
+                      "value": {
+                        "luaTableEntries": []
+                      }
+                    },
+                    {
+                      "keyType": "str",
+                      "key": "ChatTabs",
+                      "value": true
+                    },
+                    {
+                      "keyType": "str",
+                      "key": "showText",
+                      "value": false
+                    },
+                    {
+                      "keyType": "str",
+                      "key": "AchieveAlert",
+                      "value": false
+                    },
+                    {
+                      "keyType": "str",
+                      "key": "Tooltips",
+                      "value": {
+                        "luaTableEntries": [
+                          {
+                            "keyType": "str",
+                            "key": "glazesb",
+                            "value": false
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "skin",
+                            "value": false
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "keyType": "str",
+                      "key": "BottomFrame",
+                      "value": {
+                        "luaTableEntries": [
+                          {
+                            "keyType": "str",
+                            "key": "alpha",
+                            "value": 0.5
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "fheight",
+                            "value": 0
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "height",
+                            "value": 31
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "keyType": "str",
+                      "key": "ChatEditBox",
+                      "value": {
+                        "luaTableEntries": [
+                          {
+                            "keyType": "str",
+                            "key": "skin",
+                            "value": false
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "keyType": "str",
+                      "key": "Errors",
+                      "value": false
+                    },
+                    {
+                      "keyType": "str",
+                      "key": "StatusBar",
+                      "value": {
+                        "luaTableEntries": [
+                          {
+                            "keyType": "str",
+                            "key": "a",
+                            "value": 0.4900000095367432
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "b",
+                            "value": 0.2666666666666667
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "r",
+                            "value": 0.1607843137254902
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "g",
+                            "value": 0.2274509803921569
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "texture",
+                            "value": "Minimalist"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "keyType": "str",
+                      "key": "MinimapIcon",
+                      "value": {
+                        "luaTableEntries": [
+                          {
+                            "keyType": "str",
+                            "key": "hide",
+                            "value": true
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "keyType": "str",
+                      "key": "QuestLog",
+                      "value": false
+                    },
+                    {
+                      "keyType": "str",
+                      "key": "BackdropBorder",
+                      "value": {
+                        "luaTableEntries": [
+                          {
+                            "keyType": "str",
+                            "key": "b",
+                            "value": 0.5019607843137255
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "g",
+                            "value": 0.5019607843137255
+                          },
+                          {
+                            "keyType": "str",
+                            "key": "r",
+                            "value": 0.5019607843137255
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "profileFrameIndex": [
+    {
+      "profileName": "Default",
+      "sourcePath": [
+        "SkinnerDB",
+        "profiles",
+        "Default"
+      ],
+      "span": [
+        15,
+        85
+      ],
+      "profileKeySet": [
+        "hidden",
+        "Warnings",
+        "CastingBar",
+        "showIcon",
+        "minimap",
+        "Backdrop",
+        "GradientMax",
+        "GradientMin",
+        "Gradient",
+        "WatchFrame",
+        "MainMenuBar",
+        "detachedTooltip",
+        "ChatTabs",
+        "showText",
+        "AchieveAlert",
+        "Tooltips",
+        "BottomFrame",
+        "ChatEditBox",
+        "Errors",
+        "StatusBar",
+        "MinimapIcon",
+        "QuestLog",
+        "BackdropBorder"
+      ]
+    }
+  ],
+  "layoutIndex": [],
+  "activeLayoutLiterals": [],
+  "mediaLiterals": [
+    {
+      "path": [
+        "SkinnerDB",
+        "profiles",
+        "Default",
+        "StatusBar",
+        "texture"
+      ],
+      "literal": "Minimalist",
+      "span": [
+        74,
+        74
+      ]
+    }
+  ],
+  "fullTypedSourceCache": "D:\\Projects\\Project_WF\\work\\old-reference-collection-6jz2o93e\\literal-tables-full-typed.json",
+  "keyEncoding": "luaTableEntries preserves keyType/key/value, including integer/string distinction."
+}

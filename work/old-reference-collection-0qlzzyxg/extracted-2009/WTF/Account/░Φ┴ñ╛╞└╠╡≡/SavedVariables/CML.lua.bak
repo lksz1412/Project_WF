@@ -1,0 +1,16 @@
+
+cmldb = {
+	["profiles"] = {
+		["Default"] = {
+			["grow"] = "UP",
+			["fontFace"] = "데미지 글꼴",
+			["fontSizeStats"] = 12,
+			["fps"] = true,
+			["fontSizeClock"] = 20,
+			["colorStats"] = "999999",
+			["pos"] = "TOP",
+			["fontOutline"] = "NONE",
+			["fontShadow"] = true,
+		},
+	},
+}

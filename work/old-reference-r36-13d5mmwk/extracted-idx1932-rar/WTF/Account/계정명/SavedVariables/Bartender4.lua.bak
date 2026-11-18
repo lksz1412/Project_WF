@@ -1,0 +1,837 @@
+
+Bartender4DB = {
+	["namespaces"] = {
+		["BagBar"] = {
+			["profileKeys"] = {
+				["Eznel - Crystalsong"] = "good",
+				["Resrec - Crystalsong"] = "good",
+				["Hayate - Crystalsong"] = "good",
+				["에이논 - Crystalsong"] = "good",
+				["Lagneziad - Crystalsong"] = "good",
+				["Kratia - Crystalsong"] = "good",
+			},
+			["profiles"] = {
+				["good"] = {
+					["position"] = {
+						["y"] = 24.90720947808368,
+						["x"] = 921.6001279105894,
+						["point"] = "CENTER",
+						["relPoint"] = "BOTTOMLEFT",
+					},
+					["fadeoutalpha"] = 0,
+					["fadeout"] = true,
+					["skin"] = {
+						["ID"] = "Vol II",
+						["Backdrop"] = false,
+					},
+					["fadeoutdelay"] = 0,
+					["padding"] = -6,
+					["keyring"] = true,
+				},
+				["Resrec - Crystalsong"] = {
+				},
+				["Hayate - Crystalsong"] = {
+				},
+				["Crystalsong"] = {
+				},
+				["Eznel - Crystalsong"] = {
+				},
+				["Default"] = {
+				},
+				["DRUID"] = {
+				},
+				["에이논 - Crystalsong"] = {
+				},
+				["Kratia - Crystalsong"] = {
+				},
+			},
+		},
+		["RepBar"] = {
+			["profileKeys"] = {
+				["Eznel - Crystalsong"] = "good",
+				["Resrec - Crystalsong"] = "good",
+				["Hayate - Crystalsong"] = "good",
+				["에이논 - Crystalsong"] = "good",
+				["Lagneziad - Crystalsong"] = "good",
+				["Kratia - Crystalsong"] = "good",
+			},
+			["profiles"] = {
+				["good"] = {
+				},
+				["Resrec - Crystalsong"] = {
+				},
+				["Hayate - Crystalsong"] = {
+				},
+				["Crystalsong"] = {
+				},
+				["Eznel - Crystalsong"] = {
+				},
+				["Default"] = {
+				},
+				["DRUID"] = {
+				},
+				["에이논 - Crystalsong"] = {
+				},
+				["Kratia - Crystalsong"] = {
+				},
+			},
+		},
+		["ActionBars"] = {
+			["profileKeys"] = {
+				["Eznel - Crystalsong"] = "good",
+				["Resrec - Crystalsong"] = "good",
+				["Hayate - Crystalsong"] = "good",
+				["에이논 - Crystalsong"] = "good",
+				["Lagneziad - Crystalsong"] = "good",
+				["Kratia - Crystalsong"] = "good",
+			},
+			["profiles"] = {
+				["good"] = {
+					["actionbars"] = {
+						{
+							["showgrid"] = true,
+							["scale"] = 1.25,
+							["skin"] = {
+								["ID"] = "Vol II",
+								["Backdrop"] = false,
+							},
+							["position"] = {
+								["y"] = 101.5619913351433,
+								["x"] = 425.6999548030946,
+								["point"] = "CENTER",
+								["relPoint"] = "BOTTOMLEFT",
+							},
+							["padding"] = -7,
+						}, -- [1]
+						{
+							["skin"] = {
+								["ID"] = "Vol II",
+								["Backdrop"] = false,
+							},
+							["enabled"] = false,
+							["position"] = {
+								["y"] = -135.6799952086452,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [2]
+						{
+							["showgrid"] = true,
+							["scale"] = 1.25,
+							["skin"] = {
+								["ID"] = "Vol II",
+								["Backdrop"] = false,
+							},
+							["position"] = {
+								["y"] = 31.96201032240851,
+								["x"] = 425.6999548030946,
+								["point"] = "CENTER",
+								["relPoint"] = "BOTTOMLEFT",
+							},
+							["padding"] = -7,
+						}, -- [3]
+						{
+							["showgrid"] = true,
+							["scale"] = 1.25,
+							["fadeout"] = true,
+							["skin"] = {
+								["ID"] = "Vol II",
+								["Backdrop"] = false,
+							},
+							["fadeoutdelay"] = 0,
+							["fadeoutalpha"] = 0,
+							["position"] = {
+								["y"] = 139.7744063249943,
+								["x"] = 820.8000442616155,
+								["point"] = "CENTER",
+								["relPoint"] = "BOTTOMLEFT",
+							},
+							["padding"] = -7,
+						}, -- [4]
+						{
+							["showgrid"] = true,
+							["scale"] = 1.25,
+							["skin"] = {
+								["ID"] = "Vol II",
+								["Backdrop"] = false,
+							},
+							["position"] = {
+								["y"] = 55.16200790147666,
+								["x"] = 425.6999548030946,
+								["point"] = "CENTER",
+								["relPoint"] = "BOTTOMLEFT",
+							},
+							["padding"] = -7,
+						}, -- [5]
+						{
+							["showgrid"] = true,
+							["scale"] = 1.25,
+							["skin"] = {
+								["ID"] = "Vol II",
+								["Backdrop"] = false,
+							},
+							["position"] = {
+								["y"] = 78.36200938870138,
+								["x"] = 425.6999548030946,
+								["point"] = "CENTER",
+								["relPoint"] = "BOTTOMLEFT",
+							},
+							["padding"] = -7,
+						}, -- [6]
+						{
+						}, -- [7]
+						[9] = {
+						},
+						[10] = {
+						},
+					},
+				},
+				["Resrec - Crystalsong"] = {
+					["actionbars"] = {
+						{
+							["position"] = {
+								["y"] = -159.9999853831786,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [1]
+						{
+							["position"] = {
+								["y"] = -135.6799952086452,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [2]
+						{
+							["position"] = {
+								["y"] = -111.3600050341117,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [3]
+						{
+							["position"] = {
+								["y"] = -87.03999610042604,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [4]
+						{
+							["position"] = {
+								["y"] = -62.71999967284184,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [5]
+						{
+							["position"] = {
+								["y"] = -38.40000011873229,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [6]
+						{
+						}, -- [7]
+						[9] = {
+						},
+						[10] = {
+						},
+					},
+				},
+				["Hayate - Crystalsong"] = {
+					["actionbars"] = {
+						{
+							["position"] = {
+								["y"] = -159.9999853831786,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [1]
+						{
+							["position"] = {
+								["y"] = -135.6799952086452,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [2]
+						{
+							["position"] = {
+								["y"] = -111.3600050341117,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [3]
+						{
+							["position"] = {
+								["y"] = -87.03999610042604,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [4]
+						{
+							["position"] = {
+								["y"] = -62.71999967284184,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [5]
+						{
+							["position"] = {
+								["y"] = -38.40000011873229,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [6]
+						{
+						}, -- [7]
+						[9] = {
+						},
+						[10] = {
+						},
+					},
+				},
+				["Crystalsong"] = {
+					["actionbars"] = {
+						{
+							["position"] = {
+								["y"] = -159.9999853831786,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [1]
+						{
+							["position"] = {
+								["y"] = -135.6799952086452,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [2]
+						{
+							["position"] = {
+								["y"] = -111.3600050341117,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [3]
+						{
+							["position"] = {
+								["y"] = -87.03999610042604,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [4]
+						{
+							["position"] = {
+								["y"] = -62.71999967284184,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [5]
+						{
+							["position"] = {
+								["y"] = -38.40000011873229,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [6]
+						{
+						}, -- [7]
+						[9] = {
+						},
+						[10] = {
+						},
+					},
+				},
+				["Eznel - Crystalsong"] = {
+					["actionbars"] = {
+						{
+							["position"] = {
+								["y"] = -159.9999853831786,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [1]
+						{
+							["position"] = {
+								["y"] = -135.6799952086452,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [2]
+						{
+							["position"] = {
+								["y"] = -111.3600050341117,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [3]
+						{
+							["position"] = {
+								["y"] = -87.03999610042604,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [4]
+						{
+							["position"] = {
+								["y"] = -62.71999967284184,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [5]
+						{
+							["position"] = {
+								["y"] = -38.40000011873229,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [6]
+						{
+						}, -- [7]
+						[9] = {
+						},
+						[10] = {
+						},
+					},
+				},
+				["Default"] = {
+					["actionbars"] = {
+						{
+							["position"] = {
+								["y"] = -159.9999853831786,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [1]
+						{
+							["position"] = {
+								["y"] = -135.6799952086452,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [2]
+						{
+							["position"] = {
+								["y"] = -111.3600050341117,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [3]
+						{
+							["position"] = {
+								["y"] = -87.03999610042604,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [4]
+						{
+							["position"] = {
+								["y"] = -62.71999967284184,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [5]
+						{
+							["position"] = {
+								["y"] = -38.40000011873229,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [6]
+						{
+						}, -- [7]
+						[9] = {
+						},
+						[10] = {
+						},
+					},
+				},
+				["DRUID"] = {
+					["actionbars"] = {
+						{
+							["position"] = {
+								["y"] = -159.9999853831786,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [1]
+						{
+							["position"] = {
+								["y"] = -135.6799952086452,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [2]
+						{
+							["position"] = {
+								["y"] = -111.3600050341117,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [3]
+						{
+							["position"] = {
+								["y"] = -87.03999610042604,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [4]
+						{
+							["position"] = {
+								["y"] = -62.71999967284184,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [5]
+						{
+							["position"] = {
+								["y"] = -38.40000011873229,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [6]
+						{
+						}, -- [7]
+						[9] = {
+						},
+						[10] = {
+						},
+					},
+				},
+				["에이논 - Crystalsong"] = {
+					["actionbars"] = {
+						{
+							["position"] = {
+								["y"] = -159.9999853831786,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [1]
+						{
+							["position"] = {
+								["y"] = -135.6799952086452,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [2]
+						{
+							["position"] = {
+								["y"] = -111.3600050341117,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [3]
+						{
+							["position"] = {
+								["y"] = -87.03999610042604,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [4]
+						{
+							["position"] = {
+								["y"] = -62.71999967284184,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [5]
+						{
+							["position"] = {
+								["y"] = -38.40000011873229,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [6]
+						{
+						}, -- [7]
+						[9] = {
+						},
+						[10] = {
+						},
+					},
+				},
+				["Kratia - Crystalsong"] = {
+					["actionbars"] = {
+						{
+							["position"] = {
+								["y"] = -159.9999853831786,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [1]
+						{
+							["position"] = {
+								["y"] = -135.6799952086452,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [2]
+						{
+							["position"] = {
+								["y"] = -111.3600050341117,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [3]
+						{
+							["position"] = {
+								["y"] = -87.03999610042604,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [4]
+						{
+							["position"] = {
+								["y"] = -62.71999967284184,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [5]
+						{
+							["position"] = {
+								["y"] = -38.40000011873229,
+								["x"] = 0,
+								["point"] = "CENTER",
+								["relPoint"] = "CENTER",
+							},
+						}, -- [6]
+						{
+						}, -- [7]
+						[9] = {
+						},
+						[10] = {
+						},
+					},
+				},
+			},
+		},
+		["XPBar"] = {
+			["profileKeys"] = {
+				["Eznel - Crystalsong"] = "good",
+				["Resrec - Crystalsong"] = "good",
+				["Hayate - Crystalsong"] = "good",
+				["에이논 - Crystalsong"] = "good",
+				["Lagneziad - Crystalsong"] = "good",
+				["Kratia - Crystalsong"] = "good",
+			},
+			["profiles"] = {
+				["good"] = {
+				},
+				["Resrec - Crystalsong"] = {
+				},
+				["Hayate - Crystalsong"] = {
+				},
+				["Crystalsong"] = {
+				},
+				["Eznel - Crystalsong"] = {
+				},
+				["Default"] = {
+				},
+				["DRUID"] = {
+				},
+				["에이논 - Crystalsong"] = {
+				},
+				["Kratia - Crystalsong"] = {
+				},
+			},
+		},
+		["StanceBar"] = {
+			["profileKeys"] = {
+				["Eznel - Crystalsong"] = "good",
+				["Resrec - Crystalsong"] = "good",
+				["Hayate - Crystalsong"] = "good",
+				["에이논 - Crystalsong"] = "good",
+				["Lagneziad - Crystalsong"] = "good",
+				["Kratia - Crystalsong"] = "good",
+			},
+			["profiles"] = {
+				["good"] = {
+					["scale"] = 1,
+					["position"] = {
+						["y"] = 128.5835204987347,
+						["x"] = 324.7869312163643,
+						["point"] = "CENTER",
+						["relPoint"] = "BOTTOMLEFT",
+					},
+					["padding"] = -6,
+					["skin"] = {
+						["ID"] = "Vol II",
+						["Backdrop"] = false,
+					},
+				},
+				["Resrec - Crystalsong"] = {
+				},
+				["Hayate - Crystalsong"] = {
+				},
+				["Crystalsong"] = {
+				},
+				["Eznel - Crystalsong"] = {
+				},
+				["Default"] = {
+				},
+				["DRUID"] = {
+				},
+				["에이논 - Crystalsong"] = {
+				},
+				["Kratia - Crystalsong"] = {
+				},
+			},
+		},
+		["PetBar"] = {
+			["profileKeys"] = {
+				["Eznel - Crystalsong"] = "good",
+				["Resrec - Crystalsong"] = "good",
+				["Hayate - Crystalsong"] = "good",
+				["에이논 - Crystalsong"] = "good",
+				["Lagneziad - Crystalsong"] = "good",
+				["Kratia - Crystalsong"] = "good",
+			},
+			["profiles"] = {
+				["good"] = {
+					["position"] = {
+						["y"] = 127.5628475354228,
+						["x"] = 490.7126076105002,
+						["point"] = "CENTER",
+						["relPoint"] = "BOTTOMLEFT",
+					},
+					["padding"] = -6,
+					["skin"] = {
+						["ID"] = "Vol II",
+						["Backdrop"] = false,
+					},
+				},
+				["Resrec - Crystalsong"] = {
+				},
+				["Hayate - Crystalsong"] = {
+				},
+				["Crystalsong"] = {
+				},
+				["Eznel - Crystalsong"] = {
+				},
+				["Default"] = {
+				},
+				["DRUID"] = {
+				},
+				["에이논 - Crystalsong"] = {
+				},
+				["Kratia - Crystalsong"] = {
+				},
+			},
+		},
+		["MicroMenu"] = {
+			["profileKeys"] = {
+				["Eznel - Crystalsong"] = "good",
+				["Resrec - Crystalsong"] = "good",
+				["Hayate - Crystalsong"] = "good",
+				["에이논 - Crystalsong"] = "good",
+				["Lagneziad - Crystalsong"] = "good",
+				["Kratia - Crystalsong"] = "good",
+			},
+			["profiles"] = {
+				["good"] = {
+					["fadeoutalpha"] = 0,
+					["position"] = {
+						["y"] = 24.73552728071283,
+						["x"] = 795.5201163173691,
+						["point"] = "CENTER",
+						["relPoint"] = "BOTTOMLEFT",
+					},
+					["fadeoutdelay"] = 0,
+					["fadeout"] = true,
+				},
+				["Resrec - Crystalsong"] = {
+				},
+				["Hayate - Crystalsong"] = {
+				},
+				["Crystalsong"] = {
+				},
+				["Eznel - Crystalsong"] = {
+				},
+				["Default"] = {
+				},
+				["DRUID"] = {
+				},
+				["에이논 - Crystalsong"] = {
+				},
+				["Kratia - Crystalsong"] = {
+				},
+			},
+		},
+	},
+	["profileKeys"] = {
+		["Eznel - Crystalsong"] = "good",
+		["Resrec - Crystalsong"] = "good",
+		["Hayate - Crystalsong"] = "good",
+		["에이논 - Crystalsong"] = "good",
+		["Lagneziad - Crystalsong"] = "good",
+		["Kratia - Crystalsong"] = "good",
+	},
+	["profiles"] = {
+		["good"] = {
+		},
+		["Resrec - Crystalsong"] = {
+		},
+		["Hayate - Crystalsong"] = {
+		},
+		["Crystalsong"] = {
+		},
+		["Eznel - Crystalsong"] = {
+		},
+		["Default"] = {
+		},
+		["DRUID"] = {
+		},
+		["에이논 - Crystalsong"] = {
+		},
+		["Kratia - Crystalsong"] = {
+		},
+	},
+}

@@ -1,0 +1,105 @@
+{
+  "state": "mechanical-selected-package-bundle-complete-with-explicit-limits",
+  "downloadAndDurableCopyReceipts": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\preserved-original-copies.json",
+  "legacyX2DownloadAndDurableCopy": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\legacy-prefix-fallback\\legacy-prefix-results.json",
+  "otherPackageExtraction": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\static-extraction-summary.json",
+  "RARHeaderProof": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\rar-header-count-reconciliation.json",
+  "new8FilteredLiteralData": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\selected-new-literal-settings-compact.json",
+  "new8Exclusions": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\selected-new-literal-exclusions.json",
+  "V42BorderByteComparison": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\v42-border-exact-byte-comparison.json",
+  "V42ParserBoundaries": [
+    {
+      "sourceID": "V42-kgPanels",
+      "sourceLines": 2645,
+      "error": "('unrecognized token', 2269, '.profiles[\"Wide_T\"] = {\\n\\t[\"layout\"] = \"W')"
+    },
+    {
+      "sourceID": "V42-Dominos",
+      "sourceLines": 4215,
+      "error": "('unrecognized token', 3409, '.profiles[\"Wide_T\"] = {\\n\\t[\"ab\"] = {\\n\\t\\t[\"')"
+    },
+    {
+      "sourceID": "V42-Masque",
+      "sourceLines": 7288,
+      "error": "('unrecognized token', 5822, '.profiles[\"Wide_T\"] = {\\n\\t[\"API_VERSION\"]')"
+    }
+  ],
+  "X2Subset": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\X2_SUBSET_READY.json",
+  "X2Actual46Inventory": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\selected-member-inventory.json",
+  "X2Full20ParseProof": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\x2-selected-literal-parse-overview.json",
+  "X2Filtered20Data": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\x2-four-variant-settings-compact.json",
+  "X2Exclusions": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\x2-four-variant-exclusions.json",
+  "X2RequestedStyleQuery": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\x2-requested-style-values.json",
+  "X2Selected8AssetHeaders": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\selected-asset-byte-headers.json",
+  "counts": {
+    "durablyPreservedNewArchiveFiles": 4,
+    "idx1932ExtractedFiles": 2407,
+    "idx3461SFXExtractedFiles": 2936,
+    "X2WholeListedFiles": 4217,
+    "X2WholeUnsafeNames": 288,
+    "X2SelectedSubsetExtractedFiles": 46,
+    "X2SelectedLuaParsed": 20,
+    "otherNewLuaParsed": 8,
+    "V42WholeSourceParserBoundaries": 3,
+    "missingRequested1932kgPanelsName": 1,
+    "X2ExcludedRosterEntries": 90,
+    "otherNewExcludedIdentityEntries": 326
+  },
+  "wholeX2Extraction": "BLOCKED unchanged; only exact46subset PASS",
+  "newIntegrityTestsDuringSubsetAndDataWork": 0,
+  "noFurtherPackagesOrProbes": true,
+  "sourceLuaOrEXEExecution": false,
+  "imageContentObservation": false,
+  "selfCheck": "Actualsource/copyreceipt states+existingcopyfiles, exact46existence/no-extra gate, actual28filteredparsed source keycontainer absence, variantset/counts, retainedsubset roundtrips in perstagegates, exactRARheadercountproof reconciled. No old passedCRC or download rerun.",
+  "freezeState": "FILES_FROZEN; helperwillnotwrite/probe/acquire/parseafterthismanifest",
+  "frozenManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\FILES_FROZEN.json",
+  "durablePublicSourceFiles": [
+    {
+      "packagePostID": 3461,
+      "filename": "BlackEdition2_6.1Alpha.zip",
+      "path": "D:\\Projects\\Project_WF\\SourceArchive\\post-3461-2015-03-04\\originals\\BlackEdition2_6.1Alpha.zip",
+      "bytes": 7626408,
+      "SHA256": "7EAC7EC1345582736A5EF57249FBFAAB1C55EF83C8E9631715CB7D3A6F171CBC",
+      "hashBasis": "existing acquisition/copy equality receipt; no reGET/CRC/hash rerun of archive",
+      "receipt": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\preserved-original-copies.json"
+    },
+    {
+      "packagePostID": 1932,
+      "filename": "devilbecustom91.part2.rar",
+      "path": "D:\\Projects\\Project_WF\\SourceArchive\\post-1932-2008-11-02\\originals\\devilbecustom91.part2.rar",
+      "bytes": 3202564,
+      "SHA256": "EFBC3C0C2FBF5F743DD5AC3D2768F547EEF8F2AB2103FB2C27E7EEB108F98CCE",
+      "hashBasis": "existing acquisition/copy equality receipt; no reGET/CRC/hash rerun of archive",
+      "receipt": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\preserved-original-copies.json"
+    },
+    {
+      "packagePostID": 1932,
+      "filename": "devilbecustom91.part1.rar",
+      "path": "D:\\Projects\\Project_WF\\SourceArchive\\post-1932-2008-11-02\\originals\\devilbecustom91.part1.rar",
+      "bytes": 5242880,
+      "SHA256": "0869DB436FEEE2E70D4B8A5A82ECC1281DDE0769EA6F52DB0CD9497339CD4FE3",
+      "hashBasis": "existing acquisition/copy equality receipt; no reGET/CRC/hash rerun of archive",
+      "receipt": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\preserved-original-copies.json"
+    },
+    {
+      "packagePostID": 45,
+      "filename": "DevilUI-X2 R3.4.zip",
+      "path": "D:\\Projects\\Project_WF\\SourceArchive\\post-45-2008-09-27\\originals\\DevilUI-X2 R3.4.zip",
+      "bytes": 7245308,
+      "SHA256": "541F98566586F82FF88E464255EB0476F952CAF9E689C53AEB240D5AE54FF4EA",
+      "hashBasis": "existing acquisition/copy equality receipt; no archive recheck",
+      "receipt": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\legacy-prefix-fallback\\legacy-prefix-results.json"
+    },
+    {
+      "packagePostID": 13140,
+      "filename": "_forever_V42.zip",
+      "path": "D:\\Projects\\Project_WF\\SourceArchive\\forever-2026-11-17\\originals\\_forever_V42.zip",
+      "bytes": 9897762,
+      "SHA256": "7961B3AE6C308256345BE4DBE732019276AC04B0C123F63AB198B8F5A759A908",
+      "hashBasis": "existing rootintake plus passedhelperCRC receipt, not rerun",
+      "receipt": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\forever-v42-archive-acquisition.json"
+    }
+  ],
+  "publicSourcePackageCount": 4,
+  "publicSourceFileCount": 5
+}

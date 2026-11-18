@@ -1,0 +1,13 @@
+tag 2.2.0
+b12881074a56d436e7f249e117aa8bfee25eb424
+Steffen Buehl <sb@sbuehl.com>
+2016-07-24 23:26:20 +0200
+
+2.2.0
+
+
+--------------------
+
+Steffen Buehl:
+	- Update TOC
+	- change de locale to wowace generated

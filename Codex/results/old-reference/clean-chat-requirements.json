@@ -1,0 +1,64 @@
+{
+  "scope": "A1Step4 requirementcontract only; no candidate successfilledyet",
+  "rootDispatch": "handoffs/old-reference/step4-prepared-brief.md",
+  "requirements": [
+    {
+      "id": "N1",
+      "meaning": "Use existing native message frames and native typing; no forced transcriptreplacement"
+    },
+    {
+      "id": "N2",
+      "meaning": "Preserve three independent window roles; combat2/docked/tempwindows identified, oldIDsnotcopied"
+    },
+    {
+      "id": "N3",
+      "meaning": "Preserve perwindow messagegroups/channels; no installer reset/reclassification"
+    },
+    {
+      "id": "A1",
+      "meaning": "Leftmenu/social/navigation/scrollreturn controls and state-specific behavior"
+    },
+    {
+      "id": "A2",
+      "meaning": "Tab/title visibility, hover/typing/alerting states"
+    },
+    {
+      "id": "A3",
+      "meaning": "Native editbox border/background/placement whiletyping, retain usableinput"
+    },
+    {
+      "id": "A4",
+      "meaning": "Fontface/size/outline independently adjustable; no forcedlargefixedfont"
+    },
+    {
+      "id": "A5",
+      "meaning": "Resize/reposition/lock andsavedplacement"
+    },
+    {
+      "id": "A6",
+      "meaning": "Translucentpanel/background andclick-through behavior"
+    },
+    {
+      "id": "L1",
+      "meaning": "Relevantlinks/copy/history behavior andoptionalnonvisualchanges"
+    },
+    {
+      "id": "S1",
+      "meaning": "Oneownerpervisualarea, no reset/globaluiScale/nickname/filter sideeffects assumed"
+    },
+    {
+      "id": "V1",
+      "meaning": "ExactForeverfile/version/date/fileID/sourcecommit anddeclarationvsactualcodevsruntime separation"
+    }
+  ],
+  "allowedCellStates": [
+    "source-supported-static",
+    "publisher-declared",
+    "proposed",
+    "unverified",
+    "unavailable"
+  ],
+  "runtimeState": "NOT_RUN",
+  "target": "idx45actualsample4;11218meterexcluded;13140referenceonly;4Kbottomupnotglobalratio",
+  "channels": "userunknown;neverautocopydistributionchoices"
+}

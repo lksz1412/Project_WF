@@ -1,0 +1,30 @@
+
+RecountDB = {
+	["profileKeys"] = {
+		["엔카이얀 - 우서"] = "엔카이얀 - 우서",
+	},
+	["profiles"] = {
+		["엔카이얀 - 우서"] = {
+			["GraphWindowY"] = 0,
+			["MainWindow"] = {
+				["Position"] = {
+					["y"] = -480.6666081727812,
+					["x"] = 933.055974750337,
+					["w"] = 244.3331938461606,
+					["h"] = 182.0000086167922,
+				},
+			},
+			["Colors"] = {
+				["Bar"] = {
+					["Bar Text"] = {
+						["a"] = 1,
+					},
+				},
+			},
+			["DetailWindowY"] = 0,
+			["DetailWindowX"] = 0,
+			["GraphWindowX"] = 0,
+			["CurDataSet"] = "OverallData",
+		},
+	},
+}

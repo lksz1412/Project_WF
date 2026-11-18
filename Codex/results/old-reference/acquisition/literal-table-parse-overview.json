@@ -1,0 +1,426 @@
+{
+  "parserSource": "D:\\Projects\\Project_WF\\work\\source-analysis-data-vbibwfzc\\parse-profile-literals.py",
+  "parserSHA256": "A677AF651EE492F593BD12E3E4B7E252611CE276B236CDB1B26E319BB53ACCC1",
+  "reuseMethod": "AST-selected Parser/unquote/pat definitions only; olddriver not run. No Lua execution.",
+  "expectedCount": 9,
+  "results": [
+    {
+      "id": "2009-kgPanels",
+      "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\archive-2009-members.json",
+      "inventoryIndex0": 87,
+      "sourceSuffix": "SavedVariables/kgPanels.lua",
+      "SHA256": "000141AA5E1E5884C91A7C8253EC099A9ED87B7F978E465F474203A2B81C9E58",
+      "sourceBytes": 11650,
+      "encoding": "utf-8-sig",
+      "decodeAttempts": [],
+      "sourceLines": 498,
+      "state": "parsed-fully",
+      "literalTokens": 2669,
+      "consumedTokens": 2669,
+      "duplicates": [],
+      "schemas": [
+        {
+          "rootAssignment": "kgPanelsDB",
+          "type": "dict",
+          "rootSpan": [
+            2,
+            498
+          ],
+          "topKeys": [
+            "global",
+            "profileKeys",
+            "profiles"
+          ],
+          "topKeyCount": 3,
+          "profilesCount": 1,
+          "profilesKeys": [
+            "Default"
+          ],
+          "globalCount": 3,
+          "globalKeys": [
+            "version",
+            "artwork",
+            "layouts"
+          ],
+          "profileKeysCount": 8,
+          "profileKeysKeys": [
+            "미스터데나 - 에이그윈",
+            "Enkai - 우서",
+            "엔카마치 - 우서",
+            "블엘교주 - 에이그윈",
+            "챈트마스터 - 에이그윈",
+            "돌쇠와마님 - 우서",
+            "초코칸 - 우서",
+            "엔카이얀 - 우서"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2009-Dominos",
+      "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\archive-2009-members.json",
+      "inventoryIndex0": 47,
+      "sourceSuffix": "SavedVariables/Dominos.lua",
+      "SHA256": "F1C64E6B54B531BBD8355ABFD4CB963F020C3EDC626CBF205E6702804CA07FED",
+      "sourceBytes": 138640,
+      "encoding": "utf-8-sig",
+      "decodeAttempts": [],
+      "sourceLines": 6690,
+      "state": "parsed-fully",
+      "literalTokens": 29767,
+      "consumedTokens": 29767,
+      "duplicates": [],
+      "schemas": [
+        {
+          "rootAssignment": "DominosDB",
+          "type": "dict",
+          "rootSpan": [
+            2,
+            6689
+          ],
+          "topKeys": [
+            "profileKeys",
+            "profiles"
+          ],
+          "topKeyCount": 2,
+          "profilesCount": 13,
+          "profilesKeys": [
+            "사냥꾼",
+            "주술사",
+            "사제",
+            "마법사",
+            "성기사",
+            "드루이드",
+            "센터바 끔",
+            "센터바-조드",
+            "센터바",
+            "전사",
+            "흑마법사",
+            "도적",
+            "죽음의 기사"
+          ],
+          "profileKeysCount": 5,
+          "profileKeysKeys": [
+            "Enkai - 우서",
+            "엔카마치 - 우서",
+            "돌쇠와마님 - 우서",
+            "초코칸 - 우서",
+            "엔카이얀 - 우서"
+          ]
+        },
+        {
+          "rootAssignment": "DominosVersion",
+          "type": "str",
+          "rootSpan": [
+            6690,
+            6690
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2009-Skinner",
+      "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\archive-2009-members.json",
+      "inventoryIndex0": 111,
+      "sourceSuffix": "SavedVariables/Skinner.lua",
+      "SHA256": "691C98F8019AC0D93A5B61DA9D3944021D0230CBE01BD49361658EE3F39AB92B",
+      "sourceBytes": 2001,
+      "encoding": "utf-8-sig",
+      "decodeAttempts": [],
+      "sourceLines": 87,
+      "state": "parsed-fully",
+      "literalTokens": 423,
+      "consumedTokens": 423,
+      "duplicates": [],
+      "schemas": [
+        {
+          "rootAssignment": "SkinnerDB",
+          "type": "dict",
+          "rootSpan": [
+            2,
+            87
+          ],
+          "topKeys": [
+            "profileKeys",
+            "profiles"
+          ],
+          "topKeyCount": 2,
+          "profilesCount": 1,
+          "profilesKeys": [
+            "Default"
+          ],
+          "profileKeysCount": 9,
+          "profileKeysKeys": [
+            "엔카마치 - 우서",
+            "챈트마스터 - 에이그윈",
+            "돌쇠와마님 - 우서",
+            "Enkai - 우서",
+            "초코칸 - 우서",
+            "오그창고 - 에이그윈",
+            "악마추적자 - 에이그윈",
+            "블엘교주 - 에이그윈",
+            "엔카이얀 - 우서"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "alpha-STANDARD-kgPanels",
+      "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\alpha-nsis-members.json",
+      "inventoryIndex0": 2051,
+      "sourceSuffix": "var/STANDARD/Interface/AddOns/!DevilUI/Profile/kgPanels.lua",
+      "SHA256": "7E3D6F73C2A40FE093331EADEEBD2B82646DBE3E1397404B17591E19F7A8EEBD",
+      "sourceBytes": 17754,
+      "encoding": "utf-8-sig",
+      "decodeAttempts": [],
+      "sourceLines": 780,
+      "state": "parsed-fully",
+      "literalTokens": 4171,
+      "consumedTokens": 4171,
+      "duplicates": [],
+      "schemas": [
+        {
+          "rootAssignment": "kgPanelsDB",
+          "type": "dict",
+          "rootSpan": [
+            2,
+            780
+          ],
+          "topKeys": [
+            "namespaces",
+            "profileKeys",
+            "global",
+            "profiles"
+          ],
+          "topKeyCount": 4,
+          "profilesCount": 3,
+          "profilesKeys": [
+            "Normal",
+            "Wide",
+            "Default"
+          ],
+          "globalCount": 2,
+          "globalKeys": [
+            "version",
+            "layouts"
+          ],
+          "profileKeysCount": 0,
+          "profileKeysKeys": []
+        }
+      ]
+    },
+    {
+      "id": "alpha-STANDARD-Dominos",
+      "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\alpha-nsis-members.json",
+      "inventoryIndex0": 2041,
+      "sourceSuffix": "var/STANDARD/Interface/AddOns/!DevilUI/Profile/Dominos.lua",
+      "SHA256": "5F58DBCF82E7863475FACF11A347FA7AC1FD5BBB237C05B537A239129BF63A40",
+      "sourceBytes": 26074,
+      "encoding": "utf-8-sig",
+      "decodeAttempts": [],
+      "sourceLines": 1236,
+      "state": "parsed-fully",
+      "literalTokens": 5721,
+      "consumedTokens": 5721,
+      "duplicates": [],
+      "schemas": [
+        {
+          "rootAssignment": "DominosDB",
+          "type": "dict",
+          "rootSpan": [
+            2,
+            1235
+          ],
+          "topKeys": [
+            "profileKeys",
+            "profiles"
+          ],
+          "topKeyCount": 2,
+          "profilesCount": 2,
+          "profilesKeys": [
+            "Normal",
+            "Wide"
+          ],
+          "profileKeysCount": 0,
+          "profileKeysKeys": []
+        },
+        {
+          "rootAssignment": "DominosVersion",
+          "type": "str",
+          "rootSpan": [
+            1236,
+            1236
+          ]
+        }
+      ]
+    },
+    {
+      "id": "alpha-STANDARD-Masque",
+      "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\alpha-nsis-members.json",
+      "inventoryIndex0": 2044,
+      "sourceSuffix": "var/STANDARD/Interface/AddOns/!DevilUI/Profile/Masque.lua",
+      "SHA256": "98E1DA4FAE28A2FF5EDE3A5E14857D76DAFDF93DD0970D788704EA638D45E734",
+      "sourceBytes": 1464,
+      "encoding": "utf-8-sig",
+      "decodeAttempts": [],
+      "sourceLines": 74,
+      "state": "parsed-fully",
+      "literalTokens": 335,
+      "consumedTokens": 335,
+      "duplicates": [],
+      "schemas": [
+        {
+          "rootAssignment": "MasqueDB",
+          "type": "dict",
+          "rootSpan": [
+            2,
+            74
+          ],
+          "topKeys": [
+            "namespaces",
+            "profileKeys",
+            "profiles"
+          ],
+          "topKeyCount": 3,
+          "profilesCount": 2,
+          "profilesKeys": [
+            "Normal",
+            "Wide"
+          ],
+          "profileKeysCount": 0,
+          "profileKeysKeys": []
+        }
+      ]
+    },
+    {
+      "id": "alpha-SPECIAL-kgPanels",
+      "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\alpha-nsis-members.json",
+      "inventoryIndex0": 2019,
+      "sourceSuffix": "var/SPECIAL/Interface/AddOns/!DevilUI/Profile/kgPanels.lua",
+      "SHA256": "9F2BE2E124D28E255C7F7A9044CBFD98DE5DDCE4841ABA9F2FDC2DCF9E54C1CC",
+      "sourceBytes": 34896,
+      "encoding": "utf-8-sig",
+      "decodeAttempts": [],
+      "sourceLines": 1533,
+      "state": "parsed-fully",
+      "literalTokens": 8249,
+      "consumedTokens": 8249,
+      "duplicates": [],
+      "schemas": [
+        {
+          "rootAssignment": "kgPanelsDB",
+          "type": "dict",
+          "rootSpan": [
+            2,
+            1533
+          ],
+          "topKeys": [
+            "namespaces",
+            "profileKeys",
+            "global",
+            "profiles"
+          ],
+          "topKeyCount": 4,
+          "profilesCount": 3,
+          "profilesKeys": [
+            "Normal",
+            "Wide",
+            "Default"
+          ],
+          "globalCount": 2,
+          "globalKeys": [
+            "version",
+            "layouts"
+          ],
+          "profileKeysCount": 0,
+          "profileKeysKeys": []
+        }
+      ]
+    },
+    {
+      "id": "alpha-SPECIAL-Dominos",
+      "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\alpha-nsis-members.json",
+      "inventoryIndex0": 1999,
+      "sourceSuffix": "var/SPECIAL/Interface/AddOns/!DevilUI/Profile/Dominos.lua",
+      "SHA256": "CC489B0B0E771F40BBA282D93805723AA2D6FB6B4E818E563EFEA7BF26273373",
+      "sourceBytes": 24832,
+      "encoding": "utf-8-sig",
+      "decodeAttempts": [],
+      "sourceLines": 1184,
+      "state": "parsed-fully",
+      "literalTokens": 5429,
+      "consumedTokens": 5429,
+      "duplicates": [],
+      "schemas": [
+        {
+          "rootAssignment": "DominosDB",
+          "type": "dict",
+          "rootSpan": [
+            2,
+            1183
+          ],
+          "topKeys": [
+            "profileKeys",
+            "profiles"
+          ],
+          "topKeyCount": 2,
+          "profilesCount": 2,
+          "profilesKeys": [
+            "Normal",
+            "Wide"
+          ],
+          "profileKeysCount": 0,
+          "profileKeysKeys": []
+        },
+        {
+          "rootAssignment": "DominosVersion",
+          "type": "str",
+          "rootSpan": [
+            1184,
+            1184
+          ]
+        }
+      ]
+    },
+    {
+      "id": "alpha-SPECIAL-Masque",
+      "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\alpha-nsis-members.json",
+      "inventoryIndex0": 2006,
+      "sourceSuffix": "var/SPECIAL/Interface/AddOns/!DevilUI/Profile/Masque.lua",
+      "SHA256": "394D57A3734F2CF95A22FE2C8092D6AF71BE9E0A807826AC5711251C5DF29F8F",
+      "sourceBytes": 1341,
+      "encoding": "utf-8-sig",
+      "decodeAttempts": [],
+      "sourceLines": 69,
+      "state": "parsed-fully",
+      "literalTokens": 310,
+      "consumedTokens": 310,
+      "duplicates": [],
+      "schemas": [
+        {
+          "rootAssignment": "MasqueDB",
+          "type": "dict",
+          "rootSpan": [
+            2,
+            69
+          ],
+          "topKeys": [
+            "namespaces",
+            "profileKeys",
+            "profiles"
+          ],
+          "topKeyCount": 3,
+          "profilesCount": 2,
+          "profilesKeys": [
+            "Normal",
+            "Wide"
+          ],
+          "profileKeysCount": 0,
+          "profileKeysKeys": []
+        }
+      ]
+    }
+  ],
+  "fullTypedDataCache": "D:\\Projects\\Project_WF\\work\\old-reference-collection-6jz2o93e\\literal-tables-full-typed.json",
+  "numericKeyPolicy": "Lossless keyType+key table entries; preserve int/string identity."
+}

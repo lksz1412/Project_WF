@@ -1,0 +1,25 @@
+
+ButtonFacadeDB = {
+	["namespaces"] = {
+		["ButtonTest"] = {
+			["profileKeys"] = {
+				["챈트마스터 - 에이그윈"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+				},
+			},
+		},
+	},
+	["profileKeys"] = {
+		["챈트마스터 - 에이그윈"] = "Default",
+	},
+	["version"] = 5,
+	["profiles"] = {
+		["Default"] = {
+			["mapicon"] = {
+				["hide"] = true,
+			},
+		},
+	},
+}

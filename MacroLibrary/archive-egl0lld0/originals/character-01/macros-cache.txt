@@ -1,0 +1,57 @@
+VER 3 010000000000000A "고정" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [nochannaeling][nomod] 고정 사격
+/cast [nochannaeling][mod:alt] 고정 사격
+/cast [nochannaeling][mod:shift] 고정 사격
+END
+VER 3 0100000000000007 "구속" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast 구속의 사격
+/changeactionbar [actionbar:2] 1
+END
+VER 3 010000000000000D "날철" "134400"
+END
+VER 3 010000000000000C "눈속" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [group:party, @party1] 눈속임
+/cast [group:raid, @mouseover, nodead][@focus, raid] 눈속임
+/cast [nogroup, @pet] 눈속임
+END
+VER 3 0100000000000008 "섬광" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast 섬광
+/changeactionbar [actionbar:2] 1
+END
+VER 3 0100000000000002 "신.일" "INV_MISC_QUESTIONMARK"
+#showtooltip [mod:alt]일제 사격;신비한 사격
+/cast [nochannaeling][mod:alt] 일제 사격
+/cast [nochannaeling][nomod] 신비한 사격
+END
+VER 3 0100000000000005 "얼덫" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast 빙결 덫
+/changeactionbar [actionbar:2] 1
+END
+VER 3 0100000000000009 "연발" "134400"
+#showtooltip
+/cast [@CURSOR] 연발 공격
+END
+VER 3 010000000000000B "조준" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast [nochannaeling][nomod] 조준 사격
+/cast [nochannaeling][mod:alt] 조준 사격
+/cast [nochannaeling][mod:shift] 조준 사격
+END
+VER 3 0100000000000001 "죽척" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/stopcasting
+/stopcasting
+/stop attack
+/cast 죽은 척하기
+/cast 죽은 체하기
+END
+VER 3 0100000000000006 "타르" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/cast 타르 덫
+/changeactionbar [actionbar:2] 1
+END

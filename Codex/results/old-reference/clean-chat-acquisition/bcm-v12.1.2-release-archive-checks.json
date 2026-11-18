@@ -1,0 +1,20 @@
+{
+  "source": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\bcm-BasicChatMods-v12.1.2.zip",
+  "SHA256": "748D2447E1932E5543126208A9E4BBB22AB3A6ECE7FA2C4B0D92C5AF1EFB775C",
+  "bytes": 52927,
+  "label": "bcm-v12.1.2-release",
+  "CRCtestRuns": 1,
+  "unsafe": [],
+  "extractionState": "passed",
+  "CRCbadMember": null,
+  "CRCstate": "passed",
+  "files": 38,
+  "directories": 2,
+  "uncompressedBytes": 145398,
+  "compressedBytes": 47697,
+  "extractionRoot": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release",
+  "extractedFiles": 38,
+  "extractedBytes": 145398,
+  "reparsePaths": [],
+  "inventoryPath": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\bcm-v12.1.2-release-members.json"
+}

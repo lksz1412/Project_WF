@@ -1,0 +1,213 @@
+{
+  "postID": 10341,
+  "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=10341",
+  "row": {
+    "postID": 10341,
+    "page": 1,
+    "rowOrdinal": 8,
+    "title": "DevilUINFanFix_Shapa_7.1.0A02_1 [통합] 7",
+    "rowText": "27 DevilUINFanFix_Shapa_7.1.0A02_1 [통합] 7 이셰프 티현니 4237 2 11-04",
+    "sourceAnchor": "javascript:addonMove('detail.php', 'idx->10341', 'leave->idx,listtype,ext', 'rurl');",
+    "sourceLocation": {
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\list-first.html",
+      "selector": "table.list tr a[href]",
+      "line": 1274
+    }
+  },
+  "detailProvenance": {
+    "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=10341",
+    "time": "2026-11-17T14:02:09.4559562Z",
+    "contentType": "text/html; charset=UTF-8",
+    "HTTP": 200,
+    "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=10341",
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-10341.html",
+    "state": "acquired",
+    "attempts": 1,
+    "commandExitCode": 0,
+    "encoding": "IWR decoded to UTF-8",
+    "bytes": 226258,
+    "SHA256": "70D160ADDDD9358DF1D3B53FB2273256E59B22129D837B2DE5A30116B3738015"
+  },
+  "acquisitionState": "parsed",
+  "A1read": false,
+  "imageObserved": false,
+  "sections": {
+    "addonAddon": {
+      "state": "parsed",
+      "text": "이셰프",
+      "fragmentPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\idx-10341-addonAddon.html",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-10341.html",
+        "selector": "#addonAddon",
+        "line": 1244
+      },
+      "links": []
+    },
+    "addonVersion": {
+      "state": "empty",
+      "text": "",
+      "fragmentPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\idx-10341-addonVersion.html",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-10341.html",
+        "selector": "#addonVersion",
+        "line": 1245
+      },
+      "links": []
+    }
+  },
+  "iframes": {
+    "screenshot": {
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=10341&tempridx=&count=0",
+      "iframeLiteral": "<iframe frameborder=\"0\" framespacing=\"0\" id=\"screenshot\" scrolling=\"no\" src=\"imagelist.iframe.php?ridx=10341&amp;tempridx=&amp;count=0\"></iframe>",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-10341.html",
+        "selector": "iframe#screenshot",
+        "line": 1238
+      },
+      "provenance": {
+        "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=10341&tempridx=&count=0",
+        "time": "2026-11-17T14:02:10.0967359Z",
+        "contentType": "text/html; charset=UTF-8",
+        "HTTP": 200,
+        "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=10341&tempridx=&count=0",
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-10341.html",
+        "state": "acquired",
+        "attempts": 1,
+        "commandExitCode": 0,
+        "encoding": "IWR decoded to UTF-8",
+        "bytes": 1985,
+        "SHA256": "302B3715E950336CD9A64A236C5B5018AD272B0A3AABAD1CBA6542E0392DF46D"
+      },
+      "state": "parsed",
+      "text": "\n\n\n\n\n\n스크린샷\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "links": [
+        {
+          "href": "javascript:void(0);",
+          "onclick": null,
+          "text": "",
+          "line": 28
+        },
+        {
+          "href": "javascript:void(0);",
+          "onclick": null,
+          "text": "",
+          "line": 31
+        }
+      ],
+      "literalPublicDownloadURLs": [],
+      "imageCount": 0
+    },
+    "fileInfo": {
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=10341&tempridx=&count=2",
+      "iframeLiteral": "<iframe frameborder=\"0\" id=\"fileInfo\" src=\"filelist.iframe.php?mode=view&amp;ridx=10341&amp;tempridx=&amp;count=2\"></iframe>",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-10341.html",
+        "selector": "iframe#fileInfo",
+        "line": 1251
+      },
+      "provenance": {
+        "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=10341&tempridx=&count=2",
+        "time": "2026-11-17T14:02:10.7272438Z",
+        "contentType": "text/html; charset=UTF-8",
+        "HTTP": 200,
+        "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=10341&tempridx=&count=2",
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-10341.html",
+        "state": "acquired",
+        "attempts": 1,
+        "commandExitCode": 0,
+        "encoding": "IWR decoded to UTF-8",
+        "bytes": 2823,
+        "SHA256": "9BCC19FE280FE41175F99B9DB999D7976B4376DCDE68C4A80B933E6B82F42858"
+      },
+      "state": "parsed",
+      "text": "\n\n\n\n\n\n파일 정보\n\n\n\n\n\n\n\n\n\n\n\n\n파일\n\n\n클라이언트 버전\n\n\n다운로드\n\n\n등록일\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\nDevilUI_N_Fix_Shapa_7.0.3A04.zip\n\n\n\n\n\n\n7.1.0\n\n\n3102\n\n\n2016-11-04\n\n\n\n\n\n\n\n\n\n\nDevilUINFanFix_Shapa_7.1.0A02_1.zip\n\n\n\n\n\n\n7.0.3\n\n\n1057\n\n\n2016-11-01\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "links": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "DevilUI_N_Fix_Shapa_7.0.3A04.zip",
+          "line": 40
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "DevilUINFanFix_Shapa_7.1.0A02_1.zip",
+          "line": 50
+        }
+      ],
+      "literalPublicDownloadURLs": [],
+      "fileRows": [
+        {
+          "text": "DevilUI_N_Fix_Shapa_7.0.3A04.zip 7.1.0 3102 2016-11-04",
+          "cells": [
+            "DevilUI_N_Fix_Shapa_7.0.3A04.zip",
+            "7.1.0",
+            "3102",
+            "2016-11-04"
+          ],
+          "line": 37
+        },
+        {
+          "text": "DevilUINFanFix_Shapa_7.1.0A02_1.zip 7.0.3 1057 2016-11-01",
+          "cells": [
+            "DevilUINFanFix_Shapa_7.1.0A02_1.zip",
+            "7.0.3",
+            "1057",
+            "2016-11-01"
+          ],
+          "line": 47
+        }
+      ]
+    }
+  },
+  "images": [],
+  "title": "DevilUINFanFix_Shapa_7.1.0A02_1",
+  "metadataLiteral": "DevilUINFanFix_Shapa_7.1.0A02_1\n이셰프\n애드온 등록자\n티현니\n최종 업데이트\n2016.11.04\n카테고리\n통합\n클라이언트 버전\n7.0.3\n애드온 버전\n1\n조회수\n25778\n추천수\n2\n다운로드 수\n4237\n관심등록 수\n46\n다운로드\n관심 애드온 등록",
+  "metadataRows": [
+    {
+      "label": "애드온 등록자",
+      "value": "티현니",
+      "line": 1181
+    },
+    {
+      "label": "최종 업데이트",
+      "value": "2016.11.04",
+      "line": 1185
+    },
+    {
+      "label": "카테고리",
+      "value": "통합",
+      "line": 1189
+    },
+    {
+      "label": "클라이언트 버전",
+      "value": "7.0.3",
+      "line": 1196
+    },
+    {
+      "label": "애드온 버전",
+      "value": "1",
+      "line": 1200
+    },
+    {
+      "label": "조회수",
+      "value": "25778",
+      "line": 1207
+    },
+    {
+      "label": "추천수",
+      "value": "2",
+      "line": 1211
+    },
+    {
+      "label": "다운로드 수",
+      "value": "4237",
+      "line": 1215
+    },
+    {
+      "label": "관심등록 수",
+      "value": "46",
+      "line": 1219
+    }
+  ]
+}

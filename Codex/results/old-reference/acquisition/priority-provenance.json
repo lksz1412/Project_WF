@@ -1,0 +1,241 @@
+[
+  {
+    "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/list.php?searchField=subj_subt&searchString=devil",
+    "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/list.php?searchField=subj_subt&searchString=devil",
+    "HTTP": 200,
+    "time": "2026-11-17T22:32:44.3597524+09:00",
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\list-first.html",
+    "bytes": 245948,
+    "SHA256": "51B3818B58ED1DD5DE73749E7ACF94F9A7E1F5078C3B880EF74D10317852411A",
+    "state": "reused",
+    "metadata": {
+      "name": "list-first",
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/list.php?searchField=subj_subt&searchString=devil",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 245948,
+      "sha256": "51B3818B58ED1DD5DE73749E7ACF94F9A7E1F5078C3B880EF74D10317852411A",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\list-first.html",
+      "time": "2026-11-17T22:32:44.3597524+09:00"
+    },
+    "encoding": "UTF-8 decoded saved text"
+  },
+  {
+    "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/list.php?searchField=subj_subt&searchString=devil&page=2",
+    "finalURL": null,
+    "HTTP": null,
+    "time": null,
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\list-page2.html",
+    "bytes": 239855,
+    "SHA256": "64AD19725F41415F642064A9E62303FF2BF9D7FF2241879300A6BECC2211FDF9",
+    "state": "reused",
+    "metadata": null,
+    "encoding": "UTF-8 decoded saved text"
+  },
+  {
+    "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=45",
+    "finalURL": null,
+    "HTTP": 200,
+    "time": "2026-11-17T22:58:48.2974747+09:00",
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-45.html",
+    "bytes": 226664,
+    "SHA256": "737A80CCB2CED8ED50AD623324047B90A06DEAC54A358B705D8C7BD64588B770",
+    "state": "reused",
+    "metadata": {
+      "time": "2026-11-17T22:58:48.2974747+09:00",
+      "url": null,
+      "contentType": [
+        "text/html; charset=UTF-8"
+      ],
+      "status": 200
+    },
+    "encoding": "UTF-8 decoded saved text"
+  },
+  {
+    "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=45&tempridx=&count=4",
+    "finalURL": null,
+    "HTTP": 200,
+    "time": "2026-11-17T22:59:02.2175486+09:00",
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-45.html",
+    "bytes": 3379,
+    "SHA256": "2A73FB23D45249EC2204D5E9175D431822D9EC72BE017311EABE1115060E1A08",
+    "state": "reused",
+    "metadata": {
+      "url": null,
+      "status": 200,
+      "time": "2026-11-17T22:59:02.2175486+09:00",
+      "contentType": [
+        "text/html; charset=UTF-8"
+      ]
+    },
+    "encoding": "UTF-8 decoded saved text"
+  },
+  {
+    "finalURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_5258.jpg",
+    "time": "2026-11-17T14:01:50.0602304Z",
+    "contentType": "image/jpeg",
+    "HTTP": 200,
+    "sourceURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_5258.jpg",
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-63c91ffc5fd0fa976a33.jpg",
+    "state": "acquired",
+    "attempts": 1,
+    "commandExitCode": 0,
+    "encoding": "binary",
+    "bytes": 136532,
+    "SHA256": "1E0C95557E8525EF2533F49CDBB6A46BEFAC55EC4BDF4A912E351939BE87CFC0"
+  },
+  {
+    "finalURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_7511.jpg",
+    "time": "2026-11-17T14:01:50.7696473Z",
+    "contentType": "image/jpeg",
+    "HTTP": 200,
+    "sourceURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_7511.jpg",
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-872294b062c9ecefcc9a.jpg",
+    "state": "acquired",
+    "attempts": 1,
+    "commandExitCode": 0,
+    "encoding": "binary",
+    "bytes": 109521,
+    "SHA256": "0845002AEFE13C2F1FCF2FB975525C671D66A64A9EFEE140F407D5FA1BE56A9E"
+  },
+  {
+    "finalURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_6784.jpg",
+    "time": "2026-11-17T14:01:51.4427143Z",
+    "contentType": "image/jpeg",
+    "HTTP": 200,
+    "sourceURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_6784.jpg",
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-cdd079d7e1f8c81286f2.jpg",
+    "state": "acquired",
+    "attempts": 1,
+    "commandExitCode": 0,
+    "encoding": "binary",
+    "bytes": 155513,
+    "SHA256": "F86E2FDCFCC97E791FDFA5A310CF23DDCDA26796FBAC32ABBED4E561055ADD63"
+  },
+  {
+    "finalURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_7276.jpg",
+    "time": "2026-11-17T14:01:52.1743249Z",
+    "contentType": "image/jpeg",
+    "HTTP": 200,
+    "sourceURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_7276.jpg",
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-d9ab10878c7e954fd5e4.jpg",
+    "state": "acquired",
+    "attempts": 1,
+    "commandExitCode": 0,
+    "encoding": "binary",
+    "bytes": 95482,
+    "SHA256": "304A6B36ACD94B065142B8E8ADBA1EC99787BB649885D136D5CE707C1B2D5151"
+  },
+  {
+    "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=45&tempridx=&count=172",
+    "finalURL": null,
+    "HTTP": 200,
+    "time": "2026-11-17T22:59:02.3183872+09:00",
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-45.html",
+    "bytes": 79509,
+    "SHA256": "B4A19E060B24E9086D7B20B5D872EFA46B3BAFD384C3E93D5E925129F4D61D5A",
+    "state": "reused",
+    "metadata": {
+      "url": null,
+      "status": 200,
+      "time": "2026-11-17T22:59:02.3183872+09:00",
+      "contentType": [
+        "text/html; charset=UTF-8"
+      ]
+    },
+    "encoding": "UTF-8 decoded saved text"
+  },
+  {
+    "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=11218",
+    "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=11218",
+    "HTTP": 200,
+    "time": "2026-11-17T22:53:02.1950210+09:00",
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-priority-root-63f909c7c02c47729d89dba705cb4367\\detail-11218.html",
+    "bytes": 230976,
+    "SHA256": "74579E66D2091C8DEE3A1C2320E6F3A215F61D1BEB6C0A5F47842174BBD89ADC",
+    "state": "reused",
+    "metadata": {
+      "post_id": 11218,
+      "source_url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=11218",
+      "status": 200,
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-priority-root-63f909c7c02c47729d89dba705cb4367\\detail-11218.html",
+      "bytes": 230976,
+      "sha256": "74579E66D2091C8DEE3A1C2320E6F3A215F61D1BEB6C0A5F47842174BBD89ADC",
+      "acquired_at": "2026-11-17T22:53:02.1950210+09:00"
+    },
+    "encoding": "UTF-8 decoded saved text"
+  },
+  {
+    "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=11218&tempridx=&count=2",
+    "time": "2026-11-17T14:01:52.8915675Z",
+    "contentType": "text/html; charset=UTF-8",
+    "HTTP": 200,
+    "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=11218&tempridx=&count=2",
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-11218.html",
+    "state": "acquired",
+    "attempts": 1,
+    "commandExitCode": 0,
+    "encoding": "IWR decoded to UTF-8",
+    "bytes": 2717,
+    "SHA256": "9012AC756FF4BBA1D0BBF4B6F2997190BFB3203E4432FB502683419144DFFD74"
+  },
+  {
+    "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=11218&tempridx=&count=22",
+    "time": "2026-11-17T14:01:53.4558389Z",
+    "contentType": "text/html; charset=UTF-8",
+    "HTTP": 200,
+    "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=11218&tempridx=&count=22",
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-11218.html",
+    "state": "acquired",
+    "attempts": 1,
+    "commandExitCode": 0,
+    "encoding": "IWR decoded to UTF-8",
+    "bytes": 11704,
+    "SHA256": "61AAFBA4DEF148DA418D6E30609C95BCD37248BC394C9D3A611F5521E7F75BAD"
+  },
+  {
+    "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=2958",
+    "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=2958&rurl=%2Fdataninfo%2Faddonpds%2Flist.php%3Fpage%3D2%26searchField%3Dsubj_subt%26searchString%3Ddevil",
+    "HTTP": 200,
+    "time": "2026-11-17T22:32:44.1195827+09:00",
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\detail-2958.html",
+    "bytes": 227327,
+    "SHA256": "89C7FB54FAB68AD4222D82906404E59E639180B9D30E5FEB0668FD7F1AD6D7C9",
+    "state": "reused",
+    "metadata": {
+      "name": "detail-2958",
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=2958&rurl=%2Fdataninfo%2Faddonpds%2Flist.php%3Fpage%3D2%26searchField%3Dsubj_subt%26searchString%3Ddevil",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 227327,
+      "sha256": "89C7FB54FAB68AD4222D82906404E59E639180B9D30E5FEB0668FD7F1AD6D7C9",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\detail-2958.html",
+      "time": "2026-11-17T22:32:44.1195827+09:00"
+    },
+    "encoding": "UTF-8 decoded saved text"
+  },
+  {
+    "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=2958&tempridx=&count=1",
+    "finalURL": null,
+    "HTTP": null,
+    "time": null,
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\images-2958.html",
+    "bytes": 2357,
+    "SHA256": "05BDB71BD126AB9C53E549C5F518D336919BECBBAA017AB198B8D9904E283A9D",
+    "state": "reused",
+    "metadata": null,
+    "encoding": "UTF-8 decoded saved text"
+  },
+  {
+    "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=2958&tempridx=&count=1",
+    "finalURL": null,
+    "HTTP": null,
+    "time": null,
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\files-2958.html",
+    "bytes": 2323,
+    "SHA256": "1A205EE6D4F4742E3890A88328B14793972EA3718C262018326B3DE820354C09",
+    "state": "reused",
+    "metadata": null,
+    "encoding": "UTF-8 decoded saved text"
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "state": "READY",
+  "manifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\asset-inventory.json",
+  "manifestSHA256": "5BE22AA9BF51754904C67103E8B922B7E5AEFA8DECC48A08D057DEA9B70FD1A4",
+  "sourceRows": 41,
+  "imageRows": 30,
+  "derivatives": 23,
+  "fontRows": 4,
+  "uniqueSourceHashes": 32,
+  "failures": 0,
+  "executionState": "completed mechanical inventory/PNG/font metrics",
+  "selfCheckRuns": 1,
+  "selfCheckState": "passed",
+  "visualPASS": false,
+  "fullLayoutRender": false,
+  "PNGroot": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png",
+  "fontCopyRoot": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\original-fonts"
+}

@@ -1,0 +1,11 @@
+import sys,json
+from pathlib import Path
+sys.path.insert(0,'D:/Projects/Project_WF/work/clean-chat-step4-fx5q4nxu')
+from helpers import *
+sys.stdout.reconfigure(encoding='utf-8')
+releases=json.loads((C/'bcm-releases.json').read_text(encoding='utf-8'));rel=next(x for x in releases if x['tag_name']=='v12.1.2');receipts=[]
+for name in ['BasicChatMods-v12.1.2.zip','release.json']:
+ asset=next(a for a in rel['assets'] if a['name']==name);p=C/('bcm-'+name);r=fetch(asset['browser_download_url'],p,'literal official GitHub release asset metadata');receipts.append(r)
+ if name.endswith('.zip') and r.get('HTTP')==200:check=safezip(p,'bcm-v12.1.2-release');cat=catalog(check,'bcm-v12.1.2-release')
+commitURL=next(x['commit']['url'] for x in json.loads((C/'bcm-tags.json').read_text(encoding='utf-8')) if x['name']=='v12.1.2');cr=fetch(commitURL,C/'bcm-v12.1.2-commit.json','literal GitHub tag commitURL');receipts.append(cr)
+ready={'product':'BasicChatMods','CFmainIWRstate':'403 failed retained','CFmainWebSnapshot':str(C/'basic-chat-mods-main.web.txt'),'exactCFfileURL':'https://www.curseforge.com/wow/addons/basic-chat-mods/files/9632459','CFfileID':9632459,'CFfileVersionLiteral':'v12.1.2','CFfileDateLiteral':'Nov 15, 2026','CFfilenameLiteral':'BasicChatMods-v12.1.2.zip','CFflavorLiteral':'Forever','CFgameVersionLiteral':'1.60.1','CFmetadataBasis':'official web exactfile search result turn60search0; A1 independentlyownsCFbodyreading now','repo':'https://github.com/funkydude/BasicChatMods','tag':rel['tag_name'],'tagCommitSHA':'5be793bade7743834b3fae361638f86aa370d31d','releasePublished':rel['published_at'],'receipts':receipts,'archive':check if 'check' in globals() else None,'sourceCatalog':str(O/'bcm-v12.1.2-release-source-catalog.json'),'shippedGitHubReleaseVsCFBytes':'filename/version/flavor declaration correlation only; CFbytesnotacquired, binaryequality/unmatchedlineage explicit','featuresInterpreted':False,'A1read':False,'runtime':'unobserved'};save(O/'BCM_READY.json',ready);print(json.dumps({'ready':str(O/'BCM_READY.json'),'extraction':ready['archive'],'commitMetadata':cr['localpath']},ensure_ascii=False,indent=2))

@@ -1,0 +1,9 @@
+## Interface: 20400
+## Title: DFontChatSizes - Darceys Font Chat Sizes
+## Notes: I wanted more font sizes available to me in the chat windows and all tabs, so I made a mod that allowed this.
+## Author: Darcey
+## SavedVariables: 
+## OptionalDeps:
+## Dependencies: 
+## Version: 1
+DFontChatSizes.xml

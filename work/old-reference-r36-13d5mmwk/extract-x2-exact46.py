@@ -1,0 +1,27 @@
+import sys,json,re,hashlib,tempfile,subprocess,stat
+from pathlib import Path,PureWindowsPath
+sys.stdout.reconfigure(encoding='utf-8');R=Path('D:/Projects/Project_WF');C=Path(tempfile.mkdtemp(prefix='old-reference-r36-',dir=R/'work'));O=R/'Codex/results/old-reference/acquisition/r36/x2-selected-subset';O.mkdir(exist_ok=True);L=R/'Codex/results/handoffs/old-reference/acquisition/work_log.md';S=R/'Codex/results/old-reference/a1-x2-safe-selected-members.json';A=json.loads(S.read_text(encoding='utf-8'));ip=Path(A['sourceInventory']);source=R/'work/old-reference-r36-_rhmh6fs/extracted-legacy-idx45-159/DevilUI-X2 R3.4.exe';whole=R/'Codex/results/old-reference/acquisition/r36/legacy-prefix-fallback/idx45-X2-sfx-static-extraction-checks.json'
+def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest().upper()
+def save(p,x):Path(p).write_bytes(json.dumps(x,ensure_ascii=False,indent=2).encode('utf-8'))
+assert sha(ip).lower()==A['inventorySHA256'].lower();inv=json.loads(ip.read_text(encoding='utf-8'));wg=json.loads(whole.read_text(encoding='utf-8'));assert wg['state']=='blocked-unsafe-list' and wg['listExitCode']==0 and wg['integrityTestExitCode']==0 and wg['integrityTestRuns']==1
+assert A['selectedCount']==len(A['members'])==46;dest=C/'selected-extracted';dest.mkdir();names=[];records=[];seen=set();unsafe=[]
+for entry in A['members']:
+ name=entry['filename'];hits=[(i,e) for i,e in enumerate(inv) if e['filename']==name];assert len(hits)==1;i,original=hits[0];assert original['listLine']==entry['listLine'];parts=name.replace(chr(92),'/').split('/');target=(dest/Path(*parts)).resolve();why=[];p=PureWindowsPath(name)
+ if p.drive or p.is_absolute() or name.startswith(('/','\\')):why.append('absolute/drive/UNC')
+ if any(x in ('.','..') for x in parts):why.append('dot/traversal')
+ if not target.is_relative_to(dest.resolve()):why.append('resolved-outside-root')
+ if any(re.search(r'[<>:"|?*\x00-\x1f]',x) or x.endswith((' ','.')) or re.fullmatch(r'(?i)(CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])(\..*)?',x) for x in parts if x):why.append('unsafeNTFS/wildcard/stream')
+ if original['isDirectory'] or original['attributes']!='____':why.append('nonplain-file')
+ key=str(target).casefold()
+ if key in seen:why.append('selected-path/case-collision')
+ seen.add(key);names.append(name);r={'filename':name,'sourceInventoryIndex0':i,'sourceListLine':entry['listLine'],'reasonFromA1':entry['reason'],'target':str(target),'independentValidation':why,'listedBytes':original['listedUncompressedBytes']};records.append(r)
+ if why:unsafe.append(r)
+check={'state':'not-extracted','scope':'ONLY exact46A1selectedfilenames; whole4217/unsafe288 gate remainsBLOCKED. No unsafe rename/ignore/extraction.','sourceEXE':str(source),'sourceSHA256':sha(source),'sourceExecuted':False,'allowlistPath':str(S),'allowlistSHA256':sha(S),'sourceInventory':str(ip),'sourceInventorySHA256':sha(ip),'wholeArchiveGate':str(whole),'wholeArchiveState':wg['state'],'reusedIntegrityTestRuns':1,'newIntegrityTestRuns':0,'selectedCount':46,'unsafeSelected':unsafe,'freshRoot':str(dest)}
+assert not unsafe
+cmd=['C:/Program Files/Bandizip/bz.exe','x','-o:'+str(dest),'-consolemode:utf8',str(source)]+names
+cp=subprocess.run(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,stdin=subprocess.DEVNULL,shell=False,timeout=60);(C/'selected-extract-stdout.txt').write_bytes(cp.stdout);(C/'selected-extract-stderr.txt').write_bytes(cp.stderr);check.update(extractExitCode=cp.returncode,commandArgumentList=cmd,usedShell=False,argumentCount=len(names));files=[p for p in dest.rglob('*') if p.is_file()];actual={str(p.relative_to(dest)).replace('/',chr(92)).casefold():p for p in files};expected={n.casefold() for n in names};check.update(extractedFiles=len(files),missing=sorted(expected-set(actual)),unexpected=sorted(set(actual)-expected),postExtractionReparse=[str(p) for p in dest.rglob('*') if p.is_symlink() or p.stat().st_file_attributes&stat.FILE_ATTRIBUTE_REPARSE_POINT],extractedBytes=sum(p.stat().st_size for p in files));assert cp.returncode==0 and len(files)==46 and not check['missing'] and not check['unexpected'] and not check['postExtractionReparse']
+for rec in records:
+ p=actual[rec['filename'].casefold()];rec.update(actualPath=str(p),bytes=p.stat().st_size,SHA256=sha(p),actualRelativeName=str(p.relative_to(dest)).replace('/',chr(92)))
+check.update(state='subset-only-passed',inventoryPath=str(O/'selected-member-inventory.json'),extractionRoot=str(dest));save(O/'selected-member-inventory.json',records);save(O/'X2_SUBSET_READY.json',check)
+with L.open('a',encoding='utf-8') as f:f.write('\nRootexplicit authorized exact46subset (A1savedallowlist sourceInventorySHA +46names/sourceLines/reasons readasDB data, no meaningadopted). Whole4217/288unsafe FAILgate remainsunchanged. Independentlyvalidate all46 rawexactnames/actualinventoryline/resolvedfreshdest/wildcards/NTFS/attributes/collisions, selectedunsafe0. Existingpassedbzlist/test reused, no newCRC/test. Python subprocess argv46names shell=False, noPSor$HWNDPARENT expansion/wildcard; exactactualfiles46/noextra/missing/reparse0, actualbytes/hashinventory. Subsetonlygate '+str(O/'X2_SUBSET_READY.json')+'; ignoredfreshcache '+str(C)+'. No sourceexecution/rename/unsafeignore. Command python -X utf8 '+str(R/'work/old-reference-r36-13d5mmwk/extract-x2-exact46.py')+' exit0.\n')
+print(json.dumps({k:check[k] for k in ['state','extractionRoot','extractedFiles','extractedBytes','inventoryPath','wholeArchiveState','newIntegrityTestRuns']},ensure_ascii=False,indent=2))

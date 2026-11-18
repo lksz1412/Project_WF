@@ -1,0 +1,11 @@
+## Interface: 20300
+## Version: 07.10.03
+## Title: Examiner-Button
+## Title-koKR: |CFF99FF99Ex|CFFFFFFFFaminer|r-|CFF99FF99B|CFFFFFFFFutton|r
+## Author: silverfairy
+## Notes: Added Button for Examiner
+## Notes-koKR: Examiner에 살펴보기 버튼을 추가합니다.
+## SavedVariables: ExaminerButton_Config
+## Dependencies: Examiner
+
+ExaminerButton.xml

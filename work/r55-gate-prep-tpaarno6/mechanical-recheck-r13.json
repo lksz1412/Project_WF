@@ -1,0 +1,73 @@
+{
+  "result": {
+    "checks": 8,
+    "passed": 8,
+    "failed": 0
+  },
+  "checks": [
+    {
+      "name": "R13 both early read-only and live recheck mapped",
+      "passed": true,
+      "actual": [
+        {
+          "phase": "1.2",
+          "step": 6
+        },
+        {
+          "phase": "3.2",
+          "step": 19
+        }
+      ]
+    },
+    {
+      "name": "R13 candidate producer/interfaces/gate/assumption agree",
+      "passed": true,
+      "actual": {
+        "affected": "tree/groundtruth/source/PhaseRange/PhaseN/interfaces/G1-R13/Assumptions"
+      }
+    },
+    {
+      "name": "R13 MD and JSON status/disposition consistent",
+      "passed": true,
+      "actual": {
+        "mdRow": "| R13 | 준비확인/읽기참고 대기·현재자료 미검증 — Step6에서저장안정/준비확인후가능한비macro설정뜻먼저읽기참고;미준비부분만사유/조건기록,Step19적용전재확인 | Codex/results/REQUEST_LEDGER.md:17; Codex/results/REQUEST_LEDGER_phase1.3.md:9 | 1.2/Step6, 3.2/Step19; candidate Step6 R13참고기록·G1-R13·Step19적용전재확인 | 게임조작없이안정로컬참고가능여부판정·미준비부분만보류;macro/키/전체profile자동이식0·private공개0 |"
+      }
+    },
+    {
+      "name": "R13 source rows retained",
+      "passed": true,
+      "actual": {
+        "sourceRows": 2
+      }
+    },
+    {
+      "name": "new tool fact attribution and table shape",
+      "passed": true,
+      "actual": {
+        "source": "parent actual tool-preflight message, ownlog79"
+      }
+    },
+    {
+      "name": "changed coverage table shape",
+      "passed": true,
+      "actual": {
+        "cells": 5
+      }
+    },
+    {
+      "name": "no blanket R13 live-only residue",
+      "passed": true,
+      "actual": {
+        "oldLiveOnlyPhrases": 0
+      }
+    },
+    {
+      "name": "updated candidate precompare realdiff",
+      "passed": true,
+      "actual": {
+        "rc": 1,
+        "raw": "work/r55-gate-prep-tpaarno6/normalized-diff-r13.txt"
+      }
+    }
+  ]
+}

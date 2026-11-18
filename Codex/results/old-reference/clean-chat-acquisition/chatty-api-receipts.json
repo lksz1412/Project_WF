@@ -1,0 +1,35 @@
+[
+  {
+    "time": "2026-11-17T16:05:30.9241359Z",
+    "error": "원격 서버에서 (404) 찾을 수 없음 오류를 반환했습니다.",
+    "HTTP": 404,
+    "sourceURL": "https://api.github.com/repos/TheMouseNest/Chattynator",
+    "URLbasis": "API endpoint derived from literal official CF linked GitHub repository",
+    "localpath": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\chatty-repo.json",
+    "attempts": 1,
+    "commandExitCode": 0,
+    "state": "failed"
+  },
+  {
+    "time": "2026-11-17T16:05:31.6690424Z",
+    "error": "원격 서버에서 (404) 찾을 수 없음 오류를 반환했습니다.",
+    "HTTP": 404,
+    "sourceURL": "https://api.github.com/repos/TheMouseNest/Chattynator/releases?per_page=5",
+    "URLbasis": "API endpoint derived from literal official CF linked GitHub repository",
+    "localpath": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\chatty-releases.json",
+    "attempts": 1,
+    "commandExitCode": 0,
+    "state": "failed"
+  },
+  {
+    "time": "2026-11-17T16:05:32.3984726Z",
+    "error": "원격 서버에서 (404) 찾을 수 없음 오류를 반환했습니다.",
+    "HTTP": 404,
+    "sourceURL": "https://api.github.com/repos/TheMouseNest/Chattynator/tags?per_page=12",
+    "URLbasis": "API endpoint derived from literal official CF linked GitHub repository",
+    "localpath": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\chatty-tags.json",
+    "attempts": 1,
+    "commandExitCode": 0,
+    "state": "failed"
+  }
+]

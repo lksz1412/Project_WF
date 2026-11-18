@@ -1,0 +1,294 @@
+{
+  "method": "Filename search + plain TOC data lines, no code execution or support/fidelity interpretation.",
+  "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\forever-v42-members.json",
+  "paths": [
+    {
+      "filename": "Interface/AddOns/!DevilUI/!DevilUI.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\!DevilUI\\!DevilUI.lua",
+      "inventoryIndex0": 42
+    },
+    {
+      "filename": "Interface/AddOns/!DevilUI/load_Profile.xml",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\!DevilUI\\load_Profile.xml",
+      "inventoryIndex0": 46
+    },
+    {
+      "filename": "Interface/AddOns/ChocolateBar/ForeverCompat.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\ChocolateBar\\ForeverCompat.lua",
+      "inventoryIndex0": 506
+    },
+    {
+      "filename": "Interface/AddOns/Devilconfig/Devilconfig.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\Devilconfig\\Devilconfig.lua",
+      "inventoryIndex0": 512
+    },
+    {
+      "filename": "Interface/AddOns/Devilconfig/ForeverCompat.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\Devilconfig\\ForeverCompat.lua",
+      "inventoryIndex0": 517
+    },
+    {
+      "filename": "Interface/AddOns/Devilconfig/_Devilconfig.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\Devilconfig\\_Devilconfig.lua",
+      "inventoryIndex0": 520
+    },
+    {
+      "filename": "Interface/AddOns/TipTac/ForeverCompat.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\TipTac\\ForeverCompat.lua",
+      "inventoryIndex0": 1534
+    },
+    {
+      "filename": "Interface/AddOns/TipTacItemRef/ForeverCompat.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\TipTacItemRef\\ForeverCompat.lua",
+      "inventoryIndex0": 1590
+    },
+    {
+      "filename": "Interface/AddOns/TipTacOptions/ForeverCompat.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\TipTacOptions\\ForeverCompat.lua",
+      "inventoryIndex0": 1678
+    },
+    {
+      "filename": "Interface/AddOns/TipTacTalents/ForeverCompat.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\TipTacTalents\\ForeverCompat.lua",
+      "inventoryIndex0": 1720
+    },
+    {
+      "filename": "Interface/AddOns/kgPanels/ForeverCompat.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\kgPanels\\ForeverCompat.lua",
+      "inventoryIndex0": 1750
+    },
+    {
+      "filename": "Interface/AddOns/kgPanelsConfig/ForeverCompat.lua",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\kgPanelsConfig\\ForeverCompat.lua",
+      "inventoryIndex0": 1814
+    }
+  ],
+  "TOCs": [
+    {
+      "filename": "Interface/AddOns/!DevilUI/!DevilUI.toc",
+      "inventoryIndex0": 43,
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\!DevilUI\\!DevilUI.toc",
+      "SHA256": "5559F382156E5919D14E7B2B6A71A33C76AC4F69D455A75DFD3820739302621D",
+      "sourceLines": 14,
+      "metadataLiterals": [
+        {
+          "line": 1,
+          "literal": "## Interface: 16001, 11601"
+        },
+        {
+          "line": 2,
+          "literal": "## X-Forever-Compat: v42"
+        },
+        {
+          "line": 3,
+          "literal": "## Author: Chant"
+        },
+        {
+          "line": 4,
+          "literal": "## Version: 1.1-Forever-v42"
+        },
+        {
+          "line": 5,
+          "literal": "## Title: |cffC495DDDevilUI 1.1|r"
+        },
+        {
+          "line": 6,
+          "literal": "## Notes: DevilUI!"
+        },
+        {
+          "line": 7,
+          "literal": "## SavedVariables: DevilUIAccount"
+        },
+        {
+          "line": 8,
+          "literal": "## SavedVariablesPerCharacter: Devilinstall, DevilUILayout"
+        }
+      ],
+      "loadOrderLiterals": [
+        {
+          "line": 10,
+          "literal": "!DevilUI.lua",
+          "resolvedPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\!DevilUI\\!DevilUI.lua",
+          "exists": true
+        },
+        {
+          "line": 11,
+          "literal": "load_Profile.xml",
+          "resolvedPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\!DevilUI\\load_Profile.xml",
+          "exists": true
+        },
+        {
+          "line": 12,
+          "literal": "minimap.lua",
+          "resolvedPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\!DevilUI\\minimap.lua",
+          "exists": true
+        },
+        {
+          "line": 13,
+          "literal": "libs\\load_libs.xml",
+          "resolvedPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\!DevilUI\\libs\\load_libs.xml",
+          "exists": true
+        },
+        {
+          "line": 14,
+          "literal": "media\\load_media.xml",
+          "resolvedPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\!DevilUI\\media\\load_media.xml",
+          "exists": true
+        }
+      ],
+      "state": "static-lines-parsed"
+    },
+    {
+      "filename": "Interface/AddOns/Devilconfig/Devilconfig.toc",
+      "inventoryIndex0": 514,
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\Devilconfig\\Devilconfig.toc",
+      "SHA256": "DF1C64B6942B7187B07511E47F0B4A6D5CD915ED12DE5C96DC21170F9FF0DA9B",
+      "sourceLines": 15,
+      "metadataLiterals": [
+        {
+          "line": 1,
+          "literal": "## Interface: 16001, 11601"
+        },
+        {
+          "line": 2,
+          "literal": "## X-Forever-Compat: v42"
+        },
+        {
+          "line": 3,
+          "literal": "## Title: Broker: Devilconfig"
+        },
+        {
+          "line": 4,
+          "literal": "## Author: chantmaster"
+        },
+        {
+          "line": 5,
+          "literal": "## Notes: Easy menu"
+        },
+        {
+          "line": 6,
+          "literal": "## X-Credits: Opticon"
+        },
+        {
+          "line": 7,
+          "literal": "## Version: 1.0-Forever-v42"
+        },
+        {
+          "line": 9,
+          "literal": "## OptionalDeps: ChocolateBar, kgPanelsConfig, Ace3, Dominos"
+        }
+      ],
+      "loadOrderLiterals": [
+        {
+          "line": 10,
+          "literal": "ForeverCompat.lua",
+          "resolvedPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\Devilconfig\\ForeverCompat.lua",
+          "exists": true
+        },
+        {
+          "line": 11,
+          "literal": "LibStub.lua",
+          "resolvedPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\Devilconfig\\LibStub.lua",
+          "exists": true
+        },
+        {
+          "line": 12,
+          "literal": "CallbackHandler-1.0.lua",
+          "resolvedPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\Devilconfig\\CallbackHandler-1.0.lua",
+          "exists": true
+        },
+        {
+          "line": 13,
+          "literal": "LibDataBroker-1.1\\LibDataBroker-1.1.lua",
+          "resolvedPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\Devilconfig\\LibDataBroker-1.1\\LibDataBroker-1.1.lua",
+          "exists": true
+        },
+        {
+          "line": 15,
+          "literal": "Devilconfig.lua",
+          "resolvedPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\Devilconfig\\Devilconfig.lua",
+          "exists": true
+        }
+      ],
+      "state": "static-lines-parsed"
+    },
+    {
+      "filename": "Interface/AddOns/kgPanels/kgPanels.toc",
+      "inventoryIndex0": 1754,
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\kgPanels\\kgPanels.toc",
+      "SHA256": "F878EA3954A16466AF23571D0D5283372069FD0500809B5CA12FF4735582F625",
+      "sourceLines": 17,
+      "metadataLiterals": [
+        {
+          "line": 1,
+          "literal": "## Interface: 16001, 11601"
+        },
+        {
+          "line": 2,
+          "literal": "## X-Forever-Compat: v3"
+        },
+        {
+          "line": 3,
+          "literal": "## Notes: Create panels for customizing your UI, sucessor to eePanels"
+        },
+        {
+          "line": 4,
+          "literal": "## Title: kgPanels"
+        },
+        {
+          "line": 5,
+          "literal": "## Author: kagaro"
+        },
+        {
+          "line": 6,
+          "literal": "## SavedVariables: kgPanelsDB"
+        },
+        {
+          "line": 7,
+          "literal": "## X-Category: Interface Enhancements"
+        },
+        {
+          "line": 8,
+          "literal": "## Version: 1.30.0"
+        },
+        {
+          "line": 9,
+          "literal": "## X-Email: sal.scotto@gmail.com"
+        },
+        {
+          "line": 10,
+          "literal": "## X-License: All Rights Reserved"
+        },
+        {
+          "line": 11,
+          "literal": "## X-Curse-Project-ID: 14995"
+        },
+        {
+          "line": 12,
+          "literal": "## OptionalDeps: Ace3, LibSharedMedia-3.0, LibDataBroker-1.1, LibDualSpec-1.0, LibBackdrop-1.0"
+        }
+      ],
+      "loadOrderLiterals": [
+        {
+          "line": 14,
+          "literal": "ForeverCompat.lua",
+          "resolvedPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\kgPanels\\ForeverCompat.lua",
+          "exists": true
+        },
+        {
+          "line": 15,
+          "literal": "embeds.xml",
+          "resolvedPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\kgPanels\\embeds.xml",
+          "exists": true
+        },
+        {
+          "line": 17,
+          "literal": "kgPanels.lua",
+          "resolvedPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\kgPanels\\kgPanels.lua",
+          "exists": true
+        }
+      ],
+      "state": "static-lines-parsed"
+    }
+  ]
+}

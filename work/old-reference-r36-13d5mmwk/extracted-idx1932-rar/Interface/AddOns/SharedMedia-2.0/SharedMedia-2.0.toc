@@ -1,0 +1,15 @@
+## Interface: 20400
+
+## Title: SharedMedia-2.0
+## Notes: Inserts some media into LibSharedMedia-2.0's storage.
+## Version: 2.0
+## Author: Lots of people.
+## X-Category: Miscellaneous
+
+## X-Embeds: LibSharedMedia-2.0
+## OptionalDeps: LibSharedMedia-2.0
+
+embeds.xml
+
+SharedMedia-2.0.lua
+MyMedia.lua

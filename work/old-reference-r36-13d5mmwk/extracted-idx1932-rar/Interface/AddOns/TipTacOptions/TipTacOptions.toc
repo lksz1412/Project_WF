@@ -1,0 +1,10 @@
+## Interface: 30000
+## Version: 08.10.23
+## Title: TipTacOptions
+## Author: Ryn/Nadi (Earthen Ring EU)
+## Notes: Option Dialog for TipTac
+## Dependencies: TipTac
+## LoadOnDemand: 1
+DropDowns.lua
+Options.lua
+Factory.lua

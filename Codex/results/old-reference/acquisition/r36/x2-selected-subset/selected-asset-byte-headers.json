@@ -1,0 +1,149 @@
+{
+  "scope": "Only8selectedTGA entries, hashes/headerfields, noimageview; samebasename comparison doesnotassert profile/sample identity.",
+  "assets": [
+    {
+      "selectedInventoryIndex0": 5,
+      "sourceSHA256": "549B0D63829FA160BB9B7CFDDE619107FC39C9A877AD28F173576F55C907AC79",
+      "filenameLiteral": "Minimap.TGA",
+      "bytes": 262188,
+      "headerWidth": 256,
+      "headerHeight": 256,
+      "headerDepth": 32,
+      "headerImageType": 2,
+      "sameBasenamePriorByteComparisons": [],
+      "imageObserved": false
+    },
+    {
+      "selectedInventoryIndex0": 6,
+      "sourceSHA256": "073284129E9F8D2AD16998140A1AC6DB1A475636025AEFF476FC3DA359CA8744",
+      "filenameLiteral": "angel.tga",
+      "bytes": 262188,
+      "headerWidth": 256,
+      "headerHeight": 256,
+      "headerDepth": 32,
+      "headerImageType": 2,
+      "sameBasenamePriorByteComparisons": [],
+      "imageObserved": false
+    },
+    {
+      "selectedInventoryIndex0": 7,
+      "sourceSHA256": "7E0E0E9C7831BBBCFFD75F5F71DF51BDD48366AD4C7E3DF0ADC30750F429B1D3",
+      "filenameLiteral": "border.tga",
+      "bytes": 4140,
+      "headerWidth": 32,
+      "headerHeight": 32,
+      "headerDepth": 32,
+      "headerImageType": 2,
+      "sameBasenamePriorByteComparisons": [],
+      "imageObserved": false
+    },
+    {
+      "selectedInventoryIndex0": 8,
+      "sourceSHA256": "045CE188243A618161EB6351ECA50F2F0B7562A944C16D59EB68E0A2DFE248CA",
+      "filenameLiteral": "demon.tga",
+      "bytes": 262188,
+      "headerWidth": 256,
+      "headerHeight": 256,
+      "headerDepth": 32,
+      "headerImageType": 2,
+      "sameBasenamePriorByteComparisons": [],
+      "imageObserved": false
+    },
+    {
+      "selectedInventoryIndex0": 9,
+      "sourceSHA256": "F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD",
+      "filenameLiteral": "tooltip.tga",
+      "bytes": 8236,
+      "headerWidth": 128,
+      "headerHeight": 16,
+      "headerDepth": 32,
+      "headerImageType": 2,
+      "sameBasenamePriorByteComparisons": [],
+      "imageObserved": false
+    },
+    {
+      "selectedInventoryIndex0": 10,
+      "sourceSHA256": "F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD",
+      "filenameLiteral": "Devil2.tga",
+      "bytes": 8236,
+      "headerWidth": 128,
+      "headerHeight": 16,
+      "headerDepth": 32,
+      "headerImageType": 2,
+      "sameBasenamePriorByteComparisons": [
+        {
+          "family": "2009",
+          "filename": "Devil2.tga",
+          "byteIdentical": true
+        },
+        {
+          "family": "alpha",
+          "filename": "Devil2.tga",
+          "byteIdentical": true
+        },
+        {
+          "family": "2022",
+          "filename": "Devil2.tga",
+          "byteIdentical": true
+        }
+      ],
+      "imageObserved": false
+    },
+    {
+      "selectedInventoryIndex0": 16,
+      "sourceSHA256": "9DE505F668137A32B3ADD4CD56ADB6B84883B798B0E3398C37B6CBCCED914504",
+      "filenameLiteral": "Devil.tga",
+      "bytes": 8236,
+      "headerWidth": 128,
+      "headerHeight": 16,
+      "headerDepth": 32,
+      "headerImageType": 2,
+      "sameBasenamePriorByteComparisons": [
+        {
+          "family": "2009",
+          "filename": "Devil.tga",
+          "byteIdentical": true
+        },
+        {
+          "family": "alpha",
+          "filename": "Devil.tga",
+          "byteIdentical": true
+        },
+        {
+          "family": "2022",
+          "filename": "Devil.tga",
+          "byteIdentical": true
+        }
+      ],
+      "imageObserved": false
+    },
+    {
+      "selectedInventoryIndex0": 17,
+      "sourceSHA256": "49CA0BC8E0CBDD6ABED71748E3B686032F588C5E2829E6B844C9EC1F8B1A3AA9",
+      "filenameLiteral": "roth.tga",
+      "bytes": 8236,
+      "headerWidth": 128,
+      "headerHeight": 16,
+      "headerDepth": 32,
+      "headerImageType": 2,
+      "sameBasenamePriorByteComparisons": [
+        {
+          "family": "2009",
+          "filename": "roth.tga",
+          "byteIdentical": true
+        },
+        {
+          "family": "alpha",
+          "filename": "roth.tga",
+          "byteIdentical": true
+        },
+        {
+          "family": "2022",
+          "filename": "roth.tga",
+          "byteIdentical": true
+        }
+      ],
+      "imageObserved": false
+    }
+  ]
+}

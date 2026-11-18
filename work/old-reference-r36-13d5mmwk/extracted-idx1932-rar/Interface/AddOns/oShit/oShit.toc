@@ -1,0 +1,9 @@
+## Interface: 20400
+## Title: oShit
+## Version: 1.0
+## Author: Haste
+## X-eMail: troeks@gmail.com
+## X-Website: http://fuxsake.net
+## Notes: Redirect errors to the chatframe.
+
+error.lua

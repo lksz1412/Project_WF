@@ -1,0 +1,320 @@
+{
+  "postID": 13140,
+  "rowCount": 9,
+  "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=13140&tempridx=&count=9",
+  "rawPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-13140.html",
+  "rawSHA256": "1126D2151CA792176990454D0FC503E2EE907820ECBDBB3E456AED45C8393162",
+  "rows": [
+    {
+      "postID": 13140,
+      "ordinal1": 1,
+      "filenameLiteral": "_forever_V42.zip",
+      "clientVersionLiteral": "1.60.1",
+      "downloadCountLiteral": "20",
+      "dateLiteral": "2026-11-17",
+      "dateKind": "file table registration date",
+      "fileID": 80544,
+      "fileIDState": "actual-setDownloadInfo-literal",
+      "literalPublicURLs": [
+        "https://pds.inven.co.kr/upload/2026/11/17/addon/_forever_V42.zip"
+      ],
+      "mappingState": "exact-latest-literal-filename",
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "_forever_V42.zip",
+          "attributes": {
+            "href": "javascript:top.login();",
+            "onfocus": "this.blur();"
+          },
+          "line": 40
+        }
+      ],
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-13140.html",
+        "line": 37,
+        "selector": "#addonFileInfo table tr"
+      },
+      "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">_forever_V42.zip</a></span>\n</span>\n</td>\n<td class=\"version\">1.60.1</td>\n<td class=\"download\">20</td>\n<td class=\"postdate\">2026-11-17</td>\n</tr>"
+    },
+    {
+      "postID": 13140,
+      "ordinal1": 2,
+      "filenameLiteral": "_forever_V41.zip",
+      "clientVersionLiteral": "1.60.1",
+      "downloadCountLiteral": "105",
+      "dateLiteral": "2026-11-13",
+      "dateKind": "file table registration date",
+      "fileID": null,
+      "fileIDState": "not-exposed-in-anonymous-row",
+      "literalPublicURLs": [],
+      "mappingState": "no-row-URL-literal; public recovery not exhausted",
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "_forever_V41.zip",
+          "attributes": {
+            "href": "javascript:top.login();",
+            "onfocus": "this.blur();"
+          },
+          "line": 50
+        }
+      ],
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-13140.html",
+        "line": 47,
+        "selector": "#addonFileInfo table tr"
+      },
+      "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">_forever_V41.zip</a></span>\n</span>\n</td>\n<td class=\"version\">1.60.1</td>\n<td class=\"download\">105</td>\n<td class=\"postdate\">2026-11-13</td>\n</tr>"
+    },
+    {
+      "postID": 13140,
+      "ordinal1": 3,
+      "filenameLiteral": "_forever_V38.zip",
+      "clientVersionLiteral": "1.60.1",
+      "downloadCountLiteral": "73",
+      "dateLiteral": "2026-11-10",
+      "dateKind": "file table registration date",
+      "fileID": null,
+      "fileIDState": "not-exposed-in-anonymous-row",
+      "literalPublicURLs": [],
+      "mappingState": "no-row-URL-literal; public recovery not exhausted",
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "_forever_V38.zip",
+          "attributes": {
+            "href": "javascript:top.login();",
+            "onfocus": "this.blur();"
+          },
+          "line": 60
+        }
+      ],
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-13140.html",
+        "line": 57,
+        "selector": "#addonFileInfo table tr"
+      },
+      "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">_forever_V38.zip</a></span>\n</span>\n</td>\n<td class=\"version\">1.60.1</td>\n<td class=\"download\">73</td>\n<td class=\"postdate\">2026-11-10</td>\n</tr>"
+    },
+    {
+      "postID": 13140,
+      "ordinal1": 4,
+      "filenameLiteral": "_forever_V34.zip",
+      "clientVersionLiteral": "1.60.1",
+      "downloadCountLiteral": "179",
+      "dateLiteral": "2026-11-07",
+      "dateKind": "file table registration date",
+      "fileID": null,
+      "fileIDState": "not-exposed-in-anonymous-row",
+      "literalPublicURLs": [],
+      "mappingState": "no-row-URL-literal; public recovery not exhausted",
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "_forever_V34.zip",
+          "attributes": {
+            "href": "javascript:top.login();",
+            "onfocus": "this.blur();"
+          },
+          "line": 70
+        }
+      ],
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-13140.html",
+        "line": 67,
+        "selector": "#addonFileInfo table tr"
+      },
+      "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">_forever_V34.zip</a></span>\n</span>\n</td>\n<td class=\"version\">1.60.1</td>\n<td class=\"download\">179</td>\n<td class=\"postdate\">2026-11-07</td>\n</tr>"
+    },
+    {
+      "postID": 13140,
+      "ordinal1": 5,
+      "filenameLiteral": "_classic_beta_v33.zip",
+      "clientVersionLiteral": "1.14.4",
+      "downloadCountLiteral": "125",
+      "dateLiteral": "2026-10-22",
+      "dateKind": "file table registration date",
+      "fileID": null,
+      "fileIDState": "not-exposed-in-anonymous-row",
+      "literalPublicURLs": [],
+      "mappingState": "no-row-URL-literal; public recovery not exhausted",
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "_classic_beta_v33.zip",
+          "attributes": {
+            "href": "javascript:top.login();",
+            "onfocus": "this.blur();"
+          },
+          "line": 80
+        }
+      ],
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-13140.html",
+        "line": 77,
+        "selector": "#addonFileInfo table tr"
+      },
+      "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">_classic_beta_v33.zip</a></span>\n</span>\n</td>\n<td class=\"version\">1.14.4</td>\n<td class=\"download\">125</td>\n<td class=\"postdate\">2026-10-22</td>\n</tr>"
+    },
+    {
+      "postID": 13140,
+      "ordinal1": 6,
+      "filenameLiteral": "c2760436703577483.zip",
+      "clientVersionLiteral": "1.14.4",
+      "downloadCountLiteral": "74",
+      "dateLiteral": "2026-10-18",
+      "dateKind": "file table registration date",
+      "fileID": null,
+      "fileIDState": "not-exposed-in-anonymous-row",
+      "literalPublicURLs": [],
+      "mappingState": "no-row-URL-literal; public recovery not exhausted",
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "c2760436703577483.zip",
+          "attributes": {
+            "href": "javascript:top.login();",
+            "onfocus": "this.blur();"
+          },
+          "line": 90
+        }
+      ],
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-13140.html",
+        "line": 87,
+        "selector": "#addonFileInfo table tr"
+      },
+      "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">c2760436703577483.zip</a></span>\n</span>\n</td>\n<td class=\"version\">1.14.4</td>\n<td class=\"download\">74</td>\n<td class=\"postdate\">2026-10-18</td>\n</tr>"
+    },
+    {
+      "postID": 13140,
+      "ordinal1": 7,
+      "filenameLiteral": "_classic_beta_v29.zip",
+      "clientVersionLiteral": "1.14.4",
+      "downloadCountLiteral": "40",
+      "dateLiteral": "2026-10-18",
+      "dateKind": "file table registration date",
+      "fileID": null,
+      "fileIDState": "not-exposed-in-anonymous-row",
+      "literalPublicURLs": [],
+      "mappingState": "no-row-URL-literal; public recovery not exhausted",
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "_classic_beta_v29.zip",
+          "attributes": {
+            "href": "javascript:top.login();",
+            "onfocus": "this.blur();"
+          },
+          "line": 100
+        }
+      ],
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-13140.html",
+        "line": 97,
+        "selector": "#addonFileInfo table tr"
+      },
+      "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">_classic_beta_v29.zip</a></span>\n</span>\n</td>\n<td class=\"version\">1.14.4</td>\n<td class=\"download\">40</td>\n<td class=\"postdate\">2026-10-18</td>\n</tr>"
+    },
+    {
+      "postID": 13140,
+      "ordinal1": 8,
+      "filenameLiteral": "_classic_beta_V28.zip",
+      "clientVersionLiteral": "1.14.4",
+      "downloadCountLiteral": "8",
+      "dateLiteral": "2026-10-17",
+      "dateKind": "file table registration date",
+      "fileID": null,
+      "fileIDState": "not-exposed-in-anonymous-row",
+      "literalPublicURLs": [],
+      "mappingState": "no-row-URL-literal; public recovery not exhausted",
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "_classic_beta_V28.zip",
+          "attributes": {
+            "href": "javascript:top.login();",
+            "onfocus": "this.blur();"
+          },
+          "line": 110
+        }
+      ],
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-13140.html",
+        "line": 107,
+        "selector": "#addonFileInfo table tr"
+      },
+      "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">_classic_beta_V28.zip</a></span>\n</span>\n</td>\n<td class=\"version\">1.14.4</td>\n<td class=\"download\">8</td>\n<td class=\"postdate\">2026-10-17</td>\n</tr>"
+    },
+    {
+      "postID": 13140,
+      "ordinal1": 9,
+      "filenameLiteral": "_classic_beta_v27.zip",
+      "clientVersionLiteral": "1.14.4",
+      "downloadCountLiteral": "3",
+      "dateLiteral": "2026-10-16",
+      "dateKind": "file table registration date",
+      "fileID": null,
+      "fileIDState": "not-exposed-in-anonymous-row",
+      "literalPublicURLs": [],
+      "mappingState": "no-row-URL-literal; public recovery not exhausted",
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "_classic_beta_v27.zip",
+          "attributes": {
+            "href": "javascript:top.login();",
+            "onfocus": "this.blur();"
+          },
+          "line": 120
+        }
+      ],
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-13140.html",
+        "line": 117,
+        "selector": "#addonFileInfo table tr"
+      },
+      "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">_classic_beta_v27.zip</a></span>\n</span>\n</td>\n<td class=\"version\">1.14.4</td>\n<td class=\"download\">3</td>\n<td class=\"postdate\">2026-10-16</td>\n</tr>"
+    }
+  ],
+  "iframeScripts": [
+    {
+      "line": 10,
+      "text": "",
+      "src": "https://www.inven.co.kr/common/lib/js/framework/jquery-1.7.2.min_new.js?v=20130113a"
+    },
+    {
+      "line": 11,
+      "text": "",
+      "src": "https://www.inven.co.kr/js/common.js"
+    },
+    {
+      "line": 12,
+      "text": "",
+      "src": "https://www.inven.co.kr/js/fn_string.js"
+    },
+    {
+      "line": 17,
+      "text": "\nfunction downloadFile(n,filepath) {\n\ttop.login();\n}\n",
+      "src": null
+    },
+    {
+      "line": 37,
+      "text": "parent.setDownloadInfo(80544,\"https://pds.inven.co.kr/upload/2026/11/17/addon/_forever_V42.zip\");",
+      "src": null
+    }
+  ],
+  "detailHandlerCache": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\idx-13140-detail-downloadhandlers.json",
+  "downloadUIState": "anonymous anchors invoke top.login; no handler evaluated or login attempted",
+  "latestMappingDoesNotSupplyOlderURLs": true
+}

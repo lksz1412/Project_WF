@@ -1,0 +1,41 @@
+
+Omen3DB = {
+	["profileKeys"] = {
+		["Eznel - Crystalsong"] = "Kratia - Crystalsong",
+		["Resrec - Crystalsong"] = "Default",
+		["Hayate - Crystalsong"] = "Hayate - Crystalsong",
+		["에이논 - Crystalsong"] = "Kratia - Crystalsong",
+		["Kratia - Crystalsong"] = "Default",
+		["Lagneziad - Crystalsong"] = "Lagneziad - Crystalsong",
+	},
+	["profiles"] = {
+		["Default"] = {
+			["PositionW"] = 209.3753377750451,
+			["PositionH"] = 181.6094861346307,
+			["VGrip2"] = 120.3907142073365,
+			["PositionY"] = 203.9055987780904,
+			["Locked"] = true,
+			["Background"] = {
+				["BorderTexture"] = "Skinner EditBox/ScrollBar Border",
+				["EdgeSize"] = 1,
+				["TileSize"] = 16,
+				["Tile"] = true,
+				["Color"] = {
+					["a"] = 0,
+				},
+				["BorderColor"] = {
+					["a"] = 0,
+				},
+				["Texture"] = "Blizzard Dialog Background",
+			},
+			["ShowWith"] = {
+				["Alone"] = true,
+			},
+			["VGrip1"] = 88.98444093585739,
+			["PositionX"] = 1062.890224532004,
+			["Bar"] = {
+				["Texture"] = "Flat",
+			},
+		},
+	},
+}

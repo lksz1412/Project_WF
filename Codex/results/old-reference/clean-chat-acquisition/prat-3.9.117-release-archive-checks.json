@@ -1,0 +1,20 @@
+{
+  "source": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\prat-Prat-3.0-3.9.117.zip",
+  "SHA256": "D72BAEF9C99BB1583B269ABD85088BCB957D9A0D8CA57C323144442875084DB1",
+  "bytes": 1547917,
+  "label": "prat-3.9.117-release",
+  "CRCtestRuns": 1,
+  "unsafe": [],
+  "extractionState": "passed",
+  "CRCbadMember": null,
+  "CRCstate": "passed",
+  "files": 208,
+  "directories": 39,
+  "uncompressedBytes": 3750998,
+  "compressedBytes": 1509991,
+  "extractionRoot": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release",
+  "extractedFiles": 208,
+  "extractedBytes": 3750998,
+  "reparsePaths": [],
+  "inventoryPath": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\prat-3.9.117-release-members.json"
+}

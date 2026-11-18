@@ -1,0 +1,10 @@
+## Interface: 30200
+## Title: Blue Item Link
+## Title-koKR: |cFF669900B|cFFFFFFFFlue |cFF669900I|cFFFFFFFFtem |cFF669900L|cFFFFFFFFink|r
+## Notes: 다수의 아이템 링크를 표시합니다
+## Version: 2.10
+## Author: InTheBlue
+## SavedVariables: BlueItemLinkDB
+
+Core.lua
+Options.lua

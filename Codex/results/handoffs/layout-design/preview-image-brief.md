@@ -1,0 +1,13 @@
+# Step2 rendered-preview geometry inspection (same image reader)
+
+1 Same image-reading work sub /root/layout_image, bada-image-reader high; direct visual observations only. Not design authoring or formal ten-round B audit.
+2 Ownership NEW Codex/results/layout-design/preview-visual-review.md/.json; append own image-reader-log.md after read/backup only. No modifications to originalgeometry/sourceimage/rendercode/spec/PNG. Sharedtree othersworking, don'trevert. Commit/push master only.
+3 No outsidework/newagents/install/game/CUA/privateWTF/macro/cleanupdeletion/uploads. Freshscratchcopies only. No style redesign. Source and rendered files readonly.
+4 No falseattribution/gamePASS. Distinguish directlyobserved from proposed/exactspec values. Do not guess sourcehiddenornamentorunitidentities.
+5 Reread full currentbrief and actualassignedinputs before judgment; compactionstatusunknown, reread imageextractionskill/fullreadpolicy from originalbrief if notincontext. Record file/line/fullframe coverage. Geometry-only inspection, no transcribingtext/spells/keybindings; Paddletextengineoutside scope. You may compare genericlabelshapes against knownlabelsfromspec for clipping/missingglyph, no extraction.
+
+Root D:/Projects/Project_WF. Inputs aftermasterREADY: Codex/results/layout-design/preview-full-4k.png,preview-bottom-native.png,layout-spec.json,preview-checks.json,preview-notes.md; Codex/docs/devil-ui-4k-layout.md; your original-image-geometry.md/json/sourceJPEG as needed. Originalfullimage observed before; sourceuncertainties retained.
+
+Fullnativeframe3840x2160 plus nativebottomcrop3840x800 (expected noresize). Compare visible gridcounts/shapes/slotoutside size/rowgaps/bottomheight/HPmana/map adjacency, borders/ornaments/neutralplaceholderappearance. Master/A2 alreadyverifycoords, your role is catch actualrenderedimage mistakes missedbymetadata: clipping, hidden/vanishedassets, overlayscoveringcontrols, unreadable/boxglyphlabels, lostpaneldivider/rowspacing, falsegamescreenshotappearance, accidentallyglobalresizelook. Use originalfullframescan then onlynativecropsofsmallregionsforuncertainfeatures, never alter originals. Report sourcefidelityandintentionalproposaldifferences clearly. Source4K image firstconfirmed, gamephysicalraster/UIscaleunverified. AllPNGfields areproposals; targetframeadditionalproposalshouldhavedashedcue, map/placeholdersnotgamefunction. Do not callgeneric'키'actualbinding or neutraliconsactualspells.
+
+Save directobservations, approximatepixelboxesifmeasuredvisuallywithuncertainty, sourcevsproposalcomparison, visibleerrors/pendingitems. No arbitrary newlayoutrecommendations. Returnpaths andkeyfindings, A2 receivesanyactualerror via master and same B performslaterformalreview. No claimformalBpassed.

@@ -1,0 +1,1434 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
+	<Script file="FindParty.lua"/>
+	<Script file="FindPartyTooltip.lua"/>
+	<Script file="localization.lua"/>
+
+	<Font name="FP_FontDefault" inherits="GameFontNormal" virtual="true">
+		<Color r="1.0" g="1.0" b="1.0"/>
+	</Font>
+	<Font name="FP_FontLeft" inherits="FP_FontDefault" justifyH="LEFT" virtual="true"/>
+
+
+	<!-- Template  -->
+	<SimpleHTML name="FP_StringTemplate" virtual="true">
+		<Layers>
+			<Layer level="OVERLAY">
+				<FontString name="$parentText" inherits="FP_FontLeft">
+					<Anchors>
+						<Anchor point="RIGHT"/>
+						<Anchor point="LEFT"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</SimpleHTML>
+
+	<Button name="FP_RowTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="600" y="25"/>
+		</Size>
+		<Frames>
+			<Frame name="$parentTime" inherits="FP_StringTemplate">
+				<Size>
+					<AbsDimension x="35" y="25"/>
+				</Size>
+				<Anchors>
+					<Anchor point="LEFT" relativeTo="$parent" relativePoint="LEFT"/>
+				</Anchors>
+			</Frame>
+			<Frame name="$parentDungeon" inherits="FP_StringTemplate">
+				<Size>
+					<AbsDimension x="110" y="20"/>
+				</Size>
+				<Anchors>
+					<Anchor point="LEFT" relativeTo="$parentTime" relativePoint="RIGHT"/>
+				</Anchors>
+			</Frame>
+			<Frame name="$parentName" inherits="FP_StringTemplate">
+				<Size>
+					<AbsDimension x="130" y="20"/>
+				</Size>
+				<Anchors>
+					<Anchor point="LEFT" relativeTo="$parentDungeon" relativePoint="RIGHT">
+						<Offset>
+							<AbsDimension x="10" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="$parentMsg" inherits="FP_StringTemplate">
+				<Size>
+					<AbsDimension y="20"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentName" relativePoint="TOPRIGHT"/>
+					<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT"/>
+				</Anchors>
+			</Frame>
+		</Frames>
+		<HighlightTexture file="Interface\QuestFrame\UI-QuestTitleHighlight" alphaMode="ADD">
+			<Anchors>
+				<Anchor point="TOPLEFT">
+					<Offset>
+						<AbsDimension x="5" y="-2"/>
+					</Offset>
+				</Anchor>
+				<Anchor point="BOTTOMRIGHT">
+					<Offset>
+						<AbsDimension x="-5" y="2"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+		</HighlightTexture>
+		<OnLoad>
+		</OnLoad>
+		<Scripts>
+			<OnClick>FP_MenuClicked("SEL_SHOUT");</OnClick>
+			<!--			<OnEnter>local tooltip = getglobal("FP_Tooltip");				 tooltip:SetOwner(this, "ANCHOR_TOPLEFT", 0, -50);				 local text =getglobal(this:GetName().."MsgText"):GetText();				 if (text) then			tooltip:ClearLines(); tooltip:AddLine(text); tooltip:Show();end;</OnEnter>-->
+			<OnEnter>
+				FP_Tooltip_Func.LIST();
+			</OnEnter>
+			<OnLeave>GameTooltip:Hide();</OnLeave>
+		</Scripts>
+	</Button>
+
+	<Frame name="FP_FrameTemplate" virtual="true">
+		<!--	<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+			<TileSize>
+				<AbsValue val="32"/>
+			</TileSize>
+			<EdgeSize>
+				<AbsValue val="32"/>
+			</EdgeSize>
+			<BackgroundInsets>
+				<AbsInset	left="11" right="12" top="12" bottom="11"/>
+			</BackgroundInsets>
+		</Backdrop>
+		-->
+		<Backdrop bgFile="Interface\ChatFrame\ChatFrameBackground" edgeFile="Interface\ChatFrame\ChatFrameBackground" tile="false">
+			<BackgroundInsets>
+				<AbsInset left="0" right="0" top="0" bottom="0" />
+			</BackgroundInsets>
+			<EdgeSize>
+				<AbsValue val="2" />
+			</EdgeSize>
+		</Backdrop>
+		<Scripts>
+			<OnLoad>
+				this:SetBackdropBorderColor(0.15, 0.15, 0.15, 1);
+				this:SetBackdropColor(0, 0, 0, 1);
+			</OnLoad>
+		</Scripts>
+	</Frame>
+
+	<Button name="FP_SortButtonTemplate" virtual="true">
+		<HitRectInsets>
+			<AbsInset left="3" right="3" top="3" bottom="3"/>
+		</HitRectInsets>
+		<Scripts>
+			<OnClick>
+				local asc = FP_SortButtonClicked();
+				if (asc) then
+				this:SetNormalTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollUp-Up");
+				this:SetDisabledTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollUp-Disabled");
+				this:SetPushedTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollUp-Down");
+				else
+				this:SetNormalTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollDown-Up");
+				this:SetDisabledTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollDown-Disabled");
+				this:SetPushedTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollDown-Down");
+				end
+			</OnClick>
+		</Scripts>
+		<NormalTexture file="Interface\ChatFrame\UI-ChatIcon-ScrollUp-Up"/>
+		<PushedTexture file="Interface\ChatFrame\UI-ChatIcon-ScrollUp-Down"/>
+		<DisabledTexture file="Interface\ChatFrame\UI-ChatIcon-ScrollUp-Disabled"/>
+		<HighlightTexture file="Interface\Buttons\ButtonHilight-Round" alphaMode="ADD"/>
+	</Button>
+
+	<Button name="FP_FileterButtonTemplate" virtual = "true">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentLine" file="Interface\TradeSkillFrame\UI-TradeSkill-SkillBorder">
+					<Anchors>
+						<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT">
+							<Offset>
+								<AbsDimension x="-2" y="4"/>
+							</Offset>
+						</Anchor>
+						<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT">
+							<Offset>
+								<AbsDimension x="-3" y="-3"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+					<TexCoords left="0.1" right="1.0" top="0" bottom="0.25"/>
+				</Texture>
+			</Layer>
+			<Layer level="OVERLAY">
+				<FontString name="$parentText" inherits="GameFontNormal" justifyH="CENTER" >
+					<Color r="1.0" g="0.5" b="0.25"/>
+					<Anchors>
+						<Anchor point="RIGHT"/>
+						<Anchor point="LEFT"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<HighlightTexture name="$parentHighTexture" file="Interface\Buttons\ButtonHilight-Round" alphaMode="ADD">
+			<Size>
+				<AbsDimension y="22"/>
+			</Size>
+			<Anchors>
+				<Anchor point="CENTER"></Anchor>
+			</Anchors>
+		</HighlightTexture>
+	</Button>
+
+
+	<!-- Frame  -->
+	<Frame name="FP_Frame" movable="true" parent="UIParent" hidden="true">
+		<Size>
+			<AbsDimension x="650" y="660"/>
+		</Size>
+		<Anchors>
+			<Anchor point="CENTER" relativePoint="CENTER"/>
+		</Anchors>
+		<Frames>
+			<Frame name="FP_ListFrame" resizable="true" movable="true">
+				<Size>
+					<AbsDimension x="650" y="290"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOP" relativeTo="$parent" relativePoint="TOP" >
+						<Offset>
+							<AbsDimension x="0" y="-40"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<!--			<Backdrop bgFile="Interface\AddOns\FindParty\whitepixel" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+					<TileSize>
+						<AbsValue val="32"/>
+					</TileSize>
+					<EdgeSize>
+						<AbsValue val="32"/>
+					</EdgeSize>
+					<BackgroundInsets>
+						<AbsInset	left="11" right="12" top="12" bottom="11"/>
+					</BackgroundInsets>
+				</Backdrop>
+				-->
+				<Backdrop bgFile="Interface\ChatFrame\ChatFrameBackground" edgeFile="Interface\ChatFrame\ChatFrameBackground" tile="false">
+					<BackgroundInsets>
+						<AbsInset left="0" right="0" top="0" bottom="0" />
+					</BackgroundInsets>
+					<EdgeSize>
+						<AbsValue val="2" />
+					</EdgeSize>
+				</Backdrop>
+				<Scripts>
+					<OnLoad>
+						this:SetBackdropBorderColor(0.15, 0.15, 0.15, 1);
+						this:SetBackdropColor(0, 0, 0, 1);
+						this:SetMinResize(325,70);
+						this:SetMaxResize(100000, 870);
+					</OnLoad>
+					<OnMouseDown>FP_ListFrame:StartMoving()</OnMouseDown>
+					<OnMouseUp>FP_ListFrame:StopMovingOrSizing();</OnMouseUp>
+				</Scripts>
+				<Frames>
+					<Button name="$parentBridgeToTitle" inherits="FP_SortButtonTemplate" id="5">
+						<Size>
+							<AbsDimension x="28" y="24"/>
+						</Size>
+						<Anchors>
+							<Anchor point="CENTER" relativeTo="$parent" relativePoint="TOP">
+								<Offset x="0" y="-5"/>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnLoad>
+								this:SetNormalTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollDown-Up");
+								this:SetPushedTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollDown-Down");
+							</OnLoad>
+							<OnClick>
+								if (FP_TitleFrame:IsShown()) then
+								FP_ListFrameBridgeToTitle:SetNormalTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollUp-Up");
+								FP_ListFrameBridgeToTitle:SetPushedTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollUp-Down");
+								FP_TitleFrame:Hide();
+								FP_Options.titlebarVisible = false;
+								else
+								FP_ListFrameBridgeToTitle:SetNormalTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollDown-Up");
+								FP_ListFrameBridgeToTitle:SetPushedTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollDown-Down");
+								FP_TitleFrame:Show();
+								FP_Options.titlebarVisible = true;
+								end
+							</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentBridgeToMenu" inherits="FP_SortButtonTemplate" id="6">
+						<Size>
+							<AbsDimension x="28" y="24"/>
+						</Size>
+						<Anchors>
+							<Anchor point="CENTER" relativeTo="$parent" relativePoint="BOTTOM">
+								<Offset x="0" y="5"/>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnLoad>
+								this:SetNormalTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollUp-Up");
+								this:SetPushedTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollUp-Down");
+							</OnLoad>
+							<OnClick>
+								if (FP_MenuFrame:IsShown()) then
+								FP_ListFrameBridgeToMenu:SetNormalTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollDown-Up");
+								FP_ListFrameBridgeToMenu:SetPushedTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollDown-Down");
+								FP_MenuFrame:Hide();
+								FP_FindFrame:Hide();
+								FP_Options.menubarVisible = false;
+								else
+								FP_ListFrameBridgeToMenu:SetNormalTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollUp-Up");
+								FP_ListFrameBridgeToMenu:SetPushedTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollUp-Down");
+								FP_MenuFrame:Show();
+								FP_Options.menubarVisible = true;
+								end
+							</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentTimeSort" inherits="FP_SortButtonTemplate" id="1">
+						<Size>
+							<AbsDimension x="28" y="24"/>
+						</Size>
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT">
+								<Offset x="10" y="-10"/>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnEnter>
+								FP_Tooltip_Func.SORTTIME();
+							</OnEnter>
+							<OnLeave>GameTooltip:Hide();</OnLeave>
+						</Scripts>
+					</Button>
+					<Button name="$parentFilterDungeon" inherits="FP_FileterButtonTemplate" id = "2">
+						<Size>
+							<AbsDimension x= "110" y="22"/>
+						</Size>
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT">
+								<Offset>
+									<AbsDimension x="40" y="-10"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnLoad>
+								getglobal(this:GetName().."Text"):SetNonSpaceWrap(true);
+								this:RegisterForClicks("LeftButtonDown", "RightButtonDown");
+								getglobal(this:GetName().."Text"):SetText("던젼: 모두");
+								getglobal(this:GetName().."HighTexture"):SetWidth(100);
+							</OnLoad>
+							<OnClick>
+								FP_MenuClicked("MENU_FILTERDUNGEON");
+								FP_Tooltip_Func.FILTERDUNGEON();
+							</OnClick>
+							<OnEnter>
+								FP_Tooltip_Func.FILTERDUNGEON();
+							</OnEnter>
+							<OnLeave>GameTooltip:Hide();</OnLeave>
+						</Scripts>
+					</Button>
+					<Button name="$parentFilterClass" inherits="FP_FileterButtonTemplate">
+						<Size>
+							<AbsDimension y="22"/>
+						</Size>
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT">
+								<Offset>
+									<AbsDimension x="300" y="-10"/>
+								</Offset>
+							</Anchor>
+							<Anchor point="TOPRIGHT" relativeTo="$parent" relativePoint="TOPRIGHT">
+								<Offset>
+									<AbsDimension x="-35" y="-10"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnLoad>
+								this:RegisterForClicks("LeftButtonDown", "RightButtonDown");
+								getglobal(this:GetName().."Text"):SetText("직업 골라내기 : 모두");
+								getglobal(this:GetName().."HighTexture"):SetWidth(250);
+							</OnLoad>
+							<OnClick>
+								FP_MenuClicked("MENU_CLASS");
+								FP_Tooltip_Func.FILTERCLASS();
+							</OnClick>
+							<OnEnter>
+								FP_Tooltip_Func.FILTERCLASS();
+							</OnEnter>
+							<OnLeave>GameTooltip:Hide();</OnLeave>
+						</Scripts>
+					</Button>
+					<!-- Grip in lower-right corner used to resize window -->
+					<Button name="$parentResizeGrip">
+						<Size>
+							<AbsDimension x="16" y="16"/>
+						</Size>
+						<Anchors>
+							<Anchor point="BOTTOMRIGHT" relativeTo="$parent" relatviePoint="BOTTOMRIGHT">
+								<Offset x="0" y="0"/>
+							</Anchor>
+						</Anchors>
+						<NormalTexture file="Interface\AddOns\FindParty\Buttons">
+							<TexCoords left="0" right=".125" top=".25" bottom=".375"/>
+						</NormalTexture>
+						<PushedTexture file="Interface\AddOns\FindParty\Buttons">
+							<TexCoords left="0" right=".125" top=".25" bottom=".375"/>
+						</PushedTexture>
+						<HighlightTexture file="Interface\AddOns\FindParty\Buttons" alphaMode="ADD">
+							<TexCoords left="0" right=".125" top=".25" bottom=".375"/>
+						</HighlightTexture>
+						<Scripts>
+							<OnMouseDown>FP_ListFrame:StartSizing()</OnMouseDown>
+							<OnMouseUp>
+								FP_ListFrame:StopMovingOrSizing();
+								FP_ListAdjust();
+							</OnMouseUp>
+						</Scripts>
+					</Button>
+					<Button name="$parentRow1" inherits="FP_RowTemplate" id="1">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT">
+								<Offset x="20" y="-30"/>
+							</Anchor>
+							<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+								<Offset x="-35" y="0"/>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentRow2" inherits="FP_RowTemplate" id="2">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentRow1" relativePoint="BOTTOMLEFT"/>
+							<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+								<Offset x="-35" y="0"/>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentRow3" inherits="FP_RowTemplate" id="3">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentRow2" relativePoint="BOTTOMLEFT"/>
+							<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+								<Offset x="-35" y="0"/>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentRow4" inherits="FP_RowTemplate" id="4">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentRow3" relativePoint="BOTTOMLEFT"/>
+							<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+								<Offset x="-35" y="0"/>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentRow5" inherits="FP_RowTemplate" id="5">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentRow4" relativePoint="BOTTOMLEFT"/>
+							<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+								<Offset x="-35" y="0"/>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentRow6" inherits="FP_RowTemplate" id="6">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentRow5" relativePoint="BOTTOMLEFT"/>
+							<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+								<Offset x="-35" y="0"/>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentRow7" inherits="FP_RowTemplate" id="7">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentRow6" relativePoint="BOTTOMLEFT"/>
+							<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+								<Offset x="-35" y="0"/>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentRow8" inherits="FP_RowTemplate" id="8">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentRow7" relativePoint="BOTTOMLEFT"/>
+							<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+								<Offset x="-35" y="0"/>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentRow9" inherits="FP_RowTemplate" id="9">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentRow8" relativePoint="BOTTOMLEFT"/>
+							<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+								<Offset x="-35" y="0"/>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentRow10" inherits="FP_RowTemplate" id="10">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentRow9" relativePoint="BOTTOMLEFT"/>
+							<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+								<Offset x="-35" y="0"/>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentRow11" inherits="FP_RowTemplate" id="11">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentRow10" relativePoint="BOTTOMLEFT"/>
+							<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+								<Offset x="-35" y="0"/>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentRow12" inherits="FP_RowTemplate" id="12">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentRow11" relativePoint="BOTTOMLEFT"/>
+							<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+								<Offset x="-35" y="0"/>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentRow13" inherits="FP_RowTemplate" id="13">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentRow12" relativePoint="BOTTOMLEFT"/>
+							<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+								<Offset x="-35" y="0"/>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentRow14" inherits="FP_RowTemplate" id="14">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentRow13" relativePoint="BOTTOMLEFT"/>
+							<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+								<Offset x="-35" y="0"/>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentRow15" inherits="FP_RowTemplate" id="15">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentRow14" relativePoint="BOTTOMLEFT"/>
+							<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+								<Offset x="-35" y="0"/>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentRow16" inherits="FP_RowTemplate" id="16">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentRow15" relativePoint="BOTTOMLEFT"/>
+							<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+								<Offset x="-35" y="0"/>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentRow17" inherits="FP_RowTemplate" id="17">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentRow16" relativePoint="BOTTOMLEFT"/>
+							<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+								<Offset x="-35" y="0"/>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentRow18" inherits="FP_RowTemplate" id="18">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentRow17" relativePoint="BOTTOMLEFT"/>
+							<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+								<Offset x="-35" y="0"/>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentRow19" inherits="FP_RowTemplate" id="19">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentRow18" relativePoint="BOTTOMLEFT"/>
+							<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+								<Offset x="-35" y="0"/>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentRow20" inherits="FP_RowTemplate" id="20">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentRow19" relativePoint="BOTTOMLEFT"/>
+							<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+								<Offset x="-35" y="0"/>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentRow21" inherits="FP_RowTemplate" id="21">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentRow20" relativePoint="BOTTOMLEFT"/>
+							<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+								<Offset x="-35" y="0"/>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentRow22" inherits="FP_RowTemplate" id="22">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentRow21" relativePoint="BOTTOMLEFT"/>
+							<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+								<Offset x="-35" y="0"/>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentRow23" inherits="FP_RowTemplate" id="23">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentRow22" relativePoint="BOTTOMLEFT"/>
+							<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+								<Offset x="-35" y="0"/>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentRow24" inherits="FP_RowTemplate" id="24">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentRow23" relativePoint="BOTTOMLEFT"/>
+							<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+								<Offset x="-35" y="0"/>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentRow25" inherits="FP_RowTemplate" id="25">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentRow24" relativePoint="BOTTOMLEFT"/>
+							<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+								<Offset x="-35" y="0"/>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentRow26" inherits="FP_RowTemplate" id="26">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentRow25" relativePoint="BOTTOMLEFT"/>
+							<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+								<Offset x="-35" y="0"/>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentRow27" inherits="FP_RowTemplate" id="27">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentRow26" relativePoint="BOTTOMLEFT"/>
+							<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+								<Offset x="-35" y="0"/>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentRow28" inherits="FP_RowTemplate" id="28">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentRow27" relativePoint="BOTTOMLEFT"/>
+							<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+								<Offset x="-35" y="0"/>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentRow29" inherits="FP_RowTemplate" id="29">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentRow28" relativePoint="BOTTOMLEFT"/>
+							<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+								<Offset x="-35" y="0"/>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentRow30" inherits="FP_RowTemplate" id="30">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentRow29" relativePoint="BOTTOMLEFT"/>
+							<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+								<Offset x="-35" y="0"/>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<ScrollFrame name="$parentScrollFrame" inherits="FauxScrollFrameTemplate" hidden="false">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="-15"/>
+								</Offset>
+							</Anchor>
+							<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-35" y="10"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentTop">
+								<Size>
+									<AbsDimension x="32" y="28"/>
+								</Size>
+								<Anchors>
+									<Anchor point="TOPLEFT" relativePoint="TOPRIGHT">
+										<Offset>
+											<AbsDimension x="-2" y="5"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="ARTWORK">
+										<!-- <Texture name="$parentArt" file="Interface\PaperDollInfoFrame\UI-Character-ScrollBar">
+											<Anchors>
+												<Anchor point="TOPLEFT" relativePoint="TOPLEFT"/>
+												<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT"/>
+											</Anchors>
+											<TexCoords left="0" top="0" right="0.484375" bottom="0.109803921568627"/>
+										</Texture>
+										-->
+									</Layer>
+								</Layers>
+							</Frame>
+							<Frame name="$parentBottom">
+								<Size>
+									<AbsDimension x="32" y="28"/>
+								</Size>
+								<Anchors>
+									<Anchor point="BOTTOMLEFT" relativePoint="BOTTOMRIGHT">
+										<Offset>
+											<AbsDimension x="-2" y="-2"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="ARTWORK">
+										<Texture name="$parentArt" file="Interface\PaperDollInfoFrame\UI-Character-ScrollBar">
+											<Anchors>
+												<Anchor point="TOPLEFT" relativePoint="TOPLEFT"/>
+												<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT"/>
+											</Anchors>
+											<TexCoords left="0.515625" top="0.313725490196078" right="1.0"	bottom="0.4140625"/>
+										</Texture>
+									</Layer>
+								</Layers>
+							</Frame>
+							<Frame name="$parentMiddle">
+								<Size>
+									<AbsDimension x="32"/>
+								</Size>
+								<Anchors>
+									<Anchor point="TOP" relativeTo= "$parentTop" relativePoint="BOTTOM">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+									<Anchor point="BOTTOM" relativeTo= "$parentBottom" relativePoint="TOP">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="ARTWORK">
+										<Texture name="$parentMiddle" file="Interface\PaperDollInfoFrame\UI-Character-ScrollBar">
+											<Anchors>
+												<Anchor point="TOPLEFT" relativePoint="TOPLEFT"/>
+												<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT"/>
+											</Anchors>
+											<TexCoords left="0" top="0.109803921568627" right="0.484375" bottom="1"/>
+										</Texture>
+									</Layer>
+								</Layers>
+							</Frame>
+						</Frames>
+						<Scripts>
+							<OnVerticalScroll>
+								FauxScrollFrame_OnVerticalScroll(self, arg1, 25, FP_Scroll);
+							</OnVerticalScroll>
+							<OnShow>FP_Scroll();</OnShow>
+						</Scripts>
+					</ScrollFrame>
+				</Frames>
+			</Frame>
+			<Frame name="FP_TitleFrame" enableMouse="true" inherits="FP_FrameTemplate">
+				<Size>
+					<AbsDimension x="650" y="40"/>
+				</Size>
+				<Anchors>
+					<Anchor point="BOTTOM" relativeTo="FP_ListFrame" relativePoint="TOP">
+						<Offset>
+							<AbsDimension x="0" y="-5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnEnter>
+						FP_Tooltip_Func.TITLEBAR();
+					</OnEnter>
+					<OnLeave>GameTooltip:Hide();</OnLeave>
+					<OnMouseDown>FP_ListFrame:StartMoving()</OnMouseDown>
+					<OnMouseUp>FP_ListFrame:StopMovingOrSizing();</OnMouseUp></Scripts>
+				<Layers>
+					<Layer level="OVERLAY">
+						<FontString name="$parentText" inherits="GameFontHighLightLarge" justifyH="CENTER">
+							<Color r="1.0" g="0.85" b="1.0"/>
+							<Anchors>
+								<Anchor point="CENTER" relativePoint="CENTER"/>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentCloseButton">
+						<Size>
+							<AbsDimension x="32" y="32"/>
+						</Size>
+						<Anchors>
+							<Anchor point="TOPRIGHT">
+								<Offset>
+									<AbsDimension x="-5" y="-5"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnEnter>
+								FP_Tooltip_Func.CLOSE();
+							</OnEnter>
+							<OnLeave>GameTooltip:Hide();</OnLeave>
+							<OnClick>FP_Frame:Hide()</OnClick></Scripts>
+						<NormalTexture file="Interface\Buttons\UI-Panel-MinimizeButton-Up"/>
+						<PushedTexture file="Interface\Buttons\UI-Panel-MinimizeButton-Down"/>
+						<HighlightTexture file="Interface\Buttons\UI-Panel-MinimizeButton-Highlight" alphaMode="ADD"/>
+					</Button>
+					<Button name="$parentMaxButton">
+						<Size>
+							<AbsDimension x="22" y="22"/>
+						</Size>
+						<Anchors>
+							<Anchor point="RIGHT" relativeTo="$parentCloseButton" relativePoint="LEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnEnter>
+								FP_Tooltip_Func.MAXMIZE();
+							</OnEnter>
+							<OnLeave>GameTooltip:Hide();</OnLeave>
+							<OnClick>FP_MenuClicked("MENU_MAX")</OnClick></Scripts>
+						<NormalTexture file="Interface\Buttons\UI-PlusButton-UP"/>
+						<HighlightTexture file="Interface\Buttons\ButtonHilight-Round" alphaMode="ADD"/>
+					</Button>
+					<Button name="$parentMinButton">
+						<Size>
+							<AbsDimension x="22" y="22"/>
+						</Size>
+						<Anchors>
+							<Anchor point="RIGHT" relativeTo="$parentMaxButton" relativePoint="LEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnEnter>
+								FP_Tooltip_Func.MINIMIZE();
+							</OnEnter>
+							<OnLeave>GameTooltip:Hide();</OnLeave>
+							<OnClick>FP_MenuClicked("MENU_MIN")</OnClick></Scripts>
+						<NormalTexture file="Interface\Buttons\UI-MinusButton-UP"/>
+						<HighlightTexture file="Interface\Buttons\ButtonHilight-Round" alphaMode="ADD"/>
+					</Button>
+					<Button name="$parentDecreaseButton">
+						<Size>
+							<AbsDimension x="24" y="24"/>
+						</Size>
+						<Anchors>
+							<Anchor point="RIGHT" relativeTo="$parentMinButton" relativePoint="LEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnEnter>
+								FP_Tooltip_Func.DECREASE();
+							</OnEnter>
+							<OnLeave>GameTooltip:Hide();</OnLeave>
+							<OnClick>FP_MenuClicked("MENU_DEC")</OnClick></Scripts>
+						<NormalTexture file="Interface\ChatFrame\UI-ChatIcon-ScrollUp-Up"/>
+						<PushedTexture file="Interface\ChatFrame\UI-ChatIcon-ScrollUp-Down"/>
+						<DisabledTexture file="Interface\ChatFrame\UI-ChatIcon-ScrollUp-Disabled"/>
+						<HighlightTexture file="Interface\Buttons\ButtonHilight-Round" alphaMode="ADD"/>
+					</Button>
+					<Button name="$parentIncreaseButton">
+						<Size>
+							<AbsDimension x="24" y="24"/>
+						</Size>
+						<Anchors>
+							<Anchor point="RIGHT" relativeTo="$parentDecreaseButton" relativePoint="LEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnEnter>
+								FP_Tooltip_Func.INCREASE();
+							</OnEnter>
+							<OnLeave>GameTooltip:Hide();</OnLeave>
+							<OnClick>FP_MenuClicked("MENU_INC")</OnClick></Scripts>
+						<NormalTexture file="Interface\ChatFrame\UI-ChatIcon-ScrollDown-Up"/>
+						<PushedTexture file="Interface\ChatFrame\UI-ChatIcon-ScrollDown-Down"/>
+						<DisabledTexture file="Interface\ChatFrame\UI-ChatIcon-ScrollDown-Disabled"/>
+						<HighlightTexture file="Interface\Buttons\ButtonHilight-Round" alphaMode="ADD"/>
+					</Button>
+					<Button name="$parentOption">
+						<Size>
+							<AbsDimension x="24" y="24"/>
+						</Size>
+						<Anchors>
+							<Anchor point="RIGHT" relativeTo="$parentIncreaseButton" relativePoint="LEFT">
+								<Offset>
+									<AbsDimension x="-10" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnLoad>this:RegisterForClicks("LeftButtonDown","RightButtonDown"); </OnLoad>
+							<OnEnter>
+								FP_Tooltip_Func.OPTION();
+							</OnEnter>
+							<OnLeave>GameTooltip:Hide();</OnLeave>
+							<OnClick>FP_MenuClicked("MENU_OPTION")</OnClick></Scripts>
+						<HighlightTexture file="Interface\Buttons\ButtonHilight-Round" alphaMode="ADD"/>
+						<NormalTexture file="Interface\ChatFrame\UI-ChatIcon-Chat-Up"></NormalTexture>
+						<PushedTexture file="Interface\ChatFrame\UI-ChatIcon-Chat-Down"></PushedTexture>
+					</Button>
+					<Button name="$parentActivation">
+						<Size>
+							<AbsDimension x="20" y="20"/>
+						</Size>
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT">
+								<Offset>
+									<AbsDimension x="15" y="-10"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnEnter>
+								FP_Tooltip_Func.ACTIVATE();
+							</OnEnter>
+							<OnLeave>GameTooltip:Hide();</OnLeave>
+							<OnClick>
+								FP_MenuClicked("MENU_ACTIVATION");
+								FP_Tooltip_Func.ACTIVATE();
+						</OnClick></Scripts>
+						<HighlightTexture file="Interface\Buttons\ButtonHilight-Round" alphaMode="ADD"/>
+						<NormalTexture file="Interface\AddOns\FindParty\activated"></NormalTexture>
+					</Button>
+					<Button name="$parentAnnouncing">
+						<Size>
+							<AbsDimension x="20" y="20"/>
+						</Size>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentActivation" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="5" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnEnter>
+								FP_Tooltip_Func.ANNOUNCE();
+							</OnEnter>
+							<OnLeave>GameTooltip:Hide();</OnLeave>
+							<OnClick>
+								FP_MenuClicked("MENU_ANNOUNCE");
+								FP_Tooltip_Func.ANNOUNCE();
+						</OnClick></Scripts>
+						<HighlightTexture file="Interface\Buttons\ButtonHilight-Round" alphaMode="ADD"/>
+						<NormalTexture file="Interface\Icons\INV_Misc_GroupLooking"></NormalTexture>
+					</Button>
+					<Button name="$parentActivateBellnWindow">
+						<Size>
+							<AbsDimension x="20" y="20"/>
+						</Size>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentAnnouncing" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="5" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnEnter>
+								FP_Tooltip_Func.ACTIVATEBELLNWINDOW();
+							</OnEnter>
+							<OnLeave>GameTooltip:Hide();</OnLeave>
+							<OnClick>
+								FP_MenuClicked("MENU_ACTIVATE_BELLNWINDOW");
+								FP_Tooltip_Func.ACTIVATEBELLNWINDOW();
+						</OnClick></Scripts>
+						<HighlightTexture file="Interface\Buttons\ButtonHilight-Round" alphaMode="ADD"/>
+						<NormalTexture file="Interface\AddOns\FindParty\bellActivated"></NormalTexture>
+					</Button>
+				</Frames>
+			</Frame>
+			<Frame name ="FP_MenuFrame" inherits="FP_FrameTemplate">
+				<Size>
+					<AbsDimension x="650" y="50"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOP" relativeTo="FP_ListFrame" relativePoint="BOTTOM">
+						<Offset>
+							<AbsDimension x="0" y="5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Button name="$parentWhisper" inherits="UIPanelButtonTemplate" text="파티신청">
+						<Size>
+							<AbsDimension x="90" y="22"/>
+						</Size>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parent" relativePoint="LEFT">
+								<Offset>
+									<AbsDimension x="10" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>FP_MenuClicked("MENU_APPLY");</OnClick>
+							<OnEnter>
+								FP_Tooltip_Func.APPLYBINDING();
+							</OnEnter>
+							<OnLeave>GameTooltip:Hide();</OnLeave>
+						</Scripts>
+					</Button>
+					<Button name="$parentException" inherits="UIPanelButtonTemplate" text="제외">
+						<Size>
+							<AbsDimension x="90" y="22"/>
+						</Size>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentWhisper" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="10" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>FP_MenuClicked("MENU_EXCEPTION");</OnClick>
+							<OnEnter>
+								FP_Tooltip_Func.EXCEPTIONBINDING();
+							</OnEnter>
+							<OnLeave>GameTooltip:Hide();</OnLeave>
+						</Scripts>
+					</Button>
+					<Button name="$parentExceptionDelete" inherits="UIPanelButtonTemplate" text="제외초기화">
+						<Size>
+							<AbsDimension x="90" y="22"/>
+						</Size>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentException" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="10" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>FP_MenuClicked("MENU_EXCEPTION_DELETE");</OnClick></Scripts></Button>
+					<Button name="$parentWho" inherits="UIPanelButtonTemplate" text="파장누구지">
+						<Size>
+							<AbsDimension x="90" y="22"/>
+						</Size>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentExceptionDelete" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="10" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>FP_MenuClicked("MENU_WHO");</OnClick>
+							<OnEnter>
+								FP_Tooltip_Func.WHOBINDING();
+							</OnEnter>
+							<OnLeave>GameTooltip:Hide();</OnLeave>
+						</Scripts>
+					</Button>
+					<Button name="$parentFind" inherits="UIPanelButtonTemplate" text="파티 광고">
+						<Size>
+							<AbsDimension x="90" y="22"/>
+						</Size>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentWho" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="10" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>if (FP_FindFrame:IsShown()) then												 FP_FindFrame:Hide();											 else												 FP_FindFrame:Show();											 end</OnClick></Scripts></Button>
+					<Button name="$parentInfo" inherits="UIPanelButtonTemplate" text="정 보">
+						<Size>
+							<AbsDimension x="80" y="22"/>
+						</Size>
+						<Anchors>
+							<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-20" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>FP_MenuClicked("MENU_INFO");</OnClick></Scripts></Button>
+				</Frames>
+			</Frame>
+			<Frame name="FP_FindFrame"	hidden="true" inherits="FP_FrameTemplate">
+				<Size>
+					<AbsDimension x="650" y="140"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOP" relativeTo="FP_MenuFrame" relativePoint="BOTTOM">
+						<Offset>
+							<AbsDimension x="0" y="5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnShow>FP_FindDungeonSelected()</OnShow></Scripts>
+				<Frames>
+					<Button name="$parentDungeon" inherits="UIPanelButtonTemplate" text="인던 선택">
+						<Size>
+							<AbsDimension x="150" y="22"/>
+						</Size>
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT">
+								<Offset>
+									<AbsDimension x="20" y="-15"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>FP_MenuClicked("MENU_DUNGEON");</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentAnnounce" inherits="UIPanelButtonTemplate" text="광고 시작">
+						<Size>
+							<AbsDimension x="150" y="22"/>
+						</Size>
+						<Anchors>
+							<Anchor point="TOPRIGHT" relativeTo="$parent" relativePoint="TOPRIGHT">
+								<Offset>
+									<AbsDimension x="-20" y="-15"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>FP_MenuClicked("MENU_ANNOUNCE");</OnClick>
+						</Scripts>
+					</Button>
+					<Frame name="$parentDungeonName" inherits="FP_StringTemplate">
+						<Size>
+							<AbsDimension x="150" y="22"/>
+						</Size>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentDungeon" relativePoint="RIGHT">
+								<Offset x="20" y="0"/>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnLoad>FP_FindFrameDungeonNameText:SetText("선택해주세요");</OnLoad>
+						</Scripts>
+					</Frame>
+
+					<CheckButton name="$parentEtc" inherits="OptionsCheckButtonTemplate">
+						<HitRectInsets>
+							<AbsInset left="0" rght="50" top="0" bottom="0"/>
+						</HitRectInsets>
+						<Anchors>
+							<Anchor point="BOTTOMLEFT" relativeTo="$parent" relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="10" y="5"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnLoad>getglobal(this:GetName().."Text"):SetText("나만의 광고 : ");</OnLoad>
+							<OnClick>FP_MenuClicked("SEL_ETC", this:GetChecked());</OnClick>
+						</Scripts>
+					</CheckButton>
+					<EditBox name="$parentAdText" inherits="InputBoxTemplate" enableMouse="true" autoFocus="false">
+						<Size>
+							<AbsDimension x="480" y="26"/>
+						</Size>
+						<Anchors>
+							<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="$parentEtc">
+								<Offset>
+									<AbsDimension x="100" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnTabPressed>FP_FindFrameAnnounce:SetFocus();</OnTabPressed>
+							<OnEscapePressed>this:ClearFocus();</OnEscapePressed></Scripts>
+						<FontString inherits="ChatFontNormal" />
+					</EditBox>
+
+					<CheckButton name="$parentWhCheck" inherits="OptionsCheckButtonTemplate">
+						<HitRectInsets>
+							<AbsInset left="10" rght="50" top="0" bottom="0"/>
+						</HitRectInsets>
+						<Anchors>
+							<Anchor point="BOTTOMLEFT" relativeTo="$parent" relativePoint="BOTTOMLEFT">
+								<Offset>
+									<AbsDimension x="10" y="29"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnLoad>getglobal(this:GetName().."Text"):SetText("나만의 귓말 : ");</OnLoad>
+							<OnClick>FP_MenuClicked("SEL_ETC2", this:GetChecked());</OnClick>
+						</Scripts>
+					</CheckButton>
+					<EditBox name="$parentWhText" inherits="InputBoxTemplate" enableMouse="true" autoFocus="false">
+						<Size>
+							<AbsDimension x="480" y="26"/>
+						</Size>
+						<Anchors>
+							<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="$parentEtc">
+								<Offset>
+									<AbsDimension x="100" y="24"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnTabPressed>FP_FindFrameAnnounce:SetFocus();</OnTabPressed>
+							<OnEscapePressed>this:ClearFocus();</OnEscapePressed>
+							<OnEnterPressed>FP_UserDefinedWhMsg = this:GetText();this:HighlightText();</OnEnterPressed>
+						</Scripts>
+							
+						<FontString inherits="ChatFontNormal" />
+					</EditBox>
+
+					<!-- 직업별 체크버튼 -->
+					<CheckButton name="$parentWarrior" inherits="OptionsCheckButtonTemplate">
+						<HitRectInsets>
+							<AbsInset left="0" rght="50" top="0" bottom="0"/>
+						</HitRectInsets>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parent" relativePoint="LEFT">
+								<Offset>
+									<AbsDimension x="10" y="-5"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnLoad>getglobal(this:GetName().."Text"):SetText("전사");</OnLoad>
+							<OnClick>FP_MenuClicked("SEL_WARRIOR", this:GetChecked());</OnClick></Scripts></CheckButton>
+					<CheckButton name="$parentPriest" inherits="OptionsCheckButtonTemplate">
+						<HitRectInsets>
+							<AbsInset left="0" rght="50" top="0" bottom="0"/>
+						</HitRectInsets>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentWarrior" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="25" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnLoad>getglobal(this:GetName().."Text"):SetText("사제");</OnLoad>
+							<OnClick>FP_MenuClicked("SEL_PRIEST", this:GetChecked());</OnClick></Scripts></CheckButton>
+					<CheckButton name="$parentPaladin" inherits="OptionsCheckButtonTemplate">
+						<HitRectInsets>
+							<AbsInset left="0" rght="50" top="0" bottom="0"/>
+						</HitRectInsets>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentPriest" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="25" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnLoad>getglobal(this:GetName().."Text"):SetText("성기사");</OnLoad>
+							<OnClick>FP_MenuClicked("SEL_PALADIN", this:GetChecked());</OnClick></Scripts></CheckButton>
+					<CheckButton name="$parentMage" inherits="OptionsCheckButtonTemplate">
+						<HitRectInsets>
+							<AbsInset left="0" rght="50" top="0" bottom="0"/>
+						</HitRectInsets>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentPaladin" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="40" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnLoad>getglobal(this:GetName().."Text"):SetText("마법사");</OnLoad>
+							<OnClick>FP_MenuClicked("SEL_MAGE", this:GetChecked());</OnClick></Scripts></CheckButton>
+					<CheckButton name="$parentWarrock" inherits="OptionsCheckButtonTemplate">
+						<HitRectInsets>
+							<AbsInset left="0" rght="50" top="0" bottom="0"/>
+						</HitRectInsets>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentMage" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="40" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnLoad>getglobal(this:GetName().."Text"):SetText("흑마법사");</OnLoad>
+							<OnClick>FP_MenuClicked("SEL_WARROCK", this:GetChecked());</OnClick></Scripts></CheckButton>
+					<CheckButton name="$parentHunter" inherits="OptionsCheckButtonTemplate">
+						<HitRectInsets>
+							<AbsInset left="0" rght="50" top="0" bottom="0"/>
+						</HitRectInsets>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentWarrock" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="50" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnLoad>getglobal(this:GetName().."Text"):SetText("사냥꾼");</OnLoad>
+							<OnClick>FP_MenuClicked("SEL_HUNTER", this:GetChecked());</OnClick></Scripts></CheckButton>
+					<CheckButton name="$parentDruid" inherits="OptionsCheckButtonTemplate">
+						<HitRectInsets>
+							<AbsInset left="0" rght="50" top="0" bottom="0"/>
+						</HitRectInsets>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentHunter" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="40" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnLoad>getglobal(this:GetName().."Text"):SetText("드루이드");</OnLoad>
+							<OnClick>FP_MenuClicked("SEL_DRUID", this:GetChecked());</OnClick></Scripts></CheckButton>
+					<CheckButton name="$parentRogue" inherits="OptionsCheckButtonTemplate">
+						<HitRectInsets>
+							<AbsInset left="0" rght="50" top="0" bottom="0"/>
+						</HitRectInsets>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentDruid" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="50" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnLoad>getglobal(this:GetName().."Text"):SetText("도적");</OnLoad>
+							<OnClick>FP_MenuClicked("SEL_ROGUE", this:GetChecked());</OnClick></Scripts></CheckButton>
+					<CheckButton name="$parentShaman" inherits="OptionsCheckButtonTemplate">
+						<HitRectInsets>
+							<AbsInset left="0" rght="50" top="0" bottom="0"/>
+						</HitRectInsets>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentRogue" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="30" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnLoad>getglobal(this:GetName().."Text"):SetText("주술사");</OnLoad>
+							<OnClick>FP_MenuClicked("SEL_SHAMAN", this:GetChecked());</OnClick>
+						</Scripts>
+					</CheckButton>
+					<CheckButton name="$parentDeathknight" inherits="OptionsCheckButtonTemplate">
+						<HitRectInsets>
+							<AbsInset left="0" rght="50" top="0" bottom="0"/>
+						</HitRectInsets>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentShaman" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="30" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnLoad>getglobal(this:GetName().."Text"):SetText("죽음의기사");</OnLoad>
+							<OnClick>FP_MenuClicked("SEL_DEATHKNIGHT", this:GetChecked());</OnClick>
+						</Scripts>
+					</CheckButton>
+				</Frames>
+			</Frame>
+			<Frame name="FP_DropDownMenu" inherits="UIDropDownMenuTemplate" id="1">
+				<Scripts>
+					<OnLoad></OnLoad>
+				</Scripts>
+			</Frame>
+		</Frames>
+	</Frame>
+
+	<!-- minimap button-->
+	<!--Button name="FP_IconFrame" frameStrata="MEDIUM" parent="MinimapBackdrop" enableMouse="true" movable="true">
+		<Size>
+			<AbsDimension x="35" y="35"/>
+		</Size>
+		<Anchors>
+			<Anchor point="CENTER" relativeTo="Minimap" relativePoint="CENTER">
+				<Offset>
+					<AbsDimension x="-15" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="FP_IconFrame_Icon" file="Interface\AddOns\FindParty\SIM-Icon">
+					<Size>
+						<AbsDimension x="18" y="18"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset>
+								<AbsDimension x="7" y="-6"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+					<TexCoords left="0.075" right="0.925" top="0.075" bottom="0.925"/>
+				</Texture>
+			</Layer>
+			<Layer level="OVERLAY">
+				<Texture file="Interface\Minimap\MiniMap-TrackingBorder">
+					<Size>
+						<AbsDimension x="56" y="56"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<HighlightTexture alphaMode="ADD" file="Interface\Minimap\UI-Minimap-ZoomButton-Highlight"/>
+		<Scripts>
+			<OnLoad>
+				this:RegisterForClicks("LeftButtonDown","RightButtonDown");
+				this:RegisterForDrag("LeftButton")
+			</OnLoad>
+			<OnEnter>
+				FP_Tooltip_Func.ICON();
+			</OnEnter>
+			<OnLeave>GameTooltip:Hide();</OnLeave>
+			<OnDragStart>
+				if (not FP_Options.iconLocked) then
+				this:LockHighlight();
+				this:StartMoving();
+				end
+			</OnDragStart>
+			<OnDragStop>
+				this:UnlockHighlight();
+				this:StopMovingOrSizing();
+			</OnDragStop>
+			<OnClick>
+				FP_IconClicked();
+				FP_Tooltip_Func.ICON();
+			</OnClick>
+		</Scripts>
+	</Button-->
+	<Frame name="FP_InviteControlFrame">
+		<Scripts>
+			<!--OnLoad>FP_IconFrame:Show();FP_OnLoad();</OnLoad-->
+			<OnLoad>FP_OnLoad();</OnLoad>
+			<OnEvent>FP_OnEvent(event);</OnEvent>
+			<OnUpdate>FP_OnUpdate();</OnUpdate>
+		</Scripts>
+	</Frame>
+</Ui>

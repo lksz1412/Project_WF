@@ -1,0 +1,10 @@
+## Interface: 30000
+## Title: |cffffff9a블링크|r 나는 준비 됐다~
+## Notes: 장착하고있는 아이템이나 스킬을 사용가능할때 알려줍니다.
+## Dependencies: 
+## OptionalDeps: Blink, LibScroller-1.0, sct, MikScrollingBattleText
+## SavedVariablesPerCharacter: BlinkIamPreparedDB
+libs\LibStub\LibStub.lua
+libs\LibScroller-1.0\lib.xml
+BlinkIamPrepared.lua
+bip_config.lua

@@ -1,0 +1,17 @@
+[
+  {
+    "filename": "DevilUI-X2 R3.4.exe",
+    "rawCentralFilenameHex": "446576696c55492d58322052332e342e657865",
+    "flagBits": 0,
+    "filenameDecode": "cp437 default, no rename",
+    "isDirectory": false,
+    "compressedBytes": 7245172,
+    "uncompressedBytes": 7349977,
+    "CRC32": "BEEF4773",
+    "externalAttributes": 32,
+    "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-legacy-idx45-159\\DevilUI-X2 R3.4.exe",
+    "unsafeReasons": [],
+    "memberSHA256": "B437D31D1D568A0DA109BC045232D3210914DD90D9C3709C448321CB26681381",
+    "extractedSHA256": "B437D31D1D568A0DA109BC045232D3210914DD90D9C3709C448321CB26681381"
+  }
+]

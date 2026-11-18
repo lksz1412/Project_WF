@@ -1,0 +1,6 @@
+
+SavedInstancesDB = {
+	["MinimapIcon"] = {
+		["hide"] = true,
+	},
+}

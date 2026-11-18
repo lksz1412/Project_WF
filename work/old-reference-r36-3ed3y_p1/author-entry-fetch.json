@@ -1,0 +1,20 @@
+[
+  {
+    "contentType": "text/html; charset=UTF-8",
+    "time": "2026-11-17T14:34:04.6599614Z",
+    "name": "author-forum",
+    "sourceURL": "https://www.inven.co.kr/board/powerbbs.php?come_idx=1636",
+    "localpath": "D:/Projects/Project_WF/work/old-reference-r36-3ed3y_p1/author-forum.html",
+    "HTTP": 200,
+    "finalURL": null
+  },
+  {
+    "contentType": "text/html; charset=UTF-8",
+    "time": "2026-11-17T14:34:04.9296230Z",
+    "name": "author-blog",
+    "sourceURL": "http://blog.naver.com/nicecurry",
+    "localpath": "D:/Projects/Project_WF/work/old-reference-r36-3ed3y_p1/author-blog.html",
+    "HTTP": 200,
+    "finalURL": null
+  }
+]

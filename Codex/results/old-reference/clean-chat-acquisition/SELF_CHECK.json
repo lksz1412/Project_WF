@@ -1,0 +1,53 @@
+{
+  "selfCheckRuns": 1,
+  "state": "passed",
+  "checks": [
+    {
+      "label": "bcm",
+      "descriptionSourcePositionsComplete": true,
+      "descriptionSHA256Matches": true,
+      "inventoryFiles": 38,
+      "catalogFiles": 38,
+      "inventoryCatalogExactSet": true,
+      "allInventoriedFilesExist": true,
+      "retainedPassedCRC": true,
+      "retainedSafeExtraction": true,
+      "publishedGitHubDigestMatches": true,
+      "publishedGitHubDigest": "sha256:748d2447e1932e5543126208a9e4bbb22ab3a6ece7fa2c4b0d92c5af1efb775c"
+    },
+    {
+      "label": "prat",
+      "descriptionSourcePositionsComplete": true,
+      "descriptionSHA256Matches": true,
+      "inventoryFiles": 208,
+      "catalogFiles": 208,
+      "inventoryCatalogExactSet": true,
+      "allInventoriedFilesExist": true,
+      "retainedPassedCRC": true,
+      "retainedSafeExtraction": true,
+      "publishedGitHubDigestMatches": true,
+      "publishedGitHubDigest": "sha256:d72baef9c99bb1583b269abd85088bcb957d9a0d8ca57c323144442875084db1"
+    },
+    {
+      "label": "glass",
+      "descriptionSourcePositionsComplete": true,
+      "descriptionSHA256Matches": true,
+      "inventoryFiles": 137,
+      "catalogFiles": 137,
+      "inventoryCatalogExactSet": true,
+      "allInventoriedFilesExist": true,
+      "retainedPassedCRC": true,
+      "retainedSafeExtraction": true
+    },
+    {
+      "label": "chatty",
+      "descriptionSourcePositionsComplete": true,
+      "descriptionSHA256Matches": true
+    }
+  ],
+  "archiveCRCOrGETRerun": false,
+  "sourceAcquired": 3,
+  "sourceUnavailable": 1,
+  "allFourMetadataAndDescriptionRecorded": true,
+  "noRuntimeClaim": true
+}

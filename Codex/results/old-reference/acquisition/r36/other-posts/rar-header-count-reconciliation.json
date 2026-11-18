@@ -1,0 +1,43 @@
+{
+  "physicalRARFileHeaderRecords": 3167,
+  "headersPerPart": {
+    "devilbecustom91.part1.rar": 1389,
+    "devilbecustom91.part2.rar": 1778
+  },
+  "uniqueRawFilenameByteStrings": 3166,
+  "listedEntries": 3166,
+  "listedRegularFiles": 2407,
+  "listedDirectories": 759,
+  "duplicateFilenameHeaderRecords": [
+    {
+      "part": "devilbecustom91.part1.rar",
+      "offset": 5241818,
+      "headerSize": 109,
+      "flags": 32930,
+      "hostOS": 2,
+      "fileAttributes": 32,
+      "rawFilenameHex": "496e746572666163655c4164644f6e735c4d6170737465725c4c6962735c4163654755492d332e305c776964676574735c4163654755495769646765742d436f6c6f725069636b65722e6c7561",
+      "splitBefore": false,
+      "splitAfter": true,
+      "encrypted": false,
+      "reparseAttribute": false,
+      "filenameANSI": "Interface\\AddOns\\Mapster\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-ColorPicker.lua"
+    },
+    {
+      "part": "devilbecustom91.part2.rar",
+      "offset": 20,
+      "headerSize": 109,
+      "flags": 32929,
+      "hostOS": 2,
+      "fileAttributes": 32,
+      "rawFilenameHex": "496e746572666163655c4164644f6e735c4d6170737465725c4c6962735c4163654755492d332e305c776964676574735c4163654755495769646765742d436f6c6f725069636b65722e6c7561",
+      "splitBefore": true,
+      "splitAfter": false,
+      "encrypted": false,
+      "reparseAttribute": false,
+      "filenameANSI": "Interface\\AddOns\\Mapster\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-ColorPicker.lua"
+    }
+  ],
+  "arithmetic": "1389+1778=3167;3167-(2-1)=3166;2407+759=3166",
+  "note": "Actual same rawfilename occurs once at part1offset5241818 withsplitAfter=true and once at part2offset20 withsplitBefore=true. No assumedduplicate from count alone."
+}

@@ -1,0 +1,483 @@
+# 2023.5.15 업데이트 #
+
+1.Details 삭제
+
+2.Questie 삭제
+
+
+
+# 2023.5.14 업데이트 #
+
+1.AtrasLoot 업데이트
+
+2.BasicMinimap 업데이트
+
+3.Broker Everything 업데이트
+
+4.Chatter 업데이트
+
+5.ChocolateBar 업데이트
+
+6.CastBars 업데이트
+
+7.AuraDurations 업데이트
+
+8.SpellActivations 업데이트
+
+9.Combuctor 업데이트
+
+10.Dominos  업데이트
+
+11.GTFO 업데이트
+
+12.KGPanels 업데이트
+
+13.KuiNameplateCore 업데이트
+
+14.Mapster 업데이트
+
+15.Masque  업데이트
+
+16.PitBull4  업데이트)
+
+17.Quartz 업데이트
+
+18.Questie 업데이트
+
+19.RangeDisplay 업데이트
+
+20.Scrap 업데이트
+
+21.TipTac 업데이트
+
+
+
+# 2023.05.13 업데이트 #
+
+클래식 리치왕 구동완료
+
+
+
+# 2020.10.18 업데이트 #
+
+1.Advaned Interface Option 업데이트 - 블리자드 인터페이스 옵션 수정
+
+2.AtrasLoot 업데이트 - 아이템 드랍 정보
+
+3.BasicMinimap 업데이트 - 미니맵
+
+4.classicCastbars 업데이트 - 플레이어 시전바
+
+5.Combuctor 업데이트 - 통합가방
+
+6.Details 업데이트 - 데미지 미터기
+
+7.Dominos 업데이트 - 스킬바,센터바
+
+8.KGPanels 업데이트 - UI프레임 제작 및 수정
+
+9.Questie 업데이트 - 퀘스트 애드온
+
+10.Vendor Price 업데이트 - 아이템 판매가격표시
+
+
+
+# 2020 .8.30 업데이트 #
+
+1.Dominos 업데이트 - 스킬바,센터바
+
+2.PitBull Unit Frames 4.0 업데이트 - 유닛프레임 애드온
+
+3.Vendor Price 업데이트 - 아이템 판매가격표시
+
+4.AtrasLoot 업데이트 - 아이템 드랍 정보
+
+5.Details 업데이트 - 데미지 미터기
+
+6.Questie 업데이트 - 퀘스트 애드온
+
+7.KuiNameplateCore 업데이트 - 몹체력바
+
+8.classicCastbars 업데이트 - 플레이어 시전바
+
+9.AuraDurations 업데이트 - 버프,디버프 쿨타임
+
+10.SpellActivations 업데이트 - 액션바 애드온
+
+11.Grail 추가 - 퀘스트 데이터베이스 애드온 
+
+
+
+# 2020.6.23 업데이트 #
+
+1.Dominos 업데이트 - 스킬바,센터바
+
+2.PitBull Unit Frames 4.0 업데이트 - 유닛프레임 애드온
+
+3.AtrasLoot 업데이트 - 아이템 드랍 정보
+
+4.Details 업데이트 - 데미지 미터기
+
+5.Questie 업데이트 - 퀘스트 애드온
+
+6.classicCastbars 업데이트 - 시전바
+
+7.AuraDurations 업데이트 - 버프,디버프 쿨타임
+
+
+
+# 2020.4.12 업데이트 #
+
+1.Vendor Price 업데이트 - 아이템 판매가격표시
+
+2.AtrasLoot 업데이트 - 아이템 드랍 정보
+
+3.Details 업데이트 - 데미지 미터기
+
+4.Questie 업데이트 - 퀘스트 애드온
+
+5.classicCastbars 업데이트 - 시전바
+
+6.AuraDurations 업데이트 - 버프,디버프 쿨타임 
+
+
+
+# 2020.3.15 업데이트 #
+
+1.Combuctor 업데이트 - 통합가방
+
+2.Vendor Price 업데이트 - 아이템 판매가격표시
+
+3.AtrasLoot 업데이트 - 아이템 드랍 정보
+
+4.Details 업데이트 - 데미지 미터기
+
+5.Questie 업데이트 - 퀘스트 애드온
+
+6.classicCastbars 업데이트 - 시전바 
+
+
+
+# 2020.2.14 업데이트 #
+
+1.Dominos 업데이트 - 스킬바,센터바
+
+2.PitBull Unit Frames 4.0 업데이트 - 유닛프레임 애드온
+
+3.Advaned Interface Option 업데이트 - 블리자드 인터페이스 옵션 수정
+
+4.Addon Control Panel 업데이트
+
+5.AtrasLoot 업데이트 - 아이템 드랍 정보
+
+6.Questie 업데이트 - 퀘스트 애드온
+
+7.classicCastbars 업데이트 - 시전바 
+
+
+
+# 2020.1.19 업데이트 #
+
+1.PitBull Unit Frames 4.0 업데이트 - 유닛프레임 애드온
+
+2.Details 업데이트 - 데미지 미터기
+
+3.Questie 업데이트 - 퀘스트 애드온
+
+4.KuiNameplateCore 업데이트 - 몹체력바
+
+5.AuraDurations 업데이트 - 버프,디버프 쿨타임
+
+6.Combuctor 업데이트 - 통합가방
+
+7.Dominos 업데이트 - 스킬바,센터바
+
+8.AtrasLoot 업데이트 - 아이템 드랍 정보
+
+9.BasicMinimap 업데이트 - 미니맵 
+
+
+
+# 2019.12.28 업데이트 #
+
+1.AtrasLoot 업데이트 - 아이템 드랍 정보
+
+2.Details 업데이트 - 데미지 미터기
+
+3.Questie 업데이트 - 퀘스트 애드온
+
+4.classicCastbars 업데이트 - 시전바
+
+5.AuraDurations 업데이트 - 버프,디버프 쿨타임
+
+6.게임메뉴 아이콘 및 가방 아이콘 비율조정 
+
+
+
+# 2019.12.20 업데이트 #
+
+1.Dominos 업데이트 - 스킬바,센터바
+
+2.PitBull Unit Frames 4.0 업데이트 - 유닛프레임 애드온 
+
+3.Vendor Price 업데이트 - 아이템 판매가격표시
+
+4.AtrasLoot 업데이트 - 아이템 드랍 정보
+
+5.Details 업데이트 - 데미지 미터기
+
+6.Questie 업데이트 - 퀘스트 애드온
+
+7.KuiNameplateCore 업데이트 - 몹체력바 
+
+
+
+# 2019.12.12 업데이트 #
+
+1.AtrasLoot 업데이트 - 아이템 드랍 정보
+
+2.Details 업데이트 - 데미지 미터기
+
+3.classicCastbars 업데이트 - 시전바
+
+4.AuraDurations 업데이트 - 버프,디버프 쿨타임
+
+5.Dominos 업데이트 - 스킬바,센터바
+
+6.PitBull Unit Frames 4.0 업데이트 - 유닛프레임 애드온
+
+7.Questie 업데이트 - 퀘스트 애드온
+
+8.SpellActivations 업데이트 - 액션바 애드온 
+
+
+
+# 2019.11.24 업데이트 #
+
+1.PitBull Unit Frames 4.0 업데이트 - 유닛프레임 애드온 
+
+2.AuraDurations 업데이트 - 버프,디버프 쿨타임
+
+3.classicCastbars 업데이트 - 시전바
+
+4.Questie 업데이트 - 퀘스트 애드온
+
+5.AtrasLoot 업데이트 - 아이템 드랍 정보
+
+6.Details 업데이트 - 데미지 미터기 
+
+
+
+# 2019.11.2 업데이트 #
+
+1.Quartz 업데이트 - 본인의 시전바 
+
+2.AtrasLoot 업데이트 - 아이템 드랍 정보
+
+3.Details 업데이트 - 데미지 미터기
+
+4.SpellActivations 업데이트 - 액션바 애드온 
+
+
+
+# 2019.10.26 업데이트 #
+
+1.AtrasLoot 업데이트 - 아이템 드랍 정보
+
+2.Details 업데이트 - 데미지 미터기
+
+3.Questie 업데이트 - 퀘스트 애드온
+
+4.classicCastbars 업데이트 - 시전바
+
+5.AuraDurations 업데이트 - 버프,디버프 쿨타임 
+
+
+
+# 2019.10.18 업데이트 #
+
+1.Questie 업데이트 - 퀘스트 애드온
+
+2.AtrasLoot 업데이트 - 아이템 드랍 정리
+
+3.Details 업데이트 - 데미지 미터기
+
+4.classicCastbars 업데이트 - 시전바 
+
+
+
+# 2019.10.9 업데이트 #
+
+1.Vendor Price 업데이트 - 아이템 판매가격표시
+
+2.AtrasLoot 업데이트 - 아이템 드랍 정보
+
+3.SpellActivations 업데이트 - 액션바 애드온
+
+4.AuraDurations 업데이트 - 버프,디버프 쿨타임
+
+5.classicCastbars 업데이트 - 시전바
+
+6.AuraDurations 업데이트 - 버프,디버프 쿨타임
+
+7.Combuctor 추가 및 업데이트 - 통합가방 
+
+
+
+# 2019.9.28 업데이트 #
+
+1.Dominos 업데이트 - 스킬바,센터바
+
+2.KGPanels 업데이트 - UI프레임 제작 및 수정
+
+3.Details 업데이트 - 데미지 미터기
+
+4.Advaned Interface Option 업데이트 - 블리자드 인터페이스 옵션 수정
+
+5.classicCastbars 업데이트 - 플레이어 시전바
+
+6.AuraDurations 업데이트 - 버프,디버프 쿨타임
+
+7.Mapster 업데이트 - 지도 애드온
+
+8.Quartz 업데이트 - 대상 시전바
+
+9.Combuctor 추가 및 업데이트 - 통합가방 
+
+10.Vendor Price 업데이트 - 아이템 판매가격표시
+
+11.KuiNameplateCore 업데이트 - 몹체력바 
+
+
+
+# 2019.9.24 업데이트 #
+
+1.AuraDurations 업데이트 - 버프,디버프 쿨타임
+
+2.classicCastbars 업데이트 - 시전바
+
+3.Details 업데이트 - 데미지 미터기
+
+4.Dominos 업데이트 - 스킬바,센터바
+
+5.KuiNameplateCore 업데이트 - 몹체력바
+
+6.Vendor Price 업데이트 - 아이템 판매가격표시 
+
+7.MoveAnithing 삭제 
+
+
+
+# 2019.9.22 업데이트 #
+
+1.Questie 업데이트 - 퀘스트 애드온
+
+2.AtrasLoot 업데이트 - 아이템 드랍 정보
+
+3.AuraDurations 업데이트 - 버프,디버프 쿨타임
+
+4.Details 업데이트 - 데미지 미터기
+
+5.KGPanels 업데이트 - UI프레임 제작 및 수정
+
+6.가방애드온 삭제 - Combutor 
+
+
+
+# 2019.9.17 업데이트 #
+
+1.AtrasLoot 업데이트 - 아이템 드랍 정보
+
+2.AuraDurations 업데이트 - 버프,디버프 쿨타임
+
+3.Dominos 업데이트 - 스킬바,센터바
+
+4.KuiNameplateCore 업데이트 - 몹체력바
+
+5.classicCastbars 업데이트 - 시전바
+
+6.Questie 업데이트 - 퀘스트 애드온 
+
+
+
+# 2019.9.13 업데이트 #
+
+1. classicCastBar 업데이트
+
+2. Dominos 업데이트
+
+3. Vendor Price 업데이트 
+
+
+
+# 2019.9.11 업데이트 #
+
+1. 적시전바 활성화
+
+2. 통합가방 추가
+
+3. 경험치바 활성화
+
+4. 퀘스트 레벨표시 적용
+
+5. 법사용 WTF 적용 
+
+
+
+# 2019.9.10 업데이트 #
+
+1. 폴더 설치 파일에서 인스톨 파일로 변경됨 
+
+2. 실패시 9.9 버전으로 재설치 하시길 바랍니다. 
+
+3. Dominos 애드온이 업데이트 되었습니다.
+
+
+
+# 2019.9.9 업데이트 #
+
+1.퀘스트 애드온이 추가되었습니다. (퀘스트 레벨표시)
+
+2.경험치 바 표시가 수정되었습니다. 
+
+
+
+# 2019.9.8 업데이트 #
+
+1. 가방애드온이 삭제되었습니다.
+
+2. XpBar애드온이 변경되었습니다.
+
+3. 파티찾기 도우미 애드온이 추가되었습니다.
+
+4. 기타 애드온들이 업데이트 되었습니다. 
+
+
+
+# 2019.9.7 업데이트 #
+
+1.지도 애드온이 추가되었습니다
+
+2.통합 가방 애드온이 추가되었습니다
+
+3.퀘스트 애드온이 업데이트 되었습니다
+
+4.시전바 애드온이 변경되었습니다.
+
+
+
+# 2019.9.6 업데이트 #
+
+1.채팅창 버튼을 없애기위해 Catter 애드온 업데이트를 진행하였습니다.
+
+
+
+ # 2019.9.5 업데이트 #
+
+1.파티창이 활성화 되었습니다
+
+2.시전바가 활성화 되었습니다
+
+3.미니맵이 변경되었습니다 (기존 데빌에서 쓰던 미니맵으로 변경)
+
+4.주술사가 분홍색이었던 점이 수정되었습니다

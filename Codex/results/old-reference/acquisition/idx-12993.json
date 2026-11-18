@@ -1,0 +1,197 @@
+{
+  "postID": 12993,
+  "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=12993",
+  "row": {
+    "postID": 12993,
+    "page": 1,
+    "rowOrdinal": 2,
+    "title": "Devil 용 개인저장 [기타] 2",
+    "rowText": "33 Devil 용 개인저장 [기타] 2 볼테기 53 1 02-11",
+    "sourceAnchor": "javascript:addonMove('detail.php', 'idx->12993', 'leave->idx,listtype,ext', 'rurl');",
+    "sourceLocation": {
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\list-first.html",
+      "selector": "table.list tr a[href]",
+      "line": 1202
+    }
+  },
+  "detailProvenance": {
+    "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=12993",
+    "time": "2026-11-17T14:01:59.6338749Z",
+    "contentType": "text/html; charset=UTF-8",
+    "HTTP": 200,
+    "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=12993",
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-12993.html",
+    "state": "acquired",
+    "attempts": 1,
+    "commandExitCode": 0,
+    "encoding": "IWR decoded to UTF-8",
+    "bytes": 226467,
+    "SHA256": "EA87BA009AA7D6D627197777CD5885F36F2CF79AFCB774AB9AE57782240C9AEB"
+  },
+  "acquisitionState": "parsed",
+  "A1read": false,
+  "imageObserved": false,
+  "sections": {
+    "addonAddon": {
+      "state": "parsed",
+      "text": "데빌UI 일부 애드온 업데이트 입니다... 혹시나 필요하신 분 있을까봐 올립니다... 질문엔 답을 못할수도...",
+      "fragmentPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\idx-12993-addonAddon.html",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-12993.html",
+        "selector": "#addonAddon",
+        "line": 1244
+      },
+      "links": []
+    },
+    "addonVersion": {
+      "state": "empty",
+      "text": "",
+      "fragmentPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\idx-12993-addonVersion.html",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-12993.html",
+        "selector": "#addonVersion",
+        "line": 1245
+      },
+      "links": []
+    }
+  },
+  "iframes": {
+    "screenshot": {
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=12993&tempridx=&count=0",
+      "iframeLiteral": "<iframe frameborder=\"0\" framespacing=\"0\" id=\"screenshot\" scrolling=\"no\" src=\"imagelist.iframe.php?ridx=12993&amp;tempridx=&amp;count=0\"></iframe>",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-12993.html",
+        "selector": "iframe#screenshot",
+        "line": 1238
+      },
+      "provenance": {
+        "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=12993&tempridx=&count=0",
+        "time": "2026-11-17T14:02:00.2641283Z",
+        "contentType": "text/html; charset=UTF-8",
+        "HTTP": 200,
+        "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=12993&tempridx=&count=0",
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-12993.html",
+        "state": "acquired",
+        "attempts": 1,
+        "commandExitCode": 0,
+        "encoding": "IWR decoded to UTF-8",
+        "bytes": 1985,
+        "SHA256": "302B3715E950336CD9A64A236C5B5018AD272B0A3AABAD1CBA6542E0392DF46D"
+      },
+      "state": "parsed",
+      "text": "\n\n\n\n\n\n스크린샷\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "links": [
+        {
+          "href": "javascript:void(0);",
+          "onclick": null,
+          "text": "",
+          "line": 28
+        },
+        {
+          "href": "javascript:void(0);",
+          "onclick": null,
+          "text": "",
+          "line": 31
+        }
+      ],
+      "literalPublicDownloadURLs": [],
+      "imageCount": 0
+    },
+    "fileInfo": {
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=12993&tempridx=&count=1",
+      "iframeLiteral": "<iframe frameborder=\"0\" id=\"fileInfo\" src=\"filelist.iframe.php?mode=view&amp;ridx=12993&amp;tempridx=&amp;count=1\"></iframe>",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-12993.html",
+        "selector": "iframe#fileInfo",
+        "line": 1251
+      },
+      "provenance": {
+        "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=12993&tempridx=&count=1",
+        "time": "2026-11-17T14:02:00.8733039Z",
+        "contentType": "text/html; charset=UTF-8",
+        "HTTP": 200,
+        "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=12993&tempridx=&count=1",
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-12993.html",
+        "state": "acquired",
+        "attempts": 1,
+        "commandExitCode": 0,
+        "encoding": "IWR decoded to UTF-8",
+        "bytes": 2320,
+        "SHA256": "19FF45025FA65360A14A4AC090EAD4FB215104F907F26EC18C94C2E78FB797EB"
+      },
+      "state": "parsed",
+      "text": "\n\n\n\n\n\n파일 정보\n\n\n\n\n\n\n\n\n\n\n\n\n파일\n\n\n클라이언트 버전\n\n\n다운로드\n\n\n등록일\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\nc2940628761.zip\n\n\n\n\n\n\n12.0.1\n\n\n53\n\n\n2026-02-11\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "links": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "c2940628761.zip",
+          "line": 40
+        }
+      ],
+      "literalPublicDownloadURLs": [],
+      "fileRows": [
+        {
+          "text": "c2940628761.zip 12.0.1 53 2026-02-11",
+          "cells": [
+            "c2940628761.zip",
+            "12.0.1",
+            "53",
+            "2026-02-11"
+          ],
+          "line": 37
+        }
+      ]
+    }
+  },
+  "images": [],
+  "title": "Devil 용 개인저장",
+  "metadataLiteral": "Devil 용 개인저장\n애드온 등록자\n볼테기\n최종 업데이트\n2026.02.11\n카테고리\n기타\n클라이언트 버전\n12.0.1\n애드온 버전\n12.0.1.\n조회수\n709\n추천수\n1\n다운로드 수\n53\n관심등록 수\n1\n다운로드\n관심 애드온 등록",
+  "metadataRows": [
+    {
+      "label": "애드온 등록자",
+      "value": "볼테기",
+      "line": 1181
+    },
+    {
+      "label": "최종 업데이트",
+      "value": "2026.02.11",
+      "line": 1185
+    },
+    {
+      "label": "카테고리",
+      "value": "기타",
+      "line": 1189
+    },
+    {
+      "label": "클라이언트 버전",
+      "value": "12.0.1",
+      "line": 1196
+    },
+    {
+      "label": "애드온 버전",
+      "value": "12.0.1.",
+      "line": 1200
+    },
+    {
+      "label": "조회수",
+      "value": "709",
+      "line": 1207
+    },
+    {
+      "label": "추천수",
+      "value": "1",
+      "line": 1211
+    },
+    {
+      "label": "다운로드 수",
+      "value": "53",
+      "line": 1215
+    },
+    {
+      "label": "관심등록 수",
+      "value": "1",
+      "line": 1219
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "name": "detail-2958",
+    "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=2958&rurl=%2Fdataninfo%2Faddonpds%2Flist.php%3Fpage%3D2%26searchField%3Dsubj_subt%26searchString%3Ddevil",
+    "status": 200,
+    "contentType": "text/html; charset=UTF-8",
+    "bytes": 227327,
+    "sha256": "89C7FB54FAB68AD4222D82906404E59E639180B9D30E5FEB0668FD7F1AD6D7C9",
+    "path": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\detail-2958.html",
+    "time": "2026-11-17T22:32:44.1195827+09:00"
+  },
+  {
+    "name": "list-first",
+    "url": "https://wow.inven.co.kr/dataninfo/addonpds/list.php?searchField=subj_subt&searchString=devil",
+    "status": 200,
+    "contentType": "text/html; charset=UTF-8",
+    "bytes": 245948,
+    "sha256": "51B3818B58ED1DD5DE73749E7ACF94F9A7E1F5078C3B880EF74D10317852411A",
+    "path": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\list-first.html",
+    "time": "2026-11-17T22:32:44.3597524+09:00"
+  }
+]

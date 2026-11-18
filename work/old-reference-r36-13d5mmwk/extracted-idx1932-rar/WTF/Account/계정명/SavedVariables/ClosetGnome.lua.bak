@@ -1,0 +1,43 @@
+
+ClosetGnomeDB = {
+	["char"] = {
+		["Eznel - Crystalsong"] = {
+			["WotLK"] = true,
+		},
+		["Resrec - Crystalsong"] = {
+			["WotLK"] = true,
+		},
+		["Hayate - Crystalsong"] = {
+			["WotLK"] = true,
+		},
+		["에이논 - Crystalsong"] = {
+			["WotLK"] = true,
+		},
+		["Kratia - Crystalsong"] = {
+			["WotLK"] = true,
+		},
+		["Lagneziad - Crystalsong"] = {
+			["WotLK"] = true,
+		},
+	},
+	["profileKeys"] = {
+		["Eznel - Crystalsong"] = "Eznel - Crystalsong",
+		["Resrec - Crystalsong"] = "Resrec - Crystalsong",
+		["Hayate - Crystalsong"] = "Hayate - Crystalsong",
+		["에이논 - Crystalsong"] = "에이논 - Crystalsong",
+		["Kratia - Crystalsong"] = "Kratia - Crystalsong",
+		["Lagneziad - Crystalsong"] = "Lagneziad - Crystalsong",
+	},
+	["profiles"] = {
+		["Eznel - Crystalsong"] = {
+		},
+		["Kratia - Crystalsong"] = {
+		},
+		["Default"] = {
+			["detachedTooltip"] = {
+			},
+		},
+		["Lagneziad - Crystalsong"] = {
+		},
+	},
+}

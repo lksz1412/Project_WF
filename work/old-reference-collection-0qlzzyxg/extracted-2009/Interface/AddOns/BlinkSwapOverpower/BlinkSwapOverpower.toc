@@ -1,0 +1,14 @@
+## Interface: 30200
+## Title: |cffffff9a블링크|r 무기 스왑 (제압전용)
+## Notes: 제압이 사용가능한 상태가 되면 설정해놓은 무기로 자동으로 교체를 합니다.
+## Author: 블링크
+## Dependencies: BlinkSwap,BlinkMod
+## SavedVariables:
+## SavedVariablesPerCharacter: BlinkSwapOverpowerDB
+## LoadOnDemand: 1
+
+libs\LibStub\LibStub.lua
+libs\LibCombatParser-1.0\lib.xml
+
+BlinkSwapOverpower.lua
+BlinkSwapOverpower.xml

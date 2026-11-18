@@ -1,0 +1,22 @@
+
+RangeDisplayDB3 = {
+	["profileKeys"] = {
+		["Eznel - Crystalsong"] = "Kratia - Crystalsong",
+		["Resrec - Crystalsong"] = "Kratia - Crystalsong",
+		["Hayate - Crystalsong"] = "Default",
+		["에이논 - Crystalsong"] = "Kratia - Crystalsong",
+		["Lagneziad - Crystalsong"] = "Kratia - Crystalsong",
+		["Kratia - Crystalsong"] = "Default",
+	},
+	["profiles"] = {
+		["Default"] = {
+			["point"] = "BOTTOM",
+			["locked"] = true,
+			["y"] = 290.8596251909711,
+			["font"] = "기본 글꼴",
+			["relPoint"] = "BOTTOM",
+			["x"] = -2.343577360322515,
+			["maxRangeOnly"] = true,
+		},
+	},
+}

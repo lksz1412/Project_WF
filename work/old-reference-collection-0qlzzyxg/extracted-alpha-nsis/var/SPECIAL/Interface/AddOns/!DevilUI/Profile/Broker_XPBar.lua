@@ -1,0 +1,41 @@
+
+BrokerXPBar_DB = {
+	["profileKeys"] = {
+	},
+	["profiles"] = {
+		["Normal"] = {
+			["ShowRep"] = true,
+			["MaxHideRepText"] = true,
+			["Separators"] = true,
+			["MaxHideXPText"] = true,
+			["Spark"] = 0.5,
+			["MaxHideRepBar"] = true,
+			["AutoTrackOnGain"] = true,
+			["Frame"] = "ChocolateBar1",
+			["MaxHideXPBar"] = true,
+			["AutoTrackOnLoss"] = true,
+			["Inside"] = true,
+			["Thickness"] = 1.5,
+			["Font"] = "기본 글꼴",
+			["ShowText"] = "XPFirst",
+			["ToGo"] = false,
+		},
+		["Wide"] = {
+			["ToGo"] = false,
+			["Spark"] = 0.5,
+			["ShowText"] = "XPFirst",
+			["Inside"] = true,
+			["MaxHideRepBar"] = true,
+			["AutoTrackOnGain"] = true,
+			["ShowRep"] = true,
+			["Thickness"] = 1.5,
+			["Font"] = "기본 글꼴",
+			["MaxHideRepText"] = true,
+			["Separators"] = true,
+			["AutoTrackOnLoss"] = true,
+			["MaxHideXPText"] = true,
+			["Frame"] = "ChocolateBar1",
+			["MaxHideXPBar"] = true,
+		},
+	},
+}

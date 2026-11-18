@@ -1,0 +1,212 @@
+{
+  "postID": 4018,
+  "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=4018",
+  "row": {
+    "postID": 4018,
+    "page": 1,
+    "rowOrdinal": 20,
+    "title": "Black_Devil UI 사용자분들 업데이트.. [통합UI] 2",
+    "rowText": "15 Black_Devil UI 사용자분들 업데이트.. [통합UI] 2 정식 업데이트 버전이 올라오면 삭제합니다 세이아드리스 1195 1 07-02",
+    "sourceAnchor": "javascript:addonMove('detail.php', 'idx->4018', 'leave->idx,listtype,ext', 'rurl');",
+    "sourceLocation": {
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\list-first.html",
+      "selector": "table.list tr a[href]",
+      "line": 1418
+    }
+  },
+  "detailProvenance": {
+    "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=4018",
+    "time": "2026-11-17T14:02:34.2145015Z",
+    "contentType": "text/html; charset=UTF-8",
+    "HTTP": 200,
+    "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=4018",
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-4018.html",
+    "state": "acquired",
+    "attempts": 1,
+    "commandExitCode": 0,
+    "encoding": "IWR decoded to UTF-8",
+    "bytes": 227510,
+    "SHA256": "E3FB1E76B992877184F6F56073C6E53EC566A7820C5F9646C4CD03BF48AD4792"
+  },
+  "acquisitionState": "parsed",
+  "A1read": false,
+  "imageObserved": false,
+  "sections": {
+    "addonAddon": {
+      "state": "parsed",
+      "text": "\n\n\n\n\nFRF_Jel UI 를 올리고 있는 주엘_세아 입니다.\n\n\n\n\n\n\n\n제일 많은 애드온 사용률을 자랑하는 데빌이 제가 만드는 애드온의 롤모델이었던 덕에\n\n\n\n비슷한 구조를 지닌 데빌 사용자분들을 위해 임시 파일을 올려드립니다\n\n\n\n\n\n\n\n\n\n데빌 설치하시고\n\n\n\n와우가 설치된 \\wow\\World of Warcraft\\Interface\\AddOns 폴더안의\n\n\n\n초컬릿바와 초컬릿바_옵션 폴더를\n\n\n\n자료실에 있는 초컬릿바로 교체하셔야 합니다\n\n\n\n\n\n\n\n이후 제가 올린 파일을\n\n\n\n\\wow\\World of Warcraft\\Interface\\AddOns 폴더안의\n\n\n\nDevilconfig 폴더에 덮어 씌워주시면 됩니다\n\n\n\n또한 자신의 해상도에 맞는 DevilUI 폴더를 덮어 씌워 주셔야 합니다\n\n\n\n\n\n1. 초콜릿바 갱신 (자료실)\n\n2. Devilconfig 덮어씌우기\n\n3. 해상도에 맞는 DevilUI 덮어씌우기\n\n\n\n\n\n\n\n\n\n*nicecurry님이 정식으로 업데이트 하시기 전까지만 임시로 올립니다",
+      "fragmentPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\idx-4018-addonAddon.html",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-4018.html",
+        "selector": "#addonAddon",
+        "line": 1244
+      },
+      "links": []
+    },
+    "addonVersion": {
+      "state": "empty",
+      "text": "",
+      "fragmentPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\idx-4018-addonVersion.html",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-4018.html",
+        "selector": "#addonVersion",
+        "line": 1285
+      },
+      "links": []
+    }
+  },
+  "iframes": {
+    "screenshot": {
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=4018&tempridx=&count=0",
+      "iframeLiteral": "<iframe frameborder=\"0\" framespacing=\"0\" id=\"screenshot\" scrolling=\"no\" src=\"imagelist.iframe.php?ridx=4018&amp;tempridx=&amp;count=0\"></iframe>",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-4018.html",
+        "selector": "iframe#screenshot",
+        "line": 1238
+      },
+      "provenance": {
+        "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=4018&tempridx=&count=0",
+        "time": "2026-11-17T14:02:34.8507287Z",
+        "contentType": "text/html; charset=UTF-8",
+        "HTTP": 200,
+        "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=4018&tempridx=&count=0",
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-4018.html",
+        "state": "acquired",
+        "attempts": 1,
+        "commandExitCode": 0,
+        "encoding": "IWR decoded to UTF-8",
+        "bytes": 1985,
+        "SHA256": "302B3715E950336CD9A64A236C5B5018AD272B0A3AABAD1CBA6542E0392DF46D"
+      },
+      "state": "parsed",
+      "text": "\n\n\n\n\n\n스크린샷\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "links": [
+        {
+          "href": "javascript:void(0);",
+          "onclick": null,
+          "text": "",
+          "line": 28
+        },
+        {
+          "href": "javascript:void(0);",
+          "onclick": null,
+          "text": "",
+          "line": 31
+        }
+      ],
+      "literalPublicDownloadURLs": [],
+      "imageCount": 0
+    },
+    "fileInfo": {
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=4018&tempridx=&count=1",
+      "iframeLiteral": "<iframe frameborder=\"0\" id=\"fileInfo\" src=\"filelist.iframe.php?mode=view&amp;ridx=4018&amp;tempridx=&amp;count=1\"></iframe>",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-4018.html",
+        "selector": "iframe#fileInfo",
+        "line": 1291
+      },
+      "provenance": {
+        "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=4018&tempridx=&count=1",
+        "time": "2026-11-17T14:02:35.4326337Z",
+        "contentType": "text/html; charset=UTF-8",
+        "HTTP": 200,
+        "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=4018&tempridx=&count=1",
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-4018.html",
+        "state": "acquired",
+        "attempts": 1,
+        "commandExitCode": 0,
+        "encoding": "IWR decoded to UTF-8",
+        "bytes": 2317,
+        "SHA256": "1F5BAC8B70ED4656F78045CC3E91BE0D161821BE8E687120F7A90FB807E25725"
+      },
+      "state": "parsed",
+      "text": "\n\n\n\n\n\n파일 정보\n\n\n\n\n\n\n\n\n\n\n\n\n파일\n\n\n클라이언트 버전\n\n\n다운로드\n\n\n등록일\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\nc38129062.zip\n\n\n\n\n\n\n3.3.5\n\n\n1195\n\n\n2010-07-02\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "links": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "c38129062.zip",
+          "line": 40
+        }
+      ],
+      "literalPublicDownloadURLs": [
+        "https://pds.inven.co.kr/upload/2010/07/02/addon/c38129062.zip"
+      ],
+      "fileRows": [
+        {
+          "text": "c38129062.zip 3.3.5 1195 2010-07-02",
+          "cells": [
+            "c38129062.zip",
+            "3.3.5",
+            "1195",
+            "2010-07-02"
+          ],
+          "line": 37
+        }
+      ],
+      "scriptPublicDownloadURLLiterals": [
+        {
+          "url": "https://pds.inven.co.kr/upload/2010/07/02/addon/c38129062.zip",
+          "literal": "https://pds.inven.co.kr/upload/2010/07/02/addon/c38129062.zip",
+          "scriptText": "parent.setDownloadInfo(21296,\"https://pds.inven.co.kr/upload/2010/07/02/addon/c38129062.zip\");",
+          "sourceLocation": {
+            "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-4018.html",
+            "line": 37,
+            "selector": "script"
+          },
+          "executed": false
+        }
+      ]
+    }
+  },
+  "images": [],
+  "title": "Black_Devil UI 사용자분들 업데이트 전까지 임시로 사용하세요",
+  "metadataLiteral": "Black_Devil UI 사용자분들 업데이트 전까지 임시로 사용하세요\n정식 업데이트 버전이 올라오면 삭제합니다\n애드온 등록자\n세이아드리스\n최종 업데이트\n2010.07.02\n카테고리\n통합UI\n클라이언트 버전\n3.3.5\n애드온 버전\n21\n조회수\n8535\n추천수\n1\n다운로드 수\n1195\n관심등록 수\n5\n다운로드\n관심 애드온 등록",
+  "metadataRows": [
+    {
+      "label": "애드온 등록자",
+      "value": "세이아드리스",
+      "line": 1181
+    },
+    {
+      "label": "최종 업데이트",
+      "value": "2010.07.02",
+      "line": 1185
+    },
+    {
+      "label": "카테고리",
+      "value": "통합UI",
+      "line": 1189
+    },
+    {
+      "label": "클라이언트 버전",
+      "value": "3.3.5",
+      "line": 1196
+    },
+    {
+      "label": "애드온 버전",
+      "value": "21",
+      "line": 1200
+    },
+    {
+      "label": "조회수",
+      "value": "8535",
+      "line": 1207
+    },
+    {
+      "label": "추천수",
+      "value": "1",
+      "line": 1211
+    },
+    {
+      "label": "다운로드 수",
+      "value": "1195",
+      "line": 1215
+    },
+    {
+      "label": "관심등록 수",
+      "value": "5",
+      "line": 1219
+    }
+  ]
+}

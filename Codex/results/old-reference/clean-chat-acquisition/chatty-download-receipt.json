@@ -1,0 +1,11 @@
+{
+  "time": "2026-11-17T16:08:30.0292917Z",
+  "error": "원격 서버에서 (403) 사용할 수 없음 오류를 반환했습니다.",
+  "HTTP": 403,
+  "sourceURL": "https://www.curseforge.com/wow/addons/chattynator/download/9648836",
+  "URLbasis": "literal exact file Download link from official CF page",
+  "localpath": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\chatty-download-page.html",
+  "attempts": 1,
+  "commandExitCode": 0,
+  "state": "failed"
+}

@@ -1,0 +1,3469 @@
+[
+  {
+    "label": "idx45-X2-sfx",
+    "state": "blocked-unsafe-list",
+    "extractionRoot": null,
+    "extractedFiles": null,
+    "extractedBytes": null,
+    "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\idx45-X2-sfx-members.json",
+    "byteTotalsEqual": null,
+    "unsafe": [
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\version-81033.1",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 0,
+        "listLine": 80,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\version-81033.1",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\version-81958.0",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 0,
+        "listLine": 81,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\version-81958.0",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate_Data\\version-81776.0",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 0,
+        "listLine": 82,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate_Data\\version-81776.0",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\AceAddon-2.0\\AceAddon-2.0.toc",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 206,
+        "listLine": 133,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\AceAddon-2.0\\AceAddon-2.0.toc",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\AceConsole-2.0\\AceConsole-2.0.toc",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 217,
+        "listLine": 201,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\AceConsole-2.0\\AceConsole-2.0.toc",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\AceDB-2.0\\AceDB-2.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 11098,
+        "listLine": 264,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\AceDB-2.0\\AceDB-2.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\AceDB-2.0\\AceDB-2.0.toc",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 214,
+        "listLine": 296,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\AceDB-2.0\\AceDB-2.0.toc",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\AceEvent-2.0\\AceEvent-2.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 6157,
+        "listLine": 331,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\AceEvent-2.0\\AceEvent-2.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\AceEvent-2.0\\AceEvent-2.0.toc",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 206,
+        "listLine": 372,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\AceEvent-2.0\\AceEvent-2.0.toc",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\AceHook-2.1\\AceHook-2.1.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 3141,
+        "listLine": 402,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\AceHook-2.1\\AceHook-2.1.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\AceHook-2.1\\AceHook-2.1.toc",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 205,
+        "listLine": 411,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\AceHook-2.1\\AceHook-2.1.toc",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\AceLibrary\\AceLibrary.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 6480,
+        "listLine": 450,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\AceLibrary\\AceLibrary.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\AceLibrary\\AceLibrary.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 6480,
+        "listLine": 454,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\AceLibrary\\AceLibrary.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\AceLibrary\\AceLibrary.toc",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 175,
+        "listLine": 486,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\AceLibrary\\AceLibrary.toc",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\AceLibrary\\AceLibrary.toc",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 175,
+        "listLine": 506,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\AceLibrary\\AceLibrary.toc",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\AceLocale-2.2\\AceLocale-2.2.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 4050,
+        "listLine": 547,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\AceLocale-2.2\\AceLocale-2.2.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\AceLocale-2.2\\AceLocale-2.2.toc",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 210,
+        "listLine": 553,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\AceLocale-2.2\\AceLocale-2.2.toc",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\AceOO-2.0\\AceOO-2.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 6279,
+        "listLine": 595,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\AceOO-2.0\\AceOO-2.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\AceOO-2.0\\AceOO-2.0.toc",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 198,
+        "listLine": 653,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\AceOO-2.0\\AceOO-2.0.toc",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\LibStub\\LibStub.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 680,
+        "listLine": 820,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\LibStub\\LibStub.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibSharedMedia-3.0\\LibStub\\LibStub.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 680,
+        "listLine": 821,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibSharedMedia-3.0\\LibStub\\LibStub.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRock-1.0\\LibStub\\LibStub.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 680,
+        "listLine": 822,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRock-1.0\\LibStub\\LibStub.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\AceAddon-2.0\\AceAddon-2.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 10434,
+        "listLine": 890,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\AceAddon-2.0\\AceAddon-2.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\Tablet-2.0\\Tablet-2.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 17368,
+        "listLine": 909,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\Tablet-2.0\\Tablet-2.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRock-1.0\\LibRock-1.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 20583,
+        "listLine": 964,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRock-1.0\\LibRock-1.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRock-1.0\\LibRock-1.0.toc",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 252,
+        "listLine": 967,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRock-1.0\\LibRock-1.0.toc",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRock-1.0\\lib.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 164,
+        "listLine": 970,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRock-1.0\\lib.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockConfig-1.0\\LibRockConfig-1.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 45771,
+        "listLine": 975,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockConfig-1.0\\LibRockConfig-1.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockConfig-1.0\\LibRockConfig-1.0.toc",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 228,
+        "listLine": 980,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockConfig-1.0\\LibRockConfig-1.0.toc",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockConfig-1.0\\lib.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 158,
+        "listLine": 984,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockConfig-1.0\\lib.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockDB-1.0\\LibRockDB-1.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 11458,
+        "listLine": 988,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockDB-1.0\\LibRockDB-1.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockDB-1.0\\LibRockDB-1.0.toc",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 208,
+        "listLine": 992,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockDB-1.0\\LibRockDB-1.0.toc",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockDB-1.0\\lib.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 156,
+        "listLine": 996,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockDB-1.0\\lib.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockEvent-1.0\\LibRockEvent-1.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 5533,
+        "listLine": 1000,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockEvent-1.0\\LibRockEvent-1.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockEvent-1.0\\LibRockEvent-1.0.toc",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 206,
+        "listLine": 1003,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockEvent-1.0\\LibRockEvent-1.0.toc",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockEvent-1.0\\lib.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 157,
+        "listLine": 1007,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockEvent-1.0\\lib.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockHook-1.0\\LibRockHook-1.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 3789,
+        "listLine": 1011,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockHook-1.0\\LibRockHook-1.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockHook-1.0\\LibRockHook-1.0.toc",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 207,
+        "listLine": 1013,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockHook-1.0\\LibRockHook-1.0.toc",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockHook-1.0\\lib.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 156,
+        "listLine": 1017,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockHook-1.0\\lib.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockLocale-1.0\\LibRockLocale-1.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 3771,
+        "listLine": 1022,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockLocale-1.0\\LibRockLocale-1.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockLocale-1.0\\LibRockLocale-1.0.toc",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 211,
+        "listLine": 1025,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockLocale-1.0\\LibRockLocale-1.0.toc",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockLocale-1.0\\lib.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 156,
+        "listLine": 1028,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockLocale-1.0\\lib.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockTimer-1.0\\LibRockTimer-1.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 3625,
+        "listLine": 1031,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockTimer-1.0\\LibRockTimer-1.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockTimer-1.0\\LibRockTimer-1.0.toc",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 206,
+        "listLine": 1034,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockTimer-1.0\\LibRockTimer-1.0.toc",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockTimer-1.0\\lib.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 156,
+        "listLine": 1038,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockTimer-1.0\\lib.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\LibStub\\LibStub.toc",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 207,
+        "listLine": 1047,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\LibStub\\LibStub.toc",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceAddon-3.0\\AceAddon-3.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 4353,
+        "listLine": 1220,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceAddon-3.0\\AceAddon-3.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceAddon-3.0\\AceAddon-3.0.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 153,
+        "listLine": 1232,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceAddon-3.0\\AceAddon-3.0.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceConfig-3.0\\AceConfig-3.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 599,
+        "listLine": 1241,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceConfig-3.0\\AceConfig-3.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceConfig-3.0\\AceConfig-3.0.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 217,
+        "listLine": 1252,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceConfig-3.0\\AceConfig-3.0.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceConfig-3.0\\AceConfigCmd-3.0\\AceConfigCmd-3.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 5705,
+        "listLine": 1267,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceConfig-3.0\\AceConfigCmd-3.0\\AceConfigCmd-3.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceConfig-3.0\\AceConfigCmd-3.0\\AceConfigCmd-3.0.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 156,
+        "listLine": 1269,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceConfig-3.0\\AceConfigCmd-3.0\\AceConfigCmd-3.0.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceConfig-3.0\\AceConfigDialog-3.0\\AceConfigDialog-3.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 10491,
+        "listLine": 1279,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceConfig-3.0\\AceConfigDialog-3.0\\AceConfigDialog-3.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceConfig-3.0\\AceConfigDialog-3.0\\AceConfigDialog-3.0.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 159,
+        "listLine": 1292,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceConfig-3.0\\AceConfigDialog-3.0\\AceConfigDialog-3.0.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceConfig-3.0\\AceConfigRegistry-3.0\\AceConfigRegistry-3.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 3117,
+        "listLine": 1302,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceConfig-3.0\\AceConfigRegistry-3.0\\AceConfigRegistry-3.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceConfig-3.0\\AceConfigRegistry-3.0\\AceConfigRegistry-3.0.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 161,
+        "listLine": 1312,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceConfig-3.0\\AceConfigRegistry-3.0\\AceConfigRegistry-3.0.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceDB-3.0\\AceDB-3.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 4887,
+        "listLine": 1321,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceDB-3.0\\AceDB-3.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceDB-3.0\\AceDB-3.0.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 152,
+        "listLine": 1337,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceDB-3.0\\AceDB-3.0.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceDBOptions-3.0\\AceDBOptions-3.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 5302,
+        "listLine": 1344,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceDBOptions-3.0\\AceDBOptions-3.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceDBOptions-3.0\\AceDBOptions-3.0.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 157,
+        "listLine": 1358,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceDBOptions-3.0\\AceDBOptions-3.0.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceEvent-3.0\\AceEvent-3.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 834,
+        "listLine": 1367,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceEvent-3.0\\AceEvent-3.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceEvent-3.0\\AceEvent-3.0.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 154,
+        "listLine": 1378,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceEvent-3.0\\AceEvent-3.0.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\AceGUI-3.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 4936,
+        "listLine": 1382,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\AceGUI-3.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\AceGUI-3.0.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 309,
+        "listLine": 1391,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\AceGUI-3.0.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-BlizOptionsGroup.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 1285,
+        "listLine": 1403,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-BlizOptionsGroup.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-Button.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 606,
+        "listLine": 1411,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-Button.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-CheckBox.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 1351,
+        "listLine": 1421,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-CheckBox.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-ColorPicker.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 1341,
+        "listLine": 1428,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-ColorPicker.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-DropDown-Items.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 2446,
+        "listLine": 1439,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-DropDown-Items.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-DropDown.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 4191,
+        "listLine": 1446,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-DropDown.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-DropDownGroup.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 1361,
+        "listLine": 1458,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-DropDownGroup.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-EditBox.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 1409,
+        "listLine": 1467,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-EditBox.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-Frame.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 2078,
+        "listLine": 1476,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-Frame.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-Heading.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 646,
+        "listLine": 1485,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-Heading.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-Icon.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 828,
+        "listLine": 1497,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-Icon.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-InlineGroup.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 1370,
+        "listLine": 1503,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-InlineGroup.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-Keybinding.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 1582,
+        "listLine": 1511,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-Keybinding.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-Label.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 998,
+        "listLine": 1520,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-Label.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-MultiLineEditBox.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 2523,
+        "listLine": 1530,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-MultiLineEditBox.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-ScrollFrame.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 1872,
+        "listLine": 1541,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-ScrollFrame.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-SimpleGroup.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 998,
+        "listLine": 1547,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-SimpleGroup.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-Slider.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 1783,
+        "listLine": 1557,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-Slider.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-TabGroup.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 3011,
+        "listLine": 1565,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-TabGroup.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-TreeGroup.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 4560,
+        "listLine": 1577,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceGUI-3.0\\widgets\\AceGUIWidget-TreeGroup.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceLocale-3.0\\AceLocale-3.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 1526,
+        "listLine": 1595,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceLocale-3.0\\AceLocale-3.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceLocale-3.0\\AceLocale-3.0.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 153,
+        "listLine": 1600,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceLocale-3.0\\AceLocale-3.0.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\CallbackHandler-1.0\\CallbackHandler-1.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 2639,
+        "listLine": 1624,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\CallbackHandler-1.0\\CallbackHandler-1.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\CallbackHandler-1.0\\CallbackHandler-1.0.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 158,
+        "listLine": 1641,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\CallbackHandler-1.0\\CallbackHandler-1.0.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibSharedMedia-3.0\\CallbackHandler-1.0\\CallbackHandler-1.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 2638,
+        "listLine": 1849,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibSharedMedia-3.0\\CallbackHandler-1.0\\CallbackHandler-1.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockConsole-1.0\\LibRockConsole-1.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 6161,
+        "listLine": 1870,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockConsole-1.0\\LibRockConsole-1.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockConsole-1.0\\LibRockConsole-1.0.toc",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 207,
+        "listLine": 1873,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockConsole-1.0\\LibRockConsole-1.0.toc",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockConsole-1.0\\lib.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 159,
+        "listLine": 1876,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockConsole-1.0\\lib.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockModuleCore-1.0\\LibRockModuleCore-1.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 5597,
+        "listLine": 1877,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockModuleCore-1.0\\LibRockModuleCore-1.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockModuleCore-1.0\\LibRockModuleCore-1.0.toc",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 210,
+        "listLine": 1880,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockModuleCore-1.0\\LibRockModuleCore-1.0.toc",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockModuleCore-1.0\\lib.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 161,
+        "listLine": 1885,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibRockModuleCore-1.0\\lib.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibSharedMedia-3.0\\LibSharedMedia-3.0.toc",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 208,
+        "listLine": 1892,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibSharedMedia-3.0\\LibSharedMedia-3.0.toc",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibSharedMedia-3.0\\lib.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 161,
+        "listLine": 1905,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibSharedMedia-3.0\\lib.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibSharedMedia-3.0\\LibSharedMedia-3.0\\LibSharedMedia-3.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 2207,
+        "listLine": 1919,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibSharedMedia-3.0\\LibSharedMedia-3.0\\LibSharedMedia-3.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibSharedMedia-3.0\\LibSharedMedia-3.0\\lib.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 157,
+        "listLine": 1926,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\LibSharedMedia-3.0\\LibSharedMedia-3.0\\lib.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\Deformat-2.0\\Deformat-2.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 1307,
+        "listLine": 2111,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\libs\\Deformat-2.0\\Deformat-2.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\JWowUpdater\\사용?Var14862xt",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 581,
+        "listLine": 2266,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\JWowUpdater\\사용?Var14862xt",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceConsole-3.0\\AceConsole-3.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 2429,
+        "listLine": 2953,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceConsole-3.0\\AceConsole-3.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceConsole-3.0\\AceConsole-3.0.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 155,
+        "listLine": 2958,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Libs\\AceConsole-3.0\\AceConsole-3.0.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfoUI\\krsnik.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 121,
+        "listLine": 3283,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfoUI\\krsnik.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\FuBarPlugin-2.0\\FuBarPlugin-2.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 11449,
+        "listLine": 3291,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\FuBarPlugin-2.0\\FuBarPlugin-2.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\TipHooker-1.0\\TipHooker-1.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 3006,
+        "listLine": 3298,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\TipHooker-1.0\\TipHooker-1.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\Bindings.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 96,
+        "listLine": 3744,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\Bindings.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\BlueCraftInfo.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 3519,
+        "listLine": 3747,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\BlueCraftInfo.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\BlueCraftInfo.toc",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 340,
+        "listLine": 3749,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\BlueCraftInfo.toc",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\TradeSkillDB.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 44845,
+        "listLine": 3751,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\TradeSkillDB.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\embeds.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 266,
+        "listLine": 3753,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\embeds.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\AceConsole-2.0\\AceConsole-2.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 15209,
+        "listLine": 3754,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\AceConsole-2.0\\AceConsole-2.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\Dewdrop-2.0\\Dewdrop-2.0.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 21937,
+        "listLine": 3757,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfo\\libs\\Dewdrop-2.0\\Dewdrop-2.0.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfoUI\\BlueCraftInfoUI.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 4938,
+        "listLine": 3759,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfoUI\\BlueCraftInfoUI.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfoUI\\BlueCraftInfoUI.toc",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 217,
+        "listLine": 3760,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfoUI\\BlueCraftInfoUI.toc",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfoUI\\BlueCraftInfoUI.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 3040,
+        "listLine": 3762,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfoUI\\BlueCraftInfoUI.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfoUI\\TradeSkillDB.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 5946,
+        "listLine": 3764,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\윽?茱?Interface\\AddOns\\BlueCraftInfoUI\\TradeSkillDB.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\을獰令恙?Interface\\AddOns\\BlinkSwap\\Bindings.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 157,
+        "listLine": 3766,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\을獰令恙?Interface\\AddOns\\BlinkSwap\\Bindings.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\을獰令恙?Interface\\AddOns\\BlinkSwap\\BlinkSwap.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 8885,
+        "listLine": 3769,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\을獰令恙?Interface\\AddOns\\BlinkSwap\\BlinkSwap.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\을獰令恙?Interface\\AddOns\\BlinkSwap\\BlinkSwap.toc",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 349,
+        "listLine": 3770,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\을獰令恙?Interface\\AddOns\\BlinkSwap\\BlinkSwap.toc",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\을獰令恙?Interface\\AddOns\\BlinkSwap\\BlinkSwap.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 317,
+        "listLine": 3772,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\을獰令恙?Interface\\AddOns\\BlinkSwap\\BlinkSwap.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\을獰令恙?Interface\\AddOns\\BlinkSwap\\localization.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 650,
+        "listLine": 3775,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\을獰令恙?Interface\\AddOns\\BlinkSwap\\localization.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\을獰令恙?Interface\\AddOns\\BlinkWarriorStance\\Bindings.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 98,
+        "listLine": 3776,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\을獰令恙?Interface\\AddOns\\BlinkWarriorStance\\Bindings.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\을獰令恙?Interface\\AddOns\\BlinkWarriorStance\\BlinkWarriorStance.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 825,
+        "listLine": 3778,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\을獰令恙?Interface\\AddOns\\BlinkWarriorStance\\BlinkWarriorStance.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\을獰令恙?Interface\\AddOns\\BlinkWarriorStance\\BlinkWarriorStance.toc",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 130,
+        "listLine": 3780,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\을獰令恙?Interface\\AddOns\\BlinkWarriorStance\\BlinkWarriorStance.toc",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Changelog-Parrot-r81033.txt",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 1375,
+        "listLine": 3783,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Changelog-Parrot-r81033.txt",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Parrot.toc",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 619,
+        "listLine": 3784,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Parrot.toc",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\embeds.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 295,
+        "listLine": 3787,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\embeds.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Code\\AnimationStyles.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 1846,
+        "listLine": 3789,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Code\\AnimationStyles.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Code\\CombatEvents.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 14087,
+        "listLine": 3791,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Code\\CombatEvents.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Code\\Display.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 3869,
+        "listLine": 3793,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Code\\Display.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Code\\Parrot.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 1487,
+        "listLine": 3794,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Code\\Parrot.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Code\\ScrollAreas.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 4965,
+        "listLine": 3796,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Code\\ScrollAreas.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Code\\Suppressions.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 1471,
+        "listLine": 3799,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Code\\Suppressions.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Code\\TriggerConditions.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 2852,
+        "listLine": 3801,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Code\\TriggerConditions.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Code\\Triggers.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 6132,
+        "listLine": 3802,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Code\\Triggers.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Data\\AnimationStyles.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 2314,
+        "listLine": 3804,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Data\\AnimationStyles.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Data\\Auras.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 1589,
+        "listLine": 3806,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Data\\Auras.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Data\\CombatEvents.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 9681,
+        "listLine": 3809,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Data\\CombatEvents.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Data\\CombatStatus.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 528,
+        "listLine": 3810,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Data\\CombatStatus.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Data\\Cooldowns.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 1624,
+        "listLine": 3813,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Data\\Cooldowns.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Data\\Loot.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 1064,
+        "listLine": 3814,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Data\\Loot.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Data\\TriggerConditions.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 1663,
+        "listLine": 3816,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Data\\TriggerConditions.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Locales\\ParrotLocale-deDE.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 8247,
+        "listLine": 3818,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Locales\\ParrotLocale-deDE.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Locales\\ParrotLocale-enUS.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 4402,
+        "listLine": 3820,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Locales\\ParrotLocale-enUS.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Locales\\ParrotLocale-frFR.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 7968,
+        "listLine": 3823,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Locales\\ParrotLocale-frFR.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Locales\\ParrotLocale-koKR.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 8779,
+        "listLine": 3825,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Locales\\ParrotLocale-koKR.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Locales\\ParrotLocale-zhCN.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 8398,
+        "listLine": 3827,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Locales\\ParrotLocale-zhCN.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Locales\\ParrotLocale-zhTW.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 8374,
+        "listLine": 3828,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\읖總灣뵈?Interface\\AddOns\\Parrot\\Locales\\ParrotLocale-zhTW.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Bindings.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 197,
+        "listLine": 3831,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Bindings.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Changelog-GatherMate-r81958.txt",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 1268,
+        "listLine": 3832,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Changelog-GatherMate-r81958.txt",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Collector.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 2967,
+        "listLine": 3834,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Collector.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Config.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 5698,
+        "listLine": 3836,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Config.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Constants.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 8362,
+        "listLine": 3838,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Constants.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Display.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 6427,
+        "listLine": 3841,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Display.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\GatherMate.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 3344,
+        "listLine": 3843,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\GatherMate.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\GatherMate.toc",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 728,
+        "listLine": 3845,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\GatherMate.toc",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\LICENSE.txt",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 440,
+        "listLine": 3846,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\LICENSE.txt",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Locales.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 207,
+        "listLine": 3848,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Locales.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\embeds.xml",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 276,
+        "listLine": 3850,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\embeds.xml",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Icon.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 1831,
+        "listLine": 3853,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Icon.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\track_circle.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 220,
+        "listLine": 3855,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\track_circle.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\anglefish.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 3800,
+        "listLine": 3857,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\anglefish.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\bluefish.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 4098,
+        "listLine": 3859,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\bluefish.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\bonescale.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 4005,
+        "listLine": 3861,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\bonescale.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\darter.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 5915,
+        "listLine": 3862,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\darter.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\debris.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 3882,
+        "listLine": 3864,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\debris.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\eel.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 3853,
+        "listLine": 3866,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\eel.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\feltail.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 5861,
+        "listLine": 3869,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\feltail.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\firefin.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 4730,
+        "listLine": 3871,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\firefin.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\fish_hook.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 3662,
+        "listLine": 3873,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\fish_hook.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\goby.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 3609,
+        "listLine": 3875,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\goby.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\greater_sagefish.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 4866,
+        "listLine": 3876,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\greater_sagefish.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\herring.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 4111,
+        "listLine": 3879,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\herring.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\magiceater.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 3403,
+        "listLine": 3880,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\magiceater.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\manowar.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 2506,
+        "listLine": 3883,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\manowar.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\manta.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 2925,
+        "listLine": 3885,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\manta.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\minnow.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 3508,
+        "listLine": 3887,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\minnow.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\mudfish.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 5395,
+        "listLine": 3889,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\mudfish.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\musselback.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 3165,
+        "listLine": 3891,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\musselback.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\net.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 4932,
+        "listLine": 3893,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\net.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\nettlefish.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 3413,
+        "listLine": 3894,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\nettlefish.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\oilspill.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 4827,
+        "listLine": 3897,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\oilspill.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\oilyblackmouth.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 4659,
+        "listLine": 3899,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\oilyblackmouth.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\purewater.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 4085,
+        "listLine": 3901,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\purewater.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\rockfin_grouper.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 3837,
+        "listLine": 3903,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\rockfin_grouper.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\sagefish.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 4514,
+        "listLine": 3904,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\sagefish.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\salmon.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 3223,
+        "listLine": 3907,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\salmon.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\sporefish.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 5868,
+        "listLine": 3908,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\sporefish.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\steampump.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 4206,
+        "listLine": 3910,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\steampump.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\suckerfish.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 3198,
+        "listLine": 3912,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\suckerfish.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\treasure.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 2179,
+        "listLine": 3915,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Fish\\treasure.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Treasure\\treasure.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 2179,
+        "listLine": 3917,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Treasure\\treasure.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Gas\\arcane_vortex.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 379,
+        "listLine": 3918,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Gas\\arcane_vortex.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Gas\\felmist.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 387,
+        "listLine": 3920,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Gas\\felmist.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Gas\\swamp_gas.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 408,
+        "listLine": 3922,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Gas\\swamp_gas.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Gas\\windy_cloud.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 408,
+        "listLine": 3924,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Gas\\windy_cloud.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\ancient_lichen.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 13881,
+        "listLine": 3926,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\ancient_lichen.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\arthas_tears.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 7365,
+        "listLine": 3928,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\arthas_tears.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\black_lotus.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 7219,
+        "listLine": 3930,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\black_lotus.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\blindweed.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 7595,
+        "listLine": 3932,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\blindweed.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\briarthorn.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 6117,
+        "listLine": 3934,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\briarthorn.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\bruiseweed.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 7570,
+        "listLine": 3937,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\bruiseweed.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\constrictor.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 3394,
+        "listLine": 3939,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\constrictor.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\dreamfoil.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 7155,
+        "listLine": 3940,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\dreamfoil.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\dreaming_glory.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 6764,
+        "listLine": 3942,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\dreaming_glory.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\earthroot.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 7580,
+        "listLine": 3945,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\earthroot.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\evergreen.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 3552,
+        "listLine": 3947,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\evergreen.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\fadeleaf.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 7683,
+        "listLine": 3949,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\fadeleaf.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\felweed.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 7554,
+        "listLine": 3951,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\felweed.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\firebloom.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 7722,
+        "listLine": 3953,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\firebloom.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\flame_cap.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 6668,
+        "listLine": 3955,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\flame_cap.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\frostlotus.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 4445,
+        "listLine": 3956,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\frostlotus.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\ghost_mushroom.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 5387,
+        "listLine": 3959,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\ghost_mushroom.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\goldclover.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 2256,
+        "listLine": 3960,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\goldclover.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\golden_sansam.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 8347,
+        "listLine": 3963,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\golden_sansam.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\goldthorn.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 8479,
+        "listLine": 3964,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\goldthorn.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\grave_moss.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 5246,
+        "listLine": 3966,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\grave_moss.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\netherdust.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 5246,
+        "listLine": 3968,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\netherdust.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\gromsblood.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 7462,
+        "listLine": 3970,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\gromsblood.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\icecap.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 7409,
+        "listLine": 3972,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\icecap.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\icethorn.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 3427,
+        "listLine": 3975,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\icethorn.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\khadgars_whisker.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 7390,
+        "listLine": 3976,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\khadgars_whisker.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\kingsblood.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 7211,
+        "listLine": 3978,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\kingsblood.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\liferoot.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 6631,
+        "listLine": 3980,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\liferoot.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\mageroyal.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 7069,
+        "listLine": 3982,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\mageroyal.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\mana_thistle.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 6384,
+        "listLine": 3984,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\mana_thistle.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\misc_flower.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 2848,
+        "listLine": 3986,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\misc_flower.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\mountain_silversage.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 8104,
+        "listLine": 3989,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\mountain_silversage.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\netherbloom.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 7719,
+        "listLine": 3991,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\netherbloom.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\nightmare_vine.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 7966,
+        "listLine": 3993,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\nightmare_vine.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\peacebloom.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 7446,
+        "listLine": 3994,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\peacebloom.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\plaguebloom.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 7359,
+        "listLine": 3997,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\plaguebloom.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\purple_lotus.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 7655,
+        "listLine": 3998,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\purple_lotus.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\ragveil.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 6616,
+        "listLine": 4001,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\ragveil.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\silverleaf.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 7066,
+        "listLine": 4003,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\silverleaf.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\stranglekelp.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 6261,
+        "listLine": 4005,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\stranglekelp.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\sungrass.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 7249,
+        "listLine": 4007,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\sungrass.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\terocone.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 6355,
+        "listLine": 4009,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\terocone.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\tigerlily.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 4002,
+        "listLine": 4010,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\tigerlily.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\trose.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 3687,
+        "listLine": 4012,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\trose.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\whispervine.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 4053,
+        "listLine": 4014,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\whispervine.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\wild_steelbloom.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 6655,
+        "listLine": 4016,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\wild_steelbloom.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\wintersbite.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 7794,
+        "listLine": 4019,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Herb\\wintersbite.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\adamantium.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 495,
+        "listLine": 4020,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\adamantium.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\blood_iron.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 475,
+        "listLine": 4023,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\blood_iron.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\cobolt.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 3863,
+        "listLine": 4024,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\cobolt.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\copper.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 484,
+        "listLine": 4026,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\copper.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\darkiron.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 491,
+        "listLine": 4028,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\darkiron.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\ethernium.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 334,
+        "listLine": 4031,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\ethernium.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\feliron.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 506,
+        "listLine": 4032,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\feliron.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\gold.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 497,
+        "listLine": 4035,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\gold.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\iron.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 493,
+        "listLine": 4037,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\iron.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\khorium.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 478,
+        "listLine": 4039,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\khorium.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\mithril.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 472,
+        "listLine": 4040,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\mithril.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\rich_adamantium.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 489,
+        "listLine": 4042,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\rich_adamantium.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\rich_thorium.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 493,
+        "listLine": 4044,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\rich_thorium.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\saronite.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 2695,
+        "listLine": 4046,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\saronite.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\silver.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 463,
+        "listLine": 4048,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\silver.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\thorium.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 485,
+        "listLine": 4050,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\thorium.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\tin.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 473,
+        "listLine": 4052,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\tin.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\titanium.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 2876,
+        "listLine": 4054,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\titanium.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\truesilver.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 448,
+        "listLine": 4056,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Mine\\truesilver.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Treasure\\blood.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 1408,
+        "listLine": 4058,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Treasure\\blood.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Treasure\\chest.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 2180,
+        "listLine": 4060,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Treasure\\chest.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Treasure\\clam.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 2094,
+        "listLine": 4062,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Treasure\\clam.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Treasure\\egg.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 3249,
+        "listLine": 4064,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Treasure\\egg.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Treasure\\footlocker.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 2168,
+        "listLine": 4066,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Treasure\\footlocker.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Treasure\\mushroom.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 4209,
+        "listLine": 4069,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Treasure\\mushroom.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Treasure\\soil.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 1563,
+        "listLine": 4070,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Treasure\\soil.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Treasure\\sprout.tga",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 1891,
+        "listLine": 4072,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Artwork\\Treasure\\sprout.tga",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Locales\\GatherMate-deDE.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 7154,
+        "listLine": 4074,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Locales\\GatherMate-deDE.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Locales\\GatherMate-enUS.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 4920,
+        "listLine": 4076,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Locales\\GatherMate-enUS.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Locales\\GatherMate-esES.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 2987,
+        "listLine": 4078,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Locales\\GatherMate-esES.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Locales\\GatherMate-frFR.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 7756,
+        "listLine": 4080,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Locales\\GatherMate-frFR.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Locales\\GatherMate-koKR.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 6211,
+        "listLine": 4082,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Locales\\GatherMate-koKR.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Locales\\GatherMate-ruRU.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 8499,
+        "listLine": 4085,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Locales\\GatherMate-ruRU.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Locales\\GatherMate-zhCN.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 7760,
+        "listLine": 4087,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Locales\\GatherMate-zhCN.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Locales\\GatherMate-zhTW.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 7552,
+        "listLine": 4088,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate\\Locales\\GatherMate-zhTW.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate_Data\\Changelog-GatherMate_Data-r81776.txt",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 151,
+        "listLine": 4091,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate_Data\\Changelog-GatherMate_Data-r81776.txt",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate_Data\\FishData.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 2646,
+        "listLine": 4093,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate_Data\\FishData.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate_Data\\GasData.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 976,
+        "listLine": 4095,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate_Data\\GasData.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate_Data\\GatherMateData.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 668,
+        "listLine": 4096,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate_Data\\GatherMateData.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate_Data\\GatherMate_Data.toc",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 259,
+        "listLine": 4099,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate_Data\\GatherMate_Data.toc",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate_Data\\HerbalismData.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 60829,
+        "listLine": 4101,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate_Data\\HerbalismData.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate_Data\\MiningData.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 47164,
+        "listLine": 4103,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate_Data\\MiningData.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate_Data\\TreasureData.lua",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 11464,
+        "listLine": 4105,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate_Data\\TreasureData.lua",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      },
+      {
+        "filename": "$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate_Data\\dbgen.rb.txt",
+        "attributes": "____",
+        "isDirectory": false,
+        "listedUncompressedBytes": -1,
+        "listedCompressedBytes": 5230,
+        "listLine": 4106,
+        "target": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-idx45-X2-sfx\\$HWNDPARENT\\var\\채?Var12561술\\Interface\\addons\\GatherMate_Data\\dbgen.rb.txt",
+        "unsafeReasons": [
+          "unsafe-NTFS-name/stream"
+        ]
+      }
+    ]
+  }
+]

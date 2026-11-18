@@ -1,0 +1,14 @@
+## Interface: 30200
+## Author: Nicecurry
+## Title: |CFFFFFFFFBlack Edition
+## Title-koKR: |CFFFFFFFFBlack Edition
+## Version: 1.1
+## Notes: 데빌 애드온 모음집의 명령어에 대한 GUI를 지원합니다.
+## Note-koKR: 데빌 애드온 모음집의 명령어에 대한 GUI를 지원합니다.
+## OptionalDeps: Ace2, DewdropLib, TabletLib, FuBar, FuBarPlugin-2.0
+## SavedVariablesPerCharacter: DevilSkin_FirstSetup
+
+embeds.xml
+
+Devilconfig.lua
+DevilSkin.lua

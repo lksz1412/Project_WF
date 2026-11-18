@@ -1,0 +1,161 @@
+local Core, Constants, Utils = unpack(select(2, ...))
+
+local Colors = Constants.COLORS
+
+local CreateNewMessageAlertFrame = Core.Components.CreateNewMessageAlertFrame
+
+local super = Utils.super
+
+-- luacheck: push ignore 113
+local CreateFrame = CreateFrame
+local Mixin = Mixin
+-- luacheck: pop
+
+local ScrollOverlayFrame = {}
+
+-- Every chat window's overlay; all of them follow the edit box
+local overlays = {}
+
+-- The edit box tells the overlays when it opens or closes. Hooked once, with
+-- the frame's own HookScript: the Glass edit box has AceHook in it, whose
+-- HookScript takes other arguments (calling that one failed when a second
+-- chat window opened, e.g. a new whisper, and left its tab unstyled)
+local editBoxHooked = false
+local function HookEditBox()
+  local editBox = _G.ChatFrame1EditBox
+  if editBoxHooked or not editBox then return end
+  editBoxHooked = true
+  local function PlaceAll()
+    for overlay in pairs(overlays) do overlay:PlaceBelow() end
+  end
+  local HookScript = getmetatable(editBox).__index.HookScript
+  HookScript(editBox, "OnShow", PlaceAll)
+  HookScript(editBox, "OnHide", PlaceAll)
+end
+
+function ScrollOverlayFrame:Init()
+    local overlayOpacity = 0.65
+
+    self:SetHeight(64)
+    self:UpdatePosition()
+
+    -- Follow changes to the chat height and the tab bar height
+    if self.subscriptions == nil then
+      self.subscriptions = {
+        Core:Subscribe(Constants.EVENTS.UPDATE_CONFIG, function (key)
+          if key == "frameHeight" or key == "tabBarHeight" then
+            self:UpdatePosition()
+          end
+        end)
+      }
+    end
+    self:SetFadeInDuration(0.3)
+    self:SetFadeOutDuration(0.15)
+
+    if self.mask == nil then
+      self.mask = self:CreateMaskTexture()
+    end
+    self.mask:SetTexture("Interface\\Addons\\Glass\\Glass\\Assets\\overlayMask", "CLAMP", "CLAMPTOBLACKADDITIVE")
+    self.mask:SetSize(16, 64)
+    self.mask:SetPoint("CENTER", 0, -32)
+
+    self:SetGradientBackground(15, 15, Colors.codGray, overlayOpacity)
+
+    self.leftBg:AddMaskTexture(self.mask)
+    self.centerBg:AddMaskTexture(self.mask)
+    self.rightBg:AddMaskTexture(self.mask)
+
+    -- Down arrow icon
+    if self.icon == nil then
+      self.icon = self:CreateTexture(nil, "ARTWORK")
+    end
+    self.icon:SetTexture("Interface\\Addons\\Glass\\Glass\\Assets\\snapToBottomIcon")
+    self.icon:SetSize(16, 16)
+
+    -- See new messages click area
+    if self.snapToBottomFrame == nil then
+      self.snapToBottomFrame = CreateFrame("Frame", nil, self)
+    end
+    self.snapToBottomFrame:SetHeight(20)
+
+    if self.newMessageAlertFrame == nil then
+      self.newMessageAlertFrame = CreateNewMessageAlertFrame(self)
+    end
+
+    self.newMessageAlertFrame:QuickHide()
+
+    -- The edit box opening or closing moves them (every overlay, hooked once)
+    overlays[self] = true
+    HookEditBox()
+    self:PlaceBelow()
+end
+
+---
+-- The arrow, its click area and "Unread messages" go under the chat, outside
+-- the messages (on top of them they were hard to read). Under the edit box
+-- while it's open below the chat, so they don't cover it.
+function ScrollOverlayFrame:PlaceBelow()
+  local anchor = self
+  local editBox = _G.ChatFrame1EditBox
+  -- Separate windows have edit boxes of their own
+  local parent = self:GetParent()
+  local detached = parent and parent.state and parent.state.detached
+  if editBox and not detached and editBox:IsShown()
+    and Core.db.profile.editBoxAnchor.position ~= "ABOVE" then
+    anchor = editBox
+  end
+  local gap = 2
+
+  self.snapToBottomFrame:ClearAllPoints()
+  self.snapToBottomFrame:SetPoint("TOP", anchor, "BOTTOM", 0, -gap)
+  self.snapToBottomFrame:SetPoint("LEFT", self)
+  self.snapToBottomFrame:SetPoint("RIGHT", self)
+
+  self.newMessageAlertFrame:ClearAllPoints()
+  self.newMessageAlertFrame:SetAllPoints(self.snapToBottomFrame)
+
+  self.icon:ClearAllPoints()
+  self.icon:SetPoint("LEFT", self.snapToBottomFrame, "LEFT", 15, 0)
+end
+
+function ScrollOverlayFrame:SetScript(name, callback)
+  if name == "OnClickSnapFrame" then
+    self.snapToBottomFrame:SetScript("OnMouseDown", callback)
+    return
+  end
+
+  super(self).SetScript(self, name, callback)
+end
+
+function ScrollOverlayFrame:ShowNewMessageAlert()
+  self.newMessageAlertFrame:Show()
+end
+
+function ScrollOverlayFrame:HideNewMessageAlert()
+  self.newMessageAlertFrame:Hide()
+end
+
+---
+-- Places the overlay at the bottom of the messages area
+function ScrollOverlayFrame:UpdatePosition()
+  local topOffset = Core.db.profile.frameHeight - (Utils.TabBarHeight() + 5 + 62)
+  self:ClearAllPoints()
+  self:SetPoint("TOPLEFT", 0, -topOffset)
+  self:SetPoint("TOPRIGHT", 0, -topOffset)
+end
+
+local function CreateScrollOverlayFrame(parent)
+  local FadingFrameMixin = Core.Components.FadingFrameMixin
+  local GradientBackgroundMixin = Core.Components.GradientBackgroundMixin
+
+  local frame = CreateFrame("Frame", nil, parent)
+  local object = Mixin(frame, FadingFrameMixin, GradientBackgroundMixin, ScrollOverlayFrame)
+
+  FadingFrameMixin.Init(object)
+  GradientBackgroundMixin.Init(object)
+  ScrollOverlayFrame.Init(object)
+
+  return object
+end
+
+Core.Components.CreateScrollOverlayFrame = CreateScrollOverlayFrame

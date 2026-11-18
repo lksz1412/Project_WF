@@ -1,0 +1,30 @@
+﻿## Interface: 20300
+## Title: eePanels2 |cff7fff7f -Ace2-|r
+## Title-zhCN: |cff7fff7f-Ace2-|r eePanels2
+## Notes: Create and modify panels and art
+## Notes-zhCN: 创建和调整背景面板
+## Notes-zhTW: 創建和設置背景面板
+## Notes-esES: Crea y modifica paneles de fondo
+## Author: Evil Elvis
+## OptionalDeps: Ace2, FuBar, DewdropLib, FuBarPlugin-2.0, LibSharedMedia-2.0, SharedMedia-2.0, Waterfall-1.0
+## X-Embeds: Ace2, DewdropLib, FuBarPlugin-2.0, LibSharedMedia-2.0, Waterfall-1.0
+## SavedVariables: eePanels2DB
+## Version: 2.0
+
+## SVN: http://www.wowace.com/files/eePanels2/
+## X-AceForum: 8139
+## X-website: http://www.wowace.com/wiki/EePanels2
+## X-Wiki-Discussion: http://www.wowace.com/wiki/EePanels2
+## X-Category: Interface Enhancements
+## X-License: GPL
+
+embeds.xml
+
+localization\localization.enUS.lua
+localization\localization.zhTW.lua
+localization\localization.zhCN.lua
+localization\localization.koKR.lua
+
+core.lua
+guideFrame.lua
+scriptEditor.lua

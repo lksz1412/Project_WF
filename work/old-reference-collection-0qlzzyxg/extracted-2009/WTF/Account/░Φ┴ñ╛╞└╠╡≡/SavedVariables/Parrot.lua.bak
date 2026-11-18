@@ -1,0 +1,493 @@
+
+ParrotDB = {
+	["namespaces"] = {
+		["CombatEvents"] = {
+			["profiles"] = {
+				["Default"] = {
+					["Outgoing"] = {
+						["Pet ability misses"] = {
+							["disabled"] = true,
+						},
+						["Pet ability blocks"] = {
+							["disabled"] = true,
+						},
+						["Pet melee misses"] = {
+							["disabled"] = true,
+						},
+						["Pet skill reflects"] = {
+							["disabled"] = true,
+						},
+						["Pet spell resists"] = {
+							["disabled"] = true,
+						},
+						["Pet skill evades"] = {
+							["disabled"] = true,
+						},
+						["Pet melee blocks"] = {
+							["disabled"] = true,
+						},
+						["Pet melee damage"] = {
+							["disabled"] = true,
+						},
+						["Pet melee parries"] = {
+							["disabled"] = true,
+						},
+						["Pet melee immunes"] = {
+							["disabled"] = true,
+						},
+						["Pet skill DoTs"] = {
+							["disabled"] = true,
+						},
+						["Pet melee dodges"] = {
+							["disabled"] = true,
+						},
+						["Pet ability parries"] = {
+							["disabled"] = true,
+						},
+						["Self heals over time"] = {
+							["disabled"] = false,
+						},
+						["Pet skill absorbs"] = {
+							["disabled"] = true,
+						},
+						["Pet skill immunes"] = {
+							["disabled"] = true,
+						},
+						["Pet ability dodges"] = {
+							["disabled"] = true,
+						},
+						["Pet melee evades"] = {
+							["disabled"] = true,
+						},
+						["Self heals"] = {
+							["disabled"] = false,
+						},
+						["Pet skill damage"] = {
+							["disabled"] = true,
+						},
+						["Pet melee absorbs"] = {
+							["disabled"] = true,
+						},
+					},
+					["modifier"] = {
+						["crushing"] = {
+							["enabled"] = false,
+						},
+						["overkill"] = {
+							["enabled"] = false,
+						},
+						["crit"] = {
+							["enabled"] = true,
+						},
+					},
+					["Incoming"] = {
+						["Pet ability misses"] = {
+							["disabled"] = true,
+						},
+						["Pet ability blocks"] = {
+							["disabled"] = true,
+						},
+						["Pet melee misses"] = {
+							["disabled"] = true,
+						},
+						["Pet skill reflects"] = {
+							["disabled"] = true,
+						},
+						["Pet spell resists"] = {
+							["disabled"] = true,
+						},
+						["Pet skill evades"] = {
+							["disabled"] = true,
+						},
+						["Pet melee blocks"] = {
+							["disabled"] = true,
+						},
+						["Pet melee damage"] = {
+							["disabled"] = true,
+						},
+						["Pet melee parries"] = {
+							["disabled"] = true,
+						},
+						["Pet melee immunes"] = {
+							["disabled"] = true,
+						},
+						["Pet skill DoTs"] = {
+							["disabled"] = true,
+						},
+						["Pet ability parries"] = {
+							["disabled"] = true,
+						},
+						["Pet skill absorbs"] = {
+							["disabled"] = true,
+						},
+						["Pet melee dodges"] = {
+							["disabled"] = true,
+						},
+						["Pet ability dodges"] = {
+							["disabled"] = true,
+						},
+						["Pet skill immunes"] = {
+							["disabled"] = true,
+						},
+						["Pet skill damage"] = {
+							["disabled"] = true,
+						},
+						["Pet melee absorbs"] = {
+							["disabled"] = true,
+						},
+					},
+				},
+			},
+		},
+		["ScrollAreas"] = {
+			["profiles"] = {
+				["Default"] = {
+					["areas"] = {
+						["Outgoing"] = {
+							["stickyDirection"] = "DOWN;LEFT",
+							["direction"] = "DOWN;LEFT",
+							["yOffset"] = 0,
+							["stickyAnimationStyle"] = "Pow2",
+							["xOffset"] = 300,
+							["animationStyle"] = "Straight",
+							["size"] = 200,
+						},
+						["Incoming"] = {
+							["direction"] = "DOWN;RIGHT",
+							["xOffset"] = -300,
+							["yOffset"] = 0,
+							["stickyDirection"] = "DOWN;RIGHT",
+							["iconSide"] = "RIGHT",
+							["stickyAnimationStyle"] = "Pow2",
+							["animationStyle"] = "Straight",
+							["size"] = 200,
+						},
+						["Notification"] = {
+							["stickyDirection"] = "UP;CENTER",
+							["direction"] = "UP;CENTER",
+							["yOffset"] = 175,
+							["stickyAnimationStyle"] = "Pow2",
+							["xOffset"] = 0,
+							["animationStyle"] = "Straight",
+							["size"] = 100,
+						},
+					},
+				},
+			},
+		},
+		["Display"] = {
+			["profiles"] = {
+				["Default"] = {
+					["iconAlpha"] = 0.8,
+					["stickyFont"] = "데미지 글꼴",
+					["stickyFontOutline"] = "NONE",
+					["alpha"] = 0.8,
+					["fontSize"] = 16,
+					["font"] = "데미지 글꼴",
+					["fontOutline"] = "NONE",
+					["stickyFontSize"] = 22,
+				},
+			},
+		},
+		["Triggers"] = {
+			["profiles"] = {
+				["Default"] = {
+					["triggers"] = {
+						{
+							["name"] = "반발력!",
+							["conditions"] = {
+								["Self buff gain"] = "반발력",
+							},
+							["color"] = "ff00ff",
+							["sticky"] = true,
+							["icon"] = 34939,
+							["class"] = "WARLOCK",
+						}, -- [1]
+						{
+							["name"] = "의식 상실!",
+							["conditions"] = {
+								["Target debuff gain"] = "의식 상실",
+							},
+							["color"] = "ff00ff",
+							["sticky"] = true,
+							["icon"] = 15326,
+							["class"] = "PRIEST",
+						}, -- [2]
+						{
+							["name"] = "정신 집중!",
+							["conditions"] = {
+								["Self buff gain"] = "정신 집중",
+							},
+							["color"] = "ffff00",
+							["sticky"] = true,
+							["icon"] = 34754,
+							["class"] = "MAGE;PRIEST;SHAMAN",
+						}, -- [3]
+						{
+							["secondaryConditions"] = {
+								["Spell ready"] = "역습",
+							},
+							["name"] = "역습!",
+							["conditions"] = {
+								["Incoming Parry"] = true,
+							},
+							["color"] = "ffff00",
+							["sticky"] = true,
+							["icon"] = 27067,
+							["class"] = "HUNTER",
+						}, -- [4]
+						{
+							["secondaryConditions"] = {
+								["Spell ready"] = "마무리 일격",
+							},
+							["name"] = "마무리 일격!",
+							["conditions"] = {
+								["Enemy target health percent"] = 0.19,
+							},
+							["color"] = "ffff00",
+							["sticky"] = true,
+							["icon"] = 25236,
+							["class"] = "WARRIOR",
+						}, -- [5]
+						{
+							["name"] = "동상!",
+							["conditions"] = {
+								["Target debuff gain"] = "동상",
+							},
+							["color"] = "0000ff",
+							["sticky"] = true,
+							["icon"] = 12497,
+							["class"] = "MAGE",
+						}, -- [6]
+						{
+							["secondaryConditions"] = {
+								["Spell ready"] = "천벌의 망치",
+							},
+							["name"] = "천벌의 망치!",
+							["conditions"] = {
+								["Enemy target health percent"] = 0.2,
+							},
+							["color"] = "ffff00",
+							["sticky"] = true,
+							["icon"] = 27180,
+							["class"] = "PALADIN",
+						}, -- [7]
+						{
+							["name"] = "충돌!",
+							["conditions"] = {
+								["Target debuff gain"] = "충돌",
+							},
+							["color"] = "ff0000",
+							["sticky"] = true,
+							["icon"] = 11103,
+							["class"] = "MAGE",
+						}, -- [8]
+						{
+							["disabled"] = true,
+							["color"] = "ff0000",
+							["class"] = "HUNTER",
+							["secondaryConditions"] = {
+								["Spell ready"] = "살상 명령",
+							},
+							["name"] = "살상 명령!",
+							["sticky"] = true,
+							["icon"] = 34026,
+							["conditions"] = {
+								["Outgoing crit"] = true,
+							},
+						}, -- [9]
+						{
+							["secondaryConditions"] = {
+								["Trigger cooldown"] = 3,
+							},
+							["name"] = "생명력 낮음!",
+							["color"] = "ff7f7f",
+							["sticky"] = true,
+							["class"] = "DRUID;HUNTER;MAGE;PALADIN;PRIEST;ROGUE;SHAMAN;WARLOCK;WARRIOR",
+							["conditions"] = {
+								["Self health percent"] = 0.4,
+							},
+						}, -- [10]
+						{
+							["secondaryConditions"] = {
+								["Trigger cooldown"] = 3,
+							},
+							["name"] = "마나 낮음!",
+							["color"] = "7f7fff",
+							["sticky"] = true,
+							["class"] = "DRUID;HUNTER;MAGE;PALADIN;PRIEST;SHAMAN;WARLOCK",
+							["conditions"] = {
+								["Self mana percent"] = 0.35,
+							},
+						}, -- [11]
+						{
+							["secondaryConditions"] = {
+								["Trigger cooldown"] = 3,
+							},
+							["name"] = "소환수 생명력 낮음!",
+							["color"] = "ff7f7f",
+							["class"] = "HUNTER;MAGE;WARLOCK",
+							["conditions"] = {
+								["Pet health percent"] = 0.4,
+							},
+						}, -- [12]
+						{
+							["secondaryConditions"] = {
+								["Spell ready"] = "살쾡이의 이빨",
+							},
+							["name"] = "살쾡이의 이빨!",
+							["conditions"] = {
+								["Incoming Dodge"] = true,
+							},
+							["color"] = "ffff00",
+							["sticky"] = true,
+							["icon"] = 36916,
+							["class"] = "HUNTER",
+						}, -- [13]
+						{
+							["name"] = "일몰!",
+							["conditions"] = {
+								["Self buff gain"] = "어둠의 무아지경",
+							},
+							["color"] = "7f007f",
+							["sticky"] = true,
+							["icon"] = 18095,
+							["class"] = "WARLOCK",
+						}, -- [14]
+						{
+							["name"] = "자유 성스러운 일격!",
+							["disabled"] = true,
+							["sticky"] = true,
+							["color"] = "ff0000",
+							["conditions"] = {
+								["Self buff gain"] = "빛의 쇄도",
+							},
+							["icon"] = 25364,
+							["class"] = "PRIEST",
+						}, -- [15]
+						{
+							["secondaryConditions"] = {
+								["Spell ready"] = "제압",
+							},
+							["name"] = "제압!",
+							["conditions"] = {
+								["Outgoing Dodge"] = true,
+							},
+							["color"] = "7f007f",
+							["sticky"] = true,
+							["icon"] = 11585,
+							["class"] = "WARRIOR",
+						}, -- [16]
+						{
+							["secondaryConditions"] = {
+								["Spell ready"] = "광란",
+								["Buff inactive"] = "광란",
+								["Minimum power amount"] = 20,
+							},
+							["name"] = "광란!",
+							["conditions"] = {
+								["Outgoing crit"] = true,
+							},
+							["color"] = "ff0000",
+							["sticky"] = true,
+							["icon"] = 29801,
+							["class"] = "WARRIOR",
+						}, -- [17]
+						{
+							["disabled"] = true,
+							["color"] = "ffff00",
+							["class"] = "WARRIOR",
+							["secondaryConditions"] = {
+								["Spell ready"] = "복수",
+								["Warrior stance"] = "Defensive Stance",
+							},
+							["name"] = "복수!",
+							["sticky"] = true,
+							["icon"] = 30357,
+							["conditions"] = {
+								["Incoming Block"] = true,
+								["Incoming Dodge"] = true,
+								["Incoming Parry"] = true,
+							},
+						}, -- [18]
+						{
+							["secondaryConditions"] = {
+								["Spell ready"] = "반격",
+							},
+							["name"] = "반격!",
+							["conditions"] = {
+								["Incoming Parry"] = true,
+							},
+							["color"] = "ffff00",
+							["sticky"] = true,
+							["icon"] = 14251,
+							["class"] = "ROGUE",
+						}, -- [19]
+						{
+							["name"] = "소용돌이치는 무기!",
+							["conditions"] = {
+								["Self buff stacks gain"] = "소용돌이치는 무기,5",
+							},
+							["color"] = "0000ff",
+							["sticky"] = true,
+							["icon"] = 51532,
+							["class"] = "SHAMAN",
+						}, -- [20]
+						{
+							["name"] = "Death Trance!!",
+							["conditions"] = {
+								["Self buff gain"] = "Death Trance!",
+							},
+							["color"] = "ff0000",
+							["sticky"] = true,
+							["icon"] = 50466,
+							["class"] = "DEATHKNIGHT",
+						}, -- [21]
+						{
+							["name"] = "혹한의 안개!",
+							["conditions"] = {
+								["Self buff gain"] = "혹한의 안개",
+							},
+							["color"] = "0000ff",
+							["sticky"] = true,
+							["icon"] = 59052,
+							["class"] = "DEATHKNIGHT",
+						}, -- [22]
+						{
+							["name"] = "도살기!",
+							["conditions"] = {
+								["Self buff gain"] = "도살기",
+							},
+							["color"] = "0000ff",
+							["sticky"] = true,
+							["icon"] = 51130,
+							["class"] = "DEATHKNIGHT",
+						}, -- [23]
+						{
+							["disabled"] = true,
+							["name"] = "룬의 일격!",
+							["sticky"] = true,
+							["color"] = "0000ff",
+							["conditions"] = {
+								["Incoming Dodge"] = true,
+								["Incoming Parry"] = true,
+							},
+							["icon"] = 56816,
+							["class"] = "DEATHKNIGHT",
+						}, -- [24]
+					},
+				},
+			},
+		},
+	},
+	["profiles"] = {
+		["Default"] = {
+			["gameHealing"] = true,
+			["totemDamage"] = false,
+			["gameDamage"] = true,
+		},
+	},
+	["account"] = {
+		["firstTimeWoW21"] = true,
+	},
+}

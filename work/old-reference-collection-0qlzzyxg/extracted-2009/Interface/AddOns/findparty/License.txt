@@ -1,0 +1,11 @@
+The original FindParty code is copyrighted 2007 by thenotfound.
+Contributions by Zimbal2 are copyrighted 2007 by Zimbal2.
+Contributions by Tycho74 are copyrighted 2008 by Tycho74.
+Contributions by 일분일초 are copyrighted 2008 by 일분일초.
+
+The current maintainer is 일분일초.
+
+This addon is distributed under the terms of the GNU General Public License
+version 3 or later.
+
+http://www.gnu.org/copyleft/gpl.html

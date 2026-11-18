@@ -1,0 +1,1301 @@
+{
+  "expectedPosts": 34,
+  "listCounts": [
+    20,
+    14
+  ],
+  "listedIDs": [
+    13140,
+    12993,
+    11218,
+    11361,
+    12610,
+    12124,
+    12174,
+    10341,
+    9880,
+    9789,
+    3461,
+    45,
+    8906,
+    8920,
+    7618,
+    7546,
+    6405,
+    4238,
+    4019,
+    4018,
+    4012,
+    2958,
+    2582,
+    2312,
+    1932,
+    1877,
+    1865,
+    1853,
+    1403,
+    1361,
+    1121,
+    1086,
+    1008,
+    546
+  ],
+  "detailParsed": 34,
+  "posts": [
+    {
+      "postID": 45,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "parsed"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 4,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 11218,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "parsed"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 2,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 2958,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 1,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 13140,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "parsed"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 8,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 12993,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 0,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 11361,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "parsed"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 4,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 12610,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 0,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 12124,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 3,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 12174,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 1,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 10341,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 0,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 9880,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 1,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 9789,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "parsed"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 1,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 3461,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "parsed"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 4,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 8906,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 2,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 8920,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 0,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 7618,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 0,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 7546,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 0,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 6405,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 1,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 4238,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 2,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 4019,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 0,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 4018,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 0,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 4012,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 0,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 2582,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "parsed"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 1,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 2312,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 0,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 1932,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "parsed"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 2,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 1877,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "parsed"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 3,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 1865,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "parsed"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 1,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 1853,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 2,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 1403,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 1,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 1361,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 5,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 1121,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 5,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 1086,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 1,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 1008,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 2,
+      "A1read": false,
+      "imageObserved": false
+    },
+    {
+      "postID": 546,
+      "state": "parsed",
+      "sections": {
+        "addonAddon": "parsed",
+        "addonVersion": "empty"
+      },
+      "iframes": {
+        "screenshot": "parsed",
+        "fileInfo": "parsed"
+      },
+      "imageRefs": 1,
+      "A1read": false,
+      "imageObserved": false
+    }
+  ],
+  "imageRefs": 58,
+  "imageDecodedRefs": 15,
+  "imageUniqueHashes": 15,
+  "imageFailures": [
+    {
+      "postID": 11218,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload2.inven.co.kr/upload/2019/03/17/bbs/thumb/n13715800082.png",
+      "viewerLiteral": "viewImage('2019/03/17/bbs/i13715800082.png');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-11218.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 11218,
+      "section": "screenshot",
+      "DOMordinal": 2,
+      "thumbURL": "https://upload2.inven.co.kr/upload/2019/03/17/bbs/thumb/n13441659684.png",
+      "viewerLiteral": "viewImage('2019/03/17/bbs/i13441659684.png');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-11218.html",
+        "selector": "screenshot img",
+        "line": 40
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 2958,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload.inven.co.kr/upload/2009/12/10/bbs/thumb/n27419179.jpg",
+      "viewerLiteral": "viewImage('2009/12/10/bbs/i27419179.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\images-2958.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 13140,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload3.inven.co.kr/upload/2026/10/16/bbs/thumb/n1501524156851826.jpg",
+      "viewerLiteral": "viewImage('2026/10/16/bbs/i1501524156851826.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-13140.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 13140,
+      "section": "screenshot",
+      "DOMordinal": 2,
+      "thumbURL": "https://upload3.inven.co.kr/upload/2026/10/16/bbs/thumb/n1053162798196619.jpg",
+      "viewerLiteral": "viewImage('2026/10/16/bbs/i1053162798196619.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-13140.html",
+        "selector": "screenshot img",
+        "line": 40
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 13140,
+      "section": "screenshot",
+      "DOMordinal": 3,
+      "thumbURL": "https://upload3.inven.co.kr/upload/2026/10/16/bbs/thumb/n1882042185546511.jpg",
+      "viewerLiteral": "viewImage('2026/10/16/bbs/i1882042185546511.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-13140.html",
+        "selector": "screenshot img",
+        "line": 47
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 13140,
+      "section": "screenshot",
+      "DOMordinal": 4,
+      "thumbURL": "https://upload3.inven.co.kr/upload/2026/10/16/bbs/thumb/n1472941816407653.jpg",
+      "viewerLiteral": "viewImage('2026/10/16/bbs/i1472941816407653.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-13140.html",
+        "selector": "screenshot img",
+        "line": 54
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 11361,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload2.inven.co.kr/upload/2019/09/05/bbs/thumb/n13332298828.jpg",
+      "viewerLiteral": "viewImage('2019/09/05/bbs/i13332298828.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-11361.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 11361,
+      "section": "screenshot",
+      "DOMordinal": 2,
+      "thumbURL": "https://upload2.inven.co.kr/upload/2019/09/08/bbs/thumb/n14702893841.png",
+      "viewerLiteral": "viewImage('2019/09/08/bbs/i14702893841.png');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-11361.html",
+        "selector": "screenshot img",
+        "line": 40
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 11361,
+      "section": "screenshot",
+      "DOMordinal": 3,
+      "thumbURL": "https://upload2.inven.co.kr/upload/2019/09/08/bbs/thumb/n15140573447.png",
+      "viewerLiteral": "viewImage('2019/09/08/bbs/i15140573447.png');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-11361.html",
+        "selector": "screenshot img",
+        "line": 47
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 11361,
+      "section": "screenshot",
+      "DOMordinal": 4,
+      "thumbURL": "https://upload2.inven.co.kr/upload/2019/09/10/bbs/thumb/n13373274081.jpg",
+      "viewerLiteral": "viewImage('2019/09/10/bbs/i13373274081.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-11361.html",
+        "selector": "screenshot img",
+        "line": 54
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 12124,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload3.inven.co.kr/upload/2020/10/20/bbs/thumb/n15567580445.jpg",
+      "viewerLiteral": "viewImage('2020/10/20/bbs/i15567580445.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-12124.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 12124,
+      "section": "screenshot",
+      "DOMordinal": 2,
+      "thumbURL": "https://upload3.inven.co.kr/upload/2020/10/20/bbs/thumb/n15496852308.jpg",
+      "viewerLiteral": "viewImage('2020/10/20/bbs/i15496852308.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-12124.html",
+        "selector": "screenshot img",
+        "line": 40
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 12124,
+      "section": "screenshot",
+      "DOMordinal": 3,
+      "thumbURL": "https://upload3.inven.co.kr/upload/2020/10/21/bbs/thumb/n13726980278.jpg",
+      "viewerLiteral": "viewImage('2020/10/21/bbs/i13726980278.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-12124.html",
+        "selector": "screenshot img",
+        "line": 47
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 12174,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload3.inven.co.kr/upload/2020/11/06/bbs/thumb/n15004589504.jpg",
+      "viewerLiteral": "viewImage('2020/11/06/bbs/i15004589504.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-12174.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 9880,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload2.inven.co.kr/upload/2016/01/22/bbs/thumb/n13980379535.jpg",
+      "viewerLiteral": "viewImage('2016/01/22/bbs/i13980379535.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-9880.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 9789,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload2.inven.co.kr/upload/2015/09/21/bbs/thumb/n12983843248.jpg",
+      "viewerLiteral": "viewImage('2015/09/21/bbs/i12983843248.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-9789.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 3461,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload.inven.co.kr/upload/2010/03/18/bbs/thumb/n74109714.jpg",
+      "viewerLiteral": "viewImage('2010/03/18/bbs/i74109714.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-3461.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 3461,
+      "section": "screenshot",
+      "DOMordinal": 2,
+      "thumbURL": "https://upload.inven.co.kr/upload/2012/09/23/bbs/thumb/n1785063732.jpg",
+      "viewerLiteral": "viewImage('2012/09/23/bbs/i1785063732.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-3461.html",
+        "selector": "screenshot img",
+        "line": 40
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 8906,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload.inven.co.kr/upload/2014/10/16/bbs/thumb/n0621236398.jpg",
+      "viewerLiteral": "viewImage('2014/10/16/bbs/i0621236398.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-8906.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 8906,
+      "section": "screenshot",
+      "DOMordinal": 2,
+      "thumbURL": "https://upload.inven.co.kr/upload/2014/10/17/bbs/thumb/n0021882965.png",
+      "viewerLiteral": "viewImage('2014/10/17/bbs/i0021882965.png');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-8906.html",
+        "selector": "screenshot img",
+        "line": 40
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 6405,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload.inven.co.kr/upload/2011/07/06/bbs/thumb/n22125184.bmp",
+      "viewerLiteral": "viewImage('2011/07/06/bbs/i22125184.bmp');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-6405.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 4238,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload.inven.co.kr/upload/2010/09/23/bbs/thumb/n26822971.jpg",
+      "viewerLiteral": "viewImage('2010/09/23/bbs/i26822971.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-4238.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 4238,
+      "section": "screenshot",
+      "DOMordinal": 2,
+      "thumbURL": "https://upload.inven.co.kr/upload/2010/09/28/bbs/thumb/n23415265.jpg",
+      "viewerLiteral": "viewImage('2010/09/28/bbs/i23415265.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-4238.html",
+        "selector": "screenshot img",
+        "line": 40
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 2582,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/s_0806_5971.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/0806_5971.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-2582.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 1932,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/s_1027_6677.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/1027_6677.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-1932.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 1932,
+      "section": "screenshot",
+      "DOMordinal": 2,
+      "thumbURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/s_1027_7738.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/1027_7738.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-1932.html",
+        "selector": "screenshot img",
+        "line": 40
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 1877,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/s_1029_9689.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/1029_9689.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-1877.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 1877,
+      "section": "screenshot",
+      "DOMordinal": 3,
+      "thumbURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/s_1029_3690.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/1029_3690.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-1877.html",
+        "selector": "screenshot img",
+        "line": 47
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 1865,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/s_1029_7212.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/1029_7212.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-1865.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 1853,
+      "section": "screenshot",
+      "DOMordinal": 2,
+      "thumbURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/s_1024_4918.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/1024_4918.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-1853.html",
+        "selector": "screenshot img",
+        "line": 40
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 1403,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/s_0421_6044.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/0421_6044.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-1403.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 1361,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/s_0414_5787.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/0414_5787.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-1361.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 1361,
+      "section": "screenshot",
+      "DOMordinal": 2,
+      "thumbURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/s_0414_4133.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/0414_4133.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-1361.html",
+        "selector": "screenshot img",
+        "line": 40
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 1361,
+      "section": "screenshot",
+      "DOMordinal": 3,
+      "thumbURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/s_0414_3243.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/0414_3243.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-1361.html",
+        "selector": "screenshot img",
+        "line": 47
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 1361,
+      "section": "screenshot",
+      "DOMordinal": 4,
+      "thumbURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/s_0414_9820.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/0414_9820.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-1361.html",
+        "selector": "screenshot img",
+        "line": 54
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 1361,
+      "section": "screenshot",
+      "DOMordinal": 5,
+      "thumbURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/s_0414_4442.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/0414_4442.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-1361.html",
+        "selector": "screenshot img",
+        "line": 61
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 1121,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/s_0324_2793.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/0324_2793.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-1121.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 1121,
+      "section": "screenshot",
+      "DOMordinal": 2,
+      "thumbURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/s_0324_7031.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/0324_7031.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-1121.html",
+        "selector": "screenshot img",
+        "line": 40
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 1121,
+      "section": "screenshot",
+      "DOMordinal": 5,
+      "thumbURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/s_0324_8270.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/0324_8270.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-1121.html",
+        "selector": "screenshot img",
+        "line": 61
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 1086,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/s_0313_4478.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/0313_4478.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-1086.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 1008,
+      "section": "screenshot",
+      "DOMordinal": 2,
+      "thumbURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/s_0226_3943.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/0226_3943.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-1008.html",
+        "selector": "screenshot img",
+        "line": 40
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 546,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/s_1019_9798.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/1019_9798.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-546.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    }
+  ],
+  "fetchFailures": [],
+  "A1readCount": null,
+  "imageObservedCount": null,
+  "cache": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg",
+  "runtime": {
+    "python": "3.12.10",
+    "bs4": "4.14.3",
+    "Pillow": "12.3.0"
+  }
+}

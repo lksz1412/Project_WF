@@ -1,0 +1,28 @@
+## Interface: 30200
+## Title: Blue Item Info 2
+## Title-koKR: |cFF669900B|cFFFFFFFFlue |cFF669900I|cFFFFFFFFtem |cFF669900I|cFFFFFFFFnfo 2|r
+## Author: Inven - InTheBlue
+## Notes: 블루의 아이템 획득 정보.
+## Version: 4.0
+## SavedVariables: BlueItemInfo2DB
+## SavedVariablesPerCharacter: BlueItemInfo2Char
+## OptionalDeps: LibItemTooltip-1.0, LibMapButton-1.1, LibDropMenu-2.0, LibRaidComm-1.0, Examiner, LudWig, InvenCraftInfo
+## X-Category: Inventory
+## X-Website: http://wow.inven.co.kr
+
+libs\LibStub\LibStub.lua
+libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
+libs\LibRaidComm-1.0\LibRaidComm-1.0.lua
+libs\LibItemTooltip-1.0\LibItemTooltip-1.0.lua
+libs\LibDropMenu-2.0\LibDropMenu-2.0.lua
+libs\LibDataBroker-1.1\LibDataBroker-1.1.lua
+libs\LibMapButton-1.1\LibMapButton-1.1.lua
+
+Core.lua
+CategoryCode.lua
+ItemDB.lua
+ItemSort.lua
+Favorite.lua
+Memo.lua
+GUI.lua
+FarmDB.lua

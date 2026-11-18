@@ -1,0 +1,119 @@
+------------------------------------------------------------------------
+r1216 | StingerSoft | 2009-08-31 23:16:03 +0000 (Mon, 31 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/GridLocale-ruRU.lua
+
+ruRU update
+------------------------------------------------------------------------
+r1215 | pettigrow | 2009-08-31 08:43:21 +0000 (Mon, 31 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/GridLocale-frFR.lua
+
+frFR Update
+------------------------------------------------------------------------
+r1214 | Sayclub | 2009-08-31 06:34:10 +0000 (Mon, 31 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/GridLocale-koKR.lua
+
+koKR update
+------------------------------------------------------------------------
+r1213 | Phanx | 2009-08-31 04:09:31 +0000 (Mon, 31 Aug 2009) | 7 lines
+Changed paths:
+   M /trunk/.pkgmeta
+   M /trunk/Grid.toc
+   M /trunk/GridCore.lua
+   M /trunk/GridFrame.lua
+   M /trunk/GridLayout.lua
+   M /trunk/GridLayoutLayouts.lua
+   M /trunk/GridLocale-deDE.lua
+   M /trunk/GridLocale-enUS.lua
+   M /trunk/GridLocale-esES.lua
+   M /trunk/GridLocale-esMX.lua
+   M /trunk/GridLocale-frFR.lua
+   M /trunk/GridLocale-koKR.lua
+   M /trunk/GridLocale-ruRU.lua
+   M /trunk/GridLocale-zhCN.lua
+   M /trunk/GridLocale-zhTW.lua
+   M /trunk/GridStatus.lua
+   M /trunk/GridStatusAuras.lua
+   M /trunk/GridStatusTarget.lua
+   M /trunk/GridStatusVehicle.lua
+   M /trunk/embeds.xml
+
+- Add CUSTOM_CLASS_COLORS support (use "Reset class colors" to update colors for existing profiles)
+- Add font outline option (ticket #164)
+- Fix layout frame remaining mouse-enabled while locked (ticket #142)
+- Change by-class layouts to arrange classes by range (always melee > melee or ranged > always ranged)
+- Remove Babble-Class, since Blizzard now gives us an API to get localized class names
+- Remove alert for missing Waterfall library, since it's not required
+- Clean up annoying whitespace inconsistencies and random semicolons of evil
+------------------------------------------------------------------------
+r1212 | Phanx | 2009-08-20 01:28:30 +0000 (Thu, 20 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/GridStatusAuras.lua
+
+- Fix ticket #129 (debuffs with the same name as their type aren't don't trigger the type status)
+------------------------------------------------------------------------
+r1210 | pastamancer | 2009-08-11 19:16:19 +0000 (Tue, 11 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/Grid.toc
+
+Prepare for tag.
+------------------------------------------------------------------------
+r1209 | pastamancer | 2009-08-11 19:11:37 +0000 (Tue, 11 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/GridLocale-enUS.lua
+   M /trunk/GridLocale-esES.lua
+   M /trunk/GridLocale-esMX.lua
+   M /trunk/GridLocale-zhCN.lua
+
+Removed old translations.
+------------------------------------------------------------------------
+r1208 | pastamancer | 2009-08-10 15:11:43 +0000 (Mon, 10 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/Grid.toc
+
+Added Waterfall-1.0 to optdeps.
+------------------------------------------------------------------------
+r1207 | trasher | 2009-08-06 20:10:55 +0000 (Thu, 06 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/GridLocale-frFR.lua
+
+frFR update
+------------------------------------------------------------------------
+r1206 | trasher | 2009-08-06 20:09:44 +0000 (Thu, 06 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/GridLocale-frFR.lua
+
+frFR update
+------------------------------------------------------------------------
+r1204 | pastamancer | 2009-08-05 17:30:49 +0000 (Wed, 05 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/Grid.toc
+
+Update toc for release.
+------------------------------------------------------------------------
+r1203 | onyxmaster | 2009-08-05 08:05:09 +0000 (Wed, 05 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/GridLocale-ruRU.lua
+
+ruRU: grammar fixes, new "25/10-player" instead of "heroic/normal" texts
+------------------------------------------------------------------------
+r1202 | lsjyzjl | 2009-07-31 09:21:45 +0000 (Fri, 31 Jul 2009) | 1 line
+Changed paths:
+   M /trunk/GridLocale-zhTW.lua
+
+zhTW typo fix
+------------------------------------------------------------------------
+r1201 | lsjyzjl | 2009-07-31 03:38:43 +0000 (Fri, 31 Jul 2009) | 1 line
+Changed paths:
+   M /trunk/GridLocale-zhTW.lua
+
+zhTW Update
+------------------------------------------------------------------------
+r1200 | sayclub | 2009-07-10 23:47:35 +0000 (Fri, 10 Jul 2009) | 1 line
+Changed paths:
+   M /trunk/GridLocale-koKR.lua
+
+koKR typo fix
+------------------------------------------------------------------------

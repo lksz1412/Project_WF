@@ -1,0 +1,787 @@
+{
+  "scope": "Step4 newly selected technical source directreads; notwholeV42bundle",
+  "files": [
+    {
+      "source": "V42 bundled static reuse",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\!DevilUI\\!DevilUI.toc",
+      "SHA256": "5559F382156E5919D14E7B2B6A71A33C76AC4F69D455A75DFD3820739302621D",
+      "lines": 14,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          14
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "identity/profile-only"
+    },
+    {
+      "source": "V42 bundled static reuse",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\!DevilUI\\load_Profile.xml",
+      "SHA256": "D513E31653A2CCA627CDD2DA4ABE34A0A52AF8ECBEE8A68733A370AC5C65C749",
+      "lines": 17,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          17
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "identity/profile-only"
+    },
+    {
+      "source": "V42 bundled static reuse",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\!DevilUI\\!DevilUI_Camelot.toc",
+      "SHA256": "5559F382156E5919D14E7B2B6A71A33C76AC4F69D455A75DFD3820739302621D",
+      "lines": 14,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          14
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "identity/profile-only"
+    },
+    {
+      "source": "V42 bundled static reuse",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\!DevilUI\\Profile\\Leatrix_Plus.lua",
+      "SHA256": "2D148AB672C8FB3AD3132F560919279BD667A0898E8F173ABCD5E427D05F012E",
+      "lines": 199,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          199
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "identity/profile-only"
+    },
+    {
+      "source": "V42 bundled static reuse",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\Leatrix_Plus\\Leatrix_Plus.toc",
+      "SHA256": "75F6A4DD5BE078AE4B74160C5492C2C326BCDE4589EE41B79E816F0F15DD01DB",
+      "lines": 27,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          27
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "identity/profile-only"
+    },
+    {
+      "source": "V42 bundled static reuse",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\Leatrix_Plus\\Leatrix_Plus.xml",
+      "SHA256": "BAF4C935D7FB7B16F52955AA0689FEA341455B1900E2B06456F7D16531AAF148",
+      "lines": 126,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          126
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "identity/profile-only"
+    },
+    {
+      "source": "V42 bundled static reuse",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\extracted-forever-v42\\Interface\\AddOns\\Leatrix_Plus\\Leatrix_Plus_Library.lua",
+      "SHA256": "B11B385AC08DD7854B9C587B9B8048EA86927857DB8E12693DA875565F004344",
+      "lines": 1437,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          1437
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "excluded-behavior; prior fullread lazydefinitions only"
+    },
+    {
+      "source": "BasicChatMods officialGitHub release v12.1.2",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\BasicChatMods.toc",
+      "SHA256": "8EBA03E73D6567D2350B8626FE963AD9F26E16FC1E1819A5A66A092B69DC60E3",
+      "lines": 64,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          64
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "BasicChatMods officialGitHub release v12.1.2",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\BasicCore.lua",
+      "SHA256": "29E40DB3FA741830C2C3558934D2381182830A2D4F5698BB68BF88278FA489B0",
+      "lines": 208,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          208
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "BasicChatMods officialGitHub release v12.1.2",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\BasicConfig.lua",
+      "SHA256": "5C9CAC96969F46CB4602263C7683D1CE99BEF814A4DB143C741F6FBC5B6201BA",
+      "lines": 852,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          852
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "BasicChatMods officialGitHub release v12.1.2",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\buttons.lua",
+      "SHA256": "56A5C8157C648967AE26299B9B1376771D61DDC9936DD3457CC003EE240F2E7D",
+      "lines": 29,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          29
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "BasicChatMods officialGitHub release v12.1.2",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\buttons_Classic.lua",
+      "SHA256": "7E09E13B6BE4320650E36FAE23F1C165625C7BE4EF39CE119F2E0F91539E1047",
+      "lines": 32,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          32
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "BasicChatMods officialGitHub release v12.1.2",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\editbox.lua",
+      "SHA256": "294E9A33C06402E9194F8319593CDD7DE6E293D022A26BBE135BA6CEBEA44A2F",
+      "lines": 30,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          30
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "BasicChatMods officialGitHub release v12.1.2",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\font.lua",
+      "SHA256": "2F7722774ABA2F209AFCEABE436A8ED74CA1DDA793181D64BEF2A0235CB4FAC5",
+      "lines": 23,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          23
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "BasicChatMods officialGitHub release v12.1.2",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\resize.lua",
+      "SHA256": "11DD73213676EE5649CAA6FB583EC5C26A2E0F58494E622C056FF0025AB4C1D4",
+      "lines": 18,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          18
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "BasicChatMods officialGitHub release v12.1.2",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\scrolldown.lua",
+      "SHA256": "B256B07631A09FC0A75999369A85BA461BCD555B095D377C7A8BF96820254AA1",
+      "lines": 32,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          32
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "BasicChatMods officialGitHub release v12.1.2",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\history.lua",
+      "SHA256": "1DCAC5C42D91B324FFC73CD1E2290672463DADD1C8997F7157B12D4B3CBD7656",
+      "lines": 108,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          108
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "BasicChatMods officialGitHub release v12.1.2",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\sticky.lua",
+      "SHA256": "0A7EAC28A2D3F7A5BC8725D6D8C6C70FE45E914C9BAA16E52A5D51C4AF3432D2",
+      "lines": 23,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          23
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "BasicChatMods officialGitHub release v12.1.2",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\fade.lua",
+      "SHA256": "08C5F065401B5F7197DC2B9C91754056F1B9CF5DB3FA465CCACF071F9377D674",
+      "lines": 197,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          197
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "BasicChatMods officialGitHub release v12.1.2",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-bcm-v12.1.2-release\\BasicChatMods\\fade_Classic.lua",
+      "SHA256": "1725F492052ADF4664EC032662F44C7C84A62B0573B83C7108B570AAB5C00368",
+      "lines": 197,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          197
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "Glass official v1.1.6-forever tag b1c9309",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\README.md",
+      "SHA256": "F83AD2B93DA7B4B9F5546779BCCC6A744F9826F685659AB794D767B30E5F88F3",
+      "lines": 49,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          49
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "Glass official v1.1.6-forever tag b1c9309",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\LATEST.md",
+      "SHA256": "7150180DE72C5C93893F5CA200C28E1C109DA8F0C5BC6CA1C3D20038CB0A1461",
+      "lines": 5,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          5
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "Glass official v1.1.6-forever tag b1c9309",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass.toc",
+      "SHA256": "C4BB837C1DFB1D94101BF6772D77CF6B6D02A93E6A555B93F5BA301FEF8BAEF6",
+      "lines": 64,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          64
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "Glass official v1.1.6-forever tag b1c9309",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\init.lua",
+      "SHA256": "9A57DEB95F7EBC4C54E0CA3D7C5F3EFB55A766EC157A19724BC26EAC49C4450C",
+      "lines": 198,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          198
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "Glass official v1.1.6-forever tag b1c9309",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\constants.lua",
+      "SHA256": "B49B6C62D0E144ABC9893185B788DDB4E165BE048C22FE61A365BAEA245FBEB8",
+      "lines": 87,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          87
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "Glass official v1.1.6-forever tag b1c9309",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\utils.lua",
+      "SHA256": "606E637AA80304960C857AC110E7930F0C90FFA879F646F627A7C6723E249859",
+      "lines": 99,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          99
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "Glass official v1.1.6-forever tag b1c9309",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Modules\\UIManager.lua",
+      "SHA256": "D1107DC340A3862B99900F09E07BF317B2E7A9B1B022EB22D1CDBBE126AAE77B",
+      "lines": 1185,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          1185
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "Glass official v1.1.6-forever tag b1c9309",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source\\NelsonAbrantes-Glass-Forever-b1c9309\\Glass\\Modules\\DefaultTabs.lua",
+      "SHA256": "B52C05FAE89F5D0A63B885F6F311B3F3F76FA46DCA483559ACF3C3438F9D8164",
+      "lines": 189,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          189
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "Prat official 3.9.117 release 3b02cf8",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Prat-3.0.toc",
+      "SHA256": "4E0AAC2E8DBA1EC32415E627295E6086D064E5728A877C2E11611BFC9ADCEFFC",
+      "lines": 47,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          47
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "Prat official 3.9.117 release 3b02cf8",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\addon\\includes.xml",
+      "SHA256": "5521A746684AB4707D1177F493291012B16D8B7AC4EBF9FFC9F5AC7EA8E96437",
+      "lines": 8,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          8
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "Prat official 3.9.117 release 3b02cf8",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\services\\includes.xml",
+      "SHA256": "63E7BF0DE5405D4BB945CD220B4A6308CA71FA8D409E405E7FB64DEC2EEC0A01",
+      "lines": 13,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          13
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "Prat official 3.9.117 release 3b02cf8",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\includes.xml",
+      "SHA256": "F31364E47C4EC6FDB648CA7A78EAE7B88E6FB8FD96D1F93A50D1E57B071507C5",
+      "lines": 51,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          51
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "Prat official 3.9.117 release 3b02cf8",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\Libs.xml",
+      "SHA256": "0055D2F8B2061583CB2636962095F3031D26C92C985EA567FFA4480B84AAA985",
+      "lines": 22,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          22
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "Prat official 3.9.117 release 3b02cf8",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\fonts\\includes.xml",
+      "SHA256": "077BED06AAC89CEA3EFECD98ACAD13EE48BFACE862C9CE64724086BDB9EA51BB",
+      "lines": 4,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          4
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "Prat official 3.9.117 release 3b02cf8",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\fonts\\fonts.lua",
+      "SHA256": "D816B450C5710761235714C67781FE92EA29B449B825C482D4BD5799E0503D71",
+      "lines": 26,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          26
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "Prat official 3.9.117 release 3b02cf8",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\addon\\addon.lua",
+      "SHA256": "EC37EC12AEB87FBEE92C925C4B4CD58E77476DC2A039E4572362E8E705CB7A35",
+      "lines": 853,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          853
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "Prat official 3.9.117 release 3b02cf8",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\addon\\MessageEventHandler.lua",
+      "SHA256": "1FB2A9852BAC4C20E1D4EF320C172CAA731FA9EFE5858D8FE780127B646515E9",
+      "lines": 246,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          246
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "Prat official 3.9.117 release 3b02cf8",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\addon\\modules.lua",
+      "SHA256": "E0C50157B41FC3147FB81A614C7B8950E0EFF8AE57C283E4BE7F3CB72F1456A9",
+      "lines": 316,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          316
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "Prat official 3.9.117 release 3b02cf8",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\addon\\options.lua",
+      "SHA256": "17FF4C2E5D24B886AAF10D83AE80D95D9AEDDDC4A2D4DB9307DB3932328ED1E2",
+      "lines": 178,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          178
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "Prat official 3.9.117 release 3b02cf8",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\addon\\profileAPI.lua",
+      "SHA256": "2D61691887F5BB0D3D8BC77A4ED5B362A09560D458E8F16A757F2D5DB9C0DEBD",
+      "lines": 39,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          39
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "Prat official 3.9.117 release 3b02cf8",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Buttons.lua",
+      "SHA256": "C1E35A73E2D177717E96D157A57BC523B196521C16CC5EEA8025894A56BF4BB4",
+      "lines": 445,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          445
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "Prat official 3.9.117 release 3b02cf8",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\ChatTabs.lua",
+      "SHA256": "FB6C89AB50E49BD9BA63C1259D9129690682F1CA5FDE2F1AC91A3FAC33707C7C",
+      "lines": 598,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          598
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "Prat official 3.9.117 release 3b02cf8",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Editbox.lua",
+      "SHA256": "5E2C39DE4139FF1AD77842520594C9425D485144D21664963050C1369BB8E6F3",
+      "lines": 646,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          646
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "Prat official 3.9.117 release 3b02cf8",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\Font.lua",
+      "SHA256": "72E0B4D91227D646156E9F1FC6C099346BE1AB61532CD2E1DFCA2C025B533DB7",
+      "lines": 330,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          330
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "Prat official 3.9.117 release 3b02cf8",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\ChatFrames.lua",
+      "SHA256": "B26224C2A98FC5D8E04B9409874E38962F34DD547AD60627F5E67AD2440A82D0",
+      "lines": 335,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          335
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    },
+    {
+      "source": "Prat official 3.9.117 release 3b02cf8",
+      "path": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release\\Prat-3.0\\modules\\History.lua",
+      "SHA256": "2697632E605BFF6D153170CA06CC1906602BA54220ECDF35509BF1968A718F33",
+      "lines": 283,
+      "readFull": true,
+      "encoding": "utf-8-sig",
+      "sourceExecution": false,
+      "readRanges": [
+        [
+          1,
+          283
+        ]
+      ],
+      "sourceExecuted": false,
+      "independentReviewUse": "cited-static-mechanism"
+    }
+  ]
+}

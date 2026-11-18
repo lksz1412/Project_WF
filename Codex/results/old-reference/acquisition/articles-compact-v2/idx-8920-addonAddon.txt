@@ -1,0 +1,71 @@
+데빌 사용자분들중 아직 일부 패치를 못받은분들에 한해
+
+사용하시라 올립니다.
+
+제작자분이 나타나길 빌면서...
+
+
+
+내용물
+
+
+
+Ara_Broker_Guild_Friends
+
+BlueItemInfo3
+
+BlueItemLink
+
+Broker_XPBar
+
+ChocolateBar
+
+Dominos
+
+FairComboPoints2
+
+GTFO
+
+InvenRaidFrames3
+
+kgPanels
+
+Mapster
+
+Masque
+
+Masque_Onyx
+
+OmniCC
+
+PitBull4
+
+Postal
+
+QuestPointer
+
+RangeDisplay
+
+StrataFix
+
+TipTac
+
+tullaRange
+
+XLoot
+
+
+
+현재 6.0.2버젼에 맞춰서 인벤애드온 자료실과
+
+http://www.curse.com 에서 찾아 모아둔것입니다.
+
+
+
+PitBull4의 경우 위치를 직접 변경해야하는 번거로움이 있습니다.
+
+데빌 사용자분들 예비로 쓰시고 새로운게 올라오면 바로 삭제 하도록하겠습니다.
+
+
+
+이외 일부 애드온은 구버젼 체크해서 사용중입니다.

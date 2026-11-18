@@ -1,0 +1,2604 @@
+{
+  "schema": "old-devil-layout/1",
+  "state": "A1_DESIGN_NOT_RENDERED",
+  "canvas": {
+    "width": 3840,
+    "height": 2160,
+    "units": "physicalrasterpixels",
+    "origin": "top-left",
+    "boundsConvention": "XYWH,rightbottomexclusive",
+    "assumption": "offline4Kproposal,notobservedcurrentclient",
+    "actualGameResolution": null,
+    "actualGameUIscale": null
+  },
+  "sourceRoleMap": "source-role-map.json",
+  "sourceSettings": "source-settings-evidence.json",
+  "proposedGeometry": "proposed-geometry.json",
+  "assetManifest": "asset-manifest.json",
+  "tokens": {
+    "actionOuterPx": 80,
+    "actionIconPx": 64,
+    "actionIconInsetPx": 8,
+    "actionGapPx": 2,
+    "panelHeightPx": 304,
+    "panelPaddingPx": 8,
+    "sharedSeamPx": 2,
+    "outerHorizontalRulePx": 1,
+    "blackRailHeightPx": 16,
+    "menuHeightPx": 36,
+    "menuCellWidthPx": 52,
+    "menuGapPx": 2,
+    "bottomMarginPx": 8,
+    "statusHeightPx": 28,
+    "chatFontPx": 28,
+    "chatLinePitchPx": 32,
+    "keyFontPx": 24,
+    "unitFontPx": 24,
+    "statusFontPx": 22,
+    "smallCaptionFontPx": 28,
+    "foreground": "#D8D8D8",
+    "keyForeground": "#F0F0F0",
+    "seam": "#909294",
+    "blackRail": "#08090A",
+    "panelBase": "#050607",
+    "contextTop": "#242C30",
+    "contextBottom": "#384047",
+    "iconPalette": [
+      "#3C5260",
+      "#66533B",
+      "#3E5846",
+      "#643E3D",
+      "#4E4565",
+      "#425C5B"
+    ],
+    "healthSample": "#4E8055",
+    "manaSample": "#476B99",
+    "unitEmpty": "#121518"
+  },
+  "buttonStyle": {
+    "outerSizePx": 80,
+    "iconSizePx": 64,
+    "iconInsetPx": 8,
+    "sourceComponentEvidence": "AlphaMasque_Onyx/Onyx.lua20-28/45-49/66-70:backdrop/normal/gloss40vsicon32",
+    "sourceComponentsAreHistoricalUnits": true,
+    "layersBackToFront": [
+      "onyx-backdrop-full80",
+      "neutralplaceholder-icon64",
+      "onyx-normal-full80",
+      "onyx-gloss-full80",
+      "hotkeylabel24-withblack2pxstroke"
+    ],
+    "backdropAsset": "button-backdrop",
+    "normalAsset": "button-onyx-normal",
+    "glossAsset": "button-gloss",
+    "normalMode": "Onyx,notRedux/OnyxClassicfrom2022",
+    "sampleIcon": "neutraldiagonalgeometrytile6mutedpalettes;notrealspelltexture",
+    "keyFontAsset": "font-body",
+    "keyFontSizePx": 24,
+    "keyColor": "#F0F0F0",
+    "keyShadowColor": "#000000",
+    "keyTextInsetPx": 4,
+    "noAutoFit": true,
+    "keyStrokePx": 2,
+    "keyStrokeColor": "#000000"
+  },
+  "actionGroups": [
+    {
+      "id": "center",
+      "roleID": "actions-center-grid",
+      "origin": [
+        1932,
+        1828
+      ],
+      "columns": 8,
+      "rows": 3,
+      "cellSize": [
+        80,
+        80
+      ],
+      "gap": [
+        2,
+        2
+      ],
+      "count": 24,
+      "countStatus": "NEWproposal matchingapprox8x3observation andAlpha two4x3structure"
+    },
+    {
+      "id": "long",
+      "roleID": "actions-long-upper",
+      "origin": [
+        445,
+        1724
+      ],
+      "columns": 36,
+      "rows": 1,
+      "cellSize": [
+        80,
+        80
+      ],
+      "gap": [
+        2,
+        2
+      ],
+      "count": 36,
+      "countStatus": "NEWproposal;AlphaWide1/5/6each12;exactphoto countunknown"
+    },
+    {
+      "id": "helper",
+      "roleID": "actions-short-helper",
+      "origin": [
+        760,
+        1636
+      ],
+      "columns": 8,
+      "rows": 1,
+      "cellSize": [
+        80,
+        80
+      ],
+      "gap": [
+        2,
+        2
+      ],
+      "count": 8,
+      "countStatus": "NEWshortrowproposal;actualspell/classmembershipunknown"
+    }
+  ],
+  "buttonCells": [
+    {
+      "id": "center-1",
+      "groupID": "center",
+      "roleID": "actions-center-grid",
+      "xywh": [
+        1932,
+        1828,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        1940,
+        1836,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        1936,
+        1831,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "1",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 0
+    },
+    {
+      "id": "center-2",
+      "groupID": "center",
+      "roleID": "actions-center-grid",
+      "xywh": [
+        2014,
+        1828,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2022,
+        1836,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2018,
+        1831,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "2",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 1
+    },
+    {
+      "id": "center-3",
+      "groupID": "center",
+      "roleID": "actions-center-grid",
+      "xywh": [
+        2096,
+        1828,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2104,
+        1836,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2100,
+        1831,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "3",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 2
+    },
+    {
+      "id": "center-4",
+      "groupID": "center",
+      "roleID": "actions-center-grid",
+      "xywh": [
+        2178,
+        1828,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2186,
+        1836,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2182,
+        1831,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "4",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 3
+    },
+    {
+      "id": "center-5",
+      "groupID": "center",
+      "roleID": "actions-center-grid",
+      "xywh": [
+        2260,
+        1828,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2268,
+        1836,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2264,
+        1831,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "5",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 4
+    },
+    {
+      "id": "center-6",
+      "groupID": "center",
+      "roleID": "actions-center-grid",
+      "xywh": [
+        2342,
+        1828,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2350,
+        1836,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2346,
+        1831,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "6",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 5
+    },
+    {
+      "id": "center-7",
+      "groupID": "center",
+      "roleID": "actions-center-grid",
+      "xywh": [
+        2424,
+        1828,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2432,
+        1836,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2428,
+        1831,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "7",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 0
+    },
+    {
+      "id": "center-8",
+      "groupID": "center",
+      "roleID": "actions-center-grid",
+      "xywh": [
+        2506,
+        1828,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2514,
+        1836,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2510,
+        1831,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "8",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 1
+    },
+    {
+      "id": "center-9",
+      "groupID": "center",
+      "roleID": "actions-center-grid",
+      "xywh": [
+        1932,
+        1910,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        1940,
+        1918,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        1936,
+        1913,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "Q",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 2
+    },
+    {
+      "id": "center-10",
+      "groupID": "center",
+      "roleID": "actions-center-grid",
+      "xywh": [
+        2014,
+        1910,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2022,
+        1918,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2018,
+        1913,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "E",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 3
+    },
+    {
+      "id": "center-11",
+      "groupID": "center",
+      "roleID": "actions-center-grid",
+      "xywh": [
+        2096,
+        1910,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2104,
+        1918,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2100,
+        1913,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "R",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 4
+    },
+    {
+      "id": "center-12",
+      "groupID": "center",
+      "roleID": "actions-center-grid",
+      "xywh": [
+        2178,
+        1910,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2186,
+        1918,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2182,
+        1913,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "F",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 5
+    },
+    {
+      "id": "center-13",
+      "groupID": "center",
+      "roleID": "actions-center-grid",
+      "xywh": [
+        2260,
+        1910,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2268,
+        1918,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2264,
+        1913,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "C-1",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 0
+    },
+    {
+      "id": "center-14",
+      "groupID": "center",
+      "roleID": "actions-center-grid",
+      "xywh": [
+        2342,
+        1910,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2350,
+        1918,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2346,
+        1913,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "S-1",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 1
+    },
+    {
+      "id": "center-15",
+      "groupID": "center",
+      "roleID": "actions-center-grid",
+      "xywh": [
+        2424,
+        1910,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2432,
+        1918,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2428,
+        1913,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "A-1",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 2
+    },
+    {
+      "id": "center-16",
+      "groupID": "center",
+      "roleID": "actions-center-grid",
+      "xywh": [
+        2506,
+        1910,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2514,
+        1918,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2510,
+        1913,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "C-S-1",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 3
+    },
+    {
+      "id": "center-17",
+      "groupID": "center",
+      "roleID": "actions-center-grid",
+      "xywh": [
+        1932,
+        1992,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        1940,
+        2000,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        1936,
+        1995,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "1",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 4
+    },
+    {
+      "id": "center-18",
+      "groupID": "center",
+      "roleID": "actions-center-grid",
+      "xywh": [
+        2014,
+        1992,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2022,
+        2000,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2018,
+        1995,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "2",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 5
+    },
+    {
+      "id": "center-19",
+      "groupID": "center",
+      "roleID": "actions-center-grid",
+      "xywh": [
+        2096,
+        1992,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2104,
+        2000,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2100,
+        1995,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "3",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 0
+    },
+    {
+      "id": "center-20",
+      "groupID": "center",
+      "roleID": "actions-center-grid",
+      "xywh": [
+        2178,
+        1992,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2186,
+        2000,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2182,
+        1995,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "4",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 1
+    },
+    {
+      "id": "center-21",
+      "groupID": "center",
+      "roleID": "actions-center-grid",
+      "xywh": [
+        2260,
+        1992,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2268,
+        2000,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2264,
+        1995,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "5",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 2
+    },
+    {
+      "id": "center-22",
+      "groupID": "center",
+      "roleID": "actions-center-grid",
+      "xywh": [
+        2342,
+        1992,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2350,
+        2000,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2346,
+        1995,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "6",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 3
+    },
+    {
+      "id": "center-23",
+      "groupID": "center",
+      "roleID": "actions-center-grid",
+      "xywh": [
+        2424,
+        1992,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2432,
+        2000,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2428,
+        1995,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "7",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 4
+    },
+    {
+      "id": "center-24",
+      "groupID": "center",
+      "roleID": "actions-center-grid",
+      "xywh": [
+        2506,
+        1992,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2514,
+        2000,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2510,
+        1995,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "8",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 5
+    },
+    {
+      "id": "long-1",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        445,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        453,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        449,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "1",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 0
+    },
+    {
+      "id": "long-2",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        527,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        535,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        531,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "2",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 1
+    },
+    {
+      "id": "long-3",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        609,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        617,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        613,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "3",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 2
+    },
+    {
+      "id": "long-4",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        691,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        699,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        695,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "4",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 3
+    },
+    {
+      "id": "long-5",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        773,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        781,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        777,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "5",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 4
+    },
+    {
+      "id": "long-6",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        855,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        863,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        859,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "6",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 5
+    },
+    {
+      "id": "long-7",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        937,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        945,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        941,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "7",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 0
+    },
+    {
+      "id": "long-8",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        1019,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        1027,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        1023,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "8",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 1
+    },
+    {
+      "id": "long-9",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        1101,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        1109,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        1105,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "Q",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 2
+    },
+    {
+      "id": "long-10",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        1183,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        1191,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        1187,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "E",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 3
+    },
+    {
+      "id": "long-11",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        1265,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        1273,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        1269,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "R",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 4
+    },
+    {
+      "id": "long-12",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        1347,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        1355,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        1351,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "F",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 5
+    },
+    {
+      "id": "long-13",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        1429,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        1437,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        1433,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "C-1",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 0
+    },
+    {
+      "id": "long-14",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        1511,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        1519,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        1515,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "S-1",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 1
+    },
+    {
+      "id": "long-15",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        1593,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        1601,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        1597,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "A-1",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 2
+    },
+    {
+      "id": "long-16",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        1675,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        1683,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        1679,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "C-S-1",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 3
+    },
+    {
+      "id": "long-17",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        1757,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        1765,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        1761,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "1",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 4
+    },
+    {
+      "id": "long-18",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        1839,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        1847,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        1843,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "2",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 5
+    },
+    {
+      "id": "long-19",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        1921,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        1929,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        1925,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "3",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 0
+    },
+    {
+      "id": "long-20",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        2003,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2011,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2007,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "4",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 1
+    },
+    {
+      "id": "long-21",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        2085,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2093,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2089,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "5",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 2
+    },
+    {
+      "id": "long-22",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        2167,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2175,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2171,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "6",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 3
+    },
+    {
+      "id": "long-23",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        2249,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2257,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2253,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "7",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 4
+    },
+    {
+      "id": "long-24",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        2331,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2339,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2335,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "8",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 5
+    },
+    {
+      "id": "long-25",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        2413,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2421,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2417,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "Q",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 0
+    },
+    {
+      "id": "long-26",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        2495,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2503,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2499,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "E",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 1
+    },
+    {
+      "id": "long-27",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        2577,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2585,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2581,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "R",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 2
+    },
+    {
+      "id": "long-28",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        2659,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2667,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2663,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "F",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 3
+    },
+    {
+      "id": "long-29",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        2741,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2749,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2745,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "C-1",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 4
+    },
+    {
+      "id": "long-30",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        2823,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2831,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2827,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "S-1",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 5
+    },
+    {
+      "id": "long-31",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        2905,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2913,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2909,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "A-1",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 0
+    },
+    {
+      "id": "long-32",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        2987,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        2995,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        2991,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "C-S-1",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 1
+    },
+    {
+      "id": "long-33",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        3069,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        3077,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        3073,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "1",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 2
+    },
+    {
+      "id": "long-34",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        3151,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        3159,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        3155,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "2",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 3
+    },
+    {
+      "id": "long-35",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        3233,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        3241,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        3237,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "3",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 4
+    },
+    {
+      "id": "long-36",
+      "groupID": "long",
+      "roleID": "actions-long-upper",
+      "xywh": [
+        3315,
+        1724,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        3323,
+        1732,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        3319,
+        1727,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "4",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 5
+    },
+    {
+      "id": "helper-1",
+      "groupID": "helper",
+      "roleID": "actions-short-helper",
+      "xywh": [
+        760,
+        1636,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        768,
+        1644,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        764,
+        1639,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "1",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 0
+    },
+    {
+      "id": "helper-2",
+      "groupID": "helper",
+      "roleID": "actions-short-helper",
+      "xywh": [
+        842,
+        1636,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        850,
+        1644,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        846,
+        1639,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "2",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 1
+    },
+    {
+      "id": "helper-3",
+      "groupID": "helper",
+      "roleID": "actions-short-helper",
+      "xywh": [
+        924,
+        1636,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        932,
+        1644,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        928,
+        1639,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "3",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 2
+    },
+    {
+      "id": "helper-4",
+      "groupID": "helper",
+      "roleID": "actions-short-helper",
+      "xywh": [
+        1006,
+        1636,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        1014,
+        1644,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        1010,
+        1639,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "4",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 3
+    },
+    {
+      "id": "helper-5",
+      "groupID": "helper",
+      "roleID": "actions-short-helper",
+      "xywh": [
+        1088,
+        1636,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        1096,
+        1644,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        1092,
+        1639,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 4
+    },
+    {
+      "id": "helper-6",
+      "groupID": "helper",
+      "roleID": "actions-short-helper",
+      "xywh": [
+        1170,
+        1636,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        1178,
+        1644,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        1174,
+        1639,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 5
+    },
+    {
+      "id": "helper-7",
+      "groupID": "helper",
+      "roleID": "actions-short-helper",
+      "xywh": [
+        1252,
+        1636,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        1260,
+        1644,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        1256,
+        1639,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 0
+    },
+    {
+      "id": "helper-8",
+      "groupID": "helper",
+      "roleID": "actions-short-helper",
+      "xywh": [
+        1334,
+        1636,
+        80,
+        80
+      ],
+      "iconXYWH": [
+        1342,
+        1644,
+        64,
+        64
+      ],
+      "keyLabelBox": [
+        1338,
+        1639,
+        72,
+        28
+      ],
+      "sampleKeyLabel": "",
+      "actualBinding": null,
+      "actualAction": null,
+      "iconSampleIndex": 1
+    }
+  ],
+  "elements": [
+    {
+      "id": "world-context",
+      "kind": "neutral-gradient",
+      "xywh": [
+        0,
+        0,
+        3840,
+        2160
+      ],
+      "z": 0,
+      "colorTop": "#242C30",
+      "colorBottom": "#384047",
+      "notGameCapture": true
+    },
+    {
+      "id": "proposal-label",
+      "kind": "text",
+      "xywh": [
+        24,
+        20,
+        500,
+        40
+      ],
+      "z": 100,
+      "text": "배치 미리보기",
+      "fontSizePx": 28,
+      "color": "#D8D8D8",
+      "fontAsset": "font-body",
+      "meaning": "offlineproposal identification, notgameoverlay"
+    },
+    {
+      "id": "chat-left-one",
+      "kind": "native-chat-role-placeholder",
+      "xywh": [
+        0,
+        1820,
+        960,
+        304
+      ],
+      "z": 10,
+      "roleID": "chat-left-one",
+      "fillRGB": "#000000",
+      "alphaTop": 0.7,
+      "alphaBottom": 0.42,
+      "channelAssignment": null,
+      "nativeFrameID": null,
+      "filters": "PRESERVE_CURRENT_AT_FUTURE_IMPLEMENTATION",
+      "inputEngine": "native",
+      "titleBarInRest": false,
+      "leftButtonBankInRest": false,
+      "largeEditOrnamentInRest": false,
+      "transcriptViewport": [
+        12,
+        1836,
+        936,
+        224
+      ],
+      "inputReservedBox": [
+        8,
+        2080,
+        944,
+        36
+      ],
+      "fontAsset": "font-body",
+      "fontSizePx": 28,
+      "linePitchPx": 32,
+      "sampleLines": [
+        "대화 내용 미리보기",
+        "대화창의 글자 크기 확인"
+      ],
+      "sampleLineMeaning": "inventedneutralpreviewtext, notcurrentchat/channelconfiguration"
+    },
+    {
+      "id": "chat-left-two",
+      "kind": "native-chat-role-placeholder",
+      "xywh": [
+        962,
+        1820,
+        960,
+        304
+      ],
+      "z": 10,
+      "roleID": "chat-left-two",
+      "fillRGB": "#000000",
+      "alphaTop": 0.7,
+      "alphaBottom": 0.42,
+      "channelAssignment": null,
+      "nativeFrameID": null,
+      "filters": "PRESERVE_CURRENT_AT_FUTURE_IMPLEMENTATION",
+      "inputEngine": "native",
+      "titleBarInRest": false,
+      "leftButtonBankInRest": false,
+      "largeEditOrnamentInRest": false,
+      "transcriptViewport": [
+        974,
+        1836,
+        936,
+        224
+      ],
+      "inputReservedBox": [
+        970,
+        2080,
+        944,
+        36
+      ],
+      "fontAsset": "font-body",
+      "fontSizePx": 28,
+      "linePitchPx": 32,
+      "sampleLines": [],
+      "sampleLineMeaning": "inventedneutralpreviewtext, notcurrentchat/channelconfiguration"
+    },
+    {
+      "id": "chat-right-three",
+      "kind": "native-chat-role-placeholder",
+      "xywh": [
+        2902,
+        1820,
+        938,
+        304
+      ],
+      "z": 10,
+      "roleID": "chat-right-three",
+      "fillRGB": "#000000",
+      "alphaTop": 0.7,
+      "alphaBottom": 0.42,
+      "channelAssignment": null,
+      "nativeFrameID": null,
+      "filters": "PRESERVE_CURRENT_AT_FUTURE_IMPLEMENTATION",
+      "inputEngine": "native",
+      "titleBarInRest": false,
+      "leftButtonBankInRest": false,
+      "largeEditOrnamentInRest": false,
+      "transcriptViewport": [
+        2914,
+        1836,
+        914,
+        224
+      ],
+      "inputReservedBox": [
+        2910,
+        2080,
+        922,
+        36
+      ],
+      "fontAsset": "font-body",
+      "fontSizePx": 28,
+      "linePitchPx": 32,
+      "sampleLines": [],
+      "sampleLineMeaning": "inventedneutralpreviewtext, notcurrentchat/channelconfiguration"
+    },
+    {
+      "id": "actions-center-grid-backing",
+      "kind": "rect",
+      "xywh": [
+        1924,
+        1820,
+        670,
+        304
+      ],
+      "z": 10,
+      "fill": "#090B0D",
+      "alpha": 0.88,
+      "roleID": "actions-center-grid"
+    },
+    {
+      "id": "minimap-square-lower-backing",
+      "kind": "rect",
+      "xywh": [
+        2596,
+        1820,
+        304,
+        304
+      ],
+      "z": 10,
+      "fill": "#090B0D",
+      "alpha": 0.88,
+      "roleID": "minimap-square-lower"
+    },
+    {
+      "id": "band-top-rule",
+      "kind": "rect",
+      "xywh": [
+        0,
+        1820,
+        3840,
+        1
+      ],
+      "z": 25,
+      "fill": "#909294",
+      "alpha": 1
+    },
+    {
+      "id": "band-bottom-rule",
+      "kind": "rect",
+      "xywh": [
+        0,
+        2123,
+        3840,
+        1
+      ],
+      "z": 25,
+      "fill": "#909294",
+      "alpha": 1
+    },
+    {
+      "id": "module-seam-1",
+      "kind": "rect",
+      "xywh": [
+        960,
+        1820,
+        2,
+        304
+      ],
+      "z": 25,
+      "fill": "#909294",
+      "alpha": 1
+    },
+    {
+      "id": "module-seam-2",
+      "kind": "rect",
+      "xywh": [
+        1922,
+        1820,
+        2,
+        304
+      ],
+      "z": 25,
+      "fill": "#909294",
+      "alpha": 1
+    },
+    {
+      "id": "module-seam-3",
+      "kind": "rect",
+      "xywh": [
+        2594,
+        1820,
+        2,
+        304
+      ],
+      "z": 25,
+      "fill": "#909294",
+      "alpha": 1
+    },
+    {
+      "id": "module-seam-4",
+      "kind": "rect",
+      "xywh": [
+        2900,
+        1820,
+        2,
+        304
+      ],
+      "z": 25,
+      "fill": "#909294",
+      "alpha": 1
+    },
+    {
+      "id": "black-crossrail",
+      "kind": "rect",
+      "xywh": [
+        0,
+        1804,
+        3840,
+        16
+      ],
+      "z": 30,
+      "fill": "#08090A",
+      "alpha": 1,
+      "roleID": "rail-black"
+    },
+    {
+      "id": "center-action-cells",
+      "kind": "button-grid",
+      "xywh": [
+        1932,
+        1828,
+        654,
+        244
+      ],
+      "z": 40,
+      "roleID": "actions-center-grid",
+      "groupID": "center"
+    },
+    {
+      "id": "long-action-cells",
+      "kind": "button-grid",
+      "xywh": [
+        445,
+        1724,
+        2950,
+        80
+      ],
+      "z": 40,
+      "roleID": "actions-long-upper",
+      "groupID": "long"
+    },
+    {
+      "id": "helper-action-cells",
+      "kind": "button-grid",
+      "xywh": [
+        760,
+        1636,
+        654,
+        80
+      ],
+      "z": 40,
+      "roleID": "actions-short-helper",
+      "groupID": "helper"
+    },
+    {
+      "id": "small-menu-controls",
+      "kind": "compact-menu-placeholder",
+      "xywh": [
+        1936,
+        2080,
+        646,
+        36
+      ],
+      "z": 40,
+      "roleID": "menu-short",
+      "count": 12,
+      "cellSize": [
+        52,
+        36
+      ],
+      "gap": 2,
+      "contents": "neutralcompactglyphsonly;noactualmenu/bag/actionassignment",
+      "fontSizePx": 22
+    },
+    {
+      "id": "square-map-frame",
+      "kind": "square-map-placeholder",
+      "xywh": [
+        2596,
+        1820,
+        304,
+        304
+      ],
+      "z": 40,
+      "roleID": "minimap-square-lower",
+      "borderPx": 2,
+      "borderColor": "#909294",
+      "interiorXYWH": [
+        2600,
+        1824,
+        296,
+        296
+      ],
+      "fill": "#25302C",
+      "textureContent": "emptyneutralmapgrid,nogeographic/currentlocationdata",
+      "label": "미니맵",
+      "fontAsset": "font-body",
+      "fontSizePx": 24,
+      "smallRoundControl": {
+        "xywh": [
+          2584,
+          1810,
+          24,
+          24
+        ],
+        "fill": "#53595B",
+        "border": "#909294",
+        "meaning": "source-visibleprotrudingcontrolplaceholder,noaction"
+      }
+    },
+    {
+      "id": "unit-upper",
+      "kind": "unit-role-placeholder",
+      "xywh": [
+        1080,
+        1440,
+        390,
+        72
+      ],
+      "z": 40,
+      "roleID": "unit-upper",
+      "label": "캐릭터",
+      "fontAsset": "font-body",
+      "fontSizePx": 24,
+      "borderPx": 1,
+      "borderColor": "#909294",
+      "fill": "#121518",
+      "healthBar": [
+        1084,
+        1470,
+        382,
+        22
+      ],
+      "manaBar": [
+        1084,
+        1494,
+        382,
+        14
+      ],
+      "healthColor": "#4E8055",
+      "manaColor": "#476B99",
+      "sampleFillFraction": 0.72,
+      "realCharacterOrStats": null,
+      "numericValuesShown": false,
+      "fillFractionMeaning": "illustrativepreviewonly,notactualgamevalue"
+    },
+    {
+      "id": "unit-lower",
+      "kind": "unit-role-placeholder",
+      "xywh": [
+        916,
+        1536,
+        554,
+        84
+      ],
+      "z": 40,
+      "roleID": "unit-lower",
+      "label": "대상",
+      "fontAsset": "font-body",
+      "fontSizePx": 24,
+      "borderPx": 1,
+      "borderColor": "#909294",
+      "fill": "#121518",
+      "healthBar": [
+        920,
+        1566,
+        546,
+        22
+      ],
+      "manaBar": [
+        920,
+        1590,
+        546,
+        26
+      ],
+      "healthColor": "#4E8055",
+      "manaColor": "#476B99",
+      "sampleFillFraction": 0.72,
+      "realCharacterOrStats": null,
+      "numericValuesShown": false,
+      "fillFractionMeaning": "illustrativepreviewonly,notactualgamevalue"
+    },
+    {
+      "id": "ornament-left",
+      "kind": "image",
+      "xywh": [
+        229,
+        1548,
+        256,
+        256
+      ],
+      "z": 45,
+      "roleID": "ornament-left",
+      "assetID": "ornament-demon",
+      "opacity": 1,
+      "resize": "none",
+      "flip": false,
+      "alphaDock": {
+        "assetOriginalCanvas": [
+          256,
+          256
+        ],
+        "leftDemonAlphaBBox": [
+          0,
+          92,
+          220,
+          256
+        ],
+        "rightAngelAlphaBBox": [
+          43,
+          105,
+          256,
+          256
+        ],
+        "leftVisibleRight": 449,
+        "rightVisibleLeft": 3391,
+        "mainRowEdgeOverlapPx": 4,
+        "purpose": "sourcealpha-bounds docking avoids transparentmargin gaps; onlybarouterrim overlaps, noticoninterior",
+        "assetBBoxIsMechanicalNotAppearanceProof": true
+      }
+    },
+    {
+      "id": "ornament-right",
+      "kind": "image",
+      "xywh": [
+        3348,
+        1548,
+        256,
+        256
+      ],
+      "z": 45,
+      "roleID": "ornament-right",
+      "assetID": "ornament-angel",
+      "opacity": 1,
+      "resize": "none",
+      "flip": false,
+      "alphaDock": {
+        "assetOriginalCanvas": [
+          256,
+          256
+        ],
+        "leftDemonAlphaBBox": [
+          0,
+          92,
+          220,
+          256
+        ],
+        "rightAngelAlphaBBox": [
+          43,
+          105,
+          256,
+          256
+        ],
+        "leftVisibleRight": 449,
+        "rightVisibleLeft": 3391,
+        "mainRowEdgeOverlapPx": 4,
+        "purpose": "sourcealpha-bounds docking avoids transparentmargin gaps; onlybarouterrim overlaps, noticoninterior",
+        "assetBBoxIsMechanicalNotAppearanceProof": true
+      }
+    },
+    {
+      "id": "status-rail",
+      "kind": "status-placeholder",
+      "xywh": [
+        0,
+        2124,
+        3840,
+        28
+      ],
+      "z": 50,
+      "roleID": "rail-status",
+      "fill": "#08090A",
+      "thinProgressLinePx": 2,
+      "progressColor": "#74684A",
+      "progressMeaning": "decorativepreviewextent,noactualXP",
+      "text": "캐릭터       설정",
+      "fontAsset": "font-body",
+      "fontSizePx": 22,
+      "textColor": "#D8D8D8",
+      "textInset": [
+        16,
+        2
+      ]
+    }
+  ],
+  "interactionDesign": {
+    "offlineRenderState": "rest",
+    "nativeEngineRole": "receive/send/messageclassification/normaltyping retained; no replacementengine",
+    "smallThemeProposedRole": "threepanelbackgrounds/seams/font/button-tab-editornament/placement only; currentAPIandruntimeunverified",
+    "typingStateProposal": "existingnativeeditboxshownwithinreserved36pxpane-strip;restnoornament; notimplemented",
+    "hoverAlertScrollProposal": "allowaccessibletab/menu/scrollreturnwhenneeded; hideonlyrestingornament,notunconditionallydisablecontrols",
+    "dockingFiltersIDs": "preservethreeroles,currentfiltersandinput; nevercopyX2ID1/2/3orAlpha1/3/4wholesale",
+    "inputFocusIMEArrowsHistory": "futuregamegates; no customengine/functionalityclaim"
+  },
+  "hierarchy": {
+    "nestedContentAllowed": [
+      "chatviewport/inputreserveinsideownchat",
+      "buttonicon/keyinsidesamecell",
+      "cellsinsidedeclaredgroup",
+      "unitbarsinsideownunit",
+      "maplabelwithinmap",
+      "menuinsidetransparentcenterbacking"
+    ],
+    "intentionalCrossRoleOverlaps": [
+      "minimaproundcontrol24pxprotrusionoverrail/mapborder",
+      "ornamenttransparentcanvasoveractionrowouterrim;opaquealphaonly4pxrim,noticon",
+      "status2pxdecorativeprogresswithinownstatusrail"
+    ],
+    "forbiddenOverlaps": [
+      "chattranscript/buttoncells",
+      "unitframes/helperrow",
+      "worldclearzone/action-unit-ornament",
+      "keylabelsoutsideowncell"
+    ]
+  },
+  "rendererContract": {
+    "owner": "laterroot-dispatchedA2coder;A1hasnotimplementedrenderer",
+    "inputFiles": [
+      "layout-spec.json",
+      "asset-manifest.json"
+    ],
+    "outputBase": "Codex/results/old-devil-layout/renderer-output/",
+    "requiredOutputs": [
+      "offline4k-layout.png",
+      "bottom-band-native.png",
+      "keylabels-native.png",
+      "pixel-checks.json",
+      "render-receipt.json"
+    ],
+    "nativePNG": [
+      3840,
+      2160
+    ],
+    "referenceScreenshotInRenderedScene": false,
+    "rejected2022RendererOrSpecReuse": false,
+    "sourceLuaOrEXEExecution": false,
+    "dependencies": "installedPillow/fontToolsonly,noinstallation/network",
+    "assetResolution": "relativeprojectpaths/SHA256beforeuse; abortmissing/mismatch,nosilentfallback",
+    "font": "explicitincludedfontpath,neverOSfontinstall/autofit",
+    "geometry": "consumespecXYWH/cellbounds; noautomaticglobalscale/ratio/redistributionofcells",
+    "placeholders": "onlyspecifiedneutralicons/map/sampletext; norealspell/bind/channel/characterdatainferred",
+    "allowedAssetOperations": "alphacomposite/declaredcomponentresize;rawsourceunchanged; noGenerativehistoricalredraw",
+    "layerOrder": "ascendingz; withinbuttonstyleexplicitbacktofront; fontlabelsaboveframe/gloss",
+    "actualGateSequence": [
+      "parsecontract",
+      "generateactualPNG",
+      "actualpixel/bounds/seams/labelmeasurements",
+      "prescribedreaderactualsource-rendercomparison",
+      "samePhaseB10P4"
+    ],
+    "reportClaims": "Noactualrender/visual/runtimePASSuntilactualproductionandchecks"
+  },
+  "limits": [
+    "photolongrowcount/build/profileunresolved",
+    "alltargetpixelsnewA1proposal",
+    "sourcepixelcoordinates/savedUIunitsnot4Kratios",
+    "currentruntime/API/filters/inputunverified",
+    "assetprivateofflinepreviewonly;licenseprovenancepermanifest",
+    "sourceassetappearanceverificationpendingatthiswritesnapshot"
+  ],
+  "runtime": "NOT_RUN",
+  "render": "NOT_RUN",
+  "pixelChecks": "NOT_RUN"
+}

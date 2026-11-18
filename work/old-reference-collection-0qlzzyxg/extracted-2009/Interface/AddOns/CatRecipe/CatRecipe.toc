@@ -1,0 +1,8 @@
+﻿## Interface: 30200
+## Title: CatRecipe
+## Author: tomcat
+## Notes: Helper for buying recipe.
+## Notes-koKR: 상점이나 경매장에서 이미 배운 제조법을 푸른색으로 표시합니다.
+## Version: 20090424a
+CatRecipe.lua
+CatRecipe.xml

@@ -1,0 +1,201 @@
+﻿-- local _G = _G
+-- local next = _G.next
+
+-- local tables = setmetatable({}, { __mode = "k" })
+-- local ffades = {}
+-- local fflashs = {}
+
+-- local function trelease(t)
+	-- tables[t] = true
+	-- while true do
+		-- local k = next(t)
+		-- if k then t[k] = nil else break end
+	-- end
+-- end
+
+-- local fadeget = function (frame)
+	-- if not frame then return end
+	-- local r = ffades[frame]
+	-- if r then return r end
+	-- r = next(tables)
+	-- if r then
+		-- tables[r] = nil
+	-- else
+		-- r = {}
+	-- end
+	-- ffades[frame] = r
+	-- return r
+-- end
+
+-- local faderelease = function (frame)
+	-- if not frame then return end
+	-- local t = ffades[frame]
+	-- ffades[frame] = nil
+	-- if t then trelease(t) end
+	-- frame.fadeInfo = nil
+-- end
+
+-- local flashrelease = function (frame)
+	-- if not frame then return end
+	-- fflashs[frame] = nil
+-- end
+
+-- local function FrameFade(frame, info)
+	-- if not frame or not info then return end
+	-- local mode = info.mode or "IN"
+	-- info.mode = mode
+	-- if mode == "IN" then
+		-- info.startAlpha = info.startAlpha or 0
+		-- info.endAlpha = info.endAlpha or 1
+	-- elseif mode == "OUT" then
+		-- info.startAlpha = info.startAlpha or 1
+		-- info.endAlpha = info.endAlpha or 0
+	-- end
+
+	-- info.timer = 0
+	-- frame:SetAlpha(info.startAlpha)
+	-- frame:Show()
+	-- frame.fadeInfo = info
+-- end
+
+-- local function FrameFadeIn(frame, timeToFade, startAlpha, endAlpha)
+	-- if not frame then return end
+	-- local info = fadeget(frame)
+	-- info.timeToFade = timeToFade
+	-- info.startAlpha = startAlpha
+	-- info.endAlpha = endAlpha
+	-- info.mode = "IN"
+	-- FrameFade(frame, info)
+-- end
+
+-- local function FrameFadeOut(frame, timeToFade, startAlpha, endAlpha)
+	-- if not frame then return end
+	-- local info = fadeget(frame)
+	-- info.timeToFade = timeToFade
+	-- info.startAlpha = startAlpha
+	-- info.endAlpha = endAlpha
+	-- info.mode = "OUT"
+	-- FrameFade(frame, info)
+-- end
+
+-- local function FrameIsFading(frame)
+    -- if not frame then return end
+    -- return ffades[frame] and 1
+-- end
+
+-- local function FrameFadeUpdate(elapsed)
+	-- for frame, info in pairs(ffades) do
+		-- local timer = (info.timer or 0) + elapsed
+		-- local timeToFade = info.timeToFade
+		-- if timer < timeToFade then
+			-- local mode = info.mode
+			-- if mode == "IN" then
+				-- local startAlpha = info.startAlpha
+				-- frame:SetAlpha(timer * (info.endAlpha - startAlpha) / timeToFade + startAlpha)
+			-- elseif info.mode == "OUT" then
+				-- local endAlpha = info.endAlpha
+				-- frame:SetAlpha((timeToFade - timer) * (info.startAlpha - endAlpha) / timeToFade + endAlpha)
+			-- end
+			-- info.timer = timer
+		-- else
+			-- frame:SetAlpha(info.endAlpha)
+
+			-- local holdTime = info.holdTime or 0
+			-- if holdTime > 0 then
+				-- info.holdTime = holdTime - elapsed
+			-- else
+				-- local func = info.finishedFunc
+				-- if func then
+					-- func(info.finishedArg1, info.finishedArg2, info.finishedArg3, info.finishedArg4)
+				-- end
+				-- faderelease(frame)
+			-- end
+		-- end
+	-- end
+-- end
+
+-- local function FrameFlash(frame, fadeInTime, fadeOutTime, flashDuration, showWhenDone, flashInHoldTime, flashOutHoldTime)
+	-- if not frame then return end
+	-- frame.fadeInTime = fadeInTime
+	-- frame.fadeOutTime = fadeOutTime
+	-- frame.flashDuration = flashDuration
+	-- frame.showWhenDone = showWhenDone
+	-- frame.flashTimer = 0
+	-- frame.flashMode = "IN"
+	-- frame.flashInHoldTime = flashInHoldTime
+	-- frame.flashOutHoldTime = flashOutHoldTime
+
+	-- fflashs[frame] = 1
+-- end
+
+-- local function FrameFlashSwitch(frame, mode)
+	-- if not frame then return end
+	-- frame.flashMode = mode
+-- end
+
+-- local function FrameFlashStop(frame)
+	-- if not frame then return end
+	-- frame.flashDuration = 0
+	-- frame:Hide()
+-- end
+
+-- local function FrameFlashUpdate(elapsed)
+	-- for frame in pairs(fflashs) do
+		-- local timer = frame.flashTimer + elapsed
+		-- local duration = frame.flashDuration
+		-- if timer > duration and duration ~= -1 then
+			-- faderelease(frame)
+			-- flashrelease(frame)
+			-- frame:SetAlpha(1.0)
+			-- timer = nil
+			-- if frame.showWhenDone then
+				-- frame:Show()
+			-- else
+				-- frame:Hide()
+			-- end
+		-- elseif frame.flashMode then
+			-- local fadeInfo = fadeget(frame)
+			-- if frame.flashMode == "IN" then
+				-- fadeInfo.timeToFade = frame.fadeInTime
+				-- fadeInfo.mode = "IN"
+				-- fadeInfo.finishedFunc = FrameFlashSwitch
+				-- fadeInfo.finishedArg1 = frame
+				-- fadeInfo.finishedArg2 = "OUT"
+				-- fadeInfo.fadeHoldTime = frame.flashOutHoldTime
+				-- FrameFade(frame, fadeInfo)
+			-- elseif frame.flashMode == "OUT" then
+				-- fadeInfo.timeToFade = frame.fadeOutTime
+				-- fadeInfo.mode = "OUT"
+				-- fadeInfo.finishedFunc = FrameFlashSwitch
+				-- fadeInfo.finishedArg1 = frame
+				-- fadeInfo.finishedArg2 = "IN"
+				-- fadeInfo.fadeHoldTime = frame.flashInHoldTime
+				-- FrameFade(frame, fadeInfo)
+			-- end
+			-- frame.flashMode = nil
+		-- end
+		-- frame.flashTimer = timer
+	-- end
+-- end
+
+-- local function FrameIsFlashing(frame)
+    -- if not frame then return end
+    -- return fflashs[frame]
+-- end
+
+-- local frame = CreateFrame("Frame")
+-- frame:SetScript("OnUpdate", function (_, elapsed)
+	-- FrameFadeUpdate(elapsed)
+	-- FrameFlashUpdate(elapsed)
+-- end)
+-- frame:Show()
+
+-- _G.JerryFrameFadeIn = FrameFadeIn
+-- _G.JerryFrameFadeOut = FrameFadeOut
+-- _G.JerryFrameFade = FrameFade
+-- _G.JerryFrameFadeRemoveFrame = faderelease
+-- _G.JerryFrameIsFading = FrameIsFading
+-- _G.JerryFrameFlash = FrameFlash
+-- _G.JerryFrameFlashStop = FrameFlashStop
+-- _G.JerryFrameIsFlashing = FrameIsFlashing
+-- _G.JerryFrameFlashRemoveFrame = flashrelease

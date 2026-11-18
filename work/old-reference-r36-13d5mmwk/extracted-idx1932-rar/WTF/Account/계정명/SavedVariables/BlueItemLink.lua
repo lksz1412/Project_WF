@@ -1,0 +1,28 @@
+
+BlueItemLinkDB = {
+	["profileKeys"] = {
+		["기동포격마법소녀 - 스톰레이지"] = "Default",
+		["Lagneziad - 세나리우스"] = "Default",
+		["Hayate - Crystalsong"] = "Default",
+		["Kratia - 스톰레이지"] = "Default",
+		["Kratia - Crystalsong"] = "Default",
+		["Eznel - 세나리우스"] = "Default",
+		["에이논 - Crystalsong"] = "Default",
+		["Resrec - Crystalsong"] = "Default",
+		["Zephyres - 세나리우스"] = "Default",
+		["Berseflin - 세나리우스"] = "Default",
+		["Eznel - Crystalsong"] = "Default",
+		["Resrec - 세나리우스"] = "Default",
+		["Lagneziad - Crystalsong"] = "Default",
+	},
+	["profiles"] = {
+		["Default"] = {
+			["pos"] = {
+				[2] = {
+					235.0763384420712, -- [1]
+					-346.1662366971792, -- [2]
+				},
+			},
+		},
+	},
+}

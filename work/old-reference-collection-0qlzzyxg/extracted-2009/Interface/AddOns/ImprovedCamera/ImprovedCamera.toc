@@ -1,0 +1,9 @@
+## Interface: 30200
+## Title: ImprovedCamera [Obsolete]
+## Author: Rewad/Trashy/Drool/Aezay
+## Version: 2.5.0
+## Notes: Increase camera distance limit (from default 30 to max. 50 units) then disable itself.
+## eMail: droolio@gmail.com
+## DefaultState: Enabled
+## LoadOnDemand: 0
+ImprovedCamera.xml

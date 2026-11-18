@@ -1,0 +1,42 @@
+[
+  {
+    "time": "2026-11-17T14:06:59.3779838Z",
+    "error": "원격 서버에서 (404) 찾을 수 없음 오류를 반환했습니다.",
+    "HTTP": 404,
+    "postID": 8906,
+    "DOMordinal": 1,
+    "section": "screenshot-thumbnail-fallback",
+    "sourceURL": "https://upload.inven.co.kr/upload/2014/10/16/bbs/thumb/n0621236398.jpg",
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\thumbnail-fallback-8906-1.jpg",
+    "originalURL": "https://upload.inven.co.kr/upload/2014/10/16/bbs/i0621236398.jpg",
+    "originalHTTP": 404,
+    "sourceLocation": {
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-8906.html",
+      "selector": "screenshot img",
+      "line": 33
+    },
+    "commandExitCode": 0,
+    "note": "Actual thumbnail src fallback only; original fullsource404 remains unresolved, not an equivalent original image.",
+    "decodeStatus": "not-acquired"
+  },
+  {
+    "time": "2026-11-17T14:06:59.7297412Z",
+    "error": "원격 서버에서 (404) 찾을 수 없음 오류를 반환했습니다.",
+    "HTTP": 404,
+    "postID": 8906,
+    "DOMordinal": 2,
+    "section": "screenshot-thumbnail-fallback",
+    "sourceURL": "https://upload.inven.co.kr/upload/2014/10/17/bbs/thumb/n0021882965.png",
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\thumbnail-fallback-8906-2.png",
+    "originalURL": "https://upload.inven.co.kr/upload/2014/10/17/bbs/i0021882965.png",
+    "originalHTTP": 404,
+    "sourceLocation": {
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-8906.html",
+      "selector": "screenshot img",
+      "line": 40
+    },
+    "commandExitCode": 0,
+    "note": "Actual thumbnail src fallback only; original fullsource404 remains unresolved, not an equivalent original image.",
+    "decodeStatus": "not-acquired"
+  }
+]

@@ -1,0 +1,497 @@
+{
+  "receipts": [
+    {
+      "contentType": "text/html; charset=UTF-8",
+      "time": "2026-11-17T14:34:04.6599614Z",
+      "name": "author-forum",
+      "sourceURL": "https://www.inven.co.kr/board/powerbbs.php?come_idx=1636",
+      "localpath": "D:/Projects/Project_WF/work/old-reference-r36-3ed3y_p1/author-forum.html",
+      "HTTP": 200,
+      "finalURL": null,
+      "bytes": 306622,
+      "SHA256": "BC1AEF4E8961787294C2FDD96E789A15EEA7FC724D3C7B4FC828EC06F304B2D9",
+      "titleLiteral": "와우 인벤 Devil UI 포럼 - 월드 오브 워크래프트 인벤",
+      "iframes": [
+        {
+          "id": "comAdBBSSubject",
+          "src": "//zicf.inven.co.kr/RealMedia/ads/adstream_sx.ads/inven/wow@x87?a1_ppo1=0",
+          "line": 2536
+        }
+      ],
+      "matchingLinks": [],
+      "archiveURLLiterals": []
+    },
+    {
+      "contentType": "text/html; charset=UTF-8",
+      "time": "2026-11-17T14:34:04.9296230Z",
+      "name": "author-blog",
+      "sourceURL": "http://blog.naver.com/nicecurry",
+      "localpath": "D:/Projects/Project_WF/work/old-reference-r36-3ed3y_p1/author-blog.html",
+      "HTTP": 200,
+      "finalURL": null,
+      "bytes": 2821,
+      "SHA256": "F89A1A448E305F76C959CEF29EA7CA90C7B9CD4B5826F1CA501628CD359DF8FD",
+      "titleLiteral": "nicecurry님의 블로그 : 네이버 블로그",
+      "iframes": [
+        {
+          "id": "mainFrame",
+          "src": "/PostList.naver?blogId=nicecurry&widgetTypeCall=true&noTrackingCode=true&directAccess=true",
+          "line": 74
+        }
+      ],
+      "matchingLinks": [],
+      "archiveURLLiterals": []
+    },
+    {
+      "time": "2026-11-17T14:34:43.9222071Z",
+      "sourceURL": "https://blog.naver.com/PostList.naver?blogId=nicecurry&widgetTypeCall=true&noTrackingCode=true&directAccess=true",
+      "contentType": "text/html; charset=UTF-8",
+      "localpath": "D:/Projects/Project_WF/work/old-reference-r36-3ed3y_p1/author-blog-postlist.html",
+      "HTTP": 200,
+      "name": "author-blog-postlist",
+      "bytes": 262926,
+      "SHA256": "EB39BFB50BBACF571F999A9C726F8BEF779A4B35B2F564CE53170FCC483FC7E0",
+      "titleLiteral": "nicecurry님의 블로그 : 네이버 블로그",
+      "iframes": [
+        {
+          "id": "sympathyFrm220290328912",
+          "src": "",
+          "line": 2705
+        },
+        {
+          "id": "sympathyFrm220272366091",
+          "src": "",
+          "line": 3119
+        },
+        {
+          "id": "sympathyFrm220217366075",
+          "src": "",
+          "line": 3502
+        },
+        {
+          "id": "sympathyFrm220215639740",
+          "src": "",
+          "line": 3885
+        },
+        {
+          "id": "sympathyFrm220188679891",
+          "src": "",
+          "line": 4268
+        },
+        {
+          "id": "saveTagNameFrame",
+          "src": "",
+          "line": 5228
+        },
+        {
+          "id": "layeredframe",
+          "src": "about:blank",
+          "line": 5376
+        },
+        {
+          "id": "captchalayeredframe",
+          "src": "about:blank",
+          "line": 5386
+        },
+        {
+          "id": null,
+          "src": null,
+          "line": 5640
+        }
+      ],
+      "matchingLinks": [],
+      "archiveURLLiterals": [
+        "https://download.blog.naver.com/open/1b8e07b4a1fdff230ee08cb086651069c5956d8d06/EFsTaLdJxLvO9dNYLuoSggWaFwbSq-pvdFEANXoi2G0pHYi7Vnsi6va8DoJm6i1H3hf6VWj68AU5YZvHYLlq8nLWAH1rbvHw/Black%20Edition2_6.1%20Alpha.exe",
+        "https://download.blog.naver.com/open/1b8e07b4a1fdff230ee08cb086651069c5956d8d06/EFsTaLdJxLvO9dNYLuoSggWaFwbSq-pvdFEANXoi2G0pHYi7Vnsi6va8DoJm6i1H3hf6VWj68AU5YZvHYLlq8nLWAH1rbvHw/Black%20Edition2_6.1%20Alpha.exe",
+        "https://download.blog.naver.com/open/b520a91967503985a34e241022c4b2c96f3f40/EFsTaLdJxLvO9txYLuoSggWaFwbSq-pvdFEANXoi2G0pHYi7Vnsi6_-2DYlk6m5G-yKzAGj68AVP1Eaa7okKUQjJB3g6GIhN/DevilUI%206.1%20Alpha.exe",
+        "https://download.blog.naver.com/open/b520a91967503985a34e241022c4b2c96f3f40/EFsTaLdJxLvO9txYLuoSggWaFwbSq-pvdFEANXoi2G0pHYi7Vnsi6_-2DYlk6m5G-yKzAGj68AVP1Eaa7okKUQjJB3g6GIhN/DevilUI%206.1%20Alpha.exe",
+        "https://download.blog.naver.com/open/3faa239081dddb072ac4a894a241344de1b149a9ee/EFsTaLdIxbzO8Ns2E-QRigSVEg-Y6u1lclcWMnop_gMsG4m2U3Uj5Pu8D4IO01UiwjnyblLn7YaJpwIvI2qQJgJlUuOaVeY/Black%20Edition2_6.0.3%20G.exe",
+        "https://download.blog.naver.com/open/3faa239081dddb072ac4a894a241344de1b149a9ee/EFsTaLdIxbzO8Ns2E-QRigSVEg-Y6u1lclcWMnop_gMsG4m2U3Uj5Pu8D4IO01UiwjnyblLn7YaJpwIvI2qQJgJlUuOaVeY/Black%20Edition2_6.0.3%20G.exe",
+        "https://download.blog.naver.com/open/75e069dac195914d608ee2dee80b7e07abfb03e27d/EFsTaLdIxbzO9t5cLuoSggWaFwbSq-pvdFEANXoi2G0pHYi9Wnwu6fa5DYVl6loi60OQWGj68AWf7vlg_-SKX3RQOfGmQYOQ/DevilUI%206.0.3%20G.exe",
+        "https://download.blog.naver.com/open/75e069dac195914d608ee2dee80b7e07abfb03e27d/EFsTaLdIxbzO9t5cLuoSggWaFwbSq-pvdFEANXoi2G0pHYi9Wnwu6fa5DYVl6loi60OQWGj68AWf7vlg_-SKX3RQOfGmQYOQ/DevilUI%206.0.3%20G.exe",
+        "https://download.blog.naver.com/open/c055dc6f7c2d24f8d53b576b5dbecbb21e4eb65708/EFsTabZIxr3O9dNcLuoSggWaFwbSq-pvdFEANXoi2G0pHYu3UH4k7Pq3D4Rj6lAsrivzXGj68AXPrdOhYubo5m9WQlGwcn0J/DevilUI%206.0.3%20Beta%20fix.exe",
+        "https://download.blog.naver.com/open/c055dc6f7c2d24f8d53b576b5dbecbb21e4eb65708/EFsTabZIxr3O9dNcLuoSggWaFwbSq-pvdFEANXoi2G0pHYu3UH4k7Pq3D4Rj6lAsrivzXGj68AXPrdOhYubo5m9WQlGwcn0J/DevilUI%206.0.3%20Beta%20fix.exe",
+        "https://download.blog.naver.com/open/23b63f8c9acfc71b36d8b488be5d2851fdad55b480/EFsTabZIxr_O_tM2E-QRigSVEg-Y6u1lclcWMnop_gMsGIO-V3ok5fm_CogO80tErR7wblLn7SxX4Y_6J0hwq7T4kWn5XDk/Black%20Edition2_6.0.3%20Beta.exe",
+        "https://download.blog.naver.com/open/23b63f8c9acfc71b36d8b488be5d2851fdad55b480/EFsTabZIxr_O_tM2E-QRigSVEg-Y6u1lclcWMnop_gMsGIO-V3ok5fm_CogO80tErR7wblLn7SxX4Y_6J0hwq7T4kWn5XDk/Black%20Edition2_6.0.3%20Beta.exe",
+        "https://download.blog.naver.com/open/45d059e9fca3a17d50bed2eed83b4e379bcb33d2e5/EFsTabZIxr_O9tJcLuoSggWaFwbSq-pvdFEANXoi2G0pHYu3Ungh7_-4A4do6nsh4j6kZWj68AUsgd88LYkS0B9v6cot9Rz5/DevilUI%206.0.3%20Beta.exe",
+        "https://download.blog.naver.com/open/45d059e9fca3a17d50bed2eed83b4e379bcb33d2e5/EFsTabZIxr_O9tJcLuoSggWaFwbSq-pvdFEANXoi2G0pHYu3Ungh7_-4A4do6nsh4j6kZWj68AUsgd88LYkS0B9v6cot9Rz5/DevilUI%206.0.3%20Beta.exe",
+        "https://download.blog.naver.com/open/d94cc576653d3de1cc224e7244a7d2ab0757af4e91/EFsTabZLxr3O9d9fLuoSggWaFwbSq-pvdFEANXoi2G0pHYu4VH4i7f-3AoBm6khcrU6BfGj68AUcfJxwH1ysFSAa-MB5mIRm/DevilUI%206.0.3%20Alpha.exe",
+        "https://download.blog.naver.com/open/d94cc576653d3de1cc224e7244a7d2ab0757af4e91/EFsTabZLxr3O9d9fLuoSggWaFwbSq-pvdFEANXoi2G0pHYu4VH4i7f-3AoBm6khcrU6BfGj68AUcfJxwH1ysFSAa-MB5mIRm/DevilUI%206.0.3%20Alpha.exe",
+        "https://download.blog.naver.com/open/00951cafb5e7e43815fb97ab9d7e0b72de8e76977b/EFsTabZLxr3O9dxdLuoSggWaFwbSq-pvdFEANXoi2G0pHYu4VH4i7f2_DINn6nN81E3xaGj68AVZxVNinnGxFNjC7BxT8KDp/Black%20Edition2_6.0.3%20Alpha.exe",
+        "https://download.blog.naver.com/open/00951cafb5e7e43815fb97ab9d7e0b72de8e769074/EFsTabZLxr3O9dxdLuoSggWaFwbSq-pvdFEANXoi2G0pHYu4VH4i7f2_DINn6nN81E3xaGj68AVZxVNinnGxFNjC7BxT8KDp/Black%20Edition2_6.0.3%20Alpha.exe"
+      ],
+      "postTitleLiterals": [
+        "DevilUI 6.1 Alpha 낙서장",
+        "DevilUI 6.0.3 G 낙서장",
+        "DevilUI 6.0.3 Beta Fix 낙서장",
+        "DevilUI 6.0.3 Beta 낙서장",
+        "DevilUI 6.0.3 Alpha 낙서장"
+      ],
+      "attachmentLiterals": [
+        {
+          "postArrayIndex": 1,
+          "sourceLine": 1796,
+          "executed": false,
+          "JSONdata": [
+            {
+              "encodedAttachFileName": "Black Edition2_6.1 Alpha.exe",
+              "encodedAttachFileNameByTruncate": "Black Edition2_6.1. . .",
+              "encodedAttachFileUrl": "https://download.blog.naver.com/open/1b8e07b4a1fdff230ee08cb086651069c5956d8d06/EFsTaLdJxLvO9dNYLuoSggWaFwbSq-pvdFEANXoi2G0pHYi7Vnsi6va8DoJm6i1H3hf6VWj68AU5YZvHYLlq8nLWAH1rbvHw/Black%20Edition2_6.1%20Alpha.exe",
+              "encodedAttachFileUrlByMS949": "https://download.blog.naver.com/open/1b8e07b4a1fdff230ee08cb086651069c5956d8d06/EFsTaLdJxLvO9dNYLuoSggWaFwbSq-pvdFEANXoi2G0pHYi7Vnsi6va8DoJm6i1H3hf6VWj68AU5YZvHYLlq8nLWAH1rbvHw/Black%20Edition2_6.1%20Alpha.exe",
+              "licenseyn": "",
+              "maliciousCodeYn": "false",
+              "punishType": "0",
+              "attachFileSize": "7,885,762",
+              "encodedAttachFileNameByUTF8": "Black+Edition2_6.1+Alpha.exe",
+              "ahfLicenseYn": "false"
+            },
+            {
+              "encodedAttachFileName": "DevilUI 6.1 Alpha.exe",
+              "encodedAttachFileNameByTruncate": "DevilUI 6.1 Alpha.. . .",
+              "encodedAttachFileUrl": "https://download.blog.naver.com/open/b520a91967503985a34e241022c4b2c96f3f40/EFsTaLdJxLvO9txYLuoSggWaFwbSq-pvdFEANXoi2G0pHYi7Vnsi6_-2DYlk6m5G-yKzAGj68AVP1Eaa7okKUQjJB3g6GIhN/DevilUI%206.1%20Alpha.exe",
+              "encodedAttachFileUrlByMS949": "https://download.blog.naver.com/open/b520a91967503985a34e241022c4b2c96f3f40/EFsTaLdJxLvO9txYLuoSggWaFwbSq-pvdFEANXoi2G0pHYi7Vnsi6_-2DYlk6m5G-yKzAGj68AVP1Eaa7okKUQjJB3g6GIhN/DevilUI%206.1%20Alpha.exe",
+              "licenseyn": "",
+              "maliciousCodeYn": "false",
+              "punishType": "0",
+              "attachFileSize": "7,738,286",
+              "encodedAttachFileNameByUTF8": "DevilUI+6.1+Alpha.exe",
+              "ahfLicenseYn": "false"
+            }
+          ],
+          "state": "JSON-decoded-without-JS-execution"
+        },
+        {
+          "postArrayIndex": 2,
+          "sourceLine": 1883,
+          "executed": false,
+          "JSONdata": [
+            {
+              "encodedAttachFileName": "Black Edition2_6.0.3 G.exe",
+              "encodedAttachFileNameByTruncate": "Black Edition2_6.0. . .",
+              "encodedAttachFileUrl": "https://download.blog.naver.com/open/3faa239081dddb072ac4a894a241344de1b149a9ee/EFsTaLdIxbzO8Ns2E-QRigSVEg-Y6u1lclcWMnop_gMsG4m2U3Uj5Pu8D4IO01UiwjnyblLn7YaJpwIvI2qQJgJlUuOaVeY/Black%20Edition2_6.0.3%20G.exe",
+              "encodedAttachFileUrlByMS949": "https://download.blog.naver.com/open/3faa239081dddb072ac4a894a241344de1b149a9ee/EFsTaLdIxbzO8Ns2E-QRigSVEg-Y6u1lclcWMnop_gMsG4m2U3Uj5Pu8D4IO01UiwjnyblLn7YaJpwIvI2qQJgJlUuOaVeY/Black%20Edition2_6.0.3%20G.exe",
+              "licenseyn": "",
+              "maliciousCodeYn": "false",
+              "punishType": "0",
+              "attachFileSize": "7,475,653",
+              "encodedAttachFileNameByUTF8": "Black+Edition2_6.0.3+G.exe",
+              "ahfLicenseYn": "false"
+            },
+            {
+              "encodedAttachFileName": "DevilUI 6.0.3 G.exe",
+              "encodedAttachFileNameByTruncate": "DevilUI 6.0.3 G.ex. . .",
+              "encodedAttachFileUrl": "https://download.blog.naver.com/open/75e069dac195914d608ee2dee80b7e07abfb03e27d/EFsTaLdIxbzO9t5cLuoSggWaFwbSq-pvdFEANXoi2G0pHYi9Wnwu6fa5DYVl6loi60OQWGj68AWf7vlg_-SKX3RQOfGmQYOQ/DevilUI%206.0.3%20G.exe",
+              "encodedAttachFileUrlByMS949": "https://download.blog.naver.com/open/75e069dac195914d608ee2dee80b7e07abfb03e27d/EFsTaLdIxbzO9t5cLuoSggWaFwbSq-pvdFEANXoi2G0pHYi9Wnwu6fa5DYVl6loi60OQWGj68AWf7vlg_-SKX3RQOfGmQYOQ/DevilUI%206.0.3%20G.exe",
+              "licenseyn": "",
+              "maliciousCodeYn": "false",
+              "punishType": "0",
+              "attachFileSize": "7,345,460",
+              "encodedAttachFileNameByUTF8": "DevilUI+6.0.3+G.exe",
+              "ahfLicenseYn": "false"
+            }
+          ],
+          "state": "JSON-decoded-without-JS-execution"
+        },
+        {
+          "postArrayIndex": 3,
+          "sourceLine": 1970,
+          "executed": false,
+          "JSONdata": [
+            {
+              "encodedAttachFileName": "DevilUI 6.0.3 Beta fix.exe",
+              "encodedAttachFileNameByTruncate": "DevilUI 6.0.3 Beta. . .",
+              "encodedAttachFileUrl": "https://download.blog.naver.com/open/c055dc6f7c2d24f8d53b576b5dbecbb21e4eb65708/EFsTabZIxr3O9dNcLuoSggWaFwbSq-pvdFEANXoi2G0pHYu3UH4k7Pq3D4Rj6lAsrivzXGj68AXPrdOhYubo5m9WQlGwcn0J/DevilUI%206.0.3%20Beta%20fix.exe",
+              "encodedAttachFileUrlByMS949": "https://download.blog.naver.com/open/c055dc6f7c2d24f8d53b576b5dbecbb21e4eb65708/EFsTabZIxr3O9dNcLuoSggWaFwbSq-pvdFEANXoi2G0pHYu3UH4k7Pq3D4Rj6lAsrivzXGj68AXPrdOhYubo5m9WQlGwcn0J/DevilUI%206.0.3%20Beta%20fix.exe",
+              "licenseyn": "",
+              "maliciousCodeYn": "false",
+              "punishType": "0",
+              "attachFileSize": "7,357,146",
+              "encodedAttachFileNameByUTF8": "DevilUI+6.0.3+Beta+fix.exe",
+              "ahfLicenseYn": "false"
+            }
+          ],
+          "state": "JSON-decoded-without-JS-execution"
+        },
+        {
+          "postArrayIndex": 4,
+          "sourceLine": 2057,
+          "executed": false,
+          "JSONdata": [
+            {
+              "encodedAttachFileName": "Black Edition2_6.0.3 Beta.exe",
+              "encodedAttachFileNameByTruncate": "Black Edition2_6.0. . .",
+              "encodedAttachFileUrl": "https://download.blog.naver.com/open/23b63f8c9acfc71b36d8b488be5d2851fdad55b480/EFsTabZIxr_O_tM2E-QRigSVEg-Y6u1lclcWMnop_gMsGIO-V3ok5fm_CogO80tErR7wblLn7SxX4Y_6J0hwq7T4kWn5XDk/Black%20Edition2_6.0.3%20Beta.exe",
+              "encodedAttachFileUrlByMS949": "https://download.blog.naver.com/open/23b63f8c9acfc71b36d8b488be5d2851fdad55b480/EFsTabZIxr_O_tM2E-QRigSVEg-Y6u1lclcWMnop_gMsGIO-V3ok5fm_CogO80tErR7wblLn7SxX4Y_6J0hwq7T4kWn5XDk/Black%20Edition2_6.0.3%20Beta.exe",
+              "licenseyn": "",
+              "maliciousCodeYn": "false",
+              "punishType": "0",
+              "attachFileSize": "7,507,157",
+              "encodedAttachFileNameByUTF8": "Black+Edition2_6.0.3+Beta.exe",
+              "ahfLicenseYn": "false"
+            },
+            {
+              "encodedAttachFileName": "DevilUI 6.0.3 Beta.exe",
+              "encodedAttachFileNameByTruncate": "DevilUI 6.0.3 Beta. . .",
+              "encodedAttachFileUrl": "https://download.blog.naver.com/open/45d059e9fca3a17d50bed2eed83b4e379bcb33d2e5/EFsTabZIxr_O9tJcLuoSggWaFwbSq-pvdFEANXoi2G0pHYu3Ungh7_-4A4do6nsh4j6kZWj68AUsgd88LYkS0B9v6cot9Rz5/DevilUI%206.0.3%20Beta.exe",
+              "encodedAttachFileUrlByMS949": "https://download.blog.naver.com/open/45d059e9fca3a17d50bed2eed83b4e379bcb33d2e5/EFsTabZIxr_O9tJcLuoSggWaFwbSq-pvdFEANXoi2G0pHYu3Ungh7_-4A4do6nsh4j6kZWj68AUsgd88LYkS0B9v6cot9Rz5/DevilUI%206.0.3%20Beta.exe",
+              "licenseyn": "",
+              "maliciousCodeYn": "false",
+              "punishType": "0",
+              "attachFileSize": "7,357,099",
+              "encodedAttachFileNameByUTF8": "DevilUI+6.0.3+Beta.exe",
+              "ahfLicenseYn": "false"
+            }
+          ],
+          "state": "JSON-decoded-without-JS-execution"
+        },
+        {
+          "postArrayIndex": 5,
+          "sourceLine": 2144,
+          "executed": false,
+          "JSONdata": [
+            {
+              "encodedAttachFileName": "DevilUI 6.0.3 Alpha.exe",
+              "encodedAttachFileNameByTruncate": "DevilUI 6.0.3 Alph. . .",
+              "encodedAttachFileUrl": "https://download.blog.naver.com/open/d94cc576653d3de1cc224e7244a7d2ab0757af4e91/EFsTabZLxr3O9d9fLuoSggWaFwbSq-pvdFEANXoi2G0pHYu4VH4i7f-3AoBm6khcrU6BfGj68AUcfJxwH1ysFSAa-MB5mIRm/DevilUI%206.0.3%20Alpha.exe",
+              "encodedAttachFileUrlByMS949": "https://download.blog.naver.com/open/d94cc576653d3de1cc224e7244a7d2ab0757af4e91/EFsTabZLxr3O9d9fLuoSggWaFwbSq-pvdFEANXoi2G0pHYu4VH4i7f-3AoBm6khcrU6BfGj68AUcfJxwH1ysFSAa-MB5mIRm/DevilUI%206.0.3%20Alpha.exe",
+              "licenseyn": "",
+              "maliciousCodeYn": "false",
+              "punishType": "0",
+              "attachFileSize": "7,412,664",
+              "encodedAttachFileNameByUTF8": "DevilUI+6.0.3+Alpha.exe",
+              "ahfLicenseYn": "false"
+            },
+            {
+              "encodedAttachFileName": "Black Edition2_6.0.3 Alpha.exe",
+              "encodedAttachFileNameByTruncate": "Black Edition2_6.0. . .",
+              "encodedAttachFileUrl": "https://download.blog.naver.com/open/00951cafb5e7e43815fb97ab9d7e0b72de8e76977b/EFsTabZLxr3O9dxdLuoSggWaFwbSq-pvdFEANXoi2G0pHYu4VH4i7f2_DINn6nN81E3xaGj68AVZxVNinnGxFNjC7BxT8KDp/Black%20Edition2_6.0.3%20Alpha.exe",
+              "encodedAttachFileUrlByMS949": "https://download.blog.naver.com/open/00951cafb5e7e43815fb97ab9d7e0b72de8e769074/EFsTabZLxr3O9dxdLuoSggWaFwbSq-pvdFEANXoi2G0pHYu4VH4i7f2_DINn6nN81E3xaGj68AVZxVNinnGxFNjC7BxT8KDp/Black%20Edition2_6.0.3%20Alpha.exe",
+              "licenseyn": "",
+              "maliciousCodeYn": "false",
+              "punishType": "0",
+              "attachFileSize": "7,537,958",
+              "encodedAttachFileNameByUTF8": "Black+Edition2_6.0.3+Alpha.exe",
+              "ahfLicenseYn": "false"
+            }
+          ],
+          "state": "JSON-decoded-without-JS-execution"
+        }
+      ]
+    },
+    {
+      "time": "2026-11-17T14:34:44.4198145Z",
+      "sourceURL": "https://www.inven.co.kr/board/wow/1636?query=list&p=1&sterm=&name=subjcont&keyword=DevilUI-X2",
+      "contentType": "text/html; charset=UTF-8",
+      "localpath": "D:/Projects/Project_WF/work/old-reference-r36-3ed3y_p1/author-forum-x2-search.html",
+      "HTTP": 200,
+      "name": "author-forum-x2-search",
+      "bytes": 247611,
+      "SHA256": "EF84D199E1363D4A129C0C7B20CBB470E87BFDAF4DAEE43BC22A63066D99BE3B",
+      "titleLiteral": "와우 인벤 Devil UI 포럼 - 월드 오브 워크래프트 인벤",
+      "iframes": [
+        {
+          "id": "comAdBBSSubject",
+          "src": "//zicf.inven.co.kr/RealMedia/ads/adstream_sx.ads/inven/wow@x87?a1_ppo1=0",
+          "line": 1795
+        }
+      ],
+      "matchingLinks": [
+        {
+          "text": "글쓰기",
+          "href": "https://www.inven.co.kr/board/powerbbs.php?query=write&come_idx=1636&name=subjcont&keyword=DevilUI-X2",
+          "onclick": null,
+          "line": 1320
+        },
+        {
+          "text": "인증글",
+          "href": "https://www.inven.co.kr/board/wow/1636?name=subjcont&keyword=DevilUI-X2&my=con",
+          "onclick": null,
+          "line": 1338
+        },
+        {
+          "text": "DevilUI에 대하여...",
+          "href": "https://www.inven.co.kr/board/wow/1636/877?name=subjcont&keyword=DevilUI-X2",
+          "onclick": null,
+          "line": 1502
+        },
+        {
+          "text": "자주묻는 질문에 대한 답변! Q&A",
+          "href": "https://www.inven.co.kr/board/wow/1636/9041?name=subjcont&keyword=DevilUI-X2",
+          "onclick": null,
+          "line": 1526
+        },
+        {
+          "text": "질문시 꼭 지켜주세요!",
+          "href": "https://www.inven.co.kr/board/wow/1636/12892?name=subjcont&keyword=DevilUI-X2",
+          "onclick": null,
+          "line": 1550
+        },
+        {
+          "text": "글쓰기",
+          "href": "https://www.inven.co.kr/board/powerbbs.php?query=write&come_idx=1636&name=subjcont&keyword=DevilUI-X2",
+          "onclick": null,
+          "line": 1579
+        }
+      ],
+      "archiveURLLiterals": []
+    },
+    {
+      "localpath": "D:/Projects/Project_WF/work/old-reference-r36-3ed3y_p1/author-blog-x2-search.html",
+      "time": "2026-11-17T14:35:19.5053253Z",
+      "HTTP": 200,
+      "name": "author-blog-x2-search",
+      "sourceURL": "https://blog.naver.com/PostSearchList.naver?SearchText=DevilUI-X2&blogId=nicecurry",
+      "bytes": 129469,
+      "SHA256": "FC7EC2D48C09AB28A8DB1B6DAB84C7BBAF218B3CE6B755D3D8E96BEA1B9421E6",
+      "titleLiteral": "nicecurry님의 블로그 : 네이버 블로그",
+      "iframes": [
+        {
+          "id": "saveTagNameFrame",
+          "src": "",
+          "line": 2219
+        },
+        {
+          "id": "layeredframe",
+          "src": "about:blank",
+          "line": 2367
+        },
+        {
+          "id": "captchalayeredframe",
+          "src": "about:blank",
+          "line": 2377
+        },
+        {
+          "id": null,
+          "src": null,
+          "line": 2631
+        }
+      ],
+      "matchingLinks": [
+        {
+          "text": "관련도순",
+          "href": "/PostSearchList.naver?blogId=nicecurry&categoryNo=0&SearchText=DevilUI-X2&orderBy=sim&range=all",
+          "onclick": null,
+          "line": 1689
+        },
+        {
+          "text": "최근작성일",
+          "href": "/PostSearchList.naver?blogId=nicecurry&categoryNo=0&SearchText=DevilUI-X2&orderBy=date&range=all",
+          "onclick": null,
+          "line": 1690
+        },
+        {
+          "text": "블로그 전체 검색결과 보기",
+          "href": "https://section.blog.naver.com/Search/Post.naver?keyword=DevilUI-X2",
+          "onclick": "sendClickNlog('ser.gosearchall', '');",
+          "line": 1725
+        }
+      ],
+      "archiveURLLiterals": [],
+      "searchResultCountLiteral": "검색결과 0건",
+      "searchResultCount": 0,
+      "noResultsLiteralPresent": true
+    },
+    {
+      "localpath": "D:/Projects/Project_WF/work/old-reference-r36-3ed3y_p1/author-blog-305-search.html",
+      "time": "2026-11-17T14:35:19.6206135Z",
+      "HTTP": 200,
+      "name": "author-blog-305-search",
+      "sourceURL": "https://blog.naver.com/PostSearchList.naver?SearchText=DevilUI%203.05&blogId=nicecurry",
+      "bytes": 129487,
+      "SHA256": "C4DE7D764C005516D6336ED8BC030686B44B69CE7D27705B428020675D112CC1",
+      "titleLiteral": "nicecurry님의 블로그 : 네이버 블로그",
+      "iframes": [
+        {
+          "id": "saveTagNameFrame",
+          "src": "",
+          "line": 2219
+        },
+        {
+          "id": "layeredframe",
+          "src": "about:blank",
+          "line": 2367
+        },
+        {
+          "id": "captchalayeredframe",
+          "src": "about:blank",
+          "line": 2377
+        },
+        {
+          "id": null,
+          "src": null,
+          "line": 2631
+        }
+      ],
+      "matchingLinks": [
+        {
+          "text": "관련도순",
+          "href": "/PostSearchList.naver?blogId=nicecurry&categoryNo=0&SearchText=DevilUI+3.05&orderBy=sim&range=all",
+          "onclick": null,
+          "line": 1689
+        },
+        {
+          "text": "최근작성일",
+          "href": "/PostSearchList.naver?blogId=nicecurry&categoryNo=0&SearchText=DevilUI+3.05&orderBy=date&range=all",
+          "onclick": null,
+          "line": 1690
+        },
+        {
+          "text": "블로그 전체 검색결과 보기",
+          "href": "https://section.blog.naver.com/Search/Post.naver?keyword=DevilUI 3.05",
+          "onclick": "sendClickNlog('ser.gosearchall', '');",
+          "line": 1725
+        }
+      ],
+      "archiveURLLiterals": [],
+      "searchResultCountLiteral": "검색결과 0건",
+      "searchResultCount": 0,
+      "noResultsLiteralPresent": true
+    }
+  ],
+  "searchEvidence": {
+    "method": "Bounded public web search query results observed through web tool; no claimed exhaustive absence, no oldfile identity inference. Search result snippets only locate source; no source prose summarized.",
+    "queries": [
+      {
+        "query": "\"DevilUI-X2 R3.4.zip\"",
+        "result": "only original Inven attachment table located"
+      },
+      {
+        "query": "\"DevilUI-X2_R1.zip\"",
+        "result": "only original Inven attachment table located"
+      },
+      {
+        "query": "\"DevilUI 3.05.zip\" nicecurry",
+        "result": "no usable binaryURL returned; shared result original Inven table"
+      },
+      {
+        "query": "site:blog.naver.com/nicecurry \"DevilUI-X2\"",
+        "result": "webtool reported robots.txt non-retryable; author original HTTP public pages acquired separately before/through normal explicit source links, no login/TLS bypass"
+      },
+      {
+        "query": "\"DevilUI-X2_R1\" -site:wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php",
+        "result": "no usable binaryURL; original table still returned"
+      },
+      {
+        "query": "\"DevilUI 3.05\" download",
+        "result": "original Inven attachment table returned"
+      },
+      {
+        "query": "\"Devil UI 3.2.0(10192)\"",
+        "result": "original Inven list entries returned; no packagefilename/directbinaryURL"
+      },
+      {
+        "query": "\"DevilUI-X2\" \"R3.4\" download",
+        "result": "original Inven table returned"
+      },
+      {
+        "query": "\"DevilUI-X2_2.4R04041.zip\"",
+        "result": "original Inven table plus irrelevant package mirrors; no usable namedbinaryURL"
+      }
+    ],
+    "locatedRelevantSourceURLs": [
+      "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?count=56&mode=view&ridx=45&tempridx=",
+      "https://wow.inven.co.kr/dataninfo/addonpds/list.php?category=%ED%86%B5%ED%95%A9UI&listtype=total&page=2&sortField=downcount"
+    ]
+  },
+  "bounds": "No additional binaries downloaded from author pages because returned latest attachments are not selected oldpackages. No arbitrary date/filename variants tried after exact four404. Blog keyword zero results is current query result, not proof original absent. idx2582 currentfiles0 is not proof original package neverexisted."
+}

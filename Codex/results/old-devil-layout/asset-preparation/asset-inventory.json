@@ -1,0 +1,3268 @@
+{
+  "schema": "asset-preparation-v1",
+  "actualUTC": "2026-11-17T17:03:32.899278+00:00",
+  "toolVersions": {
+    "Python": "3.12.10",
+    "Pillow": "12.3.0",
+    "fontTools": "4.62.1"
+  },
+  "roots": [
+    {
+      "rootID": 1,
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\Devil",
+      "filesEnumerated": 5
+    },
+    {
+      "rootID": 2,
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\SharedMedia\\border",
+      "filesEnumerated": 3
+    },
+    {
+      "rootID": 3,
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media",
+      "filesEnumerated": 17
+    },
+    {
+      "rootID": 4,
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx",
+      "filesEnumerated": 13
+    },
+    {
+      "rootID": 5,
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Fonts",
+      "filesEnumerated": 3
+    }
+  ],
+  "sourceRows": [
+    {
+      "rootID": 1,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\Devil\\angel.tga",
+      "relativePath": "angel.tga",
+      "bytes": 262188,
+      "SHA256before": "073284129E9F8D2AD16998140A1AC6DB1A475636025AEFF476FC3DA359CA8744",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          256,
+          256
+        ],
+        "extrema": [
+          [
+            0,
+            207
+          ],
+          [
+            0,
+            198
+          ],
+          [
+            0,
+            183
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          43,
+          105,
+          256,
+          256
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "77AB871DBDA3FC49B68353F98C417AACA9E9E3E32C70E13071B607E424AE9D04"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\073284129E9F8D2AD16998140A1AC6DB1A475636025AEFF476FC3DA359CA8744.png",
+      "SHA256after": "073284129E9F8D2AD16998140A1AC6DB1A475636025AEFF476FC3DA359CA8744",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 1,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\Devil\\border.tga",
+      "relativePath": "border.tga",
+      "bytes": 4140,
+      "SHA256before": "7E0E0E9C7831BBBCFFD75F5F71DF51BDD48366AD4C7E3DF0ADC30750F429B1D3",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          32,
+          32
+        ],
+        "extrema": [
+          [
+            0,
+            68
+          ],
+          [
+            0,
+            68
+          ],
+          [
+            0,
+            68
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          0,
+          0,
+          32,
+          32
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "319E3EAAFF8B8CA067EB044BF7F9372760D95A5D5312C417B1FF02AF504CD7B1"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\7E0E0E9C7831BBBCFFD75F5F71DF51BDD48366AD4C7E3DF0ADC30750F429B1D3.png",
+      "SHA256after": "7E0E0E9C7831BBBCFFD75F5F71DF51BDD48366AD4C7E3DF0ADC30750F429B1D3",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 1,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\Devil\\demon.tga",
+      "relativePath": "demon.tga",
+      "bytes": 262188,
+      "SHA256before": "045CE188243A618161EB6351ECA50F2F0B7562A944C16D59EB68E0A2DFE248CA",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          256,
+          256
+        ],
+        "extrema": [
+          [
+            0,
+            240
+          ],
+          [
+            0,
+            204
+          ],
+          [
+            0,
+            180
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          0,
+          92,
+          220,
+          256
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "A04E9C59684C6013AD069160F6373E2F37C94EE7AC26F288E91B060C137AF251"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\045CE188243A618161EB6351ECA50F2F0B7562A944C16D59EB68E0A2DFE248CA.png",
+      "SHA256after": "045CE188243A618161EB6351ECA50F2F0B7562A944C16D59EB68E0A2DFE248CA",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 1,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\Devil\\Minimap.TGA",
+      "relativePath": "Minimap.TGA",
+      "bytes": 262188,
+      "SHA256before": "549B0D63829FA160BB9B7CFDDE619107FC39C9A877AD28F173576F55C907AC79",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          256,
+          256
+        ],
+        "extrema": [
+          [
+            0,
+            206
+          ],
+          [
+            0,
+            206
+          ],
+          [
+            0,
+            206
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          4,
+          0,
+          252,
+          248
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "732807832AB74888CD6E4D73D8EC680A42E8E7B4B7247C140DF91B47ADB9BF9B"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\549B0D63829FA160BB9B7CFDDE619107FC39C9A877AD28F173576F55C907AC79.png",
+      "SHA256after": "549B0D63829FA160BB9B7CFDDE619107FC39C9A877AD28F173576F55C907AC79",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 1,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\Devil\\tooltip.tga",
+      "relativePath": "tooltip.tga",
+      "bytes": 8236,
+      "SHA256before": "F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          128,
+          16
+        ],
+        "extrema": [
+          [
+            0,
+            59
+          ],
+          [
+            0,
+            59
+          ],
+          [
+            0,
+            59
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          1,
+          0,
+          127,
+          16
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "B095E3C2891EE0E66B5DFB08DB1F84C5A600E6CAF92A93D816F1B5DC173FE63B"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD.png",
+      "SHA256after": "F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 2,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\SharedMedia\\border\\Devil.tga",
+      "relativePath": "Devil.tga",
+      "bytes": 8236,
+      "SHA256before": "9DE505F668137A32B3ADD4CD56ADB6B84883B798B0E3398C37B6CBCCED914504",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          128,
+          16
+        ],
+        "extrema": [
+          [
+            0,
+            181
+          ],
+          [
+            0,
+            181
+          ],
+          [
+            0,
+            181
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          0,
+          0,
+          128,
+          16
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "4261616025D363DDBDB909859F14047BF855187B81BF2AC3F99D7D2E61018357"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\9DE505F668137A32B3ADD4CD56ADB6B84883B798B0E3398C37B6CBCCED914504.png",
+      "SHA256after": "9DE505F668137A32B3ADD4CD56ADB6B84883B798B0E3398C37B6CBCCED914504",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 2,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\SharedMedia\\border\\Devil2.tga",
+      "relativePath": "Devil2.tga",
+      "bytes": 8236,
+      "SHA256before": "F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          128,
+          16
+        ],
+        "extrema": [
+          [
+            0,
+            59
+          ],
+          [
+            0,
+            59
+          ],
+          [
+            0,
+            59
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          1,
+          0,
+          127,
+          16
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "B095E3C2891EE0E66B5DFB08DB1F84C5A600E6CAF92A93D816F1B5DC173FE63B"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD.png",
+      "SHA256after": "F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 2,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\SharedMedia\\border\\roth.tga",
+      "relativePath": "roth.tga",
+      "bytes": 8236,
+      "SHA256before": "49CA0BC8E0CBDD6ABED71748E3B686032F588C5E2829E6B844C9EC1F8B1A3AA9",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          128,
+          16
+        ],
+        "extrema": [
+          [
+            0,
+            75
+          ],
+          [
+            0,
+            75
+          ],
+          [
+            0,
+            75
+          ],
+          [
+            0,
+            102
+          ]
+        ],
+        "alphaBBox": [
+          1,
+          0,
+          127,
+          16
+        ],
+        "alphaExtrema": [
+          0,
+          102
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "A64019462062563B4CC96D19250DE4845249E876A39A9F7F43309C7F26E67064"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\49CA0BC8E0CBDD6ABED71748E3B686032F588C5E2829E6B844C9EC1F8B1A3AA9.png",
+      "SHA256after": "49CA0BC8E0CBDD6ABED71748E3B686032F588C5E2829E6B844C9EC1F8B1A3AA9",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 3,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\background\\angel.tga",
+      "relativePath": "background/angel.tga",
+      "bytes": 262188,
+      "SHA256before": "073284129E9F8D2AD16998140A1AC6DB1A475636025AEFF476FC3DA359CA8744",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          256,
+          256
+        ],
+        "extrema": [
+          [
+            0,
+            207
+          ],
+          [
+            0,
+            198
+          ],
+          [
+            0,
+            183
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          43,
+          105,
+          256,
+          256
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "77AB871DBDA3FC49B68353F98C417AACA9E9E3E32C70E13071B607E424AE9D04"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\073284129E9F8D2AD16998140A1AC6DB1A475636025AEFF476FC3DA359CA8744.png",
+      "SHA256after": "073284129E9F8D2AD16998140A1AC6DB1A475636025AEFF476FC3DA359CA8744",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 3,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\background\\demon.tga",
+      "relativePath": "background/demon.tga",
+      "bytes": 262188,
+      "SHA256before": "045CE188243A618161EB6351ECA50F2F0B7562A944C16D59EB68E0A2DFE248CA",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          256,
+          256
+        ],
+        "extrema": [
+          [
+            0,
+            240
+          ],
+          [
+            0,
+            204
+          ],
+          [
+            0,
+            180
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          0,
+          92,
+          220,
+          256
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "A04E9C59684C6013AD069160F6373E2F37C94EE7AC26F288E91B060C137AF251"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\045CE188243A618161EB6351ECA50F2F0B7562A944C16D59EB68E0A2DFE248CA.png",
+      "SHA256after": "045CE188243A618161EB6351ECA50F2F0B7562A944C16D59EB68E0A2DFE248CA",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 3,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\background\\Minimap.TGA",
+      "relativePath": "background/Minimap.TGA",
+      "bytes": 262188,
+      "SHA256before": "549B0D63829FA160BB9B7CFDDE619107FC39C9A877AD28F173576F55C907AC79",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          256,
+          256
+        ],
+        "extrema": [
+          [
+            0,
+            206
+          ],
+          [
+            0,
+            206
+          ],
+          [
+            0,
+            206
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          4,
+          0,
+          252,
+          248
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "732807832AB74888CD6E4D73D8EC680A42E8E7B4B7247C140DF91B47ADB9BF9B"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\549B0D63829FA160BB9B7CFDDE619107FC39C9A877AD28F173576F55C907AC79.png",
+      "SHA256after": "549B0D63829FA160BB9B7CFDDE619107FC39C9A877AD28F173576F55C907AC79",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 3,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\border\\Devil.tga",
+      "relativePath": "border/Devil.tga",
+      "bytes": 8236,
+      "SHA256before": "9DE505F668137A32B3ADD4CD56ADB6B84883B798B0E3398C37B6CBCCED914504",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          128,
+          16
+        ],
+        "extrema": [
+          [
+            0,
+            181
+          ],
+          [
+            0,
+            181
+          ],
+          [
+            0,
+            181
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          0,
+          0,
+          128,
+          16
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "4261616025D363DDBDB909859F14047BF855187B81BF2AC3F99D7D2E61018357"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\9DE505F668137A32B3ADD4CD56ADB6B84883B798B0E3398C37B6CBCCED914504.png",
+      "SHA256after": "9DE505F668137A32B3ADD4CD56ADB6B84883B798B0E3398C37B6CBCCED914504",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 3,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\border\\Devil2.tga",
+      "relativePath": "border/Devil2.tga",
+      "bytes": 8236,
+      "SHA256before": "F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          128,
+          16
+        ],
+        "extrema": [
+          [
+            0,
+            59
+          ],
+          [
+            0,
+            59
+          ],
+          [
+            0,
+            59
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          1,
+          0,
+          127,
+          16
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "B095E3C2891EE0E66B5DFB08DB1F84C5A600E6CAF92A93D816F1B5DC173FE63B"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD.png",
+      "SHA256after": "F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 3,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\border\\Devil3.tga",
+      "relativePath": "border/Devil3.tga",
+      "bytes": 2200,
+      "SHA256before": "150DEC18668CCCB2EF33B37D1C8A9468FDE7478F42747CEFFC037037C215D86B",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          128,
+          16
+        ],
+        "extrema": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          2,
+          0,
+          126,
+          16
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "8B2A1BDDF78617737730BB3C900770B6FBE4BDA47AA19B8CC5BBEA0D32832220"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\150DEC18668CCCB2EF33B37D1C8A9468FDE7478F42747CEFFC037037C215D86B.png",
+      "SHA256after": "150DEC18668CCCB2EF33B37D1C8A9468FDE7478F42747CEFFC037037C215D86B",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 3,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\border\\roth.tga",
+      "relativePath": "border/roth.tga",
+      "bytes": 8236,
+      "SHA256before": "49CA0BC8E0CBDD6ABED71748E3B686032F588C5E2829E6B844C9EC1F8B1A3AA9",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          128,
+          16
+        ],
+        "extrema": [
+          [
+            0,
+            75
+          ],
+          [
+            0,
+            75
+          ],
+          [
+            0,
+            75
+          ],
+          [
+            0,
+            102
+          ]
+        ],
+        "alphaBBox": [
+          1,
+          0,
+          127,
+          16
+        ],
+        "alphaExtrema": [
+          0,
+          102
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "A64019462062563B4CC96D19250DE4845249E876A39A9F7F43309C7F26E67064"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\49CA0BC8E0CBDD6ABED71748E3B686032F588C5E2829E6B844C9EC1F8B1A3AA9.png",
+      "SHA256after": "49CA0BC8E0CBDD6ABED71748E3B686032F588C5E2829E6B844C9EC1F8B1A3AA9",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 3,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\fonts\\K_Damage.TTF",
+      "relativePath": "fonts/K_Damage.TTF",
+      "bytes": 566392,
+      "SHA256before": "E07805474988474E30AD4DCBCCD690627EB960AD5C5581B95C07EA08E4C97896",
+      "suffix": ".ttf",
+      "kind": "font",
+      "SHA256after": "E07805474988474E30AD4DCBCCD690627EB960AD5C5581B95C07EA08E4C97896",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 3,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\load_media.xml",
+      "relativePath": "load_media.xml",
+      "bytes": 85,
+      "SHA256before": "7728740025BF52C73B4C5A32757164F267320BDE8AD78115AB1AD398DF1F8B66",
+      "suffix": ".xml",
+      "kind": "path-hash-metadata-only",
+      "SHA256after": "7728740025BF52C73B4C5A32757164F267320BDE8AD78115AB1AD398DF1F8B66",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 3,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\mail.tga",
+      "relativePath": "mail.tga",
+      "bytes": 584,
+      "SHA256before": "FD2A7BF3E1395AFBE92DB0EA607E8F24D8D0D1E508010A6B4EC684011DCCABE3",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          16,
+          16
+        ],
+        "extrema": [
+          [
+            0,
+            252
+          ],
+          [
+            0,
+            251
+          ],
+          [
+            0,
+            250
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          1,
+          3,
+          15,
+          13
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "94AB1B552F56EAA12A8B565B0330E04F79F4152924A6E9F7B7C7F5D12B775BB1"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\FD2A7BF3E1395AFBE92DB0EA607E8F24D8D0D1E508010A6B4EC684011DCCABE3.png",
+      "SHA256after": "FD2A7BF3E1395AFBE92DB0EA607E8F24D8D0D1E508010A6B4EC684011DCCABE3",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 3,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\sharedmedia.lua",
+      "relativePath": "sharedmedia.lua",
+      "bytes": 1422,
+      "SHA256before": "1F982D7F226EC2833A321DD3E657D84BD6C611AA93B7FAA85821C30D9AE7E81E",
+      "suffix": ".lua",
+      "kind": "skin-load-source-path-metadata-only",
+      "SHA256after": "1F982D7F226EC2833A321DD3E657D84BD6C611AA93B7FAA85821C30D9AE7E81E",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 3,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\statusbar\\FairAqua.tga",
+      "relativePath": "statusbar/FairAqua.tga",
+      "bytes": 32812,
+      "SHA256before": "DB16C4CB98D66C6A117293BC9C6BD881ABCAC8480946C70DD34E4CC2C43B1A5F",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          256,
+          32
+        ],
+        "extrema": [
+          [
+            120,
+            255
+          ],
+          [
+            120,
+            255
+          ],
+          [
+            119,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          0,
+          0,
+          256,
+          32
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "80F52D93DC41DE9183C237248820478549FBEFFDA0327D3FB4916F1AD0603C83"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\DB16C4CB98D66C6A117293BC9C6BD881ABCAC8480946C70DD34E4CC2C43B1A5F.png",
+      "SHA256after": "DB16C4CB98D66C6A117293BC9C6BD881ABCAC8480946C70DD34E4CC2C43B1A5F",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 3,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\statusbar\\FairLady.tga",
+      "relativePath": "statusbar/FairLady.tga",
+      "bytes": 32812,
+      "SHA256before": "54FD36E381A8A59C08313A7A61663F07E8E324CE4CBEA3E2AA6C572D3D6A0C20",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          256,
+          32
+        ],
+        "extrema": [
+          [
+            58,
+            255
+          ],
+          [
+            57,
+            255
+          ],
+          [
+            58,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          0,
+          0,
+          256,
+          32
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "7C2FE4F0D055E9E11884FE7411945B012C111483E49686303B98B0896667BF93"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\54FD36E381A8A59C08313A7A61663F07E8E324CE4CBEA3E2AA6C572D3D6A0C20.png",
+      "SHA256after": "54FD36E381A8A59C08313A7A61663F07E8E324CE4CBEA3E2AA6C572D3D6A0C20",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 3,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\statusbar\\Glamour7.tga",
+      "relativePath": "statusbar/Glamour7.tga",
+      "bytes": 65580,
+      "SHA256before": "EAE335C45840DABAF4412FA285B759DA7982172335A987CBEA689A291366C0AB",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          256,
+          64
+        ],
+        "extrema": [
+          [
+            92,
+            245
+          ],
+          [
+            92,
+            245
+          ],
+          [
+            92,
+            245
+          ],
+          [
+            255,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          0,
+          0,
+          256,
+          64
+        ],
+        "alphaExtrema": [
+          255,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "180D0B70FBF942831F5725EAF855EB0AED255C5E5320BB8F4271D01F4B34974A"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\EAE335C45840DABAF4412FA285B759DA7982172335A987CBEA689A291366C0AB.png",
+      "SHA256after": "EAE335C45840DABAF4412FA285B759DA7982172335A987CBEA689A291366C0AB",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 3,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\statusbar\\Minimalist.tga",
+      "relativePath": "statusbar/Minimalist.tga",
+      "bytes": 1304,
+      "SHA256before": "97976977031766D707A34121AC13C5AB6B7E9D204BE2EFAA395C717AEB1DC7AB",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          256,
+          32
+        ],
+        "extrema": [
+          [
+            102,
+            204
+          ],
+          [
+            102,
+            204
+          ],
+          [
+            102,
+            204
+          ],
+          [
+            255,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          0,
+          0,
+          256,
+          32
+        ],
+        "alphaExtrema": [
+          255,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "FB20BFE344F3FB95CA67288987A1FAF9BC5C899F4D7E75E884BE015BEE8E3FC1"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\97976977031766D707A34121AC13C5AB6B7E9D204BE2EFAA395C717AEB1DC7AB.png",
+      "SHA256after": "97976977031766D707A34121AC13C5AB6B7E9D204BE2EFAA395C717AEB1DC7AB",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 3,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\statusbar\\Smooth.tga",
+      "relativePath": "statusbar/Smooth.tga",
+      "bytes": 32812,
+      "SHA256before": "00E8084E83BF25B941464E2619B59E993B6AC7AE0BD8A6F37B12872E686DED6D",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          256,
+          32
+        ],
+        "extrema": [
+          [
+            88,
+            220
+          ],
+          [
+            88,
+            220
+          ],
+          [
+            88,
+            220
+          ],
+          [
+            255,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          0,
+          0,
+          256,
+          32
+        ],
+        "alphaExtrema": [
+          255,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "1E18C38F4AFC4B5E77974C85FE2BB42C9AF1966A62E2909132FBC416156A8207"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\00E8084E83BF25B941464E2619B59E993B6AC7AE0BD8A6F37B12872E686DED6D.png",
+      "SHA256after": "00E8084E83BF25B941464E2619B59E993B6AC7AE0BD8A6F37B12872E686DED6D",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 3,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\WHITE64X64.tga",
+      "relativePath": "WHITE64X64.tga",
+      "bytes": 12332,
+      "SHA256before": "50E76AB77BAE7DEB79272C749BBCF538719D46C0B3501D78FAB259566D2AE22F",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGB",
+        "dimensions": [
+          64,
+          64
+        ],
+        "extrema": [
+          [
+            255,
+            255
+          ],
+          [
+            255,
+            255
+          ],
+          [
+            255,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          0,
+          0,
+          64,
+          64
+        ],
+        "alphaExtrema": [
+          255,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "0FBBA07A833D4DCFC7024EAF313661A0BA8F80A05C6D29B8801C612E10E60DEE"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\50E76AB77BAE7DEB79272C749BBCF538719D46C0B3501D78FAB259566D2AE22F.png",
+      "SHA256after": "50E76AB77BAE7DEB79272C749BBCF538719D46C0B3501D78FAB259566D2AE22F",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 4,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Docs\\About.txt",
+      "relativePath": "Docs/About.txt",
+      "bytes": 433,
+      "SHA256before": "5E24A613A256484733A46F0076F1B782F6EF5ABB9D1CDB8FFECC5A31D69741EB",
+      "suffix": ".txt",
+      "kind": "path-hash-metadata-only",
+      "SHA256after": "5E24A613A256484733A46F0076F1B782F6EF5ABB9D1CDB8FFECC5A31D69741EB",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 4,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Docs\\License.txt",
+      "relativePath": "Docs/License.txt",
+      "bytes": 668,
+      "SHA256before": "304233596776407795386928FA14AC896E5A2924F00630CE52B7BF70D251BBA2",
+      "suffix": ".txt",
+      "kind": "path-hash-metadata-only",
+      "SHA256after": "304233596776407795386928FA14AC896E5A2924F00630CE52B7BF70D251BBA2",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 4,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Docs\\Update.txt",
+      "relativePath": "Docs/Update.txt",
+      "bytes": 37,
+      "SHA256before": "CAC4325EE492122D0FB7EA8005FFC30610F2315D31A3D34308C29A91DF0815B6",
+      "suffix": ".txt",
+      "kind": "path-hash-metadata-only",
+      "SHA256after": "CAC4325EE492122D0FB7EA8005FFC30610F2315D31A3D34308C29A91DF0815B6",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 4,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Masque_Onyx.toc",
+      "relativePath": "Masque_Onyx.toc",
+      "bytes": 487,
+      "SHA256before": "29498B541923395143DD3D2C338AEA1BED05A83BAF2419AE989B42715A5E032F",
+      "suffix": ".toc",
+      "kind": "skin-load-source-path-metadata-only",
+      "SHA256after": "29498B541923395143DD3D2C338AEA1BED05A83BAF2419AE989B42715A5E032F",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 4,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Onyx.lua",
+      "relativePath": "Onyx.lua",
+      "bytes": 2744,
+      "SHA256before": "C0E9EC78F726F158D621BE1D53FCF535E2BE5AADBC15E561046A80FCB71F2BEB",
+      "suffix": ".lua",
+      "kind": "skin-load-source-path-metadata-only",
+      "SHA256after": "C0E9EC78F726F158D621BE1D53FCF535E2BE5AADBC15E561046A80FCB71F2BEB",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 4,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Textures\\Arrow.tga",
+      "relativePath": "Textures/Arrow.tga",
+      "bytes": 16428,
+      "SHA256before": "530258343A9F43156C649D43B8D4D04159CC179919B505187E7B53EB97F893CF",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          64,
+          64
+        ],
+        "extrema": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            230
+          ]
+        ],
+        "alphaBBox": [
+          26,
+          2,
+          36,
+          9
+        ],
+        "alphaExtrema": [
+          0,
+          230
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "7EB70E3237973B4C90FBAB96590E2F75103A98121142677F1829DAAE09EE328D"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\530258343A9F43156C649D43B8D4D04159CC179919B505187E7B53EB97F893CF.png",
+      "SHA256after": "530258343A9F43156C649D43B8D4D04159CC179919B505187E7B53EB97F893CF",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 4,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Textures\\Backdrop.tga",
+      "relativePath": "Textures/Backdrop.tga",
+      "bytes": 16428,
+      "SHA256before": "CE0732935E0C6578A3F913201900661A8B15073CE0BD2685921119F62914F182",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          64,
+          64
+        ],
+        "extrema": [
+          [
+            0,
+            71
+          ],
+          [
+            0,
+            70
+          ],
+          [
+            0,
+            71
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          6,
+          6,
+          58,
+          58
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "BF6BDA8EE7127261379B837A57F3B51CF783753DC536AA7E5DE34E16F9CD5056"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\CE0732935E0C6578A3F913201900661A8B15073CE0BD2685921119F62914F182.png",
+      "SHA256after": "CE0732935E0C6578A3F913201900661A8B15073CE0BD2685921119F62914F182",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 4,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Textures\\Border.tga",
+      "relativePath": "Textures/Border.tga",
+      "bytes": 16428,
+      "SHA256before": "6205864AB3317B4D18DAC301C3BF1272E8B451F6F94C0D305058638ED1D57B97",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          64,
+          64
+        ],
+        "extrema": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            253
+          ]
+        ],
+        "alphaBBox": [
+          10,
+          10,
+          54,
+          54
+        ],
+        "alphaExtrema": [
+          0,
+          253
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "F0FF37BC685586AD2DDEEA90E0CD52B80D5EEF1C67FCAAC976F4E2E0F186845D"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\6205864AB3317B4D18DAC301C3BF1272E8B451F6F94C0D305058638ED1D57B97.png",
+      "SHA256after": "6205864AB3317B4D18DAC301C3BF1272E8B451F6F94C0D305058638ED1D57B97",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 4,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Textures\\Classic.tga",
+      "relativePath": "Textures/Classic.tga",
+      "bytes": 16428,
+      "SHA256before": "0CE612BDB39399D2676B14FDD61CCADE9FA8A1904339D88F0969259C6E88F2FE",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          64,
+          64
+        ],
+        "extrema": [
+          [
+            0,
+            121
+          ],
+          [
+            0,
+            121
+          ],
+          [
+            0,
+            121
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          1,
+          1,
+          63,
+          63
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "8BB7166E4C5DE5971987161F5E4EC436D67A6D9AFCE6213D010B9F17987371ED"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\0CE612BDB39399D2676B14FDD61CCADE9FA8A1904339D88F0969259C6E88F2FE.png",
+      "SHA256after": "0CE612BDB39399D2676B14FDD61CCADE9FA8A1904339D88F0969259C6E88F2FE",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 4,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Textures\\Gloss.tga",
+      "relativePath": "Textures/Gloss.tga",
+      "bytes": 16428,
+      "SHA256before": "B797A5014DBC3D57F9CD4F44FFFF5B424E1953B357FEAF408A07FAA26509C50B",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          64,
+          64
+        ],
+        "extrema": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            111
+          ]
+        ],
+        "alphaBBox": [
+          9,
+          9,
+          55,
+          31
+        ],
+        "alphaExtrema": [
+          0,
+          111
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "2B993E6C94C3F14C527EC28BBC78648EBE45C20EEECA7E0829B31ED26F5AB55A"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\B797A5014DBC3D57F9CD4F44FFFF5B424E1953B357FEAF408A07FAA26509C50B.png",
+      "SHA256after": "B797A5014DBC3D57F9CD4F44FFFF5B424E1953B357FEAF408A07FAA26509C50B",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 4,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Textures\\Highlight.tga",
+      "relativePath": "Textures/Highlight.tga",
+      "bytes": 16428,
+      "SHA256before": "F9766B998A36A093393C444839DA9364EDF3AEA3899A5EE69AA0D0261D4C1B83",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          64,
+          64
+        ],
+        "extrema": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            62
+          ]
+        ],
+        "alphaBBox": [
+          10,
+          10,
+          54,
+          31
+        ],
+        "alphaExtrema": [
+          0,
+          62
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "3B653CC9AF7A2ADA4C022DEF281BE902EEB9F6FBC960D1CA8B3F5FF4A8E71919"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\F9766B998A36A093393C444839DA9364EDF3AEA3899A5EE69AA0D0261D4C1B83.png",
+      "SHA256after": "F9766B998A36A093393C444839DA9364EDF3AEA3899A5EE69AA0D0261D4C1B83",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 4,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Textures\\Overlay.tga",
+      "relativePath": "Textures/Overlay.tga",
+      "bytes": 16428,
+      "SHA256before": "FD870CDE3E44463D77232C19FA9597BEECA897BF760FDC873AA302BA0120C81F",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          64,
+          64
+        ],
+        "extrema": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          10,
+          10,
+          54,
+          54
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "D53246B0EC3AB4ED4BE1FD4B47DC7AFD0A10073FD5C121E9502A5936A355FF65"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\FD870CDE3E44463D77232C19FA9597BEECA897BF760FDC873AA302BA0120C81F.png",
+      "SHA256after": "FD870CDE3E44463D77232C19FA9597BEECA897BF760FDC873AA302BA0120C81F",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 4,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Textures\\Redux.tga",
+      "relativePath": "Textures/Redux.tga",
+      "bytes": 16428,
+      "SHA256before": "E77A8FE0A4DE108FAE156E45B1458EB1C04E594082D7B11816E1567BC435DDF9",
+      "suffix": ".tga",
+      "kind": "image",
+      "image": {
+        "PillowFormat": "TGA",
+        "mode": "RGBA",
+        "dimensions": [
+          64,
+          64
+        ],
+        "extrema": [
+          [
+            0,
+            77
+          ],
+          [
+            0,
+            77
+          ],
+          [
+            0,
+            77
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "alphaBBox": [
+          1,
+          1,
+          63,
+          63
+        ],
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "normalizedPixelMode": "RGBA",
+        "RGBApixelsSHA256": "3D41D044BD3D34C21DEF0E55FF8A6C3F5AF52D2FA28C20A03D17BAF83ED8709C"
+      },
+      "derivativePath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\E77A8FE0A4DE108FAE156E45B1458EB1C04E594082D7B11816E1567BC435DDF9.png",
+      "SHA256after": "E77A8FE0A4DE108FAE156E45B1458EB1C04E594082D7B11816E1567BC435DDF9",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 5,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Fonts\\2002.ttf",
+      "relativePath": "2002.ttf",
+      "bytes": 654512,
+      "SHA256before": "49DF5AB286B7090AF765626115578F4630FCFC240784E45344D9367A0697DBB5",
+      "suffix": ".ttf",
+      "kind": "font",
+      "SHA256after": "49DF5AB286B7090AF765626115578F4630FCFC240784E45344D9367A0697DBB5",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 5,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Fonts\\2002b.ttf",
+      "relativePath": "2002b.ttf",
+      "bytes": 654512,
+      "SHA256before": "49DF5AB286B7090AF765626115578F4630FCFC240784E45344D9367A0697DBB5",
+      "suffix": ".ttf",
+      "kind": "font",
+      "SHA256after": "49DF5AB286B7090AF765626115578F4630FCFC240784E45344D9367A0697DBB5",
+      "sourceUnchanged": true
+    },
+    {
+      "rootID": 5,
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Fonts\\K_Damage.TTF",
+      "relativePath": "K_Damage.TTF",
+      "bytes": 566392,
+      "SHA256before": "E07805474988474E30AD4DCBCCD690627EB960AD5C5581B95C07EA08E4C97896",
+      "suffix": ".ttf",
+      "kind": "font",
+      "SHA256after": "E07805474988474E30AD4DCBCCD690627EB960AD5C5581B95C07EA08E4C97896",
+      "sourceUnchanged": true
+    }
+  ],
+  "uniqueHashes": [
+    "00E8084E83BF25B941464E2619B59E993B6AC7AE0BD8A6F37B12872E686DED6D",
+    "045CE188243A618161EB6351ECA50F2F0B7562A944C16D59EB68E0A2DFE248CA",
+    "073284129E9F8D2AD16998140A1AC6DB1A475636025AEFF476FC3DA359CA8744",
+    "0CE612BDB39399D2676B14FDD61CCADE9FA8A1904339D88F0969259C6E88F2FE",
+    "150DEC18668CCCB2EF33B37D1C8A9468FDE7478F42747CEFFC037037C215D86B",
+    "1F982D7F226EC2833A321DD3E657D84BD6C611AA93B7FAA85821C30D9AE7E81E",
+    "29498B541923395143DD3D2C338AEA1BED05A83BAF2419AE989B42715A5E032F",
+    "304233596776407795386928FA14AC896E5A2924F00630CE52B7BF70D251BBA2",
+    "49CA0BC8E0CBDD6ABED71748E3B686032F588C5E2829E6B844C9EC1F8B1A3AA9",
+    "49DF5AB286B7090AF765626115578F4630FCFC240784E45344D9367A0697DBB5",
+    "50E76AB77BAE7DEB79272C749BBCF538719D46C0B3501D78FAB259566D2AE22F",
+    "530258343A9F43156C649D43B8D4D04159CC179919B505187E7B53EB97F893CF",
+    "549B0D63829FA160BB9B7CFDDE619107FC39C9A877AD28F173576F55C907AC79",
+    "54FD36E381A8A59C08313A7A61663F07E8E324CE4CBEA3E2AA6C572D3D6A0C20",
+    "5E24A613A256484733A46F0076F1B782F6EF5ABB9D1CDB8FFECC5A31D69741EB",
+    "6205864AB3317B4D18DAC301C3BF1272E8B451F6F94C0D305058638ED1D57B97",
+    "7728740025BF52C73B4C5A32757164F267320BDE8AD78115AB1AD398DF1F8B66",
+    "7E0E0E9C7831BBBCFFD75F5F71DF51BDD48366AD4C7E3DF0ADC30750F429B1D3",
+    "97976977031766D707A34121AC13C5AB6B7E9D204BE2EFAA395C717AEB1DC7AB",
+    "9DE505F668137A32B3ADD4CD56ADB6B84883B798B0E3398C37B6CBCCED914504",
+    "B797A5014DBC3D57F9CD4F44FFFF5B424E1953B357FEAF408A07FAA26509C50B",
+    "C0E9EC78F726F158D621BE1D53FCF535E2BE5AADBC15E561046A80FCB71F2BEB",
+    "CAC4325EE492122D0FB7EA8005FFC30610F2315D31A3D34308C29A91DF0815B6",
+    "CE0732935E0C6578A3F913201900661A8B15073CE0BD2685921119F62914F182",
+    "DB16C4CB98D66C6A117293BC9C6BD881ABCAC8480946C70DD34E4CC2C43B1A5F",
+    "E07805474988474E30AD4DCBCCD690627EB960AD5C5581B95C07EA08E4C97896",
+    "E77A8FE0A4DE108FAE156E45B1458EB1C04E594082D7B11816E1567BC435DDF9",
+    "EAE335C45840DABAF4412FA285B759DA7982172335A987CBEA689A291366C0AB",
+    "F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD",
+    "F9766B998A36A093393C444839DA9364EDF3AEA3899A5EE69AA0D0261D4C1B83",
+    "FD2A7BF3E1395AFBE92DB0EA607E8F24D8D0D1E508010A6B4EC684011DCCABE3",
+    "FD870CDE3E44463D77232C19FA9597BEECA897BF760FDC873AA302BA0120C81F"
+  ],
+  "derivatives": [
+    {
+      "sourceSHA256": "073284129E9F8D2AD16998140A1AC6DB1A475636025AEFF476FC3DA359CA8744",
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\073284129E9F8D2AD16998140A1AC6DB1A475636025AEFF476FC3DA359CA8744.png",
+      "SHA256": "6C5E47DB83789B6006A74EFA5F06FF981D7650A188D150BD9CE7415E936F0E18",
+      "bytes": 38566,
+      "dimensions": [
+        256,
+        256
+      ],
+      "RGBApixelsSHA256": "77AB871DBDA3FC49B68353F98C417AACA9E9E3E32C70E13071B607E424AE9D04",
+      "sourcePaths": [
+        "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\Devil\\angel.tga",
+        "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\background\\angel.tga"
+      ],
+      "conversion": "Pillow decoded pixels→RGBA PNG; no resize/crop/repaint"
+    },
+    {
+      "sourceSHA256": "7E0E0E9C7831BBBCFFD75F5F71DF51BDD48366AD4C7E3DF0ADC30750F429B1D3",
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\7E0E0E9C7831BBBCFFD75F5F71DF51BDD48366AD4C7E3DF0ADC30750F429B1D3.png",
+      "SHA256": "AFBE007C5B551A6617810D083FA79CB971F894A5EEC94B9123B104A6B604F80F",
+      "bytes": 157,
+      "dimensions": [
+        32,
+        32
+      ],
+      "RGBApixelsSHA256": "319E3EAAFF8B8CA067EB044BF7F9372760D95A5D5312C417B1FF02AF504CD7B1",
+      "sourcePaths": [
+        "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\Devil\\border.tga"
+      ],
+      "conversion": "Pillow decoded pixels→RGBA PNG; no resize/crop/repaint"
+    },
+    {
+      "sourceSHA256": "045CE188243A618161EB6351ECA50F2F0B7562A944C16D59EB68E0A2DFE248CA",
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\045CE188243A618161EB6351ECA50F2F0B7562A944C16D59EB68E0A2DFE248CA.png",
+      "SHA256": "1ED250C74D5957659C06F41EB4E8D2F0CD66A9D5C0BA5D1F2F9F9A3AD91E57D1",
+      "bytes": 41878,
+      "dimensions": [
+        256,
+        256
+      ],
+      "RGBApixelsSHA256": "A04E9C59684C6013AD069160F6373E2F37C94EE7AC26F288E91B060C137AF251",
+      "sourcePaths": [
+        "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\Devil\\demon.tga",
+        "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\background\\demon.tga"
+      ],
+      "conversion": "Pillow decoded pixels→RGBA PNG; no resize/crop/repaint"
+    },
+    {
+      "sourceSHA256": "549B0D63829FA160BB9B7CFDDE619107FC39C9A877AD28F173576F55C907AC79",
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\549B0D63829FA160BB9B7CFDDE619107FC39C9A877AD28F173576F55C907AC79.png",
+      "SHA256": "EF9803EC0A1DEF5B477992C4962F8C471695724E08FC7D4D5E4992E71C5E8BC7",
+      "bytes": 27039,
+      "dimensions": [
+        256,
+        256
+      ],
+      "RGBApixelsSHA256": "732807832AB74888CD6E4D73D8EC680A42E8E7B4B7247C140DF91B47ADB9BF9B",
+      "sourcePaths": [
+        "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\Devil\\Minimap.TGA",
+        "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\background\\Minimap.TGA"
+      ],
+      "conversion": "Pillow decoded pixels→RGBA PNG; no resize/crop/repaint"
+    },
+    {
+      "sourceSHA256": "F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD",
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD.png",
+      "SHA256": "93883B7CCA129F9F64F2EB201F819A9ACAC50867C77EE5047E95E3F0D2CE6B2C",
+      "bytes": 195,
+      "dimensions": [
+        128,
+        16
+      ],
+      "RGBApixelsSHA256": "B095E3C2891EE0E66B5DFB08DB1F84C5A600E6CAF92A93D816F1B5DC173FE63B",
+      "sourcePaths": [
+        "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\Devil\\tooltip.tga",
+        "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\SharedMedia\\border\\Devil2.tga",
+        "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\border\\Devil2.tga"
+      ],
+      "conversion": "Pillow decoded pixels→RGBA PNG; no resize/crop/repaint"
+    },
+    {
+      "sourceSHA256": "9DE505F668137A32B3ADD4CD56ADB6B84883B798B0E3398C37B6CBCCED914504",
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\9DE505F668137A32B3ADD4CD56ADB6B84883B798B0E3398C37B6CBCCED914504.png",
+      "SHA256": "A156DC9B865674915F5DF0E4F4332536D8B22A9CB5CE224F26215533C5E274B1",
+      "bytes": 237,
+      "dimensions": [
+        128,
+        16
+      ],
+      "RGBApixelsSHA256": "4261616025D363DDBDB909859F14047BF855187B81BF2AC3F99D7D2E61018357",
+      "sourcePaths": [
+        "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\SharedMedia\\border\\Devil.tga",
+        "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\border\\Devil.tga"
+      ],
+      "conversion": "Pillow decoded pixels→RGBA PNG; no resize/crop/repaint"
+    },
+    {
+      "sourceSHA256": "49CA0BC8E0CBDD6ABED71748E3B686032F588C5E2829E6B844C9EC1F8B1A3AA9",
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\49CA0BC8E0CBDD6ABED71748E3B686032F588C5E2829E6B844C9EC1F8B1A3AA9.png",
+      "SHA256": "31646D6E2CBB44C51F625BFE5DB7FFB10D39DBD5126169F9F7139A5191EBF8C0",
+      "bytes": 210,
+      "dimensions": [
+        128,
+        16
+      ],
+      "RGBApixelsSHA256": "A64019462062563B4CC96D19250DE4845249E876A39A9F7F43309C7F26E67064",
+      "sourcePaths": [
+        "D:\\Projects\\Project_WF\\work\\old-reference-r36-z41s_asv\\selected-extracted\\$HWNDPARENT\\Interface\\addons\\SharedMedia\\border\\roth.tga",
+        "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\border\\roth.tga"
+      ],
+      "conversion": "Pillow decoded pixels→RGBA PNG; no resize/crop/repaint"
+    },
+    {
+      "sourceSHA256": "150DEC18668CCCB2EF33B37D1C8A9468FDE7478F42747CEFFC037037C215D86B",
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\150DEC18668CCCB2EF33B37D1C8A9468FDE7478F42747CEFFC037037C215D86B.png",
+      "SHA256": "7DE27178D3ACB5492372FB953A8E31B9CBA329ED48CD75AF581EE0F0A2D95E8F",
+      "bytes": 197,
+      "dimensions": [
+        128,
+        16
+      ],
+      "RGBApixelsSHA256": "8B2A1BDDF78617737730BB3C900770B6FBE4BDA47AA19B8CC5BBEA0D32832220",
+      "sourcePaths": [
+        "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\border\\Devil3.tga"
+      ],
+      "conversion": "Pillow decoded pixels→RGBA PNG; no resize/crop/repaint"
+    },
+    {
+      "sourceSHA256": "FD2A7BF3E1395AFBE92DB0EA607E8F24D8D0D1E508010A6B4EC684011DCCABE3",
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\FD2A7BF3E1395AFBE92DB0EA607E8F24D8D0D1E508010A6B4EC684011DCCABE3.png",
+      "SHA256": "DC470445C4CED2C9B5D17C7A9D540F7D4D8087A4B2D36BB63761273B74825B87",
+      "bytes": 423,
+      "dimensions": [
+        16,
+        16
+      ],
+      "RGBApixelsSHA256": "94AB1B552F56EAA12A8B565B0330E04F79F4152924A6E9F7B7C7F5D12B775BB1",
+      "sourcePaths": [
+        "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\mail.tga"
+      ],
+      "conversion": "Pillow decoded pixels→RGBA PNG; no resize/crop/repaint"
+    },
+    {
+      "sourceSHA256": "DB16C4CB98D66C6A117293BC9C6BD881ABCAC8480946C70DD34E4CC2C43B1A5F",
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\DB16C4CB98D66C6A117293BC9C6BD881ABCAC8480946C70DD34E4CC2C43B1A5F.png",
+      "SHA256": "933444814BEDAD802551C00EBD7ACA049FBD1617AD430784C16D9ABACEAF7048",
+      "bytes": 789,
+      "dimensions": [
+        256,
+        32
+      ],
+      "RGBApixelsSHA256": "80F52D93DC41DE9183C237248820478549FBEFFDA0327D3FB4916F1AD0603C83",
+      "sourcePaths": [
+        "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\statusbar\\FairAqua.tga"
+      ],
+      "conversion": "Pillow decoded pixels→RGBA PNG; no resize/crop/repaint"
+    },
+    {
+      "sourceSHA256": "54FD36E381A8A59C08313A7A61663F07E8E324CE4CBEA3E2AA6C572D3D6A0C20",
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\54FD36E381A8A59C08313A7A61663F07E8E324CE4CBEA3E2AA6C572D3D6A0C20.png",
+      "SHA256": "ABEF299EEA927EF1E4A501336C9CDCC2E24CA1FFAA1FAD7CB81394F41E387E60",
+      "bytes": 761,
+      "dimensions": [
+        256,
+        32
+      ],
+      "RGBApixelsSHA256": "7C2FE4F0D055E9E11884FE7411945B012C111483E49686303B98B0896667BF93",
+      "sourcePaths": [
+        "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\statusbar\\FairLady.tga"
+      ],
+      "conversion": "Pillow decoded pixels→RGBA PNG; no resize/crop/repaint"
+    },
+    {
+      "sourceSHA256": "EAE335C45840DABAF4412FA285B759DA7982172335A987CBEA689A291366C0AB",
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\EAE335C45840DABAF4412FA285B759DA7982172335A987CBEA689A291366C0AB.png",
+      "SHA256": "9257F9A9373BB66B2EE6D25009B92D1BC69132B4595F912EC12DBC5F806F2D9B",
+      "bytes": 9346,
+      "dimensions": [
+        256,
+        64
+      ],
+      "RGBApixelsSHA256": "180D0B70FBF942831F5725EAF855EB0AED255C5E5320BB8F4271D01F4B34974A",
+      "sourcePaths": [
+        "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\statusbar\\Glamour7.tga"
+      ],
+      "conversion": "Pillow decoded pixels→RGBA PNG; no resize/crop/repaint"
+    },
+    {
+      "sourceSHA256": "97976977031766D707A34121AC13C5AB6B7E9D204BE2EFAA395C717AEB1DC7AB",
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\97976977031766D707A34121AC13C5AB6B7E9D204BE2EFAA395C717AEB1DC7AB.png",
+      "SHA256": "0A072757D1BCDB4B5F433AF9C887B97E0140D3CE4A23BFDFC9A08DFB4D35EC95",
+      "bytes": 458,
+      "dimensions": [
+        256,
+        32
+      ],
+      "RGBApixelsSHA256": "FB20BFE344F3FB95CA67288987A1FAF9BC5C899F4D7E75E884BE015BEE8E3FC1",
+      "sourcePaths": [
+        "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\statusbar\\Minimalist.tga"
+      ],
+      "conversion": "Pillow decoded pixels→RGBA PNG; no resize/crop/repaint"
+    },
+    {
+      "sourceSHA256": "00E8084E83BF25B941464E2619B59E993B6AC7AE0BD8A6F37B12872E686DED6D",
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\00E8084E83BF25B941464E2619B59E993B6AC7AE0BD8A6F37B12872E686DED6D.png",
+      "SHA256": "E1E72864C3AD1B49621BBBFE0EE0FA39FDC716EAA0999872FBE3F60DCEAE26F3",
+      "bytes": 2119,
+      "dimensions": [
+        256,
+        32
+      ],
+      "RGBApixelsSHA256": "1E18C38F4AFC4B5E77974C85FE2BB42C9AF1966A62E2909132FBC416156A8207",
+      "sourcePaths": [
+        "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\statusbar\\Smooth.tga"
+      ],
+      "conversion": "Pillow decoded pixels→RGBA PNG; no resize/crop/repaint"
+    },
+    {
+      "sourceSHA256": "50E76AB77BAE7DEB79272C749BBCF538719D46C0B3501D78FAB259566D2AE22F",
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\50E76AB77BAE7DEB79272C749BBCF538719D46C0B3501D78FAB259566D2AE22F.png",
+      "SHA256": "10AC492948521F143EF60E8EE58190A4EA80FF9E973345B4236226C24AF6813D",
+      "bytes": 181,
+      "dimensions": [
+        64,
+        64
+      ],
+      "RGBApixelsSHA256": "0FBBA07A833D4DCFC7024EAF313661A0BA8F80A05C6D29B8801C612E10E60DEE",
+      "sourcePaths": [
+        "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\WHITE64X64.tga"
+      ],
+      "conversion": "Pillow decoded pixels→RGBA PNG; no resize/crop/repaint"
+    },
+    {
+      "sourceSHA256": "530258343A9F43156C649D43B8D4D04159CC179919B505187E7B53EB97F893CF",
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\530258343A9F43156C649D43B8D4D04159CC179919B505187E7B53EB97F893CF.png",
+      "SHA256": "EEAB1B27F5A9B76EA5B68931C75792B8EB00B5CD2C858F43597486CAD98C7927",
+      "bytes": 350,
+      "dimensions": [
+        64,
+        64
+      ],
+      "RGBApixelsSHA256": "7EB70E3237973B4C90FBAB96590E2F75103A98121142677F1829DAAE09EE328D",
+      "sourcePaths": [
+        "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Textures\\Arrow.tga"
+      ],
+      "conversion": "Pillow decoded pixels→RGBA PNG; no resize/crop/repaint"
+    },
+    {
+      "sourceSHA256": "CE0732935E0C6578A3F913201900661A8B15073CE0BD2685921119F62914F182",
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\CE0732935E0C6578A3F913201900661A8B15073CE0BD2685921119F62914F182.png",
+      "SHA256": "2F9751D533BB256EF2AF805466D69E75AD59CBB8EBE0D8F64051EFF08D193742",
+      "bytes": 4508,
+      "dimensions": [
+        64,
+        64
+      ],
+      "RGBApixelsSHA256": "BF6BDA8EE7127261379B837A57F3B51CF783753DC536AA7E5DE34E16F9CD5056",
+      "sourcePaths": [
+        "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Textures\\Backdrop.tga"
+      ],
+      "conversion": "Pillow decoded pixels→RGBA PNG; no resize/crop/repaint"
+    },
+    {
+      "sourceSHA256": "6205864AB3317B4D18DAC301C3BF1272E8B451F6F94C0D305058638ED1D57B97",
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\6205864AB3317B4D18DAC301C3BF1272E8B451F6F94C0D305058638ED1D57B97.png",
+      "SHA256": "EE84F312F1FB355382B06B5D1F7AE63DCF8D5A4C183F851CA7676309F1DD9BF4",
+      "bytes": 418,
+      "dimensions": [
+        64,
+        64
+      ],
+      "RGBApixelsSHA256": "F0FF37BC685586AD2DDEEA90E0CD52B80D5EEF1C67FCAAC976F4E2E0F186845D",
+      "sourcePaths": [
+        "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Textures\\Border.tga"
+      ],
+      "conversion": "Pillow decoded pixels→RGBA PNG; no resize/crop/repaint"
+    },
+    {
+      "sourceSHA256": "0CE612BDB39399D2676B14FDD61CCADE9FA8A1904339D88F0969259C6E88F2FE",
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\0CE612BDB39399D2676B14FDD61CCADE9FA8A1904339D88F0969259C6E88F2FE.png",
+      "SHA256": "F93420F73DEF8E632E2DC7FAC04590BA7DE5D2527123F328B6190507BC860BD2",
+      "bytes": 1445,
+      "dimensions": [
+        64,
+        64
+      ],
+      "RGBApixelsSHA256": "8BB7166E4C5DE5971987161F5E4EC436D67A6D9AFCE6213D010B9F17987371ED",
+      "sourcePaths": [
+        "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Textures\\Classic.tga"
+      ],
+      "conversion": "Pillow decoded pixels→RGBA PNG; no resize/crop/repaint"
+    },
+    {
+      "sourceSHA256": "B797A5014DBC3D57F9CD4F44FFFF5B424E1953B357FEAF408A07FAA26509C50B",
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\B797A5014DBC3D57F9CD4F44FFFF5B424E1953B357FEAF408A07FAA26509C50B.png",
+      "SHA256": "C5D1EDC6094DCB2991E8B9D12CAA19E74743D940F5C47015810173A699D52930",
+      "bytes": 748,
+      "dimensions": [
+        64,
+        64
+      ],
+      "RGBApixelsSHA256": "2B993E6C94C3F14C527EC28BBC78648EBE45C20EEECA7E0829B31ED26F5AB55A",
+      "sourcePaths": [
+        "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Textures\\Gloss.tga"
+      ],
+      "conversion": "Pillow decoded pixels→RGBA PNG; no resize/crop/repaint"
+    },
+    {
+      "sourceSHA256": "F9766B998A36A093393C444839DA9364EDF3AEA3899A5EE69AA0D0261D4C1B83",
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\F9766B998A36A093393C444839DA9364EDF3AEA3899A5EE69AA0D0261D4C1B83.png",
+      "SHA256": "F3AC6E5EE4CB38D5C25A2803C9EF4A116597A36ABBA8109BFA3B80B71836D596",
+      "bytes": 662,
+      "dimensions": [
+        64,
+        64
+      ],
+      "RGBApixelsSHA256": "3B653CC9AF7A2ADA4C022DEF281BE902EEB9F6FBC960D1CA8B3F5FF4A8E71919",
+      "sourcePaths": [
+        "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Textures\\Highlight.tga"
+      ],
+      "conversion": "Pillow decoded pixels→RGBA PNG; no resize/crop/repaint"
+    },
+    {
+      "sourceSHA256": "FD870CDE3E44463D77232C19FA9597BEECA897BF760FDC873AA302BA0120C81F",
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\FD870CDE3E44463D77232C19FA9597BEECA897BF760FDC873AA302BA0120C81F.png",
+      "SHA256": "CEE48C71B143CC234E98785CD6538AE1BF268BAEB1DFF3CA35D91736F2AA3DB9",
+      "bytes": 370,
+      "dimensions": [
+        64,
+        64
+      ],
+      "RGBApixelsSHA256": "D53246B0EC3AB4ED4BE1FD4B47DC7AFD0A10073FD5C121E9502A5936A355FF65",
+      "sourcePaths": [
+        "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Textures\\Overlay.tga"
+      ],
+      "conversion": "Pillow decoded pixels→RGBA PNG; no resize/crop/repaint"
+    },
+    {
+      "sourceSHA256": "E77A8FE0A4DE108FAE156E45B1458EB1C04E594082D7B11816E1567BC435DDF9",
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\E77A8FE0A4DE108FAE156E45B1458EB1C04E594082D7B11816E1567BC435DDF9.png",
+      "SHA256": "2714E335196C9983B4D008F0AF53ED390C6A1D3165C1BD164E66FFB2AF75F93D",
+      "bytes": 1318,
+      "dimensions": [
+        64,
+        64
+      ],
+      "RGBApixelsSHA256": "3D41D044BD3D34C21DEF0E55FF8A6C3F5AF52D2FA28C20A03D17BAF83ED8709C",
+      "sourcePaths": [
+        "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\Masque_Onyx\\Textures\\Redux.tga"
+      ],
+      "conversion": "Pillow decoded pixels→RGBA PNG; no resize/crop/repaint"
+    }
+  ],
+  "fonts": [
+    {
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Interface\\addons\\!DevilUI\\media\\fonts\\K_Damage.TTF",
+      "copyPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\original-fonts\\root3-K_Damage.TTF",
+      "sourceSHA256": "E07805474988474E30AD4DCBCCD690627EB960AD5C5581B95C07EA08E4C97896",
+      "copySHA256": "E07805474988474E30AD4DCBCCD690627EB960AD5C5581B95C07EA08E4C97896",
+      "copyEqual": true,
+      "bytes": 566392,
+      "metrics": [
+        {
+          "sizePx": 22,
+          "familyStyle": [
+            "??????",
+            "Bold"
+          ],
+          "textBBoxes": [
+            {
+              "text": "대화창 체력 마나 설정",
+              "bbox": [
+                0,
+                1,
+                217,
+                21
+              ],
+              "advance": 217.0
+            },
+            {
+              "text": "1 2 3 4 Q E R F C-S-1",
+              "bbox": [
+                0,
+                3,
+                268,
+                20
+              ],
+              "advance": 267.0
+            }
+          ]
+        },
+        {
+          "sizePx": 24,
+          "familyStyle": [
+            "??????",
+            "Bold"
+          ],
+          "textBBoxes": [
+            {
+              "text": "대화창 체력 마나 설정",
+              "bbox": [
+                0,
+                2,
+                238,
+                23
+              ],
+              "advance": 238.0
+            },
+            {
+              "text": "1 2 3 4 Q E R F C-S-1",
+              "bbox": [
+                0,
+                4,
+                292,
+                22
+              ],
+              "advance": 292.0
+            }
+          ]
+        },
+        {
+          "sizePx": 26,
+          "familyStyle": [
+            "??????",
+            "Bold"
+          ],
+          "textBBoxes": [
+            {
+              "text": "대화창 체력 마나 설정",
+              "bbox": [
+                0,
+                2,
+                254,
+                25
+              ],
+              "advance": 254.0
+            },
+            {
+              "text": "1 2 3 4 Q E R F C-S-1",
+              "bbox": [
+                0,
+                4,
+                319,
+                24
+              ],
+              "advance": 318.0
+            }
+          ]
+        },
+        {
+          "sizePx": 28,
+          "familyStyle": [
+            "??????",
+            "Bold"
+          ],
+          "textBBoxes": [
+            {
+              "text": "대화창 체력 마나 설정",
+              "bbox": [
+                0,
+                3,
+                275,
+                27
+              ],
+              "advance": 275.0
+            },
+            {
+              "text": "1 2 3 4 Q E R F C-S-1",
+              "bbox": [
+                0,
+                5,
+                341,
+                26
+              ],
+              "advance": 341.0
+            }
+          ]
+        },
+        {
+          "sizePx": 30,
+          "familyStyle": [
+            "??????",
+            "Bold"
+          ],
+          "textBBoxes": [
+            {
+              "text": "대화창 체력 마나 설정",
+              "bbox": [
+                0,
+                2,
+                296,
+                28
+              ],
+              "advance": 296.0
+            },
+            {
+              "text": "1 2 3 4 Q E R F C-S-1",
+              "bbox": [
+                0,
+                5,
+                366,
+                28
+              ],
+              "advance": 365.0
+            }
+          ]
+        }
+      ],
+      "coverageBasis": "fontTools Unicode cmap membership for exact requested text only; no global koKR/rendering claim",
+      "unicodeCmapCount": 12193,
+      "requestedGlyphCoverage": [
+        {
+          "text": "대화창 체력 마나 설정",
+          "codepoints": [
+            {
+              "char": "대",
+              "codepoint": "U+B300",
+              "glyphName": "uniB300",
+              "present": true
+            },
+            {
+              "char": "화",
+              "codepoint": "U+D654",
+              "glyphName": "uniD654",
+              "present": true
+            },
+            {
+              "char": "창",
+              "codepoint": "U+CC3D",
+              "glyphName": "uniCC3D",
+              "present": true
+            },
+            {
+              "char": " ",
+              "codepoint": "U+0020",
+              "glyphName": "space",
+              "present": true
+            },
+            {
+              "char": "체",
+              "codepoint": "U+CCB4",
+              "glyphName": "uniCCB4",
+              "present": true
+            },
+            {
+              "char": "력",
+              "codepoint": "U+B825",
+              "glyphName": "uniB825",
+              "present": true
+            },
+            {
+              "char": "마",
+              "codepoint": "U+B9C8",
+              "glyphName": "uniB9C8",
+              "present": true
+            },
+            {
+              "char": "나",
+              "codepoint": "U+B098",
+              "glyphName": "uniB098",
+              "present": true
+            },
+            {
+              "char": "설",
+              "codepoint": "U+C124",
+              "glyphName": "uniC124",
+              "present": true
+            },
+            {
+              "char": "정",
+              "codepoint": "U+C815",
+              "glyphName": "uniC815",
+              "present": true
+            }
+          ]
+        },
+        {
+          "text": "1 2 3 4 Q E R F C-S-1",
+          "codepoints": [
+            {
+              "char": "1",
+              "codepoint": "U+0031",
+              "glyphName": "one",
+              "present": true
+            },
+            {
+              "char": " ",
+              "codepoint": "U+0020",
+              "glyphName": "space",
+              "present": true
+            },
+            {
+              "char": "2",
+              "codepoint": "U+0032",
+              "glyphName": "two",
+              "present": true
+            },
+            {
+              "char": "3",
+              "codepoint": "U+0033",
+              "glyphName": "three",
+              "present": true
+            },
+            {
+              "char": "4",
+              "codepoint": "U+0034",
+              "glyphName": "four",
+              "present": true
+            },
+            {
+              "char": "Q",
+              "codepoint": "U+0051",
+              "glyphName": "Q",
+              "present": true
+            },
+            {
+              "char": "E",
+              "codepoint": "U+0045",
+              "glyphName": "E",
+              "present": true
+            },
+            {
+              "char": "R",
+              "codepoint": "U+0052",
+              "glyphName": "R",
+              "present": true
+            },
+            {
+              "char": "F",
+              "codepoint": "U+0046",
+              "glyphName": "F",
+              "present": true
+            },
+            {
+              "char": "C",
+              "codepoint": "U+0043",
+              "glyphName": "C",
+              "present": true
+            },
+            {
+              "char": "-",
+              "codepoint": "U+002D",
+              "glyphName": "hyphen",
+              "present": true
+            },
+            {
+              "char": "S",
+              "codepoint": "U+0053",
+              "glyphName": "S",
+              "present": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Fonts\\2002.ttf",
+      "copyPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\original-fonts\\root5-2002.ttf",
+      "sourceSHA256": "49DF5AB286B7090AF765626115578F4630FCFC240784E45344D9367A0697DBB5",
+      "copySHA256": "49DF5AB286B7090AF765626115578F4630FCFC240784E45344D9367A0697DBB5",
+      "copyEqual": true,
+      "bytes": 654512,
+      "metrics": [
+        {
+          "sizePx": 22,
+          "familyStyle": [
+            "MD_EuteumM",
+            "Regular"
+          ],
+          "textBBoxes": [
+            {
+              "text": "대화창 체력 마나 설정",
+              "bbox": [
+                0,
+                1,
+                189,
+                22
+              ],
+              "advance": 189.0
+            },
+            {
+              "text": "1 2 3 4 Q E R F C-S-1",
+              "bbox": [
+                0,
+                3,
+                237,
+                19
+              ],
+              "advance": 237.0
+            }
+          ]
+        },
+        {
+          "sizePx": 24,
+          "familyStyle": [
+            "MD_EuteumM",
+            "Regular"
+          ],
+          "textBBoxes": [
+            {
+              "text": "대화창 체력 마나 설정",
+              "bbox": [
+                0,
+                1,
+                201,
+                24
+              ],
+              "advance": 201.0
+            },
+            {
+              "text": "1 2 3 4 Q E R F C-S-1",
+              "bbox": [
+                0,
+                4,
+                261,
+                21
+              ],
+              "advance": 261.0
+            }
+          ]
+        },
+        {
+          "sizePx": 26,
+          "familyStyle": [
+            "MD_EuteumM",
+            "Regular"
+          ],
+          "textBBoxes": [
+            {
+              "text": "대화창 체력 마나 설정",
+              "bbox": [
+                0,
+                1,
+                219,
+                26
+              ],
+              "advance": 219.0
+            },
+            {
+              "text": "1 2 3 4 Q E R F C-S-1",
+              "bbox": [
+                0,
+                4,
+                273,
+                23
+              ],
+              "advance": 273.0
+            }
+          ]
+        },
+        {
+          "sizePx": 28,
+          "familyStyle": [
+            "MD_EuteumM",
+            "Regular"
+          ],
+          "textBBoxes": [
+            {
+              "text": "대화창 체력 마나 설정",
+              "bbox": [
+                0,
+                2,
+                231,
+                28
+              ],
+              "advance": 231.0
+            },
+            {
+              "text": "1 2 3 4 Q E R F C-S-1",
+              "bbox": [
+                0,
+                5,
+                295,
+                25
+              ],
+              "advance": 295.0
+            }
+          ]
+        },
+        {
+          "sizePx": 30,
+          "familyStyle": [
+            "MD_EuteumM",
+            "Regular"
+          ],
+          "textBBoxes": [
+            {
+              "text": "대화창 체력 마나 설정",
+              "bbox": [
+                0,
+                1,
+                252,
+                29
+              ],
+              "advance": 252.0
+            },
+            {
+              "text": "1 2 3 4 Q E R F C-S-1",
+              "bbox": [
+                0,
+                4,
+                322,
+                26
+              ],
+              "advance": 322.0
+            }
+          ]
+        }
+      ],
+      "coverageBasis": "fontTools Unicode cmap membership for exact requested text only; no global koKR/rendering claim",
+      "unicodeCmapCount": 12254,
+      "requestedGlyphCoverage": [
+        {
+          "text": "대화창 체력 마나 설정",
+          "codepoints": [
+            {
+              "char": "대",
+              "codepoint": "U+B300",
+              "glyphName": "uniB300",
+              "present": true
+            },
+            {
+              "char": "화",
+              "codepoint": "U+D654",
+              "glyphName": "uniD654",
+              "present": true
+            },
+            {
+              "char": "창",
+              "codepoint": "U+CC3D",
+              "glyphName": "uniCC3D",
+              "present": true
+            },
+            {
+              "char": " ",
+              "codepoint": "U+0020",
+              "glyphName": "space",
+              "present": true
+            },
+            {
+              "char": "체",
+              "codepoint": "U+CCB4",
+              "glyphName": "uniCCB4",
+              "present": true
+            },
+            {
+              "char": "력",
+              "codepoint": "U+B825",
+              "glyphName": "uniB825",
+              "present": true
+            },
+            {
+              "char": "마",
+              "codepoint": "U+B9C8",
+              "glyphName": "uniB9C8",
+              "present": true
+            },
+            {
+              "char": "나",
+              "codepoint": "U+B098",
+              "glyphName": "uniB098",
+              "present": true
+            },
+            {
+              "char": "설",
+              "codepoint": "U+C124",
+              "glyphName": "uniC124",
+              "present": true
+            },
+            {
+              "char": "정",
+              "codepoint": "U+C815",
+              "glyphName": "uniC815",
+              "present": true
+            }
+          ]
+        },
+        {
+          "text": "1 2 3 4 Q E R F C-S-1",
+          "codepoints": [
+            {
+              "char": "1",
+              "codepoint": "U+0031",
+              "glyphName": "one",
+              "present": true
+            },
+            {
+              "char": " ",
+              "codepoint": "U+0020",
+              "glyphName": "space",
+              "present": true
+            },
+            {
+              "char": "2",
+              "codepoint": "U+0032",
+              "glyphName": "two",
+              "present": true
+            },
+            {
+              "char": "3",
+              "codepoint": "U+0033",
+              "glyphName": "three",
+              "present": true
+            },
+            {
+              "char": "4",
+              "codepoint": "U+0034",
+              "glyphName": "four",
+              "present": true
+            },
+            {
+              "char": "Q",
+              "codepoint": "U+0051",
+              "glyphName": "Q",
+              "present": true
+            },
+            {
+              "char": "E",
+              "codepoint": "U+0045",
+              "glyphName": "E",
+              "present": true
+            },
+            {
+              "char": "R",
+              "codepoint": "U+0052",
+              "glyphName": "R",
+              "present": true
+            },
+            {
+              "char": "F",
+              "codepoint": "U+0046",
+              "glyphName": "F",
+              "present": true
+            },
+            {
+              "char": "C",
+              "codepoint": "U+0043",
+              "glyphName": "C",
+              "present": true
+            },
+            {
+              "char": "-",
+              "codepoint": "U+002D",
+              "glyphName": "hyphen",
+              "present": true
+            },
+            {
+              "char": "S",
+              "codepoint": "U+0053",
+              "glyphName": "S",
+              "present": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Fonts\\2002b.ttf",
+      "copyPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\original-fonts\\root5-2002b.ttf",
+      "sourceSHA256": "49DF5AB286B7090AF765626115578F4630FCFC240784E45344D9367A0697DBB5",
+      "copySHA256": "49DF5AB286B7090AF765626115578F4630FCFC240784E45344D9367A0697DBB5",
+      "copyEqual": true,
+      "bytes": 654512,
+      "metrics": [
+        {
+          "sizePx": 22,
+          "familyStyle": [
+            "MD_EuteumM",
+            "Regular"
+          ],
+          "textBBoxes": [
+            {
+              "text": "대화창 체력 마나 설정",
+              "bbox": [
+                0,
+                1,
+                189,
+                22
+              ],
+              "advance": 189.0
+            },
+            {
+              "text": "1 2 3 4 Q E R F C-S-1",
+              "bbox": [
+                0,
+                3,
+                237,
+                19
+              ],
+              "advance": 237.0
+            }
+          ]
+        },
+        {
+          "sizePx": 24,
+          "familyStyle": [
+            "MD_EuteumM",
+            "Regular"
+          ],
+          "textBBoxes": [
+            {
+              "text": "대화창 체력 마나 설정",
+              "bbox": [
+                0,
+                1,
+                201,
+                24
+              ],
+              "advance": 201.0
+            },
+            {
+              "text": "1 2 3 4 Q E R F C-S-1",
+              "bbox": [
+                0,
+                4,
+                261,
+                21
+              ],
+              "advance": 261.0
+            }
+          ]
+        },
+        {
+          "sizePx": 26,
+          "familyStyle": [
+            "MD_EuteumM",
+            "Regular"
+          ],
+          "textBBoxes": [
+            {
+              "text": "대화창 체력 마나 설정",
+              "bbox": [
+                0,
+                1,
+                219,
+                26
+              ],
+              "advance": 219.0
+            },
+            {
+              "text": "1 2 3 4 Q E R F C-S-1",
+              "bbox": [
+                0,
+                4,
+                273,
+                23
+              ],
+              "advance": 273.0
+            }
+          ]
+        },
+        {
+          "sizePx": 28,
+          "familyStyle": [
+            "MD_EuteumM",
+            "Regular"
+          ],
+          "textBBoxes": [
+            {
+              "text": "대화창 체력 마나 설정",
+              "bbox": [
+                0,
+                2,
+                231,
+                28
+              ],
+              "advance": 231.0
+            },
+            {
+              "text": "1 2 3 4 Q E R F C-S-1",
+              "bbox": [
+                0,
+                5,
+                295,
+                25
+              ],
+              "advance": 295.0
+            }
+          ]
+        },
+        {
+          "sizePx": 30,
+          "familyStyle": [
+            "MD_EuteumM",
+            "Regular"
+          ],
+          "textBBoxes": [
+            {
+              "text": "대화창 체력 마나 설정",
+              "bbox": [
+                0,
+                1,
+                252,
+                29
+              ],
+              "advance": 252.0
+            },
+            {
+              "text": "1 2 3 4 Q E R F C-S-1",
+              "bbox": [
+                0,
+                4,
+                322,
+                26
+              ],
+              "advance": 322.0
+            }
+          ]
+        }
+      ],
+      "coverageBasis": "fontTools Unicode cmap membership for exact requested text only; no global koKR/rendering claim",
+      "unicodeCmapCount": 12254,
+      "requestedGlyphCoverage": [
+        {
+          "text": "대화창 체력 마나 설정",
+          "codepoints": [
+            {
+              "char": "대",
+              "codepoint": "U+B300",
+              "glyphName": "uniB300",
+              "present": true
+            },
+            {
+              "char": "화",
+              "codepoint": "U+D654",
+              "glyphName": "uniD654",
+              "present": true
+            },
+            {
+              "char": "창",
+              "codepoint": "U+CC3D",
+              "glyphName": "uniCC3D",
+              "present": true
+            },
+            {
+              "char": " ",
+              "codepoint": "U+0020",
+              "glyphName": "space",
+              "present": true
+            },
+            {
+              "char": "체",
+              "codepoint": "U+CCB4",
+              "glyphName": "uniCCB4",
+              "present": true
+            },
+            {
+              "char": "력",
+              "codepoint": "U+B825",
+              "glyphName": "uniB825",
+              "present": true
+            },
+            {
+              "char": "마",
+              "codepoint": "U+B9C8",
+              "glyphName": "uniB9C8",
+              "present": true
+            },
+            {
+              "char": "나",
+              "codepoint": "U+B098",
+              "glyphName": "uniB098",
+              "present": true
+            },
+            {
+              "char": "설",
+              "codepoint": "U+C124",
+              "glyphName": "uniC124",
+              "present": true
+            },
+            {
+              "char": "정",
+              "codepoint": "U+C815",
+              "glyphName": "uniC815",
+              "present": true
+            }
+          ]
+        },
+        {
+          "text": "1 2 3 4 Q E R F C-S-1",
+          "codepoints": [
+            {
+              "char": "1",
+              "codepoint": "U+0031",
+              "glyphName": "one",
+              "present": true
+            },
+            {
+              "char": " ",
+              "codepoint": "U+0020",
+              "glyphName": "space",
+              "present": true
+            },
+            {
+              "char": "2",
+              "codepoint": "U+0032",
+              "glyphName": "two",
+              "present": true
+            },
+            {
+              "char": "3",
+              "codepoint": "U+0033",
+              "glyphName": "three",
+              "present": true
+            },
+            {
+              "char": "4",
+              "codepoint": "U+0034",
+              "glyphName": "four",
+              "present": true
+            },
+            {
+              "char": "Q",
+              "codepoint": "U+0051",
+              "glyphName": "Q",
+              "present": true
+            },
+            {
+              "char": "E",
+              "codepoint": "U+0045",
+              "glyphName": "E",
+              "present": true
+            },
+            {
+              "char": "R",
+              "codepoint": "U+0052",
+              "glyphName": "R",
+              "present": true
+            },
+            {
+              "char": "F",
+              "codepoint": "U+0046",
+              "glyphName": "F",
+              "present": true
+            },
+            {
+              "char": "C",
+              "codepoint": "U+0043",
+              "glyphName": "C",
+              "present": true
+            },
+            {
+              "char": "-",
+              "codepoint": "U+002D",
+              "glyphName": "hyphen",
+              "present": true
+            },
+            {
+              "char": "S",
+              "codepoint": "U+0053",
+              "glyphName": "S",
+              "present": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis\\Fonts\\K_Damage.TTF",
+      "copyPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\original-fonts\\root5-K_Damage.TTF",
+      "sourceSHA256": "E07805474988474E30AD4DCBCCD690627EB960AD5C5581B95C07EA08E4C97896",
+      "copySHA256": "E07805474988474E30AD4DCBCCD690627EB960AD5C5581B95C07EA08E4C97896",
+      "copyEqual": true,
+      "bytes": 566392,
+      "metrics": [
+        {
+          "sizePx": 22,
+          "familyStyle": [
+            "??????",
+            "Bold"
+          ],
+          "textBBoxes": [
+            {
+              "text": "대화창 체력 마나 설정",
+              "bbox": [
+                0,
+                1,
+                217,
+                21
+              ],
+              "advance": 217.0
+            },
+            {
+              "text": "1 2 3 4 Q E R F C-S-1",
+              "bbox": [
+                0,
+                3,
+                268,
+                20
+              ],
+              "advance": 267.0
+            }
+          ]
+        },
+        {
+          "sizePx": 24,
+          "familyStyle": [
+            "??????",
+            "Bold"
+          ],
+          "textBBoxes": [
+            {
+              "text": "대화창 체력 마나 설정",
+              "bbox": [
+                0,
+                2,
+                238,
+                23
+              ],
+              "advance": 238.0
+            },
+            {
+              "text": "1 2 3 4 Q E R F C-S-1",
+              "bbox": [
+                0,
+                4,
+                292,
+                22
+              ],
+              "advance": 292.0
+            }
+          ]
+        },
+        {
+          "sizePx": 26,
+          "familyStyle": [
+            "??????",
+            "Bold"
+          ],
+          "textBBoxes": [
+            {
+              "text": "대화창 체력 마나 설정",
+              "bbox": [
+                0,
+                2,
+                254,
+                25
+              ],
+              "advance": 254.0
+            },
+            {
+              "text": "1 2 3 4 Q E R F C-S-1",
+              "bbox": [
+                0,
+                4,
+                319,
+                24
+              ],
+              "advance": 318.0
+            }
+          ]
+        },
+        {
+          "sizePx": 28,
+          "familyStyle": [
+            "??????",
+            "Bold"
+          ],
+          "textBBoxes": [
+            {
+              "text": "대화창 체력 마나 설정",
+              "bbox": [
+                0,
+                3,
+                275,
+                27
+              ],
+              "advance": 275.0
+            },
+            {
+              "text": "1 2 3 4 Q E R F C-S-1",
+              "bbox": [
+                0,
+                5,
+                341,
+                26
+              ],
+              "advance": 341.0
+            }
+          ]
+        },
+        {
+          "sizePx": 30,
+          "familyStyle": [
+            "??????",
+            "Bold"
+          ],
+          "textBBoxes": [
+            {
+              "text": "대화창 체력 마나 설정",
+              "bbox": [
+                0,
+                2,
+                296,
+                28
+              ],
+              "advance": 296.0
+            },
+            {
+              "text": "1 2 3 4 Q E R F C-S-1",
+              "bbox": [
+                0,
+                5,
+                366,
+                28
+              ],
+              "advance": 365.0
+            }
+          ]
+        }
+      ],
+      "coverageBasis": "fontTools Unicode cmap membership for exact requested text only; no global koKR/rendering claim",
+      "unicodeCmapCount": 12193,
+      "requestedGlyphCoverage": [
+        {
+          "text": "대화창 체력 마나 설정",
+          "codepoints": [
+            {
+              "char": "대",
+              "codepoint": "U+B300",
+              "glyphName": "uniB300",
+              "present": true
+            },
+            {
+              "char": "화",
+              "codepoint": "U+D654",
+              "glyphName": "uniD654",
+              "present": true
+            },
+            {
+              "char": "창",
+              "codepoint": "U+CC3D",
+              "glyphName": "uniCC3D",
+              "present": true
+            },
+            {
+              "char": " ",
+              "codepoint": "U+0020",
+              "glyphName": "space",
+              "present": true
+            },
+            {
+              "char": "체",
+              "codepoint": "U+CCB4",
+              "glyphName": "uniCCB4",
+              "present": true
+            },
+            {
+              "char": "력",
+              "codepoint": "U+B825",
+              "glyphName": "uniB825",
+              "present": true
+            },
+            {
+              "char": "마",
+              "codepoint": "U+B9C8",
+              "glyphName": "uniB9C8",
+              "present": true
+            },
+            {
+              "char": "나",
+              "codepoint": "U+B098",
+              "glyphName": "uniB098",
+              "present": true
+            },
+            {
+              "char": "설",
+              "codepoint": "U+C124",
+              "glyphName": "uniC124",
+              "present": true
+            },
+            {
+              "char": "정",
+              "codepoint": "U+C815",
+              "glyphName": "uniC815",
+              "present": true
+            }
+          ]
+        },
+        {
+          "text": "1 2 3 4 Q E R F C-S-1",
+          "codepoints": [
+            {
+              "char": "1",
+              "codepoint": "U+0031",
+              "glyphName": "one",
+              "present": true
+            },
+            {
+              "char": " ",
+              "codepoint": "U+0020",
+              "glyphName": "space",
+              "present": true
+            },
+            {
+              "char": "2",
+              "codepoint": "U+0032",
+              "glyphName": "two",
+              "present": true
+            },
+            {
+              "char": "3",
+              "codepoint": "U+0033",
+              "glyphName": "three",
+              "present": true
+            },
+            {
+              "char": "4",
+              "codepoint": "U+0034",
+              "glyphName": "four",
+              "present": true
+            },
+            {
+              "char": "Q",
+              "codepoint": "U+0051",
+              "glyphName": "Q",
+              "present": true
+            },
+            {
+              "char": "E",
+              "codepoint": "U+0045",
+              "glyphName": "E",
+              "present": true
+            },
+            {
+              "char": "R",
+              "codepoint": "U+0052",
+              "glyphName": "R",
+              "present": true
+            },
+            {
+              "char": "F",
+              "codepoint": "U+0046",
+              "glyphName": "F",
+              "present": true
+            },
+            {
+              "char": "C",
+              "codepoint": "U+0043",
+              "glyphName": "C",
+              "present": true
+            },
+            {
+              "char": "-",
+              "codepoint": "U+002D",
+              "glyphName": "hyphen",
+              "present": true
+            },
+            {
+              "char": "S",
+              "codepoint": "U+0053",
+              "glyphName": "S",
+              "present": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "failures": [],
+  "sourceBeforeAfterHashesEqual": true,
+  "selfCheck": {
+    "runs": 1,
+    "checks": {
+      "sourceUnchanged": true,
+      "fontCopiesEqual": true,
+      "allFiveRootsEnumerated": true,
+      "derivativePixelsEqual": true,
+      "derivativeSourcesComplete": true
+    },
+    "state": "passed"
+  },
+  "limits": [
+    "No appearance observation or full layout render",
+    "No runtime/license claim",
+    "Font cmap membership is limited to supplied test strings; bbox alone is not glyph coverage"
+  ],
+  "scratchRoot": "D:\\Projects\\Project_WF\\work\\old-devil-step5-assets-labr_iq8"
+}

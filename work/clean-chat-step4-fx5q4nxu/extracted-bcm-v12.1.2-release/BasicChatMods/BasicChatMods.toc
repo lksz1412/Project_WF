@@ -1,0 +1,64 @@
+## Interface: 11508, 11509, 16001, 20505, 20506, 30405, 38002, 40402, 50503, 50504, 120100, 120105, 120107
+## Title: BasicChatMods
+## Author: Funkeh
+## Version: v12.1.2
+## Notes: Basic Chat Mods
+## Notes-zhCN: Basic Chat Mods
+## Notes-zhTW: Basic Chat Mods
+## Notes-deDE: Basic Chat Mods
+## Notes-frFR: Basic Chat Mods
+## Notes-itIT: Basic Chat Mods
+## Notes-koKR: Basic Chat Mods
+## Notes-ruRU: Basic Chat Mods
+## Notes-ptBR: Basic Chat Mods
+## Notes-esES: Basic Chat Mods
+## Notes-esMX: Basic Chat Mods
+## SavedVariables: bcmDB
+
+## X-Credits: Rabbit & Ammo (SimpleChatMods)
+## X-Category: Chat/Communication
+## X-License: All Rights Reserved: You are free to fork and modify on GitHub, please ask us about anything else.
+## X-Curse-Project-ID: 13504
+## X-WoWI-ID: 11290
+## X-Wago-ID: 9rN4PrND
+
+Locales\enUS.lua
+Locales\deDE.lua
+Locales\koKR.lua
+Locales\frFR.lua
+Locales\ruRU.lua
+Locales\zhCN.lua
+Locales\esES.lua
+Locales\zhTW.lua
+Locales\itIT.lua
+Locales\ptBR.lua
+
+BasicCore.lua
+BasicConfig.lua
+
+history.lua
+
+AltInvite.lua
+autolog.lua
+bnet.lua
+buttons.lua [AllowLoadGameType mainline]
+buttons_Classic.lua [AllowLoadGameType classic]
+channelnames.lua
+chatcopy.lua
+editbox.lua
+fade.lua [AllowLoadGameType mainline]
+fade_Classic.lua [AllowLoadGameType classic]
+font.lua
+gmotd.lua
+highlight.lua
+justify.lua
+playernames.lua [AllowLoadGameType mainline, vanilla, tbc]
+playernames_Wrath.lua [AllowLoadGameType wrath, cata, mists]
+resize.lua
+scrolldown.lua
+smartgroup.lua
+sticky.lua
+telltarget.lua
+timestamp.lua
+urlcopy.lua
+

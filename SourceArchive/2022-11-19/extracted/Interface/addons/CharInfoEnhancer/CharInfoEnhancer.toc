@@ -1,0 +1,13 @@
+## Interface: 100000
+## Title: Character Info Enhancer
+## Notes: 캐릭터창 정보 및 캐릭터 아이템 레벨 관련 기능 강화
+## Author: Alkaid
+## Version: 10.0.2-1 (2022/11/16)
+## SavedVariables: CharInfoEnhancerOption
+
+FrameString.lua
+Frames.xml
+Core.lua
+TooltipInspect.lua
+EquipItemMixin.lua
+EquipmentFlyout.lua

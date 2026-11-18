@@ -1,0 +1,41 @@
+VER 3 010000000000000C "test" "134400"
+#showtooltip
+/cancelaura 혼합물: 죽음의 입맞춤
+END
+VER 3 010000000000000A "독정화" "134400"
+#showtooltip
+/연속시전 reset=5 독 정화 토템, 토템의 귀환
+END
+VER 3 0100000000000008 "무기" "134400"
+#showtooltip
+/castsequence [spec:1] reset=3 천둥의 일격 수호물,불꽃혓바닥 무기,하늘의 격노
+/castsequence [spec:2] reset=3 질풍의 무기,불꽃혓바닥 무기,하늘의 격노
+/castsequence [spec:3] reset=3 파도소환사의 수호,대지생명의 무기,하늘의 격노
+END
+VER 3 0100000000000005 "번화" "134400"
+#showtooltip
+/cast [mod:alt]연쇄 번개;번개 화살
+END
+VER 3 010000000000000B "승천" "134400"
+#showtooltip 승천
+/start attack
+/use 13
+/use 14
+/cast 승천
+END
+VER 3 0100000000000006 "용채" "134400"
+#showtooltip 
+/start attack
+/cast 용암 채찍
+END
+VER 3 0100000000000009 "정화" "134400"
+#showtooltip
+/시전 [target=mouseover,harm][harm]정화
+/시전 [target=mouseover,help][help][target=player]영혼 정화
+END
+VER 3 0100000000000007 "폭격" "134400"
+#showtooltip 폭풍의 일격
+/start attack
+/cast 고대의 인도
+/cast 폭풍의 일격
+END

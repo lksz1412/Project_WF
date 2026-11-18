@@ -1,0 +1,5 @@
+## Interface: 20400
+## Title: RaidIconFix
+## Notes: 미니맵 공격대 아이콘 변경
+## SavedVariables:
+RaidIconFix.xml

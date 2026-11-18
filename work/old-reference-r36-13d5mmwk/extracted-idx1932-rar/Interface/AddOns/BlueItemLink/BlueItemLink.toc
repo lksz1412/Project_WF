@@ -1,0 +1,13 @@
+## Interface: 20400
+## Title: Blue Item Link -Ace3-
+## Title-koKR: |cFF669900B|cFFFFFFFFlue |cFF669900I|cFFFFFFFFtem |cFF669900L|cFFFFFFFFink|cff7fff7f -Ace3-|r
+## Notes: 다수의 아이템 링크를 표시합니다
+## Author: InTheBlue
+## OptionalDeps: Ace3, ItemPriceTooltip, StatStain
+## X-Embeds: Ace3
+## SavedVariables: BlueItemLinkDB
+
+embeds.xml
+
+BlueItemLink.lua
+BlueItemLink.xml

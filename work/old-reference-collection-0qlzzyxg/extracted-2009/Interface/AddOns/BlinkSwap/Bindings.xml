@@ -1,0 +1,17 @@
+<Bindings>
+	<Binding name="BNK_SWAPWEAPON" header="BLIMKSWAP">
+		BlinkSwap_Swapping();
+	</Binding>
+	<Binding name="BNK_SWAPRANGEDWEAPON">
+		BlinkSwap_Swapping_Ranged();
+	</Binding>
+	<Binding name="BNK_SAVESWAP">
+		BlinkSwap_SaveCurrentWeapons();
+	</Binding>
+	<Binding name="BNK_SAVESWAPRANGED">
+		BlinkSwap_SaveCurrentRangedWeapons();
+	</Binding>
+	<Binding name="BNK_SAVESWAPFORM">
+		BlinkSwap_SaveCurrentWeapons_State();
+	</Binding>
+</Bindings>

@@ -1,0 +1,20 @@
+[
+  {
+    "post_id": 11218,
+    "source_url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=11218",
+    "status": 200,
+    "path": "D:\\Projects\\Project_WF\\work\\old-reference-priority-root-63f909c7c02c47729d89dba705cb4367\\detail-11218.html",
+    "bytes": 230976,
+    "sha256": "74579E66D2091C8DEE3A1C2320E6F3A215F61D1BEB6C0A5F47842174BBD89ADC",
+    "acquired_at": "2026-11-17T22:53:02.1950210+09:00"
+  },
+  {
+    "post_id": 13140,
+    "source_url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=13140",
+    "status": 200,
+    "path": "D:\\Projects\\Project_WF\\work\\old-reference-priority-root-63f909c7c02c47729d89dba705cb4367\\detail-13140.html",
+    "bytes": 239907,
+    "sha256": "24BD16A64FDC64EE79FFBC78BF769B1A843F3422CA01D66F8B529B9BA0B9B90F",
+    "acquired_at": "2026-11-17T22:53:02.4509175+09:00"
+  }
+]

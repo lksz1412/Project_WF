@@ -1,0 +1,13 @@
+
+SmoothQuestDB = {
+	["profileKeys"] = {
+		["엔카이얀 - 우서"] = "Default",
+	},
+	["profiles"] = {
+		["Default"] = {
+			["sinkOptions"] = {
+				["sink20OutputSink"] = "ChatFrame",
+			},
+		},
+	},
+}

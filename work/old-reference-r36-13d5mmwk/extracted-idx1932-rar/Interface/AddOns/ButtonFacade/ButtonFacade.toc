@@ -1,0 +1,29 @@
+﻿## Interface: 20400
+## Title: ButtonFacade
+## Notes: Dynamic Modern Button Skinning
+## Notes-koKR: 동적이고 현대적인 버튼 스킨 입히기 애드온입니다.
+# Notes-esES: Aplica Pieles Modernas Dinamicas a Botones
+# Notes-zhCN: 按钮皮肤更换插件
+# Notes-zhTW: 動態的摩登按鈕美化插件
+## Author: jjsheets
+## Version: 0.1Alpha
+## OptionalDeps: Ace3, LibFuBarPlugin-3.0, Harbor
+## SavedVariables: ButtonFacadeDB
+## X-Category: Action Bars
+## X-Embeds: Ace3
+## X-eMail: sheets.jeff@gmail.com
+
+LibButtonFacade\lib.xml
+Skins\Skins.lua
+
+embeds.xml
+
+Localization\enUS.lua
+Localization\koKR.lua
+# Localization\zhCN.lua
+# Localization\zhTW.lua
+# Localization\esES.lua
+
+ButtonFacade.lua
+
+Modules\modules.xml

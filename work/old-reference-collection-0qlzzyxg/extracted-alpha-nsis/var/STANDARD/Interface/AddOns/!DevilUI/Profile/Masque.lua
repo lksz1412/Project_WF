@@ -1,0 +1,74 @@
+
+MasqueDB = {
+	["namespaces"] = {
+		["LibDualSpec-1.0"] = {
+		},
+	},
+	["profileKeys"] = {
+	},
+	["profiles"] = {
+		["Normal"] = {
+			["Groups"] = {
+				["Dominos_Bag Bar"] = {
+					["Gloss"] = 1,
+					["Inherit"] = false,
+					["SkinID"] = "Onyx",
+				},
+				["Dominos_Action Bar"] = {
+					["Gloss"] = 1,
+					["Inherit"] = false,
+					["SkinID"] = "Onyx",
+				},
+				["Dominos_Pet Bar"] = {
+					["Gloss"] = 1,
+					["Inherit"] = false,
+					["SkinID"] = "Onyx",
+				},
+				["Dominos"] = {
+					["Gloss"] = 1,
+					["Inherit"] = false,
+					["SkinID"] = "Onyx",
+				},
+				["Dominos_Class Bar"] = {
+					["Gloss"] = 1,
+					["Inherit"] = false,
+					["SkinID"] = "Onyx",
+				},
+			},
+		},
+		["Wide"] = {
+			["Groups"] = {
+				["Dominos_Bag Bar"] = {
+					["Inherit"] = false,
+					["Gloss"] = 1,
+					["SkinID"] = "Onyx",
+				},
+				["Dominos_Action Bar"] = {
+					["Inherit"] = false,
+					["Gloss"] = 1,
+					["SkinID"] = "Onyx",
+				},
+				["Dominos_Pet Bar"] = {
+					["Inherit"] = false,
+					["Gloss"] = 1,
+					["SkinID"] = "Onyx",
+				},
+				["Dominos_Pet Battle Buttons"] = {
+					["Inherit"] = false,
+					["Gloss"] = 1,
+					["SkinID"] = "Onyx",
+				},
+				["Dominos"] = {
+					["Inherit"] = false,
+					["Gloss"] = 1,
+					["SkinID"] = "Onyx",
+				},
+				["Dominos_Class Bar"] = {
+					["Inherit"] = false,
+					["Gloss"] = 1,
+					["SkinID"] = "Onyx",
+				},
+			},
+		},
+	},
+}

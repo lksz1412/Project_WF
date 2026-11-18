@@ -1,0 +1,756 @@
+{
+  "recorded": "2026-11-17T23:15:30.578772+09:00",
+  "actualReadPosts": 34,
+  "expectedPosts": 34,
+  "rows": [
+    {
+      "postID": 45,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=45",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-45.html",
+      "SHA256": "737a80ccb2ced8ed50ad623324047b90a06deac54a358b705d8c7bd64588b770",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 4,
+        "readChars": 56,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1251,
+        "readTextLines": 1,
+        "readChars": 36,
+        "complete": true
+      }
+    },
+    {
+      "postID": 11218,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=11218",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-priority-root-63f909c7c02c47729d89dba705cb4367\\detail-11218.html",
+      "SHA256": "74579e66d2091c8dee3a1c2320e6f3a215f61d1beb6c0a5f47842174bbd89adc",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 37,
+        "readChars": 1192,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1316,
+        "readTextLines": 42,
+        "readChars": 739,
+        "complete": true
+      }
+    },
+    {
+      "postID": 2958,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=2958",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\detail-2958.html",
+      "SHA256": "89c7fb54fab68ad4222d82906404e59e639180b9d30e5feb0668fd7f1ad6d7c9",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 8,
+        "readChars": 198,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1259,
+        "readTextLines": 0,
+        "readChars": 0,
+        "complete": true
+      }
+    },
+    {
+      "postID": 13140,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=13140",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-priority-root-63f909c7c02c47729d89dba705cb4367\\detail-13140.html",
+      "SHA256": "24bd16a64fdc64ee79ffbc78bf769b1a843f3422ca01d66f8b529b9ba0b9b90f",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 131,
+        "readChars": 4883,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1476,
+        "readTextLines": 31,
+        "readChars": 928,
+        "complete": true
+      }
+    },
+    {
+      "postID": 12993,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=12993",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-12993.html",
+      "SHA256": "ea87ba009aa7d6d627197777cd5885f36f2cf79afcb774ab9ae57782240c9aeb",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 1,
+        "readChars": 62,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1245,
+        "readTextLines": 0,
+        "readChars": 0,
+        "complete": true
+      }
+    },
+    {
+      "postID": 11361,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=11361",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-11361.html",
+      "SHA256": "fe4b0e6ddcb7aef655f61ae4985cd16c1c0fc12171915b6f001dabbb9e1ae352",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 51,
+        "readChars": 1973,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1359,
+        "readTextLines": 213,
+        "readChars": 5519,
+        "complete": true
+      }
+    },
+    {
+      "postID": 12610,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=12610",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-12610.html",
+      "SHA256": "4feb1ee865806e3f2dfe0784755209a96427b448a62d45c85a950c763ce702e1",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 12,
+        "readChars": 618,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1273,
+        "readTextLines": 0,
+        "readChars": 0,
+        "complete": true
+      }
+    },
+    {
+      "postID": 12124,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=12124",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-12124.html",
+      "SHA256": "5fd32e6fdc7c95254a492074ec16b08ed2b0ddc75964f5ec9c0de120db0d985c",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 26,
+        "readChars": 1409,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1302,
+        "readTextLines": 0,
+        "readChars": 0,
+        "complete": true
+      }
+    },
+    {
+      "postID": 12174,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=12174",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-12174.html",
+      "SHA256": "7ba41f75067445fad0856b84f5ab18264709182bfd2f7dba4b49bad495a87cf0",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 41,
+        "readChars": 1273,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1336,
+        "readTextLines": 0,
+        "readChars": 0,
+        "complete": true
+      }
+    },
+    {
+      "postID": 10341,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=10341",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-10341.html",
+      "SHA256": "70d160adddd9358df1d3b53fb2273256e59b22129d837b2de5a30116b3738015",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 1,
+        "readChars": 3,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1245,
+        "readTextLines": 0,
+        "readChars": 0,
+        "complete": true
+      }
+    },
+    {
+      "postID": 9880,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=9880",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-9880.html",
+      "SHA256": "a15d2c38d235c44d29dd0cbb594d6394665519db602c983600ca1b72f4d15377",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 10,
+        "readChars": 367,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1263,
+        "readTextLines": 0,
+        "readChars": 0,
+        "complete": true
+      }
+    },
+    {
+      "postID": 9789,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=9789",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-9789.html",
+      "SHA256": "b164036e20da923955b6b5eb0d749c38e8cb954e27b87dff5d905759abc117a1",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 10,
+        "readChars": 367,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1263,
+        "readTextLines": 1,
+        "readChars": 5,
+        "complete": true
+      }
+    },
+    {
+      "postID": 3461,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=3461",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-3461.html",
+      "SHA256": "731b5da0c512b40cf4bce0dfde19949180b41096d64da1133782e82a3cdd84b4",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 15,
+        "readChars": 480,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1277,
+        "readTextLines": 3,
+        "readChars": 108,
+        "complete": true
+      }
+    },
+    {
+      "postID": 8906,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=8906",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-8906.html",
+      "SHA256": "c50102d769dddd82fb883c71876f95c1a9c73cd7a0e7c92475b7c8bfd4c6ff72",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 39,
+        "readChars": 1548,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1301,
+        "readTextLines": 0,
+        "readChars": 0,
+        "complete": true
+      }
+    },
+    {
+      "postID": 8920,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=8920",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-8920.html",
+      "SHA256": "b6234dcd01f858eb1e7a8d19cb105ffb99acd54ddf0701dfd314ebbe91f9caed",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 31,
+        "readChars": 480,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1280,
+        "readTextLines": 0,
+        "readChars": 0,
+        "complete": true
+      }
+    },
+    {
+      "postID": 7618,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=7618",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-7618.html",
+      "SHA256": "39103ec8e23a6389ab45aa06b36c32d673c27975aa5bb6613e4515131039f34b",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 62,
+        "readChars": 2367,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1326,
+        "readTextLines": 0,
+        "readChars": 0,
+        "complete": true
+      }
+    },
+    {
+      "postID": 7546,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=7546",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-7546.html",
+      "SHA256": "4aa6357ccc2d11372b99fd948322a469b822f48a7b1ec36aea7575abeb73ffcc",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 9,
+        "readChars": 317,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1258,
+        "readTextLines": 0,
+        "readChars": 0,
+        "complete": true
+      }
+    },
+    {
+      "postID": 6405,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=6405",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-6405.html",
+      "SHA256": "0757d35d89fa3e944c3542bae0deb65a7097d5f4b1ba4bf3bc9227ee9da13c40",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 5,
+        "readChars": 159,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1253,
+        "readTextLines": 0,
+        "readChars": 0,
+        "complete": true
+      }
+    },
+    {
+      "postID": 4238,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=4238",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-4238.html",
+      "SHA256": "99f176661f110eca92103451d9de07b80d3ff0f308b6094d22cc1923fc419830",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 11,
+        "readChars": 392,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1265,
+        "readTextLines": 0,
+        "readChars": 0,
+        "complete": true
+      }
+    },
+    {
+      "postID": 4019,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=4019",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-4019.html",
+      "SHA256": "961003fc67b9b0884f0915bdeef0279dfa4ea5fca280b18b78544084eeb07a56",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 1,
+        "readChars": 4,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1245,
+        "readTextLines": 0,
+        "readChars": 0,
+        "complete": true
+      }
+    },
+    {
+      "postID": 4018,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=4018",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-4018.html",
+      "SHA256": "e3fb1e76b992877184f6f56073c6e53ec566a7820c5f9646c4cd03bf48ad4792",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 15,
+        "readChars": 450,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1285,
+        "readTextLines": 0,
+        "readChars": 0,
+        "complete": true
+      }
+    },
+    {
+      "postID": 4012,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=4012",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-4012.html",
+      "SHA256": "f2888106bc8628ecd8d4f75dae5bb5fc43fb01585162d5c5d66956ab58c4b61d",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 15,
+        "readChars": 450,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1282,
+        "readTextLines": 0,
+        "readChars": 0,
+        "complete": true
+      }
+    },
+    {
+      "postID": 2582,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=2582",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-2582.html",
+      "SHA256": "a8aba5519510ad8851711dd81b27a20421106b2e0cea3e6771005b81bd30d193",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 22,
+        "readChars": 736,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1290,
+        "readTextLines": 1,
+        "readChars": 6,
+        "complete": true
+      }
+    },
+    {
+      "postID": 2312,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=2312",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-2312.html",
+      "SHA256": "2081e5a13ff11e10818ee23b08171bb703ca9bf136040686d4eeab2339e374e8",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 1,
+        "readChars": 16,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1245,
+        "readTextLines": 0,
+        "readChars": 0,
+        "complete": true
+      }
+    },
+    {
+      "postID": 1932,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=1932",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-1932.html",
+      "SHA256": "eeab6b513b121c9c36626181259d4af7843f9a723c60d55abe7f00fe8ba02513",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 18,
+        "readChars": 1256,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1277,
+        "readTextLines": 4,
+        "readChars": 52,
+        "complete": true
+      }
+    },
+    {
+      "postID": 1877,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=1877",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-1877.html",
+      "SHA256": "483dca61874840fc4daa3ec80b00d050685d285a40de59c1bdc939ad7e0f0182",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 110,
+        "readChars": 3237,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1387,
+        "readTextLines": 21,
+        "readChars": 611,
+        "complete": true
+      }
+    },
+    {
+      "postID": 1865,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=1865",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-1865.html",
+      "SHA256": "813d4e02591449bc8ae703e499ea4ff30d2e264726dad70cdeca295e18e66d26",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 106,
+        "readChars": 3178,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1383,
+        "readTextLines": 12,
+        "readChars": 204,
+        "complete": true
+      }
+    },
+    {
+      "postID": 1853,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=1853",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-1853.html",
+      "SHA256": "cd282d8a344a3f90cb3798b3f18e892b0975945bcbd1eafdb4b38904d69eb657",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 11,
+        "readChars": 359,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1266,
+        "readTextLines": 0,
+        "readChars": 0,
+        "complete": true
+      }
+    },
+    {
+      "postID": 1403,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=1403",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-1403.html",
+      "SHA256": "025dd39b86bfa6dbf2553f78d5649b497d3463a15f71ec791fa6aca01dbd9610",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 7,
+        "readChars": 245,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1257,
+        "readTextLines": 0,
+        "readChars": 0,
+        "complete": true
+      }
+    },
+    {
+      "postID": 1361,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=1361",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-1361.html",
+      "SHA256": "0535426c4516d93c69a82b869f2e973182f6baa924a4453fb50b8cb41ecc261b",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 27,
+        "readChars": 1193,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1301,
+        "readTextLines": 0,
+        "readChars": 0,
+        "complete": true
+      }
+    },
+    {
+      "postID": 1121,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=1121",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-1121.html",
+      "SHA256": "f94e91eda0ca17b5dc0cceb9eea7b1362c9e02a325ebc4d4aaec513216a5b292",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 14,
+        "readChars": 515,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1272,
+        "readTextLines": 0,
+        "readChars": 0,
+        "complete": true
+      }
+    },
+    {
+      "postID": 1086,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=1086",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-1086.html",
+      "SHA256": "3474aa89e06879cd7b39682ab92b5e457bd80799cf3cb90315f25605a4edabdc",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 58,
+        "readChars": 857,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1314,
+        "readTextLines": 0,
+        "readChars": 0,
+        "complete": true
+      }
+    },
+    {
+      "postID": 1008,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=1008",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-1008.html",
+      "SHA256": "c37775df7b5b7fcf5854a4188592dd9346fc2e039743ffce7aad2912ca8eae76",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 6,
+        "readChars": 215,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1255,
+        "readTextLines": 0,
+        "readChars": 0,
+        "complete": true
+      }
+    },
+    {
+      "postID": 546,
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=546",
+      "source": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-546.html",
+      "SHA256": "3633ee12c61f473d893fe710e4557ea84057c3acf92b788055315d94030cabee",
+      "A1read": true,
+      "claim": "complete article body, complete version notes including empty section, metadata; not whole rendered site/expanded JSON MD",
+      "addonAddon": {
+        "selector": "#addonAddon",
+        "sourceLine": 1244,
+        "readTextLines": 1,
+        "readChars": 21,
+        "complete": true
+      },
+      "addonVersion": {
+        "selector": "#addonVersion",
+        "sourceLine": 1245,
+        "readTextLines": 0,
+        "readChars": 0,
+        "complete": true
+      }
+    }
+  ],
+  "limitation": "per-post source acquisition and prose reading separate from image observation; attachment tables remain structured-data queries"
+}

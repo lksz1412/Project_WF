@@ -1,0 +1,6 @@
+## Interface: 30200
+## Author: Nicecurry
+## Title: |cffffff80D|rMinimap
+## Notes: minimap
+
+DMinimap.lua

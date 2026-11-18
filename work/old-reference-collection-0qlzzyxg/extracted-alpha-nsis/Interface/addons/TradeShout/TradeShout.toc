@@ -1,0 +1,8 @@
+## Interface: 60100
+## Title: TradeShout
+## Notes: 거래내역 알림이
+## Author: bout
+## Version: 0.1
+## SavedVariables: TSOptions
+
+TradeShout.lua

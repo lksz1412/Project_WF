@@ -1,0 +1,15 @@
+## Interface: 60100
+## Title: InspectFix
+## Author: oscarucb
+## Description: Fixes some bugs that arise in the Blizzard UI while inspecting characters
+## Version: 4.5.0
+## X-Build: 60
+## X-ReleaseDate: 2014-10-25T01:36:41Z
+## X-Revision: $Revision: 60 $
+## X-Curse-Packaged-Version: 4.5.0
+## X-Curse-Project-Name: InspectFix
+## X-Curse-Project-ID: inspectfix
+## X-Curse-Repository-ID: wow/inspectfix/mainline
+
+InspectFix.lua
+

@@ -1,0 +1,93 @@
+{
+  "cache": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs",
+  "results": [
+    {
+      "postID": 45,
+      "filename": "DevilUI-X2 R3.4.zip",
+      "row": {
+        "postID": 45,
+        "ordinal1": 159,
+        "filenameLiteral": "DevilUI-X2 R3.4.zip",
+        "clientVersionLiteral": "2.4.3",
+        "downloadCountLiteral": "222403",
+        "dateLiteral": "2008-09-27",
+        "dateKind": "file table registration date",
+        "fileID": null,
+        "fileIDState": "not-exposed-in-anonymous-row",
+        "literalPublicURLs": [],
+        "mappingState": "no-row-URL-literal; public recovery not exhausted",
+        "anchors": [
+          {
+            "href": "javascript:top.login();",
+            "onclick": null,
+            "text": "DevilUI-X2 R3.4.zip",
+            "attributes": {
+              "href": "javascript:top.login();",
+              "onfocus": "this.blur();"
+            },
+            "line": 1620
+          }
+        ],
+        "sourceLocation": {
+          "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-45.html",
+          "line": 1617,
+          "selector": "#addonFileInfo table tr"
+        },
+        "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">DevilUI-X2 R3.4.zip</a></span>\n</span>\n</td>\n<td class=\"version\">2.4.3</td>\n<td class=\"download\">222403</td>\n<td class=\"postdate\">2008-09-27</td>\n</tr>"
+      },
+      "URLbasis": "PREDICTED actualidx45filename appended to observedidx1932legacy/publicprefix; ONEGET perfilename, no olddateURL repeat",
+      "prefixSource": {
+        "fileID": 9953,
+        "URL": "https://pds.inven.co.kr/upload/wow/addonpds/file/devilbecustom91.part2.rar",
+        "line": 37,
+        "executed": false
+      },
+      "provenance": {
+        "finalURL": "https://pds.inven.co.kr/upload/wow/addonpds/file/DevilUI-X2%20R3.4.zip",
+        "time": "2026-11-17T14:47:41.1139876Z",
+        "contentType": "application/x-zip-compressed",
+        "HTTP": 200,
+        "requestedURL": "https://pds.inven.co.kr/upload/wow/addonpds/file/DevilUI-X2%20R3.4.zip",
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\downloads\\DevilUI-X2 R3.4.zip",
+        "attempts": 1,
+        "commandExitCode": 0,
+        "bytes": 7245308,
+        "SHA256": "541F98566586F82FF88E464255EB0476F952CAF9E689C53AEB240D5AE54FF4EA",
+        "first16Hex": "504b030414000000080003633b397347",
+        "isZIP": true
+      },
+      "state": "HTTP200-validZIP",
+      "archiveChecks": {
+        "label": "legacy-idx45-159",
+        "source": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\downloads\\DevilUI-X2 R3.4.zip",
+        "bytes": 7245308,
+        "SHA256": "541F98566586F82FF88E464255EB0476F952CAF9E689C53AEB240D5AE54FF4EA",
+        "expectedSHA256": null,
+        "hashMatch": null,
+        "CRCtestRuns": 1,
+        "unsafe": [],
+        "extractionState": "passed",
+        "CRCbadMember": null,
+        "CRCstate": "passed",
+        "fileCount": 1,
+        "directoryCount": 0,
+        "totalCompressedBytes": 7245172,
+        "totalUncompressedBytes": 7349977,
+        "extractionRoot": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\extracted-legacy-idx45-159",
+        "extractedFileCount": 1,
+        "extractedBytes": 7349977,
+        "postExtractionReparse": [],
+        "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-_rhmh6fs\\legacy-idx45-159-members.json",
+        "nameOnlyCandidates": [
+          "DevilUI-X2 R3.4.exe"
+        ]
+      },
+      "preservedCopy": {
+        "path": "D:\\Projects\\Project_WF\\SourceArchive\\post-45-2008-09-27\\originals\\DevilUI-X2 R3.4.zip",
+        "sourceSHA256": "541F98566586F82FF88E464255EB0476F952CAF9E689C53AEB240D5AE54FF4EA",
+        "copySHA256": "541F98566586F82FF88E464255EB0476F952CAF9E689C53AEB240D5AE54FF4EA",
+        "equal": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "schema": "old-devil-proposed-geometry/1",
+  "recorded": "2026-11-18T02:08:33.569706+09:00",
+  "status": "A1_PROPOSAL_NOT_RENDERED",
+  "coordinateSystem": "physical raster pixels; origin top-left; XYWH; right/bottom exclusive",
+  "canvas": [
+    3840,
+    2160
+  ],
+  "canvasBasis": "offline4K assumption fromR21; notcurrentgame/displaymeasurement",
+  "derivationOrder": [
+    "buttonSize80",
+    "cellGap2",
+    "center8x3",
+    "padding8+menuGap8+menuHeight36",
+    "panelHeight304",
+    "bottomMargin8+status28",
+    "chat/mapalign",
+    "crossrail16+longrow80+helper80",
+    "health/resourceabovestack"
+  ],
+  "sizingRationale": {
+    "buttonSize80": "64px visible icon +8px inset on eachside; practical4K proposal, no sourcescreenshotfraction. Onyx source40skin/32icon provides componentrelation only, nottargetcoordinates.",
+    "keyFont24": "Exactproposedsamplelabel C-S-1 measuredagainst72pxinterior; glyph/fontgatepending",
+    "chatFont28": "Fixedreadableproposal with32pxbaselinepitch,7samplelinesfitreservedviewport; no actualUIscaleinference",
+    "menu36": "Compactcontrolrow, distinctfromactioncells;count12proposalnotoriginalmeasurement",
+    "longRow36": "NEWproposal using3blocksof12 supported byAlphaWideframes1/5/6 each12; actualsample4count/membershipunresolved. Notrejected2022spec reuse.",
+    "helperRow8": "NEWshortvisualrow count; no pet/stance/totem/order assignment inferred"
+  },
+  "equations": {
+    "gridWidth": "8*80+7*2=654",
+    "gridHeight": "3*80+2*2=244",
+    "panelWidth": "8+654+8=670",
+    "panelHeight": "8+244+8+36+8=304",
+    "lowerBandBottom": "2160-8-28=2124",
+    "lowerBandTop": "2124-304=1820",
+    "blackRailTop": "1820-16=1804",
+    "longRowTop": "1804-80=1724",
+    "helperRowTop": "1724-8-80=1636",
+    "targetTop": "1636-16-84=1536",
+    "playerTop": "1536-24-72=1440",
+    "longRowWidth": "36*80+35*2=2950",
+    "longRowX": "(3840-2950)/2=445",
+    "moduleWidthClosure": "960+2+960+2+670+2+304+2+938=3840"
+  },
+  "primaryBoxes": [
+    {
+      "roleID": "chat-left-one",
+      "xywh": [
+        0,
+        1820,
+        960,
+        304
+      ]
+    },
+    {
+      "roleID": "chat-left-two",
+      "xywh": [
+        962,
+        1820,
+        960,
+        304
+      ]
+    },
+    {
+      "roleID": "actions-center-grid",
+      "xywh": [
+        1924,
+        1820,
+        670,
+        304
+      ]
+    },
+    {
+      "roleID": "minimap-square-lower",
+      "xywh": [
+        2596,
+        1820,
+        304,
+        304
+      ]
+    },
+    {
+      "roleID": "chat-right-three",
+      "xywh": [
+        2902,
+        1820,
+        938,
+        304
+      ]
+    },
+    {
+      "roleID": "rail-status",
+      "xywh": [
+        0,
+        2124,
+        3840,
+        28
+      ]
+    },
+    {
+      "roleID": "rail-black",
+      "xywh": [
+        0,
+        1804,
+        3840,
+        16
+      ]
+    },
+    {
+      "roleID": "actions-long-upper",
+      "xywh": [
+        445,
+        1724,
+        2950,
+        80
+      ]
+    },
+    {
+      "roleID": "actions-short-helper",
+      "xywh": [
+        760,
+        1636,
+        654,
+        80
+      ]
+    },
+    {
+      "roleID": "unit-upper",
+      "xywh": [
+        1080,
+        1440,
+        390,
+        72
+      ]
+    },
+    {
+      "roleID": "unit-lower",
+      "xywh": [
+        916,
+        1536,
+        554,
+        84
+      ]
+    },
+    {
+      "roleID": "ornament-left",
+      "xywh": [
+        189,
+        1548,
+        256,
+        256
+      ]
+    },
+    {
+      "roleID": "ornament-right",
+      "xywh": [
+        3395,
+        1548,
+        256,
+        256
+      ]
+    }
+  ],
+  "nestedBoxes": {
+    "centerCellsEnvelope": [
+      1932,
+      1828,
+      654,
+      244
+    ],
+    "menu-short": [
+      1936,
+      2080,
+      646,
+      36
+    ],
+    "mapInterior": [
+      2600,
+      1824,
+      296,
+      296
+    ],
+    "chatInputReserved": [
+      [
+        8,
+        2080,
+        944,
+        36
+      ],
+      [
+        970,
+        2080,
+        944,
+        36
+      ],
+      [
+        2910,
+        2080,
+        922,
+        36
+      ]
+    ],
+    "chatTranscriptViewports": [
+      [
+        12,
+        1836,
+        936,
+        224
+      ],
+      [
+        974,
+        1836,
+        936,
+        224
+      ],
+      [
+        2914,
+        1836,
+        914,
+        224
+      ]
+    ]
+  },
+  "moduleDividers": [
+    [
+      960,
+      1820,
+      2,
+      304
+    ],
+    [
+      1922,
+      1820,
+      2,
+      304
+    ],
+    [
+      2594,
+      1820,
+      2,
+      304
+    ],
+    [
+      2900,
+      1820,
+      2,
+      304
+    ]
+  ],
+  "seamsPolicy": "Single2px sharedverticaldividers,1pxouterhorizontalrules; no doublecardframes or wideblankmodulegaps",
+  "clearWorldRegion": [
+    1472,
+    96,
+    1800,
+    1312
+  ],
+  "clearWorldMeaning": "unoccupiedrectangularinspectionzone inproposal; context isneutralnotgamecapture; notfullscreenfreeareaclaim",
+  "sourceCoordinatesUsedAsScale": false,
+  "historicalUIUnitsUsedAsPhysicalCoordinates": false,
+  "actualUIscale": null,
+  "render": "NOT_RUN",
+  "pixelChecks": "NOT_RUN",
+  "currentGame": "NOT_RUN"
+}

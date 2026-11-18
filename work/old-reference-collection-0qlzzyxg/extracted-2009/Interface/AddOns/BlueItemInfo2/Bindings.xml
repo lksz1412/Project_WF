@@ -1,0 +1,5 @@
+<Bindings>
+  	<Binding name="BLUEITEMINFO2_TOGGLE" header="BLUEITEMINFO2">
+  		BlueItemInfo2:OnClick();
+  	</Binding>
+</Bindings>

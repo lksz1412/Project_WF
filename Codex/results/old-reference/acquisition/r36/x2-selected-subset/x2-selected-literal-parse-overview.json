@@ -1,0 +1,809 @@
+{
+  "selectedSubsetOnly": true,
+  "wholeArchiveGate": "BLOCKED unsafe288/4217 unchanged",
+  "requestedSelectedLuaFiles": 20,
+  "actualVariantSet": [
+    "SPECIAL",
+    "SPECIALW",
+    "STANDARD",
+    "STANDARDW"
+  ],
+  "results": [
+    {
+      "id": "X2-SPECIAL-Bartender3",
+      "variantLiteral": "SPECIAL",
+      "sourceSuffix": "var/SPECIAL/SavedVariables/Bartender3.lua",
+      "selectedInventory": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\selected-member-inventory.json",
+      "selectedInventoryIndex0": 22,
+      "sourceInventoryIndex0": 2276,
+      "sourceListLine": 2283,
+      "SHA256": "73FDA11A8183826477EE3FDD6C99F8A391A666977331D20367F3547030BDE07E",
+      "bytes": 1955,
+      "state": "parsed-fully",
+      "encoding": "utf-8-sig",
+      "sourceLines": 92,
+      "literalTokens": 409,
+      "consumedTokens": 409,
+      "duplicateKeys": [],
+      "rootAssignments": [
+        "BT3DB"
+      ],
+      "schemas": [
+        {
+          "root": "BT3DB",
+          "type": "dict",
+          "keyCount": 2,
+          "topKeys": [
+            "namespaces",
+            "profiles"
+          ],
+          "rosterTopKeysSuppressed": false,
+          "span": [
+            2,
+            92
+          ]
+        }
+      ]
+    },
+    {
+      "id": "X2-SPECIAL-SisterChatMods",
+      "variantLiteral": "SPECIAL",
+      "sourceSuffix": "var/SPECIAL/SavedVariables/SisterChatMods.lua",
+      "selectedInventory": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\selected-member-inventory.json",
+      "selectedInventoryIndex0": 23,
+      "sourceInventoryIndex0": 2335,
+      "sourceListLine": 2342,
+      "SHA256": "ABDE2E00CB9B821187318EFAEF6A77E74DF7A9587EEBAD3CF14940EEA1947112",
+      "bytes": 279,
+      "state": "parsed-fully",
+      "encoding": "utf-8-sig",
+      "sourceLines": 14,
+      "literalTokens": 62,
+      "consumedTokens": 62,
+      "duplicateKeys": [],
+      "rootAssignments": [
+        "SCMSaved",
+        "SCMDataBase"
+      ],
+      "schemas": [
+        {
+          "root": "SCMSaved",
+          "type": "dict",
+          "keyCount": 8,
+          "topKeys": [
+            "FadeMenuButton",
+            "shortChannels",
+            "enableWheel",
+            "SkipGossip",
+            "hideChannels",
+            "chatFade",
+            "MoveEditBox",
+            "colorNicks"
+          ],
+          "rosterTopKeysSuppressed": false,
+          "span": [
+            2,
+            11
+          ]
+        },
+        {
+          "root": "SCMDataBase",
+          "type": "dict",
+          "keyCount": 1,
+          "topKeys": null,
+          "rosterTopKeysSuppressed": true,
+          "span": [
+            12,
+            14
+          ]
+        }
+      ]
+    },
+    {
+      "id": "X2-SPECIAL-cyCircled",
+      "variantLiteral": "SPECIAL",
+      "sourceSuffix": "var/SPECIAL/SavedVariables/cyCircled.lua",
+      "selectedInventory": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\selected-member-inventory.json",
+      "selectedInventoryIndex0": 24,
+      "sourceInventoryIndex0": 2341,
+      "sourceListLine": 2348,
+      "SHA256": "EE1936D6DFB38446B9976447139421606640D77917E86C30F76B38047B6BEF91",
+      "bytes": 332,
+      "state": "parsed-fully",
+      "encoding": "utf-8-sig",
+      "sourceLines": 21,
+      "literalTokens": 77,
+      "consumedTokens": 77,
+      "duplicateKeys": [],
+      "rootAssignments": [
+        "cyCircledDB"
+      ],
+      "schemas": [
+        {
+          "root": "cyCircledDB",
+          "type": "dict",
+          "keyCount": 2,
+          "topKeys": [
+            "namespaces",
+            "profiles"
+          ],
+          "rosterTopKeysSuppressed": false,
+          "span": [
+            2,
+            21
+          ]
+        }
+      ]
+    },
+    {
+      "id": "X2-STANDARD-cyCircled",
+      "variantLiteral": "STANDARD",
+      "sourceSuffix": "var/STANDARD/SavedVariables/cyCircled.lua",
+      "selectedInventory": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\selected-member-inventory.json",
+      "selectedInventoryIndex0": 25,
+      "sourceInventoryIndex0": 2342,
+      "sourceListLine": 2349,
+      "SHA256": "EE1936D6DFB38446B9976447139421606640D77917E86C30F76B38047B6BEF91",
+      "bytes": 332,
+      "state": "parsed-fully",
+      "encoding": "utf-8-sig",
+      "sourceLines": 21,
+      "literalTokens": 77,
+      "consumedTokens": 77,
+      "duplicateKeys": [],
+      "rootAssignments": [
+        "cyCircledDB"
+      ],
+      "schemas": [
+        {
+          "root": "cyCircledDB",
+          "type": "dict",
+          "keyCount": 2,
+          "topKeys": [
+            "namespaces",
+            "profiles"
+          ],
+          "rosterTopKeysSuppressed": false,
+          "span": [
+            2,
+            21
+          ]
+        }
+      ]
+    },
+    {
+      "id": "X2-STANDARDW-cyCircled",
+      "variantLiteral": "STANDARDW",
+      "sourceSuffix": "var/STANDARDW/SavedVariables/cyCircled.lua",
+      "selectedInventory": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\selected-member-inventory.json",
+      "selectedInventoryIndex0": 26,
+      "sourceInventoryIndex0": 2343,
+      "sourceListLine": 2350,
+      "SHA256": "EE1936D6DFB38446B9976447139421606640D77917E86C30F76B38047B6BEF91",
+      "bytes": 332,
+      "state": "parsed-fully",
+      "encoding": "utf-8-sig",
+      "sourceLines": 21,
+      "literalTokens": 77,
+      "consumedTokens": 77,
+      "duplicateKeys": [],
+      "rootAssignments": [
+        "cyCircledDB"
+      ],
+      "schemas": [
+        {
+          "root": "cyCircledDB",
+          "type": "dict",
+          "keyCount": 2,
+          "topKeys": [
+            "namespaces",
+            "profiles"
+          ],
+          "rosterTopKeysSuppressed": false,
+          "span": [
+            2,
+            21
+          ]
+        }
+      ]
+    },
+    {
+      "id": "X2-SPECIALW-cyCircled",
+      "variantLiteral": "SPECIALW",
+      "sourceSuffix": "var/SPECIALW/SavedVariables/cyCircled.lua",
+      "selectedInventory": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\selected-member-inventory.json",
+      "selectedInventoryIndex0": 27,
+      "sourceInventoryIndex0": 2344,
+      "sourceListLine": 2351,
+      "SHA256": "EE1936D6DFB38446B9976447139421606640D77917E86C30F76B38047B6BEF91",
+      "bytes": 332,
+      "state": "parsed-fully",
+      "encoding": "utf-8-sig",
+      "sourceLines": 21,
+      "literalTokens": 77,
+      "consumedTokens": 77,
+      "duplicateKeys": [],
+      "rootAssignments": [
+        "cyCircledDB"
+      ],
+      "schemas": [
+        {
+          "root": "cyCircledDB",
+          "type": "dict",
+          "keyCount": 2,
+          "topKeys": [
+            "namespaces",
+            "profiles"
+          ],
+          "rosterTopKeysSuppressed": false,
+          "span": [
+            2,
+            21
+          ]
+        }
+      ]
+    },
+    {
+      "id": "X2-SPECIAL-eePanels2",
+      "variantLiteral": "SPECIAL",
+      "sourceSuffix": "var/SPECIAL/SavedVariables/eePanels2.lua",
+      "selectedInventory": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\selected-member-inventory.json",
+      "selectedInventoryIndex0": 28,
+      "sourceInventoryIndex0": 2345,
+      "sourceListLine": 2352,
+      "SHA256": "1B6602DACAB16F3C33FE8C5E43F3B73BE5CAD9BA975CCA86409E6093FE3B32DF",
+      "bytes": 14495,
+      "state": "parsed-fully",
+      "encoding": "utf-8-sig",
+      "sourceLines": 645,
+      "literalTokens": 3227,
+      "consumedTokens": 3227,
+      "duplicateKeys": [],
+      "rootAssignments": [
+        "eePanels2DB"
+      ],
+      "schemas": [
+        {
+          "root": "eePanels2DB",
+          "type": "dict",
+          "keyCount": 1,
+          "topKeys": [
+            "profiles"
+          ],
+          "rosterTopKeysSuppressed": false,
+          "span": [
+            2,
+            645
+          ]
+        }
+      ]
+    },
+    {
+      "id": "X2-SPECIAL-simpleMinimap",
+      "variantLiteral": "SPECIAL",
+      "sourceSuffix": "var/SPECIAL/SavedVariables/simpleMinimap.lua",
+      "selectedInventory": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\selected-member-inventory.json",
+      "selectedInventoryIndex0": 29,
+      "sourceInventoryIndex0": 2346,
+      "sourceListLine": 2353,
+      "SHA256": "1EFF8F5CE81CDCEC65FDD171D128CBE1B223F3024B462D7C50F5F0E5042524FE",
+      "bytes": 1636,
+      "state": "parsed-fully",
+      "encoding": "utf-8-sig",
+      "sourceLines": 88,
+      "literalTokens": 334,
+      "consumedTokens": 334,
+      "duplicateKeys": [],
+      "rootAssignments": [
+        "smmConfig"
+      ],
+      "schemas": [
+        {
+          "root": "smmConfig",
+          "type": "dict",
+          "keyCount": 3,
+          "topKeys": [
+            "namespaces",
+            "disabledModules",
+            "profiles"
+          ],
+          "rosterTopKeysSuppressed": false,
+          "span": [
+            2,
+            88
+          ]
+        }
+      ]
+    },
+    {
+      "id": "X2-SPECIALW-Bartender3",
+      "variantLiteral": "SPECIALW",
+      "sourceSuffix": "var/SPECIALW/SavedVariables/Bartender3.lua",
+      "selectedInventory": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\selected-member-inventory.json",
+      "selectedInventoryIndex0": 31,
+      "sourceInventoryIndex0": 2356,
+      "sourceListLine": 2363,
+      "SHA256": "0EE938EEC704C6942FF0FA501B77D64E27ADC7D3829EA74AEA8EA7B6868C17CF",
+      "bytes": 2090,
+      "state": "parsed-fully",
+      "encoding": "utf-8-sig",
+      "sourceLines": 97,
+      "literalTokens": 439,
+      "consumedTokens": 439,
+      "duplicateKeys": [],
+      "rootAssignments": [
+        "BT3DB"
+      ],
+      "schemas": [
+        {
+          "root": "BT3DB",
+          "type": "dict",
+          "keyCount": 2,
+          "topKeys": [
+            "namespaces",
+            "profiles"
+          ],
+          "rosterTopKeysSuppressed": false,
+          "span": [
+            2,
+            97
+          ]
+        }
+      ]
+    },
+    {
+      "id": "X2-SPECIALW-SisterChatMods",
+      "variantLiteral": "SPECIALW",
+      "sourceSuffix": "var/SPECIALW/SavedVariables/SisterChatMods.lua",
+      "selectedInventory": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\selected-member-inventory.json",
+      "selectedInventoryIndex0": 32,
+      "sourceInventoryIndex0": 2369,
+      "sourceListLine": 2376,
+      "SHA256": "DB46D2C222A199FBFF9BFDE0629980B1CFEA65804249E00BEC072DF53A46117A",
+      "bytes": 3070,
+      "state": "parsed-fully",
+      "encoding": "utf-8-sig",
+      "sourceLines": 100,
+      "literalTokens": 578,
+      "consumedTokens": 578,
+      "duplicateKeys": [],
+      "rootAssignments": [
+        "SCMSaved",
+        "SCMDataBase"
+      ],
+      "schemas": [
+        {
+          "root": "SCMSaved",
+          "type": "dict",
+          "keyCount": 8,
+          "topKeys": [
+            "FadeMenuButton",
+            "shortChannels",
+            "enableWheel",
+            "SkipGossip",
+            "hideChannels",
+            "chatFade",
+            "MoveEditBox",
+            "colorNicks"
+          ],
+          "rosterTopKeysSuppressed": false,
+          "span": [
+            2,
+            11
+          ]
+        },
+        {
+          "root": "SCMDataBase",
+          "type": "dict",
+          "keyCount": 87,
+          "topKeys": null,
+          "rosterTopKeysSuppressed": true,
+          "span": [
+            12,
+            100
+          ]
+        }
+      ]
+    },
+    {
+      "id": "X2-SPECIALW-eePanels2",
+      "variantLiteral": "SPECIALW",
+      "sourceSuffix": "var/SPECIALW/SavedVariables/eePanels2.lua",
+      "selectedInventory": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\selected-member-inventory.json",
+      "selectedInventoryIndex0": 33,
+      "sourceInventoryIndex0": 2371,
+      "sourceListLine": 2378,
+      "SHA256": "4BD5ACCCF8E4CF24253F3763956F68FB9ED4F62D45C354E7020F6C683A114D71",
+      "bytes": 16206,
+      "state": "parsed-fully",
+      "encoding": "utf-8-sig",
+      "sourceLines": 721,
+      "literalTokens": 3610,
+      "consumedTokens": 3610,
+      "duplicateKeys": [],
+      "rootAssignments": [
+        "eePanels2DB"
+      ],
+      "schemas": [
+        {
+          "root": "eePanels2DB",
+          "type": "dict",
+          "keyCount": 1,
+          "topKeys": [
+            "profiles"
+          ],
+          "rosterTopKeysSuppressed": false,
+          "span": [
+            2,
+            721
+          ]
+        }
+      ]
+    },
+    {
+      "id": "X2-SPECIALW-simpleMinimap",
+      "variantLiteral": "SPECIALW",
+      "sourceSuffix": "var/SPECIALW/SavedVariables/simpleMinimap.lua",
+      "selectedInventory": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\selected-member-inventory.json",
+      "selectedInventoryIndex0": 34,
+      "sourceInventoryIndex0": 2372,
+      "sourceListLine": 2379,
+      "SHA256": "861352384B41B39D19EFBCF343F0D4DF2E77CB7EC1126B04602C3EEE24CC37BF",
+      "bytes": 1635,
+      "state": "parsed-fully",
+      "encoding": "utf-8-sig",
+      "sourceLines": 88,
+      "literalTokens": 334,
+      "consumedTokens": 334,
+      "duplicateKeys": [],
+      "rootAssignments": [
+        "smmConfig"
+      ],
+      "schemas": [
+        {
+          "root": "smmConfig",
+          "type": "dict",
+          "keyCount": 3,
+          "topKeys": [
+            "namespaces",
+            "profiles",
+            "disabledModules"
+          ],
+          "rosterTopKeysSuppressed": false,
+          "span": [
+            2,
+            88
+          ]
+        }
+      ]
+    },
+    {
+      "id": "X2-STANDARD-Bartender3",
+      "variantLiteral": "STANDARD",
+      "sourceSuffix": "var/STANDARD/SavedVariables/Bartender3.lua",
+      "selectedInventory": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\selected-member-inventory.json",
+      "selectedInventoryIndex0": 36,
+      "sourceInventoryIndex0": 2382,
+      "sourceListLine": 2389,
+      "SHA256": "4E70B161F3964BE7C6D2F5BF24C96C65B27CF214D6AF32147585BCC82CB16B1E",
+      "bytes": 1945,
+      "state": "parsed-fully",
+      "encoding": "utf-8-sig",
+      "sourceLines": 91,
+      "literalTokens": 403,
+      "consumedTokens": 403,
+      "duplicateKeys": [],
+      "rootAssignments": [
+        "BT3DB"
+      ],
+      "schemas": [
+        {
+          "root": "BT3DB",
+          "type": "dict",
+          "keyCount": 2,
+          "topKeys": [
+            "namespaces",
+            "profiles"
+          ],
+          "rosterTopKeysSuppressed": false,
+          "span": [
+            2,
+            91
+          ]
+        }
+      ]
+    },
+    {
+      "id": "X2-STANDARD-SisterChatMods",
+      "variantLiteral": "STANDARD",
+      "sourceSuffix": "var/STANDARD/SavedVariables/SisterChatMods.lua",
+      "selectedInventory": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\selected-member-inventory.json",
+      "selectedInventoryIndex0": 37,
+      "sourceInventoryIndex0": 2395,
+      "sourceListLine": 2402,
+      "SHA256": "99659625D573E96B55CA3F07FDB151D371731BFDB5007D158FE9A6E57FBA5CFA",
+      "bytes": 279,
+      "state": "parsed-fully",
+      "encoding": "utf-8-sig",
+      "sourceLines": 14,
+      "literalTokens": 62,
+      "consumedTokens": 62,
+      "duplicateKeys": [],
+      "rootAssignments": [
+        "SCMSaved",
+        "SCMDataBase"
+      ],
+      "schemas": [
+        {
+          "root": "SCMSaved",
+          "type": "dict",
+          "keyCount": 8,
+          "topKeys": [
+            "FadeMenuButton",
+            "shortChannels",
+            "enableWheel",
+            "SkipGossip",
+            "colorNicks",
+            "chatFade",
+            "MoveEditBox",
+            "hideChannels"
+          ],
+          "rosterTopKeysSuppressed": false,
+          "span": [
+            2,
+            11
+          ]
+        },
+        {
+          "root": "SCMDataBase",
+          "type": "dict",
+          "keyCount": 1,
+          "topKeys": null,
+          "rosterTopKeysSuppressed": true,
+          "span": [
+            12,
+            14
+          ]
+        }
+      ]
+    },
+    {
+      "id": "X2-STANDARD-eePanels2",
+      "variantLiteral": "STANDARD",
+      "sourceSuffix": "var/STANDARD/SavedVariables/eePanels2.lua",
+      "selectedInventory": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\selected-member-inventory.json",
+      "selectedInventoryIndex0": 38,
+      "sourceInventoryIndex0": 2399,
+      "sourceListLine": 2406,
+      "SHA256": "793AAAF72CC3A64D09DCB376ECD587A380D12633E8568D86C7B1FFD985ACFDE1",
+      "bytes": 9373,
+      "state": "parsed-fully",
+      "encoding": "utf-8-sig",
+      "sourceLines": 416,
+      "literalTokens": 2072,
+      "consumedTokens": 2072,
+      "duplicateKeys": [],
+      "rootAssignments": [
+        "eePanels2DB"
+      ],
+      "schemas": [
+        {
+          "root": "eePanels2DB",
+          "type": "dict",
+          "keyCount": 1,
+          "topKeys": [
+            "profiles"
+          ],
+          "rosterTopKeysSuppressed": false,
+          "span": [
+            2,
+            416
+          ]
+        }
+      ]
+    },
+    {
+      "id": "X2-STANDARD-simpleMinimap",
+      "variantLiteral": "STANDARD",
+      "sourceSuffix": "var/STANDARD/SavedVariables/simpleMinimap.lua",
+      "selectedInventory": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\selected-member-inventory.json",
+      "selectedInventoryIndex0": 39,
+      "sourceInventoryIndex0": 2400,
+      "sourceListLine": 2407,
+      "SHA256": "FFA7BD26A302A0C4D2738F27029D2F962C9F9BD5B6F38EFED5285743CF2E2BF4",
+      "bytes": 1647,
+      "state": "parsed-fully",
+      "encoding": "utf-8-sig",
+      "sourceLines": 88,
+      "literalTokens": 334,
+      "consumedTokens": 334,
+      "duplicateKeys": [],
+      "rootAssignments": [
+        "smmConfig"
+      ],
+      "schemas": [
+        {
+          "root": "smmConfig",
+          "type": "dict",
+          "keyCount": 3,
+          "topKeys": [
+            "namespaces",
+            "disabledModules",
+            "profiles"
+          ],
+          "rosterTopKeysSuppressed": false,
+          "span": [
+            2,
+            88
+          ]
+        }
+      ]
+    },
+    {
+      "id": "X2-STANDARDW-Bartender3",
+      "variantLiteral": "STANDARDW",
+      "sourceSuffix": "var/STANDARDW/SavedVariables/Bartender3.lua",
+      "selectedInventory": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\selected-member-inventory.json",
+      "selectedInventoryIndex0": 42,
+      "sourceInventoryIndex0": 2406,
+      "sourceListLine": 2413,
+      "SHA256": "47DBDBF5AEEF3009FE871000D68EF3CDAD49D66E2255882229CF8A46361CE4F5",
+      "bytes": 2041,
+      "state": "parsed-fully",
+      "encoding": "utf-8-sig",
+      "sourceLines": 95,
+      "literalTokens": 427,
+      "consumedTokens": 427,
+      "duplicateKeys": [],
+      "rootAssignments": [
+        "BT3DB"
+      ],
+      "schemas": [
+        {
+          "root": "BT3DB",
+          "type": "dict",
+          "keyCount": 2,
+          "topKeys": [
+            "namespaces",
+            "profiles"
+          ],
+          "rosterTopKeysSuppressed": false,
+          "span": [
+            2,
+            95
+          ]
+        }
+      ]
+    },
+    {
+      "id": "X2-STANDARDW-SisterChatMods",
+      "variantLiteral": "STANDARDW",
+      "sourceSuffix": "var/STANDARDW/SavedVariables/SisterChatMods.lua",
+      "selectedInventory": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\selected-member-inventory.json",
+      "selectedInventoryIndex0": 43,
+      "sourceInventoryIndex0": 2420,
+      "sourceListLine": 2427,
+      "SHA256": "8FE09950DC008829089C8BC5D5AF0D88BE6B57DD30D32EAD261DD38598DCAA5D",
+      "bytes": 279,
+      "state": "parsed-fully",
+      "encoding": "utf-8-sig",
+      "sourceLines": 14,
+      "literalTokens": 62,
+      "consumedTokens": 62,
+      "duplicateKeys": [],
+      "rootAssignments": [
+        "SCMSaved",
+        "SCMDataBase"
+      ],
+      "schemas": [
+        {
+          "root": "SCMSaved",
+          "type": "dict",
+          "keyCount": 8,
+          "topKeys": [
+            "FadeMenuButton",
+            "shortChannels",
+            "enableWheel",
+            "hideChannels",
+            "colorNicks",
+            "chatFade",
+            "MoveEditBox",
+            "SkipGossip"
+          ],
+          "rosterTopKeysSuppressed": false,
+          "span": [
+            2,
+            11
+          ]
+        },
+        {
+          "root": "SCMDataBase",
+          "type": "dict",
+          "keyCount": 1,
+          "topKeys": null,
+          "rosterTopKeysSuppressed": true,
+          "span": [
+            12,
+            14
+          ]
+        }
+      ]
+    },
+    {
+      "id": "X2-STANDARDW-eePanels2",
+      "variantLiteral": "STANDARDW",
+      "sourceSuffix": "var/STANDARDW/SavedVariables/eePanels2.lua",
+      "selectedInventory": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\selected-member-inventory.json",
+      "selectedInventoryIndex0": 44,
+      "sourceInventoryIndex0": 2424,
+      "sourceListLine": 2431,
+      "SHA256": "2D600DE5779A23A0F0E39FC23BE68A4B97C54AB129FFE75C38952BB2C079E0D7",
+      "bytes": 9423,
+      "state": "parsed-fully",
+      "encoding": "utf-8-sig",
+      "sourceLines": 416,
+      "literalTokens": 2072,
+      "consumedTokens": 2072,
+      "duplicateKeys": [],
+      "rootAssignments": [
+        "eePanels2DB"
+      ],
+      "schemas": [
+        {
+          "root": "eePanels2DB",
+          "type": "dict",
+          "keyCount": 1,
+          "topKeys": [
+            "profiles"
+          ],
+          "rosterTopKeysSuppressed": false,
+          "span": [
+            2,
+            416
+          ]
+        }
+      ]
+    },
+    {
+      "id": "X2-STANDARDW-simpleMinimap",
+      "variantLiteral": "STANDARDW",
+      "sourceSuffix": "var/STANDARDW/SavedVariables/simpleMinimap.lua",
+      "selectedInventory": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\selected-member-inventory.json",
+      "selectedInventoryIndex0": 45,
+      "sourceInventoryIndex0": 2425,
+      "sourceListLine": 2432,
+      "SHA256": "A24F7DD5D99CE9D2307319B29C2E1948B1A07AB82FEBFEA1C1B38196AE9AD4F0",
+      "bytes": 1646,
+      "state": "parsed-fully",
+      "encoding": "utf-8-sig",
+      "sourceLines": 88,
+      "literalTokens": 334,
+      "consumedTokens": 334,
+      "duplicateKeys": [],
+      "rootAssignments": [
+        "smmConfig"
+      ],
+      "schemas": [
+        {
+          "root": "smmConfig",
+          "type": "dict",
+          "keyCount": 3,
+          "topKeys": [
+            "namespaces",
+            "profiles",
+            "disabledModules"
+          ],
+          "rosterTopKeysSuppressed": false,
+          "span": [
+            2,
+            88
+          ]
+        }
+      ]
+    }
+  ],
+  "ignoredFullTypedCache": "D:\\Projects\\Project_WF\\work\\old-reference-r36-0p_dvcvk\\X2-20-selected-full-typed.json",
+  "parser": "D:\\Projects\\Project_WF\\work\\source-analysis-data-vbibwfzc\\parse-profile-literals.py",
+  "parserSHA256": "A677AF651EE492F593BD12E3E4B7E252611CE276B236CDB1B26E319BB53ACCC1",
+  "noLuaExecution": true
+}

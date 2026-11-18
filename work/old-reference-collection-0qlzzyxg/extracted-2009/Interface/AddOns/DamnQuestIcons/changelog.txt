@@ -1,0 +1,132 @@
+commit 30c4f30646dbcba0a4009df5aab59e504a64d735
+Author: Shadowed <shadowed.wow@gmail.com>
+Date:   Wed Aug 5 09:57:55 2009 -0700
+
+    Updated getglobal -> _G
+
+commit 669bffd08710c6707ca2a6bf232e6780d8835700
+Author: Shadowed <shadowed.wow@gmail.com>
+Date:   Wed Aug 5 09:57:38 2009 -0700
+
+    TOC Bump
+
+commit 7ab3929ade7564dee25d2523cb76a2b91946b4a5
+Author: Shadowed <shadowed.wow@gmail.com>
+Date:   Sat Jun 13 18:09:11 2009 -0700
+
+    * CLRF
+
+commit 157ec7f66943389e4971e186a66f34b22ea0dcf8
+Author: Shadowed <shadowed.wow@gmail.com>
+Date:   Sat Apr 25 07:30:48 2009 +0000
+
+    * TOC bump, previous update was 20300 should probably indicate it still works given it's almost been two years
+
+commit 2fe21a18c2ce30b008eefa937486a1c77697912b
+Author: Shadowed <shadowed.wow@gmail.com>
+Date:   Sun Sep 7 18:18:43 2008 +0000
+
+    * Improved color code stripping, which I stole from Industrial, who stole it from me!
+
+commit 7bebcd8d9ab075fc6deee57361c651f23960330c
+Author: Shadowed <shadowed.wow@gmail.com>
+Date:   Wed Nov 28 09:46:00 2007 +0000
+
+    * Switched methods of doing text checks to just strip out everything we don't like, if the check fails because a mod does something special you're out of luck
+
+commit 2c27852bccaafafa014924c4dbf776161b0dc45b
+Author: Shadowed <shadowed.wow@gmail.com>
+Date:   Wed Nov 14 09:34:14 2007 +0000
+
+    * Fixed a bug caused by WoW 2.3 due to quest text now having color codes wrapped around them, moved to GetToThePoint's method of checking quest names by storing the original as it's added instead of going off of the GetText() results. Should be a bit more accurate hopefully
+
+commit 02e51992da1625ae55ffc902ddc73b2e96a92c65
+Author: Shadowed <shadowed.wow@gmail.com>
+Date:   Sat Nov 10 22:11:49 2007 +0000
+
+    * Updated all TOC information to 20300, added revision info to the version field, also the author field is now consistent instead of using 5 different character names
+
+commit 4690d666fc8bef07dc5671d95ae7f744dfc0f9d9
+Author: Shadowed <shadowed.wow@gmail.com>
+Date:   Mon Nov 5 01:38:33 2007 +0000
+
+    * Fixed quests with ( and ) breaking the checks
+
+commit 2b1536578ff6329226927a76d77182d9de086856
+Author: Shadowed <shadowed.wow@gmail.com>
+Date:   Sat Oct 27 18:11:33 2007 +0000
+
+    * Fixed quests with dashes breaking checks if only one part of it has brackets in it (For example, Electro-Shock Goodness)
+
+commit a33c72926c3e5ef7bd92b9aa20391516c07c7a62
+Author: Shadowed <shadowed.wow@gmail.com>
+Date:   Tue Oct 9 23:12:52 2007 +0000
+
+    * Added check so quests that have no objectives are automatically considered completed, some quests like the "return to blah" aren't considered complete, but they are in reality
+
+commit e4dd1069b7e2336f56036d572659338361de8071
+Author: Shadowed <shadowed.wow@gmail.com>
+Date:   Mon Oct 8 22:18:04 2007 +0000
+
+    * Fixed up the logic so we specifically use the correct one needed depending on the mod (if any) being used to modify quest information
+
+commit ad5d2512112752e1b123a26bac2b0ad6a2c231ff
+Author: Shadowed <shadowed.wow@gmail.com>
+Date:   Sun Oct 7 03:29:08 2007 +0000
+
+    * Trying an improvement to the complete detection so it works better
+
+commit c67ac39188b73b6054963e1ca2689950c0208243
+Author: Shadowed <shadowed.wow@gmail.com>
+Date:   Wed Oct 3 03:42:58 2007 +0000
+
+    * Apparently, isActive means isAvailable
+
+commit 7ae0a827471870d6798223a9f9045e9ceef2e0a7
+Author: Shadowed <shadowed.wow@gmail.com>
+Date:   Tue Oct 2 22:51:46 2007 +0000
+
+    * I'm 99% sure I actually got it working this time
+
+commit 8c562af8cb4aad8497216a52d5ef356eb84599b4
+Author: Shadowed <shadowed.wow@gmail.com>
+Date:   Tue Oct 2 16:39:42 2007 +0000
+
+    * Hopefully fixed rows not being reset to no gray scale if they aren't a turn in quest that we've accepted
+    * Changed to the SetDesaturation that Blizzard provies in UIParent.lua incase the players graphics card doesn't support it normally
+
+commit f5db0b590b580b20acb2171ce353c6db1cb12e86
+Author: Shadowed <shadowed.wow@gmail.com>
+Date:   Mon Oct 1 04:51:54 2007 +0000
+
+    * Hopefully fixed a case where icons would show up as gray regardless of being completed or not
+
+commit 7f905b29daf640cb195aa2ebd5398cfaa652b981
+Author: Shadowed <shadowed.wow@gmail.com>
+Date:   Sun Sep 30 17:16:35 2007 +0000
+
+    * Added another string match check this should cover for both different methods of modifying quest functions and text
+
+commit 0197df6cf14b21556ccce30cd5f218c0286e89b5
+Author: Shadowed <shadowed.wow@gmail.com>
+Date:   Sat Sep 29 23:39:16 2007 +0000
+
+    * Improved to also gray out the quest bullet point for the current quest/available quest/ect panel
+
+commit 95cc225e78e41d21f7046ef26813ad75d7d45955
+Author: Shadowed <shadowed.wow@gmail.com>
+Date:   Tue Sep 25 20:57:47 2007 +0000
+
+    * Toc updated to 20200
+
+commit 1fad62a3a3b7d531ebaa4604358e2b5acbbed98c
+Author: Shadowed <shadowed.wow@gmail.com>
+Date:   Thu May 31 18:30:06 2007 +0000
+
+    I have no idea what I changed, but whatever
+
+commit 19391d094fbdfa643a6a3335f6dd640732696f45
+Author: Shadowed <shadowed.wow@gmail.com>
+Date:   Wed May 23 19:00:35 2007 +0000
+
+    First Commit

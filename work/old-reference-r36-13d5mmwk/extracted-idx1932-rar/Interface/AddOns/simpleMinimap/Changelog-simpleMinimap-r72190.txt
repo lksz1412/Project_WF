@@ -1,0 +1,19 @@
+------------------------------------------------------------------------
+r72190 | scorpio0920 | 2008-04-30 11:29:12 -0400 (Wed, 30 Apr 2008) | 3 lines
+Changed paths:
+   M /trunk/simpleMinimap/localizations.lua
+   M /trunk/simpleMinimap/simpleMinimap.toc
+
+simpleMinimap:
+- Update zhTW localization.
+- Added Notes-zhTW.
+------------------------------------------------------------------------
+r68739 | xan | 2008-04-09 06:49:56 -0400 (Wed, 09 Apr 2008) | 3 lines
+Changed paths:
+   D /trunk/simpleMinimap/libs
+   M /trunk/simpleMinimap/simpleMinimap.toc
+
+simpleMinimap
+- bump toc to 2.4
+- fixed externals
+------------------------------------------------------------------------

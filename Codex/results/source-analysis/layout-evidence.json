@@ -1,0 +1,1915 @@
+{
+  "method": "literal-data targeted extraction, source lines are inclusive; no Lua execution",
+  "records": [
+    {
+      "component": "Dominos",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\Dominos.lua",
+      "key": "DominosDB/profiles/loaf/frames/1",
+      "lines": [
+        938,
+        1056
+      ],
+      "value": {
+        "showInPetBattleUI": false,
+        "point": "BOTTOMLEFT",
+        "anchor": {
+          "relFrame": 6,
+          "point": "TOPRIGHT",
+          "relPoint": "TOPLEFT"
+        },
+        "scale": 1.05,
+        "showInOverrideUI": true,
+        "unit": "none",
+        "y": 217.0642242431641,
+        "x": 219.1004486083985,
+        "numButtons": 12,
+        "spacing": 0,
+        "padH": 0,
+        "rightClickUnit": "player",
+        "pages": {
+          "HUNTER": {
+            "page2": 1,
+            "page5": 4,
+            "page4": 3,
+            "page3": 2,
+            "page6": 5
+          },
+          "WARRIOR": {
+            "page2": 1,
+            "battle": 6,
+            "page3": 2,
+            "page5": 4,
+            "berserker": 8,
+            "page4": 3,
+            "defensive": 7,
+            "page6": 5
+          },
+          "ROGUE": {
+            "shadowdance": 7,
+            "page2": 1,
+            "page5": 4,
+            "page4": 3,
+            "stealth": 6,
+            "page3": 2,
+            "page6": 5
+          },
+          "MAGE": {
+            "page2": 1,
+            "page5": 4,
+            "page4": 3,
+            "page3": 2,
+            "page6": 5
+          },
+          "PRIEST": {
+            "page2": 1,
+            "page5": 4,
+            "page4": 3,
+            "shadow": 6,
+            "page3": 2,
+            "page6": 5
+          },
+          "DEATHKNIGHT": {
+            "page2": 1,
+            "page5": 4,
+            "page4": 3,
+            "page3": 2,
+            "page6": 5
+          },
+          "WARLOCK": {
+            "page2": 1,
+            "page5": 4,
+            "page4": 3,
+            "meta": 6,
+            "page3": 2,
+            "page6": 5
+          },
+          "DEMONHUNTER": {
+            "page2": 1,
+            "page5": 4,
+            "page4": 3,
+            "page3": 2,
+            "page6": 5
+          },
+          "SHAMAN": {
+            "page2": 1,
+            "page5": 4,
+            "page4": 3,
+            "page3": 2,
+            "page6": 5
+          },
+          "DRUID": {
+            "prowl": 6,
+            "bear": 8,
+            "page2": 1,
+            "cat": 6,
+            "page5": 4,
+            "page4": 3,
+            "moonkin": 9,
+            "page3": 2,
+            "page6": 5
+          },
+          "MONK": {
+            "ox": 7,
+            "page2": 1,
+            "serpent": 8,
+            "page5": 4,
+            "page4": 3,
+            "tiger": 6,
+            "page3": 2,
+            "page6": 5
+          },
+          "PALADIN": {
+            "page2": 1,
+            "page5": 4,
+            "page4": 3,
+            "page3": 2,
+            "page6": 5
+          }
+        },
+        "padW": 0
+      }
+    },
+    {
+      "component": "Dominos",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\Dominos.lua",
+      "key": "DominosDB/profiles/loaf/frames/3",
+      "lines": [
+        1097,
+        1139
+      ],
+      "value": {
+        "point": "BOTTOMLEFT",
+        "scale": 1.1,
+        "unit": "none",
+        "padW": 0,
+        "spacing": 0,
+        "rightClickUnit": "player",
+        "pages": {
+          "HUNTER": {},
+          "WARRIOR": {},
+          "ROGUE": {},
+          "MAGE": {},
+          "PRIEST": {},
+          "DEATHKNIGHT": {},
+          "WARLOCK": {},
+          "DEMONHUNTER": {},
+          "SHAMAN": {},
+          "DRUID": {},
+          "MONK": {},
+          "PALADIN": {}
+        },
+        "isBottomToTop": true,
+        "showInPetBattleUI": true,
+        "columns": 4,
+        "showInOverrideUI": false,
+        "y": 47.05055236816407,
+        "x": -37.87860684880724,
+        "padH": 0,
+        "numButtons": 12,
+        "relPoint": "BOTTOM"
+      }
+    },
+    {
+      "component": "Dominos",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\Dominos.lua",
+      "key": "DominosDB/profiles/loaf/frames/4",
+      "lines": [
+        1140,
+        1185
+      ],
+      "value": {
+        "showInPetBattleUI": true,
+        "numButtons": 12,
+        "point": "BOTTOMLEFT",
+        "columns": 4,
+        "scale": 1.1,
+        "showInOverrideUI": false,
+        "unit": "none",
+        "y": 51.0909881591797,
+        "relPoint": "BOTTOM",
+        "x": 142.626336998849,
+        "spacing": 0,
+        "anchor": {
+          "relFrame": 3,
+          "point": "TOPLEFT",
+          "relPoint": "TOPRIGHT"
+        },
+        "rightClickUnit": "player",
+        "pages": {
+          "HUNTER": {},
+          "WARRIOR": {},
+          "ROGUE": {},
+          "MAGE": {},
+          "PRIEST": {},
+          "DEATHKNIGHT": {},
+          "WARLOCK": {},
+          "DEMONHUNTER": {},
+          "SHAMAN": {},
+          "DRUID": {},
+          "MONK": {},
+          "PALADIN": {}
+        },
+        "isBottomToTop": true
+      }
+    },
+    {
+      "component": "Dominos",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\Dominos.lua",
+      "key": "DominosDB/profiles/loaf/frames/5",
+      "lines": [
+        1186,
+        1230
+      ],
+      "value": {
+        "showInPetBattleUI": false,
+        "point": "BOTTOMRIGHT",
+        "padH": 0,
+        "scale": 1.05,
+        "showInOverrideUI": false,
+        "unit": "none",
+        "y": 217.0642242431641,
+        "x": -192.6456409376786,
+        "pages": {
+          "HUNTER": {},
+          "WARRIOR": {},
+          "ROGUE": {},
+          "MAGE": {},
+          "PRIEST": {},
+          "DEATHKNIGHT": {},
+          "WARLOCK": {},
+          "DEMONHUNTER": {},
+          "SHAMAN": {},
+          "DRUID": {},
+          "MONK": {},
+          "PALADIN": {}
+        },
+        "spacing": 0,
+        "anchor": {
+          "relFrame": 6,
+          "point": "TOPLEFT",
+          "relPoint": "TOPRIGHT"
+        },
+        "rightClickUnit": "player",
+        "numButtons": 12,
+        "padW": 0
+      }
+    },
+    {
+      "component": "Dominos",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\Dominos.lua",
+      "key": "DominosDB/profiles/loaf/frames/6",
+      "lines": [
+        1231,
+        1270
+      ],
+      "value": {
+        "showInPetBattleUI": false,
+        "point": "BOTTOM",
+        "scale": 1.05,
+        "showInOverrideUI": false,
+        "unit": "none",
+        "padW": 0,
+        "x": 16.40203304678566,
+        "numButtons": 12,
+        "spacing": 0,
+        "padH": 0,
+        "rightClickUnit": "player",
+        "pages": {
+          "HUNTER": {},
+          "WARRIOR": {},
+          "ROGUE": {},
+          "MAGE": {},
+          "PRIEST": {},
+          "DEATHKNIGHT": {},
+          "WARLOCK": {},
+          "DEMONHUNTER": {},
+          "SHAMAN": {},
+          "DRUID": {},
+          "MONK": {},
+          "PALADIN": {}
+        },
+        "y": 208.0700225830078
+      }
+    },
+    {
+      "component": "Dominos",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\Dominos.lua",
+      "key": "DominosDB/profiles/loaf/frames/7",
+      "lines": [
+        1271,
+        1311
+      ],
+      "value": {
+        "showInPetBattleUI": false,
+        "columns": 2,
+        "y": 95,
+        "scale": 0.9,
+        "showInOverrideUI": false,
+        "unit": "none",
+        "padW": 0,
+        "x": -295,
+        "pages": {
+          "HUNTER": {},
+          "WARRIOR": {},
+          "ROGUE": {},
+          "MAGE": {},
+          "PRIEST": {},
+          "DEATHKNIGHT": {},
+          "WARLOCK": {},
+          "DEMONHUNTER": {},
+          "SHAMAN": {},
+          "DRUID": {},
+          "MONK": {},
+          "PALADIN": {}
+        },
+        "spacing": 2,
+        "anchor": "2TL",
+        "rightClickUnit": "player",
+        "numButtons": 6,
+        "padH": 0
+      }
+    },
+    {
+      "component": "Dominos",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\Dominos.lua",
+      "key": "DominosDB/profiles/loaf/frames/8",
+      "lines": [
+        1312,
+        1352
+      ],
+      "value": {
+        "showInPetBattleUI": false,
+        "columns": 2,
+        "y": 95,
+        "scale": 0.9,
+        "showInOverrideUI": false,
+        "unit": "none",
+        "padW": 0,
+        "x": 295,
+        "pages": {
+          "HUNTER": {},
+          "WARRIOR": {},
+          "ROGUE": {},
+          "MAGE": {},
+          "PRIEST": {},
+          "DEATHKNIGHT": {},
+          "WARLOCK": {},
+          "DEMONHUNTER": {},
+          "SHAMAN": {},
+          "DRUID": {},
+          "MONK": {},
+          "PALADIN": {}
+        },
+        "spacing": 2,
+        "anchor": "2TR",
+        "rightClickUnit": "player",
+        "numButtons": 6,
+        "padH": 0
+      }
+    },
+    {
+      "component": "Dominos",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\Dominos.lua",
+      "key": "DominosDB/profiles/loaf/frames/9",
+      "lines": [
+        1353,
+        1397
+      ],
+      "value": {
+        "showInPetBattleUI": false,
+        "columns": 2,
+        "x": -332.2668620468591,
+        "scale": 0.9,
+        "showInOverrideUI": false,
+        "unit": "none",
+        "y": 39.46666174366353,
+        "relPoint": "CENTER",
+        "numButtons": 6,
+        "spacing": 2,
+        "anchor": {
+          "relFrame": 7,
+          "point": "TOPRIGHT",
+          "relPoint": "TOPLEFT"
+        },
+        "rightClickUnit": "player",
+        "pages": {
+          "HUNTER": {},
+          "WARRIOR": {},
+          "ROGUE": {},
+          "MAGE": {},
+          "PRIEST": {},
+          "DEATHKNIGHT": {},
+          "WARLOCK": {},
+          "DEMONHUNTER": {},
+          "SHAMAN": {},
+          "DRUID": {},
+          "MONK": {},
+          "PALADIN": {}
+        },
+        "point": "BOTTOMRIGHT"
+      }
+    },
+    {
+      "component": "Dominos",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\Dominos.lua",
+      "key": "DominosDB/profiles/loaf/frames/10",
+      "lines": [
+        1398,
+        1442
+      ],
+      "value": {
+        "showInPetBattleUI": false,
+        "columns": 2,
+        "x": 332.2665165542152,
+        "scale": 0.9,
+        "showInOverrideUI": false,
+        "unit": "none",
+        "y": 39.46666174366353,
+        "relPoint": "CENTER",
+        "numButtons": 6,
+        "spacing": 2,
+        "anchor": {
+          "relFrame": 8,
+          "point": "TOPLEFT",
+          "relPoint": "TOPRIGHT"
+        },
+        "rightClickUnit": "player",
+        "pages": {
+          "HUNTER": {},
+          "WARRIOR": {},
+          "ROGUE": {},
+          "MAGE": {},
+          "PRIEST": {},
+          "DEATHKNIGHT": {},
+          "WARLOCK": {},
+          "DEMONHUNTER": {},
+          "SHAMAN": {},
+          "DRUID": {},
+          "MONK": {},
+          "PALADIN": {}
+        },
+        "point": "BOTTOMLEFT"
+      }
+    },
+    {
+      "component": "Dominos",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\Dominos.lua",
+      "key": "DominosDB/profiles/loaf/frames/totem1",
+      "lines": [
+        1659,
+        1668
+      ],
+      "value": {
+        "y": 245.333347578497,
+        "x": 634.222314659588,
+        "point": "BOTTOMLEFT",
+        "spacing": 2,
+        "scale": 0.9,
+        "anchor": "6TL",
+        "showRecall": true,
+        "showTotems": true
+      }
+    },
+    {
+      "component": "Dominos",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\Dominos.lua",
+      "key": "DominosDB/profiles/loaf/frames/cast",
+      "lines": [
+        1594,
+        1612
+      ],
+      "value": {
+        "showInPetBattleUI": true,
+        "scale": 1.57,
+        "showInOverrideUI": true,
+        "hidden": true,
+        "padW": -5,
+        "y": -23,
+        "h": 10,
+        "showText": true,
+        "padH": -5,
+        "display": {
+          "border": true,
+          "time": true,
+          "icon": false
+        },
+        "font": "Friz Quadrata TT",
+        "latencyPadding": 0,
+        "w": 231
+      }
+    },
+    {
+      "component": "PitBull4",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\PitBull4.lua",
+      "key": "PitBull4DB/profiles/loaf/layouts",
+      "lines": [
+        16265,
+        16299
+      ],
+      "value": {
+        "파티": {
+          "bar_spacing": 1,
+          "indicator_root_outside_margin": 2,
+          "size_y": 40,
+          "exists": true,
+          "bar_padding": 1,
+          "bar_texture": "Glamour7"
+        },
+        "대상": {
+          "bar_spacing": 1,
+          "level": 25,
+          "indicator_root_outside_margin": 2,
+          "size_x": 280,
+          "exists": true,
+          "bar_padding": 1,
+          "bar_texture": "Glamour7"
+        },
+        "대상의대상": {
+          "bar_spacing": 1,
+          "size_x": 100,
+          "size_y": 25,
+          "exists": true,
+          "bar_padding": 1,
+          "bar_texture": "Glamour7"
+        },
+        "보통": {
+          "bar_spacing": 1,
+          "indicator_root_outside_margin": 2,
+          "size_x": 280,
+          "exists": true,
+          "bar_padding": 1,
+          "bar_texture": "Glamour7"
+        }
+      }
+    },
+    {
+      "component": "PitBull4",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\PitBull4.lua",
+      "key": "PitBull4DB/profiles/loaf/units",
+      "lines": [
+        16301,
+        16358
+      ],
+      "value": {
+        "플레이어": {
+          "position_x": -340,
+          "unit": "player",
+          "enabled": true,
+          "position_y": -204
+        },
+        "대상": {
+          "position_x": 338.0006103515625,
+          "unit": "target",
+          "enabled": true,
+          "layout": "대상",
+          "position_y": -204
+        },
+        "플레이어의 소환수": {
+          "scale": 0.9,
+          "unit": "pet",
+          "enabled": true,
+          "layout": "파티",
+          "position_x": -806.6423664785179,
+          "position_y": 404.8003380669204
+        },
+        "주시 대상의 대상의 대상": {
+          "unit": "focustargettarget"
+        },
+        "대상의 대상": {
+          "position_x": 255,
+          "unit": "targettarget",
+          "enabled": true,
+          "layout": "대상의대상",
+          "position_y": -279
+        },
+        "주시 대상의 대상": {
+          "unit": "focustarget"
+        },
+        "주시 대상": {
+          "unit": "focus",
+          "relative_point": "TOPLEFT",
+          "anchor": "TOPLEFT",
+          "enabled": true,
+          "position_x": 250,
+          "position_y": -260
+        },
+        "대상의 대상의 대상": {
+          "position_x": 360,
+          "unit": "targettargettarget",
+          "enabled": true,
+          "layout": "대상의대상",
+          "position_y": -279
+        },
+        "플레이어의 소환수의 대상": {
+          "scale": 0.75,
+          "unit": "pettarget",
+          "layout": "대상의대상",
+          "position_x": -432,
+          "position_y": 352
+        }
+      }
+    },
+    {
+      "component": "PitBull4",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\PitBull4.lua",
+      "key": "PitBull4DB/profiles/loaf/colors",
+      "lines": [
+        16396,
+        16408
+      ],
+      "value": {
+        "power": {
+          "ENERGY": {
+            "1": null,
+            "2": 0.972549019607843,
+            "3": 0.596078431372549
+          },
+          "MANA": {
+            "1": 0.372549019607843,
+            "2": 0.525490196078431
+          }
+        }
+      }
+    },
+    {
+      "component": "PitBull4",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\PitBull4.lua",
+      "key": "PitBull4DB/namespaces/HealthBar/profiles/loaf",
+      "lines": [
+        13008,
+        13029
+      ],
+      "value": {
+        "layouts": {
+          "파티": {
+            "background_alpha": 0.5,
+            "size": 5
+          },
+          "대상": {
+            "background_alpha": 0.5,
+            "size": 5,
+            "color_pvp_by_class": true
+          },
+          "대상의대상": {
+            "background_alpha": 0.5,
+            "size": 5
+          },
+          "보통": {
+            "background_alpha": 0.5,
+            "size": 5,
+            "position": 1.00001
+          }
+        }
+      }
+    },
+    {
+      "component": "PitBull4",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\PitBull4.lua",
+      "key": "PitBull4DB/namespaces/PowerBar/profiles/loaf",
+      "lines": [
+        12090,
+        12106
+      ],
+      "value": {
+        "layouts": {
+          "파티": {
+            "background_alpha": 0.5
+          },
+          "대상": {
+            "background_alpha": 0.5
+          },
+          "대상의대상": {
+            "background_alpha": 0.5,
+            "enabled": false
+          },
+          "보통": {
+            "background_alpha": 0.5
+          }
+        }
+      }
+    },
+    {
+      "component": "PitBull4",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\PitBull4.lua",
+      "key": "PitBull4DB/namespaces/Border/profiles/loaf",
+      "lines": [
+        14563,
+        14666
+      ],
+      "value": {
+        "layouts": {
+          "파티": {
+            "boss_texture": "Devil",
+            "rare_texture": "Devil",
+            "rare_color": {
+              "1": 0.258823529411765,
+              "2": 0.729411764705882,
+              "3": 1,
+              "4": 0.75
+            },
+            "elite_texture": "Devil",
+            "normal_texture": "Devil",
+            "normal_color": {
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": 0.659999996423721
+            },
+            "elite_color": {
+              "1": null,
+              "2": 0.705882352941177,
+              "3": 0.188235294117647,
+              "4": 0.680000007152557
+            },
+            "size": 12
+          },
+          "대상": {
+            "boss_texture": "Devil",
+            "rare_texture": "Devil",
+            "rare_color": {
+              "1": 0.258823529411765,
+              "2": 0.729411764705882,
+              "3": 1,
+              "4": 0.75
+            },
+            "elite_texture": "Devil",
+            "normal_texture": "Devil",
+            "normal_color": {
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": 0.659999996423721
+            },
+            "elite_color": {
+              "1": null,
+              "2": 0.705882352941177,
+              "3": 0.188235294117647,
+              "4": 0.680000007152557
+            },
+            "size": 12
+          },
+          "대상의대상": {
+            "boss_texture": "Devil",
+            "rare_texture": "Devil",
+            "rare_color": {
+              "1": 0.258823529411765,
+              "2": 0.729411764705882,
+              "3": 1,
+              "4": 0.75
+            },
+            "elite_texture": "Devil",
+            "normal_texture": "Devil",
+            "normal_color": {
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": 0.659999996423721
+            },
+            "elite_color": {
+              "1": null,
+              "2": 0.705882352941177,
+              "3": 0.188235294117647,
+              "4": 0.680000007152557
+            },
+            "size": 12
+          },
+          "보통": {
+            "boss_texture": "Devil",
+            "rare_texture": "Devil",
+            "rare_color": {
+              "1": 0.258823529411765,
+              "2": 0.729411764705882,
+              "3": 1,
+              "4": 0.75
+            },
+            "elite_texture": "Devil",
+            "normal_texture": "Devil",
+            "normal_color": {
+              "1": null,
+              "2": null,
+              "3": null,
+              "4": 0.659999996423721
+            },
+            "elite_color": {
+              "1": null,
+              "2": 0.705882352941177,
+              "3": 0.188235294117647,
+              "4": 0.680000007152557
+            },
+            "size": 12
+          }
+        }
+      }
+    },
+    {
+      "component": "PitBull4",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\PitBull4.lua",
+      "key": "PitBull4DB/namespaces/CastBar/profiles/loaf",
+      "lines": [
+        12512,
+        12538
+      ],
+      "value": {
+        "layouts": {
+          "파티": {
+            "background_alpha": 0.5,
+            "auto_hide": true,
+            "show_icon": false,
+            "texture": "Minimalist",
+            "enabled": false
+          },
+          "보통": {
+            "enabled": false
+          },
+          "대상의대상": {
+            "background_alpha": 0.5,
+            "auto_hide": true,
+            "show_icon": false,
+            "texture": "Minimalist",
+            "enabled": false
+          },
+          "대상": {
+            "background_alpha": 0.5,
+            "size": 2,
+            "texture": "Minimalist",
+            "hostility_color_npcs": true
+          }
+        }
+      }
+    },
+    {
+      "component": "kgPanels",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\kgPanels.lua",
+      "key": "kgPanelsDB/profiles/loaf",
+      "lines": [
+        1566,
+        1568
+      ],
+      "value": {
+        "layout": "loaf"
+      }
+    },
+    {
+      "component": "kgPanels",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\kgPanels.lua",
+      "key": "kgPanelsDB/global/layouts/loaf/chat2",
+      "lines": [
+        23,
+        116
+      ],
+      "value": {
+        "border_advanced": {
+          "enable": false,
+          "show": {
+            "BOTRIGHTCORNER": true,
+            "TOPRIGHTCORNER": true,
+            "TOPLEFTCORNER": true,
+            "BOTLEFTCORNER": true,
+            "RIGHT": true,
+            "LEFT": true,
+            "TOP": true,
+            "BOT": true
+          }
+        },
+        "parent": "UIParent",
+        "bg_orientation": "VERTICAL",
+        "anchorFrom": "BOTTOMRIGHT",
+        "hflip": false,
+        "vflip": false,
+        "tileSize": 0,
+        "bg_texture": "Solid",
+        "anchor": "UIParent",
+        "level": 2,
+        "vert_tile": false,
+        "use_absolute_bg": false,
+        "bg_blend": "BLEND",
+        "text": {
+          "y": 0,
+          "font": "Blizzard",
+          "justifyH": "CENTER",
+          "x": 0,
+          "color": {
+            "a": 1,
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "text": "",
+          "justifyV": "MIDDLE",
+          "size": 12
+        },
+        "rotation": 0,
+        "x": -40.666748046875,
+        "bg_alpha": 0,
+        "border_edgeSize": 16,
+        "height": 187.3334045410156,
+        "tiling": false,
+        "strata": "BACKGROUND",
+        "horz_tile": false,
+        "anchorTo": "BOTTOM",
+        "scale": 1,
+        "absolute_bg": {
+          "LLy": 1,
+          "LLx": 0,
+          "LRy": 1,
+          "LRx": 1,
+          "URy": 0,
+          "URx": 1,
+          "ULy": 0,
+          "ULx": 0
+        },
+        "bg_insets": {
+          "r": 0,
+          "l": 0,
+          "t": 0,
+          "b": 0
+        },
+        "scripts": {},
+        "bg_style": "GRADIENT",
+        "gradient_color": {
+          "a": 0,
+          "r": 0,
+          "g": 0,
+          "b": 0
+        },
+        "border_color": {
+          "a": 1,
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "border_texture": "Devil2",
+        "width": 506.1111145019531,
+        "sub_level": 3,
+        "mouse": false,
+        "y": 13.99996185302734,
+        "bg_color": {
+          "a": 1,
+          "r": 0,
+          "g": 0,
+          "b": 0
+        }
+      }
+    },
+    {
+      "component": "kgPanels",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\kgPanels.lua",
+      "key": "kgPanelsDB/global/layouts/loaf/하단이미지",
+      "lines": [
+        117,
+        210
+      ],
+      "value": {
+        "border_advanced": {
+          "enable": false,
+          "show": {
+            "BOTRIGHTCORNER": true,
+            "TOPRIGHTCORNER": true,
+            "TOPLEFTCORNER": true,
+            "BOTLEFTCORNER": true,
+            "RIGHT": true,
+            "LEFT": true,
+            "TOP": true,
+            "BOT": true
+          }
+        },
+        "parent": "UIParent",
+        "bg_orientation": "VERTICAL",
+        "anchorFrom": "BOTTOM",
+        "hflip": false,
+        "vflip": false,
+        "tileSize": 0,
+        "bg_texture": "Solid",
+        "anchor": "UIParent",
+        "level": 0,
+        "vert_tile": false,
+        "use_absolute_bg": false,
+        "bg_blend": "BLEND",
+        "text": {
+          "y": 0,
+          "font": "Blizzard",
+          "justifyH": "CENTER",
+          "x": 0,
+          "color": {
+            "a": 1,
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "text": "",
+          "justifyV": "MIDDLE",
+          "size": 12
+        },
+        "rotation": 0,
+        "x": 0,
+        "bg_alpha": 1,
+        "border_edgeSize": 16,
+        "height": "162",
+        "tiling": false,
+        "strata": "BACKGROUND",
+        "horz_tile": false,
+        "anchorTo": "BOTTOM",
+        "scale": 1,
+        "absolute_bg": {
+          "LLy": 1,
+          "LLx": 0,
+          "LRy": 1,
+          "LRx": 1,
+          "URy": 0,
+          "URx": 1,
+          "ULy": 0,
+          "ULx": 0
+        },
+        "bg_insets": {
+          "r": 0,
+          "l": 0,
+          "t": 0,
+          "b": 0
+        },
+        "scripts": {},
+        "bg_style": "GRADIENT",
+        "gradient_color": {
+          "a": 0,
+          "r": 0,
+          "g": 0,
+          "b": 0
+        },
+        "border_color": {
+          "a": 1,
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "border_texture": "None",
+        "width": "100%",
+        "sub_level": 0,
+        "mouse": false,
+        "y": "0",
+        "bg_color": {
+          "a": 1,
+          "r": 0,
+          "g": 0,
+          "b": 0
+        }
+      }
+    },
+    {
+      "component": "kgPanels",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\kgPanels.lua",
+      "key": "kgPanelsDB/global/layouts/loaf/좌측하단이미지",
+      "lines": [
+        211,
+        304
+      ],
+      "value": {
+        "border_advanced": {
+          "enable": false,
+          "show": {
+            "BOTRIGHTCORNER": true,
+            "TOPRIGHTCORNER": true,
+            "TOPLEFTCORNER": true,
+            "BOTLEFTCORNER": true,
+            "RIGHT": true,
+            "LEFT": true,
+            "TOP": true,
+            "BOT": true
+          }
+        },
+        "parent": "UIParent",
+        "bg_orientation": "HORIZONTAL",
+        "anchorFrom": "BOTTOM",
+        "hflip": false,
+        "vflip": false,
+        "tileSize": 0,
+        "bg_texture": "demon",
+        "anchor": "UIParent",
+        "level": 0,
+        "vert_tile": false,
+        "use_absolute_bg": false,
+        "bg_blend": "BLEND",
+        "text": {
+          "y": 0,
+          "font": "Blizzard",
+          "justifyH": "CENTER",
+          "x": 0,
+          "color": {
+            "a": 1,
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "text": "",
+          "justifyV": "MIDDLE",
+          "size": 12
+        },
+        "rotation": 0,
+        "x": -866.666618347168,
+        "bg_alpha": 1,
+        "border_edgeSize": 6,
+        "height": 140,
+        "tiling": false,
+        "strata": "BACKGROUND",
+        "horz_tile": false,
+        "anchorTo": "BOTTOM",
+        "scale": 1,
+        "absolute_bg": {
+          "LLy": 1,
+          "LLx": 0,
+          "LRy": 1,
+          "LRx": 1,
+          "URy": 0,
+          "URx": 1,
+          "ULy": 0,
+          "ULx": 0
+        },
+        "bg_insets": {
+          "r": 0,
+          "t": 0,
+          "l": 0,
+          "b": 0
+        },
+        "scripts": {},
+        "bg_style": "NONE",
+        "gradient_color": {
+          "a": 0,
+          "b": 1,
+          "g": 1,
+          "r": 1
+        },
+        "border_color": {
+          "a": 1,
+          "b": 1,
+          "g": 1,
+          "r": 1
+        },
+        "border_texture": "None",
+        "width": 140.0000152587891,
+        "sub_level": 0,
+        "mouse": false,
+        "y": 210.3331451416016,
+        "bg_color": {
+          "a": 0,
+          "r": 0.301960784313726,
+          "g": 0.301960784313726,
+          "b": 0.301960784313726
+        }
+      }
+    },
+    {
+      "component": "kgPanels",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\kgPanels.lua",
+      "key": "kgPanelsDB/global/layouts/loaf/중단이미지",
+      "lines": [
+        305,
+        398
+      ],
+      "value": {
+        "border_advanced": {
+          "enable": false,
+          "show": {
+            "BOTRIGHTCORNER": true,
+            "TOPRIGHTCORNER": true,
+            "TOPLEFTCORNER": true,
+            "BOTLEFTCORNER": true,
+            "RIGHT": true,
+            "LEFT": true,
+            "TOP": true,
+            "BOT": true
+          }
+        },
+        "parent": "UIParent",
+        "bg_orientation": "HORIZONTAL",
+        "anchorFrom": "BOTTOM",
+        "hflip": false,
+        "vflip": false,
+        "tileSize": 0,
+        "bg_texture": "Solid",
+        "anchor": "UIParent",
+        "level": 0,
+        "vert_tile": false,
+        "use_absolute_bg": false,
+        "bg_blend": "BLEND",
+        "text": {
+          "y": 0,
+          "font": "Blizzard",
+          "justifyH": "CENTER",
+          "x": 0,
+          "color": {
+            "a": 1,
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "text": "",
+          "justifyV": "MIDDLE",
+          "size": 12
+        },
+        "rotation": 0,
+        "x": -0.5556982159614452,
+        "bg_alpha": 1,
+        "border_edgeSize": 16,
+        "height": 20.00000381469727,
+        "tiling": false,
+        "strata": "BACKGROUND",
+        "horz_tile": false,
+        "anchorTo": "BOTTOM",
+        "scale": 1,
+        "absolute_bg": {
+          "LLy": 1,
+          "LLx": 0,
+          "LRy": 1,
+          "LRx": 1,
+          "URy": 0,
+          "URx": 1,
+          "ULy": 0,
+          "ULx": 0
+        },
+        "bg_insets": {
+          "b": 0,
+          "t": 0,
+          "l": 0,
+          "r": 0
+        },
+        "scripts": {},
+        "bg_style": "SOLID",
+        "gradient_color": {
+          "a": 0,
+          "b": 1,
+          "g": 1,
+          "r": 1
+        },
+        "border_color": {
+          "a": 1,
+          "r": 0.372549019607843,
+          "g": 0.372549019607843,
+          "b": 0.372549019607843
+        },
+        "border_texture": "Blizzard Dialog",
+        "width": 2133,
+        "sub_level": 0,
+        "mouse": false,
+        "y": 195.5568084716797,
+        "bg_color": {
+          "a": 1,
+          "r": 0.113725490196078,
+          "g": 0.113725490196078,
+          "b": 0.113725490196078
+        }
+      }
+    },
+    {
+      "component": "kgPanels",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\kgPanels.lua",
+      "key": "kgPanelsDB/global/layouts/loaf/우측하단이미지",
+      "lines": [
+        399,
+        492
+      ],
+      "value": {
+        "border_advanced": {
+          "enable": false,
+          "show": {
+            "BOTRIGHTCORNER": true,
+            "TOPRIGHTCORNER": true,
+            "TOPLEFTCORNER": true,
+            "BOTLEFTCORNER": true,
+            "RIGHT": true,
+            "LEFT": true,
+            "TOP": true,
+            "BOT": true
+          }
+        },
+        "parent": "UIParent",
+        "bg_orientation": "HORIZONTAL",
+        "anchorFrom": "BOTTOM",
+        "hflip": false,
+        "vflip": false,
+        "tileSize": 0,
+        "bg_texture": "angel",
+        "anchor": "UIParent",
+        "level": 0,
+        "vert_tile": false,
+        "use_absolute_bg": false,
+        "bg_blend": "BLEND",
+        "text": {
+          "y": 0,
+          "font": "Blizzard",
+          "justifyH": "CENTER",
+          "x": 0,
+          "color": {
+            "a": 1,
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "text": "",
+          "justifyV": "MIDDLE",
+          "size": 12
+        },
+        "rotation": 0,
+        "x": 903.8885116577148,
+        "bg_alpha": 1,
+        "border_edgeSize": 6,
+        "height": 140.0000152587891,
+        "tiling": false,
+        "strata": "BACKGROUND",
+        "horz_tile": false,
+        "anchorTo": "BOTTOM",
+        "scale": 1,
+        "absolute_bg": {
+          "LLy": 1,
+          "LLx": 0,
+          "LRy": 1,
+          "LRx": 1,
+          "URy": 0,
+          "URx": 1,
+          "ULy": 0,
+          "ULx": 0
+        },
+        "bg_insets": {
+          "b": 0,
+          "t": 0,
+          "l": 0,
+          "r": 0
+        },
+        "scripts": {},
+        "bg_style": "NONE",
+        "gradient_color": {
+          "a": 0,
+          "b": 1,
+          "g": 1,
+          "r": 1
+        },
+        "border_color": {
+          "a": 1,
+          "b": 1,
+          "g": 1,
+          "r": 1
+        },
+        "border_texture": "None",
+        "width": 140.0001678466797,
+        "sub_level": 0,
+        "mouse": false,
+        "y": 214.2224273681641,
+        "bg_color": {
+          "a": 0,
+          "b": 0.301960784313726,
+          "g": 0.301960784313726,
+          "r": 0.301960784313726
+        }
+      }
+    },
+    {
+      "component": "kgPanels",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\kgPanels.lua",
+      "key": "kgPanelsDB/global/layouts/loaf/미니맵이미지",
+      "lines": [
+        493,
+        586
+      ],
+      "value": {
+        "border_advanced": {
+          "enable": false,
+          "show": {
+            "BOTRIGHTCORNER": true,
+            "TOPRIGHTCORNER": true,
+            "TOPLEFTCORNER": true,
+            "BOTLEFTCORNER": true,
+            "RIGHT": true,
+            "LEFT": true,
+            "TOP": true,
+            "BOT": true
+          }
+        },
+        "parent": "UIParent",
+        "bg_orientation": "HORIZONTAL",
+        "anchorFrom": "BOTTOMLEFT",
+        "hflip": false,
+        "vflip": false,
+        "tileSize": 0,
+        "bg_texture": "Solid",
+        "anchor": "UIParent",
+        "level": 2,
+        "vert_tile": false,
+        "use_absolute_bg": false,
+        "bg_blend": "DISABLE",
+        "text": {
+          "y": 0,
+          "font": "Blizzard",
+          "justifyH": "CENTER",
+          "x": 0,
+          "color": {
+            "a": 1,
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "text": "",
+          "justifyV": "MIDDLE",
+          "size": 12
+        },
+        "rotation": 0,
+        "x": 352.1107177734375,
+        "bg_alpha": 0,
+        "border_edgeSize": 16,
+        "height": 187.0000152587891,
+        "tiling": false,
+        "strata": "LOW",
+        "horz_tile": false,
+        "anchorTo": "BOTTOM",
+        "scale": 1,
+        "absolute_bg": {
+          "LLy": 1,
+          "LLx": 0,
+          "LRy": 1,
+          "LRx": 1,
+          "URy": 0,
+          "URx": 1,
+          "ULy": 0,
+          "ULx": 0
+        },
+        "bg_insets": {
+          "b": 0,
+          "t": 0,
+          "l": 0,
+          "r": 0
+        },
+        "scripts": {},
+        "bg_style": "SOLID",
+        "gradient_color": {
+          "a": 0,
+          "b": 1,
+          "g": 1,
+          "r": 1
+        },
+        "border_color": {
+          "a": 1,
+          "b": 1,
+          "g": 1,
+          "r": 1
+        },
+        "border_texture": "Devil2",
+        "width": 183.9999694824219,
+        "sub_level": 0,
+        "mouse": false,
+        "y": 15.66585731506348,
+        "bg_color": {
+          "a": 0,
+          "b": 0.0705882352941177,
+          "g": 0.0705882352941177,
+          "r": 0.0705882352941177
+        }
+      }
+    },
+    {
+      "component": "kgPanels",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\kgPanels.lua",
+      "key": "kgPanelsDB/global/layouts/loaf/chat3",
+      "lines": [
+        587,
+        680
+      ],
+      "value": {
+        "border_advanced": {
+          "enable": false,
+          "show": {
+            "BOTRIGHTCORNER": true,
+            "TOPRIGHTCORNER": true,
+            "TOPLEFTCORNER": true,
+            "BOTLEFTCORNER": true,
+            "RIGHT": true,
+            "LEFT": true,
+            "TOP": true,
+            "BOT": true
+          }
+        },
+        "parent": "UIParent",
+        "bg_orientation": "VERTICAL",
+        "anchorFrom": "BOTTOMLEFT",
+        "hflip": false,
+        "vflip": false,
+        "tileSize": 0,
+        "bg_texture": "Solid",
+        "anchor": "UIParent",
+        "level": 2,
+        "vert_tile": false,
+        "use_absolute_bg": false,
+        "bg_blend": "BLEND",
+        "text": {
+          "y": 0,
+          "font": "Blizzard",
+          "justifyH": "CENTER",
+          "x": 0,
+          "color": {
+            "a": 1,
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "text": "",
+          "justifyV": "MIDDLE",
+          "size": 12
+        },
+        "rotation": 0,
+        "x": 533.7769775390625,
+        "bg_alpha": 0,
+        "border_edgeSize": 16,
+        "height": 186.333251953125,
+        "tiling": false,
+        "strata": "BACKGROUND",
+        "horz_tile": false,
+        "anchorTo": "BOTTOM",
+        "scale": 1,
+        "absolute_bg": {
+          "LLy": 1,
+          "LLx": 0,
+          "LRy": 1,
+          "LRx": 1,
+          "URy": 0,
+          "URx": 1,
+          "ULy": 0,
+          "ULx": 0
+        },
+        "bg_insets": {
+          "b": 0,
+          "t": 0,
+          "l": 0,
+          "r": 0
+        },
+        "scripts": {},
+        "bg_style": "GRADIENT",
+        "gradient_color": {
+          "a": 0,
+          "r": 0,
+          "g": 0,
+          "b": 0
+        },
+        "border_color": {
+          "a": 1,
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "border_texture": "Devil2",
+        "width": 529.3334350585938,
+        "sub_level": 3,
+        "mouse": false,
+        "y": 14.00123977661133,
+        "bg_color": {
+          "a": 1,
+          "r": 0,
+          "g": 0,
+          "b": 0
+        }
+      }
+    },
+    {
+      "component": "kgPanels",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\kgPanels.lua",
+      "key": "kgPanelsDB/global/layouts/loaf/chat1",
+      "lines": [
+        681,
+        775
+      ],
+      "value": {
+        "border_advanced": {
+          "enable": true,
+          "show": {
+            "BOT": true,
+            "TOPRIGHTCORNER": true,
+            "LEFT": true,
+            "TOPLEFTCORNER": true,
+            "RIGHT": true,
+            "BOTLEFTCORNER": true,
+            "TOP": true,
+            "BOTRIGHTCORNER": true
+          }
+        },
+        "parent": "UIParent",
+        "bg_orientation": "VERTICAL",
+        "anchorFrom": "BOTTOMLEFT",
+        "hflip": false,
+        "vflip": false,
+        "tileSize": 0,
+        "bg_texture": "Solid",
+        "anchor": "UIParent",
+        "level": 1,
+        "vert_tile": false,
+        "use_absolute_bg": false,
+        "bg_blend": "BLEND",
+        "text": {
+          "y": 0,
+          "x": 0,
+          "justifyH": "CENTER",
+          "font": "Blizzard",
+          "color": {
+            "a": 1,
+            "b": 1,
+            "g": 1,
+            "r": 1
+          },
+          "text": "",
+          "justifyV": "MIDDLE",
+          "size": 12
+        },
+        "rotation": 0,
+        "x": 2.021081924438477,
+        "bg_alpha": 1,
+        "border_edgeSize": 16,
+        "height": 119,
+        "tiling": false,
+        "strata": "BACKGROUND",
+        "horz_tile": false,
+        "anchorTo": "BOTTOMLEFT",
+        "scale": 1.59,
+        "absolute_bg": {
+          "ULx": 0,
+          "ULy": 0,
+          "LLy": 1,
+          "LLx": 0,
+          "URx": 1,
+          "URy": 0,
+          "LRx": 1,
+          "LRy": 1
+        },
+        "bg_insets": {
+          "b": 0,
+          "l": 0,
+          "t": 0,
+          "r": 0
+        },
+        "scripts": {
+          "LOAD": ""
+        },
+        "bg_style": "GRADIENT",
+        "gradient_color": {
+          "a": 0,
+          "b": 0,
+          "g": 0,
+          "r": 0
+        },
+        "border_color": {
+          "a": 1,
+          "b": 1,
+          "g": 1,
+          "r": 1
+        },
+        "border_texture": "Devil2",
+        "width": 1344.000122070313,
+        "bg_color": {
+          "a": 1,
+          "b": 0,
+          "g": 0,
+          "r": 0
+        },
+        "mouse": false,
+        "y": 12.17427253723145,
+        "sub_level": 1
+      }
+    },
+    {
+      "component": "SexyMap",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\SexyMap.lua",
+      "key": "SexyMap2DB/loaf/core",
+      "lines": [
+        4,
+        16
+      ],
+      "value": {
+        "clamp": true,
+        "point": "BOTTOM",
+        "relpoint": "BOTTOM",
+        "autoZoom": 5,
+        "northTag": true,
+        "y": 16.38471412658691,
+        "x": 352.1447143554688,
+        "lock": false,
+        "scale": 1.26,
+        "shape": 130871,
+        "rightClickToConfig": true
+      }
+    },
+    {
+      "component": "SexyMap",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\SexyMap.lua",
+      "key": "SexyMap2DB/loaf/borders",
+      "lines": [
+        94,
+        122
+      ],
+      "value": {
+        "applyPreset": false,
+        "borders": {},
+        "backdrop": {
+          "show": true,
+          "textureColor": {
+            "b": 0,
+            "g": 0,
+            "r": 0
+          },
+          "settings": {
+            "edgeSize": 17,
+            "edgeFile": 137057,
+            "bgFile": 137056,
+            "tile": false,
+            "insets": {
+              "top": 4,
+              "right": 4,
+              "left": 4,
+              "bottom": 4
+            }
+          },
+          "borderColor": {},
+          "scale": 1.07
+        },
+        "hideBlizzard": true
+      }
+    },
+    {
+      "component": "SexyMap",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\SexyMap.lua",
+      "key": "SexyMap2DB/loaf/buttons",
+      "lines": [
+        31,
+        60
+      ],
+      "value": {
+        "radius": 10,
+        "lockDragging": false,
+        "allowDragging": true,
+        "visibilitySettings": {
+          "MinimapZoomIn": "never",
+          "MiniMapMailFrame": "always",
+          "GameTimeFrame": "never",
+          "TimeManagerClockButton": "always",
+          "SexyMapZoneTextButton": "always",
+          "MinimapZoomOut": "never",
+          "MiniMapBattlefieldFrame": "always",
+          "GarrisonLandingPageMinimapButton": "always",
+          "MiniMapLFGFrame": "always",
+          "MiniMapWorldMapButton": "never",
+          "QueueStatusMinimapButton": "always"
+        },
+        "dragPositions": {
+          "LibDBIcon10_Details": 35.60385040186549,
+          "MiniMapMailFrame": 0.2639249341241177,
+          "GameTimeFrame": 53.64225867338594,
+          "LibDBIcon10_Dominos": 247.2145990833054,
+          "LibDBIcon10_Attune_Broker": -6.946731996140866,
+          "LibDBIcon10_PitBull4": 29.17036252830137,
+          "MiniMapTracking": -16.90394741526986,
+          "LibDBIcon10_Questie": -62.86533227392689,
+          "LibDBIcon10_AtlasLoot": -78.06340524040233
+        },
+        "controlVisibility": true
+      }
+    },
+    {
+      "component": "Masque",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\Masque.lua",
+      "key": "MasqueDB/profiles/loaf/Groups",
+      "lines": [
+        30,
+        118
+      ],
+      "value": {
+        "Dominos_행동 단축바 1": {
+          "Inherit": false,
+          "SkinID": "Onyx Classic"
+        },
+        "Dominos_행동 단축바 11": {
+          "Inherit": false,
+          "SkinID": "Onyx Classic"
+        },
+        "Dominos_행동 단축바 13": {
+          "Inherit": false,
+          "SkinID": "Onyx Classic"
+        },
+        "Dominos_행동 단축바 8": {
+          "Inherit": false,
+          "SkinID": "Onyx Classic"
+        },
+        "PitBull4 Aura_대상의대상": {
+          "Inherit": false
+        },
+        "Dominos_행동 단축바 10": {
+          "Inherit": false,
+          "SkinID": "Onyx Classic"
+        },
+        "PitBull4 Aura": {
+          "Inherit": false
+        },
+        "Dominos_행동 단축바 3": {
+          "Inherit": false,
+          "SkinID": "Onyx Classic"
+        },
+        "Dominos_행동 단축바 5": {
+          "Inherit": false,
+          "SkinID": "Onyx Classic"
+        },
+        "Dominos_행동 단축바 4": {
+          "Inherit": false,
+          "SkinID": "Onyx Classic"
+        },
+        "Dominos_Pet Bar": {
+          "Inherit": false,
+          "SkinID": "Onyx Classic"
+        },
+        "Dominos_행동 단축바 14": {
+          "Inherit": false,
+          "SkinID": "Onyx Classic"
+        },
+        "Dominos_Bag Bar": {
+          "Inherit": false,
+          "SkinID": "Onyx Classic"
+        },
+        "Dominos_행동 단축바 9": {
+          "Inherit": false,
+          "SkinID": "Onyx Classic"
+        },
+        "Dominos_행동 단축바 7": {
+          "Inherit": false,
+          "SkinID": "Onyx Classic"
+        },
+        "Dominos": {
+          "Inherit": false,
+          "SkinID": "Onyx Classic"
+        },
+        "PitBull4 Aura_대상": {
+          "Inherit": false
+        },
+        "PitBull4 Aura_보통": {
+          "Inherit": false
+        },
+        "Dominos_행동 단축바 2": {
+          "Inherit": false,
+          "SkinID": "Onyx Classic"
+        },
+        "Dominos_행동 단축바 6": {
+          "Inherit": false,
+          "SkinID": "Onyx Classic"
+        },
+        "Dominos_행동 단축바 조정": {
+          "Inherit": false,
+          "SkinID": "Onyx Classic"
+        },
+        "Dominos_행동 단축바 12": {
+          "Inherit": false,
+          "SkinID": "Onyx Classic"
+        },
+        "PitBull4 Aura_파티": {
+          "Inherit": false
+        }
+      }
+    },
+    {
+      "component": "ChocolateBar",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\ChocolateBar.lua",
+      "key": "ChocolateBarDB/profiles/loaf/fontPath",
+      "lines": [
+        357,
+        357
+      ],
+      "value": "Fonts\\2002.TTF"
+    },
+    {
+      "component": "ChocolateBar",
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\ChocolateBar.lua",
+      "key": "ChocolateBarDB/profiles/loaf/barSettings",
+      "lines": [
+        359,
+        371
+      ],
+      "value": {
+        "ChocolateBar1": {
+          "barOffy": 1,
+          "barPoint": "RIGHT",
+          "align": "bottom",
+          "width": 3000,
+          "barOffx": 0
+        },
+        "ChocolateBar2": {
+          "index": 1,
+          "barName": "ChocolateBar2"
+        }
+      }
+    }
+  ],
+  "duplicate_keys": {
+    "ChocolateBar": [
+      {
+        "path": [
+          "ChocolateBarDB",
+          "profiles",
+          "Wide"
+        ],
+        "line": 3796
+      }
+    ]
+  },
+  "quartz_profile_names": [
+    "sugar",
+    "sugar2",
+    "Default"
+  ]
+}

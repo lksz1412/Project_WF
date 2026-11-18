@@ -1,0 +1,61 @@
+{
+  "state": "mechanical-acquisition-complete-with-two-dead-image-references",
+  "authoritativeCatalog": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\catalog-v2.json",
+  "authoritativeImages": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\images-v2.json",
+  "authoritativeCoverage": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\coverage-v2.json",
+  "authoritativeProvenance": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\acquisition-provenance-v2.json",
+  "fullArticleExtractDirectory": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\posts-v2",
+  "fileURLScriptLiterals": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\file-download-literals.json",
+  "attachmentFilenameMatches": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\attachment-filename-matches.json",
+  "priority45": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\PRIORITY_READY.json",
+  "priority11218": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\priority-11218-images-v2.json",
+  "priority2958": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\priority-2958-images-v2.json",
+  "thumbnailFallbacks": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\thumbnail-fallbacks.json",
+  "archiveChecks": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\archive-checks.json",
+  "archiveInventory": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\archive-inventory.json",
+  "alphaNSISChecks": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\alpha-nsis-checks.json",
+  "alphaNSISNames": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\alpha-nsis-name-search.json",
+  "existing2022Pointers": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\existing-2022-extraction-pointers.json",
+  "cache": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg",
+  "ownWorkLog": "D:\\Projects\\Project_WF\\Codex\\results\\handoffs\\old-reference\\acquisition\\work_log.md",
+  "counts": {
+    "posts": 34,
+    "metadataPresent": 34,
+    "sectionStates": {
+      "addonAddon": {
+        "parsed": 34,
+        "empty": 0,
+        "missing": 0
+      },
+      "addonVersion": {
+        "parsed": 10,
+        "empty": 24,
+        "missing": 0
+      }
+    },
+    "screenshotIframeParsed": 34,
+    "filesIframeParsed": 34,
+    "imageRefs": 58,
+    "decodedReferences": 56,
+    "uniqueDecodedHashes": 50,
+    "failedFullImages": 2,
+    "thumbnailFallbacksAcquired": 0,
+    "acquiredSourceRecords": 145,
+    "reusedSourceRecords": 11,
+    "failedSourceRecords": 2,
+    "bodyNotesReplacementCharacters": 0
+  },
+  "archiveExtractionRoots": {
+    "2009": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-2009",
+    "alpha": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha"
+  },
+  "alphaNSISExtractionRoot": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis",
+  "notes": [
+    "Initial catalog/images/provenance/coverage and posts paths are retained acquisition-stage history; use v2 paths.",
+    "Acquisition/header/full-load decoding is not A1 full-reading or image content observation.",
+    "Alpha outerZIP soleEXE was never executed; installed bz only statically listed/extracted NSIS.",
+    "NSIS listed uncompressedSizes all -1, no listing-byte-total equality claimed. Actual extracted counts/bytes/set/hash inventory recorded.",
+    "Archive filename/flags/raw bytes preserved; no publisher identity/sample setting equivalence inferred.",
+    "No cleanup/commit/push/installation/source Lua or EXE execution."
+  ]
+}

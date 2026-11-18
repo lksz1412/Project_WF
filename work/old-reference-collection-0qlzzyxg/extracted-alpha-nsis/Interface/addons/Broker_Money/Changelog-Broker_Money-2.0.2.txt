@@ -1,0 +1,12 @@
+tag 2.0.2
+9ea91bd15f1e4c48620d60a7830c03a69b961e2f
+Steffen Buehl <sb@sbuehl.com>
+2014-11-21 02:35:52 +0100
+
+tagging as 2.0.2
+
+
+--------------------
+
+Steffen Buehl:
+	- change de locale to wowace generated

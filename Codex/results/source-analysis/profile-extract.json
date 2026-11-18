@@ -1,0 +1,3554 @@
+{
+  "parser": "nonexecuting literal-only lexer/parser; complete source consumption required",
+  "overview": [
+    {
+      "file": "Dominos.lua",
+      "lines": 12101,
+      "root_assignments": [
+        "DominosDB",
+        "DominosVersion"
+      ],
+      "literal_tokens": 57139,
+      "duplicate_keys": 0,
+      "profiles": [
+        "sugar",
+        "loaf",
+        "사제",
+        "주술사",
+        "ShapaW2",
+        "ShapaSH",
+        "ShapaWIde",
+        "ShapaNormal",
+        "성기사",
+        "도적",
+        "죽음의 기사",
+        "Normal",
+        "ShapaHigh",
+        "ShapaWide",
+        "흑마법사",
+        "ShapaWH",
+        "Devil",
+        "ssad",
+        "shapaW",
+        "ShapaWIID",
+        "드루이드",
+        "shapa",
+        "마법사",
+        "전사",
+        "사냥꾼",
+        "Wide",
+        "dda"
+      ],
+      "top_keys": [
+        "namespaces",
+        "profileKeys",
+        "profiles"
+      ]
+    },
+    {
+      "file": "PitBull4.lua",
+      "lines": 19490,
+      "root_assignments": [
+        "PitBull4DB"
+      ],
+      "literal_tokens": 87915,
+      "duplicate_keys": 0,
+      "profiles": [
+        "loaf",
+        "sugar",
+        "ShapaWIde",
+        "MAGE",
+        "ShapaW2",
+        "ShapaSH",
+        "Tichondrius",
+        "ShapaNormal",
+        "ㅇㅇ",
+        "ShapaHigh",
+        "ShapaWide",
+        "아즈샤라",
+        "wide",
+        "devil",
+        "ssad",
+        "shapaW",
+        "Devil",
+        "ShapaWIID",
+        "Default",
+        "ShapaWH",
+        "shapa",
+        "Normal",
+        "Wide",
+        "dda"
+      ],
+      "top_keys": [
+        "namespaces",
+        "global",
+        "profileKeys",
+        "profiles"
+      ]
+    },
+    {
+      "file": "kgPanels.lua",
+      "lines": 1588,
+      "root_assignments": [
+        "kgPanelsDB"
+      ],
+      "literal_tokens": 8494,
+      "duplicate_keys": 0,
+      "profiles": [
+        "sugar",
+        "ROGUE",
+        "ShapaW2",
+        "ShapaSH",
+        "sugar2",
+        "ShapaNormal",
+        "Normal",
+        "ShapaHigh",
+        "ShapaWide",
+        "ssad",
+        "shapaW",
+        "loaf",
+        "ShapaWIde",
+        "shapa",
+        "ShapaWH",
+        "ShapaWIID",
+        "Default",
+        "Wide",
+        "dda"
+      ],
+      "top_keys": [
+        "namespaces",
+        "profileKeys",
+        "global",
+        "profiles"
+      ]
+    },
+    {
+      "file": "SexyMap.lua",
+      "lines": 453,
+      "root_assignments": [
+        "SexyMap2DB"
+      ],
+      "literal_tokens": 2276,
+      "duplicate_keys": 0,
+      "profiles": [],
+      "top_keys": [
+        "loaf",
+        "sugar2",
+        "global",
+        "presets"
+      ]
+    },
+    {
+      "file": "Quartz.lua",
+      "lines": 104,
+      "root_assignments": [
+        "Quartz3DB"
+      ],
+      "literal_tokens": 430,
+      "duplicate_keys": 0,
+      "profiles": [
+        "sugar",
+        "sugar2",
+        "Default"
+      ],
+      "top_keys": [
+        "namespaces",
+        "profileKeys",
+        "profiles"
+      ]
+    },
+    {
+      "file": "Masque.lua",
+      "lines": 985,
+      "root_assignments": [
+        "MasqueDB"
+      ],
+      "literal_tokens": 4686,
+      "duplicate_keys": 0,
+      "profiles": [
+        "loaf",
+        "sugar",
+        "ShapaWIde",
+        "ShapaW2",
+        "ShapaSH",
+        "ShapaNormal",
+        "Normal",
+        "ShapaHigh",
+        "ShapaWide",
+        "Devil",
+        "ssad",
+        "shapaW",
+        "devil",
+        "wide",
+        "Default",
+        "ShapaWIID",
+        "shapa",
+        "ShapaWH",
+        "Wide",
+        "dda"
+      ],
+      "top_keys": [
+        "namespaces",
+        "profileKeys",
+        "profiles"
+      ]
+    },
+    {
+      "file": "ChocolateBar.lua",
+      "lines": 4015,
+      "root_assignments": [
+        "ChocolateBarDB",
+        "CB_PlayedTime"
+      ],
+      "literal_tokens": 19678,
+      "duplicate_keys": 1,
+      "profiles": [
+        "loaf",
+        "sugar",
+        "Wide",
+        "ShapaWIde",
+        "ShapaW2",
+        "ShapaSH",
+        "ShapaNormal",
+        "Normal",
+        "ShapaHigh",
+        "ShapaWide",
+        "Devil",
+        "ssad",
+        "shapaW",
+        "devil",
+        "wide",
+        "Default",
+        "ShapaWIID",
+        "shapa",
+        "ShapaWH",
+        "dda"
+      ],
+      "top_keys": [
+        "profileKeys",
+        "addonVersion",
+        "profiles"
+      ]
+    }
+  ],
+  "selected": {
+    "Dominos": {
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\Dominos.lua",
+      "loaf_span": [
+        935,
+        1876
+      ],
+      "loaf": {
+        "showMinimap": false,
+        "frames": {
+          "1": {
+            "showInPetBattleUI": false,
+            "point": "BOTTOMLEFT",
+            "anchor": {
+              "relFrame": 6,
+              "point": "TOPRIGHT",
+              "relPoint": "TOPLEFT"
+            },
+            "scale": 1.05,
+            "showInOverrideUI": true,
+            "unit": "none",
+            "y": 217.0642242431641,
+            "x": 219.1004486083985,
+            "numButtons": 12,
+            "spacing": 0,
+            "padH": 0,
+            "rightClickUnit": "player",
+            "pages": {
+              "HUNTER": {
+                "page2": 1,
+                "page5": 4,
+                "page4": 3,
+                "page3": 2,
+                "page6": 5
+              },
+              "WARRIOR": {
+                "page2": 1,
+                "battle": 6,
+                "page3": 2,
+                "page5": 4,
+                "berserker": 8,
+                "page4": 3,
+                "defensive": 7,
+                "page6": 5
+              },
+              "ROGUE": {
+                "shadowdance": 7,
+                "page2": 1,
+                "page5": 4,
+                "page4": 3,
+                "stealth": 6,
+                "page3": 2,
+                "page6": 5
+              },
+              "MAGE": {
+                "page2": 1,
+                "page5": 4,
+                "page4": 3,
+                "page3": 2,
+                "page6": 5
+              },
+              "PRIEST": {
+                "page2": 1,
+                "page5": 4,
+                "page4": 3,
+                "shadow": 6,
+                "page3": 2,
+                "page6": 5
+              },
+              "DEATHKNIGHT": {
+                "page2": 1,
+                "page5": 4,
+                "page4": 3,
+                "page3": 2,
+                "page6": 5
+              },
+              "WARLOCK": {
+                "page2": 1,
+                "page5": 4,
+                "page4": 3,
+                "meta": 6,
+                "page3": 2,
+                "page6": 5
+              },
+              "DEMONHUNTER": {
+                "page2": 1,
+                "page5": 4,
+                "page4": 3,
+                "page3": 2,
+                "page6": 5
+              },
+              "SHAMAN": {
+                "page2": 1,
+                "page5": 4,
+                "page4": 3,
+                "page3": 2,
+                "page6": 5
+              },
+              "DRUID": {
+                "prowl": 6,
+                "bear": 8,
+                "page2": 1,
+                "cat": 6,
+                "page5": 4,
+                "page4": 3,
+                "moonkin": 9,
+                "page3": 2,
+                "page6": 5
+              },
+              "MONK": {
+                "ox": 7,
+                "page2": 1,
+                "serpent": 8,
+                "page5": 4,
+                "page4": 3,
+                "tiger": 6,
+                "page3": 2,
+                "page6": 5
+              },
+              "PALADIN": {
+                "page2": 1,
+                "page5": 4,
+                "page4": 3,
+                "page3": 2,
+                "page6": 5
+              }
+            },
+            "padW": 0
+          },
+          "2": {
+            "showInPetBattleUI": false,
+            "scale": 0.96,
+            "showInOverrideUI": false,
+            "hidden": true,
+            "unit": "none",
+            "y": 17,
+            "padW": 2,
+            "pages": {
+              "HUNTER": {},
+              "WARRIOR": {},
+              "ROGUE": {},
+              "MAGE": {},
+              "PRIEST": {},
+              "DEATHKNIGHT": {},
+              "WARLOCK": {},
+              "DEMONHUNTER": {},
+              "SHAMAN": {},
+              "DRUID": {},
+              "MONK": {},
+              "PALADIN": {}
+            },
+            "spacing": 17,
+            "padH": 2,
+            "rightClickUnit": "player",
+            "numButtons": 12,
+            "alpha": 0.9
+          },
+          "3": {
+            "point": "BOTTOMLEFT",
+            "scale": 1.1,
+            "unit": "none",
+            "padW": 0,
+            "spacing": 0,
+            "rightClickUnit": "player",
+            "pages": {
+              "HUNTER": {},
+              "WARRIOR": {},
+              "ROGUE": {},
+              "MAGE": {},
+              "PRIEST": {},
+              "DEATHKNIGHT": {},
+              "WARLOCK": {},
+              "DEMONHUNTER": {},
+              "SHAMAN": {},
+              "DRUID": {},
+              "MONK": {},
+              "PALADIN": {}
+            },
+            "isBottomToTop": true,
+            "showInPetBattleUI": true,
+            "columns": 4,
+            "showInOverrideUI": false,
+            "y": 47.05055236816407,
+            "x": -37.87860684880724,
+            "padH": 0,
+            "numButtons": 12,
+            "relPoint": "BOTTOM"
+          },
+          "4": {
+            "showInPetBattleUI": true,
+            "numButtons": 12,
+            "point": "BOTTOMLEFT",
+            "columns": 4,
+            "scale": 1.1,
+            "showInOverrideUI": false,
+            "unit": "none",
+            "y": 51.0909881591797,
+            "relPoint": "BOTTOM",
+            "x": 142.626336998849,
+            "spacing": 0,
+            "anchor": {
+              "relFrame": 3,
+              "point": "TOPLEFT",
+              "relPoint": "TOPRIGHT"
+            },
+            "rightClickUnit": "player",
+            "pages": {
+              "HUNTER": {},
+              "WARRIOR": {},
+              "ROGUE": {},
+              "MAGE": {},
+              "PRIEST": {},
+              "DEATHKNIGHT": {},
+              "WARLOCK": {},
+              "DEMONHUNTER": {},
+              "SHAMAN": {},
+              "DRUID": {},
+              "MONK": {},
+              "PALADIN": {}
+            },
+            "isBottomToTop": true
+          },
+          "5": {
+            "showInPetBattleUI": false,
+            "point": "BOTTOMRIGHT",
+            "padH": 0,
+            "scale": 1.05,
+            "showInOverrideUI": false,
+            "unit": "none",
+            "y": 217.0642242431641,
+            "x": -192.6456409376786,
+            "pages": {
+              "HUNTER": {},
+              "WARRIOR": {},
+              "ROGUE": {},
+              "MAGE": {},
+              "PRIEST": {},
+              "DEATHKNIGHT": {},
+              "WARLOCK": {},
+              "DEMONHUNTER": {},
+              "SHAMAN": {},
+              "DRUID": {},
+              "MONK": {},
+              "PALADIN": {}
+            },
+            "spacing": 0,
+            "anchor": {
+              "relFrame": 6,
+              "point": "TOPLEFT",
+              "relPoint": "TOPRIGHT"
+            },
+            "rightClickUnit": "player",
+            "numButtons": 12,
+            "padW": 0
+          },
+          "6": {
+            "showInPetBattleUI": false,
+            "point": "BOTTOM",
+            "scale": 1.05,
+            "showInOverrideUI": false,
+            "unit": "none",
+            "padW": 0,
+            "x": 16.40203304678566,
+            "numButtons": 12,
+            "spacing": 0,
+            "padH": 0,
+            "rightClickUnit": "player",
+            "pages": {
+              "HUNTER": {},
+              "WARRIOR": {},
+              "ROGUE": {},
+              "MAGE": {},
+              "PRIEST": {},
+              "DEATHKNIGHT": {},
+              "WARLOCK": {},
+              "DEMONHUNTER": {},
+              "SHAMAN": {},
+              "DRUID": {},
+              "MONK": {},
+              "PALADIN": {}
+            },
+            "y": 208.0700225830078
+          },
+          "7": {
+            "showInPetBattleUI": false,
+            "columns": 2,
+            "y": 95,
+            "scale": 0.9,
+            "showInOverrideUI": false,
+            "unit": "none",
+            "padW": 0,
+            "x": -295,
+            "pages": {
+              "HUNTER": {},
+              "WARRIOR": {},
+              "ROGUE": {},
+              "MAGE": {},
+              "PRIEST": {},
+              "DEATHKNIGHT": {},
+              "WARLOCK": {},
+              "DEMONHUNTER": {},
+              "SHAMAN": {},
+              "DRUID": {},
+              "MONK": {},
+              "PALADIN": {}
+            },
+            "spacing": 2,
+            "anchor": "2TL",
+            "rightClickUnit": "player",
+            "numButtons": 6,
+            "padH": 0
+          },
+          "8": {
+            "showInPetBattleUI": false,
+            "columns": 2,
+            "y": 95,
+            "scale": 0.9,
+            "showInOverrideUI": false,
+            "unit": "none",
+            "padW": 0,
+            "x": 295,
+            "pages": {
+              "HUNTER": {},
+              "WARRIOR": {},
+              "ROGUE": {},
+              "MAGE": {},
+              "PRIEST": {},
+              "DEATHKNIGHT": {},
+              "WARLOCK": {},
+              "DEMONHUNTER": {},
+              "SHAMAN": {},
+              "DRUID": {},
+              "MONK": {},
+              "PALADIN": {}
+            },
+            "spacing": 2,
+            "anchor": "2TR",
+            "rightClickUnit": "player",
+            "numButtons": 6,
+            "padH": 0
+          },
+          "9": {
+            "showInPetBattleUI": false,
+            "columns": 2,
+            "x": -332.2668620468591,
+            "scale": 0.9,
+            "showInOverrideUI": false,
+            "unit": "none",
+            "y": 39.46666174366353,
+            "relPoint": "CENTER",
+            "numButtons": 6,
+            "spacing": 2,
+            "anchor": {
+              "relFrame": 7,
+              "point": "TOPRIGHT",
+              "relPoint": "TOPLEFT"
+            },
+            "rightClickUnit": "player",
+            "pages": {
+              "HUNTER": {},
+              "WARRIOR": {},
+              "ROGUE": {},
+              "MAGE": {},
+              "PRIEST": {},
+              "DEATHKNIGHT": {},
+              "WARLOCK": {},
+              "DEMONHUNTER": {},
+              "SHAMAN": {},
+              "DRUID": {},
+              "MONK": {},
+              "PALADIN": {}
+            },
+            "point": "BOTTOMRIGHT"
+          },
+          "10": {
+            "showInPetBattleUI": false,
+            "columns": 2,
+            "x": 332.2665165542152,
+            "scale": 0.9,
+            "showInOverrideUI": false,
+            "unit": "none",
+            "y": 39.46666174366353,
+            "relPoint": "CENTER",
+            "numButtons": 6,
+            "spacing": 2,
+            "anchor": {
+              "relFrame": 8,
+              "point": "TOPLEFT",
+              "relPoint": "TOPRIGHT"
+            },
+            "rightClickUnit": "player",
+            "pages": {
+              "HUNTER": {},
+              "WARRIOR": {},
+              "ROGUE": {},
+              "MAGE": {},
+              "PRIEST": {},
+              "DEATHKNIGHT": {},
+              "WARLOCK": {},
+              "DEMONHUNTER": {},
+              "SHAMAN": {},
+              "DRUID": {},
+              "MONK": {},
+              "PALADIN": {}
+            },
+            "point": "BOTTOMLEFT"
+          },
+          "11": {
+            "showInPetBattleUI": false,
+            "point": "BOTTOM",
+            "y": 504.0000381469727,
+            "numButtons": 12,
+            "showInOverrideUI": false,
+            "hidden": true,
+            "unit": "none",
+            "padW": 2,
+            "x": 0,
+            "showEmptyButtons": false,
+            "spacing": 2,
+            "padH": 2,
+            "rightClickUnit": "player",
+            "pages": {
+              "SHAMAN": {},
+              "PRIEST": {}
+            },
+            "displayLayer": "LOW"
+          },
+          "12": {
+            "showInPetBattleUI": false,
+            "point": "BOTTOM",
+            "y": 553.0000419616699,
+            "numButtons": 12,
+            "showInOverrideUI": false,
+            "hidden": true,
+            "unit": "none",
+            "padW": 2,
+            "x": 0,
+            "showEmptyButtons": false,
+            "spacing": 2,
+            "padH": 2,
+            "rightClickUnit": "player",
+            "pages": {
+              "SHAMAN": {},
+              "PRIEST": {}
+            },
+            "displayLayer": "LOW"
+          },
+          "13": {
+            "showInPetBattleUI": false,
+            "point": "BOTTOM",
+            "y": 602.0000457763672,
+            "numButtons": 12,
+            "showInOverrideUI": false,
+            "hidden": true,
+            "unit": "none",
+            "padW": 2,
+            "x": 0,
+            "showEmptyButtons": false,
+            "spacing": 2,
+            "padH": 2,
+            "rightClickUnit": "player",
+            "pages": {
+              "SHAMAN": {},
+              "PRIEST": {}
+            },
+            "displayLayer": "LOW"
+          },
+          "14": {
+            "showInPetBattleUI": false,
+            "point": "BOTTOM",
+            "y": 651.0000495910645,
+            "numButtons": 12,
+            "showInOverrideUI": false,
+            "hidden": true,
+            "unit": "none",
+            "padW": 2,
+            "x": 0,
+            "showEmptyButtons": false,
+            "spacing": 2,
+            "padH": 2,
+            "rightClickUnit": "player",
+            "pages": {
+              "SHAMAN": {},
+              "PRIEST": {}
+            },
+            "displayLayer": "LOW"
+          },
+          "exp": {
+            "showInPetBattleUI": false,
+            "columns": 20,
+            "point": "TOP",
+            "numButtons": 20,
+            "font": "Friz Quadrata TT",
+            "lockMode": true,
+            "hidden": true,
+            "padH": 2,
+            "padW": 2,
+            "x": -34,
+            "showInOverrideUI": false,
+            "spacing": 1,
+            "display": {
+              "value": true,
+              "bonus": true,
+              "max": true,
+              "label": true
+            },
+            "mode": "xp",
+            "alwaysShowText": true,
+            "texture": "blizzard"
+          },
+          "encounter": {
+            "showInPetBattleUI": true,
+            "scale": 1,
+            "showInOverrideUI": true,
+            "y": -204
+          },
+          "class": {
+            "showInPetBattleUI": false,
+            "point": "BOTTOMRIGHT",
+            "showInOverrideUI": false,
+            "y": 275.1674194335938,
+            "relPoint": "BOTTOM",
+            "spacing": 0,
+            "anchor": {
+              "relPoint": "TOPLEFT",
+              "point": "BOTTOMLEFT",
+              "relFrame": 6
+            },
+            "numButtons": 3,
+            "x": -237.611291885376
+          },
+          "mirrorTimer2": {
+            "showInPetBattleUI": false,
+            "point": "TOP",
+            "showInOverrideUI": false,
+            "w": 206,
+            "y": -122,
+            "h": 26,
+            "padW": 1,
+            "padH": 1,
+            "display": {
+              "border": true,
+              "spark": false,
+              "time": false,
+              "label": true
+            },
+            "font": "기본 글꼴",
+            "x": 0,
+            "texture": "Blizzard"
+          },
+          "cast": {
+            "showInPetBattleUI": true,
+            "scale": 1.57,
+            "showInOverrideUI": true,
+            "hidden": true,
+            "padW": -5,
+            "y": -23,
+            "h": 10,
+            "showText": true,
+            "padH": -5,
+            "display": {
+              "border": true,
+              "time": true,
+              "icon": false
+            },
+            "font": "Friz Quadrata TT",
+            "latencyPadding": 0,
+            "w": 231
+          },
+          "roll": {
+            "showInPetBattleUI": true,
+            "columns": 1,
+            "spacing": 2,
+            "showInOverrideUI": true,
+            "y": -217
+          },
+          "vehicle": {
+            "y": 98.4150657785651,
+            "showstates": "[@vehicle,exists]show;hide",
+            "point": "BOTTOMRIGHT",
+            "x": -568.158752787208,
+            "anchor": "6TR",
+            "showInOverrideUI": false,
+            "numButtons": 3,
+            "showInPetBattleUI": false
+          },
+          "artifact": {
+            "point": "TOP",
+            "scale": 1,
+            "lockMode": true,
+            "padW": 2,
+            "spacing": 1,
+            "anchor": "expBL",
+            "mode": "artifact",
+            "numButtons": 20,
+            "texture": "blizzard",
+            "showInPetBattleUI": false,
+            "columns": 20,
+            "showInOverrideUI": false,
+            "alpha": 0,
+            "width": 1024,
+            "y": -16,
+            "font": "Friz Quadrata TT",
+            "hidden": true,
+            "padH": 2,
+            "height": 12,
+            "display": {
+              "value": true,
+              "bonus": true,
+              "max": true,
+              "label": true
+            },
+            "alwaysShowText": true,
+            "x": -34
+          },
+          "totem1": {
+            "y": 245.333347578497,
+            "x": 634.222314659588,
+            "point": "BOTTOMLEFT",
+            "spacing": 2,
+            "scale": 0.9,
+            "anchor": "6TL",
+            "showRecall": true,
+            "showTotems": true
+          },
+          "possess": {
+            "showInPetBattleUI": false,
+            "point": "CENTER",
+            "showInOverrideUI": false,
+            "padW": 2,
+            "x": 244,
+            "spacing": 4,
+            "padH": 2,
+            "y": 0
+          },
+          "extra": {
+            "padW": 14,
+            "x": 266,
+            "padH": 14,
+            "y": 176,
+            "anchor": "8TC",
+            "showInOverrideUI": false,
+            "showInPetBattleUI": false
+          },
+          "mirrorTimer3": {
+            "showInPetBattleUI": false,
+            "point": "TOP",
+            "showInOverrideUI": false,
+            "w": 206,
+            "y": -148,
+            "h": 26,
+            "padW": 1,
+            "padH": 1,
+            "display": {
+              "border": true,
+              "spark": false,
+              "time": false,
+              "label": true
+            },
+            "font": "기본 글꼴",
+            "x": 0,
+            "texture": "Blizzard"
+          },
+          "xp": {
+            "y": 0,
+            "alwaysShowXP": true,
+            "point": "BOTTOMLEFT",
+            "width": 1,
+            "height": 4,
+            "x": 8.63706785635424e-05,
+            "alwaysShowText": true,
+            "texture": "Smooth"
+          },
+          "queue": {
+            "y": 227.9174194335938,
+            "x": -157.2779083251953,
+            "point": "BOTTOMRIGHT",
+            "showInPetBattleUI": false,
+            "anchor": {
+              "relFrame": 5,
+              "point": "BOTTOMLEFT",
+              "relPoint": "BOTTOMRIGHT"
+            },
+            "showInOverrideUI": false,
+            "displayLayer": "MEDIUM"
+          },
+          "talk": {
+            "showInPetBattleUI": true,
+            "relPoint": "CENTER",
+            "point": "BOTTOM",
+            "y": 176.0000610351563,
+            "x": -0.000152587890625,
+            "showInOverrideUI": true,
+            "displayLayer": "LOW"
+          },
+          "bags": {
+            "showInPetBattleUI": true,
+            "point": "BOTTOMLEFT",
+            "scale": 0.71,
+            "showInOverrideUI": false,
+            "y": 28.07043838500977,
+            "relPoint": "BOTTOM",
+            "x": 184.6199050238702,
+            "spacing": -2,
+            "anchor": "4BR",
+            "numButtons": 5,
+            "displayLevel": 1,
+            "displayLayer": "MEDIUM"
+          },
+          "totem3": {
+            "point": "BOTTOMRIGHT",
+            "scale": 0.9,
+            "hidden": true,
+            "y": 336.986849066613,
+            "x": -486.297994433281,
+            "spacing": 2,
+            "anchor": "totem2RC",
+            "showTotems": true,
+            "showRecall": true
+          },
+          "menu": {
+            "showInPetBattleUI": false,
+            "disabled": {},
+            "scale": 1.05,
+            "showInOverrideUI": false,
+            "point": "BOTTOMLEFT",
+            "y": 23.29106140136719,
+            "x": -39.68243960946414,
+            "showstates": "",
+            "spacing": -2,
+            "anchor": {
+              "relFrame": 3,
+              "point": "TOPLEFT",
+              "relPoint": "BOTTOMLEFT"
+            },
+            "relPoint": "BOTTOM",
+            "displayLevel": 1,
+            "displayLayer": "MEDIUM"
+          },
+          "mirrorTimer1": {
+            "showInPetBattleUI": false,
+            "point": "TOP",
+            "showInOverrideUI": false,
+            "w": 206,
+            "y": -96,
+            "h": 26,
+            "padW": 1,
+            "padH": 1,
+            "display": {
+              "border": true,
+              "spark": false,
+              "time": false,
+              "label": true
+            },
+            "font": "기본 글꼴",
+            "x": 0,
+            "texture": "Blizzard"
+          },
+          "alerts": {
+            "showInPetBattleUI": true,
+            "columns": 1,
+            "spacing": 2,
+            "scale": 1,
+            "showInOverrideUI": true,
+            "point": "LEFT"
+          },
+          "pet": {
+            "showInPetBattleUI": false,
+            "point": "BOTTOM",
+            "scale": 0.9,
+            "showInOverrideUI": false,
+            "y": 305.7416076660157,
+            "showstates": "[@pet,exists,nobonusbar:5]show;hide",
+            "spacing": 0,
+            "anchor": {
+              "relPoint": "TOP",
+              "point": "BOTTOM",
+              "relFrame": 6
+            },
+            "numButtons": 10,
+            "x": 15.43188736369788
+          },
+          "totem2": {
+            "point": "BOTTOMRIGHT",
+            "scale": 0.9,
+            "hidden": true,
+            "y": 336.986849066613,
+            "x": -636.297945934122,
+            "spacing": 2,
+            "anchor": "totem1RT",
+            "showTotems": true,
+            "showRecall": true
+          }
+        },
+        "minimap": {
+          "minimapPos": 185.0929181715588,
+          "hide": true
+        },
+        "ab": {
+          "style": {
+            "1": "Onyx",
+            "2": 0.75,
+            "3": false,
+            "4": {}
+          }
+        },
+        "petStyle": {
+          "1": "Onyx",
+          "2": 0.75,
+          "3": false,
+          "4": {}
+        },
+        "classStyle": {
+          "1": "Onyx",
+          "2": 0.75,
+          "3": false,
+          "4": {}
+        },
+        "bagStyle": {
+          "1": "Onyx",
+          "2": null,
+          "3": false,
+          "4": {}
+        },
+        "minimapPos": 224.261066539179,
+        "showgrid": 1,
+        "sticky": 1
+      },
+      "profile_labels": [
+        "sugar",
+        "loaf",
+        "사제",
+        "주술사",
+        "ShapaW2",
+        "ShapaSH",
+        "ShapaWIde",
+        "ShapaNormal",
+        "성기사",
+        "도적",
+        "죽음의 기사",
+        "Normal",
+        "ShapaHigh",
+        "ShapaWide",
+        "흑마법사",
+        "ShapaWH",
+        "Devil",
+        "ssad",
+        "shapaW",
+        "ShapaWIID",
+        "드루이드",
+        "shapa",
+        "마법사",
+        "전사",
+        "사냥꾼",
+        "Wide",
+        "dda"
+      ]
+    },
+    "PitBull4": {
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\PitBull4.lua",
+      "loaf_span": [
+        16252,
+        16410
+      ],
+      "loaf": {
+        "class_order": {
+          "1": "WARRIOR",
+          "2": "PALADIN",
+          "3": "PRIEST",
+          "4": "SHAMAN",
+          "5": "DRUID",
+          "6": "ROGUE",
+          "7": "MAGE",
+          "8": "WARLOCK",
+          "9": "HUNTER",
+          "10": "DEATHKNIGHT"
+        },
+        "layouts": {
+          "파티": {
+            "bar_spacing": 1,
+            "indicator_root_outside_margin": 2,
+            "size_y": 40,
+            "exists": true,
+            "bar_padding": 1,
+            "bar_texture": "Glamour7"
+          },
+          "대상": {
+            "bar_spacing": 1,
+            "level": 25,
+            "indicator_root_outside_margin": 2,
+            "size_x": 280,
+            "exists": true,
+            "bar_padding": 1,
+            "bar_texture": "Glamour7"
+          },
+          "대상의대상": {
+            "bar_spacing": 1,
+            "size_x": 100,
+            "size_y": 25,
+            "exists": true,
+            "bar_padding": 1,
+            "bar_texture": "Glamour7"
+          },
+          "보통": {
+            "bar_spacing": 1,
+            "indicator_root_outside_margin": 2,
+            "size_x": 280,
+            "exists": true,
+            "bar_padding": 1,
+            "bar_texture": "Glamour7"
+          }
+        },
+        "lock_movement": true,
+        "units": {
+          "플레이어": {
+            "position_x": -340,
+            "unit": "player",
+            "enabled": true,
+            "position_y": -204
+          },
+          "대상": {
+            "position_x": 338.0006103515625,
+            "unit": "target",
+            "enabled": true,
+            "layout": "대상",
+            "position_y": -204
+          },
+          "플레이어의 소환수": {
+            "scale": 0.9,
+            "unit": "pet",
+            "enabled": true,
+            "layout": "파티",
+            "position_x": -806.6423664785179,
+            "position_y": 404.8003380669204
+          },
+          "주시 대상의 대상의 대상": {
+            "unit": "focustargettarget"
+          },
+          "대상의 대상": {
+            "position_x": 255,
+            "unit": "targettarget",
+            "enabled": true,
+            "layout": "대상의대상",
+            "position_y": -279
+          },
+          "주시 대상의 대상": {
+            "unit": "focustarget"
+          },
+          "주시 대상": {
+            "unit": "focus",
+            "relative_point": "TOPLEFT",
+            "anchor": "TOPLEFT",
+            "enabled": true,
+            "position_x": 250,
+            "position_y": -260
+          },
+          "대상의 대상의 대상": {
+            "position_x": 360,
+            "unit": "targettargettarget",
+            "enabled": true,
+            "layout": "대상의대상",
+            "position_y": -279
+          },
+          "플레이어의 소환수의 대상": {
+            "scale": 0.75,
+            "unit": "pettarget",
+            "layout": "대상의대상",
+            "position_x": -432,
+            "position_y": 352
+          }
+        },
+        "made_groups": true,
+        "groups": {
+          "파티원 소환수": {
+            "vertical_spacing": 83,
+            "scale": 0.85,
+            "unit_group": "partypet",
+            "enabled": true,
+            "layout": "대상의대상",
+            "exists": true,
+            "position_y": 323.8888900374489,
+            "position_x": -712.7554516910702
+          },
+          "파티원 대상": {
+            "vertical_spacing": 83,
+            "scale": 0.85,
+            "unit_group": "partytarget",
+            "enabled": true,
+            "layout": "대상의대상",
+            "exists": true,
+            "position_y": 350.4666965908448,
+            "position_x": -712.7554516910702
+          },
+          "파티": {
+            "vertical_spacing": 69,
+            "scale": 0.85,
+            "position_x": -890.6220375659323,
+            "enabled": true,
+            "layout": "파티",
+            "exists": true,
+            "position_y": 352.5999975316614
+          }
+        },
+        "minimap_icon": {
+          "minimapPos": 273.50954102694,
+          "hide": true
+        },
+        "made_units": true,
+        "colors": {
+          "power": {
+            "ENERGY": {
+              "1": null,
+              "2": 0.972549019607843,
+              "3": 0.596078431372549
+            },
+            "MANA": {
+              "1": 0.372549019607843,
+              "2": 0.525490196078431
+            }
+          }
+        },
+        "frame_snap": false
+      },
+      "profile_labels": [
+        "loaf",
+        "sugar",
+        "ShapaWIde",
+        "MAGE",
+        "ShapaW2",
+        "ShapaSH",
+        "Tichondrius",
+        "ShapaNormal",
+        "ㅇㅇ",
+        "ShapaHigh",
+        "ShapaWide",
+        "아즈샤라",
+        "wide",
+        "devil",
+        "ssad",
+        "shapaW",
+        "Devil",
+        "ShapaWIID",
+        "Default",
+        "ShapaWH",
+        "shapa",
+        "Normal",
+        "Wide",
+        "dda"
+      ]
+    },
+    "kgPanels": {
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\kgPanels.lua",
+      "loaf_span": [
+        1566,
+        1568
+      ],
+      "loaf": {
+        "layout": "loaf"
+      },
+      "profile_labels": [
+        "sugar",
+        "ROGUE",
+        "ShapaW2",
+        "ShapaSH",
+        "sugar2",
+        "ShapaNormal",
+        "Normal",
+        "ShapaHigh",
+        "ShapaWide",
+        "ssad",
+        "shapaW",
+        "loaf",
+        "ShapaWIde",
+        "shapa",
+        "ShapaWH",
+        "ShapaWIID",
+        "Default",
+        "Wide",
+        "dda"
+      ],
+      "global": {
+        "version": 6,
+        "layouts": {
+          "loaf": {
+            "chat2": {
+              "border_advanced": {
+                "enable": false,
+                "show": {
+                  "BOTRIGHTCORNER": true,
+                  "TOPRIGHTCORNER": true,
+                  "TOPLEFTCORNER": true,
+                  "BOTLEFTCORNER": true,
+                  "RIGHT": true,
+                  "LEFT": true,
+                  "TOP": true,
+                  "BOT": true
+                }
+              },
+              "parent": "UIParent",
+              "bg_orientation": "VERTICAL",
+              "anchorFrom": "BOTTOMRIGHT",
+              "hflip": false,
+              "vflip": false,
+              "tileSize": 0,
+              "bg_texture": "Solid",
+              "anchor": "UIParent",
+              "level": 2,
+              "vert_tile": false,
+              "use_absolute_bg": false,
+              "bg_blend": "BLEND",
+              "text": {
+                "y": 0,
+                "font": "Blizzard",
+                "justifyH": "CENTER",
+                "x": 0,
+                "color": {
+                  "a": 1,
+                  "r": 1,
+                  "g": 1,
+                  "b": 1
+                },
+                "text": "",
+                "justifyV": "MIDDLE",
+                "size": 12
+              },
+              "rotation": 0,
+              "x": -40.666748046875,
+              "bg_alpha": 0,
+              "border_edgeSize": 16,
+              "height": 187.3334045410156,
+              "tiling": false,
+              "strata": "BACKGROUND",
+              "horz_tile": false,
+              "anchorTo": "BOTTOM",
+              "scale": 1,
+              "absolute_bg": {
+                "LLy": 1,
+                "LLx": 0,
+                "LRy": 1,
+                "LRx": 1,
+                "URy": 0,
+                "URx": 1,
+                "ULy": 0,
+                "ULx": 0
+              },
+              "bg_insets": {
+                "r": 0,
+                "l": 0,
+                "t": 0,
+                "b": 0
+              },
+              "scripts": {},
+              "bg_style": "GRADIENT",
+              "gradient_color": {
+                "a": 0,
+                "r": 0,
+                "g": 0,
+                "b": 0
+              },
+              "border_color": {
+                "a": 1,
+                "r": 1,
+                "g": 1,
+                "b": 1
+              },
+              "border_texture": "Devil2",
+              "width": 506.1111145019531,
+              "sub_level": 3,
+              "mouse": false,
+              "y": 13.99996185302734,
+              "bg_color": {
+                "a": 1,
+                "r": 0,
+                "g": 0,
+                "b": 0
+              }
+            },
+            "하단이미지": {
+              "border_advanced": {
+                "enable": false,
+                "show": {
+                  "BOTRIGHTCORNER": true,
+                  "TOPRIGHTCORNER": true,
+                  "TOPLEFTCORNER": true,
+                  "BOTLEFTCORNER": true,
+                  "RIGHT": true,
+                  "LEFT": true,
+                  "TOP": true,
+                  "BOT": true
+                }
+              },
+              "parent": "UIParent",
+              "bg_orientation": "VERTICAL",
+              "anchorFrom": "BOTTOM",
+              "hflip": false,
+              "vflip": false,
+              "tileSize": 0,
+              "bg_texture": "Solid",
+              "anchor": "UIParent",
+              "level": 0,
+              "vert_tile": false,
+              "use_absolute_bg": false,
+              "bg_blend": "BLEND",
+              "text": {
+                "y": 0,
+                "font": "Blizzard",
+                "justifyH": "CENTER",
+                "x": 0,
+                "color": {
+                  "a": 1,
+                  "r": 1,
+                  "g": 1,
+                  "b": 1
+                },
+                "text": "",
+                "justifyV": "MIDDLE",
+                "size": 12
+              },
+              "rotation": 0,
+              "x": 0,
+              "bg_alpha": 1,
+              "border_edgeSize": 16,
+              "height": "162",
+              "tiling": false,
+              "strata": "BACKGROUND",
+              "horz_tile": false,
+              "anchorTo": "BOTTOM",
+              "scale": 1,
+              "absolute_bg": {
+                "LLy": 1,
+                "LLx": 0,
+                "LRy": 1,
+                "LRx": 1,
+                "URy": 0,
+                "URx": 1,
+                "ULy": 0,
+                "ULx": 0
+              },
+              "bg_insets": {
+                "r": 0,
+                "l": 0,
+                "t": 0,
+                "b": 0
+              },
+              "scripts": {},
+              "bg_style": "GRADIENT",
+              "gradient_color": {
+                "a": 0,
+                "r": 0,
+                "g": 0,
+                "b": 0
+              },
+              "border_color": {
+                "a": 1,
+                "r": 1,
+                "g": 1,
+                "b": 1
+              },
+              "border_texture": "None",
+              "width": "100%",
+              "sub_level": 0,
+              "mouse": false,
+              "y": "0",
+              "bg_color": {
+                "a": 1,
+                "r": 0,
+                "g": 0,
+                "b": 0
+              }
+            },
+            "좌측하단이미지": {
+              "border_advanced": {
+                "enable": false,
+                "show": {
+                  "BOTRIGHTCORNER": true,
+                  "TOPRIGHTCORNER": true,
+                  "TOPLEFTCORNER": true,
+                  "BOTLEFTCORNER": true,
+                  "RIGHT": true,
+                  "LEFT": true,
+                  "TOP": true,
+                  "BOT": true
+                }
+              },
+              "parent": "UIParent",
+              "bg_orientation": "HORIZONTAL",
+              "anchorFrom": "BOTTOM",
+              "hflip": false,
+              "vflip": false,
+              "tileSize": 0,
+              "bg_texture": "demon",
+              "anchor": "UIParent",
+              "level": 0,
+              "vert_tile": false,
+              "use_absolute_bg": false,
+              "bg_blend": "BLEND",
+              "text": {
+                "y": 0,
+                "font": "Blizzard",
+                "justifyH": "CENTER",
+                "x": 0,
+                "color": {
+                  "a": 1,
+                  "r": 1,
+                  "g": 1,
+                  "b": 1
+                },
+                "text": "",
+                "justifyV": "MIDDLE",
+                "size": 12
+              },
+              "rotation": 0,
+              "x": -866.666618347168,
+              "bg_alpha": 1,
+              "border_edgeSize": 6,
+              "height": 140,
+              "tiling": false,
+              "strata": "BACKGROUND",
+              "horz_tile": false,
+              "anchorTo": "BOTTOM",
+              "scale": 1,
+              "absolute_bg": {
+                "LLy": 1,
+                "LLx": 0,
+                "LRy": 1,
+                "LRx": 1,
+                "URy": 0,
+                "URx": 1,
+                "ULy": 0,
+                "ULx": 0
+              },
+              "bg_insets": {
+                "r": 0,
+                "t": 0,
+                "l": 0,
+                "b": 0
+              },
+              "scripts": {},
+              "bg_style": "NONE",
+              "gradient_color": {
+                "a": 0,
+                "b": 1,
+                "g": 1,
+                "r": 1
+              },
+              "border_color": {
+                "a": 1,
+                "b": 1,
+                "g": 1,
+                "r": 1
+              },
+              "border_texture": "None",
+              "width": 140.0000152587891,
+              "sub_level": 0,
+              "mouse": false,
+              "y": 210.3331451416016,
+              "bg_color": {
+                "a": 0,
+                "r": 0.301960784313726,
+                "g": 0.301960784313726,
+                "b": 0.301960784313726
+              }
+            },
+            "중단이미지": {
+              "border_advanced": {
+                "enable": false,
+                "show": {
+                  "BOTRIGHTCORNER": true,
+                  "TOPRIGHTCORNER": true,
+                  "TOPLEFTCORNER": true,
+                  "BOTLEFTCORNER": true,
+                  "RIGHT": true,
+                  "LEFT": true,
+                  "TOP": true,
+                  "BOT": true
+                }
+              },
+              "parent": "UIParent",
+              "bg_orientation": "HORIZONTAL",
+              "anchorFrom": "BOTTOM",
+              "hflip": false,
+              "vflip": false,
+              "tileSize": 0,
+              "bg_texture": "Solid",
+              "anchor": "UIParent",
+              "level": 0,
+              "vert_tile": false,
+              "use_absolute_bg": false,
+              "bg_blend": "BLEND",
+              "text": {
+                "y": 0,
+                "font": "Blizzard",
+                "justifyH": "CENTER",
+                "x": 0,
+                "color": {
+                  "a": 1,
+                  "r": 1,
+                  "g": 1,
+                  "b": 1
+                },
+                "text": "",
+                "justifyV": "MIDDLE",
+                "size": 12
+              },
+              "rotation": 0,
+              "x": -0.5556982159614452,
+              "bg_alpha": 1,
+              "border_edgeSize": 16,
+              "height": 20.00000381469727,
+              "tiling": false,
+              "strata": "BACKGROUND",
+              "horz_tile": false,
+              "anchorTo": "BOTTOM",
+              "scale": 1,
+              "absolute_bg": {
+                "LLy": 1,
+                "LLx": 0,
+                "LRy": 1,
+                "LRx": 1,
+                "URy": 0,
+                "URx": 1,
+                "ULy": 0,
+                "ULx": 0
+              },
+              "bg_insets": {
+                "b": 0,
+                "t": 0,
+                "l": 0,
+                "r": 0
+              },
+              "scripts": {},
+              "bg_style": "SOLID",
+              "gradient_color": {
+                "a": 0,
+                "b": 1,
+                "g": 1,
+                "r": 1
+              },
+              "border_color": {
+                "a": 1,
+                "r": 0.372549019607843,
+                "g": 0.372549019607843,
+                "b": 0.372549019607843
+              },
+              "border_texture": "Blizzard Dialog",
+              "width": 2133,
+              "sub_level": 0,
+              "mouse": false,
+              "y": 195.5568084716797,
+              "bg_color": {
+                "a": 1,
+                "r": 0.113725490196078,
+                "g": 0.113725490196078,
+                "b": 0.113725490196078
+              }
+            },
+            "우측하단이미지": {
+              "border_advanced": {
+                "enable": false,
+                "show": {
+                  "BOTRIGHTCORNER": true,
+                  "TOPRIGHTCORNER": true,
+                  "TOPLEFTCORNER": true,
+                  "BOTLEFTCORNER": true,
+                  "RIGHT": true,
+                  "LEFT": true,
+                  "TOP": true,
+                  "BOT": true
+                }
+              },
+              "parent": "UIParent",
+              "bg_orientation": "HORIZONTAL",
+              "anchorFrom": "BOTTOM",
+              "hflip": false,
+              "vflip": false,
+              "tileSize": 0,
+              "bg_texture": "angel",
+              "anchor": "UIParent",
+              "level": 0,
+              "vert_tile": false,
+              "use_absolute_bg": false,
+              "bg_blend": "BLEND",
+              "text": {
+                "y": 0,
+                "font": "Blizzard",
+                "justifyH": "CENTER",
+                "x": 0,
+                "color": {
+                  "a": 1,
+                  "r": 1,
+                  "g": 1,
+                  "b": 1
+                },
+                "text": "",
+                "justifyV": "MIDDLE",
+                "size": 12
+              },
+              "rotation": 0,
+              "x": 903.8885116577148,
+              "bg_alpha": 1,
+              "border_edgeSize": 6,
+              "height": 140.0000152587891,
+              "tiling": false,
+              "strata": "BACKGROUND",
+              "horz_tile": false,
+              "anchorTo": "BOTTOM",
+              "scale": 1,
+              "absolute_bg": {
+                "LLy": 1,
+                "LLx": 0,
+                "LRy": 1,
+                "LRx": 1,
+                "URy": 0,
+                "URx": 1,
+                "ULy": 0,
+                "ULx": 0
+              },
+              "bg_insets": {
+                "b": 0,
+                "t": 0,
+                "l": 0,
+                "r": 0
+              },
+              "scripts": {},
+              "bg_style": "NONE",
+              "gradient_color": {
+                "a": 0,
+                "b": 1,
+                "g": 1,
+                "r": 1
+              },
+              "border_color": {
+                "a": 1,
+                "b": 1,
+                "g": 1,
+                "r": 1
+              },
+              "border_texture": "None",
+              "width": 140.0001678466797,
+              "sub_level": 0,
+              "mouse": false,
+              "y": 214.2224273681641,
+              "bg_color": {
+                "a": 0,
+                "b": 0.301960784313726,
+                "g": 0.301960784313726,
+                "r": 0.301960784313726
+              }
+            },
+            "미니맵이미지": {
+              "border_advanced": {
+                "enable": false,
+                "show": {
+                  "BOTRIGHTCORNER": true,
+                  "TOPRIGHTCORNER": true,
+                  "TOPLEFTCORNER": true,
+                  "BOTLEFTCORNER": true,
+                  "RIGHT": true,
+                  "LEFT": true,
+                  "TOP": true,
+                  "BOT": true
+                }
+              },
+              "parent": "UIParent",
+              "bg_orientation": "HORIZONTAL",
+              "anchorFrom": "BOTTOMLEFT",
+              "hflip": false,
+              "vflip": false,
+              "tileSize": 0,
+              "bg_texture": "Solid",
+              "anchor": "UIParent",
+              "level": 2,
+              "vert_tile": false,
+              "use_absolute_bg": false,
+              "bg_blend": "DISABLE",
+              "text": {
+                "y": 0,
+                "font": "Blizzard",
+                "justifyH": "CENTER",
+                "x": 0,
+                "color": {
+                  "a": 1,
+                  "r": 1,
+                  "g": 1,
+                  "b": 1
+                },
+                "text": "",
+                "justifyV": "MIDDLE",
+                "size": 12
+              },
+              "rotation": 0,
+              "x": 352.1107177734375,
+              "bg_alpha": 0,
+              "border_edgeSize": 16,
+              "height": 187.0000152587891,
+              "tiling": false,
+              "strata": "LOW",
+              "horz_tile": false,
+              "anchorTo": "BOTTOM",
+              "scale": 1,
+              "absolute_bg": {
+                "LLy": 1,
+                "LLx": 0,
+                "LRy": 1,
+                "LRx": 1,
+                "URy": 0,
+                "URx": 1,
+                "ULy": 0,
+                "ULx": 0
+              },
+              "bg_insets": {
+                "b": 0,
+                "t": 0,
+                "l": 0,
+                "r": 0
+              },
+              "scripts": {},
+              "bg_style": "SOLID",
+              "gradient_color": {
+                "a": 0,
+                "b": 1,
+                "g": 1,
+                "r": 1
+              },
+              "border_color": {
+                "a": 1,
+                "b": 1,
+                "g": 1,
+                "r": 1
+              },
+              "border_texture": "Devil2",
+              "width": 183.9999694824219,
+              "sub_level": 0,
+              "mouse": false,
+              "y": 15.66585731506348,
+              "bg_color": {
+                "a": 0,
+                "b": 0.0705882352941177,
+                "g": 0.0705882352941177,
+                "r": 0.0705882352941177
+              }
+            },
+            "chat3": {
+              "border_advanced": {
+                "enable": false,
+                "show": {
+                  "BOTRIGHTCORNER": true,
+                  "TOPRIGHTCORNER": true,
+                  "TOPLEFTCORNER": true,
+                  "BOTLEFTCORNER": true,
+                  "RIGHT": true,
+                  "LEFT": true,
+                  "TOP": true,
+                  "BOT": true
+                }
+              },
+              "parent": "UIParent",
+              "bg_orientation": "VERTICAL",
+              "anchorFrom": "BOTTOMLEFT",
+              "hflip": false,
+              "vflip": false,
+              "tileSize": 0,
+              "bg_texture": "Solid",
+              "anchor": "UIParent",
+              "level": 2,
+              "vert_tile": false,
+              "use_absolute_bg": false,
+              "bg_blend": "BLEND",
+              "text": {
+                "y": 0,
+                "font": "Blizzard",
+                "justifyH": "CENTER",
+                "x": 0,
+                "color": {
+                  "a": 1,
+                  "r": 1,
+                  "g": 1,
+                  "b": 1
+                },
+                "text": "",
+                "justifyV": "MIDDLE",
+                "size": 12
+              },
+              "rotation": 0,
+              "x": 533.7769775390625,
+              "bg_alpha": 0,
+              "border_edgeSize": 16,
+              "height": 186.333251953125,
+              "tiling": false,
+              "strata": "BACKGROUND",
+              "horz_tile": false,
+              "anchorTo": "BOTTOM",
+              "scale": 1,
+              "absolute_bg": {
+                "LLy": 1,
+                "LLx": 0,
+                "LRy": 1,
+                "LRx": 1,
+                "URy": 0,
+                "URx": 1,
+                "ULy": 0,
+                "ULx": 0
+              },
+              "bg_insets": {
+                "b": 0,
+                "t": 0,
+                "l": 0,
+                "r": 0
+              },
+              "scripts": {},
+              "bg_style": "GRADIENT",
+              "gradient_color": {
+                "a": 0,
+                "r": 0,
+                "g": 0,
+                "b": 0
+              },
+              "border_color": {
+                "a": 1,
+                "r": 1,
+                "g": 1,
+                "b": 1
+              },
+              "border_texture": "Devil2",
+              "width": 529.3334350585938,
+              "sub_level": 3,
+              "mouse": false,
+              "y": 14.00123977661133,
+              "bg_color": {
+                "a": 1,
+                "r": 0,
+                "g": 0,
+                "b": 0
+              }
+            },
+            "chat1": {
+              "border_advanced": {
+                "enable": true,
+                "show": {
+                  "BOT": true,
+                  "TOPRIGHTCORNER": true,
+                  "LEFT": true,
+                  "TOPLEFTCORNER": true,
+                  "RIGHT": true,
+                  "BOTLEFTCORNER": true,
+                  "TOP": true,
+                  "BOTRIGHTCORNER": true
+                }
+              },
+              "parent": "UIParent",
+              "bg_orientation": "VERTICAL",
+              "anchorFrom": "BOTTOMLEFT",
+              "hflip": false,
+              "vflip": false,
+              "tileSize": 0,
+              "bg_texture": "Solid",
+              "anchor": "UIParent",
+              "level": 1,
+              "vert_tile": false,
+              "use_absolute_bg": false,
+              "bg_blend": "BLEND",
+              "text": {
+                "y": 0,
+                "x": 0,
+                "justifyH": "CENTER",
+                "font": "Blizzard",
+                "color": {
+                  "a": 1,
+                  "b": 1,
+                  "g": 1,
+                  "r": 1
+                },
+                "text": "",
+                "justifyV": "MIDDLE",
+                "size": 12
+              },
+              "rotation": 0,
+              "x": 2.021081924438477,
+              "bg_alpha": 1,
+              "border_edgeSize": 16,
+              "height": 119,
+              "tiling": false,
+              "strata": "BACKGROUND",
+              "horz_tile": false,
+              "anchorTo": "BOTTOMLEFT",
+              "scale": 1.59,
+              "absolute_bg": {
+                "ULx": 0,
+                "ULy": 0,
+                "LLy": 1,
+                "LLx": 0,
+                "URx": 1,
+                "URy": 0,
+                "LRx": 1,
+                "LRy": 1
+              },
+              "bg_insets": {
+                "b": 0,
+                "l": 0,
+                "t": 0,
+                "r": 0
+              },
+              "scripts": {
+                "LOAD": ""
+              },
+              "bg_style": "GRADIENT",
+              "gradient_color": {
+                "a": 0,
+                "b": 0,
+                "g": 0,
+                "r": 0
+              },
+              "border_color": {
+                "a": 1,
+                "b": 1,
+                "g": 1,
+                "r": 1
+              },
+              "border_texture": "Devil2",
+              "width": 1344.000122070313,
+              "bg_color": {
+                "a": 1,
+                "b": 0,
+                "g": 0,
+                "r": 0
+              },
+              "mouse": false,
+              "y": 12.17427253723145,
+              "sub_level": 1
+            }
+          },
+          "Normal": {
+            "좌측하단이미지": {
+              "border_advanced": {
+                "enable": false,
+                "show": {
+                  "BOT": true,
+                  "TOPRIGHTCORNER": true,
+                  "LEFT": true,
+                  "TOPLEFTCORNER": true,
+                  "RIGHT": true,
+                  "BOTLEFTCORNER": true,
+                  "TOP": true,
+                  "BOTRIGHTCORNER": true
+                }
+              },
+              "parent": "UIParent",
+              "bg_orientation": "HORIZONTAL",
+              "anchorFrom": "BOTTOM",
+              "hflip": false,
+              "vflip": false,
+              "tileSize": 0,
+              "bg_texture": "demon",
+              "anchor": "UIParent",
+              "level": 0,
+              "vert_tile": false,
+              "use_absolute_bg": false,
+              "bg_blend": "BLEND",
+              "text": {
+                "y": 0,
+                "font": "Blizzard",
+                "justifyH": "CENTER",
+                "x": 0,
+                "color": {
+                  "a": 1,
+                  "b": 1,
+                  "g": 1,
+                  "r": 1
+                },
+                "text": "",
+                "justifyV": "MIDDLE",
+                "size": 12
+              },
+              "rotation": 0,
+              "x": "-540",
+              "bg_alpha": 1,
+              "border_edgeSize": 6,
+              "height": "175",
+              "tiling": false,
+              "strata": "BACKGROUND",
+              "horz_tile": false,
+              "anchorTo": "BOTTOM",
+              "scale": 1,
+              "absolute_bg": {
+                "LRy": 1,
+                "LRx": 1,
+                "ULx": 0,
+                "ULy": 0,
+                "URx": 1,
+                "URy": 0,
+                "LLx": 0,
+                "LLy": 1
+              },
+              "bg_insets": {
+                "r": 0,
+                "t": 0,
+                "l": 0,
+                "b": 0
+              },
+              "scripts": {},
+              "bg_style": "NONE",
+              "gradient_color": {
+                "a": 0,
+                "r": 1,
+                "g": 1,
+                "b": 1
+              },
+              "border_color": {
+                "a": 1,
+                "r": 1,
+                "g": 1,
+                "b": 1
+              },
+              "border_texture": "None",
+              "width": "170",
+              "bg_color": {
+                "a": 0,
+                "b": 0.301960784313726,
+                "g": 0.301960784313726,
+                "r": 0.301960784313726
+              },
+              "mouse": false,
+              "y": "20",
+              "sub_level": 0
+            },
+            "미니맵이미지": {
+              "border_advanced": {
+                "enable": false,
+                "show": {
+                  "BOT": true,
+                  "TOPRIGHTCORNER": true,
+                  "LEFT": true,
+                  "TOPLEFTCORNER": true,
+                  "RIGHT": true,
+                  "BOTLEFTCORNER": true,
+                  "TOP": true,
+                  "BOTRIGHTCORNER": true
+                }
+              },
+              "parent": "Minimap",
+              "bg_orientation": "HORIZONTAL",
+              "anchorFrom": "CENTER",
+              "hflip": false,
+              "vflip": false,
+              "tileSize": 0,
+              "bg_texture": "Minimap",
+              "anchor": "Minimap",
+              "level": 3,
+              "vert_tile": false,
+              "use_absolute_bg": false,
+              "bg_blend": "BLEND",
+              "text": {
+                "y": 0,
+                "font": "Blizzard",
+                "justifyH": "CENTER",
+                "x": 0,
+                "color": {
+                  "a": 1,
+                  "b": 1,
+                  "g": 1,
+                  "r": 1
+                },
+                "text": "",
+                "justifyV": "MIDDLE",
+                "size": 12
+              },
+              "rotation": 0,
+              "x": 0,
+              "bg_alpha": 0.95,
+              "border_edgeSize": 6,
+              "height": "110%",
+              "tiling": false,
+              "strata": "LOW",
+              "horz_tile": false,
+              "anchorTo": "CENTER",
+              "scale": 1,
+              "absolute_bg": {
+                "LRy": 1,
+                "LRx": 1,
+                "ULx": 0,
+                "ULy": 0,
+                "URx": 1,
+                "URy": 0,
+                "LLx": 0,
+                "LLy": 1
+              },
+              "bg_insets": {
+                "b": 0,
+                "t": 0,
+                "l": 0,
+                "r": 0
+              },
+              "scripts": {},
+              "bg_style": "NONE",
+              "gradient_color": {
+                "a": 0,
+                "r": 1,
+                "g": 1,
+                "b": 1
+              },
+              "border_color": {
+                "a": 1,
+                "r": 1,
+                "g": 1,
+                "b": 1
+              },
+              "border_texture": "None",
+              "width": "110%",
+              "bg_color": {
+                "a": 0,
+                "r": 0.301960784313726,
+                "g": 0.301960784313726,
+                "b": 0.301960784313726
+              },
+              "mouse": false,
+              "y": 0,
+              "sub_level": 0
+            },
+            "우측하단이미지": {
+              "border_advanced": {
+                "enable": false,
+                "show": {
+                  "BOT": true,
+                  "TOPRIGHTCORNER": true,
+                  "LEFT": true,
+                  "TOPLEFTCORNER": true,
+                  "RIGHT": true,
+                  "BOTLEFTCORNER": true,
+                  "TOP": true,
+                  "BOTRIGHTCORNER": true
+                }
+              },
+              "parent": "UIParent",
+              "bg_orientation": "HORIZONTAL",
+              "anchorFrom": "BOTTOM",
+              "hflip": false,
+              "vflip": false,
+              "tileSize": 0,
+              "bg_texture": "angel",
+              "anchor": "UIParent",
+              "level": 0,
+              "vert_tile": false,
+              "use_absolute_bg": false,
+              "bg_blend": "BLEND",
+              "text": {
+                "y": 0,
+                "font": "Blizzard",
+                "justifyH": "CENTER",
+                "x": 0,
+                "color": {
+                  "a": 1,
+                  "b": 1,
+                  "g": 1,
+                  "r": 1
+                },
+                "text": "",
+                "justifyV": "MIDDLE",
+                "size": 12
+              },
+              "rotation": 0,
+              "x": "530",
+              "bg_alpha": 1,
+              "border_edgeSize": 6,
+              "height": "180",
+              "tiling": false,
+              "strata": "BACKGROUND",
+              "horz_tile": false,
+              "anchorTo": "BOTTOM",
+              "scale": 1,
+              "absolute_bg": {
+                "LRy": 1,
+                "LRx": 1,
+                "ULx": 0,
+                "ULy": 0,
+                "URx": 1,
+                "URy": 0,
+                "LLx": 0,
+                "LLy": 1
+              },
+              "bg_insets": {
+                "b": 0,
+                "t": 0,
+                "l": 0,
+                "r": 0
+              },
+              "scripts": {},
+              "bg_style": "NONE",
+              "gradient_color": {
+                "a": 0,
+                "r": 1,
+                "g": 1,
+                "b": 1
+              },
+              "border_color": {
+                "a": 1,
+                "r": 1,
+                "g": 1,
+                "b": 1
+              },
+              "border_texture": "None",
+              "width": "180",
+              "bg_color": {
+                "a": 0,
+                "r": 0.301960784313726,
+                "g": 0.301960784313726,
+                "b": 0.301960784313726
+              },
+              "mouse": false,
+              "y": "20",
+              "sub_level": 0
+            },
+            "하단이미지": {
+              "border_advanced": {
+                "enable": false,
+                "show": {
+                  "BOT": true,
+                  "TOPRIGHTCORNER": true,
+                  "LEFT": true,
+                  "TOPLEFTCORNER": true,
+                  "RIGHT": true,
+                  "BOTLEFTCORNER": true,
+                  "TOP": true,
+                  "BOTRIGHTCORNER": true
+                }
+              },
+              "parent": "UIParent",
+              "bg_orientation": "VERTICAL",
+              "anchorFrom": "BOTTOM",
+              "hflip": false,
+              "vflip": false,
+              "tileSize": 0,
+              "bg_texture": "Solid",
+              "anchor": "UIParent",
+              "level": 1,
+              "vert_tile": false,
+              "use_absolute_bg": false,
+              "bg_blend": "DISABLE",
+              "text": {
+                "y": 0,
+                "font": "Blizzard",
+                "justifyH": "CENTER",
+                "x": 0,
+                "color": {
+                  "a": 1,
+                  "b": 1,
+                  "g": 1,
+                  "r": 1
+                },
+                "text": "",
+                "justifyV": "MIDDLE",
+                "size": 12
+              },
+              "rotation": 0,
+              "x": 0,
+              "bg_alpha": 1,
+              "border_edgeSize": 16,
+              "height": "24",
+              "tiling": false,
+              "strata": "BACKGROUND",
+              "horz_tile": false,
+              "anchorTo": "BOTTOM",
+              "scale": 1,
+              "absolute_bg": {
+                "LRy": 1,
+                "LRx": 1,
+                "ULx": 0,
+                "ULy": 0,
+                "URx": 1,
+                "URy": 0,
+                "LLx": 0,
+                "LLy": 1
+              },
+              "bg_insets": {
+                "b": 0,
+                "t": 0,
+                "l": 0,
+                "r": 0
+              },
+              "scripts": {},
+              "bg_style": "SOLID",
+              "gradient_color": {
+                "a": 0,
+                "r": 1,
+                "g": 1,
+                "b": 1
+              },
+              "border_color": {
+                "a": 1,
+                "b": 1,
+                "g": 1,
+                "r": 1
+              },
+              "border_texture": "Blizzard Dialog",
+              "width": "100%",
+              "bg_color": {
+                "a": 1,
+                "b": 0.0980392156862745,
+                "g": 0.0980392156862745,
+                "r": 0.0980392156862745
+              },
+              "mouse": false,
+              "y": "-1",
+              "sub_level": 0
+            }
+          },
+          "Wide": {
+            "좌측하단이미지": {
+              "border_advanced": {
+                "enable": false,
+                "show": {
+                  "BOT": true,
+                  "TOPRIGHTCORNER": true,
+                  "LEFT": true,
+                  "TOPLEFTCORNER": true,
+                  "RIGHT": true,
+                  "BOTLEFTCORNER": true,
+                  "TOP": true,
+                  "BOTRIGHTCORNER": true
+                }
+              },
+              "parent": "UIParent",
+              "bg_orientation": "HORIZONTAL",
+              "anchorFrom": "BOTTOM",
+              "hflip": false,
+              "vflip": false,
+              "tileSize": 0,
+              "bg_texture": "demon",
+              "anchor": "UIParent",
+              "level": 0,
+              "vert_tile": false,
+              "use_absolute_bg": false,
+              "bg_blend": "BLEND",
+              "text": {
+                "y": 0,
+                "font": "Blizzard",
+                "justifyH": "CENTER",
+                "x": 0,
+                "color": {
+                  "a": 1,
+                  "b": 1,
+                  "g": 1,
+                  "r": 1
+                },
+                "text": "",
+                "justifyV": "MIDDLE",
+                "size": 12
+              },
+              "rotation": 0,
+              "x": "-730",
+              "bg_alpha": 1,
+              "border_edgeSize": 6,
+              "height": "155",
+              "tiling": false,
+              "strata": "BACKGROUND",
+              "horz_tile": false,
+              "anchorTo": "BOTTOM",
+              "scale": 1,
+              "absolute_bg": {
+                "LLy": 1,
+                "LLx": 0,
+                "LRy": 1,
+                "LRx": 1,
+                "URx": 1,
+                "URy": 0,
+                "ULy": 0,
+                "ULx": 0
+              },
+              "bg_insets": {
+                "r": 0,
+                "t": 0,
+                "l": 0,
+                "b": 0
+              },
+              "scripts": {},
+              "bg_style": "NONE",
+              "gradient_color": {
+                "a": 0,
+                "r": 1,
+                "g": 1,
+                "b": 1
+              },
+              "border_color": {
+                "a": 1,
+                "r": 1,
+                "g": 1,
+                "b": 1
+              },
+              "border_texture": "None",
+              "width": "155",
+              "bg_color": {
+                "a": 0,
+                "b": 0.301960784313726,
+                "g": 0.301960784313726,
+                "r": 0.301960784313726
+              },
+              "mouse": false,
+              "y": "18",
+              "sub_level": 0
+            },
+            "미니맵이미지": {
+              "border_advanced": {
+                "enable": false,
+                "show": {
+                  "BOT": true,
+                  "TOPRIGHTCORNER": true,
+                  "LEFT": true,
+                  "TOPLEFTCORNER": true,
+                  "RIGHT": true,
+                  "BOTLEFTCORNER": true,
+                  "TOP": true,
+                  "BOTRIGHTCORNER": true
+                }
+              },
+              "parent": "Minimap",
+              "bg_orientation": "HORIZONTAL",
+              "anchorFrom": "CENTER",
+              "hflip": false,
+              "vflip": false,
+              "tileSize": 0,
+              "bg_texture": "Minimap",
+              "anchor": "Minimap",
+              "level": 3,
+              "vert_tile": false,
+              "use_absolute_bg": false,
+              "bg_blend": "BLEND",
+              "text": {
+                "y": 0,
+                "font": "Blizzard",
+                "justifyH": "CENTER",
+                "x": 0,
+                "color": {
+                  "a": 1,
+                  "b": 1,
+                  "g": 1,
+                  "r": 1
+                },
+                "text": "",
+                "justifyV": "MIDDLE",
+                "size": 12
+              },
+              "rotation": 0,
+              "x": 0,
+              "bg_alpha": 0.95,
+              "border_edgeSize": 6,
+              "height": "110%",
+              "tiling": false,
+              "strata": "LOW",
+              "horz_tile": false,
+              "anchorTo": "CENTER",
+              "scale": 1,
+              "absolute_bg": {
+                "LLy": 1,
+                "LLx": 0,
+                "LRy": 1,
+                "LRx": 1,
+                "URx": 1,
+                "URy": 0,
+                "ULy": 0,
+                "ULx": 0
+              },
+              "bg_insets": {
+                "b": 0,
+                "t": 0,
+                "l": 0,
+                "r": 0
+              },
+              "scripts": {},
+              "bg_style": "NONE",
+              "gradient_color": {
+                "a": 0,
+                "r": 1,
+                "g": 1,
+                "b": 1
+              },
+              "border_color": {
+                "a": 1,
+                "r": 1,
+                "g": 1,
+                "b": 1
+              },
+              "border_texture": "None",
+              "width": "110%",
+              "bg_color": {
+                "a": 0,
+                "r": 0.301960784313726,
+                "g": 0.301960784313726,
+                "b": 0.301960784313726
+              },
+              "mouse": false,
+              "y": 0,
+              "sub_level": 0
+            },
+            "우측하단이미지": {
+              "border_advanced": {
+                "enable": false,
+                "show": {
+                  "BOT": true,
+                  "TOPRIGHTCORNER": true,
+                  "LEFT": true,
+                  "TOPLEFTCORNER": true,
+                  "RIGHT": true,
+                  "BOTLEFTCORNER": true,
+                  "TOP": true,
+                  "BOTRIGHTCORNER": true
+                }
+              },
+              "parent": "UIParent",
+              "bg_orientation": "HORIZONTAL",
+              "anchorFrom": "BOTTOM",
+              "hflip": false,
+              "vflip": false,
+              "tileSize": 0,
+              "bg_texture": "angel",
+              "anchor": "UIParent",
+              "level": 0,
+              "vert_tile": false,
+              "use_absolute_bg": false,
+              "bg_blend": "BLEND",
+              "text": {
+                "y": 0,
+                "font": "Blizzard",
+                "justifyH": "CENTER",
+                "x": 0,
+                "color": {
+                  "a": 1,
+                  "b": 1,
+                  "g": 1,
+                  "r": 1
+                },
+                "text": "",
+                "justifyV": "MIDDLE",
+                "size": 12
+              },
+              "rotation": 0,
+              "x": "720",
+              "bg_alpha": 1,
+              "border_edgeSize": 6,
+              "height": "160",
+              "tiling": false,
+              "strata": "BACKGROUND",
+              "horz_tile": false,
+              "anchorTo": "BOTTOM",
+              "scale": 1,
+              "absolute_bg": {
+                "LLy": 1,
+                "LLx": 0,
+                "LRy": 1,
+                "LRx": 1,
+                "URx": 1,
+                "URy": 0,
+                "ULy": 0,
+                "ULx": 0
+              },
+              "bg_insets": {
+                "b": 0,
+                "t": 0,
+                "l": 0,
+                "r": 0
+              },
+              "scripts": {},
+              "bg_style": "NONE",
+              "gradient_color": {
+                "a": 0,
+                "r": 1,
+                "g": 1,
+                "b": 1
+              },
+              "border_color": {
+                "a": 1,
+                "r": 1,
+                "g": 1,
+                "b": 1
+              },
+              "border_texture": "None",
+              "width": "160",
+              "bg_color": {
+                "a": 0,
+                "r": 0.301960784313726,
+                "g": 0.301960784313726,
+                "b": 0.301960784313726
+              },
+              "mouse": false,
+              "y": "18",
+              "sub_level": 0
+            },
+            "하단이미지": {
+              "border_advanced": {
+                "enable": false,
+                "show": {
+                  "BOT": true,
+                  "TOPRIGHTCORNER": true,
+                  "LEFT": true,
+                  "TOPLEFTCORNER": true,
+                  "RIGHT": true,
+                  "BOTLEFTCORNER": true,
+                  "TOP": true,
+                  "BOTRIGHTCORNER": true
+                }
+              },
+              "parent": "UIParent",
+              "bg_orientation": "VERTICAL",
+              "anchorFrom": "BOTTOM",
+              "hflip": false,
+              "vflip": false,
+              "tileSize": 0,
+              "bg_texture": "Solid",
+              "anchor": "UIParent",
+              "level": 1,
+              "vert_tile": false,
+              "use_absolute_bg": false,
+              "bg_blend": "DISABLE",
+              "text": {
+                "y": 0,
+                "font": "Blizzard",
+                "justifyH": "CENTER",
+                "x": 0,
+                "color": {
+                  "a": 1,
+                  "b": 1,
+                  "g": 1,
+                  "r": 1
+                },
+                "text": "",
+                "justifyV": "MIDDLE",
+                "size": 12
+              },
+              "rotation": 0,
+              "x": 0,
+              "bg_alpha": 1,
+              "border_edgeSize": 16,
+              "height": "24",
+              "tiling": false,
+              "strata": "BACKGROUND",
+              "horz_tile": false,
+              "anchorTo": "BOTTOM",
+              "scale": 1,
+              "absolute_bg": {
+                "LLy": 1,
+                "LLx": 0,
+                "LRy": 1,
+                "LRx": 1,
+                "URx": 1,
+                "URy": 0,
+                "ULy": 0,
+                "ULx": 0
+              },
+              "bg_insets": {
+                "b": 0,
+                "t": 0,
+                "l": 0,
+                "r": 0
+              },
+              "scripts": {},
+              "bg_style": "SOLID",
+              "gradient_color": {
+                "a": 0,
+                "r": 1,
+                "g": 1,
+                "b": 1
+              },
+              "border_color": {
+                "a": 1,
+                "b": 1,
+                "g": 1,
+                "r": 1
+              },
+              "border_texture": "Blizzard Dialog",
+              "width": "100%",
+              "bg_color": {
+                "a": 1,
+                "b": 0.105882352941177,
+                "g": 0.105882352941177,
+                "r": 0.105882352941177
+              },
+              "mouse": false,
+              "y": "-1",
+              "sub_level": 0
+            }
+          }
+        }
+      },
+      "global_span": [
+        19,
+        1534
+      ]
+    },
+    "SexyMap": {
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\SexyMap.lua",
+      "loaf_span": [
+        3,
+        147
+      ],
+      "loaf": {
+        "core": {
+          "clamp": true,
+          "point": "BOTTOM",
+          "relpoint": "BOTTOM",
+          "autoZoom": 5,
+          "northTag": true,
+          "y": 16.38471412658691,
+          "x": 352.1447143554688,
+          "lock": false,
+          "scale": 1.26,
+          "shape": 130871,
+          "rightClickToConfig": true
+        },
+        "coordinates": {
+          "enabled": true,
+          "fontColor": {},
+          "xOffset": 0,
+          "updateRate": 1,
+          "yOffset": -25,
+          "font": "기본 글꼴",
+          "borderColor": {},
+          "coordPrecision": "%d,%d",
+          "backgroundColor": {}
+        },
+        "buttons": {
+          "radius": 10,
+          "lockDragging": false,
+          "allowDragging": true,
+          "visibilitySettings": {
+            "MinimapZoomIn": "never",
+            "MiniMapMailFrame": "always",
+            "GameTimeFrame": "never",
+            "TimeManagerClockButton": "always",
+            "SexyMapZoneTextButton": "always",
+            "MinimapZoomOut": "never",
+            "MiniMapBattlefieldFrame": "always",
+            "GarrisonLandingPageMinimapButton": "always",
+            "MiniMapLFGFrame": "always",
+            "MiniMapWorldMapButton": "never",
+            "QueueStatusMinimapButton": "always"
+          },
+          "dragPositions": {
+            "LibDBIcon10_Details": 35.60385040186549,
+            "MiniMapMailFrame": 0.2639249341241177,
+            "GameTimeFrame": 53.64225867338594,
+            "LibDBIcon10_Dominos": 247.2145990833054,
+            "LibDBIcon10_Attune_Broker": -6.946731996140866,
+            "LibDBIcon10_PitBull4": 29.17036252830137,
+            "MiniMapTracking": -16.90394741526986,
+            "LibDBIcon10_Questie": -62.86533227392689,
+            "LibDBIcon10_AtlasLoot": -78.06340524040233
+          },
+          "controlVisibility": true
+        },
+        "movers": {
+          "lockDurability": false,
+          "lockObjectives": false,
+          "moveDurability": false,
+          "lockCaptureBar": false,
+          "moveVehicle": false,
+          "lockVehicle": false,
+          "moverPositions": {},
+          "moveBuffs": false,
+          "lockBuffs": false,
+          "moveCaptureBar": false,
+          "moveObjectives": false
+        },
+        "clock": {
+          "bgColor": {
+            "a": 1,
+            "b": 0,
+            "g": 0,
+            "r": 0
+          },
+          "font": "기본 글꼴",
+          "fontColor": {},
+          "borderColor": {
+            "a": 1,
+            "b": 0,
+            "g": 0,
+            "r": 0
+          },
+          "xOffset": 0,
+          "yOffset": 15
+        },
+        "borders": {
+          "applyPreset": false,
+          "borders": {},
+          "backdrop": {
+            "show": true,
+            "textureColor": {
+              "b": 0,
+              "g": 0,
+              "r": 0
+            },
+            "settings": {
+              "edgeSize": 17,
+              "edgeFile": 137057,
+              "bgFile": 137056,
+              "tile": false,
+              "insets": {
+                "top": 4,
+                "right": 4,
+                "left": 4,
+                "bottom": 4
+              }
+            },
+            "borderColor": {},
+            "scale": 1.07
+          },
+          "hideBlizzard": true
+        },
+        "zonetext": {
+          "bgColor": {
+            "a": 1,
+            "b": 0,
+            "g": 0,
+            "r": 0
+          },
+          "font": "기본 글꼴",
+          "fontColor": {},
+          "borderColor": {
+            "a": 1,
+            "b": 0,
+            "g": 0,
+            "r": 0
+          },
+          "xOffset": 0,
+          "fontsize": 10,
+          "yOffset": 0
+        },
+        "ping": {
+          "showPing": true,
+          "showAt": "map"
+        }
+      }
+    },
+    "Quartz": {
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\Quartz.lua",
+      "data": {
+        "namespaces": {
+          "Swing": {},
+          "Buff": {},
+          "LibDualSpec-1.0": {},
+          "Flight": {},
+          "Pet": {
+            "profiles": {
+              "sugar": {
+                "x": 966.666748046875
+              },
+              "sugar2": {
+                "y": -217.1107330322266,
+                "point": "CENTER",
+                "x": 11.11099243164063
+              },
+              "Default": {
+                "y": -217.1107330322266,
+                "x": 11.11099243164063,
+                "point": "CENTER"
+              }
+            }
+          },
+          "Range": {},
+          "EnemyCasts": {},
+          "Player": {
+            "profiles": {
+              "sugar": {
+                "x": 941.666748046875
+              },
+              "sugar2": {
+                "y": 277.7781677246094,
+                "point": "BOTTOM",
+                "x": 11.11111450195313
+              },
+              "Default": {
+                "y": 277.7781677246094,
+                "x": 11.11111450195313,
+                "point": "BOTTOM"
+              }
+            }
+          },
+          "GCD": {},
+          "Focus": {
+            "profiles": {
+              "sugar": {
+                "x": 966.666748046875
+              },
+              "sugar2": {
+                "y": -244.8882598876953,
+                "x": 8.888824462890625,
+                "point": "CENTER"
+              },
+              "Default": {
+                "y": -244.8882598876953,
+                "x": 8.888824462890625,
+                "point": "CENTER"
+              }
+            }
+          },
+          "Target": {
+            "profiles": {
+              "sugar": {
+                "x": 966.666748046875
+              },
+              "sugar2": {
+                "y": -271.5552062988281,
+                "x": 7.222137451171875,
+                "point": "CENTER"
+              },
+              "Default": {
+                "y": -271.5552062988281,
+                "x": 7.222137451171875,
+                "point": "CENTER"
+              }
+            }
+          },
+          "Interrupt": {},
+          "Mirror": {},
+          "Latency": {}
+        },
+        "profileKeys": {
+          "슈가로프 - 아즈샤라": "sugar2"
+        },
+        "profiles": {
+          "sugar": {},
+          "sugar2": {},
+          "Default": {}
+        }
+      }
+    },
+    "Masque": {
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\Masque.lua",
+      "loaf_span": [
+        29,
+        119
+      ],
+      "loaf": {
+        "Groups": {
+          "Dominos_행동 단축바 1": {
+            "Inherit": false,
+            "SkinID": "Onyx Classic"
+          },
+          "Dominos_행동 단축바 11": {
+            "Inherit": false,
+            "SkinID": "Onyx Classic"
+          },
+          "Dominos_행동 단축바 13": {
+            "Inherit": false,
+            "SkinID": "Onyx Classic"
+          },
+          "Dominos_행동 단축바 8": {
+            "Inherit": false,
+            "SkinID": "Onyx Classic"
+          },
+          "PitBull4 Aura_대상의대상": {
+            "Inherit": false
+          },
+          "Dominos_행동 단축바 10": {
+            "Inherit": false,
+            "SkinID": "Onyx Classic"
+          },
+          "PitBull4 Aura": {
+            "Inherit": false
+          },
+          "Dominos_행동 단축바 3": {
+            "Inherit": false,
+            "SkinID": "Onyx Classic"
+          },
+          "Dominos_행동 단축바 5": {
+            "Inherit": false,
+            "SkinID": "Onyx Classic"
+          },
+          "Dominos_행동 단축바 4": {
+            "Inherit": false,
+            "SkinID": "Onyx Classic"
+          },
+          "Dominos_Pet Bar": {
+            "Inherit": false,
+            "SkinID": "Onyx Classic"
+          },
+          "Dominos_행동 단축바 14": {
+            "Inherit": false,
+            "SkinID": "Onyx Classic"
+          },
+          "Dominos_Bag Bar": {
+            "Inherit": false,
+            "SkinID": "Onyx Classic"
+          },
+          "Dominos_행동 단축바 9": {
+            "Inherit": false,
+            "SkinID": "Onyx Classic"
+          },
+          "Dominos_행동 단축바 7": {
+            "Inherit": false,
+            "SkinID": "Onyx Classic"
+          },
+          "Dominos": {
+            "Inherit": false,
+            "SkinID": "Onyx Classic"
+          },
+          "PitBull4 Aura_대상": {
+            "Inherit": false
+          },
+          "PitBull4 Aura_보통": {
+            "Inherit": false
+          },
+          "Dominos_행동 단축바 2": {
+            "Inherit": false,
+            "SkinID": "Onyx Classic"
+          },
+          "Dominos_행동 단축바 6": {
+            "Inherit": false,
+            "SkinID": "Onyx Classic"
+          },
+          "Dominos_행동 단축바 조정": {
+            "Inherit": false,
+            "SkinID": "Onyx Classic"
+          },
+          "Dominos_행동 단축바 12": {
+            "Inherit": false,
+            "SkinID": "Onyx Classic"
+          },
+          "PitBull4 Aura_파티": {
+            "Inherit": false
+          }
+        }
+      },
+      "profile_labels": [
+        "loaf",
+        "sugar",
+        "ShapaWIde",
+        "ShapaW2",
+        "ShapaSH",
+        "ShapaNormal",
+        "Normal",
+        "ShapaHigh",
+        "ShapaWide",
+        "Devil",
+        "ssad",
+        "shapaW",
+        "devil",
+        "wide",
+        "Default",
+        "ShapaWIID",
+        "shapa",
+        "ShapaWH",
+        "Wide",
+        "dda"
+      ]
+    },
+    "ChocolateBar": {
+      "source": "SourceArchive\\2022-11-19\\extracted\\Interface\\addons\\!DevilUI\\Profile\\ChocolateBar.lua",
+      "loaf_span": [
+        26,
+        374
+      ],
+      "loaf": {
+        "locked": false,
+        "background": {
+          "color": {
+            "a": 0,
+            "g": 0.36078431372549,
+            "r": 0.380392156862745
+          }
+        },
+        "fontName": "기본 글꼴",
+        "fixedStrata": true,
+        "moduleOptions": {
+          "Placeholder": {
+            "placeholderNames": {}
+          },
+          "MoreChocolate": {}
+        },
+        "objSettings": {
+          "Broker_XPBar": {
+            "index": 2,
+            "align": "center",
+            "isNew": false,
+            "barName": "ChocolateBar1",
+            "disableTooltip": false
+          },
+          "|cffffb366Ara|r Reputations": {
+            "index": 3,
+            "isNew": false,
+            "barName": "ChocolateBar1"
+          },
+          "Guild": {
+            "index": 5,
+            "isNew": false,
+            "barName": "ChocolateBar1"
+          },
+          "kgPanels": {
+            "enabled": false,
+            "index": 3,
+            "align": "right",
+            "isNew": false,
+            "showText": false,
+            "barName": "ChocolateBar1"
+          },
+          "PitBull4": {
+            "index": 6,
+            "align": "right",
+            "isNew": false,
+            "showText": false,
+            "barName": "ChocolateBar1"
+          },
+          "Bags": {
+            "index": 10,
+            "isNew": false,
+            "barName": "ChocolateBar1"
+          },
+          "Professions": {
+            "index": 6,
+            "isNew": false,
+            "barName": "ChocolateBar1"
+          },
+          "DBM": {
+            "index": 1,
+            "align": "right",
+            "isNew": false,
+            "showText": false,
+            "barName": "ChocolateBar1"
+          },
+          "shFps": {
+            "index": 1,
+            "isNew": false,
+            "barName": "ChocolateBar2"
+          },
+          "Attune_Broker": {
+            "index": 4,
+            "isNew": false,
+            "barName": "ChocolateBar1"
+          },
+          "RangeDisplay": {
+            "index": 2,
+            "align": "right",
+            "isNew": false,
+            "showText": false,
+            "barName": "ChocolateBar1"
+          },
+          "Gold": {
+            "index": 1,
+            "align": "center",
+            "isNew": false,
+            "barName": "ChocolateBar1"
+          },
+          "zBrokerDurability": {
+            "index": 1,
+            "align": "right",
+            "isNew": false,
+            "barName": "ChocolateBar1"
+          },
+          "WeakAuras": {
+            "index": 5,
+            "align": "right",
+            "isNew": false,
+            "showText": false,
+            "barName": "ChocolateBar1"
+          },
+          "|cFFFFB366Ara|r Guild": {
+            "index": 2,
+            "align": "right",
+            "isNew": false,
+            "barName": "ChocolateBar2"
+          },
+          "shLatency": {
+            "index": 2,
+            "isNew": false,
+            "barName": "ChocolateBar2"
+          },
+          "Questie": {
+            "index": 6,
+            "isNew": false,
+            "barName": "ChocolateBar1"
+          },
+          "|cFFFFB366Ara|r Tradeskills": {
+            "index": 3,
+            "barName": "ChocolateBar2"
+          },
+          "CB_PlayedTime": {
+            "enabled": false,
+            "index": 3,
+            "isNew": false,
+            "barName": "ChocolateBar1"
+          },
+          "Details": {
+            "index": 2,
+            "isNew": false,
+            "barName": "ChocolateBar1"
+          },
+          "TradeLog": {
+            "align": "right",
+            "showText": false,
+            "barName": "ChocolateBar1"
+          },
+          "GarrisonMissionManager": {
+            "index": 5,
+            "barName": "ChocolateBar1"
+          },
+          "Dominos": {
+            "index": 3,
+            "align": "right",
+            "isNew": false,
+            "showText": false,
+            "barName": "ChocolateBar1"
+          },
+          "Broker_RaidSave": {
+            "index": 4,
+            "barName": "ChocolateBar2"
+          },
+          "Magic Runes": {
+            "align": "right",
+            "isNew": false,
+            "showText": false,
+            "barName": "ChocolateBar1"
+          },
+          "DetailsStreamer": {
+            "index": 3,
+            "isNew": false,
+            "barName": "ChocolateBar1"
+          },
+          "LoonBestInSlot": {
+            "index": 9,
+            "isNew": false,
+            "barName": "ChocolateBar1"
+          },
+          "Devilconfig": {
+            "index": 1,
+            "align": "center",
+            "isNew": false,
+            "barName": "ChocolateBar2"
+          },
+          "InvenUnitFrames": {
+            "index": 6,
+            "align": "right",
+            "isNew": false,
+            "showText": false,
+            "barName": "ChocolateBar1"
+          },
+          "InvenRaidFrames3": {
+            "index": 4,
+            "align": "right",
+            "isNew": false,
+            "showText": false,
+            "barName": "ChocolateBar1"
+          },
+          "MoreChocolate": {
+            "enabled": false,
+            "index": 2,
+            "align": "right",
+            "isNew": false,
+            "showIcon": false,
+            "barName": "ChocolateBar1",
+            "showText": false
+          },
+          "|cFFFFB366Ara|r Friends": {
+            "index": 1,
+            "align": "right",
+            "isNew": false,
+            "barName": "ChocolateBar2"
+          },
+          "ExRT": {
+            "index": 6,
+            "align": "right",
+            "showText": false,
+            "barName": "ChocolateBar1"
+          },
+          "Leatrix_Plus": {
+            "index": 7,
+            "isNew": false,
+            "barName": "ChocolateBar1"
+          },
+          "EquippedItemLevelTooltip": {
+            "index": 2,
+            "barName": "ChocolateBar1"
+          },
+          "Prat": {
+            "index": 7,
+            "align": "right",
+            "isNew": false,
+            "showText": false,
+            "barName": "ChocolateBar1"
+          },
+          "FindParty": {
+            "index": 3,
+            "barName": "ChocolateBar1"
+          },
+          "TellMeWhen": {
+            "align": "right",
+            "showText": false,
+            "barName": "ChocolateBar1"
+          },
+          "SavedInstances": {
+            "index": 1,
+            "isNew": false,
+            "barName": "ChocolateBar1"
+          },
+          "Broker_TipTac": {
+            "index": 8,
+            "align": "right",
+            "isNew": false,
+            "showText": false,
+            "barName": "ChocolateBar1"
+          },
+          "MinimapIcon": {
+            "index": 3,
+            "barName": "ChocolateBar1"
+          },
+          "InvenRaidFrames2": {
+            "index": 1,
+            "align": "right",
+            "showText": false,
+            "barName": "ChocolateBar1"
+          },
+          "BrokerXPBar": {
+            "index": 1,
+            "align": "center",
+            "barName": "ChocolateBar1"
+          },
+          "QuestPointer": {
+            "enabled": false,
+            "align": "right",
+            "showText": false,
+            "barName": "ChocolateBar1"
+          },
+          "GPS": {
+            "index": 8,
+            "isNew": false,
+            "barName": "ChocolateBar1"
+          },
+          "System": {
+            "index": 7,
+            "isNew": false,
+            "barName": "ChocolateBar1"
+          },
+          "Friends": {
+            "index": 9,
+            "isNew": false,
+            "barName": "ChocolateBar1"
+          },
+          "GatherMate2": {
+            "index": 7,
+            "align": "right",
+            "isNew": false,
+            "showText": false,
+            "barName": "ChocolateBar1"
+          },
+          "Hekili": {
+            "index": 9,
+            "isNew": false,
+            "barName": "ChocolateBar1"
+          },
+          "Equipment": {
+            "index": 4,
+            "isNew": false,
+            "barName": "ChocolateBar1"
+          },
+          "Broker_Money": {
+            "index": 2,
+            "align": "right",
+            "isNew": false,
+            "showIcon": false,
+            "barName": "ChocolateBar1"
+          },
+          "Volume": {
+            "index": 11,
+            "isNew": false,
+            "barName": "ChocolateBar1"
+          },
+          "BagnonLauncher": {
+            "index": 6,
+            "align": "right",
+            "isNew": false,
+            "showText": false,
+            "barName": "ChocolateBar1"
+          },
+          "Masque": {
+            "enabled": false,
+            "align": "right",
+            "isNew": false,
+            "showText": false,
+            "barName": "ChocolateBar1"
+          }
+        },
+        "gap": 5,
+        "fontPath": "Fonts\\2002.TTF",
+        "fontSize": 12.5,
+        "barSettings": {
+          "ChocolateBar1": {
+            "barOffy": 1,
+            "barPoint": "RIGHT",
+            "align": "bottom",
+            "width": 3000,
+            "barOffx": 0
+          },
+          "ChocolateBar2": {
+            "index": 1,
+            "barName": "ChocolateBar2"
+          }
+        },
+        "iconSize": 0.65,
+        "combathidebar": false
+      },
+      "profile_labels": [
+        "loaf",
+        "sugar",
+        "Wide",
+        "ShapaWIde",
+        "ShapaW2",
+        "ShapaSH",
+        "ShapaNormal",
+        "Normal",
+        "ShapaHigh",
+        "ShapaWide",
+        "Devil",
+        "ssad",
+        "shapaW",
+        "devil",
+        "wide",
+        "Default",
+        "ShapaWIID",
+        "shapa",
+        "ShapaWH",
+        "dda"
+      ]
+    }
+  }
+}

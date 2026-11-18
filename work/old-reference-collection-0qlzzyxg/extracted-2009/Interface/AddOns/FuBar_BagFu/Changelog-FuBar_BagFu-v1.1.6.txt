@@ -1,0 +1,12 @@
+tag v1.1.6
+e7bceb19a5cf805067ca81853ed2e72cfdc85dd7
+phyber <phyber@wowace>
+2009-08-06 12:49:52 +0100
+
+Tagging as v1.1.6
+
+
+--------------------
+
+phyber:
+	- Updated TOC for 3.2

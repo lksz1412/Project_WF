@@ -1,0 +1,12 @@
+## Interface: 30000
+## Title: |cffffff9a블링크|r 나를불러주세요~
+## Notes: 자신의 이름이 채팅창에 나오면 강조해줍니다.
+## OptionalDeps: Blink, sct, LibScroller-1.0, MikScrollingBattleText, Parrot
+## SavedVariables: bcmDB
+
+libs\LibStub\LibStub.lua
+libs\LibScroller-1.0\lib.xml
+libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
+libs\LibRaidComm-1.0\LibRaidComm-1.0
+
+BlinkCallMe.lua

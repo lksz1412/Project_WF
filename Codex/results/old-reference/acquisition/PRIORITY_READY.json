@@ -1,0 +1,215 @@
+{
+  "postID": 45,
+  "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=45",
+  "detailPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-45.html",
+  "screenshotIframe": {
+    "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=45&tempridx=&count=4",
+    "iframeLiteral": "<iframe frameborder=\"0\" framespacing=\"0\" id=\"screenshot\" scrolling=\"no\" src=\"imagelist.iframe.php?ridx=45&amp;tempridx=&amp;count=4\"></iframe>",
+    "sourceLocation": {
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-45.html",
+      "selector": "iframe#screenshot",
+      "line": 1238
+    },
+    "provenance": {
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=45&tempridx=&count=4",
+      "finalURL": null,
+      "HTTP": 200,
+      "time": "2026-11-17T22:59:02.2175486+09:00",
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-45.html",
+      "bytes": 3379,
+      "SHA256": "2A73FB23D45249EC2204D5E9175D431822D9EC72BE017311EABE1115060E1A08",
+      "state": "reused",
+      "metadata": {
+        "url": null,
+        "status": 200,
+        "time": "2026-11-17T22:59:02.2175486+09:00",
+        "contentType": [
+          "text/html; charset=UTF-8"
+        ]
+      },
+      "encoding": "UTF-8 decoded saved text"
+    },
+    "state": "parsed",
+    "text": "\n\n\n\n\n\n스크린샷\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+    "links": [
+      {
+        "href": "javascript:void(0);",
+        "onclick": null,
+        "text": "",
+        "line": 28
+      },
+      {
+        "href": "javascript:void(0);",
+        "onclick": "viewImage('wow/addonpds/image/1103_5258.jpg');",
+        "text": "",
+        "line": 33
+      },
+      {
+        "href": "javascript:void(0);",
+        "onclick": "viewImage('wow/addonpds/image/1103_7511.jpg');",
+        "text": "",
+        "line": 40
+      },
+      {
+        "href": "javascript:void(0);",
+        "onclick": "viewImage('wow/addonpds/image/1103_6784.jpg');",
+        "text": "",
+        "line": 47
+      },
+      {
+        "href": "javascript:void(0);",
+        "onclick": "viewImage('wow/addonpds/image/1103_7276.jpg');",
+        "text": "",
+        "line": 54
+      },
+      {
+        "href": "javascript:void(0);",
+        "onclick": null,
+        "text": "",
+        "line": 61
+      }
+    ],
+    "literalPublicDownloadURLs": [],
+    "imageCount": 4
+  },
+  "DOMorder": [
+    {
+      "postID": 45,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_5258.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/1103_5258.jpg');",
+      "fullURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_5258.jpg",
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-45.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": null,
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-63c91ffc5fd0fa976a33.jpg",
+      "HTTP": 200,
+      "time": "2026-11-17T14:01:50.0602304Z",
+      "bytes": 136532,
+      "SHA256": "1E0C95557E8525EF2533F49CDBB6A46BEFAC55EC4BDF4A912E351939BE87CFC0",
+      "contentType": "image/jpeg",
+      "finalURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_5258.jpg",
+      "width": 867,
+      "height": 694,
+      "imageFormat": "JPEG",
+      "decodeStatus": "verified"
+    },
+    {
+      "postID": 45,
+      "section": "screenshot",
+      "DOMordinal": 2,
+      "thumbURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_7511.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/1103_7511.jpg');",
+      "fullURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_7511.jpg",
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-45.html",
+        "selector": "screenshot img",
+        "line": 40
+      },
+      "error": null,
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-872294b062c9ecefcc9a.jpg",
+      "HTTP": 200,
+      "time": "2026-11-17T14:01:50.7696473Z",
+      "bytes": 109521,
+      "SHA256": "0845002AEFE13C2F1FCF2FB975525C671D66A64A9EFEE140F407D5FA1BE56A9E",
+      "contentType": "image/jpeg",
+      "finalURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_7511.jpg",
+      "width": 867,
+      "height": 542,
+      "imageFormat": "JPEG",
+      "decodeStatus": "verified"
+    },
+    {
+      "postID": 45,
+      "section": "screenshot",
+      "DOMordinal": 3,
+      "thumbURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_6784.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/1103_6784.jpg');",
+      "fullURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_6784.jpg",
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-45.html",
+        "selector": "screenshot img",
+        "line": 47
+      },
+      "error": null,
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-cdd079d7e1f8c81286f2.jpg",
+      "HTTP": 200,
+      "time": "2026-11-17T14:01:51.4427143Z",
+      "bytes": 155513,
+      "SHA256": "F86E2FDCFCC97E791FDFA5A310CF23DDCDA26796FBAC32ABBED4E561055ADD63",
+      "contentType": "image/jpeg",
+      "finalURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_6784.jpg",
+      "width": 900,
+      "height": 720,
+      "imageFormat": "JPEG",
+      "decodeStatus": "verified"
+    },
+    {
+      "postID": 45,
+      "section": "screenshot",
+      "DOMordinal": 4,
+      "thumbURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_7276.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/1103_7276.jpg');",
+      "fullURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_7276.jpg",
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-45.html",
+        "selector": "screenshot img",
+        "line": 54
+      },
+      "error": null,
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-d9ab10878c7e954fd5e4.jpg",
+      "HTTP": 200,
+      "time": "2026-11-17T14:01:52.1743249Z",
+      "bytes": 95482,
+      "SHA256": "304A6B36ACD94B065142B8E8ADBA1EC99787BB649885D136D5CE707C1B2D5151",
+      "contentType": "image/jpeg",
+      "finalURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_7276.jpg",
+      "width": 800,
+      "height": 500,
+      "imageFormat": "JPEG",
+      "decodeStatus": "verified"
+    }
+  ],
+  "fourthEntry": {
+    "postID": 45,
+    "section": "screenshot",
+    "DOMordinal": 4,
+    "thumbURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_7276.jpg",
+    "viewerLiteral": "viewImage('wow/addonpds/image/1103_7276.jpg');",
+    "fullURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_7276.jpg",
+    "alt": "",
+    "title": null,
+    "sourceLocation": {
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-45.html",
+      "selector": "screenshot img",
+      "line": 54
+    },
+    "error": null,
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-d9ab10878c7e954fd5e4.jpg",
+    "HTTP": 200,
+    "time": "2026-11-17T14:01:52.1743249Z",
+    "bytes": 95482,
+    "SHA256": "304A6B36ACD94B065142B8E8ADBA1EC99787BB649885D136D5CE707C1B2D5151",
+    "contentType": "image/jpeg",
+    "finalURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_7276.jpg",
+    "width": 800,
+    "height": 500,
+    "imageFormat": "JPEG",
+    "decodeStatus": "verified"
+  },
+  "postExtract": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\posts\\idx-45.md",
+  "catalogPath": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\idx-45.json",
+  "note": "Actual iframe DOM order; no content interpretation or Alpha fidelity claim."
+}

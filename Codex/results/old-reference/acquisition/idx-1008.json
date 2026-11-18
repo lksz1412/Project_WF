@@ -1,0 +1,286 @@
+{
+  "postID": 1008,
+  "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=1008",
+  "row": {
+    "postID": 1008,
+    "page": 2,
+    "rowOrdinal": 13,
+    "title": "(힐러용) Forever 표 짜집기 [통합UI] 6",
+    "rowText": "2 (힐러용) Forever 표 짜집기 [통합UI] 6 Devil UI 기반 까마귀의눈 3265 3 02-26",
+    "sourceAnchor": "javascript:addonMove('detail.php', 'idx->1008', 'leave->idx,listtype,ext', 'rurl');",
+    "sourceLocation": {
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\list-page2.html",
+      "selector": "table.list tr a[href]",
+      "line": 1334
+    }
+  },
+  "detailProvenance": {
+    "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=1008",
+    "time": "2026-11-17T14:03:02.7735042Z",
+    "contentType": "text/html; charset=UTF-8",
+    "HTTP": 200,
+    "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=1008",
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-1008.html",
+    "state": "acquired",
+    "attempts": 1,
+    "commandExitCode": 0,
+    "encoding": "IWR decoded to UTF-8",
+    "bytes": 226930,
+    "SHA256": "C37775DF7B5B7FCF5854A4188592DD9346FC2E039743FFCE7AAD2912CA8EAE76"
+  },
+  "acquisitionState": "parsed",
+  "A1read": false,
+  "imageObserved": false,
+  "sections": {
+    "addonAddon": {
+      "state": "parsed",
+      "text": "1) 3개의 분할압축파일은 모두 다운받습니다.\n\n\n\n2) 와우 기존 폴더의 WTF , Interface 폴더를 미리 삭제하신후 와우 폴더에 압축을 풀어줍니다.\n\n\n\n3) WTF 폴더내에 계정명, 케릭터명 을 자신의 계정명과 케릭터 명으로 바꿔줍니다.\n\n\n\n\n\n\n\n* 데빌 원 제작자분께 허락을 받지 못한점 죄송하고..\n\n  혼자 편한대로 짜집기해 쓰다가 공유요청으로 올려봅니다만\n\n  문제가 된다면 바로 삭제하겠습니다.",
+      "fragmentPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\idx-1008-addonAddon.html",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-1008.html",
+        "selector": "#addonAddon",
+        "line": 1244
+      },
+      "links": []
+    },
+    "addonVersion": {
+      "state": "empty",
+      "text": "",
+      "fragmentPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\idx-1008-addonVersion.html",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-1008.html",
+        "selector": "#addonVersion",
+        "line": 1255
+      },
+      "links": []
+    }
+  },
+  "iframes": {
+    "screenshot": {
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=1008&tempridx=&count=2",
+      "iframeLiteral": "<iframe frameborder=\"0\" framespacing=\"0\" id=\"screenshot\" scrolling=\"no\" src=\"imagelist.iframe.php?ridx=1008&amp;tempridx=&amp;count=2\"></iframe>",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-1008.html",
+        "selector": "iframe#screenshot",
+        "line": 1238
+      },
+      "provenance": {
+        "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=1008&tempridx=&count=2",
+        "time": "2026-11-17T14:03:03.3392397Z",
+        "contentType": "text/html; charset=UTF-8",
+        "HTTP": 200,
+        "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=1008&tempridx=&count=2",
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-1008.html",
+        "state": "acquired",
+        "attempts": 1,
+        "commandExitCode": 0,
+        "encoding": "IWR decoded to UTF-8",
+        "bytes": 2697,
+        "SHA256": "CB6D747567644A1E29B9B9BE40F1DF88FA50923FCC3744D62A40C5F6F32BC1E7"
+      },
+      "state": "parsed",
+      "text": "\n\n\n\n\n\n스크린샷\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "links": [
+        {
+          "href": "javascript:void(0);",
+          "onclick": null,
+          "text": "",
+          "line": 28
+        },
+        {
+          "href": "javascript:void(0);",
+          "onclick": "viewImage('wow/addonpds/image/0226_5246.jpg');",
+          "text": "",
+          "line": 33
+        },
+        {
+          "href": "javascript:void(0);",
+          "onclick": "viewImage('wow/addonpds/image/0226_3943.jpg');",
+          "text": "",
+          "line": 40
+        },
+        {
+          "href": "javascript:void(0);",
+          "onclick": null,
+          "text": "",
+          "line": 47
+        }
+      ],
+      "literalPublicDownloadURLs": [],
+      "imageCount": 2
+    },
+    "fileInfo": {
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=1008&tempridx=&count=3",
+      "iframeLiteral": "<iframe frameborder=\"0\" id=\"fileInfo\" src=\"filelist.iframe.php?mode=view&amp;ridx=1008&amp;tempridx=&amp;count=3\"></iframe>",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-1008.html",
+        "selector": "iframe#fileInfo",
+        "line": 1261
+      },
+      "provenance": {
+        "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=1008&tempridx=&count=3",
+        "time": "2026-11-17T14:03:04.8722960Z",
+        "contentType": "text/html; charset=UTF-8",
+        "HTTP": 200,
+        "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=1008&tempridx=&count=3",
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-1008.html",
+        "state": "acquired",
+        "attempts": 1,
+        "commandExitCode": 0,
+        "encoding": "IWR decoded to UTF-8",
+        "bytes": 3199,
+        "SHA256": "686838A4AF8D335AE0B5E0DF8CE4225EF2089018CCB3C8606FE1B6692427BFFD"
+      },
+      "state": "parsed",
+      "text": "\n\n\n\n\n\n파일 정보\n\n\n\n\n\n\n\n\n\n\n\n\n파일\n\n\n클라이언트 버전\n\n\n다운로드\n\n\n등록일\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\nForever.a01\n\n\n\n\n\n\n2.3.3\n\n\n1795\n\n\n2008-02-26\n\n\n\n\n\n\n\n\n\n\nForever.a00\n\n\n\n\n\n\n2.3.3\n\n\n696\n\n\n2008-02-26\n\n\n\n\n\n\n\n\n\n\nForever.alz\n\n\n\n\n\n\n2.3.3\n\n\n774\n\n\n2008-02-26\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "links": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Forever.a01",
+          "line": 40
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Forever.a00",
+          "line": 50
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Forever.alz",
+          "line": 60
+        }
+      ],
+      "literalPublicDownloadURLs": [],
+      "fileRows": [
+        {
+          "text": "Forever.a01 2.3.3 1795 2008-02-26",
+          "cells": [
+            "Forever.a01",
+            "2.3.3",
+            "1795",
+            "2008-02-26"
+          ],
+          "line": 37
+        },
+        {
+          "text": "Forever.a00 2.3.3 696 2008-02-26",
+          "cells": [
+            "Forever.a00",
+            "2.3.3",
+            "696",
+            "2008-02-26"
+          ],
+          "line": 47
+        },
+        {
+          "text": "Forever.alz 2.3.3 774 2008-02-26",
+          "cells": [
+            "Forever.alz",
+            "2.3.3",
+            "774",
+            "2008-02-26"
+          ],
+          "line": 57
+        }
+      ]
+    }
+  },
+  "images": [
+    {
+      "postID": 1008,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/0226_5246.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/0226_5246.jpg');",
+      "fullURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/0226_5246.jpg",
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-1008.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": null,
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-5e4d22f3387e1da3da7d.jpg",
+      "HTTP": 200,
+      "time": "2026-11-17T14:03:04.3308907Z",
+      "bytes": 282543,
+      "SHA256": "9598D3C6031D8EFEF27FC7999DD38F9CE0708CE04E241140AE4360ACD3C6D14C",
+      "contentType": "image/jpeg",
+      "finalURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/0226_5246.jpg",
+      "width": 1280,
+      "height": 1024,
+      "imageFormat": "JPEG",
+      "decodeStatus": "verified"
+    },
+    {
+      "postID": 1008,
+      "section": "screenshot",
+      "DOMordinal": 2,
+      "thumbURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/s_0226_3943.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/0226_3943.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-1008.html",
+        "selector": "screenshot img",
+        "line": 40
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    }
+  ],
+  "title": "(힐러용) Forever 표 짜집기",
+  "metadataLiteral": "(힐러용) Forever 표 짜집기\nDevil UI 기반\n애드온 등록자\n까마귀의눈\n최종 업데이트\n2008.02.26\n카테고리\n통합UI\n클라이언트 버전\n2.3.3\n애드온 버전\n080226\n조회수\n11670\n추천수\n3\n다운로드 수\n3265\n관심등록 수\n12\n다운로드\n관심 애드온 등록",
+  "metadataRows": [
+    {
+      "label": "애드온 등록자",
+      "value": "까마귀의눈",
+      "line": 1181
+    },
+    {
+      "label": "최종 업데이트",
+      "value": "2008.02.26",
+      "line": 1185
+    },
+    {
+      "label": "카테고리",
+      "value": "통합UI",
+      "line": 1189
+    },
+    {
+      "label": "클라이언트 버전",
+      "value": "2.3.3",
+      "line": 1196
+    },
+    {
+      "label": "애드온 버전",
+      "value": "080226",
+      "line": 1200
+    },
+    {
+      "label": "조회수",
+      "value": "11670",
+      "line": 1207
+    },
+    {
+      "label": "추천수",
+      "value": "3",
+      "line": 1211
+    },
+    {
+      "label": "다운로드 수",
+      "value": "3265",
+      "line": 1215
+    },
+    {
+      "label": "관심등록 수",
+      "value": "12",
+      "line": 1219
+    }
+  ]
+}

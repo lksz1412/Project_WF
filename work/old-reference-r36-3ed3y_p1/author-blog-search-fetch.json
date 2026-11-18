@@ -1,0 +1,16 @@
+[
+  {
+    "localpath": "D:/Projects/Project_WF/work/old-reference-r36-3ed3y_p1/author-blog-x2-search.html",
+    "time": "2026-11-17T14:35:19.5053253Z",
+    "HTTP": 200,
+    "name": "author-blog-x2-search",
+    "sourceURL": "https://blog.naver.com/PostSearchList.naver?SearchText=DevilUI-X2&blogId=nicecurry"
+  },
+  {
+    "localpath": "D:/Projects/Project_WF/work/old-reference-r36-3ed3y_p1/author-blog-305-search.html",
+    "time": "2026-11-17T14:35:19.6206135Z",
+    "HTTP": 200,
+    "name": "author-blog-305-search",
+    "sourceURL": "https://blog.naver.com/PostSearchList.naver?SearchText=DevilUI%203.05&blogId=nicecurry"
+  }
+]

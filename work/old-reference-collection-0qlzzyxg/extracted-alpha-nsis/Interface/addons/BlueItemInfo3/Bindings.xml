@@ -1,0 +1,11 @@
+<Bindings>
+  	<Binding name="BLUEITEMINFO3_TOGGLE" header="BLUEITEMINFO3">
+  		BlueItemInfo3:ToggleUI();
+  	</Binding>
+	<Binding name="BLUEITEMINFO3_SEARCH">
+  		BlueItemInfo3:ToggleSearch();
+  	</Binding>
+	<Binding name="BLUEITEMINFO3_OPTION">
+  		BlueItemInfo3:ToggleOption();
+  	</Binding>
+</Bindings>

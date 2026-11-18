@@ -1,0 +1,20 @@
+## Interface: 30200
+## Title: Inven Aggro Meter
+## Title-koKR: |cFF669900I|cFFFFFFFFnven |cFF669900A|cFFFFFFFFggro |cFF669900M|cFFFFFFFFeter|r
+## Notes: 인벤 어그로 미터기
+## Author: Inven - InTheBlue
+## Version: 1.5
+## X-Category: Combat
+## X-Website: http://wow.inven.co.kr
+## OptionalDeps: LibStub, CallbackHandler-1.0, LibSharedMedia-3.0, LibRaidComm-1.0, LibDataBroker-1.1, LibMapButton-1.1
+## SavedVariables: InvenAggroMeterDB
+
+libs\LibStub\LibStub.lua
+libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
+libs\LibSharedMedia-3.0\LibSharedMedia-3.0.lua
+libs\LibRaidComm-1.0\LibRaidComm-1.0
+libs\LibDataBroker-1.1\LibDataBroker-1.1.lua
+libs\LibMapButton-1.1\LibMapButton-1.1.lua
+
+Core.lua
+GUI.lua

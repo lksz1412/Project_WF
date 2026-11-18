@@ -1,0 +1,220 @@
+{
+  "state": "filtered-delivery-not-fullsource",
+  "sourceCount": 8,
+  "excludedContainerCount": 12,
+  "excludedEntryCount": 326,
+  "excludedScalarLeafCount": 326,
+  "excludedKeyPaths": [
+    {
+      "sourceID": "idx1932-rar-Bartender4",
+      "path": [
+        "Bartender4DB",
+        "namespaces",
+        "BagBar",
+        "profileKeys"
+      ],
+      "reason": "character/account profileselector mapping",
+      "entryCount": 9,
+      "scalarLeafCount": 9,
+      "sourceSHA256": "9BD40563CFC9070B11E0849761CACCCE35065892155F3B17A049E18157885165",
+      "sourceSpan": [
+        5,
+        15
+      ],
+      "ignoredRawTypedCache": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\new-selected-literal-full-typed.json"
+    },
+    {
+      "sourceID": "idx1932-rar-Bartender4",
+      "path": [
+        "Bartender4DB",
+        "namespaces",
+        "MicroMenu",
+        "profileKeys"
+      ],
+      "reason": "character/account profileselector mapping",
+      "entryCount": 9,
+      "scalarLeafCount": 9,
+      "sourceSHA256": "9BD40563CFC9070B11E0849761CACCCE35065892155F3B17A049E18157885165",
+      "sourceSpan": [
+        38,
+        48
+      ],
+      "ignoredRawTypedCache": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\new-selected-literal-full-typed.json"
+    },
+    {
+      "sourceID": "idx1932-rar-Bartender4",
+      "path": [
+        "Bartender4DB",
+        "namespaces",
+        "ActionBars",
+        "profileKeys"
+      ],
+      "reason": "character/account profileselector mapping",
+      "entryCount": 9,
+      "scalarLeafCount": 9,
+      "sourceSHA256": "9BD40563CFC9070B11E0849761CACCCE35065892155F3B17A049E18157885165",
+      "sourceSpan": [
+        65,
+        75
+      ],
+      "ignoredRawTypedCache": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\new-selected-literal-full-typed.json"
+    },
+    {
+      "sourceID": "idx1932-rar-Bartender4",
+      "path": [
+        "Bartender4DB",
+        "namespaces",
+        "XPBar",
+        "profileKeys"
+      ],
+      "reason": "character/account profileselector mapping",
+      "entryCount": 9,
+      "scalarLeafCount": 9,
+      "sourceSHA256": "9BD40563CFC9070B11E0849761CACCCE35065892155F3B17A049E18157885165",
+      "sourceSpan": [
+        181,
+        191
+      ],
+      "ignoredRawTypedCache": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\new-selected-literal-full-typed.json"
+    },
+    {
+      "sourceID": "idx1932-rar-Bartender4",
+      "path": [
+        "Bartender4DB",
+        "namespaces",
+        "StanceBar",
+        "profileKeys"
+      ],
+      "reason": "character/account profileselector mapping",
+      "entryCount": 9,
+      "scalarLeafCount": 9,
+      "sourceSHA256": "9BD40563CFC9070B11E0849761CACCCE35065892155F3B17A049E18157885165",
+      "sourceSpan": [
+        198,
+        208
+      ],
+      "ignoredRawTypedCache": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\new-selected-literal-full-typed.json"
+    },
+    {
+      "sourceID": "idx1932-rar-Bartender4",
+      "path": [
+        "Bartender4DB",
+        "namespaces",
+        "PetBar",
+        "profileKeys"
+      ],
+      "reason": "character/account profileselector mapping",
+      "entryCount": 9,
+      "scalarLeafCount": 9,
+      "sourceSHA256": "9BD40563CFC9070B11E0849761CACCCE35065892155F3B17A049E18157885165",
+      "sourceSpan": [
+        227,
+        237
+      ],
+      "ignoredRawTypedCache": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\new-selected-literal-full-typed.json"
+    },
+    {
+      "sourceID": "idx1932-rar-Bartender4",
+      "path": [
+        "Bartender4DB",
+        "namespaces",
+        "RepBar",
+        "profileKeys"
+      ],
+      "reason": "character/account profileselector mapping",
+      "entryCount": 9,
+      "scalarLeafCount": 9,
+      "sourceSHA256": "9BD40563CFC9070B11E0849761CACCCE35065892155F3B17A049E18157885165",
+      "sourceSpan": [
+        255,
+        265
+      ],
+      "ignoredRawTypedCache": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\new-selected-literal-full-typed.json"
+    },
+    {
+      "sourceID": "idx1932-rar-Bartender4",
+      "path": [
+        "Bartender4DB",
+        "profileKeys"
+      ],
+      "reason": "character/account profileselector mapping",
+      "entryCount": 9,
+      "scalarLeafCount": 9,
+      "sourceSHA256": "9BD40563CFC9070B11E0849761CACCCE35065892155F3B17A049E18157885165",
+      "sourceSpan": [
+        272,
+        282
+      ],
+      "ignoredRawTypedCache": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\new-selected-literal-full-typed.json"
+    },
+    {
+      "sourceID": "idx1932-rar-SisterChatMods",
+      "path": [
+        "SCMDataBase"
+      ],
+      "reason": "distribution nickname/class database roster",
+      "entryCount": 254,
+      "scalarLeafCount": 254,
+      "sourceSHA256": "660B7DA3888DA9EFE59A6E064EC2EF5F92B337DD554C6A7BE03C7F96EC37FB3A",
+      "sourceSpan": [
+        12,
+        267
+      ],
+      "ignoredRawTypedCache": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\new-selected-literal-full-typed.json"
+    },
+    {
+      "sourceID": "idx3461-sfx-kgPanels",
+      "path": [
+        "kgPanelsDB",
+        "profileKeys"
+      ],
+      "reason": "character/account profileselector mapping",
+      "entryCount": 0,
+      "scalarLeafCount": 0,
+      "sourceSHA256": "F118068D3672922549B4B4B995121C08006683531B57AC258C88C936D0945274",
+      "sourceSpan": [
+        7,
+        8
+      ],
+      "ignoredRawTypedCache": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\new-selected-literal-full-typed.json"
+    },
+    {
+      "sourceID": "idx3461-sfx-Dominos",
+      "path": [
+        "DominosDB",
+        "profileKeys"
+      ],
+      "reason": "character/account profileselector mapping",
+      "entryCount": 0,
+      "scalarLeafCount": 0,
+      "sourceSHA256": "56ABF9C957675967AE43F5B0E2098290351C1893E0C729833CBD9A2258D4DA55",
+      "sourceSpan": [
+        3,
+        4
+      ],
+      "ignoredRawTypedCache": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\new-selected-literal-full-typed.json"
+    },
+    {
+      "sourceID": "idx3461-sfx-Masque",
+      "path": [
+        "MasqueDB",
+        "profileKeys"
+      ],
+      "reason": "character/account profileselector mapping",
+      "entryCount": 0,
+      "scalarLeafCount": 0,
+      "sourceSHA256": "91989209E757C432026B6BF06D13872AB8A7B1EBE6F9080F8ED718BE416409B3",
+      "sourceSpan": [
+        7,
+        8
+      ],
+      "ignoredRawTypedCache": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\new-selected-literal-full-typed.json"
+    }
+  ],
+  "rawIgnoredTypedCache": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\new-selected-literal-full-typed.json",
+  "rawIgnoredTypedCacheSHA256": "49C1F58C0E3D11EC14A34D799BA6FE9844616E63F93AB416E9636D5DC7008758",
+  "originalCompactIgnoredBackup": "D:\\Projects\\Project_WF\\work\\old-reference-r36-ij56h5zk\\selected-new-literal-settings-compact.json.before-filter",
+  "originalCompactSHA256": "A6102108694272E763DADBDFCB17B0B6C18F1623D2C26E30B3BA7231B306B2FB",
+  "retainedDataGate": "All8 actualparsedsource tables filtered recursively; exacttypedrestore equality for every retained setting; no excludedcontainer in settings or query/schema keysets. Fullparse states unchanged;3V42boundaries remain.",
+  "sourceIdentityNotice": "These are distribution mappings; no claim of currentuser identity."
+}

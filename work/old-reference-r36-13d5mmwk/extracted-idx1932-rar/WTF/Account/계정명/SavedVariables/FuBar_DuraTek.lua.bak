@@ -1,0 +1,9 @@
+
+DuraTek = {
+	["profiles"] = {
+		["Default"] = {
+			["detachedTooltip"] = {
+			},
+		},
+	},
+}

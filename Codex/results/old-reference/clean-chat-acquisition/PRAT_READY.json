@@ -1,0 +1,73 @@
+{
+  "tag": "3.9.117",
+  "commit": "3b02cf8595ebd1c4c458d8b698ef5e7d042b046e",
+  "receipts": [
+    {
+      "finalURL": "https://release-assets.githubusercontent.com/github-production-release-asset/379119807/c507ffbf-b218-4ca8-a6d9-6a9c606288f6?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-11-17T17%3A06%3A22Z&rscd=attachment%3B+filename%3DPrat-3.0-3.9.117.zip&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-11-17T16%3A05%3A52Z&ske=2026-11-17T17%3A06%3A22Z&sks=b&skv=2018-11-09&sig=vpr7pfvf1%2FwYRy1buroGdoNbZGj%2FjaFFDOoOpErYuwk%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5NDkzMTkwMCwibmJmIjoxNzk0OTMxNjAwLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.RPOVwrI1svsy3i0Rs5EpsAhZWXF2w_veCysL9EenBEU&response-content-disposition=attachment%3B%20filename%3DPrat-3.0-3.9.117.zip&response-content-type=application%2Foctet-stream",
+      "time": "2026-11-17T16:06:42.6501045Z",
+      "contentType": "application/octet-stream",
+      "rateRemaining": "",
+      "HTTP": 200,
+      "sourceURL": "https://github.com/Legacy-of-Sylvanaar/prat-3-0/releases/download/3.9.117/Prat-3.0-3.9.117.zip",
+      "URLbasis": "literal official GitHub release asset",
+      "localpath": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\prat-Prat-3.0-3.9.117.zip",
+      "attempts": 1,
+      "commandExitCode": 0,
+      "state": "acquired",
+      "bytes": 1547917,
+      "SHA256": "D72BAEF9C99BB1583B269ABD85088BCB957D9A0D8CA57C323144442875084DB1"
+    },
+    {
+      "finalURL": "https://release-assets.githubusercontent.com/github-production-release-asset/379119807/0a7a2275-90f3-4cc8-bb9a-108aecf4f529?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-11-17T17%3A04%3A48Z&rscd=attachment%3B+filename%3Drelease.json&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-11-17T16%3A03%3A51Z&ske=2026-11-17T17%3A04%3A48Z&sks=b&skv=2018-11-09&sig=nAYgcWXnq4EuiN5j2%2B0RoPp%2B%2B0V2nAWp5lV6CoyZnMM%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5NDkzMTkwNCwibmJmIjoxNzk0OTMxNjA0LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.lXpfM417SWjDEkCRj0UAdIjdvIW_LVty7iLcgWgKGFI&response-content-disposition=attachment%3B%20filename%3Drelease.json&response-content-type=application%2Foctet-stream",
+      "time": "2026-11-17T16:06:43.9381668Z",
+      "contentType": "application/octet-stream",
+      "rateRemaining": "",
+      "HTTP": 200,
+      "sourceURL": "https://github.com/Legacy-of-Sylvanaar/prat-3-0/releases/download/3.9.117/release.json",
+      "URLbasis": "literal official GitHub release asset",
+      "localpath": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\prat-release.json",
+      "attempts": 1,
+      "commandExitCode": 0,
+      "state": "acquired",
+      "bytes": 458,
+      "SHA256": "C94AAD85D12D8CEF02E94FE2075CDBDFA194CCED8B846514AF1926ECDD11C01F"
+    },
+    {
+      "finalURL": "https://api.github.com/repos/Legacy-of-Sylvanaar/prat-3-0/commits/3b02cf8595ebd1c4c458d8b698ef5e7d042b046e",
+      "time": "2026-11-17T16:06:44.8971592Z",
+      "contentType": "application/json; charset=utf-8",
+      "rateRemaining": "46",
+      "HTTP": 200,
+      "sourceURL": "https://api.github.com/repos/Legacy-of-Sylvanaar/prat-3-0/commits/3b02cf8595ebd1c4c458d8b698ef5e7d042b046e",
+      "URLbasis": "literal tag commitURL",
+      "localpath": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\prat-3.9.117-commit.json",
+      "attempts": 1,
+      "commandExitCode": 0,
+      "state": "acquired",
+      "bytes": 6970,
+      "SHA256": "F0550B1D1DD1680FA7A3976880F98F0C8037C81F234E0BA63F700D1A55BD0909"
+    }
+  ],
+  "archive": {
+    "source": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\prat-Prat-3.0-3.9.117.zip",
+    "SHA256": "D72BAEF9C99BB1583B269ABD85088BCB957D9A0D8CA57C323144442875084DB1",
+    "bytes": 1547917,
+    "label": "prat-3.9.117-release",
+    "CRCtestRuns": 1,
+    "unsafe": [],
+    "extractionState": "passed",
+    "CRCbadMember": null,
+    "CRCstate": "passed",
+    "files": 208,
+    "directories": 39,
+    "uncompressedBytes": 3750998,
+    "compressedBytes": 1509991,
+    "extractionRoot": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-prat-3.9.117-release",
+    "extractedFiles": 208,
+    "extractedBytes": 3750998,
+    "reparsePaths": [],
+    "inventoryPath": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\prat-3.9.117-release-members.json"
+  },
+  "catalog": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-acquisition\\prat-3.9.117-release-source-catalog.json",
+  "CFbyteEquality": "unverified; filename/version correlation only"
+}

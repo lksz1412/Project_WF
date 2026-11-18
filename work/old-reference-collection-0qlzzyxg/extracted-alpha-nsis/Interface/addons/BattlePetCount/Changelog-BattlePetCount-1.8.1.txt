@@ -1,0 +1,8 @@
+2015-02-26  Robin Schoonover  <robin@cornhooves.org>
+
+[ce1a789edda6] [1.8.1]
+* Locales/deDE.lua, Locales/zhTW.lua:
+
+Update deDE and zhTW localizations.
+
+

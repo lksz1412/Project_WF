@@ -1,0 +1,5 @@
+﻿## Interface: 60100
+## Title: !QuestItemButtonFix
+## Notes: Make another quest item button and bye quest item button taint.
+## Author: nbluewiz(everfinale@gmail.com)
+!QuestItemButtonFix.lua

@@ -1,0 +1,23 @@
+{
+  "state": "exact46subset-and-filtered20file-data-ready",
+  "subsetGate": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\X2_SUBSET_READY.json",
+  "selectedInventory": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\selected-member-inventory.json",
+  "literalParseOverview": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\x2-selected-literal-parse-overview.json",
+  "filteredFourVariantData": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\x2-four-variant-settings-compact.json",
+  "exclusions": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\x2-four-variant-exclusions.json",
+  "selectedAssetBytes": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\selected-asset-byte-headers.json",
+  "counts": {
+    "subsetExtractedFiles": 46,
+    "wholeArchiveListedFiles": 4217,
+    "wholeArchiveUnsafeNames": 288,
+    "selectedLuaFilesFullyParsed": 20,
+    "variants": 4,
+    "LuaFilesPerVariant": 5,
+    "excludedRosterContainers": 4,
+    "excludedRosterEntries": 90,
+    "selectedTGAHeaderRecords": 8
+  },
+  "wholeArchiveState": "BLOCKED unchanged",
+  "sourceExecution": false,
+  "newIntegrityTestRuns": 0
+}

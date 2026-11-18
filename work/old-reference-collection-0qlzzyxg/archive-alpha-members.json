@@ -1,0 +1,17 @@
+[
+  {
+    "filename": "DevilUI 6.1 Alpha.exe",
+    "rawCentralFilenameHex": "446576696c554920362e3120416c7068612e657865",
+    "flagBits": 0,
+    "filenameDecode": "cp437 (zipfile default; no rename)",
+    "isDirectory": false,
+    "compressedBytes": 7517194,
+    "uncompressedBytes": 7733851,
+    "CRC32": "EE63D713",
+    "externalAttributes": 32,
+    "target": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha\\DevilUI 6.1 Alpha.exe",
+    "unsafeReasons": [],
+    "memberSHA256": "261919ECF1DF7D25A7082E59D99801FFE3F7AE2DA94ACE26ECEA35283AB47AFB",
+    "extractedSHA256": "261919ECF1DF7D25A7082E59D99801FFE3F7AE2DA94ACE26ECEA35283AB47AFB"
+  }
+]

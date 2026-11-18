@@ -1,0 +1,30 @@
+------------------------------------------------------------------------
+r4 | Sayclub | 2009-08-26 03:38:46 +0000 (Wed, 26 Aug 2009) | 1 line
+Changed paths:
+   M /trunk/embeds.xml
+   A /trunk/locale-koKR.lua
+
+Added koKR
+------------------------------------------------------------------------
+r2 | warbaby | 2009-08-25 03:32:41 +0000 (Tue, 25 Aug 2009) | 1 line
+Changed paths:
+   A /trunk/DefaultClickSets.lua
+   A /trunk/GridClickSets.lua
+   A /trunk/GridClickSets.toc
+   A /trunk/GridClickSetsFrame.lua
+   A /trunk/GridClickSetsFrame.xml
+   A /trunk/embeds.xml
+   A /trunk/locale-enUS.lua
+   A /trunk/locale-zhCN.lua
+   A /trunk/locale-zhTW.lua
+
+1.0, stable since wow 3.0
+------------------------------------------------------------------------
+r1 | root | 2009-08-25 03:26:54 +0000 (Tue, 25 Aug 2009) | 1 line
+Changed paths:
+   A /branches
+   A /tags
+   A /trunk
+
+"gridclicksets/mainline: Initial Import"
+------------------------------------------------------------------------

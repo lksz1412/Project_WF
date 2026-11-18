@@ -1,0 +1,31 @@
+
+BlueItemInfo2DB = {
+	["id"] = false,
+	["memo"] = {
+	},
+	["backdrop"] = {
+		0, -- [1]
+		0, -- [2]
+		0.24, -- [3]
+		0.8, -- [4]
+	},
+	["minimapButton"] = {
+		["show"] = true,
+		["radius"] = 80,
+		["angle"] = 45.38523327854347,
+		["rounding"] = 10,
+		["dragable"] = true,
+	},
+	["scale"] = 1,
+	["sort"] = true,
+	["info"] = true,
+	["category"] = "B71",
+	["height"] = 279,
+	["level"] = true,
+	["esc"] = true,
+	["pos"] = {
+		"TOPRIGHT", -- [1]
+		-36.3903964680033, -- [2]
+		-21.04679704796766, -- [3]
+	},
+}

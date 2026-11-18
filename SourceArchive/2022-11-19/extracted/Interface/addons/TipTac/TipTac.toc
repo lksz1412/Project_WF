@@ -1,0 +1,25 @@
+﻿## Interface: 100000
+## Version: 22.11.16
+## Title-koKR: TipTac [툴팁 애드온]
+## Author: Aezay (Earthen Ring EU), Frozn45
+## Notes: Highly Customizable Tooltip Enhancement Addon
+## Notes-koKR: 사용자 정의가 가능한 툴팁 향상 애드온입니다.
+## SavedVariables: TipTac_Config
+## X-Category: Tooltip
+## X-Website: https://www.curseforge.com/wow/addons/tiptac-reborn
+## X-Curse-Project-ID: 695153
+embeds.xml
+
+Libs\AceHook-3.0\AceHook-3.0.lua
+Libs\LibStub\LibStub.lua
+Libs\CallbackHandler-1.0\CallbackHandler-1.0\CallbackHandler-1.0.xml
+Libs\LibDataBroker-1.1\LibDataBroker-1.1.lua
+Libs\LibMapButton-1.1\LibMapButton-1.1.lua
+Libs\LibArtifactData-1.0\LibArtifactData-1.0.lua
+ttCore.lua
+ttStyle.lua
+ttBars.lua
+ttAuras.lua
+ttIcons.lua
+ttHyperlink.lua
+TipTac_Broker.lua

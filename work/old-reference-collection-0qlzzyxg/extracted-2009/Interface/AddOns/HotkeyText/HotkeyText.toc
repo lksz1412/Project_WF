@@ -1,0 +1,11 @@
+## Interface: 30200
+## Author: friends
+## Title: Hotkey text configuration
+## Notes: 기본 UI 단축키 표시 변경
+## Version : 1.8
+## OptionalDeps:
+## Dependencies:
+## SavedVariables:HotkeySettings, ActionButtonName 
+## SavedVariablesPerCharacter:
+HotkeyText.lua
+HotkeyText.xml

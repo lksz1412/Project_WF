@@ -1,0 +1,39 @@
+# Devil UI Forever project map
+
+Canonical active root: `D:\Projects\Project_WF`.
+
+- `Codex/plans/2026-11-17-devil-ui-forever-plan.md`: saved canonical master-plan draft; ten-round review and scoped same-reviewer recheck completed, unresolved major/moderate findings zero; future phase-detail files are created only on phase entry.
+- `Codex/docs/observed-environment.md`: Computer Use and read-only filesystem observations and limits.
+- `Codex/docs/addon-reference-inventory.md`: 15 historical reference addons, not a desired installation set.
+- `Codex/docs/shaman-source-evidence.md`: declared current support and firsthand Shaman reports with limitations.
+- `Codex/docs/PROJECT_LOCATION.md`: root transition, preservation checkpoint and path impact map.
+- `Codex/results/REQUEST_LEDGER.md`: user requests and decisions.
+- `Codex/results/handoffs/forever-ui/`: briefs, analyst logs, reviewer returns, session register and triage.
+- `outputs/`: reviewed plan and source-evidence delivery snapshots, plus macro-library-location.md. Macro originals stay private in MacroLibrary/.
+- `work/`: ignored temporary files.
+- `MacroLibrary/INDEX.md`: ignored private navigation for 44 preserved original macros and archive records; original raw files remain authoritative. No private names or contents belong in public reports.
+
+The old generated chat directory is a preserved checkpoint, not the working root. Final chat delivery snapshots may be copied into that chat's outputs directory for display; canonical project files stay here. No game files, CurseForge installation state or account settings are edited during planning.
+
+
+Planning closure records: `Codex/results/Step 0 — 조사·계획·원본보관.md` and `Codex/results/PHASE_Planning_forever-ui_RESULT.md` with its JSON companion. UI execution Steps1–12 have not begun. Handoff directory includes raw audit/recheck returns, fix/recheck briefs, triage and recovery-checkpoint.md.
+
+
+Phase1.1 Step1 completed byR19: `SourceArchive/2022-11-19/` ignored originalZIP/extracted inputs; `Codex/results/source-analysis/` provenance/inventory/evidence; `Codex/docs/original-source-analysis.md` saved reviewed report; `Codex/results/handoffs/source-analysis/` A/B briefs/logs; phase1.1 detailplan saved, Step2 not begun.
+
+R19 Step1 complete — 2026-11-17 21:35:04 +09:00: `Codex/docs/original-source-analysis.md` saved/reviewed10round0/0/0; `Codex/results/source-analysis/UNIT_LEDGER.md` and `review-result.json` linkactualgates/coverage. `Codex/results/Step 1 — 원본 ZIP 확보·정적 원형 분석.md`, `PHASE_1.1_source-analysis_RESULT.md`+json, `PHASE_1.1_EXECUTION_LEDGER.md` preservecompletion/nextStep2(unstarted). Source-analysishandoff hasrawB audit andtriage. Newoutputs: original-source-analysis.md, original-source-map.md, devil-ui-forever-plan-source-analysis.md; olddeliverysnapshots remainunchanged.
+
+
+Step2 current map: Codex/results/handoffs/layout-design/ (brief, sessions, work/audit/triage); Codex/results/layout-design/ (reference provenance, image geometry, proposed bottom-up coordinates, preview checks); Codex/docs/devil-ui-4k-layout.md (new design report). SourceArchive/2022-11-19/reference/ holds the unchanged first source image (ignored). These paths are being created for R20–22; only existing files are claimed complete. Original SourceArchive/archive reports and older delivery snapshots remain unchanged.
+
+Step2 deterministic preview producer pending: Codex/results/layout-design/render-layout.py consumes A1 layout-spec.json; full4K and nativebottom PNG plus preview-checks.json/preview-notes.md. Separate A2 production begins only after A1 finishes, preserving one non-carve-out unit. No game addon code.
+
+Step2 result saved before independent validation: PHASE_1.1_layout-design_RESULT.md/json (12fields, reviewpendingatcreation; finalclosureappendlater). Rendered PNG/code/notes/checks are real savedfiles. Preview image-reader current followup produces preview-visual-review.md/json; original geometry remainsunchanged.
+
+CURRENT OVERRIDE R25/R26: layout-design/BASELINE_STATUS.md freezes2022-basedpreviews as historical/unaccepted. The desired older DevilUI original is unconfirmed. Upcoming Phase1.3 old-reference fullcatalog and cleanchat research supersede2022target selection; originals/results preserved.
+
+Phase1.3 currentresearch: plans/2026-11-17-devil-ui-forever-phase1.3-세부계획.md (toauthorbeforefullcollection), results/REQUEST_LEDGER_phase1.3.md currentrequests, results/handoffs/old-reference/ and results/old-reference/ newrecords. InitialpublicHTML under work/old-reference-entry-4dc60c8443794ba381f02df6f6156efa (GET200both); idx2958 metadata2009.12.10/client3.3.0, screenshotiframe/body notyetfullyread. Searchtablefirstpage20rows/numbers34..15,nextpage2; wholecatalogcoverageincomplete. LatestForeverentryidx13140isinthelist, notyetread/validated.
+
+Step2 supersession recorded: results/Step 2 — 2022 기준 배치안 동결·원형 기준 재설정.md; layoutResultmd/jsonclosure preservesB0/1/1 andR25withdrawal. Phase1.1endedwithoutacceptedStep2delivery; nextStep3Phase1.3. OldPNG/reportNOTcurrenttarget.
+
+R29 source: SourceArchive/2009-12-10/originals/Devil_Blackt.zip newpreservedcopy (ignored), acquisitionJSONinresults/old-reference; sourceDownloadsretained, hashidentical. StaticCRC/extractionpending. R30alreadyheld2022ZIPsnotredownloaded. R31conditionalCUAdownloadonly, notneededforalreadyheldfiles.

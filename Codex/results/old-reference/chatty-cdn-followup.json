@@ -1,0 +1,32 @@
+{
+  "state": "bounded-unavailable",
+  "recordedUTC": "2026-11-17T16:18:00.595142+00:00",
+  "fileID": 9648836,
+  "filenameLiteral": "Chattynator-237.zip",
+  "priorDownloadReceipt": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-acquisition\\chatty-download-receipt.json",
+  "priorDownloadHTTP": 403,
+  "priorAttemptRepeated": false,
+  "literalCDNURLsFoundInAssignedRecords": [],
+  "priorWebDownloadSnapshotCDNURLs": [],
+  "officialRuleDiscovery": {
+    "queries": [
+      "site:curseforge.com \"Chattynator-237.zip\" \"forgecdn\"",
+      "site:docs.curseforge.com \"forgecdn.net/files\"",
+      "site:support.curseforge.com \"forgecdn\" \"download\""
+    ],
+    "toolResult": "Empty search results; no results found for provided queries",
+    "toolRef": "chatty-cdn-search stored tool result",
+    "officialPublicCDNPathRule": "not found in bounded search; not proof no rule exists"
+  },
+  "PREDICTEDcandidateURLs": [],
+  "newDownloadGETs": 0,
+  "newZIPs": 0,
+  "CRC_extract_sourceExecutionRuns": 0,
+  "sourceStateRemains": "unavailable-bounded-public-attempts",
+  "scratchRoot": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-chatty-cdn-tq8vslj0",
+  "frozenManifestSHA256": "6DA14707BC9284E246E5236926ED2AEB8BD2550F23CA5D4F28D08B993A8D3D58",
+  "currentManifestSHA256": "18F8C8E17FBC09A6223E8FBDB82D49DEACAC8AE2B621B089EA6CC5FA4CB92DC4",
+  "priorFrozen26Unchanged": true,
+  "selfCheckRuns": 1,
+  "selfCheckState": "passed-with-unavailable-source"
+}

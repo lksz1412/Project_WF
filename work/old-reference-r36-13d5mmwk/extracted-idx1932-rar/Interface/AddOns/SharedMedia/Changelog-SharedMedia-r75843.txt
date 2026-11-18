@@ -1,0 +1,8 @@
+------------------------------------------------------------------------
+r75843 | funkydude | 2008-06-02 18:58:21 -0400 (Mon, 02 Jun 2008) | 1 line
+Changed paths:
+   M /trunk/SharedMedia/SharedMedia.lua
+   A /trunk/SharedMedia/fonts/Ultima_Campagnoli.ttf
+
+SharedMedia: added Ultima Campagnoli
+------------------------------------------------------------------------

@@ -1,0 +1,182 @@
+﻿<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+	<Script file="NuguDrop.lua"/>
+	<Script file="NuguDropItemInfo.lua"/>
+	<Script file="NuguDropItemInfo_Exp.lua"/>
+<!-- 	<Script file="NuguDropItemInfo_North.lua"/> -->
+	<Script file="NDItemInfo_Etc.lua"/>
+	<Script file="NDItemInfo_Rep1.lua"/>
+	<Script file="NDItemInfo_Rep2.lua"/>
+<!-- 	<Script file="NDItemInfo_Rep3.lua"/> -->
+	<Script file="NDItemInfo_Jewel.lua"/>
+	<Script file="NuguDropCustomItemInfo.lua"/>
+
+	<Frame name="NuguDropGameTooltip" parent="GameTooltip" hidden="false">
+		<Scripts>
+			<OnLoad>
+				NuguDrop_OnLoad(self);
+			</OnLoad>
+			<OnShow>
+				NuguDrop_OnShow("GameTooltip");
+			</OnShow>
+		</Scripts>
+	</Frame>
+<!-- 	<Frame name="NuguDropGameTooltip2" parent="GameTooltip" hidden="false">
+		<Scripts>
+			<OnShow>
+				NuguDrop_OnShow("NuguDropGameTooltip2");
+			</OnShow>
+		</Scripts>
+	</Frame>
+	<Frame name="NuguDropGameTooltip3" parent="GameTooltip" hidden="false">
+		<Scripts>
+			<OnShow>
+				NuguDrop_OnShow("NuguDropGameTooltip3");
+			</OnShow>
+		</Scripts>
+	</Frame>
+	<Frame name="NuguDropGameTooltip4" parent="GameTooltip" hidden="false">
+		<Scripts>
+			<OnShow>
+				NuguDrop_OnShow("NuguDropGameTooltip4");
+			</OnShow>
+		</Scripts>
+	</Frame>
+ -->
+
+	<Frame name="NuguDropItemRefTooltip4" parent="ItemRefTooltip" hidden="false">
+		<Scripts>
+			<OnShow>
+				NuguDrop_OnShow("ItemRefTooltip");
+			</OnShow>
+		</Scripts>
+	</Frame>
+
+	<Frame name="NuguDropLootLinkTooltip" parent="LootLinkTooltip" hidden="false">
+		<Scripts>
+			<OnShow>
+				NuguDrop_OnShow("LootLinkTooltip");
+			</OnShow>
+		</Scripts>
+	</Frame>
+
+	<Frame name="NuguDropSLootLinkTooltip" parent="LootLink_ResultsTooltip" hidden="false">
+		<Scripts>
+			<OnShow>
+				NuguDrop_OnShow("LootLink_ResultsTooltip");
+			</OnShow>
+		</Scripts>
+	</Frame>
+
+	<Frame name="NuguDropIRR_ItemRefTooltip1" parent="IRR_ItemRefTooltip1" hidden="false">
+		<Scripts>
+			<OnShow>
+				NuguDrop_OnShow("IRR_ItemRefTooltip1");
+			</OnShow>
+		</Scripts>
+	</Frame>
+
+	<Frame name="NuguDropIRR_ItemRefTooltip2" parent="IRR_ItemRefTooltip2" hidden="false">
+		<Scripts>
+			<OnShow>
+				NuguDrop_OnShow("IRR_ItemRefTooltip2");
+			</OnShow>
+		</Scripts>
+	</Frame>
+
+	<Frame name="NuguDropIRR_ItemRefTooltip3" parent="IRR_ItemRefTooltip3" hidden="false">
+		<Scripts>
+			<OnShow>
+				NuguDrop_OnShow("IRR_ItemRefTooltip3");
+			</OnShow>
+		</Scripts>
+	</Frame>
+
+	<Frame name="NuguDropIRR_ItemRefTooltip4" parent="IRR_ItemRefTooltip4" hidden="false">
+		<Scripts>
+			<OnShow>
+				NuguDrop_OnShow("IRR_ItemRefTooltip4");
+			</OnShow>
+		</Scripts>
+	</Frame>
+
+	<Frame name="NuguDropIRR_ItemRefTooltip5" parent="IRR_ItemRefTooltip5" hidden="false">
+		<Scripts>
+			<OnShow>
+				NuguDrop_OnShow("IRR_ItemRefTooltip5");
+			</OnShow>
+		</Scripts>
+	</Frame>
+<!-- ManyItemTooltips -->
+	<Frame name="NuguDropMIT_Tooltip_1" parent="MIT_Tooltip_1" hidden="false">
+		<Scripts>
+			<OnShow>
+				NuguDrop_OnShow("MIT_Tooltip_1");
+			</OnShow>
+		</Scripts>
+	</Frame>
+
+	<Frame name="NuguDropMIT_Tooltip_2" parent="MIT_Tooltip_2" hidden="false">
+		<Scripts>
+			<OnShow>
+				NuguDrop_OnShow("MIT_Tooltip_2");
+			</OnShow>
+		</Scripts>
+	</Frame>
+	<Frame name="NuguDropMIT_Tooltip_3" parent="MIT_Tooltip_3" hidden="false">
+		<Scripts>
+			<OnShow>
+				NuguDrop_OnShow("MIT_Tooltip_3");
+			</OnShow>
+		</Scripts>
+	</Frame>
+	<Frame name="NuguDropMIT_Tooltip_4" parent="MIT_Tooltip_4" hidden="false">
+		<Scripts>
+			<OnShow>
+				NuguDrop_OnShow("MIT_Tooltip_4");
+			</OnShow>
+		</Scripts>
+	</Frame>
+	<Frame name="NuguDropMIT_Tooltip_5" parent="MIT_Tooltip_5" hidden="false">
+		<Scripts>
+			<OnShow>
+				NuguDrop_OnShow("MIT_Tooltip_5");
+			</OnShow>
+		</Scripts>
+	</Frame>
+	<Frame name="NuguDropMIT_Tooltip_6" parent="MIT_Tooltip_6" hidden="false">
+		<Scripts>
+			<OnShow>
+				NuguDrop_OnShow("MIT_Tooltip_6");
+			</OnShow>
+		</Scripts>
+	</Frame>
+	<Frame name="NuguDropMIT_Tooltip_7" parent="MIT_Tooltip_7" hidden="false">
+		<Scripts>
+			<OnShow>
+				NuguDrop_OnShow("MIT_Tooltip_7");
+			</OnShow>
+		</Scripts>
+	</Frame>
+	<Frame name="NuguDropMIT_Tooltip_8" parent="MIT_Tooltip_8" hidden="false">
+		<Scripts>
+			<OnShow>
+				NuguDrop_OnShow("MIT_Tooltip_8");
+			</OnShow>
+		</Scripts>
+	</Frame>
+	<Frame name="NuguDropMIT_Tooltip_9" parent="MIT_Tooltip_9" hidden="false">
+		<Scripts>
+			<OnShow>
+				NuguDrop_OnShow("MIT_Tooltip_9");
+			</OnShow>
+		</Scripts>
+	</Frame>
+	<Frame name="NuguDropMIT_Tooltip_10" parent="MIT_Tooltip_10" hidden="false">
+		<Scripts>
+			<OnShow>
+				NuguDrop_OnShow("MIT_Tooltip_10");
+			</OnShow>
+		</Scripts>
+	</Frame>
+</Ui>

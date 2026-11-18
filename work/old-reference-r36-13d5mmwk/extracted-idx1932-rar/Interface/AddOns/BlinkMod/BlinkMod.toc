@@ -1,0 +1,6 @@
+## Interface: 30000
+## Title: |cffffff9a블링크|r 블링크모드
+## Notes: 유닛팝업메뉴를 동적으로 추가할수 있도록하는 기능 제공
+## Author: 블링크
+## OptionalDeps:
+BlinkMod.lua

@@ -1,0 +1,7 @@
+## Interface: 30200
+## Title: Damn Quest Icons
+## Notes: Grey's out the question mark icon next to quest names if it's not completed
+## Notes-koKR: 한명의 NPC에게 여러 퀘스트를 받았을 때 완료하지 못한 퀘스트는 해당 완료창에서 회색의 물음표로 표시해줍니다.
+## Author: Shadowed
+
+DamnQuestIcons.lua

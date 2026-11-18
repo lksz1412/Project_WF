@@ -1,0 +1,243 @@
+{
+  "schema": "old-devil-source-role-map/1",
+  "recorded": "2026-11-18T02:06:07.752559+09:00",
+  "primarySource": {
+    "postID": 45,
+    "DOMordinal": 4,
+    "sourceURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1103_7276.jpg",
+    "path": "work/old-reference-collection-0qlzzyxg/image-d9ab10878c7e954fd5e4.jpg",
+    "SHA256": "304A6B36ACD94B065142B8E8ADBA1EC99787BB649885D136D5CE707C1B2D5151",
+    "dimensions": [
+      800,
+      500
+    ],
+    "observations": "Codex/results/old-reference/image-observations/findings.md:5-27",
+    "mapping": "Codex/results/old-reference/acquisition/PRIORITY_READY.json fourthEntry;images-45.html54"
+  },
+  "observationUnits": "approximate source-native imagepixels,top-leftxywh; never proposed4Kcoordinates",
+  "roles": [
+    {
+      "roleID": "chat-left-one",
+      "meaning": "left first native message role",
+      "observedApproxSourceXYWH": [
+        0,
+        422,
+        195,
+        67
+      ],
+      "basis": "UserR23;findings18",
+      "historicalSavedRoleEvidence": "X2SPECIALW/chat1;AlphaSPECIAL/Wide/chat1",
+      "proposedPixels": "separate layout-spec.json"
+    },
+    {
+      "roleID": "chat-left-two",
+      "meaning": "left adjacent second native message role",
+      "observedApproxSourceXYWH": [
+        195,
+        422,
+        194,
+        67
+      ],
+      "basis": "UserR23;findings18",
+      "historicalSavedRoleEvidence": "X2SPECIALW/chat2;AlphaSPECIAL/Wide/chat2",
+      "proposedPixels": "separate layout-spec.json"
+    },
+    {
+      "roleID": "chat-right-three",
+      "meaning": "right third native message role",
+      "observedApproxSourceXYWH": [
+        609,
+        422,
+        189,
+        67
+      ],
+      "basis": "UserR23/R33;findings18;11218meterexcluded",
+      "historicalSavedRoleEvidence": "X2SPECIALW/chat3;AlphaSPECIAL/Wide/chat3",
+      "proposedPixels": "separate layout-spec.json"
+    },
+    {
+      "roleID": "actions-long-upper",
+      "meaning": "long single upper action row",
+      "observedApproxSourceXYWH": [
+        41,
+        394,
+        723,
+        19
+      ],
+      "basis": "findings21",
+      "historicalSavedRoleEvidence": "AlphaSPECIAL/Wide/frames1,5,6 each12;sampleexactcountunresolved",
+      "proposedPixels": "separate layout-spec.json"
+    },
+    {
+      "roleID": "actions-short-helper",
+      "meaning": "short helper action row",
+      "observedApproxSourceXYWH": [
+        120,
+        376,
+        158,
+        17
+      ],
+      "basis": "findings21",
+      "historicalSavedRoleEvidence": "Historicalpet/class/smallbars separate; no membershipcopy",
+      "proposedPixels": "separate layout-spec.json"
+    },
+    {
+      "roleID": "actions-center-grid",
+      "meaning": "central lower approximately8columns3rows",
+      "observedApproxSourceXYWH": [
+        390,
+        423,
+        150,
+        56
+      ],
+      "basis": "findings21",
+      "historicalSavedRoleEvidence": "AlphaSPECIAL/Wide/frames3&4 each12/4columns;X2Bars3/4Rows3 conditionaldefaults",
+      "proposedPixels": "separate layout-spec.json"
+    },
+    {
+      "roleID": "menu-short",
+      "meaning": "small menu row belowcentralgrid",
+      "observedApproxSourceXYWH": [
+        390,
+        481,
+        150,
+        9
+      ],
+      "basis": "findings21",
+      "historicalSavedRoleEvidence": "AlphaWide/menu,bags andX2MICROMENU separate fromactions",
+      "proposedPixels": "separate layout-spec.json"
+    },
+    {
+      "roleID": "minimap-square-lower",
+      "meaning": "square map immediatelyrightofcentergrid",
+      "observedApproxSourceXYWH": [
+        541,
+        422,
+        67,
+        67
+      ],
+      "basis": "findings24",
+      "historicalSavedRoleEvidence": "X2SPECIALW/minimapborder;AlphaSPECIAL/Wide/minimapDevil2",
+      "proposedPixels": "separate layout-spec.json"
+    },
+    {
+      "roleID": "unit-upper",
+      "meaning": "upper compact health/resource cluster",
+      "observedApproxSourceXYWH": [
+        205,
+        309,
+        80,
+        30
+      ],
+      "basis": "findings23",
+      "historicalSavedRoleEvidence": "Picturegeometry only; no characterstats/precisecaststate",
+      "proposedPixels": "separate layout-spec.json"
+    },
+    {
+      "roleID": "unit-lower",
+      "meaning": "lower compact health/resource cluster",
+      "observedApproxSourceXYWH": [
+        170,
+        342,
+        115,
+        31
+      ],
+      "basis": "findings23",
+      "historicalSavedRoleEvidence": "Picturegeometry only; currentowner/runtimeunverified",
+      "proposedPixels": "separate layout-spec.json"
+    },
+    {
+      "roleID": "rail-black",
+      "meaning": "continuous black crossrail",
+      "observedApproxSourceXYWH": [
+        0,
+        415,
+        800,
+        7
+      ],
+      "basis": "findings17/19",
+      "historicalSavedRoleEvidence": "X2SPECIALWmiddle18high@y160;AlphaSPECIALWide middle20high@y160",
+      "proposedPixels": "separate layout-spec.json"
+    },
+    {
+      "roleID": "rail-status",
+      "meaning": "verybottom narrow progress/status band",
+      "observedApproxSourceXYWH": [
+        0,
+        491,
+        800,
+        9
+      ],
+      "basis": "findings17/23",
+      "historicalSavedRoleEvidence": "X2bottom19high;AlphaXPheight4 savedunits, notactualraster",
+      "proposedPixels": "separate layout-spec.json"
+    },
+    {
+      "roleID": "ornament-left",
+      "meaning": "curled dark leftend ornament",
+      "observedApproxSourceXYWH": [
+        0,
+        365,
+        41,
+        47
+      ],
+      "basis": "findings22",
+      "historicalSavedRoleEvidence": "X2SPECIALWleftdemon;AlphaSPECIALWide demon assetregistration",
+      "proposedPixels": "separate layout-spec.json"
+    },
+    {
+      "roleID": "ornament-right",
+      "meaning": "curled dark rightend ornament",
+      "observedApproxSourceXYWH": [
+        764,
+        365,
+        36,
+        47
+      ],
+      "basis": "findings22",
+      "historicalSavedRoleEvidence": "X2SPECIALWrightangel;AlphaSPECIALWide angel assetregistration",
+      "proposedPixels": "separate layout-spec.json"
+    }
+  ],
+  "supportingReference": {
+    "post11218": "composition support only; lower right meter EXCLUDED and replaced by requestedthirdchat role",
+    "post2958": "plain-gap/separator comparison only",
+    "post13140": "current compatibility reference only; notvisualtarget"
+  },
+  "historicalVariants": {
+    "X2SPECIALW": {
+      "panels": 9,
+      "shownNativeWindowIDs": [
+        1,
+        2,
+        3
+      ],
+      "sourceRoleOnly": true
+    },
+    "AlphaSPECIALWide": {
+      "panels": 8,
+      "shownNativeWindowIDs": [
+        1,
+        3,
+        4
+      ],
+      "sourceRoleOnly": true
+    }
+  },
+  "preservationContract": {
+    "nativeMessageEngine": true,
+    "nativeTyping": true,
+    "existingPerWindowFilters": "preserve actualcurrentvalues atfutureimplementation; unknownhere",
+    "copyOldIDsOrChannels": false,
+    "excludedMeter": true,
+    "2022RejectedLayoutUsed": false
+  },
+  "uncertainties": [
+    "exactlongrowcellcount/membershipunresolved",
+    "sample4exactpackagebuild/profileunverified",
+    "stillnonexposureofornamentsnothover/inputbehaviorproof",
+    "currentgamerenderresolution/UIscaleunmeasured"
+  ],
+  "designDecisionOwner": "A1, proposedpixeldecisionsnotuserconfirmedexactpixels",
+  "assetObservation": "NEWasset-observations/findings.md1-328 fullyreadbyA1;23uniqueassetsobserved; exactphotoassetunverified"
+}

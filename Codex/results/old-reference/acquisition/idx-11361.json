@@ -1,0 +1,1218 @@
+{
+  "postID": 11361,
+  "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=11361",
+  "row": {
+    "postID": 11361,
+    "page": 1,
+    "rowOrdinal": 4,
+    "title": "데빌 하단집중형 (클래식리치왕버전.. [클래식] 2364",
+    "rowText": "31 데빌 하단집중형 (클래식리치왕버전.. [클래식] 2364 Devil UI , 통합애드온 마법을써요 295356 119 05-15",
+    "sourceAnchor": "javascript:addonMove('detail.php', 'idx->11361', 'leave->idx,listtype,ext', 'rurl');",
+    "sourceLocation": {
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\list-first.html",
+      "selector": "table.list tr a[href]",
+      "line": 1226
+    }
+  },
+  "detailProvenance": {
+    "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=11361",
+    "time": "2026-11-17T14:02:01.5230607Z",
+    "contentType": "text/html; charset=UTF-8",
+    "HTTP": 200,
+    "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=11361",
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-11361.html",
+    "state": "acquired",
+    "attempts": 1,
+    "commandExitCode": 0,
+    "encoding": "IWR decoded to UTF-8",
+    "bytes": 241958,
+    "SHA256": "FE4B0E6DDCB7AEF655F61AE4985CD16C1C0FC12171915B6F001DABBB9E1AE352"
+  },
+  "acquisitionState": "parsed",
+  "A1read": false,
+  "imageObserved": false,
+  "sections": {
+    "addonAddon": {
+      "state": "parsed",
+      "text": "데빌 하단집중형 클래식 리치왕 버전 입니다\n\n\n\n\n\n\n\n\n\n@버전별 업데이트 사항은 , 애드온 설명  우측 ,버전별 변경사항 에 기록되어 있습니다. 참고하시길 바랍니다.@\n\n\n\n\n\n\n\n\n\n업로드 용량 초과로 부득이하게 파일을 여러개로 나눴습니다\n\n\n\nDBM , 미터기 , 인벤유닛프레임 등등은 따로 받으시길 바랍니다\n\n\n\n\n\n\n\n\n\n@@@@@설치 영상을 제작하였습니다. 잘보시고 따라하세요@@@@@\n\n\n\nhttps://www.youtube.com/watch?v=H4zoHnrGSPM  (유투브 링크 입니다)\n\n\n\n동영상대로 하시고 영상에는 없지만 마지막에 명령어 꼭 넣으세요\n\n\n\n## 완료명령어 : /reflux switch Wide \n\n\n\n그리고 영상만 보지마시고 본문글도 정독해주시길 바랍니다.\n\n\n\n\n\n\n\n##설명##\n\n\n\n상위 Devil.zip  ,  disk2.zip 등등 같은 날짜의 파일이 최신업데이트 입니다.\n\n\n\n\n\n\n\n1. 같은 날짜로 된 압축파일 모두를 다운로드한다. \n\n\n\n2. 압축파일을 각각 압축해제 한다. (예 : Devil , disk2 , disk3 .. )\n\n   (disk 파일을 압축풀면 나오는 disk2.pak , disk3.pak 등등의 파일은 압축풀면 안됩니다. 그냥 쓰시는겁니다)\n\n   (참고로 알집을 사용하시면 disl.pak 는 압축파일처럼 보일겁니다. 알집은 비추천입니다. 반디집을 추천합니다)\n\n\n\n\n\n%%%%%%%% 중요 %%%%%%%%\n\n\n\n3. 와우 클래식 폴더에 있는\n\n\n\n   - Cache 폴더 삭제\n\n   - Interface 폴더 삭제\n\n   - WTF 폴더 삭제\n\n\n\n   반드시 3개의 폴더를 삭제하세요. 삭제를 하지않고 설치하시면 오류납니다\n\n\n\n   삭제하기전 WTF폴더안에 있는 계정번호 , 서버명 , 케릭명을 메모해둔다\n\n\n\n\n\n4. disk2 ,disk3 등등 압축해제한 파일들을 한곳에 두고 인스톨을 실행한다.\n\n\n\n5. 설치경로는 기본 C:\\Program Files (x86)\\World of Warcraft\\_classic_ 로 설정되어있습니다.\n\n\n\n6. 만약 다른곳에 와우 클래식을 설치하셨다면 애드온 설치시 와우클래식 폴더 까지만 설정해주시면 됩니다.\n\n  .\n\n\n\n   보통 피시방에서 하실땐 피방에 와우가 깔린곳이 c드라이브가 아니기때문에\n\n   와우가 어디에 설치가 된건지 확인하시고 경로를 지정해주셔야 합니다.\n\n   _classic_ 폴더가 두번 설정되기때문에 확인하시고 지워주세요\n\n\n\n7. 설치가 완료되었으면 와우 클래식 폴더로 가서 WTF폴더안 본인의 계정번호 , 서버명 , 케릭명을 수정한다.\n\n\n\n8. 접속후  케릭 선택창에서 왼쪽 아래 애드온 버튼을 누른후 애드온 모두사용 체크(구버전체크) 후 케릭 접속\n\n\n\n9. 접속후 데빌유아이를 적용하시겠습니까 - 수락 (메세지가 안뜰수있습니다)\n\n\n\n10.  동영상에는 나와있지 않지만 \n\n     적용된 애드온 화면이 나오면 채팅창에 /reflux switch Wide 하시면 완료 (대소문자 구분하셔야합니다.)\n\n\n\n# 자신의 계정번호 : 와우클래식이 설치되어있는 폴더 - WTF폴더 -  Account폴더 - 숫자폴더의 숫자가 자신의 계정번호 입니당.\n\n\n\n# 만약 자신의 계정번호를 메모하지못했다면 애드온 없이 그냥 접속하시면 계정번호가 다시 자동으로 저장됩니다.\n\n\n\n\n\n\n\n\n\n# 미니맵 설정 - /bm 하시면 설정창이 나옵니다.\n\n\n\n# 채팅창은 개인설정이므로 채팅창 이름 우클릭하시면 잠금해제가 나옵니다  잠금해제하셔서 이동하세요 \n\n\n\n\n\n**위의 내용대로 다 삭제하시고 적용하셔야해요. 파일 한두개 해선 안됩니당**\n\n\n\n\n\n\n\n 접속시간\n\n 평일 : 밤 (기약없음)\n\n 주말 : 낮 또는 밤  (기약없음)\n\n\n\n## 도적 , 드루이드 , 전사 직업은 예전부터 데빌에 센터바 오류가 있습니다. 참고하시기 바랍니다. ##\n\n\n\n\n\n\n\n    스샷 이나 동영상처럼 애드온이 설치가 안되있다면 \n\n    반드시 재설치 하시길 바랍니다 \n\n\n\n\n\n\n\n\n\n%%%% 오류가 나는 스샷을 찍어서 여기 게시판에 올려주시면 확인하여 도와드리겠습니다. %%%%\n\n\n\nhttps://www.inven.co.kr/board/wow/1636/30853 \n\n\n\n@@ 애드온설명 옆 탭에 버전별 변경사항을 확인하시길 바랍니다 @@\n\n\n\n\n\n추신 : 나름 제가 할수있는 재주를 부려봤습니다\n\n       저또한 전문가가 아니기 때문에 부족한 점이 많습니다.\n\n       모든걸 다 충족시켜드리지 못하는점 양해 부탁드려요.",
+      "fragmentPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\idx-11361-addonAddon.html",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-11361.html",
+        "selector": "#addonAddon",
+        "line": 1244
+      },
+      "links": []
+    },
+    "addonVersion": {
+      "state": "parsed",
+      "text": "# 2023.5.15 업데이트 #\n\n1.Details 삭제\n\n2.Questie 삭제\n\n\n\n# 2023.5.14 업데이트 #\n\n1.AtrasLoot 업데이트\n\n2.BasicMinimap 업데이트\n\n3.Broker Everything 업데이트\n\n4.Chatter 업데이트\n\n5.ChocolateBar 업데이트\n\n6.CastBars 업데이트\n\n7.AuraDurations 업데이트\n\n8.SpellActivations 업데이트\n\n9.Combuctor 업데이트\n\n10.Dominos  업데이트\n\n11.GTFO 업데이트\n\n12.KGPanels 업데이트\n\n13.KuiNameplateCore 업데이트\n\n14.Mapster 업데이트\n\n15.Masque  업데이트\n\n16.PitBull4  업데이트)\n\n17.Quartz 업데이트\n\n18.Questie 업데이트\n\n19.RangeDisplay 업데이트\n\n20.Scrap 업데이트\n\n21.TipTac 업데이트\n\n\n\n# 2023.05.13 업데이트 #\n\n클래식 리치왕 구동완료\n\n\n\n# 2020.10.18 업데이트 #\n\n1.Advaned Interface Option 업데이트 - 블리자드 인터페이스 옵션 수정\n\n2.AtrasLoot 업데이트 - 아이템 드랍 정보\n\n3.BasicMinimap 업데이트 - 미니맵\n\n4.classicCastbars 업데이트 - 플레이어 시전바\n\n5.Combuctor 업데이트 - 통합가방\n\n6.Details 업데이트 - 데미지 미터기\n\n7.Dominos 업데이트 - 스킬바,센터바\n\n8.KGPanels 업데이트 - UI프레임 제작 및 수정\n\n9.Questie 업데이트 - 퀘스트 애드온\n\n10.Vendor Price 업데이트 - 아이템 판매가격표시\n\n\n\n# 2020 .8.30 업데이트 #\n\n1.Dominos 업데이트 - 스킬바,센터바\n\n2.PitBull Unit Frames 4.0 업데이트 - 유닛프레임 애드온\n\n3.Vendor Price 업데이트 - 아이템 판매가격표시\n\n4.AtrasLoot 업데이트 - 아이템 드랍 정보\n\n5.Details 업데이트 - 데미지 미터기\n\n6.Questie 업데이트 - 퀘스트 애드온\n\n7.KuiNameplateCore 업데이트 - 몹체력바\n\n8.classicCastbars 업데이트 - 플레이어 시전바\n\n9.AuraDurations 업데이트 - 버프,디버프 쿨타임\n\n10.SpellActivations 업데이트 - 액션바 애드온\n\n11.Grail 추가 - 퀘스트 데이터베이스 애드온 \n\n\n\n# 2020.6.23 업데이트 #\n\n1.Dominos 업데이트 - 스킬바,센터바\n\n2.PitBull Unit Frames 4.0 업데이트 - 유닛프레임 애드온\n\n3.AtrasLoot 업데이트 - 아이템 드랍 정보\n\n4.Details 업데이트 - 데미지 미터기\n\n5.Questie 업데이트 - 퀘스트 애드온\n\n6.classicCastbars 업데이트 - 시전바\n\n7.AuraDurations 업데이트 - 버프,디버프 쿨타임\n\n\n\n# 2020.4.12 업데이트 #\n\n1.Vendor Price 업데이트 - 아이템 판매가격표시\n\n2.AtrasLoot 업데이트 - 아이템 드랍 정보\n\n3.Details 업데이트 - 데미지 미터기\n\n4.Questie 업데이트 - 퀘스트 애드온\n\n5.classicCastbars 업데이트 - 시전바\n\n6.AuraDurations 업데이트 - 버프,디버프 쿨타임 \n\n\n\n# 2020.3.15 업데이트 #\n\n1.Combuctor 업데이트 - 통합가방\n\n2.Vendor Price 업데이트 - 아이템 판매가격표시\n\n3.AtrasLoot 업데이트 - 아이템 드랍 정보\n\n4.Details 업데이트 - 데미지 미터기\n\n5.Questie 업데이트 - 퀘스트 애드온\n\n6.classicCastbars 업데이트 - 시전바 \n\n\n\n# 2020.2.14 업데이트 #\n\n1.Dominos 업데이트 - 스킬바,센터바\n\n2.PitBull Unit Frames 4.0 업데이트 - 유닛프레임 애드온\n\n3.Advaned Interface Option 업데이트 - 블리자드 인터페이스 옵션 수정\n\n4.Addon Control Panel 업데이트\n\n5.AtrasLoot 업데이트 - 아이템 드랍 정보\n\n6.Questie 업데이트 - 퀘스트 애드온\n\n7.classicCastbars 업데이트 - 시전바 \n\n\n\n# 2020.1.19 업데이트 #\n\n1.PitBull Unit Frames 4.0 업데이트 - 유닛프레임 애드온\n\n2.Details 업데이트 - 데미지 미터기\n\n3.Questie 업데이트 - 퀘스트 애드온\n\n4.KuiNameplateCore 업데이트 - 몹체력바\n\n5.AuraDurations 업데이트 - 버프,디버프 쿨타임\n\n6.Combuctor 업데이트 - 통합가방\n\n7.Dominos 업데이트 - 스킬바,센터바\n\n8.AtrasLoot 업데이트 - 아이템 드랍 정보\n\n9.BasicMinimap 업데이트 - 미니맵 \n\n\n\n# 2019.12.28 업데이트 #\n\n1.AtrasLoot 업데이트 - 아이템 드랍 정보\n\n2.Details 업데이트 - 데미지 미터기\n\n3.Questie 업데이트 - 퀘스트 애드온\n\n4.classicCastbars 업데이트 - 시전바\n\n5.AuraDurations 업데이트 - 버프,디버프 쿨타임\n\n6.게임메뉴 아이콘 및 가방 아이콘 비율조정 \n\n\n\n# 2019.12.20 업데이트 #\n\n1.Dominos 업데이트 - 스킬바,센터바\n\n2.PitBull Unit Frames 4.0 업데이트 - 유닛프레임 애드온 \n\n3.Vendor Price 업데이트 - 아이템 판매가격표시\n\n4.AtrasLoot 업데이트 - 아이템 드랍 정보\n\n5.Details 업데이트 - 데미지 미터기\n\n6.Questie 업데이트 - 퀘스트 애드온\n\n7.KuiNameplateCore 업데이트 - 몹체력바 \n\n\n\n# 2019.12.12 업데이트 #\n\n1.AtrasLoot 업데이트 - 아이템 드랍 정보\n\n2.Details 업데이트 - 데미지 미터기\n\n3.classicCastbars 업데이트 - 시전바\n\n4.AuraDurations 업데이트 - 버프,디버프 쿨타임\n\n5.Dominos 업데이트 - 스킬바,센터바\n\n6.PitBull Unit Frames 4.0 업데이트 - 유닛프레임 애드온\n\n7.Questie 업데이트 - 퀘스트 애드온\n\n8.SpellActivations 업데이트 - 액션바 애드온 \n\n\n\n# 2019.11.24 업데이트 #\n\n1.PitBull Unit Frames 4.0 업데이트 - 유닛프레임 애드온 \n\n2.AuraDurations 업데이트 - 버프,디버프 쿨타임\n\n3.classicCastbars 업데이트 - 시전바\n\n4.Questie 업데이트 - 퀘스트 애드온\n\n5.AtrasLoot 업데이트 - 아이템 드랍 정보\n\n6.Details 업데이트 - 데미지 미터기 \n\n\n\n# 2019.11.2 업데이트 #\n\n1.Quartz 업데이트 - 본인의 시전바 \n\n2.AtrasLoot 업데이트 - 아이템 드랍 정보\n\n3.Details 업데이트 - 데미지 미터기\n\n4.SpellActivations 업데이트 - 액션바 애드온 \n\n\n\n# 2019.10.26 업데이트 #\n\n1.AtrasLoot 업데이트 - 아이템 드랍 정보\n\n2.Details 업데이트 - 데미지 미터기\n\n3.Questie 업데이트 - 퀘스트 애드온\n\n4.classicCastbars 업데이트 - 시전바\n\n5.AuraDurations 업데이트 - 버프,디버프 쿨타임 \n\n\n\n# 2019.10.18 업데이트 #\n\n1.Questie 업데이트 - 퀘스트 애드온\n\n2.AtrasLoot 업데이트 - 아이템 드랍 정리\n\n3.Details 업데이트 - 데미지 미터기\n\n4.classicCastbars 업데이트 - 시전바 \n\n\n\n# 2019.10.9 업데이트 #\n\n1.Vendor Price 업데이트 - 아이템 판매가격표시\n\n2.AtrasLoot 업데이트 - 아이템 드랍 정보\n\n3.SpellActivations 업데이트 - 액션바 애드온\n\n4.AuraDurations 업데이트 - 버프,디버프 쿨타임\n\n5.classicCastbars 업데이트 - 시전바\n\n6.AuraDurations 업데이트 - 버프,디버프 쿨타임\n\n7.Combuctor 추가 및 업데이트 - 통합가방 \n\n\n\n# 2019.9.28 업데이트 #\n\n1.Dominos 업데이트 - 스킬바,센터바\n\n2.KGPanels 업데이트 - UI프레임 제작 및 수정\n\n3.Details 업데이트 - 데미지 미터기\n\n4.Advaned Interface Option 업데이트 - 블리자드 인터페이스 옵션 수정\n\n5.classicCastbars 업데이트 - 플레이어 시전바\n\n6.AuraDurations 업데이트 - 버프,디버프 쿨타임\n\n7.Mapster 업데이트 - 지도 애드온\n\n8.Quartz 업데이트 - 대상 시전바\n\n9.Combuctor 추가 및 업데이트 - 통합가방 \n\n10.Vendor Price 업데이트 - 아이템 판매가격표시\n\n11.KuiNameplateCore 업데이트 - 몹체력바 \n\n\n\n# 2019.9.24 업데이트 #\n\n1.AuraDurations 업데이트 - 버프,디버프 쿨타임\n\n2.classicCastbars 업데이트 - 시전바\n\n3.Details 업데이트 - 데미지 미터기\n\n4.Dominos 업데이트 - 스킬바,센터바\n\n5.KuiNameplateCore 업데이트 - 몹체력바\n\n6.Vendor Price 업데이트 - 아이템 판매가격표시 \n\n7.MoveAnithing 삭제 \n\n\n\n# 2019.9.22 업데이트 #\n\n1.Questie 업데이트 - 퀘스트 애드온\n\n2.AtrasLoot 업데이트 - 아이템 드랍 정보\n\n3.AuraDurations 업데이트 - 버프,디버프 쿨타임\n\n4.Details 업데이트 - 데미지 미터기\n\n5.KGPanels 업데이트 - UI프레임 제작 및 수정\n\n6.가방애드온 삭제 - Combutor \n\n\n\n# 2019.9.17 업데이트 #\n\n1.AtrasLoot 업데이트 - 아이템 드랍 정보\n\n2.AuraDurations 업데이트 - 버프,디버프 쿨타임\n\n3.Dominos 업데이트 - 스킬바,센터바\n\n4.KuiNameplateCore 업데이트 - 몹체력바\n\n5.classicCastbars 업데이트 - 시전바\n\n6.Questie 업데이트 - 퀘스트 애드온 \n\n\n\n# 2019.9.13 업데이트 #\n\n1. classicCastBar 업데이트\n\n2. Dominos 업데이트\n\n3. Vendor Price 업데이트 \n\n\n\n# 2019.9.11 업데이트 #\n\n1. 적시전바 활성화\n\n2. 통합가방 추가\n\n3. 경험치바 활성화\n\n4. 퀘스트 레벨표시 적용\n\n5. 법사용 WTF 적용 \n\n\n\n# 2019.9.10 업데이트 #\n\n1. 폴더 설치 파일에서 인스톨 파일로 변경됨 \n\n2. 실패시 9.9 버전으로 재설치 하시길 바랍니다. \n\n3. Dominos 애드온이 업데이트 되었습니다.\n\n\n\n# 2019.9.9 업데이트 #\n\n1.퀘스트 애드온이 추가되었습니다. (퀘스트 레벨표시)\n\n2.경험치 바 표시가 수정되었습니다. \n\n\n\n# 2019.9.8 업데이트 #\n\n1. 가방애드온이 삭제되었습니다.\n\n2. XpBar애드온이 변경되었습니다.\n\n3. 파티찾기 도우미 애드온이 추가되었습니다.\n\n4. 기타 애드온들이 업데이트 되었습니다. \n\n\n\n# 2019.9.7 업데이트 #\n\n1.지도 애드온이 추가되었습니다\n\n2.통합 가방 애드온이 추가되었습니다\n\n3.퀘스트 애드온이 업데이트 되었습니다\n\n4.시전바 애드온이 변경되었습니다.\n\n\n\n# 2019.9.6 업데이트 #\n\n1.채팅창 버튼을 없애기위해 Catter 애드온 업데이트를 진행하였습니다.\n\n\n\n # 2019.9.5 업데이트 #\n\n1.파티창이 활성화 되었습니다\n\n2.시전바가 활성화 되었습니다\n\n3.미니맵이 변경되었습니다 (기존 데빌에서 쓰던 미니맵으로 변경)\n\n4.주술사가 분홍색이었던 점이 수정되었습니다",
+      "fragmentPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\idx-11361-addonVersion.html",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-11361.html",
+        "selector": "#addonVersion",
+        "line": 1359
+      },
+      "links": []
+    }
+  },
+  "iframes": {
+    "screenshot": {
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=11361&tempridx=&count=4",
+      "iframeLiteral": "<iframe frameborder=\"0\" framespacing=\"0\" id=\"screenshot\" scrolling=\"no\" src=\"imagelist.iframe.php?ridx=11361&amp;tempridx=&amp;count=4\"></iframe>",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-11361.html",
+        "selector": "iframe#screenshot",
+        "line": 1238
+      },
+      "provenance": {
+        "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=11361&tempridx=&count=4",
+        "time": "2026-11-17T14:02:02.1573990Z",
+        "contentType": "text/html; charset=UTF-8",
+        "HTTP": 200,
+        "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=11361&tempridx=&count=4",
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-11361.html",
+        "state": "acquired",
+        "attempts": 1,
+        "commandExitCode": 0,
+        "encoding": "IWR decoded to UTF-8",
+        "bytes": 3423,
+        "SHA256": "4D3E8AB9B64827E1B37404A1FB42B0A010D82509971823A3B4C49EF0353723C6"
+      },
+      "state": "parsed",
+      "text": "\n\n\n\n\n\n스크린샷\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "links": [
+        {
+          "href": "javascript:void(0);",
+          "onclick": null,
+          "text": "",
+          "line": 28
+        },
+        {
+          "href": "javascript:void(0);",
+          "onclick": "viewImage('2019/09/05/bbs/i13332298828.jpg');",
+          "text": "",
+          "line": 33
+        },
+        {
+          "href": "javascript:void(0);",
+          "onclick": "viewImage('2019/09/08/bbs/i14702893841.png');",
+          "text": "",
+          "line": 40
+        },
+        {
+          "href": "javascript:void(0);",
+          "onclick": "viewImage('2019/09/08/bbs/i15140573447.png');",
+          "text": "",
+          "line": 47
+        },
+        {
+          "href": "javascript:void(0);",
+          "onclick": "viewImage('2019/09/10/bbs/i13373274081.jpg');",
+          "text": "",
+          "line": 54
+        },
+        {
+          "href": "javascript:void(0);",
+          "onclick": null,
+          "text": "",
+          "line": 61
+        }
+      ],
+      "literalPublicDownloadURLs": [],
+      "imageCount": 4
+    },
+    "fileInfo": {
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=11361&tempridx=&count=59",
+      "iframeLiteral": "<iframe frameborder=\"0\" id=\"fileInfo\" src=\"filelist.iframe.php?mode=view&amp;ridx=11361&amp;tempridx=&amp;count=59\"></iframe>",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-11361.html",
+        "selector": "iframe#fileInfo",
+        "line": 1606
+      },
+      "provenance": {
+        "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=11361&tempridx=&count=59",
+        "time": "2026-11-17T14:02:02.6831010Z",
+        "contentType": "text/html; charset=UTF-8",
+        "HTTP": 200,
+        "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=11361&tempridx=&count=59",
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-11361.html",
+        "state": "acquired",
+        "attempts": 1,
+        "commandExitCode": 0,
+        "encoding": "IWR decoded to UTF-8",
+        "bytes": 28174,
+        "SHA256": "0B2D3575B1D766FE7396A74A3902D1F476BC64216F7E759EC9F76561FE849C38"
+      },
+      "state": "parsed",
+      "text": "\n\n\n\n\n\n파일 정보\n\n\n\n\n\n\n\n\n\n\n\n\n파일\n\n\n클라이언트 버전\n\n\n다운로드\n\n\n등록일\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\nDevil23.5.15.zip\n\n\n\n\n\n\n3.4.1\n\n\n3760\n\n\n2023-05-15\n\n\n\n\n\n\n\n\n\n\ndisk2.zip\n\n\n\n\n\n\n3.4.1\n\n\n4752\n\n\n2023-05-15\n\n\n\n\n\n\n\n\n\n\ndisk220201018.zip\n\n\n\n\n\n\n1.13.6\n\n\n12063\n\n\n2020-10-18\n\n\n\n\n\n\n\n\n\n\nDevil20201018.zip\n\n\n\n\n\n\n1.13.6\n\n\n14584\n\n\n2020-10-18\n\n\n\n\n\n\n\n\n\n\ndisk3.zip\n\n\n\n\n\n\n1.13.4\n\n\n8327\n\n\n2020-08-30\n\n\n\n\n\n\n\n\n\n\ndisk2.zip\n\n\n\n\n\n\n1.13.4\n\n\n6695\n\n\n2020-08-30\n\n\n\n\n\n\n\n\n\n\nDevil8.30.zip\n\n\n\n\n\n\n1.13.4\n\n\n4134\n\n\n2020-08-30\n\n\n\n\n\n\n\n\n\n\ndisk26.23.zip\n\n\n\n\n\n\n8.3.0\n\n\n5110\n\n\n2020-06-23\n\n\n\n\n\n\n\n\n\n\nDevil6.23.zip\n\n\n\n\n\n\n8.3.0\n\n\n5717\n\n\n2020-06-23\n\n\n\n\n\n\n\n\n\n\ndisk4.12.zip\n\n\n\n\n\n\n1.13.4\n\n\n8241\n\n\n2020-04-12\n\n\n\n\n\n\n\n\n\n\nDevil4.12.zip\n\n\n\n\n\n\n1.13.4\n\n\n9312\n\n\n2020-04-12\n\n\n\n\n\n\n\n\n\n\ndisk3.15.zip\n\n\n\n\n\n\n1.13.3\n\n\n4307\n\n\n2020-03-15\n\n\n\n\n\n\n\n\n\n\nDevil3.15.zip\n\n\n\n\n\n\n1.13.3\n\n\n4906\n\n\n2020-03-15\n\n\n\n\n\n\n\n\n\n\ndisk22.14.zip\n\n\n\n\n\n\n1.13.3\n\n\n5919\n\n\n2020-02-14\n\n\n\n\n\n\n\n\n\n\nDevil2.14.zip\n\n\n\n\n\n\n1.13.3\n\n\n6683\n\n\n2020-02-14\n\n\n\n\n\n\n\n\n\n\ndisk1.19.zip\n\n\n\n\n\n\n8.0\n\n\n5943\n\n\n2020-01-19\n\n\n\n\n\n\n\n\n\n\nDevil1.19.zip\n\n\n\n\n\n\n8.0\n\n\n6785\n\n\n2020-01-19\n\n\n\n\n\n\n\n\n\n\ndisk12.28.zip\n\n\n\n\n\n\n8.0\n\n\n6194\n\n\n2019-12-28\n\n\n\n\n\n\n\n\n\n\nDevil12.28.zip\n\n\n\n\n\n\n8.0\n\n\n6812\n\n\n2019-12-28\n\n\n\n\n\n\n\n\n\n\ndisk.12.20.zip\n\n\n\n\n\n\n8.0\n\n\n2954\n\n\n2019-12-21\n\n\n\n\n\n\n\n\n\n\nDevil12.20.zip\n\n\n\n\n\n\n8.0\n\n\n3206\n\n\n2019-12-21\n\n\n\n\n\n\n\n\n\n\ndisk12.12.zip\n\n\n\n\n\n\n8.0\n\n\n3674\n\n\n2019-12-12\n\n\n\n\n\n\n\n\n\n\nDevil12.12.zip\n\n\n\n\n\n\n8.0\n\n\n4072\n\n\n2019-12-12\n\n\n\n\n\n\n\n\n\n\nMacInterface12.12.2.zip\n\n\n\n\n\n\n8.0\n\n\n369\n\n\n2019-12-12\n\n\n\n\n\n\n\n\n\n\nMacInterface12.12.1.zip\n\n\n\n\n\n\n8.0\n\n\n285\n\n\n2019-12-12\n\n\n\n\n\n\n\n\n\n\nMacWTF12.12.zip\n\n\n\n\n\n\n8.0\n\n\n288\n\n\n2019-12-12\n\n\n\n\n\n\n\n\n\n\ndisk11.24.zip\n\n\n\n\n\n\n8.0\n\n\n5391\n\n\n2019-11-24\n\n\n\n\n\n\n\n\n\n\nDevil11.24.zip\n\n\n\n\n\n\n8.0\n\n\n5967\n\n\n2019-11-24\n\n\n\n\n\n\n\n\n\n\ndisk11.2.zip\n\n\n\n\n\n\n8.0\n\n\n8719\n\n\n2019-11-02\n\n\n\n\n\n\n\n\n\n\nDevil11.2.zip\n\n\n\n\n\n\n8.0\n\n\n9822\n\n\n2019-11-02\n\n\n\n\n\n\n\n\n\n\ndisk10.26.zip\n\n\n\n\n\n\n8.0\n\n\n3331\n\n\n2019-10-26\n\n\n\n\n\n\n\n\n\n\nDevilUI10.26.zip\n\n\n\n\n\n\n8.0\n\n\n3948\n\n\n2019-10-26\n\n\n\n\n\n\n\n\n\n\ndisk210.18.zip\n\n\n\n\n\n\n8.0\n\n\n4353\n\n\n2019-10-18\n\n\n\n\n\n\n\n\n\n\nDevil10.18.zip\n\n\n\n\n\n\n8.0\n\n\n4754\n\n\n2019-10-18\n\n\n\n\n\n\n\n\n\n\ndisk210.9.zip\n\n\n\n\n\n\n8.0\n\n\n5483\n\n\n2019-10-09\n\n\n\n\n\n\n\n\n\n\nDevil10.9.zip\n\n\n\n\n\n\n8.0\n\n\n6178\n\n\n2019-10-09\n\n\n\n\n\n\n\n\n\n\ndisk29.28.zip\n\n\n\n\n\n\n8.0\n\n\n7774\n\n\n2019-09-28\n\n\n\n\n\n\n\n\n\n\nDevil9.28.zip\n\n\n\n\n\n\n8.0\n\n\n9220\n\n\n2019-09-28\n\n\n\n\n\n\n\n\n\n\nMacInterface29.24.zip\n\n\n\n\n\n\n8.0\n\n\n1324\n\n\n2019-09-24\n\n\n\n\n\n\n\n\n\n\nMacInterface9.24.zip\n\n\n\n\n\n\n8.0\n\n\n750\n\n\n2019-09-24\n\n\n\n\n\n\n\n\n\n\nMacWTF9.24.zip\n\n\n\n\n\n\n8.0\n\n\n586\n\n\n2019-09-24\n\n\n\n\n\n\n\n\n\n\ndisk29.24.zip\n\n\n\n\n\n\n8.0\n\n\n4181\n\n\n2019-09-24\n\n\n\n\n\n\n\n\n\n\nDevilUI9.24.zip\n\n\n\n\n\n\n8.0\n\n\n4274\n\n\n2019-09-24\n\n\n\n\n\n\n\n\n\n\ndisk29.22.zip\n\n\n\n\n\n\n8.0\n\n\n2405\n\n\n2019-09-22\n\n\n\n\n\n\n\n\n\n\nDevilUI9.22.zip\n\n\n\n\n\n\n8.0\n\n\n2863\n\n\n2019-09-22\n\n\n\n\n\n\n\n\n\n\ndisk29.17.zip\n\n\n\n\n\n\n8.0\n\n\n4818\n\n\n2019-09-17\n\n\n\n\n\n\n\n\n\n\nDevil9.17.zip\n\n\n\n\n\n\n8.0\n\n\n5614\n\n\n2019-09-17\n\n\n\n\n\n\n\n\n\n\ndisk29.13.2.zip\n\n\n\n\n\n\n8.0\n\n\n4248\n\n\n2019-09-13\n\n\n\n\n\n\n\n\n\n\nDevilUI9.13.2.zip\n\n\n\n\n\n\n8.0\n\n\n4954\n\n\n2019-09-13\n\n\n\n\n\n\n\n\n\n\ndisk29.11.zip\n\n\n\n\n\n\n8.0\n\n\n4792\n\n\n2019-09-11\n\n\n\n\n\n\n\n\n\n\nDevilUI9.11.zip\n\n\n\n\n\n\n8.0\n\n\n6128\n\n\n2019-09-11\n\n\n\n\n\n\n\n\n\n\nDevilUI9.10.zip\n\n\n\n\n\n\n8.0\n\n\n1760\n\n\n2019-09-10\n\n\n\n\n\n\n\n\n\n\ndisk2.zip\n\n\n\n\n\n\n8.0\n\n\n2891\n\n\n2019-09-10\n\n\n\n\n\n\n\n\n\n\nInterface9.9.2.zip\n\n\n\n\n\n\n8.0\n\n\n2463\n\n\n2019-09-09\n\n\n\n\n\n\n\n\n\n\nInterface9.9.1.zip\n\n\n\n\n\n\n8.0\n\n\n2524\n\n\n2019-09-09\n\n\n\n\n\n\n\n\n\n\nWTF9.9.zip\n\n\n\n\n\n\n8.0\n\n\n2778\n\n\n2019-09-09\n\n\n\n\n\n\n\n\n\n\nInterfaceOne.zip\n\n\n\n\n\n\n8.0\n\n\n1543\n\n\n2019-09-08\n\n\n\n\n\n\n\n\n\n\nwhatTheFu.zip\n\n\n\n\n\n\n8.0\n\n\n2199\n\n\n2019-09-08\n\n\n\n\n\n\n\n\n\n\nInterfaceTwo.zip\n\n\n\n\n\n\n8.0\n\n\n2407\n\n\n2019-09-08\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "links": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil23.5.15.zip",
+          "line": 40
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk2.zip",
+          "line": 50
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk220201018.zip",
+          "line": 60
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil20201018.zip",
+          "line": 70
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk3.zip",
+          "line": 80
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk2.zip",
+          "line": 90
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil8.30.zip",
+          "line": 100
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk26.23.zip",
+          "line": 110
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil6.23.zip",
+          "line": 120
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk4.12.zip",
+          "line": 130
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil4.12.zip",
+          "line": 140
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk3.15.zip",
+          "line": 150
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil3.15.zip",
+          "line": 160
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk22.14.zip",
+          "line": 170
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil2.14.zip",
+          "line": 180
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk1.19.zip",
+          "line": 190
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil1.19.zip",
+          "line": 200
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk12.28.zip",
+          "line": 210
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil12.28.zip",
+          "line": 220
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk.12.20.zip",
+          "line": 230
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil12.20.zip",
+          "line": 240
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk12.12.zip",
+          "line": 250
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil12.12.zip",
+          "line": 260
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "MacInterface12.12.2.zip",
+          "line": 270
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "MacInterface12.12.1.zip",
+          "line": 280
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "MacWTF12.12.zip",
+          "line": 290
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk11.24.zip",
+          "line": 300
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil11.24.zip",
+          "line": 310
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk11.2.zip",
+          "line": 320
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil11.2.zip",
+          "line": 330
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk10.26.zip",
+          "line": 340
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "DevilUI10.26.zip",
+          "line": 350
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk210.18.zip",
+          "line": 360
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil10.18.zip",
+          "line": 370
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk210.9.zip",
+          "line": 380
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil10.9.zip",
+          "line": 390
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk29.28.zip",
+          "line": 400
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil9.28.zip",
+          "line": 410
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "MacInterface29.24.zip",
+          "line": 420
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "MacInterface9.24.zip",
+          "line": 430
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "MacWTF9.24.zip",
+          "line": 440
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk29.24.zip",
+          "line": 450
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "DevilUI9.24.zip",
+          "line": 460
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk29.22.zip",
+          "line": 470
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "DevilUI9.22.zip",
+          "line": 480
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk29.17.zip",
+          "line": 490
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil9.17.zip",
+          "line": 500
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk29.13.2.zip",
+          "line": 510
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "DevilUI9.13.2.zip",
+          "line": 520
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk29.11.zip",
+          "line": 530
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "DevilUI9.11.zip",
+          "line": 540
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "DevilUI9.10.zip",
+          "line": 550
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk2.zip",
+          "line": 560
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Interface9.9.2.zip",
+          "line": 570
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Interface9.9.1.zip",
+          "line": 580
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "WTF9.9.zip",
+          "line": 590
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "InterfaceOne.zip",
+          "line": 600
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "whatTheFu.zip",
+          "line": 610
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "InterfaceTwo.zip",
+          "line": 620
+        }
+      ],
+      "literalPublicDownloadURLs": [],
+      "fileRows": [
+        {
+          "text": "Devil23.5.15.zip 3.4.1 3760 2023-05-15",
+          "cells": [
+            "Devil23.5.15.zip",
+            "3.4.1",
+            "3760",
+            "2023-05-15"
+          ],
+          "line": 37
+        },
+        {
+          "text": "disk2.zip 3.4.1 4752 2023-05-15",
+          "cells": [
+            "disk2.zip",
+            "3.4.1",
+            "4752",
+            "2023-05-15"
+          ],
+          "line": 47
+        },
+        {
+          "text": "disk220201018.zip 1.13.6 12063 2020-10-18",
+          "cells": [
+            "disk220201018.zip",
+            "1.13.6",
+            "12063",
+            "2020-10-18"
+          ],
+          "line": 57
+        },
+        {
+          "text": "Devil20201018.zip 1.13.6 14584 2020-10-18",
+          "cells": [
+            "Devil20201018.zip",
+            "1.13.6",
+            "14584",
+            "2020-10-18"
+          ],
+          "line": 67
+        },
+        {
+          "text": "disk3.zip 1.13.4 8327 2020-08-30",
+          "cells": [
+            "disk3.zip",
+            "1.13.4",
+            "8327",
+            "2020-08-30"
+          ],
+          "line": 77
+        },
+        {
+          "text": "disk2.zip 1.13.4 6695 2020-08-30",
+          "cells": [
+            "disk2.zip",
+            "1.13.4",
+            "6695",
+            "2020-08-30"
+          ],
+          "line": 87
+        },
+        {
+          "text": "Devil8.30.zip 1.13.4 4134 2020-08-30",
+          "cells": [
+            "Devil8.30.zip",
+            "1.13.4",
+            "4134",
+            "2020-08-30"
+          ],
+          "line": 97
+        },
+        {
+          "text": "disk26.23.zip 8.3.0 5110 2020-06-23",
+          "cells": [
+            "disk26.23.zip",
+            "8.3.0",
+            "5110",
+            "2020-06-23"
+          ],
+          "line": 107
+        },
+        {
+          "text": "Devil6.23.zip 8.3.0 5717 2020-06-23",
+          "cells": [
+            "Devil6.23.zip",
+            "8.3.0",
+            "5717",
+            "2020-06-23"
+          ],
+          "line": 117
+        },
+        {
+          "text": "disk4.12.zip 1.13.4 8241 2020-04-12",
+          "cells": [
+            "disk4.12.zip",
+            "1.13.4",
+            "8241",
+            "2020-04-12"
+          ],
+          "line": 127
+        },
+        {
+          "text": "Devil4.12.zip 1.13.4 9312 2020-04-12",
+          "cells": [
+            "Devil4.12.zip",
+            "1.13.4",
+            "9312",
+            "2020-04-12"
+          ],
+          "line": 137
+        },
+        {
+          "text": "disk3.15.zip 1.13.3 4307 2020-03-15",
+          "cells": [
+            "disk3.15.zip",
+            "1.13.3",
+            "4307",
+            "2020-03-15"
+          ],
+          "line": 147
+        },
+        {
+          "text": "Devil3.15.zip 1.13.3 4906 2020-03-15",
+          "cells": [
+            "Devil3.15.zip",
+            "1.13.3",
+            "4906",
+            "2020-03-15"
+          ],
+          "line": 157
+        },
+        {
+          "text": "disk22.14.zip 1.13.3 5919 2020-02-14",
+          "cells": [
+            "disk22.14.zip",
+            "1.13.3",
+            "5919",
+            "2020-02-14"
+          ],
+          "line": 167
+        },
+        {
+          "text": "Devil2.14.zip 1.13.3 6683 2020-02-14",
+          "cells": [
+            "Devil2.14.zip",
+            "1.13.3",
+            "6683",
+            "2020-02-14"
+          ],
+          "line": 177
+        },
+        {
+          "text": "disk1.19.zip 8.0 5943 2020-01-19",
+          "cells": [
+            "disk1.19.zip",
+            "8.0",
+            "5943",
+            "2020-01-19"
+          ],
+          "line": 187
+        },
+        {
+          "text": "Devil1.19.zip 8.0 6785 2020-01-19",
+          "cells": [
+            "Devil1.19.zip",
+            "8.0",
+            "6785",
+            "2020-01-19"
+          ],
+          "line": 197
+        },
+        {
+          "text": "disk12.28.zip 8.0 6194 2019-12-28",
+          "cells": [
+            "disk12.28.zip",
+            "8.0",
+            "6194",
+            "2019-12-28"
+          ],
+          "line": 207
+        },
+        {
+          "text": "Devil12.28.zip 8.0 6812 2019-12-28",
+          "cells": [
+            "Devil12.28.zip",
+            "8.0",
+            "6812",
+            "2019-12-28"
+          ],
+          "line": 217
+        },
+        {
+          "text": "disk.12.20.zip 8.0 2954 2019-12-21",
+          "cells": [
+            "disk.12.20.zip",
+            "8.0",
+            "2954",
+            "2019-12-21"
+          ],
+          "line": 227
+        },
+        {
+          "text": "Devil12.20.zip 8.0 3206 2019-12-21",
+          "cells": [
+            "Devil12.20.zip",
+            "8.0",
+            "3206",
+            "2019-12-21"
+          ],
+          "line": 237
+        },
+        {
+          "text": "disk12.12.zip 8.0 3674 2019-12-12",
+          "cells": [
+            "disk12.12.zip",
+            "8.0",
+            "3674",
+            "2019-12-12"
+          ],
+          "line": 247
+        },
+        {
+          "text": "Devil12.12.zip 8.0 4072 2019-12-12",
+          "cells": [
+            "Devil12.12.zip",
+            "8.0",
+            "4072",
+            "2019-12-12"
+          ],
+          "line": 257
+        },
+        {
+          "text": "MacInterface12.12.2.zip 8.0 369 2019-12-12",
+          "cells": [
+            "MacInterface12.12.2.zip",
+            "8.0",
+            "369",
+            "2019-12-12"
+          ],
+          "line": 267
+        },
+        {
+          "text": "MacInterface12.12.1.zip 8.0 285 2019-12-12",
+          "cells": [
+            "MacInterface12.12.1.zip",
+            "8.0",
+            "285",
+            "2019-12-12"
+          ],
+          "line": 277
+        },
+        {
+          "text": "MacWTF12.12.zip 8.0 288 2019-12-12",
+          "cells": [
+            "MacWTF12.12.zip",
+            "8.0",
+            "288",
+            "2019-12-12"
+          ],
+          "line": 287
+        },
+        {
+          "text": "disk11.24.zip 8.0 5391 2019-11-24",
+          "cells": [
+            "disk11.24.zip",
+            "8.0",
+            "5391",
+            "2019-11-24"
+          ],
+          "line": 297
+        },
+        {
+          "text": "Devil11.24.zip 8.0 5967 2019-11-24",
+          "cells": [
+            "Devil11.24.zip",
+            "8.0",
+            "5967",
+            "2019-11-24"
+          ],
+          "line": 307
+        },
+        {
+          "text": "disk11.2.zip 8.0 8719 2019-11-02",
+          "cells": [
+            "disk11.2.zip",
+            "8.0",
+            "8719",
+            "2019-11-02"
+          ],
+          "line": 317
+        },
+        {
+          "text": "Devil11.2.zip 8.0 9822 2019-11-02",
+          "cells": [
+            "Devil11.2.zip",
+            "8.0",
+            "9822",
+            "2019-11-02"
+          ],
+          "line": 327
+        },
+        {
+          "text": "disk10.26.zip 8.0 3331 2019-10-26",
+          "cells": [
+            "disk10.26.zip",
+            "8.0",
+            "3331",
+            "2019-10-26"
+          ],
+          "line": 337
+        },
+        {
+          "text": "DevilUI10.26.zip 8.0 3948 2019-10-26",
+          "cells": [
+            "DevilUI10.26.zip",
+            "8.0",
+            "3948",
+            "2019-10-26"
+          ],
+          "line": 347
+        },
+        {
+          "text": "disk210.18.zip 8.0 4353 2019-10-18",
+          "cells": [
+            "disk210.18.zip",
+            "8.0",
+            "4353",
+            "2019-10-18"
+          ],
+          "line": 357
+        },
+        {
+          "text": "Devil10.18.zip 8.0 4754 2019-10-18",
+          "cells": [
+            "Devil10.18.zip",
+            "8.0",
+            "4754",
+            "2019-10-18"
+          ],
+          "line": 367
+        },
+        {
+          "text": "disk210.9.zip 8.0 5483 2019-10-09",
+          "cells": [
+            "disk210.9.zip",
+            "8.0",
+            "5483",
+            "2019-10-09"
+          ],
+          "line": 377
+        },
+        {
+          "text": "Devil10.9.zip 8.0 6178 2019-10-09",
+          "cells": [
+            "Devil10.9.zip",
+            "8.0",
+            "6178",
+            "2019-10-09"
+          ],
+          "line": 387
+        },
+        {
+          "text": "disk29.28.zip 8.0 7774 2019-09-28",
+          "cells": [
+            "disk29.28.zip",
+            "8.0",
+            "7774",
+            "2019-09-28"
+          ],
+          "line": 397
+        },
+        {
+          "text": "Devil9.28.zip 8.0 9220 2019-09-28",
+          "cells": [
+            "Devil9.28.zip",
+            "8.0",
+            "9220",
+            "2019-09-28"
+          ],
+          "line": 407
+        },
+        {
+          "text": "MacInterface29.24.zip 8.0 1324 2019-09-24",
+          "cells": [
+            "MacInterface29.24.zip",
+            "8.0",
+            "1324",
+            "2019-09-24"
+          ],
+          "line": 417
+        },
+        {
+          "text": "MacInterface9.24.zip 8.0 750 2019-09-24",
+          "cells": [
+            "MacInterface9.24.zip",
+            "8.0",
+            "750",
+            "2019-09-24"
+          ],
+          "line": 427
+        },
+        {
+          "text": "MacWTF9.24.zip 8.0 586 2019-09-24",
+          "cells": [
+            "MacWTF9.24.zip",
+            "8.0",
+            "586",
+            "2019-09-24"
+          ],
+          "line": 437
+        },
+        {
+          "text": "disk29.24.zip 8.0 4181 2019-09-24",
+          "cells": [
+            "disk29.24.zip",
+            "8.0",
+            "4181",
+            "2019-09-24"
+          ],
+          "line": 447
+        },
+        {
+          "text": "DevilUI9.24.zip 8.0 4274 2019-09-24",
+          "cells": [
+            "DevilUI9.24.zip",
+            "8.0",
+            "4274",
+            "2019-09-24"
+          ],
+          "line": 457
+        },
+        {
+          "text": "disk29.22.zip 8.0 2405 2019-09-22",
+          "cells": [
+            "disk29.22.zip",
+            "8.0",
+            "2405",
+            "2019-09-22"
+          ],
+          "line": 467
+        },
+        {
+          "text": "DevilUI9.22.zip 8.0 2863 2019-09-22",
+          "cells": [
+            "DevilUI9.22.zip",
+            "8.0",
+            "2863",
+            "2019-09-22"
+          ],
+          "line": 477
+        },
+        {
+          "text": "disk29.17.zip 8.0 4818 2019-09-17",
+          "cells": [
+            "disk29.17.zip",
+            "8.0",
+            "4818",
+            "2019-09-17"
+          ],
+          "line": 487
+        },
+        {
+          "text": "Devil9.17.zip 8.0 5614 2019-09-17",
+          "cells": [
+            "Devil9.17.zip",
+            "8.0",
+            "5614",
+            "2019-09-17"
+          ],
+          "line": 497
+        },
+        {
+          "text": "disk29.13.2.zip 8.0 4248 2019-09-13",
+          "cells": [
+            "disk29.13.2.zip",
+            "8.0",
+            "4248",
+            "2019-09-13"
+          ],
+          "line": 507
+        },
+        {
+          "text": "DevilUI9.13.2.zip 8.0 4954 2019-09-13",
+          "cells": [
+            "DevilUI9.13.2.zip",
+            "8.0",
+            "4954",
+            "2019-09-13"
+          ],
+          "line": 517
+        },
+        {
+          "text": "disk29.11.zip 8.0 4792 2019-09-11",
+          "cells": [
+            "disk29.11.zip",
+            "8.0",
+            "4792",
+            "2019-09-11"
+          ],
+          "line": 527
+        },
+        {
+          "text": "DevilUI9.11.zip 8.0 6128 2019-09-11",
+          "cells": [
+            "DevilUI9.11.zip",
+            "8.0",
+            "6128",
+            "2019-09-11"
+          ],
+          "line": 537
+        },
+        {
+          "text": "DevilUI9.10.zip 8.0 1760 2019-09-10",
+          "cells": [
+            "DevilUI9.10.zip",
+            "8.0",
+            "1760",
+            "2019-09-10"
+          ],
+          "line": 547
+        },
+        {
+          "text": "disk2.zip 8.0 2891 2019-09-10",
+          "cells": [
+            "disk2.zip",
+            "8.0",
+            "2891",
+            "2019-09-10"
+          ],
+          "line": 557
+        },
+        {
+          "text": "Interface9.9.2.zip 8.0 2463 2019-09-09",
+          "cells": [
+            "Interface9.9.2.zip",
+            "8.0",
+            "2463",
+            "2019-09-09"
+          ],
+          "line": 567
+        },
+        {
+          "text": "Interface9.9.1.zip 8.0 2524 2019-09-09",
+          "cells": [
+            "Interface9.9.1.zip",
+            "8.0",
+            "2524",
+            "2019-09-09"
+          ],
+          "line": 577
+        },
+        {
+          "text": "WTF9.9.zip 8.0 2778 2019-09-09",
+          "cells": [
+            "WTF9.9.zip",
+            "8.0",
+            "2778",
+            "2019-09-09"
+          ],
+          "line": 587
+        },
+        {
+          "text": "InterfaceOne.zip 8.0 1543 2019-09-08",
+          "cells": [
+            "InterfaceOne.zip",
+            "8.0",
+            "1543",
+            "2019-09-08"
+          ],
+          "line": 597
+        },
+        {
+          "text": "whatTheFu.zip 8.0 2199 2019-09-08",
+          "cells": [
+            "whatTheFu.zip",
+            "8.0",
+            "2199",
+            "2019-09-08"
+          ],
+          "line": 607
+        },
+        {
+          "text": "InterfaceTwo.zip 8.0 2407 2019-09-08",
+          "cells": [
+            "InterfaceTwo.zip",
+            "8.0",
+            "2407",
+            "2019-09-08"
+          ],
+          "line": 617
+        }
+      ]
+    }
+  },
+  "images": [
+    {
+      "postID": 11361,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload2.inven.co.kr/upload/2019/09/05/bbs/thumb/n13332298828.jpg",
+      "viewerLiteral": "viewImage('2019/09/05/bbs/i13332298828.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-11361.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 11361,
+      "section": "screenshot",
+      "DOMordinal": 2,
+      "thumbURL": "https://upload2.inven.co.kr/upload/2019/09/08/bbs/thumb/n14702893841.png",
+      "viewerLiteral": "viewImage('2019/09/08/bbs/i14702893841.png');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-11361.html",
+        "selector": "screenshot img",
+        "line": 40
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 11361,
+      "section": "screenshot",
+      "DOMordinal": 3,
+      "thumbURL": "https://upload2.inven.co.kr/upload/2019/09/08/bbs/thumb/n15140573447.png",
+      "viewerLiteral": "viewImage('2019/09/08/bbs/i15140573447.png');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-11361.html",
+        "selector": "screenshot img",
+        "line": 47
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 11361,
+      "section": "screenshot",
+      "DOMordinal": 4,
+      "thumbURL": "https://upload2.inven.co.kr/upload/2019/09/10/bbs/thumb/n13373274081.jpg",
+      "viewerLiteral": "viewImage('2019/09/10/bbs/i13373274081.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-11361.html",
+        "selector": "screenshot img",
+        "line": 54
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    }
+  ],
+  "title": "데빌 하단집중형 (클래식리치왕버전)",
+  "metadataLiteral": "데빌 하단집중형 (클래식리치왕버전)\nDevil UI , 통합애드온\n애드온 등록자\n마법을써요\n최종 업데이트\n2023.05.15\n카테고리\n클래식\n클라이언트 버전\n3.4.1\n애드온 버전\n2023.5.15\n조회수\n842690\n추천수\n119\n다운로드 수\n295356\n관심등록 수\n1999\n다운로드\n관심 애드온 등록",
+  "metadataRows": [
+    {
+      "label": "애드온 등록자",
+      "value": "마법을써요",
+      "line": 1181
+    },
+    {
+      "label": "최종 업데이트",
+      "value": "2023.05.15",
+      "line": 1185
+    },
+    {
+      "label": "카테고리",
+      "value": "클래식",
+      "line": 1189
+    },
+    {
+      "label": "클라이언트 버전",
+      "value": "3.4.1",
+      "line": 1196
+    },
+    {
+      "label": "애드온 버전",
+      "value": "2023.5.15",
+      "line": 1200
+    },
+    {
+      "label": "조회수",
+      "value": "842690",
+      "line": 1207
+    },
+    {
+      "label": "추천수",
+      "value": "119",
+      "line": 1211
+    },
+    {
+      "label": "다운로드 수",
+      "value": "295356",
+      "line": 1215
+    },
+    {
+      "label": "관심등록 수",
+      "value": "1999",
+      "line": 1219
+    }
+  ]
+}

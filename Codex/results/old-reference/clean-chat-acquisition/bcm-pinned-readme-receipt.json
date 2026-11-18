@@ -1,0 +1,19 @@
+{
+  "finalURL": "https://api.github.com/repos/funkydude/BasicChatMods/readme?ref=5be793bade7743834b3fae361638f86aa370d31d",
+  "time": "2026-11-17T16:09:13.9736488Z",
+  "contentType": "application/json; charset=utf-8",
+  "rateRemaining": "44",
+  "HTTP": 200,
+  "sourceURL": "https://api.github.com/repos/funkydude/BasicChatMods/readme?ref=5be793bade7743834b3fae361638f86aa370d31d",
+  "URLbasis": "official API readme endpoint derived from observed repository and tag commit",
+  "localpath": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\bcm-pinned-readme-api.json",
+  "attempts": 1,
+  "commandExitCode": 0,
+  "state": "acquired",
+  "bytes": 1894,
+  "SHA256": "5805563349470F1C90E6D1FF703A27AC5BA21533E2FC560908EAAEA36D851543",
+  "decodedREADMEPath": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\bcm-pinned-README.md",
+  "READMEsha256": "C79BB2B630398CAAC2D9F71D6E94FFB6D057217C175EC417B797299F86FFA4E6",
+  "READMEbytes": 625,
+  "READMEsourceURL": "https://raw.githubusercontent.com/funkydude/BasicChatMods/5be793bade7743834b3fae361638f86aa370d31d/.github/README.md"
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Interface.zip",
+    "size": 31392260,
+    "sha256": "3B9883A2A336A38AE31BAA744A2A287DCC752093B1003D923D2B767F43496F2A",
+    "source_url": "https://drive.google.com/file/d/1EfG94R6Sfo8aJvsAqxqVxQx15rmjsduB/view",
+    "drive_id": "1EfG94R6Sfo8aJvsAqxqVxQx15rmjsduB",
+    "acquired_at": "2026-11-17T20:58:20.5354498+09:00",
+    "archive_path": "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\originals\\Interface.zip",
+    "remote_modified": "2022-11-19",
+    "method": "Drive connector raw authenticated file reference followed by PowerShell materialization"
+  },
+  {
+    "name": "Fonts.zip",
+    "size": 35611779,
+    "sha256": "9D7E364DA38407813A7D76C2F92DA9BA3A4B832AC8DDE565D19308EB7FBE4F91",
+    "source_url": "https://drive.google.com/file/d/1pZ1NafrEgkH4T4JnSEa4q78Ihn24aoow/view",
+    "drive_id": "1pZ1NafrEgkH4T4JnSEa4q78Ihn24aoow",
+    "acquired_at": "2026-11-17T20:59:31.6212625+09:00",
+    "archive_path": "D:\\Projects\\Project_WF\\SourceArchive\\2022-11-19\\originals\\Fonts.zip",
+    "remote_modified": "2022-11-19",
+    "method": "Drive connector raw authenticated file reference followed by PowerShell materialization"
+  }
+]

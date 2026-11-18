@@ -1,0 +1,340 @@
+{
+  "state": "FILES_FROZEN",
+  "recordedUTC": "2026-11-17T15:03:07.720699+00:00",
+  "primaryReceipt": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\R36_FINAL_MECHANICAL_RECEIPT.json",
+  "artifactCountExcludingThisManifest": 46,
+  "artifacts": [
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\author-public-fallback-evidence.json",
+      "bytes": 25531,
+      "SHA256": "2DF7776741CDCB2C8A6CD6A9AA750DDF68509E3DB19A48F3F0A6664A2E302A48",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\FIRST_172_METADATA_READY.json",
+      "bytes": 7101,
+      "SHA256": "4EEEBCE49E5A097D6150061AC6315F13326D562F3903B68D360FC7D251204AA4",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\forever-v42-archive-checks.json",
+      "bytes": 43398,
+      "SHA256": "796AF9366DD30AC13A05ABF7663749935A8F7C86BD4CCAF08806DC58F918D11B",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\historical-predicted-acquisition.json",
+      "bytes": 9024,
+      "SHA256": "7892D7DE125A7A72BCF3B26C6AE997B5F46181016C779C5D40E5B8F0E4DAEA14",
+      "role": "historical-intermediate"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\idx-11218-attachment-inventory.json",
+      "bytes": 31734,
+      "SHA256": "5360409AE0B76674CDC94856A90CA655DD51A1635C5AA5E45212BC40ECE7D80D",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\idx-13140-attachment-inventory.json",
+      "bytes": 13906,
+      "SHA256": "8D32001AF5ACA6055A40F23F36F863BB93D6EC1EED5C95D0DF08D596CF854025",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\idx-2582-attachment-inventory.json",
+      "bytes": 1263,
+      "SHA256": "1CA0EF5D97A088BFF6AEFF6BEE1C701AFEAB7E21FBBF763BFAA7DDE2CC50F3AA",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\idx-45-attachment-inventory.json",
+      "bytes": 239771,
+      "SHA256": "9C26BB3A65149EEF3F1F4C5E0A0B06B1E3CA94026423FC023A9FF342E99F6CE8",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\legacy-prefix-fallback\\idx45-X2-sfx-static-extraction-checks.json",
+      "bytes": 229975,
+      "SHA256": "A918BBB7D1902FD6AFB467CED25650EF3B364FBE76B39DDD80DBF1BF5762DB60",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\legacy-prefix-fallback\\legacy-idx45-159-archive-checks.json",
+      "bytes": 904,
+      "SHA256": "E870814928DAD9DA8B5B56A5E1E078AEC07D9A0474FFCD9446C85B4043EF2813",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\legacy-prefix-fallback\\legacy-prefix-results.json",
+      "bytes": 4168,
+      "SHA256": "0E02FF2B9CB488E4D0756EC9D0463355A89031EFF6A40783809A8C2C5D5D2A1B",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\legacy-prefix-fallback\\x2-core-chat-profile-name-paths.json",
+      "bytes": 254039,
+      "SHA256": "DA015EA6D05CF5F92504ED838862E936CE9B91F92140C47841D51FE05E968099",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\legacy-prefix-fallback\\x2-static-commands.json",
+      "bytes": 1164,
+      "SHA256": "13877588CC20A3693DB02D2BCE32957C97D3AA630DEF7FB40FBF0BEB5FEE1A09",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\legacy-prefix-fallback\\x2-static-extraction-summary.json",
+      "bytes": 168820,
+      "SHA256": "B73AB4446412237F0607381E5ABD67B94093CB2C00456BD37C5BAD0EDB1F717B",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\core-chat-profile-name-paths.json",
+      "bytes": 199936,
+      "SHA256": "2C4742526F486D93664C635D6E03A5C3762BDE3A95D861E8860C47A6667BE502",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\idx-11218-attachment-metadata.json",
+      "bytes": 9544,
+      "SHA256": "9B2E6680E1FA538F43EB1E6EE9C3136C3DC2C089A437935EDB4161FD279BBE7A",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\idx-1932-attachment-metadata.json",
+      "bytes": 1580,
+      "SHA256": "92B3242F809679EAD5060FA381CBF430A0FAC152404B256C422C9F8BBD9AE150",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\idx-3461-archive-checks.json",
+      "bytes": 856,
+      "SHA256": "D2E4FB3156A22EC04A764A490060862509562C66BE47C9E00AE710FE7CAF7264",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\idx-3461-attachment-metadata.json",
+      "bytes": 36623,
+      "SHA256": "2D4BDCBC256CF03F99FB3EA6D3B29C9B5B62AA1C9C6DCCBEDB6689046DC9B946",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\idx1932-rar-static-extraction-checks.json",
+      "bytes": 44294,
+      "SHA256": "8C47F174B8A39166EA0988B2CCCDDDA4296D6F320649A1A5820581F48FE98DBD",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\idx3461-sfx-static-extraction-checks.json",
+      "bytes": 40957,
+      "SHA256": "DD65F00FCF49697AEF4C89F5CBC7F4FEC1FA5E16B5A1706FB4E7B3FBF36D476E",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\METADATA_READY.json",
+      "bytes": 51397,
+      "SHA256": "B5F4DC303E2080F77399B70FF1F14F57A0147F4CD9CD1D7B86E52212A006B622",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\OTHER_POSTS_READY.json",
+      "bytes": 4875,
+      "SHA256": "1DC53DA4D457C9D93DBA399ABC95CFEE8B097A6524EA3EA7EFF817C1123A2F34",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\package-acquisition.json",
+      "bytes": 5500,
+      "SHA256": "9329D6337EE196C028690F76FA538BD116F27133D2A139EC9DE8CB5CE332BD8D",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\preserved-original-copies.json",
+      "bytes": 3947,
+      "SHA256": "2B8BA403215011F1DF1133BABDC0300391AA22B6C41AA2AB34F21D90F4E44FDB",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\rar-header-count-reconciliation.json",
+      "bytes": 1703,
+      "SHA256": "21C573F8D883280DF4B38B5B10121D4489C5B50F9642991DD551DA8EAC541E16",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\selected-new-literal-exclusions.json",
+      "bytes": 7421,
+      "SHA256": "7D2B09B0B04A1F32626B26ECD1DF1F58E9BDF0C298B1BF25A32A908FD2FF1B1E",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\selected-new-literal-settings-compact.json",
+      "bytes": 171345,
+      "SHA256": "4B26145C531E95FEC299715ECE73973A9271C93ED9F997219D3D0F7BCAB199AA",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\static-extraction-summary.json",
+      "bytes": 845,
+      "SHA256": "21A09CAA589159E9ADEF0E0FD2422E9E3D57EAF7063C136EC68510FB47E9AB97",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\static-list-integrity-commands.json",
+      "bytes": 2293,
+      "SHA256": "9511FD8D944A1AE8B0CBB0740F5C40BA1CD937AED1F5DA971C5D24812E504BD0",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\v42-border-exact-byte-comparison.json",
+      "bytes": 4859,
+      "SHA256": "E3D86DCF0EF303ADECEE3EEECF6ACA189D15707E112BD33DB26773325D301550",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\R36_BOUNDED_RETURN.json",
+      "bytes": 1793,
+      "SHA256": "62C5D8B31B89DD452BA15592AEBEA3E39F22A16502839BB1561B88751C0442B6",
+      "role": "historical-intermediate"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\R36_FINAL_MECHANICAL_RECEIPT.json",
+      "bytes": 6754,
+      "SHA256": "C3E1C896F3975B3DC71F07838F6F9359D5F6DBE3782F9A07D0CB5FB293AF7C58",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\v42-core-paths-toc-order.json",
+      "bytes": 11302,
+      "SHA256": "3ABAE922440D2D2D8CAB37AB40943CECA1BE46F0463E1E3FCA347BA29C2CF340",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\selected-asset-byte-headers.json",
+      "bytes": 4262,
+      "SHA256": "DB34A7E88A686990C1449BB1544F4A43423829F531D84CCD03CFA061A9ADD79C",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\selected-member-inventory.json",
+      "bytes": 38860,
+      "SHA256": "EB284E965362708E0770A4C594ADD3571278DA49149DAA65F7E50EFCB02D3FC3",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\x2-four-variant-exclusions.json",
+      "bytes": 2707,
+      "SHA256": "D4231BFA47F7B698220A8BB7E17EA137D3A4BED1BD0ACE4342EAF54F2E831470",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\x2-four-variant-settings-compact.json",
+      "bytes": 116632,
+      "SHA256": "CCC98CBFD9C51C24D7D1F8D4857495619692B6A9F035FF4FED9C38D0C4CDC2A1",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\x2-requested-style-values.json",
+      "bytes": 382942,
+      "SHA256": "E7E9B194A89ECAA94B6A6532262F3CF0BCF80FE969B49F0A74129DB2D1C76356",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\x2-selected-literal-parse-overview.json",
+      "bytes": 23677,
+      "SHA256": "4DD0C5B98150FED0AFD4B85C3B71D244D0F924C4B9064B01CD739E545F6D2B6F",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\X2_SELECTED_DATA_READY.json",
+      "bytes": 1391,
+      "SHA256": "1D719EEB64288BADEE2FDCE630D4799B3408E8596FAF655B76C48DEE109F7EE7",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\x2-selected-subset\\X2_SUBSET_READY.json",
+      "bytes": 5652,
+      "SHA256": "275A9FB05EBB0771C2F404D304072F8E33BE3ABD564E9612F7365AB25671E032",
+      "role": "stable-mechanical-input"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\handoffs\\old-reference\\acquisition\\work_log.md",
+      "bytes": 86271,
+      "SHA256": "1EB6FE0A5A4568DA71BCCA1EB576DE4B7C39C5ED3D01C0BF729FD61C296A51A9",
+      "role": "final-helper-worklog"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-0p_dvcvk\\X2-20-selected-full-typed.json",
+      "bytes": 1038536,
+      "SHA256": "62F472C62DABE42FE67917429E73D745707DEBB2C74020569D808E9F29E8B63D",
+      "role": "referenced-ignored-data-or-A1allowlist"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-r36-13d5mmwk\\new-selected-literal-full-typed.json",
+      "bytes": 1457492,
+      "SHA256": "49C1F58C0E3D11EC14A34D799BA6FE9844616E63F93AB416E9636D5DC7008758",
+      "role": "referenced-ignored-data-or-A1allowlist"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\a1-x2-safe-selected-members.json",
+      "bytes": 10229,
+      "SHA256": "E25AB6A2B27CB5A06BAECAD7C993ECE84691EFB5408F157D9417E26A4C220698",
+      "role": "referenced-ignored-data-or-A1allowlist"
+    }
+  ],
+  "publicPackages": 4,
+  "publicFiles": 5,
+  "publicSourceArchiveReceipts": [
+    {
+      "packagePostID": 3461,
+      "filename": "BlackEdition2_6.1Alpha.zip",
+      "path": "D:\\Projects\\Project_WF\\SourceArchive\\post-3461-2015-03-04\\originals\\BlackEdition2_6.1Alpha.zip",
+      "bytes": 7626408,
+      "SHA256": "7EAC7EC1345582736A5EF57249FBFAAB1C55EF83C8E9631715CB7D3A6F171CBC",
+      "hashBasis": "existing acquisition/copy equality receipt; no reGET/CRC/hash rerun of archive",
+      "receipt": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\preserved-original-copies.json"
+    },
+    {
+      "packagePostID": 1932,
+      "filename": "devilbecustom91.part2.rar",
+      "path": "D:\\Projects\\Project_WF\\SourceArchive\\post-1932-2008-11-02\\originals\\devilbecustom91.part2.rar",
+      "bytes": 3202564,
+      "SHA256": "EFBC3C0C2FBF5F743DD5AC3D2768F547EEF8F2AB2103FB2C27E7EEB108F98CCE",
+      "hashBasis": "existing acquisition/copy equality receipt; no reGET/CRC/hash rerun of archive",
+      "receipt": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\preserved-original-copies.json"
+    },
+    {
+      "packagePostID": 1932,
+      "filename": "devilbecustom91.part1.rar",
+      "path": "D:\\Projects\\Project_WF\\SourceArchive\\post-1932-2008-11-02\\originals\\devilbecustom91.part1.rar",
+      "bytes": 5242880,
+      "SHA256": "0869DB436FEEE2E70D4B8A5A82ECC1281DDE0769EA6F52DB0CD9497339CD4FE3",
+      "hashBasis": "existing acquisition/copy equality receipt; no reGET/CRC/hash rerun of archive",
+      "receipt": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\other-posts\\preserved-original-copies.json"
+    },
+    {
+      "packagePostID": 45,
+      "filename": "DevilUI-X2 R3.4.zip",
+      "path": "D:\\Projects\\Project_WF\\SourceArchive\\post-45-2008-09-27\\originals\\DevilUI-X2 R3.4.zip",
+      "bytes": 7245308,
+      "SHA256": "541F98566586F82FF88E464255EB0476F952CAF9E689C53AEB240D5AE54FF4EA",
+      "hashBasis": "existing acquisition/copy equality receipt; no archive recheck",
+      "receipt": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\r36\\legacy-prefix-fallback\\legacy-prefix-results.json"
+    },
+    {
+      "packagePostID": 13140,
+      "filename": "_forever_V42.zip",
+      "path": "D:\\Projects\\Project_WF\\SourceArchive\\forever-2026-11-17\\originals\\_forever_V42.zip",
+      "bytes": 9897762,
+      "SHA256": "7961B3AE6C308256345BE4DBE732019276AC04B0C123F63AB198B8F5A759A908",
+      "hashBasis": "existing rootintake plus passedhelperCRC receipt, not rerun",
+      "receipt": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\forever-v42-archive-acquisition.json"
+    }
+  ],
+  "limits": [
+    "No fullX2 extraction:4217listed/288unsafe remainsBLOCKED; exact46subset gate separatelyPASS.",
+    "8other+20X2 sourcefiles fullyconsumed byliteralparser, filteredpublishedsettings not whole-sourcecoverage;3V42parser boundaries remain.",
+    "No sourceLua/EXE/READMEexecution, sourceidentity/runtime/fidelity conclusion, imagecontentobservation, newdependencies/auth/CUA/Step4.",
+    "Wholearchive integrity gates and sourcecopies not rerun; finalartifactSHA snapshot only.",
+    "Thismanifest cannot include itsownSHA; toolreturn/parentmessage provides it. Helper stopswriting after this file."
+  ]
+}

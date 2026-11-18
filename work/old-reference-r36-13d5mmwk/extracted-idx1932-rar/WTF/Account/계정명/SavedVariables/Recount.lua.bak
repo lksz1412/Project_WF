@@ -1,0 +1,58 @@
+
+RecountDB = {
+	["char"] = {
+		["Kratia - 스톰레이지"] = {
+		},
+	},
+	["profileKeys"] = {
+		["기동포격마법소녀 - 스톰레이지"] = "기동포격마법소녀 - 스톰레이지",
+		["Lagneziad - 세나리우스"] = "Lagneziad - 세나리우스",
+		["Hayate - Crystalsong"] = "Kratia - Crystalsong",
+		["Kratia - 스톰레이지"] = "Kratia - 스톰레이지",
+		["Kratia - Crystalsong"] = "Default",
+		["Eznel - 세나리우스"] = "Eznel - 세나리우스",
+		["에이논 - Crystalsong"] = "Kratia - Crystalsong",
+		["Resrec - Crystalsong"] = "Default",
+		["Zephyres - 세나리우스"] = "Zephyres - 세나리우스",
+		["Berseflin - 세나리우스"] = "Berseflin - 세나리우스",
+		["Eznel - Crystalsong"] = "Kratia - 스톰레이지",
+		["Resrec - 세나리우스"] = "Resrec - 세나리우스",
+		["Lagneziad - Crystalsong"] = "Default",
+	},
+	["profiles"] = {
+		["Default"] = {
+			["GraphWindowY"] = 0,
+			["MainWindow"] = {
+				["Position"] = {
+					["y"] = -481.4999237069783,
+					["x"] = 636.0000308377996,
+					["w"] = 202.0000010686366,
+					["h"] = 186.9999677119078,
+				},
+			},
+			["Colors"] = {
+				["Window"] = {
+					["Background"] = {
+						["a"] = 0,
+					},
+					["Title"] = {
+						["a"] = 0,
+					},
+				},
+				["Bar"] = {
+					["Bar Text"] = {
+						["a"] = 1,
+					},
+					["Total Bar"] = {
+						["a"] = 1,
+					},
+				},
+			},
+			["DetailWindowY"] = 0,
+			["DetailWindowX"] = 0,
+			["Locked"] = true,
+			["CurDataSet"] = "OverallData",
+			["GraphWindowX"] = 0,
+		},
+	},
+}

@@ -1,0 +1,207 @@
+BasicChatMods - World of Warcraft Addons - CurseForge (https://www.curseforge.com/wow/addons/basic-chat-mods)
+citeturn58view0 [wordlim: 200] Crawled: 3 days ago; Content type: text/html; Source: open({"ref_id":"https://www.curseforge.com/wow/addons/basic-chat-mods","lineno":null}); Total lines: 414
+L0: 【0†Image: Scorecard Research†sb.scorecardresearch.com】
+L1: 
+L2:   * 【1†Browse】
+L3: 【1†Browse all (130)】
+L4:     * 【2†Minecraft】
+L5:     * 【3†The Sims 4】
+L6:     * 【4†World of Warcraft】
+L7:     * 【5†Minecraft Bedrock】
+L8:     * 【6†Ark Survival Ascended】
+L9:     * 【7†Hytale】
+L10:     * 【8†inZOI】
+L11:     * 【9†StarCraft II】
+L12:     * 【10†Kerbal Space Program】
+L13:     * 【11†Stardew Valley】
+L14:     * 【12†American Truck Simulator】
+L15:     * 【13†Hogwarts Legacy】
+L16:     * 【14†Terraria】
+L17:     * 【15†WildStar】
+L18:     * 【16†Palworld】
+L19:     * 【17†World of Tanks】
+L20:     * 【18†PUBG: BATTLEGROUNDS】
+L21:     * 【19†Runes of Magic】
+L22: 
+L23: ARKathon 2 - Submissions Open!
+L24:   * 【20†Create†authors.curseforge.com】
+L25: 
+L26: MOD AUTHORS
+L27:     * 【20†Become an Author†authors.curseforge.com】
+L28:     * 【21†Start a Project†authors.curseforge.com】
+L29:     * 【22†Project Submission Guide†support.curseforge.com】
+L30: 
+L31: MODDING TOOL DEVELOPERS
+L32:     * 【23†Apply for an API Key†support.curseforge.com】
+L33:     * 【24†Documentation†docs.curseforge.com】
+L34:     * 【25†Terms & Conditions†support.curseforge.com】
+L35: 
+L36: SOCIAL
+L37:     * 【26†Join Our Discord!†www.discord.com】
+L38:     * 【27†Authors Discord†discord.gg】
+L39: ARKathon 2 - Submissions Open!
+L40: 
+L41:   * 【28†Studios†studios.curseforge.com】
+L42: 
+L43: GAME DEVELOPERS
+L44:     * 【28†Unlock Modding for Your Game†studios.curseforge.com】
+L45:     * 【29†Documentation†docs.curseforge.com】
+L46: 
+L47: ARKathon 2 - Submissions Open!
+L48: 
+L49:   *   * 【30†Help Center†support.curseforge.com】
+L50:   * 【31†Our Blog†blog.curseforge.com】
+L51:   *   * Light mode Dark mode
+L52:   *   * 【32†Surprise Me】
+L53:   *   * 【33†Legacy†legacy.curseforge.com】
+L54: 
+L55:   * 【34†Go Premium】
+L56:   * 【35†Get CurseForge App】
+L57: # BasicChatMods
+L58: 
+L59:   * By
+L60: 
+L61: 【36†Funkeh】
+L62: 
+L63: Basic Chat Mods!
+L64: 
+L65: Total Downloads
+L66:     780.6K
+L67: 
+L68: Last Update
+L69:     Oct 22, 2026
+L70: 
+L71: More Details
+L72: 
+L73: * * *
+L74: 
+L75: BasicChatMods
+L76: 
+L77: Download
+L78: 
+L79: 231
+L80: 
+L81: * * *
+L82: 
+L83: ### Details
+L84: 
+L85: Downloads
+L86:     780,638
+L87: Created
+L88: 
+L89: 
+L90: 1 decade ago
+L91: 
+L92: Updated
+L93: 
+L94: 
+L95: 22 days ago
+L96: 
+L97: Project ID
+L98: 
+L99: 
+L100: 13504
+L101: 
+L102: License
+L103:     【37†All Rights Reserved】
+L104: 
+L105: * * *
+L106: 
+L107: ### Flavors
+L108: 
+L109:   * 【38†Retail】
+L110:   * 【39†Forever】
+L111:   * 【40†MoP Classic】
+L112:   * 【41†Titan Reforged Classic】
+L113:   * 【42†Classic】
+L114: 
+L115: * * *
+L116: ### Class & Categories
+L117: 
+L118:   * 【43†Addons】
+L119:   *   * 【44†Chat & Communication】
+L120: 
+L121: * * *
+L122: 
+L123: 【45†Image: informative placeholder†static-beta.curseforge.com】
+L124: 
+L125: * * *
+L126: 
+L127: ### Game Versions
+L128: 
+L129: 【46†12.1.7】【47†12.1.5】【48†12.1.0】【49†12.0.7】【50†12.0.5】【51†+ 97 Versions】
+L130: 
+L131: * * *
+L132: 
+L133: ### Links
+L134: 
+L135: 【52†Source†github.com】
+L136: 
+L137: * * *
+L138: 
+L139: ### Main File
+L140: 
+L141: #### 12.1.7
+L142: 
+L143: 【53†v12.1.1 Latest release R Classic + 5 Oct 22, 2026】
+L144: 
+L145: * * *
+L146: 
+L147: ### Recent Files【54†View all】
+L148: 
+L149: #### WoW Retail
+L150: 
+L151: 【53†v12.1.1 Latest release R Retail + 7 Oct 22, 2026】
+L152: #### WoW Forever
+L153: 
+L154: 【53†v12.1.1 Latest release R Forever + 7 Oct 22, 2026】
+L155: 
+L156: #### WoW Mists of Pandaria Classic
+L157: 
+L158: 【53†v12.1.1 Latest release R MoP Classic + 7 Oct 22, 2026】
+L159: 
+L160: #### WoW Wrath Titan Reforged
+L161: 
+L162: 【53†v12.1.1 Latest release R Titan Reforged Classic + 7 Oct 22, 2026】
+L163: #### WoW Classic
+L164: 
+L165: 【53†v12.1.1 Latest release R Classic + 7 Oct 22, 2026】
+L166: 
+L167: * * *
+L168: 
+L169: 【55†Report】
+L170: 
+L171: Download
+L172: 
+L173: 231
+L174: 
+L175:   * 【56†Description】
+L176:   * 【51†Files】
+L177:   * 【57†Gallery (2)】
+L178:   * 【58†Relations】
+L179:   * 【59†Issues†github.com】
+L180: 
+L181: 【60†Image: <p>Preview</p>†media.forgecdn.net】
+L182: 
+L183: Preview
+L184: 
+L185: 【61†Image: <p>Config screen</p> †media.forgecdn.net】
+L186: 
+L187: Config screen
+L188: 
+L189:   * 【60†Image: Thumbnail <p>Preview</p>†media.forgecdn.net】
+L190:   * 【61†Image: Thumbnail <p>Config screen</p> †media.forgecdn.net】
+L191: ## Description
+L192: 
+L193: Please support my work on 【62†Patreon/GitHub†github.com】
+L194: 
+L195: By default BCM will allow you to drag your chat frames to the very edge of the screen, the remaining customization is done in BCM's modules which can be enabled or disabled at will.
+L196: 
+L197: ##### Configure
+L198: 
+L199: Type /bcm to configure BasicChatMods, a basic and modular approach to chat customization.
+L200: ##### Combat Log Timestamps
+L201: 
+L202: Currently provided by Blizzard, right-click combat log tab > Settings > Formatting > Show Timestamp. Repeat this for every combat log, e.g. "My Actions", "What happened to me?".
+L203: 
+L204: BasicChatMods is open source and development is done on GitHub. You can contribute code, localization, and report issues there: 【52†https://github.com/funkydude/BasicChatMods†github.com】

@@ -1,0 +1,57 @@
+{
+  "postID": 1932,
+  "sourcePath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-1932.html",
+  "sourceSHA256": "A2561441BFF94834F71D991E0B6365F190FF5F61DD81DD6CC367F095C89308CA",
+  "rowCount": 2,
+  "rows": [
+    {
+      "ordinal1": 1,
+      "filename": "devilbecustom91.part2.rar",
+      "clientLiteral": "3.0.2",
+      "downloadsLiteral": "2379",
+      "dateLiteral": "2008-11-02",
+      "sourceLine": 37,
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "devilbecustom91.part2.rar"
+        }
+      ],
+      "actualLiteralMapping": [
+        {
+          "fileID": 9953,
+          "URL": "https://pds.inven.co.kr/upload/wow/addonpds/file/devilbecustom91.part2.rar",
+          "line": 37,
+          "executed": false
+        }
+      ]
+    },
+    {
+      "ordinal1": 2,
+      "filename": "devilbecustom91.part1.rar",
+      "clientLiteral": "3.0.2",
+      "downloadsLiteral": "788",
+      "dateLiteral": "2008-11-02",
+      "sourceLine": 47,
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "devilbecustom91.part1.rar"
+        }
+      ],
+      "actualLiteralMapping": []
+    }
+  ],
+  "setDownloadInfoLiterals": [
+    {
+      "fileID": 9953,
+      "URL": "https://pds.inven.co.kr/upload/wow/addonpds/file/devilbecustom91.part2.rar",
+      "line": 37,
+      "executed": false
+    }
+  ],
+  "selection": "parent-selected-package",
+  "JavaScriptExecuted": false
+}

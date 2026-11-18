@@ -1,0 +1,35 @@
+﻿<Bindings>
+	<Binding name="ASSISTTANKER" header="BLIMKASSISTANKER">
+		-- do nothing
+	</Binding>
+	<Binding name="TARGETTANKER">
+		-- do nothing
+	</Binding>
+	<Binding name="SETTANKER">
+		SlashCmdList["SET_TANKER"]();
+	</Binding>
+	<Binding name="TOGGLEPLAYERNAME">
+		local cv = GetCVar("UnitNameFriendlyPlayerName");
+		if ( cv == "1" ) then
+			SetCVar("UnitNameFriendlyPlayerName","0","UNIT_NAME_FRIENDLY")
+			SetCVar("UnitNameFriendlyPetName","0","UNIT_NAME_FRIENDLY_PETS")
+			SetCVar("UnitNameFriendlyCreationName","0","UNIT_NAME_FRIENDLY_CREATIONS")
+		else
+			SetCVar("UnitNameFriendlyPlayerName","1","UNIT_NAME_FRIENDLY")
+			SetCVar("UnitNameFriendlyPetName","1","UNIT_NAME_FRIENDLY_PETS")
+			SetCVar("UnitNameFriendlyCreationName","1","UNIT_NAME_FRIENDLY_CREATIONS")
+		end
+	</Binding>
+	<Binding name="TOGGLEENEMYNAME">
+		local cv = GetCVar("UnitNameFriendlyPlayerName");
+		if ( cv == "1" ) then
+			SetCVar("UnitNameEnemyPlayerName","0","UNIT_NAME_ENEMY")
+			SetCVar("UnitNameEnemyPetName","0","UNIT_NAME_ENEMY_PETS")
+			SetCVar("UnitNameEnemyCreationName","0","UNIT_NAME_ENEMY_CREATIONS")
+		else
+			SetCVar("UnitNameEnemyPlayerName","1","UNIT_NAME_ENEMY")
+			SetCVar("UnitNameEnemyPetName","1","UNIT_NAME_ENEMY_PETS")
+			SetCVar("UnitNameEnemyCreationName","1","UNIT_NAME_ENEMY_CREATIONS")
+		end
+	</Binding>
+</Bindings>

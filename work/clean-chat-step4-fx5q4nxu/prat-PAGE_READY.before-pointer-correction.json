@@ -1,0 +1,18 @@
+{
+  "exactCFfileURL": "https://www.curseforge.com/wow/addons/prat-3-0/files/9509040",
+  "fileID": 9509040,
+  "versionLiteral": "3.9.117",
+  "filenameLiteral": "Prat-3.0-3.9.117.zip",
+  "dateLiteral": "Nov 8, 2026",
+  "flavorLiteral": "Forever",
+  "gameVersionLiteral": "1.60.1",
+  "metadataBasis": "official web exactfile rendered page turn65view1/2/0 respectively",
+  "publisherDescriptionSnapshot": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\remaining-main.web.txt",
+  "descriptionSourceLines": [
+    238,
+    290
+  ],
+  "repo": "https://github.com/Legacy-of-Sylvanaar/prat-3-0",
+  "CFIWRmain": "403 retained",
+  "sourceAPIReceipts": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-acquisition\\prat-api-receipts.json"
+}

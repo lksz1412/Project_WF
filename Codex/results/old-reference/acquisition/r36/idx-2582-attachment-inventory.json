@@ -1,0 +1,38 @@
+{
+  "postID": 2582,
+  "rowCount": 0,
+  "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=2582&tempridx=&count=0",
+  "rawPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-2582.html",
+  "rawSHA256": "EBC72090BC133D43A3BE43FE37B7638A5FC597B8D40458988A4C63126C307090",
+  "rows": [],
+  "iframeScripts": [
+    {
+      "line": 10,
+      "text": "",
+      "src": "https://www.inven.co.kr/common/lib/js/framework/jquery-1.7.2.min_new.js?v=20130113a"
+    },
+    {
+      "line": 11,
+      "text": "",
+      "src": "https://www.inven.co.kr/js/common.js"
+    },
+    {
+      "line": 12,
+      "text": "",
+      "src": "https://www.inven.co.kr/js/fn_string.js"
+    },
+    {
+      "line": 17,
+      "text": "\nfunction downloadFile(n,filepath) {\n\ttop.login();\n}\n",
+      "src": null
+    },
+    {
+      "line": 37,
+      "text": "parent.setDownloadInfo(-1,\"\");",
+      "src": null
+    }
+  ],
+  "detailHandlerCache": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\idx-2582-detail-downloadhandlers.json",
+  "downloadUIState": "anonymous anchors invoke top.login; no handler evaluated or login attempted",
+  "latestMappingDoesNotSupplyOlderURLs": true
+}

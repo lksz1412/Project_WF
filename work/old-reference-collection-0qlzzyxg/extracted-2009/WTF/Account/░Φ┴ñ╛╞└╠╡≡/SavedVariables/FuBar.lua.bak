@@ -1,0 +1,72 @@
+
+FuBar2DB = {
+	["profiles"] = {
+		["Default"] = {
+			["fontSize"] = 12,
+			["skinB"] = 0,
+			["adjust"] = true,
+			["panels"] = {
+				{
+					["xPercent"] = 0,
+					["attachPoint"] = "BOTTOM",
+					["lock"] = true,
+					["widthPercent"] = 1,
+					["plugins"] = {
+						["right"] = {
+							"MoneyFu", -- [1]
+							"|CFF99FF99F|CFFFFFFFFu|CFF99FF99B|CFFFFFFFFar - BagFu", -- [2]
+							"DuraTek", -- [3]
+							"GuildFu", -- [4]
+							"BlueItemInfo2", -- [5]
+						},
+						["left"] = {
+							"|CFF99FF99F|CFFFFFFFFu|CFF99FF99B|CFFFFFFFFar - FuXPFu", -- [1]
+							"FactionsFu", -- [2]
+							"Grid", -- [3]
+							"RecountFu", -- [4]
+						},
+						["center"] = {
+							"|CFFFFFFFFBlack Edition", -- [1]
+						},
+					},
+					["yPercent"] = 0.0001190425858936975,
+				}, -- [1]
+			},
+			["minimap"] = {
+			},
+			["skin"] = true,
+			["centerSpacing"] = 12,
+			["skinR"] = 0,
+			["loadOnDemand"] = {
+				["FuBar_BagFu"] = {
+					["title"] = "|CFF99FF99F|CFFFFFFFFu|CFF99FF99B|CFFFFFFFFar - BagFu",
+					["category"] = "Inventory",
+				},
+				["FuBar_RecountFu"] = {
+					["title"] = "RecountFu",
+					["category"] = "Combat",
+				},
+			},
+			["tooltip"] = {
+				["transparency"] = 1,
+				["fontSizePercent"] = 1,
+			},
+			["rightSpacing"] = 12,
+			["detached"] = {
+			},
+			["skinG"] = 0,
+			["transparency"] = 0.8,
+			["leftSpacing"] = 12,
+			["places"] = {
+				["left"] = {
+				},
+				["right"] = {
+				},
+			},
+			["thickness"] = 6,
+		},
+	},
+	["account"] = {
+		["firstTimeWoW21"] = true,
+	},
+}

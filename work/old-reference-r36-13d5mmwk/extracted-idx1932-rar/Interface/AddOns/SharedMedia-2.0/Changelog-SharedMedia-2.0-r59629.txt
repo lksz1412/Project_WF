@@ -1,0 +1,10 @@
+------------------------------------------------------------------------
+r59629 | elsia | 2008-01-28 18:32:42 -0500 (Mon, 28 Jan 2008) | 3 lines
+Changed paths:
+   M /trunk/SharedMedia-2.0/SharedMedia-2.0.lua
+   A /trunk/SharedMedia-2.0/statusbar/Empty.tga
+
+SharedMedia-2.0:
+- Add statusbar Empty
+
+------------------------------------------------------------------------

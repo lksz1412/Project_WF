@@ -1,0 +1,45 @@
+## Interface: 30200
+## Title: Parrot
+## Notes: Floating Combat Text of awesomeness. Caw. It'll eat your crackers.
+## Notes-zhCN: 绝妙的浮动战斗记录指示器。
+## Notes-zhTW: 絕妙的浮動戰鬥記錄指示器。
+## Author: ckknight, profalbert
+## X-eMail: ckknight AT gmail DOT com, cedwani AT quantentunnel DOT de
+## X-Website: http://www.wowace.com/
+## X-Category: Combat
+## SavedVariables: ParrotDB
+## OptionalDeps: LibRock-1.0, LibRockEvent-1.0, LibRockTimer-1.0, LibRockHook-1.0, LibRockConsole-1.0, LibRockModuleCore-1.0, Ace3, LibSharedMedia-3.0, Deformat
+## X-Embeds: LibRock-1.0, LibRockEvent-1.0, LibRockTimer-1.0, LibRockHook-1.0, LibRockConsole-1.0, LibRockModuleCore-1.0, LibSharedMedia-3.0, Deformat, AceLocale-3.0, AceConfig-3.0, AceDB-3.0, AceDBOptions-3.0
+## X-WoWIPortal: ckknight
+## X-License: GPL v2 or later
+## Version: v1.9.1-19-g0474687
+## X-Curse-Packaged-Version: v1.9.1-19-g0474687
+## X-Curse-Project-Name: Parrot
+## X-Curse-Project-ID: parrot
+## X-Curse-Repository-ID: wow/parrot/mainline
+
+## LoadManagers: AddonLoader
+## X-LoadOn-Always: delayed
+
+embeds.xml
+
+Locales\locales.xml
+
+Code\Parrot.lua
+Code\Broker.lua
+Code\AnimationStyles.lua
+Code\CombatEvents.lua
+Code\Display.lua
+Code\ScrollAreas.lua
+Code\Suppressions.lua
+Code\TriggerConditions.lua
+Code\Triggers.lua
+
+
+Data\AnimationStyles.lua
+Data\CombatEvents.lua
+Data\TriggerConditions.lua
+Data\Auras.lua
+Data\Cooldowns.lua
+Data\Loot.lua
+Data\CombatStatus.lua

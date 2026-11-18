@@ -1,0 +1,38 @@
+
+Rendered web source positions; publisher text, not source HTML. No commands executed.
+L197: ## Description
+L198: 
+L199: 【63†Image: AI Not Used†img.shields.io】
+L200: 
+L201: Fully supports Retail, Forever and all the classics
+L202: 
+L203: This addon will completely replace your chat frame with a new one, with modern features:
+L204:   * Even with the fancy features, it is fast.
+L205:   * Stylish themes (Dark, Blizzard, ElvUI and GW2)
+L206:   * Edit-mode free chat box resizing/moving
+L207:   * Configurable timestamps
+L208:   * Space out messages, not lines.
+L209:   * Persistent command/typed chat history and navigatable with arrow keys
+L210:   * 2,500+ message history, persisting across sessions
+L211:   * All chat settings are global, across your account.
+L212:   * Shorten frequently seen message components
+L213:   * Change the fonts and sizes
+L214: # Shared Imports
+L215: 
+L216: Find them 【64†here】.
+L217: 
+L218: # Why write a new chat addon?
+L219: 
+L220: Initially it was just about getting the timestamps aligned properly. However after starting I realised that I needed to replace the chat frames to get the right effect.
+L221: 
+L222: As I was replacing the frame I could probably improve the default UI significantly if I invested the time. This addon is what has been created so far.
+L223: # Upcoming Features
+L224: 
+L225: Feature requests are welcome, and quite a few features are planned for the future releases already.
+L226: 
+L227: # Inspiration
+L228: 
+L229: These addons helped shape what Chattynator became:
+L230: 
+L231:   * 【65†LS: Glass】 - the smooth scrolling and excellent performance
+L232:   * 【66†Prat】 - the quintessential chat addon

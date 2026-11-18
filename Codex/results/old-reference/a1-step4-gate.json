@@ -1,0 +1,105 @@
+{
+  "recorded": "2026-11-18T01:27:14.204790+09:00",
+  "state": "A1_READY_WITH_LIMITS_FOR_SAME_B",
+  "G4source": "passed-with-explicit-unavailable-and-unverified-boundaries",
+  "G4requirements": "48 evidence-classified cells complete; NOT runtime fulfillment",
+  "G4outcome": "bounded minimalnative-theme preference/Pratconditionalalternative/source limitations/futurechecks saved",
+  "sourceCoverageFiles": 46,
+  "officialSelectedFiles": 39,
+  "V42SelectedFiles": 7,
+  "independentReviewFiles": 45,
+  "exactForeverFiles": 4,
+  "staticPayloads": 3,
+  "unavailablePayloads": 1,
+  "frozenHelperRecordsChecked": 26,
+  "literalSourcePinsMatched": 14,
+  "requirementRows": 12,
+  "matrixCells": 48,
+  "futureRuntimeGates": 10,
+  "runtime": "NOT_RUN",
+  "independentB": "PENDING",
+  "gameCodeOrInstallOrPrivateInput": false,
+  "newGET_CRC_sourceExecution": 0,
+  "limits": [
+    "Chatty source/commit unavailable",
+    "CF/GitHub binary equality unverified",
+    "Leatrix monolithic core excluded; library lazydefinitions not activation proof",
+    "Unread vendor/Glass components/Prat extra modules unverified",
+    "Exact user filters/typing/3roles/combat/runtime unverified",
+    "New theme/current API implementation unverified; no gamecode",
+    "No Step5 layout/render on this dispatch"
+  ],
+  "artifacts": [
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\docs\\forever-clean-chat-research.md",
+      "lines": 116,
+      "bytes": 20721,
+      "SHA256": "D994BDBBA7D48657D7E9E0FF58A4EFD67F76414A857F6D97CA86986BEF81E6D3"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-source-evidence.md",
+      "lines": 98,
+      "bytes": 19624,
+      "SHA256": "3210558838B8F422039941C31D1CAAA31DDA35C64EF4AF8C2E41714A6210FE25"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-code-read-coverage.json",
+      "lines": 787,
+      "bytes": 27048,
+      "SHA256": "042E15068A730A9E04D41303315EB3EED06CF16D9EFEE451CC3D9D816512E339"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-requirements.json",
+      "lines": 64,
+      "bytes": 2038,
+      "SHA256": "E25DB382C43BEC651605F47D7BF0F0A66BDE07389CF9581FD7BFA0757B376B78"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-requirement-matrix.json",
+      "lines": 376,
+      "bytes": 16123,
+      "SHA256": "7118153A489D4BA1491C2303135BB2CC8F5C3D1513D15ACB8535C5587068C402"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-runtime-gates.json",
+      "lines": 67,
+      "bytes": 2636,
+      "SHA256": "A2A5B27281703FF6FEDEBA0B03A11C743975B9CC0D684164288A0EEE81A5CE3F"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-provenance.json",
+      "lines": 300,
+      "bytes": 18374,
+      "SHA256": "E032B0562708053EB18E007CB8F3B967DADF2774D1772AE1530739F311E61C9B"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-public-original-copies.json",
+      "lines": 68,
+      "bytes": 3613,
+      "SHA256": "DB10C5DD1944F063D85FBB068AC920EDB8CD8D17EC9DB448F639F631141B465F"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\chatty-cdn-followup.json",
+      "lines": 32,
+      "bytes": 1503,
+      "SHA256": "EFBDD7565BFA2925A1A3D253FCDA5AC2744A67E27C7E41A1D043F1A834C712FE"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\handoffs\\old-reference\\iter_2\\work_log.md",
+      "lines": 50,
+      "bytes": 14040,
+      "SHA256": "67E0D6E3F7E5995BCA95BFF25348DCDA899496562DC72FE622A26D1C4E826E9D"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\plans\\2026-11-17-devil-ui-forever-phase1.3-세부계획.md",
+      "lines": 260,
+      "bytes": 39540,
+      "SHA256": "89E3F5A7744A0457D666F56B7E193A5ED12BA2E28B124F85DC4D898854B49286"
+    }
+  ],
+  "finalized": "2026-11-18T01:29:18.351328+09:00",
+  "elapsedMinutesFromLoggedStart": 35.02,
+  "postGateChange": "acceptance status/structure map/own handoff records only; evidence/matrix/source unchanged",
+  "actualG4Runs": 1,
+  "executedCommand": "python D:/Projects/Project_WF/work/clean-chat-g4-d7pr4fu0/g4_verify.py"
+}

@@ -1,0 +1,57 @@
+## Interface: 120107, 120105, 50504, 38002, 20506, 16001, 11509
+## Title: Dominos
+## Notes: A main actionbar replacement
+## Notes-zhCN: 一种动作条替换方案
+## Author: Tuller
+## Category: Action Bars
+## Version: 12.0.3
+## X-Website: https://github.com/tullamods/Dominos
+## SavedVariables: DominosDB
+## LoadSavedVariablesFirst: 1
+## OptionalDeps: Ace3, LibKeyBound-1.0, LibSharedMedia-3.0, Masque, FlyPaper, LibDualSpec-1.0
+## IconTexture: Interface/AddOns/Dominos/Dominos
+## ExcludeLoadGameType: plunderstorm, wowhack
+# stuff required for the addon to work
+embeds.xml
+localization\default.lua
+localization\[TextLocale].lua
+Dominos.lua
+core\migrations.lua
+core\addressMap.lua
+core\helpers.lua
+core\contextMenu.lua
+core\barStates\module.lua
+core\barStates\Common.lua
+core\barStates\[Game].lua
+core\shadowUIParent.lua
+core\frame.lua
+core\buttonBar.lua
+core\bindableButton.lua
+core\fadeManager.lua
+core\overrideController.lua [ExcludeLoadGameType vanilla]
+core\tooltipController.lua
+# builtin bars
+bars\actionBar\button.lua
+bars\actionBar\buttons.lua
+bars\actionBar\bar.lua
+bars\actionBar\menu.lua
+bars\actionBar\module.lua
+bars\bagBar.lua
+bars\extraAbilityBar.lua [AllowLoadGameType standard, mists, cata, wrath, tbc]
+bars\encounterBar.lua [AllowLoadGameType standard, mists, cata, wrath]
+bars\menuBar.lua
+bars\petBar.lua
+bars\possessBar.lua
+bars\queueStatusBar.lua [AllowLoadGameType standard, camelot]
+bars\stanceBar.lua
+bars\talkingHeadBar.lua [AllowLoadGameType standard]
+bars\totemBar\art.lua [AllowLoadGameType cata, wrath, camelot]
+bars\totemBar\flyout.lua [AllowLoadGameType cata, wrath, camelot]
+bars\totemBar\spellButton.lua [AllowLoadGameType cata, wrath, camelot]
+bars\totemBar\bar.lua [AllowLoadGameType cata, wrath, camelot]
+bars\totemBar\module.lua [AllowLoadGameType cata, wrath, camelot]
+# stuff you should be able to comment out and still have Dominos work
+plugins\slashCommands.lua
+plugins\launcher.lua
+plugins\buttonThemer.lua
+plugins\actionBook.lua

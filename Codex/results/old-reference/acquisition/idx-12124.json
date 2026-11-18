@@ -1,0 +1,299 @@
+{
+  "postID": 12124,
+  "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=12124",
+  "row": {
+    "postID": 12124,
+    "page": 1,
+    "rowOrdinal": 6,
+    "title": "[어둠땅] Devil UI Black Edition [.. [통합] 206",
+    "rowText": "29 [어둠땅] Devil UI Black Edition [.. [통합] 206 [어둠땅] 데빌 블랙에디션 확장팩 통합 [02-15] Buzzle 8334 11 02-15",
+    "sourceAnchor": "javascript:addonMove('detail.php', 'idx->12124', 'leave->idx,listtype,ext', 'rurl');",
+    "sourceLocation": {
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\list-first.html",
+      "selector": "table.list tr a[href]",
+      "line": 1250
+    }
+  },
+  "detailProvenance": {
+    "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=12124",
+    "time": "2026-11-17T14:02:05.5727411Z",
+    "contentType": "text/html; charset=UTF-8",
+    "HTTP": 200,
+    "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=12124",
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-12124.html",
+    "state": "acquired",
+    "attempts": 1,
+    "commandExitCode": 0,
+    "encoding": "IWR decoded to UTF-8",
+    "bytes": 229060,
+    "SHA256": "5FD32E6FDC7C95254A492074EC16B08ED2B0DDC75964F5EC9C0DE120DB0D985C"
+  },
+  "acquisitionState": "parsed",
+  "A1read": false,
+  "imageObserved": false,
+  "sections": {
+    "addonAddon": {
+      "state": "parsed",
+      "text": "[어둠땅] DevilUI Black Edition 통합 [02-15]\n\n\n\n[어둠땅] 데빌 블랙에디션 확장팩 통합 [02-15]\n\n\n\n=====================================================================================\n\n\n\n설치방법  ←←← 설치법이 기존방법 에서 조금 변경 되었습니다. 확인!!\n\n\n\n\n\n※ 꼭 이전버전 다운받으신 분들은 파일 모두 삭제 하시고 진행하세요~\n\n\n\n※ [ 덮어쓰기 ] 하시면 위크오라, 플레이터 설정 등이 오류납니다.\n\n\n\n\n\n1번) 다운로드 받은 파일을 설치하기 전에 본인의 계정번호를 알아야 합니다.\n\n      기존 와우 설치 폴더내 [ WTF ] - [ Account ] - 폴더안 [ SavedVariables ] 제외한 폴더이름 입니다.\n\n      * 본인의 계정번호를 따로 메모해 두세요!!\n\n\n\n\n\n2번) 기존 와우 설치 폴더내에 [ Cache ] , [ Interface ] , [ WTF ] 3개의 폴더를 삭제해 주세요~\n\n      * 설치전 기존 [ Interface ] , [ WTF ] 폴더 백업을 권장 드립니다.\n\n\n\n\n\n3번) 다운로드 받은 파일을 실행~  설치시 꼭 경로를 [ World of Warcraft\\_retail_ ] 폴더 까지만 지정 하셔야 합니다.\n\n      * 설치경로 - 예) C:\\Program Files (x86)\\World of Warcraft\\_retail_\n\n\n\n\n\n4번) 설치가 완료된 후 와우 폴더내 새로 생성된 [ WTF ] - [ Account ] - 폴더안 1번 ~ 3번 까지 수정해 주세요~\n\n      * 1번 수정 하시고 더블클릭 하시면 2번 , 3번 보시면 내용 이해 하실꺼에요~\n\n\n\n\n\n5번) 게임 접속후 채팅창에 [ /reflux switch WideX ] 입력하세요~\n\n\n\n\n\n6번) 채팅창에 [ /plater ] 입력후 [ 프로필 ] - [ 프로필 설정 열기 ] - [ 저장 중인 프로필 ] - [ MyNewProfile ] \n\n       선택 후 상단에 YES 버튼을 눌러 적용 완료해 주세요~\n\n\n\n\n\n      (기존 설치방법에서 변경되었습니다. 사용 프로필은 [ 기본값 ]이 아닌 [ MyNewProfile ] 입니다.)\n\n\n\n\n\n7번) 이제 어둠땅 여정을 시작하시면 됩니다~^^\n\n\n\n\n\n\n\n※ 재접속시 오른쪽 중앙 Grid2 애드온이 검정색 창으로 구동이 안될경우 [ /rl ] 입력해 주세요~\n\n\n\n\n\n※ 설치방법 순서대로 꼭 진행해주세요~\n\n\n\n\n\n=====================================================================================\n\n\n\n* 설치 후 취향에 따라 필요없는 애드온은 삭제해 주시면 됩니다~\n\n\n\n* 100% 완벽하진 않지만 데빌이 계속 유지되었으면 하는맘에 직업별로 테스트 모두 해보고 업로드 하고 있습니다.\n\n\n\n=====================================================================================",
+      "fragmentPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\idx-12124-addonAddon.html",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-12124.html",
+        "selector": "#addonAddon",
+        "line": 1244
+      },
+      "links": []
+    },
+    "addonVersion": {
+      "state": "empty",
+      "text": "",
+      "fragmentPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\idx-12124-addonVersion.html",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-12124.html",
+        "selector": "#addonVersion",
+        "line": 1302
+      },
+      "links": []
+    }
+  },
+  "iframes": {
+    "screenshot": {
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=12124&tempridx=&count=3",
+      "iframeLiteral": "<iframe frameborder=\"0\" framespacing=\"0\" id=\"screenshot\" scrolling=\"no\" src=\"imagelist.iframe.php?ridx=12124&amp;tempridx=&amp;count=3\"></iframe>",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-12124.html",
+        "selector": "iframe#screenshot",
+        "line": 1238
+      },
+      "provenance": {
+        "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=12124&tempridx=&count=3",
+        "time": "2026-11-17T14:02:06.1330417Z",
+        "contentType": "text/html; charset=UTF-8",
+        "HTTP": 200,
+        "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=12124&tempridx=&count=3",
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-12124.html",
+        "state": "acquired",
+        "attempts": 1,
+        "commandExitCode": 0,
+        "encoding": "IWR decoded to UTF-8",
+        "bytes": 3070,
+        "SHA256": "909A2DB1636EE7BFD9F49AA571D156CF2F66F85E291ACEBACCA2FAA9F152BB86"
+      },
+      "state": "parsed",
+      "text": "\n\n\n\n\n\n스크린샷\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "links": [
+        {
+          "href": "javascript:void(0);",
+          "onclick": null,
+          "text": "",
+          "line": 28
+        },
+        {
+          "href": "javascript:void(0);",
+          "onclick": "viewImage('2020/10/20/bbs/i15567580445.jpg');",
+          "text": "",
+          "line": 33
+        },
+        {
+          "href": "javascript:void(0);",
+          "onclick": "viewImage('2020/10/20/bbs/i15496852308.jpg');",
+          "text": "",
+          "line": 40
+        },
+        {
+          "href": "javascript:void(0);",
+          "onclick": "viewImage('2020/10/21/bbs/i13726980278.jpg');",
+          "text": "",
+          "line": 47
+        },
+        {
+          "href": "javascript:void(0);",
+          "onclick": null,
+          "text": "",
+          "line": 54
+        }
+      ],
+      "literalPublicDownloadURLs": [],
+      "imageCount": 3
+    },
+    "fileInfo": {
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=12124&tempridx=&count=3",
+      "iframeLiteral": "<iframe frameborder=\"0\" id=\"fileInfo\" src=\"filelist.iframe.php?mode=view&amp;ridx=12124&amp;tempridx=&amp;count=3\"></iframe>",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-12124.html",
+        "selector": "iframe#fileInfo",
+        "line": 1308
+      },
+      "provenance": {
+        "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=12124&tempridx=&count=3",
+        "time": "2026-11-17T14:02:06.6913591Z",
+        "contentType": "text/html; charset=UTF-8",
+        "HTTP": 200,
+        "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=12124&tempridx=&count=3",
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-12124.html",
+        "state": "acquired",
+        "attempts": 1,
+        "commandExitCode": 0,
+        "encoding": "IWR decoded to UTF-8",
+        "bytes": 3305,
+        "SHA256": "EEC2AD6EC505C23B55252CE633316A12F66913A35DE33DCE42B6EC0CDA321EB9"
+      },
+      "state": "parsed",
+      "text": "\n\n\n\n\n\n파일 정보\n\n\n\n\n\n\n\n\n\n\n\n\n파일\n\n\n클라이언트 버전\n\n\n다운로드\n\n\n등록일\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n[9.0.2]DevilUIBlackEdition[02-15].zip\n\n\n\n\n\n\n9.0.2\n\n\n846\n\n\n2021-02-15\n\n\n\n\n\n\n\n\n\n\n[9.0.2]DevilUIBlackEdition[02-04].zip\n\n\n\n\n\n\n9.0.2\n\n\n413\n\n\n2021-02-04\n\n\n\n\n\n\n\n\n\n\n[9.0.2]DevilUIBlackEdition[Renewal].zip\n\n\n\n\n\n\n9.0.2\n\n\n1116\n\n\n2021-01-03\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "links": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "[9.0.2]DevilUIBlackEdition[02-15].zip",
+          "line": 40
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "[9.0.2]DevilUIBlackEdition[02-04].zip",
+          "line": 50
+        },
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "[9.0.2]DevilUIBlackEdition[Renewal].zip",
+          "line": 60
+        }
+      ],
+      "literalPublicDownloadURLs": [],
+      "fileRows": [
+        {
+          "text": "[9.0.2]DevilUIBlackEdition[02-15].zip 9.0.2 846 2021-02-15",
+          "cells": [
+            "[9.0.2]DevilUIBlackEdition[02-15].zip",
+            "9.0.2",
+            "846",
+            "2021-02-15"
+          ],
+          "line": 37
+        },
+        {
+          "text": "[9.0.2]DevilUIBlackEdition[02-04].zip 9.0.2 413 2021-02-04",
+          "cells": [
+            "[9.0.2]DevilUIBlackEdition[02-04].zip",
+            "9.0.2",
+            "413",
+            "2021-02-04"
+          ],
+          "line": 47
+        },
+        {
+          "text": "[9.0.2]DevilUIBlackEdition[Renewal].zip 9.0.2 1116 2021-01-03",
+          "cells": [
+            "[9.0.2]DevilUIBlackEdition[Renewal].zip",
+            "9.0.2",
+            "1116",
+            "2021-01-03"
+          ],
+          "line": 57
+        }
+      ]
+    }
+  },
+  "images": [
+    {
+      "postID": 12124,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload3.inven.co.kr/upload/2020/10/20/bbs/thumb/n15567580445.jpg",
+      "viewerLiteral": "viewImage('2020/10/20/bbs/i15567580445.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-12124.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 12124,
+      "section": "screenshot",
+      "DOMordinal": 2,
+      "thumbURL": "https://upload3.inven.co.kr/upload/2020/10/20/bbs/thumb/n15496852308.jpg",
+      "viewerLiteral": "viewImage('2020/10/20/bbs/i15496852308.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-12124.html",
+        "selector": "screenshot img",
+        "line": 40
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    },
+    {
+      "postID": 12124,
+      "section": "screenshot",
+      "DOMordinal": 3,
+      "thumbURL": "https://upload3.inven.co.kr/upload/2020/10/21/bbs/thumb/n13726980278.jpg",
+      "viewerLiteral": "viewImage('2020/10/21/bbs/i13726980278.jpg');",
+      "fullURL": null,
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-12124.html",
+        "selector": "screenshot img",
+        "line": 47
+      },
+      "error": "viewer path not present in observed thumbnail URL; unresolved",
+      "decodeStatus": "unresolved"
+    }
+  ],
+  "title": "[어둠땅] Devil UI Black Edition [02-15]",
+  "metadataLiteral": "[어둠땅] Devil UI Black Edition [02-15]\n[어둠땅] 데빌 블랙에디션 확장팩 통합 [02-15]\n애드온 등록자\nBuzzle\n최종 업데이트\n2021.02.15\n카테고리\n통합\n클라이언트 버전\n9.0.2\n애드온 버전\n02-15\n조회수\n80885\n추천수\n11\n다운로드 수\n8334\n관심등록 수\n233\n다운로드\n관심 애드온 등록",
+  "metadataRows": [
+    {
+      "label": "애드온 등록자",
+      "value": "Buzzle",
+      "line": 1181
+    },
+    {
+      "label": "최종 업데이트",
+      "value": "2021.02.15",
+      "line": 1185
+    },
+    {
+      "label": "카테고리",
+      "value": "통합",
+      "line": 1189
+    },
+    {
+      "label": "클라이언트 버전",
+      "value": "9.0.2",
+      "line": 1196
+    },
+    {
+      "label": "애드온 버전",
+      "value": "02-15",
+      "line": 1200
+    },
+    {
+      "label": "조회수",
+      "value": "80885",
+      "line": 1207
+    },
+    {
+      "label": "추천수",
+      "value": "11",
+      "line": 1211
+    },
+    {
+      "label": "다운로드 수",
+      "value": "8334",
+      "line": 1215
+    },
+    {
+      "label": "관심등록 수",
+      "value": "233",
+      "line": 1219
+    }
+  ]
+}

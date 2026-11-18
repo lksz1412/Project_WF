@@ -1,0 +1,4 @@
+## Interface: 30200
+## Title: QuickFix
+## Notes: Fixes that annoying bug!
+QuickFix.lua

@@ -1,0 +1,6 @@
+## Interface: 70300
+## Title: Quartzbar
+## Notes: 캐스팅바 우선순위
+## Auther: 아라스틴
+
+Quartzbar.lua

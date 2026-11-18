@@ -1,0 +1,256 @@
+{
+  "postID": 546,
+  "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=546",
+  "row": {
+    "postID": 546,
+    "page": 2,
+    "rowOrdinal": 14,
+    "title": "Jln 입니다. 일일이 못보내드려서 업.. [통합UI] 2",
+    "rowText": "1 Jln 입니다. 일일이 못보내드려서 업.. [통합UI] 2 Devil 간소화 / 도적 / 화면중앙집중 / Jln 899 0 10-19",
+    "sourceAnchor": "javascript:addonMove('detail.php', 'idx->546', 'leave->idx,listtype,ext', 'rurl');",
+    "sourceLocation": {
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\list-page2.html",
+      "selector": "table.list tr a[href]",
+      "line": 1346
+    }
+  },
+  "detailProvenance": {
+    "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=546",
+    "time": "2026-11-17T14:03:05.6750038Z",
+    "contentType": "text/html; charset=UTF-8",
+    "HTTP": 200,
+    "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=546",
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-546.html",
+    "state": "acquired",
+    "attempts": 1,
+    "commandExitCode": 0,
+    "encoding": "IWR decoded to UTF-8",
+    "bytes": 226455,
+    "SHA256": "3633EE12C61F473D893FE710E4557EA84057C3ACF92B788055315D94030CABEE"
+  },
+  "acquisitionState": "parsed",
+  "A1read": false,
+  "imageObserved": false,
+  "sections": {
+    "addonAddon": {
+      "state": "parsed",
+      "text": "일일이 메일로 못보내드려서 죄송합니다.",
+      "fragmentPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\idx-546-addonAddon.html",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-546.html",
+        "selector": "#addonAddon",
+        "line": 1244
+      },
+      "links": []
+    },
+    "addonVersion": {
+      "state": "empty",
+      "text": "",
+      "fragmentPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\idx-546-addonVersion.html",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-546.html",
+        "selector": "#addonVersion",
+        "line": 1245
+      },
+      "links": []
+    }
+  },
+  "iframes": {
+    "screenshot": {
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=546&tempridx=&count=1",
+      "iframeLiteral": "<iframe frameborder=\"0\" framespacing=\"0\" id=\"screenshot\" scrolling=\"no\" src=\"imagelist.iframe.php?ridx=546&amp;tempridx=&amp;count=1\"></iframe>",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-546.html",
+        "selector": "iframe#screenshot",
+        "line": 1238
+      },
+      "provenance": {
+        "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=546&tempridx=&count=1",
+        "time": "2026-11-17T14:03:06.3195217Z",
+        "contentType": "text/html; charset=UTF-8",
+        "HTTP": 200,
+        "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=546&tempridx=&count=1",
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-546.html",
+        "state": "acquired",
+        "attempts": 1,
+        "commandExitCode": 0,
+        "encoding": "IWR decoded to UTF-8",
+        "bytes": 2355,
+        "SHA256": "3FF4294F9A39E3418642AFD56E48EE45E38A2757ACAB07694128C2E755E2F24C"
+      },
+      "state": "parsed",
+      "text": "\n\n\n\n\n\n스크린샷\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "links": [
+        {
+          "href": "javascript:void(0);",
+          "onclick": null,
+          "text": "",
+          "line": 28
+        },
+        {
+          "href": "javascript:void(0);",
+          "onclick": "viewImage('wow/addonpds/image/1019_9798.jpg');",
+          "text": "",
+          "line": 33
+        },
+        {
+          "href": "javascript:void(0);",
+          "onclick": null,
+          "text": "",
+          "line": 40
+        }
+      ],
+      "literalPublicDownloadURLs": [],
+      "imageCount": 1
+    },
+    "fileInfo": {
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=546&tempridx=&count=1",
+      "iframeLiteral": "<iframe frameborder=\"0\" id=\"fileInfo\" src=\"filelist.iframe.php?mode=view&amp;ridx=546&amp;tempridx=&amp;count=1\"></iframe>",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\detail-546.html",
+        "selector": "iframe#fileInfo",
+        "line": 1251
+      },
+      "provenance": {
+        "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=546&tempridx=&count=1",
+        "time": "2026-11-17T14:03:06.9543503Z",
+        "contentType": "text/html; charset=UTF-8",
+        "HTTP": 200,
+        "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=546&tempridx=&count=1",
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-546.html",
+        "state": "acquired",
+        "attempts": 1,
+        "commandExitCode": 0,
+        "encoding": "IWR decoded to UTF-8",
+        "bytes": 2302,
+        "SHA256": "E064D881D5C44212E9BE1276F43F82358E6993CA7E90852561672D16EFB768CF"
+      },
+      "state": "parsed",
+      "text": "\n\n\n\n\n\n파일 정보\n\n\n\n\n\n\n\n\n\n\n\n\n파일\n\n\n클라이언트 버전\n\n\n다운로드\n\n\n등록일\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\nUI.zip\n\n\n\n\n\n\n2.2.3\n\n\n899\n\n\n2007-10-19\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "links": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "UI.zip",
+          "line": 40
+        }
+      ],
+      "literalPublicDownloadURLs": [
+        "https://pds.inven.co.kr/upload/wow/addonpds/file/UI.zip"
+      ],
+      "fileRows": [
+        {
+          "text": "UI.zip 2.2.3 899 2007-10-19",
+          "cells": [
+            "UI.zip",
+            "2.2.3",
+            "899",
+            "2007-10-19"
+          ],
+          "line": 37
+        }
+      ],
+      "scriptPublicDownloadURLLiterals": [
+        {
+          "url": "https://pds.inven.co.kr/upload/wow/addonpds/file/UI.zip",
+          "literal": "https://pds.inven.co.kr/upload/wow/addonpds/file/UI.zip",
+          "scriptText": "parent.setDownloadInfo(2516,\"https://pds.inven.co.kr/upload/wow/addonpds/file/UI.zip\");",
+          "sourceLocation": {
+            "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-546.html",
+            "line": 37,
+            "selector": "script"
+          },
+          "executed": false
+        }
+      ]
+    }
+  },
+  "images": [
+    {
+      "postID": 546,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/s_1019_9798.jpg",
+      "viewerLiteral": "viewImage('wow/addonpds/image/1019_9798.jpg');",
+      "fullURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1019_9798.jpg",
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-546.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": null,
+      "decodeStatus": "verified-full-load",
+      "mappingEvidence": {
+        "observedThumbOrigin": "https://upload.inven.co.kr",
+        "observedPathPrefix": "/upload/",
+        "literalViewerPath": "wow/addonpds/image/1019_9798.jpg"
+      },
+      "initialMappingState": "unresolved-preserved-in-images.json",
+      "finalURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1019_9798.jpg",
+      "time": "2026-11-17T14:05:53.4849396Z",
+      "contentType": "image/jpeg",
+      "HTTP": 200,
+      "sourceURL": "https://upload.inven.co.kr/upload/wow/addonpds/image/1019_9798.jpg",
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-8819b05c1a8ae81975c0.jpg",
+      "state": "acquired",
+      "attempts": 1,
+      "commandExitCode": 0,
+      "bytes": 346987,
+      "SHA256": "CC4B137B0B083619D4EDBEF122CE05DA8944B24281E555583122FCE618F7F0B5",
+      "width": 1280,
+      "height": 1024,
+      "imageFormat": "JPEG"
+    }
+  ],
+  "title": "Jln 입니다. 일일이 못보내드려서 업로드해요",
+  "metadataLiteral": "Jln 입니다. 일일이 못보내드려서 업로드해요\nDevil 간소화 / 도적 / 화면중앙집중 /\n애드온 등록자\nJln\n최종 업데이트\n2007.10.19\n카테고리\n통합UI\n클라이언트 버전\n2.2.3\n애드온 버전\n1\n조회수\n9287\n추천수\n0\n다운로드 수\n899\n관심등록 수\n8\n다운로드\n관심 애드온 등록",
+  "metadataRows": [
+    {
+      "label": "애드온 등록자",
+      "value": "Jln",
+      "line": 1181
+    },
+    {
+      "label": "최종 업데이트",
+      "value": "2007.10.19",
+      "line": 1185
+    },
+    {
+      "label": "카테고리",
+      "value": "통합UI",
+      "line": 1189
+    },
+    {
+      "label": "클라이언트 버전",
+      "value": "2.2.3",
+      "line": 1196
+    },
+    {
+      "label": "애드온 버전",
+      "value": "1",
+      "line": 1200
+    },
+    {
+      "label": "조회수",
+      "value": "9287",
+      "line": 1207
+    },
+    {
+      "label": "추천수",
+      "value": "0",
+      "line": 1211
+    },
+    {
+      "label": "다운로드 수",
+      "value": "899",
+      "line": 1215
+    },
+    {
+      "label": "관심등록 수",
+      "value": "8",
+      "line": 1219
+    }
+  ]
+}

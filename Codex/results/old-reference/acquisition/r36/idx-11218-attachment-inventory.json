@@ -1,0 +1,723 @@
+{
+  "postID": 11218,
+  "rowCount": 22,
+  "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=11218&tempridx=&count=22",
+  "rawPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-11218.html",
+  "rawSHA256": "61AAFBA4DEF148DA418D6E30609C95BCD37248BC394C9D3A611F5521E7F75BAD",
+  "rows": [
+    {
+      "postID": 11218,
+      "ordinal1": 1,
+      "filenameLiteral": "DevilUI23.5.15.zip",
+      "clientVersionLiteral": "10.1",
+      "downloadCountLiteral": "535",
+      "dateLiteral": "2023-05-15",
+      "dateKind": "file table registration date",
+      "fileID": 76228,
+      "fileIDState": "actual-setDownloadInfo-literal",
+      "literalPublicURLs": [
+        "https://pds.inven.co.kr/upload/2023/05/15/addon/DevilUI23.5.15.zip"
+      ],
+      "mappingState": "exact-latest-literal-filename",
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "DevilUI23.5.15.zip",
+          "attributes": {
+            "href": "javascript:top.login();",
+            "onfocus": "this.blur();"
+          },
+          "line": 40
+        }
+      ],
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-11218.html",
+        "line": 37,
+        "selector": "#addonFileInfo table tr"
+      },
+      "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">DevilUI23.5.15.zip</a></span>\n</span>\n</td>\n<td class=\"version\">10.1</td>\n<td class=\"download\">535</td>\n<td class=\"postdate\">2023-05-15</td>\n</tr>"
+    },
+    {
+      "postID": 11218,
+      "ordinal1": 2,
+      "filenameLiteral": "Devil21.01.04.zip",
+      "clientVersionLiteral": "9.0.2",
+      "downloadCountLiteral": "1875",
+      "dateLiteral": "2021-01-04",
+      "dateKind": "file table registration date",
+      "fileID": null,
+      "fileIDState": "not-exposed-in-anonymous-row",
+      "literalPublicURLs": [],
+      "mappingState": "no-row-URL-literal; public recovery not exhausted",
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil21.01.04.zip",
+          "attributes": {
+            "href": "javascript:top.login();",
+            "onfocus": "this.blur();"
+          },
+          "line": 50
+        }
+      ],
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-11218.html",
+        "line": 47,
+        "selector": "#addonFileInfo table tr"
+      },
+      "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">Devil21.01.04.zip</a></span>\n</span>\n</td>\n<td class=\"version\">9.0.2</td>\n<td class=\"download\">1875</td>\n<td class=\"postdate\">2021-01-04</td>\n</tr>"
+    },
+    {
+      "postID": 11218,
+      "ordinal1": 3,
+      "filenameLiteral": "Devil20.11.26.zip",
+      "clientVersionLiteral": "9.0.2",
+      "downloadCountLiteral": "988",
+      "dateLiteral": "2020-11-26",
+      "dateKind": "file table registration date",
+      "fileID": null,
+      "fileIDState": "not-exposed-in-anonymous-row",
+      "literalPublicURLs": [],
+      "mappingState": "no-row-URL-literal; public recovery not exhausted",
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil20.11.26.zip",
+          "attributes": {
+            "href": "javascript:top.login();",
+            "onfocus": "this.blur();"
+          },
+          "line": 60
+        }
+      ],
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-11218.html",
+        "line": 57,
+        "selector": "#addonFileInfo table tr"
+      },
+      "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">Devil20.11.26.zip</a></span>\n</span>\n</td>\n<td class=\"version\">9.0.2</td>\n<td class=\"download\">988</td>\n<td class=\"postdate\">2020-11-26</td>\n</tr>"
+    },
+    {
+      "postID": 11218,
+      "ordinal1": 4,
+      "filenameLiteral": "Devil20.11.22.zip",
+      "clientVersionLiteral": "9.0.2",
+      "downloadCountLiteral": "659",
+      "dateLiteral": "2020-11-22",
+      "dateKind": "file table registration date",
+      "fileID": null,
+      "fileIDState": "not-exposed-in-anonymous-row",
+      "literalPublicURLs": [],
+      "mappingState": "no-row-URL-literal; public recovery not exhausted",
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil20.11.22.zip",
+          "attributes": {
+            "href": "javascript:top.login();",
+            "onfocus": "this.blur();"
+          },
+          "line": 70
+        }
+      ],
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-11218.html",
+        "line": 67,
+        "selector": "#addonFileInfo table tr"
+      },
+      "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">Devil20.11.22.zip</a></span>\n</span>\n</td>\n<td class=\"version\">9.0.2</td>\n<td class=\"download\">659</td>\n<td class=\"postdate\">2020-11-22</td>\n</tr>"
+    },
+    {
+      "postID": 11218,
+      "ordinal1": 5,
+      "filenameLiteral": "Devil20.11.03.zip",
+      "clientVersionLiteral": "9.0.1",
+      "downloadCountLiteral": "543",
+      "dateLiteral": "2020-11-03",
+      "dateKind": "file table registration date",
+      "fileID": null,
+      "fileIDState": "not-exposed-in-anonymous-row",
+      "literalPublicURLs": [],
+      "mappingState": "no-row-URL-literal; public recovery not exhausted",
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil20.11.03.zip",
+          "attributes": {
+            "href": "javascript:top.login();",
+            "onfocus": "this.blur();"
+          },
+          "line": 80
+        }
+      ],
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-11218.html",
+        "line": 77,
+        "selector": "#addonFileInfo table tr"
+      },
+      "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">Devil20.11.03.zip</a></span>\n</span>\n</td>\n<td class=\"version\">9.0.1</td>\n<td class=\"download\">543</td>\n<td class=\"postdate\">2020-11-03</td>\n</tr>"
+    },
+    {
+      "postID": 11218,
+      "ordinal1": 6,
+      "filenameLiteral": "disk20.10.28.zip",
+      "clientVersionLiteral": "9.0.1",
+      "downloadCountLiteral": "1938",
+      "dateLiteral": "2020-10-28",
+      "dateKind": "file table registration date",
+      "fileID": null,
+      "fileIDState": "not-exposed-in-anonymous-row",
+      "literalPublicURLs": [],
+      "mappingState": "no-row-URL-literal; public recovery not exhausted",
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk20.10.28.zip",
+          "attributes": {
+            "href": "javascript:top.login();",
+            "onfocus": "this.blur();"
+          },
+          "line": 90
+        }
+      ],
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-11218.html",
+        "line": 87,
+        "selector": "#addonFileInfo table tr"
+      },
+      "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">disk20.10.28.zip</a></span>\n</span>\n</td>\n<td class=\"version\">9.0.1</td>\n<td class=\"download\">1938</td>\n<td class=\"postdate\">2020-10-28</td>\n</tr>"
+    },
+    {
+      "postID": 11218,
+      "ordinal1": 7,
+      "filenameLiteral": "Devil20.10.28.zip",
+      "clientVersionLiteral": "9.0.1",
+      "downloadCountLiteral": "719",
+      "dateLiteral": "2020-10-28",
+      "dateKind": "file table registration date",
+      "fileID": null,
+      "fileIDState": "not-exposed-in-anonymous-row",
+      "literalPublicURLs": [],
+      "mappingState": "no-row-URL-literal; public recovery not exhausted",
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil20.10.28.zip",
+          "attributes": {
+            "href": "javascript:top.login();",
+            "onfocus": "this.blur();"
+          },
+          "line": 100
+        }
+      ],
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-11218.html",
+        "line": 97,
+        "selector": "#addonFileInfo table tr"
+      },
+      "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">Devil20.10.28.zip</a></span>\n</span>\n</td>\n<td class=\"version\">9.0.1</td>\n<td class=\"download\">719</td>\n<td class=\"postdate\">2020-10-28</td>\n</tr>"
+    },
+    {
+      "postID": 11218,
+      "ordinal1": 8,
+      "filenameLiteral": "disk20.10.20.zip",
+      "clientVersionLiteral": "9.0.1",
+      "downloadCountLiteral": "755",
+      "dateLiteral": "2020-10-20",
+      "dateKind": "file table registration date",
+      "fileID": null,
+      "fileIDState": "not-exposed-in-anonymous-row",
+      "literalPublicURLs": [],
+      "mappingState": "no-row-URL-literal; public recovery not exhausted",
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk20.10.20.zip",
+          "attributes": {
+            "href": "javascript:top.login();",
+            "onfocus": "this.blur();"
+          },
+          "line": 110
+        }
+      ],
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-11218.html",
+        "line": 107,
+        "selector": "#addonFileInfo table tr"
+      },
+      "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">disk20.10.20.zip</a></span>\n</span>\n</td>\n<td class=\"version\">9.0.1</td>\n<td class=\"download\">755</td>\n<td class=\"postdate\">2020-10-20</td>\n</tr>"
+    },
+    {
+      "postID": 11218,
+      "ordinal1": 9,
+      "filenameLiteral": "Devil20.10.20.zip",
+      "clientVersionLiteral": "9.0.1",
+      "downloadCountLiteral": "882",
+      "dateLiteral": "2020-10-20",
+      "dateKind": "file table registration date",
+      "fileID": null,
+      "fileIDState": "not-exposed-in-anonymous-row",
+      "literalPublicURLs": [],
+      "mappingState": "no-row-URL-literal; public recovery not exhausted",
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil20.10.20.zip",
+          "attributes": {
+            "href": "javascript:top.login();",
+            "onfocus": "this.blur();"
+          },
+          "line": 120
+        }
+      ],
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-11218.html",
+        "line": 117,
+        "selector": "#addonFileInfo table tr"
+      },
+      "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">Devil20.10.20.zip</a></span>\n</span>\n</td>\n<td class=\"version\">9.0.1</td>\n<td class=\"download\">882</td>\n<td class=\"postdate\">2020-10-20</td>\n</tr>"
+    },
+    {
+      "postID": 11218,
+      "ordinal1": 10,
+      "filenameLiteral": "disk20.10.19.zip",
+      "clientVersionLiteral": "9.0.1",
+      "downloadCountLiteral": "367",
+      "dateLiteral": "2020-10-19",
+      "dateKind": "file table registration date",
+      "fileID": null,
+      "fileIDState": "not-exposed-in-anonymous-row",
+      "literalPublicURLs": [],
+      "mappingState": "no-row-URL-literal; public recovery not exhausted",
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk20.10.19.zip",
+          "attributes": {
+            "href": "javascript:top.login();",
+            "onfocus": "this.blur();"
+          },
+          "line": 130
+        }
+      ],
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-11218.html",
+        "line": 127,
+        "selector": "#addonFileInfo table tr"
+      },
+      "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">disk20.10.19.zip</a></span>\n</span>\n</td>\n<td class=\"version\">9.0.1</td>\n<td class=\"download\">367</td>\n<td class=\"postdate\">2020-10-19</td>\n</tr>"
+    },
+    {
+      "postID": 11218,
+      "ordinal1": 11,
+      "filenameLiteral": "Devil20.10.19.zip",
+      "clientVersionLiteral": "9.0.1",
+      "downloadCountLiteral": "392",
+      "dateLiteral": "2020-10-19",
+      "dateKind": "file table registration date",
+      "fileID": null,
+      "fileIDState": "not-exposed-in-anonymous-row",
+      "literalPublicURLs": [],
+      "mappingState": "no-row-URL-literal; public recovery not exhausted",
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil20.10.19.zip",
+          "attributes": {
+            "href": "javascript:top.login();",
+            "onfocus": "this.blur();"
+          },
+          "line": 140
+        }
+      ],
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-11218.html",
+        "line": 137,
+        "selector": "#addonFileInfo table tr"
+      },
+      "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">Devil20.10.19.zip</a></span>\n</span>\n</td>\n<td class=\"version\">9.0.1</td>\n<td class=\"download\">392</td>\n<td class=\"postdate\">2020-10-19</td>\n</tr>"
+    },
+    {
+      "postID": 11218,
+      "ordinal1": 12,
+      "filenameLiteral": "disk2020.10.18.zip",
+      "clientVersionLiteral": "9.0.1",
+      "downloadCountLiteral": "137",
+      "dateLiteral": "2020-10-18",
+      "dateKind": "file table registration date",
+      "fileID": null,
+      "fileIDState": "not-exposed-in-anonymous-row",
+      "literalPublicURLs": [],
+      "mappingState": "no-row-URL-literal; public recovery not exhausted",
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk2020.10.18.zip",
+          "attributes": {
+            "href": "javascript:top.login();",
+            "onfocus": "this.blur();"
+          },
+          "line": 150
+        }
+      ],
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-11218.html",
+        "line": 147,
+        "selector": "#addonFileInfo table tr"
+      },
+      "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">disk2020.10.18.zip</a></span>\n</span>\n</td>\n<td class=\"version\">9.0.1</td>\n<td class=\"download\">137</td>\n<td class=\"postdate\">2020-10-18</td>\n</tr>"
+    },
+    {
+      "postID": 11218,
+      "ordinal1": 13,
+      "filenameLiteral": "Devil2020.10.18.zip",
+      "clientVersionLiteral": "9.0.1",
+      "downloadCountLiteral": "185",
+      "dateLiteral": "2020-10-18",
+      "dateKind": "file table registration date",
+      "fileID": null,
+      "fileIDState": "not-exposed-in-anonymous-row",
+      "literalPublicURLs": [],
+      "mappingState": "no-row-URL-literal; public recovery not exhausted",
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil2020.10.18.zip",
+          "attributes": {
+            "href": "javascript:top.login();",
+            "onfocus": "this.blur();"
+          },
+          "line": 160
+        }
+      ],
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-11218.html",
+        "line": 157,
+        "selector": "#addonFileInfo table tr"
+      },
+      "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">Devil2020.10.18.zip</a></span>\n</span>\n</td>\n<td class=\"version\">9.0.1</td>\n<td class=\"download\">185</td>\n<td class=\"postdate\">2020-10-18</td>\n</tr>"
+    },
+    {
+      "postID": 11218,
+      "ordinal1": 14,
+      "filenameLiteral": "disk3.zip",
+      "clientVersionLiteral": "8.3.0",
+      "downloadCountLiteral": "1140",
+      "dateLiteral": "2020-09-05",
+      "dateKind": "file table registration date",
+      "fileID": null,
+      "fileIDState": "not-exposed-in-anonymous-row",
+      "literalPublicURLs": [],
+      "mappingState": "no-row-URL-literal; public recovery not exhausted",
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk3.zip",
+          "attributes": {
+            "href": "javascript:top.login();",
+            "onfocus": "this.blur();"
+          },
+          "line": 170
+        }
+      ],
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-11218.html",
+        "line": 167,
+        "selector": "#addonFileInfo table tr"
+      },
+      "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">disk3.zip</a></span>\n</span>\n</td>\n<td class=\"version\">8.3.0</td>\n<td class=\"download\">1140</td>\n<td class=\"postdate\">2020-09-05</td>\n</tr>"
+    },
+    {
+      "postID": 11218,
+      "ordinal1": 15,
+      "filenameLiteral": "disk2.zip",
+      "clientVersionLiteral": "8.3.0",
+      "downloadCountLiteral": "1500",
+      "dateLiteral": "2020-09-05",
+      "dateKind": "file table registration date",
+      "fileID": null,
+      "fileIDState": "not-exposed-in-anonymous-row",
+      "literalPublicURLs": [],
+      "mappingState": "no-row-URL-literal; public recovery not exhausted",
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk2.zip",
+          "attributes": {
+            "href": "javascript:top.login();",
+            "onfocus": "this.blur();"
+          },
+          "line": 180
+        }
+      ],
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-11218.html",
+        "line": 177,
+        "selector": "#addonFileInfo table tr"
+      },
+      "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">disk2.zip</a></span>\n</span>\n</td>\n<td class=\"version\">8.3.0</td>\n<td class=\"download\">1500</td>\n<td class=\"postdate\">2020-09-05</td>\n</tr>"
+    },
+    {
+      "postID": 11218,
+      "ordinal1": 16,
+      "filenameLiteral": "Devil20.9.5.zip",
+      "clientVersionLiteral": "8.3.0",
+      "downloadCountLiteral": "1331",
+      "dateLiteral": "2020-09-05",
+      "dateKind": "file table registration date",
+      "fileID": null,
+      "fileIDState": "not-exposed-in-anonymous-row",
+      "literalPublicURLs": [],
+      "mappingState": "no-row-URL-literal; public recovery not exhausted",
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil20.9.5.zip",
+          "attributes": {
+            "href": "javascript:top.login();",
+            "onfocus": "this.blur();"
+          },
+          "line": 190
+        }
+      ],
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-11218.html",
+        "line": 187,
+        "selector": "#addonFileInfo table tr"
+      },
+      "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">Devil20.9.5.zip</a></span>\n</span>\n</td>\n<td class=\"version\">8.3.0</td>\n<td class=\"download\">1331</td>\n<td class=\"postdate\">2020-09-05</td>\n</tr>"
+    },
+    {
+      "postID": 11218,
+      "ordinal1": 17,
+      "filenameLiteral": "disk21.18.zip",
+      "clientVersionLiteral": "8.0",
+      "downloadCountLiteral": "3036",
+      "dateLiteral": "2020-01-18",
+      "dateKind": "file table registration date",
+      "fileID": null,
+      "fileIDState": "not-exposed-in-anonymous-row",
+      "literalPublicURLs": [],
+      "mappingState": "no-row-URL-literal; public recovery not exhausted",
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "disk21.18.zip",
+          "attributes": {
+            "href": "javascript:top.login();",
+            "onfocus": "this.blur();"
+          },
+          "line": 200
+        }
+      ],
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-11218.html",
+        "line": 197,
+        "selector": "#addonFileInfo table tr"
+      },
+      "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">disk21.18.zip</a></span>\n</span>\n</td>\n<td class=\"version\">8.0</td>\n<td class=\"download\">3036</td>\n<td class=\"postdate\">2020-01-18</td>\n</tr>"
+    },
+    {
+      "postID": 11218,
+      "ordinal1": 18,
+      "filenameLiteral": "Devil1.18.zip",
+      "clientVersionLiteral": "8.0",
+      "downloadCountLiteral": "3745",
+      "dateLiteral": "2020-01-18",
+      "dateKind": "file table registration date",
+      "fileID": null,
+      "fileIDState": "not-exposed-in-anonymous-row",
+      "literalPublicURLs": [],
+      "mappingState": "no-row-URL-literal; public recovery not exhausted",
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil1.18.zip",
+          "attributes": {
+            "href": "javascript:top.login();",
+            "onfocus": "this.blur();"
+          },
+          "line": 210
+        }
+      ],
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-11218.html",
+        "line": 207,
+        "selector": "#addonFileInfo table tr"
+      },
+      "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">Devil1.18.zip</a></span>\n</span>\n</td>\n<td class=\"version\">8.0</td>\n<td class=\"download\">3745</td>\n<td class=\"postdate\">2020-01-18</td>\n</tr>"
+    },
+    {
+      "postID": 11218,
+      "ordinal1": 19,
+      "filenameLiteral": "Devil12.15.zip",
+      "clientVersionLiteral": "8.0",
+      "downloadCountLiteral": "566",
+      "dateLiteral": "2019-12-15",
+      "dateKind": "file table registration date",
+      "fileID": null,
+      "fileIDState": "not-exposed-in-anonymous-row",
+      "literalPublicURLs": [],
+      "mappingState": "no-row-URL-literal; public recovery not exhausted",
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil12.15.zip",
+          "attributes": {
+            "href": "javascript:top.login();",
+            "onfocus": "this.blur();"
+          },
+          "line": 220
+        }
+      ],
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-11218.html",
+        "line": 217,
+        "selector": "#addonFileInfo table tr"
+      },
+      "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">Devil12.15.zip</a></span>\n</span>\n</td>\n<td class=\"version\">8.0</td>\n<td class=\"download\">566</td>\n<td class=\"postdate\">2019-12-15</td>\n</tr>"
+    },
+    {
+      "postID": 11218,
+      "ordinal1": 20,
+      "filenameLiteral": "Devil11.3.zip",
+      "clientVersionLiteral": "8.0",
+      "downloadCountLiteral": "661",
+      "dateLiteral": "2019-11-03",
+      "dateKind": "file table registration date",
+      "fileID": null,
+      "fileIDState": "not-exposed-in-anonymous-row",
+      "literalPublicURLs": [],
+      "mappingState": "no-row-URL-literal; public recovery not exhausted",
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil11.3.zip",
+          "attributes": {
+            "href": "javascript:top.login();",
+            "onfocus": "this.blur();"
+          },
+          "line": 230
+        }
+      ],
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-11218.html",
+        "line": 227,
+        "selector": "#addonFileInfo table tr"
+      },
+      "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">Devil11.3.zip</a></span>\n</span>\n</td>\n<td class=\"version\">8.0</td>\n<td class=\"download\">661</td>\n<td class=\"postdate\">2019-11-03</td>\n</tr>"
+    },
+    {
+      "postID": 11218,
+      "ordinal1": 21,
+      "filenameLiteral": "Interface.zip",
+      "clientVersionLiteral": "8.0",
+      "downloadCountLiteral": "2669",
+      "dateLiteral": "2019-03-16",
+      "dateKind": "file table registration date",
+      "fileID": null,
+      "fileIDState": "not-exposed-in-anonymous-row",
+      "literalPublicURLs": [],
+      "mappingState": "no-row-URL-literal; public recovery not exhausted",
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Interface.zip",
+          "attributes": {
+            "href": "javascript:top.login();",
+            "onfocus": "this.blur();"
+          },
+          "line": 240
+        }
+      ],
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-11218.html",
+        "line": 237,
+        "selector": "#addonFileInfo table tr"
+      },
+      "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">Interface.zip</a></span>\n</span>\n</td>\n<td class=\"version\">8.0</td>\n<td class=\"download\">2669</td>\n<td class=\"postdate\">2019-03-16</td>\n</tr>"
+    },
+    {
+      "postID": 11218,
+      "ordinal1": 22,
+      "filenameLiteral": "WTF.zip",
+      "clientVersionLiteral": "8.0",
+      "downloadCountLiteral": "3026",
+      "dateLiteral": "2019-03-16",
+      "dateKind": "file table registration date",
+      "fileID": null,
+      "fileIDState": "not-exposed-in-anonymous-row",
+      "literalPublicURLs": [],
+      "mappingState": "no-row-URL-literal; public recovery not exhausted",
+      "anchors": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "WTF.zip",
+          "attributes": {
+            "href": "javascript:top.login();",
+            "onfocus": "this.blur();"
+          },
+          "line": 250
+        }
+      ],
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\files-11218.html",
+        "line": 247,
+        "selector": "#addonFileInfo table tr"
+      },
+      "rawRowHTML": "<tr>\n<td class=\"filename\">\n<span>\n<img align=\"absmiddle\" border=\"0\" src=\"//static.inven.co.kr/image/wow/dataninfo/addonpds/icon_alzip.gif\"/><span><a href=\"javascript:top.login();\" onfocus=\"this.blur();\">WTF.zip</a></span>\n</span>\n</td>\n<td class=\"version\">8.0</td>\n<td class=\"download\">3026</td>\n<td class=\"postdate\">2019-03-16</td>\n</tr>"
+    }
+  ],
+  "iframeScripts": [
+    {
+      "line": 10,
+      "text": "",
+      "src": "https://www.inven.co.kr/common/lib/js/framework/jquery-1.7.2.min_new.js?v=20130113a"
+    },
+    {
+      "line": 11,
+      "text": "",
+      "src": "https://www.inven.co.kr/js/common.js"
+    },
+    {
+      "line": 12,
+      "text": "",
+      "src": "https://www.inven.co.kr/js/fn_string.js"
+    },
+    {
+      "line": 17,
+      "text": "\nfunction downloadFile(n,filepath) {\n\ttop.login();\n}\n",
+      "src": null
+    },
+    {
+      "line": 37,
+      "text": "parent.setDownloadInfo(76228,\"https://pds.inven.co.kr/upload/2023/05/15/addon/DevilUI23.5.15.zip\");",
+      "src": null
+    }
+  ],
+  "detailHandlerCache": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\idx-11218-detail-downloadhandlers.json",
+  "downloadUIState": "anonymous anchors invoke top.login; no handler evaluated or login attempted",
+  "latestMappingDoesNotSupplyOlderURLs": true
+}

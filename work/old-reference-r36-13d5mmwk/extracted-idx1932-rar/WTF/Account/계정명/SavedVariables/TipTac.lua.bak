@@ -1,0 +1,162 @@
+
+TipTac_Config = {
+	["showUnitTip"] = true,
+	["showRealm"] = "show",
+	["selfBuffsOnly"] = false,
+	["barHeight"] = 6,
+	["manaBarColor"] = {
+		0.3, -- [1]
+		0.55, -- [2]
+		0.9, -- [3]
+		1, -- [4]
+	},
+	["rare"] = "%s|r (희귀)",
+	["anchorPoint"] = "BOTTOMRIGHT",
+	["colReactBack1"] = {
+		0.2, -- [1]
+		0.2, -- [2]
+		0.2, -- [3]
+		1, -- [4]
+	},
+	["backdropEdgeSize"] = 16,
+	["worldboss"] = "%s|r (우두머리)",
+	["powerBar"] = false,
+	["fontFlags"] = "",
+	["showAuraCooldown"] = false,
+	["colReactBack7"] = {
+		0.05, -- [1]
+		0.05, -- [2]
+		0.05, -- [3]
+		1, -- [4]
+	},
+	["showDebuffs"] = false,
+	["powerBarText"] = "value",
+	["colReactText1"] = "|cffc0c0c0",
+	["healthBarClassColor"] = true,
+	["barFontFlags"] = "OUTLINE",
+	["tipTacBorderColor"] = {
+		0.3, -- [1]
+		0.3, -- [2]
+		0.4, -- [3]
+		1, -- [4]
+	},
+	["hideTipsInCombat"] = false,
+	["classification_rare"] = "%s희귀",
+	["colReactBack2"] = {
+		0.3, -- [1]
+		0, -- [2]
+		0, -- [3]
+		1, -- [4]
+	},
+	["optionsBottom"] = 539.5313110351563,
+	["elite"] = "+%s|r (정예)",
+	["colReactText3"] = "|cffff7f00",
+	["updateFreq"] = 0.5,
+	["manaBar"] = false,
+	["gradientColor"] = {
+		0.8, -- [1]
+		0.8, -- [2]
+		0.8, -- [3]
+		0.2, -- [4]
+	},
+	["fadeTime"] = 0,
+	["anchorPointUnit"] = "BOTTOMLEFT",
+	["itemQualityBorder"] = false,
+	["gradientTip"] = false,
+	["barFontSize"] = 12,
+	["showGuild"] = "guild",
+	["gttScale"] = 1,
+	["colReactBack3"] = {
+		0.3, -- [1]
+		0.15, -- [2]
+		0, -- [3]
+		1, -- [4]
+	},
+	["preFadeTime"] = 0,
+	["pvpName"] = true,
+	["reactText"] = false,
+	["showTarget"] = "first",
+	["tipBackdropBG"] = "Interface\\Tooltips\\UI-Tooltip-Background",
+	["tipColor"] = {
+		0.1, -- [1]
+		0.1, -- [2]
+		0.2, -- [3]
+		1, -- [4]
+	},
+	["mouseOffsetX"] = 0,
+	["colRace"] = "|cffffffff",
+	["colReactText2"] = "|cffff0000",
+	["colReactText7"] = "|cff808080",
+	["mouseOffsetY"] = 0,
+	["colLevel"] = "|cffc0c0c0",
+	["tipBorderColor"] = {
+		0.3, -- [1]
+		0.3, -- [2]
+		0.4, -- [3]
+		1, -- [4]
+	},
+	["classification_normal"] = "%s",
+	["colReactBack5"] = {
+		0, -- [1]
+		0.3, -- [2]
+		0.1, -- [3]
+		1, -- [4]
+	},
+	["colReactText6"] = "|cff25c1eb",
+	["modifyFonts"] = false,
+	["fontFace"] = "Fonts\\2002.TTF",
+	["rareelite"] = "+%s|r (희귀-정예)",
+	["tipScale"] = 1,
+	["selfDebuffsOnly"] = false,
+	["fontSize"] = 12,
+	["showTargetedBy"] = false,
+	["colReactBack4"] = {
+		0.3, -- [1]
+		0.3, -- [2]
+		0, -- [3]
+		1, -- [4]
+	},
+	["classColoredBorder"] = false,
+	["anchorTypeUnit"] = "mouse",
+	["tipTacColor"] = {
+		0.1, -- [1]
+		0.1, -- [2]
+		0.2, -- [3]
+		1, -- [4]
+	},
+	["showStatus"] = false,
+	["colSameGuild"] = "|cffff32ff",
+	["healthBarText"] = "percent",
+	["barTexture"] = "Interface\\Addons\\SharedMedia-2.0\\statusbar\\Minimalist",
+	["backdropInsets"] = 3.5,
+	["classification_worldboss"] = "%s우두머리++",
+	["manaBarText"] = "none",
+	["barFontFace"] = "Fonts\\2002.TTF",
+	["auraSize"] = 18,
+	["anchorType"] = "mouse",
+	["colorNameByClass"] = true,
+	["colReactText4"] = "|cffffff00",
+	["classification_rareelite"] = "%s희귀정예+",
+	["showBuffs"] = false,
+	["healthBarColor"] = {
+		0.3, -- [1]
+		0.9, -- [2]
+		0.3, -- [3]
+		1, -- [4]
+	},
+	["aurasAtBottom"] = false,
+	["tipBackdropEdge"] = "Interface\\None",
+	["colReactText5"] = "|cff00ff00",
+	["healthBar"] = true,
+	["reactColoredBackdrop"] = true,
+	["hookTips"] = true,
+	["colReactBack6"] = {
+		0, -- [1]
+		0, -- [2]
+		0.5, -- [3]
+		1, -- [4]
+	},
+	["auraMaxRows"] = 2,
+	["optionsLeft"] = 90.3436279296875,
+	["classification_elite"] = "%s정예+",
+}

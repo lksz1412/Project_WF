@@ -1,0 +1,1185 @@
+local Core, Constants, Utils = unpack(select(2, ...))
+local UIManager = Core:GetModule("UIManager")
+
+local CreateChatButtons = Core.Components.CreateChatButtons
+local CreateChatDock = Core.Components.CreateChatDock
+local CreateChatTab = Core.Components.CreateChatTab
+local CreateEditBox = Core.Components.CreateEditBox
+local CreateMainContainerFrame = Core.Components.CreateMainContainerFrame
+local CreateMoverDialog = Core.Components.CreateMoverDialog
+local CreateMoverFrame = Core.Components.CreateMoverFrame
+local CreateSlidingMessageFramePool = Core.Components.CreateSlidingMessageFramePool
+
+-- luacheck: push ignore 113
+local BNToastFrame = BNToastFrame
+local ChatAlertFrame = ChatAlertFrame
+local CreateColor = CreateColor
+local CreateFrame = CreateFrame
+local hooksecurefunc = hooksecurefunc
+local FCFDock_GetSelectedWindow = FCFDock_GetSelectedWindow
+local FCF_RestorePositionAndDimensions = FCF_RestorePositionAndDimensions
+local GENERAL_CHAT_DOCK = GENERAL_CHAT_DOCK
+local GetChatWindowInfo = GetChatWindowInfo
+local GetCVar = C_CVar and C_CVar.GetCVar or GetCVar
+local NUM_CHAT_WINDOWS = NUM_CHAT_WINDOWS
+local SetCVar = C_CVar and C_CVar.SetCVar or SetCVar
+local UIParent = UIParent
+-- luacheck: pop
+
+local TABS_CHECK_EVERY = 0.03 -- seconds between checks of the selected tab
+
+----
+-- UIManager Module
+function UIManager:OnInitialize()
+  self.state = {
+    frames = {},
+    tabs = {},
+    temporaryFrames = {},
+    temporaryTabs = {}
+  }
+end
+
+-- True for a chat window taken out of the Glass chat (a separate window)
+function UIManager:IsSeparateWindow(chatFrame)
+  for _, smf in pairs(self.state.frames) do
+    if smf.chatFrame == chatFrame then return smf.state and smf.state.detached or false end
+  end
+  for _, smf in pairs(self.state.temporaryFrames) do
+    if smf.chatFrame == chatFrame then return smf.state and smf.state.detached or false end
+  end
+  return false
+end
+
+----
+-- The Battle.net alert (a friend coming online...) with the Glass look, like
+-- the chat it belongs to: the Glass fading background instead of the game's
+-- box, a thin gold line at the top, the Glass font, a gold flash when it
+-- shows, and a quieter close button. Only the look changes.
+local TOAST_FADE = 80     -- how much of each side fades out
+local TOAST_FADE_STEPS = 8
+local TOAST_LINE_ALPHA = 0.55
+
+function UIManager:StyleToast()
+  local toast = BNToastFrame
+  if not toast or toast.glassStyled then return end
+  toast.glassStyled = true
+  local Colors = Constants.COLORS
+  local gold = Colors.apache
+
+  -- The game's box: see-through (its colors only, so nothing of the game's
+  -- own setup is redone)
+  local function HideBox()
+    if toast.SetBackdropColor then
+      toast:SetBackdropColor(0, 0, 0, 0)
+      toast:SetBackdropBorderColor(0, 0, 0, 0)
+    end
+  end
+  HideBox()
+
+  -- The Glass background, a little stronger than the chat's: it shows over
+  -- the game world on its own
+  -- Each side fades in a few steps along an S curve (slow at both ends), so
+  -- there's no visible edge where the fade starts
+  local dark = Colors.codGray
+  local center = toast:CreateTexture(nil, "BACKGROUND")
+  local steps = { Left = {}, Right = {} }
+  for side, list in pairs(steps) do
+    for i = 1, TOAST_FADE_STEPS do
+      local texture = toast:CreateTexture(nil, "BACKGROUND")
+      texture:SetColorTexture(1, 1, 1, 1)
+      texture:SetWidth(TOAST_FADE / TOAST_FADE_STEPS)
+      texture:SetPoint("TOP")
+      texture:SetPoint("BOTTOM")
+      -- i = 1 is the outermost step
+      local offset = (i - 1) * TOAST_FADE / TOAST_FADE_STEPS
+      if side == "Left" then
+        texture:SetPoint("LEFT", toast, "LEFT", offset, 0)
+      else
+        texture:SetPoint("RIGHT", toast, "RIGHT", -offset, 0)
+      end
+      list[i] = texture
+    end
+  end
+  center:SetPoint("TOPLEFT", steps.Left[TOAST_FADE_STEPS], "TOPRIGHT")
+  center:SetPoint("BOTTOMRIGHT", steps.Right[TOAST_FADE_STEPS], "BOTTOMLEFT")
+  local function Curve(t) return t * t * (3 - 2 * t) end
+  local function Background()
+    local opacity = math.min(0.85, Core.db.profile.chatBackgroundOpacity + 0.3)
+    center:SetColorTexture(dark.r, dark.g, dark.b, opacity)
+    for i = 1, TOAST_FADE_STEPS do
+      local outer = CreateColor(dark.r, dark.g, dark.b, opacity * Curve((i - 1) / TOAST_FADE_STEPS))
+      local inner = CreateColor(dark.r, dark.g, dark.b, opacity * Curve(i / TOAST_FADE_STEPS))
+      steps.Left[i]:SetGradient("HORIZONTAL", outer, inner)
+      steps.Right[i]:SetGradient("HORIZONTAL", inner, outer)
+    end
+  end
+  Background()
+
+  -- A thin gold line at the top, fading out to both ends
+  for _, side in ipairs({ "Left", "Right" }) do
+    local line = toast:CreateTexture(nil, "ARTWORK")
+    line:SetColorTexture(1, 1, 1, 1)
+    line:SetHeight(1)
+    toast["glassLine"..side] = line
+  end
+  toast.glassLineLeft:SetPoint("TOPLEFT", toast, "TOPLEFT", 0, 0)
+  toast.glassLineLeft:SetPoint("TOPRIGHT", toast, "TOP", 0, 0)
+  toast.glassLineRight:SetPoint("TOPLEFT", toast, "TOP", 0, 0)
+  toast.glassLineRight:SetPoint("TOPRIGHT", toast, "TOPRIGHT", 0, 0)
+  toast.glassLineLeft:SetGradient("HORIZONTAL",
+    CreateColor(gold.r, gold.g, gold.b, 0), CreateColor(gold.r, gold.g, gold.b, TOAST_LINE_ALPHA))
+  toast.glassLineRight:SetGradient("HORIZONTAL",
+    CreateColor(gold.r, gold.g, gold.b, TOAST_LINE_ALPHA), CreateColor(gold.r, gold.g, gold.b, 0))
+
+  -- The flash when it shows: gold instead of the game's blue-white
+  if toast.glow then toast.glow:SetVertexColor(gold.r, gold.g, gold.b) end
+
+  -- No close button: a click anywhere on the alert already closes it. Only
+  -- made invisible and click-through (the game shows it again by itself), so
+  -- a click there goes to the alert too
+  local close = toast.CloseButton
+  if close then
+    close:SetAlpha(0)
+    close:EnableMouse(false)
+  end
+
+  -- The Glass font on its texts, keeping their sizes and the game's colors
+  -- (Battle.net blue names, gray messages)
+  local function Fonts()
+    local file = Core.Libs.LSM:Fetch(Core.Libs.LSM.MediaType.FONT, Core.db.profile.font)
+    for _, key in ipairs({ "TopLine", "MiddleLine", "BottomLine", "DoubleLine" }) do
+      local text = toast[key]
+      if text then
+        if not text.glassSize then text.glassSize = select(2, text:GetFont()) end
+        text:SetFont(file, text.glassSize or 12, Core.db.profile.fontFlags)
+        text:SetShadowColor(0, 0, 0, 1)
+        text:SetShadowOffset(1, -1)
+      end
+    end
+  end
+  Fonts()
+
+  -- Each new alert: the game may set its box up again
+  if toast.ShowToast then
+    hooksecurefunc(toast, "ShowToast", HideBox)
+  end
+
+  Core:Subscribe(Constants.EVENTS.UPDATE_CONFIG, function (key)
+    if key == "font" or key == "fontFlags" then Fonts() end
+    if key == "chatBackgroundOpacity" then Background() end
+  end)
+end
+
+----
+-- The game's other alerts (achievements, loot won, money, new recipes...)
+-- with the same Glass look as the Battle.net alert (Options: Glass look for
+-- game alerts). There are many kinds, each with its own art, so it's done
+-- the same way for all: the big background pictures are hidden (the icons,
+-- smaller, stay), and the Glass background, a gold line and the Glass font go
+-- on. Done each time an alert shows, since the game reuses them.
+local ALERT_ART_SHARE = 0.6 -- a texture this wide (of the alert) is background art
+local ALERT_ROUND_ICON_SIZE = 48 -- a round icon made square (the round ones are big)
+local ALERT_FADE_LEFT = 0.2 -- how much of the alert the background fades over, left and right
+local ALERT_FADE_RIGHT = 0.35
+local ALERT_DARK_TEXT = 0.35 -- text darker than this (its brightness) is made gold
+local ALERT_SHIELD = "Interface\\AddOns\\Glass\\Glass\\Assets\\achievementShield"
+
+---
+-- An achievement's shield (with its points) in the Glass look: the game's is
+-- small art, blurry at this size. on = false puts the game's back.
+local function StyleShield(frame, on)
+  local shield = frame.Shield
+  local icon = shield and shield.Icon
+  if not icon or not icon.SetTexture or not icon.IsObjectType or not icon:IsObjectType("Texture") then return end
+  if not on then
+    local saved = icon.glassShield
+    if saved then
+      icon.glassShield = nil
+      if saved.atlas then
+        icon:SetAtlas(saved.atlas)
+      else
+        icon:SetTexture(saved.file)
+        icon:SetTexCoord(unpack(saved.coords))
+      end
+    end
+    return
+  end
+  -- The game's picture, kept once (each time it shows an achievement, the
+  -- game only changes the part of it shown, with or without points)
+  if not icon.glassShield then
+    icon.glassShield = { atlas = icon.GetAtlas and icon:GetAtlas(), file = icon:GetTexture(), coords = { icon:GetTexCoord() } }
+  end
+  icon:SetTexture(ALERT_SHIELD)
+  icon:SetTexCoord(0, 1, 0, 1)
+  local points = shield.Points
+  if points and points.SetFont then
+    local file = Core.Libs.LSM:Fetch(Core.Libs.LSM.MediaType.FONT, Core.db.profile.font)
+    if not points.glassSize then points.glassSize = select(2, points:GetFont()) end
+    points:SetFont(file, points.glassSize or 12, Core.db.profile.fontFlags)
+    points:SetShadowColor(0, 0, 0, 1)
+    points:SetShadowOffset(1, -1)
+  end
+end
+
+local function StyleAlert(frame)
+  if not frame then return end
+  -- Turned off: what was hidden comes back, the Glass parts go
+  if not Core.db.profile.alertStyle then
+    for _, region in ipairs(frame.glassHidden or {}) do
+      region.glassAlertHidden = nil
+      region:Show()
+    end
+    frame.glassHidden = nil
+    if frame.Icon and frame.Icon.SetTexCoord and frame.Icon:IsObjectType("Texture") then
+      pcall(frame.Icon.SetTexCoord, frame.Icon, 0, 1, 0, 1)
+    end
+    for _, part in ipairs(frame.glassIconBorder or {}) do part:Hide() end
+    StyleShield(frame, false)
+    for _, region in ipairs({ frame:GetRegions() }) do
+      local color = region.glassDarkColor
+      if color then
+        region.glassDarkColor = nil
+        region:SetTextColor(color[1], color[2], color[3], color[4])
+      end
+    end
+    for _, key in ipairs({ "leftBg", "rightBg", "centerBg", "glassLineLeft", "glassLineRight", "glassLineBottomLeft", "glassLineBottomRight" }) do
+      if frame[key] then frame[key]:Hide() end
+    end
+    return
+  end
+  for _, key in ipairs({ "leftBg", "rightBg", "centerBg", "glassLineLeft", "glassLineRight", "glassLineBottomLeft", "glassLineBottomRight" }) do
+    if frame[key] then frame[key]:Show() end
+  end
+  frame.glassHidden = frame.glassHidden or {}
+  local Colors = Constants.COLORS
+  local gold = Colors.apache
+  local width = frame:GetWidth()
+  if (issecretvalue and issecretvalue(width)) or not width or width <= 0 then return end
+
+  for _, region in ipairs({ frame:GetRegions() }) do
+    if region:IsObjectType("Texture") and region ~= frame.leftBg and region ~= frame.rightBg
+      and region ~= frame.centerBg and region ~= frame.glassLineLeft and region ~= frame.glassLineRight then
+      local layer = region:GetDrawLayer()
+      local regionWidth = region:GetWidth()
+      if issecretvalue and issecretvalue(regionWidth) then regionWidth = nil end
+      if (layer == "BACKGROUND" or layer == "BORDER") and regionWidth and regionWidth >= width * ALERT_ART_SHARE then
+        -- Hidden, not see-through: the game's show animations put the
+        -- opacity back. Kept hidden if the game shows it again.
+        if not region.glassAlertHidden then
+          region.glassAlertHidden = true
+          table.insert(frame.glassHidden, region)
+        end
+        if not region.glassAlertHooked then
+          region.glassAlertHooked = true
+          local function KeepHidden()
+            if region.glassAlertHidden and Core.db.profile.alertStyle and region:IsShown() then region:Hide() end
+          end
+          hooksecurefunc(region, "Show", KeepHidden)
+          hooksecurefunc(region, "SetShown", KeepHidden)
+        end
+        region:Hide()
+      end
+    elseif region:IsObjectType("FontString") then
+      local file = Core.Libs.LSM:Fetch(Core.Libs.LSM.MediaType.FONT, Core.db.profile.font)
+      if not region.glassSize then region.glassSize = select(2, region:GetFont()) end
+      region:SetFont(file, region.glassSize or 12, Core.db.profile.fontFlags)
+      region:SetShadowColor(0, 0, 0, 1)
+      region:SetShadowOffset(1, -1)
+      -- Dark text (an achievement's "Achievement Earned", made for the game's
+      -- light banner) can't be read on the dark Glass background: gold instead
+      local r, g, b, a = region:GetTextColor()
+      if r and not (issecretvalue and issecretvalue(r))
+        and 0.2126 * r + 0.7152 * g + 0.0722 * b < ALERT_DARK_TEXT then
+        region.glassDarkColor = { r, g, b, a }
+        region:SetTextColor(gold.r, gold.g, gold.b, a)
+      end
+    end
+  end
+
+  StyleShield(frame, true)
+
+  -- The Glass background (a little inside: the game's alerts have room
+  -- around their art), darker than the chat's so it reads over any ground
+  local opacity = math.min(0.9, Core.db.profile.chatBackgroundOpacity + 0.45)
+  Core.Components.GradientBackgroundMixin.SetGradientBackground(frame, width * ALERT_FADE_LEFT, width * ALERT_FADE_RIGHT, Colors.codGray, opacity)
+  -- Behind everything: some alerts draw their icon in the background layer too
+  -- (a new recipe's), and the Glass background darkened it
+  for _, texture in ipairs({ frame.leftBg, frame.centerBg, frame.rightBg }) do
+    texture:SetDrawLayer("BACKGROUND", -8)
+  end
+  for _, texture in ipairs({ frame.leftBg, frame.rightBg }) do
+    texture:SetPoint(texture == frame.leftBg and "TOPLEFT" or "TOPRIGHT", 0, -8)
+    texture:SetPoint(texture == frame.leftBg and "BOTTOMLEFT" or "BOTTOMRIGHT", 0, 8)
+  end
+
+  -- Thin gold lines closing it: at the top, and a fainter one at the bottom
+  if not frame.glassLineLeft then
+    local function Line(name, edge, alpha)
+      local left, right = frame:CreateTexture(nil, "ARTWORK"), frame:CreateTexture(nil, "ARTWORK")
+      for _, line in ipairs({ left, right }) do
+        line:SetColorTexture(1, 1, 1, 1)
+        line:SetHeight(1)
+      end
+      local y = edge == "TOP" and -8 or 8
+      left:SetPoint(edge.."LEFT", frame, edge.."LEFT", 0, y)
+      left:SetPoint(edge.."RIGHT", frame, edge, 0, y)
+      right:SetPoint(edge.."LEFT", frame, edge, 0, y)
+      right:SetPoint(edge.."RIGHT", frame, edge.."RIGHT", 0, y)
+      left:SetGradient("HORIZONTAL", CreateColor(gold.r, gold.g, gold.b, 0), CreateColor(gold.r, gold.g, gold.b, alpha))
+      right:SetGradient("HORIZONTAL", CreateColor(gold.r, gold.g, gold.b, alpha), CreateColor(gold.r, gold.g, gold.b, 0))
+      frame["glassLine"..name.."Left"], frame["glassLine"..name.."Right"] = left, right
+    end
+    Line("", "TOP", TOAST_LINE_ALPHA)
+    Line("Bottom", "BOTTOM", TOAST_LINE_ALPHA * 0.5)
+  end
+
+  -- The icon: the game's gold square around it hidden, and the icon's own
+  -- worn edges cut off, so it's a clean square like the Glass icons
+  local border = frame.IconBorder
+  if border and border.Hide then
+    if not border.glassAlertHooked then
+      border.glassAlertHooked = true
+      local function KeepHidden()
+        if Core.db.profile.alertStyle and border:IsShown() then border:Hide() end
+      end
+      hooksecurefunc(border, "Show", KeepHidden)
+      hooksecurefunc(border, "SetShown", KeepHidden)
+    end
+    if not border.glassAlertHidden then
+      border.glassAlertHidden = true
+      table.insert(frame.glassHidden, border)
+    end
+    border:Hide()
+  end
+  local icon = frame.Icon
+  local isTexture = icon and icon.SetTexCoord and icon.IsObjectType and icon:IsObjectType("Texture")
+  local cut = isTexture and pcall(icon.SetTexCoord, icon, 0.08, 0.92, 0.08, 0.92)
+  -- A round icon refuses the cut: a new recipe's has a mask (one the mask count
+  -- doesn't show), and without the game's ring over it, its worn edges show as
+  -- light lines. So the mask comes off, and it's a smaller square like the others.
+  if isTexture and not cut and icon.SetMask and pcall(icon.SetMask, icon, "") then
+    cut = pcall(icon.SetTexCoord, icon, 0.08, 0.92, 0.08, 0.92)
+    if cut then
+      if not icon.glassRound then
+        local width, height = icon:GetSize()
+        local point, relativeTo, relativePoint, x, y = icon:GetPoint()
+        icon.glassRound = { width, height, point, relativeTo, relativePoint, x, y }
+        -- Back as the game left it when the alert goes: the game puts the mask
+        -- on again when it reuses the alert
+        frame:HookScript("OnHide", function ()
+          local saved = icon.glassRound
+          pcall(icon.SetTexCoord, icon, 0, 1, 0, 1)
+          icon:SetSize(saved[1], saved[2])
+          icon:SetPoint(saved[3], saved[4], saved[5], saved[6], saved[7])
+        end)
+      end
+      local saved = icon.glassRound
+      icon:SetSize(ALERT_ROUND_ICON_SIZE, ALERT_ROUND_ICON_SIZE)
+      -- Same center as the round one
+      icon:SetPoint(saved[3], saved[4], saved[5], saved[6] + (saved[1] - ALERT_ROUND_ICON_SIZE) / 2, saved[7])
+    else
+      -- Still refused: the round icon stays
+      pcall(icon.SetMask, icon, "Interface\\CharacterFrame\\TempPortraitAlphaMask")
+    end
+  end
+  if cut then
+
+    -- A Glass border instead: a thin gold line around the icon, with a dark
+    -- one outside it so it stands out on any background
+    if not frame.glassIconBorder then
+      local parts = {}
+      local function Edge(color, inset, layerLevel)
+        local edges = {}
+        for i = 1, 4 do
+          local edge = frame:CreateTexture(nil, "OVERLAY", nil, layerLevel)
+          edge:SetColorTexture(color[1], color[2], color[3], color[4])
+          edges[i] = edge
+          table.insert(parts, edge)
+        end
+        -- top, bottom, left, right: each one real screen pixel thick, the
+        -- same on every side (sizes in the UI's units came out uneven
+        -- with the UI scale, a side looking thicker)
+        local PixelUtil = _G.PixelUtil
+        local scale = frame:GetEffectiveScale()
+        local pixel = PixelUtil and PixelUtil.GetNearestPixelSize(1, scale, 1) or 1
+        local o = pixel * inset
+        edges[1]:SetPoint("TOPLEFT", icon, "TOPLEFT", -o, o)
+        edges[1]:SetPoint("TOPRIGHT", icon, "TOPRIGHT", o, o)
+        edges[1]:SetHeight(pixel)
+        edges[2]:SetPoint("BOTTOMLEFT", icon, "BOTTOMLEFT", -o, -o)
+        edges[2]:SetPoint("BOTTOMRIGHT", icon, "BOTTOMRIGHT", o, -o)
+        edges[2]:SetHeight(pixel)
+        edges[3]:SetPoint("TOPLEFT", icon, "TOPLEFT", -o, o)
+        edges[3]:SetPoint("BOTTOMLEFT", icon, "BOTTOMLEFT", -o, -o)
+        edges[3]:SetWidth(pixel)
+        edges[4]:SetPoint("TOPRIGHT", icon, "TOPRIGHT", o, o)
+        edges[4]:SetPoint("BOTTOMRIGHT", icon, "BOTTOMRIGHT", o, -o)
+        edges[4]:SetWidth(pixel)
+      end
+      Edge({ gold.r, gold.g, gold.b, 0.85 }, 1, 2)
+      Edge({ 0, 0, 0, 0.8 }, 2, 1)
+      frame.glassIconBorder = parts
+    end
+    for _, part in ipairs(frame.glassIconBorder) do part:Show() end
+  end
+end
+
+function UIManager:StyleAlerts()
+  local container = _G.AlertFrame
+  if not container or not container.AddAlertFrame or self.alertsHooked then return end
+  self.alertsHooked = true
+  hooksecurefunc(container, "AddAlertFrame", function (_, frame) StyleAlert(frame) end)
+end
+
+-- Where the Battle.net alerts show: where they were put in Edit Mode, or
+-- above the chat
+function UIManager:PlaceAlerts()
+  local mover = self.alertMover
+  local saved = Core.db.profile.alertPosition
+  mover:ClearAllPoints()
+  if saved and saved.point then
+    mover:SetPoint(saved.point, _G.UIParent, saved.point, saved.x or 0, saved.y or 0)
+  else
+    mover:SetPoint("BOTTOMLEFT", self.container, "TOPLEFT", 15, 10)
+  end
+end
+
+---
+-- Where the voice chat's "who's talking" notes go: where they were moved to
+-- in Edit Mode, or beside the social button as the game puts them
+function UIManager:PlaceVoice()
+  local mover = self.voiceMover
+  local saved = Core.db.profile.voicePosition
+  mover:ClearAllPoints()
+  if saved and saved.point then
+    mover:SetPoint(saved.point, _G.UIParent, saved.point, saved.x or 0, saved.y or 0)
+  elseif _G.QuickJoinToastButton then
+    mover:SetPoint("BOTTOMLEFT", _G.QuickJoinToastButton, "BOTTOMLEFT", 0, 0)
+  else
+    mover:SetPoint("BOTTOMLEFT", self.container, "TOPLEFT", 15, 60)
+  end
+end
+
+-- The voice chat's notes of who's talking (the game's VoiceActivityManager):
+-- the game puts them beside the social button; they follow the Glass box
+-- instead (Edit Mode: "Voice Chat"), keeping how they stack
+function UIManager:SetupVoice()
+  self.voiceMover = CreateFrame("Frame", "GlassVoiceMover", _G.UIParent)
+  self.voiceMover:SetSize(200, 32)
+  -- (above the chat buttons it sits on, or Edit Mode's box couldn't be
+  -- grabbed: the buttons took the click)
+  self.voiceMover:SetFrameStrata("DIALOG")
+  self:PlaceVoice()
+
+  local hooked = {}
+  local moving = false
+  local function Follow(note)
+    if moving then return end
+    local mover = self.voiceMover
+    for i = 1, note:GetNumPoints() do
+      local point, relativeTo, relativePoint, x, y = note:GetPoint(i)
+      if relativeTo == _G.QuickJoinToastButton then
+        moving = true
+        note:ClearAllPoints()
+        note:SetPoint(point, mover, relativePoint, x, y)
+        moving = false
+        return
+      end
+    end
+  end
+  local function Scan()
+    local manager = _G.VoiceActivityManager
+    if not manager or not manager.GetChildren then return end
+    for _, note in ipairs({ manager:GetChildren() }) do
+      if not hooked[note] then
+        hooked[note] = true
+        hooksecurefunc(note, "SetPoint", Follow)
+      end
+      Follow(note)
+    end
+  end
+  local events = CreateFrame("Frame")
+  for _, event in ipairs({ "VOICE_CHAT_CHANNEL_MEMBER_SPEAKING_STATE_CHANGED",
+    "VOICE_CHAT_CHANNEL_MEMBER_ACTIVE_STATE_CHANGED", "VOICE_CHAT_CHANNEL_ACTIVATED" }) do
+    pcall(events.RegisterEvent, events, event)
+  end
+  -- (a moment later: the game makes and places the note first)
+  events:SetScript("OnEvent", function () C_Timer.After(0, Scan) end)
+end
+
+---
+-- Where the game's other chat alerts go: where they were moved to in Edit
+-- Mode, or above the chat (over the Battle.net alerts' box, so the two boxes
+-- can each be grabbed in Edit Mode)
+function UIManager:PlaceChatAlerts()
+  local mover = self.chatAlertMover
+  local saved = Core.db.profile.chatAlertPosition
+  mover:ClearAllPoints()
+  if saved and saved.point then
+    mover:SetPoint(saved.point, _G.UIParent, saved.point, saved.x or 0, saved.y or 0)
+  else
+    mover:SetPoint("BOTTOMLEFT", self.container, "TOPLEFT", 15, 70)
+  end
+end
+
+function UIManager:OnEnable()
+  self.tickerFrame = CreateFrame("Frame", "GlassUpdaterFrame", UIParent)
+
+  -- Mover
+  self.moverFrame = CreateMoverFrame("GlassMoverFrame", UIParent)
+  self.moverDialog = CreateMoverDialog("GlassMoverDialog", UIParent)
+
+  -- Main Container
+  self.container = CreateMainContainerFrame("GlassFrame", UIParent)
+  self.container:SetPoint("TOPLEFT", self.moverFrame)
+
+  -- Layouts saved by older versions keep the chat's place relative to
+  -- GlassFrame (the chat was gone with Glass turned off): a few seconds in,
+  -- out of combat, the game saves the chat's place again, now on the screen
+  C_Timer.After(5, function ()
+    local EditMode, System = _G.C_EditMode, _G.Enum and _G.Enum.EditModeSystem
+    if not (EditMode and EditMode.GetLayouts and System and System.ChatFrame) or InCombatLockdown() then return end
+    local ok, layouts = pcall(EditMode.GetLayouts)
+    if not ok or type(layouts) ~= "table" then return end
+    local broken = false
+    for _, layout in ipairs(layouts.layouts or {}) do
+      for _, system in ipairs(layout.systems or {}) do
+        local anchor = system.system == System.ChatFrame and system.anchorInfo
+        if anchor and anchor.relativeTo == "GlassFrame" then broken = true end
+      end
+    end
+    if broken and _G.FCF_SavePositionAndDimensions then
+      pcall(_G.FCF_SavePositionAndDimensions, _G.ChatFrame1)
+    end
+  end)
+
+  -- Chat dock
+  self.dock = CreateChatDock(self.container)
+
+  -- SlidingMessageFrames
+  self.slidingMessageFramePool = CreateSlidingMessageFramePool(self.container)
+
+  for i=1, NUM_CHAT_WINDOWS do
+    local chatFrame = _G["ChatFrame"..i]
+    local smf = self.slidingMessageFramePool:Acquire()
+    smf:Init(chatFrame)
+
+    self.state.frames[i] = smf
+    self.state.tabs[i] = CreateChatTab(smf)
+  end
+
+  -- Windows left undocked last time stay separate chat windows. The game
+  -- loads the window settings (open, docked...) a while after login and says
+  -- so with UPDATE_CHAT_WINDOWS, so this runs then too; it skips windows
+  -- that are already separate.
+  --
+  -- The game can't tell which windows are open: it says "closed" for any
+  -- window that's hidden, and Glass hides them all while loading. So Glass
+  -- remembers its separate windows itself.
+  -- ...and which of them are minimized
+  local function RememberMinimized(chatFrame, minimized)
+    if not chatFrame or chatFrame.isTemporary then return end
+    Core.db.char.minimizedWindows = Core.db.char.minimizedWindows or {}
+    Core.db.char.minimizedWindows[chatFrame:GetName()] = minimized or nil
+  end
+
+  local function RememberSeparate(chatFrame, separate)
+    if not chatFrame or chatFrame.isTemporary then return end
+    Core.db.char.separateWindows = Core.db.char.separateWindows or {}
+    Core.db.char.separateWindows[chatFrame:GetName()] = separate or nil
+    if not separate then
+      RememberMinimized(chatFrame, false)
+    end
+  end
+
+  local function RestoreSeparateWindows()
+    local remembered = Core.db.char.separateWindows or {}
+    for i, smf in ipairs(self.state.frames) do
+      local chatFrame = smf.chatFrame
+      local shown = remembered[chatFrame:GetName()] or select(7, GetChatWindowInfo(i))
+      local docked = chatFrame.isDocked or select(9, GetChatWindowInfo(i))
+      if shown and not docked and smf.state
+        and not smf.state.isCombatLog and not smf.state.detached then
+        smf:ReleaseChatFrame()
+        if FCF_RestorePositionAndDimensions then
+          FCF_RestorePositionAndDimensions(chatFrame)
+        end
+        -- Our copy of where it was while separate (see the
+        -- FCF_SavePositionAndDimensions hook)
+        local saved = Core.db.char.windowPositions and Core.db.char.windowPositions[chatFrame:GetName()]
+        if saved then
+          local point, x, y = unpack(saved)
+          chatFrame:ClearAllPoints()
+          chatFrame:SetPoint(point, x * _G.GetScreenWidth(), y * _G.GetScreenHeight())
+          _G.SetChatWindowSavedPosition(chatFrame:GetID(), point, x, y)
+        end
+        chatFrame:Show()
+        _G.SetChatWindowShown(chatFrame:GetID(), true)
+
+        -- It was minimized last time (the game doesn't remember that)
+        local minimized = Core.db.char.minimizedWindows
+        if minimized and minimized[chatFrame:GetName()] and _G.FCF_MinimizeFrame then
+          _G.FCF_MinimizeFrame(chatFrame, (chatFrame.buttonSide or "left"):upper())
+        end
+      end
+    end
+  end
+
+  self.tickerFrame:RegisterEvent("UPDATE_CHAT_WINDOWS")
+  self.tickerFrame:HookScript("OnEvent", function (_, event)
+    if event == "UPDATE_CHAT_WINDOWS" then
+      -- After the game's own handling of the event
+      C_Timer.After(0, RestoreSeparateWindows)
+    end
+  end)
+
+  -- Show the main chat panel on login (after the game has finished loading)
+  C_Timer.After(1, function()
+    local main = self.state.frames[1]
+    if main then
+      main:Show()
+    end
+    RestoreSeparateWindows()
+  end)
+
+  -- Dragging a tab out of the dock makes it a normal chat window; dragging it
+  -- back gives it to Glass again
+  local function FindFrame(chatFrame)
+    if not chatFrame then return nil end
+    for _, smf in ipairs(self.state.frames) do
+      if smf.chatFrame == chatFrame then return smf end
+    end
+    -- Temporary windows (whispers)
+    local name = chatFrame.GetName and chatFrame:GetName()
+    return name and self.state.temporaryFrames[name]
+  end
+
+  -- True if the window is still in use and meant to be visible, i.e. it was
+  -- undocked rather than closed (closing a window also undocks it)
+  local function StillOpen(smf, chatFrame)
+    if chatFrame.isDocked or not smf.state.detached then return false end
+    if chatFrame.isTemporary then
+      return self.state.temporaryFrames[chatFrame:GetName()] == smf
+    end
+    return select(7, GetChatWindowInfo(chatFrame:GetID())) and true or false
+  end
+
+  local ShowSelectedFrame -- (below)
+
+  self:SecureHook("FCF_UnDockFrame", function (chatFrame)
+    local smf = FindFrame(chatFrame)
+    if not smf or not smf.state or smf.state.detached then return end
+    -- The Combat Log: the game's own window, drawn by the game in the chat
+    -- too. Let go of it, a window of its own (see ReleaseCombatLog)
+    if smf.state.isCombatLog then
+      smf:ReleaseCombatLog()
+      C_Timer.After(0, ShowSelectedFrame)
+      return
+    end
+
+    -- The size of the chat messages: the window kept the game's own size,
+    -- often bigger. Saved for the game, so the tab menu can still change it
+    local size = Core.db.profile.messageFontSize
+    if _G.SetChatWindowSize then _G.SetChatWindowSize(chatFrame:GetID(), size) end
+    smf:ReleaseChatFrame(size)
+
+    -- Wait a moment: if the game is closing the window, it's gone by then
+    C_Timer.After(0, function ()
+      if StillOpen(smf, chatFrame) then
+        chatFrame:Show()
+        RememberSeparate(chatFrame, true)
+      elseif chatFrame.isTemporary and not chatFrame.inUse then
+        -- A whisper window being closed: it doesn't stay on screen
+        chatFrame:Hide()
+      end
+    end)
+  end)
+
+  -- The game saves a window's position when it's docked again too, after
+  -- Glass has moved it into the chat; it would come back there after a reload.
+  -- Keep our own copy of the last position the window had while separate.
+  if _G.FCF_SavePositionAndDimensions then
+    self:SecureHook("FCF_SavePositionAndDimensions", function (chatFrame)
+      local smf = FindFrame(chatFrame)
+      if smf and smf.state and smf.state.detached and not chatFrame.isTemporary then
+        local point, x, y = _G.GetChatWindowSavedPosition(chatFrame:GetID())
+        if point then
+          Core.db.char.windowPositions = Core.db.char.windowPositions or {}
+          Core.db.char.windowPositions[chatFrame:GetName()] = { point, x, y }
+        end
+      end
+    end)
+  end
+
+  -- Minimizing a separate window shows a bar with its name: Glass look too
+  if _G.FCF_MinimizeFrame then
+    self:SecureHook("FCF_MinimizeFrame", function (chatFrame)
+      local smf = FindFrame(chatFrame)
+      if smf and smf.state and smf.state.detached then
+        smf:StyleMinimizedFrame()
+        RememberMinimized(chatFrame, true)
+      end
+      -- A new message alert goes to the bar, its tab is hidden now
+      local tab = chatFrame and _G[chatFrame:GetName().."Tab"]
+      if tab and tab.MoveAlert then tab:MoveAlert() end
+    end)
+  end
+  if _G.FCF_MaximizeFrame then
+    self:SecureHook("FCF_MaximizeFrame", function (chatFrame)
+      RememberMinimized(chatFrame, false)
+      -- Opened to read it: its new message alert ends (on its tab it stayed
+      -- lit until the tab was clicked)
+      local tab = chatFrame and _G[chatFrame:GetName().."Tab"]
+      if tab and tab.glow and tab.HideAlert then
+        if _G.FCF_StopAlertFlash then _G.FCF_StopAlertFlash(chatFrame) end
+        tab.glowColor = nil
+        tab.glow:Hide()
+        tab:HideAlert()
+      end
+    end)
+  end
+
+  -- Changing the font size from the tab menu resets the font, put Glass' back
+  if _G.FCF_SetChatWindowFontSize then
+    self:SecureHook("FCF_SetChatWindowFontSize", function (_, chatFrame)
+      local smf = FindFrame(chatFrame or _G.FCF_GetCurrentChatFrame and _G.FCF_GetCurrentChatFrame())
+      if smf then smf:ApplyGlassFont() end
+    end)
+  end
+
+  -- Shows the messages of the tab the game has selected, and hides the others
+  function ShowSelectedFrame()
+    local selected = FCFDock_GetSelectedWindow and FCFDock_GetSelectedWindow(GENERAL_CHAT_DOCK)
+    if not selected then return end
+    local function Sync(smf)
+      if smf.state and not smf.state.detached and not smf.state.isCombatLog then
+        if smf.chatFrame == selected then smf:Show() else smf:Hide() end
+        -- The game's own window stays hidden under Glass (a whisper window
+        -- the game reused after one was closed showed through it)
+        if smf.chatFrame and smf.chatFrame:IsShown() then smf:HideChatFrame() end
+      end
+    end
+    for _, smf in ipairs(self.state.frames) do Sync(smf) end
+    for _, smf in pairs(self.state.temporaryFrames) do Sync(smf) end
+  end
+
+  -- The Combat Log left out of the chat last time: a window of its own again
+  -- on login, where it was (Glass took it into the chat when it started, and
+  -- it then sat over the other tabs' messages)
+  C_Timer.After(1, function ()
+    local combatLog = _G.ChatFrame2
+    local smf = FindFrame(combatLog)
+    if not (smf and smf.state and smf.state.isCombatLog) or smf.state.detached then return end
+    if combatLog.isDocked or select(9, GetChatWindowInfo(combatLog:GetID())) then return end
+    smf:ReleaseCombatLog()
+    if FCF_RestorePositionAndDimensions then FCF_RestorePositionAndDimensions(combatLog) end
+    local saved = Core.db.char.windowPositions and Core.db.char.windowPositions[combatLog:GetName()]
+    if saved then
+      local point, x, y = unpack(saved)
+      combatLog:ClearAllPoints()
+      combatLog:SetPoint(point, x * _G.GetScreenWidth(), y * _G.GetScreenHeight())
+    end
+    combatLog:Show()
+    ShowSelectedFrame()
+  end)
+
+  self:SecureHook("FCF_DockFrame", function (chatFrame)
+    RememberSeparate(chatFrame, false)
+    local smf = FindFrame(chatFrame)
+    if smf and smf.state and smf.state.isCombatLog then
+      if smf.state.detached then
+        smf:TakeOverCombatLog()
+        C_Timer.After(0, ShowSelectedFrame)
+      end
+    elseif smf and smf.state and smf.state.detached then
+      smf:TakeOverChatFrame()
+      -- The game selects the window docked again, but Glass was still showing
+      -- the tab that was open before (after the game is done with the dock)
+      C_Timer.After(0, ShowSelectedFrame)
+    end
+  end)
+
+  -- Edit box
+  self.editBox = CreateEditBox(self.container)
+
+  -- Battle.net alerts (a friend coming online...): in a box of their own,
+  -- above the chat unless moved in Edit Mode ("Battle.net Alerts")
+  local toastWidth, toastHeight = BNToastFrame:GetSize()
+  self.alertMover = CreateFrame("Frame", "GlassAlertMover", _G.UIParent)
+  self.alertMover:SetSize(toastWidth > 0 and toastWidth or 250, toastHeight > 0 and toastHeight or 50)
+  self:PlaceAlerts()
+  BNToastFrame:ClearAllPoints()
+  BNToastFrame:SetPoint("BOTTOMLEFT", self.alertMover, "BOTTOMLEFT", 0, 0)
+
+  -- The game's other chat alerts (WoW: Forever's "World refresh in 10
+  -- minutes"...): in a box of their own too ("Chat Alerts")
+  self.chatAlertMover = CreateFrame("Frame", "GlassChatAlertMover", _G.UIParent)
+  self.chatAlertMover:SetSize(toastWidth > 0 and toastWidth or 250, toastHeight > 0 and toastHeight or 50)
+  self:PlaceChatAlerts()
+  ChatAlertFrame:ClearAllPoints()
+  ChatAlertFrame:SetPoint("BOTTOMLEFT", self.chatAlertMover, "BOTTOMLEFT", 0, 0)
+
+  -- The game puts the alerts back beside its own chat buttons now and then
+  -- (when it updates the chat's button side): back in their box each time
+  local placingAlerts = false
+  hooksecurefunc(ChatAlertFrame, "SetPoint", function (_, _, relativeTo)
+    if placingAlerts or relativeTo == self.chatAlertMover then return end
+    placingAlerts = true
+    ChatAlertFrame:ClearAllPoints()
+    ChatAlertFrame:SetPoint("BOTTOMLEFT", self.chatAlertMover, "BOTTOMLEFT", 0, 0)
+    placingAlerts = false
+  end)
+  -- The game places the Battle.net alert with the others (or elsewhere, in
+  -- some game versions) when it shows: into its own box each time
+  local placingToast = false
+  hooksecurefunc(BNToastFrame, "SetPoint", function (_, _, relativeTo)
+    if placingToast or relativeTo == self.alertMover then return end
+    placingToast = true
+    BNToastFrame:ClearAllPoints()
+    BNToastFrame:SetPoint("BOTTOMLEFT", self.alertMover, "BOTTOMLEFT", 0, 0)
+    placingToast = false
+  end)
+  self:StyleToast()
+  self:StyleAlerts()
+  self:SetupVoice()
+
+  -- The game's chat buttons (social, channels, voice, menu): hidden, or beside
+  -- the chat with the "Chat buttons" option
+  self.chatButtons = CreateChatButtons(self.container)
+  self.container.chatButtons = self.chatButtons
+
+  -- New version alert
+  --@non-debug@
+  -- Any change counts, not only a higher number: the fork restarted its
+  -- numbering at 0.9.x after the first beta was released as 1.9.0-forever1.
+  if Core.db.global.version ~= Core.Version then
+    Utils.notify('Glass Forever has just been updated. |cFFFFFF00|Hgarrmission:Glass:opennews|h[See what’s new]|h|r')
+    Core.db.global.version = Core.Version
+  end
+  --@end-non-debug@--
+
+  -- Force classic chat style
+  if GetCVar("chatStyle") ~= "classic" then
+    SetCVar("chatStyle", "classic")
+    Utils.notify('Chat Style set to "Classic Style"')
+
+    -- Resets the background that IM style causes
+    self.editBox:SetFocus()
+    self.editBox:ClearFocus()
+  end
+
+  -- Handle temporary chat frames (whisper popout, pet battle)
+  -- Secure hooks (run after the game's code): replacing these functions would
+  -- taint the game's chat code, which a new whisper runs through, and it then
+  -- fails on "secret" messages. A secure hook doesn't get the new window, so
+  -- look for open temporary windows Glass doesn't have yet.
+  self:SecureHook("FCF_OpenTemporaryWindow", function ()
+    for _, name in ipairs(_G.CHAT_FRAMES or {}) do
+      local chatFrame = _G[name]
+      if chatFrame and chatFrame.isTemporary and (chatFrame.isDocked or chatFrame.inUse)
+        and not self.state.temporaryFrames[name] then
+        local smf = self.slidingMessageFramePool:Acquire()
+        smf:Init(chatFrame)
+
+        self.state.temporaryFrames[name] = smf
+        self.state.temporaryTabs[name] = CreateChatTab(smf)
+      end
+    end
+  end)
+
+  -- Close window
+  self:SecureHook("FCF_Close", function (chatFrame)
+    RememberSeparate(chatFrame, false)
+    local name = chatFrame and chatFrame:GetName()
+    local smf = name and self.state.temporaryFrames[name]
+    if smf then
+      self.slidingMessageFramePool:Release(smf)
+      self.state.temporaryFrames[name] = nil
+      self.state.temporaryTabs[name] = nil
+      -- Closing first takes the window out of the chat (which shows it as a
+      -- separate window): hidden again, or it stayed behind the chat
+      chatFrame:Hide()
+      C_Timer.After(0, function ()
+        if not chatFrame.inUse and not chatFrame.isDocked then chatFrame:Hide() end
+      end)
+    end
+  end)
+
+  -- Light up a tab when a message of one of its chat types arrives and the tab
+  -- is not selected. The glow takes the color of the chat type (guild green,
+  -- party blue, etc). Blizzard only flashes tabs for whispers by default, see
+  -- the FCF_StartAlertFlash hook below for those.
+  -- The color itself is applied in ChatTab.lua through tab.glowColor.
+  local ALERT_SECONDS = 10 -- how long the dock stays visible after a message
+  -- Only the chats meant for you and your groups: say, yell and emotes from
+  -- anyone nearby lit tabs (white) all the time
+  local ALERT_EVENTS = {
+    CHAT_MSG_GUILD = "GUILD",
+    CHAT_MSG_OFFICER = "OFFICER",
+    CHAT_MSG_PARTY = "PARTY",
+    CHAT_MSG_PARTY_LEADER = "PARTY",
+    CHAT_MSG_RAID = "RAID",
+    CHAT_MSG_RAID_LEADER = "RAID",
+    CHAT_MSG_RAID_WARNING = "RAID_WARNING",
+    CHAT_MSG_INSTANCE_CHAT = "INSTANCE_CHAT",
+    CHAT_MSG_INSTANCE_CHAT_LEADER = "INSTANCE_CHAT",
+  }
+
+  -- Reveal the dock (the tab bar) so a glowing tab is visible, then let it
+  -- fade out again after a few seconds
+  local function RevealDock()
+    if self.dock and not self.container.state.mouseOver then
+      self.dock:Show()
+      if Core.db.profile.tabBarFade ~= false then
+        self.dock:HideDelay(ALERT_SECONDS)
+      end
+    end
+  end
+
+  local function TabHasGroup(chatFrame, group)
+    for _, g in ipairs(chatFrame.messageTypeList or {}) do
+      if g == group then return true end
+    end
+    return false
+  end
+
+  local alertFrame = CreateFrame("Frame")
+  for event in pairs(ALERT_EVENTS) do
+    alertFrame:RegisterEvent(event)
+  end
+  alertFrame:SetScript("OnEvent", function (_, event)
+    -- Turned off in the Tabs options
+    if not Core.db.profile.tabAlerts then return end
+
+    local group = ALERT_EVENTS[event]
+    -- Color of the specific type (e.g. PARTY_LEADER), falling back to the group
+    local info = ChatTypeInfo and (ChatTypeInfo[strsub(event, 10)] or ChatTypeInfo[group])
+    if not info then return end
+
+    local alerted = false
+    -- Skip ChatFrame1 (General, receives everything) and ChatFrame2 (combat log)
+    for i = 3, NUM_CHAT_WINDOWS do
+      local chatFrame = _G["ChatFrame"..i]
+      local tab = _G["ChatFrame"..i.."Tab"]
+      if chatFrame and tab and tab.glow
+        and not chatFrame.isTemporary
+        and chatFrame ~= _G.SELECTED_CHAT_FRAME
+        and TabHasGroup(chatFrame, group) then
+        tab.glowColor = info
+        tab.glow:Show()
+        alerted = true
+      end
+    end
+
+    if alerted then
+      RevealDock()
+    end
+  end)
+
+
+  -- Whispers: the game itself flashes the right tab (the whisper tab of that
+  -- person, or a tab that shows whispers). Give that glow the whisper color and
+  -- reveal the dock, like the other chat types above.
+  local Whispers = Core:GetModule("Whispers")
+  local OnAlertFlash
+
+  -- Whispers in their own windows (Whispers.lua): the game still lights the
+  -- chat tab they'd go in. The whisper reaches Glass a moment after the game,
+  -- so wait for it: a whisper put out the game's glow, anything else lights
+  -- the tab as usual.
+  local function PutOutGlow(chatFrame)
+    local tab = _G[chatFrame:GetName().."Tab"]
+    if tab and tab.glow then
+      if _G.UIFrameFlashStop then _G.UIFrameFlashStop(tab.glow) end
+      tab.glow:Hide()
+    end
+  end
+
+  if _G.FCF_StartAlertFlash then
+    self:SecureHook("FCF_StartAlertFlash", function (chatFrame)
+      if chatFrame and not chatFrame.isTemporary and Whispers:Active() then
+        local now = _G.GetTime()
+        _G.C_Timer.After(0, function ()
+          if Whispers.lastAt == now then PutOutGlow(chatFrame) else OnAlertFlash(chatFrame) end
+        end)
+        return
+      end
+      OnAlertFlash(chatFrame)
+    end)
+  end
+
+  function OnAlertFlash(chatFrame)
+    do
+      if not chatFrame or not chatFrame.isDocked then return end
+
+      -- Turned off in the Tabs options: undo the game's own flash too
+      if not Core.db.profile.tabAlerts then
+        local tab = _G[chatFrame:GetName().."Tab"]
+        if tab and tab.glow then
+          if _G.UIFrameFlashStop then _G.UIFrameFlashStop(tab.glow) end
+          tab.glow:Hide()
+        end
+        return
+      end
+
+      -- Glass hides the game's chat frames, so the game flashes even the tab
+      -- being shown. Skip that one.
+      local smf = FindFrame(chatFrame)
+      if smf and smf:IsVisible() then return end
+
+      local tab = _G[chatFrame:GetName().."Tab"]
+      local info = ChatTypeInfo and (ChatTypeInfo[chatFrame.chatType or "WHISPER"] or ChatTypeInfo.WHISPER)
+      -- The game makes the glow flash, which ends up invisible here. Use a
+      -- steady glow instead, the same as for the other chat types.
+      if tab and info and tab.glow and tab.ShowSteadyGlow then
+        tab:ShowSteadyGlow(info)
+      end
+
+      RevealDock()
+    end
+  end
+
+  -- Keep the default Blizzard chat frame hidden behind Glass. Some code paths
+  -- (e.g. creating a new tab) show it without going through our Show hook,
+  -- which made messages appear twice. HideChatFrame leaves the Glass panel
+  -- itself alone.
+  local function HideBlizzardFrame(smf)
+    local chatFrame = smf.chatFrame
+    if smf.state and smf.state.detached then return end -- a separate window, leave it
+    if chatFrame and chatFrame:IsShown() and smf.HideChatFrame then
+      smf:HideChatFrame()
+    end
+  end
+
+  -- A separate window with the Glass look brings its faded messages back
+  -- while the mouse is over it, like the Glass chat (the game only does that
+  -- when scrolling). Again before they would fade, so they stay while the
+  -- mouse does.
+  -- Redrawing the window as a link is clicked lost the click (the tooltip
+  -- didn't open): it's done as seldom as possible, just before the messages
+  -- would fade, and never while a mouse button is held down.
+  local function RevealWindow(smf, now)
+    local chatFrame = smf.chatFrame
+    if not (smf.state and smf.state.detached and chatFrame and chatFrame.ResetAllFadeTimes) then return end
+    if chatFrame:IsVisible() and chatFrame:IsMouseOver() and smf:UsesWindowStyle() then
+      local every = math.max(2, (Core.db.profile.chatHoldTime or 10) - 1)
+      if (not smf.revealedAt or now - smf.revealedAt >= every)
+        and not IsMouseButtonDown("LeftButton") and not IsMouseButtonDown("RightButton") then
+        smf.revealedAt = now
+        chatFrame:ResetAllFadeTimes()
+        -- That only marks the window to be drawn again, which happens when
+        -- it next updates: only now and then while nothing new comes in
+        if chatFrame.RefreshIfNecessary then
+          chatFrame:RefreshIfNecessary()
+        elseif chatFrame.RefreshDisplay then
+          chatFrame:RefreshDisplay()
+        end
+      end
+    else
+      smf.revealedAt = nil
+    end
+  end
+
+  -- Start rendering
+  self.timeElapsed = 0
+  self.tickerFrame:SetScript("OnUpdate", function (_, elapsed)
+    for _, smf in pairs(self.state.frames) do
+      if smf.state and not smf.state.isCombatLog then
+        HideBlizzardFrame(smf)
+      end
+    end
+    for _, smf in pairs(self.state.temporaryFrames) do
+      HideBlizzardFrame(smf)
+    end
+
+    -- Show the panel of the selected tab and hide all the others. Use the tab
+    -- selected in the Glass dock: clicking a separate window changes
+    -- SELECTED_CHAT_FRAME but shouldn't empty Glass. About 30 times a
+    -- second, which feels instant; every frame only while the selected line
+    -- slides to another tab.
+    self.tabsElapsed = (self.tabsElapsed or 0) + elapsed
+    local tabsDue = self.tabsElapsed >= TABS_CHECK_EVERY
+      or (Core.Components.TabLineMoving and Core.Components.TabLineMoving())
+      or (Core.Components.TabAlerting and Core.Components.TabAlerting())
+    local selected = _G.SELECTED_CHAT_FRAME
+    if FCFDock_GetSelectedWindow and GENERAL_CHAT_DOCK then
+      selected = FCFDock_GetSelectedWindow(GENERAL_CHAT_DOCK) or selected
+    end
+    -- (its own clock: the tabs' one restarts every frame while a tab alerts)
+    self.revealElapsed = (self.revealElapsed or 0) + elapsed
+    if self.revealElapsed >= TABS_CHECK_EVERY then
+      self.revealElapsed = 0
+      local now = GetTime()
+      for _, smf in pairs(self.state.frames) do RevealWindow(smf, now) end
+      for _, smf in pairs(self.state.temporaryFrames) do RevealWindow(smf, now) end
+    end
+    -- A newly selected tab shows its messages right away
+    if selected ~= self.lastSelected then
+      self.lastSelected = selected
+      tabsDue = true
+    end
+    if tabsDue then
+      self.tabsElapsed = 0
+      -- The game's hidden chat windows follow the Glass chat when it moves
+      -- (they're anchored to the screen, see PlaceChatFrame)
+      local left, top = self.container:GetLeft(), self.container:GetTop()
+      if left ~= self.containerLeft or top ~= self.containerTop then
+        self.containerLeft, self.containerTop = left, top
+        for _, smf in pairs(self.state.frames) do
+          if smf.chatFrame and smf.state and not smf.state.isCombatLog and not smf.state.detached
+            and smf.PlaceChatFrame then
+            smf:PlaceChatFrame()
+          end
+        end
+      end
+    end
+    if selected and tabsDue then
+      for _, smf in pairs(self.state.frames) do
+        if smf.chatFrame and smf.state and not smf.state.isCombatLog and not smf.state.detached then
+          if smf.chatFrame == selected then
+            if not smf:IsShown() then smf:Show() end
+          elseif smf:IsShown() then
+            smf:Hide()
+          end
+        end
+      end
+      for _, smf in pairs(self.state.temporaryFrames) do
+        if smf.state and smf.state.detached then
+          -- A separate window, the game shows it
+        elseif smf.chatFrame == selected then
+          if not smf:IsShown() then smf:Show() end
+        elseif smf:IsShown() then
+          smf:Hide()
+        end
+      end
+
+      -- Draw the "selected" line above the active tab
+      for _, tab in pairs(self.state.tabs) do
+        if tab.UpdateSelected then tab:UpdateSelected(selected) end
+      end
+      for _, tab in pairs(self.state.temporaryTabs) do
+        if tab.UpdateSelected then tab:UpdateSelected(selected) end
+      end
+    end
+
+    -- At most once per frame (and at most 100 times a second). This used to
+    -- repeat to "catch up" after a slow frame, e.g. 30 times after a 0.3s
+    -- loading hitch, which made the hitch worse. OnFrame only handles queued
+    -- messages and mouse over, so once is enough.
+    self.timeElapsed = self.timeElapsed + elapsed
+
+    if self.timeElapsed >= 0.01 then
+      self.timeElapsed = 0
+
+      self.container:OnFrame()
+
+      for _, smf in ipairs(self.state.frames) do
+        smf:OnFrame()
+      end
+
+      for _, smf in pairs(self.state.temporaryFrames) do
+        smf:OnFrame()
+      end
+    end
+  end)
+end

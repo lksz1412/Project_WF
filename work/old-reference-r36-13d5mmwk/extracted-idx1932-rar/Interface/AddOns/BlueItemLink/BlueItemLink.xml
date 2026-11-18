@@ -1,0 +1,90 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
+<GameTooltip name="BlueItemLinkTemplate" inherits="GameTooltipTemplate" parent="UIParent" enableMouse="true" toplevel="true" movable="true" frameStrata="TOOLTIP" hidden="true" virtual="true">
+	<Size>
+		<AbsDimension x="32" y="32"/>
+	</Size>
+	<Anchors>
+		<Anchor point="CENTER"/>
+	</Anchors>
+	<Frames>
+		<Button>
+			<Size>
+				<AbsDimension x="32" y="32"/>
+			</Size>
+			<Anchors>
+				<Anchor point="TOPRIGHT">
+					<Offset>
+						<AbsDimension x="1" y="1"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Scripts>
+				<OnClick>
+					this:GetParent():Hide()
+				</OnClick>
+			</Scripts>
+			<NormalTexture file="Interface\Buttons\UI-Panel-MinimizeButton-Up"/>
+			<HighlightTexture file="Interface\Buttons\UI-Panel-MinimizeButton-Highlight" alphaMode="ADD"/>
+			<PushedTexture file="Interface\Buttons\UI-Panel-MinimizeButton-Down"/>
+		</Button>
+	</Frames>
+	<Layers>
+		<Layer level="ARTWORK">
+			<Texture name="$parentItemTexture">
+				<Size>
+					<AbsDimension x="40" y="40"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOPRIGHT" relativePoint="TOPLEFT">
+						<Offset>
+							<AbsDimension x="1" y="-3"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Texture>
+		</Layer>
+	</Layers>
+	<Scripts>
+		<OnLoad>
+			BlueItemLink:OnLoad();
+		</OnLoad>
+		<OnHide>
+			this.link = nil;
+			this.itemLink = nil;
+			this.isShown = nil;
+			this.isClear = nil;
+			this:ClearLines();
+		</OnHide>
+		<OnDragStart>
+			this:StartMoving();
+			this.moving = true;
+		</OnDragStart>
+		<OnDragStop>
+			this:StopMovingOrSizing();
+			this.moving = false;
+			BlueItemLink:SavePosition(this, tonumber(this:GetID()))
+		</OnDragStop>
+		<OnMouseDown>
+			BlueItemLink:OnClick(arg1, this.itemLink, this.moving);
+		</OnMouseDown>
+		<OnEnter>
+			this.isShown = 1;
+		</OnEnter>
+		<OnLeave>
+			ShoppingTooltip1:Hide();
+			ShoppingTooltip2:Hide();
+			this.isShown = nil;
+		</OnLeave>
+		<OnUpdate>
+			if this.isShown and IsShiftKeyDown() then
+				this.isClear = 1
+				BlueItemLink:SetCompareItem();
+			elseif this.isClear then
+				this.isClear = nil;
+				ShoppingTooltip1:Hide();
+				ShoppingTooltip2:Hide();
+			end
+		</OnUpdate>
+	</Scripts>
+</GameTooltip>
+</Ui>

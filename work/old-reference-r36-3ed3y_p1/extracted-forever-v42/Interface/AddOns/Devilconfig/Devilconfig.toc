@@ -1,0 +1,15 @@
+## Interface: 16001, 11601
+## X-Forever-Compat: v42
+## Title: Broker: Devilconfig
+## Author: chantmaster
+## Notes: Easy menu
+## X-Credits: Opticon
+## Version: 1.0-Forever-v42
+
+## OptionalDeps: ChocolateBar, kgPanelsConfig, Ace3, Dominos
+ForeverCompat.lua
+LibStub.lua
+CallbackHandler-1.0.lua
+LibDataBroker-1.1\LibDataBroker-1.1.lua
+
+Devilconfig.lua

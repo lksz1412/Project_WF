@@ -1,0 +1,445 @@
+{
+  "result": {
+    "checks": 22,
+    "passed": 22,
+    "failed": 0,
+    "failures": []
+  },
+  "checks": [
+    {
+      "name": "11 ordered sections",
+      "passed": true,
+      "actual": [
+        "Summary",
+        "Current Ground Truth",
+        "Phase Range",
+        "Non-goals",
+        "Implementation Changes",
+        "Phase N — 복원·구성·검증",
+        "Implementation Interfaces",
+        "Test Plan",
+        "Assumptions",
+        "Correction History",
+        "Decisions Required"
+      ]
+    },
+    {
+      "name": "tree cumulative Steps1–22 exactly once",
+      "passed": true,
+      "actual": [
+        [
+          1,
+          45,
+          90
+        ],
+        [
+          2,
+          45,
+          90
+        ],
+        [
+          3,
+          60,
+          150
+        ],
+        [
+          4,
+          30,
+          60
+        ],
+        [
+          5,
+          45,
+          90
+        ],
+        [
+          6,
+          30,
+          60
+        ],
+        [
+          7,
+          60,
+          120
+        ],
+        [
+          8,
+          60,
+          120
+        ],
+        [
+          9,
+          120,
+          180
+        ],
+        [
+          10,
+          120,
+          180
+        ],
+        [
+          11,
+          120,
+          180
+        ],
+        [
+          12,
+          60,
+          120
+        ],
+        [
+          13,
+          90,
+          180
+        ],
+        [
+          14,
+          120,
+          210
+        ],
+        [
+          15,
+          60,
+          120
+        ],
+        [
+          16,
+          45,
+          90
+        ],
+        [
+          17,
+          90,
+          150
+        ],
+        [
+          18,
+          30,
+          45
+        ],
+        [
+          19,
+          45,
+          90
+        ],
+        [
+          20,
+          60,
+          120
+        ],
+        [
+          21,
+          45,
+          90
+        ],
+        [
+          22,
+          30,
+          45
+        ]
+      ]
+    },
+    {
+      "name": "actual Steps1–5 initial estimates preserved",
+      "passed": true,
+      "actual": {
+        "candidate": [
+          [
+            1,
+            45,
+            90
+          ],
+          [
+            2,
+            45,
+            90
+          ],
+          [
+            3,
+            60,
+            150
+          ],
+          [
+            4,
+            30,
+            60
+          ],
+          [
+            5,
+            45,
+            90
+          ]
+        ],
+        "original": [
+          [
+            1,
+            45,
+            90
+          ],
+          [
+            2,
+            45,
+            90
+          ],
+          [
+            3,
+            60,
+            150
+          ],
+          [
+            4,
+            30,
+            60
+          ],
+          [
+            5,
+            45,
+            90
+          ]
+        ]
+      }
+    },
+    {
+      "name": "possible offline estimate sum",
+      "passed": true,
+      "actual": [
+        1005,
+        1755
+      ]
+    },
+    {
+      "name": "separate live-only sum",
+      "passed": true,
+      "actual": [
+        180,
+        345
+      ]
+    },
+    {
+      "name": "whole future sum/delta",
+      "passed": true,
+      "actual": {
+        "total": [
+          1185,
+          2100
+        ],
+        "old": [
+          540,
+          930
+        ],
+        "delta": [
+          645,
+          1170
+        ],
+        "conditional": [
+          1245,
+          2220
+        ]
+      }
+    },
+    {
+      "name": "tree/PhaseN cover every step with same phase",
+      "passed": true,
+      "actual": [
+        [
+          1,
+          "1.1"
+        ],
+        [
+          2,
+          "1.1"
+        ],
+        [
+          3,
+          "1.3"
+        ],
+        [
+          4,
+          "1.3"
+        ],
+        [
+          5,
+          "1.3"
+        ],
+        [
+          6,
+          "1.2"
+        ],
+        [
+          7,
+          "1.2"
+        ],
+        [
+          8,
+          "2.1"
+        ],
+        [
+          9,
+          "2.1"
+        ],
+        [
+          10,
+          "2.2"
+        ],
+        [
+          11,
+          "2.2"
+        ],
+        [
+          12,
+          "2.3"
+        ],
+        [
+          13,
+          "2.3"
+        ],
+        [
+          14,
+          "2.4"
+        ],
+        [
+          15,
+          "2.5"
+        ],
+        [
+          16,
+          "2.5"
+        ],
+        [
+          17,
+          "3.1"
+        ],
+        [
+          18,
+          "3.1"
+        ],
+        [
+          19,
+          "3.2"
+        ],
+        [
+          20,
+          "3.2"
+        ],
+        [
+          21,
+          "3.3"
+        ],
+        [
+          22,
+          "3.3"
+        ]
+      ]
+    },
+    {
+      "name": "operative Step refs resolve",
+      "passed": true,
+      "actual": {
+        "refCount": 120,
+        "outOfRange": []
+      }
+    },
+    {
+      "name": "source history tail exact preserved",
+      "passed": true,
+      "actual": {
+        "canonicalLines": "338–370"
+      }
+    },
+    {
+      "name": "macro original paragraph/old estimate preserved",
+      "passed": true,
+      "actual": {
+        "canonicalLines": [
+          201,
+          37
+        ]
+      }
+    },
+    {
+      "name": "59 requests ordered/unique/no missing",
+      "passed": true,
+      "actual": {
+        "count": 59,
+        "unique": 59
+      }
+    },
+    {
+      "name": "MD/JSON request identity agreement",
+      "passed": true,
+      "actual": {
+        "mdCount": 59,
+        "jsonCount": 59
+      }
+    },
+    {
+      "name": "every request source row/original exact",
+      "passed": true,
+      "actual": {
+        "references": 89,
+        "mismatch": []
+      }
+    },
+    {
+      "name": "59 substantive status/source/action/artifact/check fields and phase mapping",
+      "passed": true,
+      "actual": []
+    },
+    {
+      "name": "latest order/deferred gate/GO-live distinction present",
+      "passed": true,
+      "actual": {
+        "manualSelfread": "candidate1–474 + coverage1–75; keywords supplemental only"
+      }
+    },
+    {
+      "name": "no stale operative R51-before-features phase",
+      "passed": true,
+      "actual": {
+        "matches": []
+      }
+    },
+    {
+      "name": "Markdown tables stable cell counts",
+      "passed": true,
+      "actual": []
+    },
+    {
+      "name": "paired code fences",
+      "passed": true,
+      "actual": 2
+    },
+    {
+      "name": "canonical/detail/accepted primary reports unchanged",
+      "passed": true,
+      "actual": []
+    },
+    {
+      "name": "3 selected frozen Step5 contract files unchanged",
+      "passed": true,
+      "actual": {
+        "selected": [
+          "Codex/docs/devil-ui-old-4k-layout.md",
+          "Codex/results/old-devil-layout/layout-spec.json",
+          "Codex/results/old-devil-layout/design-gates.json"
+        ],
+        "mismatch": [],
+        "notReplayed": "G5design/source/CRC/render tests"
+      }
+    },
+    {
+      "name": "confirmed lexicon absent in active candidate/coverage",
+      "passed": true,
+      "actual": []
+    },
+    {
+      "name": "A/B precompare real difference expected",
+      "passed": true,
+      "actual": {
+        "rc": 1,
+        "scope": "md heuristic, no full-read exemption used",
+        "raw": "D:\\Projects\\Project_WF\\work\\r55-gate-prep-tpaarno6\\normalized-diff.txt"
+      }
+    }
+  ]
+}

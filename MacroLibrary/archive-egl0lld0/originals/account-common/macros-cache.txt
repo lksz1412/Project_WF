@@ -1,0 +1,43 @@
+VER 3 0000000000000003 "낚시" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/click StaticPopup1Button1
+/cast [nochanneling]낚시
+END
+VER 3 0000000000000005 "대상전환" "INV_MISC_QUESTIONMARK"
+/target focus
+END
+VER 3 0000000000000002 "던지기" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/Stopcasting
+/target [@mouseover]
+/click ExtraActionButton1
+/s <%T>에게 눈 패스!
+/targetlasttarget
+END
+VER 3 0000000000000008 "바진입" "INV_MISC_QUESTIONMARK"
+/changeactionbar [actionbar:1] 2
+END
+VER 3 0000000000000007 "바탈출" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/changeactionbar [actionbar:2] 1
+END
+VER 3 0000000000000006 "샘플" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/시전 [target=mouseover,help][help][target=player]영혼 정화
+/시전 [target=mouseover,harm][harm]정화
+END
+VER 3 0000000000000009 "액션바 변경" "134400"
+#showtooltip
+/cast 야생 영혼
+/changeactionbar [actionbar:2] 1
+END
+VER 3 0000000000000004 "주시" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/focus
+END
+VER 3 0000000000000001 "탈것" "INV_MISC_QUESTIONMARK"
+#showtooltip
+/script UIErrorsFrame:Hide()
+/cast [flyable] 흑요석 밤날개표범; 회색 구룽지 무리지도자
+/내리기 
+END

@@ -1,0 +1,11 @@
+﻿<Bindings>
+	<Binding name="NUGUDROPTOGGLE" header="NUGUDROP">
+		NuguDropButton_OnClick("LeftButton");
+	</Binding>
+	<Binding name="NUGUDROPITEMIDTOGGLE" header="NUGUDROP">
+		ND_ItemID_Button_OnClick();
+	</Binding>
+	<Binding name="NUGUDROPFAVTOGGLE" header="NUGUDROP">
+		ND_Favorites();
+	</Binding>
+</Bindings>

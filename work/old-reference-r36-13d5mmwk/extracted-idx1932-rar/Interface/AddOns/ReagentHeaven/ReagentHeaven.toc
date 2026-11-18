@@ -1,0 +1,12 @@
+## Interface: 30000
+## Title: Reagent Heaven v0.99d
+## Title-koKR: 재료천국 v0.99d
+## Author: Standil (Mony)
+## Notes: Shows all regent informations.
+## Notes-koKR: 재료로 들어가는 아이템에 대한 정보를 보여줍니다.
+# Dependancies: Blizzard_TradeSkillUI
+## SavedVariables: RH_MISSED_REAGENTS, RH_MISSED_PRODUCTS, RH_VERSION
+## SavedVariablesPerCharacter: RH_OPTIONS, RH_CUDATA
+## DefaultState: enabled
+ReagentHeaven.xml
+ReagentHeavenOptions.xml

@@ -1,0 +1,2615 @@
+{
+  "recorded_utc": "2026-11-18T00:07:32.985078+00:00",
+  "local_snapshot_commit": "44e06f99a15c1a819d1cfe78501f83abe6b7f0be",
+  "remote_base_commit": "a27493a87381ebe6c4877d00aa6e9d06c5a05982",
+  "remote_files": [
+    {
+      "path": ".claude/BADA_HUB/MEMORY.md",
+      "remote_blob": "da8a78fc714826700401649bfeb013335b0c83f7",
+      "remote_sha256": "b5ce6d8e011fbd75d0807d173d8ec9f4b32f574f8a56cc13b81e9c197804460c",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/BADA_HUB/feedback_change_impact_analysis.md",
+      "remote_blob": "0c873c5f4edc9a52584ee14e5ee479ca60a4e9b2",
+      "remote_sha256": "8b4d93711d68bfe161c291e2f24612562a278b0a40ec9c046af81f419c88e9f9",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/BADA_HUB/feedback_chunked_review.md",
+      "remote_blob": "431b50cfa2023962d745e72162dac536e9b0e3a8",
+      "remote_sha256": "73e846edd866da6242621feeb541e89ad13cb2ac9e54e525b174253dc3bb880d",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/BADA_HUB/feedback_code_comment_discipline.md",
+      "remote_blob": "448e5ab2d60543a4e592c65f6a461281fe734d4b",
+      "remote_sha256": "9b31499096e268d2b0d70414ea07fb1ab6e1f63668dab47663251d8abb6495ca",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/BADA_HUB/feedback_code_ownership_scope.md",
+      "remote_blob": "9732fc11b493938134b238b836eb24e263ec0806",
+      "remote_sha256": "baa5e30189c218ab19f54eb33666a6ca1d2e3b847a687495d37d6f3938547e1e",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/BADA_HUB/feedback_communication_style.md",
+      "remote_blob": "b22f11315ad22c94f33af9261ecc8ae9c925cb1d",
+      "remote_sha256": "7d91e420a447ebae65fbb5bb9ccbaea9018bfff44b9a523d1d956919b741820d",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/BADA_HUB/feedback_compaction_recovery.md",
+      "remote_blob": "c5014af3a15c9978380d47df19ca811a421b7c77",
+      "remote_sha256": "4239b19a87d58d145fed78afabfd3b177966c4a4a5ada9e449c0ba9d2b3b4994",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/BADA_HUB/feedback_completion_scope.md",
+      "remote_blob": "c488ccd5c963d13fa935b1378c72d357deb1eed2",
+      "remote_sha256": "57ef070ea27ba11d8b6d71cfff9bd9d9b3018a828553dc369a51678c1dd6fa98",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/BADA_HUB/feedback_confirmed_items_policy.md",
+      "remote_blob": "58e5830ce5c6ee48c7daa1f2b1706dcf2a089b2e",
+      "remote_sha256": "bb83a451b22e3a1ac88b64039fe40011ae3a4af95921f419edcff9d02573567d",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/BADA_HUB/feedback_decision_request_clarity.md",
+      "remote_blob": "a023fbc83ce2169adbe607d021aa0b5dfa1e4cc1",
+      "remote_sha256": "f556826da4c5b390b7c9333b53e26fc152baedd6fb598e4ddb66044567a87d72",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/BADA_HUB/feedback_execute_explicit_choice_not_judgment.md",
+      "remote_blob": "ff4499532d18abe6158cc03765fe72ef58f3fa79",
+      "remote_sha256": "c80694eb8a3e0877e9b00d64ed4c46cbaf364a5bd8637e0bd65985432171e703",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/BADA_HUB/feedback_flow_interruption.md",
+      "remote_blob": "76fbfbd11bbf2b673b1c75e77a4e3562bc38b52a",
+      "remote_sha256": "82183e0fadbcc58b471d2c9b7786a0dcbe9084a114156b0dc66c2c970ce6d3c8",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/BADA_HUB/feedback_full_file_read_required.md",
+      "remote_blob": "11fbc3b82a09cc1996d40480be6c30d730e1ea8c",
+      "remote_sha256": "7d054b5373010b861aaa2d0be7fda5aa4d6fad99f27277129381013853a6ae6c",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/BADA_HUB/feedback_handover.md",
+      "remote_blob": "974d999ba0a45173585f85c7dd2866ea97be0b90",
+      "remote_sha256": "33ee0277d06727cd1eb16fafbec3bb14fd2f3a559a5a3e26877202be013504e6",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/BADA_HUB/feedback_planning_vs_execution.md",
+      "remote_blob": "549c427508649a5c3e647245630b20e19057973d",
+      "remote_sha256": "be9ba3df314858f34c32e70583a303b734c9f366d4b78e95c3fe8f1520c2368c",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/BADA_HUB/feedback_post_edit_runtime_verification.md",
+      "remote_blob": "9ff2f48cdc281321b37c9cf7e5b8fc4135269060",
+      "remote_sha256": "8f8c9b7049868145fbe1b03366cc1b437a70beae55aca897519cd0430c2812f8",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/BADA_HUB/feedback_review_chunk_discipline.md",
+      "remote_blob": "328e582141f69e2c62065cbe0fe67a39d45c0124",
+      "remote_sha256": "79ec09bb00abed8c636f57d0d2222318883cc3e6325bb9aaf3d9ac1189fa0ff0",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/BADA_HUB/feedback_session_division.md",
+      "remote_blob": "0d77b763beee1d67e460316694b17ab6ab3a424f",
+      "remote_sha256": "0119359784b995af1e756ccc9c97fce3e3c5079bba19bcb9f619cccb621a0502",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/BADA_HUB/feedback_session_entry_reading.md",
+      "remote_blob": "44a04a5aea45f8d1493d0066bbb43545362db61e",
+      "remote_sha256": "92056bc1bf79d6f585da5a5174a578853d0f41f7139492650ec0bed78cf0500d",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/BADA_HUB/feedback_unit_loop.md",
+      "remote_blob": "de6b5e16f90dab517d8e53e3db5252138aeeedcb",
+      "remote_sha256": "c9ab333e8e1794236a4b3de50662e92fde8323226802a6934804850f1bccb8f7",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/BADA_HUB/feedback_user_decision_no_requery.md",
+      "remote_blob": "d0e6a12a62e9e37d9a8eae53a5cedb5a1eeb9a43",
+      "remote_sha256": "827fb51a7b7094de6ec7cdb6914f68dae0a4299a9a0ac56a149781d3ae9e930b",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/BADA_HUB/feedback_workspace_git_safety.md",
+      "remote_blob": "0388daaa98542df2d0c964ca9ba3ebdc256d1c1e",
+      "remote_sha256": "db64d910c8d12d9a0e254c007287374d29eec01e87ed9505ebdab2e44cba5486",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/CLAUDE.md",
+      "remote_blob": "26d009d856d13bfc9adc66235822b0989381bc99",
+      "remote_sha256": "13191597ca46912bf3aec57a3a41c011be7f07e26886ef12bab828fa2109f0ad",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/ENVIRONMENT.md",
+      "remote_blob": "d00607277a89507068fd7d5891abfd457068bf93",
+      "remote_sha256": "213e2113ef6c7f915726f1366669ef8ca9657b7beba30d6fca5f41a64573c2ac",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/POINTERS.md",
+      "remote_blob": "ca0f70cb0ab5fa671c9a06523c7cb8d8a6b39425",
+      "remote_sha256": "f89eec51c0612f7de06b17beff4d8ed71c3cd378cd62dc066908637931d114e0",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/agents/bada-a1-analyst.md",
+      "remote_blob": "05b1d89aba1327555887dcc1be2456a291c08499",
+      "remote_sha256": "65ff9b623e915edf4077ff86c80822e63dcad6e77832d9eb7ac43a5681a84705",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/agents/bada-a2-coder.md",
+      "remote_blob": "eaa185ea7d325549eae9de0367b25961ce7017af",
+      "remote_sha256": "617d5b0ba8ee3ad9c2b3492905b999ad929af5c9f0aadd8fec7abc364e8488e9",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/agents/bada-a2-writer.md",
+      "remote_blob": "d2af92dac45189717ce80fdec45f73982365c864",
+      "remote_sha256": "cad974210a97279def8dbd0ad33472bad66c0df6c373b2b78c26ac6bf83c56e0",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/agents/bada-a3-helper.md",
+      "remote_blob": "d8b0e4a381ef8d934955c368e3a0b229651b1415",
+      "remote_sha256": "70eee752f2ed7cc63ab860433657066b978033720bd6f0eca3b620ff0237c288",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/agents/bada-a3-reviewer.md",
+      "remote_blob": "9af7a1561d686b4cb65a3859f960fd6376def21c",
+      "remote_sha256": "4b1f1257d0bb3058fff6b5bc444b64ff75ca3ad78afc1ea1b7c1ae73b16ce4a3",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/agents/bada-a3-worker.md",
+      "remote_blob": "e5538e11c3ca99a0d059626d26d465cf81f75bcc",
+      "remote_sha256": "c626275be0a407564847b2f4b515e92fe6b5635051fbc16d372356fe787110ba",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/agents/bada-a4-helper.md",
+      "remote_blob": "a0472f722f67a030554983e920879bf03fdc0ad3",
+      "remote_sha256": "a9f02bba8f368968f4b4bd762ab6f0a95dc530cdab0cedb242c1912e864367d2",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/agents/bada-b-auditor.md",
+      "remote_blob": "01a300682dba77b747e23262a7356034cbbdfe3b",
+      "remote_sha256": "e837ee42bc60d22383359314a7f12b0fff98e7ffb36b2f13bec843369b1a193f",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/agents/bada-fable-analyst.md",
+      "remote_blob": "0ae926c9bb72c451eb277e36d578a6e542101d95",
+      "remote_sha256": "6e2d305e09bb801d80feef26560b7b69b0e2a5c4242a403d4c7fbfa16503e26d",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/agents/bada-fable-auditor.md",
+      "remote_blob": "d020b2d63e1f21e11c04621f69f026648af20359",
+      "remote_sha256": "3d1c7aef2552271aecba352db58f6d3ef7582aa0228e5b2ddec1dacc8f324916",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/agents/bada-fallback.md",
+      "remote_blob": "bc11e45658d8e5b5812e1471c84a828837c443d5",
+      "remote_sha256": "9a8d0546e96b9df32b7a020f4006b148849cd6717018f1b2149852341c01e2d9",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/agents/bada-image-reader.md",
+      "remote_blob": "143bbe5147e3fb30d04a3e095a77245f1863dd17",
+      "remote_sha256": "e2af168c2fbb90be0c0acfe7363901941525d624467995659f78b318a7a3f292",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/commands/caveman-commit.md",
+      "remote_blob": "bd2ee5001949a24d6a70e9f6ee40bf57c97c254f",
+      "remote_sha256": "66edf8c877999ce8bb22df24b21b91f0ad3030e6deed563dfcd6461756998478",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/commands/caveman-help.md",
+      "remote_blob": "126e7ca65cbd37a44cfecfe9b27ae3f3c4076efd",
+      "remote_sha256": "92f4aa22e85b1ab8ffd1d2655932a12ffe13fc3f040dc8a0690e2ca594610d46",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/commands/caveman-review.md",
+      "remote_blob": "9bf1c9264a293f99fbf0c0352c13a5178ad9d325",
+      "remote_sha256": "4c3cfb4f6f7c8df6dc5e56675b82eeca55d1f07ae251ea89bab777cf284d253b",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/commands/caveman.md",
+      "remote_blob": "339892d46e3385f38c34f33800cf8816d7507a14",
+      "remote_sha256": "6be76e624af5e6a5d4fdc3229b296440c6fcff873a4e9dce0f38c69b4fd9f4b0",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/settings.json",
+      "remote_blob": "d4531a2fc0ac2cb4ececdc42c8015e4dcb50849d",
+      "remote_sha256": "17605a9fbd5cc41c4e6136681c0d1b024df7852bb250962af0d1b622957ebe87",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_JJH_original_local_web_service/SKILL.md",
+      "remote_blob": "67b3eafbbb8395a6b3abd5f00224e963f8a720e5",
+      "remote_sha256": "bd24c17a6725f9a61a769f3a9815fa26c65b1a5dca401a70757c49f112b92835",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_caveman-korean-commit/SKILL.md",
+      "remote_blob": "28b13734ae05c3fc9805b88efdca44686534b01c",
+      "remote_sha256": "fc235a6dc93049d7812600feaa7564970951409cd47785580e2c6d3615ca2004",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_caveman-korean-help/SKILL.md",
+      "remote_blob": "de9f1200a0af615fb4195f55c1b4d5314f763fba",
+      "remote_sha256": "6d98815b0a5af54147837dbc83d99b9016fdb12fc78aa466e4bfda27dabe7171",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_caveman-korean-review/SKILL.md",
+      "remote_blob": "0e61cc5bd7fc6867be9146de1d16de522c071195",
+      "remote_sha256": "102c726fba69077f2c75bfae306c35a8775a8afee007d20babe75b74da860083",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_caveman-korean/LICENSE.txt",
+      "remote_blob": "93d47b29e1b00c8e9f1f79dbe66c4e39e735ca22",
+      "remote_sha256": "91ef3b37ca60de78b211b9aa02df0be24c48f6745f361fccb00a5d3d1d436ccd",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_caveman-korean/SKILL.md",
+      "remote_blob": "1122c224555bfe4dc4903c15819bd53a034b189d",
+      "remote_sha256": "18e113ee8e9bbff5463c47e2ceaf5a60239efa17201a13197366c3718174cabc",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_caveman-korean/hooks/caveman_activate.py",
+      "remote_blob": "b8143ac34c7855eb63dee7322fd13c8d959723df",
+      "remote_sha256": "998cda209bac84bba26fdf15f0bcd1b405fe2040a5729ead6a4d31641cef5ffa",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/SKILL.md",
+      "remote_blob": "431dd874e0358799507e86612721844163f4d006",
+      "remote_sha256": "f42de19659fa311c1dd64643f01f8a9e596c8b6d754ed06e6206d614bf630dca",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/decrypt/GUIDE.md",
+      "remote_blob": "9c00c6579c572f79078d5778da97c02967524624",
+      "remote_sha256": "3a4ff147756fab89ae4a928e611ed4e248172713c05ca892c5944488f8732aea",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/decrypt/scripts/read_document.py",
+      "remote_blob": "5e96104cedd0bd288239292635997edd93f3b60e",
+      "remote_sha256": "049d2e26742a44ded371a9c3c9cd214e31a08204bd47ade29dfa4d600f5afedd",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/GUIDE.md",
+      "remote_blob": "44749d08fdcee76e185bc135adad75afd04a377d",
+      "remote_sha256": "3b37605f13595a396f6bea041d131986ff2d8fc72f03323eb24843565f3f9e40",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/LICENSE.txt",
+      "remote_blob": "7a4a3ea2424c09fbe48d455aed1eaa94d9124835",
+      "remote_sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/__init__.py",
+      "remote_blob": "8b137891791fe96927ad78e64b0aad7bded08bdc",
+      "remote_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "preserved_exact": true,
+      "remote_mode": "100755"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/accept_changes.py",
+      "remote_blob": "11d9227daf4f64ea6e927b21a9a929a3668cf738",
+      "remote_sha256": "93367a6cc25ae04a6c6be951654a31744761e37db646571ed50593daf05422ef",
+      "preserved_exact": true,
+      "remote_mode": "100755"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/comment.py",
+      "remote_blob": "46ed5f52eb639934a8ead383976eecc2a6867fa7",
+      "remote_sha256": "37d116e5f56bb142b208c6c6a4bbcf960495abf470ddb7c6675ccfac864ba3d7",
+      "preserved_exact": true,
+      "remote_mode": "100755"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/merge_runs.py",
+      "remote_blob": "4c7c1bf261b1ec3febe4112e30f46c2aa9f4a141",
+      "remote_sha256": "3ab367fd7fba4647943d0aa5e65203b15458551410f5ffc821d902616a4b9f40",
+      "preserved_exact": true,
+      "remote_mode": "100755"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/helpers/__init__.py",
+      "remote_blob": "4902e2ad85e6789b71d7d944bc8e16d978f8cb6e",
+      "remote_sha256": "5c456ffc522900399b5f9402f92d66aaf2d9f87655d236c69f60bf07f4fd7c9b",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/helpers/pptx_chart.py",
+      "remote_blob": "0e86aed6ed60c248001c7fa007f1ac4bb498d65f",
+      "remote_sha256": "aed734e9a6c743ae712fc228c868bf0f6abcfb6a53549eefb19081b15d240fda",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/helpers/pptx_slide.py",
+      "remote_blob": "55274b837847f0b918dcf5cc692b775f06723f0a",
+      "remote_sha256": "06fe06953bf038826b85ecc142f4dc9299a37fa0c4e4dd9b00b10486df33524d",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/helpers/pptx_theme.py",
+      "remote_blob": "84466201cf22ca237cd640c80a08e9e2cabcce90",
+      "remote_sha256": "ebb54c56e9c13807f5f98f0cae22d47cdd0162da8525eaa664e3f2c8c8d6bb03",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/office_com.ps1",
+      "remote_blob": "7f92a1510697ac8c6fcfe98b50e5fb3509b9e0da",
+      "remote_sha256": "bab69df7de54a58538446e7d48b9a38bc15889308c2bf07519b1be404e35cd6e",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-chart.xsd",
+      "remote_blob": "6454ef9a94d52512e4905df61280a3fd1dafc0a4",
+      "remote_sha256": "41b93bd8857cc68b1e43be2806a872d736a9bdd6566900062d8fdb57d7bbb354",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-chartDrawing.xsd",
+      "remote_blob": "afa4f463e3140a3f626c73f7966d689270d89b2c",
+      "remote_sha256": "3fd0586f2637b98bb9886f0e0b67d89e1cc987c2d158cc7deb5f5b9890ced412",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-diagram.xsd",
+      "remote_blob": "64e66b8abd496d2e450c08110e40607e90b3fe13",
+      "remote_sha256": "29b254ee0d10414a8504b5a08149c7baec35a60d5ff607d6b3f492aa36815f40",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-lockedCanvas.xsd",
+      "remote_blob": "687eea8297caa298581aa06c40ca40ef7b8a58bc",
+      "remote_sha256": "5cb76dabd8b97d1e9308a1700b90c20139be4d50792d21a7f09789f5cccd6026",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-main.xsd",
+      "remote_blob": "6ac81b06b7a3ef916d677953084ae225504a77bc",
+      "remote_sha256": "5375417f0f5394b8dd1a7035b9679151f19a6b65df309dec10cfb4a420cb00e9",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-picture.xsd",
+      "remote_blob": "1dbf05140d07fa014f18a5630acc0613d8058e52",
+      "remote_sha256": "5d389d42befbebd91945d620242347caecd3367f9a3a7cf8d97949507ae1f53c",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-spreadsheetDrawing.xsd",
+      "remote_blob": "f1af17db4e83b1c40152577eca4a575ab63a1ca7",
+      "remote_sha256": "b4532b6d258832953fbb3ee4c711f4fe25d3faf46a10644b2505f17010d01e88",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-wordprocessingDrawing.xsd",
+      "remote_blob": "0a185ab6ed0c2dd9b383a403c56c909bbab8b9a1",
+      "remote_sha256": "bdad416b096b61d37b71603b2c949484f9070c830bdaeba93bf35e15c8900614",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/ISO-IEC29500-4_2016/pml.xsd",
+      "remote_blob": "14ef488865f3ae6150776220ebbcf4788f89066a",
+      "remote_sha256": "d173c3e5d61e42e2e3a97226c632fd2ab7cc481fc4e492365b87024ab546daff",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-additionalCharacteristics.xsd",
+      "remote_blob": "c20f3bf14720d34247e8e1302dc3c40f7b832099",
+      "remote_sha256": "3c6709101c6aaa82888df5d8795c33f9e857196790eb320d9194e64be2b6bdd8",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-bibliography.xsd",
+      "remote_blob": "ac60252262534e7b87523fd04d252f085b38bec0",
+      "remote_sha256": "0b364451dc36a48dd6dae0f3b6ada05fd9b71e5208211f8ee5537d7e51a587e2",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-commonSimpleTypes.xsd",
+      "remote_blob": "424b8ba8d1f9ebb22ba72cdd174c8a2ade0ecf89",
+      "remote_sha256": "e2abacbb9a55ce1365f8961bc1b1395bbc811e512b111000d8c333f98458dece",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlDataProperties.xsd",
+      "remote_blob": "2bddce29214882eb9fdf2be8a50ed5bdd0c69dfc",
+      "remote_sha256": "0ef4bb354ff44b923564c4ddbdda5987919d220225129ec94614a618ceafc281",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlSchemaProperties.xsd",
+      "remote_blob": "8a8c18ba2d5caa7e60a365e77ae0d1b872141bb0",
+      "remote_sha256": "0d103b99a4a8652f8871552a69d42d2a3760ac6a5e3ef02d979c4273257ff6a4",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesCustom.xsd",
+      "remote_blob": "5c42706a0d53c5e8b96818d9c29a292d1504f720",
+      "remote_sha256": "9c085407751b9061c1f996f6c39ce58451be22a8d334f09175f0e89e42736285",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesExtended.xsd",
+      "remote_blob": "853c341c87feb51e10d757aea28b4185ae4c2731",
+      "remote_sha256": "bc92e36ccd233722d4c5869bec71ddc7b12e2df56059942cce5a39065cc9c368",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesVariantTypes.xsd",
+      "remote_blob": "da835ee82d5cc31be9fa9792512930f7ae3fb5ce",
+      "remote_sha256": "7b5b7413e2c895b1e148e82e292a117d53c7ec65b0696c992edca57b61b4a74b",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-math.xsd",
+      "remote_blob": "87ad2658fa51cb4c172f82d0fdf33a492a750eca",
+      "remote_sha256": "3213ef1631606250f5010b42cad7ef716f7c59426367798e33c374c0ec391d3a",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-relationshipReference.xsd",
+      "remote_blob": "9e86f1b2be0d431cd3c250ddeaf4efabdbcb088b",
+      "remote_sha256": "12264f3c03d738311cd9237d212f1c07479e70f0cbe1ae725d29b36539aef637",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/ISO-IEC29500-4_2016/sml.xsd",
+      "remote_blob": "d0be42e757f3cce533c1c80770239f0097d3de6b",
+      "remote_sha256": "beffeed56945c22a77440122c8bdc426f3fcbe7f3b12ea0976c770d1f8d54578",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-main.xsd",
+      "remote_blob": "8821dd183caf9c8c3b809e0e2d9e0df56c4e9ed9",
+      "remote_sha256": "f5ee623b08b6a66935e5aced2f5d8ad0fc71bf9e8e833cd490150c0fa94b8763",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-officeDrawing.xsd",
+      "remote_blob": "ca2575c753be78cdaa96de56b3ff8770173c324d",
+      "remote_sha256": "585bedc1313b40888dcc544cb74cd939a105ee674f3b1d3aa1cc6d34f70ff155",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-presentationDrawing.xsd",
+      "remote_blob": "dd079e603f5770176212776a1d565b108875cf64",
+      "remote_sha256": "133c9f64a5c5d573b78d0a474122b22506d8eadb5e063f67cdbbb8fa2f161d0e",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-spreadsheetDrawing.xsd",
+      "remote_blob": "3dd6cf625a740398c2a4dc8abbe18e25e0ac5e9f",
+      "remote_sha256": "6bdeb169c3717eb01108853bd9fc5a3750fb1fa5b82abbdd854d49855a40f519",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-wordprocessingDrawing.xsd",
+      "remote_blob": "f1041e34ef365926f5670b896f5bb23e553ac36d",
+      "remote_sha256": "475dcae1e7d1ea46232db6f8481040c15e53a52a3c256831d3df204212b0e831",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/ISO-IEC29500-4_2016/wml.xsd",
+      "remote_blob": "9c5b7a633411c2313ce839f748e4623bb0a70efe",
+      "remote_sha256": "c2dd9f61f892deae6acd8d20771ea79b12018af25f3bf8d06639c8542d218cfd",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/ISO-IEC29500-4_2016/xml.xsd",
+      "remote_blob": "0f13678d80a762375223f060e23b56c7b2eac89e",
+      "remote_sha256": "a539aa2fb154fa50e0f5cc97e6ad7cbc66f8ec3e3746f61ec6a8b0d5d15ecdf2",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/ecma/fouth-edition/opc-contentTypes.xsd",
+      "remote_blob": "a6de9d2733d3f0eea12ae87b24122495df1f0928",
+      "remote_sha256": "9e0b7209fc69ab11987900404540969976000c5ebe4d4f58c43dc3842886bf3a",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/ecma/fouth-edition/opc-coreProperties.xsd",
+      "remote_blob": "10e978b661fc291cbeea9ab0c248601cf216f96d",
+      "remote_sha256": "451958454e8588dfc7cd945981ada142ca06ff3307937f5700df059c2b307fa8",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/ecma/fouth-edition/opc-digSig.xsd",
+      "remote_blob": "4248bf7a39c793c9f319bae7d09f92983efe5368",
+      "remote_sha256": "6de111e11403f7cd49027400755bae0ea1cabef2815f09bd40a24f0017613b24",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/ecma/fouth-edition/opc-relationships.xsd",
+      "remote_blob": "56497467120b52b742756379959d4b2536be6df7",
+      "remote_sha256": "f565adfef5a502044abc3a9153e157edc25af78304d335994afb958874b15e26",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/mce/mc.xsd",
+      "remote_blob": "ef725457cf39116672e285d021be69b7ad022574",
+      "remote_sha256": "3a37e461ecf5a8670fdec34029703401f8728ab9c96ec1739a6ae58d55212413",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/microsoft/wml-2010.xsd",
+      "remote_blob": "f65f777730d82162f4248f03c703b1b85fda5fe2",
+      "remote_sha256": "568b26ee156cb9549aa439ca2158965f77b7c1602b7e0316f40ac6cf586e35f2",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/microsoft/wml-2012.xsd",
+      "remote_blob": "6b00755a9a8733f0fb171a47b25d0d7b4c70dee8",
+      "remote_sha256": "0fa75578a000439a7988ba0c59fdc69f774bbd416cbacc14d07125b3f686cb74",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/microsoft/wml-2018.xsd",
+      "remote_blob": "f321d333a5e6ef98cbdfeeeaa334923e4cfc8a6c",
+      "remote_sha256": "be0ff793a22dd31384650c3a4da14c2fa8062751c2e97b0e5ee852bda13c60ad",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/microsoft/wml-cex-2018.xsd",
+      "remote_blob": "364c6a9b8df6e252bb5ae39e2ca031fcbfc4e8a5",
+      "remote_sha256": "fddc2b880cabb9005aebbc7e783e53c19fec1c03df7d0e2f2076a33a0fdfd081",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/microsoft/wml-cid-2016.xsd",
+      "remote_blob": "fed9d15b7f504e14ac82793d79db2d7ad83d56ed",
+      "remote_sha256": "127ca209fa73d7cb708449cb355c871867948a96e4a74f7bf5811ef62d17991d",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/microsoft/wml-sdtdatahash-2020.xsd",
+      "remote_blob": "680cf15400cd57ce2bf17a58ecd29caa0d8a8422",
+      "remote_sha256": "842e7163409c8d74f4d7088a8bc99500d80bc75332681a0980055b08f374a604",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/schemas/microsoft/wml-symex-2015.xsd",
+      "remote_blob": "89ada90837b2db3f3d453212ae426520acedbbea",
+      "remote_sha256": "16f6f8072249f431370723c2cd8974672e0d9c897e00e97dd918079df934871b",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/soffice.py",
+      "remote_blob": "51b81c3870567e5a563a14bd443e38090282a82a",
+      "remote_sha256": "2f776741e8074032e7bfa489e3776cd857533fd91a13ffe0e75a60f0b7436a3d",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/validate.py",
+      "remote_blob": "ff3bde0f1e9de81f3f00a44f9a92229739b1e219",
+      "remote_sha256": "21d48e4e86df93e889a01e7d03e7ca63816da3278c9cc4353b89d43246e02364",
+      "preserved_exact": true,
+      "remote_mode": "100755"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/validators/__init__.py",
+      "remote_blob": "db092ece7e21de98f87bd81471578259a1bc642f",
+      "remote_sha256": "83e0f035c5abea238d3f2c3968afbd511ed022b527b7c9cb60a9434cc34ff987",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/validators/base.py",
+      "remote_blob": "04d6169c1cb489dc94aa78ece22e60ee5911b854",
+      "remote_sha256": "6129ec6a4fc0a4aa78af1434f9baa73994cc24d3261afda4e680e00f215cbf3b",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/validators/docx.py",
+      "remote_blob": "2acdaf4ef4e5ec84c7191dadf9eeb73b00a81cc2",
+      "remote_sha256": "7b0f1a23c9cd9ff07187d9d7d359f62317f94a5e389d63fd19766e1688a195a2",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/validators/pptx.py",
+      "remote_blob": "bb06b825e3dad82c3859243f294a963868d7dc8f",
+      "remote_sha256": "3a100ec5f00ae183bca67f4aaa8e3e902caee60254e141b8120f32c53d85cee7",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/validators/redlining.py",
+      "remote_blob": "4406912e654dca3fc1869dc6bdd7099ac6573041",
+      "remote_sha256": "f9c4455adc32b3890d5203d6c25d868d98d7e970bbad76b686f502950737599a",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/templates/comments.xml",
+      "remote_blob": "cd01a7d7155f9a78cf3d11470e2ce2b5ccdac640",
+      "remote_sha256": "a08ba83ee8790ac9e3dc61921f4988f19edd7e06ac09d6f1897a877c1581818d",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/templates/commentsExtended.xml",
+      "remote_blob": "411003cc485356c560e29687ca359d64cd89d4b4",
+      "remote_sha256": "544eeecfeceed4b468fff163cd9c366d33641c8b8ab691ce002576197846afe8",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/templates/commentsExtensible.xml",
+      "remote_blob": "f5572d710826dd7a1f455af7487e2157ef01ada0",
+      "remote_sha256": "bad10b3283e6ad6e7ef6d1ca5169683721ed690ee331282c65df04017e080631",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/templates/commentsIds.xml",
+      "remote_blob": "32f1629f2a8bb9aafebb0699349d0d799edce9f3",
+      "remote_sha256": "db20f9616e004ec42ef736e80c2384e45db0f8d1194d31dc8b37c7d6ecdd6420",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/docx/scripts/templates/people.xml",
+      "remote_blob": "3803d2de0faa635687a48947b52ab98b9655f631",
+      "remote_sha256": "056f63aa1197fd8c9dda980c9f1b9ff016fd5fa4a462df8aec5f384f39d23e37",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pdf/FORMS.md",
+      "remote_blob": "13493857340a31c41970faf407327b57b0aac8e1",
+      "remote_sha256": "d5df5757e23634cd8a1a37e092af6c3b3b63afb3fd3ce86337fce9017cc3ee9f",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pdf/GUIDE.md",
+      "remote_blob": "356cc3672036ada142961f9b1598ed1fb4b90d8b",
+      "remote_sha256": "19d017463c884916720e23fda7ed54e8045dbd1afc3c323f07752627bd66e2df",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pdf/LICENSE.txt",
+      "remote_blob": "7a4a3ea2424c09fbe48d455aed1eaa94d9124835",
+      "remote_sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pdf/REFERENCE.md",
+      "remote_blob": "7748e376a0f174cb36738599268c30227ebe1f3c",
+      "remote_sha256": "07af9a8f59e77e88fe9b238a403348244f38a4771c54911c412716d8f88f0ea9",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pdf/scripts/check_bounding_boxes.py",
+      "remote_blob": "2cc5e348f359b7aa7179e6a26772dacfdbbeba53",
+      "remote_sha256": "0ced522402dd7b3c82a0be9518cf4e485fa9cc0467d7beab6ddb04cb36fcc3e1",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pdf/scripts/check_fillable_fields.py",
+      "remote_blob": "36dfb9513e2f54e051820b58c3cdd1f09bc6ff37",
+      "remote_sha256": "1fe10b9980a5493c9bbec8c20630c603eaa475b45403751c08f26738736647b8",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pdf/scripts/convert_pdf_to_images.py",
+      "remote_blob": "7939cef56c1220dd9dd0d04ec9594b2fe089ee74",
+      "remote_sha256": "7f58e292a67e18a8ff000d30bad2469389546731f7e8a698cc1d0aed001ea15d",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pdf/scripts/create_validation_image.py",
+      "remote_blob": "10eadd8124b1f94f9b1a78708c2d947a3f6773e7",
+      "remote_sha256": "8fa9fd7962c9f940045b81cf6b991e7c1057c1838e3f9cc6d305007a222ffebf",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pdf/scripts/extract_form_field_info.py",
+      "remote_blob": "64cd4703a4af80bf6abe16f4c3065d8abd55d173",
+      "remote_sha256": "bb235b36f497bbb1c7c6821cecf527bbba7213520de11219da99f7b13a38c109",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pdf/scripts/extract_form_structure.py",
+      "remote_blob": "f219e7d5b5e30616b2259abb924253afd0240aee",
+      "remote_sha256": "6814e3fe8f78c2b16d766c132b5a727ff7a31b71d76a7d46bd6e40fe50bc97c5",
+      "preserved_exact": true,
+      "remote_mode": "100755"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pdf/scripts/fill_fillable_fields.py",
+      "remote_blob": "51c2600f3895723cac15ec3ffcd8a482e42f95d7",
+      "remote_sha256": "d140872c2e92e41b1e05370ae8d270c5b7f5ebdf55d9905f03bc974a9c708ff5",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pdf/scripts/fill_pdf_form_with_annotations.py",
+      "remote_blob": "b430069fd016cff11560d0f2b95c63074736e5e4",
+      "remote_sha256": "8a56e063a49ed53c0b0e1d312ecf8023af76816ed139486ec3b539873de202fd",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/GUIDE.md",
+      "remote_blob": "bcaa4db1bb4f3da526b5b3732fb7b499c22dfb3f",
+      "remote_sha256": "091a6d24e67d38eaefdd2eac70ea3a1bcfd57cee93fd6672d827fb8d14d93374",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/LICENSE.txt",
+      "remote_blob": "7a4a3ea2424c09fbe48d455aed1eaa94d9124835",
+      "remote_sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/__init__.py",
+      "remote_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "remote_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/add_slide.py",
+      "remote_blob": "9b418bceb49ef063d8f32d4b98a364de669588d2",
+      "remote_sha256": "23a4c66a9f43e651189cbc9f82ba0a8271d19dc8d44cf0c426dda66f7eb6a93a",
+      "preserved_exact": true,
+      "remote_mode": "100755"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/apply_theme.js",
+      "remote_blob": "ea6e45a11ca11a4ce64dd1c1dcd7335ca746831e",
+      "remote_sha256": "e440b33c43f2e707076cb64b57ca926ce886564b115c19ee23ac487bdb1a6259",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/clean.py",
+      "remote_blob": "551dd23192f6eae8e79d4b59b08a3cd9d10feadd",
+      "remote_sha256": "5c808cd4dff7e02661ef3c68b5917f4e25097cc6610c92a3a7df4a6366a5c3c1",
+      "preserved_exact": true,
+      "remote_mode": "100755"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/helpers/__init__.py",
+      "remote_blob": "4902e2ad85e6789b71d7d944bc8e16d978f8cb6e",
+      "remote_sha256": "5c456ffc522900399b5f9402f92d66aaf2d9f87655d236c69f60bf07f4fd7c9b",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/helpers/pptx_chart.py",
+      "remote_blob": "0e86aed6ed60c248001c7fa007f1ac4bb498d65f",
+      "remote_sha256": "aed734e9a6c743ae712fc228c868bf0f6abcfb6a53549eefb19081b15d240fda",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/helpers/pptx_slide.py",
+      "remote_blob": "55274b837847f0b918dcf5cc692b775f06723f0a",
+      "remote_sha256": "06fe06953bf038826b85ecc142f4dc9299a37fa0c4e4dd9b00b10486df33524d",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/helpers/pptx_theme.py",
+      "remote_blob": "84466201cf22ca237cd640c80a08e9e2cabcce90",
+      "remote_sha256": "ebb54c56e9c13807f5f98f0cae22d47cdd0162da8525eaa664e3f2c8c8d6bb03",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/office_com.ps1",
+      "remote_blob": "7f92a1510697ac8c6fcfe98b50e5fb3509b9e0da",
+      "remote_sha256": "bab69df7de54a58538446e7d48b9a38bc15889308c2bf07519b1be404e35cd6e",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-chart.xsd",
+      "remote_blob": "6454ef9a94d52512e4905df61280a3fd1dafc0a4",
+      "remote_sha256": "41b93bd8857cc68b1e43be2806a872d736a9bdd6566900062d8fdb57d7bbb354",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-chartDrawing.xsd",
+      "remote_blob": "afa4f463e3140a3f626c73f7966d689270d89b2c",
+      "remote_sha256": "3fd0586f2637b98bb9886f0e0b67d89e1cc987c2d158cc7deb5f5b9890ced412",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-diagram.xsd",
+      "remote_blob": "64e66b8abd496d2e450c08110e40607e90b3fe13",
+      "remote_sha256": "29b254ee0d10414a8504b5a08149c7baec35a60d5ff607d6b3f492aa36815f40",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-lockedCanvas.xsd",
+      "remote_blob": "687eea8297caa298581aa06c40ca40ef7b8a58bc",
+      "remote_sha256": "5cb76dabd8b97d1e9308a1700b90c20139be4d50792d21a7f09789f5cccd6026",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-main.xsd",
+      "remote_blob": "6ac81b06b7a3ef916d677953084ae225504a77bc",
+      "remote_sha256": "5375417f0f5394b8dd1a7035b9679151f19a6b65df309dec10cfb4a420cb00e9",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-picture.xsd",
+      "remote_blob": "1dbf05140d07fa014f18a5630acc0613d8058e52",
+      "remote_sha256": "5d389d42befbebd91945d620242347caecd3367f9a3a7cf8d97949507ae1f53c",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-spreadsheetDrawing.xsd",
+      "remote_blob": "f1af17db4e83b1c40152577eca4a575ab63a1ca7",
+      "remote_sha256": "b4532b6d258832953fbb3ee4c711f4fe25d3faf46a10644b2505f17010d01e88",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-wordprocessingDrawing.xsd",
+      "remote_blob": "0a185ab6ed0c2dd9b383a403c56c909bbab8b9a1",
+      "remote_sha256": "bdad416b096b61d37b71603b2c949484f9070c830bdaeba93bf35e15c8900614",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/pml.xsd",
+      "remote_blob": "14ef488865f3ae6150776220ebbcf4788f89066a",
+      "remote_sha256": "d173c3e5d61e42e2e3a97226c632fd2ab7cc481fc4e492365b87024ab546daff",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-additionalCharacteristics.xsd",
+      "remote_blob": "c20f3bf14720d34247e8e1302dc3c40f7b832099",
+      "remote_sha256": "3c6709101c6aaa82888df5d8795c33f9e857196790eb320d9194e64be2b6bdd8",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-bibliography.xsd",
+      "remote_blob": "ac60252262534e7b87523fd04d252f085b38bec0",
+      "remote_sha256": "0b364451dc36a48dd6dae0f3b6ada05fd9b71e5208211f8ee5537d7e51a587e2",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-commonSimpleTypes.xsd",
+      "remote_blob": "424b8ba8d1f9ebb22ba72cdd174c8a2ade0ecf89",
+      "remote_sha256": "e2abacbb9a55ce1365f8961bc1b1395bbc811e512b111000d8c333f98458dece",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlDataProperties.xsd",
+      "remote_blob": "2bddce29214882eb9fdf2be8a50ed5bdd0c69dfc",
+      "remote_sha256": "0ef4bb354ff44b923564c4ddbdda5987919d220225129ec94614a618ceafc281",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlSchemaProperties.xsd",
+      "remote_blob": "8a8c18ba2d5caa7e60a365e77ae0d1b872141bb0",
+      "remote_sha256": "0d103b99a4a8652f8871552a69d42d2a3760ac6a5e3ef02d979c4273257ff6a4",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesCustom.xsd",
+      "remote_blob": "5c42706a0d53c5e8b96818d9c29a292d1504f720",
+      "remote_sha256": "9c085407751b9061c1f996f6c39ce58451be22a8d334f09175f0e89e42736285",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesExtended.xsd",
+      "remote_blob": "853c341c87feb51e10d757aea28b4185ae4c2731",
+      "remote_sha256": "bc92e36ccd233722d4c5869bec71ddc7b12e2df56059942cce5a39065cc9c368",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesVariantTypes.xsd",
+      "remote_blob": "da835ee82d5cc31be9fa9792512930f7ae3fb5ce",
+      "remote_sha256": "7b5b7413e2c895b1e148e82e292a117d53c7ec65b0696c992edca57b61b4a74b",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-math.xsd",
+      "remote_blob": "87ad2658fa51cb4c172f82d0fdf33a492a750eca",
+      "remote_sha256": "3213ef1631606250f5010b42cad7ef716f7c59426367798e33c374c0ec391d3a",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-relationshipReference.xsd",
+      "remote_blob": "9e86f1b2be0d431cd3c250ddeaf4efabdbcb088b",
+      "remote_sha256": "12264f3c03d738311cd9237d212f1c07479e70f0cbe1ae725d29b36539aef637",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/sml.xsd",
+      "remote_blob": "d0be42e757f3cce533c1c80770239f0097d3de6b",
+      "remote_sha256": "beffeed56945c22a77440122c8bdc426f3fcbe7f3b12ea0976c770d1f8d54578",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-main.xsd",
+      "remote_blob": "8821dd183caf9c8c3b809e0e2d9e0df56c4e9ed9",
+      "remote_sha256": "f5ee623b08b6a66935e5aced2f5d8ad0fc71bf9e8e833cd490150c0fa94b8763",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-officeDrawing.xsd",
+      "remote_blob": "ca2575c753be78cdaa96de56b3ff8770173c324d",
+      "remote_sha256": "585bedc1313b40888dcc544cb74cd939a105ee674f3b1d3aa1cc6d34f70ff155",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-presentationDrawing.xsd",
+      "remote_blob": "dd079e603f5770176212776a1d565b108875cf64",
+      "remote_sha256": "133c9f64a5c5d573b78d0a474122b22506d8eadb5e063f67cdbbb8fa2f161d0e",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-spreadsheetDrawing.xsd",
+      "remote_blob": "3dd6cf625a740398c2a4dc8abbe18e25e0ac5e9f",
+      "remote_sha256": "6bdeb169c3717eb01108853bd9fc5a3750fb1fa5b82abbdd854d49855a40f519",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-wordprocessingDrawing.xsd",
+      "remote_blob": "f1041e34ef365926f5670b896f5bb23e553ac36d",
+      "remote_sha256": "475dcae1e7d1ea46232db6f8481040c15e53a52a3c256831d3df204212b0e831",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/wml.xsd",
+      "remote_blob": "9c5b7a633411c2313ce839f748e4623bb0a70efe",
+      "remote_sha256": "c2dd9f61f892deae6acd8d20771ea79b12018af25f3bf8d06639c8542d218cfd",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/ISO-IEC29500-4_2016/xml.xsd",
+      "remote_blob": "0f13678d80a762375223f060e23b56c7b2eac89e",
+      "remote_sha256": "a539aa2fb154fa50e0f5cc97e6ad7cbc66f8ec3e3746f61ec6a8b0d5d15ecdf2",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/ecma/fouth-edition/opc-contentTypes.xsd",
+      "remote_blob": "a6de9d2733d3f0eea12ae87b24122495df1f0928",
+      "remote_sha256": "9e0b7209fc69ab11987900404540969976000c5ebe4d4f58c43dc3842886bf3a",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/ecma/fouth-edition/opc-coreProperties.xsd",
+      "remote_blob": "10e978b661fc291cbeea9ab0c248601cf216f96d",
+      "remote_sha256": "451958454e8588dfc7cd945981ada142ca06ff3307937f5700df059c2b307fa8",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/ecma/fouth-edition/opc-digSig.xsd",
+      "remote_blob": "4248bf7a39c793c9f319bae7d09f92983efe5368",
+      "remote_sha256": "6de111e11403f7cd49027400755bae0ea1cabef2815f09bd40a24f0017613b24",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/ecma/fouth-edition/opc-relationships.xsd",
+      "remote_blob": "56497467120b52b742756379959d4b2536be6df7",
+      "remote_sha256": "f565adfef5a502044abc3a9153e157edc25af78304d335994afb958874b15e26",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/mce/mc.xsd",
+      "remote_blob": "ef725457cf39116672e285d021be69b7ad022574",
+      "remote_sha256": "3a37e461ecf5a8670fdec34029703401f8728ab9c96ec1739a6ae58d55212413",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/microsoft/wml-2010.xsd",
+      "remote_blob": "f65f777730d82162f4248f03c703b1b85fda5fe2",
+      "remote_sha256": "568b26ee156cb9549aa439ca2158965f77b7c1602b7e0316f40ac6cf586e35f2",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/microsoft/wml-2012.xsd",
+      "remote_blob": "6b00755a9a8733f0fb171a47b25d0d7b4c70dee8",
+      "remote_sha256": "0fa75578a000439a7988ba0c59fdc69f774bbd416cbacc14d07125b3f686cb74",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/microsoft/wml-2018.xsd",
+      "remote_blob": "f321d333a5e6ef98cbdfeeeaa334923e4cfc8a6c",
+      "remote_sha256": "be0ff793a22dd31384650c3a4da14c2fa8062751c2e97b0e5ee852bda13c60ad",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/microsoft/wml-cex-2018.xsd",
+      "remote_blob": "364c6a9b8df6e252bb5ae39e2ca031fcbfc4e8a5",
+      "remote_sha256": "fddc2b880cabb9005aebbc7e783e53c19fec1c03df7d0e2f2076a33a0fdfd081",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/microsoft/wml-cid-2016.xsd",
+      "remote_blob": "fed9d15b7f504e14ac82793d79db2d7ad83d56ed",
+      "remote_sha256": "127ca209fa73d7cb708449cb355c871867948a96e4a74f7bf5811ef62d17991d",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/microsoft/wml-sdtdatahash-2020.xsd",
+      "remote_blob": "680cf15400cd57ce2bf17a58ecd29caa0d8a8422",
+      "remote_sha256": "842e7163409c8d74f4d7088a8bc99500d80bc75332681a0980055b08f374a604",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/schemas/microsoft/wml-symex-2015.xsd",
+      "remote_blob": "89ada90837b2db3f3d453212ae426520acedbbea",
+      "remote_sha256": "16f6f8072249f431370723c2cd8974672e0d9c897e00e97dd918079df934871b",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/soffice.py",
+      "remote_blob": "51b81c3870567e5a563a14bd443e38090282a82a",
+      "remote_sha256": "2f776741e8074032e7bfa489e3776cd857533fd91a13ffe0e75a60f0b7436a3d",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/validate.py",
+      "remote_blob": "ff3bde0f1e9de81f3f00a44f9a92229739b1e219",
+      "remote_sha256": "21d48e4e86df93e889a01e7d03e7ca63816da3278c9cc4353b89d43246e02364",
+      "preserved_exact": true,
+      "remote_mode": "100755"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/validators/__init__.py",
+      "remote_blob": "db092ece7e21de98f87bd81471578259a1bc642f",
+      "remote_sha256": "83e0f035c5abea238d3f2c3968afbd511ed022b527b7c9cb60a9434cc34ff987",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/validators/base.py",
+      "remote_blob": "04d6169c1cb489dc94aa78ece22e60ee5911b854",
+      "remote_sha256": "6129ec6a4fc0a4aa78af1434f9baa73994cc24d3261afda4e680e00f215cbf3b",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/validators/docx.py",
+      "remote_blob": "2acdaf4ef4e5ec84c7191dadf9eeb73b00a81cc2",
+      "remote_sha256": "7b0f1a23c9cd9ff07187d9d7d359f62317f94a5e389d63fd19766e1688a195a2",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/validators/pptx.py",
+      "remote_blob": "bb06b825e3dad82c3859243f294a963868d7dc8f",
+      "remote_sha256": "3a100ec5f00ae183bca67f4aaa8e3e902caee60254e141b8120f32c53d85cee7",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/validators/redlining.py",
+      "remote_blob": "4406912e654dca3fc1869dc6bdd7099ac6573041",
+      "remote_sha256": "f9c4455adc32b3890d5203d6c25d868d98d7e970bbad76b686f502950737599a",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/slide_text.py",
+      "remote_blob": "c583efabc4fc3e5d3b4d569fe9e5ca77d8dc5249",
+      "remote_sha256": "0deab09d4ae494411ee893f9c69fffc19fe264a6053990a2f066334c0d88d422",
+      "preserved_exact": true,
+      "remote_mode": "100755"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/thumbnail.py",
+      "remote_blob": "9fab4ca74283e6a5432ba1ec604f391d4386650e",
+      "remote_sha256": "ab5c6255487016e2d385082578a9e1381cfdb31910101bb11e06ac0c6dafcaca",
+      "preserved_exact": true,
+      "remote_mode": "100755"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/GUIDE.md",
+      "remote_blob": "089fbc4de249a4632eabb78eee638eee21956e34",
+      "remote_sha256": "4835e76984a15330229f23ae9663dda74e44d87bfb9295b93e9da42398400c7a",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/LICENSE.txt",
+      "remote_blob": "7a4a3ea2424c09fbe48d455aed1eaa94d9124835",
+      "remote_sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/helpers/__init__.py",
+      "remote_blob": "4902e2ad85e6789b71d7d944bc8e16d978f8cb6e",
+      "remote_sha256": "5c456ffc522900399b5f9402f92d66aaf2d9f87655d236c69f60bf07f4fd7c9b",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/helpers/pptx_chart.py",
+      "remote_blob": "0e86aed6ed60c248001c7fa007f1ac4bb498d65f",
+      "remote_sha256": "aed734e9a6c743ae712fc228c868bf0f6abcfb6a53549eefb19081b15d240fda",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/helpers/pptx_slide.py",
+      "remote_blob": "55274b837847f0b918dcf5cc692b775f06723f0a",
+      "remote_sha256": "06fe06953bf038826b85ecc142f4dc9299a37fa0c4e4dd9b00b10486df33524d",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/helpers/pptx_theme.py",
+      "remote_blob": "84466201cf22ca237cd640c80a08e9e2cabcce90",
+      "remote_sha256": "ebb54c56e9c13807f5f98f0cae22d47cdd0162da8525eaa664e3f2c8c8d6bb03",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/office_com.ps1",
+      "remote_blob": "7f92a1510697ac8c6fcfe98b50e5fb3509b9e0da",
+      "remote_sha256": "bab69df7de54a58538446e7d48b9a38bc15889308c2bf07519b1be404e35cd6e",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-chart.xsd",
+      "remote_blob": "6454ef9a94d52512e4905df61280a3fd1dafc0a4",
+      "remote_sha256": "41b93bd8857cc68b1e43be2806a872d736a9bdd6566900062d8fdb57d7bbb354",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-chartDrawing.xsd",
+      "remote_blob": "afa4f463e3140a3f626c73f7966d689270d89b2c",
+      "remote_sha256": "3fd0586f2637b98bb9886f0e0b67d89e1cc987c2d158cc7deb5f5b9890ced412",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-diagram.xsd",
+      "remote_blob": "64e66b8abd496d2e450c08110e40607e90b3fe13",
+      "remote_sha256": "29b254ee0d10414a8504b5a08149c7baec35a60d5ff607d6b3f492aa36815f40",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-lockedCanvas.xsd",
+      "remote_blob": "687eea8297caa298581aa06c40ca40ef7b8a58bc",
+      "remote_sha256": "5cb76dabd8b97d1e9308a1700b90c20139be4d50792d21a7f09789f5cccd6026",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-main.xsd",
+      "remote_blob": "6ac81b06b7a3ef916d677953084ae225504a77bc",
+      "remote_sha256": "5375417f0f5394b8dd1a7035b9679151f19a6b65df309dec10cfb4a420cb00e9",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-picture.xsd",
+      "remote_blob": "1dbf05140d07fa014f18a5630acc0613d8058e52",
+      "remote_sha256": "5d389d42befbebd91945d620242347caecd3367f9a3a7cf8d97949507ae1f53c",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-spreadsheetDrawing.xsd",
+      "remote_blob": "f1af17db4e83b1c40152577eca4a575ab63a1ca7",
+      "remote_sha256": "b4532b6d258832953fbb3ee4c711f4fe25d3faf46a10644b2505f17010d01e88",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/dml-wordprocessingDrawing.xsd",
+      "remote_blob": "0a185ab6ed0c2dd9b383a403c56c909bbab8b9a1",
+      "remote_sha256": "bdad416b096b61d37b71603b2c949484f9070c830bdaeba93bf35e15c8900614",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/pml.xsd",
+      "remote_blob": "14ef488865f3ae6150776220ebbcf4788f89066a",
+      "remote_sha256": "d173c3e5d61e42e2e3a97226c632fd2ab7cc481fc4e492365b87024ab546daff",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-additionalCharacteristics.xsd",
+      "remote_blob": "c20f3bf14720d34247e8e1302dc3c40f7b832099",
+      "remote_sha256": "3c6709101c6aaa82888df5d8795c33f9e857196790eb320d9194e64be2b6bdd8",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-bibliography.xsd",
+      "remote_blob": "ac60252262534e7b87523fd04d252f085b38bec0",
+      "remote_sha256": "0b364451dc36a48dd6dae0f3b6ada05fd9b71e5208211f8ee5537d7e51a587e2",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-commonSimpleTypes.xsd",
+      "remote_blob": "424b8ba8d1f9ebb22ba72cdd174c8a2ade0ecf89",
+      "remote_sha256": "e2abacbb9a55ce1365f8961bc1b1395bbc811e512b111000d8c333f98458dece",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlDataProperties.xsd",
+      "remote_blob": "2bddce29214882eb9fdf2be8a50ed5bdd0c69dfc",
+      "remote_sha256": "0ef4bb354ff44b923564c4ddbdda5987919d220225129ec94614a618ceafc281",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlSchemaProperties.xsd",
+      "remote_blob": "8a8c18ba2d5caa7e60a365e77ae0d1b872141bb0",
+      "remote_sha256": "0d103b99a4a8652f8871552a69d42d2a3760ac6a5e3ef02d979c4273257ff6a4",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesCustom.xsd",
+      "remote_blob": "5c42706a0d53c5e8b96818d9c29a292d1504f720",
+      "remote_sha256": "9c085407751b9061c1f996f6c39ce58451be22a8d334f09175f0e89e42736285",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesExtended.xsd",
+      "remote_blob": "853c341c87feb51e10d757aea28b4185ae4c2731",
+      "remote_sha256": "bc92e36ccd233722d4c5869bec71ddc7b12e2df56059942cce5a39065cc9c368",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesVariantTypes.xsd",
+      "remote_blob": "da835ee82d5cc31be9fa9792512930f7ae3fb5ce",
+      "remote_sha256": "7b5b7413e2c895b1e148e82e292a117d53c7ec65b0696c992edca57b61b4a74b",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-math.xsd",
+      "remote_blob": "87ad2658fa51cb4c172f82d0fdf33a492a750eca",
+      "remote_sha256": "3213ef1631606250f5010b42cad7ef716f7c59426367798e33c374c0ec391d3a",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/shared-relationshipReference.xsd",
+      "remote_blob": "9e86f1b2be0d431cd3c250ddeaf4efabdbcb088b",
+      "remote_sha256": "12264f3c03d738311cd9237d212f1c07479e70f0cbe1ae725d29b36539aef637",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/sml.xsd",
+      "remote_blob": "d0be42e757f3cce533c1c80770239f0097d3de6b",
+      "remote_sha256": "beffeed56945c22a77440122c8bdc426f3fcbe7f3b12ea0976c770d1f8d54578",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-main.xsd",
+      "remote_blob": "8821dd183caf9c8c3b809e0e2d9e0df56c4e9ed9",
+      "remote_sha256": "f5ee623b08b6a66935e5aced2f5d8ad0fc71bf9e8e833cd490150c0fa94b8763",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-officeDrawing.xsd",
+      "remote_blob": "ca2575c753be78cdaa96de56b3ff8770173c324d",
+      "remote_sha256": "585bedc1313b40888dcc544cb74cd939a105ee674f3b1d3aa1cc6d34f70ff155",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-presentationDrawing.xsd",
+      "remote_blob": "dd079e603f5770176212776a1d565b108875cf64",
+      "remote_sha256": "133c9f64a5c5d573b78d0a474122b22506d8eadb5e063f67cdbbb8fa2f161d0e",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-spreadsheetDrawing.xsd",
+      "remote_blob": "3dd6cf625a740398c2a4dc8abbe18e25e0ac5e9f",
+      "remote_sha256": "6bdeb169c3717eb01108853bd9fc5a3750fb1fa5b82abbdd854d49855a40f519",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/vml-wordprocessingDrawing.xsd",
+      "remote_blob": "f1041e34ef365926f5670b896f5bb23e553ac36d",
+      "remote_sha256": "475dcae1e7d1ea46232db6f8481040c15e53a52a3c256831d3df204212b0e831",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/wml.xsd",
+      "remote_blob": "9c5b7a633411c2313ce839f748e4623bb0a70efe",
+      "remote_sha256": "c2dd9f61f892deae6acd8d20771ea79b12018af25f3bf8d06639c8542d218cfd",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/ISO-IEC29500-4_2016/xml.xsd",
+      "remote_blob": "0f13678d80a762375223f060e23b56c7b2eac89e",
+      "remote_sha256": "a539aa2fb154fa50e0f5cc97e6ad7cbc66f8ec3e3746f61ec6a8b0d5d15ecdf2",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/ecma/fouth-edition/opc-contentTypes.xsd",
+      "remote_blob": "a6de9d2733d3f0eea12ae87b24122495df1f0928",
+      "remote_sha256": "9e0b7209fc69ab11987900404540969976000c5ebe4d4f58c43dc3842886bf3a",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/ecma/fouth-edition/opc-coreProperties.xsd",
+      "remote_blob": "10e978b661fc291cbeea9ab0c248601cf216f96d",
+      "remote_sha256": "451958454e8588dfc7cd945981ada142ca06ff3307937f5700df059c2b307fa8",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/ecma/fouth-edition/opc-digSig.xsd",
+      "remote_blob": "4248bf7a39c793c9f319bae7d09f92983efe5368",
+      "remote_sha256": "6de111e11403f7cd49027400755bae0ea1cabef2815f09bd40a24f0017613b24",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/ecma/fouth-edition/opc-relationships.xsd",
+      "remote_blob": "56497467120b52b742756379959d4b2536be6df7",
+      "remote_sha256": "f565adfef5a502044abc3a9153e157edc25af78304d335994afb958874b15e26",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/mce/mc.xsd",
+      "remote_blob": "ef725457cf39116672e285d021be69b7ad022574",
+      "remote_sha256": "3a37e461ecf5a8670fdec34029703401f8728ab9c96ec1739a6ae58d55212413",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/microsoft/wml-2010.xsd",
+      "remote_blob": "f65f777730d82162f4248f03c703b1b85fda5fe2",
+      "remote_sha256": "568b26ee156cb9549aa439ca2158965f77b7c1602b7e0316f40ac6cf586e35f2",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/microsoft/wml-2012.xsd",
+      "remote_blob": "6b00755a9a8733f0fb171a47b25d0d7b4c70dee8",
+      "remote_sha256": "0fa75578a000439a7988ba0c59fdc69f774bbd416cbacc14d07125b3f686cb74",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/microsoft/wml-2018.xsd",
+      "remote_blob": "f321d333a5e6ef98cbdfeeeaa334923e4cfc8a6c",
+      "remote_sha256": "be0ff793a22dd31384650c3a4da14c2fa8062751c2e97b0e5ee852bda13c60ad",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/microsoft/wml-cex-2018.xsd",
+      "remote_blob": "364c6a9b8df6e252bb5ae39e2ca031fcbfc4e8a5",
+      "remote_sha256": "fddc2b880cabb9005aebbc7e783e53c19fec1c03df7d0e2f2076a33a0fdfd081",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/microsoft/wml-cid-2016.xsd",
+      "remote_blob": "fed9d15b7f504e14ac82793d79db2d7ad83d56ed",
+      "remote_sha256": "127ca209fa73d7cb708449cb355c871867948a96e4a74f7bf5811ef62d17991d",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/microsoft/wml-sdtdatahash-2020.xsd",
+      "remote_blob": "680cf15400cd57ce2bf17a58ecd29caa0d8a8422",
+      "remote_sha256": "842e7163409c8d74f4d7088a8bc99500d80bc75332681a0980055b08f374a604",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/schemas/microsoft/wml-symex-2015.xsd",
+      "remote_blob": "89ada90837b2db3f3d453212ae426520acedbbea",
+      "remote_sha256": "16f6f8072249f431370723c2cd8974672e0d9c897e00e97dd918079df934871b",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/soffice.py",
+      "remote_blob": "51b81c3870567e5a563a14bd443e38090282a82a",
+      "remote_sha256": "2f776741e8074032e7bfa489e3776cd857533fd91a13ffe0e75a60f0b7436a3d",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/validate.py",
+      "remote_blob": "ff3bde0f1e9de81f3f00a44f9a92229739b1e219",
+      "remote_sha256": "21d48e4e86df93e889a01e7d03e7ca63816da3278c9cc4353b89d43246e02364",
+      "preserved_exact": true,
+      "remote_mode": "100755"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/validators/__init__.py",
+      "remote_blob": "db092ece7e21de98f87bd81471578259a1bc642f",
+      "remote_sha256": "83e0f035c5abea238d3f2c3968afbd511ed022b527b7c9cb60a9434cc34ff987",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/validators/base.py",
+      "remote_blob": "04d6169c1cb489dc94aa78ece22e60ee5911b854",
+      "remote_sha256": "6129ec6a4fc0a4aa78af1434f9baa73994cc24d3261afda4e680e00f215cbf3b",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/validators/docx.py",
+      "remote_blob": "2acdaf4ef4e5ec84c7191dadf9eeb73b00a81cc2",
+      "remote_sha256": "7b0f1a23c9cd9ff07187d9d7d359f62317f94a5e389d63fd19766e1688a195a2",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/validators/pptx.py",
+      "remote_blob": "bb06b825e3dad82c3859243f294a963868d7dc8f",
+      "remote_sha256": "3a100ec5f00ae183bca67f4aaa8e3e902caee60254e141b8120f32c53d85cee7",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/validators/redlining.py",
+      "remote_blob": "4406912e654dca3fc1869dc6bdd7099ac6573041",
+      "remote_sha256": "f9c4455adc32b3890d5203d6c25d868d98d7e970bbad76b686f502950737599a",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/recalc.py",
+      "remote_blob": "7b9bd39031287eeb173376bdbb2e8ef6704c8ce2",
+      "remote_sha256": "65fd7b3963e5663c30f85adf4ba4b2bfada74d48de816245117cd8f09b207d3b",
+      "preserved_exact": true,
+      "remote_mode": "100755"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_data-pipeline/SKILL.md",
+      "remote_blob": "38b8de7fca0e84d218ba97507b4c946314d2e5de",
+      "remote_sha256": "d84f0a0b510916853a1864efbbafd40219b6083f4be4395fefe5131de946e601",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/SKILL.md",
+      "remote_blob": "d4467d8de23413723245b30a2b5d38964add17bc",
+      "remote_sha256": "3746bcf4891af045a6162188bd93c7028d29095a3fb5ddddf6728d11f91d0c3c",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/LICENSE-plugin-dev.txt",
+      "remote_blob": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "remote_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/agent-development/GUIDE.md",
+      "remote_blob": "f4ea78d89bcee2febcce2285d9d41b3d17df3656",
+      "remote_sha256": "6a2826571320828cc6f8f21ccd8e6eefd2bced62000c8c5e43a712c12e2d83a1",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/agent-development/examples/agent-creation-prompt.md",
+      "remote_blob": "24da66aebebc8a1c202209cb2661a13688eba527",
+      "remote_sha256": "a299652c1bba7b43736cc72a14ada464baccc80c6431e5fa3a55bd13129ac54c",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/agent-development/examples/complete-agent-examples.md",
+      "remote_blob": "439615dbb649e86571949a2145473ac2ffc71116",
+      "remote_sha256": "8321e9933dd0033c46bf5ae831e7cf7dc79783c80fb9b5ea1b66c74f4ac2b337",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/agent-development/references/agent-creation-system-prompt.md",
+      "remote_blob": "756d29988682cac092a6a4f4ee0e2b43e7315bdf",
+      "remote_sha256": "c56e7fafb84bcbeff69ecd61b1f68ca380e8ba4177dc57c6ceeecd3aa8a83d7b",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/agent-development/references/system-prompt-design.md",
+      "remote_blob": "6efa85468905d83f156d3d89d7ae5804dcb7eff4",
+      "remote_sha256": "eaac53eaaf8326ac04428987280fb5041920b7571477ad41742517c5aac683fc",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/agent-development/references/triggering-examples.md",
+      "remote_blob": "240442e0a881147edc6bc142874244dc26f00392",
+      "remote_sha256": "b8ff47692b007b19b36df81ebd0562476202a21d67db80eeca9c3ee05528cb10",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/agent-development/scripts/validate-agent.sh",
+      "remote_blob": "ca4dfd4b92d9e40bd7218803b8e0930ff5ee17d5",
+      "remote_sha256": "d22e1292f997169fb745793dc50ebe3e9c6631603e1d77f04c2e79bb1fc63cba",
+      "preserved_exact": true,
+      "remote_mode": "100755"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/command-development/GUIDE.md",
+      "remote_blob": "4c82f7e8472706bcde5a0605d6e04f6c05bf4704",
+      "remote_sha256": "c55ad02cfe4cbb2a947eea3b1ed5fa1871e722d627c3c6792c3ed87c10c4d7a8",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/command-development/README.md",
+      "remote_blob": "a5d303f20d80d201afd4c3a7257e2cebc6e6844f",
+      "remote_sha256": "dd4ba7eded93d7ba698f05ec63d06d110a6b5543664af359b005dd976ce811b8",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/command-development/examples/plugin-commands.md",
+      "remote_blob": "e14ef4ddbb5f3d3d99423e002453e8539b0fadcf",
+      "remote_sha256": "7d71d7b516020a6c171171399b40dd2cad02b842c9faa78b90e0983906c9ee94",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/command-development/examples/simple-commands.md",
+      "remote_blob": "2348239c4de79ede58b2cb14618f6857c467085c",
+      "remote_sha256": "f2533ed834305166603bcb4dd870d695af4a33b9a49d330937a4c70ed964767c",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/command-development/references/advanced-workflows.md",
+      "remote_blob": "5e0d7b1dc8329d9a9c0168e4e498b3d7a424886b",
+      "remote_sha256": "eb258095b5a411b68377c96730effe597884a14b619cb0c1a7ab1c801d80a7d9",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/command-development/references/documentation-patterns.md",
+      "remote_blob": "3ea03ec83a2f88293ae34fd24ae7461ca6404d8c",
+      "remote_sha256": "70c6c9b0a9b2d46a925ada6c45808a73498a457e1d641c82cc05de8a29a33b05",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/command-development/references/frontmatter-reference.md",
+      "remote_blob": "aa85294745429c8f1cdfd90e1bd61653b875d1bb",
+      "remote_sha256": "db1ea175ca4b0bb7d11c75cb8a7d00b353ea7cf4df2027b4263e45ded4d39475",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/command-development/references/interactive-commands.md",
+      "remote_blob": "e55bc38f4f09d8d65801582455e8c6eb1c710c3f",
+      "remote_sha256": "09ab1f18bfa3ff5f7088e45d5810ac20eb25ffc97fc9e8bb79416d40e0b4516b",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/command-development/references/marketplace-considerations.md",
+      "remote_blob": "03e706c6fc833c1022674206b44c6934555e8949",
+      "remote_sha256": "ab30835431d06a8e65cd629ba0e73b3f1de5b043126c6fef7ea70163400e90f4",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/command-development/references/plugin-features-reference.md",
+      "remote_blob": "c89e9060b42906dbb1e59300a7cc8d98051ad98f",
+      "remote_sha256": "57e11ae6a4bbc1a4a295d1f036202970911d6029d64f4ab058b63a4c5a899072",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/command-development/references/testing-strategies.md",
+      "remote_blob": "7b482fbe621a999b3a985c6a846aaa358a3824f6",
+      "remote_sha256": "e6ccf78d85c23bc58582dbc8b91731c4e412568705ed2c87ac699a1ded9adc67",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/hook-development/GUIDE.md",
+      "remote_blob": "6317441bfe3fcb60ea0d611e3826c2c4147d65f0",
+      "remote_sha256": "f47e2d42f6360294216a859ae0c30b93caafdd2b2e5ffc007489ba4ca447fa5c",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/hook-development/examples/load-context.sh",
+      "remote_blob": "9754f321a7d6f7a1e9f23a0e4f74a84c5f81a35c",
+      "remote_sha256": "0d614599e711c087b381a4ac7ee3c40758af1022669fc998649d199b9dfe15ed",
+      "preserved_exact": true,
+      "remote_mode": "100755"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/hook-development/examples/validate-bash.sh",
+      "remote_blob": "e36432441f6d541ac3a76a3cffdffa1edfa671d0",
+      "remote_sha256": "348c58f4cf38a2e7080ea5272935a7658c7122d83dd6c52d0a1f2ef599c176ab",
+      "preserved_exact": true,
+      "remote_mode": "100755"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/hook-development/examples/validate-write.sh",
+      "remote_blob": "e665193329add13afda0355a6603e2b40c3034df",
+      "remote_sha256": "89a8ef9bb7508e4819080e65834d6783afa5a5a614d458a3821b80a329eb32e5",
+      "preserved_exact": true,
+      "remote_mode": "100755"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/hook-development/references/advanced.md",
+      "remote_blob": "a84a38fbbf8c63c2f72a84c255a80016595ac22c",
+      "remote_sha256": "5b139ceeb6a3ef16555a6eef421e2642e6ca286b5527ee2b4e02c11ae5b75dd5",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/hook-development/references/migration.md",
+      "remote_blob": "587cae37e680a190b1f9c75232c639b33d36ea21",
+      "remote_sha256": "7f8e7a795829837f46a0c058c26c8f5c4aa8be5c9fb5316b828229d1802ded77",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/hook-development/references/patterns.md",
+      "remote_blob": "447538654d9439061799b6e08ccdabf80a4ff3a5",
+      "remote_sha256": "cb607fca192bfa892fd198141b86dac9d0ca2c573a280b054b7beaa56fc9a8bf",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/hook-development/scripts/README.md",
+      "remote_blob": "02a556fdbd9483426d994419a81c936da7e28a6d",
+      "remote_sha256": "08a28b12ffa9fcb16f257ea685c70a920f4f835978b9ffbbac055137c6f6aca0",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/hook-development/scripts/hook-linter.sh",
+      "remote_blob": "64f6041effc1c9ab182241b31814878952a3456e",
+      "remote_sha256": "85a7d55488f8f38f9b98350b5cb597fb306432d5e61eaa3444e7226ca9309e0b",
+      "preserved_exact": true,
+      "remote_mode": "100755"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/hook-development/scripts/test-hook.sh",
+      "remote_blob": "527b119c4465a99b1d4f81f880ab76f69e0329bc",
+      "remote_sha256": "ded642e811b4731f6a2c90c73b02e00c937511d9ee65236bb8cf9964f0069393",
+      "preserved_exact": true,
+      "remote_mode": "100755"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/hook-development/scripts/validate-hook-schema.sh",
+      "remote_blob": "fed0a1f1d47b8efe9dff01796cc661b1582c1e85",
+      "remote_sha256": "e7785d6c61d368f5ea5270c979753aea02f776f5b6aa220137ec4585abd720c2",
+      "preserved_exact": true,
+      "remote_mode": "100755"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/mcp-integration/GUIDE.md",
+      "remote_blob": "1a77a654b1bf43f5955a895434d92f049cbd8758",
+      "remote_sha256": "b9319d8e44c8f058c1c4f003168295ab2582567fd6329c8b933409116e938bc6",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/mcp-integration/examples/http-server.json",
+      "remote_blob": "e96448fe9b8ba79e13ebb40be6914f62bb930d15",
+      "remote_sha256": "7a11adaea5ac1bb76269bf473f5cf5cbd636a83c2ec0b7007f2b1cbf4a8a725f",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/mcp-integration/examples/sse-server.json",
+      "remote_blob": "628a69374dcccf7849265007fd7cee580301a228",
+      "remote_sha256": "2bb1c32911c5714158e368d4bb347306078f6d2097b653e9e5c9a02d2cc0510e",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/mcp-integration/examples/stdio-server.json",
+      "remote_blob": "60af1c69dd539cebe1ea7daad34181a68de063ac",
+      "remote_sha256": "46148a5dc7fc5e63c681c5fb975d3908d3f3052f51de7236725cdadda41e2b5d",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/mcp-integration/references/authentication.md",
+      "remote_blob": "41aa21c4d8e4ca3c5dccba61c3ad385d45f435fd",
+      "remote_sha256": "2f48cf8fd68d169e885ce96a62a7feaadd0fa293d74b451a51998947f41a8f86",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/mcp-integration/references/server-types.md",
+      "remote_blob": "b97a017adea2167d72e5d252648bbea28d58833b",
+      "remote_sha256": "6ec320da9fdec2445d03f6b3ece875ecba383fa5e6fd9c2f5dd8fd7a6038a090",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/mcp-integration/references/tool-usage.md",
+      "remote_blob": "986c2aadbc692f3fdfe0d28264da407d4aba2c9f",
+      "remote_sha256": "8dd0005d7ba6cd2d24e72f9e6102c129b7445fc818e14656ad9ebaef6621a7a6",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/plugin-settings/GUIDE.md",
+      "remote_blob": "3ab48bca0137d06557ef16d8b8448ab7de84f26f",
+      "remote_sha256": "028b955244b937ebc1a5c268a12776b8ceae4cbfb60928fbca927227f4c8851d",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/plugin-settings/examples/create-settings-command.md",
+      "remote_blob": "987e9a1948565e75e23f464fa70aa79015feec53",
+      "remote_sha256": "abf0a36bb3f6425041046f2da1ebfac5505c5b37656fdd4772cfc4d8bd2fa655",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/plugin-settings/examples/example-settings.md",
+      "remote_blob": "307289ddd099c38ec513530b826ce2ec50659a83",
+      "remote_sha256": "f07209b6e2fb62d443ae07d01bc1674c6c741c352a04549bfa978e1f34b9769e",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/plugin-settings/examples/read-settings-hook.sh",
+      "remote_blob": "8f84ed69eabebc632872316a42671a86ff0a64ce",
+      "remote_sha256": "627fce38d37d64c971401ecc85d548f060075670bcac52f65c92ca156e810c70",
+      "preserved_exact": true,
+      "remote_mode": "100755"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/plugin-settings/references/parsing-techniques.md",
+      "remote_blob": "7e83ae867f8f6cef2e2ae11f40fe6d1ccde10eb5",
+      "remote_sha256": "bc90aa020aa5fcbb3483d7316754450dcc91d086ee96f9304fa655e878f7712e",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/plugin-settings/references/real-world-examples.md",
+      "remote_blob": "73b6446cd9ae6ef0f9f91f78904acad03343f423",
+      "remote_sha256": "35c8805ac43fccd9efeef932bc49afc424f8fd150b553197652996abf2d1327e",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/plugin-settings/scripts/parse-frontmatter.sh",
+      "remote_blob": "f247571baeabe6ec0e6899dd953ea98e13d78d2d",
+      "remote_sha256": "1ab8c42d5a19e0b404af3c573d0267fc19b5987e1d7885f522066ffd76e54553",
+      "preserved_exact": true,
+      "remote_mode": "100755"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/plugin-settings/scripts/validate-settings.sh",
+      "remote_blob": "e34e4323119fbc3050dd83177a7ca5faae68f5dd",
+      "remote_sha256": "2f4975285cba7f16b82c764a95fe76d34ac488308ba6705c04561267da4f4f75",
+      "preserved_exact": true,
+      "remote_mode": "100755"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/plugin-structure/GUIDE.md",
+      "remote_blob": "6bcae94a524429d1fbdc37fb08f2bb7d58630d7c",
+      "remote_sha256": "a2dbc1e5502aacb360d0ca74732cdd7be4f6a12a49edf4f2ade4134fbc026247",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/plugin-structure/README.md",
+      "remote_blob": "3076046052483b5638c1c5818d6a19d5a87f3305",
+      "remote_sha256": "c7cb4931d6d71198cba6b552e4733b41940be56a65552a2ff7c5656750b95184",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/plugin-structure/examples/advanced-plugin.md",
+      "remote_blob": "a7c069691ee0ddcd655f88ffbd0253dbe7f4229a",
+      "remote_sha256": "3d24f5856048a94cb99fe2b8207d99f2f5d69325771b361d63ec73024290759c",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/plugin-structure/examples/minimal-plugin.md",
+      "remote_blob": "27591dbcaff810375de507327d26911575029d62",
+      "remote_sha256": "c4f14fe56b153be3c532b7947bb10b453fc92e280dca5a7da752d2b1b5d17448",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/plugin-structure/examples/standard-plugin.md",
+      "remote_blob": "d9031665564afc43ad19c07175f18bf7a84b1e1a",
+      "remote_sha256": "b8cfba84bd4dbdc83365cebcde5dcc6391252372300df0c1ea7890441582d784",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/plugin-structure/references/component-patterns.md",
+      "remote_blob": "a58a7b4b0a3301aa1330ea4db77636ea8df41bd4",
+      "remote_sha256": "38681792a6aba4f06d3c391b20b04060263f1fbaacc5880cc0cafe0543d37f91",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/plugin-structure/references/manifest-reference.md",
+      "remote_blob": "40c9c2f3633d54fe1ec9a119f7a00f7eea0e171a",
+      "remote_sha256": "d0ff8ffece4754df92c543266b8d0b689fb85473f51fbb57e215f2d235ee9782",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/skill-creator/GUIDE.md",
+      "remote_blob": "65b3a402dbd09b8e83f9d637c6b553875189085c",
+      "remote_sha256": "dcd4803e61e913e6fc27294184cd3a71f09f5e924ff20c8a9a20173e7b3c2bcf",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/skill-creator/LICENSE.txt",
+      "remote_blob": "4f881c52d1f72f4cfb720e339e2d35c3058d01a9",
+      "remote_sha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/skill-creator/agents/analyzer.md",
+      "remote_blob": "14e41d6068635f4dd3fb878fd1626312395dda63",
+      "remote_sha256": "bf68f4cac5a56c673a928c2e6d619586c5b93ea364026ab37547772cb45a663a",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/skill-creator/agents/comparator.md",
+      "remote_blob": "80e00eb45db3ee53a132fc2ba97fd59a7339e563",
+      "remote_sha256": "fe1fc9787c495d864c5d6eada47396478572325fde1b33a96d78bf4b849b7a3e",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/skill-creator/agents/grader.md",
+      "remote_blob": "558ab05c0a9a8bb062ef4c51823d4d76c3acf7c4",
+      "remote_sha256": "57134da0c1a4eea33fbd74a1c9c44aa814f07d6bc64de303edb586f941e5d21a",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/skill-creator/assets/eval_review.html",
+      "remote_blob": "938ff32aed9bffabf723bd5492d720f4736c8e4d",
+      "remote_sha256": "ce477dcc74dc1c0d1d3352646a79167b5a63634e936b1019160025065974e452",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/skill-creator/eval-viewer/generate_review.py",
+      "remote_blob": "7fa5978631fed1ed545591dbb2b0eb21ce3f3d08",
+      "remote_sha256": "fc9d1b9243fe5ab6012ebd579bd76d0035de1b79fd3b969de114defab26478fb",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/skill-creator/eval-viewer/viewer.html",
+      "remote_blob": "6d8e96348a02e66c3363d2ff3b3ae58ac11e6382",
+      "remote_sha256": "a53213426ee1100441d701a3a0d49cda7a842f992d2c36463f4d3cc0258575fa",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/skill-creator/references/schemas.md",
+      "remote_blob": "b6eeaa2d4a34c1653069585c6c5603da39a5bdbe",
+      "remote_sha256": "8e8876180a8989b406a4d3edddf875b04cdfd5805cc8616686d552b11ce4455f",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/skill-creator/scripts/__init__.py",
+      "remote_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "remote_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/skill-creator/scripts/aggregate_benchmark.py",
+      "remote_blob": "3e66e8c105be9bab9f0e9c61f0d1482619401580",
+      "remote_sha256": "123ef128ea5ccc01a4b1ac212ef5567f21e9c13d3d240609780beeb3200c49aa",
+      "preserved_exact": true,
+      "remote_mode": "100755"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/skill-creator/scripts/generate_report.py",
+      "remote_blob": "959e30a0014ec165c41a2bb7420b7dfe1416bbac",
+      "remote_sha256": "13df7118a3c50c83c4c3250a606d5f2b20b25a3d44cbc392b3d669ec75281453",
+      "preserved_exact": true,
+      "remote_mode": "100755"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/skill-creator/scripts/improve_description.py",
+      "remote_blob": "06bcec76122446986e3610c20a39c466de36f495",
+      "remote_sha256": "87d864570220b699fac52da309d2d6efdb060647bfebc74f768128e646accf80",
+      "preserved_exact": true,
+      "remote_mode": "100755"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/skill-creator/scripts/package_skill.py",
+      "remote_blob": "f48eac444656ddc41204aac1760a217951ce609e",
+      "remote_sha256": "1a33059b0db1ef73375d46d513e5ea81369d2e8838c970597b0d52ddef8d1c0f",
+      "preserved_exact": true,
+      "remote_mode": "100755"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/skill-creator/scripts/quick_validate.py",
+      "remote_blob": "ed8e1dddce77b16af13c6f36b3fe86c4ac7c590c",
+      "remote_sha256": "67cf5703402013936c8fb75ad6a1afecd8841d45cc5e606b634eb05825fde365",
+      "preserved_exact": true,
+      "remote_mode": "100755"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/skill-creator/scripts/run_eval.py",
+      "remote_blob": "e58c70bea39d5b252a1e819f242bbdcdf20e8b87",
+      "remote_sha256": "43e3b8f80dbf69c343967ba77e268fae991d9fa3ed68b32a0ff02532cd48657f",
+      "preserved_exact": true,
+      "remote_mode": "100755"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/skill-creator/scripts/run_loop.py",
+      "remote_blob": "30a263d674ef19de11c756d6f7537f91a421909e",
+      "remote_sha256": "7bd6f674203168520517eec94c55f493c0d154339b061b4d7c0f0dad187d0f21",
+      "preserved_exact": true,
+      "remote_mode": "100755"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/skill-creator/scripts/utils.py",
+      "remote_blob": "51b6a07dd57174197a937034b7eecebd5768ff8a",
+      "remote_sha256": "3af8ae62c40c73ab712207436a0d9a981e845f25c5a7040229eb189cc8e45bb1",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/skill-development/GUIDE.md",
+      "remote_blob": "1cb3bd90b29d0469d25c5df9ad72741ac1e2c4cd",
+      "remote_sha256": "d51b4e20043b13e462aa86c47ea82d43e216eb292871538127f4b12a54e4944f",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/skill-development/references/skill-creator-original.md",
+      "remote_blob": "40699358f2f8098e860838cd68b0382a31c72262",
+      "remote_sha256": "8c0ce23bb87be91f5b0853c2e9815617c3858b63acdddfe5da47d2c2d3a60816",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/gate-forensics.md",
+      "remote_blob": "525a95718e747d76abfd12b2f7ef0c9690378c2b",
+      "remote_sha256": "29e37dd7d79623c5bb29e8c38f9fc5bd63e076999368d4f9e687d6bed5ee9ef7",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/installer-traps.md",
+      "remote_blob": "fa202b1f3d6f05e2cfe5eec8351f0f524cfadb04",
+      "remote_sha256": "f019a460e235135c6792972a5165b8d5a541b15de0fbb34d6f1d46123d796540",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_instruction-architecture/references/reverse-misread.md",
+      "remote_blob": "dfd7d741ca8b7180275f2bbf371ed9cc57706ee4",
+      "remote_sha256": "bf896cb818158a364afb95f99f6435b4671e161262fcd1942b9a6264a800efd3",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_multi-session-orchestration/SKILL.md",
+      "remote_blob": "907986dd4fc34fd03828742cfc624633062e807d",
+      "remote_sha256": "58d56f02032bd27f40879ffc067242ecd8f06b54f3754f9d44329b147f654927",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_multi-session-orchestration/references/log_collection.md",
+      "remote_blob": "7c34e214a9e4aa6d556560af87e1ba2eed7e27ca",
+      "remote_sha256": "20bb9f39008b199b9afe30eb68f97e5072821b1542c4ddd58fd0673f2116febe",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_multi-session-orchestration/references/model_effort_sample.md",
+      "remote_blob": "5c4ff5171259be9e343106ebc60f9aaeb8f559fc",
+      "remote_sha256": "21c075584929b9d5a5d8d103e2eeb8123cd9ad7c263fcbb2d5808e998b3f81ea",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_ocr-image-extraction/SKILL.md",
+      "remote_blob": "ebcf9dffceaf86272816c35aa2ebc540a05764e8",
+      "remote_sha256": "74ee7f723d51a1ab35185e820d41db71f93ded0af937d1a6098f08f5eb9203a3",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_ocr-image-extraction/ocr_engine_ops.md",
+      "remote_blob": "efff1fac0337a6b87d4a789fa4e789a54c564683",
+      "remote_sha256": "73dd4eacb8ce9f19c73ae7baa51fa09b33e61b2429e99b10468b0e298085a6a9",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_ocr-image-extraction/scripts/crosscheck.py",
+      "remote_blob": "b8be9bd37650da32e502e4a3c4bb67033fe220b4",
+      "remote_sha256": "82bb1577356b62be2e3f61ac66ee0b2e609165ae809808718cfbb071bf295440",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_ocr-image-extraction/scripts/paddleocr_bench.py",
+      "remote_blob": "2088dfc6983a263b83edc9c4b957fe5d160fdff6",
+      "remote_sha256": "9ed527c50c2c8d9f4900c41c416b8c3022f713f1db2ef1dbfb3e0d2e7e06d689",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_ocr-image-extraction/scripts/paddleocr_one.py",
+      "remote_blob": "b9208749c79276966042dc12dd954b87f46720d8",
+      "remote_sha256": "3de90463edd60cf06fda6c4ccdb5e1fe8e7753c2c348317a5049e45ebd826854",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_ocr-image-extraction/scripts/paddleocr_parallel.py",
+      "remote_blob": "44e00225f82538a3ae45773fdf3ff3a1cb13527f",
+      "remote_sha256": "29703ede20d8e249921b616e0bd29aafd8b72857962a43c98890d6df18a536ba",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_ocr-image-extraction/scripts/rotate_exif.py",
+      "remote_blob": "c51db65ea5cc89ad62ab786754617f0c485a2413",
+      "remote_sha256": "2839104d1b9478d674820804e74bd772fb552f674fd035b4c65cb57bbc22d71d",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_ocr-image-extraction/scripts/setup_ocr_engines_windows.ps1",
+      "remote_blob": "21263e674b9b08eb28538b0157e52b49bf94e07a",
+      "remote_sha256": "ee4bc0b2d854c1e6a0865ab607451108f147d168cec4f294f5e401f1e7fe2e53",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_ocr-image-extraction/wheels/.gitignore",
+      "remote_blob": "e839040bb2ebfc7f22b561a0830868c7b68e2d68",
+      "remote_sha256": "d5317aa58c822409ae959c06a4907a44f368fa1e9846ee6c90b595d7f9f4dad9",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_ocr-image-extraction/wheels/README.md",
+      "remote_blob": "85edeb63228d4e3962cd915c846d489362d21131",
+      "remote_sha256": "7b2e936a2981a61e89b2662b7aa8c3d8072c9d381b9b3818a9f246d57234ea8b",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_plan-execution/SKILL.md",
+      "remote_blob": "15a48ef4143ec8a2f3f10ba0c66d699f2b664f73",
+      "remote_sha256": "d4e39d73fb65b39d151881c13b1782116f2bab864e544fa0c6675614ca198231",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_plan-execution/references/record-formats.md",
+      "remote_blob": "1b11c683343f3d8f6984a2f278f77d3d6ea4d23c",
+      "remote_sha256": "9637656e7ab3f43b6631e082b9c5800defd82fef6cc65948fb5427ffb75fbc33",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_project-scaffold/SKILL.md",
+      "remote_blob": "8b11f6cb81129f6eb7b6bd4cf9827f2369ba49f6",
+      "remote_sha256": "719745a6fdc283ca83b8b1aab77e706cd75cb488a5aa55dcb3e216e10de12e55",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_review-chunking/SKILL.md",
+      "remote_blob": "909b3bba0966ecb466d38357ec71868e380f2826",
+      "remote_sha256": "d3f0db89e4ce8f6a937c7e20254753d4bde1c7e23df6bea803b86b6cd1e8515f",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_secured-windows-tooling/SKILL.md",
+      "remote_blob": "a35ad41a8989da06a1f8f21eee03415ef4d559cb",
+      "remote_sha256": "56549bf637594c3943d7c3d2a9b5cc64177f88a1fc4cc8189efb4a23576571ce",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_source-research/SKILL.md",
+      "remote_blob": "e73d0904e7761439c25b62b8739d441de961042f",
+      "remote_sha256": "58069cd51f81698d12951005bc9b57779465ee3a8f0de059a7744acb8f70d325",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_visual-design/SKILL.md",
+      "remote_blob": "78e8af8a235090f8779e6c831d2985d317745a71",
+      "remote_sha256": "577cb515f77dc0e31aafc906ca7c5034021ebb27aab4b104a4bdf16034478af6",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_visual-design/accessibility.md",
+      "remote_blob": "b5560f53171c8a1e9e4afda16f04d1b76fdebe6a",
+      "remote_sha256": "97fa4db93f5eebd60f3f01ec30a8e7c7cd979bc05d0fe2b5995f025eeb9092d4",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_visual-design/code.md",
+      "remote_blob": "f58fb444d92cc5c37d4ac6876500a4f3e8d8a32f",
+      "remote_sha256": "9368057c941def2551802353fcb80da0ae0855ba02038ab3d6e3b64596d82ce7",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_visual-design/core_principles.md",
+      "remote_blob": "11d7a39b3cbbe184e1083f81c3856658b9aac51a",
+      "remote_sha256": "1ee6b81654d6bf61cf512c6f381e1cdf7d46289055abd73ee76be62925fa16aa",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_visual-design/diagram.md",
+      "remote_blob": "e1bc10f7fb732489976b4a364dfad52702216a17",
+      "remote_sha256": "e6b66e9c35ec1c0bd7249bc715dc95cf8e3d60303d62495dd2862e5015776e25",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_visual-design/html_css.md",
+      "remote_blob": "6eecd09f4e92236cd0df9ea1f3064fd645defa1a",
+      "remote_sha256": "d450ac4e3960bf653d8177a5f7d4435f14fcdfc30e40d9322bb0f0d0886c64d1",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_visual-design/latex.md",
+      "remote_blob": "163af398027bf6eaf373c00ffa254025dd9cdc57",
+      "remote_sha256": "03013f619025471d3c96cc8b9af44eec20202231135af63bae001e1ce35e14a1",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_visual-design/pptx.md",
+      "remote_blob": "f4eef13ab46bfd9d08c0150d137d75f3cf08fddf",
+      "remote_sha256": "bae9ad28c8b140e5d03e1f99b8b31817fcb3c970e5d36d5b0a99d7201399025b",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_visual-design/pyqt.md",
+      "remote_blob": "cbe772039eeb576f6760137b834baab34c14d558",
+      "remote_sha256": "2caedb996c13d6cbc49b011299eaaf6632fc69fa629895c3042108266b9a70ed",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_visual-design/references/code-naming-catalog.md",
+      "remote_blob": "f807791d0b407037e0666a4c5d80695017b60aa9",
+      "remote_sha256": "bc7788e701f2bd5576712fc43cd13a8492d15e30f233e51ed830acc69b006182",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_visual-design/references/pptx/ATTRIBUTION.md",
+      "remote_blob": "5cd57764cea869ab76bda3ca649072519ae31f2b",
+      "remote_sha256": "6b2a252dd741fff3f5ad8bbe286eb6ef8518ad293f682f3b6af9d9254cd4b595",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_visual-design/references/pptx/LICENSE-academic-pptx.txt",
+      "remote_blob": "cdef61bab184da8f8d1e114dfd2bdd1ede990ddb",
+      "remote_sha256": "20d9c009d0e5d7150da5e081c8d5a81463731dcf338323992a74a0648e6fb542",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_visual-design/references/pptx/catalog_deck_rules.md",
+      "remote_blob": "65c76e26a0a7196cb2c7fe0c6afefc6c8b69156e",
+      "remote_sha256": "8347ba971b66dc6335e88829b3dd031c30e2f79d99872eafe757a77eb03d67dc",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_visual-design/references/pptx/content_rules.md",
+      "remote_blob": "a1a6cbc6afc4b7d5066e5335ba9b341f5e88c685",
+      "remote_sha256": "60f44a94145921c451f30a2c800c076656c1644c3049acd62266657a04cb1de3",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_visual-design/references/pptx/qa_procedure.md",
+      "remote_blob": "0fdfaa8548c13d63bfdc403e57ecea54a56f946f",
+      "remote_sha256": "6945719886d4180caf7b0f689949877859e992b058b50ea1bb8f45cffc3aa910",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_visual-design/verification.md",
+      "remote_blob": "76dfe6b45e51aefb32b8675f1737762e83fefd24",
+      "remote_sha256": "5f3f72270fb4ea1cdd81cb461e29c7bf413d0df7b35d1ddebba1f4ed7352bba3",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/skills/skill_LKS_original_visual-design/web_page.md",
+      "remote_blob": "49c4905527e5d8daae2a0a05b01b7c8d9f2b649b",
+      "remote_sha256": "1c71b9452712f937b5b2cfa64387b579e86aa840384f7769666be85592ff7ffb",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/tools/BADA_recall.py",
+      "remote_blob": "2887965a3ccdbf96057b4e643a1a26cd7a6af719",
+      "remote_sha256": "9c830f9e38c570cecd641109a2053e4c48a8f78bb93db11fa8fa8f15f61a9f8b",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/tools/ab_precompare.py",
+      "remote_blob": "460ed21b2c92663549415b9e1b7a724948018f6d",
+      "remote_sha256": "6a12d63daf3eb23f552ed75ce98a4f5e3517dcc76773956d330bae09f6555934",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/tools/banned_lexicon.json",
+      "remote_blob": "aa29e884f0c971cfe2c19c84bd54755e3996c124",
+      "remote_sha256": "c458c109cde12d0b24ad0c4654a742e3bb00e3c84a464c7dc445fa3d4a3e654d",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/tools/check_color_tokens.py",
+      "remote_blob": "e049e22a0797a8e302320b397952b343003112e3",
+      "remote_sha256": "cebd651f74a6cece3af5f7674bc83fb739baf2df236f9c1e73977a16a98f9e73",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/tools/check_file_digests.py",
+      "remote_blob": "5057dcb3cd6fed1efc4f7cd93fa288d80a9363f5",
+      "remote_sha256": "b93cff038cf04b1835869ff5ea42d25eaba1b0f7a3133b68429271605b7227f9",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/tools/check_line_budget.py",
+      "remote_blob": "b37b46bb01d83645b89bfd6c27ebc386c6da1513",
+      "remote_sha256": "c13afdaefb79fb325b1aa312eb64a0c9b297fa4fb6274090df1cfb126f5f400a",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/tools/check_win_encoding.py",
+      "remote_blob": "56e3cfc876ed033a151cab734c8df7ce80117a30",
+      "remote_sha256": "8d0c9abf2a544b24824bb0481e5c047aed1cd2fb5ce785200c85543f2b5a1e7a",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/tools/color_pairs_diagram.json",
+      "remote_blob": "479adaf5c33618643660a76fe9b03f994d8bba3e",
+      "remote_sha256": "b72ae1edc061f42d715ac8786e8a8ed90bc396bc970bc16f66d497d80b686422",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/tools/merge_settings.py",
+      "remote_blob": "728304efdfd5af49730014f1c94fb49fcab4a9f2",
+      "remote_sha256": "37f18b3d32fea08fa1c4add1964efd538e30524d8237ed9266535fee3652a3d6",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/tools/montage.py",
+      "remote_blob": "4067f26e94e727c7c8cb9a48115031d9429042c4",
+      "remote_sha256": "0cffe442d6315552c6747f2b7fa34f16a6593ac39c309e19a31fec3ca922c0af",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/tools/pptx_lint.js",
+      "remote_blob": "fa6fce1322b1334e3bd3bafdcf98563ec80b8013",
+      "remote_sha256": "3431abaf7534ce0f6946a61f5f8622bde0a3e919a1681f94b358bf16928522da",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/tools/qa_slides.py",
+      "remote_blob": "0626ca6bea1daee1fc745968b5dc3d4783a05b08",
+      "remote_sha256": "a962589be874eb28424e363fb0f4f84d7cd08253b3553f28c17ae86c024cca9b",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".claude/tools/render_pptx.ps1",
+      "remote_blob": "f8a64ecbeca92d1bcdd0bb2d5aa7d0c4229e2b7a",
+      "remote_sha256": "d1206edf88fa2c1e531d5ad93b7e3af96a9e30c5b795eb4bfee634099f5d89b9",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    },
+    {
+      "path": ".gitignore",
+      "remote_blob": "5b1a99347cffc280385a614d7b7699c9ee5a5760",
+      "remote_sha256": "4f69b9f9b344455ec3f30d7595d70f884ad2660ebb2c38166bdcad330bde7566",
+      "preserved_exact": false,
+      "remote_mode": "100644"
+    },
+    {
+      "path": "CLAUDE.md",
+      "remote_blob": "4ab0a72faa451cb10c81089b89f5c59cc62f5adc",
+      "remote_sha256": "9d2648b8da0e39c9ab62359acff3312874a591da97336315463353181a4489d4",
+      "preserved_exact": true,
+      "remote_mode": "100644"
+    }
+  ],
+  "conflicts": [],
+  "shared_ignore_policy": "Remote rules preserved, local rules appended; exact original local file stored in local-source.gitignore.",
+  "source_payload_count": 19692,
+  "source_unchanged": true,
+  "manifest_sha256": "a4580c3974c60f3c53fbb8e44ecee5e4609cfbab85186fd4e30f4213c8541793",
+  "git_method": "ordinary single-parent snapshot on remote main, local snapshot ref preserved, no merge commit or force push",
+  "executable_modes_restored": [
+    ".claude/skills/skill_LKS_custom_document/references/docx/scripts/__init__.py",
+    ".claude/skills/skill_LKS_custom_document/references/docx/scripts/accept_changes.py",
+    ".claude/skills/skill_LKS_custom_document/references/docx/scripts/comment.py",
+    ".claude/skills/skill_LKS_custom_document/references/docx/scripts/merge_runs.py",
+    ".claude/skills/skill_LKS_custom_document/references/docx/scripts/office/validate.py",
+    ".claude/skills/skill_LKS_custom_document/references/pdf/scripts/extract_form_structure.py",
+    ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/add_slide.py",
+    ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/clean.py",
+    ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/office/validate.py",
+    ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/slide_text.py",
+    ".claude/skills/skill_LKS_custom_document/references/pptx/scripts/thumbnail.py",
+    ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/office/validate.py",
+    ".claude/skills/skill_LKS_custom_document/references/xlsx/scripts/recalc.py",
+    ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/agent-development/scripts/validate-agent.sh",
+    ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/hook-development/examples/load-context.sh",
+    ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/hook-development/examples/validate-bash.sh",
+    ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/hook-development/examples/validate-write.sh",
+    ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/hook-development/scripts/hook-linter.sh",
+    ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/hook-development/scripts/test-hook.sh",
+    ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/hook-development/scripts/validate-hook-schema.sh",
+    ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/plugin-settings/examples/read-settings-hook.sh",
+    ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/plugin-settings/scripts/parse-frontmatter.sh",
+    ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/plugin-settings/scripts/validate-settings.sh",
+    ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/skill-creator/scripts/aggregate_benchmark.py",
+    ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/skill-creator/scripts/generate_report.py",
+    ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/skill-creator/scripts/improve_description.py",
+    ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/skill-creator/scripts/package_skill.py",
+    ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/skill-creator/scripts/quick_validate.py",
+    ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/skill-creator/scripts/run_eval.py",
+    ".claude/skills/skill_LKS_original_instruction-architecture/references/bundle/skill-creator/scripts/run_loop.py"
+  ],
+  "remote_mode_recheck": "PASS"
+}

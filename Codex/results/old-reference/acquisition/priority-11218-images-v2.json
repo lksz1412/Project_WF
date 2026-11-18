@@ -1,0 +1,76 @@
+[
+  {
+    "postID": 11218,
+    "section": "screenshot",
+    "DOMordinal": 1,
+    "thumbURL": "https://upload2.inven.co.kr/upload/2019/03/17/bbs/thumb/n13715800082.png",
+    "viewerLiteral": "viewImage('2019/03/17/bbs/i13715800082.png');",
+    "fullURL": "https://upload2.inven.co.kr/upload/2019/03/17/bbs/i13715800082.png",
+    "alt": "",
+    "title": null,
+    "sourceLocation": {
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-11218.html",
+      "selector": "screenshot img",
+      "line": 33
+    },
+    "error": null,
+    "decodeStatus": "verified-full-load",
+    "mappingEvidence": {
+      "observedThumbOrigin": "https://upload2.inven.co.kr",
+      "observedPathPrefix": "/upload/",
+      "literalViewerPath": "2019/03/17/bbs/i13715800082.png"
+    },
+    "initialMappingState": "unresolved-preserved-in-images.json",
+    "finalURL": "https://upload2.inven.co.kr/upload/2019/03/17/bbs/i13715800082.png",
+    "time": "2026-11-17T14:05:07.2628954Z",
+    "contentType": "image/png",
+    "HTTP": 200,
+    "sourceURL": "https://upload2.inven.co.kr/upload/2019/03/17/bbs/i13715800082.png",
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-d1220e0e4b507ab36692.png",
+    "state": "acquired",
+    "attempts": 1,
+    "commandExitCode": 0,
+    "bytes": 2034784,
+    "SHA256": "9B1EAF4B274AD78213E8AF8424ACAC019CB02EB240A4E2D1FA2F376223160958",
+    "width": 1344,
+    "height": 756,
+    "imageFormat": "PNG"
+  },
+  {
+    "postID": 11218,
+    "section": "screenshot",
+    "DOMordinal": 2,
+    "thumbURL": "https://upload2.inven.co.kr/upload/2019/03/17/bbs/thumb/n13441659684.png",
+    "viewerLiteral": "viewImage('2019/03/17/bbs/i13441659684.png');",
+    "fullURL": "https://upload2.inven.co.kr/upload/2019/03/17/bbs/i13441659684.png",
+    "alt": "",
+    "title": null,
+    "sourceLocation": {
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\images-11218.html",
+      "selector": "screenshot img",
+      "line": 40
+    },
+    "error": null,
+    "decodeStatus": "verified-full-load",
+    "mappingEvidence": {
+      "observedThumbOrigin": "https://upload2.inven.co.kr",
+      "observedPathPrefix": "/upload/",
+      "literalViewerPath": "2019/03/17/bbs/i13441659684.png"
+    },
+    "initialMappingState": "unresolved-preserved-in-images.json",
+    "finalURL": "https://upload2.inven.co.kr/upload/2019/03/17/bbs/i13441659684.png",
+    "time": "2026-11-17T14:05:08.7099995Z",
+    "contentType": "image/png",
+    "HTTP": 200,
+    "sourceURL": "https://upload2.inven.co.kr/upload/2019/03/17/bbs/i13441659684.png",
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\image-089ff199ca4ee7b684af.png",
+    "state": "acquired",
+    "attempts": 1,
+    "commandExitCode": 0,
+    "bytes": 520412,
+    "SHA256": "349D27A3853901A8B43195DE7715A31AD9EE9BA494CDD3BCB573B866DD86D3E8",
+    "width": 551,
+    "height": 632,
+    "imageFormat": "PNG"
+  }
+]

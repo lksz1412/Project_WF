@@ -1,0 +1,13 @@
+﻿## Interface: 70100
+## Author: Chant
+## Version: 1.1
+## Title: |cffC495DDDevilUI 1.1|r
+## Notes: DevilUI!
+## SavedVariablesPerCharacter: Devilinstall
+
+!DevilUI.lua
+minimap.lua
+
+load_Profile.xml
+libs\load_libs.xml
+media\load_media.xml

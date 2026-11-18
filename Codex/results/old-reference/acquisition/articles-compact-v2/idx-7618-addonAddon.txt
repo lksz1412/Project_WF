@@ -1,0 +1,163 @@
+- 설명 -
+
+
+
+현재의 애드온은 데빌님이 복귀하기전 임시적으로 올리는 애드온입니다.
+
+
+
+문제가 있을 시에는 삭제를 하겠습니다.
+
+
+
+- 환경 -
+
+
+
+애드온 작업을 위하여 노트북을 하드포멧 후에 고스트 및 comeback7.0을 설치 하였습니다.
+
+해상도 테스트를 위하여 1928 X 1080 모니터를 사용하였습니다.
+
+백신 프로그램은 avg로 바이러스 테스트 후에 유저분들이 안전하게 사용할 수 있도록 노력하였습니다.
+
+
+
+애드온의 파일 용량은 8.3MB 입니다.
+
+
+
+
+
+- 설치 방법 -
+
+
+
+DevilUI 4.3.0.f를 설치 하고 개인 설정을 한 후에 Interface / addons에서 addons를 삭제 하기를 바랍니다.
+
+addons를 삭제하고 애드온 데이터를 받아서 Interface 폴더 안에 넣기를 바랍니다.
+
+
+
+
+
+- 애드온 설명 -
+
+
+
+BlueItem 계열이 일부 오류가 있어 일부 정상 작동 하지 않습니다.
+
+BlueItem 계열을 비활성화나 무시로 당분간 사용하기를 바랍니다.
+
+
+
+FairComboPoints는 콤보 애드온으로 초기값으로 지정 되어 있어 본인에 맞게 설정 하시기 바랍니다.!!
+
+FairComboPoints를 사용하지 않을 경우에는 삭제하거나 비활성화 하기 바랍니다.
+
+
+
+KgPanels에서 간혹 녹색 바탕 화면이 나올 경우가 있습니다.
+
+KgPanels 설정창을 오픈 후에 해당 녹색화면에서 투명화 0를 하면 녹색 화면이 없어집니다.
+
+
+
+InvenRaidFrames3 팬 버전이 올라와 업데이트 하며, 안정화 될때까지 Grid, Sraid, Vuhdo를 권장합니다.
+
+
+
+Recount가 일부 특성이 안잡히는 경우가 있어, skda를 사용하셔도 좋습니다. 
+
+
+
+
+
+
+
+
+
+-- 애드온 목록 --
+
+
+
+Ara_Broker_Guild_Friend : 길드원과 친구목록 확인 (5.0.4 r54)
+
+BetterPowerBarAlt : 게이지바 (초갈, 알리스라조르, 라이올라스 등 사용) Toc 수정
+
+BlueItemInfo3 : 아이템에 대한 정보, Toc 및 일부 lua 수정 했으나 포기 , 일부 오류 있으나 비활성 및 무시 후 사용
+
+Broker_FindParty : 파티 정보, Toc 수정
+
+Broker_Money : 개인 자산 정보, Toc 수정, 일부 오류 수정
+
+Broker_Raidsave : 공대 귀속 정보, Toc 수정
+
+Broker_Recount : 데미지미터기 정보, Toc 수정
+
+ChocolateBar : Broker LDB 표시 (v2.2.6)
+
+DBM : 공격대 보스 경고 표시, 소판다, (5.0.0-r7821)
+
+DBM cataclysm : 대격변 보스 경고 표시 플러그인 (r10)
+
+Dominos : 행동 액션바, (cast, Roll, XP 삭제) (5.0.12)
+
+FairComboPoints : 성기사,도적,주술사 콤보 표시, TOC 수정, 일부 오류 수정, 기본 설정 
+
+findparty : 파티 찾기 도우미, Toc 수정
+
+GTFO : 바닥 경고 도우미, (4.14)
+
+InspectFix -> InspectEquip 변경 : 살펴보기 정보 (2.0.2)
+
+InvenRaidFrames3_fan_fix : 인벤레이드프레임 임시(다시날아 님 데이터 팬 버전)
+
+kgPanels : 배경 (1.13)
+
+Mspster : 지도 (1.5.0)
+
+Masque : 액션바 배경 사각 툴, (v5.0.387)
+
+Masque_Onyx : 액션바 배경 사각 툴 스킨, (v5.0.74)
+
+mySharedMedia : 아이템 테두리 스킨, Toc 수정, 일부 오류 수정
+
+OGlw : 아이템 색상 표현 (2.2.2)
+
+Omen : 어그로 경고 정보 (3.1.7-1)
+
+OmniCC : 재사용 대기 시간 표시 (5.0.2)
+
+OpenAllBags : 가방 전체 열기, Toc 수정
+
+PitBull4 : 유닛프레임 (v4.0.0-beta35-3)
+
+Postal : 우편 도우미 (r369)
+
+Quartz : 시전 바 (3.1.0-1)
+
+QuestPointer : 미니맵에 퀘스트 포인트 표시 (r-v8-2)
+
+RangeDisplay : 대상과의 거리 표시 (r343)
+
+Recount : 데미지 표시 (5.0.4) 일부 오류가 있어 당분간 skada 권장
+
+Reflux : 개인 사용자 환경 설정, Toc 수정
+
+RunePack : 죽음의 기사 룬 정보., Toc 수정
+
+shPerformance : 메모리 정보 표시, Toc 수정, 일부 오류 수정
+
+SmoothQuest : 퀘스트 표시, Toc 수정
+
+TipTac : 툴팁 정보 표시, Toc 수정, 일부 오류 수정
+
+TradeShout : 거래 내열 알림 표시, Toc 수정
+
+trueitemlevel : 아이템 레벨 표시, Toc 수정
+
+tullaRange : 거리에 따른 색상 표시 (5.0.0)
+
+XLoot : 루팅 정보 표시 (5.0.4-3)
+
+zBrokerDurability 수리 정보 -> Broker_DurabilityInfo v1.12 수리 정보 ( 변경 )

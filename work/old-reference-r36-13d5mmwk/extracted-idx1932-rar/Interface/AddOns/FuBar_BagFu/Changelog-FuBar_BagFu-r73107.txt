@@ -1,0 +1,24 @@
+------------------------------------------------------------------------
+r73107 | phyber | 2008-05-08 11:03:04 -0400 (Thu, 08 May 2008) | 2 lines
+Changed paths:
+   D /trunk/FuBar_BagFu/BagFuLocale-deDE.lua
+   D /trunk/FuBar_BagFu/BagFuLocale-enUS.lua
+   D /trunk/FuBar_BagFu/BagFuLocale-esES.lua
+   D /trunk/FuBar_BagFu/BagFuLocale-frFR.lua
+   D /trunk/FuBar_BagFu/BagFuLocale-koKR.lua
+   D /trunk/FuBar_BagFu/BagFuLocale-zhCN.lua
+   D /trunk/FuBar_BagFu/BagFuLocale-zhTW.lua
+   M /trunk/FuBar_BagFu/FuBar_BagFu.toc
+   A /trunk/FuBar_BagFu/Locales
+   A /trunk/FuBar_BagFu/Locales/deDE.lua (from /trunk/FuBar_BagFu/BagFuLocale-deDE.lua:72964)
+   A /trunk/FuBar_BagFu/Locales/enUS.lua (from /trunk/FuBar_BagFu/BagFuLocale-enUS.lua:72964)
+   A /trunk/FuBar_BagFu/Locales/esES.lua (from /trunk/FuBar_BagFu/BagFuLocale-esES.lua:72964)
+   A /trunk/FuBar_BagFu/Locales/frFR.lua (from /trunk/FuBar_BagFu/BagFuLocale-frFR.lua:72964)
+   A /trunk/FuBar_BagFu/Locales/koKR.lua (from /trunk/FuBar_BagFu/BagFuLocale-koKR.lua:72964)
+   A /trunk/FuBar_BagFu/Locales/locales.xml
+   A /trunk/FuBar_BagFu/Locales/zhCN.lua (from /trunk/FuBar_BagFu/BagFuLocale-zhCN.lua:72964)
+   A /trunk/FuBar_BagFu/Locales/zhTW.lua (from /trunk/FuBar_BagFu/BagFuLocale-zhTW.lua:72964)
+
+FuBar_BagFu:
+- Move locales into their own directory.
+------------------------------------------------------------------------

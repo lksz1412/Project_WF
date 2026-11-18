@@ -1,0 +1,14 @@
+
+InvenCraftInfoUICharDB = {
+	["otherLink"] = {
+	},
+	["mySkill"] = {
+	},
+	["favorite"] = {
+	},
+	["addOnLink"] = {
+		["요리"] = {
+			["order"] = "필요 숙련 우선",
+		},
+	},
+}

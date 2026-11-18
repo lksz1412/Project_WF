@@ -1,0 +1,4 @@
+LibSharedMedia-2.0: enabled
+ImprovedCamera: disabled
+FuBar-compat-1.2: disabled
+BlinkOpenBag: disabled

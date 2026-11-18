@@ -1,0 +1,6 @@
+## Interface: 30200
+## Title: |cff99FFFF D|rChat
+## Notes: DevilChatMod
+## Notes-koKR: DevilChatMod
+
+DChat.lua

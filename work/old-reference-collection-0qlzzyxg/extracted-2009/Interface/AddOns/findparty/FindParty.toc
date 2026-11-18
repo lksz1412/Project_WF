@@ -1,0 +1,22 @@
+## Interface: 30200
+## Title: FindParty
+## Notes: 파티찾기 채널을 필터링해서 보여줍니다.
+## SavedVariablesPerCharacter: FP_UserDefinedWhMsg
+## SavedVariables: FP_Options, FP_Scroll_Info, FP_Version, FP_DUNGEON_LIST, FP_Filter_Dungeon_Info, FP_UserDefinedAdMsg, FP_Filter_Class, Party_Find_Info, FP_Minimap_Save
+## Author: 일분일초 - Stormrage, Korea
+## X-Credits: thenotfound, Zimbal2, Tycho74, 일분일초(스톰레이지)
+## X-License: GNU GPL v3 or later.
+## Version: 2.33
+## X-Curse-Packaged-Version: v2.34
+## X-Curse-Project-Name: FindParty
+## X-Curse-Project-ID: findparty
+## X-Curse-Repository-ID: wow/findparty/mainline
+
+embeds.xml
+
+localization.lua
+FindParty.lua
+FindPartyTooltip.lua
+MiniMap.lua
+FindParty.xml
+

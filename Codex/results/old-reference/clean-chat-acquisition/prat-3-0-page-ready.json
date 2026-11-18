@@ -1,0 +1,17 @@
+{
+  "product": "prat-3-0",
+  "page": {
+    "time": "2026-11-17T15:58:12.2498884Z",
+    "error": "원격 서버에서 (403) 사용할 수 없음 오류를 반환했습니다.",
+    "HTTP": 403,
+    "sourceURL": "https://www.curseforge.com/wow/addons/prat-3-0",
+    "URLbasis": "literal-official-seed",
+    "localpath": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\prat-3-0-main.html",
+    "commandExitCode": 0,
+    "attempts": 1,
+    "state": "failed"
+  },
+  "state": "failed",
+  "readByA1": false,
+  "featureInterpreted": false
+}

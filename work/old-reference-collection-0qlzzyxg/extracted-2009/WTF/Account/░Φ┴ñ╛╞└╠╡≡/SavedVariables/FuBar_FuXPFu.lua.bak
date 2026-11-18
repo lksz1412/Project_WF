@@ -1,0 +1,16 @@
+
+FuXPDB = {
+	["profiles"] = {
+		["Default"] = {
+			["ToGo"] = false,
+			["showIcon"] = true,
+			["Shadow"] = false,
+			["UndockedLoc"] = "Top",
+			["ShowText"] = "XP",
+			["showText"] = true,
+			["Faction"] = 14,
+			["detachedTooltip"] = {
+			},
+		},
+	},
+}

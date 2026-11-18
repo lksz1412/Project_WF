@@ -1,0 +1,39 @@
+{
+  "recorded": "2026-11-17T23:26:57.233339+09:00",
+  "scope": "Step3 A1 mechanical evidence reconciliation/selfcheck only; independentB pending",
+  "state": "READY_WITH_TWO_UNAVAILABLE_IMAGE_REFS",
+  "earlierCommand": "0fc8a4: all upstream actualset assertions passed before lexical failure; upstream not rerun. Scoped lexical/report recheck passed after report42 phrase correction.",
+  "postsRead": 34,
+  "imageReferences": 58,
+  "decodedReferences": 56,
+  "uniqueObservedHashes": 50,
+  "unobservedAvailable": 0,
+  "unavailableImageRefs": [
+    {
+      "postID": 8906,
+      "ordinal": 1,
+      "HTTP": 404
+    },
+    {
+      "postID": 8906,
+      "ordinal": 2,
+      "HTTP": 404
+    }
+  ],
+  "exactDuplicateExtraRefs": 6,
+  "framingLimitedImages": 7,
+  "materiallyOccludedImages": 9,
+  "archiveChecksConsumed": 2,
+  "newCRCRerunByA1": false,
+  "alphaEXEExecuted": false,
+  "literalSources": 9,
+  "borderAssets": 11,
+  "borderPairs": 55,
+  "reportLines": 140,
+  "reportSHA256": "0c21d98fdc95f4bf05eba8f5a4ad71ed72f8c040199244d8edd557b871333d00",
+  "findingsLines": 426,
+  "independentB": "pending",
+  "Step4": "hold",
+  "gameRuntime": "not performed",
+  "sourceIdentity": "samebuild as45sample4 unverified"
+}

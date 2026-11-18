@@ -1,0 +1,14 @@
+## Interface: 16001, 11601
+## X-Forever-Compat: v42
+## Author: Chant
+## Version: 1.1-Forever-v42
+## Title: |cffC495DDDevilUI 1.1|r
+## Notes: DevilUI!
+## SavedVariables: DevilUIAccount
+## SavedVariablesPerCharacter: Devilinstall, DevilUILayout
+
+!DevilUI.lua
+load_Profile.xml
+minimap.lua
+libs\load_libs.xml
+media\load_media.xml

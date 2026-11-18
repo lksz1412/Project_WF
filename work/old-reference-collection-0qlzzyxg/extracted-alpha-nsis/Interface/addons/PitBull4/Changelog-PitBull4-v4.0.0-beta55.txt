@@ -1,0 +1,36 @@
+tag v4.0.0-beta55
+e364239fae8e7129801726ed902b1f12b842feee
+Benjamin Staneck <staneck@gmail.com>
+2015-03-03 22:02:03 +0100
+
+
+
+--------------------
+
+Kyle Buller:
+	- Update Priest and Warlock aura filters
+	- Add "Boss debuff" aura filter
+	- disable word wrapping on font string controls (6.1 fix)
+	- disable word wrapping on font string controls (6.1 fix)
+Benjamin Staneck:
+	- Alabaster Shield was removed in 6.1
+	- Update TOC for Patch 6.1
+Shefki:
+	- Add Clarity of Will to Priest friend buff filter.
+	- Fix arrow/diamond graphic on the Eclipse indicator.
+	- Eclipse: Fix icons for lunar/solar peaks, Blizzard changed the spell ids and then didn't bother to update their own constants.
+	- Fix weapon enchant display in Aura module (mostly fishing lures now).
+Kyle Buller:
+	- Remove the promoted restriction for Ready Check Icon
+	- Auras: update Paladin filters
+	- Aura: update Death Knight filters
+	- Aura: update Warrior filters
+	- Aura: update Mage filters
+	- Aura: update Hunter filters
+	- Aura: update Death Knight in "My class can purge" meta
+	- Aura: add Death Knight and Warrior purge checks and fix Druid dispel checks
+	- Aura: add Rejuvenation (Germination) to Druid friend buffs
+	- Chi: increase max possible chi to 6
+	- make sure BarModule:UpdateFrame is only returning a boolean
+	- Aura: set the swipe color on update to also update the effective alpha
+	- Aura: readd the unchanged check before setting the cooldown to minimize flickering

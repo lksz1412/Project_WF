@@ -1,0 +1,9 @@
+## Interface: 60100
+## Title: |cff0062ffsh|rPerformance |cffdeb111(LDB)|r
+## Notes: LDB feed that displays FPS, Latency, and AddOn Memory Usage (with some tooltips!) 
+## Author: Shaykh - special thanks to: Tekkub, Stoutwrithe, and many others!
+
+LibStub.lua
+CallbackHandler-1.0.lua
+LibDataBroker-1.1.lua
+shPerformance.lua

@@ -1,0 +1,11 @@
+{
+  "read": "2026-11-17T21:55:14.5453818+09:00",
+  "method": "EnumDisplaySettingsW(null, ENUM_CURRENT_SETTINGS)",
+  "ok": false,
+  "width": null,
+  "height": null,
+  "bits": null,
+  "game_render": "unverified",
+  "game_ui_scale": "unverified",
+  "cim": "unavailable on earlier attempts; no values obtained"
+}

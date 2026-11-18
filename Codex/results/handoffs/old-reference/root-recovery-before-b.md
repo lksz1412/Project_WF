@@ -1,0 +1,47 @@
+# Root recovery before Phase1.3 Step3 B
+Current root: D:/Projects/Project_WF. Record timestamp is inserted from actual clock at save.
+
+## Six-check
+1. No actual stable transcript path was supplied by runtime; no guessed newest file used. Latest visible user sentence is R36, matching currentledger row26 exactly. The environment's date change is not R37. Unexposed queue completeness unverified.
+2. Read mainplan1–363 and latest PHASE_1.1_layout-design_RESULT.md full including withdrawal. 
+3. Read currentreport1–192 in1–100/101–150/151–192, currentdetail1–251 in1–130/131–251. Last precompaction report101–192 tool had no usable output; this recovery restores it. Final returned report SHA8AD0BF.../192lines matches A1 handoff.
+4. Read preceding Step2closure and baseline status1–3 fully; frozen2022 NOT accepted/PASS, historical0/1/1 unresolved preserved.
+5. Step3 expanded comparison READY/independentB pending then dispatched; Step4 authorized but held, Step5 undispatched and game implementation outside this task.
+6. Report144→192/detail247→251/main363→363, no abrupt reduction. Root directly checked current files, not only sizes. Preserve preexisting uncommitted history.
+
+## Actual reading and command record
+Rules full: actual globalAGENTS1–153 (bounded restoration1–70/71–153), D:/Projects/AGENTS1–80; session-recoverySKILL/compaction/entry/transcript; communicationstyle/flow; planexecution1–150/151–291, orchestration1–155/156–292, sessiondivision (initial output truncation restored1–42), model-effort1–80/81–157; reviewSKILL initial+111–138, chunkedreview initial+74–107 restored, disciplined39; file-reading/fullfile, change-control/changeimpact, scaffold/git-safety, recordformats, bannedlexicon full. Some initial combined outputs truncated; smaller bounded reads restored needed portions. No current source acquisition/tool install or code modification.
+Project full: main363/detail251/currentledger26/previous Step2+Result/baseline3/currentreport192/staticevidence60/R36evidence118/step3return/SESSIONS/INDEX/priorrootrecord full. JSON expandedgate full displayed. Exact37 code coverage and file hashes are A1 evidence; no root blanket fullcode claim in this recovery. Earlier root primary code/template/DOM/image-reader observations remain recorded in priorrootrecord; new B reads actual source independently.
+Approved git status/log read rc0 after default shell git D: permissiondenied; HEADc3bdacc, current modified/untracked files preserved, no commit/push/merge. The permissiondenied was default sandbox, not an automatic-review rejection; authorized require_escalated read succeeded. No cleanup/reset/staging.
+
+## B dispatch and impact
+A1 and both nestedhelpers returned completed/idle verified by collaboration.list_agents. New Phase1.3B /root/old_reference_audit is bada-b-auditor configuredsol/high; actualruntime fields unobserved. ActualroleTOML full read. No parallel A/B work. OneB10perspectives, noncode③/P5, fixed③newconnections, sameplannedvariable5. Full standalone brief saved iter_1/b-step3-brief.md before spawn; source/caller/input/filter/build/runtime distinctions and execution-no-replay explicit. Existing B from priorPhase not reused.
+Full validation impact map is in that brief; newRecord/Result/ledger and INDEX discoverability together; originalreports/evidence checkonly whileB runs; existinghistory/sources/private/game noimpact. No new accepted delivery snapshot.
+
+Recorded: 2026-11-18T00:19:30.3441270+09:00
+Before-index/session backup: D:\Projects\Project_WF\work\root-b-dispatch-edf76a0f33b3425999c1986876c42e76
+
+## Root records self-check and following-step preparation
+New partial Result read back fully; actual12JSONfields/12markdownheadings/12ledgercolumns check passed, IN_PROGRESS/Bpending retained. Unit reasons: source identity/body/image/archival distinctions from currentreport/gate; scope/privacy fromactualrequests/currentplans; validation status fromactualspawn/idle-state; next dependencies fromdetailplan. No completedStep3 or Phase claim. Not a replay of source integrity gates.
+Additional actual full reading: REQUEST_LEDGER.md1–EOF in1–48/49–EOF; unit-loop73; no-requery51; planning-vs-execution45; confirmed-items65; source-researchSKILL1–95/96–155 ModeB for upcoming official chat source inquiry; securedWindowsSKILL full. Prior R20 exact user request remains an approved layout objective; R25 changes its source anchor rather than explicitly canceling design. Current model-authored Step5未승인 boundary needs root scope reconciliation after Step3 review, before any design action; do not ask user same layout authorization again. No master/detail/report changes while B consumes frozen inputs. This is a pending root control correction, not a new user R37 or current implementation permission.
+Prepared handoffs/old-reference/step4-prepared-brief.md stored only, NOT sent/executed. Same A1 resumes only after actual recorded Step3 independent gate. Source-research modeB currentexactfile/release support, Prat/BasicChatMods/GlassForever/Chattynator fourseeds and nativepreservation matrix; no new software/game source execution. Future reads and checks are not reported performed.
+Backup before this append/index update exists in the following actual path.
+Recorded: 2026-11-18T00:22:48.8885562+09:00
+Backup: D:\Projects\Project_WF\work\root-step4-prep-765de414820a49df9839d723117f1503
+
+## Direct primary X2 data/template check while B runs
+Root actual Python JSON schema query: x2-four-variant-settings-compact.json top deliveryContract/sources,20records. Initial overbroad metadata print truncated, not counted as whole record coverage; bounded second print all20 id/tokens/consumed/duplicatecounts succeeded. Every20 equal consumed/literal and0duplicatekeys; no parser/test rerun. Target SPECIALW Default directqueries: eePanels2 ninepanels, chat1/2/3 widths401/392/401 height143/y19, allmousefalse, tooltip edge16; middle height18 and bottom19, these original types/values not4Ktargets. Bartender3 savedBars3/4 Rows3 Scale1.09, Buttons absent here; skin Onyx: Square Gloss. Actualsettings schema profiles.Default verified before queries, no invented key/path.
+Root full exact public-distribution SPECIALW chat-cache.txt1-284 read under selected-extracted/$HWNDPARENT/var/SPECIALW/WTF/Account/계정명/서버명/케릭명: WINDOW1/2/3 SHOWN1,2/3DOCKED0,4-10SHOWN0. It contains distributor roles/channels, not user's preferences. No livegame/privateWTF/MacroLibrary access.
+B reported full first-source coverage37+earlierOLD/ALPHA/LATE and matching original9dataset aggregates, still working additional28data/receipt then remainingperspectives; root does not turn progress report into final review acceptance.
+Prepared Step4 brief received a currentV42 actualchatprovider/loadchain note with backup work/step4-prep-sourcechain-*; not executed/sent. No Step3 input file changed.
+Initial recording functions call failed JS parsing before any shell ran or file changed; corrected command records this scope only.
+Recorded 2026-11-18T00:32:02.4771301+09:00
+Backup D:\Projects\Project_WF\work\root-x2-query-2e29185d2b344491ad51610ad88e5db1
+
+## Step3 accepted closure and current control integration
+Actual sameB partial/raw10 saved separately, no fabrication of fulloldinput recovery. Root current fullreader426 and exact124/131/138 establishes L1minor, no sourcebody change. Native source12literal citation checks12/12 and reviewedreport192SHA8AD0BF... matched atconsumption. Status-only report modification machine-compared against preserved reviewedbytes, allothercontent unchanged. RootacceptanceJSON stored results/old-reference/step3-root-acceptance.json; no new rawcode/runtime/CRC tests.
+Before-close backup work/root-step3-close-3c8c30655e7e4579b1c64d0dae5fbacf preserves everymutablecontrol beforeupdate; detail-before at work/root-step3-meta-cbde0965946d4d1ca939ffa61cf751e2. Step3history37lines and partialPhaseResultclosure/ledger/triage/session/map saved. New evidence notes initially landed after11row finalpipes; corrected within same closureunit, actual9columncheck passed, no request quote removed. Main11heading and Result12field gates passed.
+Scope correction from actualR20 oldledger andvisibleoriginal: native4K offline layout objective persists afterR25/R34reference corrections. Previous model-authored whole-Step5-unapproved interpretation superseded in currentmain/detail, oldhistoricalappends preserved. R20 unfinishedrow restoredcurrentphase, no inventednewR37/no repeatedapproval. MainnewStep5P4 lens does not re-adopt old2022array.
+Impact map: same Step5/GO terms rg across currentplans/currentledger/handoff; currentmain37/tree andnewtail/currentdetail5+32+251/currentledgerR20 together; reportnewstatusonly; consumers root/A1/B/nextdesign/currentResult andledger linked; originalinputs/rawdata/publictemplates checkonly, twinnewoutput only, oldoutputs/historicalrecordssources/private/game noimpact; lockedchecks11/12/9/reportstatusbody; codecallers/callees N/A. Current auditraw/history notrewritten.
+User delivery snapshot: C:/Users/USER/Documents/Codex/2026-11-17/new-chat-2/outputs/devil-ui-old-reference-comparison-2026-11-18.md, newonly; includes minorlist, no game/runtimepass. Rawsource caches and SourceArchive/MacroLibrary excluded from selectedstage. CompletedStep3 substantive sourceanalysis records selected for local topic-end preservation, no push/merge.
+Recorded 2026-11-18T00:50:01.1581198+09:00

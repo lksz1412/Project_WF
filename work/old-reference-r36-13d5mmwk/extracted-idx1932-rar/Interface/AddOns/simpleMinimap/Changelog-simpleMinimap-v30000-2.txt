@@ -1,0 +1,1211 @@
+------------------------------------------------------------------------
+r152 | kunda | 2008-10-19 20:08:58 +0000 (Sun, 19 Oct 2008) | 1 line
+Changed paths:
+   A /tags/v30000-2 (from /trunk:151)
+
+Tagging as v30000-2
+------------------------------------------------------------------------
+r151 | kunda | 2008-10-19 19:45:41 +0000 (Sun, 19 Oct 2008) | 9 lines
+Changed paths:
+   M /trunk/modules/autozoom.lua
+   M /trunk/modules/coords.lua
+   M /trunk/modules/pings.lua
+   M /trunk/simpleMinimap.lua
+   M /trunk/simpleMinimap.toc
+
+simpleMinimap:
+- fix: Tracking button is movable again
+- fix: set back original OnUpdate event (if exists) after dragging a button (important for bg/calendar button)
+- fix: update minimap after dragging a button (while moving the minimap, the buttons move too)
+- fix: button/frames dragging code is now enabled/disabled (depends on lock state 'lock minimap') to avoid ugly sideeffects at buttons
+  (hint: lock minimap after setting up simpleMinimap and all buttons should work as intended by blizz)
+- options: added order to menu
+- options: ALL modules are OFF by DEFAULT expect GUI for right-click minimap for options (and skins)
+  (means: a fresh simpleMinimap install with no savedVars will exactly look like the original blizz minimap)
+------------------------------------------------------------------------
+r149 | kunda | 2008-10-18 18:31:18 +0000 (Sat, 18 Oct 2008) | 6 lines
+Changed paths:
+   M /trunk/localizations.lua
+   M /trunk/modules/movers.lua
+   M /trunk/simpleMinimap.lua
+   M /trunk/simpleMinimap.toc
+
+simpleMinimap:
+- interface: 30000
+- added calendar to show/hide minimap elements
+  (well, this is now the same frame as the old time frame: GameTimeFrame, I renamed it
+  to calendar - the sun/moon icon was replaced by this calendar icon)
+- added AchievementWatchFrame to mover frames - thanks to lenvik (wowace forum post)
+------------------------------------------------------------------------
+r148 | nevcairiel | 2008-10-02 16:34:04 +0000 (Thu, 02 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/.pkgmeta
+
+.pkgmeta fix
+------------------------------------------------------------------------
+r147 | root | 2008-09-30 16:20:16 +0000 (Tue, 30 Sep 2008) | 1 line
+Changed paths:
+   M /trunk/.pkgmeta
+
+Hopefully fix .pkgmeta
+------------------------------------------------------------------------
+r146 | root | 2008-09-29 21:56:54 +0000 (Mon, 29 Sep 2008) | 1 line
+Changed paths:
+   M /trunk
+   A /trunk/.pkgmeta
+
+Facilitate WowAce-on-CurseForge transition
+------------------------------------------------------------------------
+r144 | root | 2008-09-29 20:59:03 +0000 (Mon, 29 Sep 2008) | 1 line
+Changed paths:
+   D /tmp/trunk/simpleMinimap
+   A /trunk (from /tmp/trunk/simpleMinimap:143)
+
+Importing old repo data under /trunk
+------------------------------------------------------------------------
+r143 | kunda | 2008-09-02 14:51:57 +0000 (Tue, 02 Sep 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap: fixed MinimapNorthTag Texture show/hide issue
+------------------------------------------------------------------------
+r140 | StingerSoft | 2008-07-25 11:10:30 +0000 (Fri, 25 Jul 2008) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+   M /tmp/trunk/simpleMinimap/modules/autozoom.lua
+   M /tmp/trunk/simpleMinimap/modules/compass.lua
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+   M /tmp/trunk/simpleMinimap/modules/movers.lua
+
+simpleMinimap:
+- update ruRU localization
+------------------------------------------------------------------------
+r139 | StingerSoft | 2008-07-25 05:09:04 +0000 (Fri, 25 Jul 2008) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+   M /tmp/trunk/simpleMinimap/modules/autozoom.lua
+   M /tmp/trunk/simpleMinimap/modules/compass.lua
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+   M /tmp/trunk/simpleMinimap/modules/gui.lua
+   M /tmp/trunk/simpleMinimap/modules/movers.lua
+   M /tmp/trunk/simpleMinimap/modules/pings.lua
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.toc
+
+simpleMinimap:
+- added ruRU localizations
+------------------------------------------------------------------------
+r138 | scorpio0920 | 2008-04-30 15:29:12 +0000 (Wed, 30 Apr 2008) | 3 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.toc
+
+simpleMinimap:
+- Update zhTW localization.
+- Added Notes-zhTW.
+------------------------------------------------------------------------
+r136 | xan | 2008-04-09 10:49:56 +0000 (Wed, 09 Apr 2008) | 3 lines
+Changed paths:
+   D /tmp/trunk/simpleMinimap/libs
+   M /tmp/trunk/simpleMinimap/simpleMinimap.toc
+
+simpleMinimap
+- bump toc to 2.4
+- fixed externals
+------------------------------------------------------------------------
+r134 | kunda | 2008-02-13 11:52:36 +0000 (Wed, 13 Feb 2008) | 6 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/bindings.xml
+   M /tmp/trunk/simpleMinimap/embeds.xml
+   M /tmp/trunk/simpleMinimap/localizations.lua
+   M /tmp/trunk/simpleMinimap/modules/autozoom.lua
+   M /tmp/trunk/simpleMinimap/modules/compass.lua
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+   M /tmp/trunk/simpleMinimap/modules/movers.lua
+   M /tmp/trunk/simpleMinimap/modules/pings.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.toc
+
+simpleMinimap:
+- fixed MinimapNorthTag texture toggle
+  (you have to manually enable/disable MinimapNorthTag texture, the compass module is no longer
+  forcing the MinimapNorthTag texture to hide if compass module is enabled)
+- UTF-8'd some files
+- deDE update
+------------------------------------------------------------------------
+r133 | kagaro | 2008-02-10 22:08:50 +0000 (Sun, 10 Feb 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+
+simpleMinimap: reverting changes out
+------------------------------------------------------------------------
+r132 | kagaro | 2008-02-10 19:23:50 +0000 (Sun, 10 Feb 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+
+simpleMinimap: fixed the drag to match the correct map shape
+------------------------------------------------------------------------
+r131 | kagaro | 2008-02-08 19:37:51 +0000 (Fri, 08 Feb 2008) | 1 line
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+
+simpleMinimap: fixed bug in minimape shape for bottom left/right top left/right
+------------------------------------------------------------------------
+r130 | avai | 2007-11-24 09:19:37 +0000 (Sat, 24 Nov 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+
+simpleMinimap:
+- update zhTW locale.
+------------------------------------------------------------------------
+r129 | speeddymon | 2007-11-14 12:19:49 +0000 (Wed, 14 Nov 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.toc
+
+simpleMinimap:
+- Change MinimapTrackingFrame to MinimapTracking and bump TOC
+------------------------------------------------------------------------
+r128 | stan | 2007-10-10 18:49:10 +0000 (Wed, 10 Oct 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+
+simpleMinimap:
+- deDE fix
+------------------------------------------------------------------------
+r127 | next96 | 2007-10-06 07:42:59 +0000 (Sat, 06 Oct 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+   M /tmp/trunk/simpleMinimap/modules/pings.lua
+
+simpleMinimap:
+- Update locale koKR
+------------------------------------------------------------------------
+r126 | stan | 2007-10-05 20:57:46 +0000 (Fri, 05 Oct 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+
+simpleMinimap:
+- deDe fix
+------------------------------------------------------------------------
+r125 | stan | 2007-10-05 19:24:40 +0000 (Fri, 05 Oct 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/pings.lua
+
+simpleMinimap:
+- fix
+------------------------------------------------------------------------
+r124 | stan | 2007-10-05 18:30:35 +0000 (Fri, 05 Oct 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/autozoom.lua
+   M /tmp/trunk/simpleMinimap/modules/compass.lua
+   M /tmp/trunk/simpleMinimap/modules/pings.lua
+
+simpleMinimap:
+- deDe fix
+------------------------------------------------------------------------
+r123 | stan | 2007-10-05 18:11:23 +0000 (Fri, 05 Oct 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/autozoom.lua
+   M /tmp/trunk/simpleMinimap/modules/compass.lua
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+   M /tmp/trunk/simpleMinimap/modules/gui.lua
+   M /tmp/trunk/simpleMinimap/modules/movers.lua
+   M /tmp/trunk/simpleMinimap/modules/pings.lua
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+
+simpleMinimap:
+- case insensitivity ftw! -.-
+------------------------------------------------------------------------
+r122 | stan | 2007-10-05 17:55:58 +0000 (Fri, 05 Oct 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+
+simpleMinimap:
+- deDe fix
+------------------------------------------------------------------------
+r121 | stan | 2007-10-05 17:49:59 +0000 (Fri, 05 Oct 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+
+simpleMinimap:
+- deDe Update
+------------------------------------------------------------------------
+r120 | stan | 2007-10-05 17:31:45 +0000 (Fri, 05 Oct 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+
+simpleMinimap:
+- deDe fix
+------------------------------------------------------------------------
+r119 | ananhaid | 2007-10-03 13:53:36 +0000 (Wed, 03 Oct 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+
+simpleMinimap:
+- zhCN & zhTW Updated
+------------------------------------------------------------------------
+r118 | speeddymon | 2007-10-03 12:37:22 +0000 (Wed, 03 Oct 2007) | 4 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+   M /tmp/trunk/simpleMinimap/modules/compass.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap:
+- Force the Blizzard Minimap North Tag to hide when the compass module is enabled
+- Added option to hide the Blizzard Minimap North Tag
+- Added selective hiding of the above option, so that when the compass module is enabled, you cannot select to show or hide the Blizzard Minimap North Tag (since that would just undo the forced hiding done by enabling the compass)
+------------------------------------------------------------------------
+r117 | gamefaq | 2007-10-02 07:36:54 +0000 (Tue, 02 Oct 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+   M /tmp/trunk/simpleMinimap/modules/pings.lua
+
+simpleMinimap:
+- deDE update
+------------------------------------------------------------------------
+r116 | ananhaid | 2007-10-02 06:47:08 +0000 (Tue, 02 Oct 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+
+simpleMinimap:
+- zhCN &zhTW Updated
+------------------------------------------------------------------------
+r115 | speeddymon | 2007-10-01 23:32:35 +0000 (Mon, 01 Oct 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap:
+- Added ability to hide voice chat button (still needs to be localized to languages other than english, please make changes and commit them directly if you have the ability to)
+------------------------------------------------------------------------
+r114 | ulic | 2007-09-25 21:22:46 +0000 (Tue, 25 Sep 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/simpleMinimap/simpleMinimap.toc
+
+simpleMinimap: Updated .toc to 20200
+------------------------------------------------------------------------
+r113 | speeddymon | 2007-09-19 03:54:48 +0000 (Wed, 19 Sep 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/pings.lua
+
+simpleMinimap:
+- Minimap pings module: added option to show who pinged in default chat frame instead of in a frame inside the minimap..
+------------------------------------------------------------------------
+r112 | mysterix | 2007-08-03 15:09:35 +0000 (Fri, 03 Aug 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/movers.lua
+
+simpleMinimap:
+- Fix for Capturebar in Movers Modul
+------------------------------------------------------------------------
+r111 | cwdg | 2007-07-21 12:21:14 +0000 (Sat, 21 Jul 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.toc
+
+simpleMinimap:
+- update zhCN local
+------------------------------------------------------------------------
+r110 | damjau | 2007-07-20 17:49:53 +0000 (Fri, 20 Jul 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+
+simpleMinimap:
+- update koKR locals
+------------------------------------------------------------------------
+r109 | gamefaq | 2007-06-26 22:11:40 +0000 (Tue, 26 Jun 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+
+simpleMinimap:
+- deDE Update
+------------------------------------------------------------------------
+r108 | tsigo | 2007-06-26 02:33:17 +0000 (Tue, 26 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap: Fix expandedFrame.
+------------------------------------------------------------------------
+r107 | durcyn | 2007-06-25 16:11:02 +0000 (Mon, 25 Jun 2007) | 1 line
+Changed paths:
+   A /tmp/trunk/simpleMinimap/embeds.xml
+   M /tmp/trunk/simpleMinimap/simpleMinimap.toc
+
+simpleMinimap: use embeds.xml
+------------------------------------------------------------------------
+r106 | rabbit | 2007-06-25 15:11:17 +0000 (Mon, 25 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/compass.lua
+
+simpleMinimap: compass: Bugfix.
+------------------------------------------------------------------------
+r105 | rabbit | 2007-06-25 14:10:31 +0000 (Mon, 25 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/movers.lua
+
+simpleMinimap: movers: Bugfix.
+------------------------------------------------------------------------
+r104 | rabbit | 2007-06-25 12:46:25 +0000 (Mon, 25 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/compass.lua
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+   M /tmp/trunk/simpleMinimap/modules/pings.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap: Cleanup.
+------------------------------------------------------------------------
+r103 | rabbit | 2007-06-25 02:28:47 +0000 (Mon, 25 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+   M /tmp/trunk/simpleMinimap/modules/autozoom.lua
+   M /tmp/trunk/simpleMinimap/modules/compass.lua
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+   M /tmp/trunk/simpleMinimap/modules/gui.lua
+   M /tmp/trunk/simpleMinimap/modules/movers.lua
+   M /tmp/trunk/simpleMinimap/modules/pings.lua
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap: More cleanup.
+------------------------------------------------------------------------
+r102 | rabbit | 2007-06-25 00:26:17 +0000 (Mon, 25 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+   M /tmp/trunk/simpleMinimap/modules/autozoom.lua
+   M /tmp/trunk/simpleMinimap/modules/compass.lua
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+   M /tmp/trunk/simpleMinimap/modules/gui.lua
+   M /tmp/trunk/simpleMinimap/modules/movers.lua
+   M /tmp/trunk/simpleMinimap/modules/pings.lua
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap: Some cleanup.
+------------------------------------------------------------------------
+r101 | durcyn | 2007-06-19 00:25:15 +0000 (Tue, 19 Jun 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/simpleMinimap/simpleMinimap.toc
+
+simpleMinimap: bump toc to 20100
+------------------------------------------------------------------------
+r100 | gameyuan | 2007-06-02 18:35:46 +0000 (Sat, 02 Jun 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/autozoom.lua
+   M /tmp/trunk/simpleMinimap/modules/compass.lua
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+   M /tmp/trunk/simpleMinimap/modules/gui.lua
+   M /tmp/trunk/simpleMinimap/modules/movers.lua
+   M /tmp/trunk/simpleMinimap/modules/pings.lua
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+
+simpleMinimap:
+- Fix modules zhTW Translations
+------------------------------------------------------------------------
+r99 | gameyuan | 2007-06-02 17:32:00 +0000 (Sat, 02 Jun 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+
+simpleMinimap:
+- Add zhTW Translations
+------------------------------------------------------------------------
+r98 | solor | 2007-05-28 21:00:35 +0000 (Mon, 28 May 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.toc
+
+simpleMinimap:
+- toc 20100, possible fix for stacking of frames
+------------------------------------------------------------------------
+r97 | rabbit | 2007-04-23 23:11:00 +0000 (Mon, 23 Apr 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+
+simpleMinimap: skins: Killed more AMC calls, thanks nymbia.
+------------------------------------------------------------------------
+r96 | rabbit | 2007-04-23 22:56:43 +0000 (Mon, 23 Apr 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/autozoom.lua
+   M /tmp/trunk/simpleMinimap/modules/compass.lua
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+   M /tmp/trunk/simpleMinimap/modules/gui.lua
+   M /tmp/trunk/simpleMinimap/modules/movers.lua
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap: Reduced the number of calls into AceModuleCore, made some option tables into passing tables and had to rearrange it a bit to not go insane while trying to read the code.
+------------------------------------------------------------------------
+r95 | next96 | 2007-03-30 17:50:15 +0000 (Fri, 30 Mar 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+
+simpleMinimap:
+- Update locale koKR
+------------------------------------------------------------------------
+r94 | arjuna | 2007-03-22 23:12:13 +0000 (Thu, 22 Mar 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap:
+- removed debug lines
+------------------------------------------------------------------------
+r93 | arjuna | 2007-03-22 23:01:31 +0000 (Thu, 22 Mar 2007) | 3 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.toc
+
+simpleMinimap:
+- added OnProfileEnable
+- updated TOC for next release
+------------------------------------------------------------------------
+r92 | arjuna | 2007-03-03 21:06:00 +0000 (Sat, 03 Mar 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+   M /tmp/trunk/simpleMinimap/modules/gui.lua
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap:
+- zhCN updates (Thanks again Li Robert)
+------------------------------------------------------------------------
+r91 | arjuna | 2007-03-01 12:09:11 +0000 (Thu, 01 Mar 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap:
+- ClampToScreen added to Minimap
+------------------------------------------------------------------------
+r90 | arjuna | 2007-02-27 01:31:28 +0000 (Tue, 27 Feb 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap:
+- default minimap position issue fixed
+------------------------------------------------------------------------
+r89 | arjuna | 2007-02-25 21:14:07 +0000 (Sun, 25 Feb 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap:
+- apsect ratio change adjustment, take 2 (note: your minimap WILL move when you update to this version, however it should actually stay in place after repositioning it).
+------------------------------------------------------------------------
+r88 | arjuna | 2007-02-25 17:38:05 +0000 (Sun, 25 Feb 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap:
+- code to compensate for changing aspect ratios
+------------------------------------------------------------------------
+r87 | arjuna | 2007-02-21 05:05:19 +0000 (Wed, 21 Feb 2007) | 4 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/compass.lua
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+   M /tmp/trunk/simpleMinimap/modules/gui.lua
+   M /tmp/trunk/simpleMinimap/modules/movers.lua
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+
+simpleMinimap:
+- added 'loaded' variable to several modules.
+- 'coords' module uses a local var for the format string (no table look ups every update)
+- re-added 'separator' option to 'coords'
+------------------------------------------------------------------------
+r86 | arjuna | 2007-02-14 00:12:45 +0000 (Wed, 14 Feb 2007) | 4 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+
+simpleMinimap:
+- update zhCN translations (thanks again Li Robert)
+- removed 'separator' option in coords after much soul-searching.
+
+------------------------------------------------------------------------
+r85 | arjuna | 2007-02-11 14:31:05 +0000 (Sun, 11 Feb 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.toc
+
+simpleMinimap:
+- update TOC (new release)
+------------------------------------------------------------------------
+r84 | arjuna | 2007-02-10 21:34:53 +0000 (Sat, 10 Feb 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+
+simpleMinimap:
+- added 'separator' option to coords
+------------------------------------------------------------------------
+r83 | shiftos | 2007-02-10 21:11:32 +0000 (Sat, 10 Feb 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+   M /tmp/trunk/simpleMinimap/modules/autozoom.lua
+   M /tmp/trunk/simpleMinimap/modules/compass.lua
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+   M /tmp/trunk/simpleMinimap/modules/gui.lua
+   M /tmp/trunk/simpleMinimap/modules/movers.lua
+   M /tmp/trunk/simpleMinimap/modules/pings.lua
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.toc
+
+simpleMinimap: added spanish (esES) translation
+------------------------------------------------------------------------
+r82 | arjuna | 2007-02-10 18:40:11 +0000 (Sat, 10 Feb 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+
+simpleMinimap:
+- added 'precision' option for coords
+------------------------------------------------------------------------
+r81 | arjuna | 2007-02-06 02:31:28 +0000 (Tue, 06 Feb 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+   M /tmp/trunk/simpleMinimap/modules/autozoom.lua
+   M /tmp/trunk/simpleMinimap/modules/compass.lua
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+   M /tmp/trunk/simpleMinimap/modules/gui.lua
+   M /tmp/trunk/simpleMinimap/modules/movers.lua
+   M /tmp/trunk/simpleMinimap/modules/pings.lua
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+
+simpleMinimap:
+- zhCN translations (thanks Li Robert)
+------------------------------------------------------------------------
+r80 | fenlis | 2007-02-05 11:37:08 +0000 (Mon, 05 Feb 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+
+simpleMinimap:
+- Updated localizations koKR
+------------------------------------------------------------------------
+r79 | next96 | 2007-02-05 08:35:31 +0000 (Mon, 05 Feb 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+
+simpleMinimap:
+- Update locale koKR
+------------------------------------------------------------------------
+r78 | next96 | 2007-02-05 07:44:55 +0000 (Mon, 05 Feb 2007) | 3 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/compass.lua
+
+simpleMinimap:
+- compass.lua 
+- Update locale koKR
+------------------------------------------------------------------------
+r77 | arjuna | 2007-02-04 15:57:42 +0000 (Sun, 04 Feb 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap:
+- reorder options
+------------------------------------------------------------------------
+r76 | arjuna | 2007-02-04 13:48:46 +0000 (Sun, 04 Feb 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap:
+- renamed 'spacing' to 'radius'
+------------------------------------------------------------------------
+r75 | arjuna | 2007-02-03 22:35:30 +0000 (Sat, 03 Feb 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap:
+- added button spacing option
+------------------------------------------------------------------------
+r74 | kergoth | 2007-01-30 00:14:59 +0000 (Tue, 30 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/simpleMinimap/simpleMinimap.toc
+
+.Line ending fixups in .toc files (they werent in my .subversion/config autoprops)
+------------------------------------------------------------------------
+r73 | kergoth | 2007-01-29 22:34:23 +0000 (Mon, 29 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/gui.lua
+   M /tmp/trunk/simpleMinimap/modules/pings.lua
+
+.Fixing up some screwed up line ending fixups.. sorry folks, my fixup script incorrectly fixed the files with inconsistent line endings.  This is the first pass of fixups for those.
+------------------------------------------------------------------------
+r72 | arjuna | 2007-01-27 22:11:09 +0000 (Sat, 27 Jan 2007) | 3 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.toc
+
+simpleMinimap:
+- compatibility with FuBar and Cartographer "GetMinimapShape()"
+- updated and changed the button math to be in line with Cart/FB (you may need to reset your minimap buttons)
+------------------------------------------------------------------------
+r71 | arjuna | 2007-01-26 05:26:27 +0000 (Fri, 26 Jan 2007) | 3 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap:
+- 'this' error in button hide
+- SMM will only move the minimap if it needs to
+------------------------------------------------------------------------
+r70 | ckknight | 2007-01-25 21:28:02 +0000 (Thu, 25 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+
+simpleMinimap - fix the GetMinimapShape for corners. the corner specified is the rounded one, not the opposite of it.
+------------------------------------------------------------------------
+r69 | kagaro | 2007-01-25 21:11:41 +0000 (Thu, 25 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+
+simpleMinimap: Added Cartographer support for square minimaps
+------------------------------------------------------------------------
+r68 | kergoth | 2007-01-23 23:43:23 +0000 (Tue, 23 Jan 2007) | 1 line
+Changed paths:
+   M /tmp/trunk/simpleMinimap/bindings.xml
+   M /tmp/trunk/simpleMinimap/localizations.lua
+   M /tmp/trunk/simpleMinimap/modules/autozoom.lua
+   M /tmp/trunk/simpleMinimap/modules/compass.lua
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+   M /tmp/trunk/simpleMinimap/modules/gui.lua
+   M /tmp/trunk/simpleMinimap/modules/movers.lua
+   M /tmp/trunk/simpleMinimap/modules/pings.lua
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+.Line ending fixups part 2: trunk/ (script ended prematurely).
+------------------------------------------------------------------------
+r67 | arjuna | 2007-01-20 23:36:17 +0000 (Sat, 20 Jan 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/simpleMinimap.toc
+
+simpleMinimap:
+- TOC update
+------------------------------------------------------------------------
+r66 | arjuna | 2007-01-20 13:49:05 +0000 (Sat, 20 Jan 2007) | 3 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/movers.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap:
+- remove 'hide' function in movers.lua
+- remove lockdown from minimap buttons
+------------------------------------------------------------------------
+r65 | arjuna | 2007-01-14 15:06:30 +0000 (Sun, 14 Jan 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap:
+- removed some button resizing stuff that doesn't work
+------------------------------------------------------------------------
+r64 | arjuna | 2007-01-14 14:01:14 +0000 (Sun, 14 Jan 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+
+simpleMinimap:
+- module active typo in skins module
+------------------------------------------------------------------------
+r63 | arjuna | 2007-01-13 22:57:12 +0000 (Sat, 13 Jan 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+
+simpleMinimap:
+- more tweaks to coords module instance hide
+------------------------------------------------------------------------
+r62 | arjuna | 2007-01-13 07:00:08 +0000 (Sat, 13 Jan 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+
+simpleMinimap:
+- hiding coords in instances should work better now
+------------------------------------------------------------------------
+r61 | arjuna | 2007-01-13 02:54:27 +0000 (Sat, 13 Jan 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap:
+- issue with expanded minimap
+------------------------------------------------------------------------
+r60 | arjuna | 2007-01-13 01:16:54 +0000 (Sat, 13 Jan 2007) | 4 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/movers.lua
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.toc
+
+simpleMinimap:
+- quadrant math for dLx maps (thanks dwex)
+- update TOC
+- other goodies
+------------------------------------------------------------------------
+r59 | arjuna | 2007-01-12 04:39:22 +0000 (Fri, 12 Jan 2007) | 4 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/autozoom.lua
+   M /tmp/trunk/simpleMinimap/modules/compass.lua
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+   M /tmp/trunk/simpleMinimap/modules/gui.lua
+   M /tmp/trunk/simpleMinimap/modules/movers.lua
+   M /tmp/trunk/simpleMinimap/modules/pings.lua
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.toc
+
+simpleMinimap:
+- enable/disable works (better)
+- skins button math overwrites SMM core's (bypasses redundant function calls)
+- odds and ends
+------------------------------------------------------------------------
+r58 | arjuna | 2007-01-11 04:21:48 +0000 (Thu, 11 Jan 2007) | 3 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.toc
+
+simpleMinimap:
+- SMM no longer checks for 'skins' module, module overwrites button math function
+- AceOO dep was lost somewhere, added that back in
+------------------------------------------------------------------------
+r57 | solor | 2007-01-10 10:34:53 +0000 (Wed, 10 Jan 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+
+simpleMinimap:
+- UTF8 for localization
+------------------------------------------------------------------------
+r56 | arjuna | 2007-01-10 02:55:18 +0000 (Wed, 10 Jan 2007) | 3 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+   M /tmp/trunk/simpleMinimap/modules/compass.lua
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.toc
+
+simpleMinimap:
+- various leftovers from the code rewrite
+- disabled button resize until i figure it out
+------------------------------------------------------------------------
+r55 | fenlis | 2007-01-09 07:05:46 +0000 (Tue, 09 Jan 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+   M /tmp/trunk/simpleMinimap/modules/compass.lua
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+
+simpleMinimap:
+- Updated localization koKR
+------------------------------------------------------------------------
+r54 | gamefaq | 2007-01-09 05:28:28 +0000 (Tue, 09 Jan 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localizations.lua
+
+simpleMinimap:
+- Changed localizations.lua Format to real UTF-8
+------------------------------------------------------------------------
+r53 | arjuna | 2007-01-09 04:13:35 +0000 (Tue, 09 Jan 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap:
+- typo in the minimap dragger
+------------------------------------------------------------------------
+r52 | arjuna | 2007-01-09 04:08:21 +0000 (Tue, 09 Jan 2007) | 4 lines
+Changed paths:
+   A /tmp/trunk/simpleMinimap/localizations.lua
+   M /tmp/trunk/simpleMinimap/modules/compass.lua
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+   M /tmp/trunk/simpleMinimap/modules/movers.lua
+   M /tmp/trunk/simpleMinimap/modules/pings.lua
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.toc
+
+simpleMinimap:
+- HUGE rewrite on internals.
+- more liberal usage of localized variables
+- Blizz UI methods are no longer locked by default
+------------------------------------------------------------------------
+r51 | arjuna | 2007-01-05 09:01:04 +0000 (Fri, 05 Jan 2007) | 2 lines
+Changed paths:
+   A /tmp/trunk/simpleMinimap/skins/smmSquareMask.blp
+
+simpleMinimap:
+- new common square mask texture
+------------------------------------------------------------------------
+r50 | arjuna | 2007-01-05 08:59:52 +0000 (Fri, 05 Jan 2007) | 3 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+   D /tmp/trunk/simpleMinimap/skins/SquareMinimapMask.blp
+   D /tmp/trunk/simpleMinimap/skins/smmSkinMask.blp
+   D /tmp/trunk/simpleMinimap/skins/thinSquare2Mask.blp
+
+simpleMinimap:
+- consolidated minimap mask textures
+- coords frame can hide in instances (untested)
+------------------------------------------------------------------------
+r49 | arjuna | 2007-01-02 05:42:12 +0000 (Tue, 02 Jan 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/compass.lua
+
+simpleMinimap:
+- remove compass reset option
+------------------------------------------------------------------------
+r48 | arjuna | 2007-01-01 18:31:20 +0000 (Mon, 01 Jan 2007) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/simpleMinimap.toc
+
+simpleMinimap:
+- minor TOC update
+------------------------------------------------------------------------
+r47 | arjuna | 2006-12-31 19:44:17 +0000 (Sun, 31 Dec 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap:
+- 'skins' module check fix
+------------------------------------------------------------------------
+r46 | arjuna | 2006-12-28 06:02:19 +0000 (Thu, 28 Dec 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/autozoom.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.toc
+
+simpleMinimap:
+- fix in autozoom, was causing endless scheduled event
+------------------------------------------------------------------------
+r45 | gamefaq | 2006-12-27 18:40:30 +0000 (Wed, 27 Dec 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap:
+- Converted Format back to UTF-8
+------------------------------------------------------------------------
+r44 | arjuna | 2006-12-27 07:43:38 +0000 (Wed, 27 Dec 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/compass.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap:
+- fix for mouse zoom
+------------------------------------------------------------------------
+r43 | arjuna | 2006-12-25 21:04:44 +0000 (Mon, 25 Dec 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap:
+- third time is the charm ;)
+------------------------------------------------------------------------
+r42 | arjuna | 2006-12-25 20:57:00 +0000 (Mon, 25 Dec 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap:
+- cruft from version conflict
+------------------------------------------------------------------------
+r41 | arjuna | 2006-12-25 20:51:31 +0000 (Mon, 25 Dec 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/simpleMinimap.toc
+
+simpleMinimap:
+- version conflict resolution
+------------------------------------------------------------------------
+r40 | arjuna | 2006-12-25 20:50:07 +0000 (Mon, 25 Dec 2006) | 2 lines
+Changed paths:
+   D /tmp/trunk/simpleMinimap/localization.lua
+   M /tmp/trunk/simpleMinimap/modules/autozoom.lua
+   M /tmp/trunk/simpleMinimap/modules/compass.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap:
+- autozoom now hooks SetZoom
+------------------------------------------------------------------------
+r39 | gamefaq | 2006-12-25 20:25:27 +0000 (Mon, 25 Dec 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localization.lua
+
+simpleMinimap:
+- small deDE tweak
+------------------------------------------------------------------------
+r38 | gamefaq | 2006-12-25 20:11:44 +0000 (Mon, 25 Dec 2006) | 3 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localization.lua
+   M /tmp/trunk/simpleMinimap/modules/autozoom.lua
+   M /tmp/trunk/simpleMinimap/modules/compass.lua
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+   M /tmp/trunk/simpleMinimap/modules/gui.lua
+   M /tmp/trunk/simpleMinimap/modules/movers.lua
+   M /tmp/trunk/simpleMinimap/modules/pings.lua
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.toc
+
+simpleMinimap:
+- Added deDE Translation
+- Fixed Error in English Base Translation
+------------------------------------------------------------------------
+r37 | arjuna | 2006-12-24 20:57:29 +0000 (Sun, 24 Dec 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/autozoom.lua
+   M /tmp/trunk/simpleMinimap/modules/compass.lua
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+   M /tmp/trunk/simpleMinimap/modules/gui.lua
+   M /tmp/trunk/simpleMinimap/modules/movers.lua
+   M /tmp/trunk/simpleMinimap/modules/pings.lua
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap:
+- modules are now local, explicit library declarations
+------------------------------------------------------------------------
+r35 | arjuna | 2006-12-23 18:29:01 +0000 (Sat, 23 Dec 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/compass.lua
+
+simpleMinimap:
+- changes to compass module
+------------------------------------------------------------------------
+r34 | arjuna | 2006-12-23 06:52:22 +0000 (Sat, 23 Dec 2006) | 2 lines
+Changed paths:
+   A /tmp/trunk/simpleMinimap/modules/compass.lua
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+   M /tmp/trunk/simpleMinimap/modules/gui.lua
+   M /tmp/trunk/simpleMinimap/modules/movers.lua
+   M /tmp/trunk/simpleMinimap/modules/pings.lua
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.toc
+
+simpleMinimap:
+- new compass module
+------------------------------------------------------------------------
+r33 | fenlis | 2006-12-22 11:48:54 +0000 (Fri, 22 Dec 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/movers.lua
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+
+simpleMinimap:
+- Updated locales koKR
+------------------------------------------------------------------------
+r32 | arjuna | 2006-12-22 06:17:53 +0000 (Fri, 22 Dec 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/movers.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap:
+- fixed smmCaptureMover (hopefully)
+------------------------------------------------------------------------
+r31 | arjuna | 2006-12-21 08:04:06 +0000 (Thu, 21 Dec 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/pings.lua
+
+simpleMinimap:
+- bad frame name in pings.lua
+------------------------------------------------------------------------
+r30 | arjuna | 2006-12-21 06:25:07 +0000 (Thu, 21 Dec 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+   M /tmp/trunk/simpleMinimap/modules/movers.lua
+
+simpleMinimap:
+- nil issue with pings.lua
+------------------------------------------------------------------------
+r29 | arjuna | 2006-12-20 06:15:42 +0000 (Wed, 20 Dec 2006) | 3 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/bindings.xml
+   M /tmp/trunk/simpleMinimap/localization.lua
+   M /tmp/trunk/simpleMinimap/modules/pings.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap:
+- added binding to expand minimap
+- fixed some leftovers
+------------------------------------------------------------------------
+r28 | arjuna | 2006-12-20 04:52:20 +0000 (Wed, 20 Dec 2006) | 4 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/modules/autozoom.lua
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+   D /tmp/trunk/simpleMinimap/modules/coords.xml
+   M /tmp/trunk/simpleMinimap/modules/movers.lua
+   D /tmp/trunk/simpleMinimap/modules/movers.xml
+   M /tmp/trunk/simpleMinimap/modules/pings.lua
+   D /tmp/trunk/simpleMinimap/modules/pings.xml
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.toc
+   D /tmp/trunk/simpleMinimap/simpleMinimap.xml
+   A /tmp/trunk/simpleMinimap/skins/thinSquare2.blp
+   A /tmp/trunk/simpleMinimap/skins/thinSquare2Mask.blp
+
+simpleMinimap:
+- removed all XML files
+- added new thin square (light) skins.lua
+- fixed an issue with disabling modules
+------------------------------------------------------------------------
+r26 | arjuna | 2006-12-17 21:11:53 +0000 (Sun, 17 Dec 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/simpleMinimap.toc
+
+simpleMinimap:
+- update version number (release).
+------------------------------------------------------------------------
+r25 | arjuna | 2006-12-17 20:59:03 +0000 (Sun, 17 Dec 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/skins/smmSkin.blp
+   M /tmp/trunk/simpleMinimap/skins/smmSkinMask.blp
+
+simpleMinimap:
+- clean up new skin a bit more.
+------------------------------------------------------------------------
+r24 | arjuna | 2006-12-16 19:58:09 +0000 (Sat, 16 Dec 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/skins/smmSkin.blp
+   M /tmp/trunk/simpleMinimap/skins/smmSkinMask.blp
+
+simpleMinimap:
+- clean up of 'thin square' skin
+------------------------------------------------------------------------
+r23 | fenlis | 2006-12-16 11:08:52 +0000 (Sat, 16 Dec 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localization.lua
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+
+simpleMinimap:
+- update locale 'koKR'
+------------------------------------------------------------------------
+r22 | arjuna | 2006-12-16 06:52:09 +0000 (Sat, 16 Dec 2006) | 3 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localization.lua
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+   A /tmp/trunk/simpleMinimap/skins/smmSkin.blp
+   A /tmp/trunk/simpleMinimap/skins/smmSkinMask.blp
+
+simpleMinimap:
+- added new skin (homemade)
+- minor other changes
+------------------------------------------------------------------------
+r21 | arjuna | 2006-12-06 09:39:21 +0000 (Wed, 06 Dec 2006) | 3 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localization.lua
+   M /tmp/trunk/simpleMinimap/modules/autozoom.lua
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+   M /tmp/trunk/simpleMinimap/modules/gui.lua
+   M /tmp/trunk/simpleMinimap/modules/movers.lua
+   M /tmp/trunk/simpleMinimap/modules/pings.lua
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.toc
+
+simpleMinimap:
+- updated TOC
+- added map button frame
+------------------------------------------------------------------------
+r20 | fenlis | 2006-12-05 10:49:50 +0000 (Tue, 05 Dec 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/localization.lua
+   M /tmp/trunk/simpleMinimap/modules/autozoom.lua
+   M /tmp/trunk/simpleMinimap/modules/coords.lua
+   M /tmp/trunk/simpleMinimap/modules/gui.lua
+   M /tmp/trunk/simpleMinimap/modules/movers.lua
+   M /tmp/trunk/simpleMinimap/modules/pings.lua
+   M /tmp/trunk/simpleMinimap/modules/skins.lua
+
+simpleMinimap:
+- update locals koKR
+------------------------------------------------------------------------
+r19 | arjuna | 2006-12-03 23:21:06 +0000 (Sun, 03 Dec 2006) | 3 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap:
+- updated FOR loops to use PAIRS calls
+- removed unused settings
+------------------------------------------------------------------------
+r18 | arjuna | 2006-12-03 01:50:08 +0000 (Sun, 03 Dec 2006) | 2 lines
+Changed paths:
+   A /tmp/trunk/simpleMinimap/skins/dLxTopRight.blp
+
+simpleMinimap:
+- replaced missing top-right texture
+------------------------------------------------------------------------
+r17 | arjuna | 2006-12-02 17:07:01 +0000 (Sat, 02 Dec 2006) | 3 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap
+   M /tmp/trunk/simpleMinimap/localization.lua
+   M /tmp/trunk/simpleMinimap/simpleMinimap.lua
+
+simpleMinimap:
+- fixed DewdropLib path
+- fixed small issue with options ordering
+------------------------------------------------------------------------
+r16 | arjuna | 2006-12-02 09:37:29 +0000 (Sat, 02 Dec 2006) | 2 lines
+Changed paths:
+   M /tmp/trunk/simpleMinimap
+   D /tmp/trunk/simpleMinimap/libs/AceAddon-2.0
+   D /tmp/trunk/simpleMinimap/libs/AceConsole-2.0
+   D /tmp/trunk/simpleMinimap/libs/AceDB-2.0
+   D /tmp/trunk/simpleMinimap/libs/AceEvent-2.0
+   D /tmp/trunk/simpleMinimap/libs/AceHook-2.1
+   D /tmp/trunk/simpleMinimap/libs/AceLibrary
+   D /tmp/trunk/simpleMinimap/libs/AceLocale-2.2
+   D /tmp/trunk/simpleMinimap/libs/AceModuleCore-2.0
+   D /tmp/trunk/simpleMinimap/libs/AceOO-2.0
+   D /tmp/trunk/simpleMinimap/libs/Dewdrop-2.0
+
+simpleMinimap:
+- removed externals
+------------------------------------------------------------------------
+r15 | arjuna | 2006-12-02 09:23:35 +0000 (Sat, 02 Dec 2006) | 2 lines
+Changed paths:
+   A /tmp/trunk/simpleMinimap
+   A /tmp/trunk/simpleMinimap/bindings.xml
+   A /tmp/trunk/simpleMinimap/libs
+   A /tmp/trunk/simpleMinimap/libs/AceAddon-2.0
+   A /tmp/trunk/simpleMinimap/libs/AceAddon-2.0/AceAddon-2.0.lua
+   A /tmp/trunk/simpleMinimap/libs/AceConsole-2.0
+   A /tmp/trunk/simpleMinimap/libs/AceConsole-2.0/AceConsole-2.0.lua
+   A /tmp/trunk/simpleMinimap/libs/AceDB-2.0
+   A /tmp/trunk/simpleMinimap/libs/AceDB-2.0/AceDB-2.0.lua
+   A /tmp/trunk/simpleMinimap/libs/AceEvent-2.0
+   A /tmp/trunk/simpleMinimap/libs/AceEvent-2.0/AceEvent-2.0.lua
+   A /tmp/trunk/simpleMinimap/libs/AceHook-2.1
+   A /tmp/trunk/simpleMinimap/libs/AceHook-2.1/AceHook-2.1.lua
+   A /tmp/trunk/simpleMinimap/libs/AceLibrary
+   A /tmp/trunk/simpleMinimap/libs/AceLibrary/AceLibrary.lua
+   A /tmp/trunk/simpleMinimap/libs/AceLocale-2.2
+   A /tmp/trunk/simpleMinimap/libs/AceLocale-2.2/AceLocale-2.2.lua
+   A /tmp/trunk/simpleMinimap/libs/AceModuleCore-2.0
+   A /tmp/trunk/simpleMinimap/libs/AceModuleCore-2.0/AceModuleCore-2.0.lua
+   A /tmp/trunk/simpleMinimap/libs/AceOO-2.0
+   A /tmp/trunk/simpleMinimap/libs/AceOO-2.0/AceOO-2.0.lua
+   A /tmp/trunk/simpleMinimap/libs/Dewdrop-2.0
+   A /tmp/trunk/simpleMinimap/libs/Dewdrop-2.0/Dewdrop-2.0.lua
+   A /tmp/trunk/simpleMinimap/localization.lua
+   A /tmp/trunk/simpleMinimap/modules
+   A /tmp/trunk/simpleMinimap/modules/autozoom.lua
+   A /tmp/trunk/simpleMinimap/modules/coords.lua
+   A /tmp/trunk/simpleMinimap/modules/coords.xml
+   A /tmp/trunk/simpleMinimap/modules/gui.lua
+   A /tmp/trunk/simpleMinimap/modules/movers.lua
+   A /tmp/trunk/simpleMinimap/modules/movers.xml
+   A /tmp/trunk/simpleMinimap/modules/pings.lua
+   A /tmp/trunk/simpleMinimap/modules/pings.xml
+   A /tmp/trunk/simpleMinimap/modules/skins.lua
+   A /tmp/trunk/simpleMinimap/simpleMinimap.lua
+   A /tmp/trunk/simpleMinimap/simpleMinimap.toc
+   A /tmp/trunk/simpleMinimap/simpleMinimap.xml
+   A /tmp/trunk/simpleMinimap/skins
+   A /tmp/trunk/simpleMinimap/skins/SquareMinimap.blp
+   A /tmp/trunk/simpleMinimap/skins/SquareMinimapMask.blp
+   A /tmp/trunk/simpleMinimap/skins/dLxBottomLeft.blp
+   A /tmp/trunk/simpleMinimap/skins/dLxBottomLeftMask.blp
+   A /tmp/trunk/simpleMinimap/skins/dLxBottomRight.blp
+   A /tmp/trunk/simpleMinimap/skins/dLxBottomRightMask.blp
+   A /tmp/trunk/simpleMinimap/skins/dLxTopLeft.blp
+   A /tmp/trunk/simpleMinimap/skins/dLxTopLeftMask.blp
+   A /tmp/trunk/simpleMinimap/skins/dLxTopRightMask.blp
+
+simpleMinimap: initial commit
+- modify the minimap in many ways
+------------------------------------------------------------------------

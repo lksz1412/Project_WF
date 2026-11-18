@@ -1,0 +1,18 @@
+{
+  "exactCFfileURL": "https://www.curseforge.com/wow/addons/chattynator/files/9648836",
+  "fileID": 9648836,
+  "versionLiteral": "237",
+  "filenameLiteral": "Chattynator-237.zip",
+  "dateLiteral": "Nov 16, 2026",
+  "flavorLiteral": "Forever",
+  "gameVersionLiteral": "1.60.1",
+  "metadataBasis": "official web exactfile rendered page turn65view1/2/0 respectively",
+  "publisherDescriptionSnapshot": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\remaining-main.web.txt",
+  "descriptionSourceLines": [
+    197,
+    232
+  ],
+  "repo": "https://github.com/TheMouseNest/Chattynator",
+  "CFIWRmain": "403 retained",
+  "sourceAPIReceipts": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\clean-chat-acquisition\\chatty-api-receipts.json"
+}

@@ -1,0 +1,173 @@
+{
+  "state": "FILES_FROZEN",
+  "sourceManifest": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\asset-inventory.json",
+  "sourceManifestSHA256": "5BE22AA9BF51754904C67103E8B922B7E5AEFA8DECC48A08D057DEA9B70FD1A4",
+  "READY": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\READY.json",
+  "READY_SHA256": "7866D8C711DC72A2B564066D8A5D65AA0046BD9F76FBBDC98BC18999EEA1DDE6",
+  "files": [
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\asset-inventory.json",
+      "bytes": 104099,
+      "SHA256": "5BE22AA9BF51754904C67103E8B922B7E5AEFA8DECC48A08D057DEA9B70FD1A4"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\original-fonts\\root3-K_Damage.TTF",
+      "bytes": 566392,
+      "SHA256": "E07805474988474E30AD4DCBCCD690627EB960AD5C5581B95C07EA08E4C97896"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\original-fonts\\root5-2002.ttf",
+      "bytes": 654512,
+      "SHA256": "49DF5AB286B7090AF765626115578F4630FCFC240784E45344D9367A0697DBB5"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\original-fonts\\root5-2002b.ttf",
+      "bytes": 654512,
+      "SHA256": "49DF5AB286B7090AF765626115578F4630FCFC240784E45344D9367A0697DBB5"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\original-fonts\\root5-K_Damage.TTF",
+      "bytes": 566392,
+      "SHA256": "E07805474988474E30AD4DCBCCD690627EB960AD5C5581B95C07EA08E4C97896"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\00E8084E83BF25B941464E2619B59E993B6AC7AE0BD8A6F37B12872E686DED6D.png",
+      "bytes": 2119,
+      "SHA256": "E1E72864C3AD1B49621BBBFE0EE0FA39FDC716EAA0999872FBE3F60DCEAE26F3"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\045CE188243A618161EB6351ECA50F2F0B7562A944C16D59EB68E0A2DFE248CA.png",
+      "bytes": 41878,
+      "SHA256": "1ED250C74D5957659C06F41EB4E8D2F0CD66A9D5C0BA5D1F2F9F9A3AD91E57D1"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\073284129E9F8D2AD16998140A1AC6DB1A475636025AEFF476FC3DA359CA8744.png",
+      "bytes": 38566,
+      "SHA256": "6C5E47DB83789B6006A74EFA5F06FF981D7650A188D150BD9CE7415E936F0E18"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\0CE612BDB39399D2676B14FDD61CCADE9FA8A1904339D88F0969259C6E88F2FE.png",
+      "bytes": 1445,
+      "SHA256": "F93420F73DEF8E632E2DC7FAC04590BA7DE5D2527123F328B6190507BC860BD2"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\150DEC18668CCCB2EF33B37D1C8A9468FDE7478F42747CEFFC037037C215D86B.png",
+      "bytes": 197,
+      "SHA256": "7DE27178D3ACB5492372FB953A8E31B9CBA329ED48CD75AF581EE0F0A2D95E8F"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\49CA0BC8E0CBDD6ABED71748E3B686032F588C5E2829E6B844C9EC1F8B1A3AA9.png",
+      "bytes": 210,
+      "SHA256": "31646D6E2CBB44C51F625BFE5DB7FFB10D39DBD5126169F9F7139A5191EBF8C0"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\50E76AB77BAE7DEB79272C749BBCF538719D46C0B3501D78FAB259566D2AE22F.png",
+      "bytes": 181,
+      "SHA256": "10AC492948521F143EF60E8EE58190A4EA80FF9E973345B4236226C24AF6813D"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\530258343A9F43156C649D43B8D4D04159CC179919B505187E7B53EB97F893CF.png",
+      "bytes": 350,
+      "SHA256": "EEAB1B27F5A9B76EA5B68931C75792B8EB00B5CD2C858F43597486CAD98C7927"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\549B0D63829FA160BB9B7CFDDE619107FC39C9A877AD28F173576F55C907AC79.png",
+      "bytes": 27039,
+      "SHA256": "EF9803EC0A1DEF5B477992C4962F8C471695724E08FC7D4D5E4992E71C5E8BC7"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\54FD36E381A8A59C08313A7A61663F07E8E324CE4CBEA3E2AA6C572D3D6A0C20.png",
+      "bytes": 761,
+      "SHA256": "ABEF299EEA927EF1E4A501336C9CDCC2E24CA1FFAA1FAD7CB81394F41E387E60"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\6205864AB3317B4D18DAC301C3BF1272E8B451F6F94C0D305058638ED1D57B97.png",
+      "bytes": 418,
+      "SHA256": "EE84F312F1FB355382B06B5D1F7AE63DCF8D5A4C183F851CA7676309F1DD9BF4"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\7E0E0E9C7831BBBCFFD75F5F71DF51BDD48366AD4C7E3DF0ADC30750F429B1D3.png",
+      "bytes": 157,
+      "SHA256": "AFBE007C5B551A6617810D083FA79CB971F894A5EEC94B9123B104A6B604F80F"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\97976977031766D707A34121AC13C5AB6B7E9D204BE2EFAA395C717AEB1DC7AB.png",
+      "bytes": 458,
+      "SHA256": "0A072757D1BCDB4B5F433AF9C887B97E0140D3CE4A23BFDFC9A08DFB4D35EC95"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\9DE505F668137A32B3ADD4CD56ADB6B84883B798B0E3398C37B6CBCCED914504.png",
+      "bytes": 237,
+      "SHA256": "A156DC9B865674915F5DF0E4F4332536D8B22A9CB5CE224F26215533C5E274B1"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\B797A5014DBC3D57F9CD4F44FFFF5B424E1953B357FEAF408A07FAA26509C50B.png",
+      "bytes": 748,
+      "SHA256": "C5D1EDC6094DCB2991E8B9D12CAA19E74743D940F5C47015810173A699D52930"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\CE0732935E0C6578A3F913201900661A8B15073CE0BD2685921119F62914F182.png",
+      "bytes": 4508,
+      "SHA256": "2F9751D533BB256EF2AF805466D69E75AD59CBB8EBE0D8F64051EFF08D193742"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\DB16C4CB98D66C6A117293BC9C6BD881ABCAC8480946C70DD34E4CC2C43B1A5F.png",
+      "bytes": 789,
+      "SHA256": "933444814BEDAD802551C00EBD7ACA049FBD1617AD430784C16D9ABACEAF7048"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\E77A8FE0A4DE108FAE156E45B1458EB1C04E594082D7B11816E1567BC435DDF9.png",
+      "bytes": 1318,
+      "SHA256": "2714E335196C9983B4D008F0AF53ED390C6A1D3165C1BD164E66FFB2AF75F93D"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\EAE335C45840DABAF4412FA285B759DA7982172335A987CBEA689A291366C0AB.png",
+      "bytes": 9346,
+      "SHA256": "9257F9A9373BB66B2EE6D25009B92D1BC69132B4595F912EC12DBC5F806F2D9B"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD.png",
+      "bytes": 195,
+      "SHA256": "93883B7CCA129F9F64F2EB201F819A9ACAC50867C77EE5047E95E3F0D2CE6B2C"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\F9766B998A36A093393C444839DA9364EDF3AEA3899A5EE69AA0D0261D4C1B83.png",
+      "bytes": 662,
+      "SHA256": "F3AC6E5EE4CB38D5C25A2803C9EF4A116597A36ABBA8109BFA3B80B71836D596"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\FD2A7BF3E1395AFBE92DB0EA607E8F24D8D0D1E508010A6B4EC684011DCCABE3.png",
+      "bytes": 423,
+      "SHA256": "DC470445C4CED2C9B5D17C7A9D540F7D4D8087A4B2D36BB63761273B74825B87"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\png\\FD870CDE3E44463D77232C19FA9597BEECA897BF760FDC873AA302BA0120C81F.png",
+      "bytes": 370,
+      "SHA256": "CEE48C71B143CC234E98785CD6538AE1BF268BAEB1DFF3CA35D91736F2AA3DB9"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\old-devil-layout\\asset-preparation\\READY.json",
+      "bytes": 755,
+      "SHA256": "7866D8C711DC72A2B564066D8A5D65AA0046BD9F76FBBDC98BC18999EEA1DDE6"
+    },
+    {
+      "path": "D:\\Projects\\Project_WF\\Codex\\results\\handoffs\\old-reference\\acquisition-step5\\work_log.md",
+      "bytes": 7515,
+      "SHA256": "908E78F35357E675AD38DB34558F8BD46DF6CE1DEE1FA028AB98802ADDD979E7"
+    }
+  ],
+  "selfCheckRuns": 1,
+  "visualPASS": false,
+  "scopeException": {
+    "outsidePath": "C:\\Users\\USER\\Documents\\Codex\\2026-11-17\\new-chat-2\\step5-asset-mechanics.py",
+    "creationUTC": "2026-11-17T17:03:32.626432+00:00",
+    "mtimeUTC": "2026-11-17T17:03:32.627434+00:00",
+    "bytes": 9773,
+    "SHA256": "4C04C2E7B966B70C1CF947D024ED4024E1B6A77552F20ADF0ED30D6859615759",
+    "limit": "No pre-write existence check or backup; cannot conclusively establish prior absence/overwrite history from current metadata alone"
+  },
+  "accessoryScriptPreserved": {
+    "path": "D:/Projects/Project_WF/work/old-devil-step5-assets-labr_iq8/prepare-assets.py",
+    "SHA256": "4C04C2E7B966B70C1CF947D024ED4024E1B6A77552F20ADF0ED30D6859615759"
+  }
+}

@@ -1,0 +1,11 @@
+## Interface: 30200
+## Title: EventAlert
+## Notes: Simple warnings for event procs
+## Author: CurtisTheGreat(AIM) (Special thanks: WoW UI Forums, Crast of the Pub)
+## Version: 4.2.26
+## SavedVariables: EA_Config, EA_Position, EA_Items, EA_AltItems
+
+EventAlert.xml
+EventAlertOptions.xml
+EventAlertClassAlerts.xml
+EventAlertIconOptions.xml

@@ -1,0 +1,140 @@
+{
+  "assets": [
+    {
+      "filename": "Devil.tga",
+      "state": "present",
+      "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\forever-v42-members.json",
+      "inventoryIndex0": 28,
+      "sourceSuffix": "Interface/AddOns/!DevilUI/media/border/Devil.tga",
+      "bytes": 8236,
+      "SHA256": "9DE505F668137A32B3ADD4CD56ADB6B84883B798B0E3398C37B6CBCCED914504",
+      "TGAheader": {
+        "width": 128,
+        "height": 16,
+        "pixelDepth": 32,
+        "imageType": 2
+      },
+      "previousSameNameComparisons": [
+        {
+          "family": "2009",
+          "filename": "Devil.tga",
+          "previousSHA256": "9DE505F668137A32B3ADD4CD56ADB6B84883B798B0E3398C37B6CBCCED914504",
+          "byteIdentical": true
+        },
+        {
+          "family": "alpha",
+          "filename": "Devil.tga",
+          "previousSHA256": "9DE505F668137A32B3ADD4CD56ADB6B84883B798B0E3398C37B6CBCCED914504",
+          "byteIdentical": true
+        },
+        {
+          "family": "2022",
+          "filename": "Devil.tga",
+          "previousSHA256": "9DE505F668137A32B3ADD4CD56ADB6B84883B798B0E3398C37B6CBCCED914504",
+          "byteIdentical": true
+        }
+      ]
+    },
+    {
+      "filename": "Devil2.tga",
+      "state": "present",
+      "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\forever-v42-members.json",
+      "inventoryIndex0": 29,
+      "sourceSuffix": "Interface/AddOns/!DevilUI/media/border/Devil2.tga",
+      "bytes": 8236,
+      "SHA256": "F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD",
+      "TGAheader": {
+        "width": 128,
+        "height": 16,
+        "pixelDepth": 32,
+        "imageType": 2
+      },
+      "previousSameNameComparisons": [
+        {
+          "family": "2009",
+          "filename": "Devil2.tga",
+          "previousSHA256": "F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD",
+          "byteIdentical": true
+        },
+        {
+          "family": "alpha",
+          "filename": "Devil2.tga",
+          "previousSHA256": "F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD",
+          "byteIdentical": true
+        },
+        {
+          "family": "2022",
+          "filename": "Devil2.tga",
+          "previousSHA256": "F4FAD956F5769C5A7C543D9A4541510898355CAC54091DAA00FA430C1E0255DD",
+          "byteIdentical": true
+        }
+      ]
+    },
+    {
+      "filename": "Devil3.tga",
+      "state": "present",
+      "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\forever-v42-members.json",
+      "inventoryIndex0": 30,
+      "sourceSuffix": "Interface/AddOns/!DevilUI/media/border/Devil3.tga",
+      "bytes": 2200,
+      "SHA256": "150DEC18668CCCB2EF33B37D1C8A9468FDE7478F42747CEFFC037037C215D86B",
+      "TGAheader": {
+        "width": 128,
+        "height": 16,
+        "pixelDepth": 32,
+        "imageType": 10
+      },
+      "previousSameNameComparisons": [
+        {
+          "family": "alpha",
+          "filename": "Devil3.tga",
+          "previousSHA256": "150DEC18668CCCB2EF33B37D1C8A9468FDE7478F42747CEFFC037037C215D86B",
+          "byteIdentical": true
+        },
+        {
+          "family": "2022",
+          "filename": "Devil3.tga",
+          "previousSHA256": "150DEC18668CCCB2EF33B37D1C8A9468FDE7478F42747CEFFC037037C215D86B",
+          "byteIdentical": true
+        }
+      ]
+    },
+    {
+      "filename": "roth.tga",
+      "state": "present",
+      "inventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-r36-3ed3y_p1\\forever-v42-members.json",
+      "inventoryIndex0": 31,
+      "sourceSuffix": "Interface/AddOns/!DevilUI/media/border/roth.tga",
+      "bytes": 8236,
+      "SHA256": "49CA0BC8E0CBDD6ABED71748E3B686032F588C5E2829E6B844C9EC1F8B1A3AA9",
+      "TGAheader": {
+        "width": 128,
+        "height": 16,
+        "pixelDepth": 32,
+        "imageType": 2
+      },
+      "previousSameNameComparisons": [
+        {
+          "family": "2009",
+          "filename": "roth.tga",
+          "previousSHA256": "49CA0BC8E0CBDD6ABED71748E3B686032F588C5E2829E6B844C9EC1F8B1A3AA9",
+          "byteIdentical": true
+        },
+        {
+          "family": "alpha",
+          "filename": "roth.tga",
+          "previousSHA256": "49CA0BC8E0CBDD6ABED71748E3B686032F588C5E2829E6B844C9EC1F8B1A3AA9",
+          "byteIdentical": true
+        },
+        {
+          "family": "2022",
+          "filename": "roth.tga",
+          "previousSHA256": "49CA0BC8E0CBDD6ABED71748E3B686032F588C5E2829E6B844C9EC1F8B1A3AA9",
+          "byteIdentical": true
+        }
+      ]
+    }
+  ],
+  "priorRecords": "D:\\Projects\\Project_WF\\Codex\\results\\old-reference\\acquisition\\border-asset-byte-comparison.json",
+  "method": "ExactSHA andTGAheader only; oldfiles not re-read/CRCtested, priorhashrecords reused; no imageview/profileidentity conclusion."
+}

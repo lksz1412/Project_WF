@@ -1,0 +1,214 @@
+commit c9b5042f2c8e3fe6b90697afb305371fd91a76a1
+Author: Xinhuan <xinhuan@pacific.net.sg>
+Date:   Fri Oct 17 16:50:44 2008 +0800
+
+    Sigh at Windows. Rename localization\deDE.lua to Localization\deDE.lua
+
+commit c3b683e8875f584608da0665183ad21feb25f2c0
+Author: Xinhuan <xinhuan@pacific.net.sg>
+Date:   Fri Oct 17 08:28:11 2008 +0800
+
+    Fix VGrip1Ratio error that occurs when completing a drag and Omen incorrectly attempts to hide itself.
+
+commit 89d02500e6e8e670163a54883b8be4379bbc34ba
+Author: Xinhuan <xinhuan@pacific.net.sg>
+Date:   Fri Oct 17 07:31:23 2008 +0800
+
+    Add option to color your own threat bar to a color of your choice.
+
+commit 3451a1d286f6ea471a971647f1463bc1a353c67c
+Author: Xinhuan <xinhuan@pacific.net.sg>
+Date:   Thu Oct 16 07:03:17 2008 +0800
+
+    Fixed missing localization entry for "Passed %s%% of %s's threat!"
+
+commit 228dc6c1ac3c98bd3b592a11ba7cee58fa482ece
+Author: Xinhuan <xinhuan@pacific.net.sg>
+Date:   Thu Oct 16 03:57:37 2008 +0800
+
+    Add zhTW localization from Hekylin.
+
+commit 612b240b395cbaa480801f6157d2320df5471a2a
+Author: Xinhuan <xinhuan@pacific.net.sg>
+Date:   Wed Oct 15 14:50:57 2008 +0800
+
+    Add keybind to toggle using the focus target. Add esES localization from Ben (Aesyl - US Tanaris) and koKR from Sayclub.
+
+commit 04a13912d3509a594e4f45b4ef01a8159237124a
+Author: Xinhuan <xinhuan@pacific.net.sg>
+Date:   Tue Oct 14 22:11:24 2008 +0800
+
+    Add frFR localization file from Pettigrow.
+
+commit d18369834e7af792576e96861c9da2571e252348
+Author: Xinhuan <xinhuan@pacific.net.sg>
+Date:   Tue Oct 14 21:21:43 2008 +0800
+
+    Fix threat updating on focus/focustarget units.
+
+commit 9226280a7f179a6a40fef81412592a669bb32a07
+Author: Xinhuan <xinhuan@pacific.net.sg>
+Date:   Tue Oct 14 20:33:16 2008 +0800
+
+    Add "Show Only In Combat" option. Add "Use Focus Target" option.
+
+commit 7142aea5c6509b3f5a05ab0d1920730ce2e93943
+Author: Xinhuan <xinhuan@pacific.net.sg>
+Date:   Tue Oct 14 17:10:21 2008 +0800
+
+    Add heading background color option. Fix vertical grip resizing when Omen's scale is not 1.0. Fix deDE localization file to be UTF8.
+
+commit b7888cdacaa6840bb725a0a6bd03435fd616e34d
+Author: Xinhuan <xinhuan@pacific.net.sg>
+Date:   Tue Oct 14 14:32:28 2008 +0800
+
+    Add Show Heading option. Move Show Classes config.
+
+commit 12fa79546fb2ff99e0e18cead33d2966e9a6aa93
+Author: Xinhuan <xinhuan@pacific.net.sg>
+Date:   Tue Oct 14 00:37:29 2008 +0800
+
+    Add deDE localization from Stan (Arcádia - EU Zirkel des Cenarius).
+
+commit 61a6dc087286abcac3a5f88e7f6c0b4a4f3bf495
+Author: Xinhuan <xinhuan@pacific.net.sg>
+Date:   Tue Oct 14 00:23:55 2008 +0800
+
+    Add configurable TPS display based on a real time sliding window of the last X seconds.
+
+commit 30d5b7cdaa8163a97f13c4ba059e3d5ef4e26812
+Author: Xinhuan <xinhuan@pacific.net.sg>
+Date:   Mon Oct 13 21:29:11 2008 +0800
+
+    Localize strings, correct grammar and spelling, fix close menu error, add hide omen menu item.
+
+commit 70336d726c0f5894a84aff459e8be0b05c390915
+Author: Xinhuan <xinhuan@pacific.net.sg>
+Date:   Mon Oct 13 18:33:56 2008 +0800
+
+    Add table recycling, internal functions and code for TPS calcs. TPS not displayed anywhere yet.
+
+commit ed04d0a92d626349b73ca7b6ea267a0f93a1bf10
+Author: Xinhuan <xinhuan@pacific.net.sg>
+Date:   Mon Oct 13 12:42:11 2008 +0800
+
+    Add vertical grip to resize columns. Add Test Mode. Add quick right click menu to title bar.
+
+commit 3b22dde87e199e0c09b56d1781a9fe8abb2155a2
+Author: Xinhuan <xinhuan@pacific.net.sg>
+Date:   Mon Oct 13 04:33:14 2008 +0800
+
+    Add class filters.
+
+commit 7428e397a48bb559215b1e8d8b3b44c73546b57d
+Author: Xinhuan <xinhuan@pacific.net.sg>
+Date:   Mon Oct 13 03:38:10 2008 +0800
+
+    Add audible/visible threat warnings. Use LibSink-2.0. Fix LDB/FuBar related bugs. Fix list of events needed to trigger updates.
+
+commit 89715aa3368a66a2be66d1a9cd648fad6ba6bd2e
+Author: Xinhuan <xinhuan@pacific.net.sg>
+Date:   Sat Oct 11 00:03:53 2008 +0800
+
+    Add optional LibFuBarPlugin-3.0 support (if detected).
+
+commit 64e45cacbfabae3d97678d4c1d13abf2ea3c7d1e
+Author: Xinhuan <xinhuan@pacific.net.sg>
+Date:   Fri Oct 10 21:26:49 2008 +0800
+
+    Use AceGUI-3.0-SharedMediaWidgets. Add a ton of background and title bar options.
+    
+    Note that LibSharedMedia-3.0 may fail to load if you use disembedded libs due to a LoD issue. Either edit the TOC of LibSharedMedia-3.0 so that it is no longer LoD, or get a copy of Omen3 with embedded libs.
+
+commit 20a3f190195e2a827ff46f238a4683fb2bf50878
+Author: Xinhuan <xinhuan@pacific.net.sg>
+Date:   Fri Oct 10 11:53:08 2008 +0800
+
+    Temporary fix to line 660 nil index error.
+
+commit a256497c81a00d909fd364b44db0ec2d6c8ca6e4
+Author: Xinhuan <xinhuan@pacific.net.sg>
+Date:   Thu Oct 9 14:44:24 2008 +0800
+
+    Add bar label options (font, outline, size, color). Fix bug with profile changing.
+
+commit 9895c8c1ca8126617e9eb0e419cc0dd34ef70434
+Author: Xinhuan <xinhuan@pacific.net.sg>
+Date:   Thu Oct 9 03:14:31 2008 +0800
+
+    Add bar height/spacing options.
+    Add option to lock Omen from being moved/resized.
+    Update profile change function to properly resize and reanchor bars.
+    Fix weird bar animation effect which occurs only when resizing Omen.
+    Fix GrowUp option to take effect immediately.
+
+commit 7f32140efa3b43839b6a24734ce318abe4123077
+Author: Xinhuan <xinhuan@pacific.net.sg>
+Date:   Wed Oct 8 18:09:04 2008 +0800
+
+    Add LibSharedMedia-3.0.
+    Add Bar Texture options.
+    Force optdeped libraries to load in the main chunk. This is because WoW no longer loads LoD addons even when optdeped, and only LoadAddOn() will.
+    Reshuffle bar options in the savedvariables.
+    Remove embeds.xml and move its contents directly into the TOC.
+
+commit b1dd4bc092a710e727589bae835998d5a7c96ca8
+Author: Xinhuan <xinhuan@pacific.net.sg>
+Date:   Sun Oct 5 12:38:07 2008 +0800
+
+    Update FAQ.
+
+commit 44c0aa659b2861a7ba1d3a436e7cc8628240ea88
+Author: Xinhuan <xinhuan@pacific.net.sg>
+Date:   Thu Oct 2 19:15:19 2008 +0800
+
+    Add Short Numbers option.
+    Localize more of the config.
+
+commit cdaf14bf3dcb7a43ee250143fff1f401a067bf29
+Author: Xinhuan <xinhuan@pacific.net.sg>
+Date:   Thu Oct 2 18:36:23 2008 +0800
+
+    Add animate bar option to config.
+    Move animate function out to an upvalue instead of creating one per bar.
+    Simplify some code.
+
+commit bee855e0e85ad048b21fff91967588e8f850b3f9
+Merge: 25f0e03... ddf28c2...
+Author: Xinhuan <xinhuan@pacific.net.sg>
+Date:   Thu Oct 2 18:07:28 2008 +0800
+
+    Merge branch 'master' of git@git.wowace.com:wow/omen/wrath.git
+
+commit 25f0e03c4ef2765b86e40c6609ee6f349244da68
+Author: Xinhuan <xinhuan@pacific.net.sg>
+Date:   Thu Oct 2 18:07:09 2008 +0800
+
+    Add various autocollapse options.
+    Fix position saving bugs resulting from adding autocollapse options.
+    Fix grip hiding script bug.
+    Uncomment LDB launcher code now that config code is in.
+    Fix OnProfileChanged code.
+    Add ShowWith options.
+    Add mouseover and mouseovertarget to raid scanning.
+    Fix division by 0 percentage display.
+    Add FAQ section.
+
+commit ddf28c2dd5ea5d35d333e3201a6fc747179d1c53
+Author: Chris Heald <cheald@gmail.com>
+Date:   Thu Oct 2 01:29:21 2008 -0700
+
+    Add bar animation queues
+
+commit 49895213a46f8d391d3f026899a8f26ddb3ef56b
+Author: Xinhuan <xinhuan@pacific.net.sg>
+Date:   Thu Oct 2 11:20:58 2008 +0800
+
+    Add initial configuration (just alpha and scale). Add basic slash command /omen.
+
+commit 22759746a2e393dac052265308665cabd6ef4641
+Author: Xinhuan <xinhuan@pacific.net.sg>
+Date:   Wed Oct 1 21:30:47 2008 +0800
+
+    Initial commit of Omen3.
+    This has no config, no syncing, no parsing of combat log, and just uses pure Blizzard threat API and threat values.

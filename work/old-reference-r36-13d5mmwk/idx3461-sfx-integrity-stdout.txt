@@ -1,0 +1,4 @@
+bz 7.47(Beta,x64) - Bandizip console tool. Copyright (C) 2026 Bandisoft
+Testing archive: D:\Projects\Project_WF\work\old-reference-r36-13d5mmwk\extracted-idx-3461\Black Edition2_6.1 Alpha.exe
+$PLUGINSDIR\InstallOptions.dll  51.2% / 0.0% 
+All OK

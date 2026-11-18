@@ -1,0 +1,23 @@
+## Interface: 20400
+## X-Category: Chat/Communication
+## X-Credits: 자매, Rabbit
+## Title: Sister Chat Mods 2.4.0
+## Title-koKR: |cff00ff7f[필수]|r SisterChatMods 2.4.0
+## Notes-koKR: 대화창과 관련된 다양한 Mods를 제공합니다.
+## SavedVariables: SCMSaved, SCMDataBase
+## OptionalDeps: Ace2
+## X-Embeds: Ace2
+
+--Ace2 Library
+--Libs\AceAddon-2.0\AceAddon-2.0.lua
+--Libs\AceLibrary\AceLibrary.lua
+--Libs\AceOO-2.0\AceOO-2.0.lua
+--Libs\AceHook-2.1\AceHook-2.1.lua
+
+--Main Module
+SisterChatMods.lua
+SisterChatMods.xml
+channelnames.lua
+
+--XML
+Hyperlinker.xml

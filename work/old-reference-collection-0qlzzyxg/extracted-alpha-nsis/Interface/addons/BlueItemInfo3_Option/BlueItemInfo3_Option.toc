@@ -1,0 +1,9 @@
+## Interface: 60100
+## Title: Blue Item Info 3: Option
+## Notes: 블루 아이템 인포: 옵션 모듈
+## Dependencies: BlueItemInfo3
+## LoadOnDemand: 1
+
+libs\LibBlueOption-1.0\LibBlueOption-1.0.xml
+
+Core.lua

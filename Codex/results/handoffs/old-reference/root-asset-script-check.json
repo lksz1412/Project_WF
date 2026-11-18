@@ -1,0 +1,20 @@
+{
+  "observedAt": "2026-11-18T02:07:35.8909307+09:00",
+  "outsidePath": "C:/Users/USER/Documents/Codex/2026-11-17/new-chat-2/step5-asset-mechanics.py",
+  "projectCopy": "D:/Projects/Project_WF/work/old-devil-step5-assets-labr_iq8/prepare-assets.py",
+  "bytesEach": 9773,
+  "SHA256Each": "4C04C2E7B966B70C1CF947D024ED4024E1B6A77552F20ADF0ED30D6859615759",
+  "outsideCreatedUTC": "2026-11-17T17:03:32.6264322Z",
+  "outsideModifiedUTC": "2026-11-17T17:03:32.6274338Z",
+  "projectCopyCreatedUTC": "2026-11-17T17:04:04.2219002Z",
+  "outsideGitRoot": "C:/Users/USER/Documents/Codex/2026-11-17/new-chat-2",
+  "lsFiles": "no match",
+  "allHistory": "no match",
+  "status": "?? step5-asset-mechanics.py",
+  "priorExistence": "unverified; timestamps/untracked/no history do not prove initial absence",
+  "rootRead": "outside current script full EOF, 9773bytes; does not establish unknown prior content",
+  "sourceBehavior": "exactfive Dpublicsource roots; ownnewDassetmanifest/PNG/fontcopies/log/scratch; no delete/network/sourceLua execution in current script",
+  "rootSourceExecution": 0,
+  "rootFileMutations": 0,
+  "disposition": "preserve both copies/read only; no cleanup or restoration claim"
+}

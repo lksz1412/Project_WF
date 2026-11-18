@@ -1,0 +1,255 @@
+{
+  "postID": 2958,
+  "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=2958",
+  "row": {
+    "postID": 2958,
+    "page": 2,
+    "rowOrdinal": 2,
+    "title": "3.3 패치 개인수정 Devil Black 에디.. [통합UI] 11",
+    "rowText": "13 3.3 패치 개인수정 Devil Black 에디.. [통합UI] 11 데빌 블랙 에디션 3.3 패치 임시 개인수정 엔카이얀 5837 3 12-10",
+    "sourceAnchor": "javascript:addonMove('detail.php', 'idx->2958', 'leave->idx,listtype,ext', 'rurl');",
+    "sourceLocation": {
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\list-page2.html",
+      "selector": "table.list tr a[href]",
+      "line": 1202
+    }
+  },
+  "detailProvenance": {
+    "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=2958",
+    "finalURL": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=2958&rurl=%2Fdataninfo%2Faddonpds%2Flist.php%3Fpage%3D2%26searchField%3Dsubj_subt%26searchString%3Ddevil",
+    "HTTP": 200,
+    "time": "2026-11-17T22:32:44.1195827+09:00",
+    "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\detail-2958.html",
+    "bytes": 227327,
+    "SHA256": "89C7FB54FAB68AD4222D82906404E59E639180B9D30E5FEB0668FD7F1AD6D7C9",
+    "state": "reused",
+    "metadata": {
+      "name": "detail-2958",
+      "url": "https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=2958&rurl=%2Fdataninfo%2Faddonpds%2Flist.php%3Fpage%3D2%26searchField%3Dsubj_subt%26searchString%3Ddevil",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 227327,
+      "sha256": "89C7FB54FAB68AD4222D82906404E59E639180B9D30E5FEB0668FD7F1AD6D7C9",
+      "path": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\detail-2958.html",
+      "time": "2026-11-17T22:32:44.1195827+09:00"
+    },
+    "encoding": "UTF-8 decoded saved text"
+  },
+  "acquisitionState": "parsed",
+  "A1read": false,
+  "imageObserved": false,
+  "sections": {
+    "addonAddon": {
+      "state": "parsed",
+      "text": "개인이 3.3 패치에 맞게 임시로 수정했습니다.\n\n\n\n원제작자님이 버전업 해서 올리시면 지우겠습니다.\n\n\n\n일일이 설명은 드리지 않고\n\n\n\n개인이 쓰던거 업뎃해서 한거라\n\n\n\n구버전 체크 필히 하시기 바랍니다.\n\n\n\n참고로 16:9 화면입니다.\n\n\n\n16:10  화면 쓰시는 분들은 창모드로 16:9로 하신담에 전체 화면으로 사용하시기 바랍니다.\n\n\n\n4:3 화면 쓰시는 분들에겐 죄송합니다.",
+      "fragmentPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\idx-2958-addonAddon.html",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\detail-2958.html",
+        "selector": "#addonAddon",
+        "line": 1244
+      },
+      "links": []
+    },
+    "addonVersion": {
+      "state": "empty",
+      "text": "",
+      "fragmentPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\idx-2958-addonVersion.html",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\detail-2958.html",
+        "selector": "#addonVersion",
+        "line": 1259
+      },
+      "links": []
+    }
+  },
+  "iframes": {
+    "screenshot": {
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=2958&tempridx=&count=1",
+      "iframeLiteral": "<iframe frameborder=\"0\" framespacing=\"0\" id=\"screenshot\" scrolling=\"no\" src=\"imagelist.iframe.php?ridx=2958&amp;tempridx=&amp;count=1\"></iframe>",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\detail-2958.html",
+        "selector": "iframe#screenshot",
+        "line": 1238
+      },
+      "provenance": {
+        "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/imagelist.iframe.php?ridx=2958&tempridx=&count=1",
+        "finalURL": null,
+        "HTTP": null,
+        "time": null,
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\images-2958.html",
+        "bytes": 2357,
+        "SHA256": "05BDB71BD126AB9C53E549C5F518D336919BECBBAA017AB198B8D9904E283A9D",
+        "state": "reused",
+        "metadata": null,
+        "encoding": "UTF-8 decoded saved text"
+      },
+      "state": "parsed",
+      "text": "\n\n\n\n\n\n스크린샷\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "links": [
+        {
+          "href": "javascript:void(0);",
+          "onclick": null,
+          "text": "",
+          "line": 28
+        },
+        {
+          "href": "javascript:void(0);",
+          "onclick": "viewImage('2009/12/10/bbs/i27419179.jpg');",
+          "text": "",
+          "line": 33
+        },
+        {
+          "href": "javascript:void(0);",
+          "onclick": null,
+          "text": "",
+          "line": 40
+        }
+      ],
+      "literalPublicDownloadURLs": [],
+      "imageCount": 1
+    },
+    "fileInfo": {
+      "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=2958&tempridx=&count=1",
+      "iframeLiteral": "<iframe frameborder=\"0\" id=\"fileInfo\" src=\"filelist.iframe.php?mode=view&amp;ridx=2958&amp;tempridx=&amp;count=1\"></iframe>",
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\detail-2958.html",
+        "selector": "iframe#fileInfo",
+        "line": 1265
+      },
+      "provenance": {
+        "sourceURL": "https://wow.inven.co.kr/dataninfo/addonpds/filelist.iframe.php?mode=view&ridx=2958&tempridx=&count=1",
+        "finalURL": null,
+        "HTTP": null,
+        "time": null,
+        "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\files-2958.html",
+        "bytes": 2323,
+        "SHA256": "1A205EE6D4F4742E3890A88328B14793972EA3718C262018326B3DE820354C09",
+        "state": "reused",
+        "metadata": null,
+        "encoding": "UTF-8 decoded saved text"
+      },
+      "state": "parsed",
+      "text": "\n\n\n\n\n\n파일 정보\n\n\n\n\n\n\n\n\n\n\n\n\n파일\n\n\n클라이언트 버전\n\n\n다운로드\n\n\n등록일\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\nDevil_Blackt.zip\n\n\n\n\n\n\n3.3.0\n\n\n5837\n\n\n2009-12-10\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "links": [
+        {
+          "href": "javascript:top.login();",
+          "onclick": null,
+          "text": "Devil_Blackt.zip",
+          "line": 40
+        }
+      ],
+      "literalPublicDownloadURLs": [
+        "https://pds.inven.co.kr/upload/2009/12/10/addon/Devil_Blackt.zip"
+      ],
+      "fileRows": [
+        {
+          "text": "Devil_Blackt.zip 3.3.0 5837 2009-12-10",
+          "cells": [
+            "Devil_Blackt.zip",
+            "3.3.0",
+            "5837",
+            "2009-12-10"
+          ],
+          "line": 37
+        }
+      ],
+      "scriptPublicDownloadURLLiterals": [
+        {
+          "url": "https://pds.inven.co.kr/upload/2009/12/10/addon/Devil_Blackt.zip",
+          "literal": "https://pds.inven.co.kr/upload/2009/12/10/addon/Devil_Blackt.zip",
+          "scriptText": "parent.setDownloadInfo(16980,\"https://pds.inven.co.kr/upload/2009/12/10/addon/Devil_Blackt.zip\");",
+          "sourceLocation": {
+            "path": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\files-2958.html",
+            "line": 37,
+            "selector": "script"
+          },
+          "executed": false
+        }
+      ]
+    }
+  },
+  "images": [
+    {
+      "postID": 2958,
+      "section": "screenshot",
+      "DOMordinal": 1,
+      "thumbURL": "https://upload.inven.co.kr/upload/2009/12/10/bbs/thumb/n27419179.jpg",
+      "viewerLiteral": "viewImage('2009/12/10/bbs/i27419179.jpg');",
+      "fullURL": "https://upload.inven.co.kr/upload/2009/12/10/bbs/i27419179.jpg",
+      "alt": "",
+      "title": null,
+      "sourceLocation": {
+        "path": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\images-2958.html",
+        "selector": "screenshot img",
+        "line": 33
+      },
+      "error": null,
+      "decodeStatus": "verified-full-load",
+      "mappingEvidence": {
+        "observedThumbOrigin": "https://upload.inven.co.kr",
+        "observedPathPrefix": "/upload/",
+        "literalViewerPath": "2009/12/10/bbs/i27419179.jpg"
+      },
+      "initialMappingState": "unresolved-preserved-in-images.json",
+      "localpath": "D:\\Projects\\Project_WF\\work\\old-reference-entry-4dc60c8443794ba381f02df6f6156efa\\sample-2958-original.jpg",
+      "HTTP": 200,
+      "time": "2026-11-17T22:40:21.7702943+09:00",
+      "bytes": 265024,
+      "SHA256": "3863A54D3453AF351026F147178F3192BF4040312ACCEFA391D5CCAD12A36F98",
+      "state": "reused",
+      "contentType": "image/jpeg",
+      "width": 1920,
+      "height": 1024,
+      "imageFormat": "JPEG"
+    }
+  ],
+  "title": "3.3 패치 개인수정 Devil Black 에디션 임시",
+  "metadataLiteral": "3.3 패치 개인수정 Devil Black 에디션 임시\n데빌 블랙 에디션 3.3 패치 임시 개인수정\n애드온 등록자\n엔카이얀\n최종 업데이트\n2009.12.10\n카테고리\n통합UI\n클라이언트 버전\n3.3.0\n애드온 버전\n222\n조회수\n21270\n추천수\n3\n다운로드 수\n5837\n관심등록 수\n17\n다운로드\n관심 애드온 등록",
+  "metadataRows": [
+    {
+      "label": "애드온 등록자",
+      "value": "엔카이얀",
+      "line": 1181
+    },
+    {
+      "label": "최종 업데이트",
+      "value": "2009.12.10",
+      "line": 1185
+    },
+    {
+      "label": "카테고리",
+      "value": "통합UI",
+      "line": 1189
+    },
+    {
+      "label": "클라이언트 버전",
+      "value": "3.3.0",
+      "line": 1196
+    },
+    {
+      "label": "애드온 버전",
+      "value": "222",
+      "line": 1200
+    },
+    {
+      "label": "조회수",
+      "value": "21270",
+      "line": 1207
+    },
+    {
+      "label": "추천수",
+      "value": "3",
+      "line": 1211
+    },
+    {
+      "label": "다운로드 수",
+      "value": "5837",
+      "line": 1215
+    },
+    {
+      "label": "관심등록 수",
+      "value": "17",
+      "line": 1219
+    }
+  ]
+}

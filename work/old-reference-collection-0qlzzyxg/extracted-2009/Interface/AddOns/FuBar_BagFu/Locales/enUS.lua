@@ -1,0 +1,20 @@
+local L = AceLibrary("AceLocale-2.2"):new("FuBar_BagFu")
+
+L:RegisterTranslations("enUS", function() return {
+	["Ammo/Soul Bags"] = true,
+	["Profession Bags"] = true,
+	["Bag Depletion"] = true,
+	["Include ammo/soul bags"] = true,
+	["Include profession bags"] = true,
+	["Show depletion of bags"] = true,
+	["Bag Total"] = true,
+	["Show total amount of space in bags"] = true,
+
+
+	["Click to open your bags"] = true,
+	
+	["Open Bags at Bank"] = true,
+	["Open all of your bags when you're at the bank"] = true,
+	["Open Bags at Vendor"] = true,
+	["Open all of your bags when you're at a vendor"] = true,
+} end)

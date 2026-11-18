@@ -1,0 +1,1715 @@
+
+PitBull4DB = {
+	["namespaces"] = {
+		["Highlight"] = {
+			["profileKeys"] = {
+				["챈트마스터 - 에이그윈"] = "Default",
+				["악마추적자 - 에이그윈"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+					["layouts"] = {
+						["파티"] = {
+							["color"] = {
+								0.3764705882352941, -- [1]
+								0.3764705882352941, -- [2]
+								0.3764705882352941, -- [3]
+							},
+						},
+						["주시대상"] = {
+							["enabled"] = false,
+						},
+						["대상"] = {
+							["enabled"] = false,
+						},
+						["대상의대상"] = {
+							["enabled"] = false,
+						},
+						["소환수"] = {
+							["enabled"] = false,
+						},
+						["파티의소환수"] = {
+							["enabled"] = false,
+						},
+						["보통"] = {
+							["enabled"] = false,
+						},
+					},
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+			},
+		},
+		["RangeFader"] = {
+			["profileKeys"] = {
+				["챈트마스터 - 에이그윈"] = "Default",
+				["악마추적자 - 에이그윈"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+			},
+		},
+		["CastBarLatency"] = {
+			["profileKeys"] = {
+				["챈트마스터 - 에이그윈"] = "Default",
+				["악마추적자 - 에이그윈"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+					["layouts"] = {
+						["파티"] = {
+							["enabled"] = false,
+						},
+						["주시대상"] = {
+							["enabled"] = false,
+						},
+						["대상"] = {
+							["enabled"] = false,
+						},
+						["대상의대상"] = {
+							["enabled"] = false,
+						},
+						["소환수"] = {
+							["enabled"] = false,
+						},
+						["파티의소환수"] = {
+							["enabled"] = false,
+						},
+						["보통"] = {
+							["enabled"] = false,
+						},
+					},
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+			},
+		},
+		["HappinessIcon"] = {
+			["profileKeys"] = {
+				["챈트마스터 - 에이그윈"] = "Default",
+				["악마추적자 - 에이그윈"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+					["layouts"] = {
+						["파티"] = {
+							["enabled"] = false,
+							["position"] = 1.00003,
+						},
+						["주시대상"] = {
+							["enabled"] = false,
+							["position"] = 1.00003,
+						},
+						["대상"] = {
+							["enabled"] = false,
+							["position"] = 1.00003,
+						},
+						["대상의대상"] = {
+							["enabled"] = false,
+							["position"] = 1.00003,
+						},
+						["파티의소환수"] = {
+							["enabled"] = false,
+							["position"] = 1.00003,
+						},
+						["소환수"] = {
+							["position"] = 1.00001,
+							["location"] = "out_left_bottom",
+							["size"] = 1.5,
+						},
+						["보통"] = {
+							["enabled"] = false,
+							["position"] = 1.00001,
+						},
+					},
+				},
+			},
+		},
+		["CombatIcon"] = {
+			["profileKeys"] = {
+				["챈트마스터 - 에이그윈"] = "Default",
+				["악마추적자 - 에이그윈"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+					["layouts"] = {
+						["파티"] = {
+							["position"] = 1.00001,
+						},
+						["주시대상"] = {
+							["position"] = 1.00001,
+						},
+						["대상"] = {
+							["position"] = 1.00001,
+						},
+						["대상의대상"] = {
+							["enabled"] = false,
+							["position"] = 1.00001,
+						},
+						["파티의소환수"] = {
+							["enabled"] = false,
+							["position"] = 1.00001,
+						},
+						["소환수"] = {
+							["enabled"] = false,
+							["location"] = "edge_bottom_right",
+						},
+						["보통"] = {
+							["location"] = "edge_bottom_right",
+						},
+					},
+				},
+			},
+		},
+		["DogTagTexts"] = {
+			["profileKeys"] = {
+				["챈트마스터 - 에이그윈"] = "Default",
+				["악마추적자 - 에이그윈"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+					["layouts"] = {
+						["파티"] = {
+							["first"] = false,
+							["elements"] = {
+								["마력"] = {
+									["exists"] = true,
+									["code"] = "[if IsMouseOver then\n    FractionalMP\nend]",
+									["location"] = "out_bottom_left",
+									["size"] = 0.8500000000000001,
+								},
+								["생명력"] = {
+									["exists"] = true,
+									["position"] = 1.00001,
+									["location"] = "left",
+									["code"] = "[Status or FractionalHP(known=true):Short or PercentHP:Percent]",
+									["attach_to"] = "HealthBar",
+									["size"] = 0.8,
+								},
+								["이름"] = {
+									["exists"] = true,
+									["position"] = 1.00002,
+									["location"] = "right",
+									["code"] = "[Level] [Name:ClassColor] [(AFK or DND):Angle]",
+									["attach_to"] = "HealthBar",
+									["size"] = 0.9,
+								},
+							},
+						},
+						["주시대상"] = {
+							["first"] = false,
+							["elements"] = {
+								["주문이름"] = {
+									["exists"] = true,
+									["position"] = 1.00001,
+									["location"] = "center",
+									["code"] = "[Alpha((-CastStopDuration or 0) + 1) CastStopMessage or (CastName ' ' CastTarget:Paren)]",
+									["attach_to"] = "CastBar",
+								},
+								["마력"] = {
+									["exists"] = true,
+									["code"] = "[if HasMP then FractionalMP]",
+									["location"] = "out_bottom_left",
+									["size"] = 0.8500000000000001,
+								},
+								["생명력"] = {
+									["exists"] = true,
+									["position"] = 1.00001,
+									["location"] = "left",
+									["code"] = "[Status or FractionalHP(known=true)] [PercentHP:Hide(0):Hide(100):Percent]",
+									["attach_to"] = "HealthBar",
+									["size"] = 0.9,
+								},
+								["이름"] = {
+									["exists"] = true,
+									["position"] = 1.00002,
+									["location"] = "out_bottom_right",
+									["code"] = "[(IsFriend ? Name:ClassColor) (IsEnemy ? Name:Red) (AFK or DND):Angle] [Level:DifficultyColor]",
+									["size"] = 1.2,
+								},
+							},
+						},
+						["대상"] = {
+							["first"] = false,
+							["elements"] = {
+								["직업"] = {
+									["exists"] = true,
+									["position"] = 1.00002,
+									["location"] = "right",
+									["code"] = "[SmartRace] [Classification (if IsPlayer then\n    Class\nend):White]",
+									["attach_to"] = "HealthBar",
+									["size"] = 0.8,
+								},
+								["마력"] = {
+									["exists"] = true,
+									["code"] = "[if HasMP then FractionalMP]",
+									["location"] = "out_bottom_left",
+									["size"] = 0.8500000000000001,
+								},
+								["생명력"] = {
+									["exists"] = true,
+									["position"] = 1.00001,
+									["location"] = "left",
+									["code"] = "[Status or FractionalHP(known=true)] [PercentHP:Hide(0):Hide(100):Percent]",
+									["attach_to"] = "HealthBar",
+									["size"] = 0.9,
+								},
+								["이름"] = {
+									["exists"] = true,
+									["position"] = 1.00002,
+									["location"] = "out_bottom_right",
+									["code"] = "[(IsFriend ? Name:ClassColor) (IsEnemy ? Name:Red) (AFK or DND):Angle] [Level:DifficultyColor]",
+									["size"] = 1.2,
+								},
+							},
+						},
+						["대상의대상"] = {
+							["first"] = false,
+							["elements"] = {
+								["이름"] = {
+									["exists"] = true,
+									["position"] = 1.00002,
+									["location"] = "center",
+									["code"] = "[IsFriend ? Name:White] [IsEnemy ? Name:Red]",
+									["attach_to"] = "HealthBar",
+									["size"] = 0.9,
+								},
+							},
+						},
+						["소환수"] = {
+							["first"] = false,
+							["elements"] = {
+								["경험치"] = {
+									["exists"] = true,
+									["position"] = 1.00002,
+									["location"] = "center",
+									["code"] = "[if IsMouseOver then\n    FractionalXP ' ' PercentXP:Percent:Paren ' ' Concatenate('R: ', PercentRestXP:Hide(0):Percent)\nend]",
+									["attach_to"] = "PowerBar",
+									["size"] = 0.8500000000000001,
+								},
+								["이름"] = {
+									["exists"] = true,
+									["position"] = 1.00002,
+									["location"] = "left",
+									["code"] = "[Name] [(AFK or DND):Angle]",
+									["attach_to"] = "HealthBar",
+									["size"] = 0.8500000000000001,
+								},
+								["생명력"] = {
+									["exists"] = true,
+									["position"] = 1.00001,
+									["location"] = "right",
+									["code"] = "[PercentHP:Hide(0):Hide(100):Percent]",
+									["attach_to"] = "HealthBar",
+									["size"] = 0.75,
+								},
+							},
+						},
+						["파티의소환수"] = {
+							["first"] = false,
+							["elements"] = {
+								["이름"] = {
+									["exists"] = true,
+									["position"] = 1.00002,
+									["location"] = "right",
+									["code"] = "[IsFriend ? Name:White] [IsEnemy ? Name:Red]",
+									["attach_to"] = "HealthBar",
+									["size"] = 0.9,
+								},
+							},
+						},
+						["보통"] = {
+							["first"] = false,
+							["elements"] = {
+								["마력"] = {
+									["exists"] = true,
+									["code"] = "[if HasMP then FractionalMP]",
+									["location"] = "out_bottom_right",
+									["size"] = 0.8500000000000001,
+								},
+								["이름"] = {
+									["exists"] = true,
+									["position"] = 1.00002,
+									["location"] = "out_bottom_left",
+									["code"] = "[Level] [PvPRank] [Name:ClassColor DruidForm:Paren]  [RaidGroup:Paren]",
+									["size"] = 1.2,
+								},
+								["생명력"] = {
+									["exists"] = true,
+									["code"] = "[Status or FractionalHP(known=true)] [PercentHP:Hide(0):Hide(100):Percent]",
+									["location"] = "right",
+									["attach_to"] = "HealthBar",
+									["size"] = 0.9,
+								},
+							},
+						},
+					},
+					["global"] = {
+						["enabled"] = true,
+					},
+				},
+			},
+		},
+		["LuaTexts"] = {
+			["profiles"] = {
+				["Default"] = {
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+			},
+		},
+		["Aggro"] = {
+			["profileKeys"] = {
+			},
+			["profiles"] = {
+				["Default"] = {
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+			},
+		},
+		["MasterLooterIcon"] = {
+			["profileKeys"] = {
+				["챈트마스터 - 에이그윈"] = "Default",
+				["악마추적자 - 에이그윈"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+					["layouts"] = {
+						["소환수"] = {
+							["enabled"] = false,
+						},
+						["대상의대상"] = {
+							["enabled"] = false,
+						},
+						["파티의소환수"] = {
+							["enabled"] = false,
+						},
+					},
+				},
+			},
+		},
+		["CombatText"] = {
+			["profileKeys"] = {
+				["챈트마스터 - 에이그윈"] = "Default",
+				["악마추적자 - 에이그윈"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+					["layouts"] = {
+						["파티"] = {
+							["enabled"] = false,
+						},
+						["주시대상"] = {
+							["enabled"] = false,
+						},
+						["대상"] = {
+							["enabled"] = false,
+							["position"] = 1.00001,
+							["location"] = "right",
+							["attach_to"] = "HealthBar",
+						},
+						["대상의대상"] = {
+							["enabled"] = false,
+						},
+						["파티의소환수"] = {
+							["enabled"] = false,
+						},
+						["소환수"] = {
+							["enabled"] = false,
+						},
+						["보통"] = {
+							["enabled"] = false,
+						},
+					},
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+			},
+		},
+		["ReadyCheckIcon"] = {
+			["profileKeys"] = {
+				["챈트마스터 - 에이그윈"] = "Default",
+				["악마추적자 - 에이그윈"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+					["layouts"] = {
+						["파티"] = {
+							["position"] = 1.00004,
+						},
+						["주시대상"] = {
+							["enabled"] = false,
+							["position"] = 1.00004,
+						},
+						["대상"] = {
+							["enabled"] = false,
+							["position"] = 1.00004,
+						},
+						["대상의대상"] = {
+							["enabled"] = false,
+							["position"] = 1.00004,
+						},
+						["파티의소환수"] = {
+							["enabled"] = false,
+							["position"] = 1.00004,
+						},
+						["소환수"] = {
+							["enabled"] = false,
+							["position"] = 1.00002,
+						},
+						["보통"] = {
+							["enabled"] = false,
+							["position"] = 1.00002,
+						},
+					},
+				},
+			},
+		},
+		["Totems"] = {
+			["profileKeys"] = {
+			},
+			["profiles"] = {
+				["Default"] = {
+					["layouts"] = {
+						["플레이어"] = {
+							["location"] = "out_left",
+							["timer_text_side"] = "topoutside",
+						},
+						["소환수"] = {
+							["enabled"] = false,
+						},
+						["주시대상"] = {
+							["enabled"] = false,
+						},
+						["대상"] = {
+							["enabled"] = false,
+						},
+						["대상의대상"] = {
+							["enabled"] = false,
+						},
+						["파티의소환수"] = {
+							["enabled"] = false,
+						},
+						["파티"] = {
+							["enabled"] = false,
+						},
+						["보통"] = {
+							["location"] = "out_left",
+						},
+					},
+				},
+			},
+		},
+		["Portrait"] = {
+			["profileKeys"] = {
+				["챈트마스터 - 에이그윈"] = "Default",
+				["악마추적자 - 에이그윈"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+					["layouts"] = {
+						["파티"] = {
+							["enabled"] = true,
+							["side"] = "right",
+							["style"] = "two_dimensional",
+							["position"] = 1.00001,
+							["fallback_style"] = "two_dimensional",
+						},
+						["주시대상"] = {
+							["enabled"] = true,
+							["side"] = "right",
+							["style"] = "two_dimensional",
+							["position"] = 1.00001,
+							["fallback_style"] = "two_dimensional",
+						},
+						["대상"] = {
+							["enabled"] = true,
+							["side"] = "right",
+							["style"] = "two_dimensional",
+							["position"] = 1.00001,
+							["fallback_style"] = "two_dimensional",
+						},
+						["대상의대상"] = {
+							["side"] = "right",
+							["style"] = "two_dimensional",
+							["position"] = 1.00001,
+							["fallback_style"] = "two_dimensional",
+						},
+						["파티의소환수"] = {
+							["side"] = "right",
+							["style"] = "two_dimensional",
+							["position"] = 1.00001,
+							["fallback_style"] = "two_dimensional",
+						},
+						["소환수"] = {
+							["fallback_style"] = "two_dimensional",
+							["style"] = "two_dimensional",
+							["position"] = 1.00001,
+						},
+						["보통"] = {
+							["enabled"] = true,
+							["fallback_style"] = "two_dimensional",
+							["style"] = "two_dimensional",
+							["position"] = 1.00001,
+						},
+					},
+				},
+			},
+		},
+		["Banzai"] = {
+			["profileKeys"] = {
+			},
+			["profiles"] = {
+				["Default"] = {
+					["layouts"] = {
+						["파티"] = {
+							["enabled"] = false,
+						},
+						["주시대상"] = {
+							["enabled"] = false,
+						},
+						["대상"] = {
+							["enabled"] = false,
+						},
+						["대상의대상"] = {
+							["enabled"] = false,
+						},
+						["소환수"] = {
+							["enabled"] = false,
+						},
+						["플레이어"] = {
+							["enabled"] = false,
+						},
+						["파티의소환수"] = {
+							["enabled"] = false,
+						},
+					},
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+			},
+		},
+		["RaidTargetIcon"] = {
+			["profileKeys"] = {
+				["챈트마스터 - 에이그윈"] = "Default",
+				["악마추적자 - 에이그윈"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+					["layouts"] = {
+						["주시대상"] = {
+							["size"] = 1.5,
+						},
+						["대상"] = {
+							["size"] = 1.5,
+						},
+					},
+				},
+			},
+		},
+		["Sounds"] = {
+			["profileKeys"] = {
+				["챈트마스터 - 에이그윈"] = "Default",
+				["악마추적자 - 에이그윈"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+			},
+		},
+		["Aura"] = {
+			["profileKeys"] = {
+				["챈트마스터 - 에이그윈"] = "Default",
+				["악마추적자 - 에이그윈"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+					["layouts"] = {
+						["파티"] = {
+							["max_debuffs"] = 3,
+							["layout"] = {
+								["buff"] = {
+									["width_percent"] = 0.8200000000000001,
+									["size_to_fit"] = false,
+									["my_size"] = 18,
+									["offset_y"] = -1,
+									["anchor"] = "BOTTOMRIGHT",
+									["size"] = 18,
+									["width"] = 400,
+									["growth"] = "left_down",
+									["filter"] = "!C",
+								},
+								["debuff"] = {
+									["width_percent"] = 0.26,
+									["size_to_fit"] = false,
+									["my_size"] = 18,
+									["offset_y"] = -1,
+									["anchor"] = "BOTTOMLEFT",
+									["size"] = 18,
+									["growth"] = "right_down",
+									["filter"] = "!E",
+								},
+							},
+							["highlight_style"] = "thinborder",
+							["max_buffs"] = 9,
+							["cooldown"] = {
+								["other_debuffs"] = false,
+								["weapon_buffs"] = false,
+								["other_buffs"] = false,
+							},
+						},
+						["주시대상"] = {
+							["highlight_style"] = "thinborder",
+							["layout"] = {
+								["buff"] = {
+									["my_size"] = 22,
+									["offset_y"] = 2,
+									["anchor"] = "TOPRIGHT",
+									["size"] = 22,
+									["side"] = "TOP",
+									["width"] = 400,
+									["growth"] = "left_up",
+								},
+								["debuff"] = {
+									["width_percent"] = 0.51,
+									["my_size"] = 22,
+									["offset_y"] = 2,
+									["anchor"] = "TOPLEFT",
+									["size"] = 22,
+									["side"] = "TOP",
+									["growth"] = "right_up",
+								},
+							},
+						},
+						["대상"] = {
+							["cooldown_text"] = {
+								["weapon_buffs"] = true,
+								["my_buffs"] = true,
+								["my_debuffs"] = true,
+							},
+							["max_debuffs"] = 36,
+							["layout"] = {
+								["debuff"] = {
+									["width_percent"] = 1,
+									["my_size"] = 26,
+									["offset_y"] = 2,
+									["anchor"] = "TOPLEFT",
+									["size"] = 24,
+									["side"] = "TOP",
+									["growth"] = "right_up",
+								},
+								["buff"] = {
+									["width_percent"] = 1,
+									["my_size"] = 20,
+									["offset_y"] = -25,
+									["anchor"] = "BOTTOMRIGHT",
+									["size"] = 20,
+									["growth"] = "left_down",
+									["width"] = 400,
+									["width_type"] = "fixed",
+								},
+							},
+							["highlight_style"] = "thinborder",
+							["max_buffs"] = 20,
+							["cooldown"] = {
+								["weapon_buffs"] = false,
+								["my_debuffs"] = false,
+								["my_buffs"] = false,
+							},
+						},
+						["대상의대상"] = {
+							["enabled"] = false,
+							["layout"] = {
+								["buff"] = {
+									["anchor"] = "TOPRIGHT",
+									["side"] = "TOP",
+								},
+								["debuff"] = {
+									["anchor"] = "TOPLEFT",
+									["side"] = "TOP",
+								},
+							},
+						},
+						["파티의소환수"] = {
+							["enabled"] = false,
+							["layout"] = {
+								["debuff"] = {
+									["anchor"] = "TOPLEFT",
+									["side"] = "TOP",
+								},
+								["buff"] = {
+									["anchor"] = "TOPRIGHT",
+									["side"] = "TOP",
+								},
+							},
+						},
+						["소환수"] = {
+							["max_debuffs"] = 4,
+							["layout"] = {
+								["debuff"] = {
+									["my_size"] = 14,
+									["offset_y"] = -1,
+									["size"] = 14,
+									["side"] = "RIGHT",
+									["growth"] = "right_down",
+									["offset_x"] = 1,
+									["filter"] = "!E",
+								},
+								["buff"] = {
+									["my_size"] = 14,
+									["offset_y"] = 2,
+									["anchor"] = "TOPRIGHT",
+									["size"] = 14,
+									["side"] = "RIGHT",
+									["offset_x"] = 1,
+									["filter"] = "!C",
+								},
+							},
+							["highlight_style"] = "thinborder",
+							["max_buffs"] = 4,
+							["cooldown"] = {
+								["other_debuffs"] = false,
+								["weapon_buffs"] = false,
+								["other_buffs"] = false,
+							},
+						},
+						["보통"] = {
+							["enabled"] = false,
+						},
+					},
+					["global"] = {
+						["colors"] = {
+							["friend"] = {
+								["my"] = {
+									0.1882352941176471, -- [1]
+									0.9019607843137255, -- [2]
+									1, -- [3]
+								},
+								["other"] = {
+									0.9803921568627451, -- [1]
+									1, -- [2]
+									0.3019607843137255, -- [3]
+								},
+							},
+						},
+					},
+				},
+			},
+		},
+		["Border"] = {
+			["profileKeys"] = {
+				["챈트마스터 - 에이그윈"] = "Default",
+				["악마추적자 - 에이그윈"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+					["layouts"] = {
+						["파티의소환수"] = {
+							["enabled"] = false,
+							["rare_texture"] = "None",
+							["elite_texture"] = "None",
+						},
+						["주시대상"] = {
+							["rare_texture"] = "Skinner EditBox/ScrollBar Border",
+							["rare_color"] = {
+								0.9294117647058824, -- [1]
+								1, -- [2]
+								0.9137254901960784, -- [3]
+								0.4900000095367432, -- [4]
+							},
+							["elite_texture"] = "Skinner EditBox/ScrollBar Border",
+							["padding"] = 4,
+							["elite_color"] = {
+								nil, -- [1]
+								0.580392156862745, -- [2]
+								0.2352941176470588, -- [3]
+								0.4900000095367432, -- [4]
+							},
+							["size"] = 18,
+						},
+						["대상"] = {
+							["rare_texture"] = "Skinner EditBox/ScrollBar Border",
+							["rare_color"] = {
+								0.9215686274509803, -- [1]
+								1, -- [2]
+								0.9294117647058824, -- [3]
+								0.4900000095367432, -- [4]
+							},
+							["elite_texture"] = "Skinner EditBox/ScrollBar Border",
+							["padding"] = 4,
+							["elite_color"] = {
+								nil, -- [1]
+								0.6392156862745098, -- [2]
+								0.2666666666666667, -- [3]
+								0.5200000107288361, -- [4]
+							},
+							["size"] = 18,
+						},
+						["대상의대상"] = {
+							["enabled"] = false,
+							["rare_texture"] = "None",
+							["elite_texture"] = "None",
+						},
+						["파티"] = {
+							["enabled"] = false,
+							["rare_texture"] = "DevilSquare",
+							["elite_texture"] = "DevilSquare",
+							["padding"] = 1,
+							["size"] = 7,
+						},
+						["소환수"] = {
+							["enabled"] = false,
+							["padding"] = 1,
+							["size"] = 7,
+						},
+						["보통"] = {
+							["enabled"] = false,
+							["rare_color"] = {
+								0.1294117647058823, -- [1]
+								0.9529411764705882, -- [2]
+								1, -- [3]
+								0.8100000023841858, -- [4]
+							},
+							["normal_texture"] = "DevilSquare",
+							["normal_color"] = {
+								nil, -- [1]
+								nil, -- [2]
+								nil, -- [3]
+								0.7900000065565109, -- [4]
+							},
+							["elite_color"] = {
+								nil, -- [1]
+								0.4509803921568628, -- [2]
+								nil, -- [3]
+								0.7900000065565109, -- [4]
+							},
+							["size"] = 10,
+						},
+					},
+				},
+			},
+		},
+		["Background"] = {
+			["profileKeys"] = {
+				["챈트마스터 - 에이그윈"] = "Default",
+				["악마추적자 - 에이그윈"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+					["layouts"] = {
+						["파티"] = {
+							["color"] = {
+								nil, -- [1]
+								nil, -- [2]
+								nil, -- [3]
+								1, -- [4]
+							},
+						},
+						["주시대상"] = {
+							["color"] = {
+								nil, -- [1]
+								nil, -- [2]
+								nil, -- [3]
+								1, -- [4]
+							},
+						},
+						["대상"] = {
+							["color"] = {
+								nil, -- [1]
+								nil, -- [2]
+								nil, -- [3]
+								1, -- [4]
+							},
+						},
+						["대상의대상"] = {
+							["color"] = {
+								nil, -- [1]
+								nil, -- [2]
+								nil, -- [3]
+								1, -- [4]
+							},
+						},
+						["파티의소환수"] = {
+							["color"] = {
+								nil, -- [1]
+								nil, -- [2]
+								nil, -- [3]
+								1, -- [4]
+							},
+						},
+						["소환수"] = {
+							["color"] = {
+								nil, -- [1]
+								nil, -- [2]
+								nil, -- [3]
+								1, -- [4]
+							},
+						},
+						["보통"] = {
+							["color"] = {
+								nil, -- [1]
+								nil, -- [2]
+								nil, -- [3]
+								1, -- [4]
+							},
+						},
+					},
+				},
+			},
+		},
+		["PowerBar"] = {
+			["profileKeys"] = {
+				["챈트마스터 - 에이그윈"] = "Default",
+				["악마추적자 - 에이그윈"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+					["layouts"] = {
+						["파티"] = {
+							["background_alpha"] = 0.5,
+						},
+						["주시대상"] = {
+							["background_alpha"] = 0.5,
+						},
+						["대상"] = {
+							["background_alpha"] = 0.5,
+						},
+						["대상의대상"] = {
+							["background_alpha"] = 0,
+							["enabled"] = false,
+						},
+						["파티의소환수"] = {
+							["background_alpha"] = 0,
+							["enabled"] = false,
+						},
+						["소환수"] = {
+							["background_alpha"] = 0.5,
+						},
+						["보통"] = {
+							["background_alpha"] = 0.5,
+						},
+					},
+				},
+			},
+		},
+		["HideBlizzard"] = {
+			["profileKeys"] = {
+				["챈트마스터 - 에이그윈"] = "Default",
+				["악마추적자 - 에이그윈"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+					["global"] = {
+						["aura"] = true,
+					},
+				},
+			},
+		},
+		["RestIcon"] = {
+			["profileKeys"] = {
+				["챈트마스터 - 에이그윈"] = "Default",
+				["악마추적자 - 에이그윈"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+					["layouts"] = {
+						["파티"] = {
+							["position"] = 1.00001,
+							["location"] = "edge_top_right",
+						},
+						["주시대상"] = {
+							["position"] = 1.00001,
+							["location"] = "edge_top_right",
+						},
+						["대상"] = {
+							["position"] = 1.00001,
+							["location"] = "edge_top_right",
+						},
+						["대상의대상"] = {
+							["position"] = 1.00001,
+							["location"] = "edge_top_right",
+						},
+						["파티의소환수"] = {
+							["position"] = 1.00001,
+							["location"] = "edge_top_right",
+						},
+						["소환수"] = {
+							["enabled"] = false,
+							["position"] = 1.00001,
+							["location"] = "edge_top_right",
+						},
+						["보통"] = {
+							["position"] = 1.00001,
+							["location"] = "edge_top_right",
+						},
+					},
+				},
+			},
+		},
+		["LeaderIcon"] = {
+			["profileKeys"] = {
+				["챈트마스터 - 에이그윈"] = "Default",
+				["악마추적자 - 에이그윈"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+					["layouts"] = {
+						["소환수"] = {
+							["enabled"] = false,
+						},
+						["대상의대상"] = {
+							["enabled"] = false,
+						},
+						["파티의소환수"] = {
+							["enabled"] = false,
+						},
+					},
+				},
+			},
+		},
+		["HealthBar"] = {
+			["profileKeys"] = {
+				["챈트마스터 - 에이그윈"] = "Default",
+				["악마추적자 - 에이그윈"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+					["layouts"] = {
+						["파티"] = {
+							["hostility_color_npcs"] = false,
+							["hostility_color"] = false,
+							["background_alpha"] = 0.5,
+							["size"] = 12,
+						},
+						["주시대상"] = {
+							["hostility_color_npcs"] = false,
+							["color_by_class"] = false,
+							["hostility_color"] = false,
+							["background_alpha"] = 0.5,
+							["size"] = 12,
+						},
+						["대상"] = {
+							["color_pvp_by_class"] = true,
+							["hostility_color_npcs"] = false,
+							["background_alpha"] = 0.5,
+							["size"] = 12,
+						},
+						["대상의대상"] = {
+							["background_alpha"] = 0.5,
+							["size"] = 12,
+						},
+						["파티의소환수"] = {
+							["hostility_color_npcs"] = false,
+							["color_by_class"] = false,
+							["hostility_color"] = false,
+							["background_alpha"] = 0,
+							["size"] = 12,
+						},
+						["소환수"] = {
+							["hostility_color_npcs"] = false,
+							["color_by_class"] = false,
+							["hostility_color"] = false,
+							["background_alpha"] = 0.5,
+							["size"] = 12,
+						},
+						["보통"] = {
+							["color_by_class"] = false,
+							["hostility_color_npcs"] = false,
+							["background_alpha"] = 0.5,
+							["hostility_color"] = false,
+							["size"] = 12,
+						},
+					},
+					["global"] = {
+						["colors"] = {
+							["max_health"] = {
+								0.1803921568627451, -- [1]
+								0.2313725490196079, -- [2]
+								0.3372549019607843, -- [3]
+							},
+							["dead"] = {
+								1, -- [1]
+								0.04313725490196078, -- [2]
+								0, -- [3]
+							},
+						},
+					},
+				},
+			},
+		},
+		["ExperienceBar"] = {
+			["profileKeys"] = {
+				["챈트마스터 - 에이그윈"] = "Default",
+				["악마추적자 - 에이그윈"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+					["layouts"] = {
+						["파티"] = {
+							["enabled"] = false,
+						},
+						["주시대상"] = {
+							["enabled"] = false,
+						},
+						["대상"] = {
+							["enabled"] = false,
+						},
+						["대상의대상"] = {
+							["enabled"] = false,
+						},
+						["소환수"] = {
+							["enabled"] = false,
+						},
+						["파티의소환수"] = {
+							["enabled"] = false,
+						},
+						["보통"] = {
+							["enabled"] = false,
+						},
+					},
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+			},
+		},
+		["ManaSpark"] = {
+			["profileKeys"] = {
+				["챈트마스터 - 에이그윈"] = "Default",
+				["악마추적자 - 에이그윈"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+				},
+			},
+		},
+		["VoiceIcon"] = {
+			["profileKeys"] = {
+				["챈트마스터 - 에이그윈"] = "Default",
+				["악마추적자 - 에이그윈"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+					["layouts"] = {
+						["파티"] = {
+							["enabled"] = false,
+						},
+						["주시대상"] = {
+							["enabled"] = false,
+						},
+						["대상"] = {
+							["enabled"] = false,
+						},
+						["대상의대상"] = {
+							["enabled"] = false,
+						},
+						["소환수"] = {
+							["enabled"] = false,
+						},
+						["파티의소환수"] = {
+							["enabled"] = false,
+						},
+						["보통"] = {
+							["enabled"] = false,
+						},
+					},
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+			},
+		},
+		["VisualHeal"] = {
+			["profileKeys"] = {
+				["챈트마스터 - 에이그윈"] = "Default",
+				["악마추적자 - 에이그윈"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+			},
+		},
+		["ReputationBar"] = {
+			["profileKeys"] = {
+				["챈트마스터 - 에이그윈"] = "Default",
+				["악마추적자 - 에이그윈"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+					["layouts"] = {
+						["파티"] = {
+							["enabled"] = false,
+						},
+						["주시대상"] = {
+							["enabled"] = false,
+						},
+						["대상"] = {
+							["enabled"] = false,
+						},
+						["대상의대상"] = {
+							["enabled"] = false,
+						},
+						["소환수"] = {
+							["enabled"] = false,
+						},
+						["파티의소환수"] = {
+							["enabled"] = false,
+						},
+						["보통"] = {
+							["enabled"] = false,
+						},
+					},
+				},
+			},
+		},
+		["CombatFader"] = {
+			["profileKeys"] = {
+				["챈트마스터 - 에이그윈"] = "Default",
+				["악마추적자 - 에이그윈"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+			},
+		},
+		["PvPIcon"] = {
+			["profileKeys"] = {
+				["챈트마스터 - 에이그윈"] = "Default",
+				["악마추적자 - 에이그윈"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+					["layouts"] = {
+						["파티"] = {
+							["position"] = 1.00002,
+							["location"] = "edge_bottom_right",
+						},
+						["주시대상"] = {
+							["position"] = 1.00002,
+							["location"] = "edge_bottom_right",
+						},
+						["대상"] = {
+							["position"] = 1.00002,
+							["location"] = "edge_bottom_right",
+						},
+						["대상의대상"] = {
+							["enabled"] = false,
+							["position"] = 1.00002,
+							["location"] = "edge_bottom_right",
+						},
+						["파티의소환수"] = {
+							["enabled"] = false,
+							["position"] = 1.00002,
+							["location"] = "edge_bottom_right",
+						},
+						["소환수"] = {
+							["enabled"] = false,
+							["position"] = 1.00002,
+							["location"] = "edge_bottom_left",
+						},
+						["보통"] = {
+							["position"] = 1.00002,
+							["location"] = "edge_bottom_left",
+						},
+					},
+				},
+			},
+		},
+		["CastBar"] = {
+			["profileKeys"] = {
+				["챈트마스터 - 에이그윈"] = "Default",
+				["악마추적자 - 에이그윈"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+					["layouts"] = {
+						["파티"] = {
+							["auto_hide"] = true,
+							["show_icon"] = false,
+							["background_alpha"] = 0.5,
+							["size"] = 2,
+						},
+						["주시대상"] = {
+							["auto_hide"] = true,
+							["show_icon"] = false,
+							["background_alpha"] = 0.5,
+							["size"] = 2,
+						},
+						["대상"] = {
+							["enabled"] = false,
+						},
+						["대상의대상"] = {
+							["enabled"] = false,
+						},
+						["소환수"] = {
+							["auto_hide"] = true,
+							["background_alpha"] = 0.5,
+							["show_icon"] = false,
+						},
+						["파티의소환수"] = {
+							["enabled"] = false,
+						},
+						["보통"] = {
+							["enabled"] = false,
+						},
+					},
+				},
+			},
+		},
+		["BlankSpace"] = {
+			["profileKeys"] = {
+				["챈트마스터 - 에이그윈"] = "Default",
+				["악마추적자 - 에이그윈"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+					["layouts"] = {
+						["파티"] = {
+							["first"] = false,
+							["elements"] = {
+								["기본값"] = {
+									["exists"] = true,
+								},
+							},
+						},
+						["주시대상"] = {
+							["first"] = false,
+							["elements"] = {
+								["기본값"] = {
+									["exists"] = true,
+								},
+							},
+						},
+						["대상"] = {
+							["first"] = false,
+							["elements"] = {
+								["기본값"] = {
+									["exists"] = true,
+								},
+							},
+						},
+						["대상의대상"] = {
+							["first"] = false,
+							["elements"] = {
+								["기본값"] = {
+									["exists"] = true,
+								},
+							},
+						},
+						["소환수"] = {
+							["first"] = false,
+							["elements"] = {
+								["기본값"] = {
+									["exists"] = true,
+								},
+							},
+						},
+						["파티의소환수"] = {
+							["first"] = false,
+							["elements"] = {
+								["기본값"] = {
+									["exists"] = true,
+								},
+							},
+						},
+						["보통"] = {
+							["first"] = false,
+							["elements"] = {
+								["기본값"] = {
+									["exists"] = true,
+								},
+							},
+						},
+					},
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+			},
+		},
+		["ThreatBar"] = {
+			["profileKeys"] = {
+				["챈트마스터 - 에이그윈"] = "Default",
+				["악마추적자 - 에이그윈"] = "Default",
+			},
+			["profiles"] = {
+				["Default"] = {
+					["layouts"] = {
+						["파티"] = {
+							["enabled"] = false,
+						},
+						["주시대상"] = {
+							["enabled"] = false,
+						},
+						["대상"] = {
+							["enabled"] = false,
+						},
+						["대상의대상"] = {
+							["enabled"] = false,
+						},
+						["소환수"] = {
+							["enabled"] = false,
+						},
+						["파티의소환수"] = {
+							["enabled"] = false,
+						},
+						["보통"] = {
+							["enabled"] = false,
+						},
+					},
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+			},
+		},
+		["ComboPoints"] = {
+			["profileKeys"] = {
+			},
+			["profiles"] = {
+				["Default"] = {
+					["layouts"] = {
+						["파티"] = {
+							["enabled"] = false,
+							["attach_to"] = "HealthBar",
+							["spacing"] = 0,
+							["location"] = "right",
+							["size"] = 0.8500000000000001,
+						},
+						["주시대상"] = {
+							["attach_to"] = "HealthBar",
+							["spacing"] = 0,
+							["location"] = "right",
+							["size"] = 0.8500000000000001,
+						},
+						["대상"] = {
+							["attach_to"] = "PowerBar",
+							["spacing"] = 0,
+							["location"] = "right",
+							["size"] = 0.8500000000000001,
+						},
+						["대상의대상"] = {
+							["enabled"] = false,
+							["attach_to"] = "HealthBar",
+							["spacing"] = 0,
+							["location"] = "right",
+							["size"] = 0.8500000000000001,
+						},
+						["파티의소환수"] = {
+							["enabled"] = false,
+							["attach_to"] = "HealthBar",
+							["spacing"] = 0,
+							["location"] = "right",
+							["size"] = 0.8500000000000001,
+						},
+						["소환수"] = {
+							["enabled"] = false,
+							["side"] = "left",
+						},
+						["보통"] = {
+							["enabled"] = false,
+							["side"] = "left",
+						},
+					},
+				},
+			},
+		},
+		["Runes"] = {
+			["profileKeys"] = {
+			},
+			["profiles"] = {
+				["Default"] = {
+					["layouts"] = {
+						["보통"] = {
+							["enabled"] = false,
+						},
+					},
+					["global"] = {
+						["enabled"] = false,
+					},
+				},
+			},
+		},
+	},
+	["profileKeys"] = {
+	},
+	["profiles"] = {
+		["Default"] = {
+			["minimap_icon"] = {
+				["minimapPos"] = 340.9108023154146,
+				["hide"] = true,
+			},
+			["groups"] = {
+				["파티원 소환수"] = {
+					["vertical_spacing"] = 37,
+					["direction"] = "up_right",
+					["position_x"] = 757,
+					["enabled"] = true,
+					["size_x"] = 0.95,
+					["layout"] = "파티의소환수",
+					["unit_group"] = "partypet",
+					["size_y"] = 0.8,
+					["position_y"] = -339.9361999030132,
+				},
+				["파티"] = {
+					["vertical_spacing"] = 25,
+					["direction"] = "up_right",
+					["position_x"] = 935.2444364416178,
+					["enabled"] = true,
+					["layout"] = "파티",
+					["position_y"] = -315.726863280436,
+				},
+				["파티원 대상"] = {
+					["vertical_spacing"] = 31,
+					["direction"] = "up_right",
+					["position_x"] = 756.7576718002003,
+					["enabled"] = true,
+					["size_x"] = 0.95,
+					["unit_group"] = "partypet",
+					["layout"] = "파티의소환수",
+					["position_y"] = -311.8651398166853,
+				},
+			},
+			["made_groups"] = true,
+			["layouts"] = {
+				["파티"] = {
+					["size_x"] = 240,
+					["size_y"] = 36,
+					["bar_texture"] = "Minimalist",
+				},
+				["주시대상"] = {
+					["size_x"] = 300,
+					["size_y"] = 40,
+					["bar_texture"] = "Minimalist",
+				},
+				["대상"] = {
+					["size_x"] = 305,
+					["size_y"] = 40,
+					["bar_texture"] = "Minimalist",
+				},
+				["대상의대상"] = {
+					["size_x"] = 120,
+					["size_y"] = 30,
+					["bar_texture"] = "Minimalist",
+				},
+				["파티의소환수"] = {
+					["size_x"] = 120,
+					["size_y"] = 30,
+					["bar_texture"] = "Minimalist",
+				},
+				["소환수"] = {
+					["size_x"] = 140,
+					["size_y"] = 30,
+					["bar_texture"] = "Minimalist",
+				},
+				["보통"] = {
+					["size_x"] = 300,
+					["size_y"] = 40,
+					["bar_texture"] = "Minimalist",
+				},
+			},
+			["colors"] = {
+				["reaction"] = {
+					nil, -- [1]
+					{
+						nil, -- [1]
+						0, -- [2]
+						0.01568627450980392, -- [3]
+					}, -- [2]
+					nil, -- [3]
+					nil, -- [4]
+					{
+						0.2470588235294118, -- [1]
+						0.7686274509803921, -- [2]
+						0.9254901960784314, -- [3]
+					}, -- [5]
+					{
+						nil, -- [1]
+						0.8588235294117647, -- [2]
+						0.1568627450980392, -- [3]
+					}, -- [6]
+					{
+						nil, -- [1]
+						0.8509803921568627, -- [2]
+						0.1411764705882353, -- [3]
+					}, -- [7]
+					{
+						nil, -- [1]
+						0.8431372549019608, -- [2]
+						0.1411764705882353, -- [3]
+					}, -- [8]
+				},
+				["power"] = {
+					["MANA"] = {
+						0.3686274509803922, -- [1]
+						0.6549019607843137, -- [2]
+					},
+				},
+			},
+			["lock_movement"] = true,
+			["units"] = {
+				["targettargettarget"] = {
+					["enabled"] = false,
+					["position_y"] = -280.0000103810415,
+					["layout"] = "대상의대상",
+				},
+				["focustarget"] = {
+					["position_x"] = 465,
+					["position_y"] = -152,
+					["layout"] = "대상의대상",
+				},
+				["pet"] = {
+					["position_x"] = -330,
+					["position_y"] = -365,
+					["layout"] = "소환수",
+				},
+				["player"] = {
+					["position_x"] = -250,
+					["position_y"] = -306,
+				},
+				["focus"] = {
+					["position_x"] = 250,
+					["position_y"] = -156,
+					["layout"] = "주시대상",
+				},
+				["target"] = {
+					["position_x"] = 250,
+					["position_y"] = -306,
+					["layout"] = "대상",
+				},
+				["pettarget"] = {
+					["enabled"] = false,
+					["layout"] = "파티",
+				},
+				["focustargettarget"] = {
+					["enabled"] = false,
+					["layout"] = "대상의대상",
+				},
+				["targettarget"] = {
+					["position_y"] = -310,
+					["layout"] = "대상의대상",
+				},
+			},
+		},
+	},
+}

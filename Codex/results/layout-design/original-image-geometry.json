@@ -1,0 +1,504 @@
+{
+  "source": {
+    "path": "SourceArchive/2022-11-19/reference/black-bottom-original.jpg",
+    "width": 3840,
+    "height": 2160,
+    "sha256": "A16712D8A0C64B2823D9562D14F5D51A2507117EA5B270A4C42E902EF581EA21",
+    "provenance_file": "Codex/results/layout-design/reference-acquisition.json"
+  },
+  "method": {
+    "type": "direct visual geometry inspection of full frame and native-pixel crop copies",
+    "coordinate_system": "source pixels; top-left origin; bbox [left,top,right,bottom], right/bottom boundary convention",
+    "measurement_status": "approximate visual estimates, not pixel-perfect measurements",
+    "bottom_clearance_definition": "2160 minus bbox bottom",
+    "scope_exclusions": [
+      "No text, spell, keybind or code transcription",
+      "No character identity/spec inference",
+      "No proportional conversion or layout redesign",
+      "No Paddle text extraction: text extraction outside assignment"
+    ]
+  },
+  "regions": [
+    {
+      "id": "main_action_row",
+      "role": "continuous action-button row",
+      "bbox": [
+        421,
+        1683,
+        3481,
+        1766
+      ],
+      "confidence": "high",
+      "tolerance_px": 4,
+      "columns": 36,
+      "rows": 1,
+      "slots": 36,
+      "visible_icons": 21,
+      "empty_slots": 15,
+      "button_outside_px": [
+        82,
+        82
+      ],
+      "pitch_px": [
+        85,
+        null
+      ],
+      "gap_px": [
+        3,
+        null
+      ],
+      "bottom_clearance_px": 394,
+      "occupied_slots_1based": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        9,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        20,
+        21,
+        24,
+        25,
+        26,
+        27,
+        31
+      ],
+      "notes": [
+        "One visually continuous row; no geometric evidence of three separate banks.",
+        "Top triangular markers belong to the buttons and are not extra slots.",
+        "Empty means visible frame with world/background showing through; key labels are not icon occupancy."
+      ]
+    },
+    {
+      "id": "bottom_aux_bank",
+      "role": "compact bottom action-button bank",
+      "bbox": [
+        1845,
+        1803,
+        2557,
+        2066
+      ],
+      "confidence": "high",
+      "tolerance_px": 5,
+      "columns": 8,
+      "rows": 3,
+      "slots": 24,
+      "visible_icons": 3,
+      "empty_slots": 21,
+      "button_outside_px": [
+        85,
+        85
+      ],
+      "pitch_px": [
+        89,
+        89
+      ],
+      "gap_px": [
+        4,
+        4
+      ],
+      "bottom_clearance_px": 94,
+      "occupied_cells_1based": [
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "notes": [
+        "Cells are [row,column] counted from top left.",
+        "Black/transparent empty interiors remain framed.",
+        "This bank sits below the main row, between a wide empty dark panel and the minimap."
+      ]
+    },
+    {
+      "id": "floating_left_bank",
+      "role": "left floating auxiliary button bank",
+      "bbox": [
+        1140,
+        784,
+        1437,
+        1007
+      ],
+      "confidence": "high",
+      "tolerance_px": 4,
+      "columns": 4,
+      "rows": 3,
+      "slots": 12,
+      "visible_icons": 2,
+      "empty_slots": 10,
+      "button_outside_px": [
+        70,
+        70
+      ],
+      "pitch_px": [
+        75,
+        76
+      ],
+      "gap_px": [
+        5,
+        6
+      ],
+      "bottom_clearance_px": 1153,
+      "occupied_cells_1based": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "notes": [
+        "Separate from the bottom dock, over the game world."
+      ]
+    },
+    {
+      "id": "floating_right_bank",
+      "role": "right floating auxiliary button bank",
+      "bbox": [
+        2404,
+        784,
+        2700,
+        1007
+      ],
+      "confidence": "high",
+      "tolerance_px": 4,
+      "columns": 4,
+      "rows": 3,
+      "slots": 12,
+      "visible_icons": 0,
+      "empty_slots": 12,
+      "button_outside_px": [
+        70,
+        70
+      ],
+      "pitch_px": [
+        75,
+        76
+      ],
+      "gap_px": [
+        5,
+        6
+      ],
+      "bottom_clearance_px": 1153,
+      "occupied_cells_1based": [],
+      "notes": [
+        "Same visible grid geometry and height as floating_left_bank."
+      ]
+    },
+    {
+      "id": "large_unit_frame",
+      "role": "player-like unit frame; exact player/target role not visually established",
+      "bbox": [
+        1052,
+        1389,
+        1565,
+        1506
+      ],
+      "confidence": "high geometry / medium role",
+      "tolerance_px": 5,
+      "bottom_clearance_px": 654,
+      "notes": [
+        "Large silver/gray upper filled bar around [1057,1395,1558,1469].",
+        "Blue lower resource-like bar around [1057,1470,1558,1500].",
+        "Three small status icons immediately below, around [1057,1510,1151,1543].",
+        "No distinct second large target health/resource frame is visible anywhere in this screenshot.",
+        "Silver and blue color alone do not establish exact resource type or unit role."
+      ]
+    },
+    {
+      "id": "small_party_like_frame",
+      "role": "small party-like unit tile",
+      "bbox": [
+        129,
+        1058,
+        289,
+        1186
+      ],
+      "confidence": "high geometry / medium role",
+      "tolerance_px": 4,
+      "bottom_clearance_px": 974,
+      "notes": [
+        "Pink header, silver body, thin blue strip near bottom.",
+        "Not contiguous with the larger lower-middle unit frame."
+      ]
+    },
+    {
+      "id": "bottom_dock",
+      "role": "full-width black/dark bottom dock and panel rail",
+      "bbox": [
+        0,
+        1767,
+        3840,
+        2160
+      ],
+      "confidence": "high",
+      "tolerance_px": 4,
+      "bottom_clearance_px": 0,
+      "notes": [
+        "Horizontal black rail around y1767-1803; framed panel interiors start near y1803.",
+        "Background is dark/translucent with a downward black fade, not a uniformly opaque rectangle.",
+        "Main action row is immediately above this rail; some decorative art protrudes farther upward.",
+        "Visible dock reaches the left, right and bottom image edges."
+      ]
+    },
+    {
+      "id": "left_dark_panel",
+      "role": "left chat/info placeholder-like panel",
+      "bbox": [
+        8,
+        1802,
+        940,
+        2134
+      ],
+      "confidence": "high geometry / medium role",
+      "tolerance_px": 5,
+      "bottom_clearance_px": 26,
+      "notes": [
+        "Large framed dark region with no visible message list in this screenshot.",
+        "Small controls/tabs lie on its left/top; purpose cannot be established from geometry alone."
+      ]
+    },
+    {
+      "id": "middle_dark_panel",
+      "role": "second chat/info placeholder-like panel",
+      "bbox": [
+        940,
+        1802,
+        1846,
+        2134
+      ],
+      "confidence": "high geometry / medium role",
+      "tolerance_px": 5,
+      "bottom_clearance_px": 26,
+      "notes": [
+        "Mostly empty dark framed region; shares a vertical divider with left_dark_panel."
+      ]
+    },
+    {
+      "id": "minimap",
+      "role": "square minimap",
+      "bbox": [
+        2558,
+        1800,
+        2883,
+        2131
+      ],
+      "confidence": "high",
+      "tolerance_px": 4,
+      "bottom_clearance_px": 29,
+      "notes": [
+        "Square map interior approximately [2564,1807,2876,2123].",
+        "Location label sits above the map around [2645,1763,2800,1793].",
+        "Clock sits inside lower map; coordinates/status extend below map into bottom strip.",
+        "No minimap is visible at the upper-right corner."
+      ]
+    },
+    {
+      "id": "right_message_panel",
+      "role": "right chat panel with visible message lines",
+      "bbox": [
+        2884,
+        1802,
+        3837,
+        2134
+      ],
+      "confidence": "high",
+      "tolerance_px": 5,
+      "bottom_clearance_px": 26,
+      "notes": [
+        "Text is present but was not transcribed.",
+        "Several small communication buttons lie at the left edge of this panel and along its lower edge."
+      ]
+    },
+    {
+      "id": "utility_controls",
+      "role": "small monochrome utility control row",
+      "bbox": [
+        1848,
+        2070,
+        2257,
+        2123
+      ],
+      "confidence": "medium",
+      "tolerance_px": 6,
+      "visible_control_count": 11,
+      "bottom_clearance_px": 37,
+      "notes": [
+        "Controls differ in silhouette; not equal-size framed action slots."
+      ]
+    },
+    {
+      "id": "bag_like_controls",
+      "role": "five framed bag-like controls",
+      "bbox": [
+        2261,
+        2068,
+        2557,
+        2129
+      ],
+      "confidence": "high geometry / medium role",
+      "tolerance_px": 5,
+      "visible_control_count": 5,
+      "bottom_clearance_px": 31,
+      "notes": [
+        "Approximate outside size 58-60 px; one short horizontal row."
+      ]
+    },
+    {
+      "id": "bottom_info_strip",
+      "role": "thin information/status strip",
+      "bbox": [
+        8,
+        2130,
+        3837,
+        2160
+      ],
+      "confidence": "high",
+      "tolerance_px": 4,
+      "bottom_clearance_px": 0,
+      "notes": [
+        "Visible indicators and short labels; not transcribed.",
+        "Some content touches the bottom image edge; no beyond-frame continuation inferred."
+      ]
+    },
+    {
+      "id": "right_overlay_panel",
+      "role": "floating dark report/meter-like panel",
+      "bbox": [
+        3281,
+        1362,
+        3840,
+        1677
+      ],
+      "confidence": "high geometry / medium role",
+      "tolerance_px": 5,
+      "bottom_clearance_px": 483,
+      "notes": [
+        "Header and small controls at top; mostly empty translucent dark body.",
+        "Panel meets the right image boundary; hidden/beyond-frame extent is unknown.",
+        "It visually overlaps/obscures part of the right decorative asset."
+      ]
+    },
+    {
+      "id": "left_decor",
+      "role": "stone gargoyle/winged-creature decorative asset",
+      "bbox": [
+        245,
+        1619,
+        425,
+        1778
+      ],
+      "confidence": "medium",
+      "tolerance_px": 12,
+      "bottom_clearance_px": 382,
+      "notes": [
+        "Clearly visible sculpture at the left end of main button row; irregular outline.",
+        "Bounds separate visible art from background only approximately."
+      ]
+    },
+    {
+      "id": "right_decor_visible",
+      "role": "partly occluded dark creature/stone decorative asset",
+      "bbox": [
+        3466,
+        1618,
+        3674,
+        1778
+      ],
+      "confidence": "medium-low",
+      "tolerance_px": 20,
+      "bottom_clearance_px": 382,
+      "notes": [
+        "Only exposed portion bounded; upper/left extent is occluded by report panel and buttons.",
+        "No hidden shape or symmetric reconstruction inferred."
+      ]
+    },
+    {
+      "id": "top_right_icon_group",
+      "role": "three status-like icons and right-pointing marker",
+      "bbox": [
+        3152,
+        58,
+        3350,
+        133
+      ],
+      "confidence": "high geometry / medium role",
+      "tolerance_px": 5,
+      "visible_icons": 3,
+      "notes": [
+        "Icon bodies roughly 51-53 px square; horizontally separated.",
+        "Not an auxiliary 4x3 action bank and not a minimap."
+      ]
+    },
+    {
+      "id": "left_clipped_handle",
+      "role": "partly clipped vertical side panel/handle",
+      "bbox": [
+        0,
+        412,
+        22,
+        675
+      ],
+      "confidence": "medium visible bounds / unknown full extent",
+      "tolerance_px": 5,
+      "notes": [
+        "Visible narrow strip and triangular toggle only.",
+        "Underlying panel full width/purpose cannot be recovered from this frame."
+      ]
+    },
+    {
+      "id": "left_social_like_button",
+      "role": "isolated small portrait/social-like button",
+      "bbox": [
+        23,
+        1657,
+        64,
+        1715
+      ],
+      "confidence": "high geometry / low role",
+      "tolerance_px": 4,
+      "bottom_clearance_px": 445,
+      "notes": [
+        "Distinct from main action row and from decorative creature."
+      ]
+    }
+  ],
+  "full_frame_coverage": {
+    "top_left": "performance/status overlay; no action-button bank/minimap",
+    "top_edge": "title-like overlay near middle; otherwise world scene",
+    "top_right": "three small status-like icons; no minimap",
+    "left_edge": "clipped vertical handle plus small party-like tile and bottom controls",
+    "center": "world scene with the two floating 4x3 banks",
+    "right_edge": "world scene and dark report/meter panel meeting boundary",
+    "bottom_left": "decorative creature, long action row, two large dark panels",
+    "bottom_middle": "8x3 bank, utility/bag controls and minimap",
+    "bottom_right": "partly occluded decoration, chat panel and tiny lower controls",
+    "bottom_edge": "status strip and black dock reach edge"
+  },
+  "uncertainties": [
+    "Player/target attribution is not established solely from the screenshot; no separate target frame visible.",
+    "Exact frame border inclusion may shift boxes by listed tolerance.",
+    "Right decorative asset and left side handle are partly occluded/clipped; only visible portions recorded.",
+    "No text content or exact addon identities inferred.",
+    "Dark panels are observed; their precise interactive function/configuration is unverified."
+  ],
+  "self_review": "One full-frame edge/corner pass plus native crops; counts rechecked by grid position and icon-versus-empty occupancy."
+}

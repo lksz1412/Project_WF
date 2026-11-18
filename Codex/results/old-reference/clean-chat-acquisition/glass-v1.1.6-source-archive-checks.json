@@ -1,0 +1,20 @@
+{
+  "source": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\glass-v1.1.6-forever-source.zip",
+  "SHA256": "EE09E9A4677E882A04B3F2E4D1532534D08296EEF81D7B6A9137CFD1482603E2",
+  "bytes": 276298,
+  "label": "glass-v1.1.6-source",
+  "CRCtestRuns": 1,
+  "unsafe": [],
+  "extractionState": "passed",
+  "CRCbadMember": null,
+  "CRCstate": "passed",
+  "files": 137,
+  "directories": 11,
+  "uncompressedBytes": 1163290,
+  "compressedBytes": 241918,
+  "extractionRoot": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\extracted-glass-v1.1.6-source",
+  "extractedFiles": 137,
+  "extractedBytes": 1163290,
+  "reparsePaths": [],
+  "inventoryPath": "D:\\Projects\\Project_WF\\work\\clean-chat-step4-fx5q4nxu\\glass-v1.1.6-source-members.json"
+}

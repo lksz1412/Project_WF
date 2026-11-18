@@ -1,0 +1,31 @@
+{
+  "sourceEXE": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha\\DevilUI 6.1 Alpha.exe",
+  "sourceBytes": 7733851,
+  "SHA256": "261919ECF1DF7D25A7082E59D99801FFE3F7AE2DA94ACE26ECEA35283AB47AFB",
+  "sourceExecuted": false,
+  "magicMZ": true,
+  "format": "NSIS (bz actual listing)",
+  "listingPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\alpha-bz-list.txt",
+  "listedFiles": 2745,
+  "listedDirectories": 0,
+  "unsafe": [],
+  "extractionState": "passed",
+  "listToolExitCode": 0,
+  "tool": "C:/Program Files/Bandizip/bz.exe",
+  "listedUncompressedSizeAvailability": "-1 unknown for each member; no byte-total equality claim from listing",
+  "extractCommand": [
+    "C:/Program Files/Bandizip/bz.exe",
+    "x",
+    "-o:D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis",
+    "-consolemode:utf8",
+    "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha\\DevilUI 6.1 Alpha.exe"
+  ],
+  "extractExitCode": 0,
+  "extractionRoot": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\extracted-alpha-nsis",
+  "extractedFiles": 2745,
+  "missing": [],
+  "unexpected": [],
+  "extractedBytes": 39016814,
+  "postExtractionUnsafe": [],
+  "memberInventoryPath": "D:\\Projects\\Project_WF\\work\\old-reference-collection-0qlzzyxg\\alpha-nsis-members.json"
+}

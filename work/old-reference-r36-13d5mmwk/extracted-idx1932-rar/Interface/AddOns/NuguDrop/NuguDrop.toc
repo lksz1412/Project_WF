@@ -1,0 +1,14 @@
+## Interface: 30000
+## Title: |cff00ffff시링|r's |cff7C75E1누구드랍?|r v4.1 R1
+## Notes: 1. 아이템에 대한 드랍정보를 툴팁 아래에 표시해줍니다.|n2. 각 네임드 보스가 주는 아이템의 리스트를 볼 수 있습니다(브라우저).|n3. 각종 주요 Quest 보상템들의 정보를 표시해줍니다.|n4. 명예보상을 비롯한 각종 정보를 보여줍니다.|n5. 자신이 목표로 하는 아이템을 각종 분류별로 즐겨찾기가 가능합니다.|n|n|cffff8000/누구드랍|n/nugudrop|n/nd|r
+## Author: 시링크스흑마[렉사르]
+## versions: 4.1
+## RequiredDeps:
+## OptionalDeps:
+## SavedVariables: NuguDropOption, NDKnownSuffix, ND_Suffix, NDFavorites
+# Special Thanks to /waaaaay/ /ofdeath/ /abyssb/ /creep7/ /icecre4m/ /타락천사/ /djxcrash/ /흑먹어리/ /worthy/ /ghostmask/ /도움주신 많은 분들/
+NuguDrop.xml
+NuguDropButton.xml
+NuguDropList.xml
+NuguDrop_ItemID.xml
+NuguDrop_Favorites.xml

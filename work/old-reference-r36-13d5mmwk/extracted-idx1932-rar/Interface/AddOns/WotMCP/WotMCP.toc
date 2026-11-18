@@ -1,0 +1,6 @@
+## Interface: 30000
+## Title: Wrath of the MCP
+## Notes: Options panel to enable/disable addons from in-game.
+## SavedVariablesPerCharacter: WotMCPSettings
+WotMCP.lua
+WotMCP.xml

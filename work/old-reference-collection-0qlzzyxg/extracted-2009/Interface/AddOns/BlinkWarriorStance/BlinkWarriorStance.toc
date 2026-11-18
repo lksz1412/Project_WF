@@ -1,0 +1,5 @@
+## Interface: 30200
+## Title: |cffffff9a블링크|r 전사 태세변환 단축키
+## Notes: |cffffff9a블링크|r 전사 태세변환 단축키
+## Dependencies: 
+BlinkWarriorStance.lua

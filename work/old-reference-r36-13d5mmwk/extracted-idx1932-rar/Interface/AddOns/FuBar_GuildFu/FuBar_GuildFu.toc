@@ -1,0 +1,44 @@
+﻿## Interface: 30000
+
+## Title: FuBar - |cffffffffGuild|cff00ff00Fu|r
+## Notes: Displays online guild mates.
+## Notes-koKR: 접속중인 길드원의 정보를 표시합니다.
+## Notes-esES: Muestra tus companyeros de hermandad conectados.
+## Notes-zhTW: 持續追蹤線上公會名單。
+## Author: Elkano
+## Version: 2.4.1-98
+## X-Website: http://www.wowace.com/projects/fubar_guildfu/
+## X-Category: Interface Enhancements
+
+## X-Revision: 98
+## X-Date: 2008-10-15T10:51:05Z
+
+## OptionalDeps: Ace2, FuBar, FuBarPlugin-2.0, DewdropLib, TabletLib, Babble-2.2, TouristLib, AuldLangSyne, CT_PlayerNotes
+
+## SavedVariables: FuBar_GuildFuDB
+
+#@no-lib-strip@
+libs\LibStub\LibStub.lua
+libs\AceLibrary\AceLibrary.lua
+libs\AceOO-2.0\AceOO-2.0.lua
+libs\AceEvent-2.0\AceEvent-2.0.lua
+libs\AceAddon-2.0\AceAddon-2.0.lua
+libs\AceConsole-2.0\AceConsole-2.0.lua
+libs\AceDB-2.0\AceDB-2.0.lua
+libs\AceLocale-2.2\AceLocale-2.2.lua
+libs\Dewdrop-2.0\Dewdrop-2.0.lua
+libs\Tablet-2.0\Tablet-2.0.lua
+libs\FuBarPlugin-2.0\FuBarPlugin-2.0.lua
+libs\LibBabble-Zone-3.0\lib.xml
+libs\LibTourist-3.0\lib.xml
+#@end-no-lib-strip@
+
+FuBar_GuildFu.lua
+FuBar_GuildFuLocals.enUS.lua
+FuBar_GuildFuLocals.deDE.lua
+FuBar_GuildFuLocals.esES.lua
+FuBar_GuildFuLocals.frFR.lua
+FuBar_GuildFuLocals.koKR.lua
+FuBar_GuildFuLocals.zhCN.lua
+FuBar_GuildFuLocals.zhTW.lua
+FuBar_GuildFuOptions.lua

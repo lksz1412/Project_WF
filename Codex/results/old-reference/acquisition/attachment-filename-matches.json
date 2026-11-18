@@ -1,0 +1,500 @@
+[
+  {
+    "postID": 45,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [
+      {
+        "text": "DevilUI6.1Alpha.zip 6.1.0 939010 2015-03-04",
+        "cells": [
+          "DevilUI6.1Alpha.zip",
+          "6.1.0",
+          "939010",
+          "2015-03-04"
+        ],
+        "line": 37
+      }
+    ],
+    "state": "literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 45,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 11218,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 11218,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 2958,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 2958,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [
+      {
+        "text": "Devil_Blackt.zip 3.3.0 5837 2009-12-10",
+        "cells": [
+          "Devil_Blackt.zip",
+          "3.3.0",
+          "5837",
+          "2009-12-10"
+        ],
+        "line": 37
+      }
+    ],
+    "state": "literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 13140,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 13140,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 12993,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 12993,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 11361,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 11361,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 12610,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 12610,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 12124,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 12124,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 12174,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 12174,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 10341,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 10341,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 9880,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 9880,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 9789,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 9789,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 3461,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 3461,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 8906,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 8906,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 8920,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 8920,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 7618,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 7618,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 7546,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 7546,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 6405,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 6405,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 4238,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 4238,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 4019,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 4019,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 4018,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 4018,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 4012,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 4012,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 2582,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 2582,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 2312,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 2312,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 1932,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 1932,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 1877,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 1877,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 1865,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 1865,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 1853,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 1853,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 1403,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 1403,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 1361,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 1361,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 1121,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 1121,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 1086,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 1086,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 1008,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 1008,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 546,
+    "targetFilename": "DevilUI6.1Alpha.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  },
+  {
+    "postID": 546,
+    "targetFilename": "Devil_Blackt.zip",
+    "literalMatches": [],
+    "state": "no-literal-match",
+    "note": "Name match alone is not publisher identity or sample settings proof."
+  }
+]

@@ -1,0 +1,20 @@
+= 이력 =
+Standil 님의 재료천국을
+mknight 님께서 수정하셔서 2.0.1 버전에서 작동되게 만드셨습니다.
+
+그러나,
+검색 기능이 제대로 작동하지 않아,
+withwish 가 잠깐 손을 되었습니다.
+
+따라서 본 애드온의 모든 권리는 1차적으로 Standil 님께,
+2차적으로 mknight 님께 있다는 것을 간단하게 밝혀 둡니다.
+
+= 수정부분 (061223) =
+ReagentHeaven.lua:
+1) LUA 엔진의 버전이 바뀌면서, 더 이상 table.getn 과 table.setn 이 
+  유효하지 않습니다. 따라서 table.setn 호출을 없애고, table.getn을
+  길이 연산자 # 으로 수정했습니다.
+
+ReagentHeaven.xml:
+1) <Button> 내부의 <NormalText> 가 FrameXML 파일을 참조한 결과 더
+  이상 유효하지 않다고 판단해서, <ButtonText> 로 수정했습니다.

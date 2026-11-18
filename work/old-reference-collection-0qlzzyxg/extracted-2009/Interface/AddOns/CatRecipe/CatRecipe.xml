@@ -1,0 +1,13 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
+	<Frame name="CatRecipe" hidden="true">
+		<Scripts>
+			<OnLoad>
+				CatRecipe_OnLoad();
+			</OnLoad>
+			<OnEvent>
+				CatRecipe_OnEvent();
+			</OnEvent>
+		</Scripts>
+	</Frame>
+	<GameTooltip name="CatRecipeTooltip" inherits="GameTooltipTemplate" parent="UIParent" hidden="true"/>
+</Ui>

@@ -1,0 +1,82 @@
+------------------------------------------------------------------------
+r11 | rabbit | 2008-10-18 05:49:10 +0000 (Sat, 18 Oct 2008) | 2 lines
+Changed paths:
+   A /tags/v3.5.3 (from /trunk:10)
+
+Includes dewdrop+tablet.
+
+------------------------------------------------------------------------
+r10 | rabbit | 2008-10-18 05:27:19 +0000 (Sat, 18 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/.pkgmeta
+   M /trunk/FuBar.toc
+
+Add AceLibrary, Tablet and Dewdrop.
+------------------------------------------------------------------------
+r7 | arrowmaster | 2008-10-17 21:53:35 +0000 (Fri, 17 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/FuBar.toc
+
+Correct CallbackHandler-1.0 path
+------------------------------------------------------------------------
+r6 | arrowmaster | 2008-10-17 21:49:37 +0000 (Fri, 17 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/.pkgmeta
+   M /trunk/FuBar.toc
+   D /trunk/embeds.xml
+
+Embed LibFuBarPlugin-3.0 and add Broker2FuBar as an 'optional dependancy' in .pkgmeta
+------------------------------------------------------------------------
+r4 | stanzilla | 2008-10-14 16:22:08 +0000 (Tue, 14 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/FuBar.toc
+
+Update TOC for WotLK
+------------------------------------------------------------------------
+r3 | arrowmaster | 2008-10-14 07:59:25 +0000 (Tue, 14 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/.pkgmeta
+   M /trunk/FuBar-Locale-deDE.lua
+   M /trunk/FuBar-Locale-enUS.lua
+   M /trunk/FuBar-Locale-esES.lua
+   M /trunk/FuBar-Locale-frFR.lua
+   M /trunk/FuBar-Locale-koKR.lua
+   M /trunk/FuBar-Locale-zhCN.lua
+   M /trunk/FuBar-Locale-zhTW.lua
+   M /trunk/FuBar.lua
+   M /trunk/FuBar.toc
+   M /trunk/FuBar_Panel.lua
+   M /trunk/LICENSE.txt
+   M /trunk/embeds.xml
+   D /trunk/libs
+
+Fix .pkgmeta, svn:keywords, and other minor properties
+------------------------------------------------------------------------
+r2 | root | 2008-09-29 22:13:59 +0000 (Mon, 29 Sep 2008) | 1 line
+Changed paths:
+   A /trunk/.pkgmeta
+
+Facilitate WowAce-on-CurseForge transition
+------------------------------------------------------------------------
+r1 | root | 2008-09-29 21:18:54 +0000 (Mon, 29 Sep 2008) | 1 line
+Changed paths:
+   A /branches
+   A /tags
+   A /trunk
+   A /trunk/FuBar-Locale-deDE.lua
+   A /trunk/FuBar-Locale-enUS.lua
+   A /trunk/FuBar-Locale-esES.lua
+   A /trunk/FuBar-Locale-frFR.lua
+   A /trunk/FuBar-Locale-koKR.lua
+   A /trunk/FuBar-Locale-zhCN.lua
+   A /trunk/FuBar-Locale-zhTW.lua
+   A /trunk/FuBar.lua
+   A /trunk/FuBar.toc
+   A /trunk/FuBar_Panel.lua
+   A /trunk/LICENSE.txt
+   A /trunk/background.tga
+   A /trunk/embeds.xml
+   A /trunk/libs
+
+Initial import of HEAD
+------------------------------------------------------------------------
