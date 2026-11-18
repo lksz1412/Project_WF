@@ -1,0 +1,14 @@
+{
+ "Summary": "Phase 24: Codex final-mockup brief appearance-24.md written and reviewed (middle 3→1→0). Mockups themselves and Claude's comparison wait for Codex (R109).",
+ "Step Range": "Step 39",
+ "Inputs": "마스터 플랜 339·351·413·455 · Step 5 설계 · 앞 외관 발주문 · install.json · classes.md · manifest",
+ "Files Created": "Collection/codex-briefs/appearance-24.md, Claude/results/handoffs/phase24/iter_1/work_log-a2.md, Claude/results/handoffs/phase24/iter_1/audit_log.md, Claude/results/handoffs/phase24/TRIAGE_phase24.md, Claude/results/handoffs/phase24/SESSIONS.md",
+ "Files Updated": "세부계획 phase24 상태·마스터 플랜 Phase 목록 상태",
+ "Read Coverage": "[Phase 24 start — master plan re-read 1–550.] Compaction recovery: constitution (system-loaded .claude/CLAUDE.md), memory feedback_communication_style 1–88, feedback_flow_interruption 1–65, skills plan-execution + multi-session-orchestration re-invoked; queue check (only R109, recorded in REQUEST_LEDGER_phase19.md:7); master plan 1–240, 241–400, 401–550; phase24 detail plan 1–7; Step 39 start note; SESSIONS phase24. Master read appearance-24.md 1–62 in full; triangulated B quotes: devil-ui-old-4k-layout.md 45–56, 60; appearance-10.md:31, appearance-4.md:32, appearance-22.md:26; text-metrics.json keys; brief :29,:35–40,:51,:61. A2 ranges: work_log-a2.md (initial, fix 1, fix 2). B ranges: audit_log.md. Impact maps: work_log-a2.md fix 1 / fix 2 sections; triage TRIAGE_phase24.md.",
+ "Execution Evidence": "Step 39 이력·work_log 판정 줄",
+ "Validation·Gate·Confirmed": "② local review same B: 중간 3 → 1 → 0, 경미 2",
+ "Non-Changes": "Collection 코드·References·Codex 무변경 (문서만)",
+ "Open Issues": "Codex mockups not made; comparison/chat showing (R46) pending. Minors: FHD/QHD label spot undefined; solo-state combat/target/cast undefined; :29 citation covers part of sentence; :17 crop may miss Dominos stance/totem bars.",
+ "Decision Queue": "Defaults chosen: solo state (no Grid2), no game nameplates, one FUF crop per layout, classes WARRIOR/ROGUE/SHAMAN/DRUID-cat, Aurora excluded, Codex picks zoom factor.",
+ "Next": "Phase 25 Step 40 — needs Codex verification results (References/codex-verify, codex-appearance absent; R109) → record as waiting; Step 41 freeze docs/handover."
+}

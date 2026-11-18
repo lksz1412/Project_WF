@@ -391,7 +391,7 @@ R1 의 첫 요청은 단축키·체력/마나·미니맵이었고 「부가 기�
 | 21 사용자 편집 | — | 34–35 | 빠짐(R107) |
 | 22 대안 테마 (외관은 Codex) | `…-phase22-세부계획.md` | 36 | 완료 |
 | 23 연계 검사·정정 | `…-phase23-세부계획.md` | 37–38 | 완료 |
-| 24 최종 목업 (제작은 Codex) | `…-phase24-세부계획.md` | 39 | 대기 |
+| 24 최종 목업 (제작은 Codex) | `…-phase24-세부계획.md` | 39 | 완료 (받은 목업 대조는 Codex 결과 대기 · R109) |
 | 25 Codex 검증 결과 반영·고정 | `…-phase25-세부계획.md` | 40–41 | 대기 |
 
 `…` 는 `Claude/plans/2026-11-18-devil-forever-addon-collection` 이다. Phase 가 끝날 때마다 그 Phase 의 Result 를 `Claude/results/` 에 남기고, 끝난 Phase 정리는 `Claude/plans/2026-11-18-devil-forever-addon-collection-plan_이력.md` 로 옮긴다.

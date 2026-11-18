@@ -97,3 +97,7 @@ Phase 22 끝: 대안 테마는 Codex 가 만들고, Claude 는 테마를 바꿔 
 ## Phase 23 끝 정리 (2026-11-18 21:02:25 +0900)
 
 연계 정적 검사·설치 ZIP·등록 정리·설치 안내. Result = `Claude/results/PHASE_23_integration_RESULT.md`.
+
+## Phase 24 끝 정리 (2026-11-18 21:16:57 +0900)
+
+Phase 24: Codex final-mockup brief appearance-24.md written and reviewed (middle 3→1→0). Mockups themselves and Claude's comparison wait for Codex (R109). Result = `Claude/results/PHASE_24_mockup_RESULT.md`.
