@@ -74,7 +74,7 @@
 
 ## 9. 마지막 오류 확인과 결과 올리기
 
-- 하는 법: `/bugsack` 을 다시 열어 이번 검증 동안 쌓인 `Prat`·`!DevilForever_Core`·`DevilForever_ChatSetup` 오류와 `ADDON_ACTION_BLOCKED`·`ADDON_ACTION_FORBIDDEN` 을 센다(있으면 `bugsack.txt` 에 덧붙인다). 0–9 의 결과 줄을 `References/codex-verify/phase4/result.md` 에 순서대로 적고 `windows.txt`·필요한 화면 갈무리와 함께 저장소에 올린다. 원래 Prat 설정으로 돌아가려면 게임을 종료하고 0 에서 옮긴 `Prat-3.0.lua` 를 되돌린다(돌렸는지 한 줄 적는다).
+- 하는 법: `/bugsack` 을 다시 열어 이번 검증 동안 쌓인 `Prat`·`!DevilForever_Core`·`DevilForever_ChatSetup` 오류와 `ADDON_ACTION_BLOCKED`·`ADDON_ACTION_FORBIDDEN` 을 센다(있으면 `bugsack.txt` 에 덧붙인다). 0–9 의 결과 줄을 `References/codex-verify/phase4/result.md` 에 순서대로 적고 `windows.txt`·필요한 화면 갈무리와 함께 저장소에 올린다. 원래 Prat 설정으로 돌아가려면 게임을 종료하고 0 에서 옮긴 `Prat-3.0.lua` 를 되돌린다(돌렸는지 한 줄 적는다). 모든 것을 시작 전 상태로 되돌리려면 게임을 종료하고, 지금의 `_forever_/Interface/AddOns` 와 `_forever_/WTF` 를 다른 이름(예: `AddOns_after_phase4`, `WTF_after_phase4`)으로 바꿔 옆에 두고, 0 에서 만든 백업의 `AddOns`·`WTF` 두 폴더를 원래 자리로 복사한다(지우지 않는다 — 백업은 시작 전 상태 전체다).
 - 기대 결과: 오류 0, `References/codex-verify/phase4/result.md` 가 있다.
 
 결과 한 줄 양식: `9 | <통과/실패/못 함> | 오류 수=<n> | 차단 오류 수=<n> | 올린 파일=<목록> | Prat 저장 파일 되돌림=<예/아니오> | 커밋=<해시>`

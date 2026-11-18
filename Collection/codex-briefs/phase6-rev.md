@@ -78,7 +78,7 @@
 
 ## 9. 마지막 오류 확인과 결과 올리기
 
-- 하는 법: `/bugsack` 을 다시 열어 이번 검증 동안 쌓인 `PitBull4`·`ForeverUnitFrames`·`DevilForever`·`Grid2` 오류와 `ADDON_ACTION_BLOCKED`·`ADDON_ACTION_FORBIDDEN` 을 센다(있으면 `bugsack.txt` 에 덧붙인다). 0–9 의 결과 줄을 `References/codex-verify/phase6-rev/result.md` 에 순서대로 적고 `compare.md`·필요한 화면 갈무리와 함께 저장소에 올린다. 원래 상태로 돌아가려면 게임을 종료하고 0 에서 옮긴 폴더·저장 파일을 되돌린다(Grid2·PitBull4 를 남길지 뺄지와 함께 한 줄 적는다).
+- 하는 법: `/bugsack` 을 다시 열어 이번 검증 동안 쌓인 `PitBull4`·`ForeverUnitFrames`·`DevilForever`·`Grid2` 오류와 `ADDON_ACTION_BLOCKED`·`ADDON_ACTION_FORBIDDEN` 을 센다(있으면 `bugsack.txt` 에 덧붙인다). 0–9 의 결과 줄을 `References/codex-verify/phase6-rev/result.md` 에 순서대로 적고 `compare.md`·필요한 화면 갈무리와 함께 저장소에 올린다. 원래 상태로 돌아가려면 게임을 종료하고, 지금의 `_forever_/Interface/AddOns` 와 `_forever_/WTF` 를 다른 이름(예: `AddOns_after_phase6rev`, `WTF_after_phase6rev`)으로 바꿔 옆에 두고, 0 에서 만든 백업의 `AddOns`·`WTF` 두 폴더를 원래 자리로 복사한다(지우지 않는다 — 백업은 시작 전 상태 전체다). Grid2·PitBull4 를 남길지 뺄지도 한 줄 적는다.
 - 기대 결과: 오류 0, `result.md`·`compare.md` 가 있다.
 
 결과 한 줄 양식: `9 | <통과/실패/못 함> | 오류 수=<n> | 차단 오류 수=<n> | 올린 파일=<목록> | 되돌림=<예/아니오, 남긴 폴더> | 커밋=<해시>`

@@ -76,7 +76,7 @@
 
 ## 9. 재접속·결과 올리기
 
-- 하는 법: `/reload` 뒤 2번 줄을 다시 치고, 공격대가 있으면 4번처럼 센다. 몹과 전투를 시작해 전투 중 공격대원이 들어오거나 나갈 때 Grid2 단추가 따라 바뀌는지 본다(할 수 있으면). `/bugsack` 을 다시 열어 이번 검증 동안 쌓인 `Grid2`·`ForeverUnitFrames`·`DevilForever` 오류와 `ADDON_ACTION_BLOCKED`·`ADDON_ACTION_FORBIDDEN` 을 센다(있으면 `bugsack.txt` 에 덧붙인다). 0–9 의 결과 줄을 `References/codex-verify/phase9/result.md` 에 순서대로 적고 필요한 화면 갈무리(혼자·파티·공격대 하나씩)와 함께 저장소에 올린다. 원래 상태로 돌아가려면 게임을 종료하고 0 에서 옮긴 폴더·저장 파일을 되돌린다.
+- 하는 법: `/reload` 뒤 2번 줄을 다시 치고, 공격대가 있으면 4번처럼 센다. 몹과 전투를 시작해 전투 중 공격대원이 들어오거나 나갈 때 Grid2 단추가 따라 바뀌는지 본다(할 수 있으면). `/bugsack` 을 다시 열어 이번 검증 동안 쌓인 `Grid2`·`ForeverUnitFrames`·`DevilForever` 오류와 `ADDON_ACTION_BLOCKED`·`ADDON_ACTION_FORBIDDEN` 을 센다(있으면 `bugsack.txt` 에 덧붙인다). 0–9 의 결과 줄을 `References/codex-verify/phase9/result.md` 에 순서대로 적고 필요한 화면 갈무리(혼자·파티·공격대 하나씩)와 함께 저장소에 올린다. 원래 상태로 돌아가려면 게임을 종료하고, 지금의 `_forever_/Interface/AddOns` 와 `_forever_/WTF` 를 다른 이름(예: `AddOns_after_phase9`, `WTF_after_phase9`)으로 바꿔 옆에 두고, 0 에서 만든 백업의 `AddOns`·`WTF` 두 폴더를 원래 자리로 복사한다(지우지 않는다 — 백업은 시작 전 상태 전체다).
 - 기대 결과: reload 뒤 2번과 같은 출력, 공격대에서 Grid2 하나, 오류 0, `References/codex-verify/phase9/result.md` 가 있다.
 
 결과 한 줄 양식: `9 | <통과/실패/못 함> | reload 뒤 출력=<줄> | 전투 중 명단 바뀜=<따라 바뀜/다른 결과/못 봄> | 오류 수=<n> | 차단 오류 수=<n> | 올린 파일=<목록> | 되돌림=<예/아니오> | 커밋=<해시>`

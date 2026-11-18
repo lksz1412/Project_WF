@@ -84,7 +84,7 @@
 
 ## 7. 결과 올리기
 
-- 하는 법: 0–6 의 결과 줄을 `References/codex-verify/phase2/result.md` 에 순서대로 적고, (있으면) `bugsack.txt` 와 필요한 화면 갈무리를 같은 폴더에 넣어 저장소에 올린다. 3 의 확인용 폴더를 옮긴 위치를 한 줄 덧붙인다.
+- 하는 법: 0–6 의 결과 줄을 `References/codex-verify/phase2/result.md` 에 순서대로 적고, (있으면) `bugsack.txt` 와 필요한 화면 갈무리를 같은 폴더에 넣어 저장소에 올린다. 3 의 확인용 폴더를 옮긴 위치를 한 줄 덧붙인다. 원래 상태로 돌아가려면 게임을 종료하고, 지금의 `_forever_/Interface/AddOns` 와 `_forever_/WTF` 를 다른 이름(예: `AddOns_after_phase2`, `WTF_after_phase2`)으로 바꿔 옆에 두고, 0 에서 만든 백업의 `AddOns`·`WTF` 두 폴더를 원래 자리로 복사한다(지우지 않는다 — 백업은 시작 전 상태 전체다).
 - 기대 결과: `References/codex-verify/phase2/result.md` 가 있다.
 
 결과 한 줄 양식: `7 | <통과/실패/못 함> | 올린 파일=<목록> | 커밋=<해시>`

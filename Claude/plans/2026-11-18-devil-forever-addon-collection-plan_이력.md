@@ -69,3 +69,7 @@ PitBull4 Forever 판을 만들었다: 최신 v4.2.50 에 V42 제작자의 Foreve
 ## Phase 10 끝 정리 (2026-11-18 17:57:59 +0900)
 
 Phase 10 끝: 데미지·어그로 미터는 Details + Details_TinyThreat 를 그대로 쓴다(R107 ②). 연결 애드온은 애드온 수를 줄이려고(R101) 빼고, 어그로 창은 처음 한 번 손으로 연다(/details new → 창 2 모드 버튼 → Plugins → Tiny Threat). Result = `Claude/results/PHASE_10_details_threat_RESULT.md`.
+
+## Phase 14 끝 정리 (2026-11-18 18:09:02 +0900)
+
+Phase 14 끝: 이름표는 게임 기본을 쓰고 애드온을 넣지 않는다(R107 ③). Codex 확인·외관 발주문을 썼고, 검수에서 나온 복원 경로 문제를 고치면서 앞 Phase 발주문 10개의 되돌리기 문장도 백업 통째 복원으로 맞췄다. Result = `Claude/results/PHASE_14_nameplates_RESULT.md`.

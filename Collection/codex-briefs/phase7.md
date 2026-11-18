@@ -76,7 +76,7 @@
 
 ## 9. 재접속·다른 캐릭터·결과 올리기
 
-- 하는 법: `/reload` 뒤 2번의 `/run` 줄을 다시 치고 시전 한 번으로 시전바를 센다. 몹과 전투를 시작해 전투 중에 `/reload` 하고, 전투가 끝난 뒤 10초 기다려 1번 첫 `/run` 줄을 치고 시전 한 번으로 내 시전바를 센다. 같은 계정의 다른 캐릭터로 나가 캐릭터 선택 화면 애드온 창의 캐릭터 고르기에서 그 캐릭터만 Quartz 를 끈 뒤 접속해 내 시전·대상 시전을 센다(FUF 시전바가 그대로 보여야 한다), 끝나면 다시 켠다. `/bugsack` 을 다시 열어 이번 검증 동안 쌓인 `Quartz`·`ForeverUnitFrames`·`DevilForever`·`Dominos` 오류와 `ADDON_ACTION_BLOCKED`·`ADDON_ACTION_FORBIDDEN` 을 센다(있으면 `bugsack.txt` 에 덧붙인다). 0–9 의 결과 줄을 `References/codex-verify/phase7/result.md` 에 순서대로 적고 필요한 화면 갈무리와 함께 저장소에 올린다. 원래 상태로 돌아가려면 게임을 종료하고 0 에서 옮긴 폴더·저장 파일을 되돌린다(Dominos 를 남길지 빼낼지와 함께 한 줄 적는다).
+- 하는 법: `/reload` 뒤 2번의 `/run` 줄을 다시 치고 시전 한 번으로 시전바를 센다. 몹과 전투를 시작해 전투 중에 `/reload` 하고, 전투가 끝난 뒤 10초 기다려 1번 첫 `/run` 줄을 치고 시전 한 번으로 내 시전바를 센다. 같은 계정의 다른 캐릭터로 나가 캐릭터 선택 화면 애드온 창의 캐릭터 고르기에서 그 캐릭터만 Quartz 를 끈 뒤 접속해 내 시전·대상 시전을 센다(FUF 시전바가 그대로 보여야 한다), 끝나면 다시 켠다. `/bugsack` 을 다시 열어 이번 검증 동안 쌓인 `Quartz`·`ForeverUnitFrames`·`DevilForever`·`Dominos` 오류와 `ADDON_ACTION_BLOCKED`·`ADDON_ACTION_FORBIDDEN` 을 센다(있으면 `bugsack.txt` 에 덧붙인다). 0–9 의 결과 줄을 `References/codex-verify/phase7/result.md` 에 순서대로 적고 필요한 화면 갈무리와 함께 저장소에 올린다. 원래 상태로 돌아가려면 게임을 종료하고, 지금의 `_forever_/Interface/AddOns` 와 `_forever_/WTF` 를 다른 이름(예: `AddOns_after_phase7`, `WTF_after_phase7`)으로 바꿔 옆에 두고, 0 에서 만든 백업의 `AddOns`·`WTF` 두 폴더를 원래 자리로 복사한다(지우지 않는다 — 백업은 시작 전 상태 전체다). Dominos 를 남길지 빼낼지도 한 줄 적는다.
 - 기대 결과: reload 뒤 2번과 같은 결과, 전투 중 reload 뒤에도 전투가 끝나면 `true true true true` 와 Quartz 시전바 하나, 다른 캐릭터는 FUF 시전바가 보이고 Quartz 시전바는 없음, 오류 0, `References/codex-verify/phase7/result.md` 가 있다.
 
 결과 한 줄 양식: `9 | <통과/실패/못 함> | reload 뒤=<출력·보인 시전바> | 전투 중 reload 뒤=<출력·보인 시전바/못 함> | 다른 캐릭터(Quartz 끔)=<내/대상 보인 시전바 또는 캐릭터 없음> | 오류 수=<n> | 차단 오류 수=<n> | 올린 파일=<목록> | 되돌림=<예/아니오, Dominos 남김/뺌> | 커밋=<해시>`
