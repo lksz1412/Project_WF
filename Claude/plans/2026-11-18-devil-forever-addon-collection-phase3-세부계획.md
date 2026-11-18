@@ -4,4 +4,4 @@
 
 | Step | Work | Owner | Gate | Review | Est. | Status |
 |---|---|---|---|---|---|---|
-| 13 | Dominos defaults file (bar count, paging, class stance/form bars per classes.md, keybind text shown; no key assignment), registry_extra entry, Codex appearance-3 + phase3 briefs, rebuild ZIP — per `Claude/results/handoffs/settings-phase-brief-template.md` | A2 | template §3 gates | 1 logic review (B) | 30–60 (+10–15/class) | ⏳ |
+| 13 | Dominos defaults file (bar count, paging, class stance/form bars per classes.md, keybind text shown; no key assignment), registry_extra entry, Codex appearance-3 + phase3 briefs, rebuild ZIP — per `Claude/results/handoffs/settings-phase-brief-template.md` | A2 | template §3 gates | 1 logic review (B) | 30–60 (+10–15/class) | ✅ |

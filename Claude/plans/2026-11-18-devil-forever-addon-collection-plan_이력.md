@@ -33,3 +33,7 @@ Phase 1(Step 8–10): 원천 해제·manifest·정적 도구·쓰는 방식 판�
 ## Phase 2 끝 정리 (2026-11-18 14:33:42 +0900)
 
 Phase 2(Step 11–12): !DevilForever_Core 와 Codex 발주문 2건. 이 Phase 의 마스터 플랜 고침 = Core 폴더 이름 바꿈(단어 치환). Result = `Claude/results/PHASE_2_core_RESULT.md`.
+
+## Phase 3 끝 정리 (2026-11-18 14:45:51 +0900)
+
+행동단축바는 Dominos 12.0.4 를 그대로 쓰고 기본 설정은 단축키 글자 표시 하나만 넣었다(바 개수·페이지 전환·직업 특수 바는 Dominos 자체 기본값). 등록 표에 바 1–7·특수 바 프레임과 위치·간격 편집 항목을 올렸다. Codex 외관·실사용 검증 발주문을 썼다. Result = `Claude/results/PHASE_3_dominos_RESULT.md`.

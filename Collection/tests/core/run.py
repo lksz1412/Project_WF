@@ -102,6 +102,9 @@ class Session:
             g[name] = self.table(value)
         self.ns = self.lua.table()
         for rel in toc_files():
+            # Real defaults files name folders of the generated registry only.
+            if rel.startswith("Defaults/") and registry == "fixture":
+                continue
             if rel == "Registry.lua" and registry == "fixture":
                 self.run_file(os.path.join(FIXTURES, "Registry_Test.lua"))
             else:
@@ -374,14 +377,16 @@ def generated_registry_lookup():
     c = s.core
     info = to_py(c.GetAddonInfo(c, "dominos"))
     eq(info["package"], "Dominos", "case-insensitive lookup")
-    eq(list(info["savedVariables"].values()), [{"name": "DominosDB", "scope": "account", "split": "common"}], "SV")
+    eq(list(info["savedVariables"].values()), [{"name": "DominosDB", "scope": "account", "split": "class"}], "SV")
+    eq(info["defaults"], "Defaults/Dominos.lua", "defaults file named")
     prat = to_py(c.GetAddonInfo(c, "Prat-3.0"))
     scopes = {sv["name"]: sv["scope"] for sv in prat["savedVariables"].values()}
     eq(scopes, {"Prat3DB": "account", "Prat3CharDB": "character", "Prat3HighCPUPerCharDB": "character"}, "scopes")
     eq(to_py(c.GetAddonInfo(c, "!DevilForever_Core"))["bundle"], "required", "Core is required")
     eq(list(to_py(c.ListAddons(c)).values())[0], "!DevilForever_Core", "Core sorts first")
     eq(c.GetAddonInfo(c, "NoSuchAddon"), None, "unknown folder")
-    eq(to_py(c.GetFrameNames(c)), {}, "no appearance frames yet")
+    eq(list(to_py(c.GetFrameNames(c)).values()), list(to_py(c.GetFrameNames(c, "Dominos")).values()),
+       "appearance frames are Dominos' only")
     names = list(to_py(c.ListAddons(c)).values())
     eq(names, sorted(names, key=str.lower), "sorted list")
     eq("Bartender4" in names, False, "comparison packages excluded")
@@ -771,6 +776,39 @@ def defaults_player_keys_unavailable_logged():
     eq("player name or realm not known yet" in st["message"], True, "reason in status")
     eq(any("player name or realm not known yet" in (x["message"] or "") for x in s.log()), True, "reason logged")
     eq(s.sv("TestAceDB"), None, "nothing created")
+
+
+# Real defaults files ----------------------------------------------------------
+
+@case
+def dominos_defaults_fresh_class_profile():
+    s = Session(registry="generated", extra_files=()).boot(after=["Dominos"])
+    eq(s.sv("DominosDB"), {"profiles": {"Warrior": {"showBindingText": True}}},
+       "profile named after the localized class name")
+    st = s.status("Dominos")["targets"]["DominosDB"]
+    eq((st["state"], st["key"], st["version"]), ("applied", "DominosDB@profile:Warrior", 1), "status")
+    second = Session(registry="generated", extra_files=(),
+                     saved={"DominosDB": s.sv("DominosDB"), "DevilForever_CoreDB": s.sv("DevilForever_CoreDB")})
+    second.boot(after=["Dominos"])
+    eq(second.status("Dominos")["targets"]["DominosDB"]["state"], "already", "once per version")
+    eq(s.errors() + second.errors(), [], "no errors")
+
+
+@case
+def dominos_defaults_existing_profile_kept():
+    saved = {"DominosDB": {"profileKeys": {"Hero - Realm": "Custom"},
+                           "profiles": {"Custom": {"ab": {"count": 10, "length": 12}, "showBindingText": False}},
+                           "global": {"configVersion": 3}}}
+    s = Session(registry="generated", extra_files=(), saved=saved).boot(after=["Dominos"])
+    db = s.sv("DominosDB")
+    eq(db["profiles"], {"Custom": {"ab": {"count": 10, "length": 12}, "showBindingText": False}},
+       "user values kept, no class profile made")
+    st = s.status("Dominos")["targets"]["DominosDB"]
+    eq((st["state"], st["key"], st["written"]), ("applied", "DominosDB@profile:Custom", 0), "profileKeys profile")
+    other = Session(registry="generated", extra_files=(), player={"className": "Mage", "class": "MAGE", "name": "Sage"},
+                    saved={"DominosDB": db, "DevilForever_CoreDB": s.sv("DevilForever_CoreDB")}).boot(after=["Dominos"])
+    eq(other.sv("DominosDB")["profiles"]["Mage"], {"showBindingText": True},
+       "a new character of another class gets its class profile")
 
 
 def main():

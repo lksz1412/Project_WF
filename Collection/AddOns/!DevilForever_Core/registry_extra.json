@@ -1,3 +1,206 @@
 {
-  "addons": {}
+  "addons": {
+    "Dominos": {
+      "frames": [
+        {
+          "key": "dominos.bar1",
+          "frame": "DominosFrame1"
+        },
+        {
+          "key": "dominos.bar2",
+          "frame": "DominosFrame2"
+        },
+        {
+          "key": "dominos.bar3",
+          "frame": "DominosFrame3"
+        },
+        {
+          "key": "dominos.bar4",
+          "frame": "DominosFrame4"
+        },
+        {
+          "key": "dominos.bar5",
+          "frame": "DominosFrame5"
+        },
+        {
+          "key": "dominos.bar6",
+          "frame": "DominosFrame6"
+        },
+        {
+          "key": "dominos.bar7",
+          "frame": "DominosFrame7"
+        },
+        {
+          "key": "dominos.stance",
+          "frame": "DominosFrameclass"
+        },
+        {
+          "key": "dominos.pet",
+          "frame": "DominosFramepet"
+        },
+        {
+          "key": "dominos.possess",
+          "frame": "DominosFramepossess"
+        },
+        {
+          "key": "dominos.totem",
+          "frame": "DominosFrametotem"
+        },
+        {
+          "key": "dominos.bags",
+          "frame": "DominosFramebags"
+        },
+        {
+          "key": "dominos.menu",
+          "frame": "DominosFramemenu"
+        },
+        {
+          "key": "dominos.queue",
+          "frame": "DominosFramequeue"
+        }
+      ],
+      "editable": [
+        {
+          "frame": "dominos.bar1",
+          "field": "position"
+        },
+        {
+          "frame": "dominos.bar1",
+          "field": "spacing",
+          "min": 0,
+          "max": 32
+        },
+        {
+          "frame": "dominos.bar2",
+          "field": "position"
+        },
+        {
+          "frame": "dominos.bar2",
+          "field": "spacing",
+          "min": 0,
+          "max": 32
+        },
+        {
+          "frame": "dominos.bar3",
+          "field": "position"
+        },
+        {
+          "frame": "dominos.bar3",
+          "field": "spacing",
+          "min": 0,
+          "max": 32
+        },
+        {
+          "frame": "dominos.bar4",
+          "field": "position"
+        },
+        {
+          "frame": "dominos.bar4",
+          "field": "spacing",
+          "min": 0,
+          "max": 32
+        },
+        {
+          "frame": "dominos.bar5",
+          "field": "position"
+        },
+        {
+          "frame": "dominos.bar5",
+          "field": "spacing",
+          "min": 0,
+          "max": 32
+        },
+        {
+          "frame": "dominos.bar6",
+          "field": "position"
+        },
+        {
+          "frame": "dominos.bar6",
+          "field": "spacing",
+          "min": 0,
+          "max": 32
+        },
+        {
+          "frame": "dominos.bar7",
+          "field": "position"
+        },
+        {
+          "frame": "dominos.bar7",
+          "field": "spacing",
+          "min": 0,
+          "max": 32
+        },
+        {
+          "frame": "dominos.stance",
+          "field": "position"
+        },
+        {
+          "frame": "dominos.stance",
+          "field": "spacing",
+          "min": 0,
+          "max": 32
+        },
+        {
+          "frame": "dominos.pet",
+          "field": "position"
+        },
+        {
+          "frame": "dominos.pet",
+          "field": "spacing",
+          "min": 0,
+          "max": 32
+        },
+        {
+          "frame": "dominos.possess",
+          "field": "position"
+        },
+        {
+          "frame": "dominos.possess",
+          "field": "spacing",
+          "min": 0,
+          "max": 32
+        },
+        {
+          "frame": "dominos.totem",
+          "field": "position"
+        },
+        {
+          "frame": "dominos.totem",
+          "field": "spacing",
+          "min": 0,
+          "max": 32
+        },
+        {
+          "frame": "dominos.bags",
+          "field": "position"
+        },
+        {
+          "frame": "dominos.bags",
+          "field": "spacing",
+          "min": 0,
+          "max": 32
+        },
+        {
+          "frame": "dominos.menu",
+          "field": "position"
+        },
+        {
+          "frame": "dominos.menu",
+          "field": "spacing",
+          "min": 0,
+          "max": 32
+        },
+        {
+          "frame": "dominos.queue",
+          "field": "position"
+        }
+      ],
+      "saved_variables": {
+        "DominosDB": {
+          "split": "class"
+        }
+      },
+      "defaults": "Defaults/Dominos.lua"
+    }
+  }
 }
