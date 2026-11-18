@@ -3,7 +3,7 @@
 받는 쪽: Codex. 보내는 쪽: Claude 세션. 외관 설계·판단은 Codex 에 맡긴다(R50·R53). 지켜야 할 약속(토큰으로만 값 읽기·`Edit:Get`·전투 중 보호 프레임 금지·등록으로 프레임 알리기·다른 애드온 수정 금지·V42 초기화 코드 금지)은 `Collection/codex-briefs/appearance-2.md` 2절 그대로다. 게임 입력을 자동으로 보내는 도구는 쓰지 않는다.
 
 - 결과를 올릴 자리: `References/codex-appearance/4/`. `Collection/` 은 고치지 않는다 — Claude 가 정적 대조 뒤 합친다.
-- 기반: 설치 ZIP `outputs/collection/DevilForever-collection.zip`(sha256 `81b23bd0c40ec4194ab989168878f55ecf3fb25f0cd8c646c91b5f5de1f47ef7`, `!DevilForever_Core` + `DevilForever_ChatSetup`) + Prat 원본 `References/forever-addons/Prat-3.0/Prat-3.0-3.9.117.zip`. Phase 2 외관 결과(`References/codex-appearance/2/`)의 토큰 세트 위에 얹는다.
+- 기반: 설치 ZIP `outputs/collection/DevilForever-collection.zip`(sha256 `12845c356942b655ef9a56e86aa7a00e088e8a7a8a61a6a10078a7e77de8b06d`, `!DevilForever_Core` + `DevilForever_ChatSetup`) + Prat 원본 `References/forever-addons/Prat-3.0/Prat-3.0-3.9.117.zip`. Phase 2 외관 결과(`References/codex-appearance/2/`)의 토큰 세트 위에 얹는다.
 
 ## 1. 만들 것
 

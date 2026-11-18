@@ -441,8 +441,15 @@ def generated_registry_lookup():
               + list(to_py(c.GetFrameNames(c, "ForeverUnitFrames")).values())
               + list(to_py(c.GetFrameNames(c, "Quartz")).values())
               + list(to_py(c.GetFrameNames(c, "Hekili")).values())
-              + list(to_py(c.GetFrameNames(c, "PitBull4")).values())),
-       "appearance frames are Dominos', Prat's, SexyMap's, FUF's, Quartz's, Hekili's and PitBull4's only")
+              + list(to_py(c.GetFrameNames(c, "PitBull4")).values())
+              + list(to_py(c.GetFrameNames(c, "Grid2")).values())),
+       "appearance frames are Dominos', Prat's, SexyMap's, FUF's, Quartz's, Hekili's, PitBull4's and Grid2's only")
+    grid2 = to_py(c.GetAddonInfo(c, "grid2"))
+    eq(list(to_py(c.GetFrameNames(c, "Grid2")).values()), ["Grid2LayoutFrame"], "Grid2 frames: the layout window")
+    eq(list(grid2["savedVariables"].values()), [{"name": "Grid2DB", "scope": "account", "split": "common"}],
+       "Grid2 SV")
+    eq((grid2["defaults"], len(grid2["editable"])), ("Defaults/Grid2.lua", 3),
+       "Grid2 defaults file named; editable position, unit button size, padding")
     pb4 = to_py(c.GetAddonInfo(c, "pitbull4"))
     eq(len(to_py(c.GetFrameNames(c, "PitBull4"))), 10, "PitBull4: 7 unit frames, 3 party group headers")
     eq(list(pb4["savedVariables"].values()), [{"name": "PitBull4DB", "scope": "account", "split": "common"}],
@@ -1020,6 +1027,44 @@ def hekili_defaults_user_and_dual_spec_profile_kept():
     eq(db, saved["HekiliDB"], "glow not turned on in either profile; profileKeys untouched")
     st = s.status("Hekili")["targets"]["HekiliDB"]
     eq((st["state"], st["key"]), ("existing-profile-kept", "HekiliDB@profile:Elemental"), "profileKeys profile kept")
+
+
+GRID2_LAYOUT = {"layouts": {"solo": "None", "party": "None", "arena": "None"}, "FrameDisplay": "Raid"}
+
+
+@case
+def grid2_defaults_fresh_character_profile():
+    s = Session(registry="generated", extra_files=()).boot(after=["Grid2"])
+    eq(s.sv("Grid2DB"), {"profiles": {"Hero - Realm": {"hideBlizzard": {"raid": True}}},
+                         "namespaces": {"Grid2Layout": {"profiles": {"Hero - Realm": GRID2_LAYOUT}}}},
+       "AceDB:New(..., nil): profile named by the character key; layout namespace under the same name")
+    st = s.status("Grid2")["targets"]
+    eq((st["Grid2DB"]["state"], st["Grid2DB"]["key"]), ("applied", "Grid2DB@profile:Hero - Realm"), "main status")
+    eq((st["Grid2DB/Grid2Layout"]["state"], st["Grid2DB/Grid2Layout"]["key"]),
+       ("applied", "Grid2DB/Grid2Layout@profile:Hero - Realm"), "layout status")
+    alt = Session(registry="generated", extra_files=(), player={"name": "Alt", "className": "Priest", "class": "PRIEST"},
+                  saved={"Grid2DB": s.sv("Grid2DB"), "DevilForever_CoreDB": s.sv("DevilForever_CoreDB")})
+    alt.boot(after=["Grid2"])
+    db = alt.sv("Grid2DB")
+    eq((db["profiles"]["Alt - Realm"], db["namespaces"]["Grid2Layout"]["profiles"]["Alt - Realm"]),
+       ({"hideBlizzard": {"raid": True}}, GRID2_LAYOUT), "a new character gets its own profile written")
+    eq(db["profiles"]["Hero - Realm"], {"hideBlizzard": {"raid": True}}, "the first character's profile untouched")
+    eq(s.errors() + alt.errors(), [], "no errors")
+
+
+@case
+def grid2_defaults_existing_profile_kept():
+    # The user's profile after Grid2's first start: versions set, party layout chosen, Blizzard
+    # raid frames left shown (hideBlizzard absent).
+    saved = {"Grid2DB": {"profileKeys": {"Hero - Realm": "Hero - Realm"},
+                         "profiles": {"Hero - Realm": {"versions": {"Grid2": 200}}},
+                         "namespaces": {"Grid2Layout": {"profiles": {"Hero - Realm": {
+                             "layouts": {"party": "By Role"}}}}}}}
+    s = Session(registry="generated", extra_files=(), saved=saved).boot(after=["Grid2"])
+    eq(s.sv("Grid2DB"), saved["Grid2DB"], "user's profile and layout namespace untouched")
+    eq({k: v["state"] for k, v in s.status("Grid2")["targets"].items()},
+       {"Grid2DB": "existing-profile-kept", "Grid2DB/Grid2Layout": "existing-profile-kept"}, "both kept")
+
 
 PB4_UNITS_ON = sorted(["플레이어", "대상", "대상의 대상", "대상의 대상의 대상", "주시 대상", "주시 대상의 대상",
                        "플레이어의 소환수"])

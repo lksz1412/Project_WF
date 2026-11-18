@@ -1,0 +1,14 @@
+{
+ "Summary": "공격대창은 Grid2 4.1.13-forever 를 그대로 쓴다. 기본 설정은 공격대에서만 보이기(솔로·파티·투기장은 비움, 창도 공격대일 때만)와 블리자드 공격대 창 숨기기. 파티는 유닛 프레임 담당. Grid2 칸은 SecureUnitButton 이라 마우스오버 매크로 대상이 된다(원본 확인, 게임 확인은 Codex). 표시기(역할·해제 디버프·지속 치유)는 Grid2 첫 실행 템플릿 그대로.",
+ "Step Range": "Step 21",
+ "Inputs": "마스터 플랜 기능 표 행·judgment.md·manifest·upstream 시작 애드온",
+ "Files Created": "Collection/AddOns/!DevilForever_Core/Defaults/Grid2.lua, registry_extra.json, Registry.lua, TOC, Collection/tests/core/run.py, Collection/codex-briefs/phase9.md, appearance-9.md, outputs/collection/DevilForever-collection.zip",
+ "Files Updated": "Registry.lua·TOC·설치 ZIP",
+ "Read Coverage": "master read Defaults/Grid2.lua, A2 report; A2 read ranges in Claude/results/handoffs/phase9/iter_1/work_log-a2.md (GridCore.lua:124,143, GridLayout.lua:29–33,60,74,156,534,826–849, GridBlizFramesHide.lua:92–119, GridFrame.lua:79–94).",
+ "Execution Evidence": "Step 21 이력·work_log 판정 줄",
+ "Validation·Gate·Confirmed": "master check (R87: defaults table)",
+ "Non-Changes": "시작 애드온 원본·References·Codex 무변경",
+ "Open Issues": "블리자드 공격대 창 숨김이 공격대 관리 패널(징표·전투 준비 확인)도 숨김 — 최종 보고에서 확인. Grid2 첫 실행 템플릿 선택이 외관 값을 덮음 — 외관 전달 방법은 Codex 결과 뒤. 권장 템플릿 미정.",
+ "Decision Queue": "FrameDisplay=Raid, 투기장 None (A2 기본값 수락)",
+ "Next": "Phase 10 Step 22 — Details! + 어그로 창(TinyThreat)"
+}

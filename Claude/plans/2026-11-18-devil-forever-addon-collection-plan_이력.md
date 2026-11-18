@@ -61,3 +61,7 @@ Phase 2(Step 11–12): !DevilForever_Core 와 Codex 발주문 2건. 이 Phase �
 ## Phase 6-rev 끝 정리 (2026-11-18 17:35:26 +0900)
 
 PitBull4 Forever 판을 만들었다: 최신 v4.2.50 에 V42 제작자의 Forever 수정분(72파일)을 옮기고 옛 데빌 배치 설정의 기능 값을 기본값으로 넣었다. FUF 와 비교표를 만들었고 기본으로 넣을 쪽은 Phase 23 에서 정한다. 검수에서 Core 기본값 규칙의 결함(AceDB 가 기본값과 같은 사용자 값을 지우는 탓에 기존 프로필을 덮어쓸 수 있음)이 나와 Core 를 고쳤다(Phase 2-rev): 이제 새 프로필에만 쓴다. Result = `Claude/results/PHASE_6-rev_pitbull4_RESULT.md`.
+
+## Phase 9 끝 정리 (2026-11-18 17:44:27 +0900)
+
+공격대창은 Grid2 4.1.13-forever 를 그대로 쓴다. 기본 설정은 공격대에서만 보이기(솔로·파티·투기장은 비움, 창도 공격대일 때만)와 블리자드 공격대 창 숨기기. 파티는 유닛 프레임 담당. Grid2 칸은 SecureUnitButton 이라 마우스오버 매크로 대상이 된다(원본 확인, 게임 확인은 Codex). 표시기(역할·해제 디버프·지속 치유)는 Grid2 첫 실행 템플릿 그대로. Result = `Claude/results/PHASE_9_grid2_RESULT.md`.

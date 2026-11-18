@@ -6,7 +6,7 @@
 
 - 결과를 올릴 자리: `References/codex-verify/phase6-rev/` (저장소). 결과 표 `result.md` 에 항목마다 「결과 한 줄 양식」 을 한 줄씩 적는다. 두 번째 칸은 `통과` / `실패` / `못 함` 중 하나, 실패면 마지막 칸에 오류 문구 한 줄. 나란히 비교표는 `compare.md`(7번).
 - 설치 ZIP 넷:
-  - 모음집 `outputs/collection/DevilForever-collection.zip`, sha256 `81b23bd0c40ec4194ab989168878f55ecf3fb25f0cd8c646c91b5f5de1f47ef7` (안에는 `Interface/AddOns/!DevilForever_Core/`, `DevilForever_Castbars/`, `DevilForever_ChatSetup/`, `DevilForever_FUFDefaults/`, `PitBull4/`).
+  - 모음집 `outputs/collection/DevilForever-collection.zip`, sha256 `12845c356942b655ef9a56e86aa7a00e088e8a7a8a61a6a10078a7e77de8b06d` (안에는 `Interface/AddOns/!DevilForever_Core/`, `DevilForever_Castbars/`, `DevilForever_ChatSetup/`, `DevilForever_FUFDefaults/`, `PitBull4/`).
   - FUF 원본 `References/forever-addons/Forever Unit Frames/ForeverUnitFrames-0.65.2.zip`, sha256 `cc50d16b5d926240a4dc48e7e6f9e4ee7fbb5107c14ebb734a685542e50e1a80`. 안의 `ForeverUnitFrames` 폴더 하나.
   - Quartz 원본 `References/forever-addons/Quartz/Quartz-3.8.0.zip`, sha256 `2a76cdda6b53e7eb26472c0b8b6bf8f50c02388f8f515e6746c5e14657d5ed70`. 안의 `Quartz` 폴더 하나(시전바는 Quartz 하나 — Phase 7).
   - Grid2 원본 `References/forever-addons/Grid2/Grid2-4.1.13-forever.zip`, sha256 `f198bc3ce2d02e023f81052074a2e9aa4ba41819931bd302ff7429dac9515393`. 4번 항목에서만 넣는다.

@@ -956,9 +956,36 @@ Core.Registry = {
     },
     Grid2 = {
       bundle = "individual",
-      editable = {},
+      defaults = "Defaults/Grid2.lua",
+      editable = {
+        {
+          field = "position",
+          frame = "grid2.layout",
+          kind = "position",
+        },
+        {
+          field = "size",
+          frame = "grid2.layout",
+          kind = "size",
+          max = 200,
+          min = 10,
+        },
+        {
+          field = "spacing",
+          frame = "grid2.layout",
+          kind = "spacing",
+          max = 20,
+          min = 0,
+        },
+      },
       foreverLoad = "yes",
-      frames = {},
+      frames = {
+        {
+          frame = "Grid2LayoutFrame",
+          key = "grid2.layout",
+          tokens = {},
+        },
+      },
       package = "Grid2",
       phases = {
         9,

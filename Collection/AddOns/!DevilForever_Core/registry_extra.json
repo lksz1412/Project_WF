@@ -729,6 +729,38 @@
         }
       },
       "defaults": "Defaults/PitBull4.lua"
+    },
+    "Grid2": {
+      "frames": [
+        {
+          "key": "grid2.layout",
+          "frame": "Grid2LayoutFrame"
+        }
+      ],
+      "editable": [
+        {
+          "frame": "grid2.layout",
+          "field": "position"
+        },
+        {
+          "frame": "grid2.layout",
+          "field": "size",
+          "min": 10,
+          "max": 200
+        },
+        {
+          "frame": "grid2.layout",
+          "field": "spacing",
+          "min": 0,
+          "max": 20
+        }
+      ],
+      "saved_variables": {
+        "Grid2DB": {
+          "split": "common"
+        }
+      },
+      "defaults": "Defaults/Grid2.lua"
     }
   }
 }

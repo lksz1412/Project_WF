@@ -4,4 +4,4 @@
 
 | Step | Work | Owner | Gate | Review | Est. | Status |
 |---|---|---|---|---|---|---|
-| 21 | Grid2 functional defaults: raid groups only (party stays with unit frames — Phase 6/6-rev), roles/dispellable debuffs/HoT indicators kept as Grid2 ships, mouseover-macro compatibility check (R97), registry, Codex briefs — per `Claude/results/handoffs/settings-phase-brief-template.md` | A2 | template §3 gates | master check, or 1 logic review if code beyond a defaults table | 30–60 | ⏳ |
+| 21 | Grid2 functional defaults: raid groups only (party stays with unit frames — Phase 6/6-rev), roles/dispellable debuffs/HoT indicators kept as Grid2 ships, mouseover-macro compatibility check (R97), registry, Codex briefs — per `Claude/results/handoffs/settings-phase-brief-template.md` | A2 | template §3 gates | master check, or 1 logic review if code beyond a defaults table | 30–60 | ✅ |
