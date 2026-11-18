@@ -6,5 +6,5 @@ Inputs needed: `References/codex-verify/phase<ID>/` and `References/codex-appear
 
 | Step | Work | Owner | Gate | Review | Est. | Status |
 |---|---|---|---|---|---|---|
-| 40 | Fix code defects found by Codex verification results (per Phase brief result tables) | A2 coder + B | static gates + logic review of fixes | code ② | 60–120 (+30–60 per result bundle) | ⏸ waiting for Codex results (R109) |
+| 40 | Fix code defects found by Codex verification results (per Phase brief result tables); plus R110 ③: hide the minimap clock so only the status-strip clock shows (SexyMap/Phase 5 default + Codex check) | A2 coder + B | static gates + logic review of fixes | code ② | 60–120 (+30–60 per result bundle) | ⏸ waiting for Codex results (R109) |
 | 41 | Freeze final bundle (ZIP, manifest, SHA256), restore method, unverified list, handover | master (handover) / A2 (freeze docs after Step 40) | build rc0 + sha256; handover 5 items | — | 30–60 | ⏸ handover written now; freeze waits for Step 40 |
