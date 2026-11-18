@@ -1,0 +1,20 @@
+{
+  "recorded": "2026-11-18T09:51:11.431290+09:00",
+  "commit": "e5eb2315f2e658f5bbfcea6897cc441360b15c17",
+  "branch": "main",
+  "remote": "https://github.com/lksz1412/Project_WF.git",
+  "pushExitCode": 0,
+  "remoteMainMatched": true,
+  "sourceFilesRepresentedAtCheckpoint": 19744,
+  "sourceDelta": {
+    "new": 52,
+    "modified": 8
+  },
+  "omissions": 0,
+  "privacyFindings": 0,
+  "incomingRemoteFilesPreserved": 367,
+  "executableModesPreserved": 30,
+  "latestPlan": "450-line draft,72 requests,own33/33; independent/user review and GO pending",
+  "handover": "Codex/docs/HANDOVER_v0.1.0.md",
+  "next": "Latest draft independent P5 review, root integration, user review; no current feature implementation"
+}

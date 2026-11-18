@@ -105,3 +105,10 @@ A1은 PLAN_UPDATE_READY를 반환하고 쓰기를 멈췄다. root가 현재 5파
 자체 검사는 초기28/30의 문맥 오인2건을 좁힌 검사2/2로 확인해30/30, R72 인계 순서 연결3/3을 더해 현재33/33이다. 실패 원본도 남겨 두었다. 실제 결과는 `work/r72-plan-gate-z_lqg7v2/mechanical-result-r72.json`, `work/r72-semantic-gate-s52vykmv/semantic-delta-result.json`, `work/r72-transfer-fix-bo_4brqv/transfer-delta-result.json`이다. root는 결과 JSON의 실제 이름/판정 및 최종 기록을 직접 확인했고 시험을 재실행하지 않았다. **이것은 독립 검수/사용자 검수/게임 작동 통과가 아니다.**
 
 표의 SHA256은 D: 원본 값이다. 공개용 사본에서 개인 경로/식별자를 추상화하면 내용 해시가 달라질 수 있다. 공개 manifest의 원본↔공개 대응값으로 확인하며 원본 손상으로 오인하지 않는다. canonical370/세부계획279/기존 Step5 설계 고정값은 이번 인계에서 바꾸지 않았다. 다음 세션은 최신450행 초안의 독립 P5 검수부터 시작한다.
+
+
+## 7. 인계 묶음 게시 확인 — 2026-11-18T09:51:11.431290+09:00
+
+핸드오버와 최신 작업물은 GitHub main 커밋 `e5eb2315f2e658f5bbfcea6897cc441360b15c17`에 실제 일반 push(exit0)됐고, 직후 원격 조회에서도 같은 커밋을 확인했다. 첫 갱신 공개 사본은 원본19,744파일 전부 대응·누락0, 신규52/수정8 반영이었다. root는 실제 staging 경로20,116개와 변경62파일의 byte, 기존 원격367파일과 실행 모드30개 보존을 확인했다. 검증 기록 한 파일을 더 포함한 인계 커밋이다.
+
+이 절과 완료 기록은 실제 게시 확인 뒤 덧붙인 후속 기록이며 마지막 일반 커밋/푸시에 함께 넣는다. 최신 값은 원격 main을 기준으로 한다. `Codex/results/handoffs/old-reference/github-publish/r72-handover-publication-result.md/.json`이 관측 결과를 보존한다. 계획은 **독립 검수·사용자 검수 전 초안**이다. 새 세션에서 이 인계를 읽고 최신450행 후보의 독립 검수부터 재개한다.
