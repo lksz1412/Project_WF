@@ -4,7 +4,7 @@
 
 - 결과를 올릴 자리: `References/codex-verify/phase4/` (저장소). 결과 표 `result.md` 에 항목마다 「결과 한 줄 양식」 을 한 줄씩 적는다. 두 번째 칸은 `통과` / `실패` / `못 함` 중 하나, 실패면 마지막 칸에 오류 문구 한 줄.
 - 설치 ZIP 둘:
-  - 모음집 `outputs/collection/DevilForever-collection.zip`, sha256 `d726a254197affceb9c8f3da892c97efb12ed76127d14ae988f000759a8e4846` (지금 판 안에는 `!DevilForever_Core/`, `DevilForever_Castbars/`, `DevilForever_ChatSetup/`, `DevilForever_DetailsSetup/`, `DevilForever_FUFDefaults/`, `PitBull4/` — 이 발주문이 넣으라는 폴더만 넣는다(PitBull4 는 Phase 6-rev 몫이라 다른 Phase 검증에서는 넣지 않는다)).
+  - 모음집 `outputs/collection/DevilForever-collection.zip`, sha256 `d02105320a0d82abe3a7f680dd7a4eef27357d6938383bd1e40cd8206060b820` (지금 판 안에는 `!DevilForever_Core/`, `DevilForever_Castbars/`, `DevilForever_ChatSetup/`, `DevilForever_FUFDefaults/`, `PitBull4/` — 이 발주문이 넣으라는 폴더만 넣는다(PitBull4 는 Phase 6-rev 몫이라 다른 Phase 검증에서는 넣지 않는다)).
   - Prat 원본 `References/forever-addons/Prat-3.0/Prat-3.0-3.9.117.zip`, sha256 `d72baef9c99bb1583b269abd85088bcb957d9a0d8ca57c323144442875084db1`. 안의 `Prat-3.0` 폴더 하나를 넣는다.
 - 폴더 이름이 `!` 로 시작한다. bash 로 다룰 때는 작은따옴표로 감싼다(예: `ls '_forever_/Interface/AddOns/!DevilForever_Core'`).
 - 대화창 분담은 **그 캐릭터의 첫 접속에 한 번만** 만들어진다. 검증에는 새로 만든 캐릭터나, 대화창이 아직 기본 상태(「일반」 과 「전투 기록」 탭만)인 캐릭터를 쓴다. 어느 캐릭터를 썼는지 적는다.

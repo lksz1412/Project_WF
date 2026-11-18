@@ -3,7 +3,7 @@
 받는 쪽: Codex. 보내는 쪽: Claude 세션. 외관 설계·판단은 Codex 에 맡긴다(R50·R53). 아래 「지켜야 할 약속」 만 지키면 나머지는 Codex 판단이다. 게임 입력을 자동으로 보내는 도구(키 입력·마우스 매크로)는 쓰지 않는다.
 
 - 결과를 올릴 자리: `References/codex-appearance/2/` (저장소). `Collection/` 은 고치지 않는다 — Claude 가 정적 대조 뒤 합친다.
-- 기반 코드: `Collection/AddOns/!DevilForever_Core/`(설치 ZIP `outputs/collection/DevilForever-collection.zip`, sha256 `d726a254197affceb9c8f3da892c97efb12ed76127d14ae988f000759a8e4846`). 공개 함수는 `API.lua` 맨 위 주석 한 곳에 있다.
+- 기반 코드: `Collection/AddOns/!DevilForever_Core/`(설치 ZIP `outputs/collection/DevilForever-collection.zip`, sha256 `d02105320a0d82abe3a7f680dd7a4eef27357d6938383bd1e40cd8206060b820`). 공개 함수는 `API.lua` 맨 위 주석 한 곳에 있다.
 
 ## 1. 만들 것
 

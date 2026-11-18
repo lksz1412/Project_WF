@@ -3,7 +3,8 @@
 받는 쪽: Codex. 보내는 쪽: Claude 세션. 외관 설계·판단은 Codex 에 맡긴다(R50·R53). 지켜야 할 약속(토큰으로만 값 읽기·`Edit:Get`·전투 중 보호 프레임 금지·등록으로 프레임 알리기·다른 애드온 수정 금지·V42 초기화 코드 금지)은 `Collection/codex-briefs/appearance-2.md` 2절 그대로다. 게임 입력을 자동으로 보내는 도구는 쓰지 않는다.
 
 - 결과를 올릴 자리: `References/codex-appearance/10/`. `Collection/` 은 고치지 않는다 — Claude 가 정적 대조 뒤 합친다.
-- 기반: 설치 ZIP `outputs/collection/DevilForever-collection.zip`(sha256 `d726a254197affceb9c8f3da892c97efb12ed76127d14ae988f000759a8e4846` — `!DevilForever_Core`·`DevilForever_DetailsSetup`) + Details 원본 `References/forever-addons/Details/Details-Details.20261109.15410.172.zip`(`Details`·`Details_TinyThreat`). Phase 2 외관 결과(`References/codex-appearance/2/`)의 토큰 세트 위에 얹는다.
+- 기반: 설치 ZIP `outputs/collection/DevilForever-collection.zip`(sha256 `d02105320a0d82abe3a7f680dd7a4eef27357d6938383bd1e40cd8206060b820` — `!DevilForever_Core`) + Details 원본 `References/forever-addons/Details/Details-Details.20261109.15410.172.zip`(`Details`·`Details_TinyThreat`). Phase 2 외관 결과(`References/codex-appearance/2/`)의 토큰 세트 위에 얹는다.
+- 처음 한 번 설정(캐릭터마다 · 손으로): 모음집은 Details 기본값을 넣지 않으므로 창 2 는 사람이 만든다. 대화창에 `/details new`(`Details/functions/slash.lua:50–51`)로 창 2 를 열고, 창 2 제목 줄의 모드 단추에 마우스를 올려 「플러그인」(Plugins) → 하위 메뉴 「Tiny Threat」 를 누른다(`Details/frames/window_main.lua:5416–5431`). `/run local w=Details:GetInstance(2); print(w:GetMode(), w.current_raid_plugin)` 가 `4 DETAILS_PLUGIN_TINY_THREAT` 이면 된 것이다. 그 뒤로는 Details 가 이 창을 저장·복원한다. 외관 작업 전에 이 설정을 해 두고, 보고서에 한 줄로 적는다.
 
 ## 1. 만들 것
 
@@ -17,7 +18,7 @@
 | `details.damage` | `DetailsBaseFrame1` | position · size(7–480) |
 | `details.threat` | `DetailsBaseFrame2` | position · size(7–480) |
 
-창 바탕은 `DetailsBaseFrame<번호>`(`frames/window_main.lua:2629`), 창 2 는 `DevilForever_DetailsSetup` 이 Details 의 「두 번째 창 만들기」 로 연다. Tiny Threat 의 그림은 플러그인 프레임 `Details_TinyThreat`(`Details_TinyThreat/Details_TinyThreat.lua:28`)이 창 2 안쪽 왼쪽 위에 붙어 그린다(`Details/core/plugins_raid.lua:201`) — 줄 높이·글꼴은 창 2 의 줄 설정을 따른다. 크기 범위는 Details 의 창 크기 한계(너비 150–480, 높이 7–450 — `frames/window_main.lua:2822`, `functions/profiles.lua:867`)를 하나로 묶은 것이라 너비 150 미만·높이 450 초과는 Details 가 막는다.
+창 바탕은 `DetailsBaseFrame<번호>`(`frames/window_main.lua:2629`), 창 2 는 위의 「처음 한 번 설정」 으로 사람이 연다. Tiny Threat 의 그림은 플러그인 프레임 `Details_TinyThreat`(`Details_TinyThreat/Details_TinyThreat.lua:28`)이 창 2 안쪽 왼쪽 위에 붙어 그린다(`Details/core/plugins_raid.lua:201`) — 줄 높이·글꼴은 창 2 의 줄 설정을 따른다. 크기 범위는 Details 의 창 크기 한계(너비 150–480, 높이 7–450 — `frames/window_main.lua:2822`, `functions/profiles.lua:867`)를 하나로 묶은 것이라 너비 150 미만·높이 450 초과는 Details 가 막는다.
 
 ## 3. 값을 어디에 두나
 

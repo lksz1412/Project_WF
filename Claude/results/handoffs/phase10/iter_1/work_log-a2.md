@@ -49,3 +49,28 @@ Raw output: scratchpad `step22.nsWj/` (volatile; the verdict lines below are the
 5. Registry editable `size` uses one range 7–480 for width and height (Core's size item has one min/max); Details itself bounds width 150–480, height 7–450.
 6. `Collection/manifest.json` / `manifest.md` not touched (outside the template boundary list); the bridge enters the registry from its own TOC as earlier bridges did.
 7. Phase 2 minor a (Details per-character SV seeded from account data): closed by not registering a Core defaults file for Details.
+
+## DQ1 apply (master decision: drop the bridge — `Claude/results/handoffs/phase10/TRIAGE_phase10.md`, read whole)
+Restore point: master commit `0392a27` (draft with bridge).
+Read for the manual path: `U/Details/frames/window_main.lua` 5370–5440 (mode menu: Standard/Everything/Plugins lines 5408–5418, raid-plugin submenu → `RaidTables.EnableRaidMode` 5422–5431), `U/Details/locales/Details-enUS.lua` 487–491, 1031, 1662 and `Details-koKR.lua` 370, 1072, 1732 (labels, `new` slash word), `U/Details/functions/slash.lua` 40–60 (`/details new` → `CriarInstancia(nil, true)`), `U/Details_TinyThreat/enUS.lua` 7 (name "Tiny Threat").
+
+Impact map:
+| Place | Verdict |
+|---|---|
+| `Collection/AddOns/DevilForever_DetailsSetup/`, `Collection/tests/detailssetup/` | removed (`git rm -r`, master-approved) |
+| `registry_extra.json` bridge entry | removed; Details entry kept |
+| `Registry.lua` | regenerated |
+| `tests/core/run.py` registry check | bridge SV check → bridge absent check |
+| ZIP + hash in every brief, content lists in `phase2–9.md`, `phase6-rev.md` | hash replaced; `DevilForever_DetailsSetup/` removed from lists |
+| `phase10.md` | rewritten: no bridge; item 2 = manual window 2 → Tiny Threat with menu path + check line; items renumbered (0–9 kept) |
+| `appearance-10.md` | ZIP contents, "first-time setup" note, window-2 origin sentence |
+| work log steps above (bridge) | no change (record) |
+
+Commands and verdicts:
+- `git rm -r -q Collection/AddOns/DevilForever_DetailsSetup Collection/tests/detailssetup` → AddOns now `!DevilForever_Core, DevilForever_Castbars, DevilForever_ChatSetup, DevilForever_FUFDefaults, PitBull4`
+- `genregistry.py` ×2 → `wrote … (50995 bytes, sha256 e405ffca552c0da053a025f9350a68e6e5a8d4c833a0ee7c7b0672fbecccdcf6)` both; `--check` → `up to date (50995 bytes)` rc0
+- `tests/core/run.py` → `lupa=2.8 cases=61 passed=61 failed=0`
+- luacheck (Core, ChatSetup, FUFDefaults, Castbars, PitBull4, core fixtures) → `checked=203 failed=0`
+- tocdeps (Core, Details, Details_TinyThreat) → `folders=3 unresolved=0 … optional_missing=8 … duplicates=0 load_on_demand=0`
+- `build.py` ×2 → `built folders=5 files=329 zip_entries=331`, sha256 `d02105320a0d82abe3a7f680dd7a4eef27357d6938383bd1e40cd8206060b820` both; `DetailsSetup` entries in ZIP 0
+- briefs: old hash `d726a254…a8e4846` left 0, new hash 20 occurrences (18 earlier briefs + phase10 + appearance-10); `DetailsSetup` mentions in `Collection/codex-briefs/` 0

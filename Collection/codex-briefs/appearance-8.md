@@ -3,7 +3,7 @@
 받는 쪽: Codex. 보내는 쪽: Claude 세션. 외관 설계·판단은 Codex 에 맡긴다(R50·R53). 지켜야 할 약속(토큰으로만 값 읽기·`Edit:Get`·전투 중 보호 프레임 금지·등록으로 프레임 알리기·다른 애드온 수정 금지·V42 초기화 코드 금지)은 `Collection/codex-briefs/appearance-2.md` 2절 그대로이고, 세 겉보기(FHD·QHD·UHD)는 `Collection/codex-briefs/appearance-2-layouts.md` 를 따른다. 게임 입력을 자동으로 보내는 도구는 쓰지 않는다.
 
 - 결과를 올릴 자리: `References/codex-appearance/8/`. `Collection/` 은 고치지 않는다 — Claude 가 정적 대조 뒤 합친다.
-- 기반: 설치 ZIP `outputs/collection/DevilForever-collection.zip`(sha256 `d726a254197affceb9c8f3da892c97efb12ed76127d14ae988f000759a8e4846`) + Hekili 원본 `References/forever-addons/Hekili/Hekili-v0.8.6-forever.zip`(sha256 `8063fd78c988af76c6a74653c21ff9f268546c44320922688ea2f7dd3d4c45e3`). Phase 2 외관 결과(`References/codex-appearance/2/`)의 토큰 세트 위에 얹는다.
+- 기반: 설치 ZIP `outputs/collection/DevilForever-collection.zip`(sha256 `d02105320a0d82abe3a7f680dd7a4eef27357d6938383bd1e40cd8206060b820`) + Hekili 원본 `References/forever-addons/Hekili/Hekili-v0.8.6-forever.zip`(sha256 `8063fd78c988af76c6a74653c21ff9f268546c44320922688ea2f7dd3d4c45e3`). Phase 2 외관 결과(`References/codex-appearance/2/`)의 토큰 세트 위에 얹는다.
 - 담당 나눔(R104): Hekili 는 **다음 행동 추천만**(맨 위 가운데 Primary 표시창 + 추천 능력의 단축바 버튼 빛남). 상태 알림·쿨다운은 **게임 기본 Cooldown Manager** 가 보인다. 새 알림 제품은 붙이지 않는다.
 
 ## 1. 만들 것

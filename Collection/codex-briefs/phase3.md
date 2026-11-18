@@ -4,7 +4,7 @@
 
 - 결과를 올릴 자리: `References/codex-verify/phase3/` (저장소). 결과 표 `result.md` 에 항목마다 「결과 한 줄 양식」 을 한 줄씩 적는다. 두 번째 칸은 `통과` / `실패` / `못 함` 중 하나, 실패면 마지막 칸에 오류 문구 한 줄.
 - 설치 ZIP 둘:
-  - 모음집 `outputs/collection/DevilForever-collection.zip`, sha256 `d726a254197affceb9c8f3da892c97efb12ed76127d14ae988f000759a8e4846` (지금 판 안에는 `!DevilForever_Core/`, `DevilForever_Castbars/`, `DevilForever_ChatSetup/`, `DevilForever_DetailsSetup/`, `DevilForever_FUFDefaults/`, `PitBull4/` — 이 발주문이 넣으라는 폴더만 넣는다(PitBull4 는 Phase 6-rev 몫이라 다른 Phase 검증에서는 넣지 않는다)).
+  - 모음집 `outputs/collection/DevilForever-collection.zip`, sha256 `d02105320a0d82abe3a7f680dd7a4eef27357d6938383bd1e40cd8206060b820` (지금 판 안에는 `!DevilForever_Core/`, `DevilForever_Castbars/`, `DevilForever_ChatSetup/`, `DevilForever_FUFDefaults/`, `PitBull4/` — 이 발주문이 넣으라는 폴더만 넣는다(PitBull4 는 Phase 6-rev 몫이라 다른 Phase 검증에서는 넣지 않는다)).
   - Dominos 원본 `References/forever-addons/Dominos/Dominos-12.0.4.zip`, sha256 `2dbcf9857a91b772a42200369386fc17f875530ffd47984b555ecdb8e11bef1a`. 이 안의 `Dominos`·`Dominos_Config`·`Dominos_Cast`·`Masque_Dominos` 네 폴더만 넣는다. `Dominos_Progress`·`Dominos_Roll` 은 넣지 않는다(다른 Phase 몫). `Masque_Dominos` 는 Masque 가 이미 설치돼 있을 때만 넣는다.
 - 폴더 이름이 `!` 로 시작한다. bash 로 다룰 때는 작은따옴표로 감싼다(예: `ls '_forever_/Interface/AddOns/!DevilForever_Core'`).
 - 이 발주문에서 「직업 이름」 은 게임이 보여 주는 한국어 직업 이름(예: 전사)이다. Dominos 는 처음 접속한 캐릭터에 직업 이름과 같은 이름의 프로필을 쓴다.

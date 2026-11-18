@@ -454,10 +454,7 @@ def generated_registry_lookup():
     eq((details.get("defaults"), len(details["editable"])), (None, 4),
        "Details has no Core defaults file (its saved variables are rewritten by Details at logout); 2 positions, 2 sizes")
     eq(list(to_py(c.GetFrameNames(c, "Details_TinyThreat")).values()), [], "Tiny Threat draws inside window 2")
-    dsetup = to_py(c.GetAddonInfo(c, "DevilForever_DetailsSetup"))
-    eq((dsetup["use"], list(dsetup["savedVariables"].values())),
-       ("new", [{"name": "DevilForever_DetailsSetupDB", "scope": "character", "split": "common"}]),
-       "DetailsSetup bridge: own addon, per-character SV")
+    eq(c.GetAddonInfo(c, "DevilForever_DetailsSetup"), None, "no Details bridge addon (Tiny Threat window is set by hand)")
     grid2 = to_py(c.GetAddonInfo(c, "grid2"))
     eq(list(to_py(c.GetFrameNames(c, "Grid2")).values()), ["Grid2LayoutFrame"], "Grid2 frames: the layout window")
     eq(list(grid2["savedVariables"].values()), [{"name": "Grid2DB", "scope": "account", "split": "common"}],

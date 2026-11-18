@@ -65,3 +65,7 @@ PitBull4 Forever 판을 만들었다: 최신 v4.2.50 에 V42 제작자의 Foreve
 ## Phase 9 끝 정리 (2026-11-18 17:44:27 +0900)
 
 공격대창은 Grid2 4.1.13-forever 를 그대로 쓴다. 기본 설정은 공격대에서만 보이기(솔로·파티·투기장은 비움, 창도 공격대일 때만)와 블리자드 공격대 창 숨기기. 파티는 유닛 프레임 담당. Grid2 칸은 SecureUnitButton 이라 마우스오버 매크로 대상이 된다(원본 확인, 게임 확인은 Codex). 표시기(역할·해제 디버프·지속 치유)는 Grid2 첫 실행 템플릿 그대로. Result = `Claude/results/PHASE_9_grid2_RESULT.md`.
+
+## Phase 10 끝 정리 (2026-11-18 17:57:59 +0900)
+
+Phase 10 끝: 데미지·어그로 미터는 Details + Details_TinyThreat 를 그대로 쓴다(R107 ②). 연결 애드온은 애드온 수를 줄이려고(R101) 빼고, 어그로 창은 처음 한 번 손으로 연다(/details new → 창 2 모드 버튼 → Plugins → Tiny Threat). Result = `Claude/results/PHASE_10_details_threat_RESULT.md`.

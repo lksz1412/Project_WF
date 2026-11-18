@@ -427,27 +427,6 @@ Core.Registry = {
       use = "new",
       version = "0.1.0",
     },
-    DevilForever_DetailsSetup = {
-      bundle = "individual",
-      editable = {},
-      foreverLoad = "yes",
-      frames = {},
-      package = "DevilForever",
-      phases = {},
-      savedVariables = {
-        {
-          name = "DevilForever_DetailsSetupDB",
-          scope = "character",
-          split = "common",
-        },
-      },
-      tocStatus = "matched",
-      tocs = {
-        "DevilForever_DetailsSetup.toc",
-      },
-      use = "new",
-      version = "0.1.0",
-    },
     DevilForever_FUFDefaults = {
       bundle = "individual",
       editable = {},
@@ -2333,7 +2312,6 @@ Core.Registry = {
     "Details_Vanguard",
     "DevilForever_Castbars",
     "DevilForever_ChatSetup",
-    "DevilForever_DetailsSetup",
     "DevilForever_FUFDefaults",
     "Dominos",
     "Dominos_Cast",

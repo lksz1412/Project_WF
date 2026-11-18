@@ -803,13 +803,6 @@
           "split": "common"
         }
       }
-    },
-    "DevilForever_DetailsSetup": {
-      "saved_variables": {
-        "DevilForever_DetailsSetupDB": {
-          "split": "common"
-        }
-      }
     }
   }
 }

@@ -4,4 +4,4 @@
 
 | Step | Work | Owner | Gate | Review | Est. | Status |
 |---|---|---|---|---|---|---|
-| 22 | Details! functional defaults (values/sorting meaning kept, default displays), TinyThreat window enabled as the threat meter (R107 ②), not in the third chat slot, registry, Codex briefs — per `Claude/results/handoffs/settings-phase-brief-template.md` | A2 | template §3 gates | master check, or 1 logic review if code beyond a defaults table | 45–90 | ⏳ |
+| 22 | Details! functional defaults (values/sorting meaning kept, default displays), TinyThreat window enabled as the threat meter (R107 ②), not in the third chat slot, registry, Codex briefs — per `Claude/results/handoffs/settings-phase-brief-template.md` | A2 | template §3 gates | master check, or 1 logic review if code beyond a defaults table | 45–90 | ✅ |
