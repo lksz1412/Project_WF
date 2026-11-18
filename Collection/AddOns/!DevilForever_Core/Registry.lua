@@ -868,9 +868,26 @@ Core.Registry = {
     },
     ExperienceForever = {
       bundle = "individual",
-      editable = {},
+      editable = {
+        {
+          field = "position",
+          frame = "experienceforever.bar",
+          kind = "position",
+        },
+      },
       foreverLoad = "yes",
-      frames = {},
+      frames = {
+        {
+          frame = "ExperienceForeverFrame",
+          key = "experienceforever.bar",
+          tokens = {},
+        },
+        {
+          frame = "ExperienceForeverMinimapButton",
+          key = "experienceforever.minimap",
+          tokens = {},
+        },
+      },
       package = "Experience Forever",
       phases = {
         19,

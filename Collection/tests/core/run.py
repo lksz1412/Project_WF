@@ -444,9 +444,19 @@ def generated_registry_lookup():
               + list(to_py(c.GetFrameNames(c, "PitBull4")).values())
               + list(to_py(c.GetFrameNames(c, "Grid2")).values())
               + list(to_py(c.GetFrameNames(c, "Details")).values())
-              + list(to_py(c.GetFrameNames(c, "DevilForever_StatusStrip")).values())),
-       "appearance frames are Dominos', Prat's, SexyMap's, FUF's, Quartz's, Hekili's, PitBull4's, Grid2's, Details'"
-       " and the status strip's only")
+              + list(to_py(c.GetFrameNames(c, "DevilForever_StatusStrip")).values())
+              + list(to_py(c.GetFrameNames(c, "ExperienceForever")).values())),
+       "appearance frames are Dominos', Prat's, SexyMap's, FUF's, Quartz's, Hekili's, PitBull4's, Grid2's, Details',"
+       " the status strip's and Experience Forever's only")
+    xpbar = to_py(c.GetAddonInfo(c, "experienceforever"))
+    eq(list(to_py(c.GetFrameNames(c, "ExperienceForever")).values()),
+       ["ExperienceForeverFrame", "ExperienceForeverMinimapButton"], "Experience Forever frames: the bar, the minimap button")
+    eq(sorted((e["frame"], e["field"], e.get("min"), e.get("max")) for e in xpbar["editable"].values()),
+       [("experienceforever.bar", "position", None, None)],
+       "Experience Forever editable item: bar position only (EF re-applies its own sizes and fonts)")
+    eq((xpbar["bundle"], xpbar["use"], xpbar.get("defaults"), list(xpbar["savedVariables"].values())),
+       ("individual", "settings", None, [{"name": "ExperienceForeverDB", "scope": "account", "split": "common"}]),
+       "Experience Forever: no Core defaults file (its own defaults already match), account AceDB SV")
     strip = to_py(c.GetAddonInfo(c, "DevilForever_StatusStrip"))
     eq(list(to_py(c.GetFrameKeys(c, "DevilForever_StatusStrip")).values()),
        ["statusstrip.bags", "statusstrip.bar", "statusstrip.clock", "statusstrip.durability", "statusstrip.fps",

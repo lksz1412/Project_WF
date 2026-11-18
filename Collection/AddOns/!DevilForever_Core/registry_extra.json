@@ -873,6 +873,29 @@
           "split": "common"
         }
       }
+    },
+    "ExperienceForever": {
+      "frames": [
+        {
+          "key": "experienceforever.bar",
+          "frame": "ExperienceForeverFrame"
+        },
+        {
+          "key": "experienceforever.minimap",
+          "frame": "ExperienceForeverMinimapButton"
+        }
+      ],
+      "editable": [
+        {
+          "frame": "experienceforever.bar",
+          "field": "position"
+        }
+      ],
+      "saved_variables": {
+        "ExperienceForeverDB": {
+          "split": "common"
+        }
+      }
     }
   }
 }

@@ -81,3 +81,7 @@ Phase 15 끝: Aurora 를 쓸지는 Codex 가 정한다(R107 ④). Codex 확인·
 ## Phase 16 끝 정리 (2026-11-18 19:02:11 +0900)
 
 새 작은 애드온 DevilForever_StatusStrip(골드·가방 빈칸·내구도·시계·지연·FPS). Result = `Claude/results/PHASE_16_statusstrip_RESULT.md`.
+
+## Phase 19 끝 정리 (2026-11-18 19:15:42 +0900)
+
+Phase 19 끝: 경험치·평판·사냥꾼 소환수 경험치 막대는 Experience Forever 를 그대로 쓴다. 기본값이 이미 계획과 같아 Core 기본값 파일을 만들지 않았고(애드온 수·파일 수 최소), 같은 기능의 Dominos_Progress 는 넣지 않는다. Result = `Claude/results/PHASE_19_experience_RESULT.md`.
