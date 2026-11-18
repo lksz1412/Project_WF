@@ -387,8 +387,18 @@ def generated_registry_lookup():
     eq(c.GetAddonInfo(c, "NoSuchAddon"), None, "unknown folder")
     eq(list(to_py(c.GetFrameNames(c)).values()),
        sorted(list(to_py(c.GetFrameNames(c, "Dominos")).values()) + list(to_py(c.GetFrameNames(c, "Prat-3.0")).values())
-              + list(to_py(c.GetFrameNames(c, "SexyMap")).values())),
-       "appearance frames are Dominos', Prat's and SexyMap's only")
+              + list(to_py(c.GetFrameNames(c, "SexyMap")).values())
+              + list(to_py(c.GetFrameNames(c, "ForeverUnitFrames")).values())),
+       "appearance frames are Dominos', Prat's, SexyMap's and FUF's only")
+    fuf = to_py(c.GetAddonInfo(c, "foreverunitframes"))
+    eq(len(to_py(c.GetFrameNames(c, "ForeverUnitFrames"))), 15, "FUF: 8 single frames, party header, boss1-5, raid")
+    eq(list(fuf["savedVariables"].values()), [{"name": "ForeverUnitFramesDB", "scope": "account", "split": "common"}],
+       "FUF SV")
+    eq(fuf.get("defaults"), None, "FUF has no Core defaults file (its profile is rewritten by FUF on save)")
+    eq(len(fuf["editable"]), 12, "FUF editable: 7 positions, 5 sizes")
+    fufdef = to_py(c.GetAddonInfo(c, "DevilForever_FUFDefaults"))
+    eq(list(fufdef["savedVariables"].values()),
+       [{"name": "DevilForever_FUFDefaultsDB", "scope": "account", "split": "common"}], "FUFDefaults SV")
     sexy = to_py(c.GetAddonInfo(c, "SexyMap"))
     eq(list(to_py(c.GetFrameNames(c, "SexyMap")).values()),
        ["Minimap", "SexyMapCoordFrame", "SexyMapZoneTextButton", "TimeManagerClockButton"], "SexyMap frames")

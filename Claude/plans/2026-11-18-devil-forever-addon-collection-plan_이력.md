@@ -45,3 +45,7 @@ Phase 2(Step 11–12): !DevilForever_Core 와 Codex 발주문 2건. 이 Phase �
 ## Phase 5 끝 정리 (2026-11-18 15:16:44 +0900)
 
 미니맵은 SexyMap v12.1.7 을 그대로 쓴다. 기본 설정은 지도 오른쪽 클릭으로 설정창이 열리지 않게(/sexymap 으로는 열림)와 추적 버튼 늘 보이기 두 가지이고, SexyMap 이 모듈 표를 통째로 만드는 방식이라 그 표를 SexyMap 기본값과 함께 채운다. 사각 모양·위치·테두리는 Codex 몫. Codex 발주문을 썼다. Result = `Claude/results/PHASE_5_sexymap_RESULT.md`.
+
+## Phase 6 끝 정리 (2026-11-18 15:34:25 +0900)
+
+체력·직업 자원은 Forever Unit Frames 0.65.2 를 그대로 쓴다. FUF 기본값이 계획 행(체력·자원·프레임 오라·치유 예측·거리 흐림, 마나·토템 강제 없음)을 이미 채워 기본값 파일은 두지 않았다. Grid2 가 로드된 캐릭터에서 FUF 공격대 창만 한 번 끄는 연결 애드온 DevilForever_FUFDefaults 를 만들었다(FUF 자체 명령 사용, 사용자 값은 건드리지 않음). 파티 창은 FUF 몫으로 두고 Grid2 는 공격대만 보이게 Phase 9 에서 맞춘다. 9개 직업 자원은 classes.md 와 맞고 흑마법사 영혼의 조각만 FUF 에 표시가 없다. Result = `Claude/results/PHASE_6_fuf_RESULT.md`.

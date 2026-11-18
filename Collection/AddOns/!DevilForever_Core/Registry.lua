@@ -376,6 +376,27 @@ Core.Registry = {
       use = "new",
       version = "0.1.0",
     },
+    DevilForever_FUFDefaults = {
+      bundle = "individual",
+      editable = {},
+      foreverLoad = "yes",
+      frames = {},
+      package = "DevilForever",
+      phases = {},
+      savedVariables = {
+        {
+          name = "DevilForever_FUFDefaultsDB",
+          scope = "account",
+          split = "common",
+        },
+      },
+      tocStatus = "matched",
+      tocs = {
+        "DevilForever_FUFDefaults.toc",
+      },
+      use = "new",
+      version = "0.1.0",
+    },
     Dominos = {
       bundle = "individual",
       defaults = "Defaults/Dominos.lua",
@@ -750,9 +771,156 @@ Core.Registry = {
     },
     ForeverUnitFrames = {
       bundle = "individual",
-      editable = {},
+      editable = {
+        {
+          field = "position",
+          frame = "fuf.player",
+          kind = "position",
+        },
+        {
+          field = "position",
+          frame = "fuf.target",
+          kind = "position",
+        },
+        {
+          field = "position",
+          frame = "fuf.targettarget",
+          kind = "position",
+        },
+        {
+          field = "position",
+          frame = "fuf.pet",
+          kind = "position",
+        },
+        {
+          field = "position",
+          frame = "fuf.focus",
+          kind = "position",
+        },
+        {
+          field = "position",
+          frame = "fuf.party",
+          kind = "position",
+        },
+        {
+          field = "position",
+          frame = "fuf.boss1",
+          kind = "position",
+        },
+        {
+          field = "size",
+          frame = "fuf.player",
+          kind = "size",
+          max = 600,
+          min = 8,
+        },
+        {
+          field = "size",
+          frame = "fuf.target",
+          kind = "size",
+          max = 600,
+          min = 8,
+        },
+        {
+          field = "size",
+          frame = "fuf.pet",
+          kind = "size",
+          max = 600,
+          min = 8,
+        },
+        {
+          field = "size",
+          frame = "fuf.focus",
+          kind = "size",
+          max = 600,
+          min = 8,
+        },
+        {
+          field = "size",
+          frame = "fuf.party",
+          kind = "size",
+          max = 600,
+          min = 8,
+        },
+      },
       foreverLoad = "yes",
-      frames = {},
+      frames = {
+        {
+          frame = "ForeverUnitFrames_player",
+          key = "fuf.player",
+          tokens = {},
+        },
+        {
+          frame = "ForeverUnitFrames_target",
+          key = "fuf.target",
+          tokens = {},
+        },
+        {
+          frame = "ForeverUnitFrames_targettarget",
+          key = "fuf.targettarget",
+          tokens = {},
+        },
+        {
+          frame = "ForeverUnitFrames_targettargettarget",
+          key = "fuf.targettargettarget",
+          tokens = {},
+        },
+        {
+          frame = "ForeverUnitFrames_pet",
+          key = "fuf.pet",
+          tokens = {},
+        },
+        {
+          frame = "ForeverUnitFrames_pettarget",
+          key = "fuf.pettarget",
+          tokens = {},
+        },
+        {
+          frame = "ForeverUnitFrames_focus",
+          key = "fuf.focus",
+          tokens = {},
+        },
+        {
+          frame = "ForeverUnitFrames_focustarget",
+          key = "fuf.focustarget",
+          tokens = {},
+        },
+        {
+          frame = "ForeverUnitFramesParty",
+          key = "fuf.party",
+          tokens = {},
+        },
+        {
+          frame = "ForeverUnitFrames_boss1",
+          key = "fuf.boss1",
+          tokens = {},
+        },
+        {
+          frame = "ForeverUnitFrames_boss2",
+          key = "fuf.boss2",
+          tokens = {},
+        },
+        {
+          frame = "ForeverUnitFrames_boss3",
+          key = "fuf.boss3",
+          tokens = {},
+        },
+        {
+          frame = "ForeverUnitFrames_boss4",
+          key = "fuf.boss4",
+          tokens = {},
+        },
+        {
+          frame = "ForeverUnitFrames_boss5",
+          key = "fuf.boss5",
+          tokens = {},
+        },
+        {
+          frame = "ForeverUnitFramesRaid",
+          key = "fuf.raid",
+          tokens = {},
+        },
+      },
       package = "Forever Unit Frames",
       phases = {
         6,
@@ -1810,6 +1978,7 @@ Core.Registry = {
     "Details_TinyThreat",
     "Details_Vanguard",
     "DevilForever_ChatSetup",
+    "DevilForever_FUFDefaults",
     "Dominos",
     "Dominos_Cast",
     "Dominos_Config",

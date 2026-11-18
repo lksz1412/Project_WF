@@ -376,6 +376,142 @@
         }
       },
       "defaults": "Defaults/SexyMap.lua"
+    },
+    "ForeverUnitFrames": {
+      "frames": [
+        {
+          "key": "fuf.player",
+          "frame": "ForeverUnitFrames_player"
+        },
+        {
+          "key": "fuf.target",
+          "frame": "ForeverUnitFrames_target"
+        },
+        {
+          "key": "fuf.targettarget",
+          "frame": "ForeverUnitFrames_targettarget"
+        },
+        {
+          "key": "fuf.targettargettarget",
+          "frame": "ForeverUnitFrames_targettargettarget"
+        },
+        {
+          "key": "fuf.pet",
+          "frame": "ForeverUnitFrames_pet"
+        },
+        {
+          "key": "fuf.pettarget",
+          "frame": "ForeverUnitFrames_pettarget"
+        },
+        {
+          "key": "fuf.focus",
+          "frame": "ForeverUnitFrames_focus"
+        },
+        {
+          "key": "fuf.focustarget",
+          "frame": "ForeverUnitFrames_focustarget"
+        },
+        {
+          "key": "fuf.party",
+          "frame": "ForeverUnitFramesParty"
+        },
+        {
+          "key": "fuf.boss1",
+          "frame": "ForeverUnitFrames_boss1"
+        },
+        {
+          "key": "fuf.boss2",
+          "frame": "ForeverUnitFrames_boss2"
+        },
+        {
+          "key": "fuf.boss3",
+          "frame": "ForeverUnitFrames_boss3"
+        },
+        {
+          "key": "fuf.boss4",
+          "frame": "ForeverUnitFrames_boss4"
+        },
+        {
+          "key": "fuf.boss5",
+          "frame": "ForeverUnitFrames_boss5"
+        },
+        {
+          "key": "fuf.raid",
+          "frame": "ForeverUnitFramesRaid"
+        }
+      ],
+      "editable": [
+        {
+          "frame": "fuf.player",
+          "field": "position"
+        },
+        {
+          "frame": "fuf.target",
+          "field": "position"
+        },
+        {
+          "frame": "fuf.targettarget",
+          "field": "position"
+        },
+        {
+          "frame": "fuf.pet",
+          "field": "position"
+        },
+        {
+          "frame": "fuf.focus",
+          "field": "position"
+        },
+        {
+          "frame": "fuf.party",
+          "field": "position"
+        },
+        {
+          "frame": "fuf.boss1",
+          "field": "position"
+        },
+        {
+          "frame": "fuf.player",
+          "field": "size",
+          "min": 8,
+          "max": 600
+        },
+        {
+          "frame": "fuf.target",
+          "field": "size",
+          "min": 8,
+          "max": 600
+        },
+        {
+          "frame": "fuf.pet",
+          "field": "size",
+          "min": 8,
+          "max": 600
+        },
+        {
+          "frame": "fuf.focus",
+          "field": "size",
+          "min": 8,
+          "max": 600
+        },
+        {
+          "frame": "fuf.party",
+          "field": "size",
+          "min": 8,
+          "max": 600
+        }
+      ],
+      "saved_variables": {
+        "ForeverUnitFramesDB": {
+          "split": "common"
+        }
+      }
+    },
+    "DevilForever_FUFDefaults": {
+      "saved_variables": {
+        "DevilForever_FUFDefaultsDB": {
+          "split": "common"
+        }
+      }
     }
   }
 }
