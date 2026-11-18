@@ -3,7 +3,7 @@
 받는 쪽: Codex. 보내는 쪽: Claude 세션. 외관 설계·판단은 Codex 에 맡긴다(R50·R53·R87). 지켜야 할 약속(토큰으로만 값 읽기·`Edit:Get`·전투 중 보호 프레임 금지·등록으로 프레임 알리기·다른 애드온 수정 금지·V42 초기화 코드 금지)은 `Collection/codex-briefs/appearance-2.md` 2절 그대로이고, 세 겉보기 값의 꼴은 `Collection/codex-briefs/appearance-2-layouts.md` 그대로다. 게임 입력을 자동으로 보내는 도구는 쓰지 않는다.
 
 - 결과를 올릴 자리: `References/codex-appearance/16/`. `Collection/` 은 고치지 않는다 — Claude 가 정적 대조 뒤 합친다.
-- 기반: 설치 ZIP `outputs/collection/DevilForever-collection.zip`(sha256 `718c3f4a378867550e8d40ec27cccb99302470348ac4f2d090aac8f809cfd874` — `!DevilForever_Core` + `DevilForever_StatusStrip`). Phase 2 외관 결과(`References/codex-appearance/2/`)의 토큰 세트와 세 겉보기(`References/codex-appearance/2-layouts/`) 위에 얹는다. 띠가 게임에서 무엇을 보이는지는 실사용 검증 `Collection/codex-briefs/phase16.md` 결과(`References/codex-verify/phase16/`)를 먼저 본다.
+- 기반: 설치 ZIP `outputs/collection/DevilForever-collection.zip`(sha256 `f89369f161b3c8f1a58905312068630aa35d138db61b1b478c5cc16e27d4cbef` — `!DevilForever_Core` + `DevilForever_StatusStrip`). Phase 2 외관 결과(`References/codex-appearance/2/`)의 토큰 세트와 세 겉보기(`References/codex-appearance/2-layouts/`) 위에 얹는다. 띠가 게임에서 무엇을 보이는지는 실사용 검증 `Collection/codex-briefs/phase16.md` 결과(`References/codex-verify/phase16/`)를 먼저 본다.
 - 띠 애드온은 외관을 하나도 정하지 않는다: 색·질감·바탕이 없고, 글자는 게임 글꼴 객체 `GameFontHighlightSmall` 그대로다. 띠 코드는 Core 의 토큰·편집 값을 읽지 않는다(Core 없이도 돈다). 그래서 외관은 모두 Codex 의 Skin 애드온이 입힌다.
 
 ## 1. 만들 것
@@ -26,7 +26,7 @@
 | `spacing` | `DevilForever_StatusStrip:SetSpacing(px)` (0 이상 숫자. 칸 배치를 다시 한다. 이번 접속 동안만. `LAYOUT` 콜백 안에서 불러도 된다 — 새 간격은 바로 기억되고, 배치는 겹쳐 돌지 않고 지금 배치가 끝난 뒤 한 번 더 돈다. 그 두 번째 배치 안에서 다시 부른 배치는 버려진다) |
 
 - 등록 표(`registry_extra.json`)에 이미 있는 것: frame key `statusstrip.bar`(토큰 기본값 글꼴 `font.number`, 색 `color.text.normal`, 간격 `spacing.default`)와 칸마다 `statusstrip.gold`·`statusstrip.bags`·`statusstrip.durability`·`statusstrip.clock`·`statusstrip.latency`·`statusstrip.fps`. 편집 항목은 `statusstrip.bar` 의 `position`, `size`(8–8192, 너비·높이 같은 범위), `font`(크기 6–64), `color`, `spacing`(0–128).
-- 쓸 수 있는 토큰(`Theme.lua` 의 토큰 목록): 글자 `font.number`·`font.size.normal`(작게 하려면 `font.size.small`)·`color.text.normal`, 단위·이름을 다른 색으로 나눌 때 `color.text.highlight`, 바탕 `color.panel.background`·`color.panel.border`·`texture.panel`·`border.size`, 구분선 `color.divider`·`texture.divider`, 간격 `spacing.default`. `color.text.disabled` 와 장식·상태 막대 질감은 쓰지 않는다.
+- 쓸 수 있는 토큰(`Theme.lua` 의 토큰 목록): 글자 `font.number`·`font.size.normal`(작게 하려면 `font.size.small`)·`color.text.normal`(글자 하나 — FontString 하나에 색 하나), 바탕 `color.panel.background`·`color.panel.border`·`texture.panel`·`border.size`, 구분선 `color.divider`·`texture.divider`, 간격 `spacing.default`. `color.text.disabled` 와 장식·상태 막대 질감은 쓰지 않는다.
 - 칸 배치: 띠 애드온은 켜진 칸만 왼쪽부터 `gold, bags, durability, clock, latency, fps` 순서로 붙이고(첫 칸은 띠 왼쪽에서 간격만큼, 다음 칸은 앞 칸 오른쪽에서 간격만큼), 배치할 때마다 `DevilForever_StatusStrip:RegisterCallback(owner, fn)` 의 `fn("LAYOUT", shownKeys)` 를 부른다(shownKeys = 보이는 칸 key 목록 사본). 구분선은 이 콜백에서 보이는 칸 사이에 둔다. 글자 프레임은 보호 프레임이 아니라서 이 콜백에서 다시 붙여도 된다. 칸이 켜지고 꺼지는 것은 사용자가 `/dfstatus` 로 정한다 — 스킨은 칸을 켜거나 끄지 않는다.
 - 값 콜백은 없다(1초마다 부르면 비용이 든다). 글자는 띠 애드온이 이미 넣으므로 스킨이 값을 읽을 일은 없다. 값에 따라 색을 바꾸는 것(내구도 낮음 경고 등)은 이번 판에 넣지 않는다 — 넣으려면 새 토큰이 필요하다(Core 변경). 필요하다고 보면 보고서에 제안만 적는다.
 

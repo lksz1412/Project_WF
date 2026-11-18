@@ -3,7 +3,7 @@
 받는 쪽: Codex. 보내는 쪽: Claude 세션. 외관 설계·판단은 Codex 에 맡긴다(R50·R53·R87). 지켜야 할 약속(토큰으로만 값 읽기·`Edit:Get`·전투 중 보호 프레임 금지·등록으로 프레임 알리기·다른 애드온 수정 금지·V42 초기화 코드 금지)은 `Collection/codex-briefs/appearance-2.md` 2절 그대로이고, 세 겉보기 값의 꼴은 `Collection/codex-briefs/appearance-2-layouts.md` 그대로다. 게임 입력을 자동으로 보내는 도구는 쓰지 않는다.
 
 - 결과를 올릴 자리: `References/codex-appearance/19/`. `Collection/` 은 고치지 않는다 — Claude 가 정적 대조 뒤 합친다.
-- 기반: 설치 ZIP `outputs/collection/DevilForever-collection.zip`(sha256 `718c3f4a378867550e8d40ec27cccb99302470348ac4f2d090aac8f809cfd874` — `!DevilForever_Core`) + Experience Forever 원본 `References/addon-sources/experience-forever/ExperienceForever.zip`(`ExperienceForever`). Phase 2 외관 결과(`References/codex-appearance/2/`)의 토큰 세트와 세 겉보기(`References/codex-appearance/2-layouts/`) 위에 얹는다. 막대가 게임에서 무엇을 보이는지는 실사용 검증 `Collection/codex-briefs/phase19.md` 결과(`References/codex-verify/phase19/`)를 먼저 본다.
+- 기반: 설치 ZIP `outputs/collection/DevilForever-collection.zip`(sha256 `f89369f161b3c8f1a58905312068630aa35d138db61b1b478c5cc16e27d4cbef` — `!DevilForever_Core`) + Experience Forever 원본 `References/addon-sources/experience-forever/ExperienceForever.zip`(`ExperienceForever`). Phase 2 외관 결과(`References/codex-appearance/2/`)의 토큰 세트와 세 겉보기(`References/codex-appearance/2-layouts/`) 위에 얹는다. 막대가 게임에서 무엇을 보이는지는 실사용 검증 `Collection/codex-briefs/phase19.md` 결과(`References/codex-verify/phase19/`)를 먼저 본다.
 - 경험치·평판·사냥꾼 소환수 경험치는 Experience Forever 하나가 맡는다. `Dominos_Progress` 는 쓰지 않으므로 스킨하지 않는다. 게임 기본 경험치 막대(`StatusTrackingBarManager`)는 Experience Forever 가 투명하게 해 둔다(`ExperienceForever/ExperienceForever.lua:1215–1245`) — 스킨은 그것을 다시 보이게 하거나 손대지 않는다. 아래 줄 번호는 모두 `ExperienceForever/ExperienceForever.lua` 다.
 
 ## 1. 만들 것

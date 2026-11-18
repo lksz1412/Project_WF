@@ -4,8 +4,8 @@
 
 - 결과를 올릴 자리: `References/codex-verify/phase3/` (저장소). 결과 표 `result.md` 에 항목마다 「결과 한 줄 양식」 을 한 줄씩 적는다. 두 번째 칸은 `통과` / `실패` / `못 함` 중 하나, 실패면 마지막 칸에 오류 문구 한 줄.
 - 설치 ZIP 둘:
-  - 모음집 `outputs/collection/DevilForever-collection.zip`, sha256 `718c3f4a378867550e8d40ec27cccb99302470348ac4f2d090aac8f809cfd874` (지금 판 안에는 `!DevilForever_Core/`, `DevilForever_Castbars/`, `DevilForever_ChatSetup/`, `DevilForever_FUFDefaults/`, `DevilForever_StatusStrip/`, `PitBull4/` — 이 발주문이 넣으라는 폴더만 넣는다(PitBull4 는 Phase 6-rev 몫이라 다른 Phase 검증에서는 넣지 않는다)).
-  - Dominos 원본 `References/forever-addons/Dominos/Dominos-12.0.4.zip`, sha256 `2dbcf9857a91b772a42200369386fc17f875530ffd47984b555ecdb8e11bef1a`. 이 안의 `Dominos`·`Dominos_Config`·`Dominos_Cast`·`Masque_Dominos` 네 폴더만 넣는다. `Dominos_Progress`·`Dominos_Roll` 은 넣지 않는다(다른 Phase 몫). `Masque_Dominos` 는 Masque 가 이미 설치돼 있을 때만 넣는다.
+  - 모음집 `outputs/collection/DevilForever-collection.zip`, sha256 `f89369f161b3c8f1a58905312068630aa35d138db61b1b478c5cc16e27d4cbef` (지금 판 안에는 `!DevilForever_Core/`, `DevilForever_Castbars/`, `DevilForever_ChatSetup/`, `DevilForever_FUFDefaults/`, `DevilForever_StatusStrip/`, `PitBull4/` — 이 발주문이 넣으라는 폴더만 넣는다(PitBull4 는 Phase 6-rev 몫이라 다른 Phase 검증에서는 넣지 않는다)).
+  - Dominos 원본 `References/forever-addons/Dominos/Dominos-12.0.4.zip`, sha256 `2dbcf9857a91b772a42200369386fc17f875530ffd47984b555ecdb8e11bef1a`. 이 안의 `Dominos`·`Dominos_Config`·`Masque_Dominos` 세 폴더만 넣는다. `Dominos_Cast`·`Dominos_Progress`·`Dominos_Roll` 은 넣지 않는다(모음집에서 쓰지 않는다 — 시전바는 Quartz, 경험치는 Experience Forever 가 맡고 주사위 창은 만들지 않는 기능이다). `Masque_Dominos` 는 Masque 가 이미 설치돼 있을 때만 넣는다.
 - 폴더 이름이 `!` 로 시작한다. bash 로 다룰 때는 작은따옴표로 감싼다(예: `ls '_forever_/Interface/AddOns/!DevilForever_Core'`).
 - 이 발주문에서 「직업 이름」 은 게임이 보여 주는 한국어 직업 이름(예: 전사)이다. Dominos 는 처음 접속한 캐릭터에 직업 이름과 같은 이름의 프로필을 쓴다.
 
@@ -18,7 +18,7 @@
 
 ## 1. 로드와 Lua 오류
 
-- 하는 법: 게임을 켜고 캐릭터 선택 화면의 애드온 창에서 DevilForever Core·Dominos·Dominos Config·Dominos Cast·Masque: Dominos 의 표시를 본다(「오래된 애드온 불러오기」 는 켜지 않는다). 접속해 `/bugsack` 을 열고 `Dominos` 나 `!DevilForever_Core` 가 들어간 오류를 찾는다. 있으면 문구 전체를 `References/codex-verify/phase3/bugsack.txt` 에 복사한다.
+- 하는 법: 게임을 켜고 캐릭터 선택 화면의 애드온 창에서 DevilForever Core·Dominos·Dominos Config·Masque: Dominos 의 표시를 본다(「오래된 애드온 불러오기」 는 켜지 않는다). 접속해 `/bugsack` 을 열고 `Dominos` 나 `!DevilForever_Core` 가 들어간 오류를 찾는다. 있으면 문구 전체를 `References/codex-verify/phase3/bugsack.txt` 에 복사한다.
 - 기대 결과: 모두 「사용 가능」(Masque: Dominos 는 넣었을 때만), 오류 0. 화면 아래에 Dominos 행동단축바가 보이고 기본 행동단축바는 숨는다.
 
 결과 한 줄 양식: `1 | <통과/실패/못 함> | 애드온 창=<폴더=표시 목록> | 오류 수=<n> | Dominos 바 보임=<예/아니오>`
@@ -69,7 +69,7 @@
 
 ## 8. Dominos 끄기
 
-- 하는 법: 캐릭터 선택 화면 애드온 창에서 Dominos 를 끈다(Dominos Config·Dominos Cast·Masque: Dominos 는 Dominos 에 기대므로 함께 꺼진다). 접속해 `/run local s=DevilForever_Core.Defaults:GetStatus("Dominos"); print(s.registered, s.loaded, s.targets.DominosDB)` 를 치고 기본 행동단축바가 돌아왔는지, BugSack 에 새 오류가 있는지 본다. 끝나면 다시 켜고 접속한다.
+- 하는 법: 캐릭터 선택 화면 애드온 창에서 Dominos 를 끈다(Dominos Config·Masque: Dominos 는 Dominos 에 기대므로 함께 꺼진다). 접속해 `/run local s=DevilForever_Core.Defaults:GetStatus("Dominos"); print(s.registered, s.loaded, s.targets.DominosDB)` 를 치고 기본 행동단축바가 돌아왔는지, BugSack 에 새 오류가 있는지 본다. 끝나면 다시 켜고 접속한다.
 - 기대 결과: `true false nil`, 기본 행동단축바 보임, 새 오류 0. 다시 켠 뒤 Dominos 바 1–8.
 
 결과 한 줄 양식: `8 | <통과/실패/못 함> | 끈 상태 출력=<줄> | 기본 바 보임=<예/아니오> | 새 오류 수=<n> | 다시 켠 뒤 바=<번호 목록>`

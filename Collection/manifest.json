@@ -4028,12 +4028,16 @@
     },
     {
       "name": "ForeverThreat",
-      "role": "start",
+      "role": "comparison",
       "source_dir": "forever-addons",
       "feature_phases": [
         {
+          "phase": 10,
+          "use": "comparison"
+        },
+        {
           "phase": 11,
-          "use": "start"
+          "use": "dropped"
         }
       ],
       "source_zip": "References/forever-addons/ForeverThreat/ForeverThreat-1.12.3.zip",
@@ -4042,8 +4046,8 @@
       "version": "1.12.3",
       "file_id": "9671243",
       "how_to_use": {
-        "verdict": "settings",
-        "reason": "Forever 전용 위협 미터. AceDB 가 아니라 Phase 20 연결 코드 필요.",
+        "verdict": "dropped",
+        "reason": "Phase 11 은 Phase 10 에 합쳤다 — 위협은 Details! 의 Tiny Threat 가 보인다(R107 ②). Phase 10 의 비교 대상으로만 남는다.",
         "judgment_md_section": "Collection/judgment.md — Phase 11 — 어그로 미터 · settings"
       },
       "sha256_verified": true,
@@ -4817,7 +4821,7 @@
       "file_id": "9665215",
       "how_to_use": {
         "verdict": "settings",
-        "reason": "Hekili 는 표시 설정만. EventAlert 식 알림 꼴을 Hekili 에서 찾지 못해 보완 모듈 DevilForever_Combat(새 폴더)이 맡는 쪽(갈래 2 쪽 근거, Step 18 확정). 치유 특성 4개는 Hekili 표시 없음.",
+        "reason": "다음 행동 추천 표시만 설정한다(R104). 상태 알림·재사용 대기시간은 게임 기본 Cooldown Manager 가 맡고 보완 모듈은 만들지 않는다. 치유 특성 4개는 Hekili 표시 없음.",
         "judgment_md_section": "Collection/judgment.md — Phase 8 — 직업 전투보조 · new (Hekili 는 settings)"
       },
       "sha256_verified": true,
@@ -6310,7 +6314,7 @@
       "file_id": "9593490",
       "how_to_use": {
         "verdict": "settings",
-        "reason": "Forever 전용 휘두르기 모듈이 있다. FUF 대상 시전바·Dominos_Cast 와의 겹침은 설정으로 정리.",
+        "reason": "Forever 전용 휘두르기 모듈이 있다. 내·대상·주시·소환수 시전바는 Quartz 하나가 맡는다: 게임 기본 시전바는 Quartz 자기 기본값이 숨기고, FUF 판의 시전바는 DevilForever_Castbars 가 그 접속 동안 숨기며, PitBull4 판은 CastBar 모듈을 꺼 둔다. Dominos_Cast 는 모음집에 넣지 않는다(TRIAGE_phase7.md DQ2).",
         "judgment_md_section": "Collection/judgment.md — Phase 7 — 시전바 · settings"
       },
       "sha256_verified": true,
@@ -9907,12 +9911,12 @@
     },
     {
       "name": "TipTac Reborn",
-      "role": "start",
+      "role": "comparison",
       "source_dir": "addon-sources",
       "feature_phases": [
         {
           "phase": 12,
-          "use": "start"
+          "use": "dropped"
         }
       ],
       "source_zip": "References/addon-sources/tiptac-reborn/TipTac-v26.11.11-release.zip",
@@ -9921,8 +9925,8 @@
       "version": "v26.11.11-release",
       "file_id": "9563849",
       "how_to_use": {
-        "verdict": "settings",
-        "reason": "TipTac_Forever.toc 로 로드(미검증 — 결정 대기 3). 위치·비교 툴팁 같은 기능 설정.",
+        "verdict": "dropped",
+        "reason": "Phase 12 빠짐 — 게임 기본 툴팁을 쓴다(R100).",
         "judgment_md_section": "Collection/judgment.md — Phase 12 — 툴팁 · settings"
       },
       "sha256_verified": true,
@@ -10989,12 +10993,12 @@
     },
     {
       "name": "Bagnon",
-      "role": "start",
+      "role": "comparison",
       "source_dir": "addon-sources",
       "feature_phases": [
         {
           "phase": 13,
-          "use": "start"
+          "use": "dropped"
         }
       ],
       "source_zip": "References/addon-sources/bagnon/Bagnon-12.1.11.zip",
@@ -11003,8 +11007,8 @@
       "version": "12.1.11",
       "file_id": "9638308",
       "how_to_use": {
-        "verdict": "settings",
-        "reason": "한 창 가방·은행 기능 설정. AceDB 가 아니라 Phase 20 연결 코드 필요.",
+        "verdict": "dropped",
+        "reason": "Phase 13 빠짐 — 게임 기본 가방을 쓴다(R100).",
         "judgment_md_section": "Collection/judgment.md — Phase 13 — 가방 · settings"
       },
       "sha256_verified": true,
@@ -11622,12 +11626,12 @@
     },
     {
       "name": "Platynator",
-      "role": "start",
+      "role": "comparison",
       "source_dir": "addon-sources",
       "feature_phases": [
         {
           "phase": 14,
-          "use": "start"
+          "use": "dropped"
         }
       ],
       "source_zip": "References/addon-sources/platynator/Platynator-547.zip",
@@ -11636,8 +11640,8 @@
       "version": "547",
       "file_id": "9659136",
       "how_to_use": {
-        "verdict": "settings",
-        "reason": "체력·시전·위협 색 기능 설정. ProfileManager 전용 연결 있음.",
+        "verdict": "dropped",
+        "reason": "Phase 14 는 게임 기본 이름표를 쓴다 — 이름표 애드온 없음(R107 ③).",
         "judgment_md_section": "Collection/judgment.md — Phase 14 — 이름표 · settings"
       },
       "sha256_verified": true,
@@ -11904,12 +11908,12 @@
     },
     {
       "name": "Titan Panel",
-      "role": "start",
+      "role": "comparison",
       "source_dir": "addon-sources",
       "feature_phases": [
         {
           "phase": 16,
-          "use": "start"
+          "use": "dropped"
         }
       ],
       "source_zip": "References/addon-sources/titan-panel/TitanPanel-9.3.7.zip",
@@ -11918,8 +11922,8 @@
       "version": "9.3.7",
       "file_id": "9656248",
       "how_to_use": {
-        "verdict": "settings",
-        "reason": "정보 표시·LDB 버튼 설정. Forever 에서 자동 판매가 안 된다는 Codex 기록이 있어 켜지 않는다. AceDB 가 아니라 Phase 20 연결 코드 필요.",
+        "verdict": "dropped",
+        "reason": "상태띠는 새로 만든 DevilForever_StatusStrip 이 맡는다 — Titan Panel 은 쓰지 않는다(R107 ⑤).",
         "judgment_md_section": "Collection/judgment.md — Phase 16 — 정보 바 · settings"
       },
       "sha256_verified": true,
@@ -13145,12 +13149,12 @@
     },
     {
       "name": "Kaliel's Tracker",
-      "role": "start",
+      "role": "comparison",
       "source_dir": "addon-sources",
       "feature_phases": [
         {
           "phase": 17,
-          "use": "start"
+          "use": "dropped"
         }
       ],
       "source_zip": "References/addon-sources/kaliels-tracker/kaliels-tracker-8.11.1-forever.zip",
@@ -13159,8 +13163,8 @@
       "version": "8.11.1-forever",
       "file_id": "9518871",
       "how_to_use": {
-        "verdict": "settings",
-        "reason": "추적 항목 기능 설정. _Camelot.toc 가 Blizzard_TransmogShared 를 필수 의존으로 둔다(미검증 — 결정 대기 3).",
+        "verdict": "dropped",
+        "reason": "Phase 17 빠짐 — 게임 기본 추적기를 쓴다(R100).",
         "judgment_md_section": "Collection/judgment.md — Phase 17 — 퀘스트·목표 추적기 · settings"
       },
       "sha256_verified": true,
@@ -14387,12 +14391,12 @@
     },
     {
       "name": "Mapster",
-      "role": "start",
+      "role": "comparison",
       "source_dir": "addon-sources",
       "feature_phases": [
         {
           "phase": 18,
-          "use": "start"
+          "use": "dropped"
         }
       ],
       "source_zip": "References/addon-sources/mapster/Mapster-1.14.0.zip",
@@ -14401,8 +14405,8 @@
       "version": "1.14.0",
       "file_id": "9047762",
       "how_to_use": {
-        "verdict": "modify",
-        "reason": "V42 1.14.0-Forever-v2 의 FogClear 오류 막기를 받은 판에 옮긴다. TOC 머리말 AllowLoadGameType: mainline 은 Codex 로드 확인 뒤에만 고친다(결정 대기 1).",
+        "verdict": "dropped",
+        "reason": "Phase 18 빠짐 — 게임 기본 세계지도를 쓴다(R100). FogClear 오류 막기 판정(judgment.md 4-1)은 기록으로 남는다.",
         "judgment_md_section": "Collection/judgment.md — 4-1. Phase 18 Mapster 의 TOC 로드 조건"
       },
       "sha256_verified": true,
@@ -14598,7 +14602,7 @@
       "file_id": "9626058",
       "how_to_use": {
         "verdict": "settings",
-        "reason": "Phase 19 시작 애드온(master 결정 TRIAGE_phase1.md:27): 경험치·평판·사냥꾼 소환수 경험치(showPetBar). feature_phases·role 칸은 A2 가 마스터 플랜 표에서 다시 만든다.",
+        "reason": "Phase 19 시작 애드온(master 결정 TRIAGE_phase1.md:27): 경험치·평판·사냥꾼 소환수 경험치(showPetBar). 자기 기본값이 요구와 같아 Core 기본값 파일은 두지 않는다(TRIAGE_phase19.md).",
         "judgment_md_section": "Collection/judgment.md — Phase 19 — 경험치·평판 바 · settings; §6-4"
       },
       "sha256_verified": true,
@@ -16317,6 +16321,941 @@
         }
       ],
       "license_files": []
+    }
+  ],
+  "collection": [
+    {
+      "folder": "!DevilForever_Core",
+      "phases": [
+        2,
+        20,
+        22
+      ],
+      "variant": null,
+      "bundle": "required",
+      "kind": "new",
+      "base": null,
+      "path": "Collection/AddOns/!DevilForever_Core",
+      "toc_files": [
+        "!DevilForever_Core.toc"
+      ],
+      "tocs": [
+        {
+          "file": "!DevilForever_Core.toc",
+          "interface": [
+            "16001"
+          ],
+          "version": "0.1.0",
+          "title": "DevilForever Core",
+          "dependencies": null,
+          "required_deps": null,
+          "optional_deps": null,
+          "saved_variables": [
+            "DevilForever_CoreDB",
+            "DevilForever_ProfilesDB"
+          ],
+          "saved_variables_per_character": null,
+          "load_on_demand": null,
+          "game_types": {
+            "allow": null,
+            "exclude": null
+          },
+          "forever_load": "yes",
+          "list_lines": {
+            "Interface": [
+              {
+                "items": [
+                  "16001"
+                ],
+                "conditions": []
+              }
+            ],
+            "SavedVariables": [
+              {
+                "items": [
+                  "DevilForever_CoreDB",
+                  "DevilForever_ProfilesDB"
+                ],
+                "conditions": []
+              }
+            ]
+          },
+          "listed_file_lines": 16
+        }
+      ],
+      "has_interface_16001": true,
+      "has_forever_loadable_toc": true,
+      "lua_files": 16,
+      "lua_files_in_libs": 0,
+      "embedded_libs": [],
+      "license_files": []
+    },
+    {
+      "folder": "DevilForever_Castbars",
+      "phases": [
+        7
+      ],
+      "variant": null,
+      "bundle": "individual",
+      "kind": "new",
+      "base": null,
+      "path": "Collection/AddOns/DevilForever_Castbars",
+      "toc_files": [
+        "DevilForever_Castbars.toc"
+      ],
+      "tocs": [
+        {
+          "file": "DevilForever_Castbars.toc",
+          "interface": [
+            "16001"
+          ],
+          "version": "0.1.0",
+          "title": "DevilForever Castbars",
+          "dependencies": [
+            "Quartz",
+            "ForeverUnitFrames"
+          ],
+          "required_deps": null,
+          "optional_deps": [
+            "!DevilForever_Core"
+          ],
+          "saved_variables": null,
+          "saved_variables_per_character": null,
+          "load_on_demand": null,
+          "game_types": {
+            "allow": null,
+            "exclude": null
+          },
+          "forever_load": "yes",
+          "list_lines": {
+            "Interface": [
+              {
+                "items": [
+                  "16001"
+                ],
+                "conditions": []
+              }
+            ],
+            "Dependencies": [
+              {
+                "items": [
+                  "Quartz",
+                  "ForeverUnitFrames"
+                ],
+                "conditions": []
+              }
+            ],
+            "OptionalDeps": [
+              {
+                "items": [
+                  "!DevilForever_Core"
+                ],
+                "conditions": []
+              }
+            ]
+          },
+          "listed_file_lines": 1
+        }
+      ],
+      "has_interface_16001": true,
+      "has_forever_loadable_toc": true,
+      "lua_files": 1,
+      "lua_files_in_libs": 0,
+      "embedded_libs": [],
+      "license_files": []
+    },
+    {
+      "folder": "DevilForever_ChatSetup",
+      "phases": [
+        4
+      ],
+      "variant": null,
+      "bundle": "individual",
+      "kind": "new",
+      "base": null,
+      "path": "Collection/AddOns/DevilForever_ChatSetup",
+      "toc_files": [
+        "DevilForever_ChatSetup.toc"
+      ],
+      "tocs": [
+        {
+          "file": "DevilForever_ChatSetup.toc",
+          "interface": [
+            "16001"
+          ],
+          "version": "0.1.0",
+          "title": "DevilForever Chat Setup",
+          "dependencies": [
+            "!DevilForever_Core"
+          ],
+          "required_deps": null,
+          "optional_deps": null,
+          "saved_variables": null,
+          "saved_variables_per_character": [
+            "DevilForever_ChatSetupDB"
+          ],
+          "load_on_demand": null,
+          "game_types": {
+            "allow": null,
+            "exclude": null
+          },
+          "forever_load": "yes",
+          "list_lines": {
+            "Interface": [
+              {
+                "items": [
+                  "16001"
+                ],
+                "conditions": []
+              }
+            ],
+            "Dependencies": [
+              {
+                "items": [
+                  "!DevilForever_Core"
+                ],
+                "conditions": []
+              }
+            ],
+            "SavedVariablesPerCharacter": [
+              {
+                "items": [
+                  "DevilForever_ChatSetupDB"
+                ],
+                "conditions": []
+              }
+            ]
+          },
+          "listed_file_lines": 1
+        }
+      ],
+      "has_interface_16001": true,
+      "has_forever_loadable_toc": true,
+      "lua_files": 1,
+      "lua_files_in_libs": 0,
+      "embedded_libs": [],
+      "license_files": []
+    },
+    {
+      "folder": "DevilForever_FUFDefaults",
+      "phases": [
+        6
+      ],
+      "variant": null,
+      "bundle": "individual",
+      "kind": "new",
+      "base": null,
+      "path": "Collection/AddOns/DevilForever_FUFDefaults",
+      "toc_files": [
+        "DevilForever_FUFDefaults.toc"
+      ],
+      "tocs": [
+        {
+          "file": "DevilForever_FUFDefaults.toc",
+          "interface": [
+            "16001"
+          ],
+          "version": "0.1.0",
+          "title": "DevilForever FUF Defaults",
+          "dependencies": [
+            "!DevilForever_Core",
+            "ForeverUnitFrames"
+          ],
+          "required_deps": null,
+          "optional_deps": null,
+          "saved_variables": [
+            "DevilForever_FUFDefaultsDB"
+          ],
+          "saved_variables_per_character": null,
+          "load_on_demand": null,
+          "game_types": {
+            "allow": null,
+            "exclude": null
+          },
+          "forever_load": "yes",
+          "list_lines": {
+            "Interface": [
+              {
+                "items": [
+                  "16001"
+                ],
+                "conditions": []
+              }
+            ],
+            "Dependencies": [
+              {
+                "items": [
+                  "!DevilForever_Core",
+                  "ForeverUnitFrames"
+                ],
+                "conditions": []
+              }
+            ],
+            "SavedVariables": [
+              {
+                "items": [
+                  "DevilForever_FUFDefaultsDB"
+                ],
+                "conditions": []
+              }
+            ]
+          },
+          "listed_file_lines": 1
+        }
+      ],
+      "has_interface_16001": true,
+      "has_forever_loadable_toc": true,
+      "lua_files": 1,
+      "lua_files_in_libs": 0,
+      "embedded_libs": [],
+      "license_files": []
+    },
+    {
+      "folder": "DevilForever_StatusStrip",
+      "phases": [
+        16
+      ],
+      "variant": null,
+      "bundle": "individual",
+      "kind": "new",
+      "base": null,
+      "path": "Collection/AddOns/DevilForever_StatusStrip",
+      "toc_files": [
+        "DevilForever_StatusStrip.toc"
+      ],
+      "tocs": [
+        {
+          "file": "DevilForever_StatusStrip.toc",
+          "interface": [
+            "16001"
+          ],
+          "version": "0.1.0",
+          "title": "DevilForever Status Strip",
+          "dependencies": null,
+          "required_deps": null,
+          "optional_deps": null,
+          "saved_variables": [
+            "DevilForever_StatusStripDB"
+          ],
+          "saved_variables_per_character": null,
+          "load_on_demand": null,
+          "game_types": {
+            "allow": null,
+            "exclude": null
+          },
+          "forever_load": "yes",
+          "list_lines": {
+            "Interface": [
+              {
+                "items": [
+                  "16001"
+                ],
+                "conditions": []
+              }
+            ],
+            "SavedVariables": [
+              {
+                "items": [
+                  "DevilForever_StatusStripDB"
+                ],
+                "conditions": []
+              }
+            ]
+          },
+          "listed_file_lines": 1
+        }
+      ],
+      "has_interface_16001": true,
+      "has_forever_loadable_toc": true,
+      "lua_files": 1,
+      "lua_files_in_libs": 0,
+      "embedded_libs": [],
+      "license_files": []
+    },
+    {
+      "folder": "PitBull4",
+      "phases": [
+        6
+      ],
+      "variant": "6-rev",
+      "bundle": "individual",
+      "kind": "fork",
+      "base": {
+        "package": "PitBull4",
+        "version": "v4.2.50",
+        "source_zip": "References/addon-sources/pitbull-unit-frames-4-0/PitBull4-v4.2.50.zip",
+        "sha256": "f0f5469329ce64dc0178db634366eba77a3a29f1945356444b839f92cb4fb5e4",
+        "patch": "Collection/patches/PitBull4.patch"
+      },
+      "path": "Collection/AddOns/PitBull4",
+      "toc_files": [
+        "PitBull4.toc",
+        "PitBull4_Camelot.toc",
+        "PitBull4_Cata.toc",
+        "PitBull4_Mainline.toc",
+        "PitBull4_Mists.toc",
+        "PitBull4_TBC.toc"
+      ],
+      "tocs": [
+        {
+          "file": "PitBull4.toc",
+          "interface": [
+            "16001"
+          ],
+          "version": "v4.2.50-forever.1",
+          "title": "PitBull Unit Frames 4.0",
+          "dependencies": null,
+          "required_deps": null,
+          "optional_deps": [
+            "Ace3",
+            "LibSharedMedia-3.0",
+            "AceGUI-3.0-SharedMediaWidgets",
+            "LibDBIcon-1.0",
+            "LibBossIDs-1.0",
+            "Clique",
+            "Masque"
+          ],
+          "saved_variables": [
+            "PitBull4DB"
+          ],
+          "saved_variables_per_character": null,
+          "load_on_demand": null,
+          "game_types": {
+            "allow": null,
+            "exclude": null
+          },
+          "forever_load": "yes",
+          "list_lines": {
+            "Interface": [
+              {
+                "items": [
+                  "16001"
+                ],
+                "conditions": []
+              }
+            ],
+            "SavedVariables": [
+              {
+                "items": [
+                  "PitBull4DB"
+                ],
+                "conditions": []
+              }
+            ],
+            "OptionalDeps": [
+              {
+                "items": [
+                  "Ace3",
+                  "LibSharedMedia-3.0",
+                  "AceGUI-3.0-SharedMediaWidgets",
+                  "LibDBIcon-1.0",
+                  "LibBossIDs-1.0",
+                  "Clique",
+                  "Masque"
+                ],
+                "conditions": []
+              }
+            ]
+          },
+          "listed_file_lines": 3
+        },
+        {
+          "file": "PitBull4_Camelot.toc",
+          "interface": [
+            "16001"
+          ],
+          "version": "v4.2.50-forever.1",
+          "title": "PitBull Unit Frames 4.0",
+          "dependencies": null,
+          "required_deps": null,
+          "optional_deps": [
+            "Ace3",
+            "LibSharedMedia-3.0",
+            "AceGUI-3.0-SharedMediaWidgets",
+            "LibDBIcon-1.0",
+            "LibBossIDs-1.0",
+            "Clique",
+            "Masque"
+          ],
+          "saved_variables": [
+            "PitBull4DB"
+          ],
+          "saved_variables_per_character": null,
+          "load_on_demand": null,
+          "game_types": {
+            "allow": null,
+            "exclude": null
+          },
+          "forever_load": "yes",
+          "list_lines": {
+            "Interface": [
+              {
+                "items": [
+                  "16001"
+                ],
+                "conditions": []
+              }
+            ],
+            "SavedVariables": [
+              {
+                "items": [
+                  "PitBull4DB"
+                ],
+                "conditions": []
+              }
+            ],
+            "OptionalDeps": [
+              {
+                "items": [
+                  "Ace3",
+                  "LibSharedMedia-3.0",
+                  "AceGUI-3.0-SharedMediaWidgets",
+                  "LibDBIcon-1.0",
+                  "LibBossIDs-1.0",
+                  "Clique",
+                  "Masque"
+                ],
+                "conditions": []
+              }
+            ]
+          },
+          "listed_file_lines": 3
+        },
+        {
+          "file": "PitBull4_Cata.toc",
+          "interface": [
+            "40402"
+          ],
+          "version": "v4.2.50",
+          "title": "PitBull Unit Frames 4.0",
+          "dependencies": null,
+          "required_deps": null,
+          "optional_deps": [
+            "Ace3",
+            "LibSharedMedia-3.0",
+            "AceGUI-3.0-SharedMediaWidgets",
+            "LibDBIcon-1.0",
+            "LibBossIDs-1.0",
+            "LibDualSpec-1.0",
+            "Clique",
+            "Masque"
+          ],
+          "saved_variables": [
+            "PitBull4DB"
+          ],
+          "saved_variables_per_character": null,
+          "load_on_demand": null,
+          "game_types": {
+            "allow": null,
+            "exclude": null
+          },
+          "forever_load": "yes",
+          "list_lines": {
+            "Interface": [
+              {
+                "items": [
+                  "40402"
+                ],
+                "conditions": []
+              }
+            ],
+            "SavedVariables": [
+              {
+                "items": [
+                  "PitBull4DB"
+                ],
+                "conditions": []
+              }
+            ],
+            "OptionalDeps": [
+              {
+                "items": [
+                  "Ace3",
+                  "LibSharedMedia-3.0",
+                  "AceGUI-3.0-SharedMediaWidgets",
+                  "LibDBIcon-1.0",
+                  "LibBossIDs-1.0",
+                  "LibDualSpec-1.0",
+                  "Clique",
+                  "Masque"
+                ],
+                "conditions": []
+              }
+            ]
+          },
+          "listed_file_lines": 3
+        },
+        {
+          "file": "PitBull4_Mainline.toc",
+          "interface": [
+            "110207"
+          ],
+          "version": "v4.2.50",
+          "title": "PitBull Unit Frames 4.0",
+          "dependencies": null,
+          "required_deps": null,
+          "optional_deps": [
+            "Ace3",
+            "LibSharedMedia-3.0",
+            "AceGUI-3.0-SharedMediaWidgets",
+            "LibDBIcon-1.0",
+            "LibBossIDs-1.0",
+            "LibDualSpec-1.0",
+            "LibPlayerSpells-1.0",
+            "Clique",
+            "Masque"
+          ],
+          "saved_variables": [
+            "PitBull4DB"
+          ],
+          "saved_variables_per_character": null,
+          "load_on_demand": null,
+          "game_types": {
+            "allow": null,
+            "exclude": null
+          },
+          "forever_load": "yes",
+          "list_lines": {
+            "Interface": [
+              {
+                "items": [
+                  "110207"
+                ],
+                "conditions": []
+              }
+            ],
+            "SavedVariables": [
+              {
+                "items": [
+                  "PitBull4DB"
+                ],
+                "conditions": []
+              }
+            ],
+            "OptionalDeps": [
+              {
+                "items": [
+                  "Ace3",
+                  "LibSharedMedia-3.0",
+                  "AceGUI-3.0-SharedMediaWidgets",
+                  "LibDBIcon-1.0",
+                  "LibBossIDs-1.0",
+                  "LibDualSpec-1.0",
+                  "LibPlayerSpells-1.0",
+                  "Clique",
+                  "Masque"
+                ],
+                "conditions": []
+              }
+            ]
+          },
+          "listed_file_lines": 3
+        },
+        {
+          "file": "PitBull4_Mists.toc",
+          "interface": [
+            "50504"
+          ],
+          "version": "v4.2.50",
+          "title": "PitBull Unit Frames 4.0",
+          "dependencies": null,
+          "required_deps": null,
+          "optional_deps": [
+            "Ace3",
+            "LibSharedMedia-3.0",
+            "AceGUI-3.0-SharedMediaWidgets",
+            "LibDBIcon-1.0",
+            "LibBossIDs-1.0",
+            "LibDualSpec-1.0",
+            "Clique",
+            "Masque"
+          ],
+          "saved_variables": [
+            "PitBull4DB"
+          ],
+          "saved_variables_per_character": null,
+          "load_on_demand": null,
+          "game_types": {
+            "allow": null,
+            "exclude": null
+          },
+          "forever_load": "yes",
+          "list_lines": {
+            "Interface": [
+              {
+                "items": [
+                  "50504"
+                ],
+                "conditions": []
+              }
+            ],
+            "SavedVariables": [
+              {
+                "items": [
+                  "PitBull4DB"
+                ],
+                "conditions": []
+              }
+            ],
+            "OptionalDeps": [
+              {
+                "items": [
+                  "Ace3",
+                  "LibSharedMedia-3.0",
+                  "AceGUI-3.0-SharedMediaWidgets",
+                  "LibDBIcon-1.0",
+                  "LibBossIDs-1.0",
+                  "LibDualSpec-1.0",
+                  "Clique",
+                  "Masque"
+                ],
+                "conditions": []
+              }
+            ]
+          },
+          "listed_file_lines": 3
+        },
+        {
+          "file": "PitBull4_TBC.toc",
+          "interface": [
+            "20505"
+          ],
+          "version": "v4.2.50",
+          "title": "PitBull Unit Frames 4.0",
+          "dependencies": null,
+          "required_deps": null,
+          "optional_deps": [
+            "Ace3",
+            "LibSharedMedia-3.0",
+            "AceGUI-3.0-SharedMediaWidgets",
+            "LibDBIcon-1.0",
+            "LibBossIDs-1.0",
+            "LibDualSpec-1.0",
+            "Clique",
+            "Masque"
+          ],
+          "saved_variables": [
+            "PitBull4DB"
+          ],
+          "saved_variables_per_character": null,
+          "load_on_demand": null,
+          "game_types": {
+            "allow": null,
+            "exclude": null
+          },
+          "forever_load": "yes",
+          "list_lines": {
+            "Interface": [
+              {
+                "items": [
+                  "20505"
+                ],
+                "conditions": []
+              }
+            ],
+            "SavedVariables": [
+              {
+                "items": [
+                  "PitBull4DB"
+                ],
+                "conditions": []
+              }
+            ],
+            "OptionalDeps": [
+              {
+                "items": [
+                  "Ace3",
+                  "LibSharedMedia-3.0",
+                  "AceGUI-3.0-SharedMediaWidgets",
+                  "LibDBIcon-1.0",
+                  "LibBossIDs-1.0",
+                  "LibDualSpec-1.0",
+                  "Clique",
+                  "Masque"
+                ],
+                "conditions": []
+              }
+            ]
+          },
+          "listed_file_lines": 3
+        }
+      ],
+      "has_interface_16001": true,
+      "has_forever_loadable_toc": true,
+      "lua_files": 186,
+      "lua_files_in_libs": 52,
+      "embedded_libs": [
+        {
+          "name": "AceAddon-3.0",
+          "path": "Libs/AceAddon-3.0",
+          "toc_files": [],
+          "libstub": {
+            "major": "AceAddon-3.0",
+            "minor": "13",
+            "file": "AceAddon-3.0.lua"
+          }
+        },
+        {
+          "name": "AceConfig-3.0",
+          "path": "Libs/AceConfig-3.0",
+          "toc_files": [],
+          "libstub": {
+            "major": "AceConfig-3.0",
+            "minor": "3",
+            "file": "AceConfig-3.0.lua"
+          }
+        },
+        {
+          "name": "AceDB-3.0",
+          "path": "Libs/AceDB-3.0",
+          "toc_files": [],
+          "libstub": null
+        },
+        {
+          "name": "AceDBOptions-3.0",
+          "path": "Libs/AceDBOptions-3.0",
+          "toc_files": [],
+          "libstub": null
+        },
+        {
+          "name": "AceEvent-3.0",
+          "path": "Libs/AceEvent-3.0",
+          "toc_files": [],
+          "libstub": {
+            "major": "AceEvent-3.0",
+            "minor": "4",
+            "file": "AceEvent-3.0.lua"
+          }
+        },
+        {
+          "name": "AceGUI-3.0",
+          "path": "Libs/AceGUI-3.0",
+          "toc_files": [],
+          "libstub": null
+        },
+        {
+          "name": "AceGUI-3.0-SharedMediaWidgets",
+          "path": "Libs/AceGUI-3.0-SharedMediaWidgets",
+          "toc_files": [],
+          "libstub": {
+            "major": "AceGUISharedMediaWidgets-1.0",
+            "minor": "DataVersion",
+            "file": "prototypes.lua"
+          }
+        },
+        {
+          "name": "AceHook-3.0",
+          "path": "Libs/AceHook-3.0",
+          "toc_files": [],
+          "libstub": null
+        },
+        {
+          "name": "AceLocale-3.0",
+          "path": "Libs/AceLocale-3.0",
+          "toc_files": [],
+          "libstub": {
+            "major": "AceLocale-3.0",
+            "minor": "6",
+            "file": "AceLocale-3.0.lua"
+          }
+        },
+        {
+          "name": "AceTimer-3.0",
+          "path": "Libs/AceTimer-3.0",
+          "toc_files": [],
+          "libstub": {
+            "major": "AceTimer-3.0",
+            "minor": "17 -- Bump minor on changes",
+            "file": "AceTimer-3.0.lua"
+          }
+        },
+        {
+          "name": "CallbackHandler-1.0",
+          "path": "Libs/CallbackHandler-1.0",
+          "toc_files": [],
+          "libstub": {
+            "major": "CallbackHandler-1.0",
+            "minor": "7",
+            "file": "CallbackHandler-1.0.lua"
+          }
+        },
+        {
+          "name": "LibDBIcon-1.0",
+          "path": "Libs/LibDBIcon-1.0",
+          "toc_files": [],
+          "libstub": null
+        },
+        {
+          "name": "LibDataBroker-1.1",
+          "path": "Libs/LibDataBroker-1.1",
+          "toc_files": [],
+          "libstub": {
+            "major": "LibDataBroker-1.1",
+            "minor": "4",
+            "file": "LibDataBroker-1.1.lua"
+          }
+        },
+        {
+          "name": "LibDeflate",
+          "path": "Libs/LibDeflate",
+          "toc_files": [
+            "LibDeflate.toc"
+          ],
+          "libstub": null
+        },
+        {
+          "name": "LibDualSpec-1.0",
+          "path": "Libs/LibDualSpec-1.0",
+          "toc_files": [
+            "LibDualSpec-1.0.toc"
+          ],
+          "libstub": {
+            "major": "LibDualSpec-1.0",
+            "minor": "29",
+            "file": "LibDualSpec-1.0.lua"
+          }
+        },
+        {
+          "name": "LibSerialize",
+          "path": "Libs/LibSerialize",
+          "toc_files": [],
+          "libstub": {
+            "major": "LibSerialize",
+            "minor": "5",
+            "file": "LibSerialize.lua"
+          }
+        },
+        {
+          "name": "LibSharedMedia-3.0",
+          "path": "Libs/LibSharedMedia-3.0",
+          "toc_files": [],
+          "libstub": {
+            "major": "LibSharedMedia-3.0",
+            "minor": "12000001 -- 12.0.0 v1 / increase manually on changes",
+            "file": "LibSharedMedia-3.0.lua"
+          }
+        },
+        {
+          "name": "LibStub",
+          "path": "Libs/LibStub",
+          "toc_files": [],
+          "libstub": null
+        },
+        {
+          "name": "LibUnitEvent-1.0",
+          "path": "Libs/LibUnitEvent-1.0",
+          "toc_files": [],
+          "libstub": {
+            "major": "LibUnitEvent-1.0",
+            "minor": "1",
+            "file": "LibUnitEvent-1.0.lua"
+          }
+        }
+      ],
+      "license_files": [
+        "Libs/LibDeflate/LICENSE.txt",
+        "Modules/Aura/Libs/LibPlayerSpells-1.0/LICENSE"
+      ]
     }
   ],
   "comparison_names_missing": [],

@@ -3,7 +3,7 @@
 받는 쪽: Codex (사용자 PC). 보내는 쪽: Claude 세션. 위에서 아래로 그대로 하면 된다. 게임 입력을 자동으로 보내는 도구(키 입력·마우스 매크로)는 쓰지 않는다 — 게임 안 동작과 `/run`·`/dfp` 입력은 모두 사람이 하듯 직접 한다.
 
 - 결과를 올릴 자리: `References/codex-verify/phase22/` (저장소). 결과 표 `result.md` 에 항목마다 「결과 한 줄 양식」 을 한 줄씩 적는다. 두 번째 칸은 `통과` / `실패` / `못 함` 중 하나, 실패면 마지막 칸에 오류 문구 한 줄. 대화창에 찍힌 `[DF 설정]`·`[DFTC]` 줄은 항목마다 `chat.md` 에 그대로 옮긴다.
-- 설치 ZIP 하나: 모음집 `outputs/collection/DevilForever-collection.zip`, sha256 `718c3f4a378867550e8d40ec27cccb99302470348ac4f2d090aac8f809cfd874` (지금 판 안에는 `!DevilForever_Core/`, `DevilForever_Castbars/`, `DevilForever_ChatSetup/`, `DevilForever_FUFDefaults/`, `DevilForever_StatusStrip/`, `PitBull4/` — 이 발주문은 `!DevilForever_Core` 하나만 넣는다).
+- 설치 ZIP 하나: 모음집 `outputs/collection/DevilForever-collection.zip`, sha256 `f89369f161b3c8f1a58905312068630aa35d138db61b1b478c5cc16e27d4cbef` (지금 판 안에는 `!DevilForever_Core/`, `DevilForever_Castbars/`, `DevilForever_ChatSetup/`, `DevilForever_FUFDefaults/`, `DevilForever_StatusStrip/`, `PitBull4/` — 이 발주문은 `!DevilForever_Core` 하나만 넣는다).
 - 폴더 이름이 `!` 로 시작한다. bash 로 다룰 때는 작은따옴표로 감싼다(예: `ls '_forever_/Interface/AddOns/!DevilForever_Core'`).
 - 이 Phase 의 구성: 테마는 Core 의 토큰 세트다. 기본 테마 `devil` 의 값과 대안 테마(`appearance-22.md`)는 Codex 외관 폴더가 넣는다. 그 폴더가 아직 저장소(`References/codex-appearance/2/`, `.../22/`)에 없으면 아래 시험 애드온 `DFThemeCheck` 만으로 1–7을 하고 8은 `못 함` 으로 적는다. 시험 애드온은 시험용 세트 둘(`check_a`·`check_b`)을 넣고, 테마가 바뀔 때마다 스킨 대신 두 듣는 함수(`skin1`·`skin2`)가 `[DFTC]` 줄을 찍는다. 시험 값은 겉보기와 무관하다.
 - 테마 바꾸기는 `/dfp theme <이름>` 으로 바로 된다(`/dfp go` 없음). 전투 중에는 명령이 거절되고, 함수로 부른 바꾸기는 전투가 끝난 뒤 된다.

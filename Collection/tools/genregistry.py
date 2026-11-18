@@ -6,11 +6,20 @@ Usage:
   python3 -I Collection/tools/genregistry.py --out FILE # write somewhere else
 
 Inputs:
-  Collection/manifest.json                                   packages with role "start"
+  Collection/manifest.json                                   packages with role "start", and the
+                                                             "collection" section (our own folders)
+  Collection/install.json                                    which upstream folders ship
   Collection/AddOns/*/ (own TOC)                             our own addon folders
   Collection/AddOns/!DevilForever_Core/registry_extra.json   optional per-folder additions
 
-Per addon folder the registry holds: package, feature phases, bundle
+A folder of a start package is registered only when install.json ships it
+(base list or any unit-frame variant) or registry_extra.json names it (a
+folder whose use is still pending, e.g. Aurora). Our own folders take
+package, phases, variant, bundle and use ("new", or "modify" for a fork) from
+the manifest "collection" section.
+
+Per addon folder the registry holds: package, feature phases (and variant
+when the Phase ID is not a plain number), bundle
 ("required" or "individual"), how the start addon is used, the TOC files the
 Forever client is taken to load, saved variables with scope ("account" for
 ``SavedVariables``, "character" for ``SavedVariablesPerCharacter``) and split
@@ -57,6 +66,7 @@ import toclib  # noqa: E402
 REPO = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 COLLECTION = os.path.join(REPO, "Collection")
 MANIFEST = os.path.join(COLLECTION, "manifest.json")
+INSTALL = os.path.join(COLLECTION, "install.json")
 ADDONS = os.path.join(COLLECTION, "AddOns")
 CORE_FOLDER = "!DevilForever_Core"
 CORE_DIR = os.path.join(ADDONS, CORE_FOLDER)
@@ -65,8 +75,9 @@ OUTPUT = os.path.join(CORE_DIR, "Registry.lua")
 SCHEMA = 1
 
 # Feature phases whose packages form the required bundle (master plan
-# Implementation Changes: common appearance, settings save/restore, UI edit).
-REQUIRED_PHASES = {2, 20, 21}
+# Implementation Changes: common appearance, settings save/restore; the UI
+# editor Phase 21 was taken out, R107).
+REQUIRED_PHASES = {2, 20}
 EDIT_FIELDS = ("position", "size", "font", "color", "rows", "spacing")
 SPLITS = ("common", "class")
 RESTORES = ("whole", "keys", "profile", "skip")
@@ -117,7 +128,19 @@ def worst_forever_load(tocs):
     return max(ranks, key=FOREVER_RANK.index) if ranks else "no"
 
 
-def manifest_entries(manifest):
+def shipped_upstream_folders(install):
+    """Lower-cased upstream folder names install.json ships in any unit-frame variant."""
+    folders = set()
+    lists = [install.get("upstream") or {}]
+    for variant in (install.get("unit_frame_variants") or {}).values():
+        lists.append(variant.get("upstream") or {})
+    for mapping in lists:
+        for names in mapping.values():
+            folders.update(n.lower() for n in names)
+    return folders
+
+
+def manifest_entries(manifest, keep):
     interface = manifest.get("target_interface", 16001)
     entries = {}
     for pkg in manifest["packages"]:
@@ -128,6 +151,8 @@ def manifest_entries(manifest):
         bundle = "required" if REQUIRED_PHASES & set(phases) else "individual"
         for addon in pkg.get("addons") or []:
             folder = addon["folder"]
+            if folder.lower() not in keep:
+                continue
             tocs, status = choose_tocs(folder, addon.get("tocs") or [], interface)
             if folder.lower() in {k.lower() for k in entries}:
                 raise RegistryError("folder %s appears in two start packages" % folder)
@@ -148,14 +173,20 @@ def manifest_entries(manifest):
     return interface, entries
 
 
-def own_addon_entries(interface):
+def own_addon_entries(interface, collection):
     entries = {}
     if not os.path.isdir(ADDONS):
         return entries
+    meta_by_folder = {c["folder"]: c for c in collection}
     for name in sorted(os.listdir(ADDONS)):
         full = os.path.join(ADDONS, name)
         if not os.path.isdir(full) or not toclib.own_tocs(full):
             continue
+        meta = meta_by_folder.get(name)
+        if meta is None:
+            raise RegistryError("own folder %s is not in the manifest collection section "
+                                "(add it to extract.py OWN_FOLDERS, run extract.py --no-extract)" % name)
+        fork = meta.get("kind") == "fork"
         parsed, status = toclib.tocs_for_interface(full, interface)
         tocs = []
         for toc_name, toc in parsed:
@@ -163,11 +194,12 @@ def own_addon_entries(interface):
                          "saved_variables": toc.get("SavedVariables"),
                          "saved_variables_per_character": toc.get("SavedVariablesPerCharacter")})
         entries[name] = {
-            "package": "DevilForever",
+            "package": meta["base"]["package"] if fork else "DevilForever",
             "version": (parsed[0][1].get("Version") if parsed else None),
-            "phases": [],
-            "bundle": "required" if name == CORE_FOLDER else "individual",
-            "use": "new",
+            "phases": list(meta.get("phases") or []),
+            "variant": meta.get("variant"),
+            "bundle": meta.get("bundle") or "individual",
+            "use": "modify" if fork else "new",
             "tocs": [t["file"] for t in tocs],
             "tocStatus": status,
             "foreverLoad": worst_forever_load(tocs),
@@ -329,15 +361,18 @@ def apply_extra(entries, extra):
             entry["defaults"] = rel
 
 
-def build(manifest_path=MANIFEST, extra_path=EXTRA):
+def build(manifest_path=MANIFEST, extra_path=EXTRA, install_path=INSTALL):
     manifest = load_json(manifest_path)
-    interface, entries = manifest_entries(manifest)
-    for name, entry in own_addon_entries(interface).items():
+    extra = load_json(extra_path) if os.path.isfile(extra_path) else {}
+    keep = shipped_upstream_folders(load_json(install_path))
+    keep.update(k.lower() for k in (extra.get("addons") or {}))
+    interface, entries = manifest_entries(manifest, keep)
+    for name, entry in own_addon_entries(interface, manifest.get("collection") or []).items():
         if name.lower() in {k.lower() for k in entries}:
             raise RegistryError("folder %s is both ours and a start package" % name)
         entries[name] = entry
-    if os.path.isfile(extra_path):
-        apply_extra(entries, load_json(extra_path))
+    if extra:
+        apply_extra(entries, extra)
     return {"schema": SCHEMA, "interface": interface, "order": sorted(entries, key=str.lower), "addons": entries}
 
 

@@ -3,7 +3,7 @@
 받는 쪽: Codex. 보내는 쪽: Claude 세션. 테마 설계·판단은 Codex 에 맡긴다(R51·R53·R87). 아래 「지켜야 할 약속」 만 지키면 나머지는 Codex 판단이다. `appearance-2.md` 2절(값은 토큰으로만·읽는 함수·전투 중 보호 프레임 금지·다른 애드온 고치지 않기)은 그대로 걸린다. 게임 입력을 자동으로 보내는 도구는 쓰지 않는다.
 
 - 결과를 올릴 자리: `References/codex-appearance/22/`. `Collection/` 은 고치지 않는다 — Claude 가 정적 대조 뒤 합친다.
-- 기반 코드: `Collection/AddOns/!DevilForever_Core/`(설치 ZIP `outputs/collection/DevilForever-collection.zip`, sha256 `718c3f4a378867550e8d40ec27cccb99302470348ac4f2d090aac8f809cfd874`). 테마 부분은 `Theme.lua`, 공개 함수는 `API.lua` 맨 위 주석.
+- 기반 코드: `Collection/AddOns/!DevilForever_Core/`(설치 ZIP `outputs/collection/DevilForever-collection.zip`, sha256 `f89369f161b3c8f1a58905312068630aa35d138db61b1b478c5cc16e27d4cbef`). 테마 부분은 `Theme.lua`, 공개 함수는 `API.lua` 맨 위 주석.
 
 ## 1. 만들 것
 

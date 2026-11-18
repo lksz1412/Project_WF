@@ -944,15 +944,6 @@
           "shape": "plain"
         }
       }
-    },
-    "Details_Streamer": {
-      "saved_variables": {
-        "Details_StreamerDB": {
-          "split": "common",
-          "restore": "whole",
-          "shape": "plain"
-        }
-      }
     }
   }
 }

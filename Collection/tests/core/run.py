@@ -517,6 +517,19 @@ def generated_registry_lookup():
     eq((pb4["defaults"], len(pb4["editable"]), pb4["version"]), ("Defaults/PitBull4.lua", 6, "v4.2.50-forever.1"),
        "PitBull4 defaults file, 6 positions, version of our copy")
     eq(sorted(pb4["tocs"].values()), ["PitBull4.toc", "PitBull4_Camelot.toc"], "PitBull4 16001 TOCs")
+    eq((pb4["package"], pb4["use"], list(pb4["phases"].values()), pb4["variant"], pb4["bundle"]),
+       ("PitBull4", "modify", [6], "6-rev", "individual"), "PitBull4: our fork of the PitBull4 package, Phase 6-rev")
+    castbars_info = to_py(c.GetAddonInfo(c, "DevilForever_Castbars"))
+    eq(castbars_info["package"], "DevilForever", "our own folders keep package DevilForever")
+    eq(list(castbars_info["phases"].values()), [7], "own folder phases come from the manifest collection section")
+    eq(list(to_py(c.GetAddonInfo(c, "!DevilForever_Core"))["phases"].values()), [2, 20, 22], "Core phases")
+    registered = list(to_py(c.ListAddons(c)).values())
+    for gone in ("ForeverThreat", "TipTac", "Bagnon", "BagBrother", "Platynator", "Titan", "TitanClock",
+                 "!KalielsTracker", "Mapster", "Details_Streamer", "Details_Compare2", "Dominos_Cast",
+                 "Dominos_Progress", "Dominos_Roll"):
+        eq(gone in registered, False, "%s is not registered (dropped Phase or not shipped)" % gone)
+    eq("Aurora" in registered, True, "Aurora stays registered while Codex decides (named in registry_extra)")
+    eq(len(registered), 34, "registered = 30 shipped (PitBull4 build) + FUF build's 3 + Aurora")
     hekili = to_py(c.GetAddonInfo(c, "hekili"))
     eq(list(to_py(c.GetFrameNames(c, "Hekili")).values()),
        ["HekiliDisplayAOE", "HekiliDisplayCooldowns", "HekiliDisplayDefensives", "HekiliDisplayInterrupts",

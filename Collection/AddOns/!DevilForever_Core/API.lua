@@ -3,7 +3,8 @@
 Registry (static data generated from Collection/manifest.json)
   Core:ListAddons()                 -> sorted list of registered folder names
   Core:GetAddonInfo(folder)         -> copy of the registry entry, or nil
-      {package, version, phases, bundle = "required"|"individual", use,
+      {package, version, phases, variant = Phase ID when not a number
+       ("6-rev")|nil, bundle = "required"|"individual", use,
        tocs, tocStatus, foreverLoad, savedVariables = {{name, scope =
        "account"|"character", split = "common"|"class", restore =
        "whole"|"keys"|"profile"|nil, shape = "plain"|"acedb"|nil,

@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "name": "DevilForever",
+  "version": "0.1.0",
+  "unit_frames": "pitbull4",
+  "notes": "Collection/install/설치안내.md",
+  "own": [
+    "!DevilForever_Core",
+    "DevilForever_ChatSetup",
+    "DevilForever_StatusStrip"
+  ],
+  "upstream": {
+    "Masque": ["Masque"],
+    "Masque Onyx": ["Masque_Onyx"],
+    "ProfileManager": ["ProfileManager"],
+    "Dominos": ["Dominos", "Dominos_Config", "Masque_Dominos"],
+    "Prat-3.0": ["Prat-3.0"],
+    "SexyMap": ["SexyMap"],
+    "Quartz": ["Quartz"],
+    "Hekili": ["Hekili", "Hekili_Shared", "Hekili_Druid", "Hekili_Hunter", "Hekili_Mage", "Hekili_Paladin",
+               "Hekili_Priest", "Hekili_Rogue", "Hekili_Shaman", "Hekili_Warlock", "Hekili_Warrior"],
+    "Grid2": ["Grid2", "Grid2Options", "Grid2LDB"],
+    "Details": ["Details", "Details_TinyThreat"],
+    "Experience Forever": ["ExperienceForever"]
+  },
+  "unit_frame_variants": {
+    "pitbull4": {
+      "own": ["PitBull4"],
+      "upstream": {}
+    },
+    "fuf": {
+      "own": ["DevilForever_Castbars", "DevilForever_FUFDefaults"],
+      "upstream": {"Forever Unit Frames": ["ForeverUnitFrames"]}
+    }
+  }
+}

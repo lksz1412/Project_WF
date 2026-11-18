@@ -8,7 +8,7 @@ Inputs (read-only):
                                      resolved through References/addon-sources/INDEX.md
 Outputs:
   Collection/upstream/<dir>-<version>/   extracted ZIP contents (regenerable, git-ignored)
-  Collection/manifest.json, Collection/manifest.md
+  Collection/manifest.json, Collection/manifest.md   (packages + our own Collection/AddOns/ folders)
 
 Every ZIP's SHA256 must equal the SOURCE.txt value before it is extracted.
 Members with absolute paths, drive letters, backslashes, ``..`` parts or
@@ -71,9 +71,10 @@ COMPARISON_NAMES = [
 ]
 
 # Feature Phase table of the master plan
-# (Claude/plans/2026-11-18-devil-forever-addon-collection-plan.md:209-229),
+# (Claude/plans/2026-11-18-devil-forever-addon-collection-plan.md:211-234),
 # keyed by the package directory relative to References/.
-# use: "start" = the Phase's start addon, "comparison" = 비교, "reference" = 참고.
+# use: "start" = the Phase's start addon, "comparison" = 비교, "reference" = 참고,
+# "dropped" = start addon of a Phase that was taken out (R100, R107).
 # A package's role is "start" when any of its uses is "start".
 FEATURE_PHASES = {
     "forever-addons/Masque": [(2, "start")],
@@ -95,22 +96,39 @@ FEATURE_PHASES = {
     "addon-sources/vuhdo": [(9, "comparison")],
     "forever-addons/Details": [(10, "start")],
     "addon-sources/skada": [(10, "comparison")],
-    "forever-addons/ForeverThreat": [(11, "start")],
+    "forever-addons/ForeverThreat": [(10, "comparison"), (11, "dropped")],
     "addon-sources/threatclassic2": [(11, "comparison")],
-    "addon-sources/tiptac-reborn": [(12, "start")],
-    "addon-sources/bagnon": [(13, "start")],
+    "addon-sources/tiptac-reborn": [(12, "dropped")],
+    "addon-sources/bagnon": [(13, "dropped")],
     "addon-sources/baganator": [(13, "comparison")],
-    "addon-sources/platynator": [(14, "start")],
+    "addon-sources/platynator": [(14, "dropped")],
     "addon-sources/aurora": [(15, "start")],
-    "addon-sources/titan-panel": [(16, "start")],
-    "addon-sources/kaliels-tracker": [(17, "start")],
+    "addon-sources/titan-panel": [(16, "dropped")],
+    "addon-sources/kaliels-tracker": [(17, "dropped")],
     "addon-sources/questie": [(17, "reference")],
-    "addon-sources/mapster": [(18, "start")],
+    "addon-sources/mapster": [(18, "dropped")],
     "addon-sources/experience-forever": [(19, "start")],
     "addon-sources/profilemanager": [(20, "start")],
     "addon-sources/reflux": [(20, "comparison")],
     "addon-sources/edit-mode-expanded": [(21, "comparison")],
     "addon-sources/blizzmove": [(21, "comparison")],
+}
+
+# Our own folders under Collection/AddOns/ (hand-kept; every folder there must
+# be listed). phases = feature Phases the folder serves; variant = the Phase ID
+# when it is not a plain number (Phase 6-rev); bundle = "required" (plan
+# Implementation Changes, required bundle) or "individual"; kind = "new"
+# (written for the collection) or "fork" (a start addon's original with our
+# changes; base names the package in this manifest and the patch file).
+COLLECTION_ADDONS = os.path.join(COLLECTION, "AddOns")
+OWN_FOLDERS = {
+    "!DevilForever_Core": {"phases": [2, 20, 22], "bundle": "required", "kind": "new"},
+    "DevilForever_ChatSetup": {"phases": [4], "bundle": "individual", "kind": "new"},
+    "DevilForever_FUFDefaults": {"phases": [6], "bundle": "individual", "kind": "new"},
+    "DevilForever_Castbars": {"phases": [7], "bundle": "individual", "kind": "new"},
+    "DevilForever_StatusStrip": {"phases": [16], "bundle": "individual", "kind": "new"},
+    "PitBull4": {"phases": [6], "variant": "6-rev", "bundle": "individual", "kind": "fork",
+                 "base": {"package": "PitBull4", "patch": "Collection/patches/PitBull4.patch"}},
 }
 
 LICENSE_RE = re.compile(r"^(licen[cs]e|copying|unlicense)([._-].*)?$", re.IGNORECASE)
@@ -376,6 +394,43 @@ def existing_how_to_use():
     return {p["source_zip"]: p.get("how_to_use") for p in old.get("packages", []) if p.get("source_zip")}
 
 
+def collection_entries(packages, errors):
+    """Manifest entries of our own folders (Collection/AddOns/) from OWN_FOLDERS and their TOCs."""
+    by_name = {p["name"]: p for p in packages}
+    present = sorted(n for n in os.listdir(COLLECTION_ADDONS)
+                     if os.path.isdir(os.path.join(COLLECTION_ADDONS, n)) and toclib.own_tocs(os.path.join(COLLECTION_ADDONS, n)))
+    for name in sorted(set(present) - set(OWN_FOLDERS)):
+        errors.append("Collection/AddOns/%s: not listed in OWN_FOLDERS" % name)
+    out = []
+    for name in sorted(OWN_FOLDERS, key=str.lower):
+        if name not in present:
+            errors.append("OWN_FOLDERS %s: folder missing in Collection/AddOns" % name)
+            continue
+        meta = OWN_FOLDERS[name]
+        entry = {
+            "folder": name,
+            "phases": list(meta["phases"]),
+            "variant": meta.get("variant"),
+            "bundle": meta["bundle"],
+            "kind": meta["kind"],
+            "base": None,
+        }
+        if meta["kind"] == "fork":
+            base = meta["base"]
+            pkg = by_name.get(base["package"])
+            if pkg is None:
+                errors.append("OWN_FOLDERS %s: base package %s not in the manifest" % (name, base["package"]))
+                continue
+            if not os.path.isfile(os.path.join(REPO, base["patch"])):
+                errors.append("OWN_FOLDERS %s: patch file missing %s" % (name, base["patch"]))
+            entry["base"] = {"package": pkg["name"], "version": pkg["version"], "source_zip": pkg["source_zip"],
+                             "sha256": pkg["sha256"], "patch": base["patch"]}
+        entry.update(describe_addon(os.path.join(COLLECTION_ADDONS, name), COLLECTION_ADDONS))
+        entry["path"] = "Collection/AddOns/" + entry["path"]
+        out.append(entry)
+    return out
+
+
 def build_manifest(do_extract):
     packages, missing = collect_packages()
     kept_how_to_use = existing_how_to_use()
@@ -432,6 +487,7 @@ def build_manifest(do_extract):
         "target_interface": TARGET_INTERFACE,
         "generated_by": "Collection/tools/extract.py",
         "packages": out,
+        "collection": collection_entries(out, errors),
         "comparison_names_missing": missing,
         "comparison_names_in_start_set": comparison_also_start(packages),
     }
@@ -471,7 +527,8 @@ def write_markdown(manifest, path):
         "# Collection manifest (generated by `Collection/tools/extract.py` — do not edit by hand)",
         "",
         "Target client TOC Interface: %d. `how_to_use` = A1 judgment verdict (kept across regeneration); "
-        "role = start when the package is a start addon of any feature Phase." % manifest["target_interface"],
+        "role = start when the package is a start addon of any feature Phase; use `dropped` = start addon of a "
+        "Phase that was taken out (R100, R107)." % manifest["target_interface"],
         "",
         "## Packages",
         "",
@@ -521,6 +578,33 @@ def write_markdown(manifest, path):
                     "%d (%d)" % (a["lua_files"], a["lua_files_in_libs"]) if i == 0 else "",
                     md_cell([lib["name"] for lib in a["embedded_libs"]]) if i == 0 else "",
                 ))
+    lines += [
+        "",
+        "## Collection folders (ours, `Collection/AddOns/`)",
+        "",
+        "kind: new = written for the collection; fork = a start addon's original with our changes "
+        "(base package, version and patch file in the Base column). Variant = Phase ID that is not a plain number.",
+        "",
+        "| Folder | Feature Phases | Variant | Bundle | Kind | Base | TOC | Interface | Version | Deps (required) "
+        "| OptionalDeps | SavedVariables | SV per character | License files |",
+        "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|",
+    ]
+    for a in manifest.get("collection", []):
+        base = a.get("base")
+        base_cell = "%s %s + %s" % (base["package"], base["version"], base["patch"]) if base else "—"
+        for i, t in enumerate(a["tocs"]):
+            first = i == 0
+            lines.append("| %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s |" % (
+                md_cell(a["folder"]) if first else "",
+                ", ".join(str(ph) for ph in a["phases"]) if first else "",
+                md_cell(a.get("variant")) if first else "",
+                a["bundle"] if first else "", a["kind"] if first else "",
+                md_cell(base_cell) if first else "",
+                md_cell(t["file"]), md_cell(t["interface"]), md_cell(t["version"]), deps_cell(t),
+                md_cell(t["optional_deps"]), md_cell(t["saved_variables"]),
+                md_cell(t["saved_variables_per_character"]),
+                md_cell(a["license_files"]) if first else "",
+            ))
     with open(path, "w", encoding="utf-8", newline="\n") as fh:
         fh.write("\n".join(lines) + "\n")
 

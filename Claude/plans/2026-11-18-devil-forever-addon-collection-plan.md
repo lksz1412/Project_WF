@@ -181,7 +181,8 @@
 | `Collection/codex-briefs/` | Phase 마다의 Codex 실사용 검증 발주문(R86)과 Codex 외관 발주문(R87) |
 | `References/codex-appearance/` | Codex 가 올린 외관 코드·자산·목업(R87). 받으면 `Collection/` 에 합치기 전에 Claude 가 인터페이스 대조만 한다 |
 | `References/codex-verify/phase<ID>/` | Codex 가 올린 실사용 검증 결과(결과 표·BugSack 오류 문구·필요하면 스크린샷). 읽기 전용 |
-| `outputs/collection/` | 사용자에게 줄 설치용 ZIP |
+| `outputs/collection/` | 설치용 ZIP `DevilForever-0.1.0.zip`(PitBull4 판 · 안에 `DevilForever-install/` manifest·SHA256SUMS·설치안내) 과 Codex 확인용 ZIP `DevilForever-collection.zip` |
+| `Collection/install.json` · `Collection/install/설치안내.md` | 설치 ZIP 에 넣을 폴더 목록(판 둘: pitbull4·fuf)과 설치 안내 원문(Phase 23) |
 | `work/`·`SourceArchive/`·`MacroLibrary/`·`outputs/`(기존 파일) | Codex 시기 원천·작업 사본·매크로 보관. 읽기만 |
 
 **작업 언어**: 내부 기록(Phase 세부 계획서·스텝 이력·발주·작업 기록)은 영어로 쓴다 — 다루는 대상이 Lua·TOC·API 식별자이기 때문이다. 마스터 플랜·Result 는 한국어로 쓴다. Codex 실사용 검증 발주문은 Codex 가 그대로 실행할 수 있게 한국어로 쓰고 경로·명령·식별자는 원어로 둔다(A1 제안).
@@ -389,7 +390,7 @@ R1 의 첫 요청은 단축키·체력/마나·미니맵이었고 「부가 기�
 | 20 저장·복원 | `…-phase20-세부계획.md` | 32–33 | 완료 |
 | 21 사용자 편집 | — | 34–35 | 빠짐(R107) |
 | 22 대안 테마 (외관은 Codex) | `…-phase22-세부계획.md` | 36 | 완료 |
-| 23 연계 검사·정정 | `…-phase23-세부계획.md` | 37–38 | 대기 |
+| 23 연계 검사·정정 | `…-phase23-세부계획.md` | 37–38 | 완료 |
 | 24 최종 목업 (제작은 Codex) | `…-phase24-세부계획.md` | 39 | 대기 |
 | 25 Codex 검증 결과 반영·고정 | `…-phase25-세부계획.md` | 40–41 | 대기 |
 
