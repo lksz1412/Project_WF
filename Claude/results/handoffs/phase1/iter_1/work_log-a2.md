@@ -111,3 +111,44 @@ forever_load rule (from triage): "yes" = no header restriction, or Allow list co
 | side observation (same check) | header game types elsewhere: VuhDo.toc allow standard → no (VuhDo_Camelot.toc yes, picked); TitanClassic/TitanRegen allow classic → no (no 16001 anyway); ForeverThreat allow camelot → yes; TitanAmmo allow forever → yes; Dominos/Baganator exclude only → yes |
 
 Minors 2–5 not touched (per master).
+
+## DQ5-6 follow-up — impact map (written before editing)
+
+Read: `TRIAGE_phase1.md` 15–35 (DQ 5, 6 decisions); master plan feature table now at lines 209–229 (shifted +1; Phase 18 Mapster start "고침", Phase 19 start = Experience Forever with Dominos_Progress comparison, Phase 21 = 새 개발 with Edit Mode Expanded / BlizzMove comparison); `Aurora/Skin/init.lua` 1–30 (lines 10–16: Forever "runs the Mainline UI architecture with a Camelot overlay"); `Aurora/Aurora.toc` 8–10, 18–30 (RequiredDeps line suffix `[AllowLoadGameType classic]`; comment "RequiredDeps is classic-only"); current `Collection/manifest.json` (A1-edited): equal to HEAD except `how_to_use`, 20 packages filled (python compare, verdict `equal except how_to_use: True`, `filled 20`); `extract.py` 375–390 (L383 `"how_to_use": None`).
+
+| Place | Reads / writes | Decision |
+|---|---|---|
+| `extract.build_manifest` L383 | writes how_to_use | change: carry over existing value from current manifest.json keyed by `source_zip` |
+| `extract.FEATURE_PHASES` | plan table | change: Dominos 19 → comparison, experience-forever 19 → start; comment line range 209–229 |
+| `extract.collect_packages` / `comparison_also_start` / summary print | role by location | change: `source_dir` = forever-addons / addon-sources; `role` = start iff any feature_phases use == start; "in start set" check uses source_dir |
+| `toclib.forever_load` | header game types | change: allow list w/o forever/camelot but with mainline → "check"; exclude with forever/camelot → "no"; other allow-only lists → "no" |
+| `toclib.tocs_for_interface` | forever_load | change: rank yes > check > no; statuses matched / forever_load_check / forever_load_no / no_interface |
+| `extract.describe_addon` has_forever_loadable_toc | forever_load != no | check only (check counts as loadable; md label "≠no" stays true) |
+| `extract.write_markdown` | packages / tocs | change: `how_to_use` column (verdict), `source_dir` column, required deps rendered per line with condition text; legend for check |
+| `tocdeps.analyse` / main | tocs_for_interface status, pkg role | change: FOREVER_LOAD_CHECK line/count; `--role` now uses new role; add `--source` (forever-addons / addon-sources) so the 13 start-ZIP gate still exists |
+| `build.py` | manifest addons folder/path | no impact (no role / TOC reads) |
+| `luacheck.py` | — | no impact |
+| `Collection/judgment.md`, A1 files | A1 owned | no impact (not mine; read-only) |
+| work_log earlier sections, TRIAGE | records | no impact (record) |
+
+### DQ5-6 — changes
+
+- `extract.py`: `existing_how_to_use()` reads current `Collection/manifest.json`, keyed by `source_zip`; `build_manifest` sets `how_to_use` from it (old L383 `None`). FEATURE_PHASES: Dominos (19, comparison), experience-forever (19, start); comment cites plan 209–229. `collect_packages` sets `source_dir` (first path part) and `role` = start iff a feature-phase use is start. `comparison_also_start` uses `source_dir == forever-addons`. manifest.md: package columns `Source dir`, `how_to_use` (verdict); deps column via `deps_cell()` per TOC line with `[allow|exclude …]`; forever_load legend incl. check. Summary line adds forever_addons / addon_sources / how_to_use_filled.
+- `toclib.py`: `MAINLINE_GAME_TYPES = {"mainline"}` (comment cites Aurora Skin/init.lua:10-16, inferred); `forever_load` → yes / check / no per master rule; `tocs_for_interface` ranks yes > check > no, new status `forever_load_check`.
+- `tocdeps.py`: FOREVER_LOAD_CHECK line + `forever_load_check` count; `--source forever-addons|addon-sources`; `manifest_dirs(role, source)`; docstring.
+- `build.py`, `luacheck.py`: unchanged (map: no impact).
+
+### DQ5-6 — gates
+
+| Command | Verdict |
+|---|---|
+| `python3 -I -m py_compile Collection/tools/*.py` | `pycompile_ok` |
+| `python3 -I Collection/tools/extract.py --no-extract` (×2) | rc=0 both · `packages=39 start=20 comparison=19 forever_addons=13 addon_sources=26 addon_folders=98 missing_names=0 how_to_use_filled=20 errors=0` · second run `sha256sum -c` manifest.json OK, manifest.md OK (byte-identical) |
+| python compare `<scratch>/manifest_before_dq.json` (A1-edited copy) vs new manifest.json | `how_to_use unchanged: True filled 20` · all other fields equal except role / source_dir / feature_phases / forever_load / has_forever_loadable_toc (`rest equal: True`) |
+| role spot check | start = 20 packages (Phase 2 Masque ×2 + one per Phase 3–20); Glass Forever, Chattynator = comparison/forever-addons; Dominos start (3 start, 19 comparison); Experience Forever start (19); Mapster start (18) |
+| `python3 -I Collection/tools/tocdeps.py --source forever-addons` | rc=0 · `folders=37 unresolved=0 client_provided=0 optional_missing=43 no_interface_toc=0 forever_load_check=0 forever_load_no=0 duplicates=0 load_on_demand=13` |
+| `python3 -I Collection/tools/tocdeps.py --role start` (new role: 20 packages) | rc=0 · `folders=66 unresolved=0 client_provided=8 optional_missing=62 no_interface_toc=2 forever_load_check=1 forever_load_no=0 duplicates=0 load_on_demand=17` · `FOREVER_LOAD_CHECK Mapster used Mapster.toc` · no_interface = TitanClassic, TitanRegen |
+| `python3 -I Collection/tools/tocdeps.py --role all` | rc=0 · `folders=98 unresolved=0 client_provided=8 optional_missing=182 no_interface_toc=5 forever_load_check=1 forever_load_no=0 duplicates=0 load_on_demand=26` |
+| manifest.md targeted | row 219 Mapster `check`; row 191 Aurora deps end `...SpellScript [allow classic]`; row 34/38 show how_to_use `as-is` / `modify`. TOCs not "yes": VuhDo.toc (no, allow standard; VuhDo_Camelot.toc picked), TitanClassic.toc / TitanRegen.toc (no, allow classic), Mapster.toc (check) |
+
+Note: `--role start` now means the 20 Phase start packages; the old "13 start ZIPs" gate is `--source forever-addons`.

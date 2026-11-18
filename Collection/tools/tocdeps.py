@@ -2,13 +2,15 @@
 
 Usage:
   python3 -I Collection/tools/tocdeps.py <dir> [...]          # addon folders or trees holding them
-  python3 -I Collection/tools/tocdeps.py --role start [<dir> ...]  # add upstream dirs of manifest packages
+  python3 -I Collection/tools/tocdeps.py --role start [<dir> ...]   # add upstream dirs of manifest packages by role
+  python3 -I Collection/tools/tocdeps.py --source forever-addons     # ... or by References source dir
 
 For each addon folder the TOC(s) whose ``## Interface`` lists the target
 interface (default 16001) are used; when none lists it, the plain
-``<Folder>.toc`` is used and the folder is flagged. TOCs restricted away from
-Forever by ``## AllowLoadGameType``/``## ExcludeLoadGameType`` are skipped when
-another matching TOC exists; folders left with only such TOCs are flagged. Every name in
+``<Folder>.toc`` is used and the folder is flagged. Among matching TOCs the best
+``forever_load`` rank from ``## AllowLoadGameType``/``## ExcludeLoadGameType`` is
+used (yes > check > no); folders left with only "check" or only "no" TOCs are
+flagged (FOREVER_LOAD_CHECK / FOREVER_LOAD_NO). Every name in
 ``Dependencies``/``RequiredDeps`` must be another folder in the set (names are
 compared case-insensitively, as the client does). ``Blizzard_*`` names are
 client-provided and reported separately. Missing ``OptionalDeps`` are listed
@@ -27,12 +29,16 @@ REPO = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 
 MANIFEST = os.path.join(REPO, "Collection", "manifest.json")
 
 
-def manifest_dirs(role):
+def manifest_dirs(role=None, source=None):
     with open(MANIFEST, encoding="utf-8") as fh:
         manifest = json.load(fh)
     dirs = []
     for pkg in manifest["packages"]:
-        if role in ("all", pkg["role"]) and pkg.get("upstream_dir"):
+        if role and role not in ("all", pkg["role"]):
+            continue
+        if source and pkg.get("source_dir") != source:
+            continue
+        if pkg.get("upstream_dir"):
             dirs.append(os.path.join(REPO, pkg["upstream_dir"]))
     return dirs
 
@@ -54,7 +60,8 @@ def analyse(roots, interface):
             duplicates.append([by_name[key], folder])
         by_name.setdefault(key, folder)
     report = {"interface": interface, "folders": len(by_name), "duplicates": duplicates,
-              "no_interface_toc": [], "forever_load_no": [], "unresolved": [], "client_provided": [],
+              "no_interface_toc": [], "forever_load_check": [], "forever_load_no": [],
+              "unresolved": [], "client_provided": [],
               "optional_missing": [], "load_on_demand": []}
     for key in sorted(by_name):
         folder = by_name[key]
@@ -62,8 +69,8 @@ def analyse(roots, interface):
         tocs, status = toclib.tocs_for_interface(folder, interface)
         if status == "no_interface":
             report["no_interface_toc"].append({"folder": name, "used": [n for n, _ in tocs]})
-        elif status == "forever_load_no":
-            report["forever_load_no"].append({"folder": name, "used": [n for n, _ in tocs],
+        elif status in ("forever_load_check", "forever_load_no"):
+            report[status].append({"folder": name, "used": [n for n, _ in tocs],
                                               "game_types": [t["game_types"] for _, t in tocs]})
         for toc_name, toc in tocs:
             for dep in toclib.required_deps(toc):
@@ -87,14 +94,16 @@ def main():
     parser.add_argument("paths", nargs="*")
     parser.add_argument("--role", choices=["start", "comparison", "all"],
                         help="add the upstream dirs of manifest packages with this role")
+    parser.add_argument("--source", choices=["forever-addons", "addon-sources"],
+                        help="add the upstream dirs of manifest packages from this References dir")
     parser.add_argument("--interface", type=int, default=16001)
     parser.add_argument("--json", help="write the full report to this JSON file")
     args = parser.parse_args()
     roots = list(args.paths)
-    if args.role:
-        roots.extend(manifest_dirs(args.role))
+    if args.role or args.source:
+        roots.extend(manifest_dirs(args.role, args.source))
     if not roots:
-        parser.error("give addon folders or --role")
+        parser.error("give addon folders, --role or --source")
     for root in roots:
         if not os.path.isdir(root):
             parser.error("not a directory: %s" % root)
@@ -105,6 +114,8 @@ def main():
         print("CLIENT %s (%s) needs %s" % (item["folder"], item["toc"], item["dependency"]))
     for item in report["no_interface_toc"]:
         print("NO_%d_TOC %s used %s" % (args.interface, item["folder"], ", ".join(item["used"])))
+    for item in report["forever_load_check"]:
+        print("FOREVER_LOAD_CHECK %s used %s" % (item["folder"], ", ".join(item["used"])))
     for item in report["forever_load_no"]:
         print("FOREVER_LOAD_NO %s used %s" % (item["folder"], ", ".join(item["used"])))
     for pair in report["duplicates"]:
@@ -112,10 +123,10 @@ def main():
     for item in report["optional_missing"]:
         print("optional-missing %s (%s) -> %s" % (item["folder"], item["toc"], item["dependency"]))
     print("folders=%d unresolved=%d client_provided=%d optional_missing=%d no_interface_toc=%d "
-          "forever_load_no=%d duplicates=%d load_on_demand=%d" % (
+          "forever_load_check=%d forever_load_no=%d duplicates=%d load_on_demand=%d" % (
               report["folders"], len(report["unresolved"]), len(report["client_provided"]),
               len(report["optional_missing"]), len(report["no_interface_toc"]),
-              len(report["forever_load_no"]),
+              len(report["forever_load_check"]), len(report["forever_load_no"]),
               len(report["duplicates"]), len(report["load_on_demand"])))
     if args.json:
         with open(args.json, "w", encoding="utf-8") as fh:

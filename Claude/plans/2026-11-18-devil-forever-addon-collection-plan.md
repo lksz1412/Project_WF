@@ -40,7 +40,7 @@
     Step 22  설정 기본값·manifest 등록·Codex 발주문         30–60분
   Phase 11 어그로 미터 — ForeverThreat (그대로 사용 추정)
     Step 23  설정 기본값·manifest 등록·Codex 발주문         30–60분
-3장 선택 기능 (R77 · D6 결정 R83 · 모두 그대로 사용 추정)
+3장 선택 기능 (R77 · D6 결정 R83 · Step 8 판정: Phase 18 은 고침, 나머지는 그대로 사용·설정)
   Phase 12 툴팁 — TipTac Reborn
     Step 24  설정 기본값·manifest 등록·Codex 발주문         30–45분
   Phase 13 가방 — Bagnon
@@ -53,17 +53,18 @@
     Step 28  설정 기본값·manifest 등록·Codex 발주문(LDB 정보 구성) 30–60분
   Phase 17 퀘스트·목표 추적기 — Kaliel's Tracker
     Step 29  설정 기본값·manifest 등록·Codex 발주문         30–45분
-  Phase 18 세계지도 — Mapster
-    Step 30  설정 기본값·manifest 등록·Codex 발주문         30–45분
-  Phase 19 경험치·평판 바 — Dominos_Progress
+  Phase 18 세계지도 — Mapster (고침: V42 FogClear 오류 막기 옮김)
+    Step 30a FogClear 차이·로드 조건 정독·고침 설계·설정 기본값 30–60분
+    Step 30b FogClear 고침·정적 검사·논리 검수 반영·Codex 발주문(자동 업데이트 끄기 포함) 60–135분
+  Phase 19 경험치·평판 바 — Experience Forever (비교: Dominos_Progress)
     Step 31  설정 기본값·manifest 등록·Codex 발주문         30–45분
 4장 관리 기능·테마
   Phase 20 설정 저장·복원 (필수 묶음) — ProfileManager
     Step 32  지원 범위 확인·범위 복원 설계                  60–90분
     Step 33  범위 복원 구현·정적 검사·Codex 발주문          120–210분
-  Phase 21 사용자 UI 편집 (필수 묶음) — V42 Devilconfig
-    Step 34  편집 기전 정독·편집 항목 설계                  60–90분
-    Step 35  편집/되돌림 구현·정적 검사·Codex 발주문        120–210분
+  Phase 21 사용자 UI 편집 (필수 묶음) — 새 개발 (참고: V42 Devilconfig 실행 단추·!DevilUI 이동 손잡이)
+    Step 34  Edit Mode Expanded·BlizzMove·!DevilUI minimap.lua 정독·편집 항목·저장 설계 90–150분
+    Step 35  편집 창·저장·미리보기·취소·기본값 구현·정적 검사·Codex 발주문 180–300분
   Phase 22 대안 테마 1–2개 — 외관 구현은 Codex
     Step 36  토큰 세트 전환 인터페이스 확인·Codex 대안 테마 발주문 30–60분
 5장 묶기·보여 주기·고정
@@ -77,11 +78,11 @@
     Step 41  최종 묶음 고정·복원 방법·인계                  30–60분
 ```
 
-「그대로 사용」 으로 판정된 기능 Phase 는 Step 하나(설정 기본값 파일 + manifest 등록 + Codex 발주문)다. Step 8 에서 「고침」·「새 개발」 로 판정된 기능은 그 Phase 에 하위 Step(예: Step 13a 읽기·설계, 13b 수정·정적 검사)을 붙이고 60–150분을 더한다. Phase 2·8·20·21·23·25 는 처음부터 코드 작업이 있어 Step 이 둘 이상이다. 외관 작업(Phase 2 외관 구현·각 기능 스킨·Phase 22 테마·Phase 24 목업)은 Codex 몫이라 시간에 넣지 않았다(Implementation Changes 「Codex 몫 목록」). 세부 Step 은 Phase 착수 때 세부 계획서에 쓴다.
+「그대로 사용」 으로 판정된 기능 Phase 는 Step 하나(설정 기본값 파일 + manifest 등록 + Codex 발주문)다. Step 8 에서 「고침」·「새 개발」 로 판정된 기능은 그 Phase 에 하위 Step(예: Step 13a 읽기·설계, 13b 수정·정적 검사)을 붙이고 60–150분을 더한다. Phase 2·8·20·21·23·25 는 처음부터 코드 작업이 있어 Step 이 둘 이상이다. Step 8 판정으로 Phase 18 이 「고침」 이 되어 Step 30a·30b 를 두었고, Phase 21 은 「새 개발」 로 Step 34–35 를 다시 잡았다(Correction History). 외관 작업(Phase 2 외관 구현·각 기능 스킨·Phase 22 테마·Phase 24 목업)은 Codex 몫이라 시간에 넣지 않았다(Implementation Changes 「Codex 몫 목록」). 세부 Step 은 Phase 착수 때 세부 계획서에 쓴다.
 
 **실행 중 새 사용자 지시가 들어오면**: 요청 대장에 다음 R 번호로 적고, 그 지시가 다루는 기능의 Phase 에 넣는다 — 아직 시작하지 않은 Phase 면 그 Phase 의 세부 계획서에, 이미 끝난 Phase 면 Phase 23 의 정정 목록에, 특정 기능이 아닌 일하는 방식에 관한 지시면 「늘 지킬 제약」 표에 넣는다. 범위나 순서가 바뀌면 다음 Phase 를 시작하기 전에 이 문서의 Correction History 에 한 줄 남긴다.
 
-**예상 시간 합계 (Claude 몫)**: Step 6–41 의 고정 부분은 1,940–3,490분(약 32–58시간)이다. 그중 선택 기능 Phase 12–19 가 230–385분이다. 여기에 Forever 직업 하나당 45–85분(행동단축바 10–15 + unit·자원 15–30 + Hekili 20–40)이 더해지고, 받은 Hekili 묶음에 직업 모듈이 9개 들어 있으므로 직업이 9개라면 405–765분이 늘어난다(직업 수는 Step 10 에서 확인한다). 조건부로 더해지는 것: Phase 8 이 Step 18 판정에서 갈래 2·3 으로 가면 보완 모듈 60–180분(갈래 3 이면 Step 19 에서 직업 하나당 15–30분 더), Step 8 에서 「그대로 사용」 으로 추정한 기능이 「고침」·「새 개발」 로 판정되면 그 Phase 하나당 60–150분. Codex 몫(외관 구현·질감 판정과 개선·각 기능 외관 연결·대안 테마·최종 목업·실사용 검증·새 자료 조사)과 그 결과를 기다리는 시간은 넣지 않았다(R86·R87 — Implementation Changes 「Codex 몫 목록」).
+**예상 시간 합계 (Claude 몫)**: Step 6–41 의 고정 부분은 2,090–3,790분(약 35–63시간)이다 — Step 8 판정 반영: Phase 18 고침의 하위 Step 30a·30b 로 +60–150분, Phase 21 을 새 개발로 다시 잡아 Step 34–35 가 180–300분에서 270–450분으로 +90–150분. 그중 선택 기능 Phase 12–19 가 290–535분이다. 여기에 Forever 직업 하나당 45–85분(행동단축바 10–15 + unit·자원 15–30 + Hekili 20–40)이 더해지고, 받은 Hekili 묶음에 직업 모듈이 9개 들어 있으므로 직업이 9개라면 405–765분이 늘어난다(직업 수는 Step 10 에서 확인한다). 조건부로 더해지는 것: Phase 8 이 Step 18 판정에서 갈래 2·3 으로 가면 보완 모듈 60–180분(갈래 3 이면 Step 19 에서 직업 하나당 15–30분 더), Step 8 판정(Phase 18 고침·Phase 21 새 개발)은 위 고정 부분에 넣었고, 그 뒤 기능 Phase 정독에서 다른 기능이 「고침」·「새 개발」 로 바뀌면 그 Phase 하나당 60–150분. Codex 몫(외관 구현·질감 판정과 개선·각 기능 외관 연결·대안 테마·최종 목업·실사용 검증·새 자료 조사)과 그 결과를 기다리는 시간은 넣지 않았다(R86·R87 — Implementation Changes 「Codex 몫 목록」).
 
 ## Summary
 
@@ -221,10 +222,10 @@ R1 의 첫 요청은 단축키·체력/마나·미니맵이었고 「부가 기�
 | 15 | 기본 창 스킨 (b) | Aurora 12.1.5.4 | 그대로 사용 (추정) | 기능이 곧 외관이라 Claude 몫은 manifest 등록과 Codex 외관 발주문뿐이다. 기본 버프 창이 범위에 드는지, 다른 애드온 창에 스킨이 두 번 걸리지 않는지는 Codex 가 본다 | features.md:68,149,216 · R50·R87 |
 | 16 | 정보 바 (b) | Titan Panel 9.3.7. 참고: V42 ChocolateBar v3.3.5·Broker 플러그인과 `!DevilUI/Profile/ChocolateBar.lua` | 그대로 사용 + 설정 (추정) | 시간·지연·골드·화폐 같은 정보와 Devilconfig·BugSack 같은 LDB(LibDataBroker, 정보 표시 공용 규약) 버튼 구성. Step 5 하단 상태띠(28px)에 앉히는 외관은 Codex. Titan 을 고른 이유: Forever 판이 확인됐고 ChocolateBar 는 V42 판만 있다(R48 비교는 Step 8) | features.md:58,139,204,239 · R47·R48 |
 | 17 | 퀘스트·목표 추적기 (b) | Kaliel's Tracker 8.11.1-forever. 참고: Questie v12.10.0(퀘스트 도우미, V42 profile 있음) | 그대로 사용 + 설정 (추정) | 추적 항목 기능 설정. 위치·외관(중앙 시야를 가리지 않게)은 Codex | features.md:81,162,230 |
-| 18 | 세계지도 (b) | Mapster 1.14.0. 참고: V42 Mapster 1.14.0-Forever-v2 와 `!DevilUI/Profile/Mapster.lua` | 그대로 사용 + 설정 (추정) | 좌표·미탐색 영역 같은 기능 설정. 미니맵(Phase 5)과 담당을 나눈다. 크기·투명도는 Codex | features.md:63,144,209 · R47 |
-| 19 | 경험치·평판 바 (b) | Dominos_Progress (Dominos 12.0.4 묶음 안 별도 AddOn). 비교: Experience Forever 2.0.4, V42 Broker_XPBar | 그대로 사용 + 설정 (추정) | 경험치·평판(소환수 경험치 지원 여부 확인) 표시 기능 설정. Step 5 설계의 긴 윗줄·검은 띠 범위 안 배치는 Codex | features.md:59–60,140–141,190,219 · R47 |
+| 18 | 세계지도 (b) | Mapster 1.14.0. 참고: V42 Mapster 1.14.0-Forever-v2(FogClear 오류 막기의 원천)와 `!DevilUI/Profile/Mapster.lua` | 고침 (Step 8 판정): V42 의 FogClear 오류 막기를 받은 판에 옮긴다. TOC 머리말 `AllowLoadGameType: mainline` 은 Codex 가 게임 애드온 목록에서 로드 불가를 확인할 때만 고친다 | 좌표·미탐색 영역 같은 기능 설정. 미니맵(Phase 5)과 담당을 나눈다. 고친 판이라 Codex 발주문에 자동 업데이트 끄기를 넣는다. 크기·투명도는 Codex | features.md:63,144,209 · R47 · `Collection/judgment.md` 4-1 · master 결정 `Claude/results/handoffs/phase1/TRIAGE_phase1.md:24` |
+| 19 | 경험치·평판 바 (b) | Experience Forever 2.0.4. 비교: Dominos_Progress (Dominos 12.0.4 묶음 안 별도 AddOn — 소환수 경험치 없음), V42 Broker_XPBar | 그대로 사용 + 설정 (Step 8 판정) | 경험치·평판·사냥꾼 소환수 경험치(`showPetBar`) 표시 기능 설정. 같은 기능을 두 애드온이 맡지 않게 Dominos_Progress 는 끈다. Step 5 설계의 긴 윗줄·검은 띠 범위 안 배치는 Codex | features.md:59–60,140–141,190,219 · R47 · `Collection/judgment.md` Phase 19 · master 결정 `TRIAGE_phase1.md:27` |
 | 20 | 설정 저장·복원 (a, 필수 묶음) | ProfileManager v4.0. 비교: V42 Reflux 1.17-Forever-v1 | 설정 + 모자란 범위 복원만 새 개발 | 등록 표의 저장 변수만 다루는 범위 복원. 공통 배치·외관 설정과 직업·특성별 설정을 나눠 저장하고 특성이 바뀌면 그 profile 로 전환한다(features F68). 설치되지 않은 애드온 항목은 지우지 않고, 알 수 없는 판의 데이터는 조용히 초기화하지 않는다. 키 설정과 게임 설정(ProfileManager 의 `Keybinds.lua`·`GameSettings.lua`)도 R44 의 「설정 저장 복원」 범위에 넣는다 — 사용자가 직접 정한 값을 저장했다가 사용자가 고를 때만 되돌리며, 키 자동 배정·매크로 이식과는 다르다. 매크로는 다루지 않는다(R14–R17). Reflux 에서 바꾼 이유는 Phase Range 「바꾼 곳」 6 | R44 · survey.md:89–93 |
-| 21 | 사용자 UI 편집 (a, 필수 묶음) | V42 Devilconfig 1.0-Forever-v42 (+ForeverCompat). 비교: Edit Mode Expanded 12.1-026, BlizzMove v3.8.8 | 편집·저장 기전을 고쳐 씀 | 위치·크기·글꼴·색·줄 수·간격을 편집하고 저장하는 기능. 저장한 값은 Core 가 「토큰 위에 덮어쓰는 프레임별 값」 으로 내주고 외관 코드(Codex)가 그 값을 읽어 화면에 건다. 각 애드온이 실제로 지원하는 항목만 보여 준다. 적용 전 미리보기, 취소, 기본값으로 되돌리기. 보호된 프레임 편집은 전투 밖에서만. 편집 창의 외관은 Codex | R44·R47 · survey.md:99–103 |
+| 21 | 사용자 UI 편집 (a, 필수 묶음) | 새 개발. 참고: V42 Devilconfig 1.0-Forever-v42 (LDB 실행 단추·전투 중 거절 패턴), V42 `!DevilUI/minimap.lua` 의 이동 손잡이·잠금·전투 중 숨김. 비교: Edit Mode Expanded 12.1-026, BlizzMove v3.8.8 (Step 34 에서 정독) | 새 개발 (Step 8 판정: Devilconfig 에는 편집·저장 기전이 없다) — 편집 창과 저장 | 위치·크기·글꼴·색·줄 수·간격을 편집하고 저장하는 기능. 저장한 값은 Core 가 「토큰 위에 덮어쓰는 프레임별 값」 으로 내주고 외관 코드(Codex)가 그 값을 읽어 화면에 건다. 각 애드온이 실제로 지원하는 항목만 보여 준다. 적용 전 미리보기, 취소, 기본값으로 되돌리기. 보호된 프레임 편집은 전투 밖에서만. 편집 창의 외관은 Codex | R44·R47 · survey.md:99–103 · `Collection/judgment.md` 4-3 · master 결정 `TRIAGE_phase1.md:25` |
 | 22 | 대안 테마 1–2개 (a) | Phase 2 Core 의 테마 토큰 인터페이스 | 외관 구현은 Codex | Claude: 테마 토큰 세트를 바꿔 끼우는 인터페이스가 다른 애드온 스킨에도 같이 걸리는지 확인하고 Codex 대안 테마 발주문을 쓴다. Codex: 단순 색 바꾸기가 아니라 질감·글꼴·막대·장식이 한 컨셉으로 맞는 테마 1–2개 | R51·R53·R87 |
 
 **만들지 않는 기능 — D6 결정(R83) · 나중에 사용자가 고르면 Phase 19 뒤에 붙인다**
@@ -256,16 +257,16 @@ R1 의 첫 요청은 단축키·체력/마나·미니맵이었고 「부가 기�
 
 | V42 폴더 | 가는 곳 |
 |---|---|
-| !DevilUI · kgPanels · kgPanelsConfig · Masque · Masque_Onyx | Phase 2 (공통 외관 — !DevilUI 의 기전은 Claude 가 Core 를 만들 때 참고하고, kgPanels·kgPanelsConfig 패널과 Masque·Onyx 스킨(받은 최신판)은 Codex 외관 구현이 쓴다 · R87) |
+| !DevilUI · kgPanels · kgPanelsConfig · Masque · Masque_Onyx | Phase 2 (공통 외관 — !DevilUI 의 기전은 Claude 가 Core 를 만들 때 참고하고(그 `minimap.lua` 이동 손잡이는 Phase 21 편집 창도 참고), kgPanels·kgPanelsConfig 패널과 Masque·Onyx 스킨(받은 최신판)은 Codex 외관 구현이 쓴다 · R87) |
 | Dominos · Dominos_Config · Masque_Dominos | Phase 3 (받은 Dominos 12.0.4 로 최신화) |
 | Dominos_Cast · Castbars | Phase 7 의 비교·중복 정리 대상 |
 | PitBull4 | Phase 6 의 비교 대상 |
 | TipTac · TipTacItemRef · TipTacOptions · TipTacTalents | Phase 12 (TipTac Reborn 으로 최신화, 설정 참고) |
 | ChocolateBar · Broker_Money · Broker_Guild_Friends · shPerformance | Phase 16 (정보 바와 그 위에 올리는 LDB 정보 — 골드·길드/친구·FPS·지연·메모리) |
-| Broker_XPBar · Dominos_Progress | Phase 19 (Dominos_Progress 로 시작, Broker_XPBar 는 비교) |
-| Mapster | Phase 18 |
+| Broker_XPBar · Dominos_Progress | Phase 19 의 비교 대상 (시작은 받은 Experience Forever 2.0.4 — Step 8 판정) |
+| Mapster | Phase 18 (FogClear 오류 막기를 받은 Mapster 1.14.0 에 옮기는 원천) |
 | Reflux | Phase 20 의 비교 대상 |
-| Devilconfig | Phase 21 |
+| Devilconfig | Phase 21 (실행 단추 패턴만 참고 · 편집·저장은 새 개발) |
 | Dominos_Roll · Leatrix_Plus | 만들지 않는 기능 (D6 결정 · 위 표) |
 | !BugGrabber · BugSack | Codex 실사용 검증용 도구 (D1) |
 | RangeDisplay · RangeDisplay_Options (대상 거리 숫자) · SkillUpForever (전문기술 숙련 정보) · AdvancedInterfaceOptions (숨은 게임 옵션 창) | 제외 — 규칙 ① 에는 걸리지만 CurseForge Forever 판이 확인되지 않아 ② 미충족. 나중에 원하면 사용자가 고르고 D7 경로로 Forever 판 조사 |
@@ -279,6 +280,7 @@ R1 의 첫 요청은 단축키·체력/마나·미니맵이었고 「부가 기�
 5. **R77 조사로 선택 기능 Phase 8개(12–19)를 새로 넣었다.** 기본값 규칙: ① 통합 UI 8개 중 5개 이상이 갖춘 기능이거나 V42 가 이미 담고 있던 기능(R47)이고, ② survey.md·features.md 에서 Forever 파일 표기가 확인된 시작 애드온이 받은 원천에 있으면(R63) 만든다. ①·② 를 갖췄어도 이미 다른 Phase 가 맡는 기능(위협 상태 표시·직업 자원·글꼴 등)은 그 Phase 범위로 넣는다. 그 밖은 만들지 않는다. 규칙에 걸리지만 만들지 않는 예외는 세 가지이고 이유는 위 표에 있다: 편의 자동화(R1), 전리품 창·주사위(묶음에 들어 있어 켜기만 하면 됨), 버프·디버프 표시(R44 와 겹침). AFK 화면(5/8)은 ② 가 없어 만들지 않는다. V42 동봉 애드온 32개는 모두 「V42 동봉 애드온 분류」 표에서 어디로 가는지 적었다.
 6. **저장·복원 시작 애드온을 Reflux 에서 ProfileManager 로 바꿨다.** ProfileManager 는 Forever 판이 확인됐고(survey.md:91) 지원 애드온별로 골라서 적용하는 흐름이 범위 복원 요구와 가장 가깝다. Reflux 정식판은 Forever 판이 확인되지 않았고(TOC 60000) V42 판은 전역 전환 문제가 있다(Codex 기록). ProfileManager 가 우리 애드온들을 얼마나 지원하는지는 아직 모른다 — Step 32 에서 `Providers.lua`·`Addons.lua` 를 읽고 모자라면 Reflux 의 기전을 참고해 그 부분만 만든다.
 7. **원천 확보 단계를 「수령 완료 → 해제·manifest·정적 분석」 으로 바꿨다(R81).** 원천 대기 때 쓰던 대체 시작점 열과 긴 미루기 규칙은 아래 짧은 예외 규칙으로 줄였다.
+8. **Step 8 판정으로 세 기능의 쓰는 방식을 바꿨다(A1 판단 · master 결정 `TRIAGE_phase1.md:21–27`).** 세계지도(Phase 18)는 V42 가 고친 FogClear 오류 막기를 받은 Mapster 에 옮기는 「고침」 이다. 경험치·평판 바(Phase 19)는 Dominos_Progress 에 소환수 경험치가 없어 Experience Forever 로 시작한다. 사용자 UI 편집(Phase 21)은 V42 Devilconfig 에 편집·저장 기전이 없어 「새 개발」 이다. 근거는 `Collection/judgment.md` 4-1·4-3·Phase 19.
 
 ### 원천이 모자랄 때 (남은 예외)
 
@@ -375,7 +377,7 @@ R1 의 첫 요청은 단축키·체력/마나·미니맵이었고 「부가 기�
 | 15 기본 창 스킨 | `…-phase15-세부계획.md` | 27 | 대기 |
 | 16 정보 바 | `…-phase16-세부계획.md` | 28 | 대기 |
 | 17 퀘스트·목표 추적기 | `…-phase17-세부계획.md` | 29 | 대기 |
-| 18 세계지도 | `…-phase18-세부계획.md` | 30 | 대기 |
+| 18 세계지도 | `…-phase18-세부계획.md` | 30a·30b | 대기 |
 | 19 경험치·평판 바 | `…-phase19-세부계획.md` | 31 | 대기 |
 | 20 저장·복원 | `…-phase20-세부계획.md` | 32–33 | 대기 |
 | 21 사용자 편집 | `…-phase21-세부계획.md` | 34–35 | 대기 |
@@ -417,7 +419,7 @@ R1 의 첫 요청은 단축키·체력/마나·미니맵이었고 「부가 기�
 | 새 구조 모듈: Core·등록 표·테마 토큰 인터페이스 (Phase 2) | 3라운드 (연계·뜻·적대) | P1 | 연결 | 등록 표가 manifest·TOC 와 맞는지, 토큰·프레임 이름 목록이 Codex 외관이 쓸 만큼 정해졌는지, Core 가 없을 때 각 애드온이 자기 기본으로 도는지, 기본값 주입이 사용자 값을 덮어쓰지 않는지, 편집값이 토큰 위에 맞게 덮이는지, 등록하려고 원본을 고치지 않았는지 (적대), V42 에서 빼기로 한 초기화 코드가 섞였는지 |
 | 새 구조 모듈: Hekili 보완 모듈 (Phase 8, 갈래 2·3 일 때) | 3라운드 (연계·뜻·적대) | P1 | 연결 | Step 18 갈래 판정이 원천과 맞는지, EventAlert 식 알림 꼴과 끄기, 빈 칸은 「원천 없음」 표시 + D7 요청 기록이면 통과·지어낸 목록이면 실패, 추천·판단 로직이 없는지 (적대 · R62), Hekili 를 끄면 함께 꺼지는지 |
 | 새 구조 모듈: 저장·복원 (Phase 20) | 3라운드 (연계·뜻·적대) | P1 | 연계 | 등록 표의 변수만 다루는지, 없는 애드온 항목 보존, 판이 다른 데이터를 지우는지 (적대), 공통/직업·특성별 나눔과 전환, 사용자가 고르지 않은 범위의 키·게임 설정·필터 불변·매크로 미접촉 |
-| 원본을 고친 곳: 편집 (Phase 21 Devilconfig) 과 Step 8 에서 「고침」·「새 개발」 로 판정된 기능 | 코드 논리 검수 1회 | P1 | 연계 | 호출·데이터 흐름·저장 변수·이벤트·nil 처리 + 적대 하나(편집은 전투 중 보호 프레임 변경) |
+| 새 코드·원본을 고친 곳: 편집 창·저장 (Phase 21, 새 개발), Mapster FogClear 고침 (Phase 18), 그 밖에 Step 8 뒤 「고침」·「새 개발」 로 판정된 기능 | 코드 논리 검수 1회 | P1 | 연결(새 코드) · 연계(고친 곳) | 호출·데이터 흐름·저장 변수·이벤트·nil 처리 + 적대 하나(편집은 전투 중 보호 프레임 변경) |
 | 그대로 쓰는 기능의 설정 기본값 파일 (Phase 3–19) | 검수 없음 — manifest·TOC 정적 대조만 | P6 | 연계 | 기본값 키 이름이 원본 저장 변수와 맞는지, manifest·등록 표의 기본값 파일 위치(덮어쓰지 않는 주입은 Core 검수 몫) |
 | 모음집 연계 (Phase 23) | 연계 정적 대조 + 정정분은 코드 논리 검수 1회 | P1 | 연계 | 조합별 TOC·의존 해석, 등록 누락, 의존 순서, 한 기능 두 애드온 중복 (적대), 설치용 ZIP 내용과 manifest 일치 |
 | Codex 발주문 (실사용 검증·외관, 각 Phase) | ② 국소 — 같은 B 한 번 + 적대 하나 | P5 | 연결 | 백업이 맨 앞인지, 항목마다 기대 결과·결과 양식·올릴 자리, Codex 가 추가 판단 없이 실행할 수 있는지, 외관 발주문에 토큰·프레임 목록·Step 5 설계가 함께 가는지, 위험한 조작 요구 (적대) |
@@ -433,7 +435,8 @@ R1 의 첫 요청은 단축키·체력/마나·미니맵이었고 「부가 기�
 | 2 | Core 문법·TOC/의존 대조, 등록 표·기본값 주입·토큰·편집값 읽기 3라운드 | Core 로드, 등록 표 반영, 기본값이 처음 한 번만 들어가는지, 재접속 뒤 유지 | 공통 외관 구현·질감(R52) |
 | 3–7, 9–11 | 설정 기본값 파일·manifest·TOC 정적 대조(그대로 사용) | 각 기능 동작(키 글자·페이지·특수 바 / 입력·한글·세 창 분담 / 지도 클릭·핑 / 체력·자원·오라 / 시전·차단 / 클릭 시전·값 / 미터 값), 끄기, 재접속 | 각 기능 외관 연결 |
 | 8 | 지원표·갈래 판정과 원천 대조, 보완 모듈이 있으면 3라운드 | 직업별 알림·추천 표시, 전투 중 taint 오류 | 표시 위치·크기·스킨 |
-| 12–19 | 설정 기본값 파일·manifest·TOC 정적 대조 | 그 기능의 표시·조작, 끄기, 재접속 | 각 기능 외관 연결 |
+| 12–17, 19 | 설정 기본값 파일·manifest·TOC 정적 대조 | 그 기능의 표시·조작, 끄기, 재접속 | 각 기능 외관 연결 |
+| 18 | FogClear 고침 코드 논리 검수 1회, 설정 기본값·TOC 정적 대조 | 애드온 목록에서 사용 가능 여부, 지도를 처음 열기 전 프로필을 바꿔도 오류 없음, 미탐색 영역·좌표, 끄기, 재접속, 자동 업데이트 끔 | 지도 외관 연결 |
 | 20 | 3라운드 (가짜 데이터로 저장 변수 다루는 코드 논리) | 실제 저장·복원·재접속, 특성 전환 | 없음 |
 | 21 | 코드 논리 검수 1회 | 편집·취소·되돌림, 전투 중 편집 | 편집 창 외관 |
 | 22 | 토큰 세트 전환 인터페이스 정적 대조 | 테마 전환 뒤 화면 | 대안 테마 1–2개 |
@@ -462,7 +465,7 @@ R1 의 첫 요청은 단축키·체력/마나·미니맵이었고 「부가 기�
 
 ## Correction History
 
-Phase 0 의 고침 기록은 `Claude/plans/2026-11-18-devil-forever-addon-collection-plan_이력.md` 로 옮겼다. Phase 1 부터의 고침을 아래에 쌓는다.
+Phase 0–1 의 고침 기록은 `Claude/plans/2026-11-18-devil-forever-addon-collection-plan_이력.md` 로 옮겼다. Phase 2 부터의 고침을 아래에 쌓는다.
 
 | 날짜 | 반영 | 근거 |
 |---|---|---|

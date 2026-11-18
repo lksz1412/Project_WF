@@ -19,3 +19,13 @@
 ## Phase 0 끝 정리
 
 Phase 0(Step 6–7): Codex 기록을 넘겨받아 마스터 플랜을 새로 썼다. 독립 검수 10라운드 + 재검증 4회(중대·중간 9→3→1→2→0, 재검증 3 에서 진동 판정 뒤 Phase 8 원인 수정), 사용자 결정 R83·R86·R87 반영, 반영분 1회 검수(중간 2 → 고침 → master 확인). R88 명시 GO. Result = `Claude/results/PHASE_0_master-plan_RESULT.md`.
+
+## Phase 1 Correction History (옮긴 시각 2026-11-18 13:52:04 +0900)
+
+| 날짜 | 반영 | 근거 |
+|---|---|---|
+| 2026-11-18 | Step 8 판정 반영: Phase 18 Mapster 「그대로 사용 + 설정」 → 「고침」(V42 FogClear 오류 막기 옮김, TOC 는 Codex 가 로드 불가를 확인할 때만), Step 30 → 30a·30b(+60–150분) · Phase 19 시작 애드온 Dominos_Progress → Experience Forever(Dominos_Progress 는 비교) · Phase 21 「편집·저장 기전을 고쳐 씀」 → 「새 개발」(Devilconfig 실행 단추 패턴·!DevilUI 이동 손잡이 참고, Step 34 에서 Edit Mode Expanded·BlizzMove 정독), Step 34–35 를 180–300분에서 270–450분으로 · 고정 합계 1,940–3,490분 → 2,090–3,790분, 선택 기능 12–19 230–385분 → 290–535분 · 개요·V42 분류 표·바꾼 곳 8·Phase N 표·Test Plan 두 표 함께 고침 | Step 8 판정 `Collection/judgment.md` 4-1·4-3·Phase 19·§6 · master 결정 `Claude/results/handoffs/phase1/TRIAGE_phase1.md:21–27` |
+
+## Phase 1 끝 정리
+
+Phase 1(Step 8–10): 원천 해제·manifest·정적 도구·쓰는 방식 판정·직업 표·Codex 발주문. 판정으로 행 18·19·21 변경. Result = `Claude/results/PHASE_1_sources-tools_RESULT.md`.

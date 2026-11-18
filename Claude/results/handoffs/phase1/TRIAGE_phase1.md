@@ -14,3 +14,17 @@ Master confirmed toclib.py:63 overwrite and Mapster.toc:10 `## AllowLoadGameType
 | minor 1 | include (same file, one line) | luacheck rejects binary chunks (leading `\x1b`). |
 | minor 2–5 | not fixed | list → final report. |
 Check 1 fix: master spot-check tocdeps --role all (Mapster flagged, unresolved 0) + toclib forever_load body read — accepted
+
+## Step 8 judgment — master check (R87: master decides strength; quote check)
+Confirmed against source: Devilconfig.toc 1–15 has no SavedVariables (launcher only); V42 Mapster.toc:10 `mainline`; Aurora Skin/init.lua:10–16 "Forever ... runs the Mainline UI". Codex phase1 brief read 1–60: 0 backup first, no input automation — OK.
+
+Master decisions on A1 Decision Queue (nonblocking, within approved scope; recorded for final report):
+| DQ | Decision | Why |
+|---|---|---|
+| 1 Phase 18 | accept: Mapster `modify` (port V42 FogClear guard), TOC change only if Codex finds it not loadable; sub-steps 30a/30b | V42 fix shows it ran in game; mainline likely accepted on Forever (inferred) |
+| 2 Phase 21 | accept: `new` development (editor + save) using Devilconfig launcher pattern and !DevilUI minimap.lua movers; read Edit Mode Expanded/BlizzMove at Step 34 | source has no editor; R44 editing is required |
+| 3 Codex item | accept: add loadability check item (TipTac/Kaliel's/Details/Mapster) to phase1 brief | cheap, covers TOC suffix doubt |
+| 4 Phase 19 | accept: start addon → Experience Forever (pet XP) ; Dominos_Progress comparison | requirement "소환수 경험치 지원 여부" |
+| 5 tools | A2: mainline → "check" not "no"; show load conditions on required deps; show how_to_use in manifest.md | avoids false "no" |
+| 6 role | A2: role = "start" when the package is a start addon in the plan table, else "comparison"; keep `source_dir` for location | role field was misleading |
+| A1 note 2 | master: Phase 21 editor counts as new structure module → 3-round code review (R87 exception, ≤10) | editor+save is R44 core; plan Test Plan row to be aligned at Phase 21 detail plan |

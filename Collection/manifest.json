@@ -5,7 +5,8 @@
   "packages": [
     {
       "name": "Chattynator",
-      "role": "start",
+      "role": "comparison",
+      "source_dir": "forever-addons",
       "feature_phases": [
         {
           "phase": 4,
@@ -139,6 +140,7 @@
     {
       "name": "Details",
       "role": "start",
+      "source_dir": "forever-addons",
       "feature_phases": [
         {
           "phase": 10,
@@ -150,7 +152,11 @@
       "sha256": "5002bdd5c3e92dd59bffa3ebdfc867f980b09ed629c51dab056fb5442f92ad41",
       "version": "Details.20261109.15410.172",
       "file_id": "9521145",
-      "how_to_use": null,
+      "how_to_use": {
+        "verdict": "settings",
+        "reason": "Forever 용 _Camelot.toc 로 로드(미검증). 값·정렬 의미 보존, 기본 표시 항목만 설정.",
+        "judgment_md_section": "Collection/judgment.md — Phase 10 — 데미지 미터 · settings"
+      },
       "sha256_verified": true,
       "upstream_dir": "Collection/upstream/Details-Details.20261109.15410.172",
       "addons": [
@@ -3332,6 +3338,7 @@
     {
       "name": "Dominos",
       "role": "start",
+      "source_dir": "forever-addons",
       "feature_phases": [
         {
           "phase": 3,
@@ -3339,7 +3346,7 @@
         },
         {
           "phase": 19,
-          "use": "start"
+          "use": "comparison"
         }
       ],
       "source_zip": "References/forever-addons/Dominos/Dominos-12.0.4.zip",
@@ -3347,7 +3354,11 @@
       "sha256": "2dbcf9857a91b772a42200369386fc17f875530ffd47984b555ecdb8e11bef1a",
       "version": "12.0.4",
       "file_id": "9658153",
-      "how_to_use": null,
+      "how_to_use": {
+        "verdict": "settings",
+        "reason": "태세·소환수·빙의 바와 camelot 토템 바가 있고 Forever 분기가 있다. Phase 19 는 master 결정(TRIAGE_phase1.md:27)으로 Experience Forever 가 시작 애드온이 되어 Dominos_Progress 는 비교 대상(끔).",
+        "judgment_md_section": "Collection/judgment.md — Phase 3 — 행동단축바 · settings; §6-4"
+      },
       "sha256_verified": true,
       "upstream_dir": "Collection/upstream/Dominos-12.0.4",
       "addons": [
@@ -3930,6 +3941,7 @@
     {
       "name": "Forever Unit Frames",
       "role": "start",
+      "source_dir": "forever-addons",
       "feature_phases": [
         {
           "phase": 6,
@@ -3941,7 +3953,11 @@
       "sha256": "cc50d16b5d926240a4dc48e7e6f9e4ee7fbb5107c14ebb734a685542e50e1a80",
       "version": "0.65.2",
       "file_id": "9673338",
-      "how_to_use": null,
+      "how_to_use": {
+        "verdict": "settings",
+        "reason": "직업 9개의 자원 요소(자원 막대·드루이드 마나·콤보 점·토템·소환수 만족도)가 다 있다. 공격대·시전바 겹침은 설정으로 끈다. AceDB 가 아니라 Phase 20 연결 코드 필요.",
+        "judgment_md_section": "Collection/judgment.md — Phase 6 — 기본 unit·직업 자원 · settings"
+      },
       "sha256_verified": true,
       "upstream_dir": "Collection/upstream/Forever_Unit_Frames-0.65.2",
       "addons": [
@@ -4013,6 +4029,7 @@
     {
       "name": "ForeverThreat",
       "role": "start",
+      "source_dir": "forever-addons",
       "feature_phases": [
         {
           "phase": 11,
@@ -4024,7 +4041,11 @@
       "sha256": "c7aa10ecdee074965dd26149b8ab5c447d90e3df2463ad5181e52751b78022a4",
       "version": "1.12.3",
       "file_id": "9671243",
-      "how_to_use": null,
+      "how_to_use": {
+        "verdict": "settings",
+        "reason": "Forever 전용 위협 미터. AceDB 가 아니라 Phase 20 연결 코드 필요.",
+        "judgment_md_section": "Collection/judgment.md — Phase 11 — 어그로 미터 · settings"
+      },
       "sha256_verified": true,
       "upstream_dir": "Collection/upstream/ForeverThreat-1.12.3",
       "addons": [
@@ -4170,7 +4191,8 @@
     },
     {
       "name": "Glass Forever",
-      "role": "start",
+      "role": "comparison",
+      "source_dir": "forever-addons",
       "feature_phases": [
         {
           "phase": 4,
@@ -4386,6 +4408,7 @@
     {
       "name": "Grid2",
       "role": "start",
+      "source_dir": "forever-addons",
       "feature_phases": [
         {
           "phase": 9,
@@ -4397,7 +4420,11 @@
       "sha256": "f198bc3ce2d02e023f81052074a2e9aa4ba41819931bd302ff7429dac9515393",
       "version": "4.1.13-forever",
       "file_id": "9637467",
-      "how_to_use": null,
+      "how_to_use": {
+        "verdict": "settings",
+        "reason": "Forever 판. 기능 의미는 그대로 두고 기본값만 넣는다.",
+        "judgment_md_section": "Collection/judgment.md — Phase 9 — 공격대 프레임 · settings"
+      },
       "sha256_verified": true,
       "upstream_dir": "Collection/upstream/Grid2-4.1.13-forever",
       "addons": [
@@ -4776,6 +4803,7 @@
     {
       "name": "Hekili",
       "role": "start",
+      "source_dir": "forever-addons",
       "feature_phases": [
         {
           "phase": 8,
@@ -4787,7 +4815,11 @@
       "sha256": "8063fd78c988af76c6a74653c21ff9f268546c44320922688ea2f7dd3d4c45e3",
       "version": "v0.8.6",
       "file_id": "9665215",
-      "how_to_use": null,
+      "how_to_use": {
+        "verdict": "settings",
+        "reason": "Hekili 는 표시 설정만. EventAlert 식 알림 꼴을 Hekili 에서 찾지 못해 보완 모듈 DevilForever_Combat(새 폴더)이 맡는 쪽(갈래 2 쪽 근거, Step 18 확정). 치유 특성 4개는 Hekili 표시 없음.",
+        "judgment_md_section": "Collection/judgment.md — Phase 8 — 직업 전투보조 · new (Hekili 는 settings)"
+      },
       "sha256_verified": true,
       "upstream_dir": "Collection/upstream/Hekili-v0.8.6",
       "addons": [
@@ -5669,6 +5701,7 @@
     {
       "name": "Masque",
       "role": "start",
+      "source_dir": "forever-addons",
       "feature_phases": [
         {
           "phase": 2,
@@ -5680,7 +5713,11 @@
       "sha256": "e4250f08b5429dd054ee9799db48ab64f1a3523dfd76ad3368437300ddb690c1",
       "version": "12.1.8",
       "file_id": "9409199",
-      "how_to_use": null,
+      "how_to_use": {
+        "verdict": "as-is",
+        "reason": "버튼 스킨 엔진. 고칠 곳 없음. 스킨 선택은 Codex 외관 발주문.",
+        "judgment_md_section": "Collection/judgment.md — Phase 2 — 공통 외관 · new"
+      },
       "sha256_verified": true,
       "upstream_dir": "Collection/upstream/Masque-12.1.8",
       "addons": [
@@ -5870,6 +5907,7 @@
     {
       "name": "Masque Onyx",
       "role": "start",
+      "source_dir": "forever-addons",
       "feature_phases": [
         {
           "phase": 2,
@@ -5881,7 +5919,11 @@
       "sha256": "51e961e9b40936f94ddec495b17f1c5bd8b3cfd8fa7e7463f80c2e331b05b190",
       "version": "12.1.6",
       "file_id": "9409810",
-      "how_to_use": null,
+      "how_to_use": {
+        "verdict": "as-is",
+        "reason": "Masque 스킨 묶음. 고칠 곳 없음.",
+        "judgment_md_section": "Collection/judgment.md — Phase 2 — 공통 외관 · new"
+      },
       "sha256_verified": true,
       "upstream_dir": "Collection/upstream/Masque_Onyx-12.1.6",
       "addons": [
@@ -5960,6 +6002,7 @@
     {
       "name": "Prat-3.0",
       "role": "start",
+      "source_dir": "forever-addons",
       "feature_phases": [
         {
           "phase": 4,
@@ -5971,7 +6014,11 @@
       "sha256": "d72baef9c99bb1583b269abd85088bcb957d9a0d8ca57c323144442875084db1",
       "version": "3.9.117",
       "file_id": "9509040",
-      "how_to_use": null,
+      "how_to_use": {
+        "verdict": "settings",
+        "reason": "모듈 켜기·끄기로 된다. 세 창 채널 분담(D3)은 Core 기본값 주입이 맡는다.",
+        "judgment_md_section": "Collection/judgment.md — Phase 4 — 대화창 3개 · settings"
+      },
       "sha256_verified": true,
       "upstream_dir": "Collection/upstream/Prat-3.0-3.9.117",
       "addons": [
@@ -6249,6 +6296,7 @@
     {
       "name": "Quartz",
       "role": "start",
+      "source_dir": "forever-addons",
       "feature_phases": [
         {
           "phase": 7,
@@ -6260,7 +6308,11 @@
       "sha256": "2a76cdda6b53e7eb26472c0b8b6bf8f50c02388f8f515e6746c5e14657d5ed70",
       "version": "3.8.0",
       "file_id": "9593490",
-      "how_to_use": null,
+      "how_to_use": {
+        "verdict": "settings",
+        "reason": "Forever 전용 휘두르기 모듈이 있다. FUF 대상 시전바·Dominos_Cast 와의 겹침은 설정으로 정리.",
+        "judgment_md_section": "Collection/judgment.md — Phase 7 — 시전바 · settings"
+      },
       "sha256_verified": true,
       "upstream_dir": "Collection/upstream/Quartz-3.8.0",
       "addons": [
@@ -6504,6 +6556,7 @@
     {
       "name": "SexyMap",
       "role": "start",
+      "source_dir": "forever-addons",
       "feature_phases": [
         {
           "phase": 5,
@@ -6515,7 +6568,11 @@
       "sha256": "1868eb714b8c9ea4efaa615109bfd457a0c3bb625f0b2a1f1befdadfc9143321",
       "version": "v12.1.7",
       "file_id": "9457503",
-      "how_to_use": null,
+      "how_to_use": {
+        "verdict": "settings",
+        "reason": "기능은 설정으로 된다. 저장이 AceDB 가 아니라 Phase 20 연결 코드 필요.",
+        "judgment_md_section": "Collection/judgment.md — Phase 5 — 미니맵 · settings"
+      },
       "sha256_verified": true,
       "upstream_dir": "Collection/upstream/SexyMap-v12.1.7",
       "addons": [
@@ -6701,6 +6758,7 @@
     {
       "name": "Bartender4",
       "role": "comparison",
+      "source_dir": "addon-sources",
       "feature_phases": [
         {
           "phase": 3,
@@ -7020,6 +7078,7 @@
     {
       "name": "BasicMinimap",
       "role": "comparison",
+      "source_dir": "addon-sources",
       "feature_phases": [
         {
           "phase": 5,
@@ -7305,6 +7364,7 @@
     {
       "name": "PitBull4",
       "role": "comparison",
+      "source_dir": "addon-sources",
       "feature_phases": [
         {
           "phase": 6,
@@ -8022,6 +8082,7 @@
     {
       "name": "NugComboBar",
       "role": "comparison",
+      "source_dir": "addon-sources",
       "feature_phases": [
         {
           "phase": 6,
@@ -8296,6 +8357,7 @@
     {
       "name": "TellMeWhen",
       "role": "comparison",
+      "source_dir": "addon-sources",
       "feature_phases": [
         {
           "phase": 8,
@@ -8746,6 +8808,7 @@
     {
       "name": "VuhDo",
       "role": "comparison",
+      "source_dir": "addon-sources",
       "feature_phases": [
         {
           "phase": 9,
@@ -9285,6 +9348,7 @@
     {
       "name": "Skada",
       "role": "comparison",
+      "source_dir": "addon-sources",
       "feature_phases": [
         {
           "phase": 10,
@@ -9646,6 +9710,7 @@
     {
       "name": "ThreatClassic2",
       "role": "comparison",
+      "source_dir": "addon-sources",
       "feature_phases": [
         {
           "phase": 11,
@@ -9842,7 +9907,8 @@
     },
     {
       "name": "TipTac Reborn",
-      "role": "comparison",
+      "role": "start",
+      "source_dir": "addon-sources",
       "feature_phases": [
         {
           "phase": 12,
@@ -9854,7 +9920,11 @@
       "sha256": "e76b32db476eac8f11017882559a914b247628f29639deaa62830bdad2eeba8f",
       "version": "v26.11.11-release",
       "file_id": "9563849",
-      "how_to_use": null,
+      "how_to_use": {
+        "verdict": "settings",
+        "reason": "TipTac_Forever.toc 로 로드(미검증 — 결정 대기 3). 위치·비교 툴팁 같은 기능 설정.",
+        "judgment_md_section": "Collection/judgment.md — Phase 12 — 툴팁 · settings"
+      },
       "sha256_verified": true,
       "upstream_dir": "Collection/upstream/tiptac-reborn-v26.11.11-release",
       "addons": [
@@ -10919,7 +10989,8 @@
     },
     {
       "name": "Bagnon",
-      "role": "comparison",
+      "role": "start",
+      "source_dir": "addon-sources",
       "feature_phases": [
         {
           "phase": 13,
@@ -10931,7 +11002,11 @@
       "sha256": "2e2e0d45bebaa201841cf95c0480f0fb63c289c2f84eb0604db39fcec8ae1636",
       "version": "12.1.11",
       "file_id": "9638308",
-      "how_to_use": null,
+      "how_to_use": {
+        "verdict": "settings",
+        "reason": "한 창 가방·은행 기능 설정. AceDB 가 아니라 Phase 20 연결 코드 필요.",
+        "judgment_md_section": "Collection/judgment.md — Phase 13 — 가방 · settings"
+      },
       "sha256_verified": true,
       "upstream_dir": "Collection/upstream/bagnon-12.1.11",
       "addons": [
@@ -11429,6 +11504,7 @@
     {
       "name": "Baganator",
       "role": "comparison",
+      "source_dir": "addon-sources",
       "feature_phases": [
         {
           "phase": 13,
@@ -11546,7 +11622,8 @@
     },
     {
       "name": "Platynator",
-      "role": "comparison",
+      "role": "start",
+      "source_dir": "addon-sources",
       "feature_phases": [
         {
           "phase": 14,
@@ -11558,7 +11635,11 @@
       "sha256": "73d1f115a3cb86a9c93fb782799fa888df4e765437035b61acd5d857bbcd8ed4",
       "version": "547",
       "file_id": "9659136",
-      "how_to_use": null,
+      "how_to_use": {
+        "verdict": "settings",
+        "reason": "체력·시전·위협 색 기능 설정. ProfileManager 전용 연결 있음.",
+        "judgment_md_section": "Collection/judgment.md — Phase 14 — 이름표 · settings"
+      },
       "sha256_verified": true,
       "upstream_dir": "Collection/upstream/platynator-547",
       "addons": [
@@ -11685,7 +11766,8 @@
     },
     {
       "name": "Aurora",
-      "role": "comparison",
+      "role": "start",
+      "source_dir": "addon-sources",
       "feature_phases": [
         {
           "phase": 15,
@@ -11697,7 +11779,11 @@
       "sha256": "bd8b36a06ba2b5d2e6621aafa607c4c7ec856c9e001cd678e33035f61acacf3c",
       "version": "12.1.5.4",
       "file_id": "9531539",
-      "how_to_use": null,
+      "how_to_use": {
+        "verdict": "as-is",
+        "reason": "기능이 곧 외관. Forever 용 스킨 목록을 따로 로드하고 필수 의존은 classic 에서만 걸린다.",
+        "judgment_md_section": "Collection/judgment.md — Phase 15 — 기본 창 스킨 · as-is"
+      },
       "sha256_verified": true,
       "upstream_dir": "Collection/upstream/aurora-12.1.5.4",
       "addons": [
@@ -11818,7 +11904,8 @@
     },
     {
       "name": "Titan Panel",
-      "role": "comparison",
+      "role": "start",
+      "source_dir": "addon-sources",
       "feature_phases": [
         {
           "phase": 16,
@@ -11830,7 +11917,11 @@
       "sha256": "496a4f08c1251294c3820b5ae860725962cbdeb936c3eff0a764f67b300d7507",
       "version": "9.3.7",
       "file_id": "9656248",
-      "how_to_use": null,
+      "how_to_use": {
+        "verdict": "settings",
+        "reason": "정보 표시·LDB 버튼 설정. Forever 에서 자동 판매가 안 된다는 Codex 기록이 있어 켜지 않는다. AceDB 가 아니라 Phase 20 연결 코드 필요.",
+        "judgment_md_section": "Collection/judgment.md — Phase 16 — 정보 바 · settings"
+      },
       "sha256_verified": true,
       "upstream_dir": "Collection/upstream/titan-panel-9.3.7",
       "addons": [
@@ -13054,7 +13145,8 @@
     },
     {
       "name": "Kaliel's Tracker",
-      "role": "comparison",
+      "role": "start",
+      "source_dir": "addon-sources",
       "feature_phases": [
         {
           "phase": 17,
@@ -13066,7 +13158,11 @@
       "sha256": "a970ec5a3c2c540eb68b765c29f1c4585f3ea5d82d5b0bf81d483f5a72853537",
       "version": "8.11.1-forever",
       "file_id": "9518871",
-      "how_to_use": null,
+      "how_to_use": {
+        "verdict": "settings",
+        "reason": "추적 항목 기능 설정. _Camelot.toc 가 Blizzard_TransmogShared 를 필수 의존으로 둔다(미검증 — 결정 대기 3).",
+        "judgment_md_section": "Collection/judgment.md — Phase 17 — 퀘스트·목표 추적기 · settings"
+      },
       "sha256_verified": true,
       "upstream_dir": "Collection/upstream/kaliels-tracker-8.11.1-forever",
       "addons": [
@@ -13332,6 +13428,7 @@
     {
       "name": "Questie",
       "role": "comparison",
+      "source_dir": "addon-sources",
       "feature_phases": [
         {
           "phase": 17,
@@ -14290,7 +14387,8 @@
     },
     {
       "name": "Mapster",
-      "role": "comparison",
+      "role": "start",
+      "source_dir": "addon-sources",
       "feature_phases": [
         {
           "phase": 18,
@@ -14302,7 +14400,11 @@
       "sha256": "16a05b5b5b628eb513470792d7a9633443a8fcfc594a0f920f681cdce1cdb532",
       "version": "1.14.0",
       "file_id": "9047762",
-      "how_to_use": null,
+      "how_to_use": {
+        "verdict": "modify",
+        "reason": "V42 1.14.0-Forever-v2 의 FogClear 오류 막기를 받은 판에 옮긴다. TOC 머리말 AllowLoadGameType: mainline 은 Codex 로드 확인 뒤에만 고친다(결정 대기 1).",
+        "judgment_md_section": "Collection/judgment.md — 4-1. Phase 18 Mapster 의 TOC 로드 조건"
+      },
       "sha256_verified": true,
       "upstream_dir": "Collection/upstream/mapster-1.14.0",
       "addons": [
@@ -14338,7 +14440,7 @@
                 ],
                 "exclude": null
               },
-              "forever_load": "no",
+              "forever_load": "check",
               "list_lines": {
                 "Interface": [
                   {
@@ -14371,7 +14473,7 @@
             }
           ],
           "has_interface_16001": true,
-          "has_forever_loadable_toc": false,
+          "has_forever_loadable_toc": true,
           "lua_files": 57,
           "lua_files_in_libs": 37,
           "embedded_libs": [
@@ -14481,11 +14583,12 @@
     },
     {
       "name": "Experience Forever",
-      "role": "comparison",
+      "role": "start",
+      "source_dir": "addon-sources",
       "feature_phases": [
         {
           "phase": 19,
-          "use": "comparison"
+          "use": "start"
         }
       ],
       "source_zip": "References/addon-sources/experience-forever/ExperienceForever.zip",
@@ -14493,7 +14596,11 @@
       "sha256": "2bfdda8717b6e0d40fcc1847b233e23b187f839c75749c15fe2ed430ecf15b85",
       "version": "ExperienceForever2.0.4",
       "file_id": "9626058",
-      "how_to_use": null,
+      "how_to_use": {
+        "verdict": "settings",
+        "reason": "Phase 19 시작 애드온(master 결정 TRIAGE_phase1.md:27): 경험치·평판·사냥꾼 소환수 경험치(showPetBar). feature_phases·role 칸은 A2 가 마스터 플랜 표에서 다시 만든다.",
+        "judgment_md_section": "Collection/judgment.md — Phase 19 — 경험치·평판 바 · settings; §6-4"
+      },
       "sha256_verified": true,
       "upstream_dir": "Collection/upstream/experience-forever-ExperienceForever2.0.4",
       "addons": [
@@ -14640,7 +14747,8 @@
     },
     {
       "name": "ProfileManager",
-      "role": "comparison",
+      "role": "start",
+      "source_dir": "addon-sources",
       "feature_phases": [
         {
           "phase": 20,
@@ -14652,7 +14760,11 @@
       "sha256": "f905c4381473a7cb6e033e89aa1878177d996ca965d167cd5fdbf086c8c9f2b1",
       "version": "ProfileManager_v4.0.zip",
       "file_id": "9627911",
-      "how_to_use": null,
+      "how_to_use": {
+        "verdict": "settings",
+        "reason": "AceDB 검색·전용 연결·AddOn 묶음은 그대로 쓴다. AceDB 가 아닌 애드온 연결, 범위 복원, 특성 전환은 우리 새 폴더의 새 코드(RegisterProvider 로 붙임).",
+        "judgment_md_section": "Collection/judgment.md — 4-2. Phase 20 ProfileManager"
+      },
       "sha256_verified": true,
       "upstream_dir": "Collection/upstream/profilemanager-ProfileManager_v4.0.zip",
       "addons": [
@@ -14788,6 +14900,7 @@
     {
       "name": "Reflux",
       "role": "comparison",
+      "source_dir": "addon-sources",
       "feature_phases": [
         {
           "phase": 20,
@@ -14874,6 +14987,7 @@
     {
       "name": "Edit Mode Expanded",
       "role": "comparison",
+      "source_dir": "addon-sources",
       "feature_phases": [
         {
           "phase": 21,
@@ -15015,6 +15129,7 @@
     {
       "name": "BlizzMove",
       "role": "comparison",
+      "source_dir": "addon-sources",
       "feature_phases": [
         {
           "phase": 21,
@@ -15273,6 +15388,7 @@
     {
       "name": "Leatrix Plus",
       "role": "comparison",
+      "source_dir": "addon-sources",
       "feature_phases": [],
       "source_zip": "References/addon-sources/leatrix-plus/Leatrix_Plus-1.60.31-forever.zip",
       "source_page_url": "https://www.curseforge.com/wow/addons/leatrix-plus/files/9676915",
@@ -15354,6 +15470,7 @@
     {
       "name": "XLoot",
       "role": "comparison",
+      "source_dir": "addon-sources",
       "feature_phases": [],
       "source_zip": "References/addon-sources/xloot/XLoot-12.23.0.zip",
       "source_page_url": "https://www.curseforge.com/wow/addons/xloot/files/9600127",
@@ -15931,6 +16048,7 @@
     {
       "name": "BugSack",
       "role": "comparison",
+      "source_dir": "addon-sources",
       "feature_phases": [],
       "source_zip": "References/addon-sources/bugsack/BugSack-v12.1.9.zip",
       "source_page_url": "https://www.curseforge.com/wow/addons/bugsack/files/9336367",
@@ -16107,6 +16225,7 @@
     {
       "name": "BugGrabber",
       "role": "comparison",
+      "source_dir": "addon-sources",
       "feature_phases": [],
       "source_zip": "References/addon-sources/bug-grabber/!BugGrabber-v12.1.1.zip",
       "source_page_url": "https://www.curseforge.com/wow/addons/bug-grabber/files/9277326",

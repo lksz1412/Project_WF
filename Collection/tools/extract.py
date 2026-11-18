@@ -71,13 +71,14 @@ COMPARISON_NAMES = [
 ]
 
 # Feature Phase table of the master plan
-# (Claude/plans/2026-11-18-devil-forever-addon-collection-plan.md:208-228),
+# (Claude/plans/2026-11-18-devil-forever-addon-collection-plan.md:209-229),
 # keyed by the package directory relative to References/.
 # use: "start" = the Phase's start addon, "comparison" = 비교, "reference" = 참고.
+# A package's role is "start" when any of its uses is "start".
 FEATURE_PHASES = {
     "forever-addons/Masque": [(2, "start")],
     "forever-addons/Masque Onyx": [(2, "start")],
-    "forever-addons/Dominos": [(3, "start"), (19, "start")],
+    "forever-addons/Dominos": [(3, "start"), (19, "comparison")],
     "addon-sources/bartender4": [(3, "comparison")],
     "forever-addons/Prat-3.0": [(4, "start")],
     "forever-addons/Glass Forever": [(4, "comparison")],
@@ -105,7 +106,7 @@ FEATURE_PHASES = {
     "addon-sources/kaliels-tracker": [(17, "start")],
     "addon-sources/questie": [(17, "reference")],
     "addon-sources/mapster": [(18, "start")],
-    "addon-sources/experience-forever": [(19, "comparison")],
+    "addon-sources/experience-forever": [(19, "start")],
     "addon-sources/profilemanager": [(20, "start")],
     "addon-sources/reflux": [(20, "comparison")],
     "addon-sources/edit-mode-expanded": [(21, "comparison")],
@@ -339,7 +340,7 @@ def collect_packages():
     for name in sorted(os.listdir(START_ROOT)):
         pkg_dir = os.path.join(START_ROOT, name)
         if os.path.isfile(os.path.join(pkg_dir, "SOURCE.txt")):
-            packages.append({"name": name, "ref_dir": "forever-addons/" + name, "role": "start"})
+            packages.append({"name": name, "ref_dir": "forever-addons/" + name})
     index = parse_index()
     missing = []
     start_dirs = {p["ref_dir"] for p in packages}
@@ -350,19 +351,34 @@ def collect_packages():
             continue
         if ref_dir in start_dirs:
             continue
-        packages.append({"name": brief_name, "ref_dir": ref_dir, "role": "comparison"})
+        packages.append({"name": brief_name, "ref_dir": ref_dir})
+    for pkg in packages:
+        pkg["source_dir"] = pkg["ref_dir"].split("/", 1)[0]
+        uses = [use for _phase, use in FEATURE_PHASES.get(pkg["ref_dir"], [])]
+        pkg["role"] = "start" if "start" in uses else "comparison"
     return packages, missing
 
 
 def comparison_also_start(packages):
-    """Brief-named comparison packages that are already in the start set."""
+    """Brief-named comparison packages whose ZIP is already in References/forever-addons/."""
     index = parse_index()
-    start_dirs = {p["ref_dir"] for p in packages if p["role"] == "start"}
+    start_dirs = {p["ref_dir"] for p in packages if p["source_dir"] == "forever-addons"}
     return sorted(b for b, i in COMPARISON_NAMES if index.get(i) in start_dirs)
+
+
+def existing_how_to_use():
+    """how_to_use values of the current manifest.json, keyed by source_zip (kept on regeneration)."""
+    path = os.path.join(COLLECTION, "manifest.json")
+    if not os.path.isfile(path):
+        return {}
+    with open(path, encoding="utf-8") as fh:
+        old = json.load(fh)
+    return {p["source_zip"]: p.get("how_to_use") for p in old.get("packages", []) if p.get("source_zip")}
 
 
 def build_manifest(do_extract):
     packages, missing = collect_packages()
+    kept_how_to_use = existing_how_to_use()
     out = []
     errors = []
     for pkg in packages:
@@ -372,6 +388,7 @@ def build_manifest(do_extract):
         entry = {
             "name": pkg["name"],
             "role": pkg["role"],
+            "source_dir": pkg["source_dir"],
             "feature_phases": [
                 {"phase": ph, "use": use} for ph, use in FEATURE_PHASES.get(pkg["ref_dir"], [])
             ],
@@ -380,8 +397,8 @@ def build_manifest(do_extract):
             "sha256": source["sha256"],
             "version": source["version"],
             "file_id": source["file_id"],
-            "how_to_use": None,
         }
+        entry["how_to_use"] = kept_how_to_use.get(entry["source_zip"])
         if not os.path.isfile(zip_path):
             errors.append("%s: zip not found %s" % (pkg["name"], entry["source_zip"]))
             continue
@@ -429,25 +446,47 @@ def md_cell(value):
     return str(value).replace("|", "\\|")
 
 
+def how_to_use_cell(value):
+    if isinstance(value, dict):
+        return md_cell(value.get("verdict"))
+    return md_cell(value)
+
+
+def deps_cell(toc):
+    """Required deps per TOC line, each line's [allow|exclude game types] condition appended."""
+    parts = []
+    for field in ("Dependencies", "RequiredDeps"):
+        for line in toc["list_lines"].get(field, []):
+            if not line["items"]:
+                continue
+            text = ", ".join(line["items"])
+            for cond in line["conditions"]:
+                text += " [%s %s]" % (cond["kind"], ", ".join(cond["game_types"]))
+            parts.append(text)
+    return md_cell("; ".join(parts) if parts else None)
+
+
 def write_markdown(manifest, path):
     lines = [
         "# Collection manifest (generated by `Collection/tools/extract.py` — do not edit by hand)",
         "",
-        "Target client TOC Interface: %d. `how_to_use` is filled later (A1 judgment)." % manifest["target_interface"],
+        "Target client TOC Interface: %d. `how_to_use` = A1 judgment verdict (kept across regeneration); "
+        "role = start when the package is a start addon of any feature Phase." % manifest["target_interface"],
         "",
         "## Packages",
         "",
-        "| Package | Role | Feature Phases | Version | File ID | SHA256 ok | Addon folders | Folders with %d "
-        "| Folders with %d and forever_load≠no | License files |"
+        "| Package | Role | Source dir | Feature Phases | how_to_use | Version | File ID | SHA256 ok | Addon folders "
+        "| Folders with %d | Folders with %d and forever_load≠no | License files |"
         % (manifest["target_interface"], manifest["target_interface"]),
-        "|---|---|---|---|---|---|---|---|---|---|",
+        "|---|---|---|---|---|---|---|---|---|---|---|---|",
     ]
     key = "has_interface_%d" % manifest["target_interface"]
     for p in manifest["packages"]:
         addons = p.get("addons", [])
         phases = ", ".join("%d %s" % (f["phase"], f["use"]) for f in p["feature_phases"]) or "—"
-        lines.append("| %s | %s | %s | %s | %s | %s | %d | %d | %d | %s |" % (
-            md_cell(p["name"]), p["role"], phases, md_cell(p["version"]), md_cell(p["file_id"]),
+        lines.append("| %s | %s | %s | %s | %s | %s | %s | %s | %d | %d | %d | %s |" % (
+            md_cell(p["name"]), p["role"], p["source_dir"], phases, how_to_use_cell(p.get("how_to_use")),
+            md_cell(p["version"]), md_cell(p["file_id"]),
             "yes" if p.get("sha256_verified") else "NO", len(addons),
             sum(1 for a in addons if a.get(key)),
             sum(1 for a in addons if a.get("has_forever_loadable_toc")), md_cell(p.get("license_files")),
@@ -456,12 +495,15 @@ def write_markdown(manifest, path):
         "",
         "Comparison names not found: %s" % (md_cell(manifest["comparison_names_missing"])),
         "",
-        "Comparison names already in the start set: %s" % (md_cell(manifest["comparison_names_in_start_set"])),
+        "Comparison names whose ZIP is in References/forever-addons/: %s"
+        % (md_cell(manifest["comparison_names_in_start_set"])),
         "",
         "## Addon folders",
         "",
         "forever_load: yes = no header game-type restriction or Allow lists forever/camelot; "
-        "no = Allow without them or Exclude lists them (camelot = Forever is inferred, unverified).",
+        "check = Allow lists mainline but not forever/camelot (Forever runs the Mainline UI — inferred, Codex checks); "
+        "no = Exclude lists forever/camelot, or Allow lists none of forever/camelot/mainline "
+        "(camelot = Forever is inferred, unverified). Deps show a line's load condition in brackets.",
         "",
         "| Package | Folder | TOC | Interface | Forever load | Version | Deps (required) | OptionalDeps | SavedVariables | SV per character | LoadOnDemand | Lua (libs) | Libs |",
         "|---|---|---|---|---|---|---|---|---|---|---|---|---|",
@@ -469,15 +511,12 @@ def write_markdown(manifest, path):
     for p in manifest["packages"]:
         for a in p.get("addons", []):
             for i, t in enumerate(a["tocs"]):
-                deps = []
-                for d in (t["dependencies"] or []) + (t["required_deps"] or []):
-                    if d not in deps:
-                        deps.append(d)
+                deps = deps_cell(t)
                 lines.append("| %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s |" % (
                     md_cell(p["name"]) if i == 0 else "",
                     md_cell(a["folder"]) if i == 0 else "",
                     md_cell(t["file"]), md_cell(t["interface"]), t["forever_load"], md_cell(t["version"]),
-                    md_cell(deps), md_cell(t["optional_deps"]), md_cell(t["saved_variables"]),
+                    deps, md_cell(t["optional_deps"]), md_cell(t["saved_variables"]),
                     md_cell(t["saved_variables_per_character"]), md_cell(t["load_on_demand"]),
                     "%d (%d)" % (a["lua_files"], a["lua_files_in_libs"]) if i == 0 else "",
                     md_cell([lib["name"] for lib in a["embedded_libs"]]) if i == 0 else "",
@@ -498,9 +537,13 @@ def main():
     write_markdown(manifest, os.path.join(COLLECTION, "manifest.md"))
     pkgs = manifest["packages"]
     folders = sum(len(p.get("addons", [])) for p in pkgs)
-    print("packages=%d start=%d comparison=%d addon_folders=%d missing_names=%d errors=%d" % (
-        len(pkgs), sum(p["role"] == "start" for p in pkgs), sum(p["role"] == "comparison" for p in pkgs),
-        folders, len(manifest["comparison_names_missing"]), len(errors)))
+    print("packages=%d start=%d comparison=%d forever_addons=%d addon_sources=%d addon_folders=%d "
+          "missing_names=%d how_to_use_filled=%d errors=%d" % (
+              len(pkgs), sum(p["role"] == "start" for p in pkgs), sum(p["role"] == "comparison" for p in pkgs),
+              sum(p["source_dir"] == "forever-addons" for p in pkgs),
+              sum(p["source_dir"] == "addon-sources" for p in pkgs),
+              folders, len(manifest["comparison_names_missing"]),
+              sum(p.get("how_to_use") is not None for p in pkgs), len(errors)))
     for err in errors:
         print("ERROR " + err)
     return 1 if errors else 0

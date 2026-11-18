@@ -1,0 +1,501 @@
+{
+  "schema": "devil-forever-classes/1",
+  "status": "addon-author data, not an official Forever list; to be confirmed by Codex (Collection/codex-briefs/phase1.md item 4)",
+  "class_count": 9,
+  "class_count_basis": [
+    "9 Hekili class modules: Collection/manifest.md:125-134 (Hekili_Druid ... Hekili_Warrior)",
+    "Collection/upstream/Forever_Unit_Frames-0.65.2/ForeverUnitFrames/Raid/BuffData.lua:68 Data.CLASSES (9 tokens)",
+    "Collection/upstream/Forever_Unit_Frames-0.65.2/ForeverUnitFrames/Raid/Settings.lua:30-31 sort-order fallback (9 tokens)"
+  ],
+  "spec_model": "Hekili: one spec per talent tree, ids ns.TreeSpecID(class id, slot); unsupported specs get no displays (Collection/upstream/Hekili-v0.8.6/Hekili/Engine/Schema/Spec/Kits.lua:108-151; unsupported -> options.enabled = false at :141)",
+  "fuf_spec_data": "source missing (FUF has class-specific elements, no spec list)",
+  "classes": [
+    {
+      "token": "WARRIOR",
+      "hekili_module": "Hekili_Warrior",
+      "hekili_class_def": "Collection/upstream/Hekili-v0.8.6/Hekili_Warrior/Warrior.lua:39-52",
+      "specs": [
+        {
+          "key": "arms",
+          "name": "Arms",
+          "talent_tree": 1,
+          "role": "attack",
+          "hekili_priorities": "yes",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Warrior/Warrior.lua:41"
+        },
+        {
+          "key": "fury",
+          "name": "Fury",
+          "talent_tree": 2,
+          "role": "attack",
+          "hekili_priorities": "yes",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Warrior/Warrior.lua:42"
+        },
+        {
+          "key": "protection",
+          "name": "Protection",
+          "talent_tree": 3,
+          "role": "tank",
+          "hekili_priorities": "yes",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Warrior/Warrior.lua:43-50"
+        }
+      ],
+      "resources": [
+        {
+          "power": "Rage",
+          "kind": "primary",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Warrior/Warrior.lua:290-291"
+        }
+      ],
+      "special_bars": [
+        {
+          "kind": "stance",
+          "items": [
+            "battle_stance",
+            "berserker_stance",
+            "defensive_stance"
+          ],
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Warrior/Warrior.lua:569,579,633,849-852",
+          "note": "action bar side: Dominos stance bar Collection/upstream/Dominos-12.0.4/Dominos/Dominos.toc:46"
+        }
+      ]
+    },
+    {
+      "token": "PALADIN",
+      "hekili_module": "Hekili_Paladin",
+      "hekili_class_def": "Collection/upstream/Hekili-v0.8.6/Hekili_Paladin/Paladin.lua:37-58",
+      "specs": [
+        {
+          "key": "holy",
+          "name": "Holy",
+          "talent_tree": 1,
+          "role": "healer",
+          "hekili_priorities": "no (unsupported = true: no displays)",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Paladin/Paladin.lua:39"
+        },
+        {
+          "key": "protection",
+          "name": "Protection",
+          "talent_tree": 2,
+          "role": "tank",
+          "hekili_priorities": "yes",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Paladin/Paladin.lua:40-47"
+        },
+        {
+          "key": "retribution",
+          "name": "Retribution",
+          "talent_tree": 3,
+          "role": "attack",
+          "hekili_priorities": "yes",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Paladin/Paladin.lua:48-56"
+        }
+      ],
+      "resources": [
+        {
+          "power": "Mana",
+          "kind": "primary",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Paladin/Paladin.lua:258"
+        }
+      ],
+      "special_bars": [
+        {
+          "kind": "aura (one up at a time)",
+          "items": [
+            "devotion_aura",
+            "retribution_aura",
+            "concentration_aura",
+            "fire_resistance_aura",
+            "frost_resistance_aura",
+            "shadow_resistance_aura"
+          ],
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Paladin/Paladin.lua:386,429-436",
+          "note": "whether Forever shows the auras on the stance bar: source missing"
+        }
+      ]
+    },
+    {
+      "token": "HUNTER",
+      "hekili_module": "Hekili_Hunter",
+      "hekili_class_def": "Collection/upstream/Hekili-v0.8.6/Hekili_Hunter/Hunter.lua:38-77",
+      "specs": [
+        {
+          "key": "beast_mastery",
+          "name": "Beast Mastery",
+          "talent_tree": 1,
+          "role": "attack",
+          "hekili_priorities": "yes",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Hunter/Hunter.lua:40-51"
+        },
+        {
+          "key": "marksmanship",
+          "name": "Marksmanship",
+          "talent_tree": 2,
+          "role": "attack",
+          "hekili_priorities": "yes",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Hunter/Hunter.lua:52-63"
+        },
+        {
+          "key": "survival",
+          "name": "Survival",
+          "talent_tree": 3,
+          "role": "attack",
+          "hekili_priorities": "yes",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Hunter/Hunter.lua:64-75"
+        }
+      ],
+      "resources": [
+        {
+          "power": "Mana",
+          "kind": "primary",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Hunter/Hunter.lua:328-329",
+          "note": "module header: the Forever Hunter spends mana, never focus (Collection/upstream/Hekili-v0.8.6/Hekili_Hunter/Hunter.lua:3-4)"
+        },
+        {
+          "power": "pet power",
+          "kind": "pet",
+          "source": "source missing",
+          "note": "FUF has a generic Focus colour key (Collection/upstream/Forever_Unit_Frames-0.65.2/ForeverUnitFrames/Elements/Power.lua:16); which power the Forever hunter pet uses: source missing"
+        }
+      ],
+      "special_bars": [
+        {
+          "kind": "pet",
+          "items": [
+            "pet (pet_out)",
+            "Summon Hawk guardians (cap 2, 18 s)"
+          ],
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Hunter/Hunter.lua:360-362,365-371; Collection/upstream/Forever_Unit_Frames-0.65.2/ForeverUnitFrames/Elements/PetHappiness.lua:3-9,50-54",
+          "note": "pet action bar: Dominos pet bar Collection/upstream/Dominos-12.0.4/Dominos/Dominos.toc:43. Aspects are registered as spells (Collection/upstream/Hekili-v0.8.6/Hekili_Hunter/Hunter.lua:100-104); whether they sit on a stance bar: source missing"
+        }
+      ]
+    },
+    {
+      "token": "ROGUE",
+      "hekili_module": "Hekili_Rogue",
+      "hekili_class_def": "Collection/upstream/Hekili-v0.8.6/Hekili_Rogue/Rogue.lua:34-61",
+      "specs": [
+        {
+          "key": "assassination",
+          "name": "Assassination",
+          "talent_tree": 1,
+          "role": "attack",
+          "hekili_priorities": "yes",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Rogue/Rogue.lua:36-43"
+        },
+        {
+          "key": "combat",
+          "name": "Combat",
+          "talent_tree": 2,
+          "role": "attack",
+          "hekili_priorities": "yes",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Rogue/Rogue.lua:44-51"
+        },
+        {
+          "key": "subtlety",
+          "name": "Subtlety",
+          "talent_tree": 3,
+          "role": "attack",
+          "hekili_priorities": "yes",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Rogue/Rogue.lua:52-59"
+        }
+      ],
+      "resources": [
+        {
+          "power": "Energy",
+          "kind": "primary",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Rogue/Rogue.lua:156-157"
+        },
+        {
+          "power": "ComboPoints",
+          "kind": "secondary",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Rogue/Rogue.lua:148",
+          "note": "FUF draws them on the target frame (Collection/upstream/Forever_Unit_Frames-0.65.2/ForeverUnitFrames/Elements/ComboPoints.lua:3-5,19-23)"
+        }
+      ],
+      "special_bars": [
+        {
+          "kind": "stealth",
+          "items": [
+            "stealth"
+          ],
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Rogue/Rogue.lua:309-316; Collection/upstream/Hekili-v0.8.6/Hekili/Game/State/Sources/Forms.lua:8-10",
+          "note": "Dominos stance bar Collection/upstream/Dominos-12.0.4/Dominos/Dominos.toc:46 (whether Forever lists Stealth there: source missing)"
+        }
+      ]
+    },
+    {
+      "token": "PRIEST",
+      "hekili_module": "Hekili_Priest",
+      "hekili_class_def": "Collection/upstream/Hekili-v0.8.6/Hekili_Priest/Priest.lua:45-67",
+      "specs": [
+        {
+          "key": "discipline",
+          "name": "Discipline",
+          "talent_tree": 1,
+          "role": "attack",
+          "hekili_priorities": "yes",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Priest/Priest.lua:47-55",
+          "note": "priority pack = Smite (wowsims.com)"
+        },
+        {
+          "key": "holy",
+          "name": "Holy",
+          "talent_tree": 2,
+          "role": "healer",
+          "hekili_priorities": "no (unsupported = true: no displays)",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Priest/Priest.lua:56"
+        },
+        {
+          "key": "shadow",
+          "name": "Shadow",
+          "talent_tree": 3,
+          "role": "attack",
+          "hekili_priorities": "yes",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Priest/Priest.lua:57-65"
+        }
+      ],
+      "resources": [
+        {
+          "power": "Mana",
+          "kind": "primary",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Priest/Priest.lua:234-235"
+        }
+      ],
+      "special_bars": [
+        {
+          "kind": "form",
+          "items": [
+            "shadowform"
+          ],
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Priest/Priest.lua:5,286-291"
+        }
+      ]
+    },
+    {
+      "token": "SHAMAN",
+      "hekili_module": "Hekili_Shaman",
+      "hekili_class_def": "Collection/upstream/Hekili-v0.8.6/Hekili_Shaman/Shaman.lua:48-69",
+      "specs": [
+        {
+          "key": "elemental",
+          "name": "Elemental",
+          "talent_tree": 1,
+          "role": "attack",
+          "hekili_priorities": "yes",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Shaman/Shaman.lua:50-58"
+        },
+        {
+          "key": "enhancement",
+          "name": "Enhancement",
+          "talent_tree": 2,
+          "role": "attack",
+          "hekili_priorities": "yes",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Shaman/Shaman.lua:59-66"
+        },
+        {
+          "key": "restoration",
+          "name": "Restoration",
+          "talent_tree": 3,
+          "role": "healer",
+          "hekili_priorities": "no (unsupported = true: no displays)",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Shaman/Shaman.lua:67"
+        }
+      ],
+      "resources": [
+        {
+          "power": "Mana",
+          "kind": "primary",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Shaman/Shaman.lua:496-497"
+        }
+      ],
+      "special_bars": [
+        {
+          "kind": "totem (4 slots: earth, fire, water, air)",
+          "items": [
+            "totem slots"
+          ],
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Shaman/Shaman.lua:534-537; Collection/upstream/Forever_Unit_Frames-0.65.2/ForeverUnitFrames/Elements/Totems.lua:56-64,114",
+          "note": "Dominos totem bar loads on camelot (Collection/upstream/Dominos-12.0.4/Dominos/Dominos.toc:48-52, core/addressMap.lua:173)"
+        }
+      ]
+    },
+    {
+      "token": "MAGE",
+      "hekili_module": "Hekili_Mage",
+      "hekili_class_def": "Collection/upstream/Hekili-v0.8.6/Hekili_Mage/Mage.lua:40-70",
+      "specs": [
+        {
+          "key": "arcane",
+          "name": "Arcane",
+          "talent_tree": 1,
+          "role": "attack",
+          "hekili_priorities": "yes",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Mage/Mage.lua:42-50"
+        },
+        {
+          "key": "fire",
+          "name": "Fire",
+          "talent_tree": 2,
+          "role": "attack",
+          "hekili_priorities": "yes",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Mage/Mage.lua:51-59"
+        },
+        {
+          "key": "frost",
+          "name": "Frost",
+          "talent_tree": 3,
+          "role": "attack",
+          "hekili_priorities": "yes",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Mage/Mage.lua:60-68"
+        }
+      ],
+      "resources": [
+        {
+          "power": "Mana",
+          "kind": "primary",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Mage/Mage.lua:239-240"
+        }
+      ],
+      "special_bars": []
+    },
+    {
+      "token": "WARLOCK",
+      "hekili_module": "Hekili_Warlock",
+      "hekili_class_def": "Collection/upstream/Hekili-v0.8.6/Hekili_Warlock/Warlock.lua:55-87",
+      "specs": [
+        {
+          "key": "affliction",
+          "name": "Affliction",
+          "talent_tree": 1,
+          "role": "attack",
+          "hekili_priorities": "yes",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Warlock/Warlock.lua:57-65"
+        },
+        {
+          "key": "demonology",
+          "name": "Demonology",
+          "talent_tree": 2,
+          "role": "attack",
+          "hekili_priorities": "yes",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Warlock/Warlock.lua:66-75"
+        },
+        {
+          "key": "destruction",
+          "name": "Destruction",
+          "talent_tree": 3,
+          "role": "attack",
+          "hekili_priorities": "yes",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Warlock/Warlock.lua:76-85"
+        }
+      ],
+      "resources": [
+        {
+          "power": "Mana",
+          "kind": "primary",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Warlock/Warlock.lua:241-242"
+        },
+        {
+          "power": "Soul Shard (item count, item 6265)",
+          "kind": "reagent, not a power bar",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Warlock/Warlock.lua:142,279-280"
+        }
+      ],
+      "special_bars": [
+        {
+          "kind": "pet",
+          "items": [
+            "imp",
+            "voidwalker",
+            "succubus",
+            "incubus",
+            "felhunter"
+          ],
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Warlock/Warlock.lua:308-314",
+          "note": "pet action bar: Dominos pet bar Collection/upstream/Dominos-12.0.4/Dominos/Dominos.toc:43"
+        }
+      ]
+    },
+    {
+      "token": "DRUID",
+      "hekili_module": "Hekili_Druid",
+      "hekili_class_def": "Collection/upstream/Hekili-v0.8.6/Hekili_Druid/Druid.lua:34-65",
+      "specs": [
+        {
+          "key": "balance",
+          "name": "Balance",
+          "talent_tree": 1,
+          "role": "attack",
+          "hekili_priorities": "yes",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Druid/Druid.lua:36-44"
+        },
+        {
+          "key": "feral",
+          "name": "Feral",
+          "talent_tree": 2,
+          "role": "attack",
+          "hekili_priorities": "yes",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Druid/Druid.lua:45-53",
+          "note": "Feral and Guardian share the Feral Combat tree (Collection/upstream/Hekili-v0.8.6/Hekili_Druid/Druid.lua:31-33)"
+        },
+        {
+          "key": "guardian",
+          "name": "Guardian",
+          "talent_tree": 2,
+          "role": "tank",
+          "hekili_priorities": "yes",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Druid/Druid.lua:54-62",
+          "note": "picked by Thick Hide 3/3 (Collection/upstream/Hekili-v0.8.6/Hekili_Druid/Druid.lua:31-33)"
+        },
+        {
+          "key": "restoration",
+          "name": "Restoration",
+          "talent_tree": 3,
+          "role": "healer",
+          "hekili_priorities": "no (unsupported = true: no displays)",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Druid/Druid.lua:63"
+        }
+      ],
+      "resources": [
+        {
+          "power": "Mana",
+          "kind": "primary (caster form)",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Druid/Druid.lua:322-323"
+        },
+        {
+          "power": "Energy",
+          "kind": "form (cat)",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Druid/Druid.lua:238-243"
+        },
+        {
+          "power": "ComboPoints",
+          "kind": "form (cat)",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Druid/Druid.lua:244"
+        },
+        {
+          "power": "Rage",
+          "kind": "form (bear)",
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Druid/Druid.lua:246-247"
+        },
+        {
+          "power": "Mana while shapeshifted",
+          "kind": "secondary strip",
+          "source": "Collection/upstream/Forever_Unit_Frames-0.65.2/ForeverUnitFrames/Elements/DruidMana.lua:3-8,56-69"
+        }
+      ],
+      "special_bars": [
+        {
+          "kind": "form",
+          "items": [
+            "cat_form",
+            "bear_form",
+            "moonkin_form",
+            "travel_form",
+            "aquatic_form"
+          ],
+          "source": "Collection/upstream/Hekili-v0.8.6/Hekili_Druid/Druid.lua:84-87,168-169",
+          "note": "Dominos stance bar Collection/upstream/Dominos-12.0.4/Dominos/Dominos.toc:46"
+        }
+      ]
+    }
+  ]
+}

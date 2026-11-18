@@ -64,11 +64,27 @@ def split_conditions(value):
     return _CONDITION_RE.sub(" ", value).strip(), conditions
 
 
+# Forever runs the Mainline UI (Aurora Skin/init.lua:10-16), so a "mainline"
+# allow list may still load there; inferred, to be checked in game.
+MAINLINE_GAME_TYPES = {"mainline"}
+
+
 def forever_load(allow, exclude):
-    """"yes"/"no" for the header game-type restriction (see FOREVER_GAME_TYPES)."""
+    """"yes"/"check"/"no" for the header game-type restriction.
+
+    no    = Exclude lists a FOREVER_GAME_TYPES name, or Allow lists neither a
+            FOREVER_GAME_TYPES nor a MAINLINE_GAME_TYPES name
+    check = Allow lists mainline but no FOREVER_GAME_TYPES name
+    yes   = otherwise (no restriction, or Allow lists forever/camelot)
+    """
     if exclude and FOREVER_GAME_TYPES & {g.lower() for g in exclude}:
         return "no"
-    if allow is not None and not FOREVER_GAME_TYPES & {g.lower() for g in allow}:
+    if allow is not None:
+        names = {g.lower() for g in allow}
+        if FOREVER_GAME_TYPES & names:
+            return "yes"
+        if MAINLINE_GAME_TYPES & names:
+            return "check"
         return "no"
     return "yes"
 
@@ -194,20 +210,21 @@ def interface_numbers(toc):
 def tocs_for_interface(folder_path, interface):
     """Parsed TOCs of a folder whose Interface lists ``interface``.
 
-    Among those, TOCs with ``forever_load == "no"`` are dropped when another
-    one remains. Returns (list of (toc_name, parsed), status) where status is
-    "matched", "forever_load_no" (every matching TOC is restricted away from
-    Forever; they are still returned) or "no_interface" (no TOC lists the
-    interface; the fallback is the plain ``Folder.toc`` if present, otherwise
-    every own TOC).
+    Among those, the best ``forever_load`` rank is kept (yes > check > no).
+    Returns (list of (toc_name, parsed), status) where status is "matched"
+    (yes), "forever_load_check" (only "check" TOCs), "forever_load_no" (every
+    matching TOC is restricted away from Forever; they are still returned) or
+    "no_interface" (no TOC lists the interface; the fallback is the plain
+    ``Folder.toc`` if present, otherwise every own TOC).
     """
     names = own_tocs(folder_path)
     parsed = [(n, parse_toc(os.path.join(folder_path, n))) for n in names]
     hits = [(n, t) for n, t in parsed if interface in interface_numbers(t)]
     if hits:
-        loadable = [(n, t) for n, t in hits if t["forever_load"] != "no"]
-        if loadable:
-            return loadable, "matched"
+        for rank, status in (("yes", "matched"), ("check", "forever_load_check")):
+            best = [(n, t) for n, t in hits if t["forever_load"] == rank]
+            if best:
+                return best, status
         return hits, "forever_load_no"
     folder_name = os.path.basename(os.path.normpath(folder_path))
     plain = [(n, t) for n, t in parsed if n[:-4].lower() == folder_name.lower()]

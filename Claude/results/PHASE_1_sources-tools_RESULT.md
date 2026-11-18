@@ -1,0 +1,49 @@
+# PHASE 1 — 원천·도구·판정 RESULT
+
+## Summary
+
+받은 ZIP 39묶음을 안전하게 풀고(SHA256 39/39) 애드온 98폴더 목록(manifest)을 만들었다. 정적 검사 도구(Lua 문법·TOC 의존·묶음 빌드)를 만들어 검수 지적 2건을 고쳤다. 기능별 쓰는 방식 판정: 그대로 1·설정 14·고침 1(Mapster)·새 개발 5(Core·Hekili 보완·저장 복원·편집기·테마 인터페이스). 직업 9개·특성 28개 표와 Phase 1 Codex 실사용 검증 발주문을 만들었다. 판정으로 계획 행 18·19·21 을 바꿨고 Claude 몫 합계는 35–63시간.
+
+## Step Range
+
+Step 8–10
+
+## Inputs
+
+References/forever-addons/ (13), References/addon-sources/ (26 of 58 used), 마스터 플랜, Phase 1 세부 계획서, Codex ANALYSIS.md
+
+## Files Created
+
+Collection/tools/{toclib,extract,luacheck,tocdeps,build}.py, Collection/manifest.{json,md}, Collection/judgment.md, Collection/data/classes.{json,md}, Collection/codex-briefs/phase1.md, Collection/AddOns/.gitkeep, outputs/collection/DevilForever-collection.zip(빈 묶음), Step 8·9·10 이력, Claude/results/handoffs/phase1/
+
+## Files Updated
+
+.gitignore(+Collection/upstream/), 마스터 플랜(기능 표 18·19·21, 목차, 합계, Correction History)
+
+## Read Coverage
+
+master: Phase 1 착수 때 마스터 플랜 1–359 재독, Devilconfig.toc 1–15, V42 Mapster.toc:10, Aurora Skin/init.lua:10–16, phase1 Codex 발주문 1–60, toclib.py:63–79, extract.py:302, 검수 보고 전문. A1·A2·B 읽은 범위 = iter_1/work_log-a1.md · work_log-a2.md · 검수 보고(TRIAGE_phase1.md 인용).
+
+## Execution Evidence
+
+Step 8·9·10 이력과 work_log-a2.md 판정 줄(luacheck 322/0, tocdeps start unresolved 0, extract 재실행 동일, 위험 ZIP 5/5 거부).
+
+## Validation·Gate·Confirmed
+
+도구 코드 논리 검수 1회(B): 중대 0·중간 2·경미 5 → 중간 2·경미 1 고침, master 확인. 판정 문서 = master 인용 확인(R87). Codex 실사용 검증(phase1 발주문)은 사용자가 Codex 에 넘길 몫 — 결과 대기.
+
+## Non-Changes
+
+References/·Codex/·work/·SourceArchive/·MacroLibrary/ 무변경. 애드온 코드 수정 없음.
+
+## Open Issues
+
+Mapster 로드 가능 여부·TOC 접미사(_Forever/_Camelot) 선택·직업 목록은 Codex 확인 대기. lupa 는 컨테이너마다 다시 설치. 경미 4건(도구) → 최종 보고.
+
+## Decision Queue
+
+Bartender4 조건부 의존 줄 필터링 안 함(A2 기본값). Phase 21 편집기 3라운드 검수(master). Questie 는 Phase 17 참고.
+
+## Next
+
+Phase 2 Step 11 — DevilForever_Core(등록 표·기본값 주입·테마 토큰·편집값 읽기·프레임 이름 목록)
