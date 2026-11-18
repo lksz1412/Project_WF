@@ -7,4 +7,4 @@ Language: English. Review per R87 exception: Core = new structure module → 3 r
 | Step | Work | Owner | Gate | Review | Est. | Status |
 |---|---|---|---|---|---|---|
 | 11 | !DevilForever_Core (see Step 11 history) | A2 | done | 3 rounds + 2 rechecks + master check | 150–240 | ✅ |
-| 12 | Apply review fixes; write Codex appearance brief `Collection/codex-briefs/appearance-2.md` (Step 5 design: 3840×2160, 80px buttons, 304px bottom block, 28px status strip, 3 chats, minimap, center 8×3, long top row, end caps; input pass-through; texture judgment R52; token/edit-value read contract; frame names; V42 reset code to exclude) and Codex real-use brief `Collection/codex-briefs/phase2.md` | A2 (fixes) + master/A2 (briefs) | briefs exist; ≤10 items each with how/expected/result line | master check | 45–90 | ⏳ |
+| 12 | Codex briefs (see Step 12 history) | A2 | done | master check | 45–90 | ✅ |

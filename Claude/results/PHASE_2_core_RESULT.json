@@ -1,0 +1,14 @@
+{
+ "Summary": "공통 외관의 코드 기반 !DevilForever_Core 를 만들었다(등록 표·기본값 주입·테마 토큰·편집값 API, 전투 중 보호 프레임 변경 없음). 논리 테스트 39/39, 검수 3라운드 + 재검증 2회로 중대·중간 0. Codex 공통 외관 발주문과 Phase 2 실사용 검증 발주문을 썼다.",
+ "Step Range": "Step 11–12",
+ "Inputs": "마스터 플랜 Interfaces·Changes, manifest.json, judgment.md, V42 !DevilUI 기전, upstream AceDB-3.0·Platynator(대조)",
+ "Files Created": "Collection/AddOns/!DevilForever_Core/**, Collection/tools/genregistry.py, Collection/tests/core/**, Collection/codex-briefs/{appearance-2,phase2}.md, Step 11·12 이력, handoffs/phase2/",
+ "Files Updated": "outputs/collection/DevilForever-collection.zip, 계획·세부 계획·judgment 의 Core 폴더 이름",
+ "Read Coverage": "master: 계획 302–448 재독(Phase 착수), Defaults.lua 135–138·203–208·grep, Theme.lua:84, AceDB-3.0.lua 263–278, appearance-2.md 1–20, 검수 보고 3건 전문. A2·B 범위 = work_log-a2.md 각 절·TRIAGE_phase2.md.",
+ "Execution Evidence": "Step 11·12 이력, work_log-a2.md 판정 줄",
+ "Validation·Gate·Confirmed": "검수 3라운드(중대1·중간3) → 재검증1(중간3) → 재검증2(중간1) → 근본 수정 → master 확인(테스트 재실행 39/39). 실사용(로드 순서·같은 이벤트 처리 순서)은 Codex phase2 발주문.",
+ "Non-Changes": "시작 애드온 원본·References·Codex 무변경",
+ "Open Issues": "편집 대기열 메모리만(경미 2), Clear 반환 불일치(경미 3), Details 캐릭터별 SV 메모(경미 a), ZIP 에 manifest·SHA 목록 미포함",
+ "Decision Queue": "외관 폴더 이름 DevilForever_Appearance 제안(Codex 선택 가능)",
+ "Next": "Phase 3 Step 13 — Dominos 설정 기본값·등록·발주문"
+}

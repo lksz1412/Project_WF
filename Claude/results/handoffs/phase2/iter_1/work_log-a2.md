@@ -159,3 +159,23 @@
 - `python3 -I Collection/tools/luacheck.py 'Collection/AddOns/!DevilForever_Core' Collection/tests/core/fixtures` → `checked=8 failed=0` rc0
 - `python3 -I Collection/tests/core/run.py` → `lupa=2.8 cases=39 passed=39 failed=0` rc0
 - `python3 -I Collection/tools/genregistry.py --check` → up to date (29720 bytes) rc0
+
+---
+
+# Step 12 — Codex briefs + install ZIP
+
+## Read
+- `Collection/codex-briefs/phase1.md` 1–75 (form)
+- `Codex/docs/devil-ui-old-4k-layout.md` 1–105
+- `Codex/results/old-devil-layout/layout-spec.json` (DB-type, Python): top-level keys, `tokens` in full, first entries of `actionGroups`/`elements`; `asset-manifest.json` keys and `licenseBoundary`
+- master plan 88–96, 136–160, 335–356 (R21–R24, R34, R50–R53, appearance/verify brief rules)
+- `Claude/results/REQUEST_LEDGER_phase2.md` line 3 (grep)
+- V42 `!DevilUI.lua` 1174–1184, 1643–1644; `minimap.lua` 815–838 (exclusion lines confirmed)
+- `!DevilForever_Core/Theme.lua` 24–43 (token names), `API.lua` 40–70
+- `Collection/tools/build.py` options (60–144 grep)
+
+## Steps
+- `python3 -I Collection/tools/build.py --select '!DevilForever_Core'` → `ERROR selected folder not in manifest` (--select is for upstream folders; Collection/AddOns is always included)
+- `python3 -I Collection/tools/build.py` ×2 → `built folders=1 files=8 zip_entries=10` rc0, both sha256 a502b46e3420ba1afca7ad66621a392fcf3e323d34215e08bf93662968736039 (replaces the tracked Phase 1 zip 9e37035f…)
+- Wrote `Collection/codex-briefs/appearance-2.md` and `Collection/codex-briefs/phase2.md` (8 items 0–7)
+- Snippet check (scratchpad `step12.o59n/check.py`, lupa harness with the generated registry, GetScript added to stub frames): probe → `True True`; item 2 → `true 20 devil 67 0`; item 4 → `0`; item 5 → `true applied`; item 6 → `true queued 1` then `4 0`. This checks the snippets run against Core logic only, not the client.

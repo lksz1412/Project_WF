@@ -29,3 +29,7 @@ Phase 0(Step 6–7): Codex 기록을 넘겨받아 마스터 플랜을 새로 썼
 ## Phase 1 끝 정리
 
 Phase 1(Step 8–10): 원천 해제·manifest·정적 도구·쓰는 방식 판정·직업 표·Codex 발주문. 판정으로 행 18·19·21 변경. Result = `Claude/results/PHASE_1_sources-tools_RESULT.md`.
+
+## Phase 2 끝 정리 (2026-11-18 14:33:42 +0900)
+
+Phase 2(Step 11–12): !DevilForever_Core 와 Codex 발주문 2건. 이 Phase 의 마스터 플랜 고침 = Core 폴더 이름 바꿈(단어 치환). Result = `Claude/results/PHASE_2_core_RESULT.md`.
