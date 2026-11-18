@@ -85,3 +85,7 @@ Phase 15 끝: Aurora 를 쓸지는 Codex 가 정한다(R107 ④). Codex 확인·
 ## Phase 19 끝 정리 (2026-11-18 19:15:42 +0900)
 
 Phase 19 끝: 경험치·평판·사냥꾼 소환수 경험치 막대는 Experience Forever 를 그대로 쓴다. 기본값이 이미 계획과 같아 Core 기본값 파일을 만들지 않았고(애드온 수·파일 수 최소), 같은 기능의 Dominos_Progress 는 넣지 않는다. Result = `Claude/results/PHASE_19_experience_RESULT.md`.
+
+## Phase 20 끝 정리 (2026-11-18 20:17:34 +0900)
+
+설정 저장·복원을 Core 안 모듈로(Profiles·Presets·Spec·Commands), PM 은 키·게임 설정. Result = `Claude/results/PHASE_20_profiles_RESULT.md`.

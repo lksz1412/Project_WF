@@ -197,7 +197,9 @@
       ],
       "saved_variables": {
         "DominosDB": {
-          "split": "class"
+          "split": "class",
+          "restore": "profile",
+          "shape": "acedb"
         }
       },
       "defaults": "Defaults/Dominos.lua"
@@ -327,7 +329,9 @@
       ],
       "saved_variables": {
         "Prat3DB": {
-          "split": "common"
+          "split": "common",
+          "restore": "whole",
+          "shape": "acedb"
         },
         "Prat3CharDB": {
           "split": "common"
@@ -372,7 +376,9 @@
       ],
       "saved_variables": {
         "SexyMap2DB": {
-          "split": "common"
+          "split": "common",
+          "restore": "whole",
+          "shape": "plain"
         }
       },
       "defaults": "Defaults/SexyMap.lua"
@@ -502,7 +508,9 @@
       ],
       "saved_variables": {
         "ForeverUnitFramesDB": {
-          "split": "common"
+          "split": "common",
+          "restore": "whole",
+          "shape": "plain"
         }
       }
     },
@@ -584,7 +592,9 @@
       ],
       "saved_variables": {
         "Quartz3DB": {
-          "split": "common"
+          "split": "common",
+          "restore": "whole",
+          "shape": "acedb"
         }
       }
     },
@@ -649,7 +659,9 @@
       ],
       "saved_variables": {
         "HekiliDB": {
-          "split": "common"
+          "split": "common",
+          "restore": "whole",
+          "shape": "acedb"
         }
       },
       "defaults": "Defaults/Hekili.lua"
@@ -725,7 +737,9 @@
       ],
       "saved_variables": {
         "PitBull4DB": {
-          "split": "common"
+          "split": "common",
+          "restore": "whole",
+          "shape": "acedb"
         }
       },
       "defaults": "Defaults/PitBull4.lua"
@@ -757,7 +771,9 @@
       ],
       "saved_variables": {
         "Grid2DB": {
-          "split": "common"
+          "split": "common",
+          "restore": "whole",
+          "shape": "acedb"
         }
       },
       "defaults": "Defaults/Grid2.lua"
@@ -797,10 +813,20 @@
       ],
       "saved_variables": {
         "_detalhes_global": {
-          "split": "common"
+          "split": "common",
+          "restore": "keys",
+          "shape": "plain",
+          "keys": [
+            "__profiles"
+          ]
         },
         "_detalhes_database": {
-          "split": "common"
+          "split": "common",
+          "restore": "keys",
+          "shape": "plain",
+          "keys": [
+            "active_profile"
+          ]
         }
       }
     },
@@ -870,7 +896,9 @@
       ],
       "saved_variables": {
         "DevilForever_StatusStripDB": {
-          "split": "common"
+          "split": "common",
+          "restore": "whole",
+          "shape": "plain"
         }
       }
     },
@@ -893,7 +921,36 @@
       ],
       "saved_variables": {
         "ExperienceForeverDB": {
-          "split": "common"
+          "split": "common",
+          "restore": "whole",
+          "shape": "acedb"
+        }
+      }
+    },
+    "Masque": {
+      "saved_variables": {
+        "MasqueDB": {
+          "split": "common",
+          "restore": "whole",
+          "shape": "acedb"
+        }
+      }
+    },
+    "Aurora": {
+      "saved_variables": {
+        "AuroraConfig": {
+          "split": "common",
+          "restore": "whole",
+          "shape": "plain"
+        }
+      }
+    },
+    "Details_Streamer": {
+      "saved_variables": {
+        "Details_StreamerDB": {
+          "split": "common",
+          "restore": "whole",
+          "shape": "plain"
         }
       }
     }

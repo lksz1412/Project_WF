@@ -17,6 +17,11 @@ Core.Registry = {
           scope = "account",
           split = "common",
         },
+        {
+          name = "DevilForever_ProfilesDB",
+          scope = "account",
+          split = "common",
+        },
       },
       tocStatus = "matched",
       tocs = {
@@ -66,7 +71,9 @@ Core.Registry = {
       savedVariables = {
         {
           name = "AuroraConfig",
+          restore = "whole",
           scope = "account",
+          shape = "plain",
           split = "common",
         },
       },
@@ -221,8 +228,13 @@ Core.Registry = {
       },
       savedVariables = {
         {
+          keys = {
+            "__profiles",
+          },
           name = "_detalhes_global",
+          restore = "keys",
           scope = "account",
+          shape = "plain",
           split = "common",
         },
         {
@@ -236,8 +248,13 @@ Core.Registry = {
           split = "common",
         },
         {
+          keys = {
+            "active_profile",
+          },
           name = "_detalhes_database",
+          restore = "keys",
           scope = "character",
+          shape = "plain",
           split = "common",
         },
       },
@@ -340,7 +357,9 @@ Core.Registry = {
       savedVariables = {
         {
           name = "Details_StreamerDB",
+          restore = "whole",
           scope = "account",
+          shape = "plain",
           split = "common",
         },
       },
@@ -530,7 +549,9 @@ Core.Registry = {
       savedVariables = {
         {
           name = "DevilForever_StatusStripDB",
+          restore = "whole",
           scope = "account",
+          shape = "plain",
           split = "common",
         },
       },
@@ -787,7 +808,9 @@ Core.Registry = {
       savedVariables = {
         {
           name = "DominosDB",
+          restore = "profile",
           scope = "account",
+          shape = "acedb",
           split = "class",
         },
       },
@@ -895,7 +918,9 @@ Core.Registry = {
       savedVariables = {
         {
           name = "ExperienceForeverDB",
+          restore = "whole",
           scope = "account",
+          shape = "acedb",
           split = "common",
         },
       },
@@ -1089,7 +1114,9 @@ Core.Registry = {
       savedVariables = {
         {
           name = "ForeverUnitFramesDB",
+          restore = "whole",
           scope = "account",
+          shape = "plain",
           split = "common",
         },
       },
@@ -1139,7 +1166,9 @@ Core.Registry = {
       savedVariables = {
         {
           name = "Grid2DB",
+          restore = "whole",
           scope = "account",
+          shape = "acedb",
           split = "common",
         },
       },
@@ -1266,7 +1295,9 @@ Core.Registry = {
       savedVariables = {
         {
           name = "HekiliDB",
+          restore = "whole",
           scope = "account",
+          shape = "acedb",
           split = "common",
         },
       },
@@ -1482,7 +1513,9 @@ Core.Registry = {
       savedVariables = {
         {
           name = "MasqueDB",
+          restore = "whole",
           scope = "account",
+          shape = "acedb",
           split = "common",
         },
       },
@@ -1620,7 +1653,9 @@ Core.Registry = {
       savedVariables = {
         {
           name = "PitBull4DB",
+          restore = "whole",
           scope = "account",
+          shape = "acedb",
           split = "common",
         },
       },
@@ -1829,7 +1864,9 @@ Core.Registry = {
       savedVariables = {
         {
           name = "Prat3DB",
+          restore = "whole",
           scope = "account",
+          shape = "acedb",
           split = "common",
         },
         {
@@ -1965,7 +2002,9 @@ Core.Registry = {
       savedVariables = {
         {
           name = "Quartz3DB",
+          restore = "whole",
           scope = "account",
+          shape = "acedb",
           split = "common",
         },
       },
@@ -2016,7 +2055,9 @@ Core.Registry = {
       savedVariables = {
         {
           name = "SexyMap2DB",
+          restore = "whole",
           scope = "account",
+          shape = "plain",
           split = "common",
         },
       },

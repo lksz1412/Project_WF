@@ -15,7 +15,8 @@
 -- Get(frameKey) layers, lowest first: field token (font: font.normal +
 -- font.size.normal, color: color.text.normal, spacing: spacing.default; a
 -- registry frame entry may name other tokens per field), registry item
--- default, stored edit value. font merges per key; other fields replace.
+-- default, value of the active layout preset (Presets.lua), stored edit
+-- value. font merges per key; other fields replace.
 --
 -- Set/Clear while InCombatLockdown() is true are held and written on
 -- PLAYER_REGEN_ENABLED (last value per frame and field wins). Listeners get
@@ -237,6 +238,8 @@ function Edit:Get(frameKey)
     local value = baseValue(frameKey, field)
     local item = registryItem(frameKey, field)
     if item and item.default ~= nil then value = overlay(field, value, item.default) end
+    local presets = Core.Presets
+    if presets then value = overlay(field, value, presets:GetValue(frameKey, field)) end
     value = overlay(field, value, edits[field])
     out[field] = value
   end
@@ -251,6 +254,15 @@ end
 
 -- fn(frameKey, field, storedValue); one function per owner.
 function Edit:RegisterCallback(owner, fn) return listeners:Register(owner, fn) end
+
+-- Calls the listeners with the stored edit value of (frameKey, field) when a
+-- lower layer (the active preset) changed. Refused in combat.
+function Edit:FireChanged(frameKey, field)
+  if not FIELD_SET[field] or type(frameKey) ~= "string" or frameKey == "" then return false, "bad frame key or field" end
+  if Core.InCombat() then return false, "in combat" end
+  listeners:Fire(frameKey, field, self:GetEdits(frameKey)[field])
+  return true
+end
 function Edit:UnregisterCallback(owner) return listeners:Unregister(owner) end
 
 Core:On("PLAYER_REGEN_ENABLED", function()

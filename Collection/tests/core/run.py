@@ -66,6 +66,23 @@ function TEST_runSelfFill(name)
 end
 function GetRealmName() return TEST_player.realm end
 function UnitClass() return TEST_player.className, TEST_player.class end
+-- Save/restore stubs: clock, reload, chat output, addon metadata, LibStub
+-- libraries (AceDB-3.0 db_registry, LibDualSpec-1.0) and slash commands.
+TEST_time = 1000
+function time() return TEST_time end
+TEST_reloads = 0
+function ReloadUI() TEST_reloads = TEST_reloads + 1 end
+TEST_prints = {}
+function print(...)
+  local parts = {}
+  for i = 1, select("#", ...) do parts[#parts + 1] = tostring((select(i, ...))) end
+  TEST_prints[#TEST_prints + 1] = table.concat(parts, " ")
+end
+TEST_meta = {}
+C_AddOns.GetAddOnMetadata = function(name, field) local m = TEST_meta[name] return m and m[field] end
+TEST_libs = {}
+LibStub = setmetatable({}, {__call = function(_, name) return TEST_libs[name] end})
+SlashCmdList = {}
 """
 
 
@@ -85,11 +102,14 @@ def to_py(value):
     return value
 
 
+FIXTURE_REGISTRIES = {"fixture": "Registry_Test.lua", "profiles": "Registry_Profiles.lua"}
+
+
 class Session:
     """One simulated client session with Core loaded."""
 
     def __init__(self, saved=None, registry="fixture", extra_files=("Defaults_Example.lua",),
-                 player=None, globals_=None):
+                 player=None, globals_=None, preset_files=()):
         self.lua = lua51.LuaRuntime(unpack_returned_tuples=True)
         self.lua.execute(STUBS)
         g = self.lua.globals()
@@ -97,20 +117,23 @@ class Session:
             for k, v in player.items():
                 g.TEST_player[k] = v
         for name, value in (globals_ or {}).items():
-            g[name] = value
+            g[name] = self.table(value) if isinstance(value, (dict, list, tuple)) else value
         for name, value in (saved or {}).items():
             g[name] = self.table(value)
         self.ns = self.lua.table()
         for rel in toc_files():
             # Real defaults files name folders of the generated registry only.
-            if rel.startswith("Defaults/") and registry == "fixture":
+            if rel.startswith("Defaults/") and registry in FIXTURE_REGISTRIES:
                 continue
-            if rel == "Registry.lua" and registry == "fixture":
-                self.run_file(os.path.join(FIXTURES, "Registry_Test.lua"))
+            if rel == "Registry.lua" and registry in FIXTURE_REGISTRIES:
+                self.run_file(os.path.join(FIXTURES, FIXTURE_REGISTRIES[registry]))
             else:
                 self.run_file(os.path.join(CORE_DIR, rel))
             if rel == "Defaults.lua":
                 for extra in extra_files:
+                    self.run_file(os.path.join(FIXTURES, extra))
+            if rel == "Presets.lua":
+                for extra in preset_files:
                     self.run_file(os.path.join(FIXTURES, extra))
         self.core = g.DevilForever_Core
 
@@ -416,7 +439,7 @@ def core_without_other_addons():
         eq(st["targets"], {}, folder + " nothing attempted")
     eq(s.sv("TestPlainDB"), None, "nothing created")
     eq(s.sv("TestAceDB"), None, "nothing created for AceDB either")
-    eq(set(s.sv("DevilForever_CoreDB")), {"schema", "defaults", "theme", "edits"}, "Core DB layout")
+    eq(set(s.sv("DevilForever_CoreDB")), {"schema", "defaults", "theme", "edits", "preset"}, "Core DB layout")
 
 
 # Registry ---------------------------------------------------------------------
@@ -427,7 +450,7 @@ def generated_registry_lookup():
     c = s.core
     info = to_py(c.GetAddonInfo(c, "dominos"))
     eq(info["package"], "Dominos", "case-insensitive lookup")
-    eq(list(info["savedVariables"].values()), [{"name": "DominosDB", "scope": "account", "split": "class"}], "SV")
+    eq(list(info["savedVariables"].values()), [{"name": "DominosDB", "scope": "account", "split": "class", "restore": "profile", "shape": "acedb"}], "SV")
     eq(info["defaults"], "Defaults/Dominos.lua", "defaults file named")
     prat = to_py(c.GetAddonInfo(c, "Prat-3.0"))
     scopes = {sv["name"]: sv["scope"] for sv in prat["savedVariables"].values()}
@@ -455,7 +478,8 @@ def generated_registry_lookup():
        [("experienceforever.bar", "position", None, None)],
        "Experience Forever editable item: bar position only (EF re-applies its own sizes and fonts)")
     eq((xpbar["bundle"], xpbar["use"], xpbar.get("defaults"), list(xpbar["savedVariables"].values())),
-       ("individual", "settings", None, [{"name": "ExperienceForeverDB", "scope": "account", "split": "common"}]),
+       ("individual", "settings", None, [{"name": "ExperienceForeverDB", "scope": "account", "split": "common",
+                                         "restore": "whole", "shape": "acedb"}]),
        "Experience Forever: no Core defaults file (its own defaults already match), account AceDB SV")
     strip = to_py(c.GetAddonInfo(c, "DevilForever_StatusStrip"))
     eq(list(to_py(c.GetFrameKeys(c, "DevilForever_StatusStrip")).values()),
@@ -465,7 +489,8 @@ def generated_registry_lookup():
        [("color", None, None), ("font", 6, 64), ("position", None, None), ("size", 8, 8192), ("spacing", 0, 128)],
        "status strip editable items sit on the bar only")
     eq((strip["bundle"], strip["use"], strip.get("defaults"), list(strip["savedVariables"].values())),
-       ("individual", "new", None, [{"name": "DevilForever_StatusStripDB", "scope": "account", "split": "common"}]),
+       ("individual", "new", None, [{"name": "DevilForever_StatusStripDB", "scope": "account", "split": "common",
+                                    "restore": "whole", "shape": "plain"}]),
        "status strip: own individual addon, no Core defaults file, account SV")
     details = to_py(c.GetAddonInfo(c, "details"))
     eq(list(to_py(c.GetFrameNames(c, "Details")).values()), ["DetailsBaseFrame1", "DetailsBaseFrame2"],
@@ -479,13 +504,15 @@ def generated_registry_lookup():
     eq(c.GetAddonInfo(c, "DevilForever_DetailsSetup"), None, "no Details bridge addon (Tiny Threat window is set by hand)")
     grid2 = to_py(c.GetAddonInfo(c, "grid2"))
     eq(list(to_py(c.GetFrameNames(c, "Grid2")).values()), ["Grid2LayoutFrame"], "Grid2 frames: the layout window")
-    eq(list(grid2["savedVariables"].values()), [{"name": "Grid2DB", "scope": "account", "split": "common"}],
+    eq(list(grid2["savedVariables"].values()), [{"name": "Grid2DB", "scope": "account", "split": "common",
+                                                 "restore": "whole", "shape": "acedb"}],
        "Grid2 SV")
     eq((grid2["defaults"], len(grid2["editable"])), ("Defaults/Grid2.lua", 3),
        "Grid2 defaults file named; editable position, unit button size, padding")
     pb4 = to_py(c.GetAddonInfo(c, "pitbull4"))
     eq(len(to_py(c.GetFrameNames(c, "PitBull4"))), 10, "PitBull4: 7 unit frames, 3 party group headers")
-    eq(list(pb4["savedVariables"].values()), [{"name": "PitBull4DB", "scope": "account", "split": "common"}],
+    eq(list(pb4["savedVariables"].values()), [{"name": "PitBull4DB", "scope": "account", "split": "common",
+                                               "restore": "whole", "shape": "acedb"}],
        "PitBull4 SV")
     eq((pb4["defaults"], len(pb4["editable"]), pb4["version"]), ("Defaults/PitBull4.lua", 6, "v4.2.50-forever.1"),
        "PitBull4 defaults file, 6 positions, version of our copy")
@@ -494,7 +521,8 @@ def generated_registry_lookup():
     eq(list(to_py(c.GetFrameNames(c, "Hekili")).values()),
        ["HekiliDisplayAOE", "HekiliDisplayCooldowns", "HekiliDisplayDefensives", "HekiliDisplayInterrupts",
         "HekiliDisplayPrimary", "HekiliNotification"], "Hekili frames")
-    eq(list(hekili["savedVariables"].values()), [{"name": "HekiliDB", "scope": "account", "split": "common"}],
+    eq(list(hekili["savedVariables"].values()), [{"name": "HekiliDB", "scope": "account", "split": "common",
+                                                  "restore": "whole", "shape": "acedb"}],
        "Hekili SV")
     eq(hekili["defaults"], "Defaults/Hekili.lua", "Hekili defaults file named")
     eq(len(hekili["editable"]), 7, "Hekili editable: 6 positions, primary display size")
@@ -502,7 +530,8 @@ def generated_registry_lookup():
     eq(list(to_py(c.GetFrameNames(c, "Quartz")).values()),
        ["Quartz3CastBarFocus", "Quartz3CastBarPet", "Quartz3CastBarPlayer", "Quartz3CastBarTarget",
         "Quartz3GCDBar", "Quartz3SwingBar"], "Quartz frames")
-    eq(list(quartz["savedVariables"].values()), [{"name": "Quartz3DB", "scope": "account", "split": "common"}],
+    eq(list(quartz["savedVariables"].values()), [{"name": "Quartz3DB", "scope": "account", "split": "common",
+                                                  "restore": "whole", "shape": "acedb"}],
        "Quartz SV")
     eq(quartz.get("defaults"), None, "Quartz has no Core defaults file (its own defaults cover the cast bars)")
     eq(len(quartz["editable"]), 8, "Quartz editable: position and size of 4 cast bars")
@@ -510,7 +539,8 @@ def generated_registry_lookup():
     eq((castbars["use"], castbars.get("savedVariables") or {}), ("new", {}), "Castbars bridge: own addon, no SV")
     fuf = to_py(c.GetAddonInfo(c, "foreverunitframes"))
     eq(len(to_py(c.GetFrameNames(c, "ForeverUnitFrames"))), 15, "FUF: 8 single frames, party header, boss1-5, raid")
-    eq(list(fuf["savedVariables"].values()), [{"name": "ForeverUnitFramesDB", "scope": "account", "split": "common"}],
+    eq(list(fuf["savedVariables"].values()), [{"name": "ForeverUnitFramesDB", "scope": "account", "split": "common",
+                                               "restore": "whole", "shape": "plain"}],
        "FUF SV")
     eq(fuf.get("defaults"), None, "FUF has no Core defaults file (its profile is rewritten by FUF on save)")
     eq(len(fuf["editable"]), 12, "FUF editable: 7 positions, 5 sizes")
@@ -520,7 +550,8 @@ def generated_registry_lookup():
     sexy = to_py(c.GetAddonInfo(c, "SexyMap"))
     eq(list(to_py(c.GetFrameNames(c, "SexyMap")).values()),
        ["Minimap", "SexyMapCoordFrame", "SexyMapZoneTextButton", "TimeManagerClockButton"], "SexyMap frames")
-    eq(list(sexy["savedVariables"].values()), [{"name": "SexyMap2DB", "scope": "account", "split": "common"}], "SexyMap SV")
+    eq(list(sexy["savedVariables"].values()), [{"name": "SexyMap2DB", "scope": "account", "split": "common",
+                                                "restore": "whole", "shape": "plain"}], "SexyMap SV")
     eq(sexy["defaults"], "Defaults/SexyMap.lua", "SexyMap defaults file named")
     eq(len(to_py(c.GetFrameNames(c, "Prat-3.0"))), 30, "Prat: ChatFrame1-10 with edit boxes and tabs")
     eq(prat["defaults"], "Defaults/Prat-3.0.lua", "Prat defaults file named")
@@ -726,7 +757,7 @@ def genregistry_extra_applied_and_checked():
     gen.apply_extra(entries, {"addons": {"dominos": {
         "frames": [{"key": "dominos.bar1", "frame": "DominosFrame1", "tokens": {"spacing": "spacing.default"}}],
         "editable": [{"frame": "dominos.bar1", "field": "spacing", "min": 0, "max": 10}],
-        "saved_variables": {"DominosDB": {"split": "class"}}}}})
+        "saved_variables": {"DominosDB": {"split": "class", "restore": "profile", "shape": "acedb"}}}}})
     d = entries["Dominos"]
     eq(d["frames"][0]["frame"], "DominosFrame1", "frame added (folder matched ignoring case)")
     eq(d["editable"][0]["kind"], "spacing", "kind filled from field")
@@ -1276,6 +1307,865 @@ def sexymap_defaults_profile_key_unknown_not_registered():
     s = Session(registry="generated", extra_files=(), player={"realm": ""})
     eq(s.status("SexyMap")["registered"], False, "not registered without a realm")
     eq(any(e["kind"] == "skip" and e["subject"] == "Defaults:SexyMap" for e in s.log()), True, "logged")
+
+
+# Save / restore (Profiles.lua) and layout presets (Presets.lua) -------------------
+#
+# A session ends with /dfp go; the next Session gets every saved variable of
+# the previous one (as the client writes them at logout) and loads the addons
+# after Core. Data below is plain test data, not any addon's real layout.
+
+P_ADDONS = ["PPlain", "PChar", "PAce", "PKeys", "PClass", "PSkip"]
+P_SVS = ["DevilForever_CoreDB", "DevilForever_ProfilesDB", "PPlainDB", "PCharDB", "PAceDB", "PKeysDB", "PClassDB",
+         "PSkipDB", "OtherDB"]
+
+
+def p_session(saved=None, after=P_ADDONS, login=True, presets=False, **kw):
+    kw.setdefault("extra_files", ("Defaults_Profiles.lua",))
+    if presets:
+        kw["preset_files"] = ("Presets_Test.lua",)
+    s = Session(saved=saved, registry="profiles", **kw)
+    return s.boot(after=after, login=login)
+
+
+def carry(s, changes=None):
+    """Saved variables of session `s` for the next session, with `changes` applied."""
+    out = {}
+    for name in P_SVS:
+        value = s.sv(name)
+        if value is not None:
+            out[name] = value
+    for name, value in (changes or {}).items():
+        if value is None:
+            out.pop(name, None)
+        else:
+            out[name] = value
+    return out
+
+
+def dfp(s, text):
+    """Runs /dfp `text`; returns the chat lines it printed."""
+    before = len(to_py(s.g.TEST_prints))
+    s.g.SlashCmdList.DFPROFILE(text)
+    lines = list(to_py(s.g.TEST_prints).values())
+    return lines[before:]
+
+
+def snapshot(s, name):
+    return s.sv("DevilForever_ProfilesDB")["snapshots"].get(name)
+
+
+def last_lines(s):
+    return list(s.sv("DevilForever_ProfilesDB")["last"]["lines"].values())
+
+
+def has_line(lines, *parts):
+    return any(all(p in line for p in parts) for line in lines)
+
+
+def saved_with(s, name="A", changes=None, **kw):
+    """Requests a save in `s`, goes, and returns the next session after the save."""
+    dfp(s, "save " + name)
+    dfp(s, "go")
+    eq(s.g.TEST_reloads, 1, "save reloads once")
+    return p_session(carry(s, changes), **kw)
+
+
+def restored(s, command, changes=None, **kw):
+    dfp(s, command)
+    dfp(s, "go")
+    return p_session(carry(s, changes), **kw)
+
+
+BASE = {"PPlainDB": {"x": 1, "nested": {"y": 2}}, "PSkipDB": {"y": 1}, "OtherDB": {"z": 1},
+        "PAceDB": {"profileKeys": {"Hero - Realm": "Hero - Realm"}, "profiles": {"Hero - Realm": {"scale": 3}}},
+        "PKeysDB": {"settings": {"a": 1}, "history": [1, 2, 3]}}
+
+
+@case
+def profiles_t1_registry_scope_only():
+    s2 = saved_with(p_session(BASE))
+    snap = snapshot(s2, "A")
+    eq(sorted(snap["common"]), ["PAceDB", "PKeysDB", "PPlainDB"], "only registry restore targets saved")
+    eq(snap["common"]["PKeysDB"]["data"], {"settings": {"a": 1}}, "keys entry holds the listed keys only")
+    changes = {"PPlainDB": {"x": 9}, "PSkipDB": {"y": 9}, "OtherDB": {"z": 9},
+               "PKeysDB": {"settings": {"a": 9}, "history": [9]}}
+    s3 = restored(s2, "restore A", changes)
+    eq(s3.sv("PPlainDB"), {"x": 1, "nested": {"y": 2}}, "registry SV restored whole")
+    eq((s3.sv("PSkipDB"), s3.sv("OtherDB")), ({"y": 9}, {"z": 9}), "skip and non-registry SVs untouched")
+    eq(s3.sv("PKeysDB"), {"settings": {"a": 1}, "history": {1: 9}}, "keys restore: listed keys only, the rest kept")
+    eq("DevilForever_ProfilesDB" in snap["common"] or "DevilForever_CoreDB" in snap["common"], False,
+       "Core's own saved variables are never entries")
+    eq(s2.errors() + s3.errors(), [], "no errors")
+
+
+@case
+def profiles_t2_core_layout_part():
+    core = {"schema": 1, "edits": {"p.bar": {"rows": 3}}, "theme": {"active": "alt"},
+            "defaults": {"applied": {"PAce": {"k": 1}}}}
+    s2 = saved_with(p_session(dict(BASE, DevilForever_CoreDB=core)))
+    eq(snapshot(s2, "A")["core"], {"edits": {"p.bar": {"rows": 3}}, "theme": "alt"}, "layout part saved")
+    db = s2.sv("DevilForever_CoreDB")
+    db["edits"] = {"p.bar": {"rows": 7}}
+    db["theme"] = {"active": "other"}
+    db["defaults"]["applied"]["PAce"] = {"k": 2}
+    s3 = restored(s2, "restore A", {"DevilForever_CoreDB": db})
+    out = s3.sv("DevilForever_CoreDB")
+    eq((out["edits"], out["theme"]["active"]), ({"p.bar": {"rows": 3}}, "alt"), "edits and theme restored")
+    eq(out["defaults"]["applied"]["PAce"], {"k": 2}, "defaults bookkeeping never rolled back")
+
+
+@case
+def profiles_t3_save_merge_keeps_missing_addon():
+    s2 = saved_with(p_session(BASE))
+    s3 = saved_with(s2, changes={"PPlainDB": {"x": 5}}, after=["PPlain"])
+    snap = snapshot(s3, "A")
+    eq(snap["common"]["PAceDB"]["carried"], True, "entry of an addon not loaded now carried")
+    eq(snap["common"]["PAceDB"]["data"]["profiles"]["Hero - Realm"], {"scale": 3}, "its data kept")
+    eq(snap["common"]["PPlainDB"].get("carried"), None, "entry read now is fresh")
+    eq(snap["common"]["PPlainDB"]["data"], {"x": 5}, "new value saved")
+    eq(has_line(last_lines(s3), "PAce", "켜지지 않음"), True, "report names the addon not loaded")
+
+
+@case
+def profiles_t4_restore_addon_not_loaded():
+    s2 = saved_with(p_session(BASE))
+    s3 = restored(s2, "restore A", {"PPlainDB": None}, after=["PAce"])
+    eq(s3.sv("PPlainDB"), None, "saved variable not created")
+    eq(snapshot(s3, "A")["common"]["PPlainDB"]["data"], {"x": 1, "nested": {"y": 2}}, "snapshot entry intact")
+    eq(has_line(last_lines(s3), "PPlain", "켜지지 않음"), True, "reported")
+
+
+@case
+def profiles_t5_version_mismatch_untouched():
+    meta = {"TEST_meta": {"PPlain": {"Version": "1.0"}}}
+    s1 = p_session(BASE, globals_=meta)
+    dfp(s1, "save A")
+    dfp(s1, "go")
+    s2 = p_session(carry(s1), globals_=meta)
+    eq(snapshot(s2, "A")["common"]["PPlainDB"]["version"], "1.0", "metadata version stored")
+    dfp(s2, "restore A")
+    dfp(s2, "go")
+    s3 = p_session(carry(s2, {"PPlainDB": {"x": 9}}), globals_={"TEST_meta": {"PPlain": {"Version": "1.1"}}})
+    eq(s3.sv("PPlainDB"), {"x": 9}, "saved variable untouched")
+    eq(has_line(last_lines(s3), "PPlainDB", "1.0", "1.1", "건드리지 않음"), True, "both versions reported")
+
+
+@case
+def profiles_t6_written_before_the_addon_reads():
+    s2 = saved_with(p_session(BASE))
+    dfp(s2, "restore A")
+    dfp(s2, "go")
+    s3 = Session(saved=carry(s2, {"PPlainDB": {"x": 9}}), registry="profiles", extra_files=("Defaults_Profiles.lua",))
+    s3.self_fill("PPlain", "PPlainDB", {"x": 100, "own": 1})
+    s3.boot(after=P_ADDONS)
+    eq(s3.sv("PPlainDB"), {"x": 1, "nested": {"y": 2}, "own": 1}, "the addon saw the restored table")
+
+
+@case
+def profiles_t7_defaults_suppressed():
+    saved = dict(BASE)
+    del saved["PAceDB"]
+    s1 = p_session(saved)
+    eq(s1.status("PAce")["targets"]["PAceDB"]["state"], "applied", "defaults applied on the first session")
+    s2 = saved_with(s1)
+    core = s2.sv("DevilForever_CoreDB")
+    core["defaults"] = {"applied": {}}
+    s3 = restored(s2, "restore A", {"DevilForever_CoreDB": core, "PAceDB": None})
+    st = s3.status("PAce")
+    eq((st["suppressed"] is not None, st["targets"]["PAceDB"]["state"]), (True, "suppressed"), "suppressed")
+    eq("PAce" in s3.sv("DevilForever_CoreDB")["defaults"]["applied"], False, "no defaults write recorded")
+
+
+@case
+def profiles_t8_acedb_too_late():
+    s2 = saved_with(p_session(BASE))
+    dfp(s2, "restore A")
+    dfp(s2, "go")
+    changed = {"profileKeys": {"Hero - Realm": "Hero - Realm"}, "profiles": {"Hero - Realm": {"scale": 9}}}
+    s3 = Session(saved=carry(s2, {"PAceDB": changed}), registry="profiles", extra_files=("Defaults_Profiles.lua",))
+    s3.load_addon(ADDON)
+    s3.lua.execute("TEST_libs['AceDB-3.0'] = {db_registry = {[{sv = PAceDB}] = true}}")
+    for name in P_ADDONS:
+        s3.load_addon(name)
+    s3.fire("PLAYER_LOGIN")
+    s3.fire("PLAYER_ENTERING_WORLD", True, False)
+    eq(s3.sv("PAceDB"), changed, "nothing written")
+    eq(has_line(last_lines(s3), "PAceDB", "너무 늦음"), True, "reported")
+    eq(s3.sv("PPlainDB"), {"x": 1, "nested": {"y": 2}}, "other targets still restored")
+
+
+@case
+def profiles_t9_before_restore_backup_and_undo():
+    s2 = saved_with(p_session(BASE))
+    s3 = restored(s2, "restore A", {"PPlainDB": {"x": 7}})
+    undo = snapshot(s3, "__before-restore")
+    eq(undo["common"]["PPlainDB"]["data"], {"x": 7}, "pre-restore disk state kept")
+    eq(sorted(undo["common"]), ["PAceDB", "PKeysDB", "PPlainDB"], "every written SV backed up")
+    s4 = restored(s3, "restore __before-restore")
+    eq(s4.sv("PPlainDB"), {"x": 7}, "undo brings back the pre-restore state")
+    eq(snapshot(s4, "__before-restore")["common"]["PPlainDB"]["data"], {"x": 1, "nested": {"y": 2}},
+       "the undo slot now holds the state before the undo")
+    eq(dfp(s4, "list")[0].startswith("[DF 설정] A"), True, "list prints snapshots")
+
+
+@case
+def profiles_t10_character_scope_other_character():
+    s2 = saved_with(p_session(dict(BASE, PCharDB={"mine": 1})))
+    eq(snapshot(s2, "A")["common"]["PCharDB"]["char"], "Hero - Realm", "character key stored")
+    alt = {"name": "Alt"}
+    s2b = p_session(carry(s2, {"PCharDB": {"alt": 1}}), player=alt)
+    s3 = restored(s2b, "restore A", player=alt)
+    eq(s3.sv("PCharDB"), {"alt": 1}, "another character's SV untouched")
+    eq(has_line(last_lines(s3), "PCharDB", "다른 캐릭터"), True, "reported")
+    eq(s3.sv("PPlainDB"), {"x": 1, "nested": {"y": 2}}, "account SV restored on any character")
+
+
+CLASS_DB = {"profileKeys": {"Hero - Realm": "Warrior", "Sage - Realm": "Mage"},
+            "profiles": {"Warrior": {"a": 1}, "Warrior (2)": {"b": 1}, "Mage": {"m": 1}},
+            "namespaces": {"Mod": {"profiles": {"Warrior": {"n": 1}, "Mage": {"n": 2}}},
+                           "LibDualSpec-1.0": {"char": {"Hero - Realm": {"enabled": True, 1: "Warrior",
+                                                                          2: "Warrior (2)"}}}}}
+
+
+@case
+def profiles_t11_class_part_profile_level():
+    s2 = saved_with(p_session(dict(BASE, PClassDB=CLASS_DB)))
+    e = snapshot(s2, "A")["class"]["WARRIOR"]["PClassDB"]
+    eq((list(e["profileNames"].values()), e["profileKey"]), (["Warrior", "Warrior (2)"], "Warrior"), "profiles read")
+    eq(sorted(e["profiles"]), ["Warrior", "Warrior (2)"], "other class profiles not saved")
+    eq(e["namespaces"], {"Mod": {"Warrior": {"n": 1}}}, "namespace profiles of those names")
+    changed = {"profileKeys": {"Hero - Realm": "Other", "Sage - Realm": "Mage"},
+               "profiles": {"Warrior": {"a": 9}, "Mage": {"m": 9}, "Other": {"o": 1}},
+               "namespaces": {"Mod": {"profiles": {"Warrior": {"n": 9}, "Mage": {"n": 8}}}}}
+    s3 = restored(s2, "restore A", {"PClassDB": changed})
+    db = s3.sv("PClassDB")
+    eq(db["profiles"], {"Warrior": {"a": 1}, "Warrior (2)": {"b": 1}, "Mage": {"m": 9}, "Other": {"o": 1}},
+       "this character's profiles written, others untouched")
+    eq(db["namespaces"]["Mod"]["profiles"], {"Warrior": {"n": 1}, "Mage": {"n": 8}}, "namespace profile restored")
+    eq(db["profileKeys"], {"Hero - Realm": "Warrior", "Sage - Realm": "Mage"}, "only this character's profileKeys")
+    eq(db["namespaces"]["LibDualSpec-1.0"]["char"]["Hero - Realm"][2], "Warrior (2)", "LibDualSpec entry restored")
+    mage = {"name": "Sage", "className": "Mage", "class": "MAGE"}
+    s4 = p_session(carry(s3, {"PClassDB": changed}), player=mage)
+    s5 = restored(s4, "restore A class", player=mage)
+    eq(s5.sv("PClassDB"), changed, "another class token: untouched")
+    eq(has_line(last_lines(s5), "PClassDB", "WARRIOR", "건드리지 않음"), True, "reported")
+    eq(s2.errors() + s3.errors() + s5.errors(), [], "no errors")
+
+
+@case
+def profiles_t12_common_and_class_selection():
+    s2 = saved_with(p_session(dict(BASE, PClassDB=CLASS_DB)))
+    changed_class = dict(CLASS_DB, profiles={"Warrior": {"a": 9}})
+    s3 = restored(s2, "restore A common", {"PClassDB": changed_class, "PPlainDB": {"x": 9}})
+    eq((s3.sv("PPlainDB")["x"], s3.sv("PClassDB")["profiles"]), (1, {"Warrior": {"a": 9}}), "common only")
+    s4 = restored(s3, "restore A class", {"PClassDB": changed_class, "PPlainDB": {"x": 9}})
+    eq((s4.sv("PPlainDB"), s4.sv("PClassDB")["profiles"]["Warrior"]), ({"x": 9}, {"a": 1}), "class only")
+    s5 = restored(s4, "restore A only PPlain", {"PPlainDB": {"x": 9}, "PKeysDB": {"settings": {"a": 9}}})
+    eq((s5.sv("PPlainDB")["x"], s5.sv("PKeysDB")["settings"]), (1, {"a": 9}), "only one folder")
+
+
+@case
+def profiles_t13_combat_refuses_everything():
+    s2 = saved_with(p_session(BASE), presets=True)
+    s2.combat(True)
+    for command in ("save B", "restore A", "delete A yes", "preset qhd", "spec link", "spec new", "spec off",
+                    "keys load K", "game save G", "go", "cancel"):
+        lines = dfp(s2, command)
+        eq(has_line(lines, "전투 중"), True, "refused: " + command)
+    eq(s2.sv("DevilForever_ProfilesDB").get("pending"), None, "nothing pending")
+    eq((s2.g.TEST_reloads, snapshot(s2, "A") is not None), (0, True), "no reload, nothing deleted")
+    eq(s2.core.Presets.GetActive(s2.core.Presets), ("uhd", True), "preset unchanged")
+
+
+@case
+def profiles_t14_pending_other_char_or_too_old():
+    s2 = saved_with(p_session(BASE))
+    dfp(s2, "restore A")
+    dfp(s2, "go")
+    s3 = p_session(carry(s2, {"PPlainDB": {"x": 9}}), player={"name": "Alt"})
+    eq(s3.sv("PPlainDB"), {"x": 9}, "other character: not applied")
+    eq(s3.sv("DevilForever_ProfilesDB").get("pending"), None, "cleared")
+    eq(has_line(last_lines(s3), "다른 캐릭터"), True, "reported")
+    dfp(s2, "cancel")
+    dfp(s2, "restore A")
+    dfp(s2, "go")
+    s4 = p_session(carry(s2, {"PPlainDB": {"x": 9}}), globals_={"TEST_time": 1000 + 601})
+    eq((s4.sv("PPlainDB"), s4.sv("DevilForever_ProfilesDB").get("pending")), ({"x": 9}, None), "too old: dropped")
+    eq(has_line(last_lines(s4), "600"), True, "reported")
+
+
+@case
+def profiles_t15_unknown_schema_read_only():
+    store = {"schema": 2, "snapshots": {"A": {"schema": 2, "common": {"PPlainDB": {"data": {"x": 1}}}}}, "future": True}
+    s = p_session(dict(BASE, DevilForever_ProfilesDB=store))
+    for command in ("save B", "restore A", "delete A yes"):
+        eq(has_line(dfp(s, command), "안 함"), True, "refused: " + command)
+    eq(s.sv("DevilForever_ProfilesDB"), store, "store unchanged")
+    snap_store = {"schema": 1, "snapshots": {"B": {"schema": 7, "x": 1}}}
+    s2 = p_session(dict(BASE, DevilForever_ProfilesDB=snap_store))
+    for command in ("save B", "restore B", "delete B yes"):
+        eq(has_line(dfp(s2, command), "안 함"), True, "refused: " + command)
+    eq(s2.sv("DevilForever_ProfilesDB"), snap_store, "snapshot of an unknown schema unchanged")
+    s3 = p_session(dict(BASE, DevilForever_ProfilesDB="text"))
+    eq((s3.sv("DevilForever_ProfilesDB"), has_line(dfp(s3, "save B"), "안 함")), ("text", True), "wrong type kept")
+
+
+@case
+def profiles_t16_wrong_type_entry():
+    store = {"schema": 1, "snapshots": {"A": {"schema": 1, "name": "A", "common": {
+        "PPlainDB": {"folder": "PPlain", "restore": "whole", "data": "not a table", "registryVersion": "1.0"},
+        "PKeysDB": {"folder": "PKeys", "restore": "keys", "keys": ["settings"], "data": {"settings": {"a": 5}},
+                    "registryVersion": "1.0"}}, "class": {"WARRIOR": "bad"}}}}
+    s = p_session(dict(BASE, DevilForever_ProfilesDB=store))
+    s2 = restored(s, "restore A")
+    eq(s2.sv("PPlainDB"), BASE["PPlainDB"], "untouched")
+    eq(s2.sv("PKeysDB")["settings"], {"a": 5}, "the valid entry still restored")
+    eq(has_line(last_lines(s2), "PPlainDB", "형식이 맞지 않음"), True, "reported")
+
+
+@case
+def profiles_t17_copy_data_safety():
+    s = p_session()
+    s.lua.execute("""
+      local t = {a = 1, list = {1, 2}, fn = function() end, co = coroutine.create(function() end), u = newproxy()}
+      t.self = t
+      t.list.back = t
+      t[{}] = 1
+      TEST_copy, TEST_dropped = DevilForever_Core.CopyData(t)
+    """)
+    eq(to_py(s.g.TEST_copy), {"a": 1, "list": {1: 1, 2: 2}}, "plain data kept")
+    eq(s.g.TEST_dropped, 6, "function, thread, userdata, two cycles and a table key left out")
+    eq(s.errors(), [], "no errors")
+
+
+@case
+def presets_t18_register_validation():
+    s = p_session()
+    pr = s.core.Presets
+    kept = pr.Register(pr, s.table({"name": "x", "edits": {"p.bar": {"rows": 11, "spacing": 2}, "nope": {"rows": 2}},
+                                    "fragments": [{"folder": "NoSuch", "savedVariable": "A", "section": "root",
+                                                   "addonVersion": "1", "version": 1, "values": {}},
+                                                  {"folder": "PAce", "savedVariable": "PAceDB", "section": "middle",
+                                                   "addonVersion": "1", "version": 1, "values": {}},
+                                                  {"folder": "!DevilForever_Core", "savedVariable": "DevilForever_CoreDB",
+                                                   "section": "root", "addonVersion": "1", "version": 1, "values": {}},
+                                                  {"folder": "PAce", "savedVariable": "PAceDB", "section": "global",
+                                                   "addonVersion": "2.0", "version": 1, "values": {"h": 1}}]}))
+    eq(kept, 2, "spacing and one fragment kept")
+    eq(to_py(pr.Get(pr, "x"))["edits"], {"p.bar": {"spacing": 2}}, "out-of-range and unknown frame dropped")
+    eq(sum(1 for x in s.log() if x["subject"] == "Presets:x" and x["kind"] == "skip"), 5, "drops logged")
+
+
+@case
+def presets_t19_layer_order():
+    s = p_session(presets=True)
+    t, e = s.core.Theme, s.core.Edit
+    t.RegisterSet(t, "devil", s.table({"spacing.default": 4}))
+    eq(s.core.Presets.GetActive(s.core.Presets), ("uhd", True), "first choice without a screen API: uhd")
+    eq((to_py(e.Get(e, "p.bar"))["rows"], to_py(e.Get(e, "p.bar"))["spacing"]), (5, 6), "preset over default and token")
+    e.Set(e, "p.bar", "rows", 7)
+    eq(to_py(e.Get(e, "p.bar"))["rows"], 7, "edit over preset")
+    e.Clear(e, "p.bar", "rows")
+    eq(to_py(e.Get(e, "p.bar"))["rows"], 5, "preset again")
+    s.core.Presets.Restore(s.core.Presets, "qhd")
+    eq((to_py(e.Get(e, "p.bar"))["rows"], to_py(e.Get(e, "p.bar"))["spacing"]), (4, 4),
+       "qhd rows; spacing back to the token")
+    s.g.DevilForever_CoreDB.preset.active = None
+    eq(to_py(e.Get(e, "p.bar"))["rows"], 2, "registry default without a preset")
+
+
+@case
+def presets_t20_restore_clears_preset_frames_only():
+    s = p_session(presets=True)
+    e = s.core.Edit
+    e.Set(e, "p.bar", "rows", 7)
+    e.Set(e, "p.chat", "rows", 9)
+    calls = []
+    s.g.TEST_cb = lambda key, field, value: calls.append((key, field, to_py(value)))
+    s.lua.execute("DevilForever_Core.Edit:RegisterCallback('test', function(k, f, v) TEST_cb(k, f, v) end)")
+    ok, lines = s.core.Presets.Restore(s.core.Presets, "uhd")
+    eq(ok, True, "restored")
+    eq((to_py(e.GetEdits(e, "p.bar")), to_py(e.GetEdits(e, "p.chat"))), ({}, {"rows": 9}), "only preset frames cleared")
+    eq(("p.bar", "rows", None) in calls and ("p.bar", "spacing", None) in calls, True, "listeners told")
+    calls.clear()
+    s.core.Presets.Restore(s.core.Presets, "qhd")
+    eq(("p.chat", "rows", None) in calls and ("p.bar", "spacing", None) in calls, True,
+       "listeners for old and new preset fields")
+    eq(to_py(e.GetEdits(e, "p.chat")), {}, "qhd covers p.chat: its edit cleared")
+
+
+FRAG_GLOBAL = {"folder": "PAce", "savedVariable": "PAceDB", "section": "global", "addonVersion": "2.0",
+               "version": 1, "values": {"barHeight": 14}}
+FRAG_PROFILE = {"folder": "PAce", "savedVariable": "PAceDB", "section": "profile", "addonVersion": "2.0",
+                "version": 1, "values": {"width": 100}}
+FRAG_PLAIN = {"folder": "PPlain", "savedVariable": "PPlainDB", "section": "root", "addonVersion": "1.0",
+              "version": 1, "values": {"size": 3}}
+
+
+@case
+def presets_t21_fragment_fresh_acedb_global():
+    s = p_session(presets=True, globals_={"TEST_FRAGMENTS": None})
+    eq(s.sv("PAceDB")["profiles"]["Hero - Realm"], {"scale": 1}, "no fragments: defaults only")
+    fresh = Session(registry="profiles", extra_files=("Defaults_Profiles.lua",), preset_files=("Presets_Test.lua",))
+    fresh.g.TEST_FRAGMENTS = fresh.table([FRAG_GLOBAL])
+    fresh = fresh_reload(fresh)
+    eq(fresh.sv("PAceDB")["global"], {"barHeight": 14}, "written into a fresh saved variable")
+    eq(fresh.sv("DevilForever_CoreDB")["preset"]["fragments"]["uhd"], {"PAceDB@global": 1}, "recorded")
+    eq(fresh.errors(), [], "no errors")
+    kept = fresh_reload(Session(saved={"PAceDB": {"global": {"barHeight": 20}}}, registry="profiles",
+                                extra_files=("Defaults_Profiles.lua",), preset_files=("Presets_Test.lua",)),
+                        [FRAG_GLOBAL])
+    eq(kept.sv("PAceDB")["global"], {"barHeight": 20}, "existing saved variable kept")
+    st = to_py(kept.core.Presets.GetFragmentStatus(kept.core.Presets))
+    eq(st["uhd|1"]["state"], "kept", "status says kept")
+    eq("/dfp preset uhd" in st["uhd|1"]["message"], True, "status names the command")
+
+
+def fresh_reload(s, fragments=None):
+    """Runs the preset fixture again with TEST_FRAGMENTS set, then boots."""
+    if fragments is not None:
+        s.g.TEST_FRAGMENTS = s.table(fragments)
+    s.run_file(os.path.join(FIXTURES, "Presets_Test.lua"))
+    return s.boot(after=P_ADDONS)
+
+
+@case
+def presets_t22_fragment_restore_and_version():
+    saved = {"PAceDB": {"global": {"barHeight": 20, "other": 1}}}
+    s = fresh_reload(Session(saved=saved, registry="profiles", extra_files=("Defaults_Profiles.lua",),
+                             preset_files=("Presets_Test.lua",)), [FRAG_GLOBAL])
+    lines = dfp(s, "preset uhd")
+    eq(has_line(lines, "PAce", "/dfp go"), True, "reload asked for addon values")
+    dfp(s, "go")
+    s2 = fresh_reload(Session(saved=carry(s), registry="profiles", extra_files=("Defaults_Profiles.lua",),
+                              preset_files=("Presets_Test.lua",)), [FRAG_GLOBAL])
+    eq(s2.sv("PAceDB")["global"], {"barHeight": 14, "other": 1}, "listed keys written, others kept")
+    dfp(s2, "preset uhd")
+    dfp(s2, "go")
+    s3 = Session(saved=carry(s2, {"PAceDB": saved["PAceDB"]}), registry="profiles", extra_files=("Defaults_Profiles.lua",),
+                 preset_files=("Presets_Test.lua",), globals_={"TEST_meta": {"PAce": {"Version": "2.5"}}})
+    s3 = fresh_reload(s3, [FRAG_GLOBAL])
+    eq(s3.sv("PAceDB")["global"], {"barHeight": 20, "other": 1}, "version mismatch: skipped")
+    eq(has_line(list(to_py(s3.g.TEST_prints).values()), "PAce", "건너뜀", "2.5"), True, "reported")
+
+
+@case
+def presets_t23_fragment_plain_fresh_at_world():
+    s = Session(registry="profiles", extra_files=("Defaults_Profiles.lua",), preset_files=("Presets_Test.lua",))
+    s.g.TEST_FRAGMENTS = s.table([FRAG_PLAIN])
+    s.run_file(os.path.join(FIXTURES, "Presets_Test.lua"))
+    s.self_fill("PPlain", "PPlainDB", {"own": 1})
+    s.boot(after=P_ADDONS, login=False)
+    s.fire("PLAYER_LOGIN")
+    eq(s.sv("PPlainDB"), {"own": 1}, "not written before the world entry")
+    s.fire("PLAYER_ENTERING_WORLD", True, False)
+    eq(s.sv("PPlainDB"), {"own": 1, "size": 3}, "written at the first PLAYER_ENTERING_WORLD")
+
+
+@case
+def presets_t24_defaults_then_fragment():
+    s = fresh_reload(Session(registry="profiles", extra_files=("Defaults_Profiles.lua",),
+                             preset_files=("Presets_Test.lua",)), [FRAG_PROFILE])
+    eq(s.sv("PAceDB")["profiles"]["Hero - Realm"], {"scale": 1, "width": 100}, "new profile gets both")
+    eq(s.status("PAce")["targets"]["PAceDB"]["state"], "applied", "Defaults state applied")
+    eq(s.sv("DevilForever_CoreDB")["preset"]["fragments"]["uhd"], {"PAceDB@profile:Hero - Realm": 1}, "recorded")
+
+
+SPEC_DB = """
+TEST_spec_calls = {}
+local function rec(...) local t = {...} TEST_spec_calls[#TEST_spec_calls + 1] = table.concat(t, ",") end
+local db = {sv = PClassDB, current = "Warrior"}
+if TEST_with_lds then
+  function db:SetDualSpecEnabled(on) rec("enable", tostring(on)) end
+  function db:SetDualSpecProfile(p, g) rec("set", p, g) end
+  function db:GetDualSpecProfile(g) return self.current end
+end
+function db:GetCurrentProfile() return self.current end
+function db:SetProfile(p) rec("profile", p) self.current = p end
+function db:CopyProfile(p) rec("copy", p) end
+TEST_libs['AceDB-3.0'] = {db_registry = {[db] = true}}
+TEST_libs['LibDualSpec-1.0'] = {currentSpec = 1}
+"""
+
+
+@case
+def spec_t25_link_and_new():
+    s = p_session(dict(BASE, PClassDB=dict(CLASS_DB, profiles={"Warrior": {"a": 1}})), globals_={"TEST_with_lds": True})
+    s.lua.execute(SPEC_DB)
+    dfp(s, "spec link")
+    eq(list(to_py(s.g.TEST_spec_calls).values()), ["enable,true", "set,Warrior,1"], "link calls")
+    s.lua.execute("TEST_spec_calls = {}")
+    lines = dfp(s, "spec new")
+    eq(list(to_py(s.g.TEST_spec_calls).values()),
+       ["profile,Warrior (2)", "copy,Warrior", "profile,Warrior", "enable,true", "set,Warrior,1", "set,Warrior (2),2"],
+       "new: copy for the other group")
+    eq(has_line(lines, "2번 특성 = Warrior (2)"), True, "reported")
+    s2 = p_session(dict(BASE, PClassDB=CLASS_DB))
+    s2.lua.execute(SPEC_DB)
+    eq(has_line(dfp(s2, "spec link"), "지원 없음"), True, "no LibDualSpec: message")
+    eq(list(to_py(s2.g.TEST_spec_calls).values()), [], "nothing called")
+
+
+FORBIDDEN = ("SetBinding", "SaveBindings", "LoadBindings", "SetCVar", "C_CVar", "CreateMacro", "EditMacro",
+             "DeleteMacro", "ChatFrame_AddMessageGroup", "ChatFrame_RemoveMessageGroup", "SetOverrideBinding")
+
+FAKE_PM = """
+TEST_pm = {}
+local function api(kind)
+  return {
+    IsAvailable = function() return true end,
+    GetProfileNames = function() return {"K"} end,
+    GetProfile = function() return nil end,
+    SaveProfile = function(_, n) TEST_pm[#TEST_pm + 1] = kind .. ".save " .. n return true, n end,
+    UpdateProfile = function(_, n) TEST_pm[#TEST_pm + 1] = kind .. ".update " .. n return true, n end,
+    LoadProfile = function(_, n) TEST_pm[#TEST_pm + 1] = kind .. ".load " .. n return true end,
+  }
+end
+ProfileManager = {Keybinds = api("keys"), GameSettings = api("game")}
+"""
+
+
+@case
+def profiles_t26_no_bindings_cvars_chat_or_macros():
+    for name in ("Core.lua", "Edit.lua", "Profiles.lua", "Presets.lua", "Spec.lua", "Commands.lua"):
+        with open(os.path.join(CORE_DIR, name), encoding="utf-8") as fh:
+            text = fh.read()
+        for word in FORBIDDEN:
+            eq(word in text, False, "%s calls no %s" % (name, word))
+    s1 = Session(saved=BASE, registry="profiles", extra_files=("Defaults_Profiles.lua",))
+    s1.lua.execute(FAKE_PM)
+    s1.boot(after=P_ADDONS)
+    dfp(s1, "save A")
+    dfp(s1, "go")
+    s2 = Session(saved=carry(s1), registry="profiles", extra_files=("Defaults_Profiles.lua",))
+    s2.lua.execute(FAKE_PM)
+    s2.boot(after=P_ADDONS)
+    dfp(s2, "restore A")
+    dfp(s2, "keys list")
+    dfp(s2, "go")
+    s3r = Session(saved=carry(s2, {"PPlainDB": {"x": 9}}), registry="profiles", extra_files=("Defaults_Profiles.lua",))
+    s3r.lua.execute(FAKE_PM)
+    s3r.boot(after=P_ADDONS)
+    eq(s3r.sv("PPlainDB"), {"x": 1, "nested": {"y": 2}}, "the restore ran in this session")
+    eq(list(to_py(s1.g.TEST_pm).values()) + list(to_py(s2.g.TEST_pm).values()) + list(to_py(s3r.g.TEST_pm).values()),
+       [], "no PM call in boot/save/restore (restore load included)")
+    dfp(s2, "keys load K")
+    eq(list(to_py(s2.g.TEST_pm).values()), ["keys.load K"], "one call on /dfp keys load")
+    dfp(s2, "game save G")
+    eq(list(to_py(s2.g.TEST_pm).values())[-1], "game.save G", "game settings pass through")
+    s3 = p_session()
+    eq(has_line(dfp(s3, "keys load K"), "ProfileManager 가 켜져 있지 않음"), True, "PM absent: message")
+
+
+@case
+def presets_t27_first_run_pick():
+    def pick(height, presets=True):
+        s = Session(registry="profiles", extra_files=("Defaults_Profiles.lua",),
+                    preset_files=("Presets_Test.lua",) if presets else ())
+        if height:
+            s.lua.execute("GetPhysicalScreenSize = function() return %d, %d end" % (height * 16 // 9, height))
+        s.boot(after=P_ADDONS)
+        return s.sv("DevilForever_CoreDB")["preset"].get("active")
+    eq(pick(1440), "qhd", "1440 -> qhd")
+    eq(pick(2160), "uhd", "2160 -> uhd")
+    eq(pick(1080), "uhd", "fhd not registered -> uhd")
+    eq(pick(None), "uhd", "no screen API -> uhd")
+    eq(pick(1440, presets=False), None, "none registered -> no preset")
+    kept = Session(saved={"DevilForever_CoreDB": {"preset": {"active": "uhd"}}}, registry="profiles",
+                   extra_files=("Defaults_Profiles.lua",), preset_files=("Presets_Test.lua",))
+    kept.lua.execute("GetPhysicalScreenSize = function() return 2560, 1440 end")
+    kept.boot(after=P_ADDONS)
+    eq(kept.sv("DevilForever_CoreDB")["preset"]["active"], "uhd", "a stored choice is kept")
+
+
+@case
+def genregistry_t28_restore_options():
+    gen = load_genregistry()
+
+    def entries():
+        return {"Dominos": {"savedVariables": [{"name": "DominosDB", "scope": "account", "split": "common"},
+                                               {"name": "OtherDB", "scope": "account", "split": "common"}],
+                            "frames": [], "editable": [], "bundle": "individual", "defaults": None}}
+    good = entries()
+    gen.apply_extra(good, {"addons": {"Dominos": {"saved_variables": {
+        "DominosDB": {"split": "class", "restore": "profile", "shape": "acedb"},
+        "OtherDB": {"restore": "keys", "shape": "plain", "keys": ["__profiles"]}}}}})
+    svs = {sv["name"]: sv for sv in good["Dominos"]["savedVariables"]}
+    eq(svs["DominosDB"], {"name": "DominosDB", "scope": "account", "split": "class", "restore": "profile",
+                          "shape": "acedb"}, "class entry")
+    eq(svs["OtherDB"]["keys"], ["__profiles"], "keys list")
+    plain = entries()
+    gen.apply_extra(plain, {"addons": {"Dominos": {"saved_variables": {"OtherDB": {"split": "common"}}}}})
+    eq("restore" in plain["Dominos"]["savedVariables"][1], False, "no restore written when the extras give none")
+    bad = [
+        {"DominosDB": {"split": "class"}},
+        {"DominosDB": {"split": "class", "restore": "whole", "shape": "acedb"}},
+        {"DominosDB": {"split": "class", "restore": "profile", "shape": "plain"}},
+        {"DominosDB": {"restore": "profile", "shape": "acedb"}},
+        {"DominosDB": {"restore": "keys", "shape": "plain"}},
+        {"DominosDB": {"restore": "keys", "shape": "plain", "keys": []}},
+        {"DominosDB": {"restore": "keys", "shape": "plain", "keys": "__profiles"}},
+        {"DominosDB": {"restore": "whole", "shape": "plain", "keys": ["a"]}},
+        {"DominosDB": {"restore": "whole"}},
+        {"DominosDB": {"restore": "all", "shape": "plain"}},
+        {"DominosDB": {"shape": "json"}},
+        {"DominosDB": {"split": "common", "mode": "x"}},
+    ]
+    for opts in bad:
+        try:
+            gen.apply_extra(entries(), {"addons": {"Dominos": {"saved_variables": opts}}})
+        except gen.RegistryError:
+            continue
+        raise AssertionError("options accepted: %r" % (opts,))
+
+
+
+# Review fixes (TRIAGE_phase20) -------------------------------------------------------
+
+@case
+def profiles_fix_request_waits_for_go():
+    s2 = saved_with(p_session(BASE))
+    dfp(s2, "restore A")
+    s3 = p_session(carry(s2, {"PPlainDB": {"x": 9}}))
+    eq(s3.sv("PPlainDB"), {"x": 9}, "a request without /dfp go is not used on reload")
+    eq(s3.sv("DevilForever_ProfilesDB")["pending"]["armed"], False, "it is kept, not armed")
+    eq(has_line(list(to_py(s3.g.TEST_prints).values()), "/dfp go 안 함"), True, "reported at login")
+    dfp(s3, "go")
+    s4 = p_session(carry(s3, {"PPlainDB": {"x": 9}}))
+    eq(s4.sv("PPlainDB"), {"x": 1, "nested": {"y": 2}}, "applied after /dfp go")
+
+
+@case
+def profiles_fix_player_key_unknown_fallback():
+    s2 = saved_with(p_session(BASE))
+    dfp(s2, "restore A")
+    dfp(s2, "go")
+    nokey = {"name": ""}
+    s3 = p_session(carry(s2, {"PPlainDB": {"x": 9}}), player=nokey)
+    eq(s3.sv("PPlainDB"), {"x": 1, "nested": {"y": 2}}, "key unknown, armed seconds ago: applied with stored keys")
+    eq(has_line(last_lines(s3), "확인하지 못함"), True, "login check could not confirm: reported")
+    s4 = Session(saved=carry(s2, {"PPlainDB": {"x": 9}}), registry="profiles", extra_files=("Defaults_Profiles.lua",),
+                 player=nokey).boot(after=P_ADDONS, login=False)
+    s4.g.TEST_player.name = "Alt"
+    s4.fire("PLAYER_LOGIN")
+    s4.fire("PLAYER_ENTERING_WORLD", True, False)
+    eq(has_line(last_lines(s4), "경고", "Hero - Realm", "Alt - Realm", "/dfp restore __before-restore"), True,
+       "mismatch at login: loud line with the undo command")
+    s5 = p_session(carry(s2, {"PPlainDB": {"x": 9}}), player=nokey, globals_={"TEST_time": 1000 + 121})
+    eq(s5.sv("PPlainDB"), {"x": 9}, "key unknown and older than 120 s: dropped")
+    eq(has_line(last_lines(s5), "요청 버림"), True, "reported")
+
+
+@case
+def profiles_fix_restored_sv_not_fresh_for_fragments():
+    s1 = Session(saved=BASE, registry="profiles", extra_files=("Defaults_Profiles.lua",),
+                 preset_files=("Presets_Test.lua",))
+    s1 = fresh_reload(s1, [FRAG_PLAIN])
+    eq(s1.sv("PPlainDB"), BASE["PPlainDB"], "existing SV: fragment not written")
+    dfp(s1, "save A")
+    dfp(s1, "go")
+    s2 = fresh_reload(Session(saved=carry(s1), registry="profiles", extra_files=("Defaults_Profiles.lua",),
+                              preset_files=("Presets_Test.lua",)), [FRAG_PLAIN])
+    dfp(s2, "restore A")
+    dfp(s2, "go")
+    s3 = fresh_reload(Session(saved=carry(s2, {"PPlainDB": None}), registry="profiles",
+                              extra_files=("Defaults_Profiles.lua",), preset_files=("Presets_Test.lua",)), [FRAG_PLAIN])
+    eq(s3.sv("PPlainDB"), BASE["PPlainDB"], "restored values not overwritten by a fresh-mode fragment")
+    eq(s3.core.Profiles.WasFresh(s3.core.Profiles, "PPlainDB"), False, "written by the restore: not fresh")
+
+
+@case
+def profiles_fix_undo_of_undo_keeps_unwritten_entries():
+    s2 = saved_with(p_session(BASE))
+    s3 = restored(s2, "restore A", {"PPlainDB": {"x": 7}, "PAceDB": {"profiles": {"p": {"v": 7}}}})
+    undo1 = snapshot(s3, "__before-restore")
+    s4 = restored(s3, "restore __before-restore only PPlain")
+    undo2 = snapshot(s4, "__before-restore")
+    eq(undo2["common"]["PPlainDB"]["data"], {"x": 1, "nested": {"y": 2}}, "written SV: state before this restore")
+    eq((undo2["common"]["PAceDB"]["data"], undo2["common"]["PAceDB"]["carried"]),
+       (undo1["common"]["PAceDB"]["data"], True), "entry not written now kept from the previous slot")
+    s5 = restored(s4, "restore __before-restore only PAce")
+    eq(s5.sv("PAceDB"), {"profiles": {"p": {"v": 7}}}, "the kept entry can still be restored")
+    s6 = restored(saved_with(p_session(BASE)), "restore A only PPlain")
+    eq(sorted(snapshot(s6, "__before-restore")["common"]), ["PPlainDB"], "from a user snapshot: one-slot rule")
+
+
+@case
+def profiles_fix_class_restore_other_characters_own_profile():
+    db = {"profileKeys": {"Hero - Realm": "Hero - Realm", "Sage - Realm": "Sage - Realm", "Ally - Realm": "Warrior"},
+          "profiles": {"Hero - Realm": {"a": 1}, "Sage - Realm": {"s": 1}, "Warrior": {"w": 1}}}
+    s2 = saved_with(p_session(dict(BASE, PClassDB=db)))
+    sage = {"name": "Sage"}
+    changed = dict(db, profiles={"Hero - Realm": {"a": 9}, "Sage - Realm": {"s": 9}, "Warrior": {"w": 1}})
+    s3 = p_session(carry(s2, {"PClassDB": changed}), player=sage)
+    s4 = restored(s3, "restore A class", {"PClassDB": changed}, player=sage)
+    out = s4.sv("PClassDB")
+    eq(out["profiles"]["Hero - Realm"], {"a": 9}, "Hero's own profile untouched")
+    eq(out["profiles"]["Sage - Realm"], {"a": 1}, "saved values written to the restoring character's profile")
+    eq(out["profileKeys"], {"Hero - Realm": "Hero - Realm", "Sage - Realm": "Sage - Realm", "Ally - Realm": "Warrior"},
+       "this character points to its own profile")
+    eq(has_line(last_lines(s4), "Hero - Realm", "Sage - Realm", "다른 캐릭터"), True, "rename reported")
+    shared = dict(db, profileKeys={"Hero - Realm": "Warrior", "Ally - Realm": "Warrior"},
+                  profiles={"Warrior": {"w": 1}})
+    t2 = saved_with(p_session(dict(BASE, PClassDB=shared)))
+    t3 = restored(t2, "restore A class", {"PClassDB": dict(shared, profiles={"Warrior": {"w": 9}})})
+    out3 = t3.sv("PClassDB")
+    eq((out3["profiles"]["Warrior"], out3["profiles"]["Hero - Realm"], out3["profileKeys"]["Hero - Realm"]),
+       ({"w": 9}, {"w": 1}, "Hero - Realm"), "a profile another character uses is never written, even a shared one")
+
+
+@case
+def profiles_fix_suppress_after_version_and_keys_intersect():
+    store = {"schema": 1, "snapshots": {"A": {"schema": 1, "name": "A", "common": {
+        "PAceDB": {"folder": "PAce", "restore": "whole", "data": {"x": 1}, "registryVersion": "1.9"},
+        "PKeysDB": {"folder": "PKeys", "restore": "keys", "keys": ["settings", "gone"],
+                    "data": {"settings": {"a": 5}, "gone": 1}, "registryVersion": "1.0"}}, "class": {}}}}
+    s = p_session(dict(BASE, DevilForever_ProfilesDB=store))
+    s2 = restored(s, "restore A")
+    eq(s2.status("PAce").get("suppressed"), None, "version mismatch: Defaults of that folder not suppressed")
+    eq(has_line(last_lines(s2), "PAceDB", "1.9", "2.0"), True, "mismatch reported")
+    eq(s2.sv("PKeysDB"), {"settings": {"a": 5}, "history": {1: 1, 2: 2, 3: 3}}, "only keys the registry lists written")
+    eq(has_line(last_lines(s2), "PKeysDB", "등록 표에 없는 키 1개"), True, "dropped key reported")
+
+
+@case
+def profiles_fix_command_arguments():
+    s2 = saved_with(p_session(BASE))
+    eq(has_line(dfp(s2, "restore A only NoSuch"), "등록 표에 없는 폴더"), True, "unknown folder refused before reload")
+    eq(s2.sv("DevilForever_ProfilesDB").get("pending"), None, "nothing pending")
+    eq(has_line(dfp(s2, "restore A common only PPlain extra"), "알 수 없는 말: extra"), True, "extra word refused")
+    eq(has_line(dfp(s2, "go now"), "알 수 없는 말: now"), True, "extra word after go refused")
+    dfp(s2, "restore A COMMON ONLY PPlain")
+    eq(s2.sv("DevilForever_ProfilesDB")["pending"]["parts"]["label"], "common", "part word in any case")
+    dfp(s2, "cancel")
+    dfp(s2, "delete A YES")
+    eq(snapshot(s2, "A"), None, "YES in capitals deletes")
+
+
+@case
+def presets_fix_unfinished_and_kept_lines():
+    saved = {"PAceDB": {"global": {"barHeight": 20}}}
+    s = fresh_reload(Session(saved=saved, registry="profiles", extra_files=("Defaults_Profiles.lua",),
+                             preset_files=("Presets_Test.lua",)), [FRAG_GLOBAL])
+    eq(has_line(list(to_py(s.g.TEST_prints).values()), "uhd preset 애드온 값 1개는 쓰지 않음"), True,
+       "kept fragment: one chat line at login")
+    dfp(s, "preset uhd")
+    dfp(s, "go")
+    s2 = fresh_reload(Session(saved=carry(s), registry="profiles", extra_files=("Defaults_Profiles.lua",),
+                              preset_files=("Presets_Test.lua",), globals_={"TEST_time": 1000 + 601}), [FRAG_GLOBAL])
+    prints2 = list(to_py(s2.g.TEST_prints).values())
+    eq(has_line(prints2, "uhd preset 의 애드온 값이 아직 쓰이지 않음"), True, "timed-out preset switch reported")
+    eq(has_line(prints2, "uhd preset 애드온 값 1개는 쓰지 않음"), False, "unchanged kept set: not printed again")
+    dfp(s2, "preset uhd")
+    dfp(s2, "go")
+    s3 = fresh_reload(Session(saved=carry(s2), registry="profiles", extra_files=("Defaults_Profiles.lua",),
+                              preset_files=("Presets_Test.lua",), globals_={"TEST_time": 1000 + 601}), [FRAG_GLOBAL])
+    eq((s3.sv("PAceDB")["global"]["barHeight"], s3.sv("DevilForever_CoreDB")["preset"].get("unfinished")), (14, None),
+       "finished after /dfp preset again and /dfp go")
+
+
+
+# Re-check 1 fixes ---------------------------------------------------------------------
+
+@case
+def profiles_fix2_key_unknown_alt_after_interrupted_reload():
+    # Hero arms a restore; the reload is interrupted and Alt logs in within 120 s
+    # while the player name is still unknown at Core's load.
+    saved = dict(BASE, PCharDB={"hero": 1}, PClassDB=CLASS_DB)
+    s2 = saved_with(p_session(saved))
+    dfp(s2, "restore A")
+    dfp(s2, "go")
+    alt_data = carry(s2, {"PCharDB": {"alt": 1}, "PPlainDB": {"x": 9},
+                          "PClassDB": dict(CLASS_DB, profiles={"Warrior": {"a": 9}})})
+    s3 = Session(saved=alt_data, registry="profiles", extra_files=("Defaults_Profiles.lua",),
+                 player={"name": ""}, globals_={"TEST_time": 1000 + 60}).boot(after=P_ADDONS, login=False)
+    s3.g.TEST_player.name = "Alt"
+    s3.fire("PLAYER_LOGIN")
+    s3.fire("PLAYER_ENTERING_WORLD", True, False)
+    eq(s3.sv("PCharDB"), {"alt": 1}, "per-character SV of Alt untouched")
+    eq(s3.sv("PClassDB")["profiles"]["Warrior"], {"a": 9}, "class part untouched")
+    eq(s3.sv("PPlainDB"), {"x": 1, "nested": {"y": 2}}, "account-wide common entry written")
+    lines = last_lines(s3)
+    eq(has_line(lines, "PCharDB", "캐릭터를 모름") and has_line(lines, "PClassDB", "캐릭터를 모름"), True, "skips reported")
+    eq(has_line(lines, "경고", "Alt - Realm"), True, "mismatch warning")
+    undo = snapshot(s3, "__before-restore")
+    eq((undo["savedBy"]["char"], sorted(undo["common"])), ("unknown", ["PAceDB", "PKeysDB", "PPlainDB"]),
+       "undo labelled unknown, account-wide entries only")
+    s4 = restored(s3, "restore __before-restore", player={"name": "Alt"}, globals_={"TEST_time": 1000 + 60})
+    eq(s4.sv("PPlainDB"), {"x": 9}, "undo works on the character that runs it")
+
+
+@case
+def profiles_fix2_save_refused_with_unknown_key():
+    s1 = p_session(BASE)
+    dfp(s1, "save A")
+    dfp(s1, "go")
+    s2 = p_session(carry(s1), player={"name": ""})
+    eq(snapshot(s2, "A"), None, "save not run while the character is unknown")
+    eq(has_line(last_lines(s2), "save A", "요청 버림"), True, "reported")
+
+
+@case
+def profiles_fix2_shared_character_named_profile():
+    # Cara uses Sage's character-named profile; Sage restores Hero's snapshot.
+    db = {"profileKeys": {"Hero - Realm": "Hero - Realm", "Sage - Realm": "Sage - Realm",
+                          "Cara - Realm": "Sage - Realm"},
+          "profiles": {"Hero - Realm": {"a": 1}, "Sage - Realm": {"s": 1}}}
+    s2 = saved_with(p_session(dict(BASE, PClassDB=db)))
+    sage = {"name": "Sage"}
+    s3 = p_session(carry(s2), player=sage)
+    s4 = restored(s3, "restore A class", player=sage)
+    out = s4.sv("PClassDB")
+    eq((out["profiles"]["Hero - Realm"], out["profiles"]["Sage - Realm"]), ({"a": 1}, {"s": 1}),
+       "neither Hero's nor Cara's live profile written")
+    eq((out["profiles"]["Sage - Realm (2)"], out["profileKeys"]["Sage - Realm"], out["profileKeys"]["Cara - Realm"]),
+       ({"a": 1}, "Sage - Realm (2)", "Sage - Realm"), "free name chosen; Cara still on hers")
+    eq(has_line(last_lines(s4), "Hero - Realm", "Sage - Realm (2)"), True, "rename reported")
+
+
+@case
+def profiles_fix2_other_characters_lds_profile():
+    # Hero's dual-spec group 2 uses "Hero Heal" (only through LibDualSpec).
+    db = {"profileKeys": {"Hero - Realm": "Hero - Realm"},
+          "profiles": {"Hero - Realm": {"a": 1}, "Hero Heal": {"h": 1}},
+          "namespaces": {"LibDualSpec-1.0": {"char": {"Hero - Realm": {"enabled": True, 1: "Hero - Realm",
+                                                                        2: "Hero Heal"}}}}}
+    s2 = saved_with(p_session(dict(BASE, PClassDB=db)))
+    sage = {"name": "Sage"}
+    changed = dict(db, profiles={"Hero - Realm": {"a": 9}, "Hero Heal": {"h": 9}})
+    s3 = p_session(carry(s2, {"PClassDB": changed}), player=sage)
+    s4 = restored(s3, "restore A class", {"PClassDB": changed}, player=sage)
+    out = s4.sv("PClassDB")
+    eq((out["profiles"]["Hero - Realm"], out["profiles"]["Hero Heal"]), ({"a": 9}, {"h": 9}),
+       "Hero's profiles (profileKeys and LibDualSpec) untouched")
+    eq((out["profiles"]["Sage - Realm"], out["profiles"]["Sage - Realm (2)"]), ({"a": 1}, {"h": 1}),
+       "two names go to two distinct free targets")
+    lds = out["namespaces"]["LibDualSpec-1.0"]["char"]
+    eq((lds["Sage - Realm"][1], lds["Sage - Realm"][2], lds["Hero - Realm"][2]),
+       ("Sage - Realm", "Sage - Realm (2)", "Hero Heal"), "Sage's groups point to the copies; Hero's mapping kept")
+
+
+@case
+def profiles_fix2_unarmed_notice_and_unfinished_cleared():
+    s2 = saved_with(p_session(BASE))
+    dfp(s2, "restore A")
+    before = s2.sv("DevilForever_ProfilesDB")["last"]
+    alt = p_session(carry(s2), player={"name": "Alt"})
+    eq(has_line(list(to_py(alt.g.TEST_prints).values()), "/dfp go 안 함"), False, "other character: no notice")
+    hero = p_session(carry(s2))
+    eq(has_line(list(to_py(hero.g.TEST_prints).values()), "/dfp go 안 함"), True, "requesting character: notice")
+    eq(hero.sv("DevilForever_ProfilesDB")["last"], before, "last result not replaced by the notice")
+    p = fresh_reload(Session(saved={"PAceDB": {"global": {"x": 1}}}, registry="profiles",
+                             extra_files=("Defaults_Profiles.lua",), preset_files=("Presets_Test.lua",)), [FRAG_GLOBAL])
+    dfp(p, "preset uhd")
+    eq(p.sv("DevilForever_CoreDB")["preset"]["unfinished"], "uhd", "set by the switch")
+    dfp(p, "cancel")
+    eq(p.sv("DevilForever_CoreDB")["preset"].get("unfinished"), None, "cleared by /dfp cancel of the request")
+    dfp(p, "preset uhd")
+    dfp(p, "cancel")
+    dfp(p, "preset qhd")
+    eq(p.sv("DevilForever_CoreDB")["preset"].get("unfinished"), None, "cleared by a later preset restore")
 
 
 def main():

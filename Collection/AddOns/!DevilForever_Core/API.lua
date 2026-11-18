@@ -5,7 +5,9 @@ Registry (static data generated from Collection/manifest.json)
   Core:GetAddonInfo(folder)         -> copy of the registry entry, or nil
       {package, version, phases, bundle = "required"|"individual", use,
        tocs, tocStatus, foreverLoad, savedVariables = {{name, scope =
-       "account"|"character", split = "common"|"class"}}, frames = {{key,
+       "account"|"character", split = "common"|"class", restore =
+       "whole"|"keys"|"profile"|nil, shape = "plain"|"acedb"|nil,
+       keys = {...}|nil}}, frames = {{key,
        frame, tokens}}, editable = {{frame, field, kind, min, max, step,
        default}}, defaults = "Defaults/<Folder>.lua"|nil}
       folder lookup ignores letter case, as the client does
@@ -13,7 +15,9 @@ Registry (static data generated from Collection/manifest.json)
   Core:GetFrameNames([folder])      -> sorted list of appearance frame names
                                        (all registered folders when nil)
   Core:GetFrameKeys([folder])       -> sorted list of registry frame keys
-  Core:GetSavedVariables([folder])  -> list of {folder, name, scope, split}
+  Core:GetSavedVariables([folder])  -> list of {folder, name, scope, split,
+                                       restore ("skip" when the registry
+                                       names none), shape, keys}
 
 Defaults (see Defaults.lua for the spec and the fill rules)
   Core.Defaults:Register(folder, spec)  -> true | false, reason
@@ -59,6 +63,42 @@ Per-frame edit values (see Edit.lua)
   Core.Edit:GetPending()                -> edits waiting for the end of combat
   Core.Edit:RegisterCallback(owner, fn(frameKey, field, storedValue)) / :UnregisterCallback(owner)
 
+Layout presets (see Presets.lua; Edit:Get layers token < registry default <
+active preset value < stored edit)
+  Core.Presets:Register(def)            -> number of edit values and fragments kept
+  Core.Presets:Restore(name)            -> true, lines | false, reason (out of
+                                           combat; clears the stored edits of the
+                                           preset's frames; addon fragments after
+                                           /dfp go)
+  Core.Presets:GetActive()              -> name|nil, registered
+  Core.Presets:GetValue(frameKey, field) -> value of the active preset | nil
+  Core.Presets:List() / :Get(name) / :IsRegistered(name) / :PickForScreen()
+  Core.Presets:GetFragmentStatus()      -> {[preset|index] = {state, message, key}}
+  Core.Edit:FireChanged(frameKey, field) -> calls the Edit listeners (preset change)
+
+Settings save/restore (see Profiles.lua; all requests refuse in combat and
+take effect at the next load, /dfp go)
+  Core.Profiles:RequestSave(name)       -> true, lines | false, reason
+  Core.Profiles:RequestRestore(name, [part], [onlyFolder]) -> true, lines | false, reason
+                                           part: "all" | "common" | "class"
+  Core.Profiles:Describe(name, [part], [onlyFolder]) -> dry-run lines
+  Core.Profiles:Go() / :Cancel()        -> true | false, reason
+  Core.Profiles:Delete(name, "yes")     -> true | false, reason
+  Core.Profiles:List()                  -> {{name, savedAt, char, class, entries,
+                                           carried, bytes, problem}}
+  Core.Profiles:GetStatus()             -> {readOnly, pending, last, snapshots,
+                                           maxSnapshots}
+  Core.Profiles:WasFresh(svName)        -> true when the saved variable was nil at
+                                           its addon's ADDON_LOADED this session
+  Core.CopyData(value)                  -> plain-data copy, number of values left out
+  Core.FindAceDB(svTable)               -> AceDB-3.0 database on that table | nil
+
+Talent-group profiles (see Spec.lua; class-split saved variables, LibDualSpec)
+  Core.Spec:GetState()                  -> lines
+  Core.Spec:Link() / :New() / :Off()    -> true, lines | false, reason
+
+Slash commands: /dfprofile, /dfp (see Commands.lua; /dfp help)
+
 Status
   Core:GetStatusLog()               -> copy of the status list {{kind, subject, message}}
   Core:IsReady()                    -> true once DevilForever_CoreDB is loaded
@@ -71,8 +111,10 @@ Callbacks
   PLAYER_REGEN_ENABLED. An error in one callback goes to the client error
   handler and the other callbacks still run.
 
-Core changes no frame. Appearance code reads tokens and edit values and applies
-them.
+Core changes no frame directly; it writes registered saved variables only at
+load time: after a user command, or preset values into saved variables that are
+new on disk. Appearance code reads tokens and edit values
+and applies them.
 ]]
 
 local _, Core = ...
@@ -143,7 +185,9 @@ function Core:GetSavedVariables(folder)
   local out = {}
   for name, entry in pairs(selected(folder)) do
     for _, sv in ipairs(entry.savedVariables or {}) do
-      out[#out + 1] = {folder = name, name = sv.name, scope = sv.scope, split = sv.split}
+      out[#out + 1] = {folder = name, name = sv.name, scope = sv.scope, split = sv.split,
+                       restore = sv.restore or "skip", shape = sv.shape,
+                       keys = sv.keys and Core.CopyTable(sv.keys) or nil}
     end
   end
   sort(out, function(a, b)

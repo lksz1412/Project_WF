@@ -3,7 +3,7 @@
 받는 쪽: Codex. 보내는 쪽: Claude 세션. 외관 설계·판단은 Codex 에 맡긴다(R50·R53·R87). 지켜야 할 약속(토큰으로만 값 읽기·`Edit:Get`·전투 중 보호 프레임 금지·등록으로 프레임 알리기·다른 애드온 수정 금지·V42 초기화 코드 금지)은 `Collection/codex-briefs/appearance-2.md` 2절 그대로이고, 세 겉보기 값의 꼴은 `Collection/codex-briefs/appearance-2-layouts.md` 그대로다. 게임 입력을 자동으로 보내는 도구는 쓰지 않는다.
 
 - 결과를 올릴 자리: `References/codex-appearance/16/`. `Collection/` 은 고치지 않는다 — Claude 가 정적 대조 뒤 합친다.
-- 기반: 설치 ZIP `outputs/collection/DevilForever-collection.zip`(sha256 `0ee2aca3f07fedf1b61431f6210bc5ac93fd206288f5021183ec13e9727a7e49` — `!DevilForever_Core` + `DevilForever_StatusStrip`). Phase 2 외관 결과(`References/codex-appearance/2/`)의 토큰 세트와 세 겉보기(`References/codex-appearance/2-layouts/`) 위에 얹는다. 띠가 게임에서 무엇을 보이는지는 실사용 검증 `Collection/codex-briefs/phase16.md` 결과(`References/codex-verify/phase16/`)를 먼저 본다.
+- 기반: 설치 ZIP `outputs/collection/DevilForever-collection.zip`(sha256 `b6392ea37d7cfefa123a3ef023ded82990c1be27826af6f54e23abc6bafd51c1` — `!DevilForever_Core` + `DevilForever_StatusStrip`). Phase 2 외관 결과(`References/codex-appearance/2/`)의 토큰 세트와 세 겉보기(`References/codex-appearance/2-layouts/`) 위에 얹는다. 띠가 게임에서 무엇을 보이는지는 실사용 검증 `Collection/codex-briefs/phase16.md` 결과(`References/codex-verify/phase16/`)를 먼저 본다.
 - 띠 애드온은 외관을 하나도 정하지 않는다: 색·질감·바탕이 없고, 글자는 게임 글꼴 객체 `GameFontHighlightSmall` 그대로다. 띠 코드는 Core 의 토큰·편집 값을 읽지 않는다(Core 없이도 돈다). 그래서 외관은 모두 Codex 의 Skin 애드온이 입힌다.
 
 ## 1. 만들 것

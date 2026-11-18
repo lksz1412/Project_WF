@@ -33,3 +33,20 @@
 
 - `layouts/fhd.lua`·`layouts/qhd.lua`·`layouts/uhd.lua`, 겉보기별 값 제안 파일, `report.md`: 겉보기마다 표 하나(버튼 외곽·아이콘·여백·간격 → 줄 폭·높이 → 아래부터 쌓은 높이, 마지막 칸에 보고용 화면 비율), 실제 게임 갈무리(그 해상도로 띄울 수 있으면 셋 다 — 못 띄우면 `못 함` 과 이유), 남은 문제.
 - 기준: `appearance-2.md` 4절 + preset 의 frame key 가 모두 등록된 key + 값이 등록 범위 안 + 보고 표에 계산 순서가 보이고 비율 곱하기가 없음 + 세 겉보기 모두 같은 코드로 적용(겉보기마다 코드 분기 없음).
+
+## 5. 덧붙임 (Phase 20) — preset 이 Core 에 들어가는 길과 값 조각 파일의 꼴
+
+Core 에 preset 을 고르고 거는 층이 생겼다(Phase 20, `Collection/AddOns/!DevilForever_Core/Presets.lua`). 3절 마지막 둘째 줄의 「Core 에 아직 없다」 는 이제 아래와 같다. Codex 가 낼 파일의 꼴만 조금 더 정한다.
+
+- 층 순서: 테마 토큰 < 등록 표 기본값 < 지금 preset 값 < 사용자 편집값(AI 로 고친 값). 사용자가 `/dfp preset <이름>` 을 고르면 그 preset 이 다루는 프레임의 사용자 편집값만 지우고 그 preset 으로 돌아간다(다른 프레임의 편집값은 남는다).
+- 처음 설치: preset 이 아직 정해지지 않았으면 화면 세로 픽셀로 고른다(2000 이상 `uhd`, 1400 이상 `qhd`, 그 아래 `fhd`, 화면 크기를 못 읽거나 고른 이름이 없으면 `uhd`).
+- `layouts/<fhd|qhd|uhd>.lua` 는 3절 그대로 `return {name, screen, uiScale, edits = {...}}` 를 낸다. frame key 는 등록된 key, 값은 등록 범위 안이어야 한다 — 어긋난 값은 Core 가 버리고 기록한다.
+- 애드온 값 조각 파일(3절의 `<애드온>-profile.fragment.<fhd|qhd|uhd>.lua`, Experience Forever 는 `experienceforever-global.fragment.<fhd|qhd|uhd>.lua`)은 값만이 아니라 아래 머리 칸을 함께 담은 표 하나를 `return` 한다:
+  `return {folder = "<애드온 폴더>", savedVariable = "<저장 변수 이름>", section = "root"|"global"|"profile", profile = "<토큰>"|nil, namespace = "<AceDB namespace>"|nil, addonVersion = "<값을 만든 애드온의 Version>", version = <1 이상 정수>, values = {...}}`
+  - `section`: 저장 변수 맨 위 표면 `root`, AceDB 의 `global` 칸이면 `global`(Experience Forever 가 이것), AceDB profile 이면 `profile`.
+  - `profile`·`namespace` 는 `section = "profile"` 일 때만. `profile` 토큰은 `$char`(기본)·`$class`·`$className`·`$realm` 또는 profile 이름 그대로. 그 캐릭터가 이미 쓰는 profile 이 있으면 그쪽에 쓴다.
+  - `addonVersion` 은 값을 만들 때 쓴 애드온 TOC 의 `## Version` 그대로. 설치된 판이 다르면 Core 는 그 조각을 쓰지 않고 알린다.
+  - `version` 은 값을 고칠 때마다 1 씩 올린다.
+  - `values` 에는 겉보기 값(자리·크기·질감·글꼴·색)만 넣는다. Core 기본값 파일(`Defaults/<폴더>.lua`)이 넣는 기능 값과 같은 키를 넣지 않는다.
+- 붙이는 일은 Claude 몫이다: Claude 가 겉보기 하나와 그 조각들을 Core 파일 하나 `Presets/<이름>.lua`(`DevilForever_Core.Presets:Register({..., fragments = {...}})`)로 묶어 Core TOC 의 `Presets.lua` 아래에 넣는다. 이유: 조각은 대상 애드온이 자기 저장 변수를 읽기 전에 등록돼 있어야 하는데, 외관 애드온 폴더는 대상 애드온(예: Details)보다 늦게 불러와진다. 그래서 Codex 파일은 `return {...}` 꼴 그대로 두고 `Register` 를 부르지 않는다.
+- 조각이 실제로 쓰이는 때: 처음 설치에서는 그 저장 변수가 아직 없을 때만(이미 있는 사용자 값은 덮지 않는다), 그 뒤에는 사용자가 `/dfp preset <이름>` 을 고르고 `/dfp go` 로 다시 불러올 때. 쓰는 방식은 `values` 에 적힌 키만 바꾸고 나머지 키는 그대로 둔다.

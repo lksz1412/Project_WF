@@ -1,6 +1,8 @@
 -- Shared base of DevilForever_Core: namespace, saved-variable setup, event
 -- dispatch, callback lists, status log and table helpers used by the modules.
--- Core changes no frame itself; it only stores data and calls back.
+-- Core changes no frame directly; it writes registered saved variables only at
+-- load time: after a user command, or preset values into saved variables that
+-- are new on disk (Profiles.lua, Presets.lua).
 
 local addonName, Core = ...
 
@@ -20,6 +22,39 @@ function Core.CopyTable(value)
   local out = {}
   for k, v in pairs(value) do out[k] = Core.CopyTable(v) end
   return out
+end
+
+-- Deep copy of plain data taken from other addons' saved variables. Keys must be
+-- strings, numbers or booleans; values strings, numbers, booleans or tables.
+-- Other keys and values (functions, userdata, threads) and a table met again on
+-- the current path (a cycle) are left out. Metatables are not copied.
+-- Returns copy, number of values left out.
+function Core.CopyData(value)
+  local dropped = 0
+  local onPath = {}
+  local function copy(v)
+    local kind = type(v)
+    if kind == "string" or kind == "number" or kind == "boolean" then return v end
+    if kind ~= "table" or onPath[v] then
+      dropped = dropped + 1
+      return nil
+    end
+    onPath[v] = true
+    local out = {}
+    for k, inner in next, v do
+      local keyKind = type(k)
+      if keyKind == "string" or keyKind == "number" or keyKind == "boolean" then
+        local c = copy(inner)
+        if c ~= nil then out[k] = c end
+      else
+        dropped = dropped + 1
+      end
+    end
+    onPath[v] = nil
+    return out
+  end
+  local result = copy(value)
+  return result, dropped
 end
 
 -- Fills keys of `source` that are missing (raw nil) in `target`, recursing into
@@ -142,6 +177,18 @@ function Core.IsLoadedInClient(folder)
   return loaded and true or false
 end
 
+-- The AceDB-3.0 database object built on saved-variable table `sv` (a root
+-- database, not a namespace), or nil when no AceDB:New has used `sv` yet.
+function Core.FindAceDB(sv)
+  if type(sv) ~= "table" or LibStub == nil then return nil end
+  local ok, AceDB = pcall(LibStub, "AceDB-3.0", true)
+  if not ok or type(AceDB) ~= "table" or type(AceDB.db_registry) ~= "table" then return nil end
+  for db in pairs(AceDB.db_registry) do
+    if type(db) == "table" and rawget(db, "sv") == sv and rawget(db, "parent") == nil then return db end
+  end
+  return nil
+end
+
 -- Player keys derived as AceDB-3.0 derives them (AceDB-3.0.lua, key setup):
 --   regional unique names on: realm = ruleset name ("Hardcore", "RP-PvP",
 --     "RP", "PvP", "PvE"), char = "<name> <surname>"
@@ -215,9 +262,12 @@ end
 --                    lateCreated = {[folder] = {[targetKey] = true}}}
 --   theme           {active = setName}
 --   edits           {[frameKey] = {[field] = value}}
+--   preset          {active = presetName|nil, unfinished = presetName|nil,
+--                    keptNotice = string|nil (last printed kept/skipped set),
+--                    fragments = {[presetName] = {[targetKey] = fragment version}}}
 -- A value of the wrong type is kept as it is on disk; the module then works on
 -- a session-only table and the case is logged.
-local DB_LAYOUT = {schema = Core.DB_SCHEMA, defaults = {applied = {}}, theme = {}, edits = {}}
+local DB_LAYOUT = {schema = Core.DB_SCHEMA, defaults = {applied = {}}, theme = {}, edits = {}, preset = {fragments = {}}}
 
 local function initDB()
   local db = DevilForever_CoreDB

@@ -14,8 +14,10 @@ Per addon folder the registry holds: package, feature phases, bundle
 ("required" or "individual"), how the start addon is used, the TOC files the
 Forever client is taken to load, saved variables with scope ("account" for
 ``SavedVariables``, "character" for ``SavedVariablesPerCharacter``) and split
-("common" unless the extras say "class"), appearance frames, editable items and
-the defaults file (path relative to the Core folder).
+("common" unless the extras say "class"), what a settings restore does with
+each saved variable (restore/shape/keys, written only when the extras give
+them; absent restore means "skip"), appearance frames, editable items and the
+defaults file (path relative to the Core folder).
 
 TOC choice per folder follows ``toclib.tocs_for_interface``: TOCs whose
 Interface lists the target interface, best ``forever_load`` rank kept; when none
@@ -28,10 +30,16 @@ registry_extra.json shape (every key optional):
       "frames": [{"key": str, "frame": str, "tokens": {"<field>": "<token>"}}],
       "editable": [{"frame": str, "field": str, "kind": str,
                     "min": num, "max": num, "step": num, "default": any}],
-      "saved_variables": {"<Name>": {"split": "common" | "class"}},
+      "saved_variables": {"<Name>": {"split": "common" | "class",
+                                     "restore": "whole" | "keys" | "profile" | "skip",
+                                     "shape": "plain" | "acedb",
+                                     "keys": ["<top-level key>", ...]}},
       "defaults": "Defaults/<Folder>.lua"}}}
 A folder in the extras that is not registered, a saved variable that the folder
-does not declare, an unknown field or kind, an editable item whose frame is not
+does not declare, an unknown saved-variable option or value, split "class"
+without restore "profile" and shape "acedb", restore "profile" without split
+"class", restore "keys" without a non-empty list of key strings (or keys with
+another restore), an unknown field or kind, an editable item whose frame is not
 one of the folder's frame keys or whose default does not fit its kind and
 min/max, or a defaults file that is missing from the Core folder or from the
 Core TOC file list stops the generator.
@@ -61,6 +69,9 @@ SCHEMA = 1
 REQUIRED_PHASES = {2, 20, 21}
 EDIT_FIELDS = ("position", "size", "font", "color", "rows", "spacing")
 SPLITS = ("common", "class")
+RESTORES = ("whole", "keys", "profile", "skip")
+SHAPES = ("plain", "acedb")
+SV_OPTIONS = ("split", "restore", "shape", "keys")
 FOREVER_RANK = ("yes", "check", "no")
 
 
@@ -225,6 +236,39 @@ def valid_default(field, value, item):
     return False
 
 
+def apply_sv_options(folder, sv, opts):
+    where = "registry_extra: %s %s" % (folder, sv["name"])
+    unknown = sorted(set(opts) - set(SV_OPTIONS))
+    if unknown:
+        raise RegistryError("%s unknown option %s" % (where, ", ".join(unknown)))
+    split = opts.get("split", "common")
+    if split not in SPLITS:
+        raise RegistryError("%s split must be common or class" % where)
+    restore = opts.get("restore")
+    shape = opts.get("shape")
+    keys = opts.get("keys")
+    if restore is not None and restore not in RESTORES:
+        raise RegistryError("%s restore must be one of %s" % (where, ", ".join(RESTORES)))
+    if shape is not None and shape not in SHAPES:
+        raise RegistryError("%s shape must be plain or acedb" % where)
+    if split == "class" and (restore != "profile" or shape != "acedb"):
+        raise RegistryError("%s split class needs restore profile and shape acedb" % where)
+    if restore == "profile" and split != "class":
+        raise RegistryError("%s restore profile needs split class" % where)
+    if restore == "keys":
+        if (not isinstance(keys, list) or not keys
+                or not all(isinstance(k, str) and k for k in keys) or len(set(keys)) != len(keys)):
+            raise RegistryError("%s restore keys needs a non-empty list of distinct key strings" % where)
+    elif keys is not None:
+        raise RegistryError("%s keys only with restore keys" % where)
+    if restore in ("whole", "keys", "profile") and shape is None:
+        raise RegistryError("%s restore %s needs a shape" % (where, restore))
+    sv["split"] = split
+    for field, value in (("restore", restore), ("shape", shape), ("keys", keys)):
+        if value is not None:
+            sv[field] = list(value) if isinstance(value, list) else value
+
+
 def apply_extra(entries, extra):
     by_lower = {k.lower(): k for k in entries}
     listed = None
@@ -271,10 +315,7 @@ def apply_extra(entries, extra):
         for name, opts in sorted((add.get("saved_variables") or {}).items()):
             if name not in names:
                 raise RegistryError("registry_extra: %s does not declare saved variable %s" % (folder, name))
-            split = (opts or {}).get("split", "common")
-            if split not in SPLITS:
-                raise RegistryError("registry_extra: %s %s split must be common or class" % (folder, name))
-            names[name]["split"] = split
+            apply_sv_options(folder, names[name], opts or {})
         if add.get("defaults"):
             rel = add["defaults"].replace("\\", "/")
             if rel.startswith("/") or ".." in rel.split("/"):

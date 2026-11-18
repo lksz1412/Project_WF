@@ -4,7 +4,7 @@
 
 - 결과를 올릴 자리: `References/codex-verify/phase19/` (저장소). 결과 표 `result.md` 에 항목마다 「결과 한 줄 양식」 을 한 줄씩 적는다. 두 번째 칸은 `통과` / `실패` / `못 함` 중 하나, 실패면 마지막 칸에 오류 문구 한 줄.
 - 설치 ZIP 둘:
-  - 모음집 `outputs/collection/DevilForever-collection.zip`, sha256 `0ee2aca3f07fedf1b61431f6210bc5ac93fd206288f5021183ec13e9727a7e49` (지금 판 안에는 `!DevilForever_Core/`, `DevilForever_Castbars/`, `DevilForever_ChatSetup/`, `DevilForever_FUFDefaults/`, `DevilForever_StatusStrip/`, `PitBull4/` — 이 발주문은 `!DevilForever_Core` 하나만 넣는다).
+  - 모음집 `outputs/collection/DevilForever-collection.zip`, sha256 `b6392ea37d7cfefa123a3ef023ded82990c1be27826af6f54e23abc6bafd51c1` (지금 판 안에는 `!DevilForever_Core/`, `DevilForever_Castbars/`, `DevilForever_ChatSetup/`, `DevilForever_FUFDefaults/`, `DevilForever_StatusStrip/`, `PitBull4/` — 이 발주문은 `!DevilForever_Core` 하나만 넣는다).
   - Experience Forever 원본 `References/addon-sources/experience-forever/ExperienceForever.zip`, sha256 `2bfdda8717b6e0d40fcc1847b233e23b187f839c75749c15fe2ed430ecf15b85`. 안의 `ExperienceForever` 폴더 하나를 넣는다.
 - 폴더 이름이 `!` 로 시작한다. bash 로 다룰 때는 작은따옴표로 감싼다(예: `ls '_forever_/Interface/AddOns/!DevilForever_Core'`).
 - 이 Phase 의 구성: 경험치·평판·사냥꾼 소환수 경험치를 **Experience Forever 하나**가 맡는다. Dominos 묶음 안의 `Dominos_Progress`(경험치·평판 막대)는 쓰지 않는다 — 같은 기능을 두 애드온이 맡지 않게 넣지 않고, 켜져 있지 않은지 확인한다(5번). 모음집은 Experience Forever 기본값 파일을 넣지 않는다: Experience Forever 자기 기본값이 이미 소환수 막대 켬·평판 막대 켬·게임 기본 경험치 막대 숨김이다(`ExperienceForever/ExperienceForever.lua:44,59,82`). 설정은 계정 공통이다(같은 계정의 모든 캐릭터가 같은 값).
