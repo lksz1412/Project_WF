@@ -1354,6 +1354,111 @@ Core.Registry = {
       use = "as-is",
       version = "12.1.6",
     },
+    PitBull4 = {
+      bundle = "individual",
+      defaults = "Defaults/PitBull4.lua",
+      editable = {
+        {
+          field = "position",
+          frame = "pb4.player",
+          kind = "position",
+        },
+        {
+          field = "position",
+          frame = "pb4.target",
+          kind = "position",
+        },
+        {
+          field = "position",
+          frame = "pb4.targettarget",
+          kind = "position",
+        },
+        {
+          field = "position",
+          frame = "pb4.focus",
+          kind = "position",
+        },
+        {
+          field = "position",
+          frame = "pb4.pet",
+          kind = "position",
+        },
+        {
+          field = "position",
+          frame = "pb4.party",
+          kind = "position",
+        },
+      },
+      foreverLoad = "yes",
+      frames = {
+        {
+          frame = "PitBull4_Frames_플레이어",
+          key = "pb4.player",
+          tokens = {},
+        },
+        {
+          frame = "PitBull4_Frames_대상",
+          key = "pb4.target",
+          tokens = {},
+        },
+        {
+          frame = "PitBull4_Frames_대상의 대상",
+          key = "pb4.targettarget",
+          tokens = {},
+        },
+        {
+          frame = "PitBull4_Frames_대상의 대상의 대상",
+          key = "pb4.targettargettarget",
+          tokens = {},
+        },
+        {
+          frame = "PitBull4_Frames_주시 대상",
+          key = "pb4.focus",
+          tokens = {},
+        },
+        {
+          frame = "PitBull4_Frames_주시 대상의 대상",
+          key = "pb4.focustarget",
+          tokens = {},
+        },
+        {
+          frame = "PitBull4_Frames_플레이어의 소환수",
+          key = "pb4.pet",
+          tokens = {},
+        },
+        {
+          frame = "PitBull4_Groups_파티",
+          key = "pb4.party",
+          tokens = {},
+        },
+        {
+          frame = "PitBull4_Groups_파티원 대상",
+          key = "pb4.partytarget",
+          tokens = {},
+        },
+        {
+          frame = "PitBull4_Groups_파티원 소환수",
+          key = "pb4.partypet",
+          tokens = {},
+        },
+      },
+      package = "DevilForever",
+      phases = {},
+      savedVariables = {
+        {
+          name = "PitBull4DB",
+          scope = "account",
+          split = "common",
+        },
+      },
+      tocStatus = "matched",
+      tocs = {
+        "PitBull4.toc",
+        "PitBull4_Camelot.toc",
+      },
+      use = "new",
+      version = "v4.2.50-forever.1",
+    },
     Platynator = {
       bundle = "individual",
       editable = {},
@@ -2171,6 +2276,7 @@ Core.Registry = {
     "Masque",
     "Masque_Dominos",
     "Masque_Onyx",
+    "PitBull4",
     "Platynator",
     "Prat-3.0",
     "ProfileManager",

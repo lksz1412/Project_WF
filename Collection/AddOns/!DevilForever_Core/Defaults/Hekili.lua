@@ -2,8 +2,8 @@
 --
 -- Profile rule: Hekili calls AceDB:New("HekiliDB", defaults, true), so every
 -- character without a profileKeys entry uses the shared profile "Default";
--- Core fills the profile that profileKeys names when there is one (a
--- LibDualSpec per-spec profile or a user-chosen profile included).
+-- Core writes only into a profile that is new when it first looks; an existing
+-- profile is left untouched.
 -- The next-action recommendation itself needs no value here: Hekili's own
 -- defaults show it (profile.enabled, displays.Primary.enabled; the Cooldowns,
 -- Defensives and Interrupts displays only when their toggle is "separate",

@@ -326,18 +326,66 @@ def defaults_character_scope_per_character():
     eq(alt.sv("TestCharDB"), {"enabled": True}, "second character filled too")
 
 
+# AceDB-3.0 removes every value equal to the addon's defaults at logout and
+# drops tables left empty (AceDB-3.0.lua removeDefaults 165-178, logout handler
+# 352-356), so saved data below is seeded the way AceDB leaves it: a key the
+# user set back to the default is simply absent.
+
 @case
-def defaults_acedb_profile_fill():
+def defaults_acedb_existing_profile_kept():
     saved = {"TestAceDB": {"profileKeys": {"Hero - Realm": "Main"},
                            "profiles": {"Main": {"scale": 2}, "Other": {"x": 1}}}}
     s = Session(saved=saved).boot(after=["TestAce"])
     db = s.sv("TestAceDB")
-    eq(db["profiles"]["Main"], {"scale": 2, "bars": {"count": 8}}, "active profile filled, user value kept")
-    eq(db["profiles"]["Other"], {"x": 1}, "other profile untouched")
-    eq(db["namespaces"]["Module"]["profiles"]["Main"], {"on": False}, "namespace profile filled")
-    eq(db["profileKeys"], {"Hero - Realm": "Main"}, "profileKeys untouched")
-    applied = s.sv("DevilForever_CoreDB")["defaults"]["applied"]["TestAce"]
-    eq(sorted(applied), ["TestAceDB/Module@profile:Main", "TestAceDB@profile:Main"], "target keys")
+    eq(db, saved["TestAceDB"], "existing profile and its absent namespace left as they are")
+    st = s.status("TestAce")["targets"]
+    eq({k: (v["state"], v["key"]) for k, v in st.items()},
+       {"TestAceDB": ("existing-profile-kept", "TestAceDB@profile:Main"),
+        "TestAceDB/Module": ("existing-profile-kept", "TestAceDB/Module@profile:Main")}, "status")
+    defaults = s.sv("DevilForever_CoreDB")["defaults"]
+    eq("TestAce" in (defaults.get("applied") or {}), False, "nothing recorded as applied")
+    eq(sorted(defaults["kept"]["TestAce"]), ["TestAceDB/Module@profile:Main", "TestAceDB@profile:Main"], "kept marker")
+    again = Session(saved={"TestAceDB": db, "DevilForever_CoreDB": s.sv("DevilForever_CoreDB")}).boot(after=["TestAce"])
+    eq(again.status("TestAce")["targets"]["TestAceDB"]["state"], "existing-profile-kept", "next session: still kept")
+    eq(again.sv("TestAceDB"), saved["TestAceDB"], "still untouched")
+
+
+@case
+def defaults_acedb_stripped_profile_kept_by_profile_key():
+    # The user's profile held only default-equal values, so AceDB dropped it; profileKeys stays.
+    saved = {"TestAceDB": {"profileKeys": {"Hero - Realm": "Warrior"}}}
+    s = Session(saved=saved).boot(after=["TestAce"])
+    eq(s.sv("TestAceDB"), saved["TestAceDB"], "nothing created")
+    eq(s.status("TestAce")["targets"]["TestAceDB"]["state"], "existing-profile-kept", "kept")
+
+
+@case
+def defaults_acedb_new_character_on_existing_sv_written():
+    saved = {"TestAceDB": {"profileKeys": {"Sage - Realm": "Mage"}, "profiles": {"Mage": {"scale": 3}}}}
+    s = Session(saved=saved).boot(after=["TestAce"])
+    db = s.sv("TestAceDB")
+    eq(db["profiles"], {"Mage": {"scale": 3}, "Warrior": {"scale": 1, "bars": {"count": 8}}}, "new class profile written")
+    eq(db["namespaces"]["Module"]["profiles"], {"Warrior": {"on": False}}, "its namespace profile written")
+    eq({v["state"] for v in s.status("TestAce")["targets"].values()}, {"applied"}, "both applied")
+
+
+@case
+def defaults_acedb_namespace_under_existing_profile_kept():
+    # Another Warrior uses the shared class profile; its Module values were all default-equal.
+    saved = {"TestAceDB": {"profileKeys": {"Other - Realm": "Warrior"}, "profiles": {"Warrior": {"scale": 2}}}}
+    s = Session(saved=saved).boot(after=["TestAce"])
+    eq(s.sv("TestAceDB"), saved["TestAceDB"], "shared profile and its namespace untouched")
+    eq({v["state"] for v in s.status("TestAce")["targets"].values()}, {"existing-profile-kept"}, "both kept")
+
+
+@case
+def defaults_acedb_version_bump_existing_kept():
+    s = Session().boot(after=["TestAce"])
+    first = s.sv("TestAceDB")
+    bumped = Session(saved={"TestAceDB": first, "DevilForever_CoreDB": s.sv("DevilForever_CoreDB")},
+                     globals_={"TEST_DEFAULTS_VERSION": 2}).boot(after=["TestAce"])
+    eq(bumped.sv("TestAceDB"), first, "higher version does not reach a profile written before")
+    eq(bumped.status("TestAce")["targets"]["TestAceDB"]["state"], "existing-profile-kept", "kept")
 
 
 @case
@@ -345,6 +393,8 @@ def defaults_acedb_new_character_uses_profile_rule():
     s = Session().boot(after=["TestAce"])
     db = s.sv("TestAceDB")
     eq(db["profiles"], {"Warrior": {"scale": 1, "bars": {"count": 8}}}, "profile named by $className")
+    eq(db["namespaces"]["Module"]["profiles"], {"Warrior": {"on": False}},
+       "namespace written although the main target created the SV first in the same pass")
     eq("profileKeys" in db, False, "profileKeys left to AceDB")
 
 
@@ -390,8 +440,16 @@ def generated_registry_lookup():
               + list(to_py(c.GetFrameNames(c, "SexyMap")).values())
               + list(to_py(c.GetFrameNames(c, "ForeverUnitFrames")).values())
               + list(to_py(c.GetFrameNames(c, "Quartz")).values())
-              + list(to_py(c.GetFrameNames(c, "Hekili")).values())),
-       "appearance frames are Dominos', Prat's, SexyMap's, FUF's, Quartz's and Hekili's only")
+              + list(to_py(c.GetFrameNames(c, "Hekili")).values())
+              + list(to_py(c.GetFrameNames(c, "PitBull4")).values())),
+       "appearance frames are Dominos', Prat's, SexyMap's, FUF's, Quartz's, Hekili's and PitBull4's only")
+    pb4 = to_py(c.GetAddonInfo(c, "pitbull4"))
+    eq(len(to_py(c.GetFrameNames(c, "PitBull4"))), 10, "PitBull4: 7 unit frames, 3 party group headers")
+    eq(list(pb4["savedVariables"].values()), [{"name": "PitBull4DB", "scope": "account", "split": "common"}],
+       "PitBull4 SV")
+    eq((pb4["defaults"], len(pb4["editable"]), pb4["version"]), ("Defaults/PitBull4.lua", 6, "v4.2.50-forever.1"),
+       "PitBull4 defaults file, 6 positions, version of our copy")
+    eq(sorted(pb4["tocs"].values()), ["PitBull4.toc", "PitBull4_Camelot.toc"], "PitBull4 16001 TOCs")
     hekili = to_py(c.GetAddonInfo(c, "hekili"))
     eq(list(to_py(c.GetFrameNames(c, "Hekili")).values()),
        ["HekiliDisplayAOE", "HekiliDisplayCooldowns", "HekiliDisplayDefensives", "HekiliDisplayInterrupts",
@@ -820,6 +878,56 @@ def defaults_player_keys_unavailable_logged():
     eq(s.sv("TestAceDB"), None, "nothing created")
 
 
+def late_key_session(saved=None, acedb_new=None):
+    """Player key unknown at the addon's ADDON_LOADED; the addon's AceDB:New runs
+    (acedb_new edits TestAceDB the way it would); the key is known at PLAYER_LOGIN."""
+    s = Session(saved=saved, player={"name": ""}).boot(after=["TestAce"], login=False)
+    eq(s.status("TestAce")["targets"]["TestAceDB"]["state"], "waiting", "waits for the player key")
+    if acedb_new:
+        s.g.TestAceDB = s.table(acedb_new(s.sv("TestAceDB")))
+    s.g.TEST_player.name = "Hero"
+    s.fire("PLAYER_LOGIN")
+    s.fire("PLAYER_ENTERING_WORLD", True, False)
+    return s
+
+
+def acedb_new_warrior(db):
+    # AceDB:New with defaultProfile "$className": profileKeys entry and an empty profile.
+    db = db or {}
+    db.setdefault("profileKeys", {})["Hero - Realm"] = db.get("profileKeys", {}).get("Hero - Realm", "Warrior")
+    db.setdefault("profiles", {}).setdefault(db["profileKeys"]["Hero - Realm"], {})
+    return db
+
+
+@case
+def defaults_acedb_late_key_fresh_install_written():
+    s = late_key_session(acedb_new=acedb_new_warrior)
+    db = s.sv("TestAceDB")
+    eq(db["profiles"], {"Warrior": {"scale": 1, "bars": {"count": 8}}}, "written into the profile AceDB made")
+    eq(db["namespaces"]["Module"]["profiles"], {"Warrior": {"on": False}}, "namespace written")
+    eq(db["profileKeys"], {"Hero - Realm": "Warrior"}, "profileKeys as AceDB set it")
+    eq({v["state"] for v in s.status("TestAce")["targets"].values()}, {"applied"}, "both applied")
+    eq(s.errors(), [], "no errors")
+
+
+@case
+def defaults_acedb_late_key_existing_install_kept():
+    saved = {"TestAceDB": {"profileKeys": {"Hero - Realm": "Main"}, "profiles": {"Main": {"scale": 2}}}}
+    s = late_key_session(saved=saved, acedb_new=acedb_new_warrior)
+    eq(s.sv("TestAceDB"), saved["TestAceDB"], "existing profile untouched")
+    eq({v["state"] for v in s.status("TestAce")["targets"].values()}, {"existing-profile-kept"}, "both kept")
+
+
+@case
+def defaults_acedb_late_key_namespace_under_existing_profile_kept():
+    # Another Warrior made the shared class profile; this character's AceDB:New adds its profileKeys entry.
+    saved = {"TestAceDB": {"profileKeys": {"Other - Realm": "Warrior"}, "profiles": {"Warrior": {"scale": 2}}}}
+    s = late_key_session(saved=saved, acedb_new=acedb_new_warrior)
+    db = s.sv("TestAceDB")
+    eq((db["profiles"], "namespaces" in db), ({"Warrior": {"scale": 2}}, False), "shared profile and namespace untouched")
+    eq({v["state"] for v in s.status("TestAce")["targets"].values()}, {"existing-profile-kept"}, "both kept")
+
+
 # Real defaults files ----------------------------------------------------------
 
 @case
@@ -846,7 +954,7 @@ def dominos_defaults_existing_profile_kept():
     eq(db["profiles"], {"Custom": {"ab": {"count": 10, "length": 12}, "showBindingText": False}},
        "user values kept, no class profile made")
     st = s.status("Dominos")["targets"]["DominosDB"]
-    eq((st["state"], st["key"], st["written"]), ("applied", "DominosDB@profile:Custom", 0), "profileKeys profile")
+    eq((st["state"], st["key"]), ("existing-profile-kept", "DominosDB@profile:Custom"), "profileKeys profile kept")
     other = Session(registry="generated", extra_files=(), player={"className": "Mage", "class": "MAGE", "name": "Sage"},
                     saved={"DominosDB": db, "DevilForever_CoreDB": s.sv("DevilForever_CoreDB")}).boot(after=["Dominos"])
     eq(other.sv("DominosDB")["profiles"]["Mage"], {"showBindingText": True},
@@ -874,18 +982,16 @@ def prat_defaults_fresh_default_profile():
 
 @case
 def prat_defaults_user_values_and_profile_kept():
+    # History left at Prat's default (stripped by AceDB: no Prat_History data); Memory changed.
     saved = {"Prat3DB": {"profileKeys": {"Hero - Realm": "Mine"},
                          "profiles": {"Mine": {"modules": {"Memory": 3}}},
-                         "namespaces": {"Prat_History": {"profiles": {"Mine": {"scrollback": True}}},
-                                        "Prat_Memory": {"profiles": {"Mine": {"on": True, "autoload": True}}}}}}
+                         "namespaces": {"Prat_Memory": {"profiles": {"Mine": {"autoload": True}}}}}}
     s = Session(registry="generated", extra_files=(), saved=saved).boot(after=["Prat-3.0"])
-    db = s.sv("Prat3DB")
-    eq(db["namespaces"]["Prat_History"]["profiles"], {"Mine": {"scrollback": True}}, "user History value kept")
-    eq(db["namespaces"]["Prat_Memory"]["profiles"], {"Mine": {"on": True, "autoload": True}}, "user Memory value kept")
-    eq(db["profiles"], {"Mine": {"modules": {"Memory": 3}}}, "parent profile untouched")
-    written = {k: (v["key"], v["written"]) for k, v in s.status("Prat-3.0")["targets"].items()}
-    eq(written, {"Prat3DB/Prat_History": ("Prat3DB/Prat_History@profile:Mine", 0),
-                 "Prat3DB/Prat_Memory": ("Prat3DB/Prat_Memory@profile:Mine", 0)}, "profileKeys profile, nothing written")
+    eq(s.sv("Prat3DB"), saved["Prat3DB"], "user's profile, both namespaces and the absent History data untouched")
+    states = {k: (v["state"], v["key"]) for k, v in s.status("Prat-3.0")["targets"].items()}
+    eq(states, {"Prat3DB/Prat_History": ("existing-profile-kept", "Prat3DB/Prat_History@profile:Mine"),
+                "Prat3DB/Prat_Memory": ("existing-profile-kept", "Prat3DB/Prat_Memory@profile:Mine")},
+       "profileKeys profile kept, nothing written")
 
 
 @case
@@ -905,15 +1011,77 @@ def hekili_defaults_fresh_shared_default_profile():
 
 @case
 def hekili_defaults_user_and_dual_spec_profile_kept():
+    # Glow left at Hekili's default (off): AceDB stripped barGlow.enabled; combatOnly changed by the user.
     saved = {"HekiliDB": {"profileKeys": {"Hero - Realm": "Elemental"},
-                          "profiles": {"Default": {"barGlow": {"enabled": False}},
-                                       "Elemental": {"barGlow": {"enabled": False, "combatOnly": False}}}}}
+                          "profiles": {"Default": {"toggles": {"cooldowns": {"value": True}}},
+                                       "Elemental": {"barGlow": {"combatOnly": False}}}}}
     s = Session(registry="generated", extra_files=(), saved=saved).boot(after=["Hekili"])
     db = s.sv("HekiliDB")
-    eq(db["profiles"], saved["HekiliDB"]["profiles"], "user-off glow kept in both profiles")
-    eq(db["profileKeys"], {"Hero - Realm": "Elemental"}, "profileKeys untouched")
+    eq(db, saved["HekiliDB"], "glow not turned on in either profile; profileKeys untouched")
     st = s.status("Hekili")["targets"]["HekiliDB"]
-    eq((st["state"], st["key"], st["written"]), ("applied", "HekiliDB@profile:Elemental", 0), "profileKeys profile")
+    eq((st["state"], st["key"]), ("existing-profile-kept", "HekiliDB@profile:Elemental"), "profileKeys profile kept")
+
+PB4_UNITS_ON = sorted(["플레이어", "대상", "대상의 대상", "대상의 대상의 대상", "주시 대상", "주시 대상의 대상",
+                       "플레이어의 소환수"])
+
+
+@case
+def pitbull4_defaults_fresh_shared_default_profile():
+    s = Session(registry="generated", extra_files=()).boot(after=["PitBull4"])
+    db = s.sv("PitBull4DB")
+    eq(sorted(db), ["namespaces", "profiles"], "Core creates only profiles and namespaces (AceDB adds the rest)")
+    eq(sorted(db["profiles"]), ["Default"], "AceDB:New(..., \"Default\"): one shared profile")
+    p = db["profiles"]["Default"]
+    eq(sorted(n for n, u in p["units"].items() if u.get("enabled")), PB4_UNITS_ON, "Devil unit frames on")
+    eq(p["units"]["플레이어"], {"enabled": True, "layout": "보통", "unit": "player"}, "player names its layout")
+    eq(sorted(p["groups"]), ["파티", "파티원 대상", "파티원 소환수"], "party groups only")
+    eq((p["made_units"], p["made_groups"], p["group_anchors_updated"]), (True, True, True), "PitBull4 markers")
+    eq(len(db["namespaces"]), 25, "25 module namespaces")
+    eq(db["namespaces"]["CastBar"]["profiles"]["Default"],
+       {"global": {"enabled": False}, "layouts": {n: {"enabled": False} for n in ("대상", "대상의대상", "보통", "파티")}},
+       "cast bar module and its four layouts off")
+    eq(sorted(p["layouts"]), sorted(["Normal", "대상", "대상의대상", "보통", "파티"]),
+       "L[\"Normal\"] layout exists (no GetLocale here: \"Normal\")")
+    ko = Session(registry="generated", extra_files=(), globals_={"GetLocale": lambda: "koKR"}).boot(after=["PitBull4"])
+    eq(sorted(ko.sv("PitBull4DB")["profiles"]["Default"]["layouts"]), sorted(["대상", "대상의대상", "보통", "파티"]),
+       "koKR: L[\"Normal\"] is 보통, already one of the Devil layouts")
+    eq(db["namespaces"]["Aura"]["profiles"]["Default"]["layouts"]["파티"]["layout"]["buff"]["filter"], "!C",
+       "party buff filter")
+    st = s.status("PitBull4")["targets"]
+    eq(len(st), 26, "main profile + 25 namespaces")
+    eq((st["PitBull4DB"]["state"], st["PitBull4DB"]["mode"], st["PitBull4DB"]["key"]),
+       ("applied", "fill-missing", "PitBull4DB@profile:Default"), "main target status")
+    eq(st["PitBull4DB/LuaTexts"]["key"], "PitBull4DB/LuaTexts@profile:Default", "namespace target key")
+    eq(all(t["state"] == "applied" for t in st.values()), True, "every target applied")
+    alt = Session(registry="generated", extra_files=(), player={"name": "Alt", "className": "Mage", "class": "MAGE"},
+                  saved={"PitBull4DB": db, "DevilForever_CoreDB": s.sv("DevilForever_CoreDB")})
+    alt.boot(after=["PitBull4"])
+    eq({t["state"] for t in alt.status("PitBull4")["targets"].values()}, {"already"}, "shared profile: once per version")
+    eq(s.errors() + alt.errors(), [], "no errors")
+
+
+@case
+def pitbull4_defaults_user_values_and_spec_profile_kept():
+    # The user switched the player frame off: enabled = false equals the "**" default, so AceDB
+    # stripped it; the player frame keeps only unit = "player". No module namespace data
+    # (every module setting default-equal, e.g. the cast bar left on).
+    saved = {"PitBull4DB": {"profileKeys": {"Hero - Realm": "Wide"},
+                            "global": {"config_version": 8},
+                            "profiles": {"Wide": {"made_units": True,
+                                                  "units": {"플레이어": {"unit": "player"}}}}}}
+    s = Session(registry="generated", extra_files=(), saved=saved).boot(after=["PitBull4"])
+    eq(s.sv("PitBull4DB"), saved["PitBull4DB"], "player frame stays off, no Devil units added, no namespaces made")
+    st = s.status("PitBull4")["targets"]
+    eq(len(st), 26, "26 targets")
+    eq({v["state"] for v in st.values()}, {"existing-profile-kept"}, "every target kept")
+    eq((st["PitBull4DB"]["key"], st["PitBull4DB/CastBar"]["key"]),
+       ("PitBull4DB@profile:Wide", "PitBull4DB/CastBar@profile:Wide"), "profileKeys profile")
+    alt = Session(registry="generated", extra_files=(), player={"name": "Alt", "className": "Mage", "class": "MAGE"},
+                  saved={"PitBull4DB": {"profileKeys": {"Hero - Realm": "Wide"},
+                                        "profiles": {"Default": {"made_units": True}}}})
+    alt.boot(after=["PitBull4"])
+    eq(alt.sv("PitBull4DB")["profiles"], {"Default": {"made_units": True}}, "shared Default of another character kept")
+    eq(s.errors() + alt.errors(), [], "no errors")
 
 # SexyMap's own first-load setup at its ADDON_LOADED (SexyMap.lua:325-353,
 # Buttons.lua:217-246): the SV, the character profile and each module table are

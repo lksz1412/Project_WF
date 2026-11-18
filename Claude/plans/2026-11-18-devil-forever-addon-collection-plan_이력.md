@@ -57,3 +57,7 @@ Phase 2(Step 11–12): !DevilForever_Core 와 Codex 발주문 2건. 이 Phase �
 ## Phase 8 끝 정리 (2026-11-18 16:52:59 +0900)
 
 직업 전투보조: Hekili 는 다음 행동 추천만 맡고(추천 기술 단축바 버튼 강조 켬), 상태 알림·쿨은 게임 기본 재사용 대기시간 관리자가 맡는다(R104). 28개 특성 중 힐러 4개는 Hekili 미지원이라 쿨 관리자 표시만 받는다. Forever 는 전투 중 버프 정보를 애드온에 숨긴다는 사실을 원천에서 확인했다. 근간 재논의(R105–R107)로 계획을 고쳤다(PitBull4 비교판 추가, 어그로는 Details, 편집기 대신 세 해상도 배치 등). Result = `Claude/results/PHASE_8_hekili_RESULT.md`.
+
+## Phase 6-rev 끝 정리 (2026-11-18 17:35:26 +0900)
+
+PitBull4 Forever 판을 만들었다: 최신 v4.2.50 에 V42 제작자의 Forever 수정분(72파일)을 옮기고 옛 데빌 배치 설정의 기능 값을 기본값으로 넣었다. FUF 와 비교표를 만들었고 기본으로 넣을 쪽은 Phase 23 에서 정한다. 검수에서 Core 기본값 규칙의 결함(AceDB 가 기본값과 같은 사용자 값을 지우는 탓에 기존 프로필을 덮어쓸 수 있음)이 나와 Core 를 고쳤다(Phase 2-rev): 이제 새 프로필에만 쓴다. Result = `Claude/results/PHASE_6-rev_pitbull4_RESULT.md`.

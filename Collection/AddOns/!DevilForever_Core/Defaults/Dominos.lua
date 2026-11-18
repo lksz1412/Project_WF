@@ -2,8 +2,8 @@
 --
 -- Profile rule: Dominos calls AceDB:New("DominosDB", defaults, UnitClass("player")),
 -- so a character without a profileKeys entry uses the profile named after the
--- localized class name ("$className"); Core fills the profile that profileKeys
--- names when there is one (a LibDualSpec or user-chosen profile included).
+-- localized class name ("$className"). Core writes only into a profile that is
+-- new when it first looks; an existing profile is left untouched.
 -- Values equal to Dominos' own defaults are removed from the saved file by
 -- AceDB at logout; they stay in effect through Dominos' defaults.
 -- The action bar count (8), action bar paging (bar 1 per stance/form/stealth/

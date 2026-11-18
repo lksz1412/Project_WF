@@ -653,6 +653,82 @@
         }
       },
       "defaults": "Defaults/Hekili.lua"
+    },
+    "PitBull4": {
+      "frames": [
+        {
+          "key": "pb4.player",
+          "frame": "PitBull4_Frames_\ud50c\ub808\uc774\uc5b4"
+        },
+        {
+          "key": "pb4.target",
+          "frame": "PitBull4_Frames_\ub300\uc0c1"
+        },
+        {
+          "key": "pb4.targettarget",
+          "frame": "PitBull4_Frames_\ub300\uc0c1\uc758 \ub300\uc0c1"
+        },
+        {
+          "key": "pb4.targettargettarget",
+          "frame": "PitBull4_Frames_\ub300\uc0c1\uc758 \ub300\uc0c1\uc758 \ub300\uc0c1"
+        },
+        {
+          "key": "pb4.focus",
+          "frame": "PitBull4_Frames_\uc8fc\uc2dc \ub300\uc0c1"
+        },
+        {
+          "key": "pb4.focustarget",
+          "frame": "PitBull4_Frames_\uc8fc\uc2dc \ub300\uc0c1\uc758 \ub300\uc0c1"
+        },
+        {
+          "key": "pb4.pet",
+          "frame": "PitBull4_Frames_\ud50c\ub808\uc774\uc5b4\uc758 \uc18c\ud658\uc218"
+        },
+        {
+          "key": "pb4.party",
+          "frame": "PitBull4_Groups_\ud30c\ud2f0"
+        },
+        {
+          "key": "pb4.partytarget",
+          "frame": "PitBull4_Groups_\ud30c\ud2f0\uc6d0 \ub300\uc0c1"
+        },
+        {
+          "key": "pb4.partypet",
+          "frame": "PitBull4_Groups_\ud30c\ud2f0\uc6d0 \uc18c\ud658\uc218"
+        }
+      ],
+      "editable": [
+        {
+          "frame": "pb4.player",
+          "field": "position"
+        },
+        {
+          "frame": "pb4.target",
+          "field": "position"
+        },
+        {
+          "frame": "pb4.targettarget",
+          "field": "position"
+        },
+        {
+          "frame": "pb4.focus",
+          "field": "position"
+        },
+        {
+          "frame": "pb4.pet",
+          "field": "position"
+        },
+        {
+          "frame": "pb4.party",
+          "field": "position"
+        }
+      ],
+      "saved_variables": {
+        "PitBull4DB": {
+          "split": "common"
+        }
+      },
+      "defaults": "Defaults/PitBull4.lua"
     }
   }
 }

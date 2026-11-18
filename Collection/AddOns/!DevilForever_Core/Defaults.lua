@@ -45,18 +45,36 @@
 -- ADDON_LOADED event Core's handler runs before the target addon's own.
 
 -- AceDB targets fill <SV>.profiles[<profile>] (or
--- <SV>.namespaces[<namespace>].profiles[<profile>]) with missing keys only;
--- AceDB keeps its own defaults in metatables, so raw keys are the user's. The
--- profile is the one <SV>.profileKeys names for this character; when it names
--- none, `profile` decides, as the addon's AceDB:New defaultProfile would:
--- "$char" (default; the AceDB character key), "$class" (class token),
--- "$className" (localized class name), "$realm" (AceDB realm key), or a
--- literal name. Missing AceDB tables are created; profileKeys is left to AceDB.
+-- <SV>.namespaces[<namespace>].profiles[<profile>]) only when that profile is
+-- new: AceDB removes every value equal to the addon's defaults at logout (and
+-- a table left empty), so a missing key in an existing profile may be a choice
+-- the user made, and is never filled. The profile is the one <SV>.profileKeys
+-- names for this character; when it names none, `profile` decides, as the
+-- addon's AceDB:New defaultProfile would: "$char" (default; the AceDB
+-- character key), "$class" (class token), "$className" (localized class
+-- name), "$realm" (AceDB realm key), or a literal name.
+-- New is decided from a snapshot taken at Core's first look in the session
+-- (normally the addon's ADDON_LOADED, before its AceDB:New), for all AceDB
+-- targets of the folder before any of them is written, and without the
+-- player key: whether the saved variable was nil, the profileKeys entries,
+-- the profile names in <SV>.profiles and in the namespace's profiles. When the
+-- player key is known (maybe later, after the addon's AceDB:New), the profile
+-- is new if the saved variable was nil, or the snapshot's profileKeys has no
+-- entry for this character and neither snapshot profile list holds the
+-- profile (the entry's, else `profile`'s). Then the missing AceDB tables are
+-- created and the values written (mode "fill-missing") into the profile the
+-- live profileKeys names (else `profile`'s); after a late key these are the
+-- tables the addon's AceDB already uses, and some addons read them only after
+-- /reload. profileKeys is left to AceDB. Otherwise nothing is created or
+-- written: state "existing-profile-kept", marked in
+-- DevilForever_CoreDB.defaults.kept[folder][targetKey] = version.
 --
 -- Every target is written once per version: the version is recorded in
--- DevilForever_CoreDB.defaults.applied[folder][targetKey]; a higher version
--- runs again with missing-keys-only filling. Stored values are never replaced
--- in a later session. targetKey:
+-- DevilForever_CoreDB.defaults.applied[folder][targetKey]. A higher version
+-- runs again: a plain target fills missing keys only; an AceDB target writes
+-- only into a profile that is new at that session's first look (so it never
+-- reaches a profile written before). Stored values are never replaced in a
+-- later session. targetKey:
 --   plain, account scope      "<SV>"
 --   plain, character scope    "<SV>@char:<character key>"
 --   acedb, account scope      "<SV>[/<namespace>]@profile:<profile>"
@@ -76,7 +94,7 @@ Core.Defaults = Defaults
 local specs = {}        -- [lower folder] = {folder, version, targets}
 local status = {}       -- [lower folder] = {folder, targets = {[label] = {...}}}
 local settled = {}      -- [lower folder] = {[target index] = true} for this session
-local fresh = {}        -- [lower folder] = {[target index] = {fresh, due}} for this session
+local fresh = {}        -- [lower folder] = {[target index] = plain {fresh, due} | AceDB snapshot} for this session
 local suppressed = {}   -- [lower folder] = reason, for this session
 local worldSeen = false -- the session's first PLAYER_ENTERING_WORLD has run
 
@@ -197,21 +215,71 @@ local function locatePlain(target, create, final)
   return {sv, key}
 end
 
-local function locateAce(target)
+local function names(root)
+  local out = {}
+  local profiles = type(root) == "table" and rawget(root, "profiles")
+  if type(profiles) == "table" then
+    for name in pairs(profiles) do out[name] = true end
+  end
+  return out
+end
+
+-- First-look snapshot of an AceDB target; needs no player key:
+-- {svNil, profileKeys = {[charKey] = profile}, profiles = set, nsProfiles = set}.
+local function snapshotAce(target)
+  local sv = _G[target.savedVariable]
+  local snap = {svNil = sv == nil, profileKeys = {}, profiles = {}, nsProfiles = {}}
+  if type(sv) ~= "table" then return snap end
+  local profileKeys = rawget(sv, "profileKeys")
+  if type(profileKeys) == "table" then
+    for char, profile in pairs(profileKeys) do snap.profileKeys[char] = profile end
+  end
+  snap.profiles = names(sv)
+  if target.namespace then
+    local spaces = rawget(sv, "namespaces")
+    snap.nsProfiles = names(type(spaces) == "table" and rawget(spaces, target.namespace) or nil)
+  end
+  return snap
+end
+
+local function profileName(entry, target, keys)
+  if type(entry) == "string" and entry ~= "" then return entry end
+  return resolveProfile(target.profile, keys)
+end
+
+-- AceDB target, without writing: {profile, key, existing} | "wait", reason |
+-- nil, reason. existing: the profile was not new at the snapshot (see the header).
+local function inspectAce(target, snap)
   local svName = target.savedVariable
   local keys, why = Core.PlayerKeys()
   if not keys then return "wait", "player key unavailable: " .. tostring(why) end
   local sv = _G[svName]
+  if sv ~= nil and type(sv) ~= "table" then
+    return nil, "saved variable " .. svName .. " is not a table"
+  end
+  local profileKeys = sv and rawget(sv, "profileKeys")
+  local profile = profileName(type(profileKeys) == "table" and rawget(profileKeys, keys.char), target, keys)
+  local snapEntry = snap.profileKeys[keys.char]
+  local snapProfile = profileName(snapEntry, target, keys)
+  if type(profile) ~= "string" or profile == "" or type(snapProfile) ~= "string" or snapProfile == "" then
+    return nil, "profile name could not be resolved"
+  end
+  local existing = not snap.svNil and (snapEntry ~= nil or snap.profiles[snapProfile] == true
+    or snap.nsProfiles[snapProfile] == true)
+  local where = svName .. (target.namespace and ("/" .. target.namespace) or "")
+  local charPart = target.scope == "character" and ("@char:" .. keys.char) or ""
+  return {profile = profile, key = where .. charPart .. "@profile:" .. profile, existing = existing}
+end
+
+-- Creates the AceDB tables of a new profile; returns the profile table or nil, reason.
+local function createAce(target, info)
+  local svName = target.savedVariable
+  local sv = _G[svName]
   if sv == nil then
     sv = {}
     _G[svName] = sv
-  elseif type(sv) ~= "table" then
-    return nil, "saved variable " .. svName .. " is not a table"
   end
-  local profileKeys = rawget(sv, "profileKeys")
-  local chosen = type(profileKeys) == "table" and profileKeys[keys.char]
-  local profile = (type(chosen) == "string" and chosen ~= "") and chosen or resolveProfile(target.profile, keys)
-  if type(profile) ~= "string" or profile == "" then return nil, "profile name could not be resolved" end
+  local profile = info.profile
   local root, err = sv, nil
   if target.namespace then
     local spaces
@@ -224,11 +292,7 @@ local function locateAce(target)
   local profiles
   profiles, err = subTable(root, "profiles", where .. ".profiles")
   if not profiles then return nil, err end
-  local tbl
-  tbl, err = subTable(profiles, profile, where .. ".profiles." .. profile)
-  if not tbl then return nil, err end
-  local charPart = target.scope == "character" and ("@char:" .. keys.char) or ""
-  return {tbl, where .. charPart .. "@profile:" .. profile}
+  return subTable(profiles, profile, where .. ".profiles." .. profile)
 end
 
 -- First-look state of a plain target: {fresh = bool, due = "world" | nil}.
@@ -257,31 +321,80 @@ local function attempt(lowerFolder, phase)
   local st = status[lowerFolder]
   local done = settled[lowerFolder]
   local looks = fresh[lowerFolder]
+  -- First look of every AceDB target before any write of this attempt, so a
+  -- table one target creates does not make the next target's profile look old.
   for i, target in ipairs(spec.targets) do
-    if not done[i] then
+    if not done[i] and target.shape == "acedb" and looks[i] == nil then
+      looks[i] = snapshotAce(target)
+    end
+  end
+  for i, target in ipairs(spec.targets) do
+    if not done[i] and target.shape == "acedb" then
       local label = target.savedVariable .. (target.namespace and ("/" .. target.namespace) or "")
-      local place, reason, info
-      if target.shape == "plain" then
-        info = looks[i]
-        if info == nil then
-          info = firstLook(target)
-          looks[i] = info
+      local info, reason = inspectAce(target, looks[i])
+      if info == "wait" then
+        if not (st.targets[label] and st.targets[label].message == reason) then
+          Core:Log("info", spec.folder, label .. " waiting: " .. reason)
         end
-        local final = phase == "world"
-        if info.due == "world" and not final then
-          place, reason = "wait", "first load: written at the first PLAYER_ENTERING_WORLD"
-        else
-          place, reason = locatePlain(target, info.fresh and target.createIfMissing, final)
-        end
+        st.targets[label] = {state = "waiting", message = reason}
+      elseif info == nil then
+        done[i] = true
+        st.targets[label] = {state = "skipped", message = reason}
+        Core:Log("skip", spec.folder, reason)
       else
-        place, reason = locateAce(target)
+        done[i] = true
+        local recorded = applied and applied[info.key]
+        if type(recorded) == "number" and recorded >= spec.version then
+          st.targets[label] = {state = "already", key = info.key, version = recorded}
+        elseif info.existing then
+          local kept = Core:DBTable("defaults", "kept", spec.folder)
+          local message = "profile existed before Core first looked; nothing written"
+          if kept[info.key] ~= spec.version then
+            kept[info.key] = spec.version
+            Core:Log("info", spec.folder, info.key .. ": " .. message)
+          end
+          st.targets[label] = {state = "existing-profile-kept", key = info.key, version = spec.version, message = message}
+        else
+          local tbl, err = createAce(target, info)
+          if not tbl then
+            st.targets[label] = {state = "skipped", message = err}
+            Core:Log("skip", spec.folder, err)
+          else
+            local conflicts = {}
+            local written = Core.FillMissing(tbl, target.values, function(path)
+              conflicts[#conflicts + 1] = path
+              Core:Log("conflict", spec.folder, info.key .. ": " .. path .. " kept (stored value is not a table)")
+            end)
+            if not applied then applied = Core:DBTable("defaults", "applied", spec.folder) end
+            applied[info.key] = spec.version
+            st.targets[label] = {state = "applied", mode = "fill-missing", key = info.key, version = spec.version,
+                                 written = written, conflicts = conflicts}
+          end
+        end
+      end
+    end
+  end
+  for i, target in ipairs(spec.targets) do
+    if not done[i] and target.shape == "plain" then
+      local label = target.savedVariable .. (target.namespace and ("/" .. target.namespace) or "")
+      local place, reason
+      local info = looks[i]
+      if info == nil then
+        info = firstLook(target)
+        looks[i] = info
+      end
+      local final = phase == "world"
+      if info.due == "world" and not final then
+        place, reason = "wait", "first load: written at the first PLAYER_ENTERING_WORLD"
+      else
+        place, reason = locatePlain(target, info.fresh and target.createIfMissing, final)
       end
       if place == "wait" then
         if not (st.targets[label] and st.targets[label].message == reason) then
           Core:Log("info", spec.folder, label .. " waiting: " .. reason)
         end
         st.targets[label] = {state = "waiting", message = reason}
-      elseif place == nil and info and info.fresh and _G[target.savedVariable] == nil then
+      elseif place == nil and info.fresh and _G[target.savedVariable] == nil then
         done[i] = true
         local key = plainKey(target)
         if key then Core:DBTable("defaults", "lateCreated", spec.folder)[key] = true end
@@ -301,7 +414,7 @@ local function attempt(lowerFolder, phase)
           st.targets[label] = {state = "already", key = targetKey, version = recorded, lateCreated = late}
         else
           local conflicts, written, mode, message = {}, 0, "fill-missing", nil
-          if info and info.due == "world" and recorded == nil then
+          if info.due == "world" and recorded == nil then
             mode = "first-load"
             message = "written over this session's addon values; some addons use them after /reload"
             written = Core.WriteOver(tbl, target.values)
@@ -342,7 +455,8 @@ end)
 
 -- Status of `folder` ({folder, registered, loaded, version, targets = {[label]
 -- = {state = "waiting"|"skipped"|"late-created"|"suppressed"|"already"|
--- "applied", mode = "first-load"|"fill-missing", lateCreated, ...}},
+-- "existing-profile-kept"|"applied", mode = "first-load"|"fill-missing",
+-- lateCreated, ...}},
 -- suppressed = reason|nil}), or of every registered folder when `folder` is
 -- nil ({[folder] = status}).
 function Defaults:GetStatus(folder)

@@ -1,0 +1,49 @@
+# PHASE 6-rev — PitBull4 Forever 판 RESULT
+
+## Summary
+
+PitBull4 Forever 판을 만들었다: 최신 v4.2.50 에 V42 제작자의 Forever 수정분(72파일)을 옮기고 옛 데빌 배치 설정의 기능 값을 기본값으로 넣었다. FUF 와 비교표를 만들었고 기본으로 넣을 쪽은 Phase 23 에서 정한다. 검수에서 Core 기본값 규칙의 결함(AceDB 가 기본값과 같은 사용자 값을 지우는 탓에 기존 프로필을 덮어쓸 수 있음)이 나와 Core 를 고쳤다(Phase 2-rev): 이제 새 프로필에만 쓴다.
+
+## Step Range
+
+Step 42–43
+
+## Inputs
+
+PitBull4 v4.2.50, V42 PitBull4 4.2.49-Forever-v42, V42 Devil profile
+
+## Files Created
+
+Collection/AddOns/PitBull4/**, Collection/patches/PitBull4.patch, Defaults/PitBull4.lua, data/unitframes-compare.md, codex-briefs/phase6-rev.md, appearance-6-rev.md
+
+## Files Updated
+
+Core Defaults.lua·API.lua (Phase 2-rev), tests, registry, 16 briefs (ZIP hash), ZIP
+
+## Read Coverage
+
+master: AceDB-3.0.lua 172–174, Defaults.lua 229–273, review reports; A2·B 범위 = phase6-rev work_log·TRIAGE
+
+## Execution Evidence
+
+Step 42·43 이력
+
+## Validation·Gate·Confirmed
+
+1 logic review + recheck + master check; tests 59/59
+
+## Non-Changes
+
+FUF 무변경, 원본 ZIP 무변경
+
+## Open Issues
+
+영혼의 조각 표시 없음(두 쪽 다), 늦은 키 첫 설치는 /reload 뒤 적용, 리셋 경우, 다른 판 TOC 의 LibDualSpec 잔재
+
+## Decision Queue
+
+FUF/PitBull4 기본 선택(Phase 23)
+
+## Next
+
+Phase 9 Step 21 — Grid2

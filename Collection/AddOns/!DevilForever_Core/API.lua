@@ -28,9 +28,12 @@ Defaults (see Defaults.lua for the spec and the fill rules)
       state: "waiting" (not settled yet) | "skipped" (wrong type, absent) |
              "late-created" (fresh saved variable still nil; nothing written) |
              "suppressed" (Suppress called first) | "already" (version
-             recorded earlier) | "applied" (written this session)
+             recorded earlier) | "existing-profile-kept" (AceDB target whose
+             profile existed before Core first looked; nothing written) |
+             "applied" (written this session)
       mode:  "first-load" (written over the addon's own values, login window
-             only) | "fill-missing" (missing keys only)
+             only) | "fill-missing" (missing keys only; for AceDB targets
+             only into a profile new at Core's first look)
       lateCreated: true when an earlier session marked the target late-created
   Core.Defaults:Suppress(folder[, reason]) -> true | false, reason
       no further defaults work on `folder` this session (restore/import code

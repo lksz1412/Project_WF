@@ -47,3 +47,8 @@ Step 11·12 이력, work_log-a2.md 판정 줄
 ## Next
 
 Phase 3 Step 13 — Dominos 설정 기본값·등록·발주문
+
+
+## Addendum (2026-11-18 17:35:26 +0900) — Phase 2-rev
+
+Core AceDB defaults rule changed during Phase 6-rev review: write only into a profile that was new at Core's first look (snapshot without player key); existing profiles kept. See `Claude/results/Step 43 — PitBull4 Forever판·비교.md`.
