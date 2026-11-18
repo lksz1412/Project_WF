@@ -168,7 +168,7 @@
 
 | 경로 | 역할 |
 |---|---|
-| `Claude/` | 새 작업 자리. `plans/`(마스터 플랜·Phase 세부 계획서), `results/`(요청 대장·Result·발주·작업 기록), `docs/`(인계·구조 맵) |
+| `Claude/` | 새 작업 자리. `plans/`(마스터 플랜·Phase 세부 계획서), `results/`(요청 대장·Result·발주·작업 기록), `docs/`(인계 `HANDOVER_v0.1.0.md`) |
 | `Codex/` | Codex 시기 기록 보존. 고치지 않는다 |
 | `References/forever-addons/<애드온명>/` | 시작 애드온 원본 ZIP·`SOURCE.txt`·`ANALYSIS.md`(R75·R81). 읽기 전용 |
 | `References/addon-sources/<이름>/` | 참고 애드온 원본 ZIP 58개와 분석. 읽기 전용 |
@@ -392,7 +392,7 @@ R1 의 첫 요청은 단축키·체력/마나·미니맵이었고 「부가 기�
 | 22 대안 테마 (외관은 Codex) | `…-phase22-세부계획.md` | 36 | 완료 |
 | 23 연계 검사·정정 | `…-phase23-세부계획.md` | 37–38 | 완료 |
 | 24 최종 목업 (제작은 Codex) | `…-phase24-세부계획.md` | 39 | 완료 (받은 목업 대조는 Codex 결과 대기 · R109) |
-| 25 Codex 검증 결과 반영·고정 | `…-phase25-세부계획.md` | 40–41 | 대기 |
+| 25 Codex 검증 결과 반영·고정 | `…-phase25-세부계획.md` | 40–41 | 진행 중 — Codex 결과 대기(R109) · 인계 `Claude/docs/HANDOVER_v0.1.0.md` |
 
 `…` 는 `Claude/plans/2026-11-18-devil-forever-addon-collection` 이다. Phase 가 끝날 때마다 그 Phase 의 Result 를 `Claude/results/` 에 남기고, 끝난 Phase 정리는 `Claude/plans/2026-11-18-devil-forever-addon-collection-plan_이력.md` 로 옮긴다.
 
