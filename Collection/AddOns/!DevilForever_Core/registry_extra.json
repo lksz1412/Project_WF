@@ -201,6 +201,149 @@
         }
       },
       "defaults": "Defaults/Dominos.lua"
+    },
+    "Prat-3.0": {
+      "frames": [
+        {
+          "key": "prat.chatframe1",
+          "frame": "ChatFrame1"
+        },
+        {
+          "key": "prat.editbox1",
+          "frame": "ChatFrame1EditBox"
+        },
+        {
+          "key": "prat.tab1",
+          "frame": "ChatFrame1Tab"
+        },
+        {
+          "key": "prat.chatframe2",
+          "frame": "ChatFrame2"
+        },
+        {
+          "key": "prat.editbox2",
+          "frame": "ChatFrame2EditBox"
+        },
+        {
+          "key": "prat.tab2",
+          "frame": "ChatFrame2Tab"
+        },
+        {
+          "key": "prat.chatframe3",
+          "frame": "ChatFrame3"
+        },
+        {
+          "key": "prat.editbox3",
+          "frame": "ChatFrame3EditBox"
+        },
+        {
+          "key": "prat.tab3",
+          "frame": "ChatFrame3Tab"
+        },
+        {
+          "key": "prat.chatframe4",
+          "frame": "ChatFrame4"
+        },
+        {
+          "key": "prat.editbox4",
+          "frame": "ChatFrame4EditBox"
+        },
+        {
+          "key": "prat.tab4",
+          "frame": "ChatFrame4Tab"
+        },
+        {
+          "key": "prat.chatframe5",
+          "frame": "ChatFrame5"
+        },
+        {
+          "key": "prat.editbox5",
+          "frame": "ChatFrame5EditBox"
+        },
+        {
+          "key": "prat.tab5",
+          "frame": "ChatFrame5Tab"
+        },
+        {
+          "key": "prat.chatframe6",
+          "frame": "ChatFrame6"
+        },
+        {
+          "key": "prat.editbox6",
+          "frame": "ChatFrame6EditBox"
+        },
+        {
+          "key": "prat.tab6",
+          "frame": "ChatFrame6Tab"
+        },
+        {
+          "key": "prat.chatframe7",
+          "frame": "ChatFrame7"
+        },
+        {
+          "key": "prat.editbox7",
+          "frame": "ChatFrame7EditBox"
+        },
+        {
+          "key": "prat.tab7",
+          "frame": "ChatFrame7Tab"
+        },
+        {
+          "key": "prat.chatframe8",
+          "frame": "ChatFrame8"
+        },
+        {
+          "key": "prat.editbox8",
+          "frame": "ChatFrame8EditBox"
+        },
+        {
+          "key": "prat.tab8",
+          "frame": "ChatFrame8Tab"
+        },
+        {
+          "key": "prat.chatframe9",
+          "frame": "ChatFrame9"
+        },
+        {
+          "key": "prat.editbox9",
+          "frame": "ChatFrame9EditBox"
+        },
+        {
+          "key": "prat.tab9",
+          "frame": "ChatFrame9Tab"
+        },
+        {
+          "key": "prat.chatframe10",
+          "frame": "ChatFrame10"
+        },
+        {
+          "key": "prat.editbox10",
+          "frame": "ChatFrame10EditBox"
+        },
+        {
+          "key": "prat.tab10",
+          "frame": "ChatFrame10Tab"
+        }
+      ],
+      "saved_variables": {
+        "Prat3DB": {
+          "split": "common"
+        },
+        "Prat3CharDB": {
+          "split": "common"
+        },
+        "Prat3HighCPUPerCharDB": {
+          "split": "common"
+        }
+      },
+      "defaults": "Defaults/Prat-3.0.lua"
+    },
+    "DevilForever_ChatSetup": {
+      "saved_variables": {
+        "DevilForever_ChatSetupDB": {
+          "split": "common"
+        }
+      }
     }
   }
 }

@@ -355,6 +355,27 @@ Core.Registry = {
       use = "settings",
       version = "Details.20261109.15410.172",
     },
+    DevilForever_ChatSetup = {
+      bundle = "individual",
+      editable = {},
+      foreverLoad = "yes",
+      frames = {},
+      package = "DevilForever",
+      phases = {},
+      savedVariables = {
+        {
+          name = "DevilForever_ChatSetupDB",
+          scope = "character",
+          split = "common",
+        },
+      },
+      tocStatus = "matched",
+      tocs = {
+        "DevilForever_ChatSetup.toc",
+      },
+      use = "new",
+      version = "0.1.0",
+    },
     Dominos = {
       bundle = "individual",
       defaults = "Defaults/Dominos.lua",
@@ -1115,9 +1136,161 @@ Core.Registry = {
     },
     ["Prat-3.0"] = {
       bundle = "individual",
+      defaults = "Defaults/Prat-3.0.lua",
       editable = {},
       foreverLoad = "yes",
-      frames = {},
+      frames = {
+        {
+          frame = "ChatFrame1",
+          key = "prat.chatframe1",
+          tokens = {},
+        },
+        {
+          frame = "ChatFrame1EditBox",
+          key = "prat.editbox1",
+          tokens = {},
+        },
+        {
+          frame = "ChatFrame1Tab",
+          key = "prat.tab1",
+          tokens = {},
+        },
+        {
+          frame = "ChatFrame2",
+          key = "prat.chatframe2",
+          tokens = {},
+        },
+        {
+          frame = "ChatFrame2EditBox",
+          key = "prat.editbox2",
+          tokens = {},
+        },
+        {
+          frame = "ChatFrame2Tab",
+          key = "prat.tab2",
+          tokens = {},
+        },
+        {
+          frame = "ChatFrame3",
+          key = "prat.chatframe3",
+          tokens = {},
+        },
+        {
+          frame = "ChatFrame3EditBox",
+          key = "prat.editbox3",
+          tokens = {},
+        },
+        {
+          frame = "ChatFrame3Tab",
+          key = "prat.tab3",
+          tokens = {},
+        },
+        {
+          frame = "ChatFrame4",
+          key = "prat.chatframe4",
+          tokens = {},
+        },
+        {
+          frame = "ChatFrame4EditBox",
+          key = "prat.editbox4",
+          tokens = {},
+        },
+        {
+          frame = "ChatFrame4Tab",
+          key = "prat.tab4",
+          tokens = {},
+        },
+        {
+          frame = "ChatFrame5",
+          key = "prat.chatframe5",
+          tokens = {},
+        },
+        {
+          frame = "ChatFrame5EditBox",
+          key = "prat.editbox5",
+          tokens = {},
+        },
+        {
+          frame = "ChatFrame5Tab",
+          key = "prat.tab5",
+          tokens = {},
+        },
+        {
+          frame = "ChatFrame6",
+          key = "prat.chatframe6",
+          tokens = {},
+        },
+        {
+          frame = "ChatFrame6EditBox",
+          key = "prat.editbox6",
+          tokens = {},
+        },
+        {
+          frame = "ChatFrame6Tab",
+          key = "prat.tab6",
+          tokens = {},
+        },
+        {
+          frame = "ChatFrame7",
+          key = "prat.chatframe7",
+          tokens = {},
+        },
+        {
+          frame = "ChatFrame7EditBox",
+          key = "prat.editbox7",
+          tokens = {},
+        },
+        {
+          frame = "ChatFrame7Tab",
+          key = "prat.tab7",
+          tokens = {},
+        },
+        {
+          frame = "ChatFrame8",
+          key = "prat.chatframe8",
+          tokens = {},
+        },
+        {
+          frame = "ChatFrame8EditBox",
+          key = "prat.editbox8",
+          tokens = {},
+        },
+        {
+          frame = "ChatFrame8Tab",
+          key = "prat.tab8",
+          tokens = {},
+        },
+        {
+          frame = "ChatFrame9",
+          key = "prat.chatframe9",
+          tokens = {},
+        },
+        {
+          frame = "ChatFrame9EditBox",
+          key = "prat.editbox9",
+          tokens = {},
+        },
+        {
+          frame = "ChatFrame9Tab",
+          key = "prat.tab9",
+          tokens = {},
+        },
+        {
+          frame = "ChatFrame10",
+          key = "prat.chatframe10",
+          tokens = {},
+        },
+        {
+          frame = "ChatFrame10EditBox",
+          key = "prat.editbox10",
+          tokens = {},
+        },
+        {
+          frame = "ChatFrame10Tab",
+          key = "prat.tab10",
+          tokens = {},
+        },
+      },
       package = "Prat-3.0",
       phases = {
         4,
@@ -1608,6 +1781,7 @@ Core.Registry = {
     "Details_Streamer",
     "Details_TinyThreat",
     "Details_Vanguard",
+    "DevilForever_ChatSetup",
     "Dominos",
     "Dominos_Cast",
     "Dominos_Config",

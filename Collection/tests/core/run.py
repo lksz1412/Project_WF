@@ -385,8 +385,14 @@ def generated_registry_lookup():
     eq(to_py(c.GetAddonInfo(c, "!DevilForever_Core"))["bundle"], "required", "Core is required")
     eq(list(to_py(c.ListAddons(c)).values())[0], "!DevilForever_Core", "Core sorts first")
     eq(c.GetAddonInfo(c, "NoSuchAddon"), None, "unknown folder")
-    eq(list(to_py(c.GetFrameNames(c)).values()), list(to_py(c.GetFrameNames(c, "Dominos")).values()),
-       "appearance frames are Dominos' only")
+    eq(list(to_py(c.GetFrameNames(c)).values()),
+       sorted(list(to_py(c.GetFrameNames(c, "Dominos")).values()) + list(to_py(c.GetFrameNames(c, "Prat-3.0")).values())),
+       "appearance frames are Dominos' and Prat's only")
+    eq(len(to_py(c.GetFrameNames(c, "Prat-3.0"))), 30, "Prat: ChatFrame1-10 with edit boxes and tabs")
+    eq(prat["defaults"], "Defaults/Prat-3.0.lua", "Prat defaults file named")
+    setup = to_py(c.GetAddonInfo(c, "DevilForever_ChatSetup"))
+    eq(list(setup["savedVariables"].values()),
+       [{"name": "DevilForever_ChatSetupDB", "scope": "character", "split": "common"}], "ChatSetup SV")
     names = list(to_py(c.ListAddons(c)).values())
     eq(names, sorted(names, key=str.lower), "sorted list")
     eq("Bartender4" in names, False, "comparison packages excluded")
@@ -809,6 +815,41 @@ def dominos_defaults_existing_profile_kept():
                     saved={"DominosDB": db, "DevilForever_CoreDB": s.sv("DevilForever_CoreDB")}).boot(after=["Dominos"])
     eq(other.sv("DominosDB")["profiles"]["Mage"], {"showBindingText": True},
        "a new character of another class gets its class profile")
+
+
+@case
+def prat_defaults_fresh_default_profile():
+    s = Session(registry="generated", extra_files=()).boot(after=["Prat-3.0"])
+    eq(s.sv("Prat3DB"), {"namespaces": {"Prat_History": {"profiles": {"Default": {"scrollback": False}}},
+                                        "Prat_Memory": {"profiles": {"Default": {"on": False}}}}},
+       "namespace profiles named Default")
+    targets = s.status("Prat-3.0")["targets"]
+    eq((targets["Prat3DB/Prat_History"]["state"], targets["Prat3DB/Prat_History"]["key"]),
+       ("applied", "Prat3DB/Prat_History@profile:Default"), "History status")
+    eq((targets["Prat3DB/Prat_Memory"]["state"], targets["Prat3DB/Prat_Memory"]["key"]),
+       ("applied", "Prat3DB/Prat_Memory@profile:Default"), "Memory status")
+    second = Session(registry="generated", extra_files=(),
+                     saved={"Prat3DB": s.sv("Prat3DB"), "DevilForever_CoreDB": s.sv("DevilForever_CoreDB")})
+    second.boot(after=["Prat-3.0"])
+    states = {k: v["state"] for k, v in second.status("Prat-3.0")["targets"].items()}
+    eq(states, {"Prat3DB/Prat_History": "already", "Prat3DB/Prat_Memory": "already"}, "once per version")
+    eq(s.errors() + second.errors(), [], "no errors")
+
+
+@case
+def prat_defaults_user_values_and_profile_kept():
+    saved = {"Prat3DB": {"profileKeys": {"Hero - Realm": "Mine"},
+                         "profiles": {"Mine": {"modules": {"Memory": 3}}},
+                         "namespaces": {"Prat_History": {"profiles": {"Mine": {"scrollback": True}}},
+                                        "Prat_Memory": {"profiles": {"Mine": {"on": True, "autoload": True}}}}}}
+    s = Session(registry="generated", extra_files=(), saved=saved).boot(after=["Prat-3.0"])
+    db = s.sv("Prat3DB")
+    eq(db["namespaces"]["Prat_History"]["profiles"], {"Mine": {"scrollback": True}}, "user History value kept")
+    eq(db["namespaces"]["Prat_Memory"]["profiles"], {"Mine": {"on": True, "autoload": True}}, "user Memory value kept")
+    eq(db["profiles"], {"Mine": {"modules": {"Memory": 3}}}, "parent profile untouched")
+    written = {k: (v["key"], v["written"]) for k, v in s.status("Prat-3.0")["targets"].items()}
+    eq(written, {"Prat3DB/Prat_History": ("Prat3DB/Prat_History@profile:Mine", 0),
+                 "Prat3DB/Prat_Memory": ("Prat3DB/Prat_Memory@profile:Mine", 0)}, "profileKeys profile, nothing written")
 
 
 def main():

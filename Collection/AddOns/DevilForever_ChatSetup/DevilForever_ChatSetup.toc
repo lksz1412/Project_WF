@@ -1,0 +1,8 @@
+## Interface: 16001
+## Title: DevilForever Chat Setup
+## Notes: Makes the three chat windows of the Devil Forever collection once per character (first login only).
+## Version: 0.1.0
+## Dependencies: !DevilForever_Core
+## SavedVariablesPerCharacter: DevilForever_ChatSetupDB
+
+ChatSetup.lua

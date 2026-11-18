@@ -4,4 +4,4 @@
 
 | Step | Work | Owner | Gate | Review | Est. | Status |
 |---|---|---|---|---|---|---|
-| 14 | Prat module set + three-window channel split (D3 가) + core hook/History/ChatLog side-effect judgment, registry, Codex briefs — per `Claude/results/handoffs/settings-phase-brief-template.md` | A2 | template §3 gates | master check, or 1 logic review if code beyond a defaults table | 45–90 | ⏳ |
+| 14 | Prat module set + three-window channel split (D3 가) + core hook/History/ChatLog side-effect judgment, registry, Codex briefs — per `Claude/results/handoffs/settings-phase-brief-template.md` | A2 | template §3 gates | master check, or 1 logic review if code beyond a defaults table | 45–90 | ✅ |
