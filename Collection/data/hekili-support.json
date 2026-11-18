@@ -1,0 +1,1172 @@
+{
+  "schema": "devil-forever-hekili-support/1",
+  "step": "Phase 8 Step 18",
+  "status": "read from addon source (untrusted upstream, read only); not checked in game",
+  "path_prefix": "Collection/upstream/Hekili-v0.8.6/",
+  "line_notation": "spec_keys/shared_keys: 'key auraLine / abilityLine cd N' in the class module file; talent_lines in the same file",
+  "spec_key_rule": "talent key of the spec's tree equal to the aura/ability key (machine match) + source comments + ability form field (Druid feral/guardian); A1 judgment where marked",
+  "common": {
+    "C1": {
+      "text": "5 displays are recommendation queues near screen top centre",
+      "src": [
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Options/Options.lua:414-506"
+      ],
+      "tier": "confirmed"
+    },
+    "C2": {
+      "text": "Cooldowns/Defensives/Interrupts displays show only recommendations of that toggle's abilities",
+      "src": [
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Engine/Sim/State.lua:6541-6543",
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Engine/Sim/State.lua:7226-7229"
+      ],
+      "tier": "confirmed"
+    },
+    "C3": {
+      "text": "HekiliNotification shows pause/mode/toggle/pack-reset/style-error text only",
+      "src": [
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Options/Options.lua:400-404",
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Options/Options.lua:8861",
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Options/Options.lua:8870-8878",
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Options/Options.lua:8938",
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Options/Options.lua:8971",
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Options/Options.lua:9003",
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Options/ChatCommands.lua:254-255",
+        "Collection/upstream/Hekili-v0.8.6/Hekili/UI/Styles.lua:47",
+        "Collection/upstream/Hekili-v0.8.6/Hekili/UI/Styles.lua:51"
+      ],
+      "tier": "confirmed"
+    },
+    "C4": {
+      "text": "display icon glow only when the recommended ability's spell is overlayed",
+      "src": [
+        "Collection/upstream/Hekili-v0.8.6/Hekili/UI/Resolve.lua:124",
+        "Collection/upstream/Hekili-v0.8.6/Hekili/UI/Styles/Classic.lua:689-714",
+        "Collection/upstream/Hekili-v0.8.6/Hekili/UI/Styles/Classic.lua:736-760",
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Options/Options.lua:431-437"
+      ],
+      "tier": "confirmed"
+    },
+    "C5": {
+      "text": "action bar glow on the recommended ability's real buttons",
+      "src": [
+        "Collection/upstream/Hekili-v0.8.6/Hekili/UI/BarGlow.lua:1-11"
+      ],
+      "tier": "confirmed"
+    },
+    "C6": {
+      "text": "Truth layer draws real cooldown swipe and proc mark on recommended buttons; 4 unverified overlays off",
+      "src": [
+        "Collection/upstream/Hekili-v0.8.6/Hekili/UI/Truth.lua:1-9",
+        "Collection/upstream/Hekili-v0.8.6/Hekili/UI/Truth.lua:26",
+        "Collection/upstream/Hekili-v0.8.6/Hekili/UI/Truth.lua:57"
+      ],
+      "tier": "confirmed (code), unverified (game)"
+    },
+    "C7": {
+      "text": "no PlaySound in Hekili core or class modules outside Libs; SpellFlash only as zhCN strings",
+      "src": [
+        "grep (work_log)",
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Locales/zhCN.lua:1036-1067",
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Options/Options.lua:8173"
+      ],
+      "tier": "confirmed"
+    },
+    "C8": {
+      "text": "unsupported spec: displays off, no priorities, options page notice",
+      "src": [
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Engine/Schema/Spec/Kits.lua:114-115",
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Engine/Schema/Spec/Kits.lua:141",
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Options/Options.lua:4496",
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Engine/Schema/Spec/Activation.lua:386"
+      ],
+      "tier": "confirmed"
+    },
+    "C9": {
+      "text": "RegisterAura: id, duration, max_stack, copy, overlay, family in kit.auras[key]",
+      "src": [
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Engine/Schema/Spec/Auras.lua:16-30",
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Engine/Schema/Spec/Auras.lua:90",
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Engine/Schema/Spec/Auras.lua:150",
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Engine/Schema/Spec/Auras.lua:160-168"
+      ],
+      "tier": "confirmed"
+    },
+    "C10": {
+      "text": "RegisterAbility: id, cooldown (number or function), toggle, form in kit.abilities[key]; function fields run in Hekili state when read",
+      "src": [
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Engine/Schema/Spec/Abilities.lua:88-90",
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Engine/Schema/Spec/Abilities.lua:104-115",
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Engine/Schema/Spec/Abilities.lua:151-180",
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Engine/Schema/Spec/Abilities.lua:390-403"
+      ],
+      "tier": "confirmed"
+    },
+    "C11": {
+      "text": "data is for simulation/belief; no per-spec display list in source",
+      "src": [
+        "Collection/upstream/Hekili-v0.8.6/Hekili_Paladin/Paladin.lua:412-413",
+        "Collection/upstream/Hekili-v0.8.6/Hekili_Priest/Priest.lua:384",
+        "Collection/upstream/Hekili-v0.8.6/Hekili_Warlock/Warlock.lua:365"
+      ],
+      "tier": "confirmed (comments); per-spec list = source missing"
+    },
+    "kit_shared": {
+      "text": "auras/abilities registered on the class kit; specs inherit via __index",
+      "src": [
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Engine/Schema/Spec/Kits.lua:117-151"
+      ],
+      "tier": "confirmed"
+    }
+  },
+  "summary": {
+    "specs": 28,
+    "supported": 24,
+    "unsupported": 4,
+    "watch_data_present": 28,
+    "eventalert_style_alert": {
+      "present": false,
+      "basis": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "tier": "confirmed (code)"
+    },
+    "branch_counts": {
+      "1": 0,
+      "2": 28,
+      "3": 0
+    },
+    "overall_branch": 2,
+    "overall_tier": "A1 judgment; branch 2 because EventAlert-style alerts are absent for every spec"
+  },
+  "classes": [
+    {
+      "token": "WARRIOR",
+      "module": "Collection/upstream/Hekili-v0.8.6/Hekili_Warrior/Warrior.lua",
+      "blocks": {
+        "auras": "562-845",
+        "abilities": "1008-2124",
+        "talents": "503-560",
+        "packs": "2227-2241"
+      },
+      "specs": [
+        {
+          "class": "WARRIOR",
+          "spec": "arms",
+          "talent_tree": 1,
+          "hekili_supported": true,
+          "supported_src": "Collection/upstream/Hekili-v0.8.6/Hekili_Warrior/Warrior.lua:41",
+          "watch_data": {
+            "present": true,
+            "spec_keys": [
+              "mortal_strike aura 722 / ability 1606 cd 6",
+              "sweeping_strikes 810 / 2011 cd 30 cooldowns",
+              "bloodthrill 738 proc (opens overpower_ready 730)",
+              "spearing_strike ability 1966 cd 20"
+            ],
+            "shared_keys": [
+              "overpower_ready 730",
+              "recklessness 753 / 1743 cd 1800",
+              "battle_stance 569"
+            ],
+            "talent_lines": "510-521"
+          },
+          "branch": 2,
+          "static_list_source": "1 (Hekili class module data)",
+          "notes": "overpower_ready unseen in combat per comment 730 (unverified)",
+          "status_alert": "none (C1, C3)",
+          "proc_shown": "on recommended icons only (C4, C5, C6)",
+          "cd_shown": "for recommendations only (C2, C6)",
+          "recommendation": "yes Collection/upstream/Hekili-v0.8.6/Hekili_Warrior/Warrior.lua:2237"
+        },
+        {
+          "class": "WARRIOR",
+          "spec": "fury",
+          "talent_tree": 2,
+          "hekili_supported": true,
+          "supported_src": "Collection/upstream/Hekili-v0.8.6/Hekili_Warrior/Warrior.lua:42",
+          "watch_data": {
+            "present": true,
+            "spec_keys": [
+              "enrage 650",
+              "flurry 663",
+              "blood_craze 584",
+              "death_wish 622 / 1292 cd 180 cooldowns",
+              "reckless_swings 748 / 1717 cd 15",
+              "gore_drinker 670",
+              "bloodthirst ability 1150 cd 6"
+            ],
+            "shared_keys": [
+              "berserker_stance 579",
+              "berserker_rage 574 / 1060 cd 30"
+            ],
+            "talent_lines": "528-540"
+          },
+          "branch": 2,
+          "static_list_source": "1 (Hekili class module data)",
+          "notes": "",
+          "status_alert": "none (C1, C3)",
+          "proc_shown": "on recommended icons only (C4, C5, C6)",
+          "cd_shown": "for recommendations only (C2, C6)",
+          "recommendation": "yes Collection/upstream/Hekili-v0.8.6/Hekili_Warrior/Warrior.lua:2232"
+        },
+        {
+          "class": "WARRIOR",
+          "spec": "protection",
+          "talent_tree": 3,
+          "hekili_supported": true,
+          "supported_src": "Collection/upstream/Hekili-v0.8.6/Hekili_Warrior/Warrior.lua:43-50",
+          "watch_data": {
+            "present": true,
+            "spec_keys": [
+              "last_stand 710 / 1560 cd 180 defensives",
+              "concussion_blow 616 / 1267 cd 45",
+              "shield_slam ability 1894 cd 6"
+            ],
+            "shared_keys": [
+              "shield_block 793 / 1871",
+              "shield_wall 799 / 1912 defensives",
+              "revenge_usable 773",
+              "defensive_stance 633"
+            ],
+            "talent_lines": "548-559"
+          },
+          "branch": 2,
+          "static_list_source": "1 (Hekili class module data)",
+          "notes": "",
+          "status_alert": "none (C1, C3)",
+          "proc_shown": "on recommended icons only (C4, C5, C6)",
+          "cd_shown": "for recommendations only (C2, C6)",
+          "recommendation": "yes Collection/upstream/Hekili-v0.8.6/Hekili_Warrior/Warrior.lua:2227"
+        }
+      ]
+    },
+    {
+      "token": "PALADIN",
+      "module": "Collection/upstream/Hekili-v0.8.6/Hekili_Paladin/Paladin.lua",
+      "blocks": {
+        "auras": "344-475",
+        "abilities": "679-1277",
+        "talents": "277-332",
+        "packs": "1319-1333"
+      },
+      "specs": [
+        {
+          "class": "PALADIN",
+          "spec": "holy",
+          "talent_tree": 1,
+          "hekili_supported": false,
+          "supported_src": "Collection/upstream/Hekili-v0.8.6/Hekili_Paladin/Paladin.lua:39",
+          "watch_data": {
+            "present": true,
+            "spec_keys": [
+              "divine_favor 387",
+              "infusion_of_light 443",
+              "lights_vigil 444 / 1211 cd 6",
+              "oath_of_light 446 / 1232",
+              "holy_shock ability 831 cd function cooldowns"
+            ],
+            "shared_keys": [
+              "holy_light 921",
+              "flash_of_light 938",
+              "lay_on_hands 956 cd 1200"
+            ],
+            "talent_lines": "279-295"
+          },
+          "branch": 2,
+          "static_list_source": "1 (Hekili class module data)",
+          "notes": "source comment 431: Holy-only auras (B8, Holy is unsupported)",
+          "status_alert": "none (C8)",
+          "proc_shown": "none (C8)",
+          "cd_shown": "none (C8)",
+          "recommendation": "none (C8); not to be created (R62)"
+        },
+        {
+          "class": "PALADIN",
+          "spec": "protection",
+          "talent_tree": 2,
+          "hekili_supported": true,
+          "supported_src": "Collection/upstream/Hekili-v0.8.6/Hekili_Paladin/Paladin.lua:40-47",
+          "watch_data": {
+            "present": true,
+            "spec_keys": [
+              "holy_shield 378 / 865 cd 10",
+              "redoubt 416 proc",
+              "reckoning 423 proc",
+              "templars_bulwark 409 / 892 cooldowns",
+              "iron_creed 426",
+              "swift_judgement ability 718 cd 60"
+            ],
+            "shared_keys": [
+              "righteous_fury 385",
+              "shieldsworn_block 427",
+              "forbearance 410"
+            ],
+            "talent_lines": "297-313"
+          },
+          "branch": 2,
+          "static_list_source": "1 (Hekili class module data)",
+          "notes": "comment 412: own procs, no priority reads them",
+          "status_alert": "none (C1, C3)",
+          "proc_shown": "on recommended icons only (C4, C5, C6)",
+          "cd_shown": "for recommendations only (C2, C6)",
+          "recommendation": "yes Collection/upstream/Hekili-v0.8.6/Hekili_Paladin/Paladin.lua:1324"
+        },
+        {
+          "class": "PALADIN",
+          "spec": "retribution",
+          "talent_tree": 3,
+          "hekili_supported": true,
+          "supported_src": "Collection/upstream/Hekili-v0.8.6/Hekili_Paladin/Paladin.lua:48-56",
+          "watch_data": {
+            "present": true,
+            "spec_keys": [
+              "seal_of_command 350",
+              "vengeance 414 proc",
+              "vindication 406",
+              "repentance 466 / 1160 cd 60"
+            ],
+            "shared_keys": [
+              "seals 350-376 (family)",
+              "echoes 368-373",
+              "judgement 689",
+              "consecration 437 / 785 cd 8"
+            ],
+            "talent_lines": "315-331"
+          },
+          "branch": 2,
+          "static_list_source": "1 (Hekili class module data)",
+          "notes": "",
+          "status_alert": "none (C1, C3)",
+          "proc_shown": "on recommended icons only (C4, C5, C6)",
+          "cd_shown": "for recommendations only (C2, C6)",
+          "recommendation": "yes Collection/upstream/Hekili-v0.8.6/Hekili_Paladin/Paladin.lua:1319; Holy Shock build Collection/upstream/Hekili-v0.8.6/Hekili_Paladin/Paladin.lua:1329 (selector 1308-1314)"
+        }
+      ]
+    },
+    {
+      "token": "HUNTER",
+      "module": "Collection/upstream/Hekili-v0.8.6/Hekili_Hunter/Hunter.lua",
+      "blocks": {
+        "auras": "382-463",
+        "abilities": "590-1242",
+        "talents": "1249-1303",
+        "packs": "1323-1357"
+      },
+      "specs": [
+        {
+          "class": "HUNTER",
+          "spec": "beast_mastery",
+          "talent_tree": 1,
+          "hekili_supported": true,
+          "supported_src": "Collection/upstream/Hekili-v0.8.6/Hekili_Hunter/Hunter.lua:40-51",
+          "watch_data": {
+            "present": true,
+            "spec_keys": [
+              "bestial_wrath 386 / 665 cd 120 cooldowns",
+              "frenzy 435",
+              "intimidation 430 / 1023 cd 60",
+              "summon_hawk ability 731 cd 6"
+            ],
+            "shared_keys": [
+              "rapid_fire 387 / 643 cooldowns",
+              "quick_shots 401 proc"
+            ],
+            "talent_lines": "1251-1266"
+          },
+          "branch": 2,
+          "static_list_source": "1 (Hekili class module data)",
+          "notes": "pet unmodelled (Collection/upstream/Hekili-v0.8.6/Hekili_Hunter/Hunter.lua:14, D6); quick_shots unprobed (13-14)",
+          "status_alert": "none (C1, C3)",
+          "proc_shown": "on recommended icons only (C4, C5, C6)",
+          "cd_shown": "for recommendations only (C2, C6)",
+          "recommendation": "yes Collection/upstream/Hekili-v0.8.6/Hekili_Hunter/Hunter.lua:1338 (Turret default), :1323"
+        },
+        {
+          "class": "HUNTER",
+          "spec": "marksmanship",
+          "talent_tree": 2,
+          "hekili_supported": true,
+          "supported_src": "Collection/upstream/Hekili-v0.8.6/Hekili_Hunter/Hunter.lua:52-63",
+          "watch_data": {
+            "present": true,
+            "spec_keys": [
+              "rapid_killing 411 proc",
+              "sniper_shot 412 / 791 cd 15",
+              "rapid_recuperation 406",
+              "trueshot_aura 436 / 1164",
+              "scatter_shot 431 / 1009 cd 30"
+            ],
+            "shared_keys": [
+              "aimed_shot 749 cd 6",
+              "multi_shot 771 cd 6"
+            ],
+            "talent_lines": "1268-1283"
+          },
+          "branch": 2,
+          "static_list_source": "1 (Hekili class module data)",
+          "notes": "",
+          "status_alert": "none (C1, C3)",
+          "proc_shown": "on recommended icons only (C4, C5, C6)",
+          "cd_shown": "for recommendations only (C2, C6)",
+          "recommendation": "yes Collection/upstream/Hekili-v0.8.6/Hekili_Hunter/Hunter.lua:1343, :1328"
+        },
+        {
+          "class": "HUNTER",
+          "spec": "survival",
+          "talent_tree": 3,
+          "hekili_supported": true,
+          "supported_src": "Collection/upstream/Hekili-v0.8.6/Hekili_Hunter/Hunter.lua:64-75",
+          "watch_data": {
+            "present": true,
+            "spec_keys": [
+              "resourcefulness 405",
+              "expose_prey 413",
+              "lacerating_strikes 415",
+              "strider_kick 414 / 864 cd 8",
+              "deterrence 432 / 1052",
+              "counterattack ability 1037 cd 5"
+            ],
+            "shared_keys": [
+              "defensive_state 442",
+              "mongoose_bite 841 cd 5"
+            ],
+            "talent_lines": "1285-1302"
+          },
+          "branch": 2,
+          "static_list_source": "1 (Hekili class module data)",
+          "notes": "",
+          "status_alert": "none (C1, C3)",
+          "proc_shown": "on recommended icons only (C4, C5, C6)",
+          "cd_shown": "for recommendations only (C2, C6)",
+          "recommendation": "yes Collection/upstream/Hekili-v0.8.6/Hekili_Hunter/Hunter.lua:1348, :1333, :1353"
+        }
+      ]
+    },
+    {
+      "token": "ROGUE",
+      "module": "Collection/upstream/Hekili-v0.8.6/Hekili_Rogue/Rogue.lua",
+      "blocks": {
+        "auras": "224-362",
+        "abilities": "503-1107, 1123-1349, 1352-1355",
+        "talents": "164-222",
+        "packs": "1364-1378"
+      },
+      "specs": [
+        {
+          "class": "ROGUE",
+          "spec": "assassination",
+          "talent_tree": 1,
+          "hekili_supported": true,
+          "supported_src": "Collection/upstream/Hekili-v0.8.6/Hekili_Rogue/Rogue.lua:36-43",
+          "watch_data": {
+            "present": true,
+            "spec_keys": [
+              "cold_blood 254 / 608 cd 180 cooldowns",
+              "venom 357",
+              "mutilate ability 833",
+              "remorseless 239 (talent remorseless_attacks 167, by comment)"
+            ],
+            "shared_keys": [
+              "slice_and_dice 303",
+              "rupture 296",
+              "poisons 227-231"
+            ],
+            "talent_lines": "166-182"
+          },
+          "branch": 2,
+          "static_list_source": "1 (Hekili class module data)",
+          "notes": "",
+          "status_alert": "none (C1, C3)",
+          "proc_shown": "on recommended icons only (C4, C5, C6)",
+          "cd_shown": "for recommendations only (C2, C6)",
+          "recommendation": "yes Collection/upstream/Hekili-v0.8.6/Hekili_Rogue/Rogue.lua:1369"
+        },
+        {
+          "class": "ROGUE",
+          "spec": "combat",
+          "talent_tree": 2,
+          "hekili_supported": true,
+          "supported_src": "Collection/upstream/Hekili-v0.8.6/Hekili_Rogue/Rogue.lua:44-51",
+          "watch_data": {
+            "present": true,
+            "spec_keys": [
+              "adrenaline_rush 232 / 504 cd 300 cooldowns",
+              "blade_flurry 248 / 584 cd 120 cooldowns",
+              "riposte ability 806 cd 6"
+            ],
+            "shared_keys": [],
+            "talent_lines": "184-202"
+          },
+          "branch": 2,
+          "static_list_source": "1 (Hekili class module data)",
+          "notes": "",
+          "status_alert": "none (C1, C3)",
+          "proc_shown": "on recommended icons only (C4, C5, C6)",
+          "cd_shown": "for recommendations only (C2, C6)",
+          "recommendation": "yes Collection/upstream/Hekili-v0.8.6/Hekili_Rogue/Rogue.lua:1364"
+        },
+        {
+          "class": "ROGUE",
+          "spec": "subtlety",
+          "talent_tree": 3,
+          "hekili_supported": true,
+          "supported_src": "Collection/upstream/Hekili-v0.8.6/Hekili_Rogue/Rogue.lua:52-59",
+          "watch_data": {
+            "present": true,
+            "spec_keys": [
+              "ghostly_strike 279 / 723 cd 20",
+              "death_mark 260 / 1079 cd 10",
+              "hemorrhage 291 / 753",
+              "premeditation ability 861 cd 120",
+              "preparation ability 878 cd 600"
+            ],
+            "shared_keys": [
+              "ghostly_strike_next 286",
+              "stealth 310",
+              "vanish 317 / 1015"
+            ],
+            "talent_lines": "204-221"
+          },
+          "branch": 2,
+          "static_list_source": "1 (Hekili class module data)",
+          "notes": "",
+          "status_alert": "none (C1, C3)",
+          "proc_shown": "on recommended icons only (C4, C5, C6)",
+          "cd_shown": "for recommendations only (C2, C6)",
+          "recommendation": "yes Collection/upstream/Hekili-v0.8.6/Hekili_Rogue/Rogue.lua:1374"
+        }
+      ]
+    },
+    {
+      "token": "PRIEST",
+      "module": "Collection/upstream/Hekili-v0.8.6/Hekili_Priest/Priest.lua",
+      "blocks": {
+        "auras": "368-434",
+        "abilities": "436-863, 930-992",
+        "talents": "1000-1056",
+        "packs": "1071-1080"
+      },
+      "specs": [
+        {
+          "class": "PRIEST",
+          "spec": "discipline",
+          "talent_tree": 1,
+          "hekili_supported": true,
+          "supported_src": "Collection/upstream/Hekili-v0.8.6/Hekili_Priest/Priest.lua:47-55",
+          "watch_data": {
+            "present": true,
+            "spec_keys": [
+              "inner_focus 374 / 799 cd 180 cooldowns",
+              "divine_aegis 413",
+              "penance 432 / 706 cd 12",
+              "power_infusion ability 820 cd 180"
+            ],
+            "shared_keys": [
+              "power_word_shield 375 / 748 defensives",
+              "weakened_soul 376"
+            ],
+            "talent_lines": "1002-1019"
+          },
+          "branch": 2,
+          "static_list_source": "1 (Hekili class module data)",
+          "notes": "",
+          "status_alert": "none (C1, C3)",
+          "proc_shown": "on recommended icons only (C4, C5, C6)",
+          "cd_shown": "for recommendations only (C2, C6)",
+          "recommendation": "yes Collection/upstream/Hekili-v0.8.6/Hekili_Priest/Priest.lua:1076 (Smite)"
+        },
+        {
+          "class": "PRIEST",
+          "spec": "holy",
+          "talent_tree": 2,
+          "hekili_supported": false,
+          "supported_src": "Collection/upstream/Hekili-v0.8.6/Hekili_Priest/Priest.lua:56",
+          "watch_data": {
+            "present": true,
+            "spec_keys": [
+              "prayer_of_mending 392 / 948 cd 10",
+              "inspiration 407",
+              "spirit_of_redemption 408",
+              "blessed_recovery 406",
+              "holy_nova ability 731",
+              "holy_purpose 414 (Searing Light, header 20)"
+            ],
+            "shared_keys": [
+              "heal utilities 933-947",
+              "lightwell 991 cd 600"
+            ],
+            "talent_lines": "1021-1037"
+          },
+          "branch": 2,
+          "static_list_source": "1 (Hekili class module data)",
+          "notes": "",
+          "status_alert": "none (C8)",
+          "proc_shown": "none (C8)",
+          "cd_shown": "none (C8)",
+          "recommendation": "none (C8); not to be created (R62)"
+        },
+        {
+          "class": "PRIEST",
+          "spec": "shadow",
+          "talent_tree": 3,
+          "hekili_supported": true,
+          "supported_src": "Collection/upstream/Hekili-v0.8.6/Hekili_Priest/Priest.lua:57-65",
+          "watch_data": {
+            "present": true,
+            "spec_keys": [
+              "shadowform 371 / 575",
+              "spirit_tap 382 proc",
+              "dark_inspiration 383 proc",
+              "shadow_weaving 427",
+              "vampiric_embrace 426 / 557 cd 30",
+              "blackout 409",
+              "mind_flay 430 / 490"
+            ],
+            "shared_keys": [
+              "devouring_plague 424 / 518 cd 24",
+              "shadow_word_death 542 cd 18",
+              "mind_blast 456"
+            ],
+            "talent_lines": "1039-1055"
+          },
+          "branch": 2,
+          "static_list_source": "1 (Hekili class module data)",
+          "notes": "proc rolls unseen; read where the aura walk is plain (header 20-21)",
+          "status_alert": "none (C1, C3)",
+          "proc_shown": "on recommended icons only (C4, C5, C6)",
+          "cd_shown": "for recommendations only (C2, C6)",
+          "recommendation": "yes Collection/upstream/Hekili-v0.8.6/Hekili_Priest/Priest.lua:1071"
+        }
+      ]
+    },
+    {
+      "token": "SHAMAN",
+      "module": "Collection/upstream/Hekili-v0.8.6/Hekili_Shaman/Shaman.lua",
+      "blocks": {
+        "auras": "548-694",
+        "abilities": "707-1144",
+        "talents": "1152-1206",
+        "packs": "1279-1288",
+        "totems": "537"
+      },
+      "specs": [
+        {
+          "class": "SHAMAN",
+          "spec": "elemental",
+          "talent_tree": 1,
+          "hekili_supported": true,
+          "supported_src": "Collection/upstream/Hekili-v0.8.6/Hekili_Shaman/Shaman.lua:50-58",
+          "watch_data": {
+            "present": true,
+            "spec_keys": [
+              "elemental_devastation 582",
+              "earthbound 689",
+              "elemental_mastery 567 / 813 cd 180 cooldowns (talent_16166 at 1169, same id)",
+              "clearcasting 667 (Elemental Focus, talent 1160)",
+              "revelation 569",
+              "water_shield 559 (header 21)",
+              "chain_lightning 769",
+              "flame_shock 671"
+            ],
+            "shared_keys": [],
+            "talent_lines": "1154-1169"
+          },
+          "branch": 2,
+          "static_list_source": "1 (Hekili class module data)",
+          "notes": "Elemental kit header 18-25",
+          "status_alert": "none (C1, C3)",
+          "proc_shown": "on recommended icons only (C4, C5, C6)",
+          "cd_shown": "for recommendations only (C2, C6)",
+          "recommendation": "yes Collection/upstream/Hekili-v0.8.6/Hekili_Shaman/Shaman.lua:1279"
+        },
+        {
+          "class": "SHAMAN",
+          "spec": "enhancement",
+          "talent_tree": 2,
+          "hekili_supported": true,
+          "supported_src": "Collection/upstream/Hekili-v0.8.6/Hekili_Shaman/Shaman.lua:59-66",
+          "watch_data": {
+            "present": true,
+            "spec_keys": [
+              "maelstrom_weapon 571 (5 stacks)",
+              "flurry 581",
+              "improved_stormstrike 588",
+              "stormstrike 684 / 862 cd 6",
+              "rage_of_the_farseer 693 / 1122 cd 180 cooldowns"
+            ],
+            "shared_keys": [
+              "lightning_shield 550",
+              "weapon imbues 574-577",
+              "windfury_attack 583"
+            ],
+            "talent_lines": "1171-1188"
+          },
+          "branch": 2,
+          "static_list_source": "1 (Hekili class module data)",
+          "notes": "weapon procs unmodelled (header 11-12)",
+          "status_alert": "none (C1, C3)",
+          "proc_shown": "on recommended icons only (C4, C5, C6)",
+          "cd_shown": "for recommendations only (C2, C6)",
+          "recommendation": "yes Collection/upstream/Hekili-v0.8.6/Hekili_Shaman/Shaman.lua:1284"
+        },
+        {
+          "class": "SHAMAN",
+          "spec": "restoration",
+          "talent_tree": 3,
+          "hekili_supported": false,
+          "supported_src": "Collection/upstream/Hekili-v0.8.6/Hekili_Shaman/Shaman.lua:67",
+          "watch_data": {
+            "present": true,
+            "spec_keys": [
+              "water_shield 559 / 849",
+              "natures_swiftness 586 / 794 cd 180 cooldowns",
+              "riptide 687 / 1000 cd 12"
+            ],
+            "shared_keys": [
+              "mana_tide 617",
+              "healing_stream 623",
+              "ancestral_fortitude 690",
+              "healing_wave 921",
+              "lesser_healing_wave 949",
+              "chain_heal 974"
+            ],
+            "talent_lines": "1190-1205"
+          },
+          "branch": 2,
+          "static_list_source": "1 (Hekili class module data)",
+          "notes": "",
+          "status_alert": "none (C8)",
+          "proc_shown": "none (C8)",
+          "cd_shown": "none (C8)",
+          "recommendation": "none (C8); not to be created (R62)"
+        }
+      ]
+    },
+    {
+      "token": "MAGE",
+      "module": "Collection/upstream/Hekili-v0.8.6/Hekili_Mage/Mage.lua",
+      "blocks": {
+        "auras": "284-309, 698-706, 895-919",
+        "abilities": "377-690, 753-886, 984-1289",
+        "talents": "1305-1362",
+        "packs": "1375-1394"
+      },
+      "specs": [
+        {
+          "class": "MAGE",
+          "spec": "arcane",
+          "talent_tree": 1,
+          "hekili_supported": true,
+          "supported_src": "Collection/upstream/Hekili-v0.8.6/Hekili_Mage/Mage.lua:42-50",
+          "watch_data": {
+            "present": true,
+            "spec_keys": [
+              "arcane_blast 287 / 380 (4 charges)",
+              "missile_barrage 290 proc",
+              "arcane_power 295 / 637 cd 180 cooldowns",
+              "presence_of_mind 296 / 655 cd 180 cooldowns",
+              "arcane_wrath ability 427 cd 6"
+            ],
+            "shared_keys": [
+              "clearcasting 294 proc",
+              "evocation 300 / 595 cd 480"
+            ],
+            "talent_lines": "1307-1324"
+          },
+          "branch": 2,
+          "static_list_source": "1 (Hekili class module data)",
+          "notes": "proc rolls unseen (header 22-23)",
+          "status_alert": "none (C1, C3)",
+          "proc_shown": "on recommended icons only (C4, C5, C6)",
+          "cd_shown": "for recommendations only (C2, C6)",
+          "recommendation": "yes Collection/upstream/Hekili-v0.8.6/Hekili_Mage/Mage.lua:1375"
+        },
+        {
+          "class": "MAGE",
+          "spec": "fire",
+          "talent_tree": 2,
+          "hekili_supported": true,
+          "supported_src": "Collection/upstream/Hekili-v0.8.6/Hekili_Mage/Mage.lua:51-59",
+          "watch_data": {
+            "present": true,
+            "spec_keys": [
+              "heating_up 291 proc",
+              "combustion 299 / 673 cd 180 cooldowns",
+              "blast_wave 897 / 1026 cd 45",
+              "ignite 913",
+              "pyroblast ability 522"
+            ],
+            "shared_keys": [
+              "fire_vulnerability 308"
+            ],
+            "talent_lines": "1326-1342"
+          },
+          "branch": 2,
+          "static_list_source": "1 (Hekili class module data)",
+          "notes": "",
+          "status_alert": "none (C1, C3)",
+          "proc_shown": "on recommended icons only (C4, C5, C6)",
+          "cd_shown": "for recommendations only (C2, C6)",
+          "recommendation": "yes Collection/upstream/Hekili-v0.8.6/Hekili_Mage/Mage.lua:1380, Frostfire :1385"
+        },
+        {
+          "class": "MAGE",
+          "spec": "frost",
+          "talent_tree": 3,
+          "hekili_supported": true,
+          "supported_src": "Collection/upstream/Hekili-v0.8.6/Hekili_Mage/Mage.lua:60-68",
+          "watch_data": {
+            "present": true,
+            "spec_keys": [
+              "fingers_of_frost 293 proc",
+              "ice_barrier 703 / 797 cd 30",
+              "ice_block 705 / 869 cd 300 defensives",
+              "frostbite 914",
+              "cold_snap ability 816 cd 600 cooldowns",
+              "ice_lance ability 775 cd 8"
+            ],
+            "shared_keys": [
+              "winters_chill 700",
+              "frigid_power 704"
+            ],
+            "talent_lines": "1344-1361"
+          },
+          "branch": 2,
+          "static_list_source": "1 (Hekili class module data)",
+          "notes": "",
+          "status_alert": "none (C1, C3)",
+          "proc_shown": "on recommended icons only (C4, C5, C6)",
+          "cd_shown": "for recommendations only (C2, C6)",
+          "recommendation": "yes Collection/upstream/Hekili-v0.8.6/Hekili_Mage/Mage.lua:1390"
+        }
+      ]
+    },
+    {
+      "token": "WARLOCK",
+      "module": "Collection/upstream/Hekili-v0.8.6/Hekili_Warlock/Warlock.lua",
+      "blocks": {
+        "auras": "320-387, 393-405",
+        "abilities": "593-1081, 1126-1407",
+        "talents": "1425-1481",
+        "packs": "1525-1549"
+      },
+      "specs": [
+        {
+          "class": "WARLOCK",
+          "spec": "affliction",
+          "talent_tree": 1,
+          "hekili_supported": true,
+          "supported_src": "Collection/upstream/Hekili-v0.8.6/Hekili_Warlock/Warlock.lua:57-65",
+          "watch_data": {
+            "present": true,
+            "spec_keys": [
+              "amplify_curse 351 / 1037 cd 180 cooldowns",
+              "siphon_life 334 / 783",
+              "wrack 335 / 838",
+              "soul_harvest 363",
+              "curse_of_exhaustion 401 / 1373",
+              "shadow_trance 349 proc overlay=686 (Nightfall, talent 1438)"
+            ],
+            "shared_keys": [
+              "corruption 322",
+              "bane_of_agony 329"
+            ],
+            "talent_lines": "1427-1443"
+          },
+          "branch": 2,
+          "static_list_source": "1 (Hekili class module data)",
+          "notes": "",
+          "status_alert": "none (C1, C3)",
+          "proc_shown": "on recommended icons only (C4, C5, C6)",
+          "cd_shown": "for recommendations only (C2, C6)",
+          "recommendation": "yes Collection/upstream/Hekili-v0.8.6/Hekili_Warlock/Warlock.lua:1525"
+        },
+        {
+          "class": "WARLOCK",
+          "spec": "demonology",
+          "talent_tree": 2,
+          "hekili_supported": true,
+          "supported_src": "Collection/upstream/Hekili-v0.8.6/Hekili_Warlock/Warlock.lua:66-75",
+          "watch_data": {
+            "present": true,
+            "spec_keys": [
+              "decimation 350 proc overlay=6353",
+              "demonic_brand 338",
+              "fel_domination 365 / 1394 cd 300 cooldowns",
+              "soul_link 366",
+              "master_demonologist 368",
+              "demonic_sacrifice 381 / 1062 (effects 377-380)"
+            ],
+            "shared_keys": [],
+            "talent_lines": "1445-1463"
+          },
+          "branch": 2,
+          "static_list_source": "1 (Hekili class module data)",
+          "notes": "demon spells unmodelled (header 34)",
+          "status_alert": "none (C1, C3)",
+          "proc_shown": "on recommended icons only (C4, C5, C6)",
+          "cd_shown": "for recommendations only (C2, C6)",
+          "recommendation": "yes Collection/upstream/Hekili-v0.8.6/Hekili_Warlock/Warlock.lua:1530, Shadow Brand :1545"
+        },
+        {
+          "class": "WARLOCK",
+          "spec": "destruction",
+          "talent_tree": 3,
+          "hekili_supported": true,
+          "supported_src": "Collection/upstream/Hekili-v0.8.6/Hekili_Warlock/Warlock.lua:76-85",
+          "watch_data": {
+            "present": true,
+            "spec_keys": [
+              "bane_of_havoc 344 / 705",
+              "aftermath 399",
+              "conflagrate ability 911 cd 10",
+              "shadowburn ability 935 cd 15",
+              "incinerate 974",
+              "shadow_and_flame 360-361 (talent 1479)",
+              "shadow_vulnerability 340 (Improved Shadow Bolt 1466)"
+            ],
+            "shared_keys": [
+              "immolate 328",
+              "revelation 357"
+            ],
+            "talent_lines": "1465-1480"
+          },
+          "branch": 2,
+          "static_list_source": "1 (Hekili class module data)",
+          "notes": "",
+          "status_alert": "none (C1, C3)",
+          "proc_shown": "on recommended icons only (C4, C5, C6)",
+          "cd_shown": "for recommendations only (C2, C6)",
+          "recommendation": "yes Collection/upstream/Hekili-v0.8.6/Hekili_Warlock/Warlock.lua:1535, SM Ruin :1540"
+        }
+      ]
+    },
+    {
+      "token": "DRUID",
+      "module": "Collection/upstream/Hekili-v0.8.6/Hekili_Druid/Druid.lua",
+      "blocks": {
+        "auras": "434-745",
+        "abilities": "851-2273",
+        "talents": "361-417",
+        "packs": "2330-2344"
+      },
+      "specs": [
+        {
+          "class": "DRUID",
+          "spec": "balance",
+          "talent_tree": 1,
+          "hekili_supported": true,
+          "supported_src": "Collection/upstream/Hekili-v0.8.6/Hekili_Druid/Druid.lua:36-44",
+          "watch_data": {
+            "present": true,
+            "spec_keys": [
+              "eclipse 543 (4 stacks)",
+              "natures_grace 660 proc",
+              "insect_swarm 617 / 1440",
+              "moonkin_form 654 / 1579"
+            ],
+            "shared_keys": [
+              "moonfire 644",
+              "clearcasting 516 proc",
+              "natures_swiftness 667 / 1607 cd 180 (tree-3 talent)"
+            ],
+            "talent_lines": "363-378"
+          },
+          "branch": 2,
+          "static_list_source": "1 (Hekili class module data)",
+          "notes": "",
+          "status_alert": "none (C1, C3)",
+          "proc_shown": "on recommended icons only (C4, C5, C6)",
+          "cd_shown": "for recommendations only (C2, C6)",
+          "recommendation": "yes Collection/upstream/Hekili-v0.8.6/Hekili_Druid/Druid.lua:2335"
+        },
+        {
+          "class": "DRUID",
+          "spec": "feral",
+          "talent_tree": 2,
+          "hekili_supported": true,
+          "supported_src": "Collection/upstream/Hekili-v0.8.6/Hekili_Druid/Druid.lua:45-53",
+          "watch_data": {
+            "present": true,
+            "spec_keys": [
+              "primal_bite 1681",
+              "shifting_power 1858",
+              "feral_charge 1208 cd 15",
+              "form=cat_form: claw 1039, rake 1728 (aura 702), rip 1827 (709), shred 1887, ferocious_bite 1237, prowl 1704 (695), dash 1077 cd 300, feral_charge_cat 2216 cd 30"
+            ],
+            "shared_keys": [
+              "berserk 465 / 959 cd 180 cooldowns",
+              "clearcasting 516",
+              "poised 526"
+            ],
+            "talent_lines": "380-399"
+          },
+          "branch": 2,
+          "static_list_source": "1 (Hekili class module data)",
+          "notes": "",
+          "status_alert": "none (C1, C3)",
+          "proc_shown": "on recommended icons only (C4, C5, C6)",
+          "cd_shown": "for recommendations only (C2, C6)",
+          "recommendation": "yes Collection/upstream/Hekili-v0.8.6/Hekili_Druid/Druid.lua:2330"
+        },
+        {
+          "class": "DRUID",
+          "spec": "guardian",
+          "talent_tree": 2,
+          "hekili_supported": true,
+          "supported_src": "Collection/upstream/Hekili-v0.8.6/Hekili_Druid/Druid.lua:54-62",
+          "watch_data": {
+            "present": true,
+            "spec_keys": [
+              "form=bear_form: enrage 1123 cd 60 (aura 558), frenzied_regeneration 1276 cd 180 defensives (590), lacerate 1467 (630), maul 1521 (638), bash 900 (449), demoralizing_roar 1097 (537), growl 1321 cd 8, challenging_roar 1016 cd 600, swipe_bear 1954"
+            ],
+            "shared_keys": [
+              "barkskin 444 / 881 cd 60 defensives",
+              "bear_form 458"
+            ],
+            "talent_lines": "380-399 (thick_hide 385)"
+          },
+          "branch": 2,
+          "static_list_source": "1 (Hekili class module data)",
+          "notes": "same tree as feral; split by ability form field; Thick Hide 3/3 picks guardian (Collection/upstream/Hekili-v0.8.6/Hekili_Druid/Druid.lua:31-33)",
+          "status_alert": "none (C1, C3)",
+          "proc_shown": "on recommended icons only (C4, C5, C6)",
+          "cd_shown": "for recommendations only (C2, C6)",
+          "recommendation": "yes Collection/upstream/Hekili-v0.8.6/Hekili_Druid/Druid.lua:2340"
+        },
+        {
+          "class": "DRUID",
+          "spec": "restoration",
+          "talent_tree": 3,
+          "hekili_supported": false,
+          "supported_src": "Collection/upstream/Hekili-v0.8.6/Hekili_Druid/Druid.lua:63",
+          "watch_data": {
+            "present": true,
+            "spec_keys": [
+              "natures_swiftness 667 / 1607 cd 180",
+              "wild_growth 730 / 2040 cd 6",
+              "swiftmend ability 2026 cd 15"
+            ],
+            "shared_keys": [
+              "tranquility 731 / 2059",
+              "innervate 611 / 1401 cd 360 cooldowns",
+              "rebirth 2079 cd 1800",
+              "regrowth ability 1783",
+              "rejuvenation ability 1810",
+              "clearcasting 516"
+            ],
+            "talent_lines": "401-416"
+          },
+          "branch": 2,
+          "static_list_source": "1 (Hekili class module data)",
+          "notes": "target HoT auras for rejuvenation/regrowth: source missing",
+          "status_alert": "none (C8)",
+          "proc_shown": "none (C8)",
+          "cd_shown": "none (C8)",
+          "recommendation": "none (C8); not to be created (R62)"
+        }
+      ]
+    }
+  ],
+  "runtime_read": [
+    {
+      "what": "Hekili global",
+      "name": "Hekili",
+      "src": "Collection/upstream/Hekili-v0.8.6/Hekili/Hekili.lua:15",
+      "tier": "confirmed"
+    },
+    {
+      "what": "class kit",
+      "name": "Hekili.Class.kit (.auras, .abilities, .talents {tree, spell, max rank}, .trees, .specs)",
+      "src": [
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Hekili.lua:89-141",
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Engine/Schema/Spec/Kits.lua:122-149",
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Engine/Schema/Spec.lua:112-125"
+      ],
+      "tier": "confirmed"
+    },
+    {
+      "what": "read rule",
+      "name": "rawget plain fields only (id, duration, max_stack, copy, overlay, toggle, form, numeric cooldown); never function fields",
+      "src": [
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Engine/Schema/Spec/Abilities.lua:104-115",
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Engine/Schema/Spec/Abilities.lua:170-180"
+      ],
+      "tier": "confirmed (code); rule = A1 judgment"
+    },
+    {
+      "what": "active spec",
+      "name": "Hekili.State.spec.key / .id / .kitID",
+      "src": "Collection/upstream/Hekili-v0.8.6/Hekili/Engine/Schema/Spec/Activation.lua:113-118",
+      "tier": "confirmed (code); unsupported spec case unverified"
+    },
+    {
+      "what": "active spec auras",
+      "name": "Hekili.Class.auras",
+      "src": [
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Engine/Schema/Spec/Activation.lua:95-111",
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Engine/Schema/Spec/Auras.lua:121-124"
+      ],
+      "tier": "confirmed"
+    },
+    {
+      "what": "aura state in combat",
+      "name": "Hekili.Client.C_UnitAuras.GetPlayerAuraBySpellID",
+      "src": [
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Hekili.lua:151-154",
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Game/API/Facade.lua:725-739"
+      ],
+      "tier": "confirmed (code); unverified (game)"
+    },
+    {
+      "what": "cooldown state in combat",
+      "name": "Hekili.Client.C_Spell.GetSpellCooldown / GetSpellCharges",
+      "src": [
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Game/API/Facade.lua:1027-1035",
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Game/API/Facade.lua:1051-1062"
+      ],
+      "tier": "confirmed (code); unverified (game)"
+    },
+    {
+      "what": "cooldown swipe widget",
+      "name": "C_Spell.GetSpellCooldownDuration + Cooldown:SetCooldownFromDurationObject",
+      "src": "Collection/upstream/Hekili-v0.8.6/Hekili/Game/API/Facade.lua:1391-1412",
+      "tier": "inferred (direct use by the supplement)"
+    },
+    {
+      "what": "proc",
+      "name": "C_SpellActivationOverlay.IsSpellOverlayed with the aura's overlay field",
+      "src": [
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Game/API/Facade.lua:1245",
+        "Collection/upstream/Hekili-v0.8.6/Hekili/Game/State/Sources/Auras.lua:7-8"
+      ],
+      "tier": "confirmed (code); unverified (game)"
+    }
+  ],
+  "do_not_touch": [
+    "Collection/upstream/Hekili-v0.8.6/Hekili/Engine/Output.lua:88",
+    "Collection/upstream/Hekili-v0.8.6/Hekili/Engine/Output.lua:236",
+    "Collection/upstream/Hekili-v0.8.6/Hekili/Integrations/WeakAuras.lua:1-4",
+    "Collection/upstream/Hekili-v0.8.6/Hekili/Hekili.lua:174-196",
+    "Collection/upstream/Hekili-v0.8.6/Hekili/UI/Styles.lua:41-58"
+  ],
+  "source_missing": [
+    "per-spec display list given by the source (C11)",
+    "Druid restoration target HoT auras (Collection/upstream/Hekili-v0.8.6/Hekili_Druid/Druid.lua:1783, 1810 abilities only)",
+    "Hunter pet auras/abilities (Collection/upstream/Hekili-v0.8.6/Hekili_Hunter/Hunter.lua:14)",
+    "Warlock demon spells (Collection/upstream/Hekili-v0.8.6/Hekili_Warlock/Warlock.lua:33-34)"
+  ],
+  "decision_queue": [
+    "1 Forever client Cooldown Manager overlap (CooldownViewer.lua:29-30): default = leave, check in Step 20 Codex brief",
+    "2 class-shared items in spec lists: default = listed but off",
+    "3 D7 Codex data: not needed for presence; in-game ID/duration check in Step 20 brief",
+    "4 unsupported specs runtime state via Hekili.Client unverified: default = Hekili.Client first, fall back to client API / IsSpellOverlayed; check with shaman restoration in Step 20",
+    "5 D2 for the 4 unsupported specs shows alerts + CD only (no recommendation): master to decide whether to state it in the final report"
+  ]
+}
