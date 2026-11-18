@@ -4,4 +4,4 @@
 
 | Step | Work | Owner | Gate | Review | Est. | Status |
 |---|---|---|---|---|---|---|
-| 15 | SexyMap functional defaults (click/zoom/ping/tracking icons/button tidy), square-map handover to Codex, registry, Codex briefs — per `Claude/results/handoffs/settings-phase-brief-template.md` | A2 | template §3 gates | master check, or 1 logic review if code beyond a defaults table | 30–60 | ⏳ |
+| 15 | SexyMap functional defaults (click/zoom/ping/tracking icons/button tidy), square-map handover to Codex, registry, Codex briefs — per `Claude/results/handoffs/settings-phase-brief-template.md` | A2 | template §3 gates | master check, or 1 logic review if code beyond a defaults table | 30–60 | ✅ |

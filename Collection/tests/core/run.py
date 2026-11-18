@@ -386,8 +386,14 @@ def generated_registry_lookup():
     eq(list(to_py(c.ListAddons(c)).values())[0], "!DevilForever_Core", "Core sorts first")
     eq(c.GetAddonInfo(c, "NoSuchAddon"), None, "unknown folder")
     eq(list(to_py(c.GetFrameNames(c)).values()),
-       sorted(list(to_py(c.GetFrameNames(c, "Dominos")).values()) + list(to_py(c.GetFrameNames(c, "Prat-3.0")).values())),
-       "appearance frames are Dominos' and Prat's only")
+       sorted(list(to_py(c.GetFrameNames(c, "Dominos")).values()) + list(to_py(c.GetFrameNames(c, "Prat-3.0")).values())
+              + list(to_py(c.GetFrameNames(c, "SexyMap")).values())),
+       "appearance frames are Dominos', Prat's and SexyMap's only")
+    sexy = to_py(c.GetAddonInfo(c, "SexyMap"))
+    eq(list(to_py(c.GetFrameNames(c, "SexyMap")).values()),
+       ["Minimap", "SexyMapCoordFrame", "SexyMapZoneTextButton", "TimeManagerClockButton"], "SexyMap frames")
+    eq(list(sexy["savedVariables"].values()), [{"name": "SexyMap2DB", "scope": "account", "split": "common"}], "SexyMap SV")
+    eq(sexy["defaults"], "Defaults/SexyMap.lua", "SexyMap defaults file named")
     eq(len(to_py(c.GetFrameNames(c, "Prat-3.0"))), 30, "Prat: ChatFrame1-10 with edit boxes and tabs")
     eq(prat["defaults"], "Defaults/Prat-3.0.lua", "Prat defaults file named")
     setup = to_py(c.GetAddonInfo(c, "DevilForever_ChatSetup"))
@@ -850,6 +856,123 @@ def prat_defaults_user_values_and_profile_kept():
     written = {k: (v["key"], v["written"]) for k, v in s.status("Prat-3.0")["targets"].items()}
     eq(written, {"Prat3DB/Prat_History": ("Prat3DB/Prat_History@profile:Mine", 0),
                  "Prat3DB/Prat_Memory": ("Prat3DB/Prat_Memory@profile:Mine", 0)}, "profileKeys profile, nothing written")
+
+
+# SexyMap's own first-load setup at its ADDON_LOADED (SexyMap.lua:325-353,
+# Buttons.lua:217-246): the SV, the character profile and each module table are
+# created only when missing. A test stand-in; the upstream file is not run.
+SEXYMAP_INIT = r"""
+local key = UnitNameUnmodified("player") .. "-" .. GetRealmName()
+if type(SexyMap2DB) ~= "table" then SexyMap2DB = {} end
+if not SexyMap2DB[key] then SexyMap2DB[key] = {} end
+local p = SexyMap2DB[key]
+if type(p) == "string" then
+  if not SexyMap2DB.global then SexyMap2DB.global = {} end
+  p = SexyMap2DB.global
+end
+if not p.core then
+  p.core = {lock = false, clamp = true, rightClickToConfig = true, autoZoom = 5, northTag = true,
+            shape = "Interface\\AddOns\\SexyMap\\shapes\\circle.tga"}
+end
+if type(p.buttons) ~= "table" then
+  p.buttons = {radius = 10, scale = 1,
+    dragPositions = {DayNight = 45, MiniMapTracking = -16, GameTimeFrame = 22, MiniMapMailFrame = 2,
+                     AddonCompartmentFrame = 126, MinimapZoomIn = -55, MinimapZoomOut = -36},
+    visibilitySettings = {MinimapZoomIn = "never", MinimapZoomOut = "never", MiniMapWorldMapButton = "never",
+      SexyMapZoneTextButton = "always", TimeManagerClockButton = "always", MiniMapMailFrame = "always",
+      CraftingOrder = "always", ExpansionLandingPageMinimapButton = "hover", AddonCompartmentFrame = "never",
+      DayNight = "hover"},
+    allowDragging = true, lockDragging = false, controlVisibility = true}
+end
+if type(p.ping) ~= "table" then p.ping = {showPing = true, showAt = "map"} end
+"""
+
+SEXYMAP_CORE = {"lock": False, "clamp": True, "rightClickToConfig": True, "autoZoom": 5, "northTag": True,
+                "shape": "Interface\\AddOns\\SexyMap\\shapes\\circle.tga"}
+
+
+def sexymap_session(saved=None, player=None):
+    """Core first, SexyMap's ADDON_LOADED setup after Core's handler, then login."""
+    s = Session(registry="generated", extra_files=(), saved=saved, player=player)
+    s.load_addon(ADDON)
+    s.g.TEST_loaded["SexyMap"] = True
+    s.fire("ADDON_LOADED", "SexyMap")
+    s.lua.execute(SEXYMAP_INIT)
+    s.fire("PLAYER_LOGIN")
+    s.fire("PLAYER_ENTERING_WORLD", True, False)
+    return s
+
+
+@case
+def sexymap_defaults_fresh_written_at_world():
+    s = sexymap_session()
+    p = s.sv("SexyMap2DB")["Hero-Realm"]
+    eq((p["core"]["rightClickToConfig"], p["buttons"]["visibilitySettings"]["MiniMapTracking"]), (False, "always"),
+       "requirement values over SexyMap's first-load values")
+    eq(p["core"]["shape"], SEXYMAP_CORE["shape"], "shape left to SexyMap")
+    eq(p["ping"], {"showPing": True, "showAt": "map"}, "other modules untouched")
+    st = s.status("SexyMap")["targets"]["SexyMap2DB"]
+    eq((st["state"], st["mode"], st["key"]), ("applied", "first-load", "SexyMap2DB"), "status")
+    db = s.sv("SexyMap2DB")
+    db["Hero-Realm"]["core"]["rightClickToConfig"] = True  # the user turns it back on
+    nxt = sexymap_session(saved={"SexyMap2DB": db, "DevilForever_CoreDB": s.sv("DevilForever_CoreDB")})
+    eq(nxt.sv("SexyMap2DB")["Hero-Realm"]["core"]["rightClickToConfig"], True, "user value kept next session")
+    eq(nxt.status("SexyMap")["targets"]["SexyMap2DB"]["state"], "already", "once per version")
+    eq(s.errors() + nxt.errors(), [], "no errors")
+
+
+@case
+def sexymap_defaults_new_character_tables_complete():
+    other = {"core": dict(SEXYMAP_CORE, autoZoom=0), "buttons": {"radius": 3}}
+    saved = {"SexyMap2DB": {"Other-Realm": other, "presets": {}}}
+    s = sexymap_session(saved=saved)
+    db = s.sv("SexyMap2DB")
+    eq(db["Other-Realm"], other, "another character's profile untouched")
+    p = db["Hero-Realm"]
+    core = dict(SEXYMAP_CORE, rightClickToConfig=False)
+    del core["shape"]
+    eq(p["core"], core, "core table complete without SexyMap's own (shape absent: Blizzard mask)")
+    eq(p["buttons"]["visibilitySettings"]["MiniMapTracking"], "always", "tracking button")
+    eq(sorted(p["buttons"].keys()), ["allowDragging", "controlVisibility", "dragPositions", "lockDragging",
+                                     "radius", "scale", "visibilitySettings"], "buttons table complete")
+    eq(len(p["buttons"]["dragPositions"]), 7, "SexyMap's button angles")
+    eq(p["ping"], {"showPing": True, "showAt": "map"}, "missing module tables still made by SexyMap")
+    st = s.status("SexyMap")["targets"]["SexyMap2DB"]
+    eq((st["state"], st["mode"]), ("applied", "fill-missing"), "status")
+    eq(s.errors(), [], "no errors")
+
+
+@case
+def sexymap_defaults_existing_and_global_profile_kept():
+    mine = {"core": dict(SEXYMAP_CORE), "buttons": {"visibilitySettings": {"MiniMapTracking": "never"}}}
+    s = sexymap_session(saved={"SexyMap2DB": {"Hero-Realm": mine}})
+    p = s.sv("SexyMap2DB")["Hero-Realm"]
+    eq((p["core"]["rightClickToConfig"], p["buttons"]["visibilitySettings"]["MiniMapTracking"]), (True, "never"),
+       "stored values kept")
+    eq(p["buttons"]["visibilitySettings"]["MinimapZoomIn"], "never", "missing keys filled")
+    g = sexymap_session(saved={"SexyMap2DB": {"Hero-Realm": "global", "global": {"core": dict(SEXYMAP_CORE)}}})
+    gdb = g.sv("SexyMap2DB")
+    eq((gdb["Hero-Realm"], gdb["global"]["core"]["rightClickToConfig"]), ("global", True), "global choice kept")
+    st = g.status("SexyMap")["targets"]["SexyMap2DB"]
+    eq((st["state"], len(st["conflicts"])), ("applied", 1), "conflict recorded")
+    eq(any(e["kind"] == "conflict" and e["subject"] == "SexyMap" for e in g.log()), True, "conflict logged")
+
+
+@case
+def sexymap_defaults_regional_profile_key():
+    s = Session(registry="generated", extra_files=(), player={"surname": "Brave"}, saved={"SexyMap2DB": {}})
+    s.lua.execute("RegionalUniqueNamesEnabled = function() return true end")
+    s.run_file(os.path.join(CORE_DIR, "Defaults", "SexyMap.lua"))  # the defaults file as loaded with regional names on
+    s.boot(after=["SexyMap"])
+    eq(sorted(s.sv("SexyMap2DB").keys()), ["Hero Brave"], "regional names: \"<name> <surname>\" as SexyMap keys it")
+    eq(s.status("SexyMap")["targets"]["SexyMap2DB"]["state"], "applied", "status")
+
+
+@case
+def sexymap_defaults_profile_key_unknown_not_registered():
+    s = Session(registry="generated", extra_files=(), player={"realm": ""})
+    eq(s.status("SexyMap")["registered"], False, "not registered without a realm")
+    eq(any(e["kind"] == "skip" and e["subject"] == "Defaults:SexyMap" for e in s.log()), True, "logged")
 
 
 def main():

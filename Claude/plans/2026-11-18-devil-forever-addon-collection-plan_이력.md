@@ -41,3 +41,7 @@ Phase 2(Step 11–12): !DevilForever_Core 와 Codex 발주문 2건. 이 Phase �
 ## Phase 4 끝 정리 (2026-11-18 15:06:40 +0900)
 
 대화창은 기본 창·기본 입력을 그대로 두고 Prat 3.9.117 을 그대로 쓴다. 기본 설정은 채팅 기록 되살리기 끔·Memory 모듈 끔 두 가지. 세 창 분담(D3 가)은 새 작은 애드온 DevilForever_ChatSetup 이 캐릭터 첫 접속 때 한 번만 창 두 개를 열어 채널 묶음을 옮긴다(빈 창 수를 먼저 세고 모자라면 아무것도 바꾸지 않음). Codex 외관·실사용 검증 발주문을 썼다. Result = `Claude/results/PHASE_4_prat-chat_RESULT.md`.
+
+## Phase 5 끝 정리 (2026-11-18 15:16:44 +0900)
+
+미니맵은 SexyMap v12.1.7 을 그대로 쓴다. 기본 설정은 지도 오른쪽 클릭으로 설정창이 열리지 않게(/sexymap 으로는 열림)와 추적 버튼 늘 보이기 두 가지이고, SexyMap 이 모듈 표를 통째로 만드는 방식이라 그 표를 SexyMap 기본값과 함께 채운다. 사각 모양·위치·테두리는 Codex 몫. Codex 발주문을 썼다. Result = `Claude/results/PHASE_5_sexymap_RESULT.md`.

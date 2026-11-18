@@ -344,6 +344,38 @@
           "split": "common"
         }
       }
+    },
+    "SexyMap": {
+      "frames": [
+        {
+          "key": "sexymap.minimap",
+          "frame": "Minimap"
+        },
+        {
+          "key": "sexymap.zonetext",
+          "frame": "SexyMapZoneTextButton"
+        },
+        {
+          "key": "sexymap.clock",
+          "frame": "TimeManagerClockButton"
+        },
+        {
+          "key": "sexymap.coordinates",
+          "frame": "SexyMapCoordFrame"
+        }
+      ],
+      "editable": [
+        {
+          "frame": "sexymap.minimap",
+          "field": "position"
+        }
+      ],
+      "saved_variables": {
+        "SexyMap2DB": {
+          "split": "common"
+        }
+      },
+      "defaults": "Defaults/SexyMap.lua"
     }
   }
 }

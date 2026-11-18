@@ -1367,9 +1367,37 @@ Core.Registry = {
     },
     SexyMap = {
       bundle = "individual",
-      editable = {},
+      defaults = "Defaults/SexyMap.lua",
+      editable = {
+        {
+          field = "position",
+          frame = "sexymap.minimap",
+          kind = "position",
+        },
+      },
       foreverLoad = "yes",
-      frames = {},
+      frames = {
+        {
+          frame = "Minimap",
+          key = "sexymap.minimap",
+          tokens = {},
+        },
+        {
+          frame = "SexyMapZoneTextButton",
+          key = "sexymap.zonetext",
+          tokens = {},
+        },
+        {
+          frame = "TimeManagerClockButton",
+          key = "sexymap.clock",
+          tokens = {},
+        },
+        {
+          frame = "SexyMapCoordFrame",
+          key = "sexymap.coordinates",
+          tokens = {},
+        },
+      },
       package = "SexyMap",
       phases = {
         5,
