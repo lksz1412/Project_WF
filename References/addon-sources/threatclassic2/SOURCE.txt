@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/threatclassic2/files/9498163
+파일명: ThreatClassic2-2.77-forever.zip
+판(version): 2.77-forever
+file ID: 9498163
+파일 날짜: Nov 7, 2026
+표기된 game version: 1.60.1 [Flavors: Forever]
+SHA256: 3eed87088b7da14917a65ac835d2b70688efdeed7e4caad64cd6a24d8c3f978c

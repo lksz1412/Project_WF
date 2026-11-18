@@ -1,0 +1,28 @@
+{
+  "product": "SexyMap",
+  "observed_at": "2026-11-18T10:28:31.7248067+09:00",
+  "page_url": "https://www.curseforge.com/wow/addons/sexymap/files/9457503",
+  "list_url": "https://www.curseforge.com/wow/addons/sexymap/files/all",
+  "page_location": "181-226",
+  "list_location": "327-351",
+  "short_quote": "1.60.1",
+  "selected_version": "v12.1.7",
+  "file_id": 9457503,
+  "filename": "SexyMap-v12.1.7.zip",
+  "file_date": "Nov 5, 2026",
+  "latest_basis": "First visible date-ordered file listing row plus Latest release for Forever; exact file lists 1.60.1",
+  "request_url": "https://edge.forgecdn.net/files/9457/503/SexyMap-v12.1.7.zip",
+  "final_url": "https://mediafilez.forgecdn.net/files/9457/503/SexyMap-v12.1.7.zip",
+  "http_status": 200,
+  "content_type": [
+    "application/x-zip-compressed"
+  ],
+  "content_length": [
+    "2924049"
+  ],
+  "bytes": 2924049,
+  "signature": "504b0304",
+  "sha256": "1868eb714b8c9ea4efaa615109bfd457a0c3bb625f0b2a1f1befdadfc9143321",
+  "checks": "filename from exact file page; minimum version met; raw bytes copied with no archive processing",
+  "scratch": "%TEMP%/wf-zip-intake-6tkpkjah"
+}

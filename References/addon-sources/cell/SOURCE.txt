@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/cell/files/7506021
+파일명: Cell-r274-release.zip
+판(version): r274-release
+file ID: 7506021
+파일 날짜: Jan 22, 2026
+표기된 game version: 11.2.7, 5.5.3, 4.4.2, 3.80.0, 2.5.5, 1.15.8 [Flavors: Retail Classic MoP Classic Titan Reforged Classic Classic TBC]
+SHA256: 55a3b7d44d82eca4ce17535f1680d651fdba42bef9ea6b793407f64b92fb5a39

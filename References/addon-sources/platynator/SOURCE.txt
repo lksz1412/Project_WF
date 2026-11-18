@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/platynator/files/9659136
+파일명: Platynator-547.zip
+판(version): 547
+file ID: 9659136
+파일 날짜: Nov 17, 2026
+표기된 game version: 12.1.5, 12.1.0, 5.5.4, 3.80.1, 2.5.6, 1.60.1, 1.15.9 [Flavors: Titan Reforged Classic MoP Classic Retail Classic TBC Classic Forever]
+SHA256: 73d1f115a3cb86a9c93fb782799fa888df4e765437035b61acd5d857bbcd8ed4

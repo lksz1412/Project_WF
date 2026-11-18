@@ -1,0 +1,19 @@
+{
+  "slug": "baganator",
+  "file_page_url": "https://www.curseforge.com/wow/addons/baganator/files/9659116",
+  "filename": "Baganator-862.zip",
+  "file_id": 9659116,
+  "download_url": "https://edge.forgecdn.net/files/9659/116/Baganator-862.zip",
+  "observed_at": "2026-11-18T11:33:29.0315666+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/9659/116/Baganator-862.zip",
+  "content_length": "439494",
+  "content_type": "application/x-zip-compressed",
+  "content_disposition": null,
+  "bytes": 439494,
+  "signature": "504b0304",
+  "sha256": "0b3dbe44101c55ede5d00e4278cae48fca84cef838fbd6f85e4da4138bf684ad",
+  "relative_zip": "References/addon-sources/baganator/Baganator-862.zip",
+  "status": "success"
+}

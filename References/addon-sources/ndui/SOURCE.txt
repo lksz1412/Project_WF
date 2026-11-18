@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/ndui/files/9513760
+파일명: NDui-10.2.8.zip
+판(version): 10.2.8
+file ID: 9513760
+파일 날짜: Nov 8, 2026
+표기된 game version: 12.1.5 [Flavors: Retail]
+SHA256: dc2f38c4000e89e9f9c0de73ab56775afa68b5ac6ac7ab9760db0360cca1aad7

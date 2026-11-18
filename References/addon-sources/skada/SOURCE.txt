@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/skada/files/9627411
+파일명: Skada-v2.6.7.zip
+판(version): v2.6.7
+file ID: 9627411
+파일 날짜: Nov 15, 2026
+표기된 game version: 12.1.5, 12.0.5, 12.0.1, 1.60.1 [Flavors: Retail Forever]
+SHA256: 5bc132171f58f70a0e537d14af16f68f6e071591fb538e6de5d441699ac0f839

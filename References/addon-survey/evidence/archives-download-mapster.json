@@ -1,0 +1,44 @@
+{
+  "slug": "mapster",
+  "file_page_url": "https://www.curseforge.com/wow/addons/mapster/files/9047762",
+  "filename": "Mapster-1.14.0.zip",
+  "file_id": 9047762,
+  "download_url": "https://edge.forgecdn.net/files/9047/762/Mapster-1.14.0.zip",
+  "observed_at": "2026-11-18T11:32:32.9130796+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/9047/762/Mapster-1.14.0.zip",
+  "content_length": "243526",
+  "content_type": "application/x-zip-compressed",
+  "content_disposition": null,
+  "prior_attempt": {
+    "slug": "mapster",
+    "file_page_url": "https://www.curseforge.com/wow/addons/mapster/files/9047762",
+    "filename": "Mapster-1.14.0.zip",
+    "file_id": 9047762,
+    "download_url": "https://edge.forgecdn.net/files/9047/762/Mapster-1.14.0.zip",
+    "observed_at": "2026-11-18T11:31:45.0346374+09:00",
+    "archive_internal_processing": "not performed",
+    "http_status": 200,
+    "final_download_url": null,
+    "content_length": [
+      "243526"
+    ],
+    "content_type": [
+      "application/x-zip-compressed"
+    ],
+    "content_disposition": null,
+    "bytes": 243526,
+    "signature": "504b0304",
+    "status": "failure",
+    "error": "Cannot convert the \"System.String[]\" value of type \"System.String[]\" to type \"System.Int64\"."
+  },
+  "reused_completed_download": true,
+  "bytes": 243526,
+  "signature": "504b0304",
+  "sha256": "16a05b5b5b628eb513470792d7a9633443a8fcfc594a0f920f681cdce1cdb532",
+  "relative_zip": "References/addon-sources/mapster/Mapster-1.14.0.zip",
+  "status": "success",
+  "redirect_verified_by": "Subsequent official HEAD request",
+  "redirect_verified_at": "2026-11-18T11:35:50.0704606+09:00"
+}

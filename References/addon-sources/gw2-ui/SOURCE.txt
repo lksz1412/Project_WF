@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/gw2-ui/files/9607280
+파일명: GW2_UI-12.1.9.zip
+판(version): 12.1.9
+file ID: 9607280
+파일 날짜: Nov 14, 2026
+표기된 game version: 12.1.5, 5.5.4, 3.80.2, 2.5.6, 1.60.1, 1.15.9 [Flavors: MoP Classic Classic TBC Classic Titan Reforged Classic Retail Forever]
+SHA256: c4a6ffde70390169d6d6e12c90d79e5a3310c73e06dac947e428ba5f6bd22179

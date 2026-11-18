@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/hekili-forever/files/9665215
+파일명: Hekili-v0.8.6-forever.zip
+판(version): v0.8.6
+file ID: 9665215
+파일 날짜: Nov 17, 2026
+표기된 game version: 1.60.1 (Forever)
+SHA256: 8063fd78c988af76c6a74653c21ff9f268546c44320922688ea2f7dd3d4c45e3

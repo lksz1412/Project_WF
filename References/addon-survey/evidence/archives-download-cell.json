@@ -1,0 +1,19 @@
+{
+  "slug": "cell",
+  "file_page_url": "https://www.curseforge.com/wow/addons/cell/files/7506021",
+  "filename": "Cell-r274-release.zip",
+  "file_id": 7506021,
+  "download_url": "https://edge.forgecdn.net/files/7506/21/Cell-r274-release.zip",
+  "observed_at": "2026-11-18T11:33:05.0265427+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/7506/21/Cell-r274-release.zip",
+  "content_length": "2227013",
+  "content_type": "application/x-zip-compressed",
+  "content_disposition": null,
+  "bytes": 2227013,
+  "signature": "504b0304",
+  "sha256": "55a3b7d44d82eca4ce17535f1680d651fdba42bef9ea6b793407f64b92fb5a39",
+  "relative_zip": "References/addon-sources/cell/Cell-r274-release.zip",
+  "status": "success"
+}

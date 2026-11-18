@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/tellmewhen/files/9147854
+파일명: TellMeWhen-12.1.5.zip
+판(version): 12.1.5
+file ID: 9147854
+파일 날짜: Oct 12, 2026
+표기된 game version: 12.1.5, 12.1.0, 5.5.4, 2.5.6, 1.60.1, 1.15.9 [Flavors: MoP Classic Retail Classic TBC Classic Forever]
+SHA256: 543e0fbdf0c0e97e5e69663743bc456ada55f60c0fb179365dd45f4c13499352

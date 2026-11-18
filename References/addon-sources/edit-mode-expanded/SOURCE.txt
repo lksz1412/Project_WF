@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/edit-mode-expanded/files/9603634
+파일명: EditModeExpanded-12.1-026.zip
+판(version): 12.1-026
+file ID: 9603634
+파일 날짜: Nov 14, 2026
+표기된 game version: 12.1.5, 5.5.4, 2.5.6, 1.60.1 [Flavors: MoP Classic Classic TBC Retail Forever]
+SHA256: 019746f695a52b6ace1aaed72dce36fc9b38817c7e6baf0812dd6ba7c2514e7d

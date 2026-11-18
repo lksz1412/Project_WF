@@ -1,0 +1,5478 @@
+{
+  "schema": "features-catalog-v1",
+  "observation_date": "2026-11-18",
+  "packages": [
+    "ElvUI",
+    "TukUI",
+    "EllesmereUI",
+    "SpartanUI",
+    "GW2 UI",
+    "NDui",
+    "RealUI",
+    "BenikUI"
+  ],
+  "classification": "○ official confirmation; ✕ explicit absence; ? unconfirmed. BenikUI inherited cells count configuration prevalence, not independent implementation count.",
+  "status": "construction_complete_for_gate",
+  "features": [
+    {
+      "id": "F01",
+      "name": "공통 외관·테마",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL",
+              "location": "Skins"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "E",
+              "location": "Modern Visual Design L228–229"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "S",
+              "location": "Overview/Artwork L228"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "G",
+              "location": "hand-painted replacement L212–220"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "NDui",
+          "status": "○",
+          "sources": [
+            {
+              "id": "N",
+              "location": "Main Features L182"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "RealUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "R",
+              "location": "Skins L182"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "B",
+              "location": "Features L240–245"
+            }
+          ],
+          "provision": "extension"
+        }
+      ],
+      "confirmed_package_count": 7,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-aurora",
+        "A-masque"
+      ],
+      "outside_original13": false,
+      "standalone_attempt_source_id": "A-aurora",
+      "note": ""
+    },
+    {
+      "id": "F02",
+      "name": "행동단축바",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL",
+              "location": "ActionBars"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "TukUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "TU",
+              "location": "ActionBars"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "E",
+              "location": "Included Modules L235"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "S-repo",
+              "location": "Action Bars L239–240"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "G",
+              "location": "HUD L230"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "NDui",
+          "status": "○",
+          "sources": [
+            {
+              "id": "N",
+              "location": "FAQ L218–219"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "RealUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "R",
+              "location": "Action bars L177"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "B",
+              "location": "Layouts L245; ElvUI base bars"
+            }
+          ],
+          "provision": "extension on ElvUI base"
+        }
+      ],
+      "confirmed_package_count": 8,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-dominos"
+      ],
+      "outside_original13": false,
+      "standalone_attempt_source_id": "A-dominos",
+      "note": ""
+    },
+    {
+      "id": "F03",
+      "name": "유닛 프레임",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL",
+              "location": "UnitFrames"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "TukUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "TU",
+              "location": "UnitFrames"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "E",
+              "location": "Included Modules L236"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "S",
+              "location": "Player Frames L229"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "G",
+              "location": "Unit frames L231"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "NDui",
+          "status": "○",
+          "sources": [
+            {
+              "id": "N",
+              "location": "oUF/FAQ L184,218–219"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "RealUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "R",
+              "location": "HuD L175"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "B",
+              "location": "Layouts L245; base frames"
+            }
+          ],
+          "provision": "extension on ElvUI base"
+        }
+      ],
+      "confirmed_package_count": 8,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-fuf"
+      ],
+      "outside_original13": false,
+      "standalone_attempt_source_id": "A-fuf",
+      "note": ""
+    },
+    {
+      "id": "F04",
+      "name": "파티 프레임",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL-group",
+              "location": "Party.lua"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "TukUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "TU-group",
+              "location": "Party.lua"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "E",
+              "location": "Included Modules L238"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "S",
+              "location": "Party Frames L230"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "G",
+              "location": "Unit frames and groups L231"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "NDui",
+          "status": "○",
+          "sources": [
+            {
+              "id": "N-repo",
+              "location": "PartyFrames L187–188"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "RealUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "R",
+              "location": "Group frames L176"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL-group",
+              "location": "Party.lua"
+            },
+            {
+              "id": "B",
+              "location": "Description L209–211: external mod / ElvUI v16+ required"
+            }
+          ],
+          "provision": "ElvUI base dependency"
+        }
+      ],
+      "confirmed_package_count": 8,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-grid"
+      ],
+      "outside_original13": false,
+      "standalone_attempt_source_id": "A-grid",
+      "note": ""
+    },
+    {
+      "id": "F05",
+      "name": "공격대 프레임",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL-group",
+              "location": "Raid.lua"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "TukUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "TU-group",
+              "location": "Raid.lua"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "E",
+              "location": "Included Modules L238"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "S",
+              "location": "Raid Frames L231"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "G",
+              "location": "Raid grids L231"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "NDui",
+          "status": "○",
+          "sources": [
+            {
+              "id": "N",
+              "location": "RaidFrame L184–185"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "RealUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "R",
+              "location": "Group frames L176"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL-group",
+              "location": "Raid.lua"
+            },
+            {
+              "id": "B",
+              "location": "Description L209–211: external mod / ElvUI v16+ required"
+            }
+          ],
+          "provision": "ElvUI base dependency"
+        }
+      ],
+      "confirmed_package_count": 8,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-grid"
+      ],
+      "outside_original13": false,
+      "standalone_attempt_source_id": "A-grid",
+      "note": ""
+    },
+    {
+      "id": "F06",
+      "name": "채팅 기능",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL",
+              "location": "Chat"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "TukUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "TU",
+              "location": "ChatFrames"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "E",
+              "location": "Included Modules L249"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "S-mod",
+              "location": "Chatbox"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "G",
+              "location": "Map/chat/tooltips L236"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "NDui",
+          "status": "○",
+          "sources": [
+            {
+              "id": "N",
+              "location": "Chat L187,230–231"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "RealUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "R",
+              "location": "chat placement L195"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL",
+              "location": "Chat"
+            },
+            {
+              "id": "B",
+              "location": "Description L209–211: external mod / ElvUI v16+ required"
+            }
+          ],
+          "provision": "ElvUI base dependency"
+        }
+      ],
+      "confirmed_package_count": 8,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-prat"
+      ],
+      "outside_original13": false,
+      "standalone_attempt_source_id": "A-prat",
+      "note": "채팅 존재·편집 범위만 확인; 사용자 지정 채팅 3창 구성은 전부 미확인."
+    },
+    {
+      "id": "F07",
+      "name": "미니맵",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL-map",
+              "location": "Minimap.lua"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "TukUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "TU-map",
+              "location": "Minimap.lua"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "E",
+              "location": "Included Modules L247"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "S",
+              "location": "Minimap L237"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "G",
+              "location": "Map/chat/tooltips L236"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "NDui",
+          "status": "○",
+          "sources": [
+            {
+              "id": "N",
+              "location": "FAQ L224–225"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL-map",
+              "location": "Minimap.lua"
+            },
+            {
+              "id": "B",
+              "location": "Description L209–211: external mod / ElvUI v16+ required"
+            }
+          ],
+          "provision": "ElvUI base dependency"
+        }
+      ],
+      "confirmed_package_count": 7,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-sexymap"
+      ],
+      "outside_original13": false,
+      "standalone_attempt_source_id": "A-sexymap",
+      "note": ""
+    },
+    {
+      "id": "F08",
+      "name": "시전바",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL-elements",
+              "location": "CastBar.lua"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "G",
+              "location": "HUD L230"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "NDui",
+          "status": "○",
+          "sources": [
+            {
+              "id": "N",
+              "location": "FAQ L221–222"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "RealUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "R",
+              "location": "HuD L175"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL-elements",
+              "location": "CastBar.lua"
+            },
+            {
+              "id": "B",
+              "location": "Description L209–211: external mod / ElvUI v16+ required"
+            }
+          ],
+          "provision": "ElvUI base dependency"
+        }
+      ],
+      "confirmed_package_count": 5,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-quartz"
+      ],
+      "outside_original13": false,
+      "standalone_attempt_source_id": "A-quartz",
+      "note": ""
+    },
+    {
+      "id": "F09",
+      "name": "버프 표시",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL",
+              "location": "Auras"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "TukUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "TU",
+              "location": "Auras"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "S",
+              "location": "Buff Management L238"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "G",
+              "location": "aura indicators L231"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "NDui",
+          "status": "○",
+          "sources": [
+            {
+              "id": "N",
+              "location": "Auras watcher L183"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "RealUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "R",
+              "location": "Auras L179"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL",
+              "location": "Auras"
+            },
+            {
+              "id": "B",
+              "location": "Description L209–211: external mod / ElvUI v16+ required"
+            }
+          ],
+          "provision": "ElvUI base dependency"
+        }
+      ],
+      "confirmed_package_count": 7,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-tmw"
+      ],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "A-tmw",
+      "note": ""
+    },
+    {
+      "id": "F10",
+      "name": "디버프 표시",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL-elements",
+              "location": "RaidDebuffs.lua"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "TukUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "TU-unit",
+              "location": "Debuffs.lua"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "G",
+              "location": "dispel colors L231"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "NDui",
+          "status": "○",
+          "sources": [
+            {
+              "id": "N",
+              "location": "Raid debuffs L185"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "RealUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "R",
+              "location": "Group frames/Auras L176,179"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL-elements",
+              "location": "RaidDebuffs.lua"
+            },
+            {
+              "id": "B",
+              "location": "Description L209–211: external mod / ElvUI v16+ required"
+            }
+          ],
+          "provision": "ElvUI base dependency"
+        }
+      ],
+      "confirmed_package_count": 6,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-tmw"
+      ],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "A-tmw",
+      "note": ""
+    },
+    {
+      "id": "F11",
+      "name": "툴팁",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL",
+              "location": "Tooltip"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "TukUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "TU",
+              "location": "Tooltips"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "E",
+              "location": "Blizz UI Element Reskins L242"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "S",
+              "location": "Custom Tooltips L236"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "G",
+              "location": "Map/chat/tooltips L236"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "R",
+              "location": "Tooltips L183"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL",
+              "location": "Tooltip"
+            },
+            {
+              "id": "B",
+              "location": "Description L209–211: external mod / ElvUI v16+ required"
+            }
+          ],
+          "provision": "ElvUI base dependency"
+        }
+      ],
+      "confirmed_package_count": 7,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-tiptac"
+      ],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "A-tiptac",
+      "note": ""
+    },
+    {
+      "id": "F12",
+      "name": "가방·인벤토리 UI",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL",
+              "location": "Bags"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "TukUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "TU",
+              "location": "Inventory"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "E",
+              "location": "Included Modules L252"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "G",
+              "location": "Character/inventory L234"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "NDui",
+          "status": "○",
+          "sources": [
+            {
+              "id": "N",
+              "location": "One-container L188"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "RealUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "R",
+              "location": "Inventory L181"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL",
+              "location": "Bags"
+            },
+            {
+              "id": "B",
+              "location": "Description L209–211: external mod / ElvUI v16+ required"
+            }
+          ],
+          "provision": "ElvUI base dependency"
+        }
+      ],
+      "confirmed_package_count": 7,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-bagnon"
+      ],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "A-bagnon",
+      "note": "가방 기능 확인과 한 창 통합 확인은 다르므로 F13을 따로 둠."
+    },
+    {
+      "id": "F13",
+      "name": "한 창 가방 통합",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "○",
+          "sources": [
+            {
+              "id": "N",
+              "location": "One-container L188"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 1,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-baganator"
+      ],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "A-bagnon",
+      "note": "한 창 보기와 분류 보기를 공식 설명에서 확인."
+    },
+    {
+      "id": "F14",
+      "name": "이름표",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL",
+              "location": "Nameplates"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "E",
+              "location": "Included Modules L237"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "S-mod",
+              "location": "Nameplates"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "○",
+          "sources": [
+            {
+              "id": "N",
+              "location": "Nameplate L184,186"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "RealUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "R",
+              "location": "Nameplates L178"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL",
+              "location": "Nameplates"
+            },
+            {
+              "id": "B",
+              "location": "Description L209–211: external mod / ElvUI v16+ required"
+            }
+          ],
+          "provision": "ElvUI base dependency"
+        }
+      ],
+      "confirmed_package_count": 6,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-platy"
+      ],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "A-platy",
+      "note": ""
+    },
+    {
+      "id": "F15",
+      "name": "데이터 텍스트·정보 바",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL",
+              "location": "DataTexts"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "TukUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "TU",
+              "location": "DataTexts"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "○",
+          "sources": [
+            {
+              "id": "N",
+              "location": "Infobars L192"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "RealUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "R",
+              "location": "Infobar L180"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "B",
+              "location": "Dashboards/datatexts L247–257"
+            }
+          ],
+          "provision": "extension"
+        }
+      ],
+      "confirmed_package_count": 5,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-titan"
+      ],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "A-titan",
+      "note": "SpartanUI의 DataBarHost 이름만으로 정보 텍스트 기능을 확정하지 않음."
+    },
+    {
+      "id": "F16",
+      "name": "경험치 바",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL-bars",
+              "location": "Experience.lua"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "TukUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "TU-misc",
+              "location": "ExperienceBar.lua"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "B",
+              "location": "vertical xp statusbars L260; base bar plus notifier"
+            }
+          ],
+          "provision": "extension on ElvUI base"
+        }
+      ],
+      "confirmed_package_count": 3,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-xp"
+      ],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "A-xp",
+      "note": ""
+    },
+    {
+      "id": "F17",
+      "name": "평판 바",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL-bars",
+              "location": "Reputation.lua"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "B",
+              "location": "vertical rep statusbars L260; base bar plus notifier"
+            }
+          ],
+          "provision": "extension on ElvUI base"
+        }
+      ],
+      "confirmed_package_count": 2,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-xp"
+      ],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "A-xp",
+      "note": ""
+    },
+    {
+      "id": "F18",
+      "name": "재사용 대기시간 숫자",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 0,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-omnicc"
+      ],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "EL-general",
+      "note": "일반 Cooldowns 모듈명만으로 숫자 표시를 확정하지 않음."
+    },
+    {
+      "id": "F19",
+      "name": "재사용 대기시간 관리자",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "E",
+              "location": "Included Modules L239"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "R",
+              "location": "Cooldown Manager presets L179"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 2,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-tmw"
+      ],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "A-tmw",
+      "note": "RealUI는 관리자 preset 제공 확인이며 독립 관리자 엔진 구현으로 세지 않음."
+    },
+    {
+      "id": "F20",
+      "name": "세계지도 UI",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL-map",
+              "location": "Worldmap.lua"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "TukUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "TU-map",
+              "location": "Worldmap.lua"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "G",
+              "location": "world map L236"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL-map",
+              "location": "Worldmap.lua"
+            },
+            {
+              "id": "B",
+              "location": "Description L209–211: external mod / ElvUI v16+ required"
+            }
+          ],
+          "provision": "ElvUI base dependency"
+        }
+      ],
+      "confirmed_package_count": 4,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-mapster"
+      ],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "A-mapster",
+      "note": ""
+    },
+    {
+      "id": "F21",
+      "name": "지도 좌표",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 0,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-mapster"
+      ],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "EL-map",
+      "note": "지도 모듈 존재만으로 좌표를 확정하지 않음."
+    },
+    {
+      "id": "F22",
+      "name": "자동 수리",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "G",
+              "location": "quality of life L237"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "NDui",
+          "status": "○",
+          "sources": [
+            {
+              "id": "N",
+              "location": "Infobars L192; FAQ L227–228"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 2,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-leatrix"
+      ],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "A-leatrix",
+      "note": ""
+    },
+    {
+      "id": "F23",
+      "name": "자동 판매",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "S",
+              "location": "Auto Sell L233"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "○",
+          "sources": [
+            {
+              "id": "N",
+              "location": "Infobars L192"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 2,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-leatrix"
+      ],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "A-leatrix",
+      "note": ""
+    },
+    {
+      "id": "F24",
+      "name": "퀘스트 자동 제출",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "S",
+              "location": "Auto turn in L234"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 1,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-leatrix"
+      ],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "A-leatrix",
+      "note": ""
+    },
+    {
+      "id": "F25",
+      "name": "기본 창 스킨",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL",
+              "location": "Skins"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "E",
+              "location": "Blizz UI Element Reskins L242"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "G",
+              "location": "Blizzard window skins L237"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "NDui",
+          "status": "○",
+          "sources": [
+            {
+              "id": "N",
+              "location": "Main Features L182"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "RealUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "R",
+              "location": "Skins L182"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "B",
+              "location": "Blizzard frame decors L240"
+            }
+          ],
+          "provision": "extension"
+        }
+      ],
+      "confirmed_package_count": 6,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-aurora"
+      ],
+      "outside_original13": false,
+      "standalone_attempt_source_id": "A-aurora",
+      "note": ""
+    },
+    {
+      "id": "F26",
+      "name": "UI 이동·편집",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL-general",
+              "location": "Movers.lua"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "E",
+              "location": "Unlock Mode L218–222"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "G",
+              "location": "Move HUD L239"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL-general",
+              "location": "Movers.lua"
+            },
+            {
+              "id": "B",
+              "location": "Description L209–211: external mod / ElvUI v16+ required"
+            }
+          ],
+          "provision": "ElvUI base dependency"
+        }
+      ],
+      "confirmed_package_count": 4,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-blizz"
+      ],
+      "outside_original13": false,
+      "standalone_attempt_source_id": "A-blizz",
+      "note": ""
+    },
+    {
+      "id": "F27",
+      "name": "profile 저장·전환",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "G",
+              "location": "save profiles / spec switch L239"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "R",
+              "location": "Setup L187–188"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 2,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-profile",
+        "A-reflux"
+      ],
+      "outside_original13": false,
+      "standalone_attempt_source_id": "A-reflux",
+      "note": "ProfileManager는 여러 지원 애드온 preset, Reflux는 profile 저장·전환 범위."
+    },
+    {
+      "id": "F28",
+      "name": "profile 가져오기·내보내기",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "R",
+              "location": "Setup L188"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 1,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-profile",
+        "A-myslot"
+      ],
+      "outside_original13": false,
+      "standalone_attempt_source_id": "A-reflux",
+      "note": "ProfileManager는 preset 문자열, Myslot은 행동단축바·매크로·키 바인딩 문자열 범위."
+    },
+    {
+      "id": "F29",
+      "name": "설치 마법사",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "R",
+              "location": "Setup wizard L186"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "B",
+              "location": "Installation L215–218"
+            }
+          ],
+          "provision": "extension"
+        }
+      ],
+      "confirmed_package_count": 2,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-fuf"
+      ],
+      "outside_original13": false,
+      "standalone_attempt_source_id": "B",
+      "note": "공격대 프레임의 역할·외관·클릭 시전 설정 마법사 범위."
+    },
+    {
+      "id": "F30",
+      "name": "글꼴 모듈·교체",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL-general",
+              "location": "Fonts.lua"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "TukUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "TU",
+              "location": "Fonts"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "○",
+          "sources": [
+            {
+              "id": "N",
+              "location": "font outlines FAQ L210–211"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "B",
+              "location": "font replacement L242"
+            }
+          ],
+          "provision": "extension"
+        }
+      ],
+      "confirmed_package_count": 4,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-font"
+      ],
+      "outside_original13": false,
+      "standalone_attempt_source_id": "A-font",
+      "note": ""
+    },
+    {
+      "id": "F31",
+      "name": "화면 요소 스케일·크기 편집",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "E",
+              "location": "resize L220; width/height L222"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "G",
+              "location": "scale every frame L239"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 2,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-blizz"
+      ],
+      "outside_original13": false,
+      "standalone_attempt_source_id": "A-blizz",
+      "note": "대표는 기본 창 크기 편집 범위; 전체 패키지 스케일과 동일 범위라는 뜻은 아님."
+    },
+    {
+      "id": "F32",
+      "name": "직업 자원 표시",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL-elements",
+              "location": "ClassBars.lua"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "E",
+              "location": "Resource Bars L240"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "G",
+              "location": "class powers L230"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "NDui",
+          "status": "○",
+          "sources": [
+            {
+              "id": "N",
+              "location": "Classbar L189"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "RealUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "R",
+              "location": "class resources L175"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL-elements",
+              "location": "ClassBars.lua"
+            },
+            {
+              "id": "B",
+              "location": "Description L209–211: external mod / ElvUI v16+ required"
+            }
+          ],
+          "provision": "ElvUI base dependency"
+        }
+      ],
+      "confirmed_package_count": 6,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-nug"
+      ],
+      "outside_original13": false,
+      "standalone_attempt_source_id": "A-fuf",
+      "note": "연계 점수 등 직업 자원. 원문은 Live/Classic 목록을 구분; Forever 파일 표기와 자원별 실제 작동은 별개."
+    },
+    {
+      "id": "F33",
+      "name": "전투·버프 알림",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "E",
+              "location": "AuraBuff Reminders L241"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "○",
+          "sources": [
+            {
+              "id": "N",
+              "location": "event alerts L191"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 2,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-tmw"
+      ],
+      "outside_original13": false,
+      "standalone_attempt_source_id": "A-tmw",
+      "note": ""
+    },
+    {
+      "id": "F34",
+      "name": "회전·다음 능력 추천",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 0,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-hekili"
+      ],
+      "outside_original13": false,
+      "standalone_attempt_source_id": "N",
+      "note": "오라 감시·알림을 Hekili 유형 회전 추천으로 확정하지 않음."
+    },
+    {
+      "id": "F35",
+      "name": "데미지 미터",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "E",
+              "location": "Damage Meter L251"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 1,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-details"
+      ],
+      "outside_original13": false,
+      "standalone_attempt_source_id": "A-details",
+      "note": ""
+    },
+    {
+      "id": "F36",
+      "name": "순위형 어그로 미터",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 0,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-threat"
+      ],
+      "outside_original13": false,
+      "standalone_attempt_source_id": "EL-bars",
+      "note": "위협 바·이름표 위협 색상을 플레이어별 순위 미터로 확정하지 않음."
+    },
+    {
+      "id": "F37",
+      "name": "위협 상태 표시",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL-bars",
+              "location": "Threat.lua"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "TukUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "TU-misc",
+              "location": "ThreatBar.lua"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "○",
+          "sources": [
+            {
+              "id": "N",
+              "location": "Nameplate tank threat color L186"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "RealUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "R",
+              "location": "Nameplate threat coloring L178"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL-bars",
+              "location": "Threat.lua"
+            },
+            {
+              "id": "B",
+              "location": "Description L209–211: external mod / ElvUI v16+ required"
+            }
+          ],
+          "provision": "ElvUI base dependency"
+        }
+      ],
+      "confirmed_package_count": 5,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-threat"
+      ],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "A-threat",
+      "note": ""
+    },
+    {
+      "id": "F38",
+      "name": "퀘스트·목표 추적기",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "TU-misc",
+              "location": "ObjectiveTracker.lua"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "E",
+              "location": "Quest Tracker L250"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "S",
+              "location": "Auto-Hide Objectives L235"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "G",
+              "location": "Questing L233"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "R",
+              "location": "objective tracker L183"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 5,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-kaliel"
+      ],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "G",
+      "note": "퀘스트·업적·목표 추적기. 패키지의 자동 숨김 등 세부 범위는 별도."
+    },
+    {
+      "id": "F39",
+      "name": "지속 치유(HoT) 추적",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "S",
+              "location": "HoT Tracking L232"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "R",
+              "location": "your HoTs L176"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 2,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-fuf"
+      ],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "A-grid",
+      "note": "공격대 셀의 지속 치유·보호막 모서리 표시자를 공식 설명에서 확인."
+    },
+    {
+      "id": "F40",
+      "name": "우편 모두 열기",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "S",
+              "location": "Open All Mail L239"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 1,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-postal"
+      ],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "A-postal",
+      "note": ""
+    },
+    {
+      "id": "F41",
+      "name": "화면 가장자리·비네트 효과",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "S",
+              "location": "Vignette Effects L240"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 1,
+      "total_package_count": 8,
+      "standalone_source_ids": [],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "A-leatrix",
+      "note": "Leatrix 화면 테두리는 확인했으나 같은 비네트 효과인지는 미확인."
+    },
+    {
+      "id": "F42",
+      "name": "커서 시각 효과",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "E",
+              "location": "Cursor Effects L243"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "G",
+              "location": "global cooldown cursor ring L237"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 2,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-cursor"
+      ],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "A-cursor",
+      "note": "두 패키지 효과의 구체 범위는 다름: 일반 커서 효과 / 글로벌 재사용 대기시간 링."
+    },
+    {
+      "id": "F43",
+      "name": "Mythic+ 타이머",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "E",
+              "location": "Mythic+ Timer L245"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 1,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-mythic"
+      ],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "A-mythic",
+      "note": "GW2 UI의 Mythic+ 정보·보스 시간 기록을 던전 제한시간 타이머와 같다고 확정하지 않음. Retail 기능과 Forever 작동 구분."
+    },
+    {
+      "id": "F44",
+      "name": "Skyriding 전용 화면",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "E",
+              "location": "Skyriding HUD L246"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 1,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-glider"
+      ],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "A-glider",
+      "note": ""
+    },
+    {
+      "id": "F45",
+      "name": "친구 목록",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "E",
+              "location": "Friends List L248"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 1,
+      "total_package_count": 8,
+      "standalone_source_ids": [],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "E",
+      "note": ""
+    },
+    {
+      "id": "F46",
+      "name": "Party Mode 모듈(세부 미확인)",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "E",
+              "location": "Party Mode L254"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 1,
+      "total_package_count": 8,
+      "standalone_source_ids": [],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "E",
+      "note": "공식 이름의 모듈 존재만 확인; 게임 파티 프레임과 합치지 않음."
+    },
+    {
+      "id": "F47",
+      "name": "자리비움(AFK) 모듈",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL-misc",
+              "location": "AFK.lua"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "TukUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "TU-misc",
+              "location": "AFK.lua"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "S-mod",
+              "location": "AFKEffects.lua"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "G",
+              "location": "AFK screen L237"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "B",
+              "location": "AFK Mode L253"
+            }
+          ],
+          "provision": "extension"
+        }
+      ],
+      "confirmed_package_count": 5,
+      "total_package_count": 8,
+      "standalone_source_ids": [],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "B",
+      "note": "GW2 UI는 화면, BenikUI는 모드, ElvUI/TukUI/SpartanUI는 공식 모듈 이름 범위."
+    },
+    {
+      "id": "F48",
+      "name": "비행 전용 모드",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "B",
+              "location": "Flight Mode L254; Request Stop L259"
+            }
+          ],
+          "provision": "extension"
+        }
+      ],
+      "confirmed_package_count": 1,
+      "total_package_count": 8,
+      "standalone_source_ids": [],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "A-quartz",
+      "note": "Quartz는 비행 진행바이며 별도 비행 정보 애드온 필요; 같은 비행 모드 대표로 확정하지 않음."
+    },
+    {
+      "id": "F49",
+      "name": "캐릭터 정보 창",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "S-mod",
+              "location": "ImprovedCharacterScreen.lua"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "G",
+              "location": "hero panel L234"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 2,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-leatrix"
+      ],
+      "outside_original13": false,
+      "standalone_attempt_source_id": "A-leatrix",
+      "note": "Leatrix는 기본 캐릭터 창의 내구도/음량 확장 범위."
+    },
+    {
+      "id": "F50",
+      "name": "전리품 주사위 UI",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL-misc",
+              "location": "LootRoll.lua"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "G",
+              "location": "loot roll bars L234"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL-misc",
+              "location": "LootRoll.lua"
+            },
+            {
+              "id": "B",
+              "location": "Description L209–211: external mod / ElvUI v16+ required"
+            }
+          ],
+          "provision": "ElvUI base dependency"
+        }
+      ],
+      "confirmed_package_count": 3,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-xloot"
+      ],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "G",
+      "note": "XLoot Group의 Need/Greed/Pass 주사위 프레임 범위."
+    },
+    {
+      "id": "F51",
+      "name": "획득 전리품 알림",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "G",
+              "location": "loot feed L234"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 1,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-lstoasts",
+        "A-xloot"
+      ],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "G",
+      "note": "LS: Toasts의 loot 알림과 XLoot Monitor/Toast의 획득 알림 범위."
+    },
+    {
+      "id": "F52",
+      "name": "빠른 전리품 획득",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "G",
+              "location": "fast loot L237"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 1,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-speedy",
+        "A-leatrix"
+      ],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "A-leatrix",
+      "note": "두 공식 설명에서 빠른 자동 전리품 획득 확인; Leatrix는 판별 옵션 차이 조건 유지."
+    },
+    {
+      "id": "F53",
+      "name": "전투 문자",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "R",
+              "location": "combat text L183"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 1,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-msbt",
+        "A-nsct"
+      ],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "A-font",
+      "note": "MSBT는 피해·치유 문자, Nameplate Scrolling Combat Text는 피해 문자이며 치유 미포함을 공식 명시."
+    },
+    {
+      "id": "F54",
+      "name": "오류 수집·표시",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "○",
+          "sources": [
+            {
+              "id": "N-repo",
+              "location": "Default AddOns L203–206; bundled error collector"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "RealUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "R",
+              "location": "error catcher L183"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 2,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-bug"
+      ],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "A-bug",
+      "note": "BugSack은 BugGrabber 의존. 수집·표시 구성과 독립 엔진 수는 다름."
+    },
+    {
+      "id": "F55",
+      "name": "게임패드 전용 배치",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "G",
+              "location": "Forever gamepad layout L224"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 1,
+      "total_package_count": 8,
+      "standalone_source_ids": [],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "G",
+      "note": ""
+    },
+    {
+      "id": "F56",
+      "name": "치유·흡수량 예측 표시",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL-elements",
+              "location": "HealPrediction.lua"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "R",
+              "location": "incoming heals/absorbs L176"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL-elements",
+              "location": "HealPrediction.lua"
+            },
+            {
+              "id": "B",
+              "location": "Description L209–211: external mod / ElvUI v16+ required"
+            }
+          ],
+          "provision": "ElvUI base dependency"
+        }
+      ],
+      "confirmed_package_count": 3,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-fuf"
+      ],
+      "outside_original13": false,
+      "standalone_attempt_source_id": "A-grid",
+      "note": "체력 바의 들어오는 치유·흡수 보호막 표시를 공식 설명에서 확인."
+    },
+    {
+      "id": "F57",
+      "name": "거리 밖 프레임 흐림",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "R",
+              "location": "range fading L176"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 1,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-fuf"
+      ],
+      "outside_original13": false,
+      "standalone_attempt_source_id": "A-grid",
+      "note": "범위 밖 유닛 프레임의 투명도 조절을 공식 설명에서 확인."
+    },
+    {
+      "id": "F58",
+      "name": "공격대 유틸리티",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL-misc",
+              "location": "RaidUtility.lua"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "TukUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "TU-misc",
+              "location": "RaidUtilities.lua"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "○",
+          "sources": [
+            {
+              "id": "N",
+              "location": "Raid Toolbar L190"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL-misc",
+              "location": "RaidUtility.lua"
+            },
+            {
+              "id": "B",
+              "location": "Description L209–211: external mod / ElvUI v16+ required"
+            }
+          ],
+          "provision": "ElvUI base dependency"
+        }
+      ],
+      "confirmed_package_count": 4,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-details",
+        "A-fuf"
+      ],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "A-details",
+      "note": "공격대 도구. Forever Unit Frames는 준비 확인·역할 투표·징표 등 구체 목록 확인."
+    },
+    {
+      "id": "F59",
+      "name": "전문기술 대시보드",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "B",
+              "location": "Professions Dashboard L249"
+            }
+          ],
+          "provision": "extension"
+        }
+      ],
+      "confirmed_package_count": 1,
+      "total_package_count": 8,
+      "standalone_source_ids": [],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "B",
+      "note": ""
+    },
+    {
+      "id": "F60",
+      "name": "화폐 정보 표시",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "R",
+              "location": "currencies in Infobar L180"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "B",
+              "location": "Tokens Dashboard L248"
+            }
+          ],
+          "provision": "extension"
+        }
+      ],
+      "confirmed_package_count": 2,
+      "total_package_count": 8,
+      "standalone_source_ids": [],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "A-titan",
+      "note": "RealUI는 정보 바, BenikUI는 화폐 대시보드 범위."
+    },
+    {
+      "id": "F61",
+      "name": "아이템 수량 대시보드",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "B",
+              "location": "Items Dashboard L251"
+            }
+          ],
+          "provision": "extension"
+        }
+      ],
+      "confirmed_package_count": 1,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-msbt"
+      ],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "A-bagnon",
+      "note": "획득 알림에 현재 인벤토리의 해당 아이템 총수 표시; 상시 대시보드 형식과는 다름."
+    },
+    {
+      "id": "F62",
+      "name": "여러 평판 대시보드",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "B",
+              "location": "Reputations Dashboard L250"
+            }
+          ],
+          "provision": "extension"
+        }
+      ],
+      "confirmed_package_count": 1,
+      "total_package_count": 8,
+      "standalone_source_ids": [],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "A-xp",
+      "note": "Experience Forever는 한 평판 바 범위; 동시 여러 평판 대표로 확정하지 않음."
+    },
+    {
+      "id": "F63",
+      "name": "사용자 배경 패널",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "B",
+              "location": "Custom Panels L252"
+            }
+          ],
+          "provision": "extension"
+        }
+      ],
+      "confirmed_package_count": 1,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-kgpanels"
+      ],
+      "outside_original13": false,
+      "standalone_attempt_source_id": "B",
+      "note": "사용자 UI 패널 생성 기능 확인."
+    },
+    {
+      "id": "F64",
+      "name": "분리된 초상화",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "B",
+              "location": "Detached portraits L255"
+            }
+          ],
+          "provision": "extension"
+        }
+      ],
+      "confirmed_package_count": 1,
+      "total_package_count": 8,
+      "standalone_source_ids": [],
+      "outside_original13": false,
+      "standalone_attempt_source_id": "A-fuf",
+      "note": ""
+    },
+    {
+      "id": "F65",
+      "name": "모듈별 선택 사용",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "E",
+              "location": "Modular Addon System L226–227"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "S",
+              "location": "modular description L218"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "G",
+              "location": "module disable L221"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "NDui",
+          "status": "○",
+          "sources": [
+            {
+              "id": "N",
+              "location": "disable features FAQ L218–219"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 4,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-xloot"
+      ],
+      "outside_original13": false,
+      "standalone_attempt_source_id": "E",
+      "note": "각 XLoot 모듈을 개별 활성화·비활성화하는 기능 확인."
+    },
+    {
+      "id": "F66",
+      "name": "펫 경험치 바",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL-bars",
+              "location": "PetExperience.lua"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL-bars",
+              "location": "PetExperience.lua"
+            },
+            {
+              "id": "B",
+              "location": "Description L209–211: external mod / ElvUI v16+ required"
+            }
+          ],
+          "provision": "ElvUI base dependency"
+        }
+      ],
+      "confirmed_package_count": 2,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-xp"
+      ],
+      "outside_original13": true,
+      "standalone_attempt_source_id": "A-xp",
+      "note": ""
+    },
+    {
+      "id": "F67",
+      "name": "기본 말풍선 편집",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL-misc",
+              "location": "ChatBubbles.lua"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "G",
+              "location": "colored chat bubbles L236"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "EL-misc",
+              "location": "ChatBubbles.lua"
+            },
+            {
+              "id": "B",
+              "location": "Description L209–211: external mod / ElvUI v16+ required"
+            }
+          ],
+          "provision": "ElvUI base dependency"
+        }
+      ],
+      "confirmed_package_count": 3,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-prat"
+      ],
+      "outside_original13": false,
+      "standalone_attempt_source_id": "A-prat",
+      "note": ""
+    },
+    {
+      "id": "F68",
+      "name": "특성별 배치·profile 전환",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "G",
+              "location": "profiles switch with specialization L239"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "R",
+              "location": "DPS/Tank and Healing follow specialization L187"
+            }
+          ],
+          "provision": "package"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 2,
+      "total_package_count": 8,
+      "standalone_source_ids": [],
+      "outside_original13": false,
+      "standalone_attempt_source_id": "A-reflux",
+      "note": ""
+    },
+    {
+      "id": "F69",
+      "name": "데이터 바 모듈(세부 미확인)",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "E",
+              "location": "Included Modules L253"
+            }
+          ],
+          "provision": "named module only; details unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 1,
+      "total_package_count": 8,
+      "standalone_source_ids": [],
+      "outside_original13": false,
+      "standalone_attempt_source_id": "E",
+      "note": "공식 모듈 존재만 확인. 이름을 자동화·경험치·평판 등 세부 기능으로 확대하지 않음."
+    },
+    {
+      "id": "F70",
+      "name": "편의 기능 모듈(세부 미확인)",
+      "cells": [
+        {
+          "package": "ElvUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "TukUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "EllesmereUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "E",
+              "location": "Quality of Life L244"
+            }
+          ],
+          "provision": "named module only; details unconfirmed"
+        },
+        {
+          "package": "SpartanUI",
+          "status": "○",
+          "sources": [
+            {
+              "id": "S-mod",
+              "location": "Convenience"
+            }
+          ],
+          "provision": "named module only; details unconfirmed"
+        },
+        {
+          "package": "GW2 UI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "NDui",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "RealUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        },
+        {
+          "package": "BenikUI",
+          "status": "?",
+          "sources": [],
+          "provision": "unconfirmed"
+        }
+      ],
+      "confirmed_package_count": 2,
+      "total_package_count": 8,
+      "standalone_source_ids": [
+        "A-leatrix"
+      ],
+      "outside_original13": false,
+      "standalone_attempt_source_id": "E",
+      "note": "독립형 편의 기능 모음; 통합 패키지 모듈의 미확인 세부 동작과 같다고 단정하지 않음."
+    }
+  ],
+  "unresolved_repository_module_names": {
+    "source_id": "E-repo",
+    "names": [
+      "EllesmereUIForeverEssentials",
+      "EllesmereUIGroupFinder",
+      "EllesmereUILoadoutManager",
+      "EllesmereUIQuickdraw",
+      "EllesmereUISimpleLootCouncil"
+    ],
+    "treatment": "공식 저장소 항목 존재만 관측; 설치되는 범위·구체 동작이 설명되지 않아 세부 기능 셀로 승격하지 않음."
+  }
+}

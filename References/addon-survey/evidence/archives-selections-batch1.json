@@ -1,0 +1,462 @@
+{
+  "schema": "intermediate-selection-corrected-v1",
+  "scope": "Earlier working selection subset; exact file-block Flavors parser corrected. Final authority archives-selections.json and manifest.",
+  "records": [
+    {
+      "slug": "bartender4",
+      "file_page_url": "https://www.curseforge.com/wow/addons/bartender4/files/9654965",
+      "file_id": 9654965,
+      "filename": "Bartender4-4.19.0.zip",
+      "version": "4.19.0",
+      "file_date": "Nov 16, 2026",
+      "flavor": "MoP Classic Retail Classic TBC Classic Forever",
+      "game_versions": [
+        "12.1.5",
+        "12.1.0",
+        "5.5.4",
+        "2.5.6",
+        "1.60.1",
+        "1.15.9"
+      ],
+      "metadata_location": "185",
+      "observed_at": "2026-11-18T02:31:02.141Z"
+    },
+    {
+      "slug": "mapster",
+      "file_page_url": "https://www.curseforge.com/wow/addons/mapster/files/9047762",
+      "file_id": 9047762,
+      "filename": "Mapster-1.14.0.zip",
+      "version": "1.14.0",
+      "file_date": "Oct 3, 2026",
+      "flavor": "Retail Forever",
+      "game_versions": [
+        "12.1.0",
+        "1.60.1"
+      ],
+      "metadata_location": "180",
+      "observed_at": "2026-11-18T02:31:02.141Z"
+    },
+    {
+      "slug": "basic-minimap",
+      "file_page_url": "https://www.curseforge.com/wow/addons/basic-minimap/files/9287308",
+      "file_id": 9287308,
+      "filename": "BasicMinimap-v12.1.6.zip",
+      "version": "v12.1.6",
+      "file_date": "Oct 22, 2026",
+      "flavor": "Classic MoP Classic Classic TBC Retail Titan Reforged Classic Forever",
+      "game_versions": [
+        "12.1.7",
+        "12.1.5",
+        "12.1.0",
+        "5.5.4",
+        "5.5.3",
+        "4.4.2",
+        "3.80.2",
+        "3.4.5",
+        "2.5.6",
+        "2.5.5",
+        "1.60.1",
+        "1.15.9",
+        "1.15.8"
+      ],
+      "metadata_location": "183",
+      "observed_at": "2026-11-18T02:31:02.144Z"
+    },
+    {
+      "slug": "spartan-ui",
+      "file_page_url": "https://www.curseforge.com/wow/addons/spartan-ui/files/9623682",
+      "file_id": 9623682,
+      "filename": "SpartanUI-9.0.5.zip",
+      "version": "9.0.5",
+      "file_date": "Nov 15, 2026",
+      "flavor": "MoP Classic Classic TBC Classic Titan Reforged Classic Retail Forever",
+      "game_versions": [
+        "12.1.7",
+        "12.1.5",
+        "5.5.4",
+        "3.80.2",
+        "2.5.6",
+        "1.60.1",
+        "1.15.9"
+      ],
+      "metadata_location": "187",
+      "observed_at": "2026-11-18T02:31:02.142Z"
+    },
+    {
+      "slug": "gw2-ui",
+      "file_page_url": "https://www.curseforge.com/wow/addons/gw2-ui/files/9607280",
+      "file_id": 9607280,
+      "filename": "GW2_UI-12.1.9.zip",
+      "version": "12.1.9",
+      "file_date": "Nov 14, 2026",
+      "flavor": "MoP Classic Classic TBC Classic Titan Reforged Classic Retail Forever",
+      "game_versions": [
+        "12.1.5",
+        "5.5.4",
+        "3.80.2",
+        "2.5.6",
+        "1.60.1",
+        "1.15.9"
+      ],
+      "metadata_location": "189",
+      "observed_at": "2026-11-18T02:31:02.142Z"
+    },
+    {
+      "slug": "ndui",
+      "file_page_url": "https://www.curseforge.com/wow/addons/ndui/files/9513760",
+      "file_id": 9513760,
+      "filename": "NDui-10.2.8.zip",
+      "version": "10.2.8",
+      "file_date": "Nov 8, 2026",
+      "flavor": "Retail",
+      "game_versions": [
+        "12.1.5"
+      ],
+      "metadata_location": "165",
+      "observed_at": "2026-11-18T02:31:02.142Z"
+    },
+    {
+      "slug": "button-forge",
+      "file_page_url": "https://www.curseforge.com/wow/addons/button-forge/files/8634630",
+      "file_id": 8634630,
+      "filename": "ButtonForge_v1.3.5.0.zip",
+      "version": "ButtonForge v1.3.5.0",
+      "file_date": "Aug 12, 2026",
+      "flavor": "Retail",
+      "game_versions": [
+        "12.1.0"
+      ],
+      "metadata_location": "178",
+      "observed_at": "2026-11-18T02:31:02.142Z"
+    },
+    {
+      "slug": "basic-chat-mods",
+      "file_page_url": "https://www.curseforge.com/wow/addons/basic-chat-mods/files/9632459",
+      "file_id": 9632459,
+      "filename": "BasicChatMods-v12.1.2.zip",
+      "version": "v12.1.2",
+      "file_date": "Nov 15, 2026",
+      "flavor": "Classic MoP Classic Classic TBC Retail Titan Reforged Classic Forever",
+      "game_versions": [
+        "12.1.7",
+        "12.1.5",
+        "12.1.0",
+        "5.5.4",
+        "5.5.3",
+        "4.4.2",
+        "3.80.2",
+        "3.4.5",
+        "2.5.6",
+        "2.5.5",
+        "1.60.1",
+        "1.15.9",
+        "1.15.8"
+      ],
+      "metadata_location": "183",
+      "observed_at": "2026-11-18T02:31:02.142Z"
+    },
+    {
+      "slug": "shadowed-unit-frames",
+      "file_page_url": "https://www.curseforge.com/wow/addons/shadowed-unit-frames/files/7288873",
+      "file_id": 7288873,
+      "filename": "ShadowedUnitFrames-v4.4.14.zip",
+      "version": "v4.4.14",
+      "file_date": "Dec 3, 2025",
+      "flavor": "Retail",
+      "game_versions": [
+        "11.2.7",
+        "11.2.5"
+      ],
+      "metadata_location": "184",
+      "observed_at": "2026-11-18T02:31:02.142Z"
+    },
+    {
+      "slug": "pitbull-unit-frames-4-0",
+      "file_page_url": "https://www.curseforge.com/wow/addons/pitbull-unit-frames-4-0/files/8245625",
+      "file_id": 8245625,
+      "filename": "PitBull4-v4.2.50.zip",
+      "version": "v4.2.50",
+      "file_date": "Jun 14, 2026",
+      "flavor": "Retail Classic TBC MoP Classic",
+      "game_versions": [
+        "11.2.7",
+        "5.5.4",
+        "4.4.2",
+        "2.5.5"
+      ],
+      "metadata_location": "180",
+      "observed_at": "2026-11-18T02:31:02.142Z"
+    },
+    {
+      "slug": "gnosis",
+      "file_page_url": "https://www.curseforge.com/wow/addons/gnosis/files/9511828",
+      "file_id": 9511828,
+      "filename": "Gnosis-v6.01.zip",
+      "version": "v6.01",
+      "file_date": "Nov 8, 2026",
+      "flavor": "MoP Classic Classic TBC Classic Retail",
+      "game_versions": [
+        "12.1.5",
+        "5.5.4",
+        "4.4.2",
+        "3.4.5",
+        "2.5.6",
+        "1.15.9"
+      ],
+      "metadata_location": "183",
+      "observed_at": "2026-11-18T02:31:02.142Z"
+    },
+    {
+      "slug": "reflux",
+      "file_page_url": "https://www.curseforge.com/wow/addons/reflux/files/823715",
+      "file_id": 823715,
+      "filename": "Reflux-1.17.zip",
+      "version": "1.17",
+      "file_date": "Oct 20, 2014",
+      "flavor": "Retail",
+      "game_versions": [
+        "6.0.2"
+      ],
+      "metadata_location": "164",
+      "observed_at": "2026-11-18T02:31:02.142Z"
+    },
+    {
+      "slug": "myslot",
+      "file_page_url": "https://www.curseforge.com/wow/addons/myslot/files/9608162",
+      "file_id": 9608162,
+      "filename": "Myslot-v6.3.1.zip",
+      "version": "v6.3.1",
+      "file_date": "Nov 14, 2026",
+      "flavor": "Retail MoP Classic Classic TBC Classic Titan Reforged Classic Forever",
+      "game_versions": [
+        "12.1.5",
+        "12.1.0",
+        "12.0.7",
+        "11.2.7",
+        "5.5.4",
+        "4.4.2",
+        "3.80.2",
+        "3.4.5",
+        "2.5.6",
+        "1.60.1",
+        "1.15.9"
+      ],
+      "metadata_location": "186",
+      "observed_at": "2026-11-18T02:31:02.142Z"
+    },
+    {
+      "slug": "classiccastbars",
+      "file_page_url": "https://www.curseforge.com/wow/addons/classiccastbars/files/7729622",
+      "file_id": 7729622,
+      "filename": "ClassicCastbars-v1.8.12.zip",
+      "version": "v1.8.12",
+      "file_date": "Mar 8, 2026",
+      "flavor": "Retail Classic MoP Classic Classic TBC",
+      "game_versions": [
+        "11.2.7",
+        "5.5.3",
+        "4.4.2",
+        "3.4.5",
+        "3.4.4",
+        "3.4.3",
+        "2.5.5",
+        "1.15.8"
+      ],
+      "metadata_location": "188",
+      "observed_at": "2026-11-18T02:31:02.142Z"
+    },
+    {
+      "slug": "blizzmove",
+      "file_page_url": "https://www.curseforge.com/wow/addons/blizzmove/files/9492856",
+      "file_id": 9492856,
+      "filename": "BlizzMove-v3.8.8.zip",
+      "version": "v3.8.8",
+      "file_date": "Nov 7, 2026",
+      "flavor": "MoP Classic Classic TBC Classic Retail Forever",
+      "game_versions": [
+        "12.1.7",
+        "12.1.5",
+        "5.5.4",
+        "4.4.2",
+        "3.4.3",
+        "2.5.6",
+        "1.60.1",
+        "1.15.9"
+      ],
+      "metadata_location": "184",
+      "observed_at": "2026-11-18T02:31:02.142Z"
+    },
+    {
+      "slug": "move-anything",
+      "file_page_url": "https://www.curseforge.com/wow/addons/move-anything/files/3775172",
+      "file_id": 3775172,
+      "filename": "MoveAnything 18.0.8.zip",
+      "version": "18.0.8",
+      "file_date": "Apr 30, 2022",
+      "flavor": "Retail",
+      "game_versions": [
+        "9.2.0"
+      ],
+      "metadata_location": "165",
+      "observed_at": "2026-11-18T02:31:02.142Z"
+    },
+    {
+      "slug": "edit-mode-expanded",
+      "file_page_url": "https://www.curseforge.com/wow/addons/edit-mode-expanded/files/9603634",
+      "file_id": 9603634,
+      "filename": "EditModeExpanded-12.1-026.zip",
+      "version": "12.1-026",
+      "file_date": "Nov 14, 2026",
+      "flavor": "MoP Classic Classic TBC Retail Forever",
+      "game_versions": [
+        "12.1.5",
+        "5.5.4",
+        "2.5.6",
+        "1.60.1"
+      ],
+      "metadata_location": "179",
+      "observed_at": "2026-11-18T02:31:02.144Z"
+    },
+    {
+      "slug": "weakauras-2",
+      "file_page_url": "https://www.curseforge.com/wow/addons/weakauras-2/files/7483857",
+      "file_id": 7483857,
+      "filename": "WeakAuras-5.21.1.zip",
+      "version": "5.21.1",
+      "file_date": "Jan 18, 2026",
+      "flavor": "Retail Classic MoP Classic Titan Reforged Classic Classic TBC",
+      "game_versions": [
+        "11.2.7",
+        "5.5.3",
+        "4.4.2",
+        "3.80.0",
+        "3.4.5",
+        "2.5.5",
+        "1.15.8"
+      ],
+      "metadata_location": "189",
+      "observed_at": "2026-11-18T02:31:02.142Z"
+    },
+    {
+      "slug": "tellmewhen",
+      "file_page_url": "https://www.curseforge.com/wow/addons/tellmewhen/files/9147854",
+      "file_id": 9147854,
+      "filename": "TellMeWhen-12.1.5.zip",
+      "version": "12.1.5",
+      "file_date": "Oct 12, 2026",
+      "flavor": "MoP Classic Retail Classic TBC Classic Forever",
+      "game_versions": [
+        "12.1.5",
+        "12.1.0",
+        "5.5.4",
+        "2.5.6",
+        "1.60.1",
+        "1.15.9"
+      ],
+      "metadata_location": "187",
+      "observed_at": "2026-11-18T02:31:02.142Z"
+    },
+    {
+      "slug": "omni-cc",
+      "file_page_url": "https://www.curseforge.com/wow/addons/omni-cc/files/7334220",
+      "file_id": 7334220,
+      "filename": "OmniCC-11.2.8.zip",
+      "version": "11.2.8",
+      "file_date": "Dec 14, 2025",
+      "flavor": "Retail Classic MoP Classic Titan Reforged Classic Classic TBC",
+      "game_versions": [
+        "11.2.7",
+        "5.5.3",
+        "3.80.0",
+        "2.5.5",
+        "1.15.8"
+      ],
+      "metadata_location": "189",
+      "observed_at": "2026-11-18T02:31:02.142Z"
+    },
+    {
+      "slug": "omnicd",
+      "file_page_url": "https://www.curseforge.com/wow/addons/omnicd/files/8757010",
+      "file_id": 8757010,
+      "filename": "omnicd-v2.8.35 (1).zip",
+      "version": "v2.8.35",
+      "file_date": "Aug 28, 2026",
+      "flavor": "Retail MoP Classic Classic TBC Classic",
+      "game_versions": [
+        "11.2.7",
+        "5.5.4",
+        "4.4.2",
+        "3.4.5",
+        "2.5.6",
+        "1.15.9"
+      ],
+      "metadata_location": "182",
+      "observed_at": "2026-11-18T02:31:02.142Z"
+    },
+    {
+      "slug": "vuhdo",
+      "file_page_url": "https://www.curseforge.com/wow/addons/vuhdo/files/9639592",
+      "file_id": 9639592,
+      "filename": "VuhDo-v3.221.zip",
+      "version": "v3.221",
+      "file_date": "Nov 15, 2026",
+      "flavor": "Retail Forever",
+      "game_versions": [
+        "12.1.5",
+        "1.60.1"
+      ],
+      "metadata_location": "187",
+      "observed_at": "2026-11-18T02:31:02.142Z"
+    },
+    {
+      "slug": "cell",
+      "file_page_url": "https://www.curseforge.com/wow/addons/cell/files/7506021",
+      "file_id": 7506021,
+      "filename": "Cell-r274-release.zip",
+      "version": "r274-release",
+      "file_date": "Jan 22, 2026",
+      "flavor": "Retail Classic MoP Classic Titan Reforged Classic Classic TBC",
+      "game_versions": [
+        "11.2.7",
+        "5.5.3",
+        "4.4.2",
+        "3.80.0",
+        "2.5.5",
+        "1.15.8"
+      ],
+      "metadata_location": "188",
+      "observed_at": "2026-11-18T02:31:02.142Z"
+    },
+    {
+      "slug": "cooldowncount",
+      "file_page_url": "https://www.curseforge.com/wow/addons/cooldowncount/files/7821649",
+      "file_id": 7821649,
+      "filename": "CooldownCount-v12.0.2.zip",
+      "version": "v12.0.2",
+      "file_date": "Mar 27, 2026",
+      "flavor": "Retail",
+      "game_versions": [
+        "12.0.1",
+        "12.0.0",
+        "11.2.5"
+      ],
+      "metadata_location": "164",
+      "observed_at": "2026-11-18T02:31:02.142Z"
+    },
+    {
+      "slug": "profilemanager",
+      "file_page_url": "https://www.curseforge.com/wow/addons/profilemanager/files/9627911",
+      "file_id": 9627911,
+      "filename": "ProfileManager.zip",
+      "version": "ProfileManager_v4.0.zip",
+      "file_date": "Nov 15, 2026",
+      "flavor": "Retail Forever",
+      "game_versions": [
+        "12.1.5",
+        "1.60.1"
+      ],
+      "metadata_location": "166",
+      "observed_at": "2026-11-18T02:31:02.142Z"
+    }
+  ]
+}

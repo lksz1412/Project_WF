@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/details/files/9521145
+파일명: Details-Details.20261109.15410.172.zip
+판(version): Details.20261109.15410.172
+file ID: 9521145
+파일 날짜: Nov 9, 2026
+표기된 game version: 1.60.1 (Forever)
+SHA256: 5002bdd5c3e92dd59bffa3ebdfc867f980b09ed629c51dab056fb5442f92ad41

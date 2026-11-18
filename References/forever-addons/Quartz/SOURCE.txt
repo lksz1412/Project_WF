@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/quartz/files/9593490
+파일명: Quartz-3.8.0.zip
+판(version): 3.8.0
+file ID: 9593490
+파일 날짜: Nov 13, 2026
+표기된 game version: 1.60.1 (Forever)
+SHA256: 2a76cdda6b53e7eb26472c0b8b6bf8f50c02388f8f515e6746c5e14657d5ed70

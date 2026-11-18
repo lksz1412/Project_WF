@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/leatrix-plus/files/9676915
+파일명: Leatrix_Plus-1.60.31-forever.zip
+판(version): 1.60.31-forever
+file ID: 9676915
+파일 날짜: Nov 18, 2026
+표기된 game version: 1.60.1 [Flavors: Forever]
+SHA256: 9fe73a479859a57f0f0aacab9143967e2a050e140e185c3dc30f5d7ea716dd4d

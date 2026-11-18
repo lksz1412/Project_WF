@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/basic-chat-mods/files/9632459
+파일명: BasicChatMods-v12.1.2.zip
+판(version): v12.1.2
+file ID: 9632459
+파일 날짜: Nov 15, 2026
+표기된 game version: 12.1.7, 12.1.5, 12.1.0, 5.5.4, 5.5.3, 4.4.2, 3.80.2, 3.4.5, 2.5.6, 2.5.5, 1.60.1, 1.15.9, 1.15.8 [Flavors: Classic MoP Classic Classic TBC Retail Titan Reforged Classic Forever]
+SHA256: 748d2447e1932e5543126208a9e4bbb22ab3a6ece7fa2c4b0d92c5af1efb775c

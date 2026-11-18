@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/nugie-combo-bar/files/9552793
+파일명: NugComboBar-12.1.3.zip
+판(version): 12.1.3
+file ID: 9552793
+파일 날짜: Nov 11, 2026
+표기된 game version: 12.1.5, 12.1.0, 1.60.1 [Flavors: Retail Forever]
+SHA256: 760b4ec3b64ad5dedd1379f195dd42c89f01dd148ea41b57ce6635ae6a3cc4e9

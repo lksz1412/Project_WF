@@ -1,0 +1,19 @@
+{
+  "slug": "edit-mode-expanded",
+  "file_page_url": "https://www.curseforge.com/wow/addons/edit-mode-expanded/files/9603634",
+  "filename": "EditModeExpanded-12.1-026.zip",
+  "file_id": 9603634,
+  "download_url": "https://edge.forgecdn.net/files/9603/634/EditModeExpanded-12.1-026.zip",
+  "observed_at": "2026-11-18T11:32:55.9464376+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/9603/634/EditModeExpanded-12.1-026.zip",
+  "content_length": "339418",
+  "content_type": "application/x-zip-compressed",
+  "content_disposition": null,
+  "bytes": 339418,
+  "signature": "504b0304",
+  "sha256": "019746f695a52b6ace1aaed72dce36fc9b38817c7e6baf0812dd6ba7c2514e7d",
+  "relative_zip": "References/addon-sources/edit-mode-expanded/EditModeExpanded-12.1-026.zip",
+  "status": "success"
+}

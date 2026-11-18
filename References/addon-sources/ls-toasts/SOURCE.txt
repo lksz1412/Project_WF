@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/ls-toasts/files/9670786
+파일명: ls_Toasts-120105.07.zip
+판(version): 120105.07
+file ID: 9670786
+파일 날짜: Nov 17, 2026
+표기된 game version: 12.1.5, 1.60.1 [Flavors: Retail Forever]
+SHA256: 603d0d3f76cb70a852918f21a565620f61e44a0e7de5c89720c990e25b55783c

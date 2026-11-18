@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/weakauras-2/files/7483857
+파일명: WeakAuras-5.21.1.zip
+판(version): 5.21.1
+file ID: 7483857
+파일 날짜: Jan 18, 2026
+표기된 game version: 11.2.7, 5.5.3, 4.4.2, 3.80.0, 3.4.5, 2.5.5, 1.15.8 [Flavors: Retail Classic MoP Classic Titan Reforged Classic Classic TBC]
+SHA256: 02266d4e648f999d41c431b5a951b67645b983bb7068e40437f9dbf99c8ad115

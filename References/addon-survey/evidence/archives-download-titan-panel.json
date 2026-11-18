@@ -1,0 +1,19 @@
+{
+  "slug": "titan-panel",
+  "file_page_url": "https://www.curseforge.com/wow/addons/titan-panel/files/9656248",
+  "filename": "TitanPanel-9.3.7.zip",
+  "file_id": 9656248,
+  "download_url": "https://edge.forgecdn.net/files/9656/248/TitanPanel-9.3.7.zip",
+  "observed_at": "2026-11-18T11:33:18.3232693+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/9656/248/TitanPanel-9.3.7.zip",
+  "content_length": "838009",
+  "content_type": "application/zip",
+  "content_disposition": null,
+  "bytes": 838009,
+  "signature": "504b0304",
+  "sha256": "496a4f08c1251294c3820b5ae860725962cbdeb936c3eff0a764f67b300d7507",
+  "relative_zip": "References/addon-sources/titan-panel/TitanPanel-9.3.7.zip",
+  "status": "success"
+}

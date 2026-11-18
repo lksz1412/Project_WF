@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/masque-onyx/files/9409810
+파일명: Masque_Onyx-12.1.6.zip
+판(version): 12.1.6
+file ID: 9409810
+파일 날짜: Nov 2, 2026
+표기된 game version: 1.60.1 (Forever)
+SHA256: 51e961e9b40936f94ddec495b17f1c5bd8b3cfd8fa7e7463f80c2e331b05b190

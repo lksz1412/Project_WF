@@ -1,0 +1,19 @@
+{
+  "slug": "skada",
+  "file_page_url": "https://www.curseforge.com/wow/addons/skada/files/9627411",
+  "filename": "Skada-v2.6.7.zip",
+  "file_id": 9627411,
+  "download_url": "https://edge.forgecdn.net/files/9627/411/Skada-v2.6.7.zip",
+  "observed_at": "2026-11-18T11:33:09.0044507+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/9627/411/Skada-v2.6.7.zip",
+  "content_length": "617537",
+  "content_type": "application/x-zip-compressed",
+  "content_disposition": null,
+  "bytes": 617537,
+  "signature": "504b0304",
+  "sha256": "5bc132171f58f70a0e537d14af16f68f6e071591fb538e6de5d441699ac0f839",
+  "relative_zip": "References/addon-sources/skada/Skada-v2.6.7.zip",
+  "status": "success"
+}

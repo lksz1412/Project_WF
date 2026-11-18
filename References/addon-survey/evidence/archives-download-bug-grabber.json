@@ -1,0 +1,19 @@
+{
+  "slug": "bug-grabber",
+  "file_page_url": "https://www.curseforge.com/wow/addons/bug-grabber/files/9277326",
+  "filename": "!BugGrabber-v12.1.1.zip",
+  "file_id": 9277326,
+  "download_url": "https://edge.forgecdn.net/files/9277/326/%21BugGrabber-v12.1.1.zip",
+  "observed_at": "2026-11-18T11:33:28.7851898+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/9277/326/%21BugGrabber-v12.1.1.zip",
+  "content_length": "11091",
+  "content_type": "application/zip",
+  "content_disposition": null,
+  "bytes": 11091,
+  "signature": "504b0304",
+  "sha256": "1e53e65c72f525a45c8951abe06415df5b1fb52ec21e30970c1416a2fbd4a250",
+  "relative_zip": "References/addon-sources/bug-grabber/!BugGrabber-v12.1.1.zip",
+  "status": "success"
+}

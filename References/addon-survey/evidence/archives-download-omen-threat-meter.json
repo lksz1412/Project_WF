@@ -1,0 +1,19 @@
+{
+  "slug": "omen-threat-meter",
+  "file_page_url": "https://www.curseforge.com/wow/addons/omen-threat-meter/files/3116629",
+  "filename": "Omen-v3.2.4.zip",
+  "file_id": 3116629,
+  "download_url": "https://edge.forgecdn.net/files/3116/629/Omen-v3.2.4.zip",
+  "observed_at": "2026-11-18T11:33:10.9431126+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/3116/629/Omen-v3.2.4.zip",
+  "content_length": "286789",
+  "content_type": "application/x-amz-json-1.0",
+  "content_disposition": null,
+  "bytes": 286789,
+  "signature": "504b0304",
+  "sha256": "6cbbfc9d9f2d057c9a50a16235a6b171d90b9ea828c724af0366cf235067e598",
+  "relative_zip": "References/addon-sources/omen-threat-meter/Omen-v3.2.4.zip",
+  "status": "success"
+}

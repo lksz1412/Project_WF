@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/benikui/files/9170538
+파일명: ElvUI_BenikUI_5.20.zip
+판(version): v5.20
+file ID: 9170538
+파일 날짜: Oct 14, 2026
+표기된 game version: 12.1.5, 1.60.1 [Flavors: Retail Forever]
+SHA256: 1631aa46be41a21ef6efd18a0fc3c91a424e81e4a02fccc1307f9b53ef9b429d

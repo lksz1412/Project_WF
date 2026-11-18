@@ -1,0 +1,301 @@
+{
+  "recorded_scope": "Selected product page metadata and notable failed routes; repeated requests consolidated, not an exhaustive tool-call ledger.",
+  "service": "mcp__codex_apps__search_service_web_run",
+  "page_access_date": "2026-11-18 Asia/Seoul",
+  "page_timestamp_limit": "Precise page request clocks were not captured; download clocks are in product evidence.",
+  "observations": [
+    {
+      "url": "https://www.curseforge.com/wow/addons/hekili-forever/files/all",
+      "page_identifier": "Hekili Forever - Files - World of Warcraft Addons - CurseForge (https://www.curseforge.com/wow/addons/hekili-forever/files/all)",
+      "status": "body-observed",
+      "body_lines_received": "145-341 (noncontiguous tool excerpts possible)",
+      "access_date": "2026-11-18 Asia/Seoul",
+      "precise_page_request_timestamp": "not captured"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/dominos/files/all",
+      "page_identifier": "Dominos - Files - World of Warcraft Addons - CurseForge (https://www.curseforge.com/wow/addons/dominos/files/all)",
+      "status": "body-observed",
+      "body_lines_received": "297-583 (noncontiguous tool excerpts possible)",
+      "access_date": "2026-11-18 Asia/Seoul",
+      "precise_page_request_timestamp": "not captured"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/sexymap/files/all",
+      "page_identifier": "SexyMap - Files - World of Warcraft Addons - CurseForge (https://www.curseforge.com/wow/addons/sexymap/files/all)",
+      "status": "body-observed",
+      "body_lines_received": "280-502 (noncontiguous tool excerpts possible)",
+      "access_date": "2026-11-18 Asia/Seoul",
+      "precise_page_request_timestamp": "not captured"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/quartz/files/all",
+      "page_identifier": "Quartz - Files - World of Warcraft Addons - CurseForge (https://www.curseforge.com/wow/addons/quartz/files/all)",
+      "status": "body-observed",
+      "body_lines_received": "236-581 (noncontiguous tool excerpts possible)",
+      "access_date": "2026-11-18 Asia/Seoul",
+      "precise_page_request_timestamp": "not captured"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/dominos/files/9658153",
+      "page_identifier": "Dominos - 12.0.4 - World of Warcraft Addons - CurseForge (https://www.curseforge.com/wow/addons/dominos/files/9658153)",
+      "status": "body-observed",
+      "body_lines_received": "0-583 (noncontiguous tool excerpts possible)",
+      "access_date": "2026-11-18 Asia/Seoul",
+      "precise_page_request_timestamp": "not captured"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/sexymap/files/9457503",
+      "page_identifier": "SexyMap - v12.1.7 - World of Warcraft Addons - CurseForge (https://www.curseforge.com/wow/addons/sexymap/files/9457503)",
+      "status": "body-observed",
+      "body_lines_received": "0-128 (noncontiguous tool excerpts possible)",
+      "access_date": "2026-11-18 Asia/Seoul",
+      "precise_page_request_timestamp": "not captured"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/quartz/files/9593490",
+      "page_identifier": "Quartz - 3.8.0 - World of Warcraft Addons - CurseForge (https://www.curseforge.com/wow/addons/quartz/files/9593490)",
+      "status": "metadata-only-in-this-call",
+      "body_lines_received": null,
+      "access_date": "2026-11-18 Asia/Seoul",
+      "precise_page_request_timestamp": "not captured"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/hekili-forever/files/9640496",
+      "page_identifier": "Hekili Forever - v0.8.5 - World of Warcraft Addons - CurseForge (https://www.curseforge.com/wow/addons/hekili-forever/files/9640496)",
+      "status": "metadata-only-in-this-call",
+      "body_lines_received": null,
+      "access_date": "2026-11-18 Asia/Seoul",
+      "precise_page_request_timestamp": "not captured"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/hekili-forever/files/9665215",
+      "page_identifier": "Hekili Forever - v0.8.6 - World of Warcraft Addons - CurseForge (https://www.curseforge.com/wow/addons/hekili-forever/files/9665215)",
+      "status": "body-observed",
+      "body_lines_received": "110-217 (noncontiguous tool excerpts possible)",
+      "access_date": "2026-11-18 Asia/Seoul",
+      "precise_page_request_timestamp": "not captured"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/forever-unit-frames/files/9643514",
+      "page_identifier": "Forever Unit Frames - Forever Unit Frames 0.63.0 - World of Warcraft Addons - CurseForge (https://www.curseforge.com/wow/addons/forever-unit-frames/files/9643514)",
+      "status": "body-observed",
+      "body_lines_received": "55-196 (noncontiguous tool excerpts possible)",
+      "access_date": "2026-11-18 Asia/Seoul",
+      "precise_page_request_timestamp": "not captured"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/details/files/all",
+      "page_identifier": "Details! Damage Meter - Files - World of Warcraft Addons - CurseForge (https://www.curseforge.com/wow/addons/details/files/all)",
+      "status": "body-observed",
+      "body_lines_received": "233-593 (noncontiguous tool excerpts possible)",
+      "access_date": "2026-11-18 Asia/Seoul",
+      "precise_page_request_timestamp": "not captured"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/foreverthreat-threat-meter-for-wow-forever/files/all",
+      "page_identifier": "ForeverThreat - Threat Meter for WoW Forever - Files - World of Warcraft Addons - CurseForge (https://www.curseforge.com/wow/addons/foreverthreat-threat-meter-for-wow-forever/files/all)",
+      "status": "body-observed",
+      "body_lines_received": "135-394 (noncontiguous tool excerpts possible)",
+      "access_date": "2026-11-18 Asia/Seoul",
+      "precise_page_request_timestamp": "not captured"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/masque/files/all",
+      "page_identifier": "Masque - Files - World of Warcraft Addons - CurseForge (https://www.curseforge.com/wow/addons/masque/files/all)",
+      "status": "body-observed",
+      "body_lines_received": "0-309 (noncontiguous tool excerpts possible)",
+      "access_date": "2026-11-18 Asia/Seoul",
+      "precise_page_request_timestamp": "not captured"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/forever-unit-frames/files/9673338",
+      "page_identifier": "Forever Unit Frames - Forever Unit Frames 0.65.2 - World of Warcraft Addons - CurseForge (https://www.curseforge.com/wow/addons/forever-unit-frames/files/9673338)",
+      "status": "body-observed",
+      "body_lines_received": "3-248 (noncontiguous tool excerpts possible)",
+      "access_date": "2026-11-18 Asia/Seoul",
+      "precise_page_request_timestamp": "not captured"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/prat-3-0/files/9509040",
+      "page_identifier": "Prat 3.0 - 3.9.117 - World of Warcraft Addons - CurseForge (https://www.curseforge.com/wow/addons/prat-3-0/files/9509040)",
+      "status": "body-observed",
+      "body_lines_received": "3-283 (noncontiguous tool excerpts possible)",
+      "access_date": "2026-11-18 Asia/Seoul",
+      "precise_page_request_timestamp": "not captured"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/grid2/files/9637467",
+      "page_identifier": "Grid2 - 4.1.13-forever - World of Warcraft Addons - CurseForge (https://www.curseforge.com/wow/addons/grid2/files/9637467)",
+      "status": "body-observed",
+      "body_lines_received": "3-274 (noncontiguous tool excerpts possible)",
+      "access_date": "2026-11-18 Asia/Seoul",
+      "precise_page_request_timestamp": "not captured"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/details/files/9521145",
+      "page_identifier": "Details! Damage Meter - Details.20261109.15410.172 - World of Warcraft Addons - CurseForge (https://www.curseforge.com/wow/addons/details/files/9521145)",
+      "status": "body-observed",
+      "body_lines_received": "142-227 (noncontiguous tool excerpts possible)",
+      "access_date": "2026-11-18 Asia/Seoul",
+      "precise_page_request_timestamp": "not captured"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/foreverthreat-threat-meter-for-wow-forever/files/9653041",
+      "page_identifier": "ForeverThreat - Threat Meter for WoW Forever - ForeverThreat-1.12.1 - World of Warcraft Addons - CurseForge (https://www.curseforge.com/wow/addons/foreverthreat-threat-meter-for-wow-forever/files/9653041)",
+      "status": "body-observed",
+      "body_lines_received": "80-203 (noncontiguous tool excerpts possible)",
+      "access_date": "2026-11-18 Asia/Seoul",
+      "precise_page_request_timestamp": "not captured"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/masque/files/9409199",
+      "page_identifier": "Masque - 12.1.8 - World of Warcraft Addons - CurseForge (https://www.curseforge.com/wow/addons/masque/files/9409199)",
+      "status": "body-observed",
+      "body_lines_received": "146-251 (noncontiguous tool excerpts possible)",
+      "access_date": "2026-11-18 Asia/Seoul",
+      "precise_page_request_timestamp": "not captured"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/chattynator/files/all",
+      "page_identifier": "Chattynator (Chat) - Files - World of Warcraft Addons - CurseForge (https://www.curseforge.com/wow/addons/chattynator/files/all)",
+      "status": "body-observed",
+      "body_lines_received": "183-541 (noncontiguous tool excerpts possible)",
+      "access_date": "2026-11-18 Asia/Seoul",
+      "precise_page_request_timestamp": "not captured"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/glass-forever/files/all",
+      "page_identifier": "Glass Forever - Files - World of Warcraft Addons - CurseForge (https://www.curseforge.com/wow/addons/glass-forever/files/all)",
+      "status": "body-observed",
+      "body_lines_received": "41-480 (noncontiguous tool excerpts possible)",
+      "access_date": "2026-11-18 Asia/Seoul",
+      "precise_page_request_timestamp": "not captured"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/hekili-forever/files/all?page=1&pageSize=50",
+      "page_identifier": "Internal Error ()",
+      "status": "tool-access-failed",
+      "body_lines_received": null,
+      "access_date": "2026-11-18 Asia/Seoul",
+      "precise_page_request_timestamp": "not captured"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/forever-unit-frames/files/all?page=1&pageSize=50",
+      "page_identifier": "Internal Error ()",
+      "status": "tool-access-failed",
+      "body_lines_received": null,
+      "access_date": "2026-11-18 Asia/Seoul",
+      "precise_page_request_timestamp": "not captured"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/foreverthreat-threat-meter-for-wow-forever/files/all?page=1&pageSize=50",
+      "page_identifier": "Internal Error ()",
+      "status": "tool-access-failed",
+      "body_lines_received": null,
+      "access_date": "2026-11-18 Asia/Seoul",
+      "precise_page_request_timestamp": "not captured"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/masque-onyx/files/all",
+      "page_identifier": "Masque: Onyx - Files - World of Warcraft Addons - CurseForge (https://www.curseforge.com/wow/addons/masque-onyx/files/all)",
+      "status": "body-observed",
+      "body_lines_received": "146-288 (noncontiguous tool excerpts possible)",
+      "access_date": "2026-11-18 Asia/Seoul",
+      "precise_page_request_timestamp": "not captured"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/masque-onyx/files/9409810",
+      "page_identifier": "Masque: Onyx - 12.1.6 - World of Warcraft Addons - CurseForge (https://www.curseforge.com/wow/addons/masque-onyx/files/9409810)",
+      "status": "body-observed",
+      "body_lines_received": "146-255 (noncontiguous tool excerpts possible)",
+      "access_date": "2026-11-18 Asia/Seoul",
+      "precise_page_request_timestamp": "not captured"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/foreverthreat-threat-meter-for-wow-forever/files/9671243",
+      "page_identifier": "ForeverThreat - Threat Meter for WoW Forever - ForeverThreat-1.12.3 - World of Warcraft Addons - CurseForge (https://www.curseforge.com/wow/addons/foreverthreat-threat-meter-for-wow-forever/files/9671243)",
+      "status": "body-observed",
+      "body_lines_received": "80-210 (noncontiguous tool excerpts possible)",
+      "access_date": "2026-11-18 Asia/Seoul",
+      "precise_page_request_timestamp": "not captured"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/forever-unit-frames/files/all",
+      "page_identifier": "Forever Unit Frames - Files - World of Warcraft Addons - CurseForge (https://www.curseforge.com/wow/addons/forever-unit-frames/files/all)",
+      "status": "body-observed",
+      "body_lines_received": "136-380 (noncontiguous tool excerpts possible)",
+      "access_date": "2026-11-18 Asia/Seoul",
+      "precise_page_request_timestamp": "not captured"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/forever-unit-frames/files",
+      "page_identifier": "Forever Unit Frames - Files - World of Warcraft Addons - CurseForge (https://www.curseforge.com/wow/addons/forever-unit-frames/files ; rewritten summary of https://www.curseforge.com/wow/addons/forever-unit-frames/files/all)",
+      "status": "body-observed",
+      "body_lines_received": "143-500 (noncontiguous tool excerpts possible)",
+      "access_date": "2026-11-18 Asia/Seoul",
+      "precise_page_request_timestamp": "not captured"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/chattynator/files/9648836",
+      "page_identifier": "Chattynator (Chat) - 237 - World of Warcraft Addons - CurseForge (https://www.curseforge.com/wow/addons/chattynator/files/9648836)",
+      "status": "body-observed",
+      "body_lines_received": "0-279 (noncontiguous tool excerpts possible)",
+      "access_date": "2026-11-18 Asia/Seoul",
+      "precise_page_request_timestamp": "not captured"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/glass-forever/files/9653501",
+      "page_identifier": "Glass Forever - Glass Forever 1.1.6 - World of Warcraft Addons - CurseForge (https://www.curseforge.com/wow/addons/glass-forever/files/9653501)",
+      "status": "body-observed",
+      "body_lines_received": "0-249 (noncontiguous tool excerpts possible)",
+      "access_date": "2026-11-18 Asia/Seoul",
+      "precise_page_request_timestamp": "not captured"
+    }
+  ],
+  "additional_route_failures": [
+    {
+      "url": "https://www.curseforge.com/wow/addons/hekili-forever/files",
+      "route": "web__run and initial search_service open",
+      "result": "not accessible; later files/all body succeeded via search_service"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/hekili-forever/files/9665215",
+      "route": "initial web__run direct open",
+      "result": "not accessible; later search_service click from older exact file latest link succeeded"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/hekili-forever/files",
+      "route": "Invoke-WebRequest default sandbox",
+      "result": "DNS error: known host not found"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/hekili-forever/files",
+      "route": "Invoke-WebRequest normal require_escalated retry",
+      "result": "HTTP 403 Forbidden"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/dominos/download/9658153",
+      "route": "search_service click from exact file then Invoke-WebRequest",
+      "result": "download landing page metadata accessible; Invoke-WebRequest HTTP403; public CDN HTTP200 (see Dominos evidence)"
+    }
+  ],
+  "superseded_snapshots": [
+    {
+      "product": "Hekili",
+      "old_snapshot": "v0.8.5 / 9640496",
+      "resolution": "Exact old file header exposed latest v0.8.6; clicked to9665215, then re-opened files/all and observed v0.8.6 first row."
+    },
+    {
+      "product": "Forever Unit Frames",
+      "old_snapshot": "0.63.0 / 9643514, then files/all0.65.1",
+      "resolution": "Old exact file latest header linked0.65.2/9673338; re-open /files redirected files/all and showed0.65.2 first row."
+    },
+    {
+      "product": "ForeverThreat",
+      "old_snapshot": "1.12.1 / 9653041",
+      "resolution": "Old exact file latest header linked1.12.3/9671243; re-opened files/all and observed1.12.3 first row."
+    }
+  ],
+  "download_endpoint_derivation": "Normal public edge.forgecdn.net/files/<floor(fileID/1000)>/<fileID modulo1000>/<exact observed original filename>, followed normal redirect to mediafilez.forgecdn.net. No authentication bypass or challenge automation."
+}

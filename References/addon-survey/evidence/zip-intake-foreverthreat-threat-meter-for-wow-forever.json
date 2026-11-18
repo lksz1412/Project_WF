@@ -1,0 +1,28 @@
+{
+  "product": "ForeverThreat",
+  "observed_at": "2026-11-18T10:30:33.7449179+09:00",
+  "page_url": "https://www.curseforge.com/wow/addons/foreverthreat-threat-meter-for-wow-forever/files/9671243",
+  "list_url": "https://www.curseforge.com/wow/addons/foreverthreat-threat-meter-for-wow-forever/files/all",
+  "page_location": "156-189",
+  "list_location": "172-237",
+  "short_quote": "1.60.1",
+  "selected_version": "1.12.3",
+  "file_id": 9671243,
+  "filename": "ForeverThreat-1.12.3.zip",
+  "file_date": "Nov 17, 2026",
+  "latest_basis": "First visible date-ordered file listing row plus Latest release for Forever; exact file lists 1.60.1",
+  "request_url": "https://edge.forgecdn.net/files/9671/243/ForeverThreat-1.12.3.zip",
+  "final_url": "https://mediafilez.forgecdn.net/files/9671/243/ForeverThreat-1.12.3.zip",
+  "http_status": 200,
+  "content_type": [
+    "application/zip"
+  ],
+  "content_length": [
+    "3393080"
+  ],
+  "bytes": 3393080,
+  "signature": "504b0304",
+  "sha256": "c7aa10ecdee074965dd26149b8ab5c447d90e3df2463ad5181e52751b78022a4",
+  "checks": "filename from exact file page; requested minimum version/file ID met (where given); raw bytes copied with no archive processing",
+  "scratch": "%TEMP%/wf-zip-intake-54qbm44o"
+}

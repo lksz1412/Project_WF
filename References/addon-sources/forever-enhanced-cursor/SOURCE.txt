@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/forever-enhanced-cursor/files/9432291
+파일명: ForeverEnhancedCursor-1.0.2.zip
+판(version): 1.0.2
+file ID: 9432291
+파일 날짜: Nov 4, 2026
+표기된 game version: 1.60.1 [Flavors: Forever]
+SHA256: 000768e806af7dc1cbe10c8903726d5079877dfdd3a6fd3e9db3e79bdfd33bb1

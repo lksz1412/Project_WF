@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/kg-panels/files/7606374
+파일명: kgPanels-1.4.7.zip
+판(version): 1.4.7
+file ID: 7606374
+파일 날짜: Feb 10, 2026
+표기된 game version: 12.0.1, 12.0.0, 3.4.1, 1.14.3 [Flavors: Classic Retail]
+SHA256: fd36bd261d71da97bfd0a1207991a1eabb8f921a590714a9b42c8478f8c1e1f9

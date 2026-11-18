@@ -1,0 +1,19 @@
+{
+  "slug": "nameplate-scrolling-combat-text",
+  "file_page_url": "https://www.curseforge.com/wow/addons/nameplate-scrolling-combat-text/files/8439465",
+  "filename": "NameplateSCT-1.54.zip",
+  "file_id": 8439465,
+  "download_url": "https://edge.forgecdn.net/files/8439/465/NameplateSCT-1.54.zip",
+  "observed_at": "2026-11-18T11:33:36.8811317+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/8439/465/NameplateSCT-1.54.zip",
+  "content_length": "186638",
+  "content_type": "application/x-zip-compressed",
+  "content_disposition": null,
+  "bytes": 186638,
+  "signature": "504b0304",
+  "sha256": "d9d864ce1bea981a6b7a152918ebcdc2b5836eacf86e3bacacb093815ec98df3",
+  "relative_zip": "References/addon-sources/nameplate-scrolling-combat-text/NameplateSCT-1.54.zip",
+  "status": "success"
+}

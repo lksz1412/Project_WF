@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/font-manager/files/9518872
+파일명: FontManager-1.1.7.zip
+판(version): FontManager-1.1.7.zip
+file ID: 9518872
+파일 날짜: Nov 8, 2026
+표기된 game version: 12.1.5, 5.5.4, 4.4.2, 3.80.2, 3.4.5, 2.5.6, 1.60.1, 1.15.9 [Flavors: MoP Classic Classic TBC Classic Titan Reforged Classic Retail Forever]
+SHA256: 7905d3a986f758afdac7db3e1023ef4c41b1f335012f1f10b89235f66a60827a

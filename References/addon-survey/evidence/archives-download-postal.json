@@ -1,0 +1,19 @@
+{
+  "slug": "postal",
+  "file_page_url": "https://www.curseforge.com/wow/addons/postal/files/9040411",
+  "filename": "Postal-v4.3.5.zip",
+  "file_id": 9040411,
+  "download_url": "https://edge.forgecdn.net/files/9040/411/Postal-v4.3.5.zip",
+  "observed_at": "2026-11-18T11:33:21.0004523+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/9040/411/Postal-v4.3.5.zip",
+  "content_length": "102054",
+  "content_type": "application/zip",
+  "content_disposition": null,
+  "bytes": 102054,
+  "signature": "504b0304",
+  "sha256": "d439a6ce9b7d2d8925959cda95057976d098e4736a72f0e06106a7c5d4719221",
+  "relative_zip": "References/addon-sources/postal/Postal-v4.3.5.zip",
+  "status": "success"
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "bugsack",
+  "file_page_url": "https://www.curseforge.com/wow/addons/bugsack/files/9336367",
+  "filename": "BugSack-v12.1.9.zip",
+  "file_id": 9336367,
+  "download_url": "https://edge.forgecdn.net/files/9336/367/BugSack-v12.1.9.zip",
+  "observed_at": "2026-11-18T11:33:26.0583491+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/9336/367/BugSack-v12.1.9.zip",
+  "content_length": "71193",
+  "content_type": "application/x-zip-compressed",
+  "content_disposition": null,
+  "bytes": 71193,
+  "signature": "504b0304",
+  "sha256": "2b3a96d352b5fc351dfc62628ea1c75fe86c837cc59967455e1ac482a1b92ac1",
+  "relative_zip": "References/addon-sources/bugsack/BugSack-v12.1.9.zip",
+  "status": "success"
+}

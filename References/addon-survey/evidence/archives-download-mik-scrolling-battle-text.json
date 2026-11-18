@@ -1,0 +1,19 @@
+{
+  "slug": "mik-scrolling-battle-text",
+  "file_page_url": "https://www.curseforge.com/wow/addons/mik-scrolling-battle-text/files/5781390",
+  "filename": "MikScrollingBattleText-6.0.3.zip",
+  "file_id": 5781390,
+  "download_url": "https://edge.forgecdn.net/files/5781/390/MikScrollingBattleText-6.0.3.zip",
+  "observed_at": "2026-11-18T11:33:35.0937860+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/5781/390/MikScrollingBattleText-6.0.3.zip",
+  "content_length": "695223",
+  "content_type": "application/x-amz-json-1.0",
+  "content_disposition": null,
+  "bytes": 695223,
+  "signature": "504b0304",
+  "sha256": "e24230176706f34b1121ece9f88142939059bc59e3b5733495f4d1da182c9949",
+  "relative_zip": "References/addon-sources/mik-scrolling-battle-text/MikScrollingBattleText-6.0.3.zip",
+  "status": "success"
+}

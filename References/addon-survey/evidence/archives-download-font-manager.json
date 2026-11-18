@@ -1,0 +1,19 @@
+{
+  "slug": "font-manager",
+  "file_page_url": "https://www.curseforge.com/wow/addons/font-manager/files/9518872",
+  "filename": "FontManager-1.1.7.zip",
+  "file_id": 9518872,
+  "download_url": "https://edge.forgecdn.net/files/9518/872/FontManager-1.1.7.zip",
+  "observed_at": "2026-11-18T11:33:23.0375047+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/9518/872/FontManager-1.1.7.zip",
+  "content_length": "1450881",
+  "content_type": "application/zip",
+  "content_disposition": null,
+  "bytes": 1450881,
+  "signature": "504b0304",
+  "sha256": "7905d3a986f758afdac7db3e1023ef4c41b1f335012f1f10b89235f66a60827a",
+  "relative_zip": "References/addon-sources/font-manager/FontManager-1.1.7.zip",
+  "status": "success"
+}

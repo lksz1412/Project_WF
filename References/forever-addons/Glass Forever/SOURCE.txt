@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/glass-forever/files/9653501
+파일명: Glass-Forever-1.1.6.zip
+판(version): 1.1.6
+file ID: 9653501
+파일 날짜: Nov 16, 2026
+표기된 game version: 1.60.1 (Forever)
+SHA256: 85cd061b217ae00219a914acb62294ba12b5c5df4fb42017f889d3bd08fb5e2b

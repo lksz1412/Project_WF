@@ -1,0 +1,19 @@
+{
+  "slug": "experience-forever",
+  "file_page_url": "https://www.curseforge.com/wow/addons/experience-forever/files/9626058",
+  "filename": "ExperienceForever.zip",
+  "file_id": 9626058,
+  "download_url": "https://edge.forgecdn.net/files/9626/58/ExperienceForever.zip",
+  "observed_at": "2026-11-18T11:33:22.2099361+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/9626/58/ExperienceForever.zip",
+  "content_length": "122220",
+  "content_type": "application/zip",
+  "content_disposition": null,
+  "bytes": 122220,
+  "signature": "504b0304",
+  "sha256": "2bfdda8717b6e0d40fcc1847b233e23b187f839c75749c15fe2ed430ecf15b85",
+  "relative_zip": "References/addon-sources/experience-forever/ExperienceForever.zip",
+  "status": "success"
+}

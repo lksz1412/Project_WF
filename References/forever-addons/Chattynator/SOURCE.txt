@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/chattynator/files/9648836
+파일명: Chattynator-237.zip
+판(version): 237
+file ID: 9648836
+파일 날짜: Nov 16, 2026
+표기된 game version: 1.60.1 (Forever)
+SHA256: 7bf89cbb0cb221a0313ffd2bd3abc761b9c6a11b01bc993216ee8b23b63931c9

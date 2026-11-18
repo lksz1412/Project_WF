@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/kaliels-tracker/files/9518871
+파일명: kaliels-tracker-8.11.1-forever.zip
+판(version): 8.11.1-forever
+file ID: 9518871
+파일 날짜: Nov 8, 2026
+표기된 game version: 1.60.1 [Flavors: Forever]
+SHA256: a970ec5a3c2c540eb68b765c29f1c4585f3ea5d82d5b0bf81d483f5a72853537

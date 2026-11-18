@@ -1,0 +1,19 @@
+{
+  "slug": "reflux",
+  "file_page_url": "https://www.curseforge.com/wow/addons/reflux/files/823715",
+  "filename": "Reflux-1.17.zip",
+  "file_id": 823715,
+  "download_url": "https://edge.forgecdn.net/files/823/715/Reflux-1.17.zip",
+  "observed_at": "2026-11-18T11:32:50.9298066+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/823/715/Reflux-1.17.zip",
+  "content_length": "4622",
+  "content_type": "application/zip",
+  "content_disposition": null,
+  "bytes": 4622,
+  "signature": "504b0304",
+  "sha256": "91bdbc94d68a3024fd8cc8cf98c8340a1ee54b1f1c3d8789a654f62f7033ef7d",
+  "relative_zip": "References/addon-sources/reflux/Reflux-1.17.zip",
+  "status": "success"
+}

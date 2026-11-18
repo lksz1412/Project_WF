@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/aurora/files/9531539
+파일명: Aurora-12.1.5.4.zip
+판(version): 12.1.5.4
+file ID: 9531539
+파일 날짜: Nov 9, 2026
+표기된 game version: 12.1.5, 5.5.4, 2.5.6, 1.60.1, 1.15.9 [Flavors: MoP Classic Classic TBC Classic Retail Forever]
+SHA256: bd8b36a06ba2b5d2e6621aafa607c4c7ec856c9e001cd678e33035f61acacf3c

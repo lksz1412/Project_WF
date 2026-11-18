@@ -1,0 +1,19 @@
+{
+  "slug": "aurora",
+  "file_page_url": "https://www.curseforge.com/wow/addons/aurora/files/9531539",
+  "filename": "Aurora-12.1.5.4.zip",
+  "file_id": 9531539,
+  "download_url": "https://edge.forgecdn.net/files/9531/539/Aurora-12.1.5.4.zip",
+  "observed_at": "2026-11-18T11:33:20.0852517+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/9531/539/Aurora-12.1.5.4.zip",
+  "content_length": "892692",
+  "content_type": "application/x-zip-compressed",
+  "content_disposition": null,
+  "bytes": 892692,
+  "signature": "504b0304",
+  "sha256": "bd8b36a06ba2b5d2e6621aafa607c4c7ec856c9e001cd678e33035f61acacf3c",
+  "relative_zip": "References/addon-sources/aurora/Aurora-12.1.5.4.zip",
+  "status": "success"
+}

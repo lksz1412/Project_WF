@@ -1,0 +1,19 @@
+{
+  "slug": "kg-panels",
+  "file_page_url": "https://www.curseforge.com/wow/addons/kg-panels/files/7606374",
+  "filename": "kgPanels-1.4.7.zip",
+  "file_id": 7606374,
+  "download_url": "https://edge.forgecdn.net/files/7606/374/kgPanels-1.4.7.zip",
+  "observed_at": "2026-11-18T11:33:38.2640958+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/7606/374/kgPanels-1.4.7.zip",
+  "content_length": "260297",
+  "content_type": "application/x-zip-compressed",
+  "content_disposition": null,
+  "bytes": 260297,
+  "signature": "504b0304",
+  "sha256": "fd36bd261d71da97bfd0a1207991a1eabb8f921a590714a9b42c8478f8c1e1f9",
+  "relative_zip": "References/addon-sources/kg-panels/kgPanels-1.4.7.zip",
+  "status": "success"
+}

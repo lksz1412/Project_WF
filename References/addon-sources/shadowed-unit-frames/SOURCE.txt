@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/shadowed-unit-frames/files/7288873
+파일명: ShadowedUnitFrames-v4.4.14.zip
+판(version): v4.4.14
+file ID: 7288873
+파일 날짜: Dec 3, 2025
+표기된 game version: 11.2.7, 11.2.5 [Flavors: Retail]
+SHA256: e36b9dca362542d6e2b4d7e8b8ca2868c024d334f57347c9fe89de3e748a77d1

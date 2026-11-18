@@ -1,0 +1,19 @@
+{
+  "slug": "move-anything",
+  "file_page_url": "https://www.curseforge.com/wow/addons/move-anything/files/3775172",
+  "filename": "MoveAnything 18.0.8.zip",
+  "file_id": 3775172,
+  "download_url": "https://edge.forgecdn.net/files/3775/172/MoveAnything%2018.0.8.zip",
+  "observed_at": "2026-11-18T11:32:54.6034232+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/3775/172/MoveAnything%2018.0.8.zip",
+  "content_length": "134852",
+  "content_type": "application/x-amz-json-1.0",
+  "content_disposition": null,
+  "bytes": 134852,
+  "signature": "504b0304",
+  "sha256": "f9b4b6faf17106c0683a565774f6d4d129763695941c35dfacfe8789f925b2bd",
+  "relative_zip": "References/addon-sources/move-anything/MoveAnything 18.0.8.zip",
+  "status": "success"
+}

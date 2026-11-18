@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/prat-3-0/files/9509040
+파일명: Prat-3.0-3.9.117.zip
+판(version): 3.9.117
+file ID: 9509040
+파일 날짜: Nov 8, 2026
+표기된 game version: 1.60.1 (Forever)
+SHA256: d72baef9c99bb1583b269abd85088bcb957d9a0d8ca57c323144442875084db1

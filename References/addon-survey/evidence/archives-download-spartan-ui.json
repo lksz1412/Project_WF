@@ -1,0 +1,44 @@
+{
+  "slug": "spartan-ui",
+  "file_page_url": "https://www.curseforge.com/wow/addons/spartan-ui/files/9623682",
+  "filename": "SpartanUI-9.0.5.zip",
+  "file_id": 9623682,
+  "download_url": "https://edge.forgecdn.net/files/9623/682/SpartanUI-9.0.5.zip",
+  "observed_at": "2026-11-18T11:32:32.9599364+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/9623/682/SpartanUI-9.0.5.zip",
+  "content_length": "41134580",
+  "content_type": "application/x-zip-compressed",
+  "content_disposition": null,
+  "prior_attempt": {
+    "slug": "spartan-ui",
+    "file_page_url": "https://www.curseforge.com/wow/addons/spartan-ui/files/9623682",
+    "filename": "SpartanUI-9.0.5.zip",
+    "file_id": 9623682,
+    "download_url": "https://edge.forgecdn.net/files/9623/682/SpartanUI-9.0.5.zip",
+    "observed_at": "2026-11-18T11:31:47.0578517+09:00",
+    "archive_internal_processing": "not performed",
+    "http_status": 200,
+    "final_download_url": null,
+    "content_length": [
+      "41134580"
+    ],
+    "content_type": [
+      "application/x-zip-compressed"
+    ],
+    "content_disposition": null,
+    "bytes": 41134580,
+    "signature": "504b0304",
+    "status": "failure",
+    "error": "Cannot convert the \"System.String[]\" value of type \"System.String[]\" to type \"System.Int64\"."
+  },
+  "reused_completed_download": true,
+  "bytes": 41134580,
+  "signature": "504b0304",
+  "sha256": "ee58005a6df3ba6930f5dca53f84ef3e6270786eab941bb5df3f377e460313b2",
+  "relative_zip": "References/addon-sources/spartan-ui/SpartanUI-9.0.5.zip",
+  "status": "success",
+  "redirect_verified_by": "Subsequent official HEAD request",
+  "redirect_verified_at": "2026-11-18T11:35:50.6551262+09:00"
+}

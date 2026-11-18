@@ -1,0 +1,19 @@
+{
+  "slug": "weakauras-2",
+  "file_page_url": "https://www.curseforge.com/wow/addons/weakauras-2/files/7483857",
+  "filename": "WeakAuras-5.21.1.zip",
+  "file_id": 7483857,
+  "download_url": "https://edge.forgecdn.net/files/7483/857/WeakAuras-5.21.1.zip",
+  "observed_at": "2026-11-18T11:32:57.3652917+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/7483/857/WeakAuras-5.21.1.zip",
+  "content_length": "10522169",
+  "content_type": "application/x-zip-compressed",
+  "content_disposition": null,
+  "bytes": 10522169,
+  "signature": "504b0304",
+  "sha256": "02266d4e648f999d41c431b5a951b67645b983bb7068e40437f9dbf99c8ad115",
+  "relative_zip": "References/addon-sources/weakauras-2/WeakAuras-5.21.1.zip",
+  "status": "success"
+}

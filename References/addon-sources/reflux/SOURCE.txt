@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/reflux/files/823715
+파일명: Reflux-1.17.zip
+판(version): 1.17
+file ID: 823715
+파일 날짜: Oct 20, 2014
+표기된 game version: 6.0.2 [Flavors: Retail]
+SHA256: 91bdbc94d68a3024fd8cc8cf98c8340a1ee54b1f1c3d8789a654f62f7033ef7d

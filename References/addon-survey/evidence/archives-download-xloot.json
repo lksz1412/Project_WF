@@ -1,0 +1,19 @@
+{
+  "slug": "xloot",
+  "file_page_url": "https://www.curseforge.com/wow/addons/xloot/files/9600127",
+  "filename": "XLoot-12.23.0.zip",
+  "file_id": 9600127,
+  "download_url": "https://edge.forgecdn.net/files/9600/127/XLoot-12.23.0.zip",
+  "observed_at": "2026-11-18T11:33:33.3755708+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/9600/127/XLoot-12.23.0.zip",
+  "content_length": "260740",
+  "content_type": "application/x-zip-compressed",
+  "content_disposition": null,
+  "bytes": 260740,
+  "signature": "504b0304",
+  "sha256": "b9f2b7199da3c95dc4ccc0fedae4ff33cadd2f9298d96c461295b0edcec555d5",
+  "relative_zip": "References/addon-sources/xloot/XLoot-12.23.0.zip",
+  "status": "success"
+}

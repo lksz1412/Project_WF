@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/grid2/files/9637467
+파일명: Grid2-4.1.13-forever.zip
+판(version): 4.1.13-forever
+file ID: 9637467
+파일 날짜: Nov 15, 2026
+표기된 game version: 1.60.1 (Forever)
+SHA256: f198bc3ce2d02e023f81052074a2e9aa4ba41819931bd302ff7429dac9515393

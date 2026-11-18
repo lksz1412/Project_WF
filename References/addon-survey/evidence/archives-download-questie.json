@@ -1,0 +1,19 @@
+{
+  "slug": "questie",
+  "file_page_url": "https://www.curseforge.com/wow/addons/questie/files/9663983",
+  "filename": "Questie-v12.10.0.zip",
+  "file_id": 9663983,
+  "download_url": "https://edge.forgecdn.net/files/9663/983/Questie-v12.10.0.zip",
+  "observed_at": "2026-11-18T11:33:32.8965453+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/9663/983/Questie-v12.10.0.zip",
+  "content_length": "2440269",
+  "content_type": "application/x-zip-compressed",
+  "content_disposition": null,
+  "bytes": 2440269,
+  "signature": "504b0304",
+  "sha256": "65626c6c061f734c51c3316e8bb4973553dd6f58994a333f0f6c624df1346e54",
+  "relative_zip": "References/addon-sources/questie/Questie-v12.10.0.zip",
+  "status": "success"
+}

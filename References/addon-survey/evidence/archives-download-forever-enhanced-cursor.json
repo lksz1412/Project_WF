@@ -1,0 +1,19 @@
+{
+  "slug": "forever-enhanced-cursor",
+  "file_page_url": "https://www.curseforge.com/wow/addons/forever-enhanced-cursor/files/9432291",
+  "filename": "ForeverEnhancedCursor-1.0.2.zip",
+  "file_id": 9432291,
+  "download_url": "https://edge.forgecdn.net/files/9432/291/ForeverEnhancedCursor-1.0.2.zip",
+  "observed_at": "2026-11-18T11:33:24.1710732+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/9432/291/ForeverEnhancedCursor-1.0.2.zip",
+  "content_length": "703857",
+  "content_type": "application/zip",
+  "content_disposition": null,
+  "bytes": 703857,
+  "signature": "504b0304",
+  "sha256": "000768e806af7dc1cbe10c8903726d5079877dfdd3a6fd3e9db3e79bdfd33bb1",
+  "relative_zip": "References/addon-sources/forever-enhanced-cursor/ForeverEnhancedCursor-1.0.2.zip",
+  "status": "success"
+}

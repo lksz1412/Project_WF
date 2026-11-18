@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/questie/files/9663983
+파일명: Questie-v12.10.0.zip
+판(version): v12.10.0
+file ID: 9663983
+파일 날짜: Nov 17, 2026
+표기된 game version: 5.5.4, 3.80.2, 2.5.6, 1.60.1, 1.15.9 [Flavors: MoP Classic Classic TBC Classic Titan Reforged Classic Forever]
+SHA256: 65626c6c061f734c51c3316e8bb4973553dd6f58994a333f0f6c624df1346e54

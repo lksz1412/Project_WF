@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/titan-panel/files/9656248
+파일명: TitanPanel-9.3.7.zip
+판(version): 9.3.7
+file ID: 9656248
+파일 날짜: Nov 16, 2026
+표기된 game version: 12.1.5, 5.5.4, 2.5.6, 1.60.1, 1.15.9 [Flavors: MoP Classic Classic TBC Classic Retail Forever]
+SHA256: 496a4f08c1251294c3820b5ae860725962cbdeb936c3eff0a764f67b300d7507

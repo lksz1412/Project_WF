@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/vuhdo/files/9639592
+파일명: VuhDo-v3.221.zip
+판(version): v3.221
+file ID: 9639592
+파일 날짜: Nov 15, 2026
+표기된 game version: 12.1.5, 1.60.1 [Flavors: Retail Forever]
+SHA256: 60ac4f0a0d3ff5efba18c3109594565ac3b99ab3d0f3ff31f90a3a658b6e86fc

@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/speedyautoloot/files/9435616
+파일명: SpeedyAutoLoot-125.zip
+판(version): 125
+file ID: 9435616
+파일 날짜: Nov 4, 2026
+표기된 game version: 12.1.5, 12.1.0, 5.5.4, 3.80.2, 2.5.6, 1.60.1, 1.15.9 [Flavors: MoP Classic Retail Classic TBC Classic Titan Reforged Classic Forever]
+SHA256: 65df8982bbf2b55266a4ae41c29d9da3af07c0075e32be445a343032725b9137

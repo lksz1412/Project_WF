@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/realui/files/9531550
+파일명: RealUI-4.2.6.zip
+판(version): 4.2.6
+file ID: 9531550
+파일 날짜: Nov 9, 2026
+표기된 game version: 12.1.5, 1.60.1 [Flavors: Retail Forever]
+SHA256: c5d4c9863419d7779c67f03d76a3c95592de66f9f4736b77479b601f92995b45

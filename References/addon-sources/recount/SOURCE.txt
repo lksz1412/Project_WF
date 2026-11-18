@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/recount/files/6750721
+파일명: Recount-v11.1.7a.zip
+판(version): v11.1.7a
+file ID: 6750721
+파일 날짜: Jul 10, 2025
+표기된 game version: 11.1.7 [Flavors: Retail]
+SHA256: 4a4a087ea9b88f27221469c7e8a8bcb7702b5ba802dfdb18f9deb266a8ef8e40

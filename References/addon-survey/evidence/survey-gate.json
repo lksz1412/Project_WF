@@ -1,0 +1,109 @@
+{
+  "gate": "G4+G6 work-A self gate",
+  "status": "PASS",
+  "checks": {
+    "exact_13_sections_in_order": true,
+    "each_3_to_5_rows": true,
+    "exact_8_columns_and_headers": true,
+    "13_recommendations": true,
+    "all_rows_observed_urls_grades_and_metadata": true,
+    "all_sources_consumed": true,
+    "distinct_url_count_42": true,
+    "failure_list_exact": true,
+    "unknowns_and_metric_scope": true,
+    "date_and_ranking_limits": true,
+    "public_private_paths_absent": true
+  },
+  "sections": [
+    {
+      "section": 1,
+      "rows": 5,
+      "exact_header": true,
+      "recommendations": 1
+    },
+    {
+      "section": 2,
+      "rows": 3,
+      "exact_header": true,
+      "recommendations": 1
+    },
+    {
+      "section": 3,
+      "rows": 3,
+      "exact_header": true,
+      "recommendations": 1
+    },
+    {
+      "section": 4,
+      "rows": 4,
+      "exact_header": true,
+      "recommendations": 1
+    },
+    {
+      "section": 5,
+      "rows": 3,
+      "exact_header": true,
+      "recommendations": 1
+    },
+    {
+      "section": 6,
+      "rows": 3,
+      "exact_header": true,
+      "recommendations": 1
+    },
+    {
+      "section": 7,
+      "rows": 3,
+      "exact_header": true,
+      "recommendations": 1
+    },
+    {
+      "section": 8,
+      "rows": 3,
+      "exact_header": true,
+      "recommendations": 1
+    },
+    {
+      "section": 9,
+      "rows": 3,
+      "exact_header": true,
+      "recommendations": 1
+    },
+    {
+      "section": 10,
+      "rows": 3,
+      "exact_header": true,
+      "recommendations": 1
+    },
+    {
+      "section": 11,
+      "rows": 3,
+      "exact_header": true,
+      "recommendations": 1
+    },
+    {
+      "section": 12,
+      "rows": 3,
+      "exact_header": true,
+      "recommendations": 1
+    },
+    {
+      "section": 13,
+      "rows": 3,
+      "exact_header": true,
+      "recommendations": 1
+    }
+  ],
+  "rows": 42,
+  "successful_distinct_urls": 42,
+  "failed_urls": [
+    "https://www.curseforge.com/wow/addons/cooldown-count",
+    "https://www.tukui.org/elvui",
+    "https://www.tukui.org/tukui"
+  ],
+  "inputs_sha256": {
+    "survey.md": "ab85a13eb5d895ce28f0228f46f4ab2ba4b325e98b864969d0a2512c0eee5dfc",
+    "survey-sources.json": "59a0553d042a3b4469867463a7be916d3ef9e8e5bcc96b3ba2ebf66d84e58d24"
+  },
+  "independent_review": "not performed by work A"
+}

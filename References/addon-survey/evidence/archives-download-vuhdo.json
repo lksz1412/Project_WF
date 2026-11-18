@@ -1,0 +1,19 @@
+{
+  "slug": "vuhdo",
+  "file_page_url": "https://www.curseforge.com/wow/addons/vuhdo/files/9639592",
+  "filename": "VuhDo-v3.221.zip",
+  "file_id": 9639592,
+  "download_url": "https://edge.forgecdn.net/files/9639/592/VuhDo-v3.221.zip",
+  "observed_at": "2026-11-18T11:33:02.9307382+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/9639/592/VuhDo-v3.221.zip",
+  "content_length": "3440785",
+  "content_type": "application/x-zip-compressed",
+  "content_disposition": null,
+  "bytes": 3440785,
+  "signature": "504b0304",
+  "sha256": "60ac4f0a0d3ff5efba18c3109594565ac3b99ab3d0f3ff31f90a3a658b6e86fc",
+  "relative_zip": "References/addon-sources/vuhdo/VuhDo-v3.221.zip",
+  "status": "success"
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "gnosis",
+  "file_page_url": "https://www.curseforge.com/wow/addons/gnosis/files/9511828",
+  "filename": "Gnosis-v6.01.zip",
+  "file_id": 9511828,
+  "download_url": "https://edge.forgecdn.net/files/9511/828/Gnosis-v6.01.zip",
+  "observed_at": "2026-11-18T11:32:48.8128552+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/9511/828/Gnosis-v6.01.zip",
+  "content_length": "3189694",
+  "content_type": "application/zip",
+  "content_disposition": null,
+  "bytes": 3189694,
+  "signature": "504b0304",
+  "sha256": "3a2ec9f44a248a33271861f3038a06805ec9e3dc666ebc8a141839b6db4756c6",
+  "relative_zip": "References/addon-sources/gnosis/Gnosis-v6.01.zip",
+  "status": "success"
+}

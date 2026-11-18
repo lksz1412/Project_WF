@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/glider/files/9164028
+파일명: Glider-49.zip
+판(version): 49
+file ID: 9164028
+파일 날짜: Oct 13, 2026
+표기된 game version: 12.1.5, 12.1.0 [Flavors: Retail]
+SHA256: 6bcdc92fbedb69839b94bc12a08260e07f5975729df2b424e5032d2ee2fed673

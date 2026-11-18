@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/foreverthreat-threat-meter-for-wow-forever/files/9671243
+파일명: ForeverThreat-1.12.3.zip
+판(version): 1.12.3
+file ID: 9671243
+파일 날짜: Nov 17, 2026
+표기된 game version: 1.60.1 (Forever)
+SHA256: c7aa10ecdee074965dd26149b8ab5c447d90e3df2463ad5181e52751b78022a4

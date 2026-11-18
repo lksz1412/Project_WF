@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/omnicd/files/8757010
+파일명: omnicd-v2.8.35 (1).zip
+판(version): v2.8.35
+file ID: 8757010
+파일 날짜: Aug 28, 2026
+표기된 game version: 11.2.7, 5.5.4, 4.4.2, 3.4.5, 2.5.6, 1.15.9 [Flavors: Retail MoP Classic Classic TBC Classic]
+SHA256: 712a1ea46a58075b82030650b9dcfcd756f4460dc809658c8342a32e63c0232a

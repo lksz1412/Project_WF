@@ -1,0 +1,19 @@
+{
+  "slug": "shadowed-unit-frames",
+  "file_page_url": "https://www.curseforge.com/wow/addons/shadowed-unit-frames/files/7288873",
+  "filename": "ShadowedUnitFrames-v4.4.14.zip",
+  "file_id": 7288873,
+  "download_url": "https://edge.forgecdn.net/files/7288/873/ShadowedUnitFrames-v4.4.14.zip",
+  "observed_at": "2026-11-18T11:32:46.1792944+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/7288/873/ShadowedUnitFrames-v4.4.14.zip",
+  "content_length": "698011",
+  "content_type": "application/x-zip-compressed",
+  "content_disposition": null,
+  "bytes": 698011,
+  "signature": "504b0304",
+  "sha256": "e36b9dca362542d6e2b4d7e8b8ca2868c024d334f57347c9fe89de3e748a77d1",
+  "relative_zip": "References/addon-sources/shadowed-unit-frames/ShadowedUnitFrames-v4.4.14.zip",
+  "status": "success"
+}

@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/button-forge/files/8634630
+파일명: ButtonForge_v1.3.5.0.zip
+판(version): ButtonForge v1.3.5.0
+file ID: 8634630
+파일 날짜: Aug 12, 2026
+표기된 game version: 12.1.0 [Flavors: Retail]
+SHA256: ddf63452c8a81c12e3d8fe81559a8b7b7ef0cf8142c2f25b1bcad8b7da82db59

@@ -1,0 +1,3314 @@
+{
+  "schema": "archive-targets-v1",
+  "target_count": 71,
+  "records": [
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/spartan-ui",
+      "name": "SpartanUI",
+      "slug": "spartan-ui",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/spartan-ui",
+            "final_url": "https://www.curseforge.com/wow/addons/spartan-ui",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "SpartanUI - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 1,
+                "addon": "SpartanUI"
+              }
+            ],
+            "author": "wutname1",
+            "project_update": "Nov 15, 2026",
+            "project_total_downloads": "5,254,875",
+            "forever_recent_file": "9.0.5 Latest release R Forever + 5 Nov 15, 2026",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "표기 확인",
+            "feature_summary": "화면 아래 중심 배치와 선택 사용이 가능한 모듈 구성; 플레이어·파티·공격대 프레임 제공.",
+            "feature_location": "L215–241 / Description, Overview",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        },
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "SpartanUI",
+            "kind": "integrated_ui_package",
+            "official_project_url": "https://www.curseforge.com/wow/addons/spartan-ui",
+            "official_source_repo_url": "https://github.com/spartanui-wow/SpartanUI",
+            "source_repo_status": "실제 공식 저장소 본문 열기",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/spartan-ui",
+            "forever_status": "표기 확인(공식 프로젝트 Recent Files의 Forever 행; 실제 게임 미검증)",
+            "feature_ids": [
+              "F01",
+              "F02",
+              "F03",
+              "F04",
+              "F05",
+              "F06",
+              "F07",
+              "F09",
+              "F11",
+              "F14",
+              "F23",
+              "F24",
+              "F38",
+              "F39",
+              "F40",
+              "F41",
+              "F47",
+              "F49",
+              "F65",
+              "F70"
+            ],
+            "dependency": null
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/gw2-ui",
+      "name": "GW2 UI",
+      "slug": "gw2-ui",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/gw2-ui",
+            "final_url": "https://www.curseforge.com/wow/addons/gw2-ui",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "GW2 UI - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 1,
+                "addon": "GW2 UI"
+              }
+            ],
+            "author": "Mortalknight",
+            "project_update": "Nov 16, 2026",
+            "project_total_downloads": "2,738,400",
+            "forever_recent_file": "12.1.9 Latest release R Forever + 5 Nov 14, 2026",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "표기 확인",
+            "feature_summary": "손으로 그린 외관의 모듈형 UI; HUD·유닛 프레임·가방·퀘스트 추적기를 통합.",
+            "feature_location": "L209–231 / Description, Why GW2 UI",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        },
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "GW2 UI",
+            "kind": "integrated_ui_package",
+            "official_project_url": "https://www.curseforge.com/wow/addons/gw2-ui",
+            "official_source_repo_url": "https://github.com/Mortalknight/GW2_UI",
+            "source_repo_status": "실제 공식 저장소 본문 열기",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/gw2-ui",
+            "forever_status": "표기 확인(공식 프로젝트 Recent Files의 Forever 행; 실제 게임 미검증)",
+            "feature_ids": [
+              "F01",
+              "F02",
+              "F03",
+              "F04",
+              "F05",
+              "F06",
+              "F07",
+              "F08",
+              "F09",
+              "F10",
+              "F11",
+              "F12",
+              "F20",
+              "F22",
+              "F25",
+              "F26",
+              "F27",
+              "F31",
+              "F32",
+              "F38",
+              "F42",
+              "F47",
+              "F49",
+              "F50",
+              "F51",
+              "F52",
+              "F55",
+              "F65",
+              "F67",
+              "F68"
+            ],
+            "dependency": null
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/ndui",
+      "name": "NDui",
+      "slug": "ndui",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/ndui",
+            "final_url": "https://www.curseforge.com/wow/addons/ndui",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "NDui - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 1,
+                "addon": "NDui"
+              }
+            ],
+            "author": "siweia",
+            "project_update": "Nov 8, 2026",
+            "project_total_downloads": "725,408",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "미확인",
+            "feature_summary": "오라 감시·프레임·이름표·채팅 필터·가방·정보 바를 함께 제공.",
+            "feature_location": "L173–195 / Intro, Main Features",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        },
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "NDui",
+            "kind": "integrated_ui_package",
+            "official_project_url": "https://www.curseforge.com/wow/addons/ndui",
+            "official_source_repo_url": "https://github.com/siweia/NDui",
+            "source_repo_status": "실제 공식 저장소 본문 열기",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/ndui",
+            "forever_status": "미확인(이 조사에서 Forever 배포 파일 목록 표기 확인 못함)",
+            "feature_ids": [
+              "F01",
+              "F02",
+              "F03",
+              "F04",
+              "F05",
+              "F06",
+              "F07",
+              "F08",
+              "F09",
+              "F10",
+              "F12",
+              "F13",
+              "F14",
+              "F15",
+              "F22",
+              "F23",
+              "F25",
+              "F30",
+              "F32",
+              "F33",
+              "F37",
+              "F54",
+              "F58",
+              "F65"
+            ],
+            "dependency": null
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/dominos",
+      "name": "Dominos",
+      "slug": "dominos",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/dominos",
+            "final_url": "https://www.curseforge.com/wow/addons/dominos",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "Dominos - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 2,
+                "addon": "Dominos"
+              }
+            ],
+            "author": "Tuller",
+            "project_update": "Nov 17, 2026",
+            "project_total_downloads": "23,126,451",
+            "forever_recent_file": "12.0.4 Latest release R Forever + 5 Nov 17, 2026",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "표기 확인",
+            "feature_summary": "이동 가능한 단축바에 배치·페이지 전환·표시 조건과 Masque 외관 설정을 제공.",
+            "feature_location": "L186–195 / Description",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        },
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "Dominos",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/dominos",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/dominos",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "12.0.4",
+            "feature_ids": [
+              "F02"
+            ],
+            "attempt_for_feature_ids": [],
+            "dependency": null,
+            "feature_summary": "행동단축바"
+          }
+        },
+        {
+          "kind": "existing_zip",
+          "data": {
+            "product": "Dominos",
+            "status": "success",
+            "relative_zip": "References/forever-addons/Dominos/Dominos-12.0.4.zip",
+            "file_page_url": "https://www.curseforge.com/wow/addons/dominos/files/9658153",
+            "file_list_url": "https://www.curseforge.com/wow/addons/dominos/files/all",
+            "file_id": 9658153,
+            "version": "12.0.4",
+            "file_date": "Nov 17, 2026",
+            "game_version": "1.60.1",
+            "flavor": "Forever",
+            "filename": "Dominos-12.0.4.zip",
+            "bytes": 388381,
+            "sha256": "2dbcf9857a91b772a42200369386fc17f875530ffd47984b555ecdb8e11bef1a",
+            "download_url": "https://edge.forgecdn.net/files/9658/153/Dominos-12.0.4.zip",
+            "final_download_url": "https://mediafilez.forgecdn.net/files/9658/153/Dominos-12.0.4.zip",
+            "download_observed_at": "2026-11-18T10:28:30.610793+09:00",
+            "latest_basis": "First visible date-ordered file listing row plus Latest release for Forever; exact file lists 1.60.1",
+            "file_page_location": "183-222",
+            "file_list_location": "339-363",
+            "evidence_file": "References/addon-survey/evidence/zip-intake-dominos.json",
+            "saved_copy_gate": "PASS: seven SOURCE fields, saved bytes and hash agree with download record, signature 504b0304",
+            "archive_internal_processing": "not performed"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/bartender4",
+      "name": "Bartender4",
+      "slug": "bartender4",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/bartender4",
+            "final_url": "https://www.curseforge.com/wow/addons/bartender4",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "Bartender4 - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 2,
+                "addon": "Bartender4"
+              }
+            ],
+            "author": "nevcairiel",
+            "project_update": "Nov 17, 2026",
+            "project_total_downloads": "82,976,564",
+            "forever_recent_file": "4.19.0 Latest release R Forever + 4 Nov 16, 2026",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "표기 확인",
+            "feature_summary": "행동·태세·소환수 등 관련 바의 크기·투명도·매크로 조건별 표시를 조정.",
+            "feature_location": "L182–210 / Features",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/button-forge",
+      "name": "Button Forge",
+      "slug": "button-forge",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/button-forge",
+            "final_url": "https://www.curseforge.com/wow/addons/button-forge",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "Button Forge - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 2,
+                "addon": "Button Forge"
+              }
+            ],
+            "author": "AlternativeTheory",
+            "project_update": "Aug 12, 2026",
+            "project_total_downloads": "999,090",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "미확인",
+            "feature_summary": "기본 바와 독립적인 추가 단축바를 행·열 단위로 생성.",
+            "feature_location": "L207–211 / Description",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/sexymap",
+      "name": "SexyMap",
+      "slug": "sexymap",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/sexymap",
+            "final_url": "https://www.curseforge.com/wow/addons/sexymap",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "SexyMap - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 3,
+                "addon": "SexyMap"
+              }
+            ],
+            "author": "Funkeh",
+            "project_update": "Nov 5, 2026",
+            "project_total_downloads": "37,528,935",
+            "forever_recent_file": "v12.1.7 Latest release R Forever + 7 Nov 5, 2026",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "표기 확인",
+            "feature_summary": "미니맵 이동·테두리·버튼 숨김·확대/축소와 추적용 HUD를 제공.",
+            "feature_location": "L202–215 / Description",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        },
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "SexyMap",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/sexymap",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/sexymap",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "v12.1.7",
+            "feature_ids": [
+              "F07"
+            ],
+            "attempt_for_feature_ids": [],
+            "dependency": null,
+            "feature_summary": "미니맵"
+          }
+        },
+        {
+          "kind": "existing_zip",
+          "data": {
+            "product": "SexyMap",
+            "status": "success",
+            "relative_zip": "References/forever-addons/SexyMap/SexyMap-v12.1.7.zip",
+            "file_page_url": "https://www.curseforge.com/wow/addons/sexymap/files/9457503",
+            "file_list_url": "https://www.curseforge.com/wow/addons/sexymap/files/all",
+            "file_id": 9457503,
+            "version": "v12.1.7",
+            "file_date": "Nov 5, 2026",
+            "game_version": "1.60.1",
+            "flavor": "Forever",
+            "filename": "SexyMap-v12.1.7.zip",
+            "bytes": 2924049,
+            "sha256": "1868eb714b8c9ea4efaa615109bfd457a0c3bb625f0b2a1f1befdadfc9143321",
+            "download_url": "https://edge.forgecdn.net/files/9457/503/SexyMap-v12.1.7.zip",
+            "final_download_url": "https://mediafilez.forgecdn.net/files/9457/503/SexyMap-v12.1.7.zip",
+            "download_observed_at": "2026-11-18T10:28:31.7248067+09:00",
+            "latest_basis": "First visible date-ordered file listing row plus Latest release for Forever; exact file lists 1.60.1",
+            "file_page_location": "181-226",
+            "file_list_location": "327-351",
+            "evidence_file": "References/addon-survey/evidence/zip-intake-sexymap.json",
+            "saved_copy_gate": "PASS: seven SOURCE fields, saved bytes and hash agree with download record, signature 504b0304",
+            "archive_internal_processing": "not performed"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/mapster",
+      "name": "Mapster",
+      "slug": "mapster",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/mapster",
+            "final_url": "https://www.curseforge.com/wow/addons/mapster",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "Mapster - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 3,
+                "addon": "Mapster"
+              }
+            ],
+            "author": "nevcairiel",
+            "project_update": "Nov 3, 2026",
+            "project_total_downloads": "10,926,154",
+            "forever_recent_file": "1.14.0 Latest release R Forever + 1 Oct 3, 2026",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "표기 확인",
+            "feature_summary": "세계지도 중심: 크기·투명도·좌표·미탐색 영역 표시를 조정하며 미니맵 대체 제품과 범위가 다름.",
+            "feature_location": "L185–207 / Description, Features",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        },
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "Mapster",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/mapster",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/mapster",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "1.14.0",
+            "feature_ids": [
+              "F20",
+              "F21"
+            ],
+            "attempt_for_feature_ids": [],
+            "dependency": null,
+            "feature_summary": "세계지도·좌표"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/basic-minimap",
+      "name": "BasicMinimap",
+      "slug": "basic-minimap",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/basic-minimap",
+            "final_url": "https://www.curseforge.com/wow/addons/basic-minimap",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "BasicMinimap - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 3,
+                "addon": "BasicMinimap"
+              }
+            ],
+            "author": "Funkeh",
+            "project_update": "Oct 22, 2026",
+            "project_total_downloads": "1,189,803",
+            "forever_recent_file": "v12.1.6 Latest release R Forever + 7 Oct 22, 2026",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "표기 확인",
+            "feature_summary": "미니맵 이동·크기·사각/원형·버튼 숨김과 테두리 색상을 조정.",
+            "feature_location": "L183–207 / Features",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "yesterday"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/prat-3-0",
+      "name": "Prat 3.0",
+      "slug": "prat-3-0",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/prat-3-0",
+            "final_url": "https://www.curseforge.com/wow/addons/prat-3-0",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "Prat 3.0 - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 4,
+                "addon": "Prat 3.0"
+              }
+            ],
+            "author": "QTartemis",
+            "project_update": "Nov 17, 2026",
+            "project_total_downloads": "35,585,874",
+            "forever_recent_file": "3.9.117 Latest release R Forever + 7 Nov 8, 2026",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "표기 확인",
+            "feature_summary": "메시지 필터와 채팅 화면 변경을 제공하는 채팅 확장.",
+            "feature_location": "L61 / 한 줄 소개; L243–245 / About",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        },
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "Prat 3.0",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/prat-3-0",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/prat-3-0",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "3.9.117",
+            "feature_ids": [
+              "F06",
+              "F67"
+            ],
+            "attempt_for_feature_ids": [],
+            "dependency": null,
+            "feature_summary": "채팅·말풍선 글꼴"
+          }
+        },
+        {
+          "kind": "existing_zip",
+          "data": {
+            "product": "Prat-3.0",
+            "status": "success",
+            "relative_zip": "References/forever-addons/Prat-3.0/Prat-3.0-3.9.117.zip",
+            "file_page_url": "https://www.curseforge.com/wow/addons/prat-3-0/files/9509040",
+            "file_list_url": "https://www.curseforge.com/wow/addons/prat-3-0/files/all",
+            "file_id": 9509040,
+            "version": "3.9.117",
+            "file_date": "Nov 8, 2026",
+            "game_version": "1.60.1",
+            "flavor": "Forever",
+            "filename": "Prat-3.0-3.9.117.zip",
+            "bytes": 1547917,
+            "sha256": "d72baef9c99bb1583b269abd85088bcb957d9a0d8ca57c323144442875084db1",
+            "download_url": "https://edge.forgecdn.net/files/9509/40/Prat-3.0-3.9.117.zip",
+            "final_download_url": "https://mediafilez.forgecdn.net/files/9509/40/Prat-3.0-3.9.117.zip",
+            "download_observed_at": "2026-11-18T10:30:28.8948532+09:00",
+            "latest_basis": "First visible date-ordered file listing row plus Latest release for Forever; exact file lists 1.60.1",
+            "file_page_location": "183-224",
+            "file_list_location": "292-344",
+            "evidence_file": "References/addon-survey/evidence/zip-intake-prat-3-0.json",
+            "saved_copy_gate": "PASS: seven SOURCE fields, saved bytes and hash agree with download record, signature 504b0304",
+            "archive_internal_processing": "not performed"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/chattynator",
+      "name": "Chattynator",
+      "slug": "chattynator",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/chattynator",
+            "final_url": "https://www.curseforge.com/wow/addons/chattynator",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "Chattynator (Chat) - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 4,
+                "addon": "Chattynator"
+              }
+            ],
+            "author": "plusmouse",
+            "project_update": "Nov 17, 2026",
+            "project_total_downloads": "2,906,250",
+            "forever_recent_file": "237 Latest release R Forever + 5 Nov 16, 2026",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "표기 확인",
+            "feature_summary": "채팅 프레임을 교체하며 테마·위치/크기·타임스탬프와 세션 간 메시지 이력을 제공.",
+            "feature_location": "L201–213 / Description",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        },
+        {
+          "kind": "existing_zip",
+          "data": {
+            "product": "Chattynator",
+            "status": "success",
+            "relative_zip": "References/forever-addons/Chattynator/Chattynator-237.zip",
+            "file_page_url": "https://www.curseforge.com/wow/addons/chattynator/files/9648836",
+            "file_list_url": "https://www.curseforge.com/wow/addons/chattynator/files/all",
+            "file_id": 9648836,
+            "version": "237",
+            "file_date": "Nov 16, 2026",
+            "game_version": "1.60.1",
+            "flavor": "Forever",
+            "filename": "Chattynator-237.zip",
+            "bytes": 159892,
+            "sha256": "7bf89cbb0cb221a0313ffd2bd3abc761b9c6a11b01bc993216ee8b23b63931c9",
+            "download_url": "https://edge.forgecdn.net/files/9648/836/Chattynator-237.zip",
+            "final_download_url": "https://mediafilez.forgecdn.net/files/9648/836/Chattynator-237.zip",
+            "download_observed_at": "2026-11-18T10:31:19.9496316+09:00",
+            "latest_basis": "First visible date-ordered file listing row plus Latest release for Forever; exact file lists 1.60.1",
+            "file_page_location": "179-218",
+            "file_list_location": "224-275",
+            "evidence_file": "References/addon-survey/evidence/zip-intake-chattynator.json",
+            "saved_copy_gate": "PASS: seven SOURCE fields, saved bytes and hash agree with download record, signature 504b0304",
+            "archive_internal_processing": "not performed"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/glass-forever",
+      "name": "Glass Forever",
+      "slug": "glass-forever",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/glass-forever",
+            "final_url": "https://www.curseforge.com/wow/addons/glass-forever",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "Glass Forever - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 4,
+                "addon": "Glass Forever"
+              }
+            ],
+            "author": "Rethz",
+            "project_update": "Nov 16, 2026",
+            "project_total_downloads": "4,901",
+            "forever_recent_file": "Glass Forever 1.1.6 Latest release R Forever Nov 16, 2026",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "표기 확인",
+            "feature_summary": "나타났다 사라지는 간결한 채팅 화면; 설정 profile을 텍스트로 내보내고 가져오기 가능.",
+            "feature_location": "L61; L201–202 / Options, Profiles",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        },
+        {
+          "kind": "existing_zip",
+          "data": {
+            "product": "Glass Forever",
+            "status": "success",
+            "relative_zip": "References/forever-addons/Glass Forever/Glass-Forever-1.1.6.zip",
+            "file_page_url": "https://www.curseforge.com/wow/addons/glass-forever/files/9653501",
+            "file_list_url": "https://www.curseforge.com/wow/addons/glass-forever/files/all",
+            "file_id": 9653501,
+            "version": "1.1.6",
+            "file_date": "Nov 16, 2026",
+            "game_version": "1.60.1",
+            "flavor": "Forever",
+            "filename": "Glass-Forever-1.1.6.zip",
+            "bytes": 443386,
+            "sha256": "85cd061b217ae00219a914acb62294ba12b5c5df4fb42017f889d3bd08fb5e2b",
+            "download_url": "https://edge.forgecdn.net/files/9653/501/Glass-Forever-1.1.6.zip",
+            "final_download_url": "https://mediafilez.forgecdn.net/files/9653/501/Glass-Forever-1.1.6.zip",
+            "download_observed_at": "2026-11-18T10:31:21.5777621+09:00",
+            "latest_basis": "First visible date-ordered file listing row plus Latest release for Forever; exact file lists 1.60.1",
+            "file_page_location": "162-195",
+            "file_list_location": "179-230",
+            "evidence_file": "References/addon-survey/evidence/zip-intake-glass-forever.json",
+            "saved_copy_gate": "PASS: seven SOURCE fields, saved bytes and hash agree with download record, signature 504b0304",
+            "archive_internal_processing": "not performed"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/basic-chat-mods",
+      "name": "BasicChatMods",
+      "slug": "basic-chat-mods",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/basic-chat-mods",
+            "final_url": "https://www.curseforge.com/wow/addons/basic-chat-mods",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "BasicChatMods - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 4,
+                "addon": "BasicChatMods"
+              }
+            ],
+            "author": "Funkeh",
+            "project_update": "Oct 22, 2026",
+            "project_total_downloads": "780,638",
+            "forever_recent_file": "v12.1.1 Latest release R Forever + 7 Oct 22, 2026",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "표기 확인",
+            "feature_summary": "채팅 창을 화면 가장자리까지 이동하고 모듈을 선택적으로 켜거나 끄는 구성.",
+            "feature_location": "L191–204 / Description",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "3 days ago"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/forever-unit-frames",
+      "name": "Forever Unit Frames",
+      "slug": "forever-unit-frames",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/forever-unit-frames",
+            "final_url": "https://www.curseforge.com/wow/addons/forever-unit-frames",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "Forever Unit Frames - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 5,
+                "addon": "Forever Unit Frames"
+              }
+            ],
+            "author": "StephanTxC",
+            "project_update": "Nov 17, 2026",
+            "project_total_downloads": "50,940",
+            "forever_recent_file": "Forever Unit Frames 0.65.2 Latest release R Forever Nov 17, 2026",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "표기 확인",
+            "feature_summary": "플레이어·대상·주시·소환수·파티·공격대 프레임에 오라·위협·거리·해제 표시를 제공.",
+            "feature_location": "L61 / 프로젝트 소개",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        },
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "Forever Unit Frames",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/forever-unit-frames",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/forever-unit-frames",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "0.65.2",
+            "feature_ids": [
+              "F03",
+              "F29",
+              "F39",
+              "F56",
+              "F57",
+              "F58"
+            ],
+            "attempt_for_feature_ids": [
+              "F64"
+            ],
+            "dependency": null,
+            "feature_summary": "유닛·공격대 프레임; 설정 마법사·지속 치유·흡수/치유·거리 흐림"
+          }
+        },
+        {
+          "kind": "existing_zip",
+          "data": {
+            "product": "Forever Unit Frames",
+            "status": "success",
+            "relative_zip": "References/forever-addons/Forever Unit Frames/ForeverUnitFrames-0.65.2.zip",
+            "file_page_url": "https://www.curseforge.com/wow/addons/forever-unit-frames/files/9673338",
+            "file_list_url": "https://www.curseforge.com/wow/addons/forever-unit-frames/files/all",
+            "file_id": 9673338,
+            "version": "0.65.2",
+            "file_date": "Nov 17, 2026",
+            "game_version": "1.60.1",
+            "flavor": "Forever",
+            "filename": "ForeverUnitFrames-0.65.2.zip",
+            "bytes": 1515052,
+            "sha256": "cc50d16b5d926240a4dc48e7e6f9e4ee7fbb5107c14ebb734a685542e50e1a80",
+            "download_url": "https://edge.forgecdn.net/files/9673/338/ForeverUnitFrames-0.65.2.zip",
+            "final_download_url": "https://mediafilez.forgecdn.net/files/9673/338/ForeverUnitFrames-0.65.2.zip",
+            "download_observed_at": "2026-11-18T10:30:27.1035322+09:00",
+            "latest_basis": "First visible date-ordered file listing row plus Latest release for Forever; exact file lists 1.60.1",
+            "file_page_location": "163-196",
+            "file_list_location": "179-244",
+            "evidence_file": "References/addon-survey/evidence/zip-intake-forever-unit-frames.json",
+            "saved_copy_gate": "PASS: seven SOURCE fields, saved bytes and hash agree with download record, signature 504b0304",
+            "archive_internal_processing": "not performed",
+            "access_reproduction": {
+              "final": "https://www.curseforge.com/wow/addons/forever-unit-frames/files/9673338",
+              "quote": "File name ForeverUnitFrames-0.65.2.zip; File ID 9673338; Supported game versions 1.60.1",
+              "steps": [
+                "Open https://www.curseforge.com/wow/addons/forever-unit-frames/files, redirected files/all",
+                "Initial snapshot linked0.63.0 to https://www.curseforge.com/wow/addons/forever-unit-frames/files/9643514",
+                "Reopen older exact at lineno135; updated header Latest release0.65.2 link (46) led to https://www.curseforge.com/wow/addons/forever-unit-frames/files/9673338",
+                "Reopen exact at lineno160; then reopen /files at lineno200, redirected files/all with0.65.2 first row"
+              ],
+              "tool": "mcp__codex_apps__search_service_web_run"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/shadowed-unit-frames",
+      "name": "Shadowed Unit Frames",
+      "slug": "shadowed-unit-frames",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/shadowed-unit-frames",
+            "final_url": "https://www.curseforge.com/wow/addons/shadowed-unit-frames",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "Shadowed Unit Frames - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 5,
+                "addon": "Shadowed Unit Frames"
+              }
+            ],
+            "author": "Shadowed103",
+            "project_update": "Jan 18, 2026",
+            "project_total_downloads": "19,506,697",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "미확인",
+            "feature_summary": "여러 유닛을 한꺼번에 설정하며 바 높이·순서와 프레임 높이를 조정.",
+            "feature_location": "L199–202 / Description",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/pitbull-unit-frames-4-0",
+      "name": "PitBull Unit Frames 4.0",
+      "slug": "pitbull-unit-frames-4-0",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/pitbull-unit-frames-4-0",
+            "final_url": "https://www.curseforge.com/wow/addons/pitbull-unit-frames-4-0",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "PitBull Unit Frames 4.0 - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 5,
+                "addon": "PitBull Unit Frames 4.0"
+              }
+            ],
+            "author": "ckknight",
+            "project_update": "Jun 14, 2026",
+            "project_total_downloads": "5,678,362",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "미확인",
+            "feature_summary": "유닛 프레임 패키지; 공식 설명에서 레이아웃 제작 및 파티·공격대 프레임 안내를 연결.",
+            "feature_location": "L178–194 / Getting Started",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "2 days ago"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/quartz",
+      "name": "Quartz",
+      "slug": "quartz",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/quartz",
+            "final_url": "https://www.curseforge.com/wow/addons/quartz",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "Quartz - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 6,
+                "addon": "Quartz"
+              }
+            ],
+            "author": "nevcairiel",
+            "project_update": "Nov 14, 2026",
+            "project_total_downloads": "32,890,535",
+            "forever_recent_file": "3.8.0 Latest release R Forever + 4 Nov 13, 2026",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "표기 확인",
+            "feature_summary": "모듈형 시전바 애드온.",
+            "feature_location": "L61 / 프로젝트 소개",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        },
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "Quartz",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/quartz",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/quartz",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "3.8.0",
+            "feature_ids": [
+              "F08"
+            ],
+            "attempt_for_feature_ids": [
+              "F48"
+            ],
+            "dependency": null,
+            "feature_summary": "시전바"
+          }
+        },
+        {
+          "kind": "existing_zip",
+          "data": {
+            "product": "Quartz",
+            "status": "success",
+            "relative_zip": "References/forever-addons/Quartz/Quartz-3.8.0.zip",
+            "file_page_url": "https://www.curseforge.com/wow/addons/quartz/files/9593490",
+            "file_list_url": "https://www.curseforge.com/wow/addons/quartz/files/all",
+            "file_id": 9593490,
+            "version": "3.8.0",
+            "file_date": "Nov 13, 2026",
+            "game_version": "1.60.1",
+            "flavor": "Forever",
+            "filename": "Quartz-3.8.0.zip",
+            "bytes": 387602,
+            "sha256": "2a76cdda6b53e7eb26472c0b8b6bf8f50c02388f8f515e6746c5e14657d5ed70",
+            "download_url": "https://edge.forgecdn.net/files/9593/490/Quartz-3.8.0.zip",
+            "final_download_url": "https://mediafilez.forgecdn.net/files/9593/490/Quartz-3.8.0.zip",
+            "download_observed_at": "2026-11-18T10:28:33.311976+09:00",
+            "latest_basis": "First visible date-ordered file listing row plus Latest release for Forever; exact file lists 1.60.1",
+            "file_page_location": "184-221",
+            "file_list_location": "313-337",
+            "evidence_file": "References/addon-survey/evidence/zip-intake-quartz.json",
+            "saved_copy_gate": "PASS: seven SOURCE fields, saved bytes and hash agree with download record, signature 504b0304",
+            "archive_internal_processing": "not performed",
+            "access_reproduction": {
+              "final": "https://www.curseforge.com/wow/addons/quartz/files/9593490",
+              "quote": "File name Quartz-3.8.0.zip; File ID 9593490; Supported game versions 1.60.1",
+              "steps": [
+                "Open https://www.curseforge.com/wow/addons/quartz/files/all",
+                "Click3.8.0 Latest release link (55) to https://www.curseforge.com/wow/addons/quartz/files/9593490",
+                "Reopen exact at lineno180; metadata lines184-221",
+                "Open files/all at lineno300 to observe3.8.0 first row followed3.7.17"
+              ],
+              "tool": "mcp__codex_apps__search_service_web_run"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/gnosis",
+      "name": "Gnosis (Castbars and Timers)",
+      "slug": "gnosis",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/gnosis",
+            "final_url": "https://www.curseforge.com/wow/addons/gnosis",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "Gnosis (Castbars and Timers) - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 6,
+                "addon": "Gnosis (Castbars and Timers)"
+              }
+            ],
+            "author": "elchefe12345",
+            "project_update": "Nov 8, 2026",
+            "project_total_downloads": "2,370,508",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "미확인",
+            "feature_summary": "세밀한 설정이 가능한 시전바 및 단일 타이머 애드온.",
+            "feature_location": "L61 / 프로젝트 소개",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/classiccastbars",
+      "name": "Classic Castbars",
+      "slug": "classiccastbars",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/classiccastbars",
+            "final_url": "https://www.curseforge.com/wow/addons/classiccastbars",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "Classic Castbars - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 6,
+                "addon": "Classic Castbars"
+              }
+            ],
+            "author": "Wardz__",
+            "project_update": "Jul 11, 2026",
+            "project_total_downloads": "22,924,090",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "미확인",
+            "feature_summary": "적 시전바를 조정하는 애드온.",
+            "feature_location": "L61 / 프로젝트 소개",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/reflux",
+      "name": "Reflux",
+      "slug": "reflux",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/reflux",
+            "final_url": "https://www.curseforge.com/wow/addons/reflux",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "Reflux - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 7,
+                "addon": "Reflux"
+              }
+            ],
+            "author": "moonfann",
+            "project_update": "Oct 20, 2014",
+            "project_total_downloads": "359,769",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "미확인",
+            "feature_summary": "여러 애드온의 AceDB profile을 함께 전환하며, 그 밖 애드온의 profile 모방도 사용자 설정으로 제공.",
+            "feature_location": "L61; L159 / 프로젝트 소개, 본문",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        },
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "Reflux",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/reflux",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/reflux",
+            "forever_status": "미확인(이번에 본 파일 목록에서 Forever 항목 확인 못함)",
+            "observed_forever_file": null,
+            "feature_ids": [
+              "F27"
+            ],
+            "attempt_for_feature_ids": [
+              "F68"
+            ],
+            "dependency": null,
+            "feature_summary": "profile 저장·전환"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/myslot",
+      "name": "Myslot",
+      "slug": "myslot",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/myslot",
+            "final_url": "https://www.curseforge.com/wow/addons/myslot",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "Myslot - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 7,
+                "addon": "Myslot"
+              }
+            ],
+            "author": "oishii1992",
+            "project_update": "Nov 14, 2026",
+            "project_total_downloads": "5,433,479",
+            "forever_recent_file": "v6.3.1 Latest release R Forever + 7 Nov 14, 2026",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "표기 확인",
+            "feature_summary": "단축바·매크로·키 설정을 텍스트로 공유; 가져오기 전 자동 백업과 선택 적용을 제공.",
+            "feature_location": "L182–204 / Features",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        },
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "Myslot",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/myslot",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/myslot",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "v6.3.1",
+            "feature_ids": [
+              "F28"
+            ],
+            "attempt_for_feature_ids": [],
+            "feature_summary": "막대·매크로·키 바인딩을 문자열로 가져오기/내보내기",
+            "dependency": null
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/blizzmove",
+      "name": "BlizzMove",
+      "slug": "blizzmove",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/blizzmove",
+            "final_url": "https://www.curseforge.com/wow/addons/blizzmove",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "BlizzMove - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 8,
+                "addon": "BlizzMove"
+              }
+            ],
+            "author": "kiatra_",
+            "project_update": "Nov 7, 2026",
+            "project_total_downloads": "12,834,755",
+            "forever_recent_file": "v3.8.8 Latest release R Forever + 6 Nov 7, 2026",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "표기 확인",
+            "feature_summary": "기본 창 제목을 끌어 이동하고 Ctrl+휠로 크기를 조정; 하위 창 분리도 제공.",
+            "feature_location": "L184–200 / Description",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        },
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "BlizzMove",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/blizzmove",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/blizzmove",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "v3.8.8",
+            "feature_ids": [
+              "F26",
+              "F31"
+            ],
+            "attempt_for_feature_ids": [],
+            "dependency": null,
+            "feature_summary": "기본 창 이동·크기"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/move-anything",
+      "name": "MoveAnything",
+      "slug": "move-anything",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/move-anything",
+            "final_url": "https://www.curseforge.com/wow/addons/move-anything",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "MoveAnything - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 8,
+                "addon": "MoveAnything"
+              }
+            ],
+            "author": "Resike",
+            "project_update": "Apr 30, 2022",
+            "project_total_downloads": "18,532,402",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "미확인",
+            "feature_summary": "화면 요소의 이동·크기·숨김·투명도와 프레임 그룹 등을 편집.",
+            "feature_location": "L188–201 / Description",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/edit-mode-expanded",
+      "name": "Edit Mode Expanded",
+      "slug": "edit-mode-expanded",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/edit-mode-expanded",
+            "final_url": "https://www.curseforge.com/wow/addons/edit-mode-expanded",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "Edit Mode Expanded - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 8,
+                "addon": "Edit Mode Expanded"
+              }
+            ],
+            "author": "Teelo",
+            "project_update": "Nov 14, 2026",
+            "project_total_downloads": "1,604,006",
+            "forever_recent_file": "12.1-026 Latest release R Forever + 3 Nov 14, 2026",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "표기 확인",
+            "feature_summary": "기본 Edit Mode에서 다룰 수 있는 프레임 범위를 확장.",
+            "feature_location": "L61 / 프로젝트 소개",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "yesterday"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/hekili-forever",
+      "name": "Hekili Forever",
+      "slug": "hekili-forever",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/hekili-forever",
+            "final_url": "https://www.curseforge.com/wow/addons/hekili-forever",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "Hekili Forever - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 9,
+                "addon": "Hekili Forever"
+              }
+            ],
+            "author": "defzach",
+            "project_update": "Nov 17, 2026",
+            "project_total_downloads": "57,804",
+            "forever_recent_file": "v0.8.6 Latest release R Forever Nov 17, 2026",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "표기 확인",
+            "feature_summary": "공격·방어 전문화의 우선순위/회전 보조; 아이콘 대기열과 Timeline 표시를 제공.",
+            "feature_location": "L61; L180–195 / Displays, Customization",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        },
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "Hekili Forever",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/hekili-forever",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/hekili-forever",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "v0.8.6",
+            "feature_ids": [
+              "F34"
+            ],
+            "attempt_for_feature_ids": [],
+            "dependency": null,
+            "feature_summary": "다음 능력 추천"
+          }
+        },
+        {
+          "kind": "existing_zip",
+          "data": {
+            "product": "Hekili",
+            "status": "success",
+            "relative_zip": "References/forever-addons/Hekili/Hekili-v0.8.6-forever.zip",
+            "file_page_url": "https://www.curseforge.com/wow/addons/hekili-forever/files/9665215",
+            "file_list_url": "https://www.curseforge.com/wow/addons/hekili-forever/files/all",
+            "file_id": 9665215,
+            "version": "v0.8.6",
+            "file_date": "Nov 17, 2026",
+            "game_version": "1.60.1",
+            "flavor": "Forever",
+            "filename": "Hekili-v0.8.6-forever.zip",
+            "bytes": 1381542,
+            "sha256": "8063fd78c988af76c6a74653c21ff9f268546c44320922688ea2f7dd3d4c45e3",
+            "download_url": "https://edge.forgecdn.net/files/9665/215/Hekili-v0.8.6-forever.zip",
+            "final_download_url": "https://mediafilez.forgecdn.net/files/9665/215/Hekili-v0.8.6-forever.zip",
+            "download_observed_at": "2026-11-18T10:30:25.25121+09:00",
+            "latest_basis": "First visible date-ordered file listing row plus Latest release for Forever; exact file lists 1.60.1",
+            "file_page_location": "164-197",
+            "file_list_location": "180-231",
+            "evidence_file": "References/addon-survey/evidence/zip-intake-hekili-forever.json",
+            "saved_copy_gate": "PASS: seven SOURCE fields, saved bytes and hash agree with download record, signature 504b0304",
+            "archive_internal_processing": "not performed",
+            "access_reproduction": {
+              "final": "https://www.curseforge.com/wow/addons/hekili-forever/files/9665215",
+              "quote": "File name Hekili-v0.8.6-forever.zip; File ID 9665215; Supported game versions 1.60.1",
+              "steps": [
+                "Open https://www.curseforge.com/wow/addons/hekili-forever/files/all",
+                "Click v0.8.5 latest link in initial older snapshot to https://www.curseforge.com/wow/addons/hekili-forever/files/9640496",
+                "Its updated header Latest release v0.8.6 link (47) led to https://www.curseforge.com/wow/addons/hekili-forever/files/9665215",
+                "Reopen exact file at lineno165; reopen files/all at lineno170 to observe v0.8.6 first row"
+              ],
+              "tool": "mcp__codex_apps__search_service_web_run"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/weakauras-2",
+      "name": "WeakAuras",
+      "slug": "weakauras-2",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/weakauras-2",
+            "final_url": "https://www.curseforge.com/wow/addons/weakauras-2",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "WeakAuras - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 9,
+                "addon": "WeakAuras"
+              }
+            ],
+            "author": "Stanzilla",
+            "project_update": "Nov 16, 2026",
+            "project_total_downloads": "255,763,730",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "미확인",
+            "feature_summary": "오라·자원·재사용 대기시간·전투 이벤트 등 조건에 따라 사용자 그래픽·소리·텍스트 표시를 구성.",
+            "feature_location": "L208–240 / Description, Features",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/tellmewhen",
+      "name": "TellMeWhen",
+      "slug": "tellmewhen",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/tellmewhen",
+            "final_url": "https://www.curseforge.com/wow/addons/tellmewhen",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "TellMeWhen - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 9,
+                "addon": "TellMeWhen"
+              }
+            ],
+            "author": "Cybeloras",
+            "project_update": "Nov 12, 2026",
+            "project_total_downloads": "27,685,883",
+            "forever_recent_file": "12.1.5 Latest release R Forever + 4 Oct 12, 2026",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "표기 확인",
+            "feature_summary": "재사용 대기시간·강화 효과 등 전투 정보에 시각·청각·텍스트 알림을 제공.",
+            "feature_location": "L61 / 프로젝트 소개",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        },
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "TellMeWhen",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/tellmewhen",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/tellmewhen",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "12.1.5",
+            "feature_ids": [
+              "F09",
+              "F10",
+              "F19",
+              "F33"
+            ],
+            "attempt_for_feature_ids": [],
+            "dependency": null,
+            "feature_summary": "오라·cooldown 추적·알림"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/omni-cc",
+      "name": "OmniCC",
+      "slug": "omni-cc",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/omni-cc",
+            "final_url": "https://www.curseforge.com/wow/addons/omni-cc",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "OmniCC - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 10,
+                "addon": "OmniCC"
+              }
+            ],
+            "author": "Tuller",
+            "project_update": "Dec 14, 2025",
+            "project_total_downloads": "65,937,859",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "미확인",
+            "feature_summary": "기술·아이템의 재사용 대기시간을 아이콘 위 숫자 텍스트로 표시.",
+            "feature_location": "L205–219 / Overview",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        },
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "OmniCC",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/omni-cc",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/omni-cc",
+            "forever_status": "미확인(이번에 본 파일 목록에서 Forever 항목 확인 못함)",
+            "observed_forever_file": null,
+            "feature_ids": [
+              "F18"
+            ],
+            "attempt_for_feature_ids": [],
+            "dependency": null,
+            "feature_summary": "cooldown 숫자; 공식 설명은 Classic 전용"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/omnicd",
+      "name": "OmniCD",
+      "slug": "omnicd",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/omnicd",
+            "final_url": "https://www.curseforge.com/wow/addons/omnicd",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "OmniCD - Party Cooldown Tracker - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 10,
+                "addon": "OmniCD"
+              }
+            ],
+            "author": "Treebonker",
+            "project_update": "Aug 28, 2026",
+            "project_total_downloads": "34,009,222",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "미확인",
+            "feature_summary": "파티원의 기술 재사용 대기시간과 차단 바를 추적; 개인 아이콘 숫자 표시와 범위가 다름.",
+            "feature_location": "L180–191 / Key Features",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/grid2",
+      "name": "Grid2",
+      "slug": "grid2",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/grid2",
+            "final_url": "https://www.curseforge.com/wow/addons/grid2",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "Grid2 - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 11,
+                "addon": "Grid2"
+              }
+            ],
+            "author": "michaelsp",
+            "project_update": "Nov 15, 2026",
+            "project_total_downloads": "15,619,119",
+            "forever_recent_file": "4.1.13-forever Latest release R Forever Nov 15, 2026",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "표기 확인",
+            "feature_summary": "파티·공격대 프레임을 격자 형태로 제공하는 모듈형 애드온.",
+            "feature_location": "L61 / 프로젝트 소개",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        },
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "Grid2",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/grid2",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/grid2",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "4.1.13-forever",
+            "feature_ids": [
+              "F04",
+              "F05"
+            ],
+            "attempt_for_feature_ids": [],
+            "dependency": null,
+            "feature_summary": "파티·공격대 프레임"
+          }
+        },
+        {
+          "kind": "existing_zip",
+          "data": {
+            "product": "Grid2",
+            "status": "success",
+            "relative_zip": "References/forever-addons/Grid2/Grid2-4.1.13-forever.zip",
+            "file_page_url": "https://www.curseforge.com/wow/addons/grid2/files/9637467",
+            "file_list_url": "https://www.curseforge.com/wow/addons/grid2/files/all",
+            "file_id": 9637467,
+            "version": "4.1.13-forever",
+            "file_date": "Nov 15, 2026",
+            "game_version": "1.60.1",
+            "flavor": "Forever",
+            "filename": "Grid2-4.1.13-forever.zip",
+            "bytes": 846552,
+            "sha256": "f198bc3ce2d02e023f81052074a2e9aa4ba41819931bd302ff7429dac9515393",
+            "download_url": "https://edge.forgecdn.net/files/9637/467/Grid2-4.1.13-forever.zip",
+            "final_download_url": "https://mediafilez.forgecdn.net/files/9637/467/Grid2-4.1.13-forever.zip",
+            "download_observed_at": "2026-11-18T10:30:30.6138476+09:00",
+            "latest_basis": "First visible date-ordered file listing row plus Latest release for Forever; exact file lists 1.60.1",
+            "file_page_location": "182-215",
+            "file_list_location": "302-354",
+            "evidence_file": "References/addon-survey/evidence/zip-intake-grid2.json",
+            "saved_copy_gate": "PASS: seven SOURCE fields, saved bytes and hash agree with download record, signature 504b0304",
+            "archive_internal_processing": "not performed"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/vuhdo",
+      "name": "VuhDo",
+      "slug": "vuhdo",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/vuhdo",
+            "final_url": "https://www.curseforge.com/wow/addons/vuhdo",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "VuhDo - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 11,
+                "addon": "VuhDo"
+              }
+            ],
+            "author": "humfras",
+            "project_update": "Nov 17, 2026",
+            "project_total_downloads": "30,352,311",
+            "forever_recent_file": "v3.221 Latest release R Forever + 1 Nov 15, 2026",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "표기 확인",
+            "feature_summary": "클릭 치유·강화/약화 효과 관리·주 탱커 관리를 제공하는 공격대 프레임.",
+            "feature_location": "L61 / 프로젝트 소개",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/cell",
+      "name": "Cell",
+      "slug": "cell",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/cell",
+            "final_url": "https://www.curseforge.com/wow/addons/cell",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "Cell - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 11,
+                "addon": "Cell"
+              }
+            ],
+            "author": "enderneko",
+            "project_update": "Aug 9, 2026",
+            "project_total_downloads": "4,512,024",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "미확인",
+            "feature_summary": "파티·공격대 등의 레이아웃 전환과 클릭 시전·다양한 상태 표시기를 제공.",
+            "feature_location": "L205–222 / Features",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/cooldowncount",
+      "name": "CooldownCount",
+      "slug": "cooldowncount",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/cooldowncount",
+            "final_url": "https://www.curseforge.com/wow/addons/cooldowncount",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "CooldownCount - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 10,
+                "addon": "CooldownCount"
+              }
+            ],
+            "author": "dakikifr",
+            "project_update": "Mar 27, 2026",
+            "project_total_downloads": "1,382,430",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "미확인",
+            "feature_summary": "기술·아이템 아이콘의 재사용 대기시간 숫자 표시를 제공.",
+            "feature_location": "L63 / 프로젝트 소개",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "last week"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/profilemanager",
+      "name": "ProfileManager",
+      "slug": "profilemanager",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/profilemanager",
+            "final_url": "https://www.curseforge.com/wow/addons/profilemanager",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "ProfileManager - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 7,
+                "addon": "ProfileManager"
+              }
+            ],
+            "author": "Lanaiba",
+            "project_update": "Nov 15, 2026",
+            "project_total_downloads": "10,748",
+            "forever_recent_file": "ProfileManager_v4.0.zip Latest release R Forever + 1 Nov 15, 2026",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "표기 확인",
+            "feature_summary": "지원 애드온 profile·Edit Mode 배치·키 설정을 한 창에서 저장·전환하고 preset을 문자열로 공유.",
+            "feature_location": "L195–215 / Description, Presets",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        },
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "ProfileManager",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/profilemanager",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/profilemanager",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "ProfileManager_v4.0.zip",
+            "feature_ids": [
+              "F27",
+              "F28"
+            ],
+            "attempt_for_feature_ids": [],
+            "feature_summary": "여러 지원 애드온 설정 preset 저장·문자열 공유",
+            "dependency": null
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/details",
+      "name": "Details! Damage Meter",
+      "slug": "details",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/details",
+            "final_url": "https://www.curseforge.com/wow/addons/details",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "Details! Damage Meter - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 12,
+                "addon": "Details! Damage Meter"
+              }
+            ],
+            "author": "Terciob",
+            "project_update": "Nov 18, 2026",
+            "project_total_downloads": "376,870,604",
+            "forever_recent_file": "Details.20261109.15410.172 Latest release R Forever + 7 Nov 9, 2026",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "표기 확인",
+            "feature_summary": "피해·치유 전투 분석에 사용자 표시와 전투 요약·차트·사망 기록 등의 도구를 제공.",
+            "feature_location": "L61; L215–228 / Extra Tools, Plugins",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        },
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "Details! Damage Meter",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/details",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/details",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "Details.20261109.15410.172",
+            "feature_ids": [
+              "F35",
+              "F58"
+            ],
+            "attempt_for_feature_ids": [],
+            "dependency": null,
+            "feature_summary": "데미지 미터·공격대 도구"
+          }
+        },
+        {
+          "kind": "existing_zip",
+          "data": {
+            "product": "Details",
+            "status": "success",
+            "relative_zip": "References/forever-addons/Details/Details-Details.20261109.15410.172.zip",
+            "file_page_url": "https://www.curseforge.com/wow/addons/details/files/9521145",
+            "file_list_url": "https://www.curseforge.com/wow/addons/details/files/all",
+            "file_id": 9521145,
+            "version": "Details.20261109.15410.172",
+            "file_date": "Nov 9, 2026",
+            "game_version": "1.60.1",
+            "flavor": "Forever",
+            "filename": "Details-Details.20261109.15410.172.zip",
+            "bytes": 7224696,
+            "sha256": "5002bdd5c3e92dd59bffa3ebdfc867f980b09ed629c51dab056fb5442f92ad41",
+            "download_url": "https://edge.forgecdn.net/files/9521/145/Details-Details.20261109.15410.172.zip",
+            "final_download_url": "https://mediafilez.forgecdn.net/files/9521/145/Details-Details.20261109.15410.172.zip",
+            "download_observed_at": "2026-11-18T10:30:31.5372957+09:00",
+            "latest_basis": "First visible date-ordered file listing row plus Latest release for Forever; exact file lists 1.60.1",
+            "file_page_location": "183-223",
+            "file_list_location": "292-344",
+            "evidence_file": "References/addon-survey/evidence/zip-intake-details.json",
+            "saved_copy_gate": "PASS: seven SOURCE fields, saved bytes and hash agree with download record, signature 504b0304",
+            "archive_internal_processing": "not performed"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/recount",
+      "name": "Recount",
+      "slug": "recount",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/recount",
+            "final_url": "https://www.curseforge.com/wow/addons/recount",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "Recount - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 12,
+                "addon": "Recount"
+              }
+            ],
+            "author": "Resike",
+            "project_update": "Jul 10, 2025",
+            "project_total_downloads": "121,704,573",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "미확인",
+            "feature_summary": "피해·치유 기록을 그래프로 표시하는 전투 미터.",
+            "feature_location": "L61; L209–218 / Description",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/skada",
+      "name": "Skada Damage Meter",
+      "slug": "skada",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/skada",
+            "final_url": "https://www.curseforge.com/wow/addons/skada",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "Skada Damage Meter - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 12,
+                "addon": "Skada Damage Meter"
+              }
+            ],
+            "author": "zarnivoop",
+            "project_update": "Nov 15, 2026",
+            "project_total_downloads": "39,882,640",
+            "forever_recent_file": "v2.6.7 Latest release R Forever + 1 Nov 15, 2026",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "표기 확인",
+            "feature_summary": "전투 구간별 통계와 설정 가능한 여러 창을 제공하는 모듈형 미터.",
+            "feature_location": "L203–207; L229–235 / Description, Multiple Windows",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/foreverthreat-threat-meter-for-wow-forever",
+      "name": "ForeverThreat",
+      "slug": "foreverthreat-threat-meter-for-wow-forever",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/foreverthreat-threat-meter-for-wow-forever",
+            "final_url": "https://www.curseforge.com/wow/addons/foreverthreat-threat-meter-for-wow-forever",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "ForeverThreat - Threat Meter for WoW Forever - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 13,
+                "addon": "ForeverThreat"
+              }
+            ],
+            "author": "Loyftwa",
+            "project_update": "Nov 17, 2026",
+            "project_total_downloads": "239,736",
+            "forever_recent_file": "ForeverThreat-1.12.3 Latest release R Forever Nov 17, 2026",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "표기 확인",
+            "feature_summary": "대상/주시의 위협 순위·탱커 감지·어그로 경고와 위협 증가량 표시를 제공.",
+            "feature_location": "L61; L182–215 / Live Threat Meter, TPS",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        },
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "ForeverThreat - Threat Meter for WoW Forever",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/foreverthreat-threat-meter-for-wow-forever",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/foreverthreat-threat-meter-for-wow-forever",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "ForeverThreat-1.12.3",
+            "feature_ids": [
+              "F36",
+              "F37"
+            ],
+            "attempt_for_feature_ids": [],
+            "dependency": null,
+            "feature_summary": "대상/주시 대상 위협 순위"
+          }
+        },
+        {
+          "kind": "existing_zip",
+          "data": {
+            "product": "ForeverThreat",
+            "status": "success",
+            "relative_zip": "References/forever-addons/ForeverThreat/ForeverThreat-1.12.3.zip",
+            "file_page_url": "https://www.curseforge.com/wow/addons/foreverthreat-threat-meter-for-wow-forever/files/9671243",
+            "file_list_url": "https://www.curseforge.com/wow/addons/foreverthreat-threat-meter-for-wow-forever/files/all",
+            "file_id": 9671243,
+            "version": "1.12.3",
+            "file_date": "Nov 17, 2026",
+            "game_version": "1.60.1",
+            "flavor": "Forever",
+            "filename": "ForeverThreat-1.12.3.zip",
+            "bytes": 3393080,
+            "sha256": "c7aa10ecdee074965dd26149b8ab5c447d90e3df2463ad5181e52751b78022a4",
+            "download_url": "https://edge.forgecdn.net/files/9671/243/ForeverThreat-1.12.3.zip",
+            "final_download_url": "https://mediafilez.forgecdn.net/files/9671/243/ForeverThreat-1.12.3.zip",
+            "download_observed_at": "2026-11-18T10:30:33.7449179+09:00",
+            "latest_basis": "First visible date-ordered file listing row plus Latest release for Forever; exact file lists 1.60.1",
+            "file_page_location": "156-189",
+            "file_list_location": "172-237",
+            "evidence_file": "References/addon-survey/evidence/zip-intake-foreverthreat-threat-meter-for-wow-forever.json",
+            "saved_copy_gate": "PASS: seven SOURCE fields, saved bytes and hash agree with download record, signature 504b0304",
+            "archive_internal_processing": "not performed"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/threatclassic2",
+      "name": "ThreatClassic2",
+      "slug": "threatclassic2",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/threatclassic2",
+            "final_url": "https://www.curseforge.com/wow/addons/threatclassic2",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "ThreatClassic2 - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 13,
+                "addon": "ThreatClassic2"
+              }
+            ],
+            "author": "dfherr",
+            "project_update": "Nov 7, 2026",
+            "project_total_downloads": "13,634,705",
+            "forever_recent_file": "2.77-forever Latest release R Forever Nov 7, 2026",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "표기 확인",
+            "feature_summary": "대상의 파티·공격대 위협 목록과 위협 임계값 소리/화면 경고를 제공.",
+            "feature_location": "L202–238 / Features",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/omen-threat-meter",
+      "name": "Omen Threat Meter",
+      "slug": "omen-threat-meter",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://www.curseforge.com/wow/addons/omen-threat-meter",
+            "final_url": "https://www.curseforge.com/wow/addons/omen-threat-meter",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "Omen Threat Meter - World of Warcraft Addons - CurseForge",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 13,
+                "addon": "Omen Threat Meter"
+              }
+            ],
+            "author": "Xinhuan",
+            "project_update": "Sep 1, 2022",
+            "project_total_downloads": "18,827,656",
+            "file_list_scope": "프로젝트 Recent Files(최근 파일 목록); 전체 이력 전수조사 아님",
+            "forever_status": "미확인",
+            "feature_summary": "Blizzard 위협 정보 API에 기반한 다중 대상 위협 미터로 소개됨.",
+            "feature_location": "L61; L180–188 / FAQ",
+            "metadata_location": "By; Last Update; Details / Downloads; Recent Files (대체로 L55–169, 해당 항목의 표기만 사용)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://github.com/tukui-org/ElvUI",
+      "name": "ElvUI",
+      "slug": "elvui",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://github.com/tukui-org/ElvUI",
+            "final_url": "https://github.com/tukui-org/ElvUI",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "GitHub - tukui-org/ElvUI: User Interface replacement AddOn for World of Warcraft. · GitHub",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 1,
+                "addon": "ElvUI"
+              }
+            ],
+            "github_stars": "716",
+            "author": "미확인",
+            "project_update": "미확인",
+            "project_total_downloads": "미확인",
+            "forever_status": "미확인",
+            "feature_summary": "기본 UI를 교체하는 애드온으로 공식 저장소에서 소개; 세부 모듈 구성은 이 조사에서 미확인.",
+            "feature_location": "L94–135; L184–193 / About, Stars, README",
+            "metadata_location": "About / Stars (제작자·갱신일·파일 목록 미관측)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "today"
+          }
+        },
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "ElvUI",
+            "kind": "integrated_ui_package",
+            "official_project_url": "https://github.com/tukui-org/ElvUI",
+            "official_source_repo_url": "https://github.com/tukui-org/ElvUI",
+            "source_repo_status": "실제 공식 저장소 본문 열기",
+            "forever_observation_url": "https://github.com/tukui-org/ElvUI",
+            "forever_status": "미확인(이 조사에서 Forever 배포 파일 목록 표기 확인 못함)",
+            "feature_ids": [
+              "F01",
+              "F02",
+              "F03",
+              "F04",
+              "F05",
+              "F06",
+              "F07",
+              "F08",
+              "F09",
+              "F10",
+              "F11",
+              "F12",
+              "F14",
+              "F15",
+              "F16",
+              "F17",
+              "F20",
+              "F25",
+              "F26",
+              "F30",
+              "F32",
+              "F37",
+              "F47",
+              "F50",
+              "F56",
+              "F58",
+              "F66",
+              "F67"
+            ],
+            "dependency": null
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://github.com/tukui-org/Tukui",
+      "name": "TukUI",
+      "slug": "tukui",
+      "inputs": [
+        {
+          "kind": "survey",
+          "data": {
+            "requested_url": "https://github.com/tukui-org/Tukui",
+            "final_url": "https://github.com/tukui-org/Tukui",
+            "final_url_basis": "열기 결과 제목의 URL",
+            "page_identity": "GitHub - tukui-org/Tukui: Tukui - Live branch is Dragonflight, Wrath and Classic Era · GitHub",
+            "status": "opened",
+            "body_read": true,
+            "observed_date": "2026-11-18",
+            "individual_acquisition_time": "미확인(개별 시각 미측정)",
+            "document_uses": [
+              {
+                "document": "survey.md",
+                "section": 1,
+                "addon": "TukUI"
+              }
+            ],
+            "github_stars": "57",
+            "author": "미확인",
+            "project_update": "미확인",
+            "project_total_downloads": "미확인",
+            "forever_status": "미확인",
+            "feature_summary": "공식 저장소 Live 가지를 Dragonflight·Wrath·Classic Era용으로 소개; 세부 기능은 미확인.",
+            "feature_location": "L94–128; L169–181 / About, Stars",
+            "metadata_location": "About / Stars (제작자·갱신일·파일 목록 미관측)",
+            "evidence_grade": "확정(페이지에서 봄); 미관측 필드는 미확인",
+            "tool_cache_label": "yesterday"
+          }
+        },
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "TukUI",
+            "kind": "integrated_ui_package",
+            "official_project_url": "https://github.com/tukui-org/Tukui",
+            "official_source_repo_url": "https://github.com/tukui-org/Tukui",
+            "source_repo_status": "실제 공식 저장소 본문 열기",
+            "forever_observation_url": "https://github.com/tukui-org/Tukui",
+            "forever_status": "미확인(이 조사에서 Forever 배포 파일 목록 표기 확인 못함)",
+            "feature_ids": [
+              "F02",
+              "F03",
+              "F04",
+              "F05",
+              "F06",
+              "F07",
+              "F09",
+              "F10",
+              "F11",
+              "F12",
+              "F15",
+              "F16",
+              "F20",
+              "F30",
+              "F37",
+              "F38",
+              "F47",
+              "F58"
+            ],
+            "dependency": null
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/ellesmereui",
+      "name": "EllesmereUI",
+      "slug": "ellesmereui",
+      "inputs": [
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "EllesmereUI",
+            "kind": "integrated_ui_package",
+            "official_project_url": "https://www.curseforge.com/wow/addons/ellesmereui",
+            "official_source_repo_url": "https://github.com/EllesmereGaming/EllesmereUI",
+            "source_repo_status": "실제 공식 저장소 본문 열기",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/ellesmereui",
+            "forever_status": "표기 확인(공식 프로젝트 Recent Files의 Forever 행; 실제 게임 미검증)",
+            "feature_ids": [
+              "F01",
+              "F02",
+              "F03",
+              "F04",
+              "F05",
+              "F06",
+              "F07",
+              "F11",
+              "F12",
+              "F14",
+              "F19",
+              "F25",
+              "F26",
+              "F31",
+              "F32",
+              "F33",
+              "F35",
+              "F38",
+              "F42",
+              "F43",
+              "F44",
+              "F45",
+              "F46",
+              "F65",
+              "F69",
+              "F70"
+            ],
+            "dependency": null
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/realui",
+      "name": "RealUI",
+      "slug": "realui",
+      "inputs": [
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "RealUI",
+            "kind": "integrated_ui_package",
+            "official_project_url": "https://www.curseforge.com/wow/addons/realui",
+            "official_source_repo_url": "https://github.com/RealUI/RealUI",
+            "source_repo_status": "실제 공식 저장소 본문 열기",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/realui",
+            "forever_status": "표기 확인(공식 프로젝트 Recent Files의 Forever 행; 실제 게임 미검증)",
+            "feature_ids": [
+              "F01",
+              "F02",
+              "F03",
+              "F04",
+              "F05",
+              "F06",
+              "F08",
+              "F09",
+              "F10",
+              "F11",
+              "F12",
+              "F14",
+              "F15",
+              "F19",
+              "F25",
+              "F27",
+              "F28",
+              "F29",
+              "F32",
+              "F37",
+              "F38",
+              "F39",
+              "F53",
+              "F54",
+              "F56",
+              "F57",
+              "F60",
+              "F68"
+            ],
+            "dependency": null
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/benikui",
+      "name": "BenikUI",
+      "slug": "benikui",
+      "inputs": [
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "BenikUI",
+            "kind": "integrated_ui_extension",
+            "official_project_url": "https://www.curseforge.com/wow/addons/benikui",
+            "official_source_repo_url": "https://github.com/Benik/BenikUI",
+            "source_repo_status": "실제 공식 저장소 본문 열기",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/benikui",
+            "forever_status": "표기 확인(공식 프로젝트 Recent Files의 Forever 행; 실제 게임 미검증)",
+            "feature_ids": [
+              "F01",
+              "F02",
+              "F03",
+              "F04",
+              "F05",
+              "F06",
+              "F07",
+              "F08",
+              "F09",
+              "F10",
+              "F11",
+              "F12",
+              "F14",
+              "F15",
+              "F16",
+              "F17",
+              "F20",
+              "F25",
+              "F26",
+              "F29",
+              "F30",
+              "F32",
+              "F37",
+              "F47",
+              "F48",
+              "F50",
+              "F56",
+              "F58",
+              "F59",
+              "F60",
+              "F61",
+              "F62",
+              "F63",
+              "F64",
+              "F66",
+              "F67"
+            ],
+            "dependency": "ElvUI; CurseForge 설명 v16.00+ (GitHub development README는 v14.00+로 달라 현재 요구 판 근거는 CurseForge)"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/bagnon",
+      "name": "Bagnon",
+      "slug": "bagnon",
+      "inputs": [
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "Bagnon",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/bagnon",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/bagnon",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "12.1.11",
+            "feature_ids": [
+              "F12"
+            ],
+            "attempt_for_feature_ids": [],
+            "dependency": null,
+            "feature_summary": "가방·은행 UI"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/tiptac-reborn",
+      "name": "TipTac Reborn",
+      "slug": "tiptac-reborn",
+      "inputs": [
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "TipTac Reborn",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/tiptac-reborn",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/tiptac-reborn",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "v26.11.11-release",
+            "feature_ids": [
+              "F11"
+            ],
+            "attempt_for_feature_ids": [],
+            "dependency": null,
+            "feature_summary": "툴팁"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/titan-panel",
+      "name": "Titan Panel",
+      "slug": "titan-panel",
+      "inputs": [
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "Titan Panel",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/titan-panel",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/titan-panel",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "9.3.7",
+            "feature_ids": [
+              "F15"
+            ],
+            "attempt_for_feature_ids": [
+              "F60"
+            ],
+            "dependency": null,
+            "feature_summary": "정보 바·플러그인"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/leatrix-plus",
+      "name": "Leatrix Plus",
+      "slug": "leatrix-plus",
+      "inputs": [
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "Leatrix Plus",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/leatrix-plus",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/leatrix-plus",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "1.60.30-forever",
+            "feature_ids": [
+              "F22",
+              "F23",
+              "F24",
+              "F49",
+              "F52",
+              "F70"
+            ],
+            "attempt_for_feature_ids": [
+              "F41"
+            ],
+            "dependency": null,
+            "feature_summary": "모듈형 편의 기능; 판별로 옵션 차이 있음"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/platynator",
+      "name": "Platynator (Nameplates)",
+      "slug": "platynator",
+      "inputs": [
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "Platynator (Nameplates)",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/platynator",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/platynator",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "547",
+            "feature_ids": [
+              "F14"
+            ],
+            "attempt_for_feature_ids": [],
+            "dependency": null,
+            "feature_summary": "이름표"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/aurora",
+      "name": "Aurora",
+      "slug": "aurora",
+      "inputs": [
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "Aurora",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/aurora",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/aurora",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "12.1.5.4",
+            "feature_ids": [
+              "F01",
+              "F25"
+            ],
+            "attempt_for_feature_ids": [],
+            "dependency": null,
+            "feature_summary": "기본 창 스킨"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/postal",
+      "name": "Postal",
+      "slug": "postal",
+      "inputs": [
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "Postal",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/postal",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/postal",
+            "forever_status": "미확인(이번에 본 파일 목록에서 Forever 항목 확인 못함)",
+            "observed_forever_file": null,
+            "feature_ids": [
+              "F40"
+            ],
+            "attempt_for_feature_ids": [],
+            "dependency": null,
+            "feature_summary": "우편 모두 열기"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/masque",
+      "name": "Masque",
+      "slug": "masque",
+      "inputs": [
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "Masque",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/masque",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/masque",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "12.1.8",
+            "feature_ids": [
+              "F01"
+            ],
+            "attempt_for_feature_ids": [],
+            "dependency": null,
+            "feature_summary": "버튼 스킨 엔진; 지원 애드온 필요"
+          }
+        },
+        {
+          "kind": "existing_zip",
+          "data": {
+            "product": "Masque",
+            "status": "success",
+            "relative_zip": "References/forever-addons/Masque/Masque-12.1.8.zip",
+            "file_page_url": "https://www.curseforge.com/wow/addons/masque/files/9409199",
+            "file_list_url": "https://www.curseforge.com/wow/addons/masque/files/all",
+            "file_id": 9409199,
+            "version": "12.1.8",
+            "file_date": "Nov 2, 2026",
+            "game_version": "1.60.1",
+            "flavor": "Forever",
+            "filename": "Masque-12.1.8.zip",
+            "bytes": 3025800,
+            "sha256": "e4250f08b5429dd054ee9799db48ab64f1a3523dfd76ad3368437300ddb690c1",
+            "download_url": "https://edge.forgecdn.net/files/9409/199/Masque-12.1.8.zip",
+            "final_download_url": "https://mediafilez.forgecdn.net/files/9409/199/Masque-12.1.8.zip",
+            "download_observed_at": "2026-11-18T10:30:34.8863708+09:00",
+            "latest_basis": "First visible date-ordered file listing row plus Latest release for Forever; exact file lists 1.60.1",
+            "file_page_location": "188-228",
+            "file_list_location": "215-267",
+            "evidence_file": "References/addon-survey/evidence/zip-intake-masque.json",
+            "saved_copy_gate": "PASS: seven SOURCE fields, saved bytes and hash agree with download record, signature 504b0304",
+            "archive_internal_processing": "not performed"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/experience-forever",
+      "name": "Experience Forever",
+      "slug": "experience-forever",
+      "inputs": [
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "Experience Forever",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/experience-forever",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/experience-forever",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "ExperienceForever2.0.4",
+            "feature_ids": [
+              "F16",
+              "F17",
+              "F66"
+            ],
+            "attempt_for_feature_ids": [
+              "F62"
+            ],
+            "dependency": null,
+            "feature_summary": "경험치·평판·펫 경험치 바"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/font-manager",
+      "name": "Font Manager",
+      "slug": "font-manager",
+      "inputs": [
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "Font Manager",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/font-manager",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/font-manager",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "FontManager-1.1.7.zip",
+            "feature_ids": [
+              "F30"
+            ],
+            "attempt_for_feature_ids": [],
+            "dependency": null,
+            "feature_summary": "글꼴 변경"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/forever-enhanced-cursor",
+      "name": "Forever Enhanced Cursor",
+      "slug": "forever-enhanced-cursor",
+      "inputs": [
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "Forever Enhanced Cursor",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/forever-enhanced-cursor",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/forever-enhanced-cursor",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "1.0.2",
+            "feature_ids": [
+              "F42"
+            ],
+            "attempt_for_feature_ids": [],
+            "dependency": null,
+            "feature_summary": "커서 효과"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/bugsack",
+      "name": "BugSack",
+      "slug": "bugsack",
+      "inputs": [
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "BugSack",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/bugsack",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/bugsack",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "v12.1.9",
+            "feature_ids": [
+              "F54"
+            ],
+            "attempt_for_feature_ids": [],
+            "dependency": "BugGrabber required; official description",
+            "feature_summary": "오류 표시; BugGrabber 의존"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/glider",
+      "name": "Skyriding/Dragonriding Glider",
+      "slug": "glider",
+      "inputs": [
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "Skyriding/Dragonriding Glider",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/glider",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/glider",
+            "forever_status": "미확인(이번에 본 최근 파일 목록은 Retail)",
+            "observed_forever_file": null,
+            "feature_ids": [
+              "F44"
+            ],
+            "attempt_for_feature_ids": [],
+            "dependency": null,
+            "feature_summary": "Skyriding 자원·속도 바"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/mythic-timer",
+      "name": "Mythic + Timer",
+      "slug": "mythic-timer",
+      "inputs": [
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "Mythic + Timer",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/mythic-timer",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/mythic-timer",
+            "forever_status": "미확인(이번에 본 최근 파일 목록은 Retail)",
+            "observed_forever_file": null,
+            "feature_ids": [
+              "F43"
+            ],
+            "attempt_for_feature_ids": [],
+            "dependency": null,
+            "feature_summary": "Mythic+ 타이머"
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/bug-grabber",
+      "name": "BugGrabber",
+      "slug": "bug-grabber",
+      "inputs": [
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "BugGrabber",
+            "kind": "named_dependency",
+            "official_project_url": "https://www.curseforge.com/wow/addons/bug-grabber",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/bug-grabber",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "v12.1.1",
+            "feature_ids": [],
+            "attempt_for_feature_ids": [],
+            "dependency": null
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/baganator",
+      "name": "Baganator",
+      "slug": "baganator",
+      "inputs": [
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "Baganator",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/baganator",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/baganator",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "862",
+            "feature_ids": [
+              "F13"
+            ],
+            "attempt_for_feature_ids": [],
+            "feature_summary": "한 창 또는 분류형 가방·은행",
+            "dependency": null
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/nugie-combo-bar",
+      "name": "NugComboBar",
+      "slug": "nugie-combo-bar",
+      "inputs": [
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "NugComboBar",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/nugie-combo-bar",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/nugie-combo-bar",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "12.1.3",
+            "feature_ids": [
+              "F32"
+            ],
+            "attempt_for_feature_ids": [],
+            "feature_summary": "연계점수 등 직업 자원; Live와 Classic 목록 차이 명시",
+            "dependency": null
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/kaliels-tracker",
+      "name": "Kaliel's Tracker",
+      "slug": "kaliels-tracker",
+      "inputs": [
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "Kaliel's Tracker",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/kaliels-tracker",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/kaliels-tracker",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "8.11.1-forever",
+            "feature_ids": [
+              "F38"
+            ],
+            "attempt_for_feature_ids": [],
+            "feature_summary": "퀘스트·업적·목표 추적기",
+            "dependency": null
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/questie",
+      "name": "Questie",
+      "slug": "questie",
+      "inputs": [
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "Questie",
+            "kind": "researched_addon_no_representative_claim",
+            "official_project_url": "https://www.curseforge.com/wow/addons/questie",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/questie",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "v12.10.0",
+            "feature_ids": [],
+            "attempt_for_feature_ids": [],
+            "feature_summary": "공식 프로젝트·Forever 파일 표기 관측; 이 본문에서 추적기 기능 대표 확정 안 함",
+            "dependency": null
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/xloot",
+      "name": "XLoot",
+      "slug": "xloot",
+      "inputs": [
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "XLoot",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/xloot",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/xloot",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "12.23.0",
+            "feature_ids": [
+              "F50",
+              "F51",
+              "F65"
+            ],
+            "attempt_for_feature_ids": [],
+            "feature_summary": "전리품 창·그룹 주사위·획득 알림·빠른 획득",
+            "dependency": null
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/ls-toasts",
+      "name": "LS: Toasts",
+      "slug": "ls-toasts",
+      "inputs": [
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "LS: Toasts",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/ls-toasts",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/ls-toasts",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "120105.06",
+            "feature_ids": [
+              "F51"
+            ],
+            "attempt_for_feature_ids": [],
+            "feature_summary": "기본 알림 대체; FAQ에서 loot toast 확인",
+            "dependency": null
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/mik-scrolling-battle-text",
+      "name": "MikScrollingBattleText",
+      "slug": "mik-scrolling-battle-text",
+      "inputs": [
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "MikScrollingBattleText",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/mik-scrolling-battle-text",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/mik-scrolling-battle-text",
+            "forever_status": "미확인(이번 최근 파일 목록에서 Forever 행 미관측)",
+            "observed_forever_file": null,
+            "feature_ids": [
+              "F53",
+              "F61"
+            ],
+            "attempt_for_feature_ids": [],
+            "feature_summary": "피해·치유 등 스크롤 전투 문자, 아이템 소지 수량 획득 알림",
+            "dependency": null
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/nameplate-scrolling-combat-text",
+      "name": "Nameplate Scrolling Combat Text",
+      "slug": "nameplate-scrolling-combat-text",
+      "inputs": [
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "Nameplate Scrolling Combat Text",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/nameplate-scrolling-combat-text",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/nameplate-scrolling-combat-text",
+            "forever_status": "미확인(이번 최근 파일 목록에서 Forever 행 미관측)",
+            "observed_forever_file": null,
+            "feature_ids": [
+              "F53"
+            ],
+            "attempt_for_feature_ids": [],
+            "feature_summary": "이름표 위치 피해 문자; 치유 제외",
+            "dependency": null
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/kg-panels",
+      "name": "kgPanels",
+      "slug": "kg-panels",
+      "inputs": [
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "kgPanels",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/kg-panels",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/kg-panels",
+            "forever_status": "미확인(이번 최근 파일 목록에서 Forever 행 미관측)",
+            "observed_forever_file": null,
+            "feature_ids": [
+              "F63"
+            ],
+            "attempt_for_feature_ids": [],
+            "feature_summary": "사용자 UI 배경 패널",
+            "dependency": null
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/speedyautoloot",
+      "name": "Speedy AutoLoot",
+      "slug": "speedyautoloot",
+      "inputs": [
+        {
+          "kind": "features",
+          "data": {
+            "display_name": "Speedy AutoLoot",
+            "kind": "standalone_addon",
+            "official_project_url": "https://www.curseforge.com/wow/addons/speedyautoloot",
+            "official_source_repo_url": null,
+            "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 추측 없음)",
+            "forever_observation_url": "https://www.curseforge.com/wow/addons/speedyautoloot",
+            "forever_status": "표기 확인",
+            "observed_forever_file": "125",
+            "feature_ids": [
+              "F52"
+            ],
+            "attempt_for_feature_ids": [],
+            "feature_summary": "빠른 자동 전리품 획득",
+            "dependency": null
+          }
+        }
+      ]
+    },
+    {
+      "project_url": "https://www.curseforge.com/wow/addons/masque-onyx",
+      "name": "Masque Onyx",
+      "slug": "masque-onyx",
+      "inputs": [
+        {
+          "kind": "existing_zip",
+          "data": {
+            "product": "Masque Onyx",
+            "status": "success",
+            "relative_zip": "References/forever-addons/Masque Onyx/Masque_Onyx-12.1.6.zip",
+            "file_page_url": "https://www.curseforge.com/wow/addons/masque-onyx/files/9409810",
+            "file_list_url": "https://www.curseforge.com/wow/addons/masque-onyx/files/all",
+            "file_id": 9409810,
+            "version": "12.1.6",
+            "file_date": "Nov 2, 2026",
+            "game_version": "1.60.1",
+            "flavor": "Forever",
+            "filename": "Masque_Onyx-12.1.6.zip",
+            "bytes": 19853,
+            "sha256": "51e961e9b40936f94ddec495b17f1c5bd8b3cfd8fa7e7463f80c2e331b05b190",
+            "download_url": "https://edge.forgecdn.net/files/9409/810/Masque_Onyx-12.1.6.zip",
+            "final_download_url": "https://mediafilez.forgecdn.net/files/9409/810/Masque_Onyx-12.1.6.zip",
+            "download_observed_at": "2026-11-18T10:30:35.71527+09:00",
+            "latest_basis": "First visible date-ordered file listing row plus Latest release for Forever; exact file lists 1.60.1",
+            "file_page_location": "188-228",
+            "file_list_location": "215-280",
+            "evidence_file": "References/addon-survey/evidence/zip-intake-masque-onyx.json",
+            "saved_copy_gate": "PASS: seven SOURCE fields, saved bytes and hash agree with download record, signature 504b0304",
+            "archive_internal_processing": "not performed"
+          }
+        }
+      ]
+    }
+  ]
+}

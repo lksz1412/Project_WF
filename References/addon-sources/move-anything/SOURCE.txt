@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/move-anything/files/3775172
+파일명: MoveAnything 18.0.8.zip
+판(version): 18.0.8
+file ID: 3775172
+파일 날짜: Apr 30, 2022
+표기된 game version: 9.2.0 [Flavors: Retail]
+SHA256: f9b4b6faf17106c0683a565774f6d4d129763695941c35dfacfe8789f925b2bd

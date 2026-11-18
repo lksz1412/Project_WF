@@ -1,0 +1,28 @@
+{
+  "product": "Glass Forever",
+  "observed_at": "2026-11-18T10:31:21.5777621+09:00",
+  "page_url": "https://www.curseforge.com/wow/addons/glass-forever/files/9653501",
+  "list_url": "https://www.curseforge.com/wow/addons/glass-forever/files/all",
+  "page_location": "162-195",
+  "list_location": "179-230",
+  "short_quote": "1.60.1",
+  "selected_version": "1.1.6",
+  "file_id": 9653501,
+  "filename": "Glass-Forever-1.1.6.zip",
+  "file_date": "Nov 16, 2026",
+  "latest_basis": "First visible date-ordered file listing row plus Latest release for Forever; exact file lists 1.60.1",
+  "request_url": "https://edge.forgecdn.net/files/9653/501/Glass-Forever-1.1.6.zip",
+  "final_url": "https://mediafilez.forgecdn.net/files/9653/501/Glass-Forever-1.1.6.zip",
+  "http_status": 200,
+  "content_type": [
+    "application/zip"
+  ],
+  "content_length": [
+    "443386"
+  ],
+  "bytes": 443386,
+  "signature": "504b0304",
+  "sha256": "85cd061b217ae00219a914acb62294ba12b5c5df4fb42017f889d3bd08fb5e2b",
+  "checks": "filename from exact file page; raw bytes copied with no archive processing",
+  "scratch": "%TEMP%/wf-zip-intake-1_dy5yhj"
+}

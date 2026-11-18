@@ -1,0 +1,19 @@
+{
+  "slug": "ndui",
+  "file_page_url": "https://www.curseforge.com/wow/addons/ndui/files/9513760",
+  "filename": "NDui-10.2.8.zip",
+  "file_id": 9513760,
+  "download_url": "https://edge.forgecdn.net/files/9513/760/NDui-10.2.8.zip",
+  "observed_at": "2026-11-18T11:32:43.5281566+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/9513/760/NDui-10.2.8.zip",
+  "content_length": "906875",
+  "content_type": "application/x-zip-compressed",
+  "content_disposition": null,
+  "bytes": 906875,
+  "signature": "504b0304",
+  "sha256": "dc2f38c4000e89e9f9c0de73ab56775afa68b5ac6ac7ab9760db0360cca1aad7",
+  "relative_zip": "References/addon-sources/ndui/NDui-10.2.8.zip",
+  "status": "success"
+}

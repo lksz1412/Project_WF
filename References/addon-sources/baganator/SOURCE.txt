@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/baganator/files/9659116
+파일명: Baganator-862.zip
+판(version): 862
+file ID: 9659116
+파일 날짜: Nov 17, 2026
+표기된 game version: 12.1.5, 12.1.0, 5.5.4, 3.80.1, 2.5.6, 1.60.1, 1.15.9 [Flavors: Titan Reforged Classic MoP Classic Retail Classic TBC Classic Forever]
+SHA256: 0b3dbe44101c55ede5d00e4278cae48fca84cef838fbd6f85e4da4138bf684ad

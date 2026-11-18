@@ -1,0 +1,19 @@
+{
+  "slug": "myslot",
+  "file_page_url": "https://www.curseforge.com/wow/addons/myslot/files/9608162",
+  "filename": "Myslot-v6.3.1.zip",
+  "file_id": 9608162,
+  "download_url": "https://edge.forgecdn.net/files/9608/162/Myslot-v6.3.1.zip",
+  "observed_at": "2026-11-18T11:32:51.7466631+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/9608/162/Myslot-v6.3.1.zip",
+  "content_length": "140759",
+  "content_type": "application/zip",
+  "content_disposition": null,
+  "bytes": 140759,
+  "signature": "504b0304",
+  "sha256": "715088872e39366711d53cfa39d9161a60ae6349b05082512ac5e0b40f3e9189",
+  "relative_zip": "References/addon-sources/myslot/Myslot-v6.3.1.zip",
+  "status": "success"
+}

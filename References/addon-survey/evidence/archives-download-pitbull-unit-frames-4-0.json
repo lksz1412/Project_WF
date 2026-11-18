@@ -1,0 +1,19 @@
+{
+  "slug": "pitbull-unit-frames-4-0",
+  "file_page_url": "https://www.curseforge.com/wow/addons/pitbull-unit-frames-4-0/files/8245625",
+  "filename": "PitBull4-v4.2.50.zip",
+  "file_id": 8245625,
+  "download_url": "https://edge.forgecdn.net/files/8245/625/PitBull4-v4.2.50.zip",
+  "observed_at": "2026-11-18T11:32:47.9314674+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/8245/625/PitBull4-v4.2.50.zip",
+  "content_length": "1004378",
+  "content_type": "application/x-zip-compressed",
+  "content_disposition": null,
+  "bytes": 1004378,
+  "signature": "504b0304",
+  "sha256": "f0f5469329ce64dc0178db634366eba77a3a29f1945356444b839f92cb4fb5e4",
+  "relative_zip": "References/addon-sources/pitbull-unit-frames-4-0/PitBull4-v4.2.50.zip",
+  "status": "success"
+}

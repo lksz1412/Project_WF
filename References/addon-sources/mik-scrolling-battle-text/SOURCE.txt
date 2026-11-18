@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/mik-scrolling-battle-text/files/5781390
+파일명: MikScrollingBattleText-6.0.3.zip
+판(version): v6.0.3
+file ID: 5781390
+파일 날짜: Oct 4, 2024
+표기된 game version: 11.0.2, 4.4.0, 1.15.4 [Flavors: Classic Retail]
+SHA256: e24230176706f34b1121ece9f88142939059bc59e3b5733495f4d1da182c9949

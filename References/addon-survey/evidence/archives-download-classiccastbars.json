@@ -1,0 +1,19 @@
+{
+  "slug": "classiccastbars",
+  "file_page_url": "https://www.curseforge.com/wow/addons/classiccastbars/files/7729622",
+  "filename": "ClassicCastbars-v1.8.12.zip",
+  "file_id": 7729622,
+  "download_url": "https://edge.forgecdn.net/files/7729/622/ClassicCastbars-v1.8.12.zip",
+  "observed_at": "2026-11-18T11:32:51.9980276+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/7729/622/ClassicCastbars-v1.8.12.zip",
+  "content_length": "204045",
+  "content_type": "application/x-zip-compressed",
+  "content_disposition": null,
+  "bytes": 204045,
+  "signature": "504b0304",
+  "sha256": "1ea8c92bb51116bb3c531215a328731409cbf20954847ecfa2a3a3d598c771d5",
+  "relative_zip": "References/addon-sources/classiccastbars/ClassicCastbars-v1.8.12.zip",
+  "status": "success"
+}

@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/omen-threat-meter/files/3116629
+파일명: Omen-v3.2.4.zip
+판(version): v3.2.4
+file ID: 3116629
+파일 날짜: Nov 19, 2020
+표기된 game version: 9.0.2 [Flavors: Retail]
+SHA256: 6cbbfc9d9f2d057c9a50a16235a6b171d90b9ea828c724af0366cf235067e598

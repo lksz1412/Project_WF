@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/profilemanager/files/9627911
+파일명: ProfileManager.zip
+판(version): ProfileManager_v4.0.zip
+file ID: 9627911
+파일 날짜: Nov 15, 2026
+표기된 game version: 12.1.5, 1.60.1 [Flavors: Retail Forever]
+SHA256: f905c4381473a7cb6e033e89aa1878177d996ca965d167cd5fdbf086c8c9f2b1

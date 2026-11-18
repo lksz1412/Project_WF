@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/dominos/files/9658153
+파일명: Dominos-12.0.4.zip
+판(version): 12.0.4
+file ID: 9658153
+파일 날짜: Nov 17, 2026
+표기된 game version: 1.60.1 (Forever)
+SHA256: 2dbcf9857a91b772a42200369386fc17f875530ffd47984b555ecdb8e11bef1a

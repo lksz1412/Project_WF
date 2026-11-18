@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/tiptac-reborn/files/9563849
+파일명: TipTac-v26.11.11-release.zip
+판(version): v26.11.11-release
+file ID: 9563849
+파일 날짜: Nov 11, 2026
+표기된 game version: 12.1.5, 5.5.4, 2.5.6, 1.60.1, 1.15.9 [Flavors: MoP Classic Classic TBC Classic Retail Forever]
+SHA256: e76b32db476eac8f11017882559a914b247628f29639deaa62830bdad2eeba8f

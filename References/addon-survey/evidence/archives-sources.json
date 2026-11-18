@@ -1,0 +1,1248 @@
+{
+  "schema": "archives-source-observations-v1",
+  "scope": "Additional original archive selection and individual analysis. These observations are separate from unchanged survey42/features74 URL counters.",
+  "recorded_at": "2026-11-18T02:39:31.907Z",
+  "successful_distinct_web_url_count": 123,
+  "source_body_hash": "미확인: web tool rendered text, no raw HTTP bytes supplied",
+  "sources": [
+    {
+      "url": "https://www.curseforge.com/wow/addons/bartender4/files/all",
+      "page_identity": "Bartender4 - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/mapster/files/all",
+      "page_identity": "Mapster - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/basic-minimap/files/all",
+      "page_identity": "BasicMinimap - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/bartender4/files/9654965",
+      "page_identity": "Bartender4 - 4.19.0 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/mapster/files/9047762",
+      "page_identity": "Mapster - 1.14.0 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/basic-minimap/files/9287308",
+      "page_identity": "BasicMinimap - v12.1.6 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.907Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/spartan-ui/files/all",
+      "page_identity": "SpartanUI - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/gw2-ui/files/all",
+      "page_identity": "GW2 UI - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/ndui/files/all",
+      "page_identity": "NDui - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/button-forge/files/all",
+      "page_identity": "Button Forge - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/basic-chat-mods/files/all",
+      "page_identity": "BasicChatMods - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/shadowed-unit-frames/files/all",
+      "page_identity": "Shadowed Unit Frames - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/pitbull-unit-frames-4-0/files/all",
+      "page_identity": "PitBull Unit Frames 4.0 - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/gnosis/files/all",
+      "page_identity": "Gnosis (Castbars and Timers) - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/spartan-ui/files/9623682",
+      "page_identity": "SpartanUI - 9.0.5 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/gw2-ui/files/9607280",
+      "page_identity": "GW2 UI - 12.1.9 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/ndui/files/9513760",
+      "page_identity": "NDui - 10.2.8 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/button-forge/files/8634630",
+      "page_identity": "Button Forge - ButtonForge v1.3.5.0 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/basic-chat-mods/files/9632459",
+      "page_identity": "BasicChatMods - v12.1.2 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/shadowed-unit-frames/files/7288873",
+      "page_identity": "Shadowed Unit Frames - v4.4.14 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/pitbull-unit-frames-4-0/files/8245625",
+      "page_identity": "PitBull Unit Frames 4.0 - v4.2.50 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/gnosis/files/9511828",
+      "page_identity": "Gnosis (Castbars and Timers) - v6.01 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/classiccastbars/files/all",
+      "page_identity": "Classic Castbars - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/reflux/files/all",
+      "page_identity": "Reflux - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/myslot/files/all",
+      "page_identity": "Myslot - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/blizzmove/files/all",
+      "page_identity": "BlizzMove - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/move-anything/files/all",
+      "page_identity": "MoveAnything - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/edit-mode-expanded/files/all",
+      "page_identity": "Edit Mode Expanded - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/weakauras-2/files/all",
+      "page_identity": "WeakAuras - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/classiccastbars/files/7729622",
+      "page_identity": "Classic Castbars - v1.8.12 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/reflux/files/823715",
+      "page_identity": "Reflux - 1.17 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/myslot/files/9608162",
+      "page_identity": "Myslot - v6.3.1 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/blizzmove/files/9492856",
+      "page_identity": "BlizzMove - v3.8.8 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/move-anything/files/3775172",
+      "page_identity": "MoveAnything - 18.0.8 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/edit-mode-expanded/files/9167651",
+      "page_identity": "Edit Mode Expanded - 12.1-018 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/weakauras-2/files/7483857",
+      "page_identity": "WeakAuras - 5.21.1 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/tellmewhen/files/all",
+      "page_identity": "TellMeWhen - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/omni-cc/files/all",
+      "page_identity": "OmniCC - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/omnicd/files/all",
+      "page_identity": "OmniCD - Party Cooldown Tracker - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/vuhdo/files/all",
+      "page_identity": "VuhDo - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/cell/files/all",
+      "page_identity": "Cell - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/cooldowncount/files/all",
+      "page_identity": "CooldownCount - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/profilemanager/files/all",
+      "page_identity": "ProfileManager - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.905Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/tellmewhen/files/9147854",
+      "page_identity": "TellMeWhen - 12.1.5 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/omni-cc/files/7334220",
+      "page_identity": "OmniCC - 11.2.8 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/omnicd/files/8757010",
+      "page_identity": "OmniCD - Party Cooldown Tracker - v2.8.35 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/vuhdo/files/9639592",
+      "page_identity": "VuhDo - v3.221 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/cell/files/7506021",
+      "page_identity": "Cell - r274-release - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/cooldowncount/files/7821649",
+      "page_identity": "CooldownCount - v12.0.2 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/profilemanager/files/9627911",
+      "page_identity": "ProfileManager - ProfileManager_v4.0.zip - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/recount/files/all",
+      "page_identity": "Recount - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/skada/files/all",
+      "page_identity": "Skada Damage Meter - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/threatclassic2/files/all",
+      "page_identity": "ThreatClassic2 - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/omen-threat-meter/files/all",
+      "page_identity": "Omen Threat Meter - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/ellesmereui/files/all",
+      "page_identity": "EllesmereUI - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/realui/files/all",
+      "page_identity": "RealUI - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/benikui/files/all",
+      "page_identity": "BenikUI - The ElvUI Edit - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/recount/files/6750721",
+      "page_identity": "Recount - v11.1.7a - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/skada/files/9627411",
+      "page_identity": "Skada Damage Meter - v2.6.7 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/threatclassic2/files/9498163",
+      "page_identity": "ThreatClassic2 - 2.77-forever - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/omen-threat-meter/files/3116629",
+      "page_identity": "Omen Threat Meter - v3.2.4 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/ellesmereui/files/9643268",
+      "page_identity": "EllesmereUI - v9.8.8 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/realui/files/9446527",
+      "page_identity": "RealUI - 4.2.5 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/benikui/files/9170538",
+      "page_identity": "BenikUI - The ElvUI Edit - v5.20 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/bagnon/files/all",
+      "page_identity": "Bagnon - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/tiptac-reborn/files/all",
+      "page_identity": "TipTac Reborn - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/titan-panel/files/all",
+      "page_identity": "Titan Panel - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/leatrix-plus/files/all",
+      "page_identity": "Leatrix Plus - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/platynator/files/all",
+      "page_identity": "Platynator (Nameplates) - Nameplates for everyone - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/aurora/files/all",
+      "page_identity": "Aurora - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/postal/files/all",
+      "page_identity": "Postal - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/bagnon/files/9638308",
+      "page_identity": "Bagnon - 12.1.11 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/tiptac-reborn/files/9563849",
+      "page_identity": "TipTac Reborn - v26.11.11-release - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/titan-panel/files/9656248",
+      "page_identity": "Titan Panel - 9.3.7 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/leatrix-plus/files/9676915",
+      "page_identity": "Leatrix Plus - 1.60.31-forever - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/platynator/files/9659136",
+      "page_identity": "Platynator (Nameplates) - Nameplates for everyone - 547 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/aurora/files/9531539",
+      "page_identity": "Aurora - 12.1.5.4 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/postal/files/9040411",
+      "page_identity": "Postal - Postal-v4.3.5 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/experience-forever/files/all",
+      "page_identity": "Experience Forever - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/font-manager/files/all",
+      "page_identity": "Font Manager - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/forever-enhanced-cursor/files/all",
+      "page_identity": "Forever Enhanced Cursor - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/bugsack/files/all",
+      "page_identity": "BugSack - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/glider/files/all",
+      "page_identity": "Skyriding/Dragonriding Glider - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/mythic-timer/files/all",
+      "page_identity": "Mythic + Timer - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/bug-grabber/files/all",
+      "page_identity": "BugGrabber - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/experience-forever/files/9072168",
+      "page_identity": "Experience Forever - ExperienceForever 1.2.1 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/font-manager/files/9518872",
+      "page_identity": "Font Manager - FontManager-1.1.7.zip - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/forever-enhanced-cursor/files/9432291",
+      "page_identity": "Forever Enhanced Cursor - 1.0.2 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/bugsack/files/9336367",
+      "page_identity": "BugSack - v12.1.9 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/glider/files/9164028",
+      "page_identity": "Skyriding/Dragonriding Glider - 49 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/mythic-timer/files/9060817",
+      "page_identity": "Mythic + Timer - MythicTimer_1.2.261004.zip - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/bug-grabber/files/9277326",
+      "page_identity": "BugGrabber - v12.1.1 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/baganator/files/all",
+      "page_identity": "Baganator - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/nugie-combo-bar/files/all",
+      "page_identity": "NugComboBar - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/kaliels-tracker/files/all",
+      "page_identity": "Kaliel's Tracker (Retail | Forever) ... Quest / World Quest / Achievement - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/questie/files/all",
+      "page_identity": "Questie - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/xloot/files/all",
+      "page_identity": "XLoot - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/ls-toasts/files/all",
+      "page_identity": "LS: Toasts - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/mik-scrolling-battle-text/files/all",
+      "page_identity": "MikScrollingBattleText - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/baganator/files/9659116",
+      "page_identity": "Baganator - 862 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/nugie-combo-bar/files/9552793",
+      "page_identity": "NugComboBar - 12.1.3 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/kaliels-tracker/files/9518871",
+      "page_identity": "Kaliel's Tracker (Retail | Forever) ... Quest / World Quest / Achievement - 8.11.1-forever - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/questie/files/9663983",
+      "page_identity": "Questie - v12.10.0 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/xloot/files/9600127",
+      "page_identity": "XLoot - 12.23.0 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/ls-toasts/files/9398386",
+      "page_identity": "LS: Toasts - 120105.04 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/mik-scrolling-battle-text/files/5781390",
+      "page_identity": "MikScrollingBattleText - v6.0.3 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/nameplate-scrolling-combat-text/files/all",
+      "page_identity": "Nameplate Scrolling Combat Text - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/kg-panels/files/all",
+      "page_identity": "kgPanels - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/speedyautoloot/files/all",
+      "page_identity": "Speedy AutoLoot - Files - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official file selection",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.906Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/nameplate-scrolling-combat-text/files/8439465",
+      "page_identity": "Nameplate Scrolling Combat Text - 1.54 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.907Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/kg-panels/files/7606374",
+      "page_identity": "kgPanels - 1.4.7 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.907Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/speedyautoloot/files/9435616",
+      "page_identity": "Speedy AutoLoot - 125 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.907Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/experience-forever",
+      "page_identity": "Experience Forever - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official current project file header",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.907Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/ls-toasts",
+      "page_identity": "LS: Toasts - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official current project file header",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.907Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/edit-mode-expanded",
+      "page_identity": "Edit Mode Expanded - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official current project file header",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.907Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/realui",
+      "page_identity": "RealUI - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official current project file header",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.907Z",
+      "occurrences": 1
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/experience-forever/files/9626058",
+      "page_identity": "Experience Forever - ExperienceForever2.0.4 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.907Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/ls-toasts/files/9670786",
+      "page_identity": "LS: Toasts - 120105.07 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.907Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/edit-mode-expanded/files/9603634",
+      "page_identity": "Edit Mode Expanded - 12.1-026 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.907Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/realui/files/9531550",
+      "page_identity": "RealUI - 4.2.6 - World of Warcraft Addons - CurseForge",
+      "status": "opened",
+      "purpose": "Official exact-file metadata",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; per-request acquisition timestamp unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.907Z",
+      "occurrences": 2
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/questie",
+      "location": "Features L248–252; Languages L228–232",
+      "summary": "Quest start/turn-in/objective map notes and NPC route lines; Classic language translations include Korean.",
+      "status": "opened",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; individual acquisition time unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.907Z",
+      "purpose": "Substantive individual analysis source"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/bug-grabber",
+      "location": "Description L180–185",
+      "summary": "Collects Lua errors; BugSack supplies higher-level display; without display addon errors print to chat.",
+      "status": "opened",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; individual acquisition time unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.907Z",
+      "purpose": "Substantive individual analysis source"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/masque-onyx",
+      "location": "About/Skins/Requirements L187–199",
+      "summary": "Onyx and Onyx Classic skins; requires Masque.",
+      "status": "opened",
+      "body_available": true,
+      "timestamp_precision": "Date-level web observation; individual acquisition time unmeasured",
+      "recorded_at": "2026-11-18T02:39:31.907Z",
+      "purpose": "Substantive individual analysis source"
+    }
+  ],
+  "failures": [
+    {
+      "url": "https://www.curseforge.com/wow/addons/experience-forever/files/9072168",
+      "reason": "(404) Not Found",
+      "result": "Failed exact-file fetch; current official project supplied replacement"
+    }
+  ],
+  "additional_github_metadata_source": "archives-github-metadata.json: official repository API + default branch commit response; original name from HEAD/GET Content-Disposition; download receipts preserve transport evidence",
+  "existing_facts_sources": "survey-sources.json and features-sources/catalog/addons.json consumed read-only; no new total-history latest or runtime compatibility claim"
+}

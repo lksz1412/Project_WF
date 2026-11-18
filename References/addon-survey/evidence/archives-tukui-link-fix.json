@@ -1,0 +1,22 @@
+{
+  "result": "PASS",
+  "scope": "TukUI five external query links only; original URL identity versus manifest sources",
+  "executed_at": "2026-11-18T02:41:43.754999+00:00",
+  "expected_query_urls": [
+    "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules?ref=Live",
+    "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/UnitFrames/Groups?ref=Live",
+    "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/Maps?ref=Live",
+    "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/UnitFrames?ref=Live",
+    "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/Miscellaneous?ref=Live"
+  ],
+  "actual_query_urls": [
+    "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules?ref=Live",
+    "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/UnitFrames/Groups?ref=Live",
+    "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/Maps?ref=Live",
+    "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/UnitFrames?ref=Live",
+    "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/Miscellaneous?ref=Live"
+  ],
+  "unexpected_urls": [],
+  "analysis_sha256": "62e11e6eb64073fdb19a52e54c3344bfc9392e1af820547bf59ea3dc4bdabf08",
+  "unrelated_archive_checks_rerun": false
+}

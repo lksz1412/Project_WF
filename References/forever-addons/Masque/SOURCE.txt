@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/masque/files/9409199
+파일명: Masque-12.1.8.zip
+판(version): 12.1.8
+file ID: 9409199
+파일 날짜: Nov 2, 2026
+표기된 game version: 1.60.1 (Forever)
+SHA256: e4250f08b5429dd054ee9799db48ab64f1a3523dfd76ad3368437300ddb690c1

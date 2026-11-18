@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/forever-unit-frames/files/9673338
+파일명: ForeverUnitFrames-0.65.2.zip
+판(version): 0.65.2
+file ID: 9673338
+파일 날짜: Nov 17, 2026
+표기된 game version: 1.60.1 (Forever)
+SHA256: cc50d16b5d926240a4dc48e7e6f9e4ee7fbb5107c14ebb734a685542e50e1a80

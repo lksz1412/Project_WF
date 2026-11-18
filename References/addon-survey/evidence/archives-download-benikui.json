@@ -1,0 +1,19 @@
+{
+  "slug": "benikui",
+  "file_page_url": "https://www.curseforge.com/wow/addons/benikui/files/9170538",
+  "filename": "ElvUI_BenikUI_5.20.zip",
+  "file_id": 9170538,
+  "download_url": "https://edge.forgecdn.net/files/9170/538/ElvUI_BenikUI_5.20.zip",
+  "observed_at": "2026-11-18T11:33:16.4747232+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/9170/538/ElvUI_BenikUI_5.20.zip",
+  "content_length": "1306314",
+  "content_type": "application/zip",
+  "content_disposition": null,
+  "bytes": 1306314,
+  "signature": "504b0304",
+  "sha256": "1631aa46be41a21ef6efd18a0fc3c91a424e81e4a02fccc1307f9b53ef9b429d",
+  "relative_zip": "References/addon-sources/benikui/ElvUI_BenikUI_5.20.zip",
+  "status": "success"
+}

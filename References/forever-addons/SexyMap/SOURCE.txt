@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/sexymap/files/9457503
+파일명: SexyMap-v12.1.7.zip
+판(version): v12.1.7
+file ID: 9457503
+파일 날짜: Nov 5, 2026
+표기된 game version: 1.60.1 (Forever)
+SHA256: 1868eb714b8c9ea4efaa615109bfd457a0c3bb625f0b2a1f1befdadfc9143321

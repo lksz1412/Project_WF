@@ -1,0 +1,1480 @@
+{
+  "schema": "features-observations-v2",
+  "status": "supplement_complete_for_gate",
+  "observation_date": "2026-11-18",
+  "individual_timestamp_precision": "일별 관측; 개별 취득 시각 미측정",
+  "count_rule": "Distinct final body URLs, including official module-list API responses; repeats/redirect aliases deduplicated; search results and download endpoints excluded. Failed attempts separately.",
+  "successful_distinct_url_count": 74,
+  "sources": [
+    {
+      "id": "E",
+      "url": "https://www.curseforge.com/wow/addons/ellesmereui",
+      "status": "opened",
+      "location": "Description L215–260; Included Modules L234–255; Recent Files L145–152",
+      "summary": "Visual editing and named modules; generic quality-of-life module does not prove repair/selling/quest automation.",
+      "requested_url": "https://www.curseforge.com/wow/addons/ellesmereui",
+      "final_url": "https://www.curseforge.com/wow/addons/ellesmereui",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "E: https://www.curseforge.com/wow/addons/ellesmereui",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "S",
+      "url": "https://www.curseforge.com/wow/addons/spartan-ui",
+      "status": "opened",
+      "location": "Description/Overview L215–241; Recent Files L150–168",
+      "summary": "Player/party/raid frames, HoT tracking, selling, quest turn-in, objectives, tooltips, minimap, buffs, mail, vignette.",
+      "requested_url": "https://www.curseforge.com/wow/addons/spartan-ui",
+      "final_url": "https://www.curseforge.com/wow/addons/spartan-ui",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "S: https://www.curseforge.com/wow/addons/spartan-ui",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "G",
+      "url": "https://www.curseforge.com/wow/addons/gw2-ui",
+      "status": "opened",
+      "location": "Description/Features L209–239; Recent Files L150–168",
+      "summary": "HUD, groups, questing, inventory, map/chat/tooltips, skins, repair, loot, setup; some features explicitly version-dependent.",
+      "requested_url": "https://www.curseforge.com/wow/addons/gw2-ui",
+      "final_url": "https://www.curseforge.com/wow/addons/gw2-ui",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "G: https://www.curseforge.com/wow/addons/gw2-ui",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "N",
+      "url": "https://www.curseforge.com/wow/addons/ndui",
+      "status": "opened",
+      "location": "Main Features L180–192; FAQ L210–231",
+      "summary": "Frames, auras, chat, bags, resources, info bars, selling/repair; actionbars/castbars/minimap/font options in FAQ.",
+      "requested_url": "https://www.curseforge.com/wow/addons/ndui",
+      "final_url": "https://www.curseforge.com/wow/addons/ndui",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "N: https://www.curseforge.com/wow/addons/ndui",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "R",
+      "url": "https://www.curseforge.com/wow/addons/realui",
+      "status": "opened",
+      "location": "What's included/Setup L174–203; Recent Files L146–153",
+      "summary": "HUD, group frames, bars, nameplates, auras, infobar, inventory, skins, tooltips, objectives, combat text/errors, setup/profile export/import.",
+      "requested_url": "https://www.curseforge.com/wow/addons/realui",
+      "final_url": "https://www.curseforge.com/wow/addons/realui",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "R: https://www.curseforge.com/wow/addons/realui",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "B",
+      "url": "https://www.curseforge.com/wow/addons/benikui",
+      "status": "opened",
+      "location": "Description/Installation/Features L208–262; Recent Files L149–167",
+      "summary": "ElvUI dependency v16+; decoration/layouts/dashboards/installer/fonts/AFK/flight, not standalone replacement for base features.",
+      "requested_url": "https://www.curseforge.com/wow/addons/benikui",
+      "final_url": "https://www.curseforge.com/wow/addons/benikui",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "B: https://www.curseforge.com/wow/addons/benikui",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "EL-root",
+      "url": "https://github.com/tukui-org/ElvUI",
+      "status": "opened",
+      "location": "About and repository file list L118–189",
+      "summary": "Official repository identity; root README only describes interface replacement, insufficient feature detail.",
+      "requested_url": "https://github.com/tukui-org/ElvUI",
+      "final_url": "https://github.com/tukui-org/ElvUI",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "EL-root: https://github.com/tukui-org/ElvUI",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "TU-root",
+      "url": "https://github.com/tukui-org/Tukui",
+      "status": "opened",
+      "location": "About and file list L116–173",
+      "summary": "Official Live branch identity; module detail needed.",
+      "requested_url": "https://github.com/tukui-org/Tukui",
+      "final_url": "https://github.com/tukui-org/Tukui",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "TU-root: https://github.com/tukui-org/Tukui",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "N-repo",
+      "url": "https://github.com/siweia/NDui",
+      "status": "opened",
+      "location": "Main Features L183–202",
+      "summary": "Official README confirms party cooldown watcher and raid toolbar; default addons L203–206 identify error collector.",
+      "requested_url": "https://github.com/siweia/NDui",
+      "final_url": "https://github.com/siweia/NDui",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "N-repo: https://github.com/siweia/NDui",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "G-repo",
+      "url": "https://github.com/Mortalknight/GW2_UI",
+      "status": "opened",
+      "location": "About/file list/README L119–201",
+      "summary": "Official source linked from CurseForge; feature judgments use G description.",
+      "requested_url": "https://github.com/Mortalknight/GW2_UI",
+      "final_url": "https://github.com/Mortalknight/GW2_UI",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "G-repo: https://github.com/Mortalknight/GW2_UI",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "E-repo",
+      "url": "https://github.com/EllesmereGaming/EllesmereUI",
+      "status": "opened",
+      "location": "Folders and files L162–190",
+      "summary": "Official named module list, including loadout/group finder/loot council modules; no detail inferred from ambiguous names.",
+      "requested_url": "https://github.com/EllesmereGaming/EllesmereUI",
+      "final_url": "https://github.com/EllesmereGaming/EllesmereUI",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "E-repo: https://github.com/EllesmereGaming/EllesmereUI",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "TU",
+      "url": "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules?ref=Live",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "모듈 목록; 행동단축바·오라·채팅·정보·글꼴·가방·툴팁·유닛 프레임",
+      "requested_url": "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules?ref=Live",
+      "final_url": "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules?ref=Live",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "TU: https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules?ref=Live",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "EL-dir",
+      "url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "디렉터리 구조 확인",
+      "requested_url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI",
+      "final_url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "EL-dir: https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "TU-unit",
+      "url": "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/UnitFrames?ref=Live",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "프레임 하위 목록",
+      "requested_url": "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/UnitFrames?ref=Live",
+      "final_url": "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/UnitFrames?ref=Live",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "TU-unit: https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/UnitFrames?ref=Live",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "TU-map",
+      "url": "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/Maps?ref=Live",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "미니맵/세계지도 목록",
+      "requested_url": "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/Maps?ref=Live",
+      "final_url": "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/Maps?ref=Live",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "TU-map: https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/Maps?ref=Live",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "TU-misc",
+      "url": "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/Miscellaneous?ref=Live",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "경험치·위협 바·목표·자리비움 등 이름이 명확한 항목",
+      "requested_url": "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/Miscellaneous?ref=Live",
+      "final_url": "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/Miscellaneous?ref=Live",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "TU-misc: https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/Miscellaneous?ref=Live",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "EL-game",
+      "url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "게임 판별 폴더 탐색",
+      "requested_url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game",
+      "final_url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "EL-game: https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "TU-group",
+      "url": "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/UnitFrames/Groups?ref=Live",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "파티/공격대 목록",
+      "requested_url": "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/UnitFrames/Groups?ref=Live",
+      "final_url": "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/UnitFrames/Groups?ref=Live",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "TU-group: https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/UnitFrames/Groups?ref=Live",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "S-mod",
+      "url": "https://api.github.com/repos/spartanui-wow/SpartanUI/contents/Modules",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "기능명이 명확한 채팅·이름표·정보 바·퀘스트 등 모듈",
+      "requested_url": "https://api.github.com/repos/spartanui-wow/SpartanUI/contents/Modules",
+      "final_url": "https://api.github.com/repos/spartanui-wow/SpartanUI/contents/Modules",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "S-mod: https://api.github.com/repos/spartanui-wow/SpartanUI/contents/Modules",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "EL-shared",
+      "url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "공유 기능 폴더 탐색",
+      "requested_url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared",
+      "final_url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "EL-shared: https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "EL-main",
+      "url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Mainline",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "Retail 전용 구조 확인; Forever 동작으로 쓰지 않음",
+      "requested_url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Mainline",
+      "final_url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Mainline",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "EL-main: https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Mainline",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "TU-widgets",
+      "url": "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/UnitFrames/Widgets.lua?ref=Live",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "전체 내용 읽음; 상태 바 구성 참조; 실행하지 않음",
+      "requested_url": "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/UnitFrames/Widgets.lua?ref=Live",
+      "final_url": "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/UnitFrames/Widgets.lua?ref=Live",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "TU-widgets: https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/UnitFrames/Widgets.lua?ref=Live",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "EL",
+      "url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "기본 모듈 목록",
+      "requested_url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules",
+      "final_url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "EL: https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "EL-general",
+      "url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/General",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "일반 모듈 탐색; 파일명만으로 profile 전송·숫자 표시를 확정하지 않음",
+      "requested_url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/General",
+      "final_url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/General",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "EL-general: https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/General",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "EL-unit",
+      "url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules/UnitFrames",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "유닛 프레임 하위 목록",
+      "requested_url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules/UnitFrames",
+      "final_url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules/UnitFrames",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "EL-unit: https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules/UnitFrames",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "EL-elements",
+      "url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules/UnitFrames/Elements",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "시전·직업 자원·치유 예측·거리·역할 표시 등 목록",
+      "requested_url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules/UnitFrames/Elements",
+      "final_url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules/UnitFrames/Elements",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "EL-elements: https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules/UnitFrames/Elements",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "EL-group",
+      "url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules/UnitFrames/Groups",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "파티·공격대·보스·투기장 등 목록",
+      "requested_url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules/UnitFrames/Groups",
+      "final_url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules/UnitFrames/Groups",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "EL-group: https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules/UnitFrames/Groups",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "EL-bars",
+      "url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules/DataBars",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "경험치·평판·위협 바 목록",
+      "requested_url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules/DataBars",
+      "final_url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules/DataBars",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "EL-bars: https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules/DataBars",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "EL-map",
+      "url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules/Maps",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "미니맵/세계지도 목록",
+      "requested_url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules/Maps",
+      "final_url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules/Maps",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "EL-map: https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules/Maps",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "EL-misc",
+      "url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules/Misc",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "자리비움·말풍선·전리품·토템·공격대 유틸리티 등 목록",
+      "requested_url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules/Misc",
+      "final_url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules/Misc",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "EL-misc: https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules/Misc",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "S-repo",
+      "url": "https://github.com/spartanui-wow/SpartanUI",
+      "status": "opened",
+      "location": "README Overview/Action Bars L207–249",
+      "requested_url": "https://github.com/spartanui-wow/SpartanUI",
+      "final_url": "https://github.com/spartanui-wow/SpartanUI",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "S-repo: https://github.com/spartanui-wow/SpartanUI",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "B-repo",
+      "url": "https://github.com/Benik/BenikUI",
+      "status": "opened",
+      "location": "README L180–222; ElvUI version differs from current CF; use CF for current requirement",
+      "requested_url": "https://github.com/Benik/BenikUI",
+      "final_url": "https://github.com/Benik/BenikUI",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "B-repo: https://github.com/Benik/BenikUI",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "R-repo",
+      "url": "https://github.com/RealUI/RealUI",
+      "status": "opened",
+      "location": "Repository identity L94–156",
+      "requested_url": "https://github.com/RealUI/RealUI",
+      "final_url": "https://github.com/RealUI/RealUI",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "R-repo: https://github.com/RealUI/RealUI",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "A-dominos",
+      "url": "https://www.curseforge.com/wow/addons/dominos",
+      "status": "opened",
+      "location": "Description L186–195; Recent Files L147–165",
+      "forever_file": "12.0.4",
+      "forever_status": "표기 확인",
+      "requested_url": "https://www.curseforge.com/wow/addons/dominos",
+      "final_url": "https://www.curseforge.com/wow/addons/dominos",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-dominos: https://www.curseforge.com/wow/addons/dominos",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "A-sexymap",
+      "url": "https://www.curseforge.com/wow/addons/sexymap",
+      "status": "opened",
+      "location": "Description L202–215; Recent Files L145–163",
+      "forever_file": "v12.1.7",
+      "forever_status": "표기 확인",
+      "requested_url": "https://www.curseforge.com/wow/addons/sexymap",
+      "final_url": "https://www.curseforge.com/wow/addons/sexymap",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-sexymap: https://www.curseforge.com/wow/addons/sexymap",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "A-prat",
+      "url": "https://www.curseforge.com/wow/addons/prat-3-0",
+      "status": "opened",
+      "location": "Description L238–288; Recent Files L147–165",
+      "forever_file": "3.9.117",
+      "forever_status": "표기 확인",
+      "requested_url": "https://www.curseforge.com/wow/addons/prat-3-0",
+      "final_url": "https://www.curseforge.com/wow/addons/prat-3-0",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-prat: https://www.curseforge.com/wow/addons/prat-3-0",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "A-quartz",
+      "url": "https://www.curseforge.com/wow/addons/quartz",
+      "status": "opened",
+      "location": "Modules L187–213; Recent Files L148–166",
+      "forever_file": "3.8.0",
+      "forever_status": "표기 확인",
+      "requested_url": "https://www.curseforge.com/wow/addons/quartz",
+      "final_url": "https://www.curseforge.com/wow/addons/quartz",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-quartz: https://www.curseforge.com/wow/addons/quartz",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "A-bagnon",
+      "url": "https://www.curseforge.com/wow/addons/bagnon",
+      "status": "opened",
+      "location": "Description L200–219; Recent Files L150–169",
+      "forever_file": "12.1.11",
+      "forever_status": "표기 확인",
+      "requested_url": "https://www.curseforge.com/wow/addons/bagnon",
+      "final_url": "https://www.curseforge.com/wow/addons/bagnon",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-bagnon: https://www.curseforge.com/wow/addons/bagnon",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "A-tiptac",
+      "url": "https://www.curseforge.com/wow/addons/tiptac-reborn",
+      "status": "opened",
+      "location": "What is it/What can it do L207–225; Recent Files L147–166",
+      "forever_file": "v26.11.11-release",
+      "forever_status": "표기 확인",
+      "requested_url": "https://www.curseforge.com/wow/addons/tiptac-reborn",
+      "final_url": "https://www.curseforge.com/wow/addons/tiptac-reborn",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-tiptac: https://www.curseforge.com/wow/addons/tiptac-reborn",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "A-titan",
+      "url": "https://www.curseforge.com/wow/addons/titan-panel",
+      "status": "opened",
+      "location": "About/Features L200–228; Recent Files L147–165; Forever auto sell issue explicitly noted",
+      "forever_file": "9.3.7",
+      "forever_status": "표기 확인",
+      "requested_url": "https://www.curseforge.com/wow/addons/titan-panel",
+      "final_url": "https://www.curseforge.com/wow/addons/titan-panel",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-titan: https://www.curseforge.com/wow/addons/titan-panel",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "A-leatrix",
+      "url": "https://www.curseforge.com/wow/addons/leatrix-plus",
+      "status": "opened",
+      "location": "Features L176–238; Recent Files L142–161; individual options version-dependent; full Interface/Frames/System/Settings L223–310",
+      "forever_file": "1.60.30-forever",
+      "forever_status": "표기 확인",
+      "requested_url": "https://www.curseforge.com/wow/addons/leatrix-plus",
+      "final_url": "https://www.curseforge.com/wow/addons/leatrix-plus",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-leatrix: https://www.curseforge.com/wow/addons/leatrix-plus",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "A-fuf",
+      "url": "https://www.curseforge.com/wow/addons/forever-unit-frames",
+      "status": "opened",
+      "location": "Description/Frames/Raid/Status/Auras/Castbars/Look/Options L199–312; Recent Files L142–145",
+      "forever_file": "0.65.2",
+      "forever_status": "표기 확인",
+      "requested_url": "https://www.curseforge.com/wow/addons/forever-unit-frames",
+      "final_url": "https://www.curseforge.com/wow/addons/forever-unit-frames",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-fuf: https://www.curseforge.com/wow/addons/forever-unit-frames",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "A-grid",
+      "url": "https://www.curseforge.com/wow/addons/grid2",
+      "status": "opened",
+      "location": "Description L354–388; Recent Files L147–165",
+      "forever_file": "4.1.13-forever",
+      "forever_status": "표기 확인",
+      "requested_url": "https://www.curseforge.com/wow/addons/grid2",
+      "final_url": "https://www.curseforge.com/wow/addons/grid2",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-grid: https://www.curseforge.com/wow/addons/grid2",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "A-omnicc",
+      "url": "https://www.curseforge.com/wow/addons/omni-cc",
+      "status": "opened",
+      "location": "Overview L205–224; Recent Files L150–169, no Forever item observed; classic-only statement",
+      "forever_file": null,
+      "forever_status": "미확인(이번에 본 파일 목록에서 Forever 항목 확인 못함)",
+      "requested_url": "https://www.curseforge.com/wow/addons/omni-cc",
+      "final_url": "https://www.curseforge.com/wow/addons/omni-cc",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-omnicc: https://www.curseforge.com/wow/addons/omni-cc",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "A-mapster",
+      "url": "https://www.curseforge.com/wow/addons/mapster",
+      "status": "opened",
+      "location": "Features L185–207; Recent Files L146–160",
+      "forever_file": "1.14.0",
+      "forever_status": "표기 확인",
+      "requested_url": "https://www.curseforge.com/wow/addons/mapster",
+      "final_url": "https://www.curseforge.com/wow/addons/mapster",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-mapster: https://www.curseforge.com/wow/addons/mapster",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "A-reflux",
+      "url": "https://www.curseforge.com/wow/addons/reflux",
+      "status": "opened",
+      "location": "Description L159–211; Recent Files L140–144, no Forever item observed",
+      "forever_file": null,
+      "forever_status": "미확인(이번에 본 파일 목록에서 Forever 항목 확인 못함)",
+      "requested_url": "https://www.curseforge.com/wow/addons/reflux",
+      "final_url": "https://www.curseforge.com/wow/addons/reflux",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-reflux: https://www.curseforge.com/wow/addons/reflux",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "A-blizz",
+      "url": "https://www.curseforge.com/wow/addons/blizzmove",
+      "status": "opened",
+      "location": "Description L184–210; Recent Files L147–165",
+      "forever_file": "v3.8.8",
+      "forever_status": "표기 확인",
+      "requested_url": "https://www.curseforge.com/wow/addons/blizzmove",
+      "final_url": "https://www.curseforge.com/wow/addons/blizzmove",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-blizz: https://www.curseforge.com/wow/addons/blizzmove",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "A-tmw",
+      "url": "https://www.curseforge.com/wow/addons/tellmewhen",
+      "status": "opened",
+      "location": "Features L226–280; Recent Files L149–168",
+      "forever_file": "12.1.5",
+      "forever_status": "표기 확인",
+      "requested_url": "https://www.curseforge.com/wow/addons/tellmewhen",
+      "final_url": "https://www.curseforge.com/wow/addons/tellmewhen",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-tmw: https://www.curseforge.com/wow/addons/tellmewhen",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "A-details",
+      "url": "https://www.curseforge.com/wow/addons/details",
+      "status": "opened",
+      "location": "Description L186–228; Recent Files L148–167",
+      "forever_file": "Details.20261109.15410.172",
+      "forever_status": "표기 확인",
+      "requested_url": "https://www.curseforge.com/wow/addons/details",
+      "final_url": "https://www.curseforge.com/wow/addons/details",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-details: https://www.curseforge.com/wow/addons/details",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "A-threat",
+      "url": "https://www.curseforge.com/wow/addons/foreverthreat-threat-meter-for-wow-forever",
+      "status": "opened",
+      "location": "Description/Live Threat Meter L155–191; Recent Files L135–139",
+      "forever_file": "ForeverThreat-1.12.3",
+      "forever_status": "표기 확인",
+      "requested_url": "https://www.curseforge.com/wow/addons/foreverthreat-threat-meter-for-wow-forever",
+      "final_url": "https://www.curseforge.com/wow/addons/foreverthreat-threat-meter-for-wow-forever",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-threat: https://www.curseforge.com/wow/addons/foreverthreat-threat-meter-for-wow-forever",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "A-platy",
+      "url": "https://www.curseforge.com/wow/addons/platynator",
+      "status": "opened",
+      "location": "Features L181–217; Recent Files L145–164",
+      "forever_file": "547",
+      "forever_status": "표기 확인",
+      "requested_url": "https://www.curseforge.com/wow/addons/platynator",
+      "final_url": "https://www.curseforge.com/wow/addons/platynator",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-platy: https://www.curseforge.com/wow/addons/platynator",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "A-aurora",
+      "url": "https://www.curseforge.com/wow/addons/aurora",
+      "status": "opened",
+      "location": "Description/Options L190–205; Recent Files L145–163",
+      "forever_file": "12.1.5.4",
+      "forever_status": "표기 확인",
+      "requested_url": "https://www.curseforge.com/wow/addons/aurora",
+      "final_url": "https://www.curseforge.com/wow/addons/aurora",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-aurora: https://www.curseforge.com/wow/addons/aurora",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "A-postal",
+      "url": "https://www.curseforge.com/wow/addons/postal",
+      "status": "opened",
+      "location": "About Postal L182–218; Recent Files L146–161, no Forever item observed",
+      "forever_file": null,
+      "forever_status": "미확인(이번에 본 파일 목록에서 Forever 항목 확인 못함)",
+      "requested_url": "https://www.curseforge.com/wow/addons/postal",
+      "final_url": "https://www.curseforge.com/wow/addons/postal",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-postal: https://www.curseforge.com/wow/addons/postal",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "A-masque",
+      "url": "https://www.curseforge.com/wow/addons/masque",
+      "status": "opened",
+      "location": "About/Features/Requirements L187–213; Recent Files L152–171",
+      "forever_file": "12.1.8",
+      "forever_status": "표기 확인",
+      "requested_url": "https://www.curseforge.com/wow/addons/masque",
+      "final_url": "https://www.curseforge.com/wow/addons/masque",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-masque: https://www.curseforge.com/wow/addons/masque",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "A-xp",
+      "url": "https://www.curseforge.com/wow/addons/experience-forever",
+      "status": "opened",
+      "location": "Features L173–208; Recent Files L135–138",
+      "forever_file": "ExperienceForever2.0.4",
+      "forever_status": "표기 확인",
+      "requested_url": "https://www.curseforge.com/wow/addons/experience-forever",
+      "final_url": "https://www.curseforge.com/wow/addons/experience-forever",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-xp: https://www.curseforge.com/wow/addons/experience-forever",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "A-font",
+      "url": "https://www.curseforge.com/wow/addons/font-manager",
+      "status": "opened",
+      "location": "Features L195–237; Recent Files L142–160",
+      "forever_file": "FontManager-1.1.7.zip",
+      "forever_status": "표기 확인",
+      "requested_url": "https://www.curseforge.com/wow/addons/font-manager",
+      "final_url": "https://www.curseforge.com/wow/addons/font-manager",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-font: https://www.curseforge.com/wow/addons/font-manager",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "A-cursor",
+      "url": "https://www.curseforge.com/wow/addons/forever-enhanced-cursor",
+      "status": "opened",
+      "location": "Highlights/Profiles L159–229; file-list followup pending; Recent Files L141–145",
+      "forever_file": "1.0.2",
+      "forever_status": "표기 확인",
+      "requested_url": "https://www.curseforge.com/wow/addons/forever-enhanced-cursor",
+      "final_url": "https://www.curseforge.com/wow/addons/forever-enhanced-cursor",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-cursor: https://www.curseforge.com/wow/addons/forever-enhanced-cursor",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "A-bug",
+      "url": "https://www.curseforge.com/wow/addons/bugsack",
+      "status": "opened",
+      "location": "Description L180–193; Recent Files L146–164",
+      "forever_file": "v12.1.9",
+      "forever_status": "표기 확인",
+      "requested_url": "https://www.curseforge.com/wow/addons/bugsack",
+      "final_url": "https://www.curseforge.com/wow/addons/bugsack",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-bug: https://www.curseforge.com/wow/addons/bugsack",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "A-hekili",
+      "url": "https://www.curseforge.com/wow/addons/hekili-forever",
+      "status": "opened",
+      "location": "Description L163–211; Recent Files L144–147",
+      "forever_file": "v0.8.6",
+      "forever_status": "표기 확인",
+      "requested_url": "https://www.curseforge.com/wow/addons/hekili-forever",
+      "final_url": "https://www.curseforge.com/wow/addons/hekili-forever",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-hekili: https://www.curseforge.com/wow/addons/hekili-forever",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "A-glider",
+      "url": "https://www.curseforge.com/wow/addons/glider",
+      "status": "opened",
+      "location": "Description L183–203; Recent Files L141–144",
+      "forever_file": null,
+      "forever_status": "미확인(이번에 본 최근 파일 목록은 Retail)",
+      "requested_url": "https://www.curseforge.com/wow/addons/glider",
+      "final_url": "https://www.curseforge.com/wow/addons/glider",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-glider: https://www.curseforge.com/wow/addons/glider",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "A-mythic",
+      "url": "https://www.curseforge.com/wow/addons/mythic-timer",
+      "status": "opened",
+      "location": "Description L178–212; Recent Files L136–139",
+      "forever_file": null,
+      "forever_status": "미확인(이번에 본 최근 파일 목록은 Retail)",
+      "requested_url": "https://www.curseforge.com/wow/addons/mythic-timer",
+      "final_url": "https://www.curseforge.com/wow/addons/mythic-timer",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-mythic: https://www.curseforge.com/wow/addons/mythic-timer",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "A-buggrabber",
+      "url": "https://www.curseforge.com/wow/addons/bug-grabber",
+      "status": "opened",
+      "location": "Description L178–185; Recent Files L145–163",
+      "forever_file": "v12.1.1",
+      "forever_status": "표기 확인",
+      "requested_url": "https://www.curseforge.com/wow/addons/bug-grabber",
+      "final_url": "https://www.curseforge.com/wow/addons/bug-grabber",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-buggrabber: https://www.curseforge.com/wow/addons/bug-grabber",
+      "body_hash": null,
+      "body_hash_note": "원문 전체 저장·공개 전재하지 않음; 제목/주소와 읽은 위치로 식별",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 세부값은 미확인"
+    },
+    {
+      "id": "A-myslot",
+      "url": "https://www.curseforge.com/wow/addons/myslot",
+      "status": "opened",
+      "requested_url": "https://www.curseforge.com/wow/addons/myslot",
+      "final_url": "https://www.curseforge.com/wow/addons/myslot",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-myslot official CurseForge project",
+      "location": "Description/Features/Usage L182–227; Recent Files L147–166",
+      "summary": "막대·매크로·키 바인딩을 문자열로 가져오기/내보내기",
+      "forever_file": "v6.3.1",
+      "forever_status": "표기 확인",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 지원은 미확인"
+    },
+    {
+      "id": "A-profile",
+      "url": "https://www.curseforge.com/wow/addons/profilemanager",
+      "status": "opened",
+      "requested_url": "https://www.curseforge.com/wow/addons/profilemanager",
+      "final_url": "https://www.curseforge.com/wow/addons/profilemanager",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-profile official CurseForge project",
+      "location": "Description/Presets L195–244; Recent Files L140–146",
+      "summary": "여러 지원 애드온 설정 preset 저장·문자열 공유",
+      "forever_file": "ProfileManager_v4.0.zip",
+      "forever_status": "표기 확인",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 지원은 미확인"
+    },
+    {
+      "id": "A-baganator",
+      "url": "https://www.curseforge.com/wow/addons/baganator",
+      "status": "opened",
+      "requested_url": "https://www.curseforge.com/wow/addons/baganator",
+      "final_url": "https://www.curseforge.com/wow/addons/baganator",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-baganator official CurseForge project",
+      "location": "Description/Highlights L180–209; Recent Files L144–163",
+      "summary": "한 창 또는 분류형 가방·은행",
+      "forever_file": "862",
+      "forever_status": "표기 확인",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 지원은 미확인"
+    },
+    {
+      "id": "A-nug",
+      "url": "https://www.curseforge.com/wow/addons/nugie-combo-bar",
+      "status": "opened",
+      "requested_url": "https://www.curseforge.com/wow/addons/nugie-combo-bar",
+      "final_url": "https://www.curseforge.com/wow/addons/nugie-combo-bar",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-nug official CurseForge project",
+      "location": "Class Resource Tracker L194–227; Recent Files L151–169",
+      "summary": "연계점수 등 직업 자원; Live와 Classic 목록 차이 명시",
+      "forever_file": "12.1.3",
+      "forever_status": "표기 확인",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 지원은 미확인"
+    },
+    {
+      "id": "A-kaliel",
+      "url": "https://www.curseforge.com/wow/addons/kaliels-tracker",
+      "status": "opened",
+      "requested_url": "https://www.curseforge.com/wow/addons/kaliels-tracker",
+      "final_url": "https://www.curseforge.com/wow/addons/kaliels-tracker",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-kaliel official CurseForge project",
+      "location": "Features L200–255; Recent Files L148–150",
+      "summary": "퀘스트·업적·목표 추적기",
+      "forever_file": "8.11.1-forever",
+      "forever_status": "표기 확인",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 지원은 미확인"
+    },
+    {
+      "id": "A-questie",
+      "url": "https://www.curseforge.com/wow/addons/questie",
+      "status": "opened",
+      "requested_url": "https://www.curseforge.com/wow/addons/questie",
+      "final_url": "https://www.curseforge.com/wow/addons/questie",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-questie official CurseForge project",
+      "location": "Description/Information L209–225; Recent Files L150–167",
+      "summary": "공식 프로젝트·Forever 파일 표기 관측; 이 본문에서 추적기 기능 대표 확정 안 함",
+      "forever_file": "v12.10.0",
+      "forever_status": "표기 확인",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 지원은 미확인"
+    },
+    {
+      "id": "A-xloot",
+      "url": "https://www.curseforge.com/wow/addons/xloot",
+      "status": "opened",
+      "requested_url": "https://www.curseforge.com/wow/addons/xloot",
+      "final_url": "https://www.curseforge.com/wow/addons/xloot",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-xloot official CurseForge project",
+      "location": "Modules L214–257; Recent Files L147–165",
+      "summary": "전리품 창·그룹 주사위·획득 알림·빠른 획득",
+      "forever_file": "12.23.0",
+      "forever_status": "표기 확인",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 지원은 미확인"
+    },
+    {
+      "id": "A-lstoasts",
+      "url": "https://www.curseforge.com/wow/addons/ls-toasts",
+      "status": "opened",
+      "requested_url": "https://www.curseforge.com/wow/addons/ls-toasts",
+      "final_url": "https://www.curseforge.com/wow/addons/ls-toasts",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-lstoasts official CurseForge project",
+      "location": "Description/FAQ L175–199; Recent Files L148–156",
+      "summary": "기본 알림 대체; FAQ에서 loot toast 확인",
+      "forever_file": "120105.06",
+      "forever_status": "표기 확인",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 지원은 미확인"
+    },
+    {
+      "id": "A-msbt",
+      "url": "https://www.curseforge.com/wow/addons/mik-scrolling-battle-text",
+      "status": "opened",
+      "requested_url": "https://www.curseforge.com/wow/addons/mik-scrolling-battle-text",
+      "final_url": "https://www.curseforge.com/wow/addons/mik-scrolling-battle-text",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-msbt official CurseForge project",
+      "location": "Description/Features L193–237; Recent Files L144–154",
+      "summary": "피해·치유 등 스크롤 전투 문자, 아이템 소지 수량 획득 알림",
+      "forever_file": null,
+      "forever_status": "미확인(이번 최근 파일 목록에서 Forever 행 미관측)",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 지원은 미확인"
+    },
+    {
+      "id": "A-nsct",
+      "url": "https://www.curseforge.com/wow/addons/nameplate-scrolling-combat-text",
+      "status": "opened",
+      "requested_url": "https://www.curseforge.com/wow/addons/nameplate-scrolling-combat-text",
+      "final_url": "https://www.curseforge.com/wow/addons/nameplate-scrolling-combat-text",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-nsct official CurseForge project",
+      "location": "Description/FAQ L198–224; Recent Files L144–163",
+      "summary": "이름표 위치 피해 문자; 치유 미포함을 원문 명시",
+      "forever_file": null,
+      "forever_status": "미확인(이번 최근 파일 목록에서 Forever 행 미관측)",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 지원은 미확인"
+    },
+    {
+      "id": "A-kgpanels",
+      "url": "https://www.curseforge.com/wow/addons/kg-panels",
+      "status": "opened",
+      "requested_url": "https://www.curseforge.com/wow/addons/kg-panels",
+      "final_url": "https://www.curseforge.com/wow/addons/kg-panels",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-kgpanels official CurseForge project",
+      "location": "Description L174–193; Recent Files L147–157",
+      "summary": "사용자 UI 배경 패널",
+      "forever_file": null,
+      "forever_status": "미확인(이번 최근 파일 목록에서 Forever 행 미관측)",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 지원은 미확인"
+    },
+    {
+      "id": "A-speedy",
+      "url": "https://www.curseforge.com/wow/addons/speedyautoloot",
+      "status": "opened",
+      "requested_url": "https://www.curseforge.com/wow/addons/speedyautoloot",
+      "final_url": "https://www.curseforge.com/wow/addons/speedyautoloot",
+      "body_read": true,
+      "observed_date": "2026-11-18",
+      "individual_acquisition_time": "미측정",
+      "page_identity": "A-speedy official CurseForge project",
+      "location": "Description L180–198; Recent Files L143–161",
+      "summary": "빠른 자동 전리품 획득",
+      "forever_file": "125",
+      "forever_status": "표기 확인",
+      "document_uses": [
+        "features.md"
+      ],
+      "evidence_grade": "확정(실제 본문 관측); 미관측 지원은 미확인"
+    }
+  ],
+  "failures": [
+    {
+      "url": "https://www.curseforge.com/wow/addons/real-ui",
+      "reason": "tool reports inaccessible; actual project realui succeeds"
+    },
+    {
+      "url": "https://github.com/tukui-org/ElvUI/tree/main/ElvUI",
+      "reason": "restricted URL fetch failure"
+    },
+    {
+      "url": "https://github.com/tukui-org/Tukui/tree/Live/Tukui",
+      "reason": "restricted URL fetch failure"
+    },
+    {
+      "url": "https://github.com/tukui-org/ElvUI/tree/main/ElvUI/Core/Modules",
+      "reason": "restricted URL fetch failure"
+    },
+    {
+      "url": "https://github.com/tukui-org/Tukui/tree/Live/Tukui/Modules",
+      "reason": "restricted URL fetch failure"
+    },
+    {
+      "url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Core/Modules",
+      "reason": "404; 실제 Game/Shared/Modules 경로로 보완"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/bug-sack",
+      "reason": "본문 접근 실패; 실제 bugsack 주소로 보완"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/nugcombobar",
+      "reason": "본문 접근 실패; 실제 nugie-combo-bar 주소로 보완"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/speedy-auto-loot",
+      "reason": "본문 접근 실패; 실제 speedyautoloot 주소로 보완"
+    }
+  ]
+}

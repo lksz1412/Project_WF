@@ -1,0 +1,19 @@
+{
+  "slug": "cooldowncount",
+  "file_page_url": "https://www.curseforge.com/wow/addons/cooldowncount/files/7821649",
+  "filename": "CooldownCount-v12.0.2.zip",
+  "file_id": 7821649,
+  "download_url": "https://edge.forgecdn.net/files/7821/649/CooldownCount-v12.0.2.zip",
+  "observed_at": "2026-11-18T11:33:06.0829142+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/7821/649/CooldownCount-v12.0.2.zip",
+  "content_length": "153273",
+  "content_type": "application/zip",
+  "content_disposition": null,
+  "bytes": 153273,
+  "signature": "504b0304",
+  "sha256": "111acfe060fe34ae29d96d1f779c2b04b3292c2654a2dac1900c077cb0002225",
+  "relative_zip": "References/addon-sources/cooldowncount/CooldownCount-v12.0.2.zip",
+  "status": "success"
+}

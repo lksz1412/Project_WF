@@ -1,0 +1,19 @@
+{
+  "slug": "platynator",
+  "file_page_url": "https://www.curseforge.com/wow/addons/platynator/files/9659136",
+  "filename": "Platynator-547.zip",
+  "file_id": 9659136,
+  "download_url": "https://edge.forgecdn.net/files/9659/136/Platynator-547.zip",
+  "observed_at": "2026-11-18T11:33:19.7303753+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/9659/136/Platynator-547.zip",
+  "content_length": "1333406",
+  "content_type": "application/x-zip-compressed",
+  "content_disposition": null,
+  "bytes": 1333406,
+  "signature": "504b0304",
+  "sha256": "73d1f115a3cb86a9c93fb782799fa888df4e765437035b61acd5d857bbcd8ed4",
+  "relative_zip": "References/addon-sources/platynator/Platynator-547.zip",
+  "status": "success"
+}

@@ -1,0 +1,34 @@
+{
+  "schema": "features-gate-v1",
+  "executed_at": "2026-11-18T02:16:29.931926+00:00",
+  "status": "PASS",
+  "scope": "all current package/feature cells, report rows, representatives or explicit misses, URL observations and archive-intake inventory; independent review not included",
+  "checks": {
+    "mandatory6_optional2": true,
+    "source_unique_final_body_count": true,
+    "header_source_count": true,
+    "header_failures": true,
+    "all_report_external_urls_observed": true,
+    "original13_preserved": true,
+    "inventory_49_distinct_actual_products": true,
+    "inventory_project_urls_opened": true,
+    "inventory_source_repo_urls_opened_or_null": true,
+    "no_private_absolute_paths_public": true,
+    "all_feature_units_pass": true
+  },
+  "feature_count": 70,
+  "cell_count": 560,
+  "confirmed_cells": 210,
+  "unknown_cells": 350,
+  "explicit_absent_cells": 0,
+  "successful_distinct_url_count": 74,
+  "failed_url_count": 9,
+  "addon_inventory_records": 49,
+  "errors": [],
+  "sha256": {
+    "features.md": "b0154fb57c039e1408a33520974b1c4c01c8af00da93bbb5613e53d7926b40cd",
+    "features-catalog.json": "fdc0c0f5c9213b0da66319e855a88b49956bbe27cb46dff0d7a9ec5cb3f8aedd",
+    "features-sources.json": "11b8866a6ed234a481af43686d92316a9b0519386c531b2388b72fd15aac6b36",
+    "features-addons.json": "b7d1bc1eeb2e046ffbd34b6ea158bce635e32024d5776ba28ff3effe0d280672"
+  }
+}

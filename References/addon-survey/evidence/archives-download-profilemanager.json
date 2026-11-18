@@ -1,0 +1,19 @@
+{
+  "slug": "profilemanager",
+  "file_page_url": "https://www.curseforge.com/wow/addons/profilemanager/files/9627911",
+  "filename": "ProfileManager.zip",
+  "file_id": 9627911,
+  "download_url": "https://edge.forgecdn.net/files/9627/911/ProfileManager.zip",
+  "observed_at": "2026-11-18T11:33:06.9276878+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/9627/911/ProfileManager.zip",
+  "content_length": "154048",
+  "content_type": "application/zip",
+  "content_disposition": null,
+  "bytes": 154048,
+  "signature": "504b0304",
+  "sha256": "f905c4381473a7cb6e033e89aa1878177d996ca965d167cd5fdbf086c8c9f2b1",
+  "relative_zip": "References/addon-sources/profilemanager/ProfileManager.zip",
+  "status": "success"
+}

@@ -1,0 +1,7 @@
+받은 페이지 URL: https://github.com/tukui-org/ElvUI/commit/4a1f84f7dd1aa81063ca6759c52683e2dacab945
+파일명: tukui-org-ElvUI-v16.01-24-g4a1f84f.zip
+판(version): main / commit 4a1f84f7dd1aa81063ca6759c52683e2dacab945
+file ID: 해당 없음(GitHub source commit 4a1f84f7dd1aa81063ca6759c52683e2dacab945)
+파일 날짜: 2026-11-17T10:42:11Z (commit 날짜, UTC)
+표기된 game version: 미확인(공식 저장소 소스 snapshot; Forever 배포 파일 확인 아님)
+SHA256: b8ce3ea028ce540b015c1020492682e699a6c97b652c20de242a2c0b673b241d

@@ -1,0 +1,19 @@
+{
+  "slug": "mythic-timer",
+  "file_page_url": "https://www.curseforge.com/wow/addons/mythic-timer/files/9060817",
+  "filename": "MythicTimer_1.2.261004.zip",
+  "file_id": 9060817,
+  "download_url": "https://edge.forgecdn.net/files/9060/817/MythicTimer_1.2.261004.zip",
+  "observed_at": "2026-11-18T11:33:27.7404468+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/9060/817/MythicTimer_1.2.261004.zip",
+  "content_length": "74165",
+  "content_type": "application/zip",
+  "content_disposition": null,
+  "bytes": 74165,
+  "signature": "504b0304",
+  "sha256": "fa8aa4d88206548eca72e760785971a50828a7dfc34f433ad7a52d002916b5e6",
+  "relative_zip": "References/addon-sources/mythic-timer/MythicTimer_1.2.261004.zip",
+  "status": "success"
+}

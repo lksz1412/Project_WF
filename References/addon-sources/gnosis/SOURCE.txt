@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/gnosis/files/9511828
+파일명: Gnosis-v6.01.zip
+판(version): v6.01
+file ID: 9511828
+파일 날짜: Nov 8, 2026
+표기된 game version: 12.1.5, 5.5.4, 4.4.2, 3.4.5, 2.5.6, 1.15.9 [Flavors: MoP Classic Classic TBC Classic Retail]
+SHA256: 3a2ec9f44a248a33271861f3038a06805ec9e3dc666ebc8a141839b6db4756c6

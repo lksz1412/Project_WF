@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/blizzmove/files/9492856
+파일명: BlizzMove-v3.8.8.zip
+판(version): v3.8.8
+file ID: 9492856
+파일 날짜: Nov 7, 2026
+표기된 game version: 12.1.7, 12.1.5, 5.5.4, 4.4.2, 3.4.3, 2.5.6, 1.60.1, 1.15.9 [Flavors: MoP Classic Classic TBC Classic Retail Forever]
+SHA256: 554404170d77d35bda06b9df5bec87daa0361a9c3ebae383b9552b0ac138e441

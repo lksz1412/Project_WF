@@ -1,0 +1,28 @@
+{
+  "product": "Chattynator",
+  "observed_at": "2026-11-18T10:31:19.9496316+09:00",
+  "page_url": "https://www.curseforge.com/wow/addons/chattynator/files/9648836",
+  "list_url": "https://www.curseforge.com/wow/addons/chattynator/files/all",
+  "page_location": "179-218",
+  "list_location": "224-275",
+  "short_quote": "1.60.1",
+  "selected_version": "237",
+  "file_id": 9648836,
+  "filename": "Chattynator-237.zip",
+  "file_date": "Nov 16, 2026",
+  "latest_basis": "First visible date-ordered file listing row plus Latest release for Forever; exact file lists 1.60.1",
+  "request_url": "https://edge.forgecdn.net/files/9648/836/Chattynator-237.zip",
+  "final_url": "https://mediafilez.forgecdn.net/files/9648/836/Chattynator-237.zip",
+  "http_status": 200,
+  "content_type": [
+    "application/x-zip-compressed"
+  ],
+  "content_length": [
+    "159892"
+  ],
+  "bytes": 159892,
+  "signature": "504b0304",
+  "sha256": "7bf89cbb0cb221a0313ffd2bd3abc761b9c6a11b01bc993216ee8b23b63931c9",
+  "checks": "filename from exact file page; raw bytes copied with no archive processing",
+  "scratch": "%TEMP%/wf-zip-intake-1_dy5yhj"
+}

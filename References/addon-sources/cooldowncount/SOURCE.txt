@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/cooldowncount/files/7821649
+파일명: CooldownCount-v12.0.2.zip
+판(version): v12.0.2
+file ID: 7821649
+파일 날짜: Mar 27, 2026
+표기된 game version: 12.0.1, 12.0.0, 11.2.5 [Flavors: Retail]
+SHA256: 111acfe060fe34ae29d96d1f779c2b04b3292c2654a2dac1900c077cb0002225

@@ -1,0 +1,19 @@
+{
+  "slug": "threatclassic2",
+  "file_page_url": "https://www.curseforge.com/wow/addons/threatclassic2/files/9498163",
+  "filename": "ThreatClassic2-2.77-forever.zip",
+  "file_id": 9498163,
+  "download_url": "https://edge.forgecdn.net/files/9498/163/ThreatClassic2-2.77-forever.zip",
+  "observed_at": "2026-11-18T11:33:09.8540231+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/9498/163/ThreatClassic2-2.77-forever.zip",
+  "content_length": "4478234",
+  "content_type": "application/x-zip-compressed",
+  "content_disposition": null,
+  "bytes": 4478234,
+  "signature": "504b0304",
+  "sha256": "3eed87088b7da14917a65ac835d2b70688efdeed7e4caad64cd6a24d8c3f978c",
+  "relative_zip": "References/addon-sources/threatclassic2/ThreatClassic2-2.77-forever.zip",
+  "status": "success"
+}

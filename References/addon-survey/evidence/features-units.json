@@ -1,0 +1,2374 @@
+{
+  "schema": "features-units-v1",
+  "units": [
+    {
+      "feature": "F01",
+      "name": "공통 외관·테마",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-aurora",
+          "location": "Description/Options L190–205; Recent Files L145–163"
+        },
+        {
+          "source_id": "A-masque",
+          "location": "About/Features/Requirements L187–213; Recent Files L152–171"
+        }
+      ],
+      "attempt_read_location": "Description/Options L190–205; Recent Files L145–163",
+      "read_locations": [
+        {
+          "package": "ElvUI",
+          "id": "EL",
+          "location": "Skins"
+        },
+        {
+          "package": "EllesmereUI",
+          "id": "E",
+          "location": "Modern Visual Design L228–229"
+        },
+        {
+          "package": "SpartanUI",
+          "id": "S",
+          "location": "Overview/Artwork L228"
+        },
+        {
+          "package": "GW2 UI",
+          "id": "G",
+          "location": "hand-painted replacement L212–220"
+        },
+        {
+          "package": "NDui",
+          "id": "N",
+          "location": "Main Features L182"
+        },
+        {
+          "package": "RealUI",
+          "id": "R",
+          "location": "Skins L182"
+        },
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "Features L240–245"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Observed module/description at recorded source position; representative support remains the observed file-list scope."
+    },
+    {
+      "feature": "F02",
+      "name": "행동단축바",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-dominos",
+          "location": "Description L186–195; Recent Files L147–165"
+        }
+      ],
+      "attempt_read_location": "Description L186–195; Recent Files L147–165",
+      "read_locations": [
+        {
+          "package": "ElvUI",
+          "id": "EL",
+          "location": "ActionBars"
+        },
+        {
+          "package": "TukUI",
+          "id": "TU",
+          "location": "ActionBars"
+        },
+        {
+          "package": "EllesmereUI",
+          "id": "E",
+          "location": "Included Modules L235"
+        },
+        {
+          "package": "SpartanUI",
+          "id": "S-repo",
+          "location": "Action Bars L239–240"
+        },
+        {
+          "package": "GW2 UI",
+          "id": "G",
+          "location": "HUD L230"
+        },
+        {
+          "package": "NDui",
+          "id": "N",
+          "location": "FAQ L218–219"
+        },
+        {
+          "package": "RealUI",
+          "id": "R",
+          "location": "Action bars L177"
+        },
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "Layouts L245; ElvUI base bars"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Observed module/description at recorded source position; representative support remains the observed file-list scope."
+    },
+    {
+      "feature": "F03",
+      "name": "유닛 프레임",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-fuf",
+          "location": "Description/Frames/Raid/Status/Auras/Castbars/Look/Options L199–312; Recent Files L142–145"
+        }
+      ],
+      "attempt_read_location": "Description/Frames/Raid/Status/Auras/Castbars/Look/Options L199–312; Recent Files L142–145",
+      "read_locations": [
+        {
+          "package": "ElvUI",
+          "id": "EL",
+          "location": "UnitFrames"
+        },
+        {
+          "package": "TukUI",
+          "id": "TU",
+          "location": "UnitFrames"
+        },
+        {
+          "package": "EllesmereUI",
+          "id": "E",
+          "location": "Included Modules L236"
+        },
+        {
+          "package": "SpartanUI",
+          "id": "S",
+          "location": "Player Frames L229"
+        },
+        {
+          "package": "GW2 UI",
+          "id": "G",
+          "location": "Unit frames L231"
+        },
+        {
+          "package": "NDui",
+          "id": "N",
+          "location": "oUF/FAQ L184,218–219"
+        },
+        {
+          "package": "RealUI",
+          "id": "R",
+          "location": "HuD L175"
+        },
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "Layouts L245; base frames"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Observed module/description at recorded source position; representative support remains the observed file-list scope."
+    },
+    {
+      "feature": "F04",
+      "name": "파티 프레임",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-grid",
+          "location": "Description L354–388; Recent Files L147–165"
+        }
+      ],
+      "attempt_read_location": "Description L354–388; Recent Files L147–165",
+      "read_locations": [
+        {
+          "package": "ElvUI",
+          "id": "EL-group",
+          "location": "Party.lua"
+        },
+        {
+          "package": "TukUI",
+          "id": "TU-group",
+          "location": "Party.lua"
+        },
+        {
+          "package": "EllesmereUI",
+          "id": "E",
+          "location": "Included Modules L238"
+        },
+        {
+          "package": "SpartanUI",
+          "id": "S",
+          "location": "Party Frames L230"
+        },
+        {
+          "package": "GW2 UI",
+          "id": "G",
+          "location": "Unit frames and groups L231"
+        },
+        {
+          "package": "NDui",
+          "id": "N-repo",
+          "location": "PartyFrames L187–188"
+        },
+        {
+          "package": "RealUI",
+          "id": "R",
+          "location": "Group frames L176"
+        },
+        {
+          "package": "BenikUI",
+          "id": "EL-group",
+          "location": "Party.lua"
+        },
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "Description L209–211: external mod / ElvUI v16+ required"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Observed module/description at recorded source position; representative support remains the observed file-list scope."
+    },
+    {
+      "feature": "F05",
+      "name": "공격대 프레임",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-grid",
+          "location": "Description L354–388; Recent Files L147–165"
+        }
+      ],
+      "attempt_read_location": "Description L354–388; Recent Files L147–165",
+      "read_locations": [
+        {
+          "package": "ElvUI",
+          "id": "EL-group",
+          "location": "Raid.lua"
+        },
+        {
+          "package": "TukUI",
+          "id": "TU-group",
+          "location": "Raid.lua"
+        },
+        {
+          "package": "EllesmereUI",
+          "id": "E",
+          "location": "Included Modules L238"
+        },
+        {
+          "package": "SpartanUI",
+          "id": "S",
+          "location": "Raid Frames L231"
+        },
+        {
+          "package": "GW2 UI",
+          "id": "G",
+          "location": "Raid grids L231"
+        },
+        {
+          "package": "NDui",
+          "id": "N",
+          "location": "RaidFrame L184–185"
+        },
+        {
+          "package": "RealUI",
+          "id": "R",
+          "location": "Group frames L176"
+        },
+        {
+          "package": "BenikUI",
+          "id": "EL-group",
+          "location": "Raid.lua"
+        },
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "Description L209–211: external mod / ElvUI v16+ required"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Observed module/description at recorded source position; representative support remains the observed file-list scope."
+    },
+    {
+      "feature": "F06",
+      "name": "채팅 기능",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-prat",
+          "location": "Description L238–288; Recent Files L147–165"
+        }
+      ],
+      "attempt_read_location": "Description L238–288; Recent Files L147–165",
+      "read_locations": [
+        {
+          "package": "ElvUI",
+          "id": "EL",
+          "location": "Chat"
+        },
+        {
+          "package": "TukUI",
+          "id": "TU",
+          "location": "ChatFrames"
+        },
+        {
+          "package": "EllesmereUI",
+          "id": "E",
+          "location": "Included Modules L249"
+        },
+        {
+          "package": "SpartanUI",
+          "id": "S-mod",
+          "location": "Chatbox"
+        },
+        {
+          "package": "GW2 UI",
+          "id": "G",
+          "location": "Map/chat/tooltips L236"
+        },
+        {
+          "package": "NDui",
+          "id": "N",
+          "location": "Chat L187,230–231"
+        },
+        {
+          "package": "RealUI",
+          "id": "R",
+          "location": "chat placement L195"
+        },
+        {
+          "package": "BenikUI",
+          "id": "EL",
+          "location": "Chat"
+        },
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "Description L209–211: external mod / ElvUI v16+ required"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "채팅 존재·편집 범위만 확인; 사용자 지정 채팅 3창 구성은 전부 미확인."
+    },
+    {
+      "feature": "F07",
+      "name": "미니맵",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-sexymap",
+          "location": "Description L202–215; Recent Files L145–163"
+        }
+      ],
+      "attempt_read_location": "Description L202–215; Recent Files L145–163",
+      "read_locations": [
+        {
+          "package": "ElvUI",
+          "id": "EL-map",
+          "location": "Minimap.lua"
+        },
+        {
+          "package": "TukUI",
+          "id": "TU-map",
+          "location": "Minimap.lua"
+        },
+        {
+          "package": "EllesmereUI",
+          "id": "E",
+          "location": "Included Modules L247"
+        },
+        {
+          "package": "SpartanUI",
+          "id": "S",
+          "location": "Minimap L237"
+        },
+        {
+          "package": "GW2 UI",
+          "id": "G",
+          "location": "Map/chat/tooltips L236"
+        },
+        {
+          "package": "NDui",
+          "id": "N",
+          "location": "FAQ L224–225"
+        },
+        {
+          "package": "BenikUI",
+          "id": "EL-map",
+          "location": "Minimap.lua"
+        },
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "Description L209–211: external mod / ElvUI v16+ required"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Observed module/description at recorded source position; representative support remains the observed file-list scope."
+    },
+    {
+      "feature": "F08",
+      "name": "시전바",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-quartz",
+          "location": "Modules L187–213; Recent Files L148–166"
+        }
+      ],
+      "attempt_read_location": "Modules L187–213; Recent Files L148–166",
+      "read_locations": [
+        {
+          "package": "ElvUI",
+          "id": "EL-elements",
+          "location": "CastBar.lua"
+        },
+        {
+          "package": "GW2 UI",
+          "id": "G",
+          "location": "HUD L230"
+        },
+        {
+          "package": "NDui",
+          "id": "N",
+          "location": "FAQ L221–222"
+        },
+        {
+          "package": "RealUI",
+          "id": "R",
+          "location": "HuD L175"
+        },
+        {
+          "package": "BenikUI",
+          "id": "EL-elements",
+          "location": "CastBar.lua"
+        },
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "Description L209–211: external mod / ElvUI v16+ required"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Observed module/description at recorded source position; representative support remains the observed file-list scope."
+    },
+    {
+      "feature": "F09",
+      "name": "버프 표시",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-tmw",
+          "location": "Features L226–280; Recent Files L149–168"
+        }
+      ],
+      "attempt_read_location": "Features L226–280; Recent Files L149–168",
+      "read_locations": [
+        {
+          "package": "ElvUI",
+          "id": "EL",
+          "location": "Auras"
+        },
+        {
+          "package": "TukUI",
+          "id": "TU",
+          "location": "Auras"
+        },
+        {
+          "package": "SpartanUI",
+          "id": "S",
+          "location": "Buff Management L238"
+        },
+        {
+          "package": "GW2 UI",
+          "id": "G",
+          "location": "aura indicators L231"
+        },
+        {
+          "package": "NDui",
+          "id": "N",
+          "location": "Auras watcher L183"
+        },
+        {
+          "package": "RealUI",
+          "id": "R",
+          "location": "Auras L179"
+        },
+        {
+          "package": "BenikUI",
+          "id": "EL",
+          "location": "Auras"
+        },
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "Description L209–211: external mod / ElvUI v16+ required"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Observed module/description at recorded source position; representative support remains the observed file-list scope."
+    },
+    {
+      "feature": "F10",
+      "name": "디버프 표시",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-tmw",
+          "location": "Features L226–280; Recent Files L149–168"
+        }
+      ],
+      "attempt_read_location": "Features L226–280; Recent Files L149–168",
+      "read_locations": [
+        {
+          "package": "ElvUI",
+          "id": "EL-elements",
+          "location": "RaidDebuffs.lua"
+        },
+        {
+          "package": "TukUI",
+          "id": "TU-unit",
+          "location": "Debuffs.lua"
+        },
+        {
+          "package": "GW2 UI",
+          "id": "G",
+          "location": "dispel colors L231"
+        },
+        {
+          "package": "NDui",
+          "id": "N",
+          "location": "Raid debuffs L185"
+        },
+        {
+          "package": "RealUI",
+          "id": "R",
+          "location": "Group frames/Auras L176,179"
+        },
+        {
+          "package": "BenikUI",
+          "id": "EL-elements",
+          "location": "RaidDebuffs.lua"
+        },
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "Description L209–211: external mod / ElvUI v16+ required"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Observed module/description at recorded source position; representative support remains the observed file-list scope."
+    },
+    {
+      "feature": "F11",
+      "name": "툴팁",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-tiptac",
+          "location": "What is it/What can it do L207–225; Recent Files L147–166"
+        }
+      ],
+      "attempt_read_location": "What is it/What can it do L207–225; Recent Files L147–166",
+      "read_locations": [
+        {
+          "package": "ElvUI",
+          "id": "EL",
+          "location": "Tooltip"
+        },
+        {
+          "package": "TukUI",
+          "id": "TU",
+          "location": "Tooltips"
+        },
+        {
+          "package": "EllesmereUI",
+          "id": "E",
+          "location": "Blizz UI Element Reskins L242"
+        },
+        {
+          "package": "SpartanUI",
+          "id": "S",
+          "location": "Custom Tooltips L236"
+        },
+        {
+          "package": "GW2 UI",
+          "id": "G",
+          "location": "Map/chat/tooltips L236"
+        },
+        {
+          "package": "RealUI",
+          "id": "R",
+          "location": "Tooltips L183"
+        },
+        {
+          "package": "BenikUI",
+          "id": "EL",
+          "location": "Tooltip"
+        },
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "Description L209–211: external mod / ElvUI v16+ required"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Observed module/description at recorded source position; representative support remains the observed file-list scope."
+    },
+    {
+      "feature": "F12",
+      "name": "가방·인벤토리 UI",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-bagnon",
+          "location": "Description L200–219; Recent Files L150–169"
+        }
+      ],
+      "attempt_read_location": "Description L200–219; Recent Files L150–169",
+      "read_locations": [
+        {
+          "package": "ElvUI",
+          "id": "EL",
+          "location": "Bags"
+        },
+        {
+          "package": "TukUI",
+          "id": "TU",
+          "location": "Inventory"
+        },
+        {
+          "package": "EllesmereUI",
+          "id": "E",
+          "location": "Included Modules L252"
+        },
+        {
+          "package": "GW2 UI",
+          "id": "G",
+          "location": "Character/inventory L234"
+        },
+        {
+          "package": "NDui",
+          "id": "N",
+          "location": "One-container L188"
+        },
+        {
+          "package": "RealUI",
+          "id": "R",
+          "location": "Inventory L181"
+        },
+        {
+          "package": "BenikUI",
+          "id": "EL",
+          "location": "Bags"
+        },
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "Description L209–211: external mod / ElvUI v16+ required"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "가방 기능 확인과 한 창 통합 확인은 다르므로 F13을 따로 둠."
+    },
+    {
+      "feature": "F13",
+      "name": "한 창 가방 통합",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-baganator",
+          "location": "Description/Highlights L180–209; Recent Files L144–163"
+        }
+      ],
+      "attempt_read_location": "Description L200–219; Recent Files L150–169",
+      "read_locations": [
+        {
+          "package": "NDui",
+          "id": "N",
+          "location": "One-container L188"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "한 창 보기와 분류 보기를 공식 설명에서 확인."
+    },
+    {
+      "feature": "F14",
+      "name": "이름표",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-platy",
+          "location": "Features L181–217; Recent Files L145–164"
+        }
+      ],
+      "attempt_read_location": "Features L181–217; Recent Files L145–164",
+      "read_locations": [
+        {
+          "package": "ElvUI",
+          "id": "EL",
+          "location": "Nameplates"
+        },
+        {
+          "package": "EllesmereUI",
+          "id": "E",
+          "location": "Included Modules L237"
+        },
+        {
+          "package": "SpartanUI",
+          "id": "S-mod",
+          "location": "Nameplates"
+        },
+        {
+          "package": "NDui",
+          "id": "N",
+          "location": "Nameplate L184,186"
+        },
+        {
+          "package": "RealUI",
+          "id": "R",
+          "location": "Nameplates L178"
+        },
+        {
+          "package": "BenikUI",
+          "id": "EL",
+          "location": "Nameplates"
+        },
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "Description L209–211: external mod / ElvUI v16+ required"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Observed module/description at recorded source position; representative support remains the observed file-list scope."
+    },
+    {
+      "feature": "F15",
+      "name": "데이터 텍스트·정보 바",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-titan",
+          "location": "About/Features L200–228; Recent Files L147–165; Forever auto sell issue explicitly noted"
+        }
+      ],
+      "attempt_read_location": "About/Features L200–228; Recent Files L147–165; Forever auto sell issue explicitly noted",
+      "read_locations": [
+        {
+          "package": "ElvUI",
+          "id": "EL",
+          "location": "DataTexts"
+        },
+        {
+          "package": "TukUI",
+          "id": "TU",
+          "location": "DataTexts"
+        },
+        {
+          "package": "NDui",
+          "id": "N",
+          "location": "Infobars L192"
+        },
+        {
+          "package": "RealUI",
+          "id": "R",
+          "location": "Infobar L180"
+        },
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "Dashboards/datatexts L247–257"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "SpartanUI의 DataBarHost 이름만으로 정보 텍스트 기능을 확정하지 않음."
+    },
+    {
+      "feature": "F16",
+      "name": "경험치 바",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-xp",
+          "location": "Features L173–208; Recent Files L135–138"
+        }
+      ],
+      "attempt_read_location": "Features L173–208; Recent Files L135–138",
+      "read_locations": [
+        {
+          "package": "ElvUI",
+          "id": "EL-bars",
+          "location": "Experience.lua"
+        },
+        {
+          "package": "TukUI",
+          "id": "TU-misc",
+          "location": "ExperienceBar.lua"
+        },
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "vertical xp statusbars L260; base bar plus notifier"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Observed module/description at recorded source position; representative support remains the observed file-list scope."
+    },
+    {
+      "feature": "F17",
+      "name": "평판 바",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-xp",
+          "location": "Features L173–208; Recent Files L135–138"
+        }
+      ],
+      "attempt_read_location": "Features L173–208; Recent Files L135–138",
+      "read_locations": [
+        {
+          "package": "ElvUI",
+          "id": "EL-bars",
+          "location": "Reputation.lua"
+        },
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "vertical rep statusbars L260; base bar plus notifier"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Observed module/description at recorded source position; representative support remains the observed file-list scope."
+    },
+    {
+      "feature": "F18",
+      "name": "재사용 대기시간 숫자",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-omnicc",
+          "location": "Overview L205–224; Recent Files L150–169, no Forever item observed; classic-only statement"
+        }
+      ],
+      "attempt_read_location": "GitHub contents response; named entries (whole directory response read)",
+      "read_locations": [],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "일반 Cooldowns 모듈명만으로 숫자 표시를 확정하지 않음."
+    },
+    {
+      "feature": "F19",
+      "name": "재사용 대기시간 관리자",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-tmw",
+          "location": "Features L226–280; Recent Files L149–168"
+        }
+      ],
+      "attempt_read_location": "Features L226–280; Recent Files L149–168",
+      "read_locations": [
+        {
+          "package": "EllesmereUI",
+          "id": "E",
+          "location": "Included Modules L239"
+        },
+        {
+          "package": "RealUI",
+          "id": "R",
+          "location": "Cooldown Manager presets L179"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "RealUI는 관리자 preset 제공 확인이며 독립 관리자 엔진 구현으로 세지 않음."
+    },
+    {
+      "feature": "F20",
+      "name": "세계지도 UI",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-mapster",
+          "location": "Features L185–207; Recent Files L146–160"
+        }
+      ],
+      "attempt_read_location": "Features L185–207; Recent Files L146–160",
+      "read_locations": [
+        {
+          "package": "ElvUI",
+          "id": "EL-map",
+          "location": "Worldmap.lua"
+        },
+        {
+          "package": "TukUI",
+          "id": "TU-map",
+          "location": "Worldmap.lua"
+        },
+        {
+          "package": "GW2 UI",
+          "id": "G",
+          "location": "world map L236"
+        },
+        {
+          "package": "BenikUI",
+          "id": "EL-map",
+          "location": "Worldmap.lua"
+        },
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "Description L209–211: external mod / ElvUI v16+ required"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Observed module/description at recorded source position; representative support remains the observed file-list scope."
+    },
+    {
+      "feature": "F21",
+      "name": "지도 좌표",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-mapster",
+          "location": "Features L185–207; Recent Files L146–160"
+        }
+      ],
+      "attempt_read_location": "GitHub contents response; named entries (whole directory response read)",
+      "read_locations": [],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "지도 모듈 존재만으로 좌표를 확정하지 않음."
+    },
+    {
+      "feature": "F22",
+      "name": "자동 수리",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-leatrix",
+          "location": "Features L176–238; Recent Files L142–161; individual options version-dependent; full Interface/Frames/System/Settings L223–310"
+        }
+      ],
+      "attempt_read_location": "Features L176–238; Recent Files L142–161; individual options version-dependent; full Interface/Frames/System/Settings L223–310",
+      "read_locations": [
+        {
+          "package": "GW2 UI",
+          "id": "G",
+          "location": "quality of life L237"
+        },
+        {
+          "package": "NDui",
+          "id": "N",
+          "location": "Infobars L192; FAQ L227–228"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Observed module/description at recorded source position; representative support remains the observed file-list scope."
+    },
+    {
+      "feature": "F23",
+      "name": "자동 판매",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-leatrix",
+          "location": "Features L176–238; Recent Files L142–161; individual options version-dependent; full Interface/Frames/System/Settings L223–310"
+        }
+      ],
+      "attempt_read_location": "Features L176–238; Recent Files L142–161; individual options version-dependent; full Interface/Frames/System/Settings L223–310",
+      "read_locations": [
+        {
+          "package": "SpartanUI",
+          "id": "S",
+          "location": "Auto Sell L233"
+        },
+        {
+          "package": "NDui",
+          "id": "N",
+          "location": "Infobars L192"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Observed module/description at recorded source position; representative support remains the observed file-list scope."
+    },
+    {
+      "feature": "F24",
+      "name": "퀘스트 자동 제출",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-leatrix",
+          "location": "Features L176–238; Recent Files L142–161; individual options version-dependent; full Interface/Frames/System/Settings L223–310"
+        }
+      ],
+      "attempt_read_location": "Features L176–238; Recent Files L142–161; individual options version-dependent; full Interface/Frames/System/Settings L223–310",
+      "read_locations": [
+        {
+          "package": "SpartanUI",
+          "id": "S",
+          "location": "Auto turn in L234"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Observed module/description at recorded source position; representative support remains the observed file-list scope."
+    },
+    {
+      "feature": "F25",
+      "name": "기본 창 스킨",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-aurora",
+          "location": "Description/Options L190–205; Recent Files L145–163"
+        }
+      ],
+      "attempt_read_location": "Description/Options L190–205; Recent Files L145–163",
+      "read_locations": [
+        {
+          "package": "ElvUI",
+          "id": "EL",
+          "location": "Skins"
+        },
+        {
+          "package": "EllesmereUI",
+          "id": "E",
+          "location": "Blizz UI Element Reskins L242"
+        },
+        {
+          "package": "GW2 UI",
+          "id": "G",
+          "location": "Blizzard window skins L237"
+        },
+        {
+          "package": "NDui",
+          "id": "N",
+          "location": "Main Features L182"
+        },
+        {
+          "package": "RealUI",
+          "id": "R",
+          "location": "Skins L182"
+        },
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "Blizzard frame decors L240"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Observed module/description at recorded source position; representative support remains the observed file-list scope."
+    },
+    {
+      "feature": "F26",
+      "name": "UI 이동·편집",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-blizz",
+          "location": "Description L184–210; Recent Files L147–165"
+        }
+      ],
+      "attempt_read_location": "Description L184–210; Recent Files L147–165",
+      "read_locations": [
+        {
+          "package": "ElvUI",
+          "id": "EL-general",
+          "location": "Movers.lua"
+        },
+        {
+          "package": "EllesmereUI",
+          "id": "E",
+          "location": "Unlock Mode L218–222"
+        },
+        {
+          "package": "GW2 UI",
+          "id": "G",
+          "location": "Move HUD L239"
+        },
+        {
+          "package": "BenikUI",
+          "id": "EL-general",
+          "location": "Movers.lua"
+        },
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "Description L209–211: external mod / ElvUI v16+ required"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Observed module/description at recorded source position; representative support remains the observed file-list scope."
+    },
+    {
+      "feature": "F27",
+      "name": "profile 저장·전환",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-profile",
+          "location": "Description/Presets L195–244; Recent Files L140–146"
+        },
+        {
+          "source_id": "A-reflux",
+          "location": "Description L159–211; Recent Files L140–144, no Forever item observed"
+        }
+      ],
+      "attempt_read_location": "Description L159–211; Recent Files L140–144, no Forever item observed",
+      "read_locations": [
+        {
+          "package": "GW2 UI",
+          "id": "G",
+          "location": "save profiles / spec switch L239"
+        },
+        {
+          "package": "RealUI",
+          "id": "R",
+          "location": "Setup L187–188"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "ProfileManager는 여러 지원 애드온 preset, Reflux는 profile 저장·전환 범위."
+    },
+    {
+      "feature": "F28",
+      "name": "profile 가져오기·내보내기",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-profile",
+          "location": "Description/Presets L195–244; Recent Files L140–146"
+        },
+        {
+          "source_id": "A-myslot",
+          "location": "Description/Features/Usage L182–227; Recent Files L147–166"
+        }
+      ],
+      "attempt_read_location": "Description L159–211; Recent Files L140–144, no Forever item observed",
+      "read_locations": [
+        {
+          "package": "RealUI",
+          "id": "R",
+          "location": "Setup L188"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "ProfileManager는 preset 문자열, Myslot은 행동단축바·매크로·키 바인딩 문자열 범위."
+    },
+    {
+      "feature": "F29",
+      "name": "설치 마법사",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-fuf",
+          "location": "Description/Frames/Raid/Status/Auras/Castbars/Look/Options L199–312; Recent Files L142–145"
+        }
+      ],
+      "attempt_read_location": "Description/Installation/Features L208–262; Recent Files L149–167",
+      "read_locations": [
+        {
+          "package": "RealUI",
+          "id": "R",
+          "location": "Setup wizard L186"
+        },
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "Installation L215–218"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "공격대 프레임의 역할·외관·클릭 시전 설정 마법사 범위."
+    },
+    {
+      "feature": "F30",
+      "name": "글꼴 모듈·교체",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-font",
+          "location": "Features L195–237; Recent Files L142–160"
+        }
+      ],
+      "attempt_read_location": "Features L195–237; Recent Files L142–160",
+      "read_locations": [
+        {
+          "package": "ElvUI",
+          "id": "EL-general",
+          "location": "Fonts.lua"
+        },
+        {
+          "package": "TukUI",
+          "id": "TU",
+          "location": "Fonts"
+        },
+        {
+          "package": "NDui",
+          "id": "N",
+          "location": "font outlines FAQ L210–211"
+        },
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "font replacement L242"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Observed module/description at recorded source position; representative support remains the observed file-list scope."
+    },
+    {
+      "feature": "F31",
+      "name": "화면 요소 스케일·크기 편집",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-blizz",
+          "location": "Description L184–210; Recent Files L147–165"
+        }
+      ],
+      "attempt_read_location": "Description L184–210; Recent Files L147–165",
+      "read_locations": [
+        {
+          "package": "EllesmereUI",
+          "id": "E",
+          "location": "resize L220; width/height L222"
+        },
+        {
+          "package": "GW2 UI",
+          "id": "G",
+          "location": "scale every frame L239"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "대표는 기본 창 크기 편집 범위; 전체 패키지 스케일과 동일 범위라는 뜻은 아님."
+    },
+    {
+      "feature": "F32",
+      "name": "직업 자원 표시",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-nug",
+          "location": "Class Resource Tracker L194–227; Recent Files L151–169"
+        }
+      ],
+      "attempt_read_location": "Description/Frames/Raid/Status/Auras/Castbars/Look/Options L199–312; Recent Files L142–145",
+      "read_locations": [
+        {
+          "package": "ElvUI",
+          "id": "EL-elements",
+          "location": "ClassBars.lua"
+        },
+        {
+          "package": "EllesmereUI",
+          "id": "E",
+          "location": "Resource Bars L240"
+        },
+        {
+          "package": "GW2 UI",
+          "id": "G",
+          "location": "class powers L230"
+        },
+        {
+          "package": "NDui",
+          "id": "N",
+          "location": "Classbar L189"
+        },
+        {
+          "package": "RealUI",
+          "id": "R",
+          "location": "class resources L175"
+        },
+        {
+          "package": "BenikUI",
+          "id": "EL-elements",
+          "location": "ClassBars.lua"
+        },
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "Description L209–211: external mod / ElvUI v16+ required"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "연계 점수 등 직업 자원. 원문은 Live/Classic 목록을 구분; Forever 파일 표기와 자원별 실제 작동은 별개."
+    },
+    {
+      "feature": "F33",
+      "name": "전투·버프 알림",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-tmw",
+          "location": "Features L226–280; Recent Files L149–168"
+        }
+      ],
+      "attempt_read_location": "Features L226–280; Recent Files L149–168",
+      "read_locations": [
+        {
+          "package": "EllesmereUI",
+          "id": "E",
+          "location": "AuraBuff Reminders L241"
+        },
+        {
+          "package": "NDui",
+          "id": "N",
+          "location": "event alerts L191"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Observed module/description at recorded source position; representative support remains the observed file-list scope."
+    },
+    {
+      "feature": "F34",
+      "name": "회전·다음 능력 추천",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-hekili",
+          "location": "Description L163–211; Recent Files L144–147"
+        }
+      ],
+      "attempt_read_location": "Main Features L180–192; FAQ L210–231",
+      "read_locations": [],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "오라 감시·알림을 Hekili 유형 회전 추천으로 확정하지 않음."
+    },
+    {
+      "feature": "F35",
+      "name": "데미지 미터",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-details",
+          "location": "Description L186–228; Recent Files L148–167"
+        }
+      ],
+      "attempt_read_location": "Description L186–228; Recent Files L148–167",
+      "read_locations": [
+        {
+          "package": "EllesmereUI",
+          "id": "E",
+          "location": "Damage Meter L251"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Observed module/description at recorded source position; representative support remains the observed file-list scope."
+    },
+    {
+      "feature": "F36",
+      "name": "순위형 어그로 미터",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-threat",
+          "location": "Description/Live Threat Meter L155–191; Recent Files L135–139"
+        }
+      ],
+      "attempt_read_location": "GitHub contents response; named entries (whole directory response read)",
+      "read_locations": [],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "위협 바·이름표 위협 색상을 플레이어별 순위 미터로 확정하지 않음."
+    },
+    {
+      "feature": "F37",
+      "name": "위협 상태 표시",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-threat",
+          "location": "Description/Live Threat Meter L155–191; Recent Files L135–139"
+        }
+      ],
+      "attempt_read_location": "Description/Live Threat Meter L155–191; Recent Files L135–139",
+      "read_locations": [
+        {
+          "package": "ElvUI",
+          "id": "EL-bars",
+          "location": "Threat.lua"
+        },
+        {
+          "package": "TukUI",
+          "id": "TU-misc",
+          "location": "ThreatBar.lua"
+        },
+        {
+          "package": "NDui",
+          "id": "N",
+          "location": "Nameplate tank threat color L186"
+        },
+        {
+          "package": "RealUI",
+          "id": "R",
+          "location": "Nameplate threat coloring L178"
+        },
+        {
+          "package": "BenikUI",
+          "id": "EL-bars",
+          "location": "Threat.lua"
+        },
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "Description L209–211: external mod / ElvUI v16+ required"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Observed module/description at recorded source position; representative support remains the observed file-list scope."
+    },
+    {
+      "feature": "F38",
+      "name": "퀘스트·목표 추적기",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-kaliel",
+          "location": "Features L200–255; Recent Files L148–150"
+        }
+      ],
+      "attempt_read_location": "Description/Features L209–239; Recent Files L150–168",
+      "read_locations": [
+        {
+          "package": "TukUI",
+          "id": "TU-misc",
+          "location": "ObjectiveTracker.lua"
+        },
+        {
+          "package": "EllesmereUI",
+          "id": "E",
+          "location": "Quest Tracker L250"
+        },
+        {
+          "package": "SpartanUI",
+          "id": "S",
+          "location": "Auto-Hide Objectives L235"
+        },
+        {
+          "package": "GW2 UI",
+          "id": "G",
+          "location": "Questing L233"
+        },
+        {
+          "package": "RealUI",
+          "id": "R",
+          "location": "objective tracker L183"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "퀘스트·업적·목표 추적기. 패키지의 자동 숨김 등 세부 범위는 별도."
+    },
+    {
+      "feature": "F39",
+      "name": "지속 치유(HoT) 추적",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-fuf",
+          "location": "Description/Frames/Raid/Status/Auras/Castbars/Look/Options L199–312; Recent Files L142–145"
+        }
+      ],
+      "attempt_read_location": "Description L354–388; Recent Files L147–165",
+      "read_locations": [
+        {
+          "package": "SpartanUI",
+          "id": "S",
+          "location": "HoT Tracking L232"
+        },
+        {
+          "package": "RealUI",
+          "id": "R",
+          "location": "your HoTs L176"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "공격대 셀의 지속 치유·보호막 모서리 표시자를 공식 설명에서 확인."
+    },
+    {
+      "feature": "F40",
+      "name": "우편 모두 열기",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-postal",
+          "location": "About Postal L182–218; Recent Files L146–161, no Forever item observed"
+        }
+      ],
+      "attempt_read_location": "About Postal L182–218; Recent Files L146–161, no Forever item observed",
+      "read_locations": [
+        {
+          "package": "SpartanUI",
+          "id": "S",
+          "location": "Open All Mail L239"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Observed module/description at recorded source position; representative support remains the observed file-list scope."
+    },
+    {
+      "feature": "F41",
+      "name": "화면 가장자리·비네트 효과",
+      "standalone_read_locations": [],
+      "attempt_read_location": "Features L176–238; Recent Files L142–161; individual options version-dependent; full Interface/Frames/System/Settings L223–310",
+      "read_locations": [
+        {
+          "package": "SpartanUI",
+          "id": "S",
+          "location": "Vignette Effects L240"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Leatrix 화면 테두리는 확인했으나 같은 비네트 효과인지는 미확인."
+    },
+    {
+      "feature": "F42",
+      "name": "커서 시각 효과",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-cursor",
+          "location": "Highlights/Profiles L159–229; file-list followup pending; Recent Files L141–145"
+        }
+      ],
+      "attempt_read_location": "Highlights/Profiles L159–229; file-list followup pending; Recent Files L141–145",
+      "read_locations": [
+        {
+          "package": "EllesmereUI",
+          "id": "E",
+          "location": "Cursor Effects L243"
+        },
+        {
+          "package": "GW2 UI",
+          "id": "G",
+          "location": "global cooldown cursor ring L237"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "두 패키지 효과의 구체 범위는 다름: 일반 커서 효과 / 글로벌 재사용 대기시간 링."
+    },
+    {
+      "feature": "F43",
+      "name": "Mythic+ 타이머",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-mythic",
+          "location": "Description L178–212; Recent Files L136–139"
+        }
+      ],
+      "attempt_read_location": "Description L178–212; Recent Files L136–139",
+      "read_locations": [
+        {
+          "package": "EllesmereUI",
+          "id": "E",
+          "location": "Mythic+ Timer L245"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "GW2 UI의 Mythic+ 정보·보스 시간 기록을 던전 제한시간 타이머와 같다고 확정하지 않음. Retail 기능과 Forever 작동 구분."
+    },
+    {
+      "feature": "F44",
+      "name": "Skyriding 전용 화면",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-glider",
+          "location": "Description L183–203; Recent Files L141–144"
+        }
+      ],
+      "attempt_read_location": "Description L183–203; Recent Files L141–144",
+      "read_locations": [
+        {
+          "package": "EllesmereUI",
+          "id": "E",
+          "location": "Skyriding HUD L246"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Observed module/description at recorded source position; representative support remains the observed file-list scope."
+    },
+    {
+      "feature": "F45",
+      "name": "친구 목록",
+      "standalone_read_locations": [],
+      "attempt_read_location": "Description L215–260; Included Modules L234–255; Recent Files L145–152",
+      "read_locations": [
+        {
+          "package": "EllesmereUI",
+          "id": "E",
+          "location": "Friends List L248"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Observed module/description at recorded source position; representative support remains the observed file-list scope."
+    },
+    {
+      "feature": "F46",
+      "name": "Party Mode 모듈(세부 미확인)",
+      "standalone_read_locations": [],
+      "attempt_read_location": "Description L215–260; Included Modules L234–255; Recent Files L145–152",
+      "read_locations": [
+        {
+          "package": "EllesmereUI",
+          "id": "E",
+          "location": "Party Mode L254"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "공식 이름의 모듈 존재만 확인; 게임 파티 프레임과 합치지 않음."
+    },
+    {
+      "feature": "F47",
+      "name": "자리비움(AFK) 모듈",
+      "standalone_read_locations": [],
+      "attempt_read_location": "Description/Installation/Features L208–262; Recent Files L149–167",
+      "read_locations": [
+        {
+          "package": "ElvUI",
+          "id": "EL-misc",
+          "location": "AFK.lua"
+        },
+        {
+          "package": "TukUI",
+          "id": "TU-misc",
+          "location": "AFK.lua"
+        },
+        {
+          "package": "SpartanUI",
+          "id": "S-mod",
+          "location": "AFKEffects.lua"
+        },
+        {
+          "package": "GW2 UI",
+          "id": "G",
+          "location": "AFK screen L237"
+        },
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "AFK Mode L253"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "GW2 UI는 화면, BenikUI는 모드, ElvUI/TukUI/SpartanUI는 공식 모듈 이름 범위."
+    },
+    {
+      "feature": "F48",
+      "name": "비행 전용 모드",
+      "standalone_read_locations": [],
+      "attempt_read_location": "Modules L187–213; Recent Files L148–166",
+      "read_locations": [
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "Flight Mode L254; Request Stop L259"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Quartz는 비행 진행바이며 별도 비행 정보 애드온 필요; 같은 비행 모드 대표로 확정하지 않음."
+    },
+    {
+      "feature": "F49",
+      "name": "캐릭터 정보 창",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-leatrix",
+          "location": "Features L176–238; Recent Files L142–161; individual options version-dependent; full Interface/Frames/System/Settings L223–310"
+        }
+      ],
+      "attempt_read_location": "Features L176–238; Recent Files L142–161; individual options version-dependent; full Interface/Frames/System/Settings L223–310",
+      "read_locations": [
+        {
+          "package": "SpartanUI",
+          "id": "S-mod",
+          "location": "ImprovedCharacterScreen.lua"
+        },
+        {
+          "package": "GW2 UI",
+          "id": "G",
+          "location": "hero panel L234"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Leatrix는 기본 캐릭터 창의 내구도/음량 확장 범위."
+    },
+    {
+      "feature": "F50",
+      "name": "전리품 주사위 UI",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-xloot",
+          "location": "Modules L214–257; Recent Files L147–165"
+        }
+      ],
+      "attempt_read_location": "Description/Features L209–239; Recent Files L150–168",
+      "read_locations": [
+        {
+          "package": "ElvUI",
+          "id": "EL-misc",
+          "location": "LootRoll.lua"
+        },
+        {
+          "package": "GW2 UI",
+          "id": "G",
+          "location": "loot roll bars L234"
+        },
+        {
+          "package": "BenikUI",
+          "id": "EL-misc",
+          "location": "LootRoll.lua"
+        },
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "Description L209–211: external mod / ElvUI v16+ required"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "XLoot Group의 Need/Greed/Pass 주사위 프레임 범위."
+    },
+    {
+      "feature": "F51",
+      "name": "획득 전리품 알림",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-lstoasts",
+          "location": "Description/FAQ L175–199; Recent Files L148–156"
+        },
+        {
+          "source_id": "A-xloot",
+          "location": "Modules L214–257; Recent Files L147–165"
+        }
+      ],
+      "attempt_read_location": "Description/Features L209–239; Recent Files L150–168",
+      "read_locations": [
+        {
+          "package": "GW2 UI",
+          "id": "G",
+          "location": "loot feed L234"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "LS: Toasts의 loot 알림과 XLoot Monitor/Toast의 획득 알림 범위."
+    },
+    {
+      "feature": "F52",
+      "name": "빠른 전리품 획득",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-speedy",
+          "location": "Description L180–198; Recent Files L143–161"
+        },
+        {
+          "source_id": "A-leatrix",
+          "location": "Features L176–238; Recent Files L142–161; individual options version-dependent; full Interface/Frames/System/Settings L223–310"
+        }
+      ],
+      "attempt_read_location": "Features L176–238; Recent Files L142–161; individual options version-dependent; full Interface/Frames/System/Settings L223–310",
+      "read_locations": [
+        {
+          "package": "GW2 UI",
+          "id": "G",
+          "location": "fast loot L237"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "두 공식 설명에서 빠른 자동 전리품 획득 확인; Leatrix는 판별 옵션 차이 조건 유지."
+    },
+    {
+      "feature": "F53",
+      "name": "전투 문자",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-msbt",
+          "location": "Description/Features L193–237; Recent Files L144–154"
+        },
+        {
+          "source_id": "A-nsct",
+          "location": "Description/FAQ L198–224; Recent Files L144–163"
+        }
+      ],
+      "attempt_read_location": "Features L195–237; Recent Files L142–160",
+      "read_locations": [
+        {
+          "package": "RealUI",
+          "id": "R",
+          "location": "combat text L183"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "MSBT는 피해·치유 문자, Nameplate Scrolling Combat Text는 피해 문자이며 치유 미포함을 공식 명시."
+    },
+    {
+      "feature": "F54",
+      "name": "오류 수집·표시",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-bug",
+          "location": "Description L180–193; Recent Files L146–164"
+        }
+      ],
+      "attempt_read_location": "Description L180–193; Recent Files L146–164",
+      "read_locations": [
+        {
+          "package": "NDui",
+          "id": "N-repo",
+          "location": "Default AddOns L203–206; bundled error collector"
+        },
+        {
+          "package": "RealUI",
+          "id": "R",
+          "location": "error catcher L183"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "BugSack은 BugGrabber 의존. 수집·표시 구성과 독립 엔진 수는 다름."
+    },
+    {
+      "feature": "F55",
+      "name": "게임패드 전용 배치",
+      "standalone_read_locations": [],
+      "attempt_read_location": "Description/Features L209–239; Recent Files L150–168",
+      "read_locations": [
+        {
+          "package": "GW2 UI",
+          "id": "G",
+          "location": "Forever gamepad layout L224"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Observed module/description at recorded source position; representative support remains the observed file-list scope."
+    },
+    {
+      "feature": "F56",
+      "name": "치유·흡수량 예측 표시",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-fuf",
+          "location": "Description/Frames/Raid/Status/Auras/Castbars/Look/Options L199–312; Recent Files L142–145"
+        }
+      ],
+      "attempt_read_location": "Description L354–388; Recent Files L147–165",
+      "read_locations": [
+        {
+          "package": "ElvUI",
+          "id": "EL-elements",
+          "location": "HealPrediction.lua"
+        },
+        {
+          "package": "RealUI",
+          "id": "R",
+          "location": "incoming heals/absorbs L176"
+        },
+        {
+          "package": "BenikUI",
+          "id": "EL-elements",
+          "location": "HealPrediction.lua"
+        },
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "Description L209–211: external mod / ElvUI v16+ required"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "체력 바의 들어오는 치유·흡수 보호막 표시를 공식 설명에서 확인."
+    },
+    {
+      "feature": "F57",
+      "name": "거리 밖 프레임 흐림",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-fuf",
+          "location": "Description/Frames/Raid/Status/Auras/Castbars/Look/Options L199–312; Recent Files L142–145"
+        }
+      ],
+      "attempt_read_location": "Description L354–388; Recent Files L147–165",
+      "read_locations": [
+        {
+          "package": "RealUI",
+          "id": "R",
+          "location": "range fading L176"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "범위 밖 유닛 프레임의 투명도 조절을 공식 설명에서 확인."
+    },
+    {
+      "feature": "F58",
+      "name": "공격대 유틸리티",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-details",
+          "location": "Description L186–228; Recent Files L148–167"
+        },
+        {
+          "source_id": "A-fuf",
+          "location": "Description/Frames/Raid/Status/Auras/Castbars/Look/Options L199–312; Recent Files L142–145"
+        }
+      ],
+      "attempt_read_location": "Description L186–228; Recent Files L148–167",
+      "read_locations": [
+        {
+          "package": "ElvUI",
+          "id": "EL-misc",
+          "location": "RaidUtility.lua"
+        },
+        {
+          "package": "TukUI",
+          "id": "TU-misc",
+          "location": "RaidUtilities.lua"
+        },
+        {
+          "package": "NDui",
+          "id": "N",
+          "location": "Raid Toolbar L190"
+        },
+        {
+          "package": "BenikUI",
+          "id": "EL-misc",
+          "location": "RaidUtility.lua"
+        },
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "Description L209–211: external mod / ElvUI v16+ required"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "공격대 도구. Forever Unit Frames는 준비 확인·역할 투표·징표 등 구체 목록 확인."
+    },
+    {
+      "feature": "F59",
+      "name": "전문기술 대시보드",
+      "standalone_read_locations": [],
+      "attempt_read_location": "Description/Installation/Features L208–262; Recent Files L149–167",
+      "read_locations": [
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "Professions Dashboard L249"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Observed module/description at recorded source position; representative support remains the observed file-list scope."
+    },
+    {
+      "feature": "F60",
+      "name": "화폐 정보 표시",
+      "standalone_read_locations": [],
+      "attempt_read_location": "About/Features L200–228; Recent Files L147–165; Forever auto sell issue explicitly noted",
+      "read_locations": [
+        {
+          "package": "RealUI",
+          "id": "R",
+          "location": "currencies in Infobar L180"
+        },
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "Tokens Dashboard L248"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "RealUI는 정보 바, BenikUI는 화폐 대시보드 범위."
+    },
+    {
+      "feature": "F61",
+      "name": "아이템 수량 대시보드",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-msbt",
+          "location": "Description/Features L193–237; Recent Files L144–154"
+        }
+      ],
+      "attempt_read_location": "Description L200–219; Recent Files L150–169",
+      "read_locations": [
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "Items Dashboard L251"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "획득 알림에 현재 인벤토리의 해당 아이템 총수 표시; 상시 대시보드 형식과는 다름."
+    },
+    {
+      "feature": "F62",
+      "name": "여러 평판 대시보드",
+      "standalone_read_locations": [],
+      "attempt_read_location": "Features L173–208; Recent Files L135–138",
+      "read_locations": [
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "Reputations Dashboard L250"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Experience Forever는 한 평판 바 범위; 동시 여러 평판 대표로 확정하지 않음."
+    },
+    {
+      "feature": "F63",
+      "name": "사용자 배경 패널",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-kgpanels",
+          "location": "Description L174–193; Recent Files L147–157"
+        }
+      ],
+      "attempt_read_location": "Description/Installation/Features L208–262; Recent Files L149–167",
+      "read_locations": [
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "Custom Panels L252"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "사용자 UI 패널 생성 기능 확인."
+    },
+    {
+      "feature": "F64",
+      "name": "분리된 초상화",
+      "standalone_read_locations": [],
+      "attempt_read_location": "Description/Frames/Raid/Status/Auras/Castbars/Look/Options L199–312; Recent Files L142–145",
+      "read_locations": [
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "Detached portraits L255"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Observed module/description at recorded source position; representative support remains the observed file-list scope."
+    },
+    {
+      "feature": "F65",
+      "name": "모듈별 선택 사용",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-xloot",
+          "location": "Modules L214–257; Recent Files L147–165"
+        }
+      ],
+      "attempt_read_location": "Description L215–260; Included Modules L234–255; Recent Files L145–152",
+      "read_locations": [
+        {
+          "package": "EllesmereUI",
+          "id": "E",
+          "location": "Modular Addon System L226–227"
+        },
+        {
+          "package": "SpartanUI",
+          "id": "S",
+          "location": "modular description L218"
+        },
+        {
+          "package": "GW2 UI",
+          "id": "G",
+          "location": "module disable L221"
+        },
+        {
+          "package": "NDui",
+          "id": "N",
+          "location": "disable features FAQ L218–219"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "각 XLoot 모듈을 개별 활성화·비활성화하는 기능 확인."
+    },
+    {
+      "feature": "F66",
+      "name": "펫 경험치 바",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-xp",
+          "location": "Features L173–208; Recent Files L135–138"
+        }
+      ],
+      "attempt_read_location": "Features L173–208; Recent Files L135–138",
+      "read_locations": [
+        {
+          "package": "ElvUI",
+          "id": "EL-bars",
+          "location": "PetExperience.lua"
+        },
+        {
+          "package": "BenikUI",
+          "id": "EL-bars",
+          "location": "PetExperience.lua"
+        },
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "Description L209–211: external mod / ElvUI v16+ required"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Observed module/description at recorded source position; representative support remains the observed file-list scope."
+    },
+    {
+      "feature": "F67",
+      "name": "기본 말풍선 편집",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-prat",
+          "location": "Description L238–288; Recent Files L147–165"
+        }
+      ],
+      "attempt_read_location": "Description L238–288; Recent Files L147–165",
+      "read_locations": [
+        {
+          "package": "ElvUI",
+          "id": "EL-misc",
+          "location": "ChatBubbles.lua"
+        },
+        {
+          "package": "GW2 UI",
+          "id": "G",
+          "location": "colored chat bubbles L236"
+        },
+        {
+          "package": "BenikUI",
+          "id": "EL-misc",
+          "location": "ChatBubbles.lua"
+        },
+        {
+          "package": "BenikUI",
+          "id": "B",
+          "location": "Description L209–211: external mod / ElvUI v16+ required"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Observed module/description at recorded source position; representative support remains the observed file-list scope."
+    },
+    {
+      "feature": "F68",
+      "name": "특성별 배치·profile 전환",
+      "standalone_read_locations": [],
+      "attempt_read_location": "Description L159–211; Recent Files L140–144, no Forever item observed",
+      "read_locations": [
+        {
+          "package": "GW2 UI",
+          "id": "G",
+          "location": "profiles switch with specialization L239"
+        },
+        {
+          "package": "RealUI",
+          "id": "R",
+          "location": "DPS/Tank and Healing follow specialization L187"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "Observed module/description at recorded source position; representative support remains the observed file-list scope."
+    },
+    {
+      "feature": "F69",
+      "name": "데이터 바 모듈(세부 미확인)",
+      "standalone_read_locations": [],
+      "attempt_read_location": "Description L215–260; Included Modules L234–255; Recent Files L145–152",
+      "read_locations": [
+        {
+          "package": "EllesmereUI",
+          "id": "E",
+          "location": "Included Modules L253"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "공식 모듈 존재만 확인. 이름을 자동화·경험치·평판 등 세부 기능으로 확대하지 않음."
+    },
+    {
+      "feature": "F70",
+      "name": "편의 기능 모듈(세부 미확인)",
+      "standalone_read_locations": [
+        {
+          "source_id": "A-leatrix",
+          "location": "Features L176–238; Recent Files L142–161; individual options version-dependent; full Interface/Frames/System/Settings L223–310"
+        }
+      ],
+      "attempt_read_location": "Description L215–260; Included Modules L234–255; Recent Files L145–152",
+      "read_locations": [
+        {
+          "package": "EllesmereUI",
+          "id": "E",
+          "location": "Quality of Life L244"
+        },
+        {
+          "package": "SpartanUI",
+          "id": "S-mod",
+          "location": "Convenience"
+        }
+      ],
+      "construction": "official observed scope mapped; unobserved cells stay ?",
+      "self_gate": "PASS",
+      "consistency": "8-package denominator; inherited BenikUI distinguished",
+      "mechanical_gate_timing": "once after complete report, catalog, URL registry and addon inventory; each feature row checked in this run",
+      "reason": "독립형 편의 기능 모음; 통합 패키지 모듈의 미확인 세부 동작과 같다고 단정하지 않음."
+    }
+  ]
+}

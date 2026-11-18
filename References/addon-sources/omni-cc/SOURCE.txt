@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/omni-cc/files/7334220
+파일명: OmniCC-11.2.8.zip
+판(version): 11.2.8
+file ID: 7334220
+파일 날짜: Dec 14, 2025
+표기된 game version: 11.2.7, 5.5.3, 3.80.0, 2.5.5, 1.15.8 [Flavors: Retail Classic MoP Classic Titan Reforged Classic Classic TBC]
+SHA256: 1ced275d86be0072bd4888c79a42663ec0c18332a9e22fb3a7ee2ccbe4cc65e0

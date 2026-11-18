@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/postal/files/9040411
+파일명: Postal-v4.3.5.zip
+판(version): Postal-v4.3.5
+file ID: 9040411
+파일 날짜: Oct 2, 2026
+표기된 game version: 12.1.0 [Flavors: Retail]
+SHA256: d439a6ce9b7d2d8925959cda95057976d098e4736a72f0e06106a7c5d4719221

@@ -1,0 +1,1002 @@
+{
+  "schema": "features-addons-v1",
+  "observation_date": "2026-11-18",
+  "scope": "Actual observed packages and standalone products, including supplemental exploration and BugSack's named dependency; no archives acquired in Step50.",
+  "records": [
+    {
+      "display_name": "ElvUI",
+      "kind": "integrated_ui_package",
+      "official_project_url": "https://github.com/tukui-org/ElvUI",
+      "official_source_repo_url": "https://github.com/tukui-org/ElvUI",
+      "source_repo_status": "실제 공식 저장소 본문 열기",
+      "forever_observation_url": "https://github.com/tukui-org/ElvUI",
+      "forever_status": "미확인(이 조사에서 Forever 배포 파일 목록 표기 확인 못함)",
+      "feature_ids": [
+        "F01",
+        "F02",
+        "F03",
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "F08",
+        "F09",
+        "F10",
+        "F11",
+        "F12",
+        "F14",
+        "F15",
+        "F16",
+        "F17",
+        "F20",
+        "F25",
+        "F26",
+        "F30",
+        "F32",
+        "F37",
+        "F47",
+        "F50",
+        "F56",
+        "F58",
+        "F66",
+        "F67"
+      ],
+      "dependency": null
+    },
+    {
+      "display_name": "TukUI",
+      "kind": "integrated_ui_package",
+      "official_project_url": "https://github.com/tukui-org/Tukui",
+      "official_source_repo_url": "https://github.com/tukui-org/Tukui",
+      "source_repo_status": "실제 공식 저장소 본문 열기",
+      "forever_observation_url": "https://github.com/tukui-org/Tukui",
+      "forever_status": "미확인(이 조사에서 Forever 배포 파일 목록 표기 확인 못함)",
+      "feature_ids": [
+        "F02",
+        "F03",
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "F09",
+        "F10",
+        "F11",
+        "F12",
+        "F15",
+        "F16",
+        "F20",
+        "F30",
+        "F37",
+        "F38",
+        "F47",
+        "F58"
+      ],
+      "dependency": null
+    },
+    {
+      "display_name": "EllesmereUI",
+      "kind": "integrated_ui_package",
+      "official_project_url": "https://www.curseforge.com/wow/addons/ellesmereui",
+      "official_source_repo_url": "https://github.com/EllesmereGaming/EllesmereUI",
+      "source_repo_status": "실제 공식 저장소 본문 열기",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/ellesmereui",
+      "forever_status": "표기 확인(공식 프로젝트 Recent Files의 Forever 행; 실제 게임 미검증)",
+      "feature_ids": [
+        "F01",
+        "F02",
+        "F03",
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "F11",
+        "F12",
+        "F14",
+        "F19",
+        "F25",
+        "F26",
+        "F31",
+        "F32",
+        "F33",
+        "F35",
+        "F38",
+        "F42",
+        "F43",
+        "F44",
+        "F45",
+        "F46",
+        "F65",
+        "F69",
+        "F70"
+      ],
+      "dependency": null
+    },
+    {
+      "display_name": "SpartanUI",
+      "kind": "integrated_ui_package",
+      "official_project_url": "https://www.curseforge.com/wow/addons/spartan-ui",
+      "official_source_repo_url": "https://github.com/spartanui-wow/SpartanUI",
+      "source_repo_status": "실제 공식 저장소 본문 열기",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/spartan-ui",
+      "forever_status": "표기 확인(공식 프로젝트 Recent Files의 Forever 행; 실제 게임 미검증)",
+      "feature_ids": [
+        "F01",
+        "F02",
+        "F03",
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "F09",
+        "F11",
+        "F14",
+        "F23",
+        "F24",
+        "F38",
+        "F39",
+        "F40",
+        "F41",
+        "F47",
+        "F49",
+        "F65",
+        "F70"
+      ],
+      "dependency": null
+    },
+    {
+      "display_name": "GW2 UI",
+      "kind": "integrated_ui_package",
+      "official_project_url": "https://www.curseforge.com/wow/addons/gw2-ui",
+      "official_source_repo_url": "https://github.com/Mortalknight/GW2_UI",
+      "source_repo_status": "실제 공식 저장소 본문 열기",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/gw2-ui",
+      "forever_status": "표기 확인(공식 프로젝트 Recent Files의 Forever 행; 실제 게임 미검증)",
+      "feature_ids": [
+        "F01",
+        "F02",
+        "F03",
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "F08",
+        "F09",
+        "F10",
+        "F11",
+        "F12",
+        "F20",
+        "F22",
+        "F25",
+        "F26",
+        "F27",
+        "F31",
+        "F32",
+        "F38",
+        "F42",
+        "F47",
+        "F49",
+        "F50",
+        "F51",
+        "F52",
+        "F55",
+        "F65",
+        "F67",
+        "F68"
+      ],
+      "dependency": null
+    },
+    {
+      "display_name": "NDui",
+      "kind": "integrated_ui_package",
+      "official_project_url": "https://www.curseforge.com/wow/addons/ndui",
+      "official_source_repo_url": "https://github.com/siweia/NDui",
+      "source_repo_status": "실제 공식 저장소 본문 열기",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/ndui",
+      "forever_status": "미확인(이 조사에서 Forever 배포 파일 목록 표기 확인 못함)",
+      "feature_ids": [
+        "F01",
+        "F02",
+        "F03",
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "F08",
+        "F09",
+        "F10",
+        "F12",
+        "F13",
+        "F14",
+        "F15",
+        "F22",
+        "F23",
+        "F25",
+        "F30",
+        "F32",
+        "F33",
+        "F37",
+        "F54",
+        "F58",
+        "F65"
+      ],
+      "dependency": null
+    },
+    {
+      "display_name": "RealUI",
+      "kind": "integrated_ui_package",
+      "official_project_url": "https://www.curseforge.com/wow/addons/realui",
+      "official_source_repo_url": "https://github.com/RealUI/RealUI",
+      "source_repo_status": "실제 공식 저장소 본문 열기",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/realui",
+      "forever_status": "표기 확인(공식 프로젝트 Recent Files의 Forever 행; 실제 게임 미검증)",
+      "feature_ids": [
+        "F01",
+        "F02",
+        "F03",
+        "F04",
+        "F05",
+        "F06",
+        "F08",
+        "F09",
+        "F10",
+        "F11",
+        "F12",
+        "F14",
+        "F15",
+        "F19",
+        "F25",
+        "F27",
+        "F28",
+        "F29",
+        "F32",
+        "F37",
+        "F38",
+        "F39",
+        "F53",
+        "F54",
+        "F56",
+        "F57",
+        "F60",
+        "F68"
+      ],
+      "dependency": null
+    },
+    {
+      "display_name": "BenikUI",
+      "kind": "integrated_ui_extension",
+      "official_project_url": "https://www.curseforge.com/wow/addons/benikui",
+      "official_source_repo_url": "https://github.com/Benik/BenikUI",
+      "source_repo_status": "실제 공식 저장소 본문 열기",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/benikui",
+      "forever_status": "표기 확인(공식 프로젝트 Recent Files의 Forever 행; 실제 게임 미검증)",
+      "feature_ids": [
+        "F01",
+        "F02",
+        "F03",
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "F08",
+        "F09",
+        "F10",
+        "F11",
+        "F12",
+        "F14",
+        "F15",
+        "F16",
+        "F17",
+        "F20",
+        "F25",
+        "F26",
+        "F29",
+        "F30",
+        "F32",
+        "F37",
+        "F47",
+        "F48",
+        "F50",
+        "F56",
+        "F58",
+        "F59",
+        "F60",
+        "F61",
+        "F62",
+        "F63",
+        "F64",
+        "F66",
+        "F67"
+      ],
+      "dependency": "ElvUI; CurseForge 설명 v16.00+ (GitHub development README는 v14.00+로 달라 현재 요구 판 근거는 CurseForge)"
+    },
+    {
+      "display_name": "Dominos",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/dominos",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/dominos",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "12.0.4",
+      "feature_ids": [
+        "F02"
+      ],
+      "attempt_for_feature_ids": [],
+      "dependency": null,
+      "feature_summary": "행동단축바"
+    },
+    {
+      "display_name": "SexyMap",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/sexymap",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/sexymap",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "v12.1.7",
+      "feature_ids": [
+        "F07"
+      ],
+      "attempt_for_feature_ids": [],
+      "dependency": null,
+      "feature_summary": "미니맵"
+    },
+    {
+      "display_name": "Prat 3.0",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/prat-3-0",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/prat-3-0",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "3.9.117",
+      "feature_ids": [
+        "F06",
+        "F67"
+      ],
+      "attempt_for_feature_ids": [],
+      "dependency": null,
+      "feature_summary": "채팅·말풍선 글꼴"
+    },
+    {
+      "display_name": "Quartz",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/quartz",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/quartz",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "3.8.0",
+      "feature_ids": [
+        "F08"
+      ],
+      "attempt_for_feature_ids": [
+        "F48"
+      ],
+      "dependency": null,
+      "feature_summary": "시전바"
+    },
+    {
+      "display_name": "Bagnon",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/bagnon",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/bagnon",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "12.1.11",
+      "feature_ids": [
+        "F12"
+      ],
+      "attempt_for_feature_ids": [],
+      "dependency": null,
+      "feature_summary": "가방·은행 UI"
+    },
+    {
+      "display_name": "TipTac Reborn",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/tiptac-reborn",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/tiptac-reborn",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "v26.11.11-release",
+      "feature_ids": [
+        "F11"
+      ],
+      "attempt_for_feature_ids": [],
+      "dependency": null,
+      "feature_summary": "툴팁"
+    },
+    {
+      "display_name": "Titan Panel",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/titan-panel",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/titan-panel",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "9.3.7",
+      "feature_ids": [
+        "F15"
+      ],
+      "attempt_for_feature_ids": [
+        "F60"
+      ],
+      "dependency": null,
+      "feature_summary": "정보 바·플러그인"
+    },
+    {
+      "display_name": "Leatrix Plus",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/leatrix-plus",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/leatrix-plus",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "1.60.30-forever",
+      "feature_ids": [
+        "F22",
+        "F23",
+        "F24",
+        "F49",
+        "F52",
+        "F70"
+      ],
+      "attempt_for_feature_ids": [
+        "F41"
+      ],
+      "dependency": null,
+      "feature_summary": "모듈형 편의 기능; 판별로 옵션 차이 있음"
+    },
+    {
+      "display_name": "Forever Unit Frames",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/forever-unit-frames",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/forever-unit-frames",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "0.65.2",
+      "feature_ids": [
+        "F03",
+        "F29",
+        "F39",
+        "F56",
+        "F57",
+        "F58"
+      ],
+      "attempt_for_feature_ids": [
+        "F64"
+      ],
+      "dependency": null,
+      "feature_summary": "유닛·공격대 프레임; 설정 마법사·지속 치유·흡수/치유·거리 흐림"
+    },
+    {
+      "display_name": "Grid2",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/grid2",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/grid2",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "4.1.13-forever",
+      "feature_ids": [
+        "F04",
+        "F05"
+      ],
+      "attempt_for_feature_ids": [],
+      "dependency": null,
+      "feature_summary": "파티·공격대 프레임"
+    },
+    {
+      "display_name": "OmniCC",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/omni-cc",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/omni-cc",
+      "forever_status": "미확인(이번에 본 파일 목록에서 Forever 항목 확인 못함)",
+      "observed_forever_file": null,
+      "feature_ids": [
+        "F18"
+      ],
+      "attempt_for_feature_ids": [],
+      "dependency": null,
+      "feature_summary": "cooldown 숫자; 공식 설명은 Classic 전용"
+    },
+    {
+      "display_name": "Mapster",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/mapster",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/mapster",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "1.14.0",
+      "feature_ids": [
+        "F20",
+        "F21"
+      ],
+      "attempt_for_feature_ids": [],
+      "dependency": null,
+      "feature_summary": "세계지도·좌표"
+    },
+    {
+      "display_name": "Reflux",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/reflux",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/reflux",
+      "forever_status": "미확인(이번에 본 파일 목록에서 Forever 항목 확인 못함)",
+      "observed_forever_file": null,
+      "feature_ids": [
+        "F27"
+      ],
+      "attempt_for_feature_ids": [
+        "F68"
+      ],
+      "dependency": null,
+      "feature_summary": "profile 저장·전환"
+    },
+    {
+      "display_name": "BlizzMove",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/blizzmove",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/blizzmove",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "v3.8.8",
+      "feature_ids": [
+        "F26",
+        "F31"
+      ],
+      "attempt_for_feature_ids": [],
+      "dependency": null,
+      "feature_summary": "기본 창 이동·크기"
+    },
+    {
+      "display_name": "TellMeWhen",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/tellmewhen",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/tellmewhen",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "12.1.5",
+      "feature_ids": [
+        "F09",
+        "F10",
+        "F19",
+        "F33"
+      ],
+      "attempt_for_feature_ids": [],
+      "dependency": null,
+      "feature_summary": "오라·cooldown 추적·알림"
+    },
+    {
+      "display_name": "Details! Damage Meter",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/details",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/details",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "Details.20261109.15410.172",
+      "feature_ids": [
+        "F35",
+        "F58"
+      ],
+      "attempt_for_feature_ids": [],
+      "dependency": null,
+      "feature_summary": "데미지 미터·공격대 도구"
+    },
+    {
+      "display_name": "ForeverThreat - Threat Meter for WoW Forever",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/foreverthreat-threat-meter-for-wow-forever",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/foreverthreat-threat-meter-for-wow-forever",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "ForeverThreat-1.12.3",
+      "feature_ids": [
+        "F36",
+        "F37"
+      ],
+      "attempt_for_feature_ids": [],
+      "dependency": null,
+      "feature_summary": "대상/주시 대상 위협 순위"
+    },
+    {
+      "display_name": "Platynator (Nameplates)",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/platynator",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/platynator",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "547",
+      "feature_ids": [
+        "F14"
+      ],
+      "attempt_for_feature_ids": [],
+      "dependency": null,
+      "feature_summary": "이름표"
+    },
+    {
+      "display_name": "Aurora",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/aurora",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/aurora",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "12.1.5.4",
+      "feature_ids": [
+        "F01",
+        "F25"
+      ],
+      "attempt_for_feature_ids": [],
+      "dependency": null,
+      "feature_summary": "기본 창 스킨"
+    },
+    {
+      "display_name": "Postal",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/postal",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/postal",
+      "forever_status": "미확인(이번에 본 파일 목록에서 Forever 항목 확인 못함)",
+      "observed_forever_file": null,
+      "feature_ids": [
+        "F40"
+      ],
+      "attempt_for_feature_ids": [],
+      "dependency": null,
+      "feature_summary": "우편 모두 열기"
+    },
+    {
+      "display_name": "Masque",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/masque",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/masque",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "12.1.8",
+      "feature_ids": [
+        "F01"
+      ],
+      "attempt_for_feature_ids": [],
+      "dependency": null,
+      "feature_summary": "버튼 스킨 엔진; 지원 애드온 필요"
+    },
+    {
+      "display_name": "Experience Forever",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/experience-forever",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/experience-forever",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "ExperienceForever2.0.4",
+      "feature_ids": [
+        "F16",
+        "F17",
+        "F66"
+      ],
+      "attempt_for_feature_ids": [
+        "F62"
+      ],
+      "dependency": null,
+      "feature_summary": "경험치·평판·펫 경험치 바"
+    },
+    {
+      "display_name": "Font Manager",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/font-manager",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/font-manager",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "FontManager-1.1.7.zip",
+      "feature_ids": [
+        "F30"
+      ],
+      "attempt_for_feature_ids": [],
+      "dependency": null,
+      "feature_summary": "글꼴 변경"
+    },
+    {
+      "display_name": "Forever Enhanced Cursor",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/forever-enhanced-cursor",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/forever-enhanced-cursor",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "1.0.2",
+      "feature_ids": [
+        "F42"
+      ],
+      "attempt_for_feature_ids": [],
+      "dependency": null,
+      "feature_summary": "커서 효과"
+    },
+    {
+      "display_name": "BugSack",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/bugsack",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/bugsack",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "v12.1.9",
+      "feature_ids": [
+        "F54"
+      ],
+      "attempt_for_feature_ids": [],
+      "dependency": "BugGrabber required; official description",
+      "feature_summary": "오류 표시; BugGrabber 의존"
+    },
+    {
+      "display_name": "Hekili Forever",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/hekili-forever",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/hekili-forever",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "v0.8.6",
+      "feature_ids": [
+        "F34"
+      ],
+      "attempt_for_feature_ids": [],
+      "dependency": null,
+      "feature_summary": "다음 능력 추천"
+    },
+    {
+      "display_name": "Skyriding/Dragonriding Glider",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/glider",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/glider",
+      "forever_status": "미확인(이번에 본 최근 파일 목록은 Retail)",
+      "observed_forever_file": null,
+      "feature_ids": [
+        "F44"
+      ],
+      "attempt_for_feature_ids": [],
+      "dependency": null,
+      "feature_summary": "Skyriding 자원·속도 바"
+    },
+    {
+      "display_name": "Mythic + Timer",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/mythic-timer",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/mythic-timer",
+      "forever_status": "미확인(이번에 본 최근 파일 목록은 Retail)",
+      "observed_forever_file": null,
+      "feature_ids": [
+        "F43"
+      ],
+      "attempt_for_feature_ids": [],
+      "dependency": null,
+      "feature_summary": "Mythic+ 타이머"
+    },
+    {
+      "display_name": "BugGrabber",
+      "kind": "named_dependency",
+      "official_project_url": "https://www.curseforge.com/wow/addons/bug-grabber",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 링크 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/bug-grabber",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "v12.1.1",
+      "feature_ids": [],
+      "attempt_for_feature_ids": [],
+      "dependency": null
+    },
+    {
+      "display_name": "Myslot",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/myslot",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/myslot",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "v6.3.1",
+      "feature_ids": [
+        "F28"
+      ],
+      "attempt_for_feature_ids": [],
+      "feature_summary": "막대·매크로·키 바인딩을 문자열로 가져오기/내보내기",
+      "dependency": null
+    },
+    {
+      "display_name": "ProfileManager",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/profilemanager",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/profilemanager",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "ProfileManager_v4.0.zip",
+      "feature_ids": [
+        "F27",
+        "F28"
+      ],
+      "attempt_for_feature_ids": [],
+      "feature_summary": "여러 지원 애드온 설정 preset 저장·문자열 공유",
+      "dependency": null
+    },
+    {
+      "display_name": "Baganator",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/baganator",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/baganator",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "862",
+      "feature_ids": [
+        "F13"
+      ],
+      "attempt_for_feature_ids": [],
+      "feature_summary": "한 창 또는 분류형 가방·은행",
+      "dependency": null
+    },
+    {
+      "display_name": "NugComboBar",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/nugie-combo-bar",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/nugie-combo-bar",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "12.1.3",
+      "feature_ids": [
+        "F32"
+      ],
+      "attempt_for_feature_ids": [],
+      "feature_summary": "연계점수 등 직업 자원; Live와 Classic 목록 차이 명시",
+      "dependency": null
+    },
+    {
+      "display_name": "Kaliel's Tracker",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/kaliels-tracker",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/kaliels-tracker",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "8.11.1-forever",
+      "feature_ids": [
+        "F38"
+      ],
+      "attempt_for_feature_ids": [],
+      "feature_summary": "퀘스트·업적·목표 추적기",
+      "dependency": null
+    },
+    {
+      "display_name": "Questie",
+      "kind": "researched_addon_no_representative_claim",
+      "official_project_url": "https://www.curseforge.com/wow/addons/questie",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/questie",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "v12.10.0",
+      "feature_ids": [],
+      "attempt_for_feature_ids": [],
+      "feature_summary": "공식 프로젝트·Forever 파일 표기 관측; 이 본문에서 추적기 기능 대표 확정 안 함",
+      "dependency": null
+    },
+    {
+      "display_name": "XLoot",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/xloot",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/xloot",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "12.23.0",
+      "feature_ids": [
+        "F50",
+        "F51",
+        "F65"
+      ],
+      "attempt_for_feature_ids": [],
+      "feature_summary": "전리품 창·그룹 주사위·획득 알림·빠른 획득",
+      "dependency": null
+    },
+    {
+      "display_name": "LS: Toasts",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/ls-toasts",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/ls-toasts",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "120105.06",
+      "feature_ids": [
+        "F51"
+      ],
+      "attempt_for_feature_ids": [],
+      "feature_summary": "기본 알림 대체; FAQ에서 loot toast 확인",
+      "dependency": null
+    },
+    {
+      "display_name": "MikScrollingBattleText",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/mik-scrolling-battle-text",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/mik-scrolling-battle-text",
+      "forever_status": "미확인(이번 최근 파일 목록에서 Forever 행 미관측)",
+      "observed_forever_file": null,
+      "feature_ids": [
+        "F53",
+        "F61"
+      ],
+      "attempt_for_feature_ids": [],
+      "feature_summary": "피해·치유 등 스크롤 전투 문자, 아이템 소지 수량 획득 알림",
+      "dependency": null
+    },
+    {
+      "display_name": "Nameplate Scrolling Combat Text",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/nameplate-scrolling-combat-text",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/nameplate-scrolling-combat-text",
+      "forever_status": "미확인(이번 최근 파일 목록에서 Forever 행 미관측)",
+      "observed_forever_file": null,
+      "feature_ids": [
+        "F53"
+      ],
+      "attempt_for_feature_ids": [],
+      "feature_summary": "이름표 위치 피해 문자; 치유 제외",
+      "dependency": null
+    },
+    {
+      "display_name": "kgPanels",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/kg-panels",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/kg-panels",
+      "forever_status": "미확인(이번 최근 파일 목록에서 Forever 행 미관측)",
+      "observed_forever_file": null,
+      "feature_ids": [
+        "F63"
+      ],
+      "attempt_for_feature_ids": [],
+      "feature_summary": "사용자 UI 배경 패널",
+      "dependency": null
+    },
+    {
+      "display_name": "Speedy AutoLoot",
+      "kind": "standalone_addon",
+      "official_project_url": "https://www.curseforge.com/wow/addons/speedyautoloot",
+      "official_source_repo_url": null,
+      "source_repo_status": "미확인(저장소 본문 별도 열기 안 함; 추측 없음)",
+      "forever_observation_url": "https://www.curseforge.com/wow/addons/speedyautoloot",
+      "forever_status": "표기 확인",
+      "observed_forever_file": "125",
+      "feature_ids": [
+        "F52"
+      ],
+      "attempt_for_feature_ids": [],
+      "feature_summary": "빠른 자동 전리품 획득",
+      "dependency": null
+    }
+  ]
+}

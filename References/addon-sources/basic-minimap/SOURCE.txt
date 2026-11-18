@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/basic-minimap/files/9287308
+파일명: BasicMinimap-v12.1.6.zip
+판(version): v12.1.6
+file ID: 9287308
+파일 날짜: Oct 22, 2026
+표기된 game version: 12.1.7, 12.1.5, 12.1.0, 5.5.4, 5.5.3, 4.4.2, 3.80.2, 3.4.5, 2.5.6, 2.5.5, 1.60.1, 1.15.9, 1.15.8 [Flavors: Classic MoP Classic Classic TBC Retail Titan Reforged Classic Forever]
+SHA256: a51cfa0067455f46234402a3f09c6ac81620cb5b9acb1b8b2d6785e19349c38d

@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/classiccastbars/files/7729622
+파일명: ClassicCastbars-v1.8.12.zip
+판(version): v1.8.12
+file ID: 7729622
+파일 날짜: Mar 8, 2026
+표기된 game version: 11.2.7, 5.5.3, 4.4.2, 3.4.5, 3.4.4, 3.4.3, 2.5.5, 1.15.8 [Flavors: Retail Classic MoP Classic Classic TBC]
+SHA256: 1ea8c92bb51116bb3c531215a328731409cbf20954847ecfa2a3a3d598c771d5

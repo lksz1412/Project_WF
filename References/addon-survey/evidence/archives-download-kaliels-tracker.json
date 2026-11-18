@@ -1,0 +1,19 @@
+{
+  "slug": "kaliels-tracker",
+  "file_page_url": "https://www.curseforge.com/wow/addons/kaliels-tracker/files/9518871",
+  "filename": "kaliels-tracker-8.11.1-forever.zip",
+  "file_id": 9518871,
+  "download_url": "https://edge.forgecdn.net/files/9518/871/kaliels-tracker-8.11.1-forever.zip",
+  "observed_at": "2026-11-18T11:33:30.8129821+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/9518/871/kaliels-tracker-8.11.1-forever.zip",
+  "content_length": "2960047",
+  "content_type": "application/zip",
+  "content_disposition": null,
+  "bytes": 2960047,
+  "signature": "504b0304",
+  "sha256": "a970ec5a3c2c540eb68b765c29f1c4585f3ea5d82d5b0bf81d483f5a72853537",
+  "relative_zip": "References/addon-sources/kaliels-tracker/kaliels-tracker-8.11.1-forever.zip",
+  "status": "success"
+}

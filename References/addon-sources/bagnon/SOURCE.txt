@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/bagnon/files/9638308
+파일명: Bagnon-12.1.11.zip
+판(version): 12.1.11
+file ID: 9638308
+파일 날짜: Nov 15, 2026
+표기된 game version: 12.1.5, 5.5.4, 4.4.2, 3.4.4, 2.5.6, 1.60.1, 1.15.9 [Flavors: MoP Classic Classic TBC Classic Retail Forever]
+SHA256: 2e2e0d45bebaa201841cf95c0480f0fb63c289c2f84eb0604db39fcec8ae1636

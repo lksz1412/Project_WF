@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/mapster/files/9047762
+파일명: Mapster-1.14.0.zip
+판(version): 1.14.0
+file ID: 9047762
+파일 날짜: Oct 3, 2026
+표기된 game version: 12.1.0, 1.60.1 [Flavors: Retail Forever]
+SHA256: 16a05b5b5b628eb513470792d7a9633443a8fcfc594a0f920f681cdce1cdb532

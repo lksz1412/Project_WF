@@ -1,0 +1,44 @@
+{
+  "slug": "basic-minimap",
+  "file_page_url": "https://www.curseforge.com/wow/addons/basic-minimap/files/9287308",
+  "filename": "BasicMinimap-v12.1.6.zip",
+  "file_id": 9287308,
+  "download_url": "https://edge.forgecdn.net/files/9287/308/BasicMinimap-v12.1.6.zip",
+  "observed_at": "2026-11-18T11:32:32.9379403+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/9287/308/BasicMinimap-v12.1.6.zip",
+  "content_length": "168130",
+  "content_type": "application/x-zip-compressed",
+  "content_disposition": null,
+  "prior_attempt": {
+    "slug": "basic-minimap",
+    "file_page_url": "https://www.curseforge.com/wow/addons/basic-minimap/files/9287308",
+    "filename": "BasicMinimap-v12.1.6.zip",
+    "file_id": 9287308,
+    "download_url": "https://edge.forgecdn.net/files/9287/308/BasicMinimap-v12.1.6.zip",
+    "observed_at": "2026-11-18T11:31:45.8624441+09:00",
+    "archive_internal_processing": "not performed",
+    "http_status": 200,
+    "final_download_url": null,
+    "content_length": [
+      "168130"
+    ],
+    "content_type": [
+      "application/x-zip-compressed"
+    ],
+    "content_disposition": null,
+    "bytes": 168130,
+    "signature": "504b0304",
+    "status": "failure",
+    "error": "Cannot convert the \"System.String[]\" value of type \"System.String[]\" to type \"System.Int64\"."
+  },
+  "reused_completed_download": true,
+  "bytes": 168130,
+  "signature": "504b0304",
+  "sha256": "a51cfa0067455f46234402a3f09c6ac81620cb5b9acb1b8b2d6785e19349c38d",
+  "relative_zip": "References/addon-sources/basic-minimap/BasicMinimap-v12.1.6.zip",
+  "status": "success",
+  "redirect_verified_by": "Subsequent official HEAD request",
+  "redirect_verified_at": "2026-11-18T11:35:50.2944318+09:00"
+}

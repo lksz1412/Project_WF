@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/experience-forever/files/9626058
+파일명: ExperienceForever.zip
+판(version): ExperienceForever2.0.4
+file ID: 9626058
+파일 날짜: Nov 15, 2026
+표기된 game version: 1.60.1 [Flavors: Forever]
+SHA256: 2bfdda8717b6e0d40fcc1847b233e23b187f839c75749c15fe2ed430ecf15b85

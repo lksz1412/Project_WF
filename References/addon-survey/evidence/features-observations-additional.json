@@ -1,0 +1,368 @@
+{
+  "schema": "features-observations-additional-v1",
+  "observation_date": "2026-11-18",
+  "individual_time": "미측정",
+  "sources": [
+    {
+      "id": "TU",
+      "url": "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules?ref=Live",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "모듈 목록; 행동단축바·오라·채팅·정보·글꼴·가방·툴팁·유닛 프레임"
+    },
+    {
+      "id": "EL-dir",
+      "url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "디렉터리 구조 확인"
+    },
+    {
+      "id": "TU-unit",
+      "url": "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/UnitFrames?ref=Live",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "프레임 하위 목록"
+    },
+    {
+      "id": "TU-map",
+      "url": "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/Maps?ref=Live",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "미니맵/세계지도 목록"
+    },
+    {
+      "id": "TU-misc",
+      "url": "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/Miscellaneous?ref=Live",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "경험치·위협 바·목표·자리비움 등 이름이 명확한 항목"
+    },
+    {
+      "id": "EL-game",
+      "url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "게임 판별 폴더 탐색"
+    },
+    {
+      "id": "TU-group",
+      "url": "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/UnitFrames/Groups?ref=Live",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "파티/공격대 목록"
+    },
+    {
+      "id": "S-mod",
+      "url": "https://api.github.com/repos/spartanui-wow/SpartanUI/contents/Modules",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "기능명이 명확한 채팅·이름표·정보 바·퀘스트 등 모듈"
+    },
+    {
+      "id": "EL-shared",
+      "url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "공유 기능 폴더 탐색"
+    },
+    {
+      "id": "EL-main",
+      "url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Mainline",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "Retail 전용 구조 확인; Forever 동작으로 쓰지 않음"
+    },
+    {
+      "id": "TU-widgets",
+      "url": "https://api.github.com/repos/tukui-org/Tukui/contents/Tukui/Modules/UnitFrames/Widgets.lua?ref=Live",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "전체 내용 읽음; 상태 바 구성 참조; 실행하지 않음"
+    },
+    {
+      "id": "EL",
+      "url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "기본 모듈 목록"
+    },
+    {
+      "id": "EL-general",
+      "url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/General",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "일반 모듈 탐색; 파일명만으로 profile 전송·숫자 표시를 확정하지 않음"
+    },
+    {
+      "id": "EL-unit",
+      "url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules/UnitFrames",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "유닛 프레임 하위 목록"
+    },
+    {
+      "id": "EL-elements",
+      "url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules/UnitFrames/Elements",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "시전·직업 자원·치유 예측·거리·역할 표시 등 목록"
+    },
+    {
+      "id": "EL-group",
+      "url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules/UnitFrames/Groups",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "파티·공격대·보스·투기장 등 목록"
+    },
+    {
+      "id": "EL-bars",
+      "url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules/DataBars",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "경험치·평판·위협 바 목록"
+    },
+    {
+      "id": "EL-map",
+      "url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules/Maps",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "미니맵/세계지도 목록"
+    },
+    {
+      "id": "EL-misc",
+      "url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Game/Shared/Modules/Misc",
+      "status": "opened",
+      "location": "GitHub contents response; named entries (whole directory response read)",
+      "summary": "자리비움·말풍선·전리품·토템·공격대 유틸리티 등 목록"
+    },
+    {
+      "id": "S-repo",
+      "url": "https://github.com/spartanui-wow/SpartanUI",
+      "status": "opened",
+      "location": "README Overview/Action Bars L207–249"
+    },
+    {
+      "id": "B-repo",
+      "url": "https://github.com/Benik/BenikUI",
+      "status": "opened",
+      "location": "README L180–222; ElvUI version differs from current CF; use CF for current requirement"
+    },
+    {
+      "id": "R-repo",
+      "url": "https://github.com/RealUI/RealUI",
+      "status": "opened",
+      "location": "Repository identity L94–156"
+    },
+    {
+      "id": "A-dominos",
+      "url": "https://www.curseforge.com/wow/addons/dominos",
+      "status": "opened",
+      "location": "Description L186–195; Recent Files L147–165",
+      "forever_file": "12.0.4",
+      "forever_status": "표기 확인"
+    },
+    {
+      "id": "A-sexymap",
+      "url": "https://www.curseforge.com/wow/addons/sexymap",
+      "status": "opened",
+      "location": "Description L202–215; Recent Files L145–163",
+      "forever_file": "v12.1.7",
+      "forever_status": "표기 확인"
+    },
+    {
+      "id": "A-prat",
+      "url": "https://www.curseforge.com/wow/addons/prat-3-0",
+      "status": "opened",
+      "location": "Description L238–288; Recent Files L147–165",
+      "forever_file": "3.9.117",
+      "forever_status": "표기 확인"
+    },
+    {
+      "id": "A-quartz",
+      "url": "https://www.curseforge.com/wow/addons/quartz",
+      "status": "opened",
+      "location": "Modules L187–213; Recent Files L148–166",
+      "forever_file": "3.8.0",
+      "forever_status": "표기 확인"
+    },
+    {
+      "id": "A-bagnon",
+      "url": "https://www.curseforge.com/wow/addons/bagnon",
+      "status": "opened",
+      "location": "Description L200–219; Recent Files L150–169",
+      "forever_file": "12.1.11",
+      "forever_status": "표기 확인"
+    },
+    {
+      "id": "A-tiptac",
+      "url": "https://www.curseforge.com/wow/addons/tiptac-reborn",
+      "status": "opened",
+      "location": "What is it/What can it do L207–225; Recent Files L147–166",
+      "forever_file": "v26.11.11-release",
+      "forever_status": "표기 확인"
+    },
+    {
+      "id": "A-titan",
+      "url": "https://www.curseforge.com/wow/addons/titan-panel",
+      "status": "opened",
+      "location": "About/Features L200–228; Recent Files L147–165; Forever auto sell issue explicitly noted",
+      "forever_file": "9.3.7",
+      "forever_status": "표기 확인"
+    },
+    {
+      "id": "A-leatrix",
+      "url": "https://www.curseforge.com/wow/addons/leatrix-plus",
+      "status": "opened",
+      "location": "Features L176–238; Recent Files L142–161; individual options version-dependent",
+      "forever_file": "1.60.30-forever",
+      "forever_status": "표기 확인"
+    },
+    {
+      "id": "A-fuf",
+      "url": "https://www.curseforge.com/wow/addons/forever-unit-frames",
+      "status": "opened",
+      "location": "Description/Frames L199–215; Recent Files L142–145",
+      "forever_file": "0.65.2",
+      "forever_status": "표기 확인"
+    },
+    {
+      "id": "A-grid",
+      "url": "https://www.curseforge.com/wow/addons/grid2",
+      "status": "opened",
+      "location": "Description L354–388; Recent Files L147–165",
+      "forever_file": "4.1.13-forever",
+      "forever_status": "표기 확인"
+    },
+    {
+      "id": "A-omnicc",
+      "url": "https://www.curseforge.com/wow/addons/omni-cc",
+      "status": "opened",
+      "location": "Overview L205–224; Recent Files L150–169, no Forever item observed; classic-only statement",
+      "forever_file": null,
+      "forever_status": "미확인(이번에 본 파일 목록에서 Forever 항목 확인 못함)"
+    },
+    {
+      "id": "A-mapster",
+      "url": "https://www.curseforge.com/wow/addons/mapster",
+      "status": "opened",
+      "location": "Features L185–207; Recent Files L146–160",
+      "forever_file": "1.14.0",
+      "forever_status": "표기 확인"
+    },
+    {
+      "id": "A-reflux",
+      "url": "https://www.curseforge.com/wow/addons/reflux",
+      "status": "opened",
+      "location": "Description L159–211; Recent Files L140–144, no Forever item observed",
+      "forever_file": null,
+      "forever_status": "미확인(이번에 본 파일 목록에서 Forever 항목 확인 못함)"
+    },
+    {
+      "id": "A-blizz",
+      "url": "https://www.curseforge.com/wow/addons/blizzmove",
+      "status": "opened",
+      "location": "Description L184–210; Recent Files L147–165",
+      "forever_file": "v3.8.8",
+      "forever_status": "표기 확인"
+    },
+    {
+      "id": "A-tmw",
+      "url": "https://www.curseforge.com/wow/addons/tellmewhen",
+      "status": "opened",
+      "location": "Features L226–280; Recent Files L149–168",
+      "forever_file": "12.1.5",
+      "forever_status": "표기 확인"
+    },
+    {
+      "id": "A-details",
+      "url": "https://www.curseforge.com/wow/addons/details",
+      "status": "opened",
+      "location": "Description L186–228; Recent Files L148–167",
+      "forever_file": "Details.20261109.15410.172",
+      "forever_status": "표기 확인"
+    },
+    {
+      "id": "A-threat",
+      "url": "https://www.curseforge.com/wow/addons/foreverthreat-threat-meter-for-wow-forever",
+      "status": "opened",
+      "location": "Description/Live Threat Meter L155–191; Recent Files L135–139",
+      "forever_file": "ForeverThreat-1.12.3",
+      "forever_status": "표기 확인"
+    },
+    {
+      "id": "A-platy",
+      "url": "https://www.curseforge.com/wow/addons/platynator",
+      "status": "opened",
+      "location": "Features L181–217; Recent Files L145–164",
+      "forever_file": "547",
+      "forever_status": "표기 확인"
+    },
+    {
+      "id": "A-aurora",
+      "url": "https://www.curseforge.com/wow/addons/aurora",
+      "status": "opened",
+      "location": "Description/Options L190–205; Recent Files L145–163",
+      "forever_file": "12.1.5.4",
+      "forever_status": "표기 확인"
+    },
+    {
+      "id": "A-postal",
+      "url": "https://www.curseforge.com/wow/addons/postal",
+      "status": "opened",
+      "location": "About Postal L182–218; Recent Files L146–161, no Forever item observed",
+      "forever_file": null,
+      "forever_status": "미확인(이번에 본 파일 목록에서 Forever 항목 확인 못함)"
+    },
+    {
+      "id": "A-masque",
+      "url": "https://www.curseforge.com/wow/addons/masque",
+      "status": "opened",
+      "location": "About/Features/Requirements L187–213; Recent Files L152–171",
+      "forever_file": "12.1.8",
+      "forever_status": "표기 확인"
+    },
+    {
+      "id": "A-xp",
+      "url": "https://www.curseforge.com/wow/addons/experience-forever",
+      "status": "opened",
+      "location": "Features L173–208; Recent Files L135–138",
+      "forever_file": "ExperienceForever2.0.4",
+      "forever_status": "표기 확인"
+    },
+    {
+      "id": "A-font",
+      "url": "https://www.curseforge.com/wow/addons/font-manager",
+      "status": "opened",
+      "location": "Features L195–237; Recent Files L142–160",
+      "forever_file": "FontManager-1.1.7.zip",
+      "forever_status": "표기 확인"
+    },
+    {
+      "id": "A-cursor",
+      "url": "https://www.curseforge.com/wow/addons/forever-enhanced-cursor",
+      "status": "opened",
+      "location": "Highlights/Profiles L159–229; file-list followup pending",
+      "forever_file": null,
+      "forever_status": "미확인(이번에 본 파일 목록에서 Forever 항목 확인 못함)"
+    },
+    {
+      "id": "A-bug",
+      "url": "https://www.curseforge.com/wow/addons/bugsack",
+      "status": "opened",
+      "location": "Description L180–193; Recent Files L146–164",
+      "forever_file": "v12.1.9",
+      "forever_status": "표기 확인"
+    }
+  ],
+  "failures": [
+    {
+      "url": "https://api.github.com/repos/tukui-org/ElvUI/contents/ElvUI/Core/Modules",
+      "reason": "404; actual Game/Shared/Modules opened successfully"
+    },
+    {
+      "url": "https://www.curseforge.com/wow/addons/bug-sack",
+      "reason": "inaccessible; actual bugsack succeeds"
+    }
+  ]
+}

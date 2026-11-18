@@ -1,0 +1,26 @@
+{
+  "schema": "features-observations-v1",
+  "observation_date": "2026-11-18",
+  "individual_timestamp_precision": "individual retrieval time unmeasured; date observed",
+  "status": "in_progress",
+  "sources": [
+    {"id":"E","url":"https://www.curseforge.com/wow/addons/ellesmereui","status":"opened","location":"Description L215–260; Included Modules L234–255; Recent Files L145–152","summary":"Visual editing and named modules; generic quality-of-life module does not prove repair/selling/quest automation."},
+    {"id":"S","url":"https://www.curseforge.com/wow/addons/spartan-ui","status":"opened","location":"Description/Overview L215–241; Recent Files L150–168","summary":"Player/party/raid frames, HoT tracking, selling, quest turn-in, objectives, tooltips, minimap, buffs, mail, vignette."},
+    {"id":"G","url":"https://www.curseforge.com/wow/addons/gw2-ui","status":"opened","location":"Description/Features L209–239; Recent Files L150–168","summary":"HUD, groups, questing, inventory, map/chat/tooltips, skins, repair, loot, setup; some features explicitly version-dependent."},
+    {"id":"N","url":"https://www.curseforge.com/wow/addons/ndui","status":"opened","location":"Main Features L180–192; FAQ L210–231","summary":"Frames, auras, chat, bags, resources, info bars, selling/repair; actionbars/castbars/minimap/font options in FAQ."},
+    {"id":"R","url":"https://www.curseforge.com/wow/addons/realui","status":"opened","location":"What's included/Setup L174–203; Recent Files L146–153","summary":"HUD, group frames, bars, nameplates, auras, infobar, inventory, skins, tooltips, objectives, combat text/errors, setup/profile export/import."},
+    {"id":"B","url":"https://www.curseforge.com/wow/addons/benikui","status":"opened","location":"Description/Installation/Features L208–262; Recent Files L149–167","summary":"ElvUI dependency v16+; decoration/layouts/dashboards/installer/fonts/AFK/flight, not standalone replacement for base features."},
+    {"id":"EL-root","url":"https://github.com/tukui-org/ElvUI","status":"opened","location":"About and repository file list L118–189","summary":"Official repository identity; root README only describes interface replacement, insufficient feature detail."},
+    {"id":"TU-root","url":"https://github.com/tukui-org/Tukui","status":"opened","location":"About and file list L116–173","summary":"Official Live branch identity; module detail needed."},
+    {"id":"N-repo","url":"https://github.com/siweia/NDui","status":"opened","location":"Main Features L183–202","summary":"Official README confirms party cooldown watcher and raid toolbar; default addons L203–206 identify error collector."},
+    {"id":"G-repo","url":"https://github.com/Mortalknight/GW2_UI","status":"opened","location":"About/file list/README L119–201","summary":"Official source linked from CurseForge; feature judgments use G description."},
+    {"id":"E-repo","url":"https://github.com/EllesmereGaming/EllesmereUI","status":"opened","location":"Folders and files L162–190","summary":"Official named module list, including loadout/group finder/loot council modules; no detail inferred from ambiguous names."}
+  ],
+  "failures": [
+    {"url":"https://www.curseforge.com/wow/addons/real-ui","reason":"tool reports inaccessible; actual project realui succeeds"},
+    {"url":"https://github.com/tukui-org/ElvUI/tree/main/ElvUI","reason":"restricted URL fetch failure"},
+    {"url":"https://github.com/tukui-org/Tukui/tree/Live/Tukui","reason":"restricted URL fetch failure"},
+    {"url":"https://github.com/tukui-org/ElvUI/tree/main/ElvUI/Core/Modules","reason":"restricted URL fetch failure"},
+    {"url":"https://github.com/tukui-org/Tukui/tree/Live/Tukui/Modules","reason":"restricted URL fetch failure"}
+  ]
+}

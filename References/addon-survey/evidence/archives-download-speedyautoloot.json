@@ -1,0 +1,19 @@
+{
+  "slug": "speedyautoloot",
+  "file_page_url": "https://www.curseforge.com/wow/addons/speedyautoloot/files/9435616",
+  "filename": "SpeedyAutoLoot-125.zip",
+  "file_id": 9435616,
+  "download_url": "https://edge.forgecdn.net/files/9435/616/SpeedyAutoLoot-125.zip",
+  "observed_at": "2026-11-18T11:33:39.6427601+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/9435/616/SpeedyAutoLoot-125.zip",
+  "content_length": "16981",
+  "content_type": "application/x-zip-compressed",
+  "content_disposition": null,
+  "bytes": 16981,
+  "signature": "504b0304",
+  "sha256": "65df8982bbf2b55266a4ae41c29d9da3af07c0075e32be445a343032725b9137",
+  "relative_zip": "References/addon-sources/speedyautoloot/SpeedyAutoLoot-125.zip",
+  "status": "success"
+}

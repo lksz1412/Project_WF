@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/bartender4/files/9654965
+파일명: Bartender4-4.19.0.zip
+판(version): 4.19.0
+file ID: 9654965
+파일 날짜: Nov 16, 2026
+표기된 game version: 12.1.5, 12.1.0, 5.5.4, 2.5.6, 1.60.1, 1.15.9 [Flavors: MoP Classic Retail Classic TBC Classic Forever]
+SHA256: 4b76ca7df53abfd7990f453d16c548dae8cbaef0828e46cc9868419a8cd02af9

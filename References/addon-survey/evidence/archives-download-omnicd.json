@@ -1,0 +1,19 @@
+{
+  "slug": "omnicd",
+  "file_page_url": "https://www.curseforge.com/wow/addons/omnicd/files/8757010",
+  "filename": "omnicd-v2.8.35 (1).zip",
+  "file_id": 8757010,
+  "download_url": "https://edge.forgecdn.net/files/8757/10/omnicd-v2.8.35%20%281%29.zip",
+  "observed_at": "2026-11-18T11:33:02.0317589+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/8757/10/omnicd-v2.8.35%20%281%29.zip",
+  "content_length": "809473",
+  "content_type": "application/x-zip-compressed",
+  "content_disposition": null,
+  "bytes": 809473,
+  "signature": "504b0304",
+  "sha256": "712a1ea46a58075b82030650b9dcfcd756f4460dc809658c8342a32e63c0232a",
+  "relative_zip": "References/addon-sources/omnicd/omnicd-v2.8.35 (1).zip",
+  "status": "success"
+}

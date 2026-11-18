@@ -1,0 +1,19 @@
+{
+  "slug": "leatrix-plus",
+  "file_page_url": "https://www.curseforge.com/wow/addons/leatrix-plus/files/9676915",
+  "filename": "Leatrix_Plus-1.60.31-forever.zip",
+  "file_id": 9676915,
+  "download_url": "https://edge.forgecdn.net/files/9676/915/Leatrix_Plus-1.60.31-forever.zip",
+  "observed_at": "2026-11-18T11:33:19.3394711+09:00",
+  "archive_internal_processing": "not performed",
+  "http_status": 200,
+  "final_download_url": "https://mediafilez.forgecdn.net/files/9676/915/Leatrix_Plus-1.60.31-forever.zip",
+  "content_length": "686323",
+  "content_type": "application/x-zip-compressed",
+  "content_disposition": null,
+  "bytes": 686323,
+  "signature": "504b0304",
+  "sha256": "9fe73a479859a57f0f0aacab9143967e2a050e140e185c3dc30f5d7ea716dd4d",
+  "relative_zip": "References/addon-sources/leatrix-plus/Leatrix_Plus-1.60.31-forever.zip",
+  "status": "success"
+}

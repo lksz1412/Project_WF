@@ -1,0 +1,7 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/ellesmereui/files/9643268
+파일명: EllesmereUI-v9.8.8.zip
+판(version): v9.8.8
+file ID: 9643268
+파일 날짜: Nov 16, 2026
+표기된 game version: 12.1.5, 12.1.0, 12.0.7, 12.0.5, 12.0.1, 12.0.0, 1.60.1 [Flavors: Retail Forever]
+SHA256: 20ade51cb95305d69755b22f1b3015053f8d4449db104671ea331829110bfd51
