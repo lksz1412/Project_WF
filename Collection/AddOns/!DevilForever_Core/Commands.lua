@@ -1,6 +1,7 @@
 -- Slash commands /dfprofile and /dfp: text only, no window. Every command that
 -- changes something refuses in combat and prints what it does; save, restore
--- and preset values take effect after /dfp go (a /reload).
+-- and preset values take effect after /dfp go (a /reload), a theme switch
+-- (/dfp theme <name>) at once.
 -- /dfp keys|game pass through to ProfileManager (Keybinds, GameSettings) only
 -- on that explicit command.
 
@@ -35,6 +36,7 @@ local HELP = {
   "/dfp cancel — 기다리는 요청 지우기",
   "/dfp delete <이름> [yes] — 저장본 하나 지우기",
   "/dfp preset [<이름>] — preset 목록 / preset 으로 되돌리기",
+  "/dfp theme [<이름>] — 테마 목록 / 테마 바꾸기(바로 적용)",
   "/dfp spec [link|new|off] — 특성(이중 특성) profile 연결",
   "/dfp keys save|load|list [<이름>] · /dfp game save|load|list [<이름>] — ProfileManager 의 키 설정·게임 설정",
 }
@@ -66,13 +68,16 @@ local function partArgs(w, from)
 end
 
 -- Most words a command takes (command word included).
-local MAX_WORDS = {help = 1, status = 1, list = 1, go = 1, cancel = 1, save = 2, delete = 3, preset = 2, spec = 2}
+local MAX_WORDS = {help = 1, status = 1, list = 1, go = 1, cancel = 1, save = 2, delete = 3, preset = 2, theme = 2,
+  spec = 2}
 
 local function status()
   local P = Core.Profiles
   local st = P:GetStatus()
   local active, registered = Core.Presets:GetActive()
   say("preset: " .. tostring(active or "없음") .. (active and not registered and " (등록 안 됨)" or ""))
+  local theme, waiting = Core.Theme:GetSet()
+  say("테마: " .. theme .. (waiting and (" (전투 뒤 " .. waiting .. ")") or ""))
   if st.readOnly then say(st.readOnly) end
   if type(st.pending) == "table" then
     say("기다리는 요청: " .. tostring(st.pending.action) .. " " .. tostring(st.pending.name) .. " — /dfp go 또는 /dfp cancel")
@@ -101,6 +106,37 @@ local function list()
         .. tostring(math.floor(r.bytes / 1024 + 0.5)) .. " KB")
     end
   end
+end
+
+-- Base tokens a set lacks (they read the base value).
+local function missingTokens(name)
+  local T, n = Core.Theme, 0
+  if name == T.BASE_SET then return 0 end
+  for _, token in ipairs(T:ListTokens()) do
+    if T:GetFromSet(name, token) == nil then n = n + 1 end
+  end
+  return n
+end
+
+local function theme(name)
+  local T = Core.Theme
+  if not name then
+    local active, waiting = T:GetSet()
+    for _, set in ipairs(T:ListSets()) do
+      local missing = missingTokens(set)
+      say(set .. (set == active and " (지금)" or "") .. (set == waiting and " (전투 뒤 바뀜)" or "")
+        .. (missing > 0 and (" — 빠진 토큰 " .. missing .. "개는 " .. T.BASE_SET .. " 값") or ""))
+    end
+    local saved = Core.ready and rawget(Core:DBTable("theme"), "active")
+    if type(saved) == "string" and saved ~= active and saved ~= waiting then
+      say("저장된 테마 " .. saved .. " 은 등록돼 있지 않음 — " .. active .. " 사용")
+    end
+    return
+  end
+  if Core.InCombat() then return say("안 함: 전투 중 — 바꾼 것 없음") end
+  local ok, how = T:SetActiveSet(name)
+  if not ok then return say("안 함: " .. name .. ": 등록된 테마가 아님 — /dfp theme 로 목록") end
+  say(how == "unchanged" and ("이미 " .. name .. " 테마") or ("테마 " .. name .. " 으로 바꿈"))
 end
 
 local function passThrough(kindWord, w)
@@ -173,6 +209,8 @@ function Commands:Run(msg)
       return
     end
     result(Core.Presets:Restore(w[2]))
+  elseif cmd == "theme" then
+    theme(w[2])
   elseif cmd == "spec" then
     local sub = (w[2] or ""):lower()
     if sub == "" then

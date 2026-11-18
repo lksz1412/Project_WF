@@ -89,3 +89,7 @@ Phase 19 끝: 경험치·평판·사냥꾼 소환수 경험치 막대는 Experie
 ## Phase 20 끝 정리 (2026-11-18 20:17:34 +0900)
 
 설정 저장·복원을 Core 안 모듈로(Profiles·Presets·Spec·Commands), PM 은 키·게임 설정. Result = `Claude/results/PHASE_20_profiles_RESULT.md`.
+
+## Phase 22 끝 정리 (2026-11-18 20:30:29 +0900)
+
+Phase 22 끝: 대안 테마는 Codex 가 만들고, Claude 는 테마를 바꿔 끼우는 Core 인터페이스를 점검해 작은 빈틈을 메우고(빠진 토큰 알림·이름 규칙·저장·전투 중 미룸) `/dfp theme` 명령을 더했다. 후보 컨셉 둘은 Codex 기록일 뿐이고 고르는 것은 Codex 다. Result = `Claude/results/PHASE_22_themes_RESULT.md`.

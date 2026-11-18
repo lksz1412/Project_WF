@@ -1,0 +1,49 @@
+# PHASE 22 — 대안 테마 인터페이스·발주문 RESULT
+
+## Summary
+
+Phase 22 끝: 대안 테마는 Codex 가 만들고, Claude 는 테마를 바꿔 끼우는 Core 인터페이스를 점검해 작은 빈틈을 메우고(빠진 토큰 알림·이름 규칙·저장·전투 중 미룸) `/dfp theme` 명령을 더했다. 후보 컨셉 둘은 Codex 기록일 뿐이고 고르는 것은 Codex 다.
+
+## Step Range
+
+Step 36
+
+## Inputs
+
+마스터 플랜 기능 표 행·judgment.md·manifest·upstream 시작 애드온
+
+## Files Created
+
+Core/Theme.lua, Core/Commands.lua, tests/core/run.py, codex-briefs/appearance-22.md, codex-briefs/phase22.md, 29 brief hashes, install ZIP
+
+## Files Updated
+
+Core Theme.lua·Commands.lua·Core 시험·발주문 29개 해시·설치 ZIP
+
+## Read Coverage
+
+[Phase 22 start — master plan re-read 1-549.] A2 read ranges and impact map: handoffs/phase22/iter_1/work_log-a2.md. B read ranges in review report (TRIAGE_phase22.md). Master re-ran core 108/108.
+
+## Execution Evidence
+
+Step 36 이력·work_log 판정 줄
+
+## Validation·Gate·Confirmed
+
+코드 논리 검수 1회 + 적대, 발주문 ② 국소 — 0/0/6
+
+## Non-Changes
+
+시작 애드온 원본·References·Codex 무변경
+
+## Open Issues
+
+경미 6(TRIAGE_phase22.md). 세 겉보기 전환은 preset 파일이 와야 게임에서 확인 가능(R109).
+
+## Decision Queue
+
+테마 파일 자리 = Codex 외관 폴더 · 전투 중 /dfp theme 거부 · 전투 중 reload 시 미뤄 둔 전환 사라짐 — TRIAGE_phase22.md
+
+## Next
+
+Phase 23 (Steps 37-38) collection integration check.

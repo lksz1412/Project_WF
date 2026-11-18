@@ -4,4 +4,4 @@
 
 | Step | Work | Owner | Gate | Review | Est. | Status |
 |---|---|---|---|---|---|---|
-| 36 | Check that Theme:SetActiveSet switches tokens for every skin consumer (callbacks, edit overlay, presets), fill any interface gap (registering Codex token sets from files, persisting active set, combat-safe switch), Codex alternate-theme brief appearance-22.md + verification brief phase22.md — per `Claude/results/handoffs/settings-phase-brief-template.md` | A2 | template §3 gates | master check, or 1 logic review if code beyond a defaults table | 30–60 | ⏳ |
+| 36 | Check that Theme:SetActiveSet switches tokens for every skin consumer (callbacks, edit overlay, presets), fill any interface gap (registering Codex token sets from files, persisting active set, combat-safe switch), Codex alternate-theme brief appearance-22.md + verification brief phase22.md — per `Claude/results/handoffs/settings-phase-brief-template.md` | A2 | template §3 gates | master check, or 1 logic review if code beyond a defaults table | 30–60 | ✅ |

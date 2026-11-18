@@ -3,7 +3,7 @@
 받는 쪽: Codex. 보내는 쪽: Claude 세션. 외관 설계·판단은 Codex 에 맡긴다(R50·R53). 지켜야 할 약속(토큰으로만 값 읽기·`Edit:Get`·전투 중 보호 프레임 금지·등록으로 프레임 알리기·다른 애드온 수정 금지·V42 초기화 코드 금지)은 `Collection/codex-briefs/appearance-2.md` 2절 그대로다. 게임 입력을 자동으로 보내는 도구는 쓰지 않는다.
 
 - 결과를 올릴 자리: `References/codex-appearance/10/`. `Collection/` 은 고치지 않는다 — Claude 가 정적 대조 뒤 합친다.
-- 기반: 설치 ZIP `outputs/collection/DevilForever-collection.zip`(sha256 `b6392ea37d7cfefa123a3ef023ded82990c1be27826af6f54e23abc6bafd51c1` — `!DevilForever_Core`) + Details 원본 `References/forever-addons/Details/Details-Details.20261109.15410.172.zip`(`Details`·`Details_TinyThreat`). Phase 2 외관 결과(`References/codex-appearance/2/`)의 토큰 세트 위에 얹는다.
+- 기반: 설치 ZIP `outputs/collection/DevilForever-collection.zip`(sha256 `718c3f4a378867550e8d40ec27cccb99302470348ac4f2d090aac8f809cfd874` — `!DevilForever_Core`) + Details 원본 `References/forever-addons/Details/Details-Details.20261109.15410.172.zip`(`Details`·`Details_TinyThreat`). Phase 2 외관 결과(`References/codex-appearance/2/`)의 토큰 세트 위에 얹는다.
 - 처음 한 번 설정(캐릭터마다 · 손으로): 모음집은 Details 기본값을 넣지 않으므로 창 2 는 사람이 만든다. 대화창에 `/details new`(`Details/functions/slash.lua:50–51`)로 창 2 를 열고, 창 2 제목 줄의 모드 단추에 마우스를 올려 「플러그인」(Plugins) → 하위 메뉴 「Tiny Threat」 를 누른다(`Details/frames/window_main.lua:5416–5431`). `/run local w=Details:GetInstance(2); print(w:GetMode(), w.current_raid_plugin)` 가 `4 DETAILS_PLUGIN_TINY_THREAT` 이면 된 것이다. 그 뒤로는 Details 가 이 창을 저장·복원한다. 외관 작업 전에 이 설정을 해 두고, 보고서에 한 줄로 적는다.
 
 ## 1. 만들 것

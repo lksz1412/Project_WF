@@ -2168,6 +2168,164 @@ def profiles_fix2_unarmed_notice_and_unfinished_cleared():
     eq(p.sv("DevilForever_CoreDB")["preset"].get("unfinished"), None, "cleared by a later preset restore")
 
 
+# Alternate themes (Phase 22): registration, switching, snapshots, /dfp theme ----
+
+def theme_listener(s):
+    calls = []
+    s.g.TEST_cb = lambda new, old: calls.append((new, old))
+    s.lua.execute("DevilForever_Core.Theme:RegisterCallback('test', function(n, o) TEST_cb(n, o) end)")
+    return calls
+
+
+ALT_TOKENS = {"color.text.normal": [1, 0, 0, 1], "font.normal": "B.ttf", "spacing.default": 9}
+BASE_TOKENS = {"color.text.normal": [1, 1, 1, 1], "font.normal": "A.ttf", "font.size.normal": 12,
+               "spacing.default": 4}
+
+
+@case
+def theme22_register_names_and_fallback_reported():
+    s = Session().boot()
+    t = s.core.Theme
+    every = {name: "x" for name in to_py(t.ListTokens(t)).values()}
+    eq(len(every), 20, "twenty token names")
+    eq(t.RegisterSet(t, "full", s.table({k: ([0, 0, 0, 1] if k.startswith("color.") else
+                                             (2 if t.TOKENS[k] in ("size", "number") else "p"))
+                                         for k in every})), 20, "a complete set keeps every token")
+    eq([x for x in s.log() if x["subject"] == "Theme:full"], [], "complete set: nothing reported")
+    eq(t.RegisterSet(t, "devil", s.table(BASE_TOKENS)), 4, "base values")
+    eq(t.RegisterSet(t, "alt", s.table(ALT_TOKENS)), 3, "partial set kept")
+    rows = [x for x in s.log() if x["subject"] == "Theme:alt"]
+    eq((len(rows), rows[0]["kind"], rows[0]["message"].startswith("17 tokens not set, base set values used: ")),
+       (1, "info", True), "missing tokens reported once")
+    eq([x for x in s.log() if x["subject"] == "Theme:devil"], [], "base set: no fallback report")
+    for bad in ("", "two words", 3):
+        eq(t.RegisterSet(t, bad, s.table({})), 0, "bad name refused: %r" % (bad,))
+    eq(t.RegisterSet(t, "ok", 5), 0, "values must be a table")
+    eq(sum(1 for x in s.log() if x["kind"] == "error" and x["subject"] == "Theme"), 4, "bad calls logged")
+    eq("two words" in to_py(t.ListSets(t)).values(), False, "not registered")
+    t.SetActiveSet(t, "alt")
+    eq((t.Get(t, "font.normal"), t.Get(t, "font.size.normal")), ("B.ttf", 12), "own token, then base fallback")
+
+
+@case
+def theme22_base_replacement_notifies_active_alternate():
+    s = Session().boot()
+    t = s.core.Theme
+    t.RegisterSet(t, "devil", s.table(BASE_TOKENS))
+    t.RegisterSet(t, "alt", s.table(ALT_TOKENS))
+    t.SetActiveSet(t, "alt")
+    calls = theme_listener(s)
+    t.RegisterSet(t, "devil", s.table(dict(BASE_TOKENS, **{"font.size.normal": 16})))
+    eq(calls, [("alt", "alt")], "fallback values changed: listeners told with the active name")
+    eq(t.Get(t, "font.size.normal"), 16, "new fallback value")
+    t.RegisterSet(t, "other", s.table({}))
+    eq(calls, [("alt", "alt")], "an inactive non-base set: no call")
+    s.combat(True)
+    t.RegisterSet(t, "devil", s.table(BASE_TOKENS))
+    eq(calls, [("alt", "alt")], "held in combat")
+    s.combat(False)
+    eq(calls, [("alt", "alt"), ("alt", "alt")], "delivered after combat")
+
+
+@case
+def theme22_switch_persists_and_combat_waits():
+    s = Session().boot()
+    t = s.core.Theme
+    t.RegisterSet(t, "devil", s.table(BASE_TOKENS))
+    t.RegisterSet(t, "alt", s.table(ALT_TOKENS))
+    calls = theme_listener(s)
+    s.combat(True)
+    eq(t.SetActiveSet(t, "alt"), (True, "queued"), "queued")
+    eq((calls, s.sv("DevilForever_CoreDB")["theme"].get("active")), ([], None), "nothing called or saved in combat")
+    s.combat(False)
+    eq((calls, s.sv("DevilForever_CoreDB")["theme"]["active"]), ([("alt", "devil")], "alt"),
+       "switched and saved after combat")
+    eq(t.SetActiveSet(t, "nope"), (False, "unknown set"), "unknown name refused")
+    eq((t.GetSet(t), s.sv("DevilForever_CoreDB")["theme"]["active"]), (("alt", None), "alt"), "refusal changes nothing")
+    second = Session(saved={"DevilForever_CoreDB": s.sv("DevilForever_CoreDB")}).boot(login=False)
+    t2 = second.core.Theme
+    t2.RegisterSet(t2, "alt", second.table(ALT_TOKENS))
+    calls2 = theme_listener(second)
+    second.fire("PLAYER_LOGIN")
+    eq((t2.GetSet(t2)[0], calls2), ("alt", [("alt", "devil")]), "restored at login after a reload")
+    third = Session(saved={"DevilForever_CoreDB": s.sv("DevilForever_CoreDB")}).boot()
+    t3 = third.core.Theme
+    eq(t3.GetSet(t3)[0], "devil", "saved set not registered: base kept")
+    eq(any("saved set alt is not registered" in x["message"] for x in third.log()), True, "and logged")
+    eq(t3.SetActiveSet(t3, "devil"), (True, "unchanged"), "choosing the base")
+    eq(third.sv("DevilForever_CoreDB")["theme"]["active"], "devil", "the choice is saved even when unchanged")
+    third.combat(True)
+    t3.RegisterSet(t3, "alt", third.table(ALT_TOKENS))
+    t3.SetActiveSet(t3, "alt")
+    t3.SetActiveSet(t3, "devil")
+    third.combat(False)
+    eq((t3.GetSet(t3), third.sv("DevilForever_CoreDB")["theme"]["active"]), (("devil", None), "devil"),
+       "last call in combat wins")
+
+
+@case
+def theme22_edits_and_presets_overlay_new_tokens():
+    s = p_session(presets=True)
+    t, e = s.core.Theme, s.core.Edit
+    t.RegisterSet(t, "devil", s.table(BASE_TOKENS))
+    t.RegisterSet(t, "alt", s.table(ALT_TOKENS))
+    e.Set(e, "p.bar", "font", s.table({"size": 20}))
+    before = to_py(e.Get(e, "p.bar"))
+    eq((before["color"], before["font"], before["spacing"]), ({1: 1, 2: 1, 3: 1, 4: 1}, {"path": "A.ttf", "size": 20}, 6),
+       "devil tokens under the preset and the edit")
+    t.SetActiveSet(t, "alt")
+    after = to_py(e.Get(e, "p.bar"))
+    eq(after["color"], {1: 1, 2: 0, 3: 0, 4: 1}, "unedited field follows the new set")
+    eq(after["font"], {"path": "B.ttf", "size": 20}, "edit still over the new token (font merged per key)")
+    eq((after["spacing"], after["rows"]), (6, 5), "preset values still over the new tokens")
+
+
+@case
+def theme22_snapshot_carries_active_theme():
+    s1 = p_session(BASE)
+    t = s1.core.Theme
+    t.RegisterSet(t, "alt", s1.table(ALT_TOKENS))
+    eq(dfp(s1, "theme alt"), ["[DF 설정] 테마 alt 으로 바꿈"], "switched by command")
+    s2 = saved_with(s1, login=False)
+    s2.core.Theme.RegisterSet(s2.core.Theme, "alt", s2.table(ALT_TOKENS))
+    s2.fire("PLAYER_LOGIN")
+    s2.fire("PLAYER_ENTERING_WORLD", True, False)
+    eq(snapshot(s2, "A")["core"]["theme"], "alt", "snapshot holds the active theme")
+    eq(dfp(s2, "theme devil"), ["[DF 설정] 테마 devil 으로 바꿈"], "back to the base")
+    s3 = restored(s2, "restore A", login=False)
+    t3 = s3.core.Theme
+    eq(s3.sv("DevilForever_CoreDB")["theme"]["active"], "alt", "restore wrote the saved theme")
+    t3.RegisterSet(t3, "alt", s3.table(ALT_TOKENS))
+    s3.fire("PLAYER_LOGIN")
+    eq(t3.GetSet(t3)[0], "alt", "restored theme active after login")
+    eq(has_line(s2.core.Profiles.Describe(s2.core.Profiles, "A").values(), "테마"), True, "dry run names the theme")
+
+
+@case
+def theme22_command_list_switch_and_refusals():
+    s = p_session(BASE)
+    t = s.core.Theme
+    t.RegisterSet(t, "devil", s.table(BASE_TOKENS))
+    t.RegisterSet(t, "alt", s.table(ALT_TOKENS))
+    eq(dfp(s, "theme"), ["[DF 설정] alt — 빠진 토큰 17개는 devil 값", "[DF 설정] devil (지금)"], "list")
+    eq(has_line(dfp(s, "help"), "/dfp theme"), True, "help names the command")
+    eq(dfp(s, "theme nope"), ["[DF 설정] 안 함: nope: 등록된 테마가 아님 — /dfp theme 로 목록"], "unknown refused")
+    eq(dfp(s, "theme alt extra"), ["[DF 설정] 알 수 없는 말: extra — /dfp help"], "one name only")
+    eq(t.GetSet(t)[0], "devil", "refusals change nothing")
+    eq(dfp(s, "theme devil"), ["[DF 설정] 이미 devil 테마"], "already active")
+    s.combat(True)
+    eq(dfp(s, "theme alt"), ["[DF 설정] 안 함: 전투 중 — 바꾼 것 없음"], "refused in combat")
+    s.combat(False)
+    eq(t.GetSet(t)[0], "devil", "nothing waits after a refused command")
+    dfp(s, "theme alt")
+    eq((t.GetSet(t)[0], s.sv("DevilForever_CoreDB")["theme"]["active"]), ("alt", "alt"), "switched and saved")
+    eq(has_line(dfp(s, "status"), "테마: alt"), True, "status shows the theme")
+    eq(dfp(s, "theme")[0], "[DF 설정] alt (지금) — 빠진 토큰 17개는 devil 값", "marker moved")
+    later = p_session(carry(s))
+    eq(dfp(later, "theme"), ["[DF 설정] devil (지금)",
+                             "[DF 설정] 저장된 테마 alt 은 등록돼 있지 않음 — devil 사용"], "saved set missing")
+
+
 def main():
     passed, failed = 0, []
     for fn in CASES:

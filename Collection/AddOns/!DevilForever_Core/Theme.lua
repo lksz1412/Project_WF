@@ -5,9 +5,13 @@
 -- Values (colors {r, g, b, a}, texture paths, font paths, sizes) are supplied
 -- by appearance code through RegisterSet; Core ships the names only, so every
 -- token reads nil until a set with values is registered.
+-- Set names are non-empty strings without spaces (/dfp theme takes one word).
+-- Registering a set other than the base logs the base tokens it lacks; those
+-- tokens read the base value.
 -- Listeners are called with (newName, oldName) and never while
--- InCombatLockdown() is true: a switch, a replacement of the active set and
--- the restore of the saved set at login are held until PLAYER_REGEN_ENABLED.
+-- InCombatLockdown() is true: a switch, a replacement of the active set (or
+-- of the base set, whose values fill the active one), and the restore of the
+-- saved set at login are held until PLAYER_REGEN_ENABLED.
 
 local _, Core = ...
 
@@ -66,10 +70,14 @@ end
 
 -- Registers or replaces token set `name` with `values` ({[token] = value}).
 -- Unknown token names and values of the wrong kind are dropped and logged.
--- Returns the number of tokens kept. Replacing the active set notifies
--- listeners with (name, name), after combat when in combat.
+-- Returns the number of tokens kept (0 and logged for a bad name or values).
+-- Replacing the active set or the base set notifies listeners with
+-- (activeName, activeName), after combat when in combat.
 function Theme:RegisterSet(name, values)
-  if type(name) ~= "string" or name == "" or type(values) ~= "table" then return 0 end
+  if type(name) ~= "string" or name == "" or name:find("%s") or type(values) ~= "table" then
+    Core:Log("error", "Theme", "RegisterSet needs a name without spaces and a table of values")
+    return 0
+  end
   local set, kept = {}, 0
   for token, value in pairs(values) do
     local kind = Theme.TOKENS[token]
@@ -83,11 +91,21 @@ function Theme:RegisterSet(name, values)
     end
   end
   sets[name] = set
-  if name == activeName then
+  if name ~= Theme.BASE_SET then
+    local missing = {}
+    for _, token in ipairs(Theme:ListTokens()) do
+      if set[token] == nil then missing[#missing + 1] = token end
+    end
+    if #missing > 0 then
+      Core:Log("info", "Theme:" .. name, #missing .. " tokens not set, base set values used: "
+        .. table.concat(missing, ", "))
+    end
+  end
+  if name == activeName or name == Theme.BASE_SET then
     if Core.InCombat() then
       pendingNotify = true
     else
-      listeners:Fire(name, name)
+      listeners:Fire(activeName, activeName)
     end
   end
   return kept
@@ -134,9 +152,10 @@ local function switch(name)
   if old ~= name then listeners:Fire(name, old) end
 end
 
--- Makes `name` the active set. Returns true, "applied" | "queued" | "unchanged",
--- or false, reason. In combat the switch waits for PLAYER_REGEN_ENABLED; a later
--- call replaces a waiting one.
+-- Makes `name` the active set and saves the choice in
+-- DevilForever_CoreDB.theme.active. Returns true, "applied" | "queued" |
+-- "unchanged", or false, reason. In combat the switch (and the save) waits for
+-- PLAYER_REGEN_ENABLED; a later call replaces a waiting one.
 function Theme:SetActiveSet(name)
   if not sets[name] then return false, "unknown set" end
   if Core.InCombat() then
@@ -145,6 +164,7 @@ function Theme:SetActiveSet(name)
   end
   if name == activeName then
     pendingName = nil
+    if Core.ready then Core:DBTable("theme").active = name end
     return true, "unchanged"
   end
   switch(name)
@@ -156,13 +176,16 @@ function Theme:RegisterCallback(owner, fn) return listeners:Register(owner, fn) 
 function Theme:UnregisterCallback(owner) return listeners:Unregister(owner) end
 
 Core:On("PLAYER_REGEN_ENABLED", function()
-  if pendingName and sets[pendingName] and pendingName ~= activeName then
-    switch(pendingName)
-  elseif pendingNotify then
+  local name = pendingName
+  pendingName = nil
+  if name and sets[name] then
+    if name ~= activeName then return switch(name) end
+    if Core.ready then Core:DBTable("theme").active = name end
+  end
+  if pendingNotify then
     pendingNotify = false
     listeners:Fire(activeName, activeName)
   end
-  pendingName = nil
 end)
 
 -- The saved active set is restored at PLAYER_LOGIN, after every addon file

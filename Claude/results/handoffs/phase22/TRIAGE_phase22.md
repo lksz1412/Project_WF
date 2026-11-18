@@ -1,0 +1,3 @@
+# Triage — Phase 22 (Step 36)
+Review B (code review 1 + adversarial; brief ② local): 0 / 0 / 6. Minor to final report: status help line omits 테마; untested paths (login-in-combat queue, list/status combat markers); "not registered" wording for late-registered set (load-on-demand edge); restore report says 테마 restored even when absent; API.lua header omits save/notify notes (A2 DQ1); appearance-22 luacheck line lacks path.
+A2 DQ decisions: theme files live in the Codex appearance folder (accepted); /dfp theme refuses in combat (accepted, API queues); layouts in game wait for preset files (R109); reload-in-combat loses queued switch (accepted, listed).
