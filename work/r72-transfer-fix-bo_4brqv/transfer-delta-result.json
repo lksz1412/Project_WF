@@ -1,0 +1,38 @@
+{
+  "recorded": "2026-11-18T09:33:07.800234+09:00",
+  "command": "python - (bounded R72 transfer correction/check, actual stdin invocation)",
+  "result": {
+    "checks": 3,
+    "passed": 3,
+    "failed": 0
+  },
+  "checks": [
+    {
+      "name": "R72 current-source explanation and Git clause same order",
+      "passed": true
+    },
+    {
+      "name": "R71 current MD-JSON validation exact and next-session B",
+      "passed": true
+    },
+    {
+      "name": "R72 itself unchanged raw-only source and no product Phase",
+      "passed": true
+    }
+  ],
+  "retainedPriorPassedChecks": 30,
+  "newInputs": [
+    {
+      "path": "master-plan-candidate.md",
+      "SHA256": "DD629B4D936F9364E3B981E5DA47DD3DE3EA885FD89A7EFC59824882A80A3E32"
+    },
+    {
+      "path": "requirements-coverage.md",
+      "SHA256": "83D9EDA1A646FFC61E7A6F0BAA223E2F5CFEBA763637026BFB5948CE5DE0E80F"
+    },
+    {
+      "path": "requirements-coverage.json",
+      "SHA256": "4F1A412738F69038666E31926B8D48CB29493A5CC85E63C83CDA2A32EFCFF88B"
+    }
+  ]
+}

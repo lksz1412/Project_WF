@@ -1,0 +1,14 @@
+{
+  "recorded": "2026-11-18T09:49:46.487872+09:00",
+  "sourceFilesRepresented": 19744,
+  "workingTreeAndIndexPaths": 20116,
+  "changedFilesByteVerified": 62,
+  "incomingRemoteFilesPreserved": 367,
+  "executableModesPreserved": 30,
+  "omissions": 0,
+  "indexByteMismatches": 0,
+  "remoteModeOrBlobMismatches": 0,
+  "manifestSHA256": "83dcf060090f41015d8a570bc825d738940f1e7e1afee6a44c3f96f0da7ceeb1",
+  "status": "PASS",
+  "scope": "Delta bytes/index and all paths; prior unchanged source/privacy gates retained. This is a handover checkpoint, not independent plan or game acceptance."
+}

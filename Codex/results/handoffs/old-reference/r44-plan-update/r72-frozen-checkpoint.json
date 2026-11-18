@@ -1,0 +1,61 @@
+{
+  "recorded": "2026-11-18T09:43:55.511377+09:00",
+  "status": "PLAN_UPDATE_READY_INDEPENDENT_REVIEW_PENDING",
+  "requirements": 72,
+  "functionPhases": 13,
+  "steps": "1-46",
+  "finalMockupStep": 39,
+  "selfChecks": {
+    "initial": {
+      "passed": 28,
+      "total": 30
+    },
+    "semanticDelta": {
+      "passed": 2,
+      "total": 2
+    },
+    "transferDelta": {
+      "passed": 3,
+      "total": 3
+    },
+    "combined": {
+      "passed": 33,
+      "total": 33
+    },
+    "independentReview": false
+  },
+  "files": [
+    {
+      "path": "Codex/results/handoffs/old-reference/r44-plan-update/master-plan-candidate.md",
+      "lines": 450,
+      "bytes": 64910,
+      "sha256": "dd629b4d936f9364e3b981e5da47dd3de3ea885fd89a7efc59824882a80a3e32"
+    },
+    {
+      "path": "Codex/results/handoffs/old-reference/r44-plan-update/requirements-coverage.md",
+      "lines": 92,
+      "bytes": 36468,
+      "sha256": "83d9eda1a646ffc61e7a6f0baa223e2f5cfeba763637026bfb5948ce5de0e80f"
+    },
+    {
+      "path": "Codex/results/handoffs/old-reference/r44-plan-update/requirements-coverage.json",
+      "lines": 3490,
+      "bytes": 135514,
+      "sha256": "4f1a412738f69038666e31926b8d48cb29493a5cc85e63c83cda2a32efcff88b"
+    },
+    {
+      "path": "Codex/results/handoffs/old-reference/r44-plan-update/change-map.json",
+      "lines": 3687,
+      "bytes": 288045,
+      "sha256": "098ee0c8cc89ff52ca9269cd71886835cb290d3590e7eba4c98c79a05dd017fa"
+    },
+    {
+      "path": "Codex/results/handoffs/old-reference/r44-plan-update/work_log.md",
+      "lines": 150,
+      "bytes": 41371,
+      "sha256": "02a12ee31d1a3c90c8a34ecdf5b78ec05f254f25ae59ad3229d198cfd694d67e"
+    }
+  ],
+  "sourcePublicHashesMayDiffer": true,
+  "next": "Independent P5 review of latest draft, root integration, user review and explicit GO; no feature work now"
+}

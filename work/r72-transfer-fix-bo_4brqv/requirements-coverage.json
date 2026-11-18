@@ -1,0 +1,3490 @@
+{
+  "schema": "project-wf-requirements-coverage/1",
+  "recorded": "2026-11-18T09:28:10.036654+09:00",
+  "scope": "R1–R72 all requests; plan traceability, NOT72implemented features",
+  "candidate": "Codex/results/handoffs/old-reference/r44-plan-update/master-plan-candidate.md",
+  "records": [
+    {
+      "id": "R1",
+      "status": "유지·제작 미완",
+      "disposition": "옛Black의 외관/핵심기능을 실제Forever 전체직업 공용모음집으로 구성; 기능별 기존시작제품 수정우선",
+      "sources": [
+        {
+          "path": "Codex/results/REQUEST_LEDGER.md",
+          "line": 5,
+          "ledgerRow": "| R1 | 2026-11-17 19:13:31 KST | 미관측 | 옛 Devil UI 블랙 하단집중형의 외형과 기본 기능 복원 | 계획 작성 입력 | ✅ Summary·Phase Range | — | ⏳ | 최초 요청: 단축키, 캐릭터 체력·마나, 미니맵 구현 희망. 부가 기능 제외 |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 7,
+          "ledgerRow": "| R1 | 2026-11-17 19:13:31 KST | 미관측 | 옛 Devil UI 블랙 하단집중형의 외형과 기본 기능 복원 | 계획 작성 입력 | ✅ Summary·Phase Range | — | ⏳ | 최초 요청: 단축키, 캐릭터 체력·마나, 미니맵 구현 희망. 부가 기능 제외 |"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "2.1",
+          "step": 8
+        },
+        {
+          "phase": "2.1",
+          "step": 9
+        },
+        {
+          "phase": "2.2",
+          "step": 10
+        },
+        {
+          "phase": "2.2",
+          "step": 11
+        },
+        {
+          "phase": "2.3",
+          "step": 12
+        },
+        {
+          "phase": "2.3",
+          "step": 13
+        },
+        {
+          "phase": "2.4",
+          "step": 14
+        },
+        {
+          "phase": "2.4",
+          "step": 15
+        },
+        {
+          "phase": "2.5",
+          "step": 16
+        },
+        {
+          "phase": "2.5",
+          "step": 17
+        },
+        {
+          "phase": "2.6",
+          "step": 18
+        },
+        {
+          "phase": "2.6",
+          "step": 19
+        },
+        {
+          "phase": "3.3",
+          "step": 39
+        },
+        {
+          "phase": "3.4",
+          "step": 41
+        },
+        {
+          "phase": "3.4",
+          "step": 42
+        },
+        {
+          "phase": "3.4",
+          "step": 43
+        }
+      ],
+      "artifactOrEvidence": "Step5 동결설계; candidate Phase Range 단일시작점표/미래기능수정본·최종39",
+      "validation": "바/health·해당직업자원/map/cast/3chat·공통외관;39P4와실게임41–46 구분",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R2",
+      "status": "대체",
+      "disposition": "2022 기준은 R25가 철회; R34의45실제샘플4가 현재 기준",
+      "sources": [
+        {
+          "path": "Codex/results/REQUEST_LEDGER.md",
+          "line": 6,
+          "ledgerRow": "| R2 | 2026-11-17 19:13:31 KST | 미관측 | 2022 Black FanFix 게시글 첫 스크린샷을 복원 기준으로 확정 | 계획 작성 입력 | ✅ Summary·늘 지킬 제약 | — | ✅ | 사용자: “응 맞아 딱 저모양이었어” |"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.1",
+          "step": 2
+        },
+        {
+          "phase": "1.3",
+          "step": 3
+        }
+      ],
+      "artifactOrEvidence": "Step2동결 기록; old-devil-reference-comparison.md:5/65",
+      "validation": "2022 원본/기록 보존,목표·최종목업으로 재사용0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00",
+      "supersededAspects": "전체시각기준R25철회→R34.원본보존"
+    },
+    {
+      "id": "R3",
+      "status": "관찰·초기계획 기록상완료; 개정 미완",
+      "disposition": "Computer Use 관찰은 끝남; 최신 기능우선 후보는 검수·root통합 대기",
+      "sources": [
+        {
+          "path": "Codex/results/REQUEST_LEDGER.md",
+          "line": 7,
+          "ledgerRow": "| R3 | 2026-11-17 19:13:31 KST | 미관측 | Computer Use로 CurseForge·WoW 확인 후 설치·대체·구성 계획 작성 | 계획 작성 입력 | ✅ 전체 계획·Test Plan | — | ✅ | 사용자: “내 컴퓨터를 컴퓨터 유즈로 커스포지도 확인하고 와우도 확인” 및 “계획을 세워와” |"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.2",
+          "step": 6
+        },
+        {
+          "phase": "1.2",
+          "step": 7
+        }
+      ],
+      "artifactOrEvidence": "기존대장R3/8; 불변baseline 실제관찰·새candidate",
+      "validation": "관찰을 게임입력 GO로 확대0; 새11절/순서 수용 전 현행화완료 주장0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R4",
+      "status": "유지",
+      "disposition": "과거15개 참고만; 현재역할별시작제품은 새범위R44–64에따라 배정",
+      "sources": [
+        {
+          "path": "Codex/results/REQUEST_LEDGER.md",
+          "line": 8,
+          "ledgerRow": "| R4 | 2026-11-17 19:13:31 KST | 미관측 | 기존 CurseForge 조합은 참고만, 선호 구성이나 전체 적용 대상으로 해석 금지 | 계획 작성 입력 | ✅ Summary·과거15개 처리표 | — | ✅ | 사용자: “참고만해”, “썩 마음에 드는 조합은 아니었어”, “내 최애는 데빌UI 블랙 하단집중형” |"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.2",
+          "step": 7
+        },
+        {
+          "phase": "2.10",
+          "step": 27
+        },
+        {
+          "phase": "2.10",
+          "step": 28
+        },
+        {
+          "phase": "2.11",
+          "step": 29
+        },
+        {
+          "phase": "2.11",
+          "step": 30
+        },
+        {
+          "phase": "2.12",
+          "step": 31
+        },
+        {
+          "phase": "2.12",
+          "step": 32
+        }
+      ],
+      "artifactOrEvidence": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-master-plan-before-R44.md:165–185의 과거15개 표·candidate 시작점표",
+      "validation": "15개전체설치/선호구성확정0·실제필수/선택manifest만",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R5",
+      "status": "조사기록 유지·제작검증 미완",
+      "disposition": "R62 선택 Hekili기반으로 상태/proc/CD/선택추천을 한 전투보조에서 확인",
+      "sources": [
+        {
+          "path": "Codex/results/REQUEST_LEDGER.md",
+          "line": 9,
+          "ledgerRow": "| R5 | 2026-11-17 19:13:31 KST | 미관측 | EventAlert와 Hekili의 현재 상태 및 대체 가능성 확인 | 계획 작성 입력 | ✅ 주술사·알림·근거표 | — | ✅ | 사용자: “이벤트 얼럿을 쓰던 시절…하키리?…그것도 이젠 없어졌으려나?” |"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "2.9",
+          "step": 24
+        },
+        {
+          "phase": "2.9",
+          "step": 25
+        },
+        {
+          "phase": "2.9",
+          "step": 26
+        },
+        {
+          "phase": "3.4",
+          "step": 42
+        },
+        {
+          "phase": "3.4",
+          "step": 43
+        }
+      ],
+      "artifactOrEvidence": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-master-plan-before-R44.md:187–197·root-starting-addon-facts-and-r67.md:9·미래Phase2.9 source/지원표",
+      "validation": "v0.8.6 공식파일은배포선언;실제class/spec/level/자원/효과·치유지원은별도검증",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R6",
+      "status": "유지",
+      "disposition": "Hekili 사용경험은 요구 맥락,역사 계보 확정 아님",
+      "sources": [
+        {
+          "path": "Codex/results/REQUEST_LEDGER.md",
+          "line": 10,
+          "ledgerRow": "| R6 | 2026-11-17 19:16:54 KST | 미관측 | Hekili 사용 경험은 EventAlert의 효과 알림을 포함하는 종합 도구라는 맥락으로 반영 | 계획 작성 입력 | ✅ 주술사·알림 | — | ✅ | 사용자: “이벤트 얼럿을 품은 애드온…이벤트 얼럿의 발전형이 헤키리였어” |"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "2.9",
+          "step": 24
+        },
+        {
+          "phase": "2.9",
+          "step": 25
+        },
+        {
+          "phase": "2.9",
+          "step": 26
+        }
+      ],
+      "artifactOrEvidence": "이전대장R6 원문; candidate combat경계",
+      "validation": "상태/proc/CD와추천 역할누락0·두중복제품자동추가0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R7",
+      "status": "조사기록 유지·주술사 우선검증",
+      "disposition": "주술사후기 한계는 유지, R61 전체직업범위 안에서 첫실제확인 우선",
+      "sources": [
+        {
+          "path": "Codex/results/REQUEST_LEDGER.md",
+          "line": 11,
+          "ledgerRow": "| R7 | 2026-11-17 19:17:42 KST | 미관측 | 주술사를 플레이할 예정이므로 포에버 주술사 유저 후기 참고 | 계획 작성 입력 | ✅ 주술사·알림·근거표 | — | ✅ | 사용자: “특히 나는 주술사를 키울거니까 주술사 유저의 후기들을 참고” |"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "2.9",
+          "step": 24
+        },
+        {
+          "phase": "2.9",
+          "step": 26
+        },
+        {
+          "phase": "3.4",
+          "step": 42
+        }
+      ],
+      "artifactOrEvidence": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-master-plan-before-R44.md:187–197·미래class-support-matrix/Step42",
+      "validation": "독점주술사지원0·후기/배포선언을본PC PASS로사용0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R8",
+      "status": "기록상완료",
+      "disposition": "관찰 종료; 새자동게임입력 없음",
+      "sources": [
+        {
+          "path": "Codex/results/REQUEST_LEDGER.md",
+          "line": 12,
+          "ledgerRow": "| R8 | 2026-11-17 19:22:06 KST | 미관측 | PC 관찰 완료 후 Computer Use 종료 가능 여부 확인 | 관찰 종료, 이후 UI 입력 없음 | ✅ 실제 관찰·제약 | — | ✅ | 사용자: “확인 다했으면 컴퓨터 유즈는 끌까?”; master: 꺼도 된다고 답함 |"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "3.4",
+          "step": 41
+        }
+      ],
+      "artifactOrEvidence": "이전대장R8; 불변baseline64 실제게임행",
+      "validation": "재개 게임조작은실제승인/접속가능전0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R9",
+      "status": "대기·실제상태 미확인",
+      "disposition": "사용자정리 의사만 확인; 삭제완료 가정 안함",
+      "sources": [
+        {
+          "path": "Codex/results/REQUEST_LEDGER.md",
+          "line": 13,
+          "ledgerRow": "| R9 | 2026-11-17 19:22:06 KST | 미관측 | 사용자가 기존 애드온을 직접 정리할 예정 | 실행 전 재확인 필요 | ✅ 실제 관찰·제약·G1 | — | ⏳ | 사용자: “난 그 애드온들 지워도 되겠니?”, “싹 지워버릴라고”; 삭제 완료는 미확인, master 삭제 없음 |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 8,
+          "ledgerRow": "| R9 | 2026-11-17 19:22:06 KST | 미관측 | 사용자가 기존 애드온을 직접 정리할 예정 | 실행 전 재확인 필요 | ✅ 실제 관찰·제약·G1 | — | ⏳ | 사용자: “난 그 애드온들 지워도 되겠니?”, “싹 지워버릴라고”; 삭제 완료는 미확인, master 삭제 없음 |"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.2",
+          "step": 6
+        },
+        {
+          "phase": "3.4",
+          "step": 41
+        }
+      ],
+      "artifactOrEvidence": "양대장R9; 현재관찰 제약",
+      "validation": "적용전 현재목록/백업 확인,master삭제0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R10",
+      "status": "답변기록 완료·새환경제약 유지",
+      "disposition": "CF 목록과 macro복원 구분; 옛설정존재 가정 없음",
+      "sources": [
+        {
+          "path": "Codex/results/REQUEST_LEDGER.md",
+          "line": 14,
+          "ledgerRow": "| R10 | 2026-11-17 19:22:06 KST | 미관측 | 현재 포에버는 새 환경이며 예전 매크로 없음; CF가 매크로도 기억하는지 질문 | 새 환경 전제 및 질문 답변 | ✅ 실제 관찰·제약·Implementation Interfaces | — | ✅ | 사용자: “지금은 와우 포에버라 전혀 아무것도 없는데?”; master는 CF 목록 복원과 매크로 복원은 별개라고 답함 |"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.2",
+          "step": 6
+        },
+        {
+          "phase": "2.7",
+          "step": 20
+        },
+        {
+          "phase": "2.7",
+          "step": 21
+        },
+        {
+          "phase": "3.4",
+          "step": 41
+        }
+      ],
+      "artifactOrEvidence": "이전대장R10; candidate새환경",
+      "validation": "미존재값 없음으로 기록·자동키/프로필이식0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R11",
+      "status": "기존프로젝트완료·현재개정 미완",
+      "disposition": "D프로젝트에서 실제11절 후보+요구표 작성; canonical은root수용뒤",
+      "sources": [
+        {
+          "path": "Codex/results/REQUEST_LEDGER.md",
+          "line": 15,
+          "ledgerRow": "| R11 | 2026-11-17 19:28:09 KST | 미관측 | 마스터플랜 진행 여부 확인 및 전용 프로젝트 폴더 지정 | 전용 프로젝트로 복사·계획 초안 작성 | ✅ 전체 계획·구조 맵 | — | ✅ | 사용자: “마스터 플랜은 세우고 진행하고 있니? … 프로젝트 폴더도 어디 지정했으면”; master는 아직 저장된 초안 없음·조사 및 계획 작성 중임을 밝히고 Documents/Codex/WoW_DevilUI_Forever를 기본 경로로 지정 |"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.2",
+          "step": 6
+        },
+        {
+          "phase": "1.2",
+          "step": 7
+        }
+      ],
+      "artifactOrEvidence": "candidate/coverage; 기존대장R11",
+      "validation": "파일실존·hash·11절·root통합전완료과장0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R12",
+      "status": "완료·경로유지",
+      "disposition": "최종 D:/Projects/Project_WF,앞선C기록 보존",
+      "sources": [
+        {
+          "path": "Codex/results/REQUEST_LEDGER.md",
+          "line": 16,
+          "ledgerRow": "| R12 | 2026-11-17 19:31:49 KST | 미관측 | 전용 프로젝트의 최종 경로 지정 | D:\\Projects\\Project_WF | ✅ 프로젝트·구조 맵 | — | ✅ | 사용자 명시: D:\\Projects\\Project_WF; 폴더는 비어 있었고 기록을 보존해 복사함 |"
+        }
+      ],
+      "phaseSteps": [],
+      "artifactOrEvidence": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-master-plan-before-R44.md:65·현재프로젝트행",
+      "validation": "A1쓰기소유D범위만;이동/삭제0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R13",
+      "status": "읽기참고 준비대기·미검증",
+      "disposition": "Step6 안정된 비macro Retail설정뜻 먼저참고;미준비부분만 이유/조건 기록,Step41적용전재확인",
+      "sources": [
+        {
+          "path": "Codex/results/REQUEST_LEDGER.md",
+          "line": 17,
+          "ledgerRow": "| R13 | 2026-11-17 19:33:49 KST | 미관측 | 본서버 설치·설정 저장 후 retail WTF의 매크로·세팅도 참고해 반영 | 후속 원천 수집 gate | ✅ R13 참고 입력·Step3·G1-R13 | — | ⏳ | 사용자: 본서버 설치 중이며 C:\\Program Files (x86)\\World of Warcraft\\_retail_\\WTF에 설정이 담기면 참고해 같이 반영 요청. 폴더 존재만 확인, 설정 내용·준비 완료는 미확인 |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 9,
+          "ledgerRow": "| R13 | 2026-11-17 19:33:49 KST | 미관측 | 본서버 설치·설정 저장 후 retail WTF의 매크로·세팅도 참고해 반영 | 후속 원천 수집 gate | ✅ R13 참고 입력·Step3·G1-R13 | — | ⏳ | 사용자: 본서버 설치 중이며 C:\\Program Files (x86)\\World of Warcraft\\_retail_\\WTF에 설정이 담기면 참고해 같이 반영 요청. 폴더 존재만 확인, 설정 내용·준비 완료는 미확인 |"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.2",
+          "step": 6
+        },
+        {
+          "phase": "3.4",
+          "step": 41
+        }
+      ],
+      "artifactOrEvidence": "candidate Step6/R13입력·G-R13·Step41",
+      "validation": "안정로컬참고와live적용구분·파일/키/전체profile자동이식0;공개사본실제ID추상화",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R14",
+      "status": "R17로대체·원형보존",
+      "disposition": "게임macro이동 취소;R68–70은원형불변의ID추상화공개사본만추가허용",
+      "sources": [
+        {
+          "path": "Codex/results/REQUEST_LEDGER.md",
+          "line": 18,
+          "ledgerRow": "| R14 | 2026-11-17 19:37:31 KST | 미관측 | 사용자 자작 매크로 원형만 원문 그대로 이동, 주문 차이로 수정·필터링 금지 | 매크로 byte 복사 하위작업 및 계획 경계 | ✅ R17로 대체 | — | ↪ | 사용자: 주문은 다르더라도 매크로만 옮길 것, 조건 잔뜩 넣은 원형이며 직접 작성했다고 명시. master가 source 2파일 9+8개, target 유일 1계정·1캐릭, Wow 프로세스 0 확인 |"
+        }
+      ],
+      "phaseSteps": [],
+      "artifactOrEvidence": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-master-plan-before-R44.md:201·기존대장R14/17·github-publish/r67-main-publication-result.md",
+      "validation": "게임복사/변환0·공개허용과게임import혼동0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00",
+      "supersededAspects": "게임이동R17취소,공개사본R68추가허용"
+    },
+    {
+      "id": "R15",
+      "status": "기존보존·공개완료반환/A1raw미독",
+      "disposition": "원천4파일44개6487B보존;R68–70 root공개사본44개 기록,재취득/본문검사없음",
+      "sources": [
+        {
+          "path": "Codex/results/REQUEST_LEDGER.md",
+          "line": 19,
+          "ledgerRow": "| R15 | 2026-11-17 19:40:53 KST | 미관측 | 3캐릭터 접속 후 macro 원천 재확인 | source 재목록·private 원문 보존 | ✅ macro 후속·원본 라이브러리 | — | ✅ | 사용자: 다시 확인, 캐릭터3개 접속해 정보 수집. master 재확인: 계정공용9+캐릭별11/16/8=44개,4파일6487bytes. 실제 원문 전문읽음 |"
+        }
+      ],
+      "phaseSteps": [],
+      "artifactOrEvidence": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-master-plan-before-R44.md:201·publication결과md/json",
+      "validation": "원형byte/조건/이름보존·실제ID만추상화·A1raw새접근0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R16",
+      "status": "R17로대체",
+      "disposition": "적용사본/주문변환 취소 유지;ID추상화공개사본은기능변환아님",
+      "sources": [
+        {
+          "path": "Codex/results/REQUEST_LEDGER.md",
+          "line": 20,
+          "ledgerRow": "| R16 | 2026-11-17 19:40:53 KST | 미관측 | 전체 macro집합은 조건·조작습관 원형, 향후 tooltip에 맞는 적용본은 사본에서 구성 | 원형 보존과 실제 적용본 분리 | ✅ R17로 대체 | — | ↪ | 사용자: 채널링·마우스오버 등 조건을 모은 집합이며 익숙한 플레이를 위해 가능한 그대로 사용, 스킬tooltip에 따라 달리 적용 필요. 원형44개는 변경X, 향후 적용사본에서 주문·조건 의미 검증 |"
+        }
+      ],
+      "phaseSteps": [],
+      "artifactOrEvidence": "기존대장R16/17·Codex/results/handoffs/old-reference/r44-plan-update/baseline-master-plan-before-R44.md:201·R68–70",
+      "validation": "원형/이름/조건/명령순서/인코딩불변·게임적용0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00",
+      "supersededAspects": "게임적용본R17취소,공개사본은별개"
+    },
+    {
+      "id": "R17",
+      "status": "보존완료·공개범위R68–70추가",
+      "disposition": "원형라이브러리/색인/필요시찾기는유지;옛비공개범위만ID추상화공개허용으로보완",
+      "sources": [
+        {
+          "path": "Codex/results/REQUEST_LEDGER.md",
+          "line": 21,
+          "ledgerRow": "| R17 | 2026-11-17 19:42:39 KST | 미관측 | macro는 원본만 라이브러리 보관·색인, 필요할 때 요청해 꺼내기 | MacroLibrary 원본·색인, game import 취소 | ✅ 원본 라이브러리·Implementation Interfaces | — | ✅ | 사용자: 그냥 원본만 보관하고 도서관처럼 관리, 나중에 필요한 것 요청. R14의 게임이동 및 R16의 적용본 제작은 이번 범위에서 대체·취소. 원본44개 변경X |"
+        }
+      ],
+      "phaseSteps": [],
+      "artifactOrEvidence": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-master-plan-before-R44.md:201; publication결과md/json",
+      "validation": "게임import/키배정/원형가공0·macro이름/조건/본문공개일괄금지로회귀0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00",
+      "supersededAspects": "원형보존/필요시검색유지;옛공개금지만R68–70변경"
+    },
+    {
+      "id": "R18",
+      "status": "답변기록 완료",
+      "disposition": "기존역할 설명요청은기록상응답완료;신규역할은후속요구로개정",
+      "sources": [
+        {
+          "path": "Codex/results/REQUEST_LEDGER.md",
+          "line": 43,
+          "ledgerRow": "| R18 | 2026-11-17 20:36:08 +09:00 | 미관측 | 계획을 채팅에서 설명: 데빌UI 외형 재현 방법과 기존 애드온·직접 제작의 역할 | 현재 답변, 기존 계획 설명만 | — 범위 변경 없음 | — | ✅ | 사용자: 계획 내용을 여기서 설명, 어떤 것은 기존 애드온·직접 제작인지 질문. 계획1–312 전문을1–110/111–221/222–끝으로 재독; 요청 대장 전문 및 communication/file-reading 스킬 전문 확인. 새 조사·설치·코드·UI 설계 변경 없음 |"
+        }
+      ],
+      "phaseSteps": [],
+      "artifactOrEvidence": "이전대장R18",
+      "validation": "응답이설치/구현GO였다고해석0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R19",
+      "status": "역사분석완료",
+      "disposition": "원본ZIP 확보·정적분석 완료,2022표본은현목표아님",
+      "sources": [
+        {
+          "path": "Codex/results/REQUEST_LEDGER.md",
+          "line": 52,
+          "ledgerRow": "| R19 | 2026-11-17 20:57:39 +09:00 | 미관측 | 구버전 원본 ZIP 확보·분석, 그대로 재현 가능한 부분과 직접 제작할 부분 확인 | Phase1.1 Step1·original-source-analysis.md·Step1 결과 | ✅ 한정 실행 범위 추가 | ✅ Phase1.1 Step1 | ✅ | 사용자: 좋아. 그럼 일단 구버전 원본 ZIP부터 확보해서 분석해봐. 실제 원본을 보고 어디까지 그대로 재현할 수 있는지, 직접 만들어야 할 부분이 뭔지 확인해줘. 다운로드·격리보관·정적분석·보고만 승인; 게임 적용·설치·새 UI 코드·개인macro 변경은 포함 안 함 |"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.1",
+          "step": 1
+        }
+      ],
+      "artifactOrEvidence": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-master-plan-before-R44.md:342·Step1기록·oldcomparison:93/125",
+      "validation": "취득/정적과runtime분리,현재원형45 유지",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R20",
+      "status": "설계반환·최종39렌더이월",
+      "disposition": "R55/R63–65에따라 가능한기능/검사/수정후 최종39로미완렌더/P4/전달이월",
+      "sources": [
+        {
+          "path": "Codex/results/REQUEST_LEDGER.md",
+          "line": 59,
+          "ledgerRow": "| R20 | 2026-11-17 21:53:50 +09:00 | 미관측 | 원본 스크린샷·회수 설정 대조 후 사용자 화면 배치 설계 | Phase1.1 Step2 | ✅ 현재 Step2 범위·4K 적층 원칙 | ✅ Step2 범위·순서 | 🔄 | 좋아. 그럼 원본 스크린샷이랑 회수한 설정을 대조해서 내 화면에 맞는 배치부터 잡아봐. 데빌UI 블랙 하단집중형 느낌을 최대한 그대로 살려줘. |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 27,
+          "ledgerRow": "| R20 | 2026-11-17 21:53:50 +09:00 | 미관측 | 원본 스크린샷·회수 설정을 사용자 화면에 맞게 배치 설계 | R25/R34로 보완한 원형의 Step5 오프라인 배치 | ✅ R20 후속 목표·Step5·현재 범위 정정 | ✅ 현재 detail R20 후속 목표·Step5 경계 | 🔄 | 좋아. 그럼 원본 스크린샷이랑 회수한 설정을 대조해서 내 화면에 맞는 배치부터 잡아봐. 데빌UI 블랙 하단집중형 느낌을 최대한 그대로 살려줘. 앞 Phase 미완요청을 번호·원문 그대로 이어받음. 기존R21–36 근거 행 번호를 보존하려 끝에 둔 이월 행이며 새 요청/번호가 아님. |"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.3",
+          "step": 5
+        },
+        {
+          "phase": "3.3",
+          "step": 39
+        }
+      ],
+      "artifactOrEvidence": "currentdetail264–279·candidate Step5이월계약·미래root PhaseResult addendum",
+      "validation": "동결receipt보존·DESIGN_HANDOFF/VISUAL_USER_DEFERRED_TO_STEP39→실제39수신·미완렌더완료0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R21",
+      "status": "유지·실측 미검증",
+      "disposition": "4K 사용자화면;캡처2560은대체기준아님",
+      "sources": [
+        {
+          "path": "Codex/results/REQUEST_LEDGER.md",
+          "line": 60,
+          "ledgerRow": "| R21 | 2026-11-17 21:53:50 +09:00 | 미관측 | 사용자 화면은 4K | Step2 현재 화면 전제 | ✅ 현재 Step2 범위·4K 적층 원칙 | ✅ Step2 범위·순서 | 🔄 | 내화면은 4k인데? 캡처2560×1440을 실제 화면 기준으로 삼지 않는다. 실제 게임 render/UI scale 별도 미검증. |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 10,
+          "ledgerRow": "| R21 | 2026-11-17 21:53:50 +09:00 | 미관측 | 사용자 화면은 4K | Step5 현재 화면 전제 | ✅ 현재 Step5 범위·4K 적층 원칙 | ✅ Step5 범위·순서 | 🔄 | 내화면은 4k인데? 캡처2560×1440을 실제 화면 기준으로 삼지 않는다. 실제 게임 render/UI scale 별도 미검증. |"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "2.1",
+          "step": 8
+        },
+        {
+          "phase": "2.1",
+          "step": 9
+        },
+        {
+          "phase": "2.2",
+          "step": 10
+        },
+        {
+          "phase": "2.2",
+          "step": 11
+        },
+        {
+          "phase": "3.3",
+          "step": 39
+        },
+        {
+          "phase": "3.4",
+          "step": 41
+        }
+      ],
+      "artifactOrEvidence": "candidate4K제약·oldcomparison:78",
+      "validation": "제안3840×2160과실제raster/UIscale분리·최종39/실제41확인",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R22",
+      "status": "유지",
+      "disposition": "버튼→행/간격→높이의아래적층;전체사진비율금지",
+      "sources": [
+        {
+          "path": "Codex/results/REQUEST_LEDGER.md",
+          "line": 61,
+          "ledgerRow": "| R22 | 2026-11-17 21:53:50 +09:00 | 미관측 | 화면 아래부터 스킬바를 적당히 쌓는 방식 우선, 화면 비율 환산 금지 | Step2 배치 구성 순서·검증 | ✅ 현재 Step2 범위·4K 적층 원칙 | ✅ Step2 범위·순서 | 🔄 | 비율이 중요한게 아니고 스킬 바 배치시 아래부터 쌓았을때 딱 적당히 쌓여야하는건데 이상하게 비율 맞춘다고 지랄하지말고 잘해라 |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 11,
+          "ledgerRow": "| R22 | 2026-11-17 21:53:50 +09:00 | 미관측 | 화면 아래부터 스킬바를 적당히 쌓는 방식 우선, 화면 비율 환산 금지 | Step5 배치 구성 순서·검증 | ✅ 현재 Step5 범위·4K 적층 원칙 | ✅ Step5 범위·순서 | 🔄 | 비율이 중요한게 아니고 스킬 바 배치시 아래부터 쌓았을때 딱 적당히 쌓여야하는건데 이상하게 비율 맞춘다고 지랄하지말고 잘해라 |"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "2.1",
+          "step": 8
+        },
+        {
+          "phase": "2.1",
+          "step": 9
+        },
+        {
+          "phase": "2.2",
+          "step": 10
+        },
+        {
+          "phase": "2.2",
+          "step": 11
+        },
+        {
+          "phase": "2.13",
+          "step": 33
+        },
+        {
+          "phase": "2.13",
+          "step": 34
+        },
+        {
+          "phase": "3.3",
+          "step": 39
+        }
+      ],
+      "artifactOrEvidence": "candidateSummary/화면gate",
+      "validation": "button-first방정식/높이/중앙시야·일괄ratio0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R23",
+      "status": "유지",
+      "disposition": "반투명세구획은독립3chat;채널은미정",
+      "sources": [
+        {
+          "path": "Codex/results/REQUEST_LEDGER.md",
+          "line": 70,
+          "ledgerRow": "| R23 | 2026-11-17 22:25:52 +09:00 | 미관측 | 반투명 배경 음영의 직사각형 세 개는 각각 대화창임을 확인 | Step2 원본 역할·배치 설명·명세 | 현재반영 | 현재반영 | 🔄 | 직사각형의 무엇인가가 3개의 대화창인건 파악했냐? 반투명 배경 음영진거? 사용자 설명으로 셋 모두 대화창임을 확인. 기존 분석은 오른쪽만 chat, 왼쪽 둘은 용도미확정 패널로 남겼었음. |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 12,
+          "ledgerRow": "| R23 | 2026-11-17 22:25:52 +09:00 | 미관측 | 반투명 배경 음영의 직사각형 세 개는 각각 대화창임을 확인 | Step5 원본 역할·배치 설명·명세 | 현재반영 | 현재반영 | 🔄 | 직사각형의 무엇인가가 3개의 대화창인건 파악했냐? 반투명 배경 음영진거? 사용자 설명으로 셋 모두 대화창임을 확인. 기존 분석은 오른쪽만 chat, 왼쪽 둘은 용도미확정 패널로 남겼었음. |"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "2.1",
+          "step": 8
+        },
+        {
+          "phase": "2.1",
+          "step": 9
+        },
+        {
+          "phase": "2.4",
+          "step": 14
+        },
+        {
+          "phase": "2.4",
+          "step": 15
+        },
+        {
+          "phase": "3.3",
+          "step": 39
+        },
+        {
+          "phase": "3.4",
+          "step": 41
+        }
+      ],
+      "artifactOrEvidence": "oldcomparison:5/70; candidate채팅계약",
+      "validation": "3역할/현재filter보존;미터침범0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R24",
+      "status": "조사수용·제작/실게임 미완",
+      "disposition": "기본분류/입력을유지하고 Prat기존외형모듈을 시작점으로 수정/최신화·검증;부족부분만개발",
+      "sources": [
+        {
+          "path": "Codex/results/REQUEST_LEDGER.md",
+          "line": 78,
+          "ledgerRow": "| R24 | 2026-11-17 22:31:12 +09:00 | 미관측 | 기본 대화창 버튼·제목바·못생긴 입력창/큰 테두리·글자와 조정 문제 해결법 조사 | 채팅 해결방안 조사, 설치 없음 | 현재재계획 | Phase1.3 작성 중 | 🔄 | 옛날에는 기본 대화창의 UI가 좌측버튼도 없고, 제목바도, 말치는 텍스트 박스도 병신같이 생기지 않았었어. 깔끔하게 그냥 말을 치면 내가 지정한 항목에 해당되는 대화창에 말이 올라왔지. 그런데 어느 순간 기본 UI가 ㅈ 병신같이 못생겨지고 테두리 글자도 무식하게 커지고 UI도 조정이 안되고 개 쓰레기가 됐다. 이거 해결할 방법 찾아와라 |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 13,
+          "ledgerRow": "| R24 | 2026-11-17 22:31:12 +09:00 | 미관측 | 기본 대화창 버튼·제목바·못생긴 입력창/큰 테두리·글자와 조정 문제 해결법 조사 | Step4 공식4후보·실제소스3·native외형테마 권고 보고 | ✅ 현재 Step4 채팅 범위·검증 | ✅ Step4 G4source/requirements/outcome | ✅ | 옛날에는 기본 대화창의 UI가 좌측버튼도 없고, 제목바도, 말치는 텍스트 박스도 병신같이 생기지 않았었어. 깔끔하게 그냥 말을 치면 내가 지정한 항목에 해당되는 대화창에 말이 올라왔지. 그런데 어느 순간 기본 UI가 ㅈ 병신같이 못생겨지고 테두리 글자도 무식하게 커지고 UI도 조정이 안되고 개 쓰레기가 됐다. 이거 해결할 방법 찾아와라  Step4 독립10관점0/0/0 수용, 게임검증10개미수행·설치없음. |"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.3",
+          "step": 4
+        },
+        {
+          "phase": "2.4",
+          "step": 14
+        },
+        {
+          "phase": "2.4",
+          "step": 15
+        },
+        {
+          "phase": "3.1",
+          "step": 35
+        },
+        {
+          "phase": "3.1",
+          "step": 36
+        },
+        {
+          "phase": "3.4",
+          "step": 41
+        },
+        {
+          "phase": "3.4",
+          "step": 42
+        }
+      ],
+      "artifactOrEvidence": "forever-clean-chat-research.md:59/67–76/97–99; candidate Phase2.4",
+      "validation": "core입력/메시지/저장부수동작·3역할/filter/한글IME/상태별표시/저장·source≠runtime",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R25",
+      "status": "완료·철회유지",
+      "disposition": "2022목표철회·원본/기록동결,새원형은R34",
+      "sources": [
+        {
+          "path": "Codex/results/REQUEST_LEDGER.md",
+          "line": 79,
+          "ledgerRow": "| R25 | 2026-11-17 22:31:12 +09:00 | 미관측 | 2022 FanFix는 원하는 옛 UI와 다르므로 더 오래된 원형 재탐색 | 현재 복원기준 철회·기존배치안 동결 | 현재재계획 | Phase1.3 작성 중 | 🔄 | 지금보니까 니가 찾은 이미지도 이미 병신된 뒤에 만든 UI네 진짜 찐으로 옛날거 찾아봐 저거랑 다르다 |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 14,
+          "ledgerRow": "| R25 | 2026-11-17 22:31:12 +09:00 | 미관측 | 2022 FanFix는 원하는 옛 UI와 다르므로 더 오래된 원형 재탐색 | 현재 복원기준 철회·기존배치안 동결 | ✅ 현재 main·Phase1.3 Step3 | ✅ 현재 detail 범위·대조·gate | ✅ | 지금보니까 니가 찾은 이미지도 이미 병신된 뒤에 만든 UI네 진짜 찐으로 옛날거 찾아봐 저거랑 다르다 Step3 수용:34글·확보50고유그림·미관찰2·정적원본한계는 Step3 이력/검수 기록 참조. |"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.1",
+          "step": 2
+        },
+        {
+          "phase": "1.3",
+          "step": 3
+        }
+      ],
+      "artifactOrEvidence": "oldcomparison:5; Codex/results/handoffs/old-reference/r44-plan-update/baseline-master-plan-before-R44.md:352",
+      "validation": "철회결과수정/목표재채택0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R26",
+      "status": "조사완료·회수한계유지",
+      "disposition": "34글전독·확보50고유그림관찰;8906두그림은회수불가",
+      "sources": [
+        {
+          "path": "Codex/results/REQUEST_LEDGER.md",
+          "line": 80,
+          "ledgerRow": "| R26 | 2026-11-17 22:31:12 +09:00 | 미관측 | 제공한 인벤 devil 자료실 검색 결과와 샘플을 전부 확인, 옛 버전 중심 대조 | 공개자료실 전체 페이지·각 배포글/이미지 조사 | 현재재계획 | Phase1.3 작성 중 | 🔄 | https://wow.inven.co.kr/dataninfo/addonpds/list.php?searchField=subj_subt&searchString=devil 여기 샘플 겁나 많다. 쭉 전부 살펴봐 특히 옜날것들 기준으로 |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 15,
+          "ledgerRow": "| R26 | 2026-11-17 22:31:12 +09:00 | 미관측 | 제공한 인벤 devil 자료실 검색 결과와 샘플을 전부 확인, 옛 버전 중심 대조 | 공개자료실 전체 페이지·각 배포글/이미지 조사 | ✅ 현재 main·Phase1.3 Step3 | ✅ 현재 detail 범위·대조·gate | ✅ | https://wow.inven.co.kr/dataninfo/addonpds/list.php?searchField=subj_subt&searchString=devil 여기 샘플 겁나 많다. 쭉 전부 살펴봐 특히 옜날것들 기준으로 Step3 수용:34글·확보50고유그림·미관찰2·정적원본한계는 Step3 이력/검수 기록 참조. |"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.3",
+          "step": 3
+        }
+      ],
+      "artifactOrEvidence": "oldcomparison.md:11–16/63/129–137",
+      "validation": "34/34·56/58참조·50hash·미관찰2를구분,전부성공주장0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R27",
+      "status": "우선순위R34로대체·비교보존",
+      "disposition": "2958은과거최근접,지금은역사비교",
+      "sources": [
+        {
+          "path": "Codex/results/REQUEST_LEDGER.md",
+          "line": 88,
+          "ledgerRow": "| R27 | 2026-11-17 22:32:42 +09:00 | 미관측 | 자료실 idx2958이 기억하는 기존 블랙 하단집중형에 가장 가까움 | 옛 원형 조사 최우선 대조 후보 | 현재append | 작성중 | 🔄 | https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=2958&rurl=%2Fdataninfo%2Faddonpds%2Flist.php%3Fpage%3D2%26searchField%3Dsubj_subt%26searchString%3Ddevil 이게 가장 내가 생각했던 기존 데빌 블랙 하단 집중형에 가깝다 |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 16,
+          "ledgerRow": "| R27 | 2026-11-17 22:32:42 +09:00 | 미관측 | 자료실 idx2958이 기억하는 기존 블랙 하단집중형에 가장 가까움 | 옛 원형 조사 최우선 대조 후보 | ✅ 현재 main·Phase1.3 Step3 | ✅ 현재 detail 범위·대조·gate | ✅ | https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=2958&rurl=%2Fdataninfo%2Faddonpds%2Flist.php%3Fpage%3D2%26searchField%3Dsubj_subt%26searchString%3Ddevil 이게 가장 내가 생각했던 기존 데빌 블랙 하단 집중형에 가깝다 Step3 수용:34글·확보50고유그림·미관찰2·정적원본한계는 Step3 이력/검수 기록 참조. |"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.3",
+          "step": 3
+        }
+      ],
+      "artifactOrEvidence": "oldcomparison:5/26/67–78",
+      "validation": "2958을현재최우선/완전동일로쓰지않음",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00",
+      "supersededAspects": "최근접우선순위R32/R34대체,2958비교유지"
+    },
+    {
+      "id": "R28",
+      "status": "조사반영·제작유지",
+      "disposition": "빈틈과얇은분할선 차이분석·thin seam구현",
+      "sources": [
+        {
+          "path": "Codex/results/REQUEST_LEDGER.md",
+          "line": 89,
+          "ledgerRow": "| R28 | 2026-11-17 22:32:42 +09:00 | 미관측 | idx2958은 메뉴 사이 분할바 없이 빈칸으로 둔 차이가 있음 | 구분바·테두리·빈칸 비교 | 현재append | 작성중 | 🔄 | 그런데 저건 또 메뉴간에 분할하는 바가 없이 그냥 빈칸으로 냅둿네 |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 17,
+          "ledgerRow": "| R28 | 2026-11-17 22:32:42 +09:00 | 미관측 | idx2958은 메뉴 사이 분할바 없이 빈칸으로 둔 차이가 있음 | 구분바·테두리·빈칸 비교 | ✅ 현재 main·Phase1.3 Step3 | ✅ 현재 detail 범위·대조·gate | ✅ | 그런데 저건 또 메뉴간에 분할하는 바가 없이 그냥 빈칸으로 냅둿네 Step3 수용:34글·확보50고유그림·미관찰2·정적원본한계는 Step3 이력/검수 기록 참조. |"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.3",
+          "step": 3
+        },
+        {
+          "phase": "2.1",
+          "step": 8
+        },
+        {
+          "phase": "2.1",
+          "step": 9
+        },
+        {
+          "phase": "3.3",
+          "step": 39
+        }
+      ],
+      "artifactOrEvidence": "oldcomparison:71/88; candidate외관",
+      "validation": "넓은빈칸대신구분선/접합대조;게임입력가림0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R29",
+      "status": "정적분석완료",
+      "disposition": "제공2009ZIP보존/안전추출·chat/core/layout비교",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 19,
+          "ledgerRow": "| R29 | 2026-11-17 22:45:47 +09:00 | 미관측 | 직접 받은 2009년 Devil_Blackt.zip을 풀어 정적 분석 | SourceArchive/2009-12-10, Step3 원형/채팅분석 | ✅ 현재 main·Phase1.3 Step3 | ✅ 현재 detail 범위·대조·gate | ✅ | C:/Users/USER/Downloads/Devil_Blackt.zip; 2009 년도 거기 거 받아왔다. 아무래도 직접 까봐야 더 알기 쉽겠지. 원본보존·프로젝트사본 안전추출·정적분석만, 설치/Lua실행/구버전문서명령 실행아님. Step3 수용:34글·확보50고유그림·미관찰2·정적원본한계는 Step3 이력/검수 기록 참조. |"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.3",
+          "step": 3
+        }
+      ],
+      "artifactOrEvidence": "oldcomparison:14/88–89/105–111",
+      "validation": "원본손상/명령실행0,현재API성공확대0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R30",
+      "status": "비교완료·목표철회유지",
+      "disposition": "2022Drive실물은기존확보비교원천만",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 20,
+          "ledgerRow": "| R30 | 2026-11-17 22:45:47 +09:00 | 미관측 | 처음 제시된 Drive 배포본 실물도 대조에 사용 가능 | 이미확보2022Interface/Fonts비교원천 | ✅ 현재 main·Phase1.3 Step3 | ✅ 현재 detail 범위·대조·gate | ✅ | https://drive.google.com/drive/folders/1QMZiceFpizZ5dHxTkG2UemZAYKaQFdg7 여기서 니가 처음 제시한 실물도 받을수 있다. 앞서확보2ZIP보존, 원형기준은여전히옛후보. Step3 수용:34글·확보50고유그림·미관찰2·정적원본한계는 Step3 이력/검수 기록 참조. |"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.3",
+          "step": 3
+        }
+      ],
+      "artifactOrEvidence": "oldcomparison:92–97",
+      "validation": "재GET/성공CRC반복0·2022목표복귀0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R31",
+      "status": "조건부허용·과거정상브라우저확인기록",
+      "disposition": "일반공개취득실패때 다운로드-only Computer Use 가능;현재새취득없음",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 21,
+          "ledgerRow": "| R31 | 2026-11-17 22:45:47 +09:00 | 미관측 | 일반 다운로드 실패 때 Computer Use로 다운로드 허용 | 조건부공개자료취득 fallback | 현재반영 | 계획에추가 | ⏳ | 안받아지면 컴퓨터 유즈로 니가 받던가. 다운로드에한정된조건부승인, 게임조작/설치/설정승인아님. |"
+        }
+      ],
+      "phaseSteps": [],
+      "artifactOrEvidence": "현재대장R31·R36evidence:42/85의root공개경로기록",
+      "validation": "로그인only링크에서인증/다운로드우회0·게임입력/설치권한확대0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R32",
+      "status": "시각우선R34로대체·참고유지",
+      "disposition": "11218보조배치·13140V42는기능/호환참고만",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 22,
+          "ledgerRow": "| R32 | 2026-11-17 22:51:22 +09:00 | 미관측 | idx13140 포에버용은 참고만, idx11218이 기억과 가장 비슷한 새 우선 시각 참고 | Phase1.3 Step3 원형·현대호환 비교 | ✅ Summary·Phase1.3·Assumptions·현재범위 | ✅ 현재 Phase1.3 범위·대조·gate | ✅ | https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=13140 완전 내가 원하는건 아니지만 이미 포에버 용으로 만들었던 사람이 있네. 이것도 참고 삼아. https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=11218 여기가 그나마 내가 기억하는거랑 가장 비슷하네. Step3 수용:34글·확보50고유그림·미관찰2·정적원본한계는 Step3 이력/검수 기록 참조. |"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.3",
+          "step": 3
+        },
+        {
+          "phase": "1.2",
+          "step": 7
+        },
+        {
+          "phase": "2.1",
+          "step": 8
+        },
+        {
+          "phase": "2.1",
+          "step": 9
+        }
+      ],
+      "artifactOrEvidence": "oldcomparison:5/25/27",
+      "validation": "V42외형목표교체0;11218명칭으로참고배제0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00",
+      "supersededAspects": "11218최우선만R34대체,V42참고유지"
+    },
+    {
+      "id": "R33",
+      "status": "유지",
+      "disposition": "11218오른쪽미터기제외,그위치는세번째chat",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 23,
+          "ledgerRow": "| R33 | 2026-11-17 22:51:22 +09:00 | 미관측 | idx11218 세번째 채팅창 자리를 차지하는 미터기는 원하는 구성에서 제외 | Phase1.3 Step3 세대화창·미터기차이 비교 | ✅ Summary·Phase1.3·Assumptions·현재범위 | ✅ 현재 Phase1.3 범위·대조·gate | ✅ | 세번째 채팅창 위치에 미터기가 있는거 빼고는. 그 자리는 세번째 대화창으로 유지, 미터기 복제/설치 요구 아님. Step3 수용:34글·확보50고유그림·미관찰2·정적원본한계는 Step3 이력/검수 기록 참조. |"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "2.1",
+          "step": 8
+        },
+        {
+          "phase": "2.1",
+          "step": 9
+        },
+        {
+          "phase": "2.4",
+          "step": 14
+        },
+        {
+          "phase": "2.4",
+          "step": 15
+        },
+        {
+          "phase": "2.10",
+          "step": 27
+        },
+        {
+          "phase": "2.10",
+          "step": 28
+        },
+        {
+          "phase": "2.11",
+          "step": 29
+        },
+        {
+          "phase": "2.11",
+          "step": 30
+        },
+        {
+          "phase": "2.12",
+          "step": 31
+        },
+        {
+          "phase": "2.12",
+          "step": 32
+        },
+        {
+          "phase": "3.3",
+          "step": 39
+        }
+      ],
+      "artifactOrEvidence": "oldcomparison:70; candidate3chat",
+      "validation": "미터위치와chat역할충돌0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R34",
+      "status": "현재시각기준 유지",
+      "disposition": "45실제DOM4번째1103_7276.jpg가최우선",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 24,
+          "ledgerRow": "| R34 | 2026-11-17 22:53:42 +09:00 | 미관측 | idx45도 화면 비율 차이 외에는 기억과 진짜 완전히 같은 느낌, 특히 네번째 샘플 이미지 | Phase1.3 Step3 최우선 세부 이미지 대조 | ✅ Summary·Phase1.3·Assumptions·현재범위 | ✅ 현재 Phase1.3 범위·대조·gate | ✅ | https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=45 이것도 화면 비율이 조금 다른것 빼면 진짜진짜 완전히 똑같은느낌이다. 특히 샘플 이미지 중 네번째것이. 화면 비율을 4K 일괄환산하라는 지시 아님, R21/R22 하단적층 원칙 유지. Step3 수용:34글·확보50고유그림·미관찰2·정적원본한계는 Step3 이력/검수 기록 참조. |"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.3",
+          "step": 3
+        },
+        {
+          "phase": "2.1",
+          "step": 8
+        },
+        {
+          "phase": "2.1",
+          "step": 9
+        },
+        {
+          "phase": "2.2",
+          "step": 10
+        },
+        {
+          "phase": "2.2",
+          "step": 11
+        },
+        {
+          "phase": "2.3",
+          "step": 12
+        },
+        {
+          "phase": "2.3",
+          "step": 13
+        },
+        {
+          "phase": "2.13",
+          "step": 33
+        },
+        {
+          "phase": "2.13",
+          "step": 34
+        },
+        {
+          "phase": "3.3",
+          "step": 39
+        }
+      ],
+      "artifactOrEvidence": "oldcomparison:65–78",
+      "validation": "원순서/원형구획·하단사각지도/끝장식,exactbuild미확정",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R35",
+      "status": "정적분석완료",
+      "disposition": "제공AlphaZIP/NSIS정적추출·변형별기전회수",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 25,
+          "ledgerRow": "| R35 | 2026-11-17 22:54:22 +09:00 | 미관측 | 추가 제공 DevilUI6.1Alpha.zip을 idx45 네번째 샘플과 연결해 원형 정적분석 | Phase1.3 Step3 추가원본 보존·안전추출·대조 | ✅ Summary·Phase1.3·Assumptions·현재범위 | ✅ 현재 Phase1.3 범위·대조·gate | ✅ | C:/Users/USER/Downloads/DevilUI6.1Alpha.zip, 사용자 '이거'. 진행중인 원본분석의 추가입력. Downloads원본보존·사본정적분석, 설치/동봉실행지시실행승인아님. Step3 수용:34글·확보50고유그림·미관찰2·정적원본한계는 Step3 이력/검수 기록 참조. |"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.3",
+          "step": 3
+        }
+      ],
+      "artifactOrEvidence": "oldcomparison:14/90–97/111",
+      "validation": "실행0·사진동일profile단정0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R36",
+      "status": "확대조사수용·한계유지",
+      "disposition": "X2/1932/3461/V42 네배포본취득/정적비교",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 26,
+          "ledgerRow": "| R36 | 2026-11-17 23:27:40 +09:00 | 미관측 | 제공 자료실의 다른 배포본도 직접 찾아 압축 실물까지 비교하도록 조사방식 보완 | Phase1.3 Step3 선택 원본 추가 확보·코드/설정 대조 | ✅ Summary·Step3 현재취득범위 | ✅ 현재 Phase1.3 범위·대조·gate | ✅ | 내가 제공한 애드온 자료실 페이지도 많은데 왜 다른걸 뒤져볼 생각은 안하지. 기존34글/50이미지조사와별개로 사용자제공ZIP에치우친실물취득범위보완; 관련과거첨부·현재Forever수정판을직접선별확보/정적분석. Step3 수용:34글·확보50고유그림·미관찰2·정적원본한계는 Step3 이력/검수 기록 참조. |"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.3",
+          "step": 3
+        }
+      ],
+      "artifactOrEvidence": "oldcomparison:142–192; R36evidence:116",
+      "validation": "X2전체4217/288차단·46subset;V42부분3/현재runtime한계",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R37",
+      "status": "질문답변완료·현재방법R63반영",
+      "disposition": "자체채팅난이도답변은유효;지금은 Prat를기존시작점으로하고 검증된gap만개발",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 28,
+          "ledgerRow": "| R37 | 2026-11-18T01:57:28.3173277+09:00 | 미관측 | 마스터플랜에 따라 진행하는지 확인·채팅 자체 제작 난이도 문의 | 같은 턴 답변·기존Step4 권고와Step5 설계 설명 | — 기존계획 유지 | — 기존Step5 유지 | ✅ | 사용자 원문 handoffs/old-reference/R37-user-message.md. 기존 애드온 사용도 가능하다고 했으며 자체제작으로 최종선택/게임구현 GO를 새로 준 것은 아님. 저장된계획·원본/채팅조사완료·배치설계중, 작은native외형테마 우선안과 실제게임검증 필요를 답함. |"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "2.4",
+          "step": 14
+        },
+        {
+          "phase": "2.4",
+          "step": 15
+        }
+      ],
+      "artifactOrEvidence": "forever-clean-chat-research.md:88–99는당시권고; candidate Phase2.4/R63",
+      "validation": "옛작은자체테마우선권고로최신existing-first를덮지않음·native3chat/필터/입력유지",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00",
+      "supersededAspects": "당시own-theme우선권고는R63 Prat수정우선으로변경"
+    },
+    {
+      "id": "R38",
+      "status": "답변기록완료·현재순서갱신",
+      "disposition": "기존설명은역사,현재 R63–65 외관구현1/기능마다Phase/사용자검수먼저",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 29,
+          "ledgerRow": "| R38 | 2026-11-18T02:16:32.7408202+09:00 | 미관측 | 자기 전 작업 순서·애드온 구성안을 표로 설명 요청 | 현재 저장 계획과 Step4 권고 설명 | — 기존계획 유지 | — 기존Step5 유지 | ✅ | 사용자 원문 handoffs/old-reference/R38-user-message.md. 기존 진행 질문, 설치·게임구현 승인이나 중단 지시 아님 |"
+        }
+      ],
+      "phaseSteps": [],
+      "artifactOrEvidence": "현재대장R38·candidate tree/Phase Range",
+      "validation": "옛순서설명을현재목업선행/게임GO로쓰지않음",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R39",
+      "status": "공개조사완료·프로젝트미특정",
+      "disposition": "기억한귀마개자체프로젝트미특정;Ellesmere별개공식선언구분",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 30,
+          "ledgerRow": "| R39 | 2026-11-18T02:16:32.7408202+09:00 | 미관측 | 귀마개 자체제작 프로젝트 결과·제품·관리·Forever 배포 조사 | 별도 단발 공개 원천 조사 | — 기존계획 유지 | — 기존Step5 유지 | ✅ | 사용자 원문 handoffs/old-reference/R39-user-message.md. 메인 Step5 유지, 후보 자동채택·설치 승인 아님 |"
+        }
+      ],
+      "phaseSteps": [],
+      "artifactOrEvidence": "guimagae-addon-public-facts-2026-11-18.md:1–60",
+      "validation": "제품동일성/본인원저작/현재runtime창작0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R40",
+      "status": "문서완료",
+      "disposition": "공개사실표60행 저장;미특정/접근한계명시",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 31,
+          "ledgerRow": "| R40 | 2026-11-18T02:20:48.2999173+09:00 | 미관측 | 귀마개 프로젝트 조사 결과를 나중에 읽도록 문서화 | R39 공개근거 기록·문서 전달 | — 핵심구성/게임범위 유지 | — Step5 유지·보조 공개조사 기록 | ✅ | 사용자 원문 handoffs/old-reference/R40-user-message.md. 취침은 작업 중단 아님, 조사 결과 문서화 요청. 근거·미확인 구분, 게임설치/구성자동채택 아님. |"
+        }
+      ],
+      "phaseSteps": [],
+      "artifactOrEvidence": "guimagae-addon-public-facts-2026-11-18.md",
+      "validation": "문서실존·질문4개/원천구분,미특정을부재로바꾸지않음",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R41",
+      "status": "브리핑기록 완료",
+      "disposition": "저장사실표에근거한채팅설명은root대장완료",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 32,
+          "ledgerRow": "| R41 | 2026-11-18T06:27:05.1402455+09:00 | 미관측 | 귀마개 공개 조사부터 채팅에서 브리핑 요청 | 저장된 귀마개 사실표 전문 재독·같은 턴 설명 | — 기존계획 유지 | — Step5 변경 없음 | ✅ | 사용자 원문 handoffs/old-reference/R41-user-message.md. 별도 프로젝트 미특정과 확인된 ElvUI 배포/Ellesmere 공식 Forever 지원을 구분해 브리핑. |"
+        }
+      ],
+      "phaseSteps": [],
+      "artifactOrEvidence": "현재대장R41·R39사실표",
+      "validation": "기존불확실성유지·새설치채택0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R42",
+      "status": "기능참고 유지",
+      "disposition": "Ellesmere기능참고 허용;당시귀마개프로젝트동일성은미확정",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 33,
+          "ledgerRow": "| R42 | 2026-11-18T07:14:43.2052854+09:00 | 미관측 | EllesmereUI로 추정하는 제품을 참고한 기능 향상 가능성 문의 | 같은 턴 기능 참고 가능성 답변·공식 기능/재사용 표기 확인 | — 기획 검토·현행 구현계획 유지 | — Step5 배치 변경 없음 | ✅ | 사용자 원문 handoffs/old-reference/R42-user-message.md. 지칭은 직전 설명의 EllesmereUI로 해석하되 귀마개 당시 프로젝트 동일성 확정 아님. 기능 검토 질문, 게임구현·제품교체 GO 아님. |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/R42-user-message.md",
+          "line": 1,
+          "original": "그거맞을것같다. 그거 참고해서우리 제작 애드온 업그레이드 가능하냐?"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.2",
+          "step": 7
+        }
+      ],
+      "artifactOrEvidence": "현재대장R42·R39사실표",
+      "validation": "기능비교만·검토없는전체코드이식/저작권허가창작0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R43",
+      "status": "유지",
+      "disposition": "R42참고는외관이아닌기능;후속R51별도테마요청은별개",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 34,
+          "ledgerRow": "| R43 | 2026-11-18T07:14:43.2052854+09:00 | 미관측 | 참고·개선 대상을 외관이 아닌 실제 기능으로 한정 | 같은 턴 기능 참고 가능성 답변·공식 기능/재사용 표기 확인 | — 기획 검토·현행 구현계획 유지 | — Step5 배치 변경 없음 | ✅ | 사용자 원문 handoffs/old-reference/R43-user-message.md. R42 의미 정정. 기능별 적용 가능성과 실제 source/API 검증 필요를 구분, 데빌 원형 외관 목표는 바꾸지 않음. |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/R43-user-message.md",
+          "line": 1,
+          "original": "외관 ui 형태 말고 기능적으로"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.2",
+          "step": 7
+        },
+        {
+          "phase": "2.1",
+          "step": 8
+        },
+        {
+          "phase": "2.1",
+          "step": 9
+        },
+        {
+          "phase": "2.2",
+          "step": 10
+        },
+        {
+          "phase": "2.2",
+          "step": 11
+        },
+        {
+          "phase": "2.3",
+          "step": 12
+        },
+        {
+          "phase": "2.3",
+          "step": 13
+        },
+        {
+          "phase": "2.4",
+          "step": 14
+        },
+        {
+          "phase": "2.4",
+          "step": 15
+        },
+        {
+          "phase": "2.5",
+          "step": 16
+        },
+        {
+          "phase": "2.5",
+          "step": 17
+        },
+        {
+          "phase": "2.6",
+          "step": 18
+        },
+        {
+          "phase": "2.6",
+          "step": 19
+        },
+        {
+          "phase": "2.7",
+          "step": 20
+        },
+        {
+          "phase": "2.7",
+          "step": 21
+        },
+        {
+          "phase": "2.8",
+          "step": 22
+        },
+        {
+          "phase": "2.8",
+          "step": 23
+        },
+        {
+          "phase": "2.9",
+          "step": 24
+        },
+        {
+          "phase": "2.9",
+          "step": 25
+        },
+        {
+          "phase": "2.9",
+          "step": 26
+        },
+        {
+          "phase": "2.10",
+          "step": 27
+        },
+        {
+          "phase": "2.10",
+          "step": 28
+        },
+        {
+          "phase": "2.11",
+          "step": 29
+        },
+        {
+          "phase": "2.11",
+          "step": 30
+        },
+        {
+          "phase": "2.12",
+          "step": 31
+        },
+        {
+          "phase": "2.12",
+          "step": 32
+        },
+        {
+          "phase": "2.13",
+          "step": 33
+        },
+        {
+          "phase": "2.13",
+          "step": 34
+        }
+      ],
+      "artifactOrEvidence": "현재대장R43·candidate기능표",
+      "validation": "데빌baseline을Ellesmere외관으로전환0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R44",
+      "status": "필수·제작 미완",
+      "disposition": "필수외관모음집·독립선택AddOn·save/restore/editor·한Hekili전투보조;범위R61전체직업",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 35,
+          "ledgerRow": "| R44 | 2026-11-18T07:19:54.2241664+09:00 | 미관측 | 필수외관 묶음과 선택 기능별 별도애드온, 설정 저장/복원·사용자 편집 필수, 주술사 상태+CD 한 애드온으로 통합 | masterplan 구조·기능별 담당 계획 갱신 | 🔄 해당 구현/범위/계약/검증 반영 | 🔄 미래 단계 반영 검토·현재 Step5 외관 명세 유지 | 🔄 | 사용자 원문 handoffs/old-reference/R44-user-message.md. 기능별 별도 AddOn 선택, 기본 관리기능 필수, 주술사 상태·재사용 대기시간은 동일 전투보조제품. 실제 게임 구현/설치 승인과 구분. |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/R44-user-message.md",
+          "line": 1,
+          "original": "그래 애드온을 여럿으로 기능별로 쪼개고 외관을 위한 애드온들 가져다쓴것들 필수 적인건 하나로 묶더라도 기능적인건 전부 따로 선택할수 있어야지. 그리고 설정 저장 복원도 당연히 필요하고 ui를 유저가 수정 가능하게 커스터마이징도 열어 줘야하고, 주술사 상태랑 재사용 대기 시간은 딱 헤키리나 이벤트 얼럿 기능인데 두가지가 하나의 애드온으로 봐야지."
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.2",
+          "step": 7
+        },
+        {
+          "phase": "2.1",
+          "step": 8
+        },
+        {
+          "phase": "2.1",
+          "step": 9
+        },
+        {
+          "phase": "2.7",
+          "step": 20
+        },
+        {
+          "phase": "2.7",
+          "step": 21
+        },
+        {
+          "phase": "2.8",
+          "step": 22
+        },
+        {
+          "phase": "2.8",
+          "step": 23
+        },
+        {
+          "phase": "2.9",
+          "step": 24
+        },
+        {
+          "phase": "2.9",
+          "step": 25
+        },
+        {
+          "phase": "2.9",
+          "step": 26
+        },
+        {
+          "phase": "2.10",
+          "step": 27
+        },
+        {
+          "phase": "2.10",
+          "step": 28
+        },
+        {
+          "phase": "2.11",
+          "step": 29
+        },
+        {
+          "phase": "2.11",
+          "step": 30
+        },
+        {
+          "phase": "2.12",
+          "step": 31
+        },
+        {
+          "phase": "2.12",
+          "step": 32
+        },
+        {
+          "phase": "3.1",
+          "step": 35
+        },
+        {
+          "phase": "3.1",
+          "step": 36
+        }
+      ],
+      "artifactOrEvidence": "candidate Implementation Changes/Interfaces·기능별시작점표",
+      "validation": "실제폴더/TOC/의존·core-only·공통/class설정·범위복원·한상태/CD담당",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R45",
+      "status": "기존기능제품 활용·시작점배정",
+      "disposition": "Hekili/Grid2/Details/ForeverThreat 사용·설정/skin수정우선;외관/채팅도R63기존시작제품수정우선",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 36,
+          "ledgerRow": "| R45 | 2026-11-18T07:21:16.7581682+09:00 | 미관측 | 외관/채팅은 직접 제작 가능하되 전투알림·데미지·어그로 미터는 기존제품 우선 활용 | R44 구조 계획 갱신의 제작/재사용 책임 분리 | 🔄 기존기능재사용·선택미터 범위 반영 | 🔄 미래구현단계 반영 검토 | 🔄 | 사용자 원문 handoffs/old-reference/R45-user-message.md. 부가기능 전부 자체제작으로 확대하지 않음. 외부제품 원본 유지·선택구성, 우측 세번째채팅 유지. 특정 제품 설치/게임입력 승인은 아님. |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/R45-user-message.md",
+          "line": 1,
+          "original": "그리고 외관이랑 채팅은 직접 만들더라도 이벤트 얼럿같은 것은 기존것을 그냥 적용해도 되잖아? 데미지 미터기 어그로미터기 같은것도 그렇고"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.2",
+          "step": 7
+        },
+        {
+          "phase": "2.9",
+          "step": 24
+        },
+        {
+          "phase": "2.9",
+          "step": 25
+        },
+        {
+          "phase": "2.9",
+          "step": 26
+        },
+        {
+          "phase": "2.10",
+          "step": 27
+        },
+        {
+          "phase": "2.10",
+          "step": 28
+        },
+        {
+          "phase": "2.11",
+          "step": 29
+        },
+        {
+          "phase": "2.11",
+          "step": 30
+        },
+        {
+          "phase": "2.12",
+          "step": 31
+        },
+        {
+          "phase": "2.12",
+          "step": 32
+        }
+      ],
+      "artifactOrEvidence": "candidate 시작점표·root-starting-addon-facts-and-r67.md:6–11",
+      "validation": "모두자체제작/새엔진강제0·whole제품사용과source이식권리구분",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00",
+      "supersededAspects": "자체외관/채팅가능은R63기존수정우선으로구체화"
+    },
+    {
+      "id": "R46",
+      "status": "전달필수·최종39대기",
+      "disposition": "가능한기능/검사/수정뒤 이채팅에완성목업,출근중live미검증",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 38,
+          "ledgerRow": "| R46 | 2026-11-18T07:26:43.4957159+09:00 | 미관측 | 완성 시 이 채팅에 적용 모습 목업 제시·출근 중 직접 인게임 확인 불가 | Step5 오프라인 4K 목업·하단 확대 전달 조건 | 🔄 기존 Step5 전달 방식 반영 | 🔄 실제 게임 검증과 구분·목업 전달 | 🔄 | 사용자 원문 handoffs/old-reference/R46-user-message.md. 완성 목업을 이 채팅에 직접 제시. 원격 게임 조작이나 실제 게임 검증 완료를 요구한 것은 아님. |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/R46-user-message.md",
+          "line": 1,
+          "original": "완성되면 여기에 목업으로 적용시 모습을 제시해봐. 출근한 동안 직접 인게임 확인으 불가능하니까"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "3.3",
+          "step": 39
+        },
+        {
+          "phase": "3.3",
+          "step": 40
+        }
+      ],
+      "artifactOrEvidence": "candidate Phase3.3/Step39–40·Step5이월계약",
+      "validation": "4K전체/원배율하단/키·직업상태상세·두테마비교 직접전달·실게임위장0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R47",
+      "status": "재사용근거확보·수정/이식 미완",
+      "disposition": "V42 panel/배치저장/compat·Devilconfig/Reflux 실제기전에서시작하되installer/reset제외",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 40,
+          "ledgerRow": "| R47 | 2026-11-18T07:27:35.3004809+09:00 | 미관측 | Forever 참고 패키지 실제 분석 여부 확인·쓸 수 있는 코드/설정/구성 재사용 의도 명시 | V42 정적분석 근거 확인·R44 구조 계획의 재사용 후보 명시 | 🔄 실제 재사용 후보와 조건 반영 | 🔄 현재 Step5 명세 보존·후속 구현 계획 | 🔄 | 사용자 원문 handoffs/old-reference/R47-user-message.md. V42 core1905/map1203 등 실제 독해 근거 확인. 단순 관찰에 한정하지 않고 적합한 기능/설정/연결 코드 재사용 우선; 실제 이식/게임 검증 완료는 아님. |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/R47-user-message.md",
+          "line": 1,
+          "original": "데빌 포에버 용 참고 패키지도 비슷하게 뜯어보기는 했지? 참고하라는게 그렇게 가져올건가져오라는 뜻이었는데"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.2",
+          "step": 7
+        },
+        {
+          "phase": "2.1",
+          "step": 8
+        },
+        {
+          "phase": "2.1",
+          "step": 9
+        },
+        {
+          "phase": "2.4",
+          "step": 14
+        },
+        {
+          "phase": "2.4",
+          "step": 15
+        },
+        {
+          "phase": "2.7",
+          "step": 20
+        },
+        {
+          "phase": "2.7",
+          "step": 21
+        },
+        {
+          "phase": "2.8",
+          "step": 22
+        },
+        {
+          "phase": "2.8",
+          "step": 23
+        }
+      ],
+      "artifactOrEvidence": "a1-r36-source-evidence.md:24–38; Reflux5전문; candidate 재사용표",
+      "validation": "load/caller/callee/저장/초기화/종료·필터reset/uiScale제외·wholeV42감사과장0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R48",
+      "status": "유지·실제우열 미검증",
+      "disposition": "실제우수/동등한자체구현은유지;현재자체게임코드없으므로 R63 기존수정우선,입증gap만개발",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 42,
+          "ledgerRow": "| R48 | 2026-11-18T07:29:37.4930042+09:00 | 미관측 | 기능별 실제 비교에서 우리 구현이 우수하면 유지·부족하며 외부 구현 완성도가 높을 때만 도입 | R44 계획 재사용 판단 기준·비교 gate | 🔄 현행 판단 기준 반영 | 🔄 미래 단계·현재 Step5 유지 | 🔄 | 사용자 원문 handoffs/old-reference/R48-user-message.md. 후보 분석과 실제 구현 비교·이식 완료를 구분. |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/R48-user-message.md",
+          "line": 1,
+          "original": "이미 우리것이 더 뛰어나면 교체할 필요가 없어. 그냥 완성도가 높은 게 저쪽에 있고 우리 구현품이 그걸 못따라갈때만 가져오자는거지"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.2",
+          "step": 7
+        },
+        {
+          "phase": "2.1",
+          "step": 8
+        },
+        {
+          "phase": "2.1",
+          "step": 9
+        },
+        {
+          "phase": "2.2",
+          "step": 10
+        },
+        {
+          "phase": "2.2",
+          "step": 11
+        },
+        {
+          "phase": "2.3",
+          "step": 12
+        },
+        {
+          "phase": "2.3",
+          "step": 13
+        },
+        {
+          "phase": "2.4",
+          "step": 14
+        },
+        {
+          "phase": "2.4",
+          "step": 15
+        },
+        {
+          "phase": "2.5",
+          "step": 16
+        },
+        {
+          "phase": "2.5",
+          "step": 17
+        },
+        {
+          "phase": "2.6",
+          "step": 18
+        },
+        {
+          "phase": "2.6",
+          "step": 19
+        },
+        {
+          "phase": "2.7",
+          "step": 20
+        },
+        {
+          "phase": "2.7",
+          "step": 21
+        },
+        {
+          "phase": "2.8",
+          "step": 22
+        },
+        {
+          "phase": "2.8",
+          "step": 23
+        },
+        {
+          "phase": "2.9",
+          "step": 24
+        },
+        {
+          "phase": "2.9",
+          "step": 25
+        },
+        {
+          "phase": "2.9",
+          "step": 26
+        },
+        {
+          "phase": "2.10",
+          "step": 27
+        },
+        {
+          "phase": "2.10",
+          "step": 28
+        },
+        {
+          "phase": "2.11",
+          "step": 29
+        },
+        {
+          "phase": "2.11",
+          "step": 30
+        },
+        {
+          "phase": "2.12",
+          "step": 31
+        },
+        {
+          "phase": "2.12",
+          "step": 32
+        },
+        {
+          "phase": "2.13",
+          "step": 33
+        },
+        {
+          "phase": "2.13",
+          "step": 34
+        },
+        {
+          "phase": "3.2",
+          "step": 37
+        },
+        {
+          "phase": "3.2",
+          "step": 38
+        }
+      ],
+      "artifactOrEvidence": "candidate 기존수정우선/재사용표·G-existing-first",
+      "validation": "없는자체구현우위창작0·선택Hekili재선정/새엔진핑계0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R49",
+      "status": "단위판정 필수·구현 미완",
+      "disposition": "whole제품/독립module/partial기능·설정/자체유지/hybrid를각기능에구분",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 44,
+          "ledgerRow": "| R49 | 2026-11-18T07:29:37.4930042+09:00 | 미관측 | 후보별 전체 애드온 사용/기능 단위 재사용/자체 유지 범위를 구분해 결정 | R44 계획 재사용 범위 표·연결 코드/의존/설정 검증 | 🔄 현행 판단 기준 반영 | 🔄 미래 단계·현재 Step5 유지 | 🔄 | 사용자 원문 handoffs/old-reference/R49-user-message.md. 후보 분석과 실제 구현 비교·이식 완료를 구분. |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/R49-user-message.md",
+          "line": 1,
+          "original": "전체를 뜯어올것과 부분적으로 기능만 뜯어올것도 정해야한다."
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.2",
+          "step": 7
+        },
+        {
+          "phase": "2.1",
+          "step": 8
+        },
+        {
+          "phase": "2.1",
+          "step": 9
+        },
+        {
+          "phase": "2.2",
+          "step": 10
+        },
+        {
+          "phase": "2.2",
+          "step": 11
+        },
+        {
+          "phase": "2.3",
+          "step": 12
+        },
+        {
+          "phase": "2.3",
+          "step": 13
+        },
+        {
+          "phase": "2.4",
+          "step": 14
+        },
+        {
+          "phase": "2.4",
+          "step": 15
+        },
+        {
+          "phase": "2.5",
+          "step": 16
+        },
+        {
+          "phase": "2.5",
+          "step": 17
+        },
+        {
+          "phase": "2.6",
+          "step": 18
+        },
+        {
+          "phase": "2.6",
+          "step": 19
+        },
+        {
+          "phase": "2.7",
+          "step": 20
+        },
+        {
+          "phase": "2.7",
+          "step": 21
+        },
+        {
+          "phase": "2.8",
+          "step": 22
+        },
+        {
+          "phase": "2.8",
+          "step": 23
+        },
+        {
+          "phase": "2.9",
+          "step": 24
+        },
+        {
+          "phase": "2.9",
+          "step": 25
+        },
+        {
+          "phase": "2.9",
+          "step": 26
+        },
+        {
+          "phase": "2.10",
+          "step": 27
+        },
+        {
+          "phase": "2.10",
+          "step": 28
+        },
+        {
+          "phase": "2.11",
+          "step": 29
+        },
+        {
+          "phase": "2.11",
+          "step": 30
+        },
+        {
+          "phase": "2.12",
+          "step": 31
+        },
+        {
+          "phase": "2.12",
+          "step": 32
+        },
+        {
+          "phase": "2.13",
+          "step": 33
+        },
+        {
+          "phase": "2.13",
+          "step": 34
+        }
+      ],
+      "artifactOrEvidence": "candidate Phase Range/재사용표/Interfaces·미래판정manifest",
+      "validation": "제품사용≠source이식·caller/callee/로드/수명/의존·사용조건/업데이트",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R50",
+      "status": "디자인위임·수정 미완",
+      "disposition": "Grid2/Details/ForeverThreat 기능제품+지원설정/skin/필요작은adapter;직접fork는실제조건확인",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 46,
+          "ledgerRow": "| R50 | 2026-11-18T07:32:01.5118351+09:00 | 미관측 | 기존 공격대프레임/어그로/데미지 미터도 데빌 외관에 맞춰 필요 시 수정·디자인 판단 위임 | R44 계획 외부제품 스킨/외관 연결 범위·검증 | 🔄 설정/스킨/별도어댑터 계획 반영 | 🔄 미래 외관 통합·현재 Step5 유지 | 🔄 | 사용자 원문 handoffs/old-reference/R50-user-message.md. 주어진 레퍼런스로 통일, 필요한 외관 코드 작업을 미래 계획에 포함. 특정 공격대제품/설치 필수화 아님; 현재 게임 구현 GO와 구분. |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/R50-user-message.md",
+          "line": 1,
+          "original": "그리고 공격대프레임 애드온이나 어그로미터기 데미지 미터기가 기존것을 쓰면 우리의 외관 디자인과 결이 안 맞을 수도 있어. 그러니까 기존것을 쓰더라도 외관을 고칠 각오도 해줘. ui디자인은 니가 전문가니까 믿을게. 난 이미 레퍼런스 삼을건 다 줬으니까"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "2.10",
+          "step": 27
+        },
+        {
+          "phase": "2.10",
+          "step": 28
+        },
+        {
+          "phase": "2.11",
+          "step": 29
+        },
+        {
+          "phase": "2.11",
+          "step": 30
+        },
+        {
+          "phase": "2.12",
+          "step": 31
+        },
+        {
+          "phase": "2.12",
+          "step": 32
+        },
+        {
+          "phase": "2.13",
+          "step": 33
+        },
+        {
+          "phase": "2.13",
+          "step": 34
+        },
+        {
+          "phase": "3.1",
+          "step": 35
+        },
+        {
+          "phase": "3.1",
+          "step": 36
+        },
+        {
+          "phase": "3.3",
+          "step": 39
+        }
+      ],
+      "artifactOrEvidence": "candidate 선택제품표·외부스타일계약·최종39",
+      "validation": "nativeparty/raid baseline·한표시담당·값/경보/역할/클릭cast/off/update보존·3chat밖",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R51",
+      "status": "두테마제작/최종목업 미완",
+      "disposition": "같은구획의두컨셉은root제안;Phase2.13스타일/자산 뒤 마지막39목업비교",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 48,
+          "ledgerRow": "| R51 | 2026-11-18T07:35:13.6610304+09:00 | 미관측 | 데빌 원형 구획 유지·의외로 깔끔한 다른 테마 1–2안 제시 | 현행 계획에 후속 오프라인 테마 변형·비교 목업 편입 | 🔄 미래 시각 제안 단계 추가 검토 | 🔄 Step5 데빌 고정 명세 보존·후속 별도 변형 | 🔄 | 사용자 원문 handoffs/old-reference/R51-user-message.md. 보컬로이드도 가능한 예시, 특정 IP/캐릭터 필수 아님. Root제안2안 네온 보컬 스테이지/백자와 먹빛은 디자인 제안, 사용자 최종 선택 아님. 레이아웃 유지·게임테마 적용 완료 아님. |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/R51-user-message.md",
+          "line": 1,
+          "original": "그리고 지금 테마가 데빌인데 그게 사실 따지고보면 거의 디아블로 2  느낌 이거든? 구획은 유지하면서 그런 전체적인 느낌 다른 테마 버전도 하나 내지는 두가지 제시해줄래? 진짜 쌩뚱 맞게 보컬로이드 테마 컨셉 같은거라도 좋으니까 완전 깔쌈한 의외의 테마를 가져와주면 재밌을것같아"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "2.13",
+          "step": 33
+        },
+        {
+          "phase": "2.13",
+          "step": 34
+        },
+        {
+          "phase": "3.3",
+          "step": 39
+        }
+      ],
+      "artifactOrEvidence": "candidate Phase2.13 Steps33–34·Phase3.3 Step39",
+      "validation": "3chat/map/button-first/기본unit·직업상태의미보존·두일관테마·사용자최종선택창작0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R52",
+      "status": "조건부개선·실제품질 미판정",
+      "disposition": "지정판독실제4K품질결함때만별도개선Devil자산·원형대조,최종39비교",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 50,
+          "ledgerRow": "| R52 | 2026-11-18T07:36:19.4186826+09:00 | 미관측 | 데빌 기본 테마도 질감/텍스처가 부족하면 개선 허용 | R51 후속 오프라인 테마 단계의 기본 데빌 질감 개선·원본 비교 | 🔄 조건부 개선 범위·검증 반영 | 🔄 원본 Step5 보존·별도 개선 자산/목업 | 🔄 | 사용자 원문 handoffs/old-reference/R52-user-message.md. 원형 구획/분위기를 유지하며 디자인 판단으로 질감 개선 가능. 모든 자산 교체 의무나 원천 ZIP 덮어쓰기 아님. 실제 개선/렌더 완료는 아직 아님. |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/R52-user-message.md",
+          "line": 1,
+          "original": "데빌 기존의 유아이도 질감 텍스쳐가 너무 구리다 싶으면 업그레이드 시켜도 된다"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "2.13",
+          "step": 33
+        },
+        {
+          "phase": "2.13",
+          "step": 34
+        },
+        {
+          "phase": "3.3",
+          "step": 39
+        }
+      ],
+      "artifactOrEvidence": "candidate Steps33–34/39·ImageGen/renderer경계",
+      "validation": "모든texture교체의무0·alpha/halo/질감/가독성·동결원천불변",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R53",
+      "status": "기존위임재확인",
+      "disposition": "제공reference안의미적판단위임;재질문불필요",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 52,
+          "ledgerRow": "| R53 | 2026-11-18T07:39:45.1738554+09:00 | 미관측 | 기존 레퍼런스 안 디자인 판단 위임 재확인 | 현재 작업 추적·같은 턴 답변 | — 기존 승인/기획 유지 | — 현재 Step5 유지 | ✅ | 사용자 원문 handoffs/old-reference/R53-user-message.md. R50/R51/R52 범위 유지, 새 구현/게임 적용 승인 아님 |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/R53-user-message.md",
+          "line": 1,
+          "original": "디자인은 니가 제일 잘하는거니까 믿는다"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "2.1",
+          "step": 8
+        },
+        {
+          "phase": "2.1",
+          "step": 9
+        },
+        {
+          "phase": "2.10",
+          "step": 27
+        },
+        {
+          "phase": "2.10",
+          "step": 28
+        },
+        {
+          "phase": "2.11",
+          "step": 29
+        },
+        {
+          "phase": "2.11",
+          "step": 30
+        },
+        {
+          "phase": "2.12",
+          "step": 31
+        },
+        {
+          "phase": "2.12",
+          "step": 32
+        },
+        {
+          "phase": "2.13",
+          "step": 33
+        },
+        {
+          "phase": "2.13",
+          "step": 34
+        },
+        {
+          "phase": "3.3",
+          "step": 39
+        }
+      ],
+      "artifactOrEvidence": "현재대장R53·candidate Phase2.1/2.10–2.13/3.3",
+      "validation": "사용자컨셉최종선택창작/새게임GO0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R54",
+      "status": "진행지시·계속",
+      "disposition": "실제파일/진행확인하며현재후보와후속검수연결",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 54,
+          "ledgerRow": "| R54 | 2026-11-18T07:39:45.1738554+09:00 | 미관측 | 실제 진행 추적과 후속 작업 연결 지시 | 현재 작업 추적·같은 턴 답변 | — 기존 승인/기획 유지 | — 현재 Step5 유지 | ✅ | 사용자 원문 handoffs/old-reference/R54-user-message.md. 같은 턴 실제 agent/file 상태 확인, 계획 수정 진행·목업 미제작을 명시하고 작업 지속 |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/R54-user-message.md",
+          "line": 1,
+          "original": "진행상황 안따라가고 뭐해"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.2",
+          "step": 6
+        },
+        {
+          "phase": "1.2",
+          "step": 7
+        }
+      ],
+      "artifactOrEvidence": "현재대장R54·candidate/ownlog·현재수용대기",
+      "validation": "단순status로작업대체0·root canonical미반영정직표시",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R55",
+      "status": "최신순서 유지·R63외관1보완",
+      "disposition": "모든가능한기능/검사/수정후최종39목업;공통외관구현은R63에따라먼저",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 56,
+          "ledgerRow": "| R55 | 2026-11-18T07:46:35.4725332+09:00 | 미관측 | 가능한 작업 전부 먼저·목업 제작은 마지막으로 순서 변경 | 현재 계획의 작업 순서 갱신·요구 누락 점검 | 🔄 기능 우선·목업 마지막의 현행 본문 수정 | 🔄 실행 순서와 이월 위치 갱신 | 🔄 | handoffs/old-reference/R55-user-message.md. 최신 지시는 중단이 아닌 순서 수정. 현재 Lua 구현/최종 목업 미제작 상태를 root가 설명. |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/R55-user-message.md",
+          "line": 1,
+          "original": "목업은 작업할수 있는거 전부 다하고 그때 만들어."
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "2.1",
+          "step": 8
+        },
+        {
+          "phase": "2.1",
+          "step": 9
+        },
+        {
+          "phase": "2.2",
+          "step": 10
+        },
+        {
+          "phase": "2.2",
+          "step": 11
+        },
+        {
+          "phase": "2.3",
+          "step": 12
+        },
+        {
+          "phase": "2.3",
+          "step": 13
+        },
+        {
+          "phase": "2.4",
+          "step": 14
+        },
+        {
+          "phase": "2.4",
+          "step": 15
+        },
+        {
+          "phase": "2.5",
+          "step": 16
+        },
+        {
+          "phase": "2.5",
+          "step": 17
+        },
+        {
+          "phase": "2.6",
+          "step": 18
+        },
+        {
+          "phase": "2.6",
+          "step": 19
+        },
+        {
+          "phase": "2.7",
+          "step": 20
+        },
+        {
+          "phase": "2.7",
+          "step": 21
+        },
+        {
+          "phase": "2.8",
+          "step": 22
+        },
+        {
+          "phase": "2.8",
+          "step": 23
+        },
+        {
+          "phase": "2.9",
+          "step": 24
+        },
+        {
+          "phase": "2.9",
+          "step": 25
+        },
+        {
+          "phase": "2.9",
+          "step": 26
+        },
+        {
+          "phase": "2.10",
+          "step": 27
+        },
+        {
+          "phase": "2.10",
+          "step": 28
+        },
+        {
+          "phase": "2.11",
+          "step": 29
+        },
+        {
+          "phase": "2.11",
+          "step": 30
+        },
+        {
+          "phase": "2.12",
+          "step": 31
+        },
+        {
+          "phase": "2.12",
+          "step": 32
+        },
+        {
+          "phase": "2.13",
+          "step": 33
+        },
+        {
+          "phase": "2.13",
+          "step": 34
+        },
+        {
+          "phase": "3.1",
+          "step": 35
+        },
+        {
+          "phase": "3.1",
+          "step": 36
+        },
+        {
+          "phase": "3.2",
+          "step": 37
+        },
+        {
+          "phase": "3.2",
+          "step": 38
+        },
+        {
+          "phase": "3.3",
+          "step": 39
+        },
+        {
+          "phase": "3.3",
+          "step": 40
+        }
+      ],
+      "artifactOrEvidence": "candidate tree/Step5이월계약·G-integration/G-fix/G-final39",
+      "validation": "35–38가능작업닫힘→39제작/판독/P4·실게임만나중,기능작업목업뒤로누락0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00",
+      "supersededAspects": "목업마지막유지;모든기능이외관보다먼저라는해석은R63수정"
+    },
+    {
+      "id": "R56",
+      "status": "기능추가/개선 의도·검수/GO후제작",
+      "disposition": "과거조사-only로취소하지않되R65 계획검수/갱신/GO전코드제작하지않음",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 58,
+          "ledgerRow": "| R56 | 2026-11-18T07:46:35.4725332+09:00 | 미관측 | 애드온 기능 추가/개선 우선·목업 선행 금지 | 현재 계획의 작업 순서 갱신·요구 누락 점검 | 🔄 기능 우선·목업 마지막의 현행 본문 수정 | 🔄 실행 순서와 이월 위치 갱신 | 🔄 | handoffs/old-reference/R56-user-message.md. 최신 지시는 중단이 아닌 순서 수정. 현재 Lua 구현/최종 목업 미제작 상태를 root가 설명. |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/R56-user-message.md",
+          "line": 1,
+          "original": "지금 애드온 기능 추가, 개선 하는중인데 그것부터해야지"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "2.1",
+          "step": 8
+        },
+        {
+          "phase": "2.1",
+          "step": 9
+        },
+        {
+          "phase": "2.2",
+          "step": 10
+        },
+        {
+          "phase": "2.2",
+          "step": 11
+        },
+        {
+          "phase": "2.3",
+          "step": 12
+        },
+        {
+          "phase": "2.3",
+          "step": 13
+        },
+        {
+          "phase": "2.4",
+          "step": 14
+        },
+        {
+          "phase": "2.4",
+          "step": 15
+        },
+        {
+          "phase": "2.5",
+          "step": 16
+        },
+        {
+          "phase": "2.5",
+          "step": 17
+        },
+        {
+          "phase": "2.6",
+          "step": 18
+        },
+        {
+          "phase": "2.6",
+          "step": 19
+        },
+        {
+          "phase": "2.7",
+          "step": 20
+        },
+        {
+          "phase": "2.7",
+          "step": 21
+        },
+        {
+          "phase": "2.8",
+          "step": 22
+        },
+        {
+          "phase": "2.8",
+          "step": 23
+        },
+        {
+          "phase": "2.9",
+          "step": 24
+        },
+        {
+          "phase": "2.9",
+          "step": 25
+        },
+        {
+          "phase": "2.9",
+          "step": 26
+        },
+        {
+          "phase": "2.10",
+          "step": 27
+        },
+        {
+          "phase": "2.10",
+          "step": 28
+        },
+        {
+          "phase": "2.11",
+          "step": 29
+        },
+        {
+          "phase": "2.11",
+          "step": 30
+        },
+        {
+          "phase": "2.12",
+          "step": 31
+        },
+        {
+          "phase": "2.12",
+          "step": 32
+        },
+        {
+          "phase": "2.13",
+          "step": 33
+        },
+        {
+          "phase": "2.13",
+          "step": 34
+        },
+        {
+          "phase": "3.1",
+          "step": 35
+        },
+        {
+          "phase": "3.1",
+          "step": 36
+        },
+        {
+          "phase": "3.2",
+          "step": 37
+        },
+        {
+          "phase": "3.2",
+          "step": 38
+        }
+      ],
+      "artifactOrEvidence": "candidate Summary/Decisions·각기능Phase",
+      "validation": "기존제품수정/최신화/검증→입증gap만개발·offline와live승인분리",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R57",
+      "status": "순서필수·검수후보작성",
+      "disposition": "외관구현1→기능별기존1제품수정Phase→연계/정정→최종39→별도live",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 60,
+          "ledgerRow": "| R57 | 2026-11-18T07:46:35.4725332+09:00 | 미관측 | 전체 지시를 작업 순서 목록으로 정리하고 그 순서대로 실행 | 현재 계획의 작업 순서 갱신·요구 누락 점검 | 🔄 기능 우선·목업 마지막의 현행 본문 수정 | 🔄 실행 순서와 이월 위치 갱신 | 🔄 | handoffs/old-reference/R57-user-message.md. 최신 지시는 중단이 아닌 순서 수정. 현재 Lua 구현/최종 목업 미제작 상태를 root가 설명. |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/R57-user-message.md",
+          "line": 1,
+          "original": "내가 지시한걸 제대로 목록 순서로 만들어서 제대로 순서대로 진행해"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.2",
+          "step": 6
+        },
+        {
+          "phase": "1.2",
+          "step": 7
+        },
+        {
+          "phase": "2.1",
+          "step": 8
+        },
+        {
+          "phase": "2.1",
+          "step": 9
+        },
+        {
+          "phase": "2.2",
+          "step": 10
+        },
+        {
+          "phase": "2.2",
+          "step": 11
+        },
+        {
+          "phase": "2.3",
+          "step": 12
+        },
+        {
+          "phase": "2.3",
+          "step": 13
+        },
+        {
+          "phase": "2.4",
+          "step": 14
+        },
+        {
+          "phase": "2.4",
+          "step": 15
+        },
+        {
+          "phase": "2.5",
+          "step": 16
+        },
+        {
+          "phase": "2.5",
+          "step": 17
+        },
+        {
+          "phase": "2.6",
+          "step": 18
+        },
+        {
+          "phase": "2.6",
+          "step": 19
+        },
+        {
+          "phase": "2.7",
+          "step": 20
+        },
+        {
+          "phase": "2.7",
+          "step": 21
+        },
+        {
+          "phase": "2.8",
+          "step": 22
+        },
+        {
+          "phase": "2.8",
+          "step": 23
+        },
+        {
+          "phase": "2.9",
+          "step": 24
+        },
+        {
+          "phase": "2.9",
+          "step": 25
+        },
+        {
+          "phase": "2.9",
+          "step": 26
+        },
+        {
+          "phase": "2.10",
+          "step": 27
+        },
+        {
+          "phase": "2.10",
+          "step": 28
+        },
+        {
+          "phase": "2.11",
+          "step": 29
+        },
+        {
+          "phase": "2.11",
+          "step": 30
+        },
+        {
+          "phase": "2.12",
+          "step": 31
+        },
+        {
+          "phase": "2.12",
+          "step": 32
+        },
+        {
+          "phase": "2.13",
+          "step": 33
+        },
+        {
+          "phase": "2.13",
+          "step": 34
+        },
+        {
+          "phase": "3.1",
+          "step": 35
+        },
+        {
+          "phase": "3.1",
+          "step": 36
+        },
+        {
+          "phase": "3.2",
+          "step": 37
+        },
+        {
+          "phase": "3.2",
+          "step": 38
+        },
+        {
+          "phase": "3.3",
+          "step": 39
+        },
+        {
+          "phase": "3.3",
+          "step": 40
+        }
+      ],
+      "artifactOrEvidence": "candidate11절/tree/PhaseN·change-map.json",
+      "validation": "1–46번호누락/중복0·실제1–5/history보존·최종39수신",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R58",
+      "status": "전수추적·70행작성/이행은미완",
+      "disposition": "R1–70 각상태/근거/대체부분/Phase-Step/산출/검사연결",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 62,
+          "ledgerRow": "| R58 | 2026-11-18T07:46:35.4725332+09:00 | 미관측 | 전체 지시 누락 없이 요구→작업→검증 대응 | 현재 계획의 작업 순서 갱신·요구 누락 점검 | 🔄 기능 우선·목업 마지막의 현행 본문 수정 | 🔄 실행 순서와 이월 위치 갱신 | 🔄 | handoffs/old-reference/R58-user-message.md. 최신 지시는 중단이 아닌 순서 수정. 현재 Lua 구현/최종 목업 미제작 상태를 root가 설명. |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/R58-user-message.md",
+          "line": 1,
+          "original": "누락되는거 없게"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.2",
+          "step": 6
+        },
+        {
+          "phase": "1.2",
+          "step": 7
+        },
+        {
+          "phase": "3.1",
+          "step": 35
+        },
+        {
+          "phase": "3.1",
+          "step": 36
+        },
+        {
+          "phase": "3.2",
+          "step": 37
+        },
+        {
+          "phase": "3.2",
+          "step": 38
+        },
+        {
+          "phase": "3.3",
+          "step": 39
+        },
+        {
+          "phase": "3.3",
+          "step": 40
+        }
+      ],
+      "artifactOrEvidence": "requirements-coverage.md/.json·candidate G-final39 입력",
+      "validation": "70unique·원문/의미대조·열거와이행분리·구현지원과게임미검증구분",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R59",
+      "status": "검수용계획작성·root통합/사용자검수대기",
+      "disposition": "실제11절파일+요구표·독립품질검수/root통합→사용자피드백/갱신/GO",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 64,
+          "ledgerRow": "| R59 | 2026-11-18T07:46:35.4725332+09:00 | 미관측 | 최신 순서의 마스터플랜 실제 문서 반영 여부 확인·이행 요구 | 현재 계획의 작업 순서 갱신·요구 누락 점검 | 🔄 기능 우선·목업 마지막의 현행 본문 수정 | 🔄 실행 순서와 이월 위치 갱신 | 🔄 | handoffs/old-reference/R59-user-message.md. 최신 지시는 중단이 아닌 순서 수정. 현재 Lua 구현/최종 목업 미제작 상태를 root가 설명. |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/R59-user-message.md",
+          "line": 1,
+          "original": "저걸 마스터플랜으로 작성했냐? 내 지침 있는데 안지킴?"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.2",
+          "step": 6
+        },
+        {
+          "phase": "1.2",
+          "step": 7
+        }
+      ],
+      "artifactOrEvidence": "master-plan-candidate.md·change-map.json·원본R65",
+      "validation": "후보≠사용자수용·기능코드/렌더미착수·검수전완료주장0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R60",
+      "status": "목표확정·제작 미완",
+      "disposition": "단일monolith 아닌 실제독립선택 애드온모음집",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 66,
+          "ledgerRow": "| R60 | 2026-11-18T08:19:10.318917+09:00 | 미관측 | 최종 제품은 단일 애드온이 아닌 선택 가능한 애드온 모음집임을 명확히 고정 | 마스터플랜 목표·필수 묶음/독립 AddOn·요구 대응표 | 🔄 Summary·구조·manifest에 모음집 목표 명시 | 🔄 후속 Step7/8/12/13 구성 유지 | 🔄 | handoffs/old-reference/R60-user-message.md. 기존 R44의 독립 선택 구조를 재확인·제품 정체성 명확화. 필수 외관/관리 구성 묶음과 기능별 독립 AddOn, 전투보조 한 제품 역할 유지. 단일 monolith로 통합하지 않음. |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/R60-user-message.md",
+          "line": 1,
+          "original": "단일 애드온이 아니라 애드온 모음집이 목표인거지 ㅇㅋ?"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.2",
+          "step": 7
+        },
+        {
+          "phase": "2.1",
+          "step": 8
+        },
+        {
+          "phase": "2.1",
+          "step": 9
+        },
+        {
+          "phase": "2.7",
+          "step": 20
+        },
+        {
+          "phase": "2.7",
+          "step": 21
+        },
+        {
+          "phase": "2.8",
+          "step": 22
+        },
+        {
+          "phase": "2.8",
+          "step": 23
+        },
+        {
+          "phase": "2.9",
+          "step": 24
+        },
+        {
+          "phase": "2.9",
+          "step": 25
+        },
+        {
+          "phase": "2.9",
+          "step": 26
+        },
+        {
+          "phase": "2.10",
+          "step": 27
+        },
+        {
+          "phase": "2.10",
+          "step": 28
+        },
+        {
+          "phase": "2.11",
+          "step": 29
+        },
+        {
+          "phase": "2.11",
+          "step": 30
+        },
+        {
+          "phase": "2.12",
+          "step": 31
+        },
+        {
+          "phase": "2.12",
+          "step": 32
+        },
+        {
+          "phase": "3.1",
+          "step": 35
+        },
+        {
+          "phase": "3.1",
+          "step": 36
+        },
+        {
+          "phase": "3.3",
+          "step": 40
+        }
+      ],
+      "artifactOrEvidence": "candidate Summary/manifest/독립제품계약",
+      "validation": "각선택제품폴더/TOC/수명·필수묶음과외부제품구분",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R61",
+      "status": "전직업범위확정·실제목록/지원 미검증",
+      "disposition": "실제Forever 전체class/spec 공용,주술사첫실제검증우선만",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 68,
+          "ledgerRow": "| R61 | 2026-11-18T08:27:06.031346+09:00 | 미관측 | 주술사 한정에서 포에버 전체 직업이 쓰는 공용 애드온 모음집으로 범위 확대 | 마스터플랜 목표·공통 기반/직업·특성별 정보·지원표/검증·순서/예상 갱신 | 🔄 전체 직업 공용 범위 재설정 | 🔄 미래 기능/검증 Phase와 Step 갱신 | 🔄 | handoffs/old-reference/R61-user-message.md. 외관·채팅·관리/편집은 공통, 직업·특성별 자원/능력/효과/CD는 해당 직업에 맞춰 구성. 주술사는 우선 확인 직업이며 독점 대상 아님. 실제 Forever 제공 직업/특성은 검증 전 숫자·목록 단정 없음. |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/R61-user-message.md",
+          "line": 1,
+          "original": "주술사 한정이 아니고 직업별 전부로하자 공용 애드온으로해야겠어"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.2",
+          "step": 6
+        },
+        {
+          "phase": "1.2",
+          "step": 7
+        },
+        {
+          "phase": "2.2",
+          "step": 10
+        },
+        {
+          "phase": "2.2",
+          "step": 11
+        },
+        {
+          "phase": "2.5",
+          "step": 16
+        },
+        {
+          "phase": "2.5",
+          "step": 17
+        },
+        {
+          "phase": "2.7",
+          "step": 20
+        },
+        {
+          "phase": "2.7",
+          "step": 21
+        },
+        {
+          "phase": "2.8",
+          "step": 22
+        },
+        {
+          "phase": "2.8",
+          "step": 23
+        },
+        {
+          "phase": "2.9",
+          "step": 24
+        },
+        {
+          "phase": "2.9",
+          "step": 25
+        },
+        {
+          "phase": "2.9",
+          "step": 26
+        },
+        {
+          "phase": "3.1",
+          "step": 35
+        },
+        {
+          "phase": "3.1",
+          "step": 36
+        },
+        {
+          "phase": "3.3",
+          "step": 39
+        },
+        {
+          "phase": "3.4",
+          "step": 41
+        },
+        {
+          "phase": "3.4",
+          "step": 42
+        },
+        {
+          "phase": "3.4",
+          "step": 43
+        },
+        {
+          "phase": "3.5",
+          "step": 44
+        },
+        {
+          "phase": "3.5",
+          "step": 45
+        },
+        {
+          "phase": "3.5",
+          "step": 46
+        }
+      ],
+      "artifactOrEvidence": "미래 Step6목록·class-support-matrix·공통/class설정/검사T",
+      "validation": "Retail명단/수추정0·각실제직업baseline과특수자원/입력/전환·미접근NOT_RUN",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R62",
+      "status": "기반제품선택확정·기능검증 미완",
+      "disposition": "직업별전투기능은Hekili기능/데이터/엔진기반;통합/skin/profile/필요capabilityadapter",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 70,
+          "ledgerRow": "| R62 | 2026-11-18T08:32:53.587829+09:00 | 미관측 | 직업별 기능의 기반을 Hekili로 지정 | 마스터플랜 Hekili 기반 직업/특성 전투보조·재사용/연결·지원표/검증 | 🔄 기반 제품 선택 반영 | 🔄 전 직업 확장 Phase의 Hekili 소스/지원/adapter 검증 | 🔄 | handoffs/old-reference/R62-user-message.md. R61 공용 모음집과 R44 단일 전투보조 역할 유지. Hekili 직업별 기능을 기반으로 쓰며 별도 자체 rotation 엔진을 새로 만들지 않음. 정확 Forever판·직업/spec/상태/proc/CD/추천 지원은 실제 확인 후 구분; 지원 범위 밖을 작동한다고 단정하지 않음. |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/R62-user-message.md",
+          "line": 1,
+          "original": "직업별 기능은 헤키리 기반으로 가져가면된다"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.2",
+          "step": 7
+        },
+        {
+          "phase": "2.9",
+          "step": 24
+        },
+        {
+          "phase": "2.9",
+          "step": 25
+        },
+        {
+          "phase": "2.9",
+          "step": 26
+        },
+        {
+          "phase": "3.1",
+          "step": 35
+        },
+        {
+          "phase": "3.1",
+          "step": 36
+        },
+        {
+          "phase": "3.4",
+          "step": 42
+        },
+        {
+          "phase": "3.4",
+          "step": 43
+        }
+      ],
+      "artifactOrEvidence": "candidate Phase2.9·rootfacts:9 Hekili-v0.8.6-forever.zip/file9665215",
+      "validation": "정확class/spec/state/proc/CD/추천/치유지원·gap·ownrotation/자동교체/중복stack0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R63",
+      "status": "현재방법확정·실행대기",
+      "disposition": "공통외관구현1;기능마다기존시작애드온1개배정→수정/최신화/검증→입증gap만개발",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 72,
+          "ledgerRow": "| R63 | 2026-11-18T08:35:57.554708+09:00 | 미관측 | 공통 외관 조성을 구현 1페이즈로·기능별 기존 애드온 하나씩 배정해 수정/최신화 우선·불가능 부분만 개발 | 계획 실행순서·시작제품 배정·수정우선/자체개발 조건 | 🔄 현재 목표·순서·단계 반영 | 🔄 미래 기능별 Phase와 실행 게이트 갱신 | 🔄 | handoffs/old-reference/R63-user-message.md. 최신 방식이 이전 자체제작 우선 및 일반 기능선행 문구를 대체. 최종 목업 마지막·모음집/전직업/Hekili 기반·원형/매크로 보존은 유지. |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/R63-user-message.md",
+          "line": 1,
+          "original": "공통 외관 조성을 1페이즈 기능별 시작점 애드온을 하나씩 배정해서 수정및 최신화하는것부터 시작해 그러다가 안되는 것들만 개발하는 방향으로잡아."
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "1.2",
+          "step": 7
+        },
+        {
+          "phase": "2.1",
+          "step": 8
+        },
+        {
+          "phase": "2.1",
+          "step": 9
+        },
+        {
+          "phase": "2.2",
+          "step": 10
+        },
+        {
+          "phase": "2.2",
+          "step": 11
+        },
+        {
+          "phase": "2.3",
+          "step": 12
+        },
+        {
+          "phase": "2.3",
+          "step": 13
+        },
+        {
+          "phase": "2.4",
+          "step": 14
+        },
+        {
+          "phase": "2.4",
+          "step": 15
+        },
+        {
+          "phase": "2.5",
+          "step": 16
+        },
+        {
+          "phase": "2.5",
+          "step": 17
+        },
+        {
+          "phase": "2.6",
+          "step": 18
+        },
+        {
+          "phase": "2.6",
+          "step": 19
+        },
+        {
+          "phase": "2.7",
+          "step": 20
+        },
+        {
+          "phase": "2.7",
+          "step": 21
+        },
+        {
+          "phase": "2.8",
+          "step": 22
+        },
+        {
+          "phase": "2.8",
+          "step": 23
+        },
+        {
+          "phase": "2.9",
+          "step": 24
+        },
+        {
+          "phase": "2.9",
+          "step": 25
+        },
+        {
+          "phase": "2.9",
+          "step": 26
+        },
+        {
+          "phase": "2.10",
+          "step": 27
+        },
+        {
+          "phase": "2.10",
+          "step": 28
+        },
+        {
+          "phase": "2.11",
+          "step": 29
+        },
+        {
+          "phase": "2.11",
+          "step": 30
+        },
+        {
+          "phase": "2.12",
+          "step": 31
+        },
+        {
+          "phase": "2.12",
+          "step": 32
+        },
+        {
+          "phase": "2.13",
+          "step": 33
+        },
+        {
+          "phase": "2.13",
+          "step": 34
+        },
+        {
+          "phase": "3.1",
+          "step": 35
+        },
+        {
+          "phase": "3.1",
+          "step": 36
+        },
+        {
+          "phase": "3.2",
+          "step": 37
+        },
+        {
+          "phase": "3.2",
+          "step": 38
+        },
+        {
+          "phase": "3.3",
+          "step": 39
+        }
+      ],
+      "artifactOrEvidence": "candidate tree/Phase Range 13기능표·G-start/G-existing-first",
+      "validation": "own-first/외관뒤로이월0·미검증지원창작0·새개발은실패요구범위만",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R64",
+      "status": "Phase분리확정·실행대기",
+      "disposition": "한기능=한구현Phase,bar/map/chat/unit/cast/관리/편집/combat/raid/damage/threat를구분",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 74,
+          "ledgerRow": "| R64 | 2026-11-18T08:35:57.554708+09:00 | 미관측 | 기능마다 독립 페이즈 하나씩 구성 | 기능별 Phase/Step·게이트·검증·산출·예상 | 🔄 현재 목표·순서·단계 반영 | 🔄 미래 기능별 Phase와 실행 게이트 갱신 | 🔄 | handoffs/old-reference/R64-user-message.md. 복수 기능을 한 구현 페이즈로 묶지 않음. 시작하라는 표현은 R65의 먼저 계획 검수 경계로 보완됨. |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/R64-user-message.md",
+          "line": 1,
+          "original": "기능별로 페이즈하나씩잡고 시작해"
+        }
+      ],
+      "phaseSteps": [
+        {
+          "phase": "2.1",
+          "step": 8
+        },
+        {
+          "phase": "2.1",
+          "step": 9
+        },
+        {
+          "phase": "2.2",
+          "step": 10
+        },
+        {
+          "phase": "2.2",
+          "step": 11
+        },
+        {
+          "phase": "2.3",
+          "step": 12
+        },
+        {
+          "phase": "2.3",
+          "step": 13
+        },
+        {
+          "phase": "2.4",
+          "step": 14
+        },
+        {
+          "phase": "2.4",
+          "step": 15
+        },
+        {
+          "phase": "2.5",
+          "step": 16
+        },
+        {
+          "phase": "2.5",
+          "step": 17
+        },
+        {
+          "phase": "2.6",
+          "step": 18
+        },
+        {
+          "phase": "2.6",
+          "step": 19
+        },
+        {
+          "phase": "2.7",
+          "step": 20
+        },
+        {
+          "phase": "2.7",
+          "step": 21
+        },
+        {
+          "phase": "2.8",
+          "step": 22
+        },
+        {
+          "phase": "2.8",
+          "step": 23
+        },
+        {
+          "phase": "2.9",
+          "step": 24
+        },
+        {
+          "phase": "2.9",
+          "step": 25
+        },
+        {
+          "phase": "2.9",
+          "step": 26
+        },
+        {
+          "phase": "2.10",
+          "step": 27
+        },
+        {
+          "phase": "2.10",
+          "step": 28
+        },
+        {
+          "phase": "2.11",
+          "step": 29
+        },
+        {
+          "phase": "2.11",
+          "step": 30
+        },
+        {
+          "phase": "2.12",
+          "step": 31
+        },
+        {
+          "phase": "2.12",
+          "step": 32
+        },
+        {
+          "phase": "2.13",
+          "step": 33
+        },
+        {
+          "phase": "2.13",
+          "step": 34
+        }
+      ],
+      "artifactOrEvidence": "candidate Phase2.1–2.13·미래각세부계획경로",
+      "validation": "각행단일시작점/수정/검증/gap/산출/예상·실제1–5보존",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R65",
+      "status": "현재최우선gate·사용자검수대기",
+      "disposition": "마스터플랜저장/품질검수/root통합뒤 사용자피드백→갱신→명시GO가제작선행",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 76,
+          "ledgerRow": "| R65 | 2026-11-18T08:35:57.554708+09:00 | 미관측 | 마스터플랜을 먼저 작성해 사용자 검수받은 뒤 실행 | 검수용 저장 마스터플랜·요구 대응표·사용자 피드백/GO | 🔄 현재 목표·순서·단계 반영 | 🔄 미래 기능별 Phase와 실행 게이트 갱신 | 🔄 | handoffs/old-reference/R65-user-message.md. 현재 작업은 계획 작성/수정·독립 품질검수·검수본 제시까지. 사용자 검수/계획갱신/명시GO 전 기능 구현·설치·설정·이미지 제작 진행 없음. |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/R65-user-message.md",
+          "line": 1,
+          "original": "마스터 플랜 짜고 나한테 검수부터 받아"
+        }
+      ],
+      "phaseSteps": [],
+      "artifactOrEvidence": "현재candidate/coverage/map·Decisions Required",
+      "validation": "R64시작/Git게시를코드/렌더/설치/게임GO로확대0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R66",
+      "status": "방향정정반영·계획수용대기",
+      "disposition": "R63–65 정확한목표/순서로실제계획을수정하고반환",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 78,
+          "ledgerRow": "| R66 | 2026-11-18T08:35:57.554708+09:00 | 미관측 | 현재 작업 이해와 진행 방향이 어긋났음을 지적 | 같은 턴 정확한 목표/순서 재진술·현재 계획 보완 | 🔄 현재 목표·순서·단계 반영 | 🔄 미래 기능별 Phase와 실행 게이트 갱신 | 🔄 | handoffs/old-reference/R66-user-message.md. 사용자 원문 보존. R63–65의 검수용 마스터플랜을 먼저 작성하며 기능 작업 시작을 완료로 보고하지 않음. |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/R66-user-message.md",
+          "line": 1,
+          "original": "너 지금 뭘해야하는지 감도 못잡고 있는거 같으니까"
+        }
+      ],
+      "phaseSteps": [],
+      "artifactOrEvidence": "candidate11절/70trace·원본R66",
+      "validation": "상태답변만으로계획대체0·구현했다고과장0",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R67",
+      "status": "main게시완료(root)·계획현행화후속",
+      "disposition": "지정GitHub Project_WF main연결/일반push 완료;WIP계획은미검수표시",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 80,
+          "ledgerRow": "| R67 | 2026-11-18T08:39:40.790036+09:00 | 미관측 | 지정 GitHub 저장소 연결·작업물을 main에 업로드 | 원격 이력/상태 확인·보존·검증된 작업물 커밋/일반 push | 🔄 §11 명시 GitHub main 게시 허용 반영 | 🔄 Git 작업은 master·진행 중 파일 저장 시점 조율 | ✅ | handoffs/old-reference/R67-user-message.md. https://github.com/lksz1412/Project_WF 지정. 기존 원격/로컬 이력 보존, force push/개인 매크로·계정·ignored 원천 캐시 업로드 허용 아님. 현재 변경 중인 계획은 검수 전 완료로 표시하지 않음. Actual main b1b658f/20,062 files, publication result and remote ls-remote verified; plan reflection remains pending. |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/R67-user-message.md",
+          "line": 1,
+          "original": "https://github.com/lksz1412/Project_WF"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/R67-user-message.md",
+          "line": 2,
+          "original": "여기에 연결하고 작업물 깃헙 메인에 올려."
+        }
+      ],
+      "phaseSteps": [],
+      "artifactOrEvidence": "github-publish/r67-main-publication-result.md/.json·commit b1b658f",
+      "validation": "root원격검증근거·A1Git0·이후계획통합/게시root·기능제작GO아님",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R68",
+      "status": "전체공개사본게시완료(root)",
+      "disposition": "개인macro도실제ID만추상화한공개사본허용;원형불변/본문·조건·이름공개가능",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 82,
+          "ledgerRow": "| R68 | 2026-11-18T08:48:04.288872+09:00 | 미관측 | 작업물 전부 올려. 개인 매크로같은것도 아이디 정보만 추상화해서 올려 | 전체 프로젝트 공개용 사본·식별자 가명 처리·main 업로드 | 🔄 R67 게시 범위 보완 | 🔄 공개 스냅샷과 미검수 상태 구분 | ✅ | handoffs/old-reference/R68-user-message.md. 원본 보존, 식별자만 추상화한 공개용 사본, README만으로 대체하지 않음. Actual main b1b658f/20,062 files, publication result and remote ls-remote verified; plan reflection remains pending. |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/R68-user-message.md",
+          "line": 1,
+          "original": "작업물 전부 올려. 개인 매크로같은것도 아이디 정보만 추상화해서 올려"
+        }
+      ],
+      "phaseSteps": [],
+      "artifactOrEvidence": "publication결과source19692/public20062·macro4파일44개동일·ID-only117",
+      "validation": "개인식별자추상화·로컬원형불변·옛일괄비공개금지현행화·게임import아님",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R69",
+      "status": "누락없는게시완료(root)",
+      "disposition": "모든source/work/archive/macro공개사본포함,README로대체안함",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 84,
+          "ledgerRow": "| R69 | 2026-11-18T08:48:04.288872+09:00 | 미관측 | 빼는거 없이 다 올려 어차피 누가 검색해 오겠냐 | 전체 프로젝트 공개용 사본·식별자 가명 처리·main 업로드 | 🔄 R67 게시 범위 보완 | 🔄 공개 스냅샷과 미검수 상태 구분 | ✅ | handoffs/old-reference/R69-user-message.md. 원본 보존, 식별자만 추상화한 공개용 사본, README만으로 대체하지 않음. Actual main b1b658f/20,062 files, publication result and remote ls-remote verified; plan reflection remains pending. |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/R69-user-message.md",
+          "line": 1,
+          "original": "빼는거 없이 다 올려 어차피 누가 검색해 오겠냐"
+        }
+      ],
+      "phaseSteps": [],
+      "artifactOrEvidence": "publication결과 source19692 omissions0·public20062",
+      "validation": "이전ignored업로드금지를현요청보다우선0·공개copy/source동일범위구분",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R70",
+      "status": "README외실제전체게시완료(root)",
+      "disposition": "실제파일전체main업로드;게시뒤생성한폐쇄/계획문건은후속갱신",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 86,
+          "ledgerRow": "| R70 | 2026-11-18T08:48:04.288872+09:00 | 미관측 | 리드미만 만들지마 | 전체 프로젝트 공개용 사본·식별자 가명 처리·main 업로드 | 🔄 R67 게시 범위 보완 | 🔄 공개 스냅샷과 미검수 상태 구분 | ✅ | handoffs/old-reference/R70-user-message.md. 원본 보존, 식별자만 추상화한 공개용 사본, README만으로 대체하지 않음. Actual main b1b658f/20,062 files, publication result and remote ls-remote verified; plan reflection remains pending. |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/R70-user-message.md",
+          "line": 1,
+          "original": "리드미만 만들지마"
+        }
+      ],
+      "phaseSteps": [],
+      "artifactOrEvidence": "publication결과md/json·currentcandidate는게시당시WIP",
+      "validation": "Git게시≠계획수용/기능구현/렌더/runtimePASS;후속갱신root",
+      "sourceObservation": "2026-11-18T09:24:02.144625+09:00"
+    },
+    {
+      "id": "R71",
+      "status": "현재계획묶음마감·검수/통합대기",
+      "disposition": "한묶음완료뒤root commit/push;새기능Phase/제작GO아님",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+          "line": 88,
+          "ledgerRow": "| R71 | 2026-11-18T09:24:19.128309+09:00 | 미관측 | 현재 작업을 한 묶음으로 마무리한 뒤 커밋·푸시 | 마스터플랜 개정 검수본·요구 대응표·연계기록 마감·main 업데이트 | 🔄 현재 검수본 마무리 | 🔄 기능 구현 착수와 구분 | 🔄 | handoffs/old-reference/R71-user-message.md. 현재 진행 중인 계획 개정 묶음을 완료하고 검수/기록 후 커밋·일반 push. 새 기능 구현 GO나 강제 push/merge 허용으로 해석하지 않음. |"
+        },
+        {
+          "path": "Codex/results/handoffs/old-reference/R71-user-message.md",
+          "line": 1,
+          "original": "일단 한 곳까지 마무리 지어봐.그리고 커밋 푸쉬해봐"
+        }
+      ],
+      "phaseSteps": [],
+      "artifactOrEvidence": "현재candidate/coverage/map/ownlog·같은B검수·root후속main갱신",
+      "validation": "실제71추적/변경gate→STOP→같은B→root통합·일반commit/push·미검수완료/게임GO0",
+      "sourceObservation": "2026-11-18T09:26:19.050298+09:00"
+    },
+    {
+      "id": "R72",
+      "status": "세션인계요청·root문건/게시대기",
+      "disposition": "현재A1계획묶음F4마감후STOP;독립B/통합은다음세션,root핸드오버/commit·push",
+      "sources": [
+        {
+          "path": "Codex/results/handoffs/old-reference/R72-user-message.md",
+          "line": 1,
+          "original": "핸드오버까지 만들어서 넘겨 다른세션에서 재개할거야"
+        }
+      ],
+      "phaseSteps": [],
+      "artifactOrEvidence": "현재안정5산출물·root미래 Codex/docs/HANDOVER_v0.1.0.md",
+      "validation": "인계실존/게시를미리완료로쓰지않음·canonical370미승격·다음세션B/통합/사용자검수유지",
+      "sourceObservation": "2026-11-18T09:28:10.036654+09:00"
+    }
+  ],
+  "limits": [
+    "A1 no private raw read; macro/source publication counts attributed to root closure",
+    "future functional code/render/game gates NOT_RUN",
+    "root canonical/detail/central records unchanged by A1; integration pending sameB",
+    "Step5 visual pending transferred to Phase3.3/Step39",
+    "R65 user review/update/explicitGO before production; R67–70 publication separately complete",
+    "R71 finish this plan package; root commit/push after review, no new feature phase",
+    "R72 session transfer: sameB review deferred to next session; root handover pending; canonical370 unpromoted"
+  ],
+  "currentGameCodeExists": false,
+  "sourceAliases": {
+    "immutableBaseline": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-master-plan-before-R44.md",
+    "baselineSHA256": "703AFF3F268D678193ACDB074AAFE8EC6191477AF7A5AAE43D5583DFA6E24D79",
+    "candidate": "Codex/results/handoffs/old-reference/r44-plan-update/master-plan-candidate.md",
+    "coverageMD": "Codex/results/handoffs/old-reference/r44-plan-update/requirements-coverage.md",
+    "coverageJSON": "Codex/results/handoffs/old-reference/r44-plan-update/requirements-coverage.json",
+    "immutablePhaseLedger": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+    "immutablePhaseLedgerSHA256": "0F39335B0AB8ADD70407417D4ECED19245762051DDB9FF54821E492FF9F6F6CF"
+  },
+  "phaseStepMap": {
+    "1": "1.1",
+    "2": "1.1",
+    "3": "1.3",
+    "4": "1.3",
+    "5": "1.3",
+    "6": "1.2",
+    "7": "1.2",
+    "8": "2.1",
+    "9": "2.1",
+    "10": "2.2",
+    "11": "2.2",
+    "12": "2.3",
+    "13": "2.3",
+    "14": "2.4",
+    "15": "2.4",
+    "16": "2.5",
+    "17": "2.5",
+    "18": "2.6",
+    "19": "2.6",
+    "20": "2.7",
+    "21": "2.7",
+    "22": "2.8",
+    "23": "2.8",
+    "24": "2.9",
+    "25": "2.9",
+    "26": "2.9",
+    "27": "2.10",
+    "28": "2.10",
+    "29": "2.11",
+    "30": "2.11",
+    "31": "2.12",
+    "32": "2.12",
+    "33": "2.13",
+    "34": "2.13",
+    "35": "3.1",
+    "36": "3.1",
+    "37": "3.2",
+    "38": "3.2",
+    "39": "3.3",
+    "40": "3.3",
+    "41": "3.4",
+    "42": "3.4",
+    "43": "3.4",
+    "44": "3.5",
+    "45": "3.5",
+    "46": "3.5"
+  },
+  "sourceLedgerObservations": [
+    {
+      "path": "Codex/results/REQUEST_LEDGER.md",
+      "lines": 91,
+      "SHA256": "868D8F2D47C1F5680B2DFFF4E74EE7BCBFA659CB551313F7EF68071D02B52979",
+      "observed": "2026-11-18T09:24:02.144625+09:00",
+      "immutable": false
+    },
+    {
+      "path": "Codex/results/handoffs/old-reference/r44-plan-update/baseline-request-ledger-r71-before-integration.md",
+      "lines": 88,
+      "SHA256": "0F39335B0AB8ADD70407417D4ECED19245762051DDB9FF54821E492FF9F6F6CF",
+      "observed": "2026-11-18T09:26:19.050298+09:00",
+      "immutable": true,
+      "sourceOperationalPath": "Codex/results/REQUEST_LEDGER_phase1.3.md"
+    }
+  ],
+  "publication": {
+    "source": "Codex/results/handoffs/old-reference/github-publish/r67-main-publication-result.json",
+    "commit": "b1b658ff6d8185671cb59dcf00f7bf6ef0e8d807",
+    "A1GitExecuted": false
+  }
+}
