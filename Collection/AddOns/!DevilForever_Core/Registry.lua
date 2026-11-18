@@ -1013,9 +1013,79 @@ Core.Registry = {
     },
     Hekili = {
       bundle = "individual",
-      editable = {},
+      defaults = "Defaults/Hekili.lua",
+      editable = {
+        {
+          field = "position",
+          frame = "hekili.primary",
+          kind = "position",
+        },
+        {
+          field = "size",
+          frame = "hekili.primary",
+          kind = "size",
+          max = 500,
+          min = 10,
+        },
+        {
+          field = "position",
+          frame = "hekili.aoe",
+          kind = "position",
+        },
+        {
+          field = "position",
+          frame = "hekili.cooldowns",
+          kind = "position",
+        },
+        {
+          field = "position",
+          frame = "hekili.defensives",
+          kind = "position",
+        },
+        {
+          field = "position",
+          frame = "hekili.interrupts",
+          kind = "position",
+        },
+        {
+          field = "position",
+          frame = "hekili.notification",
+          kind = "position",
+        },
+      },
       foreverLoad = "yes",
-      frames = {},
+      frames = {
+        {
+          frame = "HekiliDisplayPrimary",
+          key = "hekili.primary",
+          tokens = {},
+        },
+        {
+          frame = "HekiliDisplayAOE",
+          key = "hekili.aoe",
+          tokens = {},
+        },
+        {
+          frame = "HekiliDisplayCooldowns",
+          key = "hekili.cooldowns",
+          tokens = {},
+        },
+        {
+          frame = "HekiliDisplayDefensives",
+          key = "hekili.defensives",
+          tokens = {},
+        },
+        {
+          frame = "HekiliDisplayInterrupts",
+          key = "hekili.interrupts",
+          tokens = {},
+        },
+        {
+          frame = "HekiliNotification",
+          key = "hekili.notification",
+          tokens = {},
+        },
+      },
       package = "Hekili",
       phases = {
         8,

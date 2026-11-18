@@ -11,6 +11,7 @@ Edit.lua
 Defaults.lua
 # Defaults files (Defaults/<Folder>.lua) go below this line; each is named in registry_extra.json.
 Defaults\Dominos.lua
+Defaults\Hekili.lua
 Defaults\Prat-3.0.lua
 Defaults\SexyMap.lua
 API.lua

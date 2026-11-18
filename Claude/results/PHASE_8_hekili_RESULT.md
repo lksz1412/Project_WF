@@ -1,0 +1,49 @@
+# PHASE 8 — 직업 전투보조 RESULT
+
+## Summary
+
+직업 전투보조: Hekili 는 다음 행동 추천만 맡고(추천 기술 단축바 버튼 강조 켬), 상태 알림·쿨은 게임 기본 재사용 대기시간 관리자가 맡는다(R104). 28개 특성 중 힐러 4개는 Hekili 미지원이라 쿨 관리자 표시만 받는다. Forever 는 전투 중 버프 정보를 애드온에 숨긴다는 사실을 원천에서 확인했다. 근간 재논의(R105–R107)로 계획을 고쳤다(PitBull4 비교판 추가, 어그로는 Details, 편집기 대신 세 해상도 배치 등).
+
+## Step Range
+
+Step 18–20
+
+## Inputs
+
+Hekili upstream, classes.md, 계획 행 8, R104·R107
+
+## Files Created
+
+Collection/data/hekili-support.{md,json}, Defaults/Hekili.lua, codex-briefs/appearance-8.md, phase8.md, appearance-2-layouts.md
+
+## Files Updated
+
+마스터 플랜(R104·R107 반영), registry, tests, ZIP
+
+## Read Coverage
+
+master: Facade.lua 725–739, CooldownViewer.lua 1–30, Defaults/Hekili.lua; A1·A2 범위 = phase8 work_log-a1.md·work_log-a2.md
+
+## Execution Evidence
+
+Step 18·19·20 이력
+
+## Validation·Gate·Confirmed
+
+master check (R87); tests 50/50
+
+## Non-Changes
+
+Hekili 원본 무변경
+
+## Open Issues
+
+Core 에 해상도 배치 프리셋 층 없음(Codex 결과 뒤 추가). manifest·judgment 의 옛 보완 모듈 언급(기록)
+
+## Decision Queue
+
+Cooldown Manager 설정을 게임에서 손으로 켜는 것은 Codex 기록만
+
+## Next
+
+Phase 6-rev Step 42 — PitBull4 Forever 판

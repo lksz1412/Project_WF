@@ -389,8 +389,17 @@ def generated_registry_lookup():
        sorted(list(to_py(c.GetFrameNames(c, "Dominos")).values()) + list(to_py(c.GetFrameNames(c, "Prat-3.0")).values())
               + list(to_py(c.GetFrameNames(c, "SexyMap")).values())
               + list(to_py(c.GetFrameNames(c, "ForeverUnitFrames")).values())
-              + list(to_py(c.GetFrameNames(c, "Quartz")).values())),
-       "appearance frames are Dominos', Prat's, SexyMap's, FUF's and Quartz's only")
+              + list(to_py(c.GetFrameNames(c, "Quartz")).values())
+              + list(to_py(c.GetFrameNames(c, "Hekili")).values())),
+       "appearance frames are Dominos', Prat's, SexyMap's, FUF's, Quartz's and Hekili's only")
+    hekili = to_py(c.GetAddonInfo(c, "hekili"))
+    eq(list(to_py(c.GetFrameNames(c, "Hekili")).values()),
+       ["HekiliDisplayAOE", "HekiliDisplayCooldowns", "HekiliDisplayDefensives", "HekiliDisplayInterrupts",
+        "HekiliDisplayPrimary", "HekiliNotification"], "Hekili frames")
+    eq(list(hekili["savedVariables"].values()), [{"name": "HekiliDB", "scope": "account", "split": "common"}],
+       "Hekili SV")
+    eq(hekili["defaults"], "Defaults/Hekili.lua", "Hekili defaults file named")
+    eq(len(hekili["editable"]), 7, "Hekili editable: 6 positions, primary display size")
     quartz = to_py(c.GetAddonInfo(c, "quartz"))
     eq(list(to_py(c.GetFrameNames(c, "Quartz")).values()),
        ["Quartz3CastBarFocus", "Quartz3CastBarPet", "Quartz3CastBarPlayer", "Quartz3CastBarTarget",
@@ -878,6 +887,33 @@ def prat_defaults_user_values_and_profile_kept():
     eq(written, {"Prat3DB/Prat_History": ("Prat3DB/Prat_History@profile:Mine", 0),
                  "Prat3DB/Prat_Memory": ("Prat3DB/Prat_Memory@profile:Mine", 0)}, "profileKeys profile, nothing written")
 
+
+@case
+def hekili_defaults_fresh_shared_default_profile():
+    s = Session(registry="generated", extra_files=()).boot(after=["Hekili"])
+    eq(s.sv("HekiliDB"), {"profiles": {"Default": {"barGlow": {"enabled": True}}}},
+       "AceDB:New(..., true): one shared profile named Default")
+    st = s.status("Hekili")["targets"]["HekiliDB"]
+    eq((st["state"], st["mode"], st["key"], st["written"]), ("applied", "fill-missing", "HekiliDB@profile:Default", 1),
+       "status")
+    alt = Session(registry="generated", extra_files=(), player={"name": "Alt", "className": "Shaman", "class": "SHAMAN"},
+                  saved={"HekiliDB": s.sv("HekiliDB"), "DevilForever_CoreDB": s.sv("DevilForever_CoreDB")})
+    alt.boot(after=["Hekili"])
+    eq(alt.status("Hekili")["targets"]["HekiliDB"]["state"], "already", "same shared profile: once per version")
+    eq(s.errors() + alt.errors(), [], "no errors")
+
+
+@case
+def hekili_defaults_user_and_dual_spec_profile_kept():
+    saved = {"HekiliDB": {"profileKeys": {"Hero - Realm": "Elemental"},
+                          "profiles": {"Default": {"barGlow": {"enabled": False}},
+                                       "Elemental": {"barGlow": {"enabled": False, "combatOnly": False}}}}}
+    s = Session(registry="generated", extra_files=(), saved=saved).boot(after=["Hekili"])
+    db = s.sv("HekiliDB")
+    eq(db["profiles"], saved["HekiliDB"]["profiles"], "user-off glow kept in both profiles")
+    eq(db["profileKeys"], {"Hero - Realm": "Elemental"}, "profileKeys untouched")
+    st = s.status("Hekili")["targets"]["HekiliDB"]
+    eq((st["state"], st["key"], st["written"]), ("applied", "HekiliDB@profile:Elemental", 0), "profileKeys profile")
 
 # SexyMap's own first-load setup at its ADDON_LOADED (SexyMap.lua:325-353,
 # Buttons.lua:217-246): the SV, the character profile and each module table are
