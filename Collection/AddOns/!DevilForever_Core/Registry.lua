@@ -355,6 +355,21 @@ Core.Registry = {
       use = "settings",
       version = "Details.20261109.15410.172",
     },
+    DevilForever_Castbars = {
+      bundle = "individual",
+      editable = {},
+      foreverLoad = "yes",
+      frames = {},
+      package = "DevilForever",
+      phases = {},
+      savedVariables = {},
+      tocStatus = "matched",
+      tocs = {
+        "DevilForever_Castbars.toc",
+      },
+      use = "new",
+      version = "0.1.0",
+    },
     DevilForever_ChatSetup = {
       bundle = "individual",
       editable = {},
@@ -1512,9 +1527,89 @@ Core.Registry = {
     },
     Quartz = {
       bundle = "individual",
-      editable = {},
+      editable = {
+        {
+          field = "position",
+          frame = "quartz.player",
+          kind = "position",
+        },
+        {
+          field = "size",
+          frame = "quartz.player",
+          kind = "size",
+          max = 1500,
+          min = 10,
+        },
+        {
+          field = "position",
+          frame = "quartz.target",
+          kind = "position",
+        },
+        {
+          field = "size",
+          frame = "quartz.target",
+          kind = "size",
+          max = 1500,
+          min = 10,
+        },
+        {
+          field = "position",
+          frame = "quartz.focus",
+          kind = "position",
+        },
+        {
+          field = "size",
+          frame = "quartz.focus",
+          kind = "size",
+          max = 1500,
+          min = 10,
+        },
+        {
+          field = "position",
+          frame = "quartz.pet",
+          kind = "position",
+        },
+        {
+          field = "size",
+          frame = "quartz.pet",
+          kind = "size",
+          max = 1500,
+          min = 10,
+        },
+      },
       foreverLoad = "yes",
-      frames = {},
+      frames = {
+        {
+          frame = "Quartz3CastBarPlayer",
+          key = "quartz.player",
+          tokens = {},
+        },
+        {
+          frame = "Quartz3CastBarTarget",
+          key = "quartz.target",
+          tokens = {},
+        },
+        {
+          frame = "Quartz3CastBarFocus",
+          key = "quartz.focus",
+          tokens = {},
+        },
+        {
+          frame = "Quartz3CastBarPet",
+          key = "quartz.pet",
+          tokens = {},
+        },
+        {
+          frame = "Quartz3GCDBar",
+          key = "quartz.gcd",
+          tokens = {},
+        },
+        {
+          frame = "Quartz3SwingBar",
+          key = "quartz.swing",
+          tokens = {},
+        },
+      },
       package = "Quartz",
       phases = {
         7,
@@ -1977,6 +2072,7 @@ Core.Registry = {
     "Details_Streamer",
     "Details_TinyThreat",
     "Details_Vanguard",
+    "DevilForever_Castbars",
     "DevilForever_ChatSetup",
     "DevilForever_FUFDefaults",
     "Dominos",

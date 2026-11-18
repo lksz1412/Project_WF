@@ -1,0 +1,8 @@
+## Interface: 16001
+## Title: DevilForever Castbars
+## Notes: While a Quartz cast bar module is on, hides the Forever Unit Frames cast bar of the same unit for the session. Saves nothing.
+## Version: 0.1.0
+## Dependencies: Quartz, ForeverUnitFrames
+## OptionalDeps: !DevilForever_Core
+
+Castbars.lua

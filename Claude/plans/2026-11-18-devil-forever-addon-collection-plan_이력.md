@@ -49,3 +49,7 @@ Phase 2(Step 11–12): !DevilForever_Core 와 Codex 발주문 2건. 이 Phase �
 ## Phase 6 끝 정리 (2026-11-18 15:34:25 +0900)
 
 체력·직업 자원은 Forever Unit Frames 0.65.2 를 그대로 쓴다. FUF 기본값이 계획 행(체력·자원·프레임 오라·치유 예측·거리 흐림, 마나·토템 강제 없음)을 이미 채워 기본값 파일은 두지 않았다. Grid2 가 로드된 캐릭터에서 FUF 공격대 창만 한 번 끄는 연결 애드온 DevilForever_FUFDefaults 를 만들었다(FUF 자체 명령 사용, 사용자 값은 건드리지 않음). 파티 창은 FUF 몫으로 두고 Grid2 는 공격대만 보이게 Phase 9 에서 맞춘다. 9개 직업 자원은 classes.md 와 맞고 흑마법사 영혼의 조각만 FUF 에 표시가 없다. Result = `Claude/results/PHASE_6_fuf_RESULT.md`.
+
+## Phase 7 끝 정리 (2026-11-18 15:54:49 +0900)
+
+시전바는 Quartz 3.8.0 이 내·대상·주시·소환수 시전바를 맡고, 게임 기본 시전바는 Quartz 자체 설정으로 숨긴다. 같은 자리의 FUF 시전바는 새 연결 애드온 DevilForever_Castbars 가 이번 접속 동안만 숨긴다(저장 값을 바꾸지 않아 계정 공유 프로필 문제가 없음, Quartz 모듈을 끄면 바로 FUF 로 넘어감). Dominos_Cast 는 모음집 설치본에서 빼기로 했다(Phase 23). Quartz 의 차단 글자 모듈은 Forever 에서 로드되지 않을 것으로 보여 차단은 빨간 실패 막대로만 보인다. Result = `Claude/results/PHASE_7_quartz_RESULT.md`.

@@ -512,6 +512,81 @@
           "split": "common"
         }
       }
+    },
+    "Quartz": {
+      "frames": [
+        {
+          "key": "quartz.player",
+          "frame": "Quartz3CastBarPlayer"
+        },
+        {
+          "key": "quartz.target",
+          "frame": "Quartz3CastBarTarget"
+        },
+        {
+          "key": "quartz.focus",
+          "frame": "Quartz3CastBarFocus"
+        },
+        {
+          "key": "quartz.pet",
+          "frame": "Quartz3CastBarPet"
+        },
+        {
+          "key": "quartz.gcd",
+          "frame": "Quartz3GCDBar"
+        },
+        {
+          "key": "quartz.swing",
+          "frame": "Quartz3SwingBar"
+        }
+      ],
+      "editable": [
+        {
+          "frame": "quartz.player",
+          "field": "position"
+        },
+        {
+          "frame": "quartz.player",
+          "field": "size",
+          "min": 10,
+          "max": 1500
+        },
+        {
+          "frame": "quartz.target",
+          "field": "position"
+        },
+        {
+          "frame": "quartz.target",
+          "field": "size",
+          "min": 10,
+          "max": 1500
+        },
+        {
+          "frame": "quartz.focus",
+          "field": "position"
+        },
+        {
+          "frame": "quartz.focus",
+          "field": "size",
+          "min": 10,
+          "max": 1500
+        },
+        {
+          "frame": "quartz.pet",
+          "field": "position"
+        },
+        {
+          "frame": "quartz.pet",
+          "field": "size",
+          "min": 10,
+          "max": 1500
+        }
+      ],
+      "saved_variables": {
+        "Quartz3DB": {
+          "split": "common"
+        }
+      }
     }
   }
 }

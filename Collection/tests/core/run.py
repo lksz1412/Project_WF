@@ -388,8 +388,19 @@ def generated_registry_lookup():
     eq(list(to_py(c.GetFrameNames(c)).values()),
        sorted(list(to_py(c.GetFrameNames(c, "Dominos")).values()) + list(to_py(c.GetFrameNames(c, "Prat-3.0")).values())
               + list(to_py(c.GetFrameNames(c, "SexyMap")).values())
-              + list(to_py(c.GetFrameNames(c, "ForeverUnitFrames")).values())),
-       "appearance frames are Dominos', Prat's, SexyMap's and FUF's only")
+              + list(to_py(c.GetFrameNames(c, "ForeverUnitFrames")).values())
+              + list(to_py(c.GetFrameNames(c, "Quartz")).values())),
+       "appearance frames are Dominos', Prat's, SexyMap's, FUF's and Quartz's only")
+    quartz = to_py(c.GetAddonInfo(c, "quartz"))
+    eq(list(to_py(c.GetFrameNames(c, "Quartz")).values()),
+       ["Quartz3CastBarFocus", "Quartz3CastBarPet", "Quartz3CastBarPlayer", "Quartz3CastBarTarget",
+        "Quartz3GCDBar", "Quartz3SwingBar"], "Quartz frames")
+    eq(list(quartz["savedVariables"].values()), [{"name": "Quartz3DB", "scope": "account", "split": "common"}],
+       "Quartz SV")
+    eq(quartz.get("defaults"), None, "Quartz has no Core defaults file (its own defaults cover the cast bars)")
+    eq(len(quartz["editable"]), 8, "Quartz editable: position and size of 4 cast bars")
+    castbars = to_py(c.GetAddonInfo(c, "DevilForever_Castbars"))
+    eq((castbars["use"], castbars.get("savedVariables") or {}), ("new", {}), "Castbars bridge: own addon, no SV")
     fuf = to_py(c.GetAddonInfo(c, "foreverunitframes"))
     eq(len(to_py(c.GetFrameNames(c, "ForeverUnitFrames"))), 15, "FUF: 8 single frames, party header, boss1-5, raid")
     eq(list(fuf["savedVariables"].values()), [{"name": "ForeverUnitFramesDB", "scope": "account", "split": "common"}],
