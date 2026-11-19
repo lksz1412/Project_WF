@@ -10,3 +10,12 @@ Inputs needed: `References/codex-verify/phase<ID>/` and `References/codex-appear
 | 45 | R114 three independent reviews, one after another (no parallel): (1) whole scheme — plan vs product (requirements R1–R114 coverage, roles Claude/Codex, install/restore/registry/presets consistency); (2) code inefficiency — all shipped Lua we own or patched + hot paths of bundled third-party (timers, OnUpdate, event storms, table churn); (3) WoW user usage patterns — is the collection complete for daily/levelling/5-man/raid/healer/PvP/professions, with sources | Fable auditor ×3 (`bada-fable-auditor`, user R115; new sub each, read-only; web allowed for (3); code-optimisation review is the priority) | report with file:line or source links; master triage | — | 120–240 | ✅ (1) 2·9·3 (2) 0·8·10 (3) 0·4·6 |
 | 40 | Fix code defects found by Codex verification results (per Phase brief result tables); plus R118: party frames move to Grid2 (Grid2 party layout + FrameDisplay, PitBull4/FUF party groups off; R120: add PitBull4 targetpet frame, keep ToT/ToToT/focustarget); plus R110 ③: hide the minimap clock so only the status-strip clock shows (SexyMap/Phase 5 default + Codex check) | A2 coder + B | static gates + logic review of fixes | code ② | 60–120 (+30–60 per result bundle) | ⏸ after Step 44: apply accepted Codex changes to our branch + fix defects |
 | 41 | Freeze final bundle (ZIP, manifest, SHA256), restore method, unverified list, handover | master (handover) / A2 (freeze docs after Step 40) | build rc0 + sha256; handover 5 items | — | 30–60 | ⏸ handover written now; freeze waits for Step 40 |
+
+## R122 decisions (2026-11-19)
+- Base line = Codex branch content; Claude re-checks every Codex code change before acceptance (R122 ①④).
+- Version: next official = 0.1.5; v0.1.4 stays a trial (R122 ③).
+- Installer = user's request (R149–R151) → in scheme (R122 ⑧).
+- Third-party inefficiency: fix, keep upstream original + patch (diff) in the work tree, ship only the patched result; on upstream version-up re-apply the diff (R122 ⑨). Hekili deferred to a separate discussion (R122 ⑩).
+- Live checklist additions to be reviewed (R122 ⑫).
+- Open to Codex (request text): local ledger originals with C-prefix, missing linked files, Prat original wording, Aurora opinion, composite vs individual shell, adaptive layout, release marked trial, pause Collection/ code edits during merge.
+- Open to user: item 7 (individual shell) and 13 (adaptive UI) answered by master as proposals; 14, 16 unanswered; 9 "public folder" interpretation to confirm.
