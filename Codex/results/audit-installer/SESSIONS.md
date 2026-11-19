@@ -41,3 +41,10 @@
 | 담당 | `/root` | 이 대화의 실행 환경 | 실제 창 확인·압축형 단일 파일 배포, 별도 GUI·CLI 시험 |
 | 작업 A | `/root/installer_engine` | `bada-a2-coder` · gpt-6.1-sol high 역할 설정 | Step 53 Windows 화면과 안내, 독립 검수 보정 |
 | 독립 검수 B | `/root/installer_plan_review` | 해당 작업의 기존 검수자 설정 | 화면 코드 검수·보정 확인, Step 54 실제 파일 해시 확인. 최종 미해결 0 |
+
+## Phase 28.1 · Step 55–56
+
+| 역할 | 세션 | 설정 | 범위·상태 |
+|---|---|---|---|
+| 담당 | `/root` | 이 대화의 실행 환경 | 실제 Windows 배포본과 시험 사본의 중단 복원, 현재 PC 격리 실행 |
+| 독립 검수 B | `/root/installer_plan_review` | 해당 작업의 기존 검수자 설정 | 정확한 바이너리·시험 범위·현재 PC와 청정 Windows의 구분, 중대·중간 0 |
