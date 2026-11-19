@@ -1,0 +1,496 @@
+{
+  "schema": 1,
+  "phase": "26.2",
+  "step": 46,
+  "timestamp": "2026-11-19T11:30:57+09:00",
+  "purpose": "오프라인 기능 반증과 Step47 수정 입력. 최종 게임·배포 수용 판단은 master/후속 gate.",
+  "baseline": {
+    "receipt": "Codex/results/audit-installer/package-baseline.json",
+    "chatSourceSha256": "40d9e87e57e0946db5b8f239c489ed245af53c790688715944a09ba80bab9c4e",
+    "actualGame": false
+  },
+  "severityState": "작업 A 후보, master 확인 및 독립 B 검수 전",
+  "findings": [
+    {
+      "id": "F46-01",
+      "severityProposal": "중대",
+      "category": "conditional-runtime",
+      "requests": [
+        "R112",
+        "R145"
+      ],
+      "title": "대상 창의 메시지 추가 API가 없으면 원래 창 구독을 제거하고 성공 기록",
+      "sources": [
+        {
+          "path": "Collection/AddOns/DevilForever_ChatSetup/ChatSetup.lua",
+          "line": 75,
+          "quote": "local function addGroup(frame, group)"
+        },
+        {
+          "path": "Collection/AddOns/DevilForever_ChatSetup/ChatSetup.lua",
+          "line": 229,
+          "quote": "addGroup(chatFrame, group)"
+        },
+        {
+          "path": "Collection/AddOns/DevilForever_ChatSetup/ChatSetup.lua",
+          "line": 230,
+          "quote": "removeGroup(general, group)"
+        }
+      ],
+      "trigger": "새 캐릭터에서 frame.AddMessageGroup과 ChatFrame_AddMessageGroup이 없고 제거 API는 존재",
+      "expected": "구독 변경 전에 거절, 또는 대상 구독 확인 뒤에만 원래 구독 제거",
+      "actual": {
+        "originalGroupsRemoved": 31,
+        "destinationGroups": 0,
+        "recordedResult": "created"
+      },
+      "impact": "전달 실패를 성공으로 기록하므로 그룹·시스템 메시지 31종을 어느 새 역할 창에서도 받지 못할 수 있음",
+      "previouslyPresent": true,
+      "observedBy": "master",
+      "gameOccurrence": "미관측",
+      "evidence": "_local_only/phase26-work-r151-20261119/step44-evidence/chat-source-probe.json",
+      "step47Gate": [
+        "추가/제거 API를 양쪽에 대해 변경 전에 확인",
+        "대상에 실제 구독된 상태에서만 원래 구독 제거",
+        "API 없음 및 무효 반환 시 메시지 집합 전후 동일, 성공 표시 금지",
+        "methods/global 두 정상 경로 유지"
+      ]
+    },
+    {
+      "id": "F46-02",
+      "severityProposal": "중간",
+      "category": "partial-failure",
+      "requests": [
+        "R112",
+        "R145"
+      ],
+      "title": "두 번째 창 실패 또는 구독 추가 예외 뒤 초기화가 일부만 저장됨",
+      "sources": [
+        {
+          "path": "Collection/AddOns/DevilForever_ChatSetup/ChatSetup.lua",
+          "line": 217,
+          "quote": "finish(db, \"in-progress\", windows)"
+        },
+        {
+          "path": "Collection/AddOns/DevilForever_ChatSetup/ChatSetup.lua",
+          "line": 219,
+          "quote": "local chatFrame = FCF_OpenNewWindow(localized(role.names), true)"
+        },
+        {
+          "path": "Collection/AddOns/DevilForever_ChatSetup/ChatSetup.lua",
+          "line": 222,
+          "quote": "finish(db, \"no-free-window\", windows)"
+        }
+      ],
+      "trigger": "첫 창 생성·구독 이동 뒤 두 번째 Open이 미예약 기존 창을 반환, 또는 WHISPER 추가 중 예외",
+      "expected": "실패 시 초기 라우팅 보존과 재시도/복구 가능한 상태",
+      "actual": {
+        "secondOpenFailure": {
+          "result": "no-free-window",
+          "movedGroups": 12
+        },
+        "injectedException": {
+          "result": "in-progress",
+          "movedGroups": 10,
+          "groupsLostFromAllRoles": 0
+        }
+      },
+      "impact": "세 창 배치가 완성되지 않았는데 개인 라우팅을 일부 바꾸고 다음 로그인에서는 완료 이력 때문에 다시 시도하지 않음",
+      "previouslyPresent": true,
+      "observedBy": "master and current A (different injected-failure cases)",
+      "gameOccurrence": "미관측",
+      "evidence": [
+        "_local_only/phase26-work-r151-20261119/step44-evidence/chat-partial-window.json",
+        "D:/Projects/Project_WF/_local_only/phase26-work-r151-20261119/step46-a/audit-pr1yyjq7/audit-results.json"
+      ],
+      "step47Gate": [
+        "두 목적 창을 확보·검증한 뒤 라우팅 이동",
+        "그룹·창 속성의 원복 가능한 범위를 변경 전에 저장",
+        "두 번째 창 거절과 이동 중 예외에서 기존 구독·수동 창 보존",
+        "기존 in-progress/interrupted 이력은 임의 재초기화하지 않고 안전한 복구 경계를 정함"
+      ]
+    },
+    {
+      "id": "F46-03",
+      "severityProposal": "중간",
+      "category": "preset-integration",
+      "requests": [
+        "R107",
+        "R112",
+        "R145"
+      ],
+      "title": "자동 생성 채팅 창에 프리셋 변경을 반영하는 입구가 없음",
+      "sources": [
+        {
+          "path": "Collection/AddOns/DevilForever_ChatSetup/ChatSetup.lua",
+          "line": 186,
+          "quote": "if db.result ~= nil then return db.result end"
+        },
+        {
+          "path": "Collection/AddOns/DevilForever_ChatSetup/ChatSetup.lua",
+          "line": 255,
+          "quote": "if db.result == \"in-progress\" then"
+        },
+        {
+          "path": "Collection/AddOns/DevilForever_ChatSetup/ChatLayout.lua",
+          "line": 37,
+          "quote": "local active = DevilForever_Core.Presets:GetActive()"
+        }
+      ],
+      "trigger": "UHD에서 created한 창의 저장값을 유지한 채 QHD 활성 프리셋으로 재입장 또는 프리셋/배율 이벤트",
+      "expected": "프로그램 관리 창은 선택한 프리셋 기준으로 재배치할 수 있고 사용자가 옮긴 창은 보존",
+      "actual": {
+        "systemX": 2910,
+        "expectedQhdX": 1952,
+        "newGeometryWrites": 0
+      },
+      "impact": "배경은 선택 프리셋으로 바뀌어도 입력·출력 창은 옛 위치에 남음. 단위 픽셀 배율의 QHD 오른쪽 화면 밖 예시",
+      "previouslyPresent": true,
+      "observedBy": "master and current A (reload/event paths)",
+      "gameOccurrence": "미관측",
+      "evidence": [
+        "_local_only/phase26-work-r151-20261119/step44-evidence/chat-source-probe.json",
+        "D:/Projects/Project_WF/_local_only/phase26-work-r151-20261119/step46-a/audit-pr1yyjq7/audit-results.json"
+      ],
+      "step47Gate": [
+        "기존 마지막 프로그램 배치와 사용자 이동을 구분할 위치 영수증 또는 명시 적용 계약",
+        "수동 분할·메시지 필터·창 닫기 보존",
+        "프리셋 변경과 /reload, UI_SCALE_CHANGED, DISPLAY_SIZE_CHANGED, 전투 지연 검증",
+        "초기 created만 있는 legacy DB를 무단 재배치하지 않는 전이 정의"
+      ]
+    },
+    {
+      "id": "F46-04",
+      "severityProposal": "중간",
+      "category": "missing-integration",
+      "requests": [
+        "R107",
+        "R110",
+        "R145"
+      ],
+      "title": "FUF 대체판의 제안 좌표가 실제 설치 배치 경로에 연결되지 않음",
+      "sources": [
+        {
+          "path": "Collection/AddOns/DevilForever_FUFDefaults/DevilForever_FUFDefaults.toc",
+          "line": 8,
+          "quote": "FUFDefaults.lua"
+        },
+        {
+          "path": "Collection/AddOns/DevilForever_FUFDefaults/FUFDefaults.lua",
+          "line": 118,
+          "quote": "elseif not send(handler, \"raid off\") then"
+        },
+        {
+          "path": "References/codex-appearance/6/report.md",
+          "line": 19,
+          "quote": "CLASSIC 테마를 바탕으로 FUF native 정수 설정을 제안한다. widths/heights/font/x/y는 physicalPx×pixelFactor/UIParentEff를 반올림한다. Single.Size가 footer·TOP portrait·spacing을 높이에 더하므로 LEFT/OFF portrait, footer0·내부 spacing0으로 외곽을 유지했다. player는 unitUpper, target은 unitLower다. party는 4명 세로 배치, pet은 오른쪽 첫 열, target은 다음 열로 두며 enabled·partyShowPets·partyTargets는 바꾸지 않는다. native border extent와 반올림 때문에 child 실제 x는 목표에서 몇px 달라질 수 있어 접속 검사 대상이다. boss는 5개 열의 자리만 미리 정했다. 기능·오라 개수/필터·시전바 설정은 바꾸지 않았다."
+        },
+        {
+          "path": "Collection/upstream/Forever_Unit_Frames-0.65.2/ForeverUnitFrames/Core/UnitProfiles.lua",
+          "line": 53,
+          "quote": "active = (type(chosen) == \"string\" and db.profiles[chosen]) and chosen or UnitProfiles.DEFAULT"
+        }
+      ],
+      "trigger": "FUF 단독 ZIP 또는 비교판의 FUF로 처음 들어가도 공통 preset fragments에 FUF가 없음",
+      "expected": "같은 해상도·공통 배치 기준에서 두 유닛 프레임을 비교할 수 있는 실제 적용 입구",
+      "actual": {
+        "presetRegistrationsEvaluated": 9,
+        "fufGeometryFragments": 0,
+        "fufAdapterTocFiles": [
+          "FUFDefaults.lua"
+        ],
+        "existingProfile": "Custom",
+        "existingWidth": 211,
+        "legacyDefaultWidth": 77
+      },
+      "impact": "자산·공통 바만 준비된 상태로 FUF 원래 위치와 새 PitBull 배치를 비교하면 동일 조건의 비교가 어려움",
+      "previouslyPresent": true,
+      "observedBy": "current A",
+      "gameOccurrence": "미관측",
+      "evidence": "D:/Projects/Project_WF/_local_only/phase26-work-r151-20261119/step46-a/audit-pr1yyjq7/audit-results.json",
+      "step47Gate": [
+        "SavedVariables 선기록으로 Storage의 provider/legacy backup 복원·기다림을 건너뛰지 않음",
+        "표준 FUF API/설정 schema로 신규 기본값 또는 명시 배치 적용을 연결",
+        "profiles[active]와 legacy profile mirror 및 raid, language, 기타 계정 프로필 보존",
+        "Default에 고정된 AceDB profileKeys 규칙을 FUF에 적용하지 않음",
+        "기존 사용자 프로필은 자동 덮어쓰지 않고 명시 적용·검증된 원복",
+        "세 해상도 새 프로필과 기존 Custom, legacy profile, 전투/15초 storage waiting, 판 전환을 시험"
+      ],
+      "preservationBoundary": {
+        "nativeStorage": "Boot calls Storage.Load/Start at PLAYER_LOGIN; stored profile precedes registered providers and old backup migration",
+        "dangerOfPreseed": "master actual packaged native Lua: empty SV calls macro-read once and waits; preseeded geometry selects SavedVariables, macro-read 0 and reserved-backup cleanup called once",
+        "evidence": "_local_only/phase26-work-r151-20261119/step46-root/fuf-storage-guard.json",
+        "restriction": "새 geometry를 로그인 전 SV에 선기록하는 방식을 기본 해법으로 삼지 않음. 기존 native 로딩·백업 복원 수명을 유지",
+        "candidateEntry": "Core/Commands.lua public /fuf set after native load and 15s waiting, explicit apply with snapshot/verification/rollback; implementation gate required"
+      }
+    },
+    {
+      "id": "F46-05",
+      "severityProposal": "범위 기록",
+      "category": "documented-layout-alternative",
+      "requests": [
+        "R132",
+        "R145"
+      ],
+      "title": "경험치 가로 공간 대안과 현행 세로 배치의 수용·표기 범위 정리",
+      "sources": [
+        {
+          "path": "References/codex-appearance/19/report.md",
+          "line": 21,
+          "quote": "24 JSON의 experience.main/reputation/pet 세 가로 사각형은 공간 대안이다. native 2.0.4는 세 막대를 세로로 쌓으므로 현재 runtime이 가로3분할됐다고 보고하지 않는다. 검은 띠10/12/16px 안에서 원래 본문 상하 슬롯과 rep/pet 문구를 모두 가독성 있게 보이는 native 저장값 조합은 없다. 필요한 변경은 원본 CreateFrames의 RepBar·PetBar SetPoint(대략556–585), Update의 재배치/표시(대략873–913), ApplyBarSizes/ApplyFontSettings(대략776–826), 상하 Texts slot anchor(357–367)다. 지금 발주 범위의 skin은 primary 위치/장식만 허용하므로 child 재앵커는 구현하지 않았다. 부모에게 경계를 보고했고 부모가 geometry·slot을 보존한 외관 조각만 먼저 준비하도록 지시했다."
+        },
+        {
+          "path": "Collection/data/feature-map.md",
+          "line": 64,
+          "quote": "| 경험치·평판·소환수 경험치 | `ExperienceForever` | 프리셋에서 질감과 글꼴 등록. 수직 막대와 표시는 `/ef`. [가로 배치 제안의 적용 범위](../../References/codex-appearance/19/report.md) |"
+        }
+      ],
+      "trigger": "모사용 가로 experience.main/reputation/pet 대안을 현행 설치본의 확정 배치로 읽는 경우",
+      "expected": "R132·R145의 실제 크기·목업 일치 요구를 현재 채택된 배치에 연결하고, 미채택 공간 대안의 기능 개조를 추정하지 않음",
+      "actual": {
+        "presetRegistrations": 9,
+        "experienceKeys": [
+          "barTexture",
+          "baseColor",
+          "fontName",
+          "fontOutline",
+          "petBarTexture",
+          "petColor",
+          "questColor",
+          "repBarTexture",
+          "restedColor"
+        ],
+        "nativeLayout": "세로 쌓기라는 기존 보고와 기능 트리",
+        "nativeRuntimeRerun": false
+      },
+      "impact": "모사용 공간 대안과 현행 세로 배치를 구분하지 않으면 설치본의 수용 범위나 미관측 크기를 잘못 판정할 수 있음",
+      "previouslyPresent": true,
+      "observedBy": "current A for packaged values; native behavior from existing report",
+      "gameOccurrence": "미관측",
+      "evidence": "D:/Projects/Project_WF/_local_only/phase26-work-r151-20261119/step46-a/audit-pr1yyjq7/audit-results.json",
+      "step47Gate": [],
+      "implementationDefect": false,
+      "currentLayoutDecision": "현재 세로 배치를 유지한다. 가로 3분할을 채택한 명시 근거는 이번 범위에서 확인하지 못했다.",
+      "step48Gate": [
+        "모사용 가로 공간 대안과 설치본의 현행 세로 배치를 목업·기능 지도·수용 기록에서 구분",
+        "R132·R145의 실제 애드온 크기와 현행 채택 배치의 목업 일치 의무 유지",
+        "가로 3분할을 새 native 기능 변경 의무로 해석하지 않음",
+        "별도 명시 채택 없이 XP 본체·계산·자식 재앵커·사용자 프로필을 변경하지 않음"
+      ]
+    },
+    {
+      "id": "F46-06",
+      "severityProposal": "중간",
+      "category": "documentation-contract",
+      "requests": [
+        "R62",
+        "R104",
+        "R147"
+      ],
+      "title": "기능 트리가 참조하는 Hekili 지원표에 폐기된 Combat 구현 지시와 CDM 결정 대기가 남음",
+      "sources": [
+        {
+          "path": "Collection/data/hekili-support.md",
+          "line": 143,
+          "quote": "**전체 판정(A1 판단):** 갈래 2. 보완 모듈 `DevilForever_Combat` 은 28개 특성 모두의 알림 꼴(화면 중앙 아이콘·소리·강조, 각각 끔 가능)을 맡는다. 무엇을 보일지(정적 표시 목록)는 특성마다 Hekili 직업 모듈 자료에서 고른다(원천 ①). 갈래 3 이 아니라서 D7 Codex 자료(②)는 「있는지」 를 위해서는 필요 없다. 다만 Hekili 자료 일부는 원천 스스로 「in-game check」 를 달았으므로 ID·지속 시간의 게임 안 확인은 Step 20 몫이다(결정 대기 3)."
+        },
+        {
+          "path": "Collection/data/hekili-support.md",
+          "line": 198,
+          "quote": "1. **Forever 클라이언트 Cooldown Manager 를 쓸지** — 클라이언트에 버프·CD 아이콘 창 넷이 있다(`CooldownViewer.lua:29–30`, 추정). 보완 모듈 알림과 겹칠 수 있다. 기본값(A1): 이 단계에서는 건드리지 않고 Step 20 Codex 실사용 발주문에서 「켜져 있는지·겹치는지」 를 본다."
+        },
+        {
+          "path": "Collection/codex-briefs/phase8.md",
+          "line": 11,
+          "quote": "- 이 Phase 의 담당 나눔(R104): Hekili 는 **다음 행동 추천만** 보인다(화면 위 가운데 Primary 표시창, 전투 중 추천 능력이 놓인 단축바 버튼 빛남 — 우리 기본값이 켬). 상태 알림·쿨다운은 **게임 기본 Cooldown Manager**(창 넷: `EssentialCooldownViewer`·`UtilityCooldownViewer`·`BuffIconCooldownViewer`·`BuffBarCooldownViewer`)가 보인다. Hekili 는 치유 특성 넷(성기사·사제 신성, 주술사·드루이드 회복)에는 아무것도 보이지 않는다. 주술사부터 본다(R7). 대상은 훈련용 허수아비나 들판 몹이면 된다."
+        }
+      ],
+      "trigger": "현행 feature-map의 직업 지원표 링크로 들어가 Step19 설계 입력과 결정 대기를 소비",
+      "expected": "R104 이후 현재 선택과 역사 분석을 식별할 수 있음",
+      "actual": {
+        "installedCombatAddon": false,
+        "oldPlanStillReadAsDesignInput": true
+      },
+      "impact": "후속 작업자가 이미 폐기된 보완 모듈을 재설계하거나 결정된 CDM 선택을 다시 묻게 됨",
+      "previouslyPresent": true,
+      "observedBy": "current A",
+      "gameOccurrence": "해당 없음",
+      "evidence": "Collection/data/hekili-support.md",
+      "step47Gate": [
+        "역사 원문은 보존",
+        "현재 기능 트리에서 정정/현행 지원표를 먼저 찾게 함",
+        "24 지원·4 미지원의 원천 사실과 폐기된 보완 제안 구분",
+        "현재 ZIP에 Combat 모듈 추가 없이 R104 소유권 명확히 유지"
+      ]
+    }
+  ],
+  "featureCoverage": [
+    {
+      "feature": "공통 설정·저장·복원",
+      "requests": [
+        "R44",
+        "R107",
+        "R148"
+      ],
+      "status": "기존 오프라인 시험 PASS 범위",
+      "evidence": "_local_only/phase26-work-r151-20261119/step44-evidence/core.log",
+      "observedBy": "master",
+      "limits": "기존 프로필·전투·버전·요청 대역 시험 108건. 게임 설정/키 경로는 명시 명령일 때만."
+    },
+    {
+      "feature": "채팅",
+      "requests": [
+        "R112",
+        "R145"
+      ],
+      "status": "수정 필요",
+      "findings": [
+        "F46-01",
+        "F46-02",
+        "F46-03"
+      ],
+      "newPasses": [
+        "manual-split",
+        "combat-defer",
+        "stored-user-edit"
+      ],
+      "evidence": "D:/Projects/Project_WF/_local_only/phase26-work-r151-20261119/step46-a/audit-pr1yyjq7/audit-results.json"
+    },
+    {
+      "feature": "하단 조작·13종 테마",
+      "requests": [
+        "R115",
+        "R130",
+        "R135",
+        "R136",
+        "R138",
+        "R140",
+        "R142",
+        "R143"
+      ],
+      "status": "ZIP·Lua/TGA 대역 확인; 실게임 대기",
+      "observedBy": "master",
+      "evidence": "_local_only/phase26-work-r151-20261119/step46-root/composition-path.json",
+      "limits": "39조합, 오른쪽 문양 크롭·알파와 유닛 겹침대 투명성. 실제 읽기/클릭/밝기·전투·소환수 표시 수명 미검증"
+    },
+    {
+      "feature": "시계·기존 사용자값",
+      "requests": [
+        "R110"
+      ],
+      "status": "기본값과 보존 경계 확인",
+      "observedBy": "master",
+      "evidence": "_local_only/phase26-work-r151-20261119/step46-root/minimap-clock-boundary.json",
+      "limits": "새 SexyMap never, 사용자 명시 always 보존. 현재 게임 시계는 미관측"
+    },
+    {
+      "feature": "전투·유닛",
+      "requests": [
+        "R107",
+        "R110",
+        "R121",
+        "R140"
+      ],
+      "status": "PitBull 위치 대역 통과; FUF 연결 수정 필요",
+      "findings": [
+        "F46-04"
+      ],
+      "evidence": "_local_only/phase26-work-r151-20261119/step44-evidence/integration.log",
+      "limits": "PitBull singleton 실제 함수 8×3 사각형. 기본 플레이어 Aura false는 보존된 기능값, 항상 켜라는 확정 선택 미확인."
+    },
+    {
+      "feature": "추천·기본 쿨다운·이름표",
+      "requests": [
+        "R62",
+        "R99",
+        "R100",
+        "R104",
+        "R110"
+      ],
+      "status": "구분된 담당 확인; 실제 전투 대기",
+      "findings": [
+        "F46-06"
+      ],
+      "evidence": "Collection/codex-briefs/phase8.md",
+      "limits": "Hekili 24 지원/4 미지원은 원천 분석. countdownForCooldowns와 viewer 네 개, 4K 글자는 게임 확인."
+    },
+    {
+      "feature": "그룹·Details",
+      "requests": [
+        "R95",
+        "R97",
+        "R107",
+        "R145"
+      ],
+      "status": "기존 오프라인 시험 PASS 범위",
+      "observedBy": "master",
+      "evidence": "_local_only/phase26-work-r151-20261119/step44-evidence/details.log",
+      "limits": "기존 창만 명시 apply, 6조합/28거절/부분원복. 실제 창2 생성·TinyThreat 모드·공격대는 별도 관측"
+    },
+    {
+      "feature": "성장·퀘스트",
+      "requests": [
+        "R100",
+        "R132",
+        "R145"
+      ],
+      "status": "XP 현행 세로·공간 대안 표기 정리; 기본 Quest 실측 대기",
+      "findings": [
+        "F46-05"
+      ],
+      "evidence": "References/codex-verify/one-session-review.md",
+      "limits": "현재 세로 배치를 유지하며 가로 제안은 Step48에서 수용 범위를 구분한다. R132·R145의 실제 크기·일치 의무는 유지. CDM/quest 목표 좌표·글자 크기와 client 저장/폰트 경로는 실측 대기."
+    },
+    {
+      "feature": "배포",
+      "requests": [
+        "R145",
+        "R151"
+      ],
+      "status": "Phase26.1 기준 PASS 재사용",
+      "evidence": "Codex/results/audit-installer/package-baseline.json",
+      "limits": "세 과거 입력 ZIP; 수정 후 새 빌드/해시 Step48 필요"
+    },
+    {
+      "feature": "FUF 기존 저장·provider·매크로 백업 로딩",
+      "requests": [
+        "R107",
+        "R110",
+        "R145"
+      ],
+      "status": "SV 선기록 시 native 수명 변경 반증",
+      "observedBy": "master",
+      "evidence": "_local_only/phase26-work-r151-20261119/step46-root/fuf-storage-guard.json",
+      "limits": "실제 패키지의 UnitProfiles/Storage+대역 호출. 개인 매크로 API/실게임 데이터 접근 없음"
+    }
+  ],
+  "newExecution": {
+    "command": "python -X utf8 -B -I D:/Projects/Project_WF/_local_only/phase26-work-r151-20261119/step46-a/audit-pr1yyjq7/probe-step46.py",
+    "exitCode": 0,
+    "summary": "chat-preservation guards 3 PASS; injected-exception partial state and preset-event missing-layout RED; nine package preset registrations lack FUF geometry; native custom profile selection/mirror preserved",
+    "evidence": "D:/Projects/Project_WF/_local_only/phase26-work-r151-20261119/step46-a/audit-pr1yyjq7/audit-results.json"
+  },
+  "openDecisions": [
+    {
+      "id": "D46-01",
+      "scope": "R13 retail 참고",
+      "state": "개인 설정 실물·반영 근거 미확인. 계정/매크로 파일 접근·이식 수행 없음"
+    },
+    {
+      "id": "D46-02",
+      "scope": "최종 유닛 프레임",
+      "state": "R110 실제 동일 조건 비교 이후"
+    },
+    {
+      "id": "D46-03",
+      "scope": "추가 해상도·4K 단독",
+      "state": "세 명시 프리셋 유지, 제4판 결정 미확인"
+    },
+    {
+      "id": "D46-04",
+      "scope": "플레이어 상단 Aura",
+      "state": "현재 기본 false 확인. 항상 켜기 명시 결정 미확인"
+    }
+  ],
+  "next": "Master severity confirmation and independent review, then Step47 authorized fixes"
+}

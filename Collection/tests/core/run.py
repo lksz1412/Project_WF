@@ -12,6 +12,7 @@ next simulated session. This checks Core logic only; it does not emulate the
 game client, its frames or its load order.
 """
 
+import json
 import os
 import sys
 import traceback
@@ -109,7 +110,7 @@ class Session:
     """One simulated client session with Core loaded."""
 
     def __init__(self, saved=None, registry="fixture", extra_files=("Defaults_Example.lua",),
-                 player=None, globals_=None, preset_files=()):
+                 player=None, globals_=None, preset_files=(), collection_presets=False):
         self.lua = lua51.LuaRuntime(unpack_returned_tuples=True)
         self.lua.execute(STUBS)
         g = self.lua.globals()
@@ -124,6 +125,8 @@ class Session:
         for rel in toc_files():
             # Real defaults files name folders of the generated registry only.
             if rel.startswith("Defaults/") and registry in FIXTURE_REGISTRIES:
+                continue
+            if rel.startswith("Presets/") and not collection_presets:
                 continue
             if rel == "Registry.lua" and registry in FIXTURE_REGISTRIES:
                 self.run_file(os.path.join(FIXTURES, FIXTURE_REGISTRIES[registry]))
@@ -154,7 +157,11 @@ class Session:
         with open(path, "rb") as fh:
             src = fh.read()
         loadstring = self.lua.globals().loadstring
-        result = loadstring(src, ("@" + os.path.relpath(path, REPO)).encode())
+        try:
+            source_label = os.path.relpath(path, REPO)
+        except ValueError:
+            source_label = os.path.abspath(path)
+        result = loadstring(src, ("@" + source_label).encode())
         fn, err = result if isinstance(result, tuple) else (result, None)
         if fn is None:
             raise AssertionError("compile failed: %s" % err)
@@ -452,14 +459,12 @@ def generated_registry_lookup():
     eq(info["package"], "Dominos", "case-insensitive lookup")
     eq(list(info["savedVariables"].values()), [{"name": "DominosDB", "scope": "account", "split": "class", "restore": "profile", "shape": "acedb"}], "SV")
     eq(info["defaults"], "Defaults/Dominos.lua", "defaults file named")
-    prat = to_py(c.GetAddonInfo(c, "Prat-3.0"))
-    scopes = {sv["name"]: sv["scope"] for sv in prat["savedVariables"].values()}
-    eq(scopes, {"Prat3DB": "account", "Prat3CharDB": "character", "Prat3HighCPUPerCharDB": "character"}, "scopes")
+    eq(c.GetAddonInfo(c, "Prat-3.0"), None, "native chat collection excludes Prat")
     eq(to_py(c.GetAddonInfo(c, "!DevilForever_Core"))["bundle"], "required", "Core is required")
     eq(list(to_py(c.ListAddons(c)).values())[0], "!DevilForever_Core", "Core sorts first")
     eq(c.GetAddonInfo(c, "NoSuchAddon"), None, "unknown folder")
     eq(list(to_py(c.GetFrameNames(c)).values()),
-       sorted(list(to_py(c.GetFrameNames(c, "Dominos")).values()) + list(to_py(c.GetFrameNames(c, "Prat-3.0")).values())
+       sorted(list(to_py(c.GetFrameNames(c, "Dominos")).values())
               + list(to_py(c.GetFrameNames(c, "SexyMap")).values())
               + list(to_py(c.GetFrameNames(c, "ForeverUnitFrames")).values())
               + list(to_py(c.GetFrameNames(c, "Quartz")).values())
@@ -468,9 +473,10 @@ def generated_registry_lookup():
               + list(to_py(c.GetFrameNames(c, "Grid2")).values())
               + list(to_py(c.GetFrameNames(c, "Details")).values())
               + list(to_py(c.GetFrameNames(c, "DevilForever_StatusStrip")).values())
-              + list(to_py(c.GetFrameNames(c, "ExperienceForever")).values())),
-       "appearance frames are Dominos', Prat's, SexyMap's, FUF's, Quartz's, Hekili's, PitBull4's, Grid2's, Details',"
-       " the status strip's and Experience Forever's only")
+              + list(to_py(c.GetFrameNames(c, "ExperienceForever")).values())
+              + list(to_py(c.GetFrameNames(c, "DevilForever_Appearance")).values())),
+       "registered appearance frames")
+    eq(len(to_py(c.GetFrameNames(c, "DevilForever_Appearance"))), 17, "common exterior frames")
     xpbar = to_py(c.GetAddonInfo(c, "experienceforever"))
     eq(list(to_py(c.GetFrameNames(c, "ExperienceForever")).values()),
        ["ExperienceForeverFrame", "ExperienceForeverMinimapButton"], "Experience Forever frames: the bar, the minimap button")
@@ -501,7 +507,9 @@ def generated_registry_lookup():
     eq((details.get("defaults"), len(details["editable"])), (None, 4),
        "Details has no Core defaults file (its saved variables are rewritten by Details at logout); 2 positions, 2 sizes")
     eq(list(to_py(c.GetFrameNames(c, "Details_TinyThreat")).values()), [], "Tiny Threat draws inside window 2")
-    eq(c.GetAddonInfo(c, "DevilForever_DetailsSetup"), None, "no Details bridge addon (Tiny Threat window is set by hand)")
+    layout = to_py(c.GetAddonInfo(c, "DevilForever_DetailsLayout"))
+    eq((layout["bundle"], layout["use"], layout.get("savedVariables") or {}),
+       ("individual", "new", {}), "Details layout is an explicit companion with no saved variables")
     grid2 = to_py(c.GetAddonInfo(c, "grid2"))
     eq(list(to_py(c.GetFrameNames(c, "Grid2")).values()), ["Grid2LayoutFrame"], "Grid2 frames: the layout window")
     eq(list(grid2["savedVariables"].values()), [{"name": "Grid2DB", "scope": "account", "split": "common",
@@ -529,7 +537,14 @@ def generated_registry_lookup():
                  "Dominos_Progress", "Dominos_Roll"):
         eq(gone in registered, False, "%s is not registered (dropped Phase or not shipped)" % gone)
     eq("Aurora" in registered, True, "Aurora stays registered while Codex decides (named in registry_extra)")
-    eq(len(registered), 34, "registered = 30 shipped (PitBull4 build) + FUF build's 3 + Aurora")
+    with open(os.path.join(REPO, "Collection", "install.json"), encoding="utf-8") as stream:
+        install = json.load(stream)
+    shipped = set(install["own"])
+    for part in (install, *install["unit_frame_variants"].values()):
+        shipped.update(part["own"])
+        for folders in part["upstream"].values():
+            shipped.update(folders)
+    eq(set(registered), shipped | {"Aurora"}, "registry covers all install variants and the Aurora comparison")
     hekili = to_py(c.GetAddonInfo(c, "hekili"))
     eq(list(to_py(c.GetFrameNames(c, "Hekili")).values()),
        ["HekiliDisplayAOE", "HekiliDisplayCooldowns", "HekiliDisplayDefensives", "HekiliDisplayInterrupts",
@@ -546,7 +561,7 @@ def generated_registry_lookup():
     eq(list(quartz["savedVariables"].values()), [{"name": "Quartz3DB", "scope": "account", "split": "common",
                                                   "restore": "whole", "shape": "acedb"}],
        "Quartz SV")
-    eq(quartz.get("defaults"), None, "Quartz has no Core defaults file (its own defaults cover the cast bars)")
+    eq(quartz.get("defaults"), "Defaults/Quartz.lua", "Quartz defaults are part of the fresh profile policy")
     eq(len(quartz["editable"]), 8, "Quartz editable: position and size of 4 cast bars")
     castbars = to_py(c.GetAddonInfo(c, "DevilForever_Castbars"))
     eq((castbars["use"], castbars.get("savedVariables") or {}), ("new", {}), "Castbars bridge: own addon, no SV")
@@ -566,8 +581,6 @@ def generated_registry_lookup():
     eq(list(sexy["savedVariables"].values()), [{"name": "SexyMap2DB", "scope": "account", "split": "common",
                                                 "restore": "whole", "shape": "plain"}], "SexyMap SV")
     eq(sexy["defaults"], "Defaults/SexyMap.lua", "SexyMap defaults file named")
-    eq(len(to_py(c.GetFrameNames(c, "Prat-3.0"))), 30, "Prat: ChatFrame1-10 with edit boxes and tabs")
-    eq(prat["defaults"], "Defaults/Prat-3.0.lua", "Prat defaults file named")
     setup = to_py(c.GetAddonInfo(c, "DevilForever_ChatSetup"))
     eq(list(setup["savedVariables"].values()),
        [{"name": "DevilForever_ChatSetupDB", "scope": "character", "split": "common"}], "ChatSetup SV")
@@ -1046,36 +1059,22 @@ def dominos_defaults_existing_profile_kept():
 
 
 @case
-def prat_defaults_fresh_default_profile():
+def native_chat_install_leaves_prat_defaults_absent():
     s = Session(registry="generated", extra_files=()).boot(after=["Prat-3.0"])
-    eq(s.sv("Prat3DB"), {"namespaces": {"Prat_History": {"profiles": {"Default": {"scrollback": False}}},
-                                        "Prat_Memory": {"profiles": {"Default": {"on": False}}}}},
-       "namespace profiles named Default")
-    targets = s.status("Prat-3.0")["targets"]
-    eq((targets["Prat3DB/Prat_History"]["state"], targets["Prat3DB/Prat_History"]["key"]),
-       ("applied", "Prat3DB/Prat_History@profile:Default"), "History status")
-    eq((targets["Prat3DB/Prat_Memory"]["state"], targets["Prat3DB/Prat_Memory"]["key"]),
-       ("applied", "Prat3DB/Prat_Memory@profile:Default"), "Memory status")
-    second = Session(registry="generated", extra_files=(),
-                     saved={"Prat3DB": s.sv("Prat3DB"), "DevilForever_CoreDB": s.sv("DevilForever_CoreDB")})
-    second.boot(after=["Prat-3.0"])
-    states = {k: v["state"] for k, v in second.status("Prat-3.0")["targets"].items()}
-    eq(states, {"Prat3DB/Prat_History": "already", "Prat3DB/Prat_Memory": "already"}, "once per version")
-    eq(s.errors() + second.errors(), [], "no errors")
+    eq(s.sv("Prat3DB"), None, "collection did not create a Prat database")
+    eq(s.status("Prat-3.0")["registered"], False, "Prat defaults absent")
+    eq(s.errors(), [], "no errors")
 
 
 @case
-def prat_defaults_user_values_and_profile_kept():
+def native_chat_install_preserves_external_prat_values():
     # History left at Prat's default (stripped by AceDB: no Prat_History data); Memory changed.
     saved = {"Prat3DB": {"profileKeys": {"Hero - Realm": "Mine"},
                          "profiles": {"Mine": {"modules": {"Memory": 3}}},
                          "namespaces": {"Prat_Memory": {"profiles": {"Mine": {"autoload": True}}}}}}
     s = Session(registry="generated", extra_files=(), saved=saved).boot(after=["Prat-3.0"])
     eq(s.sv("Prat3DB"), saved["Prat3DB"], "user's profile, both namespaces and the absent History data untouched")
-    states = {k: (v["state"], v["key"]) for k, v in s.status("Prat-3.0")["targets"].items()}
-    eq(states, {"Prat3DB/Prat_History": ("existing-profile-kept", "Prat3DB/Prat_History@profile:Mine"),
-                "Prat3DB/Prat_Memory": ("existing-profile-kept", "Prat3DB/Prat_Memory@profile:Mine")},
-       "profileKeys profile kept, nothing written")
+    eq(s.status("Prat-3.0")["targets"], {}, "no Prat target was selected")
 
 
 @case
@@ -1256,6 +1255,7 @@ def sexymap_defaults_fresh_written_at_world():
     p = s.sv("SexyMap2DB")["Hero-Realm"]
     eq((p["core"]["rightClickToConfig"], p["buttons"]["visibilitySettings"]["MiniMapTracking"]), (False, "always"),
        "requirement values over SexyMap's first-load values")
+    eq(p["buttons"]["visibilitySettings"]["TimeManagerClockButton"], "never", "status strip is the only clock")
     eq(p["core"]["shape"], SEXYMAP_CORE["shape"], "shape left to SexyMap")
     eq(p["ping"], {"showPing": True, "showAt": "map"}, "other modules untouched")
     st = s.status("SexyMap")["targets"]["SexyMap2DB"]

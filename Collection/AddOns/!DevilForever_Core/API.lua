@@ -63,6 +63,14 @@ Per-frame edit values (see Edit.lua)
   Core.Edit:GetEditableItems(frameKey)  -> {[field] = registry item}
   Core.Edit:GetPending()                -> edits waiting for the end of combat
   Core.Edit:RegisterCallback(owner, fn(frameKey, field, storedValue)) / :UnregisterCallback(owner)
+  Core.Edit:Batch(fn)                   -> fn's first return value; field listeners run
+                                           immediately, requested appearance work
+                                           runs after the outermost batch
+  Core.Edit:AfterBatch(owner, fn)       -> true | false for an invalid owner/function;
+                                           runs now outside a batch, otherwise once
+                                           per owner in first-request order with
+                                           its last function; batch body errors flush
+                                           pending work before propagating
 
 Layout presets (see Presets.lua; Edit:Get layers token < registry default <
 active preset value < stored edit)

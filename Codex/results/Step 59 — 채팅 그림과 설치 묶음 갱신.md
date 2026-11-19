@@ -1,0 +1,39 @@
+# Step 59 — 채팅 그림과 설치 묶음 갱신
+
+2026-11-19 · Phase 28.2 로컬 후속
+
+승인한 채팅 그림을 0.1.1 설치 묶음에 넣었다. 바뀐 12개 테마 각각에 FHD·QHD·4K 그림을 하나씩 넣어 모두 36개다. 셋째 채팅창 오른쪽 아래에서 무늬의 왼쪽과 위쪽 70%를 보이게 잘라 반투명으로 넣었다. 무늬는 창 안쪽에만 보인다. 기존 데빌 배경은 흑회색 무늬 없는 상태로 유지한다. [승인 목업](../../outputs/devil-forever-mobile-orc-rail.html) · [그림 작업과 시험 기록](../../_local_only/chat-package-0.1.1/appearance-work.md)
+
+## 로컬 파일
+
+| 파일 | 용도 |
+|---|---|
+| [Windows x64 설치기](../../_local_only/chat-package-0.1.1/DevilForever-Windows-x64-0.1.1/DevilForeverSetup.exe) | 실행 파일 옆의 기본 ZIP으로 설치. 같은 폴더의 사용 안내와 대체 ZIP 포함 |
+| [PitBull4 ZIP](../../_local_only/chat-package-0.1.1/DevilForever-Windows-x64-0.1.1/DevilForever-0.1.1.zip) | 기본판 |
+| [Forever Unit Frames ZIP](../../_local_only/chat-package-0.1.1/DevilForever-Windows-x64-0.1.1/DevilForever-0.1.1-fuf.zip) | 대체판 |
+| [한 접속 비교 ZIP](../../_local_only/chat-package-0.1.1/archives/DevilForever-0.1.1-one-session.zip) | 두 유닛 프레임을 한 접속에서 비교하는 시험용 |
+
+[설치기와 동봉 파일 해시](../../_local_only/chat-package-0.1.1/DevilForever-Windows-x64-0.1.1/release-files.json) · [세 ZIP의 해시와 바뀐 파일](../../_local_only/chat-package-0.1.1/archives/release-receipt.json)
+
+## 변경 확인과 실제 실행
+
+| 변경 또는 연결 | 확인 |
+|---|---|
+| 그림 생성기 → 36개 덱 → 외관 애드온 | 재제작 36개가 애드온 입력과 바이트 단위로 일치했다. 채팅 구역 밖 저장 픽셀 변경 0개, 기존 그림 120개 유지. 4K 저장 전 합성은 12개 테마에서 승인 제작 코드와 픽셀 차이 0개 |
+| 외관 애드온이 새 그림을 읽는 경로 | Lua 5.1에서 테마·해상도 39조합, 파일 실패 57경우, 개인 설정 45경우, 전투 뒤 적용을 확인했다. 새 그림이 없거나 로드를 거절하면 기존 그림을 쓴다 |
+| 버전과 빌더 → 세 ZIP | 기존 ZIP 각각과 파일을 전수 대조했다. 각 ZIP에 그림 36개 추가, 파일 6개 변경, 제거 0개. 새 그림은 세 ZIP에서 바이트가 같다. Lua 구문 오류 0개, 필수 애드온 누락 0개. [ZIP 검사 출력](../../_local_only/chat-package-0.1.1/verify-archives.log) |
+| ZIP → 설치 카탈로그 → 실행 파일 | 기본판과 대체판의 버전·해시·크기·폴더를 내장 카탈로그에 반영했다. 실제 새 실행 파일의 공개 명령 시험 9건, 호출 23회 통과. 비교 ZIP과 변조 ZIP은 쓰기 전에 거절됐다. [설치기 시험](../../_local_only/chat-package-0.1.1/installer-tests/public-cli-6zb1p3jo/result.json) |
+| 이전 판 → 새 판 → 이전 판 | 시험 폴더에서 두 실제 실행 파일로 0.1.0 → 0.1.1 → 0.1.0을 실행했다. 각 단계에서 애드온 파일 2,276개 → 2,312개 → 2,276개의 해시가 맞았다. 개인 설정과 다른 애드온 파일을 보존했다. [갱신과 복원 시험](../../_local_only/chat-package-0.1.1/upgrade-17tcxc9s/result.json) |
+| 공통 Core | 기능 시험 108건 통과. 레지스트리 생성 결과는 현재 파일과 일치했다. [Core 시험 출력](../../_local_only/chat-package-0.1.1/core-tests.log) |
+
+첫 복원 시험의 확인 코드가 반환값 `restored`를 `completed`로 잘못 검사했다. 시험 코드를 고친 뒤 새 시험 폴더에서 설치, 갱신, 복원과 복원된 해시를 모두 검사했다. 설치기 복원 코드는 고치지 않았다.
+
+독립 검수에서 중대·중간·경미 결함은 0건이었다. 검수자는 새 그림 36개와 제작 입력 123개의 해시, 세 ZIP의 그림과 외관 코드, 두 카탈로그 항목, 전달 파일 4개를 직접 대조했다. 기존 그림으로 돌아가는 순서와 개인 설정·전투 경로는 코드와 기존 실행 기록을 함께 확인했다.
+
+## 게임에서 남은 확인
+
+실제 게임과 별도 청정 Windows는 미검증이다. 게임 기본 목표 창의 글자 크기는 평소 거리에서 실제 4K 화면을 읽은 뒤 판단한다. 상태 띠는 기본 배치상 화면 전체 너비로 아래쪽에 놓인다. 4K에서는 위에서 2,124픽셀, 높이 28픽셀이다. 자체 애드온 `DevilForever_StatusStrip`이 수치를 표시하고 `DevilForever_Skin_StatusStrip`이 위치와 글꼴, 색을 적용한다. [한 접속 확인 순서](../../References/codex-verify/one-session-review.md)
+
+## 기록 범위
+
+실행을 이어받을 때 마스터 플랜 1–165행, Phase 28.2 세부계획 1–14행, 기존 Step 58과 Phase 28.2 결과 전문, 새 Composition.lua 1–146행, 게임 확인표와 설치 계약 전문, 두 실행 시험의 호출과 결과를 대조했다. 대화 기록의 사용자 발화 18750행과 18782행을 요청 대장에 반영했다. 빌드는 기존 D 작업본에 있는 로컬 그림과 설정을 입력으로 사용했다. 시험 대상은 별도 폴더였다.

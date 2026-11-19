@@ -1,0 +1,332 @@
+-- functions I call at least three(ish) times
+local AddonName, Addon = ...
+
+-- create a frame, and then hide it
+function Addon:CreateHiddenFrame(...)
+    local frame = CreateFrame(...)
+
+    frame:Hide()
+
+    return frame
+end
+
+-- a context menu control that shows or hides one part of a bar that has
+-- Displaying(part) and SetDisplay(part, enable). its name is the key
+-- Display_<part>
+function Addon:CreateDisplayCheck(part)
+    return {
+        type = 'check',
+        name = 'Display_' .. part,
+        get = function(bar)
+            return bar:Displaying(part)
+        end,
+        set = function(bar, enable)
+            bar:SetDisplay(part, enable)
+        end
+    }
+end
+
+-- colors are saved as RRGGBB or RRGGBBAA hex strings. the same string gives
+-- back the same shared color object while anything holds it, so don't modify it
+do
+    local RGB_LENGTH = 6
+    local RGBA_LENGTH = 8
+    local colorsByHex = setmetatable({}, { __mode = 'v' })
+
+    ---@param hex string RRGGBB or RRGGBBAA
+    ---@return ColorMixin? color nil if it isn't a hex color
+    function Addon:GetColorFromHex(hex)
+        -- saved hex is already uppercase, so this mostly hits straight away
+        local color = colorsByHex[hex]
+        if color then
+            return color
+        end
+
+        if type(hex) ~= 'string' or not hex:match('^%x+$') then
+            return
+        end
+
+        hex = hex:upper()
+
+        color = colorsByHex[hex]
+        if color then
+            return color
+        end
+
+        if #hex == RGBA_LENGTH then
+            color = CreateColorFromRGBAHexString(hex)
+        elseif #hex == RGB_LENGTH then
+            color = CreateColorFromRGBHexString(hex)
+        end
+
+        colorsByHex[hex] = color
+
+        return color
+    end
+
+    -- always RRGGBBAA, which is what GetColorFromHex reads back
+    ---@param r number 0 to 1
+    ---@param g number
+    ---@param b number
+    ---@param a number? defaults to 1
+    ---@return string hex
+    function Addon:GetHexFromColor(r, g, b, a)
+        return ('%02X%02X%02X%02X'):format(
+            Round(r * 255),
+            Round(g * 255),
+            Round(b * 255),
+            Round((a or 1) * 255)
+        )
+    end
+end
+
+-- A utility function for extending blizzard widget types (Frames, Buttons, etc)
+do
+    -- extend basically just does a post hook of an existing object method
+    -- its here so that I can not forget to do class.proto.thing when hooking
+    -- thing
+    local function class_Extend(class, method, func)
+        if not (type(method) == 'string' and type(func) == 'function') then
+            error('Usage: Class:Extend("method", func)', 2)
+        end
+
+        if type(class.proto[method]) ~= 'function' then
+            error(('Parent has no method named %q'):format(method), 2)
+        end
+
+        class[method] = function(self, ...)
+            class.proto[method](self, ...)
+
+            return func(self, ...)
+        end
+    end
+
+    function Addon:CreateClass(frameType, prototype)
+        local class = self:CreateHiddenFrame(frameType)
+        local function mixin(target, source)
+            for k, v in pairs(source) do
+                if target[k] == nil then
+                    target[k] = v
+                end
+            end
+        end
+
+        class.Bind = function(_, object)
+            -- copy methods from the class and its prototype chain without
+            -- replacing the frame's Blizzard-provided metatable (keeps
+            -- secure handles intact).
+            local source = class
+            local seen = {}
+
+            while source and not seen[source] do
+                seen[source] = true
+                mixin(object, source)
+                source = rawget(source, 'proto')
+            end
+
+            return object
+        end
+
+        if type(prototype) == 'table' then
+            class.proto = prototype
+            class.Extend = class_Extend
+
+            setmetatable(class, { __index = prototype })
+        end
+
+        return class
+    end
+end
+
+-- A functional way to fade a frame from one opacity to another without constantly
+-- creating new animation groups for the frame
+do
+    -- track the time the animation started playing
+    -- this is so that we can figure out how long we've been delaying for
+    local function animation_OnPlay(self)
+        self.start = _G.GetTime()
+    end
+
+    local function sequence_OnFinished(self)
+        if self.alpha then
+            self:GetParent():SetAlpha(self.alpha)
+            self.alpha = nil
+        end
+    end
+
+    local sequences = {}
+
+    local function sequence_Create(frame)
+        local sequence = frame:CreateAnimationGroup()
+        sequence:SetLooping('NONE')
+        sequence:SetScript('OnFinished', sequence_OnFinished)
+        sequence.alpha = nil
+
+        local animation = sequence:CreateAnimation('Alpha')
+        animation:SetSmoothing('IN_OUT')
+        animation:SetOrder(0)
+        animation:SetScript('OnPlay', animation_OnPlay)
+
+        return sequence, animation
+    end
+
+    Addon.Fade = setmetatable({}, {
+        __call = function(self, addon, frame, toAlpha, delay, duration)
+            return self[frame](toAlpha, delay, duration)
+        end,
+
+        __index = function(self, frame)
+            local sequence, animation
+
+            -- handle animation requests
+            local function func(toAlpha, delay, duration)
+                -- create the animation if we've not yet done so
+                if not sequence then
+                    if ApproximatelyEqual(frame:GetAlpha(), toAlpha, 0.01) then
+                        return
+                    end
+
+                    sequence, animation = sequence_Create(frame)
+                    sequences[frame] = sequence
+                end
+
+                local fromAlpha = frame:GetAlpha()
+
+                -- animation already started, but is in the delay phase
+                -- so shorten the delay by however much time has gone by
+                if animation:IsDelaying() then
+                    delay = math.max(delay - (_G.GetTime() - animation.start), 0)
+                    -- we're already in the middle of a fade animation
+                elseif animation:IsPlaying() then
+                    -- set delay to zero, as we don't want to pause in the
+                    -- middle of an animation
+                    delay = 0
+
+                    -- the frame's alpha isn't updated until the animation ends,
+                    -- so work out where we're at from the animation progress
+                    local from = animation:GetFromAlpha()
+                    local to = animation:GetToAlpha()
+                    fromAlpha = from + (to - from) * animation:GetSmoothProgress()
+                end
+
+                -- already at the target so stop
+                if ApproximatelyEqual(fromAlpha, toAlpha, 0.01) then
+                    Addon:StopFade(frame)
+                    frame:SetAlpha(toAlpha)
+                    return
+                end
+
+                sequence.alpha = toAlpha
+                animation:SetFromAlpha(fromAlpha)
+                animation:SetToAlpha(toAlpha)
+                animation:SetStartDelay(delay)
+                animation:SetDuration(duration)
+
+                sequence:Restart()
+            end
+
+            self[frame] = func
+            return func
+        end
+    })
+
+    function Addon:StopFade(frame)
+        local sequence = sequences[frame]
+        if sequence then
+            sequence.alpha = nil
+            sequence:Stop()
+        end
+    end
+end
+
+-- debounce
+function Addon:Debounce(func, delay, ...)
+    delay = delay or 0
+
+    local argCount = select("#", ...)
+    local callback
+
+    if argCount == 0 then
+        callback = func
+    elseif argCount == 1 then
+        local arg = ...
+        callback = function() func(arg) end
+    else
+        local args = { ... }
+        callback = function() func(unpack(args)) end
+    end
+
+    local timer
+    return function()
+        if timer then
+            timer:Cancel()
+        end
+
+        timer = C_Timer.NewTimer(delay, callback)
+    end
+end
+
+-- blizzard anchors toasts to any shown externally anchored subsystem (group
+-- loot, talking head). put them back after the fact: editing the subsystem
+-- priorities would taint UpdateAnchors
+do
+    local redirected = {}
+    local hooked = false
+
+    local function isAnyRedirectedFrameShown()
+        for frame in pairs(redirected) do
+            if frame:IsShown() then
+                return true
+            end
+        end
+        return false
+    end
+
+    local function onUpdateAnchors(container)
+        if not isAnyRedirectedFrameShown() then return end
+
+        -- mirrors UpdateAnchors, skipping redirected frames. the account store
+        -- and trading post move the start of the chain
+        local relative = container.baseAnchorFrame or container
+
+        for _, subSystem in ipairs(container.alertFrameSubSystems) do
+            local pool = subSystem.alertFramePool
+
+            if pool then
+                for alert in pool:EnumerateActive() do
+                    local point, relativeTo, relativePoint, x, y = alert:GetPoint(1)
+
+                    if redirected[relativeTo] then
+                        alert:SetPoint(point, relative, relativePoint, x, y)
+                    end
+
+                    relative = alert
+                end
+            else
+                local anchor = subSystem.anchorFrame
+
+                if anchor and anchor:IsShown() and not redirected[anchor]
+                    and (not anchor.IsInDefaultPosition or anchor:IsInDefaultPosition()) then
+                    relative = anchor
+                end
+            end
+        end
+    end
+
+    function Addon:SetAlertAnchorRedirect(frame, enable)
+        if not (frame and AlertFrame and AlertFrame.alertFrameSubSystems) then
+            return
+        end
+
+        redirected[frame] = enable and true or nil
+
+        if enable and not hooked then
+            hooked = true
+            hooksecurefunc(AlertFrame, 'UpdateAnchors', onUpdateAnchors)
+        end
+
+        if enable then
+            onUpdateAnchors(AlertFrame)
+        end
+    end
+end

@@ -1,0 +1,17 @@
+{
+  "phase": "27.1",
+  "steps": [49, 50],
+  "status": "PASS",
+  "finalMajor": 0,
+  "finalModerate": 0,
+  "sdkVersion": "10.0.201",
+  "probeRuntimeVersion": "10.0.5",
+  "probeExeBytes": 51675286,
+  "probeExeSha256": "049EA37B46A885866F1C6BEEDDB95075080BF1E95EBD5D864CCF5A1CF748B8CA",
+  "standaloneProbeExecuted": true,
+  "approvedInstallerVariants": ["pitbull4", "fuf"],
+  "contract": "../../Collection/Installer/Contract.md",
+  "cleanWindowsObserved": false,
+  "productInstallerExecuted": false,
+  "next": 51
+}

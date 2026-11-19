@@ -1,0 +1,11 @@
+{
+  "model": "panel RGBA * theme tint over pure-white world; no user color override",
+  "worst_background_luminance": 0.025488000056441536,
+  "ratios": {
+    "normal": 12.679,
+    "highlight": 12.255,
+    "disabled": 7.13,
+    "border": 4.797
+  },
+  "live_game_font_or_channel_color_verification": false
+}

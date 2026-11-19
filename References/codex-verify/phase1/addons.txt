@@ -1,0 +1,16 @@
+!BugGrabber
+!KalielsTracker
+BugSack
+Details
+Details_Compare2
+Details_DataStorage
+Details_EncounterDetails
+Details_RaidCheck
+Details_Streamer
+Details_TinyThreat
+Details_Vanguard
+Mapster
+TipTac
+TipTacItemRef
+TipTacOptions
+TipTacTalents

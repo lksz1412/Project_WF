@@ -1,0 +1,394 @@
+{
+  "archive": "DevilForever-0.1.0-one-session.zip",
+  "sha256": "e4f989f9c2f1b134a38dc68b56f8e8a78f0121c43630b023563b577ed010ef74",
+  "members": {
+    "Interface/AddOns/DevilForever_Appearance/Media/metal.tga": "3dc3f17f0c6038bcf96aadfb1fc006fb264e891ae3ae57e53fa10a60d5f3ca74",
+    "Interface/AddOns/DevilForever_Appearance/Themes/alliance/divider.tga": "30bdf15546449b0c2b59603d59880d2580f75c4913b401134502e533ccda2f3f",
+    "Interface/AddOns/DevilForever_Appearance/Themes/alliance/left_cap.tga": "e02cf332664002235a32015d306393d28610eeda66607f25ad3396af3d53bfef",
+    "Interface/AddOns/DevilForever_Appearance/Themes/alliance/panel.tga": "ca536569a72dd91f82b738c28f1d89f4e0db4408b59ffe0b1e5e0cfa349a76f2",
+    "Interface/AddOns/DevilForever_Appearance/Themes/alliance/right_cap.tga": "a67514f4f75b09c3463a0c98d779594b98f068ba6bde40ff3b485cba0959eea5",
+    "Interface/AddOns/DevilForever_Appearance/Themes/alliance/statusbar.tga": "93823f2d9d47c3ddfc849c1824131d4460e5788acb7a9ac566dff3ee03370b8d",
+    "Interface/AddOns/DevilForever_Appearance/Themes/devil/divider.tga": "5830b50945af3cfd9f7868af75e7b9ac6b5faedaa0a819f629c53815a4961a72",
+    "Interface/AddOns/DevilForever_Appearance/Themes/devil/left_cap.tga": "354a8f8972f94fe21bd9c50ba8b29a7a9d6c35b6ec827e6c35b9e729405853e3",
+    "Interface/AddOns/DevilForever_Appearance/Themes/devil/panel.tga": "98f60e37e07cbdfcc64486435de400e12bdd5ca2cbffbb517a6f9979b8a8867e",
+    "Interface/AddOns/DevilForever_Appearance/Themes/devil/right_cap.tga": "ed8c195e618b488f18e4c275b9265beb87083889aaad4f7b2600bca1c682f117",
+    "Interface/AddOns/DevilForever_Appearance/Themes/devil/statusbar.tga": "7c531d38325d8823df4eadfcb1b58b6afc3518d6a317b03af15a44cdfe4fd478",
+    "Interface/AddOns/DevilForever_Appearance/Themes/horde/divider.tga": "4ad3831ca1f1801ca9a14a514c046806199670a6649d153630b28c5f136fac10",
+    "Interface/AddOns/DevilForever_Appearance/Themes/horde/left_cap.tga": "76f3bfd4df04f3a5da4c23f4d31330d38e91801be4dae459b8b44d8bb25e1b9d",
+    "Interface/AddOns/DevilForever_Appearance/Themes/horde/panel.tga": "4cb5590de87842d0ad44035b5326a3b06c194e205b766cec89dd3644bffe0692",
+    "Interface/AddOns/DevilForever_Appearance/Themes/horde/right_cap.tga": "e1b25fc771ce06fef6502c1a4d04173c6d84deb680d4c5034d8479ae275a6867",
+    "Interface/AddOns/DevilForever_Appearance/Themes/horde/statusbar.tga": "e19f531b283f4104eb90e7ba0a3a9cc6720fd889f0a45e8b434d0c1581272788",
+    "Interface/AddOns/ForeverUnitFrames/Media/Square.tga": "61f41c08e649545b14cdc226c9e26bc4f4f061f357150cf7e7ac1250dc2c5c7f",
+    "Interface/AddOns/Masque_Onyx/Textures/Base/Frame.tga": "7947a29a80c8b47f30dc4301ab421645f0d26cbd0b23ef68fdc41de38a14ae04",
+    "Interface/AddOns/PitBull4/Modules/ComboPoints/default.tga": "952668fc5a69a27de40125c1966da9a3eb6ba293f11ac849d084d35414d2d26b"
+  },
+  "installed_geometry": {
+    "layouts": {
+      "fhd": {
+        "units": {
+          "player": [
+            438,
+            620,
+            240,
+            48
+          ],
+          "target": [
+            338,
+            680,
+            340,
+            56
+          ],
+          "pet": [
+            218,
+            450,
+            240,
+            32
+          ],
+          "petTarget": [
+            218,
+            420,
+            240,
+            24
+          ],
+          "focus": [
+            70,
+            628,
+            240,
+            40
+          ],
+          "focusTarget": [
+            224,
+            548,
+            240,
+            28
+          ],
+          "targettarget": [
+            690,
+            570,
+            160,
+            28
+          ],
+          "targettargettarget": [
+            860,
+            570,
+            140,
+            28
+          ]
+        },
+        "appearance": {
+          "player": {
+            "padding": 1,
+            "spacing": 1,
+            "font_px": 16.0,
+            "power": true,
+            "material": "Devil Forever devil"
+          },
+          "target": {
+            "padding": 1,
+            "spacing": 1,
+            "font_px": 16.0,
+            "power": true,
+            "material": "Devil Forever devil"
+          },
+          "pet": {
+            "padding": 1,
+            "spacing": 1,
+            "font_px": 16.0,
+            "power": true,
+            "material": "Devil Forever devil"
+          },
+          "petTarget": {
+            "padding": 1,
+            "spacing": 1,
+            "font_px": 16.0,
+            "power": false,
+            "material": "Devil Forever devil"
+          },
+          "focus": {
+            "padding": 1,
+            "spacing": 1,
+            "font_px": 16.0,
+            "power": true,
+            "material": "Devil Forever devil"
+          },
+          "focusTarget": {
+            "padding": 1,
+            "spacing": 1,
+            "font_px": 16.0,
+            "power": false,
+            "material": "Devil Forever devil"
+          },
+          "targettarget": {
+            "padding": 1,
+            "spacing": 1,
+            "font_px": 16.0,
+            "power": false,
+            "material": "Devil Forever devil"
+          },
+          "targettargettarget": {
+            "padding": 1,
+            "spacing": 1,
+            "font_px": 16.0,
+            "power": false,
+            "material": "Devil Forever devil"
+          }
+        },
+        "pet_actions": {
+          "rect": [
+            218,
+            490,
+            238,
+            22
+          ],
+          "columns": 10,
+          "gap": 2
+        },
+        "preset_sha256": "54d0a9f351c56a65e73fa0392144e39fa09806fd62eee68ba7010a30ec3c767c"
+      },
+      "qhd": {
+        "units": {
+          "player": [
+            690,
+            908,
+            280,
+            56
+          ],
+          "target": [
+            570,
+            980,
+            400,
+            64
+          ],
+          "pet": [
+            256,
+            764,
+            280,
+            40
+          ],
+          "petTarget": [
+            256,
+            738,
+            280,
+            24
+          ],
+          "focus": [
+            274,
+            908,
+            280,
+            48
+          ],
+          "focusTarget": [
+            274,
+            866,
+            260,
+            30
+          ],
+          "targettarget": [
+            990,
+            864,
+            160,
+            32
+          ],
+          "targettargettarget": [
+            1158,
+            864,
+            160,
+            32
+          ]
+        },
+        "appearance": {
+          "player": {
+            "padding": 1,
+            "spacing": 1,
+            "font_px": 18.0,
+            "power": true,
+            "material": "Devil Forever devil"
+          },
+          "target": {
+            "padding": 1,
+            "spacing": 1,
+            "font_px": 18.0,
+            "power": true,
+            "material": "Devil Forever devil"
+          },
+          "pet": {
+            "padding": 1,
+            "spacing": 1,
+            "font_px": 18.0,
+            "power": true,
+            "material": "Devil Forever devil"
+          },
+          "petTarget": {
+            "padding": 1,
+            "spacing": 1,
+            "font_px": 18.0,
+            "power": false,
+            "material": "Devil Forever devil"
+          },
+          "focus": {
+            "padding": 1,
+            "spacing": 1,
+            "font_px": 18.0,
+            "power": true,
+            "material": "Devil Forever devil"
+          },
+          "focusTarget": {
+            "padding": 1,
+            "spacing": 1,
+            "font_px": 18.0,
+            "power": false,
+            "material": "Devil Forever devil"
+          },
+          "targettarget": {
+            "padding": 1,
+            "spacing": 1,
+            "font_px": 18.0,
+            "power": false,
+            "material": "Devil Forever devil"
+          },
+          "targettargettarget": {
+            "padding": 1,
+            "spacing": 1,
+            "font_px": 18.0,
+            "power": false,
+            "material": "Devil Forever devil"
+          }
+        },
+        "pet_actions": {
+          "rect": [
+            256,
+            806,
+            278,
+            26
+          ],
+          "columns": 10,
+          "gap": 2
+        },
+        "preset_sha256": "febb896fcbf5d17a7f50aead01220ac8bdd1ff13882d09f4f31c642fc341a324"
+      },
+      "uhd": {
+        "units": {
+          "player": [
+            1080,
+            1440,
+            390,
+            72
+          ],
+          "target": [
+            916,
+            1536,
+            554,
+            84
+          ],
+          "pet": [
+            212,
+            1514,
+            360,
+            42
+          ],
+          "petTarget": [
+            212,
+            1470,
+            360,
+            34
+          ],
+          "focus": [
+            580,
+            1440,
+            320,
+            56
+          ],
+          "focusTarget": [
+            580,
+            1400,
+            280,
+            32
+          ],
+          "targettarget": [
+            1480,
+            1390,
+            190,
+            36
+          ],
+          "targettargettarget": [
+            1678,
+            1390,
+            190,
+            36
+          ]
+        },
+        "appearance": {
+          "player": {
+            "padding": 1,
+            "spacing": 1,
+            "font_px": 22.0,
+            "power": true,
+            "material": "Devil Forever devil"
+          },
+          "target": {
+            "padding": 1,
+            "spacing": 1,
+            "font_px": 22.0,
+            "power": true,
+            "material": "Devil Forever devil"
+          },
+          "pet": {
+            "padding": 1,
+            "spacing": 1,
+            "font_px": 22.0,
+            "power": true,
+            "material": "Devil Forever devil"
+          },
+          "petTarget": {
+            "padding": 1,
+            "spacing": 1,
+            "font_px": 22.0,
+            "power": false,
+            "material": "Devil Forever devil"
+          },
+          "focus": {
+            "padding": 1,
+            "spacing": 1,
+            "font_px": 22.0,
+            "power": true,
+            "material": "Devil Forever devil"
+          },
+          "focusTarget": {
+            "padding": 1,
+            "spacing": 1,
+            "font_px": 22.0,
+            "power": false,
+            "material": "Devil Forever devil"
+          },
+          "targettarget": {
+            "padding": 1,
+            "spacing": 1,
+            "font_px": 22.0,
+            "power": false,
+            "material": "Devil Forever devil"
+          },
+          "targettargettarget": {
+            "padding": 1,
+            "spacing": 1,
+            "font_px": 22.0,
+            "power": false,
+            "material": "Devil Forever devil"
+          }
+        },
+        "pet_actions": {
+          "rect": [
+            212,
+            1564,
+            358,
+            34
+          ],
+          "columns": 10,
+          "gap": 2
+        },
+        "preset_sha256": "8d7dcb03587a9a152b4947c29ba8a328891060c918b2fc3bf275d59d991bfd26"
+      }
+    },
+    "pitbull_unitframe_sha256": "1dc3930da3e335c6218cc4f31c6586483046e1f5657d44c898097a57160c21db"
+  },
+  "unpacked_client_assets": []
+}

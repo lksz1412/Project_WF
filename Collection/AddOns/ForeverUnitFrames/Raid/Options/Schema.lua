@@ -1,0 +1,277 @@
+local _, ns = ...
+
+-- The raid options window's menu (Raid/Options/Window.lua) and the raid
+-- pages of the wiki (tools/make_wiki.lua): tabs, their sections and the
+-- raid settings in them, and the words for all of it. Every raid setting
+-- is in exactly one section of a settings tab (a custom tab has none), except sizeMode, which the window's header
+-- bar holds. The words are the raid's own (RAID_SETTING_<key>, ...): a
+-- raid key may share its name with a unit-frame setting of another
+-- meaning.
+local Schema = {}
+ns.RaidSchema = Schema
+
+local L = ns.L
+
+-- The settings of one corner indicator position.
+local function indicator(name)
+    local key = "indicator" .. name
+    return { id = key, keys = { key .. "Spells", key .. "Color", key .. "Size", key .. "Own", key .. "Time" } }
+end
+
+-- One icon: its switch and its point.
+local function icon(id, key, extra)
+    local keys = { key, key .. "Point" }
+    if extra then keys[#keys + 1] = extra end
+    return { id = id, keys = keys }
+end
+
+-- One section per special panel (Raid.PANELS), its settings in their
+-- order.
+local function panelSections()
+    local list = {}
+    for _, p in ipairs(ns.Raid.PANELS) do list[#list + 1] = { id = p.id, keys = p.keys } end
+    return list
+end
+
+-- One section per own panel (Raid.OWN_PANELS), its settings in their
+-- order; every section alike (the wiki shows one).
+local function ownPanelSections()
+    local list = {}
+    for _, p in ipairs(ns.Raid.OWN_PANELS) do list[#list + 1] = { id = p.id, keys = p.keys } end
+    return list
+end
+
+-- Click-casting: the switches, a section per mouse button with its
+-- slots, then the keys (each key and its binding).
+local function clickCastSections()
+    -- The party's switch is the unit frames' clickCast now (decision 76).
+    local list = { { id = "clickCastGeneral", keys = { "clickCast" } } }
+    for _, b in ipairs(ns.Raid.CLICK_BUTTONS) do
+        local keys = {}
+        for _, slot in ipairs(ns.Raid.CLICK_SLOTS) do
+            if slot.button == b.button then keys[#keys + 1] = slot.key end
+        end
+        list[#list + 1] = { id = "click" .. b.name, keys = keys }
+    end
+    local keys = {}
+    for _, slot in ipairs(ns.Raid.CLICK_KEYS) do
+        keys[#keys + 1] = slot.key
+        keys[#keys + 1] = slot.bind
+    end
+    list[#list + 1] = { id = "clickKeys", keys = keys }
+    return list
+end
+
+-- The buffs' switches in the table's order, the blessings' last.
+local function buffKeys()
+    local keys = {}
+    for _, buff in ipairs(ns.RaidBuffData.BUFFS) do keys[#keys + 1] = buff.key end
+    keys[#keys + 1] = ns.RaidBuffData.BLESSINGS_KEY
+    return keys
+end
+
+-- The size's tabs first (General's switches belong to the character),
+-- the panels after the cells, then the character's own tabs
+-- (Schema.PerCharacter: the window dims the size tabs there).
+Schema.TABS = {
+    -- The switches only; the templates are on the Profiles page.
+    { id = "general", sections = {
+        { id = "raidFrames", keys = { "enabled", "showInParty", "hideBlizzard" } },
+        { id = "minimap", keys = { "minimapShow", "minimapAngle" } },
+        { id = "appearance", keys = { "cellTheme", "frameAlpha" } },
+    } },
+    -- Heals, shields and the power strip keep the unit frames' shipped
+    -- colours (Raid/Cell.lua): the note says so.
+    { id = "cell", note = "cell", sections = {
+        { id = "size", keys = { "cellWidth", "cellHeight" } },
+        { id = "bars", keys = { "healthColorMode", "healthColor", "barTexture", "backgroundColor", "powerStrip",
+            "powerStripHeight" } },
+        { id = "cellShape", keys = { "cellBorder", "cellBorderStyle", "cellBorderSize", "cellBorderColor",
+            "cellCornerRadius" } },
+        { id = "heals", keys = { "healPrediction", "overheal", "absorbs", "combatText" } },
+    } },
+    { id = "texts", sections = {
+        { id = "texts", keys = { "nameClassColor", "nameColor", "secondLine", "secondLineColor" } },
+        { id = "fonts", keys = { "fontFace", "nameFontSize", "secondFontSize", "fontOutline", "fontShadow" } },
+    } },
+    { id = "debuffs", sections = {
+        { id = "dispel", keys = { "dispelIcon", "dispelFilter", "dispelStyle", "dispelIconSize", "dispelSquarePoint",
+            "dispelSquareSize", "dispelTint", "dispelBorder", "dispelBorderSize", "dispelPulse" } },
+        { id = "debuffRow", keys = { "debuffRow", "debuffCount", "debuffSize" } },
+        -- The spells this size hides (with the unit frames' account list).
+        { id = "auraBlock", keys = { "auraBlock" } },
+    } },
+    { id = "indicators", sections = {
+        indicator("TopLeft"), indicator("TopRight"), indicator("BottomLeft"), indicator("BottomRight"),
+        indicator("Top"),
+    } },
+    { id = "icons", sections = {
+        { id = "icons", keys = { "iconSize" } },
+        icon("role", "roleIcon", "roleIconDamager"),
+        icon("raidMarker", "raidMarker"),
+        icon("leader", "leaderIcon"),
+        icon("looter", "looterIcon"),
+        icon("readyCheck", "readyCheckIcon"),
+        icon("summon", "summonIcon"),
+        icon("phase", "phaseIcon"),
+        { id = "states", keys = { "rangeFade", "rangeAlpha", "aggroBorder", "targetBorder", "hoverHighlight" } },
+    } },
+    { id = "layout", sections = {
+        { id = "grouping", keys = { "groupBy", "sortBy", "classOrder", "hideEmpty", "blockTitles" } },
+        { id = "arrangement", keys = { "blockDirection", "blocksPerLine", "blockSpacing", "cellGrowth",
+            "cellsPerLine", "cellSpacing" } },
+        { id = "position", keys = { "x", "y" } },
+        { id = "borders", keys = { "panelBorder", "blockBorder" } },
+    } },
+    -- The special panels; the note says who is in them.
+    { id = "panels", note = "panels", sections = panelSections() },
+    -- The own panels: the window's board of panels and blocks
+    -- (Raid/Options/Arrangement.lua), then each shown panel's settings.
+    { id = "arrangement", custom = "arrangement", note = "arrangement", alike = true, sections = ownPanelSections() },
+    -- Click-casting, per character (Raid/Options/ClickCast.lua builds the
+    -- page: a binding and its value per row).
+    { id = "clickCast", custom = "clickCast", note = "clickCast", sections = clickCastSections() },
+    -- The buff watch, per character: the note says that buffing waits
+    -- for the end of combat and which buffs are offered.
+    { id = "buffs", note = "buffs", sections = {
+        { id = "buffsWatched", keys = buffKeys() },
+        { id = "blessings", keys = ns.Raid.BLESSING_KEYS },
+        { id = "buffRules", keys = { "buffExpiring", "buffGroupMin", "buffKey", "buffSolo" } },
+        { id = "buffWindow", keys = { "buffWatchShow", "buffWatchOnlyMissing", "buffWatchX", "buffWatchY" } },
+        { id = "buffCell", keys = { "buffCellIcon", "buffCellIconPoint" } },
+    } },
+    -- The raid tools bar: where it is, which tools it holds; the note says
+    -- who sees which.
+    { id = "tools", note = "tools", sections = {
+        { id = "toolsBar", keys = { "toolsShow", "toolsMode", "toolsOpen", "toolsX", "toolsY" } },
+        { id = "toolsList", keys = { "toolsTargets", "toolsReady", "toolsMarkers", "toolsRolePoll", "toolsAssist",
+            "toolsConvert", "toolsLoot" } },
+    } },
+}
+
+-- Held by the header bar, not by a tab.
+Schema.HEADER_KEYS = { "sizeMode" }
+
+-- Settings that share their words: the five indicator positions (the
+-- section names the position), the icons' switches and points (the
+-- section names the icon), the special panels' settings (the section
+-- names the panel; their layout has the main panel's words), the own
+-- panels' settings (likewise).
+local SHARED = {}
+for _, ind in ipairs(ns.Raid.INDICATORS) do
+    for _, part in ipairs({ "Spells", "Color", "Size", "Own", "Time" }) do
+        SHARED["indicator" .. ind.name .. part] = "indicator" .. part
+    end
+end
+for _, key in ipairs({ "roleIcon", "raidMarker", "leaderIcon", "looterIcon", "readyCheckIcon", "summonIcon", "phaseIcon" }) do
+    SHARED[key], SHARED[key .. "Point"] = "iconShow", "iconPoint"
+end
+local PANEL_WORDS = { Show = "panelShow", Title = "panelTitle", PerLine = "cellsPerLine", Growth = "cellGrowth",
+    X = "x", Y = "y" }
+for _, p in ipairs(ns.Raid.PANELS) do
+    for part, wordKey in pairs(PANEL_WORDS) do SHARED[p.id .. part] = wordKey end
+    if p.names then SHARED[p.names] = "nameList" end
+end
+SHARED.petsCellHeight = "cellHeight"
+-- The own panels' settings: the main panel's words for its layout and
+-- position, the special panels' for being shown.
+local OWN_WORDS = { Show = "panelShow", GroupBy = "groupBy", Blocks = "ownBlocks", Title = "ownTitle" }
+for _, p in ipairs(ns.Raid.OWN_PANELS) do
+    for _, entry in ipairs(ns.Raid.OWN_PANEL_PARTS) do
+        SHARED[p.id .. entry.part] = entry.like or OWN_WORDS[entry.part]
+    end
+end
+SHARED.toolsX, SHARED.toolsY = "x", "y"
+SHARED.buffWatchX, SHARED.buffWatchY = "x", "y"
+-- The blessings: one word for their choices; each row is named by its
+-- class (Schema.Label).
+for _, key in ipairs(ns.Raid.BLESSING_KEYS) do SHARED[key] = "blessing" end
+-- Click-casting: a mouse slot by its modifiers (the section names the
+-- button), a key slot's key and binding alike for every slot.
+for _, slot in ipairs(ns.Raid.CLICK_SLOTS) do
+    SHARED[slot.key] = "click" .. (slot.modifiers == "" and "Plain" or slot.modifiers)
+end
+for _, slot in ipairs(ns.Raid.CLICK_KEYS) do
+    SHARED[slot.key], SHARED[slot.bind] = "clickKey", "clickKeyBind"
+end
+
+-- The name a setting's words go by.
+function Schema.WordKey(key)
+    return SHARED[key] or key
+end
+
+local function word(prefix, key)
+    local name = prefix .. key
+    local v = L[name]
+    if v ~= name then return v end
+    return nil
+end
+
+-- A blessing's row: the client's name of the class.
+local function className(key)
+    local class = key:match("^blessing(%u+)$")
+    local names = class and rawget(_G, "LOCALIZED_CLASS_NAMES_MALE")
+    local name = type(names) == "table" and names[class]
+    return type(name) == "string" and name or class
+end
+
+function Schema.Label(key)
+    if ns.RaidSettings.Get(key) and SHARED[key] == "blessing" then return className(key) end
+    return word("RAID_SETTING_", Schema.WordKey(key)) or key
+end
+function Schema.Hint(key) return word("RAID_HINT_", Schema.WordKey(key)) end
+function Schema.SectionTitle(id) return word("RAID_SECTION_", id) or id end
+function Schema.TabTitle(id) return word("RAID_TAB_", id) or id end
+function Schema.Note(id) return word("RAID_NOTE_", id) end
+
+-- Whether every setting of a tab belongs to the character (the same at
+-- every size); a tab without settings does not.
+function Schema.PerCharacter(tab)
+    local any = false
+    for _, sec in ipairs(tab.sections) do
+        for _, key in ipairs(sec.keys) do
+            if ns.RaidSettings.Get(key).scope ~= "general" then return false end
+            any = true
+        end
+    end
+    return any
+end
+
+-- What a binding (Raid.ParseBinding) does, in words: the kind's, and the
+-- value after it ("Cast a spell: Renew", "Cast a spell: Renew (Rank 3)");
+-- nil for no binding. key: the
+-- setting it is for (optional): an empty modified mouse slot does what
+-- the plain click does (the client's fallback), and says so.
+function Schema.KindText(kind, key)
+    if kind == "" then
+        local slot = key and ns.Raid.CLICK_SLOT_BY_KEY[key]
+        if slot and slot.prefix ~= "*" then return L.RAID_CLICK_LIKE_PLAIN end
+        return L.RAID_CLICK_NOTHING
+    end
+    return word("RAID_CLICK_", kind) or kind
+end
+-- A spell's words: its name; a fixed rank (a spell ID) with the spell
+-- book's rank text ("Renew (Rank 3)"), read when shown, its ID while the
+-- text is not loaded; the ID's name when that rank is no longer learned.
+local function spellText(value)
+    if not value:match("^%d+$") then return value end
+    local id = tonumber(value)
+    local spell, rank = ns.RaidSpellbook.FriendlyRank(id)
+    if not spell then return ns.ClickCast.SpellName(id) or value end
+    local text = ns.RaidSpellbook.RankText(spell, rank) or value
+    if text == "" then return spell.name end
+    return spell.name .. " (" .. text .. ")"
+end
+function Schema.BindingText(text, key)
+    local kind, value = ns.Raid.ParseBinding(text)
+    if kind == nil then return nil end
+    if value == nil or value == "" then return Schema.KindText(kind, key) end
+    if kind == "spell" then value = spellText(value) end
+    return Schema.KindText(kind, key) .. ": " .. value
+end
+
+-- A choice of an enum: the raid's own word, else the unit frames' (the
+-- nine points).
+function Schema.EnumText(def, value)
+    return word("RAID_ENUM_" .. Schema.WordKey(def.key) .. "_", value) or word("ENUM_", value) or value
+end

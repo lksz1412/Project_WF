@@ -1,0 +1,32 @@
+# Devil Forever 전면 재검토와 Windows 설치기 계획 이력
+
+## Phase 26.1까지
+
+| 날짜 | 변경 |
+|---|---|
+| 2026-11-19 | 기존 Phase 25의 완료·대기 범위를 보존하고 이후 작업을 제안. 두 참고 프로젝트의 설치 흐름과 Python 없는 실행 방향 반영 |
+| 2026-11-19 | 초안 독립 검수에서 확인한 결함 수정·재검 단계 부재를 보완. 전면 재검토 수용 뒤 설치 계약을 확정. 새 범위 Step 44–58 |
+| 2026-11-19 | R150에 따라 Phase 26.1 세부계획과 Phase 27.1 설치 계약을 구체화. Windows 11 x64 오프라인을 첫판 작업 기준으로 채택 |
+| 2026-11-19 | R151 실행 승인. Step 44 착수 후 Phase 26.2의 기능별 반증 조건과 배포 기준 수용 조건을 세부계획에 기록 |
+
+Step 44–45는 2026-11-19에 통과했다. 현재 작업 트리로 다시 만든 ZIP 세 벌을 Step 40 보존본과 비교해 기존 출발점을 고정했다. 변경한 코드가 들어간 새 배포 기준은 Step 48에서 확정한다. [Phase 26.1 결과](../results/PHASE_26.1_audit-baseline_RESULT.md)
+
+## Phase 26.2까지
+
+2026-11-19 Step 46–48 통과. 채팅 보존·재배치, FUF 비교 프로필 실행과 현행 기능 지도를 보정했다. 기본판·대체판을 설치기의 승인 입력으로 확정하고 비교판과 실제 게임 확인을 Step 41에 연결했다. [Phase 26.2 결과](../results/PHASE_26.2_functional-audit_RESULT.md)
+
+## Phase 27.1까지
+
+2026-11-19 Step 49–50 통과. Windows x64 자체 포함 시험, ZIP 승인·미리보기·관리 기록·복원 계약을 확정했다. 실제 구현과 일반 PC 검증은 다음 단계에서 진행한다. [Phase 27.1 결과](../results/PHASE_27.1_windows-installer-contract_RESULT.md)
+
+## Phase 27.2까지
+
+2026-11-19 Step 51–52 통과. 승인 두 단독 ZIP의 파일 설치·전환, 검증·제거·복원과 중단 뒤 처리까지 공통 엔진을 실제 공개 명령으로 확인했다. Windows 화면과 배포는 해당 엔진을 사용한다. [Phase 27.2 결과](../results/PHASE_27.2_windows-file-engine_RESULT.md)
+
+## Phase 27.3까지
+
+2026-11-19 Step 53–54 통과. 실제 Windows 화면과 공개 명령을 연결하고 x64 단일 실행 파일, 기본 PitBull4 ZIP과 안내를 로컬 폴더에 빌드했다. 동일 실행 파일의 전체 해시를 두 번 확인했다. [Phase 27.3 결과](../results/PHASE_27.3_windows-ui-package_RESULT.md)
+
+## Phase 28 로컬 결과까지
+
+2026-11-19 Step 55 통과, Step 56 현재 PC 격리 통과, Step 58 로컬 전달 파일 대조 완료. Step 56의 별도 청정 Windows 및 Step 57의 승인된 실제 게임 관측 뒤 최종 수용을 판단한다. [배포본 검증](../results/PHASE_28.1_local-windows-verification_RESULT.md) · [로컬 시험판](../results/PHASE_28.2_local-trial-delivery_RESULT.md)

@@ -1,0 +1,7 @@
+## Interface: 16001
+## Title: DevilForever Status Strip Skin
+## Notes: Theme and layout values for the status strip.
+## Version: 0.1.0
+## Dependencies: !DevilForever_Core, DevilForever_StatusStrip, DevilForever_Appearance
+
+Skin.lua

@@ -34,7 +34,7 @@ if not profileKey then
   return
 end
 
-DevilForever_Core.Defaults:Register("SexyMap", {
+local spec = {
   version = 1,
   targets = {
     {
@@ -67,7 +67,7 @@ DevilForever_Core.Defaults:Register("SexyMap", {
               MinimapZoomOut = "never",
               MiniMapWorldMapButton = "never",
               SexyMapZoneTextButton = "always",
-              TimeManagerClockButton = "always",
+              TimeManagerClockButton = "never",
               MiniMapMailFrame = "always",
               CraftingOrder = "always",
               ExpansionLandingPageMinimapButton = "hover",
@@ -82,4 +82,82 @@ DevilForever_Core.Defaults:Register("SexyMap", {
       },
     },
   },
-})
+}
+
+local appearance = {
+  fhd = function()
+-- Appearance body for a newly created native SexyMap profile through Defaults.
+local ui = UIParent and UIParent:GetEffectiveScale()
+local factor = PixelUtil and PixelUtil.GetPixelToUIUnitFactor and PixelUtil.GetPixelToUIUnitFactor()
+if type(factor) ~= "number" or factor <= 0 then
+  local _, height = GetPhysicalScreenSize()
+  local logical = UIParent and UIParent:GetHeight()
+  if type(height) == "number" and height > 0 and type(logical) == "number" and logical > 0
+      and type(ui) == "number" and ui > 0 then factor = logical * ui / height end
+end
+local pixel = type(factor) == "number" and factor > 0 and type(ui) == "number" and ui > 0 and factor / ui
+if not pixel then
+  DevilForever_Core:Log("skip", "SexyMap appearance", "UI scale unavailable at defaults registration")
+  return {}
+end
+local effective = 192 / 140
+return {core = {shape = 130871, point = "TOPLEFT", relpoint = "TOPLEFT", x = 1292 / effective, y = -860 / effective, scale = effective * pixel}}
+  end,
+  qhd = function()
+-- Appearance body for a newly created native SexyMap profile through Defaults.
+local ui = UIParent and UIParent:GetEffectiveScale()
+local factor = PixelUtil and PixelUtil.GetPixelToUIUnitFactor and PixelUtil.GetPixelToUIUnitFactor()
+if type(factor) ~= "number" or factor <= 0 then
+  local _, height = GetPhysicalScreenSize()
+  local logical = UIParent and UIParent:GetHeight()
+  if type(height) == "number" and height > 0 and type(logical) == "number" and logical > 0
+      and type(ui) == "number" and ui > 0 then factor = logical * ui / height end
+end
+local pixel = type(factor) == "number" and factor > 0 and type(ui) == "number" and ui > 0 and factor / ui
+if not pixel then
+  DevilForever_Core:Log("skip", "SexyMap appearance", "UI scale unavailable at defaults registration")
+  return {}
+end
+local effective = 224 / 140
+return {core = {shape = 130871, point = "TOPLEFT", relpoint = "TOPLEFT", x = 1720 / effective, y = -1186 / effective, scale = effective * pixel}}
+  end,
+  uhd = function()
+-- Appearance body for a newly created native SexyMap profile through Defaults.
+local ui = UIParent and UIParent:GetEffectiveScale()
+local factor = PixelUtil and PixelUtil.GetPixelToUIUnitFactor and PixelUtil.GetPixelToUIUnitFactor()
+if type(factor) ~= "number" or factor <= 0 then
+  local _, height = GetPhysicalScreenSize()
+  local logical = UIParent and UIParent:GetHeight()
+  if type(height) == "number" and height > 0 and type(logical) == "number" and logical > 0
+      and type(ui) == "number" and ui > 0 then factor = logical * ui / height end
+end
+local pixel = type(factor) == "number" and factor > 0 and type(ui) == "number" and ui > 0 and factor / ui
+if not pixel then
+  DevilForever_Core:Log("skip", "SexyMap appearance", "UI scale unavailable at defaults registration")
+  return {}
+end
+local effective = 304 / 140
+return {core = {shape = 130871, point = "TOPLEFT", relpoint = "TOPLEFT", x = 2596 / effective, y = -1820 / effective, scale = effective * pixel}}
+  end,
+}
+
+local layout = appearance[Core.Presets:PickForScreen()]
+if layout then
+  local ok, proposed = pcall(layout)
+  if ok and type(proposed) == "table" then
+    local profile = spec.targets[1].values[profileKey]
+    for field, value in pairs(proposed and proposed.core or {}) do
+      profile.core[field] = value
+    end
+    if proposed.core and proposed.core.shape then
+      profile.borders = {hideBlizzard = true, borders = {}, applyPreset = false,
+        backdrop = {scale = 1, show = false, textureColor = {}, borderColor = {}, settings = {
+          bgFile = "Interface\\Tooltips\\UI-Tooltip-Background",
+          edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
+          insets = {left = 4, top = 4, right = 4, bottom = 4}, edgeSize = 16, tile = false}}}
+    end
+  elseif not ok then
+    Core:Log("skip", "Defaults:SexyMap", tostring(proposed))
+  end
+end
+Core.Defaults:Register("SexyMap", spec)

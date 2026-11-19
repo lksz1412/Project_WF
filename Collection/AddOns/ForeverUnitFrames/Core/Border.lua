@@ -1,0 +1,486 @@
+local _, ns = ...
+
+-- The outer border: a ring around a box, `borderPadding` away from it and
+-- `borderSize` thick. A unit frame's box takes in a docked castbar while
+-- it shows (Elements/Shape.lua), so frame, portrait and castbar sit in one
+-- border. Eight pieces: four edges and four corner squares. With rounded
+-- corners each corner square shows the outer arc as its texture
+-- (Corner.tga) and is masked once, by the inner arc (CornerInverse*.tga);
+-- both are centred where the box's own rounded corner is centred, so ring
+-- and box stay concentric. One mask per texture: the client allows three.
+-- The pieces are white; paint colours them with vertex colours.
+--
+-- Styles: FLAT is one colour (`borderColor`). GOLD and BRONZE are shaded
+-- like a bevel, lighter at the top and left, darker at the bottom and
+-- right, with a dark one-pixel line along the inside (a second, thin
+-- ring); they differ only in their shades (Border.SHADED). SHADED takes
+-- its shades from `borderColor` (Border.ShadesOf).
+--
+-- The drop shadow is a soft band around the ring (or the box, without a
+-- ring); nothing is drawn under the box, so translucent bars stay as they
+-- are. Its corner pieces reach in to the ring's rounded centre and come
+-- from Media/Shadow.tga (tools/make_shadow.py): one cell per ratio of
+-- radius to shadow size, so the fade always starts at the ring.
+local Border = {}
+ns.Border = Border
+
+local Config, Pixel = ns.Config, ns.Pixel
+
+Border.SHADOW = "Interface\\AddOns\\ForeverUnitFrames\\Media\\Shadow.tga"
+Border.GLOW = "Interface\\AddOns\\ForeverUnitFrames\\Media\\Glow.tga"
+local SHADOW_WIDTH, CELL, CELLS = 512, 32, 16
+-- Texture coordinates: half a texel inside a cell, so no neighbour bleeds.
+local HALF_U, HALF_V = 0.5 / SHADOW_WIDTH, 0.5 / CELL
+-- Cell 0's last column and bottom row: the plain fade the edges use.
+local EDGE_U, EDGE_V = (CELL - 0.5) / SHADOW_WIDTH, (CELL - 0.5) / CELL
+
+-- Gold shades. LIGHT and MID are Blizzard's own gold gradient (the
+-- animated dispel border, Blizzard_PrivateAurasUI.lua); SHADE, DARK and
+-- LINE are the same hue, darker.
+Border.GOLD = {
+    LIGHT = { 1, 1, 0.557, 1 },
+    MID = { 1, 0.792, 0.188, 1 },
+    SHADE = { 0.78, 0.59, 0.13, 1 },
+    DARK = { 0.55, 0.38, 0.07, 1 },
+    LINE = { 0.2, 0.12, 0.02, 1 },
+}
+-- Bronze: a browner, less saturated metal, closer to the frames of
+-- Blizzard's own UI; the same five steps from light to the inner line.
+Border.BRONZE = {
+    LIGHT = { 0.94, 0.78, 0.55, 1 },
+    MID = { 0.76, 0.56, 0.33, 1 },
+    SHADE = { 0.58, 0.41, 0.23, 1 },
+    DARK = { 0.39, 0.26, 0.13, 1 },
+    LINE = { 0.14, 0.09, 0.04, 1 },
+}
+-- The shaded styles and their shades; any other style is flat.
+Border.SHADED = { GOLD = Border.GOLD, BRONZE = Border.BRONZE }
+
+-- The own colour as the middle shade: lighter towards white above it,
+-- darker below, the inner line nearly black; its alpha is kept.
+Border.OWN_LIGHT, Border.OWN_SHADE, Border.OWN_DARK, Border.OWN_LINE = 0.45, 0.78, 0.55, 0.2
+function Border.ShadesOf(c)
+    local function scaled(f) return { c[1] * f, c[2] * f, c[3] * f, c[4] } end
+    local l = Border.OWN_LIGHT
+    return {
+        LIGHT = { c[1] + (1 - c[1]) * l, c[2] + (1 - c[2]) * l, c[3] + (1 - c[3]) * l, c[4] },
+        MID = scaled(1),
+        SHADE = scaled(Border.OWN_SHADE),
+        DARK = scaled(Border.OWN_DARK),
+        LINE = scaled(Border.OWN_LINE),
+    }
+end
+
+-- Outward direction of each corner (Corners.POINTS order).
+local OUT = { { -1, 1 }, { 1, 1 }, { -1, -1 }, { 1, -1 } }
+-- The corner opposite each corner (Corners.POINTS order).
+local INNER = { "BOTTOMRIGHT", "BOTTOMLEFT", "TOPRIGHT", "TOPLEFT" }
+
+-- Thickness on the pixel grid: at least one pixel unless the border is
+-- off (size 0 or hidden).
+function Border.Size(scope)
+    local size = Config.Get(scope, "borderSize")
+    if size <= 0 or not Config.Get(scope, "borderShow") then return 0 end
+    return Pixel.Snap(size, nil, 1)
+end
+
+function Border.Padding(scope)
+    local padding = Config.Get(scope, "borderPadding")
+    if padding <= 0 then return 0 end
+    return Pixel.Snap(padding, nil, 1)
+end
+
+-- How far the border reaches out from its box; 0 without a border.
+function Border.Extent(scope)
+    local size = Border.Size(scope)
+    if size == 0 then return 0 end
+    return Border.Padding(scope) + size
+end
+
+-- Shadow width on the pixel grid; 0 while the shadow is off.
+function Border.ShadowSize(scope)
+    if not Config.Get(scope, "shadowEnabled") then return 0 end
+    return Pixel.Snap(Config.Get(scope, "shadowSize"), nil, 1)
+end
+
+-- Ring ------------------------------------------------------------------------
+
+local function newRing(owner, sublevel)
+    local ring = { corners = {}, inner = {} }
+    for i = 1, 4 do
+        ring[i] = owner:CreateTexture(nil, "OVERLAY", nil, sublevel)
+        ring[i]:SetColorTexture(1, 1, 1, 1)
+    end
+    for i = 1, 4 do
+        ring.corners[i] = owner:CreateTexture(nil, "OVERLAY", nil, sublevel)
+        ring.inner[i] = ns.Corners.NewInnerMask(owner, i)
+    end
+    return ring
+end
+
+-- Edges first, then corners: [1..4] top, bottom, left, right; corners in
+-- Corners.POINTS order. Rings and the shadow share this layout.
+local function ringPieces(ring)
+    return { ring[1], ring[2], ring[3], ring[4], ring.corners[1], ring.corners[2], ring.corners[3], ring.corners[4] }
+end
+
+local function placeEdges(ring, box, size, padding, reach, corner)
+    local inset = corner - reach
+    ring[1]:ClearAllPoints()
+    ring[1]:SetPoint("BOTTOMLEFT", box, "TOPLEFT", inset, padding)
+    ring[1]:SetPoint("BOTTOMRIGHT", box, "TOPRIGHT", -inset, padding)
+    ring[1]:SetHeight(size)
+    ring[2]:ClearAllPoints()
+    ring[2]:SetPoint("TOPLEFT", box, "BOTTOMLEFT", inset, -padding)
+    ring[2]:SetPoint("TOPRIGHT", box, "BOTTOMRIGHT", -inset, -padding)
+    ring[2]:SetHeight(size)
+    ring[3]:ClearAllPoints()
+    ring[3]:SetPoint("TOPRIGHT", box, "TOPLEFT", -padding, -inset)
+    ring[3]:SetPoint("BOTTOMRIGHT", box, "BOTTOMLEFT", -padding, inset)
+    ring[3]:SetWidth(size)
+    ring[4]:ClearAllPoints()
+    ring[4]:SetPoint("TOPLEFT", box, "TOPRIGHT", padding, -inset)
+    ring[4]:SetPoint("BOTTOMLEFT", box, "BOTTOMRIGHT", padding, inset)
+    ring[4]:SetWidth(size)
+end
+
+-- A corner square: the outer arc (mirrored for corner i) when round,
+-- else a plain white square.
+local function cornerArt(piece, i, round)
+    if not round then
+        piece:SetColorTexture(1, 1, 1, 1)
+        return
+    end
+    piece:SetTexture(ns.Corners.TEXTURE, "CLAMP", "CLAMP")
+    local c = ns.Corners.COORDS[i]
+    piece:SetTexCoord(c[1], c[2], c[3], c[4])
+end
+
+local function placeCorners(ring, box, size, reach, corner, round)
+    for i, point in ipairs(ns.Corners.POINTS) do
+        local piece, sx, sy = ring.corners[i], OUT[i][1], OUT[i][2]
+        piece:ClearAllPoints()
+        piece:SetPoint(point, box, point, sx * reach, sy * reach)
+        piece:SetSize(corner, corner)
+        cornerArt(piece, i, round)
+        local inner = ring.inner[i]
+        inner:ClearAllPoints()
+        inner:SetPoint(point, piece, point, -sx * size, -sy * size)
+        inner:SetSize(corner - size, corner - size)
+        inner:SetShown(round)
+        ns.Corners.SetMasked(piece, inner, round)
+    end
+end
+
+-- A ring `size` thick, `padding` away from box, concentric with a box
+-- rounded by radius.
+local function placeRing(ring, box, size, padding, radius)
+    local round = size > 0 and radius > 0
+    local reach = padding + size
+    -- Corner squares: as big as the ring's outer radius when round, else
+    -- just the size x size corner of the ring.
+    local corner = round and (radius + reach) or size
+    placeEdges(ring, box, size, padding, reach, corner)
+    placeCorners(ring, box, size, reach, corner, round)
+    return corner
+end
+
+local function showRing(ring, shown)
+    for _, piece in ipairs(ringPieces(ring)) do piece:SetShown(shown) end
+    if shown then return end
+    for i = 1, 4 do ring.inner[i]:Hide() end
+end
+
+-- One colour on the white pieces.
+local function paintFlat(ring, c)
+    for _, piece in ipairs(ringPieces(ring)) do piece:SetVertexColor(c[1], c[2], c[3], c[4]) end
+end
+
+local function color(c) return CreateColor(c[1], c[2], c[3], c[4]) end
+
+local function mix(from, to, share)
+    local c = {}
+    for i = 1, 4 do c[i] = from[i] + (to[i] - from[i]) * share end
+    return c
+end
+
+-- Lit from above: one vertical shading, continuous over the whole ring.
+-- The top corners fade LIGHT to MID over their height, the sides MID to
+-- SHADE, the bottom corners SHADE to DARK. An edge is only `share` of a
+-- corner's height thick (size / corner square), so it takes that part of
+-- its corner's fade and meets the corner without a step. Gradients are
+-- minColor (bottom) first.
+local function metalShades(G, share)
+    local function vertical(bottom, top) return { color(bottom), color(top) } end
+    local top = vertical(mix(G.LIGHT, G.MID, share), G.LIGHT)
+    local bottom = vertical(G.DARK, mix(G.DARK, G.SHADE, share))
+    local side = vertical(G.SHADE, G.MID)
+    local topCorner, bottomCorner = vertical(G.MID, G.LIGHT), vertical(G.DARK, G.SHADE)
+    return { top, bottom, side, side, topCorner, topCorner, bottomCorner, bottomCorner }
+end
+
+local function paintMetal(ring, G, share)
+    local shades = metalShades(G, share)
+    for i, piece in ipairs(ringPieces(ring)) do piece:SetGradient("VERTICAL", shades[i][1], shades[i][2]) end
+end
+
+-- Shadow ----------------------------------------------------------------------
+
+local function newShadow(owner, file)
+    local shadow = { corners = {}, inner = {} }
+    local function piece()
+        local texture = owner:CreateTexture(nil, "BACKGROUND", nil, -8)
+        texture:SetTexture(file or Border.SHADOW, "CLAMP", "CLAMP")
+        return texture
+    end
+    for i = 1, 4 do shadow[i] = piece() end
+    for i = 1, 4 do
+        shadow.corners[i] = piece()
+        shadow.inner[i] = ns.Corners.NewInnerMask(owner, i)
+    end
+    return shadow
+end
+
+-- Edges: a band `size` wide just outside the ring's straight part.
+local function placeShadowEdges(shadow, box, reach, radius, size)
+    local inset = radius - reach
+    shadow[1]:ClearAllPoints()
+    shadow[1]:SetPoint("BOTTOMLEFT", box, "TOPLEFT", inset, reach)
+    shadow[1]:SetPoint("BOTTOMRIGHT", box, "TOPRIGHT", -inset, reach)
+    shadow[1]:SetHeight(size)
+    shadow[1]:SetTexCoord(EDGE_U, EDGE_U, 0, 1)
+    shadow[2]:ClearAllPoints()
+    shadow[2]:SetPoint("TOPLEFT", box, "BOTTOMLEFT", inset, -reach)
+    shadow[2]:SetPoint("TOPRIGHT", box, "BOTTOMRIGHT", -inset, -reach)
+    shadow[2]:SetHeight(size)
+    shadow[2]:SetTexCoord(EDGE_U, EDGE_U, 1, 0)
+    shadow[3]:ClearAllPoints()
+    shadow[3]:SetPoint("TOPRIGHT", box, "TOPLEFT", -reach, -inset)
+    shadow[3]:SetPoint("BOTTOMRIGHT", box, "BOTTOMLEFT", -reach, inset)
+    shadow[3]:SetWidth(size)
+    shadow[3]:SetTexCoord(0, EDGE_U, EDGE_V, EDGE_V)
+    shadow[4]:ClearAllPoints()
+    shadow[4]:SetPoint("TOPLEFT", box, "TOPRIGHT", reach, -inset)
+    shadow[4]:SetPoint("BOTTOMLEFT", box, "BOTTOMRIGHT", reach, inset)
+    shadow[4]:SetWidth(size)
+    shadow[4]:SetTexCoord(EDGE_U, 0, EDGE_V, EDGE_V)
+end
+
+-- Corners: from the shadow's outer corner in to the ring's rounded
+-- centre; inside the ring's radius masked off (the inverse arc).
+local function placeShadowCorners(shadow, box, reach, radius, size)
+    local span = radius + size
+    local cell = math.min(CELLS - 1, math.floor(radius / span * CELLS + 0.5))
+    local left, right = (cell * CELL) / SHADOW_WIDTH + HALF_U, ((cell + 1) * CELL) / SHADOW_WIDTH - HALF_U
+    local top, bottom = HALF_V, 1 - HALF_V
+    -- Mirrored for each corner, as Corners.COORDS.
+    local coords = { { left, right, top, bottom }, { right, left, top, bottom },
+        { left, right, bottom, top }, { right, left, bottom, top } }
+    local round = radius > 0
+    for i, point in ipairs(ns.Corners.POINTS) do
+        local piece, mask, out = shadow.corners[i], shadow.inner[i], reach + size
+        piece:ClearAllPoints()
+        piece:SetPoint(point, box, point, OUT[i][1] * out, OUT[i][2] * out)
+        piece:SetSize(span, span)
+        piece:SetTexCoord(coords[i][1], coords[i][2], coords[i][3], coords[i][4])
+        mask:ClearAllPoints()
+        mask:SetPoint(INNER[i], piece, INNER[i], 0, 0)
+        mask:SetSize(radius, radius)
+        mask:SetShown(round)
+        ns.Corners.SetMasked(piece, mask, round)
+    end
+end
+
+local function hideShadow(shadow)
+    for _, piece in ipairs(ringPieces(shadow)) do piece:Hide() end
+    for i = 1, 4 do shadow.inner[i]:Hide() end
+end
+
+-- A soft band `size` wide just outside scope's ring around box, rounded
+-- with it. Shared by the drop shadow and the glow.
+local function placeBand(band, scope, box, radius, size, reach)
+    for _, piece in ipairs(ringPieces(band)) do piece:Show() end
+    reach = reach or Border.Extent(scope)
+    -- The ring's outer radius; square stays square, as the ring does.
+    local outer = radius > 0 and radius + reach or 0
+    placeShadowEdges(band, box, reach, outer, size)
+    placeShadowCorners(band, box, reach, outer, size)
+end
+
+local function drawShadow(owner, scope, box, radius, reach)
+    local shadow = owner.shadow
+    local size = Border.ShadowSize(scope)
+    if size == 0 then
+        hideShadow(shadow)
+        return
+    end
+    placeBand(shadow, scope, box, radius, size, reach)
+    local alpha = Config.Get(scope, "shadowAlpha") / 100
+    for _, piece in ipairs(ringPieces(shadow)) do piece:SetVertexColor(0, 0, 0, alpha) end
+end
+
+-- Glow ------------------------------------------------------------------------
+-- The shadow's band in a colour (the threat glow, Elements/Threat.lua):
+-- its own pieces on owner, placed around box outside scope's ring and
+-- rounded with it. Plain textures: the colour may change in combat.
+
+-- A glow takes a colour (PaintGlow), so it uses the white fade: vertex
+-- colours multiply, and the black shadow file stayed black whatever colour
+-- it was given (a report: the target highlight was always black).
+function Border.DrawGlow(owner, scope, box, radius, size)
+    owner.glow = owner.glow or newShadow(owner, Border.GLOW)
+    placeBand(owner.glow, scope, box, radius or ns.Corners.Radius(scope), size)
+end
+
+function Border.PaintGlow(owner, r, g, b, a)
+    for _, piece in ipairs(ringPieces(owner.glow)) do piece:SetVertexColor(r, g, b, a) end
+end
+
+-- The glow's eight pieces (edges, then corners), for the tests.
+function Border.GlowPieces(owner)
+    return owner.glow and ringPieces(owner.glow) or {}
+end
+
+-- Drawing ---------------------------------------------------------------------
+
+local function pieces(owner)
+    if not owner.border then
+        owner.border = newRing(owner, 0)
+        owner.border.line = newRing(owner, 1)
+        owner.shadow = newShadow(owner)
+    end
+    return owner.border
+end
+
+-- Draws owner's border and shadow around box in scope's settings: show,
+-- style, size, padding, colour, shadow; rounded by radius (default: the
+-- scope's corner radius; callers clamp it to the box). color, when given,
+-- replaces a FLAT ring's colour (a theme colour, Themes.Accent).
+-- own (optional, the frame's parts apart, Elements/Boxes.lua): a flat
+-- ring of own.size (0: none) and own.color with no padding instead of
+-- scope's border; own.shadowOwner holds the shadow instead of owner, a
+-- frame below the parts, so no shadow falls on a neighbour.
+local NOTHING = {}
+function Border.Draw(owner, scope, box, radius, color, own)
+    own = own or NOTHING
+    local ring = pieces(owner)
+    local size, padding = Border.Size(scope), Border.Padding(scope)
+    if own.size then size, padding, color = own.size, 0, own.color end
+    radius = radius or ns.Corners.Radius(scope)
+    local corner = placeRing(ring, box, size, padding, radius)
+    local style = own.size and "FLAT" or Config.Get(scope, "borderStyle")
+    local metal = Border.SHADED[style]
+    if style == "SHADED" then metal = Border.ShadesOf(Config.Get(scope, "borderColor")) end
+    if metal then
+        paintMetal(ring, metal, corner > 0 and size / corner or 1)
+    else
+        paintFlat(ring, color or Config.Get(scope, "borderColor"))
+    end
+    showRing(ring, size > 0)
+    -- The dark inner line of a shaded style, the ring's innermost pixel;
+    -- a one-pixel ring would be all line.
+    local pixel = Pixel.Snap(1, nil, 1)
+    local hasLine = metal ~= nil and size >= 2 * pixel
+    if hasLine then
+        placeRing(ring.line, box, pixel, padding, radius)
+        paintFlat(ring.line, metal.LINE)
+    end
+    showRing(ring.line, hasLine)
+    local shadowOwner = own.shadowOwner
+    if shadowOwner then
+        shadowOwner.shadow = shadowOwner.shadow or newShadow(shadowOwner)
+        hideShadow(owner.shadow)
+    end
+    drawShadow(shadowOwner or owner, scope, box, radius, size > 0 and padding + size or 0)
+end
+
+-- A plain ring in one colour (the elite / rare ring, Elements/
+-- Classification.lua): size thick, padding away from box, rounded with it.
+function Border.DrawRing(owner, box, size, padding, radius, c)
+    owner.plainRing = owner.plainRing or newRing(owner, 2)
+    placeRing(owner.plainRing, box, size, padding, radius)
+    paintFlat(owner.plainRing, c)
+    showRing(owner.plainRing, size > 0)
+end
+
+function Border.HideRing(owner)
+    if owner.plainRing then showRing(owner.plainRing, false) end
+end
+
+-- A ring inside a box (the raid cells' debuff border, Raid/CellAuras.lua):
+-- edges along the box's sides, corner squares in its corners. Its pieces
+-- are white; whoever made it colours and shows them (the client does
+-- for the debuff border), so placing never shows or hides a piece. Only
+-- the inner masks are shown and hidden here.
+function Border.NewInnerRing(owner)
+    local ring = { corners = {}, inner = {} }
+    for i = 1, 4 do
+        ring[i] = owner:CreateTexture(nil, "OVERLAY")
+        ring[i]:SetColorTexture(1, 1, 1, 1)
+    end
+    for i = 1, 4 do
+        ring.corners[i] = owner:CreateTexture(nil, "OVERLAY")
+        ring.inner[i] = ns.Corners.NewInnerMask(owner, i)
+    end
+    return ring
+end
+
+-- Edges first (top, bottom, left, right), then corners in Corners.POINTS
+-- order.
+function Border.InnerRingPieces(ring)
+    return ringPieces(ring)
+end
+
+-- size thick, inside box, whose corners are rounded by radius (0:
+-- square). Round, a corner square shows the outer arc as large as the
+-- box's radius, so ring and box are concentric, and is cut by the inner
+-- arc a border's thickness in: one mask. A border as thick as the radius
+-- or thicker leaves no inner arc: the corner square is as large as the
+-- border and all of it border (its arc then a little rounder than the
+-- box's, by a pixel or two at most).
+function Border.PlaceInnerRing(ring, box, size, radius)
+    local round = radius > 0
+    local corner = round and math.max(radius, size) or size
+    local cut = round and corner > size
+    ring[1]:ClearAllPoints()
+    ring[1]:SetPoint("TOPLEFT", box, "TOPLEFT", corner, 0)
+    ring[1]:SetPoint("TOPRIGHT", box, "TOPRIGHT", -corner, 0)
+    ring[1]:SetHeight(size)
+    ring[2]:ClearAllPoints()
+    ring[2]:SetPoint("BOTTOMLEFT", box, "BOTTOMLEFT", corner, 0)
+    ring[2]:SetPoint("BOTTOMRIGHT", box, "BOTTOMRIGHT", -corner, 0)
+    ring[2]:SetHeight(size)
+    ring[3]:ClearAllPoints()
+    ring[3]:SetPoint("TOPLEFT", box, "TOPLEFT", 0, -corner)
+    ring[3]:SetPoint("BOTTOMLEFT", box, "BOTTOMLEFT", 0, corner)
+    ring[3]:SetWidth(size)
+    ring[4]:ClearAllPoints()
+    ring[4]:SetPoint("TOPRIGHT", box, "TOPRIGHT", 0, -corner)
+    ring[4]:SetPoint("BOTTOMRIGHT", box, "BOTTOMRIGHT", 0, corner)
+    ring[4]:SetWidth(size)
+    for i, point in ipairs(ns.Corners.POINTS) do
+        local piece, inner = ring.corners[i], ring.inner[i]
+        piece:ClearAllPoints()
+        piece:SetPoint(point, box, point, 0, 0)
+        piece:SetSize(corner, corner)
+        cornerArt(piece, i, round)
+        inner:ClearAllPoints()
+        inner:SetPoint(point, piece, point, -OUT[i][1] * size, -OUT[i][2] * size)
+        inner:SetSize(math.max(corner - size, 1), math.max(corner - size, 1))
+        inner:SetShown(cut)
+        ns.Corners.SetMasked(piece, inner, cut)
+    end
+end
+
+-- The plain ring's pieces, for the tests.
+function Border.RingPieces(owner)
+    return owner.plainRing and ringPieces(owner.plainRing) or {}
+end
+
+function Border.Hide(owner)
+    local ring = owner.border
+    if not ring then return end
+    showRing(ring, false)
+    showRing(ring.line, false)
+    hideShadow(owner.shadow)
+end

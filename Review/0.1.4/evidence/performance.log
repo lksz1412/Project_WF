@@ -1,0 +1,13 @@
+PASS preset uhd qhd edited=False {'composite': 78, 'appearance': 39, 'notify_dominos': 11, 'notify_appearance': 39, 'statusstrip': 4, 'pet': 110, 'nativechat': 9, 'dominos': 11, 'nameplates': 4, 'notify_nameplates': 4, 'notify_statusstrip': 4} -> {'composite': 2, 'appearance': 1, 'notify_nameplates': 4, 'notify_appearance': 39, 'statusstrip': 1, 'pet': 10, 'nativechat': 1, 'dominos': 1, 'nameplates': 1, 'notify_dominos': 11, 'notify_statusstrip': 4}
+PASS preset qhd fhd edited=False {'composite': 78, 'appearance': 39, 'notify_dominos': 11, 'notify_appearance': 39, 'statusstrip': 4, 'pet': 110, 'nativechat': 9, 'dominos': 11, 'nameplates': 4, 'notify_nameplates': 4, 'notify_statusstrip': 4} -> {'composite': 2, 'appearance': 1, 'notify_nameplates': 4, 'notify_appearance': 39, 'statusstrip': 1, 'pet': 10, 'nativechat': 1, 'dominos': 1, 'nameplates': 1, 'notify_dominos': 11, 'notify_statusstrip': 4}
+PASS preset fhd uhd edited=False {'composite': 78, 'appearance': 39, 'notify_dominos': 11, 'notify_appearance': 39, 'statusstrip': 4, 'pet': 110, 'nativechat': 9, 'dominos': 11, 'nameplates': 4, 'notify_nameplates': 4, 'notify_statusstrip': 4} -> {'composite': 2, 'appearance': 1, 'notify_nameplates': 4, 'notify_appearance': 39, 'statusstrip': 1, 'pet': 10, 'nativechat': 1, 'dominos': 1, 'nameplates': 1, 'notify_dominos': 11, 'notify_statusstrip': 4}
+PASS preset uhd qhd edited=True {'composite': 80, 'appearance': 40, 'notify_dominos': 11, 'notify_appearance': 40, 'statusstrip': 4, 'pet': 110, 'nativechat': 10, 'dominos': 11, 'nameplates': 4, 'notify_nameplates': 4, 'notify_statusstrip': 4} -> {'composite': 2, 'appearance': 1, 'notify_nameplates': 4, 'notify_appearance': 40, 'statusstrip': 1, 'pet': 10, 'nativechat': 1, 'dominos': 1, 'nameplates': 1, 'notify_dominos': 11, 'notify_statusstrip': 4}
+PASS immediate theme/edit, nested batch, error recovery and reentrant flush
+PASS native Dominos ReloadButtons shipped {'dominos': 20, 'pet': 100}
+PASS native Dominos ReloadButtons workspace {'scheduled': 1, 'pet': 10}
+PASS pet combat deferral, detached edges and full-refresh absorption
+PASS failed UPDATE_BINDINGS preserves existing pet timer until scale recovers
+PASS failed pet timer retains request for next valid event without polling
+PASS failed combat-end pet update survives until next valid event
+PASS failed combat-end full update preserves both requests and clears them on success
+PASS performance regression gates (Lua stub calls only)

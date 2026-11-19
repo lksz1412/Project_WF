@@ -1,0 +1,14 @@
+{
+  "summary": "User decision trace and three reproducible audit-baseline ZIPs accepted under R151.",
+  "stepRange": [44, 45],
+  "inputs": ["current planning files", "24 request ledgers", "Step 40 archived ZIPs", "current D workspace installation sources"],
+  "filesCreated": ["audit-installer/requirement-trace.md", "audit-installer/requirement-trace.json", "audit-installer/package-baseline.json", "Step 44 — 요청과 실제 기능 대조.md", "Step 45 — 배포 기준 ZIP 검증.md"],
+  "filesUpdated": ["REQUEST_LEDGER_phase26.md", "../plans/2026-11-19-devil-forever-audit-and-installer-plan.md", "PHASE_26-28_EXECUTION_LEDGER.md"],
+  "readCoverage": ["audit-installer/step44-work-log.md:1–145", "Collection/install.json:1–93", "Claude/results/Step 40 — Codex collection integration.md:1–45", "Claude/results/Step 40 — Codex collection integration.json:1–21", "audit-installer/package-baseline.json:1–398"],
+  "executionEvidence": {"step44": "Step 44 — 요청과 실제 기능 대조.md", "step45": "Step 45 — 배포 기준 ZIP 검증.md"},
+  "validationGateConfirmed": {"status": "PASS", "reviewOpenMajor": 0, "reviewOpenModerate": 0, "matchingArchiveCount": 3, "actualGameTested": false},
+  "nonChanges": ["game installation", "game profile and user data", "previous archived bundles", "GitHub remote"],
+  "openIssues": ["trace T1–T8", "chat fault and preset-change findings", "game acceptance", "clean Windows installer acceptance"],
+  "decisionQueue": ["final unit-frame default follows in-game comparison", "additional preset and 4K-only scope remain open"],
+  "next": 46
+}

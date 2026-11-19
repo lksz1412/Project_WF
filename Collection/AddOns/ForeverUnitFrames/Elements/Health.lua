@@ -1,0 +1,237 @@
+local _, ns = ...
+
+-- UNIT_FACTION: a creature became tapped (or free again).
+local Health = { name = "Health", unitEvents = { "UNIT_HEALTH", "UNIT_MAXHEALTH", "UNIT_CONNECTION", "UNIT_FACTION" } }
+ns.Health = Health
+
+local Secrets, Config = ns.Secrets, ns.Config
+
+local REACTION = {
+    hostile = { 0.85, 0.2, 0.2 },
+    neutral = { 0.9, 0.8, 0.25 },
+    friendly = { 0.2, 0.75, 0.3 },
+}
+
+local gradientCurve
+local function gradient()
+    if not gradientCurve then
+        gradientCurve = C_CurveUtil.CreateColorCurve()
+        gradientCurve:AddPoint(0, CreateColor(0.85, 0.2, 0.2))
+        gradientCurve:AddPoint(0.5, CreateColor(0.9, 0.8, 0.25))
+        gradientCurve:AddPoint(1, CreateColor(0.2, 0.75, 0.3))
+    end
+    return gradientCurve
+end
+
+-- { r, g, b } of the unit's reaction to the player.
+-- scope (optional): its own colours (reaction*Color), else the defaults.
+local REACTION_KEYS = { hostile = "reactionHostileColor", neutral = "reactionNeutralColor",
+    friendly = "reactionFriendlyColor" }
+
+local function reaction(unit)
+    local r = Secrets.Number(UnitReaction(unit, "player"))
+    if r then
+        if r <= 3 then return "hostile" end
+        if r == 4 then return "neutral" end
+        return "friendly"
+    end
+    -- Reaction can be secret; friend/foe is the coarse fallback.
+    if Secrets.Bool(UnitIsFriend, "player", unit) then return "friendly" end
+    return "hostile"
+end
+
+function Health.ReactionColor(unit, scope)
+    local kind = reaction(unit)
+    if scope then return Config.Get(scope, REACTION_KEYS[kind]) end
+    return REACTION[kind]
+end
+
+-- r, g, b of a player's class, or nothing (not a player, class unknown).
+-- The class token is secret where the unit's identity is (target of
+-- target in combat): it cannot index RAID_CLASS_COLORS, but the client's
+-- C_ClassColor takes it as it is. Its colour may then be secret too and
+-- is only ever handed to widgets.
+-- Not a closure: this runs on every health event of every frame.
+local function classRGB(unit)
+    local _, class = UnitClass(unit)
+    if type(class) == "nil" then return end
+    if not Secrets.IsSecret(class) then
+        local c = RAID_CLASS_COLORS[class]
+        if c then return c.r, c.g, c.b end
+        return
+    end
+    if C_ClassColor and C_ClassColor.GetClassColor then
+        local c = C_ClassColor.GetClassColor(class)
+        return c.r, c.g, c.b
+    end
+end
+
+function Health.ClassColor(unit)
+    if not Secrets.Bool(UnitIsPlayer, unit) then return end
+    local ok, r, g, b = pcall(classRGB, unit)
+    if ok and type(r) ~= "nil" then return r, g, b end
+end
+
+-- Class colour for players, reaction colour for everyone else.
+function Health.UnitColor(unit, mode, scope)
+    if mode == "CLASS" then
+        local r, g, b = Health.ClassColor(unit)
+        -- Presence by type(): the colour may be secret.
+        if type(r) ~= "nil" then return r, g, b end
+    end
+    local c = Health.ReactionColor(unit, scope)
+    return c[1], c[2], c[3]
+end
+
+-- A frame's own test-mode sample while it shows samples: { class (token),
+-- name, health (share), status (UnitStatus, or false) }. Only raid test
+-- cells have one (Raid/TestMode.lua); unit frames share Health.SAMPLE.
+function Health.Sample(frame)
+    return frame.health.preview and frame.sample or nil
+end
+
+-- UnitColor of the frame's unit, or of its sample's class.
+function Health.FrameColor(frame, mode)
+    local sample = Health.Sample(frame)
+    if sample and mode == "CLASS" then
+        local c = RAID_CLASS_COLORS and RAID_CLASS_COLORS[sample.class]
+        if c then return c.r, c.g, c.b end
+    end
+    return Health.UnitColor(frame.unit, mode, frame.key)
+end
+
+-- Tapped by someone else: a creature (not player-controlled) another
+-- player or group has claimed. Blizzard's grey. A secret answer counts as
+-- not tapped (the bar keeps its colour).
+Health.TAPPED = { 0.5, 0.5, 0.5 }
+
+function Health.IsTapDenied(frame)
+    local unit = frame.unit
+    if not unit or not ns.Settings.AppliesTo(ns.Settings.Get("tapDenied"), frame.key) then return false end
+    if not Config.Get(frame.key, "tapDenied") then return false end
+    if Secrets.Bool(UnitPlayerControlled, unit) ~= false then return false end
+    return Secrets.Bool(UnitIsTapDenied, unit) == true
+end
+
+-- Raid cells only (Raid/Settings.lua): the colour of CLASS or STATIC
+-- shows where health is missing, the fill is dark. Only the two colours
+-- swap places; value and fill direction stay, so secret health is still
+-- just handed to the bar.
+local INVERTED = { INVERTED_CLASS = "CLASS", INVERTED_STATIC = "STATIC" }
+
+function Health.IsInverted(frame)
+    return INVERTED[Config.Get(frame.key, "healthColorMode")] ~= nil
+end
+
+function Health.ColorFor(frame)
+    local scope, unit = frame.key, frame.unit
+    if Health.IsTapDenied(frame) then
+        local t = Health.TAPPED
+        return t[1], t[2], t[3]
+    end
+    local mode = Config.Get(scope, "healthColorMode")
+    mode = INVERTED[mode] or mode
+    if mode == "CLASS" or mode == "REACTION" then
+        return Health.FrameColor(frame, mode)
+    end
+    if mode == "GRADIENT" then
+        local sample = Health.Sample(frame)
+        if sample then return gradient():Evaluate(sample.health):GetRGB() end
+        return UnitHealthPercent(unit, true, gradient()):GetRGB()
+    end
+    local c = Config.Get(scope, "healthColor")
+    return c[1], c[2], c[3]
+end
+
+function Health.Build(frame)
+    -- The title row: its own background above the health bar; its text
+    -- is Elements/Texts.lua's.
+    frame.title = frame:CreateTexture(nil, "BACKGROUND")
+    -- The footer row below the power bar, in the title row's look.
+    frame.footer = frame:CreateTexture(nil, "BACKGROUND")
+    frame.health = CreateFrame("StatusBar", nil, frame)
+    -- Above the bars, their overlays (shields, heals) and a 3D portrait:
+    -- title and health texts live here. Below the class badge.
+    frame.overlay = CreateFrame("Frame", nil, frame)
+    frame.overlay:SetAllPoints(frame)
+    frame.overlay:SetFrameLevel(frame:GetFrameLevel() + 10)
+    frame.healthBg = frame.health:CreateTexture(nil, "BACKGROUND")
+    frame.healthBg:SetAllPoints(frame.health)
+    ns.Corners.Add(frame, frame.title)
+    ns.Corners.Add(frame, frame.footer)
+    ns.Corners.Add(frame, frame.healthBg)
+    ns.Corners.Add(frame, function() return frame.health:GetStatusBarTexture() end)
+end
+
+function Health.Style(frame)
+    local scope = frame.key
+    local tex = ns.Media.StatusBar(Config.Get(scope, "barTexture"))
+    frame.health:SetStatusBarTexture(tex)
+    frame.healthBg:SetTexture(tex)
+    local bg = Config.Get(scope, "backgroundColor")
+    local missing = Config.Get(scope, "healthMissingCustom") and Config.Get(scope, "healthMissingColor") or bg
+    frame.healthBg:SetVertexColor(missing[1], missing[2], missing[3], missing[4])
+    frame.title:SetTexture(tex)
+    -- Clear when the title row has no background: the bars keep theirs.
+    local titleAlpha = Config.Get(scope, "titleBackground") and bg[4] or 0
+    frame.title:SetVertexColor(bg[1], bg[2], bg[3], titleAlpha)
+    frame.footer:SetTexture(tex)
+    frame.footer:SetVertexColor(bg[1], bg[2], bg[3], titleAlpha)
+end
+
+-- Test mode: 60 % health, so sample heals and shield show inside the bar
+-- even when the player is at full health.
+Health.SAMPLE = 0.6
+
+-- The bar in a colour: its fill, or when inverted its background, the
+-- fill then opaque in the background colour with that colour's alpha
+-- folded in (as it looks over black): a 60 % black fill over the colour
+-- would look muddy, and a theme's faint tint (Console: mint at 10 %)
+-- stays dark. A dead, ghost or offline unit greys both parts.
+local function paint(frame, r, g, b, status)
+    if not Health.IsInverted(frame) then
+        frame.health:SetStatusBarColor(r, g, b)
+        return
+    end
+    frame.healthBg:SetVertexColor(r, g, b, 1)
+    if status then
+        frame.health:SetStatusBarColor(r, g, b)
+        return
+    end
+    local bg = Config.Get(frame.key, "backgroundColor")
+    frame.health:SetStatusBarColor(bg[1] * bg[4], bg[2] * bg[4], bg[3] * bg[4])
+end
+
+-- Dead, ghost and offline units (Elements/UnitStatus.lua) are grey; an
+-- offline member's bar is full, as on Blizzard's party frames.
+function Health.Update(frame)
+    local unit = frame.unit
+    local status = ns.UnitStatus.Of(frame)
+    if frame.health.preview then
+        -- The sample value stays.
+    elseif status == "OFFLINE" then
+        frame.health:SetMinMaxValues(0, 1)
+        frame.health:SetValue(1)
+    else
+        frame.health:SetMinMaxValues(0, UnitHealthMax(unit))
+        frame.health:SetValue(UnitHealth(unit))
+    end
+    if status then
+        local grey = ns.UnitStatus.GREY
+        paint(frame, grey[1], grey[2], grey[3], true)
+        return
+    end
+    local r, g, b = Health.ColorFor(frame)
+    paint(frame, r, g, b)
+end
+
+-- Live values come back with the next Update (test mode runs one).
+function Health.Preview(frame, on)
+    local bar = frame.health
+    bar.preview = on or nil
+    if not on then return end
+    bar:SetMinMaxValues(0, 1)
+    bar:SetValue(frame.sample and frame.sample.health or Health.SAMPLE)
+end
+
+ns.RegisterElement(Health)

@@ -40,6 +40,28 @@ local FONT_SIZE_TOKEN = "font.size.normal"
 local listeners = Core.NewCallbackList()
 local pending, pendingOrder = {}, {}
 local CLEAR = {}
+local batchCallbacks
+
+-- Field listeners stay immediate; requested appearance work runs once per owner after the outer batch.
+function Edit:Batch(fn)
+  local outer = batchCallbacks == nil
+  if outer then batchCallbacks = Core.NewCallbackList() end
+  local callbacks = batchCallbacks
+  local ok, result = pcall(fn)
+  if outer then
+    batchCallbacks = nil
+    callbacks:Fire()
+  end
+  if not ok then error(result, 0) end
+  return result
+end
+
+function Edit:AfterBatch(owner, fn)
+  if owner == nil or type(fn) ~= "function" then return false end
+  if batchCallbacks then return batchCallbacks:Register(owner, fn) end
+  fn()
+  return true
+end
 
 -- Registry lookups -----------------------------------------------------------
 

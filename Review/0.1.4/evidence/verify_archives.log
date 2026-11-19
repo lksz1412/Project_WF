@@ -1,0 +1,9 @@
+pitbull4 runtime=Lua 5.1 luajit=False lupa=2.8 checked=1345 failed=0
+pitbull4 folders=35 unresolved=0 client_provided=0 optional_missing=49 no_interface_toc=0 forever_load_check=0 forever_load_no=0 duplicates=0 load_on_demand=12
+pitbull4 folders=35 files=2316 internal_hashes=2315 sha256=e1968fb766522542c5f1b857f9521122c401f630ab2db482a578548f20550daf
+fuf runtime=Lua 5.1 luajit=False lupa=2.8 checked=1291 failed=0
+fuf folders=37 unresolved=0 client_provided=0 optional_missing=37 no_interface_toc=0 forever_load_check=0 forever_load_no=0 duplicates=0 load_on_demand=12
+fuf folders=37 files=2252 internal_hashes=2251 sha256=5be019f9ccbc1b871b153c7b328a7ee6cd3c81f8ab8deffb0896dae9e01b0035
+one-session runtime=Lua 5.1 luajit=False lupa=2.8 checked=1477 failed=0
+one-session folders=38 unresolved=0 client_provided=0 optional_missing=49 no_interface_toc=0 forever_load_check=0 forever_load_no=0 duplicates=0 load_on_demand=12
+one-session folders=38 files=2561 internal_hashes=2560 sha256=4f73b5fc3b22d6140670abd59c06d26c3883a732f804682949a89f7daf4ace83

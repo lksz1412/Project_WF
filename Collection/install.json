@@ -1,20 +1,25 @@
 {
   "schema": 1,
   "name": "DevilForever",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "unit_frames": "pitbull4",
   "notes": "Collection/install/설치안내.md",
   "own": [
     "!DevilForever_Core",
     "DevilForever_ChatSetup",
-    "DevilForever_StatusStrip"
+    "DevilForever_StatusStrip",
+    "DevilForever_Skin_Nameplates",
+    "DevilForever_Skin_StatusStrip",
+    "DevilForever_Appearance",
+    "DevilForever_Skin_Dominos",
+    "DevilForever_Skin_NativeChat",
+    "DevilForever_DetailsLayout"
   ],
   "upstream": {
     "Masque": ["Masque"],
     "Masque Onyx": ["Masque_Onyx"],
     "ProfileManager": ["ProfileManager"],
     "Dominos": ["Dominos", "Dominos_Config", "Masque_Dominos"],
-    "Prat-3.0": ["Prat-3.0"],
     "SexyMap": ["SexyMap"],
     "Quartz": ["Quartz"],
     "Hekili": ["Hekili", "Hekili_Shared", "Hekili_Druid", "Hekili_Hunter", "Hekili_Mage", "Hekili_Paladin",
@@ -31,6 +36,15 @@
     "fuf": {
       "own": ["DevilForever_Castbars", "DevilForever_FUFDefaults"],
       "upstream": {"Forever Unit Frames": ["ForeverUnitFrames"]}
+    },
+    "one-session": {
+      "own": ["PitBull4", "DevilForever_Castbars", "DevilForever_FUFDefaults"],
+      "upstream": {"Forever Unit Frames": ["ForeverUnitFrames"]},
+      "review": {
+        "first": ["PitBull4"],
+        "second": ["DevilForever_Castbars", "DevilForever_FUFDefaults", "ForeverUnitFrames"],
+        "simultaneous": false
+      }
     }
   }
 }

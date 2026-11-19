@@ -1,0 +1,839 @@
+{
+  "schema": 1,
+  "coordinateSpace": "top-left physical pixels",
+  "state": "Codex proposed layout, not client measurements",
+  "inputs": {
+    "baseline": "Codex/docs/devil-ui-old-4k-layout.md",
+    "common": "References/codex-appearance/2-layouts/layouts/<name>.lua",
+    "permission": "Collection/codex-briefs/appearance-<ID>.md permits feature placement around the baseline central HUD"
+  },
+  "conditions": {
+    "player": "solo/combat",
+    "target": "target-present",
+    "focus": "focus-present",
+    "pet": "pet-present",
+    "targettarget": "target-present",
+    "targettargettarget": "target-present",
+    "party": "party",
+    "partyGroup": "party",
+    "quartz.player": "solo/combat",
+    "quartz.target": "target-present",
+    "quartz.focus": "focus-present",
+    "quartz.pet": "pet-present",
+    "hekili.primary": "solo/combat",
+    "hekili.aoe": "existing-toggle-enables-separate-display",
+    "hekili.cooldowns": "existing-toggle-enables-separate-display",
+    "hekili.defensives": "existing-toggle-enables-separate-display",
+    "hekili.interrupts": "existing-toggle-enables-separate-display",
+    "cooldown.essential": "existing-client-viewer-visible",
+    "cooldown.utility": "existing-client-viewer-visible",
+    "cooldown.buffIcons": "existing-client-viewer-visible",
+    "cooldown.buffBars": "existing-client-viewer-visible",
+    "details.damage": "solo/combat",
+    "details.threat": "solo/combat",
+    "grid2.button": "raid",
+    "grid2.raid": "raid",
+    "experience.main": "solo/combat",
+    "experience.reputation": "solo/combat",
+    "experience.pet": "pet-present",
+    "focusTarget": "focus-present",
+    "petTarget": "pet-present",
+    "boss": "boss-present",
+    "bossGroup": "boss-present",
+    "partyPet": "party",
+    "partyTarget": "party",
+    "partyPetGroup": "party",
+    "partyTargetGroup": "party",
+    "dominos.pet": "native pet action bar visibility: PetHasActionBar and GetPetActionInfo; existing pet/possess state driver retained"
+  },
+  "layouts": {
+    "uhd": {
+      "screen": [
+        3840,
+        2160
+      ],
+      "rects": {
+        "player": [
+          1080,
+          1440,
+          390,
+          72
+        ],
+        "target": [
+          916,
+          1536,
+          554,
+          84
+        ],
+        "focus": [
+          580,
+          1440,
+          320,
+          56
+        ],
+        "pet": [
+          212,
+          1514,
+          360,
+          42
+        ],
+        "targettarget": [
+          1480,
+          1390,
+          190,
+          36
+        ],
+        "targettargettarget": [
+          1678,
+          1390,
+          190,
+          36
+        ],
+        "party": [
+          60,
+          700,
+          300,
+          72
+        ],
+        "partyGroup": [
+          60,
+          700,
+          300,
+          324
+        ],
+        "quartz.player": [
+          1500,
+          1678,
+          520,
+          36
+        ],
+        "quartz.target": [
+          1500,
+          1440,
+          390,
+          32
+        ],
+        "quartz.focus": [
+          600,
+          1500,
+          300,
+          32
+        ],
+        "quartz.pet": [
+          212,
+          1604,
+          360,
+          28
+        ],
+        "hekili.primary": [
+          1880,
+          112,
+          80,
+          80
+        ],
+        "hekili.aoe": [
+          1640,
+          112,
+          80,
+          80
+        ],
+        "hekili.cooldowns": [
+          2120,
+          112,
+          80,
+          80
+        ],
+        "hekili.defensives": [
+          2360,
+          112,
+          80,
+          80
+        ],
+        "hekili.interrupts": [
+          1400,
+          112,
+          80,
+          80
+        ],
+        "cooldown.essential": [
+          1640,
+          1510,
+          400,
+          80
+        ],
+        "cooldown.utility": [
+          1640,
+          1600,
+          400,
+          64
+        ],
+        "cooldown.buffIcons": [
+          2140,
+          1510,
+          320,
+          64
+        ],
+        "cooldown.buffBars": [
+          2140,
+          1584,
+          320,
+          104
+        ],
+        "details.damage": [
+          2902,
+          1280,
+          460,
+          260
+        ],
+        "details.threat": [
+          2902,
+          1552,
+          460,
+          136
+        ],
+        "grid2.button": [
+          80,
+          240,
+          154,
+          56
+        ],
+        "grid2.raid": [
+          80,
+          240,
+          1274,
+          304
+        ],
+        "experience.main": [
+          24,
+          1804,
+          1120,
+          16
+        ],
+        "experience.reputation": [
+          1360,
+          1804,
+          1120,
+          16
+        ],
+        "experience.pet": [
+          2696,
+          1804,
+          1120,
+          16
+        ],
+        "focusTarget": [
+          580,
+          1400,
+          280,
+          32
+        ],
+        "petTarget": [
+          212,
+          1470,
+          360,
+          34
+        ],
+        "boss": [
+          3400,
+          500,
+          340,
+          56
+        ],
+        "bossGroup": [
+          3400,
+          500,
+          340,
+          328
+        ],
+        "partyPet": [
+          372,
+          700,
+          150,
+          36
+        ],
+        "partyTarget": [
+          534,
+          700,
+          190,
+          36
+        ],
+        "partyPetGroup": [
+          372,
+          700,
+          150,
+          288
+        ],
+        "partyTargetGroup": [
+          534,
+          700,
+          190,
+          288
+        ],
+        "dominos.pet": [
+          212,
+          1564,
+          358,
+          34
+        ]
+      },
+      "interfaceDraft": {
+        "quest": [
+          2848,
+          266,
+          528,
+          350
+        ],
+        "objectiveText": 30,
+        "objectiveTitle": 36,
+        "tooltip": [
+          2480,
+          950,
+          450,
+          184
+        ]
+      },
+      "petActionLayout": {
+        "slotCountSource": "NUM_PET_ACTION_SLOTS",
+        "expectedSlots": 10,
+        "physicalGap": 2,
+        "rectMeaning": "Onyx visible alpha envelope for ten square native slots; runtime fits other slot counts within this reservation",
+        "nativeButtonSource": "PetActionBar.actionButtons[1] or PetActionButton1",
+        "masqueNormalUnits": 40,
+        "masqueBaseUnits": 36,
+        "alphaCoverage": [
+          112,
+          128
+        ]
+      }
+    },
+    "qhd": {
+      "screen": [
+        2560,
+        1440
+      ],
+      "rects": {
+        "player": [
+          690,
+          908,
+          280,
+          56
+        ],
+        "target": [
+          570,
+          980,
+          400,
+          64
+        ],
+        "focus": [
+          274,
+          908,
+          280,
+          48
+        ],
+        "pet": [
+          256,
+          764,
+          280,
+          40
+        ],
+        "targettarget": [
+          990,
+          864,
+          160,
+          32
+        ],
+        "targettargettarget": [
+          1158,
+          864,
+          160,
+          32
+        ],
+        "party": [
+          32,
+          400,
+          240,
+          56
+        ],
+        "partyGroup": [
+          32,
+          400,
+          240,
+          260
+        ],
+        "quartz.player": [
+          990,
+          1056,
+          400,
+          32
+        ],
+        "quartz.target": [
+          990,
+          904,
+          280,
+          28
+        ],
+        "quartz.focus": [
+          274,
+          960,
+          280,
+          28
+        ],
+        "quartz.pet": [
+          256,
+          834,
+          280,
+          24
+        ],
+        "hekili.primary": [
+          1248,
+          80,
+          64,
+          64
+        ],
+        "hekili.aoe": [
+          1088,
+          80,
+          64,
+          64
+        ],
+        "hekili.cooldowns": [
+          1408,
+          80,
+          64,
+          64
+        ],
+        "hekili.defensives": [
+          1568,
+          80,
+          64,
+          64
+        ],
+        "hekili.interrupts": [
+          928,
+          80,
+          64,
+          64
+        ],
+        "cooldown.essential": [
+          1070,
+          940,
+          330,
+          56
+        ],
+        "cooldown.utility": [
+          1070,
+          1004,
+          330,
+          48
+        ],
+        "cooldown.buffIcons": [
+          1440,
+          940,
+          240,
+          56
+        ],
+        "cooldown.buffBars": [
+          1440,
+          1004,
+          240,
+          84
+        ],
+        "details.damage": [
+          1946,
+          780,
+          330,
+          180
+        ],
+        "details.threat": [
+          1946,
+          972,
+          330,
+          100
+        ],
+        "grid2.button": [
+          40,
+          164,
+          120,
+          44
+        ],
+        "grid2.raid": [
+          40,
+          164,
+          988,
+          236
+        ],
+        "experience.main": [
+          16,
+          1174,
+          720,
+          12
+        ],
+        "experience.reputation": [
+          920,
+          1174,
+          720,
+          12
+        ],
+        "experience.pet": [
+          1824,
+          1174,
+          720,
+          12
+        ],
+        "focusTarget": [
+          274,
+          866,
+          260,
+          30
+        ],
+        "petTarget": [
+          256,
+          738,
+          280,
+          24
+        ],
+        "boss": [
+          2160,
+          240,
+          320,
+          48
+        ],
+        "bossGroup": [
+          2160,
+          240,
+          320,
+          288
+        ],
+        "partyPet": [
+          284,
+          400,
+          120,
+          28
+        ],
+        "partyTarget": [
+          416,
+          400,
+          140,
+          28
+        ],
+        "partyPetGroup": [
+          284,
+          400,
+          120,
+          232
+        ],
+        "partyTargetGroup": [
+          416,
+          400,
+          140,
+          232
+        ],
+        "dominos.pet": [
+          256,
+          806,
+          278,
+          26
+        ]
+      },
+      "interfaceDraft": {
+        "quest": [
+          1720,
+          210,
+          424,
+          290
+        ],
+        "objectiveText": 24,
+        "objectiveTitle": 28,
+        "tooltip": [
+          1672,
+          520,
+          370,
+          154
+        ]
+      },
+      "petActionLayout": {
+        "slotCountSource": "NUM_PET_ACTION_SLOTS",
+        "expectedSlots": 10,
+        "physicalGap": 2,
+        "rectMeaning": "Onyx visible alpha envelope for ten square native slots; runtime fits other slot counts within this reservation",
+        "nativeButtonSource": "PetActionBar.actionButtons[1] or PetActionButton1",
+        "masqueNormalUnits": 40,
+        "masqueBaseUnits": 36,
+        "alphaCoverage": [
+          112,
+          128
+        ]
+      }
+    },
+    "fhd": {
+      "screen": [
+        1920,
+        1080
+      ],
+      "rects": {
+        "player": [
+          438,
+          620,
+          240,
+          48
+        ],
+        "target": [
+          338,
+          680,
+          340,
+          56
+        ],
+        "focus": [
+          70,
+          628,
+          240,
+          40
+        ],
+        "pet": [
+          218,
+          450,
+          240,
+          32
+        ],
+        "targettarget": [
+          690,
+          570,
+          160,
+          28
+        ],
+        "targettargettarget": [
+          860,
+          570,
+          140,
+          28
+        ],
+        "party": [
+          12,
+          208,
+          190,
+          48
+        ],
+        "partyGroup": [
+          12,
+          208,
+          190,
+          228
+        ],
+        "quartz.player": [
+          690,
+          756,
+          300,
+          28
+        ],
+        "quartz.target": [
+          690,
+          604,
+          240,
+          26
+        ],
+        "quartz.focus": [
+          224,
+          584,
+          200,
+          26
+        ],
+        "quartz.pet": [
+          218,
+          518,
+          240,
+          24
+        ],
+        "hekili.primary": [
+          932,
+          64,
+          56,
+          56
+        ],
+        "hekili.aoe": [
+          792,
+          64,
+          56,
+          56
+        ],
+        "hekili.cooldowns": [
+          1072,
+          64,
+          56,
+          56
+        ],
+        "hekili.defensives": [
+          1212,
+          64,
+          56,
+          56
+        ],
+        "hekili.interrupts": [
+          652,
+          64,
+          56,
+          56
+        ],
+        "cooldown.essential": [
+          780,
+          642,
+          280,
+          48
+        ],
+        "cooldown.utility": [
+          780,
+          702,
+          280,
+          42
+        ],
+        "cooldown.buffIcons": [
+          1080,
+          642,
+          220,
+          48
+        ],
+        "cooldown.buffBars": [
+          1080,
+          702,
+          220,
+          84
+        ],
+        "details.damage": [
+          1320,
+          466,
+          372,
+          168
+        ],
+        "details.threat": [
+          1320,
+          650,
+          372,
+          106
+        ],
+        "grid2.button": [
+          24,
+          164,
+          96,
+          32
+        ],
+        "grid2.raid": [
+          24,
+          164,
+          796,
+          176
+        ],
+        "experience.main": [
+          12,
+          850,
+          550,
+          10
+        ],
+        "experience.reputation": [
+          686,
+          850,
+          550,
+          10
+        ],
+        "experience.pet": [
+          1360,
+          850,
+          548,
+          10
+        ],
+        "focusTarget": [
+          224,
+          548,
+          240,
+          28
+        ],
+        "petTarget": [
+          218,
+          420,
+          240,
+          24
+        ],
+        "boss": [
+          1600,
+          180,
+          300,
+          40
+        ],
+        "bossGroup": [
+          1600,
+          180,
+          300,
+          248
+        ],
+        "partyPet": [
+          214,
+          208,
+          96,
+          24
+        ],
+        "partyTarget": [
+          322,
+          208,
+          120,
+          24
+        ],
+        "partyPetGroup": [
+          214,
+          208,
+          96,
+          204
+        ],
+        "partyTargetGroup": [
+          322,
+          208,
+          120,
+          204
+        ],
+        "dominos.pet": [
+          218,
+          490,
+          238,
+          22
+        ]
+      },
+      "interfaceDraft": {
+        "quest": [
+          1220,
+          176,
+          364,
+          248
+        ],
+        "objectiveText": 20,
+        "objectiveTitle": 24,
+        "tooltip": [
+          980,
+          440,
+          320,
+          130
+        ]
+      },
+      "petActionLayout": {
+        "slotCountSource": "NUM_PET_ACTION_SLOTS",
+        "expectedSlots": 10,
+        "physicalGap": 2,
+        "rectMeaning": "Onyx visible alpha envelope for ten square native slots; runtime fits other slot counts within this reservation",
+        "nativeButtonSource": "PetActionBar.actionButtons[1] or PetActionButton1",
+        "masqueNormalUnits": 40,
+        "masqueBaseUnits": 36,
+        "alphaCoverage": [
+          112,
+          128
+        ]
+      }
+    }
+  },
+  "notes": [
+    "player follows the baseline playerTop/unitUpper shell and target follows targetTop/unitLower. Other feature positions are Codex proposals.",
+    "partyGroup and grid2.raid are group envelopes. party and grid2.button are individual member sizes.",
+    "The three Experience rectangles are an arrangement proposal for a horizontal rail. Upstream stacks the bars vertically and puts text outside them. Safe runtime support is pending and this split is not an automatic profile setting.",
+    "Nameplates follow units dynamically. Only font and size candidates can be prepared without measuring the native client structure.",
+    "Cooldown viewer bounds reserve space. Native Edit Mode/API and simultaneous existing viewer contents must be confirmed before applying geometry.",
+    "The absence of a target, focus, pet or separate Hekili toggle preserves that feature original visibility condition.",
+    "Unit child rectangles are Codex proposals for existing enabled frames only; FUF native border extents and integer rounding require live verification. PB4 and FUF are mutually exclusive candidates.",
+    "Pet/petTarget/Dominos pet actions/Quartz pet share a left-aligned column. QHD Quartz ends858, eight pixels before focusTarget866. The Dominos pet rectangle is a proposed ten-slot Onyx alpha envelope; actual native size/slot count is read at proposal evaluation, not a live measurement.",
+    "Current pet coordinates supersede the previous low-left draft: master/B found original demon art alpha overlap; all four rows translated with their sizes/internal gaps preserved. FHD cast ends542 before focusTarget548; QHD858 before focusTarget866; UHD1632 before actual art1640 and column ends572 before focus580. Art clearance gate belongs to master renderer, not a game observation."
+  ]
+}

@@ -1,8 +1,10 @@
 ## Interface: 16001
 ## Title: DevilForever Chat Setup
-## Notes: Makes the three chat windows of the Devil Forever collection once per character (first login only).
+## Notes: Creates the three chat windows once and follows layout changes for unedited managed windows.
 ## Version: 0.1.0
 ## Dependencies: !DevilForever_Core
+## OptionalDeps: DevilForever_Appearance
 ## SavedVariablesPerCharacter: DevilForever_ChatSetupDB
 
+ChatLayout.lua
 ChatSetup.lua

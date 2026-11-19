@@ -1,0 +1,1013 @@
+local _, ns = ...
+
+local Texts = {
+    name = "Texts",
+    unitEvents = { "UNIT_HEALTH", "UNIT_MAXHEALTH", "UNIT_POWER_FREQUENT", "UNIT_MAXPOWER", "UNIT_DISPLAYPOWER",
+        "UNIT_NAME_UPDATE", "UNIT_LEVEL", "PLAYER_FLAGS_CHANGED" },
+}
+ns.Texts = Texts
+
+local Config, Secrets = ns.Config, ns.Secrets
+
+-- bar: the row the text sits on; kind: whose values it shows (health or
+-- power, default the bar).
+local SLOTS = {
+    { field = "title", setting = "titleText", bar = "title", kind = "health", point = "LEFT", x = 4 },
+    -- Its own end is placed with the class badge (placeTitleEnd).
+    { field = "titleRight", setting = "titleTextRight", bar = "title", kind = "health", point = "RIGHT", x = -4 },
+    { field = "healthLeft", setting = "textHealthLeft", bar = "health", point = "LEFT", x = 4, before = "healthRight" },
+    { field = "healthRight", setting = "textHealthRight", bar = "health", point = "RIGHT", x = -4 },
+    { field = "powerLeft", setting = "textPowerLeft", bar = "power", point = "LEFT", x = 4, before = "powerRight" },
+    { field = "powerRight", setting = "textPowerRight", bar = "power", point = "RIGHT", x = -4 },
+    { field = "footerLeft", setting = "footerTextLeft", bar = "footer", kind = "health", point = "LEFT", x = 4,
+        before = "footerRight" },
+    { field = "footerRight", setting = "footerTextRight", bar = "footer", kind = "health", point = "RIGHT", x = -4 },
+    -- Centre texts, empty by default (placeCentres): last, so the left and
+    -- right texts keep their order everywhere else.
+    { field = "titleCenter", setting = "titleTextCenter", bar = "title", kind = "health", center = true },
+    { field = "healthCenter", setting = "textHealthCenter", bar = "health", center = true },
+    { field = "powerCenter", setting = "textPowerCenter", bar = "power", center = true },
+    { field = "footerCenter", setting = "footerTextCenter", bar = "footer", kind = "health", center = true },
+}
+
+-- Each row's left, centre and right text, and the width of its bar (plain
+-- numbers from the layout, Units/Single.lua).
+local ROWS = {
+    title = { left = "title", center = "titleCenter", right = "titleRight", width = "titleWidth" },
+    health = { left = "healthLeft", center = "healthCenter", right = "healthRight", width = "healthWidth" },
+    power = { left = "powerLeft", center = "powerCenter", right = "powerRight", width = "powerWidth" },
+    footer = { left = "footerLeft", center = "footerCenter", right = "footerRight", width = "footerWidth" },
+}
+local ROW_ORDER = { "title", "health", "power", "footer" }
+local SLOT_OF = {}
+for _, slot in ipairs(SLOTS) do SLOT_OF[slot.field] = slot end
+
+-- Difficulty colours against the player's level, as Blizzard's
+-- (DifficultyUtil): red from 5 above, orange 3-4, yellow within 2, green
+-- below, grey from the grey level on (no experience).
+Texts.DIFFICULTY = {
+    impossible = { 1, 0.1, 0.1 }, verydifficult = { 1, 0.5, 0.25 }, difficult = { 1, 0.82, 0 },
+    standard = { 0.25, 0.75, 0.25 }, trivial = { 0.5, 0.5, 0.5 },
+}
+
+-- The highest level that is grey for a player of level p (Classic rule).
+function Texts.GreyLevel(p)
+    if p <= 5 then return 0 end
+    if p <= 39 then return p - math.floor(p / 10) - 5 end
+    if p <= 59 then return p - math.floor(p / 5) - 1 end
+    return p - 9
+end
+
+-- r, g, b of a level (-1 or less: a boss, "??").
+function Texts.DifficultyColor(level)
+    local own = Secrets.Number(UnitLevel("player")) or level
+    local d = Texts.DIFFICULTY
+    local c
+    if level <= 0 then
+        c = d.impossible
+    else
+        local diff = level - own
+        if diff >= 5 then c = d.impossible
+        elseif diff >= 3 then c = d.verydifficult
+        elseif diff >= -2 then c = d.difficult
+        elseif level > Texts.GreyLevel(own) then c = d.standard
+        else c = d.trivial end
+    end
+    return c[1], c[2], c[3]
+end
+
+-- The level as text; coloured: wrapped in its difficulty colour, so it
+-- keeps it whatever colour the rest of the line has. A secret level is
+-- left out, as before.
+local function levelText(unit, colored)
+    local level = Secrets.Number(UnitLevel(unit))
+    if not level then return "" end
+    local text = level <= 0 and "??" or tostring(level)
+    if not colored then return text end
+    local r, g, b = Texts.DifficultyColor(level)
+    return ("|cff%02x%02x%02x%s|r"):format(r * 255, g * 255, b * 255, text)
+end
+
+-- INFO: "60 Mage Gnome" for players, "60 Humanoid" for creatures. Class,
+-- race and type may be secret: passed to the font string untouched,
+-- presence asked with type(). A unit of unknown kind counts as a creature.
+-- The colour code for the class part of INFO ("%s" around it when none):
+-- a player's class colour, a creature's reaction colour, readable only.
+local function infoWrap(unit, isPlayer, scope)
+    local r, g, b
+    if isPlayer then
+        local ok, _, token = pcall(UnitClass, unit)
+        local c = ok and not Secrets.IsSecret(token) and RAID_CLASS_COLORS and RAID_CLASS_COLORS[token]
+        if c then r, g, b = c.r, c.g, c.b end
+    else
+        local c = ns.Health.ReactionColor(unit, scope)
+        if c then r, g, b = c[1], c[2], c[3] end
+    end
+    if not r or Secrets.IsSecret(r) then return "%s" end
+    return ("|cff%02x%02x%02x"):format(r * 255, g * 255, b * 255) .. "%s|r"
+end
+
+local function setInfo(fs, unit, opts)
+    local level = levelText(unit, opts.levelColored)
+    local isPlayer = Secrets.Bool(UnitIsPlayer, unit) == true
+    local wrap = opts.infoColor and infoWrap(unit, isPlayer, opts.scope) or "%s"
+    if isPlayer then
+        local class = UnitClass(unit)
+        local race = UnitRace(unit)
+        if type(class) ~= "nil" and type(race) ~= "nil" then
+            fs:SetFormattedText("%s " .. wrap .. " %s", level, class, race)
+            return
+        elseif type(class) ~= "nil" then
+            fs:SetFormattedText("%s " .. wrap, level, class)
+            return
+        end
+    else
+        local kind = UnitCreatureType(unit)
+        if type(kind) ~= "nil" then
+            fs:SetFormattedText("%s " .. wrap, level, kind)
+            return
+        end
+    end
+    fs:SetText(level)
+end
+
+-- Values: health or power, depending on the bar the slot sits on.
+local function current(unit, kind)
+    if kind == "health" then return UnitHealth(unit) end
+    return UnitPower(unit)
+end
+local function maximum(unit, kind)
+    if kind == "health" then return UnitHealthMax(unit) end
+    return UnitPowerMax(unit)
+end
+
+-- Unit names. UnitName returns the first name and, when the unit has one,
+-- the secondary name (surname); with regional unique names the first value
+-- may itself be "First<separator>Surname". Names can be secret: they are
+-- only passed to the font string, never joined, matched or compared.
+local function separator()
+    local consts = Constants and Constants.CharacterNameSeparatorConsts
+    local sep = consts and consts.CHARACTERNAME_SURNAME_SEPARATOR
+    if type(sep) == "string" and sep ~= "" then return sep end
+    return " "
+end
+
+-- Whether the first value may hold "First<separator>Surname": only for
+-- players, and only with regional unique names, as Blizzard's
+-- NameUtil.GetUnitFirstName. NPC names with spaces are never split.
+local function mayHoldSurname(unit)
+    if type(RegionalUniqueNamesEnabled) ~= "function" then return false end
+    if Secrets.Bool(RegionalUniqueNamesEnabled) ~= true then return false end
+    return Secrets.Bool(UnitIsPlayer, unit) == true
+end
+
+-- The part before the separator of a readable name. A secret name is
+-- returned whole: it cannot be split, so it shows with its surname.
+local function firstName(name)
+    if Secrets.IsSecret(name) or type(name) ~= "string" then return name end
+    local at = string.find(name, separator(), 1, true)
+    if at and at > 1 then return string.sub(name, 1, at - 1) end
+    return name
+end
+
+-- Writes the unit's name into fs, after `prefix` (the level) if given.
+-- Every text that shows a name goes through here; soft-outline copies
+-- follow through the mirrored setters. Off: a surname returned apart is
+-- simply left out; one inside the first value is cut off (see above).
+function Texts.SetName(fs, unit, showSurname, prefix)
+    local name, surname = UnitName(unit)
+    local hasSurname = type(surname) ~= "nil"
+    if showSurname and hasSurname then
+        if prefix then
+            fs:SetFormattedText("%s %s %s", prefix, name, surname)
+        else
+            fs:SetFormattedText("%s %s", name, surname)
+        end
+        return
+    end
+    if not showSurname and not hasSurname and mayHoldSurname(unit) then name = firstName(name) end
+    if prefix then
+        fs:SetFormattedText("%s %s", prefix, name)
+    else
+        fs:SetText(name)
+    end
+end
+
+-- Test mode: health values that match the sample health bar
+-- (Health.SAMPLE) on the scale of the unit's readable maximum, else on
+-- SAMPLE_MAX. Plain numbers only; nil when the frame shows live health.
+Texts.SAMPLE_MAX = 10000
+
+local function sampleHealth(frame)
+    if not frame.health.preview then return nil end
+    local max = Secrets.Number(UnitHealthMax(frame.unit))
+    if not max or max <= 0 then max = Texts.SAMPLE_MAX end
+    -- A raid test cell's own share (Health.Sample), else the shared one.
+    local own = ns.Health.Sample(frame)
+    local share = own and own.health or ns.Health.SAMPLE
+    local current = math.floor(max * share + 0.5)
+    return { current = current, max = max, missing = max - current, percent = share * 100 }
+end
+
+-- The value tags drawn from sample numbers.
+local function applySample(fs, tag, sample, compact)
+    if tag == "CURRENT" then
+        fs:SetText(Secrets.Abbreviate(sample.current))
+    elseif tag == "CURRENT_MAX" then
+        fs:SetFormattedText(compact and "%s/%s" or "%s / %s", Secrets.Abbreviate(sample.current),
+            Secrets.Abbreviate(sample.max))
+    elseif tag == "PERCENT" then
+        fs:SetFormattedText("%.0f%%", sample.percent)
+    else
+        fs:SetText(C_StringUtil.TruncateWhenZero(sample.missing))
+    end
+end
+local SAMPLE_TAGS = { CURRENT = true, CURRENT_MAX = true, PERCENT = true, DEFICIT = true }
+-- Value tags that name their bar, whatever row they are on: the tag they
+-- stand for and its kind.
+local OWN_KIND = { POWER_CURRENT_MAX = { tag = "CURRENT_MAX", kind = "power" } }
+
+-- Whose numbers a slot's tag shows (health or power), nil for no value.
+local function valueKind(slot, tag)
+    if OWN_KIND[tag] then return OWN_KIND[tag].kind end
+    if SAMPLE_TAGS[tag] then return slot.kind or slot.bar end
+    return nil
+end
+
+-- The group role's icon (Elements/GroupIcons.lua's art) as inline markup,
+-- as tall as the font; empty without a role.
+local function setRole(fs, unit, opts)
+    local role = opts.sampleRole or ns.GroupIcons.UnitRole(unit)
+    local texture = role and ns.GroupIcons.ROLE_TEXTURE[role]
+    local size = opts.roleSize or 0
+    fs:SetText(texture and ("|T%s:%d:%d|t"):format(texture, size, size) or "")
+end
+
+-- sample (optional): plain health numbers that replace the unit's for
+-- the value tags of health texts (test mode).
+-- opts (optional): levelColored (the level in its difficulty colour),
+-- compact ("1234/1234"), infoColor (INFO's class part coloured), scope,
+-- sampleName (a test-mode name that NAME shows instead of the unit's).
+local NO_OPTS = {}
+function Texts.Apply(fs, tag, unit, kind, showSurname, sample, opts)
+    opts = opts or NO_OPTS
+    local own = OWN_KIND[tag]
+    if own then tag, kind = own.tag, own.kind end
+    if sample and kind == "health" and SAMPLE_TAGS[tag] then
+        applySample(fs, tag, sample, opts.compact)
+    elseif tag == "NONE" then
+        fs:SetText("")
+    elseif tag == "NAME" and opts.sampleName then
+        fs:SetText(opts.sampleName)
+    elseif tag == "NAME" then
+        Texts.SetName(fs, unit, showSurname)
+    elseif tag == "NAME_LEVEL" then
+        Texts.SetName(fs, unit, showSurname, levelText(unit, opts.levelColored))
+    elseif tag == "LEVEL" then
+        fs:SetText(levelText(unit, opts.levelColored))
+    elseif tag == "INFO" then
+        setInfo(fs, unit, opts)
+    elseif tag == "ROLE" then
+        setRole(fs, unit, opts)
+    elseif tag == "CURRENT" then
+        fs:SetText(Secrets.Abbreviate(current(unit, kind)))
+    elseif tag == "CURRENT_MAX" then
+        fs:SetFormattedText(opts.compact and "%s/%s" or "%s / %s", Secrets.Abbreviate(current(unit, kind)),
+            Secrets.Abbreviate(maximum(unit, kind)))
+    elseif tag == "PERCENT" then
+        local pct
+        if kind == "health" then
+            pct = UnitHealthPercent(unit, true, Secrets.PercentCurve())
+        else
+            pct = UnitPowerPercent(unit, nil, false, Secrets.PercentCurve())
+        end
+        fs:SetFormattedText("%.0f%%", pct)
+    elseif tag == "DEFICIT" then
+        if kind == "health" then
+            fs:SetText(C_StringUtil.TruncateWhenZero(UnitHealthMissing(unit)))
+        else
+            fs:SetText(C_StringUtil.TruncateWhenZero(UnitPowerMissing(unit)))
+        end
+    else
+        fs:SetText("")
+    end
+end
+
+-- Soft outline. The client only has OUTLINE and THICKOUTLINE, both hard
+-- at small sizes. SOFT draws the text without a flag over four black
+-- copies of itself, shifted one physical pixel left, right, up and down.
+-- The copies are made once per text, the first time it is styled SOFT,
+-- and follow every write, secret or not: arguments are passed on
+-- untouched.
+local SOFT_OFFSETS = { { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 } }
+local MIRRORED = { "SetText", "SetFormattedText", "SetJustifyH", "SetWordWrap" }
+
+local function mirror(fs, method)
+    local original = fs[method]
+    fs[method] = function(self, ...)
+        original(self, ...)
+        for _, copy in ipairs(self.softCopies) do copy[method](copy, ...) end
+    end
+end
+
+local function showCopies(fs)
+    local shown = fs.soft and fs:IsShown()
+    for _, copy in ipairs(fs.softCopies) do copy:SetShown(shown) end
+end
+
+local function follow(fs, method)
+    local original = fs[method]
+    fs[method] = function(self, ...)
+        original(self, ...)
+        showCopies(self)
+    end
+end
+
+local function makeCopies(fs)
+    local parent = fs:GetParent()
+    local layer, sublevel = fs:GetDrawLayer()
+    local copies = {}
+    for i = 1, #SOFT_OFFSETS do
+        local copy = parent:CreateFontString(nil, layer)
+        copy:SetDrawLayer(layer, math.max(sublevel - 1, -8))
+        local path, size = fs:GetFont()
+        copy:SetFont(path, size, "")
+        copy:SetTextColor(0, 0, 0, 1)
+        copy:SetShadowOffset(0, 0)
+        copy:SetText(fs:GetText())
+        copies[i] = copy
+    end
+    fs.softCopies = copies
+    for _, method in ipairs(MIRRORED) do mirror(fs, method) end
+    for _, method in ipairs({ "SetShown", "Show", "Hide" }) do follow(fs, method) end
+end
+
+-- The flags for numbers the client writes itself (cooldown countdowns): a
+-- soft outline cannot follow them, so it is the plain outline there.
+function Texts.CountdownFlags(outline)
+    if outline == "SOFT" then return "OUTLINE" end
+    if outline == "NONE" then return "" end
+    return outline
+end
+
+-- Whether a text took the font asked for. A font file the client has not
+-- loaded yet (the themes' own, LibForeverThemes) can be refused on first
+-- use and leave the text without a font: drawn, only its black soft
+-- outline copies would show.
+local function hasFont(fs, font)
+    local path = fs:GetFont()
+    if type(path) ~= "string" then return false end
+    local function plain(p) return (p:lower():gsub("/", "\\")) end
+    return plain(path) == plain(font)
+end
+-- How often, and how far apart, a refused font is tried again: quickly
+-- first, then slowly for two more minutes. First use of a file can take
+-- seconds when many fonts load at once (login, /reload, theme switch).
+local FONT_RETRIES, FONT_RETRY_DELAY = 40, 0.25
+local SLOW_RETRIES, SLOW_RETRY_DELAY = 24, 5
+local FALLBACK_FONT = "Fonts\\FRIZQT__.TTF"
+
+-- A font file used for the first time can leave a text blank although
+-- GetFont reports it (seen in game: empty texts until the theme was
+-- chosen a second time). Setting it again a little later, through
+-- another font, as that second choice did, draws them.
+-- Aura buttons' texts are off limits while auras are secret (combat):
+-- the redraw waits, a minute at most (a fight that long drops it).
+local REDRAW_DELAYS = { 0.5, 2 }
+local function aurasSecret()
+    local should = C_Secrets and C_Secrets.ShouldAurasBeSecret
+    return should ~= nil and should() == true
+end
+local function redrawLater(fs, font, size, flags, wanted)
+    local waits = 60
+    local function redraw()
+        if fs.fontWanted ~= wanted then return end
+        if aurasSecret() then
+            waits = waits - 1
+            if waits > 0 then C_Timer.After(1, redraw) end
+            return
+        end
+        fs:SetFont("Fonts\\FRIZQT__.TTF", size, flags)
+        fs:SetFont(font, size, flags)
+        local text = fs:GetText()
+        if text then fs:SetText(""); fs:SetText(text) end
+    end
+    for _, delay in ipairs(REDRAW_DELAYS) do C_Timer.After(delay, redraw) end
+end
+
+-- A refused font tried again later; while auras are secret (combat) an
+-- aura button's text is forbidden, so the try waits without using one up,
+-- ten minutes at most (a fight that long drops it, like the redraw).
+local SECRET_WAITS = 120
+local function retryLater(fs, delay, wanted, try, waits)
+    C_Timer.After(delay, function()
+        if fs.fontWanted ~= wanted then return end   -- restyled since: that call has its own tries
+        if aurasSecret() then
+            waits = (waits or SECRET_WAITS) - 1
+            if waits > 0 then retryLater(fs, SLOW_RETRY_DELAY, wanted, try, waits) end
+            return
+        end
+        try()
+    end)
+end
+
+-- Sets font, size and outline style of a text. Returns nothing.
+function Texts.SetFont(fs, font, size, outline, retries)
+    local soft = outline == "SOFT"
+    local flags = (outline == "NONE" or soft) and "" or outline
+    fs:SetFont(font, size, flags)
+    local wanted = font .. "|" .. size .. "|" .. outline
+    fs.fontWanted = wanted
+    local taken = hasFont(fs, font)
+    if taken and fs.fontDrawn ~= wanted then
+        fs.fontDrawn = wanted
+        redrawLater(fs, font, size, flags, wanted)
+    end
+    if not taken then
+        -- Blizzard's font meanwhile, from the first refusal on, so the
+        -- text never stays empty (a restyle with the same font neither).
+        fs:SetFont(FALLBACK_FONT, size, flags)
+        retries = retries or FONT_RETRIES
+        if retries > 0 then
+            retryLater(fs, FONT_RETRY_DELAY, wanted, function() Texts.SetFont(fs, font, size, outline, retries - 1) end)
+        else
+            if fs.fontSlowFor ~= wanted then fs.fontSlowFor, fs.fontSlowLeft = wanted, SLOW_RETRIES end
+            if fs.fontSlowLeft > 0 then
+                fs.fontSlowLeft = fs.fontSlowLeft - 1
+                retryLater(fs, SLOW_RETRY_DELAY, wanted, function() Texts.SetFont(fs, font, size, outline, 0) end)
+            end
+        end
+    end
+    if soft and not fs.softCopies then makeCopies(fs) end
+    if not fs.softCopies then return end
+    fs.soft = soft
+    -- Exactly one physical pixel: thinner than the client's OUTLINE.
+    -- Recomputed on every restyle, which a UI scale or window size change
+    -- triggers too.
+    local step = ns.Pixel.One(fs)
+    for i, copy in ipairs(fs.softCopies) do
+        local x, y = SOFT_OFFSETS[i][1] * step, SOFT_OFFSETS[i][2] * step
+        copy:SetFont(taken and font or FALLBACK_FONT, size, "")   -- the font the text really has
+        copy:ClearAllPoints()
+        copy:SetPoint("TOPLEFT", fs, "TOPLEFT", x, y)
+        copy:SetPoint("BOTTOMRIGHT", fs, "BOTTOMRIGHT", x, y)
+    end
+    showCopies(fs)
+end
+
+-- Class icon: a round badge on the frame's top right corner. Blizzard's
+-- own class icons are
+-- the atlases "classicon-<class>" (GetClassAtlas, lower-cased by the
+-- character creation screen of this game type); when the client has no
+-- such atlas, the class sheet with CLASS_ICON_TCOORDS, as Blizzard's
+-- raid and community lists use it.
+local CLASS_SHEET = "Interface\\Glues\\CharacterCreate\\UI-CharacterCreate-Classes"
+
+-- The class token of a player unit, or nil: not a player, or the class
+-- unknown or secret (identity can be restricted). A secret token is never
+-- used as an index or an atlas name.
+local function classToken(unit)
+    if Secrets.Bool(UnitIsPlayer, unit) ~= true then return nil end
+    local ok, _, token = pcall(UnitClass, unit)
+    if not ok or Secrets.IsSecret(token) or type(token) ~= "string" then return nil end
+    return token
+end
+
+-- Draws token's icon into tex. Returns false when there is none.
+local function drawClassIcon(tex, token)
+    local atlas = "classicon-" .. string.lower(token)
+    if C_Texture and C_Texture.GetAtlasInfo and C_Texture.GetAtlasInfo(atlas) then
+        tex:SetAtlas(atlas)
+        tex:SetTexCoord(0, 1, 0, 1)
+        return true
+    end
+    local coords = CLASS_ICON_TCOORDS and CLASS_ICON_TCOORDS[token]
+    if not coords then return false end
+    tex:SetTexture(CLASS_SHEET)
+    tex:SetTexCoord(coords[1], coords[2], coords[3], coords[4])
+    return true
+end
+
+-- Also the portrait's class icon (Elements/Portrait.lua).
+Texts.ClassToken, Texts.DrawClassIcon = classToken, drawClassIcon
+
+local function classIconWanted(frame)
+    return frame.titleHeight > 0 and Config.Get(frame.key, "titleClassIcon") == true
+end
+
+-- Round, as Blizzard's portrait icons: the circular alpha mask, clamped.
+local CIRCLE_MASK = "Interface\\CharacterFrame\\TempPortraitAlphaMask"
+-- The badge's frame level above the unit frame: over the bars, their
+-- texts and the border (textures of the frame itself).
+local BADGE_LEVELS = 20
+
+-- Ring thickness on the pixel grid: at least one pixel unless it is off.
+local function ringSize(scope)
+    local size = Config.Get(scope, "classIconRing")
+    if size <= 0 then return 0 end
+    return ns.Pixel.Snap(size, nil, 1)
+end
+
+local function makeRound(badge, tex)
+    local mask = badge:CreateMaskTexture()
+    mask:SetTexture(CIRCLE_MASK, "CLAMPTOBLACKADDITIVE", "CLAMPTOBLACKADDITIVE")
+    mask:SetAllPoints(tex)
+    tex:AddMaskTexture(mask)
+end
+
+local function showClassIcon(frame, shown)
+    frame.classIcon:SetShown(shown)
+    frame.classRing:SetShown(shown and frame.classRingSize > 0)
+end
+
+-- The right title text ends before the badge when it shows and its left
+-- edge lies within the title row, else at the row's right edge; the left
+-- one ends where the right one begins (an empty text is zero wide). No
+-- measuring: the texts may be secret; the badge's place is plain numbers.
+-- The vertical offset keeps the text centred on the row.
+-- With a centre text the left one ends where it begins and the right one
+-- begins where it ends (placeCentres).
+local function placeTitleEnd(frame)
+    local title, right = frame.texts.title, frame.texts.titleRight
+    right:ClearAllPoints()
+    if frame.classIcon:IsShown() and frame.classBadgeInRow then
+        right:SetPoint("RIGHT", frame.classBadge, "LEFT", ns.Pixel.Snap(-2, right),
+            -frame.titleHeight / 2 - frame.classBadgeY)
+    else
+        right:SetPoint("RIGHT", frame.title, "RIGHT", ns.Pixel.Snap(-4, right), 0)
+    end
+    local center = frame.centerShown and frame.centerShown.title and frame.texts.titleCenter
+    if center then
+        right:SetPoint("LEFT", center, "RIGHT", ns.Pixel.Snap(4, right), 0)
+        title:SetPoint("RIGHT", center, "LEFT", ns.Pixel.Snap(-4, title), 0)
+    else
+        title:SetPoint("RIGHT", right, "LEFT", ns.Pixel.Snap(-4, title), 0)
+    end
+end
+
+local function updateClassIcon(frame)
+    local token = classIconWanted(frame) and classToken(frame.unit)
+    showClassIcon(frame, token and drawClassIcon(frame.classIcon, token) or false)
+    placeTitleEnd(frame)
+end
+
+-- Size, ring and place of the badge, on the pixel grid. Its centre sits
+-- at the configured offset from the frame's top right corner.
+local function styleBadge(frame)
+    local scope, Pixel = frame.key, ns.Pixel
+    local badge = frame.classBadge
+    local size = Pixel.Snap(Config.Get(scope, "classIconSize"), nil, 1)
+    local ring = ringSize(scope)
+    local x = Pixel.Centre(Config.Get(scope, "classIconX"), size)
+    local y = Pixel.Centre(Config.Get(scope, "classIconY"), size)
+    badge:SetFrameLevel(frame:GetFrameLevel() + BADGE_LEVELS)
+    badge:SetSize(size, size)
+    badge:ClearAllPoints()
+    badge:SetPoint("CENTER", frame, "TOPRIGHT", x, y)
+    local c = Config.Get(scope, "classIconRingColor")
+    frame.classRing:SetColorTexture(c[1], c[2], c[3], c[4])
+    frame.classRingSize = ring
+    frame.classIcon:SetSize(size - 2 * ring, size - 2 * ring)
+    -- Edges relative to the frame's right edge.
+    local width = ns.Single.Size(scope)
+    local left = x - size / 2
+    frame.classBadgeInRow = left < -frame.titleRight and left > frame.titleLeft - width
+    frame.classBadgeY = y
+    -- The badge's box from the frame's top right corner, for what must
+    -- stay clear of it (Elements/Classification.lua).
+    local half = size / 2
+    frame.classBadgeBox = { left = left, right = x + half, bottom = y - half, top = y + half }
+end
+
+-- Away badge ------------------------------------------------------------------
+-- A small pill right after the name in the title row: "AFK" in gold, "DND"
+-- in red, each on a dark ground with a rim of its colour. Round ends: two
+-- circle-masked squares either side of a plain middle, once for the rim and
+-- once, a pixel smaller, for the ground.
+Texts.AWAY_STYLES = {
+    AFK = { rim = { 0.80, 0.55, 0.12 }, ground = { 0.16, 0.11, 0.03 }, text = { 1, 0.82, 0.25 } },
+    DND = { rim = { 0.72, 0.12, 0.12 }, ground = { 0.22, 0.03, 0.03 }, text = { 1, 0.45, 0.40 } },
+}
+local AWAY_GAP = 5
+
+-- AFK, DND or nil. The flags are secret in chat lockdown (encounters): then
+-- nil, no badge.
+function Texts.AwayState(unit)
+    if Secrets.Bool(UnitIsAFK, unit) then return "AFK" end
+    if Secrets.Bool(UnitIsDND, unit) then return "DND" end
+    return nil
+end
+
+local function pillLayer(badge, sublevel)
+    local layer = {}
+    for i, part in ipairs({ "left", "middle", "right" }) do
+        local tex = badge:CreateTexture(nil, "ARTWORK", nil, sublevel)
+        tex:SetColorTexture(1, 1, 1, 1)
+        if part ~= "middle" then makeRound(badge, tex) end
+        layer[i] = tex
+    end
+    return layer
+end
+
+-- A layer of the pill, inset pixels from the badge's edge. The height is
+-- handed in, not read back: the badge may only report secret sizes.
+local function placePill(badge, layer, inset, height)
+    local h = math.max(1, height - 2 * inset)
+    local left, middle, right = layer[1], layer[2], layer[3]
+    left:ClearAllPoints()
+    left:SetPoint("LEFT", badge, "LEFT", inset, 0)
+    left:SetSize(h, h)
+    right:ClearAllPoints()
+    right:SetPoint("RIGHT", badge, "RIGHT", -inset, 0)
+    right:SetSize(h, h)
+    middle:ClearAllPoints()
+    middle:SetPoint("TOPLEFT", left, "TOP", 0, 0)
+    middle:SetPoint("BOTTOMRIGHT", right, "BOTTOM", 0, 0)
+end
+
+local function paintPill(layer, c)
+    for _, tex in ipairs(layer) do tex:SetVertexColor(c[1], c[2], c[3], 1) end
+end
+
+function Texts.BuildAwayBadge(frame)
+    local badge = CreateFrame("Frame", nil, frame.overlay)
+    badge.rim = pillLayer(badge, 0)
+    badge.ground = pillLayer(badge, 1)
+    badge.text = badge:CreateFontString(nil, "OVERLAY")
+    badge.text:SetPoint("CENTER", badge, "CENTER", 0, 0)
+    badge:Hide()
+    frame.awayBadge = badge
+end
+
+-- The title back to its own anchors (as Style set them).
+local function restoreTitle(frame)
+    local title = frame.texts.title
+    title:ClearAllPoints()
+    title:SetWidth(0)
+    title:SetPoint("LEFT", frame.title, "LEFT", ns.Pixel.Snap(4 + ns.ThemeArt.TitleIndent(frame), title), 0)
+    placeTitleEnd(frame)
+end
+
+-- The room the title text has: the title row less its insets, less the
+-- class badge where that sits in the row, and less the right title text;
+-- with a centre text, its third less the insets.
+-- A secret right text cannot be measured: it is given half the room.
+local function titleRoom(frame)
+    -- With a centre text: its third.
+    if frame.centerShown and frame.centerShown.title then return math.max(0, frame.centerThird.title - 8) end
+    local width = (Secrets.Number(frame.title:GetWidth()) or 0) - 8 - ns.ThemeArt.TitleIndent(frame)
+    if frame.classIcon:IsShown() and frame.classBadgeInRow then
+        width = width - (frame.classBadgeBox.right - frame.classBadgeBox.left) - 2
+    end
+    local right = frame.texts.titleRight
+    if Config.Get(frame.key, "titleTextRight") ~= "NONE" then
+        local measure = right.GetUnboundedStringWidth or right.GetStringWidth
+        local w = Secrets.Number(measure(right))
+        width = width - (w and (w + 4) or width / 2)
+    end
+    return math.max(0, width)
+end
+
+function Texts.UpdateAwayBadge(frame)
+    local badge = frame.awayBadge
+    local state = frame.titleHeight > 0 and Config.Get(frame.key, "awayBadge") and Texts.AwayState(frame.unit)
+    if not state then
+        if badge:IsShown() then
+            badge:Hide()
+            restoreTitle(frame)
+        end
+        return
+    end
+    local style = Texts.AWAY_STYLES[state]
+    local title = frame.texts.title
+    local titleSize = select(2, title:GetFont()) or 12
+    local height = ns.Pixel.Snap(math.floor(titleSize * 1.05 + 0.5), nil, 1)
+    local textSize = math.max(7, math.floor(titleSize * 0.62 + 0.5))
+    Texts.SetFont(badge.text, ns.Media.Font(Config.Get(frame.key, "fontFace")), textSize, "NONE")
+    badge.text:SetText(state)
+    badge.text:SetTextColor(style.text[1], style.text[2], style.text[3], 1)
+    -- The pill hangs from the title text, whose name may be secret; then the
+    -- client hands out its own text width as a secret too (reported
+    -- 04.10.2026). Such a width is estimated from the font size.
+    local textWidth = Secrets.Number(badge.text:GetStringWidth()) or #state * textSize * 0.7
+    local width = ns.Pixel.Snap(textWidth + height, nil, 1)
+    badge:SetSize(width, height)
+    local px = ns.Pixel.Snap(1, nil, 1)
+    placePill(badge, badge.rim, 0, height)
+    placePill(badge, badge.ground, px, height)
+    paintPill(badge.rim, style.rim)
+    paintPill(badge.ground, style.ground)
+    -- The title is as wide as its text (at most the room left for it), so
+    -- the badge sits right after the name; a long name ends in "...".
+    -- A secret name cannot be measured: then it takes all the room.
+    local room = math.max(1, titleRoom(frame) - width - AWAY_GAP)
+    local measure = title.GetUnboundedStringWidth or title.GetStringWidth
+    local nameWidth = Secrets.Number(measure(title))
+    title:ClearAllPoints()
+    title:SetPoint("LEFT", frame.title, "LEFT", ns.Pixel.Snap(4 + ns.ThemeArt.TitleIndent(frame), title), 0)
+    title:SetWidth(math.min(nameWidth and (nameWidth + 1) or room, room))
+    badge:ClearAllPoints()
+    badge:SetPoint("LEFT", title, "RIGHT", AWAY_GAP, 0)
+    badge:Show()
+end
+
+function Texts.Build(frame)
+    -- Its own frame so it draws above the bars; a child of the unit frame
+    -- so it hides with it.
+    local badge = CreateFrame("Frame", nil, frame)
+    frame.classBadge = badge
+    frame.classRing = badge:CreateTexture(nil, "ARTWORK", nil, 0)
+    frame.classRing:SetAllPoints(badge)
+    frame.classIcon = badge:CreateTexture(nil, "ARTWORK", nil, 1)
+    frame.classIcon:SetPoint("CENTER", badge, "CENTER", 0, 0)
+    makeRound(badge, frame.classRing)
+    makeRound(badge, frame.classIcon)
+    frame.classRingSize = 0
+    showClassIcon(frame, false)
+    Texts.BuildAwayBadge(frame)
+    frame.texts = {}
+    -- Power texts: on a layer of their own, a child of the power bar (so
+    -- they hide with it) above what lies on the bar, e.g. the druid's mana
+    -- strip (Elements/DruidMana.lua).
+    frame.powerTextLayer = CreateFrame("Frame", nil, frame.power)
+    frame.powerTextLayer:SetAllPoints(frame.power)
+    for _, slot in ipairs(SLOTS) do
+        -- Title and health texts sit on the overlay, above shields and
+        -- heals; power texts on the power bar's text layer.
+        local parent = slot.bar == "power" and frame.powerTextLayer or frame.overlay
+        frame.texts[slot.field] = parent:CreateFontString(nil, "OVERLAY")
+    end
+end
+
+-- The power texts' layer above the power bar and anything on it.
+Texts.POWER_TEXT_LEVELS = 5
+
+-- Raid cells (Raid/Cell.lua) set frame.centerTexts: the health bar's two
+-- texts stand in its middle, the left one (the name) above the right one
+-- (the second line, or a status word), each as wide as the bar less a
+-- small inset on either side and cut off with "...". The two lines are
+-- half the other's font size away from the middle. No unit frame sets it.
+Texts.CENTRE_INSET = 2
+
+local function placeCentred(frame, nameSize, secondSize)
+    local Pixel, inset = ns.Pixel, Texts.CENTRE_INSET
+    for field, y in pairs({ healthLeft = secondSize / 2, healthRight = -nameSize / 2 }) do
+        local fs = frame.texts[field]
+        local dy = Pixel.Snap(y, fs)
+        fs:ClearAllPoints()
+        fs:SetPoint("LEFT", frame.health, "LEFT", Pixel.Snap(inset, fs), dy)
+        fs:SetPoint("RIGHT", frame.health, "RIGHT", Pixel.Snap(-inset, fs), dy)
+        fs:SetJustifyH("CENTER")
+        fs:SetWordWrap(false)
+    end
+end
+
+-- Centre texts (decision 59): a row whose centre text is set gives it the
+-- middle third of its bar, the left text the first and the right text the
+-- last, each cut off with "..." at its edge. The thirds are plain numbers
+-- from the layout; nothing is measured. Rows without one keep the left
+-- and right texts as Style placed them; the empty centre text is hidden.
+-- Raid cells centre their texts their own way and never have one.
+local function placeCentres(frame)
+    frame.centerShown, frame.centerThird = frame.centerShown or {}, frame.centerThird or {}
+    for _, bar in ipairs(ROW_ORDER) do
+        local row = ROWS[bar]
+        local center = frame.texts[row.center]
+        local on = not frame.centerTexts and Config.Get(frame.key, SLOT_OF[row.center].setting) ~= "NONE"
+        frame.centerShown[bar] = on
+        center:SetShown(on)
+        if on then
+            local third = ns.Pixel.Snap((frame[row.width] or 0) / 3, center)
+            frame.centerThird[bar] = third
+            center:SetPoint("LEFT", frame[bar], "LEFT", third, 0)
+            center:SetPoint("RIGHT", frame[bar], "RIGHT", -third, 0)
+            center:SetJustifyH("CENTER")
+            center:SetWordWrap(false)
+            -- The title's ends are placed with the class badge
+            -- (placeTitleEnd); the bars' here.
+            if bar ~= "title" then
+                local left, right = frame.texts[row.left], frame.texts[row.right]
+                left:SetPoint("RIGHT", center, "LEFT", ns.Pixel.Snap(-4, left), 0)
+                right:SetPoint("LEFT", center, "RIGHT", ns.Pixel.Snap(4, right), 0)
+                right:SetWordWrap(false)
+            end
+        end
+    end
+end
+
+function Texts.Style(frame)
+    local scope = frame.key
+    -- The value kinds the slots show (Texts.Update skips the others' ticks).
+    local kinds = {}
+    for _, slot in ipairs(SLOTS) do
+        local kind = valueKind(slot, Config.Get(scope, slot.setting))
+        if kind then kinds[kind] = true end
+    end
+    frame.textKinds = kinds
+    frame.powerTextLayer:SetFrameLevel(frame.power:GetFrameLevel() + Texts.POWER_TEXT_LEVELS)
+    local font = ns.Media.Font(Config.Get(scope, "fontFace"))
+    local size = Config.Get(scope, "fontSize")
+    local outline = Config.Get(scope, "fontOutline")
+    local shadow = Config.Get(scope, "fontShadow")
+    local valueSize = Config.Get(scope, "valueFontSize")
+    for _, slot in ipairs(SLOTS) do
+        local fs = frame.texts[slot.field]
+        -- Value texts (numbers, percent) may have a size of their own.
+        local isValue = valueKind(slot, Config.Get(scope, slot.setting)) ~= nil
+        Texts.SetFont(fs, font, (isValue and valueSize > 0) and valueSize or size, outline)
+        fs:SetShadowOffset(shadow and 1 or 0, shadow and -1 or 0)
+        fs:ClearAllPoints()
+        if not slot.center then
+            -- The title clears a theme's title wedge (Elements/ThemeArt.lua).
+            local x = slot.field == "title" and slot.x + ns.ThemeArt.TitleIndent(frame) or slot.x
+            fs:SetPoint(slot.point, frame[slot.bar], slot.point, ns.Pixel.Snap(x, fs), 0)
+            fs:SetJustifyH(slot.point)
+        end
+        if slot.before then
+            -- A left text ends where the right one begins (an empty right
+            -- text is zero wide), so the two never overlap on a narrow
+            -- bar. No measuring: the text may be secret.
+            fs:SetPoint("RIGHT", frame.texts[slot.before], "LEFT", ns.Pixel.Snap(-4, fs), 0)
+            fs:SetWordWrap(false)
+        end
+    end
+    placeCentres(frame)
+    if frame.centerTexts then
+        local secondTag = Config.Get(scope, "textHealthRight")
+        placeCentred(frame, size, (SAMPLE_TAGS[secondTag] and valueSize > 0) and valueSize or size)
+    end
+    local title = frame.texts.title
+    title:SetWordWrap(false)
+    title:SetShown(frame.titleHeight > 0)
+    frame.texts.titleRight:SetWordWrap(false)
+    frame.texts.titleRight:SetShown(frame.titleHeight > 0)
+    frame.texts.titleCenter:SetShown(frame.titleHeight > 0 and frame.centerShown.title)
+    local footerOn = (frame.footerHeight or 0) > 0
+    frame.texts.footerLeft:SetShown(footerOn)
+    frame.texts.footerRight:SetShown(footerOn)
+    frame.texts.footerCenter:SetShown(footerOn and frame.centerShown.footer)
+    styleBadge(frame)
+    if not classIconWanted(frame) then
+        showClassIcon(frame, false)
+    else
+        -- The ring may have been switched on or off with the border.
+        showClassIcon(frame, frame.classIcon:IsShown())
+    end
+    placeTitleEnd(frame)
+end
+
+-- Title text colour: class (players) or reaction, or plain white. The
+-- right and centre title texts take it when they name the unit; values
+-- stay white.
+local function paintTitle(frame)
+    local mode = Config.Get(frame.key, "titleColorMode")
+    local r, g, b = 1, 1, 1
+    if mode ~= "WHITE" then r, g, b = ns.Health.UnitColor(frame.unit, mode, frame.key) end
+    frame.texts.title:SetTextColor(r, g, b, 1)
+    for field, key in pairs({ titleRight = "titleTextRight", titleCenter = "titleTextCenter" }) do
+        if Texts.NAME_TAGS[Config.Get(frame.key, key)] then
+            frame.texts[field]:SetTextColor(r, g, b, 1)
+        else
+            frame.texts[field]:SetTextColor(1, 1, 1, 1)
+        end
+    end
+end
+
+-- Texts on the bars that name the unit take barNameColorMode; value
+-- texts and the status word stay white.
+Texts.NAME_TAGS = { NAME = true, NAME_LEVEL = true, INFO = true }
+
+-- Raid cells (Raid/Cell.lua) set frame.textColors: it returns the colours
+-- of a name and of the other texts in place of white (a name in the class
+-- or reaction colour keeps that). No unit frame sets it.
+local WHITE = { 1, 1, 1, 1 }
+
+local function plainColors(frame)
+    if frame.textColors then return frame.textColors(frame) end
+    return WHITE, WHITE
+end
+
+local function paintBars(frame, wordSlot)
+    local mode = Config.Get(frame.key, "barNameColorMode")
+    local name, other = plainColors(frame)
+    local r, g, b, a = name[1], name[2], name[3], name[4]
+    if mode ~= "WHITE" then
+        r, g, b = ns.Health.FrameColor(frame, mode)
+        a = 1
+    end
+    for _, slot in ipairs(SLOTS) do
+        if slot.bar ~= "title" then
+            local named = slot.field ~= wordSlot and Texts.NAME_TAGS[Config.Get(frame.key, slot.setting)]
+            if named then
+                frame.texts[slot.field]:SetTextColor(r, g, b, a)
+            else
+                frame.texts[slot.field]:SetTextColor(other[1], other[2], other[3], other[4])
+            end
+        end
+    end
+end
+
+-- Dead, ghost and offline units (Elements/UnitStatus.lua): the health
+-- bar's value texts give way to one word, in the first of them (left,
+-- right, then centre); a bar without a value text shows it on the right
+-- when that side is empty.
+-- Returns the slot field that shows the word, or nil.
+local function statusSlot(frame)
+    local empty
+    for _, slot in ipairs(SLOTS) do
+        if slot.bar == "health" then
+            local tag = Config.Get(frame.key, slot.setting)
+            if SAMPLE_TAGS[tag] then return slot.field end
+            if tag == "NONE" and not slot.center then empty = slot.field end
+        end
+    end
+    return empty
+end
+
+local function isHealthValue(frame, slot)
+    return slot.bar == "health" and SAMPLE_TAGS[Config.Get(frame.key, slot.setting)] ~= nil
+end
+
+-- Events that only change one bar's numbers: while the status word stays,
+-- only that bar's value texts are set again (they come on every tick of
+-- every frame; names, colours, badge and class icon stay as they are).
+Texts.VALUE_EVENTS = { UNIT_HEALTH = "health", UNIT_MAXHEALTH = "health",
+    UNIT_POWER_FREQUENT = "power", UNIT_MAXPOWER = "power" }
+
+function Texts.Update(frame, event)
+    -- A power tick changes neither the status word nor any text but a
+    -- power value: nothing to do on a frame that shows none (raid cells).
+    if Texts.VALUE_EVENTS[event] == "power" and frame.textKinds and not frame.textKinds.power then return end
+    local showSurname = Config.Get(frame.key, "showSurname")
+    -- One table per frame, filled anew: no garbage per event.
+    local opts = frame.textOpts or {}
+    frame.textOpts = opts
+    opts.levelColored = Config.Get(frame.key, "levelColorMode") == "DIFFICULTY"
+    opts.compact = Config.Get(frame.key, "textCompact")
+    opts.infoColor = Config.Get(frame.key, "infoClassColor")
+    opts.scope = frame.key
+    opts.sampleName = ns.Health.Sample(frame) and ns.Health.Sample(frame).name
+    opts.roleSize = Config.Get(frame.key, "fontSize")
+    opts.sampleRole = frame.health.preview and ns.GroupIcons.SampleRole(frame) or nil
+    local sample = sampleHealth(frame)
+    local word = ns.UnitStatus.Word(ns.UnitStatus.Of(frame))
+    -- A cell's second line also says AFK (the badge's word; the badge
+    -- itself needs a unit frame's title row). Not on a sample: a pretend
+    -- cell sits on the player and never shows the player's live state.
+    if not word and frame.centerTexts and not ns.Health.Sample(frame)
+        and Texts.AwayState(frame.unit) == "AFK" then
+        word = "AFK"
+    end
+    local wordSlot = word and statusSlot(frame)
+    local only = Texts.VALUE_EVENTS[event]
+    if only and frame.textWord == (word or false) then
+        for _, slot in ipairs(SLOTS) do
+            local tag = Config.Get(frame.key, slot.setting)
+            if valueKind(slot, tag) == only and slot.field ~= wordSlot
+                and not (word and isHealthValue(frame, slot)) then
+                Texts.Apply(frame.texts[slot.field], tag, frame.unit, only, showSurname, sample, opts)
+            end
+        end
+        return
+    end
+    frame.textWord = word or false
+    for _, slot in ipairs(SLOTS) do
+        local fs = frame.texts[slot.field]
+        if slot.field == wordSlot then
+            fs:SetText(word)
+        elseif word and isHealthValue(frame, slot) then
+            fs:SetText("")
+        else
+            Texts.Apply(fs, Config.Get(frame.key, slot.setting), frame.unit, slot.kind or slot.bar, showSurname,
+                sample, opts)
+        end
+    end
+    paintTitle(frame)
+    paintBars(frame, wordSlot)
+    updateClassIcon(frame)
+    Texts.UpdateAwayBadge(frame)
+end
+
+-- Test mode: Health.Preview (an earlier element) has switched the health
+-- bar to or from its sample; the texts follow at once.
+function Texts.Preview(frame)
+    if frame.unit and UnitExists(frame.unit) then Texts.Update(frame) end
+end
+
+-- The role tag follows the group's roles. Only frames that show the tag:
+-- names follow the headers' unit attribute (OnUnitChanged), not this.
+local function showsRole(frame)
+    for _, slot in ipairs(SLOTS) do
+        if Config.Get(frame.key, slot.setting) == "ROLE" then return true end
+    end
+    return false
+end
+local function updateRoles(event)
+    ns.Units.ForEachFrame(function(frame)
+        if frame.unit and UnitExists(frame.unit) and showsRole(frame) then Texts.Update(frame, event) end
+    end)
+end
+ns.On("GROUP_ROSTER_UPDATE", updateRoles)
+ns.On("PLAYER_ROLES_ASSIGNED", updateRoles)
+
+ns.RegisterElement(Texts)

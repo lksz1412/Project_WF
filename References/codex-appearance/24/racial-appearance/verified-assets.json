@@ -1,0 +1,1473 @@
+{
+  "archive": {
+    "archive": "DevilForever-0.1.0-one-session.zip",
+    "sha256": "86f8b8ec44a167d54a9aad976cfc5fa0c5cbaf06e8b83cf521e607059d4841b5",
+    "members": {
+      "Interface/AddOns/DevilForever_Appearance/Media/metal.tga": "3dc3f17f0c6038bcf96aadfb1fc006fb264e891ae3ae57e53fa10a60d5f3ca74",
+      "Interface/AddOns/DevilForever_Appearance/Themes/Crests/alliance.tga": "b31627b02d7f2ea06716a999da8de21c538755b7a81538750c4441f0b3adad13",
+      "Interface/AddOns/DevilForever_Appearance/Themes/Crests/dwarf.tga": "f3dbddd040718bf67010b4f85fd96185e50a5ccc3b13e87bb4322d80cb2f0475",
+      "Interface/AddOns/DevilForever_Appearance/Themes/Crests/gnome.tga": "cd842fabe6b87c8e4f133871f06b1b0b16b5f949eb09e1d739057ef4ec9c76cd",
+      "Interface/AddOns/DevilForever_Appearance/Themes/Crests/horde.tga": "a10aeb7697b2168727862677d840a3963e52a258cb84194bf8c95a4b5d994156",
+      "Interface/AddOns/DevilForever_Appearance/Themes/Crests/human.tga": "e5116dd1ebaac9f63a6f14a6528f760dbad1ed674681693728cfc0fef9f1fc2e",
+      "Interface/AddOns/DevilForever_Appearance/Themes/Crests/nightelf.tga": "d0760a5d9ccf252a245a959d5e7a07f005a126f81292a3d7d599a609d08f0e20",
+      "Interface/AddOns/DevilForever_Appearance/Themes/Crests/orc.tga": "25818609d62dc4403318e5391d7e8cfcb122ee9e928e68d8a22cdecd01d549fe",
+      "Interface/AddOns/DevilForever_Appearance/Themes/Crests/skyborne.tga": "1b5648567bf22c8826f6b86fc84261fbde1560ee094ea4cf1ec24bf07e3003e4",
+      "Interface/AddOns/DevilForever_Appearance/Themes/Crests/tauren.tga": "b0fd0f0e1a5bc496d0a4011d38a72a589c4ba87b26b3b8005ad3209cd037f2f6",
+      "Interface/AddOns/DevilForever_Appearance/Themes/Crests/troll.tga": "26dadcbe8616a488ada915f11b677faa729c5c5e5f1feca7a6c8dfd8136204c0",
+      "Interface/AddOns/DevilForever_Appearance/Themes/Crests/undead.tga": "a7e2c202a79d89a559cbdc7e20f73f21bb49d1fffcae25666d55ad4897fe6f74",
+      "Interface/AddOns/DevilForever_Appearance/Themes/alliance/Composition/fhd_deck.tga": "3d5628284e919e1cb08254d359d731d21c426facd8bda0a3a7e5ec60e8aedd8f",
+      "Interface/AddOns/DevilForever_Appearance/Themes/alliance/Composition/fhd_top.tga": "d43ed0ff4109ac7b2e226173b65ba9134cbc782a8219a6493be8c7373b7deb22",
+      "Interface/AddOns/DevilForever_Appearance/Themes/alliance/Composition/qhd_deck.tga": "c261530407ebd76b103fac8e2a534cbd449b9433a9fb0d74448d78f350d87287",
+      "Interface/AddOns/DevilForever_Appearance/Themes/alliance/Composition/qhd_top.tga": "fcc9e1af2b913dbd52ae0e969871a52feb615bc372de22cfe0eecf1cc7b24189",
+      "Interface/AddOns/DevilForever_Appearance/Themes/alliance/Composition/uhd_deck.tga": "c60aab4897e8b45e3ca51493bf2cf90ed0f552609624475ebf28269e5437ebdc",
+      "Interface/AddOns/DevilForever_Appearance/Themes/alliance/Composition/uhd_top.tga": "d2ee8b7fded9ae8aaf238786d29beaebc992b1aee3ab652d3d52efe85a4dd928",
+      "Interface/AddOns/DevilForever_Appearance/Themes/alliance/panel.tga": "ca536569a72dd91f82b738c28f1d89f4e0db4408b59ffe0b1e5e0cfa349a76f2",
+      "Interface/AddOns/DevilForever_Appearance/Themes/devil/Composition/fhd_deck.tga": "8c018f8a79245b1e1f7280941e0e46566376725c2384f61f6f5dadecb281b69f",
+      "Interface/AddOns/DevilForever_Appearance/Themes/devil/Composition/fhd_top.tga": "7e5fc9452028fc99f3d538138729ce5f0bf3b4df7378c9aca64980e5e8a87bf7",
+      "Interface/AddOns/DevilForever_Appearance/Themes/devil/Composition/qhd_deck.tga": "9827e591be0397df6eb5b5a76f19196dccaa139c82813f33db75f53c81415917",
+      "Interface/AddOns/DevilForever_Appearance/Themes/devil/Composition/qhd_top.tga": "999b8163441f3fbea201a6396a3ae8091c3d76673df7d6c62ed32aca7280648c",
+      "Interface/AddOns/DevilForever_Appearance/Themes/devil/Composition/uhd_deck.tga": "183e42816437eded6bf824ee85f4a91ea5012e155c01e8083eecffe4524faaf5",
+      "Interface/AddOns/DevilForever_Appearance/Themes/devil/Composition/uhd_top.tga": "8158002ea07ee4904fc83980a1dfb4e39d91436f445c683253f0f5c203a2e44a",
+      "Interface/AddOns/DevilForever_Appearance/Themes/devil/panel.tga": "98f60e37e07cbdfcc64486435de400e12bdd5ca2cbffbb517a6f9979b8a8867e",
+      "Interface/AddOns/DevilForever_Appearance/Themes/devil/statusbar.tga": "7c531d38325d8823df4eadfcb1b58b6afc3518d6a317b03af15a44cdfe4fd478",
+      "Interface/AddOns/DevilForever_Appearance/Themes/dwarf/Composition/fhd_deck.tga": "1f68bdc6d04f400f5f3627ba2e2d68bbbf0b246d54ec3126998edda3c26efdac",
+      "Interface/AddOns/DevilForever_Appearance/Themes/dwarf/Composition/fhd_top.tga": "35c9abff6744b1e7268df2a3cf135e400c06206b14e7b93592475b6bfcf547d0",
+      "Interface/AddOns/DevilForever_Appearance/Themes/dwarf/Composition/qhd_deck.tga": "f390bb0e8f55a614b59c54e44de0c0756318843a4118585e020003db5ff4bc57",
+      "Interface/AddOns/DevilForever_Appearance/Themes/dwarf/Composition/qhd_top.tga": "05065fe5cfb17389c8bf3e8e314a51c151950ad7fad25ff9f3b9fe8a82bf9de3",
+      "Interface/AddOns/DevilForever_Appearance/Themes/dwarf/Composition/uhd_deck.tga": "c2e2bdf1b090e43b1fe1fbd15f369449f335e80d0a5d61d895b4cb22685a4ccc",
+      "Interface/AddOns/DevilForever_Appearance/Themes/dwarf/Composition/uhd_top.tga": "0456ac330dd88b1318f366b743faa8b094bc77ed7542b0bebc184882d0c272cf",
+      "Interface/AddOns/DevilForever_Appearance/Themes/gnome/Composition/fhd_deck.tga": "e46c53d8546d81216335824e93466ff463f419b8d1714197937818987cd1fd2d",
+      "Interface/AddOns/DevilForever_Appearance/Themes/gnome/Composition/fhd_top.tga": "fc1d297dd013be77449eba312aeee360ef55ad666876b869e19565b78ec87b4d",
+      "Interface/AddOns/DevilForever_Appearance/Themes/gnome/Composition/qhd_deck.tga": "bd4ebb73b51ba1fdabefef7f6300f6afbe668d80d5e0cb9d029a5b256856fbf3",
+      "Interface/AddOns/DevilForever_Appearance/Themes/gnome/Composition/qhd_top.tga": "57dc6d0e6740dba52e52e46548646d1fa5a08e312690e0015bdb62d1d04dcad9",
+      "Interface/AddOns/DevilForever_Appearance/Themes/gnome/Composition/uhd_deck.tga": "332bda6dcc27a4338fdff1596c8bd0b1cb47fc8e8b16d251713c9594ec53dda0",
+      "Interface/AddOns/DevilForever_Appearance/Themes/gnome/Composition/uhd_top.tga": "f7563c44136c69e2ded9e0f97bfe124ec9f2124ad35f43643a85bdeb3bfa7b3e",
+      "Interface/AddOns/DevilForever_Appearance/Themes/horde/Composition/fhd_deck.tga": "b1dfb826c3c65bd47c5f2f1e75766f78b1e60d6678ee73328681652eafb1dbf4",
+      "Interface/AddOns/DevilForever_Appearance/Themes/horde/Composition/fhd_top.tga": "ed95860bfa7ad270dcd5ba0519e90147796f13575da7febb73f5f67e84b56c7b",
+      "Interface/AddOns/DevilForever_Appearance/Themes/horde/Composition/qhd_deck.tga": "015d01a0aae60472f4373520b47a17f289a7baa3c3b61a6cdb89370db27055bc",
+      "Interface/AddOns/DevilForever_Appearance/Themes/horde/Composition/qhd_top.tga": "18627d94a2bbbbfcda5babd71b63bd278c517e7c1b26578656f66dd1be325f86",
+      "Interface/AddOns/DevilForever_Appearance/Themes/horde/Composition/uhd_deck.tga": "5dd7b3be03229ba61aaf0fb1d2fd1bab093cb80380c1ac0b9455d34f282ca110",
+      "Interface/AddOns/DevilForever_Appearance/Themes/horde/Composition/uhd_top.tga": "e046435acd938f2eb326a5912029c265aaf6a862b0ff48c145f2b7e7c4921314",
+      "Interface/AddOns/DevilForever_Appearance/Themes/horde/left_cap.tga": "76f3bfd4df04f3a5da4c23f4d31330d38e91801be4dae459b8b44d8bb25e1b9d",
+      "Interface/AddOns/DevilForever_Appearance/Themes/horde/panel.tga": "4cb5590de87842d0ad44035b5326a3b06c194e205b766cec89dd3644bffe0692",
+      "Interface/AddOns/DevilForever_Appearance/Themes/horde/right_cap.tga": "e1b25fc771ce06fef6502c1a4d04173c6d84deb680d4c5034d8479ae275a6867",
+      "Interface/AddOns/DevilForever_Appearance/Themes/human/Composition/fhd_deck.tga": "a1679ffe83b33c3a262881fb68a4e88638c400c6f5b8cd02df1728ac0c6b323b",
+      "Interface/AddOns/DevilForever_Appearance/Themes/human/Composition/fhd_top.tga": "9c76ce94ccbdd6d82d282b214fabe12e7f1a48532cdc0595333f57906c53c23f",
+      "Interface/AddOns/DevilForever_Appearance/Themes/human/Composition/qhd_deck.tga": "e510f55c1ec9b0aaa31d482c92b4ca9ed1bd6b25df135e1af215367c939e1a63",
+      "Interface/AddOns/DevilForever_Appearance/Themes/human/Composition/qhd_top.tga": "732b3434e5fefb08ace12e3249a17fbfb931d90189f4dee83ab08aaf7ba075e9",
+      "Interface/AddOns/DevilForever_Appearance/Themes/human/Composition/uhd_deck.tga": "a35df409c5fa59fec91ec8172a90e65a0af9c45aa4dc460ef72b5bae800f5889",
+      "Interface/AddOns/DevilForever_Appearance/Themes/human/Composition/uhd_top.tga": "d0a53f13113c1ebcae115bb2287712b4c30891465d74b9e641501efe78c791ae",
+      "Interface/AddOns/DevilForever_Appearance/Themes/nightelf/Composition/fhd_deck.tga": "444fe50a1f0db3a446eeeafe8ad9ea28431ef1e843609eb4f7714a39a0c898c4",
+      "Interface/AddOns/DevilForever_Appearance/Themes/nightelf/Composition/fhd_top.tga": "3b2d9e0d541c7d1ec9774ae8ffa5549a0820080cfc91ad38b95303c256bb46ab",
+      "Interface/AddOns/DevilForever_Appearance/Themes/nightelf/Composition/qhd_deck.tga": "75281a044db1844a3176c82f5bc82dedcb72b11a2f78ee5ffa6a34c238b53f53",
+      "Interface/AddOns/DevilForever_Appearance/Themes/nightelf/Composition/qhd_top.tga": "24e975754a72b2028f7274e8a5b05be5c83b5c6dddeb255cf92b219d054c3838",
+      "Interface/AddOns/DevilForever_Appearance/Themes/nightelf/Composition/uhd_deck.tga": "6b96a68af87aa95cedca6362a1f34f326adef89b785284b7d18a65ae9fb3be20",
+      "Interface/AddOns/DevilForever_Appearance/Themes/nightelf/Composition/uhd_top.tga": "5576bf56947e07a09ba0865fd6839800872dffb0c4c0ffdf2dd526f8b7405a64",
+      "Interface/AddOns/DevilForever_Appearance/Themes/orc/Composition/fhd_deck.tga": "9ed067530c53e15e2187ecba68d89334bf50b534356e9c7f20998bb5b87ebeab",
+      "Interface/AddOns/DevilForever_Appearance/Themes/orc/Composition/fhd_top.tga": "00aefcb8898d143601efb16dda9e5a40916fcec23a9243fcfcf92ac374f773e0",
+      "Interface/AddOns/DevilForever_Appearance/Themes/orc/Composition/qhd_deck.tga": "8001981886b4a259faf1549720da0798172b01d567d164de070e75b512f625aa",
+      "Interface/AddOns/DevilForever_Appearance/Themes/orc/Composition/qhd_top.tga": "20a4a66d35891762b30e37d80988d227e3377bfbdc91d435752a7e761978f5c2",
+      "Interface/AddOns/DevilForever_Appearance/Themes/orc/Composition/uhd_deck.tga": "f25a90985480c8e845aafe5f988387f6267f297dbdb83684a9755ce468d6a4ea",
+      "Interface/AddOns/DevilForever_Appearance/Themes/orc/Composition/uhd_top.tga": "950fc4612bed4996a7b7d060e7aaba83099157ea6956cd4b55a5bf2bb2a00634",
+      "Interface/AddOns/DevilForever_Appearance/Themes/orc/PetEdge.tga": "dbeab1a94369783ca4558e6059852ffa6311b983806509735a14c4b63ee52892",
+      "Interface/AddOns/DevilForever_Appearance/Themes/skyborne-horde/Composition/fhd_deck.tga": "81d9b9f74933a30448a5c1a951a72576df4cd0b6e80ff4cea46eb62cfcd94994",
+      "Interface/AddOns/DevilForever_Appearance/Themes/skyborne-horde/Composition/fhd_top.tga": "470d008917b7fd6384cfe5f840e384cf81fac9af3f8c23f9794f2d417da4ce3c",
+      "Interface/AddOns/DevilForever_Appearance/Themes/skyborne-horde/Composition/qhd_deck.tga": "a5d14716825a55c8b2166354721c5d559e2e2b035df591bf85749baaab7db948",
+      "Interface/AddOns/DevilForever_Appearance/Themes/skyborne-horde/Composition/qhd_top.tga": "da241ae89f20ba24d61162a04dcc2c31be04222d74050b325a48b50cba3926c9",
+      "Interface/AddOns/DevilForever_Appearance/Themes/skyborne-horde/Composition/uhd_deck.tga": "d050b0b83c33366acd57fa06f3385ec41c2f3a2b2b7a199f666444234bdf1518",
+      "Interface/AddOns/DevilForever_Appearance/Themes/skyborne-horde/Composition/uhd_top.tga": "d79d36f3702bd47ca17aeadafd0dc371e424e43cba277629dd6363a1678f69aa",
+      "Interface/AddOns/DevilForever_Appearance/Themes/skyborne/Composition/fhd_deck.tga": "6c53f11ccb57ad103f9dafc9b473da25adb6b837faa20d1df5eea2b826006828",
+      "Interface/AddOns/DevilForever_Appearance/Themes/skyborne/Composition/fhd_top.tga": "5d95e9e02eea25561aef12ddc7dcebed6e43503309ccfcf7920cc442239f34a7",
+      "Interface/AddOns/DevilForever_Appearance/Themes/skyborne/Composition/qhd_deck.tga": "5d845cd8f7b06557bd2bb8f966387db3ca99a40d51869237f95377e593cbaba9",
+      "Interface/AddOns/DevilForever_Appearance/Themes/skyborne/Composition/qhd_top.tga": "532756fad2baed70289d22b2c41ab0b6c6c76a14ec53db26de7342e2ec96322d",
+      "Interface/AddOns/DevilForever_Appearance/Themes/skyborne/Composition/uhd_deck.tga": "e9f8753a62c14d9446caf94302fdd8eec5f0bacdd0928dcc4c3bb8d848eeb797",
+      "Interface/AddOns/DevilForever_Appearance/Themes/skyborne/Composition/uhd_top.tga": "2eada3ee024bcb5c0f7df774ccf3a357cac25c16ba224b41e1e49b35aca58374",
+      "Interface/AddOns/DevilForever_Appearance/Themes/tauren/Composition/fhd_deck.tga": "5f822f45404498a7e6d5a2e817585f3773e99477acb5e8cbbef37cad5b8e792f",
+      "Interface/AddOns/DevilForever_Appearance/Themes/tauren/Composition/fhd_top.tga": "d3f90cd6a3daba0ad59f651752fbca38c81df319c38ea485c0d99b5e240277be",
+      "Interface/AddOns/DevilForever_Appearance/Themes/tauren/Composition/qhd_deck.tga": "a6a6b04d5bf3dce84acaaa8c8cf2552615dc69283674b9fbf9ef0c0c45fa0784",
+      "Interface/AddOns/DevilForever_Appearance/Themes/tauren/Composition/qhd_top.tga": "8adb982ccd03ea7c29eeaab98a83c4e0d2ceb045878c84bb5302239508a0da1c",
+      "Interface/AddOns/DevilForever_Appearance/Themes/tauren/Composition/uhd_deck.tga": "4fd58c34677555ccd0c333acc1c5cb10d45d810c12d66f8627a9084cc64cbd80",
+      "Interface/AddOns/DevilForever_Appearance/Themes/tauren/Composition/uhd_top.tga": "5f18e68a9c50e3056a0e8f4d8f11218c6cae990e7d82e081758c2322f9f90827",
+      "Interface/AddOns/DevilForever_Appearance/Themes/troll/Composition/fhd_deck.tga": "c9abb845a9d71c6eafb1cc6c4be8071521e4a2c810c8187b1122b7c4d949f36e",
+      "Interface/AddOns/DevilForever_Appearance/Themes/troll/Composition/fhd_top.tga": "5c4d289ad4565423c2cb84af177c26e428384c13d8677650fa6220c7985a56b6",
+      "Interface/AddOns/DevilForever_Appearance/Themes/troll/Composition/qhd_deck.tga": "5224bb1c70def70b0d031e2e1f017a60e05719cd1b02c242a55f7e8df64eeb76",
+      "Interface/AddOns/DevilForever_Appearance/Themes/troll/Composition/qhd_top.tga": "c0f22ae1ab5a6bcd657ed817301ff6aef732379b5b6f404ebed0d3784f0b845c",
+      "Interface/AddOns/DevilForever_Appearance/Themes/troll/Composition/uhd_deck.tga": "26024d81c7b3cca6551def16aa45e5ed39a0f8a4e2bcf55263ee86b0d5a84f56",
+      "Interface/AddOns/DevilForever_Appearance/Themes/troll/Composition/uhd_top.tga": "0c5edbb7e8e82fd17295fc1ec30adc3d3b4f9b833805e9dbf67a1f7159d74d0d",
+      "Interface/AddOns/DevilForever_Appearance/Themes/undead/Composition/fhd_deck.tga": "950064cfec00f432563e5ff93a68c3027ab26c4c7abbc809afadcbfd020bbdf9",
+      "Interface/AddOns/DevilForever_Appearance/Themes/undead/Composition/fhd_top.tga": "76712a498bb6149da21910a6fc1bd4bcb8385d0f8332d7e59ff9138c2e888e63",
+      "Interface/AddOns/DevilForever_Appearance/Themes/undead/Composition/qhd_deck.tga": "ab864679711ce5d3cafdf0a745b9263e2fe640a5a9694b096f3170af664e5903",
+      "Interface/AddOns/DevilForever_Appearance/Themes/undead/Composition/qhd_top.tga": "cd27c7c6dfb59d664e873e1d8806d1fd5543cc630dacfee089a7ec69a59cfbb2",
+      "Interface/AddOns/DevilForever_Appearance/Themes/undead/Composition/uhd_deck.tga": "7ad22576d1744fda43ec0318e7127f1cf61b73e8affa5e781364c966b6652daf",
+      "Interface/AddOns/DevilForever_Appearance/Themes/undead/Composition/uhd_top.tga": "64cafa8e5239d043aff6f1bc243550ffd4b286b9049986db0f8529dd678daad5",
+      "Interface/AddOns/Masque_Onyx/Textures/Base/Frame.tga": "7947a29a80c8b47f30dc4301ab421645f0d26cbd0b23ef68fdc41de38a14ae04"
+    },
+    "installed_geometry": {
+      "layouts": {
+        "fhd": {
+          "units": {
+            "player": [
+              438,
+              620,
+              240,
+              48
+            ],
+            "target": [
+              338,
+              680,
+              340,
+              56
+            ],
+            "pet": [
+              218,
+              450,
+              240,
+              32
+            ],
+            "petTarget": [
+              218,
+              420,
+              240,
+              24
+            ],
+            "focus": [
+              70,
+              628,
+              240,
+              40
+            ],
+            "focusTarget": [
+              224,
+              548,
+              240,
+              28
+            ],
+            "targettarget": [
+              690,
+              570,
+              160,
+              28
+            ],
+            "targettargettarget": [
+              860,
+              570,
+              140,
+              28
+            ]
+          },
+          "appearance": {
+            "player": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 16.0,
+              "power": true,
+              "material": "Devil Forever devil"
+            },
+            "target": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 16.0,
+              "power": true,
+              "material": "Devil Forever devil"
+            },
+            "pet": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 16.0,
+              "power": true,
+              "material": "Devil Forever devil"
+            },
+            "petTarget": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 16.0,
+              "power": false,
+              "material": "Devil Forever devil"
+            },
+            "focus": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 16.0,
+              "power": true,
+              "material": "Devil Forever devil"
+            },
+            "focusTarget": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 16.0,
+              "power": false,
+              "material": "Devil Forever devil"
+            },
+            "targettarget": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 16.0,
+              "power": false,
+              "material": "Devil Forever devil"
+            },
+            "targettargettarget": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 16.0,
+              "power": false,
+              "material": "Devil Forever devil"
+            }
+          },
+          "pet_actions": {
+            "rect": [
+              218,
+              490,
+              238,
+              22
+            ],
+            "columns": 10,
+            "gap": 2
+          },
+          "preset_sha256": "54d0a9f351c56a65e73fa0392144e39fa09806fd62eee68ba7010a30ec3c767c"
+        },
+        "qhd": {
+          "units": {
+            "player": [
+              690,
+              908,
+              280,
+              56
+            ],
+            "target": [
+              570,
+              980,
+              400,
+              64
+            ],
+            "pet": [
+              256,
+              764,
+              280,
+              40
+            ],
+            "petTarget": [
+              256,
+              738,
+              280,
+              24
+            ],
+            "focus": [
+              274,
+              908,
+              280,
+              48
+            ],
+            "focusTarget": [
+              274,
+              866,
+              260,
+              30
+            ],
+            "targettarget": [
+              990,
+              864,
+              160,
+              32
+            ],
+            "targettargettarget": [
+              1158,
+              864,
+              160,
+              32
+            ]
+          },
+          "appearance": {
+            "player": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 18.0,
+              "power": true,
+              "material": "Devil Forever devil"
+            },
+            "target": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 18.0,
+              "power": true,
+              "material": "Devil Forever devil"
+            },
+            "pet": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 18.0,
+              "power": true,
+              "material": "Devil Forever devil"
+            },
+            "petTarget": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 18.0,
+              "power": false,
+              "material": "Devil Forever devil"
+            },
+            "focus": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 18.0,
+              "power": true,
+              "material": "Devil Forever devil"
+            },
+            "focusTarget": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 18.0,
+              "power": false,
+              "material": "Devil Forever devil"
+            },
+            "targettarget": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 18.0,
+              "power": false,
+              "material": "Devil Forever devil"
+            },
+            "targettargettarget": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 18.0,
+              "power": false,
+              "material": "Devil Forever devil"
+            }
+          },
+          "pet_actions": {
+            "rect": [
+              256,
+              806,
+              278,
+              26
+            ],
+            "columns": 10,
+            "gap": 2
+          },
+          "preset_sha256": "febb896fcbf5d17a7f50aead01220ac8bdd1ff13882d09f4f31c642fc341a324"
+        },
+        "uhd": {
+          "units": {
+            "player": [
+              1080,
+              1440,
+              390,
+              72
+            ],
+            "target": [
+              916,
+              1536,
+              554,
+              84
+            ],
+            "pet": [
+              212,
+              1514,
+              360,
+              42
+            ],
+            "petTarget": [
+              212,
+              1470,
+              360,
+              34
+            ],
+            "focus": [
+              580,
+              1440,
+              320,
+              56
+            ],
+            "focusTarget": [
+              580,
+              1400,
+              280,
+              32
+            ],
+            "targettarget": [
+              1480,
+              1390,
+              190,
+              36
+            ],
+            "targettargettarget": [
+              1678,
+              1390,
+              190,
+              36
+            ]
+          },
+          "appearance": {
+            "player": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 22.0,
+              "power": true,
+              "material": "Devil Forever devil"
+            },
+            "target": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 22.0,
+              "power": true,
+              "material": "Devil Forever devil"
+            },
+            "pet": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 22.0,
+              "power": true,
+              "material": "Devil Forever devil"
+            },
+            "petTarget": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 22.0,
+              "power": false,
+              "material": "Devil Forever devil"
+            },
+            "focus": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 22.0,
+              "power": true,
+              "material": "Devil Forever devil"
+            },
+            "focusTarget": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 22.0,
+              "power": false,
+              "material": "Devil Forever devil"
+            },
+            "targettarget": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 22.0,
+              "power": false,
+              "material": "Devil Forever devil"
+            },
+            "targettargettarget": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 22.0,
+              "power": false,
+              "material": "Devil Forever devil"
+            }
+          },
+          "pet_actions": {
+            "rect": [
+              212,
+              1564,
+              358,
+              34
+            ],
+            "columns": 10,
+            "gap": 2
+          },
+          "preset_sha256": "8d7dcb03587a9a152b4947c29ba8a328891060c918b2fc3bf275d59d991bfd26"
+        }
+      },
+      "pitbull_unitframe_sha256": "1dc3930da3e335c6218cc4f31c6586483046e1f5657d44c898097a57160c21db"
+    },
+    "unpacked_client_assets": []
+  },
+  "chat_contrast": {
+    "fhd": {
+      "devil": {
+        "chat1": 5.51,
+        "chat2": 7.66,
+        "chat3": 7.16
+      },
+      "horde": {
+        "chat1": 7.14,
+        "chat2": 5.6,
+        "chat3": 5.57
+      },
+      "alliance": {
+        "chat1": 7.64,
+        "chat2": 7.52,
+        "chat3": 5.67
+      },
+      "orc": {
+        "chat1": 5.35,
+        "chat2": 6.08,
+        "chat3": 5.23
+      },
+      "troll": {
+        "chat1": 5.33,
+        "chat2": 6.27,
+        "chat3": 4.88
+      },
+      "undead": {
+        "chat1": 5.42,
+        "chat2": 6.51,
+        "chat3": 4.92
+      },
+      "tauren": {
+        "chat1": 5.6,
+        "chat2": 7.16,
+        "chat3": 5.22
+      },
+      "human": {
+        "chat1": 5.41,
+        "chat2": 6.67,
+        "chat3": 5.41
+      },
+      "dwarf": {
+        "chat1": 5.25,
+        "chat2": 5.28,
+        "chat3": 5.37
+      },
+      "gnome": {
+        "chat1": 5.26,
+        "chat2": 7.38,
+        "chat3": 5.28
+      },
+      "nightelf": {
+        "chat1": 5.58,
+        "chat2": 6.64,
+        "chat3": 4.88
+      },
+      "skyborne": {
+        "chat1": 5.33,
+        "chat2": 7.86,
+        "chat3": 5.73
+      },
+      "skyborne-horde": {
+        "chat1": 5.43,
+        "chat2": 6.8,
+        "chat3": 5.15
+      }
+    },
+    "qhd": {
+      "devil": {
+        "chat1": 5.28,
+        "chat2": 7.71,
+        "chat3": 7.14
+      },
+      "horde": {
+        "chat1": 7.07,
+        "chat2": 5.45,
+        "chat3": 5.47
+      },
+      "alliance": {
+        "chat1": 7.52,
+        "chat2": 7.52,
+        "chat3": 5.76
+      },
+      "orc": {
+        "chat1": 5.33,
+        "chat2": 5.38,
+        "chat3": 5.22
+      },
+      "troll": {
+        "chat1": 5.36,
+        "chat2": 6.29,
+        "chat3": 4.86
+      },
+      "undead": {
+        "chat1": 5.39,
+        "chat2": 6.43,
+        "chat3": 4.85
+      },
+      "tauren": {
+        "chat1": 5.8,
+        "chat2": 7.14,
+        "chat3": 5.13
+      },
+      "human": {
+        "chat1": 5.36,
+        "chat2": 5.7,
+        "chat3": 5.33
+      },
+      "dwarf": {
+        "chat1": 5.27,
+        "chat2": 5.23,
+        "chat3": 5.48
+      },
+      "gnome": {
+        "chat1": 5.23,
+        "chat2": 6.81,
+        "chat3": 5.27
+      },
+      "nightelf": {
+        "chat1": 5.62,
+        "chat2": 5.93,
+        "chat3": 4.88
+      },
+      "skyborne": {
+        "chat1": 5.44,
+        "chat2": 7.86,
+        "chat3": 5.7
+      },
+      "skyborne-horde": {
+        "chat1": 5.31,
+        "chat2": 6.77,
+        "chat3": 5.06
+      }
+    },
+    "uhd": {
+      "devil": {
+        "chat1": 5.26,
+        "chat2": 7.71,
+        "chat3": 7.07
+      },
+      "horde": {
+        "chat1": 7.01,
+        "chat2": 5.46,
+        "chat3": 5.61
+      },
+      "alliance": {
+        "chat1": 7.52,
+        "chat2": 7.39,
+        "chat3": 5.6
+      },
+      "orc": {
+        "chat1": 5.33,
+        "chat2": 5.46,
+        "chat3": 5.22
+      },
+      "troll": {
+        "chat1": 5.09,
+        "chat2": 5.62,
+        "chat3": 4.86
+      },
+      "undead": {
+        "chat1": 5.47,
+        "chat2": 5.57,
+        "chat3": 4.92
+      },
+      "tauren": {
+        "chat1": 5.19,
+        "chat2": 6.13,
+        "chat3": 5.16
+      },
+      "human": {
+        "chat1": 5.56,
+        "chat2": 5.88,
+        "chat3": 5.28
+      },
+      "dwarf": {
+        "chat1": 5.26,
+        "chat2": 5.22,
+        "chat3": 5.49
+      },
+      "gnome": {
+        "chat1": 5.43,
+        "chat2": 5.56,
+        "chat3": 5.27
+      },
+      "nightelf": {
+        "chat1": 5.69,
+        "chat2": 5.82,
+        "chat3": 4.88
+      },
+      "skyborne": {
+        "chat1": 5.63,
+        "chat2": 7.86,
+        "chat3": 5.66
+      },
+      "skyborne-horde": {
+        "chat1": 5.25,
+        "chat2": 6.71,
+        "chat3": 5.07
+      }
+    }
+  },
+  "artwork": {
+    "devil": {
+      "source_sha256": "3180dd87484f55212b90b05cf80cbee3dfdaf3991ff2644b019ad84408e228e6",
+      "source_rail_y": 72,
+      "pet_edge_sha256": "a7fcfe469d84bb257878ccf961e5d253c049a5750a8afe20813497d4c09206fe",
+      "pieces": {
+        "fhd_top.tga": {
+          "bounds": [
+            0,
+            736,
+            1920,
+            860
+          ],
+          "sha256": "7e5fc9452028fc99f3d538138729ce5f0bf3b4df7378c9aca64980e5e8a87bf7"
+        },
+        "fhd_deck.tga": {
+          "bounds": [
+            0,
+            860,
+            1920,
+            1074
+          ],
+          "sha256": "8c018f8a79245b1e1f7280941e0e46566376725c2384f61f6f5dadecb281b69f"
+        },
+        "qhd_top.tga": {
+          "bounds": [
+            0,
+            1042,
+            2560,
+            1186
+          ],
+          "sha256": "999b8163441f3fbea201a6396a3ae8091c3d76673df7d6c62ed32aca7280648c"
+        },
+        "qhd_deck.tga": {
+          "bounds": [
+            0,
+            1186,
+            2560,
+            1434
+          ],
+          "sha256": "9827e591be0397df6eb5b5a76f19196dccaa139c82813f33db75f53c81415917"
+        },
+        "uhd_top.tga": {
+          "bounds": [
+            0,
+            1616,
+            3840,
+            1820
+          ],
+          "sha256": "8158002ea07ee4904fc83980a1dfb4e39d91436f445c683253f0f5c203a2e44a"
+        },
+        "uhd_deck.tga": {
+          "bounds": [
+            0,
+            1820,
+            3840,
+            2152
+          ],
+          "sha256": "183e42816437eded6bf824ee85f4a91ea5012e155c01e8083eecffe4524faaf5"
+        }
+      }
+    },
+    "horde": {
+      "source_sha256": "cd4911bce92663764c2136e67c31227ac291c5715e2ae1fc5126fa690a7258e1",
+      "source_rail_y": 71,
+      "pet_edge_sha256": "99b657e5b46a7c01c5f862fc973355a5e8c45c4fed825f7173859b27d243ce55",
+      "pieces": {
+        "fhd_top.tga": {
+          "bounds": [
+            0,
+            736,
+            1920,
+            860
+          ],
+          "sha256": "ed95860bfa7ad270dcd5ba0519e90147796f13575da7febb73f5f67e84b56c7b"
+        },
+        "fhd_deck.tga": {
+          "bounds": [
+            0,
+            860,
+            1920,
+            1074
+          ],
+          "sha256": "b1dfb826c3c65bd47c5f2f1e75766f78b1e60d6678ee73328681652eafb1dbf4"
+        },
+        "qhd_top.tga": {
+          "bounds": [
+            0,
+            1042,
+            2560,
+            1186
+          ],
+          "sha256": "18627d94a2bbbbfcda5babd71b63bd278c517e7c1b26578656f66dd1be325f86"
+        },
+        "qhd_deck.tga": {
+          "bounds": [
+            0,
+            1186,
+            2560,
+            1434
+          ],
+          "sha256": "015d01a0aae60472f4373520b47a17f289a7baa3c3b61a6cdb89370db27055bc"
+        },
+        "uhd_top.tga": {
+          "bounds": [
+            0,
+            1616,
+            3840,
+            1820
+          ],
+          "sha256": "e046435acd938f2eb326a5912029c265aaf6a862b0ff48c145f2b7e7c4921314"
+        },
+        "uhd_deck.tga": {
+          "bounds": [
+            0,
+            1820,
+            3840,
+            2152
+          ],
+          "sha256": "5dd7b3be03229ba61aaf0fb1d2fd1bab093cb80380c1ac0b9455d34f282ca110"
+        }
+      }
+    },
+    "alliance": {
+      "source_sha256": "16caa59b2935adfa862a356a516cd1020516b6dde7bbba39d08d44808b971ee0",
+      "source_rail_y": 71,
+      "pet_edge_sha256": "d175e2d935e2e695f028f6b365dcf8e6505c8b1a3781070225e23c4c013ee70d",
+      "pieces": {
+        "fhd_top.tga": {
+          "bounds": [
+            0,
+            736,
+            1920,
+            860
+          ],
+          "sha256": "d43ed0ff4109ac7b2e226173b65ba9134cbc782a8219a6493be8c7373b7deb22"
+        },
+        "fhd_deck.tga": {
+          "bounds": [
+            0,
+            860,
+            1920,
+            1074
+          ],
+          "sha256": "3d5628284e919e1cb08254d359d731d21c426facd8bda0a3a7e5ec60e8aedd8f"
+        },
+        "qhd_top.tga": {
+          "bounds": [
+            0,
+            1042,
+            2560,
+            1186
+          ],
+          "sha256": "fcc9e1af2b913dbd52ae0e969871a52feb615bc372de22cfe0eecf1cc7b24189"
+        },
+        "qhd_deck.tga": {
+          "bounds": [
+            0,
+            1186,
+            2560,
+            1434
+          ],
+          "sha256": "c261530407ebd76b103fac8e2a534cbd449b9433a9fb0d74448d78f350d87287"
+        },
+        "uhd_top.tga": {
+          "bounds": [
+            0,
+            1616,
+            3840,
+            1820
+          ],
+          "sha256": "d2ee8b7fded9ae8aaf238786d29beaebc992b1aee3ab652d3d52efe85a4dd928"
+        },
+        "uhd_deck.tga": {
+          "bounds": [
+            0,
+            1820,
+            3840,
+            2152
+          ],
+          "sha256": "c60aab4897e8b45e3ca51493bf2cf90ed0f552609624475ebf28269e5437ebdc"
+        }
+      }
+    },
+    "orc": {
+      "source_sha256": "5795a53309b2db30cee409ce0f0e2db21d4586cabe4b4037ca4aef6ee5613381",
+      "source_rail_y": 165,
+      "pet_edge_sha256": "dbeab1a94369783ca4558e6059852ffa6311b983806509735a14c4b63ee52892",
+      "pieces": {
+        "fhd_top.tga": {
+          "bounds": [
+            0,
+            736,
+            1920,
+            860
+          ],
+          "sha256": "00aefcb8898d143601efb16dda9e5a40916fcec23a9243fcfcf92ac374f773e0"
+        },
+        "fhd_deck.tga": {
+          "bounds": [
+            0,
+            860,
+            1920,
+            1074
+          ],
+          "sha256": "9ed067530c53e15e2187ecba68d89334bf50b534356e9c7f20998bb5b87ebeab"
+        },
+        "qhd_top.tga": {
+          "bounds": [
+            0,
+            1042,
+            2560,
+            1186
+          ],
+          "sha256": "20a4a66d35891762b30e37d80988d227e3377bfbdc91d435752a7e761978f5c2"
+        },
+        "qhd_deck.tga": {
+          "bounds": [
+            0,
+            1186,
+            2560,
+            1434
+          ],
+          "sha256": "8001981886b4a259faf1549720da0798172b01d567d164de070e75b512f625aa"
+        },
+        "uhd_top.tga": {
+          "bounds": [
+            0,
+            1616,
+            3840,
+            1820
+          ],
+          "sha256": "950fc4612bed4996a7b7d060e7aaba83099157ea6956cd4b55a5bf2bb2a00634"
+        },
+        "uhd_deck.tga": {
+          "bounds": [
+            0,
+            1820,
+            3840,
+            2152
+          ],
+          "sha256": "f25a90985480c8e845aafe5f988387f6267f297dbdb83684a9755ce468d6a4ea"
+        }
+      }
+    },
+    "troll": {
+      "source_sha256": "79bcac4cacec4e5d38ff7a155c9a4b736ac566e08a78aff175282fccbc115e58",
+      "source_rail_y": 160,
+      "pet_edge_sha256": "256e77c664e30df63264354512e7680a6e9aa9bf3b003bd586486eaeadef835d",
+      "pieces": {
+        "fhd_top.tga": {
+          "bounds": [
+            0,
+            736,
+            1920,
+            860
+          ],
+          "sha256": "5c4d289ad4565423c2cb84af177c26e428384c13d8677650fa6220c7985a56b6"
+        },
+        "fhd_deck.tga": {
+          "bounds": [
+            0,
+            860,
+            1920,
+            1074
+          ],
+          "sha256": "c9abb845a9d71c6eafb1cc6c4be8071521e4a2c810c8187b1122b7c4d949f36e"
+        },
+        "qhd_top.tga": {
+          "bounds": [
+            0,
+            1042,
+            2560,
+            1186
+          ],
+          "sha256": "c0f22ae1ab5a6bcd657ed817301ff6aef732379b5b6f404ebed0d3784f0b845c"
+        },
+        "qhd_deck.tga": {
+          "bounds": [
+            0,
+            1186,
+            2560,
+            1434
+          ],
+          "sha256": "5224bb1c70def70b0d031e2e1f017a60e05719cd1b02c242a55f7e8df64eeb76"
+        },
+        "uhd_top.tga": {
+          "bounds": [
+            0,
+            1616,
+            3840,
+            1820
+          ],
+          "sha256": "0c5edbb7e8e82fd17295fc1ec30adc3d3b4f9b833805e9dbf67a1f7159d74d0d"
+        },
+        "uhd_deck.tga": {
+          "bounds": [
+            0,
+            1820,
+            3840,
+            2152
+          ],
+          "sha256": "26024d81c7b3cca6551def16aa45e5ed39a0f8a4e2bcf55263ee86b0d5a84f56"
+        }
+      }
+    },
+    "undead": {
+      "source_sha256": "942098a4732e576f0b3e600200057266273121a516a27258d931be0b74fa3dc7",
+      "source_rail_y": 147,
+      "pet_edge_sha256": "9d9c5bf6a0f09dbbdba74cf59e9dce5be42cd46ea70baf625a65083f66cc8996",
+      "pieces": {
+        "fhd_top.tga": {
+          "bounds": [
+            0,
+            736,
+            1920,
+            860
+          ],
+          "sha256": "76712a498bb6149da21910a6fc1bd4bcb8385d0f8332d7e59ff9138c2e888e63"
+        },
+        "fhd_deck.tga": {
+          "bounds": [
+            0,
+            860,
+            1920,
+            1074
+          ],
+          "sha256": "950064cfec00f432563e5ff93a68c3027ab26c4c7abbc809afadcbfd020bbdf9"
+        },
+        "qhd_top.tga": {
+          "bounds": [
+            0,
+            1042,
+            2560,
+            1186
+          ],
+          "sha256": "cd27c7c6dfb59d664e873e1d8806d1fd5543cc630dacfee089a7ec69a59cfbb2"
+        },
+        "qhd_deck.tga": {
+          "bounds": [
+            0,
+            1186,
+            2560,
+            1434
+          ],
+          "sha256": "ab864679711ce5d3cafdf0a745b9263e2fe640a5a9694b096f3170af664e5903"
+        },
+        "uhd_top.tga": {
+          "bounds": [
+            0,
+            1616,
+            3840,
+            1820
+          ],
+          "sha256": "64cafa8e5239d043aff6f1bc243550ffd4b286b9049986db0f8529dd678daad5"
+        },
+        "uhd_deck.tga": {
+          "bounds": [
+            0,
+            1820,
+            3840,
+            2152
+          ],
+          "sha256": "7ad22576d1744fda43ec0318e7127f1cf61b73e8affa5e781364c966b6652daf"
+        }
+      }
+    },
+    "tauren": {
+      "source_sha256": "9c44e160515822a3ce08136b3df4352320807f8cc119450447d9f575c831572e",
+      "source_rail_y": 118,
+      "pet_edge_sha256": "35864572382448fd6e7cc339f274d9a6f2f69175540f964c827da48e188430ca",
+      "pieces": {
+        "fhd_top.tga": {
+          "bounds": [
+            0,
+            736,
+            1920,
+            860
+          ],
+          "sha256": "d3f90cd6a3daba0ad59f651752fbca38c81df319c38ea485c0d99b5e240277be"
+        },
+        "fhd_deck.tga": {
+          "bounds": [
+            0,
+            860,
+            1920,
+            1074
+          ],
+          "sha256": "5f822f45404498a7e6d5a2e817585f3773e99477acb5e8cbbef37cad5b8e792f"
+        },
+        "qhd_top.tga": {
+          "bounds": [
+            0,
+            1042,
+            2560,
+            1186
+          ],
+          "sha256": "8adb982ccd03ea7c29eeaab98a83c4e0d2ceb045878c84bb5302239508a0da1c"
+        },
+        "qhd_deck.tga": {
+          "bounds": [
+            0,
+            1186,
+            2560,
+            1434
+          ],
+          "sha256": "a6a6b04d5bf3dce84acaaa8c8cf2552615dc69283674b9fbf9ef0c0c45fa0784"
+        },
+        "uhd_top.tga": {
+          "bounds": [
+            0,
+            1616,
+            3840,
+            1820
+          ],
+          "sha256": "5f18e68a9c50e3056a0e8f4d8f11218c6cae990e7d82e081758c2322f9f90827"
+        },
+        "uhd_deck.tga": {
+          "bounds": [
+            0,
+            1820,
+            3840,
+            2152
+          ],
+          "sha256": "4fd58c34677555ccd0c333acc1c5cb10d45d810c12d66f8627a9084cc64cbd80"
+        }
+      }
+    },
+    "human": {
+      "source_sha256": "d4aab820b216cea0f96688926970cbff3d166fd64df77b1bde92f51d6919dc72",
+      "source_rail_y": 161,
+      "pet_edge_sha256": "b2b3a06c12857b5c81c9612fcd5473a5c8ae35e1f8195a35dc944c38e329b593",
+      "pieces": {
+        "fhd_top.tga": {
+          "bounds": [
+            0,
+            736,
+            1920,
+            860
+          ],
+          "sha256": "9c76ce94ccbdd6d82d282b214fabe12e7f1a48532cdc0595333f57906c53c23f"
+        },
+        "fhd_deck.tga": {
+          "bounds": [
+            0,
+            860,
+            1920,
+            1074
+          ],
+          "sha256": "a1679ffe83b33c3a262881fb68a4e88638c400c6f5b8cd02df1728ac0c6b323b"
+        },
+        "qhd_top.tga": {
+          "bounds": [
+            0,
+            1042,
+            2560,
+            1186
+          ],
+          "sha256": "732b3434e5fefb08ace12e3249a17fbfb931d90189f4dee83ab08aaf7ba075e9"
+        },
+        "qhd_deck.tga": {
+          "bounds": [
+            0,
+            1186,
+            2560,
+            1434
+          ],
+          "sha256": "e510f55c1ec9b0aaa31d482c92b4ca9ed1bd6b25df135e1af215367c939e1a63"
+        },
+        "uhd_top.tga": {
+          "bounds": [
+            0,
+            1616,
+            3840,
+            1820
+          ],
+          "sha256": "d0a53f13113c1ebcae115bb2287712b4c30891465d74b9e641501efe78c791ae"
+        },
+        "uhd_deck.tga": {
+          "bounds": [
+            0,
+            1820,
+            3840,
+            2152
+          ],
+          "sha256": "a35df409c5fa59fec91ec8172a90e65a0af9c45aa4dc460ef72b5bae800f5889"
+        }
+      }
+    },
+    "dwarf": {
+      "source_sha256": "156de449d8ec201524ff14e2be45a1e30a50d8789ef6999e5de55225de292694",
+      "source_rail_y": 107,
+      "pet_edge_sha256": "1f57476fd340d6800a0d1350b6ae9f56f18ca943a7c2d3ec8bb69078503dd18e",
+      "pieces": {
+        "fhd_top.tga": {
+          "bounds": [
+            0,
+            736,
+            1920,
+            860
+          ],
+          "sha256": "35c9abff6744b1e7268df2a3cf135e400c06206b14e7b93592475b6bfcf547d0"
+        },
+        "fhd_deck.tga": {
+          "bounds": [
+            0,
+            860,
+            1920,
+            1074
+          ],
+          "sha256": "1f68bdc6d04f400f5f3627ba2e2d68bbbf0b246d54ec3126998edda3c26efdac"
+        },
+        "qhd_top.tga": {
+          "bounds": [
+            0,
+            1042,
+            2560,
+            1186
+          ],
+          "sha256": "05065fe5cfb17389c8bf3e8e314a51c151950ad7fad25ff9f3b9fe8a82bf9de3"
+        },
+        "qhd_deck.tga": {
+          "bounds": [
+            0,
+            1186,
+            2560,
+            1434
+          ],
+          "sha256": "f390bb0e8f55a614b59c54e44de0c0756318843a4118585e020003db5ff4bc57"
+        },
+        "uhd_top.tga": {
+          "bounds": [
+            0,
+            1616,
+            3840,
+            1820
+          ],
+          "sha256": "0456ac330dd88b1318f366b743faa8b094bc77ed7542b0bebc184882d0c272cf"
+        },
+        "uhd_deck.tga": {
+          "bounds": [
+            0,
+            1820,
+            3840,
+            2152
+          ],
+          "sha256": "c2e2bdf1b090e43b1fe1fbd15f369449f335e80d0a5d61d895b4cb22685a4ccc"
+        }
+      }
+    },
+    "gnome": {
+      "source_sha256": "e963a384c82df9b7ba519ed1cefdbcf2cd40c92e0d9067771d903abd373918cd",
+      "source_rail_y": 145,
+      "pet_edge_sha256": "58099a75b3c796d1c561c6d1b11f3203e7073b9b07c5a6254ed69c25147422cb",
+      "pieces": {
+        "fhd_top.tga": {
+          "bounds": [
+            0,
+            736,
+            1920,
+            860
+          ],
+          "sha256": "fc1d297dd013be77449eba312aeee360ef55ad666876b869e19565b78ec87b4d"
+        },
+        "fhd_deck.tga": {
+          "bounds": [
+            0,
+            860,
+            1920,
+            1074
+          ],
+          "sha256": "e46c53d8546d81216335824e93466ff463f419b8d1714197937818987cd1fd2d"
+        },
+        "qhd_top.tga": {
+          "bounds": [
+            0,
+            1042,
+            2560,
+            1186
+          ],
+          "sha256": "57dc6d0e6740dba52e52e46548646d1fa5a08e312690e0015bdb62d1d04dcad9"
+        },
+        "qhd_deck.tga": {
+          "bounds": [
+            0,
+            1186,
+            2560,
+            1434
+          ],
+          "sha256": "bd4ebb73b51ba1fdabefef7f6300f6afbe668d80d5e0cb9d029a5b256856fbf3"
+        },
+        "uhd_top.tga": {
+          "bounds": [
+            0,
+            1616,
+            3840,
+            1820
+          ],
+          "sha256": "f7563c44136c69e2ded9e0f97bfe124ec9f2124ad35f43643a85bdeb3bfa7b3e"
+        },
+        "uhd_deck.tga": {
+          "bounds": [
+            0,
+            1820,
+            3840,
+            2152
+          ],
+          "sha256": "332bda6dcc27a4338fdff1596c8bd0b1cb47fc8e8b16d251713c9594ec53dda0"
+        }
+      }
+    },
+    "nightelf": {
+      "source_sha256": "15aa2a941a7e873c611a7f250e3e74da7c963a0675ad83cd7a481a44f6a353b5",
+      "source_rail_y": 159,
+      "pet_edge_sha256": "879e189ea079755347819abd2efa5c1d9859ee108b30959d61374f4ab1e6b750",
+      "pieces": {
+        "fhd_top.tga": {
+          "bounds": [
+            0,
+            736,
+            1920,
+            860
+          ],
+          "sha256": "3b2d9e0d541c7d1ec9774ae8ffa5549a0820080cfc91ad38b95303c256bb46ab"
+        },
+        "fhd_deck.tga": {
+          "bounds": [
+            0,
+            860,
+            1920,
+            1074
+          ],
+          "sha256": "444fe50a1f0db3a446eeeafe8ad9ea28431ef1e843609eb4f7714a39a0c898c4"
+        },
+        "qhd_top.tga": {
+          "bounds": [
+            0,
+            1042,
+            2560,
+            1186
+          ],
+          "sha256": "24e975754a72b2028f7274e8a5b05be5c83b5c6dddeb255cf92b219d054c3838"
+        },
+        "qhd_deck.tga": {
+          "bounds": [
+            0,
+            1186,
+            2560,
+            1434
+          ],
+          "sha256": "75281a044db1844a3176c82f5bc82dedcb72b11a2f78ee5ffa6a34c238b53f53"
+        },
+        "uhd_top.tga": {
+          "bounds": [
+            0,
+            1616,
+            3840,
+            1820
+          ],
+          "sha256": "5576bf56947e07a09ba0865fd6839800872dffb0c4c0ffdf2dd526f8b7405a64"
+        },
+        "uhd_deck.tga": {
+          "bounds": [
+            0,
+            1820,
+            3840,
+            2152
+          ],
+          "sha256": "6b96a68af87aa95cedca6362a1f34f326adef89b785284b7d18a65ae9fb3be20"
+        }
+      }
+    },
+    "skyborne": {
+      "source_sha256": "83199c28760b36dd3372c0d570b386f4d024cac420f9adefb55f890dfe6b4ceb",
+      "source_rail_y": 136,
+      "pet_edge_sha256": "bd037ee52eadfd1b4936a55f8679945c275355d91d9558ff4bece47d7f0de257",
+      "pieces": {
+        "fhd_top.tga": {
+          "bounds": [
+            0,
+            736,
+            1920,
+            860
+          ],
+          "sha256": "5d95e9e02eea25561aef12ddc7dcebed6e43503309ccfcf7920cc442239f34a7"
+        },
+        "fhd_deck.tga": {
+          "bounds": [
+            0,
+            860,
+            1920,
+            1074
+          ],
+          "sha256": "6c53f11ccb57ad103f9dafc9b473da25adb6b837faa20d1df5eea2b826006828"
+        },
+        "qhd_top.tga": {
+          "bounds": [
+            0,
+            1042,
+            2560,
+            1186
+          ],
+          "sha256": "532756fad2baed70289d22b2c41ab0b6c6c76a14ec53db26de7342e2ec96322d"
+        },
+        "qhd_deck.tga": {
+          "bounds": [
+            0,
+            1186,
+            2560,
+            1434
+          ],
+          "sha256": "5d845cd8f7b06557bd2bb8f966387db3ca99a40d51869237f95377e593cbaba9"
+        },
+        "uhd_top.tga": {
+          "bounds": [
+            0,
+            1616,
+            3840,
+            1820
+          ],
+          "sha256": "2eada3ee024bcb5c0f7df774ccf3a357cac25c16ba224b41e1e49b35aca58374"
+        },
+        "uhd_deck.tga": {
+          "bounds": [
+            0,
+            1820,
+            3840,
+            2152
+          ],
+          "sha256": "e9f8753a62c14d9446caf94302fdd8eec5f0bacdd0928dcc4c3bb8d848eeb797"
+        }
+      }
+    },
+    "skyborne-horde": {
+      "source_sha256": "31d8c9e22387baf2e9cd49a383c084628b426b7ebdaa04c31d3d4cd523c7f1ad",
+      "source_rail_y": 117,
+      "pet_edge_sha256": "95fd64f7bd451e8b20273d771a887726c4c98136b7e2c16b4901c95b5f0e577a",
+      "pieces": {
+        "fhd_top.tga": {
+          "bounds": [
+            0,
+            736,
+            1920,
+            860
+          ],
+          "sha256": "470d008917b7fd6384cfe5f840e384cf81fac9af3f8c23f9794f2d417da4ce3c"
+        },
+        "fhd_deck.tga": {
+          "bounds": [
+            0,
+            860,
+            1920,
+            1074
+          ],
+          "sha256": "81d9b9f74933a30448a5c1a951a72576df4cd0b6e80ff4cea46eb62cfcd94994"
+        },
+        "qhd_top.tga": {
+          "bounds": [
+            0,
+            1042,
+            2560,
+            1186
+          ],
+          "sha256": "da241ae89f20ba24d61162a04dcc2c31be04222d74050b325a48b50cba3926c9"
+        },
+        "qhd_deck.tga": {
+          "bounds": [
+            0,
+            1186,
+            2560,
+            1434
+          ],
+          "sha256": "a5d14716825a55c8b2166354721c5d559e2e2b035df591bf85749baaab7db948"
+        },
+        "uhd_top.tga": {
+          "bounds": [
+            0,
+            1616,
+            3840,
+            1820
+          ],
+          "sha256": "d79d36f3702bd47ca17aeadafd0dc371e424e43cba277629dd6363a1678f69aa"
+        },
+        "uhd_deck.tga": {
+          "bounds": [
+            0,
+            1820,
+            3840,
+            2152
+          ],
+          "sha256": "d050b0b83c33366acd57fa06f3385ec41c2f3a2b2b7a199f666444234bdf1518"
+        }
+      }
+    }
+  }
+}

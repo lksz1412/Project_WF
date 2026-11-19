@@ -1,0 +1,179 @@
+{
+  "devil": {
+    "source_sha256": "3180dd87484f55212b90b05cf80cbee3dfdaf3991ff2644b019ad84408e228e6",
+    "pieces": {
+      "fhd_top.tga": {
+        "bounds": [
+          0,
+          736,
+          1920,
+          860
+        ],
+        "sha256": "765b6f350420f72c94f5a10125d8ca23ab272dba7ad903a57c9ce6e1d3c1f9d6"
+      },
+      "fhd_deck.tga": {
+        "bounds": [
+          0,
+          860,
+          1920,
+          1074
+        ],
+        "sha256": "08806dcab10aa709d752284a029622aed86b5c2d105f6a79877ede018d7ea615"
+      },
+      "qhd_top.tga": {
+        "bounds": [
+          0,
+          1042,
+          2560,
+          1186
+        ],
+        "sha256": "0204acb3e24f81bbffe53468c193ef1c7fcccda2a348ed31451e91b9dc3d5d7b"
+      },
+      "qhd_deck.tga": {
+        "bounds": [
+          0,
+          1186,
+          2560,
+          1434
+        ],
+        "sha256": "d822f1a8a879e972d9ba940fc71b9d5afdb91c9acc844d1b8aa1954c1b7bd42f"
+      },
+      "uhd_top.tga": {
+        "bounds": [
+          0,
+          1616,
+          3840,
+          1820
+        ],
+        "sha256": "027cfd8bda0daad198bb2cadd766555de5eb607a42d3c7ba0382aa3562748e86"
+      },
+      "uhd_deck.tga": {
+        "bounds": [
+          0,
+          1820,
+          3840,
+          2152
+        ],
+        "sha256": "56d63961aa40da9e7e5fc7f9f4342e5b8aafdd02438719ed75c2e40484bc2f5c"
+      }
+    }
+  },
+  "horde": {
+    "source_sha256": "cd4911bce92663764c2136e67c31227ac291c5715e2ae1fc5126fa690a7258e1",
+    "pieces": {
+      "fhd_top.tga": {
+        "bounds": [
+          0,
+          736,
+          1920,
+          860
+        ],
+        "sha256": "eff5fceca5d9b7da2680113fc82ae6f53af50a95116c46780f5c79c2279c86f1"
+      },
+      "fhd_deck.tga": {
+        "bounds": [
+          0,
+          860,
+          1920,
+          1074
+        ],
+        "sha256": "7c65be83d242ab2f26c722b8143d265257c109d184a4574f006b7afb9639d698"
+      },
+      "qhd_top.tga": {
+        "bounds": [
+          0,
+          1042,
+          2560,
+          1186
+        ],
+        "sha256": "7325448d3878e8f8395be569ecad1899b1f4348a9e72368d93e9d96bf96f3013"
+      },
+      "qhd_deck.tga": {
+        "bounds": [
+          0,
+          1186,
+          2560,
+          1434
+        ],
+        "sha256": "30e63469c8a6e32cb0b21ac09f4ca41ec5f4dc6e44ff312111dec239b8949335"
+      },
+      "uhd_top.tga": {
+        "bounds": [
+          0,
+          1616,
+          3840,
+          1820
+        ],
+        "sha256": "f6140f26f1518cd65efaffa2949787fb9a4223261a838e01a594e9707f5a6a4c"
+      },
+      "uhd_deck.tga": {
+        "bounds": [
+          0,
+          1820,
+          3840,
+          2152
+        ],
+        "sha256": "878164249c06d7baab16c431f4f6961ecd78bc0c0227bf15767455dae4767036"
+      }
+    }
+  },
+  "alliance": {
+    "source_sha256": "16caa59b2935adfa862a356a516cd1020516b6dde7bbba39d08d44808b971ee0",
+    "pieces": {
+      "fhd_top.tga": {
+        "bounds": [
+          0,
+          736,
+          1920,
+          860
+        ],
+        "sha256": "f7fac006d212eb619654c5f9c26c3ba75add736698fe60702a9c01243978eb34"
+      },
+      "fhd_deck.tga": {
+        "bounds": [
+          0,
+          860,
+          1920,
+          1074
+        ],
+        "sha256": "cbfb982e60667132fa0cd640c95ea64da10013da0e72e8a873f56b2f68d2c491"
+      },
+      "qhd_top.tga": {
+        "bounds": [
+          0,
+          1042,
+          2560,
+          1186
+        ],
+        "sha256": "c8986f42b9ecdb2d0e089de3bf1e43f2d4905a4db8a6f93318fa1d7b379a6391"
+      },
+      "qhd_deck.tga": {
+        "bounds": [
+          0,
+          1186,
+          2560,
+          1434
+        ],
+        "sha256": "5d795b652355674f6cd6a136e9f69d44dc6c8f61d31e5eb0538a1371bc957b56"
+      },
+      "uhd_top.tga": {
+        "bounds": [
+          0,
+          1616,
+          3840,
+          1820
+        ],
+        "sha256": "2f70df3a9998ae8bd73e3b0aa575bc314f4c88c509aa7a454e990e0ddb1b9857"
+      },
+      "uhd_deck.tga": {
+        "bounds": [
+          0,
+          1820,
+          3840,
+          2152
+        ],
+        "sha256": "0c245ae6620ac0c7c10a2d61918b793b72eb284e62847815a5ea231f2a8527c3"
+      }
+    }
+  }
+}

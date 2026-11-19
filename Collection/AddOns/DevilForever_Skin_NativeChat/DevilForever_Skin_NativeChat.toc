@@ -1,0 +1,7 @@
+## Interface: 16001
+## Title: DevilForever Native Chat Skin
+## Notes: Minimal chrome on the three existing role-based native chat windows.
+## Version: 0.1.0
+## Dependencies: !DevilForever_Core, DevilForever_ChatSetup, DevilForever_Appearance
+
+Skin.lua

@@ -1,0 +1,84 @@
+<Bindings>
+	<!-- modified clicks -->
+	<ModifiedClick action="DOMINOS_IGNORE_STICKY_FRAMES" default="ALT"/>
+
+	<!-- buttons without a Blizzard binding. named in bars/actionBar/module.lua -->
+
+	<Binding name="CLICK DominosActionButton13:HOTKEY" category="Dominos" header="Dominos Action Page 2" />
+	<Binding name="CLICK DominosActionButton14:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton15:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton16:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton17:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton18:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton19:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton20:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton21:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton22:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton23:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton24:HOTKEY" category="Dominos" />
+
+	<Binding name="CLICK DominosActionButton73:HOTKEY" category="Dominos" header="Dominos Bonus Bar 1" />
+	<Binding name="CLICK DominosActionButton74:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton75:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton76:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton77:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton78:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton79:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton80:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton81:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton82:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton83:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton84:HOTKEY" category="Dominos" />
+
+	<Binding name="CLICK DominosActionButton85:HOTKEY" category="Dominos" header="Dominos Bonus Bar 2" />
+	<Binding name="CLICK DominosActionButton86:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton87:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton88:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton89:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton90:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton91:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton92:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton93:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton94:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton95:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton96:HOTKEY" category="Dominos" />
+
+	<Binding name="CLICK DominosActionButton97:HOTKEY" category="Dominos" header="Dominos Bonus Bar 3" />
+	<Binding name="CLICK DominosActionButton98:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton99:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton100:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton101:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton102:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton103:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton104:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton105:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton106:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton107:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton108:HOTKEY" category="Dominos" />
+
+	<Binding name="CLICK DominosActionButton109:HOTKEY" category="Dominos" header="Dominos Bonus Bar 4" />
+	<Binding name="CLICK DominosActionButton110:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton111:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton112:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton113:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton114:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton115:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton116:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton117:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton118:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton119:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton120:HOTKEY" category="Dominos" />
+
+	<Binding name="CLICK DominosActionButton121:HOTKEY" category="Dominos" header="Dominos Bonus Bar 5" />
+	<Binding name="CLICK DominosActionButton122:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton123:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton124:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton125:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton126:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton127:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton128:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton129:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton130:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton131:HOTKEY" category="Dominos" />
+	<Binding name="CLICK DominosActionButton132:HOTKEY" category="Dominos" />
+</Bindings>

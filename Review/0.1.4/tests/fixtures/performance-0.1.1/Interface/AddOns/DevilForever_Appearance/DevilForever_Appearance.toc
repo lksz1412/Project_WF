@@ -1,0 +1,13 @@
+## Interface: 16001
+## Title: DevilForever Appearance
+## Notes: Pixel-based common panels, separators and theme ornaments.
+## Version: 0.1.0
+## Dependencies: !DevilForever_Core
+
+Themes\devil.lua
+Themes\horde.lua
+Themes\alliance.lua
+Crests.lua
+Composition.lua
+Appearance.lua
+SharedMedia.lua

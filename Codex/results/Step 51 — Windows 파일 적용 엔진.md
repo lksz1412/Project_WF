@@ -1,0 +1,27 @@
+# Step 51 — Windows 파일 적용 엔진
+
+Phase 27.2 · 2026-11-19 12:28:16–12:43:47 +0900 · 예상 120–210분
+
+## 수행
+
+승인 ZIP을 읽기, 대상과 기존 파일 확인, 미리보기, 확인값을 받은 설치·갱신 흐름을 C#으로 구현했다. 실제 승인 PitBull4·FUF ZIP과 한국어·공백이 있는 새 Windows 게임 구조에서 공개 명령을 실행했다. [설치 계약](../../Collection/Installer/Contract.md) · [작업 기록](audit-installer/step51-engine-work-log.md)
+
+## 근거·판단
+
+- 대상의 일반 파일 `Wow.exe`, Windows 경로, 관리 위치와 승인 카탈로그를 먼저 확인한다. 현재 시험에 쓴 ReFS에는 128비트 파일 ID를 사용했다. 소유와 권한을 검사할 때 부모 폴더의 파일·하위 폴더 생성 권한과 실제 옮길 폴더의 이동 권한을 구분했다. [Windows 파일 ID 설명](https://learn.microsoft.com/en-us/windows/win32/api/fileapi/ns-fileapi-by_handle_file_information#remarks) · [권한 반증](../../_local_only/phase26-work-r151-20261119/step51-root-cli-01/observations.md)
+- 확인값과 현재 대상 또는 기존 기록이 달라지면 파일 이동을 앞두고 멈춘다. 실제 적용에는 같은 볼륨의 준비·원본 백업, 이동 전후 작업 기록, 최종 파일 해시와 활성 기록을 사용한다.
+- 같은 승인판의 재실행, 미관리·수정된 애드온 충돌, 기존 폴더의 명시 인수, 비교 ZIP과 변조 ZIP 차단을 실제 명령줄에서 확인했다. 격리 대상의 기존 `WTF` 샘플과 무관 애드온을 파일 해시로 대조했다.
+
+## 실행 결과
+
+작업 A는 공개 명령 23회, 시험 9개를 통과했다. 프로젝트 담당자는 다른 격리 대상 다섯 개에서 공개 명령 14회를 확인했다. 두 승인 ZIP에서 풀린 모든 애드온 파일이 패키지의 목록 및 파일별 SHA-256과 맞았다. [작업 A 실행](../../_local_only/phase26-work-r151-20261119/step51-engine-vk2kfcmc/runtime-02.log) · [별도 실행](../../_local_only/phase26-work-r151-20261119/step51-root-cli-02/independent-gate.json)
+
+인수 선택과 폴더가 같아도 폴더의 내용만 바뀌면 예전 확인값은 `stale-plan`으로 거부됐다. 파일과 디렉터리 목록은 같았다. 독립 검수에서는 활성 기록의 관리 지문이 해당 실행 기록과 달라도 기존 이용자 파일을 관리 파일로 읽는 문제를 확인했다. 같은 Windows 시험 대역에서 검증 `ready`와 FUF 전환의 `PitBull4 switch-out`을 재현했다. [오래된 확인값 결과](../../_local_only/phase26-work-r151-20261119/step51-root-stale-03/01-apply.json) · [보정 전 계획](../../_local_only/phase26-work-r151-20261119/step51-root-ledger-04/03-plan.json)
+
+## 게이트
+
+연계·뜻·적대 세 관점 독립 검수에서 중간 1건을 확인했다. 같은 작업자가 관리 상태 전체를 작업 기록과 대조하는 검사를 추가했다. 변경된 대역의 검증과 FUF 미리보기는 모두 `invalid-record`로 거부되었고 파일을 바꾸지 않았다. 정상 검증은 통과했고, 내용이 같은 미완 기록은 `recovery-required`로 읽혔다. 같은 검수자가 결과와 수정 파일의 해시를 확인했다. 최종 중대·중간·경미 0건, 사용량 미관측. [보정 원출력](../../_local_only/phase26-work-r151-20261119/step51-ledger-fix-n_h90ial/runtime.log)
+
+## 다음
+
+복원, 제거와 중단 뒤 파일 이동은 Step 52에서 구현하고 검증한다. GUI, 자체 포함 제품 배포, 청정 PC와 실제 게임 관측은 이후 단계다.

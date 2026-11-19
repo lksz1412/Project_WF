@@ -1,0 +1,7 @@
+## Interface: 16001
+## Title: Devil Forever Frame Time Probe
+## Notes: Records a bounded frame-time sample on request.
+## Version: 0.1.0
+## SavedVariables: DevilForever_PerfProbeDB
+
+PerfProbe.lua

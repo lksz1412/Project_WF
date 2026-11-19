@@ -1,0 +1,32 @@
+[
+  {
+    "variant": "pitbull4",
+    "changed": [
+      "DevilForever-install/SHA256SUMS.txt",
+      "DevilForever-install/설치안내.md",
+      "Interface/AddOns/!DevilForever_Core/Defaults.lua",
+      "Interface/AddOns/!DevilForever_Core/Defaults/Quartz.lua"
+    ],
+    "identicalFiles": 2312
+  },
+  {
+    "variant": "fuf",
+    "changed": [
+      "DevilForever-install/SHA256SUMS.txt",
+      "DevilForever-install/설치안내.md",
+      "Interface/AddOns/!DevilForever_Core/Defaults.lua",
+      "Interface/AddOns/!DevilForever_Core/Defaults/Quartz.lua"
+    ],
+    "identicalFiles": 2248
+  },
+  {
+    "variant": "one-session",
+    "changed": [
+      "DevilForever-install/SHA256SUMS.txt",
+      "DevilForever-install/설치안내.md",
+      "Interface/AddOns/!DevilForever_Core/Defaults.lua",
+      "Interface/AddOns/!DevilForever_Core/Defaults/Quartz.lua"
+    ],
+    "identicalFiles": 2557
+  }
+]

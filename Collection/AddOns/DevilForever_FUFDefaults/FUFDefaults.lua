@@ -135,6 +135,7 @@ local function attempt()
     session.state = "waiting-combat"
     return
   end
+  if API.LayoutReady then API.LayoutReady() end
   run()
 end
 

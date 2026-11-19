@@ -1,0 +1,675 @@
+{
+  "folders": [
+    {
+      "bundle": "required",
+      "folder": "!DevilForever_Core",
+      "kind": "new",
+      "license_files": [],
+      "origin": "collection",
+      "package": "DevilForever",
+      "phases": [
+        2,
+        20,
+        22
+      ],
+      "saved_variables": [
+        {
+          "name": "DevilForever_CoreDB",
+          "scope": "account"
+        },
+        {
+          "name": "DevilForever_ProfilesDB",
+          "scope": "account"
+        }
+      ],
+      "version": "0.1.4"
+    },
+    {
+      "bundle": "individual",
+      "folder": "Details",
+      "kind": "unmodified",
+      "license_files": [
+        "LICENSE",
+        "Libs/DF/LICENSE",
+        "Libs/LibOpenRaid/LICENSE"
+      ],
+      "origin": "upstream",
+      "package": "Details",
+      "phases": [
+        10
+      ],
+      "saved_variables": [
+        {
+          "name": "_detalhes_global",
+          "scope": "account"
+        },
+        {
+          "name": "__details_backup",
+          "scope": "account"
+        },
+        {
+          "name": "__details_debug",
+          "scope": "account"
+        },
+        {
+          "name": "_detalhes_database",
+          "scope": "character"
+        }
+      ],
+      "source_sha256": "5002bdd5c3e92dd59bffa3ebdfc867f980b09ed629c51dab056fb5442f92ad41",
+      "source_zip": "References/forever-addons/Details/Details-Details.20261109.15410.172.zip",
+      "version": "Details.20261109.15410.172"
+    },
+    {
+      "bundle": "individual",
+      "folder": "Details_TinyThreat",
+      "kind": "unmodified",
+      "license_files": [],
+      "origin": "upstream",
+      "package": "Details",
+      "phases": [
+        10
+      ],
+      "saved_variables": [],
+      "source_sha256": "5002bdd5c3e92dd59bffa3ebdfc867f980b09ed629c51dab056fb5442f92ad41",
+      "source_zip": "References/forever-addons/Details/Details-Details.20261109.15410.172.zip",
+      "version": "Details.20261109.15410.172"
+    },
+    {
+      "bundle": "required",
+      "folder": "DevilForever_Appearance",
+      "kind": "new",
+      "license_files": [],
+      "origin": "collection",
+      "package": "DevilForever",
+      "phases": [
+        2,
+        22
+      ],
+      "saved_variables": [],
+      "version": "0.1.0"
+    },
+    {
+      "bundle": "individual",
+      "folder": "DevilForever_Castbars",
+      "kind": "new",
+      "license_files": [],
+      "origin": "collection",
+      "package": "DevilForever",
+      "phases": [
+        7
+      ],
+      "saved_variables": [],
+      "version": "0.1.0"
+    },
+    {
+      "bundle": "individual",
+      "folder": "DevilForever_ChatSetup",
+      "kind": "new",
+      "license_files": [],
+      "origin": "collection",
+      "package": "DevilForever",
+      "phases": [
+        4
+      ],
+      "saved_variables": [
+        {
+          "name": "DevilForever_ChatSetupDB",
+          "scope": "character"
+        }
+      ],
+      "version": "0.1.0"
+    },
+    {
+      "bundle": "individual",
+      "folder": "DevilForever_DetailsLayout",
+      "kind": "new",
+      "license_files": [],
+      "origin": "collection",
+      "package": "DevilForever",
+      "phases": [
+        10
+      ],
+      "saved_variables": [],
+      "version": "0.1.0"
+    },
+    {
+      "bundle": "individual",
+      "folder": "DevilForever_FUFDefaults",
+      "kind": "new",
+      "license_files": [],
+      "origin": "collection",
+      "package": "DevilForever",
+      "phases": [
+        6
+      ],
+      "saved_variables": [
+        {
+          "name": "DevilForever_FUFDefaultsDB",
+          "scope": "account"
+        }
+      ],
+      "version": "0.1.0"
+    },
+    {
+      "bundle": "individual",
+      "folder": "DevilForever_Skin_Dominos",
+      "kind": "new",
+      "license_files": [],
+      "origin": "collection",
+      "package": "DevilForever",
+      "phases": [
+        3
+      ],
+      "saved_variables": [],
+      "version": "0.1.0"
+    },
+    {
+      "bundle": "individual",
+      "folder": "DevilForever_Skin_Nameplates",
+      "kind": "new",
+      "license_files": [],
+      "origin": "collection",
+      "package": "DevilForever",
+      "phases": [
+        14
+      ],
+      "saved_variables": [
+        {
+          "name": "DevilForever_UIReviewDB",
+          "scope": "character"
+        }
+      ],
+      "version": "0.1.0"
+    },
+    {
+      "bundle": "individual",
+      "folder": "DevilForever_Skin_NativeChat",
+      "kind": "new",
+      "license_files": [],
+      "origin": "collection",
+      "package": "DevilForever",
+      "phases": [
+        4
+      ],
+      "saved_variables": [],
+      "version": "0.1.0"
+    },
+    {
+      "bundle": "individual",
+      "folder": "DevilForever_Skin_StatusStrip",
+      "kind": "new",
+      "license_files": [],
+      "origin": "collection",
+      "package": "DevilForever",
+      "phases": [
+        16
+      ],
+      "saved_variables": [],
+      "version": "0.1.0"
+    },
+    {
+      "bundle": "individual",
+      "folder": "DevilForever_StatusStrip",
+      "kind": "new",
+      "license_files": [],
+      "origin": "collection",
+      "package": "DevilForever",
+      "phases": [
+        16
+      ],
+      "saved_variables": [
+        {
+          "name": "DevilForever_StatusStripDB",
+          "scope": "account"
+        }
+      ],
+      "version": "0.1.0"
+    },
+    {
+      "bundle": "individual",
+      "folder": "Dominos",
+      "kind": "unmodified",
+      "license_files": [
+        "LICENSE"
+      ],
+      "origin": "upstream",
+      "package": "Dominos",
+      "phases": [
+        3
+      ],
+      "saved_variables": [
+        {
+          "name": "DominosDB",
+          "scope": "account"
+        }
+      ],
+      "source_sha256": "2dbcf9857a91b772a42200369386fc17f875530ffd47984b555ecdb8e11bef1a",
+      "source_zip": "References/forever-addons/Dominos/Dominos-12.0.4.zip",
+      "version": "12.0.4"
+    },
+    {
+      "bundle": "individual",
+      "folder": "Dominos_Config",
+      "kind": "unmodified",
+      "license_files": [],
+      "origin": "upstream",
+      "package": "Dominos",
+      "phases": [
+        3
+      ],
+      "saved_variables": [],
+      "source_sha256": "2dbcf9857a91b772a42200369386fc17f875530ffd47984b555ecdb8e11bef1a",
+      "source_zip": "References/forever-addons/Dominos/Dominos-12.0.4.zip",
+      "version": "12.0.4"
+    },
+    {
+      "bundle": "individual",
+      "folder": "ExperienceForever",
+      "kind": "unmodified",
+      "license_files": [
+        "Libs/LICENSE.txt"
+      ],
+      "origin": "upstream",
+      "package": "Experience Forever",
+      "phases": [
+        19
+      ],
+      "saved_variables": [
+        {
+          "name": "ExperienceForeverDB",
+          "scope": "account"
+        }
+      ],
+      "source_sha256": "2bfdda8717b6e0d40fcc1847b233e23b187f839c75749c15fe2ed430ecf15b85",
+      "source_zip": "References/addon-sources/experience-forever/ExperienceForever.zip",
+      "version": "2.0.4"
+    },
+    {
+      "bundle": "individual",
+      "folder": "ForeverUnitFrames",
+      "kind": "unmodified",
+      "license_files": [],
+      "origin": "upstream",
+      "package": "Forever Unit Frames",
+      "phases": [
+        6
+      ],
+      "saved_variables": [
+        {
+          "name": "ForeverUnitFramesDB",
+          "scope": "account"
+        }
+      ],
+      "source_sha256": "cc50d16b5d926240a4dc48e7e6f9e4ee7fbb5107c14ebb734a685542e50e1a80",
+      "source_zip": "References/forever-addons/Forever Unit Frames/ForeverUnitFrames-0.65.2.zip",
+      "version": "0.65.2"
+    },
+    {
+      "bundle": "individual",
+      "folder": "Grid2",
+      "kind": "unmodified",
+      "license_files": [
+        "LICENSE.txt",
+        "Libs/LibCustomGlow-1.0/LICENSE"
+      ],
+      "origin": "upstream",
+      "package": "Grid2",
+      "phases": [
+        9
+      ],
+      "saved_variables": [
+        {
+          "name": "Grid2DB",
+          "scope": "account"
+        }
+      ],
+      "source_sha256": "f198bc3ce2d02e023f81052074a2e9aa4ba41819931bd302ff7429dac9515393",
+      "source_zip": "References/forever-addons/Grid2/Grid2-4.1.13-forever.zip",
+      "version": "4.1.13-forever"
+    },
+    {
+      "bundle": "individual",
+      "folder": "Grid2LDB",
+      "kind": "unmodified",
+      "license_files": [],
+      "origin": "upstream",
+      "package": "Grid2",
+      "phases": [
+        9
+      ],
+      "saved_variables": [],
+      "source_sha256": "f198bc3ce2d02e023f81052074a2e9aa4ba41819931bd302ff7429dac9515393",
+      "source_zip": "References/forever-addons/Grid2/Grid2-4.1.13-forever.zip",
+      "version": "4.1.13-forever"
+    },
+    {
+      "bundle": "individual",
+      "folder": "Grid2Options",
+      "kind": "unmodified",
+      "license_files": [
+        "Libs/AceGUI-3.0-Search-EditBox/LICENSE",
+        "Libs/LibCompress/LICENSE"
+      ],
+      "origin": "upstream",
+      "package": "Grid2",
+      "phases": [
+        9
+      ],
+      "saved_variables": [],
+      "source_sha256": "f198bc3ce2d02e023f81052074a2e9aa4ba41819931bd302ff7429dac9515393",
+      "source_zip": "References/forever-addons/Grid2/Grid2-4.1.13-forever.zip",
+      "version": "4.1.13-forever"
+    },
+    {
+      "bundle": "individual",
+      "folder": "Hekili",
+      "kind": "unmodified",
+      "license_files": [
+        "LICENSE",
+        "LICENSE-wowsims.txt",
+        "Libs/AceAddon-3.0/LICENSE.txt",
+        "Libs/AceConfig-3.0/LICENSE.txt",
+        "Libs/AceConsole-3.0/LICENSE.txt",
+        "Libs/AceDB-3.0/LICENSE.txt",
+        "Libs/AceDBOptions-3.0/LICENSE.txt",
+        "Libs/AceGUI-3.0/LICENSE.txt",
+        "Libs/AceGUI-3.0_SFX-Widgets/LICENSE.txt",
+        "Libs/AceLocale-3.0/LICENSE.txt",
+        "Libs/AceSerializer-3.0/LICENSE.txt",
+        "Libs/CallbackHandler-1.0/LICENSE.txt",
+        "Libs/LibCustomGlow-1.0/LICENSE",
+        "Libs/LibDeflate/LICENSE.txt",
+        "Libs/LibDualSpec-1.0/LICENSE-NOTE.md",
+        "Libs/LibRangeCheck-3.0/LICENSE",
+        "Libs/LibSharedMedia-3.0/LICENSE-NOTE.md",
+        "Libs/LibStub/LICENSE.txt",
+        "Libs/LibTranslit-1.0/COPYING",
+        "Libs/LibTranslit-1.0/COPYING.LESSER",
+        "Libs/VirtualGameAPI-1.0/LICENSE"
+      ],
+      "origin": "upstream",
+      "package": "Hekili",
+      "phases": [
+        8
+      ],
+      "saved_variables": [
+        {
+          "name": "HekiliDB",
+          "scope": "account"
+        }
+      ],
+      "source_sha256": "8063fd78c988af76c6a74653c21ff9f268546c44320922688ea2f7dd3d4c45e3",
+      "source_zip": "References/forever-addons/Hekili/Hekili-v0.8.6-forever.zip",
+      "version": "v0.8.6-forever"
+    },
+    {
+      "bundle": "individual",
+      "folder": "Hekili_Druid",
+      "kind": "unmodified",
+      "license_files": [],
+      "origin": "upstream",
+      "package": "Hekili",
+      "phases": [
+        8
+      ],
+      "saved_variables": [],
+      "source_sha256": "8063fd78c988af76c6a74653c21ff9f268546c44320922688ea2f7dd3d4c45e3",
+      "source_zip": "References/forever-addons/Hekili/Hekili-v0.8.6-forever.zip",
+      "version": "v0.8.6-forever"
+    },
+    {
+      "bundle": "individual",
+      "folder": "Hekili_Hunter",
+      "kind": "unmodified",
+      "license_files": [],
+      "origin": "upstream",
+      "package": "Hekili",
+      "phases": [
+        8
+      ],
+      "saved_variables": [],
+      "source_sha256": "8063fd78c988af76c6a74653c21ff9f268546c44320922688ea2f7dd3d4c45e3",
+      "source_zip": "References/forever-addons/Hekili/Hekili-v0.8.6-forever.zip",
+      "version": "v0.8.6-forever"
+    },
+    {
+      "bundle": "individual",
+      "folder": "Hekili_Mage",
+      "kind": "unmodified",
+      "license_files": [],
+      "origin": "upstream",
+      "package": "Hekili",
+      "phases": [
+        8
+      ],
+      "saved_variables": [],
+      "source_sha256": "8063fd78c988af76c6a74653c21ff9f268546c44320922688ea2f7dd3d4c45e3",
+      "source_zip": "References/forever-addons/Hekili/Hekili-v0.8.6-forever.zip",
+      "version": "v0.8.6-forever"
+    },
+    {
+      "bundle": "individual",
+      "folder": "Hekili_Paladin",
+      "kind": "unmodified",
+      "license_files": [],
+      "origin": "upstream",
+      "package": "Hekili",
+      "phases": [
+        8
+      ],
+      "saved_variables": [],
+      "source_sha256": "8063fd78c988af76c6a74653c21ff9f268546c44320922688ea2f7dd3d4c45e3",
+      "source_zip": "References/forever-addons/Hekili/Hekili-v0.8.6-forever.zip",
+      "version": "v0.8.6-forever"
+    },
+    {
+      "bundle": "individual",
+      "folder": "Hekili_Priest",
+      "kind": "unmodified",
+      "license_files": [],
+      "origin": "upstream",
+      "package": "Hekili",
+      "phases": [
+        8
+      ],
+      "saved_variables": [],
+      "source_sha256": "8063fd78c988af76c6a74653c21ff9f268546c44320922688ea2f7dd3d4c45e3",
+      "source_zip": "References/forever-addons/Hekili/Hekili-v0.8.6-forever.zip",
+      "version": "v0.8.6-forever"
+    },
+    {
+      "bundle": "individual",
+      "folder": "Hekili_Rogue",
+      "kind": "unmodified",
+      "license_files": [],
+      "origin": "upstream",
+      "package": "Hekili",
+      "phases": [
+        8
+      ],
+      "saved_variables": [],
+      "source_sha256": "8063fd78c988af76c6a74653c21ff9f268546c44320922688ea2f7dd3d4c45e3",
+      "source_zip": "References/forever-addons/Hekili/Hekili-v0.8.6-forever.zip",
+      "version": "v0.8.6-forever"
+    },
+    {
+      "bundle": "individual",
+      "folder": "Hekili_Shaman",
+      "kind": "unmodified",
+      "license_files": [],
+      "origin": "upstream",
+      "package": "Hekili",
+      "phases": [
+        8
+      ],
+      "saved_variables": [],
+      "source_sha256": "8063fd78c988af76c6a74653c21ff9f268546c44320922688ea2f7dd3d4c45e3",
+      "source_zip": "References/forever-addons/Hekili/Hekili-v0.8.6-forever.zip",
+      "version": "v0.8.6-forever"
+    },
+    {
+      "bundle": "individual",
+      "folder": "Hekili_Shared",
+      "kind": "unmodified",
+      "license_files": [],
+      "origin": "upstream",
+      "package": "Hekili",
+      "phases": [
+        8
+      ],
+      "saved_variables": [],
+      "source_sha256": "8063fd78c988af76c6a74653c21ff9f268546c44320922688ea2f7dd3d4c45e3",
+      "source_zip": "References/forever-addons/Hekili/Hekili-v0.8.6-forever.zip",
+      "version": "v0.8.6-forever"
+    },
+    {
+      "bundle": "individual",
+      "folder": "Hekili_Warlock",
+      "kind": "unmodified",
+      "license_files": [],
+      "origin": "upstream",
+      "package": "Hekili",
+      "phases": [
+        8
+      ],
+      "saved_variables": [],
+      "source_sha256": "8063fd78c988af76c6a74653c21ff9f268546c44320922688ea2f7dd3d4c45e3",
+      "source_zip": "References/forever-addons/Hekili/Hekili-v0.8.6-forever.zip",
+      "version": "v0.8.6-forever"
+    },
+    {
+      "bundle": "individual",
+      "folder": "Hekili_Warrior",
+      "kind": "unmodified",
+      "license_files": [],
+      "origin": "upstream",
+      "package": "Hekili",
+      "phases": [
+        8
+      ],
+      "saved_variables": [],
+      "source_sha256": "8063fd78c988af76c6a74653c21ff9f268546c44320922688ea2f7dd3d4c45e3",
+      "source_zip": "References/forever-addons/Hekili/Hekili-v0.8.6-forever.zip",
+      "version": "v0.8.6-forever"
+    },
+    {
+      "bundle": "required",
+      "folder": "Masque",
+      "kind": "unmodified",
+      "license_files": [
+        "LICENSE.txt"
+      ],
+      "origin": "upstream",
+      "package": "Masque",
+      "phases": [
+        2
+      ],
+      "saved_variables": [
+        {
+          "name": "MasqueDB",
+          "scope": "account"
+        }
+      ],
+      "source_sha256": "e4250f08b5429dd054ee9799db48ab64f1a3523dfd76ad3368437300ddb690c1",
+      "source_zip": "References/forever-addons/Masque/Masque-12.1.8.zip",
+      "version": "12.1.8"
+    },
+    {
+      "bundle": "individual",
+      "folder": "Masque_Dominos",
+      "kind": "unmodified",
+      "license_files": [],
+      "origin": "upstream",
+      "package": "Dominos",
+      "phases": [
+        3
+      ],
+      "saved_variables": [],
+      "source_sha256": "2dbcf9857a91b772a42200369386fc17f875530ffd47984b555ecdb8e11bef1a",
+      "source_zip": "References/forever-addons/Dominos/Dominos-12.0.4.zip",
+      "version": "12.0.4"
+    },
+    {
+      "bundle": "required",
+      "folder": "Masque_Onyx",
+      "kind": "unmodified",
+      "license_files": [],
+      "origin": "upstream",
+      "package": "Masque Onyx",
+      "phases": [
+        2
+      ],
+      "saved_variables": [],
+      "source_sha256": "51e961e9b40936f94ddec495b17f1c5bd8b3cfd8fa7e7463f80c2e331b05b190",
+      "source_zip": "References/forever-addons/Masque Onyx/Masque_Onyx-12.1.6.zip",
+      "version": "12.1.6"
+    },
+    {
+      "bundle": "required",
+      "folder": "ProfileManager",
+      "kind": "unmodified",
+      "license_files": [],
+      "origin": "upstream",
+      "package": "ProfileManager",
+      "phases": [
+        20
+      ],
+      "saved_variables": [
+        {
+          "name": "ProfileManagerDB",
+          "scope": "account"
+        }
+      ],
+      "source_sha256": "f905c4381473a7cb6e033e89aa1878177d996ca965d167cd5fdbf086c8c9f2b1",
+      "source_zip": "References/addon-sources/profilemanager/ProfileManager.zip",
+      "version": "4.0"
+    },
+    {
+      "bundle": "individual",
+      "folder": "Quartz",
+      "kind": "unmodified",
+      "license_files": [],
+      "origin": "upstream",
+      "package": "Quartz",
+      "phases": [
+        7
+      ],
+      "saved_variables": [
+        {
+          "name": "Quartz3DB",
+          "scope": "account"
+        }
+      ],
+      "source_sha256": "2a76cdda6b53e7eb26472c0b8b6bf8f50c02388f8f515e6746c5e14657d5ed70",
+      "source_zip": "References/forever-addons/Quartz/Quartz-3.8.0.zip",
+      "version": "3.8.0"
+    },
+    {
+      "bundle": "individual",
+      "folder": "SexyMap",
+      "kind": "unmodified",
+      "license_files": [],
+      "origin": "upstream",
+      "package": "SexyMap",
+      "phases": [
+        5
+      ],
+      "saved_variables": [
+        {
+          "name": "SexyMap2DB",
+          "scope": "account"
+        }
+      ],
+      "source_sha256": "1868eb714b8c9ea4efaa615109bfd457a0c3bb625f0b2a1f1befdadfc9143321",
+      "source_zip": "References/forever-addons/SexyMap/SexyMap-v12.1.7.zip",
+      "version": "v12.1.7"
+    }
+  ],
+  "generated_by": "Collection/tools/build.py --install",
+  "interface": 16001,
+  "name": "DevilForever",
+  "schema": "devil-forever-install-manifest/1",
+  "unit_frames": "fuf",
+  "version": "0.1.4"
+}

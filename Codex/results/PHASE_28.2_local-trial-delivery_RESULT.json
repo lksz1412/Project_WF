@@ -1,0 +1,16 @@
+{
+  "phase": "28.2",
+  "steps": [57, 58],
+  "status": "READY_LOCAL_TRIAL",
+  "step57": "WAITING_GAME_PATH_APPROVAL",
+  "step58LocalFiles": "PASS",
+  "step58FinalAcceptance": "WAITING_CLEAN_WINDOWS_AND_GAME",
+  "fileIdentityReport": "audit-installer/local-delivery.json",
+  "filesMatched": 5,
+  "deliveredInstallerSwitchedBothWays": true,
+  "cleanWindowsObserved": false,
+  "liveGameObserved": false,
+  "finalMajor": 0,
+  "finalModerate": 0,
+  "handover": "../docs/HANDOVER_v0.1.1.md"
+}
