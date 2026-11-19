@@ -1,0 +1,283 @@
+{
+  "schema": 1,
+  "baselineArchive": {
+    "name": "DevilForever-0.1.1.zip",
+    "sha256": "dd78f96bdf8d8e690bbc0aefc9a5b0b7a1d9f6edffb0b3179696c171123ee23b",
+    "bytes": 127024315
+  },
+  "files": [
+    {
+      "path": "performance-0.1.1/Interface/AddOns/!DevilForever_Core/!DevilForever_Core.toc",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/!DevilForever_Core/!DevilForever_Core.toc",
+      "sha256": "4aba5babd992429749ab50fc2d076541ca2bd8599cc5d203dc978badb42e395a",
+      "bytes": 729
+    },
+    {
+      "path": "performance-0.1.1/Interface/AddOns/!DevilForever_Core/API.lua",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/!DevilForever_Core/API.lua",
+      "sha256": "9b45e717664fce05fa9ba3e66b812c81e011ea1cfd2e19f8d2fbc95adde41ce8",
+      "bytes": 10573
+    },
+    {
+      "path": "performance-0.1.1/Interface/AddOns/!DevilForever_Core/Commands.lua",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/!DevilForever_Core/Commands.lua",
+      "sha256": "1d3f0ec36c4d2bd2f00967da286aa5043e0de87aaebc861c279e156fb8f27c87",
+      "bytes": 9715
+    },
+    {
+      "path": "performance-0.1.1/Interface/AddOns/!DevilForever_Core/Core.lua",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/!DevilForever_Core/Core.lua",
+      "sha256": "79cc3d3275402b319226e7db0e247601f14fb205f2d7bafcf4e514acc6cace36",
+      "bytes": 11482
+    },
+    {
+      "path": "performance-0.1.1/Interface/AddOns/!DevilForever_Core/Defaults.lua",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/!DevilForever_Core/Defaults.lua",
+      "sha256": "c3a9f147d0e79841f8494779f3cb686e93c8b2576c55bb0ad238e0a7561bc3a4",
+      "bytes": 24096
+    },
+    {
+      "path": "performance-0.1.1/Interface/AddOns/!DevilForever_Core/Defaults/Dominos.lua",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/!DevilForever_Core/Defaults/Dominos.lua",
+      "sha256": "42abdfbdad6894f7d3d8b4d03c14be71f8b5447aa396b05c05fd20ba108be570",
+      "bytes": 1067
+    },
+    {
+      "path": "performance-0.1.1/Interface/AddOns/!DevilForever_Core/Defaults/Grid2.lua",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/!DevilForever_Core/Defaults/Grid2.lua",
+      "sha256": "300eeb0df1ce668efbf435f54af4658a982ea2127173eb48a50fd751388fdfc5",
+      "bytes": 2197
+    },
+    {
+      "path": "performance-0.1.1/Interface/AddOns/!DevilForever_Core/Defaults/Hekili.lua",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/!DevilForever_Core/Defaults/Hekili.lua",
+      "sha256": "1082e6cb69cd32270d085cbd5d93372e60a7e6e582615dddc50952ad82b8662c",
+      "bytes": 1324
+    },
+    {
+      "path": "performance-0.1.1/Interface/AddOns/!DevilForever_Core/Defaults/PitBull4.lua",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/!DevilForever_Core/Defaults/PitBull4.lua",
+      "sha256": "ff5a3911db5c9e1da0171347ee5fb83ff954a23f3128ea99b78f6560ce39250c",
+      "bytes": 16676
+    },
+    {
+      "path": "performance-0.1.1/Interface/AddOns/!DevilForever_Core/Defaults/SexyMap.lua",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/!DevilForever_Core/Defaults/SexyMap.lua",
+      "sha256": "f3604d94d87849d1e711c46e6c8bdcd4ef20953eebb3b62304bb6abbd0e684e0",
+      "bytes": 7362
+    },
+    {
+      "path": "performance-0.1.1/Interface/AddOns/!DevilForever_Core/Edit.lua",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/!DevilForever_Core/Edit.lua",
+      "sha256": "8f81cbd656763f4e1b443304c2822db7fc4de11fd3ead2e8995af55c297e9811",
+      "bytes": 10546
+    },
+    {
+      "path": "performance-0.1.1/Interface/AddOns/!DevilForever_Core/Presets.lua",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/!DevilForever_Core/Presets.lua",
+      "sha256": "c8ce5adbe2dc94b27f08c98d46eb412121af503b310a90905295f0b4f1ec8eee",
+      "bytes": 21144
+    },
+    {
+      "path": "performance-0.1.1/Interface/AddOns/!DevilForever_Core/Presets/fhd.lua",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/!DevilForever_Core/Presets/fhd.lua",
+      "sha256": "54d0a9f351c56a65e73fa0392144e39fa09806fd62eee68ba7010a30ec3c767c",
+      "bytes": 31539
+    },
+    {
+      "path": "performance-0.1.1/Interface/AddOns/!DevilForever_Core/Presets/qhd.lua",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/!DevilForever_Core/Presets/qhd.lua",
+      "sha256": "febb896fcbf5d17a7f50aead01220ac8bdd1ff13882d09f4f31c642fc341a324",
+      "bytes": 31574
+    },
+    {
+      "path": "performance-0.1.1/Interface/AddOns/!DevilForever_Core/Presets/uhd.lua",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/!DevilForever_Core/Presets/uhd.lua",
+      "sha256": "8d7dcb03587a9a152b4947c29ba8a328891060c918b2fc3bf275d59d991bfd26",
+      "bytes": 31599
+    },
+    {
+      "path": "performance-0.1.1/Interface/AddOns/!DevilForever_Core/Profiles.lua",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/!DevilForever_Core/Profiles.lua",
+      "sha256": "9347f81e04e34d111ab3207e7a0d2f0095e47e1580e11dba602defaedf0f8781",
+      "bytes": 47632
+    },
+    {
+      "path": "performance-0.1.1/Interface/AddOns/!DevilForever_Core/Registry.lua",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/!DevilForever_Core/Registry.lua",
+      "sha256": "295799bff9355c709d031628cc99c6dac9a9db9ac9e48def2588f1ffe38b5ecf",
+      "bytes": 58588
+    },
+    {
+      "path": "performance-0.1.1/Interface/AddOns/!DevilForever_Core/Spec.lua",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/!DevilForever_Core/Spec.lua",
+      "sha256": "8dd4cd7570c342a8658b5f40b940d0cf3c681b8800339505a414bf20d50026c1",
+      "bytes": 4697
+    },
+    {
+      "path": "performance-0.1.1/Interface/AddOns/!DevilForever_Core/Theme.lua",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/!DevilForever_Core/Theme.lua",
+      "sha256": "97caacad6078a22ab041d25da562b28e38221034061710473f484e43beed5e32",
+      "bytes": 7222
+    },
+    {
+      "path": "performance-0.1.1/Interface/AddOns/DevilForever_Appearance/Appearance.lua",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/DevilForever_Appearance/Appearance.lua",
+      "sha256": "6b00566c5eb05f685ac9036d10b282452a6445f9b5d20c95740fdc463961f3ef",
+      "bytes": 7083
+    },
+    {
+      "path": "performance-0.1.1/Interface/AddOns/DevilForever_Appearance/Composition.lua",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/DevilForever_Appearance/Composition.lua",
+      "sha256": "1cb5aa8d19b1f52f7ee9543418441e414bf5ebbbaa00337420020b8e921027d0",
+      "bytes": 6557
+    },
+    {
+      "path": "performance-0.1.1/Interface/AddOns/DevilForever_Appearance/Crests.lua",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/DevilForever_Appearance/Crests.lua",
+      "sha256": "668cf4925990e5b6385678c2d182fe9db893ee7336e1ea8d653267ef42010d15",
+      "bytes": 1921
+    },
+    {
+      "path": "performance-0.1.1/Interface/AddOns/DevilForever_Appearance/DevilForever_Appearance.toc",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/DevilForever_Appearance/DevilForever_Appearance.toc",
+      "sha256": "02c3810007ef5f0fba0f58d9e893226654365639899cff6474ba5d478984ca65",
+      "bytes": 303
+    },
+    {
+      "path": "performance-0.1.1/Interface/AddOns/DevilForever_Appearance/SharedMedia.lua",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/DevilForever_Appearance/SharedMedia.lua",
+      "sha256": "71dd2f54b235d541e8267a213182bc0ade7e6777e74a24002da2215e069241de",
+      "bytes": 864
+    },
+    {
+      "path": "performance-0.1.1/Interface/AddOns/DevilForever_Appearance/Themes/alliance.lua",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/DevilForever_Appearance/Themes/alliance.lua",
+      "sha256": "df6dd0ea558d3688bfcf9bcf3fa7ee7afeefe3f514d73f328da422b67f481327",
+      "bytes": 1077
+    },
+    {
+      "path": "performance-0.1.1/Interface/AddOns/DevilForever_Appearance/Themes/devil.lua",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/DevilForever_Appearance/Themes/devil.lua",
+      "sha256": "83066f1673d3d7fc3ec6e524b02c4de557517c504295648bdfd52d991f5dcf0a",
+      "bytes": 1072
+    },
+    {
+      "path": "performance-0.1.1/Interface/AddOns/DevilForever_Appearance/Themes/horde.lua",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/DevilForever_Appearance/Themes/horde.lua",
+      "sha256": "35b4b16707b88c7cc5b32daab8fdb1e9fbaa07eb1bb5e27a0495a3049218a833",
+      "bytes": 1073
+    },
+    {
+      "path": "performance-0.1.1/Interface/AddOns/DevilForever_Skin_Dominos/Skin.lua",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/DevilForever_Skin_Dominos/Skin.lua",
+      "sha256": "834c59d7f793a385fa1f0b1d7fe5110b22b085b6127a8c5a0c899386c05a0a87",
+      "bytes": 3407
+    },
+    {
+      "path": "performance-0.1.1/Interface/AddOns/DevilForever_Skin_Nameplates/Appearance.lua",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/DevilForever_Skin_Nameplates/Appearance.lua",
+      "sha256": "869795d8e0b9974b921a7d6cf23f8d7e679b2da39fdd9ac85bc9ce5d8fc529da",
+      "bytes": 4769
+    },
+    {
+      "path": "performance-0.1.1/Interface/AddOns/DevilForever_Skin_Nameplates/NameplateProfiles.lua",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/DevilForever_Skin_Nameplates/NameplateProfiles.lua",
+      "sha256": "3ead5145e4fd1ee828bd56982ee7d925e13fa496e216841b995e44062ae587b8",
+      "bytes": 1775
+    },
+    {
+      "path": "performance-0.1.1/Interface/AddOns/DevilForever_Skin_NativeChat/Skin.lua",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/DevilForever_Skin_NativeChat/Skin.lua",
+      "sha256": "6b6abf4870963c7b538314b9b8db716ca07efcba3038f8b48311b0537eb1dd5c",
+      "bytes": 5962
+    },
+    {
+      "path": "performance-0.1.1/Interface/AddOns/DevilForever_Skin_StatusStrip/Skin.lua",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/DevilForever_Skin_StatusStrip/Skin.lua",
+      "sha256": "b0945d629aab3a3ef25007f4022d14320de24518683a0dc3c7d719a3e0a76220",
+      "bytes": 2953
+    },
+    {
+      "path": "performance-0.1.1/Interface/AddOns/Dominos/core/buttonBar.lua",
+      "source": "DevilForever-0.1.1.zip",
+      "member": "Interface/AddOns/Dominos/core/buttonBar.lua",
+      "sha256": "bd5a5953f0e67c0a5163710fbeb68fbeb14556e987a9518ad4ffcc7505516765",
+      "bytes": 9213
+    },
+    {
+      "path": "pitbull4-upstream/PitBull4_Cata.toc",
+      "source": "Collection/upstream/pitbull-unit-frames-4-0-v4.2.50/PitBull4/PitBull4_Cata.toc",
+      "sha256": "54017e85203ba0bbe4437b394eb8d6366d5cd4cbc389359844fdaef37e3e0970",
+      "bytes": 1120
+    },
+    {
+      "path": "pitbull4-upstream/PitBull4_Mainline.toc",
+      "source": "Collection/upstream/pitbull-unit-frames-4-0-v4.2.50/PitBull4/PitBull4_Mainline.toc",
+      "sha256": "2d43dcd5521e6c124894624266b9d1d0aaf617800a1d9d5055fa5f4e41bb551d",
+      "bytes": 1137
+    },
+    {
+      "path": "pitbull4-upstream/PitBull4_Mists.toc",
+      "source": "Collection/upstream/pitbull-unit-frames-4-0-v4.2.50/PitBull4/PitBull4_Mists.toc",
+      "sha256": "b5e78e9c6e36512a89a66f638f114e84cd4f10179a12f288c4108ab464dee81f",
+      "bytes": 1121
+    },
+    {
+      "path": "pitbull4-upstream/PitBull4_TBC.toc",
+      "source": "Collection/upstream/pitbull-unit-frames-4-0-v4.2.50/PitBull4/PitBull4_TBC.toc",
+      "sha256": "8bb9badf5d23661851978ff873d7ed276d4934a06fcc8ba53f3c483dad6c4424",
+      "bytes": 1119
+    },
+    {
+      "path": "details/details-instances.fragment.fhd.lua",
+      "source": "References/codex-appearance/10/details-instances.fragment.fhd.lua",
+      "sha256": "9005389f328fac479f4f585b0ee09e40e16cc13b1cdf8b89d9fc8e330fa10c84",
+      "bytes": 2292
+    },
+    {
+      "path": "details/details-instances.fragment.qhd.lua",
+      "source": "References/codex-appearance/10/details-instances.fragment.qhd.lua",
+      "sha256": "610aa5446c73286fb090f9281f1a8c1257de504ac68b88484f5d769ba2dd88a7",
+      "bytes": 2293
+    },
+    {
+      "path": "details/details-instances.fragment.uhd.lua",
+      "source": "References/codex-appearance/10/details-instances.fragment.uhd.lua",
+      "sha256": "3ec652b97f2a0ef63aea53ca49e1fb0d2cb52560b8ea19689e53ec5038648b18",
+      "bytes": 2297
+    }
+  ]
+}

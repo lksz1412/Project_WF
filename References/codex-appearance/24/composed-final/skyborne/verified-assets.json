@@ -1,0 +1,654 @@
+{
+  "archive": {
+    "archive": "DevilForever-0.1.0-one-session.zip",
+    "sha256": "a9dde5d6b65e7dd81da44921e4b424f450cf269afa0d1dcb7a33786c8a658f01",
+    "members": {
+      "Interface/AddOns/DevilForever_Appearance/Media/metal.tga": "3dc3f17f0c6038bcf96aadfb1fc006fb264e891ae3ae57e53fa10a60d5f3ca74",
+      "Interface/AddOns/DevilForever_Appearance/Themes/Crests/alliance.tga": "b31627b02d7f2ea06716a999da8de21c538755b7a81538750c4441f0b3adad13",
+      "Interface/AddOns/DevilForever_Appearance/Themes/Crests/dwarf.tga": "f3dbddd040718bf67010b4f85fd96185e50a5ccc3b13e87bb4322d80cb2f0475",
+      "Interface/AddOns/DevilForever_Appearance/Themes/Crests/gnome.tga": "cd842fabe6b87c8e4f133871f06b1b0b16b5f949eb09e1d739057ef4ec9c76cd",
+      "Interface/AddOns/DevilForever_Appearance/Themes/Crests/horde.tga": "a10aeb7697b2168727862677d840a3963e52a258cb84194bf8c95a4b5d994156",
+      "Interface/AddOns/DevilForever_Appearance/Themes/Crests/human.tga": "e5116dd1ebaac9f63a6f14a6528f760dbad1ed674681693728cfc0fef9f1fc2e",
+      "Interface/AddOns/DevilForever_Appearance/Themes/Crests/nightelf.tga": "d0760a5d9ccf252a245a959d5e7a07f005a126f81292a3d7d599a609d08f0e20",
+      "Interface/AddOns/DevilForever_Appearance/Themes/Crests/orc.tga": "25818609d62dc4403318e5391d7e8cfcb122ee9e928e68d8a22cdecd01d549fe",
+      "Interface/AddOns/DevilForever_Appearance/Themes/Crests/skyborne.tga": "1b5648567bf22c8826f6b86fc84261fbde1560ee094ea4cf1ec24bf07e3003e4",
+      "Interface/AddOns/DevilForever_Appearance/Themes/Crests/tauren.tga": "b0fd0f0e1a5bc496d0a4011d38a72a589c4ba87b26b3b8005ad3209cd037f2f6",
+      "Interface/AddOns/DevilForever_Appearance/Themes/Crests/troll.tga": "26dadcbe8616a488ada915f11b677faa729c5c5e5f1feca7a6c8dfd8136204c0",
+      "Interface/AddOns/DevilForever_Appearance/Themes/Crests/undead.tga": "a7e2c202a79d89a559cbdc7e20f73f21bb49d1fffcae25666d55ad4897fe6f74",
+      "Interface/AddOns/DevilForever_Appearance/Themes/alliance/Composition/fhd_deck.tga": "cbfb982e60667132fa0cd640c95ea64da10013da0e72e8a873f56b2f68d2c491",
+      "Interface/AddOns/DevilForever_Appearance/Themes/alliance/Composition/fhd_top.tga": "f7fac006d212eb619654c5f9c26c3ba75add736698fe60702a9c01243978eb34",
+      "Interface/AddOns/DevilForever_Appearance/Themes/alliance/Composition/qhd_deck.tga": "5d795b652355674f6cd6a136e9f69d44dc6c8f61d31e5eb0538a1371bc957b56",
+      "Interface/AddOns/DevilForever_Appearance/Themes/alliance/Composition/qhd_top.tga": "c8986f42b9ecdb2d0e089de3bf1e43f2d4905a4db8a6f93318fa1d7b379a6391",
+      "Interface/AddOns/DevilForever_Appearance/Themes/alliance/Composition/uhd_deck.tga": "0c245ae6620ac0c7c10a2d61918b793b72eb284e62847815a5ea231f2a8527c3",
+      "Interface/AddOns/DevilForever_Appearance/Themes/alliance/Composition/uhd_top.tga": "2f70df3a9998ae8bd73e3b0aa575bc314f4c88c509aa7a454e990e0ddb1b9857",
+      "Interface/AddOns/DevilForever_Appearance/Themes/alliance/divider.tga": "30bdf15546449b0c2b59603d59880d2580f75c4913b401134502e533ccda2f3f",
+      "Interface/AddOns/DevilForever_Appearance/Themes/alliance/panel.tga": "ca536569a72dd91f82b738c28f1d89f4e0db4408b59ffe0b1e5e0cfa349a76f2",
+      "Interface/AddOns/DevilForever_Appearance/Themes/devil/Composition/fhd_deck.tga": "08806dcab10aa709d752284a029622aed86b5c2d105f6a79877ede018d7ea615",
+      "Interface/AddOns/DevilForever_Appearance/Themes/devil/Composition/fhd_top.tga": "765b6f350420f72c94f5a10125d8ca23ab272dba7ad903a57c9ce6e1d3c1f9d6",
+      "Interface/AddOns/DevilForever_Appearance/Themes/devil/Composition/qhd_deck.tga": "d822f1a8a879e972d9ba940fc71b9d5afdb91c9acc844d1b8aa1954c1b7bd42f",
+      "Interface/AddOns/DevilForever_Appearance/Themes/devil/Composition/qhd_top.tga": "0204acb3e24f81bbffe53468c193ef1c7fcccda2a348ed31451e91b9dc3d5d7b",
+      "Interface/AddOns/DevilForever_Appearance/Themes/devil/Composition/uhd_deck.tga": "56d63961aa40da9e7e5fc7f9f4342e5b8aafdd02438719ed75c2e40484bc2f5c",
+      "Interface/AddOns/DevilForever_Appearance/Themes/devil/Composition/uhd_top.tga": "027cfd8bda0daad198bb2cadd766555de5eb607a42d3c7ba0382aa3562748e86",
+      "Interface/AddOns/DevilForever_Appearance/Themes/devil/divider.tga": "5830b50945af3cfd9f7868af75e7b9ac6b5faedaa0a819f629c53815a4961a72",
+      "Interface/AddOns/DevilForever_Appearance/Themes/devil/panel.tga": "98f60e37e07cbdfcc64486435de400e12bdd5ca2cbffbb517a6f9979b8a8867e",
+      "Interface/AddOns/DevilForever_Appearance/Themes/devil/statusbar.tga": "7c531d38325d8823df4eadfcb1b58b6afc3518d6a317b03af15a44cdfe4fd478",
+      "Interface/AddOns/DevilForever_Appearance/Themes/horde/Composition/fhd_deck.tga": "7c65be83d242ab2f26c722b8143d265257c109d184a4574f006b7afb9639d698",
+      "Interface/AddOns/DevilForever_Appearance/Themes/horde/Composition/fhd_top.tga": "eff5fceca5d9b7da2680113fc82ae6f53af50a95116c46780f5c79c2279c86f1",
+      "Interface/AddOns/DevilForever_Appearance/Themes/horde/Composition/qhd_deck.tga": "30e63469c8a6e32cb0b21ac09f4ca41ec5f4dc6e44ff312111dec239b8949335",
+      "Interface/AddOns/DevilForever_Appearance/Themes/horde/Composition/qhd_top.tga": "7325448d3878e8f8395be569ecad1899b1f4348a9e72368d93e9d96bf96f3013",
+      "Interface/AddOns/DevilForever_Appearance/Themes/horde/Composition/uhd_deck.tga": "878164249c06d7baab16c431f4f6961ecd78bc0c0227bf15767455dae4767036",
+      "Interface/AddOns/DevilForever_Appearance/Themes/horde/Composition/uhd_top.tga": "f6140f26f1518cd65efaffa2949787fb9a4223261a838e01a594e9707f5a6a4c",
+      "Interface/AddOns/DevilForever_Appearance/Themes/horde/divider.tga": "4ad3831ca1f1801ca9a14a514c046806199670a6649d153630b28c5f136fac10",
+      "Interface/AddOns/DevilForever_Appearance/Themes/horde/panel.tga": "4cb5590de87842d0ad44035b5326a3b06c194e205b766cec89dd3644bffe0692",
+      "Interface/AddOns/Masque_Onyx/Textures/Base/Frame.tga": "7947a29a80c8b47f30dc4301ab421645f0d26cbd0b23ef68fdc41de38a14ae04"
+    },
+    "installed_geometry": {
+      "layouts": {
+        "fhd": {
+          "units": {
+            "player": [
+              438,
+              620,
+              240,
+              48
+            ],
+            "target": [
+              338,
+              680,
+              340,
+              56
+            ],
+            "pet": [
+              218,
+              450,
+              240,
+              32
+            ],
+            "petTarget": [
+              218,
+              420,
+              240,
+              24
+            ],
+            "focus": [
+              70,
+              628,
+              240,
+              40
+            ],
+            "focusTarget": [
+              224,
+              548,
+              240,
+              28
+            ],
+            "targettarget": [
+              690,
+              570,
+              160,
+              28
+            ],
+            "targettargettarget": [
+              860,
+              570,
+              140,
+              28
+            ]
+          },
+          "appearance": {
+            "player": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 16.0,
+              "power": true,
+              "material": "Devil Forever devil"
+            },
+            "target": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 16.0,
+              "power": true,
+              "material": "Devil Forever devil"
+            },
+            "pet": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 16.0,
+              "power": true,
+              "material": "Devil Forever devil"
+            },
+            "petTarget": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 16.0,
+              "power": false,
+              "material": "Devil Forever devil"
+            },
+            "focus": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 16.0,
+              "power": true,
+              "material": "Devil Forever devil"
+            },
+            "focusTarget": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 16.0,
+              "power": false,
+              "material": "Devil Forever devil"
+            },
+            "targettarget": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 16.0,
+              "power": false,
+              "material": "Devil Forever devil"
+            },
+            "targettargettarget": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 16.0,
+              "power": false,
+              "material": "Devil Forever devil"
+            }
+          },
+          "pet_actions": {
+            "rect": [
+              218,
+              490,
+              238,
+              22
+            ],
+            "columns": 10,
+            "gap": 2
+          },
+          "preset_sha256": "54d0a9f351c56a65e73fa0392144e39fa09806fd62eee68ba7010a30ec3c767c"
+        },
+        "qhd": {
+          "units": {
+            "player": [
+              690,
+              908,
+              280,
+              56
+            ],
+            "target": [
+              570,
+              980,
+              400,
+              64
+            ],
+            "pet": [
+              256,
+              764,
+              280,
+              40
+            ],
+            "petTarget": [
+              256,
+              738,
+              280,
+              24
+            ],
+            "focus": [
+              274,
+              908,
+              280,
+              48
+            ],
+            "focusTarget": [
+              274,
+              866,
+              260,
+              30
+            ],
+            "targettarget": [
+              990,
+              864,
+              160,
+              32
+            ],
+            "targettargettarget": [
+              1158,
+              864,
+              160,
+              32
+            ]
+          },
+          "appearance": {
+            "player": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 18.0,
+              "power": true,
+              "material": "Devil Forever devil"
+            },
+            "target": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 18.0,
+              "power": true,
+              "material": "Devil Forever devil"
+            },
+            "pet": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 18.0,
+              "power": true,
+              "material": "Devil Forever devil"
+            },
+            "petTarget": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 18.0,
+              "power": false,
+              "material": "Devil Forever devil"
+            },
+            "focus": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 18.0,
+              "power": true,
+              "material": "Devil Forever devil"
+            },
+            "focusTarget": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 18.0,
+              "power": false,
+              "material": "Devil Forever devil"
+            },
+            "targettarget": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 18.0,
+              "power": false,
+              "material": "Devil Forever devil"
+            },
+            "targettargettarget": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 18.0,
+              "power": false,
+              "material": "Devil Forever devil"
+            }
+          },
+          "pet_actions": {
+            "rect": [
+              256,
+              806,
+              278,
+              26
+            ],
+            "columns": 10,
+            "gap": 2
+          },
+          "preset_sha256": "febb896fcbf5d17a7f50aead01220ac8bdd1ff13882d09f4f31c642fc341a324"
+        },
+        "uhd": {
+          "units": {
+            "player": [
+              1080,
+              1440,
+              390,
+              72
+            ],
+            "target": [
+              916,
+              1536,
+              554,
+              84
+            ],
+            "pet": [
+              212,
+              1514,
+              360,
+              42
+            ],
+            "petTarget": [
+              212,
+              1470,
+              360,
+              34
+            ],
+            "focus": [
+              580,
+              1440,
+              320,
+              56
+            ],
+            "focusTarget": [
+              580,
+              1400,
+              280,
+              32
+            ],
+            "targettarget": [
+              1480,
+              1390,
+              190,
+              36
+            ],
+            "targettargettarget": [
+              1678,
+              1390,
+              190,
+              36
+            ]
+          },
+          "appearance": {
+            "player": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 22.0,
+              "power": true,
+              "material": "Devil Forever devil"
+            },
+            "target": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 22.0,
+              "power": true,
+              "material": "Devil Forever devil"
+            },
+            "pet": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 22.0,
+              "power": true,
+              "material": "Devil Forever devil"
+            },
+            "petTarget": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 22.0,
+              "power": false,
+              "material": "Devil Forever devil"
+            },
+            "focus": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 22.0,
+              "power": true,
+              "material": "Devil Forever devil"
+            },
+            "focusTarget": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 22.0,
+              "power": false,
+              "material": "Devil Forever devil"
+            },
+            "targettarget": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 22.0,
+              "power": false,
+              "material": "Devil Forever devil"
+            },
+            "targettargettarget": {
+              "padding": 1,
+              "spacing": 1,
+              "font_px": 22.0,
+              "power": false,
+              "material": "Devil Forever devil"
+            }
+          },
+          "pet_actions": {
+            "rect": [
+              212,
+              1564,
+              358,
+              34
+            ],
+            "columns": 10,
+            "gap": 2
+          },
+          "preset_sha256": "8d7dcb03587a9a152b4947c29ba8a328891060c918b2fc3bf275d59d991bfd26"
+        }
+      },
+      "pitbull_unitframe_sha256": "1dc3930da3e335c6218cc4f31c6586483046e1f5657d44c898097a57160c21db"
+    },
+    "unpacked_client_assets": []
+  },
+  "render_geometry": {
+    "fhd": {
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "slot_width": 48,
+      "crest_boundary": [
+        1752,
+        891,
+        1902,
+        1041
+      ],
+      "crest_inset": {
+        "right": 18,
+        "bottom": 11
+      },
+      "race_difference": {
+        "human": [
+          1763,
+          892,
+          1902,
+          1041
+        ],
+        "dwarf": [
+          1763,
+          892,
+          1902,
+          1041
+        ],
+        "gnome": [
+          1763,
+          892,
+          1902,
+          1041
+        ],
+        "nightelf": [
+          1763,
+          892,
+          1902,
+          1041
+        ],
+        "orc": [
+          1756,
+          901,
+          1902,
+          1041
+        ],
+        "tauren": [
+          1774,
+          894,
+          1902,
+          1041
+        ],
+        "troll": [
+          1755,
+          897,
+          1902,
+          1041
+        ],
+        "undead": [
+          1780,
+          894,
+          1902,
+          1041
+        ],
+        "skyborne": [
+          1763,
+          892,
+          1902,
+          1041
+        ],
+        "skyborne-horde": [
+          1782,
+          897,
+          1902,
+          1041
+        ]
+      }
+    },
+    "qhd": {
+      "dimensions": [
+        2560,
+        1440
+      ],
+      "slot_width": 56,
+      "crest_boundary": [
+        2360,
+        1222,
+        2535,
+        1397
+      ],
+      "crest_inset": {
+        "right": 25,
+        "bottom": 13
+      },
+      "race_difference": {
+        "human": [
+          2373,
+          1223,
+          2535,
+          1397
+        ],
+        "dwarf": [
+          2373,
+          1223,
+          2535,
+          1397
+        ],
+        "gnome": [
+          2373,
+          1223,
+          2535,
+          1397
+        ],
+        "nightelf": [
+          2373,
+          1223,
+          2535,
+          1397
+        ],
+        "orc": [
+          2364,
+          1233,
+          2535,
+          1397
+        ],
+        "tauren": [
+          2386,
+          1225,
+          2535,
+          1397
+        ],
+        "troll": [
+          2364,
+          1229,
+          2535,
+          1397
+        ],
+        "undead": [
+          2392,
+          1225,
+          2535,
+          1397
+        ],
+        "skyborne": [
+          2373,
+          1223,
+          2535,
+          1397
+        ],
+        "skyborne-horde": [
+          2395,
+          1230,
+          2535,
+          1397
+        ]
+      }
+    },
+    "uhd": {
+      "dimensions": [
+        3840,
+        2160
+      ],
+      "slot_width": 80,
+      "crest_boundary": [
+        3565,
+        1870,
+        3802,
+        2107
+      ],
+      "crest_inset": {
+        "right": 38,
+        "bottom": 17
+      },
+      "race_difference": {
+        "human": [
+          3582,
+          1872,
+          3802,
+          2107
+        ],
+        "dwarf": [
+          3582,
+          1872,
+          3802,
+          2107
+        ],
+        "gnome": [
+          3582,
+          1872,
+          3802,
+          2107
+        ],
+        "nightelf": [
+          3582,
+          1872,
+          3802,
+          2107
+        ],
+        "orc": [
+          3571,
+          1873,
+          3802,
+          2107
+        ],
+        "tauren": [
+          3600,
+          1873,
+          3802,
+          2107
+        ],
+        "troll": [
+          3570,
+          1873,
+          3802,
+          2107
+        ],
+        "undead": [
+          3609,
+          1873,
+          3802,
+          2107
+        ],
+        "skyborne": [
+          3582,
+          1872,
+          3802,
+          2107
+        ],
+        "skyborne-horde": [
+          3611,
+          1873,
+          3802,
+          2107
+        ]
+      }
+    }
+  }
+}

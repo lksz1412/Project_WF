@@ -4,17 +4,17 @@
 
 ## 실제 ZIP의 애드온 코드 시험
 
-기본판과 FUF 단독판의 애드온 파일을 한 접속 ZIP과 전수 대조했다. 공용 프로필 결함을 고친 한 접속 ZIP에서 뽑은 실제 파일로 Core 104건, 채팅 28건, 상태띠 20건, PitBull4 5건, 시전바 16건, FUF 적용 22건과 Details 배치·성능 회귀를 실행했다. 합계 8개 묶음이 통과했다. 두 유닛 프레임의 기능은 해당 시험에서 따로 활성화했다. [최종 ZIP의 시험 결과](../../_local_only/runtime-release-0.1.4-reviewed/functional-tests.json)
+기본판과 FUF 단독판의 애드온 파일을 한 접속 ZIP과 전수 대조했다. 공용 프로필 결함을 고친 한 접속 ZIP에서 뽑은 실제 파일로 Core 104건, 채팅 28건, 상태띠 20건, PitBull4 5건, 시전바 16건, FUF 적용 22건과 Details 배치·성능 회귀를 실행했다. 합계 8개 묶음이 통과했다. 두 유닛 프레임의 기능은 해당 시험에서 따로 활성화했다. [최종 ZIP의 시험 결과](../../Review/0.1.4/functional-tests.json)
 
-이전 0.1.1과 비교하는 성능 시험이 새 Core 로드 목록을 이전 ZIP에도 적용하는 문제를 발견했다. 비교용 로드 목록을 각 ZIP에서 따로 읽도록 시험 사본을 고쳤다. 최종 ZIP에서 프리셋 외형 갱신 39→1, 소환수 버튼 교체 때 다른 바 갱신 20→0, 전투·배율 실패 후 갱신 보류와 재개를 확인했다. [첫 실행 기록](../../_local_only/runtime-release-0.1.4/first-performance-fixture.log) · [최종 시험](../../_local_only/runtime-release-0.1.4-reviewed/performance.log)
+이전 0.1.1과 비교하는 성능 시험이 새 Core 로드 목록을 이전 ZIP에도 적용하는 문제를 발견했다. 비교용 로드 목록을 각 ZIP에서 따로 읽도록 시험 사본을 고쳤다. 최종 ZIP에서 프리셋 외형 갱신 39→1, 소환수 버튼 교체 때 다른 바 갱신 20→0, 전투·배율 실패 후 갱신 보류와 재개를 확인했다. [비교 시험 코드](../../Collection/tests/performance/run.py) · [최종 시험](../../Review/0.1.4/evidence/performance.log)
 
 ## 기능과 반복 비용
 
-Quartz 시전과 유닛 프레임의 담당을 유지하면서 새 Quartz 프로필의 별도 오라 막대를 선택 기능으로 두었다. SexyMap과 Experience Forever의 앞선 개선도 세 ZIP에서 다시 실행했다. 별도 FUF 실험에서 부모가 숨은 10초 동안 실제 프레임 표시 여부로 검사하면 전체 갱신 50→0이었고, 다시 보인 뒤 0.2초에 바뀐 체력과 자원을 반영했다. 이 값은 별도 Lua 대역에 한정한다. [FUF 보류 시험](../../_local_only/runtime-release-0.1.4/fuf-hidden-frame-trial.json)
+Quartz 시전과 유닛 프레임의 담당을 유지하면서 새 Quartz 프로필의 별도 오라 막대를 선택 기능으로 두었다. SexyMap과 Experience Forever의 앞선 개선도 세 ZIP에서 다시 실행했다. 별도 FUF 실험에서 부모가 숨은 10초 동안 실제 프레임 표시 여부로 검사하면 전체 갱신 50→0이었고, 다시 보인 뒤 0.2초에 바뀐 체력과 자원을 반영했다. 이 값은 별도 Lua 대역에 한정한다. [FUF 보류 시험](../../Review/0.1.4/evidence/fuf-hidden-frame-trial.json)
 
 ## 한 접속 준비
 
-같은 장면의 게임 기본 상태와 모음집에서 프레임 시간을 기록할 수 있게 [측정 도구](../../_local_only/runtime-release-0.1.4/DevilForever-FrameTimeProbe.zip)를 준비했다. [성능 비교표](../../_local_only/runtime-release-0.1.4/한%20접속%20성능%20비교.md)에 기준 장면, 반복 조건, 차이가 생겼을 때 Hekili·Details·유닛 프레임을 각각 확인할 순서를 적었다.
+같은 장면의 게임 기본 상태와 모음집에서 프레임 시간을 기록할 수 있게 [측정 도구](https://github.com/lksz1412/Project_WF/releases/download/v0.1.4/DevilForever-FrameTimeProbe.zip)를 준비했다. [성능 비교표](../../Review/0.1.4/evidence/frame-time.md)에 기준 장면, 반복 조건, 차이가 생겼을 때 Hekili·Details·유닛 프레임을 각각 확인할 순서를 적었다.
 
 실제 프레임 시간, 시전·이름표·전투 중 보호 프레임, 4K 퀘스트 글자 가독성은 같은 접속에서 확인할 항목이다.
 

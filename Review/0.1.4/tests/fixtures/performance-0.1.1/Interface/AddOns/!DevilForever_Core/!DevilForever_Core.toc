@@ -1,0 +1,26 @@
+## Interface: 16001
+## Title: DevilForever Core
+## Notes: Registry, defaults injection, theme tokens, per-frame edit values, layout presets and settings save/restore for the Devil Forever collection.
+## Version: 0.1.1
+## SavedVariables: DevilForever_CoreDB, DevilForever_ProfilesDB
+
+Core.lua
+Registry.lua
+Theme.lua
+Edit.lua
+Profiles.lua
+Defaults.lua
+# Defaults files (Defaults/<Folder>.lua) go below this line; each is named in registry_extra.json.
+Defaults\Dominos.lua
+Defaults\Grid2.lua
+Defaults\Hekili.lua
+Defaults\PitBull4.lua
+Presets.lua
+Presets\fhd.lua
+Presets\qhd.lua
+Presets\uhd.lua
+# Preset files (Presets/<name>.lua, each calling Presets:Register) go below this line.
+Defaults\SexyMap.lua
+Spec.lua
+Commands.lua
+API.lua

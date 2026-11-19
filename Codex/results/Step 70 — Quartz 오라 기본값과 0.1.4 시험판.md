@@ -11,6 +11,6 @@
 | 0.1.4 세 ZIP | 0.1.3과 전수 바이트 비교. 새 Quartz 기본값 파일과 연결·버전·ZIP 안내·해시·Core 보존 정책의 기존 일곱 파일 외 일치 |
 | 앞선 SexyMap과 Experience Forever 개선 | 새 ZIP에서 각각 실행. 표시 해제 뒤 위치 읽기 0회, 퀘스트 목록 읽기 20회와 이전 표시 합계 확인 |
 
-첫 12건은 세 해상도 프리셋을 생략한 Core 시험이었다. 독립 검수에서 다른 캐릭터나 모듈이 쓰던 공용 프로필까지 바뀌는 경우를 찾아 보호 조건을 고쳤다. 수정 ZIP 세 개에서는 세 프리셋을 포함한 전체 Core 로드 목록으로 실제 동봉 조건 27건과 옵션을 껐을 때의 기존 동작 9건을 확인했다. 별도로 실제 Core, AceDB, Quartz를 이어 실행한 15건에서 오라 막대를 켠 경우 갱신 요청 41회, 끈 경우 0회였다. 시전 모듈 네 개는 두 경우 모두 시험 대역에서 활성화됐다. [수정 기록](../../_local_only/runtime-release-0.1.4-reviewed/work_log.md) · [프로필 시험](../../_local_only/runtime-release-0.1.4-reviewed/quartz-default-tests.json) · [실제 Core와 Quartz 연결 시험](../../_local_only/runtime-release-0.1.4-reviewed/packaged-quartz-through-core.json) · [ZIP 목록과 해시](../../_local_only/runtime-release-0.1.4-reviewed/trial-receipt.json)
+첫 12건은 세 해상도 프리셋을 생략한 Core 시험이었다. 독립 검수에서 다른 캐릭터나 모듈이 쓰던 공용 프로필까지 바뀌는 경우를 찾아 보호 조건을 고쳤다. 수정 ZIP 세 개에서는 세 프리셋을 포함한 전체 Core 로드 목록으로 실제 동봉 조건 27건과 옵션을 껐을 때의 기존 동작 9건을 확인했다. 별도로 실제 Core, AceDB, Quartz를 이어 실행한 15건에서 오라 막대를 켠 경우 갱신 요청 41회, 끈 경우 0회였다. 시전 모듈 네 개는 두 경우 모두 시험 대역에서 활성화됐다. [수정 파일 비교](../../Review/0.1.4/evidence/candidate-diff.json) · [프로필 시험](../../Review/0.1.4/quartz-default-tests.json) · [실제 Core와 Quartz 연결 시험](../../Review/0.1.4/packaged-quartz-through-core.json) · [ZIP 목록과 해시](../../Review/0.1.4/trial-receipt.json)
 
 공통 코드의 기능·성능 회귀는 Step 72에 모아 기록한다.

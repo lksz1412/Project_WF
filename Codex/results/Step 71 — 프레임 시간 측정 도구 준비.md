@@ -18,8 +18,8 @@
 
 ## 검증
 
-ZIP에서 Lua를 읽어 사본과 바이트를 대조한 뒤 8개 시험을 통과했다. 처음 시작할 때 6초 간격 하나를 제외한 뒤 1·1·2·2초를 기록하면 표본 4개와 중간값 1,500밀리초가 저장과 채팅에 함께 표시됐다. 불완전한 이전 행도 원본을 보존하며 조회를 끝냈다. 유휴 상태, 모음집 없는 실행, 백분위, 취소·재시작, 잘못된 입력, 저장·샘플 한도와 기존 저장 기록을 함께 확인했다. [시험 결과](../../_local_only/runtime-release-0.1.4/perf-probe-tests.json) · [ZIP 해시](../../_local_only/runtime-release-0.1.4/perf-probe-zip.json)
+ZIP에서 Lua를 읽어 사본과 바이트를 대조한 뒤 8개 시험을 통과했다. 처음 시작할 때 6초 간격 하나를 제외한 뒤 1·1·2·2초를 기록하면 표본 4개와 중간값 1,500밀리초가 저장과 채팅에 함께 표시됐다. 불완전한 이전 행도 원본을 보존하며 조회를 끝냈다. 유휴 상태, 모음집 없는 실행, 백분위, 취소·재시작, 잘못된 입력, 저장·샘플 한도와 기존 저장 기록을 함께 확인했다. [시험 결과](../../Review/0.1.4/perf-probe-tests.json) · [ZIP 해시](../../Review/0.1.4/perf-probe-zip.json)
 
 ## 다음
 
-게임 기본과 시험판을 같은 도구로 기록한다. [측정 도구 ZIP](../../_local_only/runtime-release-0.1.4/DevilForever-FrameTimeProbe.zip) · [비교 절차](../../_local_only/runtime-release-0.1.4/한%20접속%20성능%20비교.md)
+게임 기본과 시험판을 같은 도구로 기록한다. [측정 도구 ZIP](https://github.com/lksz1412/Project_WF/releases/download/v0.1.4/DevilForever-FrameTimeProbe.zip) · [비교 절차](../../Review/0.1.4/evidence/frame-time.md)

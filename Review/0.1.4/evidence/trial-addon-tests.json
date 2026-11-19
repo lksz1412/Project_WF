@@ -1,0 +1,32 @@
+[
+  {
+    "zip": "DevilForever-0.1.4-fuf.zip",
+    "mapLookupsDisabled": 0,
+    "timersDisabled": 0,
+    "mapLookupsAfterRestart": 5,
+    "timersAfterRestart": 1,
+    "questReads": 20,
+    "redraws": 1,
+    "questXp": 11000
+  },
+  {
+    "zip": "DevilForever-0.1.4-one-session.zip",
+    "mapLookupsDisabled": 0,
+    "timersDisabled": 0,
+    "mapLookupsAfterRestart": 5,
+    "timersAfterRestart": 1,
+    "questReads": 20,
+    "redraws": 1,
+    "questXp": 11000
+  },
+  {
+    "zip": "DevilForever-0.1.4.zip",
+    "mapLookupsDisabled": 0,
+    "timersDisabled": 0,
+    "mapLookupsAfterRestart": 5,
+    "timersAfterRestart": 1,
+    "questReads": 20,
+    "redraws": 1,
+    "questXp": 11000
+  }
+]

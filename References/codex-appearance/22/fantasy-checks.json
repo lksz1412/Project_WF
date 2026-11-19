@@ -1,0 +1,24 @@
+{
+  "archive_sha256": "e4f989f9c2f1b134a38dc68b56f8e8a78f0121c43630b023563b577ed010ef74",
+  "white_background_contrast": {
+    "devil": {
+      "normal": 10.78,
+      "highlight": 12.11,
+      "disabled": 5.94
+    },
+    "horde": {
+      "normal": 11.24,
+      "highlight": 12.28,
+      "disabled": 6.09
+    },
+    "alliance": {
+      "normal": 11.97,
+      "highlight": 12.56,
+      "disabled": 6.87
+    }
+  },
+  "theme_size_combinations": 9,
+  "alpha_zone_pairs": 162,
+  "alpha_collisions": 0,
+  "client_measured": false
+}

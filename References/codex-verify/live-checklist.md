@@ -1,0 +1,36 @@
+# 접속 후 확인 순서
+
+2026-11-19 · Devil Forever · 게임에서 확인할 항목
+
+접속 순서와 상태별 기록은 [한 번의 접속에서 확인할 순서](one-session-review.md)를 따른다. 여기의 표는 기능별 상세 기준이다.
+
+## 시작과 복원
+
+게임과 런처가 꺼져 있을 때 현재 AddOns와 WTF를 다시 백업하고 상대 경로·파일 수·SHA256을 대조한다. Phase 1의 기존 백업은 최초 확인 시점의 사본이다. 시험 후보를 열기 직전 상태 복원에는 새 백업을 사용한다.
+
+PitBull4형과 Forever Unit Frames형은 같은 조건에서 한 번에 하나씩 확인한다. 각 시험 전 애드온 목록에서 구버전 허용을 끈 조건의 표시를 확인하고, 체크 상태와 오류 수를 기록한다. 두 변형 아래에서 튜닝한 값은 나중 비교를 위해 별도로 보존한다.
+
+시험 후보로 접속한 뒤 `/dfappearance` 출력에서 빌드 번호·빌드 날짜·Interface, 물리 화면·게임 좌표·실효 배율을 기록한다. 같은 출력에서 기본 Cooldown Manager 프레임과 화면에 잡힌 이름표 개수를 확인한다. 이 진단은 값을 읽어 현재 채팅에 표시한다.
+
+복원하려면 게임과 런처를 닫은 뒤 시험에 사용한 AddOns와 WTF를 다른 이름으로 옮긴다. 백업 두 폴더를 원래 이름으로 복사한다. 게임을 다시 열기 전에 파일 목록·SHA256 일치를 확인한다.
+
+## 확인 항목
+
+| 순서 | 확인 | 완료 기준 |
+|---|---|---|
+| [Phase 1](../codex-verify/phase1/result.md) | 빌드 날짜·Interface, 물리 해상도와 게임 좌표·실효 배율, 시작 애드온 4개 | 게임 API 값과 그래픽 설정을 비교 기록. TipTac·Kaliel's Tracker·Details·Mapster의 구버전 허용을 끈 상태 표시 및 BugSack 확인 |
+| [2 공통 외관](../../Collection/codex-briefs/phase2.md) | Lua 오류, 첫 설정 적용·재접속 유지, 프리셋별 위치 | FHD·QHD·UHD에서 셸과 실제 프레임을 대조. 장식 아래 클릭 가능 |
+| [3 Dominos](../../Collection/codex-briefs/phase3.md) · [4 자체 채팅](../../Codex/docs/forever-clean-chat-research.md) · [5 SexyMap](../../Collection/codex-briefs/phase5.md) | 단축키·페이징·직업별 바, 채팅 역할·한글 조합·기본 입력, 사각 미니맵의 핑·추적·휠 | 중심 8×3과 상단 줄, 공개·그룹·시스템 창, 미니맵 크기·앵커 일치. 마우스를 올려 탭 및 알림 접근 확인. 미니맵 시계는 숨김, 상태띠 시계 확인 |
+| [6 Forever Unit Frames](../../Collection/codex-briefs/phase6.md) · [6-rev PitBull4](../../Collection/codex-briefs/phase6-rev.md) · [7 Quartz](../../Collection/codex-briefs/phase7.md) | 같은 캐릭터·해상도로 두 변형의 프레임·자원·오라 비교. Quartz 시전·차단·방패 | 기본 동봉판 판단 근거와 시전바 중복 여부 기록 |
+| [8 Hekili와 기본 Cooldown Manager](../../Collection/codex-briefs/phase8.md) | 전투 중 추천·단축바 강조·상태 알림·소리, 창 유지 | 위치·크기·충돌 여부, 이름표/시전바가 시야를 가리는지 확인 |
+| [9 Grid2](../../Collection/codex-briefs/phase9.md) · [10 Details](../../Collection/codex-briefs/phase10.md) | 공격대 표시·클릭 시전, 데미지·Tiny Threat | Grid2는 공격대 상태에서 확인. Details 창 2는 플러그인 모드. 오른쪽 셋째 대화창과 겹치지 않음 |
+| [14 기본 이름표](../../Collection/codex-briefs/phase14.md) · [15 Aurora 판정](../../Collection/codex-briefs/phase15.md) | 적·아군, 위협 색·시전 표시, 기본 창 중복·퀘스트 글자 대비 | R110의 이름표 시전바 유지. Aurora 채택은 실제 비교를 근거로 결정 |
+| [16 상태띠](../../Collection/codex-briefs/phase16.md) · [19 Experience Forever](../../Collection/codex-briefs/phase19.md) | 상태 6칸과 경험치·평판·소환수 표시, 꺼진 칸의 남는 간격 | 글자가 잘리지 않고 정보가 중복되지 않음. 경험치 띠에서 단축바 클릭 가능 |
+| [20 설정 저장·복원](../../Collection/codex-briefs/phase20.md) · [22 테마](../../Collection/codex-briefs/phase22.md) | 프리셋 전환, 저장·복원·재접속, 가능한 경우 특성 전환 | 기존 사용자 값 보존 범위, 테마 전환과 전투 중 지연 적용, 오류 기록 |
+
+## 4K 가독성 확인
+
+- 4K 모니터에서 같은 퀘스트의 제목과 목표를 열어 실제 화면을 갈무리한다. 게임 안 실효 배율과 그래픽 메뉴 값도 함께 적는다.
+- 단축키는 글자가 잘리거나 아이콘과 겹치지 않는지, 채팅과 기본 퀘스트 창은 원래 보는 거리에서 한글 획이 분명한지 확인한다. 현재 설치된 Kaliel’s Tracker를 별도로 확인하는 경우 Phase 1 결과에 기록한 해당 버전의 글꼴 설정을 비교에도 쓴다.
+- 기존에 대화창을 나눠 사용한 캐릭터는 배치와 설정을 보존한다. 저장된 역할 정보가 없는 경우 자체 스킨은 기본 공개창에 적용된다. 기존 그룹·시스템 창의 역할과 외관은 새 캐릭터의 세 창 초기 구성과 따로 확인한다.
+- 모음집의 정상 동작 판정은 Lua 오류와 전투 중 차단 기록, 실제 클릭과 키 입력, 재접속 뒤 상태로 한다. 오프라인 목업은 위치와 크기 비교에 사용한다.

@@ -103,7 +103,11 @@ def session(zip_file, shipped=False, initial="uhd"):
     lua.execute('DevilForever_CoreDB={preset={active="' + initial + '"}}')
     for folder in ("!DevilForever_Core", "DevilForever_Appearance"):
         ns = lua.table()
-        toc = (ADDONS / folder / (folder + ".toc")).read_text(encoding="utf-8-sig")
+        toc_entry = folder + "/" + folder + ".toc"
+        if shipped:
+            toc = zip_file.read("Interface/AddOns/" + toc_entry).decode("utf-8-sig")
+        else:
+            toc = (ADDONS / toc_entry).read_text(encoding="utf-8-sig")
         for raw in toc.splitlines():
             rel = raw.strip().replace("\\", "/")
             if not rel or rel.startswith("#"):

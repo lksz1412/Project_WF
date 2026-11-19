@@ -1,0 +1,101 @@
+{
+  "alliance": {
+    "source_url": "https://warcraft.wiki.gg/images/d/da/Alliance_Crest.png",
+    "original_size": [
+      366,
+      400
+    ],
+    "source_sha256": "0c6313408b47f87e2be8107eab8f776e04ae02dd7947c6f34f0eefd6bd9abd6a",
+    "texture_sha256": "b31627b02d7f2ea06716a999da8de21c538755b7a81538750c4441f0b3adad13"
+  },
+  "horde": {
+    "source_url": "https://warcraft.wiki.gg/images/0/08/Horde_Crest.png",
+    "original_size": [
+      280,
+      350
+    ],
+    "source_sha256": "2f9a90018e031a802e70771ce1697ed76f299c306c892fb3f35cdb67e7dc2071",
+    "texture_sha256": "a10aeb7697b2168727862677d840a3963e52a258cb84194bf8c95a4b5d994156"
+  },
+  "human": {
+    "source_url": "https://warcraft.wiki.gg/images/0/0e/Human_Crest.png",
+    "original_size": [
+      679,
+      815
+    ],
+    "source_sha256": "1c9a2ed05b493a42e51cc20a70c065f12b1e0c33ad2e130e30b05cc9da74aa89",
+    "texture_sha256": "e5116dd1ebaac9f63a6f14a6528f760dbad1ed674681693728cfc0fef9f1fc2e"
+  },
+  "dwarf": {
+    "source_url": "https://warcraft.wiki.gg/images/0/0a/Dwarf_Crest.png",
+    "original_size": [
+      280,
+      335
+    ],
+    "source_sha256": "66cb00aa40df846fd39430037c304e50caffc63b8b8da3aec347534963e38d44",
+    "texture_sha256": "f3dbddd040718bf67010b4f85fd96185e50a5ccc3b13e87bb4322d80cb2f0475"
+  },
+  "gnome": {
+    "source_url": "https://warcraft.wiki.gg/images/f/fa/Gnome_Crest.png",
+    "original_size": [
+      280,
+      351
+    ],
+    "source_sha256": "5501cab5d5fef2440cb7b8b5d3724f9dce6c87b0bfcbc8a7f18ecf3d17e395b6",
+    "texture_sha256": "cd842fabe6b87c8e4f133871f06b1b0b16b5f949eb09e1d739057ef4ec9c76cd"
+  },
+  "nightelf": {
+    "source_url": "https://warcraft.wiki.gg/images/c/c6/Night_Elf_Crest.png",
+    "original_size": [
+      280,
+      302
+    ],
+    "source_sha256": "d28e8cf3670c26667341e06c19e43f94b677fef2982669a1b3bf4390c700ea98",
+    "texture_sha256": "d0760a5d9ccf252a245a959d5e7a07f005a126f81292a3d7d599a609d08f0e20"
+  },
+  "orc": {
+    "source_url": "https://warcraft.wiki.gg/images/7/74/Orc_Crest.png",
+    "original_size": [
+      280,
+      263
+    ],
+    "source_sha256": "2fd2fb5cf4f81cf452a74941812983abff49d4a46bcf91a6ab379b1fe55601d6",
+    "texture_sha256": "25818609d62dc4403318e5391d7e8cfcb122ee9e928e68d8a22cdecd01d549fe"
+  },
+  "tauren": {
+    "source_url": "https://warcraft.wiki.gg/images/7/78/Tauren_Crest.png",
+    "original_size": [
+      280,
+      343
+    ],
+    "source_sha256": "59c8bb9dcd343bcd9b12e0c9297f220abc0156bb0dbb7910fc746c7f9e42293e",
+    "texture_sha256": "b0fd0f0e1a5bc496d0a4011d38a72a589c4ba87b26b3b8005ad3209cd037f2f6"
+  },
+  "troll": {
+    "source_url": "https://warcraft.wiki.gg/images/5/54/Troll_Crest.png",
+    "original_size": [
+      280,
+      280
+    ],
+    "source_sha256": "3ed037c8696f3aa9aa5726d645cf5e860d7ad9067e5107bf36d17080ddd4ae6b",
+    "texture_sha256": "26dadcbe8616a488ada915f11b677faa729c5c5e5f1feca7a6c8dfd8136204c0"
+  },
+  "undead": {
+    "source_url": "https://warcraft.wiki.gg/images/7/72/Forsaken_Crest.png",
+    "original_size": [
+      280,
+      375
+    ],
+    "source_sha256": "9d17ad0f096b292d450f221350d37d197f712f4d179b9c078f505678f3711220",
+    "texture_sha256": "a7e2c202a79d89a559cbdc7e20f73f21bb49d1fffcae25666d55ad4897fe6f74"
+  },
+  "skyborne": {
+    "source_url": "https://gear.blizzard.com/cdn/shop/files/wow-horizontal-panel-2_1.jpg?v=1789235696&width=1946",
+    "original_size": [
+      1500,
+      1500
+    ],
+    "source_sha256": "35213cb4a84fc60d9e140039ed0cc2e444db4c974da041a23feded0b0bd36520",
+    "texture_sha256": "1b5648567bf22c8826f6b86fc84261fbde1560ee094ea4cf1ec24bf07e3003e4"
+  }
+}

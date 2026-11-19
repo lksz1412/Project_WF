@@ -574,7 +574,7 @@ def verify_approved(evidence):
     sources = {}
 
     def source_kit(folder):
-        path = ROOT / f"_local_only/{folder}/render.py"
+        path = Path(__file__).with_name("approved-chat-renderers") / folder / "render.py"
         tree = ast.parse(path.read_text(encoding="utf-8-sig"))
         namespace = dict(globals())
         namespace.update(render={"composition": original}, original_composition=original, composition_maps={},
