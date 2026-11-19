@@ -4,7 +4,7 @@
 
 ## 접속 직전
 
-1. [최신 설치 묶음](../../Claude/results/Step%2040%20%E2%80%94%20Codex%20collection%20integration.md)을 [테마 적용 목업](../codex-appearance/24/racial-appearance/index.md)과 대조한다. 기본 시험은 PitBull4형을 쓴다. [기능 트리](../../Collection/data/feature-map.md)에서 각 설정의 담당과 위치를 확인하고, [상태별 목업](../codex-appearance/24/ux/index.md)에서 시전·파티 배치를 본다. 실행 전에 `AddOns`와 `WTF`를 각각 복사하고 목록·SHA256을 확인한다. 확인 뒤 원래 파일은 별도 이름으로 보존한다.
+1. [최신 설치 묶음](../../Codex/results/Step%2048%20%E2%80%94%20검토한%20ZIP과%20기능%20기준%20확정.md)을 [테마 적용 목업](../codex-appearance/24/racial-appearance/index.md)과 대조한다. 기본 시험은 PitBull4형 `DevilForever-0.1.0.zip`, 한 접속 비교 시험은 `DevilForever-0.1.0-one-session.zip`을 쓴다. 실제 ZIP 경로와 SHA-256은 [검토 기록](../../Codex/results/audit-installer/reviewed-packages.json)에서 해당 변형을 확인한다. [기능 트리](../../Collection/data/feature-map.md)에서 각 설정의 담당과 위치를 확인하고, [상태별 목업](../codex-appearance/24/ux/index.md)에서 시전·파티 배치를 본다. 실행 전에 `AddOns`와 `WTF`를 각각 복사하고 목록·SHA256을 확인한다. 확인 뒤 원래 파일은 별도 이름으로 보존한다.
 2. 캐릭터 선택 화면에서 구버전 허용 상태와 Phase 1의 네 애드온 표시를 확인한다. 두 유닛 프레임 비교용 묶음을 쓰면 **PitBull4만 켜서** 입장한다. `ForeverUnitFrames`, `DevilForever_Castbars`, `DevilForever_FUFDefaults`는 일단 끈다. 두 유닛 프레임이 함께 켜진 상태로 입장하지 않는다.
 3. 기본 창 상태·퀘스트·전투·파티를 확보할 수 있는 같은 캐릭터로 한 번 입장한다. 초기 채팅창 생성 뒤 클라이언트가 `/reload`를 요구하거나 유닛 프레임을 바꿀 때는 접속 상태에서 화면만 다시 불러온다. 초기 재접속이나 다른 캐릭터 로그인은 시험 절차에 넣지 않는다.
 

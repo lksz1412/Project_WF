@@ -1,0 +1,19 @@
+{
+  "phase": "26.2",
+  "steps": [46, 47, 48],
+  "status": "PASS",
+  "finalMajor": 0,
+  "finalModerate": 0,
+  "packageReview": "audit-installer/reviewed-packages.json",
+  "installerCatalog": "../../Collection/Installer/ReleaseCatalog.json",
+  "standaloneVariants": ["pitbull4", "fuf"],
+  "comparisonVariant": "one-session",
+  "packagedLuaFilesChecked": 4110,
+  "chatCasesPassed": 28,
+  "fufCasesPassed": 21,
+  "fufGeometryValuesCompared": 696,
+  "laterLiveCheck": 41,
+  "gameObserved": false,
+  "externalPublished": false,
+  "next": 49
+}

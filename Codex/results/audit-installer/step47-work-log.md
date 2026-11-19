@@ -128,3 +128,13 @@ reflow 결과는 current < applied < failed-restored < restore-failed 순서로 
 보정 정독: ChatSetup 1–324, ChatLayout 1–181, chatsetup/run.py 1–688, 이 work-log 보정 전 전문을 다시 읽고 수정 본문·호출체인을 대조했다. native 고정 commit bebcb6bf309cf41b41bd74f8ca651e6a105b2676의 FloatingChatFrame.lua 653–700(opener),916–953(name),1142–1172(fade),1421–1460(button side),1537–1550(undock),1606–1610(tab),1633–1663(close),1913–1915(show)를 web 원문으로 정독했다. 직접 활성화는 native의 파괴적 초기화·docking을 생략하고 비도킹 두 창의 name/show와 기존 geometry를 사용한다. actual client event·protected state·입력 동작은 미검증이며 실제 표시를 대역 PASS로 주장하지 않는다. before.json·after-final.json에 각 사본/최종 해시와 행 수를 보존했다.
 
 추가 파일·FUF·원본 vendor·기존 ZIP·설치 안내·게임·WTF·매크로·Git 변경은 하지 않았다. 같은 B 재확인에 반환한다.
+
+## Step48 보정 · 최신 설치 묶음 링크
+
+수정 전 영향 지도: one-session-review.md의 최신 설치 묶음 링크와 비교판 파일명은 함께 고침(현재 한 접속 절차의 배포 입력). Step48 결과와 reviewed-packages.json은 입력 생성·같은 ZIP 이름·해시 소비 기준으로 확인만. 마스터의 Step48 연결·원래 접속 절차·historical Step40 원문·ZIP 실물은 확인만/영향 없음이며 수정하지 않는다. 같은 표현 검색과 상대 경로 해석으로 연결을 확인한다. 사전 사본/해시는 D:/Projects/Project_WF/_local_only/phase26-work-r151-20261119/step46-a/step48-linkfix-6wbbhmee/0.before·1.before·before.json에 보존했다.
+
+최신 설치 묶음은 Step48 결과로, 실제 ZIP 경로·해시는 reviewed-packages.json으로 연결했다. 같은 문단에 기본 DevilForever-0.1.0.zip 및 비교 DevilForever-0.1.0-one-session.zip을 명시했다. 문건은 7행만 달라지고 나머지 접속·백업·비교 절차는 유지한다.
+
+검증 명령: python -X utf8 -B -I _local_only/phase26-work-r151-20261119/step46-a/step48-linkfix-6wbbhmee/verify.py. 판정 rc0, changed-line=7 only; latest Step48/JSON links=2; ZIP names/artifacts=2; remaining procedure and prior work-log preserved. 원출력은 같은 scratch의 verify.log다. ZIP 재빌드·내용 수정·게임·Git·네트워크 호출은 수행하지 않았다.
+
+이번 정독 범위: References/codex-verify/one-session-review.md 1–52, Codex/results/audit-installer/step47-work-log.md 1–134, Codex/plans/2026-11-19-devil-forever-audit-and-installer-plan.md 1–165, Codex/results/Step 48 — 검토한 ZIP과 기능 기준 확정.md 1–31. reviewed-packages.json은 전체 파싱해 packages 세 변형·zip/localArtifact/sha256·installerAccepted와 gameObserved를 확인했다. 수정 문단의 실제 파일명·상대 링크를 수용 기준과 대조했고 같은 B 재확인에 반환한다.
