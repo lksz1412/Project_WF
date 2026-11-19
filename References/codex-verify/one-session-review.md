@@ -1,10 +1,10 @@
 # 접속 한 번에 확인할 순서
 
-목표는 같은 캐릭터의 한 접속에서 화면을 차례로 확인하고, 고칠 자리를 한 기록에 모으는 것이다. 화면·프레임·오류 기록, 초기 설정 확인과 비교는 Codex가 맡는다. 사용자에게 필요한 시각 판단은 **4K에서 평소 거리로 퀘스트 글자를 읽을 수 있는지**다.
+목표는 같은 캐릭터의 한 접속에서 화면을 차례로 확인하고, 고칠 자리를 한 기록에 모으는 것이다. 화면·프레임·오류 기록, 초기 설정 확인과 비교는 Codex가 맡는다. **4K 퀘스트 글자 크기는 실제 화면을 평소 거리에서 읽어 본 뒤 판단한다.** 시험은 게임 기본 창의 현재 크기로 시작한다.
 
 ## 접속 직전
 
-1. [최신 설치 묶음](../../Codex/results/Step%2048%20%E2%80%94%20검토한%20ZIP과%20기능%20기준%20확정.md)을 [테마 적용 목업](../codex-appearance/24/racial-appearance/index.md)과 대조한다. 기본 시험은 PitBull4형 `DevilForever-0.1.0.zip`, 한 접속 비교 시험은 `DevilForever-0.1.0-one-session.zip`을 쓴다. 실제 ZIP 경로와 SHA-256은 [검토 기록](../../Codex/results/audit-installer/reviewed-packages.json)에서 해당 변형을 확인한다. [기능 트리](../../Collection/data/feature-map.md)에서 각 설정의 담당과 위치를 확인하고, [상태별 목업](../codex-appearance/24/ux/index.md)에서 시전·파티 배치를 본다. 실행 전에 `AddOns`와 `WTF`를 각각 복사하고 목록·SHA256을 확인한다. 확인 뒤 원래 파일은 별도 이름으로 보존한다.
+1. [최신 설치 묶음](../../Codex/results/Step%2059%20%E2%80%94%20채팅%20그림과%20설치%20묶음%20갱신.md)을 [승인한 채팅 목업](../../outputs/devil-forever-mobile-orc-rail.html)과 대조한다. 기본 시험은 PitBull4형 `DevilForever-0.1.1.zip`, 한 접속 비교 시험은 `DevilForever-0.1.1-one-session.zip`을 쓴다. 실제 ZIP 경로와 SHA-256은 [ZIP 확인 기록](../../_local_only/chat-package-0.1.1/archives/release-receipt.json)에서 확인한다. [기능 트리](../../Collection/data/feature-map.md)에서 각 설정의 담당과 위치를 확인하고, [상태별 목업](../codex-appearance/24/ux/index.md)에서 시전·파티 배치를 본다. 실행 전에 `AddOns`와 `WTF`를 각각 복사하고 목록·SHA-256을 확인한다. 확인 뒤 원래 파일은 별도 이름으로 보존한다.
 2. 캐릭터 선택 화면에서 구버전 허용 상태와 Phase 1의 네 애드온 표시를 확인한다. 두 유닛 프레임 비교용 묶음을 쓰면 **PitBull4만 켜서** 입장한다. `ForeverUnitFrames`, `DevilForever_Castbars`, `DevilForever_FUFDefaults`는 일단 끈다. 두 유닛 프레임이 함께 켜진 상태로 입장하지 않는다.
 3. 기본 창 상태·퀘스트·전투·파티를 확보할 수 있는 같은 캐릭터로 한 번 입장한다. 초기 채팅창 생성 뒤 클라이언트가 `/reload`를 요구하거나 유닛 프레임을 바꿀 때는 접속 상태에서 화면만 다시 불러온다. 초기 재접속이나 다른 캐릭터 로그인은 시험 절차에 넣지 않는다.
 
@@ -13,11 +13,11 @@
 | 순서 | 상태와 기록 | 그 자리에서 확인할 것 |
 |---|---|---|
 | 1 | `/dfcheck start`, `/dfappearance` | 빌드와 Interface, 물리 해상도·배율, 활성 프리셋, 메뉴·가방·대기열 클릭 범위, 상태띠, 미니맵 시계와 초기 오류 수. 그래픽 설정의 3862×2160 표시와 UI가 실제로 쓰는 물리 크기를 대조한다. 행동 단축바의 빈 슬롯 외곽과 스킬 배정 슬롯 안쪽을 [원배율 목업](../codex-appearance/24/ux/resolution-native-comparison.png)과 비교한다. |
-| 2 | `/dfcheck quest` | 기본 목표 추적기의 한국어 제목·목표, 4K 원거리 가독성, 목표창과 우두머리·미터기·단축바 위치. 실화면 크기를 [가독성 목업](../codex-appearance/24/ux/uhd-devil-objectives.png)과 비교 |
+| 2 | `/dfcheck quest` | 게임 기본 목표 창에서 실제 한국어 제목과 목표를 4K의 평소 거리에서 읽어 본다. 긴 줄과 여러 퀘스트가 함께 보일 때도 확인한다. 목표창과 우두머리·미터기·단축바의 위치는 [가독성 목업](../codex-appearance/24/ux/uhd-devil-objectives.png)과 대조한다. |
 | 3 | `/dfcheck chat` | 공개·그룹·시스템 역할, 한글 조합·입력·스크롤·탭, 기존 창의 배치와 메시지 범위 유지. 도움말이 단축바 및 입력을 가리는지 확인 |
 | 4 | `/dfdetails status`, `/dfcheck petabsent`, `/dfcheck pet`, `/dfcheck combat` | 전투 밖에서 기존 Details 창 두 개가 준비되면 `/dfdetails apply`로 위치를 적용한다. 현재 위치를 다시 쓸 때는 화면을 다시 불러오기 전에 `/dfdetails restore`를 실행한다. 소환 전후를 각각 기록해 버튼과 전용 테두리가 함께 움직이는지 확인한다. [소환수 기술창 표시 비교](../codex-appearance/24/racial-appearance/pet-visibility.png)와 대조한다. 전투에서는 이름표·시전·추천·Cooldown Manager·Details와 보호 프레임 차단을 확인한다. |
 | 5 | `/dfcheck party`, 가능한 경우 `/dfcheck raid` | 파티 대상·소환수 줄과 공격대 Grid2·우두머리 위치. 조건이 없으면 그 자리에서 보류로 기록. 파티와 공격대는 별개로 분류 |
-| 6 | `/dfcheck theme` | 전투에서 나온 뒤 `/dfp theme <이름>`으로 [적용 목업 목록](../codex-appearance/24/racial-appearance/index.md)의 13종을 한 번씩 전환하고 시작 테마로 돌아온다. 단축바 슬롯과 채팅틀의 연결, 종족별 모서리, 오른쪽 문양의 여백, 데빌의 흑회색 배경과 스카이본 양 진영의 재질을 비교한다. 밝은 곳에서 채팅 첫 줄과 마지막 줄을 함께 확인한다. |
+| 6 | `/dfcheck theme` | 전투에서 나온 뒤 `/dfp theme <이름>`으로 [테마 목록](../codex-appearance/24/racial-appearance/index.md)의 13종을 한 번씩 전환하고 시작 테마로 돌아온다. [승인한 채팅 목업](../../outputs/devil-forever-mobile-orc-rail.html)을 기준으로 단축바와 채팅틀의 연결, 테두리와 모서리, 셋째 창 오른쪽 아래 문양, 데빌의 흑회색 배경을 비교한다. 밝은 곳에서 채팅 첫 줄과 마지막 줄을 함께 확인한다. |
 | 7 | 필요 시 `/dfcheck comparison` | 같은 접속에서 PitBull4를 끄고 Forever Unit Frames와 전용 두 애드온을 켠 뒤 UI만 재로딩한다. 두 변형이 동시에 불러와졌는지 먼저 확인한다. 전투 밖에서 20초가 지나면 `/fuf`의 프로필 메뉴에서 현재 프로필을 해당 해상도의 `DF Compare fhd`, `DF Compare qhd`, `DF Compare uhd`로 복제해 선택한다. 이름에 맞는 `/dffuf layout <해상도>`를 실행한다. `sent-unverified`는 설정 전송을 뜻하므로 좌표·자원·시전바를 실제 화면에서 대조한다. 비교 뒤 원래 프로필을 선택한다 |
 | 8 | `/dfcheck report`, 필요한 상태별 `/dfcheck show <상태>` | 모인 관측·누락 상태·실화면의 좌표를 확인한다. 오류와 겹침을 기능별로 묶고, 같은 원인의 수정은 한 번에 정리한다 |
 
@@ -34,7 +34,7 @@
 | 버프 아이콘 | `1080, 642, 220, 48` | `1440, 940, 240, 56` | `2140, 1510, 320, 64` |
 | 버프 막대 | `1080, 702, 220, 84` | `1440, 1004, 240, 84` | `2140, 1584, 320, 104` |
 | 퀘스트 목표 | `1220, 176, 364, 248` | `1720, 210, 424, 290` | `2848, 266, 528, 350` |
-| 퀘스트 제목·목표 글자 | 24·20px | 28·24px | 36·30px |
+| 목업 퀘스트 제목·목표 글자 | 24·20px | 28·24px | 36·30px |
 
 [쿨다운 좌표 계획](../codex-appearance/8/report.md) · [목업 좌표와 글자 크기](../codex-appearance/24/feature-positions.json)
 

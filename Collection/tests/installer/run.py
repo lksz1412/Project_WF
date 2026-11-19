@@ -38,6 +38,7 @@ def main():
     parser.add_argument('--exe', required=True, type=Path)
     parser.add_argument('--packages', required=True, type=Path)
     parser.add_argument('--scratch', required=True, type=Path)
+    parser.add_argument('--version', default='0.1.0')
     args = parser.parse_args()
     args.exe = args.exe.resolve()
     args.packages = args.packages.resolve()
@@ -55,8 +56,9 @@ def main():
         assert process.returncode == expect == output['exitCode'], record
         return output
 
-    pitbull = str(args.packages / 'DevilForever-0.1.0.zip')
-    fuf = str(args.packages / 'DevilForever-0.1.0-fuf.zip')
+    package_name = f'DevilForever-{args.version}'
+    pitbull = str(args.packages / f'{package_name}.zip')
+    fuf = str(args.packages / f'{package_name}-fuf.zip')
     passed = []
 
     game = fixture(root, '한글 새 설치')
@@ -136,7 +138,7 @@ def main():
 
     unknown = fixture(root, '패키지 거부')
     before = digest_tree(unknown)
-    comparison = str(args.packages / 'DevilForever-0.1.0-one-session.zip')
+    comparison = str(args.packages / f'{package_name}-one-session.zip')
     assert call(unknown, 'plan', '--package', comparison, expect=2)['status'] == 'blocked'
     changed_zip = root / 'Changed.zip'
     shutil.copyfile(pitbull, changed_zip)

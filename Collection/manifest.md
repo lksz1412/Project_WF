@@ -240,7 +240,7 @@ kind: new = written for the collection; fork = a start addon's original with our
 
 | Folder | Feature Phases | Variant | Bundle | Kind | Base | TOC | Interface | Version | Deps (required) | OptionalDeps | SavedVariables | SV per character | License files |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| !DevilForever_Core | 2, 20, 22 | — | required | new | — | !DevilForever_Core.toc | 16001 | 0.1.0 | — | — | DevilForever_CoreDB, DevilForever_ProfilesDB | — | — |
+| !DevilForever_Core | 2, 20, 22 | — | required | new | — | !DevilForever_Core.toc | 16001 | 0.1.1 | — | — | DevilForever_CoreDB, DevilForever_ProfilesDB | — | — |
 | DevilForever_Castbars | 7 | — | individual | new | — | DevilForever_Castbars.toc | 16001 | 0.1.0 | Quartz, ForeverUnitFrames | !DevilForever_Core | — | — | — |
 | DevilForever_ChatSetup | 4 | — | individual | new | — | DevilForever_ChatSetup.toc | 16001 | 0.1.0 | !DevilForever_Core | — | — | DevilForever_ChatSetupDB | — |
 | DevilForever_FUFDefaults | 6 | — | individual | new | — | DevilForever_FUFDefaults.toc | 16001 | 0.1.0 | !DevilForever_Core, ForeverUnitFrames | — | DevilForever_FUFDefaultsDB | — | — |

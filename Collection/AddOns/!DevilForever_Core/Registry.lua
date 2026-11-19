@@ -32,7 +32,7 @@ Core.Registry = {
         "!DevilForever_Core.toc",
       },
       use = "new",
-      version = "0.1.0",
+      version = "0.1.1",
     },
     Aurora = {
       bundle = "individual",

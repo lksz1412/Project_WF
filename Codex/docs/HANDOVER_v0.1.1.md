@@ -8,7 +8,7 @@
 
 Step 44–48에서 Claude와 이전 Codex 결과를 같이 검토했다. 채팅 구독과 입력 기록 보존, 자동 배치, FUF 비교 배치와 Hekili 안내를 보정했다. 기본 PitBull4, 대체 FUF, 한 접속 비교 ZIP을 새 해시로 고정했다. 화면 프리셋은 FHD·QHD·UHD, 테마는 13종이다. [기능 트리](../../Collection/data/feature-map.md) · [Phase 26.2 결과](../results/PHASE_26.2_functional-audit_RESULT.md)
 
-Step 49–55에서 Windows x64 설치기, 단일 실행 파일, 설치·검증·복원·제거, 두 단독판 전환과 중단 뒤 처리까지 검증했다. 현재 로컬 전달 파일의 정본은 [시험판 전달 기록](../results/Step%2058%20%E2%80%94%20로컬%20시험판%20전달.md)과 [파일별 전체 SHA-256](../results/audit-installer/local-delivery.json)이다.
+Step 49–55에서 Windows x64 설치기, 단일 실행 파일, 설치·검증·복원·제거, 두 단독판 전환과 중단 뒤 처리까지 검증했다. Step 58은 0.1.0 로컬 전달 기록이다. Step 59에서 승인한 채팅 외관을 실제 ZIP 세 개와 Windows 설치기에 넣어 0.1.1을 만들고, 0.1.0에서 갱신하고 복원했다. [현재 0.1.1 시험판과 확인 결과](../results/Step%2059%20%E2%80%94%20채팅%20그림과%20설치%20묶음%20갱신.md) · [0.1.0 전달 기록](../results/Step%2058%20%E2%80%94%20로컬%20시험판%20전달.md)
 
 ## 3. 미완료 항목
 
