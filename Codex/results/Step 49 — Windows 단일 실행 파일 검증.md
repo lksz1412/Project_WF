@@ -1,0 +1,27 @@
+# Step 49 — Windows 단일 실행 파일 검증
+
+Phase 27.1 · 2026-11-19 12:17:31 +0900 착수 · 예상 30–60분 · Phase 26 중 도구 시험의 실제 출력 재사용
+
+## 수행
+
+Windows 11 빌드 26200 x64의 일반 사용자 토큰과 .NET 개발 도구 10.0.201을 확인했다. 빈 런타임 검색 경로와 격리된 추출 위치에서 `net10.0-windows`, `win-x64` 자체 포함 Windows Forms 실행 파일을 호출했다. 압축을 풀어 준비한 파일 없이 실행 파일 한 개를 넣어 시작했다. [실행 기록과 전체 SHA-256](../../_local_only/phase26-work-r151-20261119/dotnet-preflight/official-x64-probe/single-exe-test.json) · [Microsoft 단일 파일 배포 설명](https://learn.microsoft.com/en-us/dotnet/core/deploying/single-file/overview)
+
+| 입력 또는 검사 | 실제값 |
+|---|---|
+| 단일 실행 파일 | `InstallerToolchainProbe.exe`, 51,675,286바이트 |
+| 실행 | 종료 0. 첫 실행 221ms, 반복 실행 125ms |
+| 내장 런타임 | .NET 10.0.5 x64. Core와 Windows Forms 라이브러리가 실행 파일 내부에서 열림 |
+| 초기 개발 준비 | 제한된 경로에서는 런타임 팩 캐시가 증명되지 않아 복원 실패. 개발 빌드에 필요한 공식 NuGet 런타임 팩을 받아 같은 SDK로 게시 성공 |
+| 파일 이동과 복원 시험 | 동일 볼륨 격리 폴더에서 배타 잠금, 원본을 옮긴 직후의 중단 상태, 저널 파일 교체, 백업에서 되돌린 원본 해시 확인 |
+
+## 근거·판단
+
+현재 도구와 Windows Forms 기본 프레임워크를 사용한다. 설치기 최종 빌드에서 `SelfContained`, `PublishSingleFile`, `IncludeNativeLibrariesForSelfExtract`를 고정하고 동일 실행의 콘솔·창 경로를 확인한다. 시험 프로그램은 내장 라이브러리 확인용이다. 일반 PC와 실제 설치 화면·게임 폴더 적용은 이후 단계로 기록했다. [게시 원출력](../../_local_only/phase26-work-r151-20261119/dotnet-preflight/official-x64-probe/publish.log) · [파일 이동 시험](../../_local_only/phase26-work-r151-20261119/dotnet-preflight/same-volume-check/result.json)
+
+마스터와 Phase 27.1 세부계획, Phase 26.2 결과, 시험 프로젝트·실행 코드와 실행 기록, 파일 이동 결과를 전문으로 대조했다. Python은 기존 빌더와 자동 시험에서 사용한다. 설치기 사용자 실행 파일의 도구판과 설치기 ZIP 카탈로그를 별개의 검증 입력으로 둔다.
+
+## 다음
+
+독립 검수에서 게시본과 격리 실행 사본의 전체 SHA-256과 크기, 실행 기록, 청정 PC 확인 범위를 대조했다. 중대·중간·경미 0건이다. 사용량 미관측.
+
+Step 50에서 실행 모드, 쓰기 범위, 승인 해시, 작업 기록·복원 계약을 확정한다.
