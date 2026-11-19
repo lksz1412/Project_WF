@@ -1,0 +1,43 @@
+{
+  "schema": "devil-forever-local-delivery/1",
+  "status": "READY_LOCAL_TRIAL",
+  "files": [
+    {
+      "path": "_local_only/phase26-work-r151-20261119/DevilForever-Windows-x64-0.1.0-local-test/사용안내.md",
+      "name": "사용안내.md",
+      "bytes": 2267,
+      "sha256": "8ceea457dac5c6dc74c4b968391b575ce8fa981ad127c8711253f939664fd36c"
+    },
+    {
+      "path": "_local_only/phase26-work-r151-20261119/DevilForever-Windows-x64-0.1.0-local-test/DevilForever-0.1.0.zip",
+      "name": "DevilForever-0.1.0.zip",
+      "bytes": 82455785,
+      "sha256": "372c7e498ff49a1064ca353b52382abc4d9f761e98be25669fcc790e932531d1"
+    },
+    {
+      "path": "_local_only/phase26-work-r151-20261119/DevilForever-Windows-x64-0.1.0-local-test/DevilForeverSetup.exe",
+      "name": "DevilForeverSetup.exe",
+      "bytes": 51718841,
+      "sha256": "2d04e03f155c64b1491d00893bc2c80fd3ce524dd649bd474c83fc7ec98a3eac"
+    },
+    {
+      "path": "_local_only/phase26-work-r151-20261119/step47-candidate-02/archives/DevilForever-0.1.0-fuf.zip",
+      "name": "DevilForever-0.1.0-fuf.zip",
+      "bytes": 83101754,
+      "sha256": "2160bacc4633b5aee4ce7516ed33c98ad0e5a6560d3b07d3af15348d65d4217f",
+      "role": "fuf"
+    },
+    {
+      "path": "_local_only/phase26-work-r151-20261119/step47-candidate-02/archives/DevilForever-0.1.0-one-session.zip",
+      "name": "DevilForever-0.1.0-one-session.zip",
+      "bytes": 83998378,
+      "sha256": "9aa72ad49146e66cc3893a448f1dfef01bc4763a098b8d1db81b7025f4a10f37",
+      "role": "one-session"
+    }
+  ],
+  "recoveryCases": 7,
+  "physicalWindowsGuiOpened": true,
+  "cleanWindowsObserved": false,
+  "liveGameObserved": false,
+  "gameChecklist": "References/codex-verify/one-session-review.md"
+}
