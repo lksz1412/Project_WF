@@ -15,3 +15,15 @@
 | m2 | Defaults/SexyMap.lua:70 "never" — confirmed | accepted | = R110 ③ |
 | perf ×4 | TinyThreat 90-92/912-915 — confirmed | low priority | upstream behaviour; small cost; patching as-is addons only if user wants |
 | candidates ×4 | receipt + TOC 16001 present (FarmerNodes/WhatsTraining multi-interface) | optional only | not for default set (R101); game untested |
+
+## Addendum — Codex commit 477eb06 (R116) — master measured on a clean worktree
+| Item | Measured | Status |
+|---|---|---|
+| Codex handover `Review/0.1.4/HANDOVER.md` (60 lines) | read in full | received |
+| package.py verify-source | PASS 2,558 files + 4 candidate ZIPs | Codex claim confirmed |
+| Review/0.1.4/tests/run.py | 8/8 suites, 195 cases; 5 build-generator cases excluded by name (genregistry ×4, pitbull4 patch) | confirmed; exclusions = C1 not fixed, only bypassed |
+| package.py build + verify_archives | 3 variants + probe built; one-session 38 folders, unresolved 0, Lua 1,477 files 0 fail | rebuild works via Codex's new tool |
+| our genregistry.py --check / build.py --install | still ERROR (Details not in manifest / not in install.json) | C1 remains for the project's own pipeline; Registry.lua is hand-maintained in practice |
+| Prat decision record `evidence/chat-decision.md` | cites R112 → requirement-trace (summary only) | user's original wording still not in repo; our ledger phase25 on branch still 7 lines (C2 open) |
+| install.json | 0.1.4, Prat removed, own = 9 folders | M3 list mismatch fixed |
+| Collection/AddOns changes in 477eb06 | none | M1 SexyMap overwrite still present; M2 ExperienceForever/SexyMap still "unmodified" in package manifest |
