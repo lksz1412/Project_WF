@@ -1,6 +1,6 @@
 # Phase 27.2 — 파일 적용·검증·복원
 
-2026-11-19 · Step 51 통과 · Step 52 착수
+2026-11-19 · Step 51–52 통과
 
 [마스터 플랜](2026-11-19-devil-forever-audit-and-installer-plan.md) · [설치 계약](../../Collection/Installer/Contract.md) · [설치기 카탈로그](../../Collection/Installer/ReleaseCatalog.json) · [Step 48 배포 기준](../results/Step%2048%20%E2%80%94%20검토한%20ZIP과%20기능%20기준%20확정.md)
 

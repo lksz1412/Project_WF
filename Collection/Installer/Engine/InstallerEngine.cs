@@ -2,7 +2,7 @@ using System.Text;
 
 namespace DevilForever.Installer;
 
-public sealed class InstallerEngine
+public sealed partial class InstallerEngine
 {
     private readonly Catalog catalog = ApprovedPackage.LoadCatalog();
 
@@ -19,7 +19,9 @@ public sealed class InstallerEngine
                 "inspect" => Inspect(target),
                 "verify" => Verify(target),
                 "plan" when request.PlanAction == "install" => PlanInstall(request, target),
+                "plan" => PlanRecovery(request, target),
                 "apply" => Apply(request, target),
+                "rollback" or "remove" => ExecuteRecovery(request, target),
                 _ => Fail(result, "not-implemented", "이 실행판에서 해당 작업은 아직 제공되지 않습니다."),
             };
         }
@@ -261,6 +263,7 @@ public sealed class InstallerEngine
             WindowsPaths.GameStopped();
             if (WindowsPaths.Target(plan.Target.Path) != plan.Target)
                 throw new InstallerException("target-changed", "준비 중 게임 경로의 식별값이 바뀌었습니다.");
+            store.RequireActiveHash(plan.ActiveHash);
             foreach (var (folder, expected) in plan.Current) Snapshots.Require(AddonPath(plan.Target, folder), expected);
             Directory.CreateDirectory(WindowsPaths.Under(plan.Target.Path, "Interface/AddOns"));
             journal.State = "applying";

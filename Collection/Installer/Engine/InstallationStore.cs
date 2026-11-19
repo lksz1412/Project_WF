@@ -21,7 +21,7 @@ internal sealed class InstallationStore(TargetInfo target, Catalog catalog)
         var allowed = new HashSet<string>(StringComparer.Ordinal) { "format.json", "active.json", "runs" };
         foreach (var entry in Directory.EnumerateFileSystemEntries(Root))
         {
-            if (!allowed.Contains(Path.GetFileName(entry)))
+            if (!allowed.Contains(Path.GetFileName(entry)) && !IsAtomicRemainder(entry))
                 throw new InstallerException("unrecognized-store", "관리 폴더에 확인되지 않은 항목이 있습니다.");
         }
         ActiveState? active = null;
@@ -73,6 +73,42 @@ internal sealed class InstallationStore(TargetInfo target, Catalog catalog)
 
     public void Save(Journal journal) => Write(WindowsPaths.Under(RunDirectory(journal.RunId), "journal.json"), journal);
     public void SaveActive(ActiveState state) => Write(ActivePath, state);
+
+    public Journal LoadJournal(string id)
+    {
+        var journal = Read<Journal>(WindowsPaths.Under(RunDirectory(id), "journal.json"));
+        ValidateJournal(journal, id);
+        return journal;
+    }
+
+    public string JournalHash(string id)
+    {
+        using var stream = new FileStream(WindowsPaths.Under(RunDirectory(id), "journal.json"),
+            FileMode.Open, FileAccess.Read, FileShare.Read);
+        return Convert.ToHexStringLower(SHA256.HashData(stream));
+    }
+
+    public void RequireActiveHash(string? expected)
+    {
+        string? current = null;
+        if (File.Exists(ActivePath))
+        {
+            using var stream = new FileStream(ActivePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+            current = Convert.ToHexStringLower(SHA256.HashData(stream));
+        }
+        if (current != expected) throw new InstallerException("active-changed", "준비 중 활성 기록이 바뀌었습니다.");
+    }
+
+    private static bool IsAtomicRemainder(string path)
+    {
+        var name = Path.GetFileName(path);
+        const string prefix = "active.json.";
+        if (!name.StartsWith(prefix, StringComparison.Ordinal) || !name.EndsWith(".tmp", StringComparison.Ordinal)
+            || name.Length != prefix.Length + 32 + 4) return false;
+        if (name.AsSpan(prefix.Length, 32).ContainsAnyExcept("0123456789abcdefABCDEF")) return false;
+        var attributes = File.GetAttributes(path);
+        return (attributes & (FileAttributes.Directory | FileAttributes.ReparsePoint)) == 0;
+    }
 
     public static T Read<T>(string path)
     {
@@ -128,6 +164,7 @@ internal sealed class InstallationStore(TargetInfo target, Catalog catalog)
     {
         if (journal.Schema != "devil-forever-installer-journal/1" || journal.RunId != id
             || journal.AfterActive is null || journal.Before is null || journal.After is null || journal.Moves is null
+            || journal.RestoreSources is null
             || journal.Target != target || journal.Action is not ("install" or "remove" or "rollback")
             || journal.State is not ("prepared" or "applying" or "verifying" or "completed"
                 or "recovery-required" or "restoring" or "restored"))
@@ -142,6 +179,10 @@ internal sealed class InstallationStore(TargetInfo target, Catalog catalog)
             if (!folders.Contains(folder)) throw new InstallerException("invalid-record", "실행 폴더가 승인 범위를 벗어납니다.");
             Snapshots.Validate(snapshot);
         }
+        if (!journal.Before.Keys.ToHashSet(StringComparer.Ordinal).SetEquals(journal.After.Keys))
+            throw new InstallerException("invalid-record", "이전 상태와 이후 상태의 폴더 목록이 다릅니다.");
+        if (journal.Action != "rollback" && journal.RestoreSources.Count != 0)
+            throw new InstallerException("invalid-record", "복원 이외의 실행에 복원 원본이 있습니다.");
         foreach (var move in journal.Moves)
         {
             if (move is null) throw new InstallerException("invalid-record", "비어 있는 이동 기록입니다.");
@@ -149,6 +190,16 @@ internal sealed class InstallationStore(TargetInfo target, Catalog catalog)
             ValidateMovePath(move.Source, id, move.Folder);
             ValidateMovePath(move.Destination, id, move.Folder);
             Snapshots.Validate(move.Expected);
+        }
+        if (journal.Action == "rollback")
+        {
+            ValidateId(journal.RevertsRunId!);
+            foreach (var (folder, source) in journal.RestoreSources)
+            {
+                if (!folders.Contains(folder) || !journal.After.TryGetValue(folder, out var expected) || !expected.Exists
+                    || source != $"{DirectoryName}/runs/{journal.RevertsRunId}/before/{folder}")
+                    throw new InstallerException("invalid-record", "복원 원본 경로가 잘못되었습니다.");
+            }
         }
     }
 

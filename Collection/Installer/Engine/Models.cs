@@ -103,6 +103,7 @@ public sealed class Journal
     public SortedDictionary<string, FolderSnapshot> After { get; set; } = new(StringComparer.Ordinal);
     public List<MoveRecord> Moves { get; set; } = [];
     public string? Failure { get; set; }
+    public SortedDictionary<string, string> RestoreSources { get; set; } = new(StringComparer.Ordinal);
 }
 
 internal sealed class InstallationPlan

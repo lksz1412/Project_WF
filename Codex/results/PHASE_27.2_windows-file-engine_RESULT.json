@@ -1,0 +1,14 @@
+{
+  "phase": "27.2",
+  "steps": [51, 52],
+  "status": "PASS",
+  "finalMajor": 0,
+  "finalModerate": 0,
+  "approvedVariantsExercised": ["pitbull4", "fuf"],
+  "commands": ["inspect", "plan", "apply", "verify", "rollback", "remove"],
+  "actualChildTerminationAndRestoreObserved": true,
+  "windowsFilesystem": "ReFS",
+  "gameObserved": false,
+  "cleanWindowsObserved": false,
+  "next": 53
+}

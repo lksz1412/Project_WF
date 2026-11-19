@@ -18,3 +18,7 @@ Step 44–45는 2026-11-19에 통과했다. 현재 작업 트리로 다시 만�
 ## Phase 27.1까지
 
 2026-11-19 Step 49–50 통과. Windows x64 자체 포함 시험, ZIP 승인·미리보기·관리 기록·복원 계약을 확정했다. 실제 구현과 일반 PC 검증은 다음 단계에서 진행한다. [Phase 27.1 결과](../results/PHASE_27.1_windows-installer-contract_RESULT.md)
+
+## Phase 27.2까지
+
+2026-11-19 Step 51–52 통과. 승인 두 단독 ZIP의 파일 설치·전환, 검증·제거·복원과 중단 뒤 처리까지 공통 엔진을 실제 공개 명령으로 확인했다. Windows 화면과 배포는 해당 엔진을 사용한다. [Phase 27.2 결과](../results/PHASE_27.2_windows-file-engine_RESULT.md)

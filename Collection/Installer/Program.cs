@@ -8,8 +8,9 @@ try
     {
         Console.WriteLine("Devil Forever 설치기 명령 시험판");
         Console.WriteLine("inspect|verify --game <폴더> [--json]");
-        Console.WriteLine("plan --game <폴더> [--action install] [--package <ZIP>] [--replace <폴더>] [--json]");
+        Console.WriteLine("plan --game <폴더> [--action install|rollback|remove] [--package <ZIP>] [--replace <폴더>] [--json]");
         Console.WriteLine("apply --game <폴더> [--package <ZIP>] [--replace <폴더>] --confirm <값> [--json]");
+        Console.WriteLine("rollback|remove --game <폴더> --confirm <값> [--json]");
         return 0;
     }
     request.Action = args[0];

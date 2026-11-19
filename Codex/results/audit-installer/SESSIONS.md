@@ -31,5 +31,5 @@
 | 역할 | 세션 | 설정 | 범위·상태 |
 |---|---|---|---|
 | 담당 | `/root` | 이 대화의 실행 환경 | 실제 묶음으로 별도 공개 명령·권한·장부 반증 및 단계 통합 |
-| 작업 A | `/root/installer_engine` | `bada-a2-coder` · gpt-6.1-sol high 역할 설정 | Step 51 공통 파일 엔진과 장부 중간 결함 보정. Step 52에서 계속 |
-| 독립 검수 B | `/root/installer_plan_review` | 해당 작업의 기존 검수자 설정 | Step 51 연계·뜻·적대, 중간 1건 보정 재확인. 최종 미해결 0 |
+| 작업 A | `/root/installer_engine` | `bada-a2-coder` · gpt-6.1-sol high 역할 설정 | Step 51 파일 적용과 Step 52 파일 복원·제거, 두 스텝의 보정과 실제 시험 |
+| 독립 검수 B | `/root/installer_plan_review` | 해당 작업의 기존 검수자 설정 | Step 51·52 연계·뜻·적대 검수와 동일 범위 보정 확인. 최종 미해결 0 |
