@@ -9,4 +9,4 @@
 - [별도 프레임 시간 도구](diagnostics/DevilForever_PerfProbe)와 [시험 결과](perf-probe-tests.json)
 - [아스트라 6.2의 코드·사용 패턴 검수](astra-review.md)
 
-GitHub의 0.1.4 릴리스에는 검증한 ZIP 세 개와 별도 프레임 시간 도구를 담았다. 검토 기준은 여기 적힌 파일과 [0.1.4 릴리스](https://github.com/lksz1412/Project_WF/releases/tag/v0.1.4)의 파일이다. 실제 게임의 기능과 프레임 시간을 최종 비교할 때 쓸 시험판이다.
+검토 기준은 이 브랜치의 소스와 해시 목록이다. 게임에서 사용할 시험 ZIP과 프레임 시간 측정 도구 ZIP은 로컬에서 보관한다. 실제 게임의 기능과 프레임 시간은 후속 확인 항목이다.
