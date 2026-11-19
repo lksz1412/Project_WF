@@ -1,0 +1,29 @@
+{
+  "phase": "29.4",
+  "status": "PASS_OFFLINE",
+  "version": "0.1.2",
+  "steps": [66, 67, 68, 69],
+  "functionsReviewed": 11,
+  "defaultUnitFrame": "pitbull4",
+  "unitFrameComparisonCandidate": "fuf",
+  "executedChecks": {
+    "unitFrameConditions": 16,
+    "recommendationDriverConditions": 5,
+    "meterWindowConditions": 3
+  },
+  "patchesVerifiedInFixture": {
+    "SexyMap": { "mapLookupsWhileDisabled": [10, 0], "activeTimerAfterRestart": 1 },
+    "ExperienceForever": { "questEntryReads": [240, 20], "paints": [1, 1], "completedQuestXp": 11000 }
+  },
+  "independentReview": {
+    "perspectives": 10,
+    "sourceLinkCorrections": 1,
+    "major": 0,
+    "moderate": 0,
+    "minor": 0
+  },
+  "approvedArchivesHashMatched": 3,
+  "gameMeasured": false,
+  "candidateBinarySourceUnverified": ["AtlasLoot Classic Forever 1.4.4-191126-16001"],
+  "patchesAppliedToRelease": false
+}
