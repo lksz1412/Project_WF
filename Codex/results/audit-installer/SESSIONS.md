@@ -17,3 +17,11 @@
 | 담당 | `/root` | 이 대화의 실행 환경 | 현행 ZIP 호출·테마 39개 조합·소유 설정을 대조하고 수정 범위 확정 |
 | 작업 A | `/root/functional_audit` | `bada-a2-coder` · gpt-6.1-sol high 역할 설정 | Step 46 추가 Lua 반증과 자료 수정. 같은 A로 Step 47 코드 및 검수 보정 |
 | 독립 검수 B | `/root/installer_plan_review` | 해당 작업의 기존 검수자 설정 | Step 46의 중간·경미 각 1건, Step 47의 중간 2건, Step 48의 중간 1건을 같은 A 수정 뒤 모두 닫음 |
+
+## Phase 27.1 · Step 49–50
+
+| 역할 | 세션 | 설정 | 범위·상태 |
+|---|---|---|---|
+| 담당 | `/root` | 이 대화의 실행 환경 | Windows 자체 포함 시험과 범위 확인, 사양 통합 |
+| 작업 A | `/root/installer_contract` | `bada-a1-analyst` · gpt-6.1-sol high 역할 설정 | Step 50 실행 계약과 중간 2건 보정 |
+| 독립 검수 B | `/root/installer_plan_review` | 해당 작업의 기존 검수자 설정 | Step 49 단일 파일 확인. Step 50 열 관점과 같은 A 보정 재확인, 미해결 중대·중간 0 |

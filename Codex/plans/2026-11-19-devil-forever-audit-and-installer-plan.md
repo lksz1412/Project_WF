@@ -55,7 +55,7 @@
 | `Claude/plans/`, `Claude/results/`, `Codex/plans/`, `Codex/results/` | 기존 계획·이력·검토 결과, 새 Phase별 실행 계획과 증거 |
 | `Collection/AddOns/`, `Collection/data/feature-map.md`, `References/codex-appearance/` | 실제 애드온·프리셋, 기능 소유권, 목업과 좌표 근거 |
 | `Collection/install.json`, `Collection/tools/build.py`, `Collection/tests/` | 배포 목록, ZIP 빌드와 재현 시험 |
-| `Collection/installer/` · 제안 | 설치 엔진과 Windows 화면, 명령줄 진입점, 배포 관련 소스 |
+| `Collection/Installer/` | 승인 ZIP 카탈로그, 설치 계약, 파일 적용 엔진과 Windows 진입 소스 |
 | `_local_only/` | 검증한 ZIP, 대상 시험 복사본, 실패·복원 기록과 새 산출물 |
 
 ### 늘 지킬 제약
@@ -141,7 +141,7 @@
 ## Assumptions
 
 - 첫 사용자 배포 대상은 지원되는 Windows 11 x64 일반 계정이다. 다른 운영체제는 실제 필요와 깨끗한 환경 시험이 확보된 뒤 지원 목록에 넣는다.
-- 개발 PC에서 SDK는 확인했지만 새 설치기 빌드와 실행은 아직 하지 않았다. SDK 패키지 복원과 Windows 런타임 자체 포함은 Step 49에서 확인한다. 완성 설치기의 깨끗한 Windows 사용은 Step 56에서 검증한다.
+- Step 49에서 Windows x64 라이브러리를 자체 포함한 시험 실행 파일을 일반 사용자 토큰으로 실행했다. 완성 설치기의 깨끗한 Windows 사용은 Step 56에서 검증한다. [도구 확인 결과](../results/Step%2049%20%E2%80%94%20Windows%20단일%20실행%20파일%20검증.md)
 - 기존 세 ZIP은 감사와 개발 입력이다. 최종 게임 동작과 묶음의 수용 여부는 Step 41 관측과 재검토 결과가 정한다.
 - 사용자 경로 쓰기는 승인된 게임 폴더와 선택한 설치 기록·백업 위치에 한정한다. 개발은 먼저 격리된 시험 대상에서 한다.
 

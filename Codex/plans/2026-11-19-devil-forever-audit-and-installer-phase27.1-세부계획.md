@@ -1,8 +1,8 @@
 # Phase 27.1 — Windows 설치 계약 초안
 
-2026-11-19 · R151 실행 · Step 49 통과 · Step 50 착수
+2026-11-19 · R151 실행 · Step 49–50 통과
 
-[마스터 플랜](2026-11-19-devil-forever-audit-and-installer-plan.md) · [현행 설치 설정](../../Collection/install.json)
+[마스터 플랜](2026-11-19-devil-forever-audit-and-installer-plan.md) · [현행 설치 설정](../../Collection/install.json) · [확정 계약](../../Collection/Installer/Contract.md)
 
 ## 첫판
 

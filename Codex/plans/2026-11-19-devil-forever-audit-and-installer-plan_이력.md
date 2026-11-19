@@ -14,3 +14,7 @@ Step 44–45는 2026-11-19에 통과했다. 현재 작업 트리로 다시 만�
 ## Phase 26.2까지
 
 2026-11-19 Step 46–48 통과. 채팅 보존·재배치, FUF 비교 프로필 실행과 현행 기능 지도를 보정했다. 기본판·대체판을 설치기의 승인 입력으로 확정하고 비교판과 실제 게임 확인을 Step 41에 연결했다. [Phase 26.2 결과](../results/PHASE_26.2_functional-audit_RESULT.md)
+
+## Phase 27.1까지
+
+2026-11-19 Step 49–50 통과. Windows x64 자체 포함 시험, ZIP 승인·미리보기·관리 기록·복원 계약을 확정했다. 실제 구현과 일반 PC 검증은 다음 단계에서 진행한다. [Phase 27.1 결과](../results/PHASE_27.1_windows-installer-contract_RESULT.md)
