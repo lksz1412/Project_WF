@@ -8,5 +8,6 @@
 - [Core에서 AceDB와 Quartz를 이어 실행한 15건](packaged-quartz-through-core.json)
 - [별도 프레임 시간 도구](diagnostics/DevilForever_PerfProbe)와 [시험 결과](perf-probe-tests.json)
 - [아스트라 6.2의 코드·사용 패턴 검수](astra-review.md)
+- [추가 후보 ZIP과 검토 기준](candidates/README.md)
 
-검토 기준은 이 브랜치의 소스와 해시 목록이다. 게임에서 사용할 시험 ZIP과 프레임 시간 측정 도구 ZIP은 로컬에서 보관한다. 실제 게임의 기능과 프레임 시간은 후속 확인 항목이다.
+검토 기준은 이 브랜치의 소스와 해시 목록이다. 게임에서 쓸 시험 ZIP 세 개와 프레임 시간 측정 도구 ZIP은 [GitHub 0.1.4 릴리스](https://github.com/lksz1412/Project_WF/releases/tag/v0.1.4)에서 받는다. 실제 게임의 기능과 프레임 시간은 후속 확인 항목이다.
