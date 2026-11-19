@@ -1,0 +1,10 @@
+# Audit log — Step 40b review 1 — B (bada-a3-reviewer) — code ②
+
+Counts: 중대 1 · 중간 3 · 경미 5
+- C1 FUF variant: FUFDefaults.lua:126-129 existing characters (0.1.4 record) stop at "done-before"; a new character sends `set party hideBlizzardFrame on` + `set party enabled off` (:143-146) into the shared FUF unit profile "Default" (UnitProfiles.lua:51-52) → existing characters lose FUF party while their existing Grid2 profile keeps 0.1.4 party "None"/FrameDisplay "Raid" → no party frame at all.
+- M1 PitBull4 variant: Defaults/PitBull4.lua:24 PROFILE "Default" (existing on 0.1.4 installs → party groups stay enabled) vs Defaults/Grid2.lua:30 profile "$char" (new character profile gets party "By Group", FrameDisplay "Grouped") → new character on existing install sees PitBull4 party + Grid2 party (also one-session variant).
+- M2 SexyMap: Defaults/SexyMap.lua:166-167 fragment + Presets.lua:408-409 request mode → Core.WriteOver replaces SexyMap2DB["Hero-Realm"]="global" with a partial {core={shape,point,relpoint,x,y,scale},borders}; SexyMap.lua:343 then skips core defaults → :502 autoZoom nil comparison error (repro scratch b40b.boxW/exp_global.py).
+- M3 SexyMap: Presets.lua:417 freshness by saved variable (account) while values keyed per character (:167); second character on existing SexyMap2DB → state "already", no appearance and no notice (Presets.lua:505 reports kept/skipped only). Brief asked "profile new at first look".
+- m1 Registry.lua Skin_Nameplates: savedVariables key removed instead of `{}` (generator shape); m2 FUF party commands no read-back, "sent" permanent; m3 "kind": "modified" new vocabulary; m4 firststart test premise without CoreDB applied record differs from real install; m5 kept-set signature change prints one extra notice on upgrade (harmless).
+Refuted: Grid2 Grouped/arena, template vs layouts, Blizzard party hiding on fresh installs, combat deferral, AddFragment validation/TOC order, Prat deletion refs, probes, test weakening.
+Master verified: FUFDefaults.lua:126-129, Defaults/SexyMap.lua:166-167, Presets.lua:417, Grid2.lua:30 "$char", PitBull4.lua:24 "Default".
