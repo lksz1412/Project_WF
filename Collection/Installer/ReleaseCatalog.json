@@ -5,11 +5,11 @@
   "packages": [
     {
       "variant": "pitbull4",
-      "version": "0.1.1",
-      "zip": "DevilForever-0.1.1.zip",
-      "sha256": "dd78f96bdf8d8e690bbc0aefc9a5b0b7a1d9f6edffb0b3179696c171123ee23b",
-      "zipBytes": 127024315,
-      "addonBytes": 488142338,
+      "version": "0.1.2",
+      "zip": "DevilForever-0.1.2.zip",
+      "sha256": "d1defff14666de0e2119bcfbe4049394060c597effcac4c87ce929ccb7a0f52b",
+      "zipBytes": 127024934,
+      "addonBytes": 488144665,
       "addonFiles": 2312,
       "folders": [
         "!DevilForever_Core",
@@ -51,11 +51,11 @@
     },
     {
       "variant": "fuf",
-      "version": "0.1.1",
-      "zip": "DevilForever-0.1.1-fuf.zip",
-      "sha256": "7503393199efa35e5860a1f2ca17347e71c044c1ecd815b7d644f12a053aa2d7",
-      "zipBytes": 127670316,
-      "addonBytes": 491308794,
+      "version": "0.1.2",
+      "zip": "DevilForever-0.1.2-fuf.zip",
+      "sha256": "f8bd96a52177d667a5134693155774a31ccca14a060e6bdebab34fa520afd373",
+      "zipBytes": 127670948,
+      "addonBytes": 491311172,
       "addonFiles": 2248,
       "folders": [
         "!DevilForever_Core",

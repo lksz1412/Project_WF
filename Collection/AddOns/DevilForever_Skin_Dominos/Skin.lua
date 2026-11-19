@@ -65,13 +65,13 @@ end
 local function applyPet()
   if not ready then return end
   if InCombatLockdown() then petPending = true; return end
-  petPending = false
   if not DevilForever_Appearance:GetPixelUnit(UIParent) then
     Core:Log("skip", "Feature appearance", "physical pixel factor unavailable")
     return
   end
   applyBar("pet")
   applyPetEdges()
+  petPending = false
 end
 
 schedulePet = function()
@@ -87,14 +87,14 @@ end
 local function apply()
   if not ready then return end
   if InCombatLockdown() then pending = true; return end
-  pending = false
-  petPending = false
   if not DevilForever_Appearance:GetPixelUnit(UIParent) then
     Core:Log("skip", "Feature appearance", "physical pixel factor unavailable")
     return
   end
   for _, id in ipairs(ids) do applyBar(id) end
   applyPetEdges()
+  pending = false
+  petPending = false
 end
 
 local events = CreateFrame("Frame")

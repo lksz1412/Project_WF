@@ -129,8 +129,11 @@ def session(zip_file, shipped=False, initial="uhd"):
       TEST_fire("PLAYER_ENTERING_WORLD",true,false)
       drain()
       SlashCmdList.DFPROFILE("theme horde")
-      DevilForever_Core.Edit:RegisterCallback("count",function(key)
+      notifications={}
+      DevilForever_Core.Edit:RegisterCallback("count",function(key,field,value)
         bump("notify_"..key:match("^[^.]+"))
+        notifications[#notifications+1]={key=key,field=field,value=DevilForever_Core.CopyTable(value),
+          active=DevilForever_Core.Presets:GetActive()}
       end)
       counts={}
     ''')
@@ -140,6 +143,12 @@ def session(zip_file, shipped=False, initial="uhd"):
 
 def counts(lua):
     return dict(lua.globals().counts.items())
+
+
+def plain(value):
+    if lua51.lua_type(value) == "table":
+        return {k: plain(v) for k, v in value.items()}
+    return value
 
 
 def resolved(lua):
@@ -166,9 +175,9 @@ def presets(zip_file):
             lua = session(zip_file, shipped, old)
             if edited:
                 lua.execute('''local E=DevilForever_Core.Edit
-                  assert(E:Set("appearance.chat1","size",E:Get("appearance.chat1").size)); counts={}''')
+                  assert(E:Set("appearance.chat1","size",E:Get("appearance.chat1").size)); counts={}; notifications={}''')
             lua.globals().SlashCmdList.DFPROFILE("preset " + new)
-            results.append((counts(lua), resolved(lua)))
+            results.append((counts(lua), resolved(lua), plain(lua.globals().notifications)))
             assert not list(lua.globals().TEST_errors.values()), list(lua.globals().TEST_errors.values())
         before, after = results[0][0], results[1][0]
         for key in ("appearance", "dominos", "nameplates", "nativechat", "statusstrip"):
@@ -179,6 +188,7 @@ def presets(zip_file):
         assert {k: v for k, v in before.items() if k.startswith("notify_")} == {
             k: v for k, v in after.items() if k.startswith("notify_")}
         assert results[0][1] == results[1][1], (old, new, "resolved fields differ")
+        assert results[0][2] == results[1][2], (old, new, "notification values/order differ")
         print("PASS preset", old, new, "edited=" + str(edited), before, "->", after)
     lua = session(zip_file)
     lua.globals().SlashCmdList.DFPROFILE("theme alliance")
@@ -216,8 +226,12 @@ def pet(zip_file):
         lua.execute('''
           DevilForever_Core={Edit={Get=function() return {font={path="font",size=12},color={1,1,1,1}} end,
             RegisterCallback=noop,AfterBatch=function(_,_,fn) fn() end},
-            Theme={GetSet=function() return "devil" end,RegisterCallback=function(_,_,fn) theme=fn end}}
-          DevilForever_Appearance={GetPixelUnit=function() return 1 end}
+            Theme={GetSet=function() return "devil" end,RegisterCallback=function(_,_,fn) theme=fn end},Log=noop}
+          TEST_uiPixel=1
+          DevilForever_Appearance={GetPixelUnit=function(_,region)
+            if region==UIParent then return TEST_uiPixel end
+            return 1
+          end}
           native={CreateClass=function() return {Extend=noop} end,Frame={contextMenu={Extend=noop}}}
         ''')
         run_file(lua, zip_file.read("Interface/AddOns/Dominos/core/buttonBar.lua"), "Dominos/core/buttonBar.lua", lua.globals().native)
@@ -252,6 +266,54 @@ def pet(zip_file):
               assert(counts.pet==10 and not counts.dominos)
             ''')
             print("PASS pet combat deferral, detached edges and full-refresh absorption")
+            lua.execute('''
+              function checkPetRow(previous)
+                assert(not previous.edge.visible)
+                for _,b in ipairs(DominosFramepet.buttons) do
+                  assert(b.HotKey.font[1]=="font" and b.HotKey.font[2]==12)
+                  assert(b.edge.visible and b.edge.texture:find("PetEdge.tga",1,true))
+                end
+              end
+              counts={}; old=DominosFramepet.buttons[1]; DominosFramepet:ReloadButtons()
+              TEST_uiPixel=nil; TEST_fire("UPDATE_BINDINGS")
+              assert(not counts.pet and not counts.dominos and #actions==1)
+              assert(not DominosFramepet.buttons[1].HotKey.font and not DominosFramepet.buttons[1].edge)
+              TEST_uiPixel=1; drain()
+              assert(counts.pet==10 and not counts.dominos and counts.scheduled==1)
+              checkPetRow(old)
+            ''')
+            print("PASS failed UPDATE_BINDINGS preserves existing pet timer until scale recovers")
+            lua.execute('''
+              counts={}; old=DominosFramepet.buttons[1]; DominosFramepet:ReloadButtons()
+              TEST_uiPixel=nil; drain()
+              assert(not counts.pet and not counts.dominos and #actions==0 and counts.scheduled==1)
+              TEST_uiPixel=1; TEST_fire("PLAYER_REGEN_ENABLED")
+              assert(counts.pet==10 and not counts.dominos and #actions==0)
+              checkPetRow(old)
+            ''')
+            print("PASS failed pet timer retains request for next valid event without polling")
+            lua.execute('''
+              counts={}; old=DominosFramepet.buttons[1]; TEST_combat=true; DominosFramepet:ReloadButtons()
+              TEST_combat=false; TEST_uiPixel=nil; TEST_fire("PLAYER_REGEN_ENABLED")
+              assert(not counts.pet and not counts.dominos and #actions==0)
+              TEST_uiPixel=1; TEST_fire("PLAYER_REGEN_ENABLED")
+              assert(counts.pet==10 and not counts.dominos)
+              checkPetRow(old)
+              TEST_fire("PLAYER_REGEN_ENABLED"); assert(counts.pet==10 and not counts.dominos)
+            ''')
+            print("PASS failed combat-end pet update survives until next valid event")
+            lua.execute('''
+              counts={}; old=DominosFramepet.buttons[1]; TEST_combat=true; DominosFramepet:ReloadButtons()
+              TEST_fire("UPDATE_BINDINGS")
+              TEST_combat=false; TEST_uiPixel=nil; TEST_fire("PLAYER_REGEN_ENABLED")
+              assert(not counts.pet and not counts.dominos and #actions==0)
+              TEST_uiPixel=1; TEST_fire("PLAYER_REGEN_ENABLED")
+              assert(counts.pet==10 and counts.dominos==1)
+              checkPetRow(old)
+              TEST_fire("PLAYER_REGEN_ENABLED"); drain()
+              assert(counts.pet==10 and counts.dominos==1 and #actions==0)
+            ''')
+            print("PASS failed combat-end full update preserves both requests and clears them on success")
 
 
 if __name__ == "__main__":

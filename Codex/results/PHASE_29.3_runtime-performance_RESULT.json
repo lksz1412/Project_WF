@@ -1,0 +1,39 @@
+{
+  "phase": "29.3",
+  "status": "PASS",
+  "steps": [63, 64, 65],
+  "version": "0.1.2",
+  "defaultVariant": "pitbull4",
+  "luaStubCounts": {
+    "presetAppearanceApplies": { "before": 39, "after": 1 },
+    "petRebuildOtherBarFontCalls": { "before": 20, "after": 0 },
+    "fufLayoutDiagnosticReads": { "before": 117, "after": 1 },
+    "fufLayoutNativeCommands": 116
+  },
+  "separateReadOnlyProbe": {
+    "fufNotificationEventsPerLayout": { "perKey": 116, "perScope": 10 },
+    "sameValuesAndSavedProfile": true,
+    "shipped": false
+  },
+  "reviews": [
+    { "major": 0, "moderate": 1, "minor": 0 },
+    { "major": 0, "moderate": 0, "minor": 0 }
+  ],
+  "packaging": {
+    "archiveVariants": ["pitbull4", "fuf", "one-session"],
+    "folderCounts": [35, 37, 38],
+    "luaCompileCounts": [1344, 1290, 1476],
+    "externalAddonChanges": 0,
+    "windowsFilesVerified": 4,
+    "archiveReceipt": "_local_only/perf-package-0.1.2/final-build/archives/release-receipt.json"
+  },
+  "installer": {
+    "casesPassed": 9,
+    "cliCalls": 23,
+    "upgradeAndRollbackVersions": ["0.1.1", "0.1.2", "0.1.1"],
+    "verifiedFilesEachStage": { "pitbull4": 2312, "fuf": 2248 },
+    "fixtureOnly": true
+  },
+  "gameMeasured": false,
+  "next": "existing addon comparisons and one-session game verification"
+}
