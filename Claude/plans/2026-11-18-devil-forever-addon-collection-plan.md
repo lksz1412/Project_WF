@@ -77,6 +77,7 @@
   Phase 24 최종 목업 (R55: 가능한 작업을 다 한 뒤) — 목업 제작은 Codex
     Step 39  Codex 목업 발주문·받은 목업 대조·채팅 제시     45–90분
   Phase 25 Codex 검증 결과 반영·고정
+    Step 44  Codex 검토판(codex/review-0.1.4 · 72e520a·adfd3c8) 감사: Codex 가 고친 우리 코드·성능 지적 4건·제3자 고침·재현성·후보 4개 → 결함·결정 목록 (R112·R113) 90–150분
     Step 40  Codex 검증 결과로 남은 결함 정정               60–120분 (+결과 묶음 하나당 30–60분)
     Step 41  최종 묶음 고정·복원 방법·인계                  30–60분
 ```
@@ -392,7 +393,7 @@ R1 의 첫 요청은 단축키·체력/마나·미니맵이었고 「부가 기�
 | 22 대안 테마 (외관은 Codex) | `…-phase22-세부계획.md` | 36 | 완료 |
 | 23 연계 검사·정정 | `…-phase23-세부계획.md` | 37–38 | 완료 |
 | 24 최종 목업 (제작은 Codex) | `…-phase24-세부계획.md` | 39 | 완료 (받은 목업 대조는 Codex 결과 대기 · R109) |
-| 25 Codex 검증 결과 반영·고정 | `…-phase25-세부계획.md` | 40–41 | 진행 중 — Codex 결과 대기(R109) · 인계 `Claude/docs/HANDOVER_v0.1.0.md` |
+| 25 Codex 검증 결과 반영·고정 | `…-phase25-세부계획.md` | 44 → 40–41 | 진행 중 — Codex 결과 대기(R109) · 인계 `Claude/docs/HANDOVER_v0.1.0.md` |
 
 `…` 는 `Claude/plans/2026-11-18-devil-forever-addon-collection` 이다. Phase 가 끝날 때마다 그 Phase 의 Result 를 `Claude/results/` 에 남기고, 끝난 Phase 정리는 `Claude/plans/2026-11-18-devil-forever-addon-collection-plan_이력.md` 로 옮긴다.
 
@@ -486,6 +487,7 @@ Phase 0–1 의 고침 기록은 `Claude/plans/2026-11-18-devil-forever-addon-co
 | 2026-11-18 | 선택 기능 Phase 12(툴팁)·13(가방)·17(퀘스트 추적기)·18(세계지도)을 뺀다 — 게임 기본 기능을 쓰고, 기본 기능 확인은 Codex 발주문에 넣는다. Step 번호는 그대로 두고 비워 둔다. Claude 합계에서 그 Step 들(24·25·29·30a·30b)을 뺀다 | R100 사용자 원문 · R99 |
 | 2026-11-18 | Phase 8 을 Hekili(다음 행동 추천) + 게임 기본 Cooldown Manager(상태 알림·CD)로 바꾼다. 보완 모듈 `DevilForever_Combat` 과 그 시간을 없앤다. Step 19 = Hekili 표시 기본값·Cooldown Manager 인계 메모, Step 20 = 직업별 점검·Codex 발주문(Cooldown Manager 의 화면 중앙 강조·소리 게임 안 확인). 지원 안 함 치유 특성 4개는 Cooldown Manager 표시만 | R104 사용자 원문 · Step 18 지원표 |
 | 2026-11-18 | 근간 재논의 반영: ① Phase 6-rev(PitBull4 v4.2.50 + Forever TOC + V42 고침 + Devil profile, Step 42–43) 를 더해 FUF 와 비교하고 기본 동봉은 Phase 23 에서 정해 기록 ② 어그로 미터는 Details! 의 TinyThreat — Phase 11 은 Phase 10 에 합침 ③ Phase 14 는 게임 기본 이름표(Platynator 뺌, Codex 발주문만) ④ Phase 15 Aurora 사용 여부는 Codex 가 정함 ⑤ Phase 16 은 가벼운 상태띠(Titan 안 씀, 정보 부분 Step 28a·28b) ⑥ Phase 21 빠짐 — 사용자가 AI 로 고치고 Codex 가 FHD·QHD·UHD 세 겉보기를 처음부터 만든다, Core 편집값은 읽기 약속으로 남고 Phase 20 이 preset 되돌리기를 맡는다. 합계를 다시 더했다(R100 뒤 갱신되지 않았던 합계도 함께) | R107 사용자 원문 · R101 |
+| 2026-11-19 | Phase 25 에 Step 44 를 더한다(순서 44 → 40 → 41). Codex 가 결과를 `References/` 가 아니라 가지 `codex/review-0.1.4` 로 올렸고, 우리 코드(Core·ChatSetup·FUFDefaults)를 직접 고치고 제3자 원본 둘(ExperienceForever·SexyMap)을 고치고 Windows 설치기·외관 애드온·후보 ZIP 4개를 더했다. 그래서 Step 40(결함 정정) 전에 이 가지 전체를 감사해 무엇을 받아들일지 정하는 단계가 필요하다. Step 44 = 감사(검수 B 하나) → 결함·결정 목록, Step 40 = 받아들인 것을 우리 가지에 반영하고 결함 정정, Step 41 = 고정 | R112·R113 사용자 원문 · 가지 실측(merge-base 16b801b) |
 
 ## Decisions Required
 
