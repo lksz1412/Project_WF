@@ -22,3 +22,7 @@ Step 44–45는 2026-11-19에 통과했다. 현재 작업 트리로 다시 만�
 ## Phase 27.2까지
 
 2026-11-19 Step 51–52 통과. 승인 두 단독 ZIP의 파일 설치·전환, 검증·제거·복원과 중단 뒤 처리까지 공통 엔진을 실제 공개 명령으로 확인했다. Windows 화면과 배포는 해당 엔진을 사용한다. [Phase 27.2 결과](../results/PHASE_27.2_windows-file-engine_RESULT.md)
+
+## Phase 27.3까지
+
+2026-11-19 Step 53–54 통과. 실제 Windows 화면과 공개 명령을 연결하고 x64 단일 실행 파일, 기본 PitBull4 ZIP과 안내를 로컬 폴더에 빌드했다. 동일 실행 파일의 전체 해시를 두 번 확인했다. [Phase 27.3 결과](../results/PHASE_27.3_windows-ui-package_RESULT.md)

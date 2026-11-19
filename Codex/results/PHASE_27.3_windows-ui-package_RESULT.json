@@ -1,0 +1,16 @@
+{
+  "phase": "27.3",
+  "steps": [53, 54],
+  "status": "PASS",
+  "finalMajor": 0,
+  "finalModerate": 0,
+  "sourceCommit": "9d8640f",
+  "installerBytes": 51718841,
+  "installerSha256": "2d04e03f155c64b1491d00893bc2c80fd3ce524dd649bd474c83fc7ec98a3eac",
+  "actualGuiOpened": true,
+  "packagedCliRun": true,
+  "sameExeBuiltTwice": true,
+  "cleanWindowsObserved": false,
+  "gameObserved": false,
+  "next": 55
+}

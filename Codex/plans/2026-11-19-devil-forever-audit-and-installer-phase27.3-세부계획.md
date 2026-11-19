@@ -1,6 +1,6 @@
 # Phase 27.3 — 설치 화면과 로컬 배포본
 
-2026-11-19 · Step 53 통과 · Step 54 착수
+2026-11-19 · Step 53–54 통과
 
 [마스터 플랜](2026-11-19-devil-forever-audit-and-installer-plan.md) · [파일 적용 계획](2026-11-19-devil-forever-audit-and-installer-phase27.2-세부계획.md) · [설치 계약](../../Collection/Installer/Contract.md)
 

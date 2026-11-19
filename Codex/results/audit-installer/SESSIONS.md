@@ -33,3 +33,11 @@
 | 담당 | `/root` | 이 대화의 실행 환경 | 실제 묶음으로 별도 공개 명령·권한·장부 반증 및 단계 통합 |
 | 작업 A | `/root/installer_engine` | `bada-a2-coder` · gpt-6.1-sol high 역할 설정 | Step 51 파일 적용과 Step 52 파일 복원·제거, 두 스텝의 보정과 실제 시험 |
 | 독립 검수 B | `/root/installer_plan_review` | 해당 작업의 기존 검수자 설정 | Step 51·52 연계·뜻·적대 검수와 동일 범위 보정 확인. 최종 미해결 0 |
+
+## Phase 27.3 · Step 53–54
+
+| 역할 | 세션 | 설정 | 범위·상태 |
+|---|---|---|---|
+| 담당 | `/root` | 이 대화의 실행 환경 | 실제 창 확인·압축형 단일 파일 배포, 별도 GUI·CLI 시험 |
+| 작업 A | `/root/installer_engine` | `bada-a2-coder` · gpt-6.1-sol high 역할 설정 | Step 53 Windows 화면과 안내, 독립 검수 보정 |
+| 독립 검수 B | `/root/installer_plan_review` | 해당 작업의 기존 검수자 설정 | 화면 코드 검수·보정 확인, Step 54 실제 파일 해시 확인. 최종 미해결 0 |
