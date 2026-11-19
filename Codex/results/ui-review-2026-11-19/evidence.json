@@ -1,0 +1,915 @@
+{
+  "scope": "offline game UI review",
+  "previous_install_archive_visual_checks": {
+    "profiles": {
+      "uhd": {
+        "screen": [
+          3840,
+          2160
+        ],
+        "rendered_states_and_checked_boxes": {
+          "quest": 15,
+          "combat": 31,
+          "party": 18,
+          "raid": 32,
+          "input": 16,
+          "pet": 18
+        },
+        "button_and_text_metrics": {
+          "button": 80,
+          "icon": 64,
+          "chatFont": 28,
+          "keyFont": 24,
+          "smallFont": 22
+        },
+        "toolbar_buttons": {
+          "menu": [
+            [
+              1932,
+              2080,
+              29,
+              36
+            ],
+            [
+              1961,
+              2080,
+              29,
+              36
+            ],
+            [
+              1990,
+              2080,
+              29,
+              36
+            ],
+            [
+              2019,
+              2080,
+              29,
+              36
+            ],
+            [
+              2048,
+              2080,
+              29,
+              36
+            ],
+            [
+              2077,
+              2080,
+              30,
+              36
+            ],
+            [
+              2107,
+              2080,
+              29,
+              36
+            ],
+            [
+              2136,
+              2080,
+              29,
+              36
+            ],
+            [
+              2165,
+              2080,
+              29,
+              36
+            ],
+            [
+              2194,
+              2080,
+              29,
+              36
+            ],
+            [
+              2223,
+              2080,
+              29,
+              36
+            ],
+            [
+              2252,
+              2080,
+              29,
+              36
+            ]
+          ],
+          "bags": [
+            [
+              2289,
+              2080,
+              36,
+              36
+            ],
+            [
+              2325,
+              2080,
+              36,
+              36
+            ],
+            [
+              2361,
+              2080,
+              36,
+              36
+            ],
+            [
+              2397,
+              2080,
+              36,
+              36
+            ],
+            [
+              2433,
+              2080,
+              36,
+              36
+            ],
+            [
+              2469,
+              2080,
+              36,
+              36
+            ]
+          ],
+          "queue": [
+            [
+              2550,
+              2080,
+              36,
+              36
+            ]
+          ]
+        },
+        "candidate_shared_state_intersections": [],
+        "candidate_tooltip_intersections": [],
+        "candidate_party_raid_if_both_visible": [],
+        "candidate_quest_to_boss_horizontal_gap": 24,
+        "quest_heading_body": [
+          36,
+          30
+        ],
+        "pet_rows": {
+          "petTarget": [
+            212,
+            1470,
+            360,
+            34
+          ],
+          "pet": [
+            212,
+            1514,
+            360,
+            42
+          ],
+          "dominos.pet": [
+            212,
+            1564,
+            358,
+            34
+          ],
+          "quartz.pet": [
+            212,
+            1604,
+            360,
+            28
+          ]
+        },
+        "player": [
+          1080,
+          1440,
+          390,
+          72
+        ],
+        "target": [
+          916,
+          1536,
+          554,
+          84
+        ]
+      },
+      "qhd": {
+        "screen": [
+          2560,
+          1440
+        ],
+        "rendered_states_and_checked_boxes": {
+          "quest": 15,
+          "combat": 31,
+          "party": 18,
+          "raid": 32,
+          "input": 16,
+          "pet": 18
+        },
+        "button_and_text_metrics": {
+          "button": 56,
+          "icon": 44,
+          "chatFont": 22,
+          "keyFont": 19,
+          "smallFont": 18
+        },
+        "toolbar_buttons": {
+          "menu": [
+            [
+              1250,
+              1368,
+              20,
+              25
+            ],
+            [
+              1270,
+              1368,
+              20,
+              25
+            ],
+            [
+              1290,
+              1368,
+              21,
+              25
+            ],
+            [
+              1311,
+              1368,
+              20,
+              25
+            ],
+            [
+              1331,
+              1368,
+              20,
+              25
+            ],
+            [
+              1351,
+              1368,
+              20,
+              25
+            ],
+            [
+              1371,
+              1368,
+              20,
+              25
+            ],
+            [
+              1391,
+              1368,
+              21,
+              25
+            ],
+            [
+              1412,
+              1368,
+              20,
+              25
+            ],
+            [
+              1432,
+              1368,
+              20,
+              25
+            ],
+            [
+              1452,
+              1368,
+              20,
+              25
+            ],
+            [
+              1472,
+              1368,
+              20,
+              25
+            ]
+          ],
+          "bags": [
+            [
+              1498,
+              1368,
+              30,
+              29
+            ],
+            [
+              1528,
+              1368,
+              29,
+              29
+            ],
+            [
+              1557,
+              1368,
+              29,
+              29
+            ],
+            [
+              1586,
+              1368,
+              29,
+              29
+            ],
+            [
+              1615,
+              1368,
+              30,
+              29
+            ],
+            [
+              1645,
+              1368,
+              29,
+              29
+            ]
+          ],
+          "queue": [
+            [
+              1680,
+              1368,
+              32,
+              32
+            ]
+          ]
+        },
+        "candidate_shared_state_intersections": [],
+        "candidate_tooltip_intersections": [],
+        "candidate_party_raid_if_both_visible": [],
+        "candidate_quest_to_boss_horizontal_gap": 16,
+        "quest_heading_body": [
+          28,
+          24
+        ],
+        "pet_rows": {
+          "petTarget": [
+            256,
+            738,
+            280,
+            24
+          ],
+          "pet": [
+            256,
+            764,
+            280,
+            40
+          ],
+          "dominos.pet": [
+            256,
+            806,
+            278,
+            26
+          ],
+          "quartz.pet": [
+            256,
+            834,
+            280,
+            24
+          ]
+        },
+        "player": [
+          690,
+          908,
+          280,
+          56
+        ],
+        "target": [
+          570,
+          980,
+          400,
+          64
+        ]
+      },
+      "fhd": {
+        "screen": [
+          1920,
+          1080
+        ],
+        "rendered_states_and_checked_boxes": {
+          "quest": 15,
+          "combat": 31,
+          "party": 18,
+          "raid": 32,
+          "input": 16,
+          "pet": 18
+        },
+        "button_and_text_metrics": {
+          "button": 48,
+          "icon": 36,
+          "chatFont": 18,
+          "keyFont": 16,
+          "smallFont": 16
+        },
+        "toolbar_buttons": {
+          "menu": [
+            [
+              886,
+              1020,
+              17,
+              21
+            ],
+            [
+              903,
+              1020,
+              18,
+              21
+            ],
+            [
+              921,
+              1020,
+              17,
+              21
+            ],
+            [
+              938,
+              1020,
+              18,
+              21
+            ],
+            [
+              956,
+              1020,
+              17,
+              21
+            ],
+            [
+              973,
+              1020,
+              17,
+              21
+            ],
+            [
+              990,
+              1020,
+              18,
+              21
+            ],
+            [
+              1008,
+              1020,
+              17,
+              21
+            ],
+            [
+              1025,
+              1020,
+              18,
+              21
+            ],
+            [
+              1043,
+              1020,
+              17,
+              21
+            ],
+            [
+              1060,
+              1020,
+              17,
+              21
+            ],
+            [
+              1077,
+              1020,
+              18,
+              21
+            ]
+          ],
+          "bags": [
+            [
+              1101,
+              1020,
+              25,
+              25
+            ],
+            [
+              1126,
+              1020,
+              25,
+              25
+            ],
+            [
+              1151,
+              1020,
+              25,
+              25
+            ],
+            [
+              1176,
+              1020,
+              26,
+              25
+            ],
+            [
+              1202,
+              1020,
+              25,
+              25
+            ],
+            [
+              1227,
+              1020,
+              25,
+              25
+            ]
+          ],
+          "queue": [
+            [
+              1258,
+              1020,
+              26,
+              26
+            ]
+          ]
+        },
+        "candidate_shared_state_intersections": [],
+        "candidate_tooltip_intersections": [],
+        "candidate_party_raid_if_both_visible": [
+          [
+            "partyGroup",
+            "grid2.raid",
+            178,
+            132
+          ],
+          [
+            "partyPetGroup",
+            "grid2.raid",
+            96,
+            132
+          ],
+          [
+            "partyTargetGroup",
+            "grid2.raid",
+            120,
+            132
+          ]
+        ],
+        "candidate_quest_to_boss_horizontal_gap": 16,
+        "quest_heading_body": [
+          24,
+          20
+        ],
+        "pet_rows": {
+          "petTarget": [
+            218,
+            420,
+            240,
+            24
+          ],
+          "pet": [
+            218,
+            450,
+            240,
+            32
+          ],
+          "dominos.pet": [
+            218,
+            490,
+            238,
+            22
+          ],
+          "quartz.pet": [
+            218,
+            518,
+            240,
+            24
+          ]
+        },
+        "player": [
+          438,
+          620,
+          240,
+          48
+        ],
+        "target": [
+          338,
+          680,
+          340,
+          56
+        ]
+      }
+    },
+    "archives": {
+      "pitbull4": {
+        "path": "_local_only/phase26-work-r151-20261119/step47-candidate-02/archives/DevilForever-0.1.0.zip",
+        "sha256": "372c7e498ff49a1064ca353b52382abc4d9f761e98be25669fcc790e932531d1",
+        "render_inputs_matching_older_comparison_archive": 18,
+        "changed_render_inputs": [],
+        "missing_render_inputs": [],
+        "first_party_quest_references": {
+          "Interface/AddOns/DevilForever_Skin_Nameplates/SessionProbe.lua": [
+            13
+          ]
+        },
+        "selected_source_lines": {
+          "DevilForever_Appearance/Composition.lua": [
+            [
+              85,
+              "texture:SetSize(values.width, values.height)"
+            ],
+            [
+              118,
+              "self.crest = self.crest or chat:CreateTexture(nil, \"ARTWORK\")"
+            ],
+            [
+              122,
+              "local inset = math.ceil(height * 0.145)"
+            ],
+            [
+              123,
+              "local rightInset = math.ceil(size.width * 0.35)"
+            ],
+            [
+              124,
+              "self.crest:SetPoint(\"BOTTOMRIGHT\", chat, \"BOTTOMRIGHT\", -rightInset, inset)"
+            ],
+            [
+              126,
+              "self.crest:SetSize(side, side)"
+            ],
+            [
+              128,
+              "self.crest:SetTexCoord(0, 0.70, 0, 0.70)"
+            ],
+            [
+              130,
+              "self.crest:SetAlpha(0.16)"
+            ]
+          ],
+          "DevilForever_Skin_Nameplates/Appearance.lua": [
+            [
+              39,
+              "bar:SetSize(values.width * pixel, values.height * pixel)"
+            ],
+            [
+              49,
+              "font:SetFont(values.font.path or Core.Theme:Get(profile.fontToken), values.font.size * pixel,"
+            ]
+          ],
+          "DevilForever_Skin_Nameplates/SessionProbe.lua": [
+            [
+              13,
+              "questWatch = \"QuestWatchFrame\", watch = \"WatchFrame\", objectives = \"ObjectiveTrackerFrame\","
+            ],
+            [
+              40,
+              "local x, y, width, height = read(frame.GetRect, frame)"
+            ]
+          ],
+          "DevilForever_DetailsLayout/Layout.lua": []
+        }
+      },
+      "fuf": {
+        "path": "_local_only/phase26-work-r151-20261119/step47-candidate-02/archives/DevilForever-0.1.0-fuf.zip",
+        "sha256": "2160bacc4633b5aee4ce7516ed33c98ad0e5a6560d3b07d3af15348d65d4217f",
+        "render_inputs_matching_older_comparison_archive": 17,
+        "changed_render_inputs": [],
+        "missing_render_inputs": [
+          "Interface/AddOns/PitBull4/UnitFrame.lua"
+        ],
+        "first_party_quest_references": {
+          "Interface/AddOns/DevilForever_Skin_Nameplates/SessionProbe.lua": [
+            13
+          ]
+        },
+        "selected_source_lines": {
+          "DevilForever_Appearance/Composition.lua": [
+            [
+              85,
+              "texture:SetSize(values.width, values.height)"
+            ],
+            [
+              118,
+              "self.crest = self.crest or chat:CreateTexture(nil, \"ARTWORK\")"
+            ],
+            [
+              122,
+              "local inset = math.ceil(height * 0.145)"
+            ],
+            [
+              123,
+              "local rightInset = math.ceil(size.width * 0.35)"
+            ],
+            [
+              124,
+              "self.crest:SetPoint(\"BOTTOMRIGHT\", chat, \"BOTTOMRIGHT\", -rightInset, inset)"
+            ],
+            [
+              126,
+              "self.crest:SetSize(side, side)"
+            ],
+            [
+              128,
+              "self.crest:SetTexCoord(0, 0.70, 0, 0.70)"
+            ],
+            [
+              130,
+              "self.crest:SetAlpha(0.16)"
+            ]
+          ],
+          "DevilForever_Skin_Nameplates/Appearance.lua": [
+            [
+              39,
+              "bar:SetSize(values.width * pixel, values.height * pixel)"
+            ],
+            [
+              49,
+              "font:SetFont(values.font.path or Core.Theme:Get(profile.fontToken), values.font.size * pixel,"
+            ]
+          ],
+          "DevilForever_Skin_Nameplates/SessionProbe.lua": [
+            [
+              13,
+              "questWatch = \"QuestWatchFrame\", watch = \"WatchFrame\", objectives = \"ObjectiveTrackerFrame\","
+            ],
+            [
+              40,
+              "local x, y, width, height = read(frame.GetRect, frame)"
+            ]
+          ],
+          "DevilForever_DetailsLayout/Layout.lua": []
+        }
+      },
+      "one-session": {
+        "path": "_local_only/phase26-work-r151-20261119/step47-candidate-02/archives/DevilForever-0.1.0-one-session.zip",
+        "sha256": "9aa72ad49146e66cc3893a448f1dfef01bc4763a098b8d1db81b7025f4a10f37",
+        "render_inputs_matching_older_comparison_archive": 18,
+        "changed_render_inputs": [],
+        "missing_render_inputs": [],
+        "first_party_quest_references": {
+          "Interface/AddOns/DevilForever_Skin_Nameplates/SessionProbe.lua": [
+            13
+          ]
+        },
+        "selected_source_lines": {
+          "DevilForever_Appearance/Composition.lua": [
+            [
+              85,
+              "texture:SetSize(values.width, values.height)"
+            ],
+            [
+              118,
+              "self.crest = self.crest or chat:CreateTexture(nil, \"ARTWORK\")"
+            ],
+            [
+              122,
+              "local inset = math.ceil(height * 0.145)"
+            ],
+            [
+              123,
+              "local rightInset = math.ceil(size.width * 0.35)"
+            ],
+            [
+              124,
+              "self.crest:SetPoint(\"BOTTOMRIGHT\", chat, \"BOTTOMRIGHT\", -rightInset, inset)"
+            ],
+            [
+              126,
+              "self.crest:SetSize(side, side)"
+            ],
+            [
+              128,
+              "self.crest:SetTexCoord(0, 0.70, 0, 0.70)"
+            ],
+            [
+              130,
+              "self.crest:SetAlpha(0.16)"
+            ]
+          ],
+          "DevilForever_Skin_Nameplates/Appearance.lua": [
+            [
+              39,
+              "bar:SetSize(values.width * pixel, values.height * pixel)"
+            ],
+            [
+              49,
+              "font:SetFont(values.font.path or Core.Theme:Get(profile.fontToken), values.font.size * pixel,"
+            ]
+          ],
+          "DevilForever_Skin_Nameplates/SessionProbe.lua": [
+            [
+              13,
+              "questWatch = \"QuestWatchFrame\", watch = \"WatchFrame\", objectives = \"ObjectiveTrackerFrame\","
+            ],
+            [
+              40,
+              "local x, y, width, height = read(frame.GetRect, frame)"
+            ]
+          ],
+          "DevilForever_DetailsLayout/Layout.lua": []
+        }
+      }
+    }
+  },
+  "packaged_lua_doubles": {
+    "actualZipLua": "_local_only\\phase26-work-r151-20261119\\step47-candidate-02\\archives\\DevilForever-0.1.0.zip",
+    "presetSelection": [
+      [
+        1920,
+        1080,
+        "fhd"
+      ],
+      [
+        2560,
+        1440,
+        "qhd"
+      ],
+      [
+        3840,
+        2160,
+        "uhd"
+      ],
+      [
+        3440,
+        1440,
+        "qhd"
+      ],
+      [
+        3862,
+        2160,
+        "uhd"
+      ],
+      [
+        1920,
+        1200,
+        "fhd"
+      ]
+    ],
+    "themeCaptureCalls": [
+      "devil",
+      "orc",
+      "troll"
+    ],
+    "themeRowsKept": 1,
+    "lastTheme": "troll"
+  },
+  "approved_local_mockup": {
+    "path": "outputs/devil-forever-mobile-orc-rail.html",
+    "sha256": "6961e4f5e7c853d1f62e1755b983cf20e3100772b30cae5dfee000f4467867aa"
+  },
+  "nameplate_test": {
+    "source": "Interface/AddOns/DevilForever_Skin_Nameplates/Appearance.lua",
+    "combat_size_and_font_writes": [
+      0,
+      0
+    ],
+    "after_combat_size_and_font_writes": [
+      1,
+      1
+    ],
+    "after_combat_width_height_text_pixels": [
+      280,
+      30,
+      28
+    ],
+    "protected_out_of_combat_size_and_font_writes": [
+      0,
+      0
+    ]
+  },
+  "game_client_ran": false,
+  "current_install_matches_older_theme_archive": {
+    "total": 103,
+    "compositionLua": 1,
+    "panelTextures": 78,
+    "petBorders": 13,
+    "crestTextures": 11,
+    "compared_variants": [
+      "older-one-session",
+      "reviewed-pitbull4"
+    ]
+  },
+  "sample_text_widths": {
+    "font": "Malgun Gothic in offline mockup",
+    "presetOrder": [
+      "fhd",
+      "qhd",
+      "uhd"
+    ],
+    "quest": {
+      "available_pixels": [
+        324,
+        384,
+        488
+      ],
+      "deliberately_long_line_pixels": [
+        750,
+        896,
+        1130
+      ],
+      "renderer_wraps": false
+    },
+    "status": {
+      "available_pixels": [
+        1920,
+        2560,
+        3840
+      ],
+      "six_sample_items_with_spacing_pixels": [
+        633,
+        689,
+        850
+      ]
+    }
+  }
+}
