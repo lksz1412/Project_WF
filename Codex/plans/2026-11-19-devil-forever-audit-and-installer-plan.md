@@ -1,6 +1,6 @@
 # Devil Forever 전면 재검토와 Windows 설치기 마스터 플랜
 
-2026-11-19 · R151 실행 승인 · Step 44 착수
+2026-11-19 · R151 실행 승인 · Phase 26.1 통과 · Step 46 착수
 
 ## 간략 목차
 
@@ -106,8 +106,8 @@
 
 | Phase | 세부 계획서 경로 | Step 범위 | 상태 |
 |---|---|---|---|
-| 26.1 요구·배포 대조 | [Phase 26.1 세부계획](2026-11-19-devil-forever-audit-and-installer-phase26.1-세부계획.md) | 44–45 | R151 승인 뒤 Step 44 실행 중 |
-| 26.2 기능 반증·수정·재정립 | [Phase 26.2 세부계획](2026-11-19-devil-forever-audit-and-installer-phase26.2-세부계획.md) | 46–48 | 26.1 뒤. 중대·중간 결함 재검과 배포 기준 수용까지 |
+| 26.1 요구·배포 대조 | [Phase 26.1 세부계획](2026-11-19-devil-forever-audit-and-installer-phase26.1-세부계획.md) | 44–45 | [통과](../results/PHASE_26.1_audit-baseline_RESULT.md) |
+| 26.2 기능 반증·수정·재정립 | [Phase 26.2 세부계획](2026-11-19-devil-forever-audit-and-installer-phase26.2-세부계획.md) | 46–48 | Step 46 착수. 결함 재검과 배포 기준 수용까지 |
 | 27.1 설치 계약 | [Phase 27.1 계약 초안](2026-11-19-devil-forever-audit-and-installer-phase27.1-세부계획.md) | 49–50 | R150 초안 작성. 26.2 수용 뒤 감사로 확정한 목록·프리셋·버전을 사용 |
 | 27.2 엔진 | `phase27.2-세부계획.md` | 51–52 | 27.1 뒤 |
 | 27.3 화면·패키지 | `phase27.3-세부계획.md` | 53–54 | 27.2 뒤 |
@@ -146,12 +146,7 @@
 
 ## Correction History
 
-| 날짜 | 변경 |
-|---|---|
-| 2026-11-19 | 기존 Phase 25의 완료·대기 범위를 보존하고 이후 작업을 제안. 두 참고 프로젝트의 설치 흐름과 Python 없는 실행 방향 반영 |
-| 2026-11-19 | 초안 독립 검수에서 확인한 결함 수정·재검 단계 부재를 보완. 전면 재검토 수용 뒤 설치 계약을 확정. 새 범위 Step 44–58 |
-| 2026-11-19 | R150에 따라 Phase 26.1 세부계획과 Phase 27.1 설치 계약을 구체화. Windows 11 x64 오프라인을 첫판 작업 기준으로 채택 |
-| 2026-11-19 | R151 실행 승인. Step 44 착수 후 Phase 26.2의 기능별 반증 조건과 배포 기준 수용 조건을 세부계획에 기록 |
+[계획 이력](2026-11-19-devil-forever-audit-and-installer-plan_이력.md)
 
 ## Decisions Required
 

@@ -1,0 +1,398 @@
+{
+  "schema": 1,
+  "stage": "pre-audit baseline",
+  "masterStep": 45,
+  "historicalReference": "Claude/results/Step 40 — Codex collection integration.json",
+  "builtFrom": "existing D: working tree including pre-existing local changes",
+  "sourceHead": "16b801b9f884c2675e8f58e53864d51693c81a13",
+  "variants": [
+    {
+      "id": "pitbull4",
+      "zip": "_local_only/phase26-1-baseline-20261119/archives/DevilForever-0.1.0.zip",
+      "sha256": "4cfd4b8076a067581708350cf6b614dd2c19d714a759c0105c78e4fd89bf40aa",
+      "priorZip": "_local_only/phase25-install-verified-20261119/archives/DevilForever-0.1.0.zip",
+      "downloadBytes": 82452657,
+      "payloadBytes": 337439562,
+      "addonFolders": 35,
+      "files": 2279,
+      "luaFiles": 1344,
+      "internalDigestCount": 2278,
+      "interface": 16001,
+      "version": "0.1.0",
+      "deploymentRole": "pitbull4 standalone trial",
+      "folders": [
+        "!DevilForever_Core",
+        "Details",
+        "Details_TinyThreat",
+        "DevilForever_Appearance",
+        "DevilForever_ChatSetup",
+        "DevilForever_DetailsLayout",
+        "DevilForever_Skin_Dominos",
+        "DevilForever_Skin_Nameplates",
+        "DevilForever_Skin_NativeChat",
+        "DevilForever_Skin_StatusStrip",
+        "DevilForever_StatusStrip",
+        "Dominos",
+        "Dominos_Config",
+        "ExperienceForever",
+        "Grid2",
+        "Grid2LDB",
+        "Grid2Options",
+        "Hekili",
+        "Hekili_Druid",
+        "Hekili_Hunter",
+        "Hekili_Mage",
+        "Hekili_Paladin",
+        "Hekili_Priest",
+        "Hekili_Rogue",
+        "Hekili_Shaman",
+        "Hekili_Shared",
+        "Hekili_Warlock",
+        "Hekili_Warrior",
+        "Masque",
+        "Masque_Dominos",
+        "Masque_Onyx",
+        "PitBull4",
+        "ProfileManager",
+        "Quartz",
+        "SexyMap"
+      ]
+    },
+    {
+      "id": "fuf",
+      "zip": "_local_only/phase26-1-baseline-20261119/archives/DevilForever-0.1.0-fuf.zip",
+      "sha256": "3fe183a789e1908723a6483081a0cd7c4fb29bab0aa1888293815d246a2bc7ca",
+      "priorZip": "_local_only/phase25-install-verified-20261119/archives/DevilForever-0.1.0-fuf.zip",
+      "downloadBytes": 83095139,
+      "payloadBytes": 340590144,
+      "addonFolders": 37,
+      "files": 2213,
+      "luaFiles": 1288,
+      "internalDigestCount": 2212,
+      "interface": 16001,
+      "version": "0.1.0",
+      "deploymentRole": "fuf standalone trial",
+      "folders": [
+        "!DevilForever_Core",
+        "Details",
+        "Details_TinyThreat",
+        "DevilForever_Appearance",
+        "DevilForever_Castbars",
+        "DevilForever_ChatSetup",
+        "DevilForever_DetailsLayout",
+        "DevilForever_FUFDefaults",
+        "DevilForever_Skin_Dominos",
+        "DevilForever_Skin_Nameplates",
+        "DevilForever_Skin_NativeChat",
+        "DevilForever_Skin_StatusStrip",
+        "DevilForever_StatusStrip",
+        "Dominos",
+        "Dominos_Config",
+        "ExperienceForever",
+        "ForeverUnitFrames",
+        "Grid2",
+        "Grid2LDB",
+        "Grid2Options",
+        "Hekili",
+        "Hekili_Druid",
+        "Hekili_Hunter",
+        "Hekili_Mage",
+        "Hekili_Paladin",
+        "Hekili_Priest",
+        "Hekili_Rogue",
+        "Hekili_Shaman",
+        "Hekili_Shared",
+        "Hekili_Warlock",
+        "Hekili_Warrior",
+        "Masque",
+        "Masque_Dominos",
+        "Masque_Onyx",
+        "ProfileManager",
+        "Quartz",
+        "SexyMap"
+      ]
+    },
+    {
+      "id": "one-session",
+      "zip": "_local_only/phase26-1-baseline-20261119/archives/DevilForever-0.1.0-one-session.zip",
+      "sha256": "3d78bec772f2a463c41d99424b0a9f605aac977a6fada649d69958633c6fd8cc",
+      "priorZip": "_local_only/phase25-install-verified-20261119/archives/DevilForever-0.1.0-one-session.zip",
+      "downloadBytes": 83991764,
+      "payloadBytes": 343781341,
+      "addonFolders": 38,
+      "files": 2522,
+      "luaFiles": 1474,
+      "internalDigestCount": 2521,
+      "interface": 16001,
+      "version": "0.1.0",
+      "deploymentRole": "single-log-in comparison only",
+      "folders": [
+        "!DevilForever_Core",
+        "Details",
+        "Details_TinyThreat",
+        "DevilForever_Appearance",
+        "DevilForever_Castbars",
+        "DevilForever_ChatSetup",
+        "DevilForever_DetailsLayout",
+        "DevilForever_FUFDefaults",
+        "DevilForever_Skin_Dominos",
+        "DevilForever_Skin_Nameplates",
+        "DevilForever_Skin_NativeChat",
+        "DevilForever_Skin_StatusStrip",
+        "DevilForever_StatusStrip",
+        "Dominos",
+        "Dominos_Config",
+        "ExperienceForever",
+        "ForeverUnitFrames",
+        "Grid2",
+        "Grid2LDB",
+        "Grid2Options",
+        "Hekili",
+        "Hekili_Druid",
+        "Hekili_Hunter",
+        "Hekili_Mage",
+        "Hekili_Paladin",
+        "Hekili_Priest",
+        "Hekili_Rogue",
+        "Hekili_Shaman",
+        "Hekili_Shared",
+        "Hekili_Warlock",
+        "Hekili_Warrior",
+        "Masque",
+        "Masque_Dominos",
+        "Masque_Onyx",
+        "PitBull4",
+        "ProfileManager",
+        "Quartz",
+        "SexyMap"
+      ]
+    }
+  ],
+  "variantFolders": {
+    "common": [
+      "!DevilForever_Core",
+      "Details",
+      "Details_TinyThreat",
+      "DevilForever_Appearance",
+      "DevilForever_ChatSetup",
+      "DevilForever_DetailsLayout",
+      "DevilForever_Skin_Dominos",
+      "DevilForever_Skin_Nameplates",
+      "DevilForever_Skin_NativeChat",
+      "DevilForever_Skin_StatusStrip",
+      "DevilForever_StatusStrip",
+      "Dominos",
+      "Dominos_Config",
+      "ExperienceForever",
+      "Grid2",
+      "Grid2LDB",
+      "Grid2Options",
+      "Hekili",
+      "Hekili_Druid",
+      "Hekili_Hunter",
+      "Hekili_Mage",
+      "Hekili_Paladin",
+      "Hekili_Priest",
+      "Hekili_Rogue",
+      "Hekili_Shaman",
+      "Hekili_Shared",
+      "Hekili_Warlock",
+      "Hekili_Warrior",
+      "Masque",
+      "Masque_Dominos",
+      "Masque_Onyx",
+      "ProfileManager",
+      "Quartz",
+      "SexyMap"
+    ],
+    "pitbull4Only": [
+      "PitBull4"
+    ],
+    "fufOnly": [
+      "DevilForever_Castbars",
+      "DevilForever_FUFDefaults",
+      "ForeverUnitFrames"
+    ]
+  },
+  "sourceFiles": {
+    "Collection/AddOns/!DevilForever_Core/Presets.lua": {
+      "sha256": "c8ce5adbe2dc94b27f08c98d46eb412121af503b310a90905295f0b4f1ec8eee",
+      "lines": 501,
+      "variants": [
+        "pitbull4",
+        "fuf",
+        "one-session"
+      ]
+    },
+    "Collection/AddOns/!DevilForever_Core/Presets/fhd.lua": {
+      "sha256": "54d0a9f351c56a65e73fa0392144e39fa09806fd62eee68ba7010a30ec3c767c",
+      "lines": 571,
+      "variants": [
+        "pitbull4",
+        "fuf",
+        "one-session"
+      ]
+    },
+    "Collection/AddOns/!DevilForever_Core/Presets/qhd.lua": {
+      "sha256": "febb896fcbf5d17a7f50aead01220ac8bdd1ff13882d09f4f31c642fc341a324",
+      "lines": 571,
+      "variants": [
+        "pitbull4",
+        "fuf",
+        "one-session"
+      ]
+    },
+    "Collection/AddOns/!DevilForever_Core/Presets/uhd.lua": {
+      "sha256": "8d7dcb03587a9a152b4947c29ba8a328891060c918b2fc3bf275d59d991bfd26",
+      "lines": 571,
+      "variants": [
+        "pitbull4",
+        "fuf",
+        "one-session"
+      ]
+    },
+    "Collection/AddOns/DevilForever_ChatSetup/ChatLayout.lua": {
+      "sha256": "21c248b988333a26f069e868b903f890d0100dea4f23e1d22ec031cd126bf1c8",
+      "lines": 54,
+      "variants": [
+        "pitbull4",
+        "fuf",
+        "one-session"
+      ]
+    },
+    "Collection/AddOns/DevilForever_ChatSetup/ChatSetup.lua": {
+      "sha256": "40d9e87e57e0946db5b8f239c489ed245af53c790688715944a09ba80bab9c4e",
+      "lines": 265,
+      "variants": [
+        "pitbull4",
+        "fuf",
+        "one-session"
+      ]
+    },
+    "Collection/AddOns/DevilForever_Skin_NativeChat/Skin.lua": {
+      "sha256": "fcb0aaedd129153690c715ee9d30952a6100f86ba3b010fe69e6a51e85307268",
+      "lines": 150,
+      "variants": [
+        "pitbull4",
+        "fuf",
+        "one-session"
+      ]
+    },
+    "Collection/AddOns/DevilForever_Appearance/Appearance.lua": {
+      "sha256": "6b00566c5eb05f685ac9036d10b282452a6445f9b5d20c95740fdc463961f3ef",
+      "lines": 189,
+      "variants": [
+        "pitbull4",
+        "fuf",
+        "one-session"
+      ]
+    },
+    "Collection/AddOns/DevilForever_Appearance/Composition.lua": {
+      "sha256": "08ce25dc9735ec66031caa4fe07547c488b0c9bf13f2c0c8645a6d890ca2f3dd",
+      "lines": 134,
+      "variants": [
+        "pitbull4",
+        "fuf",
+        "one-session"
+      ]
+    },
+    "Collection/AddOns/DevilForever_Appearance/Crests.lua": {
+      "sha256": "668cf4925990e5b6385678c2d182fe9db893ee7336e1ea8d653267ef42010d15",
+      "lines": 17,
+      "variants": [
+        "pitbull4",
+        "fuf",
+        "one-session"
+      ]
+    },
+    "Collection/AddOns/DevilForever_Skin_Dominos/Skin.lua": {
+      "sha256": "834c59d7f793a385fa1f0b1d7fe5110b22b085b6127a8c5a0c899386c05a0a87",
+      "lines": 85,
+      "variants": [
+        "pitbull4",
+        "fuf",
+        "one-session"
+      ]
+    },
+    "Collection/AddOns/DevilForever_Skin_Nameplates/Appearance.lua": {
+      "sha256": "869795d8e0b9974b921a7d6cf23f8d7e679b2da39fdd9ac85bc9ce5d8fc529da",
+      "lines": 125,
+      "variants": [
+        "pitbull4",
+        "fuf",
+        "one-session"
+      ]
+    },
+    "Collection/AddOns/DevilForever_Skin_Nameplates/SessionProbe.lua": {
+      "sha256": "d4ebab4ed55558a7d2a68962fcb6f747d5914062170755af5de3fac2c64174d5",
+      "lines": 166,
+      "variants": [
+        "pitbull4",
+        "fuf",
+        "one-session"
+      ]
+    },
+    "Collection/AddOns/DevilForever_DetailsLayout/Layout.lua": {
+      "sha256": "0719f9331a9ff1d78a3d4268982fb029e540d9855cfe51b9d62d2f231f705af4",
+      "lines": 178,
+      "variants": [
+        "pitbull4",
+        "fuf",
+        "one-session"
+      ]
+    },
+    "Collection/AddOns/DevilForever_FUFDefaults/FUFDefaults.lua": {
+      "sha256": "bf8c83d333cf28ba34114acd2d281f2c701985d7cfa9412bbab89fe14ec706c0",
+      "lines": 170,
+      "variants": [
+        "fuf",
+        "one-session"
+      ]
+    },
+    "Collection/AddOns/DevilForever_FUFDefaults/DevilForever_FUFDefaults.toc": {
+      "sha256": "0af480e93e1fe4487c896c035cb9bd1e25b6f05df42ed07f40a5601576a81b4e",
+      "lines": 8,
+      "variants": [
+        "fuf",
+        "one-session"
+      ]
+    },
+    "Collection/AddOns/!DevilForever_Core/Defaults/SexyMap.lua": {
+      "sha256": "f3604d94d87849d1e711c46e6c8bdcd4ef20953eebb3b62304bb6abbd0e684e0",
+      "lines": 163,
+      "variants": [
+        "pitbull4",
+        "fuf",
+        "one-session"
+      ]
+    },
+    "Collection/install.json": {
+      "sha256": "570483d301c5cf75b8295570748c6d0ecd2d71acd122d0b3a2b2d000385487fe",
+      "lines": 93,
+      "variants": []
+    },
+    "Collection/tools/build.py": {
+      "sha256": "e24895e7cba2d2571bf97b7e11850680506831f2dfaadd0ce7fa0c1284fc194a",
+      "lines": 342,
+      "variants": []
+    },
+    "Collection/data/feature-map.md": {
+      "sha256": "aec166958376fb3187e2528ea0574f9155cc0592931ea07509077cbbee3318ca",
+      "lines": 77,
+      "variants": []
+    },
+    "References/codex-appearance/24/feature-positions.json": {
+      "sha256": "8a7cc55843cca22f7093a4a04c8c4cff68d5f533b6d801f0e014a4654b7ddafe",
+      "lines": 839,
+      "variants": []
+    },
+    "References/codex-verify/one-session-review.md": {
+      "sha256": "55b8509d48ab4240134ae84ce427e3ee1a7fbad70a61f850d8fedae1a97c7614",
+      "lines": 52,
+      "variants": []
+    }
+  },
+  "normalBuildMatchesPitBull4": true,
+  "fullChecksLog": "_local_only/phase26-1-baseline-20261119/verification.txt",
+  "currentGameTested": false
+}
