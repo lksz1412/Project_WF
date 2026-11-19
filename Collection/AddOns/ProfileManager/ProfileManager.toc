@@ -1,0 +1,28 @@
+## Interface: 120105, 16001
+## Title: ProfileManager
+## Author: Lanaiba
+## Version: 4.0
+## Notes: Saves UI Profiles
+## SavedVariables: ProfileManagerDB
+## OptionalDeps: Ace3, LibDataBroker-1.1, LibDBIcon-1.0
+## IconTexture: Interface\AddOns\ProfileManager\Media\Icon.tga
+## AddonCompartmentFunc: ProfileManager_OnAddonCompartmentClick
+## AddonCompartmentFuncOnEnter: ProfileManager_OnAddonCompartmentEnter
+## AddonCompartmentFuncOnLeave: ProfileManager_OnAddonCompartmentLeave
+
+Libs\LibStub\LibStub.lua
+Libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
+Libs\LibDataBroker-1.1\LibDataBroker-1.1.lua
+Libs\LibDBIcon-1.0\LibDBIcon-1.0.lua
+Libs\AceDB-3.0\AceDB-3.0.xml
+Libs\LibDeflate\LibDeflate.lua
+Libs\LibSerialize\LibSerialize.lua
+
+Core.lua
+Providers.lua
+Presets.lua
+Keybinds.lua
+Addons.lua
+GameSettings.lua
+Commands.lua
+UI.lua

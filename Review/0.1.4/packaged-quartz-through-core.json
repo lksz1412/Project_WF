@@ -1,0 +1,110 @@
+{
+  "luaCases": [
+    {
+      "variant": "DevilForever-0.1.4-fuf",
+      "case": "fresh",
+      "Buff": false,
+      "auraRefreshRequests": 0,
+      "castModulesEnabled": 4
+    },
+    {
+      "variant": "DevilForever-0.1.4-fuf",
+      "case": "existing-enabled",
+      "Buff": true,
+      "auraRefreshRequests": 41,
+      "castModulesEnabled": 4
+    },
+    {
+      "variant": "DevilForever-0.1.4-fuf",
+      "case": "other-character-default",
+      "Buff": true,
+      "auraRefreshRequests": 41,
+      "castModulesEnabled": 4
+    },
+    {
+      "variant": "DevilForever-0.1.4-fuf",
+      "case": "namespace-default",
+      "Buff": true,
+      "auraRefreshRequests": 41,
+      "castModulesEnabled": 4
+    },
+    {
+      "variant": "DevilForever-0.1.4-fuf",
+      "case": "new-default-beside-custom",
+      "Buff": false,
+      "auraRefreshRequests": 0,
+      "castModulesEnabled": 4
+    },
+    {
+      "variant": "DevilForever-0.1.4-one-session",
+      "case": "fresh",
+      "Buff": false,
+      "auraRefreshRequests": 0,
+      "castModulesEnabled": 4
+    },
+    {
+      "variant": "DevilForever-0.1.4-one-session",
+      "case": "existing-enabled",
+      "Buff": true,
+      "auraRefreshRequests": 41,
+      "castModulesEnabled": 4
+    },
+    {
+      "variant": "DevilForever-0.1.4-one-session",
+      "case": "other-character-default",
+      "Buff": true,
+      "auraRefreshRequests": 41,
+      "castModulesEnabled": 4
+    },
+    {
+      "variant": "DevilForever-0.1.4-one-session",
+      "case": "namespace-default",
+      "Buff": true,
+      "auraRefreshRequests": 41,
+      "castModulesEnabled": 4
+    },
+    {
+      "variant": "DevilForever-0.1.4-one-session",
+      "case": "new-default-beside-custom",
+      "Buff": false,
+      "auraRefreshRequests": 0,
+      "castModulesEnabled": 4
+    },
+    {
+      "variant": "DevilForever-0.1.4",
+      "case": "fresh",
+      "Buff": false,
+      "auraRefreshRequests": 0,
+      "castModulesEnabled": 4
+    },
+    {
+      "variant": "DevilForever-0.1.4",
+      "case": "existing-enabled",
+      "Buff": true,
+      "auraRefreshRequests": 41,
+      "castModulesEnabled": 4
+    },
+    {
+      "variant": "DevilForever-0.1.4",
+      "case": "other-character-default",
+      "Buff": true,
+      "auraRefreshRequests": 41,
+      "castModulesEnabled": 4
+    },
+    {
+      "variant": "DevilForever-0.1.4",
+      "case": "namespace-default",
+      "Buff": true,
+      "auraRefreshRequests": 41,
+      "castModulesEnabled": 4
+    },
+    {
+      "variant": "DevilForever-0.1.4",
+      "case": "new-default-beside-custom",
+      "Buff": false,
+      "auraRefreshRequests": 0,
+      "castModulesEnabled": 4
+    }
+  ],
+  "realGameMeasured": false
+}

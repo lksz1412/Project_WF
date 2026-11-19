@@ -1,0 +1,8 @@
+{
+  "zip": "DevilForever-FrameTimeProbe.zip",
+  "sha256": "ace620bc6c35d6476013a1f7936a7c154e23dfcd07f5d1b8fa806c1c50590f4c",
+  "files": [
+    "Interface/AddOns/DevilForever_PerfProbe/DevilForever_PerfProbe.toc",
+    "Interface/AddOns/DevilForever_PerfProbe/PerfProbe.lua"
+  ]
+}

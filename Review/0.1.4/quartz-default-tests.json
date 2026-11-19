@@ -1,0 +1,254 @@
+[
+  {
+    "variant": "pitbull4",
+    "case": "fresh",
+    "optIn": true,
+    "collectionPresets": true,
+    "state": "applied"
+  },
+  {
+    "variant": "pitbull4",
+    "case": "existingExplicit",
+    "optIn": true,
+    "collectionPresets": true,
+    "state": "existing-profile-kept"
+  },
+  {
+    "variant": "pitbull4",
+    "case": "existingMissing",
+    "optIn": true,
+    "collectionPresets": true,
+    "state": "existing-profile-kept"
+  },
+  {
+    "variant": "pitbull4",
+    "case": "customProfile",
+    "optIn": true,
+    "collectionPresets": true,
+    "state": "existing-profile-kept"
+  },
+  {
+    "variant": "pitbull4",
+    "case": "sharedCombined",
+    "optIn": true,
+    "collectionPresets": true,
+    "state": "existing-profile-kept"
+  },
+  {
+    "variant": "pitbull4",
+    "case": "sharedCharacterOnly",
+    "optIn": true,
+    "collectionPresets": true,
+    "state": "existing-profile-kept"
+  },
+  {
+    "variant": "pitbull4",
+    "case": "sharedNamespaceOnly",
+    "optIn": true,
+    "collectionPresets": true,
+    "state": "existing-profile-kept"
+  },
+  {
+    "variant": "pitbull4",
+    "case": "otherCustomOnly",
+    "optIn": true,
+    "collectionPresets": true,
+    "state": "applied"
+  },
+  {
+    "variant": "pitbull4",
+    "case": "otherNamespaceCustom",
+    "optIn": true,
+    "collectionPresets": true,
+    "state": "applied"
+  },
+  {
+    "variant": "pitbull4",
+    "case": "sharedCombined",
+    "optIn": false,
+    "collectionPresets": true,
+    "state": "applied"
+  },
+  {
+    "variant": "pitbull4",
+    "case": "sharedCharacterOnly",
+    "optIn": false,
+    "collectionPresets": true,
+    "state": "applied"
+  },
+  {
+    "variant": "pitbull4",
+    "case": "sharedNamespaceOnly",
+    "optIn": false,
+    "collectionPresets": true,
+    "state": "applied"
+  },
+  {
+    "variant": "fuf",
+    "case": "fresh",
+    "optIn": true,
+    "collectionPresets": true,
+    "state": "applied"
+  },
+  {
+    "variant": "fuf",
+    "case": "existingExplicit",
+    "optIn": true,
+    "collectionPresets": true,
+    "state": "existing-profile-kept"
+  },
+  {
+    "variant": "fuf",
+    "case": "existingMissing",
+    "optIn": true,
+    "collectionPresets": true,
+    "state": "existing-profile-kept"
+  },
+  {
+    "variant": "fuf",
+    "case": "customProfile",
+    "optIn": true,
+    "collectionPresets": true,
+    "state": "existing-profile-kept"
+  },
+  {
+    "variant": "fuf",
+    "case": "sharedCombined",
+    "optIn": true,
+    "collectionPresets": true,
+    "state": "existing-profile-kept"
+  },
+  {
+    "variant": "fuf",
+    "case": "sharedCharacterOnly",
+    "optIn": true,
+    "collectionPresets": true,
+    "state": "existing-profile-kept"
+  },
+  {
+    "variant": "fuf",
+    "case": "sharedNamespaceOnly",
+    "optIn": true,
+    "collectionPresets": true,
+    "state": "existing-profile-kept"
+  },
+  {
+    "variant": "fuf",
+    "case": "otherCustomOnly",
+    "optIn": true,
+    "collectionPresets": true,
+    "state": "applied"
+  },
+  {
+    "variant": "fuf",
+    "case": "otherNamespaceCustom",
+    "optIn": true,
+    "collectionPresets": true,
+    "state": "applied"
+  },
+  {
+    "variant": "fuf",
+    "case": "sharedCombined",
+    "optIn": false,
+    "collectionPresets": true,
+    "state": "applied"
+  },
+  {
+    "variant": "fuf",
+    "case": "sharedCharacterOnly",
+    "optIn": false,
+    "collectionPresets": true,
+    "state": "applied"
+  },
+  {
+    "variant": "fuf",
+    "case": "sharedNamespaceOnly",
+    "optIn": false,
+    "collectionPresets": true,
+    "state": "applied"
+  },
+  {
+    "variant": "one-session",
+    "case": "fresh",
+    "optIn": true,
+    "collectionPresets": true,
+    "state": "applied"
+  },
+  {
+    "variant": "one-session",
+    "case": "existingExplicit",
+    "optIn": true,
+    "collectionPresets": true,
+    "state": "existing-profile-kept"
+  },
+  {
+    "variant": "one-session",
+    "case": "existingMissing",
+    "optIn": true,
+    "collectionPresets": true,
+    "state": "existing-profile-kept"
+  },
+  {
+    "variant": "one-session",
+    "case": "customProfile",
+    "optIn": true,
+    "collectionPresets": true,
+    "state": "existing-profile-kept"
+  },
+  {
+    "variant": "one-session",
+    "case": "sharedCombined",
+    "optIn": true,
+    "collectionPresets": true,
+    "state": "existing-profile-kept"
+  },
+  {
+    "variant": "one-session",
+    "case": "sharedCharacterOnly",
+    "optIn": true,
+    "collectionPresets": true,
+    "state": "existing-profile-kept"
+  },
+  {
+    "variant": "one-session",
+    "case": "sharedNamespaceOnly",
+    "optIn": true,
+    "collectionPresets": true,
+    "state": "existing-profile-kept"
+  },
+  {
+    "variant": "one-session",
+    "case": "otherCustomOnly",
+    "optIn": true,
+    "collectionPresets": true,
+    "state": "applied"
+  },
+  {
+    "variant": "one-session",
+    "case": "otherNamespaceCustom",
+    "optIn": true,
+    "collectionPresets": true,
+    "state": "applied"
+  },
+  {
+    "variant": "one-session",
+    "case": "sharedCombined",
+    "optIn": false,
+    "collectionPresets": true,
+    "state": "applied"
+  },
+  {
+    "variant": "one-session",
+    "case": "sharedCharacterOnly",
+    "optIn": false,
+    "collectionPresets": true,
+    "state": "applied"
+  },
+  {
+    "variant": "one-session",
+    "case": "sharedNamespaceOnly",
+    "optIn": false,
+    "collectionPresets": true,
+    "state": "applied"
+  }
+]

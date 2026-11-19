@@ -1,0 +1,227 @@
+local _, ns = ...
+
+-- Pure layout maths, kept free of widgets so it can be tested directly.
+local Layout = {}
+ns.Layout = Layout
+
+local function round(v) return math.floor(v + 0.5) end
+
+-- Split a frame height into title row, health bar and power bar; the three
+-- always fill the frame. Percentages are shares of the whole frame. Room
+-- they leave over goes to health and power in proportion to their shares;
+-- shares that do not fit shrink health (power keeps its share). A title of
+-- 0 % means no title row; with the power bar off, health takes everything
+-- below the title. Health keeps at least 1: the title gives way first.
+function Layout.Rows(height, titlePercent, healthPercent, powerPercent, powerEnabled)
+    local powered = powerEnabled and powerPercent > 0
+    local powerH = powered and math.max(1, math.floor(height * powerPercent / 100)) or 0
+    local titleH = 0
+    if titlePercent > 0 then
+        titleH = math.max(1, round(height * titlePercent / 100))
+        titleH = math.max(0, math.min(titleH, height - powerH - 1))
+    end
+    local rest = height - titleH
+    if not powered then
+        return titleH, rest, 0
+    end
+    if round(height * healthPercent / 100) + powerH < rest then
+        powerH = math.max(1, math.floor(rest * powerPercent / (healthPercent + powerPercent)))
+    end
+    return titleH, math.max(1, rest - powerH), powerH
+end
+
+-- Width of the overheal lane at the end of a health bar of barWidth: 8 %,
+-- at least 4.
+function Layout.OverhealLane(barWidth)
+    return math.max(4, round(barWidth * 0.08))
+end
+
+-- Space the portrait takes from the bars: a square as tall as the frame,
+-- on the left or the right. Returns left inset, right inset.
+function Layout.PortraitInsets(mode, height)
+    if mode == "LEFT" then return height, 0 end
+    if mode == "RIGHT" then return 0, height end
+    return 0, 0
+end
+
+-- Aura icons ------------------------------------------------------------------
+-- Icons grow in a primary direction and wrap into rows that run across
+-- it. Offsets are measured from the corner the icons grow away from.
+local VECTOR = { RIGHT = { 1, 0 }, LEFT = { -1, 0 }, UP = { 0, 1 }, DOWN = { 0, -1 } }
+local HORIZONTAL = { RIGHT = true, LEFT = true }
+
+-- The row direction, or the default one (down for horizontal growth,
+-- right for vertical) when it does not run across the primary direction.
+function Layout.AuraRowDirection(primary, row)
+    if HORIZONTAL[primary] then
+        if row == "UP" or row == "DOWN" then return row end
+        return "DOWN"
+    end
+    if row == "LEFT" or row == "RIGHT" then return row end
+    return "RIGHT"
+end
+
+-- Where the first icon sits: TOPLEFT for icons growing right with rows
+-- going down, and so on.
+function Layout.AuraCorner(primary, row)
+    row = Layout.AuraRowDirection(primary, row)
+    local horizontal, vertical = primary, row
+    if not HORIZONTAL[primary] then horizontal, vertical = row, primary end
+    local v = vertical == "DOWN" and "TOP" or "BOTTOM"
+    local h = horizontal == "RIGHT" and "LEFT" or "RIGHT"
+    return v .. h
+end
+
+-- Width and height of count icons laid out this way (0, 0 for none).
+-- rowSpacing: between rows (spacing when not given).
+function Layout.AuraExtent(count, perRow, size, spacing, primary, rowSpacing)
+    if count <= 0 then return 0, 0 end
+    local cols = math.min(count, perRow)
+    local lines = math.ceil(count / perRow)
+    local along = cols * size + (cols - 1) * spacing
+    local across = lines * size + (lines - 1) * (rowSpacing or spacing)
+    if HORIZONTAL[primary] then return along, across end
+    return across, along
+end
+
+-- Icons per row: a fixed number, or 0 for as many as fit the length (the
+-- frame's extent along the growth direction), at least one.
+function Layout.AuraPerRow(perRow, length, size, spacing)
+    if perRow > 0 then return perRow end
+    return math.max(1, math.floor((length + spacing) / (size + spacing)))
+end
+
+-- Two size classes: the first `own` icons (yours) in their own leading
+-- rows at shape.ownSize, shape.ownPerRow per row; the rest in the rows
+-- after them at shape.size, shape.perRow per row. shape also holds
+-- primary, row and spacing (along a row; rowGap adds to it between rows).
+-- Plain numbers in, plain numbers out: nothing is allocated.
+
+local function rowSpacing(shape)
+    return shape.spacing + (shape.rowGap or 0)
+end
+
+-- How far across the growth direction the own rows reach, with the gap to
+-- the rows after them (0 without own icons).
+local function ownDepth(shape, own)
+    if own <= 0 then return 0 end
+    local lines = math.ceil(own / shape.ownPerRow)
+    return lines * (shape.ownSize + rowSpacing(shape))
+end
+
+-- Offset of icon i from the corner, and its size.
+-- Yours first in the same rows as the rest (shape.ownSameRow): one flow of
+-- icons of two sizes. A row ends after perRowSetting icons, or (Auto) when
+-- the next icon would pass shape.length; a row is as deep as its biggest
+-- icon. Returns along, across and size of icon i (counting from 1).
+function Layout.AuraFlow(shape, i, own)
+    local along, across, depth, inRow = 0, 0, 0, 0
+    local limit = (shape.perRowSetting or 0) > 0 and shape.perRowSetting or nil
+    -- Half a pixel of slack, as the container needs (rows wrap too early
+    -- otherwise).
+    local length = (shape.length or math.huge) + 0.5
+    for n = 1, i do
+        local size = n <= own and shape.ownSize or shape.size
+        if inRow > 0 and ((limit and inRow >= limit) or (not limit and along + size > length)) then
+            across, along, depth, inRow = across + depth + rowSpacing(shape), 0, 0, 0
+        end
+        if n == i then return along, across, size end
+        along, inRow = along + size + shape.spacing, inRow + 1
+        depth = math.max(depth, size)
+    end
+    return 0, 0, shape.size
+end
+
+function Layout.AuraPlace(shape, i, own)
+    local row = Layout.AuraRowDirection(shape.primary, shape.row)
+    local p, r = VECTOR[shape.primary], VECTOR[row]
+    if shape.ownSameRow then
+        local along, across, size = Layout.AuraFlow(shape, i, own)
+        return p[1] * along + r[1] * across + 0, p[2] * along + r[2] * across + 0, size
+    end
+    local index, perRow, size, shift = i, shape.ownPerRow, shape.ownSize, 0
+    if i > own then
+        index, perRow, size, shift = i - own, shape.perRow, shape.size, ownDepth(shape, own)
+    end
+    local along = ((index - 1) % perRow) * (size + shape.spacing)
+    local across = math.floor((index - 1) / perRow) * (size + rowSpacing(shape)) + shift
+    -- + 0 turns a negative zero into 0.
+    return p[1] * along + r[1] * across + 0, p[2] * along + r[2] * across + 0, size
+end
+
+-- Width and height of count icons, the first `own` of them yours.
+function Layout.AuraBlock(shape, own, count)
+    own = math.min(own, count)
+    if shape.ownSameRow then
+        local along, across = 0, 0
+        for i = 1, count do
+            local a, c, size = Layout.AuraFlow(shape, i, own)
+            along, across = math.max(along, a + size), math.max(across, c + size)
+        end
+        if HORIZONTAL[shape.primary] then return along, across end
+        return across, along
+    end
+    local rows = rowSpacing(shape)
+    local ownAlong, ownAcross = Layout.AuraExtent(own, shape.ownPerRow, shape.ownSize, shape.spacing, "RIGHT", rows)
+    local along, across = Layout.AuraExtent(count - own, shape.perRow, shape.size, shape.spacing, "RIGHT", rows)
+    along = math.max(along, ownAlong)
+    if own > 0 and count > own then across = across + rows end
+    across = across + ownAcross
+    if HORIZONTAL[shape.primary] then return along, across end
+    return across, along
+end
+
+-- Icon rows (status icons, group icons) ----------------------------------------
+-- A row has a slot for each icon switched on; the icons that show are
+-- packed towards the side of the row's anchor point.
+
+-- Length of count icons of size with gaps between them (0 for none).
+function Layout.IconRowWidth(count, size, gap)
+    if count <= 0 then return 0 end
+    return count * size + (count - 1) * gap
+end
+
+-- Share of the row's free room left of the icons: 0 packs them to the
+-- left (a LEFT point), 1 to the right, 0.5 centres them.
+function Layout.IconRowJustify(point)
+    if point:find("LEFT") then return 0 end
+    if point:find("RIGHT") then return 1 end
+    return 0.5
+end
+
+-- Pixel grid ------------------------------------------------------------------
+-- Sizes and offsets are rounded to whole physical pixels with Blizzard's
+-- PixelUtil (Blizzard_SharedXML, loaded for every game type): one pixel is
+-- 768 / physical screen height / effective scale UI units. Edges then land
+-- on pixel boundaries instead of being smeared across two, and a one-unit
+-- border is exactly as thick on every side. Positions measured from the
+-- screen centre assume that centre is on a pixel boundary (an even
+-- physical screen size, as every common resolution is).
+local Pixel = {}
+ns.Pixel = Pixel
+
+local function scaleOf(region) return (region or UIParent):GetEffectiveScale() end
+
+-- The nearest whole-pixel length to v in region's (default UIParent's)
+-- units. minPixels (optional) keeps a non-zero length at least that many
+-- pixels long.
+function Pixel.Snap(v, region, minPixels)
+    return PixelUtil.GetNearestPixelSize(v, scaleOf(region), minPixels)
+end
+
+-- One physical pixel in region's (default UIParent's) units.
+function Pixel.One(region)
+    return PixelUtil.GetPixelToUIUnitFactor() / scaleOf(region)
+end
+
+-- Offset for a centre anchor: a span of the given (snapped) size centred
+-- there has both edges on pixels.
+function Pixel.Centre(v, size, region)
+    return Pixel.Snap(v - size / 2, region) + size / 2
+end
+
+-- The pixel grid moves with the UI scale and the window size: whatever
+-- was laid out on it is laid out again.
+local function gridChanged() ns.Fire("PIXEL_GRID_CHANGED") end
+ns.On("UI_SCALE_CHANGED", gridChanged)
+ns.On("DISPLAY_SIZE_CHANGED", gridChanged)

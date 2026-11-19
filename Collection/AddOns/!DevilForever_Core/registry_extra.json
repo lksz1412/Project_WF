@@ -204,144 +204,6 @@
       },
       "defaults": "Defaults/Dominos.lua"
     },
-    "Prat-3.0": {
-      "frames": [
-        {
-          "key": "prat.chatframe1",
-          "frame": "ChatFrame1"
-        },
-        {
-          "key": "prat.editbox1",
-          "frame": "ChatFrame1EditBox"
-        },
-        {
-          "key": "prat.tab1",
-          "frame": "ChatFrame1Tab"
-        },
-        {
-          "key": "prat.chatframe2",
-          "frame": "ChatFrame2"
-        },
-        {
-          "key": "prat.editbox2",
-          "frame": "ChatFrame2EditBox"
-        },
-        {
-          "key": "prat.tab2",
-          "frame": "ChatFrame2Tab"
-        },
-        {
-          "key": "prat.chatframe3",
-          "frame": "ChatFrame3"
-        },
-        {
-          "key": "prat.editbox3",
-          "frame": "ChatFrame3EditBox"
-        },
-        {
-          "key": "prat.tab3",
-          "frame": "ChatFrame3Tab"
-        },
-        {
-          "key": "prat.chatframe4",
-          "frame": "ChatFrame4"
-        },
-        {
-          "key": "prat.editbox4",
-          "frame": "ChatFrame4EditBox"
-        },
-        {
-          "key": "prat.tab4",
-          "frame": "ChatFrame4Tab"
-        },
-        {
-          "key": "prat.chatframe5",
-          "frame": "ChatFrame5"
-        },
-        {
-          "key": "prat.editbox5",
-          "frame": "ChatFrame5EditBox"
-        },
-        {
-          "key": "prat.tab5",
-          "frame": "ChatFrame5Tab"
-        },
-        {
-          "key": "prat.chatframe6",
-          "frame": "ChatFrame6"
-        },
-        {
-          "key": "prat.editbox6",
-          "frame": "ChatFrame6EditBox"
-        },
-        {
-          "key": "prat.tab6",
-          "frame": "ChatFrame6Tab"
-        },
-        {
-          "key": "prat.chatframe7",
-          "frame": "ChatFrame7"
-        },
-        {
-          "key": "prat.editbox7",
-          "frame": "ChatFrame7EditBox"
-        },
-        {
-          "key": "prat.tab7",
-          "frame": "ChatFrame7Tab"
-        },
-        {
-          "key": "prat.chatframe8",
-          "frame": "ChatFrame8"
-        },
-        {
-          "key": "prat.editbox8",
-          "frame": "ChatFrame8EditBox"
-        },
-        {
-          "key": "prat.tab8",
-          "frame": "ChatFrame8Tab"
-        },
-        {
-          "key": "prat.chatframe9",
-          "frame": "ChatFrame9"
-        },
-        {
-          "key": "prat.editbox9",
-          "frame": "ChatFrame9EditBox"
-        },
-        {
-          "key": "prat.tab9",
-          "frame": "ChatFrame9Tab"
-        },
-        {
-          "key": "prat.chatframe10",
-          "frame": "ChatFrame10"
-        },
-        {
-          "key": "prat.editbox10",
-          "frame": "ChatFrame10EditBox"
-        },
-        {
-          "key": "prat.tab10",
-          "frame": "ChatFrame10Tab"
-        }
-      ],
-      "saved_variables": {
-        "Prat3DB": {
-          "split": "common",
-          "restore": "whole",
-          "shape": "acedb"
-        },
-        "Prat3CharDB": {
-          "split": "common"
-        },
-        "Prat3HighCPUPerCharDB": {
-          "split": "common"
-        }
-      },
-      "defaults": "Defaults/Prat-3.0.lua"
-    },
     "DevilForever_ChatSetup": {
       "saved_variables": {
         "DevilForever_ChatSetupDB": {
@@ -596,7 +458,8 @@
           "restore": "whole",
           "shape": "acedb"
         }
-      }
+      },
+      "defaults": "Defaults/Quartz.lua"
     },
     "Hekili": {
       "frames": [
@@ -670,43 +533,43 @@
       "frames": [
         {
           "key": "pb4.player",
-          "frame": "PitBull4_Frames_\ud50c\ub808\uc774\uc5b4"
+          "frame": "PitBull4_Frames_플레이어"
         },
         {
           "key": "pb4.target",
-          "frame": "PitBull4_Frames_\ub300\uc0c1"
+          "frame": "PitBull4_Frames_대상"
         },
         {
           "key": "pb4.targettarget",
-          "frame": "PitBull4_Frames_\ub300\uc0c1\uc758 \ub300\uc0c1"
+          "frame": "PitBull4_Frames_대상의 대상"
         },
         {
           "key": "pb4.targettargettarget",
-          "frame": "PitBull4_Frames_\ub300\uc0c1\uc758 \ub300\uc0c1\uc758 \ub300\uc0c1"
+          "frame": "PitBull4_Frames_대상의 대상의 대상"
         },
         {
           "key": "pb4.focus",
-          "frame": "PitBull4_Frames_\uc8fc\uc2dc \ub300\uc0c1"
+          "frame": "PitBull4_Frames_주시 대상"
         },
         {
           "key": "pb4.focustarget",
-          "frame": "PitBull4_Frames_\uc8fc\uc2dc \ub300\uc0c1\uc758 \ub300\uc0c1"
+          "frame": "PitBull4_Frames_주시 대상의 대상"
         },
         {
           "key": "pb4.pet",
-          "frame": "PitBull4_Frames_\ud50c\ub808\uc774\uc5b4\uc758 \uc18c\ud658\uc218"
+          "frame": "PitBull4_Frames_플레이어의 소환수"
         },
         {
           "key": "pb4.party",
-          "frame": "PitBull4_Groups_\ud30c\ud2f0"
+          "frame": "PitBull4_Groups_파티"
         },
         {
           "key": "pb4.partytarget",
-          "frame": "PitBull4_Groups_\ud30c\ud2f0\uc6d0 \ub300\uc0c1"
+          "frame": "PitBull4_Groups_파티원 대상"
         },
         {
           "key": "pb4.partypet",
-          "frame": "PitBull4_Groups_\ud30c\ud2f0\uc6d0 \uc18c\ud658\uc218"
+          "frame": "PitBull4_Groups_파티원 소환수"
         }
       ],
       "editable": [
@@ -944,6 +807,837 @@
           "shape": "plain"
         }
       }
+    },
+    "DevilForever_Skin_Nameplates": {
+      "frames": [
+        {
+          "key": "nameplates.enemy",
+          "tokens": {
+            "font": "font.normal"
+          }
+        },
+        {
+          "key": "nameplates.friendly",
+          "tokens": {
+            "font": "font.normal"
+          }
+        }
+      ],
+      "editable": [
+        {
+          "frame": "nameplates.enemy",
+          "field": "size",
+          "min": 4,
+          "max": 1200
+        },
+        {
+          "frame": "nameplates.enemy",
+          "field": "font",
+          "min": 8,
+          "max": 64
+        },
+        {
+          "frame": "nameplates.friendly",
+          "field": "size",
+          "min": 4,
+          "max": 1200
+        },
+        {
+          "frame": "nameplates.friendly",
+          "field": "font",
+          "min": 8,
+          "max": 64
+        }
+      ]
+    },
+    "DevilForever_Appearance": {
+      "bundle": "required",
+      "frames": [
+        {
+          "key": "appearance.chat1",
+          "frame": "DevilForever_ChatPanel1",
+          "tokens": {
+            "color": "color.panel.background",
+            "font": "font.normal",
+            "spacing": "spacing.default"
+          }
+        },
+        {
+          "key": "appearance.chat2",
+          "frame": "DevilForever_ChatPanel2",
+          "tokens": {
+            "color": "color.panel.background",
+            "font": "font.normal",
+            "spacing": "spacing.default"
+          }
+        },
+        {
+          "key": "appearance.chat3",
+          "frame": "DevilForever_ChatPanel3",
+          "tokens": {
+            "color": "color.panel.background",
+            "font": "font.normal",
+            "spacing": "spacing.default"
+          }
+        },
+        {
+          "key": "appearance.action",
+          "frame": "DevilForever_ActionPanel",
+          "tokens": {
+            "color": "color.panel.background",
+            "font": "font.normal",
+            "spacing": "spacing.default"
+          }
+        },
+        {
+          "key": "appearance.minimap",
+          "frame": "DevilForever_MinimapPanel",
+          "tokens": {
+            "color": "color.panel.background",
+            "font": "font.normal",
+            "spacing": "spacing.default"
+          }
+        },
+        {
+          "key": "appearance.ribbon",
+          "frame": "DevilForever_BlackRibbon",
+          "tokens": {
+            "color": "color.panel.background",
+            "font": "font.normal",
+            "spacing": "spacing.default"
+          }
+        },
+        {
+          "key": "appearance.upper",
+          "frame": "DevilForever_UpperPanel",
+          "tokens": {
+            "color": "color.panel.background",
+            "font": "font.normal",
+            "spacing": "spacing.default"
+          }
+        },
+        {
+          "key": "appearance.aux",
+          "frame": "DevilForever_AuxPanel",
+          "tokens": {
+            "color": "color.panel.background",
+            "font": "font.normal",
+            "spacing": "spacing.default"
+          }
+        },
+        {
+          "key": "appearance.unitUpper",
+          "frame": "DevilForever_UnitUpperPanel",
+          "tokens": {
+            "color": "color.panel.background",
+            "font": "font.normal",
+            "spacing": "spacing.default"
+          }
+        },
+        {
+          "key": "appearance.unitLower",
+          "frame": "DevilForever_UnitLowerPanel",
+          "tokens": {
+            "color": "color.panel.background",
+            "font": "font.normal",
+            "spacing": "spacing.default"
+          }
+        },
+        {
+          "key": "appearance.ornamentLeft",
+          "frame": "DevilForever_OrnamentLeft",
+          "tokens": {
+            "color": "color.text.highlight",
+            "font": "font.normal",
+            "spacing": "spacing.default"
+          }
+        },
+        {
+          "key": "appearance.ornamentRight",
+          "frame": "DevilForever_OrnamentRight",
+          "tokens": {
+            "color": "color.text.highlight",
+            "font": "font.normal",
+            "spacing": "spacing.default"
+          }
+        },
+        {
+          "key": "appearance.status",
+          "frame": "DevilForever_StatusPanel",
+          "tokens": {
+            "color": "color.panel.background",
+            "font": "font.normal",
+            "spacing": "spacing.default"
+          }
+        },
+        {
+          "key": "appearance.seam1",
+          "frame": "DevilForever_Seam1",
+          "tokens": {
+            "color": "color.divider",
+            "font": "font.normal",
+            "spacing": "spacing.default"
+          }
+        },
+        {
+          "key": "appearance.seam2",
+          "frame": "DevilForever_Seam2",
+          "tokens": {
+            "color": "color.divider",
+            "font": "font.normal",
+            "spacing": "spacing.default"
+          }
+        },
+        {
+          "key": "appearance.seam3",
+          "frame": "DevilForever_Seam3",
+          "tokens": {
+            "color": "color.divider",
+            "font": "font.normal",
+            "spacing": "spacing.default"
+          }
+        },
+        {
+          "key": "appearance.seam4",
+          "frame": "DevilForever_Seam4",
+          "tokens": {
+            "color": "color.divider",
+            "font": "font.normal",
+            "spacing": "spacing.default"
+          }
+        }
+      ],
+      "editable": [
+        {
+          "frame": "appearance.chat1",
+          "field": "position",
+          "default": {
+            "point": "TOPLEFT",
+            "relativeTo": "DevilForever_AppearanceRoot",
+            "relativePoint": "TOPLEFT",
+            "x": 0,
+            "y": -1820
+          }
+        },
+        {
+          "frame": "appearance.chat1",
+          "field": "size",
+          "min": 1,
+          "max": 8192,
+          "default": {
+            "width": 960,
+            "height": 304
+          }
+        },
+        {
+          "frame": "appearance.chat1",
+          "field": "color"
+        },
+        {
+          "frame": "appearance.chat1",
+          "field": "font",
+          "min": 8,
+          "max": 64
+        },
+        {
+          "frame": "appearance.chat1",
+          "field": "spacing",
+          "min": 0,
+          "max": 128
+        },
+        {
+          "frame": "appearance.chat2",
+          "field": "position",
+          "default": {
+            "point": "TOPLEFT",
+            "relativeTo": "DevilForever_AppearanceRoot",
+            "relativePoint": "TOPLEFT",
+            "x": 962,
+            "y": -1820
+          }
+        },
+        {
+          "frame": "appearance.chat2",
+          "field": "size",
+          "min": 1,
+          "max": 8192,
+          "default": {
+            "width": 960,
+            "height": 304
+          }
+        },
+        {
+          "frame": "appearance.chat2",
+          "field": "color"
+        },
+        {
+          "frame": "appearance.chat2",
+          "field": "font",
+          "min": 8,
+          "max": 64
+        },
+        {
+          "frame": "appearance.chat2",
+          "field": "spacing",
+          "min": 0,
+          "max": 128
+        },
+        {
+          "frame": "appearance.chat3",
+          "field": "position",
+          "default": {
+            "point": "TOPLEFT",
+            "relativeTo": "DevilForever_AppearanceRoot",
+            "relativePoint": "TOPLEFT",
+            "x": 2902,
+            "y": -1820
+          }
+        },
+        {
+          "frame": "appearance.chat3",
+          "field": "size",
+          "min": 1,
+          "max": 8192,
+          "default": {
+            "width": 938,
+            "height": 304
+          }
+        },
+        {
+          "frame": "appearance.chat3",
+          "field": "color"
+        },
+        {
+          "frame": "appearance.chat3",
+          "field": "font",
+          "min": 8,
+          "max": 64
+        },
+        {
+          "frame": "appearance.chat3",
+          "field": "spacing",
+          "min": 0,
+          "max": 128
+        },
+        {
+          "frame": "appearance.action",
+          "field": "position",
+          "default": {
+            "point": "TOPLEFT",
+            "relativeTo": "DevilForever_AppearanceRoot",
+            "relativePoint": "TOPLEFT",
+            "x": 1924,
+            "y": -1820
+          }
+        },
+        {
+          "frame": "appearance.action",
+          "field": "size",
+          "min": 1,
+          "max": 8192,
+          "default": {
+            "width": 670,
+            "height": 304
+          }
+        },
+        {
+          "frame": "appearance.action",
+          "field": "color"
+        },
+        {
+          "frame": "appearance.action",
+          "field": "font",
+          "min": 8,
+          "max": 64
+        },
+        {
+          "frame": "appearance.action",
+          "field": "spacing",
+          "min": 0,
+          "max": 128
+        },
+        {
+          "frame": "appearance.minimap",
+          "field": "position",
+          "default": {
+            "point": "TOPLEFT",
+            "relativeTo": "DevilForever_AppearanceRoot",
+            "relativePoint": "TOPLEFT",
+            "x": 2596,
+            "y": -1820
+          }
+        },
+        {
+          "frame": "appearance.minimap",
+          "field": "size",
+          "min": 1,
+          "max": 8192,
+          "default": {
+            "width": 304,
+            "height": 304
+          }
+        },
+        {
+          "frame": "appearance.minimap",
+          "field": "color"
+        },
+        {
+          "frame": "appearance.minimap",
+          "field": "font",
+          "min": 8,
+          "max": 64
+        },
+        {
+          "frame": "appearance.minimap",
+          "field": "spacing",
+          "min": 0,
+          "max": 128
+        },
+        {
+          "frame": "appearance.ribbon",
+          "field": "position",
+          "default": {
+            "point": "TOPLEFT",
+            "relativeTo": "DevilForever_AppearanceRoot",
+            "relativePoint": "TOPLEFT",
+            "x": 0,
+            "y": -1804
+          }
+        },
+        {
+          "frame": "appearance.ribbon",
+          "field": "size",
+          "min": 1,
+          "max": 8192,
+          "default": {
+            "width": 3840,
+            "height": 16
+          }
+        },
+        {
+          "frame": "appearance.ribbon",
+          "field": "color"
+        },
+        {
+          "frame": "appearance.ribbon",
+          "field": "font",
+          "min": 8,
+          "max": 64
+        },
+        {
+          "frame": "appearance.ribbon",
+          "field": "spacing",
+          "min": 0,
+          "max": 128
+        },
+        {
+          "frame": "appearance.upper",
+          "field": "position",
+          "default": {
+            "point": "TOPLEFT",
+            "relativeTo": "DevilForever_AppearanceRoot",
+            "relativePoint": "TOPLEFT",
+            "x": 445,
+            "y": -1724
+          }
+        },
+        {
+          "frame": "appearance.upper",
+          "field": "size",
+          "min": 1,
+          "max": 8192,
+          "default": {
+            "width": 2950,
+            "height": 80
+          }
+        },
+        {
+          "frame": "appearance.upper",
+          "field": "color"
+        },
+        {
+          "frame": "appearance.upper",
+          "field": "font",
+          "min": 8,
+          "max": 64
+        },
+        {
+          "frame": "appearance.upper",
+          "field": "spacing",
+          "min": 0,
+          "max": 128
+        },
+        {
+          "frame": "appearance.aux",
+          "field": "position",
+          "default": {
+            "point": "TOPLEFT",
+            "relativeTo": "DevilForever_AppearanceRoot",
+            "relativePoint": "TOPLEFT",
+            "x": 760,
+            "y": -1636
+          }
+        },
+        {
+          "frame": "appearance.aux",
+          "field": "size",
+          "min": 1,
+          "max": 8192,
+          "default": {
+            "width": 654,
+            "height": 80
+          }
+        },
+        {
+          "frame": "appearance.aux",
+          "field": "color"
+        },
+        {
+          "frame": "appearance.aux",
+          "field": "font",
+          "min": 8,
+          "max": 64
+        },
+        {
+          "frame": "appearance.aux",
+          "field": "spacing",
+          "min": 0,
+          "max": 128
+        },
+        {
+          "frame": "appearance.unitUpper",
+          "field": "position",
+          "default": {
+            "point": "TOPLEFT",
+            "relativeTo": "DevilForever_AppearanceRoot",
+            "relativePoint": "TOPLEFT",
+            "x": 1080,
+            "y": -1440
+          }
+        },
+        {
+          "frame": "appearance.unitUpper",
+          "field": "size",
+          "min": 1,
+          "max": 8192,
+          "default": {
+            "width": 390,
+            "height": 72
+          }
+        },
+        {
+          "frame": "appearance.unitUpper",
+          "field": "color"
+        },
+        {
+          "frame": "appearance.unitUpper",
+          "field": "font",
+          "min": 8,
+          "max": 64
+        },
+        {
+          "frame": "appearance.unitUpper",
+          "field": "spacing",
+          "min": 0,
+          "max": 128
+        },
+        {
+          "frame": "appearance.unitLower",
+          "field": "position",
+          "default": {
+            "point": "TOPLEFT",
+            "relativeTo": "DevilForever_AppearanceRoot",
+            "relativePoint": "TOPLEFT",
+            "x": 916,
+            "y": -1536
+          }
+        },
+        {
+          "frame": "appearance.unitLower",
+          "field": "size",
+          "min": 1,
+          "max": 8192,
+          "default": {
+            "width": 554,
+            "height": 84
+          }
+        },
+        {
+          "frame": "appearance.unitLower",
+          "field": "color"
+        },
+        {
+          "frame": "appearance.unitLower",
+          "field": "font",
+          "min": 8,
+          "max": 64
+        },
+        {
+          "frame": "appearance.unitLower",
+          "field": "spacing",
+          "min": 0,
+          "max": 128
+        },
+        {
+          "frame": "appearance.ornamentLeft",
+          "field": "position",
+          "default": {
+            "point": "TOPLEFT",
+            "relativeTo": "DevilForever_AppearanceRoot",
+            "relativePoint": "TOPLEFT",
+            "x": 229,
+            "y": -1548
+          }
+        },
+        {
+          "frame": "appearance.ornamentLeft",
+          "field": "size",
+          "min": 1,
+          "max": 8192,
+          "default": {
+            "width": 256,
+            "height": 256
+          }
+        },
+        {
+          "frame": "appearance.ornamentLeft",
+          "field": "color"
+        },
+        {
+          "frame": "appearance.ornamentLeft",
+          "field": "font",
+          "min": 8,
+          "max": 64
+        },
+        {
+          "frame": "appearance.ornamentLeft",
+          "field": "spacing",
+          "min": 0,
+          "max": 128
+        },
+        {
+          "frame": "appearance.ornamentRight",
+          "field": "position",
+          "default": {
+            "point": "TOPLEFT",
+            "relativeTo": "DevilForever_AppearanceRoot",
+            "relativePoint": "TOPLEFT",
+            "x": 3348,
+            "y": -1548
+          }
+        },
+        {
+          "frame": "appearance.ornamentRight",
+          "field": "size",
+          "min": 1,
+          "max": 8192,
+          "default": {
+            "width": 256,
+            "height": 256
+          }
+        },
+        {
+          "frame": "appearance.ornamentRight",
+          "field": "color"
+        },
+        {
+          "frame": "appearance.ornamentRight",
+          "field": "font",
+          "min": 8,
+          "max": 64
+        },
+        {
+          "frame": "appearance.ornamentRight",
+          "field": "spacing",
+          "min": 0,
+          "max": 128
+        },
+        {
+          "frame": "appearance.status",
+          "field": "position",
+          "default": {
+            "point": "TOPLEFT",
+            "relativeTo": "DevilForever_AppearanceRoot",
+            "relativePoint": "TOPLEFT",
+            "x": 0,
+            "y": -2124
+          }
+        },
+        {
+          "frame": "appearance.status",
+          "field": "size",
+          "min": 1,
+          "max": 8192,
+          "default": {
+            "width": 3840,
+            "height": 28
+          }
+        },
+        {
+          "frame": "appearance.status",
+          "field": "color"
+        },
+        {
+          "frame": "appearance.status",
+          "field": "font",
+          "min": 8,
+          "max": 64
+        },
+        {
+          "frame": "appearance.status",
+          "field": "spacing",
+          "min": 0,
+          "max": 128
+        },
+        {
+          "frame": "appearance.seam1",
+          "field": "position",
+          "default": {
+            "point": "TOPLEFT",
+            "relativeTo": "DevilForever_AppearanceRoot",
+            "relativePoint": "TOPLEFT",
+            "x": 960,
+            "y": -1820
+          }
+        },
+        {
+          "frame": "appearance.seam1",
+          "field": "size",
+          "min": 1,
+          "max": 8192,
+          "default": {
+            "width": 2,
+            "height": 304
+          }
+        },
+        {
+          "frame": "appearance.seam1",
+          "field": "color"
+        },
+        {
+          "frame": "appearance.seam1",
+          "field": "font",
+          "min": 8,
+          "max": 64
+        },
+        {
+          "frame": "appearance.seam1",
+          "field": "spacing",
+          "min": 0,
+          "max": 128
+        },
+        {
+          "frame": "appearance.seam2",
+          "field": "position",
+          "default": {
+            "point": "TOPLEFT",
+            "relativeTo": "DevilForever_AppearanceRoot",
+            "relativePoint": "TOPLEFT",
+            "x": 1922,
+            "y": -1820
+          }
+        },
+        {
+          "frame": "appearance.seam2",
+          "field": "size",
+          "min": 1,
+          "max": 8192,
+          "default": {
+            "width": 2,
+            "height": 304
+          }
+        },
+        {
+          "frame": "appearance.seam2",
+          "field": "color"
+        },
+        {
+          "frame": "appearance.seam2",
+          "field": "font",
+          "min": 8,
+          "max": 64
+        },
+        {
+          "frame": "appearance.seam2",
+          "field": "spacing",
+          "min": 0,
+          "max": 128
+        },
+        {
+          "frame": "appearance.seam3",
+          "field": "position",
+          "default": {
+            "point": "TOPLEFT",
+            "relativeTo": "DevilForever_AppearanceRoot",
+            "relativePoint": "TOPLEFT",
+            "x": 2594,
+            "y": -1820
+          }
+        },
+        {
+          "frame": "appearance.seam3",
+          "field": "size",
+          "min": 1,
+          "max": 8192,
+          "default": {
+            "width": 2,
+            "height": 304
+          }
+        },
+        {
+          "frame": "appearance.seam3",
+          "field": "color"
+        },
+        {
+          "frame": "appearance.seam3",
+          "field": "font",
+          "min": 8,
+          "max": 64
+        },
+        {
+          "frame": "appearance.seam3",
+          "field": "spacing",
+          "min": 0,
+          "max": 128
+        },
+        {
+          "frame": "appearance.seam4",
+          "field": "position",
+          "default": {
+            "point": "TOPLEFT",
+            "relativeTo": "DevilForever_AppearanceRoot",
+            "relativePoint": "TOPLEFT",
+            "x": 2900,
+            "y": -1820
+          }
+        },
+        {
+          "frame": "appearance.seam4",
+          "field": "size",
+          "min": 1,
+          "max": 8192,
+          "default": {
+            "width": 2,
+            "height": 304
+          }
+        },
+        {
+          "frame": "appearance.seam4",
+          "field": "color"
+        },
+        {
+          "frame": "appearance.seam4",
+          "field": "font",
+          "min": 8,
+          "max": 64
+        },
+        {
+          "frame": "appearance.seam4",
+          "field": "spacing",
+          "min": 0,
+          "max": 128
+        }
+      ]
     }
   }
 }

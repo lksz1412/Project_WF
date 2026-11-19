@@ -1,0 +1,57 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
+	<!--
+		One party member. The SecureGroupHeaderTemplate in Units/Party.lua creates
+		these, possibly in combat when someone joins; Lua may not size a secure
+		frame then, so the size and click handling live here. Keep the size equal
+		to the party width/height defaults in Core/Settings.lua; tests/test_party.lua
+		checks that this file and the test mock agree.
+	-->
+	<Button name="ForeverUnitFramesPartyButtonTemplate" virtual="true" inherits="SecureUnitButtonTemplate, PingableUnitFrameTemplate" registerForClicks="AnyUp">
+		<Size x="160" y="46"/>
+		<Attributes>
+			<Attribute name="*type1" type="string" value="target"/>
+			<Attribute name="*type2" type="string" value="togglemenu"/>
+		</Attributes>
+		<Frames>
+			<!--
+				The member's target (Units/PartyTargets.lua). Its unit is the
+				parent's plus "target", resolved by the secure code itself
+				(useparent-unit, unitsuffix), so it follows the member in
+				combat too. Hidden until the unit watch shows it.
+			-->
+			<Button parentKey="targetButton" inherits="SecureUnitButtonTemplate, PingableUnitFrameTemplate" registerForClicks="AnyUp" hidden="true">
+				<Size x="100" y="24"/>
+				<Attributes>
+					<Attribute name="useparent-unit" type="boolean" value="true"/>
+					<Attribute name="unitsuffix" type="string" value="target"/>
+					<Attribute name="*type1" type="string" value="target"/>
+					<Attribute name="*type2" type="string" value="togglemenu"/>
+				</Attributes>
+				<Scripts>
+					<OnLoad>ForeverUnitFrames.PartyTargetOnLoad(self)</OnLoad>
+				</Scripts>
+			</Button>
+			<!--
+				The member's pet beside it (Units/PartyPets.lua, layout BESIDE).
+				Unit: the parent's plus "pet" (party1pet -> partypet1 in the
+				secure code). Hidden until the unit watch shows it.
+			-->
+			<Button parentKey="petButton" inherits="SecureUnitButtonTemplate, PingableUnitFrameTemplate" registerForClicks="AnyUp" hidden="true">
+				<Size x="160" y="20"/>
+				<Attributes>
+					<Attribute name="useparent-unit" type="boolean" value="true"/>
+					<Attribute name="unitsuffix" type="string" value="pet"/>
+					<Attribute name="*type1" type="string" value="target"/>
+					<Attribute name="*type2" type="string" value="togglemenu"/>
+				</Attributes>
+				<Scripts>
+					<OnLoad>ForeverUnitFrames.PartyPetBesideOnLoad(self)</OnLoad>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>ForeverUnitFrames.PartyButtonOnLoad(self)</OnLoad>
+			<OnAttributeChanged>ForeverUnitFrames.PartyButtonOnAttributeChanged(self, name, value)</OnAttributeChanged>
+		</Scripts>
+	</Button>
+</Ui>

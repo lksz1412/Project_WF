@@ -1,0 +1,362 @@
+local _, ns = ...
+
+-- Party frames. A SecureGroupHeaderTemplate creates one button per member
+-- from the template in Units/Party.xml. There is no initialConfigFunction:
+-- secure snippets do not run on this client. The XML gives each button its
+-- starting size and clicks; Lua sizes it when it is made out of combat. A
+-- unit handed out in combat (someone joins) relays the whole block after
+-- combat: the header sizes itself from button 1 at layout time.
+local Party = {}
+ns.Party = Party
+
+local Config, Single, Pixel = ns.Config, ns.Single, ns.Pixel
+
+Party.KEY = "party"
+Party.HEADER = "ForeverUnitFramesParty"
+Party.TEMPLATE = "ForeverUnitFramesPartyButtonTemplate"
+Party.MEMBERS = 4
+-- Pet frames under the block (Units/PartyPets.lua) read their settings
+-- through this derived scope; partyPetGap is the room between two rings,
+-- plus the drop shadow when it is on (Party.PetGap).
+Party.PET_KEY = "partypet"
+-- Every button the header made, in creation order.
+Party.buttons = {}
+-- Test mode: pretend members (secure buttons on the player) in a plain
+-- block where the header would be.
+Party.fakes = {}
+local testing = false
+
+local function get(key) return Config.Get(Party.KEY, key) end
+
+function Party.Horizontal() return get("partyOrientation") == "HORIZONTAL" end
+
+-- Slots in a full block: four members, plus the player if shown.
+function Party.Slots()
+    return Party.MEMBERS + (get("partyShowPlayer") and 1 or 0)
+end
+
+-- Distance between two members. Stacked vertically, a docked castbar
+-- (above or below each member) sits in between, so its room is added:
+-- the next member starts past the castbar's border.
+function Party.Spacing()
+    local spacing = Pixel.Snap(get("partySpacing"))
+    if Party.Horizontal() then return spacing end
+    return spacing + ns.Castbar.DockedDepth(Party.KEY)
+end
+
+-- Width and height of the whole block with every slot filled.
+-- Everything below is on the pixel grid: button size, spacing, block.
+function Party.BlockSize()
+    local w, h = Single.Size(Party.KEY)
+    local s, n = Party.Spacing(), Party.Slots()
+    if Party.Horizontal() then
+        return n * w + (n - 1) * s, h
+    end
+    return w, n * h + (n - 1) * s
+end
+
+-- Pets (Units/PartyPets.lua) form their own list under the members.
+-- Between two rings: partyPetGap, and the drop shadow when it is on (one
+-- frame's below, the other's above), so no shadow lies on a ring.
+function Party.PetGap()
+    local shadow = math.max(ns.Border.ShadowSize(Party.KEY), ns.Border.ShadowSize(Party.PET_KEY))
+    return Pixel.Snap(get("partyPetGap")) + shadow
+end
+
+-- From the members' bottom edge to the pet list's top edge: the last
+-- member's docked castbar (when it docks below) and border, the gap, the
+-- first pet's border.
+function Party.PetListOffset()
+    local depth = ns.Castbar.DockedDepth(Party.KEY)
+    local below = ns.Border.Extent(Party.KEY)
+    if depth > 0 and ns.Castbar.Placement(Party.KEY) == "BELOW" then below = depth end
+    return below + Party.PetGap() + ns.Border.Extent(Party.PET_KEY)
+end
+
+-- Between two pets: the gap and both pets' borders.
+function Party.PetStep()
+    return Party.PetGap() + 2 * ns.Border.Extent(Party.PET_KEY)
+end
+
+-- The corner the block grows away from, where member 1 sits: top-left,
+-- or bottom-left (growing up) / top-right (growing left).
+function Party.Corner()
+    if not get("partyGrowReverse") then return "TOPLEFT" end
+    return Party.Horizontal() and "TOPRIGHT" or "BOTTOMLEFT"
+end
+
+-- Offset of slot i (1-based) from the block's top-left corner.
+function Party.SlotOffset(i)
+    local step = i - 1
+    local w, h = Single.Size(Party.KEY)
+    local reverse = get("partyGrowReverse")
+    local blockW, blockH = Party.BlockSize()
+    if Party.Horizontal() then
+        local x = step * (w + Party.Spacing())
+        return reverse and blockW - w - x or x, 0
+    end
+    local y = step * (h + Party.Spacing())
+    return 0, -(reverse and blockH - h - y or y)
+end
+
+-- No handle while the party frame is switched off. The header hangs from
+-- the mover at its growth corner (place re-anchors on every restyle).
+function Party.MoverSpec()
+    return { scope = Party.KEY, point = Party.Corner(), size = Party.BlockSize, label = function() return ns.L.FRAME_party end,
+        active = function() return ns.FrameEnabled(Party.KEY) end }
+end
+
+-- Shows a header (Hide + Show lays its buttons out again, OnShow). In a
+-- raid group it hides by a visibility driver when the party is set to;
+-- out of combat only, like everything done to the header. With the raid
+-- view in party (Raid/Header.lua) the raid panel shows a 5-player group,
+-- so the party hides in any group, or in a party only when it is kept in
+-- raids.
+Party.RAID_DRIVER = "[group:raid] hide; show"
+Party.GROUP_DRIVER = "[group] hide; show"
+Party.PARTY_DRIVER = "[group:raid] show; [group] hide; show"
+function Party.ShowHeader(header, want)
+    UnregisterStateDriver(header, "visibility")
+    header:Hide()
+    if not want then return end
+    local raidView = ns.RaidHeader ~= nil and ns.RaidHeader.ReplacesParty()
+    if get("partyHideInRaid") then
+        RegisterStateDriver(header, "visibility", raidView and Party.GROUP_DRIVER or Party.RAID_DRIVER)
+    elseif raidView then
+        RegisterStateDriver(header, "visibility", Party.PARTY_DRIVER)
+    else
+        header:Show()
+    end
+end
+
+local setAttributes = ns.Units.SetAttributes
+
+local function headerAttributes()
+    local horizontal = Party.Horizontal()
+    local reverse = get("partyGrowReverse")
+    local spacing = Party.Spacing()
+    local point
+    if horizontal then point = reverse and "RIGHT" or "LEFT" else point = reverse and "BOTTOM" or "TOP" end
+    return {
+        template = Party.TEMPLATE, templateType = "Button", sortMethod = "INDEX",
+        -- false, not nil: SetAttributes goes through pairs, nil would keep the old value.
+        groupBy = get("partySortRole") and "ASSIGNEDROLE" or false, groupingOrder = ns.RaidLayout.ROLE_ORDER,
+        showParty = true, showPlayer = get("partyShowPlayer"), showSolo = get("partyShowSolo"),
+        point = point,
+        xOffset = horizontal and (reverse and -spacing or spacing) or 0,
+        yOffset = horizontal and 0 or (reverse and spacing or -spacing),
+    }
+end
+
+-- Top-left corner of the block, from the screen centre: X / Y are its
+-- centre, like every other position, on the pixel grid like a mover's.
+local function blockCorner()
+    local w, h = Party.BlockSize()
+    w, h = Pixel.Snap(w), Pixel.Snap(h)
+    return Pixel.Centre(get("x"), w) - w / 2, Pixel.Centre(get("y"), h) + h / 2
+end
+
+-- The header hangs from the block's growth corner, so it fills from
+-- there as members join. With a mover the header follows the mover.
+local function place(header)
+    local corner = Party.Corner()
+    header:ClearAllPoints()
+    if header.mover then
+        ns.Movers.Sync(header)
+        header:SetPoint(corner, header.mover, corner, 0, 0)
+        return
+    end
+    local x, y = blockCorner()
+    local w, h = Party.BlockSize()
+    if corner == "TOPRIGHT" then x = x + Pixel.Snap(w) end
+    if corner == "BOTTOMLEFT" then y = y - Pixel.Snap(h) end
+    header:SetPoint(corner, UIParent, "CENTER", x, y)
+end
+
+function Party.StyleButton(button)
+    if not InCombatLockdown() then
+        button:SetSize(Single.Size(Party.KEY))
+    end
+    Single.StyleContent(button)
+    Single.UpdateAll(button)
+end
+
+-- A pretend member: a real secure button on the player, so clicks target
+-- you, drawn like the others. Never touched by the group header. Made once
+-- per slot, out of combat, and reused every time test mode comes on.
+local function fakeButton(i)
+    local button = Party.fakes[i]
+    if button then return button end
+    button = CreateFrame("Button", "ForeverUnitFramesPartyTest" .. i, Party.testBlock, "SecureUnitButtonTemplate")
+    ns.Units.EnableTooltip(button)
+    button.key = Party.KEY
+    -- Shows samples only; never gets live aura containers.
+    button.pretend = true
+    -- Which pretend member it is: some samples show on one member only.
+    button.sampleIndex = i
+    button:SetAttribute("*type1", "target")
+    button:SetAttribute("*type2", "togglemenu")
+    button:RegisterForClicks("AnyUp")
+    for _, el in ipairs(ns.Elements) do el.Build(button) end
+    Party.fakes[i] = button
+    return button
+end
+
+-- Hidden and quiet: no samples, no events. The secure "unit"
+-- attribute stays "player" (a hidden button cannot be clicked); showFakes
+-- binds the button again.
+local function releaseFake(button)
+    button:Hide()
+    Single.Preview(button, false)
+    button.unit = nil
+    ns.UnitEvents.Bind(button)
+end
+
+-- A plain frame covering the whole block (every slot filled), where the
+-- header hangs. Anchored to the block's mover (a plain frame), never to
+-- the secure header, so it stays free to move in combat.
+local function fitToBlock(block)
+    local w, h = Party.BlockSize()
+    block:SetSize(Pixel.Snap(w), Pixel.Snap(h))
+    block:ClearAllPoints()
+    if Party.header.mover then
+        block:SetPoint("TOPLEFT", Party.header.mover, "TOPLEFT", 0, 0)
+    else
+        block:SetPoint("TOPLEFT", UIParent, "CENTER", blockCorner())
+    end
+    block:SetShown(ns.FrameEnabled(Party.KEY))
+end
+
+local function plainBlock()
+    local block = CreateFrame("Frame", nil, UIParent)
+    block.key = Party.KEY
+    return block
+end
+
+local function showFakes()
+    local block = Party.testBlock
+    if not block then
+        block = plainBlock()
+        Party.testBlock = block
+    end
+    fitToBlock(block)
+    local slots = Party.Slots()
+    for i = 1, slots do
+        local button = fakeButton(i)
+        Single.SetUnit(button, "player")
+        button:ClearAllPoints()
+        button:SetPoint("TOPLEFT", block, "TOPLEFT", Party.SlotOffset(i))
+        Party.StyleButton(button)
+        Single.Preview(button, true)
+        button:Show()
+    end
+    for i = slots + 1, #Party.fakes do releaseFake(Party.fakes[i]) end
+end
+
+-- Test mode helpers for the pretend pets (Units/PartyPets.lua).
+Party.ReleaseFake = releaseFake
+
+local function hideFakes()
+    if Party.testBlock then Party.testBlock:Hide() end
+    for _, button in ipairs(Party.fakes) do releaseFake(button) end
+end
+
+-- Out of combat only: attributes, position, size and visibility are
+-- protected on the header and its buttons.
+function Party.StyleAll()
+    local header = Party.header
+    if not header then return end
+    setAttributes(header, headerAttributes())
+    place(header)
+    -- Every slot's button made now, out of combat (Units/Units.lua): one
+    -- made for someone joining in combat would get its aura containers
+    -- only after combat.
+    if ns.FrameEnabled(Party.KEY) then ns.Units.PrebuildButtons(header, Party.Slots()) end
+    -- The header only SetPoints the buttons it shows; an anchor on the
+    -- other orientation's point would stay. Clear them all first.
+    for _, button in ipairs(Party.buttons) do
+        Party.StyleButton(button)
+        button:ClearAllPoints()
+    end
+    if testing then
+        Party.ShowHeader(header, false)
+        showFakes()
+    else
+        hideFakes()
+        Party.ShowHeader(header, ns.FrameEnabled(Party.KEY))
+    end
+    ns.PartyPets.StyleAll(testing)
+    ns.PartyTargets.StyleAll(testing)
+end
+
+-- Test mode on or off (out of combat, from Options/TestMode.lua).
+function Party.SetTest(on)
+    testing = on and true or false
+    Party.StyleAll()
+end
+
+-- XML OnLoad: the button exists, its unit is not known yet.
+function Party.InitButton(button)
+    button.key = Party.KEY
+    for _, el in ipairs(ns.Elements) do el.Build(button) end
+    Party.buttons[#Party.buttons + 1] = button
+    ns.Units.EnableTooltip(button)
+    ns.Units.EnablePing(button)
+    ns.Units.EnableClickCast(button)
+    -- Made in combat it keeps the XML size until the relayout after combat.
+    if not InCombatLockdown() then
+        button:SetSize(Single.Size(Party.KEY))
+    end
+    Single.StyleContent(button)
+    -- Made out of combat (ahead of time, Party.StyleAll): its aura
+    -- containers now, so a member joining in combat shows auras at once.
+    ns.Units.Prepare(button)
+    -- Click-casting (Raid/ClickCast.lua), now or after combat.
+    ns.ClickCast.Added(button)
+end
+
+-- The header assigns or clears a unit, in or out of combat.
+function Party.OnUnitChanged(button, unit)
+    if ns.Units.SamePerson(button, unit) then return end
+    button.unit = unit
+    ns.UnitEvents.Bind(button)
+    ns.PartyTargets.OnMemberUnit(button, unit)
+    ns.PartyPets.OnMemberUnit(button, unit)
+    if not unit then return end
+    if InCombatLockdown() then ns.AfterCombat("partyStyle", Party.StyleAll) end
+    Single.UpdateAll(button)
+end
+
+-- What the options window outlines when Party is selected: the whole
+-- block. The header itself is only as big as its shown members, a sliver
+-- when there are none (solo without "show when solo").
+function Party.HighlightTarget()
+    if testing and Party.testBlock then return Party.testBlock end
+    if not Party.header then return nil end
+    Party.highlightBlock = Party.highlightBlock or plainBlock()
+    fitToBlock(Party.highlightBlock)
+    return Party.highlightBlock
+end
+
+function Party.Create()
+    if Party.header then return Party.header end
+    local header = CreateFrame("Frame", Party.HEADER, UIParent, "SecureGroupHeaderTemplate")
+    header.key = Party.KEY
+    Party.header = header
+    ns.PartyPets.Create()
+    Party.StyleAll()
+    return header
+end
+
+-- Called from Units/Party.xml; not part of the public API.
+ns.api.PartyButtonOnLoad = Party.InitButton
+function ns.api.PartyButtonOnAttributeChanged(button, name, value)
+    if name == "unit" then Party.OnUnitChanged(button, value) end
+end
+
+ns.Listen("CONFIG_CHANGED", function(scope)
+    if scope ~= nil and scope ~= "general" and scope ~= Party.KEY then return end
+    ns.AfterCombat("partyStyle", Party.StyleAll)
+end)
+ns.Listen("PIXEL_GRID_CHANGED", function() ns.AfterCombat("partyStyle", Party.StyleAll) end)
+ns.Listen("UNITS_PREBUILT", Party.StyleAll)

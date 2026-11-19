@@ -1,0 +1,235 @@
+local _, ns = ...
+
+-- Which frames exist and which game events make them refresh completely.
+-- eventUnit limits an event to one unit (registered with RegisterUnitEvent).
+-- poll (seconds) refreshes a shown frame on a timer: "targettarget" gets
+-- no unit events of its own.
+ns.Units = {}
+
+-- Blizzard ships no focus frame for this game type. The unit token exists
+-- in the client source; whether the client accepts it is checked at run
+-- time and shown by /fuf status.
+function ns.Units.FocusAvailable()
+    return (pcall(UnitExists, "focus"))
+end
+
+ns.Units.List = {
+    { key = "player", unit = "player", events = { "PLAYER_ENTERING_WORLD" } },
+    { key = "target", unit = "target", events = { "PLAYER_TARGET_CHANGED" } },
+    { key = "targettarget", unit = "targettarget", events = { "PLAYER_TARGET_CHANGED", "UNIT_TARGET" },
+      eventUnit = { UNIT_TARGET = "target" }, poll = 0.2 },
+    -- One step further: the client has no event for this unit, the timer does the work.
+    { key = "targettargettarget", unit = "targettargettarget", events = { "PLAYER_TARGET_CHANGED", "UNIT_TARGET" },
+      eventUnit = { UNIT_TARGET = "target" }, poll = 0.2 },
+    { key = "pet", unit = "pet", events = { "PLAYER_ENTERING_WORLD", "UNIT_PET" },
+      eventUnit = { UNIT_PET = "player" } },
+    -- Like the target of target: no unit events of its own, so a timer too.
+    { key = "pettarget", unit = "pettarget", events = { "PLAYER_ENTERING_WORLD", "UNIT_PET", "UNIT_TARGET" },
+      eventUnit = { UNIT_PET = "player", UNIT_TARGET = "pet" }, poll = 0.2 },
+    { key = "focus", unit = "focus", events = { "PLAYER_FOCUS_CHANGED" }, available = ns.Units.FocusAvailable },
+    -- The focus's target: as the target of target, a timer too.
+    { key = "focustarget", unit = "focustarget", events = { "PLAYER_FOCUS_CHANGED", "UNIT_TARGET" },
+      eventUnit = { UNIT_TARGET = "focus" }, poll = 0.2, available = ns.Units.FocusAvailable },
+    -- Built by Units/Party.lua from a group header, not as a single frame.
+    { key = "party", group = true },
+    -- Five frames, boss1 to boss5, under one set of settings (Units/Single.lua:
+    -- count). The unit watch shows each while its boss is engaged.
+    { key = "boss", unit = "boss", count = 5, events = { "INSTANCE_ENCOUNTER_ENGAGE_UNIT", "UNIT_TARGETABLE_CHANGED" } },
+}
+
+-- Hovering a unit frame shows its unit's tooltip. Blizzard's own
+-- UnitFrame_OnEnter / OnLeave where the client has them (they read
+-- frame.unit, as ours does); otherwise the same in short. Hooked, so the
+-- secure template's own scripts stay as they are.
+local function onEnter(frame)
+    if UnitFrame_OnEnter then return UnitFrame_OnEnter(frame) end
+    if not frame.unit then return end
+    if GameTooltip_SetDefaultAnchor then
+        GameTooltip_SetDefaultAnchor(GameTooltip, frame)
+    else
+        GameTooltip:SetOwner(frame, "ANCHOR_BOTTOMRIGHT")
+    end
+    if GameTooltip:SetUnit(frame.unit) then GameTooltip:Show() end
+end
+
+local function onLeave(frame)
+    if UnitFrame_OnLeave then return UnitFrame_OnLeave(frame) end
+    GameTooltip:Hide()
+end
+
+function ns.Units.EnableTooltip(frame)
+    frame:HookScript("OnEnter", onEnter)
+    frame:HookScript("OnLeave", onLeave)
+end
+
+-- The ping key over a frame pings its unit (PingableType_UnitFrameMixin,
+-- Blizzard_SharedXML/PingableType.lua). Blizzard's GetTargetInfo hands on
+-- the unit's GUID as it is; a secret one makes the ping system's
+-- securecopy throw (Blizzard_PingManager.lua). Ours treat a frame whose
+-- GUID is secret as not pingable: the client says "can't ping" instead.
+local function pingGUID(frame)
+    local guid = UnitGUID(frame.unit or frame:GetAttribute("unit"))
+    if ns.Secrets.IsSecret(guid) then return nil end
+    return guid
+end
+
+local Ping = {
+    GetIsPingable = function(frame) return pingGUID(frame) ~= nil end,
+    GetTargetInfo = function(frame) return { guid = pingGUID(frame) } end,
+}
+
+function ns.Units.EnablePing(frame)
+    Mixin(frame, PingableType_UnitFrameMixin, Ping)
+end
+
+-- Click-casting addons (Clique and others) find unit frames through the
+-- shared global table ClickCastFrames: frame -> true. Clique takes the
+-- entries made before it loaded and watches the table afterwards,
+-- queueing registrations made in combat itself. Live unit buttons only,
+-- not test mode's pretend ones.
+function ns.Units.EnableClickCast(frame)
+    ClickCastFrames = ClickCastFrames or {}
+    ClickCastFrames[frame] = true
+end
+
+ns.Elements = {}
+function ns.RegisterElement(element)
+    ns.Elements[#ns.Elements + 1] = element
+end
+
+-- Every unit frame that exists: the single frames, the party members and
+-- pets and the raid cells the headers made, and the pretend ones of test
+-- mode. For events that concern all of them at once (raid markers, the
+-- group's leader, a ready check). fn(frame) runs for each, shown or not.
+function ns.Units.ForEachFrame(fn)
+    for _, frame in pairs(ns.Frames or {}) do fn(frame) end
+    for _, list in ipairs({ ns.Party and ns.Party.buttons, ns.Party and ns.Party.fakes,
+        ns.PartyPets and ns.PartyPets.buttons, ns.PartyPets and ns.PartyPets.fakes,
+        ns.PartyPets and ns.PartyPets.beside,
+        ns.RaidCell and ns.RaidCell.buttons, ns.RaidCell and ns.RaidCell.fakes,
+        ns.RaidCell and ns.RaidCell.panelFakes }) do
+        for _, frame in ipairs(list or {}) do fn(frame) end
+    end
+end
+
+-- Runs one element's Update on every frame that shows a unit.
+function ns.Units.UpdateElement(element, event)
+    ns.Units.ForEachFrame(function(frame)
+        if frame.unit and UnitExists(frame.unit) then element.Update(frame, event) end
+    end)
+end
+
+-- Buttons made ahead of time --------------------------------------------------------
+-- A group header (SecureGroupHeaderTemplate) makes a button when it first
+-- needs one, in combat too when someone joins then; such a button cannot
+-- get its aura containers until combat ends (Elements/AuraContainers.lua).
+-- So the party header and the raid blocks make theirs out of combat, and
+-- each button prepares its containers as it is made (ns.Units.Prepare).
+--
+-- How (configureChildren in Blizzard_RestrictedAddOnEnvironment/
+-- SecureGroupHeaders.lua): it makes buttons up to the number it displays,
+-- numDisplayed = loopFinish - (startingIndex - 1). With startingIndex
+-- 1 - n, unitsPerColumn n and maxColumns 1, loopFinish is
+-- min(startingIndex - 1 + n, unitCount) = 0 whatever the roster, so it
+-- displays exactly n, and every one of them at an index <= 0: no unit. The
+-- header lays out once so (on show, hidden at once again: nothing is
+-- drawn in between), takes its own attributes back and is shown again as
+-- it was, which lays out the real members. Out of combat only; nothing
+-- happens when the header has n buttons already.
+ns.Units.PREBUILD_KEYS = { "startingIndex", "unitsPerColumn", "maxColumns" }
+
+-- Header attributes are set in one go; a single relayout follows.
+function ns.Units.SetAttributes(header, attributes)
+    header:SetAttribute("_ignore", "attributeChanges")
+    for name, value in pairs(attributes) do header:SetAttribute(name, value) end
+    header:SetAttribute("_ignore", nil)
+end
+
+local function setQuietly(header, values)
+    header:SetAttribute("_ignore", "attributeChanges")
+    for _, name in ipairs(ns.Units.PREBUILD_KEYS) do header:SetAttribute(name, values[name]) end
+    header:SetAttribute("_ignore", nil)
+end
+
+--
+-- The header only lays out on show while it can be seen (OnShow): with its
+-- parent hidden (UIParent during a loading screen, at login too) Show
+-- makes nothing, so then nothing is tried and false returned; the
+-- request waits for UIParent's next OnShow and runs then, out of combat.
+--
+-- The hidden layout chains every button to the one before, and
+-- configureChildren never clears the points of a button it shows again
+-- (only those of the ones it hides): a button starting a new column
+-- would keep the chain anchor beside its column anchor. So all n lose
+-- their points before the real layout.
+--
+-- On a header that shows members, their buttons lose their units for the
+-- hidden layout and get them back at once in the real one (one unit
+-- change each, same frame, nothing drawn between): harmless, and only
+-- when the header lacks buttons, so at most once per growth.
+--
+-- Returns whether buttons were made.
+local waiting, hooked = {}, false
+local function whenUIParentShows(header, n)
+    waiting[header] = math.max(waiting[header] or 0, n)
+    if hooked then return end
+    hooked = true
+    UIParent:HookScript("OnShow", function()
+        C_Timer.After(0, function()
+            ns.AfterCombat("prebuildButtons", function()
+                local list = waiting
+                waiting = {}
+                for h, k in pairs(list) do ns.Units.PrebuildButtons(h, k) end
+                -- Their owners styled them before they existed.
+                ns.Fire("UNITS_PREBUILT")
+            end)
+        end)
+    end)
+end
+
+function ns.Units.PrebuildButtons(header, n)
+    if not header or n < 1 or InCombatLockdown() or header:GetAttribute("child" .. n) then return false end
+    local parent = header:GetParent()
+    if parent and not parent:IsVisible() then
+        if parent == UIParent then whenUIParentShows(header, n) end
+        return false
+    end
+    local saved = {}
+    for _, name in ipairs(ns.Units.PREBUILD_KEYS) do saved[name] = header:GetAttribute(name) end
+    local shown = header:IsShown()
+    header:Hide()
+    setQuietly(header, { startingIndex = 1 - n, unitsPerColumn = n, maxColumns = 1 })
+    header:Show()
+    header:Hide()
+    for i = 1, n do
+        local button = header:GetAttribute("child" .. i)
+        if button then button:ClearAllPoints() end
+    end
+    setQuietly(header, saved)
+    if shown then header:Show() end
+    return header:GetAttribute("child" .. n) ~= nil
+end
+
+-- A unit button just made, out of combat: what each element would
+-- otherwise make the first time it shows a unit, made now (Prepare, an
+-- optional element call), so a unit handed out in combat finds it ready.
+function ns.Units.Prepare(frame)
+    if InCombatLockdown() then return end
+    for _, el in ipairs(ns.Elements) do
+        if el.Prepare then el.Prepare(frame) end
+    end
+end
+
+-- A group header sets every button's unit again on each roster or name
+-- update, mostly to the same person. True when button keeps its unit and
+-- that unit is still the same person (GUID and name, both readable);
+-- remembers them for the next call.
+function ns.Units.SamePerson(button, unit)
+    local Secrets = ns.Secrets
+    local guid = unit and Secrets.Plain(Secrets.Call(UnitGUID, unit), "string")
+    local name = unit and Secrets.Plain(Secrets.Call(UnitName, unit), "string")
+    local who = guid and name and guid .. name
+    local same = who ~= nil and button.unit == unit and button.person == who
+    button.person = who
+    return same
+end

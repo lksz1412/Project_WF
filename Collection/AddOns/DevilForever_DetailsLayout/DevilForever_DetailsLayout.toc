@@ -1,0 +1,7 @@
+## Interface: 16001
+## Title: DevilForever Details Layout
+## Notes: Explicit layout placement for existing Details windows.
+## Version: 0.1.0
+## Dependencies: !DevilForever_Core, Details, DevilForever_Appearance
+
+Layout.lua

@@ -1,0 +1,292 @@
+local _, ns = ...
+
+-- Two indicator icons for units other than you (the player frame has its
+-- own combat icon, Elements/StatusIcons.lua):
+-- * combat: the crossed swords while the unit is in combat (target,
+--   target of target, focus, party). Handy to see a pull without line of
+--   sight.
+-- * pvp: the faction crest (or the free-for-all one) while a unit is
+--   flagged for PvP (player, target, target of target, focus, party).
+--   On NPCs too unless pvpIconNPC is off (asked for on CurseForge: attacking
+--   a flagged NPC flags you). Flagged guards may be elite, and the elite
+--   marker shares the top left corner; that was why NPCs were left out
+--   before 0.21.0.
+--
+-- UnitAffectingCombat and UnitIsPVP may be secret (UnitDocumentation.lua):
+-- such an answer is never compared, it sets the icon's opacity
+-- (SetAlphaFromBoolean). The faction picks the art, so a secret faction
+-- hides the crest. Plain frames: shown, hidden and redrawn in combat too.
+local UnitIcons = { name = "UnitIcons", unitEvents = { "UNIT_FLAGS", "UNIT_FACTION" } }
+ns.UnitIcons = UnitIcons
+
+local Config, Pixel, Secrets, Settings = ns.Config, ns.Pixel, ns.Secrets, ns.Settings
+
+UnitIcons.KINDS = { "combatIcon", "pvpIcon" }
+UnitIcons.COMBAT_TEXTURE = ns.Media.Icon("Combat")
+UnitIcons.PVP_ATLAS = {
+    Alliance = "UI-HUD-UnitFrame-Player-PVP-AllianceIcon",
+    Horde = "UI-HUD-UnitFrame-Player-PVP-HordeIcon",
+    FFA = "UI-HUD-UnitFrame-Player-PVP-FFAIcon",
+}
+-- Older art, where the client lacks the atlases.
+UnitIcons.PVP_TEXTURE = {
+    Alliance = "Interface\\TargetingFrame\\UI-PVP-Alliance",
+    Horde = "Interface\\TargetingFrame\\UI-PVP-Horde",
+    FFA = "Interface\\TargetingFrame\\UI-PVP-FFA",
+}
+-- Above the elite marker (+16), with the raid marker (+18).
+UnitIcons.LEVELS = 18
+-- Test mode: every frame shows each icon that is on, so all of them can
+-- be placed. The player shows its own faction's crest (PLAYER_FACTION).
+UnitIcons.SAMPLES = {
+    player = { pvpIcon = "PLAYER_FACTION" },
+    target = { combatIcon = true, pvpIcon = "Horde" },
+    targettarget = { combatIcon = true, pvpIcon = "Alliance" },
+    targettargettarget = { combatIcon = true, pvpIcon = "Horde" },
+    pettarget = { combatIcon = true, pvpIcon = "Horde" },
+    focus = { combatIcon = true, pvpIcon = "Horde" },
+    focustarget = { combatIcon = true, pvpIcon = "Alliance" },
+    boss = { combatIcon = true },
+}
+UnitIcons.PARTY_SAMPLES = {
+    [1] = { combatIcon = true, pvpIcon = "Alliance" }, [2] = { combatIcon = true, pvpIcon = "Horde" },
+    [3] = { combatIcon = true, pvpIcon = "Alliance" }, [4] = { combatIcon = true, pvpIcon = "FFA" },
+}
+
+local function hasAtlas(name)
+    return C_Texture and C_Texture.GetAtlasInfo and C_Texture.GetAtlasInfo(name) ~= nil
+end
+
+-- Whether a kind applies to the frame at all (not the party's pets and
+-- targets, which derive their settings from the party).
+local function applies(frame, kind)
+    return Settings.AppliesTo(Settings.Get(kind), frame.key)
+end
+
+local function wanted(frame, kind)
+    return applies(frame, kind) and Config.Get(frame.key, kind) == true
+end
+
+function UnitIcons.Build(frame)
+    local icons = {}
+    for _, kind in ipairs(UnitIcons.KINDS) do
+        if applies(frame, kind) then
+            local holder = CreateFrame("Frame", nil, frame)
+            local tex = holder:CreateTexture(nil, "OVERLAY")
+            tex:SetAllPoints(holder)
+            local icon = { holder = holder, tex = tex }
+            if kind == "combatIcon" then
+                tex:SetTexture(UnitIcons.COMBAT_TEXTURE)
+                icon.anim = ns.CombatAnimation.New(tex, UnitIcons.COMBAT_TEXTURE)
+            end
+            holder:Hide()
+            icons[kind] = icon
+        end
+    end
+    if next(icons) then frame.unitIcons = icons end
+    if icons.pvpIcon and applies(frame, "pvpTimer") then UnitIcons.BuildTimer(frame) end
+end
+
+function UnitIcons.Style(frame)
+    local icons = frame.unitIcons
+    if not icons then return end
+    local scope = frame.key
+    for kind, icon in pairs(icons) do
+        local size = Pixel.Snap(Config.Get(scope, kind .. "Size"), nil, 1)
+        icon.holder:SetFrameLevel(frame:GetFrameLevel() + UnitIcons.LEVELS)
+        icon.holder:SetSize(size, size)
+        icon.holder:ClearAllPoints()
+        icon.holder:SetPoint(Config.Get(scope, kind .. "Point"), frame, Config.Get(scope, kind .. "FramePoint"),
+            Pixel.Snap(Config.Get(scope, kind .. "X")), Pixel.Snap(Config.Get(scope, kind .. "Y")))
+    end
+    if frame.pvpTimer then UnitIcons.StyleTimer(frame) end
+    if frame.unitIconsPreview then UnitIcons.Preview(frame, true) else UnitIcons.Update(frame) end
+end
+
+-- answer: true/false, a secret boolean, or nil (unknown: hidden).
+local function showFrom(icon, answer)
+    if Secrets.IsSecret(answer) then
+        icon.holder:Show()
+        icon.holder:SetAlphaFromBoolean(answer, 1, 0)
+        return
+    end
+    icon.holder:SetAlpha(1)
+    icon.holder:SetShown(answer == true)
+end
+
+-- The crest for a faction ("Alliance", "Horde", "FFA"); false if none.
+local function drawCrest(tex, faction)
+    local atlas = UnitIcons.PVP_ATLAS[faction]
+    if not atlas then return false end
+    if hasAtlas(atlas) then
+        tex:SetAtlas(atlas)
+    else
+        tex:SetTexture(UnitIcons.PVP_TEXTURE[faction])
+    end
+    return true
+end
+
+local function ask(fn, unit)
+    local ok, answer = pcall(fn, unit)
+    if ok then return answer end
+    return nil
+end
+
+-- The icon's animation follows it: a secret answer counts as shown (the
+-- opacity decides whether it is seen).
+local function animate(frame, icon, answer)
+    ns.CombatAnimation.Set(icon.anim, Secrets.IsSecret(answer) or answer == true,
+        Config.Get(frame.key, "combatAnimation"))
+end
+
+local function updateCombat(frame, icon)
+    if not wanted(frame, "combatIcon") or not frame.unit then
+        ns.CombatAnimation.Reset(icon.anim)
+        return icon.holder:Hide()
+    end
+    local answer = ask(UnitAffectingCombat, frame.unit)
+    showFrom(icon, answer)
+    animate(frame, icon, answer)
+end
+
+-- Whether flagged NPCs show the crest on this frame (party members and the
+-- player are players anyway).
+local function npcCrest(frame)
+    return Settings.AppliesTo(Settings.Get("pvpIconNPC"), frame.key) and Config.Get(frame.key, "pvpIconNPC") == true
+end
+
+local function updatePvp(frame, icon)
+    local unit = frame.unit
+    if not wanted(frame, "pvpIcon") or not unit then return icon.holder:Hide() end
+    -- NPCs only with pvpIconNPC. Unknown (secret) counts as a player.
+    if Secrets.Bool(UnitIsPlayer, unit) == false and not npcCrest(frame) then return icon.holder:Hide() end
+    -- Free for all first: it has its own crest.
+    local ffa = ask(UnitIsPVPFreeForAll, unit)
+    if ffa == true and drawCrest(icon.tex, "FFA") then return showFrom(icon, true) end
+    local faction = ask(UnitFactionGroup, unit)
+    if Secrets.IsSecret(faction) or not drawCrest(icon.tex, faction) then return icon.holder:Hide() end
+    showFrom(icon, ask(UnitIsPVP, unit))
+end
+
+function UnitIcons.Update(frame)
+    local icons = frame.unitIcons
+    if not icons or frame.unitIconsPreview then return end
+    if icons.combatIcon then updateCombat(frame, icons.combatIcon) end
+    if icons.pvpIcon then updatePvp(frame, icons.pvpIcon) end
+end
+
+local function sample(frame)
+    if frame.sampleIndex then return UnitIcons.PARTY_SAMPLES[frame.sampleIndex] end
+    return UnitIcons.SAMPLES[frame.key]
+end
+
+-- The player's own faction for its sample; Alliance when unreadable.
+local function ownFaction()
+    local faction = ask(UnitFactionGroup, "player")
+    if Secrets.IsSecret(faction) or not UnitIcons.PVP_ATLAS[faction] then return "Alliance" end
+    return faction
+end
+
+function UnitIcons.Preview(frame, on)
+    local icons = frame.unitIcons
+    if not icons then return end
+    frame.unitIconsPreview = on or nil
+    if not on then
+        if frame.unit and UnitExists(frame.unit) then
+            UnitIcons.Update(frame)
+        else
+            for _, icon in pairs(icons) do icon.holder:Hide() end
+        end
+        return
+    end
+    local s = sample(frame)
+    if not s then
+        -- No sample: what the unit really shows.
+        frame.unitIconsPreview = nil
+        if frame.unit and UnitExists(frame.unit) then UnitIcons.Update(frame) end
+        frame.unitIconsPreview = true
+        return
+    end
+    if icons.combatIcon then
+        local shown = wanted(frame, "combatIcon") and s.combatIcon == true
+        showFrom(icons.combatIcon, shown)
+        animate(frame, icons.combatIcon, shown)
+    end
+    if icons.pvpIcon then
+        local faction = s.pvpIcon == "PLAYER_FACTION" and ownFaction() or s.pvpIcon
+        local shown = wanted(frame, "pvpIcon") and faction ~= nil and drawCrest(icons.pvpIcon.tex, faction)
+        showFrom(icons.pvpIcon, shown == true)
+    end
+end
+
+-- The PvP timer (player only, pvpTimer): the time until the player's PvP
+-- flag runs out, left of the crest's place, like Blizzard's
+-- PlayerPVPTimerText; shown while the timer runs, with or without the
+-- crest. GetPVPTimer is read when the client says the timer changed and
+-- counted down here, as Blizzard does.
+local timerFrames, pvpEnds, ticker = {}, nil, nil
+
+function UnitIcons.BuildTimer(frame)
+    local holder = CreateFrame("Frame", nil, frame)
+    holder:SetSize(1, 1)
+    local text = holder:CreateFontString(nil, "OVERLAY")
+    text:SetPoint("RIGHT", holder, "RIGHT", 0, 0)
+    holder.text = text
+    holder:Hide()
+    frame.pvpTimer = holder
+    timerFrames[#timerFrames + 1] = frame
+end
+
+function UnitIcons.TimerText(seconds)
+    seconds = math.ceil(seconds)
+    return ("%d:%02d"):format(math.floor(seconds / 60), seconds % 60)
+end
+
+local function showTimers()
+    local left = pvpEnds and pvpEnds - GetTime()
+    local running = left ~= nil and left > 0
+    for _, frame in ipairs(timerFrames) do
+        local holder = frame.pvpTimer
+        local on = running and Config.Get(frame.key, "pvpTimer") == true
+        if on then holder.text:SetText(UnitIcons.TimerText(left)) end
+        holder:SetShown(on)
+    end
+    if not running and ticker then
+        ticker:Cancel()
+        ticker = nil
+    end
+end
+
+function UnitIcons.ReadTimer()
+    pvpEnds = nil
+    if Secrets.Bool(IsPVPTimerRunning) == true then
+        local ok, ms = pcall(GetPVPTimer)
+        if ok and not Secrets.IsSecret(ms) and type(ms) == "number" then pvpEnds = GetTime() + ms / 1000 end
+    end
+    if pvpEnds and not ticker then ticker = C_Timer.NewTicker(1, showTimers) end
+    showTimers()
+end
+
+function UnitIcons.StyleTimer(frame)
+    local holder, crest = frame.pvpTimer, frame.unitIcons.pvpIcon.holder
+    local scope = frame.key
+    holder:SetFrameLevel(frame:GetFrameLevel() + UnitIcons.LEVELS)
+    holder:ClearAllPoints()
+    holder:SetPoint("RIGHT", crest, "LEFT", 0, 0)
+    ns.Texts.SetFont(holder.text, ns.Media.Font(Config.Get(scope, "fontFace")), Config.Get(scope, "fontSize"),
+        ns.Texts.CountdownFlags(Config.Get(scope, "fontOutline")))
+    showTimers()
+end
+
+ns.On("PVP_TIMER_UPDATE", UnitIcons.ReadTimer)
+ns.On("PLAYER_FLAGS_CHANGED", UnitIcons.ReadTimer)
+ns.On("PLAYER_ENTERING_WORLD", UnitIcons.ReadTimer)
+
+-- Combat starts and ends without a unit event for everyone else; a frame
+-- showing a unit looks again then.
+local function refreshAll(event) ns.Units.UpdateElement(UnitIcons, event) end
+ns.On("PLAYER_REGEN_DISABLED", refreshAll)
+ns.On("PLAYER_REGEN_ENABLED", refreshAll)
+ns.On("PLAYER_FLAGS_CHANGED", refreshAll)
+
+ns.RegisterElement(UnitIcons)

@@ -53,6 +53,8 @@
 -- addon's AceDB:New defaultProfile would: "$char" (default; the AceDB
 -- character key), "$class" (class token), "$className" (localized class
 -- name), "$realm" (AceDB realm key), or a literal name.
+-- With preserveSharedProfiles = true, other characters pointing at the
+-- same profile and matching profiles in any namespace also count as existing.
 -- New is decided from a snapshot taken at Core's first look in the session
 -- (normally the addon's ADDON_LOADED, before its AceDB:New), for all AceDB
 -- targets of the folder before any of them is written, and without the
@@ -235,7 +237,14 @@ local function snapshotAce(target)
     for char, profile in pairs(profileKeys) do snap.profileKeys[char] = profile end
   end
   snap.profiles = names(sv)
-  if target.namespace then
+  if target.preserveSharedProfiles == true then
+    local spaces = rawget(sv, "namespaces")
+    if type(spaces) == "table" then
+      for _, space in pairs(spaces) do
+        for name in pairs(names(space)) do snap.nsProfiles[name] = true end
+      end
+    end
+  elseif target.namespace then
     local spaces = rawget(sv, "namespaces")
     snap.nsProfiles = names(type(spaces) == "table" and rawget(spaces, target.namespace) or nil)
   end
@@ -264,8 +273,14 @@ local function inspectAce(target, snap)
   if type(profile) ~= "string" or profile == "" or type(snapProfile) ~= "string" or snapProfile == "" then
     return nil, "profile name could not be resolved"
   end
+  local shared = false
+  if target.preserveSharedProfiles == true then
+    for _, profile in pairs(snap.profileKeys) do
+      if profile == snapProfile then shared = true; break end
+    end
+  end
   local existing = not snap.svNil and (snapEntry ~= nil or snap.profiles[snapProfile] == true
-    or snap.nsProfiles[snapProfile] == true)
+    or snap.nsProfiles[snapProfile] == true or shared)
   local where = svName .. (target.namespace and ("/" .. target.namespace) or "")
   local charPart = target.scope == "character" and ("@char:" .. keys.char) or ""
   return {profile = profile, key = where .. charPart .. "@profile:" .. profile, existing = existing}

@@ -69,7 +69,7 @@ Per-frame edit values (see Edit.lua)
   Core.Edit:AfterBatch(owner, fn)       -> true | false for an invalid owner/function;
                                            runs now outside a batch, otherwise once
                                            per owner in first-request order with
-                                           its last function; batch errors flush
+                                           its last function; batch body errors flush
                                            pending work before propagating
 
 Layout presets (see Presets.lua; Edit:Get layers token < registry default <

@@ -1,0 +1,8 @@
+## Interface: 16001
+## Title: DevilForever Dominos Skin
+## Notes: Theme fonts for existing Dominos action buttons.
+## Version: 0.1.0
+## Dependencies: !DevilForever_Core, Dominos, DevilForever_Appearance
+## OptionalDeps: Masque
+
+Skin.lua

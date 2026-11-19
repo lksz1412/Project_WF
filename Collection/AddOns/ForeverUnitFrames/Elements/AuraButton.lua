@@ -1,0 +1,282 @@
+local _, ns = ...
+
+-- One aura icon: a plain frame (never secure) with the icon, a border, a
+-- cooldown swipe with the client's countdown numbers, and a stack count.
+-- Buttons are made once per frame and reused; Elements/Auras.lua owns them.
+--
+-- Aura data may be secret. Fields are only handed to widgets (SetTexture,
+-- SetText, SetCooldown...) or read through ns.Secrets. What cannot be
+-- shown from a secret field is asked of the client by aura instance ID,
+-- which returns display values: a count string, a duration object for the
+-- swipe, a dispel colour. Every such call is guarded; what the client
+-- refuses is left empty. A secret instance ID is never passed back.
+local AuraButton = {}
+ns.AuraButton = AuraButton
+
+local Config, Secrets, Pixel = ns.Config, ns.Secrets, ns.Pixel
+
+-- Debuff borders by dispel type; everything else (no type, enrage, ...)
+-- gets NONE.
+AuraButton.DISPEL_COLORS = {
+    Magic = { 0.2, 0.6, 1.0 },
+    Curse = { 0.6, 0.0, 1.0 },
+    Disease = { 0.6, 0.4, 0.0 },
+    Poison = { 0.0, 0.6, 0.0 },
+    NONE = { 0.8, 0.0, 0.0 },
+}
+-- The client's dispel type numbers, for the colour curve (x = number).
+-- Not documented in this build: the numbers of the spell data. Points
+-- are listed in rising order; the curve snaps, and 5 (the first number
+-- past these) and above get NONE again.
+local DISPEL_POINTS = { { 0, "NONE" }, { 1, "Magic" }, { 2, "Curse" }, { 3, "Disease" }, { 4, "Poison" },
+    { 5, "NONE" } }
+
+-- Icons are cropped a little: their own edge art would show inside ours.
+local CROP = 0.08
+
+-- The client's aura tooltip. Nothing when there is no aura behind the
+-- icon (a sample, a secret ID) or the client refuses.
+local function onEnter(self)
+    if not self.auraID then return end
+    GameTooltip:SetOwner(self, "ANCHOR_BOTTOMRIGHT")
+    local method = self.isDebuff and GameTooltip.SetUnitDebuffByAuraInstanceID
+        or GameTooltip.SetUnitBuffByAuraInstanceID
+    if not pcall(method, GameTooltip, self.unit, self.auraID, self.filter) then GameTooltip:Hide() end
+end
+
+local function onLeave(self)
+    if GameTooltip:IsOwned(self) then GameTooltip:Hide() end
+end
+
+-- The regions of an icon, made on button: our own plain frame, or a
+-- Blizzard aura container's button (Elements/AuraContainers.lua).
+function AuraButton.Decorate(button, isDebuff)
+    button.isDebuff = isDebuff
+    button.border = button:CreateTexture(nil, "BACKGROUND")
+    button.border:SetAllPoints(button)
+    button.border:SetColorTexture(1, 1, 1, 1)
+    button.icon = button:CreateTexture(nil, "ARTWORK")
+    button.icon:SetTexCoord(CROP, 1 - CROP, CROP, 1 - CROP)
+    button.cooldown = CreateFrame("Cooldown", nil, button, "CooldownFrameTemplate")
+    button.cooldown:SetAllPoints(button.icon)
+    button.cooldown:SetReverse(true)
+    button.cooldown:SetDrawEdge(false)
+    -- The count sits on its own frame so the swipe never covers it.
+    button.cover = CreateFrame("Frame", nil, button)
+    button.cover:SetAllPoints(button)
+    button.cover:SetFrameLevel(button.cooldown:GetFrameLevel() + 1)
+    button.count = button.cover:CreateFontString(nil, "OVERLAY")
+end
+
+function AuraButton.Create(parent, isDebuff)
+    local button = CreateFrame("Frame", nil, parent)
+    AuraButton.Decorate(button, isDebuff)
+    button:EnableMouse(true)
+    button:SetMouseClickEnabled(false)
+    button:SetScript("OnEnter", onEnter)
+    button:SetScript("OnLeave", onLeave)
+    button:Hide()
+    return button
+end
+
+local function paintBorder(button, c)
+    button.border:SetVertexColor(c[1], c[2], c[3], 1)
+end
+
+local dispelCurves = {}
+local function getDispelCurve(alpha)
+    alpha = alpha or 1
+    local curve = dispelCurves[alpha]
+    if curve then return curve end
+    curve = C_CurveUtil.CreateColorCurve()
+    if Enum and Enum.LuaCurveType then curve:SetType(Enum.LuaCurveType.Step) end
+    for _, point in ipairs(DISPEL_POINTS) do
+        local c = AuraButton.DISPEL_COLORS[point[2]]
+        curve:AddPoint(point[1], CreateColor(c[1], c[2], c[3], alpha))
+    end
+    dispelCurves[alpha] = curve
+    return curve
+end
+-- The dispel colour curve (dispel type number -> border colour), made once
+-- per opacity: opaque for borders (no argument), less for a tint
+-- (Raid/CellAuras.lua).
+AuraButton.DispelCurve = getDispelCurve
+
+-- The short time (auraTimeShort): one unit, letter abbreviated, set up like
+-- the client's own aura duration formatter (Blizzard_AuraContainerShared.lua):
+-- each unit is kept up to 1.5 times its range, so 90 seconds read "90s".
+-- Whitespace is stripped in every locale, so the time fits the icon.
+local MAX_INTERVAL_STRETCH = 1.5
+local SECONDS_IN = { Minutes = 60, Hours = 3600, Days = 86400 }
+local shortFormatter
+local function getShortFormatter()
+    if shortFormatter then return shortFormatter end
+    local f = C_StringUtil.CreateSecondsFormatter()
+    local curve = C_CurveUtil.CreateCurve()
+    curve:SetType(Enum.LuaCurveType.Step)
+    curve:AddPoint(0, Enum.SecondsFormatterInterval.Seconds)
+    for _, interval in ipairs({ "Minutes", "Hours", "Days" }) do
+        -- Points promote on exact matches: one past keeps the last whole value.
+        curve:AddPoint(1 + MAX_INTERVAL_STRETCH * SECONDS_IN[interval], Enum.SecondsFormatterInterval[interval])
+    end
+    f:SetDefaultAbbreviation(Enum.SecondsFormatterAbbreviation.OneLetter)
+    f:SetRounding(Enum.SecondsFormatterRounding.Truncate)
+    f:SetCanRoundUpLastUnit(true)
+    f:SetMinInterval(Enum.SecondsFormatterInterval.Seconds)
+    f:SetMaxIntervalCurve(curve)
+    f:SetDesiredUnitCount(1)
+    f:SetStripIntervalWhitespace(Enum.SecondsFormatterIntervalWhitespace.StripIgnoreLocale)
+    shortFormatter = f
+    return f
+end
+
+-- The short time on or off. A client without formatters keeps its own
+-- format; a button never switched keeps the client's untouched.
+local function formatTime(button, short)
+    local cooldown = button.cooldown
+    if not cooldown.SetCountdownFormatter or not C_StringUtil.CreateSecondsFormatter then return end
+    if short == (button.shortTime or false) then return end
+    cooldown:SetCountdownFormatter(short and getShortFormatter() or nil)
+    button.shortTime = short
+end
+
+-- Size, icon inset, countdown numbers and the buff border. Returns the
+-- count's font, size and outline setting.
+local function shape(button, scope, size, showTime)
+    button:SetSize(size, size)
+    -- Without a border the icon fills the button. The border texture stays
+    -- (a container colours it for dispel types) but is not seen.
+    local bordered = Config.Get(scope, "auraBorder")
+    button.border:SetAlpha(bordered and 1 or 0)
+    local inset = bordered and Pixel.Snap(Config.Get(scope, "auraBorderSize"), button, 1) or 0
+    button.icon:ClearAllPoints()
+    button.icon:SetPoint("TOPLEFT", button, "TOPLEFT", inset, -inset)
+    button.icon:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", -inset, inset)
+    local font = ns.Media.Font(Config.Get(scope, "fontFace"))
+    local outline = Config.Get(scope, "fontOutline")
+    local fontSize = math.max(6, math.floor(size * 0.5 + 0.5))
+    local timeSize = math.max(6, math.floor(size * Config.Get(scope, "auraTimeScale") / 100 + 0.5))
+    button.count:ClearAllPoints()
+    button.count:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", 0, 0)
+    button.count:SetJustifyH("RIGHT")
+    local numbers = button.cooldown:GetCountdownFontString()
+    if numbers then
+        numbers:SetFont(font, timeSize, ns.Texts.CountdownFlags(outline))
+        numbers:ClearAllPoints()
+        numbers:SetPoint("CENTER", button, "CENTER", Config.Get(scope, "auraTimeX"), Config.Get(scope, "auraTimeY"))
+    end
+    button.cooldown:SetHideCountdownNumbers(not showTime)
+    formatTime(button, Config.Get(scope, "auraTimeShort") == true)
+    button.plainBorder = Config.Get(scope, "borderColor")
+    -- A buff whose border shows its caster (button.casterBorder, set by the
+    -- aura groups) keeps that colour.
+    if not button.isDebuff then paintBorder(button, button.casterBorder or button.plainBorder) end
+    return font, fontSize, outline
+end
+
+-- Size, fonts and countdown numbers; out of combat or on plain frames
+-- only, like every Style. The count takes the plain outline for a soft
+-- one, like the countdown numbers: the soft one's thin edge is lost on a
+-- bright icon (Inner Fire), and a container's button, whose count the
+-- client writes, could not have one anyway.
+function AuraButton.Style(button, scope, size, showTime)
+    local font, fontSize, outline = shape(button, scope, size, showTime)
+    ns.Texts.SetFont(button.count, font, fontSize, ns.Texts.CountdownFlags(outline))
+end
+
+local function forget(button)
+    button.unit, button.auraID, button.filter = nil, nil, nil
+end
+
+local function clientCount(button)
+    button.count:SetText(C_UnitAuras.GetAuraApplicationDisplayCount(button.unit, button.auraID, 2))
+end
+
+-- Stack count: a readable number, else the client's count string.
+local function showCount(button, aura)
+    local n = Secrets.Number(aura.applications)
+    if n then
+        button.count:SetText(n > 1 and ("%d"):format(n) or "")
+        return
+    end
+    if not (button.auraID and pcall(clientCount, button)) then button.count:SetText("") end
+end
+
+local function clientDuration(button)
+    button.cooldown:SetCooldownFromDurationObject(C_UnitAuras.GetAuraDuration(button.unit, button.auraID), true)
+end
+
+-- Swipe and countdown: readable times, else the client's duration object.
+local function showDuration(button, aura)
+    local duration, expires = Secrets.Number(aura.duration), Secrets.Number(aura.expirationTime)
+    if duration and expires then
+        if duration > 0 then
+            button.cooldown:SetCooldown(expires - duration, duration)
+        else
+            button.cooldown:Clear()
+        end
+        return
+    end
+    if not (button.auraID and pcall(clientDuration, button)) then button.cooldown:Clear() end
+end
+
+local function clientBorder(button)
+    local color = C_UnitAuras.GetAuraDispelTypeColor(button.unit, button.auraID, getDispelCurve())
+    button.border:SetVertexColor(color:GetRGBA())
+end
+
+-- Debuff border: the colour of a readable dispel type, else the client's
+-- colour from the curve, else NONE.
+local function showBorder(button, aura)
+    if not button.isDebuff then return end
+    local name = aura.dispelName
+    if not Secrets.IsSecret(name) then
+        paintBorder(button, type(name) == "string" and AuraButton.DISPEL_COLORS[name] or AuraButton.DISPEL_COLORS.NONE)
+        return
+    end
+    if not (button.auraID and pcall(clientBorder, button)) then paintBorder(button, AuraButton.DISPEL_COLORS.NONE) end
+end
+
+local function apply(button, unit, aura, filter)
+    forget(button)
+    local id = aura.auraInstanceID
+    if not Secrets.IsSecret(id) and type(id) == "number" then
+        button.unit, button.auraID, button.filter = unit, id, filter
+    end
+    button.icon:SetTexture(aura.icon)
+    showCount(button, aura)
+    showDuration(button, aura)
+    showBorder(button, aura)
+    button:Show()
+end
+
+-- Shows one aura (an AuraData table). Returns false, with the button
+-- hidden, when the client refused part of it.
+function AuraButton.Show(button, unit, aura, filter)
+    if pcall(apply, button, unit, aura, filter) then return true end
+    AuraButton.Clear(button)
+    return false
+end
+
+-- A buff's border by caster: color (a colour table) or nil for the plain
+-- border.
+function AuraButton.SetCasterBorder(button, color)
+    button.casterBorder = color
+    if not button.isDebuff then paintBorder(button, color or button.plainBorder or { 0, 0, 0 }) end
+end
+
+-- Test mode: sample = { icon, count, duration, dispel }, started at start.
+function AuraButton.ShowSample(button, sample, start)
+    forget(button)
+    button.icon:SetTexture(sample.icon)
+    button.count:SetText((sample.count or 0) > 1 and ("%d"):format(sample.count) or "")
+    button.cooldown:SetCooldown(start, sample.duration)
+    if button.isDebuff then paintBorder(button, AuraButton.DISPEL_COLORS[sample.dispel or "NONE"]) end
+    button:Show()
+end
+
+function AuraButton.Clear(button)
+    forget(button)
+    button.cooldown:Clear()
+    button:Hide()
+end

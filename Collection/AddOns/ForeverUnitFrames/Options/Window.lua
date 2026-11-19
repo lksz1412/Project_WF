@@ -1,0 +1,1435 @@
+local _, ns = ...
+
+-- The options window. A plain (non-secure) frame: every change goes through
+-- ns.Config, whose CONFIG_CHANGED listeners restyle the secure unit frames
+-- out of combat. In combat the window stays open but its controls lock.
+local Options = {}
+ns.Options = Options
+
+local Style, Widgets, Schema, Config, Chrome, L = ns.Style, ns.Widgets, ns.Schema, ns.Config, ns.Chrome, ns.L
+
+local WINDOW_NAME = "ForeverUnitFramesOptions"
+local WIDTH, HEIGHT = 780, 560
+local NAV_W, TAB_H = 160, 30
+local NAV_ROW_H, NAV_TOP, NAV_BAR_W = 28, 8, 3
+local TAB_PADDING, TAB_MIN_W, TAB_UNDERLINE_H = 28, 70, 2
+local NOTICE_H = 26
+local SCROLLBAR_W, WHEEL_STEP = 10, 40
+local CONTENT_W = WIDTH - NAV_W - SCROLLBAR_W
+local PAGE_TOP, PAGE_BOTTOM, SECTION_GAP, INSET = 4, 16, 8, 16
+local TEXT_AREA_H, MESSAGE_H, NOTE_H = 70, 20, 34
+-- A tab note's room for text (tests: two lines must hold it).
+Options.NOTE_W = CONTENT_W - 2 * INSET
+local BUTTON_H, BUTTON_W, WIDE_BUTTON_W, FOOTER_GAP, FOOTER_INSET = 24, 120, 160, 8, 12
+local HIGHLIGHT_HOLD, HIGHLIGHT_STEPS, HIGHLIGHT_STEP_SECONDS, HIGHLIGHT_W = 0.9, 6, 0.1, 2
+local DEFAULT_POSITION = { point = "TOPLEFT", relativePoint = "TOPLEFT", x = 60, y = -120 }
+
+local frame
+local pages = {}
+local inCombat = false
+
+-- Helpers ---------------------------------------------------------------------
+
+local line, horizontalLine = Chrome.Line, Chrome.HorizontalLine
+
+local function localized(key)
+    if L[key] ~= key then return L[key] end
+end
+
+local function forEachRow(fn)
+    for _, row in ipairs(Options.rows or {}) do fn(row) end
+end
+
+local function isFrameScope(scope) return scope ~= "general" and scope ~= "profiles" end
+
+-- Position --------------------------------------------------------------------
+
+local function savedPosition()
+    local pos = ForeverUnitFramesDB and ForeverUnitFramesDB.window
+    if type(pos) == "table" and type(pos.point) == "string"
+        and type(pos.x) == "number" and type(pos.y) == "number" then
+        return pos
+    end
+    return DEFAULT_POSITION
+end
+
+local function restorePosition()
+    local pos = savedPosition()
+    frame:ClearAllPoints()
+    frame:SetPoint(pos.point, UIParent, pos.relativePoint or pos.point, pos.x, pos.y)
+end
+
+-- Only in SavedVariables: the window position is not part of a profile.
+local function savePosition()
+    local point, _, relativePoint, x, y = frame:GetPoint(1)
+    if not point then return end
+    ForeverUnitFramesDB = ForeverUnitFramesDB or {}
+    ForeverUnitFramesDB.window = { point = point, relativePoint = relativePoint or point, x = x, y = y }
+end
+
+-- Unit frame highlight ----------------------------------------------------------
+
+local function createOutline(unitFrame)
+    local edges = {}
+    for i = 1, 4 do
+        edges[i] = unitFrame:CreateTexture(nil, "OVERLAY", nil, 7)
+        edges[i]:SetColorTexture(unpack(Style.COLORS.accent))
+        edges[i]:SetAlpha(0)
+    end
+    unitFrame.optionsHighlight = edges
+    return edges
+end
+
+-- Drawn just outside the unit's border (around a docked castbar too).
+local function anchorOutline(unitFrame, edges)
+    local o = ns.Border.Extent(unitFrame.key)
+    local box = unitFrame.unitBox or unitFrame
+    local hw = ns.Pixel.Snap(HIGHLIGHT_W, nil, 1)
+    local w = o + hw
+    for _, t in ipairs(edges) do t:ClearAllPoints() end
+    edges[1]:SetPoint("BOTTOMLEFT", box, "TOPLEFT", -w, o); edges[1]:SetPoint("BOTTOMRIGHT", box, "TOPRIGHT", w, o); edges[1]:SetHeight(hw)
+    edges[2]:SetPoint("TOPLEFT", box, "BOTTOMLEFT", -w, -o); edges[2]:SetPoint("TOPRIGHT", box, "BOTTOMRIGHT", w, -o); edges[2]:SetHeight(hw)
+    edges[3]:SetPoint("TOPRIGHT", box, "TOPLEFT", -o, o); edges[3]:SetPoint("BOTTOMRIGHT", box, "BOTTOMLEFT", -o, -o); edges[3]:SetWidth(hw)
+    edges[4]:SetPoint("TOPLEFT", box, "TOPRIGHT", o, o); edges[4]:SetPoint("BOTTOMLEFT", box, "BOTTOMRIGHT", o, -o); edges[4]:SetWidth(hw)
+end
+
+local function setOutlineAlpha(edges, alpha)
+    for _, t in ipairs(edges) do t:SetAlpha(alpha) end
+end
+
+-- Each highlight gets a token so the fade of an earlier one cannot cut a
+-- newer one short. Only the alpha changes after creation, never visibility
+-- or anchors, so a fade that runs into combat is harmless.
+local function fadeOutline(unitFrame, edges)
+    local token = {}
+    unitFrame.optionsHighlightToken = token
+    local function step(n)
+        if unitFrame.optionsHighlightToken ~= token then return end
+        setOutlineAlpha(edges, 1 - n / HIGHLIGHT_STEPS)
+        if n < HIGHLIGHT_STEPS then
+            C_Timer.After(HIGHLIGHT_STEP_SECONDS, function() step(n + 1) end)
+        end
+    end
+    C_Timer.After(HIGHLIGHT_HOLD, function() step(1) end)
+end
+
+-- Textures on a secure frame are created and anchored out of combat only.
+local function highlightFrame(scope)
+    -- A column (the boss frames): its first frame.
+    local unitFrame = ns.Frames[scope] or ns.Frames[scope .. "1"]
+    if scope == ns.Party.KEY then unitFrame = ns.Party.HighlightTarget() end
+    if not unitFrame or InCombatLockdown() then return end
+    local edges = unitFrame.optionsHighlight or createOutline(unitFrame)
+    anchorOutline(unitFrame, edges)
+    setOutlineAlpha(edges, 1)
+    fadeOutline(unitFrame, edges)
+end
+
+-- Setting rows ------------------------------------------------------------------
+
+-- enumText (optional): the words of the choices; the unit frames' by
+-- default (the raid window has its own).
+local function enumItems(def, enumText)
+    enumText = enumText or Schema.EnumText
+    return function()
+        local items = {}
+        for _, v in ipairs(def.values) do items[#items + 1] = { value = v, text = enumText(def, v) } end
+        return items
+    end
+end
+
+-- `font` holds the font's name: the dropdown resolves it through ns.Media.
+local function mediaItems(def)
+    return function()
+        local items = {}
+        if def.emptyText then items[1] = { value = "", text = L[def.emptyText] } end
+        for _, name in ipairs(ns.Media.List(def.mediaKind)) do
+            items[#items + 1] = { value = name, text = name, font = def.mediaKind == "font" and name or nil }
+        end
+        return items
+    end
+end
+
+local ROW_BUILDERS = {
+    int = function(parent, def, opts)
+        -- An icon's file ID: the macro icons to pick from (0: def.icon).
+        if def.icon then
+            opts.default = def.icon
+            return Widgets.Icon(parent, opts)
+        end
+        opts.min, opts.max, opts.step = def.min, def.max, 1
+        -- A position across the screen: a slider would move ~40 units per
+        -- pixel, so a number with - / + (Shift: the movers' grid), as in
+        -- the raid window.
+        if def.max - def.min > 1000 then
+            opts.bigStep = ns.Movers.GRID
+            return Widgets.Stepper(parent, opts)
+        end
+        opts.zeroText = def.zeroText and L[def.zeroText]
+        return Widgets.Slider(parent, opts)
+    end,
+    bool = function(parent, _, opts) return Widgets.Checkbox(parent, opts) end,
+    enum = function(parent, def, opts)
+        opts.items = enumItems(def, opts.enumText)
+        return Widgets.Dropdown(parent, opts)
+    end,
+    media = function(parent, def, opts)
+        opts.items = mediaItems(def)
+        -- A font stored under an older name (Pitwall's "Titillium Web")
+        -- shows under the one listed.
+        if def.mediaKind == "font" then
+            local get = opts.get
+            opts.get = function() return LibForeverThemes.FontName(get()) end
+        end
+        return Widgets.Dropdown(parent, opts)
+    end,
+    color = function(parent, _, opts) return Widgets.Color(parent, opts) end,
+    text = function(parent, def, opts)
+        -- A hidden-auras list has an editor of its own.
+        if def.blocklist then return ns.AuraBlockEditor.Row(parent, def, opts) end
+        if def.keyInput then return Widgets.KeyInput(parent, opts) end
+        opts.maxLetters = def.maxLetters or ns.Settings.TEXT_MAX
+        return Widgets.TextInput(parent, opts)
+    end,
+}
+
+-- The control row for a setting definition of any registry (the raid
+-- window builds its rows with it): opts as for the widgets, plus
+-- opts.enumText for an enum's words.
+function Options.Control(parent, def, opts)
+    return ROW_BUILDERS[def.type](parent, def, opts)
+end
+
+local function inheritOpts(scope, key)
+    return {
+        isOverridden = function() return Config.IsOverridden(scope, key) end,
+        clear = function() Config.ClearOverride(scope, key) end,
+    }
+end
+
+-- Hints that only hold on some pages: only the player's own setting
+-- conceals a Blizzard castbar, which comes back after a /reload.
+local HINT_SCOPES = { hideBlizzardCastbar = { player = true } }
+
+-- Hints that follow the settings: how range fading measures.
+local DYNAMIC_HINTS = {
+    rangeFriendlyMode = function() return ns.Range.MethodHint("friendly") end,
+    rangeHostileMode = function() return ns.Range.MethodHint("hostile") end,
+    rangeFriendlySpell = function() return ns.Range.SpellHint("friendly") end,
+    rangeHostileSpell = function() return ns.Range.SpellHint("hostile") end,
+}
+
+local function hintFor(scope, key)
+    if DYNAMIC_HINTS[key] then return DYNAMIC_HINTS[key] end
+    if HINT_SCOPES[key] and not HINT_SCOPES[key][scope] then return nil end
+    -- A page's own wording where one setting means something else there.
+    return localized("HINT_" .. key .. "_" .. scope) or localized("HINT_" .. key)
+end
+
+-- Settings that do more than store a value: the theme swaps every
+-- setting for its own set (Core/Themes.lua).
+local SETTERS = {
+    theme = function(v)
+        local ok, why = ns.Themes.Switch(v)
+        if not ok then ns.Print(L["THEME_REFUSED_" .. why]) end
+        return ok
+    end,
+}
+
+local function settingRow(parent, scope, key)
+    local def = ns.Settings.Get(key)
+    local opts = {
+        label = L["SETTING_" .. key], hint = hintFor(scope, key),
+        get = function() return Config.Get(scope, key) end,
+        set = SETTERS[key] or function(v) return Config.Set(scope, key, v) end,
+        scope = scope,
+    }
+    if isFrameScope(scope) and def.scope == "inherit" then opts.inherit = inheritOpts(scope, key) end
+    local row = ROW_BUILDERS[def.type](parent, def, opts)
+    row.key = key
+    return row
+end
+
+-- Pages -------------------------------------------------------------------------
+
+-- Whether a row is folded away (a closed placement fold, below) or not
+-- offered now (row.visible, the theme's colours).
+local function folded(row)
+    if row.visible and not row.visible() then return true end
+    return row.fold ~= nil and not row.fold.open
+end
+
+-- The page's rows laid out anew with their gaps, after a row changed its
+-- height (the hidden-auras editor's list) or a fold opened or closed; the
+-- scroll range follows.
+local function restack(page)
+    local y = PAGE_TOP
+    for _, row in ipairs(page.rows) do
+        if row.fold or row.visible then row:SetShown(not folded(row)) end
+        if not folded(row) then
+            y = y + row.stackGap
+            row:ClearAllPoints()
+            row:SetPoint("TOPLEFT", page, "TOPLEFT", 0, -y)
+            row:SetPoint("TOPRIGHT", page, "TOPRIGHT", 0, -y)
+            y = y + row:GetHeight()
+        end
+    end
+    page.height = y + PAGE_BOTTOM
+    Options.PageResized(page)
+end
+
+-- Stacks rows top to bottom; a section header after other rows gets a gap.
+local function newStack(page)
+    local stack = { y = PAGE_TOP, rows = {} }
+    function stack.add(row, height)
+        row.stackGap = (row.isSection and #stack.rows > 0) and SECTION_GAP or 0
+        stack.y = stack.y + row.stackGap
+        row:SetPoint("TOPLEFT", page, "TOPLEFT", 0, -stack.y)
+        row:SetPoint("TOPRIGHT", page, "TOPRIGHT", 0, -stack.y)
+        row:SetHeight(height or row:GetHeight())
+        stack.rows[#stack.rows + 1] = row
+        stack.y = stack.y + row:GetHeight()
+    end
+    function stack.finish()
+        page.rows, page.height = stack.rows, stack.y + PAGE_BOTTOM
+        page.Restack = function() restack(page) end
+        if page.hasFolds then restack(page) end
+    end
+    return stack
+end
+
+local function sectionHeader(page, id)
+    local header = Widgets.Header(page, L["SECTION_" .. id])
+    header.isSection = true
+    return header
+end
+
+-- Defined with the other blocks below; a section's action button, a
+-- tab's note, the theme's "Take positions from" list.
+local actionBlock, noteBlock, themeCopyRow, themeColorRow, hubBlock
+
+-- General > Frames: after the master switch, one switch per frame, the
+-- frame's own "enabled".
+local function frameSwitches(page, stack)
+    for _, def in ipairs(ns.Units.List) do
+        if not def.available or def.available() then
+            local row = Widgets.Checkbox(page, {
+                label = L["FRAME_" .. def.key], hint = localized("HINT_frameEnabled"),
+                get = function() return Config.Get(def.key, "enabled") end,
+                set = function(v) return Config.Set(def.key, "enabled", v) end,
+            })
+            row.key = "enabled"
+            stack.add(row)
+        end
+    end
+end
+
+-- A section's placement rows (section.placement: anchors, points,
+-- offsets, growth) fold under one row, closed until clicked. A fold opened
+-- stays open while the game runs (openFolds, by page and section).
+local openFolds = {}
+local function foldRow(page, id)
+    local row = Widgets.NewRow(page, { label = "" })
+    row.isFold = true
+    local button = CreateFrame("Button", nil, row)
+    button:SetAllPoints(row)
+    button:SetScript("OnEnter", function() row.hover:Show() end)
+    button:SetScript("OnLeave", function() row.hover:Hide() end)
+    function row:SetOpen(open)
+        row.open = open
+        openFolds[id] = open or nil
+        row:SetLabel((open and "- " or "+ ") .. L.FOLD_PLACEMENT)
+    end
+    button:SetScript("OnClick", function()
+        row:SetOpen(not row.open)
+        page.Restack()
+    end)
+    row.button = button
+    function row:Refresh() end
+    function row:SetEnabled() end
+    row:SetOpen(openFolds[id] == true)
+    return row
+end
+
+-- The section's rows: its settings, those of section.placement folded at
+-- the end (in the section's order).
+local function addSectionRows(page, stack, scope, section, keys)
+    local placement = {}
+    for _, key in ipairs(section.placement or {}) do placement[key] = true end
+    local foldKeys = {}
+    for _, key in ipairs(keys) do
+        if placement[key] then foldKeys[#foldKeys + 1] = key else stack.add(settingRow(page, scope, key)) end
+    end
+    if #foldKeys == 0 then return end
+    local fold = foldRow(page, scope .. ":" .. section.id)
+    stack.add(fold)
+    for _, key in ipairs(foldKeys) do
+        local row = settingRow(page, scope, key)
+        row.fold = fold
+        stack.add(row)
+    end
+    page.hasFolds = true
+end
+
+-- A tab's sections onto the stack: those with a setting of the page.
+local function addSections(page, stack, scope, tab)
+    for _, section in ipairs(tab.sections or {}) do
+        local keys = Schema.SectionKeys(section, scope)
+        if #keys > 0 then
+            stack.add(sectionHeader(page, section.id))
+            addSectionRows(page, stack, scope, section, keys)
+            if section.frames then frameSwitches(page, stack) end
+            if section.themeCopy then
+                stack.add(themeColorRow(page))
+                page.hasFolds = true   -- the colour row comes and goes with the theme
+                stack.add(themeCopyRow(page))
+            end
+            for _, id in ipairs(section.hub or {}) do
+                stack.add(hubBlock(page, id))
+                page.hasFolds = true   -- the hub comes and goes while the game runs
+            end
+            for _, id in ipairs(section.actions or {}) do stack.add(actionBlock(page, id)) end
+        end
+        if section.raidKeys then
+            stack.add(sectionHeader(page, section.id))
+            stack.add(noteBlock(page, L["NOTE_" .. section.id]))
+            for _, key in ipairs(section.raidKeys) do stack.add(ns.RaidOptions.SettingRow(page, key)) end
+            page.raidRows = true
+        end
+    end
+end
+
+local function buildSettingsPage(page, scope, tab)
+    local stack = newStack(page)
+    if tab.note then stack.add(noteBlock(page, L["NOTE_" .. tab.note])) end
+    addSections(page, stack, scope, tab)
+    stack.finish()
+end
+
+-- A plain block on a custom page. Blocks answer Refresh/SetEnabled like rows.
+local function newBlock(page)
+    local block = CreateFrame("Frame", nil, page)
+    function block:Refresh() end
+    function block:SetEnabled() end
+    return block
+end
+
+local function textArea(block, readOnly, y)
+    local area = Widgets.TextArea(block, { width = CONTENT_W - 2 * INSET, height = TEXT_AREA_H, readOnly = readOnly })
+    area:SetPoint("TOPLEFT", block, "TOPLEFT", INSET, -y)
+    return area
+end
+
+local confirmButton = Chrome.ConfirmButton
+
+-- The left group of both windows' footers, so that they match by
+-- construction: [Unlock / Lock frames] [Test mode] [the other window…],
+-- from the footer's left edge. spec: unlock() and test() for the first
+-- two, testLeave() repaints the test button after a hover, other =
+-- { text, onClick }. Returns the three buttons.
+function Options.FooterLeft(footer, spec)
+    local unlock = Widgets.Button(footer, { text = L.UNLOCK_FRAMES, width = BUTTON_W, onClick = spec.unlock })
+    unlock:SetPoint("LEFT", footer, "LEFT", FOOTER_INSET, 0)
+    local test = Widgets.Button(footer, { text = L.TEST_MODE_ON, width = BUTTON_W, onClick = spec.test })
+    test:SetPoint("LEFT", unlock, "RIGHT", FOOTER_GAP, 0)
+    test:HookScript("OnLeave", spec.testLeave)
+    local other = Widgets.Button(footer, { text = spec.other.text, width = BUTTON_W, onClick = spec.other.onClick })
+    other:SetPoint("LEFT", test, "RIGHT", FOOTER_GAP, 0)
+    return unlock, test, other
+end
+
+-- Section actions: what the button does. Two clicks, like Reset.
+local ACTIONS = {
+    applyFontToFrames = function() Config.ClearFrameOverrides(ns.Settings.TEXT_STYLE_KEYS) end,
+    positionsFromBlizzard = function() ns.Blizzard.TakeLayout() end,
+    positionsUndo = function() ns.Blizzard.UndoLayout() end,
+    themeApplyAll = function() ns.Print(L.THEME_APPLIED_ALL:format(ns.Themes.ApplyToAll())) end,
+    themeReset = function()
+        local ok, why = ns.Themes.Reset()
+        if not ok then ns.Print(L["THEME_REFUSED_" .. why]) end
+    end,
+}
+-- Actions offered only now and then (the page restacks them, as folds).
+local ACTION_SHOWN = {
+    -- Following the hub "Forever Themes": the hub applies it to all.
+    themeApplyAll = function() return ns.Themes.HasOthers() and not ns.Themes.FollowsHub() end,
+}
+-- The buttons by action id, for the tests and for disarming on close.
+Options.actionButtons = {}
+
+function actionBlock(page, id)
+    local block = newBlock(page)
+    local button = confirmButton(block, L["ACTION_" .. id], ACTIONS[id])
+    button:SetPoint("TOPLEFT", block, "TOPLEFT", INSET, -6)
+    local hint = Style.Text(block, 10, "muted")
+    hint:SetPoint("LEFT", button, "RIGHT", FOOTER_GAP, 0)
+    hint:SetText(L["ACTION_HINT_" .. id])
+    Options.actionButtons[id] = button
+    block.visible = ACTION_SHOWN[id]
+    function block:SetEnabled(on) button:SetEnabled(on) end
+    block:SetHeight(BUTTON_H + 12)
+    return block
+end
+
+-- The current theme's colours, kept apart from the theme sets; none
+-- (the row hidden) under Classic.
+function themeColorRow(page)
+    local row = Widgets.Dropdown(page, {
+        label = L.OPT_THEME_COLOR,
+        items = function()
+            local theme, items = ns.Themes.Current(), {}
+            for _, id in ipairs(ns.Themes.Colors()) do
+                items[#items + 1] = { value = id, text = L["THEME_COLOR_" .. theme .. "_" .. id] }
+            end
+            return items
+        end,
+        get = function() return ns.Themes.Color() end,
+        set = function(id)
+            local ok, why = ns.Themes.SetColor(id)
+            if not ok then ns.Print(L["THEME_REFUSED_" .. why]) end
+        end,
+    })
+    row.visible = function() return #ns.Themes.Colors() > 0 end
+    row.key = "themeColor"   -- greyed while following the hub (ROW_ACTIVE)
+    row:Refresh()
+    return row
+end
+
+-- The hub "Forever Themes" (Core/Themes.lua): a line saying it holds a
+-- section's rows, and a button to its window; without the hub (missing)
+-- a line naming it and its download link. section.hub: the blocks.
+local HUB_SHOWN = {
+    follows = function() return ns.Themes.FollowsHub() end,
+    fonts = function() return ns.Themes.Hub() ~= nil end,
+    missing = function() return ns.Themes.Hub() == nil end,
+}
+-- The library's shared texts; fonts is ours.
+local HUB_TEXT = { follows = "HUB_FOLLOWS", missing = "HUB_MISSING" }
+Options.hubBlocks = {}   -- by id, for the tests
+function hubBlock(page, id)
+    local block = newBlock(page)
+    local missing = id == "missing"
+    local button = Widgets.Button(block, { text = LibForeverThemes.Text(missing and "HUB_LINK" or "HUB_OPEN", ns.Locale.Current()),
+        width = WIDE_BUTTON_W,
+        onClick = missing and function() LibForeverThemes.ShowHubLink(nil, ns.Locale.Current()) end
+            or function() ns.Themes.Hub().OpenOptions() end })
+    button:SetPoint("TOPLEFT", block, "TOPLEFT", INSET, -6)
+    block.text = Style.Text(block, 10, "muted")
+    block.text:SetPoint("LEFT", button, "RIGHT", FOOTER_GAP, 0)
+    block.text:SetText(HUB_TEXT[id] and LibForeverThemes.Text(HUB_TEXT[id], ns.Locale.Current()) or L.HUB_fonts)
+    block.button = button
+    block.visible = HUB_SHOWN[id]
+    function block:SetEnabled(on) button:SetEnabled(on) end
+    block:SetHeight(BUTTON_H + 12)
+    Options.hubBlocks[id] = block
+    return block
+end
+
+-- The positions another theme's set has, taken over into the current
+-- one. What it replaced comes back with "Undo" in the same list, until
+-- the theme changes or /reload.
+local themeUndo
+local UNDO_THEME, NONE_THEME = "__undo", "__none"
+function themeCopyRow(page)
+    local row
+    row = Widgets.Dropdown(page, {
+        label = L.THEME_COPY_FROM, hint = L.HINT_THEME_COPY_FROM,
+        items = function()
+            local items = {}
+            if themeUndo and themeUndo.theme == ns.Themes.Current() then
+                items[1] = { value = UNDO_THEME, text = L.COPY_UNDO }
+            end
+            for _, id in ipairs(ns.Themes.Stored()) do
+                items[#items + 1] = { value = id, text = ns.Schema.EnumText(ns.Settings.Get("theme"), id) }
+            end
+            if #items == 0 then items[1] = { value = NONE_THEME, text = L.THEME_COPY_NONE } end
+            return items
+        end,
+        get = function() return nil end,
+        set = function(id)
+            if id == NONE_THEME then return end
+            if id == UNDO_THEME then
+                local undo = themeUndo
+                themeUndo = nil
+                if undo then ns.Themes.Restore(undo.saved) end
+                return
+            end
+            local saved, why = ns.Themes.CopyPlacement(id)
+            if not saved then ns.Print(L["THEME_REFUSED_" .. why]); return end
+            themeUndo = { theme = ns.Themes.Current(), saved = saved }
+        end,
+    })
+    local refresh = row.Refresh
+    function row:Refresh() refresh(self); self.button.text:SetText(L.THEME_COPY_PICK) end
+    row:Refresh()
+    return row
+end
+
+-- A muted text above a tab's sections, as wide as the page (two lines at
+-- most).
+function noteBlock(page, text)
+    local block = newBlock(page)
+    block.text = Style.Text(block, 11, "muted")
+    block.text:SetPoint("TOPLEFT", block, "TOPLEFT", INSET, -4)
+    block.text:SetPoint("TOPRIGHT", block, "TOPRIGHT", -INSET, -4)
+    block.text:SetJustifyH("LEFT")
+    block.text:SetWordWrap(true)
+    block.text:SetText(text)
+    block.isNote = true
+    block:SetHeight(NOTE_H)
+    return block
+end
+
+local function exportBlock(page)
+    local block = newBlock(page)
+    local hint = Style.Text(block, 11, "muted")
+    hint:SetPoint("TOPLEFT", block, "TOPLEFT", INSET, -4)
+    hint:SetText(L.EXPORT_HINT)
+    local area = textArea(block, true, MESSAGE_H + 2)
+    Options.exportArea = area
+    function block:Refresh() area:SetText(ns.Codec.Encode(Config.Profile())) end
+    return block, MESSAGE_H + TEXT_AREA_H + 10
+end
+
+local function showImportMessage(text, colorKey)
+    Options.importMessage:SetText(text)
+    Style.Paint(Options.importMessage, colorKey)
+end
+
+local function runImport()
+    local text = (Options.importArea:GetText() or ""):match("^%s*(.-)%s*$")
+    local profile, err, rejected = ns.Codec.Decode(text)
+    if not profile then
+        showImportMessage(L["IMPORT_" .. err], "error")
+        return
+    end
+    -- A raid size's export (Raid/Profiles.lua) has only its size letter
+    -- (a, b or c), which are also the pet's target and the boss frames
+    -- here. Only those letters, and every entry one the raid window
+    -- reads: a raid text, refused.
+    local letters = ns.Codec.Letters(text)
+    local raid = next(letters) ~= nil
+    local raidLetters = {}
+    for _, letter in pairs(ns.RaidSettings.PREFIX) do raidLetters[letter] = true end
+    for letter in pairs(letters) do
+        if not raidLetters[letter] then raid = false end
+    end
+    if raid then
+        local _, _, raidRejected = ns.RaidCodec.Decode(text)
+        raid = raidRejected == 0
+    end
+    -- Import replaces every frame: a text of which nothing could be read
+    -- would reset them all. Only the bare version ("1") is a real all-defaults profile.
+    local empty = true
+    for _, values in pairs(profile) do
+        if next(values) then empty = false end
+    end
+    if raid or empty and text ~= tostring(ns.Codec.VERSION) then
+        showImportMessage(raid and L.IMPORT_RAID_STRING or L.IMPORT_CODEC_FORMAT, "error")
+        return
+    end
+    Config.Import(profile)
+    LibForeverThemes.HubSync()   -- a following addon gets the hub's theme back
+    Options.importArea:SetText("")
+    showImportMessage(rejected > 0 and L.IMPORT_SKIPPED:format(rejected) or L.IMPORT_DONE, "accent")
+end
+
+local function importBlock(page)
+    local block = newBlock(page)
+    local area = textArea(block, false, 0)
+    -- Import replaces every frame: two clicks, like Reset (an empty box
+    -- just says so at once).
+    local button = confirmButton(block, L.IMPORT, runImport, nil,
+        function() return (Options.importArea:GetText() or ""):find("%S") ~= nil end)
+    button:SetPoint("TOPLEFT", area, "BOTTOMLEFT", 0, -8)
+    local message = Style.Text(block, 11, "muted")
+    message:SetPoint("TOPLEFT", button, "BOTTOMLEFT", 0, -6)
+    message:SetJustifyH("LEFT")
+    Options.importArea, Options.importButton, Options.importMessage = area, button, message
+    function block:SetEnabled(on) button:SetEnabled(on); area.edit:SetEnabled(on) end
+    return block, TEXT_AREA_H + 8 + BUTTON_H + 6 + MESSAGE_H
+end
+
+local function resetBlock(page)
+    local block = newBlock(page)
+    local button = confirmButton(block, L.RESET_ALL, function() Config.ResetAll(); LibForeverThemes.HubSync() end)
+    button:SetPoint("TOPLEFT", block, "TOPLEFT", INSET, -6)
+    Options.resetAllButton = button
+    function block:SetEnabled(on) button:SetEnabled(on) end
+    return block, BUTTON_H + 12
+end
+
+local CUSTOM_BLOCKS = {
+    { header = "EXPORT", build = exportBlock },
+    { header = "IMPORT", build = importBlock },
+    { header = "RESET", build = resetBlock },
+}
+
+-- The profile rows: the same widgets and two-click button as the raid
+-- window's own profiles (Raid/Options/Profiles.lua).
+local PROFILE_WHY = {
+    EMPTY = function() return L.PROFILE_NAME_EMPTY end,
+    TOO_LONG = function() return L.PROFILE_NAME_TOO_LONG:format(ns.UnitProfiles.NAME_LETTERS) end,
+    TAKEN = function() return L.PROFILE_NAME_TAKEN end,
+    DEFAULT = function() return L.PROFILE_DEFAULT_FIXED end,
+    GONE = function() return L.PROFILE_GONE end,
+    COMBAT = function() return L.PROFILE_COMBAT end,
+    WAITING = function() return L.PROFILE_WAITING end,
+}
+
+local function profileText(name)
+    return name == ns.UnitProfiles.DEFAULT and L.PROFILE_DEFAULT or name
+end
+
+local function profileSay(ok, why, done)
+    Options.profileMessage:SetText(ok and done or PROFILE_WHY[why]())
+    Style.Paint(Options.profileMessage, ok and "accent" or "error")
+end
+
+-- Rename and Delete are never for Default, and never in combat (a
+-- Refresh must not undo the combat lock).
+local function renamable() return ns.UnitProfiles.Active() ~= ns.UnitProfiles.DEFAULT and not inCombat end
+
+local function profileRows(page, stack)
+    local P = ns.UnitProfiles
+    local typed, delete = ""
+    local picker = Widgets.Dropdown(page, {
+        label = L.PROFILE_ACTIVE,
+        items = function()
+            local items = {}
+            for _, name in ipairs(P.Names()) do items[#items + 1] = { value = name, text = profileText(name) } end
+            return items
+        end,
+        get = P.Active,
+        set = function(name)
+            delete.Disarm()   -- one click must not delete the profile just switched to
+            local ok, why = P.Switch(name)
+            profileSay(ok, why, L.PROFILE_SWITCHED:format(profileText(name)))
+        end,
+    })
+    stack.add(picker)
+    local nameRow = Widgets.NewRow(page, { label = L.PROFILE_NAME })
+    local box = Widgets.TextBox(nameRow, { width = BUTTON_W + 40, maxLetters = P.NAME_LETTERS,
+        get = function() return typed end, set = function(t) typed = t; return true end })
+    local function act(fn, done)
+        box:ClearFocus()   -- commits the text into typed
+        local name = typed:match("^%s*(.-)%s*$")
+        local ok, why = fn(name)
+        if ok then typed = ""; box:SetText("") end
+        profileSay(ok, why, done:format(name))
+    end
+    local save = Widgets.Button(nameRow, { text = L.PROFILE_SAVE_AS, width = BUTTON_W,
+        onClick = function() act(P.SaveAs, L.PROFILE_SAVED) end })
+    save:SetPoint("LEFT", box, "RIGHT", FOOTER_GAP, 0)
+    local rename = Widgets.Button(nameRow, { text = L.PROFILE_RENAME, width = BUTTON_W,
+        onClick = function() act(P.Rename, L.PROFILE_RENAMED) end })
+    rename:SetPoint("LEFT", save, "RIGHT", FOOTER_GAP, 0)
+    function nameRow:Refresh() rename:SetEnabled(renamable()) end
+    function nameRow:SetEnabled(on) box:SetEnabled(on); save:SetEnabled(on); rename:SetEnabled(on and renamable()) end
+    stack.add(nameRow)
+    local deleteBlock = newBlock(page)
+    delete = confirmButton(deleteBlock, L.PROFILE_DELETE, function()
+        local name = P.Active()
+        local ok, why = P.Delete()
+        profileSay(ok, why, L.PROFILE_DELETED:format(profileText(name)))
+    end)
+    delete:SetPoint("TOPLEFT", deleteBlock, "TOPLEFT", INSET, -6)
+    local message = Style.Text(deleteBlock, 11, "muted")
+    message:SetPoint("LEFT", delete, "RIGHT", FOOTER_GAP, 0)
+    message:SetJustifyH("LEFT")
+    -- Only when the state changes: SetEnabled repaints an armed button as idle.
+    local deleteOn
+    local function setDelete(on)
+        if deleteOn ~= on then deleteOn = on; delete:SetEnabled(on) end
+    end
+    function deleteBlock:Refresh() setDelete(renamable()) end
+    function deleteBlock:SetEnabled(on) setDelete(on and renamable()) end
+    stack.add(deleteBlock, BUTTON_H + 12)
+    Options.profilePicker, Options.profileName, Options.profileSaveButton = picker, box, save
+    Options.profileRenameButton, Options.profileDeleteButton, Options.profileMessage = rename, delete, message
+end
+
+-- The Profiles page: the named profiles, then export, import, reset
+-- (they act on the active profile).
+local function buildProfilePage(page)
+    local stack = newStack(page)
+    local header = Widgets.Header(page, L.PROFILES_SECTION)
+    header.isSection = true
+    stack.add(header)
+    stack.add(noteBlock(page, L.PROFILES_NOTE))
+    profileRows(page, stack)
+    for _, entry in ipairs(CUSTOM_BLOCKS) do
+        header = Widgets.Header(page, L[entry.header])
+        header.isSection = true
+        stack.add(header)
+        stack.add(entry.build(page))
+    end
+    stack.finish()
+end
+
+-- General > Click-casting: the raid window's editor (Raid/Options/
+-- ClickCast.lua) in this window's measures: the binding's controls start
+-- left of the usual column to fit the narrower page.
+local CLICK_CAST_LAYOUT = { top = PAGE_TOP, bottom = PAGE_BOTTOM, sectionGap = SECTION_GAP, noteHeight = NOTE_H,
+    controlX = 170, kindW = 130, valueW = 290, keyW = 80, rankW = 80, clearGap = FOOTER_GAP }
+
+local function pageFor(scope, tab)
+    local id = scope .. ":" .. tab.id
+    if pages[id] then return pages[id] end
+    local page = CreateFrame("Frame", nil, frame.scrollChild)
+    page:SetPoint("TOPLEFT", frame.scrollChild, "TOPLEFT", 0, 0)
+    page:SetWidth(CONTENT_W)
+    if tab.custom == "profiles" then
+        buildProfilePage(page)
+    elseif tab.custom == "clickCast" then
+        -- The unit frames' switch (the tab's section) above the editor.
+        local layout = setmetatable({ leading = function()
+            local rows = {}
+            for _, section in ipairs(tab.sections) do
+                for _, key in ipairs(Schema.SectionKeys(section, scope)) do rows[#rows + 1] = settingRow(page, scope, key) end
+            end
+            return rows
+        end }, { __index = CLICK_CAST_LAYOUT })
+        ns.RaidClickCastPage.Build(page, tab, layout, "unit")
+        page.clickCast = true
+    else
+        buildSettingsPage(page, scope, tab)
+    end
+    page:SetHeight(page.height)
+    page:Hide()
+    pages[id] = page
+    return page
+end
+
+-- Scrolling ---------------------------------------------------------------------
+
+local function updateScrollbar()
+    local scroll, thumb = frame.scroll, frame.scrollThumb
+    local range, view = scroll:GetVerticalScrollRange(), scroll:GetHeight()
+    if range <= 0 or view <= 0 then thumb:Hide(); return end
+    local thumbH = view * view / (view + range)
+    thumb:SetHeight(thumbH)
+    thumb:ClearAllPoints()
+    thumb:SetPoint("TOPRIGHT", scroll, "TOPRIGHT", SCROLLBAR_W - 3, -(view - thumbH) * scroll:GetVerticalScroll() / range)
+    thumb:Show()
+end
+
+-- A page that changed its height (a row grew or shrank, Restack): the
+-- scroll range follows while it is shown, and a scroll beyond the new
+-- range moves back to its end.
+function Options.PageResized(page)
+    page:SetHeight(page.height)
+    if not frame or Options.page ~= page then return end
+    frame.scrollChild:SetHeight(page.height)
+    local scroll = frame.scroll
+    scroll:UpdateScrollChildRect()
+    local range = math.max(0, scroll:GetVerticalScrollRange())
+    if scroll:GetVerticalScroll() > range then scroll:SetVerticalScroll(range) end
+    updateScrollbar()
+end
+
+local function onWheel(scroll, delta)
+    local v = scroll:GetVerticalScroll() - delta * WHEEL_STEP
+    scroll:SetVerticalScroll(math.max(0, math.min(scroll:GetVerticalScrollRange(), v)))
+    updateScrollbar()
+end
+
+local function createScroll(body)
+    local scroll = CreateFrame("ScrollFrame", nil, body)
+    scroll:EnableMouseWheel(true)
+    scroll:SetScript("OnMouseWheel", onWheel)
+    scroll:SetScript("OnScrollRangeChanged", updateScrollbar)
+    local child = CreateFrame("Frame", nil, scroll)
+    child:SetSize(CONTENT_W, 1)
+    scroll:SetScrollChild(child)
+    local thumb = body:CreateTexture(nil, "ARTWORK")
+    thumb:SetColorTexture(unpack(Style.COLORS.accent))
+    thumb:SetWidth(2)
+    thumb:Hide()
+    frame.scroll, frame.scrollChild, frame.scrollThumb = scroll, child, thumb
+end
+
+-- Combat lock -------------------------------------------------------------------
+
+local function anchorScroll()
+    local top = inCombat and Options.combatNotice or frame.tabRow
+    frame.scroll:ClearAllPoints()
+    frame.scroll:SetPoint("TOPLEFT", top, "BOTTOMLEFT", 0, 0)
+    frame.scroll:SetPoint("BOTTOMRIGHT", frame.body, "BOTTOMRIGHT", -SCROLLBAR_W, 0)
+end
+
+local function refreshFooter()
+    local unlocked = ns.Movers.IsUnlocked("units")
+    Options.unlockButton.text:SetText(unlocked and L.LOCK_FRAMES or L.UNLOCK_FRAMES)
+    local testOn = ns.TestMode.IsOn()
+    Style.SetBorderColor(Options.testButton, testOn and "accent" or "border")
+    local idle = Options.testButton:IsEnabled() and "text" or "muted"
+    Style.Paint(Options.testButton.text, testOn and "accent" or idle)
+end
+
+-- Rows that only mean something while another setting allows it, by key:
+-- (scope) -> whether it does on that page. The range spell and yards of a
+-- reaction whose fading is off; each frame's own switch while "Use unit
+-- frames" is off (its value is kept); Options/Dependencies.lua adds the
+-- switches and modes of the pages.
+-- The buff watch runs only while the raid frames are on.
+local function raidFramesOn() return ns.RaidPanel.Enabled() end
+local ROW_ACTIVE = {
+    enabled = function() return ns.Config.Get("general", "unitFrames") end,
+    -- Only while the raid window's click-casting is on (off, or automatic
+    -- with Clique loaded, it binds nothing anywhere).
+    clickCast = function() return ns.ClickCast.On() end,
+    buffKey = raidFramesOn, buffSolo = raidFramesOn, buffWatchShow = raidFramesOn,
+    rangeFriendlySpell = function() return ns.Range.ReactionOn("friendly") end,
+    rangeFriendlyYards = function() return ns.Range.ReactionOn("friendly") end,
+    rangeHostileSpell = function() return ns.Range.ReactionOn("hostile") end,
+    rangeHostileYards = function() return ns.Range.ReactionOn("hostile") end,
+    -- The hub "Forever Themes" sets the theme (following) and owns the
+    -- font beyond the frames; the values stay (the hub takes them over).
+    theme = function() return not ns.Themes.FollowsHub() end,
+    themeColor = function() return not ns.Themes.FollowsHub() end,
+    themeBlizzardFonts = function() return ns.Themes.Hub() == nil end,
+    themePlatynatorFont = function() return ns.Themes.Hub() == nil end,
+}
+Options.ROW_ACTIVE = ROW_ACTIVE
+
+-- row.enabledState: what the row was last set to (the tests read it).
+local function setRowStates()
+    local scope = Options.currentScope
+    forEachRow(function(row)
+        -- The click-casting editor's rows share keys with settings here
+        -- (its mode row is "clickCast"), not their rules.
+        local active = not row.clickCastRow and ROW_ACTIVE[row.key]
+        local on = not inCombat and (not active or active(scope))
+        -- Only a row whose state changes: SetEnabled repaints a button as
+        -- idle, which would hide an armed two-click button's "Confirm".
+        if row.enabledState ~= on then
+            row.enabledState = on
+            row:SetEnabled(on)
+        end
+    end)
+end
+
+local function applyLock()
+    local on = not inCombat
+    setRowStates()
+    for _, control in ipairs(frame.footerControls) do control:SetEnabled(on) end
+    Options.combatNotice:SetShown(inCombat)
+    anchorScroll()
+    refreshFooter()
+end
+
+-- Navigation --------------------------------------------------------------------
+
+local paintSelection, hoverable = Chrome.PaintSelection, Chrome.Hoverable
+
+local function navButton(nav, key, text, y)
+    local b = CreateFrame("Button", nil, nav)
+    b:SetHeight(NAV_ROW_H)
+    b:SetPoint("TOPLEFT", nav, "TOPLEFT", 0, -y)
+    b:SetPoint("TOPRIGHT", nav, "TOPRIGHT", -1, -y)
+    b.hover = Style.Fill(b, "hover", "ARTWORK")
+    b.hover:Hide()
+    b.bar = line(b, "accent")
+    b.bar:SetPoint("TOPLEFT"); b.bar:SetPoint("BOTTOMLEFT"); b.bar:SetWidth(NAV_BAR_W)
+    b.text = Style.Text(b, 12, "text")
+    b.text:SetPoint("LEFT", b, "LEFT", INSET, 0)
+    b.text:SetText(text)
+    hoverable(b, "text")
+    b:SetScript("OnClick", function() Options.Select(key) end)
+    Options.navButtons[key] = b
+    return b
+end
+
+-- The language, at the bottom of the navigation: visible on every page.
+-- A label above a dropdown as wide as the column; the list opens upwards.
+local LANGUAGE_BUTTON_H, LANGUAGE_LABEL_H, LANGUAGE_BOTTOM = 22, 18, 10
+
+local function languageRow(nav)
+    local row = Widgets.Dropdown(nav, {
+        label = L.SETTING_language,
+        items = enumItems(ns.Settings.Get("language")),
+        get = function() return Config.Get("general", "language") end,
+        set = function(v) Config.Set("general", "language", v) end,
+        listAbove = true,
+    })
+    row:SetHeight(LANGUAGE_LABEL_H + LANGUAGE_BUTTON_H)
+    row:SetPoint("BOTTOMLEFT", nav, "BOTTOMLEFT", INSET, LANGUAGE_BOTTOM)
+    row:SetPoint("BOTTOMRIGHT", nav, "BOTTOMRIGHT", -INSET, LANGUAGE_BOTTOM)
+    row:EnableMouse(false)
+    row.hover:SetAlpha(0)
+    row.label:ClearAllPoints()
+    row.label:SetPoint("TOPLEFT", row, "TOPLEFT", 0, 0)
+    Style.Paint(row.label, "muted")
+    row.button:ClearAllPoints()
+    row.button:SetPoint("BOTTOMLEFT", row, "BOTTOMLEFT", 0, 0)
+    row.button:SetPoint("BOTTOMRIGHT", row, "BOTTOMRIGHT", 0, 0)
+    row.button:SetHeight(LANGUAGE_BUTTON_H)
+    row:Refresh()
+    Options.languageRow = row
+    return row
+end
+
+local function createNav(parent)
+    local nav = CreateFrame("Frame", nil, parent)
+    nav:SetWidth(NAV_W)
+    Style.Fill(nav, "panel")
+    local edge = line(nav, "border")
+    edge:SetPoint("TOPRIGHT"); edge:SetPoint("BOTTOMRIGHT"); edge:SetWidth(1)
+    Options.navButtons = {}
+    local y = NAV_TOP
+    navButton(nav, "general", L.GENERAL, y)
+    y = y + NAV_ROW_H + 6
+    local separator = line(nav, "border")
+    separator:SetHeight(1)
+    separator:SetPoint("TOPLEFT", nav, "TOPLEFT", INSET, -y)
+    separator:SetPoint("TOPRIGHT", nav, "TOPRIGHT", -INSET, -y)
+    y = y + 7
+    for _, def in ipairs(ns.Units.List) do
+        navButton(nav, def.key, L["FRAME_" .. def.key], y)
+        y = y + NAV_ROW_H
+    end
+    y = y + 6
+    local below = line(nav, "border")
+    below:SetHeight(1)
+    below:SetPoint("TOPLEFT", nav, "TOPLEFT", INSET, -y)
+    below:SetPoint("TOPRIGHT", nav, "TOPRIGHT", -INSET, -y)
+    y = y + 7
+    navButton(nav, "profiles", L.NAV_PROFILES, y)
+    languageRow(nav)
+    return nav
+end
+
+local function renderNav()
+    for key, b in pairs(Options.navButtons) do
+        local selected = key == Options.currentScope
+        paintSelection(b, selected, "text")
+        b.bar:SetShown(selected)
+    end
+end
+
+-- Tabs --------------------------------------------------------------------------
+
+local function tabButton(i)
+    local b = CreateFrame("Button", nil, frame.tabRow)
+    b:SetHeight(TAB_H)
+    b.text = Style.Text(b, 12, "muted")
+    b.text:SetPoint("CENTER", b, "CENTER", 0, 1)
+    b.underline = line(b, "accent")
+    b.underline:SetHeight(TAB_UNDERLINE_H)
+    b.underline:SetPoint("BOTTOMLEFT", b, "BOTTOMLEFT", 8, 0)
+    b.underline:SetPoint("BOTTOMRIGHT", b, "BOTTOMRIGHT", -8, 0)
+    hoverable(b, "muted")
+    b:SetScript("OnClick", function(self) Options.SelectTab(self.tabId) end)
+    local previous = Options.tabButtons[i - 1]
+    if previous then b:SetPoint("LEFT", previous, "RIGHT", 0, 0) else b:SetPoint("LEFT", frame.tabRow, "LEFT", 8, 0) end
+    Options.tabButtons[i] = b
+    return b
+end
+
+-- A tab's name; a page may name a tab its own way (TAB_<id>_<scope>).
+local function tabLabel(tab, scope)
+    local own = "TAB_" .. tab.id .. "_" .. tostring(scope)
+    local text = L[own]
+    if text ~= nil and text ~= own then return text end
+    return L["TAB_" .. tab.id]
+end
+Options.TabLabel = tabLabel
+
+local function renderTabs(tabs, scope)
+    for i, tab in ipairs(tabs) do
+        local b = Options.tabButtons[i] or tabButton(i)
+        b.tabId = tab.id
+        b.text:SetText(tabLabel(tab, scope))
+        b:SetWidth(math.max(TAB_MIN_W, (b.text:GetStringWidth() or 0) + TAB_PADDING))
+        b:Show()
+    end
+    for i = #tabs + 1, #Options.tabButtons do Options.tabButtons[i]:Hide() end
+end
+
+local function paintTabs()
+    for _, b in ipairs(Options.tabButtons) do
+        local selected = b.tabId == Options.currentTab
+        paintSelection(b, selected, "muted")
+        b.underline:SetShown(selected)
+    end
+end
+
+-- Footer ------------------------------------------------------------------------
+
+-- The unit frames' movers only; the raid window has its own button. The
+-- MOVERS_UNLOCKED listener repaints the footer.
+local function toggleMovers()
+    if ns.Movers.IsUnlocked("units") then ns.Movers.Lock("units") else ns.Movers.Unlock("units") end
+end
+
+-- The settings a copy overwrote, until the next copy or /reload: the
+-- list then offers "Undo copy" on that frame's page.
+local copyUndo
+local UNDO = "__undo"
+
+local function otherFrames()
+    local items = {}
+    if copyUndo and copyUndo.scope == Options.currentScope then
+        items[1] = { value = UNDO, text = L.COPY_UNDO }
+    end
+    for _, def in ipairs(ns.Units.List) do
+        if def.key ~= Options.currentScope then items[#items + 1] = { value = def.key, text = L["FRAME_" .. def.key] } end
+    end
+    return items
+end
+
+local function copyFrom(from)
+    local to = Options.currentScope
+    if from == UNDO then
+        local undo = copyUndo
+        copyUndo = nil
+        if undo then Config.Restore(undo.scope, undo.saved) end
+        return
+    end
+    local keys = {}
+    for _, def in ipairs(ns.Settings.All()) do keys[#keys + 1] = def.key end
+    copyUndo = { scope = to, saved = Config.Snapshot(to, keys) }
+    Config.CopyScope(from, to)
+end
+
+-- The shared dropdown list, driven by a row whose button always reads
+-- "Copy from…" (it has no current value to show).
+local function copyFromRow(footer)
+    local row = Widgets.Dropdown(footer, {
+        items = otherFrames,
+        get = function() return nil end,
+        set = copyFrom,
+    })
+    row:SetSize(WIDE_BUTTON_W, BUTTON_H)
+    row:EnableMouse(false)
+    row.hover:SetAlpha(0)
+    row.button:ClearAllPoints()
+    row.button:SetAllPoints(row)
+    local refresh = row.Refresh
+    function row:Refresh() refresh(self); self.button.text:SetText(L.COPY_FROM) end
+    row:Refresh()
+    return row
+end
+
+-- The same three places as in the raid window's footer
+-- (Raid/Options/Window.lua): lock, test mode, the other window. The way
+-- across stays usable in combat.
+local function createFooterLeft(footer)
+    Options.unlockButton, Options.testButton, Options.raidButton = Options.FooterLeft(footer, {
+        unlock = toggleMovers,
+        test = function() ns.TestMode.Set(not ns.TestMode.IsOn()) end,
+        testLeave = refreshFooter,
+        other = { text = L.RAID_FRAMES_BUTTON, onClick = function()
+            Options.Close()
+            ns.RaidOptions.Open()
+        end },
+    })
+end
+
+local function createFooterRight(footer)
+    local reset = confirmButton(footer, L.RESET_FRAME, function()
+        Config.ResetScope(Options.currentScope)
+        LibForeverThemes.HubSync()
+    end)
+    reset:SetPoint("RIGHT", footer, "RIGHT", -FOOTER_INSET, 0)
+    local copy = copyFromRow(footer)
+    copy:SetPoint("RIGHT", reset, "LEFT", -FOOTER_GAP, 0)
+    Options.resetFrameButton, Options.copyRow = reset, copy
+end
+
+local function createFooter(parent)
+    local footer = Chrome.Footer(parent)
+    createFooterLeft(footer)
+    createFooterRight(footer)
+    frame.footerControls = { Options.unlockButton, Options.testButton, Options.copyRow, Options.resetFrameButton }
+    return footer
+end
+
+-- Title bar ---------------------------------------------------------------------
+
+local function createTitleBar(parent)
+    return Chrome.TitleBar(parent, {
+        title = L.ADDON_NAME,
+        sub = "v" .. (C_AddOns.GetAddOnMetadata(ns.name, "Version") or ""),
+        onDragStop = savePosition,
+        onClose = function() Options.Close() end,
+    })
+end
+
+-- Body: tab row, combat notice, scroll area ---------------------------------------
+
+local function createNotice(body)
+    local notice = CreateFrame("Frame", nil, body)
+    notice:SetHeight(NOTICE_H)
+    notice:SetPoint("TOPLEFT", frame.tabRow, "BOTTOMLEFT", 0, 0)
+    notice:SetPoint("TOPRIGHT", frame.tabRow, "BOTTOMRIGHT", 0, 0)
+    local tint = notice:CreateTexture(nil, "BACKGROUND")
+    tint:SetAllPoints(notice)
+    local a = Style.COLORS.accent
+    tint:SetColorTexture(a[1], a[2], a[3], 0.12)
+    local bar = line(notice, "accent")
+    bar:SetPoint("TOPLEFT"); bar:SetPoint("BOTTOMLEFT"); bar:SetWidth(NAV_BAR_W)
+    local text = Style.Text(notice, 12, "accent")
+    text:SetPoint("LEFT", notice, "LEFT", INSET, 0)
+    text:SetText(L.COMBAT_LOCKED)
+    notice:Hide()
+    Options.combatNotice = notice
+end
+
+local function createBody(parent, titleBar, footer)
+    local body = CreateFrame("Frame", nil, parent)
+    body:SetPoint("TOPLEFT", titleBar, "BOTTOMLEFT", NAV_W, 0)
+    body:SetPoint("BOTTOMRIGHT", footer, "TOPRIGHT", 0, 0)
+    frame.body = body
+    local tabRow = CreateFrame("Frame", nil, body)
+    tabRow:SetHeight(TAB_H)
+    tabRow:SetPoint("TOPLEFT"); tabRow:SetPoint("TOPRIGHT")
+    horizontalLine(tabRow, "BOTTOM")
+    frame.tabRow = tabRow
+    Options.tabButtons = {}
+    createNotice(body)
+    createScroll(body)
+    anchorScroll()
+end
+
+-- Window ------------------------------------------------------------------------
+
+-- What the title bar's search looks through (Options/Search.lua): the page
+-- shown first, General, then the other frames; a setting several frames
+-- share once, on the first of them. Profiles by its name.
+local function scopeText(scope)
+    if scope == "general" then return L.GENERAL end
+    if scope == "profiles" then return L.NAV_PROFILES end
+    return L["FRAME_" .. scope]
+end
+
+local function searchEntries()
+    local list, seen = {}, {}
+    local function add(scope)
+        for _, tab in ipairs(Schema.Tabs(scope)) do
+            local tabPath = scopeText(scope) .. " > " .. tabLabel(tab, scope)
+            if tab.custom then
+                list[#list + 1] = { title = tabLabel(tab, scope), path = scopeText(scope), scope = scope, tab = tab.id }
+            end
+            for _, section in ipairs(tab.sections or {}) do
+                for _, key in ipairs(section.raidKeys or {}) do
+                    list[#list + 1] = { title = ns.RaidSchema.Label(key), hint = ns.RaidSchema.Hint(key),
+                        path = tabPath .. " > " .. L["SECTION_" .. section.id], scope = scope, tab = tab.id, key = key }
+                end
+                for _, key in ipairs(Schema.SectionKeys(section, scope)) do
+                    if scope == "general" or not seen[key] then
+                        if scope ~= "general" then seen[key] = true end
+                        list[#list + 1] = { title = L["SETTING_" .. key], hint = hintFor(scope, key),
+                            path = tabPath .. " > " .. L["SECTION_" .. section.id], scope = scope, tab = tab.id,
+                            key = key }
+                    end
+                end
+            end
+        end
+    end
+    local current = Options.currentScope
+    if current and isFrameScope(current) then add(current) end
+    add("general")
+    for _, def in ipairs(ns.Units.List) do
+        if def.key ~= current and (not def.available or def.available()) then add(def.key) end
+    end
+    add("profiles")
+    return list
+end
+
+-- Opens a search result: its page and tab, its row in view.
+function Options.Reveal(entry)
+    Options.Open(entry.scope, entry.tab)
+    if entry.key then ns.OptionsSearch.Reveal(frame.scroll, Options.page, entry.key) end
+    updateScrollbar()
+end
+
+local function createWindow()
+    frame = CreateFrame("Frame", WINDOW_NAME, UIParent)
+    Options.frame = frame
+    frame:SetSize(WIDTH, HEIGHT)
+    frame:SetFrameStrata("HIGH")
+    frame:SetToplevel(true)
+    frame:SetMovable(true)
+    frame:SetClampedToScreen(true)
+    frame:SetDontSavePosition(true)
+    frame:EnableMouse(true)
+    Style.Fill(frame, "bg")
+    Style.Border(frame)
+    frame.titleBar = createTitleBar(frame)
+    Options.searchBox = ns.OptionsSearch.Attach({ bar = frame.titleBar, entries = searchEntries, go = Options.Reveal })
+    local footer = createFooter(frame)
+    local nav = createNav(frame)
+    -- Locked in combat like the footer.
+    table.insert(frame.footerControls, Options.languageRow)
+    nav:SetPoint("TOPLEFT", frame.titleBar, "BOTTOMLEFT", 0, 0)
+    nav:SetPoint("BOTTOMLEFT", footer, "TOPLEFT", 0, 0)
+    createBody(frame, frame.titleBar, footer)
+    -- Hiding the window (ESC, close button, /fuf) takes an open dropdown
+    -- list and armed confirmations with it.
+    frame:SetScript("OnHide", function()
+        Widgets.CloseList()
+        Options.searchBox:SetText("")
+        Options.resetFrameButton.Disarm()
+        if Options.resetAllButton then Options.resetAllButton.Disarm() end
+        for _, button in pairs(Options.actionButtons) do button.Disarm() end
+        local clickPage = pages["general:clickCast"]
+        if clickPage then clickPage.clickClearButton.Disarm() end
+    end)
+    frame:Hide()
+    for _, name in ipairs(UISpecialFrames) do
+        if name == WINDOW_NAME then return end
+    end
+    table.insert(UISpecialFrames, WINDOW_NAME)
+end
+
+local function ensureWindow()
+    if not frame then createWindow() end
+end
+
+-- Public API ----------------------------------------------------------------------
+
+function Options.IsOpen()
+    return frame ~= nil and frame:IsShown()
+end
+
+function Options.SelectTab(id)
+    ensureWindow()
+    local scope = Options.currentScope
+    for _, tab in ipairs(Schema.Tabs(scope)) do
+        if tab.id == id then
+            Widgets.CloseList()
+            if Options.page then
+                -- Leaving the click-casting tab disarms its Clear all.
+                if Options.page.clickClearButton then Options.page.clickClearButton.Disarm() end
+                Options.page:Hide()
+            end
+            local page = pageFor(scope, tab)
+            if page.onShow then page.onShow() end
+            Options.page, Options.currentTab, Options.rows = page, id, page.rows
+            frame.scroll:SetVerticalScroll(0)
+            page:Show()
+            -- Shown-or-not rows (the hub may have come or changed since).
+            if page.hasFolds then page.Restack() end
+            -- Scroll child height and UpdateScrollChildRect: without the
+            -- latter the window's very first page stayed empty in game
+            -- until a tab switch (seen with General > Frames, 0.55.0).
+            Options.PageResized(page)
+            forEachRow(function(row) row:Refresh() end)
+            paintTabs()
+            applyLock()
+            updateScrollbar()
+            return
+        end
+    end
+end
+
+function Options.Select(scope)
+    ensureWindow()
+    local tabs = Schema.Tabs(scope)
+    local tabId = tabs[1].id
+    for _, tab in ipairs(tabs) do
+        if tab.id == Options.currentTab then tabId = tab.id end
+    end
+    Options.currentScope = scope
+    Options.resetFrameButton.Disarm()
+    local frameScope = isFrameScope(scope)
+    Options.copyRow:SetShown(frameScope)
+    Options.resetFrameButton:SetShown(frameScope)
+    renderNav()
+    renderTabs(tabs, scope)
+    Options.SelectTab(tabId)
+    highlightFrame(scope)
+end
+
+function Options.Open(scope, tabId)
+    if not Config.Profile() then return end
+    ensureWindow()
+    if InCombatLockdown() then inCombat = true end
+    if not frame:IsShown() then
+        restorePosition()
+        frame:Show()
+    end
+    Options.Select(scope or Options.currentScope or "general")
+    if tabId then Options.SelectTab(tabId) end
+end
+
+function Options.Close()
+    if frame then frame:Hide() end
+end
+
+function Options.Toggle()
+    if Options.IsOpen() then Options.Close() else Options.Open() end
+end
+
+-- Live updates ----------------------------------------------------------------------
+
+-- Values also change from outside the window: mover drags, Copy, Import,
+-- /fuf set.
+ns.Listen("CONFIG_CHANGED", function()
+    if not Options.IsOpen() then return end
+    forEachRow(function(row) row:Refresh() end)
+    setRowStates()
+    Options.languageRow:Refresh()
+    if Options.page and Options.page.hasFolds and Options.page.Restack then Options.page.Restack() end
+end)
+
+-- The profile list and the buttons follow a switch, save, rename or delete.
+ns.Listen("UNIT_PROFILES_CHANGED", function()
+    if Options.IsOpen() and Options.currentScope == "profiles" then
+        Options.profileDeleteButton.Disarm()
+        forEachRow(function(row) row:Refresh() end)
+    end
+end)
+
+-- The raid window's click-casting mode greys the switch here (Clique is
+-- loaded or not before the window can open).
+-- The click-casting tab shows the raid profile's bindings: a change from
+-- either window (or Copy, Clear all) shows here.
+ns.Listen("RAID_CONFIG_CHANGED", function(scope, key)
+    if not Options.IsOpen() or (scope ~= nil and scope ~= "general") then return end
+    if Options.page and (Options.page.clickCast or Options.page.raidRows) then
+        forEachRow(function(row) row:Refresh() end)
+    end
+    if key == nil or key == "clickCast" or key == "enabled" then setRowStates() end
+end)
+
+-- Every label is set once, when its widget is built: a new language gets a
+-- new window. Frames cannot be destroyed, so the old one stays hidden and
+-- unreferenced; the new one takes over its global name, position, page and
+-- tab.
+function Options.Rebuild()
+    if not frame then return end
+    local wasOpen = frame:IsShown()
+    frame:Hide()
+    frame, Options.frame = nil, nil
+    pages = {}
+    Options.actionButtons = {}
+    Options.page, Options.rows, Options.resetAllButton = nil, nil, nil
+    if wasOpen then Options.Open(Options.currentScope, Options.currentTab) end
+end
+
+ns.Listen("LANGUAGE_CHANGED", function() Options.Rebuild() end)
+
+ns.Listen("TEST_MODE", function()
+    if frame then refreshFooter() end
+end)
+
+-- The unit frames' movers locked or unlocked from anywhere: this window,
+-- /fuf, the minimap button, the start of combat.
+ns.Listen("MOVERS_UNLOCKED", function(_, group)
+    if frame and group == "units" then refreshFooter() end
+end)
+
+-- Tracked from the events rather than InCombatLockdown(): lockdown only
+-- starts after PLAYER_REGEN_DISABLED has fired.
+ns.On("PLAYER_REGEN_DISABLED", function()
+    inCombat = true
+    if frame then applyLock() end
+end)
+
+ns.On("PLAYER_REGEN_ENABLED", function()
+    inCombat = false
+    if frame then applyLock() end
+end)
