@@ -4,9 +4,9 @@
 
 ## 접속 직전
 
-1. [최신 설치 묶음](../../Codex/results/PHASE_29.3_runtime-performance_RESULT.md)을 [승인한 채팅 목업](../../outputs/devil-forever-mobile-orc-rail.html)과 대조한다. 기본 시험은 PitBull4형 `DevilForever-0.1.2.zip`, 한 접속 비교 시험은 `DevilForever-0.1.2-one-session.zip`을 쓴다. 실제 ZIP 경로와 SHA-256은 [ZIP 확인 기록](../../_local_only/perf-package-0.1.2/final-build/archives/release-receipt.json)에서 확인한다. [기능 트리](../../Collection/data/feature-map.md)에서 각 설정의 담당과 위치를 확인하고, [상태별 목업](../codex-appearance/24/ux/index.md)에서 시전·파티 배치를 본다. 실행 전에 `AddOns`와 `WTF`를 각각 복사하고 목록·SHA-256을 확인한다. 확인 뒤 원래 파일은 별도 이름으로 보존한다.
-2. 캐릭터 선택 화면에서 구버전 허용 상태와 Phase 1의 네 애드온 표시를 확인한다. 두 유닛 프레임 비교용 묶음을 쓰면 **PitBull4만 켜서** 입장한다. `ForeverUnitFrames`, `DevilForever_Castbars`, `DevilForever_FUFDefaults`는 일단 끈다. 두 유닛 프레임이 함께 켜진 상태로 입장하지 않는다.
-3. 기본 창 상태·퀘스트·전투·파티를 확보할 수 있는 같은 캐릭터로 한 번 입장한다. 초기 채팅창 생성 뒤 클라이언트가 `/reload`를 요구하거나 유닛 프레임을 바꿀 때는 접속 상태에서 화면만 다시 불러온다. 초기 재접속이나 다른 캐릭터 로그인은 시험 절차에 넣지 않는다.
+1. [로컬 0.1.4 시험 결과](../../Codex/results/PHASE_29.5_local-runtime-trial_RESULT.md)와 [승인한 채팅 목업](../../outputs/devil-forever-mobile-orc-rail.html)을 기준으로 본다. 기본 시험은 PitBull4형 `DevilForever-0.1.4.zip`, 유닛 프레임까지 비교할 때는 `DevilForever-0.1.4-one-session.zip`을 쓴다. [ZIP 확인 기록](../../_local_only/runtime-release-0.1.4-reviewed/trial-receipt.json)에서 해시를 대조한다. [기능 트리](../../Collection/data/feature-map.md)에서 설정 담당을 확인하고 [상태별 목업](../codex-appearance/24/ux/index.md)에서 시전·파티 배치를 본다. 시작 전에 `AddOns`와 `WTF`를 각각 복사해 목록과 해시를 확인한다.
+2. 캐릭터 선택 화면에서 구버전 허용 상태와 Phase 1의 네 애드온 표시를 확인한다. 성능 비교를 하는 날은 측정 도구만 켠 채 입장해 게임 기본 상태를 먼저 기록한다. 모음집으로 바꿀 때는 같은 접속에서 애드온 설정을 바꾸고 화면을 다시 불러온다. 유닛 프레임은 처음에 **PitBull4만 켠다**. `ForeverUnitFrames`, `DevilForever_Castbars`, `DevilForever_FUFDefaults`는 비교 차례에 켠다.
+3. 기본 창 상태·퀘스트·전투·파티를 확인할 수 있는 같은 캐릭터로 한 번 입장한다. 초기 채팅창 생성이나 유닛 프레임 교체 때 클라이언트가 요구하면 접속 상태에서 `/reload`로 화면만 다시 불러온다.
 
 ## 같은 접속에서 확인
 
@@ -23,7 +23,7 @@
 
 `/dfcheck`는 화면 밑에서부터 올라가는 게임 좌표를 좌상단 기준 물리 픽셀로 환산한다. 읽을 수 없는 프레임은 `absent` 또는 `no bounds`다. 창 하나의 캡처는 통과 판정이 아니다. 기록은 새 시험용 저장 변수 `DevilForever_UIReviewDB`에 들어간다. 채팅 메시지·입력·캐릭터명·계정 정보는 읽지 않는다. 실제 게임을 켜기 전에는 모든 상태가 미검증이다.
 
-유닛 프레임의 표시 정확도와 성능 비교는 [같은 접속의 성능 확인 조건](../../Codex/results/Step%2069%20%E2%80%94%20실제%20게임에서%20확인할%20성능%20비교.md)을 따른다.
+게임 기본과 모음집의 프레임 시간은 [측정 도구와 비교 순서](../../_local_only/runtime-release-0.1.4/한%20접속%20성능%20비교.md)로 기록한다. 유닛 프레임의 표시 정확도는 [비교할 기능과 장면](../../Codex/results/Step%2069%20%E2%80%94%20실제%20게임에서%20확인할%20성능%20비교.md)을 따른다.
 
 ## 게임 기본 프레임의 비교 좌표
 

@@ -17,3 +17,8 @@
 
 - 11개 기능의 첫 로컬 비교와 독립 검수를 마쳤다. SexyMap 좌표 조회와 Experience Forever 퀘스트 목록 조회의 수정안을 새 시험 폴더에서 검증했다. [결과](../results/PHASE_29.4_bundled-addon-comparison_RESULT.md)
 - PitBull4와 FUF의 호출 수가 조건마다 다르므로 기본판과 비교판을 유지했다. 실제 프레임 시간 비교는 한 접속에 모았다.
+
+## 2026-11-19 · Phase 29.5
+
+- 0.1.4 로컬 시험 묶음에 Quartz 새 기본 프로필의 오라 설정과 공용 프로필 보존 정책을 반영했다. [설정과 ZIP 기록](../results/Step%2070%20%E2%80%94%20Quartz%20오라%20기본값과%200.1.4%20시험판.md)
+- 파일 단위의 기능 시험과 별도 프레임 시간 측정 도구를 준비하고 실제 게임 확인 절차에 연결했다. [29.5 결과](../results/PHASE_29.5_local-runtime-trial_RESULT.md)

@@ -1,0 +1,51 @@
+{
+  "phase": "29.5",
+  "steps": [
+    70,
+    71,
+    72
+  ],
+  "version": "0.1.4",
+  "gameMeasured": false,
+  "packages": [
+    {
+      "variant": "pitbull4",
+      "path": "_local_only/runtime-release-0.1.4-reviewed/archives/DevilForever-0.1.4.zip",
+      "sha256": "e1968fb766522542c5f1b857f9521122c401f630ab2db482a578548f20550daf"
+    },
+    {
+      "variant": "fuf",
+      "path": "_local_only/runtime-release-0.1.4-reviewed/archives/DevilForever-0.1.4-fuf.zip",
+      "sha256": "5be019f9ccbc1b871b153c7b328a7ee6cd3c81f8ab8deffb0896dae9e01b0035"
+    },
+    {
+      "variant": "one-session",
+      "path": "_local_only/runtime-release-0.1.4-reviewed/archives/DevilForever-0.1.4-one-session.zip",
+      "sha256": "4f73b5fc3b22d6140670abd59c06d26c3883a732f804682949a89f7daf4ace83"
+    }
+  ],
+  "frameTimeProbe": {
+    "path": "_local_only/runtime-release-0.1.4/DevilForever-FrameTimeProbe.zip",
+    "sha256": "ace620bc6c35d6476013a1f7936a7c154e23dfcd07f5d1b8fa806c1c50590f4c",
+    "luaChecksPassed": 8
+  },
+  "independentReview": {
+    "initial": {"major": 1, "moderate": 3, "minor": 1},
+    "afterFixes": {"major": 0, "moderate": 0, "minor": 0},
+    "archiveProfilesExecuted": 36,
+    "probeChecksExecuted": 8
+  },
+  "localVerification": {
+    "archiveReport": "_local_only/runtime-release-0.1.4-reviewed/archive-output-2_mwofzw/verify_archives.log",
+    "packagedQuartzProfileCasesPassed": 27,
+    "oldBehaviorControlsPassed": 9,
+    "coreToAceDBToQuartzCasesPassed": 15,
+    "functionalSuitesPassed": 8,
+    "functionalCaseCountExcludingSuitesWithoutCounts": 195,
+    "quartzProfileReport": "_local_only/runtime-release-0.1.4-reviewed/quartz-default-tests.json",
+    "runtimeHandoffReport": "_local_only/runtime-release-0.1.4-reviewed/packaged-quartz-through-core.json",
+    "functionalityReport": "_local_only/runtime-release-0.1.4-reviewed/functional-tests.json",
+    "frameTimeProbeReport": "_local_only/runtime-release-0.1.4/perf-probe-tests.json"
+  },
+  "liveChecklist": "References/codex-verify/one-session-review.md"
+}
