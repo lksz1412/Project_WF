@@ -1,6 +1,6 @@
 # Phase 26.2 — 기능 반증 시험과 배포 기준 재정립
 
-2026-11-19 · R151 실행 범위 · Step 46 통과 · Step 47 착수
+2026-11-19 · R151 실행 범위 · Step 46–47 통과 · Step 48 착수
 
 [마스터 플랜](2026-11-19-devil-forever-audit-and-installer-plan.md) · [Phase 26.1](2026-11-19-devil-forever-audit-and-installer-phase26.1-세부계획.md) · [현재 기능 트리](../../Collection/data/feature-map.md) · [단일 접속 확인표](../../References/codex-verify/one-session-review.md)
 

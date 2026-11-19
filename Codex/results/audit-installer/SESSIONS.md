@@ -15,5 +15,5 @@
 | 역할 | 세션 | 설정 | 범위·상태 |
 |---|---|---|---|
 | 담당 | `/root` | 이 대화의 실행 환경 | 현행 ZIP 호출·테마 39개 조합·소유 설정을 대조하고 수정 범위 확정 |
-| 작업 A | `/root/functional_audit` | `bada-a2-coder` · gpt-6.1-sol high 역할 설정 | Step 46 추가 Lua 반증과 자료 수정. 같은 A로 Step 47 작업 |
-| 독립 검수 B | `/root/installer_plan_review` | 해당 작업의 기존 검수자 설정 | Step 46 감사 자료 중간·경미 각 1건을 같은 A 수정 뒤 모두 닫음 |
+| 작업 A | `/root/functional_audit` | `bada-a2-coder` · gpt-6.1-sol high 역할 설정 | Step 46 추가 Lua 반증과 자료 수정. 같은 A로 Step 47 코드 및 검수 보정 |
+| 독립 검수 B | `/root/installer_plan_review` | 해당 작업의 기존 검수자 설정 | Step 46 감사 자료 중간·경미 각 1건과 Step 47 코드 중간 2건을 같은 A 수정 뒤 모두 닫음 |

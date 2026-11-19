@@ -1,8 +1,10 @@
 ## Interface: 16001
 ## Title: DevilForever FUF Defaults
-## Notes: When Grid2 is loaded, switches Forever Unit Frames' raid frames off once per character through FUF's own /fuf command.
+## Notes: Native raid defaults and explicit geometry comparison presets in separate FUF profiles.
 ## Version: 0.1.0
 ## Dependencies: !DevilForever_Core, ForeverUnitFrames
 ## SavedVariables: DevilForever_FUFDefaultsDB
 
 FUFDefaults.lua
+LayoutPresets.lua
+NativeLayout.lua

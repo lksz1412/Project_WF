@@ -1,18 +1,19 @@
 """Logic tests for DevilForever_FUFDefaults (FUF raid frames off while Grid2 is loaded).
 
-Usage:  python3 -I Collection/tests/fufdefaults/run.py
+Usage:  python -I Collection/tests/fufdefaults/run.py
 
 Each case starts a fresh Lua 5.1 runtime (lupa), installs stubs for what the
 addon calls (CreateFrame with event registration, C_Timer.After,
 InCombatLockdown, UnitFullName, GetNormalizedRealmName, C_AddOns.IsAddOnLoaded,
 geterrorhandler, a DevilForever_Core with Log and IsLoadedInClient) and a
 stand-in for Forever Unit Frames' command handler SlashCmdList.FOREVERUNITFRAMES.
-The stand-in copies only the effect of the command the addon sends, as read
+The raid stand-in copies only the effect of the command the addon sends, as read
 in FUF Core/Commands.lua 69-78 and Raid/Profiles.lua 1-8: "raid off" stores
 general.enabled = false in ForeverUnitFramesDB.raid[<char>] at once; "set party
 enabled off" (never expected) is recorded and changes a stand-in for FUF's
-in-memory profile. FUF itself is not run. This checks the addon's logic only; it
-does not emulate the game client.
+in-memory profile. The comparison tests separately execute native FUF Registry,
+Settings, Preset, Config, UnitProfiles, Storage and Commands in isolated Lua.
+Frames, secure state and the game client are not emulated.
 """
 
 import os
@@ -36,6 +37,8 @@ STUBS = r"""
 TEST_calls = {}
 TEST_errors = {}
 TEST_logs = {}
+TEST_printed = {}
+function print(...) TEST_printed[#TEST_printed + 1] = table.concat({...}, " ") end
 
 local frames = {}
 function CreateFrame(kind)
@@ -155,14 +158,15 @@ class Session:
         return value
 
     def load(self):
-        path = os.path.join(ADDON_DIR, "FUFDefaults.lua")
-        with open(path, "rb") as fh:
-            src = fh.read()
-        result = self.g.loadstring(src, ("@" + os.path.relpath(path, REPO)).encode())
-        fn, err = result if isinstance(result, tuple) else (result, None)
-        if fn is None:
-            raise AssertionError("compile failed: %s" % err)
-        fn(ADDON, self.lua.table())
+        for filename in ("FUFDefaults.lua", "LayoutPresets.lua", "NativeLayout.lua"):
+            path = os.path.join(ADDON_DIR, filename)
+            with open(path, "rb") as fh:
+                src = fh.read()
+            result = self.g.loadstring(src, ("@" + os.path.relpath(path, REPO)).encode())
+            fn, err = result if isinstance(result, tuple) else (result, None)
+            if fn is None:
+                raise AssertionError("compile failed: %s" % err)
+            fn(ADDON, self.lua.table())
         return self
 
     def login(self):
@@ -367,6 +371,193 @@ def fuf_saved_variables_not_written_by_addon():
     before = to_py(s.g.ForeverUnitFramesDB)
     s.login()
     eq(to_py(s.g.ForeverUnitFramesDB), before, "ForeverUnitFramesDB untouched apart from FUF's own command")
+
+
+def layout_client(preset="uhd", comparison=True):
+    name = "DF Compare " + preset if comparison else "Custom"
+    s = Session(fuf=fuf_after_login(profiles={"Default": {"player": {"width": 77}},
+                                            "Custom": {"general": {"language": "koKR"}, "player": {"width": 211}},
+                                            **({name: {"player": {"width": 211}}} if comparison else {})},
+                                   active={CHAR: name}, profile={"player": {"width": 77}}), grid2=False)
+    s.lua.execute("""
+      UIParent = {GetEffectiveScale = function() return 0.64 end, GetHeight = function() return 1200 end}
+      PixelUtil = {GetPixelToUIUnitFactor = function() return TEST_factor end}
+      TEST_factor = 768 / 2160
+      C_AddOns.GetAddOnMetadata = function() return TEST_version end
+      TEST_version = "0.65.2"
+      GetPhysicalScreenSize = function() return TEST_width, TEST_height end
+      TEST_width, TEST_height = 3862, 2160
+    """)
+    return s.load()
+
+
+@case
+def comparison_layout_gates_keep_existing_profiles_unchanged():
+    for mode in ("waiting", "combat", "custom", "version", "missing-api", "pixel", "preset", "small-screen", "unknown-screen"):
+        s = layout_client(comparison=mode != "custom")
+        before = to_py(s.g.ForeverUnitFramesDB)
+        if mode != "waiting":
+            s.login()
+        if mode == "combat":
+            s.g.TEST_combat = True
+        if mode == "version":
+            s.g.TEST_version = "other"
+        if mode == "missing-api":
+            s.g.SlashCmdList.FOREVERUNITFRAMES = None
+        if mode == "pixel":
+            s.g.TEST_factor = float("nan")
+            s.g.UIParent.GetHeight = None
+        if mode == "small-screen":
+            s.g.TEST_width, s.g.TEST_height = 1920, 1080
+        if mode == "unknown-screen":
+            s.g.GetPhysicalScreenSize = None
+        ok, reason = s.g.DevilForever_FUFDefaults.ApplyLayout("unknown" if mode == "preset" else "uhd")
+        eq(ok, False, mode + " refused")
+        eq(s.calls(), [], mode + " native writes zero")
+        eq(to_py(s.g.ForeverUnitFramesDB), before, mode + " original values kept")
+
+
+@case
+def comparison_layout_reports_partial_failure_and_never_claims_readback():
+    for mode in ("error", "false", "active", "combat"):
+        s = layout_client()
+        s.login()
+        s.lua.execute("""
+          local original = SlashCmdList.FOREVERUNITFRAMES
+          local calls = 0
+          SlashCmdList.FOREVERUNITFRAMES = function(command)
+            calls = calls + 1
+            if calls == 3 then
+              if TEST_mode == "error" then error("native failure") end
+              if TEST_mode == "false" then return false end
+              if TEST_mode == "active" then ForeverUnitFramesDB.active["Hero-Realm"] = "Custom" end
+              if TEST_mode == "combat" then TEST_combat = true end
+            end
+            return original(command)
+          end
+        """)
+        s.g.TEST_mode = mode
+        ok, reason = s.g.DevilForever_FUFDefaults.ApplyLayout("uhd")
+        eq((ok, reason), (False, "partial-failure"), mode + " partial failure")
+        state = to_py(s.g.DevilForever_FUFDefaults.GetLayoutStatus())
+        eq(state["verified"], False, "not a native readback success")
+        eq(state["sent"], 2 if mode in ("error", "false") else 3, "stops at changed context")
+        eq(to_py(s.g.ForeverUnitFramesDB.profiles.Custom)["player"]["width"], 211, "custom untouched")
+
+
+@case
+def native_layout_early_rejection_reports_only_current_zero_writes():
+    s = layout_client()
+    s.login()
+    eq(s.g.DevilForever_FUFDefaults.ApplyLayout("uhd"), (True, "sent-unverified"), "initial send")
+    eq(s.g.DevilForever_FUFDefaults.GetLayoutStatus().sent, 116, "initial count")
+    for mode in ("combat", "screen"):
+        s.g.TEST_combat = mode == "combat"
+        s.g.TEST_width = 1920 if mode == "screen" else 3862
+        s.g.TEST_calls = s.table([])
+        s.g.SlashCmdList.DEVILFOREVERFUFLAYOUT("layout uhd")
+        eq(s.calls(), [], mode + " current invocation writes zero")
+        eq(s.g.DevilForever_FUFDefaults.GetLayoutStatus().sent, 0, mode + " current count zero")
+        lines = lst(to_py(s.g.TEST_printed))
+        eq(any("0 native commands" in line for line in lines[-2:]), True, mode + " printed count zero")
+
+
+def native_layout_client(preset):
+    s = layout_client(preset, comparison=False)
+    s.lua.execute("""
+      TEST_native = {AuraBlocklist = {LETTERS = 1000, Check = function() return true end},
+        RaidProfiles = {CharKey = function() return "Hero-Realm" end},
+        L = setmetatable({}, {__index = function(_, key) return key end}), api = {}}
+      local ns = TEST_native
+      ns.events, ns.listeners = {}, {}
+      ns.On = function(event, fn) ns.events[event] = fn end
+      ns.Listen = function(event, fn) ns.listeners[event] = fn end
+      ns.Fire = function(event, ...) if ns.listeners[event] then ns.listeners[event](...) end end
+      ns.AfterCombat = function(_, fn) fn() end
+      ns.Print = function(message) TEST_errors[#TEST_errors + 1] = message end
+      ns.PresetUpgrade = {Due = function() return false end, Active = function() return false end,
+        Apply = function() end}
+      TEST_macroReads, TEST_macroDeletes = 0, 0
+      ns.MacroBackup = {Read = function() TEST_macroReads = TEST_macroReads + 1 end,
+        Delete = function() TEST_macroDeletes = TEST_macroDeletes + 1; return 0 end}
+      local function encode(value)
+        if type(value) ~= "table" then return tostring(value) end
+        local keys, result = {}, {}
+        for key in pairs(value) do keys[#keys + 1] = key end
+        table.sort(keys)
+        for _, key in ipairs(keys) do result[#result + 1] = key .. ":" .. encode(value[key]) end
+        return "{" .. table.concat(result, ",") .. "}"
+      end
+      ns.Codec = {VERSION = 1, Encode = encode, Decode = function() return {} end}
+      LibForeverThemes = {HubSync = function() end}
+    """)
+    root = os.path.join(REPO, "Collection", "upstream", "Forever_Unit_Frames-0.65.2", "ForeverUnitFrames", "Core")
+    for filename in ("Registry.lua", "Settings.lua", "Preset.lua", "Config.lua", "UnitProfiles.lua", "Storage.lua", "Commands.lua"):
+        with open(os.path.join(root, filename), "rb") as fh:
+            s.g.loadstring(fh.read())("ForeverUnitFrames", s.g.TEST_native)
+    s.lua.execute("""
+      local ns = TEST_native
+      ns.Config.Use(ns.Storage.Load(ForeverUnitFramesDB))
+      ns.Storage.Attach(ForeverUnitFramesDB)
+      ns.Storage.Start()
+      ns.Listen("CONFIG_CHANGED", function() ns.Storage.RequestSave() end)
+    """)
+    return s
+
+
+@case
+def native_commands_run_all_three_presets_and_preserve_custom_legacy_raid():
+    checked = 0
+    for preset, height in (("fhd", 1080), ("qhd", 1440), ("uhd", 2160)):
+        for scale in (0.64, 0.8):
+            s = native_layout_client(preset)
+            s.g.TEST_factor = 768 / height
+            s.g.TEST_width, s.g.TEST_height = {"fhd": 1920, "qhd": 2560, "uhd": 3862}[preset], height
+            s.g.UIParent.GetEffectiveScale = s.lua.eval("function() return %s end" % scale)
+            before = to_py(s.g.ForeverUnitFramesDB)
+            s.login()
+            ok, reason = s.g.DevilForever_FUFDefaults.ApplyLayout(preset)
+            eq((ok, reason), (False, "comparison-profile-required"), "native Custom refused")
+            name = "DF Compare " + preset
+            eq(s.g.TEST_native.UnitProfiles.SaveAs(name), True, "native UI SaveAs equivalent")
+            ok, reason = s.g.DevilForever_FUFDefaults.ApplyLayout(preset)
+            eq((ok, reason), (True, "sent-unverified"), "commands sent without runtime readback claim")
+            commands, required = s.g.DevilForever_FUFDefaults.GetLayoutCommands(preset)
+            eq(required, name, "explicit comparison profile")
+            for command in lst(to_py(commands)):
+                _, scope, key, raw = command.split(" ")
+                value = s.g.TEST_native.Config.Get(scope, key)
+                expected = raw == "true" if raw in ("true", "false") else float(raw) if raw.lstrip("-").isdigit() else raw
+                eq(value, expected, preset + " native " + scope + "." + key)
+                checked += 1
+            s.g.TEST_runTimers()
+            after = to_py(s.g.ForeverUnitFramesDB)
+            for key in ("profile", "raid", "themeSets", "themeColors"):
+                eq(after.get(key), before.get(key), key + " unchanged")
+            eq(after["profiles"]["Custom"], before["profiles"]["Custom"], "original Custom intact")
+            eq(after["profiles"]["Default"], before["profiles"]["Default"], "legacy Default intact")
+            eq(lst(to_py(s.g.TEST_errors)), [], "no native invalid setting")
+            eq(s.g.TEST_native.UnitProfiles.Switch("Custom"), True, "native original profile return")
+            eq(s.g.TEST_native.Config.Get("player", "width"), 211, "original native geometry restored by profile selection")
+    print("Native FUF geometry: 3 presets x2 scales; %d native Config.Get values verified; original profiles preserved" % checked)
+
+
+@case
+def native_storage_wait_and_macro_source_survive_adapter_loading():
+    s = native_layout_client("uhd")
+    s.g.ForeverUnitFramesDB = s.table({})
+    s.lua.execute("""
+      local ns = TEST_native
+      ns.Config.Use(ns.Storage.Load(ForeverUnitFramesDB))
+      ns.Storage.Attach(ForeverUnitFramesDB)
+      ns.Storage.Start()
+    """)
+    eq(s.g.TEST_macroReads, 1, "empty SV still checks native macro backup")
+    eq(s.g.TEST_native.Storage.IsWaiting(), True, "native waiting retained")
+    before = to_py(s.g.ForeverUnitFramesDB)
+    ok, reason = s.g.DevilForever_FUFDefaults.ApplyLayout("uhd")
+    eq((ok, reason), (False, "waiting"), "adapter does not interrupt initial wait")
+    eq(to_py(s.g.ForeverUnitFramesDB), before, "no geometry SV preseed")
 
 
 def main():

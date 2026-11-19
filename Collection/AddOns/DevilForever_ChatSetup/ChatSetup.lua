@@ -1,32 +1,7 @@
--- Three chat windows, made once per character with the client chat API:
---   window 1 = ChatFrame1 (public: say, yell, emote, channels such as General
---              and Trade, and every group not listed below),
---   window 2 = new window (guild, party, raid, instance, whispers),
---   window 3 = new window (system, errors, experience, honor, reputation,
---              skill, loot, money, currency and other game messages).
--- The combat log window (ChatFrame2) is not touched.
---
--- Runs a few seconds after the first PLAYER_ENTERING_WORLD of a session, out of
--- combat (a combat start delays it to PLAYER_REGEN_ENABLED). Once a result is
--- stored in DevilForever_ChatSetupDB (per character) it never runs again for
--- that character, so later changes made in the game are kept. Result:
---   "created"        both windows made; db.windows = {public, group, system} ids
---   "kept-existing"  a window 3..N already shows one of the moved groups (the
---                    character has its own split); nothing changed
---   "no-free-window" fewer than two free chat windows (counted before any
---                    change: ids 3..N, not shown, not docked, not temporary);
---                    nothing changed. Also stored, with db.windows listing what
---                    was made, when the client hands back a window that was
---                    not counted as free.
---   "api-missing"    FCF_OpenNewWindow is not there; nothing changed
---   "in-progress"    written just before the first change; a later login that
---                    finds it stores "interrupted" and does not run again
---   "interrupted"    an earlier run stopped after "in-progress"; db.windows
---                    lists the windows made before it stopped
--- Only chat frames are changed (not protected frames). A message asks for a
--- /reload after "created": windows made by an addon are fully set up by the
--- client after a reload.
+-- Split subscribed public messages into two new windows; preserve ChatFrame2.
+-- Stored results prevent reinitialization; layout receipts separately manage geometry.
 
+local _, addon = ...
 local DB_NAME = "DevilForever_ChatSetupDB"
 local SETUP_VERSION = 1
 local DELAY = 3     -- seconds after PLAYER_ENTERING_WORLD / end of combat
@@ -65,26 +40,34 @@ local function maxWindows()
   return 10
 end
 
--- A group name the client does not define is skipped; without ChatTypeGroup
--- every listed name is used.
+-- Without ChatTypeGroup, the public window's subscriptions identify available groups.
 local function knownGroup(group)
   return type(ChatTypeGroup) ~= "table" or ChatTypeGroup[group] ~= nil
 end
 
-local function addGroup(frame, group)
-  if frame.AddMessageGroup then
-    frame:AddMessageGroup(group)
-  elseif ChatFrame_AddMessageGroup then
-    ChatFrame_AddMessageGroup(frame, group)
-  end
+local function groupAPI(frame, action)
+  local method = frame[action .. "MessageGroup"]
+  if type(method) == "function" then return function(group) return method(frame, group) end end
+  local global = _G["ChatFrame_" .. action .. "MessageGroup"]
+  if type(global) == "function" then return function(group) return global(frame, group) end end
 end
 
-local function removeGroup(frame, group)
-  if frame.RemoveMessageGroup then
-    frame:RemoveMessageGroup(group)
-  elseif ChatFrame_RemoveMessageGroup then
-    ChatFrame_RemoveMessageGroup(frame, group)
+local function subscriptions(frame)
+  local groups = frame and frame.messageTypeList
+  if frame and type(groups) ~= "table" and type(GetChatWindowMessages) == "function" then
+    groups = {GetChatWindowMessages(frame:GetID())}
   end
+  if type(groups) ~= "table" then return nil end
+  local set = {}
+  for _, group in ipairs(groups) do set[group] = true end
+  return set
+end
+
+local function changeGroup(frame, action, group, wanted)
+  local api = groupAPI(frame, action)
+  if not api or api(group) == false then error("message group API refused " .. action .. " " .. group) end
+  local current = subscriptions(frame)
+  if not current or not not current[group] ~= wanted then error("message group verification failed: " .. group) end
 end
 
 -- True when a window other than 1 and 2 (docked or shown) already carries one
@@ -105,8 +88,23 @@ local function hasOwnSplit()
   return false
 end
 
--- Undocks `frame` and puts it next to window 1 (slot 1) or at the right edge
--- (slot 2), with window 1's size; the client saves the place.
+local function placePrepared(frame, role)
+  local layout = type(addon) == "table" and addon.GetPreparedChatWindow
+  local bounds = layout and layout(role)
+  if not bounds then return false end
+  if role ~= "public" and FCF_UnDockFrame then FCF_UnDockFrame(frame) end
+  frame:SetSize(bounds.width, bounds.height)
+  frame:ClearAllPoints()
+  frame:SetPoint(bounds.point, UIParent, bounds.point, bounds.x, bounds.y)
+  if role ~= "public" then
+    if FCF_SetTabPosition then FCF_SetTabPosition(frame, 0) end
+    if FCF_UpdateButtonSide then FCF_UpdateButtonSide(frame) end
+  end
+  if FCF_SavePositionAndDimensions then FCF_SavePositionAndDimensions(frame) end
+  return true
+end
+
+-- Without an appearance layout, use the public window's size and bottom edge.
 local function place(frame, slot, general)
   if FCF_UnDockFrame then FCF_UnDockFrame(frame) end
   local width, height = general:GetWidth(), general:GetHeight()
@@ -133,8 +131,20 @@ local function freeWindows()
   for id = math.max(3, reserved + 1), maxWindows() do
     local chatFrame = _G["ChatFrame" .. id]
     if chatFrame and not chatFrame.isTemporary then
+      local name = info and info(id)
       local shown = info and select(7, info(id))
-      if not shown and not chatFrame.isDocked then free[id] = true end
+      local groups = subscriptions(chatFrame)
+      local defaultName = type(CHAT_NAME_TEMPLATE) == "string" and pcall(string.format, CHAT_NAME_TEMPLATE, id)
+      if defaultName then defaultName = string.format(CHAT_NAME_TEMPLATE, id) end
+      local unnamed = name == nil or name == "" or (type(defaultName) == "string" and name == defaultName)
+        or (id == 3 and type(VOICE) == "string" and name == VOICE)
+      local channels = chatFrame.channelList
+      local private = chatFrame.privateMessageList
+      local bn = chatFrame.bnConversationList
+      if not shown and not chatFrame.isDocked and unnamed and groups and not next(groups)
+          and (channels == nil or type(channels) == "table" and not next(channels))
+          and (private == nil or type(private) == "table" and not next(private))
+          and (bn == nil or type(bn) == "table" and not next(bn)) then free[id] = true end
     end
   end
   return free
@@ -161,6 +171,54 @@ local function finish(db, result, windows)
   db.windows = windows
 end
 
+local function geometry(widget)
+  if not widget or type(widget.GetPoint) ~= "function" then error("chat geometry unavailable") end
+  local saved = {width = widget:GetWidth(), height = widget:GetHeight(), points = {}}
+  for i = 1, (widget.GetNumPoints and widget:GetNumPoints() or 1) do
+    local point = {widget:GetPoint(i)}
+    if point[1] then saved.points[#saved.points + 1] = point end
+  end
+  return saved
+end
+
+local function restoreGeometry(widget, saved)
+  widget:SetSize(saved.width, saved.height)
+  widget:ClearAllPoints()
+  for _, point in ipairs(saved.points) do widget:SetPoint(unpack(point)) end
+  if widget:GetWidth() ~= saved.width or widget:GetHeight() ~= saved.height then error("chat size restore failed") end
+  local count = widget.GetNumPoints and widget:GetNumPoints() or #saved.points
+  if count ~= #saved.points then error("chat anchor restore failed") end
+  for i, expected in ipairs(saved.points) do
+    local actual = {widget:GetPoint(i)}
+    for j = 1, 5 do if actual[j] ~= expected[j] then error("chat anchor restore failed") end end
+  end
+end
+
+local function saveSlot(destination)
+  local tab = _G[destination:GetName() .. "Tab"]
+  if not tab or type(destination.SetShown) ~= "function" or type(tab.SetShown) ~= "function" then error("chat visibility API unavailable") end
+  local info = FCF_GetChatWindowInfo or GetChatWindowInfo
+  return {frame = destination, tab = tab, name = info(destination:GetID()), frameName = destination.name,
+    tabText = tab:GetText(), shown = destination:IsShown(), tabShown = tab:IsShown(),
+    frameGeometry = geometry(destination), tabGeometry = geometry(tab), buttonSide = destination.buttonSide}
+end
+
+local function restoreSlot(saved)
+  local destination = saved.frame
+  FCF_SetWindowName(destination, saved.name or "", true)
+  SetChatWindowName(destination:GetID(), saved.name or "")
+  destination.name = saved.frameName
+  saved.tab:SetText(saved.tabText or "")
+  restoreGeometry(destination, saved.frameGeometry)
+  restoreGeometry(saved.tab, saved.tabGeometry)
+  if saved.buttonSide and type(FCF_SetButtonSide) == "function" then FCF_SetButtonSide(destination, saved.buttonSide, true) end
+  destination:SetShown(saved.shown)
+  saved.tab:SetShown(saved.tabShown)
+  SetChatWindowShown(destination:GetID(), saved.shown)
+  if FCF_SavePositionAndDimensions then FCF_SavePositionAndDimensions(destination) end
+  if destination:IsShown() ~= saved.shown or saved.tab:IsShown() ~= saved.tabShown then error("chat visibility restore failed") end
+end
+
 local frame = CreateFrame("Frame")
 local waitingForCombatEnd = false
 
@@ -173,9 +231,11 @@ local function setup()
     frame:RegisterEvent("PLAYER_REGEN_ENABLED")
     return nil
   end
-  if type(FCF_OpenNewWindow) ~= "function" then
-    finish(db, "api-missing", nil)
-    return db.result
+  for _, name in ipairs({"FCF_SetWindowName", "SetChatWindowName", "SetChatWindowShown", "FCF_CheckShowChatFrame"}) do
+    if type(_G[name]) ~= "function" then
+      finish(db, "api-missing", nil)
+      return db.result
+    end
   end
   if hasOwnSplit() then
     finish(db, "kept-existing", nil)
@@ -187,26 +247,98 @@ local function setup()
     return db.result
   end
   local general = _G.ChatFrame1
+  local subscribed = subscriptions(general)
+  if not subscribed or not groupAPI(general, "Add") or not groupAPI(general, "Remove") then
+    finish(db, "api-missing", nil)
+    return db.result
+  end
   local windows = {public = general:GetID()}
+  local destinations, slots, added, removed = {}, {}, {}, {}
+  local originalGeometry = geometry(general)
+  local publicPlaced = false
+  local failure = "failed"
   finish(db, "in-progress", windows)
-  for slot, role in ipairs(ROLES) do
-    local chatFrame = FCF_OpenNewWindow(localized(role.names), true)
-    local id = chatFrame and chatFrame:GetID()
-    if not id or not free[id] then
-      finish(db, "no-free-window", windows)
-      return db.result
-    end
-    free[id] = nil
-    windows[role.key] = id
-    for _, group in ipairs(role.groups) do
-      if knownGroup(group) then
-        addGroup(chatFrame, group)
-        removeGroup(general, group)
+  local ok, reason = pcall(function()
+    for slot, role in ipairs(ROLES) do
+      local id
+      for candidate = 3, maxWindows() do if free[candidate] then id = candidate; break end end
+      local chatFrame = id and _G["ChatFrame" .. id]
+      if not chatFrame then failure = "no-free-window"; error("reserved chat window unavailable") end
+      free[id] = nil
+      destinations[slot] = chatFrame
+      slots[slot] = saveSlot(chatFrame)
+      windows[role.key] = id
+      local groups = subscriptions(chatFrame)
+      if not groups or not groupAPI(chatFrame, "Add") or not groupAPI(chatFrame, "Remove") then
+        failure = "api-missing"
+        error("destination APIs or empty subscription list unavailable")
       end
     end
-    place(chatFrame, slot, general)
+    for slot, role in ipairs(ROLES) do
+      for _, group in ipairs(role.groups) do
+        if subscribed[group] and knownGroup(group) then
+          added[#added + 1] = {destinations[slot], group}
+          changeGroup(destinations[slot], "Add", group, true)
+        end
+      end
+    end
+    for slot, role in ipairs(ROLES) do
+      if not placePrepared(destinations[slot], role.key) then place(destinations[slot], slot, general) end
+      local destination = destinations[slot]
+      FCF_SetWindowName(destination, localized(role.names))
+      FCF_CheckShowChatFrame(destination)
+      FCF_CheckShowChatFrame(slots[slot].tab)
+      SetChatWindowShown(destination:GetID(), true)
+      if not destination:IsShown() or not slots[slot].tab:IsShown() then error("chat activation verification failed") end
+    end
+    publicPlaced = type(addon) == "table" and addon.GetPreparedChatWindow and addon.GetPreparedChatWindow("public") ~= nil
+    placePrepared(general, "public")
+    for _, entry in ipairs(added) do
+      removed[#removed + 1] = entry[2]
+      changeGroup(general, "Remove", entry[2], false)
+    end
+  end)
+  if not ok then
+    local restored = true
+    for _, group in ipairs(removed) do
+      local current = subscriptions(general)
+      if not current or not current[group] then
+        if not pcall(changeGroup, general, "Add", group, true) then restored = false end
+      end
+    end
+    local sourceRestored = restored
+    -- Remove only this transaction's additions, after restoring the original route.
+    if restored then
+      for _, destination in ipairs(destinations) do
+        local current = subscriptions(destination)
+        if not current then restored = false else
+          for group in pairs(current) do
+            if not pcall(changeGroup, destination, "Remove", group, false) then restored = false end
+          end
+        end
+      end
+    end
+    if publicPlaced then
+      local geometryOK = pcall(function()
+        restoreGeometry(general, originalGeometry)
+        if FCF_SavePositionAndDimensions then FCF_SavePositionAndDimensions(general) end
+      end)
+      if not geometryOK then restored = false end
+    end
+    if sourceRestored then
+      for _, saved in ipairs(slots) do
+        if not pcall(restoreSlot, saved) then restored = false end
+      end
+    end
+    finish(db, restored and failure or "rollback-failed", windows)
+    db.failure = tostring(reason)
+    return db.result
   end
   finish(db, "created", windows)
+  if type(addon) == "table" and addon.CaptureManagedLayout then addon.CaptureManagedLayout() end
+  if type(addon) == "table" and addon.NotifyWindowsCreated then
+    addon.NotifyWindowsCreated()
+  end
   print(localized(MESSAGES))
   return db.result
 end
