@@ -25,3 +25,11 @@
 | 담당 | `/root` | 이 대화의 실행 환경 | Windows 자체 포함 시험과 범위 확인, 사양 통합 |
 | 작업 A | `/root/installer_contract` | `bada-a1-analyst` · gpt-6.1-sol high 역할 설정 | Step 50 실행 계약과 중간 2건 보정 |
 | 독립 검수 B | `/root/installer_plan_review` | 해당 작업의 기존 검수자 설정 | Step 49 단일 파일 확인. Step 50 열 관점과 같은 A 보정 재확인, 미해결 중대·중간 0 |
+
+## Phase 27.2 · Step 51–52
+
+| 역할 | 세션 | 설정 | 범위·상태 |
+|---|---|---|---|
+| 담당 | `/root` | 이 대화의 실행 환경 | 실제 묶음으로 별도 공개 명령·권한·장부 반증 및 단계 통합 |
+| 작업 A | `/root/installer_engine` | `bada-a2-coder` · gpt-6.1-sol high 역할 설정 | Step 51 공통 파일 엔진과 장부 중간 결함 보정. Step 52에서 계속 |
+| 독립 검수 B | `/root/installer_plan_review` | 해당 작업의 기존 검수자 설정 | Step 51 연계·뜻·적대, 중간 1건 보정 재확인. 최종 미해결 0 |
