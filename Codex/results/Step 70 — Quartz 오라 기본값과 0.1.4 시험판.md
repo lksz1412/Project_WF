@@ -1,0 +1,16 @@
+# Step 70 — Quartz 오라 기본값과 0.1.4 시험판
+
+2026-11-19 · Phase 29.5
+
+기존 0.1.3 ZIP 세 개를 기준으로 0.1.4 시험판을 만들었다. 새 Quartz 프로필에서 유닛 프레임과 일부 겹치는 별도 오라 막대를 끈다. 이 기본값을 Core의 기존 새 프로필 처리에 연결했다.
+
+| 자리 | 영향과 확인 |
+|---|---|
+| Quartz 기본값 파일, Core 로드 목록과 생성 등록표 | 새 기본값으로 연결. 생성기가 기존 등록표를 그대로 만드는지 확인한 뒤 Quartz 경로와 버전 반영 |
+| Quartz의 공용 프로필과 기존 설정 | 다른 캐릭터가 쓰는 공용 프로필과 모듈에만 설정이 남은 경우도 기존 값으로 본다. 이 판단은 Quartz가 요청할 때만 쓰며 다른 애드온의 기본값 정책은 유지한다 |
+| 0.1.4 세 ZIP | 0.1.3과 전수 바이트 비교. 새 Quartz 기본값 파일과 연결·버전·ZIP 안내·해시·Core 보존 정책의 기존 일곱 파일 외 일치 |
+| 앞선 SexyMap과 Experience Forever 개선 | 새 ZIP에서 각각 실행. 표시 해제 뒤 위치 읽기 0회, 퀘스트 목록 읽기 20회와 이전 표시 합계 확인 |
+
+첫 12건은 세 해상도 프리셋을 생략한 Core 시험이었다. 독립 검수에서 다른 캐릭터나 모듈이 쓰던 공용 프로필까지 바뀌는 경우를 찾아 보호 조건을 고쳤다. 수정 ZIP 세 개에서는 세 프리셋을 포함한 전체 Core 로드 목록으로 실제 동봉 조건 27건과 옵션을 껐을 때의 기존 동작 9건을 확인했다. 별도로 실제 Core, AceDB, Quartz를 이어 실행한 15건에서 오라 막대를 켠 경우 갱신 요청 41회, 끈 경우 0회였다. 시전 모듈 네 개는 두 경우 모두 시험 대역에서 활성화됐다. [수정 기록](../../_local_only/runtime-release-0.1.4-reviewed/work_log.md) · [프로필 시험](../../_local_only/runtime-release-0.1.4-reviewed/quartz-default-tests.json) · [실제 Core와 Quartz 연결 시험](../../_local_only/runtime-release-0.1.4-reviewed/packaged-quartz-through-core.json) · [ZIP 목록과 해시](../../_local_only/runtime-release-0.1.4-reviewed/trial-receipt.json)
+
+공통 코드의 기능·성능 회귀는 Step 72에 모아 기록한다.
