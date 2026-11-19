@@ -33,7 +33,7 @@
 |---|---|
 | [Claude 마스터 플랜](../../Claude/plans/2026-11-18-devil-forever-addon-collection-plan.md) · [계획 이력](../../Claude/plans/2026-11-18-devil-forever-addon-collection-plan_이력.md) · [실행 대장](../../Claude/results/PHASE_0-25_EXECUTION_LEDGER.md) | 기존 Phase 0–25와 Step 42–43 사용. Step 41의 실제 접속 검증과 마지막 고정은 현재 별도 결과를 소비 |
 | [Claude 인계](../../Claude/docs/HANDOVER_v0.1.0.md) · [Codex 인계](../docs/HANDOVER_v0.1.0.md) · [직전 요청 대장](../../Claude/results/REQUEST_LEDGER_phase25.md) | 애드온을 독립 선택 가능한 모음집으로 구성. 사용자 선택과 당시의 대기 사유를 대조할 입력 |
-| [통합 결과](../../Claude/results/Step%2040%20%E2%80%94%20Codex%20collection%20integration.md) · [기능 트리](../../Collection/data/feature-map.md) · [목업](../../References/codex-appearance/24/racial-appearance/index.md) | 세 ZIP을 실제로 생성·검사했다. 기본판 35개, FUF 대체판 37개, 비교판 38개. 세 프리셋과 테마 13종. ZIP에도 적용된 위치와 갤러리에만 있는 위치를 기능별로 추적 가능 |
+| [통합 결과](<../results/Step 40 — Codex collection integration.md>) · [기능 트리](../../Collection/data/feature-map.md) · [목업](../../References/codex-appearance/24/racial-appearance/index.md) | 세 ZIP을 실제로 생성·검사했다. 기본판 35개, FUF 대체판 37개, 비교판 38개. 세 프리셋과 테마 13종. ZIP에도 적용된 위치와 갤러리에만 있는 위치를 기능별로 추적 가능 |
 | [Step 47 보정 결과](../results/Step%2047%20%E2%80%94%20결함%20보정과%20재시험.md) · [Step 48 배포 후보](../results/audit-installer/reviewed-packages.json) | 채팅 보존과 자동 배치, FUF 비교 실행 경로를 보정한 세 ZIP이다. 설치기 카탈로그는 두 단독판을 사용한다. 비교판과 최종 프레임 선택은 기존 Step 41 확인표를 따른다. 경험치의 설치 구조는 세로 막대다 |
 | [배포 목록](../../Collection/install.json) · [빌더](../../Collection/tools/build.py) · [설치·복원 안내](../../Collection/install/설치안내.md) | 현재 build.py가 설치 목록과 변형별 manifest, 파일 SHA-256을 가진 ZIP을 만든다. 배포물은 수동 설치용 ZIP이다. 현재 안내는 기존 AddOns를 따로 옮기는 시험 편의 절차를 포함 |
 | [단일 접속 확인표](../../References/codex-verify/one-session-review.md) · [Phase 1 관측](../../References/codex-verify/phase1/result.md) | 실제 배율, 4K 글자, 전투 중 클릭·오라와 소환수, 기본 쿨다운 관리자, 파티·공격대 확인이 남았다. 경험치의 가로 분할은 설계안이며 현재 애드온은 세로 쌓기 |
@@ -42,9 +42,9 @@
 
 | 근거 | 적용할 방식 |
 |---|---|
-| 지침 설치기 `README.md` 11–23, 107–149행 및 `install.ps1` 75–243행 | 대상과 구성 확인 → 읽기 전용 사전 점검 → 계획 표시 → 실행 → 상태와 미완 원인 출력. 공통 화면이 관리하는 작업 흐름과 실제 제품 데이터를 구분한다. 파일을 검증하는 진입점은 `verify.ps1`에 있다. [지침 설치기 README](<D:/Projects/Project_skills/Settings_Installer/Settings_Installer/README.md>) · [설치 실행부](<D:/Projects/Project_skills/Settings_Installer/Settings_Installer/setup/install.ps1>) · [검증 실행부](<D:/Projects/Project_skills/Settings_Installer/Settings_Installer/setup/verify.ps1>) |
-| 지침 설치기 `launch_gui.ps1` 55–141행, `install.ps1` 기록 확인 구간 | GUI 런처는 Python을 탐지해 없으면 동봉 설치기나 공식 배포처를 이용하고 사용자 범위에 설치한다. 일부 기록 확인 실패 분기는 경고 뒤 모듈을 호출한다. Devil Forever는 기록을 확인할 수 있는 실행 파일을 동봉하고, 소유권이나 복원 지점을 확인하지 못한 기존 위치에서는 쓰기 전에 멈춘다. [GUI 런처](<D:/Projects/Project_skills/Settings_Installer/Settings_Installer/setup/launch_gui.ps1>) · [설치 실행부](<D:/Projects/Project_skills/Settings_Installer/Settings_Installer/setup/install.ps1>) |
-| IPSW Explorer Step 366·367 | 화면과 명령줄이 같은 작업을 사용하고, 제거 시 도구 소유 파일만 처리한다. 설치 기록·실제 파일·보존 파일을 함께 대조하며, 압축 해제한 배포본으로 진입점을 시험한다. [제거 검수](<D:/Projects/Project_IPSW/Codex/results/Step 366 — Windows 화면 시험과 제거 경로 독립 검수.md>) · [배포본 검증](<D:/Projects/Project_IPSW/Codex/results/Step 367 — Windows 18w 포장과 배포.md>) |
+| 지침 설치기 `README.md` 11–23, 107–149행 및 `install.ps1` 75–243행 | 대상과 구성 확인 → 읽기 전용 사전 점검 → 계획 표시 → 실행 → 상태와 미완 원인 출력. 공통 화면이 관리하는 작업 흐름과 실제 제품 데이터를 구분한다. 파일을 검증하는 진입점은 `verify.ps1`에 있다. 지침 설치기 README (로컬 전용) · 설치 실행부 (로컬 전용) · 검증 실행부 (로컬 전용) |
+| 지침 설치기 `launch_gui.ps1` 55–141행, `install.ps1` 기록 확인 구간 | GUI 런처는 Python을 탐지해 없으면 동봉 설치기나 공식 배포처를 이용하고 사용자 범위에 설치한다. 일부 기록 확인 실패 분기는 경고 뒤 모듈을 호출한다. Devil Forever는 기록을 확인할 수 있는 실행 파일을 동봉하고, 소유권이나 복원 지점을 확인하지 못한 기존 위치에서는 쓰기 전에 멈춘다. GUI 런처 (로컬 전용) · 설치 실행부 (로컬 전용) |
+| IPSW Explorer Step 366·367 | 화면과 명령줄이 같은 작업을 사용하고, 제거 시 도구 소유 파일만 처리한다. 설치 기록·실제 파일·보존 파일을 함께 대조하며, 압축 해제한 배포본으로 진입점을 시험한다. 제거 검수 (로컬 전용) · 배포본 검증 (로컬 전용) |
 
 개발 PC에서 Windows x64와 .NET SDK 10.0.201을 확인했다. 별도 Python과 .NET 런타임을 설치하지 않은 Windows에서 실행한 결과는 아직 없다. 참고 프로젝트의 실행 경로와 위 문건을 대조했다. 전체 참고 프로젝트 코드에 대한 검수는 이번 초안의 근거로 세지 않는다. 기술 비교 원문은 2026-11-19에 확인했다. 세부계획과 스텝 기록은 코드와 식별자 중심의 기존 표기 관례를 따르고, 사용자용 계획과 결과는 한국어로 작성한다.
 

@@ -12,7 +12,7 @@
 | `Codex/results/handoffs/old-reference/iter_3/work_log.md` |79|`0EF2F4D514264B43FF3C7E3FEBA8C1DFF88D041EC9E0933CF4579939C5C6B2EE`|
 | 현재 Phase1.3 세부계획 |279|`DD11E621123EFBE1C162FBB18634AC4A9A2186C79E0AA5130AFCA1CBA4FA56EF`|
 
-최종 고정 영수증: [DESIGN_READY.json](D:/Projects/Project_WF/Codex/results/old-devil-layout/DESIGN_READY.json), **223행**, SHA256 `FFFA78E90C6C27722EB0F9BB16698839BD51D78D7AB421179B45B5BEEE2FE653`. 연결된 **20파일 실제 해시·크기·행수 불일치0**, 기존 G5 재실행0.
+최종 고정 영수증: [DESIGN_READY.json](<../../old-devil-layout/DESIGN_READY.json>), **223행**, SHA256 `FFFA78E90C6C27722EB0F9BB16698839BD51D78D7AB421179B45B5BEEE2FE653`. 연결된 **20파일 실제 해시·크기·행수 불일치0**, 기존 G5 재실행0.
 
 - G5 설계 **30/30**. 14역할·설정24기록·68행동셀+12메뉴자리·선택자산7개.
 - 버튼80/아이콘64/간격2부터 적층 → 구획304, 보조줄까지524, 상단 unit 포함720px. 사진 전체 비율이나 폭채우기 역산을 사용하지 않음.

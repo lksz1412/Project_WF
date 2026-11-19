@@ -86,7 +86,7 @@
 
 ## 유닛과 오라·시전·소환수
 
-**유지 가능**: PitBull4 아군 우측·적군 좌측의 기존 정렬, 소환수 대상→소환수→기술바→시전바의 열, 소환수 버튼의 기존 자동 표시. 사용자 대장은 R140에서 “유닛 재배치와 스킨을 범위에서 제외”하고 “직업별 설정이나 별도 토글 없이 기존 버튼 표시 상태 사용”이라고 기록한다. 소환수가 플레이어에서 멀다는 이전 제안을 새 이동 승인으로 다루지 않는다. `Claude/results/REQUEST_LEDGER_phase25.md:35–40`.
+**유지 가능**: PitBull4 아군 우측·적군 좌측의 기존 정렬, 소환수 대상→소환수→기술바→시전바의 열, 소환수 버튼의 기존 자동 표시. 사용자 대장은 CR140에서 “유닛 재배치와 스킨을 범위에서 제외”하고 “직업별 설정이나 별도 토글 없이 기존 버튼 표시 상태 사용”이라고 기록한다. 소환수가 플레이어에서 멀다는 이전 제안을 새 이동 승인으로 다루지 않는다. [CR138](../REQUEST_LEDGER_codex-phase25.md#cr138) · [CR139](../REQUEST_LEDGER_codex-phase25.md#cr139) · [CR140](../REQUEST_LEDGER_codex-phase25.md#cr140) · [CR141](../REQUEST_LEDGER_codex-phase25.md#cr141) · [CR142](../REQUEST_LEDGER_codex-phase25.md#cr142) · [CR143](../REQUEST_LEDGER_codex-phase25.md#cr143).
 
 | 해상도 | 플레이어 크기 | 대상 크기 | 소환수 열의 공통 왼쪽 x | 소환수 크기 | 기술바 전체 외곽 |
 |---|---:|---:|---:|---:|---:|
@@ -96,7 +96,7 @@
 
 근거: `References/codex-appearance/24/ux/index.md:39–43`, `feature-positions.json`의 `layouts.*.rects`, `probe.json`의 `profiles.*.pet_rows`. 모두 후보 코드·좌표의 크기이며 이번 게임 실측은 아니다.
 
-**오라 보존 기준**: 기존 상단 오라의 위치·개인 설정을 보존한다. 읽은 기록은 새 프로필의 오라 꺼짐과 기존 상단 표시 보존을 구별하며, 상단 상시 표시를 새로 켜라는 확정 원문은 찾지 못했다. 따라서 오라를 임의로 켜거나 위치를 바꾸는 후속 작업을 넣지 않는다. `Claude/results/Step 40 — Codex pet alignment reference check.md:47–53`, `Claude/results/REQUEST_LEDGER_phase25.md:18,37`.
+**오라 보존 기준**: 기존 상단 오라의 위치·개인 설정을 보존한다. 읽은 기록은 새 프로필의 오라 꺼짐과 기존 상단 표시 보존을 구별하며, 상단 상시 표시를 새로 켜라는 확정 원문은 찾지 못했다. 따라서 오라를 임의로 켜거나 위치를 바꾸는 후속 작업을 넣지 않는다. `Claude/results/Step 40 — Codex pet alignment reference check.md:47–53`, [CR121](../REQUEST_LEDGER_codex-phase25.md#cr121) · [CR140](../REQUEST_LEDGER_codex-phase25.md#cr140).
 
 **손볼 근거가 있음**: 열어 본 소환수 원배율 목업에는 기술 아이콘·랭크·키가 없고, 유닛 예시는 짧은 이름과 단순 체력·자원 막대다. 오라가 많거나 시전명이 길 때의 실제 점유 폭은 확인되지 않았다. 초기 정렬을 보존하면서도 이 상태를 확인해야 한다. `ux/index.md:43`, `References/codex-appearance/6-rev/report.md:19`.
 
@@ -160,7 +160,7 @@
 
 ## 공통 설정 화면과 확인 흐름
 
-**유지 가능**: 공통 해상도·테마·저장·복원은 Core 명령, 키·오라·추천·미터기 세부는 각 애드온이 맡는 분담. 기능 트리에서 입구를 찾을 수 있다. R107은 통합 편집기 대신 AI로 수정하는 방식을 선택했고, R148은 중앙 설정의 필요성을 검토해 달라는 요청이다. 기존 통합 편집기를 복원하거나 새로 만들기로 확정하지 않는다. `Collection/data/feature-map.md:21–23,67–75`, `Claude/results/REQUEST_LEDGER_phase8.md:20`, `Claude/results/REQUEST_LEDGER_phase25.md:50`.
+**유지 가능**: 공통 해상도·테마·저장·복원은 Core 명령, 키·오라·추천·미터기 세부는 각 애드온이 맡는 분담. 기능 트리에서 입구를 찾을 수 있다. R107은 통합 편집기 대신 AI로 수정하는 방식을 선택했고, CR148은 중앙 설정의 필요성을 검토해 달라는 요청이다. 기존 통합 편집기를 복원하거나 새로 만들기로 확정하지 않는다. `Collection/data/feature-map.md:21–23,67–75`, `Claude/results/REQUEST_LEDGER_phase8.md:20`, [CR148](../REQUEST_LEDGER_codex-phase25.md#cr148).
 
 **손볼 근거가 있음**: 실제 공통 설정 화면의 글·버튼·오류 상태를 보여 주는 자료는 이번에 읽은 입력에서 찾지 못했다. 명령과 기능 트리가 있다고 화면의 사용성 검토까지 완료된 것은 아니다. 필요하다면 공통 배치·테마·복원과 개별 옵션으로 가는 입구부터 작은 범위로 판단한다.
 
@@ -172,7 +172,7 @@
 
 ## 채팅은 확정 기준과 ZIP 차이만 다룬다
 
-**유지 가능**: 게임 기본 수신·송신·한글 입력, 자체 외관, 세 채팅창. 기존 창별 분류와 사용자가 옮기거나 닫은 창을 유지한다. 데빌은 문양 없는 검회색, 나머지 문양은 셋째 창만 사용한다. Prat로 다시 바꾸거나 메시지 엔진을 새로 만드는 안을 넣지 않는다. `Claude/results/REQUEST_LEDGER_phase25.md:9,27,32`, `Collection/data/feature-map.md:38–40`, `Codex/docs/ui-design-criteria.md:15`.
+**유지 가능**: 게임 기본 수신·송신·한글 입력, 자체 외관, 세 채팅창. 기존 창별 분류와 사용자가 옮기거나 닫은 창을 유지한다. 데빌은 문양 없는 검회색, 나머지 문양은 셋째 창만 사용한다. Prat로 다시 바꾸거나 메시지 엔진을 새로 만드는 안을 넣지 않는다. [CR112](../REQUEST_LEDGER_codex-phase25.md#cr112) · [CR130](../REQUEST_LEDGER_codex-phase25.md#cr130) · [CR135](../REQUEST_LEDGER_codex-phase25.md#cr135), `Collection/data/feature-map.md:38–40`, `Codex/docs/ui-design-criteria.md:15`.
 
 **손볼 근거가 있음·확정**: 승인된 새 HTML의 오크 오른쪽 세로 테두리는 기준 문서에서 49→31픽셀이다. 새 렌더 코드는 오크 폭 변환 비율 0.64와 문양 여백 오른쪽 22·아래 10픽셀을 사용하고, 바탕 마스크 안으로 문양을 합성한다. 현재 ZIP은 문양을 `ARTWORK` 레이어에 만들며 오른쪽 여백은 창 폭의 35%, 아래 여백은 높이의 14.5%다. 자르기 70%와 투명도 16%가 같아도 같은 그림은 아니다. `Codex/docs/ui-design-criteria.md:14–15`, `_local_only/mobile-orc-rail-19/render.py:38–61,77–94`, `Collection/AddOns/DevilForever_Appearance/Composition.lua:118–130`; ZIP 안 같은 코드 위치는 `evidence.json`의 `previous_install_archive_visual_checks.archives.*.selected_source_lines`.
 

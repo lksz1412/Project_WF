@@ -1,0 +1,14 @@
+{
+  "markdown": 443,
+  "local_occurrences": 1214,
+  "unresolved_targets": 2,
+  "unresolved_occurrences": 2,
+  "missing": {
+    "Codex/References/codex-appearance/19/report.md": [
+      "Codex/results/audit-installer/step46-work-log.md"
+    ],
+    "Codex/results/audit-installer/Path('Collection'": [
+      "Codex/results/audit-installer/step47-work-log.md"
+    ]
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "baseline": "477eb06",
+  "sourceLocation": "기존 D 드라이브 프로젝트 작업본; 원본 읽기 전용",
+  "files": [
+    {
+      "source": "Codex/results/PHASE_29.1_addon-evidence_RESULT.json",
+      "restored": "Codex/results/PHASE_29.1_addon-evidence_RESULT.json",
+      "sourceSha256": "738ece83db00702c71a726b917afc8bc8ea05891495e72640366d69e03fef283",
+      "sourceLines": 14,
+      "method": "원본 바이트 복사 후 링크·Codex 요청 연결만 보정; 사실 판정은 당시 기록",
+      "restoredSha256": "738ece83db00702c71a726b917afc8bc8ea05891495e72640366d69e03fef283",
+      "restoredLines": 14,
+      "byteIdentical": true
+    },
+    {
+      "source": "Codex/results/PHASE_29.1_addon-evidence_RESULT.md",
+      "restored": "Codex/results/PHASE_29.1_addon-evidence_RESULT.md",
+      "sourceSha256": "ae5292df1d2e062875b9d77dd5e884b1fca5e646aea524ef52cddb7f82694b65",
+      "sourceLines": 45,
+      "method": "원본 바이트 복사 후 링크·Codex 요청 연결만 보정; 사실 판정은 당시 기록",
+      "restoredSha256": "ae5292df1d2e062875b9d77dd5e884b1fca5e646aea524ef52cddb7f82694b65",
+      "restoredLines": 45,
+      "byteIdentical": true
+    },
+    {
+      "source": "Codex/results/PHASE_29.2_addon-adoption_RESULT.json",
+      "restored": "Codex/results/PHASE_29.2_addon-adoption_RESULT.json",
+      "sourceSha256": "33a49e98f763006e544a901959d1848eb1a7cd4e4511a49afedccc7960f1b5b7",
+      "sourceLines": 32,
+      "method": "원본 바이트 복사 후 링크·Codex 요청 연결만 보정; 사실 판정은 당시 기록",
+      "restoredSha256": "33a49e98f763006e544a901959d1848eb1a7cd4e4511a49afedccc7960f1b5b7",
+      "restoredLines": 32,
+      "byteIdentical": true
+    },
+    {
+      "source": "Codex/results/PHASE_29.2_addon-adoption_RESULT.md",
+      "restored": "Codex/results/PHASE_29.2_addon-adoption_RESULT.md",
+      "sourceSha256": "3e31cf9259a45671dd5c346400516060be6348295223577897eff836d1148e63",
+      "sourceLines": 45,
+      "method": "원본 바이트 복사 후 링크·Codex 요청 연결만 보정; 사실 판정은 당시 기록",
+      "restoredSha256": "3e31cf9259a45671dd5c346400516060be6348295223577897eff836d1148e63",
+      "restoredLines": 45,
+      "byteIdentical": true
+    },
+    {
+      "source": "Codex/results/Step 60 — 상위 애드온 1차 등급과 자체 성능 검수.md",
+      "restored": "Codex/results/Step 60 — 상위 애드온 1차 등급과 자체 성능 검수.md",
+      "sourceSha256": "bd02fb55064f2d5c4ef500262c1803be474d182f474ba9318a63a551d755b017",
+      "sourceLines": 71,
+      "method": "원본 바이트 복사 후 링크·Codex 요청 연결만 보정; 사실 판정은 당시 기록",
+      "restoredSha256": "bd02fb55064f2d5c4ef500262c1803be474d182f474ba9318a63a551d755b017",
+      "restoredLines": 71,
+      "byteIdentical": true
+    },
+    {
+      "source": "Codex/results/Step 60 — 후보별 배포 원본 대조.md",
+      "restored": "Codex/results/Step 60 — 후보별 배포 원본 대조.md",
+      "sourceSha256": "6df057ca2e8871db9649edd861f7d55dd360bf66070db6218ca21c3f8437a33b",
+      "sourceLines": 92,
+      "method": "원본 바이트 복사 후 링크·Codex 요청 연결만 보정; 사실 판정은 당시 기록",
+      "restoredSha256": "6df057ca2e8871db9649edd861f7d55dd360bf66070db6218ca21c3f8437a33b",
+      "restoredLines": 92,
+      "byteIdentical": true
+    },
+    {
+      "source": "Codex/results/Step 61 — 최소 선택 설치 구성.md",
+      "restored": "Codex/results/Step 61 — 최소 선택 설치 구성.md",
+      "sourceSha256": "11d832d41ecf1749838eba083a937d59b69a5859b08133fed9955afabc02d520",
+      "sourceLines": 33,
+      "method": "원본 바이트 복사 후 링크·Codex 요청 연결만 보정; 사실 판정은 당시 기록",
+      "restoredSha256": "11d832d41ecf1749838eba083a937d59b69a5859b08133fed9955afabc02d520",
+      "restoredLines": 33,
+      "byteIdentical": true
+    },
+    {
+      "source": "Codex/results/Step 62 — 채택 권고 독립 검수.md",
+      "restored": "Codex/results/Step 62 — 채택 권고 독립 검수.md",
+      "sourceSha256": "540b48f18271db48bf6c8ee6710d1bbe18886ada0a53165193d40e2647f5285f",
+      "sourceLines": 31,
+      "method": "원본 바이트 복사 후 링크·Codex 요청 연결만 보정; 사실 판정은 당시 기록",
+      "restoredSha256": "540b48f18271db48bf6c8ee6710d1bbe18886ada0a53165193d40e2647f5285f",
+      "restoredLines": 31,
+      "byteIdentical": true
+    },
+    {
+      "source": "Codex/results/REQUEST_LEDGER_phase29.1.md",
+      "restored": "Codex/results/REQUEST_LEDGER_phase29.1.md",
+      "sourceSha256": "af78df23068bd106cd7f8a4f3c2cd7f2072389ea8e4d4594a69a2f24e9167472",
+      "sourceLines": 8,
+      "method": "원본 바이트 복사 후 링크·Codex 요청 연결만 보정; 사실 판정은 당시 기록",
+      "restoredSha256": "af78df23068bd106cd7f8a4f3c2cd7f2072389ea8e4d4594a69a2f24e9167472",
+      "restoredLines": 8,
+      "byteIdentical": true
+    },
+    {
+      "source": "Codex/plans/2026-11-19-devil-forever-addon-adoption-phase29.1-세부계획.md",
+      "restored": "Codex/plans/2026-11-19-devil-forever-addon-adoption-phase29.1-세부계획.md",
+      "sourceSha256": "6be066acc500f4a4ebab8164f1b3b4927fa7b618692e1cf4857e29c0eadafe56",
+      "sourceLines": 7,
+      "method": "원본 바이트 복사 후 링크·Codex 요청 연결만 보정; 사실 판정은 당시 기록",
+      "restoredSha256": "6be066acc500f4a4ebab8164f1b3b4927fa7b618692e1cf4857e29c0eadafe56",
+      "restoredLines": 7,
+      "byteIdentical": true
+    },
+    {
+      "source": "Codex/plans/2026-11-19-devil-forever-addon-adoption-phase29.2-세부계획.md",
+      "restored": "Codex/plans/2026-11-19-devil-forever-addon-adoption-phase29.2-세부계획.md",
+      "sourceSha256": "9fbff2f9e267850c397a41764b972b7d8ca4f535a0b7163c7db555f7ff7194dd",
+      "sourceLines": 12,
+      "method": "원본 바이트 복사 후 링크·Codex 요청 연결만 보정; 사실 판정은 당시 기록",
+      "restoredSha256": "9fbff2f9e267850c397a41764b972b7d8ca4f535a0b7163c7db555f7ff7194dd",
+      "restoredLines": 12,
+      "byteIdentical": true
+    },
+    {
+      "source": "Claude/results/Step 40 — Codex collection integration.json",
+      "restored": "Codex/results/Step 40 — Codex collection integration.json",
+      "sourceSha256": "bc6734f81b14c838b6877d181e693347dec072d30c83cf092ed28d057d678847",
+      "sourceLines": 21,
+      "method": "원본 바이트 복사 후 링크·Codex 요청 연결만 보정; 사실 판정은 당시 기록",
+      "restoredSha256": "493564d07532e030d1530b0a6af415b19dc45234848be3bd41754a8dd66a3c14",
+      "restoredLines": 43,
+      "byteIdentical": false
+    },
+    {
+      "source": "Claude/results/Step 40 — Codex collection integration.md",
+      "restored": "Codex/results/Step 40 — Codex collection integration.md",
+      "sourceSha256": "f8ec33c8eea0cfc97d1296aa7c4a4d8118be7e5707bcbccc4be441efbaa9116c",
+      "sourceLines": 45,
+      "method": "원본 바이트 복사 후 링크·Codex 요청 연결만 보정; 사실 판정은 당시 기록",
+      "restoredSha256": "ed781c07de75491c52cb36266bbca8a0ddadab67960e14dcb3be62fac6a3f90e",
+      "restoredLines": 49,
+      "byteIdentical": false
+    }
+  ]
+}

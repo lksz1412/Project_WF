@@ -16,8 +16,8 @@
       "severityProposal": "중대",
       "category": "conditional-runtime",
       "requests": [
-        "R112",
-        "R145"
+        "CR112",
+        "CR145"
       ],
       "title": "대상 창의 메시지 추가 API가 없으면 원래 창 구독을 제거하고 성공 기록",
       "sources": [
@@ -61,8 +61,8 @@
       "severityProposal": "중간",
       "category": "partial-failure",
       "requests": [
-        "R112",
-        "R145"
+        "CR112",
+        "CR145"
       ],
       "title": "두 번째 창 실패 또는 구독 추가 예외 뒤 초기화가 일부만 저장됨",
       "sources": [
@@ -116,8 +116,8 @@
       "category": "preset-integration",
       "requests": [
         "R107",
-        "R112",
-        "R145"
+        "CR112",
+        "CR145"
       ],
       "title": "자동 생성 채팅 창에 프리셋 변경을 반영하는 입구가 없음",
       "sources": [
@@ -166,7 +166,7 @@
       "requests": [
         "R107",
         "R110",
-        "R145"
+        "CR145"
       ],
       "title": "FUF 대체판의 제안 좌표가 실제 설치 배치 경로에 연결되지 않음",
       "sources": [
@@ -229,8 +229,8 @@
       "severityProposal": "범위 기록",
       "category": "documented-layout-alternative",
       "requests": [
-        "R132",
-        "R145"
+        "CR132",
+        "CR145"
       ],
       "title": "경험치 가로 공간 대안과 현행 세로 배치의 수용·표기 범위 정리",
       "sources": [
@@ -246,7 +246,7 @@
         }
       ],
       "trigger": "모사용 가로 experience.main/reputation/pet 대안을 현행 설치본의 확정 배치로 읽는 경우",
-      "expected": "R132·R145의 실제 크기·목업 일치 요구를 현재 채택된 배치에 연결하고, 미채택 공간 대안의 기능 개조를 추정하지 않음",
+      "expected": "CR132·CR145의 실제 크기·목업 일치 요구를 현재 채택된 배치에 연결하고, 미채택 공간 대안의 기능 개조를 추정하지 않음",
       "actual": {
         "presetRegistrations": 9,
         "experienceKeys": [
@@ -273,7 +273,7 @@
       "currentLayoutDecision": "현재 세로 배치를 유지한다. 가로 3분할을 채택한 명시 근거는 이번 범위에서 확인하지 못했다.",
       "step48Gate": [
         "모사용 가로 공간 대안과 설치본의 현행 세로 배치를 목업·기능 지도·수용 기록에서 구분",
-        "R132·R145의 실제 애드온 크기와 현행 채택 배치의 목업 일치 의무 유지",
+        "CR132·CR145의 실제 애드온 크기와 현행 채택 배치의 목업 일치 의무 유지",
         "가로 3분할을 새 native 기능 변경 의무로 해석하지 않음",
         "별도 명시 채택 없이 XP 본체·계산·자식 재앵커·사용자 프로필을 변경하지 않음"
       ]
@@ -285,7 +285,7 @@
       "requests": [
         "R62",
         "R104",
-        "R147"
+        "CR147"
       ],
       "title": "기능 트리가 참조하는 Hekili 지원표에 폐기된 Combat 구현 지시와 CDM 결정 대기가 남음",
       "sources": [
@@ -330,7 +330,7 @@
       "requests": [
         "R44",
         "R107",
-        "R148"
+        "CR148"
       ],
       "status": "기존 오프라인 시험 PASS 범위",
       "evidence": "_local_only/phase26-work-r151-20261119/step44-evidence/core.log",
@@ -340,8 +340,8 @@
     {
       "feature": "채팅",
       "requests": [
-        "R112",
-        "R145"
+        "CR112",
+        "CR145"
       ],
       "status": "수정 필요",
       "findings": [
@@ -359,14 +359,14 @@
     {
       "feature": "하단 조작·13종 테마",
       "requests": [
-        "R115",
-        "R130",
-        "R135",
-        "R136",
-        "R138",
-        "R140",
-        "R142",
-        "R143"
+        "CR115",
+        "CR130",
+        "CR135",
+        "CR136",
+        "CR138",
+        "CR140",
+        "CR142",
+        "CR143"
       ],
       "status": "ZIP·Lua/TGA 대역 확인; 실게임 대기",
       "observedBy": "master",
@@ -388,8 +388,8 @@
       "requests": [
         "R107",
         "R110",
-        "R121",
-        "R140"
+        "CR121",
+        "CR140"
       ],
       "status": "PitBull 위치 대역 통과; FUF 연결 수정 필요",
       "findings": [
@@ -420,7 +420,7 @@
         "R95",
         "R97",
         "R107",
-        "R145"
+        "CR145"
       ],
       "status": "기존 오프라인 시험 PASS 범위",
       "observedBy": "master",
@@ -431,20 +431,20 @@
       "feature": "성장·퀘스트",
       "requests": [
         "R100",
-        "R132",
-        "R145"
+        "CR132",
+        "CR145"
       ],
       "status": "XP 현행 세로·공간 대안 표기 정리; 기본 Quest 실측 대기",
       "findings": [
         "F46-05"
       ],
       "evidence": "References/codex-verify/one-session-review.md",
-      "limits": "현재 세로 배치를 유지하며 가로 제안은 Step48에서 수용 범위를 구분한다. R132·R145의 실제 크기·일치 의무는 유지. CDM/quest 목표 좌표·글자 크기와 client 저장/폰트 경로는 실측 대기."
+      "limits": "현재 세로 배치를 유지하며 가로 제안은 Step48에서 수용 범위를 구분한다. CR132·CR145의 실제 크기·일치 의무는 유지. CDM/quest 목표 좌표·글자 크기와 client 저장/폰트 경로는 실측 대기."
     },
     {
       "feature": "배포",
       "requests": [
-        "R145",
+        "CR145",
         "R151"
       ],
       "status": "Phase26.1 기준 PASS 재사용",
@@ -456,7 +456,7 @@
       "requests": [
         "R107",
         "R110",
-        "R145"
+        "CR145"
       ],
       "status": "SV 선기록 시 native 수명 변경 반증",
       "observedBy": "master",
@@ -492,5 +492,6 @@
       "state": "현재 기본 false 확인. 항상 켜기 명시 결정 미확인"
     }
   ],
-  "next": "Master severity confirmation and independent review, then Step47 authorized fixes"
+  "next": "Master severity confirmation and independent review, then Step47 authorized fixes",
+  "codexRequestLedger": "Codex/results/REQUEST_LEDGER_codex-phase25.md"
 }

@@ -14,7 +14,7 @@ Step 63–65.
 
 ## Files Created
 
-[Step 65 검증 기록](Step%2065%20%E2%80%94%200.1.2%20성능%20개선과%20설치%20검증.md), [설치기 묶음](../../_local_only/perf-package-0.1.2/final-build/DevilForever-Windows-x64-0.1.2/), [한 접속 비교 ZIP](../../_local_only/perf-package-0.1.2/final-build/archives/DevilForever-0.1.2-one-session.zip).
+[Step 65 검증 기록](Step%2065%20%E2%80%94%200.1.2%20성능%20개선과%20설치%20검증.md), 설치기 묶음 (로컬 전용), 한 접속 비교 ZIP (로컬 전용).
 
 ## Files Updated
 
@@ -30,7 +30,7 @@ Step 63–65.
 
 ## Validation
 
-독립 첫 검수의 소환수 예약 결함 한 건을 고쳤다. 재검에서 중대·중간·경미 0건이었다. 세 ZIP 대조와 공개 설치 명령 9건, 두 단독판의 0.1.1→0.1.2→0.1.1을 통과했다. [ZIP 해시](../../_local_only/perf-package-0.1.2/final-build/archives/release-receipt.json)
+독립 첫 검수의 소환수 예약 결함 한 건을 고쳤다. 재검에서 중대·중간·경미 0건이었다. 세 ZIP 대조와 공개 설치 명령 9건, 두 단독판의 0.1.1→0.1.2→0.1.1을 통과했다. ZIP 해시 (로컬 전용)
 
 ## Non-Changes
 

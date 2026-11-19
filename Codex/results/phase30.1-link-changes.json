@@ -1,0 +1,823 @@
+{
+  "changes": [
+    {
+      "file": "Codex/plans/2026-11-19-devil-forever-audit-and-installer-phase26.1-세부계획.md",
+      "line": 5,
+      "oldTarget": "Claude/results/Step 40 — Codex collection integration.md",
+      "newTarget": "Codex/results/Step 40 — Codex collection integration.md",
+      "reason": "복원한 동일 통합 근거"
+    },
+    {
+      "file": "Codex/plans/2026-11-19-devil-forever-audit-and-installer-phase26.1-세부계획.md",
+      "line": 20,
+      "oldTarget": "local-only:3c5285efe5c0f05a",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/plans/2026-11-19-devil-forever-audit-and-installer-phase26.1-세부계획.md",
+      "line": 21,
+      "oldTarget": "local-only:fc5ac18c8f5f29a5",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/plans/2026-11-19-devil-forever-audit-and-installer-phase26.1-세부계획.md",
+      "line": 21,
+      "oldTarget": "local-only:5e0dd1a2d29f0ce0",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/plans/2026-11-19-devil-forever-audit-and-installer-phase26.1-세부계획.md",
+      "line": 36,
+      "oldTarget": "Claude/results/Step 40 — Codex racial appearance.md",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/plans/2026-11-19-devil-forever-audit-and-installer-plan.md",
+      "line": 36,
+      "oldTarget": "Claude/results/Step 40 — Codex collection integration.md",
+      "newTarget": "Codex/results/Step 40 — Codex collection integration.md",
+      "reason": "복원한 동일 통합 근거"
+    },
+    {
+      "file": "Codex/plans/2026-11-19-devil-forever-audit-and-installer-plan.md",
+      "line": 45,
+      "oldTarget": "local-only:3a093acbbc549617",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/plans/2026-11-19-devil-forever-audit-and-installer-plan.md",
+      "line": 45,
+      "oldTarget": "local-only:a70d4de787279c66",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/plans/2026-11-19-devil-forever-audit-and-installer-plan.md",
+      "line": 45,
+      "oldTarget": "local-only:d345a758ab09932f",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/plans/2026-11-19-devil-forever-audit-and-installer-plan.md",
+      "line": 46,
+      "oldTarget": "local-only:fac8af6670ae47bc",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/plans/2026-11-19-devil-forever-audit-and-installer-plan.md",
+      "line": 46,
+      "oldTarget": "local-only:a70d4de787279c66",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/plans/2026-11-19-devil-forever-audit-and-installer-plan.md",
+      "line": 47,
+      "oldTarget": "local-only:71f3a03ebc637e06",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/plans/2026-11-19-devil-forever-audit-and-installer-plan.md",
+      "line": 47,
+      "oldTarget": "local-only:58661f8c16051aab",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/PHASE_26-28_EXECUTION_LEDGER.md",
+      "line": 7,
+      "oldTarget": "local-only:53e6d4194cc34841",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/PHASE_26-28_EXECUTION_LEDGER.md",
+      "line": 8,
+      "oldTarget": "local-only:a8021fc4f354b2f6",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/PHASE_26-28_EXECUTION_LEDGER.md",
+      "line": 8,
+      "oldTarget": "local-only:447063f2f2b051f4",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/PHASE_26-28_EXECUTION_LEDGER.md",
+      "line": 9,
+      "oldTarget": "local-only:36e72b6b8d58cf35",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/PHASE_26-28_EXECUTION_LEDGER.md",
+      "line": 10,
+      "oldTarget": "local-only:e24e4cf35607ec7e",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/PHASE_26-28_EXECUTION_LEDGER.md",
+      "line": 10,
+      "oldTarget": "local-only:e7899e1cfe0c690b",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/PHASE_26-28_EXECUTION_LEDGER.md",
+      "line": 12,
+      "oldTarget": "local-only:52ae449267dc8980",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/PHASE_28.2_local-trial-delivery_RESULT.md",
+      "line": 29,
+      "oldTarget": "local-only:efc5b13a38671107",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/PHASE_29.3_runtime-performance_RESULT.md",
+      "line": 17,
+      "oldTarget": "local-only:457792aacc4f40bb",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/PHASE_29.3_runtime-performance_RESULT.md",
+      "line": 17,
+      "oldTarget": "local-only:d391c16b6cf0b22a",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/PHASE_29.3_runtime-performance_RESULT.md",
+      "line": 33,
+      "oldTarget": "local-only:9484111873aed360",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/PHASE_29_EXECUTION_LEDGER.md",
+      "line": 7,
+      "oldTarget": "local-only:9484111873aed360",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 40 — Codex collection integration.md",
+      "line": 28,
+      "oldTarget": "local-only:0dcb0684631a6963",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 40 — Codex collection integration.md",
+      "line": 29,
+      "oldTarget": "local-only:67490ec6036d23df",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 40 — Codex collection integration.md",
+      "line": 30,
+      "oldTarget": "local-only:82b9ed0e178a3d57",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 44 — 요청과 실제 기능 대조.md",
+      "line": 14,
+      "oldTarget": "local-only:01cc2d02db25f205",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 44 — 요청과 실제 기능 대조.md",
+      "line": 14,
+      "oldTarget": "local-only:e4ae2734ca0b8936",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 44 — 요청과 실제 기능 대조.md",
+      "line": 22,
+      "oldTarget": "local-only:f1f74d59d38ecb27",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 45 — 배포 기준 ZIP 검증.md",
+      "line": 7,
+      "oldTarget": "local-only:472b31c07784963f",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 45 — 배포 기준 ZIP 검증.md",
+      "line": 17,
+      "oldTarget": "local-only:5e0dd1a2d29f0ce0",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 46 — 기능별 반증 시험.md",
+      "line": 19,
+      "oldTarget": "local-only:f60d38a28087913f",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 47 — 결함 보정과 재시험.md",
+      "line": 7,
+      "oldTarget": "local-only:edb89c374e5889ac",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 47 — 결함 보정과 재시험.md",
+      "line": 31,
+      "oldTarget": "local-only:537e07223184975f",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 47 — 결함 보정과 재시험.md",
+      "line": 31,
+      "oldTarget": "local-only:848c5766a30d0833",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 48 — 검토한 ZIP과 기능 기준 확정.md",
+      "line": 19,
+      "oldTarget": "local-only:848c5766a30d0833",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 48 — 검토한 ZIP과 기능 기준 확정.md",
+      "line": 19,
+      "oldTarget": "local-only:537e07223184975f",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 49 — Windows 단일 실행 파일 검증.md",
+      "line": 7,
+      "oldTarget": "local-only:53e6d4194cc34841",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 49 — Windows 단일 실행 파일 검증.md",
+      "line": 19,
+      "oldTarget": "local-only:8f0f5308ddbb159a",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 49 — Windows 단일 실행 파일 검증.md",
+      "line": 19,
+      "oldTarget": "local-only:f230435a23f064a8",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 51 — Windows 파일 적용 엔진.md",
+      "line": 11,
+      "oldTarget": "local-only:b23fef23ae3688b2",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 51 — Windows 파일 적용 엔진.md",
+      "line": 17,
+      "oldTarget": "local-only:26c6a864799c46b6",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 51 — Windows 파일 적용 엔진.md",
+      "line": 17,
+      "oldTarget": "local-only:a8021fc4f354b2f6",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 51 — Windows 파일 적용 엔진.md",
+      "line": 19,
+      "oldTarget": "local-only:7ad31e655a0157dd",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 51 — Windows 파일 적용 엔진.md",
+      "line": 19,
+      "oldTarget": "local-only:6f4b2d39581f3cb0",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 51 — Windows 파일 적용 엔진.md",
+      "line": 23,
+      "oldTarget": "local-only:655f0fa59a360c54",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 52 — 파일 복원과 관리 제거.md",
+      "line": 21,
+      "oldTarget": "local-only:8c323732b91024a6",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 52 — 파일 복원과 관리 제거.md",
+      "line": 21,
+      "oldTarget": "local-only:447063f2f2b051f4",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 52 — 파일 복원과 관리 제거.md",
+      "line": 21,
+      "oldTarget": "local-only:7d24e29aa44ca877",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 52 — 파일 복원과 관리 제거.md",
+      "line": 23,
+      "oldTarget": "local-only:50903a5f1a4b3793",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 53 — Windows 설치 화면과 명령줄.md",
+      "line": 9,
+      "oldTarget": "local-only:7104f36d58e9bfb7",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 54 — Windows 로컬 배포본.md",
+      "line": 5,
+      "oldTarget": "local-only:36e72b6b8d58cf35",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 54 — Windows 로컬 배포본.md",
+      "line": 14,
+      "oldTarget": "local-only:ab32197cebce910f",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 54 — Windows 로컬 배포본.md",
+      "line": 16,
+      "oldTarget": "local-only:466d5af84dc09f3c",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 54 — Windows 로컬 배포본.md",
+      "line": 16,
+      "oldTarget": "local-only:70bb285fa61880fd",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 54 — Windows 로컬 배포본.md",
+      "line": 18,
+      "oldTarget": "local-only:4a46325e92704f2e",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 55 — 배포본 중단과 충돌 시험.md",
+      "line": 5,
+      "oldTarget": "local-only:478b86b969dd24cd",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 55 — 배포본 중단과 충돌 시험.md",
+      "line": 20,
+      "oldTarget": "local-only:d46a975ce1984775",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 55 — 배포본 중단과 충돌 시험.md",
+      "line": 20,
+      "oldTarget": "local-only:e24e4cf35607ec7e",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 55 — 배포본 중단과 충돌 시험.md",
+      "line": 20,
+      "oldTarget": "local-only:688149d5f98787f2",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 55 — 배포본 중단과 충돌 시험.md",
+      "line": 20,
+      "oldTarget": "local-only:c717a9749c0ae6ca",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 55 — 배포본 중단과 충돌 시험.md",
+      "line": 20,
+      "oldTarget": "local-only:9b47f48f6af9d98b",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 55 — 배포본 중단과 충돌 시험.md",
+      "line": 24,
+      "oldTarget": "local-only:a7082285509cc95f",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 56 — 현재 Windows 격리 확인과 청정 환경 대기.md",
+      "line": 5,
+      "oldTarget": "local-only:e7899e1cfe0c690b",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 58 — 로컬 시험판 전달.md",
+      "line": 7,
+      "oldTarget": "local-only:a5d92ac85004f54a",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 58 — 로컬 시험판 전달.md",
+      "line": 7,
+      "oldTarget": "local-only:462defdd0cbe3cb9",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 58 — 로컬 시험판 전달.md",
+      "line": 7,
+      "oldTarget": "local-only:471f7696ae20b6b4",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 58 — 로컬 시험판 전달.md",
+      "line": 8,
+      "oldTarget": "local-only:f6259255a8c15a4d",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 58 — 로컬 시험판 전달.md",
+      "line": 8,
+      "oldTarget": "local-only:696b00c368759d3c",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 58 — 로컬 시험판 전달.md",
+      "line": 10,
+      "oldTarget": "local-only:efc5b13a38671107",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 59 — 채팅 그림과 설치 묶음 갱신.md",
+      "line": 5,
+      "oldTarget": "local-only:4881aacaff1fadf4",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 59 — 채팅 그림과 설치 묶음 갱신.md",
+      "line": 11,
+      "oldTarget": "local-only:8f654ce3c5c9446e",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 59 — 채팅 그림과 설치 묶음 갱신.md",
+      "line": 12,
+      "oldTarget": "local-only:4353a59570398784",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 59 — 채팅 그림과 설치 묶음 갱신.md",
+      "line": 13,
+      "oldTarget": "local-only:a8b9a31c7940ccd4",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 59 — 채팅 그림과 설치 묶음 갱신.md",
+      "line": 14,
+      "oldTarget": "local-only:e3a614b8bbfb4d6e",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 59 — 채팅 그림과 설치 묶음 갱신.md",
+      "line": 16,
+      "oldTarget": "local-only:99a5baf809413e5a",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 59 — 채팅 그림과 설치 묶음 갱신.md",
+      "line": 16,
+      "oldTarget": "local-only:52ae449267dc8980",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 59 — 채팅 그림과 설치 묶음 갱신.md",
+      "line": 24,
+      "oldTarget": "local-only:7fc25d6c6fcab371",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 59 — 채팅 그림과 설치 묶음 갱신.md",
+      "line": 25,
+      "oldTarget": "local-only:caf723453726a26f",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 59 — 채팅 그림과 설치 묶음 갱신.md",
+      "line": 26,
+      "oldTarget": "local-only:f6d8943311a4bbef",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 59 — 채팅 그림과 설치 묶음 갱신.md",
+      "line": 27,
+      "oldTarget": "local-only:5f1db58509d09197",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 63 — 프리셋과 소환수 단축바 갱신 줄이기.md",
+      "line": 21,
+      "oldTarget": "local-only:ee6079326bd5918c",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 64 — FUF 비교 배치 반복 조회 줄이기.md",
+      "line": 19,
+      "oldTarget": "local-only:82712b68fb7a9e6f",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 65 — 0.1.2 성능 개선과 설치 검증.md",
+      "line": 22,
+      "oldTarget": "local-only:a416d2c3cf4f6dd1",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 65 — 0.1.2 성능 개선과 설치 검증.md",
+      "line": 22,
+      "oldTarget": "local-only:9484111873aed360",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 65 — 0.1.2 성능 개선과 설치 검증.md",
+      "line": 26,
+      "oldTarget": "Collection/upstream/Forever_Unit_Frames-0.65.2/ForeverUnitFrames/Core/Config.lua",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 65 — 0.1.2 성능 개선과 설치 검증.md",
+      "line": 26,
+      "oldTarget": "Collection/upstream/Forever_Unit_Frames-0.65.2/ForeverUnitFrames/Units/Single.lua",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 65 — 0.1.2 성능 개선과 설치 검증.md",
+      "line": 26,
+      "oldTarget": "local-only:f5b495e78215d1eb",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 65 — 0.1.2 성능 개선과 설치 검증.md",
+      "line": 27,
+      "oldTarget": "Collection/upstream/Hekili-v0.8.6/Hekili/Engine/Driver.lua",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 65 — 0.1.2 성능 개선과 설치 검증.md",
+      "line": 28,
+      "oldTarget": "Collection/upstream/Details-Details.20261109.15410.172/Details/core/gears.lua",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 65 — 0.1.2 성능 개선과 설치 검증.md",
+      "line": 28,
+      "oldTarget": "Collection/upstream/Details-Details.20261109.15410.172/Details/core/control.lua",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 65 — 0.1.2 성능 개선과 설치 검증.md",
+      "line": 39,
+      "oldTarget": "local-only:416fbd00c21bd3b7",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 65 — 0.1.2 성능 개선과 설치 검증.md",
+      "line": 52,
+      "oldTarget": "local-only:b500df87881f715f",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 65 — 0.1.2 성능 개선과 설치 검증.md",
+      "line": 52,
+      "oldTarget": "local-only:41aac50b62d7bc89",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 65 — 0.1.2 성능 개선과 설치 검증.md",
+      "line": 52,
+      "oldTarget": "local-only:5d0b9a2772bd6287",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 66 — 유닛 프레임 동작 비교.md",
+      "line": 21,
+      "oldTarget": "local-only:b748679d01e1ba50",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 66 — 유닛 프레임 동작 비교.md",
+      "line": 21,
+      "oldTarget": "local-only:b76487c777134335",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 67 — 행동 추천과 전투 미터기.md",
+      "line": 17,
+      "oldTarget": "local-only:4db2231d7d02654e",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 67 — 행동 추천과 전투 미터기.md",
+      "line": 19,
+      "oldTarget": "Collection/upstream/skada-v2.6.7/Skada/Skada_Forever.toc",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 68 — 기능별 후보와 반복 비용.md",
+      "line": 18,
+      "oldTarget": "Collection/upstream/basic-minimap-v12.1.6/BasicMinimap/BasicMinimap_Classic.lua",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 68 — 기능별 후보와 반복 비용.md",
+      "line": 19,
+      "oldTarget": "Collection/upstream/vuhdo-v3.221/VuhDo/VuhDo_Camelot.toc",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 68 — 기능별 후보와 반복 비용.md",
+      "line": 20,
+      "oldTarget": "Collection/upstream/bartender4-4.19.0/Bartender4/PetBar.lua",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 68 — 기능별 후보와 반복 비용.md",
+      "line": 21,
+      "oldTarget": "local-only:7b8e2f8db4d660c1",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 69 — 실제 게임에서 확인할 성능 비교.md",
+      "line": 14,
+      "oldTarget": "local-only:2e0ac67019c3b64e",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/Step 69 — 실제 게임에서 확인할 성능 비교.md",
+      "line": 14,
+      "oldTarget": "local-only:a1914d26caf52683",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/audit-installer/requirement-trace.md",
+      "line": 27,
+      "oldTarget": "Claude/results/Step 40 — Codex collection integration.md",
+      "newTarget": "Codex/results/Step 40 — Codex collection integration.md",
+      "reason": "복원한 동일 통합 근거"
+    },
+    {
+      "file": "Codex/results/audit-installer/requirement-trace.md",
+      "line": 27,
+      "oldTarget": "local-only:01cc2d02db25f205",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/audit-installer/requirement-trace.md",
+      "line": 29,
+      "oldTarget": "Claude/results/Step 40 — Codex collection integration.md",
+      "newTarget": "Codex/results/Step 40 — Codex collection integration.md",
+      "reason": "복원한 동일 통합 근거"
+    },
+    {
+      "file": "Codex/results/audit-installer/requirement-trace.md",
+      "line": 132,
+      "oldTarget": "Collection/upstream/Quartz-3.8.0/Quartz",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/audit-installer/requirement-trace.md",
+      "line": 136,
+      "oldTarget": "Collection/upstream/Dominos-12.0.4/Dominos",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/audit-installer/requirement-trace.md",
+      "line": 137,
+      "oldTarget": "Collection/upstream/Dominos-12.0.4/Dominos",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/handoffs/old-reference/r44-plan-update/a1-final-return.md",
+      "line": 5,
+      "oldTarget": "local-only:089e6e42e76dbb50",
+      "newTarget": null,
+      "reason": "로컬 전용: 공개 파일 집합에 없는 실행·원천 자료"
+    },
+    {
+      "file": "Codex/results/handoffs/old-reference/step5-a1-final-return.md",
+      "line": 15,
+      "oldTarget": "local-only:da381d063a5a0cf4",
+      "newTarget": "Codex/results/old-devil-layout/DESIGN_READY.json",
+      "reason": "같은 저장소 실물의 상대 주소"
+    }
+  ],
+  "preservedScannerMatches": [
+    {
+      "file": "Codex/results/audit-installer/step46-work-log.md",
+      "line": 136,
+      "target": "Codex/References/codex-appearance/19/report.md",
+      "reason": "inline code의 과거 원문 인용을 검사기가 링크로 셈. 원문 보존"
+    },
+    {
+      "file": "Codex/results/audit-installer/step47-work-log.md",
+      "line": 126,
+      "target": "Codex/results/audit-installer/Path('Collection'",
+      "reason": "inline code의 과거 원문 인용을 검사기가 링크로 셈. 원문 보존"
+    }
+  ]
+}

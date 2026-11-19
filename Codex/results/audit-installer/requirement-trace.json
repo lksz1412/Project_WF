@@ -3,7 +3,7 @@
   "phase": "26.1",
   "step": 44,
   "createdAt": "2026-11-19T11:08:57+09:00",
-  "scope": "R1–R151 식별자와 요청 대장·현행 기능 담당의 대응. 이전 실행은 기록으로 인용하며 이 파일의 신규 호출·게임 검증으로 세지 않음.",
+  "scope": "R1–R110·CR111–CR149·R150–R151 식별자와 요청 대장·현행 기능 담당의 대응. 이전 실행은 기록으로 인용하며 이 파일의 신규 호출·게임 검증으로 세지 않음.",
   "requestIdentityCount": 151,
   "userAttributedRecordCount": 150,
   "nonUserRecordIds": [
@@ -229,7 +229,7 @@
       "summary": "옛 Devil UI 블랙 하단집중형의 외형과 기본 기능 복원",
       "recordType": "요구·결정",
       "status": "현재 적용",
-      "statusReason": "원형 하단 구획과 기본 조작 요구는 유지한다. 초기 부가기능 제외 범위는 R44·R60의 선택형 모음집으로 확대됐고 외관은 R142까지 구체화됐다.",
+      "statusReason": "원형 하단 구획과 기본 조작 요구는 유지한다. 초기 부가기능 제외 범위는 R44·R60의 선택형 모음집으로 확대됐고 외관은 CR142까지 구체화됐다.",
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
@@ -237,7 +237,7 @@
         "R34",
         "R44",
         "R60",
-        "R142"
+        "CR142"
       ],
       "features": [
         "외관"
@@ -1349,7 +1349,7 @@
       "supersededBy": [],
       "relatedLater": [
         "R33",
-        "R112"
+        "CR112"
       ],
       "features": [
         "대화"
@@ -1415,12 +1415,12 @@
       "summary": "기본 대화창 버튼·제목바·못생긴 입력창/큰 테두리·글자와 조정 문제 해결법 조사",
       "recordType": "요구·결정",
       "status": "현재 적용",
-      "statusReason": "깔끔한 기본 입력과 세 창 보존이 요구다. R112가 이전 Codex 설계를 다시 우선 지정했다.",
+      "statusReason": "깔끔한 기본 입력과 세 창 보존이 요구다. CR112가 이전 Codex 설계를 다시 우선 지정했다.",
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
         "R37",
-        "R112"
+        "CR112"
       ],
       "features": [
         "대화"
@@ -1939,7 +1939,7 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R112"
+        "CR112"
       ],
       "features": [
         "대화"
@@ -2006,8 +2006,8 @@
       ],
       "supersededBy": [],
       "relatedLater": [
-        "R112",
-        "R120"
+        "CR112",
+        "CR120"
       ],
       "features": [
         "외관"
@@ -2150,11 +2150,11 @@
       "summary": "마스터플랜에 따라 진행하는지 확인·채팅 자체 제작 난이도 문의",
       "recordType": "질문·검토 요청",
       "status": "현재 적용",
-      "statusReason": "자체 제작 난이도 질문은 당시 설치 승인이나 메시지 엔진 교체 선택이 아니다. 최신 실제 선택은 R112다.",
+      "statusReason": "자체 제작 난이도 질문은 당시 설치 승인이나 메시지 엔진 교체 선택이 아니다. 최신 실제 선택은 CR112다.",
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R112"
+        "CR112"
       ],
       "features": [
         "대화"
@@ -2470,7 +2470,7 @@
         "R62",
         "R104",
         "R107",
-        "R148"
+        "CR148"
       ],
       "features": [
         "공통 설정"
@@ -2569,7 +2569,7 @@
       "supersededBy": [],
       "relatedLater": [
         "R55",
-        "R113"
+        "CR113"
       ],
       "features": [
         "외관"
@@ -2761,7 +2761,7 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R143"
+        "CR143"
       ],
       "features": [
         "외관"
@@ -2822,15 +2822,15 @@
       "summary": "데빌 원형 구획 유지·의외로 깔끔한 다른 테마 1–2안 제시",
       "recordType": "요구·결정",
       "status": "현재 적용",
-      "statusReason": "대안 테마 제안은 R122 이후 Warcraft 진영·종족과 Diablo풍 Devil로 대체됐다. Stage·Ink를 최종 테마에 다시 넣지 않는다.",
+      "statusReason": "대안 테마 제안은 CR122 이후 Warcraft 진영·종족과 Diablo풍 Devil로 대체됐다. Stage·Ink를 최종 테마에 다시 넣지 않는다.",
       "supersedes": [],
       "supersededBy": [
-        "R122"
+        "CR122"
       ],
       "relatedLater": [
-        "R118",
-        "R122",
-        "R124"
+        "CR118",
+        "CR122",
+        "CR124"
       ],
       "features": [
         "외관"
@@ -2891,14 +2891,14 @@
       "summary": "데빌 기본 테마도 질감/텍스처가 부족하면 개선 허용",
       "recordType": "요구·결정",
       "status": "현재 적용",
-      "statusReason": "기본 Devil 질감 개선은 이후 R124의 Diablo풍 및 R135의 문양 없는 흑회색 채팅 면으로 구체화됐다.",
+      "statusReason": "기본 Devil 질감 개선은 이후 CR124의 Diablo풍 및 CR135의 문양 없는 흑회색 채팅 면으로 구체화됐다.",
       "supersedes": [],
       "supersededBy": [
-        "R124"
+        "CR124"
       ],
       "relatedLater": [
-        "R124",
-        "R135"
+        "CR124",
+        "CR135"
       ],
       "features": [
         "외관"
@@ -2963,7 +2963,7 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R143"
+        "CR143"
       ],
       "features": [
         "외관"
@@ -3065,16 +3065,16 @@
       "summary": "가능한 작업 전부 먼저·목업 제작은 마지막으로 순서 변경",
       "recordType": "당시 작업 지시",
       "status": "현재 적용",
-      "statusReason": "당시 기능 우선·목업 마지막 순서는 R63에서 공통 외관부터로 수정됐다. 현재 오프라인 선행 작업은 R111·R113·R145를 따른다.",
+      "statusReason": "당시 기능 우선·목업 마지막 순서는 R63에서 공통 외관부터로 수정됐다. 현재 오프라인 선행 작업은 CR111·CR113·CR145를 따른다.",
       "supersedes": [],
       "supersededBy": [
         "R63"
       ],
       "relatedLater": [
         "R63",
-        "R111",
-        "R113",
-        "R145"
+        "CR111",
+        "CR113",
+        "CR145"
       ],
       "features": [
         "작업·검증"
@@ -3113,16 +3113,16 @@
       "summary": "애드온 기능 추가/개선 우선·목업 선행 금지",
       "recordType": "당시 작업 지시",
       "status": "현재 적용",
-      "statusReason": "당시 목업 선행 금지는 R63·R113·R145의 후속 지시와 함께 읽는다. 최신 적용 목업을 원래 조건 위반으로 폐기하지 않는다.",
+      "statusReason": "당시 목업 선행 금지는 R63·CR113·CR145의 후속 지시와 함께 읽는다. 최신 적용 목업을 원래 조건 위반으로 폐기하지 않는다.",
       "supersedes": [],
       "supersededBy": [
         "R63"
       ],
       "relatedLater": [
         "R63",
-        "R111",
-        "R113",
-        "R145"
+        "CR111",
+        "CR113",
+        "CR145"
       ],
       "features": [
         "작업·검증"
@@ -3165,9 +3165,9 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R111",
-        "R114",
-        "R145",
+        "CR111",
+        "CR114",
+        "CR145",
         "R151"
       ],
       "features": [
@@ -3211,7 +3211,7 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R146",
+        "CR146",
         "R150",
         "R151"
       ],
@@ -3302,7 +3302,7 @@
       "supersededBy": [],
       "relatedLater": [
         "R61",
-        "R148"
+        "CR148"
       ],
       "features": [
         "공통 설정"
@@ -3526,8 +3526,8 @@
       ],
       "supersededBy": [],
       "relatedLater": [
-        "R111",
-        "R145"
+        "CR111",
+        "CR145"
       ],
       "features": [
         "공통 설정"
@@ -4022,7 +4022,7 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R146"
+        "CR146"
       ],
       "features": [
         "작업·검증"
@@ -4541,8 +4541,8 @@
       "supersededBy": [],
       "relatedLater": [
         "R110",
-        "R114",
-        "R145"
+        "CR114",
+        "CR145"
       ],
       "features": [
         "작업·검증"
@@ -4586,7 +4586,7 @@
       "supersededBy": [],
       "relatedLater": [
         "R110",
-        "R145"
+        "CR145"
       ],
       "features": [
         "작업·검증"
@@ -4629,8 +4629,8 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R111",
-        "R145",
+        "CR111",
+        "CR145",
         "R151"
       ],
       "features": [
@@ -4801,7 +4801,7 @@
       "supersededBy": [],
       "relatedLater": [
         "R109",
-        "R114"
+        "CR114"
       ],
       "features": [
         "작업·검증"
@@ -5823,8 +5823,8 @@
       "supersededBy": [],
       "relatedLater": [
         "R110",
-        "R112",
-        "R140"
+        "CR112",
+        "CR140"
       ],
       "features": [
         "전투",
@@ -5994,7 +5994,7 @@
       "supersededBy": [],
       "relatedLater": [
         "R110",
-        "R111"
+        "CR111"
       ],
       "features": [
         "작업·검증"
@@ -6037,8 +6037,8 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R114",
-        "R145"
+        "CR114",
+        "CR145"
       ],
       "features": [
         "전투",
@@ -6138,11 +6138,12 @@
       "open": "최종 유닛 기본판은 Codex 실제 비교 결과 이후 선택한다. 이름표 시전은 유지하고 시계는 상태띠만. 현재 PitBull4 기본 표기는 초기 시험판이다."
     },
     {
-      "id": "R111",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR111",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 8
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 47,
+        "anchor": "cr111"
       },
       "otherSources": [],
       "summary": "게임 접속 전 전체 계획에서 가능한 준비를 진행. 배치, 조립, 오프라인 검증을 먼저 수행",
@@ -6152,8 +6153,8 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R114",
-        "R145"
+        "CR114",
+        "CR145"
       ],
       "features": [
         "작업·검증"
@@ -6179,14 +6180,19 @@
           "role": "작업·문서 원천"
         }
       ],
-      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정."
+      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 8
+      }
     },
     {
-      "id": "R112",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR112",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 9
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 61,
+        "anchor": "cr112"
       },
       "otherSources": [],
       "summary": "채팅은 앞선 세션의 설계를 우선 적용",
@@ -6196,7 +6202,7 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R145"
+        "CR145"
       ],
       "features": [
         "대화"
@@ -6257,14 +6263,19 @@
           "observedBy": "master",
           "scope": "기존 기본 ZIP·Lua 5.1·기존 시험 대역. 실제 게임 미검증"
         }
-      ]
+      ],
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 9
+      }
     },
     {
-      "id": "R113",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR113",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 10
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 75,
+        "anchor": "cr113"
       },
       "otherSources": [],
       "summary": "게임을 켜기 전에 목업으로 배치 조정, 대안 테마와 사용자 인터페이스·이용 흐름 설계를 진행",
@@ -6274,10 +6285,10 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R115",
-        "R122",
-        "R128",
-        "R145"
+        "CR115",
+        "CR122",
+        "CR128",
+        "CR145"
       ],
       "features": [
         "외관"
@@ -6325,14 +6336,19 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정."
+      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 10
+      }
     },
     {
-      "id": "R114",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR114",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 11
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 89,
+        "anchor": "cr114"
       },
       "otherSources": [],
       "summary": "접속을 마지막 한 번으로 모으고 모든 항목을 일괄 확인해 수정 사항을 수집",
@@ -6342,7 +6358,7 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R145"
+        "CR145"
       ],
       "features": [
         "작업·검증",
@@ -6442,14 +6458,19 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "최종 한 접속에서 비교와 피드백을 모은다. UI 재로딩을 허용하는 현재 확인표이며 실제 로그인 횟수나 시험 결과를 이 문서가 보장하지 않는다."
+      "open": "최종 한 접속에서 비교와 피드백을 모은다. UI 재로딩을 허용하는 현재 확인표이며 실제 로그인 횟수나 시험 결과를 이 문서가 보장하지 않는다.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 11
+      }
     },
     {
-      "id": "R115",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR115",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 12
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 97,
+        "anchor": "cr115"
       },
       "otherSources": [],
       "summary": "실제 설치 애드온에 들어가는 이미지를 사용해 목업을 다시 제작",
@@ -6459,9 +6480,9 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R127",
-        "R132",
-        "R145"
+        "CR127",
+        "CR132",
+        "CR145"
       ],
       "features": [
         "외관"
@@ -6509,14 +6530,19 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정."
+      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 12
+      }
     },
     {
-      "id": "R116",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR116",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 13
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 105,
+        "anchor": "cr116"
       },
       "otherSources": [],
       "summary": "이름표 게임 적용 크기, 스킬 없는 상태, 배치·색·이미지를 한 접속 전에 실전과 대조",
@@ -6526,8 +6552,8 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R132",
-        "R140"
+        "CR132",
+        "CR140"
       ],
       "features": [
         "외관"
@@ -6575,25 +6601,30 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정."
+      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 13
+      }
     },
     {
-      "id": "R117",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR117",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 14
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 119,
+        "anchor": "cr117"
       },
       "otherSources": [],
       "summary": "테마 이미지와 PitBull4 크기를 다시 확인하고 소환수 기술바의 위치를 맞춤",
       "recordType": "당시 작업 지시",
       "status": "현재 적용",
-      "statusReason": "실제 테마 자산·PitBull 크기·소환수 줄의 상대 위치 대조다. 뒤 R140의 아군/적군 기존 정렬을 유지한다.",
+      "statusReason": "실제 테마 자산·PitBull 크기·소환수 줄의 상대 위치 대조다. 뒤 CR140의 아군/적군 기존 정렬을 유지한다.",
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R120",
-        "R140"
+        "CR120",
+        "CR140"
       ],
       "features": [
         "외관"
@@ -6640,26 +6671,31 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정."
+      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 14
+      }
     },
     {
-      "id": "R118",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR118",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 15
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 145,
+        "anchor": "cr118"
       },
       "otherSources": [],
       "summary": "같은 Devil 외관을 되풀이한 테마 교정, 해상도별 크기와 배치 대조",
       "recordType": "질문·검토 요청",
       "status": "현재 적용",
-      "statusReason": "Devil 반복과 소품 중심 대안은 이후 R122·R124에서 교체됐다. 해상도별 크기 검증 요구는 유지한다.",
+      "statusReason": "Devil 반복과 소품 중심 대안은 이후 CR122·CR124에서 교체됐다. 해상도별 크기 검증 요구는 유지한다.",
       "supersedes": [],
       "supersededBy": [
-        "R122"
+        "CR122"
       ],
       "relatedLater": [
-        "R122"
+        "CR122"
       ],
       "features": [
         "외관"
@@ -6707,14 +6743,19 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정."
+      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 15
+      }
     },
     {
-      "id": "R119",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR119",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 16
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 153,
+        "anchor": "cr119"
       },
       "otherSources": [],
       "summary": "진행 방향이 사용자 의도에서 벗어난 점 교정",
@@ -6724,9 +6765,9 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R122",
-        "R128",
-        "R139"
+        "CR122",
+        "CR128",
+        "CR139"
       ],
       "features": [
         "외관"
@@ -6774,25 +6815,30 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정."
+      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 16
+      }
     },
     {
-      "id": "R120",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR120",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 17
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 161,
+        "anchor": "cr120"
       },
       "otherSources": [],
       "summary": "앞선 채팅의 참고 버전과 PitBull4·소환수 기술바 정렬 재검사",
       "recordType": "당시 작업 지시",
       "status": "현재 적용",
-      "statusReason": "참고 원형의 정렬과 실코드 위치를 대조한다. 소환수 상대 배치 변경안은 R140에서 채택하지 않았다.",
+      "statusReason": "참고 원형의 정렬과 실코드 위치를 대조한다. 소환수 상대 배치 변경안은 CR140에서 채택하지 않았다.",
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R121",
-        "R140"
+        "CR121",
+        "CR140"
       ],
       "features": [
         "외관"
@@ -6839,14 +6885,19 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정."
+      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 17
+      }
     },
     {
-      "id": "R121",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR121",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 18
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 169,
+        "anchor": "cr121"
       },
       "otherSources": [],
       "summary": "이전 목업과 현재 배치의 차이 및 플레이어 PitBull4 상단 버프·디버프 확인",
@@ -6856,7 +6907,7 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R140"
+        "CR140"
       ],
       "features": [
         "외관"
@@ -6900,29 +6951,34 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "상단 버프·디버프가 표기되는지 확인한 질문이다. 대장에 새 프로필 오라 꺼짐이 관측됐지만 항상 켜라는 명시 결정은 이 입력에서 확인하지 못했다."
+      "open": "상단 버프·디버프가 표기되는지 확인한 질문이다. 대장에 새 프로필 오라 꺼짐이 관측됐지만 항상 켜라는 명시 결정은 이 입력에서 확인하지 못했다.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 18
+      }
     },
     {
-      "id": "R122",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR122",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 19
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 177,
+        "anchor": "cr122"
       },
       "otherSources": [],
       "summary": "소품 중심 이전 안 교체, 호드·얼라이언스·데빌 3종",
       "recordType": "요구·결정",
       "status": "이전 지시를 대체",
-      "statusReason": "호드·얼라이언스·데빌로 소품 대안을 교체했다. 이후 종족 확장은 R142를 따른다.",
+      "statusReason": "호드·얼라이언스·데빌로 소품 대안을 교체했다. 이후 종족 확장은 CR142를 따른다.",
       "supersedes": [
         "R51",
-        "R118"
+        "CR118"
       ],
       "supersededBy": [],
       "relatedLater": [
-        "R124",
-        "R128",
-        "R142"
+        "CR124",
+        "CR128",
+        "CR142"
       ],
       "features": [
         "외관"
@@ -6970,14 +7026,19 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정."
+      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 19
+      }
     },
     {
-      "id": "R123",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR123",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 20
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 185,
+        "anchor": "cr123"
       },
       "otherSources": [],
       "summary": "제시한 디자인의 적합도와 품질을 확인",
@@ -6987,8 +7048,8 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R128",
-        "R143"
+        "CR128",
+        "CR143"
       ],
       "features": [
         "외관"
@@ -7036,28 +7097,33 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정."
+      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 20
+      }
     },
     {
-      "id": "R124",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR124",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 21
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 193,
+        "anchor": "cr124"
       },
       "otherSources": [],
       "summary": "초기 워크래프트 이미지 대조, 데빌을 디아블로풍으로 새 제작",
       "recordType": "요구·결정",
       "status": "이전 지시를 대체",
-      "statusReason": "호드·얼라이언스는 Warcraft, Devil은 Diablo풍 원화다. Devil 채팅 배경의 문양 제거는 R135를 따른다.",
+      "statusReason": "호드·얼라이언스는 Warcraft, Devil은 Diablo풍 원화다. Devil 채팅 배경의 문양 제거는 CR135를 따른다.",
       "supersedes": [
         "R52"
       ],
       "supersededBy": [],
       "relatedLater": [
-        "R133",
-        "R135",
-        "R142"
+        "CR133",
+        "CR135",
+        "CR142"
       ],
       "features": [
         "외관"
@@ -7105,25 +7171,30 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정."
+      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 21
+      }
     },
     {
-      "id": "R125",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR125",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 22
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 201,
+        "anchor": "cr125"
       },
       "otherSources": [],
       "summary": "종족별 테마의 가치와 적용 범위 검토",
       "recordType": "질문·검토 요청",
       "status": "현재 적용",
-      "statusReason": "종족별 테마 검토가 R142의 10종 및 13종 합계로 확정됐다.",
+      "statusReason": "종족별 테마 검토가 CR142의 10종 및 13종 합계로 확정됐다.",
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R126",
-        "R142"
+        "CR126",
+        "CR142"
       ],
       "features": [
         "외관"
@@ -7171,27 +7242,32 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정."
+      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 22
+      }
     },
     {
-      "id": "R126",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR126",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 23
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 209,
+        "anchor": "cr126"
       },
       "otherSources": [],
       "summary": "진영별·종족별·디아블로 구분",
       "recordType": "요구·결정",
       "status": "현재 적용",
-      "statusReason": "초기 2+9+1은 스카이본 호드 추가와 R142의 2+10+1로 대체됐다.",
+      "statusReason": "초기 2+9+1은 스카이본 호드 추가와 CR142의 2+10+1로 대체됐다.",
       "supersedes": [],
       "supersededBy": [
-        "R142"
+        "CR142"
       ],
       "relatedLater": [
-        "R137",
-        "R142"
+        "CR137",
+        "CR142"
       ],
       "features": [
         "외관"
@@ -7239,14 +7315,19 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정."
+      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 23
+      }
     },
     {
-      "id": "R127",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR127",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 24
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 217,
+        "anchor": "cr127"
       },
       "otherSources": [],
       "summary": "원화 시안보다 실제 테마 버전이 적용된 목업 제시",
@@ -7256,8 +7337,8 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R132",
-        "R145"
+        "CR132",
+        "CR145"
       ],
       "features": [
         "외관"
@@ -7305,14 +7386,19 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정."
+      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 24
+      }
     },
     {
-      "id": "R128",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR128",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 25
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 225,
+        "anchor": "cr128"
       },
       "otherSources": [],
       "summary": "위 단축바부터 채팅 상단까지 연결된 하단을 통째로 그린 뒤 분할",
@@ -7322,11 +7408,11 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R129",
-        "R134",
-        "R135",
-        "R142",
-        "R145"
+        "CR129",
+        "CR134",
+        "CR135",
+        "CR142",
+        "CR145"
       ],
       "features": [
         "외관"
@@ -7374,26 +7460,31 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정."
+      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 25
+      }
     },
     {
-      "id": "R129",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR129",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 26
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 236,
+        "anchor": "cr129"
       },
       "otherSources": [],
       "summary": "종족·진영 문장을 같은 방식으로 적용",
       "recordType": "요구·결정",
       "status": "현재 적용",
-      "statusReason": "오른쪽 한 채팅창에 문양을 적용한다. 문양 원본은 R134, 수량은 R142를 우선한다.",
+      "statusReason": "오른쪽 한 채팅창에 문양을 적용한다. 문양 원본은 CR134, 수량은 CR142를 우선한다.",
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R130",
-        "R134",
-        "R137"
+        "CR130",
+        "CR134",
+        "CR137"
       ],
       "features": [
         "외관"
@@ -7441,14 +7532,19 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정."
+      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 26
+      }
     },
     {
-      "id": "R130",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR130",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 27
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 244,
+        "anchor": "cr130"
       },
       "otherSources": [],
       "summary": "문장 원본의 왼쪽 70%·위쪽 70%를 채팅 배경에 반투명하게 표시",
@@ -7458,8 +7554,8 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R136",
-        "R137"
+        "CR136",
+        "CR137"
       ],
       "features": [
         "외관"
@@ -7507,14 +7603,19 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정."
+      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 27
+      }
     },
     {
-      "id": "R131",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR131",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 28
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 252,
+        "anchor": "cr131"
       },
       "otherSources": [],
       "summary": "앞서 보인 그림이 초안인지 확인",
@@ -7524,7 +7625,7 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R132"
+        "CR132"
       ],
       "features": [
         "외관"
@@ -7572,14 +7673,19 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정."
+      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 28
+      }
     },
     {
-      "id": "R132",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR132",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 29
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 260,
+        "anchor": "cr132"
       },
       "otherSources": [],
       "summary": "애드온이 배치하는 객체 크기를 완성 목업에 반영",
@@ -7589,7 +7695,7 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R145"
+        "CR145"
       ],
       "features": [
         "외관"
@@ -7637,14 +7743,19 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "실제 애드온 객체 크기를 적용 목업에 반영한다. 퀘스트·CDM·경험치 제안 사각형은 자동 적용된 프레임과 구분한다."
+      "open": "실제 애드온 객체 크기를 적용 목업에 반영한다. 퀘스트·CDM·경험치 제안 사각형은 자동 적용된 프레임과 구분한다.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 29
+      }
     },
     {
-      "id": "R133",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR133",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 30
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 269,
+        "anchor": "cr133"
       },
       "otherSources": [],
       "summary": "워크래프트 I·II·III와 확장팩의 종족 이미지를 참고해 현대적인 미술 적용",
@@ -7654,8 +7765,8 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R134",
-        "R143"
+        "CR134",
+        "CR143"
       ],
       "features": [
         "외관"
@@ -7703,14 +7814,19 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정."
+      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 30
+      }
     },
     {
-      "id": "R134",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR134",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 31
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 277,
+        "anchor": "cr134"
       },
       "otherSources": [],
       "summary": "기존 워크래프트 종족·진영의 실제 문장을 그대로 적용",
@@ -7720,9 +7836,9 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R136",
-        "R137",
-        "R142"
+        "CR136",
+        "CR137",
+        "CR142"
       ],
       "features": [
         "외관"
@@ -7770,14 +7886,19 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정."
+      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 31
+      }
     },
     {
-      "id": "R135",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR135",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 32
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 285,
+        "anchor": "cr135"
       },
       "otherSources": [],
       "summary": "데빌 채팅 배경에 문장을 빼고 매끈한 검정 또는 회색 사용",
@@ -7787,7 +7908,7 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R142"
+        "CR142"
       ],
       "features": [
         "외관"
@@ -7835,25 +7956,30 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정."
+      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 32
+      }
     },
     {
-      "id": "R136",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR136",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 33
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 293,
+        "anchor": "cr136"
       },
       "otherSources": [],
       "summary": "채팅창 옆 테두리에 문장이 겹치지 않게 수정",
       "recordType": "요구·결정",
       "status": "현재 적용",
-      "statusReason": "문양이 옆 테두리와 겹치지 않게 한다. 최신 여백은 이전 값보다 R137·R143 결과를 우선한다.",
+      "statusReason": "문양이 옆 테두리와 겹치지 않게 한다. 최신 여백은 이전 값보다 CR137·CR143 결과를 우선한다.",
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R137",
-        "R143"
+        "CR137",
+        "CR143"
       ],
       "features": [
         "외관"
@@ -7901,14 +8027,19 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정."
+      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 33
+      }
     },
     {
-      "id": "R137",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR137",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 34
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 301,
+        "anchor": "cr137"
       },
       "otherSources": [],
       "summary": "양 진영을 선택하는 스카이본에 호드 외관 추가",
@@ -7918,7 +8049,7 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R142"
+        "CR142"
       ],
       "features": [
         "외관"
@@ -7966,14 +8097,19 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정."
+      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 34
+      }
     },
     {
-      "id": "R138",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR138",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 35
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 309,
+        "anchor": "cr138"
       },
       "otherSources": [],
       "summary": "소환수 없는 직업의 표시와 소환수 기술바 개별 설정 검토",
@@ -7983,7 +8119,7 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R140"
+        "CR140"
       ],
       "features": [
         "하단 조작",
@@ -8051,26 +8187,31 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "소환수 없는 직업은 기본 표시 조건을 따른다. 소환수 기술 버튼 표시와 테두리를 연결하며 실게임 소환 전후가 남았다."
+      "open": "소환수 없는 직업은 기본 표시 조건을 따른다. 소환수 기술 버튼 표시와 테두리를 연결하며 실게임 소환 전후가 남았다.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 35
+      }
     },
     {
-      "id": "R139",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR139",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 36
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 317,
+        "anchor": "cr139"
       },
       "otherSources": [],
       "summary": "종족별 외관의 부재와 원본 대비 전체 구성 차이 확인",
       "recordType": "질문·검토 요청",
       "status": "현재 적용",
-      "statusReason": "종족 문양만 바꾸지 않고 종족별 프레임 미술을 요구했다. 기존 구성 변화 우려는 R140 정렬·적용 범위로 좁혀졌다.",
+      "statusReason": "종족 문양만 바꾸지 않고 종족별 프레임 미술을 요구했다. 기존 구성 변화 우려는 CR140 정렬·적용 범위로 좁혀졌다.",
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R140",
-        "R142",
-        "R143"
+        "CR140",
+        "CR142",
+        "CR143"
       ],
       "features": [
         "외관"
@@ -8118,14 +8259,19 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정."
+      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 36
+      }
     },
     {
-      "id": "R140",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR140",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 37
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 327,
+        "anchor": "cr140"
       },
       "otherSources": [],
       "summary": "PitBull4 아군 우측·적군 좌측 정렬을 유지하고 기술창까지만 테마 적용",
@@ -8135,8 +8281,8 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R142",
-        "R145"
+        "CR142",
+        "CR145"
       ],
       "features": [
         "전투",
@@ -8195,14 +8341,19 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "PitBull 아군 우측·적군 좌측 정렬 유지. 테마는 기술창과 하단에 적용하고 PitBull까지 덮지 않는다. 소환수 버튼 표시 상태를 따른다."
+      "open": "PitBull 아군 우측·적군 좌측 정렬 유지. 테마는 기술창과 하단에 적용하고 PitBull까지 덮지 않는다. 소환수 버튼 표시 상태를 따른다.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 37
+      }
     },
     {
-      "id": "R141",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR141",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 38
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 335,
+        "anchor": "cr141"
       },
       "otherSources": [],
       "summary": "멈춘 작업 재개와 해야 할 일 확인",
@@ -8212,8 +8363,8 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R142",
-        "R145"
+        "CR142",
+        "CR145"
       ],
       "features": [
         "외관"
@@ -8261,14 +8412,19 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정."
+      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 38
+      }
     },
     {
-      "id": "R142",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR142",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 39
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 343,
+        "anchor": "cr142"
       },
       "otherSources": [],
       "summary": "진영 2·종족 10·데빌 1종 확정, 나이트 엘프는 식물이 감싸는 외관",
@@ -8276,12 +8432,12 @@
       "status": "이전 지시를 대체",
       "statusReason": "진영 2+종족 외관 10+Devil 1의 13종. 나이트 엘프는 뿌리와 식물이 감싸는 미술이다.",
       "supersedes": [
-        "R126"
+        "CR126"
       ],
       "supersededBy": [],
       "relatedLater": [
-        "R143",
-        "R145"
+        "CR143",
+        "CR145"
       ],
       "features": [
         "외관"
@@ -8329,14 +8485,19 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "진영 2+종족 외관 10+Devil 1의 13종. 나이트 엘프는 뿌리와 식물이 감싸는 미술이다."
+      "open": "진영 2+종족 외관 10+Devil 1의 13종. 나이트 엘프는 뿌리와 식물이 감싸는 미술이다.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 39
+      }
     },
     {
-      "id": "R143",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR143",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 40
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 351,
+        "anchor": "cr143"
       },
       "otherSources": [],
       "summary": "각 종족의 특징을 알아서 외관 형태에 반영",
@@ -8346,7 +8507,7 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R145"
+        "CR145"
       ],
       "features": [
         "외관"
@@ -8394,14 +8555,19 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "종족별 재질과 구조를 실제 이미지 형태에 반영하며 문양 교체나 단색 면만으로 완료하지 않는다."
+      "open": "종족별 재질과 구조를 실제 이미지 형태에 반영하며 문양 교체나 단색 면만으로 완료하지 않는다.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 40
+      }
     },
     {
-      "id": "R144",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR144",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 46
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 359,
+        "anchor": "cr144"
       },
       "otherSources": [],
       "summary": "목업 아래쪽 그림의 의미 확인",
@@ -8411,7 +8577,7 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R145"
+        "CR145"
       ],
       "features": [
         "외관"
@@ -8459,14 +8625,19 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정."
+      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 46
+      }
     },
     {
-      "id": "R145",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR145",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 47
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 367,
+        "anchor": "cr145"
       },
       "otherSources": [],
       "summary": "최신 목업 기준 실제 애드온 묶음 작성. 코딩과 위치 지정은 접속 전에 끝내고 퇴근 뒤 실제 배치와 피드백 일괄 확인",
@@ -8476,7 +8647,7 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R146",
+        "CR146",
         "R150",
         "R151"
       ],
@@ -8627,24 +8798,29 @@
           "observedBy": "master",
           "scope": "기존 기본 ZIP·Lua 5.1·기존 시험 대역. 실제 게임 미검증"
         }
-      ]
+      ],
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 47
+      }
     },
     {
-      "id": "R146",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR146",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 48
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 375,
+        "anchor": "cr146"
       },
       "otherSources": [],
       "summary": "Claude와 이전 세션의 계획·검토·구현을 적대적으로 재검토하는 방향에 대한 의견",
       "recordType": "질문·검토 요청",
       "status": "현재 적용",
-      "statusReason": "Claude·이전 Codex의 계획과 작업물 모두를 같은 기준으로 적대 검토한다. R149~151이 감사 실행으로 연결했다.",
+      "statusReason": "Claude·이전 Codex의 계획과 작업물 모두를 같은 기준으로 적대 검토한다. CR149·R150·R151이 감사 실행으로 연결했다.",
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R149",
+        "CR149",
         "R150",
         "R151"
       ],
@@ -8672,14 +8848,19 @@
           "role": "작업·문서 원천"
         }
       ],
-      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정."
+      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 48
+      }
     },
     {
-      "id": "R147",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR147",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 49
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 383,
+        "anchor": "cr147"
       },
       "otherSources": [],
       "summary": "기능별 트리를 만들어 담당 애드온·프리셋·작업물과 연결",
@@ -8689,7 +8870,7 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R148",
+        "CR148",
         "R150",
         "R151"
       ],
@@ -8843,14 +9024,19 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정."
+      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 49
+      }
     },
     {
-      "id": "R148",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR148",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 50
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 391,
+        "anchor": "cr148"
       },
       "otherSources": [],
       "summary": "기존 데빌의 개별 설정과 중앙 설정 방식 중 프로젝트 운영 구조 검토",
@@ -8860,7 +9046,7 @@
       "supersedes": [],
       "supersededBy": [],
       "relatedLater": [
-        "R149",
+        "CR149",
         "R150",
         "R151"
       ],
@@ -8921,14 +9107,19 @@
           "role": "선택판 공통 기능 또는 연결 문건"
         }
       ],
-      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정."
+      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 50
+      }
     },
     {
-      "id": "R149",
-      "sourceKind": "요청 대장 기록",
+      "id": "CR149",
+      "sourceKind": "Codex 사용자 원문 복구; 과거 대응표의 잘못된 Claude 경로를 대체",
       "primarySource": {
-        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-        "line": 56
+        "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+        "line": 399,
+        "anchor": "cr149"
       },
       "otherSources": [],
       "summary": "타 프로젝트 특히 지침 설치기를 참고해 Python이 없는 PC의 설치 방향을 제시하고, 전면 재검토와 함께 작업용 마스터 플랜 작성",
@@ -8965,7 +9156,11 @@
           "role": "작업·문서 원천"
         }
       ],
-      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정."
+      "open": "해당 기능의 Step46 반증 또는 당시 작업 기록과 최신 상태 대조에서 후속 판정.",
+      "legacyPrimarySource": {
+        "path": "Claude/results/REQUEST_LEDGER_phase25.md",
+        "line": 56
+      }
     },
     {
       "id": "R150",
@@ -9144,18 +9339,19 @@
     {
       "id": "T4",
       "requests": [
-        "R112",
-        "R145"
+        "CR112",
+        "CR145"
       ],
       "finding": "master가 기존 기본 ZIP의 Lua 5.1 경로에서 두 조건을 재현했다. 목적 창의 메시지 추가 API가 없을 때 원래 창의 그룹 31개를 제거하고 created로 기록했다. UHD에서 만든 창으로 QHD 프리셋 재입장 시 system x2910이 남고 기대 x1952로 변경한 쓰기는 0건이었다.",
       "next": "실게임 관측은 미검증이다. Step46에서 두 조건의 원인과 보존·재배치 경계를 확인하고 수정 전후 동일 반증과 정상 경로를 재시험한다.",
       "sources": [
         {
-          "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-          "line": 9
+          "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+          "line": 61,
+          "anchor": "cr112"
         },
         {
-          "path": "Claude/results/Step 40 — Codex collection integration.md",
+          "path": "Codex/results/Step 40 — Codex collection integration.md",
           "line": 9
         },
         {
@@ -9184,8 +9380,8 @@
       "requests": [
         "R100",
         "R104",
-        "R132",
-        "R145"
+        "CR132",
+        "CR145"
       ],
       "finding": "기본 퀘스트 제목·목표 글자와 CDM 사각형은 목업 목표치. CDM 자동 적용과 클라이언트 글자 가독성이 끝난 상태가 아님.",
       "next": "기본 프레임의 실제 소유·저장 형식은 접속 확인. 오프라인에서 적용 가능한 범위는 Step46에서 따로 확인.",
@@ -9207,8 +9403,8 @@
     {
       "id": "T6",
       "requests": [
-        "R132",
-        "R145"
+        "CR132",
+        "CR145"
       ],
       "finding": "경험치·평판·소환수 경험치의 가로 세 분할은 제안이며 현재 ExperienceForever는 세로 쌓기. 실물 목업과 실행 배치가 완전히 일치하지 않음.",
       "next": "Step46에서 코드·실행 차이의 영향과 필요한 child 재앵커 수정 범위를 판단. 게임 실측으로만 미루지 않음.",
@@ -9218,7 +9414,7 @@
           "line": 21
         },
         {
-          "path": "Claude/results/Step 40 — Codex collection integration.md",
+          "path": "Codex/results/Step 40 — Codex collection integration.md",
           "line": 45
         }
       ]
@@ -9246,23 +9442,28 @@
     {
       "id": "T8",
       "requests": [
-        "R121",
-        "R140"
+        "CR121",
+        "CR140"
       ],
       "finding": "플레이어 PitBull 상단 오라 표기 확인 질문과 '새 프로필 오라 꺼짐' 기록은 있으나 항상 켜라는 새 선택을 확인하지 못함.",
       "next": "실제 오라 기본값과 기존 개인값 보존을 Step46에서 확인. 기능 신규 변경 판단은 master가 원문과 대조.",
       "sources": [
         {
-          "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-          "line": 18
+          "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+          "line": 169,
+          "anchor": "cr121"
         },
         {
-          "path": "Claude/results/REQUEST_LEDGER_phase25.md",
-          "line": 37
+          "path": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+          "line": 327,
+          "anchor": "cr140"
         }
       ]
     }
   ],
   "updatedAt": "2026-11-19T11:17:07+09:00",
-  "routingRule": "각 요청의 실제 담당·문건·시험을 직접 연결한다. 일반 기능 갈래의 기본 경로로 소비 경로를 대체하지 않는다. targetScopes의 개별 역할이 요청 전체의 ZIP 범위를 구체화한다."
+  "routingRule": "각 요청의 실제 담당·문건·시험을 직접 연결한다. 일반 기능 갈래의 기본 경로로 소비 경로를 대체하지 않는다. targetScopes의 개별 역할이 요청 전체의 ZIP 범위를 구체화한다.",
+  "codexRequestLedger": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+  "identityRepairDate": "2026-11-20",
+  "historicalSourceNote": "ledgerFiles·otherSources·legacyPrimarySource는 당시 목록/대응표 위치를 보존한다. CR111–149의 원문 위치는 primarySource를 사용한다."
 }

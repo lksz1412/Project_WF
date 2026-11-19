@@ -1,0 +1,43 @@
+{
+  "phase": 25,
+  "step": 40,
+  "requests": [
+    "CR145",
+    "CR146",
+    "CR147",
+    "CR148"
+  ],
+  "status": "offline_verified_live_pending",
+  "artworkBaseline": "86f8b8ec44a167d54a9aad976cfc5fa0c5cbaf06e8b83cf521e607059d4841b5",
+  "themeFilesMatchingBaseline": 120,
+  "presetsMatchingBaseline": 3,
+  "archivesDirectory": "로컬 전용",
+  "archives": {
+    "pitbull4": {
+      "filename": "DevilForever-0.1.0.zip",
+      "addons": 35,
+      "luaFiles": 1344,
+      "sha256": "4cfd4b8076a067581708350cf6b614dd2c19d714a759c0105c78e4fd89bf40aa"
+    },
+    "fuf": {
+      "filename": "DevilForever-0.1.0-fuf.zip",
+      "addons": 37,
+      "luaFiles": 1288,
+      "sha256": "3fe183a789e1908723a6483081a0cd7c4fb29bab0aa1888293815d246a2bc7ca"
+    },
+    "one-session": {
+      "filename": "DevilForever-0.1.0-one-session.zip",
+      "addons": 38,
+      "luaFiles": 1474,
+      "sha256": "3d78bec772f2a463c41d99424b0a9f605aac977a6fada649d69958633c6fd8cc"
+    }
+  },
+  "featureMap": "Collection/data/feature-map.md",
+  "liveChecklist": "References/codex-verify/one-session-review.md",
+  "detailsPlacementCases": {
+    "presetAndScalePairs": 6,
+    "noWriteRefusals": 28
+  },
+  "requestLedger": "Codex/results/REQUEST_LEDGER_codex-phase25.md",
+  "restoredFrom": "Claude/results/Step 40 — Codex collection integration.json"
+}

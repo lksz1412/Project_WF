@@ -2,7 +2,7 @@
 
 2026-11-19 · R151 실행 승인 · D:/Projects/Project_WF
 
-[마스터 플랜](2026-11-19-devil-forever-audit-and-installer-plan.md) · [현재 구현 결과](../../Claude/results/Step%2040%20%E2%80%94%20Codex%20collection%20integration.md)
+[마스터 플랜](2026-11-19-devil-forever-audit-and-installer-plan.md) · [현재 구현 결과](<../results/Step 40 — Codex collection integration.md>)
 
 ## 목표
 
@@ -17,8 +17,8 @@ Step 44–45에서 감사할 사용자 요구와 배포 실물을 고정한다. 
 
 ## 기준 확인 결과
 
-- Codex와 Claude의 요청 대장 24개에서 R1–R150의 단독 행을 확인했다. 중복 기록된 번호 13개와 여러 번호를 묶은 범위행 2개는 Step 44에서 원문과 대조한다. [요청 번호와 대장 위치](../../_local_only/phase26-1-baseline-20261119/request-catalog.json)
-- 현재 D: 작업본에서 다시 만든 PitBull4, Forever Unit Frames, 단일 접속 비교 ZIP의 전체 SHA-256이 Step 40의 기존 세 ZIP과 각각 일치했다. ZIP 내부 해시 대조, Lua 5.1 구문 검사, 필수 애드온 의존성 검사도 통과했다. [ZIP 대조](../../_local_only/phase26-1-baseline-20261119/baseline.json) · [검사 출력](../../_local_only/phase26-1-baseline-20261119/verification.txt)
+- Codex와 Claude의 요청 대장 24개에서 R1–R150의 단독 행을 확인했다. 중복 기록된 번호 13개와 여러 번호를 묶은 범위행 2개는 Step 44에서 원문과 대조한다. 요청 번호와 대장 위치 (로컬 전용)
+- 현재 D: 작업본에서 다시 만든 PitBull4, Forever Unit Frames, 단일 접속 비교 ZIP의 전체 SHA-256이 Step 40의 기존 세 ZIP과 각각 일치했다. ZIP 내부 해시 대조, Lua 5.1 구문 검사, 필수 애드온 의존성 검사도 통과했다. ZIP 대조 (로컬 전용) · 검사 출력 (로컬 전용)
 
 ## Step 44 입구와 판정
 
@@ -29,12 +29,12 @@ Step 44–45에서 감사할 사용자 요구와 배포 실물을 고정한다. 
 
 | 첫 대조 구간 | 확인할 차이 | 자료 |
 |---|---|---|
-| R44·R60·R61, R107·R148 | 선택 가능한 모음집과 공통 Core의 경계. 전 직업 범위와 실제 추천이 준비된 특성 범위 | [기능 트리](../../Collection/data/feature-map.md) · [Hekili 지원표](../../Collection/data/hekili-support.md) |
-| R23·R34·R112 | 원본의 채팅 세 공간, 앞선 Phase 4의 Prat 구성과 이후 네이티브 채팅 선택 | [초기 Phase 4 결과](../../Claude/results/PHASE_4_prat-chat_RESULT.md) · [네이티브 창 위치](../../Collection/AddOns/DevilForever_ChatSetup/ChatLayout.lua) · [현재 설치 목록](../../Collection/install.json) |
+| R44·R60·R61, R107·CR148 | 선택 가능한 모음집과 공통 Core의 경계. 전 직업 범위와 실제 추천이 준비된 특성 범위 | [기능 트리](../../Collection/data/feature-map.md) · [Hekili 지원표](../../Collection/data/hekili-support.md) |
+| R23·R34·CR112 | 원본의 채팅 세 공간, 앞선 Phase 4의 Prat 구성과 이후 네이티브 채팅 선택 | [초기 Phase 4 결과](../../Claude/results/PHASE_4_prat-chat_RESULT.md) · [네이티브 창 위치](../../Collection/AddOns/DevilForever_ChatSetup/ChatLayout.lua) · [현재 설치 목록](../../Collection/install.json) |
 | R100·R101·R104 | 기본 퀘스트 추적기·Cooldown Manager·Hekili의 담당. 위치 제안과 실제 사용하는 배치 값 | [기본 UI 확인 좌표](../../References/codex-verify/one-session-review.md) · [Cooldown Manager 입력](../../References/codex-appearance/8/report.md) |
-| R107·R110·R140 | PitBull4는 초기 시험판이며, 최종 기본판은 실제 비교 결과를 따른다. 이름표 시전 유지, 소환수 표시와 시계 소유권 대조 | [Phase 25](../../Claude/plans/2026-11-18-devil-forever-addon-collection-phase25-세부계획.md) · [현재 설치 목록](../../Collection/install.json) |
-| R134–R143 | 문양·종족 외관·핏불과 소환수 영역. 마지막 적용 목업과 동일한 실행 파일 확인 | [외관 결과](../../Claude/results/Step%2040%20%E2%80%94%20Codex%20racial%20appearance.md) · [적용 목업](../../References/codex-appearance/24/racial-appearance/index.md) |
-| R114·R145–R150 | 오프라인 좌표·코드, 실접속 일괄 확인, 전면 감사와 설치기 요청의 실행 범위 | [현행 단계 대장](../../Claude/results/REQUEST_LEDGER_phase25.md) · [Phase 26 요청](../../Codex/results/REQUEST_LEDGER_phase26.md) |
+| R107·R110·CR140 | PitBull4는 초기 시험판이며, 최종 기본판은 실제 비교 결과를 따른다. 이름표 시전 유지, 소환수 표시와 시계 소유권 대조 | [Phase 25](../../Claude/plans/2026-11-18-devil-forever-addon-collection-phase25-세부계획.md) · [현재 설치 목록](../../Collection/install.json) |
+| CR134–CR143 | 문양·종족 외관·핏불과 소환수 영역. 마지막 적용 목업과 동일한 실행 파일 확인 | 외관 결과 (로컬 전용) · [적용 목업](../../References/codex-appearance/24/racial-appearance/index.md) |
+| CR114·CR145–CR149·R150 | 오프라인 좌표·코드, 실접속 일괄 확인, 전면 감사와 설치기 요청의 실행 범위 | [Codex 원문 대장](../results/REQUEST_LEDGER_codex-phase25.md) · [Phase 26 요청](../../Codex/results/REQUEST_LEDGER_phase26.md) |
 
 ## Step 45의 배포 계약
 
@@ -57,3 +57,5 @@ Step 44와 45를 순서대로 마감하고, 독립 검수자는 같은 자료로
 ## 실행 경계
 
 R150에서 시험용 기준 ZIP을 격리 경로에서 재생성했다. R151의 실행 승인에 따라 요청과 구현을 대조하고 배포 기준을 감사 입력으로 고정한다. 이후 결함 수정과 Windows 11 x64 오프라인 설치기 제작은 마스터 플랜 순서를 따른다. 실제 게임 디렉터리 쓰기와 외부 게시는 별도 승인 범위다.
+
+2026-11-20 연결 보정: Codex의 로컬 R111–R149는 CR111–CR149로 구분한다. [복구 원문 대장](../results/REQUEST_LEDGER_codex-phase25.md). 당시 실행·읽기 범위는 원래 기록을 보존한다.

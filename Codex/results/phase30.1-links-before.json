@@ -1,0 +1,346 @@
+{
+  "markdown": 427,
+  "local_occurrences": 1265,
+  "unresolved_targets": 104,
+  "unresolved_occurrences": 129,
+  "missing": {
+    "Codex/plans/2026-11-19-devil-forever-addon-adoption-phase29.1-세부계획.md": [
+      "Codex/plans/2026-11-19-devil-forever-addon-adoption-plan.md",
+      "Codex/results/PHASE_29_EXECUTION_LEDGER.md"
+    ],
+    "Codex/results/PHASE_29.1_addon-evidence_RESULT.md": [
+      "Codex/plans/2026-11-19-devil-forever-addon-adoption-plan.md",
+      "Codex/plans/2026-11-19-devil-forever-addon-adoption-plan_이력.md",
+      "Codex/results/PHASE_29_EXECUTION_LEDGER.md"
+    ],
+    "Codex/plans/2026-11-19-devil-forever-addon-adoption-phase29.2-세부계획.md": [
+      "Codex/plans/2026-11-19-devil-forever-addon-adoption-plan.md",
+      "Codex/results/PHASE_29_EXECUTION_LEDGER.md"
+    ],
+    "Codex/results/PHASE_29.2_addon-adoption_RESULT.md": [
+      "Codex/plans/2026-11-19-devil-forever-addon-adoption-plan.md",
+      "Codex/plans/2026-11-19-devil-forever-addon-adoption-plan_이력.md",
+      "Codex/results/PHASE_29_EXECUTION_LEDGER.md"
+    ],
+    "Codex/results/REQUEST_LEDGER_phase29.1.md": [
+      "Codex/plans/2026-11-19-devil-forever-addon-adoption-plan_이력.md"
+    ],
+    "Claude/results/Step 40 — Codex collection integration.md": [
+      "Codex/plans/2026-11-19-devil-forever-audit-and-installer-phase26.1-세부계획.md",
+      "Codex/plans/2026-11-19-devil-forever-audit-and-installer-plan.md",
+      "Codex/results/audit-installer/requirement-trace.md",
+      "Codex/results/audit-installer/requirement-trace.md"
+    ],
+    "local-only:3c5285efe5c0f05a": [
+      "Codex/plans/2026-11-19-devil-forever-audit-and-installer-phase26.1-세부계획.md"
+    ],
+    "local-only:fc5ac18c8f5f29a5": [
+      "Codex/plans/2026-11-19-devil-forever-audit-and-installer-phase26.1-세부계획.md"
+    ],
+    "local-only:5e0dd1a2d29f0ce0": [
+      "Codex/plans/2026-11-19-devil-forever-audit-and-installer-phase26.1-세부계획.md",
+      "Codex/results/Step 45 — 배포 기준 ZIP 검증.md"
+    ],
+    "Claude/results/Step 40 — Codex racial appearance.md": [
+      "Codex/plans/2026-11-19-devil-forever-audit-and-installer-phase26.1-세부계획.md"
+    ],
+    "local-only:3a093acbbc549617": [
+      "Codex/plans/2026-11-19-devil-forever-audit-and-installer-plan.md"
+    ],
+    "local-only:a70d4de787279c66": [
+      "Codex/plans/2026-11-19-devil-forever-audit-and-installer-plan.md",
+      "Codex/plans/2026-11-19-devil-forever-audit-and-installer-plan.md"
+    ],
+    "local-only:d345a758ab09932f": [
+      "Codex/plans/2026-11-19-devil-forever-audit-and-installer-plan.md"
+    ],
+    "local-only:fac8af6670ae47bc": [
+      "Codex/plans/2026-11-19-devil-forever-audit-and-installer-plan.md"
+    ],
+    "local-only:71f3a03ebc637e06": [
+      "Codex/plans/2026-11-19-devil-forever-audit-and-installer-plan.md"
+    ],
+    "local-only:58661f8c16051aab": [
+      "Codex/plans/2026-11-19-devil-forever-audit-and-installer-plan.md"
+    ],
+    "local-only:53e6d4194cc34841": [
+      "Codex/results/PHASE_26-28_EXECUTION_LEDGER.md",
+      "Codex/results/Step 49 — Windows 단일 실행 파일 검증.md"
+    ],
+    "local-only:a8021fc4f354b2f6": [
+      "Codex/results/PHASE_26-28_EXECUTION_LEDGER.md",
+      "Codex/results/Step 51 — Windows 파일 적용 엔진.md"
+    ],
+    "local-only:447063f2f2b051f4": [
+      "Codex/results/PHASE_26-28_EXECUTION_LEDGER.md",
+      "Codex/results/Step 52 — 파일 복원과 관리 제거.md"
+    ],
+    "local-only:36e72b6b8d58cf35": [
+      "Codex/results/PHASE_26-28_EXECUTION_LEDGER.md",
+      "Codex/results/Step 54 — Windows 로컬 배포본.md"
+    ],
+    "local-only:e24e4cf35607ec7e": [
+      "Codex/results/PHASE_26-28_EXECUTION_LEDGER.md",
+      "Codex/results/Step 55 — 배포본 중단과 충돌 시험.md"
+    ],
+    "local-only:e7899e1cfe0c690b": [
+      "Codex/results/PHASE_26-28_EXECUTION_LEDGER.md",
+      "Codex/results/Step 56 — 현재 Windows 격리 확인과 청정 환경 대기.md"
+    ],
+    "local-only:52ae449267dc8980": [
+      "Codex/results/PHASE_26-28_EXECUTION_LEDGER.md",
+      "Codex/results/Step 59 — 채팅 그림과 설치 묶음 갱신.md"
+    ],
+    "local-only:efc5b13a38671107": [
+      "Codex/results/PHASE_28.2_local-trial-delivery_RESULT.md",
+      "Codex/results/Step 58 — 로컬 시험판 전달.md"
+    ],
+    "local-only:457792aacc4f40bb": [
+      "Codex/results/PHASE_29.3_runtime-performance_RESULT.md"
+    ],
+    "local-only:d391c16b6cf0b22a": [
+      "Codex/results/PHASE_29.3_runtime-performance_RESULT.md"
+    ],
+    "local-only:9484111873aed360": [
+      "Codex/results/PHASE_29.3_runtime-performance_RESULT.md",
+      "Codex/results/PHASE_29_EXECUTION_LEDGER.md",
+      "Codex/results/Step 65 — 0.1.2 성능 개선과 설치 검증.md"
+    ],
+    "Codex/results/PHASE_29.1_addon-evidence_RESULT.json": [
+      "Codex/results/PHASE_29_EXECUTION_LEDGER.md"
+    ],
+    "Codex/results/PHASE_29.2_addon-adoption_RESULT.json": [
+      "Codex/results/PHASE_29_EXECUTION_LEDGER.md"
+    ],
+    "local-only:01cc2d02db25f205": [
+      "Codex/results/Step 44 — 요청과 실제 기능 대조.md",
+      "Codex/results/audit-installer/requirement-trace.md"
+    ],
+    "local-only:e4ae2734ca0b8936": [
+      "Codex/results/Step 44 — 요청과 실제 기능 대조.md"
+    ],
+    "local-only:f1f74d59d38ecb27": [
+      "Codex/results/Step 44 — 요청과 실제 기능 대조.md"
+    ],
+    "local-only:472b31c07784963f": [
+      "Codex/results/Step 45 — 배포 기준 ZIP 검증.md"
+    ],
+    "local-only:f60d38a28087913f": [
+      "Codex/results/Step 46 — 기능별 반증 시험.md"
+    ],
+    "local-only:edb89c374e5889ac": [
+      "Codex/results/Step 47 — 결함 보정과 재시험.md"
+    ],
+    "local-only:537e07223184975f": [
+      "Codex/results/Step 47 — 결함 보정과 재시험.md",
+      "Codex/results/Step 48 — 검토한 ZIP과 기능 기준 확정.md"
+    ],
+    "local-only:848c5766a30d0833": [
+      "Codex/results/Step 47 — 결함 보정과 재시험.md",
+      "Codex/results/Step 48 — 검토한 ZIP과 기능 기준 확정.md"
+    ],
+    "local-only:8f0f5308ddbb159a": [
+      "Codex/results/Step 49 — Windows 단일 실행 파일 검증.md"
+    ],
+    "local-only:f230435a23f064a8": [
+      "Codex/results/Step 49 — Windows 단일 실행 파일 검증.md"
+    ],
+    "local-only:b23fef23ae3688b2": [
+      "Codex/results/Step 51 — Windows 파일 적용 엔진.md"
+    ],
+    "local-only:26c6a864799c46b6": [
+      "Codex/results/Step 51 — Windows 파일 적용 엔진.md"
+    ],
+    "local-only:7ad31e655a0157dd": [
+      "Codex/results/Step 51 — Windows 파일 적용 엔진.md"
+    ],
+    "local-only:6f4b2d39581f3cb0": [
+      "Codex/results/Step 51 — Windows 파일 적용 엔진.md"
+    ],
+    "local-only:655f0fa59a360c54": [
+      "Codex/results/Step 51 — Windows 파일 적용 엔진.md"
+    ],
+    "local-only:8c323732b91024a6": [
+      "Codex/results/Step 52 — 파일 복원과 관리 제거.md"
+    ],
+    "local-only:7d24e29aa44ca877": [
+      "Codex/results/Step 52 — 파일 복원과 관리 제거.md"
+    ],
+    "local-only:50903a5f1a4b3793": [
+      "Codex/results/Step 52 — 파일 복원과 관리 제거.md"
+    ],
+    "local-only:7104f36d58e9bfb7": [
+      "Codex/results/Step 53 — Windows 설치 화면과 명령줄.md"
+    ],
+    "local-only:ab32197cebce910f": [
+      "Codex/results/Step 54 — Windows 로컬 배포본.md"
+    ],
+    "local-only:466d5af84dc09f3c": [
+      "Codex/results/Step 54 — Windows 로컬 배포본.md"
+    ],
+    "local-only:70bb285fa61880fd": [
+      "Codex/results/Step 54 — Windows 로컬 배포본.md"
+    ],
+    "local-only:4a46325e92704f2e": [
+      "Codex/results/Step 54 — Windows 로컬 배포본.md"
+    ],
+    "local-only:478b86b969dd24cd": [
+      "Codex/results/Step 55 — 배포본 중단과 충돌 시험.md"
+    ],
+    "local-only:d46a975ce1984775": [
+      "Codex/results/Step 55 — 배포본 중단과 충돌 시험.md"
+    ],
+    "local-only:688149d5f98787f2": [
+      "Codex/results/Step 55 — 배포본 중단과 충돌 시험.md"
+    ],
+    "local-only:c717a9749c0ae6ca": [
+      "Codex/results/Step 55 — 배포본 중단과 충돌 시험.md"
+    ],
+    "local-only:9b47f48f6af9d98b": [
+      "Codex/results/Step 55 — 배포본 중단과 충돌 시험.md"
+    ],
+    "local-only:a7082285509cc95f": [
+      "Codex/results/Step 55 — 배포본 중단과 충돌 시험.md"
+    ],
+    "local-only:a5d92ac85004f54a": [
+      "Codex/results/Step 58 — 로컬 시험판 전달.md"
+    ],
+    "local-only:462defdd0cbe3cb9": [
+      "Codex/results/Step 58 — 로컬 시험판 전달.md"
+    ],
+    "local-only:471f7696ae20b6b4": [
+      "Codex/results/Step 58 — 로컬 시험판 전달.md"
+    ],
+    "local-only:f6259255a8c15a4d": [
+      "Codex/results/Step 58 — 로컬 시험판 전달.md"
+    ],
+    "local-only:696b00c368759d3c": [
+      "Codex/results/Step 58 — 로컬 시험판 전달.md"
+    ],
+    "local-only:4881aacaff1fadf4": [
+      "Codex/results/Step 59 — 채팅 그림과 설치 묶음 갱신.md"
+    ],
+    "local-only:8f654ce3c5c9446e": [
+      "Codex/results/Step 59 — 채팅 그림과 설치 묶음 갱신.md"
+    ],
+    "local-only:4353a59570398784": [
+      "Codex/results/Step 59 — 채팅 그림과 설치 묶음 갱신.md"
+    ],
+    "local-only:a8b9a31c7940ccd4": [
+      "Codex/results/Step 59 — 채팅 그림과 설치 묶음 갱신.md"
+    ],
+    "local-only:e3a614b8bbfb4d6e": [
+      "Codex/results/Step 59 — 채팅 그림과 설치 묶음 갱신.md"
+    ],
+    "local-only:99a5baf809413e5a": [
+      "Codex/results/Step 59 — 채팅 그림과 설치 묶음 갱신.md"
+    ],
+    "local-only:7fc25d6c6fcab371": [
+      "Codex/results/Step 59 — 채팅 그림과 설치 묶음 갱신.md"
+    ],
+    "local-only:caf723453726a26f": [
+      "Codex/results/Step 59 — 채팅 그림과 설치 묶음 갱신.md"
+    ],
+    "local-only:f6d8943311a4bbef": [
+      "Codex/results/Step 59 — 채팅 그림과 설치 묶음 갱신.md"
+    ],
+    "local-only:5f1db58509d09197": [
+      "Codex/results/Step 59 — 채팅 그림과 설치 묶음 갱신.md"
+    ],
+    "local-only:ee6079326bd5918c": [
+      "Codex/results/Step 63 — 프리셋과 소환수 단축바 갱신 줄이기.md"
+    ],
+    "local-only:82712b68fb7a9e6f": [
+      "Codex/results/Step 64 — FUF 비교 배치 반복 조회 줄이기.md"
+    ],
+    "local-only:a416d2c3cf4f6dd1": [
+      "Codex/results/Step 65 — 0.1.2 성능 개선과 설치 검증.md"
+    ],
+    "Collection/upstream/Forever_Unit_Frames-0.65.2/ForeverUnitFrames/Core/Config.lua": [
+      "Codex/results/Step 65 — 0.1.2 성능 개선과 설치 검증.md"
+    ],
+    "Collection/upstream/Forever_Unit_Frames-0.65.2/ForeverUnitFrames/Units/Single.lua": [
+      "Codex/results/Step 65 — 0.1.2 성능 개선과 설치 검증.md"
+    ],
+    "local-only:f5b495e78215d1eb": [
+      "Codex/results/Step 65 — 0.1.2 성능 개선과 설치 검증.md"
+    ],
+    "Collection/upstream/Hekili-v0.8.6/Hekili/Engine/Driver.lua": [
+      "Codex/results/Step 65 — 0.1.2 성능 개선과 설치 검증.md"
+    ],
+    "Collection/upstream/Details-Details.20261109.15410.172/Details/core/gears.lua": [
+      "Codex/results/Step 65 — 0.1.2 성능 개선과 설치 검증.md"
+    ],
+    "Collection/upstream/Details-Details.20261109.15410.172/Details/core/control.lua": [
+      "Codex/results/Step 65 — 0.1.2 성능 개선과 설치 검증.md"
+    ],
+    "local-only:416fbd00c21bd3b7": [
+      "Codex/results/Step 65 — 0.1.2 성능 개선과 설치 검증.md"
+    ],
+    "local-only:b500df87881f715f": [
+      "Codex/results/Step 65 — 0.1.2 성능 개선과 설치 검증.md"
+    ],
+    "local-only:41aac50b62d7bc89": [
+      "Codex/results/Step 65 — 0.1.2 성능 개선과 설치 검증.md"
+    ],
+    "local-only:5d0b9a2772bd6287": [
+      "Codex/results/Step 65 — 0.1.2 성능 개선과 설치 검증.md"
+    ],
+    "local-only:b748679d01e1ba50": [
+      "Codex/results/Step 66 — 유닛 프레임 동작 비교.md"
+    ],
+    "local-only:b76487c777134335": [
+      "Codex/results/Step 66 — 유닛 프레임 동작 비교.md"
+    ],
+    "local-only:4db2231d7d02654e": [
+      "Codex/results/Step 67 — 행동 추천과 전투 미터기.md"
+    ],
+    "Collection/upstream/skada-v2.6.7/Skada/Skada_Forever.toc": [
+      "Codex/results/Step 67 — 행동 추천과 전투 미터기.md"
+    ],
+    "Collection/upstream/basic-minimap-v12.1.6/BasicMinimap/BasicMinimap_Classic.lua": [
+      "Codex/results/Step 68 — 기능별 후보와 반복 비용.md"
+    ],
+    "Collection/upstream/vuhdo-v3.221/VuhDo/VuhDo_Camelot.toc": [
+      "Codex/results/Step 68 — 기능별 후보와 반복 비용.md"
+    ],
+    "Collection/upstream/bartender4-4.19.0/Bartender4/PetBar.lua": [
+      "Codex/results/Step 68 — 기능별 후보와 반복 비용.md"
+    ],
+    "local-only:7b8e2f8db4d660c1": [
+      "Codex/results/Step 68 — 기능별 후보와 반복 비용.md"
+    ],
+    "Codex/results/Step 60 — 상위 애드온 1차 등급과 자체 성능 검수.md": [
+      "Codex/results/Step 68 — 기능별 후보와 반복 비용.md"
+    ],
+    "Codex/results/Step 61 — 최소 선택 설치 구성.md": [
+      "Codex/results/Step 68 — 기능별 후보와 반복 비용.md"
+    ],
+    "local-only:2e0ac67019c3b64e": [
+      "Codex/results/Step 69 — 실제 게임에서 확인할 성능 비교.md"
+    ],
+    "local-only:a1914d26caf52683": [
+      "Codex/results/Step 69 — 실제 게임에서 확인할 성능 비교.md"
+    ],
+    "Collection/upstream/Quartz-3.8.0/Quartz": [
+      "Codex/results/audit-installer/requirement-trace.md"
+    ],
+    "Collection/upstream/Dominos-12.0.4/Dominos": [
+      "Codex/results/audit-installer/requirement-trace.md",
+      "Codex/results/audit-installer/requirement-trace.md"
+    ],
+    "Codex/References/codex-appearance/19/report.md": [
+      "Codex/results/audit-installer/step46-work-log.md"
+    ],
+    "Codex/results/audit-installer/Path('Collection'": [
+      "Codex/results/audit-installer/step47-work-log.md"
+    ],
+    "local-only:089e6e42e76dbb50": [
+      "Codex/results/handoffs/old-reference/r44-plan-update/a1-final-return.md"
+    ],
+    "local-only:da381d063a5a0cf4": [
+      "Codex/results/handoffs/old-reference/step5-a1-final-return.md"
+    ]
+  },
+  "localPathRedaction": "로컬 전용 대상은 경로 대신 SHA-256 앞 16자리로 구분. 개수·문서 위치 보존"
+}
