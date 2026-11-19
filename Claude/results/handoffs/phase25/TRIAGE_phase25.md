@@ -27,3 +27,6 @@
 | Prat decision record `evidence/chat-decision.md` | cites R112 → requirement-trace (summary only) | user's original wording still not in repo; our ledger phase25 on branch still 7 lines (C2 open) |
 | install.json | 0.1.4, Prat removed, own = 9 folders | M3 list mismatch fixed |
 | Collection/AddOns changes in 477eb06 | none | M1 SexyMap overwrite still present; M2 ExperienceForever/SexyMap still "unmodified" in package manifest |
+
+## Step 45 review 2 — order for Step 40 (user R117: runtime burden over disk size)
+1 PitBull4 aura signature/native reset (M1) · 2 PitBull4 text pattern cache + GUID loop (M4) · 3 PitBull4 bars batch per frame + SetTexture early return (M3) · 4 PitBull4 aura normalize closures (M2) · 5 PitBull4 AltManaBar unit filter (M5) · 6 Core DBTable/Edit:Get allocations + nameplate style cache (M6) · 7 PitBull4 CastBar ticker only while casting, Hekili frameBudget decision (m6, m8) · 8 appearance/Dominos apply batching, leftover handlers, Castbars retry loop (m1, m2, m4) · 9 snapshot size (M8, login read/write) · last: texture disk size (M7) — loaded memory already small.
