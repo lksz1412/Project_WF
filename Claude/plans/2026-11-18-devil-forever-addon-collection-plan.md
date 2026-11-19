@@ -184,6 +184,9 @@
 | `References/codex-appearance/` | Codex 가 올린 외관 코드·자산·목업(R87). 받으면 `Collection/` 에 합치기 전에 Claude 가 인터페이스 대조만 한다 |
 | `References/codex-verify/phase<ID>/` | Codex 가 올린 실사용 검증 결과(결과 표·BugSack 오류 문구·필요하면 스크린샷). 읽기 전용 |
 | `outputs/collection/` | 설치용 ZIP `DevilForever-0.1.0.zip`(PitBull4 판 · 안에 `DevilForever-install/` manifest·SHA256SUMS·설치안내) 과 Codex 확인용 ZIP `DevilForever-collection.zip` |
+| `Review/0.1.4/` | Codex 0.1.4 검토판 기록: 인계 `HANDOVER.md`, 묶음 도구 `tools/package.py`, 시험 묶음 `tests/run.py`, 후보 ZIP `candidates/` (Step 40a 합침 · R122) |
+| `Collection/Installer/` | Windows 설치기 소스·계약(사용자 요청 R149–R151, Codex 작성) |
+| `Codex/results/audit-installer/` · `Codex/plans/2026-11-19-…` | Codex 0.1.1–0.1.4 작업 기록 |
 | `Collection/install.json` · `Collection/install/설치안내.md` | 설치 ZIP 에 넣을 폴더 목록(판 둘: pitbull4·fuf)과 설치 안내 원문(Phase 23) |
 | `work/`·`SourceArchive/`·`MacroLibrary/`·`outputs/`(기존 파일) | Codex 시기 원천·작업 사본·매크로 보관. 읽기만 |
 
