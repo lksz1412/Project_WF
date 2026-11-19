@@ -560,6 +560,44 @@ def native_storage_wait_and_macro_source_survive_adapter_loading():
     eq(to_py(s.g.ForeverUnitFramesDB), before, "no geometry SV preseed")
 
 
+@case
+def native_layout_reads_status_once_and_stops_on_same_name_profile_replacement():
+    for replace in (False, True):
+        s = native_layout_client("uhd")
+        s.login()
+        eq(s.g.TEST_native.UnitProfiles.SaveAs("DF Compare uhd"), True, "select native comparison clone")
+        s.g.TEST_replaceProfile = replace
+        s.lua.execute("""
+          TEST_statusReads, TEST_layoutCalls = 0, 0
+          local API = DevilForever_FUFDefaults
+          local status = API.GetStatus
+          API.GetStatus = function()
+            TEST_statusReads = TEST_statusReads + 1
+            return status()
+          end
+          local handler = SlashCmdList.FOREVERUNITFRAMES
+          SlashCmdList.FOREVERUNITFRAMES = function(command)
+            TEST_layoutCalls = TEST_layoutCalls + 1
+            local result = handler(command)
+            if TEST_replaceProfile and TEST_layoutCalls == 1 then
+              ForeverUnitFramesDB.profiles["DF Compare uhd"] = {}
+            end
+            return result
+          end
+        """)
+        result = s.g.DevilForever_FUFDefaults.ApplyLayout("uhd")
+        eq(result, (False, "partial-failure") if replace else (True, "sent-unverified"), "native result")
+        eq(s.g.TEST_statusReads, 1, "one diagnostic copy per invocation")
+        eq(s.g.TEST_layoutCalls, 1 if replace else 116, "native commands before changed context")
+        state = to_py(s.g.DevilForever_FUFDefaults.GetLayoutStatus())
+        eq(state["sent"], 1 if replace else 116, "reported sends")
+        eq(state["verified"], False, "no game readback claim")
+        if replace:
+            eq(state["reason"], "context-changed", "same name with a new object is refused")
+        eq(to_py(s.g.ForeverUnitFramesDB.profiles.Custom)["player"]["width"], 211, "personal profile kept")
+        eq(lst(to_py(s.g.TEST_errors)), [], "native commands accepted")
+
+
 def main():
     passed, failed = 0, []
     for fn in CASES:

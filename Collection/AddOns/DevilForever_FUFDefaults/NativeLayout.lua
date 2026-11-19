@@ -43,9 +43,8 @@ function API.GetLayoutCommands(preset)
   return commands, "DF Compare " .. preset
 end
 
-local function activeProfile()
+local function activeProfile(key)
   local db = ForeverUnitFramesDB
-  local key = API.GetStatus().key
   local active = key and type(db) == "table" and type(db.active) == "table" and db.active[key]
   local profile = active and type(db.profiles) == "table" and db.profiles[active]
   return active, profile, db
@@ -70,14 +69,15 @@ function API.ApplyLayout(preset)
   if width < minimum[1] or height < minimum[2] then return refused("screen-too-small") end
   local metadata = C_AddOns and C_AddOns.GetAddOnMetadata or GetAddOnMetadata
   if type(metadata) ~= "function" or metadata("ForeverUnitFrames", "Version") ~= "0.65.2" then return refused("version-mismatch") end
-  local active, profile, db = activeProfile()
+  local key = API.GetStatus().key
+  local active, profile, db = activeProfile(key)
   if active ~= expected or type(profile) ~= "table" then return refused("comparison-profile-required") end
   local handler = type(SlashCmdList) == "table" and SlashCmdList.FOREVERUNITFRAMES
   if type(handler) ~= "function" then return refused("api-missing") end
   state = {state = "sending", preset = preset, sent = 0, verified = false}
   for _, command in ipairs(commands) do
-    local current, _, currentDB = activeProfile()
-    if InCombatLockdown() or current ~= expected or currentDB ~= db then
+    local current, currentProfile, currentDB = activeProfile(key)
+    if InCombatLockdown() or current ~= expected or currentProfile ~= profile or currentDB ~= db then
       state.state = "partial-failure"
       state.reason = "context-changed"
       return false, state.state
