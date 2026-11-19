@@ -142,7 +142,7 @@ for _, name in ipairs({"FCFTab_UpdateAlpha", "FCF_StartAlertFlash", "FCF_StopAle
 end
 Core.Theme:RegisterCallback(owner, apply)
 Core.Edit:RegisterCallback(owner, function(key)
-  if key == "appearance.chat1" or key == "appearance.chat2" or key == "appearance.chat3" then apply() end
+  if key == "appearance.chat1" or key == "appearance.chat2" or key == "appearance.chat3" then Core.Edit:AfterBatch(owner, apply) end
 end)
 
 local setup = DevilForever_ChatSetup

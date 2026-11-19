@@ -220,22 +220,25 @@ function Presets:Restore(name)
   local oldName = self:GetActive()
   local old = oldName and defs[oldName]
   local lines = {}
-  local cleared = 0
-  for frameKey in pairs(def.edits) do
-    local _, how = Core.Edit:Clear(frameKey)
-    if how ~= "unchanged" then cleared = cleared + 1 end
-  end
-  Core:DBTable("preset").active = name
-  local touched = {}
-  for _, d in ipairs({old or {edits = {}}, def}) do
-    for frameKey, fields in pairs(d.edits) do
-      touched[frameKey] = touched[frameKey] or {}
-      for field in pairs(fields) do touched[frameKey][field] = true end
+  local cleared = Core.Edit:Batch(function()
+    local cleared = 0
+    for frameKey in pairs(def.edits) do
+      local _, how = Core.Edit:Clear(frameKey)
+      if how ~= "unchanged" then cleared = cleared + 1 end
     end
-  end
-  for frameKey, fields in pairs(touched) do
-    for field in pairs(fields) do Core.Edit:FireChanged(frameKey, field) end
-  end
+    Core:DBTable("preset").active = name
+    local touched = {}
+    for _, d in ipairs({old or {edits = {}}, def}) do
+      for frameKey, fields in pairs(d.edits) do
+        touched[frameKey] = touched[frameKey] or {}
+        for field in pairs(fields) do touched[frameKey][field] = true end
+      end
+    end
+    for frameKey, fields in pairs(touched) do
+      for field in pairs(fields) do Core.Edit:FireChanged(frameKey, field) end
+    end
+    return cleared
+  end)
   lines[#lines + 1] = name .. " preset 적용 — 편집값을 지운 프레임 " .. cleared .. "개"
   Core:DBTable("preset").unfinished = nil
   if #def.fragments > 0 then
