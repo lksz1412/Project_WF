@@ -11,3 +11,7 @@ Refuted (no defect): aura cache other paths, DQ1 safety net, LuaTexts, bars, nor
 - C1, M1, m2 fixed; DQ10 no frequent caller of wrapped UpdateAll.
 - M2-r Defaults/Grid2.lua post-hook on MakeDatabaseDefaults runs after the FIRST call, which only opens the first-boot dialog and returns false (GridDefaults.lua UpdateDefaults/MakeDatabaseDefaults), records done[key]; the later call that applies the chosen template is skipped → template values remain (repro c40f1.KnKW/grid2.py: after Modern 66 46 1 2). Harness stub never simulates the dialog call.
 - m DQ11: metadata API present on Forever (PitBull4 Main.lua:1597 uses C_AddOns.GetAddOnMetadata) → fragments not skipped; only the no-API fallback compares "4.1.13-forever".
+
+## Re-check 2 (same B) — 중대 0 · 중간 0 · 경미 0
+- M2-r fixed: wrapper uses MakeDatabaseDefaults' return value; dialog-first sequence keeps (96,32,2,4) for Classic/Modern/Blizzard; installed at Core's ADDON_LOADED("Grid2") before OnEnable→LoadConfig; new profile from Grid2 options not touched (no preset record); profile reset after done keeps template values (user action, once only).
+Trend (critical+middle): 3 → 1 → 0.
