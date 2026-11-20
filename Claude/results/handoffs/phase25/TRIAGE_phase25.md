@@ -50,3 +50,4 @@ Root cause of C1/M1: party ownership is written into profiles of different scope
 | M2 | — | fix, option (a) | after Grid2's first-start template is applied to a fresh profile, re-apply our Grid2 preset fragment keys to that profile once (and record it); existing profiles untouched |
 | m2 | — | fix together | preset position entries for PitBull4 units write only into unit entries that already exist |
 | m1, m3 | — | keep (log) | |
+- 40c re-check 1: C+M 3 → 1. Fix 2: re-apply only after the call that actually applied a template (wrap and use the return value / template-applied marker in the Grid2 profile), test with a stub that reproduces the dialog-first sequence. DQ11 keep (log).
