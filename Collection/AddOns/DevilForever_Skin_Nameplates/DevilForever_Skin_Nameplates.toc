@@ -1,10 +1,7 @@
 ## Interface: 16001
 ## Title: DevilForever Native Nameplate Appearance
-## Notes: Native nameplate sizing on writable bars and geometry diagnostics.
+## Notes: Native nameplate sizing on writable bars.
 ## Version: 0.1.0
 ## Dependencies: !DevilForever_Core, DevilForever_Appearance
-## SavedVariablesPerCharacter: DevilForever_UIReviewDB
 NameplateProfiles.lua
 Appearance.lua
-Probe.lua
-SessionProbe.lua

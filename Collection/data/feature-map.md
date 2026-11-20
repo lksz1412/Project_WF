@@ -54,7 +54,7 @@ Devil Forever
 
 | 기능 | 담당 | 적용 경로 |
 |---|---|---|
-| 파티와 공격대 | 파티는 선택한 유닛 프레임 · 공격대는 `Grid2` · `Grid2Options` · `Grid2LDB` | Core 초기 프리셋. Grid2 세부 지표는 Grid2 프로필 |
+| 파티와 공격대 | 새 설치: 파티와 공격대 모두 `Grid2` · `Grid2Options` · `Grid2LDB`. 이전 판 설치: 파티는 그리던 쪽 그대로(`/dfp party grid2`·`/dfp party unitframes`) · 공격대는 `Grid2` | Core 초기 프리셋. Grid2 세부 지표는 Grid2 프로필 |
 | 데미지와 위협 | `Details` · `Details_TinyThreat` · `DevilForever_DetailsLayout` | 기존 창 1·2에 `/dfdetails apply`로 [해상도별 위치](../AddOns/DevilForever_DetailsLayout/Layout.lua) 적용. 모드와 세부 표시 설정은 Details |
 
 ## 성장·퀘스트
@@ -62,13 +62,13 @@ Devil Forever
 | 기능 | 담당 | 적용 경로 |
 |---|---|---|
 | 경험치·평판·소환수 경험치 | `ExperienceForever` | 설치본은 세로 막대를 사용한다. 프리셋은 질감과 글꼴을 등록하고 표시 설정은 `/ef`에서 관리한다. [가로 공간 대안](../../References/codex-appearance/19/report.md)은 목업의 제안 값이다 |
-| 퀘스트 추적 | 게임 기본 목표 추적기 | `/dfcheck quest`로 실제 창 경계 측정. [4K 가독성과 배치 확인](../../References/codex-verify/one-session-review.md) |
+| 퀘스트 추적 | 게임 기본 목표 추적기 | 실제 창 경계 측정용 `/dfcheck quest` 는 기본으로 불러오지 않음(진단 파일을 TOC 에 넣을 때만). [4K 가독성과 배치 확인](../../References/codex-verify/one-session-review.md) |
 
 ## 설정을 둘 위치
 
 | 설정 | 권장 관리 위치 |
 |---|---|
-| 해상도별 전체 배치, 테마, 모음집 백업·복원 | Core의 `/dfp`. 게임 재확인에 필요한 항목은 `/dfcheck` |
+| 해상도별 전체 배치, 테마, 모음집 백업·복원, 파티 프레임 담당(`/dfp party`) | Core의 `/dfp`. 게임 재확인용 `/dfcheck` 는 기본으로 불러오지 않음 |
 | 키·오라·필터·추천·미터기 모드 | 해당 애드온의 기존 설정. 공통 배치는 초기값으로 제공 |
 | 기본 쿨다운 창과 기본 퀘스트 추적기 | 게임 설정. 프리셋의 목표 좌표를 접속 때 대조 |
 

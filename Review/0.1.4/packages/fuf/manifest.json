@@ -266,10 +266,11 @@
     {
       "bundle": "individual",
       "folder": "ExperienceForever",
-      "kind": "unmodified",
+      "kind": "modified",
       "license_files": [
         "Libs/LICENSE.txt"
       ],
+      "modified": "ExperienceForever.lua: quest XP recomputed once in the queued update after QUEST_LOG_UPDATE instead of on every event",
       "origin": "upstream",
       "package": "Experience Forever",
       "phases": [
@@ -648,8 +649,9 @@
     {
       "bundle": "individual",
       "folder": "SexyMap",
-      "kind": "unmodified",
+      "kind": "modified",
       "license_files": [],
+      "modified": "Coordinates.lua: one cancellable coordinate timer instead of a new timer chain per CreateFrame",
       "origin": "upstream",
       "package": "SexyMap",
       "phases": [

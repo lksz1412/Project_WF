@@ -88,6 +88,8 @@ local loadLines = {} -- report lines of the ready step, printed at the first wor
 local noticeLines = {} -- printed at the first world entry, not kept in DevilForever_ProfilesDB.last
 local freshAtLoad = {}  -- [svName] = true when nil at its addon's ADDON_LOADED (this handler);
                         -- false once this session's restore job wrote it
+local watchedKeys = {}  -- [svName] = {[key] = true}: root keys whose absence is recorded at load
+local absentAtLoad = {} -- [svName] = {[key] = true when <SV>[key] was nil at that ADDON_LOADED}
 local verifyChar        -- requesting character key to check at PLAYER_LOGIN (key was unknown at load)
 local worldSeen = false
 
@@ -897,6 +899,22 @@ function Profiles:WasFresh(svName)
   return freshAtLoad[svName]
 end
 
+-- Asks for <svName>[key] to be looked at in the same handler as WasFresh.
+function Profiles:WatchKey(svName, key)
+  if type(svName) ~= "string" or key == nil then return end
+  watchedKeys[svName] = watchedKeys[svName] or {}
+  watchedKeys[svName][key] = true
+end
+
+-- True when <svName>[key] was nil (the saved variable nil included) when its
+-- addon's ADDON_LOADED reached Core this session; false when it was there or
+-- this session's restore job wrote the saved variable; nil when not seen.
+function Profiles:KeyWasAbsent(svName, key)
+  local byKey = absentAtLoad[svName]
+  if byKey == nil then return nil end
+  return byKey[key]
+end
+
 local function processSave(item)
   local t = item.target
   local e, why
@@ -948,6 +966,7 @@ local function processRestore(item)
     return
   end
   freshAtLoad[item.svName] = false
+  for key in pairs(absentAtLoad[item.svName] or {}) do absentAtLoad[item.svName][key] = false end
   local ok, err
   if kind == "profile" then
     ok, err = writeClass(t, e, job.keys, rename)
@@ -1065,6 +1084,13 @@ Core:On("ADDON_LOADED", function(_, loaded)
   local lower = loaded:lower()
   for _, sv in ipairs(Core:GetSavedVariables(loaded)) do
     if freshAtLoad[sv.name] == nil then freshAtLoad[sv.name] = (_G[sv.name] == nil) end
+    if watchedKeys[sv.name] and absentAtLoad[sv.name] == nil then
+      local value, byKey = _G[sv.name], {}
+      for key in pairs(watchedKeys[sv.name]) do
+        byKey[key] = type(value) ~= "table" or rawget(value, key) == nil
+      end
+      absentAtLoad[sv.name] = byKey
+    end
   end
   if not job or not job.targets[lower] then return end
   local items = job.targets[lower]

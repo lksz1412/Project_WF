@@ -8,8 +8,15 @@
 -- Each module table (core, buttons, ...) is created by SexyMap only when it is
 -- missing, so a module table written here must hold every key SexyMap's own
 -- table has: the values below are SexyMap's own defaults except the two marked
--- with a requirement. Appearance values (shape, scale, position, borders,
--- button angles) come from SexyMap's defaults or the Codex appearance fragment.
+-- with a requirement. Appearance values (shape, scale, position, borders) are
+-- not defaults: they are one root fragment per preset (fhd, qhd, uhd, each
+-- computed for its screen) with profileKey = this character's key, added with
+-- Presets:AddFragment. Presets writes it only when that profile was nil at
+-- SexyMap's ADDON_LOADED, or on a /dfp preset request, at the next
+-- PLAYER_ENTERING_WORLD and by merging into the tables SexyMap has made (no
+-- table is created, a "global" choice is kept); an existing profile keeps its
+-- appearance (one without those keys included) and the kept notice names
+-- /dfp preset. Button angles are SexyMap's defaults below.
 -- Mouse-wheel zoom and the left-click ping are always on in SexyMap and need
 -- no value.
 
@@ -86,7 +93,7 @@ local spec = {
 
 local appearance = {
   fhd = function()
--- Appearance body for a newly created native SexyMap profile through Defaults.
+-- Appearance of the SexyMap profile for this preset's screen (a root fragment, see the header).
 local ui = UIParent and UIParent:GetEffectiveScale()
 local factor = PixelUtil and PixelUtil.GetPixelToUIUnitFactor and PixelUtil.GetPixelToUIUnitFactor()
 if type(factor) ~= "number" or factor <= 0 then
@@ -104,7 +111,7 @@ local effective = 192 / 140
 return {core = {shape = 130871, point = "TOPLEFT", relpoint = "TOPLEFT", x = 1292 / effective, y = -860 / effective, scale = effective * pixel}}
   end,
   qhd = function()
--- Appearance body for a newly created native SexyMap profile through Defaults.
+-- Appearance of the SexyMap profile for this preset's screen (a root fragment, see the header).
 local ui = UIParent and UIParent:GetEffectiveScale()
 local factor = PixelUtil and PixelUtil.GetPixelToUIUnitFactor and PixelUtil.GetPixelToUIUnitFactor()
 if type(factor) ~= "number" or factor <= 0 then
@@ -122,7 +129,7 @@ local effective = 224 / 140
 return {core = {shape = 130871, point = "TOPLEFT", relpoint = "TOPLEFT", x = 1720 / effective, y = -1186 / effective, scale = effective * pixel}}
   end,
   uhd = function()
--- Appearance body for a newly created native SexyMap profile through Defaults.
+-- Appearance of the SexyMap profile for this preset's screen (a root fragment, see the header).
 local ui = UIParent and UIParent:GetEffectiveScale()
 local factor = PixelUtil and PixelUtil.GetPixelToUIUnitFactor and PixelUtil.GetPixelToUIUnitFactor()
 if type(factor) ~= "number" or factor <= 0 then
@@ -141,23 +148,29 @@ return {core = {shape = 130871, point = "TOPLEFT", relpoint = "TOPLEFT", x = 259
   end,
 }
 
-local layout = appearance[Core.Presets:PickForScreen()]
-if layout then
-  local ok, proposed = pcall(layout)
-  if ok and type(proposed) == "table" then
-    local profile = spec.targets[1].values[profileKey]
-    for field, value in pairs(proposed and proposed.core or {}) do
-      profile.core[field] = value
+-- The installed SexyMap version the fragments are made for (SexyMap.toc).
+local SEXYMAP_VERSION = "v12.1.7"
+
+local presetNames = {}
+for name in pairs(appearance) do presetNames[#presetNames + 1] = name end
+table.sort(presetNames)
+for _, name in ipairs(presetNames) do
+  if Core.Presets:IsRegistered(name) then
+    local ok, proposed = pcall(appearance[name])
+    if ok and type(proposed) == "table" and type(proposed.core) == "table" and next(proposed.core) then
+      local profile = {core = proposed.core}
+      if proposed.core.shape then
+        profile.borders = {hideBlizzard = true, borders = {}, applyPreset = false,
+          backdrop = {scale = 1, show = false, textureColor = {}, borderColor = {}, settings = {
+            bgFile = "Interface\\Tooltips\\UI-Tooltip-Background",
+            edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
+            insets = {left = 4, top = 4, right = 4, bottom = 4}, edgeSize = 16, tile = false}}}
+      end
+      Core.Presets:AddFragment(name, {folder = "SexyMap", savedVariable = "SexyMap2DB", section = "root",
+        profileKey = profileKey, addonVersion = SEXYMAP_VERSION, version = 1, values = profile})
+    elseif not ok then
+      Core:Log("skip", "Defaults:SexyMap", name .. " appearance: " .. tostring(proposed))
     end
-    if proposed.core and proposed.core.shape then
-      profile.borders = {hideBlizzard = true, borders = {}, applyPreset = false,
-        backdrop = {scale = 1, show = false, textureColor = {}, borderColor = {}, settings = {
-          bgFile = "Interface\\Tooltips\\UI-Tooltip-Background",
-          edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
-          insets = {left = 4, top = 4, right = 4, bottom = 4}, edgeSize = 16, tile = false}}}
-    end
-  elseif not ok then
-    Core:Log("skip", "Defaults:SexyMap", tostring(proposed))
   end
 end
 Core.Defaults:Register("SexyMap", spec)

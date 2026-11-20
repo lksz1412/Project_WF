@@ -148,3 +148,39 @@ SexyMap: fresh install written per profile key · existing profile (CoreDB appli
 12. Party settles once per session at the first look where Grid2 and exactly one unit-frame addon are loaded; both PitBull4 and FUF loaded (one-session misuse) → nothing.
 13. `/dfp party` writes the saved-variable tables of the running addons; the frames change after /reload (printed). PitBull4/FUF profiles may be shared by other characters (printed).
 14. M3 notice: "already" now only happens for a character whose own key was recorded (it has the appearance), so the notice covers kept/skipped.
+
+## Fix 2 (re-check 1: audit_log-40b.md "Re-check 1", TRIAGE last two lines)
+
+Read: audit_log-40b.md re-check section (full), TRIAGE_phase25.md last 2 lines, FUF Core/Commands.lua 53–57 (IsReady prints NOT_READY, returns), 133–140 (INVALID_VALUE), Core/Storage.lua 108–137, 161–242 (save hold, RequestSave), Party.lua (own, full), install notes HEAD bytes (line endings).
+
+### Impact map
+| Place | Verdict | Reason |
+|---|---|---|
+| Party.lua (rewritten) | fix (R1+R2 cause) | owner = record on the unit-frame profile, DevilForever_CoreDB.party.owner["<PitBull4|ForeverUnitFrames>/<profile>"]; set by the first-install decision (both new) or `/dfp party`; every login once: reconcile this character (PitBull4 groups, then Grid2 keys; FUF commands after DELAY 20 s out of combat, Grid2 only after FUF's saved unit profile reads the value at READBACK 1 s, else pending → next login); no record → nothing; settle waits while the other unit addon is enabled but not loaded yet (C_AddOns.GetAddOnEnableState) so "both loaded → nothing" holds in any load order |
+| Party.lua grid2Profile | fix (minor) | profileKeys entry, else Grid2DB.global.defaultProfileName, else character key; writes only layouts.party, layouts.arena, FrameDisplay |
+| Party.lua Set | fix (minor) | FUF handler missing/raises → refused, no record, no success line; FUF not ready → "명령 보냄" + later line "아직 저장하지 않음 — Grid2 는 그대로"; prints that it applies to every character on that unit profile at their next login; Describe reads the saved tables (record + each side) |
+| the fix-1 "one side new follows the other" rule | removed | master: no record → nothing written |
+| FUFDefaults.lua | reverted to HEAD + header line | the FUF party step moved to Party.lua (one place decides); header says party is Core's |
+| tests/fufdefaults/run.py | reverted to HEAD | FUFDefaults no longer touches party (its "party untouched" asserts hold again) |
+| Commands.lua | fix together | passes the printer to Party:Set for the FUF read-back line |
+| install notes ×4 | fix (minor) | rebuilt from HEAD bytes line by line: only changed lines differ, each keeps its original ending; upgrade line adds "other characters follow at their next login" |
+| Defaults/Grid2.lua, Defaults/PitBull4.lua comments | check only | still say Party.lua moves the party (true) |
+| late-key "not-settled" | kept | master |
+
+### Commands and verdicts
+- `python3 -I Collection/tests/core/run.py` → `lupa=2.8 cases=108 passed=107 failed=1` (genregistry_output_matches_file)
+- `python3 -I Collection/tests/fufdefaults/run.py` → `lupa=2.8 cases=22 passed=22 failed=0`
+- `python3 -I Collection/tests/firststart/run.py` → `lupa=2.8 cases=16 passed=16 failed=0`
+- `python3 -I Collection/tests/pitbull4/run.py` → `cases=6 passed=5 failed=1` (patch_reproduces_the_copy, untouched LICENSE, as before)
+- `python3 -I Collection/tests/install/verify_diagnostics.py` → exit 0
+- `python3 -I Collection/tools/luacheck.py 'Collection/AddOns/!DevilForever_Core' Collection/AddOns/DevilForever_FUFDefaults Collection/AddOns/DevilForever_Skin_Nameplates` → `checked=27 failed=0`
+- `<scratch>/cx477.d2Y2/venv/bin/python Review/0.1.4/tests/run.py --output <scratch>/fix2.45Ko/codex` → `PASS suites=8/8 expected_counted_cases=195`
+- line endings vs HEAD: CRLF files all-CRLF (Commands, Grid2, PitBull4, Presets, Profiles, FUFDefaults, nameplate TOC); package notes 69/75 CRLF → 70/76 (one added line, CRLF like its neighbour); LF files LF.
+
+### Tests (firststart party cases, 7)
+fresh PitBull4 both load orders → Grid2 party + groups off + record · fresh FUF → Grid2 untouched at login, FUF commands after the delay, Grid2 only after read-back · R1: /reload before the FUF step → next session reconciles to Grid2 only; FUF not ready → Grid2 untouched, pending · R2: no record → nothing (Hero, Alt); Hero `/dfp party grid2` → Alt reconciled at login; `unitframes` → Hero reconciled at login · command with FUF: Grid2 after FUF stored; not ready → not applied line; no handler → refused, no record · combat refusal (nothing written), FUF auto step waits for combat end, both unit addons loaded → nothing + command refused, help, unknown word · Grid2 global.defaultProfileName used.
+
+### Decision Queue (fix 2)
+15. FUF confirmation = FUF's saved unit profile (Default/active) reads the value 1 s after the command (FUF saves 0.5 s after a change); a slower save gives "pending" and a retry at the next login (Grid2 stays behind, never ahead).
+16. Unit-addon "loads later" uses C_AddOns.GetAddOnEnableState(folder, UnitName("player")) > 0; where the client lacks it, settle happens at the first point both are loaded (unverified in the Forever client).
+17. A record follows the unit-frame profile name; switching PitBull4/FUF profile gives that profile's own record (none → unchanged).

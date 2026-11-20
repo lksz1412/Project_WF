@@ -23,5 +23,6 @@ Presets\uhd.lua
 # Preset files (Presets/<name>.lua, each calling Presets:Register) go below this line.
 Defaults\SexyMap.lua
 Spec.lua
+Party.lua
 Commands.lua
 API.lua

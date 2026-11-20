@@ -3,8 +3,9 @@
 -- FUF's own command handler SlashCmdList.FOREVERUNITFRAMES (the documented
 -- "/fuf raid off", FUF Core/Commands.lua). FUF's raid profile is per character
 -- (ForeverUnitFramesDB.raid[<Name-Realm>]); FUF's party frames live in the
--- account-wide unit profile and are not touched. FUF's saved variables are only
--- read here, never written.
+-- account-wide unit profile and are not touched here (who draws the party is
+-- !DevilForever_Core's Party.lua). FUF's saved variables are only read here,
+-- never written.
 --
 -- Runs DELAY seconds after the first PLAYER_ENTERING_WORLD of a session (after
 -- FUF's 15 s save hold on a fresh install), out of combat (a combat start

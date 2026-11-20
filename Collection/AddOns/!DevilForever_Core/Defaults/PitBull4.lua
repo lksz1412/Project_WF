@@ -37,7 +37,8 @@ local targets = {
       class_order = {"WARRIOR", "PALADIN", "PRIEST", "SHAMAN", "DRUID", "ROGUE", "MAGE", "WARLOCK", "HUNTER"},
       frame_snap = false,
       group_anchors_updated = true,
-      -- party only (PitBull4 default show_when); raid frames are Grid2 (Phase 9)
+      -- party only (PitBull4 default show_when); raid frames are Grid2. Party.lua switches these
+      -- groups off when Grid2 takes the party (both profiles new, or /dfp party grid2)
       groups = {
         ["파티"] = {
           enabled = true,

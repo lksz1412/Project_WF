@@ -5,13 +5,16 @@
 -- Presets:Register({name, screen = {width, height}|nil, uiScale = number|nil,
 --   edits = {[frameKey] = {[field] = value}},
 --   fragments = {{folder, savedVariable, section = "root"|"global"|"profile",
---     profile = token|nil, namespace = name|nil, addonVersion = string,
---     version = integer >= 1, values = table}}})
+--     profile = token|nil, namespace = name|nil, profileKey = string|nil,
+--     addonVersion = string, version = integer >= 1, values = table}}})
 -- Each edit value must pass Edit:Validate on a registered frame key; each
 -- fragment must name a registered folder and one of its saved variables
 -- (Core's own excluded). Bad values and fragments are dropped and logged.
 -- Returns the number of edit values and fragments kept. Registering a name
 -- again replaces the earlier definition.
+-- Presets:AddFragment(name, fragment) appends one fragment (same rules) to the
+-- registered preset `name`, for a fragment computed by another file loaded
+-- after the preset files. Returns true, or false, reason (logged).
 -- profile tokens (section "profile"): "$char" (default), "$class",
 -- "$className", "$realm" or a literal name; the profile <SV>.profileKeys names
 -- for this character wins over the token.
@@ -49,6 +52,15 @@
 -- profile) or a value of the wrong type skips the fragment.
 -- targetKey: "<SV>[/<namespace>]@<section>[:<profile>][@char:<character key>]"
 -- (the character part for character-scope saved variables).
+-- profileKey (section "root" only): the fragment belongs to the table at
+-- <SV>[profileKey] (an addon's per-character profile in a plain saved
+-- variable). Fresh then means <SV>[profileKey] was nil at the addon's
+-- ADDON_LOADED (Profiles:KeyWasAbsent); targetKey "<SV>@root:<profileKey>".
+-- It is written at the next PLAYER_ENTERING_WORLD, in both modes, after the
+-- addon has made the profile, and only by merging: a value goes in where its
+-- parent table exists, a table is never created, a non-table stored at
+-- profileKey or on the way (e.g. a "global" profile choice) is never
+-- replaced; a profile that is not a table skips the fragment.
 
 local _, Core = ...
 
@@ -112,6 +124,9 @@ local function fragmentProblem(f)
   if f.namespace ~= nil and (f.section ~= "profile" or type(f.namespace) ~= "string" or f.namespace == "") then
     return "namespace only with section profile"
   end
+  if f.profileKey ~= nil and (f.section ~= "root" or type(f.profileKey) ~= "string" or f.profileKey == "") then
+    return "profileKey only with section root"
+  end
   if type(f.addonVersion) ~= "string" or f.addonVersion == "" then return "addonVersion must be a string" end
   if type(f.version) ~= "number" or f.version < 1 or floor(f.version) ~= f.version then
     return "version must be an integer >= 1"
@@ -156,12 +171,25 @@ function Presets:Register(def)
       Core:Log("skip", subject, "fragment " .. i .. ": " .. problem)
     else
       keep.fragments[#keep.fragments + 1] = Core.CopyTable(f)
+      if f.profileKey then Core.Profiles:WatchKey(f.savedVariable, f.profileKey) end
       kept = kept + 1
     end
   end
   if defs[name] then Core:Log("info", subject, "registered again; previous definition replaced") end
   defs[name] = keep
   return kept
+end
+
+function Presets:AddFragment(name, fragment)
+  local def = type(name) == "string" and defs[name]
+  local problem = not def and "preset is not registered" or fragmentProblem(fragment)
+  if problem then
+    Core:Log("skip", "Presets:" .. tostring(name), "added fragment: " .. problem)
+    return false, problem
+  end
+  def.fragments[#def.fragments + 1] = Core.CopyTable(fragment)
+  if fragment.profileKey then Core.Profiles:WatchKey(fragment.savedVariable, fragment.profileKey) end
+  return true
 end
 
 function Presets:IsRegistered(name) return defs[name] ~= nil end
@@ -295,7 +323,8 @@ local function locate(f, keys, look)
     profile = type(entry) == "string" and entry ~= "" and entry or resolveProfile(f.profile, keys)
     if type(profile) ~= "string" or profile == "" then return nil, "profile name could not be resolved" end
   end
-  local key = where .. "@" .. f.section .. (profile and (":" .. profile) or "") .. charPart
+  local key = where .. "@" .. f.section .. (profile and (":" .. profile) or "")
+    .. (f.profileKey and (":" .. f.profileKey) or "") .. charPart
   if look then return key end
   if sv == nil then
     sv = {}
@@ -315,6 +344,29 @@ local function locate(f, keys, look)
   end
   if not tbl then return nil, "a table on the way is of another type" end
   return key, tbl
+end
+
+-- Merges `source` into `target` without creating tables or replacing a
+-- stored non-table: returns values written, values left out.
+local function mergeInto(target, source)
+  local written, left = 0, 0
+  for k, v in pairs(source) do
+    local current = rawget(target, k)
+    if type(v) == "table" then
+      if type(current) == "table" then
+        local w, l = mergeInto(current, v)
+        written, left = written + w, left + l
+      else
+        left = left + 1
+      end
+    elseif current ~= nil and type(current) == "table" then
+      left = left + 1
+    else
+      rawset(target, k, v)
+      written = written + 1
+    end
+  end
+  return written, left
 end
 
 local function installedMatches(f)
@@ -351,6 +403,17 @@ local function writeFragment(presetName, index, f, keys, mode)
   end
   local ok, why = installedMatches(f)
   if not ok then return record(presetName, index, "skipped", why) end
+  if f.profileKey then
+    local key = locate(f, keys, true)
+    local profile = type(sv) == "table" and rawget(sv, f.profileKey)
+    if type(profile) ~= "table" then
+      return record(presetName, index, "skipped", "profile " .. f.profileKey .. " is "
+        .. (profile and ("a " .. type(profile) .. " (kept)") or "not made by the addon"), key)
+    end
+    local written, left = mergeInto(profile, f.values)
+    Core:DBTable("preset", "fragments", presetName)[key] = f.version
+    return record(presetName, index, "written", mode .. ": " .. written .. " values, " .. left .. " left out", key)
+  end
   local key, tbl = locate(f, keys)
   if not key then return record(presetName, index, "skipped", tbl) end
   local written = Core.WriteOver(tbl, f.values)
@@ -391,20 +454,28 @@ local function onAddonLoaded(folder)
         and (f.section == "profile" or (reg and reg.scope == "character")) then
       record(presetName, index, "skipped", "character not known at load — /dfp preset " .. presetName
         .. " again after login")
+    elseif mode == "requested" and f.profileKey then
+      waitingWorld[#waitingWorld + 1] = {presetName, index, f, mode}
     elseif mode == "requested" then
       writeFragment(presetName, index, f, keys, mode)
     else
       local key = locate(f, keys, true)
       local recorded = key and recordedVersion(presetName, key)
+      local fresh
+      if f.profileKey then
+        fresh = Core.Profiles:KeyWasAbsent(f.savedVariable, f.profileKey) == true
+      else
+        fresh = Core.Profiles:WasFresh(f.savedVariable) == true
+      end
       if not key then
         record(presetName, index, "skipped", "profile name could not be resolved")
       elseif type(recorded) == "number" and recorded >= f.version then
         fragmentState[presetName .. "|" .. index] = {state = "already", key = key}
-      elseif Core.Profiles:WasFresh(f.savedVariable) ~= true then
+      elseif not fresh then
         record(presetName, index, "kept", "existing settings kept — /dfp preset " .. presetName
           .. " applies preset values", key)
       elseif f.section == "root" then
-        waitingWorld[#waitingWorld + 1] = {presetName, index, f}
+        waitingWorld[#waitingWorld + 1] = {presetName, index, f, mode}
       else
         writeFragment(presetName, index, f, keys, mode)
       end
@@ -459,7 +530,7 @@ Core:On("PLAYER_ENTERING_WORLD", function()
   waitingWorld = {}
   local keys = Core.PlayerKeys() or (request and request.keys)
   for _, item in ipairs(due) do
-    if keys then writeFragment(item[1], item[2], item[3], keys, "fresh")
+    if keys then writeFragment(item[1], item[2], item[3], keys, item[4] or "fresh")
     else record(item[1], item[2], "skipped", "player key unknown") end
   end
   if not worldSeen then

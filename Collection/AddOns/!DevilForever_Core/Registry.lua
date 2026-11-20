@@ -1195,13 +1195,7 @@ Core.Registry = {
       phases = {
         14,
       },
-      savedVariables = {
-        {
-          name = "DevilForever_UIReviewDB",
-          scope = "character",
-          split = "common",
-        },
-      },
+      savedVariables = {},
       tocStatus = "matched",
       tocs = {
         "DevilForever_Skin_Nameplates.toc",
