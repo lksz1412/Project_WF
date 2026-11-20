@@ -219,3 +219,33 @@ party_login_reconciles_ownership_not_values (Grid2 "By Group & Role" + "Always" 
 ### Decision Queue (fix 3)
 18. Turning the PitBull4 main party group back on while the record says Grid2 is reverted at the next login (ownership contradiction, intended); to keep it, `/dfp party unitframes`.
 19. To unit frames, a Grid2 window "Always" becomes "Raid" (it would otherwise show an empty window outside raids); only at the switch.
+
+## Fix 4 (re-check 3: audit_log-40b.md "Re-check 3", TRIAGE last line — root-cause switch)
+
+Read: audit_log-40b.md re-check 3 section, TRIAGE last line, Party.lua 120–400 (alignGrid2, notice/confirm/runFUF, settle, events, Set), install notes party line (4 files).
+
+### Impact map
+| Place | Verdict | Reason |
+|---|---|---|
+| Party.lua autoNotice + heldNotice | fix (Q1 root cause) | every automatic write of a session (PitBull4 groups, FUF commands + confirm, Grid2 alignment, the first-install record included) is named in ONE chat line per session: what changed, the record it follows, the opposite `/dfp party` command; a write before the first PLAYER_ENTERING_WORLD is printed at that event; shares the once-per-session flag with the FUF pending line (a session prints at most one of them); Core log lines kept |
+| Party.lua alignGrid2 | fix (m1) | returns the list "<칸|창> old→new" of every changed value (FrameDisplay as "창") |
+| Party.lua settle / confirmFUF | fix together | collect the parts, call autoNotice; FUF confirm line names FUF and the Grid2 values |
+| Party.lua Set grid2Line | fix (m1) | command output lists every changed Grid2 value, window included |
+| Party.lua header | fix together | documents the notice |
+| install notes ×4 party line | fix | applies to new installs too: Grid2 draws party and raid; `/dfp party unitframes` / `grid2` + /reload; applies to all characters on the profile at next login; switching party inside PitBull4/FUF/Grid2 windows is reverted at the next login with one chat line; only that line changed, each file's line endings kept (package notes 70/76 CRLF as after fix 2, Collection note LF) |
+| m2 record outliving a profile | log only | master |
+
+### Commands and verdicts
+- `python3 -I Collection/tests/core/run.py` → `lupa=2.8 cases=108 passed=107 failed=1` (genregistry_output_matches_file)
+- `python3 -I Collection/tests/fufdefaults/run.py` → `lupa=2.8 cases=22 passed=22 failed=0`
+- `python3 -I Collection/tests/firststart/run.py` → `lupa=2.8 cases=22 passed=22 failed=0`
+- `python3 -I Collection/tests/pitbull4/run.py` → `cases=6 passed=5 failed=1` (patch_reproduces_the_copy, as before)
+- `python3 -I Collection/tests/install/verify_diagnostics.py` → exit 0
+- `python3 -I Collection/tools/luacheck.py 'Collection/AddOns/!DevilForever_Core' Collection/AddOns/DevilForever_FUFDefaults Collection/AddOns/DevilForever_Skin_Nameplates` → `checked=27 failed=0`
+- `<scratch>/cx477.d2Y2/venv/bin/python Review/0.1.4/tests/run.py --output <scratch>/fix4.avHh/codex` → `PASS suites=8/8 expected_counted_cases=195`
+
+### Tests added (firststart, 2)
+party_automatic_writes_named_once_per_session (fresh install: one line naming PitBull4 groups off, Grid2 "창 Raid→Grouped", `/dfp party unitframes`; automatic revert of a re-enabled main party group: exactly one line naming it and the record; no write → no line; FUF: one line after the read-back naming FUF and "파티 칸 None→By Group") · party_command_lists_window_change ("파티 칸 By Group→None", "창 Grouped→Raid").
+
+### Decision Queue (fix 4)
+20. The automatic-change line and the FUF pending line share one per-session slot: a session that first prints one does not print the other (both name `/dfp party`).

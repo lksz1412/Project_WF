@@ -399,6 +399,105 @@ def party_grid2_shared_default_profile_used():
     eq(core["has_line"](core["dfp"](s, "party"), "Grid2 Shared: 파티 안 보임"), True, "/dfp party shows it")
 
 
+@case
+def party_login_reconciles_ownership_not_values():
+    first = party_session(["Grid2", "PitBull4"])  # fresh install: record grid2
+    saved = carry(first)
+    lay = saved["Grid2DB"]["namespaces"]["Grid2Layout"]["profiles"]["Hero - Realm"]
+    lay["layouts"]["party"], lay["FrameDisplay"] = "By Group & Role", "Always"  # user's choices in Grid2
+    saved["PitBull4DB"]["profiles"]["Default"]["groups"]["파티원 소환수"]["enabled"] = True  # user re-enabled party pets
+    s = party_session(["Grid2", "PitBull4"], saved=saved)
+    eq((s.sv("Grid2DB"), s.sv("PitBull4DB")), (saved["Grid2DB"], saved["PitBull4DB"]),
+       "Grid2 layout, window and PitBull4 party pets kept: ownership unchanged")
+    # The main party group back on while the record says Grid2 is an ownership contradiction: reconciled.
+    again = carry(s)
+    again["PitBull4DB"]["profiles"]["Default"]["groups"]["파티"]["enabled"] = True
+    r = party_session(["Grid2", "PitBull4"], saved=again)
+    eq(pb4_enabled(r), PB4_OFF, "main party group on contradicts the record: party groups off together")
+    eq(r.sv("Grid2DB"), again["Grid2DB"], "Grid2 already shows party: its user layout kept")
+
+
+@case
+def party_command_cancels_pending_fuf_step():
+    s = party_session(["ForeverUnitFrames", "Grid2"])
+    eq(party_state(s)["state"], "fuf-pending", "premise: automatic FUF step waiting")
+    lines = core["dfp"](s, "party unitframes")
+    eq(core["has_line"](lines, "파티 이미 켜짐"), True, "FUF already draws the party")
+    run_timers(s)
+    run_timers(s)
+    eq(fuf_calls(s), [], "the pending automatic step did not run")
+    eq((grid2_party(s), party_record(s)), (UNIT_PARTY, {"ForeverUnitFrames/Default": "unitframes"}), "command kept")
+
+
+@case
+def party_pending_notice_once_per_session():
+    first = party_session(["ForeverUnitFrames", "Grid2"], ready=False)
+    run_timers(first)
+    run_timers(first)
+    notice = [l for l in prints(first) if "기록과 아직 다름" in l]
+    eq(len(notice), 1, "one chat line while FUF stays pending")
+    eq("/dfp party grid2" in notice[0], True, "says what to do")
+    s = party_session(["ForeverUnitFrames", "Grid2"], saved=carry(first), ready=False)
+    s.combat(True)
+    run_timers(s)
+    s.combat(False)
+    run_timers(s)
+    run_timers(s)
+    eq(len([l for l in prints(s) if "기록과 아직 다름" in l]), 1, "next session: one line again")
+
+
+@case
+def party_waits_for_unit_addon_via_legacy_enable_state():
+    s = Session(registry="generated", extra_files=())
+    s.lua.execute(PARTY_STUBS)
+    s.lua.execute("C_AddOns.GetAddOnEnableState = nil; TEST_legacy = {}; "
+                  "function GetAddOnEnableState(character, name) TEST_legacy[#TEST_legacy + 1] = character .. '|' .. name; "
+                  "return (name == 'PitBull4' or name == 'Grid2') and 2 or 0 end")
+    s.load_addon(ADDON)
+    s.load_addon("Grid2")
+    eq(party_record(s), {}, "Grid2 loaded, PitBull4 enabled but not loaded yet: waits")
+    s.load_addon("PitBull4")
+    s.fire("PLAYER_LOGIN")
+    eq(party_record(s), {"PitBull4/Default": "grid2"}, "settled once PitBull4 loaded")
+    eq("Hero|PitBull4" in list(core["to_py"](s.g.TEST_legacy).values()), True, "global API asked (character, name)")
+
+
+def auto_lines(s):
+    return [l for l in prints(s) if l.startswith("[DF 설정] 파티 프레임:")]
+
+
+@case
+def party_automatic_writes_named_once_per_session():
+    first = party_session(["Grid2", "PitBull4"])  # fresh install: groups off + Grid2 aligned
+    lines = auto_lines(first)
+    eq(len(lines), 1, "fresh install: one line for all automatic writes")
+    eq(all(p in lines[0] for p in ("PitBull4 Default 파티 그룹 끔", "창 Raid→Grouped", "/dfp party unitframes")), True,
+       "names the PitBull4 groups, the Grid2 window and the command: " + lines[0])
+    again = carry(first)
+    again["PitBull4DB"]["profiles"]["Default"]["groups"]["파티"]["enabled"] = True  # user turned it back on
+    r = party_session(["Grid2", "PitBull4"], saved=again)
+    lines = auto_lines(r)
+    eq((len(lines), "PitBull4 Default 파티 그룹 끔" in lines[0], "PitBull4/Default" in lines[0]), (1, True, True),
+       "automatic revert: exactly one line naming it and the record")
+    quiet = party_session(["Grid2", "PitBull4"], saved=carry(r))
+    eq(auto_lines(quiet), [], "nothing written: no line")
+    fuf = party_session(["ForeverUnitFrames", "Grid2"])
+    run_timers(fuf)
+    run_timers(fuf)
+    lines = auto_lines(fuf)
+    eq((len(lines), "Forever Unit Frames 파티 끔" in lines[0], "파티 칸 None→By Group" in lines[0]), (1, True, True),
+       "FUF step: one line after the read-back, Grid2 values named")
+
+
+@case
+def party_command_lists_window_change():
+    old = party_session(["Grid2", "PitBull4"])
+    s = party_session(["Grid2", "PitBull4"], saved=carry(old))
+    lines = core["dfp"](s, "party unitframes")
+    eq(core["has_line"](lines, "Grid2 Hero - Realm: 파티 안 보임", "파티 칸 By Group→None", "창 Grouped→Raid"), True,
+       "every changed Grid2 value, window included: %r" % lines)
+
+
 GRID2_OPTIONS = os.path.join(ADDONS, "Grid2Options")
 
 

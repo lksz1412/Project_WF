@@ -27,3 +27,8 @@ Master verified: FUFDefaults.lua:126-129, Defaults/SexyMap.lua:166-167, Presets.
 - N1, m1, m2, m4 fixed (repro rc3.WbwX/exp.py).
 - Q1 (middle) reverting a record contradiction is silent: Party.lua:352-354 PitBull4 main party reverted with logLine only; FUF re-send silent (confirmFUF prints only with say, :279-283); install notes present `/dfp party` as an upgrade-only line and do not tell new installs how to switch back or that in-addon changes revert.
 - m1 DQ19 Always→Raid reasonable, but also hides a Grid2 solo layout; command output does not mention the window change. m2 record outlives profile (log only).
+
+## Re-check 4 (same B) — 중대 0 · 중간 0 · 경미 1
+- Q1 and minor 1 fixed; DQ20 shared notice slot loses no needed notice; line endings preserved.
+- m: Party.lua:276 particle 「Grid2 이 파티를 그림」 → master fixed (word substitution) to 「Grid2 가 / 유닛 프레임이 파티를 그림」; firststart 22/22, luacheck 0 fail after the fix.
+Trend (critical+middle): 4 → 2 → 1 → 1 (root-cause switch) → 0.
