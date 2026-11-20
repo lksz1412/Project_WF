@@ -184,3 +184,38 @@ fresh PitBull4 both load orders → Grid2 party + groups off + record · fresh F
 15. FUF confirmation = FUF's saved unit profile (Default/active) reads the value 1 s after the command (FUF saves 0.5 s after a change); a slower save gives "pending" and a retry at the next login (Grid2 stays behind, never ahead).
 16. Unit-addon "loads later" uses C_AddOns.GetAddOnEnableState(folder, UnitName("player")) > 0; where the client lacks it, settle happens at the first point both are loaded (unverified in the Forever client).
 17. A record follows the unit-frame profile name; switching PitBull4/FUF profile gives that profile's own record (none → unchanged).
+
+## Fix 3 (re-check 2: audit_log-40b.md "Re-check 2", TRIAGE last line; base 91739127)
+
+Rule-file / input re-read after the container restart: audit_log-40b.md re-check 2 section, TRIAGE last line, Party.lua 1–420 (full, current), PitBull4/Compat.lua 100–118, firststart/run.py party section.
+
+### Impact map
+| Place | Verdict | Reason |
+|---|---|---|
+| Party.lua writeGrid2 → alignGrid2 | fix (N1) | acts only when Grid2's ownership (shows party) contradicts the record; to Grid2: "None" party/arena → "By Group", window "Raid"/"Never" → "Grouped", other values kept; to unit frames: party/arena "None", window "Grouped"/"Always" → "Raid" (my choice for "Always": otherwise an empty window shows outside raids) |
+| Party.lua pb4Shows | fix (N1) | ownership = main party group (unit_group "party") on; on a contradiction all party groups are switched together, never otherwise |
+| Party.lua settle / runFUF / confirmFUF | fix (N1, m2) | FUF re-sent only on a contradiction (unchanged test); one chat line per session while FUF stays pending (notePending) |
+| Party.lua Set | fix (m1) | cancels the session's pending automatic FUF step (fufDue = nil, epoch + 1; an older confirm stops); unit side switched only on a contradiction; Grid2 line reports shows/not and values changed |
+| Party.lua comingLater | fix (m4) | C_AddOns.GetAddOnEnableState(name, character), else GetAddOnEnableState(character, name), as PitBull4 Compat.lua:107–117 |
+| Party.lua header | fix together | describes ownership-only reconcile |
+| GRID2 value table | removed | no exact values any more |
+| m3 record outliving a profile | log only | master |
+| Commands.lua, Defaults, notes | check only | unchanged behaviour of `/dfp party` text |
+
+### Commands and verdicts
+- `python3 -I Collection/tests/core/run.py` → `lupa=2.8 cases=108 passed=107 failed=1` (genregistry_output_matches_file)
+- `python3 -I Collection/tests/fufdefaults/run.py` → `lupa=2.8 cases=22 passed=22 failed=0`
+- `python3 -I Collection/tests/firststart/run.py` → `lupa=2.8 cases=20 passed=20 failed=0`
+- same suite against `git archive HEAD` (fix-2 sources) → 4 FAIL (the four new cases) — the new tests detect the fixed defects
+- `python3 -I Collection/tests/pitbull4/run.py` → `cases=6 passed=5 failed=1` (patch_reproduces_the_copy, as before)
+- `python3 -I Collection/tests/install/verify_diagnostics.py` → exit 0
+- `python3 -I Collection/tools/luacheck.py 'Collection/AddOns/!DevilForever_Core' Collection/AddOns/DevilForever_FUFDefaults Collection/AddOns/DevilForever_Skin_Nameplates` → `checked=27 failed=0`
+- `<scratch>/cx477.d2Y2/venv/bin/python Review/0.1.4/tests/run.py --output <scratch>/fix3.3R06/codex` → `PASS suites=8/8 expected_counted_cases=195`
+- Party.lua LF as in 91739127.
+
+### Tests added (firststart, 4)
+party_login_reconciles_ownership_not_values (Grid2 "By Group & Role" + "Always" and PitBull4 party pets on → next login unchanged; main party group turned back on under record grid2 → reconciled, intended: that is an ownership contradiction; Grid2's user layout kept) · party_command_cancels_pending_fuf_step · party_pending_notice_once_per_session (two sessions, one line each, combat in between) · party_waits_for_unit_addon_via_legacy_enable_state.
+
+### Decision Queue (fix 3)
+18. Turning the PitBull4 main party group back on while the record says Grid2 is reverted at the next login (ownership contradiction, intended); to keep it, `/dfp party unitframes`.
+19. To unit frames, a Grid2 window "Always" becomes "Raid" (it would otherwise show an empty window outside raids); only at the switch.

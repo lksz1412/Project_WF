@@ -22,3 +22,8 @@ Master verified: FUFDefaults.lua:126-129, Defaults/SexyMap.lua:166-167, Presets.
 - m2 FUF never confirmed → retried every login with no user notice (:270-275).
 - m3 record outlives deleted/renamed profile; PitBull4 recreated profile may give two sets for one session.
 - m4 comingLater uses only C_AddOns.GetAddOnEnableState (:60-63); PitBull4 Compat.lua:107-117 falls back to global GetAddOnEnableState.
+
+## Re-check 3 (same B) — 중대 0 · 중간 1 · 경미 2 (was 0·1·4)
+- N1, m1, m2, m4 fixed (repro rc3.WbwX/exp.py).
+- Q1 (middle) reverting a record contradiction is silent: Party.lua:352-354 PitBull4 main party reverted with logLine only; FUF re-send silent (confirmFUF prints only with say, :279-283); install notes present `/dfp party` as an upgrade-only line and do not tell new installs how to switch back or that in-addon changes revert.
+- m1 DQ19 Always→Raid reasonable, but also hides a Grid2 solo layout; command output does not mention the window change. m2 record outlives profile (log only).
