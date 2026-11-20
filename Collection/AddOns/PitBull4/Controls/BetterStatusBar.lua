@@ -1362,7 +1362,10 @@ function LiveStatusBar:SetRawValue(current, maximum)
 end
 
 function LiveStatusBar:SetTexture(texture)
-    self.texture_path = texture or [[Interface\TargetingFrame\UI-StatusBar]]
+    texture = texture or [[Interface\TargetingFrame\UI-StatusBar]]
+    if self.texture_set and self.texture_path == texture and self.atlas == nil then return end
+    self.texture_set = true
+    self.texture_path = texture
     self.atlas = nil
     self.barTexture:SetTexture(self.texture_path)
     self.public_bar:SetTexture(self.texture_path)
@@ -1390,6 +1393,7 @@ function LiveStatusBar:SetDurationValue(duration, channeling)
     self.native_bg:Show()
 end
 function LiveStatusBar:SetAtlas(atlas)
+    if atlas == nil and self.atlas == nil and self.texture_set then return end
     self.atlas = atlas or nil
     self.public_bar:SetAtlas(atlas)
     if atlas then

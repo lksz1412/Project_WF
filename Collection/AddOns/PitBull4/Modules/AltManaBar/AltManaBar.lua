@@ -40,31 +40,22 @@ local type = _G.type
 local pcall = _G.pcall
 local format = string.format
 
+-- A readable plain number (NaN excluded) or nil.
 local function safe_plain_number(value)
     if not IsValueAccessible(value) then
         return nil
     end
 
     local value_type = type(value)
-    if value_type == "number" then
-        local ok, numeric_string = pcall(format, "%.17g", value)
-        if not ok or type(numeric_string) ~= "string" then
-            return nil
-        end
-        return tonumber(numeric_string)
-    elseif value_type == "string" then
-        local parsed = tonumber(value)
-        if parsed == nil then
-            return nil
-        end
-        local ok, numeric_string = pcall(format, "%.17g", parsed)
-        if not ok or type(numeric_string) ~= "string" then
-            return nil
-        end
-        return tonumber(numeric_string)
+    if value_type == "string" then
+        value = tonumber(value)
+    elseif value_type ~= "number" then
+        return nil
     end
-
-    return nil
+    if value == nil or value ~= value then
+        return nil
+    end
+    return value
 end
 
 local function refresh_units(self)
@@ -102,10 +93,11 @@ local function should_show_alt_mana(self, frame, unit, primary_power)
 end
 
 function PitBull4_AltManaBar:OnEnable()
-    self:RegisterEvent("UNIT_POWER_UPDATE", "UNIT_POWER_FREQUENT")
-    self:RegisterEvent("UNIT_POWER_FREQUENT")
-    self:RegisterEvent("UNIT_MAXPOWER", "UNIT_POWER_FREQUENT")
-    self:RegisterEvent("UNIT_DISPLAYPOWER", "RefreshEvent")
+    -- Only the player's (and vehicle's) mana is shown; UNIT_POWER_FREQUENT
+    -- covers every change UNIT_POWER_UPDATE reports.
+    self:RegisterUnitEvent("UNIT_POWER_FREQUENT", nil, "player", "vehicle")
+    self:RegisterUnitEvent("UNIT_MAXPOWER", "UNIT_POWER_FREQUENT", "player", "vehicle")
+    self:RegisterUnitEvent("UNIT_DISPLAYPOWER", "RefreshEvent", "player", "vehicle")
     self:RegisterEvent("PLAYER_ENTERING_WORLD", "RefreshEvent")
     self:RegisterEvent("UPDATE_SHAPESHIFT_FORM", "RefreshEvent")
     self:RegisterEvent("UPDATE_SHAPESHIFT_FORMS", "RefreshEvent")
@@ -235,6 +227,13 @@ function PitBull4_AltManaBar:UNIT_POWER_FREQUENT(event, unit, power_type)
 
     if (event == "UNIT_POWER_UPDATE" or event == "UNIT_POWER_FREQUENT" or event == "UNIT_MAXPOWER")
         and power_type and power_type ~= "MANA" then
+        return
+    end
+
+    -- With mana as the primary power the bar is hidden (should_show_alt_mana);
+    -- a change of the primary power comes through UNIT_DISPLAYPOWER.
+    local primary_power = UnitPowerType("player")
+    if IsValueAccessible(primary_power) and primary_power == SPELL_POWER_MANA then
         return
     end
 

@@ -53,13 +53,15 @@ local my_units = {
 -- table of dispel types we can dispel
 local can_dispel = PitBull4_Aura.can_dispel.player
 
+local function to_boolean(value) return value and true or false end
+local function to_number(value) return value + 0 end
+local function is_equal(a, b) return a == b end
+
 local function safe_boolean(value)
 	if value == nil then
 		return nil
 	end
-	local ok, result = pcall(function()
-		return value and true or false
-	end)
+	local ok, result = pcall(to_boolean, value)
 	if ok then
 		return result
 	end
@@ -70,9 +72,7 @@ local function safe_number(value)
 	if value == nil then
 		return nil
 	end
-	local ok, result = pcall(function()
-		return value + 0
-	end)
+	local ok, result = pcall(to_number, value)
 	if ok then
 		return result
 	end
@@ -83,9 +83,7 @@ local function safe_string(value)
 	if value == nil then
 		return nil
 	end
-	local ok, result = pcall(function()
-		return tostring(value)
-	end)
+	local ok, result = pcall(tostring, value)
 	if ok then
 		return result
 	end
@@ -105,17 +103,13 @@ local function safe_dispel_name(value)
 		return nil
 	end
 
-	local ok_empty, is_empty = pcall(function()
-		return value == ""
-	end)
+	local ok_empty, is_empty = pcall(is_equal, value, "")
 	if ok_empty and is_empty then
 		return "Enrage"
 	end
 
 	for dispel_type in pairs(KNOWN_DISPEL_TYPES) do
-		local ok, matches = pcall(function()
-			return value == dispel_type
-		end)
+		local ok, matches = pcall(is_equal, value, dispel_type)
 		if ok and matches then
 			return dispel_type
 		end
@@ -132,6 +126,14 @@ local function is_aura_mine(entry)
 		if SafeBoolean(UnitIsUnit(source, unit), false) then return true end
 	end
 	return false
+end
+
+-- Ownership of an aura: kept on entries normalized from the client
+-- (normalize_aura_entry), computed for sample and weapon entries.
+local function aura_is_mine(entry)
+	local mine = entry.pb4_is_mine
+	if mine == nil then mine = is_aura_mine(entry) end
+	return mine
 end
 
 local function set_safe_aura_texture(texture, aura)
@@ -178,6 +180,7 @@ local function normalize_aura_entry(entry, unit, id, filter, set_consolidate)
 	entry.isHealerRoleAura = safe_boolean(entry.isHealerRoleAura)
 	entry.sourceUnit = PitBull4.Utils.SafeString(entry.sourceUnit)
 	entry.dispelName = safe_dispel_name(entry.dispelName)
+	entry.pb4_is_mine = is_aura_mine(entry)
 
 	if set_consolidate then
 		entry.shouldConsolidate = SafeBoolean(entry.shouldConsolidate, false)
@@ -290,6 +293,7 @@ local function get_aura_list_sample(list, unit, max, db, is_buff, is_player)
 		entry.canApplyAura = false
 		entry.isBossAura = false
 		entry.isFromPlayerOrPlayerPet = entry.sourceUnit ~= nil
+		entry.pb4_is_mine = nil
 		entry.nameplateShowAll = false
 		entry.timeMod = 1
 		entry.points = {}
@@ -407,6 +411,7 @@ local function set_weapon_entry(list, is_enchant, time_left, expiration_time, co
 	entry.canApplyAura = false
 	entry.isBossAura = false
 	entry.isFromPlayerOrPlayerPet = true
+	entry.pb4_is_mine = nil
 	entry.nameplateShowAll = false
 	entry.timeMod = 1
 	entry.points = {}
@@ -443,7 +448,7 @@ local function aura_sort(a, b)
 	end
 
 	-- show your own auras first
-	local a_mine, b_mine = is_aura_mine(a), is_aura_mine(b)
+	local a_mine, b_mine = aura_is_mine(a), aura_is_mine(b)
 	if a_mine ~= b_mine then
 		if a_mine then
 			return true
@@ -535,7 +540,7 @@ local function set_aura(frame, db, aura_controls, aura, i, is_friend)
 		aura_controls[i] = control
 	end
 
-	local is_mine = is_aura_mine(aura)
+	local is_mine = aura_is_mine(aura)
 	local who = is_mine and "my" or "other"
 	-- No way to know who applied a weapon buff so we have a separate
 	-- category for them.
@@ -545,7 +550,7 @@ local function set_aura(frame, db, aura_controls, aura, i, is_friend)
 	local layout = aura.isHelpful and db.layout.buff or db.layout.debuff
 	control:SetFrameLevel(frame:GetFrameLevel() + layout.frame_level)
 
-	local unchanged = aura.index == control.id and aura.expirationTime == control.expiration_time and aura.spellId == control.spell_id and aura.weaponEnchantSlot == control.slot and aura.isHelpful == control.is_buff and is_aura_mine(aura) == control.caster_is_mine and aura.applications == control.count and aura.duration == control.duration and aura.timeMod == control.time_mod
+	local unchanged = aura.index == control.id and aura.expirationTime == control.expiration_time and aura.spellId == control.spell_id and aura.weaponEnchantSlot == control.slot and aura.isHelpful == control.is_buff and is_mine == control.caster_is_mine and aura.applications == control.count and aura.duration == control.duration and aura.timeMod == control.time_mod
 
 	control.id = aura.index
 	control.is_mine = is_mine

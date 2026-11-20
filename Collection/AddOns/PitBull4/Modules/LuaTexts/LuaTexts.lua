@@ -1357,11 +1357,17 @@ function PitBull4_LuaTexts:OnEvent(event, unit, ...)
 		update_cast_data(event, unit, ...)
 	end
 
+	-- SafeGUID gives plain strings (or nil), so the loop compares them with ==.
+	local pet_guid = pet and SafeGUID(UnitGUID("pet")) or nil
 	for font_string in pairs(event_entry) do
-		local fs_guid = SafeGUID(fs_frame_guid(font_string))
-		local pet_guid = SafeGUID(UnitGUID("pet"))
-		if all or (by_unit and safe_guid_equal(fs_guid, guid)) or (player and safe_guid_equal(fs_guid, player_guid)) or (pet and safe_guid_equal(fs_guid, pet_guid)) then
+		if all then
 			update_text(font_string,event)
+		else
+			local fs_guid = SafeGUID(fs_frame_guid(font_string))
+			if fs_guid ~= nil and ((by_unit and fs_guid == guid) or (player and fs_guid == player_guid)
+				or (pet and fs_guid == pet_guid)) then
+				update_text(font_string,event)
+			end
 		end
 	end
 end

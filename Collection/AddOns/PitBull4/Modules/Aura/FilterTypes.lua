@@ -21,13 +21,13 @@ end
 local filter_types = {}
 PitBull4_Aura.filter_types = filter_types
 
+local function to_boolean(value) return value and true or false end
+
 local function safe_boolean(value)
 	if value == nil then
 		return nil
 	end
-	local ok, result = pcall(function()
-		return value and true or false
-	end)
+	local ok, result = pcall(to_boolean, value)
 	if ok then
 		return result
 	end
@@ -38,9 +38,7 @@ local function safe_string(value)
 	if value == nil then
 		return nil
 	end
-	local ok, result = pcall(function()
-		return tostring(value)
-	end)
+	local ok, result = pcall(tostring, value)
 	if ok then
 		return result
 	end

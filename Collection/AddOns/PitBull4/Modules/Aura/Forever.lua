@@ -9,6 +9,12 @@ local Aura = PitBull4:GetModule("Aura")
 local states = setmetatable({}, {__mode = "k"})
 local unavailable = false
 
+-- Raised whenever aura settings, the profile, fonts or the restriction state
+-- may have changed; containers and button styles are rebuilt only then (or
+-- when their unit, size or frame geometry changes).
+local settings_version = 1
+local function settings_changed() settings_version = settings_version + 1 end
+
 local control_points = {
 	TOPLEFT_TOP = "BOTTOMLEFT", TOPRIGHT_TOP = "BOTTOMRIGHT",
 	TOPLEFT_LEFT = "TOPRIGHT", TOPRIGHT_RIGHT = "TOPLEFT",
@@ -110,6 +116,10 @@ end
 -- protected children may reject styling during combat; retry on the next
 -- layout/restriction update while their native aura updates keep running.
 local function style_signature(group)
+	if group.signature_version == settings_version and group.signature_size == group.size
+		and group.signature_friendly == group.friendly and group.signature_rule == group.rule then
+		return group.last_signature
+	end
 	local db, rule = group.db, group.rule
 	local parts = {tostring(group.size), tostring(db.zoom_aura),
 		tostring(db.click_through), tostring((group.frame.classification_db or {}).click_through),
@@ -136,7 +146,10 @@ local function style_signature(group)
 			parts[#parts + 1] = tostring(value)
 		end
 	end
-	return table.concat(parts, "\031")
+	group.signature_version, group.signature_size = settings_version, group.size
+	group.signature_friendly, group.signature_rule = group.friendly, group.rule
+	group.last_signature = table.concat(parts, "\031")
+	return group.last_signature
 end
 
 -- 사용자 수정: kind = "buff" | "debuff" (원래는 디버프 전용)
@@ -182,6 +195,7 @@ local function update_group(container, group, mine, db, frame, cfg, vertical, ki
 		end
 		if styled then group.signature = signature end
 	end
+	group.styled_version = group.signature == signature and settings_version or nil
 end
 
 -- 사용자 수정: 버프용 컨테이너를 따로 둠 (전투 중 버프가 사라지던 문제)
@@ -192,6 +206,7 @@ local function clear_native(store, frame)
 	if state then
 		state.container:SetEnabled(false)
 		state.container:Hide()
+		state.applied_version = nil
 	end
 end
 
@@ -250,6 +265,22 @@ update_native = function(self, frame, db, kind, store)
 		container:SetEnabled(false)
 	end
 	local container = state.container
+	-- Everything below depends only on settings, the unit token, the frame's
+	-- geometry and friendliness; the native container follows the unit's auras
+	-- itself. A new unit behind the same token needs one UpdateAllAuras.
+	local friendly = PitBull4.Utils.SafeBoolean(UnitIsFriend("player", unit), false)
+	local guid = PitBull4.Utils.SafeGUID(frame.guid)
+	local frame_width, frame_height, frame_level = frame:GetWidth(), frame:GetHeight(), frame:GetFrameLevel()
+	if state.applied_version == settings_version and state.unit == unit and state.db == db
+		and state.friendly == friendly and state.width == frame_width and state.height == frame_height
+		and state.level == frame_level and state.mine.styled_version == settings_version
+		and state.others.styled_version == settings_version then
+		if guid == nil or guid ~= state.guid then
+			state.guid = guid
+			container:UpdateAllAuras()
+		end
+		return true
+	end
 	local growth, anchor, side = cfg.growth, cfg.anchor, cfg.side
 	local x, y = cfg.offset_x, cfg.offset_y
 	local class = frame.classification_db or {}
@@ -284,13 +315,24 @@ update_native = function(self, frame, db, kind, store)
 	container:SetEnabled(true)
 	-- The unit token can stay 'target' while the underlying target changes.
 	container:UpdateAllAuras()
+	state.applied_version, state.unit, state.db, state.friendly = settings_version, unit, db, friendly
+	state.width, state.height, state.level, state.guid = frame_width, frame_height, frame_level, guid
 	return true
 end
 
 local on_enable = Aura.OnEnable
 function Aura:OnEnable()
 	on_enable(self)
-	PitBull4.Compat.RegisterOptionalEvent(self, "ADDON_RESTRICTION_STATE_CHANGED", "UpdateAll")
+	PitBull4.Compat.RegisterOptionalEvent(self, "ADDON_RESTRICTION_STATE_CHANGED", "ForeverRestrictionChanged")
+	-- One update per combat transition: the deferred one below, after the
+	-- combat state has settled (it switches buffs between native and Lua).
+	self:UnregisterEvent("PLAYER_REGEN_DISABLED")
+	self:UnregisterEvent("PLAYER_REGEN_ENABLED")
+	if not self.forever_config_watch then
+		local registry = LibStub and LibStub("AceConfigRegistry-3.0", true)
+		if registry then registry.RegisterCallback(self, "ConfigTableChange", settings_changed) end
+		self.forever_config_watch = true
+	end
 	-- 사용자 수정: 전투 시작/종료 때 버프를 네이티브 ↔ 기존 방식으로 바꿔 그림
 	if not self.forever_combat_watch then
 		local watch = CreateFrame("Frame")
@@ -301,6 +343,23 @@ function Aura:OnEnable()
 		end)
 		self.forever_combat_watch = watch
 	end
+end
+
+function Aura:ForeverRestrictionChanged()
+	settings_changed()
+	self:UpdateAll()
+end
+
+local on_profile_changed = Aura.OnProfileChanged
+function Aura:OnProfileChanged(...)
+	settings_changed()
+	if on_profile_changed then return on_profile_changed(self, ...) end
+end
+
+local on_media = Aura.LibSharedMedia_Registered
+function Aura:LibSharedMedia_Registered(event, mediatype, ...)
+	if mediatype == "font" then settings_changed() end
+	if on_media then return on_media(self, event, mediatype, ...) end
 end
 
 local on_disable = Aura.OnDisable

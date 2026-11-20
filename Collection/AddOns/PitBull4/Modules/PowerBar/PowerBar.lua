@@ -20,7 +20,16 @@ PitBull4_PowerBar:SetDefaults({
 	use_atlas = false,
 })
 
+-- Frames to redraw at the next OnUpdate: by unit token (matched against each
+-- frame's best unit) and the frames showing that unit at event time.
 local units_to_update = {}
+local frames_to_update = {}
+local function queue_unit(unit)
+	units_to_update[unit] = true
+	for frame in PitBull4:IterateFramesForUnitID(unit) do
+		frames_to_update[frame] = true
+	end
+end
 local type_to_token = {
 	"MANA", "RAGE", "FOCUS", "ENERGY", "CHI",
 	"RUNES", "RUNIC_POWER", "SOUL_SHARDS", "LUNAR_POWER",
@@ -48,7 +57,7 @@ local function to_safe_number(value)
 end
 
 function PitBull4_PowerBar:OnEnable()
-	self:RegisterEvent("UNIT_POWER_UPDATE", "UNIT_POWER_FREQUENT")
+	-- UNIT_POWER_FREQUENT fires on every change UNIT_POWER_UPDATE reports.
 	self:RegisterEvent("UNIT_POWER_FREQUENT")
 	self:RegisterEvent("UNIT_MAXPOWER", "UNIT_POWER_FREQUENT")
 	self:RegisterEvent("UNIT_DISPLAYPOWER")
@@ -56,8 +65,7 @@ function PitBull4_PowerBar:OnEnable()
 	self:RegisterEvent("UNIT_POWER_BAR_SHOW", "UNIT_DISPLAYPOWER")
 	self:RegisterEvent("UNIT_POWER_BAR_HIDE", "UNIT_DISPLAYPOWER")
 	pcall(self.RegisterEvent, self, "UPDATE_SHAPESHIFT_FORM", function()
-		PitBull4_PowerBar:UpdateForUnitID("player")
-		units_to_update.player = true
+		queue_unit("player")
 	end)
 
 	timerFrame:Show()
@@ -67,48 +75,52 @@ function PitBull4_PowerBar:OnDisable()
 	timerFrame:Hide()
 end
 
+-- One redraw per frame per rendered frame, however many power events came.
 timerFrame:SetScript("OnUpdate", function()
-	if next(units_to_update) then
+	if next(units_to_update) or next(frames_to_update) then
 		for frame in PitBull4:IterateFrames() do
 			local unit = frame.best_unit or frame.unit
-			if unit and units_to_update[unit] then
+			if frames_to_update[frame] or (unit and units_to_update[unit]) then
 				PitBull4_PowerBar:Update(frame)
 			end
 		end
 		wipe(units_to_update)
+		wipe(frames_to_update)
 	end
 end)
 
+local function power_value_of(unit, hide_no_mana, hide_no_power)
+	local max = to_safe_number(UnitPowerMax(unit))
+	local power_type = to_safe_number(UnitPowerType(unit))
+
+	if hide_no_mana and power_type ~= 0 then
+		return nil
+	elseif hide_no_power and (not max or max <= 0) then
+		return nil
+	end
+
+	if not max then
+		return nil
+	end
+	if max == 0 then
+		return 0
+	end
+
+	local current = to_safe_number(UnitPower(unit))
+	if not current then
+		return nil
+	end
+	local value = current / max
+	if value < 0 then
+		return 0
+	elseif value > 1 then
+		return 1
+	end
+	return value
+end
+
 local function get_power_value(unit, hide_no_mana, hide_no_power)
-	local ok, result = pcall(function()
-		local max = to_safe_number(UnitPowerMax(unit))
-		local power_type = to_safe_number(UnitPowerType(unit))
-
-		if hide_no_mana and power_type ~= 0 then
-			return nil
-		elseif hide_no_power and (not max or max <= 0) then
-			return nil
-		end
-
-		if not max then
-			return nil
-		end
-		if max == 0 then
-			return 0
-		end
-
-		local current = to_safe_number(UnitPower(unit))
-		if not current then
-			return nil
-		end
-		local value = current / max
-		if value < 0 then
-			return 0
-		elseif value > 1 then
-			return 1
-		end
-		return value
-	end)
+	local ok, result = pcall(power_value_of, unit, hide_no_mana, hide_no_power)
 	if ok then
 		return result
 	end
@@ -237,15 +249,7 @@ end
 
 function PitBull4_PowerBar:UNIT_POWER_FREQUENT(event, unit, power_type)
 	if not unit then return end
-	self:UpdateForUnitID(unit)
-	local _, power_token = UnitPowerType(unit)
-	-- fix units that have a special power type but update as ENERGY
-	if not PowerBarColor[power_token] then
-		power_token = "ENERGY"
-	end
-	if power_token == power_type then
-		units_to_update[unit] = true
-	end
+	queue_unit(unit)
 end
 
 function PitBull4_PowerBar:PLAYER_ENTERING_WORLD()
@@ -256,8 +260,7 @@ function PitBull4_PowerBar:UNIT_DISPLAYPOWER(event, unit)
 	if type(unit) ~= "string" then
 		return
 	end
-	self:UpdateForUnitID(unit)
-	units_to_update[unit] = true
+	queue_unit(unit)
 end
 
 PitBull4_PowerBar:SetLayoutOptionsFunction(function(self)

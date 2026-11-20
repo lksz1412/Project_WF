@@ -48,7 +48,10 @@ PitBull4_HealthBar:SetDefaults({
 local timerFrame = CreateFrame("Frame")
 timerFrame:Hide()
 
+-- Frames to redraw at the next OnUpdate: by unit token (matched against each
+-- frame's best unit) and the frames showing that unit at event time.
 local units_to_update = {}
+local frames_to_update = {}
 
 local function safe_boolean(value, default)
     if not IsValueAccessible(value) then
@@ -152,20 +155,24 @@ local function normalize_ratio_value(raw_current, raw_maximum)
     return clamp_zero_to_one(current / maximum)
 end
 
+local function health_percent_of(unit)
+    return normalize_percent_value(UnitHealthPercent(unit, true))
+end
+
+local function health_ratio_of(unit)
+    return normalize_ratio_value(UnitHealth(unit), UnitHealthMax(unit))
+end
+
 local function get_normalized_health_percent(unit)
     if type(UnitHealthPercent) ~= "function" then
         return nil
     end
 
     if securecallfunction then
-        return securecallfunction(function()
-            return normalize_percent_value(UnitHealthPercent(unit, true))
-        end)
+        return securecallfunction(health_percent_of, unit)
     end
 
-    local ok, normalized = pcall(function()
-        return normalize_percent_value(UnitHealthPercent(unit, true))
-    end)
+    local ok, normalized = pcall(health_percent_of, unit)
     if ok then
         return normalized
     end
@@ -175,14 +182,10 @@ end
 
 local function get_normalized_health_ratio(unit)
     if securecallfunction then
-        return securecallfunction(function()
-            return normalize_ratio_value(UnitHealth(unit), UnitHealthMax(unit))
-        end)
+        return securecallfunction(health_ratio_of, unit)
     end
 
-    local ok, normalized = pcall(function()
-        return normalize_ratio_value(UnitHealth(unit), UnitHealthMax(unit))
-    end)
+    local ok, normalized = pcall(health_ratio_of, unit)
     if ok then
         return normalized
     end
@@ -196,6 +199,9 @@ local function queue_unit_update(unit)
     end
 
     units_to_update[unit] = true
+    for frame in PitBull4:IterateFramesForUnitID(unit) do
+        frames_to_update[frame] = true
+    end
     timerFrame:Show()
 end
 
@@ -218,23 +224,26 @@ end
 function PitBull4_HealthBar:OnDisable()
     timerFrame:Hide()
     wipe(units_to_update)
+    wipe(frames_to_update)
 end
 
+-- One redraw per frame per rendered frame, however many health events came.
 timerFrame:SetScript("OnUpdate", function(self)
     self:Hide()
 
-    if not next(units_to_update) then
+    if not next(units_to_update) and not next(frames_to_update) then
         return
     end
 
     for frame in PitBull4:IterateFrames() do
         local unit = frame.best_unit or frame.unit
-        if unit and units_to_update[unit] then
+        if frames_to_update[frame] or (unit and units_to_update[unit]) then
             PitBull4_HealthBar:Update(frame)
         end
     end
 
     wipe(units_to_update)
+    wipe(frames_to_update)
 end)
 
 local function get_health_value(unit)
@@ -374,12 +383,10 @@ function PitBull4_HealthBar:UNIT_HEALTH(_, unit)
         return
     end
 
-    self:UpdateForUnitID(unit)
     queue_unit_update(unit)
 end
 
 function PitBull4_HealthBar:PLAYER_STATE_CHANGED()
-    self:UpdateForUnitID("player")
     queue_unit_update("player")
 end
 

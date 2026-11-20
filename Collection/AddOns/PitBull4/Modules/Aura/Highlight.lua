@@ -14,13 +14,13 @@ local HighlightThinBorder_path = [[Interface\AddOns\PitBull4\Modules\Aura\Highli
 -- Handle the results table used for tracking the priority of auras to highlight
 local results, pool = {}, {}
 
+local function is_equal(a, b) return a == b end
+
 local function safe_string(value)
 	if value == nil then
 		return nil
 	end
-	local ok, result = pcall(function()
-		return tostring(value)
-	end)
+	local ok, result = pcall(tostring, value)
 	if ok then
 		return result
 	end
@@ -40,17 +40,13 @@ local function safe_dispel_name(value)
 		return nil
 	end
 
-	local ok_empty, is_empty = pcall(function()
-		return value == ""
-	end)
+	local ok_empty, is_empty = pcall(is_equal, value, "")
 	if ok_empty and is_empty then
 		return "Enrage"
 	end
 
 	for dispel_type in pairs(KNOWN_DISPEL_TYPES) do
-		local ok, matches = pcall(function()
-			return value == dispel_type
-		end)
+		local ok, matches = pcall(is_equal, value, dispel_type)
 		if ok and matches then
 			return dispel_type
 		end

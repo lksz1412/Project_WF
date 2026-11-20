@@ -33,6 +33,26 @@ local function getCast(unit)
         channeling = channeling and not empowered, duration = duration }
 end
 
+-- A shown frame has a cast right now (set by GetRawValue on each update).
+local function anyCasting()
+    for frame in PitBull4:IterateFrames() do
+        if frame.forever_cast then return true end
+    end
+    return false
+end
+
+-- The 0.15 s poll runs only while a shown frame casts; it ends with the last cast.
+local function ensureTicker(self)
+    if self.foreverTicker then return end
+    self.foreverTicker = C_Timer.NewTicker(0.15, function()
+        self:UpdateAll()
+        if not anyCasting() and self.foreverTicker then
+            self.foreverTicker:Cancel()
+            self.foreverTicker = nil
+        end
+    end)
+end
+
 function module:OnEnable()
     for _, event in ipairs({"UNIT_SPELLCAST_START", "UNIT_SPELLCAST_STOP", "UNIT_SPELLCAST_DELAYED",
         "UNIT_SPELLCAST_FAILED", "UNIT_SPELLCAST_INTERRUPTED", "UNIT_SPELLCAST_CHANNEL_START",
@@ -42,7 +62,6 @@ function module:OnEnable()
         PitBull4.Compat.RegisterOptionalEvent(self, event, "ForeverCastEvent")
     end
     self:RegisterEvent("PLAYER_ENTERING_WORLD", "UpdateAll")
-    self.foreverTicker = C_Timer.NewTicker(0.15, function() self:UpdateAll() end)
     self:UpdateAll()
 end
 function module:OnDisable()
@@ -83,6 +102,7 @@ function module:UpdateFrame(frame)
     if bar and frame.forever_cast and not frame.force_show and not PitBull4:IsInConfigMode() then
         bar:SetDurationValue(frame.forever_cast.duration, frame.forever_cast.channeling)
     end
+    if frame.forever_cast then ensureTicker(self) end
     return changed
 end
 
