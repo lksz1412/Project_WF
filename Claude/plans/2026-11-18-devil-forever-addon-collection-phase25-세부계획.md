@@ -31,4 +31,4 @@ Inputs needed: `References/codex-verify/phase<ID>/` and `References/codex-appear
 ## Step 41-rev (R126–R127, after Phase 25 close)
 | Sub | Work | Owner | Gate | Status |
 |---|---|---|---|---|
-| 41-rev | Grid2 name text 12/14/18 in the three presets (and survives the first-start template); installer ReleaseCatalog.json 0.1.5 rows generated from the built ZIPs by catalog.py; release ZIP excludes `_deck.tga` where `_deck_reviewed.tga` exists (Composition.lua must not try to load a missing file); rebuild 0.1.5 | A2-2 + B | all suites, verify_archives, build twice identical, catalog matches ZIPs | ⏳ |
+| 41-rev | Grid2 name text 12/14/18 in the three presets (and survives the first-start template); installer ReleaseCatalog.json 0.1.5 rows generated from the built ZIPs by catalog.py; release ZIP excludes `_deck.tga` where `_deck_reviewed.tga` exists (Composition.lua must not try to load a missing file); rebuild 0.1.5 | A2-2 + B | all suites, verify_archives, build twice identical, catalog matches ZIPs | ✅ review 0·0·2 |

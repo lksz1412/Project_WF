@@ -9,8 +9,8 @@ Windows 11 x64 일반 계정용 오프라인 설치기의 구현 기준이다. W
 | 항목 | PitBull4 | FUF |
 |---|---|---|
 | 식별자 | `pitbull4` | `fuf` |
-| 버전·Interface | `0.1.2` · `16001` | `0.1.2` · `16001` |
-| 기본 파일명 | `DevilForever-0.1.2.zip` | `DevilForever-0.1.2-fuf.zip` |
+| 버전·Interface | `0.1.5` · `16001` | `0.1.5` · `16001` |
+| 기본 파일명 | `DevilForever-0.1.5.zip` | `DevilForever-0.1.5-fuf.zip` |
 | 애드온 폴더 수 | 35 | 37 |
 
 정확한 해시·바이트·폴더명은 [카탈로그](ReleaseCatalog.json)의 값으로 빌드 때 고정한다. `one-session` 비교 ZIP은 게임 시험용이며 설치기의 승인 항목에 들어가지 않는다. 세 해상도와 13개 테마의 선택은 게임 안 Core와 개별 애드온에서 한다.

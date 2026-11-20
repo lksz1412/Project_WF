@@ -5,3 +5,8 @@ Counts: 중대 0 · 중간 0 · 경미 3
 - m2 patches.py reapply copies the new upstream with symlinks=True (:300-302) and does not reject links before `patch` (verify rejects via tree_files :110-116).
 - m3 build needs GNU diff/patch (:140, :183) and an extracted Collection/upstream; notes do not state these prerequisites.
 Verified OK: patch verify (5 patches, 22 unmodified), patch tests 4/4 incl. conflict, genregistry --check, exclusion rule (no cross-folder loads), determinism, TinyThreat/ExperienceForever/ProfileManager patches and probes (thirdparty 8/8), PitBull4 LICENSE, versions; DQ1/DQ2 acceptable.
+
+## Step 41-rev review (same B) — 중대 0 · 중간 0 · 경미 2
+- m1 Collection/Installer/Contract.md:12-13 still 0.1.2 (installer reads names from the catalog; doc only) → master replaced 0.1.2 → 0.1.5 on those two lines.
+- m2 verify_archives (0.1.5+) compares the excluded _deck.tga checks against the working-tree Collection/AddOns, so a ZIP from another commit is checked against a non-matching source (log).
+Verified: Composition never requests unshipped files (12 themes × 3 presets reviewed decks, devil own deck), build sibling rule exactly 36 files, Grid2 name indicator per template once per profile, catalog matches ApprovedPackage.cs rules, tamper tests meaningful; C# refusal unverified (no dotnet).

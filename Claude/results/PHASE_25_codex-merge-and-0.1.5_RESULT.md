@@ -47,3 +47,7 @@ References·Codex 기록·Review/0.1.4 영수증은 고치지 않음. Hekili 는
 ## Next
 
 사용자: 릴리스 승인·Codex 한 접속 확인 → 결과로 결함 정정(다음 판).
+
+## Addendum — Step 41-rev (2026-11-20)
+
+Grid2 이름 글자 12/14/18, 설치기 카탈로그를 0.1.5 ZIP 에서 생성, 예비 그림 36개 제외(R127). ZIP 해시가 바뀌었다: 기본판 174149f8…a40e, FUF판 f563aaba…15de(Step 41-rev 이력). 검수 0·0·2. 릴리스는 두 개로 나눠 올린다(R128, Codex).
