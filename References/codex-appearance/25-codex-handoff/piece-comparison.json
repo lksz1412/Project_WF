@@ -1,0 +1,1340 @@
+{
+  "mode": "fixed approved physical size; disjoint independent pieces",
+  "themes": 13,
+  "presets": 3,
+  "inGameMeasured": false,
+  "results": {
+    "fhd": {
+      "devil": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/devil/Composition/fhd_top.tga",
+          "sha256": "7e5fc9452028fc99f3d538138729ce5f0bf3b4df7378c9aca64980e5e8a87bf7",
+          "physicalSize": [
+            1920,
+            124
+          ],
+          "xBoundaries": [
+            0,
+            61,
+            1859,
+            1920
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/devil/Composition/fhd_deck.tga",
+          "sha256": "8c018f8a79245b1e1f7280941e0e46566376725c2384f61f6f5dadecb281b69f",
+          "physicalSize": [
+            1920,
+            214
+          ],
+          "xBoundaries": [
+            0,
+            440,
+            880,
+            1292,
+            1486,
+            1920
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "horde": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/horde/Composition/fhd_top.tga",
+          "sha256": "ed95860bfa7ad270dcd5ba0519e90147796f13575da7febb73f5f67e84b56c7b",
+          "physicalSize": [
+            1920,
+            124
+          ],
+          "xBoundaries": [
+            0,
+            61,
+            1859,
+            1920
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/horde/Composition/fhd_deck_reviewed.tga",
+          "sha256": "95c618bfc6053e5fb90000b004aebaeebaf3879036db77d036f3285a873cfe79",
+          "physicalSize": [
+            1920,
+            214
+          ],
+          "xBoundaries": [
+            0,
+            440,
+            880,
+            1292,
+            1486,
+            1920
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "alliance": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/alliance/Composition/fhd_top.tga",
+          "sha256": "d43ed0ff4109ac7b2e226173b65ba9134cbc782a8219a6493be8c7373b7deb22",
+          "physicalSize": [
+            1920,
+            124
+          ],
+          "xBoundaries": [
+            0,
+            61,
+            1859,
+            1920
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/alliance/Composition/fhd_deck_reviewed.tga",
+          "sha256": "d53bcfbaf4766dedd70cdf08db855c531e16e108265a680d1a4a518090a00825",
+          "physicalSize": [
+            1920,
+            214
+          ],
+          "xBoundaries": [
+            0,
+            440,
+            880,
+            1292,
+            1486,
+            1920
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "orc": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/orc/Composition/fhd_top.tga",
+          "sha256": "00aefcb8898d143601efb16dda9e5a40916fcec23a9243fcfcf92ac374f773e0",
+          "physicalSize": [
+            1920,
+            124
+          ],
+          "xBoundaries": [
+            0,
+            61,
+            1859,
+            1920
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/orc/Composition/fhd_deck_reviewed.tga",
+          "sha256": "087a3561084d6bf8928520d5da707cee28e78efbf48a5ad802cf50795de0f985",
+          "physicalSize": [
+            1920,
+            214
+          ],
+          "xBoundaries": [
+            0,
+            440,
+            880,
+            1292,
+            1486,
+            1920
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "troll": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/troll/Composition/fhd_top.tga",
+          "sha256": "5c4d289ad4565423c2cb84af177c26e428384c13d8677650fa6220c7985a56b6",
+          "physicalSize": [
+            1920,
+            124
+          ],
+          "xBoundaries": [
+            0,
+            61,
+            1859,
+            1920
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/troll/Composition/fhd_deck_reviewed.tga",
+          "sha256": "5256876e778e00030999d49955f4d32b0e0b3045313d00b8c1cbd772374bd62e",
+          "physicalSize": [
+            1920,
+            214
+          ],
+          "xBoundaries": [
+            0,
+            440,
+            880,
+            1292,
+            1486,
+            1920
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "undead": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/undead/Composition/fhd_top.tga",
+          "sha256": "76712a498bb6149da21910a6fc1bd4bcb8385d0f8332d7e59ff9138c2e888e63",
+          "physicalSize": [
+            1920,
+            124
+          ],
+          "xBoundaries": [
+            0,
+            61,
+            1859,
+            1920
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/undead/Composition/fhd_deck_reviewed.tga",
+          "sha256": "c840e66eb67f0ec9b43c3c41fe5ef1e84e35bbe175992f7eab6c8804cf06af52",
+          "physicalSize": [
+            1920,
+            214
+          ],
+          "xBoundaries": [
+            0,
+            440,
+            880,
+            1292,
+            1486,
+            1920
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "tauren": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/tauren/Composition/fhd_top.tga",
+          "sha256": "d3f90cd6a3daba0ad59f651752fbca38c81df319c38ea485c0d99b5e240277be",
+          "physicalSize": [
+            1920,
+            124
+          ],
+          "xBoundaries": [
+            0,
+            61,
+            1859,
+            1920
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/tauren/Composition/fhd_deck_reviewed.tga",
+          "sha256": "f04ba60561c86cbbbe0ee6615c8c9ec75a7c040cea5b49a9aac9085d3906ad59",
+          "physicalSize": [
+            1920,
+            214
+          ],
+          "xBoundaries": [
+            0,
+            440,
+            880,
+            1292,
+            1486,
+            1920
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "human": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/human/Composition/fhd_top.tga",
+          "sha256": "9c76ce94ccbdd6d82d282b214fabe12e7f1a48532cdc0595333f57906c53c23f",
+          "physicalSize": [
+            1920,
+            124
+          ],
+          "xBoundaries": [
+            0,
+            61,
+            1859,
+            1920
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/human/Composition/fhd_deck_reviewed.tga",
+          "sha256": "4733cc83866ca10c5453e7fc57c5bbedd42bfbc5c69dabe474f5671b89d1fdb7",
+          "physicalSize": [
+            1920,
+            214
+          ],
+          "xBoundaries": [
+            0,
+            440,
+            880,
+            1292,
+            1486,
+            1920
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "dwarf": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/dwarf/Composition/fhd_top.tga",
+          "sha256": "35c9abff6744b1e7268df2a3cf135e400c06206b14e7b93592475b6bfcf547d0",
+          "physicalSize": [
+            1920,
+            124
+          ],
+          "xBoundaries": [
+            0,
+            61,
+            1859,
+            1920
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/dwarf/Composition/fhd_deck_reviewed.tga",
+          "sha256": "a1f58138e17044a90e2b7f7b668cabb6012931f02a84302a05fa622fcd6f4475",
+          "physicalSize": [
+            1920,
+            214
+          ],
+          "xBoundaries": [
+            0,
+            440,
+            880,
+            1292,
+            1486,
+            1920
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "gnome": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/gnome/Composition/fhd_top.tga",
+          "sha256": "fc1d297dd013be77449eba312aeee360ef55ad666876b869e19565b78ec87b4d",
+          "physicalSize": [
+            1920,
+            124
+          ],
+          "xBoundaries": [
+            0,
+            61,
+            1859,
+            1920
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/gnome/Composition/fhd_deck_reviewed.tga",
+          "sha256": "f2adfb141afbcfa0f2eaa7d8f1cb8b908d902c2eec73aaca49048fdaf68893d9",
+          "physicalSize": [
+            1920,
+            214
+          ],
+          "xBoundaries": [
+            0,
+            440,
+            880,
+            1292,
+            1486,
+            1920
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "nightelf": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/nightelf/Composition/fhd_top.tga",
+          "sha256": "3b2d9e0d541c7d1ec9774ae8ffa5549a0820080cfc91ad38b95303c256bb46ab",
+          "physicalSize": [
+            1920,
+            124
+          ],
+          "xBoundaries": [
+            0,
+            61,
+            1859,
+            1920
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/nightelf/Composition/fhd_deck_reviewed.tga",
+          "sha256": "b3fa26635ab72d7e94d6a3ef86f13caa5c3b01108c746d0374ba0b39c61526c1",
+          "physicalSize": [
+            1920,
+            214
+          ],
+          "xBoundaries": [
+            0,
+            440,
+            880,
+            1292,
+            1486,
+            1920
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "skyborne": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/skyborne/Composition/fhd_top.tga",
+          "sha256": "5d95e9e02eea25561aef12ddc7dcebed6e43503309ccfcf7920cc442239f34a7",
+          "physicalSize": [
+            1920,
+            124
+          ],
+          "xBoundaries": [
+            0,
+            61,
+            1859,
+            1920
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/skyborne/Composition/fhd_deck_reviewed.tga",
+          "sha256": "348fbac6e999cf02480763d71d8d3ee5a46d683d4ac72513352ae2691d0047bd",
+          "physicalSize": [
+            1920,
+            214
+          ],
+          "xBoundaries": [
+            0,
+            440,
+            880,
+            1292,
+            1486,
+            1920
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "skyborne-horde": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/skyborne-horde/Composition/fhd_top.tga",
+          "sha256": "470d008917b7fd6384cfe5f840e384cf81fac9af3f8c23f9794f2d417da4ce3c",
+          "physicalSize": [
+            1920,
+            124
+          ],
+          "xBoundaries": [
+            0,
+            61,
+            1859,
+            1920
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/skyborne-horde/Composition/fhd_deck_reviewed.tga",
+          "sha256": "0b0045efb764b93da885b798676b3336e975c59b5ece13394eb86aaedb2a39b2",
+          "physicalSize": [
+            1920,
+            214
+          ],
+          "xBoundaries": [
+            0,
+            440,
+            880,
+            1292,
+            1486,
+            1920
+          ],
+          "changedPixels": 0
+        }
+      ]
+    },
+    "qhd": {
+      "devil": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/devil/Composition/qhd_top.tga",
+          "sha256": "999b8163441f3fbea201a6396a3ae8091c3d76673df7d6c62ed32aca7280648c",
+          "physicalSize": [
+            2560,
+            144
+          ],
+          "xBoundaries": [
+            0,
+            237,
+            2323,
+            2560
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/devil/Composition/qhd_deck.tga",
+          "sha256": "9827e591be0397df6eb5b5a76f19196dccaa139c82813f33db75f53c81415917",
+          "physicalSize": [
+            2560,
+            248
+          ],
+          "xBoundaries": [
+            0,
+            622,
+            1244,
+            1720,
+            1946,
+            2560
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "horde": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/horde/Composition/qhd_top.tga",
+          "sha256": "18627d94a2bbbbfcda5babd71b63bd278c517e7c1b26578656f66dd1be325f86",
+          "physicalSize": [
+            2560,
+            144
+          ],
+          "xBoundaries": [
+            0,
+            237,
+            2323,
+            2560
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/horde/Composition/qhd_deck_reviewed.tga",
+          "sha256": "5e21fa78b359c1e2e31472ac7c2e00998e0d5a04430dad5a828ac18accac8e71",
+          "physicalSize": [
+            2560,
+            248
+          ],
+          "xBoundaries": [
+            0,
+            622,
+            1244,
+            1720,
+            1946,
+            2560
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "alliance": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/alliance/Composition/qhd_top.tga",
+          "sha256": "fcc9e1af2b913dbd52ae0e969871a52feb615bc372de22cfe0eecf1cc7b24189",
+          "physicalSize": [
+            2560,
+            144
+          ],
+          "xBoundaries": [
+            0,
+            237,
+            2323,
+            2560
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/alliance/Composition/qhd_deck_reviewed.tga",
+          "sha256": "4ca8c3046cfe85e3d7460555083ef2e5a91a2c922da40e6e0f1d47aa8cb06d8f",
+          "physicalSize": [
+            2560,
+            248
+          ],
+          "xBoundaries": [
+            0,
+            622,
+            1244,
+            1720,
+            1946,
+            2560
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "orc": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/orc/Composition/qhd_top.tga",
+          "sha256": "20a4a66d35891762b30e37d80988d227e3377bfbdc91d435752a7e761978f5c2",
+          "physicalSize": [
+            2560,
+            144
+          ],
+          "xBoundaries": [
+            0,
+            237,
+            2323,
+            2560
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/orc/Composition/qhd_deck_reviewed.tga",
+          "sha256": "b89c1610d54c4daea0c228e90f4adc65d81b2955cec3e518162e0c80e9432d61",
+          "physicalSize": [
+            2560,
+            248
+          ],
+          "xBoundaries": [
+            0,
+            622,
+            1244,
+            1720,
+            1946,
+            2560
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "troll": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/troll/Composition/qhd_top.tga",
+          "sha256": "c0f22ae1ab5a6bcd657ed817301ff6aef732379b5b6f404ebed0d3784f0b845c",
+          "physicalSize": [
+            2560,
+            144
+          ],
+          "xBoundaries": [
+            0,
+            237,
+            2323,
+            2560
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/troll/Composition/qhd_deck_reviewed.tga",
+          "sha256": "8d82a97ab161c8198d978b64f445aae0a534c4fcfbf974bb21498023cc4a9c73",
+          "physicalSize": [
+            2560,
+            248
+          ],
+          "xBoundaries": [
+            0,
+            622,
+            1244,
+            1720,
+            1946,
+            2560
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "undead": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/undead/Composition/qhd_top.tga",
+          "sha256": "cd27c7c6dfb59d664e873e1d8806d1fd5543cc630dacfee089a7ec69a59cfbb2",
+          "physicalSize": [
+            2560,
+            144
+          ],
+          "xBoundaries": [
+            0,
+            237,
+            2323,
+            2560
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/undead/Composition/qhd_deck_reviewed.tga",
+          "sha256": "3463dc2524923c07e5ad7b43d49d0c1ead6702a2cb6ffe09623671471732a637",
+          "physicalSize": [
+            2560,
+            248
+          ],
+          "xBoundaries": [
+            0,
+            622,
+            1244,
+            1720,
+            1946,
+            2560
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "tauren": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/tauren/Composition/qhd_top.tga",
+          "sha256": "8adb982ccd03ea7c29eeaab98a83c4e0d2ceb045878c84bb5302239508a0da1c",
+          "physicalSize": [
+            2560,
+            144
+          ],
+          "xBoundaries": [
+            0,
+            237,
+            2323,
+            2560
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/tauren/Composition/qhd_deck_reviewed.tga",
+          "sha256": "e1b5078bbab86fb15266e4b6d358d047ba946ab857073675e9c7c561bdadfd5a",
+          "physicalSize": [
+            2560,
+            248
+          ],
+          "xBoundaries": [
+            0,
+            622,
+            1244,
+            1720,
+            1946,
+            2560
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "human": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/human/Composition/qhd_top.tga",
+          "sha256": "732b3434e5fefb08ace12e3249a17fbfb931d90189f4dee83ab08aaf7ba075e9",
+          "physicalSize": [
+            2560,
+            144
+          ],
+          "xBoundaries": [
+            0,
+            237,
+            2323,
+            2560
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/human/Composition/qhd_deck_reviewed.tga",
+          "sha256": "ea1b2dde5eeb934e145ca53ced0bda81451aefb7e5128b839ec6be3fc005bfcb",
+          "physicalSize": [
+            2560,
+            248
+          ],
+          "xBoundaries": [
+            0,
+            622,
+            1244,
+            1720,
+            1946,
+            2560
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "dwarf": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/dwarf/Composition/qhd_top.tga",
+          "sha256": "05065fe5cfb17389c8bf3e8e314a51c151950ad7fad25ff9f3b9fe8a82bf9de3",
+          "physicalSize": [
+            2560,
+            144
+          ],
+          "xBoundaries": [
+            0,
+            237,
+            2323,
+            2560
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/dwarf/Composition/qhd_deck_reviewed.tga",
+          "sha256": "63896288c9e2b06a17a0214f8a88cb1859d5aaedb95b276fc286ad7b7795e5ee",
+          "physicalSize": [
+            2560,
+            248
+          ],
+          "xBoundaries": [
+            0,
+            622,
+            1244,
+            1720,
+            1946,
+            2560
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "gnome": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/gnome/Composition/qhd_top.tga",
+          "sha256": "57dc6d0e6740dba52e52e46548646d1fa5a08e312690e0015bdb62d1d04dcad9",
+          "physicalSize": [
+            2560,
+            144
+          ],
+          "xBoundaries": [
+            0,
+            237,
+            2323,
+            2560
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/gnome/Composition/qhd_deck_reviewed.tga",
+          "sha256": "141c21b9f8729442853b5729e2461a96ecd3fede79c2b265ed6ebdcc1266e437",
+          "physicalSize": [
+            2560,
+            248
+          ],
+          "xBoundaries": [
+            0,
+            622,
+            1244,
+            1720,
+            1946,
+            2560
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "nightelf": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/nightelf/Composition/qhd_top.tga",
+          "sha256": "24e975754a72b2028f7274e8a5b05be5c83b5c6dddeb255cf92b219d054c3838",
+          "physicalSize": [
+            2560,
+            144
+          ],
+          "xBoundaries": [
+            0,
+            237,
+            2323,
+            2560
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/nightelf/Composition/qhd_deck_reviewed.tga",
+          "sha256": "9837b2b0a26f1c4669f3197ccaf98b68a952119a45dc25fd6b342066e03acc5c",
+          "physicalSize": [
+            2560,
+            248
+          ],
+          "xBoundaries": [
+            0,
+            622,
+            1244,
+            1720,
+            1946,
+            2560
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "skyborne": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/skyborne/Composition/qhd_top.tga",
+          "sha256": "532756fad2baed70289d22b2c41ab0b6c6c76a14ec53db26de7342e2ec96322d",
+          "physicalSize": [
+            2560,
+            144
+          ],
+          "xBoundaries": [
+            0,
+            237,
+            2323,
+            2560
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/skyborne/Composition/qhd_deck_reviewed.tga",
+          "sha256": "fd647caa0093e740a8c61a63908fe776cc4b6649e27202e0fd4a028edb911f6a",
+          "physicalSize": [
+            2560,
+            248
+          ],
+          "xBoundaries": [
+            0,
+            622,
+            1244,
+            1720,
+            1946,
+            2560
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "skyborne-horde": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/skyborne-horde/Composition/qhd_top.tga",
+          "sha256": "da241ae89f20ba24d61162a04dcc2c31be04222d74050b325a48b50cba3926c9",
+          "physicalSize": [
+            2560,
+            144
+          ],
+          "xBoundaries": [
+            0,
+            237,
+            2323,
+            2560
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/skyborne-horde/Composition/qhd_deck_reviewed.tga",
+          "sha256": "05469346d916e1dcdc5aa7efc11f3ecdd5bd37d8cb17bbf8d63de27b8bf46502",
+          "physicalSize": [
+            2560,
+            248
+          ],
+          "xBoundaries": [
+            0,
+            622,
+            1244,
+            1720,
+            1946,
+            2560
+          ],
+          "changedPixels": 0
+        }
+      ]
+    },
+    "uhd": {
+      "devil": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/devil/Composition/uhd_top.tga",
+          "sha256": "8158002ea07ee4904fc83980a1dfb4e39d91436f445c683253f0f5c203a2e44a",
+          "physicalSize": [
+            3840,
+            204
+          ],
+          "xBoundaries": [
+            0,
+            445,
+            3395,
+            3840
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/devil/Composition/uhd_deck.tga",
+          "sha256": "183e42816437eded6bf824ee85f4a91ea5012e155c01e8083eecffe4524faaf5",
+          "physicalSize": [
+            3840,
+            332
+          ],
+          "xBoundaries": [
+            0,
+            962,
+            1924,
+            2596,
+            2902,
+            3840
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "horde": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/horde/Composition/uhd_top.tga",
+          "sha256": "e046435acd938f2eb326a5912029c265aaf6a862b0ff48c145f2b7e7c4921314",
+          "physicalSize": [
+            3840,
+            204
+          ],
+          "xBoundaries": [
+            0,
+            445,
+            3395,
+            3840
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/horde/Composition/uhd_deck_reviewed.tga",
+          "sha256": "2e0fe3ca6c7991bf42cbe0a090a4eb2c48e8460d6dc2462b81ce19cfacba5146",
+          "physicalSize": [
+            3840,
+            332
+          ],
+          "xBoundaries": [
+            0,
+            962,
+            1924,
+            2596,
+            2902,
+            3840
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "alliance": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/alliance/Composition/uhd_top.tga",
+          "sha256": "d2ee8b7fded9ae8aaf238786d29beaebc992b1aee3ab652d3d52efe85a4dd928",
+          "physicalSize": [
+            3840,
+            204
+          ],
+          "xBoundaries": [
+            0,
+            445,
+            3395,
+            3840
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/alliance/Composition/uhd_deck_reviewed.tga",
+          "sha256": "febd840902c9e5c79290b746808ca26662e4f8abe13860b1430af7b03b2d10e1",
+          "physicalSize": [
+            3840,
+            332
+          ],
+          "xBoundaries": [
+            0,
+            962,
+            1924,
+            2596,
+            2902,
+            3840
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "orc": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/orc/Composition/uhd_top.tga",
+          "sha256": "950fc4612bed4996a7b7d060e7aaba83099157ea6956cd4b55a5bf2bb2a00634",
+          "physicalSize": [
+            3840,
+            204
+          ],
+          "xBoundaries": [
+            0,
+            445,
+            3395,
+            3840
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/orc/Composition/uhd_deck_reviewed.tga",
+          "sha256": "bac401ab63f614734249b705ad8a28dbf0e29a33ce6803c48315393dc87ea5a1",
+          "physicalSize": [
+            3840,
+            332
+          ],
+          "xBoundaries": [
+            0,
+            962,
+            1924,
+            2596,
+            2902,
+            3840
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "troll": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/troll/Composition/uhd_top.tga",
+          "sha256": "0c5edbb7e8e82fd17295fc1ec30adc3d3b4f9b833805e9dbf67a1f7159d74d0d",
+          "physicalSize": [
+            3840,
+            204
+          ],
+          "xBoundaries": [
+            0,
+            445,
+            3395,
+            3840
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/troll/Composition/uhd_deck_reviewed.tga",
+          "sha256": "7ed0067e45b11301861be3335b3b209bae2005f6e5b3cbb0f7cfda73e336f93d",
+          "physicalSize": [
+            3840,
+            332
+          ],
+          "xBoundaries": [
+            0,
+            962,
+            1924,
+            2596,
+            2902,
+            3840
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "undead": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/undead/Composition/uhd_top.tga",
+          "sha256": "64cafa8e5239d043aff6f1bc243550ffd4b286b9049986db0f8529dd678daad5",
+          "physicalSize": [
+            3840,
+            204
+          ],
+          "xBoundaries": [
+            0,
+            445,
+            3395,
+            3840
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/undead/Composition/uhd_deck_reviewed.tga",
+          "sha256": "f8c30b13c1054931ed8bd9071b3eabbabb6044a74931e459e22ae2d4f9a6a570",
+          "physicalSize": [
+            3840,
+            332
+          ],
+          "xBoundaries": [
+            0,
+            962,
+            1924,
+            2596,
+            2902,
+            3840
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "tauren": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/tauren/Composition/uhd_top.tga",
+          "sha256": "5f18e68a9c50e3056a0e8f4d8f11218c6cae990e7d82e081758c2322f9f90827",
+          "physicalSize": [
+            3840,
+            204
+          ],
+          "xBoundaries": [
+            0,
+            445,
+            3395,
+            3840
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/tauren/Composition/uhd_deck_reviewed.tga",
+          "sha256": "b06805dffa1945701d2e056359b6e39661af063496831cca01494be8bcb6bff9",
+          "physicalSize": [
+            3840,
+            332
+          ],
+          "xBoundaries": [
+            0,
+            962,
+            1924,
+            2596,
+            2902,
+            3840
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "human": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/human/Composition/uhd_top.tga",
+          "sha256": "d0a53f13113c1ebcae115bb2287712b4c30891465d74b9e641501efe78c791ae",
+          "physicalSize": [
+            3840,
+            204
+          ],
+          "xBoundaries": [
+            0,
+            445,
+            3395,
+            3840
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/human/Composition/uhd_deck_reviewed.tga",
+          "sha256": "b6638a91a08ca8f9e577921d88616db5280f3a30c6b4f81962890eea74dbdfd4",
+          "physicalSize": [
+            3840,
+            332
+          ],
+          "xBoundaries": [
+            0,
+            962,
+            1924,
+            2596,
+            2902,
+            3840
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "dwarf": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/dwarf/Composition/uhd_top.tga",
+          "sha256": "0456ac330dd88b1318f366b743faa8b094bc77ed7542b0bebc184882d0c272cf",
+          "physicalSize": [
+            3840,
+            204
+          ],
+          "xBoundaries": [
+            0,
+            445,
+            3395,
+            3840
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/dwarf/Composition/uhd_deck_reviewed.tga",
+          "sha256": "232e6898221f0caa965deae6836648c2d248e8dddc683720baf7a1cee7d81c2e",
+          "physicalSize": [
+            3840,
+            332
+          ],
+          "xBoundaries": [
+            0,
+            962,
+            1924,
+            2596,
+            2902,
+            3840
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "gnome": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/gnome/Composition/uhd_top.tga",
+          "sha256": "f7563c44136c69e2ded9e0f97bfe124ec9f2124ad35f43643a85bdeb3bfa7b3e",
+          "physicalSize": [
+            3840,
+            204
+          ],
+          "xBoundaries": [
+            0,
+            445,
+            3395,
+            3840
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/gnome/Composition/uhd_deck_reviewed.tga",
+          "sha256": "e95572590a4ad6cadf79ed19ee56448db51ce478d85f9833633127afcb018329",
+          "physicalSize": [
+            3840,
+            332
+          ],
+          "xBoundaries": [
+            0,
+            962,
+            1924,
+            2596,
+            2902,
+            3840
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "nightelf": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/nightelf/Composition/uhd_top.tga",
+          "sha256": "5576bf56947e07a09ba0865fd6839800872dffb0c4c0ffdf2dd526f8b7405a64",
+          "physicalSize": [
+            3840,
+            204
+          ],
+          "xBoundaries": [
+            0,
+            445,
+            3395,
+            3840
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/nightelf/Composition/uhd_deck_reviewed.tga",
+          "sha256": "c52a83426d17c9a5bf1cdbcaac7084fa4f999d659ead9a7f7aad72d0294483cc",
+          "physicalSize": [
+            3840,
+            332
+          ],
+          "xBoundaries": [
+            0,
+            962,
+            1924,
+            2596,
+            2902,
+            3840
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "skyborne": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/skyborne/Composition/uhd_top.tga",
+          "sha256": "2eada3ee024bcb5c0f7df774ccf3a357cac25c16ba224b41e1e49b35aca58374",
+          "physicalSize": [
+            3840,
+            204
+          ],
+          "xBoundaries": [
+            0,
+            445,
+            3395,
+            3840
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/skyborne/Composition/uhd_deck_reviewed.tga",
+          "sha256": "4cbda63344098eb3538427da5161d3dbd986a0549f7ed31895045c54b59c4ed9",
+          "physicalSize": [
+            3840,
+            332
+          ],
+          "xBoundaries": [
+            0,
+            962,
+            1924,
+            2596,
+            2902,
+            3840
+          ],
+          "changedPixels": 0
+        }
+      ],
+      "skyborne-horde": [
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/skyborne-horde/Composition/uhd_top.tga",
+          "sha256": "d79d36f3702bd47ca17aeadafd0dc371e424e43cba277629dd6363a1678f69aa",
+          "physicalSize": [
+            3840,
+            204
+          ],
+          "xBoundaries": [
+            0,
+            445,
+            3395,
+            3840
+          ],
+          "changedPixels": 0
+        },
+        {
+          "source": "Collection/AddOns/DevilForever_Appearance/Themes/skyborne-horde/Composition/uhd_deck_reviewed.tga",
+          "sha256": "bb5665864493a0ab1043e6e0690b7724afa513001af60d57931d9983d7e7a176",
+          "physicalSize": [
+            3840,
+            332
+          ],
+          "xBoundaries": [
+            0,
+            962,
+            1924,
+            2596,
+            2902,
+            3840
+          ],
+          "changedPixels": 0
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "base": "477eb06",
+  "space": "physical-pixels-top-left",
+  "liveVerified": false,
+  "layouts": {
+    "fhd": {
+      "grid2Party": [
+        24,
+        164,
+        96,
+        176
+      ],
+      "targetpet": [
+        170,
+        680,
+        160,
+        28
+      ],
+      "shamanTotems": [
+        324,
+        614,
+        108,
+        24
+      ],
+      "grid2Button": [
+        96,
+        32
+      ],
+      "screen": [
+        1920,
+        1080
+      ],
+      "gridGap": 4,
+      "gridFont": 12,
+      "gridBorder": 2,
+      "totemMargin": 6,
+      "totemIcon": 24,
+      "totemGap": 4,
+      "totemFont": 12,
+      "petWidth": 160,
+      "petHeight": 28,
+      "petY": 680,
+      "stackRules": {
+        "slotPx": 48,
+        "gapPx": 2,
+        "paddingPx": 6,
+        "bottomMarginPx": 6,
+        "statusHeightPx": 22,
+        "deckHeightPx": 192,
+        "ribbonPx": 10,
+        "auxGapPx": 6,
+        "chatFontPx": 18
+      }
+    },
+    "qhd": {
+      "grid2Party": [
+        40,
+        164,
+        120,
+        236
+      ],
+      "targetpet": [
+        402,
+        994,
+        160,
+        32
+      ],
+      "shamanTotems": [
+        560,
+        902,
+        124,
+        28
+      ],
+      "grid2Button": [
+        120,
+        44
+      ],
+      "screen": [
+        2560,
+        1440
+      ],
+      "gridGap": 4,
+      "gridFont": 14,
+      "gridBorder": 3,
+      "totemMargin": 6,
+      "totemIcon": 28,
+      "totemGap": 4,
+      "totemFont": 14,
+      "petWidth": 160,
+      "petHeight": 32,
+      "petY": 994,
+      "stackRules": {
+        "slotPx": 56,
+        "gapPx": 2,
+        "paddingPx": 6,
+        "bottomMarginPx": 6,
+        "statusHeightPx": 24,
+        "deckHeightPx": 224,
+        "ribbonPx": 12,
+        "auxGapPx": 6,
+        "chatFontPx": 22
+      }
+    },
+    "uhd": {
+      "grid2Party": [
+        80,
+        240,
+        154,
+        304
+      ],
+      "targetpet": [
+        718,
+        1540,
+        190,
+        36
+      ],
+      "shamanTotems": [
+        910,
+        1432,
+        162,
+        36
+      ],
+      "grid2Button": [
+        154,
+        56
+      ],
+      "screen": [
+        3840,
+        2160
+      ],
+      "gridGap": 6,
+      "gridFont": 18,
+      "gridBorder": 4,
+      "totemMargin": 8,
+      "totemIcon": 36,
+      "totemGap": 6,
+      "totemFont": 18,
+      "petWidth": 190,
+      "petHeight": 36,
+      "petY": 1540,
+      "stackRules": {
+        "slotPx": 80,
+        "gapPx": 2,
+        "paddingPx": 8,
+        "bottomMarginPx": 8,
+        "statusHeightPx": 28,
+        "deckHeightPx": 304,
+        "ribbonPx": 16,
+        "auxGapPx": 8,
+        "chatFontPx": 28
+      }
+    }
+  }
+}
