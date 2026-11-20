@@ -29,8 +29,10 @@ them): ``.lua``/``.xml`` files that no TOC of their folder loads, directly or
 through XML ``Script``/``Include`` lines (``[AllowLoad... x]``/``[ExcludeLoad... x]``
 conditions are ignored, so a file loaded for any game type or locale is kept;
 TOC path tokens such as ``[Family]`` match any name; ``Bindings.xml`` in a
-folder root is loaded by the client and kept), and the files in DEV_FILES. Textures, fonts, sounds, licences and other
-data files are kept.
+folder root is loaded by the client and kept), the files in DEV_FILES, and a ``<name>_deck.tga`` whose sibling
+``<name>_deck_reviewed.tga`` is in the same directory (the reviewed deck replaces
+it; Composition.lua loads only the reviewed deck for those themes). Other
+textures, fonts, sounds, licences and data files are kept.
 
 Archive layout: ``Interface/AddOns/<folder>/...``. Entries are sorted and carry
 a fixed timestamp so the same inputs give the same bytes. Symlinks in the
@@ -62,6 +64,8 @@ SKIP_NAMES = {".gitkeep", ".DS_Store", "Thumbs.db"}
 # Development files inside shipped folders that the game never reads: (folder, path).
 DEV_FILES = {(CORE_FOLDER, "registry_extra.json")}
 CODE_EXT = (".lua", ".xml")
+DECK_SUFFIX = "_deck.tga"
+REVIEWED_SUFFIX = "_deck_reviewed.tga"
 INCLUDE_RE = re.compile(r"""<(?:Script|Include)\b[^>]*?\bfile\s*=\s*["']([^"']+)["']""", re.I)
 COMMENT_RE = re.compile(r"<!--.*?-->", re.S)
 CONDITION_RE = re.compile(r"\[\s*(?:Allow|Exclude)Load\w*\s[^\]]*\]", re.I)
@@ -260,6 +264,8 @@ def runtime_files(folder_name, folder):
             excluded.append((rel, "development file"))
         elif low.endswith(CODE_EXT) and low not in loaded and low != "bindings.xml":
             excluded.append((rel, "not loaded by any TOC"))
+        elif low.endswith(DECK_SUFFIX) and rel[:-len(DECK_SUFFIX)] + REVIEWED_SUFFIX in files:
+            excluded.append((rel, "replaced by " + os.path.basename(rel[:-len(DECK_SUFFIX)] + REVIEWED_SUFFIX)))
         else:
             kept.append((rel, files[rel]))
     return kept, excluded

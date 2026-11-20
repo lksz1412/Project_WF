@@ -65,20 +65,21 @@ function Composition:GetPlan()
   local bottom = -status.position.y + status.size.height
   local width = right.position.x + right.size.width
   if width <= 0 or split <= top or bottom <= split then return end
+  -- Surfaces of the active theme only: devil ships <preset>_deck.tga; every other
+  -- theme ships <preset>_deck_reviewed.tga and no _deck.tga (release build rule).
+  -- A surface the client does not know leaves the individual shell (no plan).
   local path = "Interface\\AddOns\\DevilForever_Appearance\\Themes\\" .. family .. "\\Composition\\" .. preset
-  local fallback = path
   local crest = DevilForever_ChatCrests and DevilForever_ChatCrests[active]
-  if type(crest) == "table" and type(crest.composition) == "string" then
-    local racial = crest.composition .. preset
-    if known(racial .. "_top.tga") and known(racial .. "_deck.tga") then path = racial end
+  if not families[active] then
+    if type(crest) ~= "table" or type(crest.composition) ~= "string" then return end
+    path = crest.composition .. preset
   end
-  local activePath = "Interface\\AddOns\\DevilForever_Appearance\\Themes\\" .. active .. "\\Composition\\" .. preset
-  local reviewed = active ~= "devil" and path == activePath and known(activePath .. "_deck_reviewed.tga")
+  local reviewed = active ~= "devil"
+  local deck = path .. (reviewed and "_deck_reviewed.tga" or "_deck.tga")
+  if not known(path .. "_top.tga") or not known(deck) then return end
   return {top = {x = 0, y = top, width = width, height = split - top, texture = path .. "_top.tga"},
-    deck = {x = 0, y = split, width = width, height = bottom - split,
-      texture = path .. (reviewed and "_deck_reviewed.tga" or "_deck.tga")},
-    legacyDeck = path .. "_deck.tga", reviewed = reviewed,
-    active = active, fallback = path ~= fallback and fallback or nil}
+    deck = {x = 0, y = split, width = width, height = bottom - split, texture = deck},
+    reviewed = reviewed, active = active}
 end
 
 local function paintSurfaces(self, root, plan)
@@ -101,20 +102,7 @@ function Composition:Apply(root, frames)
   self.active = false
   self.reviewed = false
   if self.crest then self.crest:Hide() end
-  if not plan or not known(plan.top.texture) or not known(plan.deck.texture) then self.frame:Hide(); return end
-  local painted = paintSurfaces(self, root, plan)
-  if not painted and plan.reviewed then
-    plan.deck.texture, plan.reviewed = plan.legacyDeck, false
-    painted = known(plan.deck.texture) and paintSurfaces(self, root, plan)
-  end
-  if not painted then
-    if not plan.fallback then self.frame:Hide(); return end
-    plan.top.texture, plan.deck.texture = plan.fallback .. "_top.tga", plan.fallback .. "_deck.tga"
-    if not known(plan.top.texture) or not known(plan.deck.texture) or not paintSurfaces(self, root, plan) then
-      self.frame:Hide()
-      return
-    end
-  end
+  if not plan or not paintSurfaces(self, root, plan) then self.frame:Hide(); return end
   self.frame:Show()
   self.active = true
   self.reviewed = plan.reviewed == true

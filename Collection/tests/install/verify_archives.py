@@ -64,7 +64,12 @@ def verify_theme_assets(archive):
 RACE_SURFACES = ("human", "dwarf", "gnome", "nightelf", "orc", "tauren", "troll", "undead", "skyborne", "skyborne-horde")
 
 
-def verify_composition_assets(archive, races, reviewed_chat=False):
+SOURCE_ADDONS = Path(__file__).resolve().parents[2] / "AddOns"
+
+
+def verify_composition_assets(archive, races, reviewed_chat=False, reviewed_only=False):
+    """reviewed_only (0.1.5+): a theme with a reviewed deck ships no _deck.tga; the
+    comparison uses the source tree's _deck.tga (Collection/AddOns)."""
     root = "Interface/AddOns/DevilForever_Appearance/"
     runtime = LuaRuntime()
     runtime.execute(archive.read(root + "Crests.lua").decode("utf-8-sig"))
@@ -113,7 +118,13 @@ def verify_composition_assets(archive, races, reviewed_chat=False):
         for family in variants:
             for suffix, height in (("top", split - top), ("deck", bottom - split)):
                 path = root + f"Themes/{family}/Composition/{preset}_{suffix}.tga"
-                with Image.open(BytesIO(archive.read(path))) as image:
+                replaced = reviewed_only and suffix == "deck" and family != "devil"
+                if replaced:
+                    assert path not in paths, path
+                    data = (SOURCE_ADDONS / path.removeprefix("Interface/AddOns/")).read_bytes()
+                else:
+                    data = archive.read(path)
+                with Image.open(BytesIO(data)) as image:
                     storage = (2048, 256) if suffix == "top" else (2048, 512)
                     assert image.format == "TGA" and image.size == storage, (path, image.size, storage)
                     assert width > 0 and height > 0
@@ -176,7 +187,8 @@ def verify(path, variant, races, version, reviewed_chat):
             guide = archive.read(prefix + "설치안내.md").decode("utf-8")
             assert "PitBull4만 켜고" in guide and "/dfcheck comparison" in guide
         assert verify_theme_assets(archive) == (6, 9)
-        assert verify_composition_assets(archive, races, reviewed_chat) == (6 * (3 + len(races)), 12)
+        assert verify_composition_assets(archive, races, reviewed_chat,
+                                         version_at_least(version, (0, 1, 5))) == (6 * (3 + len(races)), 12)
         dev_only = {"Interface/AddOns/DevilForever_Skin_Nameplates/SessionProbe.lua",
                     "Interface/AddOns/DevilForever_Skin_Nameplates/Probe.lua",
                     "Interface/AddOns/!DevilForever_Core/registry_extra.json"}

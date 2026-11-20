@@ -563,6 +563,15 @@ def grid2_preset_values_survive_first_start_template():
         eq((frame["frameWidth"], frame["frameHeight"], frame["frameBorder"], layout["Padding"]), (96, 32, 2, 4),
            name + " template: preset cell size, border width and gap written again")
         eq(db["profiles"]["Hero - Realm"]["__template"], name, name + " template's own indicators kept")
+        prof = db["profiles"]["Hero - Realm"]
+        named = sorted(k for k, ind in prof["indicators"].items() if ind.get("type") == "text"
+                       and (prof["statusMap"].get(k) or {}).get("name"))
+        eq(named, [GRID2_NAME_TEXT[name]], name + ": the template's name text indicator")
+        eq(prof["indicators"][named[0]]["fontSize"], 12, name + ": name text 12 px (fhd preset)")
+        others = {k: ind.get("fontSize") for k, ind in prof["indicators"].items()
+                  if ind.get("type") == "text" and k not in named}
+        eq(others, GRID2_OTHER_TEXT[name], name + ": other text indicators keep the template's size")
+        eq(frame["fontSize"], 12, name + ": Grid2Frame default text size 12")
         eq(s.g.DIALOG_OPENED, 1, "premise: the first call only opened the dialog")
         rec = s.sv("DevilForever_CoreDB")["preset"]["grid2Template"]
         eq(sorted(rec), ["Grid2DB/Grid2Frame@profile:Hero - Realm", "Grid2DB/Grid2Layout@profile:Hero - Realm"],
@@ -573,6 +582,19 @@ def grid2_preset_values_survive_first_start_template():
     old = grid2_template_session(2, saved=saved)
     frame = old.sv("Grid2DB")["namespaces"]["Grid2Frame"]["profiles"]["Hero - Realm"]
     eq(frame["frameWidth"], 66, "an existing profile: the template's value, no preset values written into it")
+    eq(old.sv("Grid2DB")["profiles"]["Hero - Realm"]["indicators"]["text-center"]["fontSize"], 10,
+       "an existing profile: the template's name text size")
+    for preset, size in (("fhd", 12), ("qhd", 14), ("uhd", 18)):
+        with open(os.path.join(ADDONS, "!DevilForever_Core", "Presets", preset + ".lua"), encoding="utf-8") as fh:
+            src = fh.read()
+        eq(src.count('["font"]="Devil Forever devil",["fontSize"]=%d,["iconSize"]=' % size), 1,
+           preset + ": Grid2Frame fontSize %d (Codex gridFont)" % size)
+        eq(src.count('["text-center"]={["font"]="Devil Forever devil",["fontSize"]=%d}' % size), 1,
+           preset + ": proposal text-center %d" % size)
+
+
+GRID2_NAME_TEXT = {"Classic": "text-down", "Modern": "text-center", "Blizzard": "text-name"}
+GRID2_OTHER_TEXT = {"Classic": {"text-up": 9}, "Modern": {}, "Blizzard": {}}
 
 
 def pb4_preset_session(saved=None, request=False):

@@ -62,10 +62,23 @@ DevilForever_Core.Defaults:Register("Grid2", {
 -- applied one, the active preset's Grid2Frame/Grid2Layout fragment values are written
 -- again into that profile, once per profile key, and only when the preset wrote
 -- them into that profile before (DevilForever_CoreDB.preset.fragments); other
--- profiles are left alone. Values inside the template's indicators (text sizes)
--- stay as the template sets them. Recorded in
+-- profiles are left alone. The template's name text (each "text" indicator that
+-- its statusMap maps the "name" status to: Classic text-down, Modern text-center,
+-- Blizzard text-name) gets the Grid2Frame fragment's fontSize in the same step;
+-- other indicator values stay as the template sets them. Recorded in
 -- DevilForever_CoreDB.preset.grid2Template[<targetKey>] = fragment version.
 local Core = DevilForever_Core
+
+local function setNameTextSize(profileTable, size)
+  local indicators = type(profileTable) == "table" and profileTable.indicators
+  local map = type(profileTable) == "table" and profileTable.statusMap
+  if type(size) ~= "number" or type(indicators) ~= "table" or type(map) ~= "table" then return end
+  for name, ind in pairs(indicators) do
+    if type(ind) == "table" and ind.type == "text" and type(map[name]) == "table" and map[name].name then
+      ind.fontSize = size
+    end
+  end
+end
 
 local function reapplyAfterTemplate()
   local grid2 = _G.Grid2
@@ -86,6 +99,9 @@ local function reapplyAfterTemplate()
       local target = type(space) == "table" and type(space.profiles) == "table" and space.profiles[profile]
       if type(written[key]) == "number" and done[key] == nil and type(target) == "table" then
         Core.WriteOver(target, f.values)
+        if f.namespace == "Grid2Frame" and type(sv.profiles) == "table" then
+          setNameTextSize(sv.profiles[profile], f.values.fontSize)
+        end
         done[key] = f.version
         Core:Log("info", "Defaults:Grid2", key .. ": preset values written again after Grid2's first-start template")
       end

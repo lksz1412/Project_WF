@@ -142,3 +142,68 @@ New: Collection/tools/{patches,catalog}.py; Collection/patches/{Details,Experien
 6. The 0.1.5 ZIPs (~127 MB each) are in outputs/collection untracked — commit or release upload is master's call.
 7. build.py now needs Collection/upstream (extract.py) because it runs patches.verify before writing.
 8. EF: rested XP growth has no event in EF; the ticker checks level/XP/max/rested each second and runs the full update on a change (keeps upstream's display). Other values (pet XP, rep, quest XP) follow their events as before.
+
+# Step 41-rev (R126–R127) — base 758d5a2b
+
+## Read (basis)
+- Claude/plans/2026-11-18-devil-forever-addon-collection-phase25-세부계획.md last 30 lines (Step 41-rev row)
+- References/codex-appearance/25-codex-handoff/README.md (grep grid/font: lines 5, 17, 18, 69–76); positions.json via python (layouts/*/gridFont 12/14/18, gridBorder, grid2Button)
+- !DevilForever_Core/Presets/fhd.lua 524–575 (Grid2 proposal + fragments; qhd/uhd same line 552); Presets.lua 140–215 (Register keeps only name/screen/uiScale/edits/fragments → the proposal's "indicators" table is never written); Defaults/Grid2.lua (full)
+- Grid2/GridDefaults.lua 27–110; Grid2/modules/IndicatorText.lua 262–275 (textsize = dbx.fontSize or Grid2Frame profile fontSize or 11); Grid2Options/profiles/ProfileClassic.lua, ProfileModern.lua, ProfileBlizzard.lua (grep text indicators: name text = Classic text-down 10, Modern text-center 10, Blizzard text-name 10; Classic text-up 9)
+- tests/firststart/run.py 490–640 (Grid2 stub, template session, existing case)
+- DevilForever_Appearance/Composition.lua 1–146 (full), Crests.lua 1–25, Appearance.lua (grep Composition: 46, 164); Themes/ listing (13 themes; every non-devil theme has <preset>_deck_reviewed.tga, devil has none)
+- Collection/Installer/Contract.md (grep catalog/version lines 7–16, 62, 76; 140 lines), Engine/ApprovedPackage.cs 20–50, 100–200, Engine/Models.cs 40–67, Engine/InstallationStore.cs 143–176 (grep), Publish-Installer.ps1 10–40; Collection/tests/installer/run.py 1–30 (runs the published exe)
+
+## Item 1 — Grid2 name text 12/14/18
+Finding: the preset's `["indicators"]["text-center"]` values were never written (Presets:Register keeps fragments only; the fragments are Grid2Frame and Grid2Layout). The template assigns whole indicator entries; the name text indicator differs per template (Classic text-down, Modern text-center, Blizzard text-name), so a fixed "text-center" entry would add a typeless indicator to Classic/Blizzard profiles.
+Impact map:
+| Place | Verdict | Reason |
+|---|---|---|
+| Presets/{fhd,qhd,uhd}.lua Grid2Frame fragment | fix | + `fontSize` 12/14/18 (Grid2's frame default text size, used by text indicators without their own size) |
+| same files, proposal `indicators["text-center"].fontSize` | fix | 16/18/22 → 12/14/18 (kept consistent; not read by Core — DQ) |
+| Defaults/Grid2.lua reapplyAfterTemplate | fix | after a template was applied: every "text" indicator the statusMap maps status `name` to gets the Grid2Frame fragment's fontSize (same once-per-profile-key condition) |
+| Defaults/Grid2.lua header comment | fix together | states the name-text rule |
+| tests/firststart grid2_preset_values_survive_first_start_template | fix together | per template: name indicator = text-down/text-center/text-name, fontSize 12; other text indicators keep the template value (Classic text-up 9); Grid2Frame fontSize 12; existing profile keeps the template's 10; static check of 12/14/18 in the three presets |
+| a later `/dfp preset` on an existing profile | check only | does not change the name text (only first-start template step) — DQ |
+- `python3 -I Collection/tests/firststart/run.py` → `cases=24 passed=24 failed=0`
+
+## Item 2 — installer catalog from the ZIPs
+- Contract/engine: ApprovedPackage.cs:26–28 requires exactly 2 packages (fuf, pitbull4), defaultVariant pitbull4, interface 16001 → the 0.1.2 rows are replaced, no history kept (the engine would refuse a 4-row catalog).
+- catalog.py: `--write [FILE]` (default Collection/Installer/ReleaseCatalog.json) and `--check [FILE]` (byte compare with what the ZIPs give, rc 1 on difference); output byte format = the existing file's (indent 2, trailing newline — checked: re-dumping the old file gives the same bytes). `--out` removed.
+- New tests/catalog/run.py: write→check match; member byte changed / one more file → DIFFERS rc 1, rebuilt from same inputs → match; one-session ZIP in place of fuf → rc 1; repository catalog vs outputs/collection ZIPs.
+- dotnet is not installed here: the C# installer's refusal of a tampered or comparison ZIP (ApprovedPackage SHA/ZipBytes lookup, member hashes) was not run; the Python check above covers the catalog side only.
+- Collection/Installer/Contract.md still names 0.1.2 in its table (lines 12–13) — outside the write scope given (DQ).
+
+## Item 3 — reviewed deck replaces _deck.tga
+Impact map:
+| Place | Verdict | Reason |
+|---|---|---|
+| build.py runtime_files | fix | `<name>_deck.tga` excluded when `<name>_deck_reviewed.tga` is in the same directory (reason "replaced by …"); 36 files = 12 themes × 3 presets; devil's 3 `_deck.tga` kept (no reviewed sibling) |
+| Composition.lua GetPlan | fix | surfaces of the active theme only: devil → `_deck.tga`, every other theme → `_deck_reviewed.tga`; top or deck unknown to the client → no plan (individual shell); the racial→family fallback and the `_deck.tga` retry are gone (they pointed at files no longer shipped) |
+| Composition.lua Apply | fix | a failed SetTexture → frame hidden (shell), no second file tried |
+| Composition crest overlay (non-reviewed only) | check only | only devil is non-reviewed now; devil has no crest → overlay not shown (as before for devil) |
+| tests/install/verify_archives.py composition check | fix | 0.1.5+: non-devil `_deck.tga` must be absent; size/alpha/centre comparisons read it from Collection/AddOns |
+| Codex performance test (Composition path count) | check only | runner 8/8 |
+- New tests/composition/run.py (shipped set from build.runtime_files): shipped set has reviewed decks only (devil own deck); 13 themes × 3 presets paint top + reviewed deck (devil: deck), only shipped paths requested; reviewed deck unknown → nothing loaded, shell; failed reviewed texture → no `_deck.tga`, shell; same without IsKnownFile API (orc: one attempt, shell); no API → only shipped names. Against the HEAD Composition.lua copy (`git show HEAD:…` into `<scratch>/old41.*`): `every_theme_paints_reviewed_deck_from_shipped_files` and `failed_texture_without_lookup_api_keeps_shell` FAIL (racial themes fell back to the family `_deck.tga`; API-less retry asked for `_deck.tga`).
+
+## Item 4 — rebuild, catalog, gates
+- `build.py --variant pitbull4 --out-dir outputs/collection` → `built folders=35 files=2210 zip_entries=2213 sha256=174149f811375190788f515ee7ff1b1c9ea11cecd83124da04edb0c9be9da40e`
+- `build.py --variant fuf --out-dir outputs/collection` → `built folders=37 files=2154 zip_entries=2157 sha256=f563aaba6e80105dd54c76a260560db060ce2911b1c963e47bb1c3a885d515de`
+- second builds into `<scratch>/b41.*/second` → same sha256 both
+- excluded files: pitbull4 106 (70 + 36 decks), fuf 98 (62 + 36)
+- `catalog.py <both ZIPs> --write` → wrote Collection/Installer/ReleaseCatalog.json (2 packages); `--check` → `matches the ZIPs (pitbull4 174149f81137, fuf f563aaba6e80)` rc 0
+  - pitbull4 · 0.1.5 · DevilForever-0.1.5.zip · 174149f811375190788f515ee7ff1b1c9ea11cecd83124da04edb0c9be9da40e · zipBytes 81398885 · addonBytes 336654337 · addonFiles 2207 · 35 folders
+  - fuf · 0.1.5 · DevilForever-0.1.5-fuf.zip · f563aaba6e80105dd54c76a260560db060ce2911b1c963e47bb1c3a885d515de · zipBytes 82055349 · addonBytes 339846869 · addonFiles 2151 · 37 folders
+- genregistry --check up to date (58497 bytes) · patches verify `patches=5 unmodified=22 failures=0`
+- core 108/108 · pitbull4 6/6 · firststart 24/24 · fufdefaults 22/22 · pitbull4runtime 19/19 · chatsetup 28/28 · castbars 16/16 · statusstrip 20/20 · thirdparty 8/8 · patches 4/4 · composition 6/6 · catalog 4/4 (skipped=0)
+- luacheck Core + Appearance `checked=27 failed=0`
+- verify_archives `<scratch>/g41.*/v/zips --version 0.1.5 --reviewed-chat` rc 0: pitbull4 `checked=1298 failed=0`, `unresolved=0`, `files=2210 internal_hashes=2209`; fuf `checked=1249 failed=0`, `unresolved=0`, `files=2154 internal_hashes=2153`
+- Codex runner `--output <scratch>/g41.*/codex` rc 0 `PASS suites=8/8 expected_counted_cases=195`
+- line endings kept: Presets LF, Defaults/Grid2.lua CRLF, Composition.lua LF
+
+## Decision Queue (41-rev)
+1. The proposal `indicators` table in Presets/*.lua (text-center, icon sizes) is not read by Core; name text now comes from the Grid2Frame fragment fontSize + the template step. Icon sizes there stay unused.
+2. Name text size follows the preset only at the first-start template; `/dfp preset <other>` later changes Grid2Frame (default size) but not the template's name indicator.
+3. Contract.md still describes 0.1.2 (version, file names) — outside the given scope.
+4. The C# tamper/comparison refusal test needs dotnet (Windows or a dotnet environment).
+5. Composition: a race theme whose files the client does not know now shows the individual shell instead of the family composition with a crest.
