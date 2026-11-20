@@ -19,3 +19,6 @@ _local_only/
 MacroLibrary/
 SourceArchive/
 Collection/upstream/
+
+# 0.1.5 release ZIPs exceed GitHub file limit; published as release assets
+outputs/collection/DevilForever-0.1.5*.zip
