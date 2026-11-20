@@ -18,9 +18,9 @@ Phase 27.2 · 2026-11-19 12:44–13:03 +0900 · 예상 90–150분
 
 ## 실행 결과
 
-작업 A의 5흐름·공개 실행 33회와 별도 세 대상·19회가 통과했다. 이 단계에서 실행한 것은 개발 빌드와 격리 대상이다. [작업 A 실행](../../_local_only/phase26-work-r151-20261119/step52-recovery-v6ixgox9/runtime-01.log) · [별도 실행](../../_local_only/phase26-work-r151-20261119/step52-root-cli-01/recovery-gate.json) · [강제 종료 시험](../../_local_only/phase26-work-r151-20261119/step55-prep-interrupted-01/interrupted-result.json)
+작업 A의 5흐름·공개 실행 33회와 별도 세 대상·19회가 통과했다. 이 단계에서 실행한 것은 개발 빌드와 격리 대상이다. 작업 A 실행 (로컬 전용) · 별도 실행 (로컬 전용) · 강제 종료 시험 (로컬 전용)
 
-독립 검수에서 복원 목표 항목이 빠진 기록 때문에 공개 명령이 비정상 종료할 수 있음을 확인했다. 읽을 때 키 집합과 복원 목표를 검증하는 코드를 추가했다. 앞선 이동 경로 검사로 두 시험이 먼저 중단되는 점을 바로잡은 뒤, 두 시험 모두 의도한 `invalid-record` 사유·종료 코드 2와 대상·관리 영역 지문 동일을 확인했다. [보정 전 시험의 확인과 수정](audit-installer/step52-recovery-work-log.md) · [두 경로의 실제 출력](../../_local_only/phase26-work-r151-20261119/step52-test-reason-bdzj5m6a/runtime-final.log)
+독립 검수에서 복원 목표 항목이 빠진 기록 때문에 공개 명령이 비정상 종료할 수 있음을 확인했다. 읽을 때 키 집합과 복원 목표를 검증하는 코드를 추가했다. 앞선 이동 경로 검사로 두 시험이 먼저 중단되는 점을 바로잡은 뒤, 두 시험 모두 의도한 `invalid-record` 사유·종료 코드 2와 대상·관리 영역 지문 동일을 확인했다. [보정 전 시험의 확인과 수정](audit-installer/step52-recovery-work-log.md) · 두 경로의 실제 출력 (로컬 전용)
 
 ## 게이트
 

@@ -1,0 +1,32 @@
+{
+  "phase": "29.2",
+  "status": "PASS",
+  "steps": [
+    61,
+    62
+  ],
+  "rankEntries": 40,
+  "uniqueProjects": 30,
+  "defaultAdditions": 0,
+  "grades": {
+    "maintain": 1,
+    "optional": 7,
+    "dependency": 6,
+    "reference": 5,
+    "exclude": 11
+  },
+  "reviews": [
+    {
+      "major": 0,
+      "moderate": 1,
+      "minor": 0
+    },
+    {
+      "major": 0,
+      "moderate": 0,
+      "minor": 0
+    }
+  ],
+  "gameMeasured": false,
+  "next": "29.3 approval"
+}

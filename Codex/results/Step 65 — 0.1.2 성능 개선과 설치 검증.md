@@ -19,13 +19,13 @@
 | 카탈로그·설치 계약·안내서·한 접속 확인표 | 함께 수정 | 공개 설치 도구가 최종 해시를 읽고, 다음 게임 확인이 0.1.2 경로를 보도록 갱신 |
 | 이전 ZIP·테마 자산·동봉 애드온 | 확인만 | 파일 이름 목록과 전체 바이트 대조. 이전 0.1.1 원본과 복원 기준 보존 |
 
-[수정 확인과 영향 표](../../_local_only/perf-package-0.1.2/step65-dominos-fix.md) · [세 ZIP의 전체 바이트 차이와 해시](../../_local_only/perf-package-0.1.2/final-build/archives/release-receipt.json)
+수정 확인과 영향 표 (로컬 전용) · 세 ZIP의 전체 바이트 차이와 해시 (로컬 전용)
 
 ### 동봉 애드온에서 발견한 후보
 
-- **Forever Unit Frames(FUF).** 비교 명령은 설정 116개를 공개 명령으로 한 건씩 보낸다. 동봉 FUF의 `Config.Set`은 한 건마다 변경 알림을 보낸다. 전투 밖에서는 이 알림을 받는 쪽이 해당 유닛의 배치를 즉시 다시 적용할 수 있다. 같은 설정값 116개를 FUF 내부의 `Config.SetKeys`로 유닛별로 넣어 본 오프라인 시험은 세 해상도 모두 알림 116회에서 10회, 적용값과 저장 프로필 일치였다. 현재의 116회는 수동 비교 배치에서 관측했다. 기본판은 PitBull4이며 FUF는 같은 조건의 전투·평시 비교 후보로 남긴다. [알림과 내부 묶음 함수](../../Collection/upstream/Forever_Unit_Frames-0.65.2/ForeverUnitFrames/Core/Config.lua#L126) · [프레임 재배치](../../Collection/upstream/Forever_Unit_Frames-0.65.2/ForeverUnitFrames/Units/Single.lua#L355) · [오프라인 비교](../../_local_only/perf-package-0.1.2/fuf-upstream-batch-probe.json)
-- **Hekili.** 프레임마다 동작 조건을 확인하는 코드가 있다. 실제 추천 계산은 조건과 간격으로 제한하고 계산 작업도 재사용한다. 우선 조사할 곳은 추천 결과를 바꾸지 않고 줄일 수 있는 재조회와 복사다. [추천 실행 코드](../../Collection/upstream/Hekili-v0.8.6/Hekili/Engine/Driver.lua#L151)
-- **Details.** 갱신 타이머에서 사용 중인 창을 순회한 뒤 공유 갱신 상태를 정리한다. 같은 전투 로그에서 데이터 계산과 창 표시 비용을 나눠 확인할 후보가 된다. 두 순회의 역할이 있으므로 횟수만으로 합칠 수 있다고 판단하지 않았다. [갱신 간격](../../Collection/upstream/Details-Details.20261109.15410.172/Details/core/gears.lua#L197) · [창 갱신 순서](../../Collection/upstream/Details-Details.20261109.15410.172/Details/core/control.lua#L1886)
+- **Forever Unit Frames(FUF).** 비교 명령은 설정 116개를 공개 명령으로 한 건씩 보낸다. 동봉 FUF의 `Config.Set`은 한 건마다 변경 알림을 보낸다. 전투 밖에서는 이 알림을 받는 쪽이 해당 유닛의 배치를 즉시 다시 적용할 수 있다. 같은 설정값 116개를 FUF 내부의 `Config.SetKeys`로 유닛별로 넣어 본 오프라인 시험은 세 해상도 모두 알림 116회에서 10회, 적용값과 저장 프로필 일치였다. 현재의 116회는 수동 비교 배치에서 관측했다. 기본판은 PitBull4이며 FUF는 같은 조건의 전투·평시 비교 후보로 남긴다. 알림과 내부 묶음 함수 (로컬 전용) · 프레임 재배치 (로컬 전용) · 오프라인 비교 (로컬 전용)
+- **Hekili.** 프레임마다 동작 조건을 확인하는 코드가 있다. 실제 추천 계산은 조건과 간격으로 제한하고 계산 작업도 재사용한다. 우선 조사할 곳은 추천 결과를 바꾸지 않고 줄일 수 있는 재조회와 복사다. 추천 실행 코드 (로컬 전용)
+- **Details.** 갱신 타이머에서 사용 중인 창을 순회한 뒤 공유 갱신 상태를 정리한다. 같은 전투 로그에서 데이터 계산과 창 표시 비용을 나눠 확인할 후보가 된다. 두 순회의 역할이 있으므로 횟수만으로 합칠 수 있다고 판단하지 않았다. 갱신 간격 (로컬 전용) · 창 갱신 순서 (로컬 전용)
 
 ### 읽은 범위
 
@@ -36,7 +36,7 @@
 ## 변경 및 생성 파일
 
 - Dominos 스킨과 성능 회귀 시험. 설치 버전 자료, 카탈로그, 안내서, 한 접속 확인표.
-- 로컬 산출물은 세 ZIP, Windows 실행 파일, 해시 기록과 시험 기록이다. [설치 묶음의 파일별 해시](../../_local_only/perf-package-0.1.2/final-build/DevilForever-Windows-x64-0.1.2/release-files.json)
+- 로컬 산출물은 세 ZIP, Windows 실행 파일, 해시 기록과 시험 기록이다. 설치 묶음의 파일별 해시 (로컬 전용)
 
 ## 검증
 
@@ -49,7 +49,7 @@
 | 새 시험 폴더의 공개 설치 명령 | 9건, 명령 23회 통과. 새 설치와 기존 파일 보존, 변조·비교 ZIP 거절을 확인 |
 | 두 판의 갱신·복원 | 0.1.1에서 0.1.2를 적용한 뒤 0.1.1로 복원. 기본판 각 단계 2,312개, FUF 각 단계 2,248개 파일 해시 일치. 무관 애드온·개인 설정·게임 실행 파일 대역 보존 |
 
-[신규 설치와 차단 시험](../../_local_only/perf-package-0.1.2/final-build/public-cli-opu4f7wx/result.json) · [PitBull4 갱신·복원](../../_local_only/perf-package-0.1.2/final-build/upgrade-pitbull4-_hnfikuo/result.json) · [FUF 갱신·복원](../../_local_only/perf-package-0.1.2/final-build/upgrade-fuf-jfoa5jew/result.json)
+신규 설치와 차단 시험 (로컬 전용) · PitBull4 갱신·복원 (로컬 전용) · FUF 갱신·복원 (로컬 전용)
 
 ## 다음
 

@@ -15,10 +15,10 @@
 
 ## 근거
 
-- 미니맵 대안 BasicMinimap 12.1.6의 클래식 좌표 코드도 확인했다. 숨겨진 좌표의 상세 위치 계산은 건너뛰지만 지도 확인과 5초 재예약은 이어진다. SexyMap에서 검증한 변경안은 좌표 표시를 끈 동안 예약 자체를 취소한다. [BasicMinimap 좌표 코드](../../Collection/upstream/basic-minimap-v12.1.6/BasicMinimap/BasicMinimap_Classic.lua#L524)
-- Quartz CastBarTemplate 102행 이후와 등록부 1255행, Grid2 GridFrame 209–218행과 Grid2Options의 로드 선언, [공격대 기본값](../../Collection/AddOns/!DevilForever_Core/Defaults/Grid2.lua), [VuhDo 포에버 로드 목록](../../Collection/upstream/vuhdo-v3.221/VuhDo/VuhDo_Camelot.toc).
-- Bartender4 PetBar 전문의 키 재지정과 소환수 이벤트. 동봉 Dominos의 버튼 연결과 재구성, Step 65의 실제 소환수 버튼 시험. [Bartender4 PetBar](../../Collection/upstream/bartender4-4.19.0/Bartender4/PetBar.lua#L67)
-- SexyMap 좌표 옵션 19–32행 및 226–359행. Experience Forever 초기화 373–447행, 갱신·경험치 831–866행, 진입과 레벨 변화 1273–1305행. ProfileManager 초기 진입 317–355행. [지도와 경험치 대역](../../_local_only/perf-review-29.4/minimap-and-xp.json)
+- 미니맵 대안 BasicMinimap 12.1.6의 클래식 좌표 코드도 확인했다. 숨겨진 좌표의 상세 위치 계산은 건너뛰지만 지도 확인과 5초 재예약은 이어진다. SexyMap에서 검증한 변경안은 좌표 표시를 끈 동안 예약 자체를 취소한다. BasicMinimap 좌표 코드 (로컬 전용)
+- Quartz CastBarTemplate 102행 이후와 등록부 1255행, Grid2 GridFrame 209–218행과 Grid2Options의 로드 선언, [공격대 기본값](../../Collection/AddOns/!DevilForever_Core/Defaults/Grid2.lua), VuhDo 포에버 로드 목록 (로컬 전용).
+- Bartender4 PetBar 전문의 키 재지정과 소환수 이벤트. 동봉 Dominos의 버튼 연결과 재구성, Step 65의 실제 소환수 버튼 시험. Bartender4 PetBar (로컬 전용)
+- SexyMap 좌표 옵션 19–32행 및 226–359행. Experience Forever 초기화 373–447행, 갱신·경험치 831–866행, 진입과 레벨 변화 1273–1305행. ProfileManager 초기 진입 317–355행. 지도와 경험치 대역 (로컬 전용)
 - DungeonJournal, Auctionator, Questie, What's Training?의 정확한 배포 판과 기존 소스 확인 범위는 [Step 60 순위와 성능 검토](Step%2060%20%E2%80%94%20상위%20애드온%201차%20등급과%20자체%20성능%20검수.md)와 [Step 61 선택 설치](Step%2061%20%E2%80%94%20최소%20선택%20설치%20구성.md)에 있다. [DungeonJournal 2.0.12](https://www.curseforge.com/wow/addons/dungeonjournal/files/9687205) · [AtlasLoot 1.4.4](https://www.curseforge.com/wow/addons/atlasloot-forever/files/9693986) · [Auctionator 349](https://www.curseforge.com/wow/addons/auctionator/files/9690303)
 - 경보는 제작자 문서와 파일 표기까지 확인했다. 게임 안 우두머리 대응 일치와 성능은 미측정이다. [DBM 던전 원본](https://github.com/DeadlyBossMods/DBM-Dungeons) · [BigWigs v427.9](https://www.curseforge.com/wow/addons/bigwigs/files/9516569) · [LittleWigs v12.1.23](https://www.curseforge.com/wow/addons/littlewigs/files/9437389)
 - Questie 로컬 이벤트 파일 61–121행, 최신 비교판의 변경 기록, What's Training? 비교 파일을 확인했다. [Questie 12.11.0과 QuestieDB 1.1.3 변경 기록](https://www.curseforge.com/wow/addons/questie/files/9687964) · [What's Training? 11.4.8](https://www.curseforge.com/wow/addons/whats-training/files/9621224)

@@ -11,7 +11,7 @@
 | 3 | FUF의 상위 프레임이 가려진 동안 파생 프레임 갱신 생략 | 같은 비가시 상태의 시험에서 PitBull4 전체 갱신 0회, FUF 50회 | 다시 보일 때 최초 갱신과 대상·체력·자원 변경 |
 | 4 | Details의 일반 미터기 갱신 간격을 0.20초에서 0.50초로 비교 | 같은 10초 입력에서 일반 창 두 개의 갱신 진입 100→40 | 실제 미터기 움직임, 반응 지연, 별도 Tiny Threat의 신호 |
 
-SexyMap과 Experience Forever의 변경안 두 개를 실제 0.1.2 Lua에서 만들어 새 시험 폴더에 적용했다. Lua 5.1 문법과 시험에서 확인한 파일 내용의 해시가 일치했다. [변경안](../../_local_only/perf-review-29.4/patch-candidates/) · [시험 폴더 적용 기록](../../_local_only/perf-review-29.4/patch-candidates/verified-_jf5c3pz/result.json)
+SexyMap과 Experience Forever의 변경안 두 개를 실제 0.1.2 Lua에서 만들어 새 시험 폴더에 적용했다. Lua 5.1 문법과 시험에서 확인한 파일 내용의 해시가 일치했다. 변경안 (로컬 전용) · 시험 폴더 적용 기록 (로컬 전용)
 
 ## 한 접속에서 기록할 것
 

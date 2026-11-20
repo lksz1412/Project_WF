@@ -2,7 +2,7 @@ PLAN_UPDATE_READY — 같은 B 검수 대기, 이후 작업 중지.
 
 기능 제작·개선 → 저장/복원·편집 → 선택 기능 → 스타일/테마 → 가능한 검증·수정 → **Step17 최종 목업**으로 정리했습니다. Step5 미완 렌더/P4는17로 명시 이월했습니다. R13은 Step6의 안정된 읽기전용 참고와 Step19의 적용 전 재확인으로 구분했습니다.
 
-폴더: [r44-plan-update](D:/Projects/Project_WF/Codex/results/handoffs/old-reference/r44-plan-update)
+폴더: r44-plan-update (로컬 전용)
 
 | 파일 | 행 | SHA256 |
 |---|---:|---|

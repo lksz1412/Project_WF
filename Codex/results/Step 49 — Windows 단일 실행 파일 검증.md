@@ -4,7 +4,7 @@ Phase 27.1 · 2026-11-19 12:17:31 +0900 착수 · 예상 30–60분 · Phase 26 
 
 ## 수행
 
-Windows 11 빌드 26200 x64의 일반 사용자 토큰과 .NET 개발 도구 10.0.201을 확인했다. 빈 런타임 검색 경로와 격리된 추출 위치에서 `net10.0-windows`, `win-x64` 자체 포함 Windows Forms 실행 파일을 호출했다. 압축을 풀어 준비한 파일 없이 실행 파일 한 개를 넣어 시작했다. [실행 기록과 전체 SHA-256](../../_local_only/phase26-work-r151-20261119/dotnet-preflight/official-x64-probe/single-exe-test.json) · [Microsoft 단일 파일 배포 설명](https://learn.microsoft.com/en-us/dotnet/core/deploying/single-file/overview)
+Windows 11 빌드 26200 x64의 일반 사용자 토큰과 .NET 개발 도구 10.0.201을 확인했다. 빈 런타임 검색 경로와 격리된 추출 위치에서 `net10.0-windows`, `win-x64` 자체 포함 Windows Forms 실행 파일을 호출했다. 압축을 풀어 준비한 파일 없이 실행 파일 한 개를 넣어 시작했다. 실행 기록과 전체 SHA-256 (로컬 전용) · [Microsoft 단일 파일 배포 설명](https://learn.microsoft.com/en-us/dotnet/core/deploying/single-file/overview)
 
 | 입력 또는 검사 | 실제값 |
 |---|---|
@@ -16,7 +16,7 @@ Windows 11 빌드 26200 x64의 일반 사용자 토큰과 .NET 개발 도구 10.
 
 ## 근거·판단
 
-현재 도구와 Windows Forms 기본 프레임워크를 사용한다. 설치기 최종 빌드에서 `SelfContained`, `PublishSingleFile`, `IncludeNativeLibrariesForSelfExtract`를 고정하고 동일 실행의 콘솔·창 경로를 확인한다. 시험 프로그램은 내장 라이브러리 확인용이다. 일반 PC와 실제 설치 화면·게임 폴더 적용은 이후 단계로 기록했다. [게시 원출력](../../_local_only/phase26-work-r151-20261119/dotnet-preflight/official-x64-probe/publish.log) · [파일 이동 시험](../../_local_only/phase26-work-r151-20261119/dotnet-preflight/same-volume-check/result.json)
+현재 도구와 Windows Forms 기본 프레임워크를 사용한다. 설치기 최종 빌드에서 `SelfContained`, `PublishSingleFile`, `IncludeNativeLibrariesForSelfExtract`를 고정하고 동일 실행의 콘솔·창 경로를 확인한다. 시험 프로그램은 내장 라이브러리 확인용이다. 일반 PC와 실제 설치 화면·게임 폴더 적용은 이후 단계로 기록했다. 게시 원출력 (로컬 전용) · 파일 이동 시험 (로컬 전용)
 
 마스터와 Phase 27.1 세부계획, Phase 26.2 결과, 시험 프로젝트·실행 코드와 실행 기록, 파일 이동 결과를 전문으로 대조했다. Python은 기존 빌더와 자동 시험에서 사용한다. 설치기 사용자 실행 파일의 도구판과 설치기 ZIP 카탈로그를 별개의 검증 입력으로 둔다.
 

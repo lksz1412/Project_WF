@@ -2,7 +2,7 @@
 
 Phase 27.3 · 2026-11-19 13:44–13:47 +0900 · 예상 40–80분
 
-Step 53 소스를 Windows x64용 .NET 자체 포함 단일 EXE로 빌드했다. 설치기와 승인 기본 PitBull4 ZIP을 한 로컬 폴더에 배치했다. FUF는 승인한 선택 ZIP을 별도로 고른다. [로컬 파일 목록과 SHA-256](../../_local_only/phase26-work-r151-20261119/DevilForever-Windows-x64-0.1.0/release-files.json) · [게시 명령](../../Collection/Installer/Publish-Installer.ps1)
+Step 53 소스를 Windows x64용 .NET 자체 포함 단일 EXE로 빌드했다. 설치기와 승인 기본 PitBull4 ZIP을 한 로컬 폴더에 배치했다. FUF는 승인한 선택 ZIP을 별도로 고른다. 로컬 파일 목록과 SHA-256 (로컬 전용) · [게시 명령](../../Collection/Installer/Publish-Installer.ps1)
 
 | 파일 | 바이트 | SHA-256 |
 |---|---:|---|
@@ -11,11 +11,11 @@ Step 53 소스를 Windows x64용 .NET 자체 포함 단일 EXE로 빌드했다. 
 
 ## 실제 진입
 
-빈 `DOTNET_ROOT` 경로와 별도의 임시 추출 경로에서 배포 EXE를 열었다. 프로그램은 실제 `Devil Forever 설치기` 제목의 창을 만들었다. [창 시작 기록](../../_local_only/phase26-work-r151-20261119/step54-published-window-01/window-result.json)
+빈 `DOTNET_ROOT` 경로와 별도의 임시 추출 경로에서 배포 EXE를 열었다. 프로그램은 실제 `Devil Forever 설치기` 제목의 창을 만들었다. 창 시작 기록 (로컬 전용)
 
-실제 배포 EXE로 다른 작업 폴더에서 옆의 PitBull4 ZIP을 찾았고, 새 대역에 설치한 모든 파일이 ZIP의 해시 목록과 일치했다. `verify`는 종료 0이었다. 승인 FUF를 고른 미리보기는 준비 상태, 비교판은 종료 2로 거부됐다. 세 읽기 호출의 전후 대역도 대조했다. [공개 명령 기록](../../_local_only/phase26-work-r151-20261119/step54-published-cli-01/release-cli-result.json) · [게시 출력](../../_local_only/phase26-work-r151-20261119/step54-production-build.log)
+실제 배포 EXE로 다른 작업 폴더에서 옆의 PitBull4 ZIP을 찾았고, 새 대역에 설치한 모든 파일이 ZIP의 해시 목록과 일치했다. `verify`는 종료 0이었다. 승인 FUF를 고른 미리보기는 준비 상태, 비교판은 종료 2로 거부됐다. 세 읽기 호출의 전후 대역도 대조했다. 공개 명령 기록 (로컬 전용) · 게시 출력 (로컬 전용)
 
-두 번째 디렉터리에 선택 FUF를 포함해 다시 빌드했다. 두 EXE의 전체 해시가 같았고 기존 배포 경로 재사용은 거부됐다. [두 번째 빌드 비교](../../_local_only/phase26-work-r151-20261119/step54-second-output-check.json)
+두 번째 디렉터리에 선택 FUF를 포함해 다시 빌드했다. 두 EXE의 전체 해시가 같았고 기존 배포 경로 재사용은 거부됐다. 두 번째 빌드 비교 (로컬 전용)
 
 ## 게이트
 
