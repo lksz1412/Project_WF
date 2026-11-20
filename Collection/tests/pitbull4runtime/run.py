@@ -191,10 +191,15 @@ FRAME.on_GetFrameLevel = function() return 3 end
 """
 
 
-def aura_runtime():
+def aura_runtime(options=False):
     L = runtime()
     L.execute(AURA_STUBS)
+    if options:
+        L.execute(AURA_OPTION_STUBS)
     load(L, "Modules/Aura/Forever.lua")
+    if options:
+        load(L, "Options/LayoutEditor.lua")
+        load(L, "Modules/Aura/Options.lua")
     L.execute("Aura:OnEnable()")
     return L
 
@@ -235,6 +240,50 @@ def aura_native_update_reconfigures_only_on_change():
     L.execute("reset_calls(); Aura:ClearNativeDebuffs(FRAME); Aura:UpdateNativeDebuffs(FRAME, DB)")
     eq(calls(L, "AuraContainer:SetEnabled") >= 2 and calls(L, "AuraContainer:UpdateAllAuras") == 1, True,
        "cleared frame comes back fully")
+
+
+# The real option tables (Modules/Aura/Options.lua, Options/LayoutEditor.lua) with
+# PitBull4:UpdateForLayout redrawing the probe frame, as Main.lua does for a layout.
+AURA_OPTION_STUBS = r"""
+PitBull4.L = setmetatable({}, {__index = function(_, k) return k end})
+PitBull4.LOCALIZED_NAMES = setmetatable({}, {__index = function(_, k) return k end})
+PitBull4.Options = {}
+PitBull4.defaultModulePrototype = {}
+function PitBull4:UpdateForLayout(layout) Aura:UpdateNativeDebuffs(FRAME, DB) end
+for _, k in ipairs({"SetDefaults", "SetColorOptionsFunction", "SetGlobalOptionsFunction"}) do Aura[k] = function() end end
+function Aura:SetLayoutOptionsFunction(fn) LAYOUT_OPTS = fn end
+function Aura:GetLayoutDB() return DB end
+Aura.OnProfileChanged_funcs = {}
+for _, k in ipairs({"can_dispel", "friend_buffs", "friend_debuffs", "self_buffs", "self_debuffs", "pet_buffs",
+                    "enemy_debuffs", "extra_buffs", "can_purge"}) do
+  Aura[k] = setmetatable({}, {__index = function() return {} end})
+end
+function option(key)
+  local t = {LAYOUT_OPTS(Aura)}
+  local function find(tbl, depth)
+    if type(tbl) ~= "table" or depth > 8 then return end
+    if type(tbl[key]) == "table" and tbl[key].set then return tbl[key] end
+    for _, v in pairs(tbl) do local r = find(v, depth + 1) if r then return r end end
+  end
+  return find(t, 0)
+end
+"""
+
+
+@case
+def aura_option_setters_reach_the_native_container():
+    if not NEW:
+        return
+    L = aura_runtime(options=True)
+    L.execute("Aura:UpdateNativeDebuffs(FRAME, DB); reset_calls()")
+    L.execute("option('zoom_aura').set({'zoom_aura'}, true)")
+    eq(calls(L, "Texture:SetTexCoord") > 0, True, "zoom icon set in the options dialog restyles the buttons")
+    L.execute("reset_calls(); option('max_debuffs').set({'max_debuffs'}, 3)")
+    eq(calls(L, "AuraContainer:SetAuraGroupMaxFrameCount"), 2, "max debuffs reaches both native groups")
+    L.execute("reset_calls(); Aura:UpdateNativeDebuffs(FRAME, DB)")
+    eq(calls(L, "AuraContainer:"), 0, "an aura/timer update afterwards still reconfigures nothing")
+    L.execute("reset_calls(); WATCH.script(WATCH, 'PLAYER_REGEN_ENABLED'); run_timers(); Aura:UpdateNativeDebuffs(FRAME, DB)")
+    eq(calls(L, "AuraContainer:SetAuraGroupLayout"), 0, "combat transition update does not count as a settings change")
 
 
 @case
@@ -723,6 +772,25 @@ def core_handler_removed_after_its_work():
     eq(list(core["to_py"](s.g.SEEN).values()), ["first", "second", "second"], "removal waits for the running dispatch")
     s.boot()
     eq(s.sv("DevilForever_CoreDB") is not None, True, "Core still becomes ready")
+
+
+@case
+def edit_cache_follows_theme_restored_at_login():
+    if not NEW:
+        return
+    core = suite("core")
+    first = core["Session"]().boot()
+    t = first.core.Theme
+    t.RegisterSet(t, "alt", first.table({"font.normal": "Alt.ttf"}))
+    t.SetActiveSet(t, "alt")
+    s = core["Session"](saved={"DevilForever_CoreDB": first.sv("DevilForever_CoreDB")}).boot(login=False)
+    t2, E = s.core.Theme, s.core.Edit
+    t2.RegisterSet(t2, "devil", s.table({"font.normal": "Devil.ttf", "font.size.normal": 14}))
+    t2.RegisterSet(t2, "alt", s.table({"font.normal": "Alt.ttf"}))
+    before = core["to_py"](E.Get(E, "test.chat"))["font"]["path"]
+    s.fire("PLAYER_LOGIN")
+    after = core["to_py"](E.Get(E, "test.chat"))["font"]["path"]
+    eq((before, after), ("Devil.ttf", "Alt.ttf"), "Edit:Get before login, then the saved theme restored")
 
 
 @case

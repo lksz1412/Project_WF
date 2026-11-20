@@ -11,9 +11,25 @@ local unavailable = false
 
 -- Raised whenever aura settings, the profile, fonts or the restriction state
 -- may have changed; containers and button styles are rebuilt only then (or
--- when their unit, size or frame geometry changes).
+-- when their unit, size or frame geometry changes). Every user-setting path
+-- reaches one of the wrapped entry points below: option setters call
+-- PitBull4.Options.UpdateFrames (-> PitBull4:UpdateForLayout) or
+-- Aura:UpdateAll; profile changes, font registration and restriction changes
+-- have their own hooks. Aura events and timers use neither.
 local settings_version = 1
 local function settings_changed() settings_version = settings_version + 1 end
+
+local plain_update_all = Aura.UpdateAll
+function Aura:UpdateAll(...)
+	settings_changed()
+	return plain_update_all(self, ...)
+end
+
+local plain_update_for_layout = PitBull4.UpdateForLayout
+function PitBull4:UpdateForLayout(...)
+	settings_changed()
+	return plain_update_for_layout(self, ...)
+end
 
 -- Units with a UNIT_AURA since their container was last refreshed. Other
 -- addons on this client state the container takes UNIT_AURA for its unit
@@ -362,14 +378,13 @@ function Aura:OnEnable()
 		watch:RegisterEvent("PLAYER_REGEN_DISABLED")
 		watch:RegisterEvent("PLAYER_REGEN_ENABLED")
 		watch:SetScript("OnEvent", function()
-			C_Timer.After(0, function() if Aura:IsEnabled() then Aura:UpdateAll() end end)
+			C_Timer.After(0, function() if Aura:IsEnabled() then plain_update_all(Aura) end end)
 		end)
 		self.forever_combat_watch = watch
 	end
 end
 
 function Aura:ForeverRestrictionChanged()
-	settings_changed()
 	self:UpdateAll()
 end
 

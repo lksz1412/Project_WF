@@ -146,6 +146,8 @@ function Theme:ListTokens()
   return names
 end
 
+-- Every change of the active set goes through here (SetActiveSet, the end of
+-- combat, the login restore): version, saved choice, listeners.
 local function switch(name)
   local old = activeName
   activeName = name
@@ -206,7 +208,5 @@ Core:On("PLAYER_LOGIN", function()
     pendingName = pendingName or saved
     return
   end
-  local old = activeName
-  activeName = saved
-  listeners:Fire(saved, old)
+  switch(saved)
 end)

@@ -6,7 +6,11 @@
 --   edits = {[frameKey] = {[field] = value}},
 --   fragments = {{folder, savedVariable, section = "root"|"global"|"profile",
 --     profile = token|nil, namespace = name|nil, profileKey = string|nil,
---     addonVersion = string, version = integer >= 1, values = table}}})
+--     intoExisting = {key, ...}|nil, addonVersion = string,
+--     version = integer >= 1, values = table}}})
+-- intoExisting: for each listed key of `values` (e.g. "units"), an entry
+-- values[key][name] is written only where the target already holds a table
+-- at [key][name]; entries the addon or its defaults never made are not created.
 -- Each edit value must pass Edit:Validate on a registered frame key; each
 -- fragment must name a registered folder and one of its saved variables
 -- (Core's own excluded). Bad values and fragments are dropped and logged.
@@ -127,6 +131,12 @@ local function fragmentProblem(f)
   end
   if f.profileKey ~= nil and (f.section ~= "root" or type(f.profileKey) ~= "string" or f.profileKey == "") then
     return "profileKey only with section root"
+  end
+  if f.intoExisting ~= nil then
+    if type(f.intoExisting) ~= "table" then return "intoExisting must be a list of keys" end
+    for _, k in ipairs(f.intoExisting) do
+      if type(k) ~= "string" then return "intoExisting must be a list of keys" end
+    end
   end
   if type(f.addonVersion) ~= "string" or f.addonVersion == "" then return "addonVersion must be a string" end
   if type(f.version) ~= "number" or f.version < 1 or floor(f.version) ~= f.version then
@@ -418,7 +428,19 @@ local function writeFragment(presetName, index, f, keys, mode)
   end
   local key, tbl = locate(f, keys)
   if not key then return record(presetName, index, "skipped", tbl) end
-  local written = Core.WriteOver(tbl, f.values)
+  local values = f.values
+  if f.intoExisting then
+    values = Core.CopyTable(f.values)
+    for _, k in ipairs(f.intoExisting) do
+      local entries, held = values[k], rawget(tbl, k)
+      if type(entries) == "table" then
+        for name in pairs(entries) do
+          if not (type(held) == "table" and type(rawget(held, name)) == "table") then entries[name] = nil end
+        end
+      end
+    end
+  end
+  local written = Core.WriteOver(tbl, values)
   Core:DBTable("preset", "fragments", presetName)[key] = f.version
   record(presetName, index, "written", mode .. ": " .. written .. " values", key)
 end

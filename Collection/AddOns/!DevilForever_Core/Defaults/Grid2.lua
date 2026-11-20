@@ -53,3 +53,48 @@ DevilForever_Core.Defaults:Register("Grid2", {
     },
   },
 })
+
+-- Grid2's first-start template (the profile chosen in Grid2's dialog, written by
+-- Grid2:MakeDatabaseDefaults after the preset fragments) assigns Grid2Frame and
+-- Grid2Layout keys such as frameWidth/frameHeight/frameBorder/Padding. Right after
+-- it ran, the active preset's Grid2Frame/Grid2Layout fragment values are written
+-- again into that profile, once per profile key, and only when the preset wrote
+-- them into that profile before (DevilForever_CoreDB.preset.fragments); other
+-- profiles are left alone. Values inside the template's indicators (text sizes)
+-- stay as the template sets them. Recorded in
+-- DevilForever_CoreDB.preset.grid2Template[<targetKey>] = fragment version.
+local Core = DevilForever_Core
+
+local function reapplyAfterTemplate()
+  local grid2 = _G.Grid2
+  local db = grid2 and grid2.db
+  if type(db) ~= "table" or type(db.GetCurrentProfile) ~= "function" then return end
+  local profile = db:GetCurrentProfile()
+  local presets = Core.Presets
+  local active = presets and presets:GetActive()
+  local def = active and presets:Get(active)
+  local sv = _G.Grid2DB
+  if not def or type(sv) ~= "table" or type(sv.namespaces) ~= "table" then return end
+  local written = Core:DBTable("preset", "fragments", active)
+  local done = Core:DBTable("preset", "grid2Template")
+  for _, f in ipairs(def.fragments) do
+    if f.folder == "Grid2" and (f.namespace == "Grid2Frame" or f.namespace == "Grid2Layout") then
+      local key = "Grid2DB/" .. f.namespace .. "@profile:" .. profile
+      local space = sv.namespaces[f.namespace]
+      local target = type(space) == "table" and type(space.profiles) == "table" and space.profiles[profile]
+      if type(written[key]) == "number" and done[key] == nil and type(target) == "table" then
+        Core.WriteOver(target, f.values)
+        done[key] = f.version
+        Core:Log("info", "Defaults:Grid2", key .. ": preset values written again after Grid2's first-start template")
+      end
+    end
+  end
+end
+
+Core:On("ADDON_LOADED", function(_, folder)
+  if folder ~= "Grid2" then return end
+  local grid2 = _G.Grid2
+  if type(grid2) == "table" and type(grid2.MakeDatabaseDefaults) == "function" and type(hooksecurefunc) == "function" then
+    hooksecurefunc(grid2, "MakeDatabaseDefaults", reapplyAfterTemplate)
+  end
+end)

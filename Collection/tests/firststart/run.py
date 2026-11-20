@@ -498,6 +498,103 @@ def party_command_lists_window_change():
        "every changed Grid2 value, window included: %r" % lines)
 
 
+# Grid2 first-start template after the preset (Defaults/Grid2.lua hook) -------------------
+
+GRID2_STUB = r"""
+function hooksecurefunc(t, k, fn)
+  local orig = t[k]
+  t[k] = function(...) local r = {orig(...)}; fn(...); return unpack(r) end
+end
+local PROFILE = "Hero - Realm"
+Grid2 = {defaultProfiles = {}}
+function Grid2:DbRegisterProfile(info, index) self.defaultProfiles[index or (#self.defaultProfiles + 1)] = info end
+function Grid2:DbUpdateStatusesDefaults() end
+local function sub(t, k) t[k] = t[k] or {}; return t[k] end
+Grid2.db = {GetCurrentProfile = function() return PROFILE end,
+  GetNamespace = function(self, ns)
+    return {profile = sub(sub(sub(sub(Grid2DB, "namespaces"), ns), "profiles"), PROFILE)} end}
+setmetatable(Grid2.db, {__index = function(t, k)
+  if k == "profile" then
+    local p = sub(sub(Grid2DB, "profiles"), PROFILE)
+    sub(p, "statuses"); sub(p, "indicators"); sub(p, "statusMap")
+    return p
+  end end})
+function Grid2:MakeDatabaseDefaults()
+  local info = self.defaultProfiles[self.defaultProfileIndex]
+  info.func(self, info)
+  return true
+end
+"""
+
+
+def grid2_template_session(template, saved=None):
+    globals_ = dict(SCREEN)
+    globals_["ChatFontNormal"] = {"GetFont": lambda self: ("Fonts\\x.ttf", 14)}
+    s = Session(registry="generated", extra_files=(), saved=saved, globals_=globals_, collection_presets=True)
+    s.lua.execute("function GetPhysicalScreenSize() return 1920, 1080 end")
+    s.load_addon(ADDON)
+    s.lua.execute(GRID2_STUB)
+    s.lua.execute('TEST_meta.Grid2 = {Version = "4.1.13"}')  # Grid2.toc ## Version, read by Presets
+    for rel in ("ProfileClassic.lua", "ProfileModern.lua", "ProfileBlizzard.lua"):
+        src = open(os.path.join(GRID2_OPTIONS, "profiles", rel), "rb").read()
+        fn = s.lua.eval("loadstring")(src, ("@" + rel).encode())
+        (fn[0] if isinstance(fn, tuple) else fn)()
+    s.load_addon("Grid2")   # Core's handlers: defaults, preset fragments, the template hook
+    s.lua.execute("Grid2.defaultProfileIndex = %d; Grid2:MakeDatabaseDefaults()" % template)
+    s.fire("PLAYER_LOGIN")
+    s.fire("PLAYER_ENTERING_WORLD", True, False)
+    return s
+
+
+@case
+def grid2_preset_values_survive_first_start_template():
+    for index, name in ((1, "Classic"), (2, "Modern"), (3, "Blizzard")):
+        s = grid2_template_session(index)
+        db = s.sv("Grid2DB")
+        frame = db["namespaces"]["Grid2Frame"]["profiles"]["Hero - Realm"]
+        layout = db["namespaces"]["Grid2Layout"]["profiles"]["Hero - Realm"]
+        eq((frame["frameWidth"], frame["frameHeight"], frame["frameBorder"], layout["Padding"]), (96, 32, 2, 4),
+           name + " template: preset cell size, border width and gap written again")
+        eq(db["profiles"]["Hero - Realm"]["__template"], name, name + " template's own indicators kept")
+        rec = s.sv("DevilForever_CoreDB")["preset"]["grid2Template"]
+        eq(sorted(rec), ["Grid2DB/Grid2Frame@profile:Hero - Realm", "Grid2DB/Grid2Layout@profile:Hero - Realm"],
+           "recorded once per profile key")
+        eq(s.errors(), [], "no errors")
+    saved = {"Grid2DB": {"profileKeys": {"Hero - Realm": "Hero - Realm"}, "profiles": {"Hero - Realm": {}},
+                         "namespaces": {"Grid2Frame": {"profiles": {"Hero - Realm": {"frameWidth": 70}}}}}}
+    old = grid2_template_session(2, saved=saved)
+    frame = old.sv("Grid2DB")["namespaces"]["Grid2Frame"]["profiles"]["Hero - Realm"]
+    eq(frame["frameWidth"], 66, "an existing profile: the template's value, no preset values written into it")
+
+
+def pb4_preset_session(saved=None, request=False):
+    globals_ = dict(SCREEN)
+    globals_["ChatFontNormal"] = {"GetFont": lambda self: ("Fonts\\x.ttf", 14)}
+    s = Session(registry="generated", extra_files=(), saved=saved, globals_=globals_, collection_presets=True)
+    s.lua.execute("function GetPhysicalScreenSize() return 1920, 1080 end")
+    s.lua.execute('TEST_meta.PitBull4 = {Version = "v4.2.50-forever.1"}')
+    s.boot(after=["PitBull4"])
+    return s
+
+
+@case
+def pitbull4_preset_positions_only_into_existing_units():
+    fresh = pb4_preset_session()
+    units = fresh.sv("PitBull4DB")["profiles"]["Default"]["units"]
+    eq(round(units["대상의 소환수"]["position_x"], 2), round(170 * PIXEL_FACTOR / UI_SCALE, 2),
+       "fresh install: the new unit gets its preset position")
+    saved = {"PitBull4DB": {"profileKeys": {"Hero - Realm": "Default"},
+                            "profiles": {"Default": {"units": {"대상": {"unit": "target", "enabled": True}}}}}}
+    first = pb4_preset_session(saved=saved)
+    core["dfp"](first, "preset fhd")
+    core["dfp"](first, "go")
+    nxt = {n: first.sv(n) for n in ("PitBull4DB", "DevilForever_CoreDB", "DevilForever_ProfilesDB")}
+    s = pb4_preset_session(saved=nxt)
+    units = s.sv("PitBull4DB")["profiles"]["Default"]["units"]
+    eq(sorted(units), ["대상"], "/dfp preset on an existing profile: no position-only unit entries")
+    eq("position_x" in units["대상"], True, "the existing unit gets its position")
+
+
 GRID2_OPTIONS = os.path.join(ADDONS, "Grid2Options")
 
 

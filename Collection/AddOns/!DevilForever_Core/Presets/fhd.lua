@@ -463,7 +463,7 @@ return {profile = {units = {
 }}, namespaces = {Totems = {layouts = {["보통"] = {attach_to="root", location="out_left_top", totem_direction="h", line_break=4, size=24/15, totem_spacing=4*50/24, text_size=12*50/(16*24)}}}}}
   end)
   if ok and type(proposal) == "table" and next(proposal) then
-    def.fragments[#def.fragments + 1] = { folder = "PitBull4", savedVariable = "PitBull4DB", addonVersion = "v4.2.50-forever.1", version = 1, section = "profile", profile = "Default", values = proposal.profile }
+    def.fragments[#def.fragments + 1] = { folder = "PitBull4", savedVariable = "PitBull4DB", addonVersion = "v4.2.50-forever.1", version = 1, section = "profile", profile = "Default", intoExisting = {"units", "groups"}, values = proposal.profile }
     def.fragments[#def.fragments + 1] = { folder = "PitBull4", savedVariable = "PitBull4DB", addonVersion = "v4.2.50-forever.1", version = 1, section = "profile", profile = "Default", namespace = "Totems", values = proposal.namespaces.Totems }
   elseif not ok then
     DevilForever_Core:Log("skip", "Preset:fhd", "pitbull4-profile.fhd.fragment.lua: " .. tostring(proposal))

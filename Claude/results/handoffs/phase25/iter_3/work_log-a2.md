@@ -102,3 +102,34 @@ Regenerated again (same command, header bullet for targetpet/Totems added).
 7. Item 7: the targetpet frame is not added to Core's registry of editable frames (position edit via /dfp not available for it yet).
 8. Item 8: Totems slot/text sizes assume the player layout's indicator_size stays at PitBull4's default 15; indicator_root_outside_margin is layout-wide (player layout auras are off in the defaults, so nothing else moves there).
 9. Item 9: nameplate texture skip relies on the texture region's GetTexture reading back what it read after our set; unverified in the client.
+
+## Fix 1 (review 1: iter_3/audit_log-40c.md, TRIAGE "Step 40c review 1")
+
+Read: audit_log-40c.md (full), TRIAGE section (full); PitBull4 Modules/Aura/Options.lua 1–60, 1800–1820, 1940–1962, 2163–2185, 2640–2730; Modules/Aura/load.xml (Forever.lua loads last); Main.lua 940–950; Options/LayoutEditor.lua 1–40; Theme.lua 140–215; Grid2 GridCore.lua 123–202 (OnEnable → LoadConfig → UpdateDefaults → MakeDatabaseDefaults, then SetupTheme/Setup; ProfileChanged → LoadConfig, UpdateModules); Presets.lua fragment write 400–430.
+
+### Impact map
+| Place | Verdict | Reason |
+|---|---|---|
+| Aura/Forever.lua settings version | fix (C1) | Aura:UpdateAll and PitBull4:UpdateForLayout (what PitBull4.Options.UpdateFrames calls, LayoutEditor.lua:35–37) wrapped to raise the version; all aura option setters call one of them (Options.lua:1815, 2173, 2182 …; suppress_occ clears the frame itself); the combat watch calls the unwrapped UpdateAll (no rebuild on combat transitions); restriction change via UpdateAll; ConfigTableChange callback kept (harmless) |
+| PitBull4 other UpdateForLayout callers | check only | only options code calls it (grep) |
+| Theme.lua login restore | fix (M1) | goes through switch() — the one function for every active-set change (version, saved choice, listeners) |
+| Defaults/Grid2.lua | fix (M2, option a) | post-hook on Grid2:MakeDatabaseDefaults (installed at Grid2's ADDON_LOADED): writes the active preset's Grid2Frame/Grid2Layout fragment values again into the current profile, only when the preset wrote them into that profile (preset.fragments record) and once per key (preset.grid2Template); runs before Grid2's SetupTheme/Setup/UpdateModules, so the values are used at once; text sizes inside the template's indicators stay (log) |
+| Presets.lua fragment field intoExisting + Presets/{fhd,qhd,uhd}.lua PitBull4 main fragment (units, groups) | fix (m2) | unit/group entries only where the profile already holds that entry; fresh installs unchanged (Defaults made the entries first) |
+| m1 Castbars cap, m3 nameplate font compare | log only | master |
+| Collection/patches/PitBull4.patch | regenerated | same command |
+
+### Tests
+- pitbull4runtime `aura_option_setters_reach_the_native_container`: real Modules/Aura/Options.lua + Options/LayoutEditor.lua; zoom_aura setter restyles buttons, max_debuffs setter reaches both native groups; a following aura update and a combat transition rebuild nothing. Against the previous Forever.lua (HEAD 73baaf21 copy) it fails ("zoom icon … expected True, got False").
+- pitbull4runtime `edit_cache_follows_theme_restored_at_login`: Edit:Get before PLAYER_LOGIN gives the base set's font, after the login restore the saved set's. On the previous Core: "Devil.ttf Devil.ttf" (the defect).
+- firststart `grid2_preset_values_survive_first_start_template`: real Grid2Options Classic/Modern/Blizzard template functions after the real presets: frameWidth/frameHeight 96×32, frameBorder 2, Padding 4 kept, template name/indicators kept, one record per key; an existing profile gets only the template's value (66).
+- firststart `pitbull4_preset_positions_only_into_existing_units`: fresh install gets the targetpet position; `/dfp preset fhd` on an existing profile creates no position-only unit entry and positions the existing unit.
+
+### Gates
+- core 107/108 (genregistry_output_matches_file) · firststart 24/24 · fufdefaults 22/22 · pitbull4 5/6 (patch case, LICENSE only, 40d) · pitbull4runtime 19/19 (and 19/19 with `--source` before copy) · chatsetup 28/28 · castbars 16/16 · statusstrip 20/20
+- luacheck (PitBull4, Core, Skin_Nameplates, Appearance, Castbars, ChatSetup) `checked=220 failed=0`
+- Codex runner `--output <scratch>/c40f1.JObh/codex` → `PASS suites=8/8 expected_counted_cases=195`
+- line endings unchanged per file.
+
+### Decision Queue (fix 1)
+10. Every Aura:UpdateAll call (options, filter editor, font registration, restriction change) now rebuilds the native containers once; only the combat-transition update skips it.
+11. In the harness the Grid2 preset fragments match only with Grid2's TOC version (4.1.13); the registry carries "4.1.13-forever", so a client without GetAddOnMetadata would skip them (pre-existing, Presets installedMatches).
