@@ -101,3 +101,7 @@ Phase 22 끝: 대안 테마는 Codex 가 만들고, Claude 는 테마를 바꿔 
 ## Phase 24 끝 정리 (2026-11-18 21:16:57 +0900)
 
 Phase 24: Codex final-mockup brief appearance-24.md written and reviewed (middle 3→1→0). Mockups themselves and Claude's comparison wait for Codex (R109). Result = `Claude/results/PHASE_24_mockup_RESULT.md`.
+
+## Phase 25 끝 정리 (2026-11-20 10:51:47 +0900)
+
+Phase 25: Codex 0.1.4 검토판을 감사(Step 44)하고 Fable 독립 검수 세 번(Step 45)을 거쳐 Codex 가지를 기본으로 합쳤다(40a). 파티·공격대를 Grid2 로 통일하고 파티 담당을 기록·맞춤(40b), 실행 부담을 줄이고 적 소환수·주술사 토템을 넣고(40c), 제3자 원본+patch 구조와 단일 빌드로 0.1.5 ZIP 두 판을 만들었다(40d). 게임 안 동작은 Codex 한 접속 확인 전까지 미검증이다. Result = `Claude/results/PHASE_25_codex-merge-and-0.1.5_RESULT.md`.

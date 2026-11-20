@@ -45,3 +45,10 @@
 - 기록 도구: `Claude/tools/open_settings_phase.sh`, `Claude/tools/close_settings_phase.py`(「28b」 같은 Step 번호는 못 다룸 · 실행 뒤 Result 의 「Files Updated」·「Inputs」·「Non-Changes」 기본 문구를 고쳐야 함).
 - Codex 발주문 규칙: 0번 = 백업 뒤 애드온을 따로 옮김 · 마지막 = 통째 복원 · 바꾼 원래 값 기록·되돌리기 · `/run` 한 줄 255바이트 이하 · 금지어(정본·거울·문면·문안·전량·발동·수권).
 - master effort 는 앱에서 medium 을 고른다(`.claude/ENVIRONMENT.md`).
+
+## 갱신 — 2026-11-20 (Phase 25 끝)
+
+- 판: 0.1.5 (작업 가지 ccr-ba95560e-h298t2, main 반영). Codex 0.1.4 내용을 기본으로 합침(R122①).
+- 구조: 제3자 원본은 References ZIP → `Collection/upstream`(extract.py), 고친 것은 `Collection/patches/*.patch`(patches.py verify/regenerate/reapply), 배포 ZIP 은 `build.py --install [--variant fuf]` 로 게임이 읽는 파일만. 빌드 전제: Collection/upstream 추출, GNU diff/patch.
+- 0.1.5 ZIP 두 개는 127MB 라 저장소에 없음(gitignore) — 다시 만들려면 위 명령. sha256 은 Step 40d 이력.
+- 남은 일: Result PHASE_25 「Open Issues」·「Decision Queue」.
