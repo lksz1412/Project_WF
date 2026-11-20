@@ -104,3 +104,47 @@ Item 8 — manifest labels
 
 ## State for the next call
 No commit made. Working tree changes listed by `git status --short` (13 tracked files + Collection/tests/firststart/ + this work_log).
+
+## Fix 1 (review 1: audit_log-40b.md, TRIAGE "Step 40b review 1")
+
+Read for this fix: audit_log-40b.md 1–10 (full), TRIAGE_phase25.md "Step 40b review 1" (full section), Commands.lua 1–238 (full), Profiles.lua 86–92, 231–246, 894–898, 940–960, 1060–1075, Core.lua 214–237, SexyMap/SexyMap.lua 335–356, 498–505, SexyMap/Borders.lua 827–854, tests/core/run.py 1331–1380, install notes (Collection/install/설치안내.md 1–70, Review/0.1.4/packages/pitbull4/설치안내.md 1–70; fuf/one-session identical in 1–70 by diff), Collection/data/feature-map.md 1–77 (grep 9, 46, 57, 60–72).
+
+### Impact map
+| Place | Verdict | Reason |
+|---|---|---|
+| NEW Core/Party.lua (TOC after Spec.lua) | fix (C1+M1 cause) | one owner decision across Grid2 "$char" and the unit-frame profile: both new this session → Grid2; one new → the new side follows the existing side's owner; neither → nothing; never writes an existing profile automatically |
+| Defaults/Grid2.lua Grid2Layout values | fix together | back to the unit-frames-own-party values (party/arena "None", "Raid"); Party.lua writes the Grid2 values |
+| Defaults/PitBull4.lua party groups | fix together | back to enabled = true; Party.lua switches them off |
+| FUFDefaults.lua party step + header | fix together | commands only when Core.Party:FUFPartyOff() (fresh path), else record party = "unit-frames" |
+| Commands.lua `/dfp party [grid2|unitframes]` + help + MAX_WORDS | fix (explicit command) | writes both sides for this character's profiles via Party:Set, combat refusal, lines incl. "/reload"; `/dfp party` alone shows the current owner; name follows the Commands.lua subcommand style |
+| Presets.lua fragment field `profileKey` | fix (M2+M3) | per-character freshness (Profiles:KeyWasAbsent) and record key "<SV>@root:<profileKey>"; write deferred to PEW in both modes; merge only (no table created, no non-table replaced, non-table profile skips) |
+| Profiles.lua WatchKey / KeyWasAbsent | fix together | the per-key snapshot must be taken before Defaults writes (Profiles' ADDON_LOADED handler runs first); cleared to false when the restore job writes the SV |
+| Defaults/SexyMap.lua fragment + header | fix together | uses profileKey, values = the profile body |
+| Presets kept notice (PEW, existing code) | check only | prints one line with "/dfp preset <name>" for kept/skipped fragments; per-character keys make it per character |
+| Registry.lua Skin_Nameplates `savedVariables = {}` | fix (m1) | generator shape (other entries, e.g. Registry.lua:155) |
+| firststart tests | fix (m4) | existing-install premise built from a previous session (CoreDB applied record) |
+| install notes ×4, feature-map.md | fix (DQ 7 + upgrade line) | `/dfcheck`, `/dfappearance` described as not loaded by default; Grid2 party line; one `/dfp party` line for upgraders; one-session note keeps the string "/dfcheck comparison" that verify_archives.py:177 looks for |
+| tests/core/run.py | reverted to HEAD | GRID2_LAYOUT and the PitBull4 case are again the Defaults values (the switch is Party.lua's) |
+| tests/fufdefaults/run.py | fix together | Core stub gains Party:FUFPartyOff (TEST_partyOff); existing-install alt and no-Core cases expect raid only, party "unit-frames"; count 22 |
+| m2 FUF read-back, m3 "modified" label, m5 upgrade notice | kept (log only) | master decision |
+| targetpet, shaman-only Totems | deferred | Step 40c |
+
+### Commands and verdicts
+- `python3 -I Collection/tests/core/run.py` → `lupa=2.8 cases=108 passed=107 failed=1` (FAIL genregistry_output_matches_file)
+- `python3 -I Collection/tests/fufdefaults/run.py` → `lupa=2.8 cases=22 passed=22 failed=0`
+- `python3 -I Collection/tests/firststart/run.py` → `lupa=2.8 cases=14 passed=14 failed=0`
+- `python3 -I Collection/tests/pitbull4/run.py` → `cases=6 passed=5 failed=1` (patch_reproduces_the_copy, LICENSE file; untouched, as before)
+- `python3 -I Collection/tests/install/verify_diagnostics.py` → exit 0
+- `python3 -I Collection/tools/luacheck.py 'Collection/AddOns/!DevilForever_Core' Collection/AddOns/DevilForever_FUFDefaults Collection/AddOns/DevilForever_Skin_Nameplates` → `checked=27 failed=0`
+- `<scratch>/cx477.d2Y2/venv/bin/python Review/0.1.4/tests/run.py --output <scratch>/fix1.6dVG/codex` → `PASS suites=8/8 expected_counted_cases=195`
+- CRLF kept: Commands.lua, Defaults/Grid2.lua, Defaults/PitBull4.lua, Presets.lua, Profiles.lua, FUFDefaults.lua, Skin_Nameplates TOC, three package 설치안내.md (every line CRLF); LF files stay LF; Party.lua new, LF.
+
+### Tests (firststart, 14)
+SexyMap: fresh install written per profile key · existing profile (CoreDB applied record) unchanged, "kept", one notice line with "/dfp preset fhd" · second character gets its own appearance merged into SexyMap's profile, two records · request with "global" choice → skipped, global untouched, no errors · request into a nil profile → SexyMap's full core kept + appearance · no presets → no fragment. Party: fresh install both load orders → Grid2 party + PitBull4 groups off; FUF fresh → FUFPartyOff true · existing installs (PitBull4 existing, Grid2 existing, both, FUF existing) → existing sides unchanged · new Grid2 profile follows an existing PitBull4 profile without party · command both directions (Grid2, PitBull4, FUF commands, /reload line, `/dfp party` view, help, unknown word) · combat refusal writes nothing. Plus Grid2 templates, nameplate TOC, Prat (unchanged).
+
+### Decision Queue (fix 1)
+10. One side new → the new side follows the existing owner (my reading of "change neither side"): it keeps an alt consistent after `/dfp party grid2` (shared PitBull4 Default off → the alt's new Grid2 profile shows party). Existing sides are never written automatically.
+11. FUF "new" = ForeverUnitFramesDB nil at its ADDON_LOADED; a FUF profile restored from FUF's macro backup in that session counts as new (FUF's private Storage source is not readable).
+12. Party settles once per session at the first look where Grid2 and exactly one unit-frame addon are loaded; both PitBull4 and FUF loaded (one-session misuse) → nothing.
+13. `/dfp party` writes the saved-variable tables of the running addons; the frames change after /reload (printed). PitBull4/FUF profiles may be shared by other characters (printed).
+14. M3 notice: "already" now only happens for a character whose own key was recorded (it has the appearance), so the notice covers kept/skipped.
