@@ -96,6 +96,12 @@ local targets = {
           layout = "대상의대상",
           unit = "targettargettarget",
         },
+        -- the target's pet; shown only while it exists (singleton unit watch)
+        ["대상의 소환수"] = {
+          enabled = true,
+          layout = "대상의대상",
+          unit = "targetpet",
+        },
         ["주시 대상"] = {
           enabled = true,
           layout = "파티",
@@ -478,10 +484,11 @@ local namespaces = {
       enabled = false,
     },
   },
-  -- shaman totems are the Dominos totem bar (classes.md SHAMAN)
+  -- totem timers on the player frame; the module exists for shamans only on Forever
+  -- (Modules/Totems/Totems.lua), the Dominos totem bar stays
   Totems = {
     global = {
-      enabled = false,
+      enabled = true,
     },
   },
   -- incoming-heal bar off (Devil profile)

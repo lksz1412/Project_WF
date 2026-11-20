@@ -21,6 +21,7 @@ local Theme = {}
 Core.Theme = Theme
 
 Theme.BASE_SET = "devil"
+Theme.version = 0
 
 -- Token names of the base set. Kinds: color = {r, g, b, a} (0..1),
 -- texture = file path, font = file path, size/number = number.
@@ -91,6 +92,7 @@ function Theme:RegisterSet(name, values)
     end
   end
   sets[name] = set
+  Theme.version = Theme.version + 1
   if name ~= Theme.BASE_SET then
     local missing = {}
     for _, token in ipairs(Theme:ListTokens()) do
@@ -112,6 +114,7 @@ function Theme:RegisterSet(name, values)
 end
 
 -- Value of `token` in the active set, else in the base set; nil when unset.
+-- Theme.version changes whenever a set is registered or the active set switches.
 -- Table values are returned as copies.
 function Theme:Get(token)
   local value = sets[activeName] and sets[activeName][token]
@@ -146,6 +149,7 @@ end
 local function switch(name)
   local old = activeName
   activeName = name
+  Theme.version = Theme.version + 1
   pendingName = nil
   pendingNotify = false
   if Core.ready then Core:DBTable("theme").active = name end

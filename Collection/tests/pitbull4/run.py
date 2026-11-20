@@ -212,7 +212,8 @@ def defaults_spec_matches_the_copy():
         for name, entry in main[kind].items():
             eq(entry.get("layout") in layouts, True, "%s %s names an existing layout" % (kind, name))
     eq(sorted(n for n, u in main["units"].items() if u.get("enabled")),
-       sorted(["플레이어", "대상", "대상의 대상", "대상의 대상의 대상", "주시 대상", "주시 대상의 대상", "플레이어의 소환수"]),
+       sorted(["플레이어", "대상", "대상의 대상", "대상의 대상의 대상", "대상의 소환수", "주시 대상", "주시 대상의 대상",
+               "플레이어의 소환수"]),
        "units that are on")
     eq({n: g["unit_group"] for n, g in main["groups"].items()},
        {"파티": "party", "파티원 대상": "partytarget", "파티원 소환수": "partypet"}, "party groups only, no raid group")

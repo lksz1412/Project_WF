@@ -447,6 +447,7 @@ return {profile = {units = {
   ["주시 대상"] = {anchor="TOPLEFT", relative_point="TOPLEFT", relative_to="0", position_x=274*pixel, position_y=-908*pixel, scale=1, size_x=280/240, size_y=48/56, font_multiplier=1},
   ["플레이어의 소환수"] = {anchor="TOPLEFT", relative_point="TOPLEFT", relative_to="0", position_x=256*pixel, position_y=-764*pixel, scale=1, size_x=280/240, size_y=40/56, font_multiplier=1},
   ["대상의 대상"] = {anchor="TOPLEFT", relative_point="TOPLEFT", relative_to="0", position_x=990*pixel, position_y=-864*pixel, scale=1, size_x=160/160, size_y=32/32, font_multiplier=1},
+  ["대상의 소환수"] = {anchor="TOPLEFT", relative_point="TOPLEFT", relative_to="0", position_x=402*pixel, position_y=-994*pixel, scale=1, size_x=160/160, size_y=32/32, font_multiplier=1},
   ["대상의 대상의 대상"] = {anchor="TOPLEFT", relative_point="TOPLEFT", relative_to="0", position_x=1158*pixel, position_y=-864*pixel, scale=1, size_x=160/160, size_y=32/32, font_multiplier=1},
   ["주시 대상의 대상"] = {anchor="TOPLEFT", relative_point="TOPLEFT", relative_to="0", position_x=274*pixel, position_y=-866*pixel, scale=1, size_x=260/160, size_y=30/32, font_multiplier=1},
   ["플레이어의 소환수의 대상"] = {anchor="TOPLEFT", relative_point="TOPLEFT", relative_to="0", position_x=256*pixel, position_y=-738*pixel, scale=1, size_x=280/160, size_y=24/32, font_multiplier=1},
@@ -455,14 +456,15 @@ return {profile = {units = {
   ["파티원 대상"]={anchor="TOPLEFT",relative_point="TOPLEFT",relative_to="0",position_x=416*pixel,position_y=-400*pixel,scale=1,size_x=140/160,size_y=28/32,direction="down_right",vertical_spacing=40,horizontal_spacing=12},
   ["파티원 소환수"]={anchor="TOPLEFT",relative_point="TOPLEFT",relative_to="0",position_x=284*pixel,position_y=-400*pixel,scale=1,size_x=120/160,size_y=28/32,direction="down_right",vertical_spacing=40,horizontal_spacing=12},
 }, layouts = {
-  ["보통"] = {size_x=280, size_y=56, scale=pixel, strata="LOW", level=2, font="Devil Forever devil", font_size=18/baseline, bar_texture="Devil Forever devil", bar_padding=1, bar_spacing=1},
+  ["보통"] = {size_x=280, size_y=56, scale=pixel, strata="LOW", level=2, font="Devil Forever devil", font_size=18/baseline, bar_texture="Devil Forever devil", bar_padding=1, bar_spacing=1, indicator_root_outside_margin=6},
   ["대상"] = {size_x=400, size_y=64, scale=pixel, strata="LOW", level=2, font="Devil Forever devil", font_size=18/baseline, bar_texture="Devil Forever devil", bar_padding=1, bar_spacing=1},
   ["파티"] = {size_x=240, size_y=56, scale=pixel, strata="LOW", level=2, font="Devil Forever devil", font_size=18/baseline, bar_texture="Devil Forever devil", bar_padding=1, bar_spacing=1},
   ["대상의대상"] = {size_x=160, size_y=32, scale=pixel, strata="LOW", level=2, font="Devil Forever devil", font_size=18/baseline, bar_texture="Devil Forever devil", bar_padding=1, bar_spacing=1},
-}}, namespaces = {}}
+}}, namespaces = {Totems = {layouts = {["보통"] = {attach_to="root", location="out_left_top", totem_direction="h", line_break=4, size=28/15, totem_spacing=4*50/28, text_size=14*50/(18*28)}}}}}
   end)
   if ok and type(proposal) == "table" and next(proposal) then
     def.fragments[#def.fragments + 1] = { folder = "PitBull4", savedVariable = "PitBull4DB", addonVersion = "v4.2.50-forever.1", version = 1, section = "profile", profile = "Default", values = proposal.profile }
+    def.fragments[#def.fragments + 1] = { folder = "PitBull4", savedVariable = "PitBull4DB", addonVersion = "v4.2.50-forever.1", version = 1, section = "profile", profile = "Default", namespace = "Totems", values = proposal.namespaces.Totems }
   elseif not ok then
     DevilForever_Core:Log("skip", "Preset:qhd", "pitbull4-profile.qhd.fragment.lua: " .. tostring(proposal))
   end
@@ -547,7 +549,7 @@ if not pixel then
   DevilForever_Core:Log("skip", "Feature appearance", "physical pixel factor unavailable at proposal evaluation")
   return {}
 end
-return {["namespaces"]={["Grid2Frame"]={["frameWidth"]=120,["frameHeight"]=44,["frameBorder"]=1,["frameBorderDistance"]=0,["frameBorderColor"]={["r"]=0.57,["g"]=0.58,["b"]=0.59,["a"]=1},["frameTexture"]="Devil Forever devil",["font"]="Devil Forever devil",["iconSize"]=24,["orientation"]="HORIZONTAL"},["Grid2Layout"]={["ScaleSize"]=pixel,["Padding"]=4,["Spacing"]=0,["horizontal"]=false,["anchor"]="TOPLEFT",["groupAnchor"]="TOPLEFT",["PosX"]=40*factor,["PosY"]=-164*factor,["BorderTexture"]="None",["BackgroundTexture"]="None"}},["indicators"]={["text-center"]={["font"]="Devil Forever devil",["fontSize"]=18},["icon-center"]={["size"]=22},["icon-left"]={["size"]=18},["icon-right"]={["size"]=18}}}
+return {["namespaces"]={["Grid2Frame"]={["frameWidth"]=120,["frameHeight"]=44,["frameBorder"]=3,["frameBorderDistance"]=0,["frameBorderColor"]={["r"]=0.57,["g"]=0.58,["b"]=0.59,["a"]=1},["frameTexture"]="Devil Forever devil",["font"]="Devil Forever devil",["iconSize"]=24,["orientation"]="HORIZONTAL"},["Grid2Layout"]={["ScaleSize"]=pixel,["Padding"]=4,["Spacing"]=0,["horizontal"]=false,["anchor"]="TOPLEFT",["groupAnchor"]="TOPLEFT",["PosX"]=40*factor,["PosY"]=-164*factor,["BorderTexture"]="None",["BackgroundTexture"]="None"}},["indicators"]={["text-center"]={["font"]="Devil Forever devil",["fontSize"]=18},["icon-center"]={["size"]=22},["icon-left"]={["size"]=18},["icon-right"]={["size"]=18}}}
   end)
   if ok and type(proposal) == "table" and next(proposal) then
     def.fragments[#def.fragments + 1] = { folder = "Grid2", savedVariable = "Grid2DB", addonVersion = "4.1.13", version = 1, section = "profile", profile = "$char", namespace = "Grid2Frame", values = proposal.namespaces["Grid2Frame"] }

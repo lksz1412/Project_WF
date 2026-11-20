@@ -1,4 +1,4 @@
-"""Runtime-burden probes and behaviour checks for our PitBull4 fork.
+"""Runtime-burden probes and behaviour checks for our PitBull4 fork and own addons.
 
 Usage:  python3 -I Collection/tests/pitbull4runtime/run.py [--source DIR]
 
@@ -14,6 +14,7 @@ another copy of the PitBull4 folder (e.g. the previous version) to get the
 
 import argparse
 import os
+import runpy
 import sys
 import traceback
 
@@ -134,6 +135,8 @@ function Aura:UnregisterEvent(event) self.events[event] = nil end
 function Aura:OnEnable() self:RegisterEvent("PLAYER_REGEN_DISABLED", "UpdateAll"); self:RegisterEvent("PLAYER_REGEN_ENABLED", "UpdateAll") end
 function Aura:OnDisable() end
 function Aura:GetAuraIconSizes(cfg, width, spacing) return cfg.my_size, cfg.size end
+function Aura:OnUpdate() Aura:UpdateNativeDebuffs(FRAME, DB) end
+function Aura:UNIT_AURA() end
 CONFIG_CALLBACKS = {}
 local registry = {RegisterCallback = function(owner, event, fn) CONFIG_CALLBACKS[#CONFIG_CALLBACKS + 1] = {owner, event, fn} end}
 function LibStub(name, silent) if name == "AceConfigRegistry-3.0" then return registry end end
@@ -141,7 +144,8 @@ function fire_config_change() for _, c in ipairs(CONFIG_CALLBACKS) do local fn =
   if type(fn) == "string" then c[1][fn](c[1], c[2], "PitBull4") else fn(c[2], "PitBull4") end end end
 PitBull4 = {Compat = {IsForever = true, RegisterOptionalEvent = function(m, e, f) m:RegisterEvent(e, f) end},
   Utils = {SafeBoolean = function(v, d) if v == nil then return d end return v and true or false end,
-           SafeGUID = function(v) if v == nil then return nil end return tostring(v) end},
+           SafeGUID = function(v) if v == nil then return nil end return tostring(v) end,
+           SafeString = function(v) if v == nil then return nil end return tostring(v) end},
   GetModule = function(_, name) return Aura end}
 WATCH = nil
 function CreateFrame(kind, name, parent, template)
@@ -179,6 +183,7 @@ DB = {enabled = true, enabled_debuffs = true, enabled_buffs = true, max_debuffs 
 FRAME = make_obj("UnitFrame")
 FRAME.unit, FRAME.best_unit, FRAME.guid, FRAME.classification_db = "target", "target", "Creature-1", {}
 FRAME.force_show = false
+FRAME.is_wacky = false
 FRAME.on_GetFont = function(self, f, s) count("GetFont"); return "Fonts\\2002.TTF", 12.5 * (s or 1) end
 FRAME.on_GetWidth = function() return 340 end
 FRAME.on_GetHeight = function() return 56 end
@@ -220,6 +225,12 @@ def aura_native_update_reconfigures_only_on_change():
        "settings change: layout and button style applied")
     L.execute("reset_calls(); Aura:UpdateNativeDebuffs(FRAME, DB)")
     eq(calls(L, "AuraContainer:"), 0, "and then nothing again")
+    # An aura event for the container's unit refreshes that container once (safety, see Forever.lua).
+    L.execute("reset_calls(); Aura:UNIT_AURA('UNIT_AURA', 'target'); Aura:OnUpdate(); Aura:UpdateNativeDebuffs(FRAME, DB)")
+    eq((calls(L, "AuraContainer:UpdateAllAuras"), calls(L, "AuraContainer:") - calls(L, "AuraContainer:UpdateAllAuras")), (1, 0),
+       "UNIT_AURA: one UpdateAllAuras in the throttled update, none after it")
+    L.execute("reset_calls(); FRAME.is_wacky = true; Aura:UpdateNativeDebuffs(FRAME, DB); FRAME.is_wacky = false")
+    eq(calls(L, "AuraContainer:UpdateAllAuras"), 1, "wacky unit (no aura events): refreshed on its update")
     # Hidden and shown again: reconfigured.
     L.execute("reset_calls(); Aura:ClearNativeDebuffs(FRAME); Aura:UpdateNativeDebuffs(FRAME, DB)")
     eq(calls(L, "AuraContainer:SetEnabled") >= 2 and calls(L, "AuraContainer:UpdateAllAuras") == 1, True,
@@ -563,6 +574,205 @@ def castbar_ticker_only_while_casting():
     eq(L.eval("UPDATE_ALL"), 5, "polling while casting")
     L.execute("CASTING = nil; tick(1); UPDATE_ALL = 0; tick(10)")
     eq(L.eval("UPDATE_ALL"), 0, "stops once the cast ended")
+
+
+# Items 7, 8 — targetpet singleton, shaman-only Totems -----------------------------
+
+UTILS_STUBS = r"""
+PitBull4 = {L = setmetatable({}, {__index = function(_, k) return k end}), DEBUG = false}
+function LibStub() return nil end
+MAX_PARTY_MEMBERS, MAX_RAID_MEMBERS, MAX_BOSS_FRAMES = 4, 40, 5
+"""
+
+
+@case
+def targetpet_is_a_singleton_unit():
+    if not NEW:
+        return
+    L = runtime()
+    L.execute(UTILS_STUBS)
+    load(L, "Utils.lua")
+    U = L.eval("PitBull4.Utils")
+    eq((U.GetBestUnitID("targetpet"), U.IsSingletonUnitID("targetpet"), U.IsWackyUnitGroup("targetpet")),
+       ("targetpet", True, True), "best unit, singleton, polled (no unit events)")
+    eq(U.GetLocalizedClassification("targetpet"), "Target Pet", "options name")
+    eq((U.GetBestUnitID("targettarget"), U.IsSingletonUnitID("focus")), ("targettarget", True), "existing units unchanged")
+    main = open(os.path.join(SOURCE, "Main.lua"), "rb").read().decode("utf-8")
+    block = main[main.index("local SINGLETON_CLASSIFICATIONS = {"):main.index("local UNIT_GROUPS")]
+    eq('"targetpet"' in block, True, "listed with the singleton classifications")
+    handler = main[main.index("function PitBull4:PLAYER_TARGET_CHANGED()"):main.index("function PitBull4:UNIT_TARGET")]
+    eq('CheckGUIDForUnitID("targetpet")' in handler, True, "refreshed on target change")
+
+
+TOTEM_STUBS = r"""
+NEWMODULE = 0
+PitBull4 = {L = setmetatable({}, {__index = function(_, k) return k end}), Compat = {IsForever = true},
+  NewModule = function(self, name) NEWMODULE = NEWMODULE + 1; return make_obj("TotemsModule") end}
+function tInvert(t) local o = {} for k, v in pairs(t) do o[v] = k end return o end
+function LibStub() return nil end
+"""
+
+
+@case
+def totems_module_for_shamans_only():
+    made = {}
+    for cls in ("SHAMAN", "PALADIN", "PRIEST", "WARRIOR"):
+        L = runtime()
+        L.execute(TOTEM_STUBS)
+        L.execute("function UnitClassBase() return '%s' end" % cls)
+        load(L, "Modules/Totems/Totems.lua")
+        made[cls] = L.eval("NEWMODULE")
+    probe("Totems module created per class on Forever", **made)
+    if NEW:
+        eq(made, {"SHAMAN": 1, "PALADIN": 0, "PRIEST": 0, "WARRIOR": 0}, "shamans only")
+
+
+# Item 9 — nameplate styles cached ------------------------------------------------
+
+NAMEPLATES = os.path.join(REPO, "Collection", "AddOns", "DevilForever_Skin_Nameplates")
+NP_STUBS = r"""
+local function copy(v) if type(v) ~= "table" then return v end local t = {} for k, x in pairs(v) do t[k] = copy(x) end return t end
+CB = {}
+DevilForever_Core = {
+  Presets = {GetActive = function() return "fhd" end},
+  Edit = {Get = function(self, key) count("Edit:Get"); return {size = {width = 180, height = 20}, font = {size = 18}} end,
+          RegisterCallback = function(self, owner, fn) CB.edit = fn end, AfterBatch = function(self, owner, fn) fn() end},
+  Theme = {Get = function(self, token) count("Theme:Get"); return token == "font.normal" and "Fonts\\devil.ttf" or "Interface\\devil" end,
+           RegisterCallback = function(self, owner, fn) CB.theme = fn end},
+  Log = function() end}
+DevilForever_Appearance = {GetPixelUnit = function() return 0.5 end}
+function UnitIsFriend() return false end
+TEST_combat = false
+local function plate()
+  local bar = make_obj("HealthBar"); local size = {0, 0}; local tex = make_obj("BarTexture"); local path = nil
+  bar.on_SetSize = function(self, w, h) size = {w, h} end
+  bar.on_GetSize = function() return size[1], size[2] end
+  bar.on_SetStatusBarTexture = function(self, p) path = p end
+  bar.on_GetStatusBarTexture = function() return tex end
+  tex.on_GetTexture = function() return path end
+  bar.on_IsForbidden = function() return false end; bar.on_IsProtected = function() return false end
+  local font = make_obj("FontString"); local f = {"x", 10, "OUTLINE"}
+  font.on_SetFont = function(self, a, b, c) f = {a, b, c} end
+  font.on_GetFont = function() return f[1], f[2], f[3] end
+  font.on_IsForbidden = function() return false end; font.on_IsProtected = function() return false end
+  local uf = make_obj("UnitFrame"); uf.HealthBarsContainer = {healthBar = bar}; uf.name = font; uf.unit = "nameplate1"
+  uf.on_IsForbidden = function() return false end; uf.on_IsProtected = function() return false end
+  local p = make_obj("NamePlate"); p.UnitFrame = uf
+  p.on_IsForbidden = function() return false end; p.on_IsProtected = function() return false end
+  return p
+end
+PLATE = plate()
+C_NamePlate = {GetNamePlateForUnit = function() return PLATE end, GetNamePlates = function() return {PLATE} end}
+LISTENER = nil
+function CreateFrame() local o = make_obj("Frame"); o.on_SetScript = function(self, k, fn) LISTENER = fn end; return o end
+"""
+
+
+def nameplate_runtime():
+    L = runtime()
+    L.execute(NP_STUBS)
+    ns = L.table()
+    for rel in ("NameplateProfiles.lua", "Appearance.lua"):
+        src = open(os.path.join(NAMEPLATES, rel), "rb").read()
+        fn = L.eval("loadstring")(src, ("@" + rel).encode())
+        fn = fn[0] if isinstance(fn, tuple) else fn
+        fn("DevilForever_Skin_Nameplates", ns)
+    return L
+
+
+@case
+def nameplate_style_cached_and_unchanged_skipped():
+    L = nameplate_runtime()
+    L.execute("LISTENER(nil, 'NAME_PLATE_UNIT_ADDED', 'nameplate1')")
+    L.execute("reset_calls()")
+    kb = garbage_kb(L, L.eval("function() for i = 1, 100 do LISTENER(nil, 'NAME_PLATE_UNIT_ADDED', 'nameplate1') end end"))
+    probe("nameplate NAME_PLATE_UNIT_ADDED, same plate and style, per event",
+          Edit_Get=calls(L, "Edit:Get") / 100.0, Theme_Get=calls(L, "Theme:Get") / 100.0,
+          SetSize=calls(L, "HealthBar:SetSize") / 100.0, SetStatusBarTexture=calls(L, "HealthBar:SetStatusBarTexture") / 100.0,
+          SetFont=calls(L, "FontString:SetFont") / 100.0, garbage_kb=round(kb / 100, 3))
+    w, h = L.eval("PLATE.UnitFrame.HealthBarsContainer.healthBar:GetSize()")
+    eq((w, h), (90, 10), "bar size 180x20 physical at pixel unit 0.5")
+    if NEW:
+        eq((calls(L, "Edit:Get"), calls(L, "HealthBar:SetSize"), calls(L, "FontString:SetFont")), (0, 0, 0),
+           "cached style, nothing re-applied")
+        L.execute("reset_calls(); CB.edit('nameplates.enemy'); ")
+        eq(calls(L, "Edit:Get") >= 1, True, "an edit of the nameplate style recomputes it")
+        L.execute("PLATE.UnitFrame.HealthBarsContainer.healthBar:SetSize(1, 1); reset_calls(); "
+                  "LISTENER(nil, 'NAME_PLATE_UNIT_ADDED', 'nameplate1')")
+        eq(calls(L, "HealthBar:SetSize"), 1, "a plate the client resized gets its size again")
+
+
+# Item 10 — leftover handlers and timers -----------------------------------------
+
+def suite(name):
+    return runpy.run_path(os.path.join(REPO, "Collection", "tests", name, "run.py"), run_name="harness_" + name)
+
+
+@case
+def core_handler_removed_after_its_work():
+    if not NEW:
+        return
+    core = suite("core")
+    s = core["Session"]()
+    s.lua.execute("""SEEN = {}
+      local function first() SEEN[#SEEN + 1] = "first"; DevilForever_Core:Off("TEST_EVENT", first) end
+      DevilForever_Core:On("TEST_EVENT", first)
+      DevilForever_Core:On("TEST_EVENT", function() SEEN[#SEEN + 1] = "second" end)""")
+    s.fire("TEST_EVENT")
+    s.fire("TEST_EVENT")
+    eq(list(core["to_py"](s.g.SEEN).values()), ["first", "second", "second"], "removal waits for the running dispatch")
+    s.boot()
+    eq(s.sv("DevilForever_CoreDB") is not None, True, "Core still becomes ready")
+
+
+@case
+def chat_layout_waits_only_for_a_managed_layout():
+    if not NEW:
+        return
+    chat = suite("chatsetup")
+    s = chat["Session"](saved={"result": "skipped"})
+    s.lua.execute("DevilForever_Core = {Presets = {GetActive = function() return 'uhd' end}, "
+                  "Edit = {RegisterCallback = function(self, owner, fn) TEST_edit = fn end}}; "
+                  "DevilForever_Appearance = {GetPixelUnit = function() return 1 end}")
+    s.load(layout=True)
+    s.g.TEST_fire("PLAYER_ENTERING_WORLD", True, False)
+    timers = len(list(s.g.TEST_timers.values()))
+    eq(timers, 0, "unmanaged windows: no 4 s timer at each world entry")
+    eq(s.lua.eval("_G").DevilForever_ChatSetupDB["result"], "skipped", "premise")
+
+
+@case
+def castbars_regen_retries_bounded():
+    if not NEW:
+        return
+    cb = suite("castbars")
+    s = cb["Session"](frames={"player": True}).load().login()   # target, focus, pet bars missing in FUF
+    rounds = 0
+    for i in range(6):
+        s.g.TEST_fire("PLAYER_REGEN_ENABLED")
+        rounds += len(list(s.g.TEST_timers.values()))
+        s.g.TEST_timers = s.lua.table()
+    eq(rounds, 6, "three combat ends with retries (2 timers each), then none")
+
+
+@case
+def sharedmedia_handler_unregistered_after_register():
+    if not NEW:
+        return
+    L = runtime()
+    L.execute("""
+      EVENTS = 0
+      DevilForever_Core = {Theme = {GetFromSet = function() return "x" end}}
+      local media = {Register = function() end}
+      function LibStub(name) return media end
+      function CreateFrame() local f = make_obj("Frame")
+        f.on_RegisterEvent = function() EVENTS = EVENTS + 1 end
+        f.on_UnregisterAllEvents = function() EVENTS = 0 end
+        return f end""")
+    src = open(os.path.join(REPO, "Collection/AddOns/DevilForever_Appearance/SharedMedia.lua"), "rb").read()
+    fn = L.eval("loadstring")(src, b"@SharedMedia.lua")
+    (fn[0] if isinstance(fn, tuple) else fn)()
+    eq(L.eval("EVENTS"), 0, "registered at load: ADDON_LOADED/PLAYER_LOGIN dropped")
 
 
 def main():

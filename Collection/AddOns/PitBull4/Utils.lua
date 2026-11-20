@@ -187,6 +187,7 @@ do
 		focus = "focus",
 		target = "target",
 		playertarget = "target",
+		targetpet = "targetpet",
 		npc = "npc",
 		softenemy = "softenemy",
 		softfriend = "softfriend",
@@ -229,6 +230,7 @@ do
 		mouseover = true,
 		focus = true,
 		target = true,
+		targetpet = true,
 	}
 	for i = 1, 5 do
 		valid_singleton_unit_ids["arena" .. i] = true
@@ -310,6 +312,7 @@ do
 	local classifications = {
 		player = L["Player"],
 		target = L["Target"],
+		targetpet = ("%s %s"):format(L["Target"], L["Pet"]),
 		pet = L["Player's pet"],
 		party = L["Party"],
 		party_sing = L["Party"],

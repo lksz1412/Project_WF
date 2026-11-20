@@ -72,6 +72,7 @@ Core.Presets = Presets
 local SECTIONS = {root = true, global = true, profile = true}
 
 local defs = {}           -- [name] = definition copy
+Presets.version = 0       -- changes whenever a definition is registered (Edit's resolved-value cache)
 local request             -- {name, keys} from a stored "preset" request
 local fragmentState = {}  -- [preset .. "|" .. index] = {state, message, key}
 local waitingWorld = {}   -- fragments due at the next PLAYER_ENTERING_WORLD
@@ -177,6 +178,7 @@ function Presets:Register(def)
   end
   if defs[name] then Core:Log("info", subject, "registered again; previous definition replaced") end
   defs[name] = keep
+  Presets.version = Presets.version + 1
   return kept
 end
 

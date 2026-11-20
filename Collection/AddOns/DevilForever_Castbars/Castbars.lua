@@ -17,8 +17,9 @@
 -- (hideblizz, Quartz modules/Player.lua and Target.lua).
 --
 -- Hooks are set at PLAYER_LOGIN (after FUF made its frames) and retried at
--- every PLAYER_ENTERING_WORLD and, while a unit is still unhooked, at every
--- PLAYER_REGEN_ENABLED and RETRY seconds after it: on a login in combat FUF
+-- every PLAYER_ENTERING_WORLD and, while a unit is still unhooked, at the
+-- first REGEN_ROUNDS PLAYER_REGEN_ENABLED of a session and RETRY seconds after
+-- each (a FUF bar that is still missing then is off in FUF): on a login in combat FUF
 -- builds its frames after combat through its queue, which may run over
 -- several frames (FUF Units/Single.lua CreateAll, Core/Init.lua AfterCombat).
 -- Each bar is hooked once. A bar already shown when it is hooked is hidden at
@@ -37,6 +38,8 @@ local API = {}
 DevilForever_Castbars = API
 
 local RETRY = {1, 5}
+local REGEN_ROUNDS = 3
+local regenRounds = 0
 
 local hooked = {}   -- [unit] = FUF castbar that carries our hooks
 local hidden = {}   -- [unit] = number of times this session the bar was hidden
@@ -127,7 +130,7 @@ local function hookAll()
     end
   end
   if #done > 0 then log("FUF cast bars hooked: " .. table.concat(done, ", ")) end
-  if missing then
+  if missing and regenRounds < REGEN_ROUNDS then
     frame:RegisterEvent("PLAYER_REGEN_ENABLED")
   else
     frame:UnregisterEvent("PLAYER_REGEN_ENABLED")
@@ -138,6 +141,7 @@ end
 frame:RegisterEvent("PLAYER_LOGIN")
 frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 frame:SetScript("OnEvent", function(_, event)
+  if event == "PLAYER_REGEN_ENABLED" then regenRounds = regenRounds + 1 end
   if hookAll() and event == "PLAYER_REGEN_ENABLED" then
     for _, delay in ipairs(RETRY) do C_Timer.After(delay, hookAll) end
   end

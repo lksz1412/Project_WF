@@ -15,6 +15,13 @@ local unavailable = false
 local settings_version = 1
 local function settings_changed() settings_version = settings_version + 1 end
 
+-- Units with a UNIT_AURA since their container was last refreshed. Other
+-- addons on this client state the container takes UNIT_AURA for its unit
+-- itself (ForeverUnitFrames Elements/AuraContainers.lua, Grid2
+-- GridIndicatorAuras.lua); the client source is not available here, so an
+-- aura event still refreshes that one container (UpdateAllAuras only).
+local aura_event_units = {}
+
 local control_points = {
 	TOPLEFT_TOP = "BOTTOMLEFT", TOPRIGHT_TOP = "BOTTOMRIGHT",
 	TOPLEFT_LEFT = "TOPRIGHT", TOPRIGHT_RIGHT = "TOPLEFT",
@@ -275,7 +282,8 @@ update_native = function(self, frame, db, kind, store)
 		and state.friendly == friendly and state.width == frame_width and state.height == frame_height
 		and state.level == frame_level and state.mine.styled_version == settings_version
 		and state.others.styled_version == settings_version then
-		if guid == nil or guid ~= state.guid then
+		-- A wacky unit (target of target and the like) gets no aura events.
+		if guid == nil or guid ~= state.guid or aura_event_units[unit] or frame.is_wacky then
 			state.guid = guid
 			container:UpdateAllAuras()
 		end
@@ -318,6 +326,21 @@ update_native = function(self, frame, db, kind, store)
 	state.applied_version, state.unit, state.db, state.friendly = settings_version, unit, db, friendly
 	state.width, state.height, state.level, state.guid = frame_width, frame_height, frame_level, guid
 	return true
+end
+
+-- Clears the aura-event marks once the throttled update (Aura:OnUpdate) has run.
+local on_update = Aura.OnUpdate
+function Aura:OnUpdate(...)
+	local result = on_update(self, ...)
+	wipe(aura_event_units)
+	return result
+end
+
+local on_unit_aura = Aura.UNIT_AURA
+function Aura:UNIT_AURA(event, unit, ...)
+	local plain = type(unit) == "string" and PitBull4.Utils.SafeString(unit)
+	if plain then aura_event_units[plain] = true end
+	return on_unit_aura(self, event, unit, ...)
 end
 
 local on_enable = Aura.OnEnable

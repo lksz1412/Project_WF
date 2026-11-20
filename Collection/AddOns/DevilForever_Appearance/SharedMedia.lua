@@ -14,6 +14,11 @@ local function register()
   registered = true
 end
 local events = CreateFrame("Frame")
+local onEvent = register
+register = function()
+  onEvent()
+  if registered then events:UnregisterAllEvents() end
+end
 events:RegisterEvent("ADDON_LOADED")
 events:RegisterEvent("PLAYER_LOGIN")
 events:SetScript("OnEvent", register)

@@ -828,6 +828,7 @@ local function startRestore(p, keys, keyUnknown)
     else
       job.backup.core = coreLayout()
       db.edits = type(snap.core.edits) == "table" and (Core.CopyData(snap.core.edits)) or {}
+      if Core.Edit and Core.Edit.InvalidateCache then Core.Edit:InvalidateCache() end
       Core:DBTable("theme").active = type(snap.core.theme) == "string" and snap.core.theme or nil
       local presetName = snap.core.preset
       local presets = Core.Presets

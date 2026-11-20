@@ -154,13 +154,41 @@ function Core:On(event, fn)
   tinsert(list, fn)
 end
 
+local dispatching = 0
+local removals = {}
+
+local function flushRemovals()
+  for _, item in ipairs(removals) do
+    local list = handlers[item[1]]
+    for i = #(list or {}), 1, -1 do
+      if list[i] == item[2] then table.remove(list, i) end
+    end
+    if list and #list == 0 then
+      handlers[item[1]] = nil
+      eventFrame:UnregisterEvent(item[1])
+    end
+  end
+  for i = #removals, 1, -1 do removals[i] = nil end
+end
+
+-- Removes `fn` from the handlers of `event` (after the dispatch running now,
+-- so the other handlers of that event still run); the event is unregistered
+-- with its last handler.
+function Core:Off(event, fn)
+  removals[#removals + 1] = {event, fn}
+  if dispatching == 0 then flushRemovals() end
+end
+
 eventFrame:SetScript("OnEvent", function(_, event, ...)
   local list = handlers[event]
   if not list then return end
+  dispatching = dispatching + 1
   for _, fn in ipairs(list) do
     local ok, err = pcall(fn, event, ...)
     if not ok then report(err) end
   end
+  dispatching = dispatching - 1
+  if dispatching == 0 and #removals > 0 then flushRemovals() end
 end)
 
 -- Client state -------------------------------------------------------------
@@ -289,7 +317,6 @@ local sessionOnly = {}
 -- session-only table when some step is not a table.
 function Core:DBTable(...)
   local t = self.db
-  local key = table.concat({...}, ".")
   for i = 1, select("#", ...) do
     local k = select(i, ...)
     local nextT
@@ -299,6 +326,7 @@ function Core:DBTable(...)
       rawset(t, k, nextT)
     end
     if type(nextT) ~= "table" then
+      local key = table.concat({...}, ".")
       sessionOnly[key] = sessionOnly[key] or {}
       return sessionOnly[key]
     end
@@ -310,9 +338,11 @@ end
 Core.ready = false
 Core.readyCallbacks = Core.NewCallbackList()
 
-Core:On("ADDON_LOADED", function(_, loaded)
+local function onCoreLoaded(_, loaded)
   if loaded ~= addonName or Core.ready then return end
+  Core:Off("ADDON_LOADED", onCoreLoaded)
   initDB()
   Core.ready = true
   Core.readyCallbacks:Fire(Core.db)
-end)
+end
+Core:On("ADDON_LOADED", onCoreLoaded)

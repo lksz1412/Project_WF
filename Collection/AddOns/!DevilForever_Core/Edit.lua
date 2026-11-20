@@ -39,6 +39,7 @@ local FONT_SIZE_TOKEN = "font.size.normal"
 
 local listeners = Core.NewCallbackList()
 local pending, pendingOrder = {}, {}
+local editVersion = 0   -- changes with every stored write (Get's cache)
 local CLEAR = {}
 local batchCallbacks
 
@@ -159,6 +160,7 @@ local function write(frameKey, field, value)
     end
     stored[field] = Core.CopyTable(value)
   end
+  editVersion = editVersion + 1
   listeners:Fire(frameKey, field, Core.CopyTable(value))
 end
 
@@ -251,9 +253,32 @@ local function overlay(field, low, high)
   return Core.CopyTable(high)
 end
 
--- Resolved values of every field for `frameKey`: {[field] = value}; a field
--- with no token, default or edit is absent.
+-- Resolved values are cached per frame key while the stored edits, the theme
+-- sets/active set, the preset definitions and the active preset stay the same.
+local resolved, resolvedState = {}, {}
+
+local function cacheValid()
+  local presets = Core.Presets
+  local active = presets and presets:GetActive()
+  local presetsVersion = presets and presets.version
+  if resolvedState.edit == editVersion and resolvedState.theme == Core.Theme.version
+      and resolvedState.preset == active and resolvedState.presets == presetsVersion then
+    return true
+  end
+  for k in pairs(resolved) do resolved[k] = nil end
+  resolvedState.edit, resolvedState.theme = editVersion, Core.Theme.version
+  resolvedState.preset, resolvedState.presets = active, presetsVersion
+  return false
+end
+
+-- Resolved values of every field for `frameKey`: {[field] = value} (a copy);
+-- a field with no token, default or edit is absent.
 function Edit:Get(frameKey)
+  if Core.ready and type(frameKey) == "string" then
+    cacheValid()
+    local cached = resolved[frameKey]
+    if cached then return Core.CopyTable(cached) end
+  end
   local edits = self:GetEdits(frameKey)
   local out = {}
   for _, field in ipairs(Edit.FIELDS) do
@@ -265,8 +290,12 @@ function Edit:Get(frameKey)
     value = overlay(field, value, edits[field])
     out[field] = value
   end
+  if Core.ready and type(frameKey) == "string" then resolved[frameKey] = Core.CopyTable(out) end
   return out
 end
+
+-- For code that replaces DevilForever_CoreDB.edits as a whole: drops Get's cache.
+function Edit:InvalidateCache() editVersion = editVersion + 1 end
 
 -- Registry editable items of `frameKey`: {[field] = item copy}.
 function Edit:GetEditableItems(frameKey)

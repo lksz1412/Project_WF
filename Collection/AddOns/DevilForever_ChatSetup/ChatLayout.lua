@@ -157,7 +157,27 @@ local function apply()
   end
 end
 
+-- The windows carry a placement receipt (layout managed by this addon).
+local function managedLayout()
+  local db = DevilForever_ChatSetupDB
+  local managed = type(db) == "table" and db.result == "created" and db.managedLayout
+  return type(managed) == "table" and managed.version == 1 and type(managed.roles) == "table"
+end
+
+-- The 4 s settle wait before the first apply runs only when there is a
+-- managed layout to check (also when one appears later in the session).
+local waiting = false
+local function settleThenApply()
+  if waiting then return end
+  waiting = true
+  C_Timer.After(4, function() waiting = false; ready = true; apply() end)
+end
+
 local function schedule()
+  if not ready then
+    if managedLayout() then settleThenApply() end
+    return
+  end
   if scheduled then return end
   scheduled = true
   C_Timer.After(0, function() scheduled = false; apply() end)
@@ -180,7 +200,7 @@ for _, name in ipairs({"PLAYER_ENTERING_WORLD", "PLAYER_REGEN_ENABLED", "UI_SCAL
 end
 events:SetScript("OnEvent", function(_, event)
   if event == "PLAYER_ENTERING_WORLD" then
-    C_Timer.After(4, function() ready = true; apply() end)
+    if managedLayout() then settleThenApply() else layoutState = "unmanaged" end
   elseif event ~= "PLAYER_REGEN_ENABLED" or pending then
     schedule()
   end

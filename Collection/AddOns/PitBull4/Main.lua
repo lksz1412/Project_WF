@@ -112,6 +112,7 @@ local SINGLETON_CLASSIFICATIONS = {
 	"target",
 	"targettarget",
 	"targettargettarget",
+	"targetpet",
 	"focus",
 	"focustarget",
 	"focustargettarget",
@@ -1998,6 +1999,7 @@ function PitBull4:PLAYER_TARGET_CHANGED()
 	self:CheckGUIDForUnitID("target")
 	self:CheckGUIDForUnitID("targettarget")
 	self:CheckGUIDForUnitID("targettargettarget")
+	self:CheckGUIDForUnitID("targetpet")
 end
 
 function PitBull4:UNIT_TARGET(_, unit)

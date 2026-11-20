@@ -213,7 +213,9 @@ end
 
 -----------------------------------------------------------------------------
 
-if not MAX_CLASS_TOTEMS then return end
+-- On Forever only shamans have totems; the paladin/priest single-slot branches
+-- above would draw an empty totem box for them, so the module is not created.
+if not MAX_CLASS_TOTEMS or (PitBull4.Compat.IsForever and player_class ~= "SHAMAN") then return end
 
 local PitBull4_Totems = PitBull4:NewModule("Totems")
 
