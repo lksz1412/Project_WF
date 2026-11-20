@@ -133,3 +133,21 @@ Read: audit_log-40c.md (full), TRIAGE section (full); PitBull4 Modules/Aura/Opti
 ### Decision Queue (fix 1)
 10. Every Aura:UpdateAll call (options, filter editor, font registration, restriction change) now rebuilds the native containers once; only the combat-transition update skips it.
 11. In the harness the Grid2 preset fragments match only with Grid2's TOC version (4.1.13); the registry carries "4.1.13-forever", so a client without GetAddOnMetadata would skip them (pre-existing, Presets installedMatches).
+
+## Fix 2 (re-check 1: audit_log-40c.md "Re-check 1", M2-r)
+
+Read: re-check 1 section of audit_log-40c.md; Grid2 GridDefaults.lua 85–106 (MakeDatabaseDefaults: no index → opens the first-boot dialog, returns false; with the chosen index applies the template, returns true), GridCore.lua 148–202 (OnEnable/ProfileChanged → LoadConfig → UpdateDefaults → MakeDatabaseDefaults).
+
+### Impact map
+| Place | Verdict | Reason |
+|---|---|---|
+| Defaults/Grid2.lua hook | fix | post-hook replaced by a wrapper of Grid2.MakeDatabaseDefaults (UpdateDefaults calls it as a method, so the wrapper is used) that re-applies only when the original returned true (a template was applied); done[key] is recorded only then |
+| header comment of the hook | fix together | states the return-value rule |
+| firststart Grid2 stub | fix together | reproduces the real sequence: first call without an index opens the dialog and returns false, then the player's pick (index + second call) applies Classic/Modern/Blizzard |
+| DQ11 | log only | unchanged |
+
+### Tests
+- firststart `grid2_preset_values_survive_first_start_template` (sequence dialog → pick): Classic/Modern/Blizzard keep 96×32, frameBorder 2, Padding 4; dialog opened once; record per key; existing profile untouched. With the previous post-hook (HEAD 24d03623 copy) it fails: "Classic template … expected (96, 32, 2, 4), got (62, 62, 2, 4)".
+
+### Gates
+core 107/108 (genregistry_output_matches_file) · firststart 24/24 · fufdefaults 22/22 · pitbull4 5/6 (patch case, LICENSE only) · pitbull4runtime 19/19 · chatsetup 28/28 · castbars 16/16 · statusstrip 20/20 · luacheck `checked=220 failed=0` · Codex runner `--output <scratch>/c40f2.VKYq/codex` → `PASS suites=8/8 expected_counted_cases=195` · line endings unchanged.

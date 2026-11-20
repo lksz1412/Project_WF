@@ -56,8 +56,10 @@ DevilForever_Core.Defaults:Register("Grid2", {
 
 -- Grid2's first-start template (the profile chosen in Grid2's dialog, written by
 -- Grid2:MakeDatabaseDefaults after the preset fragments) assigns Grid2Frame and
--- Grid2Layout keys such as frameWidth/frameHeight/frameBorder/Padding. Right after
--- it ran, the active preset's Grid2Frame/Grid2Layout fragment values are written
+-- Grid2Layout keys such as frameWidth/frameHeight/frameBorder/Padding. The method
+-- returns true when it applied a template (false when it only opened the
+-- dialog, GridDefaults.lua MakeDatabaseDefaults). Right after a call that
+-- applied one, the active preset's Grid2Frame/Grid2Layout fragment values are written
 -- again into that profile, once per profile key, and only when the preset wrote
 -- them into that profile before (DevilForever_CoreDB.preset.fragments); other
 -- profiles are left alone. Values inside the template's indicators (text sizes)
@@ -94,7 +96,12 @@ end
 Core:On("ADDON_LOADED", function(_, folder)
   if folder ~= "Grid2" then return end
   local grid2 = _G.Grid2
-  if type(grid2) == "table" and type(grid2.MakeDatabaseDefaults) == "function" and type(hooksecurefunc) == "function" then
-    hooksecurefunc(grid2, "MakeDatabaseDefaults", reapplyAfterTemplate)
+  local make = type(grid2) == "table" and grid2.MakeDatabaseDefaults
+  if type(make) == "function" then
+    grid2.MakeDatabaseDefaults = function(self, ...)
+      local applied = make(self, ...)
+      if applied then reapplyAfterTemplate() end
+      return applied
+    end
   end
 end)

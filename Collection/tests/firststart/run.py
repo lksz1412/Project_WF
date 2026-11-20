@@ -519,8 +519,14 @@ setmetatable(Grid2.db, {__index = function(t, k)
     sub(p, "statuses"); sub(p, "indicators"); sub(p, "statusMap")
     return p
   end end})
+-- As GridDefaults.lua MakeDatabaseDefaults: without a chosen index it opens the
+-- first-boot dialog and returns false; the player's choice calls it again.
+DIALOG_OPENED = 0
 function Grid2:MakeDatabaseDefaults()
-  local info = self.defaultProfiles[self.defaultProfileIndex]
+  local index = self.defaultProfileIndex
+  self.defaultProfileIndex = nil
+  if not index then DIALOG_OPENED = DIALOG_OPENED + 1; return false end
+  local info = self.defaultProfiles[index]
   info.func(self, info)
   return true
 end
@@ -540,7 +546,8 @@ def grid2_template_session(template, saved=None):
         fn = s.lua.eval("loadstring")(src, ("@" + rel).encode())
         (fn[0] if isinstance(fn, tuple) else fn)()
     s.load_addon("Grid2")   # Core's handlers: defaults, preset fragments, the template hook
-    s.lua.execute("Grid2.defaultProfileIndex = %d; Grid2:MakeDatabaseDefaults()" % template)
+    s.lua.execute("Grid2:MakeDatabaseDefaults()")   # OnEnable -> LoadConfig: dialog opens, nothing applied
+    s.lua.execute("Grid2.defaultProfileIndex = %d; Grid2:MakeDatabaseDefaults()" % template)  # the player's pick
     s.fire("PLAYER_LOGIN")
     s.fire("PLAYER_ENTERING_WORLD", True, False)
     return s
@@ -556,6 +563,7 @@ def grid2_preset_values_survive_first_start_template():
         eq((frame["frameWidth"], frame["frameHeight"], frame["frameBorder"], layout["Padding"]), (96, 32, 2, 4),
            name + " template: preset cell size, border width and gap written again")
         eq(db["profiles"]["Hero - Realm"]["__template"], name, name + " template's own indicators kept")
+        eq(s.g.DIALOG_OPENED, 1, "premise: the first call only opened the dialog")
         rec = s.sv("DevilForever_CoreDB")["preset"]["grid2Template"]
         eq(sorted(rec), ["Grid2DB/Grid2Frame@profile:Hero - Realm", "Grid2DB/Grid2Layout@profile:Hero - Realm"],
            "recorded once per profile key")
