@@ -1,7 +1,7 @@
 ## Interface: 16001
 ## Title: DevilForever Core
 ## Notes: Registry, defaults injection, theme tokens, per-frame edit values, layout presets and settings save/restore for the Devil Forever collection.
-## Version: 0.1.4
+## Version: 0.1.5
 ## SavedVariables: DevilForever_CoreDB, DevilForever_ProfilesDB
 
 Core.lua

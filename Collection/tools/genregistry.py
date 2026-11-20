@@ -6,8 +6,9 @@ Usage:
   python3 -I Collection/tools/genregistry.py --out FILE # write somewhere else
 
 Inputs:
-  Collection/manifest.json                                   packages with role "start", and the
+  Collection/manifest.json                                   packages with role "start", the
                                                              "collection" section (our own folders)
+                                                             and "third_party" (shipped upstream folders)
   Collection/install.json                                    which upstream folders ship
   Collection/AddOns/*/ (own TOC)                             our own addon folders
   Collection/AddOns/!DevilForever_Core/registry_extra.json   optional per-folder additions
@@ -16,7 +17,9 @@ A folder of a start package is registered only when install.json ships it
 (base list or any unit-frame variant) or registry_extra.json names it (a
 folder whose use is still pending, e.g. Aurora). Our own folders take
 package, phases, variant, bundle and use ("new", or "modify" for a fork) from
-the manifest "collection" section.
+the manifest "collection" section. A start-package folder shipped from
+Collection/AddOns (manifest "third_party", unmodified or patched) takes its
+TOC data from that shipped copy; other start-package folders from the manifest.
 
 Per addon folder the registry holds: package, feature phases (and variant
 when the Phase ID is not a plain number), bundle
@@ -140,8 +143,21 @@ def shipped_upstream_folders(install):
     return folders
 
 
+def shipped_tocs(folder):
+    """Manifest-shaped TOC dicts of a folder's own TOCs under Collection/AddOns."""
+    full = os.path.join(ADDONS, folder)
+    out = []
+    for name in toclib.own_tocs(full):
+        toc = toclib.parse_toc(os.path.join(full, name))
+        out.append({"file": name, "interface": toc["Interface"], "forever_load": toc["forever_load"],
+                    "saved_variables": toc["SavedVariables"],
+                    "saved_variables_per_character": toc["SavedVariablesPerCharacter"]})
+    return out
+
+
 def manifest_entries(manifest, keep):
     interface = manifest.get("target_interface", 16001)
+    shipped = {t["folder"] for t in manifest.get("third_party") or []}
     entries = {}
     for pkg in manifest["packages"]:
         if pkg.get("role") != "start":
@@ -153,7 +169,8 @@ def manifest_entries(manifest, keep):
             folder = addon["folder"]
             if folder.lower() not in keep:
                 continue
-            tocs, status = choose_tocs(folder, addon.get("tocs") or [], interface)
+            source = shipped_tocs(folder) if folder in shipped else addon.get("tocs") or []
+            tocs, status = choose_tocs(folder, source, interface)
             if folder.lower() in {k.lower() for k in entries}:
                 raise RegistryError("folder %s appears in two start packages" % folder)
             entries[folder] = {
@@ -173,19 +190,21 @@ def manifest_entries(manifest, keep):
     return interface, entries
 
 
-def own_addon_entries(interface, collection):
+def own_addon_entries(interface, collection, third_party=()):
     entries = {}
     if not os.path.isdir(ADDONS):
         return entries
     meta_by_folder = {c["folder"]: c for c in collection}
+    upstream = {t["folder"] for t in third_party}
     for name in sorted(os.listdir(ADDONS)):
         full = os.path.join(ADDONS, name)
-        if not os.path.isdir(full) or not toclib.own_tocs(full):
+        if not os.path.isdir(full) or not toclib.own_tocs(full) or name in upstream:
             continue
         meta = meta_by_folder.get(name)
         if meta is None:
-            raise RegistryError("own folder %s is not in the manifest collection section "
-                                "(add it to extract.py OWN_FOLDERS, run extract.py --no-extract)" % name)
+            raise RegistryError("folder %s is neither in the manifest collection nor third_party section "
+                                "(add it to extract.py OWN_FOLDERS or the package, run extract.py --no-extract)"
+                                % name)
         fork = meta.get("kind") == "fork"
         parsed, status = toclib.tocs_for_interface(full, interface)
         tocs = []
@@ -367,7 +386,8 @@ def build(manifest_path=MANIFEST, extra_path=EXTRA, install_path=INSTALL):
     keep = shipped_upstream_folders(load_json(install_path))
     keep.update(k.lower() for k in (extra.get("addons") or {}))
     interface, entries = manifest_entries(manifest, keep)
-    for name, entry in own_addon_entries(interface, manifest.get("collection") or []).items():
+    for name, entry in own_addon_entries(interface, manifest.get("collection") or [],
+                                         manifest.get("third_party") or []).items():
         if name.lower() in {k.lower() for k in entries}:
             raise RegistryError("folder %s is both ours and a start package" % name)
         entries[name] = entry

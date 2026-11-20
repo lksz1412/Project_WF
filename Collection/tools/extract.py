@@ -8,7 +8,8 @@ Inputs (read-only):
                                      resolved through References/addon-sources/INDEX.md
 Outputs:
   Collection/upstream/<dir>-<version>/   extracted ZIP contents (regenerable, git-ignored)
-  Collection/manifest.json, Collection/manifest.md   (packages + our own Collection/AddOns/ folders)
+  Collection/manifest.json, Collection/manifest.md   (packages, our own Collection/AddOns/ folders
+                                                     and the third-party folders shipped there)
 
 Every ZIP's SHA256 must equal the SOURCE.txt value before it is extracted.
 Members with absolute paths, drive letters, backslashes, ``..`` parts or
@@ -127,9 +128,31 @@ OWN_FOLDERS = {
     "DevilForever_FUFDefaults": {"phases": [6], "bundle": "individual", "kind": "new"},
     "DevilForever_Castbars": {"phases": [7], "bundle": "individual", "kind": "new"},
     "DevilForever_StatusStrip": {"phases": [16], "bundle": "individual", "kind": "new"},
+    "DevilForever_Appearance": {"phases": [2, 22], "bundle": "required", "kind": "new"},
+    "DevilForever_DetailsLayout": {"phases": [10], "bundle": "individual", "kind": "new"},
+    "DevilForever_Skin_Dominos": {"phases": [3], "bundle": "individual", "kind": "new"},
+    "DevilForever_Skin_Nameplates": {"phases": [14], "bundle": "individual", "kind": "new"},
+    "DevilForever_Skin_NativeChat": {"phases": [4], "bundle": "individual", "kind": "new"},
+    "DevilForever_Skin_StatusStrip": {"phases": [16], "bundle": "individual", "kind": "new"},
     "PitBull4": {"phases": [6], "variant": "6-rev", "bundle": "individual", "kind": "fork",
                  "base": {"package": "PitBull4", "patch": "Collection/patches/PitBull4.patch"}},
 }
+
+# Third-party folders under Collection/AddOns/ that differ from their upstream
+# folder, per package (hand-kept). Their patch is ``patch_path(package)`` =
+# the diff upstream -> shipped of these folders (Collection/tools/patches.py).
+# Every other third-party folder there must be byte-identical to upstream.
+PATCHED = {
+    "Details": ["Details_TinyThreat"],
+    "Experience Forever": ["ExperienceForever"],
+    "ProfileManager": ["ProfileManager"],
+    "SexyMap": ["SexyMap"],
+}
+
+
+def patch_path(package):
+    """Repo-relative patch file of a package: spaces in the name become ``_``."""
+    return "Collection/patches/%s.patch" % package.replace(" ", "_")
 
 LICENSE_RE = re.compile(r"^(licen[cs]e|copying|unlicense)([._-].*)?$", re.IGNORECASE)
 LIBSTUB_NEW_RE = re.compile(
@@ -394,13 +417,57 @@ def existing_how_to_use():
     return {p["source_zip"]: p.get("how_to_use") for p in old.get("packages", []) if p.get("source_zip")}
 
 
+def addon_folders_present():
+    return sorted(n for n in os.listdir(COLLECTION_ADDONS)
+                  if os.path.isdir(os.path.join(COLLECTION_ADDONS, n)) and toclib.own_tocs(os.path.join(COLLECTION_ADDONS, n)))
+
+
+def third_party_entries(packages, errors):
+    """Manifest entries of the third-party folders shipped from Collection/AddOns/.
+
+    A folder that is not in OWN_FOLDERS must be the folder of exactly one
+    extracted package; state is "patched" when PATCHED names it for that
+    package, otherwise "unmodified".
+    """
+    index = {}
+    for pkg in packages:
+        for addon in pkg.get("addons") or []:
+            index.setdefault(addon["folder"], []).append((pkg, addon))
+    for package, folders in sorted(PATCHED.items()):
+        for folder in folders:
+            if not any(p["name"] == package for p, _a in index.get(folder, [])):
+                errors.append("PATCHED %s: folder %s is not a folder of that package" % (package, folder))
+    out = []
+    for name in addon_folders_present():
+        if name in OWN_FOLDERS:
+            continue
+        hits = index.get(name, [])
+        if len(hits) != 1:
+            errors.append("Collection/AddOns/%s: not in OWN_FOLDERS and found in %d extracted packages"
+                          % (name, len(hits)))
+            continue
+        pkg, addon = hits[0]
+        patched = name in PATCHED.get(pkg["name"], [])
+        patch = patch_path(pkg["name"]) if patched else None
+        if patch and not os.path.isfile(os.path.join(REPO, patch)):
+            errors.append("Collection/AddOns/%s: patch file missing %s" % (name, patch))
+        out.append({
+            "folder": name,
+            "package": pkg["name"],
+            "version": pkg["version"],
+            "source_zip": pkg["source_zip"],
+            "sha256": pkg["sha256"],
+            "upstream_path": pkg["upstream_dir"] + "/" + addon["path"],
+            "state": "patched" if patched else "unmodified",
+            "patch": patch,
+        })
+    return out
+
+
 def collection_entries(packages, errors):
     """Manifest entries of our own folders (Collection/AddOns/) from OWN_FOLDERS and their TOCs."""
     by_name = {p["name"]: p for p in packages}
-    present = sorted(n for n in os.listdir(COLLECTION_ADDONS)
-                     if os.path.isdir(os.path.join(COLLECTION_ADDONS, n)) and toclib.own_tocs(os.path.join(COLLECTION_ADDONS, n)))
-    for name in sorted(set(present) - set(OWN_FOLDERS)):
-        errors.append("Collection/AddOns/%s: not listed in OWN_FOLDERS" % name)
+    present = addon_folders_present()
     out = []
     for name in sorted(OWN_FOLDERS, key=str.lower):
         if name not in present:
@@ -488,6 +555,7 @@ def build_manifest(do_extract):
         "generated_by": "Collection/tools/extract.py",
         "packages": out,
         "collection": collection_entries(out, errors),
+        "third_party": third_party_entries(out, errors),
         "comparison_names_missing": missing,
         "comparison_names_in_start_set": comparison_also_start(packages),
     }
@@ -605,6 +673,20 @@ def write_markdown(manifest, path):
                 md_cell(t["saved_variables_per_character"]),
                 md_cell(a["license_files"]) if first else "",
             ))
+    lines += [
+        "",
+        "## Third-party folders shipped from `Collection/AddOns/`",
+        "",
+        "state: unmodified = bytes equal the upstream folder; patched = upstream folder + the package patch "
+        "(diff upstream -> shipped, `Collection/tools/patches.py`).",
+        "",
+        "| Folder | Package | Version | State | Patch | Upstream path |",
+        "|---|---|---|---|---|---|",
+    ]
+    for t in manifest.get("third_party", []):
+        lines.append("| %s | %s | %s | %s | %s | %s |" % (
+            md_cell(t["folder"]), md_cell(t["package"]), md_cell(t["version"]), t["state"],
+            md_cell(t["patch"]), md_cell(t["upstream_path"])))
     with open(path, "w", encoding="utf-8", newline="\n") as fh:
         fh.write("\n".join(lines) + "\n")
 

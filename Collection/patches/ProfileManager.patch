@@ -1,0 +1,37 @@
+ProfileManager v4.0 for WoW Forever - DevilForever patch
+Base: References/addon-sources/profilemanager (Collection/upstream/profilemanager-ProfileManager_v4.0.zip),
+folder ProfileManager. Result: Collection/AddOns/ProfileManager.
+
+Change (DevilForever, runtime only, review 2 / Step 44):
+  - the provider rescan on PLAYER_LOGIN / ADDON_LOADED runs once per frame of events (C_Timer.After 0)
+    instead of once per loaded addon; opening the UI and the commands rescan themselves as before, so
+    the options UI shows the same providers.
+
+Line endings: LF. Apply from the folder that holds the addon folders:
+    patch -p1 --binary -E < ProfileManager.patch
+Generated with: python3 -I Collection/tools/patches.py regenerate
+
+diff -u a/ProfileManager/Providers.lua b/ProfileManager/Providers.lua
+--- a/ProfileManager/Providers.lua
++++ b/ProfileManager/Providers.lua
+@@ -3128,9 +3128,19 @@
+ ef:UnregisterAllEvents()
+ ef:RegisterEvent("PLAYER_LOGIN")
+ ef:RegisterEvent("ADDON_LOADED")
+-ef:SetScript("OnEvent", function(_, event)
++-- ADDON_LOADED arrives once per addon at login: the rescan runs once after the
++-- events of one frame (next frame). Opening the UI and the commands rescan
++-- themselves, so they always see the current providers.
++local function RunProviderRescan()
++    addon._providerRescanPending = false
+     addon:TryRegisterAllProviders()
+     if addon.MainUI and addon.MainUI:IsShown() and addon.RefreshMainUI then
+         addon:RefreshMainUI()
+     end
++end
++
++ef:SetScript("OnEvent", function(_, event)
++    if addon._providerRescanPending then return end
++    addon._providerRescanPending = true
++    C_Timer.After(0, RunProviderRescan)
+ end)

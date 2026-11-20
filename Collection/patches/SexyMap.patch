@@ -1,0 +1,66 @@
+SexyMap v12.1.7 for WoW Forever - DevilForever patch
+Base: References/forever-addons/SexyMap (Collection/upstream/SexyMap-v12.1.7), folder SexyMap.
+Result: Collection/AddOns/SexyMap.
+
+Change (edit present in the 0.1.4 review sources, Codex):
+  - Coordinates.lua: the coordinate refresh uses one cancellable C_Timer.NewTimer chain, cancelled when
+    coordinates are turned off, and a second CreateFrame call does not start another chain.
+
+Line endings: the file is CRLF and so are the hunks. Apply from the folder that holds the addon folders:
+    patch -p1 --binary -E < SexyMap.patch
+Generated with: python3 -I Collection/tools/patches.py regenerate
+
+diff -u a/SexyMap/Coordinates.lua b/SexyMap/Coordinates.lua
+--- a/SexyMap/Coordinates.lua
++++ b/SexyMap/Coordinates.lua
+@@ -6,7 +6,7 @@
+ local L = sm.L
+ 
+ local media = LibStub("LibSharedMedia-3.0")
+-local coordFrame, coordsText
++local coordFrame, coordsText, coordsTimer, updateCoords
+ 
+ local options = {
+ 	type = "group",
+@@ -27,6 +27,7 @@
+ 				if v then
+ 					mod:CreateFrame()
+ 				else
++					if coordsTimer then coordsTimer:Cancel(); coordsTimer = nil end
+ 					if coordFrame then
+ 						coordFrame:Hide()
+ 					end
+@@ -293,27 +294,27 @@
+ 
+ 		local GetPlayerMapPosition = C_Map.GetPlayerMapPosition
+ 		local GetBestMapForUnit = C_Map.GetBestMapForUnit
+-		local CTimerAfter = C_Timer.After
+-		local function updateCoords()
++		local newTimer = C_Timer.NewTimer
++		updateCoords = function()
+ 			local uiMapID = GetBestMapForUnit"player"
+ 			if uiMapID then
+ 				local tbl = GetPlayerMapPosition(uiMapID, "player")
+ 				if tbl then
+-					CTimerAfter(mod.db.updateRate, updateCoords)
++					coordsTimer = newTimer(mod.db.updateRate, updateCoords)
+ 					coordsText:SetFormattedText(mod.db.coordPrecision, tbl.x*100, tbl.y*100)
+ 				else
+-					CTimerAfter(5, updateCoords)
++					coordsTimer = newTimer(5, updateCoords)
+ 					coordsText:SetText("0,0")
+ 				end
+ 			else
+-				CTimerAfter(5, updateCoords)
++				coordsTimer = newTimer(5, updateCoords)
+ 				coordsText:SetText("0,0")
+ 			end
+ 		end
+-		updateCoords()
+ 	end
+ 
+ 	coordFrame:Show()
++	if not coordsTimer then updateCoords() end
+ 	self:Update()
+ end
+ 

@@ -177,7 +177,13 @@ def verify(path, variant, races, version, reviewed_chat):
             assert "PitBull4만 켜고" in guide and "/dfcheck comparison" in guide
         assert verify_theme_assets(archive) == (6, 9)
         assert verify_composition_assets(archive, races, reviewed_chat) == (6 * (3 + len(races)), 12)
-        assert "Interface/AddOns/DevilForever_Skin_Nameplates/SessionProbe.lua" in names
+        dev_only = {"Interface/AddOns/DevilForever_Skin_Nameplates/SessionProbe.lua",
+                    "Interface/AddOns/DevilForever_Skin_Nameplates/Probe.lua",
+                    "Interface/AddOns/!DevilForever_Core/registry_extra.json"}
+        if version_at_least(version, (0, 1, 5)):
+            assert dev_only.isdisjoint(names), dev_only & set(names)
+        else:
+            assert "Interface/AddOns/DevilForever_Skin_Nameplates/SessionProbe.lua" in names
         assert {entry["folder"] for entry in manifest["folders"]} == installed
         checksums = archive.read(prefix + "SHA256SUMS.txt").decode("utf-8").splitlines()
         checked = set()
@@ -202,6 +208,10 @@ def verify(path, variant, races, version, reviewed_chat):
     print(f"{variant} folders={len(installed)} files={len(names)} internal_hashes={len(checked)} sha256={digest}")
 
 
+def version_at_least(version, minimum):
+    return tuple(int(part) for part in version.split(".")[:3]) >= minimum
+
+
 def verify_variant_payloads(primary, alternate, comparison):
     def verify_members(archive):
         rows = archive.read("DevilForever-install/SHA256SUMS.txt").decode("utf-8").splitlines()
@@ -212,6 +222,15 @@ def verify_variant_payloads(primary, alternate, comparison):
         default, fuf, both = map(verify_members, (a, b, c))
         assert all(default[member] == fuf[member] for member in default.keys() & fuf.keys())
         assert default | fuf == both
+
+
+def verify_shared_payload(primary, alternate):
+    """The two release ZIPs carry the same bytes for every addon file they share."""
+    with zipfile.ZipFile(primary) as a, zipfile.ZipFile(alternate) as b:
+        rows = [dict((m, d) for d, m in (r.split("  ", 1) for r in z.read("DevilForever-install/SHA256SUMS.txt")
+                                         .decode("utf-8").splitlines()) if m.startswith("Interface/AddOns/"))
+                for z in (a, b)]
+    assert all(rows[0][m] == rows[1][m] for m in rows[0].keys() & rows[1].keys())
 
 
 def main():
@@ -227,8 +246,12 @@ def main():
     comparison = zip_dir / f"{prefix}-one-session.zip"
     verify(primary, "pitbull4", RACE_SURFACES, args.version, args.reviewed_chat)
     verify(alternate, "fuf", RACE_SURFACES, args.version, args.reviewed_chat)
-    verify(comparison, "one-session", RACE_SURFACES, args.version, args.reviewed_chat)
-    verify_variant_payloads(primary, alternate, comparison)
+    if comparison.exists() or not version_at_least(args.version, (0, 1, 5)):
+        verify(comparison, "one-session", RACE_SURFACES, args.version, args.reviewed_chat)
+        verify_variant_payloads(primary, alternate, comparison)
+    else:
+        print("one-session: not built for %s (optional from 0.1.5)" % args.version)
+        verify_shared_payload(primary, alternate)
 
 
 if __name__ == "__main__":

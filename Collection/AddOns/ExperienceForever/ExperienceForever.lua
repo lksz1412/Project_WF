@@ -444,7 +444,7 @@ end
 function ExperienceForever:OnEnable()
     if not self.updateTicker then
         self.updateTicker = C_Timer.NewTicker(1.0, function()
-            self:QueueUpdate()
+            self:UpdateTimeText()
         end)
     end
 
@@ -1076,6 +1076,19 @@ function ExperienceForever:ShowRepTooltip()
     GameTooltip:Show()
 end
 
+-- Time-dependent context fields (session time, XP per hour, time to level,
+-- played times); shared by Update and UpdateTimeText so both show the same values.
+local function SetTimeFields(self, ctx, now)
+    local sessionDuration = math.max(1, now - self.sessionStartTime)
+    local xpHour = math.floor((self.sessionXP / sessionDuration) * 3600)
+    local sincePlayed = self.playedAt and (now - self.playedAt)
+    ctx.sessionDuration = sessionDuration
+    ctx.xpHour = xpHour
+    ctx.timeToLevel = (xpHour > 0 and not ctx.isMax) and math.floor(((ctx.maxXP - ctx.currentXP) / xpHour) * 3600) or 0
+    ctx.levelSecs = sincePlayed and self.levelTime and (self.levelTime + sincePlayed)
+    ctx.totalSecs = sincePlayed and self.totalTime and (self.totalTime + sincePlayed)
+end
+
 function ExperienceForever:Update()
     if not self.MainFrame then return end
 
@@ -1147,16 +1160,9 @@ function ExperienceForever:Update()
 
     local pct = isMax and 100 or (currentXP / maxXP) * 100
 
-    local now = GetTime()
-    local sessionDuration = math.max(1, now - self.sessionStartTime)
-    local xpHour = math.floor((self.sessionXP / sessionDuration) * 3600)
-    local timeToLevel = (xpHour > 0 and not isMax) and math.floor(((maxXP - currentXP) / xpHour) * 3600) or 0
-
     local xpPerKill = cfg.xpPerKill
     local killsToLevel = (not isMax and xpPerKill and xpPerKill > 0)
         and math.ceil((maxXP - currentXP) / xpPerKill) or nil
-
-    local sincePlayed = self.playedAt and (now - self.playedAt)
 
     local ctx = {
         level = level,
@@ -1168,19 +1174,43 @@ function ExperienceForever:Update()
         questPct = (questXP / maxXP) * 100,
         restedXP = restedXP,
         restedPct = (restedXP / maxXP) * 100,
-        sessionDuration = sessionDuration,
-        xpHour = xpHour,
-        timeToLevel = timeToLevel,
         killsToLevel = killsToLevel,
-        levelSecs = sincePlayed and self.levelTime and (self.levelTime + sincePlayed),
-        totalSecs = sincePlayed and self.totalTime and (self.totalTime + sincePlayed),
     }
+    SetTimeFields(self, ctx, GetTime())
+    self.lastCtx = ctx
 
+    self.slotText = self.slotText or {}
     for _, slot in ipairs(SLOTS) do
-        self.Texts[slot.key]:SetText(self:BuildSlotText(slot.key, ctx))
+        local text = self:BuildSlotText(slot.key, ctx)
+        self.slotText[slot.key] = text
+        self.Texts[slot.key]:SetText(text)
     end
 
     self:UpdateBorder()
+end
+
+-- Per-second refresh: rebuilds the slot texts from the last Update's values with
+-- the time fields recomputed, and sets only texts that changed. A different
+-- level, XP, max XP or rested XP (rested growth has no event here) or a
+-- missing context runs the full Update instead.
+function ExperienceForever:UpdateTimeText()
+    if self.updatePending then return end
+    local ctx = self.lastCtx
+    if not ctx or not self.MainFrame then return self:QueueUpdate() end
+    local maxXP = UnitXPMax("player") or 0
+    if maxXP <= 0 then maxXP = 1 end
+    if UnitLevel("player") ~= ctx.level or (UnitXP("player") or 0) ~= ctx.currentXP or maxXP ~= ctx.maxXP
+        or (GetXPExhaustion() or 0) ~= ctx.restedXP then
+        return self:QueueUpdate()
+    end
+    SetTimeFields(self, ctx, GetTime())
+    for _, slot in ipairs(SLOTS) do
+        local text = self:BuildSlotText(slot.key, ctx)
+        if text ~= self.slotText[slot.key] then
+            self.slotText[slot.key] = text
+            self.Texts[slot.key]:SetText(text)
+        end
+    end
 end
 
 function ExperienceForever:BuildSlotText(slotKey, ctx)

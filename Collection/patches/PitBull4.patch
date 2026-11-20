@@ -35,11 +35,12 @@ What the port does (DevilForever choices):
 Line endings: the v4.2.50 files use CRLF, and so do all changed and added files; the hunks below
 carry the CR bytes. Apply from the folder that holds PitBull4/:
     patch -p1 --binary < PitBull4.patch
-Generated with: diff -ruN -x LICENSE a/PitBull4 b/PitBull4 (a = v4.2.50, b = result).
+Generated with: python3 -I Collection/tools/patches.py regenerate (a = v4.2.50, b = result; file headers carry
+no timestamps, an absent side the epoch time). The LICENSE files are upstream bytes and not in the patch.
 
-diff -ruN -x LICENSE a/PitBull4/Compat.lua b/PitBull4/Compat.lua
+diff -u a/PitBull4/Compat.lua b/PitBull4/Compat.lua
 --- a/PitBull4/Compat.lua	1970-01-01 00:00:00.000000000 +0000
-+++ b/PitBull4/Compat.lua	2026-11-20 01:10:13.838173615 +0000
++++ b/PitBull4/Compat.lua
 @@ -0,0 +1,213 @@
 +local addon_name, namespace = ...
 +local Compat = {}
@@ -254,9 +255,9 @@ diff -ruN -x LICENSE a/PitBull4/Compat.lua b/PitBull4/Compat.lua
 +	local manifest = AddOns.GetAddOnMetadata and AddOns.GetAddOnMetadata(addon_name, "X-PitBull4-Manifest")
 +	return { client = Compat.Client, project = Compat.ProjectID, version = version, build = build, date = date, interface = interface, manifest = manifest }
 +end
-diff -ruN -x LICENSE a/PitBull4/Controls/BetterStatusBar.lua b/PitBull4/Controls/BetterStatusBar.lua
---- a/PitBull4/Controls/BetterStatusBar.lua	2026-11-20 01:10:13.827176655 +0000
-+++ b/PitBull4/Controls/BetterStatusBar.lua	2026-11-20 01:10:13.838090389 +0000
+diff -u a/PitBull4/Controls/BetterStatusBar.lua b/PitBull4/Controls/BetterStatusBar.lua
+--- a/PitBull4/Controls/BetterStatusBar.lua
++++ b/PitBull4/Controls/BetterStatusBar.lua
 @@ -2,6 +2,7 @@
  
  local DEBUG = PitBull4.DEBUG
@@ -681,9 +682,9 @@ diff -ruN -x LICENSE a/PitBull4/Controls/BetterStatusBar.lua b/PitBull4/Controls
 +    if control.icon then control.icon = control.icon:Delete() end
 +    control.icon_path = nil
 +end)
-diff -ruN -x LICENSE a/PitBull4/GroupHeader.lua b/PitBull4/GroupHeader.lua
---- a/PitBull4/GroupHeader.lua	2026-11-20 01:10:13.830033185 +0000
-+++ b/PitBull4/GroupHeader.lua	2026-11-20 01:10:13.832210409 +0000
+diff -u a/PitBull4/GroupHeader.lua b/PitBull4/GroupHeader.lua
+--- a/PitBull4/GroupHeader.lua
++++ b/PitBull4/GroupHeader.lua
 @@ -1823,11 +1823,12 @@
  
  		self.unit = nil
@@ -698,9 +699,9 @@ diff -ruN -x LICENSE a/PitBull4/GroupHeader.lua b/PitBull4/GroupHeader.lua
  
  		PitBull4.unit_id_to_frames[new_unit][self] = true
  		PitBull4.unit_id_to_frames_with_wacky[new_unit][self] = true
-diff -ruN -x LICENSE a/PitBull4/Libs/AceGUI-3.0/widgets/AceGUIWidget-CheckBox.lua b/PitBull4/Libs/AceGUI-3.0/widgets/AceGUIWidget-CheckBox.lua
---- a/PitBull4/Libs/AceGUI-3.0/widgets/AceGUIWidget-CheckBox.lua	2026-11-20 01:10:13.829647017 +0000
-+++ b/PitBull4/Libs/AceGUI-3.0/widgets/AceGUIWidget-CheckBox.lua	2026-11-20 01:10:13.837064395 +0000
+diff -u a/PitBull4/Libs/AceGUI-3.0/widgets/AceGUIWidget-CheckBox.lua b/PitBull4/Libs/AceGUI-3.0/widgets/AceGUIWidget-CheckBox.lua
+--- a/PitBull4/Libs/AceGUI-3.0/widgets/AceGUIWidget-CheckBox.lua
++++ b/PitBull4/Libs/AceGUI-3.0/widgets/AceGUIWidget-CheckBox.lua
 @@ -1,7 +1,7 @@
  --[[-----------------------------------------------------------------------------
  Checkbox Widget
@@ -750,9 +751,9 @@ diff -ruN -x LICENSE a/PitBull4/Libs/AceGUI-3.0/widgets/AceGUIWidget-CheckBox.lu
  				check:Hide()
  			end
  		end
-diff -ruN -x LICENSE a/PitBull4/Localization/enUS.lua b/PitBull4/Localization/enUS.lua
---- a/PitBull4/Localization/enUS.lua	2026-11-20 01:10:13.830444451 +0000
-+++ b/PitBull4/Localization/enUS.lua	2026-11-20 01:10:13.837593595 +0000
+diff -u a/PitBull4/Localization/enUS.lua b/PitBull4/Localization/enUS.lua
+--- a/PitBull4/Localization/enUS.lua
++++ b/PitBull4/Localization/enUS.lua
 @@ -1211,3 +1211,11 @@
  L["Zandalari Troll_short"] = "ZT"
  L["Zoom icon"] = true
@@ -765,9 +766,9 @@ diff -ruN -x LICENSE a/PitBull4/Localization/enUS.lua b/PitBull4/Localization/en
 +L["Specialization %d"] = true
 +
 +L["%s - Active"] = true
-diff -ruN -x LICENSE a/PitBull4/Localization/koKR.lua b/PitBull4/Localization/koKR.lua
---- a/PitBull4/Localization/koKR.lua	2026-11-20 01:10:13.830349211 +0000
-+++ b/PitBull4/Localization/koKR.lua	2026-11-20 01:10:13.837670135 +0000
+diff -u a/PitBull4/Localization/koKR.lua b/PitBull4/Localization/koKR.lua
+--- a/PitBull4/Localization/koKR.lua
++++ b/PitBull4/Localization/koKR.lua
 @@ -1193,3 +1193,11 @@
  L["Zoom icon"] = "아이콘 확대"
  L["Zoom in on aura icons slightly."] = "효과 아이콘을 약간 확대합니다."
@@ -780,9 +781,9 @@ diff -ruN -x LICENSE a/PitBull4/Localization/koKR.lua b/PitBull4/Localization/ko
 +L["Specialization %d"] = "전문화 %d"
 +
 +L["%s - Active"] = "%s - 사용 중"
-diff -ruN -x LICENSE a/PitBull4/Main.lua b/PitBull4/Main.lua
---- a/PitBull4/Main.lua	2026-11-20 01:10:13.829961281 +0000
-+++ b/PitBull4/Main.lua	2026-11-20 01:10:13.832291125 +0000
+diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
+--- a/PitBull4/Main.lua
++++ b/PitBull4/Main.lua
 @@ -1,13 +1,109 @@
  -- Constants ----------------------------------------------------------------
  local _G = _G
@@ -1174,9 +1175,9 @@ diff -ruN -x LICENSE a/PitBull4/Main.lua b/PitBull4/Main.lua
  	refresh_all_guids()
  end
  
-diff -ruN -x LICENSE a/PitBull4/ModuleHandling/BarModules.lua b/PitBull4/ModuleHandling/BarModules.lua
---- a/PitBull4/ModuleHandling/BarModules.lua	2026-11-20 01:10:13.827378602 +0000
-+++ b/PitBull4/ModuleHandling/BarModules.lua	2026-11-20 01:10:13.832347374 +0000
+diff -u a/PitBull4/ModuleHandling/BarModules.lua b/PitBull4/ModuleHandling/BarModules.lua
+--- a/PitBull4/ModuleHandling/BarModules.lua
++++ b/PitBull4/ModuleHandling/BarModules.lua
 @@ -6,6 +6,8 @@
  local DEBUG = PitBull4.DEBUG
  local expect = PitBull4.expect
@@ -1507,9 +1508,9 @@ diff -ruN -x LICENSE a/PitBull4/ModuleHandling/BarModules.lua b/PitBull4/ModuleH
  		control:SetAtlas(atlas)
  	end
  
-diff -ruN -x LICENSE a/PitBull4/ModuleHandling/FaderModule.lua b/PitBull4/ModuleHandling/FaderModule.lua
---- a/PitBull4/ModuleHandling/FaderModule.lua	2026-11-20 01:10:13.827303872 +0000
-+++ b/PitBull4/ModuleHandling/FaderModule.lua	2026-11-20 01:10:13.832396241 +0000
+diff -u a/PitBull4/ModuleHandling/FaderModule.lua b/PitBull4/ModuleHandling/FaderModule.lua
+--- a/PitBull4/ModuleHandling/FaderModule.lua
++++ b/PitBull4/ModuleHandling/FaderModule.lua
 @@ -172,7 +172,7 @@
  	local value, priority
  	-- Extra frame.unit test here is a workaround for the same root issue
@@ -1519,9 +1520,9 @@ diff -ruN -x LICENSE a/PitBull4/ModuleHandling/FaderModule.lua b/PitBull4/Module
  		value, priority = self:GetOpacity(frame)
  	end
  	if not value or value >= opacity_max or value ~= value then
-diff -ruN -x LICENSE a/PitBull4/ModuleHandling/IndicatorModule.lua b/PitBull4/ModuleHandling/IndicatorModule.lua
---- a/PitBull4/ModuleHandling/IndicatorModule.lua	2026-11-20 01:10:13.827279284 +0000
-+++ b/PitBull4/ModuleHandling/IndicatorModule.lua	2026-11-20 01:10:13.832433410 +0000
+diff -u a/PitBull4/ModuleHandling/IndicatorModule.lua b/PitBull4/ModuleHandling/IndicatorModule.lua
+--- a/PitBull4/ModuleHandling/IndicatorModule.lua
++++ b/PitBull4/ModuleHandling/IndicatorModule.lua
 @@ -31,7 +31,7 @@
  	-- Workaround for similar error to ticket 475 by checking that unit is set.
  	-- Thhe extra frame.unit is temporary till we figure out how unit is getting
@@ -1540,9 +1541,9 @@ diff -ruN -x LICENSE a/PitBull4/ModuleHandling/IndicatorModule.lua b/PitBull4/Mo
  		c1, c2, c3, c4 = self:GetTexCoord(frame, texture)
  	end
  	if not c4 and frame.force_show and self.GetExampleTexCoord then
-diff -ruN -x LICENSE a/PitBull4/ModuleHandling/Module.lua b/PitBull4/ModuleHandling/Module.lua
---- a/PitBull4/ModuleHandling/Module.lua	2026-11-20 01:10:13.827338220 +0000
-+++ b/PitBull4/ModuleHandling/Module.lua	2026-11-20 01:10:13.832447742 +0000
+diff -u a/PitBull4/ModuleHandling/Module.lua b/PitBull4/ModuleHandling/Module.lua
+--- a/PitBull4/ModuleHandling/Module.lua
++++ b/PitBull4/ModuleHandling/Module.lua
 @@ -308,7 +308,7 @@
  	local changed
  
@@ -1552,9 +1553,9 @@ diff -ruN -x LICENSE a/PitBull4/ModuleHandling/Module.lua b/PitBull4/ModuleHandl
  		changed = self:ClearFrame(frame)
  	else
  		changed = self:UpdateFrame(frame, same_guid)
-diff -ruN -x LICENSE a/PitBull4/Modules/Aggro/Aggro.lua b/PitBull4/Modules/Aggro/Aggro.lua
---- a/PitBull4/Modules/Aggro/Aggro.lua	2026-11-20 01:10:13.823120185 +0000
-+++ b/PitBull4/Modules/Aggro/Aggro.lua	2026-11-20 01:10:13.834639094 +0000
+diff -u a/PitBull4/Modules/Aggro/Aggro.lua b/PitBull4/Modules/Aggro/Aggro.lua
+--- a/PitBull4/Modules/Aggro/Aggro.lua
++++ b/PitBull4/Modules/Aggro/Aggro.lua
 @@ -58,7 +58,7 @@
  	local unit = frame.unit
  	local db = self:GetLayoutDB(frame)
@@ -1582,9 +1583,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/Aggro/Aggro.lua b/PitBull4/Modules/Aggro
  		if status > 2 then
  			local a2
  			r, g, b, a2 = unpack(self.db.profile.global.aggro_color)
-diff -ruN -x LICENSE a/PitBull4/Modules/AltManaBar/AltManaBar.lua b/PitBull4/Modules/AltManaBar/AltManaBar.lua
---- a/PitBull4/Modules/AltManaBar/AltManaBar.lua	2026-11-20 01:10:13.823016378 +0000
-+++ b/PitBull4/Modules/AltManaBar/AltManaBar.lua	2026-11-20 01:10:13.835411145 +0000
+diff -u a/PitBull4/Modules/AltManaBar/AltManaBar.lua b/PitBull4/Modules/AltManaBar/AltManaBar.lua
+--- a/PitBull4/Modules/AltManaBar/AltManaBar.lua
++++ b/PitBull4/Modules/AltManaBar/AltManaBar.lua
 @@ -1,10 +1,13 @@
 +local _G = _G
 +
@@ -1939,9 +1940,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/AltManaBar/AltManaBar.lua b/PitBull4/Mod
 +        end,
 +    }
  end)
-diff -ruN -x LICENSE a/PitBull4/Modules/Aura/Aura.lua b/PitBull4/Modules/Aura/Aura.lua
---- a/PitBull4/Modules/Aura/Aura.lua	2026-11-20 01:10:13.824658280 +0000
-+++ b/PitBull4/Modules/Aura/Aura.lua	2026-11-20 01:10:13.834537250 +0000
+diff -u a/PitBull4/Modules/Aura/Aura.lua b/PitBull4/Modules/Aura/Aura.lua
+--- a/PitBull4/Modules/Aura/Aura.lua
++++ b/PitBull4/Modules/Aura/Aura.lua
 @@ -5,6 +5,76 @@
  
  local PitBull4_Aura = PitBull4:NewModule("Aura")
@@ -2019,9 +2020,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/Aura/Aura.lua b/PitBull4/Modules/Aura/Au
  PitBull4_Aura:SetModuleType("custom")
  PitBull4_Aura:SetName(L["Aura"])
  PitBull4_Aura:SetDescription(L["Shows buffs and debuffs for PitBull4 frames."])
-diff -ruN -x LICENSE a/PitBull4/Modules/Aura/Controls.lua b/PitBull4/Modules/Aura/Controls.lua
---- a/PitBull4/Modules/Aura/Controls.lua	2026-11-20 01:10:13.825218337 +0000
-+++ b/PitBull4/Modules/Aura/Controls.lua	2026-11-20 01:10:13.834352380 +0000
+diff -u a/PitBull4/Modules/Aura/Controls.lua b/PitBull4/Modules/Aura/Controls.lua
+--- a/PitBull4/Modules/Aura/Controls.lua
++++ b/PitBull4/Modules/Aura/Controls.lua
 @@ -40,32 +40,53 @@
  		-- unit goes out of range but the order of the auras by index change.
  		-- For a more detailed explanation for why this silly hack is necessary see:
@@ -2098,9 +2099,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/Aura/Controls.lua b/PitBull4/Modules/Aur
  	elseif self.slot then
  		local has_item = GameTooltip:SetInventoryItem("player", self.slot)
  		if not has_item then
-diff -ruN -x LICENSE a/PitBull4/Modules/Aura/Filter.lua b/PitBull4/Modules/Aura/Filter.lua
---- a/PitBull4/Modules/Aura/Filter.lua	2026-11-20 01:10:13.824572354 +0000
-+++ b/PitBull4/Modules/Aura/Filter.lua	2026-11-20 01:10:13.833944989 +0000
+diff -u a/PitBull4/Modules/Aura/Filter.lua b/PitBull4/Modules/Aura/Filter.lua
+--- a/PitBull4/Modules/Aura/Filter.lua
++++ b/PitBull4/Modules/Aura/Filter.lua
 @@ -1,6 +1,7 @@
  -- Filter.lua : Code to handle Filtering the Auras.
  
@@ -2162,9 +2163,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/Aura/Filter.lua b/PitBull4/Modules/Aura/
  		end
  	end
  end
-diff -ruN -x LICENSE a/PitBull4/Modules/Aura/FilterTypes.lua b/PitBull4/Modules/Aura/FilterTypes.lua
---- a/PitBull4/Modules/Aura/FilterTypes.lua	2026-11-20 01:10:13.825138373 +0000
-+++ b/PitBull4/Modules/Aura/FilterTypes.lua	2026-11-20 01:10:13.834393361 +0000
+diff -u a/PitBull4/Modules/Aura/FilterTypes.lua b/PitBull4/Modules/Aura/FilterTypes.lua
+--- a/PitBull4/Modules/Aura/FilterTypes.lua
++++ b/PitBull4/Modules/Aura/FilterTypes.lua
 @@ -1,6 +1,7 @@
  -- FilterTypes.lua: Code to implement the various filter types
  
@@ -2331,9 +2332,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/Aura/FilterTypes.lua b/PitBull4/Modules/
  	end
  end
  PitBull4_Aura:RegisterFilterType('Global nameplate',L["Global nameplate"],global_nameplate_filter,function(self,options)
-diff -ruN -x LICENSE a/PitBull4/Modules/Aura/Forever.lua b/PitBull4/Modules/Aura/Forever.lua
+diff -u a/PitBull4/Modules/Aura/Forever.lua b/PitBull4/Modules/Aura/Forever.lua
 --- a/PitBull4/Modules/Aura/Forever.lua	1970-01-01 00:00:00.000000000 +0000
-+++ b/PitBull4/Modules/Aura/Forever.lua	2026-11-20 01:10:13.834560932 +0000
++++ b/PitBull4/Modules/Aura/Forever.lua
 @@ -0,0 +1,408 @@
 +-- Forever's 12.1 engine denies addon aura queries when combat data is secret.
 +-- CustomAuraContainer delegates assignment, textures, stacks, durations and
@@ -2743,9 +2744,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/Aura/Forever.lua b/PitBull4/Modules/Aura
 +	for frame in pairs(buff_states) do self:ClearNativeBuffs(frame) end
 +	on_disable(self)
 +end
-diff -ruN -x LICENSE a/PitBull4/Modules/Aura/Highlight.lua b/PitBull4/Modules/Aura/Highlight.lua
---- a/PitBull4/Modules/Aura/Highlight.lua	2026-11-20 01:10:13.825353606 +0000
-+++ b/PitBull4/Modules/Aura/Highlight.lua	2026-11-20 01:10:13.833964978 +0000
+diff -u a/PitBull4/Modules/Aura/Highlight.lua b/PitBull4/Modules/Aura/Highlight.lua
+--- a/PitBull4/Modules/Aura/Highlight.lua
++++ b/PitBull4/Modules/Aura/Highlight.lua
 @@ -14,6 +14,47 @@
  -- Handle the results table used for tracking the priority of auras to highlight
  local results, pool = {}, {}
@@ -2848,9 +2849,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/Aura/Highlight.lua b/PitBull4/Modules/Au
  						local color = dispel_type_colors[dispel_type]
  						if not color then
  							color = dispel_type_colors["nil"]
-diff -ruN -x LICENSE a/PitBull4/Modules/Aura/Layout.lua b/PitBull4/Modules/Aura/Layout.lua
---- a/PitBull4/Modules/Aura/Layout.lua	2026-11-20 01:10:13.824641155 +0000
-+++ b/PitBull4/Modules/Aura/Layout.lua	2026-11-20 01:10:13.834491071 +0000
+diff -u a/PitBull4/Modules/Aura/Layout.lua b/PitBull4/Modules/Aura/Layout.lua
+--- a/PitBull4/Modules/Aura/Layout.lua
++++ b/PitBull4/Modules/Aura/Layout.lua
 @@ -4,6 +4,18 @@
  
  local PitBull4_Aura = PitBull4:GetModule("Aura")
@@ -2889,9 +2890,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/Aura/Layout.lua b/PitBull4/Modules/Aura/
  
  	-- Allow reversal of the load order
  	local start_list, end_list, step
-diff -ruN -x LICENSE a/PitBull4/Modules/Aura/Update.lua b/PitBull4/Modules/Aura/Update.lua
---- a/PitBull4/Modules/Aura/Update.lua	2026-11-20 01:10:13.824536276 +0000
-+++ b/PitBull4/Modules/Aura/Update.lua	2026-11-20 01:10:13.834470670 +0000
+diff -u a/PitBull4/Modules/Aura/Update.lua b/PitBull4/Modules/Aura/Update.lua
+--- a/PitBull4/Modules/Aura/Update.lua
++++ b/PitBull4/Modules/Aura/Update.lua
 @@ -2,7 +2,11 @@
  -- aura frames and set the data to display the auras.
  
@@ -3366,9 +3367,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/Aura/Update.lua b/PitBull4/Modules/Aura/
 -	wipe(guids_to_update)
 +	wipe(units_to_update)
  end
-diff -ruN -x LICENSE a/PitBull4/Modules/Aura/load.xml b/PitBull4/Modules/Aura/load.xml
---- a/PitBull4/Modules/Aura/load.xml	2026-11-20 01:10:13.824627511 +0000
-+++ b/PitBull4/Modules/Aura/load.xml	2026-11-20 01:10:13.833932915 +0000
+diff -u a/PitBull4/Modules/Aura/load.xml b/PitBull4/Modules/Aura/load.xml
+--- a/PitBull4/Modules/Aura/load.xml
++++ b/PitBull4/Modules/Aura/load.xml
 @@ -15,5 +15,6 @@
  	<Script file="Layout.lua"/>
  	<Script file="Skin.lua"/>
@@ -3376,9 +3377,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/Aura/load.xml b/PitBull4/Modules/Aura/lo
 +	<Script file="Forever.lua"/>
  
  </Ui>
-diff -ruN -x LICENSE a/PitBull4/Modules/Aura/load_Classic.xml b/PitBull4/Modules/Aura/load_Classic.xml
---- a/PitBull4/Modules/Aura/load_Classic.xml	2026-11-20 01:10:13.825320773 +0000
-+++ b/PitBull4/Modules/Aura/load_Classic.xml	2026-11-20 01:10:13.834550875 +0000
+diff -u a/PitBull4/Modules/Aura/load_Classic.xml b/PitBull4/Modules/Aura/load_Classic.xml
+--- a/PitBull4/Modules/Aura/load_Classic.xml
++++ b/PitBull4/Modules/Aura/load_Classic.xml
 @@ -11,5 +11,6 @@
  	<Script file="Layout.lua"/>
  	<Script file="Skin.lua"/>
@@ -3386,9 +3387,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/Aura/load_Classic.xml b/PitBull4/Modules
 +	<Script file="Forever.lua"/>
  
  </Ui>
-diff -ruN -x LICENSE a/PitBull4/Modules/Background/Background.lua b/PitBull4/Modules/Background/Background.lua
---- a/PitBull4/Modules/Background/Background.lua	2026-11-20 01:10:13.826622166 +0000
-+++ b/PitBull4/Modules/Background/Background.lua	2026-11-20 01:10:13.833088697 +0000
+diff -u a/PitBull4/Modules/Background/Background.lua b/PitBull4/Modules/Background/Background.lua
+--- a/PitBull4/Modules/Background/Background.lua
++++ b/PitBull4/Modules/Background/Background.lua
 @@ -1,6 +1,7 @@
  
  local PitBull4 = _G.PitBull4
@@ -3447,9 +3448,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/Background/Background.lua b/PitBull4/Mod
  		portrait:Hide()
  	end
  end
-diff -ruN -x LICENSE a/PitBull4/Modules/Border/Border.lua b/PitBull4/Modules/Border/Border.lua
---- a/PitBull4/Modules/Border/Border.lua	2026-11-20 01:10:13.825925126 +0000
-+++ b/PitBull4/Modules/Border/Border.lua	2026-11-20 01:10:13.832842195 +0000
+diff -u a/PitBull4/Modules/Border/Border.lua b/PitBull4/Modules/Border/Border.lua
+--- a/PitBull4/Modules/Border/Border.lua
++++ b/PitBull4/Modules/Border/Border.lua
 @@ -33,6 +33,8 @@
  local NEUTRAL_REACTION = 4
  local FRIENDLY_REACTION = 5
@@ -3478,9 +3479,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/Border/Border.lua b/PitBull4/Modules/Bor
  
  	for frame in PitBull4:IterateFrames() do
  		if frame.Border then
-diff -ruN -x LICENSE a/PitBull4/Modules/CastBar/CastBar.lua b/PitBull4/Modules/CastBar/CastBar.lua
---- a/PitBull4/Modules/CastBar/CastBar.lua	2026-11-20 01:10:13.822863150 +0000
-+++ b/PitBull4/Modules/CastBar/CastBar.lua	2026-11-20 01:10:13.835620964 +0000
+diff -u a/PitBull4/Modules/CastBar/CastBar.lua b/PitBull4/Modules/CastBar/CastBar.lua
+--- a/PitBull4/Modules/CastBar/CastBar.lua
++++ b/PitBull4/Modules/CastBar/CastBar.lua
 @@ -29,13 +29,65 @@
  local cast_data = {}
  PitBull4_CastBar.cast_data = cast_data
@@ -3728,9 +3729,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/CastBar/CastBar.lua b/PitBull4/Modules/C
  		end
  	end
  	if not next(cast_data) then
-diff -ruN -x LICENSE a/PitBull4/Modules/CastBar/Forever.lua b/PitBull4/Modules/CastBar/Forever.lua
+diff -u a/PitBull4/Modules/CastBar/Forever.lua b/PitBull4/Modules/CastBar/Forever.lua
 --- a/PitBull4/Modules/CastBar/Forever.lua	1970-01-01 00:00:00.000000000 +0000
-+++ b/PitBull4/Modules/CastBar/Forever.lua	2026-11-20 01:10:13.835635821 +0000
++++ b/PitBull4/Modules/CastBar/Forever.lua
 @@ -0,0 +1,110 @@
 +local PitBull4 = _G.PitBull4
 +if not PitBull4.Compat.IsForever or not UnitCastingDuration or not UnitChannelDuration then return end
@@ -3842,9 +3843,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/CastBar/Forever.lua b/PitBull4/Modules/C
 +
 +-- Used by the text provider to send cast names/times directly to FontString.
 +module.GetForeverCast = getCast
-diff -ruN -x LICENSE a/PitBull4/Modules/CastBar/load.xml b/PitBull4/Modules/CastBar/load.xml
---- a/PitBull4/Modules/CastBar/load.xml	2026-11-20 01:10:13.822843278 +0000
-+++ b/PitBull4/Modules/CastBar/load.xml	2026-11-20 01:10:13.835609327 +0000
+diff -u a/PitBull4/Modules/CastBar/load.xml b/PitBull4/Modules/CastBar/load.xml
+--- a/PitBull4/Modules/CastBar/load.xml
++++ b/PitBull4/Modules/CastBar/load.xml
 @@ -2,5 +2,6 @@
  ..\FrameXML\UI.xsd">
  
@@ -3852,9 +3853,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/CastBar/load.xml b/PitBull4/Modules/Cast
 +<Script file="Forever.lua"/>
  
  </Ui>
-diff -ruN -x LICENSE a/PitBull4/Modules/CastBarLatency/CastBarLatency.lua b/PitBull4/Modules/CastBarLatency/CastBarLatency.lua
---- a/PitBull4/Modules/CastBarLatency/CastBarLatency.lua	2026-11-20 01:10:13.823643263 +0000
-+++ b/PitBull4/Modules/CastBarLatency/CastBarLatency.lua	2026-11-20 01:10:13.832945146 +0000
+diff -u a/PitBull4/Modules/CastBarLatency/CastBarLatency.lua b/PitBull4/Modules/CastBarLatency/CastBarLatency.lua
+--- a/PitBull4/Modules/CastBarLatency/CastBarLatency.lua
++++ b/PitBull4/Modules/CastBarLatency/CastBarLatency.lua
 @@ -1,5 +1,6 @@
  
  local PitBull4 = _G.PitBull4
@@ -3968,9 +3969,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/CastBarLatency/CastBarLatency.lua b/PitB
  		-- this frame does not represent the player so we remove ourselves
  		return self:ClearFrame(frame)
  	end
-diff -ruN -x LICENSE a/PitBull4/Modules/CombatFader/CombatFader.lua b/PitBull4/Modules/CombatFader/CombatFader.lua
---- a/PitBull4/Modules/CombatFader/CombatFader.lua	2026-11-20 01:10:13.826290765 +0000
-+++ b/PitBull4/Modules/CombatFader/CombatFader.lua	2026-11-20 01:10:13.834872898 +0000
+diff -u a/PitBull4/Modules/CombatFader/CombatFader.lua b/PitBull4/Modules/CombatFader/CombatFader.lua
+--- a/PitBull4/Modules/CombatFader/CombatFader.lua
++++ b/PitBull4/Modules/CombatFader/CombatFader.lua
 @@ -1,6 +1,12 @@
  
  local PitBull4 = _G.PitBull4
@@ -4107,9 +4108,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/CombatFader/CombatFader.lua b/PitBull4/M
  			state = "hurt"
  		else
  			state = "out_of_combat"
-diff -ruN -x LICENSE a/PitBull4/Modules/CombatText/CombatText.lua b/PitBull4/Modules/CombatText/CombatText.lua
---- a/PitBull4/Modules/CombatText/CombatText.lua	2026-11-20 01:10:13.822965410 +0000
-+++ b/PitBull4/Modules/CombatText/CombatText.lua	2026-11-20 01:10:13.833386401 +0000
+diff -u a/PitBull4/Modules/CombatText/CombatText.lua b/PitBull4/Modules/CombatText/CombatText.lua
+--- a/PitBull4/Modules/CombatText/CombatText.lua
++++ b/PitBull4/Modules/CombatText/CombatText.lua
 @@ -77,8 +77,10 @@
  
  	if frame.force_show and not frame.guid then
@@ -4160,9 +4161,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/CombatText/CombatText.lua b/PitBull4/Mod
  			font_string.size_modifier = size_modifier
  			local font, size = self:GetFont(frame)
  			font_string:SetFont(font, size * size_modifier, "OUTLINE")
-diff -ruN -x LICENSE a/PitBull4/Modules/ComboPoints/ComboPoints.lua b/PitBull4/Modules/ComboPoints/ComboPoints.lua
---- a/PitBull4/Modules/ComboPoints/ComboPoints.lua	2026-11-20 01:10:13.823319743 +0000
-+++ b/PitBull4/Modules/ComboPoints/ComboPoints.lua	2026-11-20 01:10:13.832677667 +0000
+diff -u a/PitBull4/Modules/ComboPoints/ComboPoints.lua b/PitBull4/Modules/ComboPoints/ComboPoints.lua
+--- a/PitBull4/Modules/ComboPoints/ComboPoints.lua
++++ b/PitBull4/Modules/ComboPoints/ComboPoints.lua
 @@ -1,7 +1,19 @@
 -
  local PitBull4 = _G.PitBull4
@@ -4521,9 +4522,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/ComboPoints/ComboPoints.lua b/PitBull4/M
 +		end,
  	}
  end)
-diff -ruN -x LICENSE a/PitBull4/Modules/ExperienceBar/ExperienceBar.lua b/PitBull4/Modules/ExperienceBar/ExperienceBar.lua
---- a/PitBull4/Modules/ExperienceBar/ExperienceBar.lua	2026-11-20 01:10:13.825567711 +0000
-+++ b/PitBull4/Modules/ExperienceBar/ExperienceBar.lua	2026-11-20 01:10:13.833444158 +0000
+diff -u a/PitBull4/Modules/ExperienceBar/ExperienceBar.lua b/PitBull4/Modules/ExperienceBar/ExperienceBar.lua
+--- a/PitBull4/Modules/ExperienceBar/ExperienceBar.lua
++++ b/PitBull4/Modules/ExperienceBar/ExperienceBar.lua
 @@ -20,7 +20,7 @@
  	self:RegisterEvent("PLAYER_XP_UPDATE")
  	self:RegisterEvent("UPDATE_EXHAUSTION", "PLAYER_XP_UPDATE")
@@ -4533,9 +4534,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/ExperienceBar/ExperienceBar.lua b/PitBul
  end
  
  function PitBull4_ExperienceBar:PLAYER_XP_UPDATE()
-diff -ruN -x LICENSE a/PitBull4/Modules/HappinessIcon_Classic/HappinessIcon.lua b/PitBull4/Modules/HappinessIcon_Classic/HappinessIcon.lua
---- a/PitBull4/Modules/HappinessIcon_Classic/HappinessIcon.lua	2026-11-20 01:10:13.822916954 +0000
-+++ b/PitBull4/Modules/HappinessIcon_Classic/HappinessIcon.lua	2026-11-20 01:10:13.833466014 +0000
+diff -u a/PitBull4/Modules/HappinessIcon_Classic/HappinessIcon.lua b/PitBull4/Modules/HappinessIcon_Classic/HappinessIcon.lua
+--- a/PitBull4/Modules/HappinessIcon_Classic/HappinessIcon.lua
++++ b/PitBull4/Modules/HappinessIcon_Classic/HappinessIcon.lua
 @@ -4,6 +4,19 @@
  
  local PitBull4 = _G.PitBull4
@@ -4632,9 +4633,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/HappinessIcon_Classic/HappinessIcon.lua 
  		end
  		GameTooltip:Show()
  	end
-diff -ruN -x LICENSE a/PitBull4/Modules/HealthBar/HealthBar.lua b/PitBull4/Modules/HealthBar/HealthBar.lua
---- a/PitBull4/Modules/HealthBar/HealthBar.lua	2026-11-20 01:10:13.824397728 +0000
-+++ b/PitBull4/Modules/HealthBar/HealthBar.lua	2026-11-20 01:10:13.835357196 +0000
+diff -u a/PitBull4/Modules/HealthBar/HealthBar.lua b/PitBull4/Modules/HealthBar/HealthBar.lua
+--- a/PitBull4/Modules/HealthBar/HealthBar.lua
++++ b/PitBull4/Modules/HealthBar/HealthBar.lua
 @@ -1,9 +1,27 @@
  local PitBull4 = _G.PitBull4
  local L = PitBull4.L
@@ -5240,9 +5241,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/HealthBar/HealthBar.lua b/PitBull4/Modul
 +        color[1], color[2], color[3] = 1, 0, 0
 +    end
  end)
-diff -ruN -x LICENSE a/PitBull4/Modules/HideBlizzard/HideBlizzard.lua b/PitBull4/Modules/HideBlizzard/HideBlizzard.lua
---- a/PitBull4/Modules/HideBlizzard/HideBlizzard.lua	2026-11-20 01:10:13.825415144 +0000
-+++ b/PitBull4/Modules/HideBlizzard/HideBlizzard.lua	2026-11-20 01:10:13.832800540 +0000
+diff -u a/PitBull4/Modules/HideBlizzard/HideBlizzard.lua b/PitBull4/Modules/HideBlizzard/HideBlizzard.lua
+--- a/PitBull4/Modules/HideBlizzard/HideBlizzard.lua
++++ b/PitBull4/Modules/HideBlizzard/HideBlizzard.lua
 @@ -6,6 +6,7 @@
  -- luacheck: no global
  
@@ -5716,9 +5717,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/HideBlizzard/HideBlizzard.lua b/PitBull4
 -		hidden = function() return not reload_needed end,
  	}
  end)
-diff -ruN -x LICENSE a/PitBull4/Modules/Highlight/Highlight.lua b/PitBull4/Modules/Highlight/Highlight.lua
---- a/PitBull4/Modules/Highlight/Highlight.lua	2026-11-20 01:10:13.823697648 +0000
-+++ b/PitBull4/Modules/Highlight/Highlight.lua	2026-11-20 01:10:13.833124263 +0000
+diff -u a/PitBull4/Modules/Highlight/Highlight.lua b/PitBull4/Modules/Highlight/Highlight.lua
+--- a/PitBull4/Modules/Highlight/Highlight.lua
++++ b/PitBull4/Modules/Highlight/Highlight.lua
 @@ -2,13 +2,13 @@
  local PitBull4 = _G.PitBull4
  local L = PitBull4.L
@@ -5773,9 +5774,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/Highlight/Highlight.lua b/PitBull4/Modul
  
  	self:UpdateAll()
  end
-diff -ruN -x LICENSE a/PitBull4/Modules/LeaderIcon/LeaderIcon.lua b/PitBull4/Modules/LeaderIcon/LeaderIcon.lua
---- a/PitBull4/Modules/LeaderIcon/LeaderIcon.lua	2026-11-20 01:10:13.823906075 +0000
-+++ b/PitBull4/Modules/LeaderIcon/LeaderIcon.lua	2026-11-20 01:10:13.835446139 +0000
+diff -u a/PitBull4/Modules/LeaderIcon/LeaderIcon.lua b/PitBull4/Modules/LeaderIcon/LeaderIcon.lua
+--- a/PitBull4/Modules/LeaderIcon/LeaderIcon.lua
++++ b/PitBull4/Modules/LeaderIcon/LeaderIcon.lua
 @@ -1,7 +1,17 @@
  
 +local _G = _G
@@ -5881,9 +5882,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/LeaderIcon/LeaderIcon.lua b/PitBull4/Mod
 +		PitBull4_LeaderIcon:UpdateAll()
 +	end, 0.1)
  end
-diff -ruN -x LICENSE a/PitBull4/Modules/LuaTexts/Forever.lua b/PitBull4/Modules/LuaTexts/Forever.lua
+diff -u a/PitBull4/Modules/LuaTexts/Forever.lua b/PitBull4/Modules/LuaTexts/Forever.lua
 --- a/PitBull4/Modules/LuaTexts/Forever.lua	1970-01-01 00:00:00.000000000 +0000
-+++ b/PitBull4/Modules/LuaTexts/Forever.lua	2026-11-20 01:10:13.833282540 +0000
++++ b/PitBull4/Modules/LuaTexts/Forever.lua
 @@ -0,0 +1,97 @@
 +local PitBull4 = _G.PitBull4
 +if not PitBull4.Compat.IsForever then return end
@@ -5982,9 +5983,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/LuaTexts/Forever.lua b/PitBull4/Modules/
 +    end
 +    return false
 +end
-diff -ruN -x LICENSE a/PitBull4/Modules/LuaTexts/LuaTexts.lua b/PitBull4/Modules/LuaTexts/LuaTexts.lua
---- a/PitBull4/Modules/LuaTexts/LuaTexts.lua	2026-11-20 01:10:13.823731680 +0000
-+++ b/PitBull4/Modules/LuaTexts/LuaTexts.lua	2026-11-20 01:10:13.833192605 +0000
+diff -u a/PitBull4/Modules/LuaTexts/LuaTexts.lua b/PitBull4/Modules/LuaTexts/LuaTexts.lua
+--- a/PitBull4/Modules/LuaTexts/LuaTexts.lua
++++ b/PitBull4/Modules/LuaTexts/LuaTexts.lua
 @@ -38,9 +38,76 @@
  local dead_times = {}
  PitBull4_LuaTexts.dead_times = dead_times
@@ -6427,9 +6428,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/LuaTexts/LuaTexts.lua b/PitBull4/Modules
  					to_update[font_string] = 0
  				end
  			end
-diff -ruN -x LICENSE a/PitBull4/Modules/LuaTexts/ScriptEnv.lua b/PitBull4/Modules/LuaTexts/ScriptEnv.lua
---- a/PitBull4/Modules/LuaTexts/ScriptEnv.lua	2026-11-20 01:10:13.823785816 +0000
-+++ b/PitBull4/Modules/LuaTexts/ScriptEnv.lua	2026-11-20 01:10:13.833225168 +0000
+diff -u a/PitBull4/Modules/LuaTexts/ScriptEnv.lua b/PitBull4/Modules/LuaTexts/ScriptEnv.lua
+--- a/PitBull4/Modules/LuaTexts/ScriptEnv.lua
++++ b/PitBull4/Modules/LuaTexts/ScriptEnv.lua
 @@ -1,6 +1,7 @@
  -- ScriptEnv.lua: Utility functions for use in Lua scripts for LuaTexts.
  
@@ -6673,9 +6674,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/LuaTexts/ScriptEnv.lua b/PitBull4/Module
  end
  ScriptEnv.CastData = CastData
  
-diff -ruN -x LICENSE a/PitBull4/Modules/LuaTexts/load.xml b/PitBull4/Modules/LuaTexts/load.xml
---- a/PitBull4/Modules/LuaTexts/load.xml	2026-11-20 01:10:13.823770620 +0000
-+++ b/PitBull4/Modules/LuaTexts/load.xml	2026-11-20 01:10:13.833179522 +0000
+diff -u a/PitBull4/Modules/LuaTexts/load.xml b/PitBull4/Modules/LuaTexts/load.xml
+--- a/PitBull4/Modules/LuaTexts/load.xml
++++ b/PitBull4/Modules/LuaTexts/load.xml
 @@ -3,5 +3,6 @@
  
  <Script file="LuaTexts.lua"/>
@@ -6683,9 +6684,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/LuaTexts/load.xml b/PitBull4/Modules/Lua
 +<Script file="Forever.lua"/>
  
  </Ui>
-diff -ruN -x LICENSE a/PitBull4/Modules/PhaseFader/PhaseFader.lua b/PitBull4/Modules/PhaseFader/PhaseFader.lua
---- a/PitBull4/Modules/PhaseFader/PhaseFader.lua	2026-11-20 01:10:13.825623330 +0000
-+++ b/PitBull4/Modules/PhaseFader/PhaseFader.lua	2026-11-20 01:10:13.833006665 +0000
+diff -u a/PitBull4/Modules/PhaseFader/PhaseFader.lua b/PitBull4/Modules/PhaseFader/PhaseFader.lua
+--- a/PitBull4/Modules/PhaseFader/PhaseFader.lua
++++ b/PitBull4/Modules/PhaseFader/PhaseFader.lua
 @@ -27,11 +27,11 @@
  		return nil
  	end
@@ -6701,9 +6702,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/PhaseFader/PhaseFader.lua b/PitBull4/Mod
  		return nil
  	end
  
-diff -ruN -x LICENSE a/PitBull4/Modules/PhaseIcon/PhaseIcon.lua b/PitBull4/Modules/PhaseIcon/PhaseIcon.lua
---- a/PitBull4/Modules/PhaseIcon/PhaseIcon.lua	2026-11-20 01:10:13.826451764 +0000
-+++ b/PitBull4/Modules/PhaseIcon/PhaseIcon.lua	2026-11-20 01:10:13.834919190 +0000
+diff -u a/PitBull4/Modules/PhaseIcon/PhaseIcon.lua b/PitBull4/Modules/PhaseIcon/PhaseIcon.lua
+--- a/PitBull4/Modules/PhaseIcon/PhaseIcon.lua
++++ b/PitBull4/Modules/PhaseIcon/PhaseIcon.lua
 @@ -17,8 +17,8 @@
  function PitBull4_PhaseIcon:OnEnable()
  	self:RegisterEvent("UNIT_PHASE")
@@ -6753,9 +6754,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/PhaseIcon/PhaseIcon.lua b/PitBull4/Modul
  end
  
  function PitBull4_PhaseIcon:PARTY_MEMBER_ENABLE(_, unit)
-diff -ruN -x LICENSE a/PitBull4/Modules/Portrait/Portrait.lua b/PitBull4/Modules/Portrait/Portrait.lua
---- a/PitBull4/Modules/Portrait/Portrait.lua	2026-11-20 01:10:13.826882893 +0000
-+++ b/PitBull4/Modules/Portrait/Portrait.lua	2026-11-20 01:10:13.834601675 +0000
+diff -u a/PitBull4/Modules/Portrait/Portrait.lua b/PitBull4/Modules/Portrait/Portrait.lua
+--- a/PitBull4/Modules/Portrait/Portrait.lua
++++ b/PitBull4/Modules/Portrait/Portrait.lua
 @@ -1,6 +1,7 @@
  
  local PitBull4 = _G.PitBull4
@@ -6817,9 +6818,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/Portrait/Portrait.lua b/PitBull4/Modules
  	if style == "three_dimensional" then
  		portrait.model:ClearModel()
  		if not falling_back then
-diff -ruN -x LICENSE a/PitBull4/Modules/PowerBar/PowerBar.lua b/PitBull4/Modules/PowerBar/PowerBar.lua
---- a/PitBull4/Modules/PowerBar/PowerBar.lua	2026-11-20 01:10:13.826198652 +0000
-+++ b/PitBull4/Modules/PowerBar/PowerBar.lua	2026-11-20 01:10:13.833888258 +0000
+diff -u a/PitBull4/Modules/PowerBar/PowerBar.lua b/PitBull4/Modules/PowerBar/PowerBar.lua
+--- a/PitBull4/Modules/PowerBar/PowerBar.lua
++++ b/PitBull4/Modules/PowerBar/PowerBar.lua
 @@ -1,9 +1,11 @@
  
  local PitBull4 = _G.PitBull4
@@ -7093,9 +7094,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/PowerBar/PowerBar.lua b/PitBull4/Modules
  end
  
  PitBull4_PowerBar:SetLayoutOptionsFunction(function(self)
-diff -ruN -x LICENSE a/PitBull4/Modules/PvPIcon/PvPIcon.lua b/PitBull4/Modules/PvPIcon/PvPIcon.lua
---- a/PitBull4/Modules/PvPIcon/PvPIcon.lua	2026-11-20 01:10:13.825671001 +0000
-+++ b/PitBull4/Modules/PvPIcon/PvPIcon.lua	2026-11-20 01:10:13.835075652 +0000
+diff -u a/PitBull4/Modules/PvPIcon/PvPIcon.lua b/PitBull4/Modules/PvPIcon/PvPIcon.lua
+--- a/PitBull4/Modules/PvPIcon/PvPIcon.lua
++++ b/PitBull4/Modules/PvPIcon/PvPIcon.lua
 @@ -1,6 +1,22 @@
  
 +local _G = _G
@@ -7236,9 +7237,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/PvPIcon/PvPIcon.lua b/PitBull4/Modules/P
  end
  
  function PitBull4_PvPIcon:UPDATE_FACTION(event, unit)
-diff -ruN -x LICENSE a/PitBull4/Modules/RaidTargetIcon/RaidTargetIcon.lua b/PitBull4/Modules/RaidTargetIcon/RaidTargetIcon.lua
---- a/PitBull4/Modules/RaidTargetIcon/RaidTargetIcon.lua	2026-11-20 01:10:13.824338766 +0000
-+++ b/PitBull4/Modules/RaidTargetIcon/RaidTargetIcon.lua	2026-11-20 01:10:13.833553687 +0000
+diff -u a/PitBull4/Modules/RaidTargetIcon/RaidTargetIcon.lua b/PitBull4/Modules/RaidTargetIcon/RaidTargetIcon.lua
+--- a/PitBull4/Modules/RaidTargetIcon/RaidTargetIcon.lua
++++ b/PitBull4/Modules/RaidTargetIcon/RaidTargetIcon.lua
 @@ -1,135 +1,208 @@
 +local _G = _G
  
@@ -7552,9 +7553,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/RaidTargetIcon/RaidTargetIcon.lua b/PitB
 +    }
 +end)
 \ No newline at end of file
-diff -ruN -x LICENSE a/PitBull4/Modules/RangeFader/RangeFader.lua b/PitBull4/Modules/RangeFader/RangeFader.lua
---- a/PitBull4/Modules/RangeFader/RangeFader.lua	2026-11-20 01:10:13.826569006 +0000
-+++ b/PitBull4/Modules/RangeFader/RangeFader.lua	2026-11-20 01:10:13.835032168 +0000
+diff -u a/PitBull4/Modules/RangeFader/RangeFader.lua b/PitBull4/Modules/RangeFader/RangeFader.lua
+--- a/PitBull4/Modules/RangeFader/RangeFader.lua
++++ b/PitBull4/Modules/RangeFader/RangeFader.lua
 @@ -1,5 +1,6 @@
  
  local PitBull4 = _G.PitBull4
@@ -7562,9 +7563,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/RangeFader/RangeFader.lua b/PitBull4/Mod
  local L = PitBull4.L
  
  local wow_retail = PitBull4.wow_retail
-diff -ruN -x LICENSE a/PitBull4/Modules/ReadyCheckIcon/ReadyCheckIcon.lua b/PitBull4/Modules/ReadyCheckIcon/ReadyCheckIcon.lua
---- a/PitBull4/Modules/ReadyCheckIcon/ReadyCheckIcon.lua	2026-11-20 01:10:13.823072748 +0000
-+++ b/PitBull4/Modules/ReadyCheckIcon/ReadyCheckIcon.lua	2026-11-20 01:10:13.833052031 +0000
+diff -u a/PitBull4/Modules/ReadyCheckIcon/ReadyCheckIcon.lua b/PitBull4/Modules/ReadyCheckIcon/ReadyCheckIcon.lua
+--- a/PitBull4/Modules/ReadyCheckIcon/ReadyCheckIcon.lua
++++ b/PitBull4/Modules/ReadyCheckIcon/ReadyCheckIcon.lua
 @@ -1,6 +1,9 @@
  
  local PitBull4 = _G.PitBull4
@@ -7671,9 +7672,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/ReadyCheckIcon/ReadyCheckIcon.lua b/PitB
  			end
  		end
  	end
-diff -ruN -x LICENSE a/PitBull4/Modules/ReputationBar/ReputationBar.lua b/PitBull4/Modules/ReputationBar/ReputationBar.lua
---- a/PitBull4/Modules/ReputationBar/ReputationBar.lua	2026-11-20 01:10:13.823856447 +0000
-+++ b/PitBull4/Modules/ReputationBar/ReputationBar.lua	2026-11-20 01:10:13.834799978 +0000
+diff -u a/PitBull4/Modules/ReputationBar/ReputationBar.lua b/PitBull4/Modules/ReputationBar/ReputationBar.lua
+--- a/PitBull4/Modules/ReputationBar/ReputationBar.lua
++++ b/PitBull4/Modules/ReputationBar/ReputationBar.lua
 @@ -11,6 +11,7 @@
  }
  
@@ -7739,9 +7740,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/ReputationBar/ReputationBar.lua b/PitBul
  			reaction =  watchedFactionData.reaction
  			faction_id = watchedFactionData.factionID
  		end
-diff -ruN -x LICENSE a/PitBull4/Modules/RoleIcon/RoleIcon.lua b/PitBull4/Modules/RoleIcon/RoleIcon.lua
---- a/PitBull4/Modules/RoleIcon/RoleIcon.lua	2026-11-20 01:10:13.826520203 +0000
-+++ b/PitBull4/Modules/RoleIcon/RoleIcon.lua	2026-11-20 01:10:13.833147026 +0000
+diff -u a/PitBull4/Modules/RoleIcon/RoleIcon.lua b/PitBull4/Modules/RoleIcon/RoleIcon.lua
+--- a/PitBull4/Modules/RoleIcon/RoleIcon.lua
++++ b/PitBull4/Modules/RoleIcon/RoleIcon.lua
 @@ -1,7 +1,16 @@
  
 +local _G = _G
@@ -7826,9 +7827,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/RoleIcon/RoleIcon.lua b/PitBull4/Modules
  	local tex_coord = tex_coords[role] or tex_coords[math.random(1, 3)]
  
  	return tex_coord[1], tex_coord[2], tex_coord[3], tex_coord[4]
-diff -ruN -x LICENSE a/PitBull4/Modules/ThreatBar/ThreatBar.lua b/PitBull4/Modules/ThreatBar/ThreatBar.lua
---- a/PitBull4/Modules/ThreatBar/ThreatBar.lua	2026-11-20 01:10:13.822730323 +0000
-+++ b/PitBull4/Modules/ThreatBar/ThreatBar.lua	2026-11-20 01:10:13.833499785 +0000
+diff -u a/PitBull4/Modules/ThreatBar/ThreatBar.lua b/PitBull4/Modules/ThreatBar/ThreatBar.lua
+--- a/PitBull4/Modules/ThreatBar/ThreatBar.lua
++++ b/PitBull4/Modules/ThreatBar/ThreatBar.lua
 @@ -59,11 +59,16 @@
  	end
  
@@ -7856,9 +7857,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/ThreatBar/ThreatBar.lua b/PitBull4/Modul
  			return GetThreatStatusColor(status)
  		end
  	end
-diff -ruN -x LICENSE a/PitBull4/Modules/Totems/Totems.lua b/PitBull4/Modules/Totems/Totems.lua
---- a/PitBull4/Modules/Totems/Totems.lua	2026-11-20 01:10:13.822780762 +0000
-+++ b/PitBull4/Modules/Totems/Totems.lua	2026-11-20 01:10:13.835488040 +0000
+diff -u a/PitBull4/Modules/Totems/Totems.lua b/PitBull4/Modules/Totems/Totems.lua
+--- a/PitBull4/Modules/Totems/Totems.lua
++++ b/PitBull4/Modules/Totems/Totems.lua
 @@ -57,17 +57,170 @@
  
  local GetTotemTimeLeft = _G.GetTotemTimeLeft
@@ -8175,9 +8176,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/Totems/Totems.lua b/PitBull4/Modules/Tot
  			}
  		end
  	else
-diff -ruN -x LICENSE a/PitBull4/Modules/VisualHeal/VisualHeal.lua b/PitBull4/Modules/VisualHeal/VisualHeal.lua
---- a/PitBull4/Modules/VisualHeal/VisualHeal.lua	2026-11-20 01:10:13.826952413 +0000
-+++ b/PitBull4/Modules/VisualHeal/VisualHeal.lua	2026-11-20 01:10:13.834827018 +0000
+diff -u a/PitBull4/Modules/VisualHeal/VisualHeal.lua b/PitBull4/Modules/VisualHeal/VisualHeal.lua
+--- a/PitBull4/Modules/VisualHeal/VisualHeal.lua
++++ b/PitBull4/Modules/VisualHeal/VisualHeal.lua
 @@ -4,6 +4,11 @@
  
  local UnitGetTotalAbsorbs = _G.UnitGetTotalAbsorbs or nil  -- XXX UnitGetTotalAbsorbs was added in MoP but classic doesn't have the API?
@@ -8368,9 +8369,9 @@ diff -ruN -x LICENSE a/PitBull4/Modules/VisualHeal/VisualHeal.lua b/PitBull4/Mod
  	local show_overheal = self:GetLayoutDB(frame).show_overheal
  	local show_overabsorb = self:GetLayoutDB(frame).show_overabsorb
  
-diff -ruN -x LICENSE a/PitBull4/Options/General.lua b/PitBull4/Options/General.lua
---- a/PitBull4/Options/General.lua	2026-11-20 01:10:13.827761764 +0000
-+++ b/PitBull4/Options/General.lua	2026-11-20 01:10:13.835800526 +0000
+diff -u a/PitBull4/Options/General.lua b/PitBull4/Options/General.lua
+--- a/PitBull4/Options/General.lua
++++ b/PitBull4/Options/General.lua
 @@ -1,5 +1,6 @@
  local _G = _G
  local PitBull4 = _G.PitBull4
@@ -8378,9 +8379,9 @@ diff -ruN -x LICENSE a/PitBull4/Options/General.lua b/PitBull4/Options/General.l
  local L = PitBull4.L
  
  function PitBull4.Options.get_general_options()
-diff -ruN -x LICENSE a/PitBull4/Options/LayoutEditor/Bars.lua b/PitBull4/Options/LayoutEditor/Bars.lua
---- a/PitBull4/Options/LayoutEditor/Bars.lua	2026-11-20 01:10:13.827646159 +0000
-+++ b/PitBull4/Options/LayoutEditor/Bars.lua	2026-11-20 01:10:13.835908562 +0000
+diff -u a/PitBull4/Options/LayoutEditor/Bars.lua b/PitBull4/Options/LayoutEditor/Bars.lua
+--- a/PitBull4/Options/LayoutEditor/Bars.lua
++++ b/PitBull4/Options/LayoutEditor/Bars.lua
 @@ -491,7 +491,7 @@
  	bar_args.animated = {
  		type = 'toggle',
@@ -8408,9 +8409,9 @@ diff -ruN -x LICENSE a/PitBull4/Options/LayoutEditor/Bars.lua b/PitBull4/Options
  		order = 12,
  		get = function(info)
  			local db = get_current_layout_db(info)
-diff -ruN -x LICENSE a/PitBull4/Options/Modules.lua b/PitBull4/Options/Modules.lua
---- a/PitBull4/Options/Modules.lua	2026-11-20 01:10:13.827492591 +0000
-+++ b/PitBull4/Options/Modules.lua	2026-11-20 01:10:13.835718544 +0000
+diff -u a/PitBull4/Options/Modules.lua b/PitBull4/Options/Modules.lua
+--- a/PitBull4/Options/Modules.lua
++++ b/PitBull4/Options/Modules.lua
 @@ -1,5 +1,6 @@
  local _G = _G
  local PitBull4 = _G.PitBull4
@@ -8418,9 +8419,9 @@ diff -ruN -x LICENSE a/PitBull4/Options/Modules.lua b/PitBull4/Options/Modules.l
  local L = PitBull4.L
  
  local DEBUG = PitBull4.DEBUG
-diff -ruN -x LICENSE a/PitBull4/Options/NativeControls.lua b/PitBull4/Options/NativeControls.lua
+diff -u a/PitBull4/Options/NativeControls.lua b/PitBull4/Options/NativeControls.lua
 --- a/PitBull4/Options/NativeControls.lua	1970-01-01 00:00:00.000000000 +0000
-+++ b/PitBull4/Options/NativeControls.lua	2026-11-20 01:10:13.835950955 +0000
++++ b/PitBull4/Options/NativeControls.lua
 @@ -0,0 +1,306 @@
 +local _, namespace = ...
 +local Controls = {}
@@ -8728,9 +8729,9 @@ diff -ruN -x LICENSE a/PitBull4/Options/NativeControls.lua b/PitBull4/Options/Na
 +	visit(options)
 +	return options
 +end
-diff -ruN -x LICENSE a/PitBull4/Options/Options.lua b/PitBull4/Options/Options.lua
---- a/PitBull4/Options/Options.lua	2026-11-20 01:10:13.827574552 +0000
-+++ b/PitBull4/Options/Options.lua	2026-11-20 01:10:13.835810338 +0000
+diff -u a/PitBull4/Options/Options.lua b/PitBull4/Options/Options.lua
+--- a/PitBull4/Options/Options.lua
++++ b/PitBull4/Options/Options.lua
 @@ -1,4 +1,5 @@
  local _G = _G
 +local _, namespace = ...
@@ -8758,9 +8759,9 @@ diff -ruN -x LICENSE a/PitBull4/Options/Options.lua b/PitBull4/Options/Options.l
  	AceConfigDialog:SetDefaultSize("PitBull4", 835, 560)
  
  	LibStub("AceEvent-3.0").RegisterEvent("PitBull4.Options", "PLAYER_REGEN_ENABLED", function()
-diff -ruN -x LICENSE a/PitBull4/Options/load.xml b/PitBull4/Options/load.xml
---- a/PitBull4/Options/load.xml	2026-11-20 01:10:13.827474410 +0000
-+++ b/PitBull4/Options/load.xml	2026-11-20 01:10:13.835746314 +0000
+diff -u a/PitBull4/Options/load.xml b/PitBull4/Options/load.xml
+--- a/PitBull4/Options/load.xml
++++ b/PitBull4/Options/load.xml
 @@ -1,6 +1,7 @@
  <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
  ..\FrameXML\UI.xsd">
@@ -8769,9 +8770,9 @@ diff -ruN -x LICENSE a/PitBull4/Options/load.xml b/PitBull4/Options/load.xml
  <Script file="Options.lua"/>
  <Script file="General.lua"/>
  <Script file="ConfigMode.lua"/>
-diff -ruN -x LICENSE a/PitBull4/PitBull4.toc b/PitBull4/PitBull4.toc
+diff -u a/PitBull4/PitBull4.toc b/PitBull4/PitBull4.toc
 --- a/PitBull4/PitBull4.toc	1970-01-01 00:00:00.000000000 +0000
-+++ b/PitBull4/PitBull4.toc	2026-11-20 01:10:13.838217950 +0000
++++ b/PitBull4/PitBull4.toc
 @@ -0,0 +1,28 @@
 +## Interface: 16001
 +## Title: PitBull Unit Frames 4.0
@@ -8801,9 +8802,9 @@ diff -ruN -x LICENSE a/PitBull4/PitBull4.toc b/PitBull4/PitBull4.toc
 +libs.xml
 +load.xml
 +modules_Camelot.xml
-diff -ruN -x LICENSE a/PitBull4/PitBull4_Camelot.toc b/PitBull4/PitBull4_Camelot.toc
+diff -u a/PitBull4/PitBull4_Camelot.toc b/PitBull4/PitBull4_Camelot.toc
 --- a/PitBull4/PitBull4_Camelot.toc	1970-01-01 00:00:00.000000000 +0000
-+++ b/PitBull4/PitBull4_Camelot.toc	2026-11-20 01:10:13.838208170 +0000
++++ b/PitBull4/PitBull4_Camelot.toc
 @@ -0,0 +1,28 @@
 +## Interface: 16001
 +## Title: PitBull Unit Frames 4.0
@@ -8833,9 +8834,9 @@ diff -ruN -x LICENSE a/PitBull4/PitBull4_Camelot.toc b/PitBull4/PitBull4_Camelot
 +libs.xml
 +load.xml
 +modules_Camelot.xml
-diff -ruN -x LICENSE a/PitBull4/SpecProfiles.lua b/PitBull4/SpecProfiles.lua
+diff -u a/PitBull4/SpecProfiles.lua b/PitBull4/SpecProfiles.lua
 --- a/PitBull4/SpecProfiles.lua	1970-01-01 00:00:00.000000000 +0000
-+++ b/PitBull4/SpecProfiles.lua	2026-11-20 01:10:13.838185573 +0000
++++ b/PitBull4/SpecProfiles.lua
 @@ -0,0 +1,242 @@
 +local _, namespace = ...
 +local Compat = namespace.Compat
@@ -9079,9 +9080,9 @@ diff -ruN -x LICENSE a/PitBull4/SpecProfiles.lua b/PitBull4/SpecProfiles.lua
 +	self:Refresh()
 +	return self
 +end
-diff -ruN -x LICENSE a/PitBull4/UnitFrame.lua b/PitBull4/UnitFrame.lua
---- a/PitBull4/UnitFrame.lua	2026-11-20 01:10:13.822460919 +0000
-+++ b/PitBull4/UnitFrame.lua	2026-11-20 01:10:13.838035896 +0000
+diff -u a/PitBull4/UnitFrame.lua b/PitBull4/UnitFrame.lua
+--- a/PitBull4/UnitFrame.lua
++++ b/PitBull4/UnitFrame.lua
 @@ -2,12 +2,23 @@
  local PitBull4 = _G.PitBull4
  local L = PitBull4.L
@@ -9234,9 +9235,9 @@ diff -ruN -x LICENSE a/PitBull4/UnitFrame.lua b/PitBull4/UnitFrame.lua
  	end
  end
  
-diff -ruN -x LICENSE a/PitBull4/Utils.lua b/PitBull4/Utils.lua
---- a/PitBull4/Utils.lua	2026-11-20 01:10:13.827106086 +0000
-+++ b/PitBull4/Utils.lua	2026-11-20 01:10:13.837928179 +0000
+diff -u a/PitBull4/Utils.lua b/PitBull4/Utils.lua
+--- a/PitBull4/Utils.lua
++++ b/PitBull4/Utils.lua
 @@ -1,6 +1,10 @@
  local _G = _G
  local PitBull4 = _G.PitBull4
@@ -9411,9 +9412,9 @@ diff -ruN -x LICENSE a/PitBull4/Utils.lua b/PitBull4/Utils.lua
  		pet = L["Player's pet"],
  		party = L["Party"],
  		party_sing = L["Party"],
-diff -ruN -x LICENSE a/PitBull4/libs.xml b/PitBull4/libs.xml
---- a/PitBull4/libs.xml	2026-11-20 01:10:13.830000734 +0000
-+++ b/PitBull4/libs.xml	2026-11-20 01:10:13.837948315 +0000
+diff -u a/PitBull4/libs.xml b/PitBull4/libs.xml
+--- a/PitBull4/libs.xml
++++ b/PitBull4/libs.xml
 @@ -1,6 +1,7 @@
  <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
  ..\FrameXML\UI.xsd">
@@ -9432,9 +9433,9 @@ diff -ruN -x LICENSE a/PitBull4/libs.xml b/PitBull4/libs.xml
 +<Script file="SpecProfiles.lua"/>
  
  </Ui>
-diff -ruN -x LICENSE a/PitBull4/modules.xml b/PitBull4/modules.xml
---- a/PitBull4/modules.xml	2026-11-20 01:10:13.822444588 +0000
-+++ b/PitBull4/modules.xml	2026-11-20 01:10:13.835965870 +0000
+diff -u a/PitBull4/modules.xml b/PitBull4/modules.xml
+--- a/PitBull4/modules.xml
++++ b/PitBull4/modules.xml
 @@ -18,6 +18,7 @@
  <Include file="Modules\CombatIcon\load.xml"/>
  <Include file="Modules\CombatText\load.xml"/>
@@ -9443,9 +9444,9 @@ diff -ruN -x LICENSE a/PitBull4/modules.xml b/PitBull4/modules.xml
  <Include file="Modules\Essence\load.xml"/>
  <Include file="Modules\ExperienceBar\load.xml"/>
  <Include file="Modules\HealthBar\load.xml"/>
-diff -ruN -x LICENSE a/PitBull4/modules_Camelot.xml b/PitBull4/modules_Camelot.xml
+diff -u a/PitBull4/modules_Camelot.xml b/PitBull4/modules_Camelot.xml
 --- a/PitBull4/modules_Camelot.xml	1970-01-01 00:00:00.000000000 +0000
-+++ b/PitBull4/modules_Camelot.xml	2026-11-20 01:10:13.838198435 +0000
++++ b/PitBull4/modules_Camelot.xml
 @@ -0,0 +1,57 @@
 +<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
 +..\FrameXML\UI.xsd">
@@ -9504,9 +9505,9 @@ diff -ruN -x LICENSE a/PitBull4/modules_Camelot.xml b/PitBull4/modules_Camelot.x
 +<Include file="Modules\VoiceIcon\load.xml"/>
 +
 +</Ui>
-diff -ruN -x LICENSE a/PitBull4/modules_Cata.xml b/PitBull4/modules_Cata.xml
---- a/PitBull4/modules_Cata.xml	2026-11-20 01:10:13.822547754 +0000
-+++ b/PitBull4/modules_Cata.xml	2026-11-20 01:10:13.838153846 +0000
+diff -u a/PitBull4/modules_Cata.xml b/PitBull4/modules_Cata.xml
+--- a/PitBull4/modules_Cata.xml
++++ b/PitBull4/modules_Cata.xml
 @@ -18,6 +18,7 @@
  <Include file="Modules\CombatIcon\load.xml"/>
  <Include file="Modules\CombatText\load.xml"/>
@@ -9515,9 +9516,9 @@ diff -ruN -x LICENSE a/PitBull4/modules_Cata.xml b/PitBull4/modules_Cata.xml
  <!-- <Include file="Modules\Essence\load.xml"/> -->
  <Include file="Modules\ExperienceBar\load.xml"/>
  <Include file="Modules\HealthBar\load.xml"/>
-diff -ruN -x LICENSE a/PitBull4/modules_Mists.xml b/PitBull4/modules_Mists.xml
---- a/PitBull4/modules_Mists.xml	2026-11-20 01:10:13.822408996 +0000
-+++ b/PitBull4/modules_Mists.xml	2026-11-20 01:10:13.835976280 +0000
+diff -u a/PitBull4/modules_Mists.xml b/PitBull4/modules_Mists.xml
+--- a/PitBull4/modules_Mists.xml
++++ b/PitBull4/modules_Mists.xml
 @@ -18,6 +18,7 @@
  <Include file="Modules\CombatIcon\load.xml"/>
  <Include file="Modules\CombatText\load.xml"/>
@@ -9526,9 +9527,9 @@ diff -ruN -x LICENSE a/PitBull4/modules_Mists.xml b/PitBull4/modules_Mists.xml
  <!-- <Include file="Modules\Essence\load.xml"/> -->
  <Include file="Modules\ExperienceBar\load.xml"/>
  <Include file="Modules\HealthBar\load.xml"/>
-diff -ruN -x LICENSE a/PitBull4/modules_TBC.xml b/PitBull4/modules_TBC.xml
---- a/PitBull4/modules_TBC.xml	2026-11-20 01:10:13.822489880 +0000
-+++ b/PitBull4/modules_TBC.xml	2026-11-20 01:10:13.838143812 +0000
+diff -u a/PitBull4/modules_TBC.xml b/PitBull4/modules_TBC.xml
+--- a/PitBull4/modules_TBC.xml
++++ b/PitBull4/modules_TBC.xml
 @@ -19,6 +19,7 @@
  <Include file="Modules\CombatIcon\load.xml"/>
  <Include file="Modules\CombatText\load.xml"/>

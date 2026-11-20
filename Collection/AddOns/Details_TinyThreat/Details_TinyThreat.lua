@@ -88,10 +88,12 @@ local function CreatePluginFrames (data)
 			ThreatMeter:RefreshRows()
 
 		elseif (event == "HIDE") then --> plugin hidded, disabled
+			ThreatMeter.isShown = false
 			ThreatMeter.Actived = false
 			ThreatMeter:Cancel()
 
 		elseif (event == "SHOW") then
+			ThreatMeter.isShown = true
 
 			instance = ThreatMeter:GetInstance (ThreatMeter.instance_id)
 
@@ -115,7 +117,8 @@ local function CreatePluginFrames (data)
 			end
 
 		elseif (event == "COMBAT_PLAYER_ENTER") then
-			if (not ThreatMeter.Actived) then
+			--> no threat timer while the plugin frame is hidden; SHOW starts it in combat
+			if (ThreatMeter.isShown and not ThreatMeter.Actived) then
 				ThreatMeter.Actived = true
 				ThreatMeter:Start()
 			end
@@ -911,8 +914,10 @@ function ThreatMeter:OnEvent (_, event, ...)
 		ThreatMeter:TargetChanged()
 
 	elseif (event == "PLAYER_REGEN_DISABLED") then
-		ThreatMeter.Actived = true
-		ThreatMeter:Start()
+		if (ThreatMeter.isShown) then
+			ThreatMeter.Actived = true
+			ThreatMeter:Start()
+		end
 		--print ("tiny theat: regen disabled")
 
 	elseif (event == "PLAYER_REGEN_ENABLED") then

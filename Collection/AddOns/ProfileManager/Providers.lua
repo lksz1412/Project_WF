@@ -3128,9 +3128,19 @@ addon._providerEventFrame = ef
 ef:UnregisterAllEvents()
 ef:RegisterEvent("PLAYER_LOGIN")
 ef:RegisterEvent("ADDON_LOADED")
-ef:SetScript("OnEvent", function(_, event)
+-- ADDON_LOADED arrives once per addon at login: the rescan runs once after the
+-- events of one frame (next frame). Opening the UI and the commands rescan
+-- themselves, so they always see the current providers.
+local function RunProviderRescan()
+    addon._providerRescanPending = false
     addon:TryRegisterAllProviders()
     if addon.MainUI and addon.MainUI:IsShown() and addon.RefreshMainUI then
         addon:RefreshMainUI()
     end
+end
+
+ef:SetScript("OnEvent", function(_, event)
+    if addon._providerRescanPending then return end
+    addon._providerRescanPending = true
+    C_Timer.After(0, RunProviderRescan)
 end)

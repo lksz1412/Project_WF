@@ -240,10 +240,16 @@ kind: new = written for the collection; fork = a start addon's original with our
 
 | Folder | Feature Phases | Variant | Bundle | Kind | Base | TOC | Interface | Version | Deps (required) | OptionalDeps | SavedVariables | SV per character | License files |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| !DevilForever_Core | 2, 20, 22 | — | required | new | — | !DevilForever_Core.toc | 16001 | 0.1.2 | — | — | DevilForever_CoreDB, DevilForever_ProfilesDB | — | — |
+| !DevilForever_Core | 2, 20, 22 | — | required | new | — | !DevilForever_Core.toc | 16001 | 0.1.5 | — | — | DevilForever_CoreDB, DevilForever_ProfilesDB | — | — |
+| DevilForever_Appearance | 2, 22 | — | required | new | — | DevilForever_Appearance.toc | 16001 | 0.1.0 | !DevilForever_Core | — | — | — | — |
 | DevilForever_Castbars | 7 | — | individual | new | — | DevilForever_Castbars.toc | 16001 | 0.1.0 | Quartz, ForeverUnitFrames | !DevilForever_Core | — | — | — |
-| DevilForever_ChatSetup | 4 | — | individual | new | — | DevilForever_ChatSetup.toc | 16001 | 0.1.0 | !DevilForever_Core | — | — | DevilForever_ChatSetupDB | — |
+| DevilForever_ChatSetup | 4 | — | individual | new | — | DevilForever_ChatSetup.toc | 16001 | 0.1.0 | !DevilForever_Core | DevilForever_Appearance | — | DevilForever_ChatSetupDB | — |
+| DevilForever_DetailsLayout | 10 | — | individual | new | — | DevilForever_DetailsLayout.toc | 16001 | 0.1.0 | !DevilForever_Core, Details, DevilForever_Appearance | — | — | — | — |
 | DevilForever_FUFDefaults | 6 | — | individual | new | — | DevilForever_FUFDefaults.toc | 16001 | 0.1.0 | !DevilForever_Core, ForeverUnitFrames | — | DevilForever_FUFDefaultsDB | — | — |
+| DevilForever_Skin_Dominos | 3 | — | individual | new | — | DevilForever_Skin_Dominos.toc | 16001 | 0.1.0 | !DevilForever_Core, Dominos, DevilForever_Appearance | Masque | — | — | — |
+| DevilForever_Skin_Nameplates | 14 | — | individual | new | — | DevilForever_Skin_Nameplates.toc | 16001 | 0.1.0 | !DevilForever_Core, DevilForever_Appearance | — | — | — | — |
+| DevilForever_Skin_NativeChat | 4 | — | individual | new | — | DevilForever_Skin_NativeChat.toc | 16001 | 0.1.0 | !DevilForever_Core, DevilForever_ChatSetup, DevilForever_Appearance | — | — | — | — |
+| DevilForever_Skin_StatusStrip | 16 | — | individual | new | — | DevilForever_Skin_StatusStrip.toc | 16001 | 0.1.0 | !DevilForever_Core, DevilForever_StatusStrip, DevilForever_Appearance | — | — | — | — |
 | DevilForever_StatusStrip | 16 | — | individual | new | — | DevilForever_StatusStrip.toc | 16001 | 0.1.0 | — | — | DevilForever_StatusStripDB | — | — |
 | PitBull4 | 6 | 6-rev | individual | fork | PitBull4 v4.2.50 + Collection/patches/PitBull4.patch | PitBull4.toc | 16001 | v4.2.50-forever.1 | — | Ace3, LibSharedMedia-3.0, AceGUI-3.0-SharedMediaWidgets, LibDBIcon-1.0, LibBossIDs-1.0, Clique, Masque | PitBull4DB | — | Libs/LibDeflate/LICENSE.txt, Modules/Aura/Libs/LibPlayerSpells-1.0/LICENSE |
 |  |  |  |  |  |  | PitBull4_Camelot.toc | 16001 | v4.2.50-forever.1 | — | Ace3, LibSharedMedia-3.0, AceGUI-3.0-SharedMediaWidgets, LibDBIcon-1.0, LibBossIDs-1.0, Clique, Masque | PitBull4DB | — |  |
@@ -251,3 +257,36 @@ kind: new = written for the collection; fork = a start addon's original with our
 |  |  |  |  |  |  | PitBull4_Mainline.toc | 110207 | v4.2.50 | — | Ace3, LibSharedMedia-3.0, AceGUI-3.0-SharedMediaWidgets, LibDBIcon-1.0, LibBossIDs-1.0, LibDualSpec-1.0, LibPlayerSpells-1.0, Clique, Masque | PitBull4DB | — |  |
 |  |  |  |  |  |  | PitBull4_Mists.toc | 50504 | v4.2.50 | — | Ace3, LibSharedMedia-3.0, AceGUI-3.0-SharedMediaWidgets, LibDBIcon-1.0, LibBossIDs-1.0, LibDualSpec-1.0, Clique, Masque | PitBull4DB | — |  |
 |  |  |  |  |  |  | PitBull4_TBC.toc | 20505 | v4.2.50 | — | Ace3, LibSharedMedia-3.0, AceGUI-3.0-SharedMediaWidgets, LibDBIcon-1.0, LibBossIDs-1.0, LibDualSpec-1.0, Clique, Masque | PitBull4DB | — |  |
+
+## Third-party folders shipped from `Collection/AddOns/`
+
+state: unmodified = bytes equal the upstream folder; patched = upstream folder + the package patch (diff upstream -> shipped, `Collection/tools/patches.py`).
+
+| Folder | Package | Version | State | Patch | Upstream path |
+|---|---|---|---|---|---|
+| Details | Details | Details.20261109.15410.172 | unmodified | — | Collection/upstream/Details-Details.20261109.15410.172/Details |
+| Details_TinyThreat | Details | Details.20261109.15410.172 | patched | Collection/patches/Details.patch | Collection/upstream/Details-Details.20261109.15410.172/Details_TinyThreat |
+| Dominos | Dominos | 12.0.4 | unmodified | — | Collection/upstream/Dominos-12.0.4/Dominos |
+| Dominos_Config | Dominos | 12.0.4 | unmodified | — | Collection/upstream/Dominos-12.0.4/Dominos_Config |
+| ExperienceForever | Experience Forever | ExperienceForever2.0.4 | patched | Collection/patches/Experience_Forever.patch | Collection/upstream/experience-forever-ExperienceForever2.0.4/ExperienceForever |
+| ForeverUnitFrames | Forever Unit Frames | 0.65.2 | unmodified | — | Collection/upstream/Forever_Unit_Frames-0.65.2/ForeverUnitFrames |
+| Grid2 | Grid2 | 4.1.13-forever | unmodified | — | Collection/upstream/Grid2-4.1.13-forever/Grid2 |
+| Grid2LDB | Grid2 | 4.1.13-forever | unmodified | — | Collection/upstream/Grid2-4.1.13-forever/Grid2LDB |
+| Grid2Options | Grid2 | 4.1.13-forever | unmodified | — | Collection/upstream/Grid2-4.1.13-forever/Grid2Options |
+| Hekili | Hekili | v0.8.6 | unmodified | — | Collection/upstream/Hekili-v0.8.6/Hekili |
+| Hekili_Druid | Hekili | v0.8.6 | unmodified | — | Collection/upstream/Hekili-v0.8.6/Hekili_Druid |
+| Hekili_Hunter | Hekili | v0.8.6 | unmodified | — | Collection/upstream/Hekili-v0.8.6/Hekili_Hunter |
+| Hekili_Mage | Hekili | v0.8.6 | unmodified | — | Collection/upstream/Hekili-v0.8.6/Hekili_Mage |
+| Hekili_Paladin | Hekili | v0.8.6 | unmodified | — | Collection/upstream/Hekili-v0.8.6/Hekili_Paladin |
+| Hekili_Priest | Hekili | v0.8.6 | unmodified | — | Collection/upstream/Hekili-v0.8.6/Hekili_Priest |
+| Hekili_Rogue | Hekili | v0.8.6 | unmodified | — | Collection/upstream/Hekili-v0.8.6/Hekili_Rogue |
+| Hekili_Shaman | Hekili | v0.8.6 | unmodified | — | Collection/upstream/Hekili-v0.8.6/Hekili_Shaman |
+| Hekili_Shared | Hekili | v0.8.6 | unmodified | — | Collection/upstream/Hekili-v0.8.6/Hekili_Shared |
+| Hekili_Warlock | Hekili | v0.8.6 | unmodified | — | Collection/upstream/Hekili-v0.8.6/Hekili_Warlock |
+| Hekili_Warrior | Hekili | v0.8.6 | unmodified | — | Collection/upstream/Hekili-v0.8.6/Hekili_Warrior |
+| Masque | Masque | 12.1.8 | unmodified | — | Collection/upstream/Masque-12.1.8/Masque |
+| Masque_Dominos | Dominos | 12.0.4 | unmodified | — | Collection/upstream/Dominos-12.0.4/Masque_Dominos |
+| Masque_Onyx | Masque Onyx | 12.1.6 | unmodified | — | Collection/upstream/Masque_Onyx-12.1.6/Masque_Onyx |
+| ProfileManager | ProfileManager | ProfileManager_v4.0.zip | patched | Collection/patches/ProfileManager.patch | Collection/upstream/profilemanager-ProfileManager_v4.0.zip/ProfileManager |
+| Quartz | Quartz | 3.8.0 | unmodified | — | Collection/upstream/Quartz-3.8.0/Quartz |
+| SexyMap | SexyMap | v12.1.7 | patched | Collection/patches/SexyMap.patch | Collection/upstream/SexyMap-v12.1.7/SexyMap |

@@ -16345,7 +16345,7 @@
           "interface": [
             "16001"
           ],
-          "version": "0.1.2",
+          "version": "0.1.5",
           "title": "DevilForever Core",
           "dependencies": null,
           "required_deps": null,
@@ -16380,12 +16380,75 @@
               }
             ]
           },
-          "listed_file_lines": 16
+          "listed_file_lines": 20
         }
       ],
       "has_interface_16001": true,
       "has_forever_loadable_toc": true,
-      "lua_files": 16,
+      "lua_files": 20,
+      "lua_files_in_libs": 0,
+      "embedded_libs": [],
+      "license_files": []
+    },
+    {
+      "folder": "DevilForever_Appearance",
+      "phases": [
+        2,
+        22
+      ],
+      "variant": null,
+      "bundle": "required",
+      "kind": "new",
+      "base": null,
+      "path": "Collection/AddOns/DevilForever_Appearance",
+      "toc_files": [
+        "DevilForever_Appearance.toc"
+      ],
+      "tocs": [
+        {
+          "file": "DevilForever_Appearance.toc",
+          "interface": [
+            "16001"
+          ],
+          "version": "0.1.0",
+          "title": "DevilForever Appearance",
+          "dependencies": [
+            "!DevilForever_Core"
+          ],
+          "required_deps": null,
+          "optional_deps": null,
+          "saved_variables": null,
+          "saved_variables_per_character": null,
+          "load_on_demand": null,
+          "game_types": {
+            "allow": null,
+            "exclude": null
+          },
+          "forever_load": "yes",
+          "list_lines": {
+            "Interface": [
+              {
+                "items": [
+                  "16001"
+                ],
+                "conditions": []
+              }
+            ],
+            "Dependencies": [
+              {
+                "items": [
+                  "!DevilForever_Core"
+                ],
+                "conditions": []
+              }
+            ]
+          },
+          "listed_file_lines": 7
+        }
+      ],
+      "has_interface_16001": true,
+      "has_forever_loadable_toc": true,
+      "lua_files": 7,
       "lua_files_in_libs": 0,
       "embedded_libs": [],
       "license_files": []
@@ -16489,7 +16552,9 @@
             "!DevilForever_Core"
           ],
           "required_deps": null,
-          "optional_deps": null,
+          "optional_deps": [
+            "DevilForever_Appearance"
+          ],
           "saved_variables": null,
           "saved_variables_per_character": [
             "DevilForever_ChatSetupDB"
@@ -16517,10 +16582,84 @@
                 "conditions": []
               }
             ],
+            "OptionalDeps": [
+              {
+                "items": [
+                  "DevilForever_Appearance"
+                ],
+                "conditions": []
+              }
+            ],
             "SavedVariablesPerCharacter": [
               {
                 "items": [
                   "DevilForever_ChatSetupDB"
+                ],
+                "conditions": []
+              }
+            ]
+          },
+          "listed_file_lines": 2
+        }
+      ],
+      "has_interface_16001": true,
+      "has_forever_loadable_toc": true,
+      "lua_files": 2,
+      "lua_files_in_libs": 0,
+      "embedded_libs": [],
+      "license_files": []
+    },
+    {
+      "folder": "DevilForever_DetailsLayout",
+      "phases": [
+        10
+      ],
+      "variant": null,
+      "bundle": "individual",
+      "kind": "new",
+      "base": null,
+      "path": "Collection/AddOns/DevilForever_DetailsLayout",
+      "toc_files": [
+        "DevilForever_DetailsLayout.toc"
+      ],
+      "tocs": [
+        {
+          "file": "DevilForever_DetailsLayout.toc",
+          "interface": [
+            "16001"
+          ],
+          "version": "0.1.0",
+          "title": "DevilForever Details Layout",
+          "dependencies": [
+            "!DevilForever_Core",
+            "Details",
+            "DevilForever_Appearance"
+          ],
+          "required_deps": null,
+          "optional_deps": null,
+          "saved_variables": null,
+          "saved_variables_per_character": null,
+          "load_on_demand": null,
+          "game_types": {
+            "allow": null,
+            "exclude": null
+          },
+          "forever_load": "yes",
+          "list_lines": {
+            "Interface": [
+              {
+                "items": [
+                  "16001"
+                ],
+                "conditions": []
+              }
+            ],
+            "Dependencies": [
+              {
+                "items": [
+                  "!DevilForever_Core",
+                  "Details",
+                  "DevilForever_Appearance"
                 ],
                 "conditions": []
               }
@@ -16595,6 +16734,278 @@
               {
                 "items": [
                   "DevilForever_FUFDefaultsDB"
+                ],
+                "conditions": []
+              }
+            ]
+          },
+          "listed_file_lines": 3
+        }
+      ],
+      "has_interface_16001": true,
+      "has_forever_loadable_toc": true,
+      "lua_files": 3,
+      "lua_files_in_libs": 0,
+      "embedded_libs": [],
+      "license_files": []
+    },
+    {
+      "folder": "DevilForever_Skin_Dominos",
+      "phases": [
+        3
+      ],
+      "variant": null,
+      "bundle": "individual",
+      "kind": "new",
+      "base": null,
+      "path": "Collection/AddOns/DevilForever_Skin_Dominos",
+      "toc_files": [
+        "DevilForever_Skin_Dominos.toc"
+      ],
+      "tocs": [
+        {
+          "file": "DevilForever_Skin_Dominos.toc",
+          "interface": [
+            "16001"
+          ],
+          "version": "0.1.0",
+          "title": "DevilForever Dominos Skin",
+          "dependencies": [
+            "!DevilForever_Core",
+            "Dominos",
+            "DevilForever_Appearance"
+          ],
+          "required_deps": null,
+          "optional_deps": [
+            "Masque"
+          ],
+          "saved_variables": null,
+          "saved_variables_per_character": null,
+          "load_on_demand": null,
+          "game_types": {
+            "allow": null,
+            "exclude": null
+          },
+          "forever_load": "yes",
+          "list_lines": {
+            "Interface": [
+              {
+                "items": [
+                  "16001"
+                ],
+                "conditions": []
+              }
+            ],
+            "Dependencies": [
+              {
+                "items": [
+                  "!DevilForever_Core",
+                  "Dominos",
+                  "DevilForever_Appearance"
+                ],
+                "conditions": []
+              }
+            ],
+            "OptionalDeps": [
+              {
+                "items": [
+                  "Masque"
+                ],
+                "conditions": []
+              }
+            ]
+          },
+          "listed_file_lines": 1
+        }
+      ],
+      "has_interface_16001": true,
+      "has_forever_loadable_toc": true,
+      "lua_files": 1,
+      "lua_files_in_libs": 0,
+      "embedded_libs": [],
+      "license_files": []
+    },
+    {
+      "folder": "DevilForever_Skin_Nameplates",
+      "phases": [
+        14
+      ],
+      "variant": null,
+      "bundle": "individual",
+      "kind": "new",
+      "base": null,
+      "path": "Collection/AddOns/DevilForever_Skin_Nameplates",
+      "toc_files": [
+        "DevilForever_Skin_Nameplates.toc"
+      ],
+      "tocs": [
+        {
+          "file": "DevilForever_Skin_Nameplates.toc",
+          "interface": [
+            "16001"
+          ],
+          "version": "0.1.0",
+          "title": "DevilForever Native Nameplate Appearance",
+          "dependencies": [
+            "!DevilForever_Core",
+            "DevilForever_Appearance"
+          ],
+          "required_deps": null,
+          "optional_deps": null,
+          "saved_variables": null,
+          "saved_variables_per_character": null,
+          "load_on_demand": null,
+          "game_types": {
+            "allow": null,
+            "exclude": null
+          },
+          "forever_load": "yes",
+          "list_lines": {
+            "Interface": [
+              {
+                "items": [
+                  "16001"
+                ],
+                "conditions": []
+              }
+            ],
+            "Dependencies": [
+              {
+                "items": [
+                  "!DevilForever_Core",
+                  "DevilForever_Appearance"
+                ],
+                "conditions": []
+              }
+            ]
+          },
+          "listed_file_lines": 2
+        }
+      ],
+      "has_interface_16001": true,
+      "has_forever_loadable_toc": true,
+      "lua_files": 4,
+      "lua_files_in_libs": 0,
+      "embedded_libs": [],
+      "license_files": []
+    },
+    {
+      "folder": "DevilForever_Skin_NativeChat",
+      "phases": [
+        4
+      ],
+      "variant": null,
+      "bundle": "individual",
+      "kind": "new",
+      "base": null,
+      "path": "Collection/AddOns/DevilForever_Skin_NativeChat",
+      "toc_files": [
+        "DevilForever_Skin_NativeChat.toc"
+      ],
+      "tocs": [
+        {
+          "file": "DevilForever_Skin_NativeChat.toc",
+          "interface": [
+            "16001"
+          ],
+          "version": "0.1.0",
+          "title": "DevilForever Native Chat Skin",
+          "dependencies": [
+            "!DevilForever_Core",
+            "DevilForever_ChatSetup",
+            "DevilForever_Appearance"
+          ],
+          "required_deps": null,
+          "optional_deps": null,
+          "saved_variables": null,
+          "saved_variables_per_character": null,
+          "load_on_demand": null,
+          "game_types": {
+            "allow": null,
+            "exclude": null
+          },
+          "forever_load": "yes",
+          "list_lines": {
+            "Interface": [
+              {
+                "items": [
+                  "16001"
+                ],
+                "conditions": []
+              }
+            ],
+            "Dependencies": [
+              {
+                "items": [
+                  "!DevilForever_Core",
+                  "DevilForever_ChatSetup",
+                  "DevilForever_Appearance"
+                ],
+                "conditions": []
+              }
+            ]
+          },
+          "listed_file_lines": 1
+        }
+      ],
+      "has_interface_16001": true,
+      "has_forever_loadable_toc": true,
+      "lua_files": 1,
+      "lua_files_in_libs": 0,
+      "embedded_libs": [],
+      "license_files": []
+    },
+    {
+      "folder": "DevilForever_Skin_StatusStrip",
+      "phases": [
+        16
+      ],
+      "variant": null,
+      "bundle": "individual",
+      "kind": "new",
+      "base": null,
+      "path": "Collection/AddOns/DevilForever_Skin_StatusStrip",
+      "toc_files": [
+        "DevilForever_Skin_StatusStrip.toc"
+      ],
+      "tocs": [
+        {
+          "file": "DevilForever_Skin_StatusStrip.toc",
+          "interface": [
+            "16001"
+          ],
+          "version": "0.1.0",
+          "title": "DevilForever Status Strip Skin",
+          "dependencies": [
+            "!DevilForever_Core",
+            "DevilForever_StatusStrip",
+            "DevilForever_Appearance"
+          ],
+          "required_deps": null,
+          "optional_deps": null,
+          "saved_variables": null,
+          "saved_variables_per_character": null,
+          "load_on_demand": null,
+          "game_types": {
+            "allow": null,
+            "exclude": null
+          },
+          "forever_load": "yes",
+          "list_lines": {
+            "Interface": [
+              {
+                "items": [
+                  "16001"
+                ],
+                "conditions": []
+              }
+            ],
+            "Dependencies": [
+              {
+                "items": [
+                  "!DevilForever_Core",
+                  "DevilForever_StatusStrip",
+                  "DevilForever_Appearance"
                 ],
                 "conditions": []
               }
@@ -17256,6 +17667,268 @@
         "Libs/LibDeflate/LICENSE.txt",
         "Modules/Aura/Libs/LibPlayerSpells-1.0/LICENSE"
       ]
+    }
+  ],
+  "third_party": [
+    {
+      "folder": "Details",
+      "package": "Details",
+      "version": "Details.20261109.15410.172",
+      "source_zip": "References/forever-addons/Details/Details-Details.20261109.15410.172.zip",
+      "sha256": "5002bdd5c3e92dd59bffa3ebdfc867f980b09ed629c51dab056fb5442f92ad41",
+      "upstream_path": "Collection/upstream/Details-Details.20261109.15410.172/Details",
+      "state": "unmodified",
+      "patch": null
+    },
+    {
+      "folder": "Details_TinyThreat",
+      "package": "Details",
+      "version": "Details.20261109.15410.172",
+      "source_zip": "References/forever-addons/Details/Details-Details.20261109.15410.172.zip",
+      "sha256": "5002bdd5c3e92dd59bffa3ebdfc867f980b09ed629c51dab056fb5442f92ad41",
+      "upstream_path": "Collection/upstream/Details-Details.20261109.15410.172/Details_TinyThreat",
+      "state": "patched",
+      "patch": "Collection/patches/Details.patch"
+    },
+    {
+      "folder": "Dominos",
+      "package": "Dominos",
+      "version": "12.0.4",
+      "source_zip": "References/forever-addons/Dominos/Dominos-12.0.4.zip",
+      "sha256": "2dbcf9857a91b772a42200369386fc17f875530ffd47984b555ecdb8e11bef1a",
+      "upstream_path": "Collection/upstream/Dominos-12.0.4/Dominos",
+      "state": "unmodified",
+      "patch": null
+    },
+    {
+      "folder": "Dominos_Config",
+      "package": "Dominos",
+      "version": "12.0.4",
+      "source_zip": "References/forever-addons/Dominos/Dominos-12.0.4.zip",
+      "sha256": "2dbcf9857a91b772a42200369386fc17f875530ffd47984b555ecdb8e11bef1a",
+      "upstream_path": "Collection/upstream/Dominos-12.0.4/Dominos_Config",
+      "state": "unmodified",
+      "patch": null
+    },
+    {
+      "folder": "ExperienceForever",
+      "package": "Experience Forever",
+      "version": "ExperienceForever2.0.4",
+      "source_zip": "References/addon-sources/experience-forever/ExperienceForever.zip",
+      "sha256": "2bfdda8717b6e0d40fcc1847b233e23b187f839c75749c15fe2ed430ecf15b85",
+      "upstream_path": "Collection/upstream/experience-forever-ExperienceForever2.0.4/ExperienceForever",
+      "state": "patched",
+      "patch": "Collection/patches/Experience_Forever.patch"
+    },
+    {
+      "folder": "ForeverUnitFrames",
+      "package": "Forever Unit Frames",
+      "version": "0.65.2",
+      "source_zip": "References/forever-addons/Forever Unit Frames/ForeverUnitFrames-0.65.2.zip",
+      "sha256": "cc50d16b5d926240a4dc48e7e6f9e4ee7fbb5107c14ebb734a685542e50e1a80",
+      "upstream_path": "Collection/upstream/Forever_Unit_Frames-0.65.2/ForeverUnitFrames",
+      "state": "unmodified",
+      "patch": null
+    },
+    {
+      "folder": "Grid2",
+      "package": "Grid2",
+      "version": "4.1.13-forever",
+      "source_zip": "References/forever-addons/Grid2/Grid2-4.1.13-forever.zip",
+      "sha256": "f198bc3ce2d02e023f81052074a2e9aa4ba41819931bd302ff7429dac9515393",
+      "upstream_path": "Collection/upstream/Grid2-4.1.13-forever/Grid2",
+      "state": "unmodified",
+      "patch": null
+    },
+    {
+      "folder": "Grid2LDB",
+      "package": "Grid2",
+      "version": "4.1.13-forever",
+      "source_zip": "References/forever-addons/Grid2/Grid2-4.1.13-forever.zip",
+      "sha256": "f198bc3ce2d02e023f81052074a2e9aa4ba41819931bd302ff7429dac9515393",
+      "upstream_path": "Collection/upstream/Grid2-4.1.13-forever/Grid2LDB",
+      "state": "unmodified",
+      "patch": null
+    },
+    {
+      "folder": "Grid2Options",
+      "package": "Grid2",
+      "version": "4.1.13-forever",
+      "source_zip": "References/forever-addons/Grid2/Grid2-4.1.13-forever.zip",
+      "sha256": "f198bc3ce2d02e023f81052074a2e9aa4ba41819931bd302ff7429dac9515393",
+      "upstream_path": "Collection/upstream/Grid2-4.1.13-forever/Grid2Options",
+      "state": "unmodified",
+      "patch": null
+    },
+    {
+      "folder": "Hekili",
+      "package": "Hekili",
+      "version": "v0.8.6",
+      "source_zip": "References/forever-addons/Hekili/Hekili-v0.8.6-forever.zip",
+      "sha256": "8063fd78c988af76c6a74653c21ff9f268546c44320922688ea2f7dd3d4c45e3",
+      "upstream_path": "Collection/upstream/Hekili-v0.8.6/Hekili",
+      "state": "unmodified",
+      "patch": null
+    },
+    {
+      "folder": "Hekili_Druid",
+      "package": "Hekili",
+      "version": "v0.8.6",
+      "source_zip": "References/forever-addons/Hekili/Hekili-v0.8.6-forever.zip",
+      "sha256": "8063fd78c988af76c6a74653c21ff9f268546c44320922688ea2f7dd3d4c45e3",
+      "upstream_path": "Collection/upstream/Hekili-v0.8.6/Hekili_Druid",
+      "state": "unmodified",
+      "patch": null
+    },
+    {
+      "folder": "Hekili_Hunter",
+      "package": "Hekili",
+      "version": "v0.8.6",
+      "source_zip": "References/forever-addons/Hekili/Hekili-v0.8.6-forever.zip",
+      "sha256": "8063fd78c988af76c6a74653c21ff9f268546c44320922688ea2f7dd3d4c45e3",
+      "upstream_path": "Collection/upstream/Hekili-v0.8.6/Hekili_Hunter",
+      "state": "unmodified",
+      "patch": null
+    },
+    {
+      "folder": "Hekili_Mage",
+      "package": "Hekili",
+      "version": "v0.8.6",
+      "source_zip": "References/forever-addons/Hekili/Hekili-v0.8.6-forever.zip",
+      "sha256": "8063fd78c988af76c6a74653c21ff9f268546c44320922688ea2f7dd3d4c45e3",
+      "upstream_path": "Collection/upstream/Hekili-v0.8.6/Hekili_Mage",
+      "state": "unmodified",
+      "patch": null
+    },
+    {
+      "folder": "Hekili_Paladin",
+      "package": "Hekili",
+      "version": "v0.8.6",
+      "source_zip": "References/forever-addons/Hekili/Hekili-v0.8.6-forever.zip",
+      "sha256": "8063fd78c988af76c6a74653c21ff9f268546c44320922688ea2f7dd3d4c45e3",
+      "upstream_path": "Collection/upstream/Hekili-v0.8.6/Hekili_Paladin",
+      "state": "unmodified",
+      "patch": null
+    },
+    {
+      "folder": "Hekili_Priest",
+      "package": "Hekili",
+      "version": "v0.8.6",
+      "source_zip": "References/forever-addons/Hekili/Hekili-v0.8.6-forever.zip",
+      "sha256": "8063fd78c988af76c6a74653c21ff9f268546c44320922688ea2f7dd3d4c45e3",
+      "upstream_path": "Collection/upstream/Hekili-v0.8.6/Hekili_Priest",
+      "state": "unmodified",
+      "patch": null
+    },
+    {
+      "folder": "Hekili_Rogue",
+      "package": "Hekili",
+      "version": "v0.8.6",
+      "source_zip": "References/forever-addons/Hekili/Hekili-v0.8.6-forever.zip",
+      "sha256": "8063fd78c988af76c6a74653c21ff9f268546c44320922688ea2f7dd3d4c45e3",
+      "upstream_path": "Collection/upstream/Hekili-v0.8.6/Hekili_Rogue",
+      "state": "unmodified",
+      "patch": null
+    },
+    {
+      "folder": "Hekili_Shaman",
+      "package": "Hekili",
+      "version": "v0.8.6",
+      "source_zip": "References/forever-addons/Hekili/Hekili-v0.8.6-forever.zip",
+      "sha256": "8063fd78c988af76c6a74653c21ff9f268546c44320922688ea2f7dd3d4c45e3",
+      "upstream_path": "Collection/upstream/Hekili-v0.8.6/Hekili_Shaman",
+      "state": "unmodified",
+      "patch": null
+    },
+    {
+      "folder": "Hekili_Shared",
+      "package": "Hekili",
+      "version": "v0.8.6",
+      "source_zip": "References/forever-addons/Hekili/Hekili-v0.8.6-forever.zip",
+      "sha256": "8063fd78c988af76c6a74653c21ff9f268546c44320922688ea2f7dd3d4c45e3",
+      "upstream_path": "Collection/upstream/Hekili-v0.8.6/Hekili_Shared",
+      "state": "unmodified",
+      "patch": null
+    },
+    {
+      "folder": "Hekili_Warlock",
+      "package": "Hekili",
+      "version": "v0.8.6",
+      "source_zip": "References/forever-addons/Hekili/Hekili-v0.8.6-forever.zip",
+      "sha256": "8063fd78c988af76c6a74653c21ff9f268546c44320922688ea2f7dd3d4c45e3",
+      "upstream_path": "Collection/upstream/Hekili-v0.8.6/Hekili_Warlock",
+      "state": "unmodified",
+      "patch": null
+    },
+    {
+      "folder": "Hekili_Warrior",
+      "package": "Hekili",
+      "version": "v0.8.6",
+      "source_zip": "References/forever-addons/Hekili/Hekili-v0.8.6-forever.zip",
+      "sha256": "8063fd78c988af76c6a74653c21ff9f268546c44320922688ea2f7dd3d4c45e3",
+      "upstream_path": "Collection/upstream/Hekili-v0.8.6/Hekili_Warrior",
+      "state": "unmodified",
+      "patch": null
+    },
+    {
+      "folder": "Masque",
+      "package": "Masque",
+      "version": "12.1.8",
+      "source_zip": "References/forever-addons/Masque/Masque-12.1.8.zip",
+      "sha256": "e4250f08b5429dd054ee9799db48ab64f1a3523dfd76ad3368437300ddb690c1",
+      "upstream_path": "Collection/upstream/Masque-12.1.8/Masque",
+      "state": "unmodified",
+      "patch": null
+    },
+    {
+      "folder": "Masque_Dominos",
+      "package": "Dominos",
+      "version": "12.0.4",
+      "source_zip": "References/forever-addons/Dominos/Dominos-12.0.4.zip",
+      "sha256": "2dbcf9857a91b772a42200369386fc17f875530ffd47984b555ecdb8e11bef1a",
+      "upstream_path": "Collection/upstream/Dominos-12.0.4/Masque_Dominos",
+      "state": "unmodified",
+      "patch": null
+    },
+    {
+      "folder": "Masque_Onyx",
+      "package": "Masque Onyx",
+      "version": "12.1.6",
+      "source_zip": "References/forever-addons/Masque Onyx/Masque_Onyx-12.1.6.zip",
+      "sha256": "51e961e9b40936f94ddec495b17f1c5bd8b3cfd8fa7e7463f80c2e331b05b190",
+      "upstream_path": "Collection/upstream/Masque_Onyx-12.1.6/Masque_Onyx",
+      "state": "unmodified",
+      "patch": null
+    },
+    {
+      "folder": "ProfileManager",
+      "package": "ProfileManager",
+      "version": "ProfileManager_v4.0.zip",
+      "source_zip": "References/addon-sources/profilemanager/ProfileManager.zip",
+      "sha256": "f905c4381473a7cb6e033e89aa1878177d996ca965d167cd5fdbf086c8c9f2b1",
+      "upstream_path": "Collection/upstream/profilemanager-ProfileManager_v4.0.zip/ProfileManager",
+      "state": "patched",
+      "patch": "Collection/patches/ProfileManager.patch"
+    },
+    {
+      "folder": "Quartz",
+      "package": "Quartz",
+      "version": "3.8.0",
+      "source_zip": "References/forever-addons/Quartz/Quartz-3.8.0.zip",
+      "sha256": "2a76cdda6b53e7eb26472c0b8b6bf8f50c02388f8f515e6746c5e14657d5ed70",
+      "upstream_path": "Collection/upstream/Quartz-3.8.0/Quartz",
+      "state": "unmodified",
+      "patch": null
+    },
+    {
+      "folder": "SexyMap",
+      "package": "SexyMap",
+      "version": "v12.1.7",
+      "source_zip": "References/forever-addons/SexyMap/SexyMap-v12.1.7.zip",
+      "sha256": "1868eb714b8c9ea4efaa615109bfd457a0c3bb625f0b2a1f1befdadfc9143321",
+      "upstream_path": "Collection/upstream/SexyMap-v12.1.7/SexyMap",
+      "state": "patched",
+      "patch": "Collection/patches/SexyMap.patch"
     }
   ],
   "comparison_names_missing": [],
