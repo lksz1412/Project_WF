@@ -14,3 +14,11 @@ Master verified: FUFDefaults.lua:126-129, Defaults/SexyMap.lua:166-167, Presets.
 - R1 (critical) FUF fresh install: Party.lua:175-177 writes Grid2 at ADDON_LOADED, FUF side only session.fufOff (:181-182); FUFDefaults sends after 20 s (FUFDefaults.lua:40,:170). /reload within 20 s → FUF SV now exists (Boot.lua:27) → next session "unchanged" → Grid2 party + FUF party = two sets, permanent (repro exp_fufreload.py).
 - R2 (middle) `/dfp party` writes the shared unit-frame profile (Party.lua:267, :276-279) but only this character's Grid2 profile (:248-252) → other characters on the same unit profile get none/two party frames (repro exp_cmd_alt.py); notes don't say to repeat per character.
 - m: late keys "not-settled" (consistent), Grid2 global.defaultProfileName case, FUF Set not-ready/invalid prints success + Describe stale, package notes LF→CRLF header lines.
+
+## Re-check 2 (same B, redone after container restart, base 91739127) — 중대 0 · 중간 1 · 경미 4 (was 1·1·4)
+- R1, R2 and the three minors fixed (repro rc2.fQU2/exp.py).
+- N1 (middle) reconcile compares exact values every login (Party.lua:118-120, :313-316, :320-323) → user changes inside Grid2/PitBull4/FUF (e.g. Grid2 party "By Group & Role", FrameDisplay "Always", PitBull4 partypet re-enabled, FUF party re-enabled) are silently reverted; "By Group" is the AceDB default so it is rewritten every login.
+- m1 `/dfp party` within 20 s of login does not cancel the pending fufDue (:255, :265-266) → command reversed that session.
+- m2 FUF never confirmed → retried every login with no user notice (:270-275).
+- m3 record outlives deleted/renamed profile; PitBull4 recreated profile may give two sets for one session.
+- m4 comingLater uses only C_AddOns.GetAddOnEnableState (:60-63); PitBull4 Compat.lua:107-117 falls back to global GetAddOnEnableState.
