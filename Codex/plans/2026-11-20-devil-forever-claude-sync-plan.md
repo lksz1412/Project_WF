@@ -54,7 +54,7 @@ Step 73–76. 원문과 근거를 먼저 복구한 뒤 배치와 한 접속 확�
 | Phase | 세부 계획서 | Step | 상태 |
 |---|---|---|---|
 | 30.1 근거 복구 | `2026-11-20-devil-forever-claude-sync-phase30.1-세부계획.md` | 73–74 | 완료 |
-| 30.2 외관과 접속 준비 | `2026-11-20-devil-forever-claude-sync-phase30.2-세부계획.md` | 75–76 | 진행 |
+| 30.2 외관과 접속 준비 | `2026-11-20-devil-forever-claude-sync-phase30.2-세부계획.md` | 75–76 | 완료 |
 
 ## Implementation Interfaces
 

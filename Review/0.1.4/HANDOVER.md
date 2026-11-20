@@ -2,6 +2,8 @@
 
 검토 브랜치는 `codex/review-0.1.4`다. 0.1.4 공개 시험판의 태그는 `v0.1.4`다. 설치된 게임이나 이전 작업자의 컴퓨터에서 파일을 가져오지 않고 이 체크아웃에서 검토를 시작할 수 있다.
 
+[Claude의 다음 판 작업에 필요한 원문·배치·검증 인계](../../Codex/results/CLAUDE_HANDOFF_phase30.md)
+
 ## 입력과 기준
 
 - 실제 제품 소스는 [Collection/AddOns](../../Collection/AddOns)다. 한 접속 비교판의 전체 소스를 기준으로 기본 PitBull4판과 FUF판을 나눈다. [판별 파일 목록](addon-files.json) · [원본 ZIP 해시](trial-receipt.json)

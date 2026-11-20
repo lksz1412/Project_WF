@@ -1,0 +1,31 @@
+{
+  "phase": "30.2",
+  "steps": [
+    75,
+    76
+  ],
+  "base": "477eb06",
+  "branch": "codex/claude-phase25-handoff",
+  "design": {
+    "canvases": 3,
+    "newFrameGroups": 9,
+    "overlappingGroups": 0,
+    "stackingMatches": 3,
+    "themePresetPairs": 39,
+    "surfacesCompared": 78,
+    "changedVisiblePixels": 0
+  },
+  "checklists": [
+    "References/codex-verify/one-session-review.md",
+    "References/codex-verify/live-checklist.md"
+  ],
+  "handoff": "Codex/results/CLAUDE_HANDOFF_phase30.md",
+  "installerCatalogInput": "approved user release 0.1.5 ZIP",
+  "gameMeasured": false,
+  "windowsCheckoutJsonSha256Verified": 2,
+  "reviewAfterCorrection": {
+    "major": 0,
+    "moderate": 0,
+    "minor": 0
+  }
+}
