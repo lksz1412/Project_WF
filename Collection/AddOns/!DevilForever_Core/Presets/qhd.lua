@@ -330,13 +330,13 @@ local shiftX = left + (pixels / effective - width) / 2
 local shiftY = -top - (pixels / effective - height) / 2
 local fragment = {folder = "Dominos", savedVariable = "DominosDB", section = "profile", profile = "$className",
   addonVersion = "12.0.4", version = 1, values = {frames = {
-    [1] = {point = "TOPLEFT", relPoint = "TOPLEFT", x = 1250 / effective + shiftX, y = -1192 / effective + shiftY, scale = frameScale, columns = 4, spacing = pitch - hitWidth, rowSpacing = hitWidth - hitHeight, showEmptyButtons = true, padW = 0, padH = 0, anchor = false, hidden = false},
-    [2] = {point = "TOPLEFT", relPoint = "TOPLEFT", x = 1482 / effective + shiftX, y = -1192 / effective + shiftY, scale = frameScale, columns = 4, spacing = pitch - hitWidth, rowSpacing = hitWidth - hitHeight, showEmptyButtons = true, padW = 0, padH = 0, anchor = false, hidden = false},
-    [3] = {point = "TOPLEFT", relPoint = "TOPLEFT", x = 237 / effective + shiftX, y = -1118 / effective + shiftY, scale = frameScale, columns = 12, spacing = pitch - hitWidth, rowSpacing = hitWidth - hitHeight, showEmptyButtons = true, padW = 0, padH = 0, anchor = false, hidden = false},
-    [4] = {point = "TOPLEFT", relPoint = "TOPLEFT", x = 933 / effective + shiftX, y = -1118 / effective + shiftY, scale = frameScale, columns = 12, spacing = pitch - hitWidth, rowSpacing = hitWidth - hitHeight, showEmptyButtons = true, padW = 0, padH = 0, anchor = false, hidden = false},
-    [5] = {point = "TOPLEFT", relPoint = "TOPLEFT", x = 1629 / effective + shiftX, y = -1118 / effective + shiftY, scale = frameScale, columns = 12, spacing = pitch - hitWidth, rowSpacing = hitWidth - hitHeight, showEmptyButtons = true, padW = 0, padH = 0, anchor = false, hidden = false},
-    [6] = {point = "TOPLEFT", relPoint = "TOPLEFT", x = 16 / effective + shiftX, y = -708 / effective + shiftY, scale = frameScale, columns = 4, spacing = pitch - hitWidth, rowSpacing = hitWidth - hitHeight, showEmptyButtons = true, padW = 0, padH = 0, anchor = false, hidden = false},
-    [7] = {point = "TOPLEFT", relPoint = "TOPLEFT", x = 2314 / effective + shiftX, y = -708 / effective + shiftY, scale = frameScale, columns = 4, spacing = pitch - hitWidth, rowSpacing = hitWidth - hitHeight, showEmptyButtons = true, padW = 0, padH = 0, anchor = false, hidden = false},
+    [1] = {point = "TOPLEFT", relPoint = "TOPLEFT", x = 237 / effective + shiftX, y = -1118 / effective + shiftY, scale = frameScale, columns = 12, spacing = pitch - hitWidth, rowSpacing = hitWidth - hitHeight, rowOffset = 0, isRightToLeft = false, isBottomToTop = false, showEmptyButtons = true, padW = 0, padH = 0, anchor = false, hidden = false},
+    [2] = {point = "TOPLEFT", relPoint = "TOPLEFT", x = 933 / effective + shiftX, y = -1118 / effective + shiftY, scale = frameScale, columns = 12, spacing = pitch - hitWidth, rowSpacing = hitWidth - hitHeight, rowOffset = 0, isRightToLeft = false, isBottomToTop = false, showEmptyButtons = true, padW = 0, padH = 0, anchor = false, hidden = false},
+    [3] = {point = "TOPLEFT", relPoint = "TOPLEFT", x = 1629 / effective + shiftX, y = -1118 / effective + shiftY, scale = frameScale, columns = 12, spacing = pitch - hitWidth, rowSpacing = hitWidth - hitHeight, rowOffset = 0, isRightToLeft = false, isBottomToTop = false, showEmptyButtons = true, padW = 0, padH = 0, anchor = false, hidden = false},
+    [4] = {point = "TOPLEFT", relPoint = "TOPLEFT", x = 1250 / effective + shiftX, y = -1192 / effective + shiftY, scale = frameScale, columns = 8, spacing = pitch - hitWidth, rowSpacing = hitWidth - hitHeight, rowOffset = 0, isRightToLeft = false, isBottomToTop = false, showEmptyButtons = true, padW = 0, padH = 0, anchor = false, hidden = false},
+    [5] = {point = "TOPLEFT", relPoint = "TOPLEFT", x = 1250 / effective + shiftX, y = -1250 / effective + shiftY, scale = frameScale, columns = 8, spacing = pitch - hitWidth, rowSpacing = hitWidth - hitHeight, rowOffset = 0, isRightToLeft = false, isBottomToTop = false, showEmptyButtons = true, padW = 0, padH = 0, anchor = false, hidden = false, dfTail = true},
+    [6] = {hidden = true},
+    [7] = {hidden = true},
     [8] = {hidden = true},
     ["class"] = {point = "TOPLEFT", relPoint = "TOPLEFT", x = 474, y = -1056, scale = pixel, spacing = 2, padW = 0, padH = 0, anchor = false},
     ["possess"] = {point = "TOPLEFT", relPoint = "TOPLEFT", x = 1810, y = -1074, scale = pixel, spacing = 2, padW = 0, padH = 0, anchor = false},
@@ -415,6 +415,16 @@ local menuWidth=available-bagsWidth
 fit("menu",menu,x,y,menuWidth,height)
 fit("bags",bags,x+menuWidth+gap,y,bagsWidth,height)
 fit("queue",QueueStatusButton and {QueueStatusButton} or {},x+width-queueWidth,y,queueWidth,height)
+-- Snapshot only geometry owned by this preset; manual edits release runtime management.
+local geometryKeys = {"point", "relPoint", "x", "y", "scale", "columns", "spacing", "rowSpacing",
+  "rowOffset", "padW", "padH", "anchor", "isRightToLeft", "isBottomToTop"}
+for _, values in pairs(fragment.values.frames) do
+  if values.scale then
+    values.dfPixel = pixel
+    values.dfGeometry = {}
+    for _, key in ipairs(geometryKeys) do values.dfGeometry[key] = values[key] end
+  end
+end
 return fragment
   end)
   if ok and type(proposal) == "table" and next(proposal) then
@@ -441,8 +451,8 @@ if not pixel then
 end
 local _, baseline = ChatFontNormal:GetFont()
 if type(baseline) ~= "number" or baseline <= 0 then DevilForever_Core:Log("skip", "PitBull4 appearance", "font baseline unavailable"); return {} end
-return {profile = {units = {
-  ["플레이어"] = {anchor="TOPLEFT", relative_point="TOPLEFT", relative_to="0", position_x=690*pixel, position_y=-908*pixel, scale=1, size_x=280/280, size_y=56/56, font_multiplier=1},
+local proposal = {profile = {units = {
+  ["플레이어"] = {anchor="TOPLEFT", relative_point="TOPLEFT", relative_to="0", position_x=620*pixel, position_y=-884*pixel, scale=1, size_x=350/350, size_y=80/80, font_multiplier=1},
   ["대상"] = {anchor="TOPLEFT", relative_point="TOPLEFT", relative_to="0", position_x=570*pixel, position_y=-980*pixel, scale=1, size_x=400/400, size_y=64/64, font_multiplier=1},
   ["주시 대상"] = {anchor="TOPLEFT", relative_point="TOPLEFT", relative_to="0", position_x=274*pixel, position_y=-908*pixel, scale=1, size_x=280/240, size_y=48/56, font_multiplier=1},
   ["플레이어의 소환수"] = {anchor="TOPLEFT", relative_point="TOPLEFT", relative_to="0", position_x=256*pixel, position_y=-764*pixel, scale=1, size_x=280/240, size_y=40/56, font_multiplier=1},
@@ -456,15 +466,37 @@ return {profile = {units = {
   ["파티원 대상"]={anchor="TOPLEFT",relative_point="TOPLEFT",relative_to="0",position_x=416*pixel,position_y=-400*pixel,scale=1,size_x=140/160,size_y=28/32,direction="down_right",vertical_spacing=40,horizontal_spacing=12},
   ["파티원 소환수"]={anchor="TOPLEFT",relative_point="TOPLEFT",relative_to="0",position_x=284*pixel,position_y=-400*pixel,scale=1,size_x=120/160,size_y=28/32,direction="down_right",vertical_spacing=40,horizontal_spacing=12},
 }, layouts = {
-  ["보통"] = {size_x=280, size_y=56, scale=pixel, strata="LOW", level=2, font="Devil Forever devil", font_size=18/baseline, bar_texture="Devil Forever devil", bar_padding=1, bar_spacing=1, indicator_root_outside_margin=6},
+  ["보통"] = {size_x=350, size_y=80, scale=pixel, strata="LOW", level=2, font="Devil Forever devil", font_size=18/baseline, bar_texture="Devil Forever devil", bar_padding=1, bar_spacing=1, indicator_root_outside_margin=6},
   ["대상"] = {size_x=400, size_y=64, scale=pixel, strata="LOW", level=2, font="Devil Forever devil", font_size=18/baseline, bar_texture="Devil Forever devil", bar_padding=1, bar_spacing=1},
   ["파티"] = {size_x=240, size_y=56, scale=pixel, strata="LOW", level=2, font="Devil Forever devil", font_size=18/baseline, bar_texture="Devil Forever devil", bar_padding=1, bar_spacing=1},
   ["대상의대상"] = {size_x=160, size_y=32, scale=pixel, strata="LOW", level=2, font="Devil Forever devil", font_size=18/baseline, bar_texture="Devil Forever devil", bar_padding=1, bar_spacing=1},
 }}, namespaces = {Totems = {layouts = {["보통"] = {attach_to="root", location="out_left_top", totem_direction="h", line_break=4, size=28/15, totem_spacing=4*50/28, text_size=14*50/(18*28)}}}}}
+
+proposal.profile.dfPixel = pixel
+proposal.profile.dfGeometry = {}
+local fields = {
+  units = {"anchor", "relative_point", "relative_to", "position_x", "position_y", "scale", "size_x", "size_y"},
+  groups = {"anchor", "relative_point", "relative_to", "position_x", "position_y", "scale", "size_x", "size_y", "direction", "vertical_spacing", "horizontal_spacing"},
+  layouts = {"size_x", "size_y", "scale"},
+}
+for kind, keys in pairs(fields) do
+  proposal.profile.dfGeometry[kind] = {}
+  for name, values in pairs(proposal.profile[kind]) do
+    local parts = {}
+    for _, key in ipairs(keys) do parts[#parts + 1] = tostring(values[key]) end
+    proposal.profile.dfGeometry[kind][name] = table.concat(parts, "|")
+  end
+end
+return proposal
   end)
   if ok and type(proposal) == "table" and next(proposal) then
     def.fragments[#def.fragments + 1] = { folder = "PitBull4", savedVariable = "PitBull4DB", addonVersion = "v4.2.50-forever.1", version = 1, section = "profile", profile = "Default", intoExisting = {"units", "groups"}, values = proposal.profile }
     def.fragments[#def.fragments + 1] = { folder = "PitBull4", savedVariable = "PitBull4DB", addonVersion = "v4.2.50-forever.1", version = 1, section = "profile", profile = "Default", namespace = "Totems", values = proposal.namespaces.Totems }
+    for module, weight in pairs({HealthBar = 5, PowerBar = 2}) do
+      def.fragments[#def.fragments + 1] = {folder = "PitBull4", savedVariable = "PitBull4DB",
+        addonVersion = "v4.2.50-forever.1", version = 1, section = "profile", profile = "Default",
+        namespace = module, values = {layouts = {["보통"] = {size = weight}, ["대상"] = {size = weight}}}}
+    end
   elseif not ok then
     DevilForever_Core:Log("skip", "Preset:qhd", "pitbull4-profile.qhd.fragment.lua: " .. tostring(proposal))
   end

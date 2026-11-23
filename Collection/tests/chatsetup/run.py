@@ -486,7 +486,7 @@ def native_template_names_are_free_and_docked_hidden_public_stays_managed():
     s.g.TEST_preset = "qhd"
     s.g.TEST_fire("DISPLAY_SIZE_CHANGED")
     s.g.TEST_runTimers()
-    eq(s.g.ChatFrame1.width, 608, "tab-hidden docked public follows preset")
+    eq(s.g.ChatFrame1.width, 555, "tab-hidden docked public follows preset")
     eq("public" in s.db()["managedLayout"]["roles"], True, "public receipt kept")
     reserved = Session().load()
     reserved.lua.execute("""
@@ -516,11 +516,21 @@ def newly_created_default_message_groups_are_normalized():
     eq(s.groups(4), SYSTEM_ROLE, "system role exact")
 
 
-def layout_session(preset="uhd", saved=None):
+def layout_session(preset="uhd", saved=None, edit_mode=None, requested=None):
     s = Session(saved=saved)
     s.g.TEST_preset, s.g.TEST_pixel = preset, 1
+    s.g.TEST_requested = requested
+    if edit_mode is not None:
+        s.g.TEST_layoutIndex = edit_mode
+        s.lua.execute("""
+          C_EditMode={GetLayouts=function() return {activeLayout=TEST_layoutIndex} end}
+          EditModePresetLayoutManager={presetLayoutInfo={{},{}}}
+          UIParent.GetWidth=function() return 3840 end
+          UIParent.GetHeight=function() return 2160 end
+        """)
     s.lua.execute("""
-      DevilForever_Core = {Presets = {GetActive = function() return TEST_preset end},
+      DevilForever_Core = {Presets = {GetActive = function() return TEST_preset end,
+        GetAppliedRequest = function() return TEST_requested end},
         Edit = {RegisterCallback = function(self, owner, fn) TEST_edit = fn end}}
       DevilForever_Appearance = {GetPixelUnit = function() return TEST_pixel end}
     """)
@@ -570,7 +580,7 @@ def managed_layout_protects_manual_move_close_and_combat():
     eq(s.g.ChatFrame3.point[3], 1234, "manual move kept")
     eq(s.g.ChatFrame4.point[3], 2910, "closed frame not moved")
     eq(set(s.db()["managedLayout"]["roles"]), {"public"}, "manual roles released")
-    eq(s.g.ChatFrame1.width, 608, "unmodified public role follows preset")
+    eq(s.g.ChatFrame1.width, 555, "unmodified public role follows preset")
 
 
 @case
@@ -590,6 +600,94 @@ def reload_retains_receipts_and_legacy_created_remains_unmanaged():
     legacy = layout_session("qhd", saved={"setupVersion": 1, "result": "created", "windows": saved["windows"]})
     legacy.login()
     eq(legacy.calls(), [], "legacy has no geometry permission")
+
+
+def native_public_reset(s):
+    s.g.ChatFrame1.width, s.g.ChatFrame1.height = 430, 170
+    s.g.ChatFrame1.point = s.table(["BOTTOMLEFT", "BOTTOMLEFT", 32, 240])
+
+
+def created_public_session(saved=None, requested="uhd", edit_mode=1):
+    if saved is None:
+        saved = {"setupVersion": 1, "result": "created", "windows": {"public": 1, "group": 4, "system": 5},
+                 "managedLayout": {"version": 1, "roles": {}}}
+    s = layout_session(saved=saved, edit_mode=edit_mode, requested=requested)
+    native_public_reset(s)
+    for index, x, width in ((4, 970, 944), (5, 2910, 922)):
+        f = s.g["ChatFrame%d" % index]
+        f.shown = True
+        f.width, f.height = width, 244
+        f.point = s.table(["TOPLEFT", "TOPLEFT", x, -1828])
+    return s
+
+
+@case
+def explicit_public_recovery_keeps_other_frames_messages_and_next_reload():
+    s = created_public_session()
+    s.g.ChatFrame1.messages = s.table(["old message"])
+    s.g.ChatFrame1.editBox = s.table({"draft": "draft", "history": ["old input"]})
+    groups = [s.groups(i) for i in (1, 2, 4, 5)]
+    s.login()
+    eq((s.g.ChatFrame1.width, s.g.ChatFrame1.height), (868, 244), "explicit request restores public")
+    eq(lst(to_py(s.g.ChatFrame1.point)), ["TOPLEFT", "TOPLEFT", 60, -1828], "public target")
+    eq(all(c.split()[1] == "1" for c in s.calls()), True, "only public geometry APIs")
+    eq([s.groups(i) for i in (1, 2, 4, 5)], groups, "routing preserved")
+    eq(lst(to_py(s.g.ChatFrame1.messages)), ["old message"], "message preserved")
+    eq(to_py(s.g.ChatFrame1.editBox), {"draft": "draft", "history": {1: "old input"}}, "input preserved")
+    nxt = created_public_session(saved=s.db(), requested=None)
+    nxt.login()
+    eq(nxt.g.ChatFrame1.width, 868, "next plain reload restores native fallback")
+    eq(all(c.split()[1] == "1" for c in nxt.calls()), True, "reload still public only")
+
+
+@case
+def public_anchor_normalization_and_builtin_reapply_preserve_ownership():
+    first = created_public_session()
+    first.login()
+    s = created_public_session(saved=first.db(), requested=None)
+    s.g.ChatFrame1.width, s.g.ChatFrame1.height = 868, 244
+    s.g.ChatFrame1.point = s.table(["BOTTOMLEFT", "BOTTOMLEFT", 60, 88])
+    s.login()
+    eq(s.calls(), [], "same physical rectangle under bottom anchor needs no write")
+    eq("public" in s.db()["managedLayout"]["roles"], True, "receipt retained")
+    native_public_reset(s)
+    s.g.TEST_fire("EDIT_MODE_LAYOUTS_UPDATED")
+    s.g.TEST_runTimers()
+    eq(s.g.ChatFrame1.width, 868, "native builtin reapplied after login repaired")
+
+
+@case
+def public_manual_move_and_custom_editmode_release_management():
+    first = created_public_session()
+    first.login()
+    for custom in (False, True):
+        s = created_public_session(saved=first.db(), requested=None, edit_mode=3 if custom else 1)
+        s.g.ChatFrame1.point = s.table(["BOTTOMLEFT", "BOTTOMLEFT", 99, 300])
+        s.login()
+        eq(s.calls(), [], "custom/manual geometry untouched")
+        eq("public" in s.db()["managedLayout"]["roles"], False, "public management released")
+    fresh = layout_session(edit_mode=3)
+    native_public_reset(fresh)
+    fresh.login()
+    eq((fresh.g.ChatFrame1.width, fresh.g.ChatFrame1.height), (430, 170), "fresh custom public unchanged")
+    eq("public" in fresh.db()["managedLayout"]["roles"], False, "fresh custom public not claimed")
+
+
+@case
+def legacy_without_receipt_and_changed_builtin_recover_only_explicitly():
+    saved = {"setupVersion": 1, "result": "created", "windows": {"public": 1, "group": 4, "system": 5}}
+    s = created_public_session(saved=saved)
+    s.login()
+    eq(s.g.ChatFrame1.width, 868, "legacy without managedLayout schedules explicit settle")
+    saved = s.db()
+    second = created_public_session(saved=saved, edit_mode=2)
+    second.g.ChatFrame1.point = second.table(["BOTTOMLEFT", "BOTTOMLEFT", 50, 250])
+    second.login()
+    eq(second.db()["managedLayout"]["publicFallback"]["preset"], 2, "new builtin replaces old fallback id")
+    nxt = created_public_session(saved=second.db(), requested=None, edit_mode=2)
+    nxt.g.ChatFrame1.point = nxt.table(["BOTTOMLEFT", "BOTTOMLEFT", 50, 250])
+    nxt.login()
+    eq(nxt.g.ChatFrame1.width, 868, "new builtin fallback survives plain reload")
 
 
 @case

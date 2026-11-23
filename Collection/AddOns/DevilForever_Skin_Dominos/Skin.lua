@@ -10,6 +10,62 @@ local hookedBars = setmetatable({}, {__mode = "k"})
 local petPending = false
 local petScheduled = false
 local schedulePet
+local geometryHooks = setmetatable({}, {__mode = "k"})
+local geometryKeys = {"point", "relPoint", "x", "y", "scale", "columns", "spacing", "rowSpacing",
+  "rowOffset", "padW", "padH", "anchor", "isRightToLeft", "isBottomToTop"}
+
+local function managedGeometry(bar)
+  local sets = bar.sets
+  local saved = sets and sets.dfGeometry
+  if type(saved) ~= "table" then return end
+  for _, key in ipairs(geometryKeys) do
+    if (sets[key] or false) ~= (saved[key] or false) then
+      sets.dfGeometry, sets.dfPixel, sets.dfTail = nil, nil, nil
+      return
+    end
+  end
+  return sets, saved
+end
+
+-- The second lower bar has four slots on its first row and eight on its last.
+local function applyTail(bar)
+  if InCombatLockdown() then pending = true; return end
+  local sets = managedGeometry(bar)
+  if not sets or not sets.dfTail then return end
+  local left, _, top = bar:GetButtonInsets()
+  local width, height = bar:GetButtonSize()
+  local padW, padH = bar:GetPadding()
+  local spacing = bar:GetSpacing()
+  for index, button in ipairs(bar.buttons) do
+    local row = index <= 4 and 0 or 1
+    local column = index <= 4 and index + 3 or index - 5
+    button:ClearAllPoints()
+    button:SetPoint("TOPLEFT", bar, "TOPLEFT", padW - left + (width + spacing) * column,
+      -(padH - top + (height + spacing + bar:GetRowSpacing()) * row))
+  end
+end
+
+local function applyGeometry(pixel)
+  for _, id in ipairs({1, 2, 3, 4, 5, "class", "pet", "possess", "totem", "menu", "bags", "queue"}) do
+    local bar = _G["DominosFrame" .. id]
+    if bar then
+      local sets, saved = managedGeometry(bar)
+      if sets and type(sets.dfPixel) == "number" and sets.dfPixel > 0 then
+        if sets.dfTail and not geometryHooks[bar] then
+          hooksecurefunc(bar, "Layout", applyTail)
+          geometryHooks[bar] = true
+          applyTail(bar)
+        end
+        if sets.dfPixel ~= pixel then
+          sets.scale = sets.scale * pixel / sets.dfPixel
+          sets.dfPixel, saved.scale = pixel, sets.scale
+          bar:RestorePosition()
+          bar:RestoreAnchor()
+        end
+      end
+    end
+  end
+end
 
 local function applyPetEdges()
   local bar = _G.DominosFramepet
@@ -65,7 +121,8 @@ end
 local function applyPet()
   if not ready then return end
   if InCombatLockdown() then petPending = true; return end
-  if not DevilForever_Appearance:GetPixelUnit(UIParent) then
+  local pixel = DevilForever_Appearance:GetPixelUnit(UIParent)
+  if not pixel then
     Core:Log("skip", "Feature appearance", "physical pixel factor unavailable")
     return
   end
@@ -87,10 +144,12 @@ end
 local function apply()
   if not ready then return end
   if InCombatLockdown() then pending = true; return end
-  if not DevilForever_Appearance:GetPixelUnit(UIParent) then
+  local pixel = DevilForever_Appearance:GetPixelUnit(UIParent)
+  if not pixel then
     Core:Log("skip", "Feature appearance", "physical pixel factor unavailable")
     return
   end
+  applyGeometry(pixel)
   for _, id in ipairs(ids) do applyBar(id) end
   applyPetEdges()
   pending = false
@@ -98,13 +157,14 @@ local function apply()
 end
 
 local events = CreateFrame("Frame")
-for _, event in ipairs({"PLAYER_LOGIN", "PLAYER_ENTERING_WORLD", "PLAYER_REGEN_ENABLED", "UPDATE_BINDINGS", "UI_SCALE_CHANGED"}) do
+for _, event in ipairs({"PLAYER_LOGIN", "PLAYER_ENTERING_WORLD", "PLAYER_REGEN_ENABLED", "UPDATE_BINDINGS", "UI_SCALE_CHANGED", "DISPLAY_SIZE_CHANGED"}) do
   events:RegisterEvent(event)
 end
 events:SetScript("OnEvent", function(_, event)
   if event == "PLAYER_LOGIN" then ready = true; apply()
   elseif event ~= "PLAYER_REGEN_ENABLED" or pending then apply()
   elseif petPending then applyPet() end
+  if event == "UI_SCALE_CHANGED" or event == "DISPLAY_SIZE_CHANGED" then C_Timer.After(0, apply) end
 end)
 Core.Theme:RegisterCallback(owner, apply)
 Core.Edit:RegisterCallback(owner, function(key)

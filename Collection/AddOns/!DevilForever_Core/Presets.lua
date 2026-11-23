@@ -60,7 +60,8 @@
 -- <SV>[profileKey] (an addon's per-character profile in a plain saved
 -- variable). Fresh then means <SV>[profileKey] was nil at the addon's
 -- ADDON_LOADED (Profiles:KeyWasAbsent); targetKey "<SV>@root:<profileKey>".
--- It is written at the next PLAYER_ENTERING_WORLD, in both modes, after the
+-- It is written at PLAYER_LOGIN for SexyMap, otherwise PLAYER_ENTERING_WORLD,
+-- in both modes, after the
 -- addon has made the profile, and only by merging: a value goes in where its
 -- parent table exists, a table is never created, a non-table stored at
 -- profileKey or on the way (e.g. a "global" profile choice) is never
@@ -79,8 +80,13 @@ local defs = {}           -- [name] = definition copy
 Presets.version = 0       -- changes whenever a definition is registered (Edit's resolved-value cache)
 local request             -- {name, keys} from a stored "preset" request
 local fragmentState = {}  -- [preset .. "|" .. index] = {state, message, key}
-local waitingWorld = {}   -- fragments due at the next PLAYER_ENTERING_WORLD
+local waitingWorld = {}   -- root fragments due after native profile creation
 local worldSeen = false
+local appliedRequest
+
+function Presets:GetAppliedRequest()
+  return appliedRequest
+end
 
 -- Registry lookups read Core.Registry directly: preset files run at load time,
 -- before API.lua.
@@ -422,6 +428,14 @@ local function writeFragment(presetName, index, f, keys, mode)
       return record(presetName, index, "skipped", "profile " .. f.profileKey .. " is "
         .. (profile and ("a " .. type(profile) .. " (kept)") or "not made by the addon"), key)
     end
+    local borders = rawget(profile, "borders")
+    if f.savedVariable == "SexyMap2DB" and type(borders) == "table"
+        and type(f.values.borders) == "table" and type(f.values.borders.borders) == "table"
+        and not next(f.values.borders.borders) and type(borders.borders) == "table" then
+      for index in pairs(borders.borders) do
+        if type(index) == "number" and index >= 1 and index == floor(index) then borders.borders[index] = nil end
+      end
+    end
     local written, left = mergeInto(profile, f.values)
     Core:DBTable("preset", "fragments", presetName)[key] = f.version
     return record(presetName, index, "written", mode .. ": " .. written .. " values, " .. left .. " left out", key)
@@ -549,14 +563,21 @@ Core:On("ADDON_LOADED", function(_, loaded)
   onAddonLoaded(loaded)
 end)
 
-Core:On("PLAYER_ENTERING_WORLD", function()
+local function flushRootFragments(sexyMapOnly)
   local due = waitingWorld
   waitingWorld = {}
   local keys = Core.PlayerKeys() or (request and request.keys)
   for _, item in ipairs(due) do
-    if keys then writeFragment(item[1], item[2], item[3], keys, item[4] or "fresh")
+    if sexyMapOnly and item[3].savedVariable ~= "SexyMap2DB" then
+      waitingWorld[#waitingWorld + 1] = item
+    elseif keys then writeFragment(item[1], item[2], item[3], keys, item[4] or "fresh")
     else record(item[1], item[2], "skipped", "player key unknown") end
   end
+end
+
+Core:On("PLAYER_LOGIN", function() flushRootFragments(true) end)
+Core:On("PLAYER_ENTERING_WORLD", function()
+  flushRootFragments(false)
   if not worldSeen then
     worldSeen = true
     if request then
@@ -573,6 +594,7 @@ Core:On("PLAYER_ENTERING_WORLD", function()
       end
       for _, line in ipairs(lines) do Core.Profiles:Print(line) end
       Core:DBTable("preset").unfinished = nil
+      appliedRequest = request.name
       request = nil
     else
       local db = Core:DBTable("preset")

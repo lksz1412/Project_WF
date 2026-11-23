@@ -44,6 +44,7 @@ local Tex = {}
 Tex.__index = Tex
 local nop = function() end
 for _, k in ipairs({"ClearAllPoints", "SetPoint", "SetSize", "SetTexCoord", "SetVertexColor", "SetAlpha"}) do Tex[k] = nop end
+function Tex:SetTexCoord(...) self.coords = {...} end
 function Tex:Show() self.shown = true end
 function Tex:Hide() self.shown = false end
 function Tex:SetTexture(path)
@@ -67,7 +68,7 @@ function InCombatLockdown() return false end
 TEST_known = {}
 C_UIFileAsset = {IsKnownFile = function(path) return TEST_known[path] == true end}
 TEST_preset, TEST_theme = "fhd", "devil"
-local ys = {aux = -400, chat1 = -600, status = -850, chat3 = -600}
+local ys = {aux = -400, chat1 = -600, status = -850, chat3 = -600, upper = -500}
 DevilForever_Core = {
   Presets = {GetActive = function() return TEST_preset end},
   Theme = {GetSet = function() return TEST_theme end, ListTokens = function() return {} end,
@@ -76,7 +77,8 @@ DevilForever_Core = {
           Get = function(_, key)
             local name = key:match("%.(.*)")
             return {position = {relativeTo = "DevilForever_AppearanceRoot", point = "TOPLEFT", relativePoint = "TOPLEFT",
-                                x = 0, y = ys[name] or -650}, size = {width = 500, height = 50}}
+                                 x = name == "upper" and 50 or 0, y = ys[name] or -650},
+                     size = {width = name == "upper" and 400 or 500, height = 50}}
           end},
 }
 TEST_frames = setmetatable({}, {__index = function(t, k)
@@ -151,7 +153,7 @@ def every_theme_paints_reviewed_deck_from_shipped_files():
         for preset in PRESETS:
             requested, active, shown = apply(lua, theme, preset)
             deck = surface(theme, preset, "deck" if theme == "devil" else "deck_reviewed")
-            eq(requested, [surface(theme, preset, "top"), deck], "%s %s surfaces" % (theme, preset))
+            eq(requested, [surface(theme, preset, "top")] * 9 + [deck], "%s %s surfaces" % (theme, preset))
             eq(all(p in SHIPPED for p in requested), True, "%s %s: only shipped files requested" % (theme, preset))
             eq((active, shown), (True, True), "%s %s composition shown" % (theme, preset))
 
@@ -179,7 +181,7 @@ def failed_texture_without_lookup_api_keeps_shell():
     lua = session(api=False)
     lua.globals().TEST_fail[surface("orc", "fhd", "deck_reviewed")] = True
     requested, active, shown = apply(lua, "orc", "fhd")
-    eq(requested, [surface("orc", "fhd", "top"), surface("orc", "fhd", "deck_reviewed")],
+    eq(requested, [surface("orc", "fhd", "top")] * 9 + [surface("orc", "fhd", "deck_reviewed")],
        "one attempt, no _deck.tga of the race or its family")
     eq((active, shown), (False, False), "composition hidden: individual shell")
 
@@ -190,6 +192,36 @@ def without_lookup_api_still_only_shipped_names():
     for theme in THEMES:
         requested, _active, _shown = apply(lua, theme, "uhd")
         eq(all(p in SHIPPED for p in requested), True, "%s: shipped names without IsKnownFile" % theme)
+
+
+@case
+def calibrated_slices_remove_aux_and_keep_theme_lips():
+    lua = session()
+    vertical = set()
+    for theme in THEMES:
+        for preset in PRESETS:
+            apply(lua, theme, preset)
+            pieces = lua.globals().DevilForever_Composition.topPieces
+            eq(len(pieces), 9, "%s nine slices" % theme)
+            center = pieces[5].coords
+            eq(0 < center[1] < center[2] < 1, True, theme)
+            eq(0 < center[3] < center[4] < 1, True, theme)
+            vertical.add((center[3], center[4]))
+            if theme in ("devil", "horde", "alliance"):
+                eq(center[1], 0.5, "%s aux-free source" % theme)
+    eq(len(vertical) > 10, True, "measured lips differ between actual theme/resolution inputs")
+
+
+@case
+def invalid_upper_geometry_retains_individual_shell():
+    for change in ("item.position=nil", "item.size=nil", "item.position.relativeTo='UIParent'",
+                   "item.position.x=-1", "item.position.x=450", "item.position.y=-610",
+                   "item.size.width=100"):
+        lua = session()
+        lua.execute("local original=DevilForever_Core.Edit.Get; DevilForever_Core.Edit.Get=function(self,key) "
+                    "local item=original(self,key); if key=='appearance.upper' then " + change + " end; return item end")
+        requested, active, shown = apply(lua, "devil", "fhd")
+        eq((requested, active, shown), ([], False, False), change)
 
 
 def main():

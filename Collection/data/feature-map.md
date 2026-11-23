@@ -19,7 +19,7 @@ Devil Forever
 | 기능 | 담당 | 적용 경로 |
 |---|---|---|
 | 해상도와 초기 배치 | `!DevilForever_Core` | 최초 사용 시 화면에 맞는 프리셋 선택. `/dfp status`에서 활성 프리셋 확인. `/dfp preset <이름>`으로 배치 복원 예약 |
-| 테마와 공통 패널 | `DevilForever_Appearance` | `/dfp theme <이름>`. 단축바와 하단 채팅·미니맵 외곽에 설치 이미지 적용 |
+| 테마와 공통 패널 | `DevilForever_Appearance` | `/dfp theme <번호>`. 기본값은 `0` 데빌이며 단축바와 하단 채팅·미니맵 외곽에 선택한 그림 적용 |
 | 설정 관리 | `!DevilForever_Core` · `ProfileManager` | Core의 등록 범위는 `/dfp save`·`restore`. 키와 게임 설정은 ProfileManager 경로를 호출하는 `/dfp keys`·`/dfp game` |
 
 ## 하단 조작

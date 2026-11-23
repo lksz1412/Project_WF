@@ -96,7 +96,7 @@ def module_ids(lua_files):
 
 def defaults_spec():
     lua = lua51.LuaRuntime(unpack_returned_tuples=True)
-    lua.execute("TEST_cap = {}; DevilForever_Core = {Defaults = {Register = function(self, folder, spec) "
+    lua.execute("TEST_cap = {}; DevilForever_Core = {On = function() end, Defaults = {Register = function(self, folder, spec) "
                 "TEST_cap.folder = folder; TEST_cap.spec = spec end}}")
     chunk = lua.globals().loadstring(open(DEFAULTS, "rb").read(), b"@Defaults/PitBull4.lua")
     fn, err = chunk if isinstance(chunk, tuple) else (chunk, None)
