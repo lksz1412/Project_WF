@@ -1142,8 +1142,8 @@ def grid2_defaults_existing_profile_kept():
        {"Grid2DB": "existing-profile-kept", "Grid2DB/Grid2Layout": "existing-profile-kept"}, "both kept")
 
 
-PB4_UNITS_ON = sorted(["플레이어", "대상", "대상의 대상", "대상의 대상의 대상", "대상의 소환수", "주시 대상", "주시 대상의 대상",
-                       "플레이어의 소환수"])
+PB4_UNITS_ON = sorted(["플레이어", "대상", "대상의 대상", "대상의 대상의 대상", "주시 대상", "주시 대상의 대상",
+                       "주시 대상의 대상의 대상", "플레이어의 소환수", "플레이어의 소환수의 대상", "플레이어의 소환수의 대상의 대상"])
 
 
 @case

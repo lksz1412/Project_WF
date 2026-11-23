@@ -454,15 +454,17 @@ if type(baseline) ~= "number" or baseline <= 0 then DevilForever_Core:Log("skip"
 local proposal = {profile = {units = {
   ["플레이어"] = {anchor="TOPLEFT", relative_point="TOPLEFT", relative_to="0", position_x=878*pixel, position_y=-1414*pixel, scale=1, size_x=512/512, size_y=144/144, font_multiplier=1},
   ["대상"] = {anchor="TOPRIGHT", relative_point="TOPRIGHT", relative_to="0", position_x=-878*pixel, position_y=-1414*pixel, scale=1, size_x=512/512, size_y=144/144, font_multiplier=1},
-  ["주시 대상"] = {anchor="TOPRIGHT", relative_point="TOPRIGHT", relative_to="0", position_x=-1034*pixel, position_y=-1244*pixel, scale=1, size_x=1, size_y=1, font_multiplier=1, layout="소환수와 주시", dfCompanion=true},
-  ["플레이어의 소환수"] = {anchor="TOPLEFT", relative_point="TOPLEFT", relative_to="0", position_x=1034*pixel, position_y=-1244*pixel, scale=1, size_x=1, size_y=1, font_multiplier=1, layout="소환수와 주시", dfCompanion=true},
+  ["주시 대상"] = {anchor="TOPRIGHT", relative_point="TOPRIGHT", relative_to="0", position_x=-1034*pixel, position_y=-1189*pixel, scale=1, size_x=1, size_y=1, font_multiplier=1, layout="소환수와 주시", dfCompanion=true},
+  ["플레이어의 소환수"] = {anchor="TOPLEFT", relative_point="TOPLEFT", relative_to="0", position_x=1034*pixel, position_y=-1189*pixel, scale=1, size_x=1, size_y=1, font_multiplier=1, layout="소환수와 주시", dfCompanion=true},
   ["대상의 대상"] = {anchor="TOPLEFT", relative_point="TOPRIGHT", relative_to="0", position_x=-1390*pixel, position_y=-1568*pixel, scale=1, size_x=251/190, size_y=58/36, font_multiplier=1},
-  ["대상의 소환수"] = {anchor="TOPRIGHT", relative_point="TOPRIGHT", relative_to="0", position_x=-1398*pixel, position_y=-1474*pixel, scale=1, size_x=190/190, size_y=36/36, font_multiplier=1},
+  ["대상의 소환수"] = {enabled=false,anchor="TOPRIGHT", relative_point="TOPRIGHT", relative_to="0", position_x=-1398*pixel, position_y=-1474*pixel, scale=1, size_x=190/190, size_y=36/36, font_multiplier=1},
   ["대상의 대상의 대상"] = {anchor="TOPRIGHT", relative_point="TOPRIGHT", relative_to="0", position_x=-878*pixel, position_y=-1568*pixel, scale=1, size_x=251/190, size_y=58/36, font_multiplier=1},
-  ["주시 대상의 대상"] = {anchor="TOPRIGHT", relative_point="TOPRIGHT", relative_to="0", position_x=-1398*pixel, position_y=-1244*pixel, scale=1, size_x=251/190, size_y=58/36, font_multiplier=1},
-  ["플레이어의 소환수의 대상"] = {anchor="TOPLEFT", relative_point="TOPLEFT", relative_to="0", position_x=1398*pixel, position_y=-1244*pixel, scale=1, size_x=251/190, size_y=58/36, font_multiplier=1},
+  ["주시 대상의 대상"] = {enabled=true,unit="focustarget",layout="소환수와 주시 아래",dfCompanionChain=true,anchor="TOPRIGHT",relative_point="TOPRIGHT",relative_to="0",position_x=-1034*pixel,position_y=-1309*pixel,scale=1,size_x=1,size_y=1,font_multiplier=1},
+  ["플레이어의 소환수의 대상"] = {enabled=true,unit="pettarget",layout="소환수와 주시 아래",dfCompanionChain=true,anchor="TOPLEFT",relative_point="TOPLEFT",relative_to="0",position_x=1034*pixel,position_y=-1309*pixel,scale=1,size_x=1,size_y=1,font_multiplier=1},
   ["플레이어 아래 대상"] = {anchor="TOPLEFT", relative_point="TOPLEFT", relative_to="0", position_x=878*pixel, position_y=-1568*pixel, scale=1, size_x=251/190, size_y=58/36, font_multiplier=1, enabled=true, unit="target", layout="대상의대상"},
   ["플레이어 아래 대상의 대상"] = {anchor="TOPLEFT", relative_point="TOPLEFT", relative_to="0", position_x=1139*pixel, position_y=-1568*pixel, scale=1, size_x=251/190, size_y=58/36, font_multiplier=1, enabled=true, unit="targettarget", layout="대상의대상"},
+  ["플레이어의 소환수의 대상의 대상"] = {enabled=true,unit="pettargettarget",layout="소환수와 주시 아래",dfCompanionChain=true,anchor="TOPLEFT",relative_point="TOPLEFT",relative_to="0",position_x=1217*pixel,position_y=-1309*pixel,scale=1,size_x=1,size_y=1,font_multiplier=1},
+  ["주시 대상의 대상의 대상"] = {enabled=true,unit="focustargettarget",layout="소환수와 주시 아래",dfCompanionChain=true,anchor="TOPRIGHT",relative_point="TOPRIGHT",relative_to="0",position_x=-1217*pixel,position_y=-1309*pixel,scale=1,size_x=1,size_y=1,font_multiplier=1},
 }, groups = {
   ["파티"]={enabled=true,exists=true,unit_group="party",dfPartyRole="party",layout="데빌 파티",include_player=false,units_per_column=4,sort_method="INDEX",sort_direction="ASC",group_by=false,group_filter=false,show_when={solo=false,party=true,raid=false,raid10=false,raid15=false,raid20=false,raid25=false,raid30=false,raid40=false},anchor="TOPLEFT",relative_point="TOPLEFT",relative_to="0",position_x=52*pixel,position_y=-92*pixel,scale=1,size_x=400/400,size_y=96/96,direction="down_right",vertical_spacing=54,horizontal_spacing=8},
   ["파티원 대상"]={enabled=true,exists=true,unit_group="partytarget",dfPartyRole="partytarget",layout="대상의대상",include_player=false,units_per_column=4,sort_method="INDEX",sort_direction="ASC",group_by=false,group_filter=false,show_when={solo=false,party=true,raid=false,raid10=false,raid15=false,raid20=false,raid25=false,raid30=false,raid40=false},anchor="TOPLEFT",relative_point="TOPLEFT",relative_to="0",position_x=460*pixel,position_y=-92*pixel,scale=1,size_x=200/190,size_y=42/36,direction="down_right",vertical_spacing=108,horizontal_spacing=8},
@@ -571,6 +573,17 @@ local companionTexts = proposal.namespaces.LuaTexts.layouts["소환수와 주시
 companionTexts["Lua:시전"], companionTexts["Lua:시전시간"] = nil, nil
 proposal.namespaces.Aura.layouts["소환수와 주시"] = DevilForever_Core.CopyTable(proposal.namespaces.Aura.layouts["데빌 파티"])
 proposal.namespaces.CastBar.layouts["소환수와 주시"] = {enabled=false}
+proposal.profile.layouts["소환수와 주시 아래"] = DevilForever_Core.CopyTable(proposal.profile.layouts["대상의대상"])
+local chainLayout = proposal.profile.layouts["소환수와 주시 아래"]
+chainLayout.exists, chainLayout.size_x, chainLayout.size_y = true, 173, 45
+chainLayout.font_size = chainLayout.font_size * 45/58
+for _, namespace in ipairs({"Border", "LuaTexts"}) do
+  proposal.namespaces[namespace].layouts["소환수와 주시 아래"] = DevilForever_Core.CopyTable(proposal.namespaces[namespace].layouts["대상의대상"])
+end
+proposal.namespaces.Border.layouts["소환수와 주시 아래"].size = math.max(1, math.floor(proposal.namespaces.Border.layouts["대상의대상"].size * 45/58 + .5))
+proposal.namespaces.Portrait.layouts["소환수와 주시 아래"] = {enabled=false}
+proposal.namespaces.Aura.layouts["소환수와 주시 아래"] = {enabled=false}
+proposal.namespaces.CastBar.layouts["소환수와 주시 아래"] = {enabled=false}
 proposal.profile.dfAuraGeometry = {
   ["플레이어"]={avoid_frame="PitBull4_Frames_플레이어의 소환수",side="left",width=148,size_ratio=.7},
   ["대상"]={avoid_frame="PitBull4_Frames_주시 대상",side="right",width=148,size_ratio=.7},
@@ -606,6 +619,12 @@ return proposal
     for _, name in ipairs({"파티", "파티원 대상", "파티원 대상의 대상"}) do addedGroups[name] = proposal.profile.groups[name] end
     def.fragments[#def.fragments + 1] = {folder="PitBull4",savedVariable="PitBull4DB",addonVersion="v4.2.50-forever.1",
       version=3,section="profile",profile="Default",values={groups=addedGroups}}
+    local companionChains = {}
+    for _, name in ipairs({"플레이어의 소환수의 대상", "플레이어의 소환수의 대상의 대상", "주시 대상의 대상", "주시 대상의 대상의 대상"}) do
+      companionChains[name] = proposal.profile.units[name]
+    end
+    def.fragments[#def.fragments + 1] = {folder="PitBull4",savedVariable="PitBull4DB",addonVersion="v4.2.50-forever.1",
+      version=4,section="profile",profile="Default",values={units=companionChains}}
     for _, namespace in ipairs({"Portrait", "Border", "Aura", "LuaTexts", "CastBar"}) do
       def.fragments[#def.fragments + 1] = {folder="PitBull4",savedVariable="PitBull4DB",addonVersion="v4.2.50-forever.1",
         version=1,section="profile",profile="Default",namespace=namespace,values=proposal.namespaces[namespace]}
@@ -614,7 +633,7 @@ return proposal
     for module, weight in pairs({HealthBar = 2.2, PowerBar = 1.8}) do
       def.fragments[#def.fragments + 1] = {folder = "PitBull4", savedVariable = "PitBull4DB",
         addonVersion = "v4.2.50-forever.1", version = 1, section = "profile", profile = "Default",
-        namespace = module, values = {layouts = {["보통"] = {size = weight,position = module == "HealthBar" and 1 or 2}, ["대상"] = {size = weight,position = module == "HealthBar" and 1 or 2}, ["데빌 파티"] = proposal.namespaces[module].layouts["데빌 파티"], ["소환수와 주시"] = {size = weight,position = module == "HealthBar" and 1 or 2}}}}
+        namespace = module, values = {layouts = {["보통"] = {size = weight,position = module == "HealthBar" and 1 or 2}, ["대상"] = {size = weight,position = module == "HealthBar" and 1 or 2}, ["데빌 파티"] = proposal.namespaces[module].layouts["데빌 파티"], ["소환수와 주시"] = {size = weight,position = module == "HealthBar" and 1 or 2}, ["소환수와 주시 아래"] = {enabled = module == "HealthBar",size = weight,position = module == "HealthBar" and 1 or 2}}}}
     end
   elseif not ok then
     DevilForever_Core:Log("skip", "Preset:uhd", "pitbull4-profile.uhd.fragment.lua: " .. tostring(proposal))

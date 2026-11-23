@@ -96,9 +96,9 @@ local targets = {
           layout = "대상의대상",
           unit = "targettargettarget",
         },
-        -- the target's pet; shown only while it exists (singleton unit watch)
+        -- Optional target-pet classification; the package leaves it disabled.
         ["대상의 소환수"] = {
-          enabled = true,
+          enabled = false,
           layout = "대상의대상",
           unit = "targetpet",
         },
@@ -113,6 +113,7 @@ local targets = {
           unit = "focustarget",
         },
         ["주시 대상의 대상의 대상"] = {
+          enabled = true,
           layout = "대상의대상",
           unit = "focustargettarget",
         },
@@ -126,7 +127,13 @@ local targets = {
           layout = "파티",
           unit = "pet",
         },
+        ["플레이어의 소환수의 대상의 대상"] = {
+          enabled = true,
+          layout = "대상의대상",
+          unit = "pettargettarget",
+        },
         ["플레이어의 소환수의 대상"] = {
+          enabled = true,
           layout = "대상의대상",
           unit = "pettarget",
         },
@@ -531,6 +538,7 @@ local unitLayouts = {
   ["플레이어 아래 대상"] = "대상의대상", ["플레이어 아래 대상의 대상"] = "대상의대상",
   ["대상의 대상의 대상"] = "대상의대상", ["주시 대상의 대상"] = "대상의대상",
   ["플레이어의 소환수의 대상"] = "대상의대상",
+  ["플레이어의 소환수의 대상의 대상"] = "대상의대상", ["주시 대상의 대상의 대상"] = "대상의대상",
 }
 local groupLayouts = {["파티"] = "파티", ["파티원 대상"] = "대상의대상", ["파티원 소환수"] = "대상의대상", ["파티원 대상의 대상"] = "대상의대상"}
 local function geometry(values, fields)
@@ -559,6 +567,9 @@ local function applyScale()
       local layout = kind == "units" and unitLayouts[name] or kind == "groups" and groupLayouts[name]
       if kind == "units" and (name == "주시 대상" or name == "플레이어의 소환수")
           and values and values.dfCompanion == true then layout = "소환수와 주시" end
+      if kind == "units" and values and values.dfCompanionChain == true
+          and (name == "플레이어의 소환수의 대상" or name == "플레이어의 소환수의 대상의 대상"
+            or name == "주시 대상의 대상" or name == "주시 대상의 대상의 대상") then layout = "소환수와 주시 아래" end
       if kind == "groups" and name == "파티" and values and values.dfPartyRole == "party" then layout = "데빌 파티" end
       if geometry(values, fields) ~= signature or (layout and values.layout ~= layout) then
         profile.dfGeometry, profile.dfPixel = nil, nil

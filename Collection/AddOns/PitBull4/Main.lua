@@ -109,6 +109,7 @@ local SINGLETON_CLASSIFICATIONS = {
 	"player",
 	"pet",
 	"pettarget",
+	"pettargettarget",
 	"target",
 	"targettarget",
 	"targettargettarget",

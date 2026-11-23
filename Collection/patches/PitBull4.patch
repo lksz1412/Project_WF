@@ -784,7 +784,7 @@ diff -u a/PitBull4/Localization/koKR.lua b/PitBull4/Localization/koKR.lua
 diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
 --- a/PitBull4/Main.lua
 +++ b/PitBull4/Main.lua
-@@ -1,13 +1,109 @@
+@@ -1,21 +1,119 @@
  -- Constants ----------------------------------------------------------------
  local _G = _G
 +local _, namespace = ...
@@ -897,7 +897,9 @@ diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
  
  local SINGLETON_CLASSIFICATIONS = {
  	"player",
-@@ -16,6 +112,7 @@
+ 	"pet",
+ 	"pettarget",
++	"pettargettarget",
  	"target",
  	"targettarget",
  	"targettargettarget",
@@ -905,7 +907,7 @@ diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
  	"focus",
  	"focustarget",
  	"focustargettarget",
-@@ -355,7 +452,7 @@
+@@ -355,7 +453,7 @@
  local DEBUG = PitBull4.DEBUG
  local expect = PitBull4.expect
  
@@ -914,7 +916,7 @@ diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
  if PitBull4.version:match("@") then
  	PitBull4.version = "Development"
  end
-@@ -363,6 +460,8 @@
+@@ -363,6 +461,8 @@
  PitBull4.wow_retail = wow_retail
  PitBull4.wow_classic = wow_classic
  PitBull4.wow_expansion = wow_expansion
@@ -923,7 +925,7 @@ diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
  
  PitBull4.L = L
  
-@@ -496,11 +595,12 @@
+@@ -496,11 +596,12 @@
  PitBull4.frames_to_anchor = frames_to_anchor
  
  local function get_best_unit(guid)
@@ -937,7 +939,7 @@ diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
  	if not guid_to_unit_ids__guid then
  		return nil
  	end
-@@ -510,35 +610,42 @@
+@@ -510,35 +611,42 @@
  PitBull4.get_best_unit = get_best_unit
  
  local function refresh_guid(unit,new_guid)
@@ -990,7 +992,7 @@ diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
  			frame:UpdateBestUnit()
  		end
  	end
-@@ -843,11 +950,12 @@
+@@ -843,11 +951,12 @@
  end
  
  local function guid_iter(guid, frame)
@@ -1004,7 +1006,7 @@ diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
  		return frame
  	end
  	return guid_iter(guid, frame)
-@@ -860,6 +968,7 @@
+@@ -860,6 +969,7 @@
  -- end
  -- @return iterator which returns frames
  function PitBull4:IterateFramesForGUID(guid)
@@ -1012,7 +1014,7 @@ diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
  	if DEBUG then
  		expect(guid, 'typeof', 'string;nil')
  	end
-@@ -877,7 +986,8 @@
+@@ -877,7 +987,8 @@
  		del(guids)
  		return nil
  	end
@@ -1022,7 +1024,7 @@ diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
  		return frame
  	end
  	return guids_iter(guids, frame)
-@@ -897,8 +1007,9 @@
+@@ -897,8 +1008,9 @@
  			expect(guid, 'typeof', 'string;nil')
  		end
  
@@ -1033,7 +1035,7 @@ diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
  		end
  	end
  
-@@ -1288,8 +1399,6 @@
+@@ -1288,8 +1400,6 @@
  	db.RegisterCallback(self, "OnNewProfile")
  	db.RegisterCallback(self, "OnProfileCopied", "OnProfileChanged")
  
@@ -1042,7 +1044,7 @@ diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
  	self.DEFAULT_COLORS = CopyTable(DATABASE_DEFAULTS.profile.colors.power)
  	DATABASE_DEFAULTS = nil
  
-@@ -1338,6 +1447,9 @@
+@@ -1338,6 +1448,9 @@
  	if oRA3 then
  		oRA3.RegisterCallback(self, "OnTanksUpdated")
  	end
@@ -1052,7 +1054,7 @@ diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
  end
  
  do
-@@ -1352,7 +1464,7 @@
+@@ -1352,7 +1465,7 @@
  
  	local function iter(num_addons, i)
  		i = i + 1
@@ -1061,7 +1063,7 @@ diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
  			-- and we're done
  			return nil
  		end
-@@ -1671,9 +1783,75 @@
+@@ -1671,9 +1784,75 @@
  local timerFrame = CreateFrame("Frame")
  timerFrame:Hide()
  
@@ -1137,7 +1139,7 @@ diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
  	-- register unit change events
  	self:RegisterEvent("PLAYER_TARGET_CHANGED")
  	self:RegisterEvent("PLAYER_FOCUS_CHANGED")
-@@ -1774,7 +1952,19 @@
+@@ -1774,7 +1953,19 @@
  		-- for ids such as npctarget
  		return
  	end
@@ -1158,7 +1160,7 @@ diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
  	refresh_guid(unit,guid)
  
  	-- If there is no guid then we want to disallow upating the frame
-@@ -1809,6 +1999,7 @@
+@@ -1809,6 +2000,7 @@
  	self:CheckGUIDForUnitID("target")
  	self:CheckGUIDForUnitID("targettarget")
  	self:CheckGUIDForUnitID("targettargettarget")
@@ -1166,7 +1168,7 @@ diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
  end
  
  function PitBull4:UNIT_TARGET(_, unit)
-@@ -1987,6 +2178,8 @@
+@@ -1987,6 +2179,8 @@
  
  function PitBull4:PLAYER_ENTERING_WORLD()
  	self.leaving_world = nil

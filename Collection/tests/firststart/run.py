@@ -784,7 +784,8 @@ def pitbull4_preset_positions_only_into_existing_units():
     fresh = pb4_preset_session()
     units = fresh.sv("PitBull4DB")["profiles"]["Default"]["units"]
     eq(round(units["대상의 소환수"]["position_x"], 2), round(-703 * PIXEL_FACTOR / UI_SCALE, 2),
-       "fresh install: the new unit gets its preset position")
+       "fresh install: disabled targetpet keeps its optional geometry")
+    eq(units["대상의 소환수"]["enabled"], False, "fresh targetpet is disabled without removing its classification")
     saved = {"PitBull4DB": {"profileKeys": {"Hero - Realm": "Default"},
                             "profiles": {"Default": {"units": {"대상": {"unit": "target", "enabled": True}}}}}}
     saved["PitBull4DB"]["namespaces"] = {"LuaTexts": {"profiles": {"Default": {"layouts": {
@@ -797,8 +798,8 @@ def pitbull4_preset_positions_only_into_existing_units():
     nxt = {n: first.sv(n) for n in ("PitBull4DB", "DevilForever_CoreDB", "DevilForever_ProfilesDB")}
     s = pb4_preset_session(saved=nxt)
     units = s.sv("PitBull4DB")["profiles"]["Default"]["units"]
-    eq(sorted(units), sorted(["대상", "플레이어 아래 대상", "플레이어 아래 대상의 대상"]),
-       "/dfp preset adds exactly two complete singleton rows; no position-only unit entries")
+    eq(sorted(units), sorted(["대상", "플레이어 아래 대상", "플레이어 아래 대상의 대상", "플레이어의 소환수의 대상", "플레이어의 소환수의 대상의 대상", "주시 대상의 대상", "주시 대상의 대상의 대상"]),
+       "explicit preset adds the two lower rows and four complete companion chains")
     for name, unit in (("플레이어 아래 대상", "target"), ("플레이어 아래 대상의 대상", "targettarget")):
         eq((units[name]["unit"], units[name]["enabled"], units[name]["layout"]),
            (unit, True, "대상의대상"), "new singleton has native identity and layout")
@@ -806,7 +807,7 @@ def pitbull4_preset_positions_only_into_existing_units():
     eq(all(name in fresh_units for name in ("플레이어 아래 대상", "플레이어 아래 대상의 대상")), True,
        "fresh receipt v1 then v2 creates both rows")
     receipt = fresh.sv("DevilForever_CoreDB")["preset"]["fragments"]["fhd"]
-    eq(receipt["PitBull4DB@profile:Default"], 3, "complete-party fragment follows unit v2 with version3 receipt")
+    eq(receipt["PitBull4DB@profile:Default"], 4, "complete companion-chain fragment owns version4 receipt")
     unchanged = pb4_preset_session(saved=carry(s))
     eq(unchanged.sv("PitBull4DB"), s.sv("PitBull4DB"), "plain reload keeps completed profile")
     eq("position_x" in units["대상"], True, "the existing unit gets its position")
@@ -852,6 +853,48 @@ def pitbull4_managed_party_roles_follow_owner_and_old_pet_stays_hidden():
         eq((groups[name]["unit_group"], groups[name]["include_player"], groups[name]["show_when"]["party"]),
            (role, False, True), "four companions, not self, native party only")
     eq(first.errors()+s.errors()+fixed.errors()+applied.errors(), [], "no errors")
+
+
+@case
+def companion_chains_explicit_upgrade_keeps_existing_profile():
+    previous = pb4_preset_session()
+    saved = carry(previous)
+    profile = saved["PitBull4DB"]["profiles"]["Default"]
+    units = profile["units"]
+    # The earlier managed profile has only the two first descendants and no pettargettarget row.
+    units.pop("플레이어의 소환수의 대상의 대상")
+    units["주시 대상의 대상의 대상"] = {"unit": "focustargettarget", "layout": "대상의대상"}
+    pixel = PIXEL_FACTOR / UI_SCALE
+    for label, point in (("플레이어의 소환수의 대상", "TOPLEFT"), ("주시 대상의 대상", "TOPRIGHT")):
+        units[label] = {"unit": "pettarget" if point == "TOPLEFT" else "focustarget", "layout": "대상의대상",
+                        "enabled": point == "TOPRIGHT", "anchor": point, "relative_point": point, "relative_to": "0",
+                        "position_x": (703 if point == "TOPLEFT" else -703)*pixel, "position_y": -546*pixel,
+                        "scale": 1, "size_x": 123/160, "size_y": 29/28, "font_multiplier": 1}
+    for label in ("플레이어의 소환수", "주시 대상"):
+        units[label]["position_y"] = -546*pixel
+    units["대상의 소환수"]["enabled"] = True
+    profile["layouts"].pop("소환수와 주시 아래")
+    profile["dfGeometry"]["layouts"].pop("소환수와 주시 아래")
+    for label in ("플레이어의 소환수의 대상", "플레이어의 소환수의 대상의 대상", "주시 대상의 대상", "주시 대상의 대상의 대상"):
+        profile["dfGeometry"]["units"].pop(label, None)
+    for namespace in saved["PitBull4DB"]["namespaces"].values():
+        namespace["profiles"]["Default"].get("layouts", {}).pop("소환수와 주시 아래", None)
+    saved["DevilForever_CoreDB"]["preset"]["fragments"]["fhd"]["PitBull4DB@profile:Default"] = 3
+    units["Custom unit"] = {"unit": "target", "layout": "Custom layout", "enabled": False}
+    plain = pb4_preset_session(saved=saved)
+    eq(plain.sv("PitBull4DB"), saved["PitBull4DB"], "unrequested existing profile is preserved")
+    core["dfp"](plain, "preset fhd"); core["dfp"](plain, "go")
+    upgraded = pb4_preset_session(saved=carry(plain))
+    units = upgraded.sv("PitBull4DB")["profiles"]["Default"]["units"]
+    names = ("플레이어의 소환수의 대상", "플레이어의 소환수의 대상의 대상", "주시 대상의 대상", "주시 대상의 대상의 대상")
+    for name, unit in zip(names, ("pettarget", "pettargettarget", "focustarget", "focustargettarget")):
+        eq((units[name]["enabled"], units[name]["unit"], units[name]["layout"]), (True, unit, "소환수와 주시 아래"), "explicit four complete native rows")
+    eq(units["대상의 소환수"]["enabled"], False, "explicit preset suppresses existing targetpet")
+    eq(units["Custom unit"], saved["PitBull4DB"]["profiles"]["Default"]["units"]["Custom unit"], "custom unit preserved")
+    eq(any(u.get("unit", "").startswith("focuspet") for u in units.values()), False, "no focus pet rows added")
+    restored = pb4_preset_session(saved=carry(upgraded))
+    eq(restored.sv("PitBull4DB"), upgraded.sv("PitBull4DB"), "plain reload keeps completed chain profile")
+    eq(previous.errors()+plain.errors()+upgraded.errors()+restored.errors(), [], "no errors")
 
 
 GRID2_OPTIONS = os.path.join(ADDONS, "Grid2Options")
