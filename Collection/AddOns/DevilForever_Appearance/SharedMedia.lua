@@ -11,6 +11,8 @@ local function register()
     media:Register("background", title, Core.Theme:GetFromSet(name, "texture.panel"))
     media:Register("font", title, Core.Theme:GetFromSet(name, "font.normal"), 143)
   end
+  media:Register("statusbar", "Devil Forever PitBull Glamour7", [[Interface\AddOns\DevilForever_Appearance\Media\PitBull\Glamour7.tga]])
+  media:Register("border", "Devil Forever PitBull Devil", [[Interface\AddOns\DevilForever_Appearance\Media\PitBull\Devil.tga]])
   registered = true
 end
 local events = CreateFrame("Frame")

@@ -357,6 +357,93 @@ def luatexts_forever_classification_cached():
     RESULTS.append("luatexts shown (restricted): %r" % list(shown.values()))
 
 
+@case
+def luatexts_regional_surname_and_restricted_native_sink():
+    if not NEW:
+        return
+    L = runtime()
+    L.execute(LT_STUBS)
+    L.execute(r"""
+      LT.mouseover_check_cache={};LT.spell_cast_cache={};LT.power_cache={};LT.hp_cache={}
+      LT.cast_data={};LT.afk_cache={};LT.dnd_cache={};LT.offline_cache={};LT.dead_cache={}
+      LT.offline_times={};LT.afk_times={};LT.dnd={};LT.dead_times={}
+      PitBull4.L=setmetatable({}, {__index=function(_,k) return k end})
+      SECRET={}
+      function accessible(v) return not SECRET[v] end
+      PitBull4.Compat.IsValueAccessible=accessible
+      PitBull4.Compat.Spell={GetSpellName=function(id) return tostring(id) end}
+      PitBull4.Utils={IsValueAccessible=accessible,
+        SafeBoolean=function(v,d) if not accessible(v) or v==nil then return d end return not not v end}
+      TEST_name,TEST_surname,TEST_regional,TEST_player='Hero','Surname',true,true
+      function UnitName(unit) return TEST_name,TEST_surname end
+      function UnitExists() return true end
+      function UnitIsPlayer() return TEST_player end
+      function UnitInPartyIsAI() return false end
+      function UnitIsUnit() return false end
+      function RegionalUniqueNamesEnabled() return TEST_regional end
+      FULL_PLAYER_NAME='%s-%s';UNIT_TYPE_LEVEL_TEMPLATE='%d %s'
+      LFG_FOLLOWER_NAME_PREFIX='Follower %s'
+      DAY_ONELETTER_ABBR,HOUR_ONELETTER_ABBR,MINUTE_ONELETTER_ABBR,SECOND_ONELETTER_ABBR='%d d','%d h','%d m','%d s'
+      DAYS_ABBR,HOURS_ABBR,MINUTES_ABBR,SECONDS_ABBR='%d days','%d hours','%d minutes','%d seconds'
+      function GetLocale() return 'enUS' end
+      Enum={PowerType=setmetatable({}, {__index=function(t,k) rawset(t,k,100+#t);t[#t+1]=k;return rawget(t,k) end})}
+    """)
+    load(L, 'Modules/LuaTexts/ScriptEnv.lua')
+    load(L, 'Modules/LuaTexts/Forever.lua')
+    L.execute(r"""
+      local Name=LT.ScriptEnv.Name
+      assert(Name('target')=='Hero Surname' and Name('target',true)=='Hero Surname')
+      TEST_name='Hero Surname';assert(Name('target')=='Hero Surname')
+      TEST_name='Hero';TEST_surname='';assert(Name('target')=='Hero')
+      TEST_surname=nil;assert(Name('target')=='Hero')
+      TEST_surname='Realm';TEST_regional=false
+      assert(Name('target')=='Hero' and Name('target',true)=='Hero-Realm')
+      TEST_regional=true;PitBull4.Compat.IsForever=false
+      assert(Name('target')=='Hero' and Name('target',true)=='Hero-Realm')
+      PitBull4.Compat.IsForever=true;TEST_player=false
+      assert(Name('target')=='Hero' and Name('target',true)=='Hero-Realm')
+      TEST_surname=nil;TEST_name='Long NPC Name';assert(Name('target')=='Long NPC Name')
+      TEST_name='Cart';assert(Name('vehicle')=="Cart's Cart")
+      TEST_player=true;TEST_name='Hero';TEST_surname='Surname'
+      Constants={CharacterNameSeparatorConsts={CHARACTERNAME_SURNAME_SEPARATOR='|'}}
+      assert(Name('target')=='Hero|Surname')
+      TEST_name='Hero|Surname';assert(Name('target')=='Hero|Surname')
+      Constants.CharacterNameSeparatorConsts.CHARACTERNAME_SURNAME_SEPARATOR='%'
+      TEST_name='Hero';assert(Name('target')=='Hero%Surname')
+      local code='Outline() return Name(unit)'
+      local fn=assert(loadstring('return function(unit) '..code..' end'))()
+      setfenv(fn,LT.ScriptEnv);assert(fn('target')=='Hero%Surname')
+      local function secret()
+        local v=newproxy(true);SECRET[v]=true
+        local mt=getmetatable(v)
+        mt.__tostring=function() error('secret string read') end
+        mt.__concat=function() error('secret concatenated') end
+        mt.__eq=function() error('secret compared') end
+        mt.__index=function() error('secret indexed') end
+        return v
+      end
+      local function output()
+        return {db={attach_to='Portrait'},SetText=function(self,v) self.raw=v end,
+          SetFormattedText=function(self,fmt,...) self.fmt=fmt;self.args={...} end}
+      end
+      for _,which in ipairs({'name','surname','both','kind'}) do
+        TEST_name,TEST_surname,TEST_player='Hero','Surname',true
+        if which=='name' or which=='both' then TEST_name=secret() end
+        if which=='surname' or which=='both' or which=='kind' then TEST_surname=secret() end
+        if which=='kind' then TEST_player=secret() end
+        local text=output();assert(LT:TryForeverText(text,'target',code))
+        assert(text.fmt=='%s%s%s' and rawequal(text.args[1],TEST_name)
+          and text.args[2]=='%' and rawequal(text.args[3],TEST_surname))
+      end
+      TEST_player=false;TEST_name=secret();TEST_surname=nil
+      local text=output();assert(LT:TryForeverText(text,'target',code) and rawequal(text.raw,TEST_name))
+      TEST_regional=false;TEST_player=true;TEST_surname='Realm'
+      text=output();assert(LT:TryForeverText(text,'target',code) and rawequal(text.raw,TEST_name))
+      TEST_name='Hero';TEST_surname='Surname';TEST_regional=true
+      text=output();assert(not LT:TryForeverText(text,'target',code))
+    """)
+
+
 LT_EVENT_STUBS = r"""
 PitBull4 = {Utils = {SafeGUID = function(v) count("SafeGUID"); if v == nil then return nil end return tostring(v) end,
                      SafeEqual = function(a, b) count("SafeEqual"); return a == b end}}

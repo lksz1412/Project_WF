@@ -141,6 +141,7 @@ function PitBull4_Aura:UpdateFrame(frame)
 	self:UpdateSkin(frame)
 	self:UpdateAuras(frame)
 	self:LayoutAuras(frame)
+	if self.RefreshManagedAuraDependents then self:RefreshManagedAuraDependents(frame) end
 end
 
 function PitBull4_Aura:LibSharedMedia_Registered(event, mediatype, key)

@@ -8,6 +8,8 @@ PitBull4_Border:SetModuleType("custom")
 PitBull4_Border:SetName(L["Border"])
 PitBull4_Border:SetDescription(L["Show a highlight when hovering or targeting."])
 PitBull4_Border:SetDefaults({
+	always_show = false,
+	above_overlay = false,
 	normal_color = { 1, 1, 1, 1 },
 	normal_texture = "None",
 	boss_color = { 0.6, 0.3, 0.6, 1 },
@@ -140,7 +142,6 @@ function PitBull4_Border:UpdateFrame(frame)
 		local padding = db.padding
 		border = PitBull4.Controls.MakeFrame(frame)
 		frame.Border = border
-		border:SetFrameLevel(frame:GetFrameLevel())
 		border:SetAllPoints(frame)
 
 		local tex = PitBull4.Controls.MakeTexture(border, "BORDER")
@@ -196,6 +197,10 @@ function PitBull4_Border:UpdateFrame(frame)
 		tex:SetPoint("BOTTOMRIGHT", border, "BOTTOMRIGHT", padding, -padding)
 		tex:SetTexCoord(0.875, 0, 0.875, 1, 1, 0, 1, 1)
 	end
+
+	local db = self:GetLayoutDB(frame)
+	local level = db.above_overlay and frame.overlay:GetFrameLevel() + 1 or frame:GetFrameLevel()
+	if border:GetFrameLevel() ~= level then border:SetFrameLevel(level) end
 
 	for _, tex in ipairs(border) do
 		tex:SetTexture(texture)
@@ -256,6 +261,9 @@ end
 
 function PitBull4_Border:ShouldShow(frame)
 	local db = self:GetLayoutDB(frame)
+	if db.always_show then
+		return true
+	end
 
 	if mouse_focus == frame and db.while_hover then
 		return true

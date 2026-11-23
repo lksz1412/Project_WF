@@ -20,8 +20,8 @@
 -- ownership is compared, never exact values: a side is written only when it
 -- contradicts the record, and then only what makes it draw / not draw the party.
 --   PitBull4  ownership = the main party group (unit_group "party") is on.
---             On a contradiction it and the partytarget/partypet groups are
---             switched together; afterwards those two stay as the user sets them.
+--             Unmarked groups switch together on a main-group contradiction.
+--             Marked package groups follow the owner; its old pet group stays off.
 --   FUF       ownership = FUF's party is not stored off. On a contradiction
 --             FUF's own commands are sent (SlashCmdList.FOREVERUNITFRAMES
 --             "set party hideBlizzardFrame on" + "set party enabled off" |
@@ -53,7 +53,7 @@ Core.Party = Party
 local DELAY = 20     -- seconds after the first PLAYER_ENTERING_WORLD (FUF holds saves 15 s on a fresh install)
 local READBACK = 1   -- seconds before FUF's saved unit profile is read back (FUF saves half a second after a change)
 
-local PB4_PARTY = {party = true, partytarget = true, partypet = true}
+local PB4_PARTY = {party = true, partytarget = true, partytargettarget = true, partypet = true}
 local UNIT_ADDONS = {"PitBull4", "ForeverUnitFrames"}
 
 -- {state = "waiting"|"no-record"|"applied"|"fuf-pending"|"not-settled", owner, key, unit, lines}
@@ -164,7 +164,7 @@ local function pb4Profile(keys)
   return type(p) == "table" and p or nil, name
 end
 
--- PitBull4 party groups (unit_group party, partytarget, partypet; PitBull4's default "party").
+-- PitBull4 party groups, including both target suffixes and legacy party pets.
 local function pb4Groups(p)
   local out = {}
   local groups = type(p) == "table" and rawget(p, "groups")
@@ -181,6 +181,25 @@ local function pb4Shows(p)
     if (rawget(item[2], "unit_group") or "party") == "party" and rawget(item[2], "enabled") == true then return true end
   end
   return false
+end
+
+-- Marked package groups follow the owner individually; unmarked profiles keep the main-group contract.
+local function alignPB4(p, wants, write)
+  local legacyMismatch = pb4Shows(p) ~= wants
+  local changed = 0
+  for _, item in ipairs(pb4Groups(p)) do
+    local g = item[2]
+    local role = rawget(g, "dfPartyRole")
+    local managed = role == "hidden" or (type(role) == "string" and role == rawget(g, "unit_group"))
+    if managed or legacyMismatch then
+      local desired = wants and role ~= "hidden"
+      if rawget(g, "enabled") ~= desired then
+        changed = changed + 1
+        if write then g.enabled = desired end
+      end
+    end
+  end
+  return changed
 end
 
 -- FUF's profile name for this character and the party table of that profile.
@@ -382,8 +401,7 @@ local function settle(final)
   session.owner, session.key, session.unit = owner, unit.key, unit.folder
   local unitWants = owner == "unitframes"
   local parts = {}
-  if unit.folder == "PitBull4" and unit.shows ~= unitWants then
-    for _, item in ipairs(pb4Groups(unit.table)) do item[2].enabled = unitWants end
+  if unit.folder == "PitBull4" and alignPB4(unit.table, unitWants, true) > 0 then
     logLine("PitBull4 " .. unit.profile .. ": party groups " .. (unitWants and "on" or "off") .. " (" .. unit.key .. ")")
     parts[1] = "PitBull4 " .. unit.profile .. " 파티 그룹 " .. (unitWants and "켬" or "끔")
   elseif unit.folder ~= "PitBull4" and unit.shows ~= unitWants then
@@ -473,8 +491,7 @@ function Party:Set(owner, say)
     if #groups == 0 and unitWants then return false, "PitBull4 " .. unit.profile .. ": 파티 그룹 없음 — 바꾼 것 없음" end
     fufDue, epoch = nil, epoch + 1
     records()[unit.key] = owner
-    if unit.shows ~= unitWants then
-      for _, item in ipairs(groups) do item[2].enabled = unitWants end
+    if alignPB4(unit.table, unitWants, true) > 0 then
       lines[#lines + 1] = "PitBull4 " .. unit.profile .. ": 파티 그룹 " .. #groups .. "개 " .. (unitWants and "켬" or "끔")
     else
       lines[#lines + 1] = "PitBull4 " .. unit.profile .. ": 파티 이미 " .. (unitWants and "켜짐" or "꺼짐")

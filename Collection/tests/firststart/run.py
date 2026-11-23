@@ -271,7 +271,7 @@ def native_minimap_session(height, saved=None, native="SexyMap_Classic.lua", exp
           XP={db={global={minimap={angle=225,hide=true}}}}
           local old=LibStub
           LibStub=function(name,...)
-            if name=='AceAddon-3.0' then return {NewAddon=function() return XP end,GetAddon=function() return XP end} end
+            if name=='AceAddon-3.0' then return {NewAddon=function() return XP end,GetAddon=function(_,name) if name=='ExperienceForever' then return XP end end} end
             if name=='LibSharedMedia-3.0' then return {Register=function() end} end
             return old(name,...)
           end
@@ -783,18 +783,75 @@ def pb4_preset_session(saved=None, request=False):
 def pitbull4_preset_positions_only_into_existing_units():
     fresh = pb4_preset_session()
     units = fresh.sv("PitBull4DB")["profiles"]["Default"]["units"]
-    eq(round(units["대상의 소환수"]["position_x"], 2), round(170 * PIXEL_FACTOR / UI_SCALE, 2),
+    eq(round(units["대상의 소환수"]["position_x"], 2), round(-703 * PIXEL_FACTOR / UI_SCALE, 2),
        "fresh install: the new unit gets its preset position")
     saved = {"PitBull4DB": {"profileKeys": {"Hero - Realm": "Default"},
                             "profiles": {"Default": {"units": {"대상": {"unit": "target", "enabled": True}}}}}}
+    saved["PitBull4DB"]["namespaces"] = {"LuaTexts": {"profiles": {"Default": {"layouts": {
+        "대상의대상": {"enabled": False, "elements": {
+            "Lua:이름": {"enabled": False, "code": ""}, "Lua:생명력": {"enabled": False, "exists": False}}}}}}}}
     first = pb4_preset_session(saved=saved)
+    eq(first.sv("PitBull4DB"), saved["PitBull4DB"], "existing unrequested profile gains no new rows or modules")
     core["dfp"](first, "preset fhd")
     core["dfp"](first, "go")
     nxt = {n: first.sv(n) for n in ("PitBull4DB", "DevilForever_CoreDB", "DevilForever_ProfilesDB")}
     s = pb4_preset_session(saved=nxt)
     units = s.sv("PitBull4DB")["profiles"]["Default"]["units"]
-    eq(sorted(units), ["대상"], "/dfp preset on an existing profile: no position-only unit entries")
+    eq(sorted(units), sorted(["대상", "플레이어 아래 대상", "플레이어 아래 대상의 대상"]),
+       "/dfp preset adds exactly two complete singleton rows; no position-only unit entries")
+    for name, unit in (("플레이어 아래 대상", "target"), ("플레이어 아래 대상의 대상", "targettarget")):
+        eq((units[name]["unit"], units[name]["enabled"], units[name]["layout"]),
+           (unit, True, "대상의대상"), "new singleton has native identity and layout")
+    fresh_units = fresh.sv("PitBull4DB")["profiles"]["Default"]["units"]
+    eq(all(name in fresh_units for name in ("플레이어 아래 대상", "플레이어 아래 대상의 대상")), True,
+       "fresh receipt v1 then v2 creates both rows")
+    receipt = fresh.sv("DevilForever_CoreDB")["preset"]["fragments"]["fhd"]
+    eq(receipt["PitBull4DB@profile:Default"], 3, "complete-party fragment follows unit v2 with version3 receipt")
+    unchanged = pb4_preset_session(saved=carry(s))
+    eq(unchanged.sv("PitBull4DB"), s.sv("PitBull4DB"), "plain reload keeps completed profile")
     eq("position_x" in units["대상"], True, "the existing unit gets its position")
+    small = s.sv("PitBull4DB")["namespaces"]["LuaTexts"]["profiles"]["Default"]["layouts"]["대상의대상"]
+    eq(small["enabled"], True, "explicit preset restores stored disabled small LuaTexts layout")
+    for key, side in (("Lua:이름", "left"), ("Lua:생명력", "right")):
+        text = small["elements"][key]
+        eq((text["enabled"], text["exists"], text["attach_to"], text["location"]),
+           (True, True, "HealthBar", side), "small text enabled and attached to the existing health bar")
+        eq(bool(text["code"]), True, "small text has display code")
+
+
+@case
+def pitbull4_managed_party_roles_follow_owner_and_old_pet_stays_hidden():
+    # Actual collection presets create the three complete headers, including on an old profile.
+    first = pb4_preset_session()
+    saved = carry(first)
+    saved.setdefault("DevilForever_CoreDB", {}).setdefault("party", {})["owner"] = {"PitBull4/Default": "grid2"}
+    s = party_session(["Grid2", "PitBull4"], saved=saved)
+    groups = s.sv("PitBull4DB")["profiles"]["Default"]["groups"]
+    names = ("파티", "파티원 대상", "파티원 대상의 대상")
+    eq([groups[n]["enabled"] for n in names], [False]*3, "Grid2 default suppresses all three managed headers")
+    core["dfp"](s, "party unitframes")
+    groups = s.sv("PitBull4DB")["profiles"]["Default"]["groups"]
+    eq([groups[n]["enabled"] for n in names], [True]*3, "local unitframes choice enables all three")
+    eq(groups["파티원 소환수"]["enabled"], False, "legacy pet stays hidden")
+    old = carry(s)
+    old["PitBull4DB"]["profiles"]["Default"]["groups"]["파티원 대상의 대상"]["enabled"] = False
+    fixed = party_session(["Grid2", "PitBull4"], saved=old)
+    eq(fixed.sv("PitBull4DB")["profiles"]["Default"]["groups"]["파티원 대상의 대상"]["enabled"], True,
+       "managed child contradiction is repaired even while the main header matches")
+    core["dfp"](fixed, "party grid2")
+    core["dfp"](fixed, "party unitframes")
+    eq(fixed.sv("PitBull4DB")["profiles"]["Default"]["groups"]["파티원 소환수"]["enabled"], False, "commands keep pet hidden")
+    old = {"PitBull4DB": {"profileKeys": {"Hero - Realm": "Default"}, "profiles": {"Default": {"units": {}, "groups": {}}}}}
+    unrequested = pb4_preset_session(saved=old)
+    eq(unrequested.sv("PitBull4DB"), old["PitBull4DB"], "unrequested profile gains nothing")
+    core["dfp"](unrequested, "preset fhd"); core["dfp"](unrequested, "go")
+    applied = pb4_preset_session(saved=carry(unrequested))
+    groups = applied.sv("PitBull4DB")["profiles"]["Default"]["groups"]
+    eq(sorted(groups), sorted(names), "explicit preset creates exactly the three complete headers")
+    for name, role in zip(names, ("party", "partytarget", "partytargettarget")):
+        eq((groups[name]["unit_group"], groups[name]["include_player"], groups[name]["show_when"]["party"]),
+           (role, False, True), "four companions, not self, native party only")
+    eq(first.errors()+s.errors()+fixed.errors()+applied.errors(), [], "no errors")
 
 
 GRID2_OPTIONS = os.path.join(ADDONS, "Grid2Options")

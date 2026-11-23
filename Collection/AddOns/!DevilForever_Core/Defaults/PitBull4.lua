@@ -156,7 +156,7 @@ local namespaces = {
         enabled = false,
       },
       ["보통"] = {
-        enabled = false,
+        enabled = true,
       },
       ["파티"] = {
         enabled_weapons = false,
@@ -528,10 +528,11 @@ local geometryFields = {
 local unitLayouts = {
   ["플레이어"] = "보통", ["대상"] = "대상", ["주시 대상"] = "파티", ["플레이어의 소환수"] = "파티",
   ["대상의 대상"] = "대상의대상", ["대상의 소환수"] = "대상의대상",
+  ["플레이어 아래 대상"] = "대상의대상", ["플레이어 아래 대상의 대상"] = "대상의대상",
   ["대상의 대상의 대상"] = "대상의대상", ["주시 대상의 대상"] = "대상의대상",
   ["플레이어의 소환수의 대상"] = "대상의대상",
 }
-local groupLayouts = {["파티"] = "파티", ["파티원 대상"] = "대상의대상", ["파티원 소환수"] = "대상의대상"}
+local groupLayouts = {["파티"] = "파티", ["파티원 대상"] = "대상의대상", ["파티원 소환수"] = "대상의대상", ["파티원 대상의 대상"] = "대상의대상"}
 local function geometry(values, fields)
   if type(values) ~= "table" then return end
   local parts = {}
@@ -556,6 +557,9 @@ local function applyScale()
     for name, signature in pairs(saved[kind]) do
       local values = profile[kind][name]
       local layout = kind == "units" and unitLayouts[name] or kind == "groups" and groupLayouts[name]
+      if kind == "units" and (name == "주시 대상" or name == "플레이어의 소환수")
+          and values and values.dfCompanion == true then layout = "소환수와 주시" end
+      if kind == "groups" and name == "파티" and values and values.dfPartyRole == "party" then layout = "데빌 파티" end
       if geometry(values, fields) ~= signature or (layout and values.layout ~= layout) then
         profile.dfGeometry, profile.dfPixel = nil, nil
         return
