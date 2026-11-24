@@ -262,3 +262,15 @@ Before (44/58/88 cells) only the target's debuff band at 40 players (and Details
 | build --dry-run pitbull4 / fuf | rc=0 · 2284 / 2228 files |
 
 Raw: `<scratch>/r4_overlaps.json`, `<scratch>/r4_hits.txt`. Nothing committed; waiting for master's commit.
+
+## Round 4 stage and dry run (commit 87e617fd)
+
+| Command | Verdict |
+|---|---|
+| `git log --oneline -1` · `git status --porcelain -- Collection` | `87e617fd` · empty |
+| `python <scratch>/stage_build.py <worktree> D:/Projects/Project_WF/_local_only` | rc=0 · `stage=…\claude-p27-stage-02eb8f3e commit=87e617fd clean=True version=0.1.5 variant=pitbull4 folders=35 files=2281 bytes=338925018 excluded=106 verified=True` |
+| `tasklist /FI "IMAGENAME eq Wow.exe"` | no task (game not running at this moment) |
+| `pwsh -NoProfile -File Collection/tools/install_local.ps1 -StagedAddOns D:\Projects\Project_WF\_local_only\claude-p27-stage-02eb8f3e\AddOns -BackupRoot D:\Projects\Project_WF\_local_only\claude-p27-backup-65cdb3bf -AllowRunningGame -DryRun` | rc=0 · staged 35 folders, 2281 files, commit 87e617fd…, pitbull4, 0.1.5 · left alone `!BugGrabber, BugSack` · backup plan AddOns 2751 entries / 2310 files, WTF 113 / 105 → `claude-p27-backup-65cdb3bf` · 35 mirror steps · robocopy /L: Newer 2281, New 0, EXTRA 0 · would check 35 folders and write installation.json |
+| `ls -d …/claude-p27-backup-*` | `5b85dff4`, `767a1dcc`, `a48b4467` (dry run created nothing) |
+
+Raw: `<scratch>/s51.XsBX/stage58r4.txt`, `<scratch>/s51.XsBX/dry58r4.txt`. Real install not run.
