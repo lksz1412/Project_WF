@@ -1,0 +1,22 @@
+# Brief — Phase 27 Step 52 (same work sub A)
+
+Worktree `D:/Projects/Project_WF/_local_only/claude-phase27`, base = Step 51 commit `c34716a3`. The game is closed (checked: no Wow process at 20:18). User wants the addons installed so they can be checked in game with `/reload`.
+
+## Deliverables
+
+1. **Install tree (PitBull4 variant, 0.1.5)** built from the current worktree into a NEW folder `D:/Projects/Project_WF/_local_only/claude-p27-stage-<8 hex>/AddOns` (outside git; `_local_only/` is git-ignored). Use the same path the release build uses (`Collection/tools/build.py` plan functions — read how Codex did it: `D:/Projects/Project_WF/_local_only/live-015-pitbull-20261124/.live-pitbull/receipt.json` and `work_log.md`, read only). Collection/upstream may need `extract.py` first. On this PC `patches.py`/`build.py` need your scratch wrapper (`os.devnull = "/dev/null"`) — keep using the wrapper, do not change the tools. Write `receipt.json` next to the tree: commit, variant, version, folder list, file count, total bytes, per-file sha256.
+2. **`Collection/tools/install_local.ps1`** (dev tool, not shipped). Read Codex's `D:/Projects/Project_WF/_local_only/live-015-pitbull-install-20261124.ps1` in full (read only) and reuse its safety checks. Behaviour:
+   - Parameters: `-StagedAddOns <path>` (required), `-BackupRoot <new folder under D:/Projects/Project_WF/_local_only>` (required, name `claude-p27-backup-<8 hex>`, must not exist), `-DryRun` switch.
+   - Fixed game root `C:\Program Files (x86)\World of Warcraft\_forever_`; require `Wow.exe`; refuse if a `Wow`/`WowClassic` process runs; refuse links (reparse points) in source, game AddOns and WTF.
+   - Backup first: copy the whole current `Interface\AddOns` and `WTF` into the backup root, then compare file inventories (relative path + size + sha256) of source and backup; stop on any difference before touching the game.
+   - Then for each folder in the staged tree: mirror it into the game `Interface\AddOns\<folder>` (robocopy /MIR per folder or equivalent — files inside that folder that are not in the package are removed). Folders in the game AddOns that are not in the package (e.g. `!BugGrabber`, `BugSack`) are left alone. Do not touch `Interface\AddOns.BeforeDevilForever015-3434ca83` or anything else outside `Interface\AddOns\<package folder>`.
+   - After copy: inventory of each package folder in the game == staged tree; write `installation.json` into the backup root (game path, staged path, commit, variant, package folders, file count, backup inventories' counts, left-alone folders, time).
+   - `-DryRun`: print every action, write nothing (no backup folder either).
+   - Restore instructions as comment-free usage text printed by `-Help` or in a short section of the check list (copy backup back) — no restore automation needed.
+   - Exit code non-zero on any failure; PowerShell 7 (`pwsh`) or Windows PowerShell 5.1 — say which one you tested.
+3. Run `-DryRun` against the staged tree and record the output summary in the work_log. **Do NOT run the real install** — master runs it after review.
+4. **Check list** `Collection/codex-briefs/phase27-game-check.md` (Korean, like other briefs). Sources: `Collection/codex-briefs/phase26-step47-check.md` items 1–8 and `Collection/codex-briefs/appearance-26-theme-switcher.md` §3. Remove Hekili lines. The check is done WITHOUT gameplay (R154): for each item write how to see it using addon config / test / layout modes, slash commands (`/dfp …`, PitBull4 config mode, Grid2 test layouts, Quartz test/unlock mode, Dominos config) and `/reload`, the expected result (with the coordinates already in the Step 47 check), and a one-line result form. Mark items that truly need gameplay (e.g. real auto-shot timing) as "플레이 필요 — 이번 확인 제외". Look up the real config/test commands in the addon sources under `Collection/AddOns/` (e.g. grep slash commands, config/test mode functions) and cite file:line for each command you list. Add a first section "설치·되돌리기" (what was installed, where the backup is, how to restore by copying the backup back).
+
+## Rules
+
+Same rules as brief-51 (memory files listed there; impact map before editing; work_log `Claude/results/handoffs/phase27/iter_1/work_log-52.md` with read ranges, commands + verdict lines, decisions, Decision Queue). Do not write into the game folder in this step (dry run only). Do not delete anything; new scratch folders only.
