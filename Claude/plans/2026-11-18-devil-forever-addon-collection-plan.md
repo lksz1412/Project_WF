@@ -85,6 +85,15 @@
     Step 46  상태띠 테마 넘김 그림 Codex 외관 발주문(영문 필기체 이름 그림·화살표 그림 · R131) 30–60분
     Step 47  Codex 실게임 조정판 검토·합치기·R130 반영·0.1.5 재빌드   120–240분
     Step 48  검토만(수정 없음, R133): ① 자체 제작·수정 애드온 코드 ② 수정 안 된 원본 애드온 비효율·에러 ③ Quartz 스윙(사냥꾼·근접) — 최신 가지 d8b63f59 기준 180–300분
+    Step 49  테마 넘김 발주문 서체·전투 화살표 (46-rev) 30분 · Step 50 Grid2 창 자리 (26-rev, R148) 30–60분
+  Phase 27 Codex 남은 일 이어받기 (R152·R153 · Hekili 제외 · 이 PC 로컬 세션)
+    Step 51  테마 넘김 그림 63장(코드로 생성)·ThemeSwitcher.lua 반영 90–150분
+    Step 52  0.1.5 PitBull4판 빌드·게임 폴더 설치(백업 먼저)·사용자 확인표 45–90분
+    Step 53  사용자 게임 확인 결과 → 고침 → 재설치 (사용자 결과 대기 · 회차마다) 30–120분
+    Step 54  릴리스 1 — v0.1.5 PitBull4판 20–40분
+    Step 55  릴리스 2 — v0.1.5-fuf 10–25분
+    Step 56  Windows 설치기 빌드·받기/거부 시험 15–35분
+    Step 57  Result·인계·main 반영 20–40분
 ```
 
 「그대로 사용」 으로 판정된 기능 Phase 는 Step 하나(설정 기본값 파일 + manifest 등록 + Codex 발주문)다. Step 8 에서 「고침」·「새 개발」 로 판정된 기능은 그 Phase 에 하위 Step(예: Step 13a 읽기·설계, 13b 수정·정적 검사)을 붙이고 60–150분을 더한다. Phase 2·8·20·23·25 는 처음부터 Step 이 둘 이상이다(Phase 8 은 R104 로 코드 작업 없이 원천 확인·표시 기본값·직업 점검이다). Step 8 판정으로 Phase 18 이 「고침」 이 되어 Step 30a·30b 를 두었다(그 뒤 R100 으로 빠짐). Phase 21 은 「새 개발」 로 Step 34–35 를 잡았다가 R107 로 빠졌다. R107 로 Phase 16 은 정보 부분을 새로 만들어 Step 28a·28b 가 되었고, 끝난 Phase 6 에 PitBull4 판을 더하는 Phase 6-rev 는 마지막 번호 다음인 Step 42–43 을 쓴다(Correction History). 외관 작업(Phase 2 외관 구현·각 기능 스킨·Phase 22 테마·Phase 24 목업)은 Codex 몫이라 시간에 넣지 않았다(Implementation Changes 「Codex 몫 목록」). 세부 Step 은 Phase 착수 때 세부 계획서에 쓴다.
@@ -130,6 +139,8 @@
 | 기능 조사 | 통합 UI 8개(ElvUI·TukUI·EllesmereUI·SpartanUI·GW2 UI·NDui·RealUI·BenikUI)의 기능 70개 대조, 기능별 단독 대표 애드온과 Forever 파일 표기. 설치·실행 시험 없음 | Codex 기록(`References/addon-survey/features.md:3,25,119–194`, `survey.md:1–20`) |
 | GitHub 공개 | R67–R70 에 따라 main 에 작업물 전부 공개 | Codex 기록(`Codex/docs/HANDOVER_v0.1.0.md:23,57`) |
 | 매크로 | 원본 4파일·44개를 `MacroLibrary/` 에 보관만 한다. 게임으로 옮기기·변환은 취소 | 사용자 R14–R17 · Codex 기록(`Codex/plans/2026-11-17-devil-ui-forever-plan.md:201`) |
+| 런타임 (Phase 27 부터) | 사용자 Windows PC 의 로컬 세션(`D:/Projects/Project_WF`). 위 「런타임」 줄(원격 Linux 컨테이너)은 Phase 0–26 의 사실이다. 작업 자리 = worktree `_local_only/claude-phase27`(가지 `claude/phase27-local-20261124`, origin/main `c64dcd7c` 에서). 옛 본 작업 트리(`codex/continue-github`, Codex 의 커밋 안 된 옛 변경 204개)는 읽기만 | 실측(master, 2026-11-24 20:06 KST) |
+| 게임·도구 (Phase 27) | 게임 `C:\Program Files (x86)\World of Warcraft\_forever_` 실행 중(Wow 프로세스 2개, 19:52 시작). 게임 `Interface/AddOns` 는 Codex 가 11-24 01:17 에 넣은 0.1.5 시험판(파일 대조: `Party.lua` = d8b63f59 판, `Presets/V2.lua`·`ThemeSwitcher.lua` 없음 → main 보다 앞선 판). Codex 백업 `_local_only/live-015-pitbull-backup-3434ca83`, 원래 폴더 `AddOns.BeforeDevilForever015-3434ca83`. Python 3.12.10 · Pillow 12.3.0 · fontTools 4.62.1 · GNU diff·patch(Git for Windows) · gh 로그인(lksz1412) · .NET 은 Desktop Runtime 10.0.15 만 있고 SDK 없음(`dotnet --list-sdks` 빈 출력 — Codex 가 11-21 에 쓴 SDK 10.0.201 은 지금 없음) · GitHub 릴리스는 `v0.1.4`(시험판) 하나 | 실측(master, 2026-11-24 20:06–20:10 KST) |
 
 ### 참고 원문 위치
 
@@ -402,7 +413,8 @@ R1 의 첫 요청은 단축키·체력/마나·미니맵이었고 「부가 기�
 | 23 연계 검사·정정 | `…-phase23-세부계획.md` | 37–38 | 완료 |
 | 24 최종 목업 (제작은 Codex) | `…-phase24-세부계획.md` | 39 | 완료 (받은 목업 대조는 Codex 결과 대기 · R109) |
 | 25 Codex 검증 결과 반영·고정 | `…-phase25-세부계획.md` | 44 → 45 → 40a–40d → 41 | 완료 (0.1.5 · 게임 미검증 · 릴리스 업로드는 사용자 승인 대기) |
-| 26 Codex 실게임 조정판 합치기·테마 넘김 그림·검토 | `…-phase26-세부계획.md` | 46–49 | 끝(게임 미검증) |
+| 26 Codex 실게임 조정판 합치기·테마 넘김 그림·검토 | `…-phase26-세부계획.md` | 46–50 | 끝(게임 미검증) |
+| 27 Codex 남은 일 이어받기 (테마 넘김 그림·로컬 게임 설치·사용자 확인 뒤 고침·두 판 릴리스·설치기 시험 · Hekili 제외) | `…-phase27-세부계획.md` | 51–57 | 계획 초안 · GO 대기 |
 
 `…` 는 `Claude/plans/2026-11-18-devil-forever-addon-collection` 이다. Phase 가 끝날 때마다 그 Phase 의 Result 를 `Claude/results/` 에 남기고, 끝난 Phase 정리는 `Claude/plans/2026-11-18-devil-forever-addon-collection-plan_이력.md` 로 옮긴다.
 
@@ -442,6 +454,12 @@ R1 의 첫 요청은 단축키·체력/마나·미니맵이었고 「부가 기�
 | 모음집 연계 (Phase 23) | 연계 정적 대조 + 정정분은 코드 논리 검수 1회 | P1 | 연계 | 조합별 TOC·의존 해석, 등록 누락, 의존 순서, 한 기능 두 애드온 중복 (적대), 설치용 ZIP 내용과 manifest 일치 |
 | Codex 발주문 (실사용 검증·외관, 각 Phase) | ② 국소 — 같은 B 한 번 + 적대 하나 | P5 | 연결 | 백업이 맨 앞인지, 항목마다 기대 결과·결과 양식·올릴 자리, Codex 가 추가 판단 없이 실행할 수 있는지, 외관 발주문에 토큰·프레임 목록·Step 5 설계가 함께 가는지, 위험한 조작 요구 (적대) |
 | Codex 가 올린 외관 코드·목업 (Phase 2·12–19·22·24) | 정적 대조만 (외관 판정은 Codex) | P4 | 연계 | 토큰·편집값을 읽어 적용하는지, 프레임 이름·등록 표를 인터페이스대로 쓰는지, 원본을 고쳤는지, 목업에 「목업 — 실제 게임 화면 아님」 표시와 Step 5 구획 |
+
+| Phase 27 `ThemeSwitcher.lua` 고침 (Step 51) | 코드 ② | P1 | 연계 | 글자 대체 분기(겉보기·편집 크기·실린 파일 표·`SetTexture` 결과), 텍스처 객체 재사용, 매 프레임 일 없음, 전투 중 흐림·로그인 때 전투, (적대) 그림이 하나라도 빠지거나 경로가 틀릴 때 빈 칸·하얀 사각형이 보이는 길 |
+| Phase 27 테마 넘김 그림 63장·생성 스크립트 (Step 51) | 기계 게이트 + 사용자 육안 | P4 | 연결 | TGA 헤더(크기·type 2·32bit)·그림 칸 밖 투명, 13 이름이 칸 안에 들어감(잘림 없음), 금색·외곽선 가독성(FHD 22px 칸), 같은 입력이면 같은 출력, 사용 허락 파일 |
+| Phase 27 로컬 설치 스크립트 (Step 52) | 코드 ② | P3 | 연결 | 게임 경로 고정·확인, 백업 먼저·백업 목록 대조, 패키지 폴더만 바꾸고 다른 폴더 보존, (적대) 복사 도중 실패·게임 실행 중·잘못된 경로 |
+| Phase 27 사용자 확인표 (Step 52) | ② | P5 | 연계 | Step 47·50 확인 항목과 발주문 §3 이 빠짐없이 들어감, Hekili 항목 없음, 항목마다 하는 법·기대·결과 양식 |
+| Phase 27 릴리스·설치기 (Step 54–56) | ④ | P3 | 연계 | 같은 소스 두 번 빌드 같은 해시, 로컬·원격 바이트 일치, 릴리스마다 ZIP 하나, v0.1.4 그대로, 설치기 받기/거부와 시험 폴더 밖 쓰기 없음 |
 
 갈래는 계획 때의 시작값이며 실제 diff 를 보고 무거운 쪽으로만 올리되 10라운드를 넘지 않는다. 실제 실행 확인은 Codex 실사용 검증 몫이다(R86).
 
@@ -500,6 +518,7 @@ Phase 26 의 고침 기록(2026-11-24)은 Phase 26 끝에 이력 파일 「Phase
 | 2026-11-18 | 근간 재논의 반영: ① Phase 6-rev(PitBull4 v4.2.50 + Forever TOC + V42 고침 + Devil profile, Step 42–43) 를 더해 FUF 와 비교하고 기본 동봉은 Phase 23 에서 정해 기록 ② 어그로 미터는 Details! 의 TinyThreat — Phase 11 은 Phase 10 에 합침 ③ Phase 14 는 게임 기본 이름표(Platynator 뺌, Codex 발주문만) ④ Phase 15 Aurora 사용 여부는 Codex 가 정함 ⑤ Phase 16 은 가벼운 상태띠(Titan 안 씀, 정보 부분 Step 28a·28b) ⑥ Phase 21 빠짐 — 사용자가 AI 로 고치고 Codex 가 FHD·QHD·UHD 세 겉보기를 처음부터 만든다, Core 편집값은 읽기 약속으로 남고 Phase 20 이 preset 되돌리기를 맡는다. 합계를 다시 더했다(R100 뒤 갱신되지 않았던 합계도 함께) | R107 사용자 원문 · R101 |
 | 2026-11-19 | Phase 25 에 Step 44 를 더한다(순서 44 → 40 → 41). Codex 가 결과를 `References/` 가 아니라 가지 `codex/review-0.1.4` 로 올렸고, 우리 코드(Core·ChatSetup·FUFDefaults)를 직접 고치고 제3자 원본 둘(ExperienceForever·SexyMap)을 고치고 Windows 설치기·외관 애드온·후보 ZIP 4개를 더했다. 그래서 Step 40(결함 정정) 전에 이 가지 전체를 감사해 무엇을 받아들일지 정하는 단계가 필요하다. Step 44 = 감사(검수 B 하나) → 결함·결정 목록, Step 45 = 사용자 지시 R114 의 독립 검수 세 번(전체 스킴·코드 비효율·사용 패턴 충분성 — 서브 하나씩 차례로), Step 40 = 받아들인 것을 우리 가지에 반영하고 결함 정정, Step 41 = 고정 | R112·R113 사용자 원문 · 가지 실측(merge-base 16b801b) |
 | 2026-11-19 | 파티 프레임 담당을 unit 프레임(PitBull4·FUF)에서 Grid2 로 옮긴다 — Phase 9 기본값(파티 없음)이 Phase 6 행 「Phase 9 가 켜지면 파티·공격대 표시는 끈다」 와 어긋나 있었다. 고침은 Phase 25 Step 40 | R118 사용자 원문 |
+| 2026-11-24 | Phase 27 을 더한다. Codex 가 토큰이 떨어져 Codex 몫(테마 넘김 그림 제작·반영, 게임 적용, 0.1.5 두 판 게시, 설치기 시험)을 Claude 가 이어받는다. 이 세션은 사용자 PC 로컬이라 빌드·게임 폴더 설치·GitHub 게시를 직접 하고, 게임 안 확인만 사용자가 한다. 그래서 「UI 외관은 Codex」(R87)·「실사용 검증은 Codex」(R86)·「이 세션이 게임에 직접 설치하지 않는다」(Non-goals) 는 Phase 27 에서 R152·R153 으로 바뀐다 — 외관 그림은 Claude 가 코드로 만들고, 게임 확인은 사용자가 한다. Hekili 는 계속 뺀다(R144 ⑥) | R152·R153 사용자 원문 |
 
 ## Decisions Required
 
@@ -561,3 +580,28 @@ Test Plan 「검증 관점」 표가 이 방식이다.
 | 원천 부족 (남은 예외) | 「원천이 모자랄 때」 규칙대로 그 Phase 만 미루고 D7 형식으로 요청을 적는다. R31 의 Computer Use 다운로드는 사용자 PC 가 이 세션에 연결된 경우에만 쓴다(지금은 연결 없음). 끝까지 없으면 그 Phase 는 「원천 없음」 으로 남기고 최종 보고에서 묻는다 |
 
 지침 예외는 위 「예외 (R87 · 이번 세션 한정)」 하나뿐이다.
+
+### Phase 27 — 정할 것 (R152·R153 뒤)
+
+열린 질문은 아래 셋이다. 나머지는 이미 정해진 것을 따른다: 0.1.5 = 다음 정식 판(R122 ③) · 두 판을 따로, PitBull4판 먼저(R128) · 릴리스 하나에 ZIP 하나(Codex 0.1.5 배포 계획) · Hekili 제외(R153).
+
+1. **.NET SDK 설치 (Step 56)** — 설치기를 빌드하려면 .NET SDK 가 필요한데 지금 PC 에 없다(실측). 기본값 = Microsoft 공식 설치 파일로 .NET SDK 10.0(Codex 가 쓴 10.0.201 과 같은 줄)을 설치하고 진행. 다른 선택 = Step 56 을 빼고 ZIP 두 판만 게시.
+2. **게임 폴더 설치 시점 (Step 52)** — 게임이 지금 켜져 있다. 새 파일(그림 63장·`V2.lua` 등)이 생기므로 `/reload` 로는 새 파일이 안 잡히고 게임을 껐다 켜야 한다. 기본값 = 켜진 상태에서 파일만 바꿔 두고, 사용자가 게임을 완전히 껐다 켜서 확인. 다른 선택 = 사용자가 먼저 게임을 끄면 설치.
+3. **테마 넘김 그림 방식 (Step 51)** — 그림은 이미지 생성 모델이 아니라 Allura 서체 글자에 금색 그러데이션·외곽선·그림자를 코드로 입혀 만든다. 기본값 = 이 방식으로 만들고, 미리보기 한 장을 보여 드린 뒤 바로 설치까지 진행(마음에 안 들면 Step 53 에서 고침). 다른 선택 = 미리보기를 보고 확인받은 뒤에 설치.
+
+### Phase 27 멈출 일 미리 점검
+
+| 항목 | 기본 대책 (명시 GO = 이 대책 승인) |
+|---|---|
+| 새 의존성·설치 | Python·Pillow·fontTools·GNU diff/patch·gh 는 이미 있다. .NET SDK 는 위 질문 1 의 답대로. 그 밖 새 설치가 필요해지면 멈춰 묻는다 |
+| 네트워크·외부 호출 | GitHub `lksz1412/Project_WF` 에 가지 push·main 반영·태그 `v0.1.5`·`v0.1.5-fuf` 와 릴리스 두 개 만들기·올린 ZIP 다시 받기. 다른 사이트 호출 없음 |
+| 파괴·비가역 — 게임 폴더 | 게임 `Interface/AddOns` 의 모음집 폴더를 새 빌드로 바꾼다(그 폴더 안 옛 파일은 지워짐). 바꾸기 전에 `AddOns`·`WTF` 전부를 `_local_only/claude-p27-backup-<id>` 로 복사하고 파일 목록·해시를 대조한다. 모음집에 없는 폴더(`!BugGrabber`·`BugSack`)·Codex 백업·원래 폴더(`AddOns.BeforeDevilForever015-…`)는 건드리지 않는다. 되돌리기 = 백업을 다시 복사 |
+| 파괴·비가역 — git | 작업은 새 가지에서만. 스텝마다 커밋. 강제 push·이력 수정 없음. 옛 본 작업 트리의 변경 204개와 다른 worktree 는 건드리지 않는다 |
+| 권한 | `C:\Program Files (x86)\…\_forever_` 쓰기는 Codex 가 같은 PC 에서 한 기록이 있다(설치 기록 `live-015-pitbull-backup-3434ca83/installation.json`, 11-24 01:17). 권한 오류가 나면 멈춰 알린다 |
+| 푸시·외부 게시 | Phase 끝에 작업 가지를 main 에 일반 반영(R67). 릴리스는 사용자 게임 확인이 끝난 뒤(Step 53 끝)만, PitBull4판 → 원격 대조 → FUF판 순서. 해시가 다르면 올리지 않는다. 이미 있는 태그·릴리스(`v0.1.4`)는 고치지 않는다 |
+| 사용자 결과 대기 | Step 52 뒤 사용자 게임 확인 결과를 받을 때까지 Step 53 이후는 기다린다(정지가 아니라 입력 대기). 그동안 할 수 있는 일(설치기 빌드 준비 등)은 진행 |
+| 세션 전환 | 같은 Phase 안에서는 같은 작업 A·검수 B 를 다시 부른다. 세션을 넘길 때는 인계 문건과 커밋·push 먼저 |
+| 검증 미수렴 | 같은 B 재검증에서 중대·중간이 줄지 않으면 원인 수정으로 바꾸고, 끝내 남으면 그 판은 게시하지 않고 최종 보고에서 묻는다 |
+| 원래 있던 결함 | detailslayout 시험의 커밋 안 된 참조 파일, performance 시험이 HEAD 에서도 실패(Phase 26 Result) — 기록만 하고 이번 범위에서 고치지 않는다. Hekili 관련 결함도 그대로 |
+| 이 환경에서 실측 불가 | 게임 안 동작은 사용자 확인 결과로만 통과로 적는다. Claude 는 게임에 입력을 보내지 않는다 |
+| 모델 미가용 | 지정 모델·effort 서브를 쓸 수 없으면 다른 모델로 바꾸지 않고 멈춰서 알린다 |
