@@ -146,6 +146,7 @@ PATCHED = {
     "Details": ["Details_TinyThreat"],
     "Experience Forever": ["ExperienceForever"],
     "ProfileManager": ["ProfileManager"],
+    "Quartz": ["Quartz"],
     "SexyMap": ["SexyMap"],
 }
 

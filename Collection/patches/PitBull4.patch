@@ -2975,7 +2975,7 @@ diff -u a/PitBull4/Modules/Aura/Layout.lua b/PitBull4/Modules/Aura/Layout.lua
 +    return cfg
 +  end
 +  local buff, debuff = config("buff"), config("debuff")
-+  buff.offset_y = math.max(2, db.layout.buff.offset_y)
++  buff.offset_y = math.max(2, db.layout.buff.offset_y, rule.top_margin or 0)
 +  local function group_height(size)
 +    local columns = math.max(1, math.floor(width / (size + buff.col_spacing)))
 +    return math.ceil(db.max_buffs / columns) * (size + buff.row_spacing)
@@ -9401,6 +9401,34 @@ diff -u a/PitBull4/UnitFrame.lua b/PitBull4/UnitFrame.lua
  	end
  end
  
+diff -u a/PitBull4/UnitFrameLayout.lua b/PitBull4/UnitFrameLayout.lua
+--- a/PitBull4/UnitFrameLayout.lua
++++ b/PitBull4/UnitFrameLayout.lua
+@@ -179,7 +179,7 @@
+ 	local filtered_element_ids = new()
+ 	for _, element_id in ipairs(element_ids) do
+ 		local db = get_element_db(element_id, layout)
+-		if db and db.side == side then
++		if db and db.side == side and not (element_id == "CastBar" and db.dfOutside == true) then
+ 			filtered_element_ids[#filtered_element_ids+1] = element_id
+ 		end
+ 	end
+@@ -437,6 +437,15 @@
+ 		end
+ 	end
+ 
++	local cast = frame.CastBar
++	local cast_db = cast and get_element_db("CastBar", layout)
++	if cast_db and cast_db.dfOutside == true then
++		cast:ClearAllPoints()
++		cast:SetPoint("TOPLEFT", frame, "BOTTOMLEFT", 0, -cast_db.dfOffset)
++		cast:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 0, -cast_db.dfOffset - cast_db.dfHeight)
++		cast:SetOrientation("HORIZONTAL")
++	end
++
+ 	-- set various information on the bars
+ 	for _, id in ipairs(bars) do
+ 		if not INDICATOR_MODULE_TYPES[element_id_to_module_type[id]] then
 diff -u a/PitBull4/Utils.lua b/PitBull4/Utils.lua
 --- a/PitBull4/Utils.lua
 +++ b/PitBull4/Utils.lua

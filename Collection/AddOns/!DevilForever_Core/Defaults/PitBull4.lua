@@ -565,7 +565,8 @@ local function applyScale()
     for name, signature in pairs(saved[kind]) do
       local values = profile[kind][name]
       local layout = kind == "units" and unitLayouts[name] or kind == "groups" and groupLayouts[name]
-      if kind == "units" and (name == "주시 대상" or name == "플레이어의 소환수")
+      if kind == "units" and (name == "주시 대상" or name == "플레이어의 소환수"
+          or (name == "대상의 소환수" and profile.dfLayoutV2 == true))
           and values and values.dfCompanion == true then layout = "소환수와 주시" end
       if kind == "units" and values and values.dfCompanionChain == true
           and (name == "플레이어의 소환수의 대상" or name == "플레이어의 소환수의 대상의 대상"

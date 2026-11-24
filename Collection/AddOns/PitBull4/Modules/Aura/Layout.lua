@@ -465,7 +465,7 @@ function PitBull4_Aura:GetManagedLayoutDB(frame, db)
     return cfg
   end
   local buff, debuff = config("buff"), config("debuff")
-  buff.offset_y = math.max(2, db.layout.buff.offset_y)
+  buff.offset_y = math.max(2, db.layout.buff.offset_y, rule.top_margin or 0)
   local function group_height(size)
     local columns = math.max(1, math.floor(width / (size + buff.col_spacing)))
     return math.ceil(db.max_buffs / columns) * (size + buff.row_spacing)

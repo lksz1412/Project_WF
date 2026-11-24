@@ -288,5 +288,5 @@ state: unmodified = bytes equal the upstream folder; patched = upstream folder +
 | Masque_Dominos | Dominos | 12.0.4 | unmodified | — | Collection/upstream/Dominos-12.0.4/Masque_Dominos |
 | Masque_Onyx | Masque Onyx | 12.1.6 | unmodified | — | Collection/upstream/Masque_Onyx-12.1.6/Masque_Onyx |
 | ProfileManager | ProfileManager | ProfileManager_v4.0.zip | patched | Collection/patches/ProfileManager.patch | Collection/upstream/profilemanager-ProfileManager_v4.0.zip/ProfileManager |
-| Quartz | Quartz | 3.8.0 | unmodified | — | Collection/upstream/Quartz-3.8.0/Quartz |
+| Quartz | Quartz | 3.8.0 | patched | Collection/patches/Quartz.patch | Collection/upstream/Quartz-3.8.0/Quartz |
 | SexyMap | SexyMap | v12.1.7 | patched | Collection/patches/SexyMap.patch | Collection/upstream/SexyMap-v12.1.7/SexyMap |

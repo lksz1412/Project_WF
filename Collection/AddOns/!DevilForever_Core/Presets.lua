@@ -162,6 +162,7 @@ function Presets:Register(def)
     keep.screen = {def.screen[1], def.screen[2]}
   end
   if type(def.uiScale) == "number" then keep.uiScale = def.uiScale end
+  if def.layoutOnly == true then keep.layoutOnly = true end
   local kept = 0
   local frames = registeredFrameKeys()
   for frameKey, fields in pairs(type(def.edits) == "table" and def.edits or {}) do
@@ -262,6 +263,12 @@ function Presets:Restore(name)
   if #def.fragments > 0 then
     local keys, why = Core.Profiles:CanRequest()
     if not keys then return false, why end
+  end
+  if def.layoutOnly then
+    local ok, why = Core.Profiles:SetPending({action = "preset", name = name})
+    if not ok then return false, why end
+    Core:DBTable("preset").unfinished = name
+    return true, {name .. " 비교 배치 예약 — PitBull4, Quartz만 적용: /dfp go"}
   end
   local oldName = self:GetActive()
   local old = oldName and defs[oldName]
@@ -453,6 +460,24 @@ local function writeFragment(presetName, index, f, keys, mode)
         end
       end
     end
+  end
+  if f.alignPixel and type(tbl.dfPixel) == "number" and tbl.dfPixel > 0
+      and type(values.dfPixel) == "number" and values.dfPixel > 0 then
+    values = Core.CopyTable(values)
+    local ratio = tbl.dfPixel / values.dfPixel
+    for kind, rows in pairs(values.dfGeometry or {}) do
+      local fields = kind == "layouts" and {"size_x", "size_y", "scale"}
+        or {"anchor", "relative_point", "relative_to", "position_x", "position_y", "scale", "size_x", "size_y"}
+      for name in pairs(rows) do
+        local row = values[kind][name]
+        if kind == "layouts" then row.scale = row.scale * ratio
+        else row.position_x, row.position_y = row.position_x * ratio, row.position_y * ratio end
+        local parts = {}
+        for _, field in ipairs(fields) do parts[#parts + 1] = tostring(row[field]) end
+        rows[name] = table.concat(parts, "|")
+      end
+    end
+    values.dfPixel = tbl.dfPixel
   end
   local written = Core.WriteOver(tbl, values)
   Core:DBTable("preset", "fragments", presetName)[key] = f.version
