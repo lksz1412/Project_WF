@@ -30,6 +30,7 @@ Devil Forever
 | 단축바 및 소환수 버튼 테두리 | `Masque` · `Masque_Onyx` · `Masque_Dominos` · `DevilForever_Skin_Dominos` | Onyx 기본 외곽과 테마별 소환수 테두리. 소환수 스킨은 해당 기술 버튼 표시와 연동 |
 | 미니맵 | `SexyMap` | 사각 미니맵 초기 기본값과 해상도별 크기 192 / 224 / 304px. 기존 미니맵 프로필은 SexyMap에서 설정 |
 | 골드·가방·내구도·시계·지연·초당 프레임 | `DevilForever_StatusStrip` · `DevilForever_Skin_StatusStrip` | 프리셋 하단 띠와 테마. 표시 항목은 `/dfstatus` |
+| 테마 선택 | `DevilForever_Skin_StatusStrip` · `DevilForever_Core` | 상태띠 오른쪽 화살표로 13종을 순환한다. `/dfp theme`의 번호, 현재 테마와 저장을 공유한다. |
 
 ## 대화
 

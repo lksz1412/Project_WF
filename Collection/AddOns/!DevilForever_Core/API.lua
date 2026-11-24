@@ -50,6 +50,10 @@ Theme tokens (see Theme.lua)
   Core.Theme:GetFromSet(name, token)    -> value | nil (no fallback)
   Core.Theme:GetSet()                   -> activeName, pendingName|nil
   Core.Theme:ListSets() / :ListTokens() -> sorted lists
+  Core.Theme:ListChoices()             -> registered built-ins in numeric order: {{number, name, label}}
+  Core.Theme:GetChoiceName(number)     -> built-in set name | nil (numbers start at 0)
+  Core.Theme:GetDisplayName(name)      -> localized display label, else name
+  Core.Theme:Cycle(-1|1)               -> SetActiveSet result; refuses in combat
   Core.Theme:RegisterSet(name, values)  -> number of tokens kept
   Core.Theme:SetActiveSet(name)         -> true, "applied"|"queued"|"unchanged" | false, reason
   Core.Theme:RegisterCallback(owner, fn(newName, oldName)) / :UnregisterCallback(owner)

@@ -26,6 +26,7 @@ PitBull4형과 Forever Unit Frames형은 같은 조건에서 한 번에 하나�
 | [9 Grid2](../../Collection/codex-briefs/phase9.md) · [10 Details](../../Collection/codex-briefs/phase10.md) | 공격대 표시·클릭 시전, 데미지·Tiny Threat | Grid2는 공격대 상태에서 확인. Details 창 2는 플러그인 모드. 오른쪽 셋째 대화창과 겹치지 않음 |
 | [14 기본 이름표](../../Collection/codex-briefs/phase14.md) · [15 Aurora 판정](../../Collection/codex-briefs/phase15.md) | 적·아군, 위협 색·시전 표시, 기본 창 중복·퀘스트 글자 대비 | R110의 이름표 시전바 유지. Aurora 채택은 실제 비교를 근거로 결정 |
 | [16 상태띠](../../Collection/codex-briefs/phase16.md) · [19 Experience Forever](../../Collection/codex-briefs/phase19.md) | 상태 6칸과 경험치·평판·소환수 표시, 꺼진 칸의 남는 간격 | 글자가 잘리지 않고 정보가 중복되지 않음. 경험치 띠에서 단축바 클릭 가능 |
+| 상태띠 테마 선택 | 상태띠 오른쪽에서 양쪽 화살표로 테마를 넘기고 두 끝에서 순환되는지 본다. `/dfp theme 0`과 다시 불러오기로 이름을 대조한다. | 테마가 바뀌면 이름이 가로로 짧게 움직이고 화살표는 제자리에 있다. 선택 버튼 주변에서 경험치 도움말과 다른 요소의 클릭이 기존대로 된다. |
 | [20 설정 저장·복원](../../Collection/codex-briefs/phase20.md) · [22 테마](../../Collection/codex-briefs/phase22.md) | 프리셋 전환, 저장·복원·재접속, 가능한 경우 특성 전환 | 기존 사용자 값 보존 범위, 테마 전환과 전투 중 지연 적용, 오류 기록 |
 
 ## 다음 판에서 더 확인할 것

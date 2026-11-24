@@ -14,9 +14,6 @@ local type, ipairs, tostring = type, ipairs, tostring
 local Commands = {}
 Core.Commands = Commands
 
-local THEME_ORDER = {"devil", "alliance", "horde", "human", "dwarf", "gnome", "nightelf",
-  "orc", "tauren", "troll", "undead", "skyborne", "skyborne-horde"}
-
 local function say(line) Core.Profiles:Print(line) end
 
 local function sayAll(lines)
@@ -136,11 +133,9 @@ local function theme(selection)
     local registered = T:ListSets()
     local available = {}
     for _, set in ipairs(registered) do available[set] = true end
-    for index, set in ipairs(THEME_ORDER) do
-      if available[set] then
-        show(set, (index - 1) .. " " .. set)
-        available[set] = nil
-      end
+    for _, choice in ipairs(T:ListChoices()) do
+      show(choice.name, choice.number .. " " .. choice.name)
+      available[choice.name] = nil
     end
     for _, set in ipairs(registered) do
       if available[set] then show(set, set) end
@@ -153,7 +148,7 @@ local function theme(selection)
   end
   if Core.InCombat() then return say("안 함: 전투 중 — 바꾼 것 없음") end
   local name = selection
-  if selection:match("^%d+$") then name = THEME_ORDER[tonumber(selection) + 1] end
+  if selection:match("^%d+$") then name = T:GetChoiceName(tonumber(selection)) end
   local ok, how = T:SetActiveSet(name)
   if not ok then return say("안 함: " .. selection .. ": 등록된 테마가 아님 — /dfp theme 로 목록") end
   say(how == "unchanged" and ("이미 " .. name .. " 테마") or ("테마 " .. name .. " 으로 바꿈"))

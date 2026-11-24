@@ -23,6 +23,15 @@ Core.Theme = Theme
 Theme.BASE_SET = "devil"
 Theme.version = 0
 
+local LABEL_INDEX = GetLocale and GetLocale() == "koKR" and 2 or 3
+local CHOICES = {
+  {"devil", "데빌", "Devil"}, {"alliance", "얼라", "Alliance"}, {"horde", "호드", "Horde"},
+  {"human", "인간", "Human"}, {"dwarf", "드워프", "Dwarf"}, {"gnome", "노움", "Gnome"},
+  {"nightelf", "나이트 엘프", "Night Elf"}, {"orc", "오크", "Orc"}, {"tauren", "타우렌", "Tauren"},
+  {"troll", "트롤", "Troll"}, {"undead", "언데드", "Undead"},
+  {"skyborne", "스카이본(얼라)", "Skyborne (Alliance)"}, {"skyborne-horde", "스카이본(호드)", "Skyborne (Horde)"},
+}
+
 -- Token names of the base set. Kinds: color = {r, g, b, a} (0..1),
 -- texture = file path, font = file path, size/number = number.
 Theme.TOKENS = {
@@ -137,6 +146,38 @@ function Theme:ListSets()
   for name in pairs(sets) do names[#names + 1] = name end
   sort(names)
   return names
+end
+
+function Theme:GetChoiceName(number)
+  if type(number) ~= "number" or number % 1 ~= 0 then return nil end
+  local choice = CHOICES[number + 1]
+  return choice and choice[1] or nil
+end
+
+function Theme:GetDisplayName(name)
+  for _, choice in ipairs(CHOICES) do
+    if choice[1] == name then return choice[LABEL_INDEX] end
+  end
+  return name
+end
+
+function Theme:ListChoices()
+  local out = {}
+  for index, choice in ipairs(CHOICES) do
+    if sets[choice[1]] then out[#out + 1] = {number=index - 1, name=choice[1], label=choice[LABEL_INDEX]} end
+  end
+  return out
+end
+
+function Theme:Cycle(direction)
+  if direction ~= -1 and direction ~= 1 then return false, "direction must be -1 or 1" end
+  if Core.InCombat() then return false, "combat" end
+  local choices = self:ListChoices()
+  if #choices == 0 then return false, "no choices" end
+  local index = direction < 0 and 1 or 0
+  for i, choice in ipairs(choices) do if choice.name == activeName then index = i; break end end
+  local nextIndex = (index - 1 + direction) % #choices + 1
+  return self:SetActiveSet(choices[nextIndex].name)
 end
 
 function Theme:ListTokens()
