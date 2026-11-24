@@ -192,3 +192,38 @@ Read: `brief-58-fix2.md` 1–12 · `REQUEST_LEDGER_phase27.md` row R160 · `Pres
 4. Old cell sizes = the V1 values the presets had before Step 58.
 
 Remaining: master commits; then the new stage. HUD art is next round.
+
+## Round 2 stage and dry run (commit 5389bbf9)
+
+| Command | Verdict |
+|---|---|
+| `git log --oneline -1` · `git status --porcelain -- Collection` | `5389bbf9` · empty |
+| `python <scratch>/stage_build.py <worktree> D:/Projects/Project_WF/_local_only` | rc=0 · `stage=…\claude-p27-stage-16cc495f commit=5389bbf9 clean=True version=0.1.5 variant=pitbull4 folders=35 files=2281 bytes=338925014 excluded=106 verified=True` |
+| `tasklist /FI "IMAGENAME eq Wow.exe"` | Wow.exe running |
+| `pwsh -NoProfile -File Collection/tools/install_local.ps1 -StagedAddOns D:\Projects\Project_WF\_local_only\claude-p27-stage-16cc495f\AddOns -BackupRoot D:\Projects\Project_WF\_local_only\claude-p27-backup-a48b4467 -AllowRunningGame -DryRun` | rc=0 · staged 35 folders, 2281 files, commit 5389bbf9…, pitbull4, 0.1.5 · left alone `!BugGrabber, BugSack` · backup plan AddOns 2751 entries / 2310 files, WTF 113 / 105 → `claude-p27-backup-a48b4467` · 35 mirror steps · robocopy /L: Newer 2281, New 0, EXTRA 0 · would check 35 folders and write installation.json |
+| `ls -d …/claude-p27-backup-*` | `5b85dff4`, `767a1dcc` only (dry run created nothing) |
+
+Raw: `<scratch>/stage58r2.txt`, `<scratch>/dry58r2.txt`. Real install not run.
+
+## Round 3 (brief-58-art.md) — stopped before any edit
+
+Read: `brief-58-art.md` 1–16 · `Composition.lua` 1–174 and `Appearance.lua` 1–192 (diag round, unchanged since) · all 13 themes' `Composition/uhd_top.tga` + `uhd_deck[_reviewed].tga`, looked at as one contact sheet (scratch `themes_uhd.png`, each texture downscaled 2×) · `horde/Composition/uhd_top.tga` + `uhd_deck_reviewed.tga` at full width (diag round). Base `5389bbf9`, Collection clean. **No file changed in this round.**
+
+Why it stops (brief: "if something cannot be made clean with cut pieces … stop that part and report it with the file/rectangle"):
+
+1. **The art is not built from repeatable parts.** Each of the 13 themes is a different hand-painted picture: different end caps, shoulder shapes, separator ornaments and border trims. A cutting tool would need a hand-measured rectangle table per theme × preset (13 × 3 tops + 13 × 3 decks = 78 pictures), and several of them have no plain strip to tile:
+   - `nightelf/Composition/<preset>_top.tga`, about x 0–2048 · y 130–256: vine-and-leaf trim along the whole band, not periodic.
+   - `nightelf/Composition/<preset>_deck_reviewed.tga`, about x 0–2048 · y 400–512 and the corners: vine trim with leaves, not periodic.
+   - `skyborne-horde/Composition/<preset>_deck_reviewed.tga`, the third panel, about x 1010–1350: an octagonal panel with chamfered corners, not a rectangle with straight separators.
+   - `skyborne/Composition/<preset>_top.tga`, about x 0–250 and 1800–2048: long swept "wing" ends that run into the band edge (no clean cut between cap and strip).
+   - `gnome`, `tauren`, `orc`, `troll`, `undead`, `dwarf` `<preset>_top.tga` ends: ornaments (gears, crossed bars, spikes, horns) that overlap the band edge, and `dwarf`'s deck has diamond plates on the bottom edge tied to separator positions.
+   - Every deck: the panel fills carry lighting vignettes and (12 themes) a crest watermark in the last panel, about x 1850–2000 · y 200–450 — tiling the fill would show seams and repeat the watermark.
+   (Rectangles are read off the 2×-downscaled sheet: 추정, ±16 texels.)
+2. **The stretch is not only uhd.** Every preset maps 2048-wide art onto its screen with unequal x/y scale (deck fhd 2.24 : 1, qhd 2.58 : 1, uhd 2.89 : 1 — diag-58 D2), so rivets are already elliptical on fhd; there is no correct-aspect source picture to cut from.
+3. **The bar surround (item 3)** would be cut from the same top-band art (shoulders and band edges), so it hits the same per-theme problem; and raising those pieces above Dominos needs pieces that exactly frame the bars, which the band art does not provide (it is a recess the bars sit in, with the shoulders at fixed texel positions).
+
+What would be clean:
+- (a) **New art at the real aspect** per preset (and per theme), drawn as separate parts (caps, rivets, joints, plain tileable strips, a bar-surround frame) — an art task; then the composition and surround code described in the brief is straightforward.
+- (b) A **per-theme cut table made by hand** (78 pictures), accepting visible seams in fills and dropping the non-periodic trims (nightelf vines etc.) — a large, judgement-heavy job; not something to guess here.
+
+Decision needed: (a) or (b), or keep the current composition for now.

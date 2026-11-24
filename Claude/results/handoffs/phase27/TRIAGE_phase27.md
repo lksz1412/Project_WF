@@ -53,3 +53,9 @@ Already decided (with reason): Grid2 above the quest tracker (R158 latest user w
 ## Step 58 review 1 (B, a2531127) — 중대 0 · 중간 1 · 경미 5
 - M1 check list x formula mixes UIParent units and Grid2 frame units (`phase27-game-check.md:33`, `GridLayout.lua:880` rule) → master: confirmed by the quoted lines; fix together with round 2.
 - Minor 1–5 → list for the final report (comments in fhd/V2.lua, "/dfp go" hint before auto reload, count==0 placement, FUF Quartz V2 copy unverified).
+
+## Step 58 re-check (B, 5389bbf9) — 중대 0 · 중간 0 · 경미 2
+- M1 + R160 items 1–3 confirmed fixed. Minor: check list :38 still says square cells for both New and Old; Old profile keeps dfLayoutRevision=2 (harmless now) → final report list.
+
+## Step 58 round 3 (HUD art) — stopped by A before any change
+- Art is hand-painted per theme (13 × 3 sizes × top/deck = 78 pictures), no repeatable strips; all sizes are stretched (deck 2.24/2.58/2.89 : 1), so no correct-aspect source to cut; bar surround is part of the painted band. Options a new art / b hand cut table / c keep → user decision (asked 2026-11-25).
