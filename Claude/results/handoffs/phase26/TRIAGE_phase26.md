@@ -37,3 +37,6 @@ Source: `iter_2/audit_log-48-3.md` (audit B3). Quotes checked @d8b63f59: SwingFo
 | M2 | confirmed code, game effect unverified · report | only PLAYER_SWING; no haste/parry/Slam recalculation inside a cycle |
 | M3 | confirmed · report | no hunter stand-still window; bar hides at 0 if shot is delayed by moving |
 | m1–m7 | list → final report | load premise (only SwingForever loads) unverified · Enum.PlayerSwingType unverified · V1 scale drift on UI scale change · enabled for all classes · shared melee/ranged bar · no unlock preview · possible overlap with built-in swing timer |
+
+## Step 46-rev (R134·R135) — brief font default Allura + combat arrow dim · re-check (same B)
+- Re-check: 0 critical · 0 middle · 2 minor. Both minors fixed by master as one-line text edits (word-level): ratio stated per preset (1.4/1.5/1.6); PLAYER_LOGIN in combat starts at alpha 0.45.

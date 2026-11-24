@@ -13,7 +13,19 @@
 
 **색**: 금색 영문 필기체(script). 획 장식·금속 질감은 Codex 판단. 배경 투명(알파 채널), 바깥 그림자·외곽선은 투명 영역 안에서만.
 
-**서체 (R132)** — 후보는 모두 SIL Open Font License 1.1(`Claude/results/handoffs/phase26/script-font-candidates.md:5–13`). 기본 Great Vibes, 대안 Allura · Alex Brush(굵은 획을 원할 때). 사용자가 다른 후보를 고르면 그것을 쓴다. 고른 서체의 `OFL.txt` 를 이미지 옆 `Media/ThemeSwitcher/LICENSE-OFL.txt` 로 이름을 바꿔 싣고(manifest 를 만드는 `Collection/tools/extract.py` 가 하위 폴더까지 `LICENSE_RE`(`:158`, `^(licen[cs]e|copying|unlicense)([._-].*)?$`)로 사용 허락 파일을 찾는데 `OFL.txt` 는 안 걸리고 `LICENSE-OFL.txt` 는 걸린다), TTF 파일은 싣지 않는다(이미지로만 쓴다). 서체 이름·판·저작권 줄을 색인에 적는다.
+**서체 (R132)** — 후보는 모두 SIL Open Font License 1.1(`Claude/results/handoffs/phase26/script-font-candidates.md:5–13`). 기본 Allura, 대안 Alex Brush(굵은 획을 원할 때)(R134). 사용자가 다른 후보를 고르면 그것을 쓴다. 근거는 Claude 세션의 실측(PIL 로 13 이름이 1절 이름 칸의 높이·너비에 모두 들어가는 가장 큰 글자 크기와, 그때의 소문자 x 높이)이다:
+
+| 서체 | 맞는 크기 fhd/qhd/uhd | x 높이 px |
+|---|---|---|
+| Allura | 21/24/27 | 10/12/13 |
+| Alex Brush | 21/24/27 | 11/13/14 |
+| Great Vibes | 17/20/20 | 7/8/8 |
+| Parisienne | 17/19/22 | 7/8/9 |
+| Italianno·Pinyon Script·Tangerine | — | 6~8 |
+
+Great Vibes 는 위아래 고리가 길어 22~28px 칸에서는 글자 몸통이 7~8px 로 작아진다. Allura 는 같은 칸에서 몸통이 약 1.4~1.6배(fhd 1.4 · qhd 1.5 · uhd 1.6)라 작은 화면(fhd 22px)에서도 읽힌다. 장식(테두리·광택)을 더하면 그만큼 크기를 줄인다 — 측정은 맨 글자 기준이다.
+
+고른 서체의 `OFL.txt` 를 이미지 옆 `Media/ThemeSwitcher/LICENSE-OFL.txt` 로 이름을 바꿔 싣고(manifest 를 만드는 `Collection/tools/extract.py` 가 하위 폴더까지 `LICENSE_RE`(`:158`, `^(licen[cs]e|copying|unlicense)([._-].*)?$`)로 사용 허락 파일을 찾는데 `OFL.txt` 는 안 걸리고 `LICENSE-OFL.txt` 는 걸린다), TTF 파일은 싣지 않는다(이미지로만 쓴다). 서체 이름·판·저작권 줄을 색인에 적는다.
 
 **크기** — 상태띠 프레임 배율이 물리 픽셀 단위라(`Skin.lua:132`) 아래 값이 곧 화면 픽셀이다. 자리 크기 계산식은 `ThemeSwitcher.lua:65–66`(이름 칸 = 글꼴 크기 × 12, 버튼 = max(띠 높이, 글꼴 크기 + 6)), 값은 각 preset `statusstrip.bar`(`Presets/<fhd|qhd|uhd>.lua:272`).
 
@@ -33,13 +45,13 @@
 2. 겉보기는 `Core.Presets:GetActive()` 로 고른다(같은 방식 = `DevilForever_Appearance/Composition.lua:68–69`). 다음 가운데 하나면 지금처럼 글자로 보인다(한글판이면 한글 이름 — `GetDisplayName`): 겉보기가 fhd·qhd·uhd 가 아님 · 사용자 편집으로 `statusstrip.bar` 의 띠 높이나 글꼴 크기(`:62–66`)가 1절 표의 그 겉보기 값과 다름(편집이 있으면 합성 그림을 버리는 `Composition.lua:73–76` 과 같은 생각) · 그 파일이 코드 안 「실린 파일 표」 에 없음 · `SetTexture` 가 false 를 돌려줌(`Composition.lua:131` 과 같음). 파일이 있는지는 표와 `SetTexture` 결과로만 판정한다. 이름은 테마마다, 화살표는 겉보기마다 판정한다 — 화살표 한 벌이 빠지면 그 겉보기 화살표 둘이 ◀▶ 글자로 돌아간다.
 3. 텍스처 교체는 `apply()` 안에서만 — 테마 변경·preset 편집·로그인·전투 끝 때(`:96–106`). OnUpdate·타이머·매 프레임 일을 더하지 않는다(R117).
 4. 넘김 동작 유지: 0.12초 가로 이동(`:15–18`, `:87–92`, ±8 픽셀)이 이미지와 글자에 함께 걸린다 — 둘을 담은 부모 하나에 애니메이션 묶음 하나, 또는 둘에 묶음 하나씩 두고 같이 시작. 이름 칸 바깥은 잘린다(`:10`).
-5. 전투 중 거절 유지: `Theme:Cycle` 이 전투 중 false 를 돌려주면 안내 말풍선(`:34–48`). 버튼 크기·클릭 자리(`:71–76`)·좌클릭만(`:53`)·말풍선 문구는 바꾸지 않는다. disabled 그림은 고를 테마가 하나 이하일 때(`ListChoices` 가 1개 이하)만 — `apply()` 에서 `Button:Disable()`, 그 밖에는 `Button:Enable()`. 전투 중에는 화살표를 켜 둔 채 지금처럼 거절과 말풍선으로 알린다(전투 중 겉보기를 바꿀지는 사용자 질문이 열려 있어 이 기본값으로 둔다).
+5. 전투 중 거절 유지: `Theme:Cycle` 이 전투 중 false 를 돌려주면 안내 말풍선(`:34–48`). 버튼 크기·클릭 자리(`:71–76`)·좌클릭만(`:53`)·말풍선 문구는 바꾸지 않는다. disabled 그림은 고를 테마가 하나 이하일 때(`ListChoices` 가 1개 이하)만 — `apply()` 에서 `Button:Disable()`, 그 밖에는 `Button:Enable()`. 전투에 들어가면(`PLAYER_REGEN_DISABLED`) 두 화살표 버튼(이미지와 대체 글자 모두)을 `SetAlpha(0.45)` 로 흐리게 하고, 전투가 끝나면(`PLAYER_REGEN_ENABLED`) 1 로 되돌린다. 버튼은 Enable 상태 그대로 두어 말풍선(「전투 중에는 바꿀 수 없습니다.」)이 계속 뜨게 한다 — disabled 그림은 위 규칙(테마 1개 이하일 때)만. 이유: `Theme.lua:174` 가 전투 중 넘김을 거절하므로 겉보기로 미리 알린다(R134). 전투 중에 로그인·`/reload` 하면 이 이벤트가 오지 않으므로 `PLAYER_LOGIN` 때 `Core.InCombat()` 이면 처음부터 0.45 로 둔다. 이름 이미지는 흐리지 않는다.
 6. 상태띠 배경, 다른 칸(`Skin.lua` 의 글자·구분선), `Theme.lua` 의 순서·순환은 고치지 않는다. 새 애드온을 만들지 않는다.
 
 ## 3. Codex 가 돌릴 확인
 
 - 13 이름 × 3 겉보기 원배율 갈무리(줄이거나 늘리지 않음), 화살표 normal·hover·pushed·disabled 갈무리.
-- 양방향 넘김 동작(이름이 칸 안에서 미끄러지고 칸 밖은 잘림), `/reload` 뒤 같은 테마·같은 이미지, 전투 중 클릭 거절과 말풍선, 파일 하나를 표에서 뺐을 때와 띠 높이·글꼴 크기를 편집했을 때 글자 대체, hover 가 하얗게 날아가지 않음, 고를 테마가 하나일 때 disabled(시험용 설치에서 테마 하나만 등록되게 잠시 바꿔 확인하거나 시험 도구로 그 상태를 만든다 — 어느 쪽인지 Codex 가 정해 색인에 적는다), 한글판 클라이언트에서 영문 이미지.
+- 양방향 넘김 동작(이름이 칸 안에서 미끄러지고 칸 밖은 잘림), `/reload` 뒤 같은 테마·같은 이미지, 전투 중 클릭 거절과 말풍선, 파일 하나를 표에서 뺐을 때와 띠 높이·글꼴 크기를 편집했을 때 글자 대체, hover 가 하얗게 날아가지 않음, 전투 진입·종료 때 화살표 흐림·복귀, 고를 테마가 하나일 때 disabled(시험용 설치에서 테마 하나만 등록되게 잠시 바꿔 확인하거나 시험 도구로 그 상태를 만든다 — 어느 쪽인지 Codex 가 정해 색인에 적는다), 한글판 클라이언트에서 영문 이미지.
 - 올릴 자리: `References/codex-appearance/26-theme-switcher/`(새 폴더) — 갈무리와 `index.md`(그림마다 파일·겉보기·테마·상태 한 줄, 실은 TGA 목록과 크기, 서체와 사용 허락, 고친 코드 줄, 못 한 확인).
 
 ## 4. Claude 가 나중에 하는 정적 확인
