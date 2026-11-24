@@ -466,7 +466,17 @@ def default_screen_map(mode,width,height,v2=False):
 # Grid2 left of the quest tracker (Blizzard's objective tracker, right side; top at about 24 % and its
 # left edge about 23 % of the screen height from the right): window top on the tracker's top, right edge
 # on the tracker's left edge, square cells; the window grows down and left, clear of every preset rectangle.
-TRACKER={'fhd':(259,247,44),'qhd':(346,330,58),'uhd':(518,495,88)}
+TRACKER={'fhd':(259,247,88),'qhd':(346,330,116),'uhd':(518,495,176)}
+KNOWN_OVERLAP={  # 88/116/176 px cells at the tracker spot, measured; waiting for the user's in-game feedback
+    'fhd 1920 party':['details 1', 'details 2'],
+    'fhd 1920 raid':['auras 대상 buffs alone', 'auras 대상 buffs avoided shown', 'auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown', 'auras 대상의 소환수 buffs alone', 'auras 대상의 소환수 buffs avoided shown', 'auras 대상의 소환수 debuffs alone', 'auras 대상의 소환수 debuffs avoided shown', 'auras 주시 대상 buffs alone', 'auras 주시 대상 buffs avoided shown', 'auras 주시 대상 debuffs alone', 'auras 주시 대상 debuffs avoided shown', 'details 1', 'details 2', 'quartz Focus', 'quartz Player', 'quartz Target', 'unit 대상', 'unit 대상의 대상', 'unit 대상의 대상의 대상', 'unit 대상의 소환수', 'unit 대상의 소환수의 대상', 'unit 대상의 소환수의 대상의 대상', 'unit 주시 대상', 'unit 주시 대상의 대상', 'unit 주시 대상의 대상의 대상'],
+    'qhd 2560 party':['details 1'],
+    'qhd 2560 raid':['auras 대상 buffs alone', 'auras 대상 buffs avoided shown', 'auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown', 'auras 대상의 소환수 buffs alone', 'auras 대상의 소환수 buffs avoided shown', 'auras 대상의 소환수 debuffs alone', 'auras 대상의 소환수 debuffs avoided shown', 'auras 주시 대상 buffs alone', 'auras 주시 대상 buffs avoided shown', 'auras 주시 대상 debuffs alone', 'auras 주시 대상 debuffs avoided shown', 'details 1', 'quartz Player', 'unit 대상', 'unit 대상의 소환수', 'unit 주시 대상'],
+    'uhd 3840 party':['details 1'],
+    'uhd 3840 raid':['auras 대상 buffs alone', 'auras 대상 buffs avoided shown', 'auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown', 'auras 대상의 소환수 buffs alone', 'auras 대상의 소환수 buffs avoided shown', 'auras 대상의 소환수 debuffs alone', 'auras 대상의 소환수 debuffs avoided shown', 'auras 주시 대상 buffs alone', 'auras 주시 대상 buffs avoided shown', 'auras 주시 대상 debuffs alone', 'auras 주시 대상 debuffs avoided shown', 'details 1', 'quartz Player', 'unit 대상', 'unit 대상의 소환수', 'unit 주시 대상'],
+    'uhd 3862 party':['details 1'],
+    'uhd 3862 raid':['auras 대상 buffs alone', 'auras 대상 buffs avoided shown', 'auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown', 'auras 대상의 소환수 buffs alone', 'auras 대상의 소환수 buffs avoided shown', 'auras 대상의 소환수 debuffs alone', 'auras 대상의 소환수 debuffs avoided shown', 'auras 주시 대상 buffs alone', 'auras 주시 대상 buffs avoided shown', 'auras 주시 대상 debuffs alone', 'auras 주시 대상 debuffs avoided shown', 'details 1', 'quartz Player', 'unit 대상', 'unit 대상의 소환수', 'unit 주시 대상'],
+}
 for v2 in (False,True):
     for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),('uhd',3862,2160)]:
         rects,raid,party=default_screen_map(mode,width,height,v2)
@@ -475,13 +485,12 @@ for v2 in (False,True):
         for kind,box in (('raid',raid),('party',party)):
             assert box[0]>=0 and box[1]>=0 and box[0]+box[2]<=width and box[1]+box[3]<=height,(mode,v2,box)
             hits={k for k,r in rects.items() if overlaps(box,r)}
-            # Known overlaps at this spot (size and shape wait for the user's in-game feedback): the 40-player
-            # window reaches the target's full debuff band; on fhd both windows reach the first Details window.
-            known={'auras 대상 debuffs alone','auras 대상 debuffs avoided shown'} if kind=='raid' else set()
-            if mode=='fhd':known|={'details 1'}
+            # Known overlaps at this spot with the user's doubled square cells; size and shape wait for
+            # the user's in-game feedback, so the test pins exactly what the window covers today.
+            known=set(KNOWN_OVERLAP['%s %d %s'%(mode,width,kind)])
             assert hits==known,(mode,width,v2,kind,box,sorted(hits))
             assert abs(box[1]-top)<1e-6 and abs(box[0]+box[2]-(width-margin))<1e-6,(mode,v2,box)
-        print('PASS',mode,width,'V2' if v2 else 'V1','Grid2 40-player window %s and party window %s left of the quest tracker, tops aligned (cells %d px), known overlaps only (target debuff band at 40 players%s)'%(tuple(round(v) for v in raid),tuple(round(v) for v in party),cell,', Details 1 on fhd' if mode=='fhd' else ''))
+        print('PASS',mode,width,'V2' if v2 else 'V1','Grid2 40-player window %s and party window %s left of the quest tracker, tops aligned (cells %d px), pinned overlaps raid %d / party %d'%(tuple(round(v) for v in raid),tuple(round(v) for v in party),cell,len(KNOWN_OVERLAP['%s %d raid'%(mode,width)]),len(KNOWN_OVERLAP['%s %d party'%(mode,width)])))
 print('PASS preset Grid2 placement left of the quest tracker (V1 and V2)')
 
 core_default=_re.search(r'dfStandStill = ([0-9.]+)',(A/'!DevilForever_Core/Defaults/Quartz.lua').read_text(encoding='utf-8')).group(1)
@@ -529,6 +538,6 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),
     assert abs(focus[0]-(player[0]+player[2])-gap)<1e-6 and abs(target[0]-(focus[0]+focus[2])-gap)<1e-6,(mode,player,focus,target)
     print('PASS',mode,width,'V2 default: focus centred %.0f with equal side gaps, totem timer above the player (clear of every rectangle) under its auras, one aura table %s, target-pet chain under the target-pet'%(focus[0]+focus[2]/2,size))
 src={m:(A/'!DevilForever_Core/Presets'/(m+'.lua')).read_text(encoding='utf-8') for m in ('fhd','qhd','uhd')}
-for m,cell in (('fhd',44),('qhd',58),('uhd',88)):
+for m,cell in (('fhd',88),('qhd',116),('uhd',176)):
     assert '["frameWidth"]=%d,["frameHeight"]=%d'%(cell,cell) in src[m] and '["anchor"]="TOPRIGHT"' in src[m],m
-print('PASS Grid2 cells square (fhd 44, qhd 58, uhd 88) with a TOPRIGHT anchor')
+print('PASS Grid2 cells square (fhd 88, qhd 116, uhd 176) with a TOPRIGHT anchor')

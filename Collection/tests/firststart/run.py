@@ -667,7 +667,7 @@ def grid2_preset_values_survive_first_start_template():
         db = s.sv("Grid2DB")
         frame = db["namespaces"]["Grid2Frame"]["profiles"]["Hero - Realm"]
         layout = db["namespaces"]["Grid2Layout"]["profiles"]["Hero - Realm"]
-        eq((frame["frameWidth"], frame["frameHeight"], frame["frameBorder"], layout["Padding"]), (44, 44, 2, 4),
+        eq((frame["frameWidth"], frame["frameHeight"], frame["frameBorder"], layout["Padding"]), (88, 88, 2, 4),
            name + " template: preset cell size, border width and gap written again")
         eq(db["profiles"]["Hero - Realm"]["__template"], name, name + " template's own indicators kept")
         prof = db["profiles"]["Hero - Realm"]
@@ -707,7 +707,7 @@ def grid2_first_start_template_picked_without_dialog():
     eq(s.g.DIALOG_OPENED, 0, "no first-start dialog")
     eq(db["profiles"]["Hero - Realm"]["__template"], "Modern", "Modern template applied at the first call")
     frame = db["namespaces"]["Grid2Frame"]["profiles"]["Hero - Realm"]
-    eq((frame["frameWidth"], frame["frameHeight"]), (44, 44), "preset cell size written again after the template")
+    eq((frame["frameWidth"], frame["frameHeight"]), (88, 88), "preset cell size written again after the template")
     eq(s.errors(), [], "no errors")
 
 
@@ -920,15 +920,15 @@ def grid2_cells(s):
 @case
 def grid2_cells_follow_the_layout_version():
     s = pb4_grid2_session()
-    eq(grid2_cells(s), (44, 44), "new install: New layout, square cells")
+    eq(grid2_cells(s), (88, 88), "new install: New layout, square cells")
     state = s
-    for request, cells in (("fhd-v1", (96, 32)), ("fhd-v2", (44, 44)), ("fhd-v1", (96, 32)), ("fhd", (44, 44))):
+    for request, cells in (("fhd-v1", (96, 32)), ("fhd-v2", (88, 88)), ("fhd-v1", (96, 32)), ("fhd", (88, 88))):
         core["dfp"](state, "preset " + request); core["dfp"](state, "go")
         state = pb4_grid2_session(saved=carry(state))
         eq(grid2_cells(state), cells, request + ": Grid2 cells")
         eq(grid2_spot(state), ("TOPRIGHT", -247, -259), request + ": the window spot stays")
     again = pb4_grid2_session(saved=carry(state))
-    eq(grid2_cells(again), (44, 44), "plain login writes nothing")
+    eq(grid2_cells(again), (88, 88), "plain login writes nothing")
     eq(s.errors() + state.errors() + again.errors(), [], "no errors")
 
 

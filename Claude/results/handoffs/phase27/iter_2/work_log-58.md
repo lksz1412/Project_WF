@@ -227,3 +227,38 @@ What would be clean:
 - (b) A **per-theme cut table made by hand** (78 pictures), accepting visible seams in fills and dropping the non-periodic trims (nightelf vines etc.) — a large, judgement-heavy job; not something to guess here.
 
 Decision needed: (a) or (b), or keep the current composition for now.
+
+## Round 4 — Grid2 square cells doubled
+
+Base `cc32e2f8` (Collection = 5389bbf9). Read: the coordinator's message (cells fhd 88 · qhd 116 · uhd 176, Old cells and the window spot unchanged) · `tests/layoutv2/run.py` 465–535 · `tests/firststart/run.py` 660–935 (pinned values, grep).
+
+Changes: `Presets/{fhd,qhd,uhd}.lua` Grid2Frame `frameWidth = frameHeight` = 88 / 116 / 176 (was 44 / 58 / 88); Old cells in `V2.lua` `oldCells` untouched; spot untouched (TOPRIGHT, tracker top / tracker left). Tests: `firststart` pinned (44,44) → (88,88) (6 places); `layoutv2` TRACKER cells, square-cell check, and the overlap check now pins the exact measured set per screen and window (`KNOWN_OVERLAP`). Check list: cell sizes.
+
+Impact map: presets (fix) · `V2.lua` New cells come from the preset (check only) · `Defaults/Grid2.lua` reapply after template (check only) · `Party.lua` (none, spot only) · tests (fix) · check list (fix).
+
+### What the doubled windows now cover (measured with the test's screen map; same in New and Old)
+
+| Screen | Window (x, y, w, h) | Overlaps |
+|---|---|---|
+| fhd raid 40 | (941, 259, 732, 456) | target, focus and target-pet frames and all their buff/debuff bands; target's target and its target; focus target chain (2); target-pet chain (2); Quartz Player, Target, Focus cast bars; Details windows 1 and 2 — 26 rectangles |
+| fhd party 5 | (1585, 259, 88, 456) | Details windows 1 and 2 |
+| qhd raid 40 | (1274, 346, 956, 596) | target, focus and target-pet frames and all their buff/debuff bands; Quartz Player cast bar; Details window 1 — 17 |
+| qhd party 5 | (2114, 346, 116, 596) | Details window 1 |
+| uhd raid 40 (3840 and 3862 wide) | (1895, 518, 1450, 904) / (1917, …) | same 17 as qhd |
+| uhd party 5 | (3169, 518, 176, 904) | Details window 1 |
+
+Before (44/58/88 cells) only the target's debuff band at 40 players (and Details 1 on fhd) was covered. Not shrunk — waiting for the user.
+
+### Commands (verdict lines)
+
+| Command | Verdict |
+|---|---|
+| `python -I Collection/tests/layoutv2/run.py` | rc=0 · 30 PASS (Grid2 lines show the pinned overlap counts raid 26/17/17/17, party 2/1/1/1) |
+| `python -I Collection/tests/firststart/run.py` | rc=0 · 29/29 |
+| core 109/109 · statusstrip 20/20 · theme_switcher rc=0 · pitbull4runtime 20/20 · composition 8/8 | rc=0 |
+| luacheck Presets | checked=4 failed=0 |
+| genregistry --check | up to date |
+| patches verify (devnull wrapper) | patches=7 unmodified=20 failures=0 |
+| build --dry-run pitbull4 / fuf | rc=0 · 2284 / 2228 files |
+
+Raw: `<scratch>/r4_overlaps.json`, `<scratch>/r4_hits.txt`. Nothing committed; waiting for master's commit.
