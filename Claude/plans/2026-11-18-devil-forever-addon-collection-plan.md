@@ -84,6 +84,7 @@
   Phase 26 Codex 실게임 조정판(codex/live-015-pitbull-20261124) 합치기·상태띠 테마 넘김 그림
     Step 46  상태띠 테마 넘김 그림 Codex 외관 발주문(영문 필기체 이름 그림·화살표 그림 · R131) 30–60분
     Step 47  Codex 실게임 조정판 검토·합치기·R130 반영·0.1.5 재빌드   120–240분
+    Step 48  검토만(수정 없음, R133): ① 자체 제작·수정 애드온 코드 ② 수정 안 된 원본 애드온 비효율·에러 ③ Quartz 스윙(사냥꾼·근접) — 최신 가지 d8b63f59 기준 180–300분
 ```
 
 「그대로 사용」 으로 판정된 기능 Phase 는 Step 하나(설정 기본값 파일 + manifest 등록 + Codex 발주문)다. Step 8 에서 「고침」·「새 개발」 로 판정된 기능은 그 Phase 에 하위 Step(예: Step 13a 읽기·설계, 13b 수정·정적 검사)을 붙이고 60–150분을 더한다. Phase 2·8·20·23·25 는 처음부터 Step 이 둘 이상이다(Phase 8 은 R104 로 코드 작업 없이 원천 확인·표시 기본값·직업 점검이다). Step 8 판정으로 Phase 18 이 「고침」 이 되어 Step 30a·30b 를 두었다(그 뒤 R100 으로 빠짐). Phase 21 은 「새 개발」 로 Step 34–35 를 잡았다가 R107 로 빠졌다. R107 로 Phase 16 은 정보 부분을 새로 만들어 Step 28a·28b 가 되었고, 끝난 Phase 6 에 PitBull4 판을 더하는 Phase 6-rev 는 마지막 번호 다음인 Step 42–43 을 쓴다(Correction History). 외관 작업(Phase 2 외관 구현·각 기능 스킨·Phase 22 테마·Phase 24 목업)은 Codex 몫이라 시간에 넣지 않았다(Implementation Changes 「Codex 몫 목록」). 세부 Step 은 Phase 착수 때 세부 계획서에 쓴다.
@@ -401,7 +402,7 @@ R1 의 첫 요청은 단축키·체력/마나·미니맵이었고 「부가 기�
 | 23 연계 검사·정정 | `…-phase23-세부계획.md` | 37–38 | 완료 |
 | 24 최종 목업 (제작은 Codex) | `…-phase24-세부계획.md` | 39 | 완료 (받은 목업 대조는 Codex 결과 대기 · R109) |
 | 25 Codex 검증 결과 반영·고정 | `…-phase25-세부계획.md` | 44 → 45 → 40a–40d → 41 | 완료 (0.1.5 · 게임 미검증 · 릴리스 업로드는 사용자 승인 대기) |
-| 26 Codex 실게임 조정판 합치기·테마 넘김 그림 | `…-phase26-세부계획.md` | 46–47 | 진행 중 |
+| 26 Codex 실게임 조정판 합치기·테마 넘김 그림·검토 | `…-phase26-세부계획.md` | 46–48 | 진행 중 |
 
 `…` 는 `Claude/plans/2026-11-18-devil-forever-addon-collection` 이다. Phase 가 끝날 때마다 그 Phase 의 Result 를 `Claude/results/` 에 남기고, 끝난 Phase 정리는 `Claude/plans/2026-11-18-devil-forever-addon-collection-plan_이력.md` 로 옮긴다.
 
