@@ -1,0 +1,28 @@
+# Brief — Phase 27 Step 51 (work sub A, A2 coder)
+
+Worktree: `D:/Projects/Project_WF/_local_only/claude-phase27` (branch `claude/phase27-local-20261124`). Run every command from this folder. Windows PC, Git Bash + PowerShell, Python 3.12.10 (`python`), Pillow 12.3.0, fontTools 4.62.1.
+
+## Goal
+
+Do what `Collection/codex-briefs/appearance-26-theme-switcher.md` asks of Codex (§1 art, §2 code), but as Claude. Read that brief in full first; it is the spec. User decisions behind it: R131, R134, R135, R141 (font Allura), R142 (font file shipped with the brief) — see `Claude/results/REQUEST_LEDGER_phase26.md`. Current user rows: `Claude/results/REQUEST_LEDGER_phase27.md` (R152–R154).
+
+## Deliverables
+
+1. `Collection/tools/theme_switcher_art.py` — dev tool (not shipped; `build.py` packs only `Collection/AddOns`). Generates all images from `Collection/codex-briefs/assets/26-theme-switcher/Allura-Regular.ttf` (check sha256 `9c142b2e515832c0dfc4ff8b8ea18f40314943bf937b72e2b23c4661bac14cc6` before use; stop if it differs). Same input → byte-identical output (no timestamps, no randomness). A `--check` mode that regenerates in memory and compares with the files on disk is welcome (use it as a test gate).
+2. Images under `Collection/AddOns/DevilForever_Skin_StatusStrip/Media/ThemeSwitcher/<fhd|qhd|uhd>/`:
+   - `name_<theme id>.tga` × 13 per preset (ids and English labels exactly as brief §1 / `Theme.lua` CHOICES order).
+   - `arrow_<prev|next>_<normal|hover|pushed|disabled>.tga` × 8 per preset.
+   - Canvas and draw area per brief §1 table; everything outside the draw area fully transparent; label must fit inside the name area without clipping or stretching (`Skyborne (Alliance)` is the longest); measurement basis in the brief (Allura sizes 21/24/27 for fhd/qhd/uhd fit bare text — decorations take room, so shrink as needed).
+   - Look: gold metallic script (vertical gold gradient, light highlight band, darker lower edge), thin dark outline and a soft dark shadow inside the transparent area so it reads on the strip; arrows = matching gold ornamental chevrons (◀ ▶ direction), hover = complete brighter image (not a glow-only overlay — brief §2 item 1 uses BLEND), pushed = slightly darker and shifted 1 px down, disabled = desaturated dark gold. Keep strokes crisp at fhd (22 px tall).
+   - Format: 32-bit uncompressed TGA, image type 2, alpha — match the header layout (origin / descriptor byte) of TGAs already shipped in `Collection/AddOns/DevilForever_Appearance/` (read one header and copy its convention).
+   - `Media/ThemeSwitcher/LICENSE-OFL.txt` = copy of `Collection/codex-briefs/assets/26-theme-switcher/OFL.txt`. No TTF in AddOns.
+3. `Collection/AddOns/DevilForever_Skin_StatusStrip/ThemeSwitcher.lua` — exactly brief §2 items 1–6 (texture objects created once and reused; SetTexture result checked before SetNormal/Pushed/Disabled/HighlightTexture(obj, "BLEND"); keep the three FontStrings as fallback; text fallback rules of item 2 incl. edited bar height / font size and missing file in the code's shipped-file table; swaps only inside apply(); animation on image and text together; combat: arrows alpha 0.45 on PLAYER_REGEN_DISABLED, 1 on ENABLED, 0.45 at PLAYER_LOGIN when `Core.InCombat()`; Disable() only when ≤1 choice; nothing else in Skin.lua / Theme.lua / backgrounds changes). Register new files in the TOC only if the addon needs it (textures do not need TOC entries; check).
+4. Tests: extend `Collection/tests/statusstrip/` (it already has `theme_switcher.py`) so the suite checks: all 63 TGA exist with correct header (size, type 2, 32 bpp, alpha bits), the Lua shipped-file table == files on disk, no OnUpdate / C_Timer / ticker added, fallback branches present. Run the full statusstrip suite and `Collection/tests/core/run.py`.
+5. `python Collection/tools/extract.py` (regenerates manifest — confirm `license_files` of the status strip skin now lists `Media/ThemeSwitcher/LICENSE-OFL.txt`; if extract needs `Collection/upstream` and it is missing, run what extract.py documents to create it — Collection/upstream is git-ignored), `python Collection/tools/genregistry.py --check`, `python Collection/tools/patches.py verify` (expect patches 7 / unmodified 20 / failures 0), `python Collection/tools/build.py --dry-run` (new files listed).
+6. Preview: `References/codex-appearance/26-theme-switcher/preview.png` (all 13 names × 3 presets and all arrow states at 1:1 on a strip-coloured background, plus a 4× zoom row for fhd) and `index.md` (one line per image: file · preset · theme/state; TGA list with sizes; font name/version/copyright from the TTF name table and OFL; code lines changed; checks not done = everything in-game, waiting for Step 53).
+
+## Rules for you (read these memory files in full before editing and follow them)
+
+- `C:/Users/lksz1/.claude/BADA_HUB/feedback_change_impact_analysis.md` — build an impact map before editing (callers of ThemeSwitcher functions, Skin.lua apply path, Theme.lua Cycle/GetChoiceName, tests, build/manifest) and put the full table in your work_log.
+- `C:/Users/lksz1/.claude/BADA_HUB/feedback_unit_loop.md`, `feedback_post_edit_runtime_verification.md`, `feedback_full_file_read_required.md`, `feedback_code_comment_discipline.md` (no history / phase / step text in code comments), `feedback_code_ownership_scope.md` (keep existing names and conventions; change only what the brief asks).
+- Work log: `Claude/results/handoffs/phase27/iter_1/work_log-51.md` — impact map, files + line ranges you read, commands verbatim with only their verdict lines (rc / counts / the decisive error line), decisions you made (as yours), open questions in a Decision Queue list.

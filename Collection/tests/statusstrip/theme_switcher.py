@@ -26,7 +26,16 @@ function R:SetScale(v) self.scale=v end
 function R:SetClipsChildren(v) self.clip=v end
 function R:SetJustifyH(v) self.justify=v end
 function R:SetWordWrap(v) self.wrap=v end
-function R:SetTexture(v) self.texture=v end
+TEST_badTextures={}
+function R:SetTexture(v) self.texture=v;if v and TEST_badTextures[v] then return false end;return true end
+function R:SetTexCoord(...) self.texCoord={...} end
+function R:SetAlpha(v) self.alpha=v end
+function R:Enable() self.enabled=true end
+function R:Disable() self.enabled=false end
+function R:SetNormalTexture(t) self.normalTexture=t end
+function R:SetPushedTexture(t) self.pushedTexture=t end
+function R:SetDisabledTexture(t) self.disabledTexture=t end
+function R:SetHighlightTexture(t,mode) self.highlightTexture=t;self.highlightMode=mode end
 function R:SetVertexColor(...) self.color={...} end
 function R:GetStringWidth()
  local width=0
@@ -65,13 +74,15 @@ GameTooltip={SetOwner=function(self,v) self.owner=v end,SetText=function(self,v)
  AddLine=function(self,v) self.line=v end,Show=function(self) self.shown=true end,Hide=function(self) self.shown=false end}
 DevilForever_Appearance={GetPixelUnit=function() return TEST_pixel end}
 """
-def load(s,relative,addon=None):
-    fn=s.lua.eval('loadstring')((A/relative).read_bytes(),('@'+relative).encode())
+def load(s,relative,addon=None,source=None):
+    fn=s.lua.eval('loadstring')(source if source is not None else (A/relative).read_bytes(),('@'+relative).encode())
     assert not isinstance(fn,tuple),fn
     fn(addon or relative.split('/')[0],s.lua.table())
 
-def session(width,height,font,locale='koKR',saved=None,registered=ORDER):
-    s=C['Session'](registry='generated',extra_files=(),saved=saved,globals_={'GetLocale':lambda:locale})
+def session(width,height,font,locale='koKR',saved=None,registered=ORDER,screen=None,switcher=None,combat_login=False):
+    s=C['Session'](registry='generated',extra_files=(),saved=saved,globals_={'GetLocale':lambda:locale},
+                   collection_presets=screen is not None)
+    if screen:s.g.GetPhysicalScreenSize=s.lua.eval('function() return %d, %d end'%screen)
     s.boot()
     s.lua.execute('CORE_FIRE=TEST_fire;CORE_SLASH=SlashCmdList.DFPROFILE')
     s.lua.execute(S['STUBS']);s.lua.execute(UI);s.g.SlashCmdList.DFPROFILE=s.g.CORE_SLASH
@@ -87,7 +98,8 @@ def session(width,height,font,locale='koKR',saved=None,registered=ORDER):
     load(s,'DevilForever_StatusStrip/StatusStrip.lua')
     s.g.TEST_fire('ADDON_LOADED','DevilForever_StatusStrip')
     load(s,'DevilForever_Skin_StatusStrip/Skin.lua')
-    load(s,'DevilForever_Skin_StatusStrip/ThemeSwitcher.lua')
+    load(s,'DevilForever_Skin_StatusStrip/ThemeSwitcher.lua',source=switcher)
+    s.g.TEST_combat=combat_login
     s.g.TEST_fire('PLAYER_LOGIN');s.g.TEST_fire('PLAYER_ENTERING_WORLD')
     assert not s.errors(),s.errors()
     return s
@@ -166,3 +178,139 @@ for _ in ORDER:
     assert text.GetStringWidth(text)<=slot.width
 assert text.text=='Devil'
 print('PASS all English names fit fixed FHD slot')
+
+# Theme switcher images: shipped files, Lua file table, image/text choice ------------
+import re,struct
+SKIN=A/'DevilForever_Skin_StatusStrip'
+MEDIA=SKIN/'Media/ThemeSwitcher'
+SOURCE=(SKIN/'ThemeSwitcher.lua').read_bytes()
+LUA_TEXT=SOURCE.decode('utf-8')
+ART={'fhd':((256,32),(192,22),(32,32),22,16,(1920,1080)),'qhd':((256,32),(216,24),(32,32),24,18,(2560,1440)),
+     'uhd':((512,32),(264,28),(32,32),28,22,(3840,2160))}
+FILES=['name_'+t for t in ORDER]+['arrow_%s_%s'%(side,state) for side in ('prev','next')
+                                   for state in ('normal','hover','pushed','disabled')]
+
+def tga(path):
+    data=path.read_bytes()
+    head=struct.unpack('<BBBHHBHHHHBB',data[:18])
+    w,h=head[8],head[9]
+    return head,w,h,data[18:18+w*h*4],data[18+w*h*4:]
+
+for preset,(name_canvas,name_area,arrow_canvas,bar,_font,_screen) in ART.items():
+    on_disk=sorted(p.stem for p in (MEDIA/preset).iterdir())
+    assert on_disk==sorted(FILES),(preset,on_disk)
+    for stem in FILES:
+        head,w,h,pixels,footer=tga(MEDIA/preset/(stem+'.tga'))
+        canvas,area=(name_canvas,name_area) if stem.startswith('name_') else (arrow_canvas,(bar,bar))
+        assert head==(0,0,2,0,0,0,0,0,w,h,32,8) and (w,h)==canvas,(preset,stem,head)
+        assert footer==b'\0'*8+b'TRUEVISION-XFILE.\0',(preset,stem)
+        inside=0
+        for row in range(h):
+            y=h-1-row
+            for x in range(w):
+                a=pixels[(row*w+x)*4+3]
+                if x>=area[0] or y>=area[1]: assert a==0,(preset,stem,x,y)
+                elif a: inside+=1
+        assert inside>0,(preset,stem)
+assert (MEDIA/'LICENSE-OFL.txt').read_bytes()==(ROOT/'Collection/codex-briefs/assets/26-theme-switcher/OFL.txt').read_bytes()
+assert not [p for p in SKIN.rglob('*') if p.suffix.lower() in ('.ttf','.otf')]
+assert sorted(p.name for p in MEDIA.iterdir())==['LICENSE-OFL.txt','fhd','qhd','uhd']
+print('PASS 63 TGA (canvas, type 2, 32 bpp, 8 alpha bits, footer, transparent outside the draw area) + OFL, no font file')
+
+block=re.search(r'local SHIPPED = \{(.*?)\n\}',LUA_TEXT,re.S).group(1)
+table={m.group(1):re.findall(r'"([^"]+)"',m.group(2)) for m in re.finditer(r'(\w+) = \{(.*?)\}',block,re.S)}
+assert set(table)==set(ART),table.keys()
+for preset,names in table.items():
+    assert len(names)==len(set(names)) and sorted(names)==sorted(p.stem for p in (MEDIA/preset).iterdir()),preset
+assert not re.search(r'OnUpdate|C_Timer|NewTicker|NewTimer',LUA_TEXT)
+print('PASS Lua shipped-file table equals the files on disk; no OnUpdate/C_Timer/ticker in ThemeSwitcher.lua')
+
+def art(s):
+    p=s.g.DevilForever_StatusStripThemes;slot,text,left,right=items(p)
+    return p,slot,text,slot.fontStrings[2],left,right
+def path(preset,stem):return 'Interface\\AddOns\\DevilForever_Skin_StatusStrip\\Media\\ThemeSwitcher\\%s\\%s.tga'%(preset,stem)
+def arrows_are_images(button,preset,side):
+    states={'normal':button.normalTexture,'pushed':button.pushedTexture,'disabled':button.disabledTexture,
+            'hover':button.highlightTexture}
+    return (all(t is not None and t.texture==path(preset,'arrow_%s_%s'%(side,state)) for state,t in states.items())
+            and button.highlightMode=='BLEND' and not button.fontStrings[1].shown)
+def arrows_are_text(button):
+    textures=[button.normalTexture,button.pushedTexture,button.disabledTexture,button.highlightTexture]
+    return all(t is None or t.texture is None for t in textures) and button.fontStrings[1].shown
+def coords(t):return [t.texCoord[i] for i in range(1,5)]
+def texture_objects(button):return [button.fontStrings[i] for i in range(2,6)]
+
+for preset,(name_canvas,name_area,arrow_canvas,bar,font,screen) in ART.items():
+    s=session(screen[0],screen[1],font,locale='enUS',screen=screen)
+    assert s.core.Presets.GetActive(s.core.Presets)[0]==preset
+    p,slot,text,image,left,right=art(s)
+    made=texture_objects(left)+texture_objects(right)
+    tickers=s.g.TEST_count.NewTicker
+    assert image.shown and not text.shown and image.texture==path(preset,'name_devil')
+    assert coords(image)==[0,name_area[0]/name_canvas[0],0,name_area[1]/name_canvas[1]]
+    assert (image.width,image.height)==name_area and text.text=='Devil'
+    assert arrows_are_images(left,preset,'prev') and arrows_are_images(right,preset,'next')
+    assert coords(left.normalTexture)==[0,bar/arrow_canvas[0],0,bar/arrow_canvas[1]] and left.enabled and right.enabled
+    assert left.alpha==right.alpha==1
+    for theme in ORDER[1:]+ORDER[:1]:
+        click(right)
+        assert image.texture==path(preset,'name_'+theme) and image.shown and not text.shown
+        assert text.animation.playing and image.animation.playing
+        assert text.animation.translation.x==image.animation.translation.x==-8
+        assert text.points[1][4]==image.points[1][4]==8
+    click(left);assert image.animation.translation.x==8 and image.points[1][4]==-8
+    image.animation.Finish(image.animation);assert image.points[1][4]==0
+    assert all(s.g.rawequal(a,b) for a,b in zip(made,texture_objects(left)+texture_objects(right))),'arrow textures made once'
+    assert len(left.fontStrings)==len(right.fontStrings)==5 and len(slot.fontStrings)==2
+    s.g.TEST_combat=True;s.g.TEST_fire('PLAYER_REGEN_DISABLED')
+    assert left.alpha==right.alpha==.45 and p.alpha is None and slot.alpha is None and image.alpha is None
+    click(right);assert s.g.GameTooltip.line=='Unavailable in combat.' and left.enabled and right.enabled
+    s.g.TEST_combat=False;s.g.TEST_fire('PLAYER_REGEN_ENABLED');assert left.alpha==right.alpha==1
+    assert s.g.TEST_count.NewTicker==tickers and all(f.scripts.OnUpdate is None for f in s.g.TEST_frames.values())
+    edit=s.core.Edit
+    ok,_=edit.Set(edit,'statusstrip.bar','font',s.table({'path':'font','size':font+1}));assert ok
+    assert text.shown and not image.shown and arrows_are_text(left) and arrows_are_text(right)
+    ok,_=edit.Set(edit,'statusstrip.bar','font',s.table({'path':'font','size':font}));assert ok
+    assert image.shown and arrows_are_images(left,preset,'prev')
+    ok,_=edit.Set(edit,'statusstrip.bar','size',s.table({'width':screen[0],'height':bar+2}));assert ok
+    assert text.shown and not image.shown and arrows_are_text(right)
+    assert not s.errors(),s.errors()
+    print('PASS',preset,'name and arrow images, tex coords, slide together, textures made once, combat alpha, edited size/font -> text')
+
+s=session(1920,1080,16,locale='koKR',screen=(1920,1080))
+p,slot,text,image,left,right=art(s)
+s.g.TEST_badTextures[path('fhd','name_horde')]=True
+s.g.SlashCmdList.DFPROFILE('theme horde');assert text.shown and not image.shown and text.text=='호드'
+s.g.SlashCmdList.DFPROFILE('theme alliance');assert image.shown and image.texture==path('fhd','name_alliance')
+s.g.TEST_badTextures[path('fhd','arrow_next_pushed')]=True
+s.g.SlashCmdList.DFPROFILE('theme devil')
+assert arrows_are_text(left) and arrows_are_text(right) and image.shown
+print('PASS SetTexture false -> that name as text; one arrow file -> both arrows as text (koKR name text)')
+
+for drop,kind in (('"name_horde", ','name'),('"arrow_prev_hover", ','arrows')):
+    start=SOURCE.index(b'fhd = {')
+    source=SOURCE[:start]+SOURCE[start:].replace(drop.encode(),b'',1)
+    assert source!=SOURCE
+    s=session(1920,1080,16,locale='enUS',screen=(1920,1080),switcher=source)
+    p,slot,text,image,left,right=art(s)
+    if kind=='name':
+        assert image.shown and arrows_are_images(left,'fhd','prev')
+        s.g.SlashCmdList.DFPROFILE('theme horde');assert text.shown and not image.shown
+    else:
+        assert arrows_are_text(left) and arrows_are_text(right) and image.shown
+    q=session(2560,1440,18,locale='enUS',screen=(2560,1440),switcher=source)
+    _,_,qtext,qimage,qleft,qright=art(q)
+    q.g.SlashCmdList.DFPROFILE('theme horde')
+    assert qimage.shown and arrows_are_images(qleft,'qhd','prev') and arrows_are_images(qright,'qhd','next')
+print('PASS file left out of the fhd table -> text in fhd only (name per theme, arrows per preset)')
+
+one=session(1920,1080,16,locale='enUS',screen=(1920,1080),registered=['devil'])
+_,_,_,_,left,right=art(one);assert left.enabled is False and right.enabled is False
+two=session(1920,1080,16,locale='enUS',screen=(1920,1080),registered=['devil','horde'])
+_,_,_,_,left,right=art(two);assert left.enabled and right.enabled
+fight=session(1920,1080,16,locale='enUS',screen=(1920,1080),combat_login=True)
+_,_,_,_,left,right=art(fight);assert left.alpha==right.alpha==.45
+fight.g.TEST_combat=False;fight.g.TEST_fire('PLAYER_REGEN_ENABLED');assert left.alpha==right.alpha==1
+none=session(1920,1080,16,locale='enUS')
+_,_,text,image,left,right=art(none);assert text.shown and not image.shown and arrows_are_text(left)
+print('PASS one choice -> Disable, two -> Enable; login in combat -> 0.45; no preset -> text')

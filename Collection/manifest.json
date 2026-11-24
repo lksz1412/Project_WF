@@ -17019,7 +17019,9 @@
       "lua_files": 2,
       "lua_files_in_libs": 0,
       "embedded_libs": [],
-      "license_files": []
+      "license_files": [
+        "Media/ThemeSwitcher/LICENSE-OFL.txt"
+      ]
     },
     {
       "folder": "DevilForever_StatusStrip",
