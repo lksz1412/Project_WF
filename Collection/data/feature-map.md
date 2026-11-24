@@ -55,7 +55,7 @@ Devil Forever
 
 | 기능 | 담당 | 적용 경로 |
 |---|---|---|
-| 파티와 공격대 | `Grid2` · `Grid2Options` · `Grid2LDB`(파티·공격대, 화면 위 가운데) 와 유닛 프레임 파티(`PitBull4` 파티 그룹 — 왼쪽 위 세로, 공격대에서는 내 소그룹, 또는 FUF 파티)가 함께. 유닛 프레임 파티 켜기/끄기는 `/dfp party on`·`/dfp party off`(접속 때 되돌리지 않음) | Core 초기 프리셋. Grid2 틀은 Modern 자동(고르기 창 없음). Grid2 세부 지표는 Grid2 프로필 |
+| 파티와 공격대 | `Grid2` · `Grid2Options` · `Grid2LDB`(파티·공격대, 오른쪽 적 대상 프레임 바로 위) 와 유닛 프레임 파티(`PitBull4` 파티 그룹 — 왼쪽 위 세로, 공격대에서는 내 소그룹, 또는 FUF 파티)가 함께. 유닛 프레임 파티 켜기/끄기는 `/dfp party on`·`/dfp party off`(접속 때 되돌리지 않음) | Core 초기 프리셋. Grid2 틀은 Modern 자동(고르기 창 없음). Grid2 세부 지표는 Grid2 프로필 |
 | 데미지와 위협 | `Details` · `Details_TinyThreat` · `DevilForever_DetailsLayout` | 기존 창 1·2에 `/dfdetails apply`로 [해상도별 위치](../AddOns/DevilForever_DetailsLayout/Layout.lua) 적용. 모드와 세부 표시 설정은 Details |
 
 ## 성장·퀘스트

@@ -864,7 +864,7 @@ def grid2_spot(s):
 @case
 def party_command_moves_grid2_only_from_the_earlier_default_spot():
     fresh = pb4_grid2_session()
-    eq(grid2_spot(fresh), ("TOP", 0, -140), "new install: fhd preset spot, top centre")
+    eq(grid2_spot(fresh), ("BOTTOMRIGHT", -439, 776), "new install: fhd preset spot, above the target frame")
     eq(any("Grid2 창" in l for l in core["dfp"](fresh, "party on")), False, "already at the preset spot: no position line")
     for spot, moved in (((None, 24, -164), True), (("TOPLEFT", 24.4, -163.6), True), (("TOPLEFT", 300, -164), False)):
         saved = carry(fresh)
@@ -879,7 +879,7 @@ def party_command_moves_grid2_only_from_the_earlier_default_spot():
         eq(core["dfp"](s, "party off") and grid2_spot(s), before, "off never moves the window")
         lines = core["dfp"](s, "party on")
         if moved:
-            eq(grid2_spot(s), ("TOP", 0, -140), "earlier default %r: moved to the preset spot" % (spot,))
+            eq(grid2_spot(s), ("BOTTOMRIGHT", -439, 776), "earlier default %r: moved to the preset spot" % (spot,))
             eq(core["has_line"](lines, "Grid2 창: 예전 기본 자리 → fhd preset"), True, "%r" % lines)
         else:
             eq(grid2_spot(s), before, "a window the user moved stays")
@@ -887,6 +887,26 @@ def party_command_moves_grid2_only_from_the_earlier_default_spot():
         nxt = pb4_grid2_session(saved=carry(s))
         eq(grid2_spot(nxt), grid2_spot(s), "login moves nothing")
         eq(s.errors() + nxt.errors(), [], "no errors")
+
+
+@case
+def grid2_spot_follows_the_compare_layout_and_back():
+    s = pb4_grid2_session()
+    eq(grid2_spot(s), ("BOTTOMRIGHT", -439, 776), "fhd: above the target, right edges together")
+    core["dfp"](s, "preset fhd-v2"); core["dfp"](s, "go")
+    v2 = pb4_grid2_session(saved=carry(s))
+    eq(grid2_spot(v2), ("BOTTOMRIGHT", -536, 733), "fhd-v2: above the V2 target")
+    saved = carry(v2)   # before the V1 request below
+    core["dfp"](v2, "preset fhd-v1"); core["dfp"](v2, "go")
+    back = pb4_grid2_session(saved=carry(v2))
+    eq(grid2_spot(back), ("BOTTOMRIGHT", -439, 776), "fhd-v1: back to the V1 spot")
+    lay = saved["Grid2DB"]["namespaces"]["Grid2Layout"]["profiles"]["Hero - Realm"]
+    lay.pop("anchor", None); lay["PosX"], lay["PosY"] = 24 * PIXEL_FACTOR, -164 * PIXEL_FACTOR
+    old = pb4_grid2_session(saved=saved)
+    lines = core["dfp"](old, "party on")
+    eq(grid2_spot(old), ("BOTTOMRIGHT", -536, 733), "V2 in use: the earlier default spot moves to the V2 spot")
+    eq(core["has_line"](lines, "fhd-v2 preset 의 자리"), True, "%r" % lines)
+    eq(s.errors() + v2.errors() + back.errors() + old.errors(), [], "no errors")
 
 
 @case

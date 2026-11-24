@@ -65,3 +65,14 @@ Source `iter_3/audit_log-47-2.md`. Quote checked: Party.lua:110-115 writes layou
 
 ## Step 47 re-check 2 — master triage (middle 1 → 0)
 Source `iter_3/audit_log-47-3.md`. 0 · 0 · 1. m1 notice wording (Grid2 at Grid2's own default was called "user-set") fixed by master as a one-line text change: Party.lua:415 + tests/firststart/run.py:886. Unit closed.
+
+## Step 50 review — master triage
+Source `iter_3/audit_log-50-1.md`. Quotes checked: fhd.lua:589 target avoid rule (right column 70, .7), Layout.lua:455/461, V2.lua has no Grid2 (grep 0) — match.
+| ID | Verdict | What / why |
+|---|---|---|
+| M1 | fix | aura envelope in the test ignores the avoid rule (focus shown → 70 px right column) and counts debuffs as 16 total, not own 16 + others 16 → Grid2 bottom must clear the real worst case in V1 with and without focus |
+| M2 | fix | V2 has no Grid2 fragment → Grid2 stays at the V1 spot, not above the V2 target, and overlaps its auras. V2 must place Grid2 above the V2 target too (R148) |
+| m1 | fix with M1 | test/work_log wording about the envelope |
+
+## Step 50 re-check — master triage (middle 2 → 0)
+Source `iter_3/audit_log-50-2.md`. 0 · 0 · 1. m1 (V2 on a screen wider than the preset base width: Grid2 right edge shifts by half the difference) → list for final report. fhd V1 13 px case kept (needs others 16 + own 11 debuffs on the target).

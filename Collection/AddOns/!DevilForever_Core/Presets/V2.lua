@@ -9,11 +9,23 @@ local units = {
   ["플레이어의 소환수의 대상"]="pettarget",["플레이어의 소환수의 대상의 대상"]="pettargettarget",
   ["주시 대상의 대상"]="focustarget",["주시 대상의 대상의 대상"]="focustargettarget",
 }
+-- gridBottom: Grid2's window bottom edge in V2 (physical y), above the V2 target's aura bands at their
+-- native maximum (tests/layoutv2 measures them).
 local modes = {
-  fhd={width=1920,totemY=748,castHeight=30,smallWidth=123,smallHeight=29,footY=548},
-  qhd={width=2560,totemY=1056,castHeight=34,smallWidth=166,smallHeight=39,footY=765},
-  uhd={width=3840,totemY=1636,castHeight=40,smallWidth=251,smallHeight=58,footY=1180},
+  fhd={width=1920,height=1080,totemY=748,castHeight=30,smallWidth=123,smallHeight=29,footY=548,gridBottom=347},
+  qhd={width=2560,height=1440,totemY=1056,castHeight=34,smallWidth=166,smallHeight=39,footY=765,gridBottom=541},
+  uhd={width=3840,height=2160,totemY=1636,castHeight=40,smallWidth=251,smallHeight=58,footY=1180,gridBottom=904},
 }
+-- Physical-pixel to UI-unit factor, as the preset files compute it.
+local function pixelFactor()
+  local factor = PixelUtil and PixelUtil.GetPixelToUIUnitFactor and PixelUtil.GetPixelToUIUnitFactor()
+  if type(factor) == "number" and factor > 0 then return factor end
+  local ui = UIParent and UIParent:GetEffectiveScale()
+  local _, height = GetPhysicalScreenSize()
+  local logical = UIParent and UIParent:GetHeight()
+  if type(height) == "number" and height > 0 and type(logical) == "number" and logical > 0
+      and type(ui) == "number" and ui > 0 then return logical * ui / height end
+end
 local function signature(row, fields)
   local parts = {}
   for _, key in ipairs(fields) do parts[#parts+1] = tostring(row[key]) end
@@ -44,7 +56,7 @@ for name, m in pairs(modes) do
     Core.Presets:Register(base)
     for _, version in ipairs({1,2}) do
       local def = {name=name .. "-v" .. version,layoutOnly=true,fragments={}}
-      local root, spaces, quartz = nil, {}, {}
+      local root, spaces, quartz, grid = nil, {}, {}, nil
       for _, f in ipairs(base.fragments) do
         if f.folder == "PitBull4" and not f.namespace and f.values.layouts then root=Core.CopyTable(f.values) end
         if f.folder == "PitBull4" and f.namespace then
@@ -58,6 +70,11 @@ for name, m in pairs(modes) do
             or f.namespace == "Pet") then
           local copy=Core.CopyTable(f);quartz[copy.namespace]=copy.values
           def.fragments[#def.fragments+1]=copy
+        elseif f.folder == "Grid2" and f.namespace == "Grid2Layout" then
+          -- only the window spot: V1 keeps the preset's, V2 moves it above the V2 target
+          grid={folder=f.folder,savedVariable=f.savedVariable,addonVersion=f.addonVersion,version=1,section=f.section,
+            profile=f.profile,namespace=f.namespace,values={anchor=f.values.anchor,PosX=f.values.PosX,PosY=f.values.PosY}}
+          def.fragments[#def.fragments+1]=grid
         end
       end
       if root then
@@ -131,6 +148,11 @@ for name, m in pairs(modes) do
             end
           end
           quartz.Player.y=-m.footY*pixel
+          local factor=grid and pixelFactor()
+          if factor then
+            grid.values.anchor="BOTTOMRIGHT"
+            grid.values.PosX,grid.values.PosY=(xTarget+w-m.width)*factor,(m.height-m.gridBottom)*factor
+          end
           root.dfAuraGeometry["주시 대상"].top_margin=math.max(2,bottom-ch-m.footY+8)
         end
         for label,row in pairs(root.units) do root.dfGeometry.units[label]=signature(row,unitFields) end

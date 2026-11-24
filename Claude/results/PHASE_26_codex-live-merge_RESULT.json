@@ -55,5 +55,17 @@
   "Step 47 — …",
   "Step 48 — …",
   "Step 49 — …"
- ]
+ ],
+ "addendum_step50": {
+  "grid2": "right, above PitBull4 target, V1+V2, BOTTOMRIGHT",
+  "zip_sha256": {
+   "pitbull4": "0efdb7218a75b4b0c380f9fb4ecd71389efade321dfe5e840b353a82bd1671da",
+   "fuf": "d641a4ce40121b63319e6f503a82fbb7e202bf8dee50d154634b0ff8454f3fce"
+  },
+  "review": "C+M 2->0",
+  "open": [
+   "fhd V1 extreme target auras 13 px into Grid2",
+   "V2 on wider screens: Grid2 right edge offset (W-base)/2"
+  ]
+ }
 }

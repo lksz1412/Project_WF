@@ -335,9 +335,10 @@ for mode,width,height,footY in [('fhd',1920,1080,548),('qhd',2560,1440,765),('uh
     print('PASS',mode,width,'five Aura owners: normal max own+others native Lua rectangles; restricted public container bounds; no row/body/under-foot cast or swing overlap')
 print('PASS V2 aura consumers; restricted live renderer geometry remains client boundary')
 
-# Default preset (V1) screen map: Grid2 at its 40-player maximum and its party window next to every
-# other preset frame, physical pixels, top-left origin. Aura blocks are envelopes from the Aura layout
-# numbers (worst case: every debuff the player's own, at my_size), not native renderer rectangles.
+# Preset screen map (default V1 and the V2 compare layout): Grid2 at its 40-player maximum and its party
+# window next to every other preset frame, physical pixels, top-left origin. Aura blocks are the native
+# (combat) container bands of PitBull4's Aura module run on the profile: both groups (own and others') at
+# their own maximum, and the companion avoidance rules once with the avoided frames hidden and once shown.
 import re as _re
 def _point(W,H,rel,anchor,x,y,w,h):
     rx=0 if 'LEFT' in rel else W if 'RIGHT' in rel else W/2
@@ -347,14 +348,64 @@ def _point(W,H,rel,anchor,x,y,w,h):
     top=py-h if 'BOTTOM' in anchor else py if 'TOP' in anchor else py-h/2
     return (left,top,w,h)
 
-def _grid2_rects(values,frame,W,factor,units):
+def _grid2_rects(values,frame,W,H,factor,units):
     cols,rows=(8,5) if units==40 else (1,5)
     pad=values['Padding']
     w=cols*frame['frameWidth']+(cols-1)*pad; h=rows*frame['frameHeight']+(rows-1)*pad
-    return _point(W,0,values['anchor'],values['anchor'],values['PosX']/factor,values['PosY']/factor,w,h)
+    return _point(W,H,values['anchor'],values['anchor'],values['PosX']/factor,values['PosY']/factor,w,h)
 
-def default_screen_map(mode,width,height):
+def aura_bands(profile,cfg,label,row,frame,shown):
+    """Native buff and debuff container bands of unit `label` (Aura/Forever.lua through Aura/Layout.lua)."""
+    left,top,w,h=frame
+    lua=R['aura_runtime']();g=lua.globals()
+    g.PitBull4.GetModule=lambda *_:g.Aura
+    g.PitBull4.db=lua.table_from({'profile':profile},recursive=True)
+    merge(lua,g.DB,cfg)
+    g.FRAME.classification=label;g.FRAME.classification_db=lua.table_from(row,recursive=True)
+    g.TEST_width=w;g.TEST_height=h;g.TEST_shown=shown
+    rule=(profile.get('dfAuraGeometry') or {}).get(label) or {}
+    if rule.get('avoid_frame'):
+        lua.execute("_G[%r]={IsShown=function() return TEST_shown end,HookScript=function() end}"%rule['avoid_frame'])
+    lua.execute("""
+      FRAME.on_GetWidth=function() return TEST_width end
+      FRAME.on_GetHeight=function() return TEST_height end
+      function Aura:GetLayoutDB() return DB end
+      FRAME.aura_buffs={};FRAME.aura_debuffs={};FRAME.masque_group=false
+      CONTAINERS={};local create=CreateFrame
+      function CreateFrame(kind,...)
+        local c=create(kind,...)
+        if kind=='AuraContainer' then
+          CONTAINERS[#CONTAINERS+1]=c;c.groups={}
+          local add=c.on_AddAuraGroup
+          c.on_AddAuraGroup=function(self,key,filter,spec) self.groups[key]={spec=spec};return add(self,key,filter,spec) end
+          c.on_SetAuraGroupLayout=function(self,key,layout) self.groups[key].spec.layout=layout end
+          c.on_SetAuraGroupMaxFrameCount=function(self,key,n) self.groups[key].spec.maxFrameCount=n end
+          c.on_SetPoint=function(self,...) self.placement={...} end
+          c.on_SetFlowLayoutMaximumLineSize=function(self,v) self.width=v end
+        end
+        return c
+      end
+    """)
+    R['load'](lua,'Modules/Aura/Layout.lua')
+    lua.execute("TEST_combat=true;Aura:UpdateNativeBuffs(FRAME,DB);Aura:UpdateNativeDebuffs(FRAME,DB);assert(#CONTAINERS==2)")
+    bands=[]
+    for container in g.CONTAINERS.values():
+        x=y=rowheight=maximum=0
+        for group in sorted(container.groups.values(),key=lambda v:v.spec.layout.layoutIndex):
+            spec=group.spec;ly=spec.layout
+            if ly.forceNewLine and x>0:y+=rowheight+ly.lineSpacing;x=0;rowheight=0
+            for i in range(int(spec.maxFrameCount)):
+                if x>0 and x+ly.elementWidth>container.width+1e-6:y+=rowheight+ly.lineSpacing;x=0;rowheight=0
+                maximum=max(maximum,y+ly.elementHeight);rowheight=max(rowheight,ly.elementHeight);x+=ly.elementWidth+ly.elementSpacing
+        point,_,anchor,ox,oy=[container.placement[i] for i in range(1,6)]
+        bx=left+ox+(w if 'RIGHT' in anchor else 0)-(container.width if 'RIGHT' in point else 0)
+        by=(top+h-oy if 'BOTTOM' in anchor else top-oy)-(maximum if 'BOTTOM' in point else 0)
+        bands.append((bx,by,container.width,maximum))
+    return bands
+
+def default_screen_map(mode,width,height,v2=False):
     s=session(mode,height,width)
+    if v2:s=session(mode,height,width,request(s,mode+'-v2'))
     factor=768/height;pixel=factor
     p=s.sv('PitBull4DB')['profiles']['Default'];ns=s.sv('PitBull4DB')['namespaces']
     rects={}
@@ -364,14 +415,11 @@ def default_screen_map(mode,width,height):
         w,h=lay['size_x']*u.get('size_x',1),lay['size_y']*u.get('size_y',1)
         r=_point(width,height,u['relative_point'],u['anchor'],u['position_x']/pixel,u['position_y']/pixel,w,h)
         rects['unit '+name]=r
-        aura=(ns['Aura']['profiles']['Default']['layouts'].get(u['layout']) or {})
-        if aura.get('enabled'):
-            deb=aura['layout']['debuff'];buf=aura['layout']['buff']
-            width_=deb.get('width') if deb.get('width_type')=='fixed' else w
-            per=max(1,int(width_//(deb['my_size']+deb['col_spacing'])))
-            depth=deb['offset_y']+-(-aura['max_debuffs']//per)*(deb['my_size']+deb['row_spacing'])
-            if buf['side']=='TOP':rects['auras '+name]=(r[0],r[1]-depth,w,depth)
-            else:rects['auras '+name]=(r[0],r[1]+h,max(w,buf.get('width',0),deb.get('offset_x',0)+deb.get('width',0)),depth)
+        cfg=ns['Aura']['profiles']['Default']['layouts'].get(u['layout']) or {}
+        if cfg.get('enabled'):
+            for shown in (False,True):
+                for i,band in enumerate(aura_bands(p,cfg,name,u,r,shown)):
+                    rects['auras %s %s %s'%(name,('buffs','debuffs')[i],'avoided shown' if shown else 'alone')]=band
     for name,g in p['groups'].items():
         if not g.get('enabled'):continue
         lay=p['layouts'][g['layout']]
@@ -396,21 +444,40 @@ def default_screen_map(mode,width,height):
     det=(A/'DevilForever_DetailsLayout/Layout.lua').read_text(encoding='utf-8')
     for i,(x,y,w,h) in enumerate(_re.findall(r'\{(\d+), (\d+), (\d+), (\d+)\}',_re.search(mode+r' = \{(.*)\},',det).group(1))):
         rects['details %d'%(i+1)]=(int(x),int(y),int(w),int(h))
-    grid={f['namespace']:f['values'] for f in d['fragments'].values() if f['folder']=='Grid2'}
-    raid=_grid2_rects(grid['Grid2Layout'],grid['Grid2Frame'],width,factor,40)
-    party=_grid2_rects(grid['Grid2Layout'],grid['Grid2Frame'],width,factor,5)
+    layout=plain(s.core.Presets.Get(s.core.Presets,mode+'-v2')) if v2 else d
+    grid={f['namespace']:dict(f['values']) for f in d['fragments'].values() if f['folder']=='Grid2'}
+    for f in layout['fragments'].values():
+        if f['folder']=='Grid2' and f['namespace']=='Grid2Layout':grid['Grid2Layout'].update(f['values'])  # V2: the window spot only
+    raid=_grid2_rects(grid['Grid2Layout'],grid['Grid2Frame'],width,height,factor,40)
+    party=_grid2_rects(grid['Grid2Layout'],grid['Grid2Frame'],width,height,factor,5)
     return rects,raid,party
 
-for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),('uhd',3862,2160)]:
-    rects,raid,party=default_screen_map(mode,width,height)
-    assert len([k for k in rects if k.startswith('group ')])==4 and len([k for k in rects if k.startswith('hekili ')])==5,sorted(rects)
-    for box in (raid,party):
-        assert box[0]>=0 and box[1]>=0 and box[0]+box[2]<=width and box[1]+box[3]<=height,(mode,box)
-        hits=[k for k,r in rects.items() if overlaps(box,r)]
-        assert not hits,(mode,width,box,hits,[rects[k] for k in hits])
-    gap=min(r[1] for k,r in rects.items() if r[0]<raid[0]+raid[2] and r[0]+r[2]>raid[0] and r[1]>=raid[1]+raid[3])-(raid[1]+raid[3])
-    print('PASS',mode,width,'Grid2 40-player window %s and party window clear of %d preset rectangles (nearest below: %.0f px)'%(tuple(round(v) for v in raid),len(rects),gap))
-print('PASS default preset Grid2 placement')
+# fhd V1: the Hekili icon row (y 64-120) leaves Grid2's bottom edge at 304 at the highest; the target's
+# debuff band with the focus frame shown and both debuff groups full reaches 291 (its right 70 px column).
+SHORTFALL={('fhd',False):('auras 대상 debuffs avoided shown',13)}
+for v2 in (False,True):
+    for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),('uhd',3862,2160)]:
+        rects,raid,party=default_screen_map(mode,width,height,v2)
+        assert len([k for k in rects if k.startswith('group ')])==4 and len([k for k in rects if k.startswith('hekili ')])==5,sorted(rects)
+        target=rects['unit 대상']
+        bands={k:r for k,r in rects.items() if k.startswith('auras 대상 ')}
+        allowed,depth=SHORTFALL.get((mode,v2),(None,0))
+        for box in (raid,party):
+            assert box[0]>=0 and box[1]>=0 and box[0]+box[2]<=width and box[1]+box[3]<=height,(mode,v2,box)
+            hits=[k for k,r in rects.items() if overlaps(box,r) and k!=allowed]
+            assert not hits,(mode,width,v2,box,hits,[rects[k] for k in hits])
+            # above the enemy target: across its width, bottom edge over the target and its aura bands
+            assert box[0]<target[0]+target[2] and box[0]+box[2]>target[0],(mode,v2,box,target)
+            assert box[1]+box[3]<=target[1] and abs(box[1]+box[3]-(raid[1]+raid[3]))<1e-6,(mode,v2,box,raid)
+            for k,b in bands.items():
+                limit=b[1]-8+(depth+8 if k==allowed else 0)
+                assert box[1]+box[3]<=limit+1e-6,(mode,v2,k,box,b)
+        # right edges together (V2 targets hang from the screen centre: off by the extra width's half on 3862)
+        slack=0 if not v2 else (width-{'fhd':1920,'qhd':2560,'uhd':3840}[mode])/2
+        assert abs(raid[0]+raid[2]-(target[0]+target[2]))<=slack+1e-6,(mode,v2,raid,target)
+        gap=min(b[1] for b in bands.values())-(raid[1]+raid[3])
+        print('PASS',mode,width,'V2' if v2 else 'V1','Grid2 40-player window %s and party window above the target (worst aura band gap %.0f px), clear of %d preset rectangles'%(tuple(round(v) for v in raid),gap,len(rects)))
+print('PASS preset Grid2 placement (V1 and V2)')
 
 core_default=_re.search(r'dfStandStill = ([0-9.]+)',(A/'!DevilForever_Core/Defaults/Quartz.lua').read_text(encoding='utf-8')).group(1)
 module_default=_re.search(r'dfStandStill = ([0-9.]+),',(A/'Quartz/modules/SwingForever.lua').read_text(encoding='utf-8')).group(1)

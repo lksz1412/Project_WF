@@ -421,3 +421,214 @@
 ### 이어받을 상태
 
 남은 일 없음.
+
+## Step 50 (Phase 26-rev · R148 「그리드는 우측 적군 대상 위에 배치」)
+
+기준: 커밋 a362870f 위 작업 트리. 읽은 것: 발주 메시지, Presets fhd/qhd/uhd 「대상」 단위 줄·Grid2Layout 줄(grep), 고침 1 좌표 표(`s47/rects.md` — 대상·대상 오라·주시·Details·Hekili·Quartz 대상 행), Grid2 GridLayout.lua 1005-1015(GetFramePosition → SetPoint(anchor, UIParent, anchor, PosX/s, PosY/s)), 460-500(PlaceHeaders), 800-830(UpdateSize: 창 크기 = 내용), `codex-briefs/phase26-step47-check.md` 전문, 설치안내.md·feature-map.md 「위 가운데」 grep.
+
+### 판단: 기준점 BOTTOMRIGHT
+
+- Grid2 창은 UIParent 의 같은 이름 점에 붙고(GetFramePosition), 크기는 내용에 맞춰 바뀜(UpdateSize). 그래서 고정되는 것은 기준점 쪽 모서리이고 반대쪽으로 자람.
+- **BOTTOMRIGHT** 로 정함. 아래 끝이 대상 오라 칸 위에 고정되어 창이 위로 자라고(대상 쪽으로 안 내려옴), 오른쪽 끝이 대상 프레임 오른쪽 끝에 고정되어 화면 안쪽(왼쪽)으로 자람.
+- 대상 프레임은 TOPRIGHT 기준(오른쪽 끝에서 -439/-585/-878 물리 px)이라, 같은 오른쪽 오프셋을 PosX 로 쓰면 3862 폭처럼 화면이 넓어져도 대상과 오른쪽 끝이 함께 움직임.
+- BOTTOM(가운데) 기준은 화면 가운데에서 재므로 폭이 바뀌면 대상과 어긋나 버림. BOTTOMLEFT 기준은 오른쪽으로 자라 fhd 에서 화면 밖(1225+796 > 1920)으로 나감.
+- 세로 자리: 아래 끝 = 대상 오라 덮개 위 끝 − 8 px. 덮개는 약화 효과 16개가 모두 내 것인 높이로 잡은 추정이었음. [고침에서 정정: 이 덮개는 최악이 아니었음. 주시 대상이 보일 때의 회피 규칙(오른쪽 70 px 기둥, 0.7배)과 그룹별 상한(내 것 16 + 남의 것 16)을 빼먹어 실제 최악보다 낮았음 — 「Step 50 고침」 절]
+- groupAnchor 는 TOPLEFT 그대로 둠. 창 안 칸 순서만 정하는 값이고, 창이 커지는 방향은 위 anchor 가 정함.
+
+### 값 (물리 px × factor)
+
+| preset | 대상 프레임 (x,y,폭,높이) | 대상 오라 덮개 위 끝 | Grid2 anchor · PosX · PosY | Grid2 공격대 40명 (x,y,폭,높이) | 오라 위 간격 |
+|---|---|---|---|---|---|
+| fhd 1920 | (1225, 631, 256, 72) | 457 | BOTTOMRIGHT · -439 · +631 | (685, 273, 796, 176) | 8 |
+| qhd 2560 | (1633, 897, 342, 96) | 668 | BOTTOMRIGHT · -585 · +780 | (987, 424, 988, 236) | 8 |
+| uhd 3840 | (2450, 1414, 512, 144) | 1080 | BOTTOMRIGHT · -878 · +1088 | (1688, 768, 1274, 304) | 8 |
+| uhd 3862 | (2472, 1414, 512, 144) | 1080 | (같은 값) | (1710, 768, 1274, 304) | 8 |
+
+- 파티 창(1열 5칸)은 같은 오른쪽 아래 모서리에 붙음. fhd 기준 (1385, 273, 96, 176).
+- 그 밖의 49개 preset 사각형과 겹침 0 — `tests/layoutv2/run.py` 끝 블록이 계산함. 사각형 종류·계산법은 「고침 1」 표와 같음.
+- 가까운 사각형:
+  - Details 1 (fhd 1320,466~) 은 Grid2 아래 끝 449 보다 아래라 겹치지 않음.
+  - 주시 대상 (1225,510~) 도 아래.
+  - Hekili 줄 (y 64~120) 은 Grid2 위 끝 273 보다 위.
+- 시험 단언:
+  - 겹침 0.
+  - 화면 안.
+  - 공격대 40명 창과 파티 창이 가로로 대상 프레임 범위와 겹침.
+  - 세로로 아래 끝 ≤ 대상 오라 위 끝 ≤ 대상 프레임 위 끝.
+  - 두 창의 오른쪽 끝 = 대상 오른쪽 끝, 아래 끝이 서로 같음.
+
+### 바꾼 파일
+
+| 파일 | 무엇 |
+|---|---|
+| `Presets/{fhd,qhd,uhd}.lua` | Grid2Layout `anchor="BOTTOMRIGHT"`, `PosX=-439/-585/-878*factor`, `PosY=631/780/1088*factor` |
+| `Party.lua` | 옛 자리 이동 알림 「…preset 의 자리(오른쪽, 대상 프레임 위)」. 옛 기본 자리 판정(OLD_GRID2_SPOT)은 그대로 두고, Step 47 의 위 가운데 자리는 배포 안 됐으니 넣지 않음. 옮겨 갈 자리는 preset 에서 읽으므로 자동으로 새 자리 |
+| `tests/layoutv2/run.py` | `_grid2_rects` 가 화면 높이를 받음(BOTTOM 기준 계산) · 「대상 위」 단언 · PASS 줄 |
+| `tests/firststart/run.py` | 새 설치·옛 자리 이동 기대값 ("BOTTOMRIGHT", -439, 631) |
+| `install/설치안내.md` :11·:57 | Grid2 자리 = 오른쪽 적 대상 프레임 바로 위, 인원 따라 위·왼쪽으로 넓어짐 · 업그레이드 문장의 옮겨 가는 자리 |
+| `data/feature-map.md` :58 | 같은 자리 설명 |
+| `codex-briefs/phase26-step47-check.md` 1번 | 확인할 것을 새 자리·겹침 상대(대상·대상 오라·주시·Details)로 바꿈 |
+| `Installer/ReleaseCatalog.json` | 다시 씀 |
+
+### 영향 지도
+
+| 곳 | 유형 | 찾은 방법 | 영향도 | 이유 |
+|---|---|---|---|---|
+| Presets 셋 Grid2Layout | 같은 값 | grep | 함께 고침 | R148 |
+| Defaults/Grid2.lua reapplyAfterTemplate | 소비 | 앞서 읽음 | 확인만 | 조각 값을 그대로 다시 씀 |
+| Party.lua moveGrid2 | 소비 | 읽음 | 함께 고침(문구) / 확인만(자리 계산) | 새 자리는 preset 에서 읽음 |
+| tests layoutv2·firststart | 시험 | grep 「TOP」·「위 가운데」 | 함께 고침 | |
+| 설치안내·feature-map·Codex 확인 메모 | 문서 | grep 「위 가운데」 | 함께 고침 | Hekili 설명(phase8.md·appearance-8.md)의 「위 가운데」는 Hekili 이야기라 영향 없음 |
+| 앞 Step 의 work_log·Result·TRIAGE | 기록 | grep | 영향 없음(기록) | |
+
+### 실행한 명령과 판정 줄
+
+- `python3 -I tools/patches.py verify` → patches=7 unmodified=20 failures=0
+- `python3 -I tools/genregistry.py --check` → up to date
+- `python3 -I tools/luacheck.py AddOns/!DevilForever_Core` → checked=21 failed=0
+- suites:
+  - castbars 16/16 · catalog 4/4 · chatsetup 32/32 · composition 8/8 · core 109/109
+  - firststart 27/27 · fufdefaults 22/22 · layoutv2 rc=0 (Grid2 PASS 4줄, 위 표 값) · patches 4/4
+  - pitbull4 6/6 · pitbull4runtime 20/20 · statusstrip 20/20 · thirdparty 8/8
+  - detailslayout 같은 FileNotFoundError · performance·installer 판정 밖(앞과 같음)
+- `build.py --install` ×2 → sha256=aa3e926b27aac520a7ac8c20c38bf7acd90aa4ed1643f9b2c1bdae8f885edb97 두 번 같음 (files=2214)
+- `build.py --install --variant fuf` ×2 → sha256=7e5e792c297879c9d1fb9893e8cd072ec743781e28b33e49a052e658ab3f8f95 두 번 같음 (files=2158)
+- `python3 tools/catalog.py <pitbull4 zip> <fuf zip> --write` → 2 packages. 이어서 같은 순서로 `--check` → matches (pitbull4 aa3e926b27aa, fuf 7e5e792c2978), rc=0. 뒤에 ZIP 해시를 다시 재어 그대로임(aa3e926b27aa · 7e5e792c2978)
+- catalog suite: 6번 돌려 1번 `modified_zip_no_longer_matches` 실패("rebuilt from the same inputs matches again: expected 0, got 1"), 5번 통과. 원인(코드로 본 판단): 시험의 `make_zip` 이 `zf.writestr(name, data)` 로 지금 시각을 ZIP 날짜로 넣음(tests/catalog/run.py:34-39). 같은 입력을 다시 만들 때 2초 단위 시각이 바뀌면 바이트가 달라짐. 시험 쪽 문제이고 이번 변경과 무관. 범위 밖이라 안 고침
+
+### 결정 대기
+
+1. Grid2 새 자리의 게임 화면 확인은 Codex 몫(확인 메모 1번에 적음).
+2. 세로 간격은 오라 덮개(최악 추정) 위 8 px. 실제 오라가 덮개보다 낮으면 대상과 Grid2 사이가 그만큼 더 벌어짐. 붙이는 높이를 실측으로 다시 잡을지.
+3. catalog 시험의 시각 의존(위) — 고칠지 결정 필요. `ZipInfo` 에 날짜를 고정하면 됨.
+
+### 이어받을 상태
+
+남은 일 없음.
+
+## Step 50 고침 (audit_log-50-1.md · TRIAGE 「Step 50 review」)
+
+읽은 것: `iter_3/audit_log-50-1.md` 전문 · TRIAGE 69-75 · 검수 B probe `scratchpad/probes/p6.py`·`p7.py`·`p9.py` 전문(지금 작업 트리로 다시 돌려 같은 수치 확인) · PitBull4 Aura/Forever.lua 296-340(native 상자 놓기) · Presets/V2.lua 전문 · Party.lua moveGrid2.
+
+### 오라 최악 계산을 고침 (중간 1 · 경미 1)
+
+`tests/layoutv2/run.py` 의 덮개 추정을 지움. 대신 새 함수 `aura_bands` 가 단위마다 PitBull4 Aura 모듈을 그 profile 로 직접 돌림.
+- 경로: native 전투 경로(UpdateNativeBuffs/Debuffs → GetManagedLayoutDB(Layout.lua) → 상자 SetPoint/폭).
+- 상한: 그룹마다(내 것·남의 것) maxFrameCount 까지 채움.
+- 회피 규칙: 피하는 프레임(`avoid_frame`)이 숨었을 때와 보일 때, 두 번 계산.
+- 띠 사각형: 상자의 SetPoint 점·오프셋과 폭으로 계산. 오른쪽 기둥이면 그 x 범위만 잡음.
+- 대상 단위: 플레이어·대상·소환수·주시·대상의 소환수(켜진 것). V1 과 V2 둘 다.
+
+측정한 대상 약화 띠의 위 끝(물리 y). 검수 B probe p7·p9 와 같은 값:
+
+| 배치 | 해상도 | 주시 없음 | 주시 보임 |
+|---|---|---|---|
+| V1 | fhd | 415 | 291 |
+| V1 | qhd | 612 | 460 |
+| V1 | uhd | 998 | 770 |
+| V2 | fhd | 355 | 355 |
+| V2 | qhd | 549 | 549 |
+| V2 | uhd | 912 | 912 |
+
+V2 의 대상 규칙은 `{above, width}` 뿐이라 회피가 없어 두 값이 같음.
+
+### 새 자리 (BOTTOMRIGHT 유지 · 오른쪽 끝 = 대상 오른쪽 끝 · 위로 자람)
+
+| 배치 | 해상도 | 아래 끝 y | PosX · PosY (물리 px × factor) | 40명 창 (x,y,폭,높이) | 최악 띠와 간격 |
+|---|---|---|---|---|---|
+| V1 | fhd | 304 | -439 · +776 | (685, 128, 796, 176) | **-13** (아래) |
+| V1 | qhd | 452 | -585 · +988 | (987, 216, 988, 236) | 8 |
+| V1 | uhd | 762 | -878 · +1398 | (1688, 458, 1274, 304) | 8 |
+| V1 | uhd 3862 | 762 | 같은 값 | (1710, 458, 1274, 304) | 8 |
+| V2 | fhd | 347 | -536 · +733 | (588, 171, 796, 176) | 8 |
+| V2 | qhd | 541 | -731 · +899 | (841, 305, 988, 236) | 8 |
+| V2 | uhd | 904 | -1119 · +1256 | (1447, 600, 1274, 304) | 8 |
+| V2 | uhd 3862 | 904 | 같은 값 | (1469, 600, 1274, 304) | 8 |
+
+- V2 PosX 는 V2.lua 가 계산함: `(xTarget + w - m.width) * factor`. PosY = `(m.height - m.gridBottom) * factor`. gridBottom 은 위 측정값 − 8 을 modes 표에 넣은 것.
+- **fhd V1 부족분:**
+  - 최악(주시 보임)에 맞추면 아래 끝 283, 위 끝 107 이 되어 Hekili 아이콘 줄(y 64~120, x 652~1268)과 겹침.
+  - 그래서 화면 안에서 가능한 가장 가까운 자리로 둠: Hekili 아래 8 px(위 끝 128, 아래 끝 304).
+  - 이때 「주시 보임 + 내 것·남의 것 약화 효과가 거의 다 찬」 경우에만 대상 오른쪽 70 px 기둥(x 1411~1481)이 창 아래로 13 px 들어감.
+  - 주시가 없으면 띠 위 끝 415 라 111 px 띄워짐.
+  - 시험은 이 한 쌍만 13 px 까지 허용하고 이름으로 적어 둠(SHORTFALL).
+- **V2 3862 폭:** V2 대상은 화면 가운데 기준으로 놓이고 Grid2 는 오른쪽 기준. 그래서 늘어난 폭의 절반(11 px)만큼 오른쪽 끝이 어긋남. 시험은 그만큼만 허용함.
+- 「대상 위」 단언(V1·V2, 4 화면):
+  - 화면 안.
+  - 다른 preset 사각형 61개(V1)/66개(V2) 와 겹침 0. fhd V1 부족분 하나만 예외.
+  - 가로로 대상과 겹침.
+  - 아래 끝 ≤ 대상 위 끝.
+  - 아래 끝 ≤ 모든 대상 띠 위 끝 − 8.
+  - 오른쪽 끝 맞춤.
+
+### V2 에 Grid2 자리 (중간 2)
+
+- `Presets/V2.lua`: V1·V2 비교 배치 정의에 Grid2Layout 조각(창 자리 anchor·PosX·PosY 만)을 넣음. V1 = 기본 preset 값. V2 = V2 대상 위.
+- 비교 배치 예약 문구: 「PitBull4, Quartz, Grid2 창 자리만 적용」.
+- 시험 `grid2_spot_follows_the_compare_layout_and_back`(firststart): fhd → fhd-v2 = (-536, 733) → fhd-v1 = (-439, 776).
+
+### `/dfp party on` 옛 자리 이동 (4)
+
+- PitBull4 profile 이 V2 를 쓰는 중(dfLayoutV2)이면 `<preset>-v2` 의 자리로 옮김.
+- 알림: 「Grid2 창: 예전 기본 자리 → fhd-v2 preset 의 자리(오른쪽, 대상 프레임 위)」.
+- 시험: 같은 case 에서 V2 사용 중 옛 자리 → V2 자리 확인. 새 설치 기대값 (-439, 776).
+
+### 바꾼 파일
+
+| 파일 | 무엇 |
+|---|---|
+| `Presets/{fhd,qhd,uhd}.lua` | Grid2Layout PosY 776/988/1398 ×factor |
+| `Presets/V2.lua` | modes 에 height·gridBottom · `pixelFactor` · 비교 배치의 Grid2Layout 자리 조각 |
+| `Presets.lua` | 비교 배치 예약 문구 |
+| `Party.lua` | moveGrid2 가 V2 사용 중이면 V2 자리 · 알림의 preset 이름 · 머리 주석 |
+| `tests/layoutv2/run.py` | `aura_bands`(native 띠) · `default_screen_map(…, v2)` · V1·V2 배치 단언 · 주석 사실대로 |
+| `tests/firststart/run.py` | 기대값 · V2 왕복과 V2 중 옛 자리 이동 case |
+| `codex-briefs/phase26-step47-check.md` 1번 | 자리 숫자(V1·V2)와 fhd 부족분 확인 항목 |
+| `Installer/ReleaseCatalog.json` | 다시 씀 |
+
+설치안내.md·feature-map.md 는 숫자 없이 「오른쪽 적 대상 프레임 위」라고만 적고 있어 그대로 맞음(확인만).
+
+### 영향 지도
+
+| 곳 | 유형 | 찾은 방법 | 영향도 | 이유 |
+|---|---|---|---|---|
+| Presets 셋 Grid2Layout | 같은 값 | grep | 함께 고침 | |
+| V2.lua 비교 배치 조각 | 같은 값(V2 대상) | 전문 | 함께 고침 | |
+| Presets.lua Restore layoutOnly 문구 | 사용자 글 | grep | 함께 고침 | Grid2 도 씀 |
+| Party.lua moveGrid2 | 소비 | 읽음 | 함께 고침 | V1/V2 |
+| Defaults/Grid2.lua reapplyAfterTemplate | 소비 | 앞서 읽음 | 확인만 | 활성 preset(기본) 조각만 다시 씀 — 비교 배치 중 Grid2 첫 템플릿이면 V1 자리로 돌아감(드묾, 아래 결정 대기) |
+| tests layoutv2·firststart | 시험 | 실행 | 함께 고침 | |
+| 설치안내·feature-map | 문서 | grep | 확인만 | |
+| Codex 확인 메모 | 문서 | 읽음 | 함께 고침 | |
+
+### 실행한 명령과 판정 줄
+
+- B probe p7·p9·p6 을 작업 트리로 돌림 → 위 표 V1/V2 띠 값과 같음
+- `python3 -I tools/patches.py verify` → patches=7 unmodified=20 failures=0
+- `python3 -I tools/genregistry.py --check` → up to date
+- `python3 -I tools/luacheck.py AddOns/!DevilForever_Core` → checked=21 failed=0
+- suites:
+  - castbars 16/16 · catalog 4/4 · chatsetup 32/32 · composition 8/8 · core 109/109
+  - firststart 28/28 · fufdefaults 22/22 · patches 4/4 · pitbull4 6/6 · pitbull4runtime 20/20 · statusstrip 20/20 · thirdparty 8/8
+  - layoutv2 rc=0 (배치 PASS 8줄, 위 표 값)
+  - detailslayout 같은 FileNotFoundError · performance·installer 판정 밖
+- firststart 첫 실행 1건 실패는 내 시험 순서 잘못이었음. V1 요청을 건 세션을 carry 해서 다음 접속이 V1 을 적용함. 요청 전에 carry 하도록 고침 → 28/28
+- `build.py --install` ×2 → sha256=0efdb7218a75b4b0c380f9fb4ecd71389efade321dfe5e840b353a82bd1671da 같음(files=2214)
+- `build.py --install --variant fuf` ×2 → sha256=d641a4ce40121b63319e6f503a82fbb7e202bf8dee50d154634b0ff8454f3fce 같음(files=2158)
+- `python3 tools/catalog.py <두 zip> --write` → 2 packages, 다음 같은 순서 `--check` → matches (pitbull4 0efdb7218a75, fuf d641a4ce4012), rc=0. ZIP 해시 다시 재어 그대로
+
+### 결정 대기
+
+1. **fhd V1 부족분 13 px.** 대안:
+   - ⓐ 그대로(주시 보임 + 약화 효과 대량일 때만 대상 오른쪽 오라 기둥 위 끝이 창 아래에 들어감).
+   - ⓑ fhd Grid2 칸 높이를 줄임. frameHeight 32→29 면 40명 창 높이 161 → 아래 끝 289 가 291 위에 옴. 외관 값이라 Codex/사용자 판단.
+   - ⓒ fhd Hekili 줄 높이를 조금 올림.
+   - ⓓ fhd 만 대상 오라 회피 기둥 높이 상한을 줄임.
+   - 어느 쪽인지.
+2. V2 3862 폭에서 오른쪽 끝 11 px 어긋남. V2 비교 배치 전용이라 그대로 둠.
+3. 비교 배치(V2) 중에 새 Grid2 프로필의 첫 템플릿이 적용되면, Defaults/Grid2.lua 가 활성(기본) preset 의 Grid2Layout 을 다시 써 V1 자리로 감(코드로 본 추정, 시험 안 함). 드문 경우라 그대로.
+4. 게임 화면 확인은 Codex(확인 메모 1번에 숫자와 fhd 부족분 적음).
+
+### 이어받을 상태
+
+남은 일 없음. 스크래치 `s47/measure.py`(V1·V2 띠·자리 측정).

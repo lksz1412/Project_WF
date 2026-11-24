@@ -38,3 +38,6 @@ Codex 게임 확인·테마 그림 → 결과 반영 → R128 두 판 따로 올
 
 ## Step Records
 `Claude/results/Step 46 …`, `Step 47 — Codex 실게임판 합치기·파티 동시 운용·Quartz 사냥꾼·재빌드.md`, `Step 48 — 코드 검토 셋 (자체·수정, 원본, Quartz 스윙).md`, `Step 49 — 테마 전환 발주문 서체·전투 화살표 (46-rev).md`
+
+## Addendum — Phase 26-rev Step 50 (R148)
+Grid2 기본 창 = 오른쪽 PitBull4 대상 프레임 위(V1·V2 모두, BOTTOMRIGHT). 검수 중대·중간 2→0. ZIP 다시 만듦: PitBull4판 0efdb721…, fuf판 d641a4ce…(위 Validation 의 1a9516de / a50fe2d1 을 대체). 남은 것: fhd V1 극단 오라 13 px · V2 넓은 화면 오른쪽 끝 어긋남. 기록 = `Claude/results/Step 50 — Grid2 창 자리 오른쪽 대상 위 (26-rev).md`.
