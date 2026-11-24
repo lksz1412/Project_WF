@@ -11,3 +11,7 @@ Verified: sizes/canvas maths, physical pixels (Skin.lua:132), cited lines, file 
 - N1 brief :47 hand-edit of manifest license_files, but manifest is generated (extract.py:556) and license_files re-found by LICENSE_RE (extract.py:158) which does not match "OFL.txt" → lost on regeneration.
 - m: button textures set by path cannot report SetTexture false (:32/:33); fallback cleanup (clear button textures, re-show arrow FontStrings :27–28) unstated; disabled-state check has no recipe.
 Master: LICENSE_RE matches "LICENSE-OFL.txt" (checked) → rename the shipped licence file instead of hand-editing manifest.
+
+## Re-check 2 (same B) — 중대 0 · 중간 0 · 경미 1
+- N1 + three minors fixed. m: texture objects creation time unstated (:32) → master added "처음 한 번만 만들어 두고 다시 쓰며(apply() 마다 새로 만들지 않는다)" (precedent Composition.lua:57–60, Skin.lua:24–28).
+Trend (critical+middle): 3 → 1 → 0.

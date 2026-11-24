@@ -49,3 +49,19 @@ fhd 22/16 → 192×22, 22 · qhd 24/18 → 216×24, 24 · uhd 28/22 → 264×28,
 | 이 work_log 앞 절 | 영향 없음(기록) | 당시 기록 |
 
 게이트: 금지어 grep(두 파일) rc=1 · 새 인용 경로 `script-font-candidates.md`(저장소), `Collection/manifest.json`(Codex 브랜치) 있음 · 수치 192/256=0.75, 22/32=0.6875, 216/256=0.84375, 24/32=0.75, 264/512=0.515625, 28/32=0.875 · 분량 47줄.
+
+## fix 2 (재검증 1 — 중간 1 · 경미 3, 처리 = TRIAGE_phase26.md 마지막 줄)
+읽음: `iter_1/audit_log.md:8–12`, `TRIAGE_phase26.md` 마지막 줄, Codex 브랜치 `Collection/tools/extract.py:158, 314–321, 556`. 실측: `LICENSE_RE.match("OFL.txt")` False · `("LICENSE-OFL.txt")` True · os.walk 로 하위 폴더까지 찾음.
+
+영향 지도
+| 곳 | 판정 | 이유 |
+|---|---|---|
+| 브리프 16줄 | 함께 고침 | N1 싣는 이름 `LICENSE-OFL.txt`, 이유(LICENSE_RE) |
+| 브리프 47줄 | 함께 고침 | N1 manifest 손 편집 삭제 → 다시 만든 manifest 에 들어갔는지 확인 |
+| 브리프 32줄 | 함께 고침 | 텍스처 객체 먼저 → SetTexture 판정 → 버튼에 붙임 · 대체 때 버튼 텍스처 비우고 FontString 셋 다시 보임 |
+| 브리프 33줄 | 확인만 | `SetTexture` false 대체 조건 그대로 — 32줄이 이를 가리킴 |
+| 브리프 42줄 | 함께 고침 | disabled 확인 방법(시험용 설치 한 테마 등록 또는 시험 도구, Codex 가 정해 기록) |
+| 브리프 43줄 색인 | 확인만 | 서체·사용 허락 기록 그대로 |
+| 앞 work_log 절 | 영향 없음(기록) | 당시 기록 |
+
+게이트: 금지어 grep rc=1(아래) · 인용 경로 `Collection/tools/extract.py` Codex 브랜치에 있음 · 맨 `OFL.txt` 는 「원본 파일 이름」 한 곳만 남음.
