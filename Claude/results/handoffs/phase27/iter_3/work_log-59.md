@@ -123,3 +123,15 @@ Why `SavePosition`: every user move ends in it after the final `SetPoint` — `S
 | `python -I Collection/tools/luacheck.py Collection/AddOns/DevilForever_Appearance` | checked=7 failed=0 |
 | `build.py --dry-run --variant pitbull4` / `fuf` (through devnull_run.py) | rc=0 · files 2284 / 2228 (unchanged) |
 | `python -I <scratch>/old_vs_new.py <scratch>/Composition_6e4433c2.lua` | `applies identical=56 different=0` (fallback still call-for-call) |
+
+## Stage and dry run (commit e96261cb)
+
+| Command | Verdict |
+|---|---|
+| `git log --oneline -1` · `git status --porcelain -- Collection` | `e96261cb` · empty |
+| `python <scratch>/../s51.XsBX/devnull_run.py <scratch>/../s51.XsBX/stage_build.py <worktree> D:/Projects/Project_WF/_local_only` | rc=0 · `stage=…\claude-p27-stage-6fe26361 commit=e96261cb clean=True version=0.1.5 variant=pitbull4 folders=35 files=2281 bytes=338941656 excluded=106 verified=True` |
+| `tasklist /FI "IMAGENAME eq Wow.exe"` | no task (game not running at that moment) |
+| `pwsh -NoProfile -File Collection/tools/install_local.ps1 -StagedAddOns D:\Projects\Project_WF\_local_only\claude-p27-stage-6fe26361\AddOns -BackupRoot D:\Projects\Project_WF\_local_only\claude-p27-backup-77d4a273 -AllowRunningGame -DryRun` | rc=0 · staged 35 folders, 2281 files, commit e96261cb…, pitbull4, 0.1.5 · left alone `!BugGrabber, BugSack` · backup plan AddOns 2751 entries / 2310 files, WTF 113 / 105 → `claude-p27-backup-77d4a273` · 35 mirror steps · robocopy /L file lines 2281, all in the Newer class (0 New, 0 EXTRA) · would check 35 folders and write installation.json |
+| `ls -d …/claude-p27-backup-*` | `5b85dff4`, `65cdb3bf`, `767a1dcc`, `a48b4467` (dry run created nothing) |
+
+Raw: `<scratch>/stage59.txt`, `<scratch>/dry59.txt`. Real install not run.
