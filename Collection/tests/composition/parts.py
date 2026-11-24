@@ -169,8 +169,13 @@ function Bar:IsShown() return self.visible end
 function Bar:GetFrameStrata() return self.strata end
 function Bar:GetFrameLevel() return self.level end
 function Bar:GetChildren() return unpack(self.children) end
-for _, name in ipairs({"Layout", "RestorePosition", "SetFrameScale", "UpdateDisplayLayer", "UpdateDisplayLevel",
-    "ShowFrame", "HideFrame"}) do Bar[name] = function(self) self.calls = (self.calls or 0) + 1 end end
+for _, name in ipairs({"Layout", "RestorePosition", "SavePosition", "SetFrameScale", "UpdateDisplayLayer",
+    "UpdateDisplayLevel", "ShowFrame", "HideFrame"}) do Bar[name] = function(self) self.calls = (self.calls or 0) + 1 end end
+-- Dominos drag end: StopMovingOrSizing, then Stick -> (StickToFrame/Grid/Edge or free) -> SaveRelativePosition -> SavePosition.
+function Bar:StopMovingOrSizing() end
+function Bar:UpdateWatched() end
+function Bar:SaveRelativePosition() self:SavePosition("TOPLEFT", "TOPLEFT", self.x1, -self.y1) end
+function Bar:Stick() self:SaveRelativePosition(); return false end
 function Bar:HookScript(event, fn)
   self.scripts = self.scripts or {}
   self.scripts[event] = fn
@@ -491,6 +496,19 @@ def surround_follows_dominos_layout_changes():
     lua.execute("DominosFrame1:HideFrame()")
     groups = comp.surroundPlan.groups
     eq(groups[1].outer.x1 > before - 40, True, "hidden bar leaves the surround")
+    # Dragged in Dominos config: the drag frame ends with StopMovingOrSizing, Stick, UpdateWatched.
+    bar2 = g.DominosFrame2
+    bar2.x1, bar2.x2, bar2.y1, bar2.y2 = bar2.x1, bar2.x2, bar2.y1 - 300, bar2.y2 - 300
+    lua.execute("DominosFrame2:StopMovingOrSizing(); DominosFrame2:Stick(); DominosFrame2:UpdateWatched()")
+    groups = comp.surroundPlan.groups
+    margin = comp.parts.sizes.qhd.gap + comp.parts.sizes.qhd.border
+    dragged = (math.floor(bar2.x1 + 0.5) - margin, math.floor(bar2.y1 + 0.5) - margin, math.floor(bar2.x2 + 0.5) + margin, math.floor(bar2.y2 + 0.5) + margin)
+    got = [(groups[i].outer.x1, groups[i].outer.y1, groups[i].outer.x2, groups[i].outer.y2) for i in range(1, len(groups) + 1)]
+    eq(dragged in got and len(got) == 2, True, "dragged bar: own ring at its new place")
+    # Keyboard nudge: SaveRelativePosition, then RestorePosition.
+    bar2.y1, bar2.y2 = bar2.y1 + 300, bar2.y2 + 300
+    lua.execute("DominosFrame2:SaveRelativePosition()")
+    eq(len(comp.surroundPlan.groups), 1, "nudged back: one ring again")
     # A secure state driver hides a bar without Dominos methods: OnHide re-measures.
     bar3 = g.DominosFrame3
     right = comp.surroundPlan.groups[1].outer.x2

@@ -61,8 +61,9 @@ local PARTS_SHIPPED = {}
 
 -- Frames whose layout drives the surround and the Dominos methods after which it is re-measured.
 local SURROUND_BARS = {"DominosFrame1", "DominosFrame2", "DominosFrame3"}
-local BAR_METHODS = {"Layout", "RestorePosition", "SetFrameScale", "UpdateDisplayLayer", "UpdateDisplayLevel",
-  "ShowFrame", "HideFrame"}
+-- SavePosition ends every user move (drag stick to frame/grid/edge or free, keyboard nudge).
+local BAR_METHODS = {"Layout", "RestorePosition", "SavePosition", "SetFrameScale", "UpdateDisplayLayer",
+  "UpdateDisplayLevel", "ShowFrame", "HideFrame"}
 local STRATA = {"BACKGROUND", "LOW", "MEDIUM", "HIGH", "DIALOG", "FULLSCREEN", "FULLSCREEN_DIALOG", "TOOLTIP"}
 local MAX_LEVEL = 10000
 

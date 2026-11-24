@@ -59,3 +59,7 @@ Already decided (with reason): Grid2 above the quest tracker (R158 latest user w
 
 ## Step 58 round 3 (HUD art) — stopped by A before any change
 - Art is hand-painted per theme (13 × 3 sizes × top/deck = 78 pictures), no repeatable strips; all sizes are stretched (deck 2.24/2.58/2.89 : 1), so no correct-aspect source to cut; bar surround is part of the painted band. Options a new art / b hand cut table / c keep → user decision (asked 2026-11-25).
+
+## Step 59 review (B, 7797ed71) — 중대 0 · 중간 1 · 경미 4
+- M1 ring does not follow a bar dragged in Dominos config: drag end calls `owner:StopMovingOrSizing()` / `owner:Stick()` / `owner:UpdateWatched()` (Dominos_Config/overlay/dragFrame.lua:311–313); hooked list `BAR_METHODS` (Composition.lua:64–65) has none of them → master confirmed. Impact map: Composition.lua BAR_METHODS + hook (fix) · tests/composition/parts.py (add drag case) · appearance-27-hud-parts.md §2/§4-4 (check only — promise stays true after fix).
+- Minor 1–4 (fade not followed, readBounds call order, ring paint failure keeps parts, tail bar empty slots inside ring) → final report list.

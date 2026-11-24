@@ -95,3 +95,31 @@ After the compaction notice I re-read the rule files: `feedback_flow_interruptio
 ## Remaining
 
 Nothing in this brief is left undone. Not run: real install, game check (needs Codex art).
+
+## Review fix (one medium: ring did not follow a bar dragged in Dominos config)
+
+Read: `Dominos_Config/overlay/dragFrame.lua` 295–320 (drag end: `StopMovingOrSizing`, `Stick`, `UpdateWatched`) and 515–540 (keyboard nudge: `ClearSavedAnchor`, `SetPoint`, `SaveRelativePosition`, `RestorePosition`) · `Dominos/core/frame.lua` 705–765 (`SavePosition`, `SaveRelativePosition`), 960–1060 (`Stick`, `StickToFrame/Grid/Edge`) · grep `SavePosition|:Stick()|RestorePosition` over Dominos and Dominos_Config.
+
+Why `SavePosition`: every user move ends in it after the final `SetPoint` — `Stick` → `StickToFrame` (SetPoint, SaveAnchor, SaveRelativePosition), `StickToGrid`/`StickToEdge` (SetPoint, SaveRelativePosition), free drag (ClearSavedAnchor, SaveRelativePosition), keyboard nudge (SaveRelativePosition, then RestorePosition). `SaveRelativePosition` calls `self:SavePosition`, so the instance post-hook runs. `Stick` alone would miss the nudge path. The ring is re-measured at drag end, not during the drag.
+
+### Impact map
+
+| Place | Type | How found | Impact | Reason |
+|---|---|---|---|---|
+| `Composition.lua` `BAR_METHODS` | the defect | review quote, read | change: add `SavePosition` (+ one comment line naming what it covers) | ends every user move path |
+| `watchDominos` hook loop | caller of the list | read | check only | hooks each listed method with `hooksecurefunc(bar, method, …)`; no other change |
+| `tests/composition/parts.py` Bar stub method list + `surround_follows_dominos_layout_changes` | locking test | read | change: stub `SavePosition`, `SaveRelativePosition`, `Stick`, `StopMovingOrSizing`, `UpdateWatched` (drag frame order); drag case and nudge case | new path tested |
+| Codex brief §2 「다시 배치·이동…할 때」 and §4-4 「바를 옮기거나 숨겼을 때 틀이 따라가는지」 | text describing the behaviour | grep, read the lines | check only, no edit | wording now matches the code |
+| `Skin_Dominos/Skin.lua` hooks on `Layout` | twin hook pattern | read earlier (40–80) | none | different bars/methods, no shared state |
+| work_log-59 「Choices」 item 6 | record | — | none (record) | the trigger list in item 6 is the state before this fix; this section supersedes it |
+
+### Commands (verdict lines)
+
+| Command | Verdict |
+|---|---|
+| `python -I Collection/tests/composition/parts.py` | rc=0 · 12/12 (drag + nudge checks inside `surround_follows_dominos_layout_changes`) |
+| same case against a scratch copy without `SavePosition` in `BAR_METHODS` (`<scratch>/Composition_nohook.lua`) | FAIL as expected · `dragged bar: own ring at its new place: expected True, got False` |
+| `python -I Collection/tests/composition/run.py` | rc=0 · 8/8 |
+| `python -I Collection/tools/luacheck.py Collection/AddOns/DevilForever_Appearance` | checked=7 failed=0 |
+| `build.py --dry-run --variant pitbull4` / `fuf` (through devnull_run.py) | rc=0 · files 2284 / 2228 (unchanged) |
+| `python -I <scratch>/old_vs_new.py <scratch>/Composition_6e4433c2.lua` | `applies identical=56 different=0` (fallback still call-for-call) |
