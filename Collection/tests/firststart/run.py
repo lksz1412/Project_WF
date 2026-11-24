@@ -667,7 +667,7 @@ def grid2_preset_values_survive_first_start_template():
         db = s.sv("Grid2DB")
         frame = db["namespaces"]["Grid2Frame"]["profiles"]["Hero - Realm"]
         layout = db["namespaces"]["Grid2Layout"]["profiles"]["Hero - Realm"]
-        eq((frame["frameWidth"], frame["frameHeight"], frame["frameBorder"], layout["Padding"]), (96, 32, 2, 4),
+        eq((frame["frameWidth"], frame["frameHeight"], frame["frameBorder"], layout["Padding"]), (44, 44, 2, 4),
            name + " template: preset cell size, border width and gap written again")
         eq(db["profiles"]["Hero - Realm"]["__template"], name, name + " template's own indicators kept")
         prof = db["profiles"]["Hero - Realm"]
@@ -707,7 +707,7 @@ def grid2_first_start_template_picked_without_dialog():
     eq(s.g.DIALOG_OPENED, 0, "no first-start dialog")
     eq(db["profiles"]["Hero - Realm"]["__template"], "Modern", "Modern template applied at the first call")
     frame = db["namespaces"]["Grid2Frame"]["profiles"]["Hero - Realm"]
-    eq((frame["frameWidth"], frame["frameHeight"]), (96, 32), "preset cell size written again after the template")
+    eq((frame["frameWidth"], frame["frameHeight"]), (44, 44), "preset cell size written again after the template")
     eq(s.errors(), [], "no errors")
 
 
@@ -729,9 +729,12 @@ def pb4_preset_session(saved=None, request=False):
 def pitbull4_preset_positions_only_into_existing_units():
     fresh = pb4_preset_session()
     units = fresh.sv("PitBull4DB")["profiles"]["Default"]["units"]
-    eq(round(units["대상의 소환수"]["position_x"], 2), round(-703 * PIXEL_FACTOR / UI_SCALE, 2),
-       "fresh install: disabled targetpet keeps its optional geometry")
-    eq(units["대상의 소환수"]["enabled"], False, "fresh targetpet is disabled without removing its classification")
+    # the base preset is the V2 layout: the target-pet frame and its chain are on
+    eq((units["대상의 소환수"]["enabled"], units["대상의 소환수"]["layout"]), (True, "소환수와 주시"),
+       "fresh install: V2 target-pet frame")
+    eq([units[n]["enabled"] for n in ("대상의 소환수의 대상", "대상의 소환수의 대상의 대상")], [True, True],
+       "fresh install: target-pet chain")
+    eq(fresh.sv("PitBull4DB")["profiles"]["Default"]["dfLayoutV2"], True, "fresh install: V2 layout")
     saved = {"PitBull4DB": {"profileKeys": {"Hero - Realm": "Default"},
                             "profiles": {"Default": {"units": {"대상": {"unit": "target", "enabled": True}}}}}}
     saved["PitBull4DB"]["namespaces"] = {"LuaTexts": {"profiles": {"Default": {"layouts": {
@@ -744,8 +747,8 @@ def pitbull4_preset_positions_only_into_existing_units():
     nxt = {n: first.sv(n) for n in ("PitBull4DB", "DevilForever_CoreDB", "DevilForever_ProfilesDB")}
     s = pb4_preset_session(saved=nxt)
     units = s.sv("PitBull4DB")["profiles"]["Default"]["units"]
-    eq(sorted(units), sorted(["대상", "플레이어 아래 대상", "플레이어 아래 대상의 대상", "플레이어의 소환수의 대상", "플레이어의 소환수의 대상의 대상", "주시 대상의 대상", "주시 대상의 대상의 대상"]),
-       "explicit preset adds the two lower rows and four complete companion chains")
+    preset_units = core["to_py"](s.core.Presets.Get(s.core.Presets, "fhd-v2"))["fragments"][1]["values"]["units"]
+    eq(sorted(units), sorted(preset_units), "explicit preset writes the V2 layout's complete rows")
     for name, unit in (("플레이어 아래 대상", "target"), ("플레이어 아래 대상의 대상", "targettarget")):
         eq((units[name]["unit"], units[name]["enabled"], units[name]["layout"]),
            (unit, True, "대상의대상"), "new singleton has native identity and layout")
@@ -753,7 +756,7 @@ def pitbull4_preset_positions_only_into_existing_units():
     eq(all(name in fresh_units for name in ("플레이어 아래 대상", "플레이어 아래 대상의 대상")), True,
        "fresh receipt v1 then v2 creates both rows")
     receipt = fresh.sv("DevilForever_CoreDB")["preset"]["fragments"]["fhd"]
-    eq(receipt["PitBull4DB@profile:Default"], 5, "the party-groups fragment, written last, owns the version 5 receipt")
+    eq(receipt["PitBull4DB@profile:Default"], 11, "the V2 layout fragment, written last, owns the version 11 receipt")
     unchanged = pb4_preset_session(saved=carry(s))
     eq(unchanged.sv("PitBull4DB"), s.sv("PitBull4DB"), "plain reload keeps completed profile")
     eq("position_x" in units["대상"], True, "the existing unit gets its position")
@@ -864,7 +867,7 @@ def grid2_spot(s):
 @case
 def party_command_moves_grid2_only_from_the_earlier_default_spot():
     fresh = pb4_grid2_session()
-    eq(grid2_spot(fresh), ("BOTTOMRIGHT", -439, 776), "new install: fhd preset spot, above the target frame")
+    eq(grid2_spot(fresh), ("TOPRIGHT", -247, -259), "new install: fhd preset spot, left of the quest tracker")
     eq(any("Grid2 창" in l for l in core["dfp"](fresh, "party on")), False, "already at the preset spot: no position line")
     for spot, moved in (((None, 24, -164), True), (("TOPLEFT", 24.4, -163.6), True), (("TOPLEFT", 300, -164), False)):
         saved = carry(fresh)
@@ -879,7 +882,7 @@ def party_command_moves_grid2_only_from_the_earlier_default_spot():
         eq(core["dfp"](s, "party off") and grid2_spot(s), before, "off never moves the window")
         lines = core["dfp"](s, "party on")
         if moved:
-            eq(grid2_spot(s), ("BOTTOMRIGHT", -439, 776), "earlier default %r: moved to the preset spot" % (spot,))
+            eq(grid2_spot(s), ("TOPRIGHT", -247, -259), "earlier default %r: moved to the preset spot" % (spot,))
             eq(core["has_line"](lines, "Grid2 창: 예전 기본 자리 → fhd preset"), True, "%r" % lines)
         else:
             eq(grid2_spot(s), before, "a window the user moved stays")
@@ -892,20 +895,20 @@ def party_command_moves_grid2_only_from_the_earlier_default_spot():
 @case
 def grid2_spot_follows_the_compare_layout_and_back():
     s = pb4_grid2_session()
-    eq(grid2_spot(s), ("BOTTOMRIGHT", -439, 776), "fhd: above the target, right edges together")
+    eq(grid2_spot(s), ("TOPRIGHT", -247, -259), "fhd: left of the quest tracker")
     core["dfp"](s, "preset fhd-v2"); core["dfp"](s, "go")
     v2 = pb4_grid2_session(saved=carry(s))
-    eq(grid2_spot(v2), ("BOTTOMRIGHT", -536, 733), "fhd-v2: above the V2 target")
+    eq(grid2_spot(v2), ("TOPRIGHT", -247, -259), "fhd-v2: the same spot")
     saved = carry(v2)   # before the V1 request below
     core["dfp"](v2, "preset fhd-v1"); core["dfp"](v2, "go")
     back = pb4_grid2_session(saved=carry(v2))
-    eq(grid2_spot(back), ("BOTTOMRIGHT", -439, 776), "fhd-v1: back to the V1 spot")
+    eq(grid2_spot(back), ("TOPRIGHT", -247, -259), "fhd-v1: the same spot")
     lay = saved["Grid2DB"]["namespaces"]["Grid2Layout"]["profiles"]["Hero - Realm"]
     lay.pop("anchor", None); lay["PosX"], lay["PosY"] = 24 * PIXEL_FACTOR, -164 * PIXEL_FACTOR
     old = pb4_grid2_session(saved=saved)
     lines = core["dfp"](old, "party on")
-    eq(grid2_spot(old), ("BOTTOMRIGHT", -536, 733), "V2 in use: the earlier default spot moves to the V2 spot")
-    eq(core["has_line"](lines, "fhd-v2 preset 의 자리"), True, "%r" % lines)
+    eq(grid2_spot(old), ("TOPRIGHT", -247, -259), "V2 in use: the earlier default spot moves to the preset spot")
+    eq(core["has_line"](lines, "fhd preset 의 자리(퀘스트 목록 왼쪽, 위 끝 맞춤)"), True, "%r" % lines)
     eq(s.errors() + v2.errors() + back.errors() + old.errors(), [], "no errors")
 
 
@@ -918,7 +921,7 @@ def party_groups_kept_notice_points_to_party_command():
     s = pb4_preset_session(saved=saved)
     lines = [l for l in prints(s) if "preset" in l or "파티 그룹" in l]
     eq(core["has_line"](lines, "PitBull4 파티 그룹", "/dfp party on"), True, "party groups: the light command: %r" % lines)
-    eq(any("/dfp preset fhd 으로 쓸 수 있음" in l for l in lines), False, "no heavy preset hint for them alone: %r" % lines)
+    eq(any("/dfp preset fhd" in l for l in lines), True, "the V2 layout rows still point to /dfp preset fhd: %r" % lines)
     again = pb4_preset_session(saved=carry(s))
     eq([l for l in prints(again) if "/dfp party on" in l], [], "printed once")
 
@@ -957,7 +960,10 @@ def companion_chains_explicit_upgrade_keeps_existing_profile():
     names = ("플레이어의 소환수의 대상", "플레이어의 소환수의 대상의 대상", "주시 대상의 대상", "주시 대상의 대상의 대상")
     for name, unit in zip(names, ("pettarget", "pettargettarget", "focustarget", "focustargettarget")):
         eq((units[name]["enabled"], units[name]["unit"], units[name]["layout"]), (True, unit, "소환수와 주시 아래"), "explicit four complete native rows")
-    eq(units["대상의 소환수"]["enabled"], False, "explicit preset suppresses existing targetpet")
+    eq(units["대상의 소환수"]["enabled"], True, "explicit preset: V2 target-pet frame on")
+    for name, unit in (("대상의 소환수의 대상", "targetpettarget"), ("대상의 소환수의 대상의 대상", "targetpettargettarget")):
+        eq((units[name]["enabled"], units[name]["unit"], units[name]["layout"]), (True, unit, "소환수와 주시 아래"),
+           "explicit target-pet chain rows")
     eq(units["Custom unit"], saved["PitBull4DB"]["profiles"]["Default"]["units"]["Custom unit"], "custom unit preserved")
     eq(any(u.get("unit", "").startswith("focuspet") for u in units.values()), False, "no focus pet rows added")
     restored = pb4_preset_session(saved=carry(upgraded))

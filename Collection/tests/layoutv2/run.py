@@ -118,20 +118,29 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),
           TEST_casting=false;PitBull4.CastBar:ForeverCastEvent('UNIT_SPELLCAST_STOP','player');f:UpdateLayout(false)
           assert(not f.CastBar)
         """)
-    for restore in (mode+'-v1',mode):
-        back=session(mode,height,width,request(v2,restore),ui=.64)
-        pback=back.sv('PitBull4DB')['profiles']['Default']
-        assert not pback['dfLayoutV2'] and not pback['units']['대상의 소환수']['enabled']
-        assert pback['units']['대상의 소환수']['layout']=='대상의대상'
-        assert not back.sv('PitBull4DB')['namespaces']['CastBar']['profiles']['Default']['layouts']['보통']['dfOutside']
-        assert back.sv('Quartz3DB')['namespaces']['Swing']['profiles']['Default']['swingposition']=='top'
-        assert back.sv('Quartz3DB')['namespaces']['Pet']['profiles']['Default']['point']=='TOPLEFT'
-        assert pback['dfAuraGeometry']['플레이어']['size_ratio']==.7 and pback['dfAuraGeometry']['플레이어']['avoid_frame']
-        for name in bp['units']:
-            if name!='custom':
-                for key in ('anchor','relative_point','position_x','position_y','size_x','size_y'):
-                    assert abs(pback['units'][name][key]-bp['units'][name][key])<1e-8 if isinstance(bp['units'][name][key],(int,float)) else pback['units'][name][key]==bp['units'][name][key]
-        assert not back.errors(),back.errors()
+    # the base preset is the V2 layout; -v1 is the V1 compare layout and the base preset brings V2 back
+    assert bp['dfLayoutV2'] and bp['units']['대상의 소환수']['enabled']
+    back=session(mode,height,width,request(v2,mode+'-v1'),ui=.64)
+    pback=back.sv('PitBull4DB')['profiles']['Default']
+    assert not pback['dfLayoutV2'] and not pback['units']['대상의 소환수']['enabled']
+    assert pback['units']['대상의 소환수']['layout']=='대상의대상'
+    assert not any(pback['units'][n]['enabled'] for n in ('대상의 소환수의 대상','대상의 소환수의 대상의 대상'))
+    assert not back.sv('PitBull4DB')['namespaces']['CastBar']['profiles']['Default']['layouts']['보통']['dfOutside']
+    assert back.sv('Quartz3DB')['namespaces']['Swing']['profiles']['Default']['swingposition']=='top'
+    assert back.sv('Quartz3DB')['namespaces']['Pet']['profiles']['Default']['point']=='TOPLEFT'
+    assert pback['dfAuraGeometry']['플레이어']['size_ratio']==.7 and pback['dfAuraGeometry']['플레이어']['avoid_frame']
+    assert not back.errors(),back.errors()
+    again=session(mode,height,width,request(back,mode),ui=.64)
+    pagain=again.sv('PitBull4DB')['profiles']['Default']
+    assert pagain['dfLayoutV2'] and pagain['units']['대상의 소환수']['enabled']
+    for name in bp['units']:
+        if name!='custom':
+            for key in ('anchor','relative_point','position_x','position_y','size_x','size_y','layout','enabled'):
+                a,b=pagain['units'][name].get(key),bp['units'][name].get(key)
+                if key in ('position_x','position_y'):a,b=a/pagain['dfPixel'],b/bp['dfPixel']  # same physical spot at either UI scale
+                assert (abs(a-b)<1e-8) if isinstance(b,(int,float)) and not isinstance(b,bool) else a==b,(mode,name,key,a,b)
+    assert again.sv('Quartz3DB')['namespaces']['Swing']['profiles']['Default']['swingposition']=='bottom'
+    assert not again.errors(),again.errors()
     print('PASS',mode,width,'actual preset request/reload -> V2 -> narrow and regular V1; 3 scales native Refix/layout; party/custom/module toggles preserved')
 print('PASS V2 lifecycle and native geometry')
 
@@ -445,41 +454,67 @@ def default_screen_map(mode,width,height,v2=False):
     for i,(x,y,w,h) in enumerate(_re.findall(r'\{(\d+), (\d+), (\d+), (\d+)\}',_re.search(mode+r' = \{(.*)\},',det).group(1))):
         rects['details %d'%(i+1)]=(int(x),int(y),int(w),int(h))
     layout=plain(s.core.Presets.Get(s.core.Presets,mode+'-v2')) if v2 else d
-    grid={f['namespace']:dict(f['values']) for f in d['fragments'].values() if f['folder']=='Grid2'}
+    grid={}
+    for f in d['fragments'].values():
+        if f['folder']=='Grid2':grid.setdefault(f['namespace'],{}).update(f['values'])  # base values, then the V2 layout's spot
     for f in layout['fragments'].values():
         if f['folder']=='Grid2' and f['namespace']=='Grid2Layout':grid['Grid2Layout'].update(f['values'])  # V2: the window spot only
     raid=_grid2_rects(grid['Grid2Layout'],grid['Grid2Frame'],width,height,factor,40)
     party=_grid2_rects(grid['Grid2Layout'],grid['Grid2Frame'],width,height,factor,5)
     return rects,raid,party
 
-# fhd V1: the Hekili icon row (y 64-120) leaves Grid2's bottom edge at 304 at the highest; the target's
-# debuff band with the focus frame shown and both debuff groups full reaches 291 (its right 70 px column).
-SHORTFALL={('fhd',False):('auras 대상 debuffs avoided shown',13)}
+# Grid2 left of the quest tracker (Blizzard's objective tracker, right side; top at about 24 % and its
+# left edge about 23 % of the screen height from the right): window top on the tracker's top, right edge
+# on the tracker's left edge, square cells; the window grows down and left, clear of every preset rectangle.
+TRACKER={'fhd':(259,247,44),'qhd':(346,330,58),'uhd':(518,495,88)}
 for v2 in (False,True):
     for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),('uhd',3862,2160)]:
         rects,raid,party=default_screen_map(mode,width,height,v2)
         assert len([k for k in rects if k.startswith('group ')])==4 and len([k for k in rects if k.startswith('hekili ')])==5,sorted(rects)
-        target=rects['unit 대상']
-        bands={k:r for k,r in rects.items() if k.startswith('auras 대상 ')}
-        allowed,depth=SHORTFALL.get((mode,v2),(None,0))
-        for box in (raid,party):
+        top,margin,cell=TRACKER[mode]
+        for kind,box in (('raid',raid),('party',party)):
             assert box[0]>=0 and box[1]>=0 and box[0]+box[2]<=width and box[1]+box[3]<=height,(mode,v2,box)
-            hits=[k for k,r in rects.items() if overlaps(box,r) and k!=allowed]
-            assert not hits,(mode,width,v2,box,hits,[rects[k] for k in hits])
-            # above the enemy target: across its width, bottom edge over the target and its aura bands
-            assert box[0]<target[0]+target[2] and box[0]+box[2]>target[0],(mode,v2,box,target)
-            assert box[1]+box[3]<=target[1] and abs(box[1]+box[3]-(raid[1]+raid[3]))<1e-6,(mode,v2,box,raid)
-            for k,b in bands.items():
-                limit=b[1]-8+(depth+8 if k==allowed else 0)
-                assert box[1]+box[3]<=limit+1e-6,(mode,v2,k,box,b)
-        # right edges together (V2 targets hang from the screen centre: off by the extra width's half on 3862)
-        slack=0 if not v2 else (width-{'fhd':1920,'qhd':2560,'uhd':3840}[mode])/2
-        assert abs(raid[0]+raid[2]-(target[0]+target[2]))<=slack+1e-6,(mode,v2,raid,target)
-        gap=min(b[1] for b in bands.values())-(raid[1]+raid[3])
-        print('PASS',mode,width,'V2' if v2 else 'V1','Grid2 40-player window %s and party window above the target (worst aura band gap %.0f px), clear of %d preset rectangles'%(tuple(round(v) for v in raid),gap,len(rects)))
-print('PASS preset Grid2 placement (V1 and V2)')
+            hits={k for k,r in rects.items() if overlaps(box,r)}
+            # Known overlaps at this spot (size and shape wait for the user's in-game feedback): the 40-player
+            # window reaches the target's full debuff band; on fhd both windows reach the first Details window.
+            known={'auras 대상 debuffs alone','auras 대상 debuffs avoided shown'} if kind=='raid' else set()
+            if mode=='fhd':known|={'details 1'}
+            assert hits==known,(mode,width,v2,kind,box,sorted(hits))
+            assert abs(box[1]-top)<1e-6 and abs(box[0]+box[2]-(width-margin))<1e-6,(mode,v2,box)
+        print('PASS',mode,width,'V2' if v2 else 'V1','Grid2 40-player window %s and party window %s left of the quest tracker, tops aligned (cells %d px), known overlaps only (target debuff band at 40 players%s)'%(tuple(round(v) for v in raid),tuple(round(v) for v in party),cell,', Details 1 on fhd' if mode=='fhd' else ''))
+print('PASS preset Grid2 placement left of the quest tracker (V1 and V2)')
 
 core_default=_re.search(r'dfStandStill = ([0-9.]+)',(A/'!DevilForever_Core/Defaults/Quartz.lua').read_text(encoding='utf-8')).group(1)
 module_default=_re.search(r'dfStandStill = ([0-9.]+),',(A/'Quartz/modules/SwingForever.lua').read_text(encoding='utf-8')).group(1)
 assert core_default==module_default=='0.5',(core_default,module_default)
 print('PASS stand-still default: Core Quartz defaults and the Swing module defaults both',core_default)
+
+# Base preset = V2: focus frame centred, one aura table for player/target/focus, target-pet chain shown,
+# square Grid2 cells.
+for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),('uhd',3862,2160)]:
+    rects,raid,party=default_screen_map(mode,width,height)
+    s=session(mode,height,width)
+    p=s.sv('PitBull4DB')['profiles']['Default'];aura=s.sv('PitBull4DB')['namespaces']['Aura']['profiles']['Default']['layouts']
+    assert p['dfLayoutV2'] is True
+    focus=rects['unit 주시 대상']
+    assert abs(focus[0]+focus[2]/2-width/2)<1e-6,(mode,width,focus)
+    player,target=rects['unit 플레이어'],rects['unit 대상']
+    assert abs((focus[0]-(player[0]+player[2]))-(target[0]-(focus[0]+focus[2])))<1e-6,(mode,player,focus,target)
+    assert p['units']['주시 대상']['layout']=='주시' and p['units']['플레이어의 소환수']['layout']=='소환수와 주시'
+    assert aura['보통']==aura['대상']==aura['주시'],(mode,aura['보통'],aura['주시'])
+    assert (aura['대상']['max_buffs'],aura['대상']['max_debuffs'])==(14,16)
+    assert aura['소환수와 주시']==aura['데빌 파티']  # pets keep the party aura table
+    size={'fhd':(20,32),'qhd':(27,43),'uhd':(40,64)}[mode]
+    assert (aura['주시']['layout']['buff']['size'],aura['주시']['layout']['debuff']['my_size'])==size
+    pet=rects['unit 대상의 소환수']
+    for label,unit in (('대상의 소환수의 대상','targetpettarget'),('대상의 소환수의 대상의 대상','targetpettargettarget')):
+        row=p['units'][label]
+        assert row['enabled'] is True and row['unit']==unit and row['layout']=='소환수와 주시 아래',(label,row)
+        r=rects['unit '+label]
+        assert pet[0]-1e-6<=r[0] and r[0]+r[2]<=pet[0]+pet[2]+1e-6 and r[1]>=pet[1]+pet[3],(label,r,pet)
+    assert p['units']['대상의 대상']['enabled'] is True and p['units']['대상의 대상의 대상']['enabled'] is True
+    print('PASS',mode,width,'V2 default: focus centred %.0f, player/target gaps equal, one aura table %s, target-pet chain under the target-pet'%(focus[0]+focus[2]/2,size))
+src={m:(A/'!DevilForever_Core/Presets'/(m+'.lua')).read_text(encoding='utf-8') for m in ('fhd','qhd','uhd')}
+for m,cell in (('fhd',44),('qhd',58),('uhd',88)):
+    assert '["frameWidth"]=%d,["frameHeight"]=%d'%(cell,cell) in src[m] and '["anchor"]="TOPRIGHT"' in src[m],m
+print('PASS Grid2 cells square (fhd 44, qhd 58, uhd 88) with a TOPRIGHT anchor')

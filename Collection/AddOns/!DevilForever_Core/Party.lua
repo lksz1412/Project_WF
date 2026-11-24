@@ -32,8 +32,8 @@
 --               "Raid"/"Never" becomes "Grouped"; other values are kept. With `on`,
 --               a window still at the package's earlier default spot (anchor
 --               TOPLEFT, PosX/PosY of OLD_GRID2_SPOT for the active preset, within
---               a physical pixel) moves to the active preset's spot (its V2 compare
---               layout's while the PitBull4 profile uses it, dfLayoutV2); a window the
+--               a physical pixel) moves to the active preset's spot (left of the quest
+--               tracker, tops aligned; the compare layouts use the same spot); a window the
 --               user moved stays where it is (one line says so).
 -- The saved-variable tables are written; the frames follow at the next /reload.
 
@@ -120,21 +120,12 @@ local function moveGrid2(keys)
   local p = grid2Profile(keys, false)
   local active = Core.Presets and Core.Presets:GetActive()
   local old = active and OLD_GRID2_SPOT[active]
-  -- the V2 compare layout in use (PitBull4 profile dfLayoutV2) has its own spot above its target
-  local sv = _G.PitBull4DB
-  local pkeys = type(sv) == "table" and rawget(sv, "profileKeys")
-  local pname = type(pkeys) == "table" and rawget(pkeys, keys.char)
-  local profiles = type(sv) == "table" and rawget(sv, "profiles")
-  local pb4 = type(profiles) == "table" and rawget(profiles, type(pname) == "string" and pname or "Default")
-  local v2 = type(pb4) == "table" and rawget(pb4, "dfLayoutV2") == true
   local want
-  for _, name in ipairs(old and (v2 and {active, active .. "-v2"} or {active}) or {}) do
-    local def = Core.Presets:Get(name)
-    for _, f in ipairs(def and def.fragments or {}) do
-      if f.folder == "Grid2" and f.namespace == "Grid2Layout" then
-        want = want or {}
-        for k, v in pairs(f.values) do want[k] = v end
-      end
+  local def = old and Core.Presets:Get(active)
+  for _, f in ipairs(def and def.fragments or {}) do
+    if f.folder == "Grid2" and f.namespace == "Grid2Layout" then
+      want = want or {}
+      for k, v in pairs(f.values) do want[k] = v end
     end
   end
   local factor = pixelFactor()
@@ -147,7 +138,7 @@ local function moveGrid2(keys)
   if at(want.anchor, want.PosX / factor, want.PosY / factor) then return nil end
   if at("TOPLEFT", old[1], old[2]) then
     p.anchor, p.PosX, p.PosY = want.anchor, want.PosX, want.PosY
-    return "moved", v2 and (active .. "-v2") or active
+    return "moved", active
   end
   return "user"
 end
@@ -423,7 +414,7 @@ function Party:Set(on, say)
       local moved, preset = nil, nil
       if on then moved, preset = moveGrid2(keys) end
       if moved == "moved" then
-        lines[#lines + 1] = "Grid2 창: 예전 기본 자리 → " .. preset .. " preset 의 자리(오른쪽, 대상 프레임 위)"
+        lines[#lines + 1] = "Grid2 창: 예전 기본 자리 → " .. preset .. " preset 의 자리(퀘스트 목록 왼쪽, 위 끝 맞춤)"
       elseif moved == "user" then
         lines[#lines + 1] = "Grid2 창은 예전 기본 자리가 아니라서 그대로 — PitBull4 파티와 겹치면 Grid2 에서 옮기세요"
       end

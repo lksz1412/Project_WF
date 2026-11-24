@@ -44,3 +44,8 @@ Already decided: the release folder set (incl. Hekili) is installed unchanged �
 
 중대 0 · 중간 0 · 경미 2 (list). M1–M3 closed. Record note: the Grid2 PosY line is `Presets/fhd.lua:730`; the ":272" above came from the reviewer's numbering slip (this triage section is a record and stays as written).
 Fix round decisions (work A): measure from the screen top `h − GetBottom()·scale / PixelUtil.GetPixelToUIUnitFactor()`; restore text built by one function `Get-RestoreText` for help and failure output.
+
+## Step 58 — user check R158 (diagnosis iter_2/diag-58.md)
+
+Master checked: ThemeSwitcher.lua:81–82 SetText before SetFont (:197) + BugGrabber "Font not set" → confirmed. SexyMap.lua:211 stack in BugGrabber → confirmed. V2.lua:100–112 focus x = xPlayer+w+timerGap → confirmed not centred.
+Already decided (with reason): Grid2 above the quest tracker (R158 latest user words supersede R148) · square cells 44/58/88 · V2 folded into base presets, names kept (Composition/switcher/Party depend on names) · focus centred, symmetric gaps · one aura table for player/target/focus, focus own layout (pets unchanged — user) · target-pet chain added · HUD art fixed in code first, bar surrounds above Onyx · switcher SetText moved into apply() · SexyMap error fixed in our file.

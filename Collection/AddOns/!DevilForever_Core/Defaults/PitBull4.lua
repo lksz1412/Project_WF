@@ -576,9 +576,12 @@ local function applyScale()
       if kind == "units" and (name == "주시 대상" or name == "플레이어의 소환수"
           or (name == "대상의 소환수" and profile.dfLayoutV2 == true))
           and values and values.dfCompanion == true then layout = "소환수와 주시" end
+      -- the focus has its own layout "주시"; a profile from before keeps the companion layout
+      if layout == "소환수와 주시" and name == "주시 대상" and values.layout == "주시" then layout = "주시" end
       if kind == "units" and values and values.dfCompanionChain == true
           and (name == "플레이어의 소환수의 대상" or name == "플레이어의 소환수의 대상의 대상"
-            or name == "주시 대상의 대상" or name == "주시 대상의 대상의 대상") then layout = "소환수와 주시 아래" end
+            or name == "주시 대상의 대상" or name == "주시 대상의 대상의 대상"
+            or name == "대상의 소환수의 대상" or name == "대상의 소환수의 대상의 대상") then layout = "소환수와 주시 아래" end
       if kind == "groups" and name == "파티" and values and values.dfPartyRole == "party" then layout = "데빌 파티" end
       if geometry(values, fields) ~= signature or (layout and values.layout ~= layout) then
         profile.dfGeometry, profile.dfPixel = nil, nil

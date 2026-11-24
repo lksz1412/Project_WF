@@ -9,6 +9,7 @@ Input: ``Collection/codex-briefs/assets/26-theme-switcher/Allura-Regular.ttf``
 (sha256 checked; the tool stops when it differs) and ``OFL.txt`` next to it.
 Output: ``Collection/AddOns/DevilForever_Skin_StatusStrip/Media/ThemeSwitcher/``
 ``<fhd|qhd|uhd>/name_<theme id>.tga`` (13 per preset),
+``<fhd|qhd|uhd>/layout_<new|old>.tga`` (layout version names, 2 per preset),
 ``<fhd|qhd|uhd>/arrow_<prev|next>_<normal|hover|pushed|disabled>.tga`` (8 per preset)
 and ``LICENSE-OFL.txt`` (copy of OFL.txt). The font file itself is not copied.
 
@@ -43,6 +44,8 @@ THEMES = [
     ("tauren", "Tauren"), ("troll", "Troll"), ("undead", "Undead"),
     ("skyborne", "Skyborne (Alliance)"), ("skyborne-horde", "Skyborne (Horde)"),
 ]
+# Layout version names of the version switcher (New = V2, Old = V1), drawn like the theme names.
+LAYOUTS = [("new", "New"), ("old", "Old")]
 SIDES = ["prev", "next"]
 STATES = ["normal", "hover", "pushed", "disabled"]
 
@@ -179,10 +182,15 @@ def name_layout(preset):
 
 
 def name_image(preset, layout, theme, label):
+    """Theme or layout name; the font size and baseline are the theme names' (one look for both)."""
     width, height = name_area(preset)
     ss = SUPERSAMPLE
     big = Image.new("L", (width * ss, height * ss), 0)
-    ImageDraw.Draw(big).text((layout["x"][theme], layout["baseline"]), label, fill=255, font=layout["font"],
+    x = layout["x"].get(theme)
+    if x is None:
+        box = layout["font"].getbbox(label, anchor="ls")
+        x = ((width * ss) - (box[2] - box[0])) / 2.0 - box[0]
+    ImageDraw.Draw(big).text((x, layout["baseline"]), label, fill=255, font=layout["font"],
                              anchor="ls")
     alpha = big.reduce(ss)
     return decorate(alpha, (width, height), PRESETS[preset]["name_canvas"], layout["top"], layout["bottom"],
@@ -236,6 +244,10 @@ def build():
         for theme, label in THEMES:
             image = name_image(preset, layout, theme, label)
             rel = "%s/name_%s.tga" % (preset, theme)
+            files[rel], images[rel] = tga_bytes(image), image
+        for key, label in LAYOUTS:
+            image = name_image(preset, layout, "layout:" + key, label)
+            rel = "%s/layout_%s.tga" % (preset, key)
             files[rel], images[rel] = tga_bytes(image), image
         for side in SIDES:
             for state in STATES:

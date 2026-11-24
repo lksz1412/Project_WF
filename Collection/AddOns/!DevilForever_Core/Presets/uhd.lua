@@ -454,11 +454,11 @@ if type(baseline) ~= "number" or baseline <= 0 then DevilForever_Core:Log("skip"
 local proposal = {profile = {units = {
   ["플레이어"] = {anchor="TOPLEFT", relative_point="TOPLEFT", relative_to="0", position_x=878*pixel, position_y=-1414*pixel, scale=1, size_x=512/512, size_y=144/144, font_multiplier=1},
   ["대상"] = {anchor="TOPRIGHT", relative_point="TOPRIGHT", relative_to="0", position_x=-878*pixel, position_y=-1414*pixel, scale=1, size_x=512/512, size_y=144/144, font_multiplier=1},
-  ["주시 대상"] = {anchor="TOPRIGHT", relative_point="TOPRIGHT", relative_to="0", position_x=-1034*pixel, position_y=-1189*pixel, scale=1, size_x=1, size_y=1, font_multiplier=1, layout="소환수와 주시", dfCompanion=true},
+  ["주시 대상"] = {anchor="TOPRIGHT", relative_point="TOPRIGHT", relative_to="0", position_x=-1034*pixel, position_y=-1189*pixel, scale=1, size_x=1, size_y=1, font_multiplier=1, layout="주시", dfCompanion=true},
   ["플레이어의 소환수"] = {anchor="TOPLEFT", relative_point="TOPLEFT", relative_to="0", position_x=1034*pixel, position_y=-1189*pixel, scale=1, size_x=1, size_y=1, font_multiplier=1, layout="소환수와 주시", dfCompanion=true},
-  ["대상의 대상"] = {anchor="TOPLEFT", relative_point="TOPRIGHT", relative_to="0", position_x=-1390*pixel, position_y=-1568*pixel, scale=1, size_x=251/190, size_y=58/36, font_multiplier=1},
+  ["대상의 대상"] = {enabled=true, anchor="TOPLEFT", relative_point="TOPRIGHT", relative_to="0", position_x=-1390*pixel, position_y=-1568*pixel, scale=1, size_x=251/190, size_y=58/36, font_multiplier=1},
   ["대상의 소환수"] = {enabled=false,anchor="TOPRIGHT", relative_point="TOPRIGHT", relative_to="0", position_x=-1398*pixel, position_y=-1474*pixel, scale=1, size_x=190/190, size_y=36/36, font_multiplier=1},
-  ["대상의 대상의 대상"] = {anchor="TOPRIGHT", relative_point="TOPRIGHT", relative_to="0", position_x=-878*pixel, position_y=-1568*pixel, scale=1, size_x=251/190, size_y=58/36, font_multiplier=1},
+  ["대상의 대상의 대상"] = {enabled=true, anchor="TOPRIGHT", relative_point="TOPRIGHT", relative_to="0", position_x=-878*pixel, position_y=-1568*pixel, scale=1, size_x=251/190, size_y=58/36, font_multiplier=1},
   ["주시 대상의 대상"] = {enabled=true,unit="focustarget",layout="소환수와 주시 아래",dfCompanionChain=true,anchor="TOPRIGHT",relative_point="TOPRIGHT",relative_to="0",position_x=-1034*pixel,position_y=-1309*pixel,scale=1,size_x=1,size_y=1,font_multiplier=1},
   ["플레이어의 소환수의 대상"] = {enabled=true,unit="pettarget",layout="소환수와 주시 아래",dfCompanionChain=true,anchor="TOPLEFT",relative_point="TOPLEFT",relative_to="0",position_x=1034*pixel,position_y=-1309*pixel,scale=1,size_x=1,size_y=1,font_multiplier=1},
   ["플레이어 아래 대상"] = {anchor="TOPLEFT", relative_point="TOPLEFT", relative_to="0", position_x=878*pixel, position_y=-1568*pixel, scale=1, size_x=251/190, size_y=58/36, font_multiplier=1, enabled=true, unit="target", layout="대상의대상"},
@@ -491,9 +491,9 @@ for _, layout in ipairs({"보통", "대상", "대상의대상"}) do
     normal_color={1,1,1,.66}}
 end
 proposal.namespaces.Aura = {global={enabled=true}, layouts={}}
-for _, layout in ipairs({"보통", "대상"}) do
-  local buffCount = layout == "보통" and 6 or 14
-  local debuffCount = layout == "보통" and 6 or 16
+for _, layout in ipairs({"보통", "대상", "주시"}) do
+  local buffCount = 14
+  local debuffCount = 16
   local size, spacing = 40, 2
   local perRow = math.max(1, math.floor(512 / (size + spacing)))
   local buffRows = math.ceil((2 * buffCount + 2) / perRow)
@@ -507,7 +507,7 @@ for _, layout in ipairs({"보통", "대상"}) do
   debuff.my_size = 64
   debuff.reverse = true
   proposal.namespaces.Aura.layouts[layout] = {enabled=true,enabled_buffs=true,enabled_debuffs=true,
-    enabled_weapons=false,max_buffs=buffCount,max_debuffs=debuffCount,highlight_style="thinborder",
+    enabled_weapons=false,max_buffs=buffCount,max_debuffs=debuffCount,highlight=false,highlight_style="thinborder",
     cooldown_text={my_buffs=true,my_debuffs=true},layout={buff=buff,debuff=debuff}}
 end
 proposal.namespaces.LuaTexts = {global={enabled=true}, layouts={}}
@@ -573,6 +573,12 @@ local companionTexts = proposal.namespaces.LuaTexts.layouts["소환수와 주시
 companionTexts["Lua:시전"], companionTexts["Lua:시전시간"] = nil, nil
 proposal.namespaces.Aura.layouts["소환수와 주시"] = DevilForever_Core.CopyTable(proposal.namespaces.Aura.layouts["데빌 파티"])
 proposal.namespaces.CastBar.layouts["소환수와 주시"] = {enabled=false}
+-- The focus has the companion frame look and the player/target aura table (set above).
+proposal.profile.layouts["주시"] = DevilForever_Core.CopyTable(proposal.profile.layouts["소환수와 주시"])
+for _, namespace in ipairs({"Portrait", "Border", "LuaTexts"}) do
+  proposal.namespaces[namespace].layouts["주시"] = DevilForever_Core.CopyTable(proposal.namespaces[namespace].layouts["소환수와 주시"])
+end
+proposal.namespaces.CastBar.layouts["주시"] = {enabled=false}
 proposal.profile.layouts["소환수와 주시 아래"] = DevilForever_Core.CopyTable(proposal.profile.layouts["대상의대상"])
 local chainLayout = proposal.profile.layouts["소환수와 주시 아래"]
 chainLayout.exists, chainLayout.size_x, chainLayout.size_y = true, 173, 45
@@ -584,6 +590,14 @@ proposal.namespaces.Border.layouts["소환수와 주시 아래"].size = math.max
 proposal.namespaces.Portrait.layouts["소환수와 주시 아래"] = {enabled=false}
 proposal.namespaces.Aura.layouts["소환수와 주시 아래"] = {enabled=false}
 proposal.namespaces.CastBar.layouts["소환수와 주시 아래"] = {enabled=false}
+-- Target-pet chain (off here; the V2 layout places and enables it).
+local targetPet = proposal.profile.units["대상의 소환수"]
+for index, label in ipairs({"대상의 소환수의 대상", "대상의 소환수의 대상의 대상"}) do
+  proposal.profile.units[label] = {enabled=false,unit=index == 1 and "targetpettarget" or "targetpettargettarget",
+    layout="소환수와 주시 아래",dfCompanionChain=true,anchor=targetPet.anchor,relative_point=targetPet.relative_point,
+    relative_to="0",position_x=targetPet.position_x,position_y=targetPet.position_y-index*60*pixel,scale=1,
+    size_x=1,size_y=1,font_multiplier=1}
+end
 proposal.profile.dfAuraGeometry = {
   ["플레이어"]={avoid_frame="PitBull4_Frames_플레이어의 소환수",side="left",width=148,size_ratio=.7},
   ["대상"]={avoid_frame="PitBull4_Frames_주시 대상",side="right",width=148,size_ratio=.7},
@@ -621,11 +635,18 @@ return proposal
     end
     def.fragments[#def.fragments + 1] = {folder="PitBull4",savedVariable="PitBull4DB",addonVersion="v4.2.50-forever.1",
       version=4,section="profile",profile="Default",values={units=companionChains}}
-    -- The four complete party groups (pet group included); last, so its version is the receipt the profile keeps.
+    local targetPetChains = {}
+    for _, name in ipairs({"대상의 소환수의 대상", "대상의 소환수의 대상의 대상"}) do
+      targetPetChains[name] = proposal.profile.units[name]
+    end
+    -- The four complete party groups (pet group included).
     local addedGroups = {}
     for _, name in ipairs({"파티", "파티원 대상", "파티원 대상의 대상", "파티원 소환수"}) do addedGroups[name] = proposal.profile.groups[name] end
     def.fragments[#def.fragments + 1] = {folder="PitBull4",savedVariable="PitBull4DB",addonVersion="v4.2.50-forever.1",
       version=5,section="profile",profile="Default",values={groups=addedGroups}}
+    -- The target-pet chain rows; last, so its version is the receipt the profile keeps.
+    def.fragments[#def.fragments + 1] = {folder="PitBull4",savedVariable="PitBull4DB",addonVersion="v4.2.50-forever.1",
+      version=6,section="profile",profile="Default",values={units=targetPetChains}}
     for _, namespace in ipairs({"Portrait", "Border", "Aura", "LuaTexts", "CastBar"}) do
       def.fragments[#def.fragments + 1] = {folder="PitBull4",savedVariable="PitBull4DB",addonVersion="v4.2.50-forever.1",
         version=1,section="profile",profile="Default",namespace=namespace,values=proposal.namespaces[namespace]}
@@ -634,7 +655,7 @@ return proposal
     for module, weight in pairs({HealthBar = 2.2, PowerBar = 1.8}) do
       def.fragments[#def.fragments + 1] = {folder = "PitBull4", savedVariable = "PitBull4DB",
         addonVersion = "v4.2.50-forever.1", version = 1, section = "profile", profile = "Default",
-        namespace = module, values = {layouts = {["보통"] = {size = weight,position = module == "HealthBar" and 1 or 2}, ["대상"] = {size = weight,position = module == "HealthBar" and 1 or 2}, ["데빌 파티"] = proposal.namespaces[module].layouts["데빌 파티"], ["소환수와 주시"] = {size = weight,position = module == "HealthBar" and 1 or 2}, ["소환수와 주시 아래"] = {enabled = module == "HealthBar",size = weight,position = module == "HealthBar" and 1 or 2}}}}
+        namespace = module, values = {layouts = {["보통"] = {size = weight,position = module == "HealthBar" and 1 or 2}, ["대상"] = {size = weight,position = module == "HealthBar" and 1 or 2}, ["데빌 파티"] = proposal.namespaces[module].layouts["데빌 파티"], ["소환수와 주시"] = {size = weight,position = module == "HealthBar" and 1 or 2}, ["주시"] = {size = weight,position = module == "HealthBar" and 1 or 2}, ["소환수와 주시 아래"] = {enabled = module == "HealthBar",size = weight,position = module == "HealthBar" and 1 or 2}}}}
     end
   elseif not ok then
     DevilForever_Core:Log("skip", "Preset:uhd", "pitbull4-profile.uhd.fragment.lua: " .. tostring(proposal))
@@ -727,7 +748,7 @@ if not pixel then
   DevilForever_Core:Log("skip", "Feature appearance", "physical pixel factor unavailable at proposal evaluation")
   return {}
 end
-return {["namespaces"]={["Grid2Frame"]={["frameWidth"]=154,["frameHeight"]=56,["frameBorder"]=4,["frameBorderDistance"]=0,["frameBorderColor"]={["r"]=0.57,["g"]=0.58,["b"]=0.59,["a"]=1},["frameTexture"]="Devil Forever devil",["font"]="Devil Forever devil",["fontSize"]=18,["iconSize"]=28,["orientation"]="HORIZONTAL"},["Grid2Layout"]={["ScaleSize"]=pixel,["Padding"]=6,["Spacing"]=0,["horizontal"]=false,["anchor"]="BOTTOMRIGHT",["groupAnchor"]="TOPLEFT",["PosX"]=-878*factor,["PosY"]=1398*factor,["BorderTexture"]="None",["BackgroundTexture"]="None"}},["indicators"]={["text-center"]={["font"]="Devil Forever devil",["fontSize"]=18},["icon-center"]={["size"]=26},["icon-left"]={["size"]=22},["icon-right"]={["size"]=22}}}
+return {["namespaces"]={["Grid2Frame"]={["frameWidth"]=88,["frameHeight"]=88,["frameBorder"]=4,["frameBorderDistance"]=0,["frameBorderColor"]={["r"]=0.57,["g"]=0.58,["b"]=0.59,["a"]=1},["frameTexture"]="Devil Forever devil",["font"]="Devil Forever devil",["fontSize"]=18,["iconSize"]=28,["orientation"]="HORIZONTAL"},["Grid2Layout"]={["ScaleSize"]=pixel,["Padding"]=6,["Spacing"]=0,["horizontal"]=false,["anchor"]="TOPRIGHT",["groupAnchor"]="TOPLEFT",["PosX"]=-495*factor,["PosY"]=-518*factor,["BorderTexture"]="None",["BackgroundTexture"]="None"}},["indicators"]={["text-center"]={["font"]="Devil Forever devil",["fontSize"]=18},["icon-center"]={["size"]=26},["icon-left"]={["size"]=22},["icon-right"]={["size"]=22}}}
   end)
   if ok and type(proposal) == "table" and next(proposal) then
     def.fragments[#def.fragments + 1] = { folder = "Grid2", savedVariable = "Grid2DB", addonVersion = "4.1.13", version = 1, section = "profile", profile = "$char", namespace = "Grid2Frame", values = proposal.namespaces["Grid2Frame"] }

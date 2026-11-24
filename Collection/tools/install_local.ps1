@@ -3,6 +3,7 @@ param(
     [Parameter(Mandatory, ParameterSetName = 'Run')] [string] $StagedAddOns,
     [Parameter(Mandatory, ParameterSetName = 'Run')] [string] $BackupRoot,
     [Parameter(ParameterSetName = 'Run')] [switch] $DryRun,
+    [Parameter(ParameterSetName = 'Run')] [switch] $AllowRunningGame,
     [Parameter(Mandatory, ParameterSetName = 'Help')] [switch] $Help
 )
 
@@ -22,7 +23,7 @@ function Get-RestoreText([string] $Backup) {
 $Usage = @"
 install_local.ps1 - copy a staged DevilForever AddOns tree into the WoW Forever game folder.
 
-  install_local.ps1 -StagedAddOns <stage>\AddOns -BackupRoot $Workspace\claude-p27-backup-<8 hex> [-DryRun]
+  install_local.ps1 -StagedAddOns <stage>\AddOns -BackupRoot $Workspace\claude-p27-backup-<8 hex> [-DryRun] [-AllowRunningGame]
   install_local.ps1 -Help
 
 <stage> is a folder $Workspace\claude-p27-stage-<8 hex> holding AddOns\ and receipt.json.
@@ -33,6 +34,10 @@ that are not in the package are removed), checked against the staged tree, and
 installation.json is written into the backup root. Other folders of Interface\AddOns
 (for example !BugGrabber, BugSack) and everything outside Interface\AddOns are left alone.
 -DryRun prints every action and writes nothing (no backup folder either).
+-AllowRunningGame skips only the "Wow or WowClassic is running" refusal, for a player who stays
+logged in and types /reload afterwards. Everything else is the same: AddOns and WTF are backed up
+first, only the package folders of Interface\AddOns are written, WTF is never written. The running
+game may rewrite WTF when it reloads or logs out; the backup is the state before the install.
 Exit code 0 = done, 1 = stopped by a check or a failed step.
 
 Restore (game closed): copy the backup back
@@ -49,6 +54,7 @@ function Write-Step([string] $Text) {
 }
 
 function Assert-GameClosed {
+    if ($AllowRunningGame) { return }
     if (Get-Process -Name Wow, WowClassic -ErrorAction SilentlyContinue) {
         throw 'Wow or WowClassic is running; close the game first.'
     }
@@ -200,7 +206,7 @@ try {
         packageFolders = $folders; fileCount = $stagedFiles.Count
         backupAddOnsEntries = $oldAddOns.Count; backupAddOnsFiles = (Get-FileCount $oldAddOns)
         backupWtfEntries = $oldWtf.Count; backupWtfFiles = (Get-FileCount $oldWtf)
-        leftAlone = $leftAlone; time = (Get-Date).ToString('o')
+        leftAlone = $leftAlone; allowRunningGame = [bool]$AllowRunningGame; time = (Get-Date).ToString('o')
     }
     $installation | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath (Join-Path $backup 'installation.json') -Encoding UTF8
     Write-Step ("installed {0} folders, {1} files; installation.json in {2}" -f $folders.Count, $stagedFiles.Count, $backup)

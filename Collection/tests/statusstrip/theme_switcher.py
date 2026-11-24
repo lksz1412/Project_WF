@@ -67,8 +67,15 @@ function CreateFrame(kind,name,parent)
  return frame
 end
 local font=R.CreateFontString
-function R:CreateFontString(...)
- local f=font(self,...);self.fontStrings=self.fontStrings or {};self.fontStrings[#self.fontStrings+1]=f;return f
+function R:CreateFontString(name,layer,template)
+ local f=font(self,name,layer,template);self.fontStrings=self.fontStrings or {};self.fontStrings[#self.fontStrings+1]=f
+ if template then f.font={template} end
+ return f
+end
+local setText=R.SetText
+function R:SetText(text)
+ if not self.font then error("FontString:SetText(): Font not set",2) end
+ return setText(self,text)
 end
 GameTooltip={SetOwner=function(self,v) self.owner=v end,SetText=function(self,v) self.text=v;self.line=nil end,
  AddLine=function(self,v) self.line=v end,Show=function(self) self.shown=true end,Hide=function(self) self.shown=false end}
@@ -79,8 +86,11 @@ def load(s,relative,addon=None,source=None):
     assert not isinstance(fn,tuple),fn
     fn(addon or relative.split('/')[0],s.lua.table())
 
-def session(width,height,font,locale='koKR',saved=None,registered=ORDER,screen=None,switcher=None,combat_login=False):
-    s=C['Session'](registry='generated',extra_files=(),saved=saved,globals_={'GetLocale':lambda:locale},
+def session(width,height,font,locale='koKR',saved=None,registered=ORDER,screen=None,switcher=None,combat_login=False,layout_v2=None):
+    # the PitBull4 preset fragments (V1/V2 layouts) are computed at load from the UI scale and the chat font
+    extra={'ChatFontNormal':{'GetFont':lambda self:('font',14)},'UIParent':{'GetEffectiveScale':lambda self:1,'GetHeight':lambda self:768},
+           'PixelUtil':{'GetPixelToUIUnitFactor':lambda:768/screen[1]}} if layout_v2 is not None else {}
+    s=C['Session'](registry='generated',extra_files=(),saved=saved,globals_=dict({'GetLocale':lambda:locale},**extra),
                    collection_presets=screen is not None)
     if screen:s.g.GetPhysicalScreenSize=s.lua.eval('function() return %d, %d end'%screen)
     s.boot()
@@ -98,6 +108,8 @@ def session(width,height,font,locale='koKR',saved=None,registered=ORDER,screen=N
     load(s,'DevilForever_StatusStrip/StatusStrip.lua')
     s.g.TEST_fire('ADDON_LOADED','DevilForever_StatusStrip')
     load(s,'DevilForever_Skin_StatusStrip/Skin.lua')
+    if layout_v2 is not None:  # PitBull4 loaded, its profile on the New (V2) or Old (V1) layout
+        s.g.TEST_loaded.PitBull4=True;s.g.PitBull4=s.table({'db':{'profile':{'dfLayoutV2':layout_v2}}})
     load(s,'DevilForever_Skin_StatusStrip/ThemeSwitcher.lua',source=switcher)
     s.g.TEST_combat=combat_login
     s.g.TEST_fire('PLAYER_LOGIN');s.g.TEST_fire('PLAYER_ENTERING_WORLD')
@@ -187,7 +199,7 @@ SOURCE=(SKIN/'ThemeSwitcher.lua').read_bytes()
 LUA_TEXT=SOURCE.decode('utf-8')
 ART={'fhd':((256,32),(192,22),(32,32),22,16,(1920,1080)),'qhd':((256,32),(216,24),(32,32),24,18,(2560,1440)),
      'uhd':((512,32),(264,28),(32,32),28,22,(3840,2160))}
-FILES=['name_'+t for t in ORDER]+['arrow_%s_%s'%(side,state) for side in ('prev','next')
+FILES=['layout_new','layout_old']+['name_'+t for t in ORDER]+['arrow_%s_%s'%(side,state) for side in ('prev','next')
                                    for state in ('normal','hover','pushed','disabled')]
 
 def tga(path):
@@ -201,7 +213,7 @@ for preset,(name_canvas,name_area,arrow_canvas,bar,_font,_screen) in ART.items()
     assert on_disk==sorted(FILES),(preset,on_disk)
     for stem in FILES:
         head,w,h,pixels,footer=tga(MEDIA/preset/(stem+'.tga'))
-        canvas,area=(name_canvas,name_area) if stem.startswith('name_') else (arrow_canvas,(bar,bar))
+        canvas,area=(name_canvas,name_area) if stem.startswith(('name_','layout_')) else (arrow_canvas,(bar,bar))
         assert head==(0,0,2,0,0,0,0,0,w,h,32,8) and (w,h)==canvas,(preset,stem,head)
         assert footer==b'\0'*8+b'TRUEVISION-XFILE.\0',(preset,stem)
         inside=0
@@ -215,7 +227,7 @@ for preset,(name_canvas,name_area,arrow_canvas,bar,_font,_screen) in ART.items()
 assert (MEDIA/'LICENSE-OFL.txt').read_bytes()==(ROOT/'Collection/codex-briefs/assets/26-theme-switcher/OFL.txt').read_bytes()
 assert not [p for p in SKIN.rglob('*') if p.suffix.lower() in ('.ttf','.otf')]
 assert sorted(p.name for p in MEDIA.iterdir())==['LICENSE-OFL.txt','fhd','qhd','uhd']
-print('PASS 63 TGA (canvas, type 2, 32 bpp, 8 alpha bits, footer, transparent outside the draw area) + OFL, no font file')
+print('PASS 69 TGA (canvas, type 2, 32 bpp, 8 alpha bits, footer, transparent outside the draw area) + OFL, no font file')
 
 block=re.search(r'local SHIPPED = \{(.*?)\n\}',LUA_TEXT,re.S).group(1)
 table={m.group(1):re.findall(r'"([^"]+)"',m.group(2)) for m in re.finditer(r'(\w+) = \{(.*?)\}',block,re.S)}
@@ -314,3 +326,53 @@ fight.g.TEST_combat=False;fight.g.TEST_fire('PLAYER_REGEN_ENABLED');assert left.
 none=session(1920,1080,16,locale='enUS')
 _,_,text,image,left,right=art(none);assert text.shown and not image.shown and arrows_are_text(left)
 print('PASS one choice -> Disable, two -> Enable; login in combat -> 0.45; no preset -> text')
+
+# Load order: a FontString without a font must not get text at file load (the client raises).
+for w,h,font,screen in [(1920,1080,16,(1920,1080)),(3840,2160,22,(3840,2160))]:
+    s=session(w,h,font,locale='enUS',screen=screen)
+    _,_,_,_,left,right=art(s)
+    assert left.fontStrings[1].text=='\u25c0' and right.fontStrings[1].text=='\u25b6'
+    assert not s.errors(),s.errors()
+early=SOURCE.replace(b'local arrows = {',b'previousText:SetText("x")\r\nlocal arrows = {',1)
+assert early!=SOURCE
+try:
+    session(1920,1080,16,locale='enUS',switcher=early)
+except Exception as exc:
+    assert 'Font not set' in str(exc),exc
+else:
+    raise AssertionError('SetText before SetFont at load was not caught')
+print('PASS switcher loads without a font error; arrow text set after SetFont; early SetText at load is caught')
+
+# Version switcher (New = V2, Old = V1) left of the theme switcher: same construction.
+def layouts(s):
+    p=s.g.DevilForever_StatusStripLayouts;slot,text,left,right=items(p)
+    return p,slot,text,slot.fontStrings[2],left,right
+for preset,(name_canvas,name_area,arrow_canvas,bar,font,screen) in ART.items():
+    for v2,key,label in ((True,'new','New'),(False,'old','Old')):
+        s=session(screen[0],screen[1],font,locale='koKR',screen=screen,layout_v2=v2)
+        p,slot,text,image,left,right=layouts(s)
+        themes=s.g.DevilForever_StatusStripThemes
+        assert p.shown and p.points[1][1]=='RIGHT' and s.g.rawequal(p.points[1][2],themes) and p.points[1][3]=='LEFT'
+        assert image.shown and not text.shown and image.texture==path(preset,'layout_'+key) and text.text==label
+        assert coords(image)==[0,name_area[0]/name_canvas[0],0,name_area[1]/name_canvas[1]]
+        assert arrows_are_images(left,preset,'prev') and arrows_are_images(right,preset,'next') and left.enabled
+        s.g.TEST_combat=True;s.g.TEST_fire('PLAYER_REGEN_DISABLED')
+        assert left.alpha==right.alpha==.45
+        reloads=s.g.TEST_reloads
+        click(right);assert s.g.TEST_reloads==reloads and s.g.GameTooltip.line=='전투 중에는 바꿀 수 없습니다.'
+        assert s.g.GameTooltip.text=='다음 배치'
+        s.g.TEST_combat=False;s.g.TEST_fire('PLAYER_REGEN_ENABLED');assert left.alpha==1
+        click(right)
+        want=preset+('-v1' if v2 else '-v2')
+        pending=s.sv('DevilForever_ProfilesDB')['pending']
+        assert s.g.TEST_reloads==reloads+1 and pending['action']=='preset' and pending['name']==want,(pending,want)
+        assert not s.errors(),s.errors()
+    print('PASS',preset,'version switcher New/Old images left of the theme switcher; combat refusal and dim; a switch requests the other layout and reloads')
+none=session(3840,2160,22,locale='enUS',screen=(3840,2160))
+assert not none.g.DevilForever_StatusStripLayouts.shown and none.g.DevilForever_StatusStripThemes.shown
+edited=session(3840,2160,22,locale='enUS',screen=(3840,2160),layout_v2=True)
+edit=edited.core.Edit
+ok,_=edit.Set(edit,'statusstrip.bar','font',edited.table({'path':'font','size':23}));assert ok
+p,slot,text,image,left,right=layouts(edited)
+assert text.shown and not image.shown and text.text=='New' and arrows_are_text(left)
+print('PASS version switcher hidden without PitBull4; edited font -> text New with arrow text')

@@ -30,12 +30,12 @@
 | `/run DevilForever_Core.Edit:Set("statusstrip.bar","font",{size=17})` · `…Edit:Clear("statusstrip.bar","font")` | 상태띠 글꼴 크기 편집 · 지우기(전투 밖) | `!DevilForever_Core/Edit.lua:118–122`, `:188–198` |
 | `/reload` | 애드온 다시 불러오기(R154 ④) | — |
 
-물리 px 재기(창 아래 끝 y, 화면 위에서부터): `/run local f=Grid2LayoutFrame print(select(2,GetPhysicalScreenSize())-f:GetBottom()*f:GetEffectiveScale()/PixelUtil.GetPixelToUIUnitFactor())` (`Grid2/GridLayout.lua:218`). `f:GetBottom()*f:GetEffectiveScale()` 는 Grid2 가 `PosY` 로 저장하는 값(화면 아래에서부터 · `Grid2/GridLayout.lua:882`)이고, preset 은 그 값을 물리 px × `PixelUtil.GetPixelToUIUnitFactor()` 로 적는다 — fhd `["PosY"]=776*factor`(`!DevilForever_Core/Presets/fhd.lua:730`) → 1080 − 776 = 304 · qhd 1440 − 988 = 452 · uhd 2160 − 1398 = 762 · V2 는 `PosY=(height−gridBottom)*factor`(`Presets/V2.lua:154`)라 재는 값 = `gridBottom` 347 · 541 · 904(`V2.lua:15–17`).
+물리 px 재기(창 위 끝 y · 오른쪽 끝 x, 화면 위·오른쪽에서부터): `/run local f=Grid2LayoutFrame local h=select(2,GetPhysicalScreenSize()) local u=PixelUtil.GetPixelToUIUnitFactor() print(h-f:GetTop()*f:GetEffectiveScale()/u, (UIParent:GetRight()-f:GetRight())*f:GetEffectiveScale()/u)` (`Grid2/GridLayout.lua:218`). Grid2 는 TOPRIGHT 자리를 `PosX`·`PosY`(오른쪽·위에서의 거리 × `PixelUtil.GetPixelToUIUnitFactor()`)로 저장한다(`Grid2/GridLayout.lua:879–885`) — preset 값: fhd `["PosX"]=-247*factor,["PosY"]=-259*factor` · qhd 330·346 · uhd 495·518(퀘스트 목록 위 끝 ≈ 화면 높이의 24 %, 왼쪽 끝 ≈ 오른쪽에서 화면 높이의 23 % — 사용자 화면 갈무리에서 잰 값, 확인 필요).
 
 ## 1. 파티 창: PitBull4 파티와 Grid2 함께
 
 - 보는 법: 혼자 있는 상태에서 `/run PitBull4:SetConfigMode("party")` 와 `/run Grid2Layout:SetTestMode(true,0,"By Group",5)` → 다음에 `"raid40"` 와 `…,"By Group",40)` 로 공격대 40명 모양. 끝나면 `SetConfigMode("disabled")`, `SetTestMode(false)`.
-- 기대: PitBull4 파티 창(좌상단 세로)과 Grid2 창이 함께 뜨고 겹치지 않는다 · Grid2 창 오른쪽 끝 = 오른쪽 적 대상 프레임 오른쪽 끝, 인원이 늘면 위·왼쪽으로 커진다 · 창 아래 끝 y(물리 px, 위 「물리 px 재기」): fhd 304 · qhd 452 · uhd 762. V2 비교 배치는 `/dfp preset fhd-v2` (qhd·uhd 도 같은 꼴 · `!DevilForever_Core/Presets/V2.lua:57`) → `/dfp go` 뒤 fhd 347 · qhd 541 · uhd 904 — 이 단계는 설정을 고쳐 쓰므로 확인 전 설정으로는 맨 위 규칙(0절 `WTF` 백업 복사)으로만 돌아간다.
+- 기대: PitBull4 파티 창(좌상단 세로)과 Grid2 창이 함께 뜨고 겹치지 않는다 · Grid2 창은 퀘스트 목록 바로 왼쪽(창 위 끝 = 퀘스트 목록 위 끝, 창 오른쪽 끝 = 퀘스트 목록 왼쪽 끝, 인원이 늘면 아래·왼쪽으로 커짐) · 파티·공격대 같은 자리 · 칸은 정사각형 fhd 44 · qhd 58 · uhd 88 px(크기·모양은 사용자 확인 뒤 피드백). 위 「물리 px 재기」 값: fhd 259·247 · qhd 346·330 · uhd 518·495. 비교 배치 New·Old 모두 같은 자리.
 - 40명 모양에서 대상 프레임·대상 오라·주시 대상·Details 와 겹치지 않는가(대상·주시 대상은 `SetConfigMode("solo")` 로 함께 보인다).
 - fhd 만: 대상 약화 효과가 아주 많을 때 오른쪽 오라 기둥 위 끝이 창 아래로 최대 13 px 들어갈 수 있음 — 약화 효과 수는 실제 대상이 있어야 하므로 「플레이 필요 — 이번 확인 제외」.
 - 마우스오버로 Grid2 칸에 치유가 가는가: 「플레이 필요 — 이번 확인 제외」(실제 파티원·주문).
@@ -66,8 +66,8 @@
 
 ## 6. V2 배치
 
-- 보는 법: `/dfp preset fhd-v2`(지금 화면 크기에 맞는 이름) → `/dfp go` → `/run PitBull4:SetConfigMode("solo")` (플레이어·대상·소환수·주시 대상 가짜 유닛).
-- 기대: 소환수·주시 대상 창이 떠 있어도 플레이어·대상 오라 견본 크기가 줄지 않는다 · `/q3` 잠금 해제에서 Quartz 소환수 시전 막대가 소환수 창 자리에 있다. 되돌리기 = 맨 위 규칙(0절 `WTF` 백업 복사).
+- 보는 법: 기본 배치가 V2 다(새 설치 · `/dfp preset <fhd|qhd|uhd>` → `/dfp go`) → `/run PitBull4:SetConfigMode("solo")` (플레이어·대상·소환수·주시 대상·대상의 소환수와 그 아래 줄 가짜 유닛).
+- 기대: 주시 대상 창의 가로 가운데 = 화면 가운데, 플레이어·대상이 양쪽으로 같은 간격 · 플레이어·대상·주시 대상의 버프·약화 효과가 같은 모양(최대 14·16개, 아이콘 uhd 40 · qhd 27 · fhd 20 px, 내 약화 효과 64 · 43 · 32 px) · 소환수 창은 그대로 · 대상의 소환수 아래에 「대상의 소환수의 대상」·「…의 대상의 대상」 두 칸 · `/q3` 잠금 해제에서 Quartz 소환수 시전 막대가 소환수 창 자리에 있다. 되돌리기 = 맨 위 규칙(0절 `WTF` 백업 복사).
 - 실제 오라(버프·약화 효과) 크기: 「플레이 필요 — 이번 확인 제외」.
 - `결과:`
 
