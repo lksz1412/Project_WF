@@ -10,3 +10,4 @@
 | audit B1 | bada-b-auditor | a9e959095c3408e8b | Step 48 (1) own + modified addons | live.vFp4 worktree d8b63f59 | 0 | — | done |
 | audit B2 | bada-b-auditor | a9ef41e5ddc2bd6b0 | Step 48 (2) unmodified bundled originals | live.vFp4 worktree d8b63f59 | 0 | — | done |
 | audit B3 | bada-b-auditor | ad4f0ecc8614c1442 | Step 48 (3) Quartz swing hunter/melee | live.vFp4 worktree d8b63f59 | 0 | — | done |
+| work A2 coder | bada-a2-coder | af6f0db6ed69ea82b | Step 47 merge follow-up (party, presets, Quartz, Grid2, tests, build) | work branch @9c46a837 | 0 | — | running |
