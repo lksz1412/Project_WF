@@ -13,7 +13,7 @@
 
 **색**: 금색 영문 필기체(script). 획 장식·금속 질감은 Codex 판단. 배경 투명(알파 채널), 바깥 그림자·외곽선은 투명 영역 안에서만.
 
-**서체 (R132)** — 후보는 모두 SIL Open Font License 1.1(`Claude/results/handoffs/phase26/script-font-candidates.md:5–13`). 기본 Allura, 대안 Alex Brush(굵은 획을 원할 때)(R134). 사용자가 다른 후보를 고르면 그것을 쓴다. 근거는 Claude 세션의 실측(PIL 로 13 이름이 1절 이름 칸의 높이·너비에 모두 들어가는 가장 큰 글자 크기와, 그때의 소문자 x 높이)이다:
+**서체 (R132)** — 후보는 모두 SIL Open Font License 1.1(`Claude/results/handoffs/phase26/script-font-candidates.md:5–13`). 서체 = Allura(사용자 확정 R141 · 처음 추천 R134). 대안이던 Alex Brush 는 쓰지 않는다. 사용자가 다른 후보를 고르면 그것을 쓴다. 근거는 Claude 세션의 실측(PIL 로 13 이름이 1절 이름 칸의 높이·너비에 모두 들어가는 가장 큰 글자 크기와, 그때의 소문자 x 높이)이다:
 
 | 서체 | 맞는 크기 fhd/qhd/uhd | x 높이 px |
 |---|---|---|
