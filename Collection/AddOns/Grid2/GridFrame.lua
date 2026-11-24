@@ -304,12 +304,24 @@ function Grid2Frame:OnModuleUpdate()
 end
 
 -- fix for non-visible units displaying all auras and auras not displayed after watching cinematics (CF issue #1535)
-function Grid2Frame:UNIT_FACTION(_, unit)
-	C_Timer_After(0, function() -- We need to wait one frame, because UnitIsVisible() used in UpdateAuraContainers() does not return updated information in PARTY_MEMBER_DISABLE event
+-- WoW Forever: the units of one frame share one timer and one function (no closure per event).
+local factionUnits = {}
+local function UpdateFactionUnits()
+	local units = factionUnits
+	factionUnits = {}
+	for unit in next, units do
 		for frame in next, Grid2:GetUnitFrames(unit) do
 			frame:UpdateAuraContainers()
 		end
-	end)
+	end
+end
+
+function Grid2Frame:UNIT_FACTION(_, unit)
+	if unit == nil then return end
+	if next(factionUnits) == nil then
+		C_Timer_After(0, UpdateFactionUnits) -- We need to wait one frame, because UnitIsVisible() used in UpdateAuraContainers() does not return updated information in PARTY_MEMBER_DISABLE event
+	end
+	factionUnits[unit] = true
 end
 
 function Grid2Frame:UpdateAuraContainers() -- used from options

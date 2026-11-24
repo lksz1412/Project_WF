@@ -84,7 +84,10 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),
     assert p['units']['custom']==bp['units']['custom'] and p['layouts']['private']==bp['layouts']['private']
     assert p['dfLayoutV2'] and p['units']['대상의 소환수']['enabled']
     assert all('focuspet'!=row.get('unit') for row in p['units'].values())
+    for label in ('플레이어','대상'):  # V2 rules replace V1's companion avoidance (no shrink when a pet or focus shows)
+        assert set(p['dfAuraGeometry'][label])=={'above','width'},(label,p['dfAuraGeometry'][label])
     q=db['Quartz3DB']['namespaces']
+    assert q['Pet']['profiles']['Default']['point']=='TOP' and 'dfGeometry' not in q['Pet']['profiles']['Default']  # pet cast bar moves with the pet frame
     assert q['Swing']['profiles']['Default']['swingposition']=='bottom'
     assert db['Quartz3DB']['profiles']['Default'].get('modules',{})==before['Quartz3DB']['profiles']['Default'].get('modules',{})
     for scale in (1,.64,.8):
@@ -122,6 +125,8 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),
         assert pback['units']['대상의 소환수']['layout']=='대상의대상'
         assert not back.sv('PitBull4DB')['namespaces']['CastBar']['profiles']['Default']['layouts']['보통']['dfOutside']
         assert back.sv('Quartz3DB')['namespaces']['Swing']['profiles']['Default']['swingposition']=='top'
+        assert back.sv('Quartz3DB')['namespaces']['Pet']['profiles']['Default']['point']=='TOPLEFT'
+        assert pback['dfAuraGeometry']['플레이어']['size_ratio']==.7 and pback['dfAuraGeometry']['플레이어']['avoid_frame']
         for name in bp['units']:
             if name!='custom':
                 for key in ('anchor','relative_point','position_x','position_y','size_x','size_y'):
@@ -179,29 +184,69 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),
     s.lua.execute("""
       local swing=TEST_quartz.modules.Swing
       local bar=Quartz3SwingBar
-      local status
+      local status,window
       -- The status widget is the parent of the module's duration/remaining font strings.
-      for i=1,20 do local key,value=debug.getupvalue(swing.PLAYER_SWING,i);if key=='swingstatusbar' then status=value end end
-      assert(status)
-      for _,kind in ipairs({Enum.PlayerSwingType.MainHand,Enum.PlayerSwingType.Ranged}) do
-        TEST_clock=100;swing:PLAYER_SWING('PLAYER_SWING',4,kind)
-        assert(status.value==0 and bar.shown and bar.OnUpdate)
-        TEST_clock=102;bar.OnUpdate();assert(status.value==.5)
-        swing:PLAYER_SWING('PLAYER_SWING',9,Enum.PlayerSwingType.OffHand);assert(status.value==.5)
-        swing:PLAYER_SWING('PLAYER_SWING',{secret=true},kind);assert(status.value==.5)
-        TEST_clock=104;bar.OnUpdate();assert(status.value==1 and not bar.shown and not bar.OnUpdate)
-        swing:PLAYER_SWING('PLAYER_SWING',2,kind);assert(status.value==0 and bar.shown)
-        swing:PLAYER_SWING('PLAYER_SWING',0,kind);assert(not bar.shown and not bar.OnUpdate and status.value==0)
-      end
-      swing:PLAYER_SWING('PLAYER_SWING',3,Enum.PlayerSwingType.MainHand)
+      for i=1,30 do local key,value=debug.getupvalue(swing.PLAYER_SWING,i);if key=='swingstatusbar' then status=value end end
+      for i=1,30 do local key,value=debug.getupvalue(swing.ApplySettings,i);if key=='standstill' then window=value end end
+      assert(status and window)
+      assert(swing.db.profile.dfStandStill==.5)  -- Core's default for the Swing namespace
+      -- Not a hunter: no PLAYER_SWING, no bar (melee keep the game's own swing timer).
+      swing:OnDisable();TEST_player.class='WARRIOR';swing.registered=nil;swing:OnEnable()
+      assert(not swing.registered)
+      swing:Unlock();assert(not bar.shown);swing:Lock()
+      swing:OnDisable();TEST_player.class='HUNTER';swing:OnEnable()
+      assert(swing.registered and swing.registered.PLAYER_SWING)
+      -- Hunter: only the ranged cycle.
+      TEST_clock=100;swing:PLAYER_SWING('PLAYER_SWING',4,Enum.PlayerSwingType.MainHand);assert(not bar.shown)
+      swing:PLAYER_SWING('PLAYER_SWING',4,Enum.PlayerSwingType.OffHand);assert(not bar.shown)
+      local width=bar:GetWidth()
+      swing:PLAYER_SWING('PLAYER_SWING',2,Enum.PlayerSwingType.Ranged)
+      assert(status.value==0 and bar.shown and bar.OnUpdate)
+      assert(window.shown and math.abs(window.w-width*.25)<1e-9)  -- last 0.5 s of a 2 s cycle
+      TEST_clock=101;bar.OnUpdate();assert(status.value==.5)
+      swing:PLAYER_SWING('PLAYER_SWING',9,Enum.PlayerSwingType.MainHand);assert(status.value==.5)
+      swing:PLAYER_SWING('PLAYER_SWING',{secret=true},Enum.PlayerSwingType.Ranged);assert(status.value==.5)
+      -- The shot comes late (the player moved): the bar stays full until the next shot.
+      TEST_clock=102.5;bar.OnUpdate();assert(status.value==1 and bar.shown and bar.OnUpdate)
+      TEST_clock=103.9;bar.OnUpdate();assert(status.value==1 and bar.shown)
+      swing:PLAYER_SWING('PLAYER_SWING',2,Enum.PlayerSwingType.Ranged);assert(status.value==0 and bar.shown)
+      -- Overdue by more than a whole cycle: auto shot stopped, the bar hides.
+      TEST_clock=108.1;bar.OnUpdate();assert(not bar.shown and not bar.OnUpdate)
+      swing.db.profile.dfStandStill=3;swing:PLAYER_SWING('PLAYER_SWING',2,Enum.PlayerSwingType.Ranged)
+      assert(window.shown and math.abs(window.w-width)<1e-9)  -- window longer than the cycle: whole bar
+      swing.db.profile.dfStandStill=0;swing:ApplySettings();assert(not window.shown)
+      swing.db.profile.dfStandStill=.5;swing:ApplySettings();assert(window.shown)
+      swing:PLAYER_SWING('PLAYER_SWING',0,Enum.PlayerSwingType.Ranged);assert(not bar.shown and not bar.OnUpdate and status.value==0)
+      -- Unlocked: a full sample cycle with its window; locked again: hidden.
+      swing:Unlock();assert(bar.shown and status.value==1 and window.shown)
+      TEST_clock=120;bar.OnUpdate();assert(bar.shown)
+      swing:Lock();assert(not bar.shown)
+      swing:PLAYER_SWING('PLAYER_SWING',3,Enum.PlayerSwingType.Ranged)
       swing:OnDisable();assert(not bar.shown and status.value==0 and not bar.OnUpdate)
-      swing:OnEnable();swing:PLAYER_SWING('PLAYER_SWING',3,Enum.PlayerSwingType.MainHand)
+      swing:OnEnable();swing:PLAYER_SWING('PLAYER_SWING',3,Enum.PlayerSwingType.Ranged)
       assert(bar.shown and status.value==0)
-      local db=swing.db.profile;db.dfFollowPlayer=false;db.swingposition='top';db.swinggap=-4;swing:ApplySettings()
+      local db=swing.db.profile;db.swingposition='top';db.swinggap=-4;swing:ApplySettings()
       assert(bar.pos[1]=='BOTTOM' and bar.pos[3]=='TOP')
-      TEST_clock=105.5;bar.OnUpdate();assert(status.value==.5)
+      TEST_clock=TEST_clock+1.5;bar.OnUpdate();assert(status.value==.5)
+      -- V1 (swing above the bar): a UI scale change rescales the Player bar and the swing bar with it.
+      local player=TEST_quartz.modules.Player
+      player.db.profile.scale=player.db.profile.scale*2;player.Bar:ApplySettings()
+      assert(bar.scale==player.db.profile.scale)
+      swing:OnDisable()
+      Enum.PlayerSwingType=nil  -- a client without the enum: the module falls back to 2 = ranged
     """)
-    print('PASS',mode,width,'native Quartz/LibWindow three cast rectangles, shield/start/stop; Player scale follows Swing; MainHand/Ranged start/mid/end/restart/invalid/disable and V1 top')
+    load(s,'Quartz/modules/SwingForever.lua')
+    s.lua.execute("""
+      local swing=TEST_quartz.modules.Swing
+      swing:OnInitialize();swing:OnEnable()
+      local bar=Quartz3SwingBar
+      swing:PLAYER_SWING('PLAYER_SWING',2,0);assert(not bar.shown)
+      swing:PLAYER_SWING('PLAYER_SWING',2,1);assert(not bar.shown)
+      swing:PLAYER_SWING('PLAYER_SWING',2,2);assert(bar.shown)
+      swing:OnDisable()
+      Enum.PlayerSwingType={MainHand=1,OffHand=2,Ranged=3}
+    """)
+    print('PASS',mode,width,'native Quartz/LibWindow three cast rectangles, shield/start/stop; Player scale follows Swing; hunter-only ranged cycle, stand-still window, late shot kept full, unlock preview, enum fallback, invalid/disable and V1 top')
 print('PASS native Quartz Swing and cast consumers')
 
 R=runpy.run_path(str(ROOT/'Collection/tests/pitbull4runtime/run.py'),run_name='aura_harness')
@@ -289,3 +334,85 @@ for mode,width,height,footY in [('fhd',1920,1080,548),('qhd',2560,1440,765),('uh
         assert bands[1][1]+bands[1][3]<=bands[0][1]+1e-6
     print('PASS',mode,width,'five Aura owners: normal max own+others native Lua rectangles; restricted public container bounds; no row/body/under-foot cast or swing overlap')
 print('PASS V2 aura consumers; restricted live renderer geometry remains client boundary')
+
+# Default preset (V1) screen map: Grid2 at its 40-player maximum and its party window next to every
+# other preset frame, physical pixels, top-left origin. Aura blocks are envelopes from the Aura layout
+# numbers (worst case: every debuff the player's own, at my_size), not native renderer rectangles.
+import re as _re
+def _point(W,H,rel,anchor,x,y,w,h):
+    rx=0 if 'LEFT' in rel else W if 'RIGHT' in rel else W/2
+    ry=0 if 'TOP' in rel else H if 'BOTTOM' in rel else H/2
+    px,py=rx+x,ry-y
+    left=px-w if 'RIGHT' in anchor else px if 'LEFT' in anchor else px-w/2
+    top=py-h if 'BOTTOM' in anchor else py if 'TOP' in anchor else py-h/2
+    return (left,top,w,h)
+
+def _grid2_rects(values,frame,W,factor,units):
+    cols,rows=(8,5) if units==40 else (1,5)
+    pad=values['Padding']
+    w=cols*frame['frameWidth']+(cols-1)*pad; h=rows*frame['frameHeight']+(rows-1)*pad
+    return _point(W,0,values['anchor'],values['anchor'],values['PosX']/factor,values['PosY']/factor,w,h)
+
+def default_screen_map(mode,width,height):
+    s=session(mode,height,width)
+    factor=768/height;pixel=factor
+    p=s.sv('PitBull4DB')['profiles']['Default'];ns=s.sv('PitBull4DB')['namespaces']
+    rects={}
+    for name,u in p['units'].items():
+        if not u.get('enabled'):continue
+        lay=p['layouts'][u['layout']]
+        w,h=lay['size_x']*u.get('size_x',1),lay['size_y']*u.get('size_y',1)
+        r=_point(width,height,u['relative_point'],u['anchor'],u['position_x']/pixel,u['position_y']/pixel,w,h)
+        rects['unit '+name]=r
+        aura=(ns['Aura']['profiles']['Default']['layouts'].get(u['layout']) or {})
+        if aura.get('enabled'):
+            deb=aura['layout']['debuff'];buf=aura['layout']['buff']
+            width_=deb.get('width') if deb.get('width_type')=='fixed' else w
+            per=max(1,int(width_//(deb['my_size']+deb['col_spacing'])))
+            depth=deb['offset_y']+-(-aura['max_debuffs']//per)*(deb['my_size']+deb['row_spacing'])
+            if buf['side']=='TOP':rects['auras '+name]=(r[0],r[1]-depth,w,depth)
+            else:rects['auras '+name]=(r[0],r[1]+h,max(w,buf.get('width',0),deb.get('offset_x',0)+deb.get('width',0)),depth)
+    for name,g in p['groups'].items():
+        if not g.get('enabled'):continue
+        lay=p['layouts'][g['layout']]
+        w,h=lay['size_x']*g['size_x'],lay['size_y']*g['size_y']
+        top=_point(width,height,g['relative_point'],g['anchor'],g['position_x']/pixel,g['position_y']/pixel,w,h)
+        rects['group '+name]=(top[0],top[1],w,4*h+3*g['vertical_spacing'])
+    for name,q in s.sv('Quartz3DB')['namespaces'].items():
+        q=q['profiles']['Default']
+        if 'point' not in q or 'w' not in q:continue
+        icon=q['h']+q.get('icongap',0)
+        r=_point(width,height,q['point'],q['point'],q['x']/pixel,q['y']/pixel,q['w'],q['h'])
+        rects['quartz '+name]=(r[0]-icon,r[1],r[2]+icon,r[3])
+    src=(A/'!DevilForever_Core/Presets'/(mode+'.lua')).read_text(encoding='utf-8')
+    size=int(_re.search(r'Primary=\{[^}]*primaryWidth=(\d+)',src).group(1))
+    for name,x,y in _re.findall(r'(Primary|AOE|Cooldowns|Defensives|Interrupts)=\{x=\(([-0-9.]+)\)\*pixel,y=\(([-0-9.]+)\)',src):
+        rects['hekili '+name]=_point(width,height,'CENTER','CENTER',float(x),float(y),size,size)
+    d=plain(s.core.Presets.Get(s.core.Presets,mode))
+    for key,e in d['edits'].items():
+        if 'position' in e and 'size' in e and key.startswith(('appearance.','statusstrip.')):
+            pos=e['position']
+            rects['edit '+key]=_point(width,height,pos['relativePoint'],pos['point'],pos['x'],pos['y'],e['size']['width'],e['size']['height'])
+    det=(A/'DevilForever_DetailsLayout/Layout.lua').read_text(encoding='utf-8')
+    for i,(x,y,w,h) in enumerate(_re.findall(r'\{(\d+), (\d+), (\d+), (\d+)\}',_re.search(mode+r' = \{(.*)\},',det).group(1))):
+        rects['details %d'%(i+1)]=(int(x),int(y),int(w),int(h))
+    grid={f['namespace']:f['values'] for f in d['fragments'].values() if f['folder']=='Grid2'}
+    raid=_grid2_rects(grid['Grid2Layout'],grid['Grid2Frame'],width,factor,40)
+    party=_grid2_rects(grid['Grid2Layout'],grid['Grid2Frame'],width,factor,5)
+    return rects,raid,party
+
+for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),('uhd',3862,2160)]:
+    rects,raid,party=default_screen_map(mode,width,height)
+    assert len([k for k in rects if k.startswith('group ')])==4 and len([k for k in rects if k.startswith('hekili ')])==5,sorted(rects)
+    for box in (raid,party):
+        assert box[0]>=0 and box[1]>=0 and box[0]+box[2]<=width and box[1]+box[3]<=height,(mode,box)
+        hits=[k for k,r in rects.items() if overlaps(box,r)]
+        assert not hits,(mode,width,box,hits,[rects[k] for k in hits])
+    gap=min(r[1] for k,r in rects.items() if r[0]<raid[0]+raid[2] and r[0]+r[2]>raid[0] and r[1]>=raid[1]+raid[3])-(raid[1]+raid[3])
+    print('PASS',mode,width,'Grid2 40-player window %s and party window clear of %d preset rectangles (nearest below: %.0f px)'%(tuple(round(v) for v in raid),len(rects),gap))
+print('PASS default preset Grid2 placement')
+
+core_default=_re.search(r'dfStandStill = ([0-9.]+)',(A/'!DevilForever_Core/Defaults/Quartz.lua').read_text(encoding='utf-8')).group(1)
+module_default=_re.search(r'dfStandStill = ([0-9.]+),',(A/'Quartz/modules/SwingForever.lua').read_text(encoding='utf-8')).group(1)
+assert core_default==module_default=='0.5',(core_default,module_default)
+print('PASS stand-still default: Core Quartz defaults and the Swing module defaults both',core_default)

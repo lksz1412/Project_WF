@@ -145,6 +145,7 @@ OWN_FOLDERS = {
 PATCHED = {
     "Details": ["Details_TinyThreat"],
     "Experience Forever": ["ExperienceForever"],
+    "Grid2": ["Grid2"],
     "ProfileManager": ["ProfileManager"],
     "Quartz": ["Quartz"],
     "SexyMap": ["SexyMap"],

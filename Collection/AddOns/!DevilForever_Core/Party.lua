@@ -1,47 +1,40 @@
--- Owner of the party frames: Grid2 or the unit-frame addon (PitBull4 or Forever
--- Unit Frames, FUF).
+-- Party frames: Grid2 draws party and raid; the unit-frame addon's party
+-- (PitBull4's party groups, or Forever Unit Frames' (FUF) party) is a switch
+-- on top of it, on by default.
 --
--- The two sides are kept in profiles of different scope: Grid2's per character
--- (the profile Grid2DB.profileKeys names for the character, else
--- Grid2DB.global.defaultProfileName, else the AceDB character key), PitBull4's
--- shared one (PitBull4DB.profileKeys entry, else "Default") and FUF's shared
--- unit profile (ForeverUnitFramesDB.active[<Name-Realm>], else "Default").
--- Defaults writes new profiles with the unit frames drawing the party.
+-- Where each side is stored: Grid2 per character (the profile Grid2DB.profileKeys
+-- names for the character, else Grid2DB.global.defaultProfileName, else the
+-- AceDB character key), PitBull4 in its shared profile (PitBull4DB.profileKeys
+-- entry, else "Default") and FUF in its shared unit profile
+-- (ForeverUnitFramesDB.active[<Name-Realm>], else "Default").
 --
--- The owner is a record on the unit-frame profile:
---   DevilForever_CoreDB.party.owner["<PitBull4|ForeverUnitFrames>/<profile>"]
---     = "grid2" | "unitframes"
--- It is made when this character's Grid2 profile and the unit-frame profile
--- are both new in the same session (first install: "grid2"), or by
--- /dfp party grid2|unitframes. Without a record nothing is written.
--- Once per session, when Grid2 and exactly one unit-frame addon are loaded
--- and the other one is not enabled to load later (their ADDON_LOADED, or
--- PLAYER_LOGIN), the current character is checked against its record. Only
--- ownership is compared, never exact values: a side is written only when it
--- contradicts the record, and then only what makes it draw / not draw the party.
---   PitBull4  ownership = the main party group (unit_group "party") is on.
---             Unmarked groups switch together on a main-group contradiction.
---             Marked package groups follow the owner; its old pet group stays off.
---   FUF       ownership = FUF's party is not stored off. On a contradiction
---             FUF's own commands are sent (SlashCmdList.FOREVERUNITFRAMES
---             "set party hideBlizzardFrame on" + "set party enabled off" |
---             "set party enabled on") DELAY seconds after the first
---             PLAYER_ENTERING_WORLD, out of combat; Grid2 follows only after
---             FUF's saved unit profile reads the new value (READBACK seconds
---             later); otherwise one chat line says so and the next login tries again.
---   Grid2     ownership = this character's Grid2 shows party (party layout not
---             "None", window not "Raid"/"Never"). To show party: a party or
---             arena layout "None" becomes "By Group" and a window "Raid"/"Never"
---             becomes "Grouped"; another layout or window is kept. Not to show
---             party: party and arena layout "None", a window shown outside a raid
---             ("Grouped"/"Always") becomes "Raid" (no empty window).
--- Grid2 is never set to draw the party before the unit side is off. Every
--- automatic write of a session (unit side, FUF commands, Grid2) is named in
--- one chat line per session, with the record it follows and the /dfp party
--- command that changes it (printed at the first PLAYER_ENTERING_WORLD when it
--- happens earlier); a FUF step that stays pending gives its own line instead.
--- The addons' saved-variable tables are written (before the addon's own
--- ADDON_LOADED for the addon being loaded); the frames follow at the next /reload.
+-- Who writes the switch: at first install the Defaults and preset values make
+-- the PitBull4 party groups (party, party target, party target's target,
+-- party pet) on, FUF keeps its own default (party on) and Grid2's new profile
+-- shows party and raid. After that only /dfp party on|off writes it; logins
+-- never compare or re-apply anything, so a group switched in PitBull4's own
+-- options stays as the user set it.
+--   /dfp party on|off, out of combat, with exactly one unit-frame addon loaded:
+--     PitBull4  every party group (unit_group party, partytarget,
+--               partytargettarget, partypet) gets enabled = on and the
+--               package's show_when (party and raid, not solo). The pet group
+--               of an earlier package version (dfPartyRole = "hidden") becomes
+--               the package's pet group (unit_group and dfPartyRole "partypet");
+--               the values it lacks (layout, position, size, spacing) come from
+--               the active preset's pet group, scaled to the profile's dfPixel
+--               and added to its dfGeometry signatures; values it holds are kept.
+--     FUF       FUF's own commands (SlashCmdList.FOREVERUNITFRAMES)
+--               "set party enabled on" | "set party hideBlizzardFrame on" +
+--               "set party enabled off"; READBACK seconds later FUF's saved
+--               unit profile is read back and one line says whether it took.
+--     Grid2     (when loaded) brought to show party if it does not: a party or
+--               arena layout "None" becomes "By Group" and a window
+--               "Raid"/"Never" becomes "Grouped"; other values are kept. With `on`,
+--               a window still at the package's earlier default spot (anchor
+--               TOPLEFT, PosX/PosY of OLD_GRID2_SPOT for the active preset, within
+--               a physical pixel) moves to the active preset's spot; a window the
+--               user moved stays where it is (one line says so).
+-- The saved-variable tables are written; the frames follow at the next /reload.
 
 local _, Core = ...
 
@@ -50,36 +43,15 @@ local type, pairs, ipairs, tostring, rawget = type, pairs, ipairs, tostring, raw
 local Party = {}
 Core.Party = Party
 
-local DELAY = 20     -- seconds after the first PLAYER_ENTERING_WORLD (FUF holds saves 15 s on a fresh install)
 local READBACK = 1   -- seconds before FUF's saved unit profile is read back (FUF saves half a second after a change)
 
 local PB4_PARTY = {party = true, partytarget = true, partytargettarget = true, partypet = true}
 local UNIT_ADDONS = {"PitBull4", "ForeverUnitFrames"}
 
--- {state = "waiting"|"no-record"|"applied"|"fuf-pending"|"not-settled", owner, key, unit, lines}
-local session = {state = "waiting"}
+-- {state = "idle"|"applied"|"fuf-pending", on, key, unit} of the last command this session.
+local session = {state = "idle"}
 
 local function loaded(folder) return Core.IsLoadedInClient(folder) end
-
--- Enabled for this character but not loaded yet (it loads later in this login); false when unknown.
--- C_AddOns.GetAddOnEnableState(name, character), else the older GetAddOnEnableState(character, name).
-local function comingLater(folder)
-  if loaded(folder) then return false end
-  if type(UnitName) ~= "function" then return false end
-  local character = UnitName("player")
-  local ok, state
-  local native = C_AddOns and C_AddOns.GetAddOnEnableState
-  if type(native) == "function" then
-    ok, state = pcall(native, folder, character)
-  elseif type(GetAddOnEnableState) == "function" then
-    ok, state = pcall(GetAddOnEnableState, character, folder)
-  else
-    return false
-  end
-  return ok and type(state) == "number" and state > 0
-end
-
-local function records() return Core:DBTable("party", "owner") end
 
 local function sub(parent, key)
   local t = rawget(parent, key)
@@ -117,7 +89,7 @@ local function grid2Profile(keys, create)
 end
 
 -- Grid2 shows party frames (its own defaults: layout "By Group", window "Always").
-local function grid2Owns(p)
+local function grid2Shows(p)
   local layouts = type(p) == "table" and rawget(p, "layouts")
   local party = type(layouts) == "table" and rawget(layouts, "party") or "By Group"
   local display = type(p) == "table" and rawget(p, "FrameDisplay") or "Always"
@@ -126,12 +98,53 @@ end
 
 local LABEL = {party = "파티 칸", arena = "투기장 칸", FrameDisplay = "창"}
 
--- Brings this character's Grid2 to `owner` only where it contradicts it (see the header);
+-- The package's earlier Grid2 window spot per preset (anchor TOPLEFT, physical pixels), where it
+-- overlaps the PitBull4 party column.
+local OLD_GRID2_SPOT = {fhd = {24, -164}, qhd = {40, -164}, uhd = {80, -240}}
+
+local function pixelFactor()
+  local factor = PixelUtil and PixelUtil.GetPixelToUIUnitFactor and PixelUtil.GetPixelToUIUnitFactor()
+  if type(factor) == "number" and factor > 0 then return factor end
+  if type(GetPhysicalScreenSize) ~= "function" then return nil end
+  local _, height = GetPhysicalScreenSize()
+  local logical = UIParent and UIParent:GetHeight()
+  local ui = UIParent and UIParent:GetEffectiveScale()
+  if type(height) == "number" and height > 0 and type(logical) == "number" and logical > 0
+      and type(ui) == "number" and ui > 0 then return logical * ui / height end
+end
+
+-- Moves this character's Grid2 window from the earlier default spot to the active preset's spot.
+-- Returns "moved", preset | "user" | nil (no active package preset, or already elsewhere by the package).
+local function moveGrid2(keys)
+  local p = grid2Profile(keys, false)
+  local active = Core.Presets and Core.Presets:GetActive()
+  local old = active and OLD_GRID2_SPOT[active]
+  local def = old and Core.Presets:Get(active)
+  local want
+  for _, f in ipairs(def and def.fragments or {}) do
+    if f.folder == "Grid2" and f.namespace == "Grid2Layout" then want = f.values end
+  end
+  local factor = pixelFactor()
+  if type(p) ~= "table" or not want or not factor then return nil end
+  local anchor, x, y = rawget(p, "anchor") or "TOPLEFT", rawget(p, "PosX"), rawget(p, "PosY")
+  local function at(a, px, py)   -- within a physical pixel of (a, px, py)
+    return anchor == a and type(x) == "number" and type(y) == "number"
+      and math.abs(x / factor - px) <= 1 and math.abs(y / factor - py) <= 1
+  end
+  if at(want.anchor, want.PosX / factor, want.PosY / factor) then return nil end
+  if at("TOPLEFT", old[1], old[2]) then
+    p.anchor, p.PosX, p.PosY = want.anchor, want.PosX, want.PosY
+    return "moved", active
+  end
+  return "user"
+end
+
+-- Brings this character's Grid2 to show party where it does not (see the header);
 -- returns values changed, profile name, {"<label> <old>→<new>", ...} | nil, reason.
-local function alignGrid2(keys, owner)
+local function showGrid2(keys)
   local p, name = grid2Profile(keys, true)
   if not p then return nil, "Grid2 저장 변수에 쓸 수 없음" end
-  if grid2Owns(p) == (owner == "grid2") then return 0, name, {} end
+  if grid2Shows(p) then return 0, name, {} end
   local layouts = sub(p, "layouts")
   if not layouts then return nil, "Grid2 " .. tostring(name) .. ".layouts 가 표가 아님" end
   local changes = {}
@@ -142,15 +155,9 @@ local function alignGrid2(keys, owner)
   local party = rawget(layouts, "party") or "By Group"
   local arena = rawget(layouts, "arena") or "By Group"
   local display = rawget(p, "FrameDisplay") or "Always"
-  if owner == "grid2" then
-    if party == "None" then set(layouts, "party", party, "By Group") end
-    if arena == "None" then set(layouts, "arena", arena, "By Group") end
-    if display == "Raid" or display == "Never" then set(p, "FrameDisplay", display, "Grouped") end
-  else
-    set(layouts, "party", party, "None")
-    if arena ~= "None" then set(layouts, "arena", arena, "None") end
-    if display == "Grouped" or display == "Always" then set(p, "FrameDisplay", display, "Raid") end
-  end
+  if party == "None" then set(layouts, "party", party, "By Group") end
+  if arena == "None" then set(layouts, "arena", arena, "By Group") end
+  if display == "Raid" or display == "Never" then set(p, "FrameDisplay", display, "Grouped") end
   return #changes, name, changes
 end
 
@@ -164,7 +171,7 @@ local function pb4Profile(keys)
   return type(p) == "table" and p or nil, name
 end
 
--- PitBull4 party groups, including both target suffixes and legacy party pets.
+-- PitBull4 party groups (PitBull4's own default unit_group is "party"), sorted by name.
 local function pb4Groups(p)
   local out = {}
   local groups = type(p) == "table" and rawget(p, "groups")
@@ -175,31 +182,89 @@ local function pb4Groups(p)
   return out
 end
 
--- Ownership on the PitBull4 side: a main party group (unit_group "party") is on.
-local function pb4Shows(p)
+-- Party groups on / party groups.
+local function pb4Count(p)
+  local on, all = 0, 0
   for _, item in ipairs(pb4Groups(p)) do
-    if (rawget(item[2], "unit_group") or "party") == "party" and rawget(item[2], "enabled") == true then return true end
+    all = all + 1
+    if rawget(item[2], "enabled") == true then on = on + 1 end
   end
-  return false
+  return on, all
 end
 
--- Marked package groups follow the owner individually; unmarked profiles keep the main-group contract.
-local function alignPB4(p, wants, write)
-  local legacyMismatch = pb4Shows(p) ~= wants
-  local changed = 0
-  for _, item in ipairs(pb4Groups(p)) do
-    local g = item[2]
-    local role = rawget(g, "dfPartyRole")
-    local managed = role == "hidden" or (type(role) == "string" and role == rawget(g, "unit_group"))
-    if managed or legacyMismatch then
-      local desired = wants and role ~= "hidden"
-      if rawget(g, "enabled") ~= desired then
-        changed = changed + 1
-        if write then g.enabled = desired end
-      end
+local SHOW_WHEN = {solo = false, party = true, raid = true, raid10 = true, raid15 = true, raid20 = true, raid25 = true,
+  raid30 = true, raid40 = true}
+local GROUP_FIELDS = {"anchor", "relative_point", "relative_to", "position_x", "position_y", "scale", "size_x", "size_y",
+  "direction", "vertical_spacing", "horizontal_spacing"}
+local PET = "파티원 소환수"
+
+-- The active preset's PitBull4 pet group and the dfPixel it was made at, or nil.
+local function presetPet()
+  local active = Core.Presets and Core.Presets:GetActive()
+  local def = active and Core.Presets:Get(active)
+  for _, f in ipairs(def and def.fragments or {}) do
+    local groups = f.folder == "PitBull4" and not f.namespace and type(f.values.groups) == "table" and f.values.groups
+    local pet = groups and groups[PET]
+    if type(pet) == "table" and pet.unit_group == "partypet" and type(pet.position_x) == "number" then
+      return pet, f.values.dfPixel, active
     end
   end
-  return changed
+end
+
+-- An earlier package's hidden pet group made the package's pet group; returns the preset name used or true.
+local function convertPet(p, g)
+  g.unit_group, g.dfPartyRole, g.exists = "partypet", "partypet", true
+  local pet, made, active = presetPet()
+  if not pet then
+    if rawget(g, "layout") == nil then g.layout = "대상의대상" end
+    return true
+  end
+  local ratio = type(made) == "number" and made > 0 and type(rawget(p, "dfPixel")) == "number" and p.dfPixel / made or 1
+  local filled = {}
+  for k, v in pairs(pet) do
+    if rawget(g, k) == nil and k ~= "enabled" and k ~= "show_when" then
+      if k == "position_x" or k == "position_y" then v = v * ratio end
+      g[k] = Core.CopyTable(v)
+      filled[k] = true
+    end
+  end
+  local geometry = type(rawget(p, "dfGeometry")) == "table" and rawget(p.dfGeometry, "groups")
+  if type(geometry) == "table" and filled.position_x and geometry[PET] == nil then
+    local parts = {}
+    for _, k in ipairs(GROUP_FIELDS) do parts[#parts + 1] = tostring(g[k]) end
+    geometry[PET] = table.concat(parts, "|")
+  end
+  return active
+end
+
+-- Brings every party group to `on` and the package design (see the header).
+-- Returns groups changed, groups whose show_when changed, preset name | true when the old pet group was converted.
+local function setPB4(p, on)
+  local changed, shown, converted = 0, 0, nil
+  for _, item in ipairs(pb4Groups(p)) do
+    local name, g = item[1], item[2]
+    local touched = false
+    if name == PET and rawget(g, "dfPartyRole") == "hidden" then
+      converted = convertPet(p, g)
+      touched = true
+    end
+    local show = rawget(g, "show_when")
+    local same = type(show) == "table"
+    for k, v in pairs(SHOW_WHEN) do
+      if same and rawget(show, k) ~= v then same = false end
+    end
+    if not same then
+      if type(show) ~= "table" then show = {}; g.show_when = show end
+      for k, v in pairs(SHOW_WHEN) do show[k] = v end
+      shown, touched = shown + 1, true
+    end
+    if rawget(g, "enabled") ~= on then
+      g.enabled = on
+      touched = true
+    end
+    if touched then changed = changed + 1 end
+  end
+  return changed, shown, converted
 end
 
 -- FUF's profile name for this character and the party table of that profile.
@@ -221,9 +286,8 @@ local function fufShows()
   return not (type(party) == "table" and party.enabled == false)
 end
 
--- The one unit-frame addon loaded with Grid2, its record key and whether it draws the party now.
+-- The one unit-frame addon loaded, its profile and whether its party is on now.
 local function unitSide(keys)
-  if not loaded("Grid2") then return nil, "Grid2 가 켜져 있지 않음" end
   local found
   for _, folder in ipairs(UNIT_ADDONS) do
     if loaded(folder) then
@@ -234,46 +298,18 @@ local function unitSide(keys)
   if not found then return nil, "PitBull4·Forever Unit Frames 가 켜져 있지 않음" end
   if found == "PitBull4" then
     local p, name = pb4Profile(keys)
-    return {folder = found, key = found .. "/" .. name, profile = name, shows = pb4Shows(p), table = p}
+    local on, all = pb4Count(p)
+    return {folder = found, key = found .. "/" .. name, profile = name, shows = on > 0, on = on, all = all, table = p}
   end
   local _, name = fufProfile()
   return {folder = found, key = found .. "/" .. name, profile = name, shows = fufShows()}
 end
 
-local function targetState(folder, label)
-  local st = Core.Defaults:GetStatus(folder)
-  local t = st and st.targets and st.targets[label]
-  return t and t.state
-end
-
--- The unit side is new this session: nil while not known yet.
-local function unitIsNew(unit)
-  if unit.folder == "PitBull4" then
-    local s = targetState("PitBull4", "PitBull4DB")
-    if s == "waiting" or s == nil then return nil end
-    return s == "applied"
-  end
-  local fresh = Core.Profiles:WasFresh("ForeverUnitFramesDB")
-  if fresh == nil then return nil end
-  return fresh == true
-end
-
-local function grid2IsNew()
-  local s = targetState("Grid2", "Grid2DB/Grid2Layout")
-  if s == "waiting" or s == nil then return nil end
-  return s == "applied"
-end
-
-local function logLine(line)
-  Core:Log("info", "Party", line)
-end
-
--- FUF: send the commands for `owner`; nil, reason when FUF's handler is missing or raised.
-local function sendFUF(owner)
+-- FUF: send the commands for `on`; nil, reason when FUF's handler is missing or raised.
+local function sendFUF(on)
   local handler = type(SlashCmdList) == "table" and SlashCmdList.FOREVERUNITFRAMES
   if type(handler) ~= "function" then return nil, "FUF 명령이 없음" end
-  local commands = owner == "grid2" and {"set party hideBlizzardFrame on", "set party enabled off"}
-    or {"set party enabled on"}
+  local commands = on and {"set party enabled on"} or {"set party hideBlizzardFrame on", "set party enabled off"}
   for _, command in ipairs(commands) do
     local ok, err = pcall(handler, command)
     if not ok then return nil, tostring(err) end
@@ -281,196 +317,46 @@ local function sendFUF(owner)
   return true
 end
 
-local epoch = 0         -- raised by Party:Set; an automatic FUF step of an older epoch stops
-local noticed = false   -- the pending line or the automatic-change line was printed this session
-local worldSeen = false
-local heldNotice        -- automatic-change line waiting for the first PLAYER_ENTERING_WORLD
-
--- The one chat line of a session that names Party's automatic writes `parts`.
-local function autoNotice(parts)
-  if noticed or #parts == 0 then return end
-  noticed = true
-  local owner = session.owner
-  local line = "파티 프레임: " .. table.concat(parts, ", ") .. " — 저장된 파티 설정(" .. tostring(session.key) .. ": "
-    .. (owner == "grid2" and "Grid2 가" or "유닛 프레임이") .. " 파티를 그림)을 따름. 바꾸려면 전투 밖에서 /dfp party "
-    .. (owner == "grid2" and "unitframes" or "grid2")
-  if worldSeen then Core.Profiles:Print(line) else heldNotice = line end
-end
-
-local function grid2Part(name, changes)
-  return "Grid2 " .. tostring(name) .. " " .. table.concat(changes, " · ")
-end
-
--- One chat line per session while the FUF side stays pending.
-local function notePending()
-  if noticed then return end
-  noticed = true
-  Core.Profiles:Print("Forever Unit Frames 의 파티 설정이 " .. tostring(session.key)
-    .. " 기록과 아직 다름 — 다음 접속 때 다시 맞춤(바로 하려면 전투 밖에서 /dfp party grid2 또는 /dfp party unitframes)")
-end
-
--- After FUF had time to save: Grid2 follows when FUF's saved profile reads the owner's value.
--- `say` prints the outcome (command); without it (login) a failure gives the pending line.
-local function confirmFUF(keys, owner, say, mine)
-  if mine and mine ~= epoch then return false end
-  local done = fufShows() == (owner == "unitframes")
-  if not done then
-    local line = "Forever Unit Frames 가 파티 설정을 아직 저장하지 않음 — Grid2 는 그대로, 다음 접속 때 다시"
-    session.state = "fuf-pending"
-    logLine(line)
-    if say then say(line) else notePending() end
-    return false
-  end
-  local n, name, changes = alignGrid2(keys, owner)
-  local fufPart = "Forever Unit Frames 파티 " .. (owner == "unitframes" and "켬" or "끔")
-  local line = n and (fufPart .. " 확인 — " .. (n > 0 and grid2Part(name, changes) or ("Grid2 " .. name .. " 그대로")))
-    or ("Grid2: " .. tostring(name))
-  session.state = n and "applied" or "fuf-pending"
-  logLine(line)
-  if say then
-    say(line)
-  else
-    local parts = {fufPart}
-    if n and n > 0 then parts[2] = grid2Part(name, changes) end
-    autoNotice(parts)
-  end
-  return n ~= nil
-end
-
 local function later(seconds, fn)
   if type(C_Timer) == "table" and type(C_Timer.After) == "function" then C_Timer.After(seconds, fn) end
 end
 
-local fufDue = nil      -- owner to apply on the FUF side after the delay
-local waitingCombat = false
+local epoch = 0   -- raised by every command; a read-back of an older command stays silent
 
-local function runFUF()
-  if not fufDue then return end
-  if Core.InCombat() then
-    waitingCombat = true
-    return
-  end
-  local owner = fufDue
-  fufDue = nil
-  local keys = Core.PlayerKeys()
-  if not keys then return end
-  local ok, why = sendFUF(owner)
-  if not ok then
-    session.state = "fuf-pending"
-    logLine("Forever Unit Frames 명령 안 됨: " .. tostring(why) .. " — 다음 접속 때 다시")
-    notePending()
-    return
-  end
-  local mine = epoch
-  later(READBACK, function() confirmFUF(keys, owner, nil, mine) end)
-end
+local function onOff(on) return on and "켬" or "끔" end
 
-local function settle(final)
-  if session.state ~= "waiting" or not Core.ready then return end
-  local keys = Core.PlayerKeys()
-  if not keys then
-    if final then session.state = "not-settled" end
-    return
-  end
-  if not final then
-    for _, folder in ipairs(UNIT_ADDONS) do
-      if comingLater(folder) then return end
-    end
-  end
-  local unit = unitSide(keys)
-  if not unit then
-    if final then session.state = "not-settled" end
-    return
-  end
-  local owners = records()
-  local owner = owners[unit.key]
-  if owner ~= "grid2" and owner ~= "unitframes" then
-    local g, u = grid2IsNew(), unitIsNew(unit)
-    if g == nil or u == nil then
-      if final then session.state = "not-settled" end
-      return
-    end
-    if not (g and u) then
-      session.state, session.key = "no-record", unit.key
-      return
-    end
-    owner = "grid2"
-    owners[unit.key] = owner
-    logLine(unit.key .. ": new install — party frames recorded for Grid2")
-  end
-  session.owner, session.key, session.unit = owner, unit.key, unit.folder
-  local unitWants = owner == "unitframes"
-  local parts = {}
-  if unit.folder == "PitBull4" and alignPB4(unit.table, unitWants, true) > 0 then
-    logLine("PitBull4 " .. unit.profile .. ": party groups " .. (unitWants and "on" or "off") .. " (" .. unit.key .. ")")
-    parts[1] = "PitBull4 " .. unit.profile .. " 파티 그룹 " .. (unitWants and "켬" or "끔")
-  elseif unit.folder ~= "PitBull4" and unit.shows ~= unitWants then
-    session.state = "fuf-pending"
-    fufDue = owner
-    if worldSeen then later(DELAY, runFUF) end
-    return
-  end
-  local n, name, changes = alignGrid2(keys, owner)
-  session.state = n and "applied" or "not-settled"
-  if n and n > 0 then
-    logLine("Grid2 " .. name .. ": party values follow " .. unit.key .. " (" .. owner .. ")")
-    parts[#parts + 1] = grid2Part(name, changes)
-  end
-  autoNotice(parts)
-end
-
-Core:On("ADDON_LOADED", function(_, folder)
-  if folder == "Grid2" or folder == "PitBull4" or folder == "ForeverUnitFrames" then settle(false) end
-end)
-Core:On("PLAYER_LOGIN", function() settle(true) end)
-Core:On("PLAYER_ENTERING_WORLD", function()
-  if worldSeen then return end
-  worldSeen = true
-  if heldNotice then
-    Core.Profiles:Print(heldNotice)
-    heldNotice = nil
-  end
-  if fufDue then later(DELAY, runFUF) end
-end)
-Core:On("PLAYER_REGEN_ENABLED", function()
-  if waitingCombat then
-    waitingCombat = false
-    later(DELAY, runFUF)
-  end
-end)
-
--- {state, owner, key, unit} of this session.
+-- {state, on, key, unit} of the last command this session.
 function Party:GetState()
-  return {state = session.state, owner = session.owner, key = session.key, unit = session.unit}
+  return {state = session.state, on = session.on, key = session.key, unit = session.unit}
 end
 
--- Lines: the record and what each side stores now for this character.
+-- Lines: what each side stores now for this character.
 function Party:Describe()
   local keys = Core.PlayerKeys()
   if not keys then return {"캐릭터를 아직 모름"} end
   local lines = {}
   local unit, why = unitSide(keys)
-  if unit then
-    local owner = Core.ready and records()[unit.key]
-    lines[#lines + 1] = "기록(" .. unit.key .. "): " .. (owner == "grid2" and "Grid2 가 파티를 그림"
-      or owner == "unitframes" and "유닛 프레임이 파티를 그림" or "없음 — 지금 상태 그대로")
-    lines[#lines + 1] = unit.folder .. " " .. unit.profile .. ": 파티 " .. (unit.shows and "켜짐" or "꺼짐")
-  else
+  if not unit then
     lines[#lines + 1] = why
+  elseif unit.folder == "PitBull4" then
+    lines[#lines + 1] = "PitBull4 " .. unit.profile .. ": 파티 그룹 " .. unit.all .. "개 중 " .. unit.on .. "개 켜짐"
+  else
+    lines[#lines + 1] = "Forever Unit Frames " .. unit.profile .. ": 파티 " .. (unit.shows and "켜짐" or "꺼짐")
   end
   if loaded("Grid2") then
     local p, name = grid2Profile(keys, false)
-    lines[#lines + 1] = "Grid2 " .. tostring(name) .. ": 파티 " .. (grid2Owns(p) and "보임" or "안 보임")
+    lines[#lines + 1] = "Grid2 " .. tostring(name) .. ": 파티 " .. (grid2Shows(p) and "보임" or "안 보임")
   end
+  lines[#lines + 1] = "/dfp party on|off — 유닛 프레임 파티 켜기/끄기(Grid2 는 늘 파티·공격대를 그림)"
   return lines
 end
 
--- owner "grid2" | "unitframes": records the owner on the unit-frame profile this
--- character uses and brings this character to it (FUF: Grid2 after FUF's
--- read-back). Returns true, lines | false, reason; `say` prints the later
--- FUF outcome.
-function Party:Set(owner, say)
-  if owner ~= "grid2" and owner ~= "unitframes" then return false, "grid2 또는 unitframes" end
+-- on true | false: the unit-frame party switch for the unit-frame profile this
+-- character uses (all characters on that profile) and Grid2 shown for this
+-- character. Returns true, lines | false, reason; `say` prints the later FUF
+-- read-back.
+function Party:Set(on, say)
+  if on ~= true and on ~= false then return false, "on 또는 off" end
   if Core.InCombat() then return false, "전투 중 — 바꾼 것 없음" end
   if not Core.ready then return false, "Core 저장 변수를 아직 읽지 않음" end
   local keys, why = Core.PlayerKeys()
@@ -479,44 +365,60 @@ function Party:Set(owner, say)
   unit, why = unitSide(keys)
   if not unit then return false, why end
   local lines, state = {}, "applied"
-  local unitWants = owner == "unitframes"
-  local function grid2Line(n, name, changes)
-    if not n then return "Grid2: " .. tostring(name) end
-    local p = grid2Profile(keys, false)
-    return "Grid2 " .. name .. ": 파티 " .. (grid2Owns(p) and "보임" or "안 보임")
-      .. (n > 0 and (" — 바꾼 값: " .. table.concat(changes, " · ")) or " (이미 그럼)")
-  end
   if unit.folder == "PitBull4" then
-    local groups = pb4Groups(unit.table)
-    if #groups == 0 and unitWants then return false, "PitBull4 " .. unit.profile .. ": 파티 그룹 없음 — 바꾼 것 없음" end
-    fufDue, epoch = nil, epoch + 1
-    records()[unit.key] = owner
-    if alignPB4(unit.table, unitWants, true) > 0 then
-      lines[#lines + 1] = "PitBull4 " .. unit.profile .. ": 파티 그룹 " .. #groups .. "개 " .. (unitWants and "켬" or "끔")
+    if unit.all == 0 then return false, "PitBull4 " .. unit.profile .. ": 파티 그룹 없음 — 바꾼 것 없음" end
+    local changed, shown, converted = setPB4(unit.table, on)
+    if changed > 0 then
+      lines[#lines + 1] = "PitBull4 " .. unit.profile .. ": 파티 그룹 " .. changed .. "개 " .. onOff(on)
+      if shown > 0 then lines[#lines + 1] = "  그중 " .. shown .. "개는 공격대에서도 보이게 바꿈" end
+      if converted then
+        lines[#lines + 1] = "  파티원 소환수: 소환수 그룹으로 바꿈" .. (type(converted) == "string"
+          and (" (없던 배치 값은 " .. converted .. " preset 값)") or " (preset 배치 값 없음 — 기본 위치)")
+      end
     else
-      lines[#lines + 1] = "PitBull4 " .. unit.profile .. ": 파티 이미 " .. (unitWants and "켜짐" or "꺼짐")
+      lines[#lines + 1] = "PitBull4 " .. unit.profile .. ": 파티 그룹 이미 모두 " .. (on and "켜짐" or "꺼짐")
     end
-    lines[#lines + 1] = grid2Line(alignGrid2(keys, owner))
+  elseif unit.shows == on then
+    lines[#lines + 1] = "Forever Unit Frames " .. unit.profile .. ": 파티 이미 " .. (on and "켜짐" or "꺼짐")
   else
-    if unit.shows == unitWants then
-      fufDue, epoch = nil, epoch + 1
-      records()[unit.key] = owner
-      lines[#lines + 1] = "Forever Unit Frames " .. unit.profile .. ": 파티 이미 " .. (unitWants and "켜짐" or "꺼짐")
-      lines[#lines + 1] = grid2Line(alignGrid2(keys, owner))
+    local ok, err = sendFUF(on)
+    if not ok then return false, "Forever Unit Frames: " .. tostring(err) .. " — 바꾼 것 없음" end
+    state = "fuf-pending"
+    lines[#lines + 1] = "Forever Unit Frames " .. unit.profile .. ": 파티 " .. (on and "켜기" or "끄기")
+      .. " 명령 보냄 — 저장되면 한 줄 더"
+  end
+  epoch = epoch + 1
+  if state == "fuf-pending" then
+    local mine = epoch
+    later(READBACK, function()
+      if mine ~= epoch then return end
+      local done = fufShows() == on
+      session.state = done and "applied" or "fuf-pending"
+      local line = done and ("Forever Unit Frames 파티 " .. onOff(on) .. " 확인")
+        or "Forever Unit Frames 가 파티 설정을 아직 저장하지 않음 — 전투 밖에서 /dfp party " .. (on and "on" or "off") .. " 를 다시"
+      Core:Log("info", "Party", line)
+      if type(say) == "function" then say(line) end
+    end)
+  end
+  if loaded("Grid2") then
+    local n, name, changes = showGrid2(keys)
+    if not n then
+      lines[#lines + 1] = "Grid2: " .. tostring(name)
     else
-      local ok, err = sendFUF(owner)
-      if not ok then return false, "Forever Unit Frames: " .. tostring(err) .. " — 바꾼 것 없음" end
-      fufDue, epoch = nil, epoch + 1
-      records()[unit.key] = owner
-      state = "fuf-pending"
-      lines[#lines + 1] = "Forever Unit Frames " .. unit.profile .. ": 파티 " .. (unitWants and "켜기" or "끄기")
-        .. " 명령 보냄 — 저장되면 Grid2 를 맞춤(곧 한 줄 더)"
-      local mine = epoch
-      later(READBACK, function() confirmFUF(keys, owner, say, mine) end)
+      lines[#lines + 1] = "Grid2 " .. name .. ": 파티 보임"
+        .. (n > 0 and (" — 바꾼 값: " .. table.concat(changes, " · ")) or " (이미 그럼)")
+      local moved, preset = nil, nil
+      if on then moved, preset = moveGrid2(keys) end
+      if moved == "moved" then
+        lines[#lines + 1] = "Grid2 창: 예전 기본 자리 → " .. preset .. " preset 의 자리(화면 위 가운데)"
+      elseif moved == "user" then
+        lines[#lines + 1] = "Grid2 창은 예전 기본 자리가 아니라서 그대로 — PitBull4 파티와 겹치면 Grid2 에서 옮기세요"
+      end
     end
   end
-  lines[#lines + 1] = unit.key .. " 를 쓰는 캐릭터 모두에 적용되는 설정 — 다른 캐릭터는 다음 접속 때 맞춰짐"
+  lines[#lines + 1] = unit.key .. " 를 쓰는 캐릭터 모두에 적용되는 설정"
   lines[#lines + 1] = "다시 불러오면(/reload) 화면에 적용됨"
-  session.state, session.owner, session.key, session.unit = state, owner, unit.key, unit.folder
+  session.state, session.on, session.key, session.unit = state, on, unit.key, unit.folder
+  Core:Log("info", "Party", unit.key .. ": unit-frame party " .. (on and "on" or "off"))
   return true, lines
 end

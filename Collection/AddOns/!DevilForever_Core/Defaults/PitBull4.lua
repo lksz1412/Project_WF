@@ -27,6 +27,11 @@ local PROFILE = "Default"
 local NORMAL_LAYOUT = ({koKR = "보통", ruRU = "Нормальный", zhCN = "普通", zhTW = "普通"})[GetLocale and GetLocale() or ""]
   or "Normal"
 
+local function raidToo()
+  return {solo = false, party = true, raid = true, raid10 = true, raid15 = true, raid20 = true, raid25 = true,
+    raid30 = true, raid40 = true}
+end
+
 local targets = {
   {
     savedVariable = "PitBull4DB",
@@ -37,26 +42,29 @@ local targets = {
       class_order = {"WARRIOR", "PALADIN", "PRIEST", "SHAMAN", "DRUID", "ROGUE", "MAGE", "WARLOCK", "HUNTER"},
       frame_snap = false,
       group_anchors_updated = true,
-      -- party only (PitBull4 default show_when); raid frames are Grid2. Party.lua switches these
-      -- groups off when Grid2 takes the party (both profiles new, or /dfp party grid2)
+      -- the player's own party (in a raid: the raid subgroup) in party and raid; Grid2 draws party
+      -- and raid as well. /dfp party on|off (Party.lua) switches these groups afterwards.
       groups = {
         ["파티"] = {
           enabled = true,
           exists = true,
           layout = "파티",
+          show_when = raidToo(),
           unit_group = "party",
         },
         ["파티원 대상"] = {
           enabled = true,
           exists = true,
           layout = "대상의대상",
+          show_when = raidToo(),
           unit_group = "partytarget",
         },
         ["파티원 소환수"] = {
           enabled = true,
           exists = true,
           layout = "대상의대상",
-          unit_group = "partypet",
+          show_when = raidToo(),
+          unit_group = "partypet",   -- PitBull4's gap mode: each pet beside its owner, no frame without a pet
         },
       },
       layouts = {

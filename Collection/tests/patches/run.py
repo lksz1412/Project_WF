@@ -101,9 +101,15 @@ def eq(actual, expected, what):
 @case
 def repository_patches_verify():
     restore()
-    rc, lines = run_verify(patches.load_manifest())
+    manifest = patches.load_manifest()
+    rc, lines = run_verify(manifest)
     eq(rc, 0, "verify on the repository (%s)" % [l for l in lines if l.startswith("FAIL")])
-    eq(sum(1 for l in lines if l.startswith("OK patched")), 5, "five patches (PitBull4 fork + four packages)")
+    declared = {t["patch"] for t in manifest["third_party"] if t["state"] == "patched"}
+    declared |= {c["base"]["patch"] for c in manifest.get("collection") or [] if c.get("kind") == "fork"}
+    eq(sum(1 for l in lines if l.startswith("OK patched")), len(declared),
+       "every patch the manifest declares (packages and forks) verified")
+    eq(sorted(declared), sorted("Collection/patches/" + n for n in os.listdir(os.path.join(patches.REPO, "Collection", "patches")) if n.endswith(".patch")),
+       "no patch file outside the manifest")
 
 
 @case

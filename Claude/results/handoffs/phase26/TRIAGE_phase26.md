@@ -40,3 +40,28 @@ Source: `iter_2/audit_log-48-3.md` (audit B3). Quotes checked @d8b63f59: SwingFo
 
 ## Step 46-rev (R134·R135) — brief font default Allura + combat arrow dim · re-check (same B)
 - Re-check: 0 critical · 0 middle · 2 minor. Both minors fixed by master as one-line text edits (word-level): ratio stated per preset (1.4/1.5/1.6); PLAYER_LOGIN in combat starts at alpha 0.45.
+
+## Step 47 review 1 — master triage
+Source `iter_3/audit_log-47-1.md`. Quotes checked: fhd Grid2 PosX/PosY 24/-164, fhd.lua:469 show_when raid=true & position 26/-46, Party.lua:136 and 151-159 — match.
+| ID | Verdict | What / why |
+|---|---|---|
+| M1 | fix | Grid2 default window overlaps PitBull4 party column in all presets now that both show (R130) → move Grid2 default to a free spot (no overlap with any preset frame), Codex checks in game |
+| M2 | fix | upgraded installs: `/dfp party on` only flips enabled → no raid show_when, pet group stays hidden-marked. Explicit command must also bring show_when and the party pet group to the new design without touching appearance edits (R145: explicit command is the allowed write) |
+| m1 | fix | drop use_pet_header (gap mode keeps each pet beside its owner; R146 still met) |
+| m2 | fix | dfStandStill default also in the Swing module defaults so upgraded profiles show the window |
+| m3 | fix | preset restore output says party groups were turned on |
+| m4 | fix | install guide :57/:66 and feature-map :58/:72 to the new design (same A) |
+| m5 | keep | late-shot hide after one full cycle — Codex game check |
+| m6 | fix | bump v3 fragment version since its content changed |
+
+## Step 47 re-check 1 — master triage (middle 2 → 1)
+Source `iter_3/audit_log-47-2.md`. Quote checked: Party.lua:110-115 writes layouts/FrameDisplay only, no Grid2 position — match.
+| ID | Verdict | What / why |
+|---|---|---|
+| M1 | fix | upgraded install: `/dfp party on` leaves Grid2 at the old default spot → overlap returns. Move Grid2 to the new preset spot only when its saved anchor/PosX/PosY still equal the old package default (user-moved windows are kept, R145) |
+| m1 | fix | the one-time "existing settings kept" notice should point to `/dfp party on`, not the heavy `/dfp preset` |
+| m2 | keep | top-centre text (UIErrorsFrame, raid warnings) — Codex game check |
+| note | user decision | Grid2 at top centre vs other spots — ask in final report |
+
+## Step 47 re-check 2 — master triage (middle 1 → 0)
+Source `iter_3/audit_log-47-3.md`. 0 · 0 · 1. m1 notice wording (Grid2 at Grid2's own default was called "user-set") fixed by master as a one-line text change: Party.lua:415 + tests/firststart/run.py:886. Unit closed.

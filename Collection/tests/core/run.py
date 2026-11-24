@@ -1105,7 +1105,8 @@ def hekili_defaults_user_and_dual_spec_profile_kept():
     eq((st["state"], st["key"]), ("existing-profile-kept", "HekiliDB@profile:Elemental"), "profileKeys profile kept")
 
 
-GRID2_LAYOUT = {"layouts": {"solo": "None", "party": "None", "arena": "None"}, "FrameDisplay": "Raid"}
+GRID2_LAYOUT = {"layouts": {"solo": "None", "party": "By Group", "arena": "By Group"}, "FrameDisplay": "Grouped",
+                "minimapIcon": {"hide": True}}
 
 
 @case

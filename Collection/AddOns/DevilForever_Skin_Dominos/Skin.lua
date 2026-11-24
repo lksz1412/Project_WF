@@ -11,6 +11,7 @@ local petPending = false
 local petScheduled = false
 local schedulePet
 local geometryHooks = setmetatable({}, {__mode = "k"})
+local tailPending = setmetatable({}, {__mode = "k"})   -- bars whose Layout ran in combat
 local geometryKeys = {"point", "relPoint", "x", "y", "scale", "columns", "spacing", "rowSpacing",
   "rowOffset", "padW", "padH", "anchor", "isRightToLeft", "isBottomToTop"}
 
@@ -29,7 +30,8 @@ end
 
 -- The second lower bar has four slots on its first row and eight on its last.
 local function applyTail(bar)
-  if InCombatLockdown() then pending = true; return end
+  if InCombatLockdown() then pending = true; tailPending[bar] = true; return end
+  tailPending[bar] = nil
   local sets = managedGeometry(bar)
   if not sets or not sets.dfTail then return end
   local left, _, top = bar:GetButtonInsets()
@@ -54,6 +56,8 @@ local function applyGeometry(pixel)
         if sets.dfTail and not geometryHooks[bar] then
           hooksecurefunc(bar, "Layout", applyTail)
           geometryHooks[bar] = true
+          applyTail(bar)
+        elseif tailPending[bar] then
           applyTail(bar)
         end
         if sets.dfPixel ~= pixel then

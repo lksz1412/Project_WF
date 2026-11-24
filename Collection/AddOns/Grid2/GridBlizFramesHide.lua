@@ -81,8 +81,13 @@ local function HideRaidFrames()
 			CompactRaidFrameContainer:RegisterEvent("GROUP_ROSTER_UPDATE")
 		end)
 	end
-	hooksecurefunc("CompactUnitFrame_UpdateUnitEvents", UnregisterUnitEvents)
-	hooksecurefunc('CompactRaidFrameManager_UpdateShown', HideFrames)
+	-- WoW Forever: hook only the functions the client has
+	if type(CompactUnitFrame_UpdateUnitEvents) == "function" then
+		hooksecurefunc("CompactUnitFrame_UpdateUnitEvents", UnregisterUnitEvents)
+	end
+	if type(CompactRaidFrameManager_UpdateShown) == "function" then
+		hooksecurefunc('CompactRaidFrameManager_UpdateShown', HideFrames)
+	end
 	CompactRaidFrameManager:HookScript('OnShow', HideFrames)
 	CompactRaidFrameContainer:HookScript('OnShow', HideFrames)
 	HideFrames()

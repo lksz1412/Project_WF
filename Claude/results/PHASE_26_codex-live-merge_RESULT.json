@@ -1,0 +1,59 @@
+{
+ "phase": "26",
+ "topic": "Codex 실게임판 합치기·테마 전환 그림·검토·고침",
+ "steps": [
+  46,
+  47,
+  48,
+  49
+ ],
+ "inputs": [
+  "origin/codex/live-015-pitbull-20261124 @d8b63f59",
+  "R130–R147"
+ ],
+ "files_created": [
+  "Collection/codex-briefs/appearance-26-theme-switcher.md",
+  "Collection/codex-briefs/assets/26-theme-switcher/{Allura-Regular.ttf,OFL.txt}",
+  "Collection/codex-briefs/phase26-step47-check.md",
+  "Collection/patches/Grid2.patch"
+ ],
+ "files_updated": [
+  "Core Party/Commands/Presets/V2/fhd/qhd/uhd/Defaults(PitBull4,Grid2,Quartz)",
+  "Skin_Dominos",
+  "Grid2 2 files",
+  "PitBull4 UnitFrameLayout",
+  "Quartz SwingForever",
+  "patches PitBull4/Quartz",
+  "tests core/firststart/layoutv2/patches",
+  "manifest",
+  "ReleaseCatalog.json",
+  "설치안내.md",
+  "feature-map.md"
+ ],
+ "validation": {
+  "suites": "all pass except detailslayout(pre-existing missing ref)/performance(pre-existing)/installer(needs exe)",
+  "patches_verify": "7/20/0",
+  "genregistry": "up to date",
+  "build_reproducible": true,
+  "zip_sha256": {
+   "pitbull4": "1a9516de3d9c7d625bdf0099c05274e4f7e5f6de0b6ddc0260c63c9973cf627d",
+   "fuf": "a50fe2d1c03dee5f7ab61ad15d2dc7f2836ac6cfe0e80e9b6e9cf76b305af85b"
+  },
+  "review": "step47 C+M 2->1->0; step48 findings C1(Hekili deferred) M7"
+ },
+ "open_issues": [
+  "Hekili C1/M1 deferred (R144 ⑥)",
+  "detailslayout missing reference fragment",
+  "performance test failing at HEAD",
+  "game checks by Codex"
+ ],
+ "decision_queue": [
+  "Grid2 default spot top centre (eye travel, width grows with raid size)"
+ ],
+ "step_records": [
+  "Claude/results/Step 46*",
+  "Step 47 — …",
+  "Step 48 — …",
+  "Step 49 — …"
+ ]
+}

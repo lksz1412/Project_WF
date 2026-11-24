@@ -55,7 +55,7 @@ Devil Forever
 
 | 기능 | 담당 | 적용 경로 |
 |---|---|---|
-| 파티와 공격대 | 새 설치: 파티와 공격대 모두 `Grid2` · `Grid2Options` · `Grid2LDB`. 이전 판 설치: 파티는 그리던 쪽 그대로(`/dfp party grid2`·`/dfp party unitframes`) · 공격대는 `Grid2` | Core 초기 프리셋. Grid2 세부 지표는 Grid2 프로필 |
+| 파티와 공격대 | `Grid2` · `Grid2Options` · `Grid2LDB`(파티·공격대, 화면 위 가운데) 와 유닛 프레임 파티(`PitBull4` 파티 그룹 — 왼쪽 위 세로, 공격대에서는 내 소그룹, 또는 FUF 파티)가 함께. 유닛 프레임 파티 켜기/끄기는 `/dfp party on`·`/dfp party off`(접속 때 되돌리지 않음) | Core 초기 프리셋. Grid2 틀은 Modern 자동(고르기 창 없음). Grid2 세부 지표는 Grid2 프로필 |
 | 데미지와 위협 | `Details` · `Details_TinyThreat` · `DevilForever_DetailsLayout` | 기존 창 1·2에 `/dfdetails apply`로 [해상도별 위치](../AddOns/DevilForever_DetailsLayout/Layout.lua) 적용. 모드와 세부 표시 설정은 Details |
 
 ## 성장·퀘스트
@@ -69,7 +69,7 @@ Devil Forever
 
 | 설정 | 권장 관리 위치 |
 |---|---|
-| 해상도별 전체 배치, 테마, 모음집 백업·복원, 파티 프레임 담당(`/dfp party`) | Core의 `/dfp`. 게임 재확인용 `/dfcheck` 는 기본으로 불러오지 않음 |
+| 해상도별 전체 배치, 테마, 모음집 백업·복원, 유닛 프레임 파티 켜기/끄기(`/dfp party on|off`) | Core의 `/dfp`. 게임 재확인용 `/dfcheck` 는 기본으로 불러오지 않음 |
 | 키·오라·필터·추천·미터기 모드 | 해당 애드온의 기존 설정. 공통 배치는 초기값으로 제공 |
 | 기본 쿨다운 창과 기본 퀘스트 추적기 | 게임 설정. 프리셋의 목표 좌표를 접속 때 대조 |
 

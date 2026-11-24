@@ -16380,12 +16380,12 @@
               }
             ]
           },
-          "listed_file_lines": 20
+          "listed_file_lines": 21
         }
       ],
       "has_interface_16001": true,
       "has_forever_loadable_toc": true,
-      "lua_files": 20,
+      "lua_files": 21,
       "lua_files_in_libs": 0,
       "embedded_libs": [],
       "license_files": []
@@ -17011,12 +17011,12 @@
               }
             ]
           },
-          "listed_file_lines": 1
+          "listed_file_lines": 2
         }
       ],
       "has_interface_16001": true,
       "has_forever_loadable_toc": true,
-      "lua_files": 1,
+      "lua_files": 2,
       "lua_files_in_libs": 0,
       "embedded_libs": [],
       "license_files": []
@@ -17737,8 +17737,8 @@
       "source_zip": "References/forever-addons/Grid2/Grid2-4.1.13-forever.zip",
       "sha256": "f198bc3ce2d02e023f81052074a2e9aa4ba41819931bd302ff7429dac9515393",
       "upstream_path": "Collection/upstream/Grid2-4.1.13-forever/Grid2",
-      "state": "unmodified",
-      "patch": null
+      "state": "patched",
+      "patch": "Collection/patches/Grid2.patch"
     },
     {
       "folder": "Grid2LDB",

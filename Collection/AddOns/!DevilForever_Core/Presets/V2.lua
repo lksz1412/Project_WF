@@ -40,7 +40,7 @@ for name, m in pairs(modes) do
       end
     end
     base.fragments[#base.fragments+1]={folder="Quartz",savedVariable="Quartz3DB",addonVersion="3.8.0",version=1,
-      section="profile",profile="Default",namespace="Swing",values={dfFollowPlayer=false,swingposition="top",swinggap=-4,swingheight=4}}
+      section="profile",profile="Default",namespace="Swing",values={swingposition="top",swinggap=-4,swingheight=4}}
     Core.Presets:Register(base)
     for _, version in ipairs({1,2}) do
       local def = {name=name .. "-v" .. version,layoutOnly=true,fragments={}}
@@ -54,7 +54,8 @@ for name, m in pairs(modes) do
           end
           def.fragments[#def.fragments+1]=copy
           spaces[copy.namespace]=copy.values
-        elseif f.folder == "Quartz" and (f.namespace == "Player" or f.namespace == "Target" or f.namespace == "Focus") then
+        elseif f.folder == "Quartz" and (f.namespace == "Player" or f.namespace == "Target" or f.namespace == "Focus"
+            or f.namespace == "Pet") then
           local copy=Core.CopyTable(f);quartz[copy.namespace]=copy.values
           def.fragments[#def.fragments+1]=copy
         end
@@ -121,25 +122,30 @@ for name, m in pairs(modes) do
           for label, width in pairs({["플레이어"]=w,["대상"]=w,["플레이어의 소환수"]=cw,["주시 대상"]=cw,["대상의 소환수"]=cw}) do
             root.dfAuraGeometry[label]={above=true,width=width}
           end
-          for module, x in pairs({Target=xTarget,Focus=xFocus}) do
+          for module, x in pairs({Target=xTarget,Focus=xFocus,Pet=xPet}) do
             local q=quartz[module]
-            q.point,q.y="TOP",-castY*pixel
-            q.x=(x+(module == "Target" and w or cw)/2-m.width/2)*pixel
-            q.w,q.h=(module == "Target" and w or cw)-10,m.castHeight-10
+            if q then
+              q.point,q.y="TOP",-castY*pixel
+              q.x=(x+(module == "Target" and w or cw)/2-m.width/2)*pixel
+              q.w,q.h=(module == "Target" and w or cw)-10,m.castHeight-10
+            end
           end
           quartz.Player.y=-m.footY*pixel
           root.dfAuraGeometry["주시 대상"].top_margin=math.max(2,bottom-ch-m.footY+8)
         end
         for label,row in pairs(root.units) do root.dfGeometry.units[label]=signature(row,unitFields) end
         for layout,row in pairs(root.layouts) do root.dfGeometry.layouts[layout]=signature(row,layoutFields) end
-        local f=fragment(nil,root);f.alignPixel=true
+        local f=fragment(nil,root);f.alignPixel=true;f.replace={"dfAuraGeometry"}
         table.insert(def.fragments,1,f)
-        for _, q in pairs(quartz) do
-          q.dfGeometry={}
-          for _, key in ipairs({"point","x","y","w","h","scale"}) do q.dfGeometry[key]=q[key] end
+        for module, q in pairs(quartz) do
+          -- Pet has no run-time rescale (Defaults/Quartz.lua), so no geometry signature
+          if module ~= "Pet" then
+            q.dfGeometry={}
+            for _, key in ipairs({"point","x","y","w","h","scale"}) do q.dfGeometry[key]=q[key] end
+          end
         end
         def.fragments[#def.fragments+1]={folder="Quartz",savedVariable="Quartz3DB",addonVersion="3.8.0",version=1,
-          section="profile",profile="Default",namespace="Swing",values={dfFollowPlayer=version == 2,swingposition=version == 2 and "bottom" or "top",swinggap=version == 2 and 4 or -4,swingheight=4}}
+          section="profile",profile="Default",namespace="Swing",values={swingposition=version == 2 and "bottom" or "top",swinggap=version == 2 and 4 or -4,swingheight=4}}
         Core.Presets:Register(def)
       end
     end

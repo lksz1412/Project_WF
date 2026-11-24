@@ -3,9 +3,10 @@
 -- and preset values take effect after /dfp go (a /reload), a theme switch
 -- (/dfp theme <number>) at once.
 -- /dfp keys|game pass through to ProfileManager (Keybinds, GameSettings) only
--- on that explicit command. /dfp party grid2|unitframes moves this character's
--- party frames between Grid2 and the unit-frame addon (Party.lua), at once in
--- the saved variables, on screen after a /reload.
+-- on that explicit command. /dfp party on|off switches the unit-frame addon's
+-- party frames (Grid2 keeps drawing party and raid; Party.lua), at once in the
+-- saved variables, on screen after a /reload; the earlier words unitframes and
+-- grid2 mean on and off.
 
 local _, Core = ...
 
@@ -40,7 +41,7 @@ local HELP = {
   "/dfp preset [<이름>] — preset 목록 / preset 으로 되돌리기",
   "/dfp theme [<번호>] — 테마 목록 / 테마 바꾸기(기본 0)",
   "/dfp spec [link|new|off] — 특성(이중 특성) profile 연결",
-  "/dfp party [grid2|unitframes] — 파티 프레임을 Grid2 / 유닛 프레임(PitBull4·FUF) 중 어디서 그릴지 (보기 / 바꾸기 → /reload)",
+  "/dfp party [on|off] — 유닛 프레임(PitBull4·FUF) 파티 켜기/끄기, Grid2 는 늘 파티·공격대 (보기 / 바꾸기 → /reload)",
   "/dfp keys save|load|list [<이름>] · /dfp game save|load|list [<이름>] — ProfileManager 의 키 설정·게임 설정",
 }
 
@@ -243,10 +244,12 @@ function Commands:Run(msg)
     local sub = (w[2] or ""):lower()
     if sub == "" then
       sayAll(Core.Party:Describe())
-    elseif sub == "grid2" or sub == "unitframes" then
-      result(Core.Party:Set(sub, say))
+    elseif sub == "on" or sub == "unitframes" then
+      result(Core.Party:Set(true, say))
+    elseif sub == "off" or sub == "grid2" then
+      result(Core.Party:Set(false, say))
     else
-      say("/dfp party [grid2|unitframes]")
+      say("/dfp party [on|off]")
     end
   elseif cmd == "keys" or cmd == "game" then
     passThrough(cmd, w)

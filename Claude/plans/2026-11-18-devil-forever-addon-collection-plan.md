@@ -402,7 +402,7 @@ R1 의 첫 요청은 단축키·체력/마나·미니맵이었고 「부가 기�
 | 23 연계 검사·정정 | `…-phase23-세부계획.md` | 37–38 | 완료 |
 | 24 최종 목업 (제작은 Codex) | `…-phase24-세부계획.md` | 39 | 완료 (받은 목업 대조는 Codex 결과 대기 · R109) |
 | 25 Codex 검증 결과 반영·고정 | `…-phase25-세부계획.md` | 44 → 45 → 40a–40d → 41 | 완료 (0.1.5 · 게임 미검증 · 릴리스 업로드는 사용자 승인 대기) |
-| 26 Codex 실게임 조정판 합치기·테마 넘김 그림·검토 | `…-phase26-세부계획.md` | 46–48 | 진행 중 |
+| 26 Codex 실게임 조정판 합치기·테마 넘김 그림·검토 | `…-phase26-세부계획.md` | 46–49 | 끝(게임 미검증) |
 
 `…` 는 `Claude/plans/2026-11-18-devil-forever-addon-collection` 이다. Phase 가 끝날 때마다 그 Phase 의 Result 를 `Claude/results/` 에 남기고, 끝난 Phase 정리는 `Claude/plans/2026-11-18-devil-forever-addon-collection-plan_이력.md` 로 옮긴다.
 
@@ -491,6 +491,8 @@ R1 의 첫 요청은 단축키·체력/마나·미니맵이었고 「부가 기�
 
 Phase 0–1 의 고침 기록은 `Claude/plans/2026-11-18-devil-forever-addon-collection-plan_이력.md` 로 옮겼다. Phase 2 부터의 고침을 아래에 쌓는다.
 
+Phase 26 의 고침 기록(2026-11-24)은 Phase 26 끝에 이력 파일 「Phase 26 Correction History」 절로 옮겼다.
+
 | 날짜 | 반영 | 근거 |
 |---|---|---|
 | 2026-11-18 | 선택 기능 Phase 12(툴팁)·13(가방)·17(퀘스트 추적기)·18(세계지도)을 뺀다 — 게임 기본 기능을 쓰고, 기본 기능 확인은 Codex 발주문에 넣는다. Step 번호는 그대로 두고 비워 둔다. Claude 합계에서 그 Step 들(24·25·29·30a·30b)을 뺀다 | R100 사용자 원문 · R99 |
@@ -498,7 +500,6 @@ Phase 0–1 의 고침 기록은 `Claude/plans/2026-11-18-devil-forever-addon-co
 | 2026-11-18 | 근간 재논의 반영: ① Phase 6-rev(PitBull4 v4.2.50 + Forever TOC + V42 고침 + Devil profile, Step 42–43) 를 더해 FUF 와 비교하고 기본 동봉은 Phase 23 에서 정해 기록 ② 어그로 미터는 Details! 의 TinyThreat — Phase 11 은 Phase 10 에 합침 ③ Phase 14 는 게임 기본 이름표(Platynator 뺌, Codex 발주문만) ④ Phase 15 Aurora 사용 여부는 Codex 가 정함 ⑤ Phase 16 은 가벼운 상태띠(Titan 안 씀, 정보 부분 Step 28a·28b) ⑥ Phase 21 빠짐 — 사용자가 AI 로 고치고 Codex 가 FHD·QHD·UHD 세 겉보기를 처음부터 만든다, Core 편집값은 읽기 약속으로 남고 Phase 20 이 preset 되돌리기를 맡는다. 합계를 다시 더했다(R100 뒤 갱신되지 않았던 합계도 함께) | R107 사용자 원문 · R101 |
 | 2026-11-19 | Phase 25 에 Step 44 를 더한다(순서 44 → 40 → 41). Codex 가 결과를 `References/` 가 아니라 가지 `codex/review-0.1.4` 로 올렸고, 우리 코드(Core·ChatSetup·FUFDefaults)를 직접 고치고 제3자 원본 둘(ExperienceForever·SexyMap)을 고치고 Windows 설치기·외관 애드온·후보 ZIP 4개를 더했다. 그래서 Step 40(결함 정정) 전에 이 가지 전체를 감사해 무엇을 받아들일지 정하는 단계가 필요하다. Step 44 = 감사(검수 B 하나) → 결함·결정 목록, Step 45 = 사용자 지시 R114 의 독립 검수 세 번(전체 스킴·코드 비효율·사용 패턴 충분성 — 서브 하나씩 차례로), Step 40 = 받아들인 것을 우리 가지에 반영하고 결함 정정, Step 41 = 고정 | R112·R113 사용자 원문 · 가지 실측(merge-base 16b801b) |
 | 2026-11-19 | 파티 프레임 담당을 unit 프레임(PitBull4·FUF)에서 Grid2 로 옮긴다 — Phase 9 기본값(파티 없음)이 Phase 6 행 「Phase 9 가 켜지면 파티·공격대 표시는 끈다」 와 어긋나 있었다. 고침은 Phase 25 Step 40 | R118 사용자 원문 |
-| 2026-11-24 | 사용자 결정 바뀜: 파티는 PitBull4 좌측 상단 세로 배치(공격대에서도 유지), Grid2 는 파티·공격대 모두 켬(힐러 마우스오버) — R118 「한 프레임으로 통일」 대체 · FUF 판 반쯤 포기, PitBull4 기반 — R110 ① 비교 대체 · 대상의 소환수 생략(Codex 대장 G77-64) — R120 대체 · 판 번호 = 내용물 완성 기준(설치기 무관) 0.1.5. 반영은 다음 Phase(Codex 가지 codex/live-015-pitbull-20261124 검토·합치기) | R130 · Codex 대장 G77-1…76 |
 
 ## Decisions Required
 

@@ -8,6 +8,16 @@ local result = DevilForever_Core.Defaults:Register("Quartz", {
       preserveSharedProfiles = true,
       values = { modules = { Buff = false } },
     },
+    {
+      -- Swing bar (hunters, auto shot): the last seconds of the shot cycle drawn as the window to
+      -- stand still in; editable in Quartz's Swing options.
+      savedVariable = "Quartz3DB",
+      shape = "acedb",
+      profile = "Default",
+      namespace = "Swing",
+      preserveSharedProfiles = true,
+      values = { dfStandStill = 0.5 },
+    },
   },
 })
 

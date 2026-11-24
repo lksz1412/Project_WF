@@ -1,0 +1,64 @@
+Grid2 4.1.13-forever for WoW Forever - DevilForever patch
+Base: References/forever-addons/Grid2 (Collection/upstream/Grid2-4.1.13-forever), folder Grid2.
+Result: Collection/AddOns/Grid2.
+
+Change (DevilForever, runtime only):
+  - GridBlizFramesHide.lua: CompactUnitFrame_UpdateUnitEvents and CompactRaidFrameManager_UpdateShown
+    are hooked only when the client has them (no login error when one is missing).
+  - GridFrame.lua: UNIT_FACTION collects its units and runs one shared function on the next frame
+    instead of making a closure per event.
+
+Apply from the folder that holds the addon folders:
+    patch -p1 --binary -E < Grid2.patch
+Generated with: python3 -I Collection/tools/patches.py regenerate
+
+diff -u a/Grid2/GridBlizFramesHide.lua b/Grid2/GridBlizFramesHide.lua
+--- a/Grid2/GridBlizFramesHide.lua
++++ b/Grid2/GridBlizFramesHide.lua
+@@ -81,8 +81,13 @@
+ 			CompactRaidFrameContainer:RegisterEvent("GROUP_ROSTER_UPDATE")
+ 		end)
+ 	end
+-	hooksecurefunc("CompactUnitFrame_UpdateUnitEvents", UnregisterUnitEvents)
+-	hooksecurefunc('CompactRaidFrameManager_UpdateShown', HideFrames)
++	-- WoW Forever: hook only the functions the client has
++	if type(CompactUnitFrame_UpdateUnitEvents) == "function" then
++		hooksecurefunc("CompactUnitFrame_UpdateUnitEvents", UnregisterUnitEvents)
++	end
++	if type(CompactRaidFrameManager_UpdateShown) == "function" then
++		hooksecurefunc('CompactRaidFrameManager_UpdateShown', HideFrames)
++	end
+ 	CompactRaidFrameManager:HookScript('OnShow', HideFrames)
+ 	CompactRaidFrameContainer:HookScript('OnShow', HideFrames)
+ 	HideFrames()
+diff -u a/Grid2/GridFrame.lua b/Grid2/GridFrame.lua
+--- a/Grid2/GridFrame.lua
++++ b/Grid2/GridFrame.lua
+@@ -304,12 +304,24 @@
+ end
+ 
+ -- fix for non-visible units displaying all auras and auras not displayed after watching cinematics (CF issue #1535)
+-function Grid2Frame:UNIT_FACTION(_, unit)
+-	C_Timer_After(0, function() -- We need to wait one frame, because UnitIsVisible() used in UpdateAuraContainers() does not return updated information in PARTY_MEMBER_DISABLE event
++-- WoW Forever: the units of one frame share one timer and one function (no closure per event).
++local factionUnits = {}
++local function UpdateFactionUnits()
++	local units = factionUnits
++	factionUnits = {}
++	for unit in next, units do
+ 		for frame in next, Grid2:GetUnitFrames(unit) do
+ 			frame:UpdateAuraContainers()
+ 		end
+-	end)
++	end
++end
++
++function Grid2Frame:UNIT_FACTION(_, unit)
++	if unit == nil then return end
++	if next(factionUnits) == nil then
++		C_Timer_After(0, UpdateFactionUnits) -- We need to wait one frame, because UnitIsVisible() used in UpdateAuraContainers() does not return updated information in PARTY_MEMBER_DISABLE event
++	end
++	factionUnits[unit] = true
+ end
+ 
+ function Grid2Frame:UpdateAuraContainers() -- used from options

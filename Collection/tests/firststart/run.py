@@ -367,10 +367,10 @@ def sexymap_requested_preset_clears_numeric_borders_in_place():
     eq(s.errors(),[],"no errors")
 
 
-# Party frame owner (Party.lua) ----------------------------------------------------
+# Party frames (Party.lua): Grid2 draws party and raid, the unit-frame party is a switch ---------
 
 GRID2_PARTY = {"party": "By Group", "arena": "By Group", "FrameDisplay": "Grouped"}
-UNIT_PARTY = {"party": "None", "arena": "None", "FrameDisplay": "Raid"}
+GRID2_HIDDEN = {"party": "None", "arena": "None", "FrameDisplay": "Raid"}   # an earlier package's unit-frame owner
 PB4_GROUP_NAMES = ("파티", "파티원 대상", "파티원 소환수")
 # C_Timer.After collected and run by the test; a FUF stand-in whose "/fuf set party ..." commands
 # store the value in the saved unit profile at once (FUF's own save follows a change by 0.5 s) while
@@ -399,8 +399,6 @@ SlashCmdList.FOREVERUNITFRAMES = function(msg)
 end
 function UnitFullName() return TEST_player.name, TEST_player.realm end
 UnitName = UnitNameUnmodified
-TEST_enabled = {}
-C_AddOns.GetAddOnEnableState = function(name) return TEST_enabled[name] and 2 or 0 end
 """
 FUF_AT_LOAD = r"""
 if type(ForeverUnitFramesDB) ~= "table" then ForeverUnitFramesDB = {profiles = {Default = {}}, active = {}} end
@@ -411,8 +409,6 @@ def party_session(after, saved=None, player=None, ready=True):
     s = Session(registry="generated", extra_files=(), saved=saved, player=player)
     s.lua.execute(PARTY_STUBS)
     s.g.TEST_fufReady = ready
-    for name in after:
-        s.g.TEST_enabled[name] = True  # every addon of the session is enabled for the character
     s.load_addon(ADDON)
     for name in after:
         s.load_addon(name)
@@ -432,8 +428,18 @@ def grid2_party(s, profile="Hero - Realm"):
     return {"party": p["layouts"]["party"], "arena": p["layouts"]["arena"], "FrameDisplay": p["FrameDisplay"]}
 
 
+def set_grid2(saved, values, profile="Hero - Realm"):
+    p = saved["Grid2DB"]["namespaces"]["Grid2Layout"]["profiles"][profile]
+    p["layouts"]["party"], p["layouts"]["arena"], p["FrameDisplay"] = values["party"], values["arena"], values["FrameDisplay"]
+
+
+def pb4_groups(saved_or_session, profile="Default"):
+    db = saved_or_session["PitBull4DB"] if isinstance(saved_or_session, dict) else saved_or_session.sv("PitBull4DB")
+    return db["profiles"][profile]["groups"]
+
+
 def pb4_enabled(s, profile="Default"):
-    groups = s.sv("PitBull4DB")["profiles"][profile]["groups"]
+    groups = pb4_groups(s, profile)
     return {n: groups[n].get("enabled") for n in PB4_GROUP_NAMES}
 
 
@@ -441,12 +447,12 @@ def fuf_calls(s):
     return list(core["to_py"](s.g.TEST_fuf).values())
 
 
-def party_record(s):
-    return (s.sv("DevilForever_CoreDB").get("party") or {}).get("owner") or {}
-
-
 def party_state(s):
     return core["to_py"](s.core.Party.GetState(s.core.Party))
+
+
+def auto_lines(s):
+    return [l for l in prints(s) if "파티" in l]
 
 
 PB4_OFF = {n: False for n in PB4_GROUP_NAMES}
@@ -454,109 +460,124 @@ PB4_ON = {n: True for n in PB4_GROUP_NAMES}
 
 
 @case
-def party_fresh_pitbull4_install_records_grid2():
+def party_fresh_install_unit_frames_and_grid2_both_draw_party():
     for order in (["Grid2", "PitBull4"], ["PitBull4", "Grid2"]):
         s = party_session(order)
-        eq((grid2_party(s), pb4_enabled(s)), (GRID2_PARTY, PB4_OFF), "%s first: Grid2 party, PitBull4 groups off" % order[0])
-        eq(party_record(s), {"PitBull4/Default": "grid2"}, "owner recorded on the shared PitBull4 profile")
+        eq((grid2_party(s), pb4_enabled(s)), (GRID2_PARTY, PB4_ON), "%s first: Grid2 party and PitBull4 party groups" % order[0])
+        groups = pb4_groups(s)
+        eq([groups[n]["show_when"]["raid"] for n in PB4_GROUP_NAMES], [True] * 3, "PitBull4 party groups shown in a raid too")
+        eq("use_pet_header" in groups["파티원 소환수"], False, "pet group in PitBull4's gap mode (each pet beside its owner)")
+        eq(s.sv("Grid2DB")["namespaces"]["Grid2Layout"]["profiles"]["Hero - Realm"]["minimapIcon"], {"hide": True},
+           "Grid2LDB minimap button off on a new profile")
+        eq((s.sv("DevilForever_CoreDB") or {}).get("party"), None, "nothing recorded at login")
         eq(s.errors(), [], "no errors")
+    fuf = party_session(["ForeverUnitFrames", "Grid2"])
+    eq(run_timers(fuf), 0, "FUF first install: no delayed step")
+    eq((grid2_party(fuf), fuf_calls(fuf)), (GRID2_PARTY, []), "FUF keeps its party, Grid2 draws party and raid")
 
 
 @case
-def party_fresh_fuf_install_grid2_only_after_fuf():
-    s = party_session(["ForeverUnitFrames", "Grid2"])
-    eq(grid2_party(s), UNIT_PARTY, "Grid2 not ahead of FUF at login")
-    eq((party_record(s), party_state(s)["state"]), ({"ForeverUnitFrames/Default": "grid2"}, "fuf-pending"), "recorded")
-    eq(run_timers(s), 1, "FUF step after the login delay")
-    eq(fuf_calls(s), ["set party hideBlizzardFrame on", "set party enabled off"], "FUF party off, Blizzard's hidden")
-    eq(grid2_party(s), UNIT_PARTY, "Grid2 still waits for FUF's saved value")
-    run_timers(s)
-    eq((grid2_party(s), party_state(s)["state"]), (GRID2_PARTY, "applied"), "Grid2 after the read-back")
-
-
-@case
-def party_fuf_reload_before_command_reconciles_next_session():
-    first = party_session(["ForeverUnitFrames", "Grid2"])  # /reload before the FUF step ran
+def party_login_never_reapplies_party_groups():
+    first = party_session(["Grid2", "PitBull4"])
     saved = carry(first)
-    eq(grid2_party(first), UNIT_PARTY, "premise: no party on Grid2 yet")
-    s = party_session(["ForeverUnitFrames", "Grid2"], saved=saved)
-    eq(grid2_party(s), UNIT_PARTY, "next login: Grid2 still waits")
-    run_timers(s)
-    run_timers(s)
-    eq((fuf_calls(s)[-1], grid2_party(s)), ("set party enabled off", GRID2_PARTY), "reconciled to Grid2 only")
-    nr = party_session(["ForeverUnitFrames", "Grid2"], saved=carry(first), ready=False)
-    run_timers(nr)
-    run_timers(nr)
-    eq((grid2_party(nr), party_state(nr)["state"]), (UNIT_PARTY, "fuf-pending"), "FUF not ready: Grid2 untouched, tried later")
+    groups = pb4_groups(saved)
+    groups["파티원 대상"]["enabled"] = False      # the user switched one group off in PitBull4
+    groups["파티원 소환수"]["enabled"] = False
+    set_grid2(saved, GRID2_HIDDEN)                 # and Grid2's party off in Grid2
+    saved["DevilForever_CoreDB"].setdefault("party", {})["owner"] = {"PitBull4/Default": "grid2"}   # an earlier record
+    s = party_session(["Grid2", "PitBull4"], saved=saved)
+    eq((s.sv("Grid2DB"), s.sv("PitBull4DB")), (saved["Grid2DB"], saved["PitBull4DB"]), "login writes nothing")
+    eq(auto_lines(s), [], "no chat line at login")
+    fuf = party_session(["ForeverUnitFrames", "Grid2"])
+    fsaved = carry(fuf)
+    fsaved["ForeverUnitFramesDB"]["profiles"]["Default"]["party"] = {"enabled": False}
+    again = party_session(["ForeverUnitFrames", "Grid2"], saved=fsaved)
+    run_timers(again)
+    eq((fuf_calls(again), again.sv("ForeverUnitFramesDB")["profiles"]["Default"]["party"]), ([], {"enabled": False}),
+       "FUF: no command at login")
 
 
 @case
-def party_command_applies_to_other_characters_at_login():
-    base = party_session(["PitBull4"])  # earlier install without Grid2
-    hero = party_session(["Grid2", "PitBull4"], saved=carry(base))
-    eq((party_record(hero), grid2_party(hero), pb4_enabled(hero)), ({}, UNIT_PARTY, PB4_ON), "no record: nothing changed")
-    alt0 = party_session(["Grid2", "PitBull4"], saved=carry(hero), player={"name": "Alt"})
-    eq(grid2_party(alt0, "Alt - Realm"), UNIT_PARTY, "no record: a new Grid2 profile keeps the unit frames' party")
-    lines = core["dfp"](hero, "party grid2")
-    eq((grid2_party(hero), pb4_enabled(hero), party_record(hero)), (GRID2_PARTY, PB4_OFF, {"PitBull4/Default": "grid2"}),
-       "Hero: both sides and the record")
-    eq(core["has_line"](lines, "PitBull4/Default", "다음 접속"), True, "says other characters follow at their next login")
-    eq(core["has_line"](lines, "/reload"), True, "says a reload shows it")
-    saved = carry(hero)
-    saved["Grid2DB"]["namespaces"]["Grid2Layout"]["profiles"]["Alt - Realm"] = \
-        alt0.sv("Grid2DB")["namespaces"]["Grid2Layout"]["profiles"]["Alt - Realm"]
-    saved["Grid2DB"]["profiles"]["Alt - Realm"] = alt0.sv("Grid2DB")["profiles"]["Alt - Realm"]
-    alt = party_session(["Grid2", "PitBull4"], saved=saved, player={"name": "Alt"})
-    eq(grid2_party(alt, "Alt - Realm"), GRID2_PARTY, "Alt's existing Grid2 profile follows the record at login")
-    core["dfp"](alt, "party unitframes")
-    back = party_session(["Grid2", "PitBull4"], saved=carry(alt))
-    eq((grid2_party(back), pb4_enabled(back)), (UNIT_PARTY, PB4_ON), "and back: Hero reconciled at login")
+def party_command_switches_unit_frame_party_and_counts_changes():
+    first = party_session(["Grid2", "PitBull4"])
+    saved = carry(first)
+    set_grid2(saved, GRID2_HIDDEN)
+    s = party_session(["Grid2", "PitBull4"], saved=saved)
+    lines = core["dfp"](s, "party off")
+    eq(pb4_enabled(s), PB4_OFF, "off: every party group off")
+    eq(core["has_line"](lines, "PitBull4 Default: 파티 그룹 3개 끔"), True, "names the three groups it changed: %r" % lines)
+    eq(core["has_line"](lines, "Grid2 Hero - Realm: 파티 보임", "파티 칸 None→By Group", "창 Raid→Grouped"), True,
+       "Grid2 brought to show the party, every value named: %r" % lines)
+    eq(grid2_party(s), GRID2_PARTY, "Grid2 shows party")
+    s.lua.execute("PitBull4DB.profiles.Default.groups['파티'].enabled = true")   # switched back on in PitBull4
+    lines = core["dfp"](s, "party off")
+    eq(core["has_line"](lines, "파티 그룹 1개 끔"), True, "counts only the group it changed: %r" % lines)
+    eq(core["has_line"](lines, "Grid2 Hero - Realm: 파티 보임 (이미 그럼)"), True, "Grid2 already shows party")
+    lines = core["dfp"](s, "party off")
+    eq(core["has_line"](lines, "파티 그룹 이미 모두 꺼짐"), True, "nothing changed: says so")
+    core["dfp"](s, "party on")
+    eq(pb4_enabled(s), PB4_ON, "on: every party group on")
+    core["dfp"](s, "party grid2")
+    eq(pb4_enabled(s), PB4_OFF, "earlier word grid2 = off")
+    core["dfp"](s, "party unitframes")
+    eq(pb4_enabled(s), PB4_ON, "earlier word unitframes = on")
+    shown = core["dfp"](s, "party")
+    eq((core["has_line"](shown, "PitBull4 Default: 파티 그룹 3개 중 3개 켜짐"), core["has_line"](shown, "Grid2 Hero - Realm: 파티 보임")),
+       (True, True), "/dfp party shows both sides: %r" % shown)
+    nxt = party_session(["Grid2", "PitBull4"], saved=carry(s))
+    eq((nxt.sv("PitBull4DB"), nxt.sv("Grid2DB")), (s.sv("PitBull4DB"), s.sv("Grid2DB")), "next login keeps the command's values")
+    eq(s.errors() + nxt.errors(), [], "no errors")
 
 
 @case
-def party_command_fuf_waits_for_fuf():
+def party_command_without_preset_converts_legacy_pet_group():
+    first = party_session(["Grid2", "PitBull4"])
+    saved = carry(first)
+    pb4_groups(saved)["파티원 소환수"] = {"enabled": False, "dfPartyRole": "hidden"}
+    s = party_session(["Grid2", "PitBull4"], saved=saved)
+    lines = core["dfp"](s, "party on")
+    pet = pb4_groups(s)["파티원 소환수"]
+    eq((pet["enabled"], pet["unit_group"], pet["dfPartyRole"], pet["layout"], pet["show_when"]["raid"]),
+       (True, "partypet", "partypet", "대상의대상", True), "earlier hidden pet group becomes the package's pet group")
+    eq(core["has_line"](lines, "파티원 소환수: 소환수 그룹으로 바꿈", "preset 배치 값 없음"), True, "says so: %r" % lines)
+
+
+@case
+def party_command_fuf_reads_back():
     first = party_session(["ForeverUnitFrames"])
     s = party_session(["ForeverUnitFrames", "Grid2"], saved=carry(first))
-    eq(party_record(s), {}, "existing FUF profile: no record")
-    lines = core["dfp"](s, "party grid2")
+    eq(core["has_line"](core["dfp"](s, "party on"), "Forever Unit Frames Default: 파티 이미 켜짐"), True, "already on")
+    lines = core["dfp"](s, "party off")
     eq(core["has_line"](lines, "명령 보냄"), True, "command sent")
-    eq(grid2_party(s), UNIT_PARTY, "Grid2 not yet")
+    eq(fuf_calls(s), ["set party hideBlizzardFrame on", "set party enabled off"], "FUF party off, Blizzard's hidden")
+    eq(party_state(s)["state"], "fuf-pending", "waits for the read-back")
     run_timers(s)
-    eq(grid2_party(s), GRID2_PARTY, "Grid2 after FUF stored it")
     eq(core["has_line"](prints(s), "Forever Unit Frames 파티 끔 확인"), True, "outcome printed")
+    eq(party_state(s)["state"], "applied", "read back")
+    core["dfp"](s, "party on")
+    eq(fuf_calls(s)[-1], "set party enabled on", "FUF party on")
     nr = party_session(["ForeverUnitFrames", "Grid2"], saved=carry(first), ready=False)
-    core["dfp"](nr, "party grid2")
+    core["dfp"](nr, "party off")
     run_timers(nr)
-    eq(grid2_party(nr), UNIT_PARTY, "FUF not ready: Grid2 untouched")
-    eq(core["has_line"](prints(nr), "아직 저장하지 않음"), True, "says it was not applied")
+    eq(core["has_line"](prints(nr), "아직 저장하지 않음", "/dfp party off"), True, "says it was not applied and what to do")
     gone = party_session(["ForeverUnitFrames", "Grid2"], saved=carry(first))
     gone.lua.execute("SlashCmdList.FOREVERUNITFRAMES = nil")
-    eq(core["dfp"](gone, "party grid2"), ["[DF 설정] 안 함: Forever Unit Frames: FUF 명령이 없음 — 바꾼 것 없음"],
+    eq(core["dfp"](gone, "party off"), ["[DF 설정] 안 함: Forever Unit Frames: FUF 명령이 없음 — 바꾼 것 없음"],
        "no FUF handler: refused")
-    eq(party_record(gone), {}, "no record made")
 
 
 @case
 def party_combat_and_two_unit_addons():
     base = party_session(["Grid2", "PitBull4"])
     s = party_session(["Grid2", "PitBull4"], saved=carry(base))
-    before = (s.sv("Grid2DB"), s.sv("PitBull4DB"), party_record(s))
+    before = (s.sv("Grid2DB"), s.sv("PitBull4DB"))
     s.combat(True)
-    eq(core["dfp"](s, "party unitframes"), ["[DF 설정] 안 함: 전투 중 — 바꾼 것 없음"], "refused in combat")
-    eq((s.sv("Grid2DB"), s.sv("PitBull4DB"), party_record(s)), before, "nothing written")
-    fuf = party_session(["ForeverUnitFrames", "Grid2"])
-    fuf.combat(True)
-    run_timers(fuf)
-    eq(fuf_calls(fuf), [], "FUF step waits for the end of combat")
-    fuf.combat(False)
-    run_timers(fuf)
-    eq(fuf_calls(fuf)[-1], "set party enabled off", "sent after combat")
+    eq(core["dfp"](s, "party off"), ["[DF 설정] 안 함: 전투 중 — 바꾼 것 없음"], "refused in combat")
+    eq((s.sv("Grid2DB"), s.sv("PitBull4DB")), before, "nothing written")
     both = party_session(["Grid2", "PitBull4", "ForeverUnitFrames"])
-    eq((party_record(both), party_state(both)["state"], grid2_party(both)), ({}, "not-settled", UNIT_PARTY),
-       "both unit-frame addons loaded: nothing")
-    eq(core["has_line"](core["dfp"](both, "party grid2"), "함께 켜져"), True, "command refused")
-    eq(core["has_line"](core["dfp"](s, "help"), "/dfp party"), True, "help names the command")
-    eq(core["dfp"](s, "party raid"), ["[DF 설정] /dfp party [grid2|unitframes]"], "unknown word")
+    eq(core["has_line"](core["dfp"](both, "party off"), "함께 켜져"), True, "command refused")
+    eq(core["has_line"](core["dfp"](s, "help"), "/dfp party [on|off]"), True, "help names the command")
+    eq(core["dfp"](s, "party raid"), ["[DF 설정] /dfp party [on|off]"], "unknown word")
 
 
 @case
@@ -565,109 +586,13 @@ def party_grid2_shared_default_profile_used():
     saved = carry(base)
     saved["Grid2DB"].setdefault("global", {})["defaultProfileName"] = "Shared"
     saved["Grid2DB"]["profileKeys"] = {}
+    saved["Grid2DB"]["namespaces"]["Grid2Layout"]["profiles"]["Shared"] = {"layouts": {"party": "None"}, "FrameDisplay": "Raid"}
     s = party_session(["Grid2", "PitBull4"], saved=saved, player={"name": "Alt"})
-    core["dfp"](s, "party unitframes")
-    eq(grid2_party(s, "Shared"), UNIT_PARTY, "written into the profile Grid2 uses (global.defaultProfileName)")
-    eq(core["has_line"](core["dfp"](s, "party"), "Grid2 Shared: 파티 안 보임"), True, "/dfp party shows it")
-
-
-@case
-def party_login_reconciles_ownership_not_values():
-    first = party_session(["Grid2", "PitBull4"])  # fresh install: record grid2
-    saved = carry(first)
-    lay = saved["Grid2DB"]["namespaces"]["Grid2Layout"]["profiles"]["Hero - Realm"]
-    lay["layouts"]["party"], lay["FrameDisplay"] = "By Group & Role", "Always"  # user's choices in Grid2
-    saved["PitBull4DB"]["profiles"]["Default"]["groups"]["파티원 소환수"]["enabled"] = True  # user re-enabled party pets
-    s = party_session(["Grid2", "PitBull4"], saved=saved)
-    eq((s.sv("Grid2DB"), s.sv("PitBull4DB")), (saved["Grid2DB"], saved["PitBull4DB"]),
-       "Grid2 layout, window and PitBull4 party pets kept: ownership unchanged")
-    # The main party group back on while the record says Grid2 is an ownership contradiction: reconciled.
-    again = carry(s)
-    again["PitBull4DB"]["profiles"]["Default"]["groups"]["파티"]["enabled"] = True
-    r = party_session(["Grid2", "PitBull4"], saved=again)
-    eq(pb4_enabled(r), PB4_OFF, "main party group on contradicts the record: party groups off together")
-    eq(r.sv("Grid2DB"), again["Grid2DB"], "Grid2 already shows party: its user layout kept")
-
-
-@case
-def party_command_cancels_pending_fuf_step():
-    s = party_session(["ForeverUnitFrames", "Grid2"])
-    eq(party_state(s)["state"], "fuf-pending", "premise: automatic FUF step waiting")
-    lines = core["dfp"](s, "party unitframes")
-    eq(core["has_line"](lines, "파티 이미 켜짐"), True, "FUF already draws the party")
-    run_timers(s)
-    run_timers(s)
-    eq(fuf_calls(s), [], "the pending automatic step did not run")
-    eq((grid2_party(s), party_record(s)), (UNIT_PARTY, {"ForeverUnitFrames/Default": "unitframes"}), "command kept")
-
-
-@case
-def party_pending_notice_once_per_session():
-    first = party_session(["ForeverUnitFrames", "Grid2"], ready=False)
-    run_timers(first)
-    run_timers(first)
-    notice = [l for l in prints(first) if "기록과 아직 다름" in l]
-    eq(len(notice), 1, "one chat line while FUF stays pending")
-    eq("/dfp party grid2" in notice[0], True, "says what to do")
-    s = party_session(["ForeverUnitFrames", "Grid2"], saved=carry(first), ready=False)
-    s.combat(True)
-    run_timers(s)
-    s.combat(False)
-    run_timers(s)
-    run_timers(s)
-    eq(len([l for l in prints(s) if "기록과 아직 다름" in l]), 1, "next session: one line again")
-
-
-@case
-def party_waits_for_unit_addon_via_legacy_enable_state():
-    s = Session(registry="generated", extra_files=())
-    s.lua.execute(PARTY_STUBS)
-    s.lua.execute("C_AddOns.GetAddOnEnableState = nil; TEST_legacy = {}; "
-                  "function GetAddOnEnableState(character, name) TEST_legacy[#TEST_legacy + 1] = character .. '|' .. name; "
-                  "return (name == 'PitBull4' or name == 'Grid2') and 2 or 0 end")
-    s.load_addon(ADDON)
-    s.load_addon("Grid2")
-    eq(party_record(s), {}, "Grid2 loaded, PitBull4 enabled but not loaded yet: waits")
-    s.load_addon("PitBull4")
-    s.fire("PLAYER_LOGIN")
-    eq(party_record(s), {"PitBull4/Default": "grid2"}, "settled once PitBull4 loaded")
-    eq("Hero|PitBull4" in list(core["to_py"](s.g.TEST_legacy).values()), True, "global API asked (character, name)")
-
-
-def auto_lines(s):
-    return [l for l in prints(s) if l.startswith("[DF 설정] 파티 프레임:")]
-
-
-@case
-def party_automatic_writes_named_once_per_session():
-    first = party_session(["Grid2", "PitBull4"])  # fresh install: groups off + Grid2 aligned
-    lines = auto_lines(first)
-    eq(len(lines), 1, "fresh install: one line for all automatic writes")
-    eq(all(p in lines[0] for p in ("PitBull4 Default 파티 그룹 끔", "창 Raid→Grouped", "/dfp party unitframes")), True,
-       "names the PitBull4 groups, the Grid2 window and the command: " + lines[0])
-    again = carry(first)
-    again["PitBull4DB"]["profiles"]["Default"]["groups"]["파티"]["enabled"] = True  # user turned it back on
-    r = party_session(["Grid2", "PitBull4"], saved=again)
-    lines = auto_lines(r)
-    eq((len(lines), "PitBull4 Default 파티 그룹 끔" in lines[0], "PitBull4/Default" in lines[0]), (1, True, True),
-       "automatic revert: exactly one line naming it and the record")
-    quiet = party_session(["Grid2", "PitBull4"], saved=carry(r))
-    eq(auto_lines(quiet), [], "nothing written: no line")
-    fuf = party_session(["ForeverUnitFrames", "Grid2"])
-    run_timers(fuf)
-    run_timers(fuf)
-    lines = auto_lines(fuf)
-    eq((len(lines), "Forever Unit Frames 파티 끔" in lines[0], "파티 칸 None→By Group" in lines[0]), (1, True, True),
-       "FUF step: one line after the read-back, Grid2 values named")
-
-
-@case
-def party_command_lists_window_change():
-    old = party_session(["Grid2", "PitBull4"])
-    s = party_session(["Grid2", "PitBull4"], saved=carry(old))
-    lines = core["dfp"](s, "party unitframes")
-    eq(core["has_line"](lines, "Grid2 Hero - Realm: 파티 안 보임", "파티 칸 By Group→None", "창 Grouped→Raid"), True,
-       "every changed Grid2 value, window included: %r" % lines)
+    eq(core["has_line"](core["dfp"](s, "party"), "Grid2 Shared: 파티 안 보임"), True, "/dfp party reads the shared profile")
+    core["dfp"](s, "party on")
+    p = s.sv("Grid2DB")["namespaces"]["Grid2Layout"]["profiles"]["Shared"]
+    eq((p["layouts"]["party"], p["FrameDisplay"]), ("By Group", "Grouped"),
+       "written into the profile Grid2 uses (global.defaultProfileName)")
 
 
 # Grid2 first-start template after the preset (Defaults/Grid2.lua hook) -------------------
@@ -705,21 +630,31 @@ end
 """
 
 
-def grid2_template_session(template, saved=None):
+GRID2_LOOKUP = r"""
+function Grid2:DbGetRegisteredProfileByName(name)
+  for index, info in pairs(self.defaultProfiles) do if info.name == name then return info, index end end
+end
+"""
+
+
+def grid2_template_session(template, saved=None, lookup=False):
     globals_ = dict(SCREEN)
     globals_["ChatFontNormal"] = {"GetFont": lambda self: ("Fonts\\x.ttf", 14)}
     s = Session(registry="generated", extra_files=(), saved=saved, globals_=globals_, collection_presets=True)
     s.lua.execute("function GetPhysicalScreenSize() return 1920, 1080 end")
     s.load_addon(ADDON)
     s.lua.execute(GRID2_STUB)
+    if lookup:
+        s.lua.execute(GRID2_LOOKUP)  # GridDefaults.lua DbGetRegisteredProfileByName
     s.lua.execute('TEST_meta.Grid2 = {Version = "4.1.13"}')  # Grid2.toc ## Version, read by Presets
     for rel in ("ProfileClassic.lua", "ProfileModern.lua", "ProfileBlizzard.lua"):
         src = open(os.path.join(GRID2_OPTIONS, "profiles", rel), "rb").read()
         fn = s.lua.eval("loadstring")(src, ("@" + rel).encode())
         (fn[0] if isinstance(fn, tuple) else fn)()
     s.load_addon("Grid2")   # Core's handlers: defaults, preset fragments, the template hook
-    s.lua.execute("Grid2:MakeDatabaseDefaults()")   # OnEnable -> LoadConfig: dialog opens, nothing applied
-    s.lua.execute("Grid2.defaultProfileIndex = %d; Grid2:MakeDatabaseDefaults()" % template)  # the player's pick
+    s.lua.execute("Grid2:MakeDatabaseDefaults()")   # OnEnable -> LoadConfig: dialog opens unless Core picks
+    if template is not None:
+        s.lua.execute("Grid2.defaultProfileIndex = %d; Grid2:MakeDatabaseDefaults()" % template)  # the player's pick
     s.fire("PLAYER_LOGIN")
     s.fire("PLAYER_ENTERING_WORLD", True, False)
     return s
@@ -765,6 +700,17 @@ def grid2_preset_values_survive_first_start_template():
            preset + ": proposal text-center %d" % size)
 
 
+@case
+def grid2_first_start_template_picked_without_dialog():
+    s = grid2_template_session(None, lookup=True)
+    db = s.sv("Grid2DB")
+    eq(s.g.DIALOG_OPENED, 0, "no first-start dialog")
+    eq(db["profiles"]["Hero - Realm"]["__template"], "Modern", "Modern template applied at the first call")
+    frame = db["namespaces"]["Grid2Frame"]["profiles"]["Hero - Realm"]
+    eq((frame["frameWidth"], frame["frameHeight"]), (96, 32), "preset cell size written again after the template")
+    eq(s.errors(), [], "no errors")
+
+
 GRID2_NAME_TEXT = {"Classic": "text-down", "Modern": "text-center", "Blizzard": "text-name"}
 GRID2_OTHER_TEXT = {"Classic": {"text-up": 9}, "Modern": {}, "Blizzard": {}}
 
@@ -807,7 +753,7 @@ def pitbull4_preset_positions_only_into_existing_units():
     eq(all(name in fresh_units for name in ("플레이어 아래 대상", "플레이어 아래 대상의 대상")), True,
        "fresh receipt v1 then v2 creates both rows")
     receipt = fresh.sv("DevilForever_CoreDB")["preset"]["fragments"]["fhd"]
-    eq(receipt["PitBull4DB@profile:Default"], 4, "complete companion-chain fragment owns version4 receipt")
+    eq(receipt["PitBull4DB@profile:Default"], 5, "the party-groups fragment, written last, owns the version 5 receipt")
     unchanged = pb4_preset_session(saved=carry(s))
     eq(unchanged.sv("PitBull4DB"), s.sv("PitBull4DB"), "plain reload keeps completed profile")
     eq("position_x" in units["대상"], True, "the existing unit gets its position")
@@ -821,38 +767,140 @@ def pitbull4_preset_positions_only_into_existing_units():
 
 
 @case
-def pitbull4_managed_party_roles_follow_owner_and_old_pet_stays_hidden():
-    # Actual collection presets create the three complete headers, including on an old profile.
-    first = pb4_preset_session()
-    saved = carry(first)
-    saved.setdefault("DevilForever_CoreDB", {}).setdefault("party", {})["owner"] = {"PitBull4/Default": "grid2"}
-    s = party_session(["Grid2", "PitBull4"], saved=saved)
+def pitbull4_party_pet_group_beside_party_in_every_preset():
+    s = pb4_preset_session()
     groups = s.sv("PitBull4DB")["profiles"]["Default"]["groups"]
-    names = ("파티", "파티원 대상", "파티원 대상의 대상")
-    eq([groups[n]["enabled"] for n in names], [False]*3, "Grid2 default suppresses all three managed headers")
-    core["dfp"](s, "party unitframes")
-    groups = s.sv("PitBull4DB")["profiles"]["Default"]["groups"]
-    eq([groups[n]["enabled"] for n in names], [True]*3, "local unitframes choice enables all three")
-    eq(groups["파티원 소환수"]["enabled"], False, "legacy pet stays hidden")
+    pet = groups["파티원 소환수"]
+    eq((pet["enabled"], pet["unit_group"], pet["dfPartyRole"], "use_pet_header" in pet, pet["layout"]),
+       (True, "partypet", "partypet", False, "대상의대상"), "fresh install: party pet group on with its own layout")
+    eq(pet["position_y"], groups["파티"]["position_y"], "pet column starts at the party's first row")
+    eq(pet["position_x"] > groups["파티원 대상"]["position_x"], True, "pet column right of the party targets")
+    names = ("파티", "파티원 대상", "파티원 대상의 대상", "파티원 소환수")
+    for preset in ("fhd", "qhd", "uhd"):
+        d = core["to_py"](s.core.Presets.Get(s.core.Presets, preset))
+        rows = [f["values"]["groups"] for f in d["fragments"].values()
+                if f["folder"] == "PitBull4" and not f.get("namespace") and "groups" in f["values"]
+                and "파티원 소환수" in f["values"]["groups"]]
+        eq(len(rows) >= 2, True, preset + ": pet group in the full and the added-groups fragment")
+        for g in rows:
+            p, party, target = g["파티원 소환수"], g["파티"], g["파티원 대상"]
+            eq((p["enabled"], p["unit_group"], "use_pet_header" in p, p["layout"]), (True, "partypet", False, "대상의대상"),
+               preset + ": pet group values")
+            eq((p["position_y"] == party["position_y"], p["position_x"] > target["position_x"] + target["size_x"]),
+               (True, True), preset + ": pet column beside the party target column")
+            eq(all(g[n]["show_when"]["raid"] and g[n]["show_when"]["raid40"] and not g[n]["show_when"]["solo"]
+                   for n in names), True, preset + ": party groups in party and raid")
     old = carry(s)
-    old["PitBull4DB"]["profiles"]["Default"]["groups"]["파티원 대상의 대상"]["enabled"] = False
-    fixed = party_session(["Grid2", "PitBull4"], saved=old)
-    eq(fixed.sv("PitBull4DB")["profiles"]["Default"]["groups"]["파티원 대상의 대상"]["enabled"], True,
-       "managed child contradiction is repaired even while the main header matches")
-    core["dfp"](fixed, "party grid2")
-    core["dfp"](fixed, "party unitframes")
-    eq(fixed.sv("PitBull4DB")["profiles"]["Default"]["groups"]["파티원 소환수"]["enabled"], False, "commands keep pet hidden")
-    old = {"PitBull4DB": {"profileKeys": {"Hero - Realm": "Default"}, "profiles": {"Default": {"units": {}, "groups": {}}}}}
-    unrequested = pb4_preset_session(saved=old)
-    eq(unrequested.sv("PitBull4DB"), old["PitBull4DB"], "unrequested profile gains nothing")
-    core["dfp"](unrequested, "preset fhd"); core["dfp"](unrequested, "go")
-    applied = pb4_preset_session(saved=carry(unrequested))
-    groups = applied.sv("PitBull4DB")["profiles"]["Default"]["groups"]
-    eq(sorted(groups), sorted(names), "explicit preset creates exactly the three complete headers")
-    for name, role in zip(names, ("party", "partytarget", "partytargettarget")):
-        eq((groups[name]["unit_group"], groups[name]["include_player"], groups[name]["show_when"]["party"]),
-           (role, False, True), "four companions, not self, native party only")
-    eq(first.errors()+s.errors()+fixed.errors()+applied.errors(), [], "no errors")
+    old["PitBull4DB"]["profiles"]["Default"]["groups"]["파티원 소환수"] = {"enabled": False, "dfPartyRole": "hidden"}
+    plain = pb4_preset_session(saved=old)
+    eq(plain.sv("PitBull4DB")["profiles"]["Default"]["groups"]["파티원 소환수"], {"enabled": False, "dfPartyRole": "hidden"},
+       "existing profile: login keeps the earlier hidden pet group")
+    core["dfp"](plain, "preset fhd"); core["dfp"](plain, "go")
+    applied = pb4_preset_session(saved=carry(plain))
+    pet = applied.sv("PitBull4DB")["profiles"]["Default"]["groups"]["파티원 소환수"]
+    eq((pet["enabled"], pet["dfPartyRole"], pet["unit_group"]), (True, "partypet", "partypet"),
+       "explicit preset makes it the package's pet group")
+    eq(s.errors() + plain.errors() + applied.errors(), [], "no errors")
+
+
+RAID_OFF = {"solo": False, "party": True, "raid": False, "raid10": False, "raid15": False, "raid20": False,
+            "raid25": False, "raid30": False, "raid40": False}
+
+
+@case
+def party_command_brings_015_profile_to_the_new_design():
+    fresh = pb4_preset_session()
+    want = fresh.sv("PitBull4DB")["profiles"]["Default"]["groups"]["파티원 소환수"]
+    saved = carry(fresh)
+    profile = saved["PitBull4DB"]["profiles"]["Default"]
+    for name in ("파티", "파티원 대상", "파티원 대상의 대상"):   # 0.1.5: party only, switched off for Grid2
+        profile["groups"][name]["enabled"] = False
+        profile["groups"][name]["show_when"] = dict(RAID_OFF)
+    profile["groups"]["파티"]["position_x"] = 999          # the user's own placement
+    profile["groups"]["파티원 소환수"] = {"enabled": False, "dfPartyRole": "hidden"}
+    profile["dfGeometry"]["groups"].pop("파티원 소환수", None)
+    s = pb4_preset_session(saved=saved)
+    eq(s.sv("PitBull4DB")["profiles"]["Default"]["groups"], profile["groups"], "login writes nothing (no automatic upgrade)")
+    lines = core["dfp"](s, "party on")
+    groups = s.sv("PitBull4DB")["profiles"]["Default"]["groups"]
+    eq([groups[n]["enabled"] for n in sorted(groups)], [True] * 4, "every party group on")
+    eq(all(groups[n]["show_when"]["raid"] and groups[n]["show_when"]["raid40"] and not groups[n]["show_when"]["solo"]
+           for n in groups), True, "party and raid, not solo")
+    pet = groups["파티원 소환수"]
+    eq((pet["unit_group"], pet["dfPartyRole"], pet["layout"]), ("partypet", "partypet", "대상의대상"), "package pet group")
+    eq(all(abs(pet[k] - want[k]) < 1e-9 for k in ("position_x", "position_y", "size_x", "size_y", "vertical_spacing")), True,
+       "missing placement from the fhd preset")
+    eq(groups["파티"]["position_x"], 999, "the user's placement kept")
+    geometry = s.sv("PitBull4DB")["profiles"]["Default"]["dfGeometry"]["groups"]
+    eq("파티원 소환수" in geometry, True, "pet group joins the run-time rescale")
+    eq((core["has_line"](lines, "PitBull4 Default: 파티 그룹 4개 켬"), core["has_line"](lines, "그중 4개는 공격대에서도"),
+        core["has_line"](lines, "파티원 소환수: 소환수 그룹으로 바꿈", "fhd preset 값")), (True, True, True), "%r" % lines)
+    eq(core["has_line"](core["dfp"](s, "party on"), "파티 그룹 이미 모두 켜짐"), True, "second time: nothing changed")
+    off = core["dfp"](s, "party off")
+    eq((core["has_line"](off, "파티 그룹 4개 끔"), core["has_line"](off, "공격대에서도")), (True, False), "off counts only enabled: %r" % off)
+    eq(s.sv("PitBull4DB")["profiles"]["Default"]["groups"]["파티"]["show_when"]["raid"], True, "show_when stays the design")
+    after = pb4_preset_session(saved=carry(s))
+    eq(after.sv("PitBull4DB")["profiles"]["Default"]["groups"], s.sv("PitBull4DB")["profiles"]["Default"]["groups"],
+       "next login keeps it")
+    eq(core["has_line"](core["dfp"](after, "preset fhd"), "PitBull4 파티 그룹도 켬"), True, "explicit preset says it turns them on")
+    eq(fresh.errors() + s.errors() + after.errors(), [], "no errors")
+
+
+def pb4_grid2_session(saved=None):
+    globals_ = dict(SCREEN)
+    globals_["ChatFontNormal"] = {"GetFont": lambda self: ("Fonts\\x.ttf", 14)}
+    s = Session(registry="generated", extra_files=(), saved=saved, globals_=globals_, collection_presets=True)
+    s.lua.execute("function GetPhysicalScreenSize() return 1920, 1080 end")
+    s.lua.execute('TEST_meta.PitBull4 = {Version = "v4.2.50-forever.1"}; TEST_meta.Grid2 = {Version = "4.1.13"}')
+    s.boot(after=["PitBull4", "Grid2"])
+    return s
+
+
+def grid2_spot(s):
+    p = s.sv("Grid2DB")["namespaces"]["Grid2Layout"]["profiles"]["Hero - Realm"]
+    return (p.get("anchor"), round(p["PosX"] / PIXEL_FACTOR, 6), round(p["PosY"] / PIXEL_FACTOR, 6))
+
+
+@case
+def party_command_moves_grid2_only_from_the_earlier_default_spot():
+    fresh = pb4_grid2_session()
+    eq(grid2_spot(fresh), ("TOP", 0, -140), "new install: fhd preset spot, top centre")
+    eq(any("Grid2 창" in l for l in core["dfp"](fresh, "party on")), False, "already at the preset spot: no position line")
+    for spot, moved in (((None, 24, -164), True), (("TOPLEFT", 24.4, -163.6), True), (("TOPLEFT", 300, -164), False)):
+        saved = carry(fresh)
+        lay = saved["Grid2DB"]["namespaces"]["Grid2Layout"]["profiles"]["Hero - Realm"]
+        if spot[0] is None:
+            lay.pop("anchor", None)       # AceDB drops a value equal to Grid2's default (TOPLEFT)
+        else:
+            lay["anchor"] = spot[0]
+        lay["PosX"], lay["PosY"] = spot[1] * PIXEL_FACTOR, spot[2] * PIXEL_FACTOR
+        s = pb4_grid2_session(saved=saved)
+        before = grid2_spot(s)
+        eq(core["dfp"](s, "party off") and grid2_spot(s), before, "off never moves the window")
+        lines = core["dfp"](s, "party on")
+        if moved:
+            eq(grid2_spot(s), ("TOP", 0, -140), "earlier default %r: moved to the preset spot" % (spot,))
+            eq(core["has_line"](lines, "Grid2 창: 예전 기본 자리 → fhd preset"), True, "%r" % lines)
+        else:
+            eq(grid2_spot(s), before, "a window the user moved stays")
+            eq(core["has_line"](lines, "Grid2 창은 예전 기본 자리가 아니라서 그대로"), True, "%r" % lines)
+        nxt = pb4_grid2_session(saved=carry(s))
+        eq(grid2_spot(nxt), grid2_spot(s), "login moves nothing")
+        eq(s.errors() + nxt.errors(), [], "no errors")
+
+
+@case
+def party_groups_kept_notice_points_to_party_command():
+    fresh = pb4_preset_session()
+    saved = carry(fresh)
+    saved["DevilForever_CoreDB"]["preset"]["fragments"]["fhd"]["PitBull4DB@profile:Default"] = 4   # a 0.1.5 receipt
+    saved["DevilForever_CoreDB"]["preset"].pop("keptNotice", None)
+    s = pb4_preset_session(saved=saved)
+    lines = [l for l in prints(s) if "preset" in l or "파티 그룹" in l]
+    eq(core["has_line"](lines, "PitBull4 파티 그룹", "/dfp party on"), True, "party groups: the light command: %r" % lines)
+    eq(any("/dfp preset fhd 으로 쓸 수 있음" in l for l in lines), False, "no heavy preset hint for them alone: %r" % lines)
+    again = pb4_preset_session(saved=carry(s))
+    eq([l for l in prints(again) if "/dfp party on" in l], [], "printed once")
 
 
 @case

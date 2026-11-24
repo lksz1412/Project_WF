@@ -12,11 +12,13 @@
 -- change. Grid2's group types (GridRoster.lua GroupChanged): solo, party, arena, raid; display
 -- "Grouped" shows the window in every type but solo (GridLayout.lua UpdateVisibility).
 -- Not set here: indicators and statuses (role icons, dispellable-debuff border, buff/HoT icons)
--- come from the profile template the player picks in Grid2's own first-start dialog, which runs
--- because versions.Grid2 is left unset. The templates Classic (preselected), Modern and Blizzard
--- (Grid2Options/profiles) all map border <- debuffs-DispellableByMe, alpha <- range and the
--- health bar <- heals-incoming; the minimal "Empty" template has the range fade only. Values
--- written here would not survive: the template assigns whole indicator and statusMap entries.
+-- come from Grid2's profile template, applied because versions.Grid2 is left unset. Grid2 would
+-- ask for it in a first-start dialog (reopened every second, Grid2's window hidden until a
+-- pick); the hook below picks Modern (else Classic) for it, so no dialog opens. The templates
+-- Classic, Modern and Blizzard (Grid2Options/profiles) all map border <- debuffs-DispellableByMe,
+-- alpha <- range and the health bar <- heals-incoming; the minimal "Empty" template has the range
+-- fade only. Values written here would not survive: the template assigns whole indicator and
+-- statusMap entries.
 -- Also not set: the raid layout (Grid2's "By Group"); unit button clicks (Grid2's left =
 -- target, right = menu; no click casting — R97, mouseover macros use the buttons' unit
 -- attribute); key bindings; appearance.
@@ -40,21 +42,28 @@ DevilForever_Core.Defaults:Register("Grid2", {
       namespace = "Grid2Layout",
       profile = "$char",
       values = {
-        -- the unit frames own solo and party here; Party.lua moves the party to Grid2 (layout
-        -- "By Group" for party and arena, window "Grouped") when this profile and the unit-frame
-        -- profile are both new, or on /dfp party grid2
+        -- party and raid on Grid2 (healer mouseover), next to the unit frames' own party;
+        -- nothing solo
         layouts = {
           solo = "None",
-          party = "None",
-          arena = "None",
+          party = "By Group",
+          arena = "By Group",
         },
-        FrameDisplay = "Raid",   -- window hidden outside a raid (no empty frame box)
+        FrameDisplay = "Grouped",   -- window in party, arena and raid, hidden solo (no empty frame box)
+        minimapIcon = {
+          hide = true,   -- Grid2LDB's minimap button (Grid2Layout's shared value) off; /grid2 minimapicon show shows it
+        },
       },
     },
   },
 })
 
--- Grid2's first-start template (the profile chosen in Grid2's dialog, written by
+-- Grid2:MakeDatabaseDefaults() without a chosen template (Grid2.defaultProfileIndex nil)
+-- loads Grid2Options and opens the first-start dialog. The hook sets the index of the
+-- registered template "Modern" (else "Classic") first, after loading Grid2Options when
+-- needed (Grid2 does the same load), so the template is applied at once; when neither is
+-- registered Grid2's dialog opens as before.
+-- Grid2's first-start template (written by
 -- Grid2:MakeDatabaseDefaults after the preset fragments) assigns Grid2Frame and
 -- Grid2Layout keys such as frameWidth/frameHeight/frameBorder/Padding. The method
 -- returns true when it applied a template (false when it only opened the
@@ -109,12 +118,29 @@ local function reapplyAfterTemplate()
   end
 end
 
+local TEMPLATES = {"Modern", "Classic"}
+
+local function pickTemplate(grid2)
+  if type(grid2.DbGetRegisteredProfileByName) ~= "function" then return end
+  local load = C_AddOns and C_AddOns.LoadAddOn or LoadAddOn
+  if _G.Grid2Options == nil and type(load) == "function" then pcall(load, "Grid2Options") end
+  for _, name in ipairs(TEMPLATES) do
+    local info, index = grid2:DbGetRegisteredProfileByName(name)
+    if info and type(index) == "number" then
+      grid2.defaultProfileIndex = index
+      Core:Log("info", "Defaults:Grid2", "first-start template " .. name .. " picked (no dialog)")
+      return
+    end
+  end
+end
+
 Core:On("ADDON_LOADED", function(_, folder)
   if folder ~= "Grid2" then return end
   local grid2 = _G.Grid2
   local make = type(grid2) == "table" and grid2.MakeDatabaseDefaults
   if type(make) == "function" then
     grid2.MakeDatabaseDefaults = function(self, ...)
+      if self.defaultProfileIndex == nil then pickTemplate(self) end
       local applied = make(self, ...)
       if applied then reapplyAfterTemplate() end
       return applied

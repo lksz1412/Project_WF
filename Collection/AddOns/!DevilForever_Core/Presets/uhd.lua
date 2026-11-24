@@ -466,10 +466,10 @@ local proposal = {profile = {units = {
   ["플레이어의 소환수의 대상의 대상"] = {enabled=true,unit="pettargettarget",layout="소환수와 주시 아래",dfCompanionChain=true,anchor="TOPLEFT",relative_point="TOPLEFT",relative_to="0",position_x=1217*pixel,position_y=-1309*pixel,scale=1,size_x=1,size_y=1,font_multiplier=1},
   ["주시 대상의 대상의 대상"] = {enabled=true,unit="focustargettarget",layout="소환수와 주시 아래",dfCompanionChain=true,anchor="TOPRIGHT",relative_point="TOPRIGHT",relative_to="0",position_x=-1217*pixel,position_y=-1309*pixel,scale=1,size_x=1,size_y=1,font_multiplier=1},
 }, groups = {
-  ["파티"]={enabled=true,exists=true,unit_group="party",dfPartyRole="party",layout="데빌 파티",include_player=false,units_per_column=4,sort_method="INDEX",sort_direction="ASC",group_by=false,group_filter=false,show_when={solo=false,party=true,raid=false,raid10=false,raid15=false,raid20=false,raid25=false,raid30=false,raid40=false},anchor="TOPLEFT",relative_point="TOPLEFT",relative_to="0",position_x=52*pixel,position_y=-92*pixel,scale=1,size_x=400/400,size_y=96/96,direction="down_right",vertical_spacing=54,horizontal_spacing=8},
-  ["파티원 대상"]={enabled=true,exists=true,unit_group="partytarget",dfPartyRole="partytarget",layout="대상의대상",include_player=false,units_per_column=4,sort_method="INDEX",sort_direction="ASC",group_by=false,group_filter=false,show_when={solo=false,party=true,raid=false,raid10=false,raid15=false,raid20=false,raid25=false,raid30=false,raid40=false},anchor="TOPLEFT",relative_point="TOPLEFT",relative_to="0",position_x=460*pixel,position_y=-92*pixel,scale=1,size_x=200/190,size_y=42/36,direction="down_right",vertical_spacing=108,horizontal_spacing=8},
-  ["파티원 대상의 대상"]={enabled=true,exists=true,unit_group="partytargettarget",dfPartyRole="partytargettarget",layout="대상의대상",include_player=false,units_per_column=4,sort_method="INDEX",sort_direction="ASC",group_by=false,group_filter=false,show_when={solo=false,party=true,raid=false,raid10=false,raid15=false,raid20=false,raid25=false,raid30=false,raid40=false},anchor="TOPLEFT",relative_point="TOPLEFT",relative_to="0",position_x=460*pixel,position_y=-138*pixel,scale=1,size_x=200/190,size_y=42/36,direction="down_right",vertical_spacing=108,horizontal_spacing=8},
-  ["파티원 소환수"]={enabled=false,dfPartyRole="hidden"},
+  ["파티"]={enabled=true,exists=true,unit_group="party",dfPartyRole="party",layout="데빌 파티",include_player=false,units_per_column=4,sort_method="INDEX",sort_direction="ASC",group_by=false,group_filter=false,show_when={solo=false,party=true,raid=true,raid10=true,raid15=true,raid20=true,raid25=true,raid30=true,raid40=true},anchor="TOPLEFT",relative_point="TOPLEFT",relative_to="0",position_x=52*pixel,position_y=-92*pixel,scale=1,size_x=400/400,size_y=96/96,direction="down_right",vertical_spacing=54,horizontal_spacing=8},
+  ["파티원 대상"]={enabled=true,exists=true,unit_group="partytarget",dfPartyRole="partytarget",layout="대상의대상",include_player=false,units_per_column=4,sort_method="INDEX",sort_direction="ASC",group_by=false,group_filter=false,show_when={solo=false,party=true,raid=true,raid10=true,raid15=true,raid20=true,raid25=true,raid30=true,raid40=true},anchor="TOPLEFT",relative_point="TOPLEFT",relative_to="0",position_x=460*pixel,position_y=-92*pixel,scale=1,size_x=200/190,size_y=42/36,direction="down_right",vertical_spacing=108,horizontal_spacing=8},
+  ["파티원 대상의 대상"]={enabled=true,exists=true,unit_group="partytargettarget",dfPartyRole="partytargettarget",layout="대상의대상",include_player=false,units_per_column=4,sort_method="INDEX",sort_direction="ASC",group_by=false,group_filter=false,show_when={solo=false,party=true,raid=true,raid10=true,raid15=true,raid20=true,raid25=true,raid30=true,raid40=true},anchor="TOPLEFT",relative_point="TOPLEFT",relative_to="0",position_x=460*pixel,position_y=-138*pixel,scale=1,size_x=200/190,size_y=42/36,direction="down_right",vertical_spacing=108,horizontal_spacing=8},
+  ["파티원 소환수"]={enabled=true,exists=true,unit_group="partypet",dfPartyRole="partypet",layout="대상의대상",include_player=false,units_per_column=4,sort_method="INDEX",sort_direction="ASC",group_by=false,group_filter=false,show_when={solo=false,party=true,raid=true,raid10=true,raid15=true,raid20=true,raid25=true,raid30=true,raid40=true},anchor="TOPLEFT",relative_point="TOPLEFT",relative_to="0",position_x=668*pixel,position_y=-92*pixel,scale=1,size_x=200/190,size_y=42/36,direction="down_right",vertical_spacing=108,horizontal_spacing=8},
 }, layouts = {
   ["보통"] = {size_x=512, size_y=144, scale=pixel, strata="LOW", level=2, font="Devil Forever devil", font_size=22/baseline, bar_texture="Devil Forever PitBull Glamour7", bar_padding=1, bar_spacing=1, indicator_root_outside_margin=8},
   ["대상"] = {size_x=512, size_y=144, scale=pixel, strata="LOW", level=2, font="Devil Forever devil", font_size=22/baseline, bar_texture="Devil Forever PitBull Glamour7", bar_padding=1, bar_spacing=1},
@@ -615,16 +615,17 @@ return proposal
     for _, name in ipairs({"플레이어 아래 대상", "플레이어 아래 대상의 대상"}) do addedUnits[name] = proposal.profile.units[name] end
     def.fragments[#def.fragments + 1] = {folder="PitBull4",savedVariable="PitBull4DB",addonVersion="v4.2.50-forever.1",
       version=2,section="profile",profile="Default",values={units=addedUnits}}
-    local addedGroups = {}
-    for _, name in ipairs({"파티", "파티원 대상", "파티원 대상의 대상"}) do addedGroups[name] = proposal.profile.groups[name] end
-    def.fragments[#def.fragments + 1] = {folder="PitBull4",savedVariable="PitBull4DB",addonVersion="v4.2.50-forever.1",
-      version=3,section="profile",profile="Default",values={groups=addedGroups}}
     local companionChains = {}
     for _, name in ipairs({"플레이어의 소환수의 대상", "플레이어의 소환수의 대상의 대상", "주시 대상의 대상", "주시 대상의 대상의 대상"}) do
       companionChains[name] = proposal.profile.units[name]
     end
     def.fragments[#def.fragments + 1] = {folder="PitBull4",savedVariable="PitBull4DB",addonVersion="v4.2.50-forever.1",
       version=4,section="profile",profile="Default",values={units=companionChains}}
+    -- The four complete party groups (pet group included); last, so its version is the receipt the profile keeps.
+    local addedGroups = {}
+    for _, name in ipairs({"파티", "파티원 대상", "파티원 대상의 대상", "파티원 소환수"}) do addedGroups[name] = proposal.profile.groups[name] end
+    def.fragments[#def.fragments + 1] = {folder="PitBull4",savedVariable="PitBull4DB",addonVersion="v4.2.50-forever.1",
+      version=5,section="profile",profile="Default",values={groups=addedGroups}}
     for _, namespace in ipairs({"Portrait", "Border", "Aura", "LuaTexts", "CastBar"}) do
       def.fragments[#def.fragments + 1] = {folder="PitBull4",savedVariable="PitBull4DB",addonVersion="v4.2.50-forever.1",
         version=1,section="profile",profile="Default",namespace=namespace,values=proposal.namespaces[namespace]}
@@ -726,7 +727,7 @@ if not pixel then
   DevilForever_Core:Log("skip", "Feature appearance", "physical pixel factor unavailable at proposal evaluation")
   return {}
 end
-return {["namespaces"]={["Grid2Frame"]={["frameWidth"]=154,["frameHeight"]=56,["frameBorder"]=4,["frameBorderDistance"]=0,["frameBorderColor"]={["r"]=0.57,["g"]=0.58,["b"]=0.59,["a"]=1},["frameTexture"]="Devil Forever devil",["font"]="Devil Forever devil",["fontSize"]=18,["iconSize"]=28,["orientation"]="HORIZONTAL"},["Grid2Layout"]={["ScaleSize"]=pixel,["Padding"]=6,["Spacing"]=0,["horizontal"]=false,["anchor"]="TOPLEFT",["groupAnchor"]="TOPLEFT",["PosX"]=80*factor,["PosY"]=-240*factor,["BorderTexture"]="None",["BackgroundTexture"]="None"}},["indicators"]={["text-center"]={["font"]="Devil Forever devil",["fontSize"]=18},["icon-center"]={["size"]=26},["icon-left"]={["size"]=22},["icon-right"]={["size"]=22}}}
+return {["namespaces"]={["Grid2Frame"]={["frameWidth"]=154,["frameHeight"]=56,["frameBorder"]=4,["frameBorderDistance"]=0,["frameBorderColor"]={["r"]=0.57,["g"]=0.58,["b"]=0.59,["a"]=1},["frameTexture"]="Devil Forever devil",["font"]="Devil Forever devil",["fontSize"]=18,["iconSize"]=28,["orientation"]="HORIZONTAL"},["Grid2Layout"]={["ScaleSize"]=pixel,["Padding"]=6,["Spacing"]=0,["horizontal"]=false,["anchor"]="TOP",["groupAnchor"]="TOPLEFT",["PosX"]=0,["PosY"]=-212*factor,["BorderTexture"]="None",["BackgroundTexture"]="None"}},["indicators"]={["text-center"]={["font"]="Devil Forever devil",["fontSize"]=18},["icon-center"]={["size"]=26},["icon-left"]={["size"]=22},["icon-right"]={["size"]=22}}}
   end)
   if ok and type(proposal) == "table" and next(proposal) then
     def.fragments[#def.fragments + 1] = { folder = "Grid2", savedVariable = "Grid2DB", addonVersion = "4.1.13", version = 1, section = "profile", profile = "$char", namespace = "Grid2Frame", values = proposal.namespaces["Grid2Frame"] }

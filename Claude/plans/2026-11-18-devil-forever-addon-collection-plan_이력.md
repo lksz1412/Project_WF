@@ -105,3 +105,14 @@ Phase 24: Codex final-mockup brief appearance-24.md written and reviewed (middle
 ## Phase 25 끝 정리 (2026-11-20 10:51:47 +0900)
 
 Phase 25: Codex 0.1.4 검토판을 감사(Step 44)하고 Fable 독립 검수 세 번(Step 45)을 거쳐 Codex 가지를 기본으로 합쳤다(40a). 파티·공격대를 Grid2 로 통일하고 파티 담당을 기록·맞춤(40b), 실행 부담을 줄이고 적 소환수·주술사 토템을 넣고(40c), 제3자 원본+patch 구조와 단일 빌드로 0.1.5 ZIP 두 판을 만들었다(40d). 게임 안 동작은 Codex 한 접속 확인 전까지 미검증이다. Result = `Claude/results/PHASE_25_codex-merge-and-0.1.5_RESULT.md`.
+
+## Phase 26 Correction History (Phase 26 끝에 옮김)
+
+| 날짜 | 반영 | 근거 |
+|---|---|---|
+| 2026-11-24 | 사용자 결정 바뀜: 파티는 PitBull4 좌측 상단 세로 배치(공격대에서도 유지), Grid2 는 파티·공격대 모두 켬(힐러 마우스오버) — R118 「한 프레임으로 통일」 대체 · FUF 판 반쯤 포기, PitBull4 기반 — R110 ① 비교 대체 · 대상의 소환수 생략(Codex 대장 G77-64) — R120 대체 · 판 번호 = 내용물 완성 기준(설치기 무관) 0.1.5. 반영은 다음 Phase(Codex 가지 codex/live-015-pitbull-20261124 검토·합치기) | R130 · Codex 대장 G77-1…76 |
+| 2026-11-24 | Step 47 범위 바뀜: 테마 전환 서체 Allura·전투 중 화살표 흐림(R134·R135·R141), Quartz 스윙 = 사냥꾼만·보조무기 바 없음(R140), Hekili 보류(R144 ⑥), 파티 하위 창은 처음 설치·명시 명령 때만 기록·소환수 창 켬(R145·R146), Grid2 기본 자리 화면 위 가운데(겹침 해소, Step 47 검수) | REQUEST_LEDGER_phase26.md R134–R147 · Step 47 이력 |
+
+## Phase 26 끝 정리 (2026-11-24 19:10:54 +0900)
+
+Phase 26: Codex 실게임 조정판(d8b63f59)을 합치고(Step 47), 상태띠 테마 전환 그림 발주문을 쓰고 고쳤다(Step 46·49 — 서체 Allura, 전투 중 화살표 흐림, 서체 파일 동봉). 사용자 요청 R133 으로 자체·수정 애드온, 원본 애드온, Quartz 스윙을 검토만 했고(Step 48 — 중대 1[Hekili, 보류] · 중간 7), 그 결과를 Step 47 에서 고쳤다: 파티 = PitBull4 + Grid2 동시(공격대 포함)·접속 때 되돌리지 않음·소환수 창, V2 오라, Quartz 스윙 사냥꾼만, Grid2 패치, 문서. 0.1.5 ZIP 두 판 다시 만듦(1a9516de / a50fe2d1). 게임 확인은 Codex(`Collection/codex-briefs/phase26-step47-check.md`, `appearance-26-theme-switcher.md`). Result = `Claude/results/PHASE_26_codex-live-merge_RESULT.md`.

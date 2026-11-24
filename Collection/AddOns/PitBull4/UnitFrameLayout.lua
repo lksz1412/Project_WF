@@ -439,7 +439,8 @@ local function update_bar_layout(frame)
 
 	local cast = frame.CastBar
 	local cast_db = cast and get_element_db("CastBar", layout)
-	if cast_db and cast_db.dfOutside == true then
+	-- dfOutside without both numbers (a copied layout) keeps the cast bar in the frame
+	if cast_db and cast_db.dfOutside == true and type(cast_db.dfOffset) == "number" and type(cast_db.dfHeight) == "number" then
 		cast:ClearAllPoints()
 		cast:SetPoint("TOPLEFT", frame, "BOTTOMLEFT", 0, -cast_db.dfOffset)
 		cast:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 0, -cast_db.dfOffset - cast_db.dfHeight)

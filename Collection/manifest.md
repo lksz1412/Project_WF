@@ -270,7 +270,7 @@ state: unmodified = bytes equal the upstream folder; patched = upstream folder +
 | Dominos_Config | Dominos | 12.0.4 | unmodified | — | Collection/upstream/Dominos-12.0.4/Dominos_Config |
 | ExperienceForever | Experience Forever | ExperienceForever2.0.4 | patched | Collection/patches/Experience_Forever.patch | Collection/upstream/experience-forever-ExperienceForever2.0.4/ExperienceForever |
 | ForeverUnitFrames | Forever Unit Frames | 0.65.2 | unmodified | — | Collection/upstream/Forever_Unit_Frames-0.65.2/ForeverUnitFrames |
-| Grid2 | Grid2 | 4.1.13-forever | unmodified | — | Collection/upstream/Grid2-4.1.13-forever/Grid2 |
+| Grid2 | Grid2 | 4.1.13-forever | patched | Collection/patches/Grid2.patch | Collection/upstream/Grid2-4.1.13-forever/Grid2 |
 | Grid2LDB | Grid2 | 4.1.13-forever | unmodified | — | Collection/upstream/Grid2-4.1.13-forever/Grid2LDB |
 | Grid2Options | Grid2 | 4.1.13-forever | unmodified | — | Collection/upstream/Grid2-4.1.13-forever/Grid2Options |
 | Hekili | Hekili | v0.8.6 | unmodified | — | Collection/upstream/Hekili-v0.8.6/Hekili |

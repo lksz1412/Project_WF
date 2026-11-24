@@ -23,14 +23,24 @@ local L = LibStub("AceLocale-3.0"):GetLocale("Quartz3")
 --
 -- The client announces every swing of the player there, and how long it takes until the next one,
 -- which replaces putting the swings together from the combat log and the attack speed of the player.
+-- Only hunters get the bar, for the ranged (auto shot) cycle; melee swings are left to the game's
+-- own swing timer. The last dfStandStill seconds of a cycle (profile value, the same default as
+-- DevilForever Core's Quartz defaults; 0 = none) are drawn as the window to stand still in before
+-- the shot. A shot that comes later than the cycle keeps the bar full until the next shot; it
+-- hides when the shot is overdue by more than one more cycle (auto shot stopped).
 local MODNAME = "Swing"
 local Swing = Quartz3:NewModule(MODNAME)
 local Player = Quartz3:GetModule("Player")
 
 local media = LibStub("LibSharedMedia-3.0")
 
-local swingbar, swingbar_width, swingstatusbar, remainingtext, durationtext
+-- Enum.PlayerSwingType.Ranged, else the client's number for the ranged hand (0 main, 1 off, 2 ranged).
+local swingTypes = type(Enum) == "table" and type(Enum.PlayerSwingType) == "table" and Enum.PlayerSwingType or {}
+local RANGED = type(swingTypes.Ranged) == "number" and swingTypes.Ranged or 2
+
+local swingbar, swingbar_width, swingstatusbar, remainingtext, durationtext, standstill
 local swingEnd, swingLength
+local previewing = false
 
 local db, getOptions
 
@@ -41,6 +51,7 @@ local defaults = {
 		swingheight = 4,
 		swingposition = "top",
 		swinggap = -4,
+		dfStandStill = 0.5,
 
 		durationtext = true,
 		remainingtext = true,
@@ -50,15 +61,37 @@ local defaults = {
 	}
 }
 
-local function OnUpdate()
-	if not swingEnd then return swingbar:Hide() end
-	local remaining = math.max(0, swingEnd - GetTime())
-	swingstatusbar:SetValue(1 - remaining / swingLength)
-	if remaining == 0 then
-		swingEnd, swingLength = nil, nil
-		return swingbar:Hide()
+local function isHunter()
+	local _, class = UnitClass("player")
+	return class == "HUNTER"
+end
+
+-- The stand-still window: the right-hand part of the bar for the last dfStandStill seconds.
+local function placeWindow()
+	local window = db and tonumber(db.dfStandStill)
+	if not standstill or not swingbar_width or not swingLength or not window or window <= 0 then
+		if standstill then standstill:Hide() end
+		return
 	end
-	remainingtext:SetFormattedText("%.1f", remaining)
+	standstill:SetWidth(math.max(1, swingbar_width * math.min(1, window / swingLength)))
+	standstill:Show()
+end
+
+local function OnUpdate()
+	if previewing then return end
+	if not swingEnd then return swingbar:Hide() end
+	local left = swingEnd - GetTime()
+	if left <= 0 then
+		if -left > swingLength then
+			swingEnd, swingLength = nil, nil
+			return swingbar:Hide()
+		end
+		swingstatusbar:SetValue(1)
+		remainingtext:SetText("0.0")
+		return
+	end
+	swingstatusbar:SetValue(1 - left / swingLength)
+	remainingtext:SetFormattedText("%.1f", left)
 end
 
 local function OnHide()
@@ -79,8 +112,6 @@ function Swing:OnInitialize()
 end
 
 function Swing:OnEnable()
-	self:RegisterEvent("PLAYER_SWING")
-
 	if not swingbar then
 		swingbar = CreateFrame("Frame", "Quartz3SwingBar", UIParent, "BackdropTemplate")
 		swingbar:SetFrameStrata("HIGH")
@@ -92,31 +123,59 @@ function Swing:OnEnable()
 
 		swingstatusbar = Quartz3:CreateStatusBar(nil, swingbar)
 
+		standstill = swingstatusbar:CreateTexture(nil, "OVERLAY")
+		standstill:SetTexture("Interface\\Buttons\\WHITE8X8")
+		standstill:SetVertexColor(1, 0.25, 0.25, 0.6)
+		standstill:Hide()
 		durationtext = swingstatusbar:CreateFontString(nil, "OVERLAY")
 		remainingtext = swingstatusbar:CreateFontString(nil, "OVERLAY")
 		swingbar:Hide()
 	end
 	if not self.dfPlayerHooked then
-		hooksecurefunc(Player.Bar, "ApplySettings", function()
-			if db.dfFollowPlayer then Swing:ApplySettings() end
-		end)
+		-- width and scale follow the Player cast bar (UI scale changes rescale it at run time)
+		hooksecurefunc(Player.Bar, "ApplySettings", function() Swing:ApplySettings() end)
 		self.dfPlayerHooked = true
 	end
 	self:ApplySettings()
+	if isHunter() then self:RegisterEvent("PLAYER_SWING") end
 end
 
 function Swing:OnDisable()
 	self:UnregisterAllEvents()
-	swingEnd, swingLength = nil, nil
+	swingEnd, swingLength, previewing = nil, nil, false
 	swingstatusbar:SetValue(0)
 	swingbar:Hide()
 end
 
+-- Quartz3:Unlock / Lock: a full sample cycle with its stand-still window while unlocked (hunters).
+function Swing:Unlock()
+	if not swingbar or not isHunter() then return end
+	previewing = true
+	local length = swingLength
+	swingLength = length or 2
+	placeWindow()
+	swingLength = length
+	swingstatusbar:SetMinMaxValues(0, 1)
+	swingstatusbar:SetValue(1)
+	swingbar:Show()
+end
+
+function Swing:Lock()
+	if not previewing then return end
+	previewing = false
+	if swingEnd then
+		placeWindow()
+		OnUpdate()
+	else
+		swingbar:Hide()
+	end
+end
+
 -- A swing of the player happened, the next one of that type follows after the duration.
--- The bar shows the main hand and ranged attacks, like it does on other clients.
+-- The bar shows the ranged (auto shot) cycle.
 function Swing:PLAYER_SWING(event, duration, swingType)
 	if issecretvalue(duration) or issecretvalue(swingType) then return end
-	if swingType == Enum.PlayerSwingType.OffHand then return end
+	if swingType ~= RANGED then return end
 
 	if type(duration) ~= "number" or duration <= 0 or duration == math.huge or duration ~= duration then
 		swingEnd, swingLength = nil, nil
@@ -128,6 +187,7 @@ function Swing:PLAYER_SWING(event, duration, swingType)
 	swingEnd, swingLength = GetTime() + duration, duration
 	swingstatusbar:SetMinMaxValues(0, 1)
 	swingstatusbar:SetValue(0)
+	placeWindow()
 
 	durationtext:SetFormattedText("%.1f", duration)
 	swingbar:Show()
@@ -154,6 +214,10 @@ function Swing:ApplySettings()
 		end
 
 		swingstatusbar:SetAllPoints(swingbar)
+		standstill:ClearAllPoints()
+		standstill:SetPoint("TOPRIGHT", swingbar, "TOPRIGHT")
+		standstill:SetPoint("BOTTOMRIGHT", swingbar, "BOTTOMRIGHT")
+		placeWindow()
 		swingstatusbar:SetStatusBarTexture(media:Fetch("statusbar", Player.db.profile.texture))
 		swingstatusbar:SetStatusBarColor(unpack(db.barcolor))
 		if swingEnd and GetTime() < swingEnd then
@@ -261,6 +325,14 @@ do
 				desc = L["Set the height of the swing timer bar"],
 				min = 1, max = 20, step = 1,
 				order = 104,
+			},
+			dfStandStill = {
+				type = "range",
+				name = "멈춤 구간(초)",
+				desc = "사격 직전, 움직이지 말아야 하는 마지막 구간(0 = 표시 안 함)",
+				min = 0, max = 2, step = 0.05,
+				get = function() return tonumber(db.dfStandStill) or 0 end,
+				order = 104.5,
 			},
 			swingalpha = {
 				type = "range",

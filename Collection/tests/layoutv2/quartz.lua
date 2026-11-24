@@ -66,7 +66,9 @@ function ace:NewAddon()
   local m={enabled=true,name=name}
   function m:IsEnabled() return self.enabled end
   m.SetEnabledState=function(self,v) self.enabled=v end
-  m.Hook=function() end;m.RegisterUnitEvent=function() end;m.RegisterEvent=function() end;m.UnregisterAllEvents=function() end
+  m.Hook=function() end;m.RegisterUnitEvent=function() end
+  m.RegisterEvent=function(self,e) self.registered=self.registered or {};self.registered[e]=true end
+  m.UnregisterAllEvents=function(self) self.registered=nil end
   self.modules[name]=m;return m
  end
  function addon:GetModule(name) return self.modules[name] end

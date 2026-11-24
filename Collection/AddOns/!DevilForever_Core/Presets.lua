@@ -6,11 +6,13 @@
 --   edits = {[frameKey] = {[field] = value}},
 --   fragments = {{folder, savedVariable, section = "root"|"global"|"profile",
 --     profile = token|nil, namespace = name|nil, profileKey = string|nil,
---     intoExisting = {key, ...}|nil, addonVersion = string,
---     version = integer >= 1, values = table}}})
+--     intoExisting = {key, ...}|nil, replace = {key, ...}|nil,
+--     addonVersion = string, version = integer >= 1, values = table}}})
 -- intoExisting: for each listed key of `values` (e.g. "units"), an entry
 -- values[key][name] is written only where the target already holds a table
 -- at [key][name]; entries the addon or its defaults never made are not created.
+-- replace: each listed key of `values` replaces the stored value whole instead of
+-- being merged into it (keys the stored table has and `values[key]` lacks go).
 -- Each edit value must pass Edit:Validate on a registered frame key; each
 -- fragment must name a registered folder and one of its saved variables
 -- (Core's own excluded). Bad values and fragments are dropped and logged.
@@ -144,6 +146,12 @@ local function fragmentProblem(f)
       if type(k) ~= "string" then return "intoExisting must be a list of keys" end
     end
   end
+  if f.replace ~= nil then
+    if type(f.replace) ~= "table" or f.profileKey then return "replace must be a list of keys, not with profileKey" end
+    for _, k in ipairs(f.replace) do
+      if type(k) ~= "string" then return "replace must be a list of keys, not with profileKey" end
+    end
+  end
   if type(f.addonVersion) ~= "string" or f.addonVersion == "" then return "addonVersion must be a string" end
   if type(f.version) ~= "number" or f.version < 1 or floor(f.version) ~= f.version then
     return "version must be an integer >= 1"
@@ -254,6 +262,17 @@ local function fragmentFolders(def)
   return out
 end
 
+-- A PitBull4 fragment of `def` that writes an enabled party group.
+local function turnsPartyOn(def)
+  for _, f in ipairs(def.fragments) do
+    local groups = f.folder == "PitBull4" and not f.namespace and type(f.values.groups) == "table" and f.values.groups
+    for _, g in pairs(groups or {}) do
+      if type(g) == "table" and g.enabled == true then return true end
+    end
+  end
+  return false
+end
+
 -- Returns true, lines | false, reason.
 function Presets:Restore(name)
   if Core.InCombat() then return false, "전투 중 — 바꾼 것 없음" end
@@ -268,7 +287,13 @@ function Presets:Restore(name)
     local ok, why = Core.Profiles:SetPending({action = "preset", name = name})
     if not ok then return false, why end
     Core:DBTable("preset").unfinished = name
-    return true, {name .. " 비교 배치 예약 — PitBull4, Quartz만 적용: /dfp go"}
+    local lines = {name .. " 비교 배치 예약 — PitBull4, Quartz만 적용: /dfp go"}
+    local family, screen = name:match("^(.-)%-v%d+$"), self:PickForScreen()
+    if family and defs[family] and screen and family ~= screen then
+      lines[#lines + 1] = "주의: " .. name .. " 은 " .. family .. " 화면 기준 배치 — 이 화면은 " .. screen
+        .. " (" .. screen .. "-v1 · " .. screen .. "-v2)"
+    end
+    return true, lines
   end
   local oldName = self:GetActive()
   local old = oldName and defs[oldName]
@@ -299,6 +324,9 @@ function Presets:Restore(name)
     Core:DBTable("preset").unfinished = name
     if ok then
       lines[#lines + 1] = "애드온 값은 다시 불러온 뒤 씀: " .. table.concat(fragmentFolders(def), ", ") .. " — /dfp go"
+      if turnsPartyOn(def) then
+        lines[#lines + 1] = "PitBull4 파티 그룹도 켬(끄려면 그 뒤 /dfp party off)"
+      end
     else
       lines[#lines + 1] = "애드온 값 예약 못 함: " .. tostring(why)
     end
@@ -417,6 +445,14 @@ local function record(presetName, index, state, message, key)
     tostring(key or index) .. ": " .. tostring(message)) end
 end
 
+-- Fields of a dfGeometry signature per kind (the order the preset files join them in).
+local SIGNATURE_FIELDS = {
+  units = {"anchor", "relative_point", "relative_to", "position_x", "position_y", "scale", "size_x", "size_y"},
+  groups = {"anchor", "relative_point", "relative_to", "position_x", "position_y", "scale", "size_x", "size_y",
+    "direction", "vertical_spacing", "horizontal_spacing"},
+  layouts = {"size_x", "size_y", "scale"},
+}
+
 -- mode: "requested" | "fresh".
 local function writeFragment(presetName, index, f, keys, mode)
   local sv = _G[f.savedVariable]
@@ -466,8 +502,7 @@ local function writeFragment(presetName, index, f, keys, mode)
     values = Core.CopyTable(values)
     local ratio = tbl.dfPixel / values.dfPixel
     for kind, rows in pairs(values.dfGeometry or {}) do
-      local fields = kind == "layouts" and {"size_x", "size_y", "scale"}
-        or {"anchor", "relative_point", "relative_to", "position_x", "position_y", "scale", "size_x", "size_y"}
+      local fields = SIGNATURE_FIELDS[kind] or SIGNATURE_FIELDS.units
       for name in pairs(rows) do
         local row = values[kind][name]
         if kind == "layouts" then row.scale = row.scale * ratio
@@ -479,9 +514,21 @@ local function writeFragment(presetName, index, f, keys, mode)
     end
     values.dfPixel = tbl.dfPixel
   end
+  for _, k in ipairs(f.replace or {}) do
+    if values[k] ~= nil then rawset(tbl, k, nil) end
+  end
   local written = Core.WriteOver(tbl, values)
   Core:DBTable("preset", "fragments", presetName)[key] = f.version
   record(presetName, index, "written", mode .. ": " .. written .. " values", key)
+end
+
+-- A PitBull4 fragment that holds only party groups (/dfp party on brings an existing profile's groups).
+local function partyGroupsOnly(f)
+  if f.folder ~= "PitBull4" or f.namespace or type(f.values.groups) ~= "table" then return false end
+  for k in pairs(f.values) do
+    if k ~= "groups" then return false end
+  end
+  return true
 end
 
 local function recordedVersion(presetName, key)
@@ -535,8 +582,8 @@ local function onAddonLoaded(folder)
       elseif type(recorded) == "number" and recorded >= f.version then
         fragmentState[presetName .. "|" .. index] = {state = "already", key = key}
       elseif not fresh then
-        record(presetName, index, "kept", "existing settings kept — /dfp preset " .. presetName
-          .. " applies preset values", key)
+        record(presetName, index, "kept", partyGroupsOnly(f) and "existing settings kept — /dfp party on brings the party groups"
+          or ("existing settings kept — /dfp preset " .. presetName .. " applies preset values"), key)
       elseif f.section == "root" then
         waitingWorld[#waitingWorld + 1] = {presetName, index, f, mode}
       else
@@ -628,17 +675,24 @@ Core:On("PLAYER_ENTERING_WORLD", function()
           .. db.unfinished .. " 을 다시 하면 끝남")
       end
       local active = Presets:GetActive()
-      local ids = {}
+      local ids, others, party = {}, 0, false
       for id, st in pairs(fragmentState) do
         if active and id:sub(1, #active + 1) == active .. "|" and (st.state == "kept" or st.state == "skipped") then
           ids[#ids + 1] = id .. "=" .. tostring(st.key)
+          local f = defs[active] and defs[active].fragments[tonumber(id:sub(#active + 2))]
+          if st.state == "kept" and f and partyGroupsOnly(f) then party = true else others = others + 1 end
         end
       end
       sort(ids)
       local signature = #ids > 0 and table.concat(ids, ";") or nil
       if signature and db.keptNotice ~= signature then
-        Core.Profiles:Print(active .. " preset 애드온 값 " .. #ids .. "개는 쓰지 않음(이미 있는 설정 유지 등) — /dfp preset "
-          .. active .. " 으로 쓸 수 있음")
+        if others > 0 then
+          Core.Profiles:Print(active .. " preset 애드온 값 " .. others .. "개는 쓰지 않음(이미 있는 설정 유지 등) — /dfp preset "
+            .. active .. " 으로 쓸 수 있음")
+        end
+        if party then
+          Core.Profiles:Print("PitBull4 파티 그룹(공격대 표시·파티원 소환수)은 이전 설정 그대로 — 전투 밖에서 /dfp party on 으로 맞춤")
+        end
       end
       db.keptNotice = signature
     end
