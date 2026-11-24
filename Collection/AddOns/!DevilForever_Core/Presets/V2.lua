@@ -10,11 +10,15 @@ local units = {
   ["주시 대상의 대상"]="focustarget",["주시 대상의 대상의 대상"]="focustargettarget",
   ["대상의 소환수의 대상"]="targetpettarget",["대상의 소환수의 대상의 대상"]="targetpettargettarget",
 }
+-- oldCells: Grid2 cell width and height of the Old (V1) layout; New uses the preset's square cells.
 local modes = {
-  fhd={width=1920,height=1080,totemY=748,castHeight=30,smallWidth=123,smallHeight=29,footY=548},
-  qhd={width=2560,height=1440,totemY=1056,castHeight=34,smallWidth=166,smallHeight=39,footY=765},
-  uhd={width=3840,height=2160,totemY=1636,castHeight=40,smallWidth=251,smallHeight=58,footY=1180},
+  fhd={width=1920,height=1080,totemY=748,castHeight=30,smallWidth=123,smallHeight=29,footY=548,oldCells={96,32}},
+  qhd={width=2560,height=1440,totemY=1056,castHeight=34,smallWidth=166,smallHeight=39,footY=765,oldCells={120,44}},
+  uhd={width=3840,height=2160,totemY=1636,castHeight=40,smallWidth=251,smallHeight=58,footY=1180,oldCells={154,56}},
 }
+-- Revision of the New (V2) layout written into the PitBull4 profile (dfLayoutRevision); the version
+-- switcher shows New only for a profile that holds this revision.
+Core.Presets.layoutV2Revision = 2
 local function signature(row, fields)
   local parts = {}
   for _, key in ipairs(fields) do parts[#parts+1] = tostring(row[key]) end
@@ -61,10 +65,16 @@ for name, m in pairs(modes) do
           local copy=Core.CopyTable(f);quartz[copy.namespace]=copy.values
           def.fragments[#def.fragments+1]=copy
         elseif f.folder == "Grid2" and f.namespace == "Grid2Layout" then
-          -- only the window spot: V1 keeps the preset's, V2 moves it above the V2 target
+          -- the window spot is the same in both layouts (left of the quest tracker)
           grid={folder=f.folder,savedVariable=f.savedVariable,addonVersion=f.addonVersion,version=1,section=f.section,
             profile=f.profile,namespace=f.namespace,values={anchor=f.values.anchor,PosX=f.values.PosX,PosY=f.values.PosY}}
           def.fragments[#def.fragments+1]=grid
+        elseif f.folder == "Grid2" and f.namespace == "Grid2Frame" then
+          -- cell size: New = the preset's square cells, Old = the V1 cells
+          local cells=version == 2 and {f.values.frameWidth,f.values.frameHeight} or m.oldCells
+          def.fragments[#def.fragments+1]={folder=f.folder,savedVariable=f.savedVariable,addonVersion=f.addonVersion,
+            version=1,section=f.section,profile=f.profile,namespace=f.namespace,
+            values={frameWidth=cells[1],frameHeight=cells[2]}}
         end
       end
       if root then
@@ -83,19 +93,26 @@ for name, m in pairs(modes) do
         root.dfAuraGeometry["대상"].above=false
         root.dfAuraGeometry["대상의 소환수"]={above=false}
         if version == 2 then
+          root.dfLayoutRevision=Core.Presets.layoutV2Revision
           local pixel=root.dfPixel
           local main, companion=root.layouts["보통"],root.layouts["소환수와 주시"]
           local w,h,cw,ch=main.size_x,main.size_y,companion.size_x,companion.size_y
+          -- the player's totem timer (four totem slots) sits above the player frame, right-aligned,
+          -- between the frame and its aura rows (raised by top_margin below)
           local timer=spaces.Totems.layouts["보통"]
+          timer.location="out_top_right"
           local icon=15*timer.size
-          local timerWidth=4*icon+3*timer.totem_spacing*icon/50
-          local timerGap=math.ceil(timerWidth+16)
+          local outside=main.indicator_root_outside_margin or 0
           local gap=m.castHeight+4
-          -- focus midway between player and target (the timer gap on both sides), the row centred on the screen
+          -- focus midway between player and target, the row centred on the screen; the side gap is the frame
+          -- gap, widened when the player cast bar above the focus (Quartz Player with its icon on the left)
+          -- reaches past the focus, so the totem timer and the aura rows beside it stay clear of it
+          local q=quartz.Player
+          local sideGap=math.max(gap,math.ceil(q.w/2+q.h+(q.icongap or 0)-cw/2)+2)
           local xFocus=(m.width-cw)/2
-          local xPlayer=xFocus-timerGap-w
+          local xPlayer=xFocus-sideGap-w
           local xPet=xPlayer-gap-cw
-          local xTarget=xFocus+cw+timerGap
+          local xTarget=xFocus+cw+sideGap
           local xTargetPet=xTarget+w+gap
           local castY=m.totemY-8-m.castHeight
           local bottom=castY-16-m.smallHeight
@@ -132,6 +149,7 @@ for name, m in pairs(modes) do
           for label, width in pairs({["플레이어"]=w,["대상"]=w,["플레이어의 소환수"]=cw,["주시 대상"]=cw,["대상의 소환수"]=cw}) do
             root.dfAuraGeometry[label]={above=true,width=width}
           end
+          root.dfAuraGeometry["플레이어"].top_margin=math.ceil(outside+icon+4)
           for module, x in pairs({Target=xTarget,Focus=xFocus,Pet=xPet}) do
             local q=quartz[module]
             if q then

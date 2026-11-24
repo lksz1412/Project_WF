@@ -238,8 +238,9 @@ local theme = makeSwitcher({
 })
 
 -- Layout version of the active screen preset: New = <preset>-v2 (V2), Old = <preset>-v1 (V1).
--- The version in use is the PitBull4 profile's dfLayoutV2 flag; a switch requests that compare
--- preset and reloads the interface (as /dfp preset <name> then /dfp go).
+-- The version in use is read from the PitBull4 profile: New only when it holds the V2 flag and this
+-- package's V2 revision (an earlier V2 counts as Old, so one step brings the current New); a switch
+-- requests that compare preset and reloads the interface (as /dfp preset <name> then /dfp go).
 local VERSIONS = {{key = "new", suffix = "-v2", label = "New"}, {key = "old", suffix = "-v1", label = "Old"}}
 local function versionChoices()
   local active = Core.Presets:GetActive()
@@ -253,7 +254,9 @@ end
 local function versionInUse()
   local addon = _G.PitBull4
   local profile = addon and addon.db and addon.db.profile
-  return (type(profile) == "table" and profile.dfLayoutV2 == true) and VERSIONS[1] or VERSIONS[2]
+  local current = type(profile) == "table" and profile.dfLayoutV2 == true
+    and profile.dfLayoutRevision == Core.Presets.layoutV2Revision
+  return current and VERSIONS[1] or VERSIONS[2]
 end
 local version = makeSwitcher({
   frameName = "DevilForever_StatusStripLayouts",

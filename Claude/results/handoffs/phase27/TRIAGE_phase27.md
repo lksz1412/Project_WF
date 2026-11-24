@@ -49,3 +49,7 @@ Fix round decisions (work A): measure from the screen top `h − GetBottom()·sc
 
 Master checked: ThemeSwitcher.lua:81–82 SetText before SetFont (:197) + BugGrabber "Font not set" → confirmed. SexyMap.lua:211 stack in BugGrabber → confirmed. V2.lua:100–112 focus x = xPlayer+w+timerGap → confirmed not centred.
 Already decided (with reason): Grid2 above the quest tracker (R158 latest user words supersede R148) · square cells 44/58/88 · V2 folded into base presets, names kept (Composition/switcher/Party depend on names) · focus centred, symmetric gaps · one aura table for player/target/focus, focus own layout (pets unchanged — user) · target-pet chain added · HUD art fixed in code first, bar surrounds above Onyx · switcher SetText moved into apply() · SexyMap error fixed in our file.
+
+## Step 58 review 1 (B, a2531127) — 중대 0 · 중간 1 · 경미 5
+- M1 check list x formula mixes UIParent units and Grid2 frame units (`phase27-game-check.md:33`, `GridLayout.lua:880` rule) → master: confirmed by the quoted lines; fix together with round 2.
+- Minor 1–5 → list for the final report (comments in fhd/V2.lua, "/dfp go" hint before auto reload, count==0 placement, FUF Quartz V2 copy unverified).

@@ -30,7 +30,7 @@
 | `/run DevilForever_Core.Edit:Set("statusstrip.bar","font",{size=17})` · `…Edit:Clear("statusstrip.bar","font")` | 상태띠 글꼴 크기 편집 · 지우기(전투 밖) | `!DevilForever_Core/Edit.lua:118–122`, `:188–198` |
 | `/reload` | 애드온 다시 불러오기(R154 ④) | — |
 
-물리 px 재기(창 위 끝 y · 오른쪽 끝 x, 화면 위·오른쪽에서부터): `/run local f=Grid2LayoutFrame local h=select(2,GetPhysicalScreenSize()) local u=PixelUtil.GetPixelToUIUnitFactor() print(h-f:GetTop()*f:GetEffectiveScale()/u, (UIParent:GetRight()-f:GetRight())*f:GetEffectiveScale()/u)` (`Grid2/GridLayout.lua:218`). Grid2 는 TOPRIGHT 자리를 `PosX`·`PosY`(오른쪽·위에서의 거리 × `PixelUtil.GetPixelToUIUnitFactor()`)로 저장한다(`Grid2/GridLayout.lua:879–885`) — preset 값: fhd `["PosX"]=-247*factor,["PosY"]=-259*factor` · qhd 330·346 · uhd 495·518(퀘스트 목록 위 끝 ≈ 화면 높이의 24 %, 왼쪽 끝 ≈ 오른쪽에서 화면 높이의 23 % — 사용자 화면 갈무리에서 잰 값, 확인 필요).
+물리 px 재기(창 위 끝 · 오른쪽 끝이 화면 위·오른쪽에서 떨어진 거리): `/run local f,P=Grid2LayoutFrame,UIParent local s,t,u=f:GetEffectiveScale(),P:GetEffectiveScale(),PixelUtil.GetPixelToUIUnitFactor() print((P:GetHeight()*t-f:GetTop()*s)/u,(P:GetWidth()*t-f:GetRight()*s)/u)` (`Grid2/GridLayout.lua:218`). 두 값 모두 Grid2 가 자리를 저장하는 규칙 그대로다 — 오른쪽 기준 `f:GetRight()*s-UIParent:GetWidth()*t`, 위 기준 `f:GetTop()*s-UIParent:GetHeight()*t`(`Grid2/GridLayout.lua:880`, `:883` · s = 창의 실효 배율, t = UIParent 실효 배율)를 부호를 바꿔 `PixelUtil.GetPixelToUIUnitFactor()` 로 나눈 물리 px 이라 UI 배율과 상관없이 같은 값이 나온다. preset 값: fhd `["PosX"]=-247*factor,["PosY"]=-259*factor` · qhd 330·346 · uhd 495·518(퀘스트 목록 위 끝 ≈ 화면 높이의 24 %, 왼쪽 끝 ≈ 오른쪽에서 화면 높이의 23 % — 사용자 화면 갈무리에서 잰 값, 확인 필요).
 
 ## 1. 파티 창: PitBull4 파티와 Grid2 함께
 
@@ -67,7 +67,7 @@
 ## 6. V2 배치
 
 - 보는 법: 기본 배치가 V2 다(새 설치 · `/dfp preset <fhd|qhd|uhd>` → `/dfp go`) → `/run PitBull4:SetConfigMode("solo")` (플레이어·대상·소환수·주시 대상·대상의 소환수와 그 아래 줄 가짜 유닛).
-- 기대: 주시 대상 창의 가로 가운데 = 화면 가운데, 플레이어·대상이 양쪽으로 같은 간격 · 플레이어·대상·주시 대상의 버프·약화 효과가 같은 모양(최대 14·16개, 아이콘 uhd 40 · qhd 27 · fhd 20 px, 내 약화 효과 64 · 43 · 32 px) · 소환수 창은 그대로 · 대상의 소환수 아래에 「대상의 소환수의 대상」·「…의 대상의 대상」 두 칸 · `/q3` 잠금 해제에서 Quartz 소환수 시전 막대가 소환수 창 자리에 있다. 되돌리기 = 맨 위 규칙(0절 `WTF` 백업 복사).
+- 기대: 주시 대상 창의 가로 가운데 = 화면 가운데, 플레이어·대상이 양쪽으로 같은 간격 · 주술사 토템 시간 4칸은 플레이어 창 바로 위 오른쪽 끝(플레이어 오라 줄은 그 위) · 상태띠 버전 전환(New/Old)이 지금 배치를 보여 준다(이 판 이전에 받은 V2 는 Old 로 보임 → 한 번 넘기면 New) · New 는 Grid2 칸 정사각형, Old 는 예전 칸 크기 · 플레이어·대상·주시 대상의 버프·약화 효과가 같은 모양(최대 14·16개, 아이콘 uhd 40 · qhd 27 · fhd 20 px, 내 약화 효과 64 · 43 · 32 px) · 소환수 창은 그대로 · 대상의 소환수 아래에 「대상의 소환수의 대상」·「…의 대상의 대상」 두 칸 · `/q3` 잠금 해제에서 Quartz 소환수 시전 막대가 소환수 창 자리에 있다. 되돌리기 = 맨 위 규칙(0절 `WTF` 백업 복사).
 - 실제 오라(버프·약화 효과) 크기: 「플레이 필요 — 이번 확인 제외」.
 - `결과:`
 

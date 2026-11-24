@@ -85,7 +85,7 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),
     assert p['dfLayoutV2'] and p['units']['대상의 소환수']['enabled']
     assert all('focuspet'!=row.get('unit') for row in p['units'].values())
     for label in ('플레이어','대상'):  # V2 rules replace V1's companion avoidance (no shrink when a pet or focus shows)
-        assert set(p['dfAuraGeometry'][label])=={'above','width'},(label,p['dfAuraGeometry'][label])
+        assert set(p['dfAuraGeometry'][label])-{'top_margin'}=={'above','width'},(label,p['dfAuraGeometry'][label])  # player: top_margin clears the totem timer
     q=db['Quartz3DB']['namespaces']
     assert q['Pet']['profiles']['Default']['point']=='TOP' and 'dfGeometry' not in q['Pet']['profiles']['Default']  # pet cast bar moves with the pet frame
     assert q['Swing']['profiles']['Default']['swingposition']=='bottom'
@@ -513,7 +513,21 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),
         r=rects['unit '+label]
         assert pet[0]-1e-6<=r[0] and r[0]+r[2]<=pet[0]+pet[2]+1e-6 and r[1]>=pet[1]+pet[3],(label,r,pet)
     assert p['units']['대상의 대상']['enabled'] is True and p['units']['대상의 대상의 대상']['enabled'] is True
-    print('PASS',mode,width,'V2 default: focus centred %.0f, player/target gaps equal, one aura table %s, target-pet chain under the target-pet'%(focus[0]+focus[2]/2,size))
+    assert p['dfLayoutRevision']==s.core.Presets.layoutV2Revision==2
+    # the totem timer sits above the player frame (right-aligned), under the player's aura rows; the
+    # player-focus and focus-target gaps are one frame gap each
+    timer=s.sv('PitBull4DB')['namespaces']['Totems']['profiles']['Default']['layouts']['보통']
+    icon=15*timer['size'];outside=p['layouts']['보통'].get('indicator_root_outside_margin',0)
+    assert timer['location']=='out_top_right' and timer['attach_to']=='root'
+    for k,b in rects.items():
+        if k.startswith('auras 플레이어 '):assert b[1]+b[3]<=player[1]-outside-icon+1e-6,(mode,k,b,player)
+    span=4*icon+3*timer['totem_spacing']*icon/50
+    totems=(player[0]+player[2]-span,player[1]-outside-icon,span,icon)
+    hits=[k for k,r in rects.items() if overlaps(totems,r)]
+    assert not hits,(mode,totems,hits)
+    gap={'fhd':56,'qhd':76,'uhd':107}[mode]  # frame gap, or wider where the player cast bar (icon on its left) above the focus reaches past it
+    assert abs(focus[0]-(player[0]+player[2])-gap)<1e-6 and abs(target[0]-(focus[0]+focus[2])-gap)<1e-6,(mode,player,focus,target)
+    print('PASS',mode,width,'V2 default: focus centred %.0f with equal side gaps, totem timer above the player (clear of every rectangle) under its auras, one aura table %s, target-pet chain under the target-pet'%(focus[0]+focus[2]/2,size))
 src={m:(A/'!DevilForever_Core/Presets'/(m+'.lua')).read_text(encoding='utf-8') for m in ('fhd','qhd','uhd')}
 for m,cell in (('fhd',44),('qhd',58),('uhd',88)):
     assert '["frameWidth"]=%d,["frameHeight"]=%d'%(cell,cell) in src[m] and '["anchor"]="TOPRIGHT"' in src[m],m

@@ -912,6 +912,26 @@ def grid2_spot_follows_the_compare_layout_and_back():
     eq(s.errors() + v2.errors() + back.errors() + old.errors(), [], "no errors")
 
 
+def grid2_cells(s):
+    p = s.sv("Grid2DB")["namespaces"]["Grid2Frame"]["profiles"]["Hero - Realm"]
+    return (p["frameWidth"], p["frameHeight"])
+
+
+@case
+def grid2_cells_follow_the_layout_version():
+    s = pb4_grid2_session()
+    eq(grid2_cells(s), (44, 44), "new install: New layout, square cells")
+    state = s
+    for request, cells in (("fhd-v1", (96, 32)), ("fhd-v2", (44, 44)), ("fhd-v1", (96, 32)), ("fhd", (44, 44))):
+        core["dfp"](state, "preset " + request); core["dfp"](state, "go")
+        state = pb4_grid2_session(saved=carry(state))
+        eq(grid2_cells(state), cells, request + ": Grid2 cells")
+        eq(grid2_spot(state), ("TOPRIGHT", -247, -259), request + ": the window spot stays")
+    again = pb4_grid2_session(saved=carry(state))
+    eq(grid2_cells(again), (44, 44), "plain login writes nothing")
+    eq(s.errors() + state.errors() + again.errors(), [], "no errors")
+
+
 @case
 def party_groups_kept_notice_points_to_party_command():
     fresh = pb4_preset_session()

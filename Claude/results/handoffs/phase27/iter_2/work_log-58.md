@@ -128,3 +128,67 @@ After the compaction notice I re-read the rule files: `feedback_change_impact_an
 ## Remaining
 
 Nothing committed. Real install and in-game check are master's / the user's.
+
+## Staging and dry run from commit a2531127
+
+| Command | Verdict |
+|---|---|
+| `git log --oneline -1` · `git status --porcelain -- Collection` | `a2531127` · empty |
+| `python <scratch>/stage_build.py <worktree> D:/Projects/Project_WF/_local_only` | rc=0 · `stage=…\claude-p27-stage-679e45f3 commit=a2531127 clean=True version=0.1.5 variant=pitbull4 folders=35 files=2281 bytes=338923283 excluded=106 verified=True` |
+| `tasklist /FI "IMAGENAME eq Wow.exe"` | Wow.exe running |
+| `pwsh -NoProfile -File Collection/tools/install_local.ps1 -StagedAddOns D:\Projects\Project_WF\_local_only\claude-p27-stage-679e45f3\AddOns -BackupRoot D:\Projects\Project_WF\_local_only\claude-p27-backup-767a1dcc -AllowRunningGame -DryRun` (PowerShell 7) | rc=0 · staged 35 folders, 2281 files, commit a2531127…, pitbull4, 0.1.5 · left alone `!BugGrabber, BugSack` · backup plan AddOns 2745 entries / 2304 files, WTF 113 entries / 105 files → `claude-p27-backup-767a1dcc` · 35 mirror steps · robocopy /L: Newer 2275 + New File 6 (the `layout_new/old.tga`) = 2281, EXTRA 0 (nothing removed) · would check 35 folders and write installation.json |
+| `ls -d …/claude-p27-backup-*` | only `claude-p27-backup-5b85dff4` (the dry run created nothing) |
+
+Raw: `<scratch>/stage58.txt`, `<scratch>/dry58b.txt` (robocopy text cp949). Real install not run (master).
+
+## Round 2 (brief-58-fix2.md, user re-check R160 + review M1)
+
+Read: `brief-58-fix2.md` 1–12 · `REQUEST_LEDGER_phase27.md` row R160 · `Presets/V2.lua` 26–175 · `tests/layoutv2/run.py` 255–345 · `Presets/{fhd,qhd,uhd}.lua` Quartz Player line, companion layout size line (grep) · `PitBull4/Modules/Totems/Totems.lua` :8, :36, :233–243 (grep) · `Defaults/PitBull4.lua` 502–508 · `Grid2/GridLayout.lua` 878–886 · game WTF `PitBull4.lua` and backups `claude-p27-backup-{5b85dff4,767a1dcc}/WTF/…/PitBull4.lua` (read only, python/grep for `dfLayoutV2`). The screenshots `user-check-02..05` were not judged; every point below is tied to code or saved data.
+
+### Findings
+
+1. **Switcher state.** The user's PitBull4 profile already had `dfLayoutV2 = true` before the a2531127 install (backup `767a1dcc` WTF = state just before that install; it came from an earlier `uhd-v2` request), and the game now has `true`. So after the install the switcher showed **New** (flag true) while the profile still held the earlier V2 geometry (the install writes nothing into an existing profile). The review's "dfLayoutV2=false → Old" does not match this profile (근거: the two saved files above). Going Old→New then wrote the current V2, which is why the layout changed.
+   Fix: the V2 layout writes `dfLayoutRevision = 2` (`V2.lua:21`, `:96`); the switcher shows New only when the profile has the V2 flag **and** this revision (`ThemeSwitcher.lua:256–258`), otherwise Old — one step then applies the current New. Login still writes nothing.
+2. **Grid2 cells on switch.** The `-v1/-v2` presets wrote only Grid2Layout (spot). Now they also write Grid2Frame cells: New = the preset's square cells (44/58/88), Old = V1 cells (96×32, 120×44, 154×56 — `V2.lua:13–17` `oldCells`, `:71–77`). `/dfp preset <size>` + `/dfp go` writes the base cells (square) and the V2 copies (square). Spot unchanged (TOPRIGHT, tracker top / tracker left).
+3. **The 4 slots right of the player frame = the PitBull4 totem timer** (Totems module, 4 slots = `MAX_TOTEMS = 4`, `PitBull4/Modules/Totems/Totems.lua:8`; enabled by `Defaults/PitBull4.lua:504–508`; layout of the player frame `보통` in `Presets/uhd.lua:479`: `attach_to="root", location="out_right_bottom", totem_direction="h", line_break=4, size=36/15` (fhd/qhd the same line). `hide_inactive=true`, so the slots show for a shaman with totems out, and in config mode). V2 reserved `timerGap` for it between player and focus (old `V2.lua` lines `timerWidth`/`timerGap`).
+   Fix: in New the timer is `location="out_top_right"` (directly above the player frame, right-aligned, `V2.lua:103`), and the player's aura rows are raised past it (`dfAuraGeometry["플레이어"].top_margin = outside margin + icon + 4`, `V2.lua:152`). Under the player there was no free spot: the two "플레이어 아래" frames fill the full player width at `lower = bottom + 8`, so the brief's second choice (above, right-aligned, under the aura rows) was taken. Old (V1) keeps `out_right_bottom`.
+   Gaps: player–focus = focus–target = `sideGap` (`V2.lua:111`) = the frame gap (castHeight + 4), widened only where the Quartz player cast bar above the focus (with its icon on the left) is wider than the focus: fhd 56, qhd 76, uhd 107 px (frame gap 34/38/44). With the plain frame gap the timer and the player's aura band overlapped the Quartz player bar (test: fhd totems (722,561,108,24) vs `quartz Player`; aura band (581,493,256,64) vs the bar). Focus stays at the midpoint and the screen centre; vertical positions unchanged; pets unchanged.
+4. **Check-list x formula (M1).** `phase27-game-check.md:33` now uses Grid2's own rule for both values (`GridLayout.lua:880` right, `:883` top): `(P:GetWidth()*t - f:GetRight()*s)/u`, `(P:GetHeight()*t - f:GetTop()*s)/u` (205 bytes). Item 6 expectations updated (totem timer, switcher state, cells).
+
+### Impact map (round 2)
+
+| Place | Type | Impact | Reason |
+|---|---|---|---|
+| `Presets/V2.lua` | layout source | fix | revision, cells, totems, side gap |
+| `ThemeSwitcher.lua` versionInUse | ★ reader of the profile flag | fix | revision rule |
+| `Presets.lua` writer | ★ callee | check only | new Grid2Frame fragments use the same path as Grid2Layout |
+| `Defaults/Grid2.lua` reapply | ★ reader | check only | first Grid2Frame fragment per key is the base square one |
+| `PitBull4/Modules/Aura/Layout.lua:468` top_margin | ★ consumer | check only | raises the player's aura rows |
+| `PitBull4/Modules/Totems/Totems.lua` | ★ consumer of `location` | check only | standard indicator location |
+| `Defaults/PitBull4.lua` geometry check | ★ reader | check only | layouts/units unchanged |
+| `Party.lua` | reader of Grid2 spot | none | spot unchanged |
+| `tests/statusstrip/theme_switcher.py`, `tests/layoutv2/run.py`, `tests/firststart/run.py` | ★ locked tests | fix | new rules and tests |
+| `codex-briefs/phase27-game-check.md` :33, item 6 | check list | fix | M1 + new expectations |
+
+### Commands (verdict lines)
+
+| Command | Verdict |
+|---|---|
+| `python -I Collection/tests/statusstrip/theme_switcher.py` | rc=0 · version switcher PASS ×3 (current V2 = New, earlier V2 = Old → steps to New) |
+| `python -I Collection/tests/layoutv2/run.py` | rc=0 · 30 PASS (V2 default: equal side gaps 56/76/107, totem rect clear of every rectangle, player aura bands above the timer) |
+| `python -I Collection/tests/firststart/run.py` | rc=0 · 29/29 (new `grid2_cells_follow_the_layout_version`: fresh 44×44 → v1 96×32 → v2 44×44 → v1 → base 44×44, spot unchanged) |
+| core 109/109 · statusstrip 20/20 · pitbull4 6/6 · pitbull4runtime 20/20 · composition 8/8 · castbars 16/16 · chatsetup 32/32 · fufdefaults 22/22 · thirdparty 8/8 | rc=0 each |
+| luacheck Core + Skin_StatusStrip | checked=23 failed=0 |
+| genregistry --check | up to date |
+| patches verify (devnull wrapper) | patches=7 unmodified=20 failures=0 |
+| build --dry-run pitbull4 / fuf | rc=0 · files 2284 / 2228 |
+| theme_switcher_art --check | tga=69 problems=0 |
+
+### Choices (round 2)
+
+1. A V2 profile without this package's revision shows **Old** (one step = current New) — the honest state, since it does not hold the current New geometry.
+2. Totem timer above the player frame (no free spot under it); aura rows raised by `top_margin`.
+3. Side gap widened past the Quartz player cast bar where needed (fhd 56, qhd 76, uhd 107) instead of the plain frame gap, to avoid overlaps.
+4. Old cell sizes = the V1 values the presets had before Step 58.
+
+Remaining: master commits; then the new stage. HUD art is next round.
