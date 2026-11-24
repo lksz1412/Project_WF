@@ -5,3 +5,4 @@
 ## Dependencies: !DevilForever_Core, DevilForever_StatusStrip, DevilForever_Appearance
 
 Skin.lua
+ThemeSwitcher.lua

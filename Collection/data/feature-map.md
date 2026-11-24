@@ -19,7 +19,7 @@ Devil Forever
 | 기능 | 담당 | 적용 경로 |
 |---|---|---|
 | 해상도와 초기 배치 | `!DevilForever_Core` | 최초 사용 시 화면에 맞는 프리셋 선택. `/dfp status`에서 활성 프리셋 확인. `/dfp preset <이름>`으로 배치 복원 예약 |
-| 테마와 공통 패널 | `DevilForever_Appearance` | `/dfp theme <이름>`. 단축바와 하단 채팅·미니맵 외곽에 설치 이미지 적용 |
+| 테마와 공통 패널 | `DevilForever_Appearance` | `/dfp theme <번호>`. 기본값은 `0` 데빌이며 단축바와 하단 채팅·미니맵 외곽에 선택한 그림 적용 |
 | 설정 관리 | `!DevilForever_Core` · `ProfileManager` | Core의 등록 범위는 `/dfp save`·`restore`. 키와 게임 설정은 ProfileManager 경로를 호출하는 `/dfp keys`·`/dfp game` |
 
 ## 하단 조작
@@ -30,6 +30,7 @@ Devil Forever
 | 단축바 및 소환수 버튼 테두리 | `Masque` · `Masque_Onyx` · `Masque_Dominos` · `DevilForever_Skin_Dominos` | Onyx 기본 외곽과 테마별 소환수 테두리. 소환수 스킨은 해당 기술 버튼 표시와 연동 |
 | 미니맵 | `SexyMap` | 사각 미니맵 초기 기본값과 해상도별 크기 192 / 224 / 304px. 기존 미니맵 프로필은 SexyMap에서 설정 |
 | 골드·가방·내구도·시계·지연·초당 프레임 | `DevilForever_StatusStrip` · `DevilForever_Skin_StatusStrip` | 프리셋 하단 띠와 테마. 표시 항목은 `/dfstatus` |
+| 테마 선택 | `DevilForever_Skin_StatusStrip` · `DevilForever_Core` | 상태띠 오른쪽 화살표로 13종을 순환한다. `/dfp theme`의 번호, 현재 테마와 저장을 공유한다. |
 
 ## 대화
 

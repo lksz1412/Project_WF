@@ -141,6 +141,16 @@ local function Name(unit, show_server)
 	local name, server = UnitName(unit)
 	if UnitInPartyIsAI(unit) and (C_LFGInfo.IsInLFGFollowerDungeon() or C_PartyInfo.IsPartyWalkIn()) then
 		name = LFG_FOLLOWER_NAME_PREFIX:format(name)
+	elseif PitBull4.Compat.IsForever and type(RegionalUniqueNamesEnabled) == "function"
+		and SafeBoolean(RegionalUniqueNamesEnabled(), false) and SafeBoolean(UnitIsPlayer(unit), false) then
+		if IsValueAccessible(name) and IsValueAccessible(server)
+			and type(name) == "string" and type(server) == "string" and server ~= "" then
+			local constants = Constants and Constants.CharacterNameSeparatorConsts
+			local separator = constants and constants.CHARACTERNAME_SURNAME_SEPARATOR
+			if type(separator) ~= "string" or separator == "" then separator = " " end
+			local suffix = separator .. server
+			if name:sub(-#suffix) ~= suffix then name = name .. suffix end
+		end
 	elseif show_server and server and server ~= "" then
 		name = FULL_PLAYER_NAME:format(name, server)
 	end

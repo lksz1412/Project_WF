@@ -190,7 +190,7 @@ local function update_group(container, group, mine, db, frame, cfg, vertical, ki
 		elementWidth = group.size, elementHeight = group.size,
 		elementSpacing = vertical and cfg.row_spacing or cfg.col_spacing,
 		lineSpacing = vertical and cfg.col_spacing or cfg.row_spacing,
-		forceNewLine = not mine and cfg.new_row_size and cfg.my_size ~= cfg.size or false,
+		forceNewLine = (mine == (cfg.reverse == true)) and cfg.new_row_size and cfg.my_size ~= cfg.size or false,
 		layoutIndex = (mine ~= (cfg.reverse == true)) and 1 or 2,
 	}
 	-- Each group is independently limited by the native API. Keeping two groups
@@ -260,6 +260,7 @@ function Aura:UpdateNativeBuffs(frame, db)
 end
 
 update_native = function(self, frame, db, kind, store)
+	if self.GetManagedLayoutDB then db = self:GetManagedLayoutDB(frame, db) end
 	local is_buff = kind == "buff"
 	local cfg = is_buff and db.layout.buff or db.layout.debuff
 	local enabled_kind = is_buff and db.enabled_buffs or (not is_buff and db.enabled_debuffs)

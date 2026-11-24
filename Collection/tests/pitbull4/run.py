@@ -96,7 +96,7 @@ def module_ids(lua_files):
 
 def defaults_spec():
     lua = lua51.LuaRuntime(unpack_returned_tuples=True)
-    lua.execute("TEST_cap = {}; DevilForever_Core = {Defaults = {Register = function(self, folder, spec) "
+    lua.execute("TEST_cap = {}; DevilForever_Core = {On = function() end, Defaults = {Register = function(self, folder, spec) "
                 "TEST_cap.folder = folder; TEST_cap.spec = spec end}}")
     chunk = lua.globals().loadstring(open(DEFAULTS, "rb").read(), b"@Defaults/PitBull4.lua")
     fn, err = chunk if isinstance(chunk, tuple) else (chunk, None)
@@ -212,8 +212,8 @@ def defaults_spec_matches_the_copy():
         for name, entry in main[kind].items():
             eq(entry.get("layout") in layouts, True, "%s %s names an existing layout" % (kind, name))
     eq(sorted(n for n, u in main["units"].items() if u.get("enabled")),
-       sorted(["플레이어", "대상", "대상의 대상", "대상의 대상의 대상", "대상의 소환수", "주시 대상", "주시 대상의 대상",
-               "플레이어의 소환수"]),
+       sorted(["플레이어", "대상", "대상의 대상", "대상의 대상의 대상", "주시 대상", "주시 대상의 대상",
+               "주시 대상의 대상의 대상", "플레이어의 소환수", "플레이어의 소환수의 대상", "플레이어의 소환수의 대상의 대상"]),
        "units that are on")
     eq({n: g["unit_group"] for n, g in main["groups"].items()},
        {"파티": "party", "파티원 대상": "partytarget", "파티원 소환수": "partypet"}, "party groups only, no raid group")

@@ -5,8 +5,8 @@ Usage:  python3 -I Collection/tests/firststart/run.py
 Reuses the Core test harness (Collection/tests/core/run.py: lupa Lua 5.1
 runtime, client stubs, Core files in TOC order) for the SexyMap appearance
 fragments, and reads shipped addon files as text for the Grid2 first-start
-templates and the nameplate addon's TOC. Nothing of the game client is
-emulated; upstream addon files are read, never executed.
+templates and the nameplate addon's TOC. The native SexyMap login code also
+runs against frame stubs; this does not emulate the game client.
 """
 
 import os
@@ -21,8 +21,24 @@ ADDONS = os.path.join(REPO, "Collection", "AddOns")
 FIXTURE_PRESETS = os.path.join(HERE, "fixtures", "Presets_Screens.lua")
 
 core = runpy.run_path(os.path.join(REPO, "Collection", "tests", "core", "run.py"), run_name="core_harness")
-Session, eq, ADDON, SEXYMAP_INIT = core["Session"], core["eq"], core["ADDON"], core["SEXYMAP_INIT"]
+CoreSession, eq, ADDON, SEXYMAP_INIT = core["Session"], core["eq"], core["ADDON"], core["SEXYMAP_INIT"]
 lupa = core["lupa"]
+
+
+class Session(CoreSession):
+    def run_file(self, path):
+        if path.replace("\\", "/").endswith("/Defaults/SexyMap.lua"):
+            self.lua.execute("""
+              local create=CreateFrame
+              local function scale(self,value) self.scale=value;self.scaleCalls=(rawget(self,'scaleCalls') or 0)+1 end
+              function CreateFrame(...)
+                local frame=create(...)
+                frame.SetScale=scale
+                frame.GetScale=function(self) return rawget(self,'scale') or 1 end
+                return frame
+              end
+            """)
+        return super().run_file(path)
 
 # A 1920x1080 screen at UI scale 0.64 (UIParent 768 high): Presets picks "fhd".
 UI_SCALE = 0.64
@@ -193,6 +209,162 @@ def sexymap_without_presets_registers_no_fragment():
     eq(sorted(APPEARANCE_CORE - {"shape"} & set(p["core"])), [], "no appearance without a registered preset")
     eq(fragment_states(s), {}, "no SexyMap fragment")
     eq(s.errors(), [], "no errors")
+
+
+MINIMAP_NATIVE = r"""
+tinsert=table.insert
+TEST_ui=1
+UIParent={GetEffectiveScale=function() return TEST_ui end,GetHeight=function() return 768/TEST_ui end}
+local function noop() end
+local methods={}
+function methods:SetScale(v) self.scale=v end
+function methods:SetPoint(p,rel,rp,x,y)
+ assert(type(p)=='string','Invalid region point '..tostring(p))
+ self.point={p,rel,rp,x,y};self.pointCalls=(rawget(self,'pointCalls') or 0)+1
+end
+function methods:GetWidth() return rawget(self,'width') or 180 end
+function methods:SetSize(w,h) self.width=w;self.height=h end
+function methods:GetFrameStrata() return "LOW" end
+function methods:GetFrameLevel() return 2 end
+function methods:GetZoom() return 0 end
+function methods:CreateTexture() return setmetatable({}, {__index=methods}) end
+methods.CreateFontString=methods.CreateTexture
+setmetatable(methods,{__index=function() return noop end})
+local original=CreateFrame
+function CreateFrame(...) return setmetatable(original(...),{__index=methods}) end
+for _,name in ipairs({"Minimap","MinimapZoomIn","MinimapZoomOut","MinimapCluster","MinimapBackdrop",
+ "MinimapNorthTag","MinimapCompassTexture","MinimapBorderTop"}) do _G[name]=CreateFrame("Frame") end
+Minimap.ZoomIn=CreateFrame('Frame');Minimap.ZoomOut=CreateFrame('Frame')
+local oldLib=LibStub
+LibStub=function(name,...)
+ if name=="AceConfigRegistry-3.0" then return {RegisterOptionsTable=noop} end
+ if name=="AceConfigDialog-3.0" then return {AddToBlizOptions=function() return nil,1 end} end
+ return oldLib(name,...)
+end
+function hooksecurefunc(object,key,callback)
+ local original=object[key]
+ object[key]=function(...) local result=original(...);callback(...);return result end
+end
+TEST_mapTimers={}
+C_Timer={After=function(delay,fn) if delay==0 then TEST_mapTimers[#TEST_mapTimers+1]=fn end end}
+function drainMap() local t=TEST_mapTimers;TEST_mapTimers={};for _,fn in ipairs(t) do fn() end end
+SM={L=setmetatable({}, {__index=function(_,key) if key~="OnInitialize" then return key end end}),API={isVanilla=true}}
+SM.Borders={OnInitialize=function(_,profile)
+ if not profile.borders then profile.borders={borders={},applyPreset="Blue Rune Circles"} end
+ NATIVE_core=profile.core;NATIVE_borders=profile.borders;NATIVE_list=profile.borders.borders
+ end,OnEnable=function()
+ NATIVE_borderCount=#NATIVE_list;NATIVE_applyPreset=NATIVE_borders.applyPreset
+ end}
+"""
+
+
+def native_minimap_session(height, saved=None, native="SexyMap_Classic.lua", experience=False):
+    screen={"UIParent":{"GetEffectiveScale":lambda self:1,"GetHeight":lambda self:768},
+            "PixelUtil":{"GetPixelToUIUnitFactor":lambda:768/height}}
+    s = Session(registry="generated", extra_files=(), saved=saved, globals_=screen, preset_files=(FIXTURE_PRESETS,))
+    s.lua.execute(MINIMAP_NATIVE)
+    s.lua.execute("PixelUtil={GetPixelToUIUnitFactor=function() return 768/"+str(height)+" end}; "
+                  "function GetPhysicalScreenSize() return 3840,"+str(height)+" end")
+    s.load_addon(ADDON)
+    if experience:
+        s.lua.execute("""
+          XP={db={global={minimap={angle=225,hide=true}}}}
+          local old=LibStub
+          LibStub=function(name,...)
+            if name=='AceAddon-3.0' then return {NewAddon=function() return XP end,GetAddon=function(_,name) if name=='ExperienceForever' then return XP end end} end
+            if name=='LibSharedMedia-3.0' then return {Register=function() end} end
+            return old(name,...)
+          end
+        """)
+        with open(os.path.join(ADDONS,"ExperienceForever","ExperienceForever.lua"),"rb") as fh:
+            s.lua.eval("loadstring")(fh.read(),b"@ExperienceForever.lua")()
+        s.lua.execute("XP.MinimapButton=CreateFrame('Button');XP.MinimapButton.hidden=true;XP:UpdateMinimapButtonPosition()")
+    with open(os.path.join(ADDONS,"SexyMap",native),"rb") as fh:
+        fn=s.lua.eval("loadstring")(fh.read(),("@"+native).encode())
+    (fn[0] if isinstance(fn,tuple) else fn)("SexyMap",s.g.SM)
+    s.g.TEST_loaded["SexyMap"]=True
+    s.fire("ADDON_LOADED","SexyMap")
+    if saved is None:
+        s.lua.execute('NATIVE_list[1]={name="Rune 1"};NATIVE_list[2]={name="Rune 2"};NATIVE_list[3]={name="Fade"}')
+    s.lua.execute("TEST_ui=.64")
+    s.fire("PLAYER_LOGIN")
+    s.lua.execute("Minimap:SetSize(140,140)")
+    if experience:
+        s.lua.execute("assert(XP.MinimapButton.pointCalls==1,'XP position must wait for world entry')")
+    s.fire("PLAYER_ENTERING_WORLD",True,False)
+    s.lua.execute("drainMap()")
+    return s
+
+
+@case
+def sexymap_mainline_scale_hook_bypassed_and_xp_button_refreshed_once():
+    with open(os.path.join(ADDONS,"SexyMap","SexyMap.toc"),encoding="utf-8") as fh:
+        eq("SexyMap.lua [AllowLoadGameType mainline]" in fh.read(),True,"mainline TOC path")
+    for native in ("SexyMap.lua","SexyMap_Classic.lua"):
+        s=native_minimap_session(2160,native=native,experience=True)
+        p=s.g.XP.MinimapButton.point
+        eq(round((p[4]**2+p[5]**2)**.5,6),75,"native XP radius follows stable140 width")
+        eq((s.g.XP.MinimapButton.pointCalls,s.g.XP.db["global"].minimap.angle,s.g.XP.MinimapButton.hidden),
+           (2,225,True),"initial XP placement + one correction; angle/hidden unchanged")
+        if native=="SexyMap.lua":
+            s.lua.execute("local ok,why=pcall(function() Minimap:SetScale(Minimap:GetScale()) end);assert(not ok and why:find('Invalid region point'))")
+        before=s.g.Minimap.scaleCalls
+        for ui in (1,.8,.64):
+            s.g.TEST_ui=ui
+            s.fire("UI_SCALE_CHANGED");s.lua.execute("drainMap()")
+            eq(s.g.Minimap.scaleCalls,before+1,"one base scale write per changed scale")
+            before=s.g.Minimap.scaleCalls
+        s.fire("DISPLAY_SIZE_CHANGED");s.lua.execute("drainMap()")
+        eq(s.g.Minimap.scaleCalls,before,"same scale: no repeat scale write")
+        eq(s.g.XP.MinimapButton.pointCalls,2,"same width: no repeat XP position write")
+        s.lua.execute("NATIVE_core.x=NATIVE_core.x+1;TEST_ui=1")
+        s.fire("UI_SCALE_CHANGED");s.lua.execute("drainMap()")
+        eq(s.g.Minimap.scaleCalls,before,"manual unmanaged map: no scale write")
+        eq(s.g.XP.MinimapButton.pointCalls,2,"manual map: no XP write")
+        eq(s.errors(),[],"native mainline/Classic apply continues after scale")
+
+
+@case
+def sexymap_native_login_scale_border_clear_and_reload():
+    for height,x,y,side in ((1080,1292,860,192),(1440,1720,1186,224),(2160,2596,1820,304)):
+        s=native_minimap_session(height)
+        for attempt in range(2):
+            p=s.sv("SexyMap2DB")["Hero-Realm"]["core"]
+            factor=768/height
+            scale=s.g.Minimap.scale
+            for got,want in ((p["x"]*scale*.64/factor,x),(-p["y"]*scale*.64/factor,y),(140*scale*.64/factor,side)):
+                eq(round(got,6),round(want,6),"native physical pixels")
+            eq((s.g.NATIVE_borderCount,s.g.NATIVE_applyPreset),(0,False),"Rune list cleared before native OnEnable")
+            eq(s.lua.eval("NATIVE_core==SexyMap2DB['Hero-Realm'].core and NATIVE_list==SexyMap2DB['Hero-Realm'].borders.borders"),True,"native references retained")
+            eq(s.errors(),[],"native login errors")
+            if attempt==0:
+                s=native_minimap_session(height,saved=carry(s))
+        for ui in (1,.8,.64):
+            s.g.TEST_ui=ui
+            s.fire("UI_SCALE_CHANGED")
+            s.lua.execute("drainMap()")
+            p=s.sv("SexyMap2DB")["Hero-Realm"]["core"]
+            scale=s.g.Minimap.scale
+            for got,want in ((p["x"]*scale*ui/factor,x),(-p["y"]*scale*ui/factor,y),(140*scale*ui/factor,side)):
+                eq(round(got,6),round(want,6),"live UI scale event physical pixels")
+        s.lua.execute("NATIVE_core.x=NATIVE_core.x+10;TEST_ui=1")
+        old=s.g.Minimap.scale
+        s.fire("UI_SCALE_CHANGED")
+        s.lua.execute("drainMap()")
+        eq(s.g.Minimap.scale,old,"manual geometry releases scale management")
+
+
+@case
+def sexymap_requested_preset_clears_numeric_borders_in_place():
+    saved=installed()
+    saved["SexyMap2DB"]["Hero-Realm"]["borders"]={"borders":{1:{"name":"Rune 1"},2:{"name":"Rune 2"},3:{"name":"Fade"}},
+                                                       "applyPreset":False}
+    s=sexymap_session(saved=request_preset(saved),login=False)
+    s.lua.execute("held=SexyMap2DB['Hero-Realm'].borders.borders;heldCore=SexyMap2DB['Hero-Realm'].core")
+    s.fire("PLAYER_LOGIN")
+    eq(s.lua.eval("#held==0 and held==SexyMap2DB['Hero-Realm'].borders.borders and heldCore==SexyMap2DB['Hero-Realm'].core"),
+       True,"requested existing profile: numeric list empty and native references kept before setup")
+    eq(s.errors(),[],"no errors")
 
 
 # Party frame owner (Party.lua) ----------------------------------------------------
@@ -611,18 +783,118 @@ def pb4_preset_session(saved=None, request=False):
 def pitbull4_preset_positions_only_into_existing_units():
     fresh = pb4_preset_session()
     units = fresh.sv("PitBull4DB")["profiles"]["Default"]["units"]
-    eq(round(units["대상의 소환수"]["position_x"], 2), round(170 * PIXEL_FACTOR / UI_SCALE, 2),
-       "fresh install: the new unit gets its preset position")
+    eq(round(units["대상의 소환수"]["position_x"], 2), round(-703 * PIXEL_FACTOR / UI_SCALE, 2),
+       "fresh install: disabled targetpet keeps its optional geometry")
+    eq(units["대상의 소환수"]["enabled"], False, "fresh targetpet is disabled without removing its classification")
     saved = {"PitBull4DB": {"profileKeys": {"Hero - Realm": "Default"},
                             "profiles": {"Default": {"units": {"대상": {"unit": "target", "enabled": True}}}}}}
+    saved["PitBull4DB"]["namespaces"] = {"LuaTexts": {"profiles": {"Default": {"layouts": {
+        "대상의대상": {"enabled": False, "elements": {
+            "Lua:이름": {"enabled": False, "code": ""}, "Lua:생명력": {"enabled": False, "exists": False}}}}}}}}
     first = pb4_preset_session(saved=saved)
+    eq(first.sv("PitBull4DB"), saved["PitBull4DB"], "existing unrequested profile gains no new rows or modules")
     core["dfp"](first, "preset fhd")
     core["dfp"](first, "go")
     nxt = {n: first.sv(n) for n in ("PitBull4DB", "DevilForever_CoreDB", "DevilForever_ProfilesDB")}
     s = pb4_preset_session(saved=nxt)
     units = s.sv("PitBull4DB")["profiles"]["Default"]["units"]
-    eq(sorted(units), ["대상"], "/dfp preset on an existing profile: no position-only unit entries")
+    eq(sorted(units), sorted(["대상", "플레이어 아래 대상", "플레이어 아래 대상의 대상", "플레이어의 소환수의 대상", "플레이어의 소환수의 대상의 대상", "주시 대상의 대상", "주시 대상의 대상의 대상"]),
+       "explicit preset adds the two lower rows and four complete companion chains")
+    for name, unit in (("플레이어 아래 대상", "target"), ("플레이어 아래 대상의 대상", "targettarget")):
+        eq((units[name]["unit"], units[name]["enabled"], units[name]["layout"]),
+           (unit, True, "대상의대상"), "new singleton has native identity and layout")
+    fresh_units = fresh.sv("PitBull4DB")["profiles"]["Default"]["units"]
+    eq(all(name in fresh_units for name in ("플레이어 아래 대상", "플레이어 아래 대상의 대상")), True,
+       "fresh receipt v1 then v2 creates both rows")
+    receipt = fresh.sv("DevilForever_CoreDB")["preset"]["fragments"]["fhd"]
+    eq(receipt["PitBull4DB@profile:Default"], 4, "complete companion-chain fragment owns version4 receipt")
+    unchanged = pb4_preset_session(saved=carry(s))
+    eq(unchanged.sv("PitBull4DB"), s.sv("PitBull4DB"), "plain reload keeps completed profile")
     eq("position_x" in units["대상"], True, "the existing unit gets its position")
+    small = s.sv("PitBull4DB")["namespaces"]["LuaTexts"]["profiles"]["Default"]["layouts"]["대상의대상"]
+    eq(small["enabled"], True, "explicit preset restores stored disabled small LuaTexts layout")
+    for key, side in (("Lua:이름", "left"), ("Lua:생명력", "right")):
+        text = small["elements"][key]
+        eq((text["enabled"], text["exists"], text["attach_to"], text["location"]),
+           (True, True, "HealthBar", side), "small text enabled and attached to the existing health bar")
+        eq(bool(text["code"]), True, "small text has display code")
+
+
+@case
+def pitbull4_managed_party_roles_follow_owner_and_old_pet_stays_hidden():
+    # Actual collection presets create the three complete headers, including on an old profile.
+    first = pb4_preset_session()
+    saved = carry(first)
+    saved.setdefault("DevilForever_CoreDB", {}).setdefault("party", {})["owner"] = {"PitBull4/Default": "grid2"}
+    s = party_session(["Grid2", "PitBull4"], saved=saved)
+    groups = s.sv("PitBull4DB")["profiles"]["Default"]["groups"]
+    names = ("파티", "파티원 대상", "파티원 대상의 대상")
+    eq([groups[n]["enabled"] for n in names], [False]*3, "Grid2 default suppresses all three managed headers")
+    core["dfp"](s, "party unitframes")
+    groups = s.sv("PitBull4DB")["profiles"]["Default"]["groups"]
+    eq([groups[n]["enabled"] for n in names], [True]*3, "local unitframes choice enables all three")
+    eq(groups["파티원 소환수"]["enabled"], False, "legacy pet stays hidden")
+    old = carry(s)
+    old["PitBull4DB"]["profiles"]["Default"]["groups"]["파티원 대상의 대상"]["enabled"] = False
+    fixed = party_session(["Grid2", "PitBull4"], saved=old)
+    eq(fixed.sv("PitBull4DB")["profiles"]["Default"]["groups"]["파티원 대상의 대상"]["enabled"], True,
+       "managed child contradiction is repaired even while the main header matches")
+    core["dfp"](fixed, "party grid2")
+    core["dfp"](fixed, "party unitframes")
+    eq(fixed.sv("PitBull4DB")["profiles"]["Default"]["groups"]["파티원 소환수"]["enabled"], False, "commands keep pet hidden")
+    old = {"PitBull4DB": {"profileKeys": {"Hero - Realm": "Default"}, "profiles": {"Default": {"units": {}, "groups": {}}}}}
+    unrequested = pb4_preset_session(saved=old)
+    eq(unrequested.sv("PitBull4DB"), old["PitBull4DB"], "unrequested profile gains nothing")
+    core["dfp"](unrequested, "preset fhd"); core["dfp"](unrequested, "go")
+    applied = pb4_preset_session(saved=carry(unrequested))
+    groups = applied.sv("PitBull4DB")["profiles"]["Default"]["groups"]
+    eq(sorted(groups), sorted(names), "explicit preset creates exactly the three complete headers")
+    for name, role in zip(names, ("party", "partytarget", "partytargettarget")):
+        eq((groups[name]["unit_group"], groups[name]["include_player"], groups[name]["show_when"]["party"]),
+           (role, False, True), "four companions, not self, native party only")
+    eq(first.errors()+s.errors()+fixed.errors()+applied.errors(), [], "no errors")
+
+
+@case
+def companion_chains_explicit_upgrade_keeps_existing_profile():
+    previous = pb4_preset_session()
+    saved = carry(previous)
+    profile = saved["PitBull4DB"]["profiles"]["Default"]
+    units = profile["units"]
+    # The earlier managed profile has only the two first descendants and no pettargettarget row.
+    units.pop("플레이어의 소환수의 대상의 대상")
+    units["주시 대상의 대상의 대상"] = {"unit": "focustargettarget", "layout": "대상의대상"}
+    pixel = PIXEL_FACTOR / UI_SCALE
+    for label, point in (("플레이어의 소환수의 대상", "TOPLEFT"), ("주시 대상의 대상", "TOPRIGHT")):
+        units[label] = {"unit": "pettarget" if point == "TOPLEFT" else "focustarget", "layout": "대상의대상",
+                        "enabled": point == "TOPRIGHT", "anchor": point, "relative_point": point, "relative_to": "0",
+                        "position_x": (703 if point == "TOPLEFT" else -703)*pixel, "position_y": -546*pixel,
+                        "scale": 1, "size_x": 123/160, "size_y": 29/28, "font_multiplier": 1}
+    for label in ("플레이어의 소환수", "주시 대상"):
+        units[label]["position_y"] = -546*pixel
+    units["대상의 소환수"]["enabled"] = True
+    profile["layouts"].pop("소환수와 주시 아래")
+    profile["dfGeometry"]["layouts"].pop("소환수와 주시 아래")
+    for label in ("플레이어의 소환수의 대상", "플레이어의 소환수의 대상의 대상", "주시 대상의 대상", "주시 대상의 대상의 대상"):
+        profile["dfGeometry"]["units"].pop(label, None)
+    for namespace in saved["PitBull4DB"]["namespaces"].values():
+        namespace["profiles"]["Default"].get("layouts", {}).pop("소환수와 주시 아래", None)
+    saved["DevilForever_CoreDB"]["preset"]["fragments"]["fhd"]["PitBull4DB@profile:Default"] = 3
+    units["Custom unit"] = {"unit": "target", "layout": "Custom layout", "enabled": False}
+    plain = pb4_preset_session(saved=saved)
+    eq(plain.sv("PitBull4DB"), saved["PitBull4DB"], "unrequested existing profile is preserved")
+    core["dfp"](plain, "preset fhd"); core["dfp"](plain, "go")
+    upgraded = pb4_preset_session(saved=carry(plain))
+    units = upgraded.sv("PitBull4DB")["profiles"]["Default"]["units"]
+    names = ("플레이어의 소환수의 대상", "플레이어의 소환수의 대상의 대상", "주시 대상의 대상", "주시 대상의 대상의 대상")
+    for name, unit in zip(names, ("pettarget", "pettargettarget", "focustarget", "focustargettarget")):
+        eq((units[name]["enabled"], units[name]["unit"], units[name]["layout"]), (True, unit, "소환수와 주시 아래"), "explicit four complete native rows")
+    eq(units["대상의 소환수"]["enabled"], False, "explicit preset suppresses existing targetpet")
+    eq(units["Custom unit"], saved["PitBull4DB"]["profiles"]["Default"]["units"]["Custom unit"], "custom unit preserved")
+    eq(any(u.get("unit", "").startswith("focuspet") for u in units.values()), False, "no focus pet rows added")
+    restored = pb4_preset_session(saved=carry(upgraded))
+    eq(restored.sv("PitBull4DB"), upgraded.sv("PitBull4DB"), "plain reload keeps completed chain profile")
+    eq(previous.errors()+plain.errors()+upgraded.errors()+restored.errors(), [], "no errors")
 
 
 GRID2_OPTIONS = os.path.join(ADDONS, "Grid2Options")

@@ -30,8 +30,7 @@ local Player = Quartz3:GetModule("Player")
 local media = LibStub("LibSharedMedia-3.0")
 
 local swingbar, swingbar_width, swingstatusbar, remainingtext, durationtext
--- the duration of the current swing
-local swingDuration
+local swingEnd, swingLength
 
 local db, getOptions
 
@@ -52,10 +51,14 @@ local defaults = {
 }
 
 local function OnUpdate()
-	if not swingDuration or swingDuration:HasExpired() then
+	if not swingEnd then return swingbar:Hide() end
+	local remaining = math.max(0, swingEnd - GetTime())
+	swingstatusbar:SetValue(1 - remaining / swingLength)
+	if remaining == 0 then
+		swingEnd, swingLength = nil, nil
 		return swingbar:Hide()
 	end
-	remainingtext:SetFormattedText("%.1f", swingDuration:GetRemainingDuration())
+	remainingtext:SetFormattedText("%.1f", remaining)
 end
 
 local function OnHide()
@@ -93,11 +96,19 @@ function Swing:OnEnable()
 		remainingtext = swingstatusbar:CreateFontString(nil, "OVERLAY")
 		swingbar:Hide()
 	end
+	if not self.dfPlayerHooked then
+		hooksecurefunc(Player.Bar, "ApplySettings", function()
+			if db.dfFollowPlayer then Swing:ApplySettings() end
+		end)
+		self.dfPlayerHooked = true
+	end
 	self:ApplySettings()
 end
 
 function Swing:OnDisable()
 	self:UnregisterAllEvents()
+	swingEnd, swingLength = nil, nil
+	swingstatusbar:SetValue(0)
 	swingbar:Hide()
 end
 
@@ -107,15 +118,16 @@ function Swing:PLAYER_SWING(event, duration, swingType)
 	if issecretvalue(duration) or issecretvalue(swingType) then return end
 	if swingType == Enum.PlayerSwingType.OffHand then return end
 
-	if not duration or duration <= 0 then
-		swingDuration = nil
+	if type(duration) ~= "number" or duration <= 0 or duration == math.huge or duration ~= duration then
+		swingEnd, swingLength = nil, nil
+		swingstatusbar:SetValue(0)
 		swingbar:Hide()
 		return
 	end
 
-	swingDuration = swingDuration or C_DurationUtil.CreateDuration()
-	swingDuration:SetTimeFromStart(GetTime(), duration)
-	swingstatusbar:SetTimerDuration(swingDuration, Enum.StatusBarInterpolation.Immediate, Enum.StatusBarTimerDirection.ElapsedTime)
+	swingEnd, swingLength = GetTime() + duration, duration
+	swingstatusbar:SetMinMaxValues(0, 1)
+	swingstatusbar:SetValue(0)
 
 	durationtext:SetFormattedText("%.1f", duration)
 	swingbar:Show()
@@ -144,9 +156,9 @@ function Swing:ApplySettings()
 		swingstatusbar:SetAllPoints(swingbar)
 		swingstatusbar:SetStatusBarTexture(media:Fetch("statusbar", Player.db.profile.texture))
 		swingstatusbar:SetStatusBarColor(unpack(db.barcolor))
-		if swingDuration and not swingDuration:HasExpired() then
+		if swingEnd and GetTime() < swingEnd then
 			-- keep a running swing going
-			swingstatusbar:SetTimerDuration(swingDuration, Enum.StatusBarInterpolation.Immediate, Enum.StatusBarTimerDirection.ElapsedTime)
+			OnUpdate()
 		else
 			swingstatusbar:SetMinMaxValues(0, 1)
 		end
@@ -278,7 +290,7 @@ do
 						swingbar:EnableMouse(false)
 						swingbar:SetScript("OnDragStart", nil)
 						swingbar:SetScript("OnDragStop", nil)
-						if not swingDuration or swingDuration:HasExpired() then
+						if not swingEnd or GetTime() >= swingEnd then
 							swingbar:Hide()
 						end
 					else

@@ -96,9 +96,9 @@ local targets = {
           layout = "대상의대상",
           unit = "targettargettarget",
         },
-        -- the target's pet; shown only while it exists (singleton unit watch)
+        -- Optional target-pet classification; the package leaves it disabled.
         ["대상의 소환수"] = {
-          enabled = true,
+          enabled = false,
           layout = "대상의대상",
           unit = "targetpet",
         },
@@ -113,6 +113,7 @@ local targets = {
           unit = "focustarget",
         },
         ["주시 대상의 대상의 대상"] = {
+          enabled = true,
           layout = "대상의대상",
           unit = "focustargettarget",
         },
@@ -126,7 +127,13 @@ local targets = {
           layout = "파티",
           unit = "pet",
         },
+        ["플레이어의 소환수의 대상의 대상"] = {
+          enabled = true,
+          layout = "대상의대상",
+          unit = "pettargettarget",
+        },
         ["플레이어의 소환수의 대상"] = {
+          enabled = true,
           layout = "대상의대상",
           unit = "pettarget",
         },
@@ -156,7 +163,7 @@ local namespaces = {
         enabled = false,
       },
       ["보통"] = {
-        enabled = false,
+        enabled = true,
       },
       ["파티"] = {
         enabled_weapons = false,
@@ -515,3 +522,94 @@ for _, name in ipairs(names) do
 end
 
 DevilForever_Core.Defaults:Register("PitBull4", {version = 1, targets = targets})
+
+local Core = DevilForever_Core
+local loggedIn, pending = false, false
+local lastProfile, lastGeometry
+local hookedAddon
+local geometryFields = {
+  units = {"anchor", "relative_point", "relative_to", "position_x", "position_y", "scale", "size_x", "size_y"},
+  groups = {"anchor", "relative_point", "relative_to", "position_x", "position_y", "scale", "size_x", "size_y", "direction", "vertical_spacing", "horizontal_spacing"},
+  layouts = {"size_x", "size_y", "scale"},
+}
+local unitLayouts = {
+  ["플레이어"] = "보통", ["대상"] = "대상", ["주시 대상"] = "파티", ["플레이어의 소환수"] = "파티",
+  ["대상의 대상"] = "대상의대상", ["대상의 소환수"] = "대상의대상",
+  ["플레이어 아래 대상"] = "대상의대상", ["플레이어 아래 대상의 대상"] = "대상의대상",
+  ["대상의 대상의 대상"] = "대상의대상", ["주시 대상의 대상"] = "대상의대상",
+  ["플레이어의 소환수의 대상"] = "대상의대상",
+  ["플레이어의 소환수의 대상의 대상"] = "대상의대상", ["주시 대상의 대상의 대상"] = "대상의대상",
+}
+local groupLayouts = {["파티"] = "파티", ["파티원 대상"] = "대상의대상", ["파티원 소환수"] = "대상의대상", ["파티원 대상의 대상"] = "대상의대상"}
+local function geometry(values, fields)
+  if type(values) ~= "table" then return end
+  local parts = {}
+  for _, key in ipairs(fields) do parts[#parts + 1] = tostring(values[key]) end
+  return table.concat(parts, "|")
+end
+
+local function applyScale()
+  if not loggedIn then return end
+  if Core.InCombat() then pending = true; return end
+  pending = false
+  local addon = _G.PitBull4
+  if addon and addon ~= hookedAddon and type(addon.OnProfileChanged) == "function" then
+    hooksecurefunc(addon, "OnProfileChanged", applyScale)
+    hookedAddon = addon
+  end
+  local profile = addon and addon.db and addon.db.profile
+  local saved = profile and profile.dfGeometry
+  if type(saved) ~= "table" or type(profile.dfPixel) ~= "number" or profile.dfPixel <= 0 then return end
+  for kind, fields in pairs(geometryFields) do
+    if type(saved[kind]) ~= "table" or type(profile[kind]) ~= "table" then return end
+    for name, signature in pairs(saved[kind]) do
+      local values = profile[kind][name]
+      local layout = kind == "units" and unitLayouts[name] or kind == "groups" and groupLayouts[name]
+      if kind == "units" and (name == "주시 대상" or name == "플레이어의 소환수"
+          or (name == "대상의 소환수" and profile.dfLayoutV2 == true))
+          and values and values.dfCompanion == true then layout = "소환수와 주시" end
+      if kind == "units" and values and values.dfCompanionChain == true
+          and (name == "플레이어의 소환수의 대상" or name == "플레이어의 소환수의 대상의 대상"
+            or name == "주시 대상의 대상" or name == "주시 대상의 대상의 대상") then layout = "소환수와 주시 아래" end
+      if kind == "groups" and name == "파티" and values and values.dfPartyRole == "party" then layout = "데빌 파티" end
+      if geometry(values, fields) ~= signature or (layout and values.layout ~= layout) then
+        profile.dfGeometry, profile.dfPixel = nil, nil
+        return
+      end
+    end
+  end
+  local ui = UIParent and UIParent:GetEffectiveScale()
+  local factor = PixelUtil and PixelUtil.GetPixelToUIUnitFactor and PixelUtil.GetPixelToUIUnitFactor()
+  if type(factor) ~= "number" or factor <= 0 then
+    local _, height = GetPhysicalScreenSize()
+    local logical = UIParent and UIParent:GetHeight()
+    if type(height) == "number" and height > 0 and type(logical) == "number" and logical > 0
+        and type(ui) == "number" and ui > 0 then factor = logical * ui / height end
+  end
+  if type(factor) ~= "number" or factor <= 0 or type(ui) ~= "number" or ui <= 0 then return end
+  local pixel = factor / ui
+  local changed = profile.dfPixel ~= pixel or lastProfile ~= profile or lastGeometry ~= saved
+  if not changed then return true end
+  local ratio = pixel / profile.dfPixel
+  for kind, fields in pairs(geometryFields) do
+    for name in pairs(saved[kind]) do
+      local values = profile[kind][name]
+      if kind == "layouts" then values.scale = values.scale * ratio
+      else values.position_x = values.position_x * ratio; values.position_y = values.position_y * ratio end
+      saved[kind][name] = geometry(values, fields)
+    end
+  end
+  profile.dfPixel = pixel
+  lastProfile, lastGeometry = profile, saved
+  for header in addon:IterateHeaders() do header:RefreshGroup(true) end
+  for frame in addon:IterateFrames(true) do frame:RefreshLayout() end
+  return true
+end
+
+Core:On("PLAYER_LOGIN", function() loggedIn = true; applyScale() end)
+for _, event in ipairs({"PLAYER_ENTERING_WORLD", "UI_SCALE_CHANGED", "DISPLAY_SIZE_CHANGED"}) do
+  Core:On(event, function()
+    if applyScale() and C_Timer and C_Timer.After then C_Timer.After(0, applyScale) end
+  end)
+end
+Core:On("PLAYER_REGEN_ENABLED", function() if pending then applyScale() end end)

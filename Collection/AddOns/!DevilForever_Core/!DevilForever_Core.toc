@@ -20,6 +20,7 @@ Presets.lua
 Presets\fhd.lua
 Presets\qhd.lua
 Presets\uhd.lua
+Presets\V2.lua
 # Preset files (Presets/<name>.lua, each calling Presets:Register) go below this line.
 Defaults\SexyMap.lua
 Spec.lua

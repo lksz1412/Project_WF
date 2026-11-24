@@ -291,8 +291,10 @@ local function setup()
       SetChatWindowShown(destination:GetID(), true)
       if not destination:IsShown() or not slots[slot].tab:IsShown() then error("chat activation verification failed") end
     end
-    publicPlaced = type(addon) == "table" and addon.GetPreparedChatWindow and addon.GetPreparedChatWindow("public") ~= nil
-    placePrepared(general, "public")
+    local allowPublic = not (type(addon) == "table" and addon.CapturePublicFallback)
+      or addon.CapturePublicFallback(general)
+    publicPlaced = allowPublic and type(addon) == "table" and addon.GetPreparedChatWindow and addon.GetPreparedChatWindow("public") ~= nil
+    if allowPublic then placePrepared(general, "public") end
     for _, entry in ipairs(added) do
       removed[#removed + 1] = entry[2]
       changeGroup(general, "Remove", entry[2], false)

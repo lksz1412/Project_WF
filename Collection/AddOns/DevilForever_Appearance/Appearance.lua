@@ -75,6 +75,7 @@ end
 local function applyFrame(def)
   local key = "appearance." .. def[1]
   local frame = Appearance.frames[key]
+  if def[1] == "aux" then frame:Hide(); return end
   local values = Core.Edit:Get(key)
   local position, size = values.position, values.size
   if not position or not size then

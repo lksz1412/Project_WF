@@ -12,8 +12,8 @@
 -- not defaults: they are one root fragment per preset (fhd, qhd, uhd, each
 -- computed for its screen) with profileKey = this character's key, added with
 -- Presets:AddFragment. Presets writes it only when that profile was nil at
--- SexyMap's ADDON_LOADED, or on a /dfp preset request, at the next
--- PLAYER_ENTERING_WORLD and by merging into the tables SexyMap has made (no
+-- SexyMap's ADDON_LOADED, or on a /dfp preset request, before native setup at
+-- PLAYER_LOGIN (PLAYER_ENTERING_WORLD for a late-loaded target) and by merging into the tables SexyMap has made (no
 -- table is created, a "global" choice is kept); an existing profile keeps its
 -- appearance (one without those keys included) and the kept notice names
 -- /dfp preset. Button angles are SexyMap's defaults below.
@@ -21,6 +21,7 @@
 -- no value.
 
 local Core = DevilForever_Core
+local setFrameScale = CreateFrame("Frame").SetScale
 
 local function sexyMapProfileKey()
   if type(RegionalUniqueNamesEnabled) == "function" and RegionalUniqueNamesEnabled() then
@@ -108,7 +109,7 @@ if not pixel then
   return {}
 end
 local effective = 192 / 140
-return {core = {shape = 130871, point = "TOPLEFT", relpoint = "TOPLEFT", x = 1292 / effective, y = -860 / effective, scale = effective * pixel}}
+return {core = {shape = 130871, point = "TOPLEFT", relpoint = "TOPLEFT", x = 1292 / effective, y = -860 / effective, scale = effective * pixel, dfPixel = pixel}}
   end,
   qhd = function()
 -- Appearance of the SexyMap profile for this preset's screen (a root fragment, see the header).
@@ -126,7 +127,7 @@ if not pixel then
   return {}
 end
 local effective = 224 / 140
-return {core = {shape = 130871, point = "TOPLEFT", relpoint = "TOPLEFT", x = 1720 / effective, y = -1186 / effective, scale = effective * pixel}}
+return {core = {shape = 130871, point = "TOPLEFT", relpoint = "TOPLEFT", x = 1720 / effective, y = -1186 / effective, scale = effective * pixel, dfPixel = pixel}}
   end,
   uhd = function()
 -- Appearance of the SexyMap profile for this preset's screen (a root fragment, see the header).
@@ -144,7 +145,7 @@ if not pixel then
   return {}
 end
 local effective = 304 / 140
-return {core = {shape = 130871, point = "TOPLEFT", relpoint = "TOPLEFT", x = 2596 / effective, y = -1820 / effective, scale = effective * pixel}}
+return {core = {shape = 130871, point = "TOPLEFT", relpoint = "TOPLEFT", x = 2596 / effective, y = -1820 / effective, scale = effective * pixel, dfPixel = pixel}}
   end,
 }
 
@@ -158,7 +159,10 @@ for _, name in ipairs(presetNames) do
   if Core.Presets:IsRegistered(name) then
     local ok, proposed = pcall(appearance[name])
     if ok and type(proposed) == "table" and type(proposed.core) == "table" and next(proposed.core) then
-      local profile = {core = proposed.core}
+      local values = proposed.core
+      values.dfGeometry = table.concat({values.point, values.relpoint, tostring(values.x), tostring(values.y),
+        tostring(values.scale), tostring(values.shape)}, "|")
+      local profile = {core = proposed.core, buttons = {radius = -18}, zonetext = {yOffset = -17}}
       if proposed.core.shape then
         profile.borders = {hideBlizzard = true, borders = {}, applyPreset = false,
           backdrop = {scale = 1, show = false, textureColor = {}, borderColor = {}, settings = {
@@ -174,3 +178,59 @@ for _, name in ipairs(presetNames) do
   end
 end
 Core.Defaults:Register("SexyMap", spec)
+
+local loggedIn, pending, enteredWorld = false, false, false
+local experienceWidth
+local function geometry(values)
+  return table.concat({tostring(values.point), tostring(values.relpoint), tostring(values.x), tostring(values.y),
+    tostring(values.scale), tostring(values.shape)}, "|")
+end
+
+local function applyScale()
+  if not loggedIn then return end
+  if Core.InCombat() then pending = true; return end
+  local profile = type(SexyMap2DB) == "table" and SexyMap2DB[profileKey]
+  local values = type(profile) == "table" and profile.core
+  if type(values) ~= "table" or type(values.dfGeometry) ~= "string"
+      or type(values.dfPixel) ~= "number" or values.dfPixel <= 0 then return end
+  if geometry(values) ~= values.dfGeometry then values.dfGeometry, values.dfPixel = nil, nil; return end
+  local ui = UIParent and UIParent:GetEffectiveScale()
+  local factor = PixelUtil and PixelUtil.GetPixelToUIUnitFactor and PixelUtil.GetPixelToUIUnitFactor()
+  if type(factor) ~= "number" or factor <= 0 then
+    local _, height = GetPhysicalScreenSize()
+    local logical = UIParent and UIParent:GetHeight()
+    if type(height) == "number" and height > 0 and type(logical) == "number" and logical > 0
+        and type(ui) == "number" and ui > 0 then factor = logical * ui / height end
+  end
+  if type(factor) ~= "number" or factor <= 0 or type(ui) ~= "number" or ui <= 0 then return end
+  local pixel = factor / ui
+  if pixel ~= values.dfPixel then
+    values.scale = values.scale * pixel / values.dfPixel
+    values.dfPixel = pixel
+    values.dfGeometry = geometry(values)
+  end
+  if Minimap and SexyMap and type(SexyMap.SetPoint) == "function" then
+    if Minimap:GetScale() ~= values.scale then setFrameScale(Minimap, values.scale) end
+    SexyMap:SetPoint(values.point, UIParent, values.relpoint, values.x, values.y)
+    local width = enteredWorld and Minimap:GetWidth()
+    if type(width) == "number" and width > 0 and width ~= experienceWidth then
+      local ace = LibStub and LibStub("AceAddon-3.0", true)
+      local addon = ace and ace:GetAddon("ExperienceForever", true)
+      if addon and addon.MinimapButton and type(addon.UpdateMinimapButtonPosition) == "function" then
+        addon:UpdateMinimapButtonPosition()
+        experienceWidth = width
+      end
+    end
+  end
+  pending = false
+  return true
+end
+
+Core:On("PLAYER_LOGIN", function() loggedIn = true; applyScale() end)
+for _, event in ipairs({"PLAYER_ENTERING_WORLD", "UI_SCALE_CHANGED", "DISPLAY_SIZE_CHANGED"}) do
+  Core:On(event, function()
+    if event == "PLAYER_ENTERING_WORLD" then enteredWorld = true end
+    if applyScale() and C_Timer and C_Timer.After then C_Timer.After(0, applyScale) end
+  end)
+end
+Core:On("PLAYER_REGEN_ENABLED", function() if pending then applyScale() end end)

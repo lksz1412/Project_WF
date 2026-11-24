@@ -1,7 +1,7 @@
 -- Slash commands /dfprofile and /dfp: text only, no window. Every command that
 -- changes something refuses in combat and prints what it does; save, restore
 -- and preset values take effect after /dfp go (a /reload), a theme switch
--- (/dfp theme <name>) at once.
+-- (/dfp theme <number>) at once.
 -- /dfp keys|game pass through to ProfileManager (Keybinds, GameSettings) only
 -- on that explicit command. /dfp party grid2|unitframes moves this character's
 -- party frames between Grid2 and the unit-frame addon (Party.lua), at once in
@@ -38,7 +38,7 @@ local HELP = {
   "/dfp cancel — 기다리는 요청 지우기",
   "/dfp delete <이름> [yes] — 저장본 하나 지우기",
   "/dfp preset [<이름>] — preset 목록 / preset 으로 되돌리기",
-  "/dfp theme [<이름>] — 테마 목록 / 테마 바꾸기(바로 적용)",
+  "/dfp theme [<번호>] — 테마 목록 / 테마 바꾸기(기본 0)",
   "/dfp spec [link|new|off] — 특성(이중 특성) profile 연결",
   "/dfp party [grid2|unitframes] — 파티 프레임을 Grid2 / 유닛 프레임(PitBull4·FUF) 중 어디서 그릴지 (보기 / 바꾸기 → /reload)",
   "/dfp keys save|load|list [<이름>] · /dfp game save|load|list [<이름>] — ProfileManager 의 키 설정·게임 설정",
@@ -121,14 +121,24 @@ local function missingTokens(name)
   return n
 end
 
-local function theme(name)
+local function theme(selection)
   local T = Core.Theme
-  if not name then
+  if not selection then
     local active, waiting = T:GetSet()
-    for _, set in ipairs(T:ListSets()) do
+    local function show(set, label)
       local missing = missingTokens(set)
-      say(set .. (set == active and " (지금)" or "") .. (set == waiting and " (전투 뒤 바뀜)" or "")
+      say(label .. (set == active and " (지금)" or "") .. (set == waiting and " (전투 뒤 바뀜)" or "")
         .. (missing > 0 and (" — 빠진 토큰 " .. missing .. "개는 " .. T.BASE_SET .. " 값") or ""))
+    end
+    local registered = T:ListSets()
+    local available = {}
+    for _, set in ipairs(registered) do available[set] = true end
+    for _, choice in ipairs(T:ListChoices()) do
+      show(choice.name, choice.number .. " " .. choice.name)
+      available[choice.name] = nil
+    end
+    for _, set in ipairs(registered) do
+      if available[set] then show(set, set) end
     end
     local saved = Core.ready and rawget(Core:DBTable("theme"), "active")
     if type(saved) == "string" and saved ~= active and saved ~= waiting then
@@ -137,8 +147,10 @@ local function theme(name)
     return
   end
   if Core.InCombat() then return say("안 함: 전투 중 — 바꾼 것 없음") end
+  local name = selection
+  if selection:match("^%d+$") then name = T:GetChoiceName(tonumber(selection)) end
   local ok, how = T:SetActiveSet(name)
-  if not ok then return say("안 함: " .. name .. ": 등록된 테마가 아님 — /dfp theme 로 목록") end
+  if not ok then return say("안 함: " .. selection .. ": 등록된 테마가 아님 — /dfp theme 로 목록") end
   say(how == "unchanged" and ("이미 " .. name .. " 테마") or ("테마 " .. name .. " 으로 바꿈"))
 end
 

@@ -1142,8 +1142,8 @@ def grid2_defaults_existing_profile_kept():
        {"Grid2DB": "existing-profile-kept", "Grid2DB/Grid2Layout": "existing-profile-kept"}, "both kept")
 
 
-PB4_UNITS_ON = sorted(["플레이어", "대상", "대상의 대상", "대상의 대상의 대상", "대상의 소환수", "주시 대상", "주시 대상의 대상",
-                       "플레이어의 소환수"])
+PB4_UNITS_ON = sorted(["플레이어", "대상", "대상의 대상", "대상의 대상의 대상", "주시 대상", "주시 대상의 대상",
+                       "주시 대상의 대상의 대상", "플레이어의 소환수", "플레이어의 소환수의 대상", "플레이어의 소환수의 대상의 대상"])
 
 
 @case
@@ -2320,7 +2320,7 @@ def theme22_command_list_switch_and_refusals():
     t = s.core.Theme
     t.RegisterSet(t, "devil", s.table(BASE_TOKENS))
     t.RegisterSet(t, "alt", s.table(ALT_TOKENS))
-    eq(dfp(s, "theme"), ["[DF 설정] alt — 빠진 토큰 17개는 devil 값", "[DF 설정] devil (지금)"], "list")
+    eq(dfp(s, "theme"), ["[DF 설정] 0 devil (지금)", "[DF 설정] alt — 빠진 토큰 17개는 devil 값"], "list")
     eq(has_line(dfp(s, "help"), "/dfp theme"), True, "help names the command")
     eq(dfp(s, "theme nope"), ["[DF 설정] 안 함: nope: 등록된 테마가 아님 — /dfp theme 로 목록"], "unknown refused")
     eq(dfp(s, "theme alt extra"), ["[DF 설정] 알 수 없는 말: extra — /dfp help"], "one name only")
@@ -2333,10 +2333,34 @@ def theme22_command_list_switch_and_refusals():
     dfp(s, "theme alt")
     eq((t.GetSet(t)[0], s.sv("DevilForever_CoreDB")["theme"]["active"]), ("alt", "alt"), "switched and saved")
     eq(has_line(dfp(s, "status"), "테마: alt"), True, "status shows the theme")
-    eq(dfp(s, "theme")[0], "[DF 설정] alt (지금) — 빠진 토큰 17개는 devil 값", "marker moved")
+    eq(dfp(s, "theme")[1], "[DF 설정] alt (지금) — 빠진 토큰 17개는 devil 값", "marker moved")
     later = p_session(carry(s))
-    eq(dfp(later, "theme"), ["[DF 설정] devil (지금)",
+    eq(dfp(later, "theme"), ["[DF 설정] 0 devil (지금)",
                              "[DF 설정] 저장된 테마 alt 은 등록돼 있지 않음 — devil 사용"], "saved set missing")
+
+
+@case
+def theme_numbers_select_and_save_the_built_in_themes():
+    s = p_session(BASE)
+    t = s.core.Theme
+    names = ["devil", "alliance", "horde", "human", "dwarf", "gnome", "nightelf",
+             "orc", "tauren", "troll", "undead", "skyborne", "skyborne-horde"]
+    for name in reversed(names):
+        t.RegisterSet(t, name, s.table(BASE_TOKENS))
+    eq(t.GetSet(t)[0], "devil", "fresh default is theme zero")
+    eq([line.removeprefix("[DF 설정] ").split(" — ", 1)[0].split(" (", 1)[0] for line in dfp(s, "theme")],
+       [f"{number} {name}" for number, name in enumerate(names)], "fixed menu order")
+    for number, name in enumerate(names):
+        dfp(s, f"theme {number}")
+        eq((t.GetSet(t)[0], s.sv("DevilForever_CoreDB")["theme"]["active"]), (name, name), "number selects and saves")
+    eq(has_line(dfp(s, "theme 13"), "13", "등록된 테마가 아님"), True, "unknown number refused")
+    eq(t.GetSet(t)[0], names[-1], "unknown number does not switch")
+    s.combat(True)
+    dfp(s, "theme 0")
+    s.combat(False)
+    eq(t.GetSet(t)[0], names[-1], "combat command does not queue a switch")
+    dfp(s, "theme 0")
+    eq(t.GetSet(t)[0], "devil", "zero returns to the default")
 
 
 def main():

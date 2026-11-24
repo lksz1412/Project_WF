@@ -187,7 +187,7 @@ def presets(zip_file):
         for key in ("appearance", "dominos", "nameplates", "nativechat", "statusstrip"):
             assert after[key] == 1, (old, new, key, after)
         assert before["appearance"] == (40 if edited else 39), before
-        assert after["composite"] == 2, after
+        assert after["composite"] == 10, after
         assert before["notify_appearance"] == after["notify_appearance"] == (40 if edited else 39)
         assert {k: v for k, v in before.items() if k.startswith("notify_")} == {
             k: v for k, v in after.items() if k.startswith("notify_")}

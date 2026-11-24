@@ -86,7 +86,17 @@ function module:TryForeverText(text, unit, code)
         end
     end
     if k.name then
-        local name = UnitName(unit)
+        local name, surname = UnitName(unit)
+        local regional = type(RegionalUniqueNamesEnabled) == "function" and RegionalUniqueNamesEnabled()
+        local player = regional and UnitIsPlayer(unit)
+        if regional and (not readable(player) or player) and type(surname) ~= "nil"
+            and (not readable(name) or not readable(surname)) then
+            local constants = Constants and Constants.CharacterNameSeparatorConsts
+            local separator = constants and constants.CHARACTERNAME_SURNAME_SEPARATOR
+            if type(separator) ~= "string" or separator == "" then separator = " " end
+            text:SetFormattedText("%s%s%s", name, separator, surname)
+            return true
+        end
         if not readable(name) then text:SetText(name); return true end
     end
     if k.level then

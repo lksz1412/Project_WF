@@ -784,7 +784,7 @@ diff -u a/PitBull4/Localization/koKR.lua b/PitBull4/Localization/koKR.lua
 diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
 --- a/PitBull4/Main.lua
 +++ b/PitBull4/Main.lua
-@@ -1,13 +1,109 @@
+@@ -1,21 +1,119 @@
  -- Constants ----------------------------------------------------------------
  local _G = _G
 +local _, namespace = ...
@@ -897,7 +897,9 @@ diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
  
  local SINGLETON_CLASSIFICATIONS = {
  	"player",
-@@ -16,6 +112,7 @@
+ 	"pet",
+ 	"pettarget",
++	"pettargettarget",
  	"target",
  	"targettarget",
  	"targettargettarget",
@@ -905,7 +907,7 @@ diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
  	"focus",
  	"focustarget",
  	"focustargettarget",
-@@ -355,7 +452,7 @@
+@@ -355,7 +453,7 @@
  local DEBUG = PitBull4.DEBUG
  local expect = PitBull4.expect
  
@@ -914,7 +916,7 @@ diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
  if PitBull4.version:match("@") then
  	PitBull4.version = "Development"
  end
-@@ -363,6 +460,8 @@
+@@ -363,6 +461,8 @@
  PitBull4.wow_retail = wow_retail
  PitBull4.wow_classic = wow_classic
  PitBull4.wow_expansion = wow_expansion
@@ -923,7 +925,7 @@ diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
  
  PitBull4.L = L
  
-@@ -496,11 +595,12 @@
+@@ -496,11 +596,12 @@
  PitBull4.frames_to_anchor = frames_to_anchor
  
  local function get_best_unit(guid)
@@ -937,7 +939,7 @@ diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
  	if not guid_to_unit_ids__guid then
  		return nil
  	end
-@@ -510,35 +610,42 @@
+@@ -510,35 +611,42 @@
  PitBull4.get_best_unit = get_best_unit
  
  local function refresh_guid(unit,new_guid)
@@ -990,7 +992,7 @@ diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
  			frame:UpdateBestUnit()
  		end
  	end
-@@ -843,11 +950,12 @@
+@@ -843,11 +951,12 @@
  end
  
  local function guid_iter(guid, frame)
@@ -1004,7 +1006,7 @@ diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
  		return frame
  	end
  	return guid_iter(guid, frame)
-@@ -860,6 +968,7 @@
+@@ -860,6 +969,7 @@
  -- end
  -- @return iterator which returns frames
  function PitBull4:IterateFramesForGUID(guid)
@@ -1012,7 +1014,7 @@ diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
  	if DEBUG then
  		expect(guid, 'typeof', 'string;nil')
  	end
-@@ -877,7 +986,8 @@
+@@ -877,7 +987,8 @@
  		del(guids)
  		return nil
  	end
@@ -1022,7 +1024,7 @@ diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
  		return frame
  	end
  	return guids_iter(guids, frame)
-@@ -897,8 +1007,9 @@
+@@ -897,8 +1008,9 @@
  			expect(guid, 'typeof', 'string;nil')
  		end
  
@@ -1033,7 +1035,7 @@ diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
  		end
  	end
  
-@@ -1288,8 +1399,6 @@
+@@ -1288,8 +1400,6 @@
  	db.RegisterCallback(self, "OnNewProfile")
  	db.RegisterCallback(self, "OnProfileCopied", "OnProfileChanged")
  
@@ -1042,7 +1044,7 @@ diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
  	self.DEFAULT_COLORS = CopyTable(DATABASE_DEFAULTS.profile.colors.power)
  	DATABASE_DEFAULTS = nil
  
-@@ -1338,6 +1447,9 @@
+@@ -1338,6 +1448,9 @@
  	if oRA3 then
  		oRA3.RegisterCallback(self, "OnTanksUpdated")
  	end
@@ -1052,7 +1054,7 @@ diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
  end
  
  do
-@@ -1352,7 +1464,7 @@
+@@ -1352,7 +1465,7 @@
  
  	local function iter(num_addons, i)
  		i = i + 1
@@ -1061,7 +1063,7 @@ diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
  			-- and we're done
  			return nil
  		end
-@@ -1671,9 +1783,75 @@
+@@ -1671,9 +1784,75 @@
  local timerFrame = CreateFrame("Frame")
  timerFrame:Hide()
  
@@ -1137,7 +1139,7 @@ diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
  	-- register unit change events
  	self:RegisterEvent("PLAYER_TARGET_CHANGED")
  	self:RegisterEvent("PLAYER_FOCUS_CHANGED")
-@@ -1774,7 +1952,19 @@
+@@ -1774,7 +1953,19 @@
  		-- for ids such as npctarget
  		return
  	end
@@ -1158,7 +1160,7 @@ diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
  	refresh_guid(unit,guid)
  
  	-- If there is no guid then we want to disallow upating the frame
-@@ -1809,6 +1999,7 @@
+@@ -1809,6 +2000,7 @@
  	self:CheckGUIDForUnitID("target")
  	self:CheckGUIDForUnitID("targettarget")
  	self:CheckGUIDForUnitID("targettargettarget")
@@ -1166,7 +1168,7 @@ diff -u a/PitBull4/Main.lua b/PitBull4/Main.lua
  end
  
  function PitBull4:UNIT_TARGET(_, unit)
-@@ -1987,6 +2178,8 @@
+@@ -1987,6 +2179,8 @@
  
  function PitBull4:PLAYER_ENTERING_WORLD()
  	self.leaving_world = nil
@@ -2020,6 +2022,14 @@ diff -u a/PitBull4/Modules/Aura/Aura.lua b/PitBull4/Modules/Aura/Aura.lua
  PitBull4_Aura:SetModuleType("custom")
  PitBull4_Aura:SetName(L["Aura"])
  PitBull4_Aura:SetDescription(L["Shows buffs and debuffs for PitBull4 frames."])
+@@ -71,6 +141,7 @@
+ 	self:UpdateSkin(frame)
+ 	self:UpdateAuras(frame)
+ 	self:LayoutAuras(frame)
++	if self.RefreshManagedAuraDependents then self:RefreshManagedAuraDependents(frame) end
+ end
+ 
+ function PitBull4_Aura:LibSharedMedia_Registered(event, mediatype, key)
 diff -u a/PitBull4/Modules/Aura/Controls.lua b/PitBull4/Modules/Aura/Controls.lua
 --- a/PitBull4/Modules/Aura/Controls.lua
 +++ b/PitBull4/Modules/Aura/Controls.lua
@@ -2335,7 +2345,7 @@ diff -u a/PitBull4/Modules/Aura/FilterTypes.lua b/PitBull4/Modules/Aura/FilterTy
 diff -u a/PitBull4/Modules/Aura/Forever.lua b/PitBull4/Modules/Aura/Forever.lua
 --- a/PitBull4/Modules/Aura/Forever.lua	1970-01-01 00:00:00.000000000 +0000
 +++ b/PitBull4/Modules/Aura/Forever.lua
-@@ -0,0 +1,408 @@
+@@ -0,0 +1,409 @@
 +-- Forever's 12.1 engine denies addon aura queries when combat data is secret.
 +-- CustomAuraContainer delegates assignment, textures, stacks, durations and
 +-- tooltips to Blizzard's secure implementation. Never read its live aura data,
@@ -2528,7 +2538,7 @@ diff -u a/PitBull4/Modules/Aura/Forever.lua b/PitBull4/Modules/Aura/Forever.lua
 +		elementWidth = group.size, elementHeight = group.size,
 +		elementSpacing = vertical and cfg.row_spacing or cfg.col_spacing,
 +		lineSpacing = vertical and cfg.col_spacing or cfg.row_spacing,
-+		forceNewLine = not mine and cfg.new_row_size and cfg.my_size ~= cfg.size or false,
++		forceNewLine = (mine == (cfg.reverse == true)) and cfg.new_row_size and cfg.my_size ~= cfg.size or false,
 +		layoutIndex = (mine ~= (cfg.reverse == true)) and 1 or 2,
 +	}
 +	-- Each group is independently limited by the native API. Keeping two groups
@@ -2598,6 +2608,7 @@ diff -u a/PitBull4/Modules/Aura/Forever.lua b/PitBull4/Modules/Aura/Forever.lua
 +end
 +
 +update_native = function(self, frame, db, kind, store)
++	if self.GetManagedLayoutDB then db = self:GetManagedLayoutDB(frame, db) end
 +	local is_buff = kind == "buff"
 +	local cfg = is_buff and db.layout.buff or db.layout.debuff
 +	local enabled_kind = is_buff and db.enabled_buffs or (not is_buff and db.enabled_debuffs)
@@ -2890,6 +2901,98 @@ diff -u a/PitBull4/Modules/Aura/Layout.lua b/PitBull4/Modules/Aura/Layout.lua
  
  	-- Allow reversal of the load order
  	local start_list, end_list, step
+@@ -393,8 +395,90 @@
+ 	end
+ end
+ 
++local managed_layouts = setmetatable({}, {__mode = "k"})
++local watched_owners = setmetatable({}, {__mode = "k"})
++local owner_visibility = setmetatable({}, {__mode = "k"})
++local geometry_keys = {"size", "my_size", "row_spacing", "col_spacing", "offset_y"}
++
++local function managed_rules()
++  local profile = PitBull4.db and PitBull4.db.profile
++  return profile and profile.dfGeometry and profile.dfAuraGeometry
++end
++
++function PitBull4_Aura:RefreshManagedAuraDependents(owner)
++  local rules = managed_rules()
++  if type(rules) ~= "table" or not self:IsEnabled() then return end
++  local rule = rules[owner.classification]
++  if type(rule) ~= "table" or not rule.above then return end
++  local name = owner.classification and ("PitBull4_Frames_" .. owner.classification)
++  local shown = owner:IsShown()
++  if owner_visibility[owner] == shown then return end
++  owner_visibility[owner] = shown
++  for label, rule in pairs(rules) do
++    if rule.avoid_frame == name then
++      local frame = _G["PitBull4_Frames_" .. label]
++      if frame and frame:IsShown() then self:UpdateAuras(frame); self:LayoutAuras(frame) end
++    end
++  end
++end
++
++local function watch_owner(owner)
++  if watched_owners[owner] then return end
++  watched_owners[owner] = true
++  owner:HookScript("OnShow", function() PitBull4_Aura:RefreshManagedAuraDependents(owner) end)
++  owner:HookScript("OnHide", function() PitBull4_Aura:RefreshManagedAuraDependents(owner) end)
++end
++
++-- Only preset-tagged classifications use the companion avoidance geometry.
++function PitBull4_Aura:GetManagedLayoutDB(frame, db)
++  local rules = managed_rules()
++  local rule = type(rules) == "table" and rules[frame.classification]
++  if type(rule) ~= "table" then return db end
++  local owner = rule.avoid_frame and _G[rule.avoid_frame]
++  if owner then watch_owner(owner) end
++  local shown = owner and owner:IsShown() or false
++  if not rule.above and not shown then return db end
++  local width = rule.width
++  if type(width) ~= "number" or width <= 0 then return db end
++  local cache = managed_layouts[frame]
++  local same = cache and cache.db == db and cache.rule == rule and cache.shown == shown
++    and cache.width == frame:GetWidth() and cache.max_buffs == db.max_buffs and cache.max_debuffs == db.max_debuffs
++  for _, kind in ipairs({"buff", "debuff"}) do
++    local cfg = db.layout[kind]
++    if not cache or cache[kind] ~= cfg then same = false
++    elseif same then
++      for _, key in ipairs(geometry_keys) do if cache.source[kind][key] ~= cfg[key] then same = false; break end end
++    end
++  end
++  if same then return cache.adjusted end
++  local adjusted = setmetatable({layout = {}}, {__index = db})
++  local ratio = shown and (rule.size_ratio or 1) or 1
++  local source = {buff = {}, debuff = {}}
++  local function config(kind)
++    local original = db.layout[kind]
++    for _, key in ipairs(geometry_keys) do source[kind][key] = original[key] end
++    local cfg = setmetatable({anchor = "TOPLEFT", side = "TOP", growth = "right_up", width_type = "fixed",
++      width = width, size_to_fit = false, offset_x = rule.side == "right" and frame:GetWidth() - width or 0,
++      size = math.max(1, math.floor(original.size * ratio)), my_size = math.max(1, math.floor(original.my_size * ratio))},
++      {__index = original})
++    adjusted.layout[kind] = cfg
++    return cfg
++  end
++  local buff, debuff = config("buff"), config("debuff")
++  buff.offset_y = math.max(2, db.layout.buff.offset_y, rule.top_margin or 0)
++  local function group_height(size)
++    local columns = math.max(1, math.floor(width / (size + buff.col_spacing)))
++    return math.ceil(db.max_buffs / columns) * (size + buff.row_spacing)
++  end
++  debuff.offset_y = buff.offset_y + group_height(buff.my_size) + group_height(buff.size) + math.max(2, buff.row_spacing)
++  managed_layouts[frame] = {db = db, rule = rule, shown = shown, width = frame:GetWidth(),
++    max_buffs = db.max_buffs, max_debuffs = db.max_debuffs, buff = db.layout.buff, debuff = db.layout.debuff,
++    source = source, adjusted = adjusted}
++  return adjusted
++end
++
+ function PitBull4_Aura:LayoutAuras(frame)
+-	local db = self:GetLayoutDB(frame)
++	local db = self:GetManagedLayoutDB(frame, self:GetLayoutDB(frame))
+ 
+ 	layout_auras(frame, db, true)
+ 	layout_auras(frame, db, false)
 diff -u a/PitBull4/Modules/Aura/Update.lua b/PitBull4/Modules/Aura/Update.lua
 --- a/PitBull4/Modules/Aura/Update.lua
 +++ b/PitBull4/Modules/Aura/Update.lua
@@ -3451,7 +3554,16 @@ diff -u a/PitBull4/Modules/Background/Background.lua b/PitBull4/Modules/Backgrou
 diff -u a/PitBull4/Modules/Border/Border.lua b/PitBull4/Modules/Border/Border.lua
 --- a/PitBull4/Modules/Border/Border.lua
 +++ b/PitBull4/Modules/Border/Border.lua
-@@ -33,6 +33,8 @@
+@@ -8,6 +8,8 @@
+ PitBull4_Border:SetName(L["Border"])
+ PitBull4_Border:SetDescription(L["Show a highlight when hovering or targeting."])
+ PitBull4_Border:SetDefaults({
++	always_show = false,
++	above_overlay = false,
+ 	normal_color = { 1, 1, 1, 1 },
+ 	normal_texture = "None",
+ 	boss_color = { 0.6, 0.3, 0.6, 1 },
+@@ -33,6 +35,8 @@
  local NEUTRAL_REACTION = 4
  local FRIENDLY_REACTION = 5
  
@@ -3460,7 +3572,34 @@ diff -u a/PitBull4/Modules/Border/Border.lua b/PitBull4/Modules/Border/Border.lu
  local target_guid = nil
  local mouse_focus = nil
  
-@@ -259,7 +261,8 @@
+@@ -138,7 +142,6 @@
+ 		local padding = db.padding
+ 		border = PitBull4.Controls.MakeFrame(frame)
+ 		frame.Border = border
+-		border:SetFrameLevel(frame:GetFrameLevel())
+ 		border:SetAllPoints(frame)
+ 
+ 		local tex = PitBull4.Controls.MakeTexture(border, "BORDER")
+@@ -195,6 +198,10 @@
+ 		tex:SetTexCoord(0.875, 0, 0.875, 1, 1, 0, 1, 1)
+ 	end
+ 
++	local db = self:GetLayoutDB(frame)
++	local level = db.above_overlay and frame.overlay:GetFrameLevel() + 1 or frame:GetFrameLevel()
++	if border:GetFrameLevel() ~= level then border:SetFrameLevel(level) end
++
+ 	for _, tex in ipairs(border) do
+ 		tex:SetTexture(texture)
+ 		tex:SetVertexColor(r, g, b, a)
+@@ -254,12 +261,16 @@
+ 
+ function PitBull4_Border:ShouldShow(frame)
+ 	local db = self:GetLayoutDB(frame)
++	if db.always_show then
++		return true
++	end
+ 
+ 	if mouse_focus == frame and db.while_hover then
  		return true
  	end
  
@@ -3470,7 +3609,7 @@ diff -u a/PitBull4/Modules/Border/Border.lua b/PitBull4/Modules/Border/Border.lu
  		return false
  	end
  
-@@ -272,7 +275,7 @@
+@@ -272,7 +283,7 @@
  
  function PitBull4_Border:PLAYER_TARGET_CHANGED()
  	mouse_focus = GetMouseFocus()
@@ -5885,7 +6024,7 @@ diff -u a/PitBull4/Modules/LeaderIcon/LeaderIcon.lua b/PitBull4/Modules/LeaderIc
 diff -u a/PitBull4/Modules/LuaTexts/Forever.lua b/PitBull4/Modules/LuaTexts/Forever.lua
 --- a/PitBull4/Modules/LuaTexts/Forever.lua	1970-01-01 00:00:00.000000000 +0000
 +++ b/PitBull4/Modules/LuaTexts/Forever.lua
-@@ -0,0 +1,97 @@
+@@ -0,0 +1,107 @@
 +local PitBull4 = _G.PitBull4
 +if not PitBull4.Compat.IsForever then return end
 +local module = PitBull4:GetModule("LuaTexts")
@@ -5974,7 +6113,17 @@ diff -u a/PitBull4/Modules/LuaTexts/Forever.lua b/PitBull4/Modules/LuaTexts/Fore
 +        end
 +    end
 +    if k.name then
-+        local name = UnitName(unit)
++        local name, surname = UnitName(unit)
++        local regional = type(RegionalUniqueNamesEnabled) == "function" and RegionalUniqueNamesEnabled()
++        local player = regional and UnitIsPlayer(unit)
++        if regional and (not readable(player) or player) and type(surname) ~= "nil"
++            and (not readable(name) or not readable(surname)) then
++            local constants = Constants and Constants.CharacterNameSeparatorConsts
++            local separator = constants and constants.CHARACTERNAME_SURNAME_SEPARATOR
++            if type(separator) ~= "string" or separator == "" then separator = " " end
++            text:SetFormattedText("%s%s%s", name, separator, surname)
++            return true
++        end
 +        if not readable(name) then text:SetText(name); return true end
 +    end
 +    if k.level then
@@ -6471,7 +6620,24 @@ diff -u a/PitBull4/Modules/LuaTexts/ScriptEnv.lua b/PitBull4/Modules/LuaTexts/Sc
  
  -- The following functions exist to provide a method to help people moving
  -- from LibDogTag.  They implement the functionality that exists in some of
-@@ -314,12 +340,12 @@
+@@ -115,6 +141,16 @@
+ 	local name, server = UnitName(unit)
+ 	if UnitInPartyIsAI(unit) and (C_LFGInfo.IsInLFGFollowerDungeon() or C_PartyInfo.IsPartyWalkIn()) then
+ 		name = LFG_FOLLOWER_NAME_PREFIX:format(name)
++	elseif PitBull4.Compat.IsForever and type(RegionalUniqueNamesEnabled) == "function"
++		and SafeBoolean(RegionalUniqueNamesEnabled(), false) and SafeBoolean(UnitIsPlayer(unit), false) then
++		if IsValueAccessible(name) and IsValueAccessible(server)
++			and type(name) == "string" and type(server) == "string" and server ~= "" then
++			local constants = Constants and Constants.CharacterNameSeparatorConsts
++			local separator = constants and constants.CHARACTERNAME_SURNAME_SEPARATOR
++			if type(separator) ~= "string" or separator == "" then separator = " " end
++			local suffix = separator .. server
++			if name:sub(-#suffix) ~= suffix then name = name .. suffix end
++		end
+ 	elseif show_server and server and server ~= "" then
+ 		name = FULL_PLAYER_NAME:format(name, server)
+ 	end
+@@ -314,12 +350,12 @@
  
  local function IsAFK(unit)
  	afk_cache[ScriptEnv.font_string] = true
@@ -6486,7 +6652,7 @@ diff -u a/PitBull4/Modules/LuaTexts/ScriptEnv.lua b/PitBull4/Modules/LuaTexts/Sc
  	afk_cache[ScriptEnv.font_string] = true
  	if afk then
  		UpdateIn(0.25)
-@@ -338,20 +364,20 @@
+@@ -338,20 +374,20 @@
  
  local function IsDND(unit)
  	dnd_cache[ScriptEnv.font_string] = true
@@ -6510,7 +6676,7 @@ diff -u a/PitBull4/Modules/LuaTexts/ScriptEnv.lua b/PitBull4/Modules/LuaTexts/Sc
  end
  ScriptEnv.UnitIsPlayer = IsPlayer -- existing LuaText compat
  
-@@ -407,6 +433,7 @@
+@@ -407,6 +443,7 @@
  
  local function ClassColor(unit)
  	local _, class = UnitClass(unit)
@@ -6518,7 +6684,7 @@ diff -u a/PitBull4/Modules/LuaTexts/ScriptEnv.lua b/PitBull4/Modules/LuaTexts/Sc
  	local color = PitBull4.ClassColors[class] or PitBull4.ClassColors.UNKNOWN
  	return color[1] * 255, color[2] * 255, color[3] * 255
  end
-@@ -418,8 +445,8 @@
+@@ -418,8 +455,8 @@
  			return UnitBattlePetLevel(unit)
  		end
  	end
@@ -6529,7 +6695,7 @@ diff -u a/PitBull4/Modules/LuaTexts/ScriptEnv.lua b/PitBull4/Modules/LuaTexts/Sc
  		level = "??"
  	end
  	return level
-@@ -477,10 +504,12 @@
+@@ -477,10 +514,12 @@
  
  local function Class(unit)
  	local _, _, class_id = UnitClass(unit)
@@ -6544,7 +6710,7 @@ diff -u a/PitBull4/Modules/LuaTexts/ScriptEnv.lua b/PitBull4/Modules/LuaTexts/Sc
  		end
  	end
  	return UNKNOWN
-@@ -504,17 +533,20 @@
+@@ -504,17 +543,20 @@
  }
  
  local function ShortClass(arg)
@@ -6569,7 +6735,7 @@ diff -u a/PitBull4/Modules/LuaTexts/ScriptEnv.lua b/PitBull4/Modules/LuaTexts/Sc
  		end
  	end
  	return short
-@@ -599,7 +631,7 @@
+@@ -599,7 +641,7 @@
  ScriptEnv.IsPet = IsPet
  
  local function OfflineDuration(unit)
@@ -6578,7 +6744,7 @@ diff -u a/PitBull4/Modules/LuaTexts/ScriptEnv.lua b/PitBull4/Modules/LuaTexts/Sc
  	offline_cache[ScriptEnv.font_string] = true
  	if offline then
  		UpdateIn(0.25)
-@@ -618,12 +650,12 @@
+@@ -618,12 +660,12 @@
  
  local function IsOffline(unit)
  	offline_cache[ScriptEnv.font_string] = true
@@ -6593,7 +6759,7 @@ diff -u a/PitBull4/Modules/LuaTexts/ScriptEnv.lua b/PitBull4/Modules/LuaTexts/Sc
  	dead_cache[ScriptEnv.font_string] = true
  	if dead_time then
  		UpdateIn(0.25)
-@@ -649,8 +681,10 @@
+@@ -649,8 +691,10 @@
  
  local function DruidForm(unit)
  	local _, class = UnitClass(unit)
@@ -6605,7 +6771,7 @@ diff -u a/PitBull4/Modules/LuaTexts/ScriptEnv.lua b/PitBull4/Modules/LuaTexts/Sc
  		if power == 1 then
  			return L["Bear"]
  		elseif power == 3 then
-@@ -659,7 +693,7 @@
+@@ -659,7 +703,7 @@
  			local i = 1
  			repeat
  				local auraData = C_UnitAuras.GetAuraDataByIndex(unit, i, "HELPFUL")
@@ -6614,7 +6780,7 @@ diff -u a/PitBull4/Modules/LuaTexts/ScriptEnv.lua b/PitBull4/Modules/LuaTexts/Sc
  				if name then
  					if name == MOONKIN_FORM then
  						return L["Moonkin"]
-@@ -682,11 +716,11 @@
+@@ -682,11 +726,11 @@
  ScriptEnv.Status = Status
  
  local function HP(unit, no_fast)
@@ -6628,7 +6794,7 @@ diff -u a/PitBull4/Modules/LuaTexts/ScriptEnv.lua b/PitBull4/Modules/LuaTexts/Sc
  		return 0
  	end
  	return hp
-@@ -698,21 +732,21 @@
+@@ -698,21 +742,21 @@
  -- it feels weird to have HP (which we need
  -- to avoid the hp = 1 while dead crap), but
  -- not have MaxHP
@@ -6656,7 +6822,7 @@ diff -u a/PitBull4/Modules/LuaTexts/ScriptEnv.lua b/PitBull4/Modules/LuaTexts/Sc
  			ScriptEnv.pet_power = power
  			power_cache[ScriptEnv.font_string] = true
  		end
-@@ -723,7 +757,7 @@
+@@ -723,7 +767,7 @@
  ScriptEnv.Power = Power
  
  -- More symmetry
@@ -6665,7 +6831,7 @@ diff -u a/PitBull4/Modules/LuaTexts/ScriptEnv.lua b/PitBull4/Modules/LuaTexts/Sc
  ScriptEnv.MaxPower = MaxPower
  
  local function Round(number, digits)
-@@ -1118,7 +1152,7 @@
+@@ -1118,7 +1162,7 @@
  
  local function CastData(unit)
  	spell_cast_cache[ScriptEnv.font_string] = true
@@ -9235,6 +9401,34 @@ diff -u a/PitBull4/UnitFrame.lua b/PitBull4/UnitFrame.lua
  	end
  end
  
+diff -u a/PitBull4/UnitFrameLayout.lua b/PitBull4/UnitFrameLayout.lua
+--- a/PitBull4/UnitFrameLayout.lua
++++ b/PitBull4/UnitFrameLayout.lua
+@@ -179,7 +179,7 @@
+ 	local filtered_element_ids = new()
+ 	for _, element_id in ipairs(element_ids) do
+ 		local db = get_element_db(element_id, layout)
+-		if db and db.side == side then
++		if db and db.side == side and not (element_id == "CastBar" and db.dfOutside == true) then
+ 			filtered_element_ids[#filtered_element_ids+1] = element_id
+ 		end
+ 	end
+@@ -437,6 +437,15 @@
+ 		end
+ 	end
+ 
++	local cast = frame.CastBar
++	local cast_db = cast and get_element_db("CastBar", layout)
++	if cast_db and cast_db.dfOutside == true then
++		cast:ClearAllPoints()
++		cast:SetPoint("TOPLEFT", frame, "BOTTOMLEFT", 0, -cast_db.dfOffset)
++		cast:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 0, -cast_db.dfOffset - cast_db.dfHeight)
++		cast:SetOrientation("HORIZONTAL")
++	end
++
+ 	-- set various information on the bars
+ 	for _, id in ipairs(bars) do
+ 		if not INDICATOR_MODULE_TYPES[element_id_to_module_type[id]] then
 diff -u a/PitBull4/Utils.lua b/PitBull4/Utils.lua
 --- a/PitBull4/Utils.lua
 +++ b/PitBull4/Utils.lua

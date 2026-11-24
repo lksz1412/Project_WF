@@ -179,7 +179,7 @@ local function filter_elements_for_side(element_ids, layout, side)
 	local filtered_element_ids = new()
 	for _, element_id in ipairs(element_ids) do
 		local db = get_element_db(element_id, layout)
-		if db and db.side == side then
+		if db and db.side == side and not (element_id == "CastBar" and db.dfOutside == true) then
 			filtered_element_ids[#filtered_element_ids+1] = element_id
 		end
 	end
@@ -435,6 +435,15 @@ local function update_bar_layout(frame)
 		if bar.SetOrientation then
 			bar:SetOrientation("HORIZONTAL")
 		end
+	end
+
+	local cast = frame.CastBar
+	local cast_db = cast and get_element_db("CastBar", layout)
+	if cast_db and cast_db.dfOutside == true then
+		cast:ClearAllPoints()
+		cast:SetPoint("TOPLEFT", frame, "BOTTOMLEFT", 0, -cast_db.dfOffset)
+		cast:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 0, -cast_db.dfOffset - cast_db.dfHeight)
+		cast:SetOrientation("HORIZONTAL")
 	end
 
 	-- set various information on the bars

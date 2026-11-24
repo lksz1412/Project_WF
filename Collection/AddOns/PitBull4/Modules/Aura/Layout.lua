@@ -395,8 +395,90 @@ local function layout_auras(frame, db, is_buff)
 	end
 end
 
+local managed_layouts = setmetatable({}, {__mode = "k"})
+local watched_owners = setmetatable({}, {__mode = "k"})
+local owner_visibility = setmetatable({}, {__mode = "k"})
+local geometry_keys = {"size", "my_size", "row_spacing", "col_spacing", "offset_y"}
+
+local function managed_rules()
+  local profile = PitBull4.db and PitBull4.db.profile
+  return profile and profile.dfGeometry and profile.dfAuraGeometry
+end
+
+function PitBull4_Aura:RefreshManagedAuraDependents(owner)
+  local rules = managed_rules()
+  if type(rules) ~= "table" or not self:IsEnabled() then return end
+  local rule = rules[owner.classification]
+  if type(rule) ~= "table" or not rule.above then return end
+  local name = owner.classification and ("PitBull4_Frames_" .. owner.classification)
+  local shown = owner:IsShown()
+  if owner_visibility[owner] == shown then return end
+  owner_visibility[owner] = shown
+  for label, rule in pairs(rules) do
+    if rule.avoid_frame == name then
+      local frame = _G["PitBull4_Frames_" .. label]
+      if frame and frame:IsShown() then self:UpdateAuras(frame); self:LayoutAuras(frame) end
+    end
+  end
+end
+
+local function watch_owner(owner)
+  if watched_owners[owner] then return end
+  watched_owners[owner] = true
+  owner:HookScript("OnShow", function() PitBull4_Aura:RefreshManagedAuraDependents(owner) end)
+  owner:HookScript("OnHide", function() PitBull4_Aura:RefreshManagedAuraDependents(owner) end)
+end
+
+-- Only preset-tagged classifications use the companion avoidance geometry.
+function PitBull4_Aura:GetManagedLayoutDB(frame, db)
+  local rules = managed_rules()
+  local rule = type(rules) == "table" and rules[frame.classification]
+  if type(rule) ~= "table" then return db end
+  local owner = rule.avoid_frame and _G[rule.avoid_frame]
+  if owner then watch_owner(owner) end
+  local shown = owner and owner:IsShown() or false
+  if not rule.above and not shown then return db end
+  local width = rule.width
+  if type(width) ~= "number" or width <= 0 then return db end
+  local cache = managed_layouts[frame]
+  local same = cache and cache.db == db and cache.rule == rule and cache.shown == shown
+    and cache.width == frame:GetWidth() and cache.max_buffs == db.max_buffs and cache.max_debuffs == db.max_debuffs
+  for _, kind in ipairs({"buff", "debuff"}) do
+    local cfg = db.layout[kind]
+    if not cache or cache[kind] ~= cfg then same = false
+    elseif same then
+      for _, key in ipairs(geometry_keys) do if cache.source[kind][key] ~= cfg[key] then same = false; break end end
+    end
+  end
+  if same then return cache.adjusted end
+  local adjusted = setmetatable({layout = {}}, {__index = db})
+  local ratio = shown and (rule.size_ratio or 1) or 1
+  local source = {buff = {}, debuff = {}}
+  local function config(kind)
+    local original = db.layout[kind]
+    for _, key in ipairs(geometry_keys) do source[kind][key] = original[key] end
+    local cfg = setmetatable({anchor = "TOPLEFT", side = "TOP", growth = "right_up", width_type = "fixed",
+      width = width, size_to_fit = false, offset_x = rule.side == "right" and frame:GetWidth() - width or 0,
+      size = math.max(1, math.floor(original.size * ratio)), my_size = math.max(1, math.floor(original.my_size * ratio))},
+      {__index = original})
+    adjusted.layout[kind] = cfg
+    return cfg
+  end
+  local buff, debuff = config("buff"), config("debuff")
+  buff.offset_y = math.max(2, db.layout.buff.offset_y, rule.top_margin or 0)
+  local function group_height(size)
+    local columns = math.max(1, math.floor(width / (size + buff.col_spacing)))
+    return math.ceil(db.max_buffs / columns) * (size + buff.row_spacing)
+  end
+  debuff.offset_y = buff.offset_y + group_height(buff.my_size) + group_height(buff.size) + math.max(2, buff.row_spacing)
+  managed_layouts[frame] = {db = db, rule = rule, shown = shown, width = frame:GetWidth(),
+    max_buffs = db.max_buffs, max_debuffs = db.max_debuffs, buff = db.layout.buff, debuff = db.layout.debuff,
+    source = source, adjusted = adjusted}
+  return adjusted
+end
+
 function PitBull4_Aura:LayoutAuras(frame)
-	local db = self:GetLayoutDB(frame)
+	local db = self:GetManagedLayoutDB(frame, self:GetLayoutDB(frame))
 
 	layout_auras(frame, db, true)
 	layout_auras(frame, db, false)

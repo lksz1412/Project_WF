@@ -17917,8 +17917,8 @@
       "source_zip": "References/forever-addons/Quartz/Quartz-3.8.0.zip",
       "sha256": "2a76cdda6b53e7eb26472c0b8b6bf8f50c02388f8f515e6746c5e14657d5ed70",
       "upstream_path": "Collection/upstream/Quartz-3.8.0/Quartz",
-      "state": "unmodified",
-      "patch": null
+      "state": "patched",
+      "patch": "Collection/patches/Quartz.patch"
     },
     {
       "folder": "SexyMap",
