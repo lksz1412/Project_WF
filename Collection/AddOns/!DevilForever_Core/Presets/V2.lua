@@ -10,22 +10,22 @@ local units = {
   ["주시 대상의 대상"]="focustarget",["주시 대상의 대상의 대상"]="focustargettarget",
   ["대상의 소환수의 대상"]="targetpettarget",["대상의 소환수의 대상의 대상"]="targetpettargettarget",
 }
--- oldCells: Grid2 cell width and height of the Old (V1) layout; New uses the preset's square cells.
 -- totemY / totemButton: top and button side (pixels) of the preset's Dominos totem bar (Presets/<name>.lua
 -- Dominos frames.totem: scale pixel * totemButton / 30 for 30-unit buttons).
+-- petBar: the preset's Dominos pet bar (Presets/<name>.lua fitPet): top-left x/y, the largest button side
+-- and the row length the buttons share (side = min(side, (span - 2 * (count - 1)) / count)).
 local modes = {
-  fhd={width=1920,height=1080,totemY=748,totemButton=44,castHeight=30,smallWidth=123,smallHeight=29,oldCells={96,32}},
-  qhd={width=2560,height=1440,totemY=1056,totemButton=52,castHeight=34,smallWidth=166,smallHeight=39,oldCells={120,44}},
-  uhd={width=3840,height=2160,totemY=1636,totemButton=72,castHeight=40,smallWidth=251,smallHeight=58,oldCells={154,56}},
+  fhd={width=1920,height=1080,totemY=748,totemButton=44,petBar={x=218,y=490,side=22,span=238},castHeight=30,smallWidth=123,smallHeight=29},
+  qhd={width=2560,height=1440,totemY=1056,totemButton=52,petBar={x=256,y=806,side=26,span=278},castHeight=34,smallWidth=166,smallHeight=39},
+  uhd={width=3840,height=2160,totemY=1636,totemButton=72,petBar={x=212,y=1564,side=34,span=358},castHeight=40,smallWidth=251,smallHeight=58},
 }
 -- The Dominos totem bar: summon, four totems and recall (Dominos bars/totemBar/bar.lua), 2 units apart.
 local TOTEM_BUTTONS, TOTEM_SPACING = 6, 2
--- Revisions of the New (V2) and Old (V1) layouts written into the PitBull4 profile (dfLayoutRevision);
--- the version switcher shows New only for a profile that holds the V2 revision. A profile holding an
--- older revision of its version gets that version written by itself at the next load (Presets.lua,
+-- Revision of the layout (the V2 layout, the only one) written into the PitBull4 profile
+-- (dfLayoutRevision, with dfLayoutV2 = true). A collection profile below it, or one still on the earlier
+-- second layout (dfLayoutV2 = false), gets this layout written by itself at the next load (Presets.lua,
 -- layout catch-up).
-Core.Presets.layoutV2Revision = 4
-Core.Presets.layoutV1Revision = 2
+Core.Presets.layoutV2Revision = 7
 local function signature(row, fields)
   local parts = {}
   for _, key in ipairs(fields) do parts[#parts+1] = tostring(row[key]) end
@@ -39,24 +39,9 @@ for name, m in pairs(modes) do
   local base = Core.Presets:Get(name)
   local layoutV2
   if base then
-    for _, f in ipairs(base.fragments) do
-      if f.folder == "PitBull4" and not f.namespace and f.values.layouts then
-        f.values.dfLayoutV2=false
-        f.values.units["대상의 소환수"].layout="대상의대상"
-        f.values.units["대상의 소환수"].dfCompanion=false
-        f.values.dfAuraGeometry["플레이어"].above=false
-        f.values.dfAuraGeometry["대상"].above=false
-        f.values.dfAuraGeometry["대상의 소환수"]={above=false}
-        f.values.dfAuraGeometry["주시 대상"].top_margin=0
-      elseif f.folder == "PitBull4" and f.namespace == "CastBar" then
-        f.values.layouts["보통"].dfOutside=false
-      end
-    end
-    base.fragments[#base.fragments+1]={folder="Quartz",savedVariable="Quartz3DB",addonVersion="3.8.0",version=1,
-      section="profile",profile="Default",namespace="Swing",values={swingposition="top",swinggap=-4,swingheight=4}}
-    Core.Presets:Register(base)
-    for _, version in ipairs({1,2}) do
-      local def = {name=name .. "-v" .. version,layoutOnly=true,fragments={}}
+    do
+      -- the layout-only preset <name>-v2 (the layout catch-up and /dfp preset <name>-v2 write it)
+      local def = {name=name .. "-v2",layoutOnly=true,fragments={}}
       local root, spaces, quartz, grid, totemBar = nil, {}, {}, nil, nil
       for _, f in ipairs(base.fragments) do
         if f.folder == "PitBull4" and not f.namespace and f.values.layouts then root=Core.CopyTable(f.values) end
@@ -72,18 +57,24 @@ for name, m in pairs(modes) do
           local copy=Core.CopyTable(f);quartz[copy.namespace]=copy.values
           def.fragments[#def.fragments+1]=copy
         elseif f.folder == "Dominos" and type(f.values.frames) == "table" and type(f.values.frames.totem) == "table" then
-          -- the totem bar only: Old keeps the preset's spot, New moves it under the player frame (below)
+          -- the totem bar and the pet bar (moved under the player frame, below) and bars 4 and 5 (the
+          -- action panel of the section structure)
+          local frames={totem=Core.CopyTable(f.values.frames.totem)}
+          for _, bar in ipairs({4, 5}) do
+            if type(f.values.frames[bar]) == "table" then frames[bar]=Core.CopyTable(f.values.frames[bar]) end
+          end
+          if type(f.values.frames.pet) == "table" then frames.pet=Core.CopyTable(f.values.frames.pet) end
           totemBar={folder=f.folder,savedVariable=f.savedVariable,addonVersion=f.addonVersion,version=1,section=f.section,
-            profile=f.profile,values={frames={totem=Core.CopyTable(f.values.frames.totem)}}}
+            profile=f.profile,values={frames=frames}}
           def.fragments[#def.fragments+1]=totemBar
         elseif f.folder == "Grid2" and f.namespace == "Grid2Layout" then
-          -- the window spot is the same in both layouts (left of the quest tracker)
+          -- the window spot (left of the quest tracker)
           grid={folder=f.folder,savedVariable=f.savedVariable,addonVersion=f.addonVersion,version=1,section=f.section,
             profile=f.profile,namespace=f.namespace,values={anchor=f.values.anchor,PosX=f.values.PosX,PosY=f.values.PosY}}
           def.fragments[#def.fragments+1]=grid
         elseif f.folder == "Grid2" and f.namespace == "Grid2Frame" then
-          -- cell size: New = the preset's square cells, Old = the V1 cells
-          local cells=version == 2 and {f.values.frameWidth,f.values.frameHeight} or m.oldCells
+          -- cell size: the preset's square cells
+          local cells={f.values.frameWidth,f.values.frameHeight}
           def.fragments[#def.fragments+1]={folder=f.folder,savedVariable=f.savedVariable,addonVersion=f.addonVersion,
             version=1,section=f.section,profile=f.profile,namespace=f.namespace,
             values={frameWidth=cells[1],frameHeight=cells[2]}}
@@ -97,18 +88,14 @@ for name, m in pairs(modes) do
           row.unit=units[label]
           row.layout=row.layout or (label == "플레이어" and "보통" or label == "대상" and "대상" or "대상의대상")
         end
-        root.dfLayoutV2 = version == 2
+        root.dfLayoutV2 = true
         local targetPet=root.units["대상의 소환수"]
         targetPet.layout="대상의대상";targetPet.dfCompanion=false
         spaces.CastBar.layouts["보통"].dfOutside=false
-        root.dfAuraGeometry["플레이어"].above=false
-        root.dfAuraGeometry["대상"].above=false
         root.dfAuraGeometry["대상의 소환수"]={above=false}
-        root.dfLayoutRevision=version == 2 and Core.Presets.layoutV2Revision or Core.Presets.layoutV1Revision
-        -- the player's totem timer: Old keeps its preset location without an offset
+        root.dfLayoutRevision=Core.Presets.layoutV2Revision
         local timer=spaces.Totems.layouts["보통"]
-        timer.dfOffsetX,timer.dfOffsetY=0,0
-        if version == 2 then
+        do
           local pixel=root.dfPixel
           local main, companion=root.layouts["보통"],root.layouts["소환수와 주시"]
           local w,h,cw,ch=main.size_x,main.size_y,companion.size_x,companion.size_y
@@ -154,11 +141,25 @@ for name, m in pairs(modes) do
           for label, width in pairs({["플레이어"]=w,["대상"]=w,["플레이어의 소환수"]=cw,["주시 대상"]=cw,["대상의 소환수"]=cw}) do
             root.dfAuraGeometry[label]={above=true,width=width}
           end
-          -- the Dominos totem bar centred under the player frame at the preset's totem row (between the
-          -- cast row and the action bars); the totem timer right of it, vertically centred on it
+          -- the totem bar and the pet bar share the row under the player frame (a class has one or the
+          -- other), each ending at the player frame's right edge; the totem timer left of the totem bar
           local button=m.totemButton
           local totemWidth=TOTEM_BUTTONS*button+(TOTEM_BUTTONS-1)*TOTEM_SPACING*button/30
-          local totemX=xPlayer+w/2-totemWidth/2
+          local totemX=xPlayer+w-totemWidth
+          local petBar=totemBar and totemBar.values.frames.pet
+          if petBar and type(petBar.scale) == "number" and type(petBar.columns) == "number" and petBar.columns >= 1 then
+            local count=petBar.columns
+            local side=math.min(m.petBar.side,(m.petBar.span-2*(count-1))/count)
+            local length=count*side+2*(count-1)
+            local effective=petBar.scale/pixel
+            local x,y=xPlayer+w-length,m.totemY+(button-side)/2
+            petBar.x=petBar.x+(x-m.petBar.x)/effective-(m.width/2)/effective
+            petBar.y=petBar.y-(y-m.petBar.y)/effective
+            petBar.point,petBar.relPoint="TOPLEFT","TOP"
+            if type(petBar.dfGeometry) == "table" then
+              for _, key in ipairs({"point","relPoint","x","y"}) do petBar.dfGeometry[key]=petBar[key] end
+            end
+          end
           if totemBar then
             local totem=totemBar.values.frames.totem
             -- from the screen's top centre like the unit frames, so a wider screen keeps it under the player
@@ -170,7 +171,7 @@ for name, m in pairs(modes) do
             end
           end
           timer.location="out_bottom_left"
-          timer.dfOffsetX=totemX+totemWidth+8-(xPlayer-outside)
+          timer.dfOffsetX=totemX-8-(4*icon+3*timer.totem_spacing*icon/50)-(xPlayer-outside)
           timer.dfOffsetY=m.totemY+(button-icon)/2-(bottom+outside)
           -- every cast bar (player, target, focus, pet) sits in the cast row under its frame, as wide as the frame
           for module, x in pairs({Player=xPlayer,Target=xTarget,Focus=xFocus,Pet=xPet}) do
@@ -195,13 +196,13 @@ for name, m in pairs(modes) do
           end
         end
         def.fragments[#def.fragments+1]={folder="Quartz",savedVariable="Quartz3DB",addonVersion="3.8.0",version=1,
-          section="profile",profile="Default",namespace="Swing",values={swingposition=version == 2 and "bottom" or "top",swinggap=version == 2 and 4 or -4,swingheight=4}}
+          section="profile",profile="Default",namespace="Swing",values={swingposition="bottom",swinggap=4,swingheight=4}}
         Core.Presets:Register(def)
-        if version == 2 then layoutV2 = def end
+        layoutV2 = def
       end
     end
-    -- New (V2) is the default layout of the base preset, Old (V1) stays as <name>-v1: the V2 fragments
-    -- follow the base ones at versions above them, so a fresh profile and a /dfp preset request end with V2.
+    -- The base preset writes this layout: its fragments follow the base ones at versions above them, so a
+    -- fresh profile and a /dfp preset request end with it.
     if layoutV2 then
       for _, f in ipairs(layoutV2.fragments) do
         local copy = Core.CopyTable(f)

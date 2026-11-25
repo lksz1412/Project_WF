@@ -23,7 +23,7 @@ return {
         ["y"] = -1186,
       },
       ["size"] = {
-        ["width"] = 620,
+        ["width"] = 618,
         ["height"] = 224,
       },
       ["font"] = {
@@ -35,11 +35,11 @@ return {
         ["point"] = "TOPLEFT",
         ["relativeTo"] = "DevilForever_AppearanceRoot",
         ["relativePoint"] = "TOPLEFT",
-        ["x"] = 622,
+        ["x"] = 620,
         ["y"] = -1186,
       },
       ["size"] = {
-        ["width"] = 620,
+        ["width"] = 618,
         ["height"] = 224,
       },
       ["font"] = {
@@ -51,7 +51,7 @@ return {
         ["point"] = "TOPLEFT",
         ["relativeTo"] = "DevilForever_AppearanceRoot",
         ["relativePoint"] = "TOPLEFT",
-        ["x"] = 1244,
+        ["x"] = 1240,
         ["y"] = -1186,
       },
       ["size"] = {
@@ -64,7 +64,7 @@ return {
         ["point"] = "TOPLEFT",
         ["relativeTo"] = "DevilForever_AppearanceRoot",
         ["relativePoint"] = "TOPLEFT",
-        ["x"] = 1720,
+        ["x"] = 1716,
         ["y"] = -1186,
       },
       ["size"] = {
@@ -77,11 +77,11 @@ return {
         ["point"] = "TOPLEFT",
         ["relativeTo"] = "DevilForever_AppearanceRoot",
         ["relativePoint"] = "TOPLEFT",
-        ["x"] = 1946,
+        ["x"] = 1942,
         ["y"] = -1186,
       },
       ["size"] = {
-        ["width"] = 614,
+        ["width"] = 618,
         ["height"] = 224,
       },
       ["font"] = {
@@ -199,7 +199,7 @@ return {
         ["point"] = "TOPLEFT",
         ["relativeTo"] = "DevilForever_AppearanceRoot",
         ["relativePoint"] = "TOPLEFT",
-        ["x"] = 620,
+        ["x"] = 618,
         ["y"] = -1186,
       },
       ["size"] = {
@@ -212,7 +212,7 @@ return {
         ["point"] = "TOPLEFT",
         ["relativeTo"] = "DevilForever_AppearanceRoot",
         ["relativePoint"] = "TOPLEFT",
-        ["x"] = 1242,
+        ["x"] = 1238,
         ["y"] = -1186,
       },
       ["size"] = {
@@ -225,7 +225,7 @@ return {
         ["point"] = "TOPLEFT",
         ["relativeTo"] = "DevilForever_AppearanceRoot",
         ["relativePoint"] = "TOPLEFT",
-        ["x"] = 1718,
+        ["x"] = 1714,
         ["y"] = -1186,
       },
       ["size"] = {
@@ -238,7 +238,7 @@ return {
         ["point"] = "TOPLEFT",
         ["relativeTo"] = "DevilForever_AppearanceRoot",
         ["relativePoint"] = "TOPLEFT",
-        ["x"] = 1944,
+        ["x"] = 1940,
         ["y"] = -1186,
       },
       ["size"] = {
@@ -333,8 +333,8 @@ local fragment = {folder = "Dominos", savedVariable = "DominosDB", section = "pr
     [1] = {point = "TOPLEFT", relPoint = "TOPLEFT", x = 237 / effective + shiftX, y = -1118 / effective + shiftY, scale = frameScale, columns = 12, spacing = pitch - hitWidth, rowSpacing = hitWidth - hitHeight, rowOffset = 0, isRightToLeft = false, isBottomToTop = false, showEmptyButtons = true, padW = 0, padH = 0, anchor = false, hidden = false},
     [2] = {point = "TOPLEFT", relPoint = "TOPLEFT", x = 933 / effective + shiftX, y = -1118 / effective + shiftY, scale = frameScale, columns = 12, spacing = pitch - hitWidth, rowSpacing = hitWidth - hitHeight, rowOffset = 0, isRightToLeft = false, isBottomToTop = false, showEmptyButtons = true, padW = 0, padH = 0, anchor = false, hidden = false},
     [3] = {point = "TOPLEFT", relPoint = "TOPLEFT", x = 1629 / effective + shiftX, y = -1118 / effective + shiftY, scale = frameScale, columns = 12, spacing = pitch - hitWidth, rowSpacing = hitWidth - hitHeight, rowOffset = 0, isRightToLeft = false, isBottomToTop = false, showEmptyButtons = true, padW = 0, padH = 0, anchor = false, hidden = false},
-    [4] = {point = "TOPLEFT", relPoint = "TOPLEFT", x = 1250 / effective + shiftX, y = -1192 / effective + shiftY, scale = frameScale, columns = 8, spacing = pitch - hitWidth, rowSpacing = hitWidth - hitHeight, rowOffset = 0, isRightToLeft = false, isBottomToTop = false, showEmptyButtons = true, padW = 0, padH = 0, anchor = false, hidden = false},
-    [5] = {point = "TOPLEFT", relPoint = "TOPLEFT", x = 1250 / effective + shiftX, y = -1250 / effective + shiftY, scale = frameScale, columns = 8, spacing = pitch - hitWidth, rowSpacing = hitWidth - hitHeight, rowOffset = 0, isRightToLeft = false, isBottomToTop = false, showEmptyButtons = true, padW = 0, padH = 0, anchor = false, hidden = false, dfTail = true},
+    [4] = {point = "TOPLEFT", relPoint = "TOPLEFT", x = 1246 / effective + shiftX, y = -1192 / effective + shiftY, scale = frameScale, columns = 8, spacing = pitch - hitWidth, rowSpacing = hitWidth - hitHeight, rowOffset = 0, isRightToLeft = false, isBottomToTop = false, showEmptyButtons = true, padW = 0, padH = 0, anchor = false, hidden = false},
+    [5] = {point = "TOPLEFT", relPoint = "TOPLEFT", x = 1246 / effective + shiftX, y = -1250 / effective + shiftY, scale = frameScale, columns = 8, spacing = pitch - hitWidth, rowSpacing = hitWidth - hitHeight, rowOffset = 0, isRightToLeft = false, isBottomToTop = false, showEmptyButtons = true, padW = 0, padH = 0, anchor = false, hidden = false, dfTail = true},
     [6] = {hidden = true},
     [7] = {hidden = true},
     [8] = {hidden = true},
@@ -717,38 +717,6 @@ return proposal
 end
 do
   local ok, proposal = pcall(function()
--- Native Hekili positions are UIParent CENTER offsets; its GetScale sizes classic frames.
-local ui = UIParent and UIParent:GetEffectiveScale()
-local factor = PixelUtil and PixelUtil.GetPixelToUIUnitFactor and PixelUtil.GetPixelToUIUnitFactor()
-if type(factor) ~= "number" or factor <= 0 then
-  local _, height = GetPhysicalScreenSize()
-  local logical = UIParent and UIParent:GetHeight()
-  if type(height) == "number" and height > 0 and type(logical) == "number" and logical > 0
-      and type(ui) == "number" and ui > 0 then factor = logical * ui / height end
-end
-local pixel = type(factor) == "number" and factor > 0 and type(ui) == "number" and ui > 0 and factor / ui
-if not pixel then
-  DevilForever_Core:Log("skip", "Feature appearance", "physical pixel factor unavailable at proposal evaluation")
-  return {}
-end
-local native = PixelUtil and PixelUtil.GetNearestPixelSize and PixelUtil.GetNearestPixelSize(1,factor,1)
-if type(native) ~= "number" or native <= 0 then DevilForever_Core:Log("skip", "Hekili appearance", "native pixel grid unavailable"); return {} end
-return {profile={displays={
-  Primary={x=(0.0)*pixel,y=(608.0)*pixel,numIcons=1,frameStrata="LOW",classic={primaryWidth=64*pixel/native-2,primaryHeight=64*pixel/native-2,zoom=16,queue={width=64*pixel/native-2,height=64*pixel/native-2,spacing=6*pixel/native},keybindings={font="Devil Forever devil",fontSize=18*pixel,fontStyle="OUTLINE"},delays={font="Devil Forever devil",fontSize=18*pixel,fontStyle="OUTLINE"},border={thickness=1,color={0.57,0.58,0.59,1}}}},
-  AOE={x=(-160.0)*pixel,y=(608.0)*pixel,numIcons=1,frameStrata="LOW",classic={primaryWidth=64*pixel/native-2,primaryHeight=64*pixel/native-2,zoom=16,queue={width=64*pixel/native-2,height=64*pixel/native-2,spacing=6*pixel/native},keybindings={font="Devil Forever devil",fontSize=18*pixel,fontStyle="OUTLINE"},delays={font="Devil Forever devil",fontSize=18*pixel,fontStyle="OUTLINE"},border={thickness=1,color={0.57,0.58,0.59,1}}}},
-  Cooldowns={x=(160.0)*pixel,y=(608.0)*pixel,numIcons=1,frameStrata="LOW",classic={primaryWidth=64*pixel/native-2,primaryHeight=64*pixel/native-2,zoom=16,queue={width=64*pixel/native-2,height=64*pixel/native-2,spacing=6*pixel/native},keybindings={font="Devil Forever devil",fontSize=18*pixel,fontStyle="OUTLINE"},delays={font="Devil Forever devil",fontSize=18*pixel,fontStyle="OUTLINE"},border={thickness=1,color={0.57,0.58,0.59,1}}}},
-  Defensives={x=(320.0)*pixel,y=(608.0)*pixel,numIcons=1,frameStrata="LOW",classic={primaryWidth=64*pixel/native-2,primaryHeight=64*pixel/native-2,zoom=16,queue={width=64*pixel/native-2,height=64*pixel/native-2,spacing=6*pixel/native},keybindings={font="Devil Forever devil",fontSize=18*pixel,fontStyle="OUTLINE"},delays={font="Devil Forever devil",fontSize=18*pixel,fontStyle="OUTLINE"},border={thickness=1,color={0.57,0.58,0.59,1}}}},
-  Interrupts={x=(-320.0)*pixel,y=(608.0)*pixel,numIcons=1,frameStrata="LOW",classic={primaryWidth=64*pixel/native-2,primaryHeight=64*pixel/native-2,zoom=16,queue={width=64*pixel/native-2,height=64*pixel/native-2,spacing=6*pixel/native},keybindings={font="Devil Forever devil",fontSize=18*pixel,fontStyle="OUTLINE"},delays={font="Devil Forever devil",fontSize=18*pixel,fontStyle="OUTLINE"},border={thickness=1,color={0.57,0.58,0.59,1}}}},
-}}}
-  end)
-  if ok and type(proposal) == "table" and next(proposal) then
-    def.fragments[#def.fragments + 1] = { folder = "Hekili", savedVariable = "HekiliDB", addonVersion = "v0.8.6", version = 1, section = "profile", profile = "Default", values = proposal.profile }
-  elseif not ok then
-    DevilForever_Core:Log("skip", "Preset:qhd", "hekili-profile.fragment.qhd.lua: " .. tostring(proposal))
-  end
-end
-do
-  local ok, proposal = pcall(function()
 local ui = UIParent and UIParent:GetEffectiveScale()
 local factor = PixelUtil and PixelUtil.GetPixelToUIUnitFactor and PixelUtil.GetPixelToUIUnitFactor()
 if type(factor) ~= "number" or factor <= 0 then
@@ -775,12 +743,6 @@ do
   local dominos = (function()
 return {folder="Masque", savedVariable="MasqueDB", section="profile", profile="Default", addonVersion="12.1.8", version=1, values={Groups={Dominos={SkinID="Onyx",Inherit=false}}}}
   end)()
-  local hekili = (function()
-return {folder="Masque", savedVariable="MasqueDB", section="profile", profile="Default", addonVersion="12.1.8", version=1, values={Groups={Hekili={SkinID="Onyx",Inherit=false}}}}
-  end)()
-  for key, setting in pairs(hekili.values.Groups) do
-    dominos.values.Groups[key] = setting
-  end
   def.fragments[#def.fragments + 1] = dominos
 end
 DevilForever_Core.Presets:Register(def)

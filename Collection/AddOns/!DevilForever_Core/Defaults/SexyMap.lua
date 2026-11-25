@@ -92,6 +92,9 @@ local spec = {
   },
 }
 
+-- The minimap inside the appearance minimap panel of each preset, one section border (fhd 6 / qhd 8 /
+-- uhd 12 px, Composition parts border) in from every side: panel fhd 1289,860 192 · qhd 1716,1186 224 ·
+-- uhd 2581,1820 304.
 local appearance = {
   fhd = function()
 -- Appearance of the SexyMap profile for this preset's screen (a root fragment, see the header).
@@ -108,8 +111,8 @@ if not pixel then
   DevilForever_Core:Log("skip", "SexyMap appearance", "UI scale unavailable at defaults registration")
   return {}
 end
-local effective = 192 / 140
-return {core = {shape = 130871, point = "TOPLEFT", relpoint = "TOPLEFT", x = 1292 / effective, y = -860 / effective, scale = effective * pixel, dfPixel = pixel}}
+local effective = 180 / 140
+return {core = {shape = 130871, point = "TOPLEFT", relpoint = "TOPLEFT", x = 1295 / effective, y = -866 / effective, scale = effective * pixel, dfPixel = pixel}}
   end,
   qhd = function()
 -- Appearance of the SexyMap profile for this preset's screen (a root fragment, see the header).
@@ -126,8 +129,8 @@ if not pixel then
   DevilForever_Core:Log("skip", "SexyMap appearance", "UI scale unavailable at defaults registration")
   return {}
 end
-local effective = 224 / 140
-return {core = {shape = 130871, point = "TOPLEFT", relpoint = "TOPLEFT", x = 1720 / effective, y = -1186 / effective, scale = effective * pixel, dfPixel = pixel}}
+local effective = 208 / 140
+return {core = {shape = 130871, point = "TOPLEFT", relpoint = "TOPLEFT", x = 1724 / effective, y = -1194 / effective, scale = effective * pixel, dfPixel = pixel}}
   end,
   uhd = function()
 -- Appearance of the SexyMap profile for this preset's screen (a root fragment, see the header).
@@ -144,8 +147,8 @@ if not pixel then
   DevilForever_Core:Log("skip", "SexyMap appearance", "UI scale unavailable at defaults registration")
   return {}
 end
-local effective = 304 / 140
-return {core = {shape = 130871, point = "TOPLEFT", relpoint = "TOPLEFT", x = 2596 / effective, y = -1820 / effective, scale = effective * pixel, dfPixel = pixel}}
+local effective = 280 / 140
+return {core = {shape = 130871, point = "TOPLEFT", relpoint = "TOPLEFT", x = 2593 / effective, y = -1832 / effective, scale = effective * pixel, dfPixel = pixel}}
   end,
 }
 
@@ -170,8 +173,14 @@ for _, name in ipairs(presetNames) do
             edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
             insets = {left = 4, top = 4, right = 4, bottom = 4}, edgeSize = 16, tile = false}}}
       end
-      Core.Presets:AddFragment(name, {folder = "SexyMap", savedVariable = "SexyMap2DB", section = "root",
-        profileKey = profileKey, addonVersion = SEXYMAP_VERSION, version = 1, values = profile})
+      -- the base preset and its layout preset <name>-v2 (the layout catch-up brings the minimap spot to an
+      -- existing profile too)
+      for _, suffix in ipairs({"", "-v2"}) do
+        if Core.Presets:IsRegistered(name .. suffix) then
+          Core.Presets:AddFragment(name .. suffix, {folder = "SexyMap", savedVariable = "SexyMap2DB", section = "root",
+            profileKey = profileKey, addonVersion = SEXYMAP_VERSION, version = 1, values = Core.CopyTable(profile)})
+        end
+      end
     elseif not ok then
       Core:Log("skip", "Defaults:SexyMap", name .. " appearance: " .. tostring(proposed))
     end

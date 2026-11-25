@@ -4806,12 +4806,12 @@
     },
     {
       "name": "Hekili",
-      "role": "start",
+      "role": "comparison",
       "source_dir": "forever-addons",
       "feature_phases": [
         {
           "phase": 8,
-          "use": "start"
+          "use": "dropped"
         }
       ],
       "source_zip": "References/forever-addons/Hekili/Hekili-v0.8.6-forever.zip",
@@ -16380,7 +16380,7 @@
               }
             ]
           },
-          "listed_file_lines": 21
+          "listed_file_lines": 20
         }
       ],
       "has_interface_16001": true,

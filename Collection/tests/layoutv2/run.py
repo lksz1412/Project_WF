@@ -23,8 +23,11 @@ def session(mode,height,width,saved=None,ui=1,before_boot=None,after=('PitBull4'
        'PixelUtil':{'GetPixelToUIUnitFactor':lambda:factor},
        'ChatFontNormal':{'GetFont':lambda self:('font',14)},
        # a native action button, so the presets register their Dominos frames (totem bar included)
-       'ActionButton1':{'GetSize':lambda self:(45,45),'GetHitRectInsets':lambda self:(0,0,0,0)}}
-    s=Session(registry='generated',extra_files=(),saved=saved,globals_=g,collection_presets=True)
+       'ActionButton1':{'GetSize':lambda self:(45,45),'GetHitRectInsets':lambda self:(0,0,0,0)},
+       'NUM_PET_ACTION_SLOTS':10}
+    # a native pet slot (Lua functions: fitPet checks their type), so the presets register their pet bar
+    pet='PetActionButton1={GetSize=function() return 30,30 end,GetHitRectInsets=function() return 0,0,0,0 end}'
+    s=Session(registry='generated',extra_files=(),saved=saved,globals_=g,collection_presets=True,prelude=pet)
     s.lua.execute('function GetPhysicalScreenSize() return %d,%d end'% (width,height))
     s.lua.execute('TEST_meta.PitBull4={Version="v4.2.50-forever.1"};TEST_meta.Quartz={Version="3.8.0"}')
     for folder,version in ADDON_VERSIONS.items():
@@ -123,23 +126,9 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),
           local texts=PitBull4DB.namespaces.LuaTexts.profiles.Default.layouts['보통'].elements
           assert(texts['Lua:시전'].enabled==false and texts['Lua:시전시간'].enabled==false)
         """)
-    # the base preset is the V2 layout; -v1 is the V1 compare layout and the base preset brings V2 back
+    # the base preset is the layout (the only one); requesting it again keeps every unit where it is
     assert bp['dfLayoutV2'] and bp['units']['대상의 소환수']['enabled']
-    back=session(mode,height,width,request(v2,mode+'-v1'),ui=.64)
-    pback=back.sv('PitBull4DB')['profiles']['Default']
-    assert not pback['dfLayoutV2'] and not pback['units']['대상의 소환수']['enabled']
-    assert pback['units']['대상의 소환수']['layout']=='대상의대상'
-    assert not any(pback['units'][n]['enabled'] for n in ('대상의 소환수의 대상','대상의 소환수의 대상의 대상'))
-    assert not back.sv('PitBull4DB')['namespaces']['CastBar']['profiles']['Default']['layouts']['보통']['dfOutside']
-    assert back.sv('PitBull4DB')['namespaces']['CastBar']['profiles']['Default']['layouts']['보통']['enabled'] is False  # V1: Quartz only too
-    assert back.sv('Quartz3DB')['namespaces']['Swing']['profiles']['Default']['swingposition']=='top'
-    assert back.sv('Quartz3DB')['namespaces']['Pet']['profiles']['Default']['point']=='TOPLEFT'
-    assert pback['dfAuraGeometry']['플레이어']['size_ratio']==.7 and pback['dfAuraGeometry']['플레이어']['avoid_frame']
-    # Old: the totem timer at its preset spot (right of the player frame's bottom), no offset
-    tb=back.sv('PitBull4DB')['namespaces']['Totems']['profiles']['Default']['layouts']['보통']
-    assert (tb['location'],tb['dfOffsetX'],tb['dfOffsetY'])==('out_right_bottom',0,0),tb
-    assert not back.errors(),back.errors()
-    again=session(mode,height,width,request(back,mode),ui=.64)
+    again=session(mode,height,width,request(v2,mode),ui=.64)
     pagain=again.sv('PitBull4DB')['profiles']['Default']
     assert pagain['dfLayoutV2'] and pagain['units']['대상의 소환수']['enabled']
     for name in bp['units']:
@@ -150,7 +139,7 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),
                 assert (abs(a-b)<1e-8) if isinstance(b,(int,float)) and not isinstance(b,bool) else a==b,(mode,name,key,a,b)
     assert again.sv('Quartz3DB')['namespaces']['Swing']['profiles']['Default']['swingposition']=='bottom'
     assert not again.errors(),again.errors()
-    print('PASS',mode,width,'actual preset request/reload -> V2 -> narrow and regular V1; 3 scales native Refix/layout; party/custom/module toggles preserved')
+    print('PASS',mode,width,'actual preset request/reload -> V2 -> base preset again; 3 scales native Refix/layout; party/custom/module toggles preserved')
 print('PASS V2 lifecycle and native geometry')
 
 for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),('uhd',3862,2160)]:
@@ -246,7 +235,7 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),
       local db=swing.db.profile;db.swingposition='top';db.swinggap=-4;swing:ApplySettings()
       assert(bar.pos[1]=='BOTTOM' and bar.pos[3]=='TOP')
       TEST_clock=TEST_clock+1.5;bar.OnUpdate();assert(status.value==.5)
-      -- V1 (swing above the bar): a UI scale change rescales the Player bar and the swing bar with it.
+      -- swing above the bar (a module setting): a UI scale change rescales the Player bar and the swing bar with it.
       local player=TEST_quartz.modules.Player
       player.db.profile.scale=player.db.profile.scale*2;player.Bar:ApplySettings()
       assert(bar.scale==player.db.profile.scale)
@@ -355,7 +344,7 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),
     print('PASS',mode,width,'five Aura owners: normal max own+others native Lua rectangles; restricted public container bounds; no row/body/under-foot cast or swing overlap')
 print('PASS V2 aura consumers; restricted live renderer geometry remains client boundary')
 
-# Preset screen map (default V1 and the V2 compare layout): Grid2 at its 40-player maximum and its party
+# Preset screen map (the base preset and the layout-only <preset>-v2, the same layout): Grid2 at its 40-player maximum and its party
 # window next to every other preset frame, physical pixels, top-left origin. Aura blocks are the native
 # (combat) container bands of PitBull4's Aura module run on the profile: both groups (own and others') at
 # their own maximum, and the companion avoidance rules once with the avoided frames hidden and once shown.
@@ -425,6 +414,7 @@ def aura_bands(profile,cfg,label,row,frame,shown):
 
 TOTEM_BUTTON={'fhd':44,'qhd':52,'uhd':72}  # Presets/<mode>.lua Dominos frames.totem scale pixel*button/30
 ACTION_BAR_TOP={'fhd':802,'qhd':1118,'uhd':1724}  # Presets/<mode>.lua Dominos frames[1] y
+PET_BAR={'fhd':(218,490,22,238),'qhd':(256,806,26,278),'uhd':(212,1564,34,358)}  # Presets/<mode>.lua fitPet x, y, side, span
 def default_screen_map(mode,width,height,v2=False):
     s=session(mode,height,width)
     if v2:s=session(mode,height,width,request(s,mode+'-v2'))
@@ -455,9 +445,6 @@ def default_screen_map(mode,width,height,v2=False):
         r=_point(width,height,q['point'],q['point'],q['x']/pixel,q['y']/pixel,q['w'],q['h'])
         rects['quartz '+name]=(r[0]-icon,r[1],r[2]+icon,r[3])
     src=(A/'!DevilForever_Core/Presets'/(mode+'.lua')).read_text(encoding='utf-8')
-    size=int(_re.search(r'Primary=\{[^}]*primaryWidth=(\d+)',src).group(1))
-    for name,x,y in _re.findall(r'(Primary|AOE|Cooldowns|Defensives|Interrupts)=\{x=\(([-0-9.]+)\)\*pixel,y=\(([-0-9.]+)\)',src):
-        rects['hekili '+name]=_point(width,height,'CENTER','CENTER',float(x),float(y),size,size)
     d=plain(s.core.Presets.Get(s.core.Presets,mode))
     for key,e in d['edits'].items():
         if 'position' in e and 'size' in e and key.startswith(('appearance.','statusstrip.')):
@@ -481,6 +468,16 @@ def default_screen_map(mode,width,height,v2=False):
     button=TOTEM_BUTTON[mode]
     rects['dominos totem']=_point(width,height,totem['relPoint'],totem['point'],totem['x']*totem['scale']/pixel,
                                   totem['y']*totem['scale']/pixel,6*button+5*2*button/30,button)
+    # Dominos pet bar: its spot from the base preset's own entry (the fitPet spot PET_BAR) moved by the entry change
+    pet=None
+    for f in sorted(layout['fragments'].values(),key=lambda f:f['version']):
+        if f['folder']=='Dominos' and 'pet' in (f['values'].get('frames') or {}):pet=f['values']['frames']['pet']
+    old=[f for f in d['fragments'].values() if f['folder']=='Dominos' and f['version']==1
+         and 'pet' in (f['values'].get('frames') or {})][0]['values']['frames']['pet']
+    eff=pet['scale']/pixel;bx,by,bside,bspan=PET_BAR[mode];count=pet['columns']
+    side=min(bside,(bspan-2*(count-1))/count)
+    px=bx+(pet['x']-old['x'])*eff+(width/2 if pet.get('relPoint')=='TOP' else 0)
+    rects['dominos pet']=(px,by-(pet['y']-old['y'])*eff,count*side+2*(count-1),side)
     timer=ns['Totems']['profiles']['Default']['layouts']['보통']
     icon=15*timer['size'];span=4*icon+3*timer['totem_spacing']*icon/50
     outside=p['layouts']['보통'].get('indicator_root_outside_margin',0);pl=rects['unit 플레이어']
@@ -497,19 +494,19 @@ def default_screen_map(mode,width,height,v2=False):
 # on the tracker's left edge, square cells; the window grows down and left, clear of every preset rectangle.
 TRACKER={'fhd':(259,247,88),'qhd':(346,330,116),'uhd':(518,495,176)}
 KNOWN_OVERLAP={  # 88/116/176 px cells at the tracker spot, measured; waiting for the user's in-game feedback
-    'fhd 1920 party':['details 1', 'details 2'],
-    'fhd 1920 raid':['auras 대상 buffs alone', 'auras 대상 buffs avoided shown', 'auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown', 'auras 대상의 소환수 buffs alone', 'auras 대상의 소환수 buffs avoided shown', 'auras 대상의 소환수 debuffs alone', 'auras 대상의 소환수 debuffs avoided shown', 'auras 주시 대상 buffs alone', 'auras 주시 대상 buffs avoided shown', 'auras 주시 대상 debuffs alone', 'auras 주시 대상 debuffs avoided shown', 'details 1', 'details 2', 'quartz Focus', 'quartz Target', 'unit 대상', 'unit 대상의 대상', 'unit 대상의 대상의 대상', 'unit 대상의 소환수', 'unit 대상의 소환수의 대상', 'unit 대상의 소환수의 대상의 대상', 'unit 주시 대상', 'unit 주시 대상의 대상', 'unit 주시 대상의 대상의 대상'],
-    'qhd 2560 party':['details 1'],
-    'qhd 2560 raid':['auras 대상 buffs alone', 'auras 대상 buffs avoided shown', 'auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown', 'auras 대상의 소환수 buffs alone', 'auras 대상의 소환수 buffs avoided shown', 'auras 대상의 소환수 debuffs alone', 'auras 대상의 소환수 debuffs avoided shown', 'auras 주시 대상 buffs alone', 'auras 주시 대상 buffs avoided shown', 'auras 주시 대상 debuffs alone', 'auras 주시 대상 debuffs avoided shown', 'details 1', 'unit 대상', 'unit 대상의 소환수', 'unit 주시 대상'],
-    'uhd 3840 party':['details 1'],
-    'uhd 3840 raid':['auras 대상 buffs alone', 'auras 대상 buffs avoided shown', 'auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown', 'auras 대상의 소환수 buffs alone', 'auras 대상의 소환수 buffs avoided shown', 'auras 대상의 소환수 debuffs alone', 'auras 대상의 소환수 debuffs avoided shown', 'auras 주시 대상 buffs alone', 'auras 주시 대상 buffs avoided shown', 'auras 주시 대상 debuffs alone', 'auras 주시 대상 debuffs avoided shown', 'details 1', 'unit 대상', 'unit 대상의 소환수', 'unit 주시 대상'],
-    'uhd 3862 party':['details 1'],
-    'uhd 3862 raid':['auras 대상 buffs alone', 'auras 대상 buffs avoided shown', 'auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown', 'auras 대상의 소환수 buffs alone', 'auras 대상의 소환수 buffs avoided shown', 'auras 대상의 소환수 debuffs alone', 'auras 대상의 소환수 debuffs avoided shown', 'auras 주시 대상 buffs alone', 'auras 주시 대상 buffs avoided shown', 'auras 주시 대상 debuffs alone', 'auras 주시 대상 debuffs avoided shown', 'details 1', 'unit 대상', 'unit 대상의 소환수', 'unit 주시 대상'],
+    'fhd 1920 party':[],
+    'fhd 1920 raid':['auras 대상 buffs alone', 'auras 대상 buffs avoided shown', 'auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown', 'auras 대상의 소환수 buffs alone', 'auras 대상의 소환수 buffs avoided shown', 'auras 대상의 소환수 debuffs alone', 'auras 대상의 소환수 debuffs avoided shown', 'auras 주시 대상 buffs alone', 'auras 주시 대상 buffs avoided shown', 'auras 주시 대상 debuffs alone', 'auras 주시 대상 debuffs avoided shown', 'quartz Focus', 'quartz Target', 'unit 대상', 'unit 대상의 대상', 'unit 대상의 대상의 대상', 'unit 대상의 소환수', 'unit 대상의 소환수의 대상', 'unit 대상의 소환수의 대상의 대상', 'unit 주시 대상', 'unit 주시 대상의 대상', 'unit 주시 대상의 대상의 대상'],
+    'qhd 2560 party':[],
+    'qhd 2560 raid':['auras 대상 buffs alone', 'auras 대상 buffs avoided shown', 'auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown', 'auras 대상의 소환수 buffs alone', 'auras 대상의 소환수 buffs avoided shown', 'auras 대상의 소환수 debuffs alone', 'auras 대상의 소환수 debuffs avoided shown', 'auras 주시 대상 buffs alone', 'auras 주시 대상 buffs avoided shown', 'auras 주시 대상 debuffs alone', 'auras 주시 대상 debuffs avoided shown', 'unit 대상', 'unit 대상의 소환수', 'unit 주시 대상'],
+    'uhd 3840 party':[],
+    'uhd 3840 raid':['auras 대상 buffs alone', 'auras 대상 buffs avoided shown', 'auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown', 'auras 대상의 소환수 buffs alone', 'auras 대상의 소환수 buffs avoided shown', 'auras 대상의 소환수 debuffs alone', 'auras 대상의 소환수 debuffs avoided shown', 'auras 주시 대상 buffs alone', 'auras 주시 대상 buffs avoided shown', 'auras 주시 대상 debuffs alone', 'auras 주시 대상 debuffs avoided shown', 'unit 대상', 'unit 대상의 소환수', 'unit 주시 대상'],
+    'uhd 3862 party':[],
+    'uhd 3862 raid':['auras 대상 buffs alone', 'auras 대상 buffs avoided shown', 'auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown', 'auras 대상의 소환수 buffs alone', 'auras 대상의 소환수 buffs avoided shown', 'auras 대상의 소환수 debuffs alone', 'auras 대상의 소환수 debuffs avoided shown', 'auras 주시 대상 buffs alone', 'auras 주시 대상 buffs avoided shown', 'auras 주시 대상 debuffs alone', 'auras 주시 대상 debuffs avoided shown', 'unit 대상', 'unit 대상의 소환수', 'unit 주시 대상'],
 }
 for v2 in (False,True):
     for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),('uhd',3862,2160)]:
         rects,raid,party=default_screen_map(mode,width,height,v2)
-        assert len([k for k in rects if k.startswith('group ')])==4 and len([k for k in rects if k.startswith('hekili ')])==5,sorted(rects)
+        assert len([k for k in rects if k.startswith('group ')])==4,sorted(rects)
         top,margin,cell=TRACKER[mode]
         for kind,box in (('raid',raid),('party',party)):
             assert box[0]>=0 and box[1]>=0 and box[0]+box[2]<=width and box[1]+box[3]<=height,(mode,v2,box)
@@ -519,8 +516,30 @@ for v2 in (False,True):
             known=set(KNOWN_OVERLAP['%s %d %s'%(mode,width,kind)])
             assert hits==known,(mode,width,v2,kind,box,sorted(hits))
             assert abs(box[1]-top)<1e-6 and abs(box[0]+box[2]-(width-margin))<1e-6,(mode,v2,box)
-        print('PASS',mode,width,'V2' if v2 else 'V1','Grid2 40-player window %s and party window %s left of the quest tracker, tops aligned (cells %d px), pinned overlaps raid %d / party %d'%(tuple(round(v) for v in raid),tuple(round(v) for v in party),cell,len(KNOWN_OVERLAP['%s %d raid'%(mode,width)]),len(KNOWN_OVERLAP['%s %d party'%(mode,width)])))
-print('PASS preset Grid2 placement left of the quest tracker (V1 and V2)')
+        print('PASS',mode,width,'-v2' if v2 else 'base','Grid2 40-player window %s and party window %s left of the quest tracker, tops aligned (cells %d px), pinned overlaps raid %d / party %d'%(tuple(round(v) for v in raid),tuple(round(v) for v in party),cell,len(KNOWN_OVERLAP['%s %d raid'%(mode,width)]),len(KNOWN_OVERLAP['%s %d party'%(mode,width)])))
+print('PASS preset Grid2 placement left of the quest tracker (base preset and -v2)')
+
+# Details windows 1 (damage) and 2 (Tiny Threat) side by side: the row (title strips included) is as wide and
+# as tall as chat panel 1 and starts on its left edge, clear of every preset rectangle, both Grid2 windows
+# and the quest tracker column (from the tracker's top down to the section's upper strip).
+det_src=(A/'DevilForever_DetailsLayout/Layout.lua').read_text(encoding='utf-8')
+TITLE={k:int(v) for k,v in _re.findall(r'(fhd|qhd|uhd) = (\d+)',_re.search(r'titleSpace = \{(.*?)\}',det_src).group(1))}
+for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),('uhd',3862,2160)]:
+    rects,raid,party=default_screen_map(mode,width,height)
+    one,two=rects['details 1'],rects['details 2'];chat=rects['edit appearance.chat1'];title=TITLE[mode]
+    row=(one[0],one[1]-title,two[0]+two[2]-one[0],one[3]+title)
+    assert two[1]==one[1] and two[3]==one[3] and two[0]-(one[0]+one[2])==2,(mode,one,two)
+    assert (row[0],row[2],row[3])==(chat[0],chat[2],chat[3]),(mode,width,row,chat)
+    top,margin,cell=TRACKER[mode]
+    upper=rects['edit appearance.upper']
+    others=dict((k,r) for k,r in rects.items() if not k.startswith('details '))
+    others.update({'grid2 raid':raid,'grid2 party':party,'quest tracker':(width-margin,top,margin,upper[1]-top)})
+    for i,box in enumerate((one,two),1):
+        boxed=(box[0],box[1]-title,box[2],box[3]+title)
+        assert 0<=boxed[0] and boxed[0]+boxed[2]<=width and 0<=boxed[1] and boxed[1]+boxed[3]<=height,(mode,i,boxed)
+        hits=sorted(k for k,r in others.items() if overlaps(boxed,r))
+        assert hits==[],(mode,width,i,boxed,hits)
+    print('PASS',mode,width,'Details row %s (title %d px) = chat panel 1 width/height, left edges aligned, overlaps none of %d rects'%(row,title,len(others)))
 
 core_default=_re.search(r'dfStandStill = ([0-9.]+)',(A/'!DevilForever_Core/Defaults/Quartz.lua').read_text(encoding='utf-8')).group(1)
 module_default=_re.search(r'dfStandStill = ([0-9.]+),',(A/'Quartz/modules/SwingForever.lua').read_text(encoding='utf-8')).group(1)
@@ -553,27 +572,32 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),
         r=rects['unit '+label]
         assert pet[0]-1e-6<=r[0] and r[0]+r[2]<=pet[0]+pet[2]+1e-6 and r[1]>=pet[1]+pet[3],(label,r,pet)
     assert p['units']['대상의 대상']['enabled'] is True and p['units']['대상의 대상의 대상']['enabled'] is True
-    assert p['dfLayoutRevision']==s.core.Presets.layoutV2Revision==4
+    assert p['dfLayoutRevision']==s.core.Presets.layoutV2Revision==7
     # player and target aura rows at the same height above their frames (no raise)
     assert p['dfAuraGeometry']['플레이어']=={'above':True,'width':player[2]}==p['dfAuraGeometry']['대상'],(mode,p['dfAuraGeometry']['플레이어'])
     for kind in ('buffs','debuffs'):
         a,b=rects['auras 플레이어 %s alone'%kind],rects['auras 대상 %s alone'%kind]
         assert abs(a[1]-b[1])<1e-6 and abs(a[3]-b[3])<1e-6,(mode,kind,a,b)
-    # Dominos totem bar centred under the player frame, between the cast row (Quartz bar and swing) and the
-    # action bars; the PitBull4 totem timer right of it, vertically centred on it; both clear of everything
-    bar,timer=rects['dominos totem'],rects['totem timer']
+    # Dominos totem bar and pet bar in the row under the player frame (between the cast row with its swing
+    # line and the action bars), each ending at the player frame's right edge (a class shows one of them);
+    # the PitBull4 totem timer 8 px left of the totem bar, vertically centred on it; clear of everything
+    bar,timer,petbar=rects['dominos totem'],rects['totem timer'],rects['dominos pet']
     q=rects['quartz Player'];swing=q[1]+q[3]+4+4
-    assert abs(bar[0]+bar[2]/2-(player[0]+player[2]/2))<1e-6,(mode,bar,player)
-    assert bar[1]>=swing and bar[1]+bar[3]<=ACTION_BAR_TOP[mode],(mode,bar,swing)
-    assert abs(timer[0]-(bar[0]+bar[2]+8))<1e-6 and abs(timer[1]+timer[3]/2-(bar[1]+bar[3]/2))<1e-6,(mode,timer,bar)
-    assert timer[1]+timer[3]<=ACTION_BAR_TOP[mode] and timer[0]+timer[2]<=width,(mode,timer)
-    # the aux panel is the art band behind the class and totem bar row (Old's totem bar sits on it too)
-    for name in ('dominos totem','totem timer'):
-        hits=[k for k,r in rects.items() if k not in (name,'edit appearance.aux') and overlaps(rects[name],r)]
+    right=player[0]+player[2]
+    assert abs(bar[0]+bar[2]-right)<1e-6 and abs(petbar[0]+petbar[2]-right)<1e-6,(mode,bar,petbar,player)
+    for b in (bar,petbar):assert b[1]>=swing and b[1]+b[3]<=ACTION_BAR_TOP[mode],(mode,b,swing)
+    assert abs(petbar[1]+petbar[3]/2-(bar[1]+bar[3]/2))<1e-6,(mode,petbar,bar)
+    assert abs(timer[0]+timer[2]+8-bar[0])<1e-6 and abs(timer[1]+timer[3]/2-(bar[1]+bar[3]/2))<1e-6,(mode,timer,bar)
+    assert timer[1]+timer[3]<=ACTION_BAR_TOP[mode] and timer[0]>=0,(mode,timer)
+    # the aux panel is the art band behind the class and totem bar row;
+    # the totem bar and the pet bar share the row (never shown together)
+    for name in ('dominos totem','totem timer','dominos pet'):
+        shared={'dominos totem','dominos pet'} if name!='totem timer' else set()
+        hits=[k for k,r in rects.items() if k not in ({name,'edit appearance.aux'}|shared) and overlaps(rects[name],r)]
         assert not hits,(mode,name,rects[name],hits)
     gap={'fhd':34,'qhd':38,'uhd':44}[mode]  # one frame gap (cast height + 4) between player, focus and target
     assert abs(focus[0]-(player[0]+player[2])-gap)<1e-6 and abs(target[0]-(focus[0]+focus[2])-gap)<1e-6,(mode,player,focus,target)
-    print('PASS',mode,width,'V2 default: focus centred %.0f with equal side gaps, player/target aura rows level, Dominos totem bar %s centred under the player and the totem timer %s beside it (clear of every rectangle), one aura table %s, target-pet chain under the target-pet'%(focus[0]+focus[2]/2,tuple(round(v) for v in bar),tuple(round(v) for v in timer),size))
+    print('PASS',mode,width,'V2 default: focus centred %.0f with equal side gaps, player/target aura rows level, Dominos totem bar %s and pet bar ending at the player frame right edge, the totem timer %s left of the totem bar (clear of every rectangle), one aura table %s, target-pet chain under the target-pet'%(focus[0]+focus[2]/2,tuple(round(v) for v in bar),tuple(round(v) for v in timer),size))
 src={m:(A/'!DevilForever_Core/Presets'/(m+'.lua')).read_text(encoding='utf-8') for m in ('fhd','qhd','uhd')}
 for m,cell in (('fhd',88),('qhd',116),('uhd',176)):
     assert '["frameWidth"]=%d,["frameHeight"]=%d'%(cell,cell) in src[m] and '["anchor"]="TOPRIGHT"' in src[m],m
@@ -586,10 +610,10 @@ FRAME_HEIGHTS={'fhd':(72,56),'qhd':(96,74),'uhd':(144,112)}
 for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160)]:
     main,companion=FRAME_HEIGHTS[mode]
     fresh=session(mode,height,width)
-    for label,s in (('V2',fresh),('V1',session(mode,height,width,request(fresh,mode+'-v1')))):
+    for label,s in (('layout',fresh),):
         p=s.sv('PitBull4DB')['profiles']['Default']
         texts=s.sv('PitBull4DB')['namespaces']['LuaTexts']['profiles']['Default']['layouts']
-        assert p['dfLayoutV2'] is (label=='V2'),(mode,label)
+        assert p['dfLayoutV2'] is True,(mode,label)
         def px(layout,element):
             return 14*p['layouts'][layout]['font_size']*texts[layout]['elements'][element]['size']
         for layout in ('보통','대상'):
@@ -606,7 +630,7 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160)]
             assert el['Lua:이름']['code']=='Outline() return "%s %s",Level(unit),Name(unit)' and el['Lua:이름']['events']['UNIT_LEVEL'],(mode,label,layout)
         print('PASS',mode,label,'name text: player/target %.2f px (x %d/%d), pet/focus %d px, bar texts unchanged'%(NAME_FONT[mode]*main/companion,main,companion,NAME_FONT[mode]))
     # A profile written before this change (name size 1 on the player/target frames) gets the new size
-    # through the layout switch (the <preset>-v2 / -v1 requests behind New/Old and /dfp preset + /dfp go).
+    # through the layout request (<preset>-v2: the layout catch-up, also /dfp preset + /dfp go).
     old_profile=carry(session(mode,height,width))
     for layout in ('보통','대상'):
         old_profile['PitBull4DB']['namespaces']['LuaTexts']['profiles']['Default']['layouts'][layout]['elements']['Lua:이름']['size']=1
@@ -617,9 +641,9 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160)]
     assert abs(got-main/companion)<1e-6,(mode,got)
     print('PASS',mode,'existing profile: name size 1 -> %.3f after the %s-v2 request'%(got,mode))
 
-# One player cast bar (Quartz) in Old and New: PitBull4's cast bar module and the player's cast texts are
-# off in a fresh profile, and a profile that still has them on (an earlier build) gets them off through
-# the layout switch (<preset>-v1 / -v2 requests behind the New/Old switch, also /dfp preset + /dfp go).
+# One player cast bar (Quartz): PitBull4's cast bar module and the player's cast texts are off in a fresh
+# profile, and a profile that still has them on (an earlier build) gets them off through the layout request
+# (<preset>-v2: the layout catch-up, also /dfp preset + /dfp go).
 for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160)]:
     def cast_state(s):
         ns=s.sv('PitBull4DB')['namespaces']
@@ -635,7 +659,7 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160)]
         ns['LuaTexts']['profiles']['Default']['layouts']['보통']['elements'][element]['enabled']=True
     before=session(mode,height,width,old_profile)
     assert cast_state(before)==(True,True,True,True),(mode,cast_state(before))
-    for target in ('-v1','-v2'):
+    for target in ('-v2',):
         after=session(mode,height,width,request(session(mode,height,width,old_profile),mode+target))
         assert cast_state(after)==(False,False,False,False),(mode,target,cast_state(after))
         q=after.sv('Quartz3DB')['namespaces']['Player']['profiles']['Default']
@@ -643,7 +667,7 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160)]
             tq=after.sv('Quartz3DB')['namespaces']['Target']['profiles']['Default']
             assert (q['point'],q['y'],q['w'],q['h'])==(tq['point'],tq['y'],tq['w'],tq['h']),(mode,q,tq)  # same row and width as the target bar
             assert (q['iconposition'],q['texture'])==(tq['iconposition'],tq['texture'])
-    print('PASS',mode,'one player cast bar (Quartz): PitBull4 cast bar and cast texts off, also after the -v1/-v2 switch of an older profile')
+    print('PASS',mode,'one player cast bar (Quartz): PitBull4 cast bar and cast texts off, also after the -v2 request of an older profile')
 
 # Layout catch-up after an update (Presets.lua): a collection PitBull4 profile below this build's revision of
 # its version gets that version written in the same load, with no command, no reload and nothing pending.
@@ -661,7 +685,8 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160)]
     probe=session(mode,height,width)
     for f in plain(probe.core.Presets.Get(probe.core.Presets,mode+'-v2'))['fragments'].values():
         ADDON_VERSIONS[f['folder']]=f['addonVersion']
-    v2rev,v1rev=probe.core.Presets.layoutV2Revision,probe.core.Presets.layoutV1Revision
+    v2rev=probe.core.Presets.layoutV2Revision
+    assert probe.core.Presets.layoutV1Revision is None and not probe.core.Presets.IsRegistered(probe.core.Presets,mode+'-v1')
     v2def=plain(probe.core.Presets.Get(probe.core.Presets,mode+'-v2'))
     totem_x=[f for f in v2def['fragments'].values() if f['folder']=='Dominos'][0]['values']['frames']['totem']['x']
     # fresh install: the fresh path writes New at the current revision; no catch-up, no line, nothing pending
@@ -680,49 +705,41 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160)]
     stale['DominosDB']=stale.get('DominosDB') or {};stale['Grid2DB']=stale.get('Grid2DB') or {}
     first=session(mode,height,width,stale,after=ALL_TARGETS)
     assert layout_state(first)==(True,v2rev),(mode,layout_state(first))  # PitBull4 written before it read its profile
-    assert catch_lines(first)==['[DF 설정] New 배치를 이 판에 맞춰 적용했습니다(PitBull4·Quartz) — Dominos 토템 막대·Grid2 는 다음 접속 때 자동으로 적용됩니다.'],(mode,catch_lines(first))
+    assert catch_lines(first)==['[DF 설정] 배치를 이 판에 맞춰 적용했습니다(PitBull4·Quartz) — Dominos 막대·Grid2 는 다음 접속 때 자동으로 적용됩니다.'],(mode,catch_lines(first))
     db=revision_db(first)
     assert db['tried']=={'Default|-v2':v2rev} and db['due']['name']==mode+'-v2' and sorted(db['due']['folders'])==['dominos','grid2'],db
     assert first.g.TEST_reloads==0 and 'pending' not in first.sv('DevilForever_ProfilesDB'),mode  # no reload, nothing blocks the switch
     second=session(mode,height,width,carry(first),after=ALL_TARGETS)
-    assert catch_lines(second)==['[DF 설정] New 배치를 이 판에 맞춰 적용했습니다(Dominos 토템 막대·Grid2).'],(mode,catch_lines(second))
+    assert catch_lines(second)==['[DF 설정] 배치를 이 판에 맞춰 적용했습니다(Dominos 막대·Grid2).'],(mode,catch_lines(second))
     assert 'due' not in revision_db(second) and second.g.TEST_reloads==0
     dominos=second.sv('DominosDB')['profiles']
     assert any(abs(prof.get('frames',{}).get('totem',{}).get('x',1e9)-totem_x)<1e-6 for prof in dominos.values()),(mode,list(dominos))
     third=session(mode,height,width,carry(second),after=ALL_TARGETS)
     assert not catch_lines(third) and 'due' not in revision_db(third)
-    # the player's own request before the deferred part: it supersedes the catch-up, so the next load
-    # writes the chosen version (Old) to all four targets and nothing older comes back afterwards
-    v1def=plain(probe.core.Presets.Get(probe.core.Presets,mode+'-v1'))
-    v1_totem=[f for f in v1def['fragments'].values() if f['folder']=='Dominos'][0]['values']['frames']['totem']
-    v1_cells=[f for f in v1def['fragments'].values() if f['folder']=='Grid2' and f.get('namespace')=='Grid2Frame'][0]['values']
+    # the player's own request before the deferred part (/dfp preset <preset> + /dfp go): it supersedes the
+    # catch-up, so the next load writes the requested preset to all four targets and drops the deferred part
     def dominos_totems(s):return [prof['frames']['totem'] for prof in s.sv('DominosDB')['profiles'].values() if 'totem' in prof.get('frames',{})]
-    def grid2_cells(s):
-        frame=s.sv('Grid2DB')['namespaces']['Grid2Frame']['profiles']
-        return [{k:v.get(k) for k in ('frameWidth','frameHeight')} for v in frame.values()]
     chose=session(mode,height,width,stale,after=ALL_TARGETS)
     assert 'due' in revision_db(chose)
-    picked=request(chose,mode+'-v1')
-    old_load=session(mode,height,width,picked,after=ALL_TARGETS)
-    assert 'due' not in revision_db(old_load) and layout_state(old_load)==(False,v1rev),(mode,revision_db(old_load),layout_state(old_load))
-    assert all(abs(t['x']-v1_totem['x'])<1e-6 and t.get('relPoint')==v1_totem.get('relPoint') for t in dominos_totems(old_load)),(mode,dominos_totems(old_load))
-    assert grid2_cells(old_load) and all(c=={'frameWidth':v1_cells['frameWidth'],'frameHeight':v1_cells['frameHeight']} for c in grid2_cells(old_load)),(mode,grid2_cells(old_load))
-    after_old=session(mode,height,width,carry(old_load),after=ALL_TARGETS)
-    assert not catch_lines(after_old) and 'due' not in revision_db(after_old) and layout_state(after_old)==(False,v1rev)
-    assert dominos_totems(after_old)==dominos_totems(old_load) and grid2_cells(after_old)==grid2_cells(old_load),mode
+    picked=request(chose,mode)
+    own_load=session(mode,height,width,picked,after=ALL_TARGETS)
+    assert 'due' not in revision_db(own_load) and layout_state(own_load)==(True,v2rev),(mode,revision_db(own_load),layout_state(own_load))
+    assert dominos_totems(own_load) and all(abs(t['x']-totem_x)<1e-6 for t in dominos_totems(own_load)),(mode,dominos_totems(own_load))
+    after_own=session(mode,height,width,carry(own_load),after=ALL_TARGETS)
+    assert not catch_lines(after_own) and 'due' not in revision_db(after_own)
     # a later update (state recorded by the last load): every target in the same load, Dominos and Grid2 too
     later=carry(third);later['PitBull4DB']['profiles']['Default']['dfLayoutRevision']=v2rev-1
     later['DevilForever_CoreDB']['layoutRevision']['seen']['revision']=v2rev-1
     later['DevilForever_CoreDB']['layoutRevision'].pop('tried',None)
     one=session(mode,height,width,later,after=ALL_TARGETS)
-    assert catch_lines(one)==['[DF 설정] New 배치를 이 판에 맞춰 적용했습니다(Dominos 토템 막대·Grid2·PitBull4·Quartz).'],(mode,catch_lines(one))
+    assert catch_lines(one)==['[DF 설정] 배치를 이 판에 맞춰 적용했습니다(Dominos 막대·Grid2·PitBull4·Quartz).'],(mode,catch_lines(one))
     assert layout_state(one)==(True,v2rev) and 'due' not in revision_db(one)
-    # an Old profile from before revisions: Old written (not New), same load for PitBull4 and Quartz
-    old=carry(session(mode,height,width,request(session(mode,height,width),mode+'-v1')))
-    assert old['PitBull4DB']['profiles']['Default']['dfLayoutV2'] is False
-    del old['PitBull4DB']['profiles']['Default']['dfLayoutRevision'];old['DevilForever_CoreDB'].pop('layoutRevision',None)
+    # a profile still on the earlier second layout (dfLayoutV2 false, its own revision): the layout is written,
+    # same load for PitBull4 and Quartz
+    old=copy.deepcopy(current);old['PitBull4DB']['profiles']['Default']['dfLayoutV2']=False
+    old['PitBull4DB']['profiles']['Default']['dfLayoutRevision']=4;old['DevilForever_CoreDB'].pop('layoutRevision',None)
     o=session(mode,height,width,old)
-    assert layout_state(o)==(False,v1rev) and catch_lines(o)==['[DF 설정] Old 배치를 이 판에 맞춰 적용했습니다(PitBull4·Quartz).'],(mode,layout_state(o),catch_lines(o))
+    assert layout_state(o)==(True,v2rev) and catch_lines(o)==['[DF 설정] 배치를 이 판에 맞춰 적용했습니다(PitBull4·Quartz).'],(mode,layout_state(o),catch_lines(o))
     # once per profile and revision: a profile still below after its attempt is left
     again=carry(first);again['PitBull4DB']['profiles']['Default']['dfLayoutRevision']=v2rev-1;again['DevilForever_CoreDB']['layoutRevision'].pop('due',None)
     again['DevilForever_CoreDB']['layoutRevision'].pop('seen',None)
@@ -735,4 +752,4 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160)]
     assert 'dfLayoutV2' not in fs.sv('PitBull4DB')['profiles']['Default'] and not catch_lines(fs)
     assert 'tried' not in revision_db(fs) and 'seen' not in revision_db(fs)
     assert not any(x.errors() for x in (fresh,same,first,second,third,one,o,a,fs))
-    print('PASS',mode,'layout catch-up: older revision -> PitBull4/Quartz written in the same load and Dominos/Grid2 at the next load by themselves (no command, no reload, nothing pending); recorded state -> every target in one load; Old stays Old; once per revision; fresh install and foreign profile -> nothing')
+    print('PASS',mode,'layout catch-up: older revision -> PitBull4/Quartz written in the same load and Dominos/Grid2 at the next load by themselves (no command, no reload, nothing pending); recorded state -> every target in one load; a profile on the earlier second layout -> the layout; once per revision; fresh install and foreign profile -> nothing')

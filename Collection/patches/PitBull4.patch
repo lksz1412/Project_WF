@@ -2901,7 +2901,7 @@ diff -u a/PitBull4/Modules/Aura/Layout.lua b/PitBull4/Modules/Aura/Layout.lua
  
  	-- Allow reversal of the load order
  	local start_list, end_list, step
-@@ -393,8 +395,90 @@
+@@ -393,8 +395,98 @@
  	end
  end
  
@@ -2976,11 +2976,19 @@ diff -u a/PitBull4/Modules/Aura/Layout.lua b/PitBull4/Modules/Aura/Layout.lua
 +  end
 +  local buff, debuff = config("buff"), config("debuff")
 +  buff.offset_y = math.max(2, db.layout.buff.offset_y, rule.top_margin or 0)
-+  local function group_height(size)
++  local function rows_height(count, size)
 +    local columns = math.max(1, math.floor(width / (size + buff.col_spacing)))
-+    return math.ceil(db.max_buffs / columns) * (size + buff.row_spacing)
++    return math.ceil(count / columns) * (size + buff.row_spacing)
 +  end
-+  debuff.offset_y = buff.offset_y + group_height(buff.my_size) + group_height(buff.size) + math.max(2, buff.row_spacing)
++  -- own and others' buffs share one flow (Forever.lua update_group) unless own buffs start a new row
++  -- (new_row_size with a different own size); the debuff block starts right above what they can fill
++  local buff_rows
++  if buff.new_row_size and buff.my_size ~= buff.size then
++    buff_rows = rows_height(db.max_buffs, buff.my_size) + rows_height(db.max_buffs, buff.size)
++  else
++    buff_rows = rows_height(2 * db.max_buffs, math.max(buff.my_size, buff.size))
++  end
++  debuff.offset_y = buff.offset_y + buff_rows + math.max(2, buff.row_spacing)
 +  managed_layouts[frame] = {db = db, rule = rule, shown = shown, width = frame:GetWidth(),
 +    max_buffs = db.max_buffs, max_debuffs = db.max_debuffs, buff = db.layout.buff, debuff = db.layout.debuff,
 +    source = source, adjusted = adjusted}

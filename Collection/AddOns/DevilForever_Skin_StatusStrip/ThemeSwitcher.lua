@@ -19,21 +19,21 @@ local SHIPPED = {
     "name_nightelf", "name_orc", "name_tauren", "name_troll", "name_undead", "name_skyborne",
     "name_skyborne-horde", "arrow_prev_normal", "arrow_prev_hover", "arrow_prev_pushed",
     "arrow_prev_disabled", "arrow_next_normal", "arrow_next_hover", "arrow_next_pushed",
-    "arrow_next_disabled", "layout_new", "layout_old",
+    "arrow_next_disabled",
   },
   qhd = {
     "name_devil", "name_alliance", "name_horde", "name_human", "name_dwarf", "name_gnome",
     "name_nightelf", "name_orc", "name_tauren", "name_troll", "name_undead", "name_skyborne",
     "name_skyborne-horde", "arrow_prev_normal", "arrow_prev_hover", "arrow_prev_pushed",
     "arrow_prev_disabled", "arrow_next_normal", "arrow_next_hover", "arrow_next_pushed",
-    "arrow_next_disabled", "layout_new", "layout_old",
+    "arrow_next_disabled",
   },
   uhd = {
     "name_devil", "name_alliance", "name_horde", "name_human", "name_dwarf", "name_gnome",
     "name_nightelf", "name_orc", "name_tauren", "name_troll", "name_undead", "name_skyborne",
     "name_skyborne-horde", "arrow_prev_normal", "arrow_prev_hover", "arrow_prev_pushed",
     "arrow_prev_disabled", "arrow_next_normal", "arrow_next_hover", "arrow_next_pushed",
-    "arrow_next_disabled", "layout_new", "layout_old",
+    "arrow_next_disabled",
   },
 }
 local shipped = {}
@@ -237,61 +237,7 @@ local theme = makeSwitcher({
   place = function(panel, values) panel:SetPoint("RIGHT", Strip:GetFrame(), "RIGHT", -(values.spacing or 12), 0) end,
 })
 
--- Layout version of the active screen preset: New = <preset>-v2 (V2), Old = <preset>-v1 (V1).
--- The version in use is read from the PitBull4 profile: New only when it holds the V2 flag and this
--- package's V2 revision (an earlier V2 counts as Old, so one step brings the current New); a switch
--- requests that compare preset and reloads the interface (as /dfp preset <name> then /dfp go).
-local VERSIONS = {{key = "new", suffix = "-v2", label = "New"}, {key = "old", suffix = "-v1", label = "Old"}}
-local function versionChoices()
-  local active = Core.Presets:GetActive()
-  if not active or not Core.IsLoadedInClient("PitBull4") then return {} end
-  local out = {}
-  for _, version in ipairs(VERSIONS) do
-    if Core.Presets:IsRegistered(active .. version.suffix) then out[#out + 1] = version end
-  end
-  return out
-end
-local function versionInUse()
-  local addon = _G.PitBull4
-  local profile = addon and addon.db and addon.db.profile
-  local current = type(profile) == "table" and profile.dfLayoutV2 == true
-    and profile.dfLayoutRevision == Core.Presets.layoutV2Revision
-  return current and VERSIONS[1] or VERSIONS[2]
-end
-local version = makeSwitcher({
-  frameName = "DevilForever_StatusStripLayouts",
-  tooltips = korean and {"이전 배치", "다음 배치"} or {"Previous layout", "Next layout"},
-  choices = function() return #versionChoices() end,
-  current = function()
-    local inUse = versionInUse()
-    return inUse.label, "layout_" .. inUse.key
-  end,
-  cycle = function(step)
-    if Core.InCombat() then return false end
-    local choices = versionChoices()
-    if #choices < 2 then return false end
-    local index = 1
-    for i, choice in ipairs(choices) do if choice == versionInUse() then index = i end end
-    local target = choices[(index - 1 + step) % #choices + 1]
-    local active = Core.Presets:GetActive()
-    -- A layout request still waiting (e.g. the first-login re-apply) is replaced by this one.
-    local status = Core.Profiles.GetStatus and Core.Profiles:GetStatus()
-    local pending = type(status) == "table" and status.pending
-    if type(pending) == "table" and pending.action == "preset"
-        and (pending.name == active .. "-v1" or pending.name == active .. "-v2") then
-      Core.Profiles:Cancel()
-    end
-    local ok, lines = Core.Presets:Restore(active .. target.suffix)
-    for _, line in ipairs(type(lines) == "table" and lines or {lines}) do Core.Profiles:Print(line) end
-    if not ok then return false end
-    local went, why = Core.Profiles:Go()
-    if not went then Core.Profiles:Print("안 함: " .. tostring(why)) end
-    return went
-  end,
-  place = function(panel, values) panel:SetPoint("RIGHT", theme.panel, "LEFT", -(values.spacing or 12), 0) end,
-})
-
-local switchers = {theme, version}
+local switchers = {theme}
 local function apply()
   if not ready then return end
   if Core.InCombat() then pending = true; return end

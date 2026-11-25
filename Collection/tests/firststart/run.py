@@ -116,12 +116,12 @@ def sexymap_appearance_fresh_install_from_active_preset():
     s = sexymap_session()
     eq(s.sv("DevilForever_CoreDB")["preset"]["active"], "fhd", "1080 high screen: fhd preset")
     p = s.sv("SexyMap2DB")["Hero-Realm"]
-    effective = 192 / 140
+    effective = 180 / 140  # the minimap inside its 192-pixel panel, one 6-pixel section border in
     pixel = PIXEL_FACTOR / UI_SCALE
     eq({k: p["core"][k] for k in ("shape", "point", "relpoint")}, {"shape": 130871, "point": "TOPLEFT",
                                                                  "relpoint": "TOPLEFT"}, "shape and anchor")
     eq([round(p["core"][k], 6) for k in ("x", "y", "scale")],
-       [round(1292 / effective, 6), round(-860 / effective, 6), round(effective * pixel, 6)], "fhd position and scale")
+       [round(1295 / effective, 6), round(-866 / effective, 6), round(effective * pixel, 6)], "fhd position and scale")
     eq((p["borders"]["hideBlizzard"], p["borders"]["applyPreset"]), (True, False), "borders merged into SexyMap's table")
     eq((p["core"]["rightClickToConfig"], p["buttons"]["visibilitySettings"]["TimeManagerClockButton"]),
        (False, "never"), "functional defaults still written")
@@ -326,7 +326,9 @@ def sexymap_mainline_scale_hook_bypassed_and_xp_button_refreshed_once():
 
 @case
 def sexymap_native_login_scale_border_clear_and_reload():
-    for height,x,y,side in ((1080,1292,860,192),(1440,1720,1186,224),(2160,2596,1820,304)):
+    # the minimap one section border (6 / 8 / 12 px) inside the minimap panel (fhd 1289,860 192 ·
+    # qhd 1716,1186 224 · uhd 2581,1820 304)
+    for height,x,y,side in ((1080,1295,866,180),(1440,1724,1194,208),(2160,2593,1832,280)):
         s=native_minimap_session(height)
         for attempt in range(2):
             p=s.sv("SexyMap2DB")["Hero-Realm"]["core"]
@@ -754,7 +756,7 @@ def pitbull4_preset_positions_only_into_existing_units():
            (unit, True, "대상의대상"), "new singleton has native identity and layout")
     fresh_units = fresh.sv("PitBull4DB")["profiles"]["Default"]["units"]
     eq(all(name in fresh_units for name in ("플레이어 아래 대상", "플레이어 아래 대상의 대상")), True,
-       "fresh receipt v1 then v2 creates both rows")
+       "fresh receipt (base then layout) creates both rows")
     receipt = fresh.sv("DevilForever_CoreDB")["preset"]["fragments"]["fhd"]
     eq(receipt["PitBull4DB@profile:Default"], 11, "the V2 layout fragment, written last, owns the version 11 receipt")
     unchanged = pb4_preset_session(saved=carry(s))
@@ -893,16 +895,15 @@ def party_command_moves_grid2_only_from_the_earlier_default_spot():
 
 
 @case
-def grid2_spot_follows_the_compare_layout_and_back():
+def grid2_spot_follows_the_layout_request():
     s = pb4_grid2_session()
     eq(grid2_spot(s), ("TOPRIGHT", -247, -259), "fhd: left of the quest tracker")
     core["dfp"](s, "preset fhd-v2"); core["dfp"](s, "go")
     v2 = pb4_grid2_session(saved=carry(s))
     eq(grid2_spot(v2), ("TOPRIGHT", -247, -259), "fhd-v2: the same spot")
-    saved = carry(v2)   # before the V1 request below
-    core["dfp"](v2, "preset fhd-v1"); core["dfp"](v2, "go")
-    back = pb4_grid2_session(saved=carry(v2))
-    eq(grid2_spot(back), ("TOPRIGHT", -247, -259), "fhd-v1: the same spot")
+    saved = carry(v2)
+    eq(core["dfp"](v2, "preset fhd-v1")[0].endswith("등록된 preset 이 아님"), True, "the earlier second layout is gone")
+    back = v2
     lay = saved["Grid2DB"]["namespaces"]["Grid2Layout"]["profiles"]["Hero - Realm"]
     lay.pop("anchor", None); lay["PosX"], lay["PosY"] = 24 * PIXEL_FACTOR, -164 * PIXEL_FACTOR
     old = pb4_grid2_session(saved=saved)
@@ -918,11 +919,11 @@ def grid2_cells(s):
 
 
 @case
-def grid2_cells_follow_the_layout_version():
+def grid2_cells_follow_the_layout():
     s = pb4_grid2_session()
-    eq(grid2_cells(s), (88, 88), "new install: New layout, square cells")
+    eq(grid2_cells(s), (88, 88), "new install: the layout's square cells")
     state = s
-    for request, cells in (("fhd-v1", (96, 32)), ("fhd-v2", (88, 88)), ("fhd-v1", (96, 32)), ("fhd", (88, 88))):
+    for request, cells in (("fhd-v2", (88, 88)), ("fhd", (88, 88))):
         core["dfp"](state, "preset " + request); core["dfp"](state, "go")
         state = pb4_grid2_session(saved=carry(state))
         eq(grid2_cells(state), cells, request + ": Grid2 cells")

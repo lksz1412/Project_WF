@@ -110,9 +110,11 @@ class Session:
     """One simulated client session with Core loaded."""
 
     def __init__(self, saved=None, registry="fixture", extra_files=("Defaults_Example.lua",),
-                 player=None, globals_=None, preset_files=(), collection_presets=False):
+                 player=None, globals_=None, preset_files=(), collection_presets=False, prelude=None):
         self.lua = lua51.LuaRuntime(unpack_returned_tuples=True)
         self.lua.execute(STUBS)
+        if prelude:  # Lua run before Core's files (client objects the preset files read at load)
+            self.lua.execute(prelude)
         g = self.lua.globals()
         if player:
             for k, v in player.items():
@@ -468,7 +470,6 @@ def generated_registry_lookup():
               + list(to_py(c.GetFrameNames(c, "SexyMap")).values())
               + list(to_py(c.GetFrameNames(c, "ForeverUnitFrames")).values())
               + list(to_py(c.GetFrameNames(c, "Quartz")).values())
-              + list(to_py(c.GetFrameNames(c, "Hekili")).values())
               + list(to_py(c.GetFrameNames(c, "PitBull4")).values())
               + list(to_py(c.GetFrameNames(c, "Grid2")).values())
               + list(to_py(c.GetFrameNames(c, "Details")).values())
@@ -534,7 +535,7 @@ def generated_registry_lookup():
     registered = list(to_py(c.ListAddons(c)).values())
     for gone in ("ForeverThreat", "TipTac", "Bagnon", "BagBrother", "Platynator", "Titan", "TitanClock",
                  "!KalielsTracker", "Mapster", "Details_Streamer", "Details_Compare2", "Dominos_Cast",
-                 "Dominos_Progress", "Dominos_Roll"):
+                 "Dominos_Progress", "Dominos_Roll", "Hekili", "Hekili_Shared", "Hekili_Shaman"):
         eq(gone in registered, False, "%s is not registered (dropped Phase or not shipped)" % gone)
     eq("Aurora" in registered, True, "Aurora stays registered while Codex decides (named in registry_extra)")
     with open(os.path.join(REPO, "Collection", "install.json"), encoding="utf-8") as stream:
@@ -545,15 +546,6 @@ def generated_registry_lookup():
         for folders in part["upstream"].values():
             shipped.update(folders)
     eq(set(registered), shipped | {"Aurora"}, "registry covers all install variants and the Aurora comparison")
-    hekili = to_py(c.GetAddonInfo(c, "hekili"))
-    eq(list(to_py(c.GetFrameNames(c, "Hekili")).values()),
-       ["HekiliDisplayAOE", "HekiliDisplayCooldowns", "HekiliDisplayDefensives", "HekiliDisplayInterrupts",
-        "HekiliDisplayPrimary", "HekiliNotification"], "Hekili frames")
-    eq(list(hekili["savedVariables"].values()), [{"name": "HekiliDB", "scope": "account", "split": "common",
-                                                  "restore": "whole", "shape": "acedb"}],
-       "Hekili SV")
-    eq(hekili["defaults"], "Defaults/Hekili.lua", "Hekili defaults file named")
-    eq(len(hekili["editable"]), 7, "Hekili editable: 6 positions, primary display size")
     quartz = to_py(c.GetAddonInfo(c, "quartz"))
     eq(list(to_py(c.GetFrameNames(c, "Quartz")).values()),
        ["Quartz3CastBarFocus", "Quartz3CastBarPet", "Quartz3CastBarPlayer", "Quartz3CastBarTarget",
@@ -1075,34 +1067,6 @@ def native_chat_install_preserves_external_prat_values():
     s = Session(registry="generated", extra_files=(), saved=saved).boot(after=["Prat-3.0"])
     eq(s.sv("Prat3DB"), saved["Prat3DB"], "user's profile, both namespaces and the absent History data untouched")
     eq(s.status("Prat-3.0")["targets"], {}, "no Prat target was selected")
-
-
-@case
-def hekili_defaults_fresh_shared_default_profile():
-    s = Session(registry="generated", extra_files=()).boot(after=["Hekili"])
-    eq(s.sv("HekiliDB"), {"profiles": {"Default": {"barGlow": {"enabled": True}}}},
-       "AceDB:New(..., true): one shared profile named Default")
-    st = s.status("Hekili")["targets"]["HekiliDB"]
-    eq((st["state"], st["mode"], st["key"], st["written"]), ("applied", "fill-missing", "HekiliDB@profile:Default", 1),
-       "status")
-    alt = Session(registry="generated", extra_files=(), player={"name": "Alt", "className": "Shaman", "class": "SHAMAN"},
-                  saved={"HekiliDB": s.sv("HekiliDB"), "DevilForever_CoreDB": s.sv("DevilForever_CoreDB")})
-    alt.boot(after=["Hekili"])
-    eq(alt.status("Hekili")["targets"]["HekiliDB"]["state"], "already", "same shared profile: once per version")
-    eq(s.errors() + alt.errors(), [], "no errors")
-
-
-@case
-def hekili_defaults_user_and_dual_spec_profile_kept():
-    # Glow left at Hekili's default (off): AceDB stripped barGlow.enabled; combatOnly changed by the user.
-    saved = {"HekiliDB": {"profileKeys": {"Hero - Realm": "Elemental"},
-                          "profiles": {"Default": {"toggles": {"cooldowns": {"value": True}}},
-                                       "Elemental": {"barGlow": {"combatOnly": False}}}}}
-    s = Session(registry="generated", extra_files=(), saved=saved).boot(after=["Hekili"])
-    db = s.sv("HekiliDB")
-    eq(db, saved["HekiliDB"], "glow not turned on in either profile; profileKeys untouched")
-    st = s.status("Hekili")["targets"]["HekiliDB"]
-    eq((st["state"], st["key"]), ("existing-profile-kept", "HekiliDB@profile:Elemental"), "profileKeys profile kept")
 
 
 GRID2_LAYOUT = {"layouts": {"solo": "None", "party": "By Group", "arena": "By Group"}, "FrameDisplay": "Grouped",

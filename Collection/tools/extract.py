@@ -91,7 +91,7 @@ FEATURE_PHASES = {
     "addon-sources/pitbull-unit-frames-4-0": [(6, "comparison")],
     "addon-sources/nugie-combo-bar": [(6, "comparison")],
     "forever-addons/Quartz": [(7, "start")],
-    "forever-addons/Hekili": [(8, "start")],
+    "forever-addons/Hekili": [(8, "dropped")],
     "addon-sources/tellmewhen": [(8, "comparison")],
     "forever-addons/Grid2": [(9, "start")],
     "addon-sources/vuhdo": [(9, "comparison")],

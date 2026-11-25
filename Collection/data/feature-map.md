@@ -48,7 +48,7 @@ Devil Forever
 | 유닛 프레임 대체판 | `ForeverUnitFrames` · `DevilForever_FUFDefaults` · `DevilForever_Castbars` | 해당 해상도의 별도 비교 프로필에서 `/dffuf layout fhd`, `qhd`, `uhd` 중 하나로 좌표를 적용한다. 최종 판은 [같은 접속의 실제 비교](../../References/codex-verify/one-session-review.md) 뒤 결정 |
 | 플레이어·대상·주시·소환수 시전 | `Quartz` | Core 초기 프리셋의 위치와 크기. 시전 동작 옵션은 Quartz |
 | 이름표·이름표 시전 | 게임 기본 이름표 · `DevilForever_Skin_Nameplates` | [해상도별 이름표 크기](../AddOns/DevilForever_Skin_Nameplates/NameplateProfiles.lua). 실제 쓰기 가능한 이름표 요소에 적용 |
-| 직업 행동 추천 | `Hekili` · `Hekili_Shared` · 직업 9개 모듈 | 초기 프리셋의 추천 칸. [현행 추천 범위와 기본 쿨다운의 담당](hekili-current.md)과 Hekili 자체 설정 |
+| 직업 행동 추천 | 없음 — Hekili 는 Phase 27 에서 뺐다(R223) | 예전 근거 기록: [hekili-current.md](hekili-current.md) |
 | 기본 쿨다운 관리자 | 게임 기본 Cooldown Manager | [네 표시 구역의 해상도별 목표 좌표](../../References/codex-appearance/8/report.md). 게임의 편집 모드에서 실제 프레임과 좌표 확인 |
 
 ## 그룹·기록
@@ -56,7 +56,7 @@ Devil Forever
 | 기능 | 담당 | 적용 경로 |
 |---|---|---|
 | 파티와 공격대 | `Grid2` · `Grid2Options` · `Grid2LDB`(파티·공격대, 오른쪽 적 대상 프레임 바로 위) 와 유닛 프레임 파티(`PitBull4` 파티 그룹 — 왼쪽 위 세로, 공격대에서는 내 소그룹, 또는 FUF 파티)가 함께. 유닛 프레임 파티 켜기/끄기는 `/dfp party on`·`/dfp party off`(접속 때 되돌리지 않음) | Core 초기 프리셋. Grid2 틀은 Modern 자동(고르기 창 없음). Grid2 세부 지표는 Grid2 프로필 |
-| 데미지와 위협 | `Details` · `Details_TinyThreat` · `DevilForever_DetailsLayout` | 기존 창 1·2에 `/dfdetails apply`로 [해상도별 위치](../AddOns/DevilForever_DetailsLayout/Layout.lua) 적용. 모드와 세부 표시 설정은 Details |
+| 데미지와 위협 | `Details` · `Details_TinyThreat` · `DevilForever_DetailsLayout` | 창 1 하나뿐인 프로필은 첫 접속 때 창 2(Tiny Threat, 창 1 스킨)를 만들고 두 창을 대화창 한 칸 크기 한 줄로 [해상도별 위치](../AddOns/DevilForever_DetailsLayout/Layout.lua)에 놓는다(프로필마다 한 번 · 창이 이미 여럿이면 그대로). 기존 창 1·2는 `/dfdetails apply`로 같은 자리. 모드와 세부 표시 설정은 Details |
 
 ## 성장·퀘스트
 

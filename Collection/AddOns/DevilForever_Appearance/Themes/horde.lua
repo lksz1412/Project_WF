@@ -21,6 +21,6 @@ DevilForever_Core.Theme:RegisterSet("horde", {
   ["font.size.small"] = 22,
   ["font.size.normal"] = 28,
   ["font.size.header"] = 32,
-  ["border.size"] = 2,
+  ["border.size"] = 1,
   ["spacing.default"] = 8,
 })

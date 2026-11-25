@@ -171,11 +171,11 @@ def verify(path, variant, races, version, reviewed_chat):
         installed = {name.removeprefix(addons).split("/", 1)[0] for name in names if name.startswith(addons)}
         must_ship = {"!DevilForever_Core", "DevilForever_Appearance", "DevilForever_Skin_StatusStrip",
                      "Dominos", "DevilForever_ChatSetup", "DevilForever_Skin_NativeChat", "Chattynator",
-                     "SexyMap", "Quartz", "Hekili", "Grid2", "Details",
+                     "SexyMap", "Quartz", "Grid2", "Details",
                      "Details_TinyThreat", "DevilForever_DetailsLayout", "ExperienceForever"}
         assert must_ship.issubset(installed), must_ship - installed
         assert {"Aurora", "KalielsTracker", "!KalielsTracker", "Mapster", "TipTac",
-                "Prat-3.0", "DevilForever_Skin_Prat"}.isdisjoint(installed)
+                "Prat-3.0", "DevilForever_Skin_Prat", "Hekili", "Hekili_Shared", "Hekili_Shaman"}.isdisjoint(installed)
         expected = {"pitbull4": (True, False), "fuf": (False, True), "one-session": (True, True)}
         assert ("PitBull4" in installed, "ForeverUnitFrames" in installed) == expected[variant]
         assert not any("/Tests/" in name or name.endswith(".pyc") for name in names)

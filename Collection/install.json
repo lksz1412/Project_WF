@@ -23,12 +23,12 @@
     "Dominos": ["Dominos", "Dominos_Config", "Masque_Dominos"],
     "SexyMap": ["SexyMap"],
     "Quartz": ["Quartz"],
-    "Hekili": ["Hekili", "Hekili_Shared", "Hekili_Druid", "Hekili_Hunter", "Hekili_Mage", "Hekili_Paladin",
-               "Hekili_Priest", "Hekili_Rogue", "Hekili_Shaman", "Hekili_Warlock", "Hekili_Warrior"],
     "Grid2": ["Grid2", "Grid2Options", "Grid2LDB"],
     "Details": ["Details", "Details_TinyThreat"],
     "Experience Forever": ["ExperienceForever"]
   },
+  "not_shipped": ["Hekili", "Hekili_Shared", "Hekili_Druid", "Hekili_Hunter", "Hekili_Mage", "Hekili_Paladin",
+                  "Hekili_Priest", "Hekili_Rogue", "Hekili_Shaman", "Hekili_Warlock", "Hekili_Warrior"],
   "unit_frame_variants": {
     "pitbull4": {
       "own": ["PitBull4"],

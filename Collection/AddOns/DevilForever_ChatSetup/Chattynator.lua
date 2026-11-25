@@ -139,32 +139,23 @@ local function partSizes(composition)
   return type(parts) == "table" and family and parts[family] or nil
 end
 
--- Inner rectangle of a role's chat panel as the appearance code draws it, in UIParent units
--- (left, top, right, bottom; top and bottom as TOPLEFT y offsets), or nil without the layout.
--- Composition parts: the end caps and the joints between panels cover the panel edges.
--- Prepared composition surfaces: the deck picture paints a frame along the screen edges and the
--- panel boundaries (about 16 texels of the 2048-texel picture), so the sides move in by one joint.
--- Individual panels: the top and bottom edge lines of border.size pixels.
+-- Inner rectangle of a role's chat panel in UIParent units (left, top, right, bottom; top and bottom as
+-- TOPLEFT y offsets), or nil without the layout: the panel rectangle one section border (Composition
+-- parts border: fhd 6 / qhd 8 / uhd 12 px) in from every side, the same for every theme (the section
+-- structure, Collection/codex-briefs/appearance-28-devil-structure.md: the art, prepared surfaces or HUD
+-- parts, draws its frame only inside that border).
 local function panelInner(role)
   local left, top, right, bottom, pixel = rootRect(PANELS[role])
   if not left then return end
-  local core = DevilForever_Core
   local composition = DevilForever_Composition
-  local plan = type(composition) == "table" and composition.active and composition.partsShown and composition.partsPlan
-  if plan then
-    local sizes = composition.parts.sizes[plan.preset]
-    for _, centre in ipairs(plan.joints or {}) do
-      if math.abs(centre - left) <= sizes.joint then left = math.max(left, centre + sizes.joint / 2) end
-      if math.abs(centre - right) <= sizes.joint then right = math.min(right, centre - sizes.joint / 2) end
-    end
-    left = math.max(left, sizes.cap)
-    right = math.min(right, plan.bounds.width - sizes.cap)
-  elseif type(composition) == "table" and composition.active then
-    local sizes = partSizes(composition)
-    if sizes then left, right = left + sizes.joint, right - sizes.joint end
-  else
-    local border = core.Theme and core.Theme.Get and core.Theme:Get("border.size")
-    if type(border) == "number" then top, bottom = top + border, bottom - border end
+  local sizes = partSizes(composition)
+  local border = sizes and sizes.border
+  if type(border) ~= "number" then
+    local core = DevilForever_Core
+    border = core.Theme and core.Theme.Get and core.Theme:Get("border.size")
+  end
+  if type(border) == "number" then
+    left, top, right, bottom = left + border, top + border, right - border, bottom - border
   end
   return left * pixel, -top * pixel, right * pixel, -bottom * pixel
 end
@@ -249,6 +240,8 @@ local function seed(b, state, profile)
   b.Set(b.Options.SHOW_TABS, "hover")
   b.Set(b.Options.SHOW_BUTTONS, "hover")
   b.Set(b.Options.BUTTON_POSITION, "inside_left")
+  b.Set(b.Options.TIMESTAMP_FORMAT, " ")  -- Chattynator's "None": no time column
+  state.timestamps = "set"
   state.profiles[profile] = "seeded"
   state.lfgTab = lookingForGroup.name
   state.lfg = lfg[1]
@@ -334,6 +327,14 @@ function addon.FollowChattynatorLayout()
   local receipt = state and type(state.layout) == "table" and state.layout.windows
   if type(receipt) ~= "table" then return false end
   local windows = b.Get(b.Options.WINDOWS)
+  -- a profile seeded before the time column was turned off loses it once, only while it still shows
+  -- Chattynator's default format (a format the player chose stays)
+  if state.timestamps == nil then
+    if b.Get(b.Options.TIMESTAMP_FORMAT) == b.GetDefault(b.Options.TIMESTAMP_FORMAT) then
+      b.Set(b.Options.TIMESTAMP_FORMAT, " ")
+    end
+    state.timestamps = "set"
+  end
   local refit = (tonumber(state.layout.version) or 1) < FIT_VERSION
   local changed, placedAll = false, true
   for index, role in ipairs(ROLES) do

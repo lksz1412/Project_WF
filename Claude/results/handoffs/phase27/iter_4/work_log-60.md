@@ -721,3 +721,409 @@ Raw outputs: `<scratch>/s60/s65*.txt`.
 - Neither is moved here; the test reports both.
 - The art panels `appearance.unitUpper` / `unitLower` stay where the Old frames used to be, under the new aura blocks.
 - `mainAuras` is measured, not computed: if the preset aura sizes or counts change, the test fails and the numbers must be measured again.
+
+## Step 66 (R216-R221, R225, R229): one section structure for every theme, chat text areas and minimap inside it, pet/totem bars right-aligned, no timestamps
+
+Scope as re-set by the user:
+- R219: Devil is the baseline.
+- R220: the three chat panels have equal width and equal gaps.
+- R221: Devil is redrawn too. The target structure is defined in code, starting from the current Devil layout; Codex redraws all themes to it.
+- R225: in New, the pet bar and the totem bar right-align with the player frame.
+- R229: no chat timestamps.
+- R216-R218 (make every theme uniform through code) are replaced by R219.
+
+Read:
+- `Presets/{fhd,qhd,uhd}.lua` appearance.* edits 1-250, Dominos frames 300-372 (fitPet), Aura and totem parts.
+- `Defaults/SexyMap.lua` 95-240.
+- `DevilForever_Appearance/Composition.lua` 1-62, 130-202, 455-518; `Appearance.lua` 105-125; `Themes/{devil,alliance,horde}.lua` border.size.
+- `codex-briefs/appearance-27-hud-parts.md` (whole).
+- `DevilForever_ChatSetup/Chattynator.lua` panelInner / prepared / seed / follow.
+- tests: chatsetup 896-1530, firststart 112-126 and 325-345, layoutv2 470-600.
+- Every theme's `Composition/<preset>_deck(_reviewed).tga`, measured with a script (`<scratch>/s60/s66_measure.py`; read only).
+
+### Target structure (code)
+
+| Preset | chat1 | seam | chat2 | seam | action | seam | minimap | seam | chat3 | border |
+|---|---|---|---|---|---|---|---|---|---|---|
+| fhd | 0+437 | 437+2 | 439+437 | 876+2 | 878+409 | 1287+2 | 1289+192 | 1481+2 | 1483+437 | 6 |
+| qhd | 0+618 | 618+2 | 620+618 | 1238+2 | 1240+474 | 1714+2 | 1716+224 | 1940+2 | 1942+618 | 8 |
+| uhd | 0+953 | 953+2 | 955+953 | 1908+2 | 1910+669 | 2579+2 | 2581+304 | 2885+2 | 2887+953 | 12 |
+
+Forced changes, with numbers:
+- The action panel loses 1 px at fhd (410 → 409) and uhd (670 → 669) to give an integer equal chat width.
+- The action panel moves left by 2 (fhd), 4 (qhd), 14 (uhd) px; the minimap panel by 3, 4, 15 px.
+- Dominos bars 4 and 5 move with the action panel (x 886 → 884, 1250 → 1246, 1932 → 1918).
+- SexyMap sits inside the minimap panel one border in: fhd 1295,866 180x180 · qhd 1724,1194 208x208 · uhd 2593,1832 280x280.
+
+Border: one value per preset (Composition `PART_SIZES.border` 6/8/12) on every side of every section, the same for every theme. The individual-panel edge line `border.size` of the horde theme goes 2 → 1 (devil and alliance are 1).
+
+### Per-theme measurement (Codex input; also in the brief)
+
+### 목표 구조 — 칸 바깥 사각형과 안쪽(테두리 안) 사각형 (물리 픽셀, 왼쪽 위 원점)
+
+**fhd** — 칸 높이 y 860–1052, 테두리 두께 6 px, 칸 사이 이음 2 px
+
+| 칸 | 바깥 x | 바깥 너비 | 안쪽 x | 안쪽 y |
+|---|---|---|---|---|
+| chat1 | 0–437 | 437 | 6–431 | 866–1046 |
+| chat2 | 439–876 | 437 | 445–870 | 866–1046 |
+| action | 878–1287 | 409 | 884–1281 | 866–1046 |
+| minimap | 1289–1481 | 192 | 1295–1475 | 866–1046 |
+| chat3 | 1483–1920 | 437 | 1489–1914 | 866–1046 |
+
+**qhd** — 칸 높이 y 1186–1410, 테두리 두께 8 px, 칸 사이 이음 2 px
+
+| 칸 | 바깥 x | 바깥 너비 | 안쪽 x | 안쪽 y |
+|---|---|---|---|---|
+| chat1 | 0–618 | 618 | 8–610 | 1194–1402 |
+| chat2 | 620–1238 | 618 | 628–1230 | 1194–1402 |
+| action | 1240–1714 | 474 | 1248–1706 | 1194–1402 |
+| minimap | 1716–1940 | 224 | 1724–1932 | 1194–1402 |
+| chat3 | 1942–2560 | 618 | 1950–2552 | 1194–1402 |
+
+**uhd** — 칸 높이 y 1820–2124, 테두리 두께 12 px, 칸 사이 이음 2 px
+
+| 칸 | 바깥 x | 바깥 너비 | 안쪽 x | 안쪽 y |
+|---|---|---|---|---|
+| chat1 | 0–953 | 953 | 12–941 | 1832–2112 |
+| chat2 | 955–1908 | 953 | 967–1896 | 1832–2112 |
+| action | 1910–2579 | 669 | 1922–2567 | 1832–2112 |
+| minimap | 2581–2885 | 304 | 2593–2873 | 1832–2112 |
+| chat3 | 2887–3840 | 953 | 2899–3828 | 1832–2112 |
+
+### 테마별 지금 그림의 안쪽(어두운 칸 바닥) — 채팅 칸 가운데 높이에서 잰 가로 구간과, 각 구간 가운데에서 잰 세로 구간 (px)
+
+잰 방법: `<preset>_deck(_reviewed).tga`(2048×512, 화면 너비 × 받침 높이로 늘어남)에서 밝기 34 이하가 40 px 넘게 이어지는 구간 = 칸 안쪽. 차이 = 지금 그림 − 목표 안쪽(+ 는 오른쪽·아래로). 구간이 다섯이 아니면(문장·장식이 칸을 가름) 원래 구간을 그대로 적는다. 세로 위쪽 값이 받침 윗변(채팅 칸 윗변)과 같으면 위 테두리는 받침 그림 밖(위 띠 그림)에 있다.
+
+**fhd**
+
+| 테마 | 그림 파일 | chat1 | chat2 | action | minimap | chat3 | 세로(chat1) |
+|---|---|---|---|---|---|---|---|
+| devil | `devil/Composition/fhd_deck.tga` | 11–434 (+5 / +3) | 443–874 (-2 / +4) | 884–1287 (+0 / +6) | 1300–1478 (+5 / +3) | 1491–1909 (+2 / -5) | 860–1052 (-6 / +6) |
+| alliance | `alliance/Composition/fhd_deck_reviewed.tga` | 3–431 (-3 / +0) | 448–874 (+3 / +4) | 891–1283 (+7 / +2) | 1298–1477 (+3 / +2) | 1490–1769 (+1 / -145) | 860–1047 (-6 / +1) |
+| horde | `horde/Composition/fhd_deck_reviewed.tga` | 14–433 (+8 / +2) | 445–845 (+0 / -25) | 856–1279 (-28 / -2) | 1295–1479 (+0 / +4) | 1492–1796 (+3 / -118) | 860–1047 (-6 / +1) |
+| human | `human/Composition/fhd_deck_reviewed.tga` | 12–436 (+6 / +5) | 446–877 (+1 / +7) | 890–1287 (+6 / +6) | 1302–1479 (+7 / +4) | 1492–1807 (+3 / -107) | 868–1043 (+2 / -3) |
+| dwarf | `dwarf/Composition/fhd_deck_reviewed.tga` | 12–435 (+6 / +4) | 449–872 (+4 / +2) | 898–1245 (+14 / -36) | 1281–1457 (-14 / -18) | 1490–1827 (+1 / -87) | 860–1026 (-6 / -20) |
+| gnome | `gnome/Composition/fhd_deck_reviewed.tga` | 9–437 (+3 / +6) | 443–877 (-2 / +7) | 887–1287 (+3 / +6) | 1299–1479 (+4 / +4) | 1489–1791 (+0 / -123) | 866–1046 (+0 / +0) |
+| nightelf | `nightelf/Composition/fhd_deck_reviewed.tga` | 구간 7개: 14–437, 447–876, 888–1012, 1017–1067, 1156–1286, 1299–1478, 1491–1769 |  |  |  |  | 860–1031 (-6 / -15) |
+| orc | `orc/Composition/fhd_deck_reviewed.tga` | 10–435 (+4 / +4) | 445–875 (+0 / +5) | 891–1263 (+7 / -18) | 1282–1471 (-13 / -4) | 1488–1772 (-1 / -142) | 869–1042 (+3 / -4) |
+| tauren | `tauren/Composition/fhd_deck_reviewed.tga` | 15–433 (+9 / +2) | 445–874 (+0 / +4) | 888–1268 (+4 / -13) | 1284–1478 (-11 / +3) | 1492–1785 (+3 / -129) | 860–1046 (-6 / +0) |
+| troll | `troll/Composition/fhd_deck_reviewed.tga` | 12–437 (+6 / +6) | 443–877 (-2 / +7) | 886–959 (+2 / -322) | 962–1286 (-333 / -189) | 1298–1479 (-191 / -435) | 862–1046 (-4 / +0) |
+| undead | `undead/Composition/fhd_deck_reviewed.tga` | 10–435 (+4 / +4) | 445–877 (+0 / +7) | 890–1265 (+6 / -16) | 1279–1468 (-16 / -7) | 1482–1803 (-7 / -111) | 863–1042 (-3 / -4) |
+| skyborne | `skyborne/Composition/fhd_deck_reviewed.tga` | 7–436 (+1 / +5) | 443–878 (-2 / +8) | 886–1286 (+2 / +5) | 1298–1478 (+3 / +3) | 1488–1812 (-1 / -102) | 860–1048 (-6 / +2) |
+| skyborne-horde | `skyborne-horde/Composition/fhd_deck_reviewed.tga` | 7–437 (+1 / +6) | 443–876 (-2 / +6) | 894–1261 (+10 / -20) | 1286–1478 (-9 / +3) | 1491–1811 (+2 / -103) | 861–1049 (-5 / +3) |
+
+**qhd**
+
+| 테마 | 그림 파일 | chat1 | chat2 | action | minimap | chat3 | 세로(chat1) |
+|---|---|---|---|---|---|---|---|
+| devil | `devil/Composition/qhd_deck.tga` | 16–614 (+8 / +4) | 628–1235 (+0 / +5) | 1249–1714 (+1 / +8) | 1730–1938 (+6 / +6) | 1952–2544 (+2 / -8) | 1186–1410 (-8 / +8) |
+| alliance | `alliance/Composition/qhd_deck_reviewed.tga` | 5–610 (-3 / +0) | 632–1234 (+4 / +4) | 1256–1710 (+8 / +4) | 1728–1935 (+4 / +3) | 1959–2379 (+9 / -173) | 1186–1405 (-8 / +3) |
+| horde | `horde/Composition/qhd_deck_reviewed.tga` | 19–612 (+11 / +2) | 629–1194 (+1 / -36) | 1210–1705 (-38 / -1) | 1722–1939 (-2 / +7) | 1956–2411 (+6 / -141) | 1186–1404 (-8 / +2) |
+| human | `human/Composition/qhd_deck_reviewed.tga` | 18–616 (+10 / +6) | 631–1239 (+3 / +9) | 1255–1715 (+7 / +9) | 1731–1939 (+7 / +7) | 1954–2425 (+4 / -127) | 1195–1400 (+1 / -2) |
+| dwarf | `dwarf/Composition/qhd_deck_reviewed.tga` | 18–615 (+10 / +5) | 635–1234 (+7 / +4) | 1265–1666 (+17 / -40) | 1708–1912 (-16 / -20) | 1950–2446 (+0 / -106) | 1186–1380 (-8 / -22) |
+| gnome | `gnome/Composition/qhd_deck_reviewed.tga` | 14–618 (+6 / +8) | 626–1240 (-2 / +10) | 1251–1714 (+3 / +8) | 1728–1939 (+4 / +7) | 1950–2405 (+0 / -147) | 1193–1403 (-1 / +1) |
+| nightelf | `nightelf/Composition/qhd_deck_reviewed.tga` | 구간 7개: 20–618, 632–1238, 1254–1384, 1411–1459, 1559–1712, 1729–1936, 1952–2378 |  |  |  |  | 1186–1385 (-8 / -17) |
+| orc | `orc/Composition/qhd_deck_reviewed.tga` | 14–615 (+6 / +5) | 629–1238 (+1 / +8) | 1256–1686 (+8 / -20) | 1709–1929 (-15 / -3) | 1949–2385 (-1 / -167) | 1197–1398 (+3 / -4) |
+| tauren | `tauren/Composition/qhd_deck_reviewed.tga` | 21–612 (+13 / +2) | 629–1235 (+1 / +5) | 1252–1692 (+4 / -14) | 1711–1936 (-13 / +4) | 1955–2398 (+5 / -154) | 1186–1403 (-8 / +1) |
+| troll | `troll/Composition/qhd_deck_reviewed.tga` | 18–618 (+10 / +8) | 626–1239 (-2 / +9) | 1251–1336 (+3 / -370) | 1339–1714 (-385 / -218) | 1728–1939 (-222 / -613) | 1188–1403 (-6 / +1) |
+| undead | `undead/Composition/qhd_deck_reviewed.tga` | 14–615 (+6 / +5) | 630–1240 (+2 / +10) | 1255–1689 (+7 / -17) | 1705–1925 (-19 / -7) | 1941–2421 (-9 / -131) | 1190–1399 (-4 / -3) |
+| skyborne | `skyborne/Composition/qhd_deck_reviewed.tga` | 10–616 (+2 / +6) | 628–1240 (+0 / +10) | 1251–1714 (+3 / +8) | 1726–1936 (+2 / +4) | 1949–2431 (-1 / -121) | 1186–1405 (-8 / +3) |
+| skyborne-horde | `skyborne-horde/Composition/qhd_deck_reviewed.tga` | 9–618 (+1 / +8) | 626–1239 (-2 / +9) | 1261–1684 (+13 / -22) | 1712–1938 (-12 / +6) | 1952–2431 (+2 / -121) | 1187–1407 (-7 / +5) |
+
+**uhd**
+
+| 테마 | 그림 파일 | chat1 | chat2 | action | minimap | chat3 | 세로(chat1) |
+|---|---|---|---|---|---|---|---|
+| devil | `devil/Composition/uhd_deck.tga` | 26–949 (+14 / +8) | 969–1909 (+2 / +13) | 1931–2588 (+9 / +21) | 2608–2889 (+15 / +16) | 2912–3816 (+13 / -12) | 1820–2125 (-12 / +13) |
+| alliance | `alliance/Composition/uhd_deck_reviewed.tga` | 8–943 (-4 / +2) | 979–1911 (+12 / +15) | 1942–2582 (+20 / +15) | 2606–2888 (+13 / +15) | 2910–3589 (+11 / -239) | 1820–2117 (-12 / +5) |
+| horde | `horde/Composition/uhd_deck_reviewed.tga` | 구간 7개: 30–947, 973–1847, 1871–2574, 2601–2891, 2918–3632, 3698–3742, 3758–3812 |  |  |  |  | 1820–2116 (-12 / +4) |
+| human | `human/Composition/uhd_deck_reviewed.tga` | 26–954 (+14 / +13) | 977–1916 (+10 / +20) | 1939–2589 (+17 / +22) | 2612–2891 (+19 / +18) | 2916–3654 (+17 / -174) | 1832–2110 (+0 / -2) |
+| dwarf | `dwarf/Composition/uhd_deck_reviewed.tga` | 26–952 (+14 / +11) | 982–1909 (+15 / +13) | 1954–2520 (+32 / -47) | 2578–2856 (-15 / -17) | 2908–3681 (+9 / -147) | 1821–2083 (-11 / -29) |
+| gnome | `gnome/Composition/uhd_deck_reviewed.tga` | 21–956 (+9 / +15) | 969–1918 (+2 / +22) | 1935–2588 (+13 / +21) | 2606–2891 (+13 / +18) | 2908–3622 (+9 / -206) | 1830–2114 (-2 / +2) |
+| nightelf | `nightelf/Composition/uhd_deck_reviewed.tga` | 구간 8개: 30–954, 979–1914, 1937–2139, 2143–2229, 2374–2586, 2608–2888, 2912–3574, 3767–3810 |  |  |  |  | 1820–2090 (-12 / -22) |
+| orc | `orc/Composition/uhd_deck_reviewed.tga` | 구간 7개: 24–951, 973–1914, 1942–2548, 2580–2878, 2906–3600, 3652–3696, 3780–3829 |  |  |  |  | 1835–2108 (+3 / -4) |
+| tauren | `tauren/Composition/uhd_deck_reviewed.tga` | 34–947 (+22 / +6) | 973–1911 (+6 / +15) | 1937–2558 (+15 / -9) | 2584–2888 (-9 / +15) | 2916–3613 (+17 / -215) | 1820–2114 (-12 / +2) |
+| troll | `troll/Composition/uhd_deck_reviewed.tga` | 26–956 (+14 / +15) | 969–1916 (+2 / +20) | 1933–2053 (+11 / -514) | 2059–2586 (-534 / -287) | 2606–2891 (-293 / -937) | 1822–2114 (-10 / +2) |
+| undead | `undead/Composition/uhd_deck_reviewed.tga` | 22–952 (+10 / +11) | 975–1916 (+8 / +20) | 1941–2552 (+19 / -15) | 2574–2874 (-19 / +1) | 2897–3649 (-2 / -179) | 1825–2109 (-7 / -3) |
+| skyborne | `skyborne/Composition/uhd_deck_reviewed.tga` | 15–952 (+3 / +11) | 969–1918 (+2 / +22) | 1935–2588 (+13 / +21) | 2604–2889 (+11 / +16) | 2906–3662 (+7 / -166) | 1820–2117 (-12 / +5) |
+| skyborne-horde | `skyborne-horde/Composition/uhd_deck_reviewed.tga` | 15–956 (+3 / +15) | 969–1916 (+2 / +20) | 1948–2546 (+26 / -21) | 2586–2889 (-7 / +16) | 2912–3662 (+13 / -166) | 1821–2120 (-11 / +8) |
+
+
+### What changed
+
+| Place | Change |
+|---|---|
+| `Presets/{fhd,qhd,uhd}.lua` | appearance chat1-3, action, minimap, seam1-4 x/width (table above); Dominos frames 4/5 x |
+| `Defaults/SexyMap.lua` | The minimap rect sits inside its panel. The fragment is also added to `<preset>-v1/-v2`, so the catch-up and the switch bring it to existing profiles. |
+| `Presets/V2.lua` | The layout presets' Dominos fragment carries frames 4, 5 and pet with the totem bar. New: the totem bar and the pet bar end at the player frame's right edge (pet bar vertically centred in the totem row, anchored to TOP), and the totem timer sits 8 px left of the totem bar. `modes.petBar` comes from fitPet. Revisions: V2 4 → 6, V1 3 → 4. |
+| `Presets.lua` | catch-up labels "Dominos 막대" / "SexyMap 미니맵"; layout-only request text |
+| `DevilForever_ChatSetup/Chattynator.lua` | `panelInner` = panel rect one section border in on every side, for every theme and art kind (prepared surfaces, HUD parts, individual panels). The theme `border.size` is used only without a Composition table. The tab row stays centred on the strip unless that would put the message top above the inner top; then the tab row sits lower. Timestamps: the seed sets Chattynator's "None" (`timestamp_format = " "`). A profile seeded earlier gets it once (`state.timestamps`), only while the value is still Chattynator's default "%X". With " " Chattynator's inset is 6 units × timestamp spacing (`Core/Messages.lua` SetInset 367-387), so text starts 6 units right of the message area's left edge, which is the panel's inner edge + 2. |
+| `DevilForever_Appearance/Themes/horde.lua` | `border.size` 2 → 1 |
+| `codex-briefs/appearance-28-devil-structure.md` (new) | Codex brief: target structure tables, border, seam centres, two redraw methods (parts per `appearance-27-hud-parts.md`, with opaque frame only inside the border; or per-resolution full art at the real aspect with a texcoord crop that Claude adds), per-theme measured differences, checks |
+| tests | chatsetup: new section-structure case; uniform-border fit for every preset and theme edge size; the user-saved test uses border 12; seed/follow numbers updated; new timestamp case. firststart: SexyMap expectations. layoutv2: pet bar rect in the screen map; New right-edge, row and timer-left checks; revision pins. core harness: `Session(prelude=…)`, Lua run before Core's files, so the presets see a native pet slot. statusstrip/theme_switcher: revision pin. |
+| check list §6 line 70, §11-12 labels, new §14 (structure, text areas, minimap, bars 4/5, pet/totem, update, timestamps); install guide line 49 | updated |
+
+Pet/totem numbers (New, px):
+- uhd: totem bar 1242..1698 × 1636..1708; timer 1072..1234 × 1654..1690; player right edge 1698.
+- fhd: totem bar 558..837 × 748..792; timer 442..550.
+- The pet bar ends at the same right edge, centred in the same row. Shamans have no pet in Forever and pet classes have no totem bar, so the two never show together and share the row.
+- Old is unchanged (default).
+
+### Impact map
+
+| Place | Type | How found | Impact | Reason |
+|---|---|---|---|---|
+| appearance rects in the presets | the structure | read | change | |
+| `Composition.lua` readBounds / parts plan / crest | reads the chat and status rects | read | check only | joints follow the rects; the crest uses chat3's size |
+| `ChatLayout.lua` (native chat) | reads the chat rects | grep | check only | follows the rects |
+| Dominos bars 4/5, pet, totem | sit on the action panel / unit row | read | change | |
+| SexyMap fragment | the minimap | read | change | |
+| Chattynator timestamp option | seed / follow | read `Core/Config.lua:102`, `CustomiseDialog/Main.lua:654-675`, `Core/Messages.lua:367-387` | change (our seed) | |
+| Details windows | sit above chat3 | read | check only | Step 68 places them |
+| Grid2 / quest tracker | the right side above the HUD | read | no impact | not part of the bottom structure |
+| `tests/composition/*` | parts and composition tests | run | check only | pass unchanged |
+| earlier sections of this log | record | - | no impact (record) | |
+
+### Commands (verdict lines)
+
+| Command | Verdict |
+|---|---|
+| `python -I Collection/tests/chatsetup/run.py` | rc=0 · 47/47 |
+| `python -I Collection/tests/layoutv2/run.py` | rc=0 · 50 PASS lines |
+| `python -I Collection/tests/firststart/run.py` | rc=0 · 29/29 |
+| `python -I Collection/tests/core/run.py` | rc=0 · 109/109 |
+| `python -I Collection/tests/statusstrip/theme_switcher.py` | rc=0 · 20 PASS |
+| `python -I Collection/tests/statusstrip/run.py` | rc=0 · 20/20 |
+| `python -I Collection/tests/pitbull4/run.py` / `pitbull4runtime` / `castbars` | 6/6 · 20/20 · 16/16 |
+| `python -I Collection/tests/composition/run.py` / `parts.py` | 8/8 · 12/12 |
+| `python -I <devnull_run.py> Collection/tests/patches/run.py` | 4/4 |
+| `python -I Collection/tools/luacheck.py <Core> DevilForever_ChatSetup DevilForever_Appearance` | `checked=31 failed=0`; after the last ChatSetup edit, `DevilForever_ChatSetup`: `checked=3 failed=0` |
+| `python -I Collection/tools/extract.py` · `genregistry.py --check` | errors=0 · up to date |
+| `… patches.py verify` | `patches=8 failures=0` |
+| `… build.py --dry-run --variant pitbull4` / `fuf` | rc=0 · 36/2353 · 38/2297 |
+
+Raw outputs: `<scratch>/s60/s66*.txt`; measurement JSON `<scratch>/s60/s66_measure.json`.
+
+### Open
+- The current art stays until Codex delivers, so text and minimap are placed by the new structure while the drawn frames are still a few px off (brief §3).
+- The measurement counts bright decorations (crests, ornaments) as non-floor, so some chat3 right values are short. These are marked in the brief.
+- At uhd with 1 UI unit = 1 px, the 12 px border keeps the message top below the strip's natural spot, so the tab row sits up to 4 px below the strip centre. At the user's 0.5556 units/px it is centred.
+- Brief method B (per-resolution full art) needs a texcoord crop in `Composition.lua` before such art can ship (Claude does it when Codex picks B).
+- With no time column, Chattynator still keeps a 6-unit inset before the text.
+
+## Step 67 (R226): one layout only — Old and the version switcher removed
+
+Read:
+- `Presets/V2.lua` 1-282 (whole), `Presets.lua` catch-up parts (60-75, 290-310, 560-830), `Defaults/SexyMap.lua` 170-190, `Defaults/PitBull4.lua` 570-580.
+- `DevilForever_Skin_StatusStrip/ThemeSwitcher.lua` 1-330, `tools/theme_switcher_art.py` 1-60, 160-262.
+- tests: layoutv2 (whole in parts), firststart 730-760 and 890-945, statusstrip/theme_switcher 86-120, 198-242, 340-395.
+- check list 38, 65-145; install guide 44-60; `data/feature-map.md` (grep: no New/Old wording).
+
+### Impact map (made first: grep `layoutV1Revision|layoutV2Revision|dfLayoutV2|StatusStripLayouts|versionInUse|layout_new|layout_old|-v1`, plus "New/Old", "버전 전환", "Old")
+
+| Place | Type | How found | Impact | Reason |
+|---|---|---|---|---|
+| `Presets/V2.lua` | V1 path, V1 revision, `-v1` preset, Old-only base tweaks, Old stacking (Step 65), `oldCells`, `mainAuras` | grep, read whole | change | one layout |
+| `Presets.lua` catch-up | V1 target, New/Old label | grep | change | |
+| `Presets.lua` Restore hint text (`-v1 · -v2`) | user text | grep | change | `-v2` only |
+| `Defaults/SexyMap.lua` | adds its fragment to `-v1/-v2` | grep | change | `-v2` only |
+| `Defaults/PitBull4.lua:577` | reads `dfLayoutV2 == true` (target-pet companion layout) | grep | check only | still true for the layout |
+| `ThemeSwitcher.lua` | version switcher, `layout_new/old` in SHIPPED | grep | change | removed |
+| `tools/theme_switcher_art.py` | generates `layout_new/old.tga` | grep | change | no longer generated |
+| `Media/ThemeSwitcher/<preset>/layout_{new,old}.tga` (6 files) | art | ls | delete needed | not deleted here (no-delete rule); for the master |
+| `PitBull4/Modules/Aura/Layout.lua` debuff gap fix | Step 65 (b) | read | no impact (kept) | applies to the layout |
+| `Commands.lua` `/dfp preset` | takes any registered name | read (earlier) | check only | `<preset>-v2` still registered; `-v1` reports "등록된 preset 이 아님" |
+| tests layoutv2, firststart, theme_switcher | tests | grep | change | |
+| check list §6, §11-14, install guide line 49 (+ timestamp line, R230) | user docs | grep | change | |
+| `data/feature-map.md` | doc | grep | no impact | no New/Old wording |
+| earlier sections of this log | record | - | no impact (record) | |
+
+### What changed
+
+| Place | Change |
+|---|---|
+| `Presets/V2.lua` | Only the layout-only preset `<preset>-v2` is registered (the catch-up and `/dfp preset <preset>-v2` use it). Its fragments still follow the base preset's at version + 10, so a fresh install and `/dfp preset <preset>` write this layout. Removed: the V1 path (Step 65 Old stacking, `OLD_STACK_GAP`, `mainAuras`), `oldCells`, `layoutV1Revision`, the base-preset Old tweaks (`dfLayoutV2 = false` etc.) and the Old Swing "top" fragment. `layoutV2Revision` 6 → 7. |
+| `Presets.lua` | The catch-up treats a collection profile with `dfLayoutV2 = false` (the earlier Old) as outdated and writes `<active>-v2`. A profile on the layout below revision 7 does too. Foreign profiles (no flag) are untouched. Chat line without New/Old: "배치를 이 판에 맞춰 적용했습니다(…)". Restore hint names `-v2` only. |
+| `Defaults/SexyMap.lua` | fragment added to the base preset and `-v2` only |
+| `ThemeSwitcher.lua` | The version switcher (`DevilForever_StatusStripLayouts`, its choices, the waiting-request takeover) and the `layout_new/old` entries in SHIPPED are removed; `switchers = {theme}`. The theme switcher code is unchanged. |
+| `tools/theme_switcher_art.py` | no layout images (docstring, `LAYOUTS`, build loop) |
+| tests | layoutv2: no `-v1` back switch, no Old aura block test, name text and cast bar for the layout only; catch-up: an earlier Old profile → the layout (`true, 7`); the player's own request (`/dfp preset <preset>` + go) supersedes `due`; `layoutV1Revision is None` and `<preset>-v1` not registered. firststart: Grid2 spot/cells for the layout only, `fhd-v1` reports "not registered". theme_switcher: no layout switcher with or without PitBull4; art checks ignore the retired files and print them as a note. |
+| check list §6, §11-§14; install guide | Old and New/Old switching removed (the §6 heading says why); the status strip item now checks "theme switcher only" with a `/run` state line; install guide: an earlier Old profile becomes this layout; R230: timestamps off by default, turned on in Chattynator settings → 「서식 설정」(Formatting) → 「시간 표시」(Timestamp) (`Locales.lua` koKR FORMATTING / TIMESTAMP, `CustomiseDialog/Main.lua` TabSetups). |
+
+`/dfp` names: `<preset>` and `<preset>-v2` work (the same layout); `<preset>-v1` no longer exists ("등록된 preset 이 아님").
+
+### Commands (verdict lines)
+
+| Command | Verdict |
+|---|---|
+| `python -I Collection/tests/layoutv2/run.py` | rc=0 · 42 PASS lines |
+| `python -I Collection/tests/firststart/run.py` | rc=0 · 29/29 |
+| `python -I Collection/tests/statusstrip/theme_switcher.py` | rc=0 · 17 PASS lines; NOTE retired `layout_new/old.tga` still on disk at fhd/qhd/uhd |
+| `python -I Collection/tests/core/run.py` | rc=0 · 109/109 |
+| `python -I Collection/tests/statusstrip/run.py` · `chatsetup` · `pitbull4` · `pitbull4runtime` · `castbars` · `composition/run.py` | 20/20 · 47/47 · 6/6 · 20/20 · 16/16 · 8/8 |
+| `python -I <devnull_run.py> Collection/tests/patches/run.py` | 4/4 |
+| `python -I Collection/tools/luacheck.py <Core> DevilForever_Skin_StatusStrip DevilForever_ChatSetup` | `checked=26 failed=0` |
+| `python -I Collection/tools/theme_switcher_art.py --check` | `problems=6` = the six retired files on disk ("extra"); goes to 0 when they are deleted |
+| `python -I Collection/tools/extract.py` · `genregistry.py --check` | errors=0 · up to date |
+| `… patches.py verify` | `patches=8 failures=0` |
+| `… build.py --dry-run --variant pitbull4` / `fuf` | rc=0 · 36/2353 · 38/2297 (the six retired TGA are still counted until deleted) |
+
+Raw outputs: `<scratch>/s60/s67*.txt`.
+
+### For the master
+- Delete `Collection/AddOns/DevilForever_Skin_StatusStrip/Media/ThemeSwitcher/{fhd,qhd,uhd}/layout_new.tga` and `layout_old.tga` (6 files). The art check then reports 0 problems, and the build file count drops by 6.
+- The base preset still carries the original preset fragments (version 1) under the layout fragments (version + 10). A fresh install writes both in order and ends with the layout; the Old-only tweaks were removed.
+
+## Step 64 (R208, R223): Hekili out — done; Musca Auras in — waiting for download approval
+
+### Hekili out (item c)
+
+Read: `install.json` 1-50, `tools/extract.py` 70-130, `tools/build.py` 90-130, `tests/install/verify_archives.py` 165-180, `registry_extra.json` 466-545, Core TOC, `Presets/{fhd,qhd,uhd}.lua` Hekili and Masque fragments (uhd 715-800), `tests/core/run.py` 462-560 and 1078-1112, `tests/layoutv2/run.py` 440-515, install guide 44 and 72, `data/feature-map.md` 45-55.
+
+| Place | Change |
+|---|---|
+| `install.json` | The Hekili group is out of `upstream`. New key `not_shipped` lists the 11 Hekili folders that stay in `Collection/AddOns` (Hekili code untouched) but go in no ZIP. |
+| `tools/build.py` | `install_selection`: folders named in `not_shipped` count as named; they are not shipped. |
+| `tools/extract.py` | `forever-addons/Hekili`: Phase 8 role `start` → `dropped` (the plan's role for a start addon taken out) |
+| `manifest.json` / `manifest.md` | regenerated (`start=12 comparison=27`) |
+| `registry_extra.json` | Hekili entry (frames, editable, HekiliDB, defaults) removed |
+| `Registry.lua` | regenerated (53562 bytes) |
+| Core TOC | `Defaults\Hekili.lua` no longer loaded. The file stays on disk; the master can `git rm` it. |
+| `Presets/{fhd,qhd,uhd}.lua` | Hekili profile fragment and the Masque "Hekili" group removed (the Dominos Masque group stays) |
+| `tests/install/verify_archives.py` | must-ship without Hekili; Hekili, Hekili_Shared and Hekili_Shaman must not be shipped |
+| `tests/core/run.py` | registry asserts without Hekili; Hekili folders in the not-registered list; the two Hekili defaults cases removed |
+| `tests/layoutv2/run.py` | no Hekili rects in the screen map |
+| install guide | Hekili dropped from the auto-update note; new line: Hekili is no longer in the collection, and folders left from an earlier install can be removed or turned off |
+| `data/feature-map.md` | class action recommendation row: none (R223) |
+
+No impact (records): `judgment.md`, `data/classes.md`, `data/hekili-*.md`, earlier codex briefs.
+
+Not done here: `Collection/Installer/ReleaseCatalog.json` still lists Hekili. It is written from the built release ZIPs (`tools/catalog.py --write`), and `catalog.py --check` against my scratch-built ZIPs reports DIFFERS. It is rewritten when the release ZIPs are built in `outputs/collection`.
+
+### Musca Auras (items a, b, d) — not started
+
+Downloading needs the user's own approval (a file download), so nothing was downloaded. Official page facts (`https://www.curseforge.com/wow/addons/musca-auras/files`, read only):
+- Newest file: "Musca Auras 1.21.0", file id 9801355, uploaded 2026-11-24, game version 1.60.1 (Forever), 7.8 MB.
+- Earlier: 1.20.0 (9761179), 1.19.0 (9705662).
+
+The mute setting, the defaults path and the check-list items wait for the ZIP.
+
+Second request (master message: "approved by master on that basis"): still not downloaded. The approval reached this session as an agent message, and a file download needs the user's own yes in chat (or the master downloads the file). Items a, b, d stay open; Hekili (item c) stays on the `not_shipped` route.
+
+Recovery reads after this session's compaction: rule files (constitution in context, `feedback_communication_style.md` 1-87, `feedback_flow_interruption.md` 1-64, the two method skills reloaded), this work log 978-1028.
+
+### Step 68 placement probe (before any Step 68 change)
+
+Probe `<scratch>/s60/s68_probe.py` (layoutv2 helpers, base-preset screen map). A two-window row of chat width and chat height placed 8 px above the chat surround overlaps something in every column:
+- above chat 3 (today's Details spot; fhd 1483,593,437,192 · qhd 1942,875,618,224 · uhd 2887,1397,953,304): Grid2 party/raid, target-pet frame and its auras, `ornamentRight`
+- above chat 1: pet frame and auras, Quartz Pet bar, `ornamentLeft`, `unitLower`
+- above chat 2: several unit-frame elements
+The quest tracker extent is not in the screen map (unknown). No clear spot found yet.
+
+### Commands (verdict lines)
+
+| Command | Verdict |
+|---|---|
+| `python -I Collection/tools/extract.py` | rc=0 · `start=12 comparison=27 … errors=0` |
+| `python -I Collection/tools/genregistry.py` / `--check` | wrote 53562 bytes / up to date |
+| `python -I Collection/tests/core/run.py` | first 106/109 (Hekili cases), after the test update rc=0 · 107/107 |
+| `python -I Collection/tests/layoutv2/run.py` | rc=0 · 42 PASS |
+| `python -I Collection/tests/firststart/run.py` · `statusstrip/theme_switcher.py` · `statusstrip/run.py` · `chatsetup` · `pitbull4runtime` · `castbars` · `composition/run.py` | 29/29 · rc=0 17 PASS (retired-file skip removed; files deleted by the master) · 20/20 · 47/47 · 20/20 · 16/16 · 8/8 |
+| `… build.py --dry-run --variant pitbull4` / `fuf` | rc=0 · 25/2057 · 27/2001 |
+| `… build.py --variant pitbull4` / `fuf --out-dir <scratch>/s60/s64zips.*` | rc=0 · built 25/2057 (sha256 7adbc0b7…) · 27/2001 (0030b4d0…) |
+| `python -I Collection/tests/install/verify_archives.py --version 0.1.5 <scratch zips>` | rc=0 (must-ship without Hekili; Hekili not in either ZIP) |
+| `python -I Collection/tests/catalog/run.py` | 1 pass, 2 fail, 1 skip. Both failures come from `--write` raising `ValueError: path is on mount 'C:', start on mount 'D:'` (relpath between the C: temp folder and the D: repo), an environment issue, not this change. |
+| `python -I Collection/tools/catalog.py <scratch zips> --check` | DIFFERS (expected: Hekili left the ZIPs; rewrite at release) |
+
+Raw outputs: `<scratch>/s60/s64*.txt`.
+
+Step 64 status after R231 (the user is asleep and asked for everything to be finished): the Musca Auras download is still blocked because the user has not approved it directly. Items a (ship), b (muted by default) and d (check-list items) are left undone. Nothing for Musca is in the tree. Hekili (item c) is done and stays on the `not_shipped` route.
+
+## Step 68 (R227, R228): Details windows 1 and 2 side by side; window 2 created for Tiny Threat on first setup
+
+Read: `DevilForever_DetailsLayout/Layout.lua` 1-178 (before) and 1-287 (after) · `.toc` · `tests/detailslayout/run.py` 1-223 (before) · `tests/layoutv2/run.py` 440-520 (screen map, the `TRACKER` quest-tracker model, `KNOWN_OVERLAP`) · `!DevilForever_Core/Core.lua` 100-200 and 280-400 (`On`/`Off`, `DBTable`, DB layout) · Details: `classes/class_instance.lua` 1160-1200, 1325-1340, 1765-1960 (`GetNumInstances`, `CreateInstance`/`CriarInstancia`: `id=true` copies `standard_skin`, or the skin of the first open window when there is no standard skin) · `core/plugins_raid.lua` 1-160 (`EnableRaidMode`, `IsAvailable`, `PluginsInUse`) · `frames/window_main.lua` 2630-2660 (the title bar is anchored above the baseframe), 3740-3800 (title-bar settings) · `startup.lua` 990-1012 (`__initialized`) · `Details_TinyThreat.lua` 925-960 (installs `DETAILS_PLUGIN_TINY_THREAT` at its own ADDON_LOADED) · `registry_extra.json` 585-625 · `install.json` 1-40 · install guide 50-62 · `data/feature-map.md` 59 · check list 128-142 · `References/codex-appearance/10/report.md` 19-21 (title height proposal 24/26/30 px).
+
+### Spot
+
+Search: `<scratch>/s60/s68_grid.py` over the base-preset screen map (`s68_rects.json`, dumped by `s68_search.py`). A box the size of one chat panel was tested at every x (1 px steps) and every even y, with 8 px and 4 px gaps to every mapped rectangle. The row must keep a chat panel's left and right edges.
+
+| Column (chat-panel edges) | fhd | qhd | uhd |
+|---|---|---|---|
+| chat 3 (today's Details spot, 8 px above the section) | overlaps Grid2 raid/party, the target-pet frame and its auras, `ornamentRight` | same kind | same kind |
+| chat 3, screen top | clear y 0-62 | clear y 0-118 | clear y 0-210 |
+| chat 2 | never clear | never clear | clear only y 0-210 (top) |
+| chat 1, below the party frames | clear y 362 only (4 px gap) | clear y 470-594 | clear y 642-1014 |
+
+Choice (my judgement, recorded for the user's decision): the **chat 1 column below the party frames**. The rows are fhd (0,362,437,192), qhd (0,532,618,224), uhd (0,828,953,304) — the middle of each clear range.
+
+The top of the chat 3 column is geometrically nearer to the default spot, but it is the screen's top-right corner. The game's own buff icons and minimap cluster sit there by default, and they are not in the screen map (estimate, not verified). The quest-tracker model in `tests/layoutv2/run.py` (`TRACKER`, top at about 24 % of the screen height) leaves that corner above the tracker, but the buff area is unmodelled. The chat 1 band touches no mapped rectangle, no Grid2 window, and not the quest-tracker column.
+
+Inside each row:
+- window 1 (damage) is on the left and window 2 (Tiny Threat) on the right, with a 2 px gap;
+- each title strip is part of the row: fhd 24, qhd 26, uhd 30 px (the Phase 10 title heights) sits above each body;
+- bodies: fhd {0,386,217,168} {219,386,218,168} · qhd {0,558,308,198} {310,558,308,198} · uhd {0,858,475,274} {477,858,476,274}.
+
+Not verified:
+- the real title/toolbar height of the user's skin (check-list item);
+- the FUF variant's party and pet frames (the screen map is PitBull4's);
+- the game's default party frames being hidden at left middle (estimate: PitBull4 and Grid2 take the party).
+
+### Impact map
+
+| Place | Type | How found | Impact | Why |
+|---|---|---|---|---|
+| `Layout.lua` `layouts` | values | read | changed | stacked spots above chat 3 → side-by-side row |
+| `Layout.lua` `ready()` | code | read | changed | split into `detailsReady()` + `placeable(id)`; same checks and refusals |
+| `Layout.lua` first setup (new) | code | — | added | `FirstSetup`, retry timer, combat wait, marker in `DevilForever_CoreDB.detailsLayout.profiles[<Details profile>]` |
+| `Layout.lua` status | code | read | changed | shows the profile's setup mark |
+| `.toc` Notes | text | read | changed | describes first setup |
+| `tests/detailslayout/run.py` | test | read | changed | apply checks against the Layout rects (the Phase 10 proposal files no longer describe the spot); setup, row and no-change cases added |
+| `tests/layoutv2/run.py` `KNOWN_OVERLAP` | test | grep `details` | changed | Grid2 no longer overlaps Details: the `details 1/2` entries are gone |
+| `tests/layoutv2/run.py` | test | — | added | Details row: chat panel 1 width and height, left edges aligned, overlaps nothing (title included; Grid2 raid/party and the tracker column added) |
+| install guide (character first-time list) | doc | grep | changed | the manual `/details new` steps become the automatic first setup; `/dfdetails apply` stays for profiles that already have windows |
+| `data/feature-map.md` 59 | doc | grep | changed | same |
+| check list §15 (new) | doc | — | added | creation, spot, title height, no-change login, FUF |
+| `registry_extra.json` Details frames (`DetailsBaseFrame1/2`) | data | read | check only | names unchanged |
+| `tests/core/run.py` 502-513 | test | grep | check only | "no saved variables" still holds (the marker lives in the Core DB); 107/107 |
+| `References/codex-appearance/10/*` | record | — | no impact (record) | earlier proposal |
+| check list line 39 (Grid2 vs Details) | doc | grep | check only | still a valid check |
+
+### Behaviour
+
+At the first `PLAYER_ENTERING_WORLD`, the addon tries every 2 s, up to 30 times. During combat it waits for `PLAYER_REGEN_ENABLED`. Each try checks, in order:
+
+1. Details is initialised, not embedded in chat, and a profile is active.
+2. The profile already has a mark → nothing.
+3. The profile has more than one window → mark `{skipped = true}` and change nothing.
+4. There is no active fhd/qhd/uhd preset → nothing (tried again at the next login).
+5. Window 1 is not free-standing (solo, snapped, frames not ready) or Tiny Threat is not installed, enabled and free → try again later, no writes.
+
+When every check passes:
+- `Details:CreateInstance(true)` makes window 2;
+- `ChangeSkin(<window 1 skin>)` runs when the new window's skin differs;
+- `RaidTables:EnableRaidMode(window 2, "DETAILS_PLUGIN_TINY_THREAT")` assigns Tiny Threat;
+- the existing `Apply` places both windows;
+- the mark `{created = 2, preset}` is written right after the window is created;
+- one chat line is printed.
+
+Window 1's mode and display are not touched. A marked profile is never touched again, so later moves or changes by the player stay.
+
+Decision queue (my defaults):
+- **Spot:** chat 1 column instead of the screen top of chat 3. Alternative: chat 3 column top, fhd (1483,0..62), qhd (1942,0..118), uhd (2887,0..210).
+- **Window 1 position:** a lone window 1 that the player had already moved is placed too; a moved window cannot be told from Details' default.
+- **Profiles that already have windows:** a profile with two or more windows (for example one set up from the old guide) is left as it is; `/dfdetails apply` puts it on the new row.
+
+### Commands (verdict lines)
+
+| Command | Verdict |
+|---|---|
+| `python -I <scratch>/s60/s68_grid.py <scratch>/s60/s68_rects.json` (gap 8 and 4) | clear ranges as in the table above |
+| `python -I Collection/tests/detailslayout/run.py` | rc=0 · `PASS first setup … (16 cases)` · `PASS actual slash->native … 6 preset/factor pairs … 28 refusal cases` |
+| `python -I Collection/tests/layoutv2/run.py` | rc=0 · 46 PASS incl. `Details row (0, 362, 437, 192)` fhd / `(0, 532, 618, 224)` qhd / `(0, 828, 953, 304)` uhd 3840 and 3862 · `overlaps none of 67 rects` |
+| `python -I Collection/tools/luacheck.py AddOns/DevilForever_DetailsLayout` | `checked=1 failed=0` |
+| `python -I Collection/tests/core/run.py` · `firststart` · `chatsetup` · `statusstrip/run.py` · `pitbull4runtime` | 107/107 · 29/29 · 47/47 · 20/20 · 20/20 |
+| `python -I Collection/tools/genregistry.py --check` | up to date (53562 bytes) |
+| `python -I <scratch>/s51.XsBX/devnull_run.py Collection/tools/build.py --dry-run --variant pitbull4` / `fuf` | rc=0 · folders=25 files=2057 / folders=27 files=2001 (without the wrapper: `diff: nul` error, the known Git-for-Windows issue) |
+
+The suite drives `CreateInstance` and `EnableRaidMode` through stubs, because the native window builder needs the client. Window placement runs through the native `RestorePositionFromPositionTable` / `RestoreMainWindowPosition` / `SetWindowScale`. Raw outputs: `<scratch>/s60/s68_*.txt`.

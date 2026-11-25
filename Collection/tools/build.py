@@ -97,7 +97,8 @@ def install_selection(install, variant):
     for mapping in (install.get("upstream") or {}, variants[variant].get("upstream") or {}):
         for pkg in sorted(mapping):
             upstream.extend((pkg, folder) for folder in mapping[pkg])
-    named = set()
+    # folders kept in Collection/AddOns but left out of every ZIP (install.json "not_shipped")
+    named = set(install.get("not_shipped") or [])
     for part in [install] + list(variants.values()):
         named.update(part.get("own") or [])
         for folders in (part.get("upstream") or {}).values():

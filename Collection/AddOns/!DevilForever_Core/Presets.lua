@@ -63,8 +63,8 @@
 -- variable). Fresh then means <SV>[profileKey] was nil at the addon's
 -- ADDON_LOADED (Profiles:KeyWasAbsent); targetKey "<SV>@root:<profileKey>".
 -- Layout catch-up after an update: a collection PitBull4 profile (profiles.Default with a boolean
--- dfLayoutV2) whose dfLayoutRevision is below this build's revision of its version (layoutV2Revision /
--- layoutV1Revision, Presets/V2.lua) gets <active>-v2 or -v1 written in the same load, with no command:
+-- dfLayoutV2) still on the earlier second layout (dfLayoutV2 = false) or below this build's layout
+-- revision (layoutV2Revision, Presets/V2.lua) gets <active>-v2 written in the same load, with no command:
 -- the request starts at Core's ready step when the last load recorded the profile's state
 -- (DevilForever_CoreDB.layoutRevision.seen), else at PitBull4's ADDON_LOADED, before PitBull4 reads it.
 -- Targets whose ADDON_LOADED came earlier get their fragments at the next load
@@ -297,11 +297,11 @@ function Presets:Restore(name)
     local ok, why = Core.Profiles:SetPending({action = "preset", name = name})
     if not ok then return false, why end
     Core:DBTable("preset").unfinished = name
-    local lines = {name .. " 비교 배치 예약 — PitBull4, Quartz, Grid2, Dominos 토템 막대 자리만 적용: /dfp go"}
+    local lines = {name .. " 비교 배치 예약 — PitBull4, Quartz, Grid2, Dominos 막대, SexyMap 미니맵 자리만 적용: /dfp go"}
     local family, screen = name:match("^(.-)%-v%d+$"), self:PickForScreen()
     if family and defs[family] and screen and family ~= screen then
       lines[#lines + 1] = "주의: " .. name .. " 은 " .. family .. " 화면 기준 배치 — 이 화면은 " .. screen
-        .. " (" .. screen .. "-v1 · " .. screen .. "-v2)"
+        .. " (" .. screen .. "-v2)"
     end
     return true, lines
   end
@@ -563,14 +563,14 @@ local function dueFragments(lower)
   return out
 end
 
--- Layout catch-up (header): "-v2" / "-v1" and the build's revision for a collection profile state
--- below that revision; nil otherwise.
+-- Layout catch-up (header): "-v2" and the build's revision for a collection profile state on the earlier
+-- second layout or below that revision; nil otherwise.
 local function outdatedLayout(v2, revision)
   if type(v2) ~= "boolean" then return end
-  local target = v2 and Presets.layoutV2Revision or Presets.layoutV1Revision
+  local target = Presets.layoutV2Revision
   if type(target) ~= "number" then return end
-  if (type(revision) == "number" and revision or 0) >= target then return end
-  return v2 and "-v2" or "-v1", target
+  if v2 and (type(revision) == "number" and revision or 0) >= target then return end
+  return "-v2", target
 end
 
 local function pitbullProfile()
@@ -589,7 +589,7 @@ local function revisionsTable(create)
 end
 
 local function folderLabel(folder)
-  return folder == "Dominos" and "Dominos 토템 막대" or folder
+  return folder == "Dominos" and "Dominos 막대" or folder == "SexyMap" and "SexyMap 미니맵" or folder
 end
 
 -- Starts the catch-up request; folders whose ADDON_LOADED already passed go to the next load.
@@ -757,12 +757,11 @@ Core:On("PLAYER_ENTERING_WORLD", function()
       end
       sort(written)
       sort(waiting)
-      local label = request.name:match("%-v2$") and "New" or "Old"
       if #written > 0 then
-        Core.Profiles:Print(label .. " 배치를 이 판에 맞춰 적용했습니다(" .. table.concat(written, "·") .. ")"
+        Core.Profiles:Print("배치를 이 판에 맞춰 적용했습니다(" .. table.concat(written, "·") .. ")"
           .. (#waiting > 0 and (" — " .. table.concat(waiting, "·") .. " 는 다음 접속 때 자동으로 적용됩니다.") or "."))
       elseif #waiting > 0 then
-        Core.Profiles:Print(label .. " 배치(" .. table.concat(waiting, "·") .. ")는 다음 접속 때 자동으로 적용됩니다.")
+        Core.Profiles:Print("배치(" .. table.concat(waiting, "·") .. ")는 다음 접속 때 자동으로 적용됩니다.")
       end
       if request.finishing then revisionsTable(true).due = nil end
       request = nil
