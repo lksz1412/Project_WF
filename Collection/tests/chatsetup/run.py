@@ -1092,10 +1092,11 @@ def chattynator_seed_writes_three_windows_once():
     w = windows(s)
     eq(len(w), 3, "three windows")
     eq([w[i]["position"] for i in (1, 2, 3)],
-       [{1: "TOPLEFT", 2: "UIParent", 3: "TOPLEFT", 4: 0, 5: -1794},
-        {1: "TOPLEFT", 2: "UIParent", 3: "TOPLEFT", 4: 960, 5: -1794},
-        {1: "TOPLEFT", 2: "UIParent", 3: "TOPLEFT", 4: 2900, 5: -1794}], "uhd places from the chat panels")
-    eq([w[i]["size"] for i in (1, 2, 3)], [{1: 960, 2: 329}, {1: 962, 2: 334}, {1: 940, 2: 334}],
+       [{1: "TOPLEFT", 2: "UIParent", 3: "TOPLEFT", 4: 0, 5: -1801},
+        {1: "TOPLEFT", 2: "UIParent", 3: "TOPLEFT", 4: 960, 5: -1801},
+        {1: "TOPLEFT", 2: "UIParent", 3: "TOPLEFT", 4: 2900, 5: -1801}],
+       "uhd places: tab rows centred on the theme strip (1804-1820), sides from the chat panels")
+    eq([w[i]["size"] for i in (1, 2, 3)], [{1: 960, 2: 322}, {1: 962, 2: 327}, {1: 940, 2: 327}],
        "uhd sizes from the chat panels")
     public = w[1]["tabs"][1]
     eq((public["name"], public["invert"]), ("GENERAL", True), "window 1 public tab")
@@ -1396,10 +1397,34 @@ def message_area(window, public):
     return x + 2, top - 27, x + width, bottom if public else bottom + 5
 
 
-def panel_inner(preset, key, pixel, border=1):
+def panel_inner(preset, key, pixel, border=1, side=0):
     item = GEOMETRY_ITEMS[preset][key]
     top, bottom = -item["y"] + border, -item["y"] + item["height"] - border
-    return item["x"] * pixel, -top * pixel, (item["x"] + item["width"]) * pixel, -bottom * pixel
+    return ((item["x"] + side) * pixel, -top * pixel, (item["x"] + item["width"] - side) * pixel,
+            -bottom * pixel)
+
+
+def strip_centre(preset, pixel):
+    item = GEOMETRY_ITEMS[preset]["ribbon"]
+    return (item["y"] - item["height"] / 2) * pixel
+
+
+def check_fit(w, preset, pixel, what, border=1, side=0, screen=None):
+    """Tab rows centred on the strip, message area sides and bottom on the panel inner rectangle,
+    message top inside it, sizes within Chattynator's resize bounds, nothing past the screen."""
+    for index, key in enumerate(("chat1", "chat2", "chat3"), start=1):
+        window = w[index]
+        left, top, right, bottom = message_area(window, index == 1)
+        want = panel_inner(preset, key, pixel, border, side)
+        name = "%s window %d" % (what, index)
+        eq(round(left, 6), round(max(want[0], 2), 6), name + " left")
+        eq([round(right, 6), round(bottom, 6)], [round(want[2], 6), round(want[3], 6)], name + " right/bottom")
+        eq(round(window["position"][5] - 11, 6), round(strip_centre(preset, pixel), 6),
+           name + " tab row centre = theme strip centre")
+        eq(top <= want[1] + 1e-9, True, name + " message top inside the panel (%s <= %s)" % (top, want[1]))
+        eq(window["size"][1] >= 240 and window["size"][2] >= 140, True, name + " within the resize bounds")
+        if screen is not None:
+            eq(window["position"][4] + window["size"][1] <= screen + 1e-6, True, name + " inside the screen")
 
 
 @case
@@ -1409,22 +1434,18 @@ def chattynator_message_area_is_the_panel_inner_rect():
             s = chatty_session(preset=preset, channels=("General",))
             s.g.TEST_pixel = pixel
             s.login()
-            w = windows(s)
-            for index, key in enumerate(("chat1", "chat2", "chat3"), start=1):
-                left, top, right, bottom = message_area(w[index], index == 1)
-                want = panel_inner(preset, key, pixel)
-                what = "%s pixel %s window %d" % (preset, pixel, index)
-                # A panel on the left screen edge: the window is clamped to the screen, so its
-                # message area starts 2 units inside the panel.
-                eq(round(left, 6), round(max(want[0], 2), 6), what + " left")
-                eq([round(v, 6) for v in (top, right, bottom)], [round(v, 6) for v in want[1:]],
-                   what + " top/right/bottom (window 1: area above the input box)")
+            # A panel on the left screen edge: the window is clamped to the screen, so its
+            # message area starts 2 units inside the panel (check_fit).
+            check_fit(windows(s), preset, pixel, "%s pixel %s" % (preset, pixel))
             eq(option(s, "button_position"), "inside_left", "buttons overlay the message area")
-    # Composition art: prepared surfaces (no inset in the code) and HUD parts (caps and joints).
-    s = chatty_session(channels=("General",))
-    s.lua.execute("DevilForever_Composition = {active = true}")
-    s.login()
-    eq(message_area(windows(s)[2], False)[1:], (-1820, 1922, -2124), "prepared surfaces: the panel rectangle")
+    # Composition art: prepared surfaces (one joint inside every side, the frame painted in the deck
+    # picture) and HUD parts (caps and joints).
+    for preset, joint in (("fhd", 16), ("qhd", 20), ("uhd", 32)):
+        s = chatty_session(preset=preset, channels=("General",))
+        s.lua.execute("DevilForever_Composition = {active = true, parts = {sizes = {%s = {joint = %d, cap = 96}}}}"
+                      % (preset, joint))
+        s.login()
+        check_fit(windows(s), preset, 1, preset + " prepared surfaces", border=0, side=joint)
     p = chatty_session(channels=("General",))
     p.lua.execute("""
       DevilForever_Composition = {active = true, partsShown = true,
@@ -1456,10 +1477,63 @@ def chattynator_windows_seeded_earlier_follow_the_panels_moved_ones_stay():
     s.g.TEST_fire("UI_SCALE_CHANGED")
     s.g.TEST_runTimers()
     w = windows(s)
-    eq((w[1]["position"][5], w[1]["size"][2]), (-1794, 329), "unmoved window 1 now has its tab row above the panel")
-    eq((w[2]["position"][4], w[2]["position"][5]), (960, -1794), "unmoved window 2 follows")
+    eq((w[1]["position"][5], w[1]["size"][2]), (-1801, 322), "unmoved window 1 now has its tab row on the strip")
+    eq((w[2]["position"][4], w[2]["position"][5]), (960, -1801), "unmoved window 2 follows")
     eq((w[3]["position"][4], w[3]["position"][5]), (2800, -1828), "window 3 moved by the user stays")
     eq(sorted(s.db()["chattynator"]["layout"]["windows"]), [1, 2], "moved window released")
+
+
+# The user's saved state after the Step 61 build (uhd, UI scale 0.64 = 1200 / 2160 units per pixel,
+# dwarf theme on the prepared composition): window 1's receipt is gone (Chattynator raised its
+# 135.6-unit seed height to its 140-unit resize bound, so it never matched again), windows 2 and 3
+# carry the Step 61 rule's places. Values copied from WTF/.../SavedVariables/Chattynator.lua and
+# .../92/<character>/SavedVariables/DevilForever_ChatSetup.lua.
+USER_WINDOWS = [
+    (("TOPLEFT", "UIParent", "TOPLEFT", 33.33333587646484, -1011.111389160156), (491.6666564941406, 140.0000152587891)),
+    (("TOPLEFT", "UIParent", "TOPLEFT", 532.444456390209, -984.1111337112061), (535.3333452542626, 200.8888926638499)),
+    (("TOPLEFT", "UIParent", "TOPLEFT", 1610.222258258198, -984.1111337112061), (523.1111227588524, 200.8888926638499)),
+]
+
+
+@case
+def chattynator_users_saved_windows_are_placed_again_once():
+    pixel = 1200 / 2160
+    config = {"Version": 1, "Profiles": {"DEFAULT": {"windows": [
+        {"position": list(pos), "size": list(size), "tabs": [{"name": name, "channels": {}, "groups": {}}]}
+        for (pos, size), name in zip(USER_WINDOWS, ("GENERAL", "파티·길드", "파티 찾기"))]}}}
+    saved = {"chattynator": {"version": 1, "lfgTab": "파티 찾기", "lfg": "파티찾기", "profiles": {"DEFAULT": "seeded"},
+             "layout": {"preset": "uhd", "windows": {2: {"position": list(USER_WINDOWS[1][0]),
+                                                         "size": list(USER_WINDOWS[1][1])},
+                                                     3: {"position": list(USER_WINDOWS[2][0]),
+                                                         "size": list(USER_WINDOWS[2][1])}}}}}
+    s = chatty_session(saved=saved, config=config, profile="DEFAULT", channels=("General", "파티찾기"))
+    s.g.TEST_pixel = pixel
+    s.lua.execute("DevilForever_Composition = {active = true, parts = {sizes = {uhd = {joint = 32, cap = 96}}}}")
+    s.login()
+    w = windows(s)
+    for index, (pos, size) in enumerate(USER_WINDOWS, start=1):
+        eq(w[index]["position"][5] == pos[4] and w[index]["size"][2] == size[1], False, "window %d moved" % index)
+    check_fit(w, "uhd", pixel, "user uhd 0.64", border=0, side=32, screen=3840 * pixel)
+    state = s.db()["chattynator"]["layout"]
+    eq((state["version"], sorted(state["windows"])), (2, [1, 2, 3]), "placed once, all three receipts kept")
+    # A later drag is respected: the next follow releases the moved window and leaves it.
+    s.lua.execute("CHATTYNATOR_CONFIG.Profiles.DEFAULT.windows[1].position[4] = 400")
+    s.g.TEST_fire("UI_SCALE_CHANGED")
+    s.g.TEST_runTimers()
+    eq((windows(s)[1]["position"][4], sorted(s.db()["chattynator"]["layout"]["windows"])), (400, [2, 3]),
+       "after the one placement a moved window stays where the user put it")
+
+
+@case
+def chattynator_edit_box_gets_one_scale_change_ending_at_one_on_load():
+    s = chatty_session(channels=("General",))
+    s.lua.execute("""
+      TEST_scales = {}
+      ChatFrame1EditBox = {SetScale = function(self, v) table.insert(TEST_scales, v) end}
+    """)
+    s.login()  # PLAYER_ENTERING_WORLD timer: seed, follow, edit box
+    s.g.TEST_runTimers()  # next frame
+    eq(lst(to_py(s.g.TEST_scales)), [0.99, 1], "one scale change after the setup, ending at 1")
 
 
 @case

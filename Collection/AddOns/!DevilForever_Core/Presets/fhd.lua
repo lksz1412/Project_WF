@@ -513,9 +513,11 @@ end
 proposal.namespaces.LuaTexts = {global={enabled=true}, layouts={}}
 for _, layout in ipairs({"보통", "대상"}) do
   local elements = {
-    ["Lua:레벨"]={enabled=true,exists=true,attach_to="Portrait",location="center",position=1,size=.8,code="Outline() return Level(unit)",events={UNIT_LEVEL=true}},
+    -- level and name are one text at the centre: PitBull4 places two centre texts from an estimated
+    -- width, which leaves the pair off centre (UnitFrameLayout.lua position_indicator_on_bar:center)
+    ["Lua:레벨"]={enabled=false,exists=true,attach_to="Portrait",location="center",position=1,size=.8,code="Outline() return Level(unit)",events={UNIT_LEVEL=true}},
     ["Lua:백분율"]={enabled=true,exists=true,attach_to="Portrait",location=layout == "보통" and "right" or "left",position=1,size=.8,code='Outline() return "%s%%",Percent(HP(unit),MaxHP(unit))',events={UNIT_HEALTH=true,UNIT_MAXHEALTH=true}},
-    ["Lua:이름"]={enabled=true,exists=true,attach_to="Portrait",location="center",position=2,size=1,code="Outline() return Name(unit)",events={UNIT_NAME_UPDATE=true}},
+    ["Lua:이름"]={enabled=true,exists=true,attach_to="Portrait",location="center",position=2,size=1,code='Outline() return "%s %s",Level(unit),Name(unit)',events={UNIT_NAME_UPDATE=true,UNIT_LEVEL=true}},
     ["Lua:생명력"]={enabled=true,exists=true,attach_to="HealthBar",location=layout == "보통" and "left" or "right",position=1,size=.9,code='Outline() return "%s/%s",HP(unit),MaxHP(unit)',events={UNIT_HEALTH=true,UNIT_MAXHEALTH=true}},
     ["Lua:마력"]={enabled=true,exists=true,attach_to="PowerBar",location=layout == "보통" and "left" or "right",position=1,size=.75,code='Outline() return "%s/%s",Power(unit),MaxPower(unit)',events={UNIT_POWER_FREQUENT=true,UNIT_MAXPOWER=true,UNIT_DISPLAYPOWER=true}},
     ["Lua:직업"]={enabled=true,exists=true,attach_to="PowerBar",location=layout == "보통" and "right" or "left",position=1,size=.85,code='Outline() return "%s %s",Level(unit),Class(unit) or ""',events={UNIT_LEVEL=true,UNIT_CLASSIFICATION_CHANGED=true}},

@@ -273,7 +273,15 @@ local version = makeSwitcher({
     local index = 1
     for i, choice in ipairs(choices) do if choice == versionInUse() then index = i end end
     local target = choices[(index - 1 + step) % #choices + 1]
-    local ok, lines = Core.Presets:Restore(Core.Presets:GetActive() .. target.suffix)
+    local active = Core.Presets:GetActive()
+    -- A layout request still waiting (e.g. the first-login re-apply) is replaced by this one.
+    local status = Core.Profiles.GetStatus and Core.Profiles:GetStatus()
+    local pending = type(status) == "table" and status.pending
+    if type(pending) == "table" and pending.action == "preset"
+        and (pending.name == active .. "-v1" or pending.name == active .. "-v2") then
+      Core.Profiles:Cancel()
+    end
+    local ok, lines = Core.Presets:Restore(active .. target.suffix)
     for _, line in ipairs(type(lines) == "table" and lines or {lines}) do Core.Profiles:Print(line) end
     if not ok then return false end
     local went, why = Core.Profiles:Go()

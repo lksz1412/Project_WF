@@ -1452,6 +1452,9 @@ end})
 -- @usage update_indicator_and_text_layout(frame)
 local function update_indicator_and_text_layout(frame)
 	local attachments = new()
+	-- elements on the root with dfOffsetX / dfOffsetY (frame units, right and down) move by that much
+	-- after their location placed them
+	local offsets = new()
 
 	local layout = frame.layout
 
@@ -1516,6 +1519,9 @@ local function update_indicator_and_text_layout(frame)
 			end
 
 			element:ClearAllPoints()
+			if attach_frame == frame and (type(element_db.dfOffsetX) == "number" or type(element_db.dfOffsetY) == "number") then
+				offsets[id] = element_db
+			end
 
 			local attachments_attach_frame = attachments[attach_frame]
 			if not attachments_attach_frame then
@@ -1542,6 +1548,16 @@ local function update_indicator_and_text_layout(frame)
 			local last = nil
 			for _, id in ipairs(loc_indicators_and_texts) do
 				position_indicator_or_text(frame, id, attach_frame, last, location, loc_indicators_and_texts)
+				local offset_db = offsets[id]
+				if offset_db and ((offset_db.dfOffsetX or 0) ~= 0 or (offset_db.dfOffsetY or 0) ~= 0) then
+					local element = frame[id]
+					local scale = scale_cache[element] or 1
+					local point, relative, relative_point, x, y = element:GetPoint(1)
+					if point then
+						element:SetPoint(point, relative, relative_point, x + (offset_db.dfOffsetX or 0) / scale,
+							y - (offset_db.dfOffsetY or 0) / scale)
+					end
+				end
 				last = id
 			end
 		end
@@ -1554,6 +1570,7 @@ local function update_indicator_and_text_layout(frame)
 		attachments[attach_frame] = del(attachments_attach_frame)
 	end
 	attachments = del(attachments)
+	offsets = del(offsets)
 	wipe(scale_cache)
 end
 

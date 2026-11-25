@@ -110,7 +110,7 @@ def session(width,height,font,locale='koKR',saved=None,registered=ORDER,screen=N
     load(s,'DevilForever_Skin_StatusStrip/Skin.lua')
     if layout_v2 is not None:  # PitBull4 loaded, its profile on the New (V2) or Old (V1) layout
         profile={'dfLayoutV2':bool(layout_v2)}
-        if layout_v2=='current':profile['dfLayoutRevision']=3  # this package's New (V2) revision
+        if layout_v2=='current':profile['dfLayoutRevision']=4  # this package's New (V2) revision
         s.g.TEST_loaded.PitBull4=True;s.g.PitBull4=s.table({'db':{'profile':profile}})
     load(s,'DevilForever_Skin_StatusStrip/ThemeSwitcher.lua',source=switcher)
     s.g.TEST_combat=combat_login
@@ -364,12 +364,21 @@ for preset,(name_canvas,name_area,arrow_canvas,bar,font,screen) in ART.items():
         click(right);assert s.g.TEST_reloads==reloads and s.g.GameTooltip.line=='전투 중에는 바꿀 수 없습니다.'
         assert s.g.GameTooltip.text=='다음 배치'
         s.g.TEST_combat=False;s.g.TEST_fire('PLAYER_REGEN_ENABLED');assert left.alpha==1
-        click(right)
+        # the first-login re-apply (run here once PitBull4's profile is visible): an older revision gets the
+        # version in use requested without a reload; the current revision gets nothing
+        s.core.Presets.ReapplyOutdatedLayout(s.core.Presets)
+        before=s.sv('DevilForever_ProfilesDB').get('pending')
+        if v2!='current':
+            assert before and before['name']==preset+('-v2' if v2 else '-v1') and not before['armed'],before
+            assert s.g.TEST_reloads==reloads and any('다시 적용하도록 예약' in l for l in s.g.TEST_printed.values())
+        else:
+            assert before is None
+        click(right)  # the switch replaces a waiting layout request
         want=preset+('-v1' if v2=='current' else '-v2')  # an earlier V2 (no current revision) shows Old and steps to New
         pending=s.sv('DevilForever_ProfilesDB')['pending']
         assert s.g.TEST_reloads==reloads+1 and pending['action']=='preset' and pending['name']==want,(pending,want)
         assert not s.errors(),s.errors()
-    print('PASS',preset,'version switcher New/Old images left of the theme switcher; earlier V2 profile shows Old; combat refusal and dim; a switch requests the other layout and reloads')
+    print('PASS',preset,'version switcher New/Old images left of the theme switcher; earlier V2 profile shows Old; combat refusal and dim; a switch requests the other layout and reloads, replacing the first-login re-apply request')
 none=session(3840,2160,22,locale='enUS',screen=(3840,2160))
 assert not none.g.DevilForever_StatusStripLayouts.shown and none.g.DevilForever_StatusStripThemes.shown
 edited=session(3840,2160,22,locale='enUS',screen=(3840,2160),layout_v2='current')

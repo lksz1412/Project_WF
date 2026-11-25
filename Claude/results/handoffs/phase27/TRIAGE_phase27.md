@@ -86,3 +86,14 @@ Report: same B, critical 0 · medium 1 · minor 2. Master checked `Presets/V2.lu
 | minor 1 (tried mark set before Restore), minor 2 (ReloadUI from timer without hardware input unverified) | Minor → final report | not fixed |
 
 Already decided (carry): R175 over R173 for the tab row; re-apply also resets Quartz bar spots and Grid2 cells of the active version (development overwrite, R162).
+
+## Step 62 review (code ③, 3 rounds) — 2026-11-25
+
+Report: same B, critical 0 · medium 1 · minor 2. Master checked `Presets/V2.lua:253`, `ThemeSwitcher.lua:254–260`, check list :70, :115–116.
+
+| Finding | Master verdict | Fix (what · why) |
+|---|---|---|
+| M1 — first-login notice says pressing the status strip version switch applies the reserved re-apply; for an Old profile the switch (shows Old while the revision is old) cancels the `-v1` reservation and applies New | Confirmed. The notice sends an Old user to the wrong version | Same A: notice and check list name only `/dfp go` for applying the reservation (the switch stays as a normal "go to the other version" control, still never blocked) |
+| minor 1 (refit also moves a window dragged under an old rule — accepted default, R188), minor 2 (IME refresh only once per session; principle unverified) | Minor → final report | not fixed |
+
+Re-check: text-only fix (notice and check list wording); master confirmed `V2.lua:252` and no remaining "버전 전환(New/Old)을 누르면" in V2.lua or the check list (word-level change, master check per §3).

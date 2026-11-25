@@ -11,16 +11,20 @@ local units = {
   ["대상의 소환수의 대상"]="targetpettarget",["대상의 소환수의 대상의 대상"]="targetpettargettarget",
 }
 -- oldCells: Grid2 cell width and height of the Old (V1) layout; New uses the preset's square cells.
+-- totemY / totemButton: top and button side (pixels) of the preset's Dominos totem bar (Presets/<name>.lua
+-- Dominos frames.totem: scale pixel * totemButton / 30 for 30-unit buttons).
 local modes = {
-  fhd={width=1920,height=1080,totemY=748,castHeight=30,smallWidth=123,smallHeight=29,oldCells={96,32}},
-  qhd={width=2560,height=1440,totemY=1056,castHeight=34,smallWidth=166,smallHeight=39,oldCells={120,44}},
-  uhd={width=3840,height=2160,totemY=1636,castHeight=40,smallWidth=251,smallHeight=58,oldCells={154,56}},
+  fhd={width=1920,height=1080,totemY=748,totemButton=44,castHeight=30,smallWidth=123,smallHeight=29,oldCells={96,32}},
+  qhd={width=2560,height=1440,totemY=1056,totemButton=52,castHeight=34,smallWidth=166,smallHeight=39,oldCells={120,44}},
+  uhd={width=3840,height=2160,totemY=1636,totemButton=72,castHeight=40,smallWidth=251,smallHeight=58,oldCells={154,56}},
 }
+-- The Dominos totem bar: summon, four totems and recall (Dominos bars/totemBar/bar.lua), 2 units apart.
+local TOTEM_BUTTONS, TOTEM_SPACING = 6, 2
 -- Revisions of the New (V2) and Old (V1) layouts written into the PitBull4 profile (dfLayoutRevision);
 -- the version switcher shows New only for a profile that holds the V2 revision. A profile holding an
 -- older revision of its version gets that version re-applied once at login (below).
-Core.Presets.layoutV2Revision = 3
-Core.Presets.layoutV1Revision = 1
+Core.Presets.layoutV2Revision = 4
+Core.Presets.layoutV1Revision = 2
 local function signature(row, fields)
   local parts = {}
   for _, key in ipairs(fields) do parts[#parts+1] = tostring(row[key]) end
@@ -52,7 +56,7 @@ for name, m in pairs(modes) do
     Core.Presets:Register(base)
     for _, version in ipairs({1,2}) do
       local def = {name=name .. "-v" .. version,layoutOnly=true,fragments={}}
-      local root, spaces, quartz, grid = nil, {}, {}, nil
+      local root, spaces, quartz, grid, totemBar = nil, {}, {}, nil, nil
       for _, f in ipairs(base.fragments) do
         if f.folder == "PitBull4" and not f.namespace and f.values.layouts then root=Core.CopyTable(f.values) end
         if f.folder == "PitBull4" and f.namespace then
@@ -66,6 +70,11 @@ for name, m in pairs(modes) do
             or f.namespace == "Pet") then
           local copy=Core.CopyTable(f);quartz[copy.namespace]=copy.values
           def.fragments[#def.fragments+1]=copy
+        elseif f.folder == "Dominos" and type(f.values.frames) == "table" and type(f.values.frames.totem) == "table" then
+          -- the totem bar only: Old keeps the preset's spot, New moves it under the player frame (below)
+          totemBar={folder=f.folder,savedVariable=f.savedVariable,addonVersion=f.addonVersion,version=1,section=f.section,
+            profile=f.profile,values={frames={totem=Core.CopyTable(f.values.frames.totem)}}}
+          def.fragments[#def.fragments+1]=totemBar
         elseif f.folder == "Grid2" and f.namespace == "Grid2Layout" then
           -- the window spot is the same in both layouts (left of the quest tracker)
           grid={folder=f.folder,savedVariable=f.savedVariable,addonVersion=f.addonVersion,version=1,section=f.section,
@@ -95,14 +104,13 @@ for name, m in pairs(modes) do
         root.dfAuraGeometry["대상"].above=false
         root.dfAuraGeometry["대상의 소환수"]={above=false}
         root.dfLayoutRevision=version == 2 and Core.Presets.layoutV2Revision or Core.Presets.layoutV1Revision
+        -- the player's totem timer: Old keeps its preset location without an offset
+        local timer=spaces.Totems.layouts["보통"]
+        timer.dfOffsetX,timer.dfOffsetY=0,0
         if version == 2 then
           local pixel=root.dfPixel
           local main, companion=root.layouts["보통"],root.layouts["소환수와 주시"]
           local w,h,cw,ch=main.size_x,main.size_y,companion.size_x,companion.size_y
-          -- the player's totem timer (four totem slots) sits above the player frame, right-aligned,
-          -- between the frame and its aura rows (raised by top_margin below)
-          local timer=spaces.Totems.layouts["보통"]
-          timer.location="out_top_right"
           local icon=15*timer.size
           local outside=main.indicator_root_outside_margin or 0
           local gap=m.castHeight+4
@@ -145,7 +153,24 @@ for name, m in pairs(modes) do
           for label, width in pairs({["플레이어"]=w,["대상"]=w,["플레이어의 소환수"]=cw,["주시 대상"]=cw,["대상의 소환수"]=cw}) do
             root.dfAuraGeometry[label]={above=true,width=width}
           end
-          root.dfAuraGeometry["플레이어"].top_margin=math.ceil(outside+icon+4)
+          -- the Dominos totem bar centred under the player frame at the preset's totem row (between the
+          -- cast row and the action bars); the totem timer right of it, vertically centred on it
+          local button=m.totemButton
+          local totemWidth=TOTEM_BUTTONS*button+(TOTEM_BUTTONS-1)*TOTEM_SPACING*button/30
+          local totemX=xPlayer+w/2-totemWidth/2
+          if totemBar then
+            local totem=totemBar.values.frames.totem
+            -- from the screen's top centre like the unit frames, so a wider screen keeps it under the player
+            totem.point,totem.relPoint="TOPLEFT","TOP"
+            totem.x,totem.y=(totemX-m.width/2)*30/button,-m.totemY*30/button
+            -- the runtime rescale signature (DevilForever_Skin_Dominos) follows the new spot
+            if type(totem.dfGeometry) == "table" then
+              for _, key in ipairs({"point","relPoint","x","y"}) do totem.dfGeometry[key]=totem[key] end
+            end
+          end
+          timer.location="out_bottom_left"
+          timer.dfOffsetX=totemX+totemWidth+8-(xPlayer-outside)
+          timer.dfOffsetY=m.totemY+(button-icon)/2-(bottom+outside)
           -- every cast bar (player, target, focus, pet) sits in the cast row under its frame, as wide as the frame
           for module, x in pairs({Player=xPlayer,Target=xTarget,Focus=xFocus,Pet=xPet}) do
             local q=quartz[module]
@@ -188,9 +213,11 @@ for name, m in pairs(modes) do
 end
 
 -- Re-apply after an update: a PitBull4 profile whose layout revision is older than this package's
--- revision of the version it is on (New = dfLayoutV2) gets that version's compare preset applied once,
--- the same way the status strip's New/Old switch does (Presets:Restore then Profiles:Go, which reloads
--- the interface). Out of combat only; one attempt per profile and revision; one chat line after reload.
+-- revision of the version it is on (New = dfLayoutV2) gets that version's compare preset requested
+-- once (Presets:Restore, as the status strip's New/Old switch does) and one chat line saying how to
+-- apply it: /dfp go (the reload needs the player's own action; one started from a timer is not
+-- carried out). The switch is not a way to apply it: it goes to the other version and replaces this
+-- request. Out of combat only; one attempt per profile and revision.
 local reapply = CreateFrame("Frame")
 local function profileState()
   local addon = _G.PitBull4
@@ -222,21 +249,14 @@ function Core.Presets:ReapplyOutdatedLayout()
     for _, line in ipairs(type(lines) == "table" and lines or {lines}) do Core.Profiles:Print(line) end
     return false, "restore"
   end
-  Core:DBTable("layoutRevision").notice = (new and "New" or "Old") .. " 배치를 이 판에 맞춰 다시 적용했습니다(PitBull4·Quartz·Grid2)."
-  local went, why = Core.Profiles:Go()
-  if not went then
-    Core:DBTable("layoutRevision").notice = nil
-    Core.Profiles:Print("안 함: " .. tostring(why))
-    return false, "go"
-  end
+  Core.Profiles:Print((new and "New" or "Old") .. " 배치를 이 판에 맞춰 다시 적용하도록 예약했습니다 — /dfp go 를 입력하면"
+    .. " 적용됩니다(PitBull4·Quartz·Grid2·Dominos 토템 막대).")
   return true
 end
 reapply:RegisterEvent("PLAYER_ENTERING_WORLD")
 reapply:SetScript("OnEvent", function(self, event)
   if event == "PLAYER_ENTERING_WORLD" then
     self:UnregisterEvent("PLAYER_ENTERING_WORLD")
-    local store = Core:DBTable("layoutRevision")
-    if store.notice then Core.Profiles:Print(store.notice); store.notice = nil end
   else
     self:UnregisterEvent("PLAYER_REGEN_ENABLED")
   end

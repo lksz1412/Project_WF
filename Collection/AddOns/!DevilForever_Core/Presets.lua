@@ -287,7 +287,7 @@ function Presets:Restore(name)
     local ok, why = Core.Profiles:SetPending({action = "preset", name = name})
     if not ok then return false, why end
     Core:DBTable("preset").unfinished = name
-    local lines = {name .. " 비교 배치 예약 — PitBull4, Quartz, Grid2 창 자리만 적용: /dfp go"}
+    local lines = {name .. " 비교 배치 예약 — PitBull4, Quartz, Grid2, Dominos 토템 막대 자리만 적용: /dfp go"}
     local family, screen = name:match("^(.-)%-v%d+$"), self:PickForScreen()
     if family and defs[family] and screen and family ~= screen then
       lines[#lines + 1] = "주의: " .. name .. " 은 " .. family .. " 화면 기준 배치 — 이 화면은 " .. screen

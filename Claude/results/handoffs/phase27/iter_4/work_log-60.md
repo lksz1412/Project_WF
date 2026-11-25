@@ -364,3 +364,163 @@ Finding M1: before this fix, `profileState` (`Presets/V2.lua:202-204`) read a Pi
 Raw outputs: `<scratch>/s60/s61r_*.txt`. The new foreign-profile case was not run against the code from before the fix (no mutation run). Reasoning instead: the old code read a missing flag as Old at revision 0, below `layoutV1Revision` 1, so it would have requested `-v1` and reloaded.
 
 Minor 1 (tried mark set before Restore) and minor 2 (ReloadUI from a timer without hardware input, unverified in game) are not fixed, per triage.
+
+## Step 62 (R186-R195, R198): chat window fit, IME, first-login re-apply, level/name, totem bar and timer, aura rows
+
+Read before editing:
+- `DevilForever_ChatSetup/Chattynator.lua` 1-353 (whole).
+- `Chattynator/Display/Main.lua` 1-300.
+- upstream `Chattynator-237/Chattynator/Display/Main.lua` UpdateEditBox.
+- `Chattynator/Core/Fonts.lua` 95-143.
+- `Chattynator/Skins/DevilForever.lua` (edit box grep).
+- `DevilForever_Skin_NativeChat/Skin.lua` 1-100.
+- `DevilForever_Appearance/Composition.lua` 1-62, 130-202, 455-518.
+- `Presets/V2.lua` 1-250.
+- `Presets/{fhd,qhd,uhd}.lua`: LuaTexts loop, companion/focus copies 568-600, Dominos frames 300-345, Totems 470-482, 640-670.
+- `Presets.lua` 225-300.
+- `Profiles.lua` 225-260, 315-341, 398-410.
+- `API.lua` 80-110.
+- `DevilForever_Skin_StatusStrip/ThemeSwitcher.lua` 230-285.
+- `PitBull4/UnitFrameLayout.lua` 430-470, 500-600, 639-660, 805-862, 1280-1345, 1440-1560.
+- `PitBull4/Main.lua` 495-515.
+- `PitBull4/Modules/Totems/Totems.lua` (grep for placement and size).
+- `Dominos/bars/totemBar/bar.lua` 90-260.
+- `Dominos/core/buttonBar.lua` 195-300.
+- `Dominos/core/frame.lua` 700-760.
+- tests: `chatsetup/run.py` 896-1120 and 1370-1504; `layoutv2/run.py` 1-140, 262-500, 500-607; `statusstrip/theme_switcher.py` 86-120 and 345-380.
+- check list 98-121; install guide line 54.
+
+Read only, user saved settings: `WTF/Account/LKZ1412/SavedVariables/{Chattynator.lua, !DevilForever_Core.lua(.bak), PitBull4.lua(.bak)}` and `WTF/Account/LKZ1412/92/성좌-우부르카/SavedVariables/{DevilForever_ChatSetup.lua, Chattynator.lua}`. Only window, layout and request entries were read; no chat logs.
+- Timestamps: 21:03:44 and 21:03:47 (the `/dfp go` reload) and 21:11:25 (later).
+- The 20:41 files were rewritten before I opened the Chattynator files, so they show the post-install state, not the pre-install one.
+
+### Diagnosis
+
+| Item | Grade | Evidence |
+|---|---|---|
+| (c) window 1 never follows | confirmed | Per-character `DevilForever_ChatSetup.lua`: `layout.windows = {nil, {…}, {…}}`, so window 1 has no receipt. `FollowChattynatorLayout` drops a receipt that no longer matches (`Chattynator.lua:297-298` before this change) and never moves a window without one. Chattynator raises a window below its resize bounds: `Display/Main.lua:11` `self:SetResizeBounds(240, 140)`, then saves the raised size (`:16-19` OnSizeChanged → SavePosition/SaveSize). The user's window 1 is exactly `140.0000152587891` high, and the native-rectangle seed height was 135.56 (`managedLayout.roles.public.height`), so its receipt could never match. |
+| (c) windows 2/3 "unchanged" | confirmed | After the go reload the receipts 2 and 3 equal the Chattynator windows (532.44, −984.11, 535.33×200.89 and 1610.22, …). The follow ran and placed them by the Step 61 rule: message top = panel top 1820 px, sides = the panel rectangle with no inset. |
+| (c) window 3 text over the border and to the right edge | confirmed | The Step 61 rule put the message area exactly on the panel rectangle for a prepared composition (`panelInner`: "the code places no border inside it"). The deck picture paints a frame along the screen edges and the panel boundaries. Luminance sampled from `Themes/dwarf/Composition/uhd_deck_reviewed.tga` (2048×512, the user's theme `dwarf`, `CoreDB.theme.active`): bright frame at texels ~2-14 (left edge), ~509-522 (chat1/chat2 boundary), ~2030-2044 (right edge), which is ≈16 texels ≈ 30 px at uhd. Devil, fhd and qhd decks show the same pattern. The window's right side was the screen edge (1610.22 + 523.11 = 2133.3 units = 3840 px). |
+| (c) tab row in the action bar row (R187) | confirmed | Step 61 kept R175: window top = message top + 27 units, so the tab row (top 22 units) sat 27..5 units above the panel top. At the user's 0.5556 units/px that is 1771-1811 px, centre 1791 px, ≈21 px above the strip centre (1812 px) and inside the upper bar band. |
+| (a) 한/영 broken on the first login, fine after the go reload (R190) | mechanism unverified | Our code already sets scale 1 before anything else (`Display/Main.lua:247`). What restored IME both times was a later change to the finished box: the user's runtime `SetScale(1)` from scale ≠ 1, and the go reload. Nothing in our code differs between a fresh login and a reload (same PLAYER_ENTERING_WORLD path; the native chat skin's `SetFont` on `ChatFrame1EditBox` runs only for native windows, `styleRole`, and `result == "created"` is set for this character, so it may also touch the box — unverified whether it runs with Chattynator active). Default chosen: reproduce the user's working action at every load (scale 0.99, then 1 on the next frame, after Chattynator's setup), plus a one-line check. |
+| (b) switch dead after the first login | confirmed | Core SV (21:03:47 file): `pending = {name = "uhd-v2", armed = true, requestedAt = 1795608227, armedAt = 1795608227}`, so the first-login re-apply ran Restore and Go in the same second. Go armed the request and called ReloadUI (`Profiles.lua:333-341`). No reload followed until the user typed `/dfp go` (R191), so a ReloadUI from the 1 s timer (`V2.lua` re-apply, `C_Timer.After(1, …)`) is not carried out. While a request waits, every Restore is refused (`Profiles.lua:235-237` "이미 기다리는 요청이 있음 … /dfp go 또는 /dfp cancel"), which is exactly the user's chat line from the switch. After the go (21:11:25 file): `dfLayoutV2 = true`, `dfLayoutRevision = 3`, no pending, `tried["Default|-v2"] = 3`, so the switch works again (R191). |
+| (b) profile Old/revision 1 just before the go | not found | The 21:03:47 PitBull4 file shows `dfLayoutV2 = false`, `dfLayoutRevision = 1` while the tried mark says `-v2`. I found no code path in this session that writes revision 1 without a `-v1` apply; not explained. |
+| (d) level + name off centre | confirmed | Level and name are two texts at `Portrait` `center` (`Presets/*.lua` LuaTexts loop: `Lua:레벨` position 1, `Lua:이름` position 2). PitBull4 places several centre texts from an estimated width: `UnitFrameLayout.lua` `position_indicator_on_bar:center` → `SetPoint("LEFT", bar, "CENTER", -get_half_width(...))`, with `get_half_width` = `ASSUMED_TEXT_WIDTH * size` per text. So the pair starts at a fixed offset regardless of the real text width. One text is anchored at CENTER (`#indicators_and_texts == 1`). |
+| (e) totem bar beside the player | confirmed | Dominos `frames.totem` is a fixed TOPLEFT spot from the V1 design (uhd x 878 px). The layout-only presets carried no Dominos fragment, so New never moved it. |
+| (f) player aura rows raised | confirmed | V2.lua set `root.dfAuraGeometry["플레이어"].top_margin=math.ceil(outside+icon+4)` for the totem timer at `out_top_right`, and the target has no raise. |
+
+### What changed
+
+| Item | Change |
+|---|---|
+| (c) | `DevilForever_ChatSetup/Chattynator.lua`: `rootRect`, `partSizes`, `stripCentre` added. Prepared composition: panel sides move in by one composition joint (fhd 16 / qhd 20 / uhd 32 px). The tab row is centred on `appearance.ribbon` (window top = strip centre + 11 units) and the message top is never above the panel inner top. Sizes are raised to Chattynator's 240×140 bounds by growing upwards. `FIT_VERSION = 2`: a seeded profile below it has all three windows placed once more regardless of receipts; receipts are then kept for all three; after that a dragged window is released as before. The seed writes `layout.version = 2`. |
+| (a) | Same file: `addon.RefreshChattynatorEditBox()` at the PLAYER_ENTERING_WORLD timer (after seed and follow): `ChatFrame1EditBox:SetScale(0.99)`, then `SetScale(1)` on the next frame. |
+| (b) | `Presets/V2.lua` re-apply: Restore only (no Go, no timer reload), then one chat line naming `/dfp go` and the switch; the notice-after-reload mechanism is removed. `ThemeSwitcher.lua` cycle: a waiting `preset <active>-v1/-v2` request is cancelled and replaced by the switch's own request, so the switch never stays dead. |
+| (d) | `Presets/{fhd,qhd,uhd}.lua` LuaTexts loop (보통, 대상; copied to 소환수와 주시 and 주시): `Lua:레벨` `enabled=false`; `Lua:이름` code `Outline() return "%s %s",Level(unit),Name(unit)`, events + `UNIT_LEVEL`. One centred text in Old and New. |
+| (e) | `Presets/V2.lua`: the base Dominos fragment's `frames.totem` goes into both layout-only presets. Old keeps the preset spot; New gets x centred under the player frame, anchored TOPLEFT to the screen's TOP (a wider screen keeps it under the player), y = preset totem row (fhd 748 / qhd 1056 / uhd 1636 px, between the cast row with swing and the action bars). Its `dfGeometry` signature follows. `modes.totemButton` = 44/52/72 px. Bar width = 6 buttons + 5 × 2 units (Dominos `bars/totemBar/bar.lua`: summon, 4 totems, recall). The layout-only message reads "PitBull4, Quartz, Grid2, Dominos 토템 막대" (`Presets.lua:290`). |
+| (f) | `Presets/V2.lua`: no top_margin, so the player aura geometry equals the target's `{above=true,width=512}`. The PitBull4 totem timer stays on (R198): `out_bottom_left` with `dfOffsetX/dfOffsetY` = right of the Dominos totem bar + 8 px, vertically centred on it. Old: location unchanged (`out_right_bottom`), offsets 0. `PitBull4/UnitFrameLayout.lua` (patch): root indicators with `dfOffsetX`/`dfOffsetY` (frame units, right/down) move by that after their location; `Collection/patches/PitBull4.patch` regenerated (header unchanged). |
+| revisions | `layoutV2Revision` 3 → 4 and `layoutV1Revision` 1 → 2, so existing profiles get d-f through the re-apply request. |
+
+Old (V1) aura heights: V1 keeps the player `size_ratio .7` + `avoid_frame` rule and above = false for player and target (`V2.lua:94-95`). The totem timer in Old sits right of the player frame bottom, not in a buff row. No raise exists in Old, so it is left as it is.
+
+Numbers (window rule, prepared composition, joint inset; tab row centre vs strip centre):
+
+| Preset @ units/px | strip centre px | window 1 (x, top, w, h units) | tab row centre px | message top px (panel top) | message x px | bottom px |
+|---|---|---|---|---|---|---|
+| uhd @ 0.5556 (user, UI 0.64) | 1812 | 15.8, −995.7, 499.8, 184.3 | 1812.0 | 1840.8 (1820) | 32-928 / 994-1890 / 2934-3808 | 2124 |
+| fhd @ 0.7111 (UI 1) | 855 | 9.4, −597.0, 290.7, 151.1 | 855.0 | 877.5 (860) | 16-422 / 456-862 / 1502-1904 | 1052 |
+| qhd @ 0.5333 (UI 1) | 1180 | 8.7, −612.0, 311.3, 140.0 | 1168.1 / 1177.5 | 1198.1 (1186) | 20-600 / 642-1222 / 1966-2540 | 1410 |
+
+At qhd UI scale 1 the windows are below Chattynator's 140-unit minimum height, so they grow upwards and the tab row sits 2.5-12 px above the strip centre. At the user's uhd scale and at fhd it is exact.
+
+The user's windows under the new code (test `chattynator_users_saved_windows_are_placed_again_once`, built from the saved values): all three move (window 1 included), tab rows on the strip centre, message area inside the inner rectangle, right edge 2115.6 units < 2133.3 (screen), receipts 1-3 kept, `version = 2`. A later drag stays where the user put it.
+
+Totem bar and timer at fhd/qhd/uhd, New (layoutv2 test): bar centred under the player, top at the totem row, below the swing line, above the action bars; timer 8 px right of the bar, centred on it; neither overlaps any other rectangle in the screen map. The only exception is the `appearance.aux` art band behind the class/totem row, which the Old totem bar also sits on. The timer at uhd is right of 1670 px and below the focus column's cast row, so it does not overlap it.
+
+### Impact map
+
+| Place | Type | How found | Impact | Reason |
+|---|---|---|---|---|
+| `DevilForever_ChatSetup/Chattynator.lua` panelInner / prepared / follow / seed / PEW timer | the defect (c, a) | read whole | change | rules above |
+| `Chattynator/Display/Main.lua:11, :16-19, :228` (bounds, saving, message offsets) | Chattynator rules the placement relies on | read | check only | 240×140, TabsBar 22, message top 27 / left 2 / bottom 5 |
+| `DevilForever_Appearance/Composition.lua` `parts.sizes`, `active`, `partsShown` | read by panelInner | read | check only | joint sizes per preset |
+| `DevilForever_Skin_NativeChat/Skin.lua` edit box SetFont | other code touching ChatFrame1EditBox | read | check only | native windows only; not changed (IME cause unverified) |
+| `Presets/V2.lua` re-apply, modes, Dominos copy, totem/timer/aura lines, revisions | the defect (b, e, f) | read | change | |
+| `Profiles.lua:235-237, :315-341` CanRequest / Cancel / Go | APIs | read | check only | the switch cancels, then requests |
+| `ThemeSwitcher.lua` cycle | switch | read | change | takeover |
+| `Presets.lua:290` layout-only message | user-facing text | grep | change | Dominos totem bar now in the layout-only presets |
+| `Presets/{fhd,qhd,uhd}.lua` LuaTexts loop | the defect (d) | read | change | |
+| `PitBull4/UnitFrameLayout.lua` indicator layout | needed for (f) | read | change (patch) | offset for root indicators |
+| `Collection/patches/PitBull4.patch` | patch store | regenerate | change | |
+| `DevilForever_Skin_Dominos` dfGeometry rescale | reads the totem `dfGeometry` | grep | check only | signature kept in step |
+| `Dominos/core/frame.lua:714-750` saved position | reader of point/relPoint | read | check only | relPoint TOP supported |
+| tests chatsetup, layoutv2, theme_switcher | tests | read | change | new rules and cases |
+| check list §6 line 70, §10, §11, new §12; install guide line 54 | user docs | read | change | |
+| earlier sections of this log | record | - | no impact (record) | |
+
+### Commands (verdict lines)
+
+| Command | Verdict |
+|---|---|
+| `python -I Collection/tests/chatsetup/run.py` | rc=0 · `cases=45 passed=45 failed=0` |
+| `python -I Collection/tests/layoutv2/run.py` | rc=0 · 45 PASS lines |
+| `python -I Collection/tests/statusstrip/theme_switcher.py` | rc=0 |
+| `python -I Collection/tests/core/run.py` | rc=0 · `cases=109 passed=109 failed=0` |
+| `python -I Collection/tests/firststart/run.py` | rc=0 · `cases=29 passed=29 failed=0` |
+| `python -I Collection/tests/statusstrip/run.py` | rc=0 · `cases=20 passed=20 failed=0` |
+| `python -I Collection/tests/pitbull4/run.py` | rc=0 · `cases=6 passed=6 failed=0` |
+| `python -I Collection/tests/pitbull4runtime/run.py` | rc=0 · `cases=20 passed=20 failed=0` |
+| `python -I Collection/tests/castbars/run.py` | rc=0 · `cases=16 passed=16 failed=0` |
+| `python -I <devnull_run.py> Collection/tests/patches/run.py` | rc=0 · `cases=4 passed=4 failed=0` (without the wrapper: Git diff `nul` error, environment) |
+| `python -I Collection/tools/luacheck.py <Core> DevilForever_ChatSetup ThemeSwitcher.lua PitBull4/UnitFrameLayout.lua` | `checked=26 failed=0` |
+| `… patches.py regenerate --package PitBull4` | wrote 331827 bytes · header unchanged |
+| `… patches.py verify` | `verify patches=8 unmodified=20 failures=0` |
+| `python -I Collection/tools/extract.py` | rc=0 · `errors=0` |
+| `python -I Collection/tools/genregistry.py --check` | up to date |
+| `… build.py --dry-run --variant pitbull4` / `fuf` | rc=0 · 36 folders/2353 files · 38/2297 |
+
+Raw outputs: `<scratch>/s60/s62*.txt`. `tests/performance/run.py` needs `--dominos-zip` and was not run.
+
+### Open (for the master / user)
+
+- (a) The IME mechanism is unverified; the fix repeats the user's working action at every load. Check on a fresh login; if it still fails, the next candidate is the box's font object (`SetFontObject` with a font family copy, `Display/Main.lua:274`).
+- (c) The one-time re-placement moves all three windows of a seeded profile once, even one a user had moved under an earlier rule (no way to tell those apart; R188 says these were never moved).
+- (c) qhd at UI scale 1: the tab row sits up to 12 px above the strip centre (Chattynator's 140-unit minimum height).
+- (c) The joint inset is my default from the deck art samples (frame ≈16 texels). Themes other than dwarf/devil were not sampled.
+- (d) A very long name can still reach the percent text; PitBull4 texts have no width limit.
+- (e) The 30-unit Dominos totem button size is taken from the presets' own scale (pixel × button / 30), not measured in game. The Dominos class bar row (`frames.class`, uhd x 760) is unchanged and empty for a shaman.
+- (b) The Old/revision-1 state just before the go is not explained.
+
+## Step 62 review fix (M1)
+
+Input: `TRIAGE_phase27.md` "Step 62 review". Re-read before editing: `Presets/V2.lua` 193-262 (re-apply block), check list lines 70, 115-116, 126, install guide (grep `dfp go`, `버전 전환`: no such line), `tests/layoutv2/run.py` notice assertions, `tests/statusstrip/theme_switcher.py:373`.
+
+M1: the first-login notice told the player that pressing the status strip version switch applies the reservation. For a profile below this build's revision the switch shows Old (`ThemeSwitcher.lua` versionInUse needs `dfLayoutRevision == layoutV2Revision`), so pressing it cancels the reservation and requests the other version. For an Old profile that means New instead of the reserved Old.
+
+Fix:
+- The notice and its code comment name only `/dfp go` as the way to apply the reservation.
+- The check list describes the switch as an ordinary "go to the other version" control that is never blocked: pressing it drops the reservation. An earlier-build layout shows Old, so pressing it goes to New.
+- No code path changed (switch takeover as in Step 62).
+
+### Impact map
+
+| Place | Type | How found | Impact | Reason |
+|---|---|---|---|---|
+| `Presets/V2.lua` re-apply notice + comment | the defect | triage, read | change | `/dfp go` only |
+| `ThemeSwitcher.lua` cycle comment ("replaced by this one") | same behaviour described | read | check only | already says the switch replaces the request |
+| check list :70, :115, :116, :126 | user docs | grep `버전 전환` | change | apply = `/dfp go`; switch = other version, never blocked |
+| install guide | user doc | grep | no impact | no line on applying the reservation |
+| `tests/layoutv2/run.py` notice check | test | read | change | also asserts the notice does not name the switch |
+| `tests/statusstrip/theme_switcher.py:373` | test | read | check only | matches the unchanged prefix `다시 적용하도록 예약` |
+| earlier sections of this log | record | - | no impact (record) | |
+
+### Commands (verdict lines)
+
+| Command | Verdict |
+|---|---|
+| `python -I Collection/tests/layoutv2/run.py` | rc=0 · 45 PASS lines |
+| `python -I Collection/tests/statusstrip/theme_switcher.py` | rc=0 · 20 PASS lines |
+| `python -I Collection/tools/luacheck.py Collection/AddOns/!DevilForever_Core/Presets/V2.lua` | `checked=1 failed=0` |
+| `… build.py --dry-run --variant pitbull4` / `fuf` | rc=0 · 36 folders/2353 files · 38/2297 |
+
+Raw outputs: `<scratch>/s60/s62r*.txt`. Minor 1 and minor 2 are not fixed, per triage.

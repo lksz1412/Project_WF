@@ -106,24 +106,49 @@ end
 -- MESSAGE_BOTTOM units above the bottom of windows 2 and 3. Window 1 keeps the input box in its
 -- bottom part, below the message area.
 local MESSAGE_TOP, MESSAGE_LEFT, MESSAGE_BOTTOM = 27, 2, 5
+-- The tab row is the top TAB_ROW units of the window (Display/Main.lua TabsBar height).
+local TAB_ROW = 22
+-- Chattynator's resize bounds (Display/Main.lua SetResizeBounds): the client raises a smaller window
+-- to these and Chattynator saves the raised size.
+local MIN_WIDTH, MIN_HEIGHT = 240, 140
+-- Placement rule revision: a seeded profile below it has its three windows placed once again
+-- (the receipts of earlier rules can no longer match).
+local FIT_VERSION = 2
 local PANELS = {public = "appearance.chat1", group = "appearance.chat2", system = "appearance.chat3"}
 
--- Inner rectangle of a role's chat panel as the appearance code draws it, in UIParent units
--- (left, top, right, bottom; top and bottom as TOPLEFT y offsets), or nil without the layout.
--- Composition parts: the end caps and the joints between panels cover the panel edges.
--- Prepared composition surfaces: the panel rectangle itself (the code places no border inside it).
--- Individual panels: the top and bottom edge lines of border.size pixels.
-local function panelInner(role)
+-- Rectangle of an appearance item in root pixels (left, top, right, bottom; y grows downwards),
+-- with the pixel unit, or nil.
+local function rootRect(key)
   local core, appearance = DevilForever_Core, DevilForever_Appearance
   if type(core) ~= "table" or type(core.Edit) ~= "table" or type(core.Edit.Get) ~= "function"
       or type(appearance) ~= "table" or type(appearance.GetPixelUnit) ~= "function" then return end
-  local item = core.Edit:Get(PANELS[role])
+  local item = core.Edit:Get(key)
   local position, size = type(item) == "table" and item.position, type(item) == "table" and item.size
   local pixel = appearance:GetPixelUnit(UIParent)
   if type(position) ~= "table" or type(size) ~= "table" or position.point ~= "TOPLEFT"
       or position.relativeTo ~= "DevilForever_AppearanceRoot" or type(pixel) ~= "number" or pixel <= 0 then return end
-  local left, top = position.x, -position.y
-  local right, bottom = left + size.width, top + size.height
+  return position.x, -position.y, position.x + size.width, -position.y + size.height, pixel
+end
+
+-- Composition part sizes of the active screen preset (fhd, qhd, uhd), or nil.
+local function partSizes(composition)
+  local core = DevilForever_Core
+  local active = core and core.Presets and core.Presets.GetActive and core.Presets:GetActive()
+  local family = type(active) == "string" and active:match("^(%a+)")
+  local parts = type(composition) == "table" and type(composition.parts) == "table" and composition.parts.sizes
+  return type(parts) == "table" and family and parts[family] or nil
+end
+
+-- Inner rectangle of a role's chat panel as the appearance code draws it, in UIParent units
+-- (left, top, right, bottom; top and bottom as TOPLEFT y offsets), or nil without the layout.
+-- Composition parts: the end caps and the joints between panels cover the panel edges.
+-- Prepared composition surfaces: the deck picture paints a frame along the screen edges and the
+-- panel boundaries (about 16 texels of the 2048-texel picture), so the sides move in by one joint.
+-- Individual panels: the top and bottom edge lines of border.size pixels.
+local function panelInner(role)
+  local left, top, right, bottom, pixel = rootRect(PANELS[role])
+  if not left then return end
+  local core = DevilForever_Core
   local composition = DevilForever_Composition
   local plan = type(composition) == "table" and composition.active and composition.partsShown and composition.partsPlan
   if plan then
@@ -134,22 +159,38 @@ local function panelInner(role)
     end
     left = math.max(left, sizes.cap)
     right = math.min(right, plan.bounds.width - sizes.cap)
-  elseif not (type(composition) == "table" and composition.active) then
+  elseif type(composition) == "table" and composition.active then
+    local sizes = partSizes(composition)
+    if sizes then left, right = left + sizes.joint, right - sizes.joint end
+  else
     local border = core.Theme and core.Theme.Get and core.Theme:Get("border.size")
     if type(border) == "number" then top, bottom = top + border, bottom - border end
   end
   return left * pixel, -top * pixel, right * pixel, -bottom * pixel
 end
 
--- Window of a role whose message area is the panel's inner rectangle (window 1: the area above
--- its input box), or nil without the appearance layout.
+-- Centre of the theme strip above the chat panels as a TOPLEFT y offset in UIParent units, or nil.
+local function stripCentre()
+  local _, top, _, bottom, pixel = rootRect("appearance.ribbon")
+  if not top then return end
+  return -(top + bottom) / 2 * pixel
+end
+
+-- Window of a role: its tab row centred on the theme strip, its message area's left, right and
+-- bottom on the panel's inner rectangle (window 1: the area above its input box) and its top
+-- MESSAGE_TOP below the window top, never above the panel's inner top. A window smaller than
+-- Chattynator's resize bounds grows upwards. Nil without the appearance layout.
 local function prepared(role)
   local left, top, right, bottom = panelInner(role)
   if not left then return end
   local x = math.max(0, left - MESSAGE_LEFT)
-  local windowTop = top + MESSAGE_TOP
+  local strip = stripCentre()
+  local windowTop = strip and strip + TAB_ROW / 2 or top + MESSAGE_TOP
+  windowTop = math.min(windowTop, top + MESSAGE_TOP)
   local windowBottom = role == "public" and bottom or bottom - MESSAGE_BOTTOM
-  return {"TOPLEFT", "UIParent", "TOPLEFT", x, windowTop}, {right - x, windowTop - windowBottom}
+  local width = math.max(MIN_WIDTH, right - x)
+  local height = math.max(MIN_HEIGHT, windowTop - windowBottom)
+  return {"TOPLEFT", "UIParent", "TOPLEFT", x, windowBottom + height}, {width, height}
 end
 
 local function placements(first)
@@ -212,7 +253,7 @@ local function seed(b, state, profile)
   state.lfgTab = lookingForGroup.name
   state.lfg = lfg[1]
   state.layout = {preset = DevilForever_Core and DevilForever_Core.Presets and DevilForever_Core.Presets:GetActive(),
-    windows = {copyPlace(seeded[1]), copyPlace(seeded[2]), copyPlace(seeded[3])}}
+    version = FIT_VERSION, windows = {copyPlace(seeded[1]), copyPlace(seeded[2]), copyPlace(seeded[3])}}
 end
 
 local frame = CreateFrame("Frame")
@@ -283,6 +324,9 @@ function addon.RouteChattynatorLookingForGroup()
 end
 
 -- Windows still at the place this module gave them follow the active preset and screen scale.
+-- A seeded profile from an earlier placement rule (layout version below FIT_VERSION) has its three
+-- windows placed once more whatever their receipts say: earlier rules gave sizes Chattynator raised
+-- to its resize bounds, so their receipts no longer matched windows nobody moved.
 function addon.FollowChattynatorLayout()
   local b = bridge()
   if not b or inCombat("layout") then return false end
@@ -290,25 +334,42 @@ function addon.FollowChattynatorLayout()
   local receipt = state and type(state.layout) == "table" and state.layout.windows
   if type(receipt) ~= "table" then return false end
   local windows = b.Get(b.Options.WINDOWS)
-  local changed = false
+  local refit = (tonumber(state.layout.version) or 1) < FIT_VERSION
+  local changed, placedAll = false, true
   for index, role in ipairs(ROLES) do
     local window, placed = windows[index], receipt[index]
+    if refit and window and type(window.position) == "table" and type(window.size) == "table" then
+      placed = window
+    end
     if placed then
       if not window or not same(window.position, placed.position) or not same(window.size, placed.size) then
         receipt[index] = nil
       else
         local position, size = prepared(role)
-        if position and not (same(position, window.position) and same(size, window.size)) then
+        if not position then
+          placedAll = false
+        elseif not (same(position, window.position) and same(size, window.size)) then
           window.position, window.size = position, size
-          receipt[index] = copyPlace(window)
           changed = true
         end
+        if position then receipt[index] = copyPlace(window) end
       end
     end
   end
+  if refit and placedAll then state.layout.version = FIT_VERSION end
   state.layout.preset = DevilForever_Core and DevilForever_Core.Presets and DevilForever_Core.Presets:GetActive()
   if changed then b.WindowsChanged() end
   return changed
+end
+
+-- Hangul/English (IME) switching in ChatFrame1EditBox comes back after a scale change on the box
+-- once Chattynator has set it up; every load gives it one change that ends at scale 1.
+function addon.RefreshChattynatorEditBox()
+  local box = ChatFrame1EditBox
+  if type(box) ~= "table" or type(box.SetScale) ~= "function" then return false end
+  box:SetScale(0.99)
+  C_Timer.After(0, function() box:SetScale(1) end)
+  return true
 end
 
 frame:RegisterEvent("PLAYER_ENTERING_WORLD")
@@ -322,6 +383,7 @@ frame:SetScript("OnEvent", function(self, event, message)
     later("seed", function()
       addon.SeedChattynator()
       addon.FollowChattynatorLayout()
+      addon.RefreshChattynatorEditBox()
     end)
   elseif event == "PLAYER_REGEN_ENABLED" then
     self:UnregisterEvent("PLAYER_REGEN_ENABLED")

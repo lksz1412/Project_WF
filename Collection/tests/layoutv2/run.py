@@ -19,7 +19,9 @@ def session(mode,height,width,saved=None,ui=1,before_boot=None):
     factor=768/height
     g={'UIParent':{'GetEffectiveScale':lambda self:ui,'GetHeight':lambda self:768/ui},
        'PixelUtil':{'GetPixelToUIUnitFactor':lambda:factor},
-       'ChatFontNormal':{'GetFont':lambda self:('font',14)}}
+       'ChatFontNormal':{'GetFont':lambda self:('font',14)},
+       # a native action button, so the presets register their Dominos frames (totem bar included)
+       'ActionButton1':{'GetSize':lambda self:(45,45),'GetHitRectInsets':lambda self:(0,0,0,0)}}
     s=Session(registry='generated',extra_files=(),saved=saved,globals_=g,collection_presets=True)
     s.lua.execute('function GetPhysicalScreenSize() return %d,%d end'% (width,height))
     s.lua.execute('TEST_meta.PitBull4={Version="v4.2.50-forever.1"};TEST_meta.Quartz={Version="3.8.0"}')
@@ -128,6 +130,9 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),
     assert back.sv('Quartz3DB')['namespaces']['Swing']['profiles']['Default']['swingposition']=='top'
     assert back.sv('Quartz3DB')['namespaces']['Pet']['profiles']['Default']['point']=='TOPLEFT'
     assert pback['dfAuraGeometry']['플레이어']['size_ratio']==.7 and pback['dfAuraGeometry']['플레이어']['avoid_frame']
+    # Old: the totem timer at its preset spot (right of the player frame's bottom), no offset
+    tb=back.sv('PitBull4DB')['namespaces']['Totems']['profiles']['Default']['layouts']['보통']
+    assert (tb['location'],tb['dfOffsetX'],tb['dfOffsetY'])==('out_right_bottom',0,0),tb
     assert not back.errors(),back.errors()
     again=session(mode,height,width,request(back,mode),ui=.64)
     pagain=again.sv('PitBull4DB')['profiles']['Default']
@@ -413,6 +418,8 @@ def aura_bands(profile,cfg,label,row,frame,shown):
         bands.append((bx,by,container.width,maximum))
     return bands
 
+TOTEM_BUTTON={'fhd':44,'qhd':52,'uhd':72}  # Presets/<mode>.lua Dominos frames.totem scale pixel*button/30
+ACTION_BAR_TOP={'fhd':802,'qhd':1118,'uhd':1724}  # Presets/<mode>.lua Dominos frames[1] y
 def default_screen_map(mode,width,height,v2=False):
     s=session(mode,height,width)
     if v2:s=session(mode,height,width,request(s,mode+'-v2'))
@@ -462,6 +469,22 @@ def default_screen_map(mode,width,height,v2=False):
         if f['folder']=='Grid2' and f['namespace']=='Grid2Layout':grid['Grid2Layout'].update(f['values'])  # V2: the window spot only
     raid=_grid2_rects(grid['Grid2Layout'],grid['Grid2Frame'],width,height,factor,40)
     party=_grid2_rects(grid['Grid2Layout'],grid['Grid2Frame'],width,height,factor,5)
+    # Dominos totem bar (the highest fragment version of the layout wins) and the PitBull4 totem timer
+    totem=None
+    for f in sorted(layout['fragments'].values(),key=lambda f:f['version']):
+        if f['folder']=='Dominos' and 'totem' in (f['values'].get('frames') or {}):totem=f['values']['frames']['totem']
+    button=TOTEM_BUTTON[mode]
+    rects['dominos totem']=_point(width,height,totem['relPoint'],totem['point'],totem['x']*totem['scale']/pixel,
+                                  totem['y']*totem['scale']/pixel,6*button+5*2*button/30,button)
+    timer=ns['Totems']['profiles']['Default']['layouts']['보통']
+    icon=15*timer['size'];span=4*icon+3*timer['totem_spacing']*icon/50
+    outside=p['layouts']['보통'].get('indicator_root_outside_margin',0);pl=rects['unit 플레이어']
+    if timer['location']=='out_bottom_left':
+        tx,ty=pl[0]-outside,pl[1]+pl[3]+outside
+    else:
+        assert timer['location']=='out_right_bottom',timer['location']
+        tx,ty=pl[0]+pl[2]+outside,pl[1]+pl[3]+outside-icon
+    rects['totem timer']=(tx+timer.get('dfOffsetX',0),ty+timer.get('dfOffsetY',0),span,icon)
     return rects,raid,party
 
 # Grid2 left of the quest tracker (Blizzard's objective tracker, right side; top at about 24 % and its
@@ -525,21 +548,27 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),
         r=rects['unit '+label]
         assert pet[0]-1e-6<=r[0] and r[0]+r[2]<=pet[0]+pet[2]+1e-6 and r[1]>=pet[1]+pet[3],(label,r,pet)
     assert p['units']['대상의 대상']['enabled'] is True and p['units']['대상의 대상의 대상']['enabled'] is True
-    assert p['dfLayoutRevision']==s.core.Presets.layoutV2Revision==3
-    # the totem timer sits above the player frame (right-aligned), under the player's aura rows; the
-    # player-focus and focus-target gaps are one frame gap each
-    timer=s.sv('PitBull4DB')['namespaces']['Totems']['profiles']['Default']['layouts']['보통']
-    icon=15*timer['size'];outside=p['layouts']['보통'].get('indicator_root_outside_margin',0)
-    assert timer['location']=='out_top_right' and timer['attach_to']=='root'
-    for k,b in rects.items():
-        if k.startswith('auras 플레이어 '):assert b[1]+b[3]<=player[1]-outside-icon+1e-6,(mode,k,b,player)
-    span=4*icon+3*timer['totem_spacing']*icon/50
-    totems=(player[0]+player[2]-span,player[1]-outside-icon,span,icon)
-    hits=[k for k,r in rects.items() if overlaps(totems,r)]
-    assert not hits,(mode,totems,hits)
+    assert p['dfLayoutRevision']==s.core.Presets.layoutV2Revision==4
+    # player and target aura rows at the same height above their frames (no raise)
+    assert p['dfAuraGeometry']['플레이어']=={'above':True,'width':player[2]}==p['dfAuraGeometry']['대상'],(mode,p['dfAuraGeometry']['플레이어'])
+    for kind in ('buffs','debuffs'):
+        a,b=rects['auras 플레이어 %s alone'%kind],rects['auras 대상 %s alone'%kind]
+        assert abs(a[1]-b[1])<1e-6 and abs(a[3]-b[3])<1e-6,(mode,kind,a,b)
+    # Dominos totem bar centred under the player frame, between the cast row (Quartz bar and swing) and the
+    # action bars; the PitBull4 totem timer right of it, vertically centred on it; both clear of everything
+    bar,timer=rects['dominos totem'],rects['totem timer']
+    q=rects['quartz Player'];swing=q[1]+q[3]+4+4
+    assert abs(bar[0]+bar[2]/2-(player[0]+player[2]/2))<1e-6,(mode,bar,player)
+    assert bar[1]>=swing and bar[1]+bar[3]<=ACTION_BAR_TOP[mode],(mode,bar,swing)
+    assert abs(timer[0]-(bar[0]+bar[2]+8))<1e-6 and abs(timer[1]+timer[3]/2-(bar[1]+bar[3]/2))<1e-6,(mode,timer,bar)
+    assert timer[1]+timer[3]<=ACTION_BAR_TOP[mode] and timer[0]+timer[2]<=width,(mode,timer)
+    # the aux panel is the art band behind the class and totem bar row (Old's totem bar sits on it too)
+    for name in ('dominos totem','totem timer'):
+        hits=[k for k,r in rects.items() if k not in (name,'edit appearance.aux') and overlaps(rects[name],r)]
+        assert not hits,(mode,name,rects[name],hits)
     gap={'fhd':34,'qhd':38,'uhd':44}[mode]  # one frame gap (cast height + 4) between player, focus and target
     assert abs(focus[0]-(player[0]+player[2])-gap)<1e-6 and abs(target[0]-(focus[0]+focus[2])-gap)<1e-6,(mode,player,focus,target)
-    print('PASS',mode,width,'V2 default: focus centred %.0f with equal side gaps, totem timer above the player (clear of every rectangle) under its auras, one aura table %s, target-pet chain under the target-pet'%(focus[0]+focus[2]/2,size))
+    print('PASS',mode,width,'V2 default: focus centred %.0f with equal side gaps, player/target aura rows level, Dominos totem bar %s centred under the player and the totem timer %s beside it (clear of every rectangle), one aura table %s, target-pet chain under the target-pet'%(focus[0]+focus[2]/2,tuple(round(v) for v in bar),tuple(round(v) for v in timer),size))
 src={m:(A/'!DevilForever_Core/Presets'/(m+'.lua')).read_text(encoding='utf-8') for m in ('fhd','qhd','uhd')}
 for m,cell in (('fhd',88),('qhd',116),('uhd',176)):
     assert '["frameWidth"]=%d,["frameHeight"]=%d'%(cell,cell) in src[m] and '["anchor"]="TOPRIGHT"' in src[m],m
@@ -566,6 +595,10 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160)]
         for layout in ('소환수와 주시','주시'):
             assert abs(px(layout,'Lua:이름')-NAME_FONT[mode])<1e-6,(mode,label,layout,px(layout,'Lua:이름'))
         assert abs(px('대상의대상','Lua:이름')-NAME_FONT[mode]*.75)<1e-6,(mode,label)
+        for layout in ('보통','대상','소환수와 주시','주시'):  # level and name: one centred text
+            el=texts[layout]['elements']
+            assert el['Lua:레벨']['enabled'] is False and el['Lua:이름']['location']=='center',(mode,label,layout)
+            assert el['Lua:이름']['code']=='Outline() return "%s %s",Level(unit),Name(unit)' and el['Lua:이름']['events']['UNIT_LEVEL'],(mode,label,layout)
         print('PASS',mode,label,'name text: player/target %.2f px (x %d/%d), pet/focus %d px, bar texts unchanged'%(NAME_FONT[mode]*main/companion,main,companion,NAME_FONT[mode]))
     # A profile written before this change (name size 1 on the player/target frames) gets the new size
     # through the layout switch (the <preset>-v2 / -v1 requests behind New/Old and /dfp preset + /dfp go).
@@ -607,10 +640,12 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160)]
             assert (q['iconposition'],q['texture'])==(tq['iconposition'],tq['texture'])
     print('PASS',mode,'one player cast bar (Quartz): PitBull4 cast bar and cast texts off, also after the -v1/-v2 switch of an older profile')
 
-# Re-apply after an update: at login a PitBull4 profile whose dfLayoutRevision is older than this build's
-# revision of the version it is on gets that version's compare preset requested and the interface
-# reloaded once (the New/Old switch path); after the reload one chat line says so. Same revision: nothing.
-# In combat: deferred to PLAYER_REGEN_ENABLED. PitBull4's AceDB object is a stub over PitBull4DB.
+# Re-apply after an update: at login a PitBull4 profile the collection laid out whose dfLayoutRevision is
+# older than this build's revision of the version it is on gets that version's compare preset requested
+# (no reload: a reload from a timer is not carried out in the client) and one chat line saying how to
+# apply it (/dfp go or the status strip switch, which takes the request over). Same revision, a profile
+# without the layout flag, a tried revision: nothing. In combat: deferred to PLAYER_REGEN_ENABLED.
+# PitBull4's AceDB object is a stub over PitBull4DB.
 PB4_DB_STUB="""
   local none=function() return function() end end
   PitBull4={IterateHeaders=none,IterateFrames=none,db=setmetatable({GetCurrentProfile=function() return "Default" end},{__index=function(_,k)
@@ -623,31 +658,37 @@ def with_pb4(combat=False):
     return hook
 def reloads(s):return s.g.TEST_reloads
 def lines(s):return list(plain(s.g.TEST_prints).values())
-NOTICE={'-v2':'New 배치를 이 판에 맞춰 다시 적용했습니다(PitBull4·Quartz·Grid2).','-v1':'Old 배치를 이 판에 맞춰 다시 적용했습니다(PitBull4·Quartz·Grid2).'}
+NOTICE={'-v2':'New 배치를 이 판에 맞춰 다시 적용하도록 예약했습니다','-v1':'Old 배치를 이 판에 맞춰 다시 적용하도록 예약했습니다'}
+def notices(s):return [l for l in lines(s) if '다시 적용하도록 예약' in l]
 for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160)]:
     current=carry(session(mode,height,width))
     same=session(mode,height,width,current,before_boot=with_pb4())
     assert same.sv('PitBull4DB')['profiles']['Default']['dfLayoutRevision']==same.core.Presets.layoutV2Revision
-    assert reloads(same)==0 and not any('다시 적용' in l for l in lines(same)) and 'pending' not in same.sv('DevilForever_ProfilesDB'),(mode,lines(same))
+    assert reloads(same)==0 and not notices(same) and 'pending' not in same.sv('DevilForever_ProfilesDB'),(mode,lines(same))
     old_v1=carry(session(mode,height,width,request(session(mode,height,width),mode+'-v1')))
     assert old_v1['PitBull4DB']['profiles']['Default']['dfLayoutV2'] is False
     del old_v1['PitBull4DB']['profiles']['Default']['dfLayoutRevision']  # a collection Old profile from before revisions
-    stale_v2=copy.deepcopy(current);stale_v2['PitBull4DB']['profiles']['Default']['dfLayoutRevision']=2
+    stale_v2=copy.deepcopy(current);stale_v2['PitBull4DB']['profiles']['Default']['dfLayoutRevision']=3
     for suffix,stale in (('-v2',stale_v2),('-v1',old_v1)):
         s=session(mode,height,width,stale,before_boot=with_pb4())
-        assert reloads(s)==1,(mode,suffix,reloads(s),lines(s))
+        assert reloads(s)==0,(mode,suffix,reloads(s),lines(s))  # no reload of its own
         pending=s.sv('DevilForever_ProfilesDB')['pending']
-        assert (pending['action'],pending['name'],pending['armed'])==('preset',mode+suffix,True),(mode,suffix,pending)
-        store=s.sv('DevilForever_CoreDB')['layoutRevision']
+        assert (pending['action'],pending['name'],pending['armed'])==('preset',mode+suffix,False),(mode,suffix,pending)
         target=s.core.Presets.layoutV2Revision if suffix=='-v2' else s.core.Presets.layoutV1Revision
-        assert store['tried']=={'Default|'+suffix:target} and store['notice']==NOTICE[suffix],(mode,suffix,store)
+        assert s.sv('DevilForever_CoreDB')['layoutRevision']['tried']=={'Default|'+suffix:target}
+        said=notices(s)
+        # /dfp go is the one way named: the status strip switch goes to the other version instead
+        assert len(said)==1 and said[0].startswith('[DF 설정] '+NOTICE[suffix]) and '/dfp go' in said[0] and '버전 전환' not in said[0],(mode,suffix,said)
+        # the player types /dfp go: the next load holds this build's revision, and nothing more happens
+        dfp(s,'go');assert reloads(s)==1
         after=session(mode,height,width,carry(s),before_boot=with_pb4())
         pa=after.sv('PitBull4DB')['profiles']['Default']
         assert pa['dfLayoutRevision']==target and pa['dfLayoutV2'] is (suffix=='-v2'),(mode,suffix,pa.get('dfLayoutRevision'))
-        assert reloads(after)==0 and [l for l in lines(after) if '다시 적용' in l]==['[DF 설정] '+NOTICE[suffix]],(mode,suffix,lines(after))
-        assert 'notice' not in after.sv('DevilForever_CoreDB')['layoutRevision']
-        again=session(mode,height,width,carry(after),before_boot=with_pb4())
-        assert reloads(again)==0 and not any('다시 적용' in l for l in lines(again)),(mode,suffix)
+        assert reloads(after)==0 and not notices(after) and 'pending' not in after.sv('DevilForever_ProfilesDB'),(mode,suffix)
+    # a request the player leaves waiting is not armed again at the next login (one line, once)
+    s=session(mode,height,width,stale_v2,before_boot=with_pb4())
+    later=session(mode,height,width,carry(s),before_boot=with_pb4())
+    assert reloads(later)==0 and not notices(later),(mode,lines(later))
     # a PitBull4 profile the collection never laid out (no dfLayoutV2 flag) is left as it is: no request,
     # no reload, no tried mark
     foreign=copy.deepcopy(current);fp=foreign['PitBull4DB']['profiles']['Default']
@@ -655,18 +696,13 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160)]
     s=session(mode,height,width,foreign,before_boot=with_pb4())
     assert reloads(s)==0 and 'pending' not in s.sv('DevilForever_ProfilesDB'),(mode,lines(s))
     assert 'dfLayoutV2' not in s.sv('PitBull4DB')['profiles']['Default'] and not s.sv('DevilForever_CoreDB').get('layoutRevision',{}).get('tried')
-    assert not any('다시 적용' in l for l in lines(s))
-    # one attempt per profile and revision: a profile still stale after the attempt is not reloaded again
-    s=session(mode,height,width,stale_v2,before_boot=with_pb4())
-    tried=carry(s);tried['DevilForever_ProfilesDB'].pop('pending',None);tried['DevilForever_CoreDB']['layoutRevision'].pop('notice',None)
-    loop=session(mode,height,width,tried,before_boot=with_pb4())
-    assert loop.sv('PitBull4DB')['profiles']['Default']['dfLayoutRevision']==2 and reloads(loop)==0,(mode,lines(loop))
-    # combat at login: nothing until combat ends, then the same re-apply
+    assert not notices(s)
+    # combat at login: nothing until combat ends, then the same request
     fight=session(mode,height,width,stale_v2,before_boot=with_pb4(combat=True))
-    assert reloads(fight)==0 and 'pending' not in fight.sv('DevilForever_ProfilesDB'),(mode,lines(fight))
+    assert 'pending' not in fight.sv('DevilForever_ProfilesDB') and not notices(fight),(mode,lines(fight))
     fight.combat(False)
-    assert reloads(fight)==1 and fight.sv('DevilForever_ProfilesDB')['pending']['name']==mode+'-v2',(mode,lines(fight))
+    assert fight.sv('DevilForever_ProfilesDB')['pending']['name']==mode+'-v2' and len(notices(fight))==1,(mode,lines(fight))
     fight.combat(True);fight.combat(False)
-    assert reloads(fight)==1
+    assert len(notices(fight))==1 and reloads(fight)==0
     assert not fight.errors(),fight.errors()
-    print('PASS',mode,'re-apply after an update: older New/Old revision (collection profile) -> one request+reload and one chat line after it; same revision, a profile without the layout flag, a tried revision and combat -> nothing (combat: done at combat end)')
+    print('PASS',mode,'re-apply after an update: older New/Old revision (collection profile) -> one waiting request (no reload) and one chat line, applied by /dfp go; same revision, a profile without the layout flag, a waiting request and combat -> nothing (combat: done at combat end)')
