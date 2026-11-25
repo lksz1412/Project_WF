@@ -204,6 +204,15 @@
       },
       "defaults": "Defaults/Dominos.lua"
     },
+    "Chattynator": {
+      "saved_variables": {
+        "CHATTYNATOR_CONFIG": {
+          "split": "common",
+          "restore": "whole",
+          "shape": "plain"
+        }
+      }
+    },
     "DevilForever_ChatSetup": {
       "saved_variables": {
         "DevilForever_ChatSetupDB": {

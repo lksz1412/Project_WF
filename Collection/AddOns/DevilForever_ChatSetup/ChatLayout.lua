@@ -160,6 +160,7 @@ end
 local requestHandled = false
 local function apply()
   if not ready then return end
+  if addon.ChattynatorActive and addon.ChattynatorActive() then layoutState = "chattynator"; return end
   if InCombatLockdown() then pending = true; layoutState = "combat"; return end
   pending = false
   local db = DevilForever_ChatSetupDB

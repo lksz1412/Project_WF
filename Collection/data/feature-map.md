@@ -4,7 +4,7 @@
 Devil Forever
 ├─ 공통 설정     해상도 프리셋 · 테마 · 설정 저장과 복원
 ├─ 하단 조작     행동·소환수 단축바 · 미니맵 · 상태띠
-├─ 대화          공개 · 그룹 · 시스템
+├─ 대화          공개 · 그룹 · 파티 찾기
 ├─ 전투          유닛 · 시전 · 이름표 · 행동 추천 · 쿨다운
 ├─ 그룹·기록     파티 · 공격대 · 데미지와 위협
 └─ 성장·퀘스트   경험치 · 평판 · 목표 추적
@@ -36,9 +36,9 @@ Devil Forever
 
 | 기능 | 담당 | 적용 경로 |
 |---|---|---|
-| 수신·송신·한글 입력 | 게임 기본 채팅 | 현재 게임 채널·입력 경로 사용 |
-| 공개·그룹·시스템 초기 세 창 | `DevilForever_ChatSetup` | [해상도별 실제 창 좌표](../AddOns/DevilForever_ChatSetup/ChatLayout.lua). 자동 배치 기록이 있고 사용자가 움직이지 않은 창은 프리셋·화면 배율을 따라간다. 기존 분할과 사용자가 옮기거나 닫은 창은 유지 |
-| 채팅 배경·글꼴·문양 | `DevilForever_Skin_NativeChat` · `DevilForever_Appearance` | 공통 프리셋과 선택 테마. 종족·진영 문양은 오른쪽 창, 데빌은 흑회색 면 |
+| 수신·송신·한글 입력 | `Chattynator` | 게임 채널을 그대로 쓰고 입력은 게임 기본 입력창. Chattynator 를 끄면 게임 기본 채팅 |
+| 공개·그룹·파티 찾기 초기 세 창 | `DevilForever_ChatSetup` · `Chattynator` | Chattynator 설정이 처음 그대로인 프로필에 한 번: 1번 공개 대화·채널 1–3·시스템, 2번 귓속말·길드·파티·공격대, 3번 파티 찾기 채널(나중에 들어가도 3번으로). [해상도별 실제 창 좌표](../AddOns/DevilForever_ChatSetup/ChatLayout.lua). 사용자가 움직이지 않은 창은 프리셋·화면 배율을 따라간다. 이미 설정해 쓰던 Chattynator 프로필과 사용자가 바꾼 창은 유지. Chattynator 를 끄면 게임 기본 채팅으로 공개·그룹·시스템 세 창 |
+| 채팅 배경·글꼴·문양 | `Chattynator` 「Devil Forever」 스킨 · `DevilForever_Appearance` | 선택 테마 색의 탭 글자·입력창 테두리, 투명한 본문, 단추와 탭은 마우스를 올릴 때만. 글꼴 크기는 공통 프리셋. Chattynator 를 끄면 `DevilForever_Skin_NativeChat` |
 
 ## 전투
 

@@ -16,6 +16,7 @@
     "DevilForever_DetailsLayout"
   ],
   "upstream": {
+    "Chattynator": ["Chattynator"],
     "Masque": ["Masque"],
     "Masque Onyx": ["Masque_Onyx"],
     "ProfileManager": ["ProfileManager"],

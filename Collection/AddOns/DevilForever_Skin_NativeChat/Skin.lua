@@ -109,6 +109,8 @@ end
 
 local function apply()
   if not ready then return end
+  local setup = DevilForever_ChatSetup
+  if type(setup) == "table" and setup.ChattynatorActive and setup.ChattynatorActive() then return end
   if InCombatLockdown() then pending = true; return end
   pending = false
   if not DevilForever_Appearance:GetPixelUnit(UIParent) then

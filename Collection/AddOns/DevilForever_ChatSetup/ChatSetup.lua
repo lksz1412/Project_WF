@@ -351,6 +351,8 @@ end
 
 frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 frame:SetScript("OnEvent", function(self, event)
+  -- Chattynator replaces the native windows; its seed lives in Chattynator.lua.
+  if type(addon) == "table" and addon.ChattynatorActive and addon.ChattynatorActive() then return end
   if event == "PLAYER_ENTERING_WORLD" then
     self:UnregisterEvent("PLAYER_ENTERING_WORLD")
     local db = database()

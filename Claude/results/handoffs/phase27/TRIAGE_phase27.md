@@ -63,3 +63,15 @@ Already decided (with reason): Grid2 above the quest tracker (R158 latest user w
 ## Step 59 review (B, 7797ed71) — 중대 0 · 중간 1 · 경미 4
 - M1 ring does not follow a bar dragged in Dominos config: drag end calls `owner:StopMovingOrSizing()` / `owner:Stick()` / `owner:UpdateWatched()` (Dominos_Config/overlay/dragFrame.lua:311–313); hooked list `BAR_METHODS` (Composition.lua:64–65) has none of them → master confirmed. Impact map: Composition.lua BAR_METHODS + hook (fix) · tests/composition/parts.py (add drag case) · appearance-27-hud-parts.md §2/§4-4 (check only — promise stays true after fix).
 - Minor 1–4 (fade not followed, readBounds call order, ring paint failure keeps parts, tail bar empty slots inside ring) → final report list.
+
+## Step 60 review (code ③, 3 rounds) — 2026-11-25
+
+Report: same B, critical 0 · medium 1 · minor 4. Master checked the quoted lines in `Collection/AddOns/Chattynator/Skins/Main.lua:20–31,55–62` and `Skins/DevilForever.lua:191–193`.
+
+| Finding | Master verdict | Fix (what · why) |
+|---|---|---|
+| M1 — `RegisterSkin(..., true)` auto-enables Devil skin for profiles that already used Chattynator (`Skins/Main.lua:23–31` sets CURRENT_SKIN when `disabled_skins[key]` is absent) | Confirmed. Conflicts with "Devil skin default only on first run" and with the seed's "kept" rule. Skin changes apply only at PLAYER_LOGIN (`Skins/Main.lua:42–52`; live switch commented out :63–72), so the decision must be made before `Skins.Initialize` | Same A: auto-enable only when the profile is untouched by the same rule the seed uses, decided before `Skins.Initialize` so the first session already shows it; a used profile keeps its skin. Why: keep user choices (R167 seed rule) |
+| Docs/lists outside the first scope (A's open questions): `Collection/install/설치안내.md:54`, `Collection/data/feature-map.md` describe the native chat; `tests/install/verify_archives.py` must-ship list lacks Chattynator; Prat-3.0 still "start" for Phase 4 in `extract.py` | Impact map 함께 고침 (user-facing text and release checks must match what ships) | Same A in the same change; Prat → comparison so the registry names Chattynator as the chat start addon |
+| minor 1–4 (combat re-seed skips layout follow; no retry when bridge not ready; per-character DB vs account profile; early return before unregister) | Minor → final report list | not fixed |
+
+Already decided (carry to next briefs): window split R167; system/loot/money/errors in window 1; storage off on seed; seed once per Chattynator profile; never overwrite user changes; Prat not shipped.

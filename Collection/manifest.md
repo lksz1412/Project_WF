@@ -6,7 +6,7 @@ Target client TOC Interface: 16001. `how_to_use` = A1 judgment verdict (kept acr
 
 | Package | Role | Source dir | Feature Phases | how_to_use | Version | File ID | SHA256 ok | Addon folders | Folders with 16001 | Folders with 16001 and forever_load≠no | License files |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| Chattynator | comparison | forever-addons | 4 comparison | — | 237 | 9648836 | yes | 1 | 1 | 1 | Chattynator/LICENSE |
+| Chattynator | start | forever-addons | 4 start | — | 237 | 9648836 | yes | 1 | 1 | 1 | Chattynator/LICENSE |
 | Details | start | forever-addons | 10 start | settings | Details.20261109.15410.172 | 9521145 | yes | 8 | 8 | 8 | Details/LICENSE, Details/Libs/DF/LICENSE, Details/Libs/LibOpenRaid/LICENSE |
 | Dominos | start | forever-addons | 3 start, 19 comparison | settings | 12.0.4 | 9658153 | yes | 6 | 6 | 6 | Dominos/LICENSE |
 | Forever Unit Frames | start | forever-addons | 6 start | settings | 0.65.2 | 9673338 | yes | 1 | 1 | 1 | — |
@@ -16,7 +16,7 @@ Target client TOC Interface: 16001. `how_to_use` = A1 judgment verdict (kept acr
 | Hekili | start | forever-addons | 8 start | settings | v0.8.6 | 9665215 | yes | 11 | 11 | 11 | Hekili/LICENSE, Hekili/LICENSE-wowsims.txt, Hekili/Libs/AceAddon-3.0/LICENSE.txt, Hekili/Libs/AceConfig-3.0/LICENSE.txt, Hekili/Libs/AceConsole-3.0/LICENSE.txt, Hekili/Libs/AceDB-3.0/LICENSE.txt, Hekili/Libs/AceDBOptions-3.0/LICENSE.txt, Hekili/Libs/AceGUI-3.0/LICENSE.txt, Hekili/Libs/AceGUI-3.0_SFX-Widgets/LICENSE.txt, Hekili/Libs/AceLocale-3.0/LICENSE.txt, Hekili/Libs/AceSerializer-3.0/LICENSE.txt, Hekili/Libs/CallbackHandler-1.0/LICENSE.txt, Hekili/Libs/LibCustomGlow-1.0/LICENSE, Hekili/Libs/LibDeflate/LICENSE.txt, Hekili/Libs/LibDualSpec-1.0/LICENSE-NOTE.md, Hekili/Libs/LibRangeCheck-3.0/LICENSE, Hekili/Libs/LibSharedMedia-3.0/LICENSE-NOTE.md, Hekili/Libs/LibStub/LICENSE.txt, Hekili/Libs/LibTranslit-1.0/COPYING, Hekili/Libs/LibTranslit-1.0/COPYING.LESSER, Hekili/Libs/VirtualGameAPI-1.0/LICENSE |
 | Masque | start | forever-addons | 2 start | as-is | 12.1.8 | 9409199 | yes | 1 | 1 | 1 | Masque/LICENSE.txt |
 | Masque Onyx | start | forever-addons | 2 start | as-is | 12.1.6 | 9409810 | yes | 1 | 1 | 1 | — |
-| Prat-3.0 | start | forever-addons | 4 start | settings | 3.9.117 | 9509040 | yes | 1 | 1 | 1 | Prat-3.0/LICENSE.txt |
+| Prat-3.0 | comparison | forever-addons | 4 comparison | settings | 3.9.117 | 9509040 | yes | 1 | 1 | 1 | Prat-3.0/LICENSE.txt |
 | Quartz | start | forever-addons | 7 start | settings | 3.8.0 | 9593490 | yes | 1 | 1 | 1 | — |
 | SexyMap | start | forever-addons | 5 start | settings | v12.1.7 | 9457503 | yes | 1 | 1 | 1 | — |
 | Bartender4 | comparison | addon-sources | 3 comparison | — | 4.19.0 | 9654965 | yes | 1 | 1 | 1 | Bartender4/libs/LibClassicSpellActionCount-1.0/LICENSE |
@@ -243,7 +243,7 @@ kind: new = written for the collection; fork = a start addon's original with our
 | !DevilForever_Core | 2, 20, 22 | — | required | new | — | !DevilForever_Core.toc | 16001 | 0.1.5 | — | — | DevilForever_CoreDB, DevilForever_ProfilesDB | — | — |
 | DevilForever_Appearance | 2, 22 | — | required | new | — | DevilForever_Appearance.toc | 16001 | 0.1.0 | !DevilForever_Core | — | — | — | — |
 | DevilForever_Castbars | 7 | — | individual | new | — | DevilForever_Castbars.toc | 16001 | 0.1.0 | Quartz, ForeverUnitFrames | !DevilForever_Core | — | — | — |
-| DevilForever_ChatSetup | 4 | — | individual | new | — | DevilForever_ChatSetup.toc | 16001 | 0.1.0 | !DevilForever_Core | DevilForever_Appearance | — | DevilForever_ChatSetupDB | — |
+| DevilForever_ChatSetup | 4 | — | individual | new | — | DevilForever_ChatSetup.toc | 16001 | 0.1.0 | !DevilForever_Core | DevilForever_Appearance, Chattynator | — | DevilForever_ChatSetupDB | — |
 | DevilForever_DetailsLayout | 10 | — | individual | new | — | DevilForever_DetailsLayout.toc | 16001 | 0.1.0 | !DevilForever_Core, Details, DevilForever_Appearance | — | — | — | — |
 | DevilForever_FUFDefaults | 6 | — | individual | new | — | DevilForever_FUFDefaults.toc | 16001 | 0.1.0 | !DevilForever_Core, ForeverUnitFrames | — | DevilForever_FUFDefaultsDB | — | — |
 | DevilForever_Skin_Dominos | 3 | — | individual | new | — | DevilForever_Skin_Dominos.toc | 16001 | 0.1.0 | !DevilForever_Core, Dominos, DevilForever_Appearance | Masque | — | — | — |
@@ -264,6 +264,7 @@ state: unmodified = bytes equal the upstream folder; patched = upstream folder +
 
 | Folder | Package | Version | State | Patch | Upstream path |
 |---|---|---|---|---|---|
+| Chattynator | Chattynator | 237 | patched | Collection/patches/Chattynator.patch | Collection/upstream/Chattynator-237/Chattynator |
 | Details | Details | Details.20261109.15410.172 | unmodified | — | Collection/upstream/Details-Details.20261109.15410.172/Details |
 | Details_TinyThreat | Details | Details.20261109.15410.172 | patched | Collection/patches/Details.patch | Collection/upstream/Details-Details.20261109.15410.172/Details_TinyThreat |
 | Dominos | Dominos | 12.0.4 | unmodified | — | Collection/upstream/Dominos-12.0.4/Dominos |

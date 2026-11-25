@@ -3,8 +3,9 @@
 ## Notes: Creates the three chat windows once and follows layout changes for unedited managed windows.
 ## Version: 0.1.0
 ## Dependencies: !DevilForever_Core
-## OptionalDeps: DevilForever_Appearance
+## OptionalDeps: DevilForever_Appearance, Chattynator
 ## SavedVariablesPerCharacter: DevilForever_ChatSetupDB
 
 ChatLayout.lua
+Chattynator.lua
 ChatSetup.lua

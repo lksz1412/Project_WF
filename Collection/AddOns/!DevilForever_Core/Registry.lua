@@ -59,6 +59,45 @@ Core.Registry = {
       use = "as-is",
       version = "12.1.5.4",
     },
+    Chattynator = {
+      bundle = "individual",
+      editable = {},
+      foreverLoad = "yes",
+      frames = {},
+      package = "Chattynator",
+      phases = {
+        4,
+      },
+      savedVariables = {
+        {
+          name = "CHATTYNATOR_CONFIG",
+          restore = "whole",
+          scope = "account",
+          shape = "plain",
+          split = "common",
+        },
+        {
+          name = "CHATTYNATOR_MESSAGE_LOG",
+          scope = "account",
+          split = "common",
+        },
+        {
+          name = "CHATTYNATOR_CURRENT_PROFILE",
+          scope = "character",
+          split = "common",
+        },
+        {
+          name = "CHATTYNATOR_COMMAND_HISTORY",
+          scope = "character",
+          split = "common",
+        },
+      },
+      tocStatus = "matched",
+      tocs = {
+        "Chattynator.toc",
+      },
+      version = "237",
+    },
     Details = {
       bundle = "individual",
       editable = {
@@ -2531,6 +2570,7 @@ Core.Registry = {
   order = {
     "!DevilForever_Core",
     "Aurora",
+    "Chattynator",
     "Details",
     "Details_TinyThreat",
     "DevilForever_Appearance",

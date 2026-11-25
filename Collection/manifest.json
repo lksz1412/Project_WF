@@ -5,12 +5,12 @@
   "packages": [
     {
       "name": "Chattynator",
-      "role": "comparison",
+      "role": "start",
       "source_dir": "forever-addons",
       "feature_phases": [
         {
           "phase": 4,
-          "use": "comparison"
+          "use": "start"
         }
       ],
       "source_zip": "References/forever-addons/Chattynator/Chattynator-237.zip",
@@ -6005,12 +6005,12 @@
     },
     {
       "name": "Prat-3.0",
-      "role": "start",
+      "role": "comparison",
       "source_dir": "forever-addons",
       "feature_phases": [
         {
           "phase": 4,
-          "use": "start"
+          "use": "comparison"
         }
       ],
       "source_zip": "References/forever-addons/Prat-3.0/Prat-3.0-3.9.117.zip",
@@ -16553,7 +16553,8 @@
           ],
           "required_deps": null,
           "optional_deps": [
-            "DevilForever_Appearance"
+            "DevilForever_Appearance",
+            "Chattynator"
           ],
           "saved_variables": null,
           "saved_variables_per_character": [
@@ -16585,7 +16586,8 @@
             "OptionalDeps": [
               {
                 "items": [
-                  "DevilForever_Appearance"
+                  "DevilForever_Appearance",
+                  "Chattynator"
                 ],
                 "conditions": []
               }
@@ -16599,12 +16601,12 @@
               }
             ]
           },
-          "listed_file_lines": 2
+          "listed_file_lines": 3
         }
       ],
       "has_interface_16001": true,
       "has_forever_loadable_toc": true,
-      "lua_files": 2,
+      "lua_files": 3,
       "lua_files_in_libs": 0,
       "embedded_libs": [],
       "license_files": []
@@ -17672,6 +17674,16 @@
     }
   ],
   "third_party": [
+    {
+      "folder": "Chattynator",
+      "package": "Chattynator",
+      "version": "237",
+      "source_zip": "References/forever-addons/Chattynator/Chattynator-237.zip",
+      "sha256": "7bf89cbb0cb221a0313ffd2bd3abc761b9c6a11b01bc993216ee8b23b63931c9",
+      "upstream_path": "Collection/upstream/Chattynator-237/Chattynator",
+      "state": "patched",
+      "patch": "Collection/patches/Chattynator.patch"
+    },
     {
       "folder": "Details",
       "package": "Details",

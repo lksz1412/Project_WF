@@ -170,7 +170,7 @@ def verify(path, variant, races, version, reviewed_chat):
             assert name.startswith((prefix, addons)), name
         installed = {name.removeprefix(addons).split("/", 1)[0] for name in names if name.startswith(addons)}
         must_ship = {"!DevilForever_Core", "DevilForever_Appearance", "DevilForever_Skin_StatusStrip",
-                     "Dominos", "DevilForever_ChatSetup", "DevilForever_Skin_NativeChat",
+                     "Dominos", "DevilForever_ChatSetup", "DevilForever_Skin_NativeChat", "Chattynator",
                      "SexyMap", "Quartz", "Hekili", "Grid2", "Details",
                      "Details_TinyThreat", "DevilForever_DetailsLayout", "ExperienceForever"}
         assert must_ship.issubset(installed), must_ship - installed

@@ -82,9 +82,9 @@ FEATURE_PHASES = {
     "forever-addons/Masque Onyx": [(2, "start")],
     "forever-addons/Dominos": [(3, "start"), (19, "comparison")],
     "addon-sources/bartender4": [(3, "comparison")],
-    "forever-addons/Prat-3.0": [(4, "start")],
+    "forever-addons/Prat-3.0": [(4, "comparison")],
     "forever-addons/Glass Forever": [(4, "comparison")],
-    "forever-addons/Chattynator": [(4, "comparison")],
+    "forever-addons/Chattynator": [(4, "start")],
     "forever-addons/SexyMap": [(5, "start")],
     "addon-sources/basic-minimap": [(5, "comparison")],
     "forever-addons/Forever Unit Frames": [(6, "start")],
@@ -143,6 +143,7 @@ OWN_FOLDERS = {
 # the diff upstream -> shipped of these folders (Collection/tools/patches.py).
 # Every other third-party folder there must be byte-identical to upstream.
 PATCHED = {
+    "Chattynator": ["Chattynator"],
     "Details": ["Details_TinyThreat"],
     "Experience Forever": ["ExperienceForever"],
     "Grid2": ["Grid2"],

@@ -887,6 +887,393 @@ def wrong_type_saved_variable_replaced():
     eq(s.db()["result"], "created", "own saved variable recreated")
 
 
+# Chattynator ------------------------------------------------------------------
+# Chattynator's own Core/Objects.lua, Core/Constants.lua, Core/Config.lua,
+# Core/Initialize.lua, Skins/Main.lua, Skins/Dark.lua and the patched
+# Skins/DevilForever.lua run on one addon table, so the seed goes through
+# Chattynator's real config functions. Messages, chat frames and widgets are stubs.
+
+CHATTY_DIR = os.path.join(REPO, "Collection", "AddOns", "Chattynator")
+CHATTY_FILES = ("Core/Objects.lua", "Core/Constants.lua", "Core/Config.lua", "Core/Initialize.lua",
+                "Skins/Main.lua", "Skins/Dark.lua", "Skins/DevilForever.lua")
+PUBLIC_HIDDEN = ["TRADESKILLS", "COMBAT_MISC_INFO", "COMBAT_XP_GAIN", "PET_BATTLE_COMBAT_LOG", "PET_INFO", "OPENING",
+                 "VOICE_TEXT"]
+CHATTY_GROUP = ["WHISPER", "BN_WHISPER", "GUILD", "OFFICER", "GUILD_ACHIEVEMENT", "GUILD_DISCORD", "PARTY",
+                "PARTY_LEADER", "RAID", "RAID_LEADER", "RAID_WARNING", "INSTANCE_CHAT", "INSTANCE_CHAT_LEADER"]
+
+CHATTY_STUBS = r"""
+function strsplit(sep, text)
+  local out = {}
+  for part in (text .. sep):gmatch("(.-)%" .. sep) do out[#out + 1] = part end
+  return unpack(out)
+end
+function CopyTable(t)
+  local out = {}
+  for k, v in pairs(t) do out[k] = type(v) == "table" and CopyTable(v) or v end
+  return out
+end
+function Mixin(target, ...)
+  for i = 1, select("#", ...) do for k, v in pairs((select(i, ...))) do target[k] = v end end
+  return target
+end
+function CreateFromMixins(...) return Mixin({}, ...) end
+function GetKeysArray(t) local out = {} for k in pairs(t) do out[#out + 1] = k end return out end
+function tIndexOf(t, v) for i, x in ipairs(t) do if x == v then return i end end end
+function tAppendAll(t, s) for _, v in ipairs(s) do t[#t + 1] = v end end
+function tFilter(t, pred) local out = {} for _, v in ipairs(t) do if pred(v) then out[#out + 1] = v end end return out end
+function GetBuildInfo() return "1.60.1", "1", "Nov 1 2026", 16001 end
+function CreateTextureMarkup() return "" end
+function CallErrorHandler(err) error(err) end
+function hooksecurefunc(target, name, hook)
+  local original = target[name]
+  target[name] = function(...)
+    local results = {original(...)}
+    hook(...)
+    return unpack(results)
+  end
+end
+TEST_events = {}
+CallbackRegistryMixin = {
+  OnLoad = function(self) self.callbacks = {} end,
+  GenerateCallbackEvents = function() end,
+  RegisterCallback = function(self, event, fn, owner)
+    self.callbacks[event] = self.callbacks[event] or {}
+    table.insert(self.callbacks[event], {fn, owner})
+  end,
+  TriggerEvent = function(self, event, ...)
+    TEST_events[#TEST_events + 1] = event
+    for _, entry in ipairs(self.callbacks[event] or {}) do entry[1](entry[2], ...) end
+  end,
+}
+TEST_loaded = {Chattynator = true}
+C_AddOns = {IsAddOnLoaded = function(name) return TEST_loaded[name] == true end}
+CHATTYNATOR_CURRENT_PROFILE = nil
+
+local Widget = {}
+function TEST_widget()
+  return setmetatable({}, Widget)
+end
+Widget.__index = function(t, key)
+  if key == "GetUnboundedStringWidth" then return function() return 40 end end
+  if key == "GetText" then return function(self) return self.text or "" end end
+  if key == "SetText" then return function(self, text) self.text = text end end
+  if key == "GetName" then return function() return "TEST_Widget" end end
+  if key == "GetFontString" then return function(self) self.fs = self.fs or TEST_widget(); return self.fs end end
+  if key == "SetTextColor" then return function(self, r, g, b) self.color = {r, g, b} end end
+  if key == "SetShown" then return function(self, shown) self.shown = shown end end
+  if key == "SetColorTexture" then return function(self, r, g, b, a) self.colorTexture = {r, g, b, a} end end
+  if key:match("^Create") then return function() return TEST_widget() end end
+  if key:match("^Get") or key:match("^Is") then return function() end end
+  if key:match("^%u") then return function() end end
+end
+"""
+
+
+def chatty_session(preset="uhd", saved=None, config=None, profile=None, channels=(), core=True, chatty=True):
+    """Session with Chattynator files loaded on one addon table and ChatSetup (layout + Chattynator + setup)."""
+    s = Session(saved=saved)
+    s.lua.execute(CHATTY_STUBS)
+    s.lua.execute("""
+      local frame_ = CreateFrame
+      CreateFrame = function(...)
+        local f = frame_(...)
+        f.Hide, f.Show = function() end, function() end
+        return f
+      end
+    """)
+    g = s.g
+    g.TEST_preset, g.TEST_pixel = preset, 1
+    g.TEST_loaded.Chattynator = chatty
+    if core:
+        s.lua.execute("""
+          TEST_editCallbacks, TEST_themeCallbacks = {}, {}
+          TEST_chat1Font = {size = 28}
+          DevilForever_Core = {
+            Presets = {GetActive = function() return TEST_preset end, GetAppliedRequest = function() return nil end},
+            Edit = {RegisterCallback = function(self, owner, fn) table.insert(TEST_editCallbacks, fn) end,
+                    Get = function(self, key) return {font = TEST_chat1Font} end},
+            Theme = {Get = function(self, token)
+                       if token == "color.accent" then return {0.75, 0.33, 0.19, 1} end
+                       return {0.5, 0.5, 0.5, 1}
+                     end,
+                     RegisterCallback = function(self, owner, fn) table.insert(TEST_themeCallbacks, fn) end}}
+          DevilForever_Appearance = {GetPixelUnit = function() return TEST_pixel end}
+          function TEST_edit(key) for _, fn in ipairs(TEST_editCallbacks) do fn(key) end end
+        """)
+    if config is not None:
+        g.CHATTYNATOR_CONFIG = s.table(config)
+    g.CHATTYNATOR_CURRENT_PROFILE = profile
+    s.chatty = s.lua.table()
+    s.chatty.Locales = s.lua.eval("setmetatable({}, {__index = function(_, key) return key end})")
+    for name in CHATTY_FILES:
+        path = os.path.join(CHATTY_DIR, name)
+        with open(path, "rb") as fh:
+            fn = g.loadstring(fh.read(), ("@Chattynator/" + name).encode())
+        (fn[0] if isinstance(fn, tuple) else fn)("Chattynator", s.chatty)
+    s.set_channels(channels)
+    s.lua.execute("""
+      function TEST_chattyLoaded(addonTable)
+        addonTable.Config.InitializeData()
+        addonTable.Core.MigrateSettings()
+        -- Skins/Blizzard.lua is not loaded here; Initialize only reads its constants.
+        addonTable.Skins.availableSkins.blizzard = addonTable.Skins.availableSkins.blizzard
+          or {key = "blizzard", options = {}, constants = function() end}
+        addonTable.Skins.Initialize()
+        addonTable.Messages = {GetChannels = function() return TEST_channelMap, TEST_channelCount end}
+        addonTable.allChatFrames = {{UpdateEditBox = function() end}}
+      end
+    """)
+    g.TEST_chattyLoaded(s.chatty)
+    namespace = s.lua.table()
+    for filename in ("ChatLayout.lua", "Chattynator.lua", "ChatSetup.lua"):
+        path = os.path.join(ADDON_DIR, filename)
+        with open(path, "rb") as fh:
+            fn = g.loadstring(fh.read(), ("@" + filename).encode())
+        (fn[0] if isinstance(fn, tuple) else fn)(ADDON, namespace)
+    s.namespace = namespace
+    return s
+
+
+def _set_channels(self, names):
+    self.g.TEST_channelMap = self.table({i: n for i, n in enumerate(names, 1)})
+    self.g.TEST_channelCount = len(names)
+
+
+Session.set_channels = _set_channels
+
+
+def windows(s):
+    return to_py(s.g.CHATTYNATOR_CONFIG.Profiles[s.g.CHATTYNATOR_CURRENT_PROFILE].windows)
+
+
+def option(s, key):
+    return to_py(s.g.CHATTYNATOR_CONFIG.Profiles[s.g.CHATTYNATOR_CURRENT_PROFILE][key])
+
+
+def true_keys(table):
+    return sorted(k for k, v in (table or {}).items() if v is True)
+
+
+def false_keys(table):
+    return sorted(k for k, v in (table or {}).items() if v is False)
+
+
+@case
+def chattynator_seed_writes_three_windows_once():
+    s = chatty_session(channels=("General", "Trade", "LocalDefense", "LookingForGroup"))
+    s.login()
+    w = windows(s)
+    eq(len(w), 3, "three windows")
+    eq([w[i]["position"] for i in (1, 2, 3)],
+       [{1: "TOPLEFT", 2: "UIParent", 3: "TOPLEFT", 4: 60, 5: -1828},
+        {1: "TOPLEFT", 2: "UIParent", 3: "TOPLEFT", 4: 970, 5: -1828},
+        {1: "TOPLEFT", 2: "UIParent", 3: "TOPLEFT", 4: 2910, 5: -1828}], "native uhd places")
+    eq([w[i]["size"] for i in (1, 2, 3)], [{1: 868, 2: 244}, {1: 944, 2: 244}, {1: 922, 2: 244}], "native uhd sizes")
+    public = w[1]["tabs"][1]
+    eq((public["name"], public["invert"]), ("GENERAL", True), "window 1 public tab")
+    eq(false_keys(public["groups"]), sorted(PUBLIC_HIDDEN + CHATTY_GROUP), "window 1 hides group types only")
+    eq(true_keys(public["channels"]), ["General", "LocalDefense", "Trade"], "channels 1-3 in window 1")
+    eq(false_keys(public["channels"]), ["LookingForGroup"], "looking-for-group not in window 1")
+    eq(w[1]["tabs"][2]["custom"], "combat_log", "combat log tab kept")
+    eq(len(w[1]["tabs"]), 2, "default GUILD tab moved out")
+    group = w[2]["tabs"][1]
+    eq((group["name"], group.get("invert")), ("Group", None), "window 2 tab")
+    eq(true_keys(group["groups"]), sorted(CHATTY_GROUP), "window 2 groups")
+    lfg = w[3]["tabs"][1]
+    eq((lfg["name"], true_keys(lfg["channels"]), lfg["groups"]), ("Looking for Group", ["LookingForGroup"], {}),
+       "window 3 looking-for-group only")
+    eq([option(s, k) for k in ("store_messages", "show_tabs_1", "show_buttons", "button_position")],
+       [False, "hover", "hover", "inside_left"], "messages not stored, chrome on hover")
+    state = s.db()["chattynator"]
+    eq(state["profiles"], {"DEFAULT": "seeded"}, "seed flag per profile")
+    eq(s.db().get("result"), None, "native setup not run")
+    eq([c for c in s.calls() if c.split(" ")[0] in ("SetPoint", "AddMessageGroup", "FCF_SetWindowName")], [],
+       "no native chat window call")
+    eq("SettingChanged" in lst(to_py(s.g.TEST_events)), True, "Chattynator told through its own Config.Set")
+
+
+@case
+def chattynator_second_run_and_user_changes_are_left_alone():
+    first = chatty_session(channels=("General", "Trade"))
+    first.login()
+    saved, config = first.db(), to_py(first.g.CHATTYNATOR_CONFIG)
+    second = chatty_session(saved=saved, config=config, profile="DEFAULT", channels=("General", "Trade"))
+    second.login()
+    eq(windows(second), config["Profiles"]["DEFAULT"]["windows"], "second run: windows unchanged")
+    eq(second.db()["chattynator"]["profiles"], {"DEFAULT": "seeded"}, "flag kept")
+    # Another character of the same profile: no flag in its own saved variable, config no longer default.
+    other = chatty_session(config=config, profile="DEFAULT", channels=("General",))
+    other.login()
+    eq(windows(other), config["Profiles"]["DEFAULT"]["windows"], "seeded config not reseeded")
+    eq(other.db()["chattynator"]["profiles"], {"DEFAULT": "kept"}, "not untouched -> kept")
+    # A user who moved Chattynator's default window before the first seed.
+    fresh = chatty_session(channels=("General",))
+    fresh.lua.execute("CHATTYNATOR_CONFIG.Profiles.DEFAULT.windows[1].position[5] = 300")
+    before = windows(fresh)
+    fresh.login()
+    eq(windows(fresh), before, "user-moved default window untouched")
+    eq(fresh.db()["chattynator"]["profiles"], {"DEFAULT": "kept"}, "kept recorded")
+    for change in ("tabs[2].groups.PARTY = true", "tabs[1].channels.Trade = false", "size[1] = 501"):
+        edited = chatty_session(channels=("General",))
+        edited.lua.execute("CHATTYNATOR_CONFIG.Profiles.DEFAULT.windows[1]." + change)
+        edited.login()
+        eq(len(windows(edited)), 1, change + ": not seeded")
+    combat = chatty_session(channels=("General",))
+    combat.g.TEST_combat = True
+    combat.login()
+    eq(len(windows(combat)), 1, "combat: nothing yet")
+    combat.g.TEST_combat = False
+    combat.g.TEST_fire("PLAYER_REGEN_ENABLED")
+    combat.g.TEST_runTimers()
+    eq(len(windows(combat)), 3, "seeded after combat")
+
+
+@case
+def chattynator_lfg_joined_later_lands_in_window_three_once():
+    s = chatty_session(channels=("General", "Trade"))
+    s.login()
+    eq(windows(s)[3]["tabs"][1]["channels"], {}, "window 3 empty without the channel")
+    s.set_channels(("General", "Trade", "파티 찾기"))
+    s.g.TEST_combat = True
+    s.g.TEST_fire("CHAT_MSG_CHANNEL_NOTICE", "YOU_JOINED")
+    s.g.TEST_runTimers()
+    eq(windows(s)[3]["tabs"][1]["channels"], {}, "combat: not yet")
+    s.g.TEST_combat = False
+    s.g.TEST_fire("PLAYER_REGEN_ENABLED")
+    s.g.TEST_runTimers()
+    w = windows(s)
+    eq(true_keys(w[3]["tabs"][1]["channels"]), ["파티 찾기"], "Korean channel name to window 3")
+    eq(w[1]["tabs"][1]["channels"].get("파티 찾기"), False, "removed from window 1")
+    # The user showed the channel in window 2 already: no move.
+    t = chatty_session(channels=("General",))
+    t.login()
+    t.lua.execute("CHATTYNATOR_CONFIG.Profiles.DEFAULT.windows[2].tabs[1].channels.LookingForGroup = true")
+    t.set_channels(("General", "LookingForGroup"))
+    t.g.TEST_fire("CHANNEL_UI_UPDATE")
+    t.g.TEST_runTimers()
+    eq(windows(t)[3]["tabs"][1]["channels"], {}, "assigned elsewhere: window 3 unchanged")
+    # Profiles this module did not seed are not touched.
+    u = chatty_session(channels=("General",))
+    u.lua.execute("CHATTYNATOR_CONFIG.Profiles.DEFAULT.windows[1].size[2] = 300")
+    u.login()
+    u.set_channels(("General", "LookingForGroup"))
+    u.g.TEST_fire("CHANNEL_UI_UPDATE")
+    u.g.TEST_runTimers()
+    eq(len(windows(u)), 1, "kept profile: no window added")
+
+
+@case
+def chattynator_unmoved_windows_follow_preset_moved_ones_stay():
+    s = chatty_session(channels=("General",))
+    s.login()
+    s.lua.execute("CHATTYNATOR_CONFIG.Profiles.DEFAULT.windows[2].position[4] = 1234")
+    s.g.TEST_preset = "qhd"
+    s.g.TEST_edit("appearance.chat1")
+    s.g.TEST_runTimers()
+    w = windows(s)
+    eq((w[1]["position"][4], w[1]["size"][1]), (40, 555), "window 1 follows qhd")
+    eq(w[2]["position"][4], 1234, "moved window 2 kept")
+    eq((w[3]["position"][4], w[3]["size"][1]), (1952, 602), "window 3 follows qhd")
+    eq(sorted(s.db()["chattynator"]["layout"]["windows"]), [1, 3], "moved window released")
+    s.g.TEST_pixel = 0.5
+    s.g.TEST_fire("UI_SCALE_CHANGED")
+    s.g.TEST_runTimers()
+    eq(windows(s)[3]["position"][4], 976, "screen scale reflow")
+
+
+@case
+def chattynator_disables_native_chat_and_absent_chattynator_keeps_it():
+    native = layout_session()
+    native.login()
+    s = chatty_session(saved=native.db(), channels=("General",))
+    for receipt in native.db()["managedLayout"]["roles"].values():
+        frame = s.g["ChatFrame%d" % receipt["id"]]
+        frame.shown = True
+        frame.width, frame.height = receipt["width"], receipt["height"]
+        frame.point = s.table([receipt["point"], receipt["relativePoint"], receipt["x"] + 7, receipt["y"]])
+    s.lua.execute("""
+      TEST_fonts = {}
+      for i = 1, 10 do _G["ChatFrame" .. i].SetFont = function(self) TEST_fonts[#TEST_fonts + 1] = self.id end end
+    """)
+    path = os.path.join(REPO, "Collection", "AddOns", "DevilForever_Skin_NativeChat", "Skin.lua")
+    with open(path, "rb") as fh:
+        s.g.loadstring(fh.read())()
+    s.login()
+    eq(lst(to_py(s.g.TEST_fonts)), [], "native skin idle")
+    s.g.TEST_fire("DISPLAY_SIZE_CHANGED")
+    s.g.TEST_runTimers()
+    status = to_py(s.g.DevilForever_ChatSetup.GetLayoutStatus())
+    eq(status["state"], "chattynator", "native layout idle while Chattynator is loaded")
+    eq([c for c in s.calls() if c.startswith(("SetPoint", "SetSize"))], [], "no native geometry call")
+    absent = chatty_session(chatty=False, channels=("General",))
+    absent.login()
+    eq(absent.db()["result"], "created", "native split when Chattynator is not loaded")
+    eq(len(windows(absent)), 1, "Chattynator config untouched")
+
+
+@case
+def chattynator_skin_default_once_and_without_core():
+    s = chatty_session(channels=("General",))
+    eq(option(s, "current_skin"), "devilforever", "first run selects the Devil Forever skin")
+    s.g.TEST_chattyTable = s.chatty
+    s.lua.execute("TEST_chattyTable.Config.Set('current_skin', 'dark')")
+    config = to_py(s.g.CHATTYNATOR_CONFIG)
+    again = chatty_session(config=config, profile="DEFAULT", channels=("General",))
+    eq(option(again, "current_skin"), "dark", "user's later pick kept")
+    # Profiles that already used Chattynator (no disabled_skins entry for this skin) keep their skin.
+    used = to_py(s.g.CHATTYNATOR_CONFIG)
+    used["Profiles"]["DEFAULT"]["current_skin"] = "dark"
+    used["Profiles"]["DEFAULT"]["disabled_skins"] = {}
+    used["Profiles"]["DEFAULT"]["windows"][1]["size"][2] = 300
+    moved = chatty_session(config=used, profile="DEFAULT", channels=("General",))
+    eq(option(moved, "current_skin"), "dark", "used profile (windows changed) keeps dark")
+    picked = to_py(s.g.CHATTYNATOR_CONFIG)
+    picked["Profiles"]["DEFAULT"]["current_skin"] = "blizzard"
+    picked["Profiles"]["DEFAULT"]["disabled_skins"] = {}
+    own = chatty_session(config=picked, profile="DEFAULT", channels=("General",))
+    eq(option(own, "current_skin"), "blizzard", "used profile (own skin) keeps it")
+    seeded = chatty_session(channels=("General",))
+    seeded.login()
+    after = chatty_session(config=to_py(seeded.g.CHATTYNATOR_CONFIG), profile="DEFAULT", channels=("General",))
+    eq(option(after, "current_skin"), "devilforever", "seeded profile keeps the skin chosen in its first session")
+    bare = chatty_session(core=False, channels=("General",))
+    bare.g.TEST_chattyTable = bare.chatty
+    bare.lua.execute("""
+      local skin = TEST_chattyTable.Skins.availableSkins.devilforever
+      skin.constants()
+      skin.initializer()
+      TEST_frame = TEST_widget()
+      TEST_frame.ScrollingMessagesWrapper = TEST_widget()
+      skin.skinner({regionType = "ChatFrame", region = TEST_frame})
+    """)
+    eq(bare.g.TEST_frame.background is not None, True, "without Core: Dark look applied, no error")
+    eq(bare.g.TEST_frame.background.colorTexture, None, "Dark look, not the transparent Devil body")
+
+
+@case
+def chattynator_skin_follows_theme_and_chat_font():
+    s = chatty_session(channels=("General",))
+    s.g.TEST_chattyTable = s.chatty
+    s.login()
+    s.lua.execute("""
+      local skin = TEST_chattyTable.Skins.availableSkins.devilforever
+      TEST_tab = TEST_widget()
+      TEST_tab.SetSelected = function(self, state) self.selected = state end
+      TEST_tab.SetFlashing = function(self, state) self.flashing = state end
+      skin.skinner({regionType = "ChatTab", region = TEST_tab})
+      TEST_tab:SetSelected(true)
+    """)
+    eq(lst(to_py(s.g.TEST_tab.fs.color)), [0.75, 0.33, 0.19], "selected tab in the theme accent")
+    eq(option(s, "message_font_size"), 28, "font size = appearance.chat1 size x pixel unit")
+    s.g.TEST_pixel = 0.5
+    s.g.TEST_fire("UI_SCALE_CHANGED")
+    eq(option(s, "message_font_size"), 14, "follows the pixel unit")
+    s.g.TEST_chattyTable.Config.Set("message_font_size", 20)
+    s.g.TEST_pixel = 1
+    s.g.TEST_fire("UI_SCALE_CHANGED")
+    eq(option(s, "message_font_size"), 20, "user's own size kept")
+
+
 def main():
     passed, failed = 0, []
     for fn in CASES:
