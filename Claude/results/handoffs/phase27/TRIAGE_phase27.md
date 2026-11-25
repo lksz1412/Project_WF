@@ -97,3 +97,12 @@ Report: same B, critical 0 · medium 1 · minor 2. Master checked `Presets/V2.lu
 | minor 1 (refit also moves a window dragged under an old rule — accepted default, R188), minor 2 (IME refresh only once per session; principle unverified) | Minor → final report | not fixed |
 
 Re-check: text-only fix (notice and check list wording); master confirmed `V2.lua:252` and no remaining "버전 전환(New/Old)을 누르면" in V2.lua or the check list (word-level change, master check per §3).
+
+## Step 63 review (code ③, 3 rounds) — 2026-11-25
+
+Report: same B, critical 0 · medium 1 · minor 2. Master checked `Presets.lua:691–695, 765`.
+
+| Finding | Master verdict | Fix (what · why) |
+|---|---|---|
+| M1 — the deferred Dominos/Grid2 part (`layoutRevision.due`) survives a user request made in between (New/Old switch, `/dfp preset`+go): ready step takes the user's request first (`if not request and type(due)…` :693), `due` is cleared only at :695 (unregistered name) and :765 (auto request finishing), so a later load writes the old version's Dominos/Grid2 values over the user's choice | Confirmed. A user's explicit request must supersede the automatic catch-up | Same A: when a non-auto request is taken (or written) the pending `due` is dropped; test: catch-up → switch to Old → next loads keep Old in all four targets |
+| minor 1 (catch-up reads only `profiles.Default`, not the character's `profileKeys`), minor 2 (Quartz off → its share not caught up later) | Minor → final report | not fixed |
