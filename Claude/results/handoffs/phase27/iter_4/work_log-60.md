@@ -640,3 +640,84 @@ The assertion `'due' not in` at step 3 targets the defect directly. The test was
 | `… build.py --dry-run --variant pitbull4` / `fuf` | rc=0 · 36 folders/2353 files · 38/2297 |
 
 Raw outputs: `<scratch>/s60/s63r*.txt`. Minors are not fixed, per triage.
+
+## Step 65 (R212, R214): Old aura blocks over their own frames, pet/focus up; debuffs right above the buffs
+
+Read:
+- `Presets/V2.lua` 1-130 (V1 path, root edits) and the V1 probe output (`-v1` request in the layoutv2 harness: unit positions, `dfAuraGeometry`).
+- `PitBull4/Modules/Aura/Layout.lua` 395-520 (managed aura geometry) and `Modules/Aura/Forever.lua` 176-200, 290-335 (native groups and containers).
+- `Presets/uhd.lua` Aura loop (488-511).
+- `tests/layoutv2/run.py` 90-140, 350-470, 500-560.
+- Samples: `SourceArchive/2022-11-19/extracted/Interface/addons/!DevilUI/Profile/PitBull4.lua` 9863-10150 (Aura namespace); `SourceArchive/user-provided-alpha/originals/DevilUI6.1Alpha.zip` entry list.
+
+### Causes
+
+| Item | Grade | Evidence |
+|---|---|---|
+| (a) Old auras in side columns, pet/focus right above player/target | confirmed | V1 `dfAuraGeometry` player `{size_ratio=.7, side="left", width=148, above=false, avoid_frame=pet}` and target `{…side="right"…, avoid_frame=focus}`. uhd V1: player 878..1390 × 1414..1558 px, pet 1034..1390 × 1189..1301, focus 2450..2806 × 1189..1301 — only 113 px between pet and player, no room for rows above. |
+| (b) empty row between buffs and debuffs | confirmed | The managed rule (`Layout.lua` 466-470 before the change) reserved `group_height(my_size) + group_height(size)` = ceil(14/12) + ceil(14/12) = 4 rows. Own and others' buffs share one native flow (`Forever.lua` update_group: `forceNewLine` only with `new_row_size` and a different own size; buffs are 40/40), so 28 buffs fill 3 rows (124 px at uhd). Measured gap from buff top to debuff bottom: 46 px at uhd (one empty 42 px row + 4). The preset formula `buffRows = ceil((2*14+2)/12)` (uhd.lua:494-511) is not used for 보통/대상: the managed rule replaces its offset. |
+| (1) Devil samples | partly found | `!DevilUI/Profile/PitBull4.lua` Aura profiles differ. "Normal" 대상: buff `offset_y=-4` (no anchor key, `:10029-10034`), debuff `anchor=BOTTOMLEFT, growth=right_down, offset_y=-28` (`:10036-10047`), i.e. debuffs below the frame. "loaf" 대상: debuff `TOPLEFT/TOP/right_up offset_y=20` (`:9883-9893`), i.e. above; buff `side=LEFT offset_x=15 offset_y=-25` (`:9897-9905`), i.e. at the side. Which profile the samples used and PitBull4's defaults for the missing keys were not checked. The samples show no single clearly different arrangement, so the New rule (rows above, debuffs over buffs) is kept. The Alpha archive is one installer `DevilUI 6.1 Alpha.exe` (7.7 MB); not run or unpacked (untrusted executable), so not read. |
+
+### What changed
+
+| Place | Change |
+|---|---|
+| `PitBull4/Modules/Aura/Layout.lua` (patch) | Debuff offset = buff offset + the rows the buffs fill: one flow of 2 × max_buffs at max(own, others) size, or two groups when own buffs start a new row (`new_row_size` with a different own size), + max(2, row spacing). New and Old both; runtime code, so no profile revision needed. |
+| `Presets/V2.lua` V1 path | `dfAuraGeometry` player/target `{above=true,width=main frame width}`, pet/focus `{above=true,width=companion width}`. The pet group (pet, its target chain, Quartz Pet bar) and the focus group (focus, its chain, Quartz Focus bar) move up together so their lowest part ends 8 px (`OLD_STACK_GAP`) above the player's / target's aura block. `modes.mainAuras` = main aura block height measured with the new rule: fhd 216 / qhd 285 / uhd 416 px. `layoutV1Revision` 2 → 3, so the Step 63 catch-up writes it in the first load (V1 targets PitBull4 and Quartz). |
+| `Collection/patches/PitBull4.patch` | regenerated (332268 bytes, header unchanged) |
+| `tests/layoutv2/run.py` | `default_screen_map(…,'v1')`. Old aura test per preset (fhd, qhd, uhd 3840, uhd 3862): each block at frame width, bottom within 10 px above its frame, no overlap with any rect of the map except its own frame/bands and the art backdrops `appearance.unitUpper/unitLower/aux`; Grid2 party clear; pet/focus above the blocks. The V1 back-switch assertion now expects the four above rules. The catch-up cases use `layoutV1Revision` (3). |
+| check list | new §13 (Old aura blocks, debuff gap, update without command) |
+
+Numbers (Old, px; aura block = x, y, w, h from the test):
+
+| Preset | player block | target block | pet block | focus block |
+|---|---|---|---|---|
+| fhd | 439, 415, 256, 212 | 1225, 415, 256, 212 | 517, 272, 178, 48 | 1225, 249, 178, 48 |
+| qhd | 585, 612, 342, 280 | 1633, 612, 342, 280 | 691, 430, 236, 60 | 1633, 401, 236, 60 |
+| uhd | 878, 998, 512, 408 | 2450, 998, 512, 408 | 1034, 477, 356, 78 | 2450, 707, 356, 78 |
+
+The pet sits higher than the focus because the Old Quartz Pet bar lies above-left of the pet and moves with it. At uhd the pet top is 555 px and the focus top is 785 px.
+
+Debuff gap after the fix: buff band top to debuff band bottom = 4 px. uhd main block: buffs 124 + debuffs 280; fhd 64 + 144.
+
+### Impact map
+
+| Place | Type | How found | Impact | Reason |
+|---|---|---|---|---|
+| `Aura/Layout.lua` GetManagedLayoutDB | the defect (b) | read | change | |
+| `Aura/Forever.lua` update_group / container | flow rules the fix relies on | read | check only | |
+| `Presets/V2.lua` V1 root edits | the defect (a) | read | change | |
+| Quartz Pet/Focus fragments in V1 | moved with their frames | read | change (values) | |
+| `Presets/{fhd,qhd,uhd}.lua` Aura placement | preset offsets | read | check only | replaced by the managed rule for main/companion frames |
+| party frames (unmanaged Aura) | other aura users | read | no impact | no `dfAuraGeometry` rule |
+| Step 63 catch-up | delivers the change | read | check only | V1 revision bump |
+| tests layoutv2 | tests | read | change | |
+| check list | user doc | read | change | |
+| earlier sections of this log | record | - | no impact (record) | |
+
+### Commands (verdict lines)
+
+| Command | Verdict |
+|---|---|
+| `python -I Collection/tests/layoutv2/run.py` | rc=0 · 50 PASS lines (Old aura: 5) |
+| `python -I Collection/tests/core/run.py` | rc=0 · 109/109 |
+| `python -I Collection/tests/firststart/run.py` | rc=0 · 29/29 |
+| `python -I Collection/tests/statusstrip/theme_switcher.py` | rc=0 |
+| `python -I Collection/tests/statusstrip/run.py` | rc=0 · 20/20 |
+| `python -I Collection/tests/pitbull4/run.py` | rc=0 · 6/6 |
+| `python -I Collection/tests/pitbull4runtime/run.py` | rc=0 · 20/20 |
+| `python -I Collection/tests/castbars/run.py` | rc=0 · 16/16 |
+| `python -I Collection/tests/chatsetup/run.py` | rc=0 · 45/45 |
+| `python -I <devnull_run.py> Collection/tests/patches/run.py` | 4/4 |
+| `… patches.py regenerate --package PitBull4` / `verify` | wrote 332268 bytes · `patches=8 failures=0` |
+| `python -I Collection/tools/luacheck.py Presets/V2.lua PitBull4/Modules/Aura/Layout.lua` | `checked=2 failed=0` |
+| `… build.py --dry-run --variant pitbull4` / `fuf` | rc=0 · 36/2353 · 38/2297 |
+
+Raw outputs: `<scratch>/s60/s65*.txt`.
+
+### Open
+- The Grid2 raid window at its 40-player maximum covers the Old target and focus aura blocks at every preset.
+- The Old target block also overlaps Details window 1 at every preset (fhd: Details 1 at 1320..1692 × 466..634; the target block reaches 1481 × 415..627).
+- Neither is moved here; the test reports both.
+- The art panels `appearance.unitUpper` / `unitLower` stay where the Old frames used to be, under the new aura blocks.
+- `mainAuras` is measured, not computed: if the preset aura sizes or counts change, the test fails and the numbers must be measured again.
