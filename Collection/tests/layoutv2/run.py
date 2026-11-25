@@ -492,16 +492,16 @@ def default_screen_map(mode,width,height,v2=False):
 # Grid2 left of the quest tracker (Blizzard's objective tracker, right side; top at about 24 % and its
 # left edge about 23 % of the screen height from the right): window top on the tracker's top, right edge
 # on the tracker's left edge, square cells; the window grows down and left, clear of every preset rectangle.
-TRACKER={'fhd':(259,247,88),'qhd':(346,330,116),'uhd':(518,495,176)}
-KNOWN_OVERLAP={  # 88/116/176 px cells at the tracker spot, measured; waiting for the user's in-game feedback
+TRACKER={'fhd':(259,247,66),'qhd':(346,330,87),'uhd':(518,495,132)}
+KNOWN_OVERLAP={  # 66/87/132 px cells at the tracker spot (Step 69: 75 % of the 88/116/176 cells); waiting for the user's in-game feedback
+    'fhd 1920 raid':['auras 대상 buffs alone', 'auras 대상 buffs avoided shown', 'auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown', 'auras 대상의 소환수 buffs alone', 'auras 대상의 소환수 buffs avoided shown', 'auras 대상의 소환수 debuffs alone', 'auras 대상의 소환수 debuffs avoided shown', 'unit 대상'],
     'fhd 1920 party':[],
-    'fhd 1920 raid':['auras 대상 buffs alone', 'auras 대상 buffs avoided shown', 'auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown', 'auras 대상의 소환수 buffs alone', 'auras 대상의 소환수 buffs avoided shown', 'auras 대상의 소환수 debuffs alone', 'auras 대상의 소환수 debuffs avoided shown', 'auras 주시 대상 buffs alone', 'auras 주시 대상 buffs avoided shown', 'auras 주시 대상 debuffs alone', 'auras 주시 대상 debuffs avoided shown', 'quartz Focus', 'quartz Target', 'unit 대상', 'unit 대상의 대상', 'unit 대상의 대상의 대상', 'unit 대상의 소환수', 'unit 대상의 소환수의 대상', 'unit 대상의 소환수의 대상의 대상', 'unit 주시 대상', 'unit 주시 대상의 대상', 'unit 주시 대상의 대상의 대상'],
+    'qhd 2560 raid':['auras 대상 buffs alone', 'auras 대상 buffs avoided shown', 'auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown'],
     'qhd 2560 party':[],
-    'qhd 2560 raid':['auras 대상 buffs alone', 'auras 대상 buffs avoided shown', 'auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown', 'auras 대상의 소환수 buffs alone', 'auras 대상의 소환수 buffs avoided shown', 'auras 대상의 소환수 debuffs alone', 'auras 대상의 소환수 debuffs avoided shown', 'auras 주시 대상 buffs alone', 'auras 주시 대상 buffs avoided shown', 'auras 주시 대상 debuffs alone', 'auras 주시 대상 debuffs avoided shown', 'unit 대상', 'unit 대상의 소환수', 'unit 주시 대상'],
+    'uhd 3840 raid':['auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown'],
     'uhd 3840 party':[],
-    'uhd 3840 raid':['auras 대상 buffs alone', 'auras 대상 buffs avoided shown', 'auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown', 'auras 대상의 소환수 buffs alone', 'auras 대상의 소환수 buffs avoided shown', 'auras 대상의 소환수 debuffs alone', 'auras 대상의 소환수 debuffs avoided shown', 'auras 주시 대상 buffs alone', 'auras 주시 대상 buffs avoided shown', 'auras 주시 대상 debuffs alone', 'auras 주시 대상 debuffs avoided shown', 'unit 대상', 'unit 대상의 소환수', 'unit 주시 대상'],
+    'uhd 3862 raid':['auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown'],
     'uhd 3862 party':[],
-    'uhd 3862 raid':['auras 대상 buffs alone', 'auras 대상 buffs avoided shown', 'auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown', 'auras 대상의 소환수 buffs alone', 'auras 대상의 소환수 buffs avoided shown', 'auras 대상의 소환수 debuffs alone', 'auras 대상의 소환수 debuffs avoided shown', 'auras 주시 대상 buffs alone', 'auras 주시 대상 buffs avoided shown', 'auras 주시 대상 debuffs alone', 'auras 주시 대상 debuffs avoided shown', 'unit 대상', 'unit 대상의 소환수', 'unit 주시 대상'],
 }
 for v2 in (False,True):
     for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),('uhd',3862,2160)]:
@@ -519,27 +519,33 @@ for v2 in (False,True):
         print('PASS',mode,width,'-v2' if v2 else 'base','Grid2 40-player window %s and party window %s left of the quest tracker, tops aligned (cells %d px), pinned overlaps raid %d / party %d'%(tuple(round(v) for v in raid),tuple(round(v) for v in party),cell,len(KNOWN_OVERLAP['%s %d raid'%(mode,width)]),len(KNOWN_OVERLAP['%s %d party'%(mode,width)])))
 print('PASS preset Grid2 placement left of the quest tracker (base preset and -v2)')
 
-# Details windows 1 (damage) and 2 (Tiny Threat) side by side: the row (title strips included) is as wide and
-# as tall as chat panel 1 and starts on its left edge, clear of every preset rectangle, both Grid2 windows
-# and the quest tracker column (from the tracker's top down to the section's upper strip).
+# Details windows stacked above chat 3 (R235): window 2 (Tiny Threat) on top, window 1 (damage) below,
+# the same x and width, titles included; clear of every preset rectangle, both Grid2 windows and the quest
+# tracker (top from TRACKER, bottom at 695/1125 of the screen height as read from the user's screenshot 17,
+# image-17-reading.md item 5 - the tracker grows with the quests shown). The right theme ornament is the
+# one overlap (pinned): the stack runs from the action bar row's end to the screen edge where it stands.
 det_src=(A/'DevilForever_DetailsLayout/Layout.lua').read_text(encoding='utf-8')
 TITLE={k:int(v) for k,v in _re.findall(r'(fhd|qhd|uhd) = (\d+)',_re.search(r'titleSpace = \{(.*?)\}',det_src).group(1))}
+TRACKER_BOTTOM=695/1125
 for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),('uhd',3862,2160)]:
     rects,raid,party=default_screen_map(mode,width,height)
-    one,two=rects['details 1'],rects['details 2'];chat=rects['edit appearance.chat1'];title=TITLE[mode]
-    row=(one[0],one[1]-title,two[0]+two[2]-one[0],one[3]+title)
-    assert two[1]==one[1] and two[3]==one[3] and two[0]-(one[0]+one[2])==2,(mode,one,two)
-    assert (row[0],row[2],row[3])==(chat[0],chat[2],chat[3]),(mode,width,row,chat)
+    damage,threat=rects['details 1'],rects['details 2'];title=TITLE[mode]
+    assert damage[0]==threat[0] and damage[2]==threat[2],(mode,damage,threat)
+    assert threat[1]+threat[3]<damage[1]-title,(mode,'threat above damage',threat,damage)
     top,margin,cell=TRACKER[mode]
-    upper=rects['edit appearance.upper']
     others=dict((k,r) for k,r in rects.items() if not k.startswith('details '))
-    others.update({'grid2 raid':raid,'grid2 party':party,'quest tracker':(width-margin,top,margin,upper[1]-top)})
-    for i,box in enumerate((one,two),1):
+    others.update({'grid2 raid':raid,'grid2 party':party,
+                   'quest tracker':(width-margin,top,margin,round(height*TRACKER_BOTTOM)-top)})
+    upper,ribbon=rects['edit appearance.upper'],rects['edit appearance.ribbon']
+    for label,box in (('threat',threat),('damage',damage)):
         boxed=(box[0],box[1]-title,box[2],box[3]+title)
-        assert 0<=boxed[0] and boxed[0]+boxed[2]<=width and 0<=boxed[1] and boxed[1]+boxed[3]<=height,(mode,i,boxed)
+        assert 0<=boxed[0] and boxed[0]+boxed[2]<=width and 0<=boxed[1] and boxed[1]+boxed[3]<=ribbon[1],(mode,label,boxed)
         hits=sorted(k for k,r in others.items() if overlaps(boxed,r))
-        assert hits==[],(mode,width,i,boxed,hits)
-    print('PASS',mode,width,'Details row %s (title %d px) = chat panel 1 width/height, left edges aligned, overlaps none of %d rects'%(row,title,len(others)))
+        assert hits==['edit appearance.ornamentRight'],(mode,width,label,boxed,hits)
+    if mode!='fhd':  # qhd/uhd: from the action bar row's end to the screen's right edge, down to the strip
+        assert damage[0]>upper[0]+upper[2] and damage[0]+damage[2]==min(width,{'qhd':2560,'uhd':3840}[mode]),(mode,damage,upper)
+        assert damage[1]+damage[3]>upper[1],(mode,'damage window in the action bar row',damage,upper)
+    print('PASS',mode,width,'Details stack threat %s over damage %s (title %d px), clear of %d rects but the right ornament'%(threat,damage,title,len(others)-1))
 
 core_default=_re.search(r'dfStandStill = ([0-9.]+)',(A/'!DevilForever_Core/Defaults/Quartz.lua').read_text(encoding='utf-8')).group(1)
 module_default=_re.search(r'dfStandStill = ([0-9.]+),',(A/'Quartz/modules/SwingForever.lua').read_text(encoding='utf-8')).group(1)
@@ -572,7 +578,7 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),
         r=rects['unit '+label]
         assert pet[0]-1e-6<=r[0] and r[0]+r[2]<=pet[0]+pet[2]+1e-6 and r[1]>=pet[1]+pet[3],(label,r,pet)
     assert p['units']['대상의 대상']['enabled'] is True and p['units']['대상의 대상의 대상']['enabled'] is True
-    assert p['dfLayoutRevision']==s.core.Presets.layoutV2Revision==7
+    assert p['dfLayoutRevision']==s.core.Presets.layoutV2Revision==8
     # player and target aura rows at the same height above their frames (no raise)
     assert p['dfAuraGeometry']['플레이어']=={'above':True,'width':player[2]}==p['dfAuraGeometry']['대상'],(mode,p['dfAuraGeometry']['플레이어'])
     for kind in ('buffs','debuffs'):
@@ -599,9 +605,12 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),
     assert abs(focus[0]-(player[0]+player[2])-gap)<1e-6 and abs(target[0]-(focus[0]+focus[2])-gap)<1e-6,(mode,player,focus,target)
     print('PASS',mode,width,'V2 default: focus centred %.0f with equal side gaps, player/target aura rows level, Dominos totem bar %s and pet bar ending at the player frame right edge, the totem timer %s left of the totem bar (clear of every rectangle), one aura table %s, target-pet chain under the target-pet'%(focus[0]+focus[2]/2,tuple(round(v) for v in bar),tuple(round(v) for v in timer),size))
 src={m:(A/'!DevilForever_Core/Presets'/(m+'.lua')).read_text(encoding='utf-8') for m in ('fhd','qhd','uhd')}
-for m,cell in (('fhd',88),('qhd',116),('uhd',176)):
+# R233: cells at 75 % of the earlier 88/116/176 (the size the user saw), name text in proportion to the cell
+for m,cell,old,name in (('fhd',66,88,15),('qhd',87,116,20),('uhd',132,176,30)):
+    assert abs(cell/old-.75)<.01,(m,cell,old)
     assert '["frameWidth"]=%d,["frameHeight"]=%d'%(cell,cell) in src[m] and '["anchor"]="TOPRIGHT"' in src[m],m
-print('PASS Grid2 cells square (fhd 88, qhd 116, uhd 176) with a TOPRIGHT anchor')
+    assert '["fontSize"]=%d,["iconSize"]'%name in src[m] and abs(name/cell-.23)<.01,(m,name,cell)
+print('PASS Grid2 cells square (fhd 66, qhd 87, uhd 132 = 75 % of 88/116/176), name text 15/20/30 (23 % of the cell), TOPRIGHT anchor')
 
 # Name text of the player and target frames grows with the frame (main frame height / companion
 # frame height); pet, focus, small and party frames keep the preset size; bar texts unchanged.

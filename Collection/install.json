@@ -25,6 +25,7 @@
     "Quartz": ["Quartz"],
     "Grid2": ["Grid2", "Grid2Options", "Grid2LDB"],
     "Details": ["Details", "Details_TinyThreat"],
+    "MuscaAuras": ["WeakAuras", "WeakAurasOptions", "WeakAurasTemplates", "WeakAurasModelPaths", "WeakAurasArchive"],
     "Experience Forever": ["ExperienceForever"]
   },
   "not_shipped": ["Hekili", "Hekili_Shared", "Hekili_Druid", "Hekili_Hunter", "Hekili_Mage", "Hekili_Paladin",

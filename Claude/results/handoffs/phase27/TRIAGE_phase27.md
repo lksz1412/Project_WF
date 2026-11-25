@@ -106,3 +106,14 @@ Report: same B, critical 0 · medium 1 · minor 2. Master checked `Presets.lua:6
 |---|---|---|
 | M1 — the deferred Dominos/Grid2 part (`layoutRevision.due`) survives a user request made in between (New/Old switch, `/dfp preset`+go): ready step takes the user's request first (`if not request and type(due)…` :693), `due` is cleared only at :695 (unregistered name) and :765 (auto request finishing), so a later load writes the old version's Dominos/Grid2 values over the user's choice | Confirmed. A user's explicit request must supersede the automatic catch-up | Same A: when a non-auto request is taken (or written) the pending `due` is dropped; test: catch-up → switch to Old → next loads keep Old in all four targets |
 | minor 1 (catch-up reads only `profiles.Default`, not the character's `profileKeys`), minor 2 (Quartz off → its share not caught up later) | Minor → final report | not fixed |
+
+## Step 64 (Musca) + Step 69 — master decisions before review (2026-11-26 08:22 +0900)
+
+| Item | Decision | Why (intent) |
+|---|---|---|
+| Details windows dragged by the user after Step 68 | Moved once to the R235 stack (collection-made windows only); user-created windows stay alone | R235 names the new spot explicitly; the "user-moved stays" rule protects choices the user did not revise |
+| fhd stack best fit (two ~37 px bodies above the bar row) | Accepted default; final report | the R235 rule leaves no taller space on fhd |
+| Stack overlaps the right theme ornament (all presets) | Accepted; final report | the user's rule puts the stack there |
+| Chat height (R234) | No code change; evidence = saved windows fit the inner rect, remaining mismatch is theme art without the structure border (Codex redraw); check list §17 | work_log-60 "Step 69" (b) |
+| Musca version | 1.21.0 (approved) shipped; 1.22.0 exists — final report | R232 approval named 1.21.0 |
+| `WeakAurasSaved` in /dfp save/restore | Not included (A default); final report | account-wide aura data; user choice |

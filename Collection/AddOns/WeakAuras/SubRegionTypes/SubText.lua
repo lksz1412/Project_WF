@@ -1,0 +1,704 @@
+if not WeakAuras.IsLibsOK() then return end
+---@type string
+local AddonName = ...
+---@class Private
+local Private = select(2, ...)
+
+local SharedMedia = LibStub("LibSharedMedia-3.0");
+local L = WeakAuras.L;
+local FontStringScaleAnimationMode = Enum and Enum.FontStringScaleAnimationMode
+
+local screenWidth, screenHeight = math.ceil(GetScreenWidth() / 20) * 20, math.ceil(GetScreenHeight() / 20) * 20
+
+local defaultFont = WeakAuras.defaultFont
+local defaultFontSize = WeakAuras.defaultFontSize
+
+local default = function(parentType)
+  if parentType == "icon" then
+    -- No Shadow, but Outline
+    return {
+      text_text = "%p",
+      text_color = {1, 1, 1, 1},
+      text_font = defaultFont,
+      text_fontSize = defaultFontSize,
+      text_fontType = "OUTLINE",
+      text_visible = true,
+      text_justify = "CENTER",
+
+      text_selfPoint = "AUTO",
+      anchor_point = "CENTER",
+      anchorXOffset = 0,
+      anchorYOffset = 0,
+
+      text_shadowColor = { 0, 0, 0, 1},
+      text_shadowXOffset = 0,
+      text_shadowYOffset = 0,
+      rotateText = "NONE",
+
+      text_automaticWidth = "Auto",
+      text_fixedWidth = 64,
+      text_wordWrap = "WordWrap",
+    }
+  else
+    -- With Shadow, without Outline
+    return {
+      text_text = "%n",
+      text_color = {1, 1, 1, 1},
+      text_font = defaultFont,
+      text_fontSize = defaultFontSize,
+      text_fontType = "None",
+      text_visible = true,
+      text_justify = "CENTER",
+
+      text_selfPoint = "AUTO",
+      anchor_point = parentType == "aurabar" and "INNER_RIGHT" or "BOTTOMLEFT",
+      anchorXOffset = 0,
+      anchorYOffset = 0,
+
+      text_shadowColor = { 0, 0, 0, 1},
+      text_shadowXOffset = 1,
+      text_shadowYOffset = -1,
+      rotateText = "NONE",
+
+      text_automaticWidth = "Auto",
+      text_fixedWidth = 64,
+      text_wordWrap = "WordWrap",
+    }
+  end
+end
+
+local properties = {
+  text_visible = {
+    display = L["Visibility"],
+    setter = "SetVisible",
+    secretSetter = "SetSecretVisible",
+    secretRestore = "ClearSecretVisible",
+    secretCapable = true,
+    type = "bool",
+    defaultProperty = true
+  },
+  text_text = {
+    display = L["Text"],
+    setter = "ChangeText",
+    type = "string",
+    control = "WeakAurasInputWithIndentation"
+  },
+  text_color = {
+    display = L["Color"],
+    setter = "Color",
+    secretCapable = true,
+    type = "color",
+  },
+  text_fontSize = {
+    display = L["Font Size"],
+    setter = "SetTextHeight",
+    type = "number",
+    min = 6,
+    softMax = 72,
+    step = 1,
+    default = 12
+  },
+  text_anchorXOffset = {
+    display = L["X-Offset"],
+    setter = "SetXOffset",
+    type = "number",
+    softMin = (-1 * screenWidth),
+    softMax = screenWidth,
+    bigStep = 10,
+  },
+  text_anchorYOffset = {
+    display = L["Y-Offset"],
+    setter = "SetYOffset",
+    type = "number",
+    softMin = (-1 * screenHeight),
+    softMax = screenHeight,
+    bigStep = 10,
+  },
+}
+
+
+-- Rotate object around its origin
+local function animRotate(object, degrees, anchor)
+  if (not anchor) then
+    anchor = "CENTER";
+  end
+  -- Something to rotate
+  if object.animationGroup or degrees ~= 0 then
+    -- Create AnimationGroup and rotation animation
+    object.animationGroup = object.animationGroup or object:CreateAnimationGroup();
+    local group = object.animationGroup;
+    group.rotate = group.rotate or group:CreateAnimation("rotation");
+    local rotate = group.rotate;
+
+    if rotate:GetDegrees() == degrees and rotate:GetOrigin() == anchor then
+      return
+    end
+
+    rotate:SetOrigin(anchor, 0, 0);
+    rotate:SetDegrees(degrees);
+    rotate:SetDuration(0);
+    rotate:SetEndDelay(2147483647);
+    group:Play();
+    rotate:SetSmoothProgress(1);
+    group:Pause();
+  end
+end
+
+local function CDMTokenState(parent, triggerIndex)
+  if not triggerIndex then
+    return parent.state
+  end
+  return parent.states and parent.states[triggerIndex]
+end
+
+-- Calculate offset after rotation
+local function getRotateOffset(object, degrees, point)
+  -- Any rotation at all?
+  if degrees ~= 0 then
+    if Private.IsSecret(object:GetStringHeight(), object:GetStringWidth()) then
+      return 0, 0
+    end
+    -- Basic offset
+    local originoffset = object:GetStringHeight() / 2;
+    local xo = -1 * originoffset * sin(degrees);
+    local yo = originoffset * (cos(degrees) - 1);
+
+    -- Alignment dependant offset
+    if point:find("BOTTOM", 1, true) then
+      yo = yo + (1 - cos(degrees)) * (object:GetStringWidth() / 2 - originoffset);
+    elseif point:find("TOP", 1, true) then
+      yo = yo - (1 - cos(degrees)) * (object:GetStringWidth() / 2 - originoffset);
+    end
+    if point:find("RIGHT", 1, true) then
+      xo = xo + (1 - cos(degrees)) * (object:GetStringWidth() / 2 - originoffset);
+    elseif point:find("LEFT", 1, true) then
+      xo = xo - (1 - cos(degrees)) * (object:GetStringWidth() / 2 - originoffset);
+    end
+
+    -- Done
+    return xo, yo;
+
+  -- No rotation
+  else
+    return 0, 0;
+  end
+end
+
+local fontObjectCounter = 0
+
+local function create()
+  local region = CreateFrame("Frame", nil, UIParent);
+
+  local text = region:CreateFontString(nil, "OVERLAY");
+  region.text = text;
+
+  -- WOW's layout system works best if frames and all their parents are anchored
+  -- In this case, it appears that a text doesn't get the right size on the initial
+  -- load with a custom font. (Though it works if the font is non-custom or after
+  -- a ReloadUI). Just moving the normal AnchorSubRegion to the start of modify was not enough
+  -- But anchoring the text to UIParent before re-anchoring it correctly does seem to fix
+  -- the issue. Also see #1778
+  text:SetPoint("CENTER", UIParent, "CENTER")
+
+  text:SetWordWrap(true)
+  text:SetNonSpaceWrap(true)
+
+  local fontObject = CreateFont("WeakAuras-SubText-Font" .. fontObjectCounter)
+  fontObjectCounter =  fontObjectCounter + 1
+  region.text:SetFontObject(fontObject)
+  region.fontObject = fontObject
+
+  return region;
+end
+
+local UpdateNativeText = Private.UpdateNativeText
+local UnbindDurationText = Private.UnbindDurationText
+
+local function onAcquire(subRegion)
+  subRegion:Show()
+end
+
+local function onRelease(subRegion)
+  UnbindDurationText(subRegion)
+  Private.CDMAuraProgress.HideText(subRegion)
+  subRegion:Hide()
+end
+
+-- Applies font, shadow, wrapping and width settings; returns the resolved font flags
+local function applyFontAndWidth(region, data)
+  local text = region.text;
+  local fontObject = region.fontObject
+
+  local fontPath = SharedMedia:Fetch("font", data.text_font);
+  local fontType = data.text_fontType == "None" and "" or data.text_fontType
+  local slugFont = data.text_fontType == "SLUG" or data.text_fontType == "OUTLINE|SLUG"
+  if text.SetScaleAnimationMode and FontStringScaleAnimationMode then
+    text:SetScaleAnimationMode(slugFont and FontStringScaleAnimationMode.Vertex or FontStringScaleAnimationMode.FontSize)
+  end
+  if text.SetSmoothScaling then
+    text:SetSmoothScaling(data.text_smoothScaling or false) -- doesn't accept nil
+  end
+  fontObject:SetJustifyH(data.text_justify or "CENTER")
+  Private.ApplyTextFont(text, fontObject, fontPath, data.text_fontSize, fontType,
+    data.text_shadowColor, data.text_shadowXOffset, data.text_shadowYOffset)
+  if text:GetFont() then
+    text:SetText("") -- SetJustifyH is broken unless the text changes
+    text:SetText(WeakAuras.ReplaceRaidMarkerSymbols(data.text_text));
+  end
+
+  text:SetTextHeight(data.text_fontSize);
+
+  if (data.text_automaticWidth == "Fixed") then
+    if (data.text_wordWrap == "WordWrap") then
+      text:SetWordWrap(true);
+      text:SetNonSpaceWrap(true);
+    else
+      text:SetWordWrap(false);
+      text:SetNonSpaceWrap(false);
+    end
+
+    text:SetWidth(data.text_fixedWidth);
+    region:SetWidth(data.text_fixedWidth);
+    region.width = data.text_fixedWidth;
+  else
+    text:SetWidth(0);
+    text:SetWordWrap(true);
+    text:SetNonSpaceWrap(true);
+  end
+
+  return fontType
+end
+
+-- Decides whether the parent needs its custom text function, then resets the shared custom text state
+local function resetParentCustomText(parent, parentData)
+  local containsCustomText = false
+  for index, subRegion in ipairs(parentData.subRegions) do
+    if subRegion.type == "subtext" and Private.ContainsCustomPlaceHolder(subRegion.text_text) then
+      containsCustomText = true
+      break
+    end
+  end
+  if not containsCustomText then
+    if type(parentData.conditions) == "table" then
+      for _, condition in ipairs(parentData.conditions) do
+        if type(condition.changes) == "table" then
+          for _, change in ipairs(condition.changes) do
+            if type(change.property) == "string"
+              and change.property:match("sub%.%d+%.text_text")
+            then
+              containsCustomText = true
+              break
+            end
+          end
+        end
+      end
+    end
+  end
+  if containsCustomText and parentData.customText and parentData.customText ~= "" then
+    parent.customTextFunc = WeakAuras.LoadFunction("return "..parentData.customText, parentData.id)
+    parent.values.customTextUpdateThrottle = parentData.customTextUpdateThrottle or 0
+  else
+    parent.customTextFunc = nil
+    parent.values.customTextUpdateThrottle = 0
+  end
+  parent.values.custom = nil
+  parent.values.lastCustomTextUpdate = nil
+  parent.values.customTextUpdated = false
+end
+
+-- Collects the base text and every text a condition can set for this subregion
+local function collectTextSources(data, parentData)
+  local texts = {}
+  local textStr = data.text_text or ""
+  if textStr ~= "" then
+    tinsert(texts, textStr)
+  end
+
+  local subRegionIndex = 1
+  for index, subRegion in ipairs(parentData.subRegions) do
+    if subRegion == data then
+      subRegionIndex = index
+      break;
+    end
+  end
+  if type(parentData.conditions) == "table" then
+    local conditionName = "sub."..subRegionIndex..".text_text"
+    for _, condition in ipairs(parentData.conditions) do
+      if type(condition.changes) == "table" then
+        for _, change in ipairs(condition.changes) do
+          if type(change.property) == "string" and change.property == conditionName then
+            if type(change.value ) == "string" and change.value ~= "" then
+              tinsert(texts, change.value)
+            end
+          end
+        end
+      end
+    end
+  end
+
+  return texts
+end
+
+-- Installs the methods that (re)configure the text update callbacks and their subscriptions
+local function installTextUpdateMethods(region, parent, parentData, data)
+  local text = region.text
+
+  function region:ConfigureTextUpdate()
+    UnbindDurationText(region)
+    Private.CDMAuraProgress.HideText(region)
+    local cdmKind, cdmTrigger = Private.ParseCDMText(region.text_text)
+    if cdmKind == "bp" or cdmKind == "bs" then
+      local function UpdateBuffText()
+        if not text:GetFont()
+           or Private.CDMAuraProgress.UpdateText(parent, region, data, cdmKind, cdmTrigger) then
+          return
+        end
+        Private.CopyCDMCountdownText(text, CDMTokenState(parent, cdmTrigger), cdmKind)
+      end
+      region.Update = UpdateBuffText
+      region.FrameTick = UpdateBuffText
+      return
+    end
+    local UpdateText
+    if region.text_text and Private.ContainsAnyPlaceHolders(region.text_text) then
+      UpdateText = function()
+        if Private.CDMAuraProgress.UpdateText(parent, region, data, cdmKind, cdmTrigger) then
+          return
+        end
+        local cdmState = cdmKind and CDMTokenState(parent, cdmTrigger)
+        if cdmState and cdmState.cdmBuff then
+          if text:GetFont() then
+            Private.CopyCDMCountdownText(text, cdmState, cdmKind)
+          end
+          return
+        end
+        if UpdateNativeText(region, parent, region.text_text or "", self.subTextFormatters) then
+          return
+        end
+        local textStr = region.text_text or ""
+        textStr = Private.ReplacePlaceHolders(textStr, parent, nil, false, self.subTextFormatters)
+
+        if text:GetFont() then
+          text:SetText(WeakAuras.ReplaceRaidMarkerSymbols(textStr))
+        end
+        region:UpdateAnchorOnTextChange()
+      end
+    end
+
+    local Update
+    if parent.customTextFunc and UpdateText then
+      Update = function()
+        if not parent.values.customTextUpdated then
+          parent.values.custom = Private.RunCustomTextFunc(parent, parent.customTextFunc)
+          parent.values.lastCustomTextUpdate = GetTime()
+          parent.values.customTextUpdated = true
+        end
+        UpdateText()
+      end
+    else
+      Update = UpdateText
+    end
+
+    local FrameTick
+    if Private.ContainsPlaceHolders(region.text_text, "p")
+       or Private.IsCDMBuffText(region.text_text, parentData)
+       or Private.AnyEveryFrameFormatters(region.text_text, region.everyFrameFormatters)
+    then
+      FrameTick = UpdateText
+    end
+
+    if parent.customTextFunc and parentData.customTextUpdate == "update" then
+      if Private.ContainsCustomPlaceHolder(region.text_text) then
+        FrameTick = function()
+          if not parent.values.lastCustomTextUpdate
+          or parent.values.lastCustomTextUpdate + parent.values.customTextUpdateThrottle < GetTime()
+          then
+            parent.values.custom = Private.RunCustomTextFunc(parent, parent.customTextFunc)
+            parent.values.lastCustomTextUpdate = GetTime()
+            parent.values.customTextUpdated = true
+          end
+          UpdateText()
+        end
+      end
+    end
+
+    region.Update = Update
+    region.FrameTick = FrameTick
+
+    if not UpdateText then
+      if text:GetFont() then
+        local textStr = region.text_text
+        textStr = textStr:gsub("\\n", "\n");
+        text:SetText(WeakAuras.ReplaceRaidMarkerSymbols(textStr))
+      end
+    end
+  end
+
+  function region:ConfigureSubscribers()
+    local visible = self:IsShown()
+    if self.Update then
+      if visible then
+        parent.subRegionEvents:AddSubscriber("Update", region)
+      end
+    else
+      parent.subRegionEvents:RemoveSubscriber("Update", region)
+    end
+    if self.FrameTick then
+      if visible then
+        parent.subRegionEvents:AddSubscriber("FrameTick", region)
+      end
+    else
+      parent.subRegionEvents:RemoveSubscriber("FrameTick", region)
+    end
+    if self.Update and parent.state and visible then
+      self:Update()
+    end
+  end
+
+  function region:ChangeText(msg)
+    region.text_text = msg
+    region:ConfigureTextUpdate()
+    region:ConfigureSubscribers()
+  end
+end
+
+-- Installs the methods that style and show or hide the text
+local function installStyleMethods(region, data, fontType)
+  local text = region.text
+
+  function region:SetTextHeight(size)
+    local fontPath = SharedMedia:Fetch("font", data.text_font);
+    if not text:GetFont() then -- Font invalid, set the font but keep the setting
+      text:SetFont(STANDARD_TEXT_FONT, size, fontType);
+    else
+      region.text:SetFont(fontPath, size, fontType);
+    end
+    region.text:SetTextHeight(size)
+    region:UpdateAnchorOnTextChange();
+    Private.CDMAuraProgress.StyleText(region)
+  end
+
+  function region:SetSecretVisible(value)
+    Private.SetSecretSubRegionVisible(self, self:IsShown(), value)
+  end
+
+  region.ClearSecretVisible = Private.ClearSecretSubRegionVisible
+
+  function region:SetVisible(visible)
+    if visible then
+      self:Show()
+    else
+      self:Hide()
+    end
+    region:ConfigureSubscribers()
+  end
+
+  function region:Color(r, g, b, a)
+    region.color_r = r;
+    region.color_g = g;
+    region.color_b = b;
+    region.color_a = a;
+    if (r or g or b) then
+      a = a or 1;
+    end
+    text:SetTextColor(region.color_anim_r or r, region.color_anim_g or g,
+                      region.color_anim_b or b, region.color_anim_a or a)
+    Private.CDMAuraProgress.StyleText(region)
+  end
+end
+
+-- Resolves the anchor point of the text itself, AUTO depending on the parent region type
+local function resolveSelfPoint(data, parentData)
+  local selfPoint = data.text_selfPoint
+  if selfPoint == "AUTO" then
+    if parentData.regionType == "icon" then
+      local anchorPoint = data.anchor_point or "CENTER"
+      if anchorPoint:sub(1, 6) == "INNER_" then
+        selfPoint = anchorPoint:sub(7)
+      elseif anchorPoint:sub(1, 6) == "OUTER_" then
+        anchorPoint = anchorPoint:sub(7)
+        selfPoint = Private.inverse_point_types[anchorPoint] or "CENTER"
+      else
+        selfPoint = "CENTER"
+      end
+    elseif parentData.regionType == "aurabar" then
+      selfPoint = data.anchor_point or "CENTER"
+      if selfPoint:sub(1, 5) == "ICON_" then
+        selfPoint = selfPoint:sub(6)
+      elseif selfPoint:sub(1, 6) == "INNER_" then
+        selfPoint = selfPoint:sub(7)
+      end
+      selfPoint = Private.point_types[selfPoint] and selfPoint or "CENTER"
+    else
+      selfPoint = Private.inverse_point_types[data.anchor_point or "CENTER"] or "CENTER"
+    end
+  end
+
+  return selfPoint
+end
+
+-- Installs the methods that anchor and offset the text
+local function installAnchorMethods(region, parent, parentData, data, selfPoint, textDegrees)
+  local text = region.text
+
+  function region:AnchorNativeText(nativeText)
+    nativeText:ClearAllPoints()
+    nativeText:SetPoint(selfPoint, text, selfPoint)
+  end
+
+  region.Anchor = function(self)
+    local degrees = Private.IsCDMBuffText(region.text_text, parentData) and 0 or textDegrees
+    local xo, yo = getRotateOffset(text, degrees, selfPoint)
+    parent:AnchorSubRegion(text, "point", data.anchor_point, selfPoint,
+                           (self.text_anchorXOffset or 0) + xo, (self.text_anchorYOffset or 0) + yo)
+    Private.CDMAuraProgress.StyleText(region)
+  end
+
+  if textDegrees == 0 then
+    region.UpdateAnchorOnTextChange = function() end
+  else
+    region.UpdateAnchorOnTextChange = region.Anchor
+  end
+
+  region.SetXOffset = function(self, xOffset)
+    if self.text_anchorXOffset == xOffset then
+      return
+    end
+    self.text_anchorXOffset = xOffset
+    self:Anchor()
+  end
+
+  region.SetYOffset = function(self, yOffset)
+    if self.text_anchorYOffset == yOffset then
+      return
+    end
+    self.text_anchorYOffset = yOffset
+    self:Anchor()
+  end
+end
+
+local function modify(parent, region, parentData, data, first)
+  if region:GetParent() ~= parent then region:SetParent(parent) end
+  local fontType = applyFontAndWidth(region, data)
+
+  if first then
+    resetParentCustomText(parent, parentData)
+  end
+
+  local texts = collectTextSources(data, parentData)
+
+  local getter = function(key, default)
+    local fullKey = "text_text_format_" .. key
+    if (data[fullKey] == nil) then
+      data[fullKey] = default
+    end
+    return data[fullKey]
+  end
+
+  region.subTextFormatters, region.everyFrameFormatters = Private.CreateFormatters(texts, getter, false, parentData)
+  installTextUpdateMethods(region, parent, parentData, data)
+
+  region.text_text = data.text_text
+  region.durationTimeFormat = data.text_text_format_p_time_format
+  region.durationThreshold = data.text_text_format_p_time_dynamic_threshold
+  region.durationPrecision = data.text_text_format_p_time_precision
+  region.durationLegacyFloor = data.text_text_format_p_time_legacy_floor
+  region:ConfigureTextUpdate()
+
+  installStyleMethods(region, data, fontType)
+
+  local selfPoint = resolveSelfPoint(data, parentData)
+
+  region.text_anchorXOffset = data.text_anchorXOffset
+  region.text_anchorYOffset = data.text_anchorYOffset
+
+  local textDegrees = data.rotateText == "LEFT" and 90 or data.rotateText == "RIGHT" and -90 or 0;
+
+  installAnchorMethods(region, parent, parentData, data, selfPoint, textDegrees)
+
+  region:Color(data.text_color[1], data.text_color[2], data.text_color[3], data.text_color[4]);
+  region:SetVisible(data.text_visible)
+  animRotate(region.text, textDegrees, selfPoint)
+  Private.CDMAuraProgress.ModifyText(parent, region, parentData, data)
+end
+
+local function addDefaultsForNewAura(data)
+  if data.regionType == "aurabar" then
+    tinsert(data.subRegions, {
+      ["type"] = "subtext",
+      text_text = "%p",
+      text_color = {1, 1, 1, 1},
+      text_font = defaultFont,
+      text_fontSize = defaultFontSize,
+      text_fontType = "None",
+      text_justify = "CENTER",
+      text_visible = true,
+
+      text_selfPoint = "AUTO",
+      anchor_point = "INNER_LEFT",
+      anchorXOffset = 0,
+      anchorYOffset = 0,
+
+      text_shadowColor = { 0, 0, 0, 1},
+      text_shadowXOffset = 1,
+      text_shadowYOffset = -1,
+
+      rotateText = "NONE",
+    });
+
+    tinsert(data.subRegions, {
+      ["type"] = "subtext",
+      text_text = "%n",
+      text_color = {1, 1, 1, 1},
+      text_font = defaultFont,
+      text_fontSize = defaultFontSize,
+      text_fontType = "None",
+      text_justify = "CENTER",
+      text_visible = true,
+
+      text_selfPoint = "AUTO",
+      anchor_point = "INNER_RIGHT",
+      anchorXOffset = 0,
+      anchorYOffset = 0,
+
+      text_shadowColor = { 0, 0, 0, 1},
+      text_shadowXOffset = 1,
+      text_shadowYOffset = -1,
+
+      rotateText = "NONE",
+    });
+  elseif data.regionType == "icon" then
+    tinsert(data.subRegions, {
+      ["type"] = "subtext",
+      text_text = "%s",
+      text_color = {1, 1, 1, 1},
+      text_font = defaultFont,
+      text_fontSize = defaultFontSize,
+      text_fontType = "OUTLINE",
+      text_justify = "CENTER",
+      text_visible = true,
+
+      text_selfPoint = "AUTO",
+      anchor_point = "INNER_BOTTOMRIGHT",
+      anchorXOffset = 0,
+      anchorYOffset = 0,
+
+      text_shadowColor = { 0, 0, 0, 1},
+      text_shadowXOffset = 0,
+      text_shadowYOffset = 0,
+
+      rotateText = "NONE",
+    });
+  end
+end
+
+local function supports(regionType)
+  return regionType == "texture"
+         or regionType == "progresstexture"
+         or regionType == "icon"
+         or regionType == "aurabar"
+         or regionType == "empty"
+end
+
+WeakAuras.RegisterSubRegionType("subtext", L["Text"], supports, create, modify, onAcquire, onRelease,
+                                default, addDefaultsForNewAura, properties)

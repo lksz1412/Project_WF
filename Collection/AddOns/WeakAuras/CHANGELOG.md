@@ -1,0 +1,1081 @@
+# Musca Auras 1.21.0 (2026-11-24)
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/Musca-Auras/blob/main/CHANGES.md).
+
+## New
+
+- `/wa safemode` reloads the UI with every aura paused and no custom code run, to find an aura that breaks your
+  UI. Type it again, or `/reload`, to leave.
+- `/wa report` shows a diagnostic report to copy into a bug report. It holds no character, realm or guild name.
+- `/wa packcheck` lists the spells of your class pack auras that your character does not know.
+- New load option "AddOn Loaded": the aura loads only when the named addons are loaded.
+- Importing an aura that uses a font, border, background or bar texture you do not have lists it, and the aura
+  shows the default one instead.
+- `/wa help` lists every command, `pcancel`, `pshow` and `ff` included.
+
+## Changed
+
+- Class packs: every class gets the gnome racial Eureka!, and the priest gets Confounding Flash and Contingency
+  Plan. They show only when your character knows the spell. Ready Flash flashes them too. Click "Update HUD" at
+  login to get them.
+
+## Fixed
+
+- `/wa unlock` no longer shows the auras of your other characters. It shows the auras this character can load, and
+  the auras you disable in it until you save. Enable an aura disabled before from `/wa`.
+
+# Musca Auras 1.20.0 (2026-11-22)
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/Musca-Auras/blob/main/CHANGES.md).
+
+## New
+
+- `/wa toggle` pauses or resumes every aura.
+- `/wa mute` turns the sounds of every aura off or on, for the whole account. The `/wa` window has a "Mute" box
+  that does the same.
+- `/wa welcome` shows the welcome window again.
+- With no aura at all, the `/wa` list shows three buttons: Packs, Guide and Import.
+- The Packs page shows the number of auras of the whole HUD, of each block and of each utility pack.
+- The first login of a character whose class HUD is not installed offers that HUD once.
+
+## Changed
+
+- The first login window is a short welcome with four buttons: "Install the full HUD", "Choose blocks", "Guide" and
+  "Later". The list of WoW Forever limits moved to the Guide. Closed with Escape, the window comes back at the next
+  login.
+
+## Fixed
+
+- `/wa`, `/wa unlock`, the minimap icon, an aura link or `/wa undelete` used while the auras still load now act
+  when the login ends, instead of doing nothing or raising an error.
+- An import started in the placement mode leaves that mode and shows the import window.
+- Importing a text that holds no aura says so, instead of raising an error.
+- Rogue pack: Mutilate uses the spell taught by WoW Forever 1.60.1. Paladin and BuffCheck packs: Blessing of Light
+  and Blessing of Salvation, gone from the game, are removed.
+
+# Musca Auras 1.19.0 (2026-11-18)
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/Musca-Auras/blob/main/CHANGES.md).
+
+## New
+
+- Click Action: an element that makes an Icon, Progress Bar, Text, Texture, Progress Texture or Empty aura
+  clickable. Left, right and middle click each cast a spell, use an item, run a macro, target a unit (player,
+  target, mouseover, focus) or remove a buff.
+- Key: a key per aura does the action of the left click. The options warn when the game or another aura already
+  uses that key.
+- Clickable in Combat: while the aura shows at the combat start, the whole combat, always while the aura is loaded, or on a macro
+  condition. The game forbids changing a clickable area in combat: it stays where it was when the combat started.
+  The click does nothing while the options are open.
+- Health trigger: with "Show Absorb", a Progress Bar draws the shield as an overlay after the health, in combat
+  too. Its color is set in the overlay colors of the bar.
+
+# Musca Auras 1.18.2 (2026-11-16)
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/Musca-Auras/blob/main/CHANGES.md).
+
+## Fixed
+
+- Cooldown trigger: "Hide GCD Text" also hides a `%p` or `%t` text while only the global cooldown runs, and works in
+  combat.
+- Cooldown trigger: the "On Global Cooldown" condition works in combat.
+
+# Musca Auras 1.18.1 (2026-11-15)
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/Musca-Auras/blob/main/CHANGES.md).
+
+## Fixed
+
+- Cooldown trigger: in combat, a spell outside the global cooldown (Judgement, Bloodrage) no longer shows as ready
+  during its cooldown.
+
+# Musca Auras 1.18.0 (2026-11-13)
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/Musca-Auras/blob/main/CHANGES.md).
+
+## Changed
+
+- Name: the windows, the chat messages, the tooltips, the in-game guide and the 11 translations say Musca Auras. The
+  credit to WeakAuras and the links to its wiki and Discord stay.
+- Colors: chat messages, the popups, the Guide window and the option widgets (edit boxes, spin boxes, tree, expand
+  arrows, color palette, update rows) use the brass and dark palette of the `/wa` window.
+- Guide window (`/wa tutorial`): dark frame, title bar, thin scroll bar and flat import buttons, like the `/wa` window.
+- Icon: the addon list, the minimap button and the `/wa` window show the Musca Auras emblem.
+- Translations: the placement mode (`/wa unlock`) and the Guide are translated in German, Spanish, Italian, Korean,
+  Portuguese, Russian and Chinese. They were in English and French only.
+- At the first login after the update, a window says what changed and what did not.
+
+## New
+
+- Options > AddOns has a Musca Auras page, with a button that opens `/wa`.
+- The addon menu of the minimap has a Musca Auras entry: left click opens `/wa`, Shift click pauses the auras, right
+  click opens the profiling window.
+
+## After the update
+
+- Nothing to do: `/wa`, your auras, their positions and the Wago imports work as before.
+
+# Musca Auras 1.17.0 (2026-11-12)
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/Musca-Auras/blob/main/CHANGES.md).
+
+## New
+
+- Placement mode: `/wa unlock` darkens the screen under a grid and gives every aura a box to drag, loaded or not (the
+  children of a dynamic group are placed by their group). It opens with a short animation, refuses to start in
+  combat, and comes back after combat with your changes. A bar on top has Grid, Snap, Revert, Quit and Save and quit.
+- Placement panel: type the X/Y position and the size of the selected aura, choose the aura it follows, and for a
+  dynamic group set its growth, alignment and spacing. Escape closes the menu, the link and the selection in turn,
+  then asks whether to keep the changes.
+- Magnetism: in `/wa` and in Edit Mode, auras snap to screen edges, grid lines, and the edges and centers of other
+  auras. Two auras in a row or column add a line at the same gap, so a third one repeats the spacing. Ctrl aligns
+  centers only, Shift turns the snap off. A yellow ghost box and guides show where the aura will land, and the
+  offsets are shown next to the box while you drag.
+- Grid button in the `/wa` toolbar: draws a grid over the screen and snaps to it. Right click it to set the spacing
+  (8 to 128).
+- Edit Mode: drag the handle at the bottom right corner of the selected aura to resize it, with the same snap.
+- Arrow keys move the selected aura by 1 unit, 10 with Shift, in Edit Mode and in `/wa` (not with Lock Positions).
+- Align Selection: with several auras selected in `/wa`, align their edges or centers, or spread them with equal gaps.
+  One undo step restores the move.
+- Anchor links: a Link button on the `/wa` mover, and an Anchor link on the Edit Mode boxes, anchor an aura or
+  group to a side or a corner of another aura, group or game frame, without moving it. A link that would make a loop
+  is refused. A light blue frame shows what the aura follows.
+- Right click on a box: show always, in combat or out of combat, disable or enable, or edit in `/wa`. Applies to a
+  whole group, and Revert restores it.
+- Nested groups: a left click inside the selected group keeps it, so you can drag the whole group from any child.
+  Release without dragging to select one level lower. In Edit Mode, the children of simple groups get their own box.
+- New look for the `/wa` window: dark frame, Fira font, brass accents, a title bar with the version, and a toolbar
+  where Unlock is the main button. Flat tabs, a restyled aura list with lighter rows, thin scroll bars, and section
+  titles on the New and Packs panels.
+- At the first login after the update, a window presents the placement mode, with an Unlock button to try it. The
+  in-game guide (`/wa tutorial`) has a new part on placing your auras.
+
+## Changed
+
+- Mage pack: the Arcane Blast segments run 18 s from the first cast. Further casts add a stack without restarting the
+  timer.
+- Magnetically Align in `/wa` also snaps to the edges of the screen.
+- Positions and sizes are rounded to whole units when you drop an aura or finish a resize, except on an axis stuck to
+  a line. The arrow buttons around the mover move by 1 unit.
+- Edit Mode boxes of small groups snap on the real edges of the group, and the middle lines of the screen are snap
+  targets.
+- French translations added for several `/wa` labels.
+
+## Fixed
+
+- A click to move an aura in `/wa` no longer sends it, with its group, to the bottom left of the screen. The same
+  goes for resizing and for the Edit Mode and `/wa unlock` boxes.
+- Resizing a child of a dynamic group in `/wa` changes only its width and height, and the magnetic alignment works on
+  the right and top edges.
+- The arrow buttons around the mover no longer move an aura while Lock Positions is on.
+- Undo and redo restore the border and the mover of a group.
+
+## After the update
+
+- Class HUDs: the class pack notice shows again. Re-import the Mage pack to get the new Arcane Blast segments.
+
+# Musca Auras 1.16.1 (2026-11-09)
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/Musca-Auras/blob/main/CHANGES.md).
+
+## New
+
+- Glow: "Proc Glow" is offered in the glow type lists of the Glow sub element, the glow actions and the conditions.
+  A Proc glow switched to classic mode now shows its type in the menu.
+
+## Fixed
+
+- Options: a custom option or group without a name no longer breaks the Custom Options tab.
+
+# Musca Auras 1.16.0 (2026-11-07)
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/Musca-Auras/blob/main/CHANGES.md).
+
+## Changed
+
+- Warrior HUD: Sunder Armor on the target shows 5 segments next to the stacks icon, whoever cast it.
+- Priest HUD: Divine Aegis shows as a buff on you.
+- Packs page: the Stack Segments block reads "One segment per stack of a key buff or debuff".
+- "Modern Blizzard" time format: "3m" instead of "3 m".
+- The release zip is named `Musca-Auras-<version>.zip`. The addon folders inside keep their names.
+
+## Fixed
+
+- Combat Text pack: hits and heals taken show again in combat, where the game hides the amount. A hit fully
+  absorbed, blocked or resisted shows the word instead of an amount.
+- Aura (Modern) groups by unit with centered growth: a unit without the aura leaves no hole, and the row centers
+  again when a group member leaves or comes back.
+- Aura (Modern) groups in Grid mode: hidden units leave no hole in the grid.
+- Enemy nameplates with a raid mark: no more Lua error "BuffTrigger2.lua:2130: attempt to compare field '?' (a secret
+  string value...)".
+- Custom trigger whose duration function returns hidden values: the aura shows without a timer instead of raising an
+  error that stopped the other auras.
+- Name filter on a unit whose name the game hides: no match and no Lua error.
+- Triggers: DBM Timer "Bar enabled" option, Location instance name, `%raidMark` text without a matching aura, overlay
+  counter and `modRate` of custom triggers. The `boss` unit is removed from the Threat trigger.
+- Displays: Main animations of group siblings stay in step after several loops; a linear texture in compress mode no
+  longer shrinks at each tick and follows the scale; extra circular spinners hide; "Show model of unit" with "Use
+  Display Info Id" shows the model again.
+- Custom code: a `C_Timer` callback keeps its `aura_env` after the aura is renamed; the saved data warning shows at
+  16 KB instead of 16 MB; `WeakAuras.GetData` outside an aura no longer raises an error.
+- Options: a new group from a mixed selection is created at the top level; the right-click menu keeps the
+  multi-selection; "Add to new Modern Aura Group" is greyed out inside a dynamic group; the secret fallback follows
+  its trigger when triggers move; Glow On Hide options sit in the On Hide block; the Main animation color is saved.
+- Options: Custom Options tab, Max field description and multiselect entry deletion; deleting a sub element used as
+  an anchor or a tick placement; frame chooser, texture picker Cancel, percent fields, talent icons, item links
+  dragged into the code editor, profiling totals, Duration templates, StopMotion Scale Factor and atlas textures.
+
+## After the update
+
+- Class HUDs: the class pack notice shows again. Re-import the Warrior and Priest packs to get Sunder Armor and Divine
+  Aegis.
+- Combat Text: delete the Combat Text aura, then import it again from the Packs page.
+
+# Musca Auras 1.15.0 (2026-11-05)
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/Musca-Auras/blob/main/CHANGES.md).
+
+## New
+
+- Options: a "Packs" entry on the New Aura page, above Premade Auras, opens the Packs page. The class HUD of your
+  class comes first: "Whole HUD" imports it as before, and one button per block (Reminders, Procs, Cooldowns,
+  Resource Bars...) imports that block alone, keeping your installed HUD as it is.
+- Utility packs, on the Packs page: Ready Flash, Buff Check, Target Debuffs, Pre-Pull Check, Nameplate Aggro,
+  Shield Meter, Crowd Control, Armor Shred, Enemy Targets, Center Mark, Level Progress, Raid Coverage, Combat Items,
+  Engineering Items, Conjured Supplies, Character Stats, World Reminders, Campfire, Combat Text, Announcements,
+  Group Experience, Equipment Sets, Guild Campfires and Object Highlight. The nameplate packs need the default
+  Blizzard nameplates.
+- Custom code: `WeakAuras.IsSpellReady`, `WeakAuras.GetSpellCooldownDurationNoGCD` and
+  `WeakAuras.SetSpellCooldownState` read the cooldown of a spell watched with `WeakAuras.WatchSpellCooldown`, even
+  when the game hides it. `WeakAuras.SetLoadFlag(id, loaded)` keeps an aura unloaded until the next `/reload`.
+
+## Changed
+
+- The addon list, the minimap button tooltip and the debug messages show "Musca Auras" with its own version,
+  instead of "WeakAuras 5.22.0". Exported auras are not affected.
+- Class packs: a sound on procs and reactive abilities, "Fading" reminders before a buff ends, an Enemy Cast bar
+  and the ranged swing timer.
+- Class packs: a Defensives icon shows the defensive buffs and shields on you (Blessing of Protection, Power Word:
+  Shield, Pain Suppression, Shield Wall, Barkskin, Evasion, Deterrence, defensive potions...). Buffs on you show
+  whoever cast them.
+- Class packs: missing buffs, procs and debuffs added for every class, and every spell ID checked again against the
+  current game build. Mage: four Arcane Blast stack segments. Paladin: Infusion of Light proc and a Righteous Fury
+  reminder. Hunter: "In melee range" text and a low ammo reminder. Rogue: low poison reminder.
+- Class packs: debuffs on you (Forbearance, Weakened Soul) show once they have been seen out of combat.
+
+## Removed
+
+- Aura sounds: the recorded voice sound is removed.
+
+## Fixed
+
+- Threat Situation trigger: no more Lua error when the game hides threat values.
+- Number format at precision 0: no more Lua error on a hidden number, from custom text for example.
+- Options preview: auras whose trigger has a fixed duration (Ready Flash for example) show the spell or item icon
+  instead of a question mark.
+- Class HUDs: the troll racial Berserking icon shows again.
+
+## After the update
+
+- Class HUDs: re-import your class pack to get the new auras. The class pack notice shows again.
+- An aura that used the recorded voice sound loses that sound: pick a sound file instead.
+
+# Musca Auras 1.14.0 (2026-10-22)
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/Musca-Auras/blob/main/CHANGES.md).
+
+## Changed
+
+- `/wa demo`: sample timers now start and end at random, like cooldowns and buffs in a fight. Each one runs for 4 to
+  20 seconds with 1 to 5 stacks, hides for 1 to 6 seconds, then starts again. Aura (Modern) samples show the same
+  timer and stacks. The demo ends when the options close.
+- Author options: Start Collapsed on an option group now goes through Undo and Redo.
+- Custom code: `WeakAuras.IsTargetInSwingRange`, `WeakAuras.GetSpellCooldownDurationObject`,
+  `WeakAuras.IsSpellCooldownSecret` and `WeakAuras.IsSecretStateActive` are removed from the `WeakAuras` table.
+  Triggers and conditions that use them still work.
+
+## Fixed
+
+- Options: sample timers stopped looping from the second opening of the options in a session (bug also in
+  WeakAuras 5.22).
+
+## After the update
+
+- Nothing to convert, and the class HUDs do not need an update. Going back to 1.13 is possible.
+- Custom code that calls one of the four removed `WeakAuras` functions above stops working: remove the call.
+
+# Musca Auras 1.13.0 (2026-10-21)
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/Musca-Auras/blob/main/CHANGES.md).
+
+## New
+
+- Health trigger: `Show Absorb` and `Show Heal Absorb` options. The `%absorb` and `%healabsorb` texts show the
+  shield and the heal absorb of the unit. The game hides these amounts, so they give no condition and
+  no threshold.
+
+## Changed
+
+- Options window: the toolbar now fits in the window, in French too. Unused Auras, Replace and Hide Blizzard's CDM
+  show an icon or a checkbox alone, with their name in the tooltip. Shorter French labels.
+- Clearer texts, without technical words: "Native Filter" is now `Game Categories`, and "Secret Restrictions Active"
+  is now `Game Hides Combat Data`. The in-game tutorial has a new section, "Coming from ForeverAuras".
+- The code derived from ForeverAuras is rewritten without ForeverAuras code. ForeverAuras auras still import as
+  before.
+- Templates: removed spells that do not exist on WoW Forever (Season of Discovery versions, Troll Berserking
+  variants).
+
+## Fixed
+
+- Combo points: the Power trigger on Combo Points now follows the target. The combo point pips of the Rogue and
+  Druid HUDs, and the `%power` text of a Combo Points aura, no longer keep the points of the previous target.
+
+## After the update
+
+- Nothing to convert, and the class HUDs do not need an update. Going back to 1.12 is possible.
+
+# Musca Auras 1.12.0 (2026-10-19)
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/Musca-Auras/blob/main/CHANGES.md).
+
+## New
+
+- Undo and Redo: two buttons in the options window, for every tab. Edits less than one second apart make one step, and the last 50 steps are kept. Renaming, moving, deleting, converting and importing clear the history.
+- Find and replace: the `Replace` button of the toolbar replaces a spell, texture, font or sound in the selected
+  auras and their children, or in every aura when none is selected. It lists the changes in the chat and asks for a
+  confirmation. Undo puts the old values back.
+- Tags: a `Tags` field in the Information tab. Searching `#raid` in the aura list shows the auras tagged "raid" and
+  the members of a group tagged "raid". Tags are not exported, and an update keeps them.
+- Aura Sets: the `Aura Set` button of the toolbar picks a tag for the current character, which then loads only the
+  auras that carry it, themselves or through their group. Each character of the account keeps its own set, from the
+  same auras. An empty tag loads every aura.
+- Trigger `Aura Shown` (Events category): active while another aura is shown, or while it is hidden with Inverse.
+  Renaming the watched aura keeps the link.
+- Edit Mode placement: while the Blizzard Edit Mode is open, each top-level aura or group anchored to the screen
+  gets a labelled box, shown even when the aura is not. Drag the box to move the aura; with Snap on and the grid shown,
+  it sticks to the grid. `Revert All
+  Changes` puts the moved auras back, and /wa can undo a move.
+- Group conditions: the Conditions tab of a group shows `Group Conditions` above `Children Conditions`. They use the
+  global checks, such as combat, and change the alpha, offsets, sound, chat message or custom code of the group itself.
+- `/wa demo` opens the options and shows every loaded aura with sample states, to set up a HUD without a fight.
+  `/wa demo <aura name>` shows only that aura.
+- Frozen value padlock: while the game hides auras in combat, an aura whose Aura trigger can no longer update shows a small padlock at
+  its top right corner, since what it shows may be out of date. `Hide Frozen Value Padlock` in Size & Position turns
+  it off for that aura.
+- `Pixel Perfect` option in Size & Position: the textures of the aura snap to the screen pixels, for sharp edges. Off
+  by default.
+
+## Changed
+
+- Stance/Form/Aura: the trigger stores the form spell instead of its position on the stance bar, so a stance learned
+  later no longer shifts the selection. Dire Bear Form counts as Bear Form, and every rank of Stealth, of the paladin
+  auras and of the hunter aspects counts as one. The `%form` text gives the spell ID; custom code that reads the form
+  is not converted. The `Form by position` option keeps the old behaviour.
+- Spell Cast Succeeded: a warning shows when the Caster Unit is neither the player nor the pet, since the game hides
+  the casts of other units.
+- ForeverAuras imports: anchors and glow frames set to another ForeverAuras aura, form filters and form conditions are
+  converted, and custom code that calls `ForeverAuras` finds the WeakAuras API. An anchor imported before 1.12 stays broken: import the
+  aura again. A condition that its trigger does not offer shows `Incompatible condition` in the options.
+- The movement watcher stops once no aura uses it.
+- French translation of the 225 texts that had none.
+
+## After the update
+
+- Your stance and form auras are converted at login, for the class of the character you log in with. Log in once with
+  each class that has such auras. Only auras loaded for a single class, by the Class option or a Forever
+  specialization, are converted. The others, and an aura whose stance cannot be found on the stance bar, keep
+  `Form by position`.
+- Going back to an older version breaks the converted stance and form auras.
+
+# Musca Auras 1.11.0 (2026-10-18)
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/Musca-Auras/blob/main/CHANGES.md).
+
+## New
+
+- Trigger Expression: a new `Required for Activation` mode combines the triggers with an expression such as
+  `1 and (2 or not 3)`, without Lua code. The expression is checked when you enter it, and trigger numbers follow when
+  a trigger is moved or deleted.
+- Copy and paste of a single trigger or condition: `Copy Trigger` and `Copy Condition` at the end of each one, then
+  `Paste Trigger` or `Paste Condition` next to the add button of any aura. A paste that an Aura (Modern) cannot use is
+  undone, with a message in the chat.
+- Partial import: importing a new group, or a copy of a group, lists its child auras with a checkbox each. An
+  unchecked aura is left out of the import.
+- Unused Auras: a new toolbar button lists the auras no character of your account loaded for 30 days, and the empty
+  groups, then asks to delete them. Every aura you delete is now kept for 30 days: `/wa deleted` lists them and
+  `/wa undelete <number>` opens the import window on one. Load dates count from your first login with 1.11.0.
+- CPU cost: after a profiling (`/wa pstart`, then `/wa pstop`), each aura that ran shows a badge colored by its cost.
+  A click opens the profiling window. A custom trigger or custom text that runs its code on each frame without a
+  throttle gets a warning.
+- Greyed out options now explain why in their tooltip. A `Switch to classic mode` button changes the Aura (Modern)
+  triggers of an aura to Aura.
+- Aura update has a new category, `Fonts & Text Style`, unchecked by default, so updating a display keeps your fonts.
+- The aura list search also matches descriptions, spell names and IDs, item names and the texts of the aura.
+- Class packs: a `Not in melee range` text for the melee specs (Shaman, Rogue, Paladin, Warrior, Druid cat and bear),
+  read in combat. Reminders that do not track an aura pulse (icon) or flash (text).
+
+## Fixes
+
+- Aura (Modern) background follows every restyle (crop, rotation, mirror and offset), and a partial ring no longer
+  shows a full disc behind it.
+- `/wa pstart combat` and `/wa pstart encounter` now profile the next combat or encounter even when the profiling
+  window was never opened. Opening the window lists the results of the last profiling.
+
+## Changed
+
+- Class packs: the Shaman healing spells load in the Restoration specialization only, Lava Lash and Molten Blast in
+  Enhancement only. A Druid cooldown limited to a form (Dash, Enrage, Frenzied Regeneration) shows its buff, then its
+  cooldown, in one icon, and its separate "(active)" icon is gone. The mana bar turns red under 30 % without a red copy
+  laid over it. The Paladin "Missing: Seal" reminder loads in combat only, the Priest Shadowform reminder in and out
+  of combat.
+- Secret value text: a hidden value or total in a text now follows the number format chosen in the options.
+- The welcome popup and the tutorial no longer say that talent load options are empty: they list the talents of your
+  own specialization.
+- French translation of the texts that had none.
+
+## After the update
+
+- Click `Update <Class> HUD` in the message shown at login, or `Class Pack` at the top of the New Aura panel, to update
+  your HUD. Your positions and options are kept.
+
+# Musca Auras 1.10.0 (2026-10-18)
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/Musca-Auras/blob/main/CHANGES.md).
+
+## New
+
+- Conditions on Health, Health (%), Health Deficit, Power, Power (%) and Power Deficit (`<`, `<=`, `>`, `>=`) change
+  Alpha, Color and Desaturate even when the game hides the value, in combat included. On an enemy, only the %
+  conditions work.
+- These conditions also drive the sub elements: sub text, border, glow, texture, progress textures, stop motion and
+  tick can be shown, hidden or recolored, and texture, progress textures, stop motion and tick greyed out. Bar color,
+  bar icon, background and spark follow too.
+- Text auras get an Alpha property for conditions. A condition that changes the text works on a hidden value, and
+  several such conditions stack.
+- New condition property `Looping Animation`: while the condition is true, the aura plays the main animation you
+  choose, and its own animation comes back afterwards.
+- Your auras are backed up once a day, three copies kept. `/wa backups` lists them and `/wa restore <number>` puts one
+  back after a confirmation.
+- Custom code can call `UnitAura`, `UnitBuff`, `UnitDebuff`, `GetSpellInfo`, `GetSpellTexture`, `IsUsableSpell`,
+  `GetSpellCooldown` and `GetSpellCharges`, which WoW Forever lacks. `UnitAura`, `UnitBuff` and `UnitDebuff` stop in
+  combat on a hidden aura. The import report says when a call is replaced.
+- Cooldown Manager trigger: a buff chosen by name tracks every spell ID of that name, with one clone per Cooldown
+  Manager entry. A spell counts as known when another rank of it is known.
+
+## Fixes
+
+- The Shaman class pack totem icons keep their sub elements when the pack is loaded, and their timer swipe turns the
+  right way.
+- `Spell in Range`: a spell saved by ID shows its name and icon, and a trigger without a spell no longer shows a
+  wrong icon.
+- Errors raised while custom condition code loads now show under the code field.
+- A Lua error no longer fires when the game does not describe a talent subtree (talent load option).
+
+## Changed
+
+- The load option `Enabled BossMod ID(BW Only)` is now `BigWigs Module Loaded for Encounter ID`. Your setting is kept.
+
+## After the update
+
+- Click `Update <Class> HUD` in the message shown at login, or `Class Pack` at the top of the New Aura panel, to update
+  your HUD. Your positions and options are kept.
+
+# Musca Auras 1.9.1 (2026-10-14)
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/Musca-Auras/blob/main/CHANGES.md).
+
+## New
+
+- Class pack aura icons show no timer numbers: a grey swipe fills them, and they pulse red in their last 3 seconds.
+- Class packs add a cast bar for every class, the global cooldown swipe on cooldown icons and more spells for each
+  class. Each spell shows only once it is learned.
+- The Specialization load option matches the talent tree with the most points spent.
+- Import, deletion and selection of auras with glows no longer freeze the game.
+
+## Fixes
+
+- Buff and debuff icons of the Aura (Modern) trigger show their cooldown swipe. With `Hide Timer Text` off, the game's
+  countdown numbers can now show on them: turn it on if the icon already has a timer text.
+- Buff reminders of the class packs show only once the spell is learned: a level 1 rogue no longer sees the poison
+  reminders.
+- The Druid form templates match the right form. A form learned after the template window first opened needs a
+  `/reload`.
+- Nature's Swiftness no longer shows the global cooldown countdown when `Hide GCD Text` is on.
+
+## Removed
+
+- The Energy Tick trigger: energy regenerates continuously on WoW Forever, there is no 2 second tick. An aura that used it turns
+  into a Health trigger and shows your health after a `/reload`: delete it. The druid class pack update removes its
+  energy tick bar (keep `Remove Obsolete Auras` checked).
+
+## After the update
+
+- Click `Class Pack` at the top of the New Aura panel to update your HUD, or `Update <Class> HUD` in the message shown
+  at login. Your positions and options are kept.
+- Coming from 1.8.0 or older: delete the `<Class> (Musca)` group first, then click `Class Pack`.
+
+# Musca Auras 1.9.0 (2026-10-13)
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/Musca-Auras/blob/main/CHANGES.md).
+
+## New
+
+- Aura (Modern) spell lists accept a spell name: it becomes the IDs of all its ranks.
+- The first login popup has an `Install <class> HUD` button that imports the class pack.
+- Before an import, a compatibility report lists the auras that use the combat log, values hidden in combat or
+  functions missing from WoW Forever, with the known fix.
+- A custom code that fails to compile or to run shows "Error in custom code" on the aura.
+- A new Icon, Progress Bar, Progress Texture or Text aura starts with an Aura (Modern) trigger.
+- The options window shows the Musca Auras logo, and its Discord button gives the invite link.
+
+## Fixes
+
+- Range, group role, weapon enchant and cooldown swipe checks skip the values the game hides in combat.
+- Custom code can no longer quit the game, manage the guild or read the debug library.
+- A class pack import asked in combat waits for the end of combat.
+
+## After the update
+
+- Restart the game: the new logo is not loaded by a `/reload`.
+
+# Musca Auras 1.8.1 (2026-10-12)
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/Musca-Auras/blob/main/CHANGES.md).
+
+## New
+
+- Class packs use a compact HUD: reminders and procs above, a thin resource bar, a main row and a utility row, then
+  the bars.
+- A new class pack import updates the auras already in place and keeps their position, size and options.
+- Damage over time debuffs glow when they can be refreshed. Warrior stance spells show only in their stance.
+- `WeakAuras.ImportClassPack()` lets another addon open the class pack import.
+
+## Fixes
+
+- An equipped trinket shows its cooldown without a `/reload`, even when its slot was empty when the aura loaded.
+- Texts with a trigger number (`%1.percentpower`, `%2.health`...) show the player's power and health percent, also
+  mixed with names or readable values.
+- Class pack icons with a timer text no longer show two timers when the `countdownForCooldowns` CVar is on.
+
+## Before you import the new class pack
+
+- Delete the "<Class> (Musca)" group first: the aura uids change once.
+
+# Musca Auras 1.8.0 (2026-10-11)
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/Musca-Auras/blob/main/CHANGES.md).
+
+## New
+
+- Energy Tick trigger: a bar to the next 2 second energy tick.
+- Class Pack button at the top of the New Aura panel: imports the ready-made auras of your class.
+
+## Fixes
+
+- No more frame rate drop after opening `/wa` and clicking an aura. Closing the options stops the auras that are not
+  loaded and the glows and pulses of the preview.
+- Glows and Pulsing border conditions stop on empty native aura buttons, and when the Missing display is disabled.
+- A glow condition on elapsed time ("elapsed < N") works.
+- An aura anchored to another aura with Set Parent to Anchor no longer shows at its group's origin while the target
+  aura is not created yet.
+- A Cooldown Manager clone taken in combat follows the aura it is anchored to.
+- No more LibSharedMedia error at login about the Cartoon Hop sound. The sound is removed, its file never shipped.
+
+# Musca Auras 1.7.1 (2026-10-10)
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/Musca-Auras/blob/main/CHANGES.md).
+
+## Fixes
+
+- Cooldown Manager aura triggers in combat: the bar no longer stays full or frozen, and the icon swipe and `%p` text
+  keep the aura timing, also on a recast and on an aura cast for the first time in combat.
+- The `%p` Cooldown Manager text follows the selected time format and comes back after combat.
+- No more `ADDON_ACTION_BLOCKED` when a Cooldown Manager aura is placed or ends in combat.
+- An exact spell ID Cooldown Manager trigger stays shown in combat and follows a rank change.
+- No more Lua error at login from the native Cooldown Manager bar.
+- Two or more texts on an aura keep their order.
+
+## Changes
+
+- The Cooldown Manager and dispel type files were rewritten. Nothing changes for your auras.
+
+# Musca Auras 1.7.0 (2026-10-09)
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/Musca-Auras/blob/main/CHANGES.md).
+
+## Fixes
+
+- Spell cooldowns in combat: a global cooldown alone no longer counts as a cooldown. A Not on Cooldown trigger with
+  Show Global Cooldown unchecked stays shown during the GCD, and with Show Global Cooldown checked, On Cooldown no
+  longer shows on every GCD.
+- An aura rebuilt while it is loaded, for example a group child after a growth change, no longer stays hidden until
+  `/reload`. Not tested in game yet.
+
+# Musca Auras 1.6.2 (2026-10-09)
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/Musca-Auras/blob/main/CHANGES.md).
+
+## Fixes
+
+- Swing Timer with Target In Range or Out of Range: the aura shows with no swing in progress, so Out of Range works
+  when you stand away from the target.
+- The native `%p` duration text follows the Old Blizzard (`3m`, `10s`) and Modern Blizzard (`3m 7s`) time formats
+  instead of always showing `3:07`.
+- Cooldown Manager spell triggers no longer show the wand Shoot timer while you shoot.
+- Aura links: no more silent failure when addon whispers are blocked, a message tells you why.
+- Templates: class spells use the WoW Forever spell IDs (Druid: Tiger's Fury removed, Feral Charge fixed).
+- Smoother frame rate in combat while the game restricts addons.
+- With a Masque skin, an Icon keeps its size once it shows in game. Not tested in game yet.
+
+## Changes
+
+- The options window title reads Musca Auras.
+- Shorter in-game guide.
+
+# Musca Auras 1.6.1 (2026-10-07)
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/Musca-Auras/blob/main/CHANGES.md).
+
+## Fixes
+
+- A Text display that shows only `%power`, `%health` or another value hidden by the game is no longer invisible.
+- The Cast trigger no longer reports "Forbidden function or table: pcall".
+- `%unit` without a trigger number is colored by class by default. For an aura saved before this fix, set Color to
+  Class in the text options.
+
+# Musca Auras 1.6.0 (2026-10-06)
+
+> **Heads-up:** tested in game on WoW Forever with a Shaman: spell cooldowns, Aura (Modern) buffs and debuffs, totems,
+> weapon enchants, health, power, swing and cast bars, `/reload` in combat. Not tested in game yet: Grid mode, more
+> than 40 nameplates, exports shared between players. If something breaks,
+> install 1.5.0 again from the Files tab of the CurseForge page and report the error on GitHub or CurseForge.
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/Musca-Auras/blob/main/CHANGES.md).
+
+## New
+
+- Modern Aura Group: Grid mode, with Grid direction, Row Width / Column Height, Row Space and Column Space. Off by
+  default: existing groups keep their layout.
+- Aura (Modern) on nameplates is no longer limited to 40 nameplates.
+
+## Changes
+
+- Spell cooldowns: a global cooldown alone no longer sets off Cooldown Ready or desaturates a spell.
+- Fewer updates for Modern Aura Groups, conditions and the Cooldown Manager trigger.
+- Restart the game after the update: a new file is not loaded by a `/reload`.
+
+## Fixes
+
+- Modern Aura Group changes skipped in combat are applied at the end of combat, also in battlegrounds and
+  arenas.
+- `%N.p` and `%N.s` texts are no longer empty in the first combat after a `/reload`.
+- A manual icon with an empty path shows the aura icon.
+- Spell charges no longer show outdated values after combat.
+
+## Known limitations
+
+- Aura (Modern) needs the spell ID of the aura itself, which can differ from the spell you cast on WoW Forever.
+- In a Modern Aura Group, only Aura (Modern) displays are placed by the group. Put other triggers (totems, weapon
+  enchants, cooldowns) in a Dynamic Group.
+- Conditions on a value hidden by the game in combat, such as target health, keep their last state until the end of
+  combat.
+- With the classic Aura trigger, buffs and debuffs are hidden in combat. Use Aura (Modern) for combat.
+- Combat log triggers never fire: the game forbids the combat log to addons.
+
+# Musca Auras 1.5.0 (2026-10-05)
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/Musca-Auras/blob/main/CHANGES.md).
+
+## Changes
+
+- Renamed to Musca Auras. Nothing changes in your auras or settings.
+- Modern Aura Group: Progress Bar displays are accepted, not only Icons.
+- Aura (Modern) with a Remaining Time threshold on an Icon: textures and other display elements added in the
+  Display tab now show with the icon instead of staying hidden.
+- Aura (Modern): glows keep moving after the aura is clicked in the options.
+- Aura (Modern): new Include Pets option (Players and Pets, Pets only) for group, party and raid.
+- Power trigger: new "Show at or above the value instead" for "Show only below (%)". With the energy hidden by the
+  game in combat, use it instead of a Power comparison, for example energy at or above 80 with a Swing Timer.
+- Conditions on a value hidden by the game no longer cause a Lua error.
+
+# WeakAuras Forever 1.4.2 (2026-10-04)
+
+> **Heads-up:** this version reorganizes a large part of the code. It was tested in game on WoW Forever, but
+> problems may show up that the tests missed. If you get Lua errors or an aura no longer behaves as in 1.4.1,
+> install 1.4.1 again from the Files tab of the CurseForge page. Your auras are kept: the saved data format did not
+> change. Please report the error on GitHub or CurseForge, with the text of the error.
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/WeakAuras-Forever/blob/main/CHANGES.md).
+
+## Changes
+
+- Internal code reorganized: the WoW Forever code moved out of the WeakAuras files into files of its own. Nothing
+  changes in your auras, the behavior is the same. Tested in game on WoW Forever.
+- Restart the game after the update: the new files are not loaded by a `/reload`.
+
+## Known limitations
+
+- Not tested in game yet: Important on the casts of other units, Ignore out of checking range, spell charges in
+  combat.
+- Aura (Modern) needs the spell ID of the aura itself, which can differ from the spell you cast on WoW Forever.
+- `/wa` is also used by ForeverAuras: disable ForeverAuras, or type `/weakauras`.
+- With the classic Aura trigger, buffs and debuffs are hidden in combat. Use Aura (Modern) for combat.
+- Combat log triggers never fire: the game forbids the combat log to addons.
+
+# WeakAuras Forever 1.4.1 (2026-10-04)
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/WeakAuras-Forever/blob/main/CHANGES.md).
+
+## Highlights
+
+- Low energy, low mana and low health alerts work in combat: the Health and Power triggers have a new **Show only
+  below (%)** option.
+
+## New
+
+- Health and Power triggers: **Show only below (%)**. The game itself hides the aura while the percent is at or
+  above the value, in combat too. Example: Power, Energy, 70 shows a rogue icon under 70 energy (with 100 max
+  energy). The aura stays active: sounds, glows and other actions still run. Not available for Stagger.
+- Spell Cast Succeeded trigger: **Hide when target changes**. The timer started by your cast hides when you change
+  or clear your target. Targeting the first mob again does not bring the timer back.
+- Cooldown Progress (Spell) trigger: **Desaturate while on cooldown**. The game desaturates the icon while the spell is on
+  cooldown, global cooldown excluded, in combat too.
+- Cooldown Progress (Spell) trigger: **Hide GCD Text**. With Show Global Cooldown, the countdown numbers hide while only
+  the global cooldown runs; the swipe still shows it.
+- Cast trigger: **Important** filter and condition, for casts the game marks as important. While the spell is secret the
+  value is unknown and the filter hides the cast.
+- Character Stats trigger: Bonus Healing, Ranged Attack Power, Spell Haste (%), Ranged Haste (%) and Expertise (%).
+- Unit Characteristics trigger: **Ignore out of checking range**, for group members the game has not loaded (about 100
+  yards).
+- Text sub elements: %1.p and %1.s show the remaining time and stacks of an Aura (Modern) trigger on one unit in
+  combat, also when that trigger is not the progress source of the aura.
+
+- Conditions work in combat on secret values: Interruptible, Important, Spell Usable, Insufficient Resources, Spell in
+  Range, and remaining time lower or greater than a value. The game itself applies the alpha, color and desaturation
+  they set, in the usual priority order. Nothing to change in your auras.
+
+## Fixes
+
+- Cast trigger on a mob (target, focus, nameplates): the cast shows again; the Important check stopped the trigger.
+- Cast trigger on a mob in combat: %n shows the secret spell name instead of nothing.
+- Secret values in combat no longer stop a whole trigger: a filter on a secret value fails alone.
+- No Lua error from a glow, a zoom animation, Bag Space or Equipment Durability while the game keeps a value secret.
+
+## Changes
+
+- Cooldown Progress (Spell) trigger: a `%s` text shows the charges of a spell in combat, read from the game.
+- Guide (`/wa tutorial`): the low mana alert moves out of "Does not work".
+- Secret restrictions are checked again on combat, encounter, Mythic+ and PvP match changes, not only on entering and
+  leaving combat.
+
+## Known limitations
+
+- Show only below (%): the value is a percent of the maximum, not an amount. The option replaces the alpha of the
+  aura: alpha conditions are not kept, and an alpha animation shows the aura while it runs. With several triggers
+  using the option, only one is used. While the `/wa` window is open, the aura stays visible.
+- Tested in game: Desaturate while on cooldown, Hide GCD Text, %1.p and %1.s on Aura (Modern), the new Character
+  Stats (hidden in combat, where the game keeps stats secret), Hide when target changes, Important on the casts of
+  the player, conditions on secret values (Interruptible color of a mob's cast, Spell in Range, Insufficient
+  Resources, remaining time lower than a value), the secret spell name of a mob's cast with %n.
+- Conditions on secret values: only alpha, color (icon, text, texture, bar) and desaturation follow them in combat;
+  sounds, glows and other changes of such a condition do not run while the value is secret. Linked conditions are not
+  covered. A remaining time condition placed after another secret condition on the same property is ignored in
+  combat.
+- Not tested in game yet: Important on the casts of other units, Ignore out of checking range, the fixes above,
+  spell charges in combat.
+- Aura (Modern) needs the spell ID of the aura itself, which can differ from the spell you cast on WoW Forever.
+- `/wa` is also used by ForeverAuras: disable ForeverAuras, or type `/weakauras`.
+- With the classic Aura trigger, buffs and debuffs are hidden in combat. Use Aura (Modern) for combat.
+- The Native Filter of the Aura trigger shows nothing at the moment.
+- Combat log triggers never fire: the game forbids the combat log to addons.
+- The Blizzard Cooldown Manager is not enabled for every class on the WoW Forever beta.
+- Nameplate anchoring only works with the default Blizzard nameplates.
+
+# WeakAuras Forever 1.4.0 (2026-10-03)
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/WeakAuras-Forever/blob/main/CHANGES.md).
+Features taken from ForeverAuras (Neroxrw, GPL-2.0).
+
+## Highlights
+
+- The addon loads again: the 1.3.2 download from CurseForge stopped at start-up and `/wa` did nothing.
+- New trigger type: Aura (Modern). Buffs and debuffs are drawn by the game's own aura widgets, so duration and
+  stacks keep moving in combat.
+- New trigger type: Blizzard Cooldown Manager. Cooldowns, buffs, debuffs and items shown by the game's Cooldown
+  Manager, drawn natively, so they keep working in combat.
+
+## New
+
+- Aura (Modern) trigger: Show On, Remaining Time, Total Duration and Stack Count rules, native conditions (Aura
+  Present, In Pandemic Window, Dispel Type, Aura Highlight), glow on the unit frame. ForeverAuras auras that use it
+  are imported as they are.
+- Modern Aura Group: from the New button or the multi-selection menu, with growth, spacing, sort, limit and
+  grouping by unit frame or nameplate.
+- Dispel Type Border sub element.
+
+- Blizzard Cooldown Manager trigger: Cooldown, Buff/Debuff and Item, with remaining time, total, stacks and
+  "require target" filters. ForeverAuras auras that use it are imported as they are.
+- "Hide Blizzard's CDM" in the options and `/wa cdm`: hide the Blizzard Cooldown Manager while its triggers keep
+  working.
+- CDM Dispel Type Icon sub element.
+- Load conditions: Specialization (deduced from the talents you learned), Secret Restrictions Active, BigWigs
+  Module Loaded for Encounter ID.
+- Spell in Range trigger.
+- Color picker palette: class colors, favorites, recent colors and a hex field.
+- Warnings in the trigger options for values the game hides in combat, and combat status of the Cast trigger.
+
+## Changes
+
+- Spell cooldowns in combat: ready and on cooldown states follow the spell, ignore the global cooldown and the
+  shared Shoot cooldown, and Cooldown Ready fires once.
+- Totems keep their name and icon in combat once each totem was placed out of combat.
+- Progress Texture, Progress Bar and Text regions: more cases drawn natively in combat (inverse direction,
+  smoothing, additional bars, ring angles, rotation and mirror).
+- Dynamic groups wait for the end of combat to move protected anchors.
+- The swing timer no longer listens to the combat log.
+
+## Fixes
+
+- The 1.3.2 zip built for CurseForge did not load: `Init.lua` stopped on `unexpected symbol near ']'`.
+- Aura trigger, Name Pattern Match: the filter matched every aura, so an aura made for Demon Skin also showed
+  Devotion Aura. It now matches the name, with equality when no operator is chosen.
+- Action Usable trigger: a paused cooldown was read from the wrong value.
+- Range Check: no Lua error when the game hides the range.
+- Custom code: `WeakAuras.GetCritChance`, `GetHitChance`, `GetEffectiveAttackPower` and `GetEffectiveSpellPower`
+  return nil instead of 0 while the game hides your stats.
+
+## Known limitations
+
+- Tested in game: Aura (Modern) on a buff of the player, out of combat and in combat, the Secret Restrictions Active
+  load condition, and the Range Check trigger in combat. Everything else listed under New and Changes is not tested
+  in game yet.
+- Aura (Modern) needs the spell ID of the aura itself, which can differ from the spell you cast on WoW Forever.
+- `/wa` is also used by ForeverAuras: disable ForeverAuras, or type `/weakauras`.
+- With the classic Aura trigger, buffs and debuffs are hidden in combat: a buff shown before the pull keeps
+  counting down, stacks stay frozen, and a buff applied for the first time in combat only shows when combat ends.
+  Use Aura (Modern) for combat.
+- The Native Filter of the Aura trigger shows nothing at the moment.
+- Combat log triggers never fire: the game forbids the combat log to addons.
+- The Blizzard Cooldown Manager is not enabled for every class on the WoW Forever beta.
+- Nameplate anchoring only works with the default Blizzard nameplates.
+
+# WeakAuras Forever 1.3.2 (2026-10-03)
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/WeakAuras-Forever/blob/main/CHANGES.md).
+
+## Highlights
+
+- Aura names typed by hand work again: "Demon Skin" in an Aura trigger now matches the buff.
+
+## Fixes
+
+- Aura trigger and Load tab: an aura name typed by hand was replaced by an empty name, so the trigger matched
+  nothing and an extra "or" row appeared. The name is now kept as typed. Spell IDs were not affected.
+
+## Known limitations
+
+- Talents: not tested in game yet. The ForeverAuras "Specialization" load condition is ignored on import: the aura
+  then loads for every specialization of its class.
+- Buffs and debuffs are hidden in combat: a buff shown before the pull keeps counting down, stacks stay frozen, and
+  a buff applied for the first time in combat only shows when combat ends.
+- The Native Filter of the Aura trigger shows nothing at the moment.
+- Combat log triggers never fire: the game forbids the combat log to addons.
+- The Blizzard Cooldown Manager is not enabled for every class on the WoW Forever beta.
+- Not tested in game yet: Hide when target dies, Totem trigger in combat, Equipment Durability, Tracking, Ammo,
+  Instance Type, off hand and ranged swing timer, dispel type colors, dungeons and raids.
+- Nameplate anchoring only works with the default Blizzard nameplates.
+
+# WeakAuras Forever 1.3.1 (2026-10-02)
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/WeakAuras-Forever/blob/main/CHANGES.md).
+
+## Highlights
+
+- DoT timers without custom code: the Spell Cast Succeeded trigger has a new **Hide when target dies** option.
+
+## New
+
+- Spell Cast Succeeded trigger: **Hide when target dies**. The timer started by your cast hides when your current
+  target dies, before its duration ends. Only the death of your current target is seen: if you change target and
+  the mob with your DoT dies, the timer keeps running, and if the new target dies, the timer is hidden.
+
+## Changes
+
+- Guide (`/wa tutorial`), section 5: the DoT timer recipe uses the Spell Cast Succeeded trigger, with no custom
+  code. The ready-made Immolate aura uses this trigger too: importing it again updates the old one.
+
+## Known limitations
+
+- Talents: not tested in game yet. The ForeverAuras "Specialization" load condition is ignored on import: the aura
+  then loads for every specialization of its class.
+- Buffs and debuffs are hidden in combat: a buff shown before the pull keeps counting down, stacks stay frozen, and
+  a buff applied for the first time in combat only shows when combat ends.
+- The Native Filter of the Aura trigger shows nothing at the moment.
+- Combat log triggers never fire: the game forbids the combat log to addons.
+- The Blizzard Cooldown Manager is not enabled for every class on the WoW Forever beta.
+- Not tested in game yet: Hide when target dies, Totem trigger in combat, Equipment Durability, Tracking, Ammo,
+  Instance Type, off hand and ranged swing timer, dispel type colors, dungeons and raids.
+- Nameplate anchoring only works with the default Blizzard nameplates.
+
+# WeakAuras Forever 1.3.0 (2026-09-30)
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/WeakAuras-Forever/blob/main/CHANGES.md).
+
+## Highlights
+
+- Progress Textures move in combat: linear and circular fills follow the hidden value, like the Progress Bar.
+- Text auras show the health, power and percent of the unit in combat, with `%health`, `%maxhealth`,
+  `%percenthealth`, `%power`, `%maxpower` and `%percentpower`.
+- Cast bar on your target: the Cast trigger follows the cast in combat, with the icon of the spell.
+- Totem timers keep running in combat.
+- Talents: the Talent load conditions and the Talent Known trigger work on WoW Forever, with a talent picker, the
+  same way as in ForeverAuras.
+- Auras published for ForeverAuras import as they are, talent conditions included.
+
+## New
+
+- Progress Texture: Left to Right, Right to Left, Bottom to Top, Top to Bottom, Clockwise and Anticlockwise
+  textures are drawn by the game while the value is hidden. Not drawn that way: an inverted static value, extra
+  textures, slant, crop, mirror and the start and end angles.
+- Text aura and Text sub element: `%health`, `%maxhealth`, `%percenthealth`, `%power`, `%maxpower`,
+  `%percentpower`, `%value`, `%total`, `%p` and `%t` are drawn by the game in combat, with the plain text around
+  them. Format options are ignored while the value is hidden, and a text with `{` (raid markers, `%{...}`) keeps
+  its last readable values.
+- Cast trigger: while the cast of the unit is hidden, the bar, the swipe and a `%p` text follow the cast. The name
+  is shown empty, the icon is the icon of the spell. A trigger filtered by spell name or ID, Remaining Time or
+  Interruptible does not match a hidden cast.
+- Totem trigger: the timer of a totem keeps running in combat. The totem name, icon and spell ID filters accept
+  every hidden totem; the Remaining Time filter does not.
+- Talent and Or Talent load conditions, and the Talent Known trigger: once a single Class and Specialization is
+  selected, a talent picker shows the talent tree of that specialization. The talents are read from the game's
+  talent trees, with the same IDs as ForeverAuras. The talent data reader and the picker come from ForeverAuras
+  (Neroxrw, GPL-2.0).
+
+## Changes
+
+- Unit is Unit, Specific Unit, Ignore Self, Source Unit and Destination Unit checks keep their last readable
+  result when the game hides the comparison (compound unit IDs such as `targettarget` on restricted maps).
+- Internal data version 91, the same as ForeverAuras: an aura exported from either addon imports into the other
+  without a version warning. Auras saved or exported with 1.2.0 still load. An export made with 1.3.0 cannot be
+  imported into 1.2.0, and going back to 1.2.0 shows the repair window.
+- ForeverAuras exports are recognized by their content (ForeverAuras trigger and sub element types, media paths,
+  custom code), no longer by their version number. An aura whose only triggers are Role or Equipment Durability
+  imports as it is.
+
+## Fixes
+
+- Texture paths ending with `.tga` or `.blp` (rings, circles and squares of the texture picker) now load on WoW
+  Forever.
+- Global Cooldown trigger: shows in combat.
+- Aura triggers: no more "Aura triggers paused until the end of combat" at the start of a fight, and a scan started
+  by a target change or a roster update in that frame keeps the matched auras.
+- Text aura: no Lua error after a hidden text was shown (its size is then left as is).
+- Importing an aura with a Talent load condition no longer stops with "C_SpecializationInfo.GetTalent: query.tier
+  must be specified".
+- ForeverAuras media paths written with doubled backslashes in custom code are renamed on import too.
+
+## Known limitations
+
+- Talents: not tested in game yet. The ForeverAuras "Specialization" load condition is ignored on import: the aura
+  then loads for every specialization of its class.
+- Buffs and debuffs are hidden in combat: a buff shown before the pull keeps counting down, stacks stay frozen, and
+  a buff applied for the first time in combat only shows when combat ends.
+- The Native Filter of the Aura trigger shows nothing at the moment.
+- Combat log triggers never fire: the game forbids the combat log to addons.
+- The Blizzard Cooldown Manager is not enabled for every class on the WoW Forever beta.
+- Not tested in game yet: Totem trigger in combat, Equipment Durability, Tracking, Ammo, Instance Type, off hand
+  and ranged swing timer, dispel type colors, dungeons and raids.
+- Nameplate anchoring only works with the default Blizzard nameplates.
+
+# WeakAuras Forever 1.2.0 (2026-09-29)
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/WeakAuras-Forever/blob/main/CHANGES.md).
+
+## Highlights
+
+- In combat, the game now draws what WeakAuras cannot read: cooldown swipes, timer bars, health and power bars, and
+  texts made only of `%p` and `%t` keep moving.
+- Recasting a buff on yourself restarts its timer, even in combat.
+- New triggers: Bag Space, Equipment Durability, Role, Tracking and Ammo.
+- The full guide is inside WeakAuras: click **Guide** at the top of the `/wa` window.
+
+## New
+
+- Triggers: Bag Space, Equipment Durability, Role, Tracking, and Ammo (count of the equipped ammo in the bags).
+- Swing Timer: uses the game's own swing for main hand, off hand and ranged (wand included), with a Target In Range
+  option.
+- Aura trigger: Elapsed Time filter, Native Filter (aura categories of the game), and a "From the Cooldown Manager"
+  list.
+- Cooldown trigger: "From the Cooldown Manager" list, and an "On Global Cooldown" condition.
+- Conditions trigger: "Secret Restrictions Active" option.
+- Dispel Type Icon sub element, and borders colored by dispel type.
+- Load options: Class and Specialization, and Instance Type.
+- Auras exported from ForeverAuras are converted on import. What cannot be converted is listed in the chat.
+- `/wa cdm` shows or hides the Blizzard Cooldown Manager, out of combat.
+- Guide: `/wa tutorial` or the **Guide** button opens the full guide, with three ready-made auras to import
+  (DoT timer, DoT timer on nameplates, pre-pull checklist).
+
+## Changes
+
+- Auras update as soon as the game stops hiding data, not only at the end of combat.
+- The options warn about combat log triggers, and about thresholds on health or power, which cannot be checked in
+  combat.
+- The Weapon Enchant trigger works with the new game API.
+
+## Fixes
+
+- Role trigger: no more Lua error.
+- Health trigger: the health bar of your target moves in combat.
+- A condition such as "Health < 50%" keeps its last state in combat instead of turning false.
+- Unit triggers keep working when the unit ID is hidden (instances). An Npc ID filter then hides the aura.
+- Equipment Durability percentages are whole numbers.
+- Off hand swing timer after an attack speed change.
+
+## Known limitations
+
+- Buffs and debuffs are hidden in combat: a buff shown before the pull keeps counting down, stacks stay frozen, and
+  a buff applied for the first time in combat only shows when combat ends.
+- The Native Filter of the Aura trigger shows nothing at the moment.
+- Combat log triggers never fire: the game forbids the combat log to addons.
+- The Blizzard Cooldown Manager is not enabled for every class on the WoW Forever beta.
+- Not tested in game yet: Equipment Durability, Tracking, Ammo, Instance Type, off hand and ranged swing timer,
+  dispel type colors, dungeons and raids.
+- Nameplate anchoring only works with the default Blizzard nameplates.
+
+# WeakAuras Forever 1.1.0 (2026-09-28)
+
+Based on WeakAuras 5.22.0. Every changed file is listed in [CHANGES.md](https://github.com/dldvlpr-addons-wow/WeakAuras-Forever/blob/main/CHANGES.md).
+
+## Highlights
+
+- Combat stability: no more Lua errors when the game hides data in combat (secret values).
+- Cooldowns known before combat still become ready at their end time.
+- Target, focus and nameplate tracking no longer errors on hidden unit IDs (instances).
+- New in-game tutorial: `/wa tutorial`, with two example auras to import.
+
+## Changes
+
+- Secret values in trigger states are replaced by the last readable value.
+- Lua errors caused by secret values inside aura code are no longer reported.
+- Spell, charge, item and item slot cooldowns keep their last readable value in combat.
+- The GCD ends at its known end time, and every cooldown is checked again when combat ends.
+- The unit change tracker and the nameplate target tracker ignore secret unit GUIDs.
+- Talent caches no longer require `GetNumTalentTabs` or `GetSpecialization`.
+- `/wa tutorial` (or `/wa tuto`) opens a tutorial window, also reachable from the first login popup.
+- `TUTORIAL.md`: how to create auras on WoW Forever, with ready-to-import examples.
+
+## Known limitations
+
+- Not tested in dungeons and raids yet.
+- Combat log triggers never fire: the game forbids the combat log to addons.
+- Aura and cooldown data can freeze during combat and update when combat ends.
+- Nameplate anchoring only works with the default Blizzard nameplates.
+
+# WeakAuras Forever 1.0.2-beta
+
+- Loss of Control and Queued Action triggers use the new spell API.
+- First login popup lists what works on WoW Forever.
+
+# WeakAuras Forever 1.0
+
+- First release of WeakAuras 5.22.0 for WoW Forever 1.60.1 (interface 16001).

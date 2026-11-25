@@ -6004,6 +6004,550 @@
       "license_files": []
     },
     {
+      "name": "MuscaAuras",
+      "role": "start",
+      "source_dir": "forever-addons",
+      "feature_phases": [
+        {
+          "phase": 8,
+          "use": "start"
+        }
+      ],
+      "source_zip": "References/forever-addons/MuscaAuras/Musca-Auras-v1.21.0.zip",
+      "source_page_url": "https://www.curseforge.com/wow/addons/musca-auras/files/9801355",
+      "sha256": "0ea9132a75db3fa0dea3a420f28d481d273ab84f4d942a75b523d21764e38cc4",
+      "version": "1.21.0",
+      "file_id": "9801355",
+      "how_to_use": {
+        "verdict": "settings",
+        "reason": "포에버용 WeakAuras 5.22.0 포트(R208·R223). 조건 알림·버프 남은 시간·발동 효과 알림을 맡는다. 코드는 그대로 두고, 처음 설치할 때 소리만 꺼 둔다(Core 기본값 soundsMuted — /wa mute 로 다시 켬).",
+        "judgment_md_section": null
+      },
+      "sha256_verified": true,
+      "upstream_dir": "Collection/upstream/MuscaAuras-1.21.0",
+      "addons": [
+        {
+          "folder": "WeakAuras",
+          "path": "WeakAuras",
+          "toc_files": [
+            "WeakAuras.toc"
+          ],
+          "tocs": [
+            {
+              "file": "WeakAuras.toc",
+              "interface": [
+                "16001"
+              ],
+              "version": "1.21.0",
+              "title": "Musca Auras",
+              "dependencies": null,
+              "required_deps": null,
+              "optional_deps": [
+                "Masque",
+                "GTFO",
+                "CustomNames",
+                "BigWigs",
+                "DBM-Core"
+              ],
+              "saved_variables": [
+                "WeakAurasSaved"
+              ],
+              "saved_variables_per_character": null,
+              "load_on_demand": "0",
+              "game_types": {
+                "allow": null,
+                "exclude": null
+              },
+              "forever_load": "yes",
+              "list_lines": {
+                "Interface": [
+                  {
+                    "items": [
+                      "16001"
+                    ],
+                    "conditions": []
+                  }
+                ],
+                "SavedVariables": [
+                  {
+                    "items": [
+                      "WeakAurasSaved"
+                    ],
+                    "conditions": []
+                  }
+                ],
+                "OptionalDeps": [
+                  {
+                    "items": [
+                      "Masque",
+                      "GTFO",
+                      "CustomNames",
+                      "BigWigs",
+                      "DBM-Core"
+                    ],
+                    "conditions": []
+                  }
+                ]
+              },
+              "listed_file_lines": 137
+            }
+          ],
+          "has_interface_16001": true,
+          "has_forever_loadable_toc": true,
+          "lua_files": 167,
+          "lua_files_in_libs": 22,
+          "embedded_libs": [
+            {
+              "name": "AceComm-3.0",
+              "path": "Libs/AceComm-3.0",
+              "toc_files": [],
+              "libstub": {
+                "major": "AceComm-3.0",
+                "minor": "14",
+                "file": "AceComm-3.0.lua"
+              }
+            },
+            {
+              "name": "AceSerializer-3.0",
+              "path": "Libs/AceSerializer-3.0",
+              "toc_files": [],
+              "libstub": {
+                "major": "AceSerializer-3.0",
+                "minor": "5",
+                "file": "AceSerializer-3.0.lua"
+              }
+            },
+            {
+              "name": "AceTimer-3.0",
+              "path": "Libs/AceTimer-3.0",
+              "toc_files": [],
+              "libstub": {
+                "major": "AceTimer-3.0",
+                "minor": "17 -- Bump minor on changes",
+                "file": "AceTimer-3.0.lua"
+              }
+            },
+            {
+              "name": "Archivist",
+              "path": "Libs/Archivist",
+              "toc_files": [],
+              "libstub": null
+            },
+            {
+              "name": "CallbackHandler-1.0",
+              "path": "Libs/CallbackHandler-1.0",
+              "toc_files": [],
+              "libstub": {
+                "major": "CallbackHandler-1.0",
+                "minor": "8",
+                "file": "CallbackHandler-1.0.lua"
+              }
+            },
+            {
+              "name": "Chomp",
+              "path": "Libs/Chomp",
+              "toc_files": [],
+              "libstub": {
+                "major": "Chomp",
+                "minor": "VERSION",
+                "file": "Internal.lua"
+              }
+            },
+            {
+              "name": "LibCompress",
+              "path": "Libs/LibCompress",
+              "toc_files": [],
+              "libstub": {
+                "major": "LibCompress",
+                "minor": "90000 + tonumber((\"$Revision: 83 $\"",
+                "file": "LibCompress.lua"
+              }
+            },
+            {
+              "name": "LibCustomGlow-1.0",
+              "path": "Libs/LibCustomGlow-1.0",
+              "toc_files": [],
+              "libstub": null
+            },
+            {
+              "name": "LibDBIcon-1.0",
+              "path": "Libs/LibDBIcon-1.0",
+              "toc_files": [],
+              "libstub": null
+            },
+            {
+              "name": "LibDataBroker-1.1",
+              "path": "Libs/LibDataBroker-1.1",
+              "toc_files": [],
+              "libstub": {
+                "major": "LibDataBroker-1.1",
+                "minor": "4",
+                "file": "LibDataBroker-1.1.lua"
+              }
+            },
+            {
+              "name": "LibDeflate",
+              "path": "Libs/LibDeflate",
+              "toc_files": [],
+              "libstub": null
+            },
+            {
+              "name": "LibGetFrame-1.0",
+              "path": "Libs/LibGetFrame-1.0",
+              "toc_files": [],
+              "libstub": null
+            },
+            {
+              "name": "LibRangeCheck-3.0",
+              "path": "Libs/LibRangeCheck-3.0",
+              "toc_files": [],
+              "libstub": null
+            },
+            {
+              "name": "LibSerialize",
+              "path": "Libs/LibSerialize",
+              "toc_files": [],
+              "libstub": {
+                "major": "LibSerialize",
+                "minor": "1",
+                "file": "LibSerialize.lua"
+              }
+            },
+            {
+              "name": "LibSharedMedia-3.0",
+              "path": "Libs/LibSharedMedia-3.0",
+              "toc_files": [],
+              "libstub": {
+                "major": "LibSharedMedia-3.0",
+                "minor": "12000002 -- 12.0.0 v2 / increase manually on changes",
+                "file": "LibSharedMedia-3.0.lua"
+              }
+            },
+            {
+              "name": "LibSpellRange-1.0",
+              "path": "Libs/LibSpellRange-1.0",
+              "toc_files": [],
+              "libstub": null
+            },
+            {
+              "name": "LibStub",
+              "path": "Libs/LibStub",
+              "toc_files": [],
+              "libstub": null
+            }
+          ],
+          "license_files": [
+            "LICENSE",
+            "Libs/Archivist/LICENSE.md",
+            "Libs/Chomp/LICENSE.txt",
+            "Libs/LibCustomGlow-1.0/LICENSE",
+            "Libs/LibDeflate/LICENSE.txt",
+            "Libs/LibGetFrame-1.0/LICENCE.txt",
+            "Libs/LibRangeCheck-3.0/LICENSE"
+          ]
+        },
+        {
+          "folder": "WeakAurasArchive",
+          "path": "WeakAurasArchive",
+          "toc_files": [
+            "WeakAurasArchive.toc"
+          ],
+          "tocs": [
+            {
+              "file": "WeakAurasArchive.toc",
+              "interface": [
+                "16001"
+              ],
+              "version": "1.21.0",
+              "title": "Musca Auras Archive",
+              "dependencies": [
+                "WeakAuras"
+              ],
+              "required_deps": null,
+              "optional_deps": null,
+              "saved_variables": [
+                "WeakAurasArchive"
+              ],
+              "saved_variables_per_character": null,
+              "load_on_demand": "1",
+              "game_types": {
+                "allow": null,
+                "exclude": null
+              },
+              "forever_load": "yes",
+              "list_lines": {
+                "Interface": [
+                  {
+                    "items": [
+                      "16001"
+                    ],
+                    "conditions": []
+                  }
+                ],
+                "SavedVariables": [
+                  {
+                    "items": [
+                      "WeakAurasArchive"
+                    ],
+                    "conditions": []
+                  }
+                ],
+                "Dependencies": [
+                  {
+                    "items": [
+                      "WeakAuras"
+                    ],
+                    "conditions": []
+                  }
+                ]
+              },
+              "listed_file_lines": 0
+            }
+          ],
+          "has_interface_16001": true,
+          "has_forever_loadable_toc": true,
+          "lua_files": 0,
+          "lua_files_in_libs": 0,
+          "embedded_libs": [],
+          "license_files": []
+        },
+        {
+          "folder": "WeakAurasModelPaths",
+          "path": "WeakAurasModelPaths",
+          "toc_files": [
+            "WeakAurasModelPaths.toc"
+          ],
+          "tocs": [
+            {
+              "file": "WeakAurasModelPaths.toc",
+              "interface": [
+                "16001"
+              ],
+              "version": "1.21.0",
+              "title": "Musca Auras Model Paths",
+              "dependencies": [
+                "WeakAuras",
+                "WeakAurasOptions"
+              ],
+              "required_deps": null,
+              "optional_deps": null,
+              "saved_variables": null,
+              "saved_variables_per_character": null,
+              "load_on_demand": "1",
+              "game_types": {
+                "allow": null,
+                "exclude": null
+              },
+              "forever_load": "yes",
+              "list_lines": {
+                "Interface": [
+                  {
+                    "items": [
+                      "16001"
+                    ],
+                    "conditions": []
+                  }
+                ],
+                "Dependencies": [
+                  {
+                    "items": [
+                      "WeakAuras",
+                      "WeakAurasOptions"
+                    ],
+                    "conditions": []
+                  }
+                ]
+              },
+              "listed_file_lines": 1
+            }
+          ],
+          "has_interface_16001": true,
+          "has_forever_loadable_toc": true,
+          "lua_files": 1,
+          "lua_files_in_libs": 0,
+          "embedded_libs": [],
+          "license_files": []
+        },
+        {
+          "folder": "WeakAurasOptions",
+          "path": "WeakAurasOptions",
+          "toc_files": [
+            "WeakAurasOptions.toc"
+          ],
+          "tocs": [
+            {
+              "file": "WeakAurasOptions.toc",
+              "interface": [
+                "16001"
+              ],
+              "version": "1.21.0",
+              "title": "Musca Auras Options",
+              "dependencies": [
+                "WeakAuras"
+              ],
+              "required_deps": null,
+              "optional_deps": null,
+              "saved_variables": [
+                "WeakAurasOptionsSaved"
+              ],
+              "saved_variables_per_character": null,
+              "load_on_demand": "1",
+              "game_types": {
+                "allow": null,
+                "exclude": null
+              },
+              "forever_load": "yes",
+              "list_lines": {
+                "Interface": [
+                  {
+                    "items": [
+                      "16001"
+                    ],
+                    "conditions": []
+                  }
+                ],
+                "Dependencies": [
+                  {
+                    "items": [
+                      "WeakAuras"
+                    ],
+                    "conditions": []
+                  }
+                ],
+                "SavedVariables": [
+                  {
+                    "items": [
+                      "WeakAurasOptionsSaved"
+                    ],
+                    "conditions": []
+                  }
+                ]
+              },
+              "listed_file_lines": 102
+            }
+          ],
+          "has_interface_16001": true,
+          "has_forever_loadable_toc": true,
+          "lua_files": 146,
+          "lua_files_in_libs": 35,
+          "embedded_libs": [
+            {
+              "name": "AceConfig-3.0",
+              "path": "Libs/AceConfig-3.0",
+              "toc_files": [],
+              "libstub": {
+                "major": "AceConfig-3.0",
+                "minor": "3",
+                "file": "AceConfig-3.0.lua"
+              }
+            },
+            {
+              "name": "AceGUI-3.0",
+              "path": "Libs/AceGUI-3.0",
+              "toc_files": [],
+              "libstub": null
+            },
+            {
+              "name": "AceGUI-3.0-SharedMediaWidgets",
+              "path": "Libs/AceGUI-3.0-SharedMediaWidgets",
+              "toc_files": [],
+              "libstub": {
+                "major": "AceGUISharedMediaWidgets-1.0",
+                "minor": "DataVersion",
+                "file": "prototypes.lua"
+              }
+            },
+            {
+              "name": "LibAPIAutoComplete-1.0",
+              "path": "Libs/LibAPIAutoComplete-1.0",
+              "toc_files": [],
+              "libstub": {
+                "major": "LibAPIAutoComplete-1.0",
+                "minor": "7",
+                "file": "LibAPIAutoComplete-1.0.lua"
+              }
+            },
+            {
+              "name": "LibUIDropDownMenu",
+              "path": "Libs/LibUIDropDownMenu",
+              "toc_files": [],
+              "libstub": null
+            }
+          ],
+          "license_files": [
+            "Libs/LibAPIAutoComplete-1.0/LICENSE"
+          ]
+        },
+        {
+          "folder": "WeakAurasTemplates",
+          "path": "WeakAurasTemplates",
+          "toc_files": [
+            "WeakAurasTemplates.toc"
+          ],
+          "tocs": [
+            {
+              "file": "WeakAurasTemplates.toc",
+              "interface": [
+                "16001"
+              ],
+              "version": "1.21.0",
+              "title": "Musca Auras Templates",
+              "dependencies": [
+                "WeakAuras",
+                "WeakAurasOptions"
+              ],
+              "required_deps": null,
+              "optional_deps": null,
+              "saved_variables": null,
+              "saved_variables_per_character": null,
+              "load_on_demand": "1",
+              "game_types": {
+                "allow": null,
+                "exclude": null
+              },
+              "forever_load": "yes",
+              "list_lines": {
+                "Interface": [
+                  {
+                    "items": [
+                      "16001"
+                    ],
+                    "conditions": []
+                  }
+                ],
+                "Dependencies": [
+                  {
+                    "items": [
+                      "WeakAuras",
+                      "WeakAurasOptions"
+                    ],
+                    "conditions": []
+                  }
+                ]
+              },
+              "listed_file_lines": 5
+            }
+          ],
+          "has_interface_16001": true,
+          "has_forever_loadable_toc": true,
+          "lua_files": 15,
+          "lua_files_in_libs": 0,
+          "embedded_libs": [],
+          "license_files": []
+        }
+      ],
+      "license_files": [
+        "WeakAuras/LICENSE",
+        "WeakAuras/Libs/Archivist/LICENSE.md",
+        "WeakAuras/Libs/Chomp/LICENSE.txt",
+        "WeakAuras/Libs/LibCustomGlow-1.0/LICENSE",
+        "WeakAuras/Libs/LibDeflate/LICENSE.txt",
+        "WeakAuras/Libs/LibGetFrame-1.0/LICENCE.txt",
+        "WeakAuras/Libs/LibRangeCheck-3.0/LICENSE",
+        "WeakAurasOptions/Libs/LibAPIAutoComplete-1.0/LICENSE"
+      ]
+    },
+    {
       "name": "Prat-3.0",
       "role": "comparison",
       "source_dir": "forever-addons",
@@ -16380,12 +16924,12 @@
               }
             ]
           },
-          "listed_file_lines": 20
+          "listed_file_lines": 21
         }
       ],
       "has_interface_16001": true,
       "has_forever_loadable_toc": true,
-      "lua_files": 21,
+      "lua_files": 22,
       "lua_files_in_libs": 0,
       "embedded_libs": [],
       "license_files": []
@@ -17943,6 +18487,56 @@
       "upstream_path": "Collection/upstream/SexyMap-v12.1.7/SexyMap",
       "state": "patched",
       "patch": "Collection/patches/SexyMap.patch"
+    },
+    {
+      "folder": "WeakAuras",
+      "package": "MuscaAuras",
+      "version": "1.21.0",
+      "source_zip": "References/forever-addons/MuscaAuras/Musca-Auras-v1.21.0.zip",
+      "sha256": "0ea9132a75db3fa0dea3a420f28d481d273ab84f4d942a75b523d21764e38cc4",
+      "upstream_path": "Collection/upstream/MuscaAuras-1.21.0/WeakAuras",
+      "state": "unmodified",
+      "patch": null
+    },
+    {
+      "folder": "WeakAurasArchive",
+      "package": "MuscaAuras",
+      "version": "1.21.0",
+      "source_zip": "References/forever-addons/MuscaAuras/Musca-Auras-v1.21.0.zip",
+      "sha256": "0ea9132a75db3fa0dea3a420f28d481d273ab84f4d942a75b523d21764e38cc4",
+      "upstream_path": "Collection/upstream/MuscaAuras-1.21.0/WeakAurasArchive",
+      "state": "unmodified",
+      "patch": null
+    },
+    {
+      "folder": "WeakAurasModelPaths",
+      "package": "MuscaAuras",
+      "version": "1.21.0",
+      "source_zip": "References/forever-addons/MuscaAuras/Musca-Auras-v1.21.0.zip",
+      "sha256": "0ea9132a75db3fa0dea3a420f28d481d273ab84f4d942a75b523d21764e38cc4",
+      "upstream_path": "Collection/upstream/MuscaAuras-1.21.0/WeakAurasModelPaths",
+      "state": "unmodified",
+      "patch": null
+    },
+    {
+      "folder": "WeakAurasOptions",
+      "package": "MuscaAuras",
+      "version": "1.21.0",
+      "source_zip": "References/forever-addons/MuscaAuras/Musca-Auras-v1.21.0.zip",
+      "sha256": "0ea9132a75db3fa0dea3a420f28d481d273ab84f4d942a75b523d21764e38cc4",
+      "upstream_path": "Collection/upstream/MuscaAuras-1.21.0/WeakAurasOptions",
+      "state": "unmodified",
+      "patch": null
+    },
+    {
+      "folder": "WeakAurasTemplates",
+      "package": "MuscaAuras",
+      "version": "1.21.0",
+      "source_zip": "References/forever-addons/MuscaAuras/Musca-Auras-v1.21.0.zip",
+      "sha256": "0ea9132a75db3fa0dea3a420f28d481d273ab84f4d942a75b523d21764e38cc4",
+      "upstream_path": "Collection/upstream/MuscaAuras-1.21.0/WeakAurasTemplates",
+      "state": "unmodified",
+      "patch": null
     }
   ],
   "comparison_names_missing": [],

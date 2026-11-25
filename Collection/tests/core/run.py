@@ -554,6 +554,13 @@ def generated_registry_lookup():
                                                   "restore": "whole", "shape": "acedb"}],
        "Quartz SV")
     eq(quartz.get("defaults"), "Defaults/Quartz.lua", "Quartz defaults are part of the fresh profile policy")
+    musca = to_py(c.GetAddonInfo(c, "WeakAuras"))
+    eq((musca["package"], list(musca["phases"].values()), musca["use"], musca["defaults"]),
+       ("MuscaAuras", [8], "settings", "Defaults/WeakAuras.lua"), "Musca Auras: Phase 8 start addon, sounds-off default")
+    eq(list(musca["savedVariables"].values()), [{"name": "WeakAurasSaved", "scope": "account", "split": "common"}],
+       "Musca SV: account scope, not restored by a settings restore")
+    for folder in ("WeakAurasOptions", "WeakAurasTemplates", "WeakAurasModelPaths", "WeakAurasArchive"):
+        eq(to_py(c.GetAddonInfo(c, folder))["package"], "MuscaAuras", folder + " ships with Musca Auras")
     eq(len(quartz["editable"]), 8, "Quartz editable: position and size of 4 cast bars")
     castbars = to_py(c.GetAddonInfo(c, "DevilForever_Castbars"))
     eq((castbars["use"], castbars.get("savedVariables") or {}), ("new", {}), "Castbars bridge: own addon, no SV")
@@ -1105,6 +1112,54 @@ def grid2_defaults_existing_profile_kept():
     eq(s.sv("Grid2DB"), saved["Grid2DB"], "user's profile and layout namespace untouched")
     eq({k: v["state"] for k, v in s.status("Grid2")["targets"].items()},
        {"Grid2DB": "existing-profile-kept", "Grid2DB/Grid2Layout": "existing-profile-kept"}, "both kept")
+
+
+# Musca Auras (folder WeakAuras) creates WeakAurasSaved at its own ADDON_LOADED (WeakAuras.lua:1825-1862).
+MUSCA_SELF = {"login_squelch_time": 10, "displays": {}, "registered": {}, "minimap": {"hide": False}}
+
+
+@case
+def musca_defaults_fresh_install_muted():
+    s = Session(registry="generated", extra_files=())
+    s.self_fill("WeakAuras", "WeakAurasSaved", MUSCA_SELF)
+    s.boot(after=["WeakAuras"])
+    db = s.sv("WeakAurasSaved")
+    eq(db["soundsMuted"], True, "fresh install: aura sounds off (the flag Musca's /wa mute stores)")
+    eq((db["login_squelch_time"], db["displays"]), (10, {}), "Musca's own first-load values kept")
+    st = s.status("WeakAuras")["targets"]["WeakAurasSaved"]
+    eq((st["state"], st["mode"], st["key"]), ("applied", "first-load", "WeakAurasSaved"), "status")
+    del db["soundsMuted"]  # the player types /wa mute: Musca stores nil
+    nxt = Session(registry="generated", extra_files=(),
+                  saved={"WeakAurasSaved": db, "DevilForever_CoreDB": s.sv("DevilForever_CoreDB")})
+    nxt.self_fill("WeakAuras", "WeakAurasSaved", MUSCA_SELF)
+    nxt.boot(after=["WeakAuras"])
+    eq("soundsMuted" in nxt.sv("WeakAurasSaved"), False, "the player's sounds-on choice is kept")
+    eq(nxt.status("WeakAuras")["targets"]["WeakAurasSaved"]["state"], "already", "next session: already")
+    eq(s.errors() + nxt.errors(), [], "no errors")
+
+
+@case
+def musca_defaults_existing_install_untouched():
+    # Musca Auras (or another WeakAuras build) used before the collection: sounds on (nil), auras kept.
+    saved = {"WeakAurasSaved": {"displays": {"My aura": {"id": "My aura"}}, "dbVersion": 80}}
+    s = Session(registry="generated", extra_files=(), saved=saved)
+    s.self_fill("WeakAuras", "WeakAurasSaved", MUSCA_SELF)
+    s.boot(after=["WeakAuras"])
+    db = s.sv("WeakAurasSaved")
+    eq("soundsMuted" in db, False, "existing saved variable: nothing written (fresh-only target)")
+    eq(db["displays"], {"My aura": {"id": "My aura"}}, "auras untouched")
+    eq(s.status("WeakAuras")["targets"]["WeakAurasSaved"]["state"], "existing-kept", "status")
+    eq("WeakAuras" in s.sv("DevilForever_CoreDB")["defaults"]["applied"], False, "nothing recorded")
+    eq(s.errors(), [], "no errors")
+
+
+@case
+def defaults_fresh_only_refused_on_acedb():
+    s = Session(registry="generated", extra_files=()).boot()
+    c = s.core
+    ok = c.Defaults.Register(c.Defaults, "Quartz", s.table({"version": 1, "targets": [
+        {"savedVariable": "Quartz3DB", "shape": "acedb", "freshOnly": True, "values": {}}]}))
+    eq(ok[0] if isinstance(ok, tuple) else ok, False, "freshOnly is for plain targets only")
 
 
 PB4_UNITS_ON = sorted(["플레이어", "대상", "대상의 대상", "대상의 대상의 대상", "주시 대상", "주시 대상의 대상",

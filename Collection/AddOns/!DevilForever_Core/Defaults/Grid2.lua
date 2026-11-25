@@ -76,15 +76,47 @@ DevilForever_Core.Defaults:Register("Grid2", {
 -- Blizzard text-name) gets the Grid2Frame fragment's fontSize in the same step;
 -- other indicator values stay as the template sets them. Recorded in
 -- DevilForever_CoreDB.preset.grid2Template[<targetKey>] = fragment version.
+-- The other text indicators of a cell (statuses such as dead, offline or the health deficit) get
+-- OTHER_TEXT of the preset, three quarters of the name text. A profile this collection set up before
+-- these sizes has its text indicators sized once at Grid2's ADDON_LOADED, before Grid2 reads its
+-- database: only indicators still at a size the template (8, 9) or an earlier preset name text (12,
+-- 14, 18) gave, so a size the player picked stays. Recorded in
+-- DevilForever_CoreDB.preset.grid2Text[<profile>] = TEXT_VERSION.
 local Core = DevilForever_Core
 
-local function setNameTextSize(profileTable, size)
+local OTHER_TEXT = {fhd = 11, qhd = 15, uhd = 23}
+local EARLIER_TEXT = {[8] = true, [9] = true, [12] = true, [14] = true, [18] = true}
+local TEXT_VERSION = 1
+
+local function setTextSizes(profileTable, nameSize, otherSize, onlyEarlier)
   local indicators = type(profileTable) == "table" and profileTable.indicators
   local map = type(profileTable) == "table" and profileTable.statusMap
-  if type(size) ~= "number" or type(indicators) ~= "table" or type(map) ~= "table" then return end
+  if type(nameSize) ~= "number" or type(indicators) ~= "table" or type(map) ~= "table" then return 0 end
+  local written = 0
   for name, ind in pairs(indicators) do
-    if type(ind) == "table" and ind.type == "text" and type(map[name]) == "table" and map[name].name then
-      ind.fontSize = size
+    if type(ind) == "table" and ind.type == "text" then
+      local isName = type(map[name]) == "table" and map[name].name
+      local size = isName and nameSize or otherSize
+      if type(size) == "number" and (not onlyEarlier or ind.fontSize == nil or EARLIER_TEXT[ind.fontSize]) then
+        ind.fontSize = size
+        written = written + 1
+      end
+    end
+  end
+  return written
+end
+
+-- Name and other text sizes of the active preset (the Grid2Frame fragment's fontSize), or nil.
+local function presetTextSizes()
+  local presets = Core.Presets
+  local active = presets and presets:GetActive()
+  local family = type(active) == "string" and active:match("^(%a+)")
+  for _, name in ipairs({active, family}) do
+    local def = name and presets:Get(name)
+    for _, f in ipairs(def and def.fragments or {}) do
+      if f.folder == "Grid2" and f.namespace == "Grid2Frame" and type(f.values.fontSize) == "number" then
+        return f.values.fontSize, OTHER_TEXT[family]
+      end
     end
   end
 end
@@ -109,7 +141,9 @@ local function reapplyAfterTemplate()
       if type(written[key]) == "number" and done[key] == nil and type(target) == "table" then
         Core.WriteOver(target, f.values)
         if f.namespace == "Grid2Frame" and type(sv.profiles) == "table" then
-          setNameTextSize(sv.profiles[profile], f.values.fontSize)
+          local family = type(active) == "string" and active:match("^(%a+)")
+          setTextSizes(sv.profiles[profile], f.values.fontSize, OTHER_TEXT[family], false)
+          Core:DBTable("preset", "grid2Text")[profile] = TEXT_VERSION
         end
         done[key] = f.version
         Core:Log("info", "Defaults:Grid2", key .. ": preset values written again after Grid2's first-start template")
@@ -134,8 +168,35 @@ local function pickTemplate(grid2)
   end
 end
 
+-- A profile the collection's preset wrote before: text indicators sized once (see OTHER_TEXT).
+local function resizeEarlierText()
+  local sv = _G.Grid2DB
+  local keys = Core.PlayerKeys()
+  if type(sv) ~= "table" or not keys or type(sv.profileKeys) ~= "table" or type(sv.profiles) ~= "table" then return end
+  local profile = sv.profileKeys[keys.char]
+  local profileTable = type(profile) == "string" and sv.profiles[profile]
+  local done = Core:DBTable("preset", "grid2Text")
+  if type(profileTable) ~= "table" or (tonumber(done[profile]) or 0) >= TEXT_VERSION then return end
+  local active = Core.Presets and Core.Presets:GetActive()
+  local family = type(active) == "string" and active:match("^(%a+)")
+  local key = "Grid2DB/Grid2Frame@profile:" .. profile
+  local byPreset = Core:DBTable("preset", "fragments")
+  local ours = false
+  for _, name in ipairs({active, family}) do
+    local written = name and rawget(byPreset, name)
+    if type(written) == "table" and type(written[key]) == "number" then ours = true end
+  end
+  if not ours then return end
+  local nameSize, otherSize = presetTextSizes()
+  if not nameSize then return end
+  local written = setTextSizes(profileTable, nameSize, otherSize, true)
+  done[profile] = TEXT_VERSION
+  Core:Log("info", "Defaults:Grid2", profile .. ": " .. written .. " text indicator sizes set for the preset")
+end
+
 Core:On("ADDON_LOADED", function(_, folder)
   if folder ~= "Grid2" then return end
+  resizeEarlierText()
   local grid2 = _G.Grid2
   local make = type(grid2) == "table" and grid2.MakeDatabaseDefaults
   if type(make) == "function" then

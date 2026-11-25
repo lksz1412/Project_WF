@@ -92,6 +92,7 @@ FEATURE_PHASES = {
     "addon-sources/nugie-combo-bar": [(6, "comparison")],
     "forever-addons/Quartz": [(7, "start")],
     "forever-addons/Hekili": [(8, "dropped")],
+    "forever-addons/MuscaAuras": [(8, "start")],
     "addon-sources/tellmewhen": [(8, "comparison")],
     "forever-addons/Grid2": [(9, "start")],
     "addon-sources/vuhdo": [(9, "comparison")],

@@ -23,3 +23,18 @@ work_log 판정 줄(layoutv2 46 PASS · core 107 · firststart 29 · chatsetup 4
 
 ## 다음
 사용자 게임 확인(확인표 §13–§15) · Musca Auras 다운로드 승인 · Details 자리 확인.
+
+## Addendum — Musca Auras (items a, b, d), 2026-11-26 08:25 +0900
+
+- 수행: 사용자 승인(R232, 07:48:57 "Musca 받아") → master 가 Musca Auras 1.21.0(file 9801355, 8,137,925 B, SHA256 0ea9132a…) 을 `References/forever-addons/MuscaAuras/` 에 받고 SOURCE.txt 기록 → 같은 작업 A 가 편입(역할 start · 폴더 WeakAuras 등 5개 · 원본 그대로) + 새 계정만 소리 끔(`Defaults/WeakAuras.lua` soundsMuted=true · 기본값 엔진에 `freshOnly` 추가 — 기존 저장값이 있으면 쓰지 않음) + 문서·확인표 §16 → 같은 검수 B(Step 69 와 묶음, code ③ 3라운드): 중대 0 · 중간 0 · 경미 5.
+- 근거·판단: 읽은 범위(master) = 규칙 파일 재독(소통·흐름 memory 전문, 방법론 스킬 둘), 대기열 대조, 요청 대장 끝, Step 64 이력 전문, work_log-60 970–1045, A 보고, 음소거 경로 grep(`RegionPrototype.lua:195`·`BlizzardAuraDisplaySounds.lua:99`·`WeakAuras.lua:588,4372`), `Defaults/WeakAuras.lua` 전문, B 보고. 영향 지도 전 행 = work_log-60 「Step 64 (Musca Auras: items a, b, d)」.
+
+| 곳 | 영향도 | 이유 |
+|---|---|---|
+| extract·install.json·manifest·registry·TOC·verify_archives·core 시험·문서 | 함께 고침 | 새 애드온 편입 경로 |
+| Defaults.lua(엔진) | 함께 고침 | nil=소리 켬이라 기존 계정에 쓰면 안 됨 → freshOnly |
+| 기존 기본값 대상 | 확인만 | 플래그 없는 대상은 같은 분기(B 라운드 1) |
+| 지난 기록 | 영향 없음(기록) | 당시 기록 |
+
+- 게이트: core 110/110 · freshOnly 변이 시험 · luacheck 0 · extract errors 0 · genregistry up to date · build dry-run 30/2800 · 32/2744 · verify_archives rc=0 (work_log 판정 줄).
+- 결정 대기(최종 보고): 1.22.0 이 나와 있음 · /dfp 저장·복원에 WeakAurasSaved 넣을지 · /wa 창 안 클릭음은 남음 · 음소거 중 접속마다 안내 줄 · 주술사 팩 소용돌이 무기 오라 미검증 · ReleaseCatalog 게시 때 갱신.

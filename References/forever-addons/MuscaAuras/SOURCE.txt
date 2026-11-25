@@ -1,0 +1,13 @@
+받은 페이지 URL: https://www.curseforge.com/wow/addons/musca-auras/files/9801355
+받은 주소: https://www.curseforge.com/api/v1/mods/1713094/files/9801355/download (→ https://mediafilez.forgecdn.net/files/9801/355/Musca-Auras-v1.21.0.zip)
+파일명: Musca-Auras-v1.21.0.zip
+판(version): 1.21.0
+file ID: 9801355
+Project ID: 1713094
+파일 날짜: Nov 24, 2026
+표기된 game version: 1.60.1 (Forever)
+크기: 8137925 bytes (7.8 MB)
+라이선스: GNU General Public License version 2 (GPLv2)
+SHA256: 0ea9132a75db3fa0dea3a420f28d481d273ab84f4d942a75b523d21764e38cc4
+받은 때: 2026-11-26 07:51:23 +0900 (사용자 승인 R232)
+참고: 받을 때 페이지에 더 새 판 1.22.0 (Nov 25, 2026) 이 있었다 — 승인받은 판은 1.21.0.

@@ -2,17 +2,28 @@ local Core = DevilForever_Core
 local Layout = {}
 DevilForever_DetailsLayout = Layout
 
--- Physical-pixel window bodies {x, y, w, h} from the screen's top left: window 1 (damage) left, window 2
--- (Tiny Threat) right, a 2 px gap. The row is one chat panel wide and one chat panel tall, left edge on
--- the left chat panel's left edge, in the clear band between the party frames and the pet frame; the
--- title strip above each body (titleSpace) is part of that row.
+-- Physical-pixel window bodies {x, y, w, h} from the screen's top left: window 1 (damage) below,
+-- window 2 (Tiny Threat) above it, the same width, the title strip of each (titleSpace) above its body.
+-- qhd/uhd: from the action bar row's right end (bar end cap included) to the screen's right edge,
+-- the damage window ending just above the theme strip in the action bar row, the threat window's
+-- title under the quest tracker; the free height split in two with a gap. fhd: the action bar row
+-- reaches 61 px from the right edge, so the stack sits above the bar, right of the target-pet frame.
 local layouts = {
-  fhd = {{0, 386, 217, 168}, {219, 386, 218, 168}},
-  qhd = {{0, 558, 308, 198}, {310, 558, 308, 198}},
-  uhd = {{0, 858, 475, 274}, {477, 858, 476, 274}},
+  fhd = {{1559, 760, 361, 38}, {1559, 695, 361, 37}},
+  qhd = {{2351, 1060, 209, 109}, {2351, 921, 209, 108}},
+  uhd = {{3437, 1603, 403, 193}, {3437, 1372, 403, 193}},
 }
 local titleSpace = {fhd = 24, qhd = 26, uhd = 30}
-Layout.layouts, Layout.titleSpace = layouts, titleSpace
+-- Text per preset in physical pixels (the windows are placed at one unit per physical pixel): bar
+-- text and title text about the chat text size, bar height a little above the text.
+local textSizes = {
+  fhd = {text = 11, title = 11, row = 16},
+  qhd = {text = 15, title = 15, row = 21},
+  uhd = {text = 22, title = 22, row = 30},
+}
+Layout.layouts, Layout.titleSpace, Layout.textSizes = layouts, titleSpace, textSizes
+-- Revision of the stack placement: a profile whose windows this addon made gets it once.
+local STACK_VERSION = 1
 
 local THREAT_PLUGIN = "DETAILS_PLUGIN_TINY_THREAT"
 local RETRY_SECONDS, RETRY_LIMIT = 2, 30
@@ -179,10 +190,33 @@ function Layout:Restore()
 end
 
 -- DevilForever_CoreDB.detailsLayout.profiles[Details profile name]:
---   {created = 2, preset = name}  window 2 made here for Tiny Threat (first setup done)
+--   {created = 2, preset = name, stack = STACK_VERSION}  window 2 made here for Tiny Threat; the
+--                                 windows got the stack placement and text sizes of that revision
 --   {skipped = true}              the profile already had its own windows; never touched
 local function setupMarks()
   return Core:DBTable("detailsLayout", "profiles")
+end
+
+-- Bar height, bar text and title text of the preset on windows 1 and 2 (Details' own setters).
+local function applyText(instances, name)
+  local sizes = textSizes[name]
+  if not sizes then return false end
+  for _, instance in ipairs(instances) do
+    instance:SetBarSettings(sizes.row)
+    instance:SetBarTextSettings(sizes.text)
+    instance:AttributeMenu(nil, nil, nil, nil, sizes.title)
+  end
+  return true
+end
+
+-- Stack placement and text on windows 1 and 2 of the active preset; true, message or false, reason.
+local function placeStack(self, preset)
+  local placed, detail = self:Apply(preset)
+  if not placed then return false, detail end
+  local instances = ready()
+  local ok, err = pcall(applyText, instances or {}, preset)
+  if not ok then return true, "위치는 옮김 · 글자 크기 오류: " .. tostring(err) end
+  return true
 end
 
 local function threatFree()
@@ -202,7 +236,21 @@ function Layout:FirstSetup()
   local name = Details:GetCurrentProfileName()
   if type(name) ~= "string" or name == "" then return false, "Details 프로필 이름 없음" end
   local marks = setupMarks()
-  if marks[name] ~= nil then return true end
+  local mark = marks[name]
+  if mark ~= nil then
+    -- windows made here before this stack revision: moved once (R235 replaces the earlier spot)
+    if type(mark) ~= "table" or not mark.created or (tonumber(mark.stack) or 0) >= STACK_VERSION then return true end
+    local preset = Core.Presets:GetActive()
+    if not layouts[preset] then return true end
+    if Details:GetNumInstances() < 2 then
+      mark.stack = STACK_VERSION
+      return true
+    end
+    local moved, detail = placeStack(self, preset)
+    if not moved then return false, detail end
+    mark.stack, mark.preset = STACK_VERSION, preset
+    return true, "Details 위협 창(위)과 데미지 창(아래)을 3번 대화창 위 오른쪽으로 옮김" .. (detail and (" — " .. detail) or "")
+  end
   if Details:GetNumInstances() ~= 1 then
     marks[name] = {skipped = true}
     return true
@@ -220,8 +268,12 @@ function Layout:FirstSetup()
   marks[name] = {created = 2, preset = preset}
   if created.skin ~= first.skin and type(created.ChangeSkin) == "function" then created:ChangeSkin(first.skin) end
   Details.RaidTables:EnableRaidMode(created, THREAT_PLUGIN)
-  local placed, detail = self:Apply(preset)
-  if placed then return true, "Details 창 2(Tiny Threat)를 만들고 두 창을 채팅창 폭 한 줄에 놓음" end
+  local placed, detail = placeStack(self, preset)
+  if placed then
+    marks[name].stack = STACK_VERSION
+    return true, "Details 창 2(Tiny Threat)를 만들고 3번 대화창 위 오른쪽에 위협 창(위)·데미지 창(아래)으로 놓음"
+      .. (detail and (" — " .. detail) or "")
+  end
   return true, "Details 창 2(Tiny Threat)를 만듦 · 위치는 안 함(" .. detail .. ") — /dfdetails apply"
 end
 

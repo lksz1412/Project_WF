@@ -669,18 +669,19 @@ def grid2_preset_values_survive_first_start_template():
         db = s.sv("Grid2DB")
         frame = db["namespaces"]["Grid2Frame"]["profiles"]["Hero - Realm"]
         layout = db["namespaces"]["Grid2Layout"]["profiles"]["Hero - Realm"]
-        eq((frame["frameWidth"], frame["frameHeight"], frame["frameBorder"], layout["Padding"]), (88, 88, 2, 4),
+        eq((frame["frameWidth"], frame["frameHeight"], frame["frameBorder"], layout["Padding"]), (66, 66, 2, 4),
            name + " template: preset cell size, border width and gap written again")
         eq(db["profiles"]["Hero - Realm"]["__template"], name, name + " template's own indicators kept")
         prof = db["profiles"]["Hero - Realm"]
         named = sorted(k for k, ind in prof["indicators"].items() if ind.get("type") == "text"
                        and (prof["statusMap"].get(k) or {}).get("name"))
         eq(named, [GRID2_NAME_TEXT[name]], name + ": the template's name text indicator")
-        eq(prof["indicators"][named[0]]["fontSize"], 12, name + ": name text 12 px (fhd preset)")
+        eq(prof["indicators"][named[0]]["fontSize"], 15, name + ": name text 15 px (fhd preset)")
         others = {k: ind.get("fontSize") for k, ind in prof["indicators"].items()
                   if ind.get("type") == "text" and k not in named}
-        eq(others, GRID2_OTHER_TEXT[name], name + ": other text indicators keep the template's size")
-        eq(frame["fontSize"], 12, name + ": Grid2Frame default text size 12")
+        eq(others, GRID2_OTHER_TEXT[name], name + ": other text indicators at three quarters of the name text")
+        eq(frame["fontSize"], 15, name + ": Grid2Frame default text size 15")
+        eq(s.sv("DevilForever_CoreDB")["preset"]["grid2Text"], {"Hero - Realm": 1}, name + ": text sizes recorded")
         eq(s.g.DIALOG_OPENED, 1, "premise: the first call only opened the dialog")
         rec = s.sv("DevilForever_CoreDB")["preset"]["grid2Template"]
         eq(sorted(rec), ["Grid2DB/Grid2Frame@profile:Hero - Realm", "Grid2DB/Grid2Layout@profile:Hero - Realm"],
@@ -693,7 +694,7 @@ def grid2_preset_values_survive_first_start_template():
     eq(frame["frameWidth"], 66, "an existing profile: the template's value, no preset values written into it")
     eq(old.sv("Grid2DB")["profiles"]["Hero - Realm"]["indicators"]["text-center"]["fontSize"], 10,
        "an existing profile: the template's name text size")
-    for preset, size in (("fhd", 12), ("qhd", 14), ("uhd", 18)):
+    for preset, size in (("fhd", 15), ("qhd", 20), ("uhd", 30)):
         with open(os.path.join(ADDONS, "!DevilForever_Core", "Presets", preset + ".lua"), encoding="utf-8") as fh:
             src = fh.read()
         eq(src.count('["font"]="Devil Forever devil",["fontSize"]=%d,["iconSize"]=' % size), 1,
@@ -709,12 +710,12 @@ def grid2_first_start_template_picked_without_dialog():
     eq(s.g.DIALOG_OPENED, 0, "no first-start dialog")
     eq(db["profiles"]["Hero - Realm"]["__template"], "Modern", "Modern template applied at the first call")
     frame = db["namespaces"]["Grid2Frame"]["profiles"]["Hero - Realm"]
-    eq((frame["frameWidth"], frame["frameHeight"]), (88, 88), "preset cell size written again after the template")
+    eq((frame["frameWidth"], frame["frameHeight"]), (66, 66), "preset cell size written again after the template")
     eq(s.errors(), [], "no errors")
 
 
 GRID2_NAME_TEXT = {"Classic": "text-down", "Modern": "text-center", "Blizzard": "text-name"}
-GRID2_OTHER_TEXT = {"Classic": {"text-up": 9}, "Modern": {}, "Blizzard": {}}
+GRID2_OTHER_TEXT = {"Classic": {"text-up": 11}, "Modern": {}, "Blizzard": {}}
 
 
 def pb4_preset_session(saved=None, request=False):
@@ -921,16 +922,47 @@ def grid2_cells(s):
 @case
 def grid2_cells_follow_the_layout():
     s = pb4_grid2_session()
-    eq(grid2_cells(s), (88, 88), "new install: the layout's square cells")
+    eq(grid2_cells(s), (66, 66), "new install: the layout's square cells")
     state = s
-    for request, cells in (("fhd-v2", (88, 88)), ("fhd", (88, 88))):
+    for request, cells in (("fhd-v2", (66, 66)), ("fhd", (66, 66))):
         core["dfp"](state, "preset " + request); core["dfp"](state, "go")
         state = pb4_grid2_session(saved=carry(state))
         eq(grid2_cells(state), cells, request + ": Grid2 cells")
         eq(grid2_spot(state), ("TOPRIGHT", -247, -259), request + ": the window spot stays")
     again = pb4_grid2_session(saved=carry(state))
-    eq(grid2_cells(again), (88, 88), "plain login writes nothing")
+    eq(grid2_cells(again), (66, 66), "plain login writes nothing")
     eq(s.errors() + state.errors() + again.errors(), [], "no errors")
+
+
+@case
+def grid2_earlier_text_sizes_raised_once():
+    # A profile the preset wrote in an earlier version: text indicators at the template's or the earlier
+    # preset's size get the new sizes once at Grid2's load; a size the player picked stays.
+    saved = carry(pb4_grid2_session())
+    saved["Grid2DB"]["profileKeys"] = {"Hero - Realm": "Hero - Realm"}
+    saved["Grid2DB"]["profiles"]["Hero - Realm"].update({
+        "indicators": {"text-down": {"type": "text", "fontSize": 12}, "text-up": {"type": "text", "fontSize": 9},
+                       "text-mine": {"type": "text", "fontSize": 13}, "icon-left": {"type": "icon", "fontSize": 8}},
+        "statusMap": {"text-down": {"name": 50}, "text-up": {"death": 99}}})
+    saved["DevilForever_CoreDB"]["preset"].pop("grid2Text", None)
+    s = pb4_grid2_session(saved=saved)
+    ind = s.sv("Grid2DB")["profiles"]["Hero - Realm"]["indicators"]
+    eq((ind["text-down"]["fontSize"], ind["text-up"]["fontSize"]), (15, 11), "name 15 and other text 11 (fhd)")
+    eq((ind["text-mine"]["fontSize"], ind["icon-left"]["fontSize"]), (13, 8), "the player's size and icons kept")
+    eq(s.sv("DevilForever_CoreDB")["preset"]["grid2Text"], {"Hero - Realm": 1}, "recorded")
+    later = carry(s)
+    later["Grid2DB"]["profiles"]["Hero - Realm"]["indicators"]["text-down"]["fontSize"] = 12
+    again = pb4_grid2_session(saved=later)
+    eq(again.sv("Grid2DB")["profiles"]["Hero - Realm"]["indicators"]["text-down"]["fontSize"], 12,
+       "once per profile: a later change stays")
+    foreign = carry(pb4_grid2_session())
+    foreign["Grid2DB"]["profileKeys"] = {"Hero - Realm": "Other"}
+    foreign["Grid2DB"]["profiles"]["Other"] = {"indicators": {"text-down": {"type": "text", "fontSize": 12}},
+                                               "statusMap": {"text-down": {"name": 50}}}
+    other = pb4_grid2_session(saved=foreign)
+    eq(other.sv("Grid2DB")["profiles"]["Other"]["indicators"]["text-down"]["fontSize"], 12,
+       "a profile the preset never wrote is left alone")
+    eq(s.errors() + again.errors() + other.errors(), [], "no errors")
 
 
 @case

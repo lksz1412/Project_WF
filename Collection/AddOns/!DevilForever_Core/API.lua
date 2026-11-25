@@ -35,6 +35,8 @@ Defaults (see Defaults.lua for the spec and the fill rules)
              "suppressed" (Suppress called first) | "already" (version
              recorded earlier) | "existing-profile-kept" (AceDB target whose
              profile existed before Core first looked; nothing written) |
+             "existing-kept" (freshOnly plain target whose saved variable
+             existed before Core first looked; nothing written) |
              "applied" (written this session)
       mode:  "first-load" (written over the addon's own values, login window
              only) | "fill-missing" (missing keys only; for AceDB targets

@@ -15,6 +15,7 @@ Defaults\Dominos.lua
 Defaults\Grid2.lua
 Defaults\PitBull4.lua
 Defaults\Quartz.lua
+Defaults\WeakAuras.lua
 Presets.lua
 Presets\fhd.lua
 Presets\qhd.lua

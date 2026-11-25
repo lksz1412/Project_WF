@@ -634,6 +634,9 @@
         }
       }
     },
+    "WeakAuras": {
+      "defaults": "Defaults/WeakAuras.lua"
+    },
     "DevilForever_StatusStrip": {
       "frames": [
         {

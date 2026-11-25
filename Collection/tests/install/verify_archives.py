@@ -172,7 +172,8 @@ def verify(path, variant, races, version, reviewed_chat):
         must_ship = {"!DevilForever_Core", "DevilForever_Appearance", "DevilForever_Skin_StatusStrip",
                      "Dominos", "DevilForever_ChatSetup", "DevilForever_Skin_NativeChat", "Chattynator",
                      "SexyMap", "Quartz", "Grid2", "Details",
-                     "Details_TinyThreat", "DevilForever_DetailsLayout", "ExperienceForever"}
+                     "Details_TinyThreat", "DevilForever_DetailsLayout", "ExperienceForever",
+                     "WeakAuras", "WeakAurasOptions", "WeakAurasTemplates", "WeakAurasModelPaths", "WeakAurasArchive"}
         assert must_ship.issubset(installed), must_ship - installed
         assert {"Aurora", "KalielsTracker", "!KalielsTracker", "Mapster", "TipTac",
                 "Prat-3.0", "DevilForever_Skin_Prat", "Hekili", "Hekili_Shared", "Hekili_Shaman"}.isdisjoint(installed)

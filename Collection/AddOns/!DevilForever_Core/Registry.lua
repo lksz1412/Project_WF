@@ -2300,6 +2300,110 @@ Core.Registry = {
       use = "settings",
       version = "v12.1.7",
     },
+    WeakAuras = {
+      bundle = "individual",
+      defaults = "Defaults/WeakAuras.lua",
+      editable = {},
+      foreverLoad = "yes",
+      frames = {},
+      package = "MuscaAuras",
+      phases = {
+        8,
+      },
+      savedVariables = {
+        {
+          name = "WeakAurasSaved",
+          scope = "account",
+          split = "common",
+        },
+      },
+      tocStatus = "matched",
+      tocs = {
+        "WeakAuras.toc",
+      },
+      use = "settings",
+      version = "1.21.0",
+    },
+    WeakAurasArchive = {
+      bundle = "individual",
+      editable = {},
+      foreverLoad = "yes",
+      frames = {},
+      package = "MuscaAuras",
+      phases = {
+        8,
+      },
+      savedVariables = {
+        {
+          name = "WeakAurasArchive",
+          scope = "account",
+          split = "common",
+        },
+      },
+      tocStatus = "matched",
+      tocs = {
+        "WeakAurasArchive.toc",
+      },
+      use = "settings",
+      version = "1.21.0",
+    },
+    WeakAurasModelPaths = {
+      bundle = "individual",
+      editable = {},
+      foreverLoad = "yes",
+      frames = {},
+      package = "MuscaAuras",
+      phases = {
+        8,
+      },
+      savedVariables = {},
+      tocStatus = "matched",
+      tocs = {
+        "WeakAurasModelPaths.toc",
+      },
+      use = "settings",
+      version = "1.21.0",
+    },
+    WeakAurasOptions = {
+      bundle = "individual",
+      editable = {},
+      foreverLoad = "yes",
+      frames = {},
+      package = "MuscaAuras",
+      phases = {
+        8,
+      },
+      savedVariables = {
+        {
+          name = "WeakAurasOptionsSaved",
+          scope = "account",
+          split = "common",
+        },
+      },
+      tocStatus = "matched",
+      tocs = {
+        "WeakAurasOptions.toc",
+      },
+      use = "settings",
+      version = "1.21.0",
+    },
+    WeakAurasTemplates = {
+      bundle = "individual",
+      editable = {},
+      foreverLoad = "yes",
+      frames = {},
+      package = "MuscaAuras",
+      phases = {
+        8,
+      },
+      savedVariables = {},
+      tocStatus = "matched",
+      tocs = {
+        "WeakAurasTemplates.toc",
+      },
+      use = "settings",
+      version = "1.21.0",
+    },
   },
   interface = 16001,
   order = {
@@ -2332,6 +2436,11 @@ Core.Registry = {
     "ProfileManager",
     "Quartz",
     "SexyMap",
+    "WeakAuras",
+    "WeakAurasArchive",
+    "WeakAurasModelPaths",
+    "WeakAurasOptions",
+    "WeakAurasTemplates",
   },
   schema = 1,
 }

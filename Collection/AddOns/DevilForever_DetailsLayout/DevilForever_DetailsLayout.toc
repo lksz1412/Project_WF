@@ -1,6 +1,6 @@
 ## Interface: 16001
 ## Title: DevilForever Details Layout
-## Notes: Details windows 1 and 2 side by side; on first setup creates window 2 for Tiny Threat.
+## Notes: Details windows 1 (damage) and 2 (Tiny Threat) stacked above chat 3; on first setup creates window 2 for Tiny Threat.
 ## Version: 0.1.0
 ## Dependencies: !DevilForever_Core, Details, DevilForever_Appearance
 

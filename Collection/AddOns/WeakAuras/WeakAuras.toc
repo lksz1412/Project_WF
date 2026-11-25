@@ -1,0 +1,171 @@
+## Interface: 16001
+# WOW_INTERFACE_TARGETS: vanilla
+## Title: Musca Auras
+## Author: The WeakAuras Team, dldvlpr (WoW Forever port)
+## X-License: GPL-2.0
+## X-Website: https://muscalab.com/addons/musca-auras
+## Version: 1.21.0
+## X-Wago-ID: bGoYzp60
+## IconTexture: Interface\AddOns\WeakAuras\Media\Textures\icon.tga
+## X-Flavor: Vanilla
+## Notes: Auras for WoW Forever: icons, bars and texts for your buffs, debuffs and cooldowns, with a ready-made HUD for your class. Based on WeakAuras.
+## X-Category: Interface Enhancements
+## AddonCompartmentFunc: MuscaAuras_OnAddonCompartmentClick
+## AddonCompartmentFuncOnEnter: MuscaAuras_OnAddonCompartmentEnter
+## AddonCompartmentFuncOnLeave: MuscaAuras_OnAddonCompartmentLeave
+## DefaultState: Enabled
+## LoadOnDemand: 0
+## SavedVariables: WeakAurasSaved
+## OptionalDeps: Masque, GTFO, CustomNames, BigWigs, DBM-Core
+
+# External code + initialization
+embeds.xml
+
+Init.lua
+Style.lua
+SecretRestrictions.lua
+Compatibility.lua
+locales.xml
+ArchiveTypes\Repository.lua
+DefaultOptions.lua
+
+# Core files
+SubscribableObject.lua
+Features.lua
+TimeMachine.lua
+Types_Vanilla.lua
+Types.lua
+PlayerSpecialization.lua
+TalentReader.lua
+CDMBackground.lua
+CDMSetup.lua
+CooldownViewerCatalog.lua
+CooldownViewerSelection.lua
+CooldownViewerStates.lua
+CooldownViewerTrigger.lua
+PrototypeSecretHelpers.lua
+Prototypes.lua
+ClassicEraTriggers.lua
+AuraShownTrigger.lua
+Profiling.lua
+Profiling.xml
+WeakAuras.lua
+History.lua
+AuraBackups.lua
+Transmission.lua
+ForeverTutorial.lua
+Modernize.lua
+ForeverAurasImport.lua
+Animations.lua
+Conditions.lua
+SecretConditions.lua
+TriggerExpression.lua
+UnusedAuras.lua
+ReplaceValues.lua
+AuraSets.lua
+PlacementSnap.lua
+AnchorLinks.lua
+ClickButtons.lua
+EditModePlacement.lua
+FrozenMarker.lua
+PixelSnapping.lua
+AnchorToWeakAuras.lua
+
+# Trigger systems
+SecretAuraRanks.lua
+SecretAuraAnchor.lua
+BlizzardAuraDisplay.lua
+BlizzardAuraDisplayUnits.lua
+BlizzardAuraDisplayTrigger.lua
+BlizzardAuraDisplayMigration.lua
+BlizzardAuraDisplaySounds.lua
+BlizzardAuraDisplayValidation.lua
+BlizzardAuraDisplayPlacement.lua
+BlizzardAuraDisplayButtons.lua
+BlizzardAuraDisplayInstances.lua
+BlizzardAuraDisplayUnitRefresh.lua
+BlizzardAuraDisplayQueues.lua
+BlizzardAuraDisplayLifecycle.lua
+BlizzardAuraDisplayEvents.lua
+SecretAuraPreview.lua
+DispelTypeDisplay.lua
+CDMAuraProgress.lua
+AuraOverlay.lua
+SecretAuraAppearance.lua
+SecretAuraConditions.lua
+SecretAuraSingle.lua
+SecretAuraSingleFallback.lua
+SecretAuraSingleLearning.lua
+SecretAuraSingleGates.lua
+SecretAuraSingleGateDisplay.lua
+SecretAuraSingleStatus.lua
+SecretAuraSingleFollow.lua
+AuraStatusReport.lua
+SecretAuraSingleMissing.lua
+SecretAuraSingleRemaining.lua
+SecretAuraGlow.lua
+SecretAuraFlow.lua
+SecretAuraFlowShadow.lua
+SecretAuraFlowUnits.lua
+SecretAuraFlowGrid.lua
+SecretAuraFlowPreview.lua
+SecretAuraTrigger.lua
+BuffTriggerRestrictedAuras.lua
+BuffTriggerNativeFilter.lua
+BuffTrigger2.lua
+GenericTriggerRestricted.lua
+SpellCooldownState.lua
+SecretSpellCooldown.lua
+GenericTrigger.lua
+BossMods.lua
+
+# Helper Systems
+TSUHelpers.lua
+AuraWarnings.lua
+AuraEnvironment.lua
+AuraEnvironmentWrappedSystems.lua
+DebugLog.lua
+TextStyle.lua
+DurationText.lua
+
+# Region support
+RegionTypes\SmoothStatusBarMixin.lua
+RegionTypes\RegionPrototype.lua
+RegionTypes\Empty.lua
+BaseRegions\TextureCoords.lua
+BaseRegions\CircularProgressTexture.lua
+BaseRegions\LinearProgressTexture.lua
+NativeProgressPainter.lua
+ProgressTextureNative.lua
+RegionTypes\ProgressTextureSecret.lua
+RegionTypes\ProgressTexture.lua
+BaseRegions\Texture.lua
+RegionTypes\Texture.lua
+RegionTypes\AuraBarNative.lua
+RegionTypes\AuraBar.lua
+RegionTypes\Icon.lua
+RegionTypes\Text.lua
+RegionTypes\Group.lua
+RegionTypes\DynamicGroup.lua
+BaseRegions\StopMotion.lua
+RegionTypes\StopMotion.lua
+RegionTypes\Model.lua
+
+# Sub-region support
+SubRegionTypes\Background.lua
+SubRegionTypes\SubTextNative.lua
+SubRegionTypes\SubText.lua
+SubRegionTypes\Border.lua
+SubRegionTypes\DispelIcon.lua
+SubRegionTypes\ClickAction.lua
+SubRegionTypes\Glow.lua
+SubRegionTypes\Tick.lua
+SubRegionTypes\Model.lua
+SubRegionTypes\StopMotion.lua
+SubRegionTypes\Texture.lua
+SubRegionTypes\CDMDispel.lua
+SubRegionTypes\CDMDispelBorder.lua
+SubRegionTypes\CircularProgressTexture.lua
+SubRegionTypes\LinearProgressTexture.lua
+
+#Misc

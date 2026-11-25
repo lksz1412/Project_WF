@@ -1127,3 +1127,228 @@ Decision queue (my defaults):
 | `python -I <scratch>/s51.XsBX/devnull_run.py Collection/tools/build.py --dry-run --variant pitbull4` / `fuf` | rc=0 · folders=25 files=2057 / folders=27 files=2001 (without the wrapper: `diff: nul` error, the known Git-for-Windows issue) |
 
 The suite drives `CreateInstance` and `EnableRaidMode` through stubs, because the native window builder needs the client. Window placement runs through the native `RestorePositionFromPositionTable` / `RestoreMainWindowPosition` / `SetWindowScale`. Raw outputs: `<scratch>/s60/s68_*.txt`.
+
+## Step 64 (Musca Auras: items a, b, d)
+
+Brief: `Claude/results/handoffs/phase27/brief-64-musca.md` 1-35, read in full. This session was not compacted since the Step 68 task, so the brief's re-read clause did not apply; the work-log sections "Step 64" and "Step 68" were written by this session in this context. The master downloaded the file after the user's direct approval (R232). I downloaded nothing.
+
+Read (file:lines):
+- `References/forever-addons/MuscaAuras/SOURCE.txt` 1-13
+- `Collection/tools/extract.py` 1-330 and 400-565 (roles, `PATCHED`, member checks, manifest)
+- `tools/build.py` 96-140 (install groups must equal the manifest package name) and the `--list-excluded` output
+- `tools/genregistry.py` 1-60 and 150-190
+- `install.json` 1-40
+- `!DevilForever_Core/Defaults.lua` 1-232 and 310-476 (plain-target rules)
+- `Core.lua` 280-400, `API.lua` 10-45, `Defaults/SexyMap.lua` 1-60, `registry_extra.json` (Details, SexyMap, ExperienceForever entries), Core TOC
+- `tests/core/run.py` 1-345, 440-560, 1075-1110
+- `tests/install/verify_archives.py` 165-180
+- master plan rows 241 (Phase 8) and 524 (2026-11-25 decision), Phase 27 detail plan row 25, request ledger R206-R232 rows (grep hits)
+- install guide 1-90 (all of it), `data/feature-map.md` 1-56, check list 128-149
+- Musca Auras (extracted in `Collection/upstream/MuscaAuras-1.21.0`):
+  - `WeakAuras/WeakAuras.toc` 1-40
+  - `WeakAuras.lua` 580-605 (`ToggleSoundsMuted`), 1815-1910 (ADDON_LOADED / PLAYER_LOGIN), 3040-3070 (welcome popup), 4365-4380 (text-to-speech), class-pack popup lines 634/656/3008/3080 (grep hits)
+  - `RegionTypes/RegionPrototype.lua` 170-240 (`SoundPlayHelper`)
+  - `BlizzardAuraDisplaySounds.lua` 1-30, 90-105, 195-240
+  - `CHANGELOG.md` 1-60
+  - koKR locale hits (grep)
+  - every `PlaySound`/`PlaySoundFile`/`TextToSpeech` call site (grep)
+
+### Role and folder names
+
+- **Role:** `tools/extract.py` `FEATURE_PHASES["forever-addons/MuscaAuras"] = [(8, "start")]`. Phase 8 (직업 전투보조) is where the plan's 2026-11-25 decision row (plan line 524) puts Musca Auras. Hekili stays `[(8, "dropped")]`, its `not_shipped` route untouched.
+- **Package name:** the manifest takes it from the folder name, `MuscaAuras`. The `install.json` group key must be that name (`build.py` 125-128).
+- **Folder names:** `WeakAuras`, `WeakAurasOptions`, `WeakAurasTemplates`, `WeakAurasModelPaths`, `WeakAurasArchive`.
+  - No clash in `Collection/AddOns`.
+  - No `WeakAuras*` folder in the game's `_forever_/Interface/AddOns` (listing read only).
+  - Each folder belongs to exactly one extracted package (`extract.py` third-party check, errors=0).
+  - A different WeakAuras build would use the same folder name and the same saved variable `WeakAurasSaved`. The install guide says so.
+
+### Sounds: where they play and how the default stops them
+
+| Sound path | file:line | Reads `soundsMuted` |
+|---|---|---|
+| Aura "Play Sound" actions and conditions | `WeakAuras/RegionTypes/RegionPrototype.lua:194-195` (`SoundPlayHelper`: returns when `Private.db.soundsMuted`), plays at 201/206/211 | yes |
+| Sounds registered with the game for Aura (Modern) auras | `WeakAuras/BlizzardAuraDisplaySounds.lua:99` (`live = … and not Private.db.soundsMuted`) | yes |
+| Text-to-speech message action | `WeakAuras/WeakAuras.lua:4372` | yes |
+| Options window clicks and sound previews (`WeakAurasOptions/AceGUI-Widgets/*`, `ActionOptions.lua:94/99`, `ConditionOptions.lua:236/241`, `AuthorOptions.lua:2296/3044`) | — | no — they play only when the player clicks in `/wa` |
+
+- `Private.db` = `WeakAurasSaved` (`WeakAuras.lua:1825-1827`). `/wa mute` and the "Mute" box (`음소거`, `WeakAurasOptions/Locales/koKR.lua:1015`) toggle `WeakAurasSaved.soundsMuted` between `true` and `nil` (`WeakAuras.lua:587-588`).
+- **Default:** new Core defaults file `Defaults/WeakAuras.lua`, a plain target `WeakAurasSaved` with `{soundsMuted = true}` (version 1).
+  - A fresh install is written at the first `PLAYER_ENTERING_WORLD`, over the table Musca created at its own ADDON_LOADED (the engine's existing "first-load" mode).
+  - From the next login Musca prints its own line, `오라 소리가 꺼져 있습니다. 다시 켜려면 /wa mute 를 입력하세요.` (`WeakAuras.lua:1885-1886`).
+- **Why the engine needed a flag:** for a saved variable that already exists, the engine fills missing keys once, and here `nil` means "sounds on". That would mute an account that used Musca (or another WeakAuras build) before.
+  - I added a `freshOnly = true` option for plain targets to `Defaults.lua`. When the saved variable existed at Core's first look, nothing is written and the state is `existing-kept`; it reads `already` once the version was recorded.
+  - `freshOnly` on an AceDB target, or a non-boolean value, is refused.
+  - A player who unmutes later stores `nil`, and the target never runs again (version recorded).
+- **Turning sounds back on (for the check list):** `/wa mute`, or the `/wa` window's `음소거` box. The setting is account-wide.
+
+No patch to Musca Auras: the five folders are byte-identical to upstream. `patches.py verify` is not needed, and `build.py` checks shipped folders against upstream.
+
+### Impact map
+
+| Place | Type | How found | Impact | Why |
+|---|---|---|---|---|
+| `tools/extract.py` `FEATURE_PHASES` | data | read | changed | new start package, Phase 8 |
+| `Collection/upstream/MuscaAuras-1.21.0/` | generated | extract | made by `extract.py` | git-ignored extract (743 files) |
+| `Collection/AddOns/WeakAuras*` (5 folders, 743 files) | new folders | — | added | copied unchanged from the extract |
+| `install.json` `upstream` | data | read | changed | group `MuscaAuras`: 5 folders, both variants (base list) |
+| `manifest.json` / `manifest.md` | generated | `extract.py` | changed | package `MuscaAuras` start, 5 third-party folders `unmodified`; `how_to_use` set by hand (verdict `settings`, reason with R208/R223), kept by later `extract.py` runs |
+| `!DevilForever_Core/Defaults/WeakAuras.lua` | new | — | added | sounds-off default |
+| `!DevilForever_Core/Defaults.lua` | code | read | changed | `freshOnly` (doc, validation, plain branch, status list) |
+| `!DevilForever_Core/API.lua` 33-40 | doc | grep `existing-profile-kept` | changed | new state `existing-kept` listed |
+| Core TOC | data | read | changed | `Defaults\WeakAuras.lua` after `Defaults\Quartz.lua` |
+| `registry_extra.json` | data | read | changed | `WeakAuras: {defaults = "Defaults/WeakAuras.lua"}` (no frames, no restore: see Decision Queue) |
+| `Registry.lua` | generated | `genregistry.py` | changed | 5 Musca folders registered (package MuscaAuras, Phase 8, use settings) |
+| `tests/core/run.py` | test | read | changed | registry asserts for the 5 folders; 3 new cases: fresh install muted and later unmute kept · existing install untouched · `freshOnly` refused on AceDB |
+| `tests/install/verify_archives.py` must-ship | test | read | changed | the 5 folders |
+| install guide | doc | read | changed | folder counts 36/38 → 30/32 (stale since Hekili left: 25/27 before Musca, now 30/32 from `build.py`), Musca line under the ZIPs, "오라 알림" line in the restore-old-addons list, first-login Musca item, `/wa` commands |
+| `data/feature-map.md` | doc | read | changed | tree "행동 추천" → "조건 알림"; row 51 now Musca Auras (R223 wording) |
+| check list §16 (new) | doc | — | added | welcome window, shaman HUD / Maelstrom Weapon / buff time, silent and `/wa mute`, Update HUD, other WeakAuras folders |
+| `Installer/ReleaseCatalog.json` | generated | grep | check only | written from release ZIPs (`catalog.py --write`) at release; not run here |
+| `tests/thirdparty/run.py` · `firststart` · `statusstrip` · `chatsetup` · `detailslayout` | test | run | check only | pass unchanged |
+| `DevilForever_Skin_StatusStrip/Skin.lua`, presets | code | grep | no impact | name no Musca or WeakAuras frame |
+| `judgment.md` Phase 8, `data/hekili-*.md`, earlier briefs | record | — | no impact (record) | earlier judgements |
+| Hekili code, `not_shipped` | — | — | untouched | brief |
+
+### Commands (verdict lines)
+
+| Command | Verdict |
+|---|---|
+| `python -I Collection/tools/extract.py` (after the role, after the copy, after `how_to_use`, final) | rc=0 · `MuscaAuras extracted 743 files -> Collection/upstream/MuscaAuras-1.21.0` · final `packages=40 start=13 comparison=27 … how_to_use_filled=21 errors=0` |
+| `python -I Collection/tools/genregistry.py` / `--check` | wrote 55873 bytes / up to date |
+| `python -I Collection/tests/core/run.py` | before the new cases 107/107; final 110/110 |
+| mutation: `freshOnly = false` in `Defaults/WeakAuras.lua`, core suite | rc=1 · only `musca_defaults_existing_install_untouched` fails (file restored from the scratch copy) |
+| `python -I Collection/tools/luacheck.py "Collection/AddOns/!DevilForever_Core"` | `checked=22 failed=0` |
+| `python -I <scratch>/s51.XsBX/devnull_run.py Collection/tools/build.py --dry-run --variant pitbull4` / `fuf` | rc=0 · folders=30 files=2800 / folders=32 files=2744 |
+| `… build.py --variant pitbull4` / `fuf --out-dir <scratch>/s64m.CmfZ/zips_*` | rc=0 · sha256 c5fa67aa… / 312a912e… |
+| `… build.py --dry-run --variant pitbull4 --list-excluded` (Musca lines) | one file left out: `WeakAuras/Libs/LibSpellRange-1.0/LibSpellRange-1.0.lua` "not loaded by any TOC" (no TOC or XML names it — grep) |
+| `python -I Collection/tests/install/verify_archives.py --version 0.1.5 <scratch>/s64m.CmfZ/zips_all` | rc=0 · pitbull4 `checked=1478 failed=0`, `folders=30 unresolved=0 … load_on_demand=6` · fuf `checked=1429 failed=0`, `folders=32 unresolved=0` |
+| `tests/thirdparty` · `firststart` · `statusstrip/run.py` · `chatsetup` · `detailslayout` | 8/8 · 29/29 · 20/20 · 47/47 · rc=0 |
+
+Raw outputs: `<scratch>/s64m.CmfZ/*.txt`.
+
+### Decision Queue
+
+- **Settings save/restore:** `WeakAurasSaved` (every aura of the account) is registered with no restore entry, so a settings save/restore (`/dfp`) skips it. Whether `/dfp` should save Musca auras is open (my default: skip, because the data is large and account-wide).
+- **Newer upstream version:** the download page showed a newer Musca Auras 1.22.0 (2026-11-25, `SOURCE.txt`). The approved and shipped version is 1.21.0.
+- **Sound previews in `/wa`:** the options window still plays its click and preview sounds when the player picks a sound. They are not aura alerts and only happen on a click in `/wa`.
+- **Login line:** from the second login, Musca prints its "sounds are off" line on every login while muted. That is Musca's own behaviour and left as it is.
+- **Not verified:** whether the shaman class pack has a Maelstrom Weapon aura. A case-insensitive grep for "maelstrom" over the five folders finds it only in `WeakAuras/Types.lua` (power type and icon names), so the check list asks.
+- **Release catalog:** `ReleaseCatalog.json` does not list Musca yet. It is rewritten from the release ZIPs at release.
+
+## Step 69 (R233-R237): Grid2 size and text, chat height, Details stack, Details text
+
+Brief `Claude/results/handoffs/phase27/brief-69.md` 1-32 and `iter_4/image-17-reading.md` 1-15, read in full. This session was not compacted since Step 64 (Musca). The Musca changes stay in the tree uncommitted.
+
+Read (file:lines):
+- `Presets/{fhd,qhd,uhd}.lua`: 300-420 (Dominos bars 1-3), 720-745 (Grid2 proposal and fragments)
+- `Presets/V2.lua`: 20-30 and 60-140 (`layoutV2Revision`; Grid2 cells/spot copy)
+- `Defaults/Grid2.lua`: 1-30 and 60-200 (template hook, `setNameTextSize`)
+- `Core.lua` 220-270 (`PlayerKeys`)
+- `Grid2/GridLayout.lua` 740-780 and 885-915 (`ScaleSize` = frame scale, cell size from `frameWidth`); `Grid2/GridFrame.lua` 240-300
+- `DevilForever_ChatSetup/Chattynator.lua` 100-260 and 300-416; `Chattynator/Display/Main.lua` 10-44 (resize grip at the message area's TOPRIGHT)
+- `DevilForever_DetailsLayout/Layout.lua` whole (after Step 68)
+- `Details/frames/window_main.lua`: 2630-2660 (title bar above the baseframe), 3623-3720 (`SetBarTextSettings`), 3903-3940 (`SetBarSettings`), 7716-7790 (`AttributeMenu`)
+- `tests/layoutv2/run.py` 360-365, 440-560, 596-606; `tests/detailslayout/run.py` whole; `tests/firststart/run.py` 600-740 and 850-940
+- install guide 50-62 · `data/feature-map.md` 59 · check list 134-160
+- read-only saved files (`_forever_/WTF/Account/LKZ1412/SavedVariables`):
+  - `Grid2.lua` 1-120 and 331 (Grid2Frame/Layout profile; `text-down` 18, `text-up` 9, icons 8)
+  - `Chattynator.lua` 539-690 (three windows)
+  - `Details.lua` 1515-2340 (window scale, libwindow, posicao)
+  - `!DevilForever_Core.lua` 165-172 (`detailsLayout` mark `{created = 2, preset = "uhd"}`, no stack)
+  - `WTF/Config.wtf` (`uiScale` 1, no resolution line)
+
+### What the saved data and the screenshot say
+
+- **Grid2 is drawn at about 0.64 of the preset cell.**
+  - Preset uhd sets 176 cells with `ScaleSize` = `pixel` (saved 0.3556 = 768/2160, so UIParent's effective scale was 1 when the fragment was evaluated).
+  - Chattynator's saved windows use 0.5556 units per physical pixel, i.e. UIParent's effective scale in game is 0.64. Example: window 3 x 1608.56 = (inner left 2899 − 2 units) × 0.5556.
+  - So Grid2's frame scale is 0.64 of what the preset meant, and the user sees 176 × 0.64 ≈ 113 px. Screenshot: 926 px wide for 8 cells = 115.7 pitch, top 518 and right edge 3343 match the preset spot.
+  - Tier: estimate (two saved values and the screenshot agree; not checked in the client). Whether fhd/qhd have the same 0.64 is not known.
+- **Chat height.** Saved window 3: top 995.67 units = 1792 px (tab row centred on the strip 1804-1820), height 182.67 units = 329 px, so the bottom is 2121 px.
+  - The message area runs 1841-2112 px: from the window top + 27 units (`MESSAGE_TOP`) to the panel inner bottom (2124 − 12).
+  - The width reaches the inner right edge (3828).
+  - So the windows follow the Step 66 rule (inner rectangle = panel minus a 12 px border), except a 9 px gap at the top: `MESSAGE_TOP` 27 units vs the tab row's 22 units.
+  - The screenshot reading puts the art's visible inner edges elsewhere: right border 3806-3830 px, i.e. about 24 px, not 12; no horizontal border band inside the panel (inner 947-1105 = the whole panel height).
+  - So the mismatch the user sees comes from the theme art not drawing the 12 px structure border yet (Step 66 check list already notes the art may be off until Codex redraws it, `appearance-28-devil-structure.md`). Tier: estimate (from the reading; I did not read the image).
+  - **No Chattynator code change.** Decision Queue.
+- **Details today.** Saved libwindow point `BOTTOMRIGHT` with w 224/216: the user dragged both windows after the Step 68 placement, which would have put TOPLEFT 217/218. The Step 68 mark has no `stack` revision.
+
+### Numbers before → after (physical px)
+
+| | fhd | qhd | uhd |
+|---|---|---|---|
+| Grid2 cell (`frameWidth`/`frameHeight`) | 88 → 66 | 116 → 87 | 176 → 132 (≈ 113 → 85 seen, R233) |
+| Grid2 name text (Grid2Frame `fontSize`, template name indicator) | 12 → 15 | 14 → 20 | 18 → 30 (≈ 0.23 of the cell) |
+| Grid2 other text indicators (`text-up` etc.) | template 9 → 11 | → 15 | → 23 (¾ of the name text) |
+| Grid2 40-player window (screen map) | 732×456 → 556×346 at TOPRIGHT (−247, −259) | 956×596 → 724×450 | 1450×904 → 1098×684 |
+| Details | Step 68 row (0, 362, 437, 192) | (0, 532, 618, 224) | (0, 828, 953, 304) |
+| → threat body (x, y, w, h) | (1559, 695, 361, 37) | (2351, 921, 209, 108) | (3437, 1372, 403, 193) |
+| → damage body | (1559, 760, 361, 38) | (2351, 1060, 209, 109) | (3437, 1603, 403, 193) |
+| Details title strip | 24 | 26 | 30 |
+| Details bar text / title text / bar height | 11 / 11 / 16 | 15 / 15 / 21 | 22 / 22 / 30 (chat ≈ 24-25 px in the screenshot) |
+
+Grid2 anchor is unchanged: TOPRIGHT on the quest tracker's top-left corner, so the smaller window shrinks to the left and down. No new anchor.
+
+How the stack was derived (`<scratch>/s64m.CmfZ/s69_stack.py` over the screen map with the 75 % Grid2):
+- **x:** from the end of the action bar row (`appearance.upper` right edge) plus the bar end cap (1.1 % of the width: uhd 42, matching the cap end ≈ 3430-3437 in the screenshot) to the screen's right edge.
+- **Bottom:** theme strip top − W/480 (uhd 8 px), inside the action bar row.
+- **Top:** quest tracker bottom + the same gap. The tracker bottom is an estimate: 695/1125 of the screen height (the screenshot), i.e. uhd 1334.
+- **Split:** the free height in two, with that gap between.
+- **fhd:** the bar row reaches 1859 (61 px from the edge) and the rule leaves 40 px of width. Best fit: above the bar (bottom = bar top − 4), right of the target-pet frame (x 1559), under the tracker estimate. Only 127 px of height → bodies of 37/38 px. Decision Queue.
+
+### Impact map
+
+| Place | Type | How found | Impact | Why |
+|---|---|---|---|---|
+| `Presets/{fhd,qhd,uhd}.lua:733` Grid2 proposal | data | read | changed | cells 66/87/132, Grid2Frame `fontSize` and proposal `text-center` 15/20/30 |
+| `Presets/V2.lua` `layoutV2Revision` | data | read | changed | 7 → 8: collection profiles get the layout once more (catch-up), which carries the new Grid2 cells (V2 copies `frameWidth`/`frameHeight` from the base preset). It also rewrites the -v2 values of PitBull4, Quartz, Dominos and SexyMap once (same values as today) |
+| `Defaults/Grid2.lua` | code | read | changed | `setNameTextSize` → `setTextSizes`: name text = fragment size, other text = `OTHER_TEXT` (fhd 11 / qhd 15 / uhd 23), at the first-start template. New pass at Grid2's ADDON_LOADED for a profile the preset wrote: indicators still at 8/9/12/14/18 (or nil) get the new sizes once (`preset.grid2Text[profile]`); other sizes and icons stay |
+| `DevilForever_DetailsLayout/Layout.lua` | code | read | changed | stack rects, `textSizes`, `STACK_VERSION`, `applyText` (`SetBarSettings`, `SetBarTextSettings`, `AttributeMenu`), `placeStack`; FirstSetup: new windows get the stack and text; a mark with `created` and no `stack` is moved and sized once |
+| `DevilForever_DetailsLayout.toc` Notes | text | read | changed | describes the stack |
+| `tests/detailslayout/run.py` | test | read | changed | `check_row` → `check_stack`; text checks; 5 new move-once cases (dragged windows moved once, then left; skipped profile untouched; window 2 gone) |
+| `tests/layoutv2/run.py` | test | read | changed | Details row test → stack test (threat above damage, same x/width, inside the screen, clear of every rectangle, Grid2 and the tracker estimate, the right ornament pinned); Grid2 `KNOWN_OVERLAP` re-pinned (Details no longer in them; party windows clear); `TRACKER` cells; cell-size assertion 66/87/132 = 75 % + name text 23 %; revision 8 |
+| `tests/firststart/run.py` | test | run | changed | Grid2 cells 88 → 66, fhd name text 12 → 15, Classic `text-up` 9 → 11, preset source sizes; new case `grid2_earlier_text_sizes_raised_once` |
+| install guide (Details first-login item) | doc | grep | changed | stack text replaces the Step 68 row text |
+| `data/feature-map.md:59` | doc | grep | changed | stack |
+| check list §15 (rewritten: stack, text, move once, FUF), §17 (new: Grid2 size/text, chat height measurement) | doc | grep | changed | |
+| check list line 39 (Grid2 vs Details) | doc | grep | check only | still a valid check |
+| `DevilForever_ChatSetup/Chattynator.lua` | code | read | check only | geometry matches the rule (above) |
+| `registry_extra.json` Details/Grid2 | data | read | check only | frame names unchanged |
+| codex briefs quoting a Details spot | doc | grep `2902`/`1320, 466`/`DetailsLayout` | no impact (record) | only `appearance-24.md:27` (the earlier chat-3 rule, an issued brief) mentions it; `appearance-28` names no Details spot |
+| Step 68 work-log section, earlier Result/records | record | — | no impact (record) | |
+
+### Commands (verdict lines)
+
+| Command | Verdict |
+|---|---|
+| `python -I <scratch>/s64m.CmfZ/s69_stack.py <scratch>/s60/s68_rects.json` | uhd x0 3437 w 403 y 1342-1796 · qhd x0 2351 w 209 y 895-1169 · fhd x0 1880 w 40 (rule fails → best fit above) |
+| `python -I <scratch>/s64m.CmfZ/s69_pin.py …` (in `tests/layoutv2`) | new Grid2 overlaps pinned: fhd raid 9 (target auras/target-pet auras/target frame) · qhd raid 4 · uhd raid 2 · every party window 0 |
+| `python -I Collection/tools/luacheck.py Collection/AddOns/DevilForever_DetailsLayout "Collection/AddOns/!DevilForever_Core"` | `checked=23 failed=0` |
+| `python -I Collection/tests/layoutv2/run.py` | rc=0 · 46 PASS incl. `Details stack threat (3437, 1372, 403, 193) over damage (3437, 1603, 403, 193)` uhd, qhd/fhd rows, `clear of 66 rects but the right ornament`, `Grid2 cells square (fhd 66, qhd 87, uhd 132 = 75 % …)` |
+| `python -I Collection/tests/detailslayout/run.py` | rc=0 · `PASS first setup … (21 cases)` · slash suite PASS |
+| `python -I Collection/tests/firststart/run.py` | first run 26/29 (the three Grid2 cases expecting 88 and the old text sizes); after the update 30/30 |
+| `python -I Collection/tests/core/run.py` · `chatsetup` · `statusstrip/run.py` · `pitbull4runtime` | 110/110 · 47/47 · 20/20 · 20/20 |
+| `python -I Collection/tools/genregistry.py --check` | up to date (55873 bytes) |
+| `python -I <scratch>/s51.XsBX/devnull_run.py Collection/tools/build.py --dry-run --variant pitbull4` / `fuf` | rc=0 · folders=30 files=2800 / folders=32 files=2744 |
+
+Raw outputs: `<scratch>/s64m.CmfZ/s69*.txt`, `lv2*.txt`.
+
+### Decision Queue
+
+1. **Moving windows the user dragged.** The brief says windows the user moved stay alone. The saved data shows this user dragged both windows after the Step 68 placement, and R235 asks for the new spot.
+   - My default: a profile whose windows the collection made is moved once, whatever the drag.
+   - The user's own profiles (`skipped`) stay alone, and after this one move every change stays.
+   - If the master wants the brief's rule, add a position check before `placeStack` in `FirstSetup`.
+2. **fhd stack.** The fhd action bar row leaves 61 px at the right, so the rule cannot hold. The best fit above the bar gives two windows of 61/62 px (bodies 37/38, about two bars each). Options: accept, give fhd a different spot, or drop Details text/rows smaller on fhd.
+3. **Theme ornament.** The right theme ornament (`appearance.ornamentRight`, uhd 3348-3604 × 1548-1804) is overlapped by the stack in every preset; the user's rule ("Dominos 끝나는 지점부터 우측 끝까지") puts the stack there. The check list asks which one draws on top.
+4. **Quest tracker bottom.** Taken from one screenshot (695/1125 of the height). A longer quest list grows down into the threat window. The tracker has no fixed size in the collection.
+5. **Grid2 scale factor.** The ≈ 0.64 factor between the preset cell and the drawn cell (`ScaleSize` evaluated with UIParent scale 1) is an estimate. The new numbers are 75 % of the preset cells, so the user sees 75 % of today whatever the cause. If the cause is fixed later, the cells must be divided by the same factor.
+6. **Chat height.** No code change, for two reasons:
+   - The windows already follow the panel inner rectangle. The only gap from our code is 9 px at the top (`MESSAGE_TOP` 27 vs `TAB_ROW` 22).
+   - The visible mismatch matches the art not drawing the 12 px structure border (right about 24 px, no top/bottom band).
+   - Options: (a) Codex redraws the art to the structure; (b) move the windows so the message area starts at the inner top, which puts the tab row 9 px (uhd) above the strip's centre.
+7. **Grid2 icons.** Icon sizes and icon stack text (template 12/20 and 8) are unchanged; only text indicators were sized.
+8. **Tiny Threat rows.** Tiny Threat draws its own rows with its own settings, not touched; the check list asks for its text size.
+9. **uhd 3862 width.** The stack ends at 3840 (22 px short of the edge) because the uhd rects are fixed.
+10. **Layout revision 8.** It rewrites every collection profile's layout values once at the next login; that is the existing catch-up behaviour.

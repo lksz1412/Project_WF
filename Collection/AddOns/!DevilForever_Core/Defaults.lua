@@ -37,6 +37,9 @@
 --              createIfMissing the table is created and written instead.
 --   not fresh  only keys missing (raw nil) are filled; stored values are kept.
 --              Status carries lateCreated = true when the marker exists.
+--              With freshOnly = true nothing is written (state
+--              "existing-kept"): for a value whose nil is itself a choice the
+--              user can make (a toggle the addon stores as true or nil).
 -- Suppress(folder[, reason]) stops all further work on `folder` for this
 -- session (a pending login-window write included); code that restores or
 -- imports an addon's saved variables calls it before writing them.
@@ -115,6 +118,9 @@ local function validSpec(folder, spec)
     if type(t.values) ~= "table" then return "target " .. i .. " values must be a table" end
     if t.profile ~= nil and (type(t.profile) ~= "string" or t.profile == "") then return "target " .. i .. " profile" end
     if t.namespace ~= nil and (type(t.namespace) ~= "string" or t.namespace == "") then return "target " .. i .. " namespace" end
+    if t.freshOnly ~= nil and (t.shape ~= "plain" or type(t.freshOnly) ~= "boolean") then
+      return "target " .. i .. " freshOnly must be a boolean on a plain target"
+    end
   end
 end
 
@@ -399,12 +405,24 @@ local function attempt(lowerFolder, phase)
         looks[i] = info
       end
       local final = phase == "world"
-      if info.due == "world" and not final then
+      if not info.fresh and target.freshOnly then
+        place, reason = "kept", "saved variable existed before Core first looked; fresh-only target, nothing written"
+      elseif info.due == "world" and not final then
         place, reason = "wait", "first load: written at the first PLAYER_ENTERING_WORLD"
       else
         place, reason = locatePlain(target, info.fresh and target.createIfMissing, final)
       end
-      if place == "wait" then
+      if place == "kept" then
+        done[i] = true
+        local key = plainKey(target)
+        local recorded = key and applied and applied[key]
+        if type(recorded) == "number" and recorded >= spec.version then
+          st.targets[label] = {state = "already", key = key, version = recorded}
+        else
+          st.targets[label] = {state = "existing-kept", key = key, message = reason}
+          Core:Log("info", spec.folder, label .. ": " .. reason)
+        end
+      elseif place == "wait" then
         if not (st.targets[label] and st.targets[label].message == reason) then
           Core:Log("info", spec.folder, label .. " waiting: " .. reason)
         end
@@ -470,7 +488,7 @@ end)
 
 -- Status of `folder` ({folder, registered, loaded, version, targets = {[label]
 -- = {state = "waiting"|"skipped"|"late-created"|"suppressed"|"already"|
--- "existing-profile-kept"|"applied", mode = "first-load"|"fill-missing",
+-- "existing-profile-kept"|"existing-kept"|"applied", mode = "first-load"|"fill-missing",
 -- lateCreated, ...}},
 -- suppressed = reason|nil}), or of every registered folder when `folder` is
 -- nil ({[folder] = status}).

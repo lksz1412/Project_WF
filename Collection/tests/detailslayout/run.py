@@ -62,6 +62,10 @@ function Details:CreateInstance(id)
  return i
 end
 function Details:ChangeSkin(name) self.skin=name;skinCalls=skinCalls+1 end
+textCalls=0
+function Details:SetBarSettings(height) self.row_info.height=height;textCalls=textCalls+1 end
+function Details:SetBarTextSettings(size) self.row_info.font_size=size;textCalls=textCalls+1 end
+function Details:AttributeMenu(enabled,x,y,font,size) self.attribute_text=self.attribute_text or {};self.attribute_text.text_size=size;textCalls=textCalls+1 end
 Details222={WindowSnap={RefreshGeometry=function(instance) assert(not next(instance.snap)) end}}
 local function frame()
  local f={parent=UIParent,scale=1,width=333,height=144,shown=true}
@@ -170,8 +174,7 @@ assert(equal(_detalhes_global,savedGlobal) and equal(_detalhes_database,savedCha
 '''.replace("CHECK_GEOMETRY", "true" if geometry else "false"))
 
 
-# Chat panel 1 {x, y, w, h} of each preset (appearance.chat1 in Presets/<preset>.lua); the row is fitted to it.
-CHAT1 = {"fhd": (0, 860, 437, 192), "qhd": (0, 1186, 618, 224), "uhd": (0, 1820, 953, 304)}
+SCREEN = {"fhd": (1920, 1080), "qhd": (2560, 1440), "uhd": (3840, 2160)}
 
 
 def check_placed(runtime, preset, ids=(1, 2)):
@@ -191,16 +194,58 @@ def check_placed(runtime, preset, ids=(1, 2)):
         assert abs(instance.baseframe.point[5] + rect[2]) < 1e-9
 
 
-def check_row():
-    """The two windows (title strip included) form one row as wide and tall as a chat panel."""
+def check_stack():
+    """Window 2 (threat) above window 1 (damage), same x and width, titles included, inside the screen."""
     layout = session().globals().DevilForever_DetailsLayout
-    for preset, chat in CHAT1.items():
-        one, two = layout.layouts[preset][1], layout.layouts[preset][2]
+    for preset, (width, height) in SCREEN.items():
+        damage, threat = layout.layouts[preset][1], layout.layouts[preset][2]
         title = layout.titleSpace[preset]
-        assert one[1] == chat[0] and one[2] == two[2] and one[4] == two[4], preset
-        assert (two[1] + two[3]) - one[1] == chat[2] and two[1] - (one[1] + one[3]) == 2, preset
-        assert title + one[4] == chat[3], preset
-        assert abs(one[3] - two[3]) <= 1, preset
+        assert damage[1] == threat[1] and damage[3] == threat[3], preset
+        assert threat[2] + threat[4] < damage[2] - title, (preset, "threat window ends above the damage title")
+        assert threat[2] - title >= 0 and damage[2] + damage[4] <= height, preset
+        assert damage[1] + damage[3] == width, (preset, "the stack reaches the screen's right edge")
+        assert abs(damage[4] - threat[4]) <= 1, (preset, "free height split in two")
+        sizes = layout.textSizes[preset]
+        assert sizes.row > sizes.text and sizes.title == sizes.text, preset
+
+
+def check_text(runtime, preset, ids=(1, 2)):
+    scope = runtime.globals()
+    sizes = scope.DevilForever_DetailsLayout.textSizes[preset]
+    for id in ids:
+        instance = scope.Details.tabela_instancias[id]
+        assert (instance.row_info.height, instance.row_info.font_size, instance.attribute_text.text_size) == \
+            (sizes.row, sizes.text, sizes.title), (preset, id)
+
+
+def check_stack_move():
+    """Windows made by an earlier first setup (mark without stack) move once, even after a drag; then stay."""
+    for preset in ("fhd", "qhd", "uhd"):
+        db = {"detailsLayout": {"profiles": {"mine": {"created": 2, "preset": preset}}}}
+        runtime = first_login(preset, core_db=db, windows=2,
+                              before='Details:GetInstance(1).libwindow.point="BOTTOMRIGHT"')
+        scope = runtime.globals()
+        scope.runTimers()
+        assert scope.created == 0 and scope.raidCalls == 0, preset
+        check_placed(runtime, preset)
+        check_text(runtime, preset)
+        mark = scope.DevilForever_Core.db.detailsLayout.profiles.mine
+        assert mark.stack == 1 and mark.preset == preset, preset
+        assert len(scope.messages) == 1 and "옮김" in scope.messages[1], list(scope.messages.values())
+        later = first_login(preset, core_db=to_py(scope.DevilForever_Core.db), windows=2,
+                            before="Details:GetInstance(1).libwindow.x=999")
+        later.globals().runTimers()
+        assert later.globals().writes == 0 and later.globals().textCalls == 0, preset
+        assert later.globals().Details.tabela_instancias[1].libwindow.x == 999
+    # a profile with the player's own windows (skipped) is never moved
+    runtime = first_login("uhd", core_db={"detailsLayout": {"profiles": {"mine": {"skipped": True}}}}, windows=2)
+    runtime.globals().runTimers()
+    assert runtime.globals().writes == 0 and runtime.globals().textCalls == 0
+    # window 2 deleted since: nothing to stack, marked done
+    runtime = first_login("qhd", core_db={"detailsLayout": {"profiles": {"mine": {"created": 2, "preset": "qhd"}}}}, windows=1)
+    runtime.globals().runTimers()
+    assert runtime.globals().writes == 0 and setup_mark(runtime.globals()).stack == 1
+    return 5
 
 
 def setup_mark(scope):
@@ -233,8 +278,9 @@ def check_first_setup():
         assert one.modo == 2 and one.current_raid_plugin is None and one.atributo == 1 and one.sub_atributo == 1, \
             "window 1 stays on damage done"
         check_placed(runtime, preset)
+        check_text(runtime, preset)
         mark = scope.DevilForever_Core.db.detailsLayout.profiles.mine
-        assert mark.created == 2 and mark.preset == preset and mark.skipped is None
+        assert mark.created == 2 and mark.preset == preset and mark.stack == 1 and mark.skipped is None
         assert len(scope.messages) == 1 and "Tiny Threat" in scope.messages[1], list(scope.messages.values())
         # Same session: nothing more.
         writes = scope.writes
@@ -295,8 +341,8 @@ def check_first_setup():
 
 
 def run():
-    check_row()
-    setup_cases = check_first_setup()
+    check_stack()
+    setup_cases = check_first_setup() + check_stack_move()
     calls = 0
     for factor in (.35, .64):
         for preset in ("fhd", "qhd", "uhd"):
@@ -382,7 +428,7 @@ def run():
     before = scope.writes
     assert scope.SlashCmdList.DFDETAILSLAYOUT("restore")[0] is False
     assert scope.writes == before
-    print(f"PASS first setup: window 2 + Tiny Threat on a window-1-only profile per preset, skin of window 1, window 1 kept on damage done, side-by-side row = chat panel width/height; second login no writes; player-made windows marked and untouched; retries/combat/Tiny Threat missing ({setup_cases} cases)")
+    print(f"PASS first setup: window 2 + Tiny Threat on a window-1-only profile per preset, skin of window 1, window 1 kept on damage done, threat-over-damage stack per preset with text sizes; earlier setups moved once; second login no writes; player-made windows marked and untouched; retries/combat/Tiny Threat missing ({setup_cases} cases)")
     print(f"PASS actual slash->native Details scale/position restore: {calls} preset/factor pairs; existing1/2 only; status/startup no writes; explicit apply; valid nil legacy/LibWindow fallback undo; profile/mode/style/SavedVariables/third window preserved; {len(cases)+len(bounds_cases)+len(geometry_cases)} refusal cases incl FHD/apply-UHD and missing original width; native error rollback")
 
 

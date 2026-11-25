@@ -25,7 +25,7 @@ local TOTEM_BUTTONS, TOTEM_SPACING = 6, 2
 -- (dfLayoutRevision, with dfLayoutV2 = true). A collection profile below it, or one still on the earlier
 -- second layout (dfLayoutV2 = false), gets this layout written by itself at the next load (Presets.lua,
 -- layout catch-up).
-Core.Presets.layoutV2Revision = 7
+Core.Presets.layoutV2Revision = 8
 local function signature(row, fields)
   local parts = {}
   for _, key in ipairs(fields) do parts[#parts+1] = tostring(row[key]) end

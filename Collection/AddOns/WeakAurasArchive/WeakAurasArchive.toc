@@ -1,0 +1,11 @@
+## Interface: 16001
+# WOW_INTERFACE_TARGETS: vanilla
+## Title: Musca Auras Archive
+## Author: The WeakAuras Team, dldvlpr (WoW Forever port)
+## X-License: GPL-2.0
+## X-Website: https://muscalab.com/addons/musca-auras
+## Version: 1.21.0
+## IconTexture: Interface\AddOns\WeakAuras\Media\Textures\icon.tga
+## LoadOnDemand: 1
+## SavedVariables: WeakAurasArchive
+## Dependencies: WeakAuras
