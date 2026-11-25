@@ -62,6 +62,15 @@
 -- <SV>[profileKey] (an addon's per-character profile in a plain saved
 -- variable). Fresh then means <SV>[profileKey] was nil at the addon's
 -- ADDON_LOADED (Profiles:KeyWasAbsent); targetKey "<SV>@root:<profileKey>".
+-- Layout catch-up after an update: a collection PitBull4 profile (profiles.Default with a boolean
+-- dfLayoutV2) whose dfLayoutRevision is below this build's revision of its version (layoutV2Revision /
+-- layoutV1Revision, Presets/V2.lua) gets <active>-v2 or -v1 written in the same load, with no command:
+-- the request starts at Core's ready step when the last load recorded the profile's state
+-- (DevilForever_CoreDB.layoutRevision.seen), else at PitBull4's ADDON_LOADED, before PitBull4 reads it.
+-- Targets whose ADDON_LOADED came earlier get their fragments at the next load
+-- (layoutRevision.due; dropped when the player's own request comes first). Once per profile and revision (layoutRevision.tried); a profile without the
+-- flag is never touched; one informational line at the first PLAYER_ENTERING_WORLD; nothing pending,
+-- so the version switch and /dfp commands stay free.
 -- It is written at PLAYER_LOGIN for SexyMap, otherwise PLAYER_ENTERING_WORLD,
 -- in both modes, after the
 -- addon has made the profile, and only by merging: a value goes in where its
@@ -85,6 +94,7 @@ local fragmentState = {}  -- [preset .. "|" .. index] = {state, message, key}
 local waitingWorld = {}   -- root fragments due after native profile creation
 local worldSeen = false
 local appliedRequest
+local loadedFolders = {}  -- [lower folder] = true once its ADDON_LOADED passed Core this session
 
 function Presets:GetAppliedRequest()
   return appliedRequest
@@ -539,7 +549,7 @@ end
 -- Fragments of folder `lower` to look at now: {{presetName, index, fragment, mode}}.
 local function dueFragments(lower)
   local out = {}
-  if request and defs[request.name] then
+  if request and defs[request.name] and not (request.only and not request.only[lower]) then
     for i, f in ipairs(defs[request.name].fragments) do
       if f.folder:lower() == lower then out[#out + 1] = {request.name, i, f, "requested"} end
     end
@@ -553,7 +563,63 @@ local function dueFragments(lower)
   return out
 end
 
+-- Layout catch-up (header): "-v2" / "-v1" and the build's revision for a collection profile state
+-- below that revision; nil otherwise.
+local function outdatedLayout(v2, revision)
+  if type(v2) ~= "boolean" then return end
+  local target = v2 and Presets.layoutV2Revision or Presets.layoutV1Revision
+  if type(target) ~= "number" then return end
+  if (type(revision) == "number" and revision or 0) >= target then return end
+  return v2 and "-v2" or "-v1", target
+end
+
+local function pitbullProfile()
+  local sv = rawget(_G, "PitBull4DB")
+  local profiles = type(sv) == "table" and rawget(sv, "profiles")
+  local profile = type(profiles) == "table" and rawget(profiles, "Default")
+  return type(profile) == "table" and profile or nil
+end
+
+-- DevilForever_CoreDB.layoutRevision, made only when something is written to it.
+local function revisionsTable(create)
+  if create then return Core:DBTable("layoutRevision") end
+  local db = Core.db
+  local t = type(db) == "table" and rawget(db, "layoutRevision")
+  return type(t) == "table" and t or nil
+end
+
+local function folderLabel(folder)
+  return folder == "Dominos" and "Dominos 토템 막대" or folder
+end
+
+-- Starts the catch-up request; folders whose ADDON_LOADED already passed go to the next load.
+local function startCatchUp(suffix, target, keys)
+  if request or not keys then return end
+  local active, registered = Presets:GetActive()
+  local name = registered and active .. suffix
+  if not name or not defs[name] then return end
+  local tried = Core:DBTable("layoutRevision", "tried")
+  local mark = "Default|" .. suffix
+  if tried[mark] == target then return end
+  tried[mark] = target
+  local now, later = {}, {}
+  for _, f in ipairs(defs[name].fragments) do
+    local lower = f.folder:lower()
+    if loadedFolders[lower] then later[lower] = f.folder else now[lower] = f.folder end
+  end
+  request = {name = name, keys = keys, auto = true, only = now, later = later}
+  if next(later) then
+    Core:DBTable("layoutRevision").due = {name = name, char = keys.char, keys = Core.CopyTable(keys),
+      folders = Core.CopyTable(later)}
+  end
+end
+
 local function onAddonLoaded(folder)
+  if folder:lower() == "pitbull4" and not request then
+    local profile = pitbullProfile()
+    local suffix, target = outdatedLayout(profile and profile.dfLayoutV2, profile and profile.dfLayoutRevision)
+    if suffix then startCatchUp(suffix, target, Core.PlayerKeys()) end
+  end
   local keys = Core.PlayerKeys() or (request and request.keys)
   for _, due in ipairs(dueFragments(folder:lower())) do
     local presetName, index, f, mode = due[1], due[2], due[3], due[4]
@@ -620,6 +686,26 @@ Core.readyCallbacks:Register(Presets, function()
       Core:Log("skip", "Presets", "requested preset " .. tostring(r.name) .. " is not registered")
     end
   end
+  -- Layout catch-up (header): targets left for this load, else a state the last load recorded.
+  local revisions = revisionsTable(false) or {}
+  local due = rawget(revisions, "due")
+  local keys = Core.PlayerKeys()
+  -- the player's own request (version switch, /dfp preset) supersedes what the catch-up left
+  if request and type(due) == "table" then revisions.due = nil end
+  if not request and type(due) == "table" then
+    if type(due.folders) ~= "table" or type(due.name) ~= "string" or not defs[due.name] then
+      revisions.due = nil
+    elseif not (keys and keys.char ~= due.char) then
+      local only = {}
+      for lower in pairs(due.folders) do only[lower] = true end
+      request = {name = due.name, keys = keys or due.keys, auto = true, only = only, later = {}, finishing = true}
+    end
+  end
+  local seen = rawget(revisions, "seen")
+  if not request and type(seen) == "table" then
+    local suffix, target = outdatedLayout(seen.v2, seen.revision)
+    if suffix then startCatchUp(suffix, target, keys) end
+  end
   local db = Core:DBTable("preset")
   if rawget(db, "active") == nil then
     local pick = Presets:PickForScreen()
@@ -633,6 +719,7 @@ end)
 Core:On("ADDON_LOADED", function(_, loaded)
   if type(loaded) ~= "string" or not Core.ready then return end
   onAddonLoaded(loaded)
+  loadedFolders[loaded:lower()] = true
 end)
 
 local function flushRootFragments(sexyMapOnly)
@@ -652,7 +739,34 @@ Core:On("PLAYER_ENTERING_WORLD", function()
   flushRootFragments(false)
   if not worldSeen then
     worldSeen = true
-    if request then
+    if request and request.auto then
+      local written, waiting, named = {}, {}, {}
+      for i, f in ipairs(defs[request.name].fragments) do
+        local lower = f.folder:lower()
+        if request.only[lower] then
+          local st = fragmentState[request.name .. "|" .. i]
+          if not st then record(request.name, i, "skipped", f.folder .. " not loaded") end
+          if st and st.state == "written" and not named[lower] then
+            named[lower] = true
+            written[#written + 1] = folderLabel(f.folder)
+          end
+        elseif request.later[lower] and not named[lower] then
+          named[lower] = true
+          waiting[#waiting + 1] = folderLabel(f.folder)
+        end
+      end
+      sort(written)
+      sort(waiting)
+      local label = request.name:match("%-v2$") and "New" or "Old"
+      if #written > 0 then
+        Core.Profiles:Print(label .. " 배치를 이 판에 맞춰 적용했습니다(" .. table.concat(written, "·") .. ")"
+          .. (#waiting > 0 and (" — " .. table.concat(waiting, "·") .. " 는 다음 접속 때 자동으로 적용됩니다.") or "."))
+      elseif #waiting > 0 then
+        Core.Profiles:Print(label .. " 배치(" .. table.concat(waiting, "·") .. ")는 다음 접속 때 자동으로 적용됩니다.")
+      end
+      if request.finishing then revisionsTable(true).due = nil end
+      request = nil
+    elseif request then
       for i, f in ipairs(defs[request.name].fragments) do
         if not fragmentState[request.name .. "|" .. i] then
           record(request.name, i, "skipped", f.folder .. " not loaded")
@@ -696,5 +810,16 @@ Core:On("PLAYER_ENTERING_WORLD", function()
       end
       db.keptNotice = signature
     end
+  end
+end)
+
+-- The PitBull4 profile's layout state at the end of each load, so the next update can start its
+-- catch-up at Core's ready step and reach every target in that load.
+Core:On("PLAYER_ENTERING_WORLD", function()
+  local profile = pitbullProfile()
+  if profile and type(profile.dfLayoutV2) == "boolean" then
+    revisionsTable(true).seen = {v2 = profile.dfLayoutV2, revision = profile.dfLayoutRevision}
+  elseif revisionsTable(false) then
+    revisionsTable(false).seen = nil
   end
 end)

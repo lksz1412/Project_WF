@@ -364,21 +364,16 @@ for preset,(name_canvas,name_area,arrow_canvas,bar,font,screen) in ART.items():
         click(right);assert s.g.TEST_reloads==reloads and s.g.GameTooltip.line=='전투 중에는 바꿀 수 없습니다.'
         assert s.g.GameTooltip.text=='다음 배치'
         s.g.TEST_combat=False;s.g.TEST_fire('PLAYER_REGEN_ENABLED');assert left.alpha==1
-        # the first-login re-apply (run here once PitBull4's profile is visible): an older revision gets the
-        # version in use requested without a reload; the current revision gets nothing
-        s.core.Presets.ReapplyOutdatedLayout(s.core.Presets)
-        before=s.sv('DevilForever_ProfilesDB').get('pending')
+        # a layout request still waiting (e.g. /dfp preset <name>-v1 without /dfp go) never blocks the switch
         if v2!='current':
-            assert before and before['name']==preset+('-v2' if v2 else '-v1') and not before['armed'],before
-            assert s.g.TEST_reloads==reloads and any('다시 적용하도록 예약' in l for l in s.g.TEST_printed.values())
-        else:
-            assert before is None
+            ok,_=s.core.Presets.Restore(s.core.Presets,preset+'-v1');assert ok
+            assert s.sv('DevilForever_ProfilesDB')['pending']['name']==preset+'-v1'
         click(right)  # the switch replaces a waiting layout request
         want=preset+('-v1' if v2=='current' else '-v2')  # an earlier V2 (no current revision) shows Old and steps to New
         pending=s.sv('DevilForever_ProfilesDB')['pending']
         assert s.g.TEST_reloads==reloads+1 and pending['action']=='preset' and pending['name']==want,(pending,want)
         assert not s.errors(),s.errors()
-    print('PASS',preset,'version switcher New/Old images left of the theme switcher; earlier V2 profile shows Old; combat refusal and dim; a switch requests the other layout and reloads, replacing the first-login re-apply request')
+    print('PASS',preset,'version switcher New/Old images left of the theme switcher; earlier V2 profile shows Old; combat refusal and dim; a switch requests the other layout and reloads, replacing a waiting layout request')
 none=session(3840,2160,22,locale='enUS',screen=(3840,2160))
 assert not none.g.DevilForever_StatusStripLayouts.shown and none.g.DevilForever_StatusStripThemes.shown
 edited=session(3840,2160,22,locale='enUS',screen=(3840,2160),layout_v2='current')

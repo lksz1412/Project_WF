@@ -524,3 +524,119 @@ Fix:
 | `… build.py --dry-run --variant pitbull4` / `fuf` | rc=0 · 36 folders/2353 files · 38/2297 |
 
 Raw outputs: `<scratch>/s60/s62r*.txt`. Minor 1 and minor 2 are not fixed, per triage.
+
+## Step 63 (R205): update applies by itself — mechanism found before the change
+
+Read: `!DevilForever_Core/Profiles.lua` 15-60, 840-930, 1075-1139; `Presets.lua` 1-92, 425-700; `Core.lua` 242-265.
+
+- An armed request is taken at Core's ready step (`Profiles.lua:1081` readyCallbacks → `takePending` 846-889). It is used only when `armed`, on the same character, and within `PENDING_MAX_AGE` of `/dfp go` (878). A preset request becomes `presetRequest`, which `Presets.lua:614-623` (readyCallbacks) takes into `request`.
+- Fragments are written at each target addon's ADDON_LOADED (`Presets.lua:633-636` → `onAddonLoaded` 556-596). Core loads first, so its handler runs before the target's own: `Profiles.lua:33` "before the addon's own handler (Core loads first …)", and `Presets.lua:48` writes after Defaults' handler. In "requested" mode every fragment of the request for that folder is written (`writeFragment` 457-523). The only exception is a saved variable whose AceDB is already open (468-470, skipped).
+- So a request has to exist before a target's ADDON_LOADED. PitBull4's own saved variable (`PitBull4DB`, which holds the layout flag and revision) is readable only from PitBull4's ADDON_LOADED. Targets that load before PitBull4 (Dominos, Grid2 load alphabetically before PitBull4; Quartz after — load order not checked in game) are past their write point by then. They can only get the values at the next load.
+- Fresh install: PitBull4DB is nil at its ADDON_LOADED, so `Profiles:WasFresh` is true and the active preset's fragments are written in "fresh" mode (`dueFragments` 549-552 → `onAddonLoaded` 573-593). The base preset carries the V2 fragments at version + 10 (`V2.lua`), so a new profile gets New at the current revision without any request or command.
+- The ReloadUI the earlier re-apply needed is not carried out from a timer (Step 62 diagnosis). Typing `/dfp go` was the only remaining path, which R205 rules out.
+
+### Step 63 — what changed
+
+Further reads for the change: `Presets.lua` 1-92 and 425-700, re-read after the edit (catch-up block, ready step, PEW summary, the new PEW handler); `Presets/V2.lua` tail; `tests/layoutv2/run.py` 1-45 and the old re-apply block; `tests/statusstrip/theme_switcher.py` 360-385; check list 69-70, 113-129; install guide 44-60.
+
+| Place | Change |
+|---|---|
+| `!DevilForever_Core/Presets.lua` | Layout catch-up (header comment). `outdatedLayout(v2, revision)` treats a boolean flag below the build's revision of its version as outdated. The request starts at PitBull4's ADDON_LOADED (Core's handler, before PitBull4 reads `PitBull4DB`), or at Core's ready step when the last load recorded the state (`layoutRevision.seen`, written at every PLAYER_ENTERING_WORLD for a collection profile). `startCatchUp` sets `request = {name = <active>-v2/-v1, auto, only = folders not loaded yet, later = folders already loaded}`, marks `tried["Default|<suffix>"] = revision`, and stores `due = {name, char, keys, folders}` for the folders already loaded. At the next ready step `due` becomes an `only` request for those folders (same character, or the character not known yet). `dueFragments` honours `only`. One line at the first PLAYER_ENTERING_WORLD: "New/Old 배치를 이 판에 맞춰 적용했습니다(<written>) — <later> 는 다음 접속 때 자동으로 적용됩니다." or "…적용했습니다(<written>).". Nothing goes to `DevilForever_ProfilesDB.pending`, so no `/dfp go`, no ReloadUI, and the switch is never blocked. `layoutRevision` is created only when written. |
+| `!DevilForever_Core/Presets/V2.lua` | The PLAYER_ENTERING_WORLD re-apply (Restore + notice) is removed; the revision comment points to the catch-up. |
+| `tests/layoutv2/run.py` | `session(after=…)` and `ADDON_VERSIONS` (target addon metadata), and `carry` includes `Grid2DB` and `DominosDB`. The old re-apply block is replaced by the catch-up cases per preset (listed below). |
+| `tests/statusstrip/theme_switcher.py` | The waiting request is made with `Presets:Restore(<preset>-v1)`; the switch still replaces it. |
+| check list §6 line 70, §11 lines 115-116, §12 line 126; install guide (new line after "unit 프레임은 …") | The update path names no command: values go in by themselves (PitBull4·Quartz on the first login, Dominos totem bar·Grid2 on the next), and the switch is always "go to the other version", never blocked. |
+
+Catch-up test cases (`tests/layoutv2/run.py`, per preset):
+- Fresh install: the fresh path gives New at the current revision; no line, no tried mark.
+- Same revision: nothing happens.
+- Older New profile with no recorded state: PitBull4 and Quartz are written in the same load and the revision is current in that load; one line; `due = {dominos, grid2}`; no reload, nothing pending. At the next load Dominos and Grid2 are written and the Dominos totem x equals the V2 value; one line; `due` is cleared. The third load does nothing.
+- Recorded state, later update: all four targets in one load.
+- Old profile without a revision: Old is written (not New).
+- Tried revision: nothing.
+- Foreign profile (no flag): nothing; no tried mark, no `seen`.
+
+Targets affected by "next load":
+- Every folder whose ADDON_LOADED comes before PitBull4's, among the layout preset's folders. With the usual alphabetical load order (not checked in game) that is Dominos (totem bar) and Grid2 (cell size and window spot).
+- PitBull4 and Quartz get the values in the same load.
+- From the next update on, the state recorded at the last load starts the catch-up at Core's ready step, so all four targets update in the first load.
+
+Combat: the catch-up writes saved-variable data at load before the addons read it; no frame is moved, so there is no combat case left (the earlier Restore refused in combat).
+
+### Impact map
+
+| Place | Type | How found | Impact | Reason |
+|---|---|---|---|---|
+| `Presets.lua` request / dueFragments / onAddonLoaded / ready / PEW | the change | read | change | catch-up |
+| `Profiles.lua` takePending / pending | other request path | read | check only | not used by the catch-up (nothing pending) |
+| `Presets/V2.lua` re-apply block | replaced behaviour | read | change (removed) | |
+| `ThemeSwitcher.lua` versionInUse and takeover | switch | read | check only | still compares the stored revision and takes over waiting requests |
+| `DevilForever_ChatSetup/ChatLayout.lua:139` `GetAppliedRequest` | reader of the applied request | grep | check only | the catch-up does not set `appliedRequest` (native chat layout only follows a typed request) |
+| `Core.lua:293` CoreDB layout comment | doc of CoreDB keys | grep | check only | lists keys per module; layoutRevision existed since Step 61 |
+| tests core, layoutv2, theme_switcher | tests | run | change (layoutv2, theme_switcher) | |
+| check list, install guide | user docs | grep `dfp go`, `예약` | change | |
+| earlier sections of this log | record | - | no impact (record) | |
+
+### Commands (verdict lines)
+
+| Command | Verdict |
+|---|---|
+| `python -I Collection/tests/layoutv2/run.py` | rc=0 · 45 PASS lines (catch-up: 3) |
+| `python -I Collection/tests/statusstrip/theme_switcher.py` | rc=0 · 20 PASS lines |
+| `python -I Collection/tests/core/run.py` | first run 108/109 (`core_without_other_addons`: an empty `layoutRevision` table made at ready); after the fix rc=0 · `cases=109 passed=109 failed=0` |
+| `python -I Collection/tests/firststart/run.py` | rc=0 · 29/29 |
+| `python -I Collection/tests/statusstrip/run.py` | rc=0 · 20/20 |
+| `python -I Collection/tests/chatsetup/run.py` | rc=0 · 45/45 |
+| `python -I Collection/tests/pitbull4/run.py` | rc=0 · 6/6 |
+| `python -I Collection/tests/pitbull4runtime/run.py` | rc=0 · 20/20 |
+| `python -I Collection/tests/castbars/run.py` | rc=0 · 16/16 |
+| `python -I <devnull_run.py> Collection/tests/patches/run.py` | `cases=4 passed=4 failed=0` |
+| `python -I Collection/tools/luacheck.py <Core> ThemeSwitcher.lua` | `checked=22 failed=0` |
+| `… build.py --dry-run --variant pitbull4` / `fuf` | rc=0 · 36 folders/2353 files · 38/2297 |
+
+Raw outputs: `<scratch>/s60/s63*.txt`.
+
+### Open
+- The load order (Dominos and Grid2 before PitBull4) is the usual alphabetical one and was not checked in game. The chat line names what was written and what waits, whichever order the client uses.
+- If the character is not known at PitBull4's ADDON_LOADED, the catch-up does not start in that load; it starts at the next load's ready step from the recorded state.
+- The user's current profile (New, revision 3, tried `-v2` = 3) gets revision 4 by this path: PitBull4 and Quartz on the first login, Dominos and Grid2 on the next.
+
+## Step 63 review fix (M1)
+
+Input: `TRIAGE_phase27.md` "Step 63 review". Re-read before editing: `Presets.lua` 678-712 (ready step) and the header block.
+
+M1: the deferred catch-up part (`layoutRevision.due`) was dropped only for an unregistered name or when its own request finished. The ready step takes a player's own request first (status strip switch or `/dfp preset` + `/dfp go`) and then skips `due` (`if not request and type(due) == "table"`). So `due` survived, and a later load wrote the old version's Dominos totem bar and Grid2 values over the player's choice.
+
+Fix: at the ready step, a request present before the catch-up code (only the player's own; the catch-up's requests are made after this point) drops `due`. The header comment names the rule.
+
+### Impact map
+
+| Place | Type | How found | Impact | Reason |
+|---|---|---|---|---|
+| `Presets.lua` ready step | the defect | triage, read | change | drop `due` when a player request is taken |
+| `Presets.lua` header comment | describes `due` | read | change | names the rule |
+| `Presets.lua` PEW `finishing` clear, unregistered-name clear | other places that drop `due` | read | check only | unchanged |
+| `ThemeSwitcher.lua` / `Commands.lua` (switch, `/dfp preset`) | where player requests come from | read (earlier) | check only | they make an ordinary pending request, taken at the ready step |
+| `tests/layoutv2/run.py` catch-up block | test | read | change | new case |
+| earlier sections of this log | record | - | no impact (record) | |
+
+New test, per preset:
+1. Catch-up first load (`due` = dominos + grid2).
+2. The player requests `<preset>-v1` and types `/dfp go`.
+3. Next load: `due` is gone; PitBull4 is Old at the V1 revision; the Dominos totem matches the V1 x and relPoint; the Grid2 cells match V1.
+4. The load after: no catch-up line, no `due`, Dominos and Grid2 unchanged (still Old).
+
+The assertion `'due' not in` at step 3 targets the defect directly. The test was not run against the code before the fix (no mutation run).
+
+### Commands (verdict lines)
+
+| Command | Verdict |
+|---|---|
+| `python -I Collection/tests/layoutv2/run.py` | rc=0 · 45 PASS lines |
+| `python -I Collection/tests/statusstrip/theme_switcher.py` | rc=0 · 20 PASS lines |
+| `python -I Collection/tests/core/run.py` | rc=0 · `cases=109 passed=109 failed=0` |
+| `python -I Collection/tests/firststart/run.py` | rc=0 · `cases=29 passed=29 failed=0` |
+| `python -I Collection/tools/luacheck.py Collection/AddOns/!DevilForever_Core/Presets.lua` | `checked=1 failed=0` |
+| `… build.py --dry-run --variant pitbull4` / `fuf` | rc=0 · 36 folders/2353 files · 38/2297 |
+
+Raw outputs: `<scratch>/s60/s63r*.txt`. Minors are not fixed, per triage.

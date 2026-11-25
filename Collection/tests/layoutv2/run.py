@@ -15,7 +15,9 @@ def load(s,rel):
     assert not isinstance(fn,tuple),fn
     fn('test',s.lua.table())
 
-def session(mode,height,width,saved=None,ui=1,before_boot=None):
+# installed versions of the other layout targets (the fragments' addonVersion)
+ADDON_VERSIONS={}
+def session(mode,height,width,saved=None,ui=1,before_boot=None,after=('PitBull4','Quartz')):
     factor=768/height
     g={'UIParent':{'GetEffectiveScale':lambda self:ui,'GetHeight':lambda self:768/ui},
        'PixelUtil':{'GetPixelToUIUnitFactor':lambda:factor},
@@ -25,15 +27,18 @@ def session(mode,height,width,saved=None,ui=1,before_boot=None):
     s=Session(registry='generated',extra_files=(),saved=saved,globals_=g,collection_presets=True)
     s.lua.execute('function GetPhysicalScreenSize() return %d,%d end'% (width,height))
     s.lua.execute('TEST_meta.PitBull4={Version="v4.2.50-forever.1"};TEST_meta.Quartz={Version="3.8.0"}')
+    for folder,version in ADDON_VERSIONS.items():
+        s.lua.execute('TEST_meta[%r]={Version=%r}'%(folder,version))
     if saved is None:
         s.g.DevilForever_CoreDB=s.lua.table_from({'preset':{'active':mode}},recursive=True)
     if before_boot:before_boot(s)
-    s.boot(after=['PitBull4','Quartz'])
+    s.boot(after=list(after))
     assert not s.errors(),s.errors()
     return s
 
 def carry(s):
-    return {n:s.sv(n) for n in ('DevilForever_CoreDB','DevilForever_ProfilesDB','PitBull4DB','Quartz3DB') if s.sv(n) is not None}
+    return {n:s.sv(n) for n in ('DevilForever_CoreDB','DevilForever_ProfilesDB','PitBull4DB','Quartz3DB','Grid2DB','DominosDB')
+            if s.sv(n) is not None}
 
 def request(s,name):
     dfp(s,'preset '+name);dfp(s,'go')
@@ -640,69 +645,94 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160)]
             assert (q['iconposition'],q['texture'])==(tq['iconposition'],tq['texture'])
     print('PASS',mode,'one player cast bar (Quartz): PitBull4 cast bar and cast texts off, also after the -v1/-v2 switch of an older profile')
 
-# Re-apply after an update: at login a PitBull4 profile the collection laid out whose dfLayoutRevision is
-# older than this build's revision of the version it is on gets that version's compare preset requested
-# (no reload: a reload from a timer is not carried out in the client) and one chat line saying how to
-# apply it (/dfp go or the status strip switch, which takes the request over). Same revision, a profile
-# without the layout flag, a tried revision: nothing. In combat: deferred to PLAYER_REGEN_ENABLED.
-# PitBull4's AceDB object is a stub over PitBull4DB.
-PB4_DB_STUB="""
-  local none=function() return function() end end
-  PitBull4={IterateHeaders=none,IterateFrames=none,db=setmetatable({GetCurrentProfile=function() return "Default" end},{__index=function(_,k)
-    if k=="profile" then return PitBull4DB and PitBull4DB.profiles and PitBull4DB.profiles.Default end end})}
-"""
-def with_pb4(combat=False):
-    def hook(s):
-        s.lua.execute(PB4_DB_STUB)
-        if combat:s.g.TEST_combat=True
-    return hook
-def reloads(s):return s.g.TEST_reloads
-def lines(s):return list(plain(s.g.TEST_prints).values())
-NOTICE={'-v2':'New 배치를 이 판에 맞춰 다시 적용하도록 예약했습니다','-v1':'Old 배치를 이 판에 맞춰 다시 적용하도록 예약했습니다'}
-def notices(s):return [l for l in lines(s) if '다시 적용하도록 예약' in l]
+# Layout catch-up after an update (Presets.lua): a collection PitBull4 profile below this build's revision of
+# its version gets that version written in the same load, with no command, no reload and nothing pending.
+# PitBull4's own saved variable shows the state only at its ADDON_LOADED, so targets that loaded before it
+# (here Dominos and Grid2) get theirs at the next load by themselves; a state recorded by the last load
+# starts the catch-up at Core's ready step, so every target gets it in that load. Fresh install: the fresh
+# fragment path, nothing else. A profile without the layout flag: nothing.
+ALL_TARGETS=('Dominos','Grid2','PitBull4','Quartz')  # alphabetical load order
+def catch_lines(s):return [l for l in list(plain(s.g.TEST_prints).values()) if '배치' in l and '이 판에 맞춰' in l or '다음 접속 때 자동으로' in l]
+def layout_state(s):
+    p=s.sv('PitBull4DB')['profiles']['Default'];return p.get('dfLayoutV2'),p.get('dfLayoutRevision')
+def revision_db(s):return s.sv('DevilForever_CoreDB').get('layoutRevision') or {}
+base_def=None
 for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160)]:
-    current=carry(session(mode,height,width))
-    same=session(mode,height,width,current,before_boot=with_pb4())
-    assert same.sv('PitBull4DB')['profiles']['Default']['dfLayoutRevision']==same.core.Presets.layoutV2Revision
-    assert reloads(same)==0 and not notices(same) and 'pending' not in same.sv('DevilForever_ProfilesDB'),(mode,lines(same))
-    old_v1=carry(session(mode,height,width,request(session(mode,height,width),mode+'-v1')))
-    assert old_v1['PitBull4DB']['profiles']['Default']['dfLayoutV2'] is False
-    del old_v1['PitBull4DB']['profiles']['Default']['dfLayoutRevision']  # a collection Old profile from before revisions
-    stale_v2=copy.deepcopy(current);stale_v2['PitBull4DB']['profiles']['Default']['dfLayoutRevision']=3
-    for suffix,stale in (('-v2',stale_v2),('-v1',old_v1)):
-        s=session(mode,height,width,stale,before_boot=with_pb4())
-        assert reloads(s)==0,(mode,suffix,reloads(s),lines(s))  # no reload of its own
-        pending=s.sv('DevilForever_ProfilesDB')['pending']
-        assert (pending['action'],pending['name'],pending['armed'])==('preset',mode+suffix,False),(mode,suffix,pending)
-        target=s.core.Presets.layoutV2Revision if suffix=='-v2' else s.core.Presets.layoutV1Revision
-        assert s.sv('DevilForever_CoreDB')['layoutRevision']['tried']=={'Default|'+suffix:target}
-        said=notices(s)
-        # /dfp go is the one way named: the status strip switch goes to the other version instead
-        assert len(said)==1 and said[0].startswith('[DF 설정] '+NOTICE[suffix]) and '/dfp go' in said[0] and '버전 전환' not in said[0],(mode,suffix,said)
-        # the player types /dfp go: the next load holds this build's revision, and nothing more happens
-        dfp(s,'go');assert reloads(s)==1
-        after=session(mode,height,width,carry(s),before_boot=with_pb4())
-        pa=after.sv('PitBull4DB')['profiles']['Default']
-        assert pa['dfLayoutRevision']==target and pa['dfLayoutV2'] is (suffix=='-v2'),(mode,suffix,pa.get('dfLayoutRevision'))
-        assert reloads(after)==0 and not notices(after) and 'pending' not in after.sv('DevilForever_ProfilesDB'),(mode,suffix)
-    # a request the player leaves waiting is not armed again at the next login (one line, once)
-    s=session(mode,height,width,stale_v2,before_boot=with_pb4())
-    later=session(mode,height,width,carry(s),before_boot=with_pb4())
-    assert reloads(later)==0 and not notices(later),(mode,lines(later))
-    # a PitBull4 profile the collection never laid out (no dfLayoutV2 flag) is left as it is: no request,
-    # no reload, no tried mark
+    probe=session(mode,height,width)
+    for f in plain(probe.core.Presets.Get(probe.core.Presets,mode+'-v2'))['fragments'].values():
+        ADDON_VERSIONS[f['folder']]=f['addonVersion']
+    v2rev,v1rev=probe.core.Presets.layoutV2Revision,probe.core.Presets.layoutV1Revision
+    v2def=plain(probe.core.Presets.Get(probe.core.Presets,mode+'-v2'))
+    totem_x=[f for f in v2def['fragments'].values() if f['folder']=='Dominos'][0]['values']['frames']['totem']['x']
+    # fresh install: the fresh path writes New at the current revision; no catch-up, no line, nothing pending
+    fresh=session(mode,height,width,after=ALL_TARGETS)
+    assert layout_state(fresh)==(True,v2rev) and not catch_lines(fresh),(mode,layout_state(fresh),catch_lines(fresh))
+    assert 'tried' not in revision_db(fresh) and 'due' not in revision_db(fresh) and 'pending' not in fresh.sv('DevilForever_ProfilesDB')
+    assert revision_db(fresh)['seen']=={'v2':True,'revision':v2rev}
+    current=carry(fresh)
+    # same revision: nothing
+    same=session(mode,height,width,current,after=ALL_TARGETS)
+    assert not catch_lines(same) and 'tried' not in revision_db(same) and same.g.TEST_reloads==0
+    # an older New profile, no state recorded by an earlier build: PitBull4 and Quartz in this load, Dominos
+    # and Grid2 (loaded before PitBull4) at the next load, by themselves
+    stale=copy.deepcopy(current);stale['PitBull4DB']['profiles']['Default']['dfLayoutRevision']=v2rev-1
+    stale['DevilForever_CoreDB']['layoutRevision'].pop('seen')
+    stale['DominosDB']=stale.get('DominosDB') or {};stale['Grid2DB']=stale.get('Grid2DB') or {}
+    first=session(mode,height,width,stale,after=ALL_TARGETS)
+    assert layout_state(first)==(True,v2rev),(mode,layout_state(first))  # PitBull4 written before it read its profile
+    assert catch_lines(first)==['[DF 설정] New 배치를 이 판에 맞춰 적용했습니다(PitBull4·Quartz) — Dominos 토템 막대·Grid2 는 다음 접속 때 자동으로 적용됩니다.'],(mode,catch_lines(first))
+    db=revision_db(first)
+    assert db['tried']=={'Default|-v2':v2rev} and db['due']['name']==mode+'-v2' and sorted(db['due']['folders'])==['dominos','grid2'],db
+    assert first.g.TEST_reloads==0 and 'pending' not in first.sv('DevilForever_ProfilesDB'),mode  # no reload, nothing blocks the switch
+    second=session(mode,height,width,carry(first),after=ALL_TARGETS)
+    assert catch_lines(second)==['[DF 설정] New 배치를 이 판에 맞춰 적용했습니다(Dominos 토템 막대·Grid2).'],(mode,catch_lines(second))
+    assert 'due' not in revision_db(second) and second.g.TEST_reloads==0
+    dominos=second.sv('DominosDB')['profiles']
+    assert any(abs(prof.get('frames',{}).get('totem',{}).get('x',1e9)-totem_x)<1e-6 for prof in dominos.values()),(mode,list(dominos))
+    third=session(mode,height,width,carry(second),after=ALL_TARGETS)
+    assert not catch_lines(third) and 'due' not in revision_db(third)
+    # the player's own request before the deferred part: it supersedes the catch-up, so the next load
+    # writes the chosen version (Old) to all four targets and nothing older comes back afterwards
+    v1def=plain(probe.core.Presets.Get(probe.core.Presets,mode+'-v1'))
+    v1_totem=[f for f in v1def['fragments'].values() if f['folder']=='Dominos'][0]['values']['frames']['totem']
+    v1_cells=[f for f in v1def['fragments'].values() if f['folder']=='Grid2' and f.get('namespace')=='Grid2Frame'][0]['values']
+    def dominos_totems(s):return [prof['frames']['totem'] for prof in s.sv('DominosDB')['profiles'].values() if 'totem' in prof.get('frames',{})]
+    def grid2_cells(s):
+        frame=s.sv('Grid2DB')['namespaces']['Grid2Frame']['profiles']
+        return [{k:v.get(k) for k in ('frameWidth','frameHeight')} for v in frame.values()]
+    chose=session(mode,height,width,stale,after=ALL_TARGETS)
+    assert 'due' in revision_db(chose)
+    picked=request(chose,mode+'-v1')
+    old_load=session(mode,height,width,picked,after=ALL_TARGETS)
+    assert 'due' not in revision_db(old_load) and layout_state(old_load)==(False,v1rev),(mode,revision_db(old_load),layout_state(old_load))
+    assert all(abs(t['x']-v1_totem['x'])<1e-6 and t.get('relPoint')==v1_totem.get('relPoint') for t in dominos_totems(old_load)),(mode,dominos_totems(old_load))
+    assert grid2_cells(old_load) and all(c=={'frameWidth':v1_cells['frameWidth'],'frameHeight':v1_cells['frameHeight']} for c in grid2_cells(old_load)),(mode,grid2_cells(old_load))
+    after_old=session(mode,height,width,carry(old_load),after=ALL_TARGETS)
+    assert not catch_lines(after_old) and 'due' not in revision_db(after_old) and layout_state(after_old)==(False,v1rev)
+    assert dominos_totems(after_old)==dominos_totems(old_load) and grid2_cells(after_old)==grid2_cells(old_load),mode
+    # a later update (state recorded by the last load): every target in the same load, Dominos and Grid2 too
+    later=carry(third);later['PitBull4DB']['profiles']['Default']['dfLayoutRevision']=v2rev-1
+    later['DevilForever_CoreDB']['layoutRevision']['seen']['revision']=v2rev-1
+    later['DevilForever_CoreDB']['layoutRevision'].pop('tried',None)
+    one=session(mode,height,width,later,after=ALL_TARGETS)
+    assert catch_lines(one)==['[DF 설정] New 배치를 이 판에 맞춰 적용했습니다(Dominos 토템 막대·Grid2·PitBull4·Quartz).'],(mode,catch_lines(one))
+    assert layout_state(one)==(True,v2rev) and 'due' not in revision_db(one)
+    # an Old profile from before revisions: Old written (not New), same load for PitBull4 and Quartz
+    old=carry(session(mode,height,width,request(session(mode,height,width),mode+'-v1')))
+    assert old['PitBull4DB']['profiles']['Default']['dfLayoutV2'] is False
+    del old['PitBull4DB']['profiles']['Default']['dfLayoutRevision'];old['DevilForever_CoreDB'].pop('layoutRevision',None)
+    o=session(mode,height,width,old)
+    assert layout_state(o)==(False,v1rev) and catch_lines(o)==['[DF 설정] Old 배치를 이 판에 맞춰 적용했습니다(PitBull4·Quartz).'],(mode,layout_state(o),catch_lines(o))
+    # once per profile and revision: a profile still below after its attempt is left
+    again=carry(first);again['PitBull4DB']['profiles']['Default']['dfLayoutRevision']=v2rev-1;again['DevilForever_CoreDB']['layoutRevision'].pop('due',None)
+    again['DevilForever_CoreDB']['layoutRevision'].pop('seen',None)
+    a=session(mode,height,width,again,after=ALL_TARGETS)
+    assert layout_state(a)==(True,v2rev-1) and not catch_lines(a),(mode,catch_lines(a))
+    # a PitBull4 profile the collection never laid out (no dfLayoutV2 flag): nothing
     foreign=copy.deepcopy(current);fp=foreign['PitBull4DB']['profiles']['Default']
-    del fp['dfLayoutV2'];del fp['dfLayoutRevision']
-    s=session(mode,height,width,foreign,before_boot=with_pb4())
-    assert reloads(s)==0 and 'pending' not in s.sv('DevilForever_ProfilesDB'),(mode,lines(s))
-    assert 'dfLayoutV2' not in s.sv('PitBull4DB')['profiles']['Default'] and not s.sv('DevilForever_CoreDB').get('layoutRevision',{}).get('tried')
-    assert not notices(s)
-    # combat at login: nothing until combat ends, then the same request
-    fight=session(mode,height,width,stale_v2,before_boot=with_pb4(combat=True))
-    assert 'pending' not in fight.sv('DevilForever_ProfilesDB') and not notices(fight),(mode,lines(fight))
-    fight.combat(False)
-    assert fight.sv('DevilForever_ProfilesDB')['pending']['name']==mode+'-v2' and len(notices(fight))==1,(mode,lines(fight))
-    fight.combat(True);fight.combat(False)
-    assert len(notices(fight))==1 and reloads(fight)==0
-    assert not fight.errors(),fight.errors()
-    print('PASS',mode,'re-apply after an update: older New/Old revision (collection profile) -> one waiting request (no reload) and one chat line, applied by /dfp go; same revision, a profile without the layout flag, a waiting request and combat -> nothing (combat: done at combat end)')
+    del fp['dfLayoutV2'];del fp['dfLayoutRevision'];foreign['DevilForever_CoreDB']['layoutRevision'].pop('seen',None)
+    fs=session(mode,height,width,foreign,after=ALL_TARGETS)
+    assert 'dfLayoutV2' not in fs.sv('PitBull4DB')['profiles']['Default'] and not catch_lines(fs)
+    assert 'tried' not in revision_db(fs) and 'seen' not in revision_db(fs)
+    assert not any(x.errors() for x in (fresh,same,first,second,third,one,o,a,fs))
+    print('PASS',mode,'layout catch-up: older revision -> PitBull4/Quartz written in the same load and Dominos/Grid2 at the next load by themselves (no command, no reload, nothing pending); recorded state -> every target in one load; Old stays Old; once per revision; fresh install and foreign profile -> nothing')

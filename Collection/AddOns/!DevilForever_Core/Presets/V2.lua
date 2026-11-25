@@ -22,7 +22,8 @@ local modes = {
 local TOTEM_BUTTONS, TOTEM_SPACING = 6, 2
 -- Revisions of the New (V2) and Old (V1) layouts written into the PitBull4 profile (dfLayoutRevision);
 -- the version switcher shows New only for a profile that holds the V2 revision. A profile holding an
--- older revision of its version gets that version re-applied once at login (below).
+-- older revision of its version gets that version written by itself at the next load (Presets.lua,
+-- layout catch-up).
 Core.Presets.layoutV2Revision = 4
 Core.Presets.layoutV1Revision = 2
 local function signature(row, fields)
@@ -211,58 +212,3 @@ for name, m in pairs(modes) do
     end
   end
 end
-
--- Re-apply after an update: a PitBull4 profile whose layout revision is older than this package's
--- revision of the version it is on (New = dfLayoutV2) gets that version's compare preset requested
--- once (Presets:Restore, as the status strip's New/Old switch does) and one chat line saying how to
--- apply it: /dfp go (the reload needs the player's own action; one started from a timer is not
--- carried out). The switch is not a way to apply it: it goes to the other version and replaces this
--- request. Out of combat only; one attempt per profile and revision.
-local reapply = CreateFrame("Frame")
-local function profileState()
-  local addon = _G.PitBull4
-  local db = type(addon) == "table" and addon.db
-  local profile = type(db) == "table" and db.profile
-  if type(profile) ~= "table" then return end
-  local ok, key = pcall(function() return db:GetCurrentProfile() end)
-  key = ok and type(key) == "string" and key or "Default"
-  -- dfLayoutV2 is written by every collection layout (true = New, false = Old); a profile without it
-  -- was never laid out by the collection and is left as it is
-  if type(profile.dfLayoutV2) ~= "boolean" then return end
-  local new = profile.dfLayoutV2
-  local stored = type(profile.dfLayoutRevision) == "number" and profile.dfLayoutRevision or 0
-  return key, new, stored, new and Core.Presets.layoutV2Revision or Core.Presets.layoutV1Revision
-end
-function Core.Presets:ReapplyOutdatedLayout()
-  if Core.InCombat() then reapply:RegisterEvent("PLAYER_REGEN_ENABLED"); return false, "combat" end
-  local active = self:GetActive()
-  local key, new, stored, target = profileState()
-  if not active or not key or stored >= target then return false, "current" end
-  local suffix = new and "-v2" or "-v1"
-  if not self:IsRegistered(active .. suffix) then return false, "no compare preset" end
-  local tried = Core:DBTable("layoutRevision", "tried")
-  local mark = key .. "|" .. suffix
-  if tried[mark] == target then return false, "tried" end
-  tried[mark] = target
-  local ok, lines = self:Restore(active .. suffix)
-  if not ok then
-    for _, line in ipairs(type(lines) == "table" and lines or {lines}) do Core.Profiles:Print(line) end
-    return false, "restore"
-  end
-  Core.Profiles:Print((new and "New" or "Old") .. " 배치를 이 판에 맞춰 다시 적용하도록 예약했습니다 — /dfp go 를 입력하면"
-    .. " 적용됩니다(PitBull4·Quartz·Grid2·Dominos 토템 막대).")
-  return true
-end
-reapply:RegisterEvent("PLAYER_ENTERING_WORLD")
-reapply:SetScript("OnEvent", function(self, event)
-  if event == "PLAYER_ENTERING_WORLD" then
-    self:UnregisterEvent("PLAYER_ENTERING_WORLD")
-  else
-    self:UnregisterEvent("PLAYER_REGEN_ENABLED")
-  end
-  if C_Timer and C_Timer.After then
-    C_Timer.After(1, function() Core.Presets:ReapplyOutdatedLayout() end)
-  else
-    Core.Presets:ReapplyOutdatedLayout()
-  end
-end)
