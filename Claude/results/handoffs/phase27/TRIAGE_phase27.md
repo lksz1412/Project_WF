@@ -75,3 +75,14 @@ Report: same B, critical 0 · medium 1 · minor 4. Master checked the quoted lin
 | minor 1–4 (combat re-seed skips layout follow; no retry when bridge not ready; per-character DB vs account profile; early return before unregister) | Minor → final report list | not fixed |
 
 Already decided (carry to next briefs): window split R167; system/loot/money/errors in window 1; storage off on seed; seed once per Chattynator profile; never overwrite user changes; Prat not shipped.
+
+## Step 61 review (code ③, 3 rounds) — 2026-11-25
+
+Report: same B, critical 0 · medium 1 · minor 2. Master checked `Presets/V2.lua:195–222`.
+
+| Finding | Master verdict | Fix (what · why) |
+|---|---|---|
+| M1 — `profileState` reads a profile without `dfLayoutV2` (never written by the collection) as "Old, revision 0", so the first-login re-apply overwrites a user's own PitBull4 profile with the Old preset (`V2.lua:202–204`, used at :210–217) | Confirmed. R185 means "re-apply the New/Old the profile already uses"; a profile the collection never wrote has none; earlier rule keeps such profiles ("existing settings kept") | Same A: re-apply only when `dfLayoutV2` is a boolean (collection-written profile); test case for a foreign profile (no flag) → nothing; fix the test that locked the old behaviour |
+| minor 1 (tried mark set before Restore), minor 2 (ReloadUI from timer without hardware input unverified) | Minor → final report | not fixed |
+
+Already decided (carry): R175 over R173 for the tab row; re-apply also resets Quartz bar spots and Grid2 cells of the active version (development overwrite, R162).

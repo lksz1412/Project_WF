@@ -491,7 +491,7 @@ for _, layout in ipairs({"보통", "대상", "대상의대상"}) do
     normal_color={1,1,1,.66}}
 end
 proposal.namespaces.Aura = {global={enabled=true}, layouts={}}
-for _, layout in ipairs({"보통", "대상", "주시"}) do
+for _, layout in ipairs({"보통", "대상"}) do
   local buffCount = 14
   local debuffCount = 16
   local size, spacing = 20, 2
@@ -550,17 +550,19 @@ proposal.namespaces.LuaTexts.layouts["데빌 파티"] = {enabled=true,first=fals
 proposal.namespaces.HealthBar = {layouts={["데빌 파티"]={enabled=true,size=5,position=1,color_by_class=true,background_alpha=.5}}}
 proposal.namespaces.PowerBar = {layouts={["데빌 파티"]={enabled=true,size=2,position=2,hide_no_mana=false,hide_no_power=false,background_alpha=.5}}}
 
-proposal.namespaces.CastBar = {global={enabled=true},layouts={
-  ["보통"]={enabled=true,side="center",position=3,size=8*16/(72-5-16),auto_hide=true,idle_background=false,show_icon=false},
+-- Cast bars are Quartz (player, target, focus, pet); PitBull4's own cast bar module and the player
+-- frame's cast texts stay off, so the player has one cast bar in both layouts.
+proposal.namespaces.CastBar = {global={enabled=false},layouts={
+  ["보통"]={enabled=false,side="center",position=3,size=8*16/(72-5-16),auto_hide=true,idle_background=false,show_icon=false},
   ["대상"]={enabled=false},["대상의대상"]={enabled=false},["파티"]={enabled=false},["데빌 파티"]={enabled=false},
 }}
 local castEvents = {UNIT_SPELLCAST_START=true,UNIT_SPELLCAST_STOP=true,UNIT_SPELLCAST_FAILED=true,
   UNIT_SPELLCAST_INTERRUPTED=true,UNIT_SPELLCAST_DELAYED=true,UNIT_SPELLCAST_CHANNEL_START=true,
   UNIT_SPELLCAST_CHANNEL_UPDATE=true,UNIT_SPELLCAST_CHANNEL_STOP=true}
 local playerTexts = proposal.namespaces.LuaTexts.layouts["보통"].elements
-playerTexts["Lua:시전"] = {enabled=true,exists=true,attach_to="CastBar",location="left",position=1,size=.75,
+playerTexts["Lua:시전"] = {enabled=false,exists=true,attach_to="CastBar",location="left",position=1,size=.75,
   code="local cast = CastData(unit) if cast then return cast.spell end",events=castEvents}
-playerTexts["Lua:시전시간"] = {enabled=true,exists=true,attach_to="CastBar",location="right",position=1,size=.65,
+playerTexts["Lua:시전시간"] = {enabled=false,exists=true,attach_to="CastBar",location="right",position=1,size=.65,
   code='local cast = CastData(unit) if cast and cast.end_time then return "%.1f",cast.end_time-GetTime() end',events=castEvents}
 
 proposal.profile.layouts["소환수와 주시"] = DevilForever_Core.CopyTable(proposal.profile.layouts["보통"])
@@ -572,13 +574,23 @@ end
 local companionTexts = proposal.namespaces.LuaTexts.layouts["소환수와 주시"].elements
 companionTexts["Lua:시전"], companionTexts["Lua:시전시간"] = nil, nil
 proposal.namespaces.Aura.layouts["소환수와 주시"] = DevilForever_Core.CopyTable(proposal.namespaces.Aura.layouts["데빌 파티"])
+-- The focus frame has the pet frames' size, so it also has their aura icons and rows.
+proposal.namespaces.Aura.layouts["주시"] = DevilForever_Core.CopyTable(proposal.namespaces.Aura.layouts["데빌 파티"])
 proposal.namespaces.CastBar.layouts["소환수와 주시"] = {enabled=false}
--- The focus has the companion frame look and the player/target aura table (set above).
+-- The focus has the companion frame look and the pet aura table (set above).
 proposal.profile.layouts["주시"] = DevilForever_Core.CopyTable(proposal.profile.layouts["소환수와 주시"])
 for _, namespace in ipairs({"Portrait", "Border", "LuaTexts"}) do
   proposal.namespaces[namespace].layouts["주시"] = DevilForever_Core.CopyTable(proposal.namespaces[namespace].layouts["소환수와 주시"])
 end
 proposal.namespaces.CastBar.layouts["주시"] = {enabled=false}
+-- Player and target names grow with their frames: name text x main frame height / companion
+-- frame height (pet and focus frames use the companion layouts and keep the preset size). The bar
+-- texts keep their size: the health and power bars are about as tall as the companion frame's.
+local nameScale = proposal.profile.layouts["보통"].size_y / proposal.profile.layouts["소환수와 주시"].size_y
+for _, layout in ipairs({"보통", "대상"}) do
+  local name = proposal.namespaces.LuaTexts.layouts[layout].elements["Lua:이름"]
+  name.size = name.size * nameScale
+end
 proposal.profile.layouts["소환수와 주시 아래"] = DevilForever_Core.CopyTable(proposal.profile.layouts["대상의대상"])
 local chainLayout = proposal.profile.layouts["소환수와 주시 아래"]
 chainLayout.exists, chainLayout.size_x, chainLayout.size_y = true, 84, 23

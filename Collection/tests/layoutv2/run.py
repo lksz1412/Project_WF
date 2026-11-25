@@ -15,7 +15,7 @@ def load(s,rel):
     assert not isinstance(fn,tuple),fn
     fn('test',s.lua.table())
 
-def session(mode,height,width,saved=None,ui=1):
+def session(mode,height,width,saved=None,ui=1,before_boot=None):
     factor=768/height
     g={'UIParent':{'GetEffectiveScale':lambda self:ui,'GetHeight':lambda self:768/ui},
        'PixelUtil':{'GetPixelToUIUnitFactor':lambda:factor},
@@ -25,6 +25,7 @@ def session(mode,height,width,saved=None,ui=1):
     s.lua.execute('TEST_meta.PitBull4={Version="v4.2.50-forever.1"};TEST_meta.Quartz={Version="3.8.0"}')
     if saved is None:
         s.g.DevilForever_CoreDB=s.lua.table_from({'preset':{'active':mode}},recursive=True)
+    if before_boot:before_boot(s)
     s.boot(after=['PitBull4','Quartz'])
     assert not s.errors(),s.errors()
     return s
@@ -109,14 +110,11 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),
           local f=TEST_frames[1];f.layout='보통';f.layout_db=PitBull4.db.profile.layouts['보통']
           f.unit='player';f.GetFrameLevel=function() return 2 end
           local cfg=PitBull4DB.namespaces.CastBar.profiles.Default.layouts['보통']
-          PitBull4.CastBar:OnEnable();assert(not f.CastBar)
-          TEST_casting=true;PitBull4.CastBar:ForeverCastEvent('UNIT_SPELLCAST_START','player');f:UpdateLayout(false)
-          assert(f.CastBar and f.CastBar.duration==TEST_duration)
-          assert(f.CastBar.points[1][3]=='BOTTOMLEFT')
-          assert(f.CastBar.points[1][5]==-cfg.dfOffset)
-          assert(f.CastBar.points[2][5]==-cfg.dfOffset-cfg.dfHeight)
-          TEST_casting=false;PitBull4.CastBar:ForeverCastEvent('UNIT_SPELLCAST_STOP','player');f:UpdateLayout(false)
-          assert(not f.CastBar)
+          -- the player's cast bar is the Quartz Player bar; PitBull4 clears a module whose layout entry is
+          -- disabled (ModuleHandling/Module.lua UpdateFrame), and both cast texts are off
+          assert(cfg.enabled==false)
+          local texts=PitBull4DB.namespaces.LuaTexts.profiles.Default.layouts['보통'].elements
+          assert(texts['Lua:시전'].enabled==false and texts['Lua:시전시간'].enabled==false)
         """)
     # the base preset is the V2 layout; -v1 is the V1 compare layout and the base preset brings V2 back
     assert bp['dfLayoutV2'] and bp['units']['대상의 소환수']['enabled']
@@ -126,6 +124,7 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),
     assert pback['units']['대상의 소환수']['layout']=='대상의대상'
     assert not any(pback['units'][n]['enabled'] for n in ('대상의 소환수의 대상','대상의 소환수의 대상의 대상'))
     assert not back.sv('PitBull4DB')['namespaces']['CastBar']['profiles']['Default']['layouts']['보통']['dfOutside']
+    assert back.sv('PitBull4DB')['namespaces']['CastBar']['profiles']['Default']['layouts']['보통']['enabled'] is False  # V1: Quartz only too
     assert back.sv('Quartz3DB')['namespaces']['Swing']['profiles']['Default']['swingposition']=='top'
     assert back.sv('Quartz3DB')['namespaces']['Pet']['profiles']['Default']['point']=='TOPLEFT'
     assert pback['dfAuraGeometry']['플레이어']['size_ratio']==.7 and pback['dfAuraGeometry']['플레이어']['avoid_frame']
@@ -266,13 +265,15 @@ def merge(lua,target,src):
             merge(lua,target[key],value)
         else:target[key]=value
 
-for mode,width,height,footY in [('fhd',1920,1080,548),('qhd',2560,1440,765),('uhd',3840,2160,1180),('uhd',3862,2160,1180)]:
+for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),('uhd',3862,2160)]:
     old=session(mode,height,width)
     src=session(mode,height,width,request(old,mode+'-v2'))
     profile=src.sv('PitBull4DB')['profiles']['Default']
     rect=rects(src,width,height,1)
     q=src.sv('Quartz3DB')['namespaces']['Player']['profiles']['Default']
-    foot=(width/2-(q['w']+10)/2,footY,q['w']+10,q['h']+18)
+    # the Quartz Player bar with its icon on the left, in the cast row under the player frame
+    pix=768/height
+    foot=(width/2+q['x']/pix-q['w']/2-q['h']-q['icongap'],-q['y']/pix,q['w']+q['h']+q['icongap'],q['h'])
     all_aura=[]
     for label in ['플레이어','대상','플레이어의 소환수','주시 대상','대상의 소환수']:
         row=profile['units'][label];layout=row['layout'];left,top,w,h=rect[label]
@@ -469,13 +470,13 @@ def default_screen_map(mode,width,height,v2=False):
 TRACKER={'fhd':(259,247,88),'qhd':(346,330,116),'uhd':(518,495,176)}
 KNOWN_OVERLAP={  # 88/116/176 px cells at the tracker spot, measured; waiting for the user's in-game feedback
     'fhd 1920 party':['details 1', 'details 2'],
-    'fhd 1920 raid':['auras 대상 buffs alone', 'auras 대상 buffs avoided shown', 'auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown', 'auras 대상의 소환수 buffs alone', 'auras 대상의 소환수 buffs avoided shown', 'auras 대상의 소환수 debuffs alone', 'auras 대상의 소환수 debuffs avoided shown', 'auras 주시 대상 buffs alone', 'auras 주시 대상 buffs avoided shown', 'auras 주시 대상 debuffs alone', 'auras 주시 대상 debuffs avoided shown', 'details 1', 'details 2', 'quartz Focus', 'quartz Player', 'quartz Target', 'unit 대상', 'unit 대상의 대상', 'unit 대상의 대상의 대상', 'unit 대상의 소환수', 'unit 대상의 소환수의 대상', 'unit 대상의 소환수의 대상의 대상', 'unit 주시 대상', 'unit 주시 대상의 대상', 'unit 주시 대상의 대상의 대상'],
+    'fhd 1920 raid':['auras 대상 buffs alone', 'auras 대상 buffs avoided shown', 'auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown', 'auras 대상의 소환수 buffs alone', 'auras 대상의 소환수 buffs avoided shown', 'auras 대상의 소환수 debuffs alone', 'auras 대상의 소환수 debuffs avoided shown', 'auras 주시 대상 buffs alone', 'auras 주시 대상 buffs avoided shown', 'auras 주시 대상 debuffs alone', 'auras 주시 대상 debuffs avoided shown', 'details 1', 'details 2', 'quartz Focus', 'quartz Target', 'unit 대상', 'unit 대상의 대상', 'unit 대상의 대상의 대상', 'unit 대상의 소환수', 'unit 대상의 소환수의 대상', 'unit 대상의 소환수의 대상의 대상', 'unit 주시 대상', 'unit 주시 대상의 대상', 'unit 주시 대상의 대상의 대상'],
     'qhd 2560 party':['details 1'],
-    'qhd 2560 raid':['auras 대상 buffs alone', 'auras 대상 buffs avoided shown', 'auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown', 'auras 대상의 소환수 buffs alone', 'auras 대상의 소환수 buffs avoided shown', 'auras 대상의 소환수 debuffs alone', 'auras 대상의 소환수 debuffs avoided shown', 'auras 주시 대상 buffs alone', 'auras 주시 대상 buffs avoided shown', 'auras 주시 대상 debuffs alone', 'auras 주시 대상 debuffs avoided shown', 'details 1', 'quartz Player', 'unit 대상', 'unit 대상의 소환수', 'unit 주시 대상'],
+    'qhd 2560 raid':['auras 대상 buffs alone', 'auras 대상 buffs avoided shown', 'auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown', 'auras 대상의 소환수 buffs alone', 'auras 대상의 소환수 buffs avoided shown', 'auras 대상의 소환수 debuffs alone', 'auras 대상의 소환수 debuffs avoided shown', 'auras 주시 대상 buffs alone', 'auras 주시 대상 buffs avoided shown', 'auras 주시 대상 debuffs alone', 'auras 주시 대상 debuffs avoided shown', 'details 1', 'unit 대상', 'unit 대상의 소환수', 'unit 주시 대상'],
     'uhd 3840 party':['details 1'],
-    'uhd 3840 raid':['auras 대상 buffs alone', 'auras 대상 buffs avoided shown', 'auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown', 'auras 대상의 소환수 buffs alone', 'auras 대상의 소환수 buffs avoided shown', 'auras 대상의 소환수 debuffs alone', 'auras 대상의 소환수 debuffs avoided shown', 'auras 주시 대상 buffs alone', 'auras 주시 대상 buffs avoided shown', 'auras 주시 대상 debuffs alone', 'auras 주시 대상 debuffs avoided shown', 'details 1', 'quartz Player', 'unit 대상', 'unit 대상의 소환수', 'unit 주시 대상'],
+    'uhd 3840 raid':['auras 대상 buffs alone', 'auras 대상 buffs avoided shown', 'auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown', 'auras 대상의 소환수 buffs alone', 'auras 대상의 소환수 buffs avoided shown', 'auras 대상의 소환수 debuffs alone', 'auras 대상의 소환수 debuffs avoided shown', 'auras 주시 대상 buffs alone', 'auras 주시 대상 buffs avoided shown', 'auras 주시 대상 debuffs alone', 'auras 주시 대상 debuffs avoided shown', 'details 1', 'unit 대상', 'unit 대상의 소환수', 'unit 주시 대상'],
     'uhd 3862 party':['details 1'],
-    'uhd 3862 raid':['auras 대상 buffs alone', 'auras 대상 buffs avoided shown', 'auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown', 'auras 대상의 소환수 buffs alone', 'auras 대상의 소환수 buffs avoided shown', 'auras 대상의 소환수 debuffs alone', 'auras 대상의 소환수 debuffs avoided shown', 'auras 주시 대상 buffs alone', 'auras 주시 대상 buffs avoided shown', 'auras 주시 대상 debuffs alone', 'auras 주시 대상 debuffs avoided shown', 'details 1', 'quartz Player', 'unit 대상', 'unit 대상의 소환수', 'unit 주시 대상'],
+    'uhd 3862 raid':['auras 대상 buffs alone', 'auras 대상 buffs avoided shown', 'auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown', 'auras 대상의 소환수 buffs alone', 'auras 대상의 소환수 buffs avoided shown', 'auras 대상의 소환수 debuffs alone', 'auras 대상의 소환수 debuffs avoided shown', 'auras 주시 대상 buffs alone', 'auras 주시 대상 buffs avoided shown', 'auras 주시 대상 debuffs alone', 'auras 주시 대상 debuffs avoided shown', 'details 1', 'unit 대상', 'unit 대상의 소환수', 'unit 주시 대상'],
 }
 for v2 in (False,True):
     for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),('uhd',3862,2160)]:
@@ -510,11 +511,13 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),
     player,target=rects['unit 플레이어'],rects['unit 대상']
     assert abs((focus[0]-(player[0]+player[2]))-(target[0]-(focus[0]+focus[2])))<1e-6,(mode,player,focus,target)
     assert p['units']['주시 대상']['layout']=='주시' and p['units']['플레이어의 소환수']['layout']=='소환수와 주시'
-    assert aura['보통']==aura['대상']==aura['주시'],(mode,aura['보통'],aura['주시'])
+    assert aura['보통']==aura['대상'],(mode,aura['보통'],aura['대상'])
+    assert aura['주시']==aura['소환수와 주시'],(mode,aura['주시'],aura['소환수와 주시'])  # focus = pet aura icons and rows
     assert (aura['대상']['max_buffs'],aura['대상']['max_debuffs'])==(14,16)
     assert aura['소환수와 주시']==aura['데빌 파티']  # pets keep the party aura table
     size={'fhd':(20,32),'qhd':(27,43),'uhd':(40,64)}[mode]
-    assert (aura['주시']['layout']['buff']['size'],aura['주시']['layout']['debuff']['my_size'])==size
+    assert (aura['보통']['layout']['buff']['size'],aura['보통']['layout']['debuff']['my_size'])==size
+    assert p['dfAuraGeometry']['주시 대상']==p['dfAuraGeometry']['플레이어의 소환수']=={'above':True,'width':p['layouts']['소환수와 주시']['size_x']},(mode,p['dfAuraGeometry']['주시 대상'])
     pet=rects['unit 대상의 소환수']
     for label,unit in (('대상의 소환수의 대상','targetpettarget'),('대상의 소환수의 대상의 대상','targetpettargettarget')):
         row=p['units'][label]
@@ -522,7 +525,7 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),
         r=rects['unit '+label]
         assert pet[0]-1e-6<=r[0] and r[0]+r[2]<=pet[0]+pet[2]+1e-6 and r[1]>=pet[1]+pet[3],(label,r,pet)
     assert p['units']['대상의 대상']['enabled'] is True and p['units']['대상의 대상의 대상']['enabled'] is True
-    assert p['dfLayoutRevision']==s.core.Presets.layoutV2Revision==2
+    assert p['dfLayoutRevision']==s.core.Presets.layoutV2Revision==3
     # the totem timer sits above the player frame (right-aligned), under the player's aura rows; the
     # player-focus and focus-target gaps are one frame gap each
     timer=s.sv('PitBull4DB')['namespaces']['Totems']['profiles']['Default']['layouts']['보통']
@@ -534,10 +537,136 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),
     totems=(player[0]+player[2]-span,player[1]-outside-icon,span,icon)
     hits=[k for k,r in rects.items() if overlaps(totems,r)]
     assert not hits,(mode,totems,hits)
-    gap={'fhd':56,'qhd':76,'uhd':107}[mode]  # frame gap, or wider where the player cast bar (icon on its left) above the focus reaches past it
+    gap={'fhd':34,'qhd':38,'uhd':44}[mode]  # one frame gap (cast height + 4) between player, focus and target
     assert abs(focus[0]-(player[0]+player[2])-gap)<1e-6 and abs(target[0]-(focus[0]+focus[2])-gap)<1e-6,(mode,player,focus,target)
     print('PASS',mode,width,'V2 default: focus centred %.0f with equal side gaps, totem timer above the player (clear of every rectangle) under its auras, one aura table %s, target-pet chain under the target-pet'%(focus[0]+focus[2]/2,size))
 src={m:(A/'!DevilForever_Core/Presets'/(m+'.lua')).read_text(encoding='utf-8') for m in ('fhd','qhd','uhd')}
 for m,cell in (('fhd',88),('qhd',116),('uhd',176)):
     assert '["frameWidth"]=%d,["frameHeight"]=%d'%(cell,cell) in src[m] and '["anchor"]="TOPRIGHT"' in src[m],m
 print('PASS Grid2 cells square (fhd 88, qhd 116, uhd 176) with a TOPRIGHT anchor')
+
+# Name text of the player and target frames grows with the frame (main frame height / companion
+# frame height); pet, focus, small and party frames keep the preset size; bar texts unchanged.
+NAME_FONT={'fhd':16,'qhd':18,'uhd':22}
+FRAME_HEIGHTS={'fhd':(72,56),'qhd':(96,74),'uhd':(144,112)}
+for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160)]:
+    main,companion=FRAME_HEIGHTS[mode]
+    fresh=session(mode,height,width)
+    for label,s in (('V2',fresh),('V1',session(mode,height,width,request(fresh,mode+'-v1')))):
+        p=s.sv('PitBull4DB')['profiles']['Default']
+        texts=s.sv('PitBull4DB')['namespaces']['LuaTexts']['profiles']['Default']['layouts']
+        assert p['dfLayoutV2'] is (label=='V2'),(mode,label)
+        def px(layout,element):
+            return 14*p['layouts'][layout]['font_size']*texts[layout]['elements'][element]['size']
+        for layout in ('보통','대상'):
+            assert (p['layouts'][layout]['size_y'],p['layouts']['소환수와 주시']['size_y'])==(main,companion)
+            assert abs(px(layout,'Lua:이름')-NAME_FONT[mode]*main/companion)<1e-6,(mode,label,layout,px(layout,'Lua:이름'))
+            for element,size in (('Lua:생명력',.9),('Lua:마력',.75),('Lua:직업',.85),('Lua:백분율',.8),('Lua:레벨',.8)):
+                assert abs(px(layout,element)-NAME_FONT[mode]*size)<1e-6,(mode,label,layout,element)
+        for layout in ('소환수와 주시','주시'):
+            assert abs(px(layout,'Lua:이름')-NAME_FONT[mode])<1e-6,(mode,label,layout,px(layout,'Lua:이름'))
+        assert abs(px('대상의대상','Lua:이름')-NAME_FONT[mode]*.75)<1e-6,(mode,label)
+        print('PASS',mode,label,'name text: player/target %.2f px (x %d/%d), pet/focus %d px, bar texts unchanged'%(NAME_FONT[mode]*main/companion,main,companion,NAME_FONT[mode]))
+    # A profile written before this change (name size 1 on the player/target frames) gets the new size
+    # through the layout switch (the <preset>-v2 / -v1 requests behind New/Old and /dfp preset + /dfp go).
+    old_profile=carry(session(mode,height,width))
+    for layout in ('보통','대상'):
+        old_profile['PitBull4DB']['namespaces']['LuaTexts']['profiles']['Default']['layouts'][layout]['elements']['Lua:이름']['size']=1
+    before=session(mode,height,width,old_profile)
+    assert before.sv('PitBull4DB')['namespaces']['LuaTexts']['profiles']['Default']['layouts']['보통']['elements']['Lua:이름']['size']==1,mode
+    after=session(mode,height,width,request(before,mode+'-v2'))
+    got=after.sv('PitBull4DB')['namespaces']['LuaTexts']['profiles']['Default']['layouts']['보통']['elements']['Lua:이름']['size']
+    assert abs(got-main/companion)<1e-6,(mode,got)
+    print('PASS',mode,'existing profile: name size 1 -> %.3f after the %s-v2 request'%(got,mode))
+
+# One player cast bar (Quartz) in Old and New: PitBull4's cast bar module and the player's cast texts are
+# off in a fresh profile, and a profile that still has them on (an earlier build) gets them off through
+# the layout switch (<preset>-v1 / -v2 requests behind the New/Old switch, also /dfp preset + /dfp go).
+for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160)]:
+    def cast_state(s):
+        ns=s.sv('PitBull4DB')['namespaces']
+        cb=ns['CastBar']['profiles']['Default'];tx=ns['LuaTexts']['profiles']['Default']['layouts']['보통']['elements']
+        return (cb['global']['enabled'],cb['layouts']['보통']['enabled'],tx['Lua:시전']['enabled'],tx['Lua:시전시간']['enabled'])
+    fresh=session(mode,height,width)
+    assert cast_state(fresh)==(False,False,False,False),(mode,cast_state(fresh))
+    old_profile=carry(session(mode,height,width))
+    ns=old_profile['PitBull4DB']['namespaces']
+    ns['CastBar']['profiles']['Default']['global']['enabled']=True
+    ns['CastBar']['profiles']['Default']['layouts']['보통']['enabled']=True
+    for element in ('Lua:시전','Lua:시전시간'):
+        ns['LuaTexts']['profiles']['Default']['layouts']['보통']['elements'][element]['enabled']=True
+    before=session(mode,height,width,old_profile)
+    assert cast_state(before)==(True,True,True,True),(mode,cast_state(before))
+    for target in ('-v1','-v2'):
+        after=session(mode,height,width,request(session(mode,height,width,old_profile),mode+target))
+        assert cast_state(after)==(False,False,False,False),(mode,target,cast_state(after))
+        q=after.sv('Quartz3DB')['namespaces']['Player']['profiles']['Default']
+        if target=='-v2':
+            tq=after.sv('Quartz3DB')['namespaces']['Target']['profiles']['Default']
+            assert (q['point'],q['y'],q['w'],q['h'])==(tq['point'],tq['y'],tq['w'],tq['h']),(mode,q,tq)  # same row and width as the target bar
+            assert (q['iconposition'],q['texture'])==(tq['iconposition'],tq['texture'])
+    print('PASS',mode,'one player cast bar (Quartz): PitBull4 cast bar and cast texts off, also after the -v1/-v2 switch of an older profile')
+
+# Re-apply after an update: at login a PitBull4 profile whose dfLayoutRevision is older than this build's
+# revision of the version it is on gets that version's compare preset requested and the interface
+# reloaded once (the New/Old switch path); after the reload one chat line says so. Same revision: nothing.
+# In combat: deferred to PLAYER_REGEN_ENABLED. PitBull4's AceDB object is a stub over PitBull4DB.
+PB4_DB_STUB="""
+  local none=function() return function() end end
+  PitBull4={IterateHeaders=none,IterateFrames=none,db=setmetatable({GetCurrentProfile=function() return "Default" end},{__index=function(_,k)
+    if k=="profile" then return PitBull4DB and PitBull4DB.profiles and PitBull4DB.profiles.Default end end})}
+"""
+def with_pb4(combat=False):
+    def hook(s):
+        s.lua.execute(PB4_DB_STUB)
+        if combat:s.g.TEST_combat=True
+    return hook
+def reloads(s):return s.g.TEST_reloads
+def lines(s):return list(plain(s.g.TEST_prints).values())
+NOTICE={'-v2':'New 배치를 이 판에 맞춰 다시 적용했습니다(PitBull4·Quartz·Grid2).','-v1':'Old 배치를 이 판에 맞춰 다시 적용했습니다(PitBull4·Quartz·Grid2).'}
+for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160)]:
+    current=carry(session(mode,height,width))
+    same=session(mode,height,width,current,before_boot=with_pb4())
+    assert same.sv('PitBull4DB')['profiles']['Default']['dfLayoutRevision']==same.core.Presets.layoutV2Revision
+    assert reloads(same)==0 and not any('다시 적용' in l for l in lines(same)) and 'pending' not in same.sv('DevilForever_ProfilesDB'),(mode,lines(same))
+    old_v1=carry(session(mode,height,width,request(session(mode,height,width),mode+'-v1')))
+    assert old_v1['PitBull4DB']['profiles']['Default']['dfLayoutV2'] is False
+    del old_v1['PitBull4DB']['profiles']['Default']['dfLayoutRevision']  # a collection Old profile from before revisions
+    stale_v2=copy.deepcopy(current);stale_v2['PitBull4DB']['profiles']['Default']['dfLayoutRevision']=2
+    for suffix,stale in (('-v2',stale_v2),('-v1',old_v1)):
+        s=session(mode,height,width,stale,before_boot=with_pb4())
+        assert reloads(s)==1,(mode,suffix,reloads(s),lines(s))
+        pending=s.sv('DevilForever_ProfilesDB')['pending']
+        assert (pending['action'],pending['name'],pending['armed'])==('preset',mode+suffix,True),(mode,suffix,pending)
+        store=s.sv('DevilForever_CoreDB')['layoutRevision']
+        target=s.core.Presets.layoutV2Revision if suffix=='-v2' else s.core.Presets.layoutV1Revision
+        assert store['tried']=={'Default|'+suffix:target} and store['notice']==NOTICE[suffix],(mode,suffix,store)
+        after=session(mode,height,width,carry(s),before_boot=with_pb4())
+        pa=after.sv('PitBull4DB')['profiles']['Default']
+        assert pa['dfLayoutRevision']==target and pa['dfLayoutV2'] is (suffix=='-v2'),(mode,suffix,pa.get('dfLayoutRevision'))
+        assert reloads(after)==0 and [l for l in lines(after) if '다시 적용' in l]==['[DF 설정] '+NOTICE[suffix]],(mode,suffix,lines(after))
+        assert 'notice' not in after.sv('DevilForever_CoreDB')['layoutRevision']
+        again=session(mode,height,width,carry(after),before_boot=with_pb4())
+        assert reloads(again)==0 and not any('다시 적용' in l for l in lines(again)),(mode,suffix)
+    # a PitBull4 profile the collection never laid out (no dfLayoutV2 flag) is left as it is: no request,
+    # no reload, no tried mark
+    foreign=copy.deepcopy(current);fp=foreign['PitBull4DB']['profiles']['Default']
+    del fp['dfLayoutV2'];del fp['dfLayoutRevision']
+    s=session(mode,height,width,foreign,before_boot=with_pb4())
+    assert reloads(s)==0 and 'pending' not in s.sv('DevilForever_ProfilesDB'),(mode,lines(s))
+    assert 'dfLayoutV2' not in s.sv('PitBull4DB')['profiles']['Default'] and not s.sv('DevilForever_CoreDB').get('layoutRevision',{}).get('tried')
+    assert not any('다시 적용' in l for l in lines(s))
+    # one attempt per profile and revision: a profile still stale after the attempt is not reloaded again
+    s=session(mode,height,width,stale_v2,before_boot=with_pb4())
+    tried=carry(s);tried['DevilForever_ProfilesDB'].pop('pending',None);tried['DevilForever_CoreDB']['layoutRevision'].pop('notice',None)
+    loop=session(mode,height,width,tried,before_boot=with_pb4())
+    assert loop.sv('PitBull4DB')['profiles']['Default']['dfLayoutRevision']==2 and reloads(loop)==0,(mode,lines(loop))
+    # combat at login: nothing until combat ends, then the same re-apply
+    fight=session(mode,height,width,stale_v2,before_boot=with_pb4(combat=True))
+    assert reloads(fight)==0 and 'pending' not in fight.sv('DevilForever_ProfilesDB'),(mode,lines(fight))
+    fight.combat(False)
+    assert reloads(fight)==1 and fight.sv('DevilForever_ProfilesDB')['pending']['name']==mode+'-v2',(mode,lines(fight))
+    fight.combat(True);fight.combat(False)
+    assert reloads(fight)==1
+    assert not fight.errors(),fight.errors()
+    print('PASS',mode,'re-apply after an update: older New/Old revision (collection profile) -> one request+reload and one chat line after it; same revision, a profile without the layout flag, a tried revision and combat -> nothing (combat: done at combat end)')

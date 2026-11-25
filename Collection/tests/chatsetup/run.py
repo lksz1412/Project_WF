@@ -899,7 +899,24 @@ CHATTY_FILES = ("Core/Objects.lua", "Core/Constants.lua", "Core/Config.lua", "Co
 PUBLIC_HIDDEN = ["TRADESKILLS", "COMBAT_MISC_INFO", "COMBAT_XP_GAIN", "PET_BATTLE_COMBAT_LOG", "PET_INFO", "OPENING",
                  "VOICE_TEXT"]
 CHATTY_GROUP = ["WHISPER", "BN_WHISPER", "GUILD", "OFFICER", "GUILD_ACHIEVEMENT", "GUILD_DISCORD", "PARTY",
-                "PARTY_LEADER", "RAID", "RAID_LEADER", "RAID_WARNING", "INSTANCE_CHAT", "INSTANCE_CHAT_LEADER"]
+                "PARTY_LEADER", "RAID", "RAID_LEADER", "RAID_WARNING", "INSTANCE_CHAT", "INSTANCE_CHAT_LEADER",
+                "BG_HORDE", "BG_ALLIANCE", "BG_NEUTRAL"]
+
+def _preset_items(preset):
+    import re
+    path = os.path.join(REPO, "Collection", "AddOns", "!DevilForever_Core", "Presets", preset + ".lua")
+    with open(path, encoding="utf-8") as fh:
+        text = fh.read()
+    items = {}
+    for match in re.finditer(r'\["appearance\.(\w+)"\] = \{(.*?)\n    \},', text, re.S):
+        body = match.group(2)
+        items[match.group(1)] = {key: float(re.search(r'\["%s"\] = (-?[\d.]+)' % key, body).group(1))
+                                 for key in ("x", "y", "width", "height")}
+    return items
+
+
+PRESETS = ("fhd", "qhd", "uhd")
+GEOMETRY_ITEMS = {preset: _preset_items(preset) for preset in PRESETS}
 
 CHATTY_STUBS = r"""
 function strsplit(sep, text)
@@ -991,15 +1008,25 @@ def chatty_session(preset="uhd", saved=None, config=None, profile=None, channels
           DevilForever_Core = {
             Presets = {GetActive = function() return TEST_preset end, GetAppliedRequest = function() return nil end},
             Edit = {RegisterCallback = function(self, owner, fn) table.insert(TEST_editCallbacks, fn) end,
-                    Get = function(self, key) return {font = TEST_chat1Font} end},
+                    Get = function(self, key)
+                      local name = key:match("^appearance%.(.*)")
+                      local item = name and TEST_panels and TEST_panels[TEST_preset] and TEST_panels[TEST_preset][name]
+                      if not item then return {font = TEST_chat1Font} end
+                      return {position = {point = "TOPLEFT", relativeTo = "DevilForever_AppearanceRoot",
+                                          relativePoint = "TOPLEFT", x = item.x, y = item.y},
+                              size = {width = item.width, height = item.height}, font = TEST_chat1Font}
+                    end},
             Theme = {Get = function(self, token)
                        if token == "color.accent" then return {0.75, 0.33, 0.19, 1} end
+                       if token == "border.size" then return TEST_border end
                        return {0.5, 0.5, 0.5, 1}
                      end,
                      RegisterCallback = function(self, owner, fn) table.insert(TEST_themeCallbacks, fn) end}}
           DevilForever_Appearance = {GetPixelUnit = function() return TEST_pixel end}
           function TEST_edit(key) for _, fn in ipairs(TEST_editCallbacks) do fn(key) end end
         """)
+    g.TEST_border = 1
+    g.TEST_panels = s.table({preset: GEOMETRY_ITEMS[preset] for preset in PRESETS})
     if config is not None:
         g.CHATTYNATOR_CONFIG = s.table(config)
     g.CHATTYNATOR_CURRENT_PROFILE = profile
@@ -1065,10 +1092,11 @@ def chattynator_seed_writes_three_windows_once():
     w = windows(s)
     eq(len(w), 3, "three windows")
     eq([w[i]["position"] for i in (1, 2, 3)],
-       [{1: "TOPLEFT", 2: "UIParent", 3: "TOPLEFT", 4: 60, 5: -1828},
-        {1: "TOPLEFT", 2: "UIParent", 3: "TOPLEFT", 4: 970, 5: -1828},
-        {1: "TOPLEFT", 2: "UIParent", 3: "TOPLEFT", 4: 2910, 5: -1828}], "native uhd places")
-    eq([w[i]["size"] for i in (1, 2, 3)], [{1: 868, 2: 244}, {1: 944, 2: 244}, {1: 922, 2: 244}], "native uhd sizes")
+       [{1: "TOPLEFT", 2: "UIParent", 3: "TOPLEFT", 4: 0, 5: -1794},
+        {1: "TOPLEFT", 2: "UIParent", 3: "TOPLEFT", 4: 960, 5: -1794},
+        {1: "TOPLEFT", 2: "UIParent", 3: "TOPLEFT", 4: 2900, 5: -1794}], "uhd places from the chat panels")
+    eq([w[i]["size"] for i in (1, 2, 3)], [{1: 960, 2: 329}, {1: 962, 2: 334}, {1: 940, 2: 334}],
+       "uhd sizes from the chat panels")
     public = w[1]["tabs"][1]
     eq((public["name"], public["invert"]), ("GENERAL", True), "window 1 public tab")
     eq(false_keys(public["groups"]), sorted(PUBLIC_HIDDEN + CHATTY_GROUP), "window 1 hides group types only")
@@ -1171,14 +1199,14 @@ def chattynator_unmoved_windows_follow_preset_moved_ones_stay():
     s.g.TEST_edit("appearance.chat1")
     s.g.TEST_runTimers()
     w = windows(s)
-    eq((w[1]["position"][4], w[1]["size"][1]), (40, 555), "window 1 follows qhd")
+    eq((w[1]["position"][4], w[1]["size"][1]), (0, 620), "window 1 follows qhd")
     eq(w[2]["position"][4], 1234, "moved window 2 kept")
-    eq((w[3]["position"][4], w[3]["size"][1]), (1952, 602), "window 3 follows qhd")
+    eq((w[3]["position"][4], w[3]["size"][1]), (1944, 616), "window 3 follows qhd")
     eq(sorted(s.db()["chattynator"]["layout"]["windows"]), [1, 3], "moved window released")
     s.g.TEST_pixel = 0.5
     s.g.TEST_fire("UI_SCALE_CHANGED")
     s.g.TEST_runTimers()
-    eq(windows(s)[3]["position"][4], 976, "screen scale reflow")
+    eq(windows(s)[3]["position"][4], 971, "screen scale reflow")
 
 
 @case
@@ -1272,6 +1300,189 @@ def chattynator_skin_follows_theme_and_chat_font():
     s.g.TEST_pixel = 1
     s.g.TEST_fire("UI_SCALE_CHANGED")
     eq(option(s, "message_font_size"), 20, "user's own size kept")
+
+
+@case
+def chattynator_edit_box_stays_at_scale_one():
+    s = chatty_session(channels=("General",))
+    s.g.TEST_chattyTable = s.chatty
+    s.lua.execute("""
+      LibStub = function() return {Fetch = function() return nil end} end
+      FindValueInTableIf = function(t, pred) for _, v in ipairs(t) do if pred(v) then return v end end end
+      TEST_fontNames = {}
+      function GetFonts() return TEST_fontNames end
+      local function fontObject(file, height, flags)
+        local o = {file = file, height = height, flags = flags, shadow = {0, 0}, shadowColor = {0, 0, 0, 0}}
+        function o:GetFont() return self.file, self.height, self.flags end
+        function o:SetShadowOffset(x, y) self.shadow = {x, y} end
+        function o:GetShadowOffset() return unpack(self.shadow) end
+        function o:SetShadowColor(...) self.shadowColor = {...} end
+        function o:GetShadowColor() return unpack(self.shadowColor) end
+        return o
+      end
+      local function family(members)
+        local f = {members = {}, color = {1, 1, 1, 1}}
+        for _, m in ipairs(members) do f.members[m.alphabet] = fontObject(m.file, m.height, m.flags) end
+        function f:GetFontObjectForAlphabet(a) return self.members[a] end
+        function f:SetJustifyH() end
+        function f:SetTextColor(...) self.color = {...} end
+        function f:GetTextColor() return unpack(self.color) end
+        return f
+      end
+      function CreateFontFamily(name, members)
+        _G[name] = family(members)
+        table.insert(TEST_fontNames, name)
+        return _G[name]
+      end
+      ChatFontNormal = family({{alphabet = "roman", file = "Fonts/FRIZQT__.TTF", height = 14, flags = ""},
+        {alphabet = "korean", file = "Fonts/2002.TTF", height = 14, flags = ""},
+        {alphabet = "simplifiedchinese", file = "Fonts/ARKai_T.ttf", height = 14, flags = ""},
+        {alphabet = "traditionalchinese", file = "Fonts/blei00d.TTF", height = 14, flags = ""},
+        {alphabet = "russian", file = "Fonts/FRIZQT___CYR.TTF", height = 14, flags = ""}})
+      local box = TEST_widget()
+      box.scale, box.height, box.points, box.header = 1, 0, {}, TEST_widget()
+      box.header.IsObjectType = function(_, kind) return kind == "FontString" end
+      box.header.SetFontObject = function(self, font) self.font = font end
+      function box:SetScale(v) self.scale = v end
+      function box:GetScale() return self.scale end
+      function box:SetHeight(v) self.height = v end
+      function box:GetHeight() return self.height end
+      function box:ClearAllPoints() self.points = {} end
+      function box:SetPoint(...) table.insert(self.points, {...}) end
+      function box:SetFontObject(font) self.font = font end
+      function box:GetRegions() return self.header end
+      ChatFrame1EditBox = box
+      TEST_chattyTable.Display = TEST_chattyTable.Display or {}
+    """)
+    for name in ("Core/Fonts.lua", "Display/Main.lua"):
+        with open(os.path.join(CHATTY_DIR, name), "rb") as fh:
+            fn = s.g.loadstring(fh.read(), ("@Chattynator/" + name).encode())
+        (fn[0] if isinstance(fn, tuple) else fn)("Chattynator", s.chatty)
+    s.lua.execute("""
+      local chat = setmetatable({}, {__index = TEST_chattyTable.Display.ChatFrameMixin})
+      chat.ScrollingMessagesWrapper = TEST_widget()
+      chat.ScrollingMessagesWrapper.SetPoint = function(self, ...) self.point = {...} end
+      function chat:GetID() return 1 end
+      function chat:GetClampRectInsets() return 0, 0, 0, 3 end
+      TEST_chatFrame = chat
+      function TEST_update(size)
+        TEST_chattyTable.Config.Set("message_font_size", size)
+        TEST_chatFrame:UpdateEditBox()
+      end
+    """)
+    for size in (28, 21, 14):
+        s.g.TEST_update(size)
+        box = s.g.ChatFrame1EditBox
+        factor = size / 14
+        eq(box.GetScale(box), 1, "size %d: edit box scale stays 1" % size)
+        eq(box.height, 32 * factor, "size %d: height = edit box height x factor" % size)
+        font = s.g[box.font]
+        eq((font.members.roman.height, font.members.korean.height, font.members.korean.file),
+           (14 * factor, 14 * factor, "Fonts/2002.TTF"), "size %d: text size scaled, Korean font file kept" % size)
+        eq(box.header.font, box.font, "size %d: header uses the same scaled font" % size)
+        # Same place as upstream's scaled box: offsets were in the box's scaled space.
+        top_left = to_py(box.points[1])
+        eq(top_left[5], (0 + 32 - 3 * factor) * factor, "size %d: anchor offset as before" % size)
+        eq(to_py(s.g.TEST_chatFrame.ScrollingMessagesWrapper.point)[3], 6 + 32 * factor - 3,
+           "size %d: message area bottom as before" % size)
+    eq(s.g.ChatFrame1EditBox.font, "ChattynatorFontdefault", "factor 1: the message font itself")
+
+
+def message_area(window, public):
+    """Chattynator's message area (left, top, right, bottom as TOPLEFT y) of a window config."""
+    x, top = window["position"][4], window["position"][5]
+    width, height = window["size"][1], window["size"][2]
+    bottom = top - height
+    return x + 2, top - 27, x + width, bottom if public else bottom + 5
+
+
+def panel_inner(preset, key, pixel, border=1):
+    item = GEOMETRY_ITEMS[preset][key]
+    top, bottom = -item["y"] + border, -item["y"] + item["height"] - border
+    return item["x"] * pixel, -top * pixel, (item["x"] + item["width"]) * pixel, -bottom * pixel
+
+
+@case
+def chattynator_message_area_is_the_panel_inner_rect():
+    for preset in PRESETS:
+        for pixel in (1, 0.75):
+            s = chatty_session(preset=preset, channels=("General",))
+            s.g.TEST_pixel = pixel
+            s.login()
+            w = windows(s)
+            for index, key in enumerate(("chat1", "chat2", "chat3"), start=1):
+                left, top, right, bottom = message_area(w[index], index == 1)
+                want = panel_inner(preset, key, pixel)
+                what = "%s pixel %s window %d" % (preset, pixel, index)
+                # A panel on the left screen edge: the window is clamped to the screen, so its
+                # message area starts 2 units inside the panel.
+                eq(round(left, 6), round(max(want[0], 2), 6), what + " left")
+                eq([round(v, 6) for v in (top, right, bottom)], [round(v, 6) for v in want[1:]],
+                   what + " top/right/bottom (window 1: area above the input box)")
+            eq(option(s, "button_position"), "inside_left", "buttons overlay the message area")
+    # Composition art: prepared surfaces (no inset in the code) and HUD parts (caps and joints).
+    s = chatty_session(channels=("General",))
+    s.lua.execute("DevilForever_Composition = {active = true}")
+    s.login()
+    eq(message_area(windows(s)[2], False)[1:], (-1820, 1922, -2124), "prepared surfaces: the panel rectangle")
+    p = chatty_session(channels=("General",))
+    p.lua.execute("""
+      DevilForever_Composition = {active = true, partsShown = true,
+        parts = {sizes = {uhd = {joint = 32, cap = 96}}},
+        partsPlan = {preset = "uhd", joints = {961, 1923, 2595, 2901}, bounds = {width = 3840}}}
+    """)
+    p.login()
+    w = windows(p)
+    eq([message_area(w[i], i == 1)[0] for i in (1, 2, 3)], [96, 977, 2917], "parts: left edges after cap/joint")
+    eq([message_area(w[i], i == 1)[2] for i in (1, 2, 3)], [945, 1907, 3744], "parts: right edges before joint/cap")
+
+
+@case
+def chattynator_windows_seeded_earlier_follow_the_panels_moved_ones_stay():
+    s = chatty_session(channels=("General",))
+    s.login()
+    # The rectangles an earlier seed wrote (native chat rectangles), still unmoved by the user.
+    s.lua.execute("""
+      local old = {{60, -1828, 868, 244}, {970, -1828, 944, 244}, {2910, -1828, 922, 244}}
+      local state = DevilForever_ChatSetupDB.chattynator.layout.windows
+      for i, r in ipairs(old) do
+        local w = CHATTYNATOR_CONFIG.Profiles.DEFAULT.windows[i]
+        w.position = {"TOPLEFT", "UIParent", "TOPLEFT", r[1], r[2]}
+        w.size = {r[3], r[4]}
+        state[i] = {position = {"TOPLEFT", "UIParent", "TOPLEFT", r[1], r[2]}, size = {r[3], r[4]}}
+      end
+      CHATTYNATOR_CONFIG.Profiles.DEFAULT.windows[3].position[4] = 2800
+    """)
+    s.g.TEST_fire("UI_SCALE_CHANGED")
+    s.g.TEST_runTimers()
+    w = windows(s)
+    eq((w[1]["position"][5], w[1]["size"][2]), (-1794, 329), "unmoved window 1 now has its tab row above the panel")
+    eq((w[2]["position"][4], w[2]["position"][5]), (960, -1794), "unmoved window 2 follows")
+    eq((w[3]["position"][4], w[3]["position"][5]), (2800, -1828), "window 3 moved by the user stays")
+    eq(sorted(s.db()["chattynator"]["layout"]["windows"]), [1, 2], "moved window released")
+
+
+@case
+def chattynator_numbered_and_second_lfg_channels_go_to_window_three():
+    s = chatty_session(channels=("General", "LocalDefense"))
+    s.login()
+    s.set_channels(("General", "LocalDefense", "Trade", "Services", "파티찾기 2"))
+    s.g.TEST_fire("CHAT_MSG_CHANNEL_NOTICE", "YOU_JOINED")
+    s.g.TEST_runTimers()
+    w = windows(s)
+    eq(true_keys(w[3]["tabs"][1]["channels"]), ["파티찾기 2"], "'파티찾기 2' (custom, numbered) to window 3")
+    eq(w[1]["tabs"][1]["channels"].get("파티찾기 2"), False, "and out of window 1")
+    s.set_channels(("General", "LocalDefense", "Trade", "Services", "파티찾기 2", "LookingForGroup"))
+    s.g.TEST_fire("CHANNEL_UI_UPDATE")
+    s.g.TEST_runTimers()
+    w = windows(s)
+    eq(true_keys(w[3]["tabs"][1]["channels"]), sorted(["LookingForGroup", "파티찾기 2"]),
+       "second looking-for-group channel joined later also to window 3")
+    eq(false_keys(w[1]["tabs"][1]["channels"]), sorted(["LookingForGroup", "파티찾기 2"]), "both out of window 1")
+    both = chatty_session(channels=("General", "파티찾기 2", "LookingForGroup"))
+    both.login()
+    eq(true_keys(windows(both)[3]["tabs"][1]["channels"]), sorted(["LookingForGroup", "파티찾기 2"]),
+       "seed: every looking-for-group channel in window 3")
 
 
 def main():

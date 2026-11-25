@@ -99,6 +99,39 @@ local function GetMembers(overrideFile, outline)
   return members
 end
 
+-- A copy of a font family at factor times its size, for widgets that are sized instead of
+-- scaled (ChatFrame1EditBox). Returns the global name; the base name itself for factor 1 or a
+-- font that is not a family.
+local scaledFonts = {}
+function addonTable.Core.GetScaledFont(fontName, factor)
+  local base = _G[fontName]
+  if factor == 1 or type(base) ~= "table" or not base.GetFontObjectForAlphabet then
+    return fontName
+  end
+  local key = fontName .. "_" .. math.floor(factor * 1000 + 0.5)
+  if scaledFonts[key] then
+    return scaledFonts[key]
+  end
+  local globalName = "ChattynatorScaled" .. key
+  if not _G[globalName] then
+    local members = {}
+    for _, a in ipairs(alphabet) do
+      local file, size, flags = base:GetFontObjectForAlphabet(a):GetFont()
+      table.insert(members, {alphabet = a, file = file, height = size * factor, flags = flags})
+    end
+    local family = CreateFontFamily(globalName, members)
+    family:SetJustifyH("LEFT")
+    family:SetTextColor(base:GetTextColor())
+    for _, a in ipairs(alphabet) do
+      local from, to = base:GetFontObjectForAlphabet(a), family:GetFontObjectForAlphabet(a)
+      to:SetShadowOffset(from:GetShadowOffset())
+      to:SetShadowColor(from:GetShadowColor())
+    end
+  end
+  scaledFonts[key] = globalName
+  return globalName
+end
+
 function addonTable.Core.CreateFont(lsmPath, outline, shadow, force)
   local key = lsmPath .. outline .. shadow
   if fonts[key] and not force then

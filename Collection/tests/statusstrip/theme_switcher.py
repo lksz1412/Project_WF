@@ -110,7 +110,7 @@ def session(width,height,font,locale='koKR',saved=None,registered=ORDER,screen=N
     load(s,'DevilForever_Skin_StatusStrip/Skin.lua')
     if layout_v2 is not None:  # PitBull4 loaded, its profile on the New (V2) or Old (V1) layout
         profile={'dfLayoutV2':bool(layout_v2)}
-        if layout_v2=='current':profile['dfLayoutRevision']=2  # this package's New (V2) revision
+        if layout_v2=='current':profile['dfLayoutRevision']=3  # this package's New (V2) revision
         s.g.TEST_loaded.PitBull4=True;s.g.PitBull4=s.table({'db':{'profile':profile}})
     load(s,'DevilForever_Skin_StatusStrip/ThemeSwitcher.lua',source=switcher)
     s.g.TEST_combat=combat_login

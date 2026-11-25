@@ -10,10 +10,12 @@ local EDGE = 8      -- pixels from the right screen edge for window 3 without a 
 local LFG_ZONE_ID = 26
 local LFG_NAMES = {"lookingforgroup", "파티찾기"}
 
--- Window 2: private, guild and group conversation. Every other message type stays in window 1.
+-- Window 2: private, guild and group conversation and battleground messages. Every other message
+-- type stays in window 1.
 local GROUP_TYPES = {
   "WHISPER", "BN_WHISPER", "GUILD", "OFFICER", "GUILD_ACHIEVEMENT", "GUILD_DISCORD",
   "PARTY", "PARTY_LEADER", "RAID", "RAID_LEADER", "RAID_WARNING", "INSTANCE_CHAT", "INSTANCE_CHAT_LEADER",
+  "BG_HORDE", "BG_ALLIANCE", "BG_NEUTRAL",
 }
 -- Chattynator's own GENERAL tab leaves these out; window 1 keeps that.
 local PUBLIC_HIDDEN = {
@@ -84,24 +86,70 @@ local function isLookingForGroup(index, name)
   return false
 end
 
--- Display names of the joined channels: {name = true} and the looking-for-group name (or nil).
+-- Display names of the joined channels: {name = true} for the others and the list of
+-- looking-for-group channels (a client can have more than one, e.g. "파티찾기 2").
 local function joinedChannels(b)
   local map, count = b.GetChannels()
-  local others, lfg = {}, nil
+  local others, lfg = {}, {}
   for index = 1, count or 0 do
     local name = map[index]
     if type(name) == "string" then
-      if not lfg and isLookingForGroup(index, name) then lfg = name else others[name] = true end
+      if isLookingForGroup(index, name) then lfg[#lfg + 1] = name else others[name] = true end
     end
   end
   return others, lfg
 end
 
--- Position and size of a role from the prepared layout of the active preset, or nil.
+-- Chattynator window layout (Display/Main.lua, with tabs shown and buttons inside): the message
+-- area (ScrollingMessagesWrapper) starts MESSAGE_TOP units below the window top with the tab row
+-- above it, MESSAGE_LEFT units from the window's left edge, flush with its right edge, and
+-- MESSAGE_BOTTOM units above the bottom of windows 2 and 3. Window 1 keeps the input box in its
+-- bottom part, below the message area.
+local MESSAGE_TOP, MESSAGE_LEFT, MESSAGE_BOTTOM = 27, 2, 5
+local PANELS = {public = "appearance.chat1", group = "appearance.chat2", system = "appearance.chat3"}
+
+-- Inner rectangle of a role's chat panel as the appearance code draws it, in UIParent units
+-- (left, top, right, bottom; top and bottom as TOPLEFT y offsets), or nil without the layout.
+-- Composition parts: the end caps and the joints between panels cover the panel edges.
+-- Prepared composition surfaces: the panel rectangle itself (the code places no border inside it).
+-- Individual panels: the top and bottom edge lines of border.size pixels.
+local function panelInner(role)
+  local core, appearance = DevilForever_Core, DevilForever_Appearance
+  if type(core) ~= "table" or type(core.Edit) ~= "table" or type(core.Edit.Get) ~= "function"
+      or type(appearance) ~= "table" or type(appearance.GetPixelUnit) ~= "function" then return end
+  local item = core.Edit:Get(PANELS[role])
+  local position, size = type(item) == "table" and item.position, type(item) == "table" and item.size
+  local pixel = appearance:GetPixelUnit(UIParent)
+  if type(position) ~= "table" or type(size) ~= "table" or position.point ~= "TOPLEFT"
+      or position.relativeTo ~= "DevilForever_AppearanceRoot" or type(pixel) ~= "number" or pixel <= 0 then return end
+  local left, top = position.x, -position.y
+  local right, bottom = left + size.width, top + size.height
+  local composition = DevilForever_Composition
+  local plan = type(composition) == "table" and composition.active and composition.partsShown and composition.partsPlan
+  if plan then
+    local sizes = composition.parts.sizes[plan.preset]
+    for _, centre in ipairs(plan.joints or {}) do
+      if math.abs(centre - left) <= sizes.joint then left = math.max(left, centre + sizes.joint / 2) end
+      if math.abs(centre - right) <= sizes.joint then right = math.min(right, centre - sizes.joint / 2) end
+    end
+    left = math.max(left, sizes.cap)
+    right = math.min(right, plan.bounds.width - sizes.cap)
+  elseif not (type(composition) == "table" and composition.active) then
+    local border = core.Theme and core.Theme.Get and core.Theme:Get("border.size")
+    if type(border) == "number" then top, bottom = top + border, bottom - border end
+  end
+  return left * pixel, -top * pixel, right * pixel, -bottom * pixel
+end
+
+-- Window of a role whose message area is the panel's inner rectangle (window 1: the area above
+-- its input box), or nil without the appearance layout.
 local function prepared(role)
-  local bounds = addon.GetPreparedChatWindow and addon.GetPreparedChatWindow(role)
-  if type(bounds) ~= "table" then return end
-  return {bounds.point, "UIParent", bounds.point, bounds.x, bounds.y}, {bounds.width, bounds.height}
+  local left, top, right, bottom = panelInner(role)
+  if not left then return end
+  local x = math.max(0, left - MESSAGE_LEFT)
+  local windowTop = top + MESSAGE_TOP
+  local windowBottom = role == "public" and bottom or bottom - MESSAGE_BOTTOM
+  return {"TOPLEFT", "UIParent", "TOPLEFT", x, windowTop}, {right - x, windowTop - windowBottom}
 end
 
 local function placements(first)
@@ -138,14 +186,14 @@ local function seed(b, state, profile)
   for _, group in ipairs(PUBLIC_HIDDEN) do public.groups[group] = false end
   for _, group in ipairs(GROUP_TYPES) do public.groups[group] = false end
   for name in pairs(others) do public.channels[name] = true end
-  if lfg then public.channels[lfg] = false end
+  for _, name in ipairs(lfg) do public.channels[name] = false end
 
   local group = b.GetEmptyTabConfig(localized(NAMES.group))
   group.tabColor = "309944"
   for _, name in ipairs(GROUP_TYPES) do group.groups[name] = true end
 
   local lookingForGroup = b.GetEmptyTabConfig(localized(NAMES.lfg))
-  if lfg then lookingForGroup.channels[lfg] = true end
+  for _, name in ipairs(lfg) do lookingForGroup.channels[name] = true end
 
   local places = placements(first)
   local seeded = {}
@@ -162,7 +210,7 @@ local function seed(b, state, profile)
   b.Set(b.Options.BUTTON_POSITION, "inside_left")
   state.profiles[profile] = "seeded"
   state.lfgTab = lookingForGroup.name
-  state.lfg = lfg
+  state.lfg = lfg[1]
   state.layout = {preset = DevilForever_Core and DevilForever_Core.Presets and DevilForever_Core.Presets:GetActive(),
     windows = {copyPlace(seeded[1]), copyPlace(seeded[2]), copyPlace(seeded[3])}}
 end
@@ -203,29 +251,35 @@ local function seededProfile(b)
   return state.profiles[b.GetProfileName() or "DEFAULT"] == "seeded" and state
 end
 
--- A looking-for-group channel joined after the seed goes to window 3 and leaves window 1,
--- unless some tab already shows it or window 3 is no longer the seeded one.
+-- Looking-for-group channels joined after the seed go to window 3 and leave window 1, each
+-- unless some tab already shows it; nothing moves when window 3 is no longer the seeded one.
 function addon.RouteChattynatorLookingForGroup()
   local b = bridge()
   if not b or inCombat("lfg") then return false end
   local state = seededProfile(b)
   if not state then return false end
   local _, lfg = joinedChannels(b)
-  if not lfg then return false end
   local windows = b.Get(b.Options.WINDOWS)
-  for _, window in ipairs(windows) do
-    for _, tab in ipairs(window.tabs or {}) do
-      if type(tab.channels) == "table" and tab.channels[lfg] == true then return false end
-    end
-  end
   local target = windows[3] and windows[3].tabs and windows[3].tabs[1]
   if not target or target.name ~= state.lfgTab then return false end
-  target.channels[lfg] = true
   local public = windows[1] and windows[1].tabs and windows[1].tabs[1]
-  if public and public.invert and type(public.channels) == "table" then public.channels[lfg] = false end
-  state.lfg = lfg
-  b.WindowsChanged()
-  return true
+  local moved = false
+  for _, name in ipairs(lfg) do
+    local shown = false
+    for _, window in ipairs(windows) do
+      for _, tab in ipairs(window.tabs or {}) do
+        if type(tab.channels) == "table" and tab.channels[name] == true then shown = true end
+      end
+    end
+    if not shown then
+      target.channels[name] = true
+      if public and public.invert and type(public.channels) == "table" then public.channels[name] = false end
+      state.lfg = state.lfg or name
+      moved = true
+    end
+  end
+  if moved then b.WindowsChanged() end
+  return moved
 end
 
 -- Windows still at the place this module gave them follow the active preset and screen scale.
@@ -289,5 +343,11 @@ if Core and Core.Edit and type(Core.Edit.RegisterCallback) == "function" then
     if addon.ChattynatorActive() and (key == "appearance.chat1" or key == "appearance.chat2" or key == "appearance.chat3") then
       later("layout", addon.FollowChattynatorLayout)
     end
+  end)
+end
+-- A theme change can switch the panel art (composition or individual panels) and its insets.
+if Core and Core.Theme and type(Core.Theme.RegisterCallback) == "function" then
+  Core.Theme:RegisterCallback(frame, function()
+    if addon.ChattynatorActive() then later("layout", addon.FollowChattynatorLayout) end
   end)
 end

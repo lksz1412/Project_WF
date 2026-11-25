@@ -191,3 +191,176 @@ M1 fix: the skin registers with autoEnable = false and wraps `addonTable.Skins.I
 | `tests/install/verify_archives.py` | not run (needs built archives) · Python parse OK |
 
 Default added: the Devil skin is auto-chosen only when the windows are untouched **and** the skin is still Chattynator's default `dark` (stricter than the window rule alone, so a profile that only changed its skin also keeps it).
+
+## Step 61 fix (one change, four items + LFG case)
+
+User results / requests: (a) 한/영 dead in the Chattynator input; `/run ChatFrame1EditBox:SetScale(1)` fixes it (SetAltArrowKeyMode(true) does not) · (b) R173 tab row onto the theme strip · (c) R175 message area inside the theme chat panel · (d) R176 battleground messages in window 2 · (e) `/입장 파티찾기` → "6. 파티찾기 2" already lands in window 3 (test only; a second LFG channel needed a code change, below).
+
+Re-read in full before editing: `Chattynator/Display/Main.lua` 1–311 · `Chattynator/Core/Fonts.lua` 1–143 · `Chattynator/Display/Buttons.lua` 250–394 (button layout per position) · `Chattynator/Skins/GW2.lua` 215–250 · `DevilForever_ChatSetup/Chattynator.lua` whole · `DevilForever_ChatSetup/ChatLayout.lua` 1–41 (native rectangles) · `DevilForever_Appearance/Appearance.lua` 1–192 and `Composition.lua` (whole, Step 59) for panel rects and insets · `Themes/{devil,horde,alliance}.lua` `border.size` · `Presets/{fhd,qhd,uhd}.lua` appearance.* (parsed) · `CustomiseDialog/Filtering.lua:49–53` (OTHER_PVP keys BG_HORDE, BG_ALLIANCE, BG_NEUTRAL) · check list §10 · install guide 1–85.
+
+### What changed
+
+| Item | Change |
+|---|---|
+| (a) | `Chattynator/Display/Main.lua` UpdateEditBox: `ChatFrame1EditBox:SetScale(1)` always; height = edit_box_height × factor; anchor offsets × factor (`bottom`: TOPLEFT y = (yOffset + H − clampBottom·f)·f, TOPRIGHT y = (H − clampBottom·f)·f — the same screen place as the old box at scale f, whose offsets were in its own scaled space; `top`/`screen*`: x and y offsets × f); the message-area bottom line keeps its form (`GetHeight()` already scaled, `GetScale()` = 1). Fonts: new `Core/Fonts.lua` `GetScaledFont(name, factor)` = a font family copy with every alphabet member's height × factor (files, flags, shadow, text colour copied; cached; factor 1 → the base font), set on the box itself and its FontString regions. The only `SetScale` on the box was `Display/Main.lua:243` (grep); our skin never scaled it; `Skins/GW2.lua:235` scales its own `fakeEditBoxTex` (child of the chat frame visuals, not of the box) — check only |
+| (c), supersedes the centring rule of (b) | `DevilForever_ChatSetup/Chattynator.lua` `prepared(role)`: each window is placed so Chattynator's message area (ScrollingMessagesWrapper: window top −27, left +2 with buttons inside, right flush, bottom +5 for windows 2/3) equals the inner rectangle of its chat panel (`appearance.chat1/2/3`). Window 1 keeps its input box inside the panel (window bottom = inner bottom; its message area is the inner rectangle minus the input row). The tab row (top 22 units of the window) sits directly above the message area |
+| (d) | `GROUP_TYPES` + `BG_HORDE`, `BG_ALLIANCE`, `BG_NEUTRAL` → window 2 on seed, hidden in window 1 (seed only) |
+| (e) | `joinedChannels` returns every looking-for-group channel; seed and later routing handle each one (a second LFG channel joined later also goes to window 3 when no tab shows it — before, only the first was handled) |
+| layout follow | Theme callback added (panel insets depend on the art); seeded, unmoved windows (receipt match) move to the new rectangles — including windows seeded with the old native rectangles; moved windows are released |
+
+Panel inner rectangle, from the appearance code (no values from the screenshot):
+- Composition prepared surfaces (shipping state — `Composition.active`, no parts shipped): the code puts no inset inside the deck picture → inner = the panel rectangle (a border painted in the art is not known to the code: unverified).
+- Composition parts (when parts ship): end caps (48/64/96 px) at the screen edges and joints (16/20/32 px) centred on the panel boundaries cover the panel edges → inner left/right move inside them.
+- Individual panels (composition off, e.g. after a layout edit): top and bottom edge lines of theme `border.size` px (devil/alliance 1, horde 2).
+
+Rectangles per preset (physical px; V1 = V2 — `Presets/V2.lua` has no appearance/chat entries):
+
+| Preset | chat1 panel | chat2 panel | chat3 panel | individual-panel inner y (border 1) |
+|---|---|---|---|---|
+| fhd | x 0–438, y 860–1052 | x 440–878 | x 1486–1920 | 861–1051 |
+| qhd | x 0–620, y 1186–1410 | x 622–1242 | x 1946–2560 | 1187–1409 |
+| uhd | x 0–960, y 1820–2124 | x 962–1922 | x 2902–3840 | 1821–2123 |
+
+Window (UI units) = panel px × pixel unit (`GetPixelUnit(UIParent)`), then x − 2 (clamped at 0 → window 1 text starts 2 units inside the screen-edge panel), top + 27, bottom − 5 (windows 2/3).
+
+Tab row against the theme strip right above the panels (`appearance.ribbon`; individual-panel case, message top = panel top + 1). Tab row = 27 to 5 UI units above the message top; p = UI units per px:
+
+| Preset | strip px | tab row px at p = 1 | tab row px at UI scale 1 (p = 768/height) |
+|---|---|---|---|
+| fhd | 850–860 (centre 855) | 834–856 (centre 845) | 823–854 (centre 838.5) |
+| qhd | 1174–1186 (centre 1180) | 1160–1182 (centre 1171) | 1136–1178 (centre 1157) |
+| uhd | 1804–1820 (centre 1812) | 1794–1816 (centre 1805) | 1745–1807 (centre 1776) |
+
+The tab row (22 UI units) is taller than the strip (10/12/16 px); its centre lies 7–36 px above the strip centre and it overlaps the strip's upper part. Centring it on the strip (R173 fallback rule) and keeping the message area exactly on the panel (R175) cannot both hold: Chattynator keeps the tab row and the message area 27 units apart (`Display/Main.lua:228`). Default chosen: R175 (message area exact), tab row directly above it — open for the user.
+
+Buttons: the seed's `button_position = "inside_left"` + `show_buttons = "hover"` make them overlay: with an inside position the message area starts 2 units from the window edge (`Display/Main.lua:228`) and the buttons are anchored over the message area's top-left (`Display/Buttons.lua:298–305`), shown only on hover (`:259–282`). They take no width. A window that still shows them always was set by the user (never reseeded).
+
+### Impact map
+
+| Place | Type | How found | Impact | Reason |
+|---|---|---|---|---|
+| `Chattynator/Display/Main.lua` UpdateEditBox (:234–275) | the defect (a) | user test, read | change | scale 1 |
+| `Chattynator/Core/Fonts.lua` | font families | read whole | change (GetScaledFont added) | text size without scale |
+| `Display/Main.lua:80–83, 107–121` callers of UpdateEditBox | callers | read | check only | same function, same triggers |
+| `Display/Main.lua:198–206` RepositionBlizzardWidgets → skin AddFrame | caller | read | check only | skin gets the box after UpdateEditBox |
+| `Core/Messages.lua:94, 302, 369`, `Display/ScrollingMessages.lua:246, 265` | same factor, other widgets | grep | check only | message text keeps SetTextScale (not the IME widget) |
+| `Skins/GW2.lua:235` fakeEditBoxTex scale | look-alike | read | check only | not the box |
+| `Skins/DevilForever.lua` edit box skinner | our skin | read | check only | no scale; 1-unit border lines now unscaled |
+| `DevilForever_ChatSetup/Chattynator.lua` prepared / panelInner / GROUP_TYPES / joinedChannels / route / Theme callback | seed + follow | read whole | change | (b)(c)(d)(e) |
+| `DevilForever_ChatSetup/ChatLayout.lua` | native rectangles | read | check only | still used by the native path, no longer by the Chattynator seed |
+| `DevilForever_Appearance/Composition.lua` (`active`, `partsShown`, `partsPlan`, `parts.sizes`) | read by panelInner | read | check only | fields exist (Step 59) |
+| `Collection/patches/Chattynator.patch` | patch store | regenerate | change | 4 files now |
+| `tests/chatsetup/run.py` | tests | read | change | new geometry expectations and cases |
+| check list §10, `install/설치안내.md:54` | user docs | read | change | (a)–(d) |
+| `data/feature-map.md` chat rows | user doc | read | check only | still true in general terms |
+
+### Commands (verdict lines)
+
+| Command | Verdict |
+|---|---|
+| `python -I Collection/tests/chatsetup/run.py` | rc=0 · `cases=43 passed=43 failed=0` |
+| edit-box case against a scratch copy with upstream `Display/Main.lua` (`<scratch>/s60/mut61.*`) | FAIL as expected · `size 28: edit box scale stays 1: expected 1, got 2` |
+| `python -I Collection/tools/luacheck.py Display/Main.lua Core/Fonts.lua Skins/DevilForever.lua DevilForever_ChatSetup` | `checked=6 failed=0` |
+| `… patches.py regenerate --package Chattynator` (header edited) | wrote 19554 bytes |
+| `… patches.py verify` | `verify patches=8 unmodified=20 failures=0` · Chattynator OK (4 files) |
+| `… build.py --dry-run --variant pitbull4` / `fuf` | rc=0 · 36 folders/2353 files · 38/2297 |
+
+### Behaviour change against upstream Chattynator
+
+The chat input box is never scaled: it is as tall as before (32 × factor) and in the same place, but its child textures and text insets no longer grow with the factor, and its typed text uses Chattynator's message font family at the scaled size (upstream: the client's chat font scaled with the box). With the default message font (a clone of ChatFontNormal) the text looks the same.
+
+## Step 61 fix, continued (items f-i: R179, R181-R183, R184, R185)
+
+Compaction during this round. Re-read after it, before any edit: rule files (constitution `.claude/CLAUDE.md`, communication and flow memory files whole, plan-execution and multi-session skills reloaded), then `Presets/V2.lua` 1-245, `tests/layoutv2/run.py` 1-140 and 500-607, `tests/core/run.py` 1-110, 160-215, 1355-1370, `Presets.lua` 225-300, `Profiles.lua` 95-105 and 325-360, `Core.lua` 190-200 and 310-330, `Defaults/PitBull4.lua` 555-625, `DevilForever_Skin_StatusStrip/ThemeSwitcher.lua` 250-290, check list 113-120, this log 195-270. Reads for (f)-(h) before the compaction: `Presets/{fhd,qhd,uhd}.lua` PitBull4 / LuaTexts / Aura / CastBar fragments, `Presets/V2.lua`, `Defaults/PitBull4.lua:194-211`, `PitBull4/UnitFrame.lua:747`, `PitBull4/ModuleHandling/Module.lua:311`, `PitBull4/UnitFrameLayout.lua:442-446`.
+
+### What changed
+
+| Item | Change |
+|---|---|
+| (f) R179 | `Presets/{fhd,qhd,uhd}.lua`: `Lua:이름` size on layouts 보통 and 대상 = preset size x (보통.size_y / 소환수와 주시.size_y). Pets, focus, small and party frames keep the preset size; bar texts (생명력, 마력, 직업, 백분율, 레벨) unchanged. One rule: name text scales with frame height against the companion frame. Results: fhd 16 x 72/56 = 20.57 px, qhd 18 x 96/74 = 23.35 px, uhd 22 x 144/112 = 28.29 px. Health/power bars of the main frames are about the companion bar height, so their texts keep the size. V1 bars are a little taller now (the PitBull4 cast slot is gone, item h) |
+| (g) R181/R183 | `Presets/V2.lua`: the Quartz Player bar goes in the cast row under the player frame like Target (`point TOP`, `y = -castY*pixel`, `x` centred on the frame, `w = frame - 10`, `h = castHeight - 10`); the old outside PitBull4 cast bar lines (`dfOutside`, `dfOffset`, `dfHeight`) removed; `quartz.Player.y = -footY` and the focus `top_margin` line removed; `footY` dropped from `modes` |
+| (g) R182 | focus auras = pet auras: `Aura.layouts["주시"] = CopyTable(Aura.layouts["데빌 파티"])` in the presets (the player/target aura loop now covers 보통 and 대상 only); V2 `dfAuraGeometry["주시 대상"] = {above = true, width = companion size_x}` like the pet |
+| (g) side gap | recheck: the extra side gap is gone; player-focus and focus-target gaps are one frame gap (castHeight + 4 = 34/38/44 px) |
+| (h) R184 | cause: the preset CastBar fragment (`Presets/{fhd,qhd,uhd}.lua:553-555` before the change) set `global.enabled = true` and `layouts.보통.enabled = true`, overriding Core `Defaults/PitBull4.lua:194-211` (off). In V2, `V2.lua:147-148` (old) moved that bar outside through `dfOutside` (read by our PitBull4 patch `UnitFrameLayout.lua:442-446`). No other cast bar code in Core, Party or Appearance. Fix: CastBar fragment `global.enabled = false`, `layouts.보통.enabled = false`; player LuaTexts `Lua:시전` and `Lua:시전시간` `enabled = false`. PitBull4 clears a module whose layout entry is disabled (`ModuleHandling/Module.lua:311`). Old and New both: Quartz only |
+| (i) R185 | `Presets/V2.lua`: `layoutV2Revision` 2 -> 3, new `layoutV1Revision = 1`; both versions write `dfLayoutRevision`. New `Core.Presets:ReapplyOutdatedLayout()`: at PLAYER_ENTERING_WORLD (+1 s timer), when the PitBull4 profile's `dfLayoutRevision` (missing = 0) is lower than this build's revision of the version it is on (`dfLayoutV2 == true` -> New, else Old), it runs `Presets:Restore(<active>-v2 or -v1)` then `Profiles:Go()` (the status strip switch path, `ThemeSwitcher.lua:276-280`). In combat: waits for PLAYER_REGEN_ENABLED. One attempt per profile key and revision (`DevilForever_CoreDB.layoutRevision.tried["<profile>|<suffix>"]`). One chat line after the reload (`layoutRevision.notice`, printed and cleared at the next PLAYER_ENTERING_WORLD). The layout-only presets carry PitBull4, Quartz and Grid2 fragments only, so Chattynator windows are not touched |
+
+Apply path for existing profiles: automatic at the first login after install (item i). Manual paths stay: the status strip New/Old switch, or `/dfp preset <fhd|qhd|uhd>` + `/dfp go`.
+
+### Impact map (items f-i)
+
+| Place | Type | How found | Impact | Reason |
+|---|---|---|---|---|
+| `Presets/{fhd,qhd,uhd}.lua` LuaTexts, Aura, CastBar fragments | the change (f, g, h) | read | change | name ratio, focus auras, cast bar off |
+| `Presets/V2.lua` modes, gap, Quartz loop, cast lines, revisions, re-apply block | the change (g, i) | read whole | change | Quartz Player row, side gap, revisions, re-apply |
+| `Defaults/PitBull4.lua:194-211` CastBar defaults | same setting, Core defaults | read | check only | already off; the preset was the override |
+| `Defaults/PitBull4.lua:555-625` applyScale | uses `_G.PitBull4` at login | read | check only | the test stub needs `IterateHeaders` / `IterateFrames` |
+| `PitBull4/UnitFrameLayout.lua:442-446` dfOutside | reader of the removed V2 lines | read | check only | no V2 writer left; V1 still writes `dfOutside = false` |
+| `DevilForever_Skin_StatusStrip/ThemeSwitcher.lua:254-280` versionInUse / cycle | reader of `layoutV2Revision`, same switch path | read | check only | New shown only for revision 3; re-apply uses the same Restore + Go |
+| `Presets.lua:277-300` Restore, `Profiles.lua:333-341` Go, `Core.lua:196`, `:318` | APIs called | read | check only | layoutOnly -> SetPending; Go arms and reloads; combat refused |
+| `tests/statusstrip/theme_switcher.py:113` | pinned revision | test failure | change | 2 -> 3 |
+| `tests/layoutv2/run.py` | tests | read | change | cast bar, aura, gap, name text, cast-bar-off, revision 3, re-apply cases; `session(before_boot=)` hook |
+| check list §6 line 70, §11 | user docs | read, grep | change | auto re-apply replaces "switch once"; new first-login item |
+| `install/설치안내.md` | user doc | grep (`Old → New`, `다시 적용`, revision) | no impact | no apply-path wording there |
+| Earlier sections of this log | record | - | no impact (record) | |
+
+### Commands (verdict lines)
+
+| Command | Verdict |
+|---|---|
+| `python -I Collection/tests/layoutv2/run.py` | rc=0 · 45 PASS lines (re-apply: 3 new, one per preset) |
+| `python -I Collection/tests/statusstrip/theme_switcher.py` | rc=0 |
+| `python -I Collection/tests/chatsetup/run.py` | rc=0 · `cases=43 passed=43 failed=0` |
+| `python -I Collection/tests/core/run.py` | rc=0 · `cases=109 passed=109 failed=0` |
+| `python -I Collection/tests/firststart/run.py` | rc=0 · `cases=29 passed=29 failed=0` |
+| `python -I Collection/tests/statusstrip/run.py` | rc=0 · `cases=20 passed=20 failed=0` |
+| `python -I Collection/tests/pitbull4/run.py` | rc=0 · `cases=6 passed=6 failed=0` |
+| `python -I Collection/tests/pitbull4runtime/run.py` | rc=0 · `cases=20 passed=20 failed=0` |
+| `python -I Collection/tests/castbars/run.py` | rc=0 · `cases=16 passed=16 failed=0` |
+| `python -I Collection/tools/luacheck.py <Core> DevilForever_ChatSetup <Chattynator Main/Fonts/skin>` | `checked=27 failed=0` |
+| `python -I Collection/tools/extract.py` | rc=0 · `start=13 comparison=26 … errors=0` (manifest unchanged in git) |
+| `python -I Collection/tools/genregistry.py --check` | `up to date (59395 bytes)` |
+| `… patches.py verify` | `verify patches=8 unmodified=20 failures=0` |
+| `… build.py --dry-run --variant pitbull4` / `fuf` | rc=0 · 36 folders/2353 files · 38/2297 |
+
+Raw outputs: `<scratch>/s60/s61g_*.txt`, `s61i_layoutv2.txt`.
+
+Re-apply test cases (`tests/layoutv2/run.py`, last block, fhd/qhd/uhd): same revision -> no reload, no line, nothing pending · New profile at revision 2 -> one reload, pending `<preset>-v2` armed, `tried` marked, notice stored; next login -> revision 3, one chat line, no reload; the login after that -> nothing · Old profile without a revision -> the same with `-v1`, revision 1 · a profile still stale after its attempt -> no second reload · combat at login -> nothing pending until PLAYER_REGEN_ENABLED, then one reload; a later combat end -> no second reload.
+
+### Open (for the master / user)
+
+- Tab row vs theme strip (b vs c): R175 kept exact, tab row directly above the message area; numbers in the table above.
+- A border painted inside the prepared composition art is not known to the code (unverified).
+- The re-apply goes the same way as the New/Old switch, so it also rewrites the Quartz bar spots and Grid2 cell sizes of the version in use (Quartz bars the user moved go back). Chattynator is untouched.
+- Window 1 left clamp at 0 (text 2 units inside the screen-edge panel).
+
+## Step 61 review fix (M1)
+
+Input: `Claude/results/handoffs/phase27/TRIAGE_phase27.md` "Step 61 review" (79-end). Re-read in full before and after the edit: `Presets/V2.lua` 190-248 (re-apply block); `tests/layoutv2/run.py` 607-675 (re-apply block).
+
+Finding M1: before this fix, `profileState` (`Presets/V2.lua:202-204`) read a PitBull4 profile without `dfLayoutV2` (one the collection never laid out) as "Old, revision 0". `ReapplyOutdatedLayout` (:210-217) then requested `-v1` and reloaded, which overwrote a user's own profile. Fix: `profileState` returns nothing unless `profile.dfLayoutV2` is a boolean. Every collection layout writes that flag: true for New, false for Old (`V2.lua:39`, `:90`). With no flag, `ReapplyOutdatedLayout` returns at `not key` (:213), before the tried mark, so nothing is requested, reloaded or marked.
+
+### Impact map
+
+| Place | Type | How found | Impact | Reason |
+|---|---|---|---|---|
+| `Presets/V2.lua` `profileState` | the defect | triage, read | change | boolean flag required |
+| `Presets/V2.lua` `ReapplyOutdatedLayout` (:209-233) | only caller | read | check only | `not key` returns before the tried mark and Restore |
+| `Presets/V2.lua:39`, `:90` (flag writers: base preset false then V2 copies true; -v1 false, -v2 true) | writers | read | check only | every collection layout writes a boolean |
+| `ThemeSwitcher.lua:254-260` versionInUse | other reader of the flag | read (earlier) | no impact | shows Old for a profile without the flag, unchanged |
+| `tests/layoutv2/run.py` re-apply block | test that locked the old behaviour | read | change | Old case now asserts flag false (collection Old profile, no revision → -v1 once); new foreign case (no flag, no revision) → no request, no reload, no tried mark, no line, flag still absent |
+| check list §11 apply line | user doc | read | check only | it speaks of profiles with a stored layout revision; a foreign profile has none |
+| earlier sections of this log | record | - | no impact (record) | |
+
+### Commands (verdict lines)
+
+| Command | Verdict |
+|---|---|
+| `python -I Collection/tests/layoutv2/run.py` | rc=0 · 45 PASS lines |
+| `python -I Collection/tests/statusstrip/theme_switcher.py` | rc=0 · 20 PASS lines |
+| `python -I Collection/tests/core/run.py` | rc=0 · `cases=109 passed=109 failed=0` |
+| `python -I Collection/tools/luacheck.py Collection/AddOns/!DevilForever_Core/Presets/V2.lua` | `checked=1 failed=0` |
+| `… build.py --dry-run --variant pitbull4` / `fuf` | rc=0 · 36 folders/2353 files · 38/2297 |
+
+Raw outputs: `<scratch>/s60/s61r_*.txt`. The new foreign-profile case was not run against the code from before the fix (no mutation run). Reasoning instead: the old code read a missing flag as Old at revision 0, below `layoutV1Revision` 1, so it would have requested `-v1` and reloaded.
+
+Minor 1 (tried mark set before Restore) and minor 2 (ReloadUI from a timer without hardware input, unverified in game) are not fixed, per triage.

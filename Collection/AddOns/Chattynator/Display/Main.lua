@@ -239,34 +239,39 @@ function addonTable.Display.ChatFrameMixin:UpdateEditBox()
   local xOffset = addonTable.Config.Get(addonTable.Config.Options.EDIT_BOX_HORIZONTAL_OFFSET)
   local yOffset = addonTable.Config.Get(addonTable.Config.Options.EDIT_BOX_VERTICAL_OFFSET)
   local width = addonTable.Config.Get(addonTable.Config.Options.EDIT_BOX_WIDTH)/2
+  local scale = addonTable.Core.GetFontScalingFactor()
+  local height = addonTable.Config.Get(addonTable.Config.Options.EDIT_BOX_HEIGHT)
   ChatFrame1EditBox:ClearAllPoints()
-  ChatFrame1EditBox:SetScale(addonTable.Core.GetFontScalingFactor())
-  ChatFrame1EditBox:SetHeight(addonTable.Config.Get(addonTable.Config.Options.EDIT_BOX_HEIGHT))
+  -- A scaled edit box loses IME language switching (the Korean Hangul/English key), so the box stays at
+  -- scale 1 and its height, anchor offsets and fonts carry the factor instead.
+  ChatFrame1EditBox:SetScale(1)
+  ChatFrame1EditBox:SetHeight(height * scale)
 
   if position == "bottom" then
     local _, _, _, clampBottom = self:GetClampRectInsets()
-    self.ScrollingMessagesWrapper:SetPoint("BOTTOMRIGHT", 0, 6 + ChatFrame1EditBox:GetHeight() * ChatFrame1EditBox:GetScale() - clampBottom)
-    ChatFrame1EditBox:SetPoint("TOPLEFT", self, "BOTTOMLEFT", 0, yOffset + ChatFrame1EditBox:GetHeight() - clampBottom * ChatFrame1EditBox:GetScale())
-    ChatFrame1EditBox:SetPoint("TOPRIGHT", self, "BOTTOMRIGHT", 0, ChatFrame1EditBox:GetHeight() - clampBottom * ChatFrame1EditBox:GetScale())
+    self.ScrollingMessagesWrapper:SetPoint("BOTTOMRIGHT", 0, 6 + ChatFrame1EditBox:GetHeight() - clampBottom)
+    ChatFrame1EditBox:SetPoint("TOPLEFT", self, "BOTTOMLEFT", 0, (yOffset + height - clampBottom * scale) * scale)
+    ChatFrame1EditBox:SetPoint("TOPRIGHT", self, "BOTTOMRIGHT", 0, (height - clampBottom * scale) * scale)
   elseif position == "top" then
     self.ScrollingMessagesWrapper:SetPoint("BOTTOMRIGHT", 0, 5)
-    ChatFrame1EditBox:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0 + yOffset)
+    ChatFrame1EditBox:SetPoint("TOPLEFT", self, "TOPLEFT", 0, yOffset * scale)
     ChatFrame1EditBox:SetPoint("TOPRIGHT", self, "TOPRIGHT", 0, 0)
   elseif position == "screenBottom" then
     self.ScrollingMessagesWrapper:SetPoint("BOTTOMRIGHT", 0, 5)
-    ChatFrame1EditBox:SetPoint("BOTTOMLEFT", nil, "BOTTOM", -width + xOffset, 0 + yOffset)
-    ChatFrame1EditBox:SetPoint("BOTTOMRIGHT", nil, "BOTTOM", width + xOffset, 0)
+    ChatFrame1EditBox:SetPoint("BOTTOMLEFT", nil, "BOTTOM", (-width + xOffset) * scale, yOffset * scale)
+    ChatFrame1EditBox:SetPoint("BOTTOMRIGHT", nil, "BOTTOM", (width + xOffset) * scale, 0)
   elseif position == "screenCenter" then
     self.ScrollingMessagesWrapper:SetPoint("BOTTOMRIGHT", 0, 5)
-    ChatFrame1EditBox:SetPoint("LEFT", nil, "CENTER", -width + xOffset, 0 + yOffset)
-    ChatFrame1EditBox:SetPoint("RIGHT", nil, "CENTER", width + xOffset, 0)
+    ChatFrame1EditBox:SetPoint("LEFT", nil, "CENTER", (-width + xOffset) * scale, yOffset * scale)
+    ChatFrame1EditBox:SetPoint("RIGHT", nil, "CENTER", (width + xOffset) * scale, 0)
   elseif position == "screenTop" then
     self.ScrollingMessagesWrapper:SetPoint("BOTTOMRIGHT", 0, 5)
-    ChatFrame1EditBox:SetPoint("TOPLEFT", nil, "TOP", -width + xOffset, 0 + yOffset)
-    ChatFrame1EditBox:SetPoint("TOPRIGHT", nil, "TOP", width + xOffset, 0)
+    ChatFrame1EditBox:SetPoint("TOPLEFT", nil, "TOP", (-width + xOffset) * scale, yOffset * scale)
+    ChatFrame1EditBox:SetPoint("TOPRIGHT", nil, "TOP", (width + xOffset) * scale, 0)
   end
 
-  local font = addonTable.Core.GetFontByID(addonTable.Config.Get(addonTable.Config.Options.MESSAGE_FONT))
+  local font = addonTable.Core.GetScaledFont(addonTable.Core.GetFontByID(addonTable.Config.Get(addonTable.Config.Options.MESSAGE_FONT)), scale)
+  ChatFrame1EditBox:SetFontObject(font)
   for _, r in pairs({ChatFrame1EditBox:GetRegions()}) do
     if r:IsObjectType("FontString") then
       r:SetFontObject(font)

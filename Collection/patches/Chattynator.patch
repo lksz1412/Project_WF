@@ -14,6 +14,10 @@ Change (DevilForever):
     every region gets the Dark look. It also defines DevilForever_ChattynatorBridge, a small table of
     Chattynator's own config functions (and the same "untouched" check) that DevilForever_ChatSetup
     uses to seed the three windows.
+  - Display/Main.lua UpdateEditBox and Core/Fonts.lua (new GetScaledFont): ChatFrame1EditBox stays at
+    scale 1, because a scaled box loses IME language switching (Korean Hangul/English key, user test
+    in game); the font-size factor goes into the box height, its anchor offsets (same place as the
+    scaled box) and a font family copy at the scaled size set on the box and its text regions.
 
 Line endings: the TOC is CRLF and so is its hunk; the new Lua file is LF. Apply from the folder that
 holds the addon folders:
@@ -31,6 +35,105 @@ diff -u a/Chattynator/Chattynator.toc b/Chattynator/Chattynator.toc
  
  CustomiseDialog/Initialize.lua
  CustomiseDialog/ImportDialog.lua
+diff -u a/Chattynator/Core/Fonts.lua b/Chattynator/Core/Fonts.lua
+--- a/Chattynator/Core/Fonts.lua
++++ b/Chattynator/Core/Fonts.lua
+@@ -99,6 +99,39 @@
+   return members
+ end
+ 
++-- A copy of a font family at factor times its size, for widgets that are sized instead of
++-- scaled (ChatFrame1EditBox). Returns the global name; the base name itself for factor 1 or a
++-- font that is not a family.
++local scaledFonts = {}
++function addonTable.Core.GetScaledFont(fontName, factor)
++  local base = _G[fontName]
++  if factor == 1 or type(base) ~= "table" or not base.GetFontObjectForAlphabet then
++    return fontName
++  end
++  local key = fontName .. "_" .. math.floor(factor * 1000 + 0.5)
++  if scaledFonts[key] then
++    return scaledFonts[key]
++  end
++  local globalName = "ChattynatorScaled" .. key
++  if not _G[globalName] then
++    local members = {}
++    for _, a in ipairs(alphabet) do
++      local file, size, flags = base:GetFontObjectForAlphabet(a):GetFont()
++      table.insert(members, {alphabet = a, file = file, height = size * factor, flags = flags})
++    end
++    local family = CreateFontFamily(globalName, members)
++    family:SetJustifyH("LEFT")
++    family:SetTextColor(base:GetTextColor())
++    for _, a in ipairs(alphabet) do
++      local from, to = base:GetFontObjectForAlphabet(a), family:GetFontObjectForAlphabet(a)
++      to:SetShadowOffset(from:GetShadowOffset())
++      to:SetShadowColor(from:GetShadowColor())
++    end
++  end
++  scaledFonts[key] = globalName
++  return globalName
++end
++
+ function addonTable.Core.CreateFont(lsmPath, outline, shadow, force)
+   local key = lsmPath .. outline .. shadow
+   if fonts[key] and not force then
+diff -u a/Chattynator/Display/Main.lua b/Chattynator/Display/Main.lua
+--- a/Chattynator/Display/Main.lua
++++ b/Chattynator/Display/Main.lua
+@@ -239,34 +239,39 @@
+   local xOffset = addonTable.Config.Get(addonTable.Config.Options.EDIT_BOX_HORIZONTAL_OFFSET)
+   local yOffset = addonTable.Config.Get(addonTable.Config.Options.EDIT_BOX_VERTICAL_OFFSET)
+   local width = addonTable.Config.Get(addonTable.Config.Options.EDIT_BOX_WIDTH)/2
++  local scale = addonTable.Core.GetFontScalingFactor()
++  local height = addonTable.Config.Get(addonTable.Config.Options.EDIT_BOX_HEIGHT)
+   ChatFrame1EditBox:ClearAllPoints()
+-  ChatFrame1EditBox:SetScale(addonTable.Core.GetFontScalingFactor())
+-  ChatFrame1EditBox:SetHeight(addonTable.Config.Get(addonTable.Config.Options.EDIT_BOX_HEIGHT))
++  -- A scaled edit box loses IME language switching (the Korean Hangul/English key), so the box stays at
++  -- scale 1 and its height, anchor offsets and fonts carry the factor instead.
++  ChatFrame1EditBox:SetScale(1)
++  ChatFrame1EditBox:SetHeight(height * scale)
+ 
+   if position == "bottom" then
+     local _, _, _, clampBottom = self:GetClampRectInsets()
+-    self.ScrollingMessagesWrapper:SetPoint("BOTTOMRIGHT", 0, 6 + ChatFrame1EditBox:GetHeight() * ChatFrame1EditBox:GetScale() - clampBottom)
+-    ChatFrame1EditBox:SetPoint("TOPLEFT", self, "BOTTOMLEFT", 0, yOffset + ChatFrame1EditBox:GetHeight() - clampBottom * ChatFrame1EditBox:GetScale())
+-    ChatFrame1EditBox:SetPoint("TOPRIGHT", self, "BOTTOMRIGHT", 0, ChatFrame1EditBox:GetHeight() - clampBottom * ChatFrame1EditBox:GetScale())
++    self.ScrollingMessagesWrapper:SetPoint("BOTTOMRIGHT", 0, 6 + ChatFrame1EditBox:GetHeight() - clampBottom)
++    ChatFrame1EditBox:SetPoint("TOPLEFT", self, "BOTTOMLEFT", 0, (yOffset + height - clampBottom * scale) * scale)
++    ChatFrame1EditBox:SetPoint("TOPRIGHT", self, "BOTTOMRIGHT", 0, (height - clampBottom * scale) * scale)
+   elseif position == "top" then
+     self.ScrollingMessagesWrapper:SetPoint("BOTTOMRIGHT", 0, 5)
+-    ChatFrame1EditBox:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0 + yOffset)
++    ChatFrame1EditBox:SetPoint("TOPLEFT", self, "TOPLEFT", 0, yOffset * scale)
+     ChatFrame1EditBox:SetPoint("TOPRIGHT", self, "TOPRIGHT", 0, 0)
+   elseif position == "screenBottom" then
+     self.ScrollingMessagesWrapper:SetPoint("BOTTOMRIGHT", 0, 5)
+-    ChatFrame1EditBox:SetPoint("BOTTOMLEFT", nil, "BOTTOM", -width + xOffset, 0 + yOffset)
+-    ChatFrame1EditBox:SetPoint("BOTTOMRIGHT", nil, "BOTTOM", width + xOffset, 0)
++    ChatFrame1EditBox:SetPoint("BOTTOMLEFT", nil, "BOTTOM", (-width + xOffset) * scale, yOffset * scale)
++    ChatFrame1EditBox:SetPoint("BOTTOMRIGHT", nil, "BOTTOM", (width + xOffset) * scale, 0)
+   elseif position == "screenCenter" then
+     self.ScrollingMessagesWrapper:SetPoint("BOTTOMRIGHT", 0, 5)
+-    ChatFrame1EditBox:SetPoint("LEFT", nil, "CENTER", -width + xOffset, 0 + yOffset)
+-    ChatFrame1EditBox:SetPoint("RIGHT", nil, "CENTER", width + xOffset, 0)
++    ChatFrame1EditBox:SetPoint("LEFT", nil, "CENTER", (-width + xOffset) * scale, yOffset * scale)
++    ChatFrame1EditBox:SetPoint("RIGHT", nil, "CENTER", (width + xOffset) * scale, 0)
+   elseif position == "screenTop" then
+     self.ScrollingMessagesWrapper:SetPoint("BOTTOMRIGHT", 0, 5)
+-    ChatFrame1EditBox:SetPoint("TOPLEFT", nil, "TOP", -width + xOffset, 0 + yOffset)
+-    ChatFrame1EditBox:SetPoint("TOPRIGHT", nil, "TOP", width + xOffset, 0)
++    ChatFrame1EditBox:SetPoint("TOPLEFT", nil, "TOP", (-width + xOffset) * scale, yOffset * scale)
++    ChatFrame1EditBox:SetPoint("TOPRIGHT", nil, "TOP", (width + xOffset) * scale, 0)
+   end
+ 
+-  local font = addonTable.Core.GetFontByID(addonTable.Config.Get(addonTable.Config.Options.MESSAGE_FONT))
++  local font = addonTable.Core.GetScaledFont(addonTable.Core.GetFontByID(addonTable.Config.Get(addonTable.Config.Options.MESSAGE_FONT)), scale)
++  ChatFrame1EditBox:SetFontObject(font)
+   for _, r in pairs({ChatFrame1EditBox:GetRegions()}) do
+     if r:IsObjectType("FontString") then
+       r:SetFontObject(font)
 diff -u a/Chattynator/Skins/DevilForever.lua b/Chattynator/Skins/DevilForever.lua
 --- a/Chattynator/Skins/DevilForever.lua	1970-01-01 00:00:00.000000000 +0000
 +++ b/Chattynator/Skins/DevilForever.lua

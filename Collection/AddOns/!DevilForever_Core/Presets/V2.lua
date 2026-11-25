@@ -12,13 +12,15 @@ local units = {
 }
 -- oldCells: Grid2 cell width and height of the Old (V1) layout; New uses the preset's square cells.
 local modes = {
-  fhd={width=1920,height=1080,totemY=748,castHeight=30,smallWidth=123,smallHeight=29,footY=548,oldCells={96,32}},
-  qhd={width=2560,height=1440,totemY=1056,castHeight=34,smallWidth=166,smallHeight=39,footY=765,oldCells={120,44}},
-  uhd={width=3840,height=2160,totemY=1636,castHeight=40,smallWidth=251,smallHeight=58,footY=1180,oldCells={154,56}},
+  fhd={width=1920,height=1080,totemY=748,castHeight=30,smallWidth=123,smallHeight=29,oldCells={96,32}},
+  qhd={width=2560,height=1440,totemY=1056,castHeight=34,smallWidth=166,smallHeight=39,oldCells={120,44}},
+  uhd={width=3840,height=2160,totemY=1636,castHeight=40,smallWidth=251,smallHeight=58,oldCells={154,56}},
 }
--- Revision of the New (V2) layout written into the PitBull4 profile (dfLayoutRevision); the version
--- switcher shows New only for a profile that holds this revision.
-Core.Presets.layoutV2Revision = 2
+-- Revisions of the New (V2) and Old (V1) layouts written into the PitBull4 profile (dfLayoutRevision);
+-- the version switcher shows New only for a profile that holds the V2 revision. A profile holding an
+-- older revision of its version gets that version re-applied once at login (below).
+Core.Presets.layoutV2Revision = 3
+Core.Presets.layoutV1Revision = 1
 local function signature(row, fields)
   local parts = {}
   for _, key in ipairs(fields) do parts[#parts+1] = tostring(row[key]) end
@@ -92,8 +94,8 @@ for name, m in pairs(modes) do
         root.dfAuraGeometry["플레이어"].above=false
         root.dfAuraGeometry["대상"].above=false
         root.dfAuraGeometry["대상의 소환수"]={above=false}
+        root.dfLayoutRevision=version == 2 and Core.Presets.layoutV2Revision or Core.Presets.layoutV1Revision
         if version == 2 then
-          root.dfLayoutRevision=Core.Presets.layoutV2Revision
           local pixel=root.dfPixel
           local main, companion=root.layouts["보통"],root.layouts["소환수와 주시"]
           local w,h,cw,ch=main.size_x,main.size_y,companion.size_x,companion.size_y
@@ -104,15 +106,11 @@ for name, m in pairs(modes) do
           local icon=15*timer.size
           local outside=main.indicator_root_outside_margin or 0
           local gap=m.castHeight+4
-          -- focus midway between player and target, the row centred on the screen; the side gap is the frame
-          -- gap, widened when the player cast bar above the focus (Quartz Player with its icon on the left)
-          -- reaches past the focus, so the totem timer and the aura rows beside it stay clear of it
-          local q=quartz.Player
-          local sideGap=math.max(gap,math.ceil(q.w/2+q.h+(q.icongap or 0)-cw/2)+2)
+          -- focus midway between player and target, the row centred on the screen, one frame gap between frames
           local xFocus=(m.width-cw)/2
-          local xPlayer=xFocus-sideGap-w
+          local xPlayer=xFocus-gap-w
           local xPet=xPlayer-gap-cw
-          local xTarget=xFocus+cw+sideGap
+          local xTarget=xFocus+cw+gap
           local xTargetPet=xTarget+w+gap
           local castY=m.totemY-8-m.castHeight
           local bottom=castY-16-m.smallHeight
@@ -144,22 +142,20 @@ for name, m in pairs(modes) do
             root.units[label].enabled=true
             place(label,xTargetPet+(index-1)*(small.size_x+10),lower,small.size_x,small.size_y)
           end
-          local cast=spaces.CastBar.layouts["보통"]
-          cast.dfOutside,cast.dfOffset,cast.dfHeight=true,castY-bottom,m.castHeight
           for label, width in pairs({["플레이어"]=w,["대상"]=w,["플레이어의 소환수"]=cw,["주시 대상"]=cw,["대상의 소환수"]=cw}) do
             root.dfAuraGeometry[label]={above=true,width=width}
           end
           root.dfAuraGeometry["플레이어"].top_margin=math.ceil(outside+icon+4)
-          for module, x in pairs({Target=xTarget,Focus=xFocus,Pet=xPet}) do
+          -- every cast bar (player, target, focus, pet) sits in the cast row under its frame, as wide as the frame
+          for module, x in pairs({Player=xPlayer,Target=xTarget,Focus=xFocus,Pet=xPet}) do
             local q=quartz[module]
             if q then
+              local wide=(module == "Player" or module == "Target") and w or cw
               q.point,q.y="TOP",-castY*pixel
-              q.x=(x+(module == "Target" and w or cw)/2-m.width/2)*pixel
-              q.w,q.h=(module == "Target" and w or cw)-10,m.castHeight-10
+              q.x=(x+wide/2-m.width/2)*pixel
+              q.w,q.h=wide-10,m.castHeight-10
             end
           end
-          quartz.Player.y=-m.footY*pixel
-          root.dfAuraGeometry["주시 대상"].top_margin=math.max(2,bottom-ch-m.footY+8)
         end
         for label,row in pairs(root.units) do root.dfGeometry.units[label]=signature(row,unitFields) end
         for layout,row in pairs(root.layouts) do root.dfGeometry.layouts[layout]=signature(row,layoutFields) end
@@ -190,3 +186,63 @@ for name, m in pairs(modes) do
     end
   end
 end
+
+-- Re-apply after an update: a PitBull4 profile whose layout revision is older than this package's
+-- revision of the version it is on (New = dfLayoutV2) gets that version's compare preset applied once,
+-- the same way the status strip's New/Old switch does (Presets:Restore then Profiles:Go, which reloads
+-- the interface). Out of combat only; one attempt per profile and revision; one chat line after reload.
+local reapply = CreateFrame("Frame")
+local function profileState()
+  local addon = _G.PitBull4
+  local db = type(addon) == "table" and addon.db
+  local profile = type(db) == "table" and db.profile
+  if type(profile) ~= "table" then return end
+  local ok, key = pcall(function() return db:GetCurrentProfile() end)
+  key = ok and type(key) == "string" and key or "Default"
+  -- dfLayoutV2 is written by every collection layout (true = New, false = Old); a profile without it
+  -- was never laid out by the collection and is left as it is
+  if type(profile.dfLayoutV2) ~= "boolean" then return end
+  local new = profile.dfLayoutV2
+  local stored = type(profile.dfLayoutRevision) == "number" and profile.dfLayoutRevision or 0
+  return key, new, stored, new and Core.Presets.layoutV2Revision or Core.Presets.layoutV1Revision
+end
+function Core.Presets:ReapplyOutdatedLayout()
+  if Core.InCombat() then reapply:RegisterEvent("PLAYER_REGEN_ENABLED"); return false, "combat" end
+  local active = self:GetActive()
+  local key, new, stored, target = profileState()
+  if not active or not key or stored >= target then return false, "current" end
+  local suffix = new and "-v2" or "-v1"
+  if not self:IsRegistered(active .. suffix) then return false, "no compare preset" end
+  local tried = Core:DBTable("layoutRevision", "tried")
+  local mark = key .. "|" .. suffix
+  if tried[mark] == target then return false, "tried" end
+  tried[mark] = target
+  local ok, lines = self:Restore(active .. suffix)
+  if not ok then
+    for _, line in ipairs(type(lines) == "table" and lines or {lines}) do Core.Profiles:Print(line) end
+    return false, "restore"
+  end
+  Core:DBTable("layoutRevision").notice = (new and "New" or "Old") .. " 배치를 이 판에 맞춰 다시 적용했습니다(PitBull4·Quartz·Grid2)."
+  local went, why = Core.Profiles:Go()
+  if not went then
+    Core:DBTable("layoutRevision").notice = nil
+    Core.Profiles:Print("안 함: " .. tostring(why))
+    return false, "go"
+  end
+  return true
+end
+reapply:RegisterEvent("PLAYER_ENTERING_WORLD")
+reapply:SetScript("OnEvent", function(self, event)
+  if event == "PLAYER_ENTERING_WORLD" then
+    self:UnregisterEvent("PLAYER_ENTERING_WORLD")
+    local store = Core:DBTable("layoutRevision")
+    if store.notice then Core.Profiles:Print(store.notice); store.notice = nil end
+  else
+    self:UnregisterEvent("PLAYER_REGEN_ENABLED")
+  end
+  if C_Timer and C_Timer.After then
+    C_Timer.After(1, function() Core.Presets:ReapplyOutdatedLayout() end)
+  else
+    Core.Presets:ReapplyOutdatedLayout()
+  end
+end)
