@@ -92,3 +92,12 @@ Read before editing: `Claude/results/handoffs/phase27/proposal-70-auras.md` 1–
 | Minor 3 | no change (as decided). |
 
 Machine check after edit: grep for `45/45`, `통계 1위`, `대상 45`, `(67)` → only the B line that names 67 as the wider buff-below count remains.
+
+## Step 71 — stopped by the user's pick
+
+Read: `Claude/results/handoffs/phase27/brief-71.md` 1–21 (full); `proposal-70-auras.md` 1–30 (header, glossary, §0 — the rest was already in this session's context from the Step 70 fix, not re-read; no compaction happened). Not re-read: `brief-70.md`, `devil-aura-images.md`, `Presets/uhd.lua` (brief-71 asks for a re-read only after compaction).
+
+Changed: `proposal-70-auras.md` — one note added at the very top: the user's choice of 2026-11-26 18:32 (R246: target debuffs directly above the target frame, buffs above them; player buffs directly above the player frame, debuffs above them; nothing to the top-right), the rejection of 18:30 (R245), and that proposals A–D and §5–§7 are superseded; §1–§4 stay as record. Nothing else in the proposal was rewritten (the Step 71 four-proposal rewrite had not started when the stop arrived).
+
+Decision Queue (added):
+6. R246 fixes the order only. Not decided: icon sizes, max counts, whether own debuffs stay larger, pet/focus aura shape, and turning the game buff/debuff frame off (PitBull4 HideBlizzard `aura`, now default false — `Defaults/PitBull4.lua:250–254`) so nothing shows top-right. Under R246 the player block is the current preset order; the target block is that order reversed (debuffs next to the frame) — the managed rule (`PitBull4/Modules/Aura/Layout.lua:467–481`) stacks debuffs above buffs for every rule today, so the target needs a per-unit order switch (estimated, not checked in code beyond those lines).

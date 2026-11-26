@@ -27,3 +27,6 @@ layoutv2 46 PASS · detailslayout 21 · firststart 30/30 · core 110/110 · chat
 
 ## 다음
 커밋 → 게임이 꺼지면 설치 → 사용자 확인(§15–§17). 경미 5건·결정 대기는 최종 보고.
+
+## Addendum — 설치 (2026-11-26 18:31 +0900)
+게임 종료 확인(작업 대기 bo14ppx7n) 뒤 `Collection/tools/install_local.ps1 -StagedAddOns D:/Projects/Project_WF/_local_only/claude-p27-stage-cbfab55b/AddOns -BackupRoot D:/Projects/Project_WF/_local_only/claude-p27-backup-fe55b18b` → rc=0 · "installed 30 folders, 2797 files; installation.json in …claude-p27-backup-fe55b18b". 단계 묶음 = 커밋 77b4e898 (Step 64 Musca + Step 69). 첫 실행은 백업 폴더 이름 규칙(`claude-p27-backup-<8 hex>`) 오류로 rc=1, 아무것도 바꾸지 않음. 게임 확인은 사용자 몫.
