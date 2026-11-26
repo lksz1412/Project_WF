@@ -96,7 +96,13 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),
     assert p['dfLayoutV2'] and p['units']['대상의 소환수']['enabled']
     assert all('focuspet'!=row.get('unit') for row in p['units'].values())
     for label in ('플레이어','대상'):  # V2 rules replace V1's companion avoidance (no shrink when a pet or focus shows)
-        assert set(p['dfAuraGeometry'][label])-{'top_margin'}=={'above','width'},(label,p['dfAuraGeometry'][label])  # player: top_margin clears the totem timer
+        assert set(p['dfAuraGeometry'][label])-{'top_margin','order'}=={'above','width'},(label,p['dfAuraGeometry'][label])  # player: top_margin clears the totem timer
+    assert p['dfAuraGeometry']['대상'].get('order')=='debuffs_first' and 'order' not in p['dfAuraGeometry']['플레이어']  # R246
+    ns=db['PitBull4DB']['namespaces']
+    assert ns['HideBlizzard']['profiles']['Default']['global']['aura'] is True  # R245: the layout brings the hidden top-right buff frame
+    for layout in ('보통','대상','데빌 파티'):  # R247: the dispel border follows the layout (party: only its border keys)
+        a=ns['Aura']['profiles']['Default']['layouts'][layout]
+        assert (a['highlight'],a['highlight_style'],list(a['highlight_filters'].values())[0],list(a['highlight_filters_color_by_type'].values())[0])==(True,'border','!H',True),(mode,layout,a)
     q=db['Quartz3DB']['namespaces']
     assert q['Pet']['profiles']['Default']['point']=='TOP' and 'dfGeometry' not in q['Pet']['profiles']['Default']  # pet cast bar moves with the pet frame
     assert q['Swing']['profiles']['Default']['swingposition']=='bottom'
@@ -340,7 +346,8 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),
             band=(left,top-container.placement[5]-maximum,w,maximum)
             assert band[1]>=0 and not overlaps(band,foot),(mode,label,band,foot)
             bands.append(band)
-        assert bands[1][1]+bands[1][3]<=bands[0][1]+1e-6
+        lower,upper=(bands[1],bands[0]) if label=='대상' else (bands[0],bands[1])  # R246: the target's debuffs nearest its frame
+        assert upper[1]+upper[3]<=lower[1]+1e-6,(mode,label,bands)
     print('PASS',mode,width,'five Aura owners: normal max own+others native Lua rectangles; restricted public container bounds; no row/body/under-foot cast or swing overlap')
 print('PASS V2 aura consumers; restricted live renderer geometry remains client boundary')
 
@@ -493,14 +500,14 @@ def default_screen_map(mode,width,height,v2=False):
 # left edge about 23 % of the screen height from the right): window top on the tracker's top, right edge
 # on the tracker's left edge, square cells; the window grows down and left, clear of every preset rectangle.
 TRACKER={'fhd':(259,247,66),'qhd':(346,330,87),'uhd':(518,495,132)}
-KNOWN_OVERLAP={  # 66/87/132 px cells at the tracker spot (Step 69: 75 % of the 88/116/176 cells); waiting for the user's in-game feedback
+KNOWN_OVERLAP={  # 66/87/132 px cells at the tracker spot; target auras with debuffs nearest the frame (Step 72); waiting for the user's in-game feedback
     'fhd 1920 raid':['auras 대상 buffs alone', 'auras 대상 buffs avoided shown', 'auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown', 'auras 대상의 소환수 buffs alone', 'auras 대상의 소환수 buffs avoided shown', 'auras 대상의 소환수 debuffs alone', 'auras 대상의 소환수 debuffs avoided shown', 'unit 대상'],
     'fhd 1920 party':[],
     'qhd 2560 raid':['auras 대상 buffs alone', 'auras 대상 buffs avoided shown', 'auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown'],
     'qhd 2560 party':[],
-    'uhd 3840 raid':['auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown'],
+    'uhd 3840 raid':['auras 대상 buffs alone', 'auras 대상 buffs avoided shown', 'auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown'],
     'uhd 3840 party':[],
-    'uhd 3862 raid':['auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown'],
+    'uhd 3862 raid':['auras 대상 buffs alone', 'auras 대상 buffs avoided shown', 'auras 대상 debuffs alone', 'auras 대상 debuffs avoided shown'],
     'uhd 3862 party':[],
 }
 for v2 in (False,True):
@@ -564,10 +571,20 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),
     player,target=rects['unit 플레이어'],rects['unit 대상']
     assert abs((focus[0]-(player[0]+player[2]))-(target[0]-(focus[0]+focus[2])))<1e-6,(mode,player,focus,target)
     assert p['units']['주시 대상']['layout']=='주시' and p['units']['플레이어의 소환수']['layout']=='소환수와 주시'
-    assert aura['보통']==aura['대상'],(mode,aura['보통'],aura['대상'])
+    assert {k:v for k,v in aura['보통'].items() if k!='layout'}=={k:v for k,v in aura['대상'].items() if k!='layout'},(mode,aura['보통'],aura['대상'])
+    pl,tl=aura['보통']['layout'],aura['대상']['layout']
+    assert tl['debuff']['offset_y']==pl['buff']['offset_y']<pl['debuff']['offset_y'] and tl['buff']['offset_y']>tl['debuff']['offset_y'],(mode,pl,tl)  # R246 order
+    assert all({k:v for k,v in tl[kind].items() if k!='offset_y'}=={k:v for k,v in pl[kind].items() if k!='offset_y'} for kind in ('buff','debuff')),(mode,pl,tl)
     assert aura['주시']==aura['소환수와 주시'],(mode,aura['주시'],aura['소환수와 주시'])  # focus = pet aura icons and rows
     assert (aura['대상']['max_buffs'],aura['대상']['max_debuffs'])==(14,16)
-    assert aura['소환수와 주시']==aura['데빌 파티']  # pets keep the party aura table
+    # pets keep the party aura table; the dispel border (R247) only on player, target and party
+    assert {k:v for k,v in aura['소환수와 주시'].items() if k!='highlight'}=={k:v for k,v in aura['데빌 파티'].items() if k!='highlight'}
+    assert (aura['소환수와 주시']['highlight'],aura['주시']['highlight'],aura['데빌 파티']['highlight'])==(False,False,True)
+    for layout in ('보통','대상','데빌 파티'):
+        a=aura[layout]
+        assert (a['highlight_style'],list(a['highlight_filters'].values()),list(a['highlight_filters_color_by_type'].values()),
+                len(a['highlight_filters_custom_color']))==('border',['!H','','',''],[True,False,False,False],4),(mode,layout,a)
+    assert s.sv('PitBull4DB')['namespaces']['HideBlizzard']['profiles']['Default']['global']['aura'] is True  # R245
     size={'fhd':(20,32),'qhd':(27,43),'uhd':(40,64)}[mode]
     assert (aura['보통']['layout']['buff']['size'],aura['보통']['layout']['debuff']['my_size'])==size
     assert p['dfAuraGeometry']['주시 대상']==p['dfAuraGeometry']['플레이어의 소환수']=={'above':True,'width':p['layouts']['소환수와 주시']['size_x']},(mode,p['dfAuraGeometry']['주시 대상'])
@@ -578,12 +595,15 @@ for mode,width,height in [('fhd',1920,1080),('qhd',2560,1440),('uhd',3840,2160),
         r=rects['unit '+label]
         assert pet[0]-1e-6<=r[0] and r[0]+r[2]<=pet[0]+pet[2]+1e-6 and r[1]>=pet[1]+pet[3],(label,r,pet)
     assert p['units']['대상의 대상']['enabled'] is True and p['units']['대상의 대상의 대상']['enabled'] is True
-    assert p['dfLayoutRevision']==s.core.Presets.layoutV2Revision==8
-    # player and target aura rows at the same height above their frames (no raise)
-    assert p['dfAuraGeometry']['플레이어']=={'above':True,'width':player[2]}==p['dfAuraGeometry']['대상'],(mode,p['dfAuraGeometry']['플레이어'])
-    for kind in ('buffs','debuffs'):
-        a,b=rects['auras 플레이어 %s alone'%kind],rects['auras 대상 %s alone'%kind]
-        assert abs(a[1]-b[1])<1e-6 and abs(a[3]-b[3])<1e-6,(mode,kind,a,b)
+    assert p['dfLayoutRevision']==s.core.Presets.layoutV2Revision==9
+    # aura rows start at the same height above both frames (no raise): the player's buffs and the target's
+    # debuffs nearest the frame (R246), the other block above it
+    assert p['dfAuraGeometry']['플레이어']=={'above':True,'width':player[2]},(mode,p['dfAuraGeometry']['플레이어'])
+    assert p['dfAuraGeometry']['대상']=={'above':True,'width':player[2],'order':'debuffs_first'},(mode,p['dfAuraGeometry']['대상'])
+    pb,pd=rects['auras 플레이어 buffs alone'],rects['auras 플레이어 debuffs alone']
+    tb,td=rects['auras 대상 buffs alone'],rects['auras 대상 debuffs alone']
+    assert abs((pb[1]+pb[3])-(td[1]+td[3]))<1e-6,(mode,'nearest blocks end at the same height',pb,td)
+    assert pd[1]+pd[3]<=pb[1]+1e-6 and tb[1]+tb[3]<=td[1]+1e-6,(mode,'second block above the first',pb,pd,tb,td)
     # Dominos totem bar and pet bar in the row under the player frame (between the cast row with its swing
     # line and the action bars), each ending at the player frame's right edge (a class shows one of them);
     # the PitBull4 totem timer 8 px left of the totem bar, vertically centred on it; clear of everything

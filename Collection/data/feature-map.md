@@ -44,7 +44,7 @@ Devil Forever
 
 | 기능 | 담당 | 적용 경로 |
 |---|---|---|
-| 플레이어·대상·소환수·주시·파티 유닛 | `PitBull4` 초기 시험판 | Core 초기 프리셋. 아군 우측·적군 좌측 배치. 오라 필터와 세부 설정은 PitBull4 |
+| 플레이어·대상·소환수·주시·파티 유닛 | `PitBull4` 초기 시험판 | Core 초기 프리셋. 아군 우측·적군 좌측 배치. 오라: 대상은 약화 효과가 프레임 바로 위(그 위 강화 효과), 플레이어는 강화 효과가 바로 위(그 위 약화 효과). 게임 기본 강화·약화 효과 창(오른쪽 위) 숨김. 해제 가능한 약화 효과 테두리(플레이어·대상·파티, 종류 색). 오라 필터와 세부 설정은 PitBull4 |
 | 유닛 프레임 대체판 | `ForeverUnitFrames` · `DevilForever_FUFDefaults` · `DevilForever_Castbars` | 해당 해상도의 별도 비교 프로필에서 `/dffuf layout fhd`, `qhd`, `uhd` 중 하나로 좌표를 적용한다. 최종 판은 [같은 접속의 실제 비교](../../References/codex-verify/one-session-review.md) 뒤 결정 |
 | 플레이어·대상·주시·소환수 시전 | `Quartz` | Core 초기 프리셋의 위치와 크기. 시전 동작 옵션은 Quartz |
 | 이름표·이름표 시전 | 게임 기본 이름표 · `DevilForever_Skin_Nameplates` | [해상도별 이름표 크기](../AddOns/DevilForever_Skin_Nameplates/NameplateProfiles.lua). 실제 쓰기 가능한 이름표 요소에 적용 |

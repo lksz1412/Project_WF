@@ -465,20 +465,24 @@ function PitBull4_Aura:GetManagedLayoutDB(frame, db)
     return cfg
   end
   local buff, debuff = config("buff"), config("debuff")
-  buff.offset_y = math.max(2, db.layout.buff.offset_y, rule.top_margin or 0)
+  -- rule.order "debuffs_first": the debuff block right above the frame and the buff block above it;
+  -- otherwise the buff block first. The first block starts at the lower of the two layout offsets.
+  local first, second, first_max = buff, debuff, db.max_buffs
+  if rule.order == "debuffs_first" then first, second, first_max = debuff, buff, db.max_debuffs end
+  first.offset_y = math.max(2, math.min(db.layout.buff.offset_y, db.layout.debuff.offset_y), rule.top_margin or 0)
   local function rows_height(count, size)
-    local columns = math.max(1, math.floor(width / (size + buff.col_spacing)))
-    return math.ceil(count / columns) * (size + buff.row_spacing)
+    local columns = math.max(1, math.floor(width / (size + first.col_spacing)))
+    return math.ceil(count / columns) * (size + first.row_spacing)
   end
-  -- own and others' buffs share one flow (Forever.lua update_group) unless own buffs start a new row
-  -- (new_row_size with a different own size); the debuff block starts right above what they can fill
-  local buff_rows
-  if buff.new_row_size and buff.my_size ~= buff.size then
-    buff_rows = rows_height(db.max_buffs, buff.my_size) + rows_height(db.max_buffs, buff.size)
+  -- own and others' auras share one flow (Forever.lua update_group) unless own auras start a new row
+  -- (new_row_size with a different own size); the second block starts right above what the first can fill
+  local first_rows
+  if first.new_row_size and first.my_size ~= first.size then
+    first_rows = rows_height(first_max, first.my_size) + rows_height(first_max, first.size)
   else
-    buff_rows = rows_height(2 * db.max_buffs, math.max(buff.my_size, buff.size))
+    first_rows = rows_height(2 * first_max, math.max(first.my_size, first.size))
   end
-  debuff.offset_y = buff.offset_y + buff_rows + math.max(2, buff.row_spacing)
+  second.offset_y = first.offset_y + first_rows + math.max(2, first.row_spacing)
   managed_layouts[frame] = {db = db, rule = rule, shown = shown, width = frame:GetWidth(),
     max_buffs = db.max_buffs, max_debuffs = db.max_debuffs, buff = db.layout.buff, debuff = db.layout.debuff,
     source = source, adjusted = adjusted}

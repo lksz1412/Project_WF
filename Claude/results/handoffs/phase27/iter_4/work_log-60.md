@@ -1352,3 +1352,102 @@ Raw outputs: `<scratch>/s64m.CmfZ/s69*.txt`, `lv2*.txt`.
 8. **Tiny Threat rows.** Tiny Threat draws its own rows with its own settings, not touched; the check list asks for its text size.
 9. **uhd 3862 width.** The stack ends at 3840 (22 px short of the edge) because the uhd rects are fixed.
 10. **Layout revision 8.** It rewrites every collection profile's layout values once at the next login; that is the existing catch-up behaviour.
+
+## Step 72 (R245-R247): aura order, nothing top right, dispel border
+
+Brief `Claude/results/handoffs/phase27/brief-72.md` 1-36, read in full. No compaction since Step 69. Base commit cfb5d3ef (clean tree at start).
+
+Read (file:lines):
+- `Presets/uhd.lua` 480-670 (Portrait/Border/Aura/LuaTexts, party layout, copies to 소환수와 주시/주시, `dfAuraGeometry`, namespace fragment list); `Presets/fhd.lua` and `qhd.lua` 493-512, 544-545, 578-580 (same shape)
+- `Presets/V2.lua` 1-60 (layouts kept, revision) and 135-215 (`dfAuraGeometry`, copies, `replace`)
+- `PitBull4/Modules/Aura/Layout.lua` 395-498 (managed rule; callers `Layout.lua:489`, `Forever.lua:263`)
+- `PitBull4/Modules/Aura/Highlight.lua` 100-210; `Modules/Aura/Options.lua` 20-35 (type colours), 105-130 (highlight defaults)
+- `PitBull4/Modules/HideBlizzard/HideBlizzard.lua` 1-70, 280-310, 380-395
+- `Defaults/PitBull4.lua` 1-40, 150-190, 240-262, 515-560 (module settings sit in each namespace's profile under `global`)
+- `Presets.lua` sections and validation (grep 7-61, 143-151, 374-399)
+- `tools/patches.py` 1-40
+- `tests/layoutv2/run.py` 85-105, 283-352, 560-592
+- install guide line 65 · `data/feature-map.md` 47 · check list (end)
+
+### Changes
+
+- **(a) Target order.**
+  - The patched PitBull4 managed rule (`Modules/Aura/Layout.lua` `GetManagedLayoutDB`) takes `rule.order == "debuffs_first"`. The debuff block starts at the lower of the two layout offsets and the buff block sits above what the debuff block can fill: own debuffs in their own rows when `new_row_size` and `my_size ~= size`, else one shared flow. Otherwise the buff block comes first, as before.
+  - V2 gives `dfAuraGeometry["대상"]` `order = "debuffs_first"`, so the preset's own offsets no longer decide the order.
+  - The presets swap the "대상" offsets the same way, for a profile without the rule: debuff at the base offset, buff at base + own-debuff rows + others' rows + spacing.
+  - Sizes are kept.
+  - Patch regenerated: `patches/PitBull4.patch`.
+- **(b) Nothing top right.** Each preset gets a PitBull4 namespace fragment `HideBlizzard = {global = {aura = true}}`, added to the namespace fragment list. The `aura` hider (`HideBlizzard.lua:295-296`) hides `BuffFrame` and `TemporaryEnchantFrame` (the weapon enchant icons: poisons, oils, shaman imbues), or `DebuffFrame` on a client without `TemporaryEnchantFrame`. Decision Queue 1.
+- **(c) Dispel border on "보통", "대상" and "데빌 파티":**
+  - `highlight = true`
+  - `highlight_filters = {"!H", "", "", ""}`
+  - `highlight_filters_color_by_type = {true, false, false, false}`
+  - `highlight_filters_custom_color` = PitBull4's own four defaults (same length)
+  - `highlight_style = "border"`
+
+  Why four entries: AceDB fills missing array slots from PitBull4's defaults (`!L`, `!I`, `!J`), so a one-entry list would still run them. Empty names are skipped (`Highlight.lua:126`).
+
+  Why `border`: the frames carry the 24 px Devil border art (Border module `size = 24`), and the highlight is a full-frame ADD texture inside it (`Highlight.lua:190-200`). The thick style keeps a visible band next to that art, where `thinborder` would be a hairline. Tier: estimate, check list asks.
+
+  Focus and personal pet copy the party aura table, so they are set back to `highlight = false` (scope).
+- **(d) Catch-up.**
+  - `layoutV2Revision` 8 → 9.
+  - The V2 copy of the Aura namespace keeps only the dispel keys of "데빌 파티", so the party's own geometry is not rewritten.
+  - The new HideBlizzard fragment has no layouts, so V2 copies it whole.
+  - `dfAuraGeometry` is replaced (`replace`).
+  - Foreign PitBull4 profiles stay out: the existing catch-up test case "fresh install and foreign profile -> nothing" passes.
+- **(e) Docs.** Check list §18; install guide line after Cooldown Manager; `data/feature-map.md:47`.
+
+### Numbers before → after (screen map aura bands, physical px, x y w h)
+
+| | fhd | qhd | uhd |
+|---|---|---|---|
+| player buffs | 581,525,256,64 (same) | 782,773,342,85 (same) | 1186,1238,512,124 (same) |
+| player debuffs | 581,377,256,144 (same) | 782,578,342,191 (same) | 1186,954,512,280 (same) |
+| target buffs | 1083,525,256,64 → 1083,377,256,64 | 1436,773 → 1436,578 | 2142,1238 → 2142,954 |
+| target debuffs | 1083,377,256,144 → 1083,445,256,144 | 1436,578 → 1436,667 | 2142,954 → 2142,1082 |
+| target preset offsets (buff / debuff) | 4 / 4+rows → buff 4+3·34+2·22+2 = 152, debuff 4 | buff 5+3·45+2·29+2 = 200, debuff 5 | buff 8+3·66+2·42+2 = 292, debuff 8 |
+
+- **Stack height:** the total height of each stack is the same as before (uhd top 954). The target's debuff block now ends at the frame's top, at the same height as the player's buff block.
+- **What sits above:**
+  - The Grid2 40-player window still overlaps the target aura bands (pinned before, re-pinned; the party windows are clear).
+  - The Details stack and the quest tracker estimate are clear (layoutv2 stack test).
+  - The target-pet chain is beside the target, not above it.
+
+### Impact map
+
+| Place | Type | How found | Impact | Why |
+|---|---|---|---|---|
+| `Presets/{fhd,qhd,uhd}.lua` Aura loop | data | read | changed | target offsets swapped; highlight values |
+| same, "데빌 파티" | data | read | changed | highlight values |
+| same, copies "소환수와 주시"/"주시" | data | read | changed | highlight back to false (copies of the party table) |
+| same, HideBlizzard namespace + fragment list | data | read | changed | R245 |
+| `Presets/V2.lua` | code | read | changed | target order rule, party dispel-key copy, revision 9 |
+| `PitBull4/Modules/Aura/Layout.lua` | code | read | changed | `order` in the managed rule |
+| `patches/PitBull4.patch` | generated | `patches.py regenerate` | changed | +15/−11 lines |
+| `Presets.lua` catch-up | code | read | check only | revision-driven, unchanged |
+| `Defaults/PitBull4.lua` (HideBlizzard `castbar = false`, Aura "대상"/"파티" `highlight = false`) | data | read | check only | defaults for a new profile; the preset fragments written after them carry the new values; layout "파티" is not the collection's party layout ("데빌 파티") |
+| `Modules/Aura/Forever.lua:263` | code | grep | check only | calls the same rule |
+| `tests/layoutv2/run.py` | test | read | changed | catch-up asserts (order, HideBlizzard, dispel keys), target ≠ player only in offsets, order test, highlight values on all presets, pets/party highlight, revision 9, aura band order per owner, Grid2 overlaps re-pinned |
+| `tests/firststart`, `core`, `pitbull4`, `pitbull4runtime`, `detailslayout`, `chatsetup` | test | run | check only | pass unchanged |
+| install guide, `data/feature-map.md:47`, check list §18 | doc | grep | changed | |
+
+### Commands (verdict lines)
+
+| Command | Verdict |
+|---|---|
+| `python -I Collection/tools/extract.py` | rc=0 |
+| `python -I <scratch>/s51.XsBX/devnull_run.py Collection/tools/patches.py regenerate --package PitBull4` / `verify` | wrote 332689 bytes / `patches=8 unmodified=25 failures=0` |
+| `python -I Collection/tools/luacheck.py "Collection/AddOns/!DevilForever_Core/Presets" Collection/AddOns/PitBull4/Modules/Aura/Layout.lua` | `checked=5 failed=0` |
+| `python -I Collection/tests/layoutv2/run.py` | first rc=1 (old assertions: player = target aura table, revision 8, band order, Grid2 pins); after the test update rc=0 · 46 PASS |
+| `firststart` · `core` · `pitbull4runtime` · `pitbull4` · `detailslayout` · `chatsetup` | 30/30 · 110/110 · 20/20 · 6/6 · rc=0 · 47/47 |
+| build dry-run pitbull4 / fuf (devnull wrapper) | rc=0 · 30/2800 · 32/2744 |
+
+Raw outputs: `<scratch>/s72.dF1D/*.txt`.
+
+### Decision Queue
+
+1. **Weapon enchants.** The `aura` hider also hides the weapon enchant frame (poisons, oils, shaman weapon imbues). PitBull4's own weapon display is off in these layouts (`enabled_weapons = false`), so those icons show nowhere now. Option: `enabled_weapons = true` on "보통". Not done: outside the brief.
+2. **Border style.** `border` is my choice for visibility next to the 24 px Devil art; not seen in game.
+3. **Empty party layout possible.** The catch-up writes the party layout's dispel keys even into a collection profile that has no "데빌 파티" Aura layout yet (it then holds only those keys; PitBull4's layout defaults supply the rest).
+4. **Reserved block height.** Target debuffs reserve the worst case: 16 own at 64 px plus 16 others at 40 px on uhd. With few debuffs, the buffs sit higher than the debuffs need. This is the same rule the player's debuff block already follows.

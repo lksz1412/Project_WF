@@ -52,3 +52,44 @@
 - 구조: 제3자 원본은 References ZIP → `Collection/upstream`(extract.py), 고친 것은 `Collection/patches/*.patch`(patches.py verify/regenerate/reapply), 배포 ZIP 은 `build.py --install [--variant fuf]` 로 게임이 읽는 파일만. 빌드 전제: Collection/upstream 추출, GNU diff/patch.
 - 0.1.5 ZIP 두 개는 127MB 라 저장소에 없음(gitignore) — 다시 만들려면 위 명령. sha256 은 Step 40d 이력.
 - 남은 일: Result PHASE_25 「Open Issues」·「Decision Queue」.
+
+## 갱신 — 2026-11-26 18:45 +0900 (Phase 27 진행 중 · 세션 전환)
+
+작업 가지 `claude/phase27-local-20261124` · 워크트리 `D:/Projects/Project_WF/_local_only/claude-phase27` · 이 갱신의 커밋 = 아래 인계 커밋(Step 72 코드 포함 · 검수 전).
+
+### ⑤ 인계 사슬
+1. `Codex/docs/HANDOVER_v0.1.0.md`(Codex Step 1–5) → 2. 이 파일 본문(Phase 0–25) → 3. 「갱신 — 2026-11-20」(Phase 25 끝) → 4. **이 절**(Phase 27 중간 · 이 세션은 컴팩션 여러 번 · 마지막 컴팩션 뒤 복구 읽기 기록 = `Claude/results/Step 71 — …md`).
+다음 세션 읽는 순서: 이 절 → 마스터 플랜 `Claude/plans/2026-11-18-devil-forever-addon-collection-plan.md` 본문 → Phase 27 세부 계획서 `Claude/plans/2026-11-18-devil-forever-addon-collection-phase27-세부계획.md`(Step 51–75 표) → 최신 스텝 이력 `Claude/results/Step 74 — DevilUI 6.1 Alpha 원본 설치.md`·`Step 71 — …`·`Step 70 — …`·`Step 69 — …` → 요청 대장 `Claude/results/REQUEST_LEDGER_phase27.md`(R154–R249) → 분업 기록 `Claude/results/handoffs/phase27/`(SESSIONS.md · TRIAGE_phase27.md · brief-*.md · iter_4/work_log-60.md 「Step 64」「Step 69」「Step 72」 · iter_4/work_log-70.md).
+
+### ① 받은 지시 (이번 세션 끝 무렵 — 원문·전 행은 요청 대장)
+- R232 Musca Auras 받기 → 1.21.0 넣음, 소리 끔(`WeakAurasSaved.soundsMuted`, 처음 설치 때만).
+- R233–R237 Grid2 75%·글씨 키움 · 대화창 높이 · Details 를 3번 대화창 위(도미노스 끝~화면 오른쪽 끝)에 위=어그로·아래=딜 · 글씨 키움 → Step 69.
+- R238–R244 버프·디버프 두 벌 문제 → 옛 Devil 조사·제안 4종(Step 70, `Claude/results/handoffs/phase27/proposal-70-auras.md`).
+- R245 「뭔 개소리야 오른쪽 위로 왜 보내.」 — 오른쪽 위(게임 기본 버프 창)로 보내는 안은 전부 거절.
+- R246 「적은 적한테 걸린 디버프가 바로 위에 오게 내캐릭터는 버프가 바로 위에 오게해.」 → 제안 4종 대체(사용자가 직접 고름).
+- R247 「핏불 테두리 … 저주, 독, 마법에 따라 테두리 색 … 디버프는 해제가능한것만」 → 답함: PitBull4 Aura highlight 있음(`PitBull4/Modules/Aura/Highlight.lua`, 필터 `!H`) · Step 72 에서 켬.
+- R248 「테마 13종 다시 만들라했다. 다 만들엇다는데 니가 검수좀해봐」 → Step 73 (아직 안 함).
+- R249 「https://www.inven.co.kr/board/wow/1636 … https://wow.inven.co.kr/dataninfo/addonpds/detail.php?idx=45 … 6.1 알파 … 진짜 찐 근본 … 우리것은 백업하고 저 설치하는거 컴퓨터 유즈로 설치해봐라」 → Step 74 설치 끝(EXE 는 실행 안 함 · 정적 추출본 복사) · 포럼 글 읽기 = Step 75(아직 안 함).
+- 마지막 지시: 「바로 다음 세션에서 작업이어가려고한다.」 · 「다음세션한테 넘길 준비해줘.」
+
+### ② 작업 요약 (이번 세션)
+- Step 64 Musca Auras 1.21.0 + Step 69(Grid2·Details·글씨) 커밋 77b4e898, 18:31 게임에 설치(백업 `_local_only/claude-p27-backup-fe55b18b`).
+- Step 70 조사·제안 4종(365d3cad) → R245/R246 로 대체. Step 71(고쳐 쓰기) 중단 기록(cfb5d3ef).
+- Step 72 코드(같은 A2 a64ebefa708243db9, 게이트 전부 통과, **검수 전**) — 대상 = 디버프가 창 바로 위·버프 그 위(`PitBull4/Modules/Aura/Layout.lua` 에 `order = "debuffs_first"` 추가, `V2.lua` 에서 대상만 사용, `patches/PitBull4.patch` 다시 만듦) · 내 캐릭터 = 버프가 바로 위(그대로) · HideBlizzard `aura` 켬(오른쪽 위 게임 버프 창·무기 강화 창 숨김) · 해제 가능한 디버프 테두리(`highlight=true`, 필터 `{'!H','','',''}`, 종류별 색, style `border`, 보통·대상·데빌 파티 · 주시·소환수는 끔) · layout revision 8→9 · 점검표 §18. 상세·영향 지도·판정 줄 = `iter_4/work_log-60.md` 「Step 72」(1356행부터) · 원 출력 스크래치 `s72.dF1D`(휘발).
+- Step 74 DevilUI 6.1 Alpha 원본을 게임에 설치(SPECIAL 변형) — 지금 게임 폴더는 Devil 6.1 Alpha 상태다. 우리 것 = `Interface/AddOns.BeforeDevil61Alpha-b3cc320e` · SavedVariables 3곳 `SavedVariables.BeforeDevil61Alpha-b3cc320e` · WTF 사본·되돌리는 순서 `_local_only/claude-p27-devil61-backup-b3cc320e/RESTORE.txt` · Fonts 에 2002.ttf·2002b.ttf·K_Damage.TTF 추가.
+
+### ③ 미완료 항목
+1. **Step 72 검수** — 같은 검수 B(a5573f01b964966e2)는 이 세션과 함께 끝난다 → 다음 세션은 새 `bada-a3-reviewer` 로 P1 코드 ② 검수(대상: brief-72.md 의 파일들 + work_log-60 「Step 72」 실행 출력 절 · 「이미 정한 것」 = TRIAGE_phase27.md 머리). 고침은 새 `bada-a2-coder`. 그 뒤 Step 72 스텝 이력 파일 작성·커밋.
+2. **설치 보류** — 게임은 지금 Devil 6.1 Alpha. 사용자가 그걸 본 뒤 "되돌려" 하면: RESTORE.txt 순서로 우리 것을 되돌리고 → Step 72 를 포함한 새 stage(`stage_build.py`) → `install_local.ps1 -StagedAddOns … -BackupRoot D:/Projects/Project_WF/_local_only/claude-p27-backup-<8 hex>`(백업 폴더 이름 규칙 지킬 것 · 게임 꺼진 상태).
+3. **Step 73** — Codex 테마 13종 검수: `_local_only/codex-hud-redraw-20261126`(별도 저장소, 가지 `codex/hud-redraw-20261126`, HEAD 9313a13a 2026-11-26 16:26 · 커밋 727d2425→9313a13a · Codex 계획 `Codex/plans/2026-11-26-devil-forever-hud-redraw-plan.md` · 결과 `References/codex-appearance/28-devil-structure/`(artwork·final-runtime·themes_13.png·report.json) · Codex 발주문 `Collection/codex-briefs/appearance-28-devil-structure.md`). 읽기만 · 합치지 않음 · `bada-b-auditor` P4 ③.
+4. **Step 75** — Devil UI 포럼(board 1636) 글 읽기, 주장마다 URL.
+5. 그 뒤: Steps 54/55(릴리스, ReleaseCatalog.json 다시 쓰기 — Hekili 빼고 Musca 넣기) · Step 56 재실행 · Step 57 Phase 닫기(Result md+json, 이력, push, merge — R67).
+6. 결정 대기(최종 보고에서 한 번에): Musca 1.22.0 있음 · `WeakAurasSaved` 는 `/dfp` 저장·복원에 없음 · `/wa` 창 클릭 소리·접속마다 음소거 알림 · 주술사 묶음 Maelstrom 오라 미확인 · Grid2 글씨 한 번 바꿈이 사용자가 고른 12/14/18 도 바꿀 수 있음 · revision 이 PitBull4/Quartz/Dominos/SexyMap 을 한 번 다시 씀 · Grid2 0.64 배율 원인 미확정 · fhd Details 자리 빠듯 · Details 쌓기가 오른쪽 장식과 겹침 · 대화창 높이 문제 = 테마 그림 쪽(Codex) · Step 72 결정 대기 4건(무기 강화 표시가 이제 어디에도 없음 · 두꺼운 테두리 게임 미확인 · 파티 레이아웃 없는 프로필은 테두리 값만 생김 · 대상 디버프 칸이 최악 경우 크기로 잡혀 버프가 높게 뜸) · Step 74: 판 차이(게임 Interface 16001 vs Devil 60100 — 구버전 애드온 불러오기 필요·오류 가능) · SPECIAL 선택 · Config.wtf 안 덮음.
+
+### ④ 다음 세션 주의점
+- 이 세션의 서브(A2·B·A1)는 다시 부를 수 없다 → Phase 27 같은 역할로 새 서브를 띄우고 입력 파일을 전문으로 넘긴다(SESSIONS.md 에 새 행).
+- 게임 폴더는 지금 **Devil 6.1 Alpha**. 사용자 확인 전에 설치·되돌리기 하지 않는다. `AddOns.BeforeDevilForever015-3434ca83`·Codex 백업 `live-015-pitbull-backup-3434ca83`·`!BugGrabber`·`BugSack`(원본)·옛 main 워크트리·다른 `_local_only` 워크트리는 손대지 않는다.
+- 내려받은 EXE·코드는 실행하지 않는다(Devil 설치기 포함 — 정적 추출본 `work/old-reference-collection-0qlzzyxg/extracted-alpha-nsis` 를 씀).
+- 비밀번호·계정·인증 코드 입력 금지 · 게임 플레이(전투·이동·파티·거래·대화·시스템 설정 변경) 금지 · Hekili 코드·패치·기본값 손대지 않음 · force-push·이력 조작 금지 · `v0.1.4` 태그·릴리스 수정 금지 · 사용자가 없을 때 컴퓨터 유즈 권한 다시 요청하지 않음 · 팝업 도구 금지 · 작업 중 정리 삭제 금지(정리는 끝에 한 번 — 스크래치 `s51.*`·`s72.*` 등과 `_local_only/claude-p27-stage-*`).
+- 다운로드는 사용자 직접 승인 필요(R240 은 인벤 Devil 글 첨부만).
+- master effort 는 앱에서 medium.

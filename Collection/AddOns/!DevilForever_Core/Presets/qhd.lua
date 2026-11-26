@@ -491,6 +491,7 @@ for _, layout in ipairs({"보통", "대상", "대상의대상"}) do
     normal_color={1,1,1,.66}}
 end
 proposal.namespaces.Aura = {global={enabled=true}, layouts={}}
+proposal.namespaces.HideBlizzard = {global={aura=true}}  -- R245: no buff/debuff frame at the top right
 for _, layout in ipairs({"보통", "대상"}) do
   local buffCount = 14
   local debuffCount = 16
@@ -502,12 +503,22 @@ for _, layout in ipairs({"보통", "대상"}) do
       width_type="percent",width_percent=1,size=size,my_size=size,size_to_fit=false,
       sort=true,reverse=false,new_row_size=true,row_spacing=spacing,col_spacing=spacing,filter=""}
   end
-  local buff = placement(5)
-  local debuff = placement(5+buffRows*(size+spacing)+spacing)
-  debuff.my_size = 43
+  local ownDebuff = 43
+  local buff, debuff
+  if layout == "대상" then
+    -- R246: the target's debuffs right above the frame (own debuffs in their own larger rows), its buffs above them
+    local ownPerRow = math.max(1, math.floor(342 / (ownDebuff + spacing)))
+    local debuffHeight = math.ceil(debuffCount / ownPerRow) * (ownDebuff + spacing) + math.ceil(debuffCount / perRow) * (size + spacing)
+    debuff = placement(5)
+    buff = placement(5+debuffHeight+spacing)
+  else
+    buff = placement(5)
+    debuff = placement(5+buffRows*(size+spacing)+spacing)
+  end
+  debuff.my_size = ownDebuff
   debuff.reverse = true
   proposal.namespaces.Aura.layouts[layout] = {enabled=true,enabled_buffs=true,enabled_debuffs=true,
-    enabled_weapons=false,max_buffs=buffCount,max_debuffs=debuffCount,highlight=false,highlight_style="thinborder",
+    enabled_weapons=false,max_buffs=buffCount,max_debuffs=debuffCount,highlight=true,highlight_style="border",highlight_filters={"!H","","",""},highlight_filters_color_by_type={true,false,false,false},highlight_filters_custom_color={{1,1,1,1},{1,1,1,1},{1,0,0,1},{1,0,0,1}},
     cooldown_text={my_buffs=true,my_debuffs=true},layout={buff=buff,debuff=debuff}}
 end
 proposal.namespaces.LuaTexts = {global={enabled=true}, layouts={}}
@@ -542,7 +553,7 @@ local function partyAura(offsetX, width)
     new_row_size=false,row_spacing=2,col_spacing=2,filter=""}
 end
 proposal.namespaces.Aura.layouts["데빌 파티"] = {enabled=true,enabled_buffs=true,enabled_debuffs=true,enabled_weapons=false,
-  max_buffs=8,max_debuffs=3,highlight=false,highlight_style="thinborder",layout={buff=partyAura(0,284),debuff=partyAura(292,142)}}
+  max_buffs=8,max_debuffs=3,highlight=true,highlight_style="border",highlight_filters={"!H","","",""},highlight_filters_color_by_type={true,false,false,false},highlight_filters_custom_color={{1,1,1,1},{1,1,1,1},{1,0,0,1},{1,0,0,1}},layout={buff=partyAura(0,284),debuff=partyAura(292,142)}}
 proposal.namespaces.LuaTexts.layouts["데빌 파티"] = {enabled=true,first=false,elements={
   ["Lua:이름"]={enabled=true,exists=true,attach_to="HealthBar",location="top_left",position=1,size=.9,code="Outline() return Name(unit)",events={UNIT_NAME_UPDATE=true}},
   ["Lua:생명력"]={enabled=true,exists=true,attach_to="HealthBar",location="bottom_right",position=1,size=.8,code='Outline() return "%s/%s",HP(unit),MaxHP(unit)',events={UNIT_HEALTH=true,UNIT_MAXHEALTH=true}},
@@ -578,6 +589,7 @@ companionTexts["Lua:시전"], companionTexts["Lua:시전시간"] = nil, nil
 proposal.namespaces.Aura.layouts["소환수와 주시"] = DevilForever_Core.CopyTable(proposal.namespaces.Aura.layouts["데빌 파티"])
 -- The focus frame has the pet frames' size, so it also has their aura icons and rows.
 proposal.namespaces.Aura.layouts["주시"] = DevilForever_Core.CopyTable(proposal.namespaces.Aura.layouts["데빌 파티"])
+for _, layout in ipairs({"소환수와 주시", "주시"}) do proposal.namespaces.Aura.layouts[layout].highlight = false end
 proposal.namespaces.CastBar.layouts["소환수와 주시"] = {enabled=false}
 -- The focus has the companion frame look and the pet aura table (set above).
 proposal.profile.layouts["주시"] = DevilForever_Core.CopyTable(proposal.profile.layouts["소환수와 주시"])
@@ -661,7 +673,7 @@ return proposal
     -- The target-pet chain rows; last, so its version is the receipt the profile keeps.
     def.fragments[#def.fragments + 1] = {folder="PitBull4",savedVariable="PitBull4DB",addonVersion="v4.2.50-forever.1",
       version=6,section="profile",profile="Default",values={units=targetPetChains}}
-    for _, namespace in ipairs({"Portrait", "Border", "Aura", "LuaTexts", "CastBar"}) do
+    for _, namespace in ipairs({"Portrait", "Border", "Aura", "LuaTexts", "CastBar", "HideBlizzard"}) do
       def.fragments[#def.fragments + 1] = {folder="PitBull4",savedVariable="PitBull4DB",addonVersion="v4.2.50-forever.1",
         version=1,section="profile",profile="Default",namespace=namespace,values=proposal.namespaces[namespace]}
     end

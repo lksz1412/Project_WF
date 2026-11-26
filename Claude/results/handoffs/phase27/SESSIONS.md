@@ -12,3 +12,5 @@
 | Image reader | bada-image-reader | a3ce684aa20d6f04e | screenshot 17 (image-17-reading.md) | image | 0 | — | done |
 | Image reader | bada-image-reader | a6436d6e5444dbaec | Devil sample images (devil-aura-images.md) | 70 images | 0 | — | done |
 | A1 analyst | bada-a1-analyst | a6cb8953b7914458e | Step 70 survey + four proposals (brief-70.md) | per work_log-70 | 0 | — | running (from 08:27) |
+| A1 analyst | bada-a1-analyst | a6cb8953b7914458e | Step 71 rewrite (brief-71.md) — stopped by R246 | brief-71 1–21, proposal 1–30 | 0 | — | done 18:34 |
+| Work A (code) | bada-a2-coder | a64ebefa708243db9 | Step 72 aura order + dispel border (brief-72.md) | per work_log-60 「Step 72」 | 0 | — | done 18:44 — session ends 2026-11-26 (handover); next session spawns new subs |

@@ -25,7 +25,7 @@ local TOTEM_BUTTONS, TOTEM_SPACING = 6, 2
 -- (dfLayoutRevision, with dfLayoutV2 = true). A collection profile below it, or one still on the earlier
 -- second layout (dfLayoutV2 = false), gets this layout written by itself at the next load (Presets.lua,
 -- layout catch-up).
-Core.Presets.layoutV2Revision = 8
+Core.Presets.layoutV2Revision = 9
 local function signature(row, fields)
   local parts = {}
   for _, key in ipairs(fields) do parts[#parts+1] = tostring(row[key]) end
@@ -48,7 +48,14 @@ for name, m in pairs(modes) do
         if f.folder == "PitBull4" and f.namespace then
           local copy = Core.CopyTable(f)
           if copy.values.layouts then
+            local party = copy.namespace == "Aura" and copy.values.layouts["데빌 파티"]
             for layout in pairs(copy.values.layouts) do if not layouts[layout] then copy.values.layouts[layout]=nil end end
+            -- the party layout keeps its own geometry; only its dispel border follows the layout (R247)
+            if party then
+              copy.values.layouts["데빌 파티"]={highlight=party.highlight,highlight_style=party.highlight_style,
+                highlight_filters=party.highlight_filters,highlight_filters_color_by_type=party.highlight_filters_color_by_type,
+                highlight_filters_custom_color=party.highlight_filters_custom_color}
+            end
           end
           def.fragments[#def.fragments+1]=copy
           spaces[copy.namespace]=copy.values
@@ -141,6 +148,8 @@ for name, m in pairs(modes) do
           for label, width in pairs({["플레이어"]=w,["대상"]=w,["플레이어의 소환수"]=cw,["주시 대상"]=cw,["대상의 소환수"]=cw}) do
             root.dfAuraGeometry[label]={above=true,width=width}
           end
+          -- R246: the target's debuffs right above its frame, its buffs above them (player: buffs first)
+          root.dfAuraGeometry["대상"].order="debuffs_first"
           -- the totem bar and the pet bar share the row under the player frame (a class has one or the
           -- other), each ending at the player frame's right edge; the totem timer left of the totem bar
           local button=m.totemButton
