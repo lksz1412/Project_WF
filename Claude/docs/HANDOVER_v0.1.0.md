@@ -55,7 +55,7 @@
 
 ## 갱신 — 2026-11-26 18:45 +0900 (Phase 27 진행 중 · 세션 전환)
 
-작업 가지 `claude/phase27-local-20261124` · 워크트리 `D:/Projects/Project_WF/_local_only/claude-phase27` · 이 갱신의 커밋 = 아래 인계 커밋(Step 72 코드 포함 · 검수 전).
+작업 가지 `claude/phase27-local-20261124` · 워크트리 `D:/Projects/Project_WF/_local_only/claude-phase27` · 이 갱신의 커밋 = 9769efeb(Step 72 코드 포함 · 검수 전) · GitHub 에 같은 이름 가지로 푸시함(main 에 합치지 않음).
 
 ### ⑤ 인계 사슬
 1. `Codex/docs/HANDOVER_v0.1.0.md`(Codex Step 1–5) → 2. 이 파일 본문(Phase 0–25) → 3. 「갱신 — 2026-11-20」(Phase 25 끝) → 4. **이 절**(Phase 27 중간 · 이 세션은 컴팩션 여러 번 · 마지막 컴팩션 뒤 복구 읽기 기록 = `Claude/results/Step 71 — …md`).
